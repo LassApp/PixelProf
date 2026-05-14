@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v13</title>
+<title>PixelProf — ICDL Lab interattivo v2.0.0</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1484,7 +1484,7 @@ body{
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v13</span>
+        <span class="cs-logo-sub">ICDL Lab · v2.0.0</span>
       </div>
     </div>
   </div>
@@ -1589,7 +1589,7 @@ body{
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v13</span>
+      <span class="logo-sub">ICDL Lab · v2.0.0</span>
     </div>
   </div>
   <!-- Course badge -->
@@ -2038,62 +2038,127 @@ const ACT_META={
 };
 
 /* ══════════════════════════════════════════════════
-   QUESTION DATA
+   QUIZ DATA LOADER — v2.0.0
+   Caricamento asincrono da file JSON esterni.
+   Struttura file:
+     /data/quiz/computer_essentials.json
+     /data/quiz/online_essentials.json
+
+   Formato JSON (per domanda):
+     { id, question, options[], correctIndex, explanation }
+
+   Il loader normalizza il formato JSON → formato interno
+   usato dall'engine, garantendo retrocompatibilità totale.
 ══════════════════════════════════════════════════ */
-const QCE=[
-  {q:"Cosa significa ICT?",opts:["Internet Communication Technology","Information and Communication Technology","Internal Computer Technology","Integrated Circuit Technology"],a:1,exp:"ICT = Information and Communication Technology: tecnologie per creare, gestire e comunicare informazioni."},
-  {q:"Differenza tra hardware e software?",opts:["L'hardware è più veloce","Hardware = parte fisica; Software = istruzioni invisibili","Il software costa di più","Non c'è differenza"],a:1,exp:"Hardware = ciò che puoi toccare (tastiera, CPU, schermo). Software = istruzioni invisibili (app, OS)."},
-  {q:"Quale dispositivo è 'fisso, potente, espandibile'?",opts:["Laptop","Tablet","Desktop","Smartphone"],a:2,exp:"Il Desktop è fisso, potente e facilmente espandibile con nuovi componenti."},
-  {q:"Cos'è un bit?",opts:["Un byte da 8 unità","La più piccola unità: una scelta tra 0 e 1","Un'unità di velocità","Un tipo di memoria"],a:1,exp:"Il bit è la più piccola unità di informazione: può valere 0 oppure 1."},
-  {q:"Quanti byte contiene 1 kilobyte?",opts:["100","512","1024","2048"],a:2,exp:"1 KB = 1024 byte."},
-  {q:"Cosa significa CPU?",opts:["Central Processing Unit","Computer Power Unit","Core Program Utility","Central Program Unit"],a:0,exp:"CPU = Central Processing Unit: il cervello del computer."},
-  {q:"La velocità della CPU si misura in:",opts:["MB/s","GB","GHz","Watt"],a:2,exp:"GHz (Gigahertz): 1 GHz = 1 miliardo di cicli al secondo."},
-  {q:"Cosa fa la RAM?",opts:["Conserva dati permanentemente","Contiene istruzioni di avvio","Memorizza temporaneamente i dati in uso — volatile","Controlla la scheda video"],a:2,exp:"RAM = Random Access Memory. Si svuota allo spegnimento."},
-  {q:"Cosa fa la ROM?",opts:["Memorizza temporaneamente","Contiene istruzioni vitali di avvio — non si cancella mai","Gestisce la rete","Elabora immagini"],a:1,exp:"ROM = Read Only Memory. Istruzioni fisse per l'avvio."},
-  {q:"Sequenza corretta di avvio?",opts:["RAM→CPU→ROM→HDD","CPU→ROM→RAM→HDD","ROM→CPU→SSD/HDD→RAM","HDD→ROM→CPU→RAM"],a:2,exp:"ROM → CPU → SSD/HDD → RAM."},
-  {q:"Differenza principale SSD vs HDD?",opts:["L'HDD è più veloce","L'SSD usa piatti magnetici","SSD: veloce, silenzioso, senza parti meccaniche; HDD: piatti in rotazione","Sono identici"],a:2,exp:"SSD = istantaneo, muto, solido. HDD = lento, rumoroso."},
-  {q:"La scheda madre serve a:",opts:["Elaborare immagini","Alimentare i componenti","Collegare e far comunicare CPU, RAM, ROM e Storage","Connettersi a Internet"],a:2,exp:"La scheda madre collega fisicamente tutti i componenti."},
-  {q:"Cosa significa USB?",opts:["Ultra Speed Bus","Universal Serial Bus","Unified System Bridge","Universal Storage Block"],a:1,exp:"USB = Universal Serial Bus."},
-  {q:"Cos'è il sistema operativo?",opts:["Un browser","Il direttore d'orchestra: gestisce tutto il computer","Una licenza","Una memoria di massa"],a:1,exp:"L'OS gestisce tutte le risorse del computer."},
-  {q:"Cos'è il software applicativo?",opts:["Il sistema operativo","Programmi per funzioni quotidiane (Word, Chrome, ecc.)","I driver hardware","Le istruzioni di avvio"],a:1,exp:"Software applicativo = programmi per usi quotidiani."},
-  {q:"Cos'è la licenza Open Source?",opts:["Software a pagamento con prova","Gratuito ma codice chiuso","Codice libero, modificabile e distribuibile gratuitamente","Software proprietario"],a:2,exp:"Open Source = codice sorgente libero."},
-  {q:"Cos'è il Freeware?",opts:["Software con prova temporanea","Gratuito da usare ma codice chiuso","Software libero e modificabile","Software a pagamento"],a:1,exp:"Freeware = gratuito da usare, codice chiuso."},
-  {q:"Cos'è l'EULA?",opts:["Un virus","Un formato di file","End User License Agreement: contratto sulle condizioni d'uso","Un protocollo di rete"],a:2,exp:"EULA = End User License Agreement."},
-  {q:"Cosa succede ai dati in RAM allo spegnimento?",opts:["Salvati automaticamente","Si spostano in ROM","Si cancellano completamente — è volatile","Restano in cache"],a:2,exp:"La RAM è volatile: si svuota allo spegnimento."},
-  {q:"Il codice ASCII serve a:",opts:["Comprimere file","Tradurre lettere in numeri, poi in binario 0/1","Misurare la rete","Proteggere con password"],a:1,exp:"ASCII traduce ogni lettera in un numero poi in binario."},
-  {q:"Quale periferica è di INPUT?",opts:["Monitor","Stampante","Casse audio","Mouse"],a:3,exp:"Mouse = INPUT. Monitor, stampante e casse = OUTPUT."},
-  {q:"Cos'è lo Shareware?",opts:["Open source","Prova temporanea poi a pagamento","Completamente gratuito","Per condividere file"],a:1,exp:"Shareware = provi gratuitamente poi devi acquistarlo."},
-  {q:"Quale componente collega fisicamente tutti gli altri?",opts:["CPU","RAM","ROM","Scheda madre"],a:3,exp:"La scheda madre (motherboard) collega tutto."},
-  {q:"Laptop vs Desktop: qual è portatile con tutto integrato?",opts:["Desktop","Laptop","Tablet","Smartphone"],a:1,exp:"Il Laptop è portatile con tutto integrato."},
-  {q:"Cosa contiene la ROM?",opts:["Il sistema operativo","I file personali","Le istruzioni vitali di avvio (BIOS/UEFI)","I programmi installati"],a:2,exp:"La ROM contiene le istruzioni di avvio pre-installate."},
-];
-const QOE=[
-  {q:"Cosa significa LAN?",opts:["Large Area Network","Local Area Network","Linear Access Network","Long Address Network"],a:1,exp:"LAN = Local Area Network: rete locale."},
-  {q:"Cosa significa MAN?",opts:["Main Area Network","Metropolitan Area Network","Managed Access Node","Multi Area Network"],a:1,exp:"MAN = Metropolitan Area Network: rete urbana."},
-  {q:"Cosa significa WAN?",opts:["Wireless Area Node","Wide Area Network","Web Access Network","World Area Net"],a:1,exp:"WAN = Wide Area Network: rete vasta. Internet è la più grande WAN."},
-  {q:"Cos'è Internet?",opts:["Un'unica rete centralizzata","Una rete di reti globale","Un programma per navigare","Un tipo di browser"],a:1,exp:"Internet = rete di reti globale."},
-  {q:"Cosa significa IP?",opts:["Un browser","Il nome del server","Indirizzo numerico unico che identifica ogni dispositivo in rete","Protocollo per email"],a:2,exp:"L'indirizzo IP identifica ogni dispositivo in rete."},
-  {q:"Cosa fa il DNS?",opts:["Blocca siti pericolosi","Traduce nomi di dominio (es. google.com) in indirizzi IP","Misura la velocità","Gestisce le password WiFi"],a:1,exp:"DNS traduce google.com nell'indirizzo IP numerico."},
-  {q:"Nel modello Client/Server chi fa la richiesta?",opts:["Il server","Il DNS","Il client (es. il browser)","Il router"],a:2,exp:"Il client (browser) invia la richiesta al server."},
-  {q:"Cosa significa HTTP?",opts:["High Transfer Text Protocol","HyperText Transfer Protocol — dati non protetti","Hard Text Technology","Host Transfer Terminal"],a:1,exp:"HTTP trasferisce le pagine web. Dati NON criptati."},
-  {q:"Differenza tra HTTP e HTTPS?",opts:["HTTPS è più lento","Sono identici","HTTPS aggiunge crittografia: dati criptati e protetti","HTTP è più sicuro"],a:2,exp:"HTTPS aggiunge crittografia SSL/TLS."},
-  {q:"Cos'è un URL?",opts:["Un tipo di virus","Indirizzo completo di una risorsa web: protocollo+dominio+percorso","Il nome del browser","Un errore di rete"],a:1,exp:"URL = Uniform Resource Locator."},
-  {q:"Cosa indica l'errore 404?",opts:["Connessione lenta","Server non raggiungibile","La risorsa non è stata trovata sul server","Password errata"],a:2,exp:"404 = Not Found."},
-  {q:"Cos'è un browser?",opts:["Un motore di ricerca","Un tipo di connessione","Programma per navigare su Internet (Chrome, Safari, Edge)","Un protocollo di rete"],a:2,exp:"Il browser permette di navigare su Internet."},
-  {q:"Differenza tra browser e motore di ricerca?",opts:["Sono la stessa cosa","Browser naviga; motore di ricerca (Google, Bing) trova informazioni","Google è un browser","Chrome è un motore di ricerca"],a:1,exp:"Browser = naviga (Chrome). Motore di ricerca = trova info (Google)."},
-  {q:"Cosa sono i cookie?",opts:["Virus informatici","File che il browser salva per memorizzare informazioni sull'utente","Copie di pagine web","Errori del browser"],a:1,exp:"I cookie salvano info sull'utente."},
-  {q:"Cosa fa la cache del browser?",opts:["Salva le password","Memorizza risorse di pagine già visitate per velocizzare il caricamento","Blocca siti pericolosi","Gestisce i cookie"],a:1,exp:"La cache memorizza localmente copie di pagine."},
-  {q:"Cosa si intende per sicurezza informatica?",opts:["Usare un antivirus a pagamento","Protezione di dati e dispositivi da accessi non autorizzati","Non connettersi mai","Solo siti HTTPS"],a:1,exp:"Sicurezza: password sicure, evitare phishing, antivirus."},
-  {q:"Cos'è il phishing?",opts:["Connessione veloce","Un gioco online","Tecnica per rubare dati fingendosi entità affidabili","Programma antivirus"],a:2,exp:"Il phishing usa email/siti falsi per rubare credenziali."},
-  {q:"Cos'è la Netiquette?",opts:["Un firewall","Un protocollo","Regole di comportamento corretto nelle comunicazioni online","Un formato di file"],a:2,exp:"Netiquette = etichetta online."},
-  {q:"Quale regola di Netiquette vieta di 'urlare'?",opts:["Non copiare testi","Non scrivere in MAIUSCOLO — equivale a urlare","Non inviare file pesanti","Non usare emoji"],a:1,exp:"MAIUSCOLO = urlare nella Netiquette."},
-  {q:"In un URL il 'dominio' è:",opts:["Il percorso (/pagina)","Il protocollo (https)","L'identificatore del sito host (es. sito.com)","Il numero IP"],a:2,exp:"URL = protocollo + dominio + percorso."},
-  {q:"Cosa si intende per 'rete di reti'?",opts:["Una LAN grande","Internet: l'insieme di milioni di reti collegate globalmente","Una WAN aziendale","Una MAN"],a:1,exp:"Internet collega miliardi di dispositivi nel mondo."},
-  {q:"Funzione di un antivirus?",opts:["Velocizzare la connessione","Gestire le password","Rilevare e rimuovere software dannoso (malware, virus)","Bloccare i cookie"],a:2,exp:"L'antivirus rileva e rimuove malware."},
-  {q:"Come creare una password sicura?",opts:["Usare il proprio nome","Usare 1234","Combinare maiuscole, minuscole, numeri e simboli (8+ caratteri)","Usare la data di nascita"],a:2,exp:"Password sicura: lunga, mista, no dati personali."},
-  {q:"Cosa indica il lucchetto nel browser?",opts:["Il sito è gratuito","Connessione HTTPS: dati criptati","Il sito è italiano","Verificato da Google"],a:1,exp:"Lucchetto = HTTPS attivo."},
-  {q:"Cosa significa 'Client/Server'?",opts:["Due computer identici","Il client fa richieste; il server risponde con i dati","Una rete locale","Un tipo di browser"],a:1,exp:"Client/Server = modello base di Internet."},
-];
+
+/* Mapping modulo → path JSON */
+const QUIZ_MODULE_MAP = {
+  CE:  'data/quiz/computer_essentials.json',
+  OE:  'data/quiz/online_essentials.json',
+};
+
+/* In-memory cache per evitare fetch multipli nella stessa sessione */
+const _quizCache = {};
+
+/* Normalizza un oggetto JSON esterno nel formato interno {q, opts, a, exp, _src} */
+function _normalizeQuestion(raw, srcModule) {
+  return {
+    q:    raw.question,
+    opts: raw.options,
+    a:    raw.correctIndex,
+    exp:  raw.explanation,
+    _src: srcModule,   // traccia l'origine per la label categoria
+  };
+}
+
+/* Carica le domande per un singolo modulo (con cache) */
+async function _loadModule(mod) {
+  if (_quizCache[mod]) return _quizCache[mod];
+
+  const path = QUIZ_MODULE_MAP[mod];
+  if (!path) throw new Error(`Modulo sconosciuto: ${mod}`);
+
+  const resp = await fetch(path);
+  if (!resp.ok) throw new Error(`HTTP ${resp.status} per ${path}`);
+
+  let raw;
+  try {
+    raw = await resp.json();
+  } catch(e) {
+    throw new Error(`JSON non valido in ${path}: ${e.message}`);
+  }
+
+  if (!Array.isArray(raw) || raw.length === 0) {
+    throw new Error(`Nessuna domanda trovata in ${path}`);
+  }
+
+  const questions = raw.map(r => _normalizeQuestion(r, mod));
+  _quizCache[mod] = questions;
+  return questions;
+}
+
+/* Carica il pool per il modulo selezionato (CE, OE, MIX)
+   Restituisce una Promise<Array<question>> */
+async function loadPool(mod) {
+  if (mod === 'CE') {
+    return [...await _loadModule('CE')];
+  }
+  if (mod === 'OE') {
+    return [...await _loadModule('OE')];
+  }
+  // MIX: carica entrambi in parallelo
+  const [ce, oe] = await Promise.all([_loadModule('CE'), _loadModule('OE')]);
+  return shuffle([...ce, ...oe]);
+}
+
+/* UI di errore controllato mostrata al posto del quiz */
+function showQuizLoadError(msg) {
+  gsSet(GS.IDLE);
+  gameType = null;
+  setTb(null);
+  showScreen('tab-quiz');
+  sh('qz-game').classList.add('hidden');
+  sh('qz-result').classList.remove('hidden');
+  sh('qz-result').innerHTML = `
+    <div class="result-wrap">
+      <div class="result-hero">
+        <span class="result-stars" style="font-size:36px">⚠️</span>
+        <span class="result-score" style="font-size:20px;color:#ff6b6b;line-height:1.3">Errore caricamento quiz</span>
+        <span class="result-label" style="color:rgba(255,100,100,.6);margin-top:8px;line-height:1.5">${escHtml(msg)}</span>
+      </div>
+      <p class="result-msg" style="margin-top:0">
+        Verifica che i file JSON siano presenti nella cartella <code style="color:var(--accent);font-size:11px">data/quiz/</code>
+        e ricarica la pagina.
+      </p>
+      <div class="btn-row">
+        <button class="btn btn-neon" onclick="goHome()"><i class="ti ti-home"></i> Torna alla home</button>
+      </div>
+    </div>`;
+}
+
+/* Mostra spinner di caricamento nel quiz screen mentre il JSON viene scaricato */
+function showQuizLoading(mod) {
+  setTb(null);
+  showScreen('tab-quiz');
+  sh('qz-game').classList.add('hidden');
+  sh('qz-result').classList.remove('hidden');
+  sh('qz-result').innerHTML = `
+    <div class="result-wrap" style="text-align:center;padding:3rem 1rem">
+      <div style="font-size:32px;margin-bottom:16px;animation:heroPulse 1s ease-in-out infinite alternate">📡</div>
+      <div style="font-size:14px;font-weight:600;color:rgba(255,255,255,.6);margin-bottom:6px">
+        Caricamento domande…
+      </div>
+      <div style="font-size:11px;color:rgba(255,255,255,.25);font-family:'Share Tech Mono',monospace">
+        ${QUIZ_MODULE_MAP[mod] || 'data/quiz/'}
+      </div>
+    </div>`;
+}
+
+/* Helper sincrono: restituisce il modulo di una domanda
+   (sostituisce QCE.includes(q) dell'engine v1) */
+function getQuestionModule(q) {
+  return q._src || 'CE';
+}
 const MATCH_CE=[[{t:'CPU',d:'Cervello del computer'},{t:'RAM',d:'Memoria volatile — si svuota allo spegnimento'},{t:'ROM',d:'Memoria permanente — istruzioni di avvio'},{t:'SSD',d:'Storage veloce senza parti meccaniche'},{t:'HDD',d:'Disco con piatti magnetici in rotazione'}],[{t:'Hardware',d:'La parte fisica del computer'},{t:'Software',d:'Istruzioni invisibili (app, OS)'},{t:'OS',d:'Gestisce tutto il computer'},{t:'Bit',d:'Più piccola unità: 0 o 1'},{t:'EULA',d:'Contratto di licenza utente finale'}],[{t:'Open Source',d:'Codice libero, modificabile, gratuito'},{t:'Freeware',d:'Gratuito ma codice chiuso'},{t:'Shareware',d:'Prova temporanea poi a pagamento'},{t:'Desktop',d:'Fisso, potente, espandibile'},{t:'Scheda madre',d:'Collega tutti i componenti'}]];
 const MATCH_OE=[[{t:'LAN',d:'Rete locale di un edificio'},{t:'MAN',d:'Rete metropolitana — città'},{t:'WAN',d:'Rete geografica globale'},{t:'IP',d:'Indirizzo numerico unico del dispositivo'},{t:'DNS',d:'Traduce nomi di dominio in IP'}],[{t:'HTTP',d:'Protocollo web — dati non criptati'},{t:'HTTPS',d:'Protocollo web sicuro — dati criptati'},{t:'URL',d:'Indirizzo completo di una risorsa web'},{t:'Cookie',d:"File che memorizza info sull'utente"},{t:'Cache',d:'Copia locale per velocizzare il caricamento'}],[{t:'Browser',d:'Programma per navigare su Internet'},{t:'404',d:'Errore: risorsa non trovata'},{t:'Phishing',d:'Truffa che imita entità affidabili'},{t:'Netiquette',d:'Regole di comportamento online'},{t:'Client',d:'Dispositivo che fa richieste al server'}]];
 const MEM_CE=[['CPU','Cervello del PC'],['RAM','Memoria volatile'],['ROM','Memoria permanente'],['SSD','Senza parti meccaniche'],['HDD','Piatti magnetici'],['OS','Gestisce tutto'],['Bit','0 o 1'],['Scheda madre','Collega tutto']];
@@ -2581,12 +2646,11 @@ function checkSqValid(){checkCanStart();}
 /* ══════════════════════════════════════════════════
    LAUNCH
 ══════════════════════════════════════════════════ */
-function getPool(mod){if(mod==='CE')return[...QCE];if(mod==='OE')return[...QOE];return shuffle([...QCE,...QOE]);}
 
 /* Points per correct answer in Speed Quiz — scales with question count */
 function speedPtsPerQ(n){ return n<=5?1:n<=10?2:n<=15?3:4; }
 
-function launch(){
+async function launch(){
   // Guard: stato minimo necessario
   if(!sAct||!sMod||!sMode){console.warn('[PixelProf] launch() chiamato con stato invalido',{sAct,sMod,sMode});goHome();return;}
   if(sMode==='ind'){if(!sIndPlayer){goHome();return;}players=[{name:sIndPlayer,color:COLORS[0],type:'ind'}];}
@@ -2603,7 +2667,19 @@ function launch(){
   gsSet(GS.PLAYING);
   gameType=act;
   if(act==='quiz'||act==='speed'){
-    let pool=shuffle(getPool(sMod));
+    // Mostra spinner solo se i dati non sono in cache
+    const isCached = !!(act==='quiz' ? _quizCache[sMod] || (sMod==='MIX' && _quizCache['CE'] && _quizCache['OE']) : _quizCache[sMod] || (sMod==='MIX' && _quizCache['CE'] && _quizCache['OE']));
+    if(!isCached) showQuizLoading(sMod);
+    let rawPool;
+    try {
+      rawPool = await loadPool(sMod);
+    } catch(err) {
+      console.error('[PixelProf] Errore caricamento quiz:', err);
+      showQuizLoadError(err.message || 'Impossibile caricare il quiz. Riprova o contatta il sistema.');
+      gsSet(GS.IDLE);
+      return;
+    }
+    let pool=shuffle(rawPool);
     // Speed: use exactly sN questions (no hardcoded 10)
     if(act==='speed'){
       const n=sN>0?sN:10; // fallback 10 if somehow 0
@@ -2673,12 +2749,13 @@ function restartActivity(){
       resetSpeedUI();
       gsSet(GS.IDLE); // ensure clean state before launch sets PLAYING
       qScores={};players.forEach(p=>qScores[p.name]=0);prevRank=getRank();
-      launch();
+      launch(); // async — Promise returned, errors handled internally
     });
     return;
   }
   stopTimer();stopMemTimer();resetSpeedUI();
-  qScores={};players.forEach(p=>qScores[p.name]=0);prevRank=getRank();launch();
+  qScores={};players.forEach(p=>qScores[p.name]=0);prevRank=getRank();
+  launch(); // async — Promise returned, errors handled internally
 }
 
 /* ══════════════════════════════════════════════════
@@ -2732,7 +2809,7 @@ function renderQ(){
   const q=qPool[qIdx];const tot=qPool.length;
   sh('qz-counter').textContent=(qIdx+1)+'/'+tot;
   sh('qz-prog').style.width=(qIdx/tot*100)+'%';
-  sh('qz-cat').textContent=QCE.includes(q)?'// Computer Essentials':'// Online Essentials';
+  sh('qz-cat').textContent=getQuestionModule(q)==='CE'?'// Computer Essentials':'// Online Essentials';
   sh('qz-q').textContent=q.q;
   sh('qz-fb').innerHTML='';sh('next-btn').classList.add('hidden');qAnswered=false;renderLiveBar();
   const cont=sh('qz-opts');cont.innerHTML='';
@@ -2768,7 +2845,7 @@ function ansQ(idx){
       }
     }
   }
-  const mod=QCE.includes(q)?'CE':'OE';
+  const mod=getQuestionModule(q);
   db.stats.tot++;if(ok){db.stats.cor++;db.stats.byMod[mod].c++;}else db.stats.byMod[mod].w++;
   save();renderLiveBar();
   sh('qz-fb').innerHTML=`<div class="fb ${ok?'ok':'ko'}">${ok?'✓ Corretto! ':'✗ Sbagliato. '}${q.exp}</div>`;

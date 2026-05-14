@@ -1,0 +1,377 @@
+[
+  {
+    "id": 1,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa LAN?",
+    "options": [
+      "Large Area Network",
+      "Local Area Network",
+      "Linear Access Network",
+      "Long Address Network"
+    ],
+    "correctIndex": 1,
+    "explanation": "LAN = Local Area Network: rete locale."
+  },
+  {
+    "id": 2,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa MAN?",
+    "options": [
+      "Main Area Network",
+      "Metropolitan Area Network",
+      "Managed Access Node",
+      "Multi Area Network"
+    ],
+    "correctIndex": 1,
+    "explanation": "MAN = Metropolitan Area Network: rete urbana."
+  },
+  {
+    "id": 3,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa WAN?",
+    "options": [
+      "Wireless Area Node",
+      "Wide Area Network",
+      "Web Access Network",
+      "World Area Net"
+    ],
+    "correctIndex": 1,
+    "explanation": "WAN = Wide Area Network: rete vasta. Internet è la più grande WAN."
+  },
+  {
+    "id": 4,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è Internet?",
+    "options": [
+      "Un'unica rete centralizzata",
+      "Una rete di reti globale",
+      "Un programma per navigare",
+      "Un tipo di browser"
+    ],
+    "correctIndex": 1,
+    "explanation": "Internet = rete di reti globale."
+  },
+  {
+    "id": 5,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa IP?",
+    "options": [
+      "Un browser",
+      "Il nome del server",
+      "Indirizzo numerico unico che identifica ogni dispositivo in rete",
+      "Protocollo per email"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'indirizzo IP identifica ogni dispositivo in rete."
+  },
+  {
+    "id": 6,
+      "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il DNS?",
+    "options": [
+      "Blocca siti pericolosi",
+      "Traduce nomi di dominio (es. google.com) in indirizzi IP",
+      "Misura la velocità",
+      "Gestisce le password WiFi"
+    ],
+    "correctIndex": 1,
+    "explanation": "DNS traduce google.com nell'indirizzo IP numerico."
+  },
+  {
+    "id": 7,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nel modello Client/Server chi fa la richiesta?",
+    "options": [
+      "Il server",
+      "Il DNS",
+      "Il client (es. il browser)",
+      "Il router"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il client (browser) invia la richiesta al server."
+  },
+  {
+    "id": 8,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa HTTP?",
+    "options": [
+      "High Transfer Text Protocol",
+      "HyperText Transfer Protocol — dati non protetti",
+      "Hard Text Technology",
+      "Host Transfer Terminal"
+    ],
+    "correctIndex": 1,
+    "explanation": "HTTP trasferisce le pagine web. Dati NON criptati."
+  },
+  {
+    "id": 9,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Differenza tra HTTP e HTTPS?",
+    "options": [
+      "HTTPS è più lento",
+      "Sono identici",
+      "HTTPS aggiunge crittografia: dati criptati e protetti",
+      "HTTP è più sicuro"
+    ],
+    "correctIndex": 2,
+    "explanation": "HTTPS aggiunge crittografia SSL/TLS."
+  },
+  {
+    "id": 10,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un URL?",
+    "options": [
+      "Un tipo di virus",
+      "Indirizzo completo di una risorsa web: protocollo+dominio+percorso",
+      "Il nome del browser",
+      "Un errore di rete"
+    ],
+    "correctIndex": 1,
+    "explanation": "URL = Uniform Resource Locator."
+  },
+  {
+    "id": 11,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica l'errore 404?",
+    "options": [
+      "Connessione lenta",
+      "Server non raggiungibile",
+      "La risorsa non è stata trovata sul server",
+      "Password errata"
+    ],
+    "correctIndex": 2,
+    "explanation": "404 = Not Found."
+  },
+  {
+    "id": 12,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un browser?",
+    "options": [
+      "Un motore di ricerca",
+      "Un tipo di connessione",
+      "Programma per navigare su Internet (Chrome, Safari, Edge)",
+      "Un protocollo di rete"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il browser permette di navigare su Internet."
+  },
+  {
+    "id": 13,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Differenza tra browser e motore di ricerca?",
+    "options": [
+      "Sono la stessa cosa",
+      "Browser naviga; motore di ricerca (Google, Bing) trova informazioni",
+      "Google è un browser",
+      "Chrome è un motore di ricerca"
+    ],
+    "correctIndex": 1,
+    "explanation": "Browser = naviga (Chrome). Motore di ricerca = trova info (Google)."
+  },
+  {
+    "id": 14,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i cookie?",
+    "options": [
+      "Virus informatici",
+      "File che il browser salva per memorizzare informazioni sull'utente",
+      "Copie di pagine web",
+      "Errori del browser"
+    ],
+    "correctIndex": 1,
+    "explanation": "I cookie salvano info sull'utente."
+  },
+  {
+    "id": 15,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la cache del browser?",
+    "options": [
+      "Salva le password",
+      "Memorizza risorse di pagine già visitate per velocizzare il caricamento",
+      "Blocca siti pericolosi",
+      "Gestisce i cookie"
+    ],
+    "correctIndex": 1,
+    "explanation": "La cache memorizza localmente copie di pagine."
+  },
+  {
+    "id": 16,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per sicurezza informatica?",
+    "options": [
+      "Usare un antivirus a pagamento",
+      "Protezione di dati e dispositivi da accessi non autorizzati",
+      "Non connettersi mai",
+      "Solo siti HTTPS"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sicurezza: password sicure, evitare phishing, antivirus."
+  },
+  {
+    "id": 17,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il phishing?",
+    "options": [
+      "Connessione veloce",
+      "Un gioco online",
+      "Tecnica per rubare dati fingendosi entità affidabili",
+      "Programma antivirus"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il phishing usa email/siti falsi per rubare credenziali."
+  },
+  {
+    "id": 18,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la Netiquette?",
+    "options": [
+      "Un firewall",
+      "Un protocollo",
+      "Regole di comportamento corretto nelle comunicazioni online",
+      "Un formato di file"
+    ],
+    "correctIndex": 2,
+    "explanation": "Netiquette = etichetta online."
+  },
+  {
+    "id": 19,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale regola di Netiquette vieta di 'urlare'?",
+    "options": [
+      "Non copiare testi",
+      "Non scrivere in MAIUSCOLO — equivale a urlare",
+      "Non inviare file pesanti",
+      "Non usare emoji"
+    ],
+    "correctIndex": 1,
+    "explanation": "MAIUSCOLO = urlare nella Netiquette."
+  },
+  {
+    "id": 20,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In un URL il 'dominio' è:",
+    "options": [
+      "Il percorso (/pagina)",
+      "Il protocollo (https)",
+      "L'identificatore del sito host (es. sito.com)",
+      "Il numero IP"
+    ],
+    "correctIndex": 2,
+    "explanation": "URL = protocollo + dominio + percorso."
+  },
+  {
+    "id": 21,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per 'rete di reti'?",
+    "options": [
+      "Una LAN grande",
+      "Internet: l'insieme di milioni di reti collegate globalmente",
+      "Una WAN aziendale",
+      "Una MAN"
+    ],
+    "correctIndex": 1,
+    "explanation": "Internet collega miliardi di dispositivi nel mondo."
+  },
+  {
+    "id": 22,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Funzione di un antivirus?",
+    "options": [
+      "Velocizzare la connessione",
+      "Gestire le password",
+      "Rilevare e rimuovere software dannoso (malware, virus)",
+      "Bloccare i cookie"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'antivirus rileva e rimuove malware."
+  },
+  {
+    "id": 23,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come creare una password sicura?",
+    "options": [
+      "Usare il proprio nome",
+      "Usare 1234",
+      "Combinare maiuscole, minuscole, numeri e simboli (8+ caratteri)",
+      "Usare la data di nascita"
+    ],
+    "correctIndex": 2,
+    "explanation": "Password sicura: lunga, mista, no dati personali."
+  },
+  {
+    "id": 24,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica il lucchetto nel browser?",
+    "options": [
+      "Il sito è gratuito",
+      "Connessione HTTPS: dati criptati",
+      "Il sito è italiano",
+      "Verificato da Google"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lucchetto = HTTPS attivo."
+  },
+  {
+    "id": 25,
+    "module": "computer_essentials",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa 'Client/Server'?",
+    "options": [
+      "Due computer identici",
+      "Il client fa richieste; il server risponde con i dati",
+      "Una rete locale",
+      "Un tipo di browser"
+    ],
+    "correctIndex": 1,
+    "explanation": "Client/Server = modello base di Internet."
+  }
+]

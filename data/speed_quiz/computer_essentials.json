@@ -1,0 +1,302 @@
+[
+  {
+    "id": 1,
+    "question": "Cosa significa ICT?",
+    "options": [
+      "Internet Communication Technology",
+      "Information and Communication Technology",
+      "Internal Computer Technology",
+      "Integrated Circuit Technology"
+    ],
+    "correctIndex": 1,
+    "explanation": "ICT = Information and Communication Technology."
+  },
+  {
+    "id": 2,
+    "question": "Differenza tra hardware e software?",
+    "options": [
+      "L'hardware è più veloce",
+      "Hardware = parte fisica; Software = istruzioni invisibili",
+      "Il software costa di più",
+      "Non c'è differenza"
+    ],
+    "correctIndex": 1,
+    "explanation": "Hardware = fisico. Software = istruzioni invisibili."
+  },
+  {
+    "id": 3,
+    "question": "Quale dispositivo è fisso, potente ed espandibile?",
+    "options": [
+      "Laptop",
+      "Tablet",
+      "Desktop",
+      "Smartphone"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il Desktop è fisso, potente e facilmente espandibile."
+  },
+  {
+    "id": 4,
+    "question": "Cos'è un bit?",
+    "options": [
+      "Un byte da 8 unità",
+      "La più piccola unità: 0 o 1",
+      "Un'unità di velocità",
+      "Un tipo di memoria"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il bit è la più piccola unità di informazione."
+  },
+  {
+    "id": 5,
+    "question": "Quanti byte contiene 1 kilobyte?",
+    "options": [
+      "100",
+      "512",
+      "1024",
+      "2048"
+    ],
+    "correctIndex": 2,
+    "explanation": "1 KB = 1024 byte."
+  },
+  {
+    "id": 6,
+    "question": "Cosa significa CPU?",
+    "options": [
+      "Central Processing Unit",
+      "Computer Power Unit",
+      "Core Program Utility",
+      "Central Program Unit"
+    ],
+    "correctIndex": 0,
+    "explanation": "CPU = Central Processing Unit: il cervello del computer."
+  },
+  {
+    "id": 7,
+    "question": "La velocità della CPU si misura in:",
+    "options": [
+      "MB/s",
+      "GB",
+      "GHz",
+      "Watt"
+    ],
+    "correctIndex": 2,
+    "explanation": "GHz: 1 GHz = 1 miliardo di cicli al secondo."
+  },
+  {
+    "id": 8,
+    "question": "Cosa fa la RAM?",
+    "options": [
+      "Conserva dati permanentemente",
+      "Contiene istruzioni di avvio",
+      "Memorizza temporaneamente i dati in uso — volatile",
+      "Controlla la scheda video"
+    ],
+    "correctIndex": 2,
+    "explanation": "RAM = volatile. Si svuota allo spegnimento."
+  },
+  {
+    "id": 9,
+    "question": "Cosa fa la ROM?",
+    "options": [
+      "Memorizza temporaneamente",
+      "Contiene istruzioni vitali di avvio — non si cancella mai",
+      "Gestisce la rete",
+      "Elabora immagini"
+    ],
+    "correctIndex": 1,
+    "explanation": "ROM = istruzioni fisse di avvio, non cancellabili."
+  },
+  {
+    "id": 10,
+    "question": "Sequenza corretta di avvio?",
+    "options": [
+      "RAM→CPU→ROM→HDD",
+      "CPU→ROM→RAM→HDD",
+      "ROM→CPU→SSD/HDD→RAM",
+      "HDD→ROM→CPU→RAM"
+    ],
+    "correctIndex": 2,
+    "explanation": "ROM → CPU → SSD/HDD → RAM."
+  },
+  {
+    "id": 11,
+    "question": "Differenza principale SSD vs HDD?",
+    "options": [
+      "L'HDD è più veloce",
+      "L'SSD usa piatti magnetici",
+      "SSD: veloce, silenzioso, senza parti meccaniche; HDD: piatti in rotazione",
+      "Sono identici"
+    ],
+    "correctIndex": 2,
+    "explanation": "SSD = solido, muto, rapido. HDD = meccanico, più lento."
+  },
+  {
+    "id": 12,
+    "question": "La scheda madre serve a:",
+    "options": [
+      "Elaborare immagini",
+      "Alimentare i componenti",
+      "Collegare e far comunicare CPU, RAM, ROM e Storage",
+      "Connettersi a Internet"
+    ],
+    "correctIndex": 2,
+    "explanation": "La scheda madre collega fisicamente tutti i componenti."
+  },
+  {
+    "id": 13,
+    "question": "Cosa significa USB?",
+    "options": [
+      "Ultra Speed Bus",
+      "Universal Serial Bus",
+      "Unified System Bridge",
+      "Universal Storage Block"
+    ],
+    "correctIndex": 1,
+    "explanation": "USB = Universal Serial Bus."
+  },
+  {
+    "id": 14,
+    "question": "Cos'è il sistema operativo?",
+    "options": [
+      "Un browser",
+      "Il direttore d'orchestra: gestisce tutto il computer",
+      "Una licenza",
+      "Una memoria di massa"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'OS gestisce tutte le risorse del computer."
+  },
+  {
+    "id": 15,
+    "question": "Cos'è il software applicativo?",
+    "options": [
+      "Il sistema operativo",
+      "Programmi per funzioni quotidiane (Word, Chrome, ecc.)",
+      "I driver hardware",
+      "Le istruzioni di avvio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Software applicativo = programmi per usi quotidiani."
+  },
+  {
+    "id": 16,
+    "question": "Cos'è la licenza Open Source?",
+    "options": [
+      "Software a pagamento con prova",
+      "Gratuito ma codice chiuso",
+      "Codice libero, modificabile e distribuibile gratuitamente",
+      "Software proprietario"
+    ],
+    "correctIndex": 2,
+    "explanation": "Open Source = codice sorgente libero e modificabile."
+  },
+  {
+    "id": 17,
+    "question": "Cos'è il Freeware?",
+    "options": [
+      "Software con prova temporanea",
+      "Gratuito da usare ma codice chiuso",
+      "Software libero e modificabile",
+      "Software a pagamento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Freeware = gratuito da usare, codice chiuso."
+  },
+  {
+    "id": 18,
+    "question": "Cos'è l'EULA?",
+    "options": [
+      "Un virus",
+      "Un formato di file",
+      "End User License Agreement: contratto sulle condizioni d'uso",
+      "Un protocollo di rete"
+    ],
+    "correctIndex": 2,
+    "explanation": "EULA = End User License Agreement."
+  },
+  {
+    "id": 19,
+    "question": "Cosa succede ai dati in RAM allo spegnimento?",
+    "options": [
+      "Salvati automaticamente",
+      "Si spostano in ROM",
+      "Si cancellano completamente — è volatile",
+      "Restano in cache"
+    ],
+    "correctIndex": 2,
+    "explanation": "La RAM è volatile: si svuota allo spegnimento."
+  },
+  {
+    "id": 20,
+    "question": "Il codice ASCII serve a:",
+    "options": [
+      "Comprimere file",
+      "Tradurre lettere in numeri, poi in binario 0/1",
+      "Misurare la rete",
+      "Proteggere con password"
+    ],
+    "correctIndex": 1,
+    "explanation": "ASCII traduce lettere in numeri poi in binario."
+  },
+  {
+    "id": 21,
+    "question": "Quale periferica è di INPUT?",
+    "options": [
+      "Monitor",
+      "Stampante",
+      "Casse audio",
+      "Mouse"
+    ],
+    "correctIndex": 3,
+    "explanation": "Mouse = INPUT. Monitor, stampante, casse = OUTPUT."
+  },
+  {
+    "id": 22,
+    "question": "Cos'è lo Shareware?",
+    "options": [
+      "Open source",
+      "Prova temporanea poi a pagamento",
+      "Completamente gratuito",
+      "Per condividere file"
+    ],
+    "correctIndex": 1,
+    "explanation": "Shareware = provi gratis poi acquisti."
+  },
+  {
+    "id": 23,
+    "question": "Quale componente collega fisicamente tutti gli altri?",
+    "options": [
+      "CPU",
+      "RAM",
+      "ROM",
+      "Scheda madre"
+    ],
+    "correctIndex": 3,
+    "explanation": "La scheda madre (motherboard) collega tutto."
+  },
+  {
+    "id": 24,
+    "question": "Laptop vs Desktop: qual è portatile con tutto integrato?",
+    "options": [
+      "Desktop",
+      "Laptop",
+      "Tablet",
+      "Smartphone"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il Laptop è portatile con tutto integrato."
+  },
+  {
+    "id": 25,
+    "question": "Cosa contiene la ROM?",
+    "options": [
+      "Il sistema operativo",
+      "I file personali",
+      "Le istruzioni vitali di avvio (BIOS/UEFI)",
+      "I programmi installati"
+    ],
+    "correctIndex": 2,
+    "explanation": "La ROM contiene le istruzioni di avvio pre-installate."
+  }
+]

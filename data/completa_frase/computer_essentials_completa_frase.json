@@ -1,0 +1,42 @@
+[
+  {
+    "sentence": "La ____ è la memoria volatile che si svuota allo spegnimento.",
+    "answer": "RAM",
+    "bank": ["RAM", "ROM", "CPU", "HDD"]
+  },
+  {
+    "sentence": "La ____ contiene le istruzioni vitali di avvio e non si cancella mai.",
+    "answer": "ROM",
+    "bank": ["ROM", "RAM", "SSD", "CPU"]
+  },
+  {
+    "sentence": "La sequenza di avvio è: ____ → CPU → SSD/HDD → RAM.",
+    "answer": "ROM",
+    "bank": ["ROM", "RAM", "CPU", "HDD"]
+  },
+  {
+    "sentence": "Il ____ è il componente che elabora ed esegue le istruzioni.",
+    "answer": "CPU",
+    "bank": ["CPU", "RAM", "ROM", "SSD"]
+  },
+  {
+    "sentence": "L'SSD è più veloce perché non ha parti ____.",
+    "answer": "meccaniche",
+    "bank": ["meccaniche", "elettriche", "digitali", "binarie"]
+  },
+  {
+    "sentence": "Il software ____ è gratuito ma il codice sorgente è chiuso.",
+    "answer": "Freeware",
+    "bank": ["Freeware", "Open Source", "Shareware", "EULA"]
+  },
+  {
+    "sentence": "La ____ collega fisicamente CPU, RAM, ROM e Storage.",
+    "answer": "scheda madre",
+    "bank": ["scheda madre", "CPU", "RAM", "chiavetta USB"]
+  },
+  {
+    "sentence": "Il codice ASCII traduce lettere in numeri, poi in codice ____.",
+    "answer": "binario",
+    "bank": ["binario", "decimale", "ASCII", "ottale"]
+  }
+]

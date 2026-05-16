@@ -1,0 +1,26 @@
+{
+  "module": "CE",
+  "sets": [
+    [
+      { "term": "CPU",         "definition": "Cervello del computer" },
+      { "term": "RAM",         "definition": "Memoria volatile — si svuota allo spegnimento" },
+      { "term": "ROM",         "definition": "Memoria permanente — istruzioni di avvio" },
+      { "term": "SSD",         "definition": "Storage veloce senza parti meccaniche" },
+      { "term": "HDD",         "definition": "Disco con piatti magnetici in rotazione" }
+    ],
+    [
+      { "term": "Hardware",    "definition": "La parte fisica del computer" },
+      { "term": "Software",    "definition": "Istruzioni invisibili (app, OS)" },
+      { "term": "OS",          "definition": "Gestisce tutto il computer" },
+      { "term": "Bit",         "definition": "Più piccola unità: 0 o 1" },
+      { "term": "EULA",        "definition": "Contratto di licenza utente finale" }
+    ],
+    [
+      { "term": "Open Source", "definition": "Codice libero, modificabile, gratuito" },
+      { "term": "Freeware",    "definition": "Gratuito ma codice chiuso" },
+      { "term": "Shareware",   "definition": "Prova temporanea poi a pagamento" },
+      { "term": "Desktop",     "definition": "Fisso, potente, espandibile" },
+      { "term": "Scheda madre","definition": "Collega tutti i componenti" }
+    ]
+  ]
+}

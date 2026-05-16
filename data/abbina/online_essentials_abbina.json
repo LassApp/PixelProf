@@ -1,0 +1,26 @@
+{
+  "module": "OE",
+  "sets": [
+    [
+      { "term": "LAN",         "definition": "Rete locale di un edificio" },
+      { "term": "MAN",         "definition": "Rete metropolitana — città" },
+      { "term": "WAN",         "definition": "Rete geografica globale" },
+      { "term": "IP",          "definition": "Indirizzo numerico unico del dispositivo" },
+      { "term": "DNS",         "definition": "Traduce nomi di dominio in IP" }
+    ],
+    [
+      { "term": "HTTP",        "definition": "Protocollo web — dati non criptati" },
+      { "term": "HTTPS",       "definition": "Protocollo web sicuro — dati criptati" },
+      { "term": "URL",         "definition": "Indirizzo completo di una risorsa web" },
+      { "term": "Cookie",      "definition": "File che memorizza info sull'utente" },
+      { "term": "Cache",       "definition": "Copia locale per velocizzare il caricamento" }
+    ],
+    [
+      { "term": "Browser",     "definition": "Programma per navigare su Internet" },
+      { "term": "404",         "definition": "Errore: risorsa non trovata" },
+      { "term": "Phishing",    "definition": "Truffa che imita entità affidabili" },
+      { "term": "Netiquette",  "definition": "Regole di comportamento online" },
+      { "term": "Client",      "definition": "Dispositivo che fa richieste al server" }
+    ]
+  ]
+}

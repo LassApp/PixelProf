@@ -4895,15 +4895,25 @@ window.__resolveDb = function() {
     },500);
   },1800);
 
-  // Timeout di sicurezza: se db_adapter non risponde entro 3 secondi,
-  // il gioco va avanti in modalità offline (localStorage puro).
-  setTimeout(()=>{
-    if(!window.__dbReady){
-      console.warn('[PixelProf] db_adapter non risposto — modalità offline attiva');
-      window.__resolveDb();
-    }
-  },3000);
-})();
+  // Timeout a due livelli:
+// — 5s: fallback silenzioso (CDN lenta ma in arrivo → nessun warning)
+// — 12s: warning reale (db_adapter probabilmente crashato o assente)
+// In entrambi i casi il gioco non è mai bloccato.
+setTimeout(()=>{
+  if(!window.__dbReady){
+    // Silenzioso: risolve il gate senza avvisare l'utente.
+    // db_adapter può ancora arrivare e sovrascrivere con dati cloud.
+    window.__resolveDb();
+  }
+},5000);
+
+setTimeout(()=>{
+  if(!window.__dbReady){
+    // Qui db_adapter non è mai arrivato: warning reale.
+    console.warn('[PixelProf] db_adapter assente o in errore — modalità offline permanente');
+    window.__resolveDb();
+  }
+},12000);
 </script>
 </body>
 </html>

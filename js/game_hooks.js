@@ -252,9 +252,9 @@ export async function loadLeaderboardForRender(classId, type, activity) {
 
 // ════════════════════════════════════════════════════════════════════
 // HOOK 5 — ensurePlayersAndTeams
---  Chiamata in launch() dopo validazione giocatori/squadre.
---  Garantisce che tutti i partecipanti esistano nel DB cloud.
--- ════════════════════════════════════════════════════════════════════
+//  Chiamata in launch() dopo validazione giocatori/squadre.
+//  Garantisce che tutti i partecipanti esistano nel DB cloud.
+// ════════════════════════════════════════════════════════════════════
 
 /**
  * Assicura che tutti i partecipanti della sessione esistano nel DB.

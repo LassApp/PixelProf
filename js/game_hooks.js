@@ -275,3 +275,11 @@ export async function ensureParticipants(classId, mode, playerName, teams) {
     }
   }
 }
+/* ── Espone gli hook su window per il motore di gioco legacy ──
+   Il motore usa script inline (non ES module), quindi non può
+   fare import diretto. Questi alias su window colmano il gap. */
+window.hook_saveLbEntry       = saveLbEntryAndCloud;
+window.hook_saveSession       = saveSessionAndCloud;
+window.hook_trackAnswer       = trackAnswerAndCloud;
+window.hook_loadLeaderboard   = loadLeaderboardForRender;
+window.hook_ensureParticipants= ensureParticipants;

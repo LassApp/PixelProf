@@ -33,7 +33,6 @@ import {
 //  Chiamata alla fine di ogni partita.
 //  Aggiorna il db in memoria (lb2) E salva su Supabase.
 // ════════════════════════════════════════════════════════════════════
--- ════════════════════════════════════════════════════════════════════
 
 /**
  * Salva un punteggio in classifica (memoria + cloud).

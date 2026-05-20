@@ -28,10 +28,11 @@ import {
 
 // ════════════════════════════════════════════════════════════════════
 // HOOK 1 — saveLbEntryAndCloud
---  Sostituisce: saveLbEntry(player, pts, act, mod)
---
---  Chiamata alla fine di ogni partita.
---  Aggiorna il db in memoria (lb2) E salva su Supabase.
+// Sostituisce: saveLbEntry(player, pts, act, mod)
+//
+//  Chiamata alla fine di ogni partita.
+//  Aggiorna il db in memoria (lb2) E salva su Supabase.
+// ════════════════════════════════════════════════════════════════════
 -- ════════════════════════════════════════════════════════════════════
 
 /**

@@ -708,6 +708,12 @@ function _updateLocalStats(classId, module, correct, wrong) {
 export function saveCourses(list) {
   _lsSet(LS_COURSES_KEY, list);
 }
+/* ── Bootstrap gate: segnala al gioco che il layer db è pronto ── */
+(function() {
+  if (typeof window !== 'undefined' && typeof window.__resolveDb === 'function') {
+    window.__resolveDb();
+  }
+})();
 
 /**
  * save — compatibilità: scrive il db locale su localStorage.

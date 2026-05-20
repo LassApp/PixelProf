@@ -86,11 +86,11 @@ export async function saveLbEntryAndCloud(player, pts, act, mod, classId, db) {
 
 // ════════════════════════════════════════════════════════════════════
 // HOOK 2 — saveSessionAndCloud
---  Sostituisce: saveSessionResult(act, mod)
---
---  Chiamata alla fine di ogni partita per registrare
---  la sessione completa nel db.
--- ════════════════════════════════════════════════════════════════════
+//  Sostituisce: saveSessionResult(act, mod)
+//
+//  Chiamata alla fine di ogni partita per registrare
+//  la sessione completa nel db.
+// ════════════════════════════════════════════════════════════════════
 
 /**
  * Salva la sessione completa su Supabase.
@@ -159,10 +159,10 @@ export async function saveSessionAndCloud(
 
 // ════════════════════════════════════════════════════════════════════
 // HOOK 3 — trackAnswerAndCloud
---  Sostituisce: aggiornamento di db.stats dopo ogni risposta
---
---  Chiamata in ansQ() dopo ogni risposta data.
--- ════════════════════════════════════════════════════════════════════
+//  Sostituisce: aggiornamento di db.stats dopo ogni risposta
+//
+//  Chiamata in ansQ() dopo ogni risposta data.
+// ════════════════════════════════════════════════════════════════════
 
 /**
  * Traccia una risposta (corr/sbagliata) localmente e su cloud.
@@ -229,11 +229,11 @@ window.addEventListener('beforeunload', _flushStatsBuffer);
 
 // ════════════════════════════════════════════════════════════════════
 // HOOK 4 — loadLeaderboardForRender
---  Sostituisce: renderLbResults(type, act) che legge db.lb2
---
---  Carica la classifica dal cloud e la trasforma nel formato
---  atteso da renderLbResults.
--- ════════════════════════════════════════════════════════════════════
+//  Sostituisce: renderLbResults(type, act) che legge db.lb2
+//
+//  Carica la classifica dal cloud e la trasforma nel formato
+//  atteso da renderLbResults.
+// ════════════════════════════════════════════════════════════════════
 
 /**
  * Carica la classifica dal cloud e la prepara per il rendering.

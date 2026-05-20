@@ -552,8 +552,8 @@ export async function loadCourseData(classId) {
 
 // ════════════════════════════════════════════════════════════════════
 // PLAYER/TEAM ID RESOLVER
---  Il motore di gioco usa nomi come chiavi, Supabase usa UUID.
---  Questi helper resolvono o creano il record e ritornano l'UUID.
+// Il motore di gioco usa nomi come chiavi, Supabase usa UUID.
+// Questi helper resolvono o creano il record e ritornano l'UUID.
 // ════════════════════════════════════════════════════════════════════
 
 /**

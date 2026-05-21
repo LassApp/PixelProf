@@ -2886,6 +2886,11 @@ async function launch(){
       // Salva squadre nel db se nuove
       v.forEach(t=>{if(!db.teams.find(x=>x.name===t.name))db.teams.push({name:t.name.trim(),color:t.color});});
       save();
+     // ── Registra squadre nel cloud (non bloccante) ──
+      if(activeCourseId && window.hook_ensureParticipants){
+        window.hook_ensureParticipants(activeCourseId,'sq',null,v)
+          .catch(()=>{});
+      }
       // Carica il pool UNA volta e lo condivide fra tutte le squadre
       let rawPool;
       const act=sAct;
@@ -2930,11 +2935,15 @@ async function launch(){
     _startTeamTurn();
     return;
   }
-
   // ── MODALITÀ INDIVIDUALE (invariata) ──
   if(!sIndPlayer){goHome();return;}
   players=[{name:sIndPlayer,color:COLORS[0],type:'ind'}];
   qScores={};players.forEach(p=>qScores[p.name]=0);prevRank=getRank();
+   // ── Registra giocatore nel cloud (non bloccante) ──
+  if(activeCourseId && window.hook_ensureParticipants){
+    window.hook_ensureParticipants(activeCourseId,'ind',sIndPlayer,null)
+      .catch(()=>{});
+  }
   const act=sAct;
   if(act==='quiz'||act==='speed'){
     let rawPool;
@@ -3508,9 +3517,12 @@ function ansQ(idx){
     }else{
       qAnswerLog.push({questionId:'q'+qIdx,correct:false,responseTimeMs,streak:0,speedBonus:0,streakBonus:0,scoreEarned:0});
     }
-    const mod=getQuestionModule(q);
-    db.stats.tot++;if(ok){db.stats.cor++;db.stats.byMod[mod].c++;}else db.stats.byMod[mod].w++;
-    save();renderLiveBar();
+      const mod=getQuestionModule(q);
+  db.stats.tot++;if(ok){db.stats.cor++;db.stats.byMod[mod].c++;}else db.stats.byMod[mod].w++;
+  if(activeCourseId && window.hook_trackAnswer){
+    window.hook_trackAnswer(activeCourseId,mod,ok,db);
+  }
+  save();renderLiveBar();
     sh('qz-fb').innerHTML=`<div class="fb ${ok?'ok':'ko'}">${ok?'✓ Corretto! ':'✗ Sbagliato. '}${q.exp}</div>`;
     setTimeout(()=>{qIdx++;if(qIdx<qPool.length)renderQ();else endQuiz();},500);
     return;
@@ -3542,6 +3554,9 @@ function ansQ(idx){
 
   const mod=getQuestionModule(q);
   db.stats.tot++;if(ok){db.stats.cor++;db.stats.byMod[mod].c++;}else db.stats.byMod[mod].w++;
+  if(activeCourseId && window.hook_trackAnswer){
+    window.hook_trackAnswer(activeCourseId,mod,ok,db);
+  }
   save();renderLiveBar();
   sh('next-btn').classList.remove('hidden');
 }

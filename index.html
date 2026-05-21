@@ -4572,9 +4572,16 @@ async function addCourse(){
   },80);
 }
 
-function renderCoursesGrid(){
+async function renderCoursesGrid(){
   const grid=sh('cs-grid');if(!grid)return;
-  const courses=loadCourses();
+
+  // Carica sempre dal cloud se disponibile — aggiorna cache locale
+  let courses;
+  if(window.__dbReady && window.db_loadCourses){
+    courses=await window.db_loadCourses();
+  }else{
+    courses=loadCourses();
+  }
   if(!courses.length){
     grid.innerHTML=`<div class="cs-empty" style="grid-column:1/-1">
       <div class="cs-empty-icon">🏫</div>

@@ -321,7 +321,7 @@ export async function saveLbEntryCloud(p) {
   await _sbCall(
     () => supabase.rpc('upsert_leaderboard', {
       p_class_id:          p.classId,
-      p_participant_type:  p.type,
+      p_participant_type:  p.type === 'ind' ? 'player' : 'team',
       p_participant_id:    p.id,
       p_participant_name:  p.name,
       p_participant_color: p.color,

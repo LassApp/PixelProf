@@ -4601,20 +4601,24 @@ function renderCoursesGrid(){
   });
 }
 
-function enterCourse(id){
-  const courses=loadCourses();
+async function enterCourse(id){
+  const courses=await (window.db_loadCourses?window.db_loadCourses():Promise.resolve(loadCourses()));
   const course=courses.find(c=>c.id===id);
   if(!course)return;
   activeCourseId=id;
-  // Load course-specific db
-  db=loadCourseData(id);
+
+  // Carica dati dal cloud (con fallback localStorage automatico in db_adapter)
+  if(window.__dbReady && typeof window.db_loadCourseData==='function'){
+    db=await window.db_loadCourseData(id);
+  }else{
+    db=loadCourseData(id);
+  }
 
   // ── Apply course background as global app theme ──
-  const bgIdx =(course.bgIdx  ??0)%COURSE_BG_PRESETS.length;
+  const bgIdx=(course.bgIdx??0)%COURSE_BG_PRESETS.length;
   const bg=COURSE_BG_PRESETS[bgIdx];
   const themeEl=document.getElementById('app-theme-bg');
   if(themeEl){
-    // Fade out, swap, fade in for a clean transition
     themeEl.style.opacity='0';
     setTimeout(()=>{
       themeEl.style.background=bg.css;
@@ -4632,6 +4636,7 @@ function enterCourse(id){
     badge.classList.remove('hidden');
     badge.style.display='flex';
   }
+
   // Transition
   sh('screen-courses').classList.add('hidden');
   const app=document.querySelector('.app');

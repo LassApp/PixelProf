@@ -728,6 +728,7 @@ window.db_createCourse = createCourse;
 window.db_updateCourse = updateCourse;
 window.db_deleteCourse = deleteCourse;
 window.db_loadCourses  = loadCourses;
+window.db_loadCourseData = loadCourseData;
 
 /* ── Bootstrap gate: segnala al gioco che il layer db è pronto ── */
 (function() {

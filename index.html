@@ -4508,26 +4508,46 @@ let _ddCourseId=null; // id del corso a cui appartiene il dropdown aperto
 
 function genCourseId(){return'c_'+Date.now()+'_'+Math.random().toString(36).slice(2,7);}
 
-function addCourse(){
+async function addCourse(){
   const inp=sh('cs-course-inp');
   const name=inp.value.trim();
   if(!name)return;
+
   const courses=loadCourses();
   const colorIdx=courses.length%COLOR_PALETTE.length;
   const iconIdx=courses.length%COURSE_ICONS.length;
-  const course={
-    id:genCourseId(),
+
+  const courseData={
     name,
     icon:COURSE_ICONS[iconIdx],
     colorIdx,
-    bgIdx:colorIdx, // same as color initially
-    createdAt:Date.now()
+    bgIdx:colorIdx,
   };
-  courses.push(course);
-  saveCourses(courses);
+
   inp.value='';
+  inp.disabled=true;
+
+  let course;
+  // Prova a creare su Supabase (ottiene UUID vero)
+  if(window.__dbReady && typeof window.db_createCourse==='function'){
+    course=await window.db_createCourse(courseData);
+  }
+
+  // Fallback locale se Supabase non disponibile
+  if(!course){
+    course={
+      ...courseData,
+      id:genCourseId(),
+      createdAt:Date.now()
+    };
+    const local=loadCourses();
+    local.push(course);
+    saveCourses(local);
+  }
+
+  inp.disabled=false;
   renderCoursesGrid();
-  // focus new card briefly
+
   setTimeout(()=>{
     const card=document.querySelector('[data-course-id="'+course.id+'"]');
     if(card)card.style.boxShadow='0 0 0 2px #00ffc8';

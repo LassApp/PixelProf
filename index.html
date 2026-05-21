@@ -3315,18 +3315,16 @@ function restartActivity(){
    SAVE SCORE TO LB2 — extended schema
 ══════════════════════════════════════════════════ */
 function saveLbEntry(player, pts, act, mod){
-  const type=player.type; // 'ind' | 'sq'
+  // ── Aggiorna lb2 in memoria (comportamento originale invariato) ──
+  const type=player.type;
   if(!db.lb2[type])db.lb2[type]={};
   if(!db.lb2[type][act])db.lb2[type][act]={};
   const bucket=db.lb2[type][act];
   const key=player.name;
   const existing=bucket[key];
-  // Keep best score per (player, activity, mod) combination
-  // We store an array of entries so we can show per-module breakdown
   if(!existing){
     bucket[key]={entries:[{pts,mod,games:1}],color:player.color||null};
   }else{
-    // find entry for same mod
     const idx=existing.entries.findIndex(e=>e.mod===mod);
     if(idx>=0){
       existing.entries[idx].games++;
@@ -3336,29 +3334,40 @@ function saveLbEntry(player, pts, act, mod){
     }
     if(player.color)existing.color=player.color;
   }
+  // ── Persisti su cloud in background (non bloccante) ──
+  if(activeCourseId && window.hook_saveLbEntry){
+    window.hook_saveLbEntry(player,pts,act,mod,activeCourseId,db)
+      .catch(e=>console.warn('[PixelProf] hook_saveLbEntry err:',e));
+  }
 }
 
 /* Persiste la sessione completa — usata alla fine di ogni partita.
    Struttura: { course, game, mode, teams[], timestamp }
    Salvata in db.sessions (array append-only, max 100 voci). */
 function saveSessionResult(act, mod){
+  // ── Aggiorna sessions in memoria (comportamento originale invariato) ──
   if(!db.sessions)db.sessions=[];
-  // In modalità squadre usa il quadro completo del matchState
   const teamsSnapshot=sMode==='sq'&&matchState.teams.length
     ?matchState.teams.map(t=>({name:t.name,color:t.color,score:matchState.scores[t.name]||0}))
     :players.map(p=>({name:p.name,color:p.color,score:qScores[p.name]||0}));
   const entry={
-    course: activeCourseId||null,
-    game:   act,
-    mod:    mod,
-    mode:   sMode,
-    teams:  teamsSnapshot,
-    timestamp: new Date().toISOString(),
+    course:activeCourseId||null,
+    game:act,mod,mode:sMode,
+    teams:teamsSnapshot,
+    timestamp:new Date().toISOString(),
   };
   db.sessions.push(entry);
   if(db.sessions.length>100)db.sessions=db.sessions.slice(-100);
+  // ── Persisti su cloud in background (non bloccante) ──
+  if(activeCourseId && window.hook_saveSession){
+    const dur=Math.round((Date.now()-qStart)/1000);
+    const qCount=qPool.length||0;
+    window.hook_saveSession(
+      act,mod,sMode,activeCourseId,db,
+      matchState,players,qScores,dur,qCount
+    ).catch(e=>console.warn('[PixelProf] hook_saveSession err:',e));
+  }
 }
-
 /* ══════════════════════════════════════════════════
    RANKING
 ══════════════════════════════════════════════════ */

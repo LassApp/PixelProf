@@ -722,3 +722,16 @@ export function saveCourses(list) {
 export function saveLocalCache(classId, db) {
   _lsSet(lsCourseDataKey(classId), db);
 }
+
+/* ── Espone createCourse su window per il motore legacy ── */
+window.db_createCourse = createCourse;
+window.db_updateCourse = updateCourse;
+window.db_deleteCourse = deleteCourse;
+window.db_loadCourses  = loadCourses;
+
+/* ── Bootstrap gate: segnala al gioco che il layer db è pronto ── */
+(function() {
+  if (typeof window !== 'undefined' && typeof window.__resolveDb === 'function') {
+    window.__resolveDb();
+  }
+})();

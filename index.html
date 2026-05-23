@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v3.0.0</title>
+<title>PixelProf — ICDL Lab interattivo v3.1.0</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1661,7 +1661,101 @@ body{
 }
 .mod-toggle-btn.active{background:rgba(0,255,200,.12);border-color:var(--accent);color:var(--accent);}
 .mod-toggle-btn:hover{border-color:rgba(0,255,200,.3);color:var(--accent);}
+/* ===============================================
+   WIZARD NUOVA AULA — v3.1.0
+   Overlay a 3 step: nome → moduli → docenti
+=============================================== */
+#course-wizard-overlay{
+  position:fixed;inset:0;z-index:9700;
+  background:rgba(0,0,0,.72);backdrop-filter:blur(10px);
+  display:flex;align-items:center;justify-content:center;padding:1rem;
+}
+#course-wizard-overlay.hidden{display:none!important;}
+.cw-box{
+  background:#0a1022;border:1px solid rgba(0,255,200,.2);
+  border-radius:var(--radius-xl);padding:1.75rem 1.5rem;
+  width:100%;max-width:440px;max-height:88vh;overflow-y:auto;
+  box-shadow:0 20px 80px rgba(0,0,0,.7),0 0 0 1px rgba(0,255,200,.06);
+  animation:dropIn .25s cubic-bezier(.22,1,.36,1) both;
+}
+.cw-step{display:none;}.cw-step.active{display:block;}
+.cw-title{font-family:'Orbitron',monospace;font-size:16px;font-weight:900;
+  color:#fff;margin-bottom:4px;display:flex;align-items:center;gap:10px;}
+.cw-subtitle{font-size:12px;color:rgba(255,255,255,.35);margin-bottom:1.25rem;line-height:1.5}
+.cw-progress{display:flex;gap:6px;margin-bottom:1.5rem;}
+.cw-dot{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.1);
+  transition:background .3s ease;}
+.cw-dot.done{background:var(--accent);}
+.cw-dot.active{background:rgba(0,255,200,.5);}
+.cw-mod-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
+.cw-mod-btn{
+  border-radius:var(--radius-md);border:1px solid var(--border-mid);
+  background:var(--surface-1);padding:.875rem;
+  cursor:pointer;text-align:left;transition:all var(--transition-fast);
+  position:relative;overflow:hidden;font-family:inherit;
+}
+.cw-mod-btn::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  transform:scaleX(0);transition:transform var(--transition-fast);
+}
+.cw-mod-btn:hover{border-color:rgba(0,255,200,.3);background:var(--surface-2);}
+.cw-mod-btn.active{border-color:var(--accent);background:rgba(0,255,200,.1);}
+.cw-mod-btn.active::after{background:var(--accent);transform:scaleX(1);}
+.cw-mod-btn .cm-icon{font-size:22px;display:block;margin-bottom:6px;}
+.cw-mod-btn .cm-name{font-size:12px;font-weight:700;color:#fff;margin-bottom:2px;}
+.cw-mod-btn .cm-desc{font-size:10px;color:rgba(255,255,255,.35);line-height:1.3;}
+.cw-mod-btn .cm-check{
+  position:absolute;top:8px;right:8px;width:18px;height:18px;border-radius:50%;
+  background:var(--accent);color:#000;font-size:11px;font-weight:700;
+  display:none;align-items:center;justify-content:center;
+}
+.cw-mod-btn.active .cm-check{display:flex;}
+.cw-full-btn{grid-column:1/-1;}
+.cw-btns{display:flex;gap:8px;margin-top:1rem;}
+.cw-btn-back{
+  padding:10px 18px;border-radius:var(--radius-sm);
+  border:1px solid var(--border-mid);background:var(--surface-1);
+  color:var(--text-muted);font-size:13px;cursor:pointer;font-family:inherit;
+  transition:all var(--transition-fast);
+}
+.cw-btn-back:hover{border-color:rgba(255,255,255,.25);color:#fff;}
+.cw-btn-next{
+  flex:1;padding:10px 18px;border-radius:var(--radius-sm);
+  border:1px solid var(--accent);background:var(--accent-dim);
+  color:var(--accent);font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;
+  transition:all var(--transition-fast);
+}
+.cw-btn-next:hover{background:rgba(0,255,200,.22);}
+.cw-btn-next:disabled{opacity:.3;cursor:default;}
+.cw-teacher-row{
+  display:flex;align-items:center;gap:8px;padding:8px 10px;
+  border-radius:var(--radius-sm);border:1px solid var(--border-subtle);
+  background:var(--surface-1);margin-bottom:6px;font-size:12px;
+  color:rgba(255,255,255,.7);
+}
+.cw-teacher-row .ct-name{flex:1;font-weight:600;}
+.cw-teacher-row .ct-email{font-size:10px;color:rgba(255,255,255,.35);}
+.cw-teacher-row button{
+  background:rgba(255,80,80,.08);border:1px solid rgba(255,80,80,.2);
+  color:rgba(255,100,100,.6);border-radius:6px;padding:3px 8px;
+  cursor:pointer;font-size:11px;transition:all .18s;font-family:inherit;
+}
+.cw-teacher-row button:hover{background:rgba(255,80,80,.16);color:#ff6b6b;}
+.cw-invite-row{display:flex;gap:6px;margin-top:8px;}
+.cw-invite-inp{
+  flex:1;padding:8px 12px;border-radius:var(--radius-sm);
+  border:1px solid var(--border-mid);background:rgba(255,255,255,.04);
+  color:var(--text-primary);font-size:12px;font-family:inherit;outline:none;
+  transition:border var(--transition-fast);
+}
+.cw-invite-inp:focus{border-color:var(--accent);}
+.cw-invite-inp::placeholder{color:rgba(255,255,255,.2);}
+.cw-invite-fb{font-size:11px;min-height:16px;margin-top:4px;}
+/* Courses screen — mostra "Crea" solo al direttore */
+#cs-add-form-wrap.teacher-mode{display:none;}
+
 @keyframes spin{to{transform:rotate(360deg);}}
+
 
 </style>
 </head>
@@ -1702,7 +1796,7 @@ body{
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v3.0.0</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v3.1.0</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -1756,7 +1850,7 @@ body{
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v3.0.0</span>
+        <span class="cs-logo-sub">ICDL Lab · v3.1.0</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v3.0.0 -->
@@ -1778,12 +1872,12 @@ body{
       <h1 class="cs-hero-title">Seleziona<br>la tua <span class="hl">aula</span></h1>
       <p class="cs-hero-sub">Ogni aula ha giocatori, classifiche e progressi dedicati.</p>
     </div>
-    <div class="cs-add-form">
+    <div class="cs-add-form" id="cs-add-form-wrap">
       <div class="slbl" style="margin-bottom:10px">Nuova aula</div>
       <div class="cs-add-row">
         <input id="cs-course-inp" class="cs-add-inp" placeholder="Es. 3A Informatica, 4B Marketing..." maxlength="40"
-          onkeydown="if(event.key==='Enter')addCourse()"/>
-        <button class="cs-add-btn" onclick="addCourse()"><i class="ti ti-plus"></i> Crea</button>
+          onkeydown="if(event.key==='Enter')openCourseWizard()"/>
+        <button class="cs-add-btn" onclick="openCourseWizard()"><i class="ti ti-plus"></i> Crea</button>
       </div>
     </div>
     <div class="slbl">Aule salvate</div>
@@ -1791,8 +1885,110 @@ body{
   </div>
 </div>
 
+<!-- ======================================
+     WIZARD NUOVA AULA — v3.1.0
+     Step 1: nome + icona
+     Step 2: moduli abilitati
+     Step 3: docenti assegnati
+====================================== -->
+<div id="course-wizard-overlay" class="hidden">
+  <div class="cw-box">
+
+    <!-- Indicatore step -->
+    <div class="cw-progress">
+      <div class="cw-dot active" id="cw-dot-1"></div>
+      <div class="cw-dot" id="cw-dot-2"></div>
+      <div class="cw-dot" id="cw-dot-3"></div>
+    </div>
+
+    <!-- STEP 1: Nome aula -->
+    <div class="cw-step active" id="cw-step-1">
+      <div class="cw-title">🏫 Nuova aula</div>
+      <div class="cw-subtitle">Scegli nome e icona per la tua aula. Potrai modificarli in seguito.</div>
+      <div style="margin-bottom:12px">
+        <div class="slbl" style="margin-bottom:6px">Nome aula</div>
+        <input id="cw-name-inp" class="cs-add-inp" placeholder="Es. 3A Informatica, 4B Marketing..." maxlength="40"
+          style="width:100%" onkeydown="if(event.key==='Enter')cwStep(2)"/>
+      </div>
+      <div style="margin-bottom:12px">
+        <div class="slbl" style="margin-bottom:8px">Icona</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px" id="cw-icon-grid"></div>
+      </div>
+      <div class="cw-btns">
+        <button class="cw-btn-back" onclick="closeCourseWizard()">Annulla</button>
+        <button class="cw-btn-next" id="cw-next-1" onclick="cwStep(2)">Moduli <i class="ti ti-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Moduli abilitati -->
+    <div class="cw-step" id="cw-step-2">
+      <div class="cw-title">📚 Moduli</div>
+      <div class="cw-subtitle">Seleziona i moduli che i docenti potranno usare in questa aula. Almeno uno è richiesto.</div>
+      <div class="cw-mod-grid" id="cw-mod-grid">
+        <button class="cw-mod-btn" data-mod="CE" onclick="cwToggleMod(this)">
+          <div class="cm-check">✓</div>
+          <span class="cm-icon">💻</span>
+          <div class="cm-name">Computer Essentials</div>
+          <div class="cm-desc">Hardware, software, OS</div>
+        </button>
+        <button class="cw-mod-btn" data-mod="OE" onclick="cwToggleMod(this)">
+          <div class="cm-check">✓</div>
+          <span class="cm-icon">🌐</span>
+          <div class="cm-name">Online Essentials</div>
+          <div class="cm-desc">Reti, protocolli, sicurezza</div>
+        </button>
+        <button class="cw-mod-btn cw-full-btn" data-mod="MIX" onclick="cwToggleMod(this)">
+          <div class="cm-check">✓</div>
+          <span class="cm-icon">🎯</span>
+          <div class="cm-name">Mix entrambi i moduli</div>
+          <div class="cm-desc">CE + OE — allenamento completo</div>
+        </button>
+      </div>
+      <div class="cw-btns">
+        <button class="cw-btn-back" onclick="cwStep(1)"><i class="ti ti-arrow-left"></i> Indietro</button>
+        <button class="cw-btn-next" id="cw-next-2" onclick="cwStep(3)" disabled>Docenti <i class="ti ti-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Docenti -->
+    <div class="cw-step" id="cw-step-3">
+      <div class="cw-title">👩‍🏫 Docenti</div>
+      <div class="cw-subtitle">Assegna i docenti che potranno accedere a questa aula. Puoi aggiungerne altri in seguito dal pannello ⚙️ Gestisci.</div>
+      <div id="cw-teacher-list" style="margin-bottom:10px;max-height:180px;overflow-y:auto"></div>
+      <div class="slbl" style="margin-bottom:6px">Aggiungi docente esistente</div>
+      <div class="cw-invite-row" style="margin-bottom:12px">
+        <select id="cw-teacher-select" class="dp-add-select" style="flex:1">
+          <option value="">— Seleziona docente —</option>
+        </select>
+        <button class="btn btn-neon" onclick="cwAddTeacher()" style="padding:8px 14px;font-size:12px">
+          <i class="ti ti-plus"></i>
+        </button>
+      </div>
+      <div class="slbl" style="margin-bottom:6px">Oppure invita tramite email</div>
+      <div class="cw-invite-row">
+        <input id="cw-invite-email" class="cw-invite-inp" type="email" placeholder="email@scuola.it"
+          onkeydown="if(event.key==='Enter')cwInviteTeacher()"/>
+        <input id="cw-invite-name" class="cw-invite-inp" placeholder="Nome" style="max-width:100px"
+          onkeydown="if(event.key==='Enter')cwInviteTeacher()"/>
+        <button class="btn btn-neon" onclick="cwInviteTeacher()" style="padding:8px 12px;font-size:12px">
+          <i class="ti ti-mail-forward"></i>
+        </button>
+      </div>
+      <div id="cw-invite-fb" class="cw-invite-fb"></div>
+      <div class="cw-btns" style="margin-top:1.25rem">
+        <button class="cw-btn-back" onclick="cwStep(2)"><i class="ti ti-arrow-left"></i> Indietro</button>
+        <button class="cw-btn-next" id="cw-btn-create" onclick="cwCreateClassroom()">
+          <i class="ti ti-check"></i> Crea aula
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 <!-- Dropdown menu aula -->
 <div id="course-dropdown" class="course-dropdown hidden">
+  <button class="cd-item" id="cd-manage" onclick="_cdManage()" style="display:none"><i class="ti ti-settings"></i> Gestisci aula</button>
   <button class="cd-item" onclick="cdAction('rename')"><i class="ti ti-pencil"></i> Rinomina</button>
   <button class="cd-item" onclick="cdAction('icon')"><i class="ti ti-mood-smile"></i> Cambia icona</button>
   <button class="cd-item" onclick="cdAction('bg')"><i class="ti ti-palette"></i> Personalizza colore</button>
@@ -1931,7 +2127,7 @@ body{
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v3.0.0</span>
+      <span class="logo-sub">ICDL Lab · v3.1.0</span>
     </div>
   </div>
   <!-- Course badge -->
@@ -4870,12 +5066,25 @@ function openCourseMenu(id,triggerEl){
   _ddCourseId=id;
   const dd=sh('course-dropdown');
   dd.classList.remove('hidden');
+  // Mostra "Gestisci" solo al direttore
+  const manageItem=sh('cd-manage');
+  if(manageItem) manageItem.style.display=window.Auth?.isDirector()?'':'none';
   // Position near trigger
   const rect=triggerEl.getBoundingClientRect();
   dd.style.top=(rect.bottom+6)+'px';
   dd.style.left=Math.min(rect.left, window.innerWidth-180)+'px';
   // Close on outside click
   setTimeout(()=>document.addEventListener('click',closeCourseMenuOutside,{once:true}),10);
+}
+
+function _cdManage(){
+  const id=_ddCourseId;
+  closeCourseMenu();
+  if(!id) return;
+  _dpClassroomId=id;
+  sh('dp-overlay').classList.remove('hidden');
+  sh('dp-invite-fb').textContent='';
+  Promise.all([_dpLoadTeachers(), _dpLoadTeacherSelect(), _dpLoadModules()]);
 }
 
 function closeCourseMenuOutside(e){
@@ -5117,11 +5326,11 @@ function closeBgPicker(){
 }
 
 /* ==================================================
-   APP STATE v3.0.0  contesto globale sessione
+   APP STATE v3.1.0
 ================================================== */
 const appState = {
-  teacher:   null,   // { id, name, role } — da Auth.getProfile()
-  classroom: null,   // { id, name, icon, colorIdx, bgIdx, createdAt }
+  teacher:   null,
+  classroom: null,
 };
 
 /* ==================================================
@@ -5131,18 +5340,13 @@ async function doLogin(){
   const email = sh('login-email')?.value.trim() ?? '';
   const pwd   = sh('login-pwd')?.value ?? '';
   if(!email || !pwd){ _showLoginError('Inserisci email e password.'); return; }
-
   const btn = sh('login-submit-btn');
   btn.disabled = true;
-  btn.innerHTML = '<i class="ti ti-loader-2" style="animation:spin .8s linear infinite"></i> Accesso…';
-
+  btn.innerHTML = '<i class="ti ti-loader-2" style="animation:spin .8s linear infinite"></i> Accesso...';
   const res = await window.Auth.login(email, pwd);
-
   btn.disabled = false;
   btn.innerHTML = '<i class="ti ti-login"></i> Accedi';
-
   if(!res.ok){ _showLoginError(res.error || 'Credenziali non valide.'); return; }
-
   sh('login-error').classList.remove('visible');
   await _afterLogin();
 }
@@ -5154,32 +5358,42 @@ function _showLoginError(msg){
 
 async function _afterLogin(){
   appState.teacher = window.Auth.getProfile();
+  const isDir = window.Auth.isDirector();
 
-  // Aggiorna badge docente nella cs-topbar
+  // Badge topbar
   const nameEl    = sh('cs-teacher-name');
   const dirBadge  = sh('cs-director-badge');
   const manageBtn = sh('cs-manage-btn');
   if(nameEl)    nameEl.textContent = appState.teacher?.name || window.Auth.getName();
-  if(dirBadge)  dirBadge.classList.toggle('hidden', !window.Auth.isDirector());
-  if(manageBtn) manageBtn.classList.toggle('hidden', !window.Auth.isDirector());
+  if(dirBadge)  dirBadge.classList.toggle('hidden', !isDir);
+  if(manageBtn) manageBtn.classList.toggle('hidden', !isDir);
 
-  // Nasconde login, mostra courses
+  // Il form "Crea aula" e' solo per il direttore
+  const addForm = sh('cs-add-form-wrap');
+  if(addForm) addForm.classList.toggle('teacher-mode', !isDir);
+
   sh('screen-login').classList.add('hidden');
   const cs = sh('screen-courses');
   cs.classList.remove('hidden');
   cs.classList.add('entering');
   setTimeout(()=>cs.classList.remove('entering'), 400);
 
-  // Carica aule dal cloud (o localStorage come fallback)
   await _reloadCourses();
-  sh('cs-course-inp')?.focus();
 }
 
+/* Carica le aule dal cloud e aggiorna la griglia.
+   - Il direttore vede TUTTE le aule.
+   - Un docente vede SOLO le aule a cui e' assegnato.
+   La RPC get_teacher_classrooms filtra gia' lato DB. */
 async function _reloadCourses(){
   const teacherId = window.Auth?.getUserId();
   if(!teacherId || !window.DB){ renderCoursesGrid(); return; }
-  const list = await window.DB.loadClassrooms(teacherId);
-  try{ localStorage.setItem('pp5_courses', JSON.stringify(list)); }catch{}
+  try{
+    const list = await window.DB.loadClassrooms(teacherId);
+    localStorage.setItem('pp5_courses', JSON.stringify(list||[]));
+  }catch(e){
+    console.warn('[PixelProf] _reloadCourses fallback localStorage:', e);
+  }
   renderCoursesGrid();
 }
 
@@ -5206,56 +5420,243 @@ async function _performLogout(){
 }
 
 /* ==================================================
-   MODULI PER AULA  filtra le card hardcoded
-   enabledKeys = null   mostra tutti
-   enabledKeys = array  mostra solo quelle chiavi
+   FILTRO MODULI — applica i moduli abilitati per l'aula
+   keys=null => tutti visibili; keys=[] => nessuno
 ================================================== */
 async function _applyModuleFilter(classroomId){
   if(!window.DB) return;
-  const keys = await window.DB.getEnabledModules(classroomId);
-  const ALL  = ['CE','OE','MIX','WP','SS'];
+  let keys = null;
+  try{ keys = await window.DB.getEnabledModules(classroomId); }catch(e){}
+  const ALL = ['CE','OE','MIX','WP','SS'];
   ALL.forEach(k=>{
     const card = sh('mc-'+k);
     if(!card) return;
-    card.style.display = (keys === null || keys.includes(k)) ? '' : 'none';
+    // keys=null o [] => mostra tutto; altrimenti filtra
+    const show = !keys || keys.length===0 || keys.includes(k);
+    card.style.display = show ? '' : 'none';
   });
 }
 
 /* ==================================================
-   OVERRIDE addCourse  cloud-first
+   WIZARD NUOVA AULA — v3.1.0
+   State locale del wizard
 ================================================== */
-const _addCourse_orig = addCourse;
-addCourse = async function(){
-  const inp  = sh('cs-course-inp');
-  const name = inp?.value.trim();
-  if(!name) return;
+const _cw = {
+  step:       1,
+  name:       '',
+  icon:       '🏫',
+  mods:       [],        // chiavi moduli selezionati
+  teachers:   [],        // [{id,name}] assegnati
+  pendingMods:[],        // buffer per step 2
+};
+
+function openCourseWizard(){
+  if(!window.Auth?.isDirector()){
+    alert('Solo il direttore puo\' creare nuove aule.');
+    return;
+  }
+  // Reset stato
+  _cw.step=1; _cw.name=''; _cw.icon='🏫'; _cw.mods=[]; _cw.teachers=[];
+  const inp = sh('cw-name-inp');
+  if(inp) inp.value='';
+
+  // Render icone
+  const ig = sh('cw-icon-grid');
+  if(ig) ig.innerHTML = COURSE_ICONS.map(ic=>
+    `<button class="icp-btn${_cw.icon===ic?' selected':''}" onclick="_cwPickIcon('${escAttr(ic)}')">${ic}</button>`
+  ).join('');
+
+  _cwGoStep(1);
+  sh('course-wizard-overlay').classList.remove('hidden');
+  setTimeout(()=>inp?.focus(), 100);
+}
+
+function closeCourseWizard(){
+  sh('course-wizard-overlay').classList.add('hidden');
+}
+
+function _cwPickIcon(ic){
+  _cw.icon=ic;
+  document.querySelectorAll('#cw-icon-grid .icp-btn').forEach(b=>b.classList.toggle('selected', b.textContent.trim()===ic));
+}
+
+function _cwGoStep(n){
+  _cw.step=n;
+  [1,2,3].forEach(i=>{
+    sh('cw-step-'+i)?.classList.toggle('active', i===n);
+    const dot=sh('cw-dot-'+i);
+    if(dot){ dot.classList.toggle('done', i<n); dot.classList.toggle('active', i===n); }
+  });
+  if(n===2) _cwInitModStep();
+  if(n===3) _cwInitTeacherStep();
+}
+
+// Step nav globale
+function cwStep(n){
+  if(n===2){
+    const name=(sh('cw-name-inp')?.value||'').trim();
+    if(!name){ sh('cw-name-inp')?.focus(); sh('cw-name-inp')?.classList.add('error'); return; }
+    sh('cw-name-inp')?.classList.remove('error');
+    _cw.name=name;
+  }
+  if(n===3){
+    if(_cw.mods.length===0){ alert('Seleziona almeno un modulo.'); return; }
+  }
+  _cwGoStep(n);
+}
+
+/* --- Step 2: Moduli --- */
+function _cwInitModStep(){
+  // Ripristina selezione precedente
+  document.querySelectorAll('#cw-mod-grid .cw-mod-btn').forEach(btn=>{
+    const mod=btn.dataset.mod;
+    btn.classList.toggle('active', _cw.mods.includes(mod));
+  });
+  _cwUpdateModNext();
+}
+
+function cwToggleMod(btn){
+  const mod = btn.dataset.mod;
+  const idx = _cw.mods.indexOf(mod);
+  if(idx>=0) _cw.mods.splice(idx,1);
+  else _cw.mods.push(mod);
+  btn.classList.toggle('active', _cw.mods.includes(mod));
+  _cwUpdateModNext();
+}
+
+function _cwUpdateModNext(){
+  const next = sh('cw-next-2');
+  if(next) next.disabled = _cw.mods.length===0;
+}
+
+/* --- Step 3: Docenti --- */
+async function _cwInitTeacherStep(){
+  // Carica lista docenti disponibili nel select
+  const sel = sh('cw-teacher-select');
+  if(sel){
+    sel.innerHTML='<option value="">— Seleziona docente —</option>';
+    try{
+      const teachers = await window.Auth.listTeachers();
+      (teachers||[]).forEach(t=>{
+        const o=document.createElement('option');
+        o.value=t.id; o.textContent=t.name||t.id;
+        sel.appendChild(o);
+      });
+    }catch(e){}
+  }
+  _cwRenderTeachers();
+  const fb=sh('cw-invite-fb'); if(fb) fb.textContent='';
+  const ei=sh('cw-invite-email'); if(ei) ei.value='';
+  const ni=sh('cw-invite-name'); if(ni) ni.value='';
+}
+
+function _cwRenderTeachers(){
+  const el = sh('cw-teacher-list');
+  if(!el) return;
+  if(!_cw.teachers.length){
+    el.innerHTML='<div style="font-size:12px;color:rgba(255,255,255,.3);margin-bottom:8px">Nessun docente aggiunto ancora (facoltativo)</div>';
+    return;
+  }
+  el.innerHTML = _cw.teachers.map((t,i)=>`
+    <div class="cw-teacher-row">
+      <div><div class="ct-name">${escHtml(t.name)}</div><div class="ct-email">${escHtml(t.id)}</div></div>
+      <button onclick="_cwRemoveTeacher(${i})">Rimuovi</button>
+    </div>`).join('');
+}
+
+function _cwRemoveTeacher(i){
+  _cw.teachers.splice(i,1);
+  _cwRenderTeachers();
+}
+
+function cwAddTeacher(){
+  const sel=sh('cw-teacher-select');
+  if(!sel||!sel.value) return;
+  const id=sel.value;
+  const name=sel.options[sel.selectedIndex].text;
+  if(_cw.teachers.find(t=>t.id===id)) return;
+  _cw.teachers.push({id,name});
+  sel.value='';
+  _cwRenderTeachers();
+}
+
+async function cwInviteTeacher(){
+  const email=(sh('cw-invite-email')?.value||'').trim();
+  const name =(sh('cw-invite-name')?.value||'').trim();
+  const fb   = sh('cw-invite-fb');
+  if(!email){ if(fb){fb.style.color='#ff6b6b';fb.textContent='Inserisci email valida.';} return; }
+  if(fb){fb.style.color='rgba(255,255,255,.4)';fb.textContent='Invio...';}
+  try{
+    const res = await window.Auth.inviteTeacher(email, name||email);
+    if(res.ok){
+      if(fb){fb.style.color='#00ff96';fb.textContent='Invito inviato a '+email;}
+      if(sh('cw-invite-email')) sh('cw-invite-email').value='';
+      if(sh('cw-invite-name'))  sh('cw-invite-name').value='';
+      // Aggiunge direttamente alla lista in attesa
+      if(res.userId) _cw.teachers.push({id:res.userId,name:name||email});
+      _cwRenderTeachers();
+      await _cwInitTeacherStep();
+    } else {
+      if(fb){fb.style.color='#ff6b6b';fb.textContent='Errore: '+(res.error||'sconosciuto');}
+    }
+  }catch(e){
+    if(fb){fb.style.color='#ff6b6b';fb.textContent='Errore di rete.';}
+  }
+}
+
+/* --- Creazione finale --- */
+async function cwCreateClassroom(){
+  const btn = sh('cw-btn-create');
+  if(btn){ btn.disabled=true; btn.innerHTML='<i class="ti ti-loader-2" style="animation:spin .8s linear infinite"></i> Creazione...'; }
 
   const teacherId = window.Auth?.getUserId();
-  if(!teacherId || !window.DB){ _addCourse_orig(); return; }
+  if(!teacherId || !window.DB){
+    if(btn){ btn.disabled=false; btn.innerHTML='<i class="ti ti-check"></i> Crea aula'; }
+    alert('Errore: sessione non valida.'); return;
+  }
 
   const courses  = loadCourses();
   const colorIdx = courses.length % COLOR_PALETTE.length;
-  const iconIdx  = courses.length % COURSE_ICONS.length;
 
+  // 1. Crea aula su Supabase
   const res = await window.DB.createClassroom(teacherId, {
-    name,
-    icon:     COURSE_ICONS[iconIdx],
+    name:     _cw.name,
+    icon:     _cw.icon,
     colorIdx,
     bgIdx:    colorIdx,
   });
 
-  if(!res.ok){ console.error('[PixelProf] createClassroom:', res.error); _addCourse_orig(); return; }
+  if(!res.ok){
+    console.error('[PixelProf] createClassroom:', res.error);
+    if(btn){ btn.disabled=false; btn.innerHTML='<i class="ti ti-check"></i> Crea aula'; }
+    alert('Errore creazione aula: '+res.error); return;
+  }
 
-  inp.value = '';
-  renderCoursesGrid();
+  const classroomId = res.course?.id || res.id;
+
+  // 2. Salva moduli abilitati
+  if(_cw.mods.length > 0){
+    await window.DB.setEnabledModules(classroomId, _cw.mods).catch(e=>console.warn('[PixelProf] setEnabledModules:', e));
+  }
+
+  // 3. Assegna docenti
+  for(const t of _cw.teachers){
+    await window.DB.assignTeacherToClassroom(classroomId, t.id).catch(e=>console.warn('[PixelProf] assignTeacher:', e));
+  }
+
+  // 4. Chiudi wizard e ricarica griglia
+  closeCourseWizard();
+  await _reloadCourses();
+
+  // Flash sulla card creata
   setTimeout(()=>{
-    const card = document.querySelector('[data-course-id="'+res.course.id+'"]');
-    if(card){ card.style.boxShadow='0 0 0 2px #00ffc8'; setTimeout(()=>{ card.style.boxShadow=''; },1200); }
-  }, 80);
-};
+    const card=document.querySelector('[data-course-id="'+classroomId+'"]');
+    if(card){ card.style.boxShadow='0 0 0 2px #00ffc8'; setTimeout(()=>card.style.boxShadow='',1400); }
+  }, 120);
+}
 
 /* ==================================================
-   OVERRIDE enterCourse  salva in appState + filtra moduli
+   OVERRIDE enterCourse — salva appState + filtra moduli
 ================================================== */
 const _enterCourse_orig = enterCourse;
 enterCourse = async function(id){
@@ -5268,7 +5669,7 @@ enterCourse = async function(id){
 };
 
 /* ==================================================
-   OVERRIDE cdAction  propaga al cloud
+   OVERRIDE cdAction — propaga modifiche al cloud
 ================================================== */
 const _cdAction_orig = cdAction;
 cdAction = async function(action){
@@ -5284,9 +5685,7 @@ cdAction = async function(action){
     const newName = prompt('Nuovo nome aula:', courses[idx].name);
     if(!newName||!newName.trim()) return;
     await window.DB.updateClassroom(id, { name: newName.trim() });
-    courses[idx].name = newName.trim();
-    saveCourses(courses);
-    renderCoursesGrid();
+    await _reloadCourses();
   } else if(action==='icon'){
     openIconPicker(id);
   } else if(action==='bg'){
@@ -5295,17 +5694,20 @@ cdAction = async function(action){
     if(!confirm('Eliminare l\'aula "'+courses[idx].name+'" e tutti i suoi dati?')) return;
     await window.DB.deleteClassroom(id);
     if(activeCourseId===id){ activeCourseId=null; appState.classroom=null; db=makeEmptyDb(); goCoursesFromApp(); }
-    renderCoursesGrid();
+    await _reloadCourses();
   }
 };
 
 /* ==================================================
-   OVERRIDE pickIcon + _cpSaveAndUpdateCard  sync cloud
+   OVERRIDE pickIcon + _cpSaveAndUpdateCard — sync cloud
 ================================================== */
 const _pickIcon_orig = pickIcon;
 pickIcon = async function(icon){
   _pickIcon_orig(icon);
-  if(window.DB && _ipCourseId) await window.DB.updateClassroom(_ipCourseId, { icon }).catch(()=>{});
+  if(window.DB && _ipCourseId){
+    await window.DB.updateClassroom(_ipCourseId, { icon }).catch(()=>{});
+    await _reloadCourses();
+  }
 };
 
 const _cpSave_orig = _cpSaveAndUpdateCard;
@@ -5317,7 +5719,7 @@ _cpSaveAndUpdateCard = function(){
 };
 
 /* ==================================================
-   OVERRIDE saveLbEntry  aggiunge hook cloud (fire-and-forget)
+   OVERRIDE saveLbEntry — hook cloud fire-and-forget
 ================================================== */
 const _saveLbEntry_orig = saveLbEntry;
 saveLbEntry = function(player, pts, act, mod){
@@ -5326,7 +5728,7 @@ saveLbEntry = function(player, pts, act, mod){
 };
 
 /* ==================================================
-   OVERRIDE saveSessionResult  aggiunge hook cloud
+   OVERRIDE saveSessionResult — hook cloud
 ================================================== */
 const _saveSession_orig = saveSessionResult;
 saveSessionResult = function(act, mod){
@@ -5335,12 +5737,12 @@ saveSessionResult = function(act, mod){
     const participants = sMode==='sq' && matchState.teams.length
       ? matchState.teams.map(t=>({name:t.name,color:t.color,score:matchState.scores[t.name]||0,type:'sq'}))
       : players.map(p=>({name:p.name,color:p.color,score:qScores[p.name]||0,type:'ind'}));
-    window.hook_saveSession(act, mod, sMode, participants, null, qPool.length||null);
+    window.hook_saveSession(act, mod, sMode, participants, activeCourseId, qPool.length||null);
   }
 };
 
 /* ==================================================
-   OVERRIDE ansQ  hook statistiche (applicato dopo inizializzazione)
+   OVERRIDE ansQ — hook statistiche
 ================================================== */
 setTimeout(()=>{
   const _ansQ_orig = ansQ;
@@ -5355,7 +5757,7 @@ setTimeout(()=>{
 }, 0);
 
 /* ==================================================
-   OVERRIDE launch  hook ensureParticipants
+   OVERRIDE launch — hook ensureParticipants
 ================================================== */
 const _launch_orig = launch;
 launch = async function(){
@@ -5374,10 +5776,12 @@ launch = async function(){
 };
 
 /* ==================================================
-   DIRECTOR PANEL  gestione docenti e moduli per aula
+   DIRECTOR PANEL — gestione docenti e moduli per aula
+   Accessibile dal pulsante Gestisci nella cs-topbar
+   (apre direttamente sul dropdown card o sull'aula attiva)
 ================================================== */
-let _dpClassroomId     = null;
-let _dpEnabledModules  = [];
+let _dpClassroomId    = null;
+let _dpEnabledModules = [];
 
 const ALL_MODULES = [
   { key:'CE',  label:'Computer Essentials' },
@@ -5390,13 +5794,11 @@ const ALL_MODULES = [
 async function openDirectorPanel(){
   if(!window.Auth?.isDirector()) return;
   _dpClassroomId = _ddCourseId || activeCourseId;
-  if(!_dpClassroomId){ alert('Seleziona prima un\'aula.'); return; }
+  if(!_dpClassroomId){ alert('Seleziona prima un\'aula dal menu (tasto ...)'); return; }
   closeCourseMenu();
   sh('dp-overlay').classList.remove('hidden');
   sh('dp-invite-fb').textContent = '';
-  await _dpLoadTeachers();
-  await _dpLoadTeacherSelect();
-  await _dpLoadModules();
+  await Promise.all([_dpLoadTeachers(), _dpLoadTeacherSelect(), _dpLoadModules()]);
 }
 
 function closeDirectorPanel(){
@@ -5405,42 +5807,43 @@ function closeDirectorPanel(){
 }
 
 async function _dpLoadTeachers(){
-  const list = await window.DB.getClassroomTeachers(_dpClassroomId);
+  const list = await window.DB.getClassroomTeachers(_dpClassroomId).catch(()=>[]);
   const el   = sh('dp-teacher-list');
+  if(!el) return;
   if(!list || !list.length){
-    el.innerHTML = '<div style="font-size:12px;color:rgba(255,255,255,.3)">Nessun docente assegnato</div>';
+    el.innerHTML='<div style="font-size:12px;color:rgba(255,255,255,.3)">Nessun docente assegnato</div>';
     return;
   }
   el.innerHTML = list.map(t=>`
     <div class="dp-teacher-row">
       <span>${escHtml(t.name||t.id)}</span>
-      <button onclick="dpRemoveTeacher('${escAttr(t.id)}')" title="Rimuovi">×</button>
+      <button onclick="dpRemoveTeacher('${escAttr(t.id)}')" title="Rimuovi">x</button>
     </div>`).join('');
 }
 
 async function _dpLoadTeacherSelect(){
-  const teachers = await window.Auth.listTeachers();
+  const teachers = await window.Auth.listTeachers().catch(()=>[]);
   const sel = sh('dp-teacher-select');
+  if(!sel) return;
   sel.innerHTML = '<option value="">— Seleziona docente —</option>';
   (teachers||[]).forEach(t=>{
     const opt = document.createElement('option');
-    opt.value       = t.id;
-    opt.textContent = t.name || t.id;
+    opt.value = t.id; opt.textContent = t.name||t.id;
     sel.appendChild(opt);
   });
 }
 
 async function dpAssignTeacher(){
   const sel = sh('dp-teacher-select');
-  if(!sel.value) return;
-  await window.DB.assignTeacherToClassroom(_dpClassroomId, sel.value);
-  sel.value = '';
+  if(!sel||!sel.value) return;
+  await window.DB.assignTeacherToClassroom(_dpClassroomId, sel.value).catch(()=>{});
+  sel.value='';
   await _dpLoadTeachers();
 }
 
 async function dpRemoveTeacher(teacherId){
   if(!confirm('Rimuovere il docente dall\'aula?')) return;
-  await window.DB.removeTeacherFromClassroom(_dpClassroomId, teacherId);
+  await window.DB.removeTeacherFromClassroom(_dpClassroomId, teacherId).catch(()=>{});
   await _dpLoadTeachers();
 }
 
@@ -5448,25 +5851,28 @@ async function dpInviteTeacher(){
   const email = sh('dp-invite-email')?.value.trim();
   const name  = sh('dp-invite-name')?.value.trim();
   const fb    = sh('dp-invite-fb');
-  if(!email){ fb.style.color='#ff6b6b'; fb.textContent='Inserisci una email valida.'; return; }
-  fb.style.color='rgba(255,255,255,.4)'; fb.textContent='Invio in corso…';
-  const res = await window.Auth.inviteTeacher(email, name||email);
-  if(res.ok){
-    fb.style.color='#00ff96';
-    fb.textContent='✓ Invito inviato a '+email;
-    sh('dp-invite-email').value='';
-    sh('dp-invite-name').value='';
-    await _dpLoadTeacherSelect();
-  } else {
-    fb.style.color='#ff6b6b';
-    fb.textContent='✗ '+res.error;
+  if(!email){ if(fb){fb.style.color='#ff6b6b';fb.textContent='Inserisci email valida.';} return; }
+  if(fb){fb.style.color='rgba(255,255,255,.4)';fb.textContent='Invio...';}
+  try{
+    const res = await window.Auth.inviteTeacher(email, name||email);
+    if(res.ok){
+      if(fb){fb.style.color='#00ff96';fb.textContent='Invito inviato a '+email;}
+      if(sh('dp-invite-email')) sh('dp-invite-email').value='';
+      if(sh('dp-invite-name'))  sh('dp-invite-name').value='';
+      await _dpLoadTeacherSelect();
+    } else {
+      if(fb){fb.style.color='#ff6b6b';fb.textContent='Errore: '+(res.error||'sconosciuto');}
+    }
+  }catch(e){
+    if(fb){fb.style.color='#ff6b6b';fb.textContent='Errore di rete.';}
   }
 }
 
 async function _dpLoadModules(){
-  const enabled = await window.DB.getEnabledModules(_dpClassroomId);
+  const enabled = await window.DB.getEnabledModules(_dpClassroomId).catch(()=>null);
   _dpEnabledModules = enabled ? [...enabled] : [];
   const grid = sh('dp-mod-grid');
+  if(!grid) return;
   grid.innerHTML = ALL_MODULES.map(m=>`
     <button class="mod-toggle-btn${_dpEnabledModules.includes(m.key)?' active':''}"
       data-modkey="${escAttr(m.key)}"
@@ -5484,38 +5890,31 @@ function dpToggleModule(key, btn){
 
 async function dpSaveModules(){
   if(!_dpClassroomId) return;
-  const res = await window.DB.setEnabledModules(_dpClassroomId, _dpEnabledModules);
-  if(res.ok){
+  const res = await window.DB.setEnabledModules(_dpClassroomId, _dpEnabledModules).catch(e=>({ok:false,error:e.message}));
+  if(res && res.ok){
     if(_dpClassroomId === activeCourseId) await _applyModuleFilter(_dpClassroomId);
     closeDirectorPanel();
   } else {
-    alert('Errore salvataggio moduli: '+res.error);
+    alert('Errore salvataggio moduli: '+(res?.error||'sconosciuto'));
   }
 }
 
-// SPLASH + INIT v3.0.0
+/* ==================================================
+   SPLASH + INIT v3.1.0
+================================================== */
 (function initApp(){
   const app = document.querySelector('.app');
   app.style.display = 'none';
-
   const splash = sh('screen-splash');
 
-  // Dopo 1.8s avvia exit animation del splash
   setTimeout(()=>{
     splash.classList.add('splash-exit');
-
     setTimeout(async ()=>{
       splash.classList.add('hidden');
-
-      // Attende che Auth, DB e Hooks siano pronti (o timeout 6s)
       if(window.__appBootstrap) await window.__appBootstrap;
-
-      // Controlla se c' gi una sessione attiva (es. refresh pagina)
       if(window.Auth && window.Auth.isLoggedIn()){
-        // Sessione valida  vai direttamente alle aule
         await _afterLogin();
       } else {
-        // Nessuna sessione  mostra schermata login
         sh('screen-login').classList.remove('hidden');
       }
     }, 500);

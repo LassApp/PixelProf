@@ -1,10 +1,14 @@
 /**
- * auth.js — PixelProf v3.0.0
+ * auth.js — PixelProf v3.1.1
  *
- * Gestione autenticazione docente con Supabase Auth nativo.
- * Espone window.Auth — usato dall'HTML inline.
- *
- * NUOVO in v3: questo file non esisteva nelle versioni precedenti.
+ * FIX v3.1.1:
+ *   1. Aggiunto flag _profileLoaded: il profilo (e il ruolo) viene caricato
+ *      UNA SOLA VOLTA dopo il login. onAuthStateChange SIGNED_IN (token refresh)
+ *      NON sovrascrive più il profilo → risolve il bug director→teacher.
+ *   2. Rimosso auth.admin.inviteUserByEmail (richiede service_role, causa 403).
+ *      Sostituito con RPC server-side 'invite_teacher'.
+ *   3. Aggiunto logout() che resetta anche _profileLoaded per permettere
+ *      un nuovo login corretto.
  */
 
 import { supabase } from './supabase_client.js';
@@ -12,6 +16,7 @@ import { supabase } from './supabase_client.js';
 // ── State interno ────────────────────────────────────────────────
 let _currentUser    = null;   // oggetto auth.User di Supabase
 let _currentProfile = null;   // riga da profiles { id, name, role }
+let _profileLoaded  = false;  // LOCK: profilo caricato una sola volta per sessione
 
 // ════════════════════════════════════════════════════════════════════
 // INIT — ripristina la sessione esistente al caricamento pagina
@@ -23,27 +28,41 @@ async function init() {
     await _loadProfile(session.user.id);
   }
 
-  // Ascolta cambiamenti di sessione (logout da altro tab, token refresh…)
+  // Ascolta cambiamenti di sessione
+  // ATTENZIONE: SIGNED_IN viene emesso anche su token refresh — NON ricaricare
+  // il profilo in quel caso, altrimenti il ruolo potrebbe cambiare a runtime.
   supabase.auth.onAuthStateChange(async (event, session) => {
     if (event === 'SIGNED_IN' && session?.user) {
       _currentUser = session.user;
+      // _loadProfile ha il guard interno: se già caricato, non fa nulla
       await _loadProfile(session.user.id);
     } else if (event === 'SIGNED_OUT') {
       _currentUser    = null;
       _currentProfile = null;
+      _profileLoaded  = false;  // reset lock: permette nuovo login
     }
   });
 }
 
-// ── Carica profilo (name, role) dalla tabella profiles ────────────
+// ── Carica profilo UNA SOLA VOLTA per sessione ────────────────────
 async function _loadProfile(userId) {
+  if (_profileLoaded) {
+    // Token refresh o doppia chiamata: NON sovrascrivere il profilo esistente
+    console.log('[Auth] _loadProfile skip — profilo già caricato, ruolo immutabile');
+    return;
+  }
   try {
     const { data, error } = await supabase
       .from('profiles')
       .select('id, name, role')
       .eq('id', userId)
       .single();
-    if (!error && data) _currentProfile = data;
+    if (!error && data) {
+      _currentProfile = data;
+      _profileLoaded  = true;
+      console.log('[PROFILE INIT]', _currentProfile);
+      console.log('[ROLE BEFORE CLASSROOM]', _currentProfile.role);
+    }
   } catch (err) {
     console.warn('[Auth] _loadProfile fallito:', err.message);
   }
@@ -61,27 +80,29 @@ async function login(email, password) {
 }
 
 // ════════════════════════════════════════════════════════════════════
-// LOGOUT
+// LOGOUT — resetta tutto incluso il lock profilo
 // ════════════════════════════════════════════════════════════════════
 async function logout() {
   await supabase.auth.signOut();
   _currentUser    = null;
   _currentProfile = null;
+  _profileLoaded  = false;
 }
 
 // ════════════════════════════════════════════════════════════════════
 // INVITA DOCENTE — solo direttore
-// Usa inviteUserByEmail: manda email con link per impostare la password.
-// Il trigger handle_new_user imposta role = 'teacher' di default.
+// FIX: usa RPC server-side invece di auth.admin.inviteUserByEmail
+// (auth.admin richiede service_role key — non disponibile lato client → 403)
 // ════════════════════════════════════════════════════════════════════
 async function inviteTeacher(email, name) {
   if (!isDirector()) return { ok: false, error: 'Permesso negato' };
   try {
-    const { data, error } = await supabase.auth.admin.inviteUserByEmail(email, {
-      data: { name, role: 'teacher' },
+    const { data, error } = await supabase.rpc('invite_teacher', {
+      p_email: email,
+      p_name:  name || email,
     });
     if (error) throw error;
-    return { ok: true, user: data.user };
+    return { ok: true, userId: data?.user_id ?? null };
   } catch (err) {
     return { ok: false, error: err.message };
   }
@@ -118,7 +139,6 @@ function isDirector() { return _currentProfile?.role === 'director'; }
 
 // ════════════════════════════════════════════════════════════════════
 // ESPORTAZIONE su window.Auth
-// L'HTML inline (non ES module) usa window.Auth.login() ecc.
 // ════════════════════════════════════════════════════════════════════
 window.Auth = {
   init,

@@ -1,112 +1,173 @@
 /**
- * invite_teacher — Supabase Edge Function
- * PixelProf v3.1.1
+ * auth.js — PixelProf v3.1.1
  *
- * Invita un nuovo docente tramite Supabase Admin API.
- * Usa la service_role key (disponibile solo server-side).
- *
- * Endpoint: POST /functions/v1/invite_teacher
- * Body JSON: { email: string, name: string }
- * Auth: richiede JWT del direttore (verificato internamente)
- *
- * Risposta OK:  { ok: true, user_id: string }
- * Risposta ERR: { ok: false, error: string }
+ * FIX v3.1.1:
+ *   1. Aggiunto flag _profileLoaded: il profilo (e il ruolo) viene caricato
+ *      UNA SOLA VOLTA dopo il login. onAuthStateChange SIGNED_IN (token refresh)
+ *      NON sovrascrive più il profilo → risolve il bug director→teacher.
+ *   2. Rimosso auth.admin.inviteUserByEmail (richiede service_role, causa 403).
+ *      Sostituito con Edge Function 'invite_teacher' (fetch + Bearer token).
+ *   3. Aggiunto logout() che resetta anche _profileLoaded per permettere
+ *      un nuovo login corretto.
  */
 
-import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { supabase } from './supabase_client.js';
 
-const corsHeaders = {
-  'Access-Control-Allow-Origin':  '*',
-  'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
-  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+// ── State interno ────────────────────────────────────────────────
+let _currentUser    = null;   // oggetto auth.User di Supabase
+let _currentProfile = null;   // riga da profiles { id, name, role }
+let _profileLoaded  = false;  // LOCK: profilo caricato una sola volta per sessione
+
+// ════════════════════════════════════════════════════════════════════
+// INIT — ripristina la sessione esistente al caricamento pagina
+// ════════════════════════════════════════════════════════════════════
+async function init() {
+  const { data: { session } } = await supabase.auth.getSession();
+  if (session?.user) {
+    _currentUser = session.user;
+    await _loadProfile(session.user.id);
+  }
+
+  // Ascolta cambiamenti di sessione
+  // ATTENZIONE: SIGNED_IN viene emesso anche su token refresh — NON ricaricare
+  // il profilo in quel caso, altrimenti il ruolo potrebbe cambiare a runtime.
+  supabase.auth.onAuthStateChange(async (event, session) => {
+    if (event === 'SIGNED_IN' && session?.user) {
+      _currentUser = session.user;
+      // _loadProfile ha il guard interno: se già caricato, non fa nulla
+      await _loadProfile(session.user.id);
+    } else if (event === 'SIGNED_OUT') {
+      _currentUser    = null;
+      _currentProfile = null;
+      _profileLoaded  = false;  // reset lock: permette nuovo login
+    }
+  });
+}
+
+// ── Carica profilo UNA SOLA VOLTA per sessione ────────────────────
+async function _loadProfile(userId) {
+  if (_profileLoaded) {
+    // Token refresh o doppia chiamata: NON sovrascrivere il profilo esistente
+    console.log('[Auth] _loadProfile skip — profilo già caricato, ruolo immutabile');
+    return;
+  }
+  try {
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('id, name, role')
+      .eq('id', userId)
+      .single();
+    if (!error && data) {
+      _currentProfile = data;
+      _profileLoaded  = true;
+      console.log('[PROFILE INIT]', _currentProfile);
+      console.log('[ROLE BEFORE CLASSROOM]', _currentProfile.role);
+    }
+  } catch (err) {
+    console.warn('[Auth] _loadProfile fallito:', err.message);
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════
+// LOGIN — email + password
+// ════════════════════════════════════════════════════════════════════
+async function login(email, password) {
+  const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+  if (error) return { ok: false, error: error.message };
+  _currentUser = data.user;
+  await _loadProfile(data.user.id);
+  return { ok: true };
+}
+
+// ════════════════════════════════════════════════════════════════════
+// LOGOUT — resetta tutto incluso il lock profilo
+// ════════════════════════════════════════════════════════════════════
+async function logout() {
+  await supabase.auth.signOut();
+  _currentUser    = null;
+  _currentProfile = null;
+  _profileLoaded  = false;
+}
+
+// ════════════════════════════════════════════════════════════════════
+// INVITA DOCENTE — solo direttore
+// Chiama la Edge Function 'invite_teacher' che usa service_role server-side.
+// L'Edge Function verifica il JWT e il ruolo prima di procedere.
+// ════════════════════════════════════════════════════════════════════
+async function inviteTeacher(email, name) {
+  if (!isDirector()) return { ok: false, error: 'Permesso negato' };
+  try {
+    // Recupera la sessione corrente per il Bearer token
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) return { ok: false, error: 'Sessione non valida' };
+
+    const res = await fetch(
+      `${supabase.supabaseUrl}/functions/v1/invite_teacher`,
+      {
+        method:  'POST',
+        headers: {
+          'Content-Type':  'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+          'apikey':        supabase.supabaseKey,
+        },
+        body: JSON.stringify({ email, name: name || email }),
+      }
+    );
+    const json = await res.json();
+    return json; // { ok: true, user_id } oppure { ok: false, error }
+  } catch (err) {
+    return { ok: false, error: err.message };
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════
+// LISTA DOCENTI — solo direttore, per il pannello assegnazione aule
+// ════════════════════════════════════════════════════════════════════
+async function listTeachers() {
+  if (!isDirector()) return [];
+  try {
+    const { data, error } = await supabase
+      .from('profiles')
+      .select('id, name, role')
+      .eq('role', 'teacher')
+      .order('name');
+    if (error) throw error;
+    return data || [];
+  } catch (err) {
+    console.warn('[Auth] listTeachers fallito:', err.message);
+    return [];
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════
+// GETTERS pubblici
+// ════════════════════════════════════════════════════════════════════
+function getUser()    { return _currentUser; }
+function getProfile() { return _currentProfile; }
+function getUserId()  { return _currentUser?.id ?? null; }
+function getName()    { return _currentProfile?.name ?? _currentUser?.email ?? ''; }
+function isLoggedIn() { return !!_currentUser; }
+function isDirector() { return _currentProfile?.role === 'director'; }
+
+// ════════════════════════════════════════════════════════════════════
+// ESPORTAZIONE su window.Auth
+// ════════════════════════════════════════════════════════════════════
+window.Auth = {
+  init,
+  login,
+  logout,
+  inviteTeacher,
+  listTeachers,
+  getUser,
+  getProfile,
+  getUserId,
+  getName,
+  isLoggedIn,
+  isDirector,
 };
 
-Deno.serve(async (req: Request) => {
+// Auto-init appena il modulo viene caricato
+await init();
 
-  // Gestione preflight CORS
-  if (req.method === 'OPTIONS') {
-    return new Response('ok', { headers: corsHeaders });
-  }
-
-  try {
-    // ── 1. Leggi body ────────────────────────────────────────────
-    const { email, name } = await req.json();
-    if (!email) {
-      return Response.json({ ok: false, error: 'email obbligatoria' }, { status: 400, headers: corsHeaders });
-    }
-
-    // ── 2. Verifica che il chiamante sia un direttore ────────────
-    // Il JWT del chiamante viene estratto dall'header Authorization.
-    // Usiamo il client con anon key per verificare il token.
-    const anonClient = createClient(
-      Deno.env.get('SUPABASE_URL')!,
-      Deno.env.get('SUPABASE_ANON_KEY')!,
-      { global: { headers: { Authorization: req.headers.get('Authorization') ?? '' } } }
-    );
-
-    const { data: { user }, error: authErr } = await anonClient.auth.getUser();
-    if (authErr || !user) {
-      return Response.json({ ok: false, error: 'Non autenticato' }, { status: 401, headers: corsHeaders });
-    }
-
-    // Leggi il ruolo dal profilo
-    const { data: profile, error: profileErr } = await anonClient
-      .from('profiles')
-      .select('role')
-      .eq('id', user.id)
-      .single();
-
-    if (profileErr || profile?.role !== 'director') {
-      return Response.json({ ok: false, error: 'Permesso negato — solo il direttore può invitare docenti' }, { status: 403, headers: corsHeaders });
-    }
-
-    // ── 3. Usa service_role per chiamare Admin API ───────────────
-    const adminClient = createClient(
-      Deno.env.get('SUPABASE_URL')!,
-      Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!,
-      { auth: { autoRefreshToken: false, persistSession: false } }
-    );
-
-    const { data: inviteData, error: inviteErr } = await adminClient.auth.admin.inviteUserByEmail(email, {
-      data: {
-        name:  name || email,
-        role: 'teacher',
-      },
-      // redirectTo opzionale: URL dove l'utente imposta la password
-      // redirectTo: 'https://lassapp.github.io/PixelProf/',
-    });
-
-    if (inviteErr) {
-      // Caso frequente: utente già esistente
-      if (inviteErr.message?.includes('already been registered')) {
-        return Response.json({ ok: false, error: 'Email già registrata. Il docente esiste già.' }, { status: 409, headers: corsHeaders });
-      }
-      throw inviteErr;
-    }
-
-    // ── 4. Aggiorna il profilo con nome e ruolo ─────────────────
-    // Il trigger handle_new_user crea il profilo, ma potrebbe non avere il nome.
-    // Aggiorniamo esplicitamente dopo l'invite.
-    if (inviteData?.user?.id) {
-      await adminClient
-        .from('profiles')
-        .upsert({
-          id:   inviteData.user.id,
-          name: name || email,
-          role: 'teacher',
-        }, { onConflict: 'id' });
-    }
-
-    return Response.json(
-      { ok: true, user_id: inviteData?.user?.id ?? null },
-      { status: 200, headers: corsHeaders }
-    );
-
-  } catch (err) {
-    console.error('[invite_teacher] errore:', err);
-    return Response.json(
-      { ok: false, error: err instanceof Error ? err.message : 'Errore interno' },
-      { status: 500, headers: corsHeaders }
-    );
-  }
-});
+// Segnala al bootstrap gate che Auth è pronto
+if (typeof window.__resolveAuth === 'function') window.__resolveAuth();

@@ -267,44 +267,90 @@ export async function getClassroomTeachers(classroomId) {
  * Restituisce i module_key abilitati per un'aula.
  * null = nessun filtro (tutti visibili).
  *
+ * v3.1.1 FIX: fallback su query diretta se la RPC non esiste.
+ *
  * @param {string} classroomId
  * @returns {Promise<string[]|null>}
  */
 export async function getEnabledModules(classroomId) {
   if (!_online) return null;
-  const data = await _sbCall(
-    () => supabase.rpc('get_classroom_modules', { p_classroom_id: classroomId }),
-    'getEnabledModules'
-  );
+
+  // Prima tenta la RPC (se esiste)
+  try {
+    const { data: rpcData, error: rpcErr } = await supabase
+      .rpc('get_classroom_modules', { p_classroom_id: classroomId });
+    if (!rpcErr && rpcData) {
+      if (rpcData.length === 0) return null;
+      return rpcData.map(r => r.module_key);
+    }
+    // RPC non esiste o errore → fallback su query diretta
+    if (rpcErr) console.warn('[PixelProf] get_classroom_modules RPC:', rpcErr.message, '— usando query diretta');
+  } catch (e) {
+    console.warn('[PixelProf] getEnabledModules RPC exception:', e);
+  }
+
+  // Fallback: query diretta sulla tabella
+  const { data, error } = await supabase
+    .from('classroom_modules')
+    .select('module_key, order_index')
+    .eq('classroom_id', classroomId)
+    .order('order_index');
+
+  if (error) {
+    console.warn('[PixelProf] getEnabledModules direct query:', error.message);
+    return null;
+  }
   if (!data || data.length === 0) return null;
   return data.map(r => r.module_key);
 }
 
 /**
  * Imposta i moduli abilitati (sostituisce la lista esistente).
- * moduleKeys vuoto = tutti visibili.
+ * moduleKeys vuoto = tutti visibili (nessuna whitelist).
+ *
+ * v3.1.1 FIX: gestione errori verbosa + retry su insert dopo delete.
  *
  * @param {string}   classroomId
  * @param {string[]} moduleKeys
+ * @returns {Promise<{ok:boolean, error?:string}>}
  */
 export async function setEnabledModules(classroomId, moduleKeys) {
-  // Elimina whitelist esistente
-  await _sbCall(
-    () => supabase.from('classroom_modules').delete().eq('classroom_id', classroomId),
-    'setEnabledModules:delete'
-  );
-  if (!moduleKeys.length) return { ok: true };
+  if (!_online) {
+    console.warn('[PixelProf] setEnabledModules: offline — skip');
+    return { ok: false, error: 'Offline' };
+  }
 
+  // 1. DELETE — elimina whitelist esistente per questa aula
+  const { error: delError } = await supabase
+    .from('classroom_modules')
+    .delete()
+    .eq('classroom_id', classroomId);
+
+  if (delError) {
+    console.error('[PixelProf] setEnabledModules DELETE error:', delError);
+    return { ok: false, error: 'DELETE fallito: ' + delError.message };
+  }
+
+  // 2. Lista vuota = nessuna whitelist (tutti i moduli visibili)
+  if (!moduleKeys || moduleKeys.length === 0) return { ok: true };
+
+  // 3. INSERT — nuova whitelist
   const rows = moduleKeys.map((key, i) => ({
     classroom_id: classroomId,
     module_key:   key,
     order_index:  i,
   }));
-  const err = await _sbCall(
-    () => supabase.from('classroom_modules').insert(rows),
-    'setEnabledModules:insert'
-  );
-  return err !== null ? { ok: true } : { ok: false, error: 'Inserimento fallito' };
+
+  const { error: insError } = await supabase
+    .from('classroom_modules')
+    .insert(rows);
+
+  if (insError) {
+    console.error('[PixelProf] setEnabledModules INSERT error:', insError);
+    return { ok: false, error: 'INSERT fallito: ' + insError.message };
+  }
+
+  return { ok: true };
 }
 
 // ════════════════════════════════════════════════════════════════════

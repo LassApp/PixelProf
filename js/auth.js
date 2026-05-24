@@ -102,7 +102,7 @@ async function inviteTeacher(email, name) {
     if (!session) return { ok: false, error: 'Sessione non valida' };
 
     const res = await fetch(
-      `${supabase.supabaseUrl}/functions/v1/invite_teacher`,
+      `https://skrgqanqdyrybarinwwr.supabase.co/functions/v1/invite_teacher`,
       {
         method:  'POST',
         headers: {

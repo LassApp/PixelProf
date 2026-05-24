@@ -1,56 +1,97 @@
 /**
- * auth.js — PixelProf v3.1.1
+ * auth.js — PixelProf v3.1.2
  *
- * FIX v3.1.1:
- *   1. Aggiunto flag _profileLoaded: il profilo (e il ruolo) viene caricato
- *      UNA SOLA VOLTA dopo il login. onAuthStateChange SIGNED_IN (token refresh)
- *      NON sovrascrive più il profilo → risolve il bug director→teacher.
- *   2. Rimosso auth.admin.inviteUserByEmail (richiede service_role, causa 403).
- *      Sostituito con Edge Function 'invite_teacher' (fetch + Bearer token).
- *   3. Aggiunto logout() che resetta anche _profileLoaded per permettere
- *      un nuovo login corretto.
+ * NUOVO v3.1.2 — Password onboarding flow:
+ *   Quando un docente entra tramite magic link (invite), Supabase emette
+ *   l'evento PASSWORD_RECOVERY (o SIGNED_IN con flag no-password).
+ *   In quel caso l'app mostra lo screen "imposta password" PRIMA di
+ *   entrare nell'app. Solo dopo aver impostato la password con
+ *   supabase.auth.updateUser({ password }) l'utente accede normalmente.
+ *
+ *   Il flag viene rilevato in due modi:
+ *     1. evento onAuthStateChange === 'PASSWORD_RECOVERY'
+ *     2. user.user_metadata.needs_password === true  (settato dall'Edge Function)
+ *
+ *   window.Auth.needsPasswordSetup() → true se il docente deve impostare la password
+ *   window.Auth.setPassword(pwd)     → imposta la password e risolve il flag
  */
 
 import { supabase } from './supabase_client.js';
 
 // ── State interno ────────────────────────────────────────────────
-let _currentUser    = null;   // oggetto auth.User di Supabase
-let _currentProfile = null;   // riga da profiles { id, name, role }
-let _profileLoaded  = false;  // LOCK: profilo caricato una sola volta per sessione
+let _currentUser       = null;
+let _currentProfile    = null;
+let _profileLoaded     = false;
+let _needsPasswordSetup = false;  // v3.1.2: flag "primo accesso"
 
 // ════════════════════════════════════════════════════════════════════
-// INIT — ripristina la sessione esistente al caricamento pagina
+// INIT
 // ════════════════════════════════════════════════════════════════════
 async function init() {
   const { data: { session } } = await supabase.auth.getSession();
   if (session?.user) {
     _currentUser = session.user;
-    await _loadProfile(session.user.id);
+    _needsPasswordSetup = _checkNeedsPassword(session.user);
+    if (!_needsPasswordSetup) {
+      await _loadProfile(session.user.id);
+    }
   }
 
-  // Ascolta cambiamenti di sessione
-  // ATTENZIONE: SIGNED_IN viene emesso anche su token refresh — NON ricaricare
-  // il profilo in quel caso, altrimenti il ruolo potrebbe cambiare a runtime.
   supabase.auth.onAuthStateChange(async (event, session) => {
-    if (event === 'SIGNED_IN' && session?.user) {
+    if (event === 'PASSWORD_RECOVERY' && session?.user) {
+      // Docente arrivato tramite link di invito/reset
+      _currentUser        = session.user;
+      _needsPasswordSetup = true;
+      _profileLoaded      = false;
+      // Segnala all'app di mostrare lo screen "imposta password"
+      if (typeof window.__onPasswordRecovery === 'function') {
+        window.__onPasswordRecovery();
+      }
+    } else if (event === 'SIGNED_IN' && session?.user) {
       _currentUser = session.user;
-      // _loadProfile ha il guard interno: se già caricato, non fa nulla
+      const needs = _checkNeedsPassword(session.user);
+      if (needs && !_needsPasswordSetup) {
+        _needsPasswordSetup = true;
+        if (typeof window.__onPasswordRecovery === 'function') {
+          window.__onPasswordRecovery();
+        }
+      } else if (!needs) {
+        await _loadProfile(session.user.id);
+      }
+    } else if (event === 'USER_UPDATED' && session?.user) {
+      // Password aggiornata con successo
+      _currentUser        = session.user;
+      _needsPasswordSetup = false;
       await _loadProfile(session.user.id);
+      if (typeof window.__onPasswordSet === 'function') {
+        window.__onPasswordSet();
+      }
     } else if (event === 'SIGNED_OUT') {
-      _currentUser    = null;
-      _currentProfile = null;
-      _profileLoaded  = false;  // reset lock: permette nuovo login
+      _currentUser        = null;
+      _currentProfile     = null;
+      _profileLoaded      = false;
+      _needsPasswordSetup = false;
     }
   });
 }
 
+// ── Controlla se l'utente non ha ancora una password ─────────────
+// Supabase setta last_sign_in_type='magiclink' o needs_password nei metadata
+function _checkNeedsPassword(user) {
+  if (!user) return false;
+  // Metadata settato dall'Edge Function invite_teacher
+  if (user.user_metadata?.needs_password === true) return true;
+  // Supabase setta questo quando l'utente non ha mai fatto login con password
+  if (user.app_metadata?.provider === 'email' &&
+      user.identities?.length > 0 &&
+      !user.last_sign_in_at &&
+      user.created_at === user.updated_at) return true;
+  return false;
+}
+
 // ── Carica profilo UNA SOLA VOLTA per sessione ────────────────────
 async function _loadProfile(userId) {
-  if (_profileLoaded) {
-    // Token refresh o doppia chiamata: NON sovrascrivere il profilo esistente
-    console.log('[Auth] _loadProfile skip — profilo già caricato, ruolo immutabile');
-    return;
-  }
+  if (_profileLoaded) return;
   try {
     const { data, error } = await supabase
       .from('profiles')
@@ -74,33 +115,50 @@ async function _loadProfile(userId) {
 async function login(email, password) {
   const { data, error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) return { ok: false, error: error.message };
-  _currentUser = data.user;
+  _currentUser        = data.user;
+  _needsPasswordSetup = false;
   await _loadProfile(data.user.id);
   return { ok: true };
 }
 
 // ════════════════════════════════════════════════════════════════════
-// LOGOUT — resetta tutto incluso il lock profilo
+// SET PASSWORD — usata dallo screen onboarding
 // ════════════════════════════════════════════════════════════════════
-async function logout() {
-  await supabase.auth.signOut();
-  _currentUser    = null;
-  _currentProfile = null;
-  _profileLoaded  = false;
+async function setPassword(newPassword) {
+  if (!_currentUser) return { ok: false, error: 'Nessun utente attivo' };
+  if (!newPassword || newPassword.length < 6) {
+    return { ok: false, error: 'Password troppo corta (minimo 6 caratteri)' };
+  }
+  const { data, error } = await supabase.auth.updateUser({
+    password: newPassword,
+    data: { needs_password: false },
+  });
+  if (error) return { ok: false, error: error.message };
+  _currentUser        = data.user;
+  _needsPasswordSetup = false;
+  await _loadProfile(data.user.id);
+  return { ok: true };
 }
 
 // ════════════════════════════════════════════════════════════════════
-// INVITA DOCENTE — solo direttore
-// Chiama la Edge Function 'invite_teacher' che usa service_role server-side.
-// L'Edge Function verifica il JWT e il ruolo prima di procedere.
+// LOGOUT
+// ════════════════════════════════════════════════════════════════════
+async function logout() {
+  await supabase.auth.signOut();
+  _currentUser        = null;
+  _currentProfile     = null;
+  _profileLoaded      = false;
+  _needsPasswordSetup = false;
+}
+
+// ════════════════════════════════════════════════════════════════════
+// INVITA DOCENTE
 // ════════════════════════════════════════════════════════════════════
 async function inviteTeacher(email, name) {
   if (!isDirector()) return { ok: false, error: 'Permesso negato' };
   try {
-    // Recupera la sessione corrente per il Bearer token
     const { data: { session } } = await supabase.auth.getSession();
     if (!session) return { ok: false, error: 'Sessione non valida' };
-
     const res = await fetch(
       `https://skrgqanqdyrybarinwwr.supabase.co/functions/v1/invite_teacher`,
       {
@@ -114,14 +172,14 @@ async function inviteTeacher(email, name) {
       }
     );
     const json = await res.json();
-    return json; // { ok: true, user_id } oppure { ok: false, error }
+    return json;
   } catch (err) {
     return { ok: false, error: err.message };
   }
 }
 
 // ════════════════════════════════════════════════════════════════════
-// LISTA DOCENTI — solo direttore, per il pannello assegnazione aule
+// LISTA DOCENTI
 // ════════════════════════════════════════════════════════════════════
 async function listTeachers() {
   if (!isDirector()) return [];
@@ -140,14 +198,15 @@ async function listTeachers() {
 }
 
 // ════════════════════════════════════════════════════════════════════
-// GETTERS pubblici
+// GETTERS
 // ════════════════════════════════════════════════════════════════════
-function getUser()    { return _currentUser; }
-function getProfile() { return _currentProfile; }
-function getUserId()  { return _currentUser?.id ?? null; }
-function getName()    { return _currentProfile?.name ?? _currentUser?.email ?? ''; }
-function isLoggedIn() { return !!_currentUser; }
-function isDirector() { return _currentProfile?.role === 'director'; }
+function getUser()             { return _currentUser; }
+function getProfile()          { return _currentProfile; }
+function getUserId()           { return _currentUser?.id ?? null; }
+function getName()             { return _currentProfile?.name ?? _currentUser?.email ?? ''; }
+function isLoggedIn()          { return !!_currentUser; }
+function isDirector()          { return _currentProfile?.role === 'director'; }
+function needsPasswordSetup()  { return _needsPasswordSetup; }
 
 // ════════════════════════════════════════════════════════════════════
 // ESPORTAZIONE su window.Auth
@@ -156,6 +215,7 @@ window.Auth = {
   init,
   login,
   logout,
+  setPassword,
   inviteTeacher,
   listTeachers,
   getUser,
@@ -164,10 +224,8 @@ window.Auth = {
   getName,
   isLoggedIn,
   isDirector,
+  needsPasswordSetup,
 };
 
-// Auto-init appena il modulo viene caricato
 await init();
-
-// Segnala al bootstrap gate che Auth è pronto
 if (typeof window.__resolveAuth === 'function') window.__resolveAuth();

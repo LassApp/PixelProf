@@ -6097,10 +6097,6 @@ async function doSetPassword() {
     btn.disabled  = false;
     btn.innerHTML = '<i class="ti ti-lock-check"></i> Imposta password e accedi';
   };
-  const enterApp = async () => {
-    sh('screen-setpwd').classList.add('hidden');
-    await _afterLogin();
-  };
 
   hideErr();
 
@@ -6118,57 +6114,39 @@ async function doSetPassword() {
     return;
   }
 
-  // Successo: avviamo due meccanismi in parallelo —
-  // 1) ascoltiamo __onPasswordSet (USER_UPDATED da Supabase)
-  // 2) polling di backup ogni 600ms: verifichiamo che needs_password
-  //    sia effettivamente scomparso dalla sessione aggiornata.
-  // Il primo dei due che scatta vince; l'altro viene cancellato.
+  // updateUser() è andato a buon fine.
+  // auth.js ha già aggiornato _needsPasswordSetup=false internamente.
+  // USER_UPDATED chiamerà __onPasswordSet() → _afterLogin().
+  // Fallback: se USER_UPDATED non arriva entro 3s, entriamo comunque.
   hideErr();
-  let _done = false;
-
-  const _complete = async () => {
-    if (_done) return;
-    _done = true;
-    clearInterval(_pollTimer);
-    clearTimeout(_fallbackTimer);
-    window.__onPasswordSet = _origOnPwdSet;
-    await enterApp();
+  let _entered = false;
+  const _enterApp = async () => {
+    if (_entered) return;
+    _entered = true;
+    clearTimeout(_fallback);
+    sh('screen-setpwd').classList.add('hidden');
+    await _afterLogin();
   };
 
-  // Intercetta l'evento auth.js
-  const _origOnPwdSet = window.__onPasswordSet;
-  window.__onPasswordSet = _complete;
+  // Intercetta __onPasswordSet per cancellare il fallback timer
+  const _prevOnPwdSet = window.__onPasswordSet;
+  window.__onPasswordSet = async function() {
+    window.__onPasswordSet = _prevOnPwdSet;
+    await _enterApp();
+  };
 
-  // Polling backup: interroga getSession() live fino a quando
-  // needs_password non è più true oppure scade il timeout.
-  // Usa Auth.checkSession() che chiama supabase.auth.getSession() direttamente.
-  const _pollTimer = setInterval(async () => {
-    try {
-      const u = await window.Auth?.checkSession();
-      if (u && u.user_metadata?.needs_password !== true) {
-        await _complete();
-      }
-    } catch(e) {}
-  }, 600);
-
-  // Safety timeout 12s — se né USER_UPDATED né il polling funzionano
-  const _fallbackTimer = setTimeout(async () => {
-    if (_done) return;
-    _done = true;
-    clearInterval(_pollTimer);
-    window.__onPasswordSet = _origOnPwdSet;
-    // Ultimo tentativo: verifica la sessione direttamente e procedi comunque
-    resetBtn();
-    showErr('Verifica in corso... se il problema persiste ricarica la pagina.');
-    // Attendi ancora 2s poi prova ad entrare nell'app
-    setTimeout(async () => {
-      if (window.Auth?.isLoggedIn()) {
-        hideErr();
-        await enterApp();
-      }
-    }, 2000);
-  }, 12000);
+  // Fallback a 3s — entra direttamente se isLoggedIn() è già true
+  const _fallback = setTimeout(async () => {
+    window.__onPasswordSet = _prevOnPwdSet;
+    if (window.Auth?.isLoggedIn()) {
+      await _enterApp();
+    } else {
+      resetBtn();
+      showErr('Sessione non rilevata. Ricarica la pagina e accedi con email e password.');
+    }
+  }, 3000);
 }
+
 
 /* ==================================================
    SPLASH + INIT v3.1.2

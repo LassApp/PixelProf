@@ -21,6 +21,10 @@
  *
  *   PROBLEMA 4: race condition _profileLoaded tra init() e onAuthStateChange.
  *     FIX: _profileLoaded viene resettato a false a ogni SIGNED_IN/PASSWORD_RECOVERY.
+ *
+ *   PROBLEMA 5 (v3.1.3): USER_UPDATED non sempre scatta con type=invite.
+ *     FIX: esposto checkSession() per polling esterno + aggiornamento _currentUser
+ *          anche da USER_UPDATED anche se _profileLoaded era già true.
  */
 
 import { supabase } from './supabase_client.js';
@@ -186,11 +190,32 @@ async function setPassword(newPassword) {
 
   if (error) return { ok: false, error: error.message };
 
-  // Aggiorna _currentUser subito (i metadati sono già aggiornati nella risposta)
-  if (data?.user) _currentUser = data.user;
+  // Aggiorna _currentUser e metadata immediatamente dalla risposta
+  if (data?.user) {
+    _currentUser        = data.user;
+    _needsPasswordSetup = false;   // aggiornamento immediato — non aspettiamo USER_UPDATED
+  }
 
-  // Il listener USER_UPDATED farà il resto (_loadProfile + __onPasswordSet)
+  // Il listener USER_UPDATED (se scatta) chiamerà __onPasswordSet()
+  // Il polling nel HTML userà checkSession() come meccanismo di backup
   return { ok: true };
+}
+
+// ════════════════════════════════════════════════════════════════════
+// CHECK SESSION — polling: verifica se needs_password è cambiato
+// Usato da doSetPassword() nel HTML come meccanismo di backup
+// quando USER_UPDATED non scatta (problema noto con type=invite).
+// ════════════════════════════════════════════════════════════════════
+async function checkSession() {
+  try {
+    const { data: { session }, error } = await supabase.auth.getSession();
+    if (error || !session?.user) return null;
+    // Aggiorna _currentUser con i dati più recenti dal server
+    _currentUser = session.user;
+    return session.user;
+  } catch (e) {
+    return null;
+  }
 }
 
 // ════════════════════════════════════════════════════════════════════
@@ -269,6 +294,7 @@ window.Auth = {
   login,
   logout,
   setPassword,
+  checkSession,
   inviteTeacher,
   listTeachers,
   getUser,

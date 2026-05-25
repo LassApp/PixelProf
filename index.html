@@ -5530,10 +5530,13 @@ function openCourseWizard(){
     alert('Solo il direttore puo\' creare nuove aule.');
     return;
   }
+  // Legge il testo pre-compilato dall'input esterno (se presente)
+  const prefilledName = (sh('cs-course-inp')?.value || '').trim();
+
   // Reset stato
-  _cw.step=1; _cw.name=''; _cw.icon='🏫'; _cw.mods=[]; _cw.teachers=[];
+  _cw.step=1; _cw.name=prefilledName; _cw.icon='🏫'; _cw.mods=[]; _cw.teachers=[];
   const inp = sh('cw-name-inp');
-  if(inp) inp.value='';
+  if(inp) inp.value = prefilledName;
 
   // Render icone
   const ig = sh('cw-icon-grid');
@@ -5541,9 +5544,15 @@ function openCourseWizard(){
     `<button class="icp-btn${_cw.icon===ic?' selected':''}" onclick="_cwPickIcon('${escAttr(ic)}')">${ic}</button>`
   ).join('');
 
+  // Reset form invito al riavvio del wizard
+  const _fb = sh('cw-invite-fb'); if(_fb) _fb.textContent='';
+  const _ei = sh('cw-invite-email'); if(_ei) _ei.value='';
+  const _ni = sh('cw-invite-name'); if(_ni) _ni.value='';
+
   _cwGoStep(1);
   sh('course-wizard-overlay').classList.remove('hidden');
-  setTimeout(()=>inp?.focus(), 100);
+  // Focus alla fine del testo precompilato, oppure all'inizio se vuoto
+  setTimeout(()=>{ if(inp){ inp.focus(); inp.selectionStart=inp.selectionEnd=inp.value.length; } }, 100);
 }
 
 function closeCourseWizard(){
@@ -5609,6 +5618,8 @@ async function _cwInitTeacherStep(){
   // Carica lista docenti disponibili nel select
   const sel = sh('cw-teacher-select');
   if(sel){
+    // Salva il valore correntemente selezionato per ripristinarlo dopo il reload
+    const prevVal = sel.value;
     sel.innerHTML='<option value="">— Seleziona docente —</option>';
     try{
       const teachers = await window.Auth.listTeachers();
@@ -5618,11 +5629,11 @@ async function _cwInitTeacherStep(){
         sel.appendChild(o);
       });
     }catch(e){}
+    // Ripristina la selezione se ancora valida
+    if(prevVal) sel.value = prevVal;
   }
   _cwRenderTeachers();
-  const fb=sh('cw-invite-fb'); if(fb) fb.textContent='';
-  const ei=sh('cw-invite-email'); if(ei) ei.value='';
-  const ni=sh('cw-invite-name'); if(ni) ni.value='';
+  // NON azzerare email/nome/feedback — l'utente potrebbe stare ancora correggendo
 }
 
 function _cwRenderTeachers(){
@@ -5656,26 +5667,54 @@ function cwAddTeacher(){
 }
 
 async function cwInviteTeacher(){
-  const email=(sh('cw-invite-email')?.value||'').trim();
-  const name =(sh('cw-invite-name')?.value||'').trim();
-  const fb   = sh('cw-invite-fb');
-  if(!email){ if(fb){fb.style.color='#ff6b6b';fb.textContent='Inserisci email valida.';} return; }
-  if(fb){fb.style.color='rgba(255,255,255,.4)';fb.textContent='Invio...';}
+  const emailInp = sh('cw-invite-email');
+  const nameInp  = sh('cw-invite-name');
+  const email = (emailInp?.value||'').trim();
+  const name  = (nameInp?.value||'').trim();
+  const fb    = sh('cw-invite-fb');
+
+  // Validazione email con regex base
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!email || !emailRe.test(email)){
+    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='Inserisci un indirizzo email valido (es. docente@scuola.it)'; }
+    emailInp?.focus();
+    return;
+  }
+
+  if(fb){ fb.style.color='rgba(255,255,255,.4)'; fb.textContent='⏳ Invio in corso...'; }
+
   try{
     const res = await window.Auth.inviteTeacher(email, name||email);
     if(res.ok){
-      if(fb){fb.style.color='#00ff96';fb.textContent='Invito inviato a '+email;}
-      if(sh('cw-invite-email')) sh('cw-invite-email').value='';
-      if(sh('cw-invite-name'))  sh('cw-invite-name').value='';
-      // Aggiunge direttamente alla lista in attesa
-      if(res.userId) _cw.teachers.push({id:res.userId,name:name||email});
+      // ✓ NON svuotiamo l'email — feedback persistente visibile
+      if(fb){ fb.style.color='#00ff96'; fb.textContent='✓ Invito inviato a ' + email; }
+
+      // Aggiunge alla lista locale in attesa
+      const newTeacher = { id: res.user_id || res.userId || email, name: name||email };
+      if(!_cw.teachers.find(t=>t.id===newTeacher.id)){
+        _cw.teachers.push(newTeacher);
+      }
       _cwRenderTeachers();
-      await _cwInitTeacherStep();
+
+      // Aggiorna il select picker aggiungendo il nuovo docente senza azzerare il form
+      const sel = sh('cw-teacher-select');
+      if(sel && res.user_id){
+        // Rimuovi eventuale duplicato
+        const existing = sel.querySelector(`option[value="${CSS.escape(res.user_id)}"]`);
+        if(!existing){
+          const opt = document.createElement('option');
+          opt.value       = res.user_id;
+          opt.textContent = name||email;
+          sel.appendChild(opt);
+        }
+        // Auto-seleziona il nuovo docente nel picker
+        sel.value = res.user_id;
+      }
     } else {
-      if(fb){fb.style.color='#ff6b6b';fb.textContent='Errore: '+(res.error||'sconosciuto');}
+      if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore: '+(res.error||'sconosciuto'); }
     }
   }catch(e){
-    if(fb){fb.style.color='#ff6b6b';fb.textContent='Errore di rete.';}
+    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore di rete. Riprova.'; }
   }
 }
 
@@ -6058,6 +6097,10 @@ async function doSetPassword() {
     btn.disabled  = false;
     btn.innerHTML = '<i class="ti ti-lock-check"></i> Imposta password e accedi';
   };
+  const enterApp = async () => {
+    sh('screen-setpwd').classList.add('hidden');
+    await _afterLogin();
+  };
 
   hideErr();
 
@@ -6075,24 +6118,56 @@ async function doSetPassword() {
     return;
   }
 
-  // Successo: lo spinner rimane attivo.
-  // Il listener USER_UPDATED in auth.js chiamerà __onPasswordSet()
-  // che nasconde lo screen e chiama _afterLogin().
-  // Fallback di sicurezza: se USER_UPDATED non arriva entro 8s, mostra errore.
+  // Successo: avviamo due meccanismi in parallelo —
+  // 1) ascoltiamo __onPasswordSet (USER_UPDATED da Supabase)
+  // 2) polling di backup ogni 600ms: verifichiamo che needs_password
+  //    sia effettivamente scomparso dalla sessione aggiornata.
+  // Il primo dei due che scatta vince; l'altro viene cancellato.
   hideErr();
-  const _fallbackTimer = setTimeout(() => {
-    resetBtn();
-    showErr('Timeout: ricarica la pagina e riprova ad accedere.');
-  }, 8000);
+  let _done = false;
 
-  // __onPasswordSet viene ridefinito qui per poter cancellare il timer
-  const _origOnPwdSet = window.__onPasswordSet;
-  window.__onPasswordSet = async function() {
+  const _complete = async () => {
+    if (_done) return;
+    _done = true;
+    clearInterval(_pollTimer);
     clearTimeout(_fallbackTimer);
-    window.__onPasswordSet = _origOnPwdSet; // ripristina per sessioni future
-    sh('screen-setpwd').classList.add('hidden');
-    await _afterLogin();
+    window.__onPasswordSet = _origOnPwdSet;
+    await enterApp();
   };
+
+  // Intercetta l'evento auth.js
+  const _origOnPwdSet = window.__onPasswordSet;
+  window.__onPasswordSet = _complete;
+
+  // Polling backup: interroga getSession() live fino a quando
+  // needs_password non è più true oppure scade il timeout.
+  // Usa Auth.checkSession() che chiama supabase.auth.getSession() direttamente.
+  const _pollTimer = setInterval(async () => {
+    try {
+      const u = await window.Auth?.checkSession();
+      if (u && u.user_metadata?.needs_password !== true) {
+        await _complete();
+      }
+    } catch(e) {}
+  }, 600);
+
+  // Safety timeout 12s — se né USER_UPDATED né il polling funzionano
+  const _fallbackTimer = setTimeout(async () => {
+    if (_done) return;
+    _done = true;
+    clearInterval(_pollTimer);
+    window.__onPasswordSet = _origOnPwdSet;
+    // Ultimo tentativo: verifica la sessione direttamente e procedi comunque
+    resetBtn();
+    showErr('Verifica in corso... se il problema persiste ricarica la pagina.');
+    // Attendi ancora 2s poi prova ad entrare nell'app
+    setTimeout(async () => {
+      if (window.Auth?.isLoggedIn()) {
+        hideErr();
+        await enterApp();
+      }
+    }, 2000);
+  }, 12000);
 }
 
 /* ==================================================
@@ -6110,10 +6185,15 @@ async function doSetPassword() {
       if(window.__appBootstrap) await window.__appBootstrap;
 
       if(window.Auth && window.Auth.isLoggedIn()){
-        // v3.1.2: se l'utente è loggato ma deve impostare la password
-        // (arrivato tramite magic link prima che lo splash finisse)
+        // v3.1.3: se l'utente è loggato ma deve impostare la password
+        // (arrivato tramite magic link / invite prima che lo splash finisse)
         if(window.Auth.needsPasswordSetup()){
-          window.__onPasswordRecovery();
+          // __onPasswordRecovery potrebbe essere già stato chiamato da onAuthStateChange;
+          // lo chiamiamo qui come safety net solo se lo screen non è già visibile.
+          const setpwdScreen = sh('screen-setpwd');
+          if(setpwdScreen && setpwdScreen.classList.contains('hidden')){
+            window.__onPasswordRecovery();
+          }
         } else {
           await _afterLogin();
         }

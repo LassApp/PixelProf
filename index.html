@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v3.1.3</title>
+<title>PixelProf — ICDL Lab interattivo v3.2.0</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1356,7 +1356,7 @@ body{
   position:relative;border-radius:var(--radius-lg);
   border:1px solid rgba(255,255,255,.08);
   background:rgba(255,255,255,.04);
-  padding:1.25rem 1rem 1rem;
+  padding:1rem 1rem .875rem;
   cursor:pointer;
   transition:transform var(--transition-bounce),
              box-shadow var(--transition-fast),border-color var(--transition-fast);
@@ -1408,16 +1408,6 @@ body{
   box-shadow:0 0 8px rgba(0,0,0,.3);
 }
 
-.course-card-icon{
-  font-size:32px;display:block;margin-bottom:10px;
-  line-height:1;
-  filter:drop-shadow(0 0 8px rgba(255,255,255,.15));
-  transition:transform var(--transition-bounce),filter var(--transition-fast);
-}
-.course-card:hover .course-card-icon{
-  transform:scale(1.12);
-  filter:drop-shadow(0 0 12px rgba(255,255,255,.25));
-}
 .course-card-name{
   font-size:14px;font-weight:700;color:#fff;
   margin-bottom:4px;line-height:1.3;
@@ -1531,6 +1521,39 @@ body{
 /* Course entry animation */
 #screen-courses.entering{animation:screenFadeIn .35s ease both;}
 @keyframes screenFadeIn{from{opacity:0;}to{opacity:1;}}
+
+/* ── course-card v3.2.0 — nuovo layout ── */
+.course-card-top{
+  display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;
+}
+.course-card-icon{
+  font-size:26px;display:block;flex-shrink:0;
+  filter:drop-shadow(0 0 8px rgba(255,255,255,.15));
+  transition:transform var(--transition-bounce),filter var(--transition-fast);
+}
+.course-card:hover .course-card-icon{
+  transform:scale(1.1);
+  filter:drop-shadow(0 0 12px rgba(255,255,255,.25));
+}
+.course-card-teachers{
+  display:flex;flex-wrap:wrap;gap:3px;flex:1;align-self:flex-start;
+}
+.course-card-teacher-chip{
+  font-size:9px;font-weight:600;
+  padding:2px 7px;border-radius:20px;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.5);white-space:nowrap;
+  font-family:'Share Tech Mono',monospace;letter-spacing:.3px;
+}
+.course-card-dates{
+  font-size:10px;font-family:'Share Tech Mono',monospace;
+  color:rgba(255,255,255,.45);letter-spacing:.3px;margin-top:3px;
+}
+.course-card-time{
+  font-size:10px;font-family:'Share Tech Mono',monospace;
+  color:rgba(255,255,255,.3);letter-spacing:.3px;margin-top:2px;
+  display:flex;align-items:center;gap:4px;
+}
 
 /* ===============================================
    LOGIN SCREEN — v3.0.0
@@ -1799,7 +1822,7 @@ body{
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v3.1.3</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v3.2.0</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -1925,17 +1948,13 @@ body{
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v3.1.3</span>
+        <span class="cs-logo-sub">ICDL Lab · v3.2.0</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v3.0.0 -->
     <div class="cs-teacher-badge">
       <span id="cs-director-badge" class="cs-director-badge hidden">👑 Direttore</span>
       <span class="cs-teacher-name" id="cs-teacher-name"></span>
-      <button class="tb-btn hidden" id="cs-manage-btn" onclick="openDirectorPanel()"
-        title="Gestisci docenti e moduli" style="margin-right:4px">
-        <i class="ti ti-settings"></i> Gestisci
-      </button>
       <button class="cs-logout-btn" onclick="doLogout()">
         <i class="ti ti-logout"></i> Esci
       </button>
@@ -1988,6 +2007,21 @@ body{
       <div style="margin-bottom:12px">
         <div class="slbl" style="margin-bottom:8px">Icona</div>
         <div style="display:flex;flex-wrap:wrap;gap:6px" id="cw-icon-grid"></div>
+      </div>
+      <!-- DATE + FASCIA ORARIA -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+        <div>
+          <div class="slbl" style="margin-bottom:6px">Data inizio</div>
+          <input type="date" id="cw-start-date" class="cs-add-inp" style="width:100%;color-scheme:dark"/>
+        </div>
+        <div>
+          <div class="slbl" style="margin-bottom:6px">Data fine</div>
+          <input type="date" id="cw-end-date" class="cs-add-inp" style="width:100%;color-scheme:dark"/>
+        </div>
+      </div>
+      <div style="margin-bottom:12px">
+        <div class="slbl" style="margin-bottom:6px">Fascia oraria <span style="color:rgba(255,255,255,.25);font-weight:400;text-transform:none;letter-spacing:0">(es. 14:00 – 17:00)</span></div>
+        <input type="text" id="cw-time-slot" class="cs-add-inp" placeholder="es. 14:00 – 17:00" style="width:100%"/>
       </div>
       <div class="cw-btns">
         <button class="cw-btn-back" onclick="closeCourseWizard()">Annulla</button>
@@ -2202,7 +2236,7 @@ body{
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v3.1.3</span>
+      <span class="logo-sub">ICDL Lab · v3.2.0</span>
     </div>
   </div>
   <!-- Course badge -->
@@ -2216,6 +2250,12 @@ body{
     <button class="tb-btn" id="tb-lb" onclick="goTab('lb')"><i class="ti ti-trophy"></i> Classifica</button>
     <button class="tb-btn" id="tb-st" onclick="goTab('stats')"><i class="ti ti-chart-bar"></i> Progressi</button>
   </nav>
+  <!-- User badge: ruolo + nome + logout — sempre visibile nell'app -->
+  <div id="tb-user-badge" style="display:none;align-items:center;gap:6px;flex-shrink:0">
+    <span id="tb-user-role-pill" style="font-family:'Share Tech Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:20px;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.3);color:#ffd700"></span>
+    <span id="tb-user-name" style="font-size:11px;color:rgba(255,255,255,.5);font-family:'Share Tech Mono',monospace;white-space:nowrap;max-width:80px;overflow:hidden;text-overflow:ellipsis"></span>
+    <button class="cs-logout-btn" onclick="doLogout()" style="padding:4px 9px;font-size:10px"><i class="ti ti-logout"></i></button>
+  </div>
 </div>
 
 <!-- ======================================
@@ -5053,13 +5093,29 @@ function renderCoursesGrid(){
     </div>`;
     return;
   }
+  const isDir=window.Auth?.isDirector();
   grid.innerHTML=courses.map((c,i)=>{
     const colIdx=(c.colorIdx??i)%COLOR_PALETTE.length;
     const bgIdx =(c.bgIdx   ??i)%COURSE_BG_PRESETS.length;
     const col=COLOR_PALETTE[colIdx];
     const bg =COURSE_BG_PRESETS[bgIdx];
-    const created=new Date(c.createdAt).toLocaleDateString('it-IT',{day:'2-digit',month:'short'});
-    // --card-accent / --card-glow drive ::before bar and ::after glow via CSS
+    // Date formatting
+    const fmtDate=d=>{if(!d)return null;try{const dt=new Date(d);return dt.toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'2-digit'});}catch{return d;}};
+    const startFmt=fmtDate(c.startDate);
+    const endFmt  =fmtDate(c.endDate);
+    const dateRow = (startFmt||endFmt)
+      ? `<div class="course-card-dates">${startFmt||'—'} → ${endFmt||'—'}</div>`
+      : `<div class="course-card-meta">Creata il ${new Date(c.createdAt).toLocaleDateString('it-IT',{day:'2-digit',month:'short'})}</div>`;
+    const timeRow = c.timeSlot
+      ? `<div class="course-card-time"><i class="ti ti-clock" style="font-size:10px"></i> ${escHtml(c.timeSlot)}</div>`
+      : '';
+    // Teachers list (names, exclude director role)
+    const teacherNames=(c._teachers||[])
+      .filter(t=>t.role!=='director')
+      .map(t=>`<span class="course-card-teacher-chip">${escHtml(t.name||'')}</span>`)
+      .join('');
+    const teachersRow=teacherNames
+      ?`<div class="course-card-teachers">${teacherNames}</div>`:'';
     return`<div class="course-card" data-course-id="${escAttr(c.id)}"
       data-colidx="${colIdx}" data-bgidx="${bgIdx}"
       style="
@@ -5073,12 +5129,16 @@ function renderCoursesGrid(){
       onclick="enterCourse('${escAttr(c.id)}')"
     >
       <button class="course-card-menu" onclick="event.stopPropagation();openCourseMenu('${escAttr(c.id)}',this)" title="Opzioni" aria-label="Opzioni aula">⋯</button>
-      <span class="course-card-icon">${c.icon}</span>
+      <div class="course-card-top">
+        <span class="course-card-icon">${c.icon}</span>
+        ${teachersRow}
+      </div>
       <div class="course-card-name">${escHtml(c.name)}</div>
-      <div class="course-card-meta">Creata il ${created}</div>
+      ${dateRow}
+      ${timeRow}
     </div>`;
   }).join('');
-  // hover: intensify glow only  colour stays the same (driven by CSS vars)
+  // hover glow
   grid.querySelectorAll('.course-card').forEach(card=>{
     const ci=parseInt(card.dataset.colidx)||0;
     const col=COLOR_PALETTE[ci%COLOR_PALETTE.length];
@@ -5435,13 +5495,22 @@ async function _afterLogin(){
   appState.teacher = window.Auth.getProfile();
   const isDir = window.Auth.isDirector();
 
-  // Badge topbar
+  // Badge topbar screen-courses
   const nameEl    = sh('cs-teacher-name');
   const dirBadge  = sh('cs-director-badge');
-  const manageBtn = sh('cs-manage-btn');
   if(nameEl)    nameEl.textContent = appState.teacher?.name || window.Auth.getName();
   if(dirBadge)  dirBadge.classList.toggle('hidden', !isDir);
-  if(manageBtn) manageBtn.classList.toggle('hidden', !isDir);
+
+  // Badge ruolo+nome nella topbar dell'app (sempre visibile quando si è in gioco)
+  const tbBadge   = sh('tb-user-badge');
+  const tbRole    = sh('tb-user-role-pill');
+  const tbName    = sh('tb-user-name');
+  if(tbBadge){ tbBadge.style.display='flex'; }
+  if(tbRole){
+    if(isDir){ tbRole.textContent='👑 Dir'; tbRole.style.background='rgba(255,215,0,.12)'; tbRole.style.borderColor='rgba(255,215,0,.3)'; tbRole.style.color='#ffd700'; }
+    else     { tbRole.textContent='📖 Doc'; tbRole.style.background='rgba(0,207,255,.1)'; tbRole.style.borderColor='rgba(0,207,255,.25)'; tbRole.style.color='#00cfff'; }
+  }
+  if(tbName) tbName.textContent = appState.teacher?.name || window.Auth.getName();
 
   // Il form "Crea aula" e' solo per il direttore
   const addForm = sh('cs-add-form-wrap');
@@ -5457,6 +5526,7 @@ async function _afterLogin(){
 }
 
 /* Carica le aule dal cloud e aggiorna la griglia.
+   v3.2.0: carica anche i docenti per ogni aula (display nelle card).
    - Il direttore vede TUTTE le aule.
    - Un docente vede SOLO le aule a cui e' assegnato.
    La RPC get_teacher_classrooms filtra gia' lato DB. */
@@ -5465,7 +5535,17 @@ async function _reloadCourses(){
   if(!teacherId || !window.DB){ renderCoursesGrid(); return; }
   try{
     const list = await window.DB.loadClassrooms(teacherId);
-    localStorage.setItem('pp5_courses', JSON.stringify(list||[]));
+    const enriched = list||[];
+    // Per ogni aula carica i docenti (in background, non bloccante)
+    if(window.DB.getClassroomTeachers){
+      await Promise.all(enriched.map(async c=>{
+        try{
+          const teachers = await window.DB.getClassroomTeachers(c.id);
+          c._teachers = teachers||[];
+        }catch(e){ c._teachers=[]; }
+      }));
+    }
+    localStorage.setItem('pp5_courses', JSON.stringify(enriched));
   }catch(e){
     console.warn('[PixelProf] _reloadCourses fallback localStorage:', e);
   }
@@ -5580,7 +5660,21 @@ function cwStep(n){
   if(n===2){
     const name=(sh('cw-name-inp')?.value||'').trim();
     if(!name){ sh('cw-name-inp')?.focus(); sh('cw-name-inp')?.classList.add('error'); return; }
+    // Controlla nomi duplicati
+    const existing=loadCourses().find(c=>c.name.trim().toLowerCase()===name.toLowerCase());
+    if(existing){
+      const inp=sh('cw-name-inp');
+      if(inp){ inp.classList.add('error'); inp.style.borderColor='#ff6b6b'; }
+      // Mostra errore inline sotto l'input
+      let errEl=document.getElementById('cw-name-err');
+      if(!errEl){ errEl=document.createElement('div'); errEl.id='cw-name-err'; errEl.style.cssText='font-size:11px;color:#ff6b6b;margin-top:4px;font-family:Share Tech Mono,monospace'; inp?.parentNode?.appendChild(errEl); }
+      errEl.textContent='✗ Impossibile creare l\'aula: esiste già un\'aula con questo nome.';
+      setTimeout(()=>{ if(errEl)errEl.textContent=''; if(inp){inp.classList.remove('error');inp.style.borderColor='';} },3500);
+      return;
+    }
     sh('cw-name-inp')?.classList.remove('error');
+    sh('cw-name-inp')?.style && (sh('cw-name-inp').style.borderColor='');
+    const errEl=document.getElementById('cw-name-err'); if(errEl)errEl.textContent='';
     _cw.name=name;
   }
   if(n===3){
@@ -5732,12 +5826,20 @@ async function cwCreateClassroom(){
   const courses  = loadCourses();
   const colorIdx = courses.length % COLOR_PALETTE.length;
 
+  // Legge date e fascia oraria dallo step 1
+  const startDate = sh('cw-start-date')?.value || null;
+  const endDate   = sh('cw-end-date')?.value   || null;
+  const timeSlot  = (sh('cw-time-slot')?.value||'').trim() || null;
+
   // 1. Crea aula su Supabase
   const res = await window.DB.createClassroom(teacherId, {
     name:     _cw.name,
     icon:     _cw.icon,
     colorIdx,
     bgIdx:    colorIdx,
+    startDate,
+    endDate,
+    timeSlot,
   });
 
   if(!res.ok){
@@ -5767,6 +5869,34 @@ async function cwCreateClassroom(){
     const card=document.querySelector('[data-course-id="'+classroomId+'"]');
     if(card){ card.style.boxShadow='0 0 0 2px #00ffc8'; setTimeout(()=>card.style.boxShadow='',1400); }
   }, 120);
+}
+
+/* Helper: custom confirm dialog per eliminazione aula — v3.2.0 */
+function _showDeleteClassroomConfirm(id, name, onConfirm){
+  // Riusa il pp-dialog esistente con copia specifica
+  const t=sh('pp-dialog-title');
+  const s=sh('pp-dialog-sub');
+  const y=sh('pp-dialog-yes');
+  if(t) t.textContent='Eliminare l\'aula?';
+  if(s) s.innerHTML=`L\'azione è <strong>irreversibile</strong>. Eliminando <em>${escHtml(name)}</em> si eliminano per sempre tutti i dati collegati (giocatori, classifiche, progressi, sessioni). Procedere?`;
+  if(y) y.textContent='Sì, elimina definitivamente';
+  // Override callbacks
+  const prevYes=sh('pp-dialog-yes').onclick;
+  const prevNo =sh('pp-dialog-no').onclick;
+  sh('pp-dialog-yes').onclick=function(){
+    sh('pp-dialog-overlay').classList.add('hidden');
+    sh('pp-dialog-yes').onclick=prevYes;
+    sh('pp-dialog-no').onclick=prevNo;
+    onConfirm();
+  };
+  sh('pp-dialog-no').onclick=function(){
+    sh('pp-dialog-overlay').classList.add('hidden');
+    sh('pp-dialog-yes').onclick=prevYes;
+    sh('pp-dialog-no').onclick=prevNo;
+    // Ripristina copia originale
+    _setDialogCopy('exit');
+  };
+  sh('pp-dialog-overlay').classList.remove('hidden');
 }
 
 /* ==================================================
@@ -5805,10 +5935,14 @@ cdAction = async function(action){
   } else if(action==='bg'){
     openBgPicker(id);
   } else if(action==='delete'){
-    if(!confirm('Eliminare l\'aula "'+courses[idx].name+'" e tutti i suoi dati?')) return;
-    await window.DB.deleteClassroom(id);
-    if(activeCourseId===id){ activeCourseId=null; appState.classroom=null; db=makeEmptyDb(); goCoursesFromApp(); }
-    await _reloadCourses();
+    const courseName = courses[idx].name;
+    // Custom confirm dialog per eliminazione aula
+    _showDeleteClassroomConfirm(id, courseName, async ()=>{
+      // DB.deleteClassroom v3.2.0 usa RPC director_delete_classroom (SECURITY DEFINER)
+      await window.DB.deleteClassroom(id).catch(e=>console.warn('[PixelProf] deleteClassroom:', e));
+      if(activeCourseId===id){ activeCourseId=null; appState.classroom=null; db=makeEmptyDb(); goCoursesFromApp(); }
+      await _reloadCourses();
+    });
   }
 };
 
@@ -6163,7 +6297,7 @@ async function doSetPassword() {
       if(window.__appBootstrap) await window.__appBootstrap;
 
       if(window.Auth && window.Auth.isLoggedIn()){
-        // v3.1.3: se l'utente è loggato ma deve impostare la password
+        // v3.2.0: se l'utente è loggato ma deve impostare la password
         // (arrivato tramite magic link / invite prima che lo splash finisse)
         if(window.Auth.needsPasswordSetup()){
           // __onPasswordRecovery potrebbe essere già stato chiamato da onAuthStateChange;

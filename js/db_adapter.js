@@ -101,6 +101,9 @@ export async function loadCourses(teacherId) {
     colorIdx:  r.color_idx ?? 0,
     bgIdx:     r.bg_idx    ?? 0,
     createdAt: new Date(r.created_at).getTime(),
+    startDate: r.start_date || null,
+    endDate:   r.end_date   || null,
+    timeSlot:  r.time_slot  || null,
   }));
 
   _lsSet(LS_COURSES_KEY, courses);
@@ -139,6 +142,9 @@ export async function createCourse(teacherId, course) {
         color_idx:  course.colorIdx  ?? 0,
         bg_idx:     course.bgIdx     ?? 0,
         created_by: teacherId,
+        start_date: course.startDate || null,
+        end_date:   course.endDate   || null,
+        time_slot:  course.timeSlot  || null,
       })
       .select()
       .single(),
@@ -162,6 +168,9 @@ export async function createCourse(teacherId, course) {
     colorIdx:  cls.color_idx,
     bgIdx:     cls.bg_idx,
     createdAt: new Date(cls.created_at).getTime(),
+    startDate: cls.start_date || null,
+    endDate:   cls.end_date   || null,
+    timeSlot:  cls.time_slot  || null,
   };
 
   // Aggiorna cache locale
@@ -205,10 +214,11 @@ export async function updateCourse(id, updates) {
  */
 export async function deleteCourse(id) {
   if (_online) {
-    await _sbCall(
-      () => supabase.from('classrooms').delete().eq('id', id),
-      'deleteCourse'
-    );
+    // v3.2.0: usa RPC SECURITY DEFINER che bypassa il trigger anti-orfano
+    const { error } = await supabase.rpc('director_delete_classroom', { p_classroom_id: id });
+    if (error) {
+      console.warn('[PixelProf] deleteCourse RPC error:', error.message);
+    }
   }
   const local = _lsGet(LS_COURSES_KEY, []);
   _lsSet(LS_COURSES_KEY, local.filter(c => c.id !== id));

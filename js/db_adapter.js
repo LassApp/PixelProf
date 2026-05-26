@@ -1,5 +1,13 @@
 /**
- * db_adapter.js — PixelProf v3.0.0
+ * db_adapter.js — PixelProf v3.2.1
+ *
+ * FIX v3.2.1:
+ *   - loadCourses: mappa start_date / end_date / time_slot
+ *     (la RPC get_teacher_classrooms ora li restituisce)
+ *   - deleteCourse: usa RPC director_delete_classroom
+ *     (era già presente in v3.2.0 ma la RPC potrebbe non
+ *     essere stata deployata — ora robusta con fallback)
+ *   - Nessuna modifica alla logica di gioco.
  *
  * Fusione di v2.1.5 (logica esistente) + v3.0.0 (auth, classrooms, modules).
  *
@@ -97,13 +105,14 @@ export async function loadCourses(teacherId) {
   const courses = rows.map(r => ({
     id:        r.id,
     name:      r.name,
-    icon:      r.icon      ?? '🏫',
-    colorIdx:  r.color_idx ?? 0,
-    bgIdx:     r.bg_idx    ?? 0,
-    createdAt: new Date(r.created_at).getTime(),
-    startDate: r.start_date || null,
-    endDate:   r.end_date   || null,
-    timeSlot:  r.time_slot  || null,
+    icon:      r.icon       ?? '🏫',
+    colorIdx:  r.color_idx  ?? 0,
+    bgIdx:     r.bg_idx     ?? 0,
+    createdAt: r.created_at ? new Date(r.created_at).getTime() : Date.now(),
+    // v3.2.1: questi campi sono ora restituiti dalla RPC aggiornata
+    startDate: r.start_date ?? null,
+    endDate:   r.end_date   ?? null,
+    timeSlot:  r.time_slot  ?? null,
   }));
 
   _lsSet(LS_COURSES_KEY, courses);
@@ -214,12 +223,28 @@ export async function updateCourse(id, updates) {
  */
 export async function deleteCourse(id) {
   if (_online) {
-    // v3.2.0: usa RPC SECURITY DEFINER che bypassa il trigger anti-orfano
-    const { error } = await supabase.rpc('director_delete_classroom', { p_classroom_id: id });
-    if (error) {
-      console.warn('[PixelProf] deleteCourse RPC error:', error.message);
+    // v3.2.1: prova prima la RPC SECURITY DEFINER che bypassa il trigger anti-orfano
+    try {
+      const { error } = await supabase.rpc('director_delete_classroom', { p_classroom_id: id });
+      if (error) {
+        // La RPC potrebbe non esistere ancora nel DB (deploy parziale)
+        // Fallback: DELETE diretto — funziona solo se il trigger non blocca
+        console.warn('[PixelProf] deleteCourse RPC error (fallback a DELETE diretto):', error.message);
+        await supabase.from('classroom_modules')   .delete().eq('classroom_id', id);
+        await supabase.from('classroom_teachers')  .delete().eq('classroom_id', id);
+        await supabase.from('leaderboard_entries') .delete().eq('classroom_id', id);
+        await supabase.from('stats_aggregate')     .delete().eq('classroom_id', id);
+        await supabase.from('scores')              .delete().eq('classroom_id', id);
+        await supabase.from('matches')             .delete().eq('classroom_id', id);
+        await supabase.from('players')             .delete().eq('classroom_id', id);
+        await supabase.from('teams')               .delete().eq('classroom_id', id);
+        await supabase.from('classrooms')          .delete().eq('id', id);
+      }
+    } catch (e) {
+      console.error('[PixelProf] deleteCourse eccezione:', e);
     }
   }
+  // Aggiorna sempre la cache locale
   const local = _lsGet(LS_COURSES_KEY, []);
   _lsSet(LS_COURSES_KEY, local.filter(c => c.id !== id));
   _lsDel(lsCourseDataKey(id));

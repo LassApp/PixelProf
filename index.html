@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v3.2.0</title>
+<title>PixelProf — ICDL Lab interattivo v3.2.1</title>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1822,7 +1822,7 @@ body{
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v3.2.0</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v3.2.1</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -1948,7 +1948,7 @@ body{
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v3.2.0</span>
+        <span class="cs-logo-sub">ICDL Lab · v3.2.1</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v3.0.0 -->
@@ -2236,7 +2236,7 @@ body{
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v3.2.0</span>
+      <span class="logo-sub">ICDL Lab · v3.2.1</span>
     </div>
   </div>
   <!-- Course badge -->
@@ -5100,12 +5100,21 @@ function renderCoursesGrid(){
     const col=COLOR_PALETTE[colIdx];
     const bg =COURSE_BG_PRESETS[bgIdx];
     // Date formatting
-    const fmtDate=d=>{if(!d)return null;try{const dt=new Date(d);return dt.toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'2-digit'});}catch{return d;}};
+    const fmtDate=d=>{
+      if(!d) return null;
+      try{
+        // d può essere 'YYYY-MM-DD' (da Supabase) o timestamp
+        const dt=new Date(d);
+        if(isNaN(dt.getTime())) return d; // fallback: stringa grezza
+        return dt.toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'2-digit'});
+      }catch{return d;}
+    };
     const startFmt=fmtDate(c.startDate);
     const endFmt  =fmtDate(c.endDate);
+    // Mostra riga date solo se almeno una è presente
     const dateRow = (startFmt||endFmt)
-      ? `<div class="course-card-dates">${startFmt||'—'} → ${endFmt||'—'}</div>`
-      : `<div class="course-card-meta">Creata il ${new Date(c.createdAt).toLocaleDateString('it-IT',{day:'2-digit',month:'short'})}</div>`;
+      ? `<div class="course-card-dates"><i class="ti ti-calendar" style="font-size:9px;opacity:.6"></i> ${startFmt||'—'} → ${endFmt||'—'}</div>`
+      : `<div class="course-card-meta">Creata il ${new Date(c.createdAt||Date.now()).toLocaleDateString('it-IT',{day:'2-digit',month:'short'})}</div>`;
     const timeRow = c.timeSlot
       ? `<div class="course-card-time"><i class="ti ti-clock" style="font-size:10px"></i> ${escHtml(c.timeSlot)}</div>`
       : '';
@@ -5536,16 +5545,22 @@ async function _reloadCourses(){
   try{
     const list = await window.DB.loadClassrooms(teacherId);
     const enriched = list||[];
-    // Per ogni aula carica i docenti (in background, non bloccante)
+    // Per ogni aula carica i docenti assegnati (in background, non bloccante)
+    // v3.2.1: carica in parallelo, con fallback silenzioso per aula
     if(window.DB.getClassroomTeachers){
       await Promise.all(enriched.map(async c=>{
         try{
           const teachers = await window.DB.getClassroomTeachers(c.id);
           c._teachers = teachers||[];
-        }catch(e){ c._teachers=[]; }
+        }catch(e){
+          console.warn('[PixelProf] getClassroomTeachers failed for', c.id, e.message);
+          c._teachers=[];
+        }
       }));
     }
+    // v3.2.1: salva nel formato corretto (con date e teachers)
     localStorage.setItem('pp5_courses', JSON.stringify(enriched));
+    console.log('[PixelProf] _reloadCourses: caricate', enriched.length, 'aule');
   }catch(e){
     console.warn('[PixelProf] _reloadCourses fallback localStorage:', e);
   }

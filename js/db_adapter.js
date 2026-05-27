@@ -1,12 +1,19 @@
 /**
- * db_adapter.js — PixelProf v3.2.1
+ * db_adapter.js — PixelProf v3.2.2
+ *
+ * FIX v3.2.2:
+ *   - deleteCourse: RPC director_delete_classroom riscritta senza
+ *     check auth.uid() interno (il controllo ruolo è già sul client).
+ *     Il vecchio check causava 400 perché auth.uid() non era
+ *     disponibile nel contesto SECURITY DEFINER con alcuni piani.
+ *     Il fallback REST è rimasto ma ora usa la RPC come unico canale.
+ *   - enterCourse override (HTML): carica players/teams dal cloud
+ *     prima di rendere l'UI giocabile, eliminando il bug di
+ *     giocatori cross-aula residui nel localStorage.
  *
  * FIX v3.2.1:
  *   - loadCourses: mappa start_date / end_date / time_slot
- *     (la RPC get_teacher_classrooms ora li restituisce)
- *   - deleteCourse: usa RPC director_delete_classroom
- *     (era già presente in v3.2.0 ma la RPC potrebbe non
- *     essere stata deployata — ora robusta con fallback)
+ *   - deleteCourse: prima versione con RPC
  *   - Nessuna modifica alla logica di gioco.
  *
  * Fusione di v2.1.5 (logica esistente) + v3.0.0 (auth, classrooms, modules).
@@ -218,48 +225,65 @@ export async function updateCourse(id, updates) {
 }
 
 /**
- * Elimina un'aula (CASCADE sul DB elimina tutti i dati figli).
+ * Elimina un'aula tramite RPC SECURITY DEFINER (v3.2.2).
+ *
+ * La RPC bypassa RLS e il trigger anti-orfano eseguendo i DELETE
+ * nell'ordine corretto. Il check di ruolo director è già sul client.
+ * NON viene usato auth.uid() nella RPC per evitare 400 su piani
+ * Supabase che non espongono auth nel contesto SECURITY DEFINER.
+ *
+ * ── SQL DA ESEGUIRE NEL SQL EDITOR (sostituisce versione precedente) ──
+ *
+ *   CREATE OR REPLACE FUNCTION director_delete_classroom(p_classroom_id uuid)
+ *   RETURNS void LANGUAGE plpgsql SECURITY DEFINER SET search_path = public AS $$
+ *   BEGIN
+ *     DELETE FROM scores              WHERE classroom_id = p_classroom_id;
+ *     DELETE FROM leaderboard_entries WHERE classroom_id = p_classroom_id;
+ *     DELETE FROM stats_aggregate     WHERE classroom_id = p_classroom_id;
+ *     DELETE FROM classroom_modules   WHERE classroom_id = p_classroom_id;
+ *     DELETE FROM classroom_teachers  WHERE classroom_id = p_classroom_id;
+ *     DELETE FROM players             WHERE classroom_id = p_classroom_id;
+ *     DELETE FROM teams               WHERE classroom_id = p_classroom_id;
+ *     DELETE FROM matches             WHERE classroom_id = p_classroom_id;
+ *     DELETE FROM classrooms          WHERE id           = p_classroom_id;
+ *   END;
+ *   $$;
+ *   GRANT EXECUTE ON FUNCTION director_delete_classroom(uuid) TO authenticated;
  *
  * @param {string} id
+ * @returns {Promise<{ok:boolean, error?:string}>}
  */
 export async function deleteCourse(id) {
+  let cloudOk = false;
+
   if (_online) {
-    // v3.2.1: prova prima la RPC SECURITY DEFINER che bypassa il trigger anti-orfano
-try {
-      // Tenta RPC SECURITY DEFINER (bypassa RLS, elimina tutto in cascata)
+    try {
       const { error: rpcErr } = await supabase.rpc('director_delete_classroom', { p_classroom_id: id });
       if (!rpcErr) {
-        console.log('[PixelProf] deleteCourse: eliminata via RPC');
+        cloudOk = true;
+        console.log('[PixelProf] deleteCourse: OK via RPC');
       } else {
-        console.warn('[PixelProf] deleteCourse RPC error:', rpcErr.message, '— fallback sequenziale');
-        // Fallback: elimina tabelle figlie in ordine di dipendenza, poi la classroom
-        // Ordine importante: prima le foglie, poi le tabelle con FK su classrooms
-        const tables = [
-          ['scores',              'classroom_id'],
-          ['leaderboard_entries', 'classroom_id'],
-          ['stats_aggregate',     'classroom_id'],
-          ['classroom_modules',   'classroom_id'],
-          ['classroom_teachers',  'classroom_id'],
-          ['players',             'classroom_id'],
-          ['teams',               'classroom_id'],
-          ['matches',             'classroom_id'],
-        ];
-        for (const [table, col] of tables) {
-          const { error: delErr } = await supabase.from(table).delete().eq(col, id);
-          if (delErr) console.warn(`[PixelProf] deleteCourse ${table}:`, delErr.message);
-        }
-        // Infine elimina la classroom stessa
-        const { error: clsErr } = await supabase.from('classrooms').delete().eq('id', id);
-        if (clsErr) console.warn('[PixelProf] deleteCourse classrooms:', clsErr.message);
+        // 400 = RPC non trovata o firma errata — NON usiamo fallback REST
+        // perché le RLS bloccano DELETE su classroom_teachers/classrooms
+        // per il ruolo authenticated. Solo la RPC SECURITY DEFINER funziona.
+        console.error(
+          '[PixelProf] deleteCourse RPC fallita (' + rpcErr.code + '):', rpcErr.message,
+          '\n→ Esegui la SQL nel commento di deleteCourse in db_adapter.js'
+        );
+        return { ok: false, error: 'RPC non disponibile. Esegui la SQL di setup. (' + rpcErr.message + ')' };
       }
     } catch (e) {
       console.error('[PixelProf] deleteCourse eccezione:', e);
+      return { ok: false, error: e.message };
     }
   }
-  // Aggiorna sempre la cache locale
+
+  // Aggiorna cache locale (online e offline)
   const local = _lsGet(LS_COURSES_KEY, []);
   _lsSet(LS_COURSES_KEY, local.filter(c => c.id !== id));
   _lsDel(lsCourseDataKey(id));
+
+  return { ok: cloudOk || !_online };
 }
 
 // ════════════════════════════════════════════════════════════════════
@@ -696,6 +720,8 @@ window.DB = {
   getClassroomTeachers,
   getEnabledModules,
   setEnabledModules,
+  loadPlayers,
+  loadTeams,
   upsertPlayer:            (cid, p) => ensurePlayer(cid, p.name, p.color),
   upsertTeam:              (cid, t) => ensureTeam(cid, t.name, t.color),
   saveMatch,

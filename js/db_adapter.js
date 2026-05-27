@@ -225,21 +225,32 @@ export async function updateCourse(id, updates) {
 export async function deleteCourse(id) {
   if (_online) {
     // v3.2.1: prova prima la RPC SECURITY DEFINER che bypassa il trigger anti-orfano
-    try {
-      const { error } = await supabase.rpc('director_delete_classroom', { p_classroom_id: id });
-      if (error) {
-        // La RPC potrebbe non esistere ancora nel DB (deploy parziale)
-        // Fallback: DELETE diretto — funziona solo se il trigger non blocca
-        console.warn('[PixelProf] deleteCourse RPC error (fallback a DELETE diretto):', error.message);
-        await supabase.from('classroom_modules')   .delete().eq('classroom_id', id);
-        await supabase.from('classroom_teachers')  .delete().eq('classroom_id', id);
-        await supabase.from('leaderboard_entries') .delete().eq('classroom_id', id);
-        await supabase.from('stats_aggregate')     .delete().eq('classroom_id', id);
-        await supabase.from('scores')              .delete().eq('classroom_id', id);
-        await supabase.from('matches')             .delete().eq('classroom_id', id);
-        await supabase.from('players')             .delete().eq('classroom_id', id);
-        await supabase.from('teams')               .delete().eq('classroom_id', id);
-        await supabase.from('classrooms')          .delete().eq('id', id);
+try {
+      // Tenta RPC SECURITY DEFINER (bypassa RLS, elimina tutto in cascata)
+      const { error: rpcErr } = await supabase.rpc('director_delete_classroom', { p_classroom_id: id });
+      if (!rpcErr) {
+        console.log('[PixelProf] deleteCourse: eliminata via RPC');
+      } else {
+        console.warn('[PixelProf] deleteCourse RPC error:', rpcErr.message, '— fallback sequenziale');
+        // Fallback: elimina tabelle figlie in ordine di dipendenza, poi la classroom
+        // Ordine importante: prima le foglie, poi le tabelle con FK su classrooms
+        const tables = [
+          ['scores',              'classroom_id'],
+          ['leaderboard_entries', 'classroom_id'],
+          ['stats_aggregate',     'classroom_id'],
+          ['classroom_modules',   'classroom_id'],
+          ['classroom_teachers',  'classroom_id'],
+          ['players',             'classroom_id'],
+          ['teams',               'classroom_id'],
+          ['matches',             'classroom_id'],
+        ];
+        for (const [table, col] of tables) {
+          const { error: delErr } = await supabase.from(table).delete().eq(col, id);
+          if (delErr) console.warn(`[PixelProf] deleteCourse ${table}:`, delErr.message);
+        }
+        // Infine elimina la classroom stessa
+        const { error: clsErr } = await supabase.from('classrooms').delete().eq('id', id);
+        if (clsErr) console.warn('[PixelProf] deleteCourse classrooms:', clsErr.message);
       }
     } catch (e) {
       console.error('[PixelProf] deleteCourse eccezione:', e);

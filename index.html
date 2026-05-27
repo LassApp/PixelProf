@@ -5917,7 +5917,26 @@ enterCourse = async function(id){
   const course  = courses.find(c=>c.id===id);
   if(!course) return;
   appState.classroom = course;
+  // Carica db locale prima (fast path)
   _enterCourse_orig(id);
+  // Poi sovrascrive players/teams dal cloud (source of truth)
+  if(window.DB){
+    try{
+      const [cloudPlayers, cloudTeams] = await Promise.all([
+        window.DB.upsertPlayer ? Promise.resolve(null) : Promise.resolve(null),
+        Promise.resolve(null),
+      ]);
+      // Usa loadCourseData cloud (db_adapter.js espone window.db_loadCourseData)
+      const cloudData = await window.db_loadCourseData(id).catch(()=>null);
+      if(cloudData){
+        // Aggiorna SOLO players e teams — non lb2/stats (già caricati da locale/cloud)
+        if(Array.isArray(cloudData.players)) db.players = cloudData.players;
+        if(Array.isArray(cloudData.teams))   db.teams   = cloudData.teams;
+      }
+    }catch(e){
+      console.warn('[PixelProf] enterCourse cloud sync:', e);
+    }
+  }
   await _applyModuleFilter(id);
 };
 

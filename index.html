@@ -5544,21 +5544,15 @@ async function _reloadCourses(){
   if(!teacherId || !window.DB){ renderCoursesGrid(); return; }
   try{
     const list = await window.DB.loadClassrooms(teacherId);
-    const enriched = list||[];
-    // Per ogni aula carica i docenti assegnati (in background, non bloccante)
-    // v3.2.1: carica in parallelo, con fallback silenzioso per aula
-    if(window.DB.getClassroomTeachers){
-      await Promise.all(enriched.map(async c=>{
-        try{
-          const teachers = await window.DB.getClassroomTeachers(c.id);
-          c._teachers = teachers||[];
-        }catch(e){
-          console.warn('[PixelProf] getClassroomTeachers failed for', c.id, e.message);
-          c._teachers=[];
-        }
-      }));
-    }
-    // v3.2.1: salva nel formato corretto (con date e teachers)
+    const enriched = (list||[]).map(c => {
+      // La RPC v3.2.3 restituisce teachers già embedded come array
+      // Compatibilità: accetta sia array che assente
+      if(!c._teachers && c.teachers){
+        c._teachers = Array.isArray(c.teachers) ? c.teachers : [];
+      }
+      if(!c._teachers) c._teachers = [];
+      return c;
+    });
     localStorage.setItem('pp5_courses', JSON.stringify(enriched));
     console.log('[PixelProf] _reloadCourses: caricate', enriched.length, 'aule');
   }catch(e){

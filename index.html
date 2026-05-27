@@ -5638,7 +5638,7 @@ async function _reloadCourses(){
     console.warn('[PixelProf] _reloadCourses fallback localStorage:', e);
   }
   renderCoursesGrid();
-}
+}}
 
 async function doLogout(){
   // Conferma sempre, sia durante il gioco sia fuori
@@ -6024,30 +6024,36 @@ enterCourse = async function(id){
   if(!course) return;
   appState.classroom = course;
 
-  // 1. Entra subito (UI visibile, localStorage come base)
-  _enterCourse_orig(id);
-
-  // 2. Carica players e teams dal cloud in background
-  //    e aggiorna db PRIMA che il docente arrivi alla schermata
-  //    di selezione giocatori (ha ~350ms di transizione + click).
+  // 1. Carica players e teams dal cloud PRIMA di chiamare _enterCourse_orig.
+  //    In questo modo quando goHome() → selMode() → renderIndChips() viene
+  //    eseguito, db.players contiene già i dati corretti dell'aula selezionata
+  //    e non i residui dell'aula precedente nel localStorage.
   if(window.DB && window.Auth?.getUserId()){
     try{
       const [cloudPlayers, cloudTeams] = await Promise.all([
         window.DB.loadPlayers ? window.DB.loadPlayers(id) : Promise.resolve(null),
         window.DB.loadTeams   ? window.DB.loadTeams(id)   : Promise.resolve(null),
       ]);
-      // Aggiorna db in-memory con i dati cloud — sovrascrive localStorage
+      // Aggiorna db in-memory con i dati cloud prima che la UI sia visibile
       if(cloudPlayers !== null) db.players = cloudPlayers;
       if(cloudTeams   !== null) db.teams   = cloudTeams;
-      // Persiste nel localStorage dell'aula corrente
-      save();
       console.log('[PixelProf] enterCourse cloud sync:', db.players.length, 'players,', db.teams.length, 'teams');
     }catch(e){
       console.warn('[PixelProf] enterCourse cloud sync fallback:', e.message);
+      // Fallback: usa localStorage — i dati potrebbero essere dell'aula precedente
+      // ma è meglio che non entrare affatto
     }
   }
 
-  // 3. Filtra moduli abilitati
+  // 2. Ora entra nell'aula — loadCourseData leggerà i players dal cloud già caricati
+  //    (db è già aggiornato, loadCourseData sovrascriverà solo i campi lb2/stats/sessions)
+  _enterCourse_orig(id);
+
+  // 3. Persiste nel localStorage dell'aula corrente (dopo che _enterCourse_orig
+  //    ha impostato activeCourseId)
+  save();
+
+  // 4. Filtra moduli abilitati
   await _applyModuleFilter(id);
 };
 

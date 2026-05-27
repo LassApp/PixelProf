@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PixelProf — ICDL Lab interattivo v3.2.1</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" sizes="48x48" href="favicon-48.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1392,28 +1395,23 @@ body{
 .course-card:hover::after{opacity:1;}
 
 .course-card-menu{
-  position:absolute;top:10px;right:10px;z-index:5;
-  width:28px;height:28px;border-radius:7px;
+  /* Inline nel flex .course-card-top — non più absolute */
+  position:static;
+  width:26px;height:26px;border-radius:7px;
   border:1px solid rgba(255,255,255,.08);
   background:rgba(0,0,0,.25);
   color:rgba(255,255,255,.4);
-  font-size:16px;display:flex;align-items:center;justify-content:center;
+  font-size:15px;display:flex;align-items:center;justify-content:center;
   cursor:pointer;transition:all var(--transition-fast);
   backdrop-filter:blur(4px);
   line-height:1;font-family:inherit;
+  flex-shrink:0;
 }
 .course-card-menu:hover{
   background:rgba(0,0,0,.5);color:#fff;
   border-color:rgba(255,255,255,.2);
   box-shadow:0 0 8px rgba(0,0,0,.3);
 }
-
-.course-card-name{
-  font-size:14px;font-weight:700;color:#fff;
-  margin-bottom:4px;line-height:1.3;
-  word-break:break-word;transition:color var(--transition-fast);
-}
-.course-card:hover .course-card-name{color:var(--accent);}
 .course-card-meta{
   font-size:10px;font-family:'Share Tech Mono',monospace;
   color:rgba(255,255,255,.25);letter-spacing:.5px;
@@ -1522,37 +1520,83 @@ body{
 #screen-courses.entering{animation:screenFadeIn .35s ease both;}
 @keyframes screenFadeIn{from{opacity:0;}to{opacity:1;}}
 
-/* ── course-card v3.2.0 — nuovo layout ── */
+/* ── course-card v3.2.2 — layout a 3 zone ──
+   TOP:    icona(sx) | nome(center) | menu(dx)
+   MIDDLE: date + fascia oraria
+   BOTTOM: docenti con pipe separator
+── */
+
+/* TOP — flex row: icona | spazio | nome | spazio | menu */
 .course-card-top{
-  display:flex;align-items:flex-start;gap:8px;margin-bottom:8px;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-bottom:10px;
+  position:relative;
 }
+/* Icona: più piccola rispetto al layout precedente */
 .course-card-icon{
-  font-size:26px;display:block;flex-shrink:0;
-  filter:drop-shadow(0 0 8px rgba(255,255,255,.15));
+  font-size:18px;
+  display:block;flex-shrink:0;
+  line-height:1;
+  filter:drop-shadow(0 0 6px rgba(255,255,255,.12));
   transition:transform var(--transition-bounce),filter var(--transition-fast);
 }
 .course-card:hover .course-card-icon{
-  transform:scale(1.1);
-  filter:drop-shadow(0 0 12px rgba(255,255,255,.25));
+  transform:scale(1.12);
+  filter:drop-shadow(0 0 10px rgba(255,255,255,.22));
 }
-.course-card-teachers{
-  display:flex;flex-wrap:wrap;gap:3px;flex:1;align-self:flex-start;
+/* Nome: flex:1 + text-align:center per posizionarsi tra icona e menu */
+.course-card-name{
+  flex:1;
+  font-size:14px;font-weight:700;color:#fff;
+  line-height:1.25;
+  word-break:break-word;
+  text-align:center;
+  transition:color var(--transition-fast);
 }
-.course-card-teacher-chip{
-  font-size:9px;font-weight:600;
-  padding:2px 7px;border-radius:20px;
-  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
-  color:rgba(255,255,255,.5);white-space:nowrap;
-  font-family:'Share Tech Mono',monospace;letter-spacing:.3px;
+.course-card:hover .course-card-name{color:var(--accent);}
+
+/* MIDDLE — data + fascia oraria */
+.course-card-middle{
+  margin-bottom:8px;
+  min-height:28px;
 }
 .course-card-dates{
   font-size:10px;font-family:'Share Tech Mono',monospace;
-  color:rgba(255,255,255,.45);letter-spacing:.3px;margin-top:3px;
+  color:rgba(255,255,255,.5);letter-spacing:.3px;
+  display:flex;align-items:center;gap:4px;
+  margin-bottom:2px;
 }
 .course-card-time{
   font-size:10px;font-family:'Share Tech Mono',monospace;
-  color:rgba(255,255,255,.3);letter-spacing:.3px;margin-top:2px;
+  color:rgba(255,255,255,.32);letter-spacing:.3px;
   display:flex;align-items:center;gap:4px;
+}
+.course-card-meta{
+  font-size:9px;font-family:'Share Tech Mono',monospace;
+  color:rgba(255,255,255,.2);letter-spacing:.5px;
+}
+
+/* BOTTOM — docenti con pipe separator */
+.course-card-teachers{
+  border-top:1px solid rgba(255,255,255,.06);
+  padding-top:7px;
+  display:flex;flex-wrap:wrap;gap:0;
+  line-height:1.5;
+}
+.course-card-teacher-chip{
+  font-size:9px;font-weight:500;
+  color:rgba(255,255,255,.38);
+  font-family:'Share Tech Mono',monospace;
+  letter-spacing:.3px;
+  white-space:nowrap;
+}
+/* Pipe tra i docenti: pseudo-element su tutti tranne il primo */
+.course-card-teacher-chip + .course-card-teacher-chip::before{
+  content:' | ';
+  color:rgba(255,255,255,.18);
+  white-space:pre;
 }
 
 /* ===============================================
@@ -1951,9 +1995,10 @@ body{
         <span class="cs-logo-sub">ICDL Lab · v3.2.1</span>
       </div>
     </div>
-    <!-- Badge docente loggato + azioni — v3.0.0 -->
+    <!-- Badge docente loggato + azioni — v3.2.2 -->
     <div class="cs-teacher-badge">
       <span id="cs-director-badge" class="cs-director-badge hidden">👑 Direttore</span>
+      <span id="cs-teacher-role-badge" class="hidden" style="display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.25);color:#00cfff;font-size:10px;font-weight:700;font-family:'Share Tech Mono',monospace;letter-spacing:.5px">📖 Docente</span>
       <span class="cs-teacher-name" id="cs-teacher-name"></span>
       <button class="cs-logout-btn" onclick="doLogout()">
         <i class="ti ti-logout"></i> Esci
@@ -2239,10 +2284,10 @@ body{
       <span class="logo-sub">ICDL Lab · v3.2.1</span>
     </div>
   </div>
-  <!-- Course badge -->
-  <div id="tb-course-badge" class="hidden" style="display:flex;align-items:center;gap:6px;padding:4px 10px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:11px;color:rgba(255,255,255,.4);max-width:120px;overflow:hidden">
-    <span id="tb-course-icon" style="font-size:13px;flex-shrink:0"></span>
-    <span id="tb-course-name" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500"></span>
+  <!-- Course badge — nome prioritario, icona opzionale se c'è spazio -->
+  <div id="tb-course-badge" class="hidden" style="display:flex;align-items:center;gap:5px;padding:4px 11px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:11px;color:rgba(255,255,255,.55);max-width:160px;overflow:hidden;flex-shrink:1;min-width:0">
+    <span id="tb-course-icon" style="font-size:12px;flex-shrink:0;opacity:.7"></span>
+    <span id="tb-course-name" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600;color:#e2e8f0;min-width:0"></span>
   </div>
   <!-- NAV -->
   <nav class="tb-nav">
@@ -3305,19 +3350,44 @@ function goHome(){
 }
 
 function goCoursesFromApp(){
+  const _execBack = () => {
+    resetSessionState();
+    sh('screen-courses').classList.remove('hidden');
+    document.querySelector('.app').style.display='none';
+    renderCoursesGrid();
+  };
   if(isGameActive()){
-    ppConfirm(()=>{
-      resetSessionState();
-      sh('screen-courses').classList.remove('hidden');
-      document.querySelector('.app').style.display='none';
-      renderCoursesGrid();
-    });
+    ppConfirm(_execBack);
     return;
   }
-  resetSessionState();
-  sh('screen-courses').classList.remove('hidden');
-  document.querySelector('.app').style.display='none';
-  renderCoursesGrid();
+  // Anche fuori dal gioco: conferma uscita dall'aula se un'aula è attiva
+  if(activeCourseId){
+    const courses=loadCourses();
+    const course=courses.find(c=>c.id===activeCourseId);
+    const aulaNome=course?course.name:'questa aula';
+    const t=sh('pp-dialog-title'), s=sh('pp-dialog-sub'), y=sh('pp-dialog-yes');
+    const _prevT=t?.textContent, _prevS=s?.textContent, _prevY=y?.textContent;
+    const _prevYes=sh('pp-dialog-yes')?.onclick, _prevNo=sh('pp-dialog-no')?.onclick;
+    if(t) t.textContent='Esci da "'+aulaNome+'"?';
+    if(s) s.textContent='Tornerai alla schermata di selezione aule.';
+    if(y) y.textContent='Sì, cambia aula';
+    sh('pp-dialog-yes').onclick = function(){
+      sh('pp-dialog-overlay').classList.add('hidden');
+      sh('pp-dialog-yes').onclick=_prevYes; sh('pp-dialog-no').onclick=_prevNo;
+      if(t)t.textContent=_prevT; if(s)s.textContent=_prevS; if(y)y.textContent=_prevY;
+      _setDialogCopy('exit');
+      _execBack();
+    };
+    sh('pp-dialog-no').onclick = function(){
+      sh('pp-dialog-overlay').classList.add('hidden');
+      sh('pp-dialog-yes').onclick=_prevYes; sh('pp-dialog-no').onclick=_prevNo;
+      if(t)t.textContent=_prevT; if(s)s.textContent=_prevS; if(y)y.textContent=_prevY;
+      _setDialogCopy('exit');
+    };
+    sh('pp-dialog-overlay').classList.remove('hidden');
+    return;
+  }
+  _execBack();
 }
 
 function goTab(t){
@@ -5113,18 +5183,18 @@ function renderCoursesGrid(){
     const endFmt  =fmtDate(c.endDate);
     // Mostra riga date solo se almeno una è presente
     const dateRow = (startFmt||endFmt)
-      ? `<div class="course-card-dates"><i class="ti ti-calendar" style="font-size:9px;opacity:.6"></i> ${startFmt||'—'} → ${endFmt||'—'}</div>`
+      ? `<div class="course-card-dates"><i class="ti ti-calendar" style="font-size:9px;opacity:.5"></i> ${startFmt||'—'} → ${endFmt||'—'}</div>`
       : `<div class="course-card-meta">Creata il ${new Date(c.createdAt||Date.now()).toLocaleDateString('it-IT',{day:'2-digit',month:'short'})}</div>`;
     const timeRow = c.timeSlot
-      ? `<div class="course-card-time"><i class="ti ti-clock" style="font-size:10px"></i> ${escHtml(c.timeSlot)}</div>`
+      ? `<div class="course-card-time"><i class="ti ti-clock" style="font-size:10px;opacity:.5"></i> ${escHtml(c.timeSlot)}</div>`
       : '';
     // Teachers list (names, exclude director role)
-    const teacherNames=(c._teachers||[])
+    const teacherChips=(c._teachers||[])
       .filter(t=>t.role!=='director')
       .map(t=>`<span class="course-card-teacher-chip">${escHtml(t.name||'')}</span>`)
       .join('');
-    const teachersRow=teacherNames
-      ?`<div class="course-card-teachers">${teacherNames}</div>`:'';
+    const teachersRow=teacherChips
+      ?`<div class="course-card-teachers">${teacherChips}</div>`:'';
     return`<div class="course-card" data-course-id="${escAttr(c.id)}"
       data-colidx="${colIdx}" data-bgidx="${bgIdx}"
       style="
@@ -5137,14 +5207,19 @@ function renderCoursesGrid(){
       "
       onclick="enterCourse('${escAttr(c.id)}')"
     >
-      <button class="course-card-menu" onclick="event.stopPropagation();openCourseMenu('${escAttr(c.id)}',this)" title="Opzioni" aria-label="Opzioni aula">⋯</button>
+      <!-- TOP: icona · nome · menu -->
       <div class="course-card-top">
         <span class="course-card-icon">${c.icon}</span>
-        ${teachersRow}
+        <div class="course-card-name">${escHtml(c.name)}</div>
+        <button class="course-card-menu" onclick="event.stopPropagation();openCourseMenu('${escAttr(c.id)}',this)" title="Opzioni" aria-label="Opzioni aula" style="position:static;flex-shrink:0">⋯</button>
       </div>
-      <div class="course-card-name">${escHtml(c.name)}</div>
-      ${dateRow}
-      ${timeRow}
+      <!-- MIDDLE: date + orario -->
+      <div class="course-card-middle">
+        ${dateRow}
+        ${timeRow}
+      </div>
+      <!-- BOTTOM: docenti -->
+      ${teachersRow}
     </div>`;
   }).join('');
   // hover glow
@@ -5509,6 +5584,10 @@ async function _afterLogin(){
   const dirBadge  = sh('cs-director-badge');
   if(nameEl)    nameEl.textContent = appState.teacher?.name || window.Auth.getName();
   if(dirBadge)  dirBadge.classList.toggle('hidden', !isDir);
+  // Badge ruolo docente nella screen-courses (visibile solo ai non-direttori)
+  const teacherRoleBadge = sh('cs-teacher-role-badge');
+  if(teacherRoleBadge) teacherRoleBadge.classList.toggle('hidden', isDir);
+  if(teacherRoleBadge) teacherRoleBadge.style.display = isDir ? 'none' : 'inline-flex';
 
   // Badge ruolo+nome nella topbar dell'app (sempre visibile quando si è in gioco)
   const tbBadge   = sh('tb-user-badge');
@@ -5559,14 +5638,38 @@ async function _reloadCourses(){
     console.warn('[PixelProf] _reloadCourses fallback localStorage:', e);
   }
   renderCoursesGrid();
-}
+}}
 
 async function doLogout(){
+  // Conferma sempre, sia durante il gioco sia fuori
+  const _execLogout = async () => { resetSessionState(); await _performLogout(); };
   if(isGameActive()){
-    ppConfirm(async()=>{ resetSessionState(); await _performLogout(); });
+    ppConfirm(_execLogout);
     return;
   }
-  await _performLogout();
+  // Fuori dal gioco: dialog custom con copia "logout"
+  const t=sh('pp-dialog-title'), s=sh('pp-dialog-sub'), y=sh('pp-dialog-yes');
+  const _prevT=t?.textContent, _prevS=s?.textContent, _prevY=y?.textContent;
+  const _prevYes=sh('pp-dialog-yes')?.onclick, _prevNo=sh('pp-dialog-no')?.onclick;
+  if(t) t.textContent='Esci da PixelProf?';
+  if(s) s.textContent='Verrai disconnesso e dovrai accedere nuovamente.';
+  if(y) y.textContent='Sì, esci';
+  // Override callbacks per questo caso
+  sh('pp-dialog-yes').onclick = function(){
+    sh('pp-dialog-overlay').classList.add('hidden');
+    sh('pp-dialog-yes').onclick = _prevYes;
+    sh('pp-dialog-no').onclick  = _prevNo;
+    if(t) t.textContent=_prevT; if(s) s.textContent=_prevS; if(y) y.textContent=_prevY;
+    _execLogout();
+  };
+  sh('pp-dialog-no').onclick = function(){
+    sh('pp-dialog-overlay').classList.add('hidden');
+    sh('pp-dialog-yes').onclick = _prevYes;
+    sh('pp-dialog-no').onclick  = _prevNo;
+    if(t) t.textContent=_prevT; if(s) s.textContent=_prevS; if(y) y.textContent=_prevY;
+    _setDialogCopy('exit'); // ripristina copia default
+  };
+  sh('pp-dialog-overlay').classList.remove('hidden');
 }
 
 async function _performLogout(){
@@ -5910,8 +6013,9 @@ function _showDeleteClassroomConfirm(id, name, onConfirm){
 
 /* ==================================================
    OVERRIDE enterCourse — salva appState + filtra moduli
-   v3.2.2: ricarica players/teams dal cloud (source of truth)
-   per evitare contaminazione cross-aula dal localStorage.
+   v3.2.2: carica players/teams dal cloud PRIMA di entrare
+   nell'aula, eliminando il bug di giocatori cross-aula
+   residui nel localStorage da sessioni precedenti.
 ================================================== */
 const _enterCourse_orig = enterCourse;
 enterCourse = async function(id){
@@ -5919,27 +6023,31 @@ enterCourse = async function(id){
   const course  = courses.find(c=>c.id===id);
   if(!course) return;
   appState.classroom = course;
-  // 1. Carica db locale (fast path — UI reattiva subito)
+
+  // 1. Entra subito (UI visibile, localStorage come base)
   _enterCourse_orig(id);
-  // 2. Sovrascrive players/teams col dato cloud (source of truth).
-  //    Questo elimina il bug "giocatori di un'altra aula visibili"
-  //    causato dalla cache localStorage condivisa tra aule.
-  if(window.db_loadCourseData){
+
+  // 2. Carica players e teams dal cloud in background
+  //    e aggiorna db PRIMA che il docente arrivi alla schermata
+  //    di selezione giocatori (ha ~350ms di transizione + click).
+  if(window.DB && window.Auth?.getUserId()){
     try{
-      const cloudData = await window.db_loadCourseData(id);
-      if(cloudData){
-        if(Array.isArray(cloudData.players) && cloudData.players.length >= 0)
-          db.players = cloudData.players;
-        if(Array.isArray(cloudData.teams) && cloudData.teams.length >= 0)
-          db.teams = cloudData.teams;
-        // Persiste la versione corretta nel localStorage dell'aula corrente
-        save();
-      }
+      const [cloudPlayers, cloudTeams] = await Promise.all([
+        window.DB.loadPlayers ? window.DB.loadPlayers(id) : Promise.resolve(null),
+        window.DB.loadTeams   ? window.DB.loadTeams(id)   : Promise.resolve(null),
+      ]);
+      // Aggiorna db in-memory con i dati cloud — sovrascrive localStorage
+      if(cloudPlayers !== null) db.players = cloudPlayers;
+      if(cloudTeams   !== null) db.teams   = cloudTeams;
+      // Persiste nel localStorage dell'aula corrente
+      save();
+      console.log('[PixelProf] enterCourse cloud sync:', db.players.length, 'players,', db.teams.length, 'teams');
     }catch(e){
-      console.warn('[PixelProf] enterCourse cloud player sync:', e);
+      console.warn('[PixelProf] enterCourse cloud sync fallback:', e.message);
     }
   }
-  // 3. Applica filtro moduli
+
+  // 3. Filtra moduli abilitati
   await _applyModuleFilter(id);
 };
 
@@ -5969,8 +6077,20 @@ cdAction = async function(action){
     const courseName = courses[idx].name;
     // Custom confirm dialog per eliminazione aula
     _showDeleteClassroomConfirm(id, courseName, async ()=>{
-      // DB.deleteClassroom v3.2.0 usa RPC director_delete_classroom (SECURITY DEFINER)
-      await window.DB.deleteClassroom(id).catch(e=>console.warn('[PixelProf] deleteClassroom:', e));
+      // v3.2.2: deleteClassroom restituisce {ok, error}
+      const delRes = await window.DB.deleteClassroom(id).catch(e=>({ ok:false, error:e.message }));
+      if(delRes && !delRes.ok){
+        // RPC non configurata — mostra istruzioni chiare al direttore
+        alert(
+          '❌ Impossibile eliminare l\'aula.\n\n' +
+          'La funzione SQL non è ancora configurata su Supabase.\n\n' +
+          'Vai su Supabase → SQL Editor ed esegui la funzione\n' +
+          'director_delete_classroom() riportata nel commento\n' +
+          'di db_adapter.js (sezione deleteCourse).\n\n' +
+          'Dettaglio: ' + (delRes.error || 'errore sconosciuto')
+        );
+        return;
+      }
       if(activeCourseId===id){ activeCourseId=null; appState.classroom=null; db=makeEmptyDb(); goCoursesFromApp(); }
       await _reloadCourses();
     });
@@ -6300,14 +6420,26 @@ async function doSetPassword() {
     await _enterApp();
   };
 
-  // Fallback a 3s — entra direttamente se isLoggedIn() è già true
+  // Fallback a 3s — con type=invite USER_UPDATED non sempre scatta.
+  // Usiamo checkSession() (getSession dal server) invece di isLoggedIn()
+  // (che legge solo lo stato in-memory e può essere stale).
   const _fallback = setTimeout(async () => {
     window.__onPasswordSet = _prevOnPwdSet;
-    if (window.Auth?.isLoggedIn()) {
-      await _enterApp();
-    } else {
+    try {
+      const freshUser = window.Auth?.checkSession
+        ? await window.Auth.checkSession()
+        : null;
+      // Considera loggato se checkSession restituisce utente OPPURE isLoggedIn è già true
+      const isIn = !!freshUser || window.Auth?.isLoggedIn();
+      if (isIn) {
+        await _enterApp();
+      } else {
+        resetBtn();
+        showErr('Sessione non rilevata. Ricarica la pagina e accedi con email e password.');
+      }
+    } catch(e) {
       resetBtn();
-      showErr('Sessione non rilevata. Ricarica la pagina e accedi con email e password.');
+      showErr('Errore verifica sessione. Ricarica la pagina.');
     }
   }, 3000);
 }

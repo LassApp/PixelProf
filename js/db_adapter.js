@@ -113,6 +113,7 @@ export async function loadCourses(teacherId) {
     startDate: r.start_date ?? null,
     endDate:   r.end_date   ?? null,
     timeSlot:  r.time_slot  ?? null,
+    teachers:  Array.isArray(r.teachers) ? r.teachers : [],  // ← AGGIUNTO
   }));
 
   _lsSet(LS_COURSES_KEY, courses);

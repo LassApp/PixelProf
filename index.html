@@ -5910,6 +5910,8 @@ function _showDeleteClassroomConfirm(id, name, onConfirm){
 
 /* ==================================================
    OVERRIDE enterCourse — salva appState + filtra moduli
+   v3.2.2: ricarica players/teams dal cloud (source of truth)
+   per evitare contaminazione cross-aula dal localStorage.
 ================================================== */
 const _enterCourse_orig = enterCourse;
 enterCourse = async function(id){
@@ -5917,26 +5919,27 @@ enterCourse = async function(id){
   const course  = courses.find(c=>c.id===id);
   if(!course) return;
   appState.classroom = course;
-  // Carica db locale prima (fast path)
+  // 1. Carica db locale (fast path — UI reattiva subito)
   _enterCourse_orig(id);
-  // Poi sovrascrive players/teams dal cloud (source of truth)
-  if(window.DB){
+  // 2. Sovrascrive players/teams col dato cloud (source of truth).
+  //    Questo elimina il bug "giocatori di un'altra aula visibili"
+  //    causato dalla cache localStorage condivisa tra aule.
+  if(window.db_loadCourseData){
     try{
-      const [cloudPlayers, cloudTeams] = await Promise.all([
-        window.DB.upsertPlayer ? Promise.resolve(null) : Promise.resolve(null),
-        Promise.resolve(null),
-      ]);
-      // Usa loadCourseData cloud (db_adapter.js espone window.db_loadCourseData)
-      const cloudData = await window.db_loadCourseData(id).catch(()=>null);
+      const cloudData = await window.db_loadCourseData(id);
       if(cloudData){
-        // Aggiorna SOLO players e teams — non lb2/stats (già caricati da locale/cloud)
-        if(Array.isArray(cloudData.players)) db.players = cloudData.players;
-        if(Array.isArray(cloudData.teams))   db.teams   = cloudData.teams;
+        if(Array.isArray(cloudData.players) && cloudData.players.length >= 0)
+          db.players = cloudData.players;
+        if(Array.isArray(cloudData.teams) && cloudData.teams.length >= 0)
+          db.teams = cloudData.teams;
+        // Persiste la versione corretta nel localStorage dell'aula corrente
+        save();
       }
     }catch(e){
-      console.warn('[PixelProf] enterCourse cloud sync:', e);
+      console.warn('[PixelProf] enterCourse cloud player sync:', e);
     }
   }
+  // 3. Applica filtro moduli
   await _applyModuleFilter(id);
 };
 

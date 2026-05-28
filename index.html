@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v3.2.1</title>
+<title>PixelProf — ICDL Lab interattivo v3.2.2</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" sizes="48x48" href="favicon-48.png">
@@ -400,7 +400,28 @@ body{
   font-family:'Share Tech Mono',monospace;letter-spacing:.5px;
   margin-top:4px;
 }
-.mod-card.wp-card{background:linear-gradient(145deg,#0d1520 0%,#12203a 55%,#0d1520 100%);border-color:rgba(40,140,255,.1);}
+/* WP card — document green */
+.mod-card.wp-card{
+  background:linear-gradient(145deg,#091a0d 0%,#0f2416 55%,#091a0d 100%);
+  border-color:rgba(40,160,80,.2);
+  box-shadow:0 4px 24px rgba(40,160,80,.06);
+}
+.mod-card.wp-card::before{background:linear-gradient(90deg,transparent,#32dc64,transparent);}
+.mod-card.wp-card:hover{
+  border-color:rgba(40,160,80,.55);
+  box-shadow:0 12px 40px rgba(40,160,80,.2),0 0 0 1px rgba(40,160,80,.15),inset 0 1px 0 rgba(40,160,80,.1);
+}
+.mod-card.wp-card:hover h3{color:#44c76a;}
+.mod-card.wp-card.active{
+  border-color:rgba(50,220,100,.8);
+  box-shadow:0 0 30px rgba(40,160,80,.3),0 8px 32px rgba(40,160,80,.2);
+}
+.mod-card.wp-card::after{background:radial-gradient(ellipse at 50% 110%,rgba(40,160,80,.14),transparent 60%);}
+.mod-card.wp-card .mc-badge{background:rgba(40,160,80,.15);border:1px solid rgba(40,160,80,.3);color:#44c76a;}
+.mod-card.wp-card .tag{background:rgba(40,160,80,.1);border-color:rgba(40,160,80,.2);color:rgba(68,199,106,.8);}
+.mod-card.wp-card:hover .tag{background:rgba(40,160,80,.15);border-color:rgba(40,160,80,.35);}
+.mod-card.wp-card.active .tag{background:rgba(50,220,100,.15);border-color:rgba(50,220,100,.4);color:#32dc64;}
+/* SS card — coming soon */
 .mod-card.ss-card{background:linear-gradient(145deg,#0d1a10 0%,#12281a 55%,#0d1a10 100%);border-color:rgba(50,200,100,.1);}
 
 /* soon grid — separate from main */
@@ -1091,14 +1112,18 @@ body{
 }
 
 /* ===============================================
-   TOPBAR COURSE BADGE — v7
+   TOPBAR COURSE BADGE — v3.2.2
 =============================================== */
 #tb-course-badge{
   transition:all var(--transition-fast);
 }
 #tb-course-badge:hover{
-  border-color:rgba(0,255,200,.25)!important;
-  background:rgba(0,255,200,.06)!important;
+  border-color:rgba(0,255,200,.35)!important;
+  background:rgba(0,255,200,.07)!important;
+  box-shadow:0 0 12px rgba(0,255,200,.08);
+}
+#tb-course-badge:hover #tb-course-name{
+  color:var(--accent);
 }
 
 /* ===============================================
@@ -1239,6 +1264,7 @@ body{
 .mod-badge.ce{background:rgba(30,144,255,.12);border:1px solid rgba(30,144,255,.25);color:#5eb0ff}
 .mod-badge.oe{background:rgba(124,106,255,.12);border:1px solid rgba(124,106,255,.25);color:#a894ff}
 .mod-badge.mix{background:rgba(0,255,200,.08);border:1px solid rgba(0,255,200,.2);color:var(--accent)}
+.mod-badge.wp{background:rgba(40,160,80,.12);border:1px solid rgba(40,160,80,.28);color:#44c76a}
 
 .lb-empty{padding:3rem 1rem;text-align:center}
 .lb-empty .le-icon{font-size:40px;margin-bottom:12px;opacity:.4}
@@ -1866,7 +1892,7 @@ body{
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v3.2.1</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v3.2.2</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -1992,7 +2018,7 @@ body{
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v3.2.1</span>
+        <span class="cs-logo-sub">ICDL Lab · v3.2.2</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v3.2.2 -->
@@ -2281,13 +2307,25 @@ body{
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v3.2.1</span>
+      <span class="logo-sub">ICDL Lab · v3.2.2</span>
     </div>
   </div>
-  <!-- Course badge — nome prioritario, icona opzionale se c'è spazio -->
-  <div id="tb-course-badge" class="hidden" style="display:flex;align-items:center;gap:5px;padding:4px 11px;border-radius:20px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-size:11px;color:rgba(255,255,255,.55);max-width:160px;overflow:hidden;flex-shrink:1;min-width:0">
-    <span id="tb-course-icon" style="font-size:12px;flex-shrink:0;opacity:.7"></span>
-    <span id="tb-course-name" style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600;color:#e2e8f0;min-width:0"></span>
+  <!-- Course badge — nome aula prominente accanto all'icona (v3.2.2) -->
+  <div id="tb-course-badge" class="hidden" style="
+    display:flex;align-items:center;gap:6px;
+    padding:5px 12px 5px 8px;border-radius:20px;
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.10);
+    font-size:12px;max-width:180px;overflow:hidden;
+    flex-shrink:1;min-width:0;cursor:pointer;
+    transition:background var(--transition-fast),border-color var(--transition-fast);
+  " onclick="goCoursesFromApp()" title="Cambia aula">
+    <span id="tb-course-icon" style="font-size:15px;flex-shrink:0;line-height:1"></span>
+    <span id="tb-course-name" style="
+      overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+      font-weight:700;font-size:12px;color:#e2e8f0;min-width:0;
+      font-family:'Space Grotesk',sans-serif;letter-spacing:-.2px;
+    "></span>
   </div>
   <!-- NAV -->
   <nav class="tb-nav">
@@ -2444,58 +2482,69 @@ body{
           <p>Computer Essentials + Online Essentials — allenamento completo</p>
         </div>
       </div>
+
+      <!-- Word Processing — ATTIVO v3.2.2 -->
+      <div class="mod-card wp-card" id="mc-WP" role="button" tabindex="0" aria-label="Seleziona modulo Word Processing" onclick="selMod('WP')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selMod('WP');}">
+        <span class="mc-badge">ICDL</span>
+        <svg class="bg" viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-wp" width="22" height="16" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="15" x2="22" y2="15" fill="none" stroke="#28a050" stroke-width=".4" opacity=".3"/>
+            </pattern>
+          </defs>
+          <rect width="300" height="180" fill="url(#grid-wp)"/>
+          <rect x="160" y="25" width="110" height="135" rx="6" fill="rgba(40,160,80,.06)" stroke="#28a050" stroke-width="1.2" opacity=".45"/>
+          <polygon points="248,25 270,47 248,47" fill="rgba(40,160,80,.1)" stroke="#28a050" stroke-width=".8" opacity=".4"/>
+          <rect x="172" y="60"  width="80" height="5" rx="2" fill="#28a050" opacity=".22"/>
+          <rect x="172" y="72"  width="60" height="5" rx="2" fill="#28a050" opacity=".16"/>
+          <rect x="172" y="84"  width="72" height="5" rx="2" fill="#28a050" opacity=".19"/>
+          <rect x="172" y="96"  width="50" height="5" rx="2" fill="#28a050" opacity=".14"/>
+          <rect x="172" y="108" width="65" height="5" rx="2" fill="#28a050" opacity=".18"/>
+          <rect x="160" y="25" width="110" height="18" rx="6" fill="rgba(40,160,80,.1)"/>
+          <circle cx="172" cy="34" r="3" fill="#28a050" opacity=".4"/>
+          <circle cx="182" cy="34" r="3" fill="#28a050" opacity=".3"/>
+          <circle cx="192" cy="34" r="3" fill="#28a050" opacity=".35"/>
+          <text x="30" y="130" font-family="monospace" font-size="88" fill="#28a050" opacity=".05" font-weight="bold">W</text>
+          <rect x="20" y="40"  width="100" height="8"  rx="3" fill="#28a050" opacity=".1"/>
+          <rect x="20" y="56"  width="70"  height="6"  rx="2" fill="#28a050" opacity=".07"/>
+          <rect x="20" y="70"  width="85"  height="6"  rx="2" fill="#28a050" opacity=".08"/>
+          <rect x="20" y="84"  width="55"  height="6"  rx="2" fill="#28a050" opacity=".06"/>
+          <ellipse cx="215" cy="92" rx="55" ry="45" fill="rgba(40,160,80,.04)"/>
+        </svg>
+        <div class="mc-content">
+          <span class="mc-icon">📝</span>
+          <h3>Word Processing</h3>
+          <p>Elaborazione testi con Microsoft Word</p>
+          <div class="tags">
+            <span class="tag">Formattazione</span>
+            <span class="tag">Tabelle</span>
+            <span class="tag">Stili</span>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Coming Soon section -->
+    <!-- Coming Soon section — solo Spreadsheets -->
     <div class="soon-section-label">
       <span>prossimamente</span>
     </div>
-    <div class="mod-grid-soon">
-
-      <!-- Word Processing — coming soon -->
-      <div class="mod-card wp-card soon-card">
-        <span class="cs-label">Coming Soon</span>
-        <svg class="bg" viewBox="0 0 300 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <!-- document outline -->
-          <rect x="80" y="20" width="90" height="110" rx="6" fill="none" stroke="#4080cc" stroke-width="1" opacity=".3"/>
-          <rect x="80" y="20" width="90" height="24" rx="6" fill="rgba(40,100,200,.08)"/>
-          <!-- text lines -->
-          <rect x="92" y="56" width="66" height="5" rx="2" fill="#4080cc" opacity=".2"/>
-          <rect x="92" y="67" width="50" height="5" rx="2" fill="#4080cc" opacity=".15"/>
-          <rect x="92" y="78" width="60" height="5" rx="2" fill="#4080cc" opacity=".18"/>
-          <rect x="92" y="89" width="40" height="5" rx="2" fill="#4080cc" opacity=".12"/>
-          <!-- W lettermark -->
-          <text x="200" y="90" font-family="monospace" font-size="48" fill="#2060cc" opacity=".06" font-weight="bold">W</text>
-        </svg>
-        <div class="mc-content">
-          <span class="mc-icon" style="font-size:24px;margin-bottom:6px">📝</span>
-          <h3>Word Processing</h3>
-          <p style="font-size:10px">Microsoft Word · ICDL</p>
-          <span class="cs-version">// versione futura</span>
-        </div>
-      </div>
+    <div class="mod-grid-soon" style="grid-template-columns:1fr">
 
       <!-- Spreadsheets — coming soon -->
       <div class="mod-card ss-card soon-card">
         <span class="cs-label">Coming Soon</span>
         <svg class="bg" viewBox="0 0 300 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <!-- spreadsheet grid -->
           <rect x="60" y="25" width="140" height="100" rx="5" fill="none" stroke="#30b060" stroke-width="1" opacity=".28"/>
-          <!-- header row -->
           <rect x="60" y="25" width="140" height="18" rx="5" fill="rgba(40,160,80,.08)"/>
-          <!-- column lines -->
           <line x1="100" y1="25" x2="100" y2="125" stroke="#30b060" stroke-width=".6" opacity=".2"/>
           <line x1="140" y1="25" x2="140" y2="125" stroke="#30b060" stroke-width=".6" opacity=".2"/>
           <line x1="180" y1="25" x2="180" y2="125" stroke="#30b060" stroke-width=".6" opacity=".2"/>
-          <!-- row lines -->
           <line x1="60" y1="60" x2="200" y2="60" stroke="#30b060" stroke-width=".6" opacity=".2"/>
           <line x1="60" y1="80" x2="200" y2="80" stroke="#30b060" stroke-width=".6" opacity=".2"/>
           <line x1="60" y1="100" x2="200" y2="100" stroke="#30b060" stroke-width=".6" opacity=".2"/>
-          <!-- bar chart hint -->
           <rect x="220" y="80" width="10" height="40" rx="2" fill="#30b060" opacity=".15"/>
           <rect x="234" y="60" width="10" height="60" rx="2" fill="#30b060" opacity=".12"/>
           <rect x="248" y="70" width="10" height="50" rx="2" fill="#30b060" opacity=".1"/>
-          <!-- X label -->
           <text x="225" y="22" font-family="monospace" font-size="36" fill="#20a050" opacity=".06" font-weight="bold">X</text>
         </svg>
         <div class="mc-content">
@@ -2717,11 +2766,10 @@ body{
 ================================================== */
 const COLORS=['#00ffc8','#7c6aff','#ff4d6d','#ffb400','#00cfff'];
 
-const MOD_LABEL={CE:'Computer Essentials',OE:'Online Essentials',MIX:'Mix moduli'};
+const MOD_LABEL={CE:'Computer Essentials',OE:'Online Essentials',MIX:'Mix moduli',WP:'Word Processing'};
 const ACT_LABEL={quiz:'Quiz',speed:'Speed Quiz',match:'Abbina',memory:'Memory',fill:'Completa la frase'};
 const ACT_ICON={quiz:'🧠',speed:'⚡',match:'🔗',memory:'🃏',fill:'✏️'};
 
-/* -- Activity hero SVGs -- */
 const ACT_META={
   quiz:{icon:'🧠',title:'Quiz',sub:'Risposta multipla — scegli quella corretta',heroClass:'hero-quiz',
     bg:`<svg width="100%" height="100%" viewBox="0 0 660 160" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="hq" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#00ffc8" stroke-width=".4" opacity=".25"/></pattern></defs><rect width="660" height="160" fill="url(#hq)"/><circle cx="580" cy="30" r="60" fill="none" stroke="#00ffc8" stroke-width=".6" opacity=".15"/><circle cx="80" cy="140" r="50" fill="none" stroke="#00ffc8" stroke-width=".5" opacity=".12"/><text x="40" y="55" font-family="monospace" font-size="11" fill="#00ffc8" opacity=".18">A. opzione</text><text x="40" y="75" font-family="monospace" font-size="11" fill="#00ffc8" opacity=".12">B. scelta</text><rect x="30" y="42" width="7" height="7" rx="1" fill="none" stroke="#00ffc8" stroke-width=".8" opacity=".3"/><rect x="30" y="62" width="7" height="7" rx="1" fill="#00ffc8" opacity=".25"/></svg>`},
@@ -2860,12 +2908,59 @@ const CompletaFraseLoader = _createLoader({
   normalize: (raw) => raw.map(r => ({ t: r.sentence, b: r.answer, bank: r.bank })),
 });
 
-/* -- Alias pubblici per retrocompatibilit con il resto dell'engine -- */
-const loadPool              = mod => QuizLoader.load(mod);
-const loadSpeedPool         = mod => SpeedQuizLoader.load(mod);
-const loadAbbinSets         = mod => AbbinLoader.load(mod);
-const loadMemoryPairs       = mod => MemoryLoader.load(mod);
-const loadCompletaFrasePool = mod => CompletaFraseLoader.load(mod);
+/* -- Word Processing — Quiz -- */
+const WpQuizLoader = _createLoader({
+  moduleMap: { WP: 'data/quiz/word_processing.json' },
+  tag: 'WpQuiz',
+  validate: raw => Array.isArray(raw) && raw.length > 0,
+  normalize: (raw, mod) => raw.map(r => ({
+    q: r.question, opts: r.options, a: r.correctIndex, exp: r.explanation, _src: mod,
+  })),
+});
+
+/* -- Word Processing — Speed Quiz -- */
+const WpSpeedLoader = _createLoader({
+  moduleMap: { WP: 'data/speed_quiz/word_processing.json' },
+  tag: 'WpSpeed',
+  validate: raw => Array.isArray(raw) && raw.length > 0,
+  normalize: (raw, mod) => raw.map(r => ({
+    q: r.question, opts: r.options, a: r.correctIndex, exp: r.explanation, _src: mod,
+  })),
+});
+
+/* -- Word Processing — Abbina -- */
+const WpAbbinLoader = _createLoader({
+  moduleMap: { WP: 'data/abbina/word_processing_abbina.json' },
+  tag: 'WpAbbina',
+  validate: raw => raw && Array.isArray(raw.sets) && raw.sets.length > 0,
+  normalize: (raw) => raw.sets.map(set =>
+    set.map(pair => ({ t: pair.term, d: pair.definition }))
+  ),
+});
+
+/* -- Word Processing — Memory -- */
+const WpMemoryLoader = _createLoader({
+  moduleMap: { WP: 'data/memory/word_processing_memory.json' },
+  tag: 'WpMemory',
+  validate: raw => Array.isArray(raw) && raw.length > 0,
+  normalize: (raw) => raw.map(r => [r.term, r.definition]),
+});
+
+/* -- Word Processing — Completa la frase -- */
+const WpCompletaLoader = _createLoader({
+  moduleMap: { WP: 'data/completa_frase/word_processing_completa_frase.json' },
+  tag: 'WpCompleta',
+  validate: raw => Array.isArray(raw) && raw.length > 0,
+  normalize: (raw) => raw.map(r => ({ t: r.sentence, b: r.answer, bank: r.bank })),
+});
+
+/* -- Alias pubblici per retrocompatibilit con il resto dell'engine --
+   WP viene servito dai loader dedicati e poi rimappato su _src='WP'    */
+const loadPool = mod => mod === 'WP' ? WpQuizLoader.load('WP')   : QuizLoader.load(mod);
+const loadSpeedPool = mod => mod === 'WP' ? WpSpeedLoader.load('WP')  : SpeedQuizLoader.load(mod);
+const loadAbbinSets = mod => mod === 'WP' ? WpAbbinLoader.load('WP')  : AbbinLoader.load(mod);
+const loadMemoryPairs = mod => mod === 'WP' ? WpMemoryLoader.load('WP') : MemoryLoader.load(mod);
+const loadCompletaFrasePool = mod => mod === 'WP' ? WpCompletaLoader.load('WP') : CompletaFraseLoader.load(mod);
 
 /* Helper sincrono  restituisce il modulo di una domanda */
 function getQuestionModule(q) { return q._src || 'CE'; }
@@ -2886,11 +2981,11 @@ function _showLoadingSpinner(cont, icon, label, path) {
     sh('qz-result').innerHTML = html;
   }
 }
-function showQuizLoading(mod)      { _showLoadingSpinner(null,'📡','Caricamento domande…',     QuizLoader.moduleMap[mod]      || 'data/quiz/'); }
-function showSpeedQuizLoading(mod) { _showLoadingSpinner(null,'⚡','Caricamento Speed Quiz…',  SpeedQuizLoader.moduleMap[mod]  || 'data/speed_quiz/'); }
-function showAbbinLoading(cont,mod){ _showLoadingSpinner(cont,'🔗','Caricamento Abbina…',      AbbinLoader.moduleMap[mod]      || 'data/abbina/'); }
-function showMemoryLoading(cont,mod){ _showLoadingSpinner(cont,'🃏','Caricamento Memory…',     MemoryLoader.moduleMap[mod]     || 'data/memory/'); }
-function showCompletaFraseLoading(cont,mod){ _showLoadingSpinner(cont,'✏️','Caricamento Completa la frase…', CompletaFraseLoader.moduleMap[mod] || 'data/completa_frase/'); }
+function showQuizLoading(mod)      { _showLoadingSpinner(null,'📡','Caricamento domande…',     mod==='WP'?WpQuizLoader.moduleMap['WP']:QuizLoader.moduleMap[mod]      || 'data/quiz/'); }
+function showSpeedQuizLoading(mod) { _showLoadingSpinner(null,'⚡','Caricamento Speed Quiz…',  mod==='WP'?WpSpeedLoader.moduleMap['WP']:SpeedQuizLoader.moduleMap[mod]  || 'data/speed_quiz/'); }
+function showAbbinLoading(cont,mod){ _showLoadingSpinner(cont,'🔗','Caricamento Abbina…',      mod==='WP'?WpAbbinLoader.moduleMap['WP']:AbbinLoader.moduleMap[mod]      || 'data/abbina/'); }
+function showMemoryLoading(cont,mod){ _showLoadingSpinner(cont,'🃏','Caricamento Memory…',     mod==='WP'?WpMemoryLoader.moduleMap['WP']:MemoryLoader.moduleMap[mod]     || 'data/memory/'); }
+function showCompletaFraseLoading(cont,mod){ _showLoadingSpinner(cont,'✏️','Caricamento Completa la frase…', mod==='WP'?WpCompletaLoader.moduleMap['WP']:CompletaFraseLoader.moduleMap[mod] || 'data/completa_frase/'); }
 
 /* -- UI: error screens -- */
 function _showGameError(cont, icon, title, color, path, msg) {
@@ -2969,7 +3064,7 @@ function deleteCourseData(id){
 }
 
 function makeEmptyDb(){
-  return{players:[],teams:[],lb2:makeEmptyLb2(),sessions:[],stats:{tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0}}}};
+  return{players:[],teams:[],lb2:makeEmptyLb2(),sessions:[],stats:{tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}}}};
 }
 
 /* ==================================================
@@ -3009,8 +3104,9 @@ function migrateDb(p){
       });
     });
   });
-  if(!p.stats)p.stats={tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0}}};
-  if(!p.stats.byMod)p.stats.byMod={CE:{c:0,w:0},OE:{c:0,w:0}};
+  if(!p.stats)p.stats={tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}}};
+  if(!p.stats.byMod)p.stats.byMod={CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}};
+  if(!p.stats.byMod.WP)p.stats.byMod.WP={c:0,w:0};
   if(!p.players)p.players=[];
   if(!p.teams)p.teams=[];
   if(!p.sessions)p.sessions=[];
@@ -4383,18 +4479,15 @@ function buildGameHeader(rightContent){
 /* CODE-04: balanced MIX  guarantees at least 2 CE and 2 OE pairs */
 async function getMatchSet(mod){
   const sets = await loadAbbinSets(mod);
-  if(mod==='CE'||mod==='OE'){
+  if(mod==='CE'||mod==='OE'||mod==='WP'){
     return shuffle(sets[Math.floor(Math.random()*sets.length)]).slice(0,5);
   }
   // MIX: garantisce almeno 2 CE e 2 OE usando il tag _mod iniettato dal loader
-  // I set del loader Abbina per MIX sono gi [CE sets..., OE sets...]
-  // Il loader restituisce CE sets prima di OE sets  split al punto di giunzione
   const ceCache = AbbinLoader.getCache()['CE'] || [];
   const oeCache = AbbinLoader.getCache()['OE'] || [];
   const cePairs = shuffle(ceCache.flat()).slice(0,3);
   const oePairs = shuffle(oeCache.flat()).slice(0,2);
   const mix = [...cePairs,...oePairs];
-  // fallback robusto: se i cache non sono ancora popolati usa flat di tutti i set
   return shuffle(mix.length>=4 ? mix : shuffle(sets.flat()).slice(0,5));
 }
 
@@ -5076,8 +5169,8 @@ function renderLbResults(type,act){
 
 function modBadgeHTML(mod){
   if(!mod||mod==='?')return'<span class="mod-badge mix">—</span>';
-  const cls={CE:'ce',OE:'oe',MIX:'mix'}[mod]||'mix';
-  const short={CE:'Computer',OE:'Online',MIX:'Mix'}[mod]||mod;
+  const cls={CE:'ce',OE:'oe',MIX:'mix',WP:'wp'}[mod]||'mix';
+  const short={CE:'Computer',OE:'Online',MIX:'Mix',WP:'Word'}[mod]||mod;
   return`<span class="mod-badge ${cls}">${short}</span>`;
 }
 
@@ -5093,7 +5186,7 @@ function resetLb(){
 function renderStats(){
   sh('st-tot').textContent=db.stats.tot;sh('st-cor').textContent=db.stats.cor;
   sh('st-pct').textContent=db.stats.tot>0?Math.round(db.stats.cor/db.stats.tot*100)+'%':'0%';
-  sh('st-mods').innerHTML=Object.entries({CE:'Computer Essentials',OE:'Online Essentials'}).map(([k,n])=>{
+  sh('st-mods').innerHTML=Object.entries({CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processing'}).map(([k,n])=>{
     const m=db.stats.byMod[k]||{c:0,w:0};const tot=m.c+m.w;const pct=tot>0?Math.round(m.c/tot*100):0;
     return`<div class="mod-stat"><div class="mod-stat-row"><span>${n}</span><span style="font-family:'Share Tech Mono',monospace;color:#00ffc8">${m.c}/${tot} · ${pct}%</span></div><div class="prog-bar" style="margin:0"><div class="prog-fill" style="width:${pct}%"></div></div></div>`;
   }).join('');
@@ -5698,7 +5791,6 @@ async function _applyModuleFilter(classroomId){
   ALL.forEach(k=>{
     const card = sh('mc-'+k);
     if(!card) return;
-    // keys=null o [] => mostra tutto; altrimenti filtra
     const show = !keys || keys.length===0 || keys.includes(k);
     card.style.display = show ? '' : 'none';
   });
@@ -6025,35 +6117,33 @@ enterCourse = async function(id){
   appState.classroom = course;
 
   // 1. Carica players e teams dal cloud PRIMA di chiamare _enterCourse_orig.
-  //    In questo modo quando goHome() → selMode() → renderIndChips() viene
-  //    eseguito, db.players contiene già i dati corretti dell'aula selezionata
-  //    e non i residui dell'aula precedente nel localStorage.
+  let cloudPlayers = null;
+  let cloudTeams   = null;
   if(window.DB && window.Auth?.getUserId()){
     try{
-      const [cloudPlayers, cloudTeams] = await Promise.all([
+      [cloudPlayers, cloudTeams] = await Promise.all([
         window.DB.loadPlayers ? window.DB.loadPlayers(id) : Promise.resolve(null),
         window.DB.loadTeams   ? window.DB.loadTeams(id)   : Promise.resolve(null),
       ]);
-      // Aggiorna db in-memory con i dati cloud prima che la UI sia visibile
-      if(cloudPlayers !== null) db.players = cloudPlayers;
-      if(cloudTeams   !== null) db.teams   = cloudTeams;
-      console.log('[PixelProf] enterCourse cloud sync:', db.players.length, 'players,', db.teams.length, 'teams');
+      console.log('[PixelProf] enterCourse cloud sync:', (cloudPlayers||[]).length, 'players,', (cloudTeams||[]).length, 'teams');
     }catch(e){
       console.warn('[PixelProf] enterCourse cloud sync fallback:', e.message);
-      // Fallback: usa localStorage — i dati potrebbero essere dell'aula precedente
-      // ma è meglio che non entrare affatto
     }
   }
 
-  // 2. Ora entra nell'aula — loadCourseData leggerà i players dal cloud già caricati
-  //    (db è già aggiornato, loadCourseData sovrascriverà solo i campi lb2/stats/sessions)
+  // 2. Entra nell'aula — _enterCourse_orig imposta activeCourseId e
+  //    carica db da localStorage (può contenere players dell'aula precedente).
   _enterCourse_orig(id);
 
-  // 3. Persiste nel localStorage dell'aula corrente (dopo che _enterCourse_orig
-  //    ha impostato activeCourseId)
+  // 3. Sovrascrive players/teams con i dati cloud appena caricati.
+  //    Questo avviene DOPO loadCourseData, quindi ha la precedenza.
+  if(cloudPlayers !== null){ db.players = cloudPlayers; }
+  if(cloudTeams   !== null){ db.teams   = cloudTeams;   }
+
+  // 4. Persiste lo stato aggiornato nel localStorage dell'aula corrente.
   save();
 
-  // 4. Filtra moduli abilitati
+  // 5. Filtra moduli abilitati per questa aula.
   await _applyModuleFilter(id);
 };
 
@@ -6081,19 +6171,16 @@ cdAction = async function(action){
     openBgPicker(id);
   } else if(action==='delete'){
     const courseName = courses[idx].name;
-    // Custom confirm dialog per eliminazione aula
     _showDeleteClassroomConfirm(id, courseName, async ()=>{
-      // v3.2.2: deleteClassroom restituisce {ok, error}
-      const delRes = await window.DB.deleteClassroom(id).catch(e=>({ ok:false, error:e.message }));
-      if(delRes && !delRes.ok){
-        // RPC non configurata — mostra istruzioni chiare al direttore
+      // v3.2.2: eliminazione via REST diretti in cascata
+      // I system trigger RI_ConstraintTrigger_c_* bloccano ALTER TRIGGER,
+      // ma i DELETE in ordine FK-safe non richiedono di disabilitarli.
+      const delRes = await _deleteClassroomRest(id);
+      if(!delRes.ok){
         alert(
           '❌ Impossibile eliminare l\'aula.\n\n' +
-          'La funzione SQL non è ancora configurata su Supabase.\n\n' +
-          'Vai su Supabase → SQL Editor ed esegui la funzione\n' +
-          'director_delete_classroom() riportata nel commento\n' +
-          'di db_adapter.js (sezione deleteCourse).\n\n' +
-          'Dettaglio: ' + (delRes.error || 'errore sconosciuto')
+          'Dettaglio: ' + (delRes.error || 'errore sconosciuto') + '\n\n' +
+          'Verifica che il tuo ruolo abbia i permessi DELETE su tutte le tabelle.'
         );
         return;
       }
@@ -6102,6 +6189,100 @@ cdAction = async function(action){
     });
   }
 };
+
+/**
+ * _deleteClassroomRest — v3.2.2
+ * Elimina un'aula e tutti i dati correlati tramite DELETE REST in cascata.
+ * Ordine FK-safe: prima le tabelle figlie, poi la tabella padre.
+ * Bypassa completamente la RPC (e i system trigger che la bloccano).
+ *
+ * @param {string} classroomId
+ * @returns {Promise<{ok:boolean, error?:string}>}
+ */
+async function _deleteClassroomRest(classroomId){
+  if(!window.supabase && !window._supabaseClient){
+    // Accede al client Supabase tramite il modulo db_adapter esposto su window.DB
+    // Se non disponibile, fallback alla RPC originale
+    const fallback = await window.DB.deleteClassroom(classroomId).catch(e=>({ok:false,error:e.message}));
+    return fallback;
+  }
+  // Ottieni il client Supabase dal modulo importato
+  // db_adapter.js lo esporta come window.DB._supabase (non esposto) — usiamo fetch diretto
+  // con il session token corrente
+  try {
+    const { data:{ session } } = await window.Auth._getSession
+      ? await window.Auth._getSession()
+      : { data: { session: null } };
+
+    // Recupera session da Supabase Auth (già disponibile tramite Auth.getUser() path)
+    const supabaseUrl  = 'https://skrgqanqdyrybarinwwr.supabase.co';
+    const supabaseKey  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrcmdxYW5xZHlyeWJhcmlud3dyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxODk0MTYsImV4cCI6MjA5NDc2NTQxNn0.0k17FJuqYNWCk2bWwWkYF7-5l5qX3RLXdMsgh9cHrGQ';
+
+    // Leggi il JWT dalla sessione corrente via localStorage (Supabase v2 persiste in localStorage)
+    let jwt = null;
+    try {
+      const sbKey = Object.keys(localStorage).find(k => k.startsWith('sb-') && k.endsWith('-auth-token'));
+      if(sbKey){
+        const stored = JSON.parse(localStorage.getItem(sbKey)||'{}');
+        jwt = stored?.access_token || null;
+      }
+    } catch(e){}
+
+    const headers = {
+      'Content-Type':  'application/json',
+      'apikey':        supabaseKey,
+      'Prefer':        'return=minimal',
+    };
+    if(jwt) headers['Authorization'] = 'Bearer ' + jwt;
+
+    // Tabelle in ordine FK-safe (figlie prima del padre)
+    const tables = [
+      'scores',
+      'leaderboard_entries',
+      'stats_aggregate',
+      'classroom_modules',
+      'classroom_teachers',
+      'players',
+      'teams',
+      'matches',
+    ];
+
+    for(const table of tables){
+      const col = table === 'classrooms' ? 'id' : 'classroom_id';
+      const res = await fetch(
+        `${supabaseUrl}/rest/v1/${table}?${col}=eq.${encodeURIComponent(classroomId)}`,
+        { method: 'DELETE', headers }
+      );
+      if(!res.ok && res.status !== 404){
+        const body = await res.text().catch(()=>'');
+        console.warn(`[PixelProf] delete ${table} status ${res.status}:`, body);
+        // Non interrompere — continua a eliminare le altre tabelle
+      }
+    }
+
+    // Infine elimina la classroom stessa
+    const resCls = await fetch(
+      `${supabaseUrl}/rest/v1/classrooms?id=eq.${encodeURIComponent(classroomId)}`,
+      { method: 'DELETE', headers }
+    );
+    if(!resCls.ok && resCls.status !== 404){
+      const body = await resCls.text().catch(()=>'');
+      return { ok: false, error: `classrooms DELETE ${resCls.status}: ${body}` };
+    }
+
+    // Aggiorna cache locale
+    try{
+      const local = JSON.parse(localStorage.getItem('pp5_courses')||'[]');
+      localStorage.setItem('pp5_courses', JSON.stringify(local.filter(c=>c.id!==classroomId)));
+      localStorage.removeItem('pp5_cdata_'+classroomId);
+    }catch(e){}
+
+    return { ok: true };
+  } catch(err) {
+    console.error('[PixelProf] _deleteClassroomRest exception:', err);
+    return { ok: false, error: err.message };
+  }
+}
 
 /* ==================================================
    OVERRIDE pickIcon + _cpSaveAndUpdateCard — sync cloud

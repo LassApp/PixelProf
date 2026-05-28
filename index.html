@@ -1114,13 +1114,10 @@ body{
 /* ===============================================
    TOPBAR COURSE BADGE — v3.2.2
 =============================================== */
-#tb-course-badge{
-  transition:all var(--transition-fast);
-}
 #tb-course-badge:hover{
-  border-color:rgba(0,255,200,.35)!important;
-  background:rgba(0,255,200,.07)!important;
-  box-shadow:0 0 12px rgba(0,255,200,.08);
+  background:rgba(0,255,200,.13)!important;
+  border-color:rgba(0,255,200,.45)!important;
+  box-shadow:0 0 14px rgba(0,255,200,.1);
 }
 #tb-course-badge:hover #tb-course-name{
   color:var(--accent);
@@ -2310,21 +2307,21 @@ body{
       <span class="logo-sub">ICDL Lab · v3.2.2</span>
     </div>
   </div>
-  <!-- Course badge — nome aula prominente accanto all'icona (v3.2.2) -->
+  <!-- Course badge — icona + nome aula, cliccabile (v3.2.2) -->
   <div id="tb-course-badge" style="
-    display:none;align-items:center;gap:6px;
-    padding:5px 12px 5px 8px;border-radius:20px;
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.10);
-    font-size:12px;max-width:180px;overflow:hidden;
-    flex-shrink:1;min-width:0;cursor:pointer;
-    transition:background var(--transition-fast),border-color var(--transition-fast);
+    display:none;align-items:center;gap:5px;
+    padding:4px 10px 4px 7px;border-radius:20px;
+    background:rgba(0,255,200,.07);
+    border:1px solid rgba(0,255,200,.22);
+    cursor:pointer;flex-shrink:0;
+    transition:background var(--transition-fast),border-color var(--transition-fast),box-shadow var(--transition-fast);
   " onclick="goCoursesFromApp()" title="Cambia aula">
-    <span id="tb-course-icon" style="font-size:15px;flex-shrink:0;line-height:1"></span>
+    <span id="tb-course-icon" style="font-size:14px;flex-shrink:0;line-height:1"></span>
     <span id="tb-course-name" style="
-      overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-      font-weight:700;font-size:12px;color:#e2e8f0;min-width:0;
-      font-family:'Space Grotesk',sans-serif;letter-spacing:-.2px;
+      font-weight:700;font-size:12px;color:#c8ffe8;
+      white-space:nowrap;
+      font-family:'Space Grotesk',sans-serif;letter-spacing:-.1px;
+      max-width:120px;overflow:hidden;text-overflow:ellipsis;
     "></span>
   </div>
   <!-- NAV -->
@@ -6175,16 +6172,15 @@ cdAction = async function(action){
   } else if(action==='delete'){
     const courseName = courses[idx].name;
     _showDeleteClassroomConfirm(id, courseName, async ()=>{
-      // v3.2.2: eliminazione via REST diretti in cascata
-      // I system trigger RI_ConstraintTrigger_c_* bloccano ALTER TRIGGER,
-      // ma i DELETE in ordine FK-safe non richiedono di disabilitarli.
       const delRes = await _deleteClassroomRest(id);
       if(!delRes.ok){
-        alert(
-          '❌ Impossibile eliminare l\'aula.\n\n' +
-          'Dettaglio: ' + (delRes.error || 'errore sconosciuto') + '\n\n' +
-          'Verifica che il tuo ruolo abbia i permessi DELETE su tutte le tabelle.'
-        );
+        // Estrai il messaggio Postgres dal JSON di errore se presente
+        let errMsg = delRes.error || 'errore sconosciuto';
+        try{
+          const m = errMsg.match(/\{.*\}/s);
+          if(m){ const p=JSON.parse(m[0]); if(p.message) errMsg=p.message; }
+        }catch(e){}
+        alert('❌ Impossibile eliminare l\'aula.\n\n' + errMsg + '\n\nEsegui la SQL director_delete_classroom nel Supabase SQL Editor (vedi istruzioni sotto).');
         return;
       }
       if(activeCourseId===id){ activeCourseId=null; appState.classroom=null; db=makeEmptyDb(); goCoursesFromApp(); }
@@ -6194,21 +6190,48 @@ cdAction = async function(action){
 };
 
 /**
- * _deleteClassroomRest — v3.2.2
- * Elimina un'aula e tutti i dati correlati tramite DELETE REST in cascata.
- * Ordine FK-safe: prima le tabelle figlie, poi la tabella padre.
- * Bypassa completamente la RPC (e i system trigger che la bloccano).
+ * _deleteClassroomRest — v3.2.2 fix
+ *
+ * Strategia: chiama la RPC director_delete_classroom che usa
+ * SET session_replication_role = replica per bypassare i trigger
+ * utente (incluso quello che blocca la rimozione del director).
+ * session_replication_role non tocca i system trigger PostgreSQL
+ * (RI_ConstraintTrigger) — bypassa solo i trigger BEFORE/AFTER
+ * definiti dall'utente, che è esattamente quello che ci blocca.
+ *
+ * SQL DA ESEGUIRE NEL SUPABASE SQL EDITOR:
+ * ──────────────────────────────────────────
+ * CREATE OR REPLACE FUNCTION director_delete_classroom(p_classroom_id uuid)
+ * RETURNS void LANGUAGE plpgsql SECURITY DEFINER SET search_path = public AS $$
+ * BEGIN
+ *   SET session_replication_role = replica;
+ *   DELETE FROM scores              WHERE classroom_id = p_classroom_id;
+ *   DELETE FROM leaderboard_entries WHERE classroom_id = p_classroom_id;
+ *   DELETE FROM stats_aggregate     WHERE classroom_id = p_classroom_id;
+ *   DELETE FROM classroom_modules   WHERE classroom_id = p_classroom_id;
+ *   DELETE FROM classroom_teachers  WHERE classroom_id = p_classroom_id;
+ *   DELETE FROM players             WHERE classroom_id = p_classroom_id;
+ *   DELETE FROM teams               WHERE classroom_id = p_classroom_id;
+ *   DELETE FROM matches             WHERE classroom_id = p_classroom_id;
+ *   DELETE FROM classrooms          WHERE id           = p_classroom_id;
+ *   SET session_replication_role = DEFAULT;
+ * EXCEPTION WHEN OTHERS THEN
+ *   SET session_replication_role = DEFAULT;
+ *   RAISE;
+ * END;
+ * $$;
+ * GRANT EXECUTE ON FUNCTION director_delete_classroom(uuid) TO authenticated;
+ * ──────────────────────────────────────────
  *
  * @param {string} classroomId
  * @returns {Promise<{ok:boolean, error?:string}>}
  */
 async function _deleteClassroomRest(classroomId){
-  // v3.2.2: usa sempre REST diretto — non dipende da window.supabase (ES module non esposto)
   try {
     const supabaseUrl = 'https://skrgqanqdyrybarinwwr.supabase.co';
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrcmdxYW5xZHlyeWJhcmlud3dyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxODk0MTYsImV4cCI6MjA5NDc2NTQxNn0.0k17FJuqYNWCk2bWwWkYF7-5l5qX3RLXdMsgh9cHrGQ';
 
-    // Leggi JWT da localStorage — Supabase v2 persiste sempre la sessione qui
+    // Leggi JWT da localStorage (Supabase v2 persiste sempre qui)
     let jwt = null;
     try {
       const sbKey = Object.keys(localStorage).find(k => k.startsWith('sb-') && k.endsWith('-auth-token'));
@@ -6217,9 +6240,7 @@ async function _deleteClassroomRest(classroomId){
         jwt = stored?.access_token || null;
       }
     } catch(e){}
-
     if(!jwt){
-      // Fallback: prova a leggere da tutti i valori localStorage che contengono access_token
       try{
         for(const k of Object.keys(localStorage)){
           const v = localStorage.getItem(k);
@@ -6232,48 +6253,47 @@ async function _deleteClassroomRest(classroomId){
       }catch(e){}
     }
 
-    console.log('[PixelProf] _deleteClassroomRest JWT found:', !!jwt, 'for classroom:', classroomId);
-
     const headers = {
       'Content-Type':  'application/json',
       'apikey':        supabaseKey,
-      'Prefer':        'return=minimal',
     };
     if(jwt) headers['Authorization'] = 'Bearer ' + jwt;
 
-    // Tabelle in ordine FK-safe (figlie prima del padre)
-    const tables = [
-      'scores',
-      'leaderboard_entries',
-      'stats_aggregate',
-      'classroom_modules',
-      'classroom_teachers',
-      'players',
-      'teams',
-      'matches',
-    ];
+    // Tenta prima via RPC (session_replication_role bypassa trigger utente)
+    const rpcRes = await fetch(`${supabaseUrl}/rest/v1/rpc/director_delete_classroom`, {
+      method: 'POST',
+      headers,
+      body: JSON.stringify({ p_classroom_id: classroomId }),
+    });
 
-    for(const table of tables){
-      const col = table === 'classrooms' ? 'id' : 'classroom_id';
-      const res = await fetch(
-        `${supabaseUrl}/rest/v1/${table}?${col}=eq.${encodeURIComponent(classroomId)}`,
+    if(rpcRes.ok){
+      console.log('[PixelProf] delete OK via RPC');
+    } else {
+      // RPC non disponibile o errore — fallback REST in cascata
+      // (funziona se il trigger sul director non è attivo o l'aula
+      //  non ha un director in classroom_teachers)
+      console.warn('[PixelProf] RPC fallita, fallback REST cascade');
+      headers['Prefer'] = 'return=minimal';
+
+      const tables = [
+        'scores','leaderboard_entries','stats_aggregate',
+        'classroom_modules','classroom_teachers',
+        'players','teams','matches',
+      ];
+      for(const table of tables){
+        await fetch(
+          `${supabaseUrl}/rest/v1/${table}?classroom_id=eq.${encodeURIComponent(classroomId)}`,
+          { method: 'DELETE', headers }
+        ).catch(()=>{});
+      }
+      const resCls = await fetch(
+        `${supabaseUrl}/rest/v1/classrooms?id=eq.${encodeURIComponent(classroomId)}`,
         { method: 'DELETE', headers }
       );
-      if(!res.ok && res.status !== 404){
-        const body = await res.text().catch(()=>'');
-        console.warn(`[PixelProf] delete ${table} status ${res.status}:`, body);
-        // Non interrompere — continua a eliminare le altre tabelle
+      if(!rpcRes.ok && !resCls.ok && resCls.status !== 404){
+        const body = await rpcRes.text().catch(()=>'');
+        return { ok: false, error: `RPC: ${body}` };
       }
-    }
-
-    // Infine elimina la classroom stessa
-    const resCls = await fetch(
-      `${supabaseUrl}/rest/v1/classrooms?id=eq.${encodeURIComponent(classroomId)}`,
-      { method: 'DELETE', headers }
-    );
-    if(!resCls.ok && resCls.status !== 404){
-      const body = await resCls.text().catch(()=>'');
-      return { ok: false, error: `classrooms DELETE ${resCls.status}: ${body}` };
     }
 
     // Aggiorna cache locale

@@ -2311,8 +2311,8 @@ body{
     </div>
   </div>
   <!-- Course badge — nome aula prominente accanto all'icona (v3.2.2) -->
-  <div id="tb-course-badge" class="hidden" style="
-    display:flex;align-items:center;gap:6px;
+  <div id="tb-course-badge" style="
+    display:none;align-items:center;gap:6px;
     padding:5px 12px 5px 8px;border-radius:20px;
     background:rgba(255,255,255,.05);
     border:1px solid rgba(255,255,255,.10);
@@ -5347,14 +5347,13 @@ function enterCourse(id){
     },200);
   }
 
-  // Update topbar badge
+  // Update topbar badge — usa style.display (no .hidden class per evitare !important)
   const badge=sh('tb-course-badge');
   const badgeIcon=sh('tb-course-icon');
   const badgeName=sh('tb-course-name');
   if(badge&&badgeIcon&&badgeName){
     badgeIcon.textContent=course.icon;
     badgeName.textContent=course.name;
-    badge.classList.remove('hidden');
     badge.style.display='flex';
   }
   // Transition
@@ -5704,6 +5703,24 @@ async function _afterLogin(){
   setTimeout(()=>cs.classList.remove('entering'), 400);
 
   await _reloadCourses();
+
+  // v3.2.2: se c'è un'aula pending da sessionStorage (cambio aula con reload),
+  // entra direttamente senza passare dalla griglia
+  try{
+    const pendingId = sessionStorage.getItem('pp_pending_course');
+    if(pendingId){
+      sessionStorage.removeItem('pp_pending_course');
+      const courses = loadCourses();
+      const course  = courses.find(c=>c.id===pendingId);
+      if(course){
+        // Piccolo delay per permettere alla griglia di renderizzarsi
+        setTimeout(()=> _enterCourse_orig(pendingId), 80);
+        // Carica moduli in background
+        setTimeout(()=> _applyModuleFilter(pendingId), 200);
+        return;
+      }
+    }
+  }catch(e){}
 }
 
 /* Carica le aule dal cloud e aggiorna la griglia.
@@ -5770,6 +5787,9 @@ async function _performLogout(){
   appState.classroom = null;
   activeCourseId     = null;
   db                 = makeEmptyDb();
+  // Nascondi badge aula
+  const badge = sh('tb-course-badge');
+  if(badge) badge.style.display = 'none';
   sh('screen-courses').classList.add('hidden');
   document.querySelector('.app').style.display = 'none';
   sh('screen-login').classList.remove('hidden');
@@ -6105,46 +6125,29 @@ function _showDeleteClassroomConfirm(id, name, onConfirm){
 
 /* ==================================================
    OVERRIDE enterCourse — salva appState + filtra moduli
-   v3.2.2: carica players/teams dal cloud PRIMA di entrare
-   nell'aula, eliminando il bug di giocatori cross-aula
-   residui nel localStorage da sessioni precedenti.
+   v3.2.2: al cambio aula fa location.reload() con il
+   nuovo classroomId nel sessionStorage, così lo stato
+   JS è sempre pulito e i players/teams sono sempre
+   quelli corretti dell'aula selezionata.
 ================================================== */
 const _enterCourse_orig = enterCourse;
 enterCourse = async function(id){
   const courses = loadCourses();
   const course  = courses.find(c=>c.id===id);
   if(!course) return;
-  appState.classroom = course;
 
-  // 1. Carica players e teams dal cloud PRIMA di chiamare _enterCourse_orig.
-  let cloudPlayers = null;
-  let cloudTeams   = null;
-  if(window.DB && window.Auth?.getUserId()){
-    try{
-      [cloudPlayers, cloudTeams] = await Promise.all([
-        window.DB.loadPlayers ? window.DB.loadPlayers(id) : Promise.resolve(null),
-        window.DB.loadTeams   ? window.DB.loadTeams(id)   : Promise.resolve(null),
-      ]);
-      console.log('[PixelProf] enterCourse cloud sync:', (cloudPlayers||[]).length, 'players,', (cloudTeams||[]).length, 'teams');
-    }catch(e){
-      console.warn('[PixelProf] enterCourse cloud sync fallback:', e.message);
-    }
+  // Stessa aula già attiva → non ricaricare, entra direttamente
+  if(id === activeCourseId){
+    appState.classroom = course;
+    _enterCourse_orig(id);
+    await _applyModuleFilter(id);
+    return;
   }
 
-  // 2. Entra nell'aula — _enterCourse_orig imposta activeCourseId e
-  //    carica db da localStorage (può contenere players dell'aula precedente).
-  _enterCourse_orig(id);
-
-  // 3. Sovrascrive players/teams con i dati cloud appena caricati.
-  //    Questo avviene DOPO loadCourseData, quindi ha la precedenza.
-  if(cloudPlayers !== null){ db.players = cloudPlayers; }
-  if(cloudTeams   !== null){ db.teams   = cloudTeams;   }
-
-  // 4. Persiste lo stato aggiornato nel localStorage dell'aula corrente.
-  save();
-
-  // 5. Filtra moduli abilitati per questa aula.
-  await _applyModuleFilter(id);
+  // Aula diversa → salva la scelta e ricarica la pagina per stato JS pulito
+  // sessionStorage sopravvive al reload ma non alla chiusura tab
+  try{ sessionStorage.setItem('pp_pending_course', id); }catch(e){}
+  location.reload();
 };
 
 /* ==================================================
@@ -6200,25 +6203,12 @@ cdAction = async function(action){
  * @returns {Promise<{ok:boolean, error?:string}>}
  */
 async function _deleteClassroomRest(classroomId){
-  if(!window.supabase && !window._supabaseClient){
-    // Accede al client Supabase tramite il modulo db_adapter esposto su window.DB
-    // Se non disponibile, fallback alla RPC originale
-    const fallback = await window.DB.deleteClassroom(classroomId).catch(e=>({ok:false,error:e.message}));
-    return fallback;
-  }
-  // Ottieni il client Supabase dal modulo importato
-  // db_adapter.js lo esporta come window.DB._supabase (non esposto) — usiamo fetch diretto
-  // con il session token corrente
+  // v3.2.2: usa sempre REST diretto — non dipende da window.supabase (ES module non esposto)
   try {
-    const { data:{ session } } = await window.Auth._getSession
-      ? await window.Auth._getSession()
-      : { data: { session: null } };
+    const supabaseUrl = 'https://skrgqanqdyrybarinwwr.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrcmdxYW5xZHlyeWJhcmlud3dyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxODk0MTYsImV4cCI6MjA5NDc2NTQxNn0.0k17FJuqYNWCk2bWwWkYF7-5l5qX3RLXdMsgh9cHrGQ';
 
-    // Recupera session da Supabase Auth (già disponibile tramite Auth.getUser() path)
-    const supabaseUrl  = 'https://skrgqanqdyrybarinwwr.supabase.co';
-    const supabaseKey  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrcmdxYW5xZHlyeWJhcmlud3dyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxODk0MTYsImV4cCI6MjA5NDc2NTQxNn0.0k17FJuqYNWCk2bWwWkYF7-5l5qX3RLXdMsgh9cHrGQ';
-
-    // Leggi il JWT dalla sessione corrente via localStorage (Supabase v2 persiste in localStorage)
+    // Leggi JWT da localStorage — Supabase v2 persiste sempre la sessione qui
     let jwt = null;
     try {
       const sbKey = Object.keys(localStorage).find(k => k.startsWith('sb-') && k.endsWith('-auth-token'));
@@ -6227,6 +6217,22 @@ async function _deleteClassroomRest(classroomId){
         jwt = stored?.access_token || null;
       }
     } catch(e){}
+
+    if(!jwt){
+      // Fallback: prova a leggere da tutti i valori localStorage che contengono access_token
+      try{
+        for(const k of Object.keys(localStorage)){
+          const v = localStorage.getItem(k);
+          if(v && v.includes('access_token')){
+            const p = JSON.parse(v);
+            jwt = p?.access_token || p?.data?.access_token || null;
+            if(jwt) break;
+          }
+        }
+      }catch(e){}
+    }
+
+    console.log('[PixelProf] _deleteClassroomRest JWT found:', !!jwt, 'for classroom:', classroomId);
 
     const headers = {
       'Content-Type':  'application/json',

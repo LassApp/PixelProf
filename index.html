@@ -3153,13 +3153,21 @@ let matchState = {
   isTiebreak:    false,   // siamo in spareggio?
   tbTeams:       [],      // solo le squadre in pareggio
   tbRound:       0,       // numero round spareggio
+  _splashInterval: null,  // FIX C1: reference al countdown setInterval — cleanup garantito da matchReset()
 };
 
 function matchReset(){
+  // FIX C1: distrugge il countdown in corso (se presente) prima di azzerare matchState.
+  // Previene callback zombie che reinizializzerebbero il gioco su schermata errata.
+  if(matchState._splashInterval){
+    clearInterval(matchState._splashInterval);
+    matchState._splashInterval=null;
+  }
   matchState={
     active:false,teams:[],scores:{},currentIdx:0,
     frozenPool:null,usedQIds:new Set(),
-    isTiebreak:false,tbTeams:[],tbRound:0
+    isTiebreak:false,tbTeams:[],tbRound:0,
+    _splashInterval:null,  // FIX C1: incluso nel reset per coerenza strutturale
   };
 }
 let mState={},memState={},fillState={};
@@ -3845,12 +3853,23 @@ function _showTeamTurnSplash(team,cb){
     <div style="margin-top:24px;font-size:36px;font-weight:700;font-family:'Orbitron',monospace;color:var(--accent)" id="tb-countdown">3</div>
     <div style="font-size:11px;color:rgba(255,255,255,.3);margin-top:6px;font-family:'Share Tech Mono',monospace">Il gioco inizia tra poco…</div>
   </div>`;
+  // FIX C1: se un countdown precedente è ancora vivo (es. splash multipli rapidi),
+  // lo distrugge prima di crearne uno nuovo. Previene race condition e doppio avvio.
+  if(matchState._splashInterval){
+    clearInterval(matchState._splashInterval);
+    matchState._splashInterval=null;
+  }
   let n=3;
-  const iv=setInterval(()=>{
+  matchState._splashInterval=setInterval(()=>{
     n--;
     const el=document.getElementById('tb-countdown');
     if(el)el.textContent=n>0?n:'Vai!';
-    if(n<=0){clearInterval(iv);setTimeout(cb,400);}
+    if(n<=0){
+      // FIX C1: cleanup al termine naturale prima di invocare cb()
+      clearInterval(matchState._splashInterval);
+      matchState._splashInterval=null;
+      setTimeout(cb,400);
+    }
   },1000);
 }
 
@@ -3944,11 +3963,22 @@ function _showTiebreakerIntro(tied,cb){
     <div style="margin-top:20px;font-size:28px;font-weight:700;font-family:'Orbitron',monospace;color:#ffb400" id="tb-countdown">3</div>
   </div>`;
   let n=3;
-  const iv=setInterval(()=>{
+  // FIX C1: usa lo stesso slot _splashInterval di _showTeamTurnSplash.
+  // Cleanup anti-istanza multipla + tracking per matchReset().
+  if(matchState._splashInterval){
+    clearInterval(matchState._splashInterval);
+    matchState._splashInterval=null;
+  }
+  matchState._splashInterval=setInterval(()=>{
     n--;
     const el=document.getElementById('tb-countdown');
     if(el)el.textContent=n>0?n:'Via!';
-    if(n<=0){clearInterval(iv);setTimeout(cb,400);}
+    if(n<=0){
+      // FIX C1: cleanup al termine naturale
+      clearInterval(matchState._splashInterval);
+      matchState._splashInterval=null;
+      setTimeout(cb,400);
+    }
   },1000);
 }
 

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v3.2.2</title>
+<title>PixelProf — ICDL Lab interattivo v4.0.2</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" sizes="48x48" href="favicon-48.png">
@@ -1031,11 +1031,18 @@ function _createLoader(cfg) {
   return { load, isCached, getCache, moduleMap: cfg.moduleMap };
 }
 
+/* ── LOADER REGISTRY v4.0.2 ────────────────────────────────────────
+   5 loader unificati: CE / OE / WP nello stesso moduleMap.
+   WP è ora un modulo standard — nessuna biforcazione speciale.
+   Per aggiungere un nuovo modulo (es. SS): aggiungere riga qui + file JSON.
+   ──────────────────────────────────────────────────────────────── */
+
 /* -- Quiz -- */
 const QuizLoader = _createLoader({
   moduleMap: {
     CE: 'data/quiz/computer_essentials.json',
     OE: 'data/quiz/online_essentials.json',
+    WP: 'data/quiz/word_processing.json',
   },
   tag: 'Quiz',
   validate: raw => Array.isArray(raw) && raw.length > 0,
@@ -1049,7 +1056,7 @@ const SpeedQuizLoader = _createLoader({
   moduleMap: {
     CE: 'data/speed_quiz/computer_essentials.json',
     OE: 'data/speed_quiz/online_essentials.json',
-    // Nuovi moduli: aggiungere riga + file JSON, zero altre modifiche
+    WP: 'data/speed_quiz/word_processing.json',
   },
   tag: 'SpeedQuiz',
   validate: raw => Array.isArray(raw) && raw.length > 0,
@@ -1063,7 +1070,7 @@ const AbbinLoader = _createLoader({
   moduleMap: {
     CE: 'data/abbina/computer_essentials_abbina.json',
     OE: 'data/abbina/online_essentials_abbina.json',
-    // Nuovi moduli: aggiungere riga + file JSON, zero altre modifiche
+    WP: 'data/abbina/word_processing_abbina.json',
   },
   tag: 'Abbina',
   validate: raw => raw && Array.isArray(raw.sets) && raw.sets.length > 0,
@@ -1077,7 +1084,7 @@ const MemoryLoader = _createLoader({
   moduleMap: {
     CE: 'data/memory/computer_essentials_memory.json',
     OE: 'data/memory/online_essentials_memory.json',
-    // Nuovi moduli: aggiungere riga + file JSON, zero altre modifiche
+    WP: 'data/memory/word_processing_memory.json',
   },
   tag: 'Memory',
   validate: raw => Array.isArray(raw) && raw.length > 0,
@@ -1089,66 +1096,20 @@ const CompletaFraseLoader = _createLoader({
   moduleMap: {
     CE: 'data/completa_frase/computer_essentials_completa_frase.json',
     OE: 'data/completa_frase/online_essentials_completa_frase.json',
-    // Nuovi moduli: aggiungere riga + file JSON, zero altre modifiche
+    WP: 'data/completa_frase/word_processing_completa_frase.json',
   },
   tag: 'CompletaFrase',
   validate: raw => Array.isArray(raw) && raw.length > 0,
   normalize: (raw) => raw.map(r => ({ t: r.sentence, b: r.answer, bank: r.bank })),
 });
 
-/* -- Word Processing — Quiz -- */
-const WpQuizLoader = _createLoader({
-  moduleMap: { WP: 'data/quiz/word_processing.json' },
-  tag: 'WpQuiz',
-  validate: raw => Array.isArray(raw) && raw.length > 0,
-  normalize: (raw, mod) => raw.map(r => ({
-    q: r.question, opts: r.options, a: r.correctIndex, exp: r.explanation, _src: mod,
-  })),
-});
-
-/* -- Word Processing — Speed Quiz -- */
-const WpSpeedLoader = _createLoader({
-  moduleMap: { WP: 'data/speed_quiz/word_processing.json' },
-  tag: 'WpSpeed',
-  validate: raw => Array.isArray(raw) && raw.length > 0,
-  normalize: (raw, mod) => raw.map(r => ({
-    q: r.question, opts: r.options, a: r.correctIndex, exp: r.explanation, _src: mod,
-  })),
-});
-
-/* -- Word Processing — Abbina -- */
-const WpAbbinLoader = _createLoader({
-  moduleMap: { WP: 'data/abbina/word_processing_abbina.json' },
-  tag: 'WpAbbina',
-  validate: raw => raw && Array.isArray(raw.sets) && raw.sets.length > 0,
-  normalize: (raw) => raw.sets.map(set =>
-    set.map(pair => ({ t: pair.term, d: pair.definition }))
-  ),
-});
-
-/* -- Word Processing — Memory -- */
-const WpMemoryLoader = _createLoader({
-  moduleMap: { WP: 'data/memory/word_processing_memory.json' },
-  tag: 'WpMemory',
-  validate: raw => Array.isArray(raw) && raw.length > 0,
-  normalize: (raw) => raw.map(r => [r.term, r.definition]),
-});
-
-/* -- Word Processing — Completa la frase -- */
-const WpCompletaLoader = _createLoader({
-  moduleMap: { WP: 'data/completa_frase/word_processing_completa_frase.json' },
-  tag: 'WpCompleta',
-  validate: raw => Array.isArray(raw) && raw.length > 0,
-  normalize: (raw) => raw.map(r => ({ t: r.sentence, b: r.answer, bank: r.bank })),
-});
-
-/* -- Alias pubblici per retrocompatibilit con il resto dell'engine --
-   WP viene servito dai loader dedicati e poi rimappato su _src='WP'    */
-const loadPool = mod => mod === 'WP' ? WpQuizLoader.load('WP')   : QuizLoader.load(mod);
-const loadSpeedPool = mod => mod === 'WP' ? WpSpeedLoader.load('WP')  : SpeedQuizLoader.load(mod);
-const loadAbbinSets = mod => mod === 'WP' ? WpAbbinLoader.load('WP')  : AbbinLoader.load(mod);
-const loadMemoryPairs = mod => mod === 'WP' ? WpMemoryLoader.load('WP') : MemoryLoader.load(mod);
-const loadCompletaFrasePool = mod => mod === 'WP' ? WpCompletaLoader.load('WP') : CompletaFraseLoader.load(mod);
+/* -- Alias pubblici — API invariata, WP ora gestito dal pipeline standard --
+   WP viene caricato dai 5 loader unificati senza biforcazione speciale.    */
+const loadPool             = mod => QuizLoader.load(mod);
+const loadSpeedPool        = mod => SpeedQuizLoader.load(mod);
+const loadAbbinSets        = mod => AbbinLoader.load(mod);
+const loadMemoryPairs      = mod => MemoryLoader.load(mod);
+const loadCompletaFrasePool= mod => CompletaFraseLoader.load(mod);
 
 /* Helper sincrono  restituisce il modulo di una domanda */
 function getQuestionModule(q) { return q._src || 'CE'; }
@@ -1169,11 +1130,11 @@ function _showLoadingSpinner(cont, icon, label, path) {
     sh('qz-result').innerHTML = html;
   }
 }
-function showQuizLoading(mod)      { _showLoadingSpinner(null,'📡','Caricamento domande…',     mod==='WP'?WpQuizLoader.moduleMap['WP']:QuizLoader.moduleMap[mod]      || 'data/quiz/'); }
-function showSpeedQuizLoading(mod) { _showLoadingSpinner(null,'⚡','Caricamento Speed Quiz…',  mod==='WP'?WpSpeedLoader.moduleMap['WP']:SpeedQuizLoader.moduleMap[mod]  || 'data/speed_quiz/'); }
-function showAbbinLoading(cont,mod){ _showLoadingSpinner(cont,'🔗','Caricamento Abbina…',      mod==='WP'?WpAbbinLoader.moduleMap['WP']:AbbinLoader.moduleMap[mod]      || 'data/abbina/'); }
-function showMemoryLoading(cont,mod){ _showLoadingSpinner(cont,'🃏','Caricamento Memory…',     mod==='WP'?WpMemoryLoader.moduleMap['WP']:MemoryLoader.moduleMap[mod]     || 'data/memory/'); }
-function showCompletaFraseLoading(cont,mod){ _showLoadingSpinner(cont,'✏️','Caricamento Completa la frase…', mod==='WP'?WpCompletaLoader.moduleMap['WP']:CompletaFraseLoader.moduleMap[mod] || 'data/completa_frase/'); }
+function showQuizLoading(mod)      { _showLoadingSpinner(null,'📡','Caricamento domande…',      QuizLoader.moduleMap[mod]         || 'data/quiz/'); }
+function showSpeedQuizLoading(mod) { _showLoadingSpinner(null,'⚡','Caricamento Speed Quiz…',   SpeedQuizLoader.moduleMap[mod]    || 'data/speed_quiz/'); }
+function showAbbinLoading(cont,mod){ _showLoadingSpinner(cont,'🔗','Caricamento Abbina…',       AbbinLoader.moduleMap[mod]        || 'data/abbina/'); }
+function showMemoryLoading(cont,mod){ _showLoadingSpinner(cont,'🃏','Caricamento Memory…',      MemoryLoader.moduleMap[mod]       || 'data/memory/'); }
+function showCompletaFraseLoading(cont,mod){ _showLoadingSpinner(cont,'✏️','Caricamento Completa la frase…', CompletaFraseLoader.moduleMap[mod] || 'data/completa_frase/'); }
 
 /* -- UI: error screens -- */
 function _showGameError(cont, icon, title, color, path, msg) {

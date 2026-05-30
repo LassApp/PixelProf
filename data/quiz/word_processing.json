@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "module": "word_processing.json",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Word",
+    "options": [
+      "Large Area Network",
+      "Local Area Network",
+      "Linear Access Network",
+      "Long Address Network"
+    ],
+    "correctIndex": 1,
+    "explanation": "LAN = Local Area Network: rete locale."
+  },
+  {
+    "id": 2,
+    "module": "word_processing.json",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Word?",
+    "options": [
+      "Due computer identici",
+      "Il client fa richieste; il server risponde con i dati",
+      "Una rete locale",
+      "Un tipo di browser"
+    ],
+    "correctIndex": 1,
+    "explanation": "Client/Server = modello base di Internet."
+  }
+]

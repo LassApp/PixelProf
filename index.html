@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v4.0.2</title>
-<link rel="icon" href="public/icons/favicon.ico" sizes="any">
-<link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
-<link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
+<title>PixelProf — ICDL Lab interattivo v4.0.3</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" sizes="48x48" href="favicon-48.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,7 +80,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v3.2.2</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v4.0.3</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -206,7 +206,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v3.2.2</span>
+        <span class="cs-logo-sub">ICDL Lab · v4.0.3</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v3.2.2 -->
@@ -495,7 +495,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v3.2.2</span>
+      <span class="logo-sub">ICDL Lab · v4.0.3</span>
     </div>
   </div>
   <!-- Course badge — icona + nome aula, cliccabile (v3.2.2) -->
@@ -1031,7 +1031,7 @@ function _createLoader(cfg) {
   return { load, isCached, getCache, moduleMap: cfg.moduleMap };
 }
 
-/* ── LOADER REGISTRY v4.0.2 ────────────────────────────────────────
+/* ── LOADER REGISTRY v4.0.3 ────────────────────────────────────────
    5 loader unificati: CE / OE / WP nello stesso moduleMap.
    WP è ora un modulo standard — nessuna biforcazione speciale.
    Per aggiungere un nuovo modulo (es. SS): aggiungere riga qui + file JSON.
@@ -1332,11 +1332,106 @@ let memPaused=false;
 /* Leaderboard navigation state */
 let lbType=null,lbAct=null;
 
+/* ==================================================
+   TIMER MANAGER — v4.0.3
+   Registro centralizzato di tutti i timer di gioco.
+   Ogni timer espone: start, pause, resume, stop.
+   TimerManager.pauseAll() / resumeAll() / stopAll()
+   eliminano la necessità di hardcoding per gameType
+   in _pauseForDialog / _resumeAfterDialog /
+   resetSessionState.
+
+   ARCHITETTURA:
+   - I timer si auto-registrano alla prima chiamata
+     di start(). Non richiedono register() esplicito.
+   - Le variabili globali di stato (qTimerInt, ecc.)
+     restano invariate: i wrapper legacy le aggiornano.
+   - paused = "messo in pausa dall'utente prima del
+     dialog" — preserved across dialog open/close.
+   - pausedByDialog = flag temporaneo: true se il timer
+     era attivo quando il dialog si è aperto (non già
+     paused dall'utente).
+================================================== */
+const TimerManager = (function(){
+  const _timers = {}; // { name: { paused, pausedByDialog, ... } }
+
+  /**
+   * Registra un timer con le sue callback.
+   * Chiamato automaticamente da start() se non già registrato.
+   * @param {string}   name
+   * @param {function} fnPause    - sospende il timer (aggiorna var globali)
+   * @param {function} fnResume   - riprende il timer (aggiorna var globali)
+   * @param {function} fnStop     - ferma e resetta il timer
+   * @param {function} [fnIsRunning] - true se il timer è attivo
+   */
+  function register(name, fnPause, fnResume, fnStop, fnIsRunning){
+    if(_timers[name]) return; // idempotente
+    _timers[name] = { fnPause, fnResume, fnStop, fnIsRunning: fnIsRunning||null };
+    console.log('[TimerManager] registered:', name);
+  }
+
+  /**
+   * Pausa tutti i timer registrati.
+   * Salva lo stato pre-dialog in pausedByDialog per
+   * poterlo ripristinare correttamente in resumeAll().
+   */
+  function pauseAll(){
+    Object.entries(_timers).forEach(([name, t])=>{
+      const running = t.fnIsRunning ? t.fnIsRunning() : true;
+      t.pausedByDialog = running;
+      if(running){
+        try{ t.fnPause(); } catch(e){ console.warn('[TimerManager] pauseAll error:', name, e); }
+      }
+    });
+  }
+
+  /**
+   * Riprende i timer che erano attivi prima del dialog.
+   * Non riprende i timer che l'utente aveva già messo in pausa.
+   */
+  function resumeAll(){
+    Object.entries(_timers).forEach(([name, t])=>{
+      if(t.pausedByDialog){
+        t.pausedByDialog = false;
+        try{ t.fnResume(); } catch(e){ console.warn('[TimerManager] resumeAll error:', name, e); }
+      }
+    });
+  }
+
+  /**
+   * Ferma e resetta tutti i timer registrati.
+   * Chiamato da resetSessionState().
+   */
+  function stopAll(){
+    Object.entries(_timers).forEach(([name, t])=>{
+      t.pausedByDialog = false;
+      try{ t.fnStop(); } catch(e){ console.warn('[TimerManager] stopAll error:', name, e); }
+    });
+  }
+
+  /**
+   * Rimuove la registrazione di un timer.
+   * Utile per cleanup (es. fine partita).
+   * In pratica non necessario finché i timer sono singleton.
+   */
+  function unregister(name){
+    delete _timers[name];
+  }
+
+  /**
+   * Espone lo stato interno solo per debug.
+   */
+  function debug(){ return JSON.parse(JSON.stringify(_timers, (k,v)=>typeof v==='function'?'[fn]':v)); }
+
+  return { register, pauseAll, resumeAll, stopAll, unregister, debug };
+})();
+
 /* Reset all transient game state between sessions */
 function resetSessionState(){
-  stopTimer();
-  stopMemTimer();
-  stopMatchTimer();
+  TimerManager.stopAll();   // v4.0.3: centralizzato
+  stopTimer();              // legacy wrapper — no-op se già stoppato da TimerManager
+  stopMemTimer();           // legacy wrapper
+  stopMatchTimer();         // legacy wrapper
   gsSet(GS.IDLE);
   gameType=null;
   qPool=[];qIdx=0;qScores={};qStart=0;qAnswered=false;qSpeedLeft=0;
@@ -1413,39 +1508,50 @@ function ppConfirmRestart(onYes){
   sh('pp-dialog-overlay').classList.remove('hidden');
 }
 
+/* ==================================================
+   _pauseForDialog / _resumeAfterDialog — v4.0.3
+   Timer: TimerManager.pauseAll() / resumeAll().
+   UI (overlay, icone, lock): invariata per gameType.
+   _dialogWasPaused e _dialogMatchWasPaused sono ora
+   mantenuti internamente da TimerManager.pausedByDialog,
+   ma restano come variabili locali per la logica UI
+   (es. syncMemPauseOverlay dipende da memPaused, non
+   dal flag interno del manager).
+================================================== */
 function _pauseForDialog(){
   if(gsIs(GS.PLAYING)){
     gsSet(GS.PAUSED);
-    // Stop speed quiz timer
-    if(qTimerInt){ clearInterval(qTimerInt); qTimerInt=null; }
-    // Show speed quiz pause overlay + block inputs
+
+    // ── Snapshot stati pre-dialog (usati dalla logica UI in _resumeAfterDialog) ──
+    _dialogWasPaused      = memPaused;   // era già in pausa manuale?
+    _dialogMatchWasPaused = mPaused;     // idem per Abbina
+
+    // ── Pausa tutti i timer via manager ──
+    TimerManager.pauseAll();
+
+    // ── UI per gameType: Speed Quiz ──
     if(gameType==='speed'){
       const overlay=sh('qz-pause-overlay');
       if(overlay)overlay.classList.remove('hidden');
       const btn=sh('qz-pause-btn');
-      if(btn){btn.classList.add('is-paused');}
+      if(btn)btn.classList.add('is-paused');
       const icon=sh('qz-pause-icon');
       if(icon)icon.className='ti ti-player-play';
       document.querySelectorAll('.opt:not(.correct):not(.wrong)').forEach(b=>{b.disabled=true;b.style.opacity='.35';});
       _setSpeedPauseLock(true);
     }
-    // Stop memory timer  track if it was already paused, then use canonical pauseMemTimer()
-    _dialogWasPaused = memPaused;
-    if(!memPaused) pauseMemTimer();
-    // Memory game: apply same UI lock as Speed Quiz
+
+    // ── UI per gameType: Memory ──
     if(gameType==='memory'){
       _setGamePauseLock(true);
       const mbtn=sh('mem-pause-btn');
       const micon=sh('mem-pause-icon');
       if(mbtn){mbtn.classList.add('is-paused');mbtn.title='Riprendi';}
       if(micon)micon.className='ti ti-player-play';
+      _syncMemPauseOverlay(true);
     }
-    // Show memory pause overlay if visible
-    _syncMemPauseOverlay(true);
-    // Stop match (Abbina) timer  track pre-dialog pause state
-    _dialogMatchWasPaused = mPaused;
-    if(!mPaused) pauseMatchTimer();
-    // Abbina game: lock UI + show overlay
+
+    // ── UI per gameType: Abbina ──
     if(gameType==='match'){
       _setGamePauseLock(true);
       const mbtn=sh('match-pause-btn');
@@ -1461,11 +1567,14 @@ function _pauseForDialog(){
 function _resumeAfterDialog(){
   if(gsIs(GS.PAUSED)){
     gsSet(GS.PLAYING);
-    // Resume speed quiz timer
+
+    // ── Riprende i timer via manager (solo quelli che non erano già paused) ──
+    // TimerManager usa pausedByDialog per sapere quali riprendere.
+    // Per Speed Quiz il fnResume del manager chiama _restartSpeedTimer(),
+    // ma la UI va ripristinata qui PRIMA della ripresa del timer.
     if(gameType==='speed' && qSpeedLeft>0 && !qAnswered){
       const wasActive=!sh('qz-game')?.classList.contains('hidden');
       if(wasActive){
-        // Restore UI
         const icon=sh('qz-pause-icon');
         const overlay=sh('qz-pause-overlay');
         const btn=sh('qz-pause-btn');
@@ -1474,38 +1583,36 @@ function _resumeAfterDialog(){
         if(btn){btn.title='Pausa';btn.classList.remove('is-paused');}
         document.querySelectorAll('.opt:not(.correct):not(.wrong)').forEach(b=>{b.disabled=false;b.style.opacity='';});
         _setSpeedPauseLock(false);
-        _restartSpeedTimer();
       }
     }
-    // Resume memory timer only if it wasn't already paused before dialog
-    if(gameType==='memory' && !_dialogWasPaused){
-      memPaused=false;
-      _startMemInterval();
-      _syncMemPauseOverlay(false);
-    }
-    // Memory game: release UI lock (always, regardless of pre-dialog pause state)
+
+    // ── UI per Memory: sempre rilascia il lock; overlay solo se non era già paused ──
     if(gameType==='memory'){
       _setGamePauseLock(false);
       const mbtn=sh('mem-pause-btn');
       const micon=sh('mem-pause-icon');
       if(mbtn){mbtn.classList.remove('is-paused');mbtn.title='Pausa';}
       if(micon)micon.className='ti ti-player-pause';
+      if(!_dialogWasPaused){
+        _syncMemPauseOverlay(false);
+      }
     }
-    // Resume match (Abbina) timer only if not already paused before dialog
-    if(gameType==='match' && !_dialogMatchWasPaused){
-      mPaused=false;
-      _startMatchInterval();
-      sh('match-paused-overlay')?.classList.add('hidden');
-      document.querySelectorAll('.match-item:not(.matched)').forEach(e=>e.classList.remove('locked'));
-    }
-    // Abbina: release UI lock always
+
+    // ── UI per Abbina: sempre rilascia il lock; overlay solo se non era già paused ──
     if(gameType==='match'){
       _setGamePauseLock(false);
       const mbtn=sh('match-pause-btn');
       const micon=sh('match-pause-icon');
       if(mbtn){mbtn.classList.remove('is-paused');mbtn.title='Pausa';}
       if(micon)micon.className='ti ti-player-pause';
+      if(!_dialogMatchWasPaused){
+        sh('match-paused-overlay')?.classList.add('hidden');
+        document.querySelectorAll('.match-item:not(.matched)').forEach(e=>e.classList.remove('locked'));
+      }
     }
+
+    // ── Ripristina timer via manager (DOPO aggiornamento UI) ──
+    TimerManager.resumeAll();
   }
 }
 
@@ -1519,10 +1626,8 @@ function _syncMemPauseOverlay(show){
 
 sh('pp-dialog-yes').onclick=function(){
   sh('pp-dialog-overlay').classList.add('hidden');
-  // Confirm: destroy game state cleanly
-  stopTimer();
-  stopMemTimer();
-  stopMatchTimer();
+  // Confirm: destroy game state cleanly — v4.0.3: TimerManager.stopAll() centralizzato
+  TimerManager.stopAll();
   gsSet(GS.IDLE);
   gameType=null;
   if(_dialogCallback){_dialogCallback();_dialogCallback=null;}
@@ -1544,6 +1649,29 @@ function isGameActive(){
 
 function stopTimer(){if(qTimerInt){clearInterval(qTimerInt);qTimerInt=null;}}
 
+/* ==================================================
+   TIMER REGISTRATIONS — v4.0.3
+   I 3 timer (speed, memory, match) si registrano nel
+   TimerManager. Le funzioni pubbliche legacy restano
+   come wrapper per retrocompatibilità: il resto del
+   codice (speedTogglePause, memTogglePause, ecc.) le
+   chiama ancora direttamente senza modifiche.
+================================================== */
+
+/* ── Speed Quiz timer ─────────────────────────────
+   fnPause:     stopTimer() (clearInterval qTimerInt)
+   fnResume:    _restartSpeedTimer() solo se in gioco
+   fnStop:      stopTimer()
+   fnIsRunning: qTimerInt != null
+─────────────────────────────────────────────────── */
+TimerManager.register(
+  'speed',
+  /* pause  */ () => { stopTimer(); },
+  /* resume */ () => { if(sAct==='speed' && qSpeedLeft>0 && !qAnswered && !sh('qz-game')?.classList.contains('hidden')) _restartSpeedTimer(); },
+  /* stop   */ () => { stopTimer(); },
+  /* isRunning */ () => qTimerInt !== null
+);
+
 /* v10: memory timer helpers */
 function stopMemTimer(){
   if(memTimerInt){clearInterval(memTimerInt);memTimerInt=null;}
@@ -1562,6 +1690,20 @@ function _startMemInterval(){
     _updateMemTimerUI();
   },1000);
 }
+
+/* ── Memory timer ─────────────────────────────────
+   fnPause:     pauseMemTimer() se non già paused
+   fnResume:    resumeMemTimer() (imposta memPaused=false e fa start)
+   fnStop:      stopMemTimer()
+   fnIsRunning: memTimerInt != null && !memPaused
+─────────────────────────────────────────────────── */
+TimerManager.register(
+  'memory',
+  /* pause  */ () => { if(!memPaused) pauseMemTimer(); },
+  /* resume */ () => { if(memPaused) resumeMemTimer(); },
+  /* stop   */ () => { stopMemTimer(); },
+  /* isRunning */ () => memTimerInt !== null && !memPaused
+);
 function _updateMemTimerUI(){
   const el=document.getElementById('mem-timer-pill');
   if(!el)return;
@@ -2712,6 +2854,20 @@ function _startMatchInterval(){
     if(mTimeLeft<=0){clearInterval(mTimerInt);mTimerInt=null;_matchTimeUp();}
   },1000);
 }
+
+/* ── Abbina (Match) timer ─────────────────────────
+   fnPause:     pauseMatchTimer() se non già paused
+   fnResume:    resumeMatchTimer()
+   fnStop:      stopMatchTimer()
+   fnIsRunning: mTimerInt != null && !mPaused
+─────────────────────────────────────────────────── */
+TimerManager.register(
+  'match',
+  /* pause  */ () => { if(!mPaused) pauseMatchTimer(); },
+  /* resume */ () => { if(mPaused) resumeMatchTimer(); },
+  /* stop   */ () => { stopMatchTimer(); },
+  /* isRunning */ () => mTimerInt !== null && !mPaused
+);
 
 function _updateMatchTimerUI(){
   const el=document.getElementById('match-timer-val');

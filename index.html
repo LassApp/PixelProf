@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v4.0.3</title>
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" sizes="48x48" href="favicon-48.png">
+<title>PixelProf — ICDL Lab interattivo v4.0.4</title>
+<link rel="icon" href="public/icons/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,7 +80,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v4.0.3</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v4.0.4</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -206,7 +206,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v4.0.3</span>
+        <span class="cs-logo-sub">ICDL Lab · v4.0.4</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v3.2.2 -->
@@ -495,7 +495,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v4.0.3</span>
+      <span class="logo-sub">ICDL Lab · v4.0.4</span>
     </div>
   </div>
   <!-- Course badge — icona + nome aula, cliccabile (v3.2.2) -->
@@ -1278,17 +1278,78 @@ function gsIs(state){ return gameState === state; }
 function gsIsActive(){ return gameState === GS.PLAYING || gameState === GS.PAUSED; }
 
 /* ==================================================
-   SESSION STATE
+   SESSION STATE  v4.0.4 — oggetti strutturati
+   Pattern ispirato a matchState (già consolidato).
+   Le variabili globali flat restano accessibili via
+   alias window.* (defineProperties) — ZERO modifiche
+   al resto del codice.
 ================================================== */
+
+/* -- Setup selettore sessione (invariato) -- */
 let sMod=null,sAct=null,sN=0,sMode=null,sIndPlayer=null,sTeams=[],sNumSelected=false;
-let qPool=[],qIdx=0,qScores={},qStart=0,qTimerInt=null,qAnswered=false,qSpeedLeft=0;
-/* -- v2.1.7: Quiz scoring engine state -- */
-let qStreak=0,qBestStreak=0,qQStart=0;
-let qTotalSpeedBonus=0,qTotalStreakBonus=0;
-let qAnswerLog=[];   // [{questionId,correct,responseTimeMs,streak,speedBonus,streakBonus,scoreEarned}]
-/* -- v2.1.7: Fill scoring state -- */
-let fillStreak=0,fillBestStreak=0,fillTotalScore=0,fillAnswerLog=[];
-let players=[],prevRank=[];
+
+/* -- Timer globale (deve restare let per stopTimer/clearInterval) -- */
+let qTimerInt=null;
+
+/* ── QuizSession — tutto lo stato del quiz corrente ── */
+const QuizSession = {
+  _defaults: {
+    pool:[], idx:0, scores:{}, start:0, answered:false, speedLeft:0,
+    streak:0, bestStreak:0, qStart:0,
+    totalSpeedBonus:0, totalStreakBonus:0,
+    answerLog:[]
+    // [{questionId,correct,responseTimeMs,streak,speedBonus,streakBonus,scoreEarned}]
+  },
+  pool:[], idx:0, scores:{}, start:0, answered:false, speedLeft:0,
+  streak:0, bestStreak:0, qStart:0,
+  totalSpeedBonus:0, totalStreakBonus:0,
+  answerLog:[],
+  reset(){
+    this.pool=[];this.idx=0;this.scores={};this.start=0;
+    this.answered=false;this.speedLeft=0;
+    this.streak=0;this.bestStreak=0;this.qStart=0;
+    this.totalSpeedBonus=0;this.totalStreakBonus=0;
+    this.answerLog=[];
+  }
+};
+
+/* ── FillSession — stato Completa la frase ── */
+const FillSession = {
+  streak:0, bestStreak:0, totalScore:0, answerLog:[],
+  reset(){
+    this.streak=0;this.bestStreak=0;this.totalScore=0;this.answerLog=[];
+  }
+};
+
+/* ── PlayerSession — giocatori attivi nel turno ── */
+const PlayerSession = {
+  list:[], prevRank:[],
+  reset(){ this.list=[];this.prevRank=[]; }
+};
+
+/* ── Alias window.* — retrocompatibilità totale ──
+   Tutto il codice esistente che scrive/legge qPool,
+   players, fillStreak, ecc. funziona invariato. */
+Object.defineProperties(window, {
+  qPool:            { get(){ return QuizSession.pool;             }, set(v){ QuizSession.pool=v;             }, configurable:true, enumerable:true },
+  qIdx:             { get(){ return QuizSession.idx;              }, set(v){ QuizSession.idx=v;              }, configurable:true, enumerable:true },
+  qScores:          { get(){ return QuizSession.scores;           }, set(v){ QuizSession.scores=v;           }, configurable:true, enumerable:true },
+  qStart:           { get(){ return QuizSession.start;            }, set(v){ QuizSession.start=v;            }, configurable:true, enumerable:true },
+  qAnswered:        { get(){ return QuizSession.answered;         }, set(v){ QuizSession.answered=v;         }, configurable:true, enumerable:true },
+  qSpeedLeft:       { get(){ return QuizSession.speedLeft;        }, set(v){ QuizSession.speedLeft=v;        }, configurable:true, enumerable:true },
+  qStreak:          { get(){ return QuizSession.streak;           }, set(v){ QuizSession.streak=v;           }, configurable:true, enumerable:true },
+  qBestStreak:      { get(){ return QuizSession.bestStreak;       }, set(v){ QuizSession.bestStreak=v;       }, configurable:true, enumerable:true },
+  qQStart:          { get(){ return QuizSession.qStart;           }, set(v){ QuizSession.qStart=v;           }, configurable:true, enumerable:true },
+  qTotalSpeedBonus: { get(){ return QuizSession.totalSpeedBonus;  }, set(v){ QuizSession.totalSpeedBonus=v;  }, configurable:true, enumerable:true },
+  qTotalStreakBonus: { get(){ return QuizSession.totalStreakBonus; }, set(v){ QuizSession.totalStreakBonus=v; }, configurable:true, enumerable:true },
+  qAnswerLog:       { get(){ return QuizSession.answerLog;        }, set(v){ QuizSession.answerLog=v;        }, configurable:true, enumerable:true },
+  fillStreak:       { get(){ return FillSession.streak;           }, set(v){ FillSession.streak=v;           }, configurable:true, enumerable:true },
+  fillBestStreak:   { get(){ return FillSession.bestStreak;       }, set(v){ FillSession.bestStreak=v;       }, configurable:true, enumerable:true },
+  fillTotalScore:   { get(){ return FillSession.totalScore;       }, set(v){ FillSession.totalScore=v;       }, configurable:true, enumerable:true },
+  fillAnswerLog:    { get(){ return FillSession.answerLog;        }, set(v){ FillSession.answerLog=v;        }, configurable:true, enumerable:true },
+  players:          { get(){ return PlayerSession.list;           }, set(v){ PlayerSession.list=v;           }, configurable:true, enumerable:true },
+  prevRank:         { get(){ return PlayerSession.prevRank;       }, set(v){ PlayerSession.prevRank=v;       }, configurable:true, enumerable:true },
+});
 
 /* ==================================================
    MATCH STATE  sequential team-turn engine v2.1.4
@@ -1434,12 +1495,10 @@ function resetSessionState(){
   stopMatchTimer();         // legacy wrapper
   gsSet(GS.IDLE);
   gameType=null;
-  qPool=[];qIdx=0;qScores={};qStart=0;qAnswered=false;qSpeedLeft=0;
-  /* v2.1.7: reset scoring engine */
-  qStreak=0;qBestStreak=0;qQStart=0;
-  qTotalSpeedBonus=0;qTotalStreakBonus=0;qAnswerLog=[];
-  fillStreak=0;fillBestStreak=0;fillTotalScore=0;fillAnswerLog=[];
-  players=[];prevRank=[];
+  /* v4.0.4: FASE 4 — reset centralizzato via oggetti sessione */
+  QuizSession.reset();
+  FillSession.reset();
+  PlayerSession.reset();
   mState={};memState={};fillState={};
   sNumSelected=false;
   matchReset(); // v2.1.4: reset team-turn engine

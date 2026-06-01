@@ -4,11 +4,6 @@
    Depends on: game-engine-state.js, scoring.js
 ================================================== */
 
-/* -- Match/Abbina global state -- */
-var mTimerInt = null;
-var mTimeLeft = 0;
-var mPaused   = false;
-
 /* -- Per-pair color palette -- */
 const PAIR_COLORS=[
   '#00ffc8','#ffb400','#7c6aff','#ff4d6d',
@@ -361,4 +356,3 @@ function mSel(type,val){
 
   s.selT=null;s.selD=null;
 }
-

@@ -530,10 +530,12 @@ const TimerManager = (function(){
 
 /* Reset all transient game state between sessions */
 function resetSessionState(){
-  TimerManager.stopAll();   // v4.0.3: centralizzato
-  stopTimer();              // legacy wrapper — no-op se già stoppato da TimerManager
-  stopMemTimer();           // legacy wrapper
-  stopMatchTimer();         // legacy wrapper
+  TimerManager.stopAll();   // v4.0.5: centralizzato — handles all registered timers
+  stopTimer();              // legacy speed-quiz timer wrapper
+  // Guard calls: these live in game-match/game-quiz/game-memory which load after this file.
+  // TimerManager.stopAll() already covers them; these are safety no-ops.
+  if(typeof stopMemTimer   === 'function') stopMemTimer();
+  if(typeof stopMatchTimer === 'function') stopMatchTimer();
   gsSet(GS.IDLE);
   gameType=null;
   /* v4.0.5: FASE 4 — reset centralizzato via oggetti sessione */
@@ -544,9 +546,9 @@ function resetSessionState(){
   sNumSelected=false;
   matchReset(); // v2.1.4: reset team-turn engine
   // Unlock any paused UI (speed quiz OR memory)
-  _setGamePauseLock(false);
+  if(typeof _setGamePauseLock === 'function') _setGamePauseLock(false);
   // Reset speed quiz UI elements
-  resetSpeedUI();
+  if(typeof resetSpeedUI === 'function') resetSpeedUI();
   const sp=sh('qz-score-pill');if(sp)sp.classList.add('hidden');
   const pb=sh('qz-pause-btn');if(pb)pb.classList.add('hidden');
 }
@@ -1582,4 +1584,3 @@ function lbSelectAct(act){
     <span class="lb-nav-crumb current">${actLabel}</span>`;
   renderLbResults(lbType,act);
 }
-

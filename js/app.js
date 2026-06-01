@@ -730,8 +730,9 @@ saveSessionResult = function(act, mod){
    OVERRIDE ansQ — hook statistiche
 ================================================== */
 setTimeout(()=>{
-  const _ansQ_orig = ansQ;
-  ansQ = function(idx){
+  if(typeof window.ansQ !== 'function') return; // safety guard
+  const _ansQ_orig = window.ansQ;
+  window.ansQ = function(idx){
     _ansQ_orig(idx);
     if(typeof window.hook_trackAnswer === 'function' && qAnswerLog.length){
       const last = qAnswerLog[qAnswerLog.length-1];

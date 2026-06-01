@@ -245,5 +245,3 @@ function _restartSpeedTimer(){
     if(qSpeedLeft<=0){clearInterval(qTimerInt);forceEnd();}
   },1000);
 }
-
-/* ==================================================

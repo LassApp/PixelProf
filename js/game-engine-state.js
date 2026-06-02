@@ -1,10 +1,13 @@
 /* ==================================================
-   game-engine-state.js — PixelProf v4.0.5
+   game-engine-state.js — PixelProf v4.0.6
    Core engine: loader factory, course storage, database,
    session state (QuizSession/FillSession/PlayerSession),
    matchState, TimerManager, helpers, navigation core,
    dialog system, module/activity selection, launch,
    team turn engine, score saving, ranking, leaderboard.
+   Cloud hooks (hook_saveLbEntry, hook_saveSession,
+   hook_ensureParticipants) now embedded directly —
+   no override chains from app.js.
    This is the central module — loaded before all games.
 ================================================== */
 
@@ -1022,6 +1025,20 @@ async function launch(){
   // Guard: stato minimo necessario
   if(!sAct||!sMod||!sMode){console.warn('[PixelProf] launch() chiamato con stato invalido',{sAct,sMod,sMode});goHome();return;}
 
+  // Cloud hook: assicura che i partecipanti esistano nel DB prima di avviare la sessione
+  // v4.0.6: incorporato da ex override in app.js — fire-and-forget
+  if(typeof window.hook_ensureParticipants==='function'){
+    if(sMode==='ind'&&sIndPlayer){
+      window.hook_ensureParticipants([{name:sIndPlayer,color:COLORS[0],type:'ind'}]);
+    }else if(sMode==='sq'&&sTeams.length){
+      window.hook_ensureParticipants(
+        sTeams.filter(t=>t.name.trim()).map((t,i)=>({
+          name:t.name.trim(),color:t.color||COLORS[i],type:'sq'
+        }))
+      );
+    }
+  }
+
   // -- MODALIT SQUADRE  team-turn engine v2.1.6 --
   if(sMode==='sq'){
     // Prima chiamata a launch(): inizializza MATCH STATE
@@ -1445,6 +1462,10 @@ function _restartWholeMatch(){
 /* ==================================================
    SAVE SCORE TO LB2  extended schema
 ================================================== */
+/* ==================================================
+   saveLbEntry — v4.0.6
+   Incorpora hook_saveLbEntry cloud (ex override in app.js).
+================================================== */
 function saveLbEntry(player, pts, act, mod){
   const type=player.type; // 'ind' | 'sq'
   if(!db.lb2[type])db.lb2[type]={};
@@ -1467,11 +1488,14 @@ function saveLbEntry(player, pts, act, mod){
     }
     if(player.color)existing.color=player.color;
   }
+  // Cloud hook — fire-and-forget
+  if(typeof window.hook_saveLbEntry==='function') window.hook_saveLbEntry(player,pts,act,mod);
 }
 
 /* Persiste la sessione completa  usata alla fine di ogni partita.
    Struttura: { course, game, mode, teams[], timestamp }
-   Salvata in db.sessions (array append-only, max 100 voci). */
+   Salvata in db.sessions (array append-only, max 100 voci).
+   v4.0.6: incorpora hook_saveSession cloud (ex override in app.js). */
 function saveSessionResult(act, mod){
   if(!db.sessions)db.sessions=[];
   // In modalit squadre usa il quadro completo del matchState
@@ -1488,6 +1512,13 @@ function saveSessionResult(act, mod){
   };
   db.sessions.push(entry);
   if(db.sessions.length>100)db.sessions=db.sessions.slice(-100);
+  // Cloud hook — fire-and-forget
+  if(typeof window.hook_saveSession==='function'){
+    const participants=sMode==='sq'&&matchState.teams.length
+      ?matchState.teams.map(t=>({name:t.name,color:t.color,score:matchState.scores[t.name]||0,type:'sq'}))
+      :players.map(p=>({name:p.name,color:p.color,score:qScores[p.name]||0,type:'ind'}));
+    window.hook_saveSession(act,mod,sMode,participants,activeCourseId,qPool.length||null);
+  }
 }
 
 /* ==================================================

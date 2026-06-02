@@ -1,8 +1,10 @@
 /* ==================================================
-   game-quiz.js — PixelProf v4.0.5
+   game-quiz.js — PixelProf v4.0.6
    Quiz engine: renderQ, ansQ, nextQ, forceEnd, endQuiz.
    Speed Quiz: pause/resume, timer management.
    Also: resetSpeedUI, restartActivity, qzAbort.
+   hook_trackAnswer now embedded in ansQ —
+   no override chain from app.js.
    Depends on: game-engine-state.js, scoring.js, renderer.js
 ================================================== */
 
@@ -96,6 +98,11 @@ function ansQ(idx){
     db.stats.tot++;if(ok){db.stats.cor++;db.stats.byMod[mod].c++;}else db.stats.byMod[mod].w++;
     save();renderLiveBar();
     sh('qz-fb').innerHTML=`<div class="fb ${ok?'ok':'ko'}">${ok?'✓ Corretto! ':'✗ Sbagliato. '}${q.exp}</div>`;
+    // Cloud hook — fire-and-forget
+    if(typeof window.hook_trackAnswer==='function'&&qAnswerLog.length){
+      const last=qAnswerLog[qAnswerLog.length-1];
+      window.hook_trackAnswer(getQuestionModule(q),last.correct);
+    }
     setTimeout(()=>{qIdx++;if(qIdx<qPool.length)renderQ();else endQuiz();},500);
     return;
   }
@@ -127,6 +134,11 @@ function ansQ(idx){
   const mod=getQuestionModule(q);
   db.stats.tot++;if(ok){db.stats.cor++;db.stats.byMod[mod].c++;}else db.stats.byMod[mod].w++;
   save();renderLiveBar();
+  // Cloud hook — fire-and-forget
+  if(typeof window.hook_trackAnswer==='function'&&qAnswerLog.length){
+    const last=qAnswerLog[qAnswerLog.length-1];
+    window.hook_trackAnswer(getQuestionModule(q),last.correct);
+  }
   sh('next-btn').classList.remove('hidden');
 }
 

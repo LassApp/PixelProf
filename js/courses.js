@@ -1,7 +1,10 @@
 /* ==================================================
-   courses.js — PixelProf v4.0.5
+   courses.js — PixelProf v4.0.6
    Course/classroom system: grid, CRUD, icon picker,
    background/color picker, course menu.
+   Cloud sync (DB.updateClassroom, _deleteClassroomRest,
+   _reloadCourses, _applyModuleFilter) now embedded
+   directly — no override chains from app.js.
    Depends on: game-engine-state.js
 ================================================== */
 
@@ -33,14 +36,13 @@ function addCourse(){
     name,
     icon:COURSE_ICONS[iconIdx],
     colorIdx,
-    bgIdx:colorIdx, // same as color initially
+    bgIdx:colorIdx,
     createdAt:Date.now()
   };
   courses.push(course);
   saveCourses(courses);
   inp.value='';
   renderCoursesGrid();
-  // focus new card briefly
   setTimeout(()=>{
     const card=document.querySelector('[data-course-id="'+course.id+'"]');
     if(card)card.style.boxShadow='0 0 0 2px #00ffc8';
@@ -64,26 +66,22 @@ function renderCoursesGrid(){
     const bgIdx =(c.bgIdx   ??i)%COURSE_BG_PRESETS.length;
     const col=COLOR_PALETTE[colIdx];
     const bg =COURSE_BG_PRESETS[bgIdx];
-    // Date formatting
     const fmtDate=d=>{
       if(!d) return null;
       try{
-        // d può essere 'YYYY-MM-DD' (da Supabase) o timestamp
         const dt=new Date(d);
-        if(isNaN(dt.getTime())) return d; // fallback: stringa grezza
+        if(isNaN(dt.getTime())) return d;
         return dt.toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'2-digit'});
       }catch{return d;}
     };
     const startFmt=fmtDate(c.startDate);
     const endFmt  =fmtDate(c.endDate);
-    // Mostra riga date solo se almeno una è presente
     const dateRow = (startFmt||endFmt)
       ? `<div class="course-card-dates"><i class="ti ti-calendar" style="font-size:9px;opacity:.5"></i> ${startFmt||'—'} → ${endFmt||'—'}</div>`
       : `<div class="course-card-meta">Creata il ${new Date(c.createdAt||Date.now()).toLocaleDateString('it-IT',{day:'2-digit',month:'short'})}</div>`;
     const timeRow = c.timeSlot
       ? `<div class="course-card-time"><i class="ti ti-clock" style="font-size:10px;opacity:.5"></i> ${escHtml(c.timeSlot)}</div>`
       : '';
-    // Teachers list (names, exclude director role)
     const teacherChips=(c._teachers||[])
       .filter(t=>t.role!=='director')
       .map(t=>`<span class="course-card-teacher-chip">${escHtml(t.name||'')}</span>`)
@@ -102,22 +100,18 @@ function renderCoursesGrid(){
       "
       onclick="enterCourse('${escAttr(c.id)}')"
     >
-      <!-- TOP: icona · nome · menu -->
       <div class="course-card-top">
         <span class="course-card-icon">${c.icon}</span>
         <div class="course-card-name">${escHtml(c.name)}</div>
         <button class="course-card-menu" onclick="event.stopPropagation();openCourseMenu('${escAttr(c.id)}',this)" title="Opzioni" aria-label="Opzioni aula" style="position:static;flex-shrink:0">⋯</button>
       </div>
-      <!-- MIDDLE: date + orario -->
       <div class="course-card-middle">
         ${dateRow}
         ${timeRow}
       </div>
-      <!-- BOTTOM: docenti -->
       ${teachersRow}
     </div>`;
   }).join('');
-  // hover glow
   grid.querySelectorAll('.course-card').forEach(card=>{
     const ci=parseInt(card.dataset.colidx)||0;
     const col=COLOR_PALETTE[ci%COLOR_PALETTE.length];
@@ -128,28 +122,46 @@ function renderCoursesGrid(){
   });
 }
 
-function enterCourse(id){
+/* ==================================================
+   enterCourse — v4.0.6
+   Incorpora la logica cloud di app.js (appState,
+   location.reload per aula diversa, _applyModuleFilter).
+   Nessuna override chain necessaria.
+================================================== */
+async function enterCourse(id){
+  const courses=loadCourses();
+  const course=courses.find(c=>c.id===id);
+  if(!course)return;
+
+  // Stessa aula già attiva → entra direttamente senza reload
+  if(id===activeCourseId){
+    if(window.appState) window.appState.classroom=course;
+    _enterCourseDirect(id);
+    await _applyModuleFilter(id);
+    return;
+  }
+
+  // Aula diversa → salva la scelta e ricarica la pagina per stato JS pulito
+  try{ sessionStorage.setItem('pp_pending_course',id); }catch(e){}
+  location.reload();
+}
+
+/* Logica DOM pura dell'ingresso in un'aula (ex corpo di enterCourse). */
+function _enterCourseDirect(id){
   const courses=loadCourses();
   const course=courses.find(c=>c.id===id);
   if(!course)return;
   activeCourseId=id;
-  // Load course-specific db
   db=loadCourseData(id);
 
-  // -- Apply course background as global app theme --
-  const bgIdx =(course.bgIdx  ??0)%COURSE_BG_PRESETS.length;
+  const bgIdx=(course.bgIdx??0)%COURSE_BG_PRESETS.length;
   const bg=COURSE_BG_PRESETS[bgIdx];
   const themeEl=document.getElementById('app-theme-bg');
   if(themeEl){
-    // Fade out, swap, fade in for a clean transition
     themeEl.style.opacity='0';
-    setTimeout(()=>{
-      themeEl.style.background=bg.css;
-      themeEl.style.opacity='0.4';
-    },200);
+    setTimeout(()=>{ themeEl.style.background=bg.css; themeEl.style.opacity='0.4'; },200);
   }
 
-  // Update topbar badge — usa style.display (no .hidden class per evitare !important)
   const badge=sh('tb-course-badge');
   const badgeIcon=sh('tb-course-icon');
   const badgeName=sh('tb-course-name');
@@ -158,7 +170,7 @@ function enterCourse(id){
     badgeName.textContent=course.name;
     badge.style.display='flex';
   }
-  // Transition
+
   sh('screen-courses').classList.add('hidden');
   const app=document.querySelector('.app');
   app.style.display='';
@@ -179,14 +191,11 @@ function openCourseMenu(id,triggerEl){
   _ddCourseId=id;
   const dd=sh('course-dropdown');
   dd.classList.remove('hidden');
-  // Mostra "Gestisci" solo al direttore
   const manageItem=sh('cd-manage');
   if(manageItem) manageItem.style.display=window.Auth?.isDirector()?'':'none';
-  // Position near trigger
   const rect=triggerEl.getBoundingClientRect();
   dd.style.top=(rect.bottom+6)+'px';
   dd.style.left=Math.min(rect.left, window.innerWidth-180)+'px';
-  // Close on outside click
   setTimeout(()=>document.addEventListener('click',closeCourseMenuOutside,{once:true}),10);
 }
 
@@ -206,29 +215,55 @@ function closeCourseMenuOutside(e){
 }
 function closeCourseMenu(){sh('course-dropdown').classList.add('hidden');_ddCourseId=null;}
 
-function cdAction(action){
-  const id=_ddCourseId;closeCourseMenu();
+/* ==================================================
+   cdAction — v4.0.6
+   Incorpora la propagazione cloud di app.js.
+   Nessuna override chain necessaria.
+================================================== */
+async function cdAction(action){
+  const id=_ddCourseId;
+  closeCourseMenu();
   if(!id)return;
   const courses=loadCourses();
   const idx=courses.findIndex(c=>c.id===id);
   if(idx<0)return;
+
   if(action==='rename'){
     const newName=prompt('Nuovo nome aula:',courses[idx].name);
     if(!newName||!newName.trim())return;
+    // Aggiorna localStorage
     courses[idx].name=newName.trim();
-    saveCourses(courses);renderCoursesGrid();
-  }else if(action==='icon'){
-    openIconPicker(id);
-  }else if(action==='bg'){
-    openBgPicker(id);
-  }else if(action==='delete'){
-    if(!confirm('Eliminare l\'aula "'+courses[idx].name+'" e tutti i suoi dati?'))return;
-    deleteCourseData(id);
-    courses.splice(idx,1);
     saveCourses(courses);
     renderCoursesGrid();
-    // If we were inside this course, return to courses screen
-    if(activeCourseId===id){activeCourseId=null;db=makeEmptyDb();goCoursesFromApp();}
+    // Propaga al cloud se disponibile
+    if(window.DB && window.Auth?.getUserId()){
+      await window.DB.updateClassroom(id, { name: newName.trim() });
+      await _reloadCourses();
+    }
+  } else if(action==='icon'){
+    openIconPicker(id);
+  } else if(action==='bg'){
+    openBgPicker(id);
+  } else if(action==='delete'){
+    _showDeleteClassroomConfirm(id, courses[idx].name, async ()=>{
+      const delRes=await _deleteClassroomRest(id);
+      if(!delRes.ok){
+        let errMsg=delRes.error||'errore sconosciuto';
+        try{
+          const m=errMsg.match(/\{.*\}/s);
+          if(m){ const p=JSON.parse(m[0]); if(p.message) errMsg=p.message; }
+        }catch(e){}
+        alert('❌ Impossibile eliminare l\'aula.\n\n'+errMsg+'\n\nEsegui la SQL director_delete_classroom nel Supabase SQL Editor.');
+        return;
+      }
+      if(activeCourseId===id){
+        activeCourseId=null;
+        if(window.appState) window.appState.classroom=null;
+        db=makeEmptyDb();
+        goCoursesFromApp();
+      }
+      await _reloadCourses();
+    });
   }
 }
 
@@ -242,7 +277,12 @@ function openIconPicker(id){
   grid.innerHTML=COURSE_ICONS.map(ic=>`<button class="icp-btn${course&&course.icon===ic?' selected':''}" onclick="pickIcon('${escAttr(ic)}')">${ic}</button>`).join('');
   sh('icon-picker-overlay').classList.remove('hidden');
 }
-function pickIcon(icon){
+
+/* ==================================================
+   pickIcon — v4.0.6
+   Incorpora DB.updateClassroom + _reloadCourses di app.js.
+================================================== */
+async function pickIcon(icon){
   const courses=loadCourses();
   const idx=courses.findIndex(c=>c.id===_ipCourseId);
   if(idx<0)return;
@@ -250,12 +290,16 @@ function pickIcon(icon){
   saveCourses(courses);
   closeIconPicker();
   renderCoursesGrid();
+  // Propaga al cloud se disponibile
+  if(window.DB && _ipCourseId){
+    await window.DB.updateClassroom(_ipCourseId, { icon }).catch(()=>{});
+    await _reloadCourses();
+  }
 }
 function closeIconPicker(){sh('icon-picker-overlay').classList.add('hidden');_ipCourseId=null;}
 
-/* -- Bg + Color picker  v7 con anteprima live -- */
+/* -- Bg + Color picker v7 con anteprima live -- */
 
-// Palette accenti: { label, border, glow, barColor }
 const COLOR_PALETTE=[
   {label:'Teal',    border:'rgba(0,255,200,.45)',  glow:'rgba(0,255,200,.2)',    bar:'#00ffc8',  dot:'#00ffc8'},
   {label:'Violet',  border:'rgba(124,106,255,.45)',glow:'rgba(124,106,255,.2)',  bar:'#7c6aff',  dot:'#7c6aff'},
@@ -272,23 +316,18 @@ const COLOR_PALETTE=[
 ];
 
 let _bpCourseId=null;
-let _cpBgIdx=0;       // sfondo selezionato (temp)
-let _cpColorIdx=0;    // colore selezionato (temp)
+let _cpBgIdx=0;
+let _cpColorIdx=0;
 
 function openBgPicker(id){
   _bpCourseId=id;
   const courses=loadCourses();
   const course=courses.find(c=>c.id===id);
   if(!course)return;
-
-  // init temp state from current course
   _cpBgIdx   = course.bgIdx    ?? 0;
   _cpColorIdx= course.colorIdx ?? 0;
-
-  // populate preview
   _updateColorPickerPreview(course);
 
-  // render sfondo swatches
   const bgGrid=sh('bgp-grid');
   bgGrid.innerHTML=COURSE_BG_PRESETS.map((bg,i)=>`
     <div class="bg-swatch${_cpBgIdx===i?' selected':''}"
@@ -299,7 +338,6 @@ function openBgPicker(id){
       ${_cpBgIdx===i?'<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px">✓</div>':''}
     </div>`).join('');
 
-  // render color swatches  no nested ternaries inside attribute strings
   const colGrid=sh('cp-color-grid');
   colGrid.innerHTML=COLOR_PALETTE.map((c,i)=>{
     const isActive=(_cpColorIdx===i);
@@ -314,7 +352,6 @@ function openBgPicker(id){
       style="aspect-ratio:1;border-radius:9px;cursor:pointer;background:${c.dot}22;border:2px solid ${borderCol};display:flex;align-items:center;justify-content:center;transition:border-color .18s,box-shadow .18s,transform .18s;box-shadow:${shadowVal};transform:${scaleVal};position:relative"
     ><div style="width:16px;height:16px;border-radius:50%;background:${c.dot};box-shadow:0 0 8px ${c.glow}"></div>${isActive?'<div style="position:absolute;font-size:10px;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.8);pointer-events:none">✓</div>':''}</div>`;
   }).join('');
-  // hover listeners via JS  no inline handlers
   colGrid.querySelectorAll('.cp-col-swatch').forEach(el=>{
     const i=parseInt(el.dataset.ci);
     const c=COLOR_PALETTE[i];
@@ -339,7 +376,6 @@ function _updateColorPickerPreview(courseOrNull){
   preview.style.borderColor = col.border;
   preview.style.boxShadow   = '0 4px 20px '+col.glow;
   bar.style.background      = col.bar;
-  // populate name/icon from course if available
   if(courseOrNull){
     const icon=sh('cp-preview-icon');
     const name=sh('cp-preview-name');
@@ -355,37 +391,34 @@ function _updateColorPickerPreview(courseOrNull){
 
 function cpPickBg(i){
   _cpBgIdx=i;
-  // update swatch selection UI
   document.querySelectorAll('#bgp-grid .bg-swatch').forEach((el,idx)=>{
     el.classList.toggle('selected',idx===i);
     el.innerHTML=idx===i?'<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px">✓</div>':'';
   });
-  // live preview
   _updateColorPickerPreview(null);
-  // instant save + card update
   _cpSaveAndUpdateCard();
 }
 
 function cpPickColor(i){
   _cpColorIdx=i;
   const col=COLOR_PALETTE[i];
-  // update swatch selection UI
   document.querySelectorAll('#cp-color-grid > div').forEach((el,idx)=>{
     const c=COLOR_PALETTE[idx];
     el.style.borderColor=idx===i?c.dot:'rgba(255,255,255,.08)';
     el.style.boxShadow  =idx===i?'0 0 10px '+c.glow:'none';
-    // fix onmouseout closure
     el.onmouseout=function(){
       this.style.borderColor=idx===_cpColorIdx?COLOR_PALETTE[idx].dot:'rgba(255,255,255,.08)';
       this.style.boxShadow  =idx===_cpColorIdx?'0 0 10px '+COLOR_PALETTE[idx].glow:'none';
     };
   });
-  // live preview
   _updateColorPickerPreview(null);
-  // instant save + card update
   _cpSaveAndUpdateCard();
 }
 
+/* ==================================================
+   _cpSaveAndUpdateCard — v4.0.6
+   Incorpora DB.updateClassroom di app.js.
+================================================== */
 function _cpSaveAndUpdateCard(){
   const courses=loadCourses();
   const idx=courses.findIndex(c=>c.id===_bpCourseId);
@@ -394,14 +427,17 @@ function _cpSaveAndUpdateCard(){
   courses[idx].colorIdx=_cpColorIdx;
   saveCourses(courses);
 
-  // -- If editing the currently active course, update global theme live --
+  // Propaga al cloud (fire-and-forget)
+  if(window.DB && _bpCourseId){
+    window.DB.updateClassroom(_bpCourseId, { colorIdx:_cpColorIdx, bgIdx:_cpBgIdx }).catch(()=>{});
+  }
+
   if(_bpCourseId===activeCourseId){
     const bg=COURSE_BG_PRESETS[_cpBgIdx%COURSE_BG_PRESETS.length];
     const themeEl=document.getElementById('app-theme-bg');
     if(themeEl){themeEl.style.background=bg.css;themeEl.style.opacity='0.4';}
   }
 
-  // Update card in-place  no full re-render, no flicker
   const card=document.querySelector('[data-course-id="'+_bpCourseId+'"]');
   if(!card)return;
 
@@ -410,18 +446,13 @@ function _cpSaveAndUpdateCard(){
   const glowBase ='0 4px 20px '+col.glow;
   const glowHover='0 8px 36px '+col.glow+', 0 0 0 1px '+col.border;
 
-  // update visual styles
   card.style.background =bg.css;
   card.style.borderColor=col.border;
   card.style.boxShadow  =glowBase;
   card.dataset.colidx   =String(_cpColorIdx);
-
-  // update CSS custom properties  drives ::before bar + ::after glow automatically
   card.style.setProperty('--card-accent', col.bar);
   card.style.setProperty('--card-glow',   col.glow);
 
-  // re-attach hover listeners with new color values
-  // clone to remove old listeners cleanly
   const fresh=card.cloneNode(true);
   card.parentNode.replaceChild(fresh,card);
   fresh.style.background =bg.css;
@@ -437,4 +468,3 @@ function closeBgPicker(){
   sh('bg-picker-overlay').classList.add('hidden');
   _bpCourseId=null;
 }
-

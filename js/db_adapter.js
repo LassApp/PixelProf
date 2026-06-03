@@ -62,7 +62,10 @@ function _lsDel(key)      { try { localStorage.removeItem(key); } catch {} }
 async function _sbCall(fn, label) {
   try {
     const result = await fn();
-    if (result.error) throw result.error;
+    if (result.error) {
+      console.error(`[PixelProf] Supabase ${label} error:`, result.error.code, result.error.message);
+      throw result.error;
+    }
     return result.data;
   } catch (err) {
     console.warn(`[PixelProf] Supabase ${label} fallito:`, err.message);
@@ -502,18 +505,18 @@ export async function resolveTeamId(classId, name, color) {
 
 export async function saveLbEntryCloud(p) {
   if (!_online) { _enqueuePendingLb(p); return; }
-  await _sbCall(
-    () => supabase.rpc('upsert_leaderboard', {
-      p_classroom_id:      p.classId,
-      p_participant_type:  p.type === 'ind' ? 'player' : p.type,
-      p_participant_name:  p.name,
-      p_participant_color: p.color,
-      p_activity:          p.activity,
-      p_module:            p.module,
-      p_new_score:         p.score,
-    }),
-    'saveLbEntryCloud'
-  );
+  const result = await supabase.rpc('upsert_leaderboard', {
+    p_classroom_id:      p.classId,
+    p_participant_type:  p.type === 'ind' ? 'player' : p.type,
+    p_participant_name:  p.name,
+    p_participant_color: p.color,
+    p_activity:          p.activity,
+    p_module:            p.module,
+    p_new_score:         p.score,
+  });
+  if (result.error) {
+    console.error('[PixelProf] saveLbEntryCloud RPC error:', result.error.code, result.error.message, '| payload:', JSON.stringify({classId:p.classId,type:p.type,name:p.name,activity:p.activity,score:p.score}));
+  }
 }
 
 export async function loadLeaderboard(classId, type, activity) {

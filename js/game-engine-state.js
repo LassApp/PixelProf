@@ -1366,12 +1366,12 @@ function _checkMatchEnd(){
 
 /* Banner "Pareggio  Spareggio!" prima di ogni round extra */
 function _showTiebreakerIntro(tied,cb){
+  const ms=matchState;
   // Preserva il pool originale per generare domande nuove a ogni round
-  if(!matchState._originalPool&&ms.frozenPool)matchState._originalPool=[...ms.frozenPool];
+  if(!ms._originalPool&&ms.frozenPool)ms._originalPool=[...ms.frozenPool];
   setTb(null);showScreen('tab-quiz');
   sh('qz-game').classList.add('hidden');
   sh('qz-result').classList.remove('hidden');
-  const ms=matchState;
   const names=tied.map(t=>`<span style="color:${escAttr(t.color)};font-weight:700">${escHtml(t.name)}</span>`).join(' <span style="color:rgba(255,255,255,.3)">vs</span> ');
   sh('qz-result').innerHTML=`<div class="result-wrap" style="text-align:center;padding:2rem 1rem">
     <div style="font-size:40px;margin-bottom:14px">⚡</div>

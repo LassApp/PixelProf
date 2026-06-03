@@ -214,6 +214,8 @@ export async function updateCourse(id, updates) {
   if (updates.colorIdx  !== undefined) payload.color_idx = updates.colorIdx;
   if (updates.bgIdx     !== undefined) payload.bg_idx    = updates.bgIdx;
 
+  console.log('[PixelProf] updateCourse chiamato — id:', id, '| payload:', JSON.stringify(payload), '| _online:', _online);
+
   if (_online) {
     // .select() forza Supabase a restituire le righe aggiornate.
     // Se RLS blocca l'UPDATE silenziosamente, data sarà [] e lo logghiamo.

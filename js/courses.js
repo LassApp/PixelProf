@@ -290,7 +290,8 @@ async function pickIcon(icon){
   saveCourses(courses);
   closeIconPicker();
   renderCoursesGrid();
-  // Propaga al cloud se disponibile
+  // Propaga al cloud e poi ricarica (await garantisce che il cloud sia aggiornato
+  // prima che _reloadCourses sovrascriva il localStorage con i dati del server)
   if(window.DB && _ipCourseId){
     await window.DB.updateClassroom(_ipCourseId, { icon }).catch(()=>{});
     await _reloadCourses();

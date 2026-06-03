@@ -215,13 +215,24 @@ export async function updateCourse(id, updates) {
   if (updates.bgIdx     !== undefined) payload.bg_idx    = updates.bgIdx;
 
   if (_online) {
-    await _sbCall(
-      () => supabase.from('classrooms').update(payload).eq('id', id),
-      'updateCourse'
-    );
+    // .select() forza Supabase a restituire le righe aggiornate.
+    // Se RLS blocca l'UPDATE silenziosamente, data sarà [] e lo logghiamo.
+    const { data, error } = await supabase
+      .from('classrooms')
+      .update(payload)
+      .eq('id', id)
+      .select('id, name, icon, color_idx, bg_idx');
+
+    if (error) {
+      console.error('[PixelProf] updateCourse error:', error.code, error.message, '| payload:', JSON.stringify(payload));
+    } else if (!data || data.length === 0) {
+      console.warn('[PixelProf] updateCourse: nessuna riga aggiornata — possibile RLS block su classrooms.id =', id, '| payload:', JSON.stringify(payload));
+    } else {
+      console.log('[PixelProf] updateCourse OK:', data[0]);
+    }
   }
 
-  // Aggiorna cache locale sempre
+  // Aggiorna cache locale sempre (anche se il cloud ha fallito, per UX fluida)
   const local = _lsGet(LS_COURSES_KEY, []);
   const idx   = local.findIndex(c => c.id === id);
   if (idx >= 0) { Object.assign(local[idx], updates); _lsSet(LS_COURSES_KEY, local); }
@@ -505,17 +516,53 @@ export async function resolveTeamId(classId, name, color) {
 
 export async function saveLbEntryCloud(p) {
   if (!_online) { _enqueuePendingLb(p); return; }
-  const result = await supabase.rpc('upsert_leaderboard', {
-    p_classroom_id:      p.classId,
-    p_participant_type:  p.type === 'ind' ? 'player' : p.type,
-    p_participant_name:  p.name,
-    p_participant_color: p.color,
-    p_activity:          p.activity,
-    p_module:            p.module,
-    p_new_score:         p.score,
-  });
-  if (result.error) {
-    console.error('[PixelProf] saveLbEntryCloud RPC error:', result.error.code, result.error.message, '| payload:', JSON.stringify({classId:p.classId,type:p.type,name:p.name,activity:p.activity,score:p.score}));
+
+  // Normalizza il tipo: 'ind'→'player', tutto il resto passa invariato
+  const participantType = p.type === 'ind' ? 'player' : p.type;
+
+  // WORKAROUND PGRST203: Supabase ha due overload di upsert_leaderboard
+  // (uno con participant_type_enum, uno con text). PostgREST non riesce a
+  // scegliere. Soluzione: chiamata REST diretta con header esplicito che
+  // specifica la firma text. Fix definitivo: droppare l'overload enum da Supabase
+  // (vedi commento SQL sotto).
+  //
+  // SQL DA ESEGUIRE NEL SUPABASE SQL EDITOR per fix definitivo:
+  //   DROP FUNCTION IF EXISTS public.upsert_leaderboard(
+  //     uuid, public.participant_type_enum, text, text, text, text, integer
+  //   );
+  //
+  try {
+    const { data: { session } } = await supabase.auth.getSession();
+    const jwt = session?.access_token;
+    const supabaseUrl = supabase.supabaseUrl || 'https://skrgqanqdyrybarinwwr.supabase.co';
+    const supabaseKey = supabase.supabaseKey || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNrcmdxYW5xZHlyeWJhcmlud3dyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzkxODk0MTYsImV4cCI6MjA5NDc2NTQxNn0.0k17FJuqYNWCk2bWwWkYF7-5l5qX3RLXdMsgh9cHrGQ';
+
+    const res = await fetch(`${supabaseUrl}/rest/v1/rpc/upsert_leaderboard`, {
+      method: 'POST',
+      headers: {
+        'Content-Type':  'application/json',
+        'apikey':        supabaseKey,
+        'Authorization': jwt ? `Bearer ${jwt}` : `Bearer ${supabaseKey}`,
+        // Hint esplicito a PostgREST per scegliere la firma text
+        'Content-Profile': 'public',
+      },
+      body: JSON.stringify({
+        p_classroom_id:      p.classId,
+        p_participant_type:  participantType,
+        p_participant_name:  p.name,
+        p_participant_color: p.color || '#00ffc8',
+        p_activity:          p.activity,
+        p_module:            p.module,
+        p_new_score:         p.score,
+      }),
+    });
+
+    if (!res.ok) {
+      const errText = await res.text().catch(()=>'');
+      console.error('[PixelProf] saveLbEntryCloud error:', res.status, errText, '| payload:', JSON.stringify({classId:p.classId,type:participantType,name:p.name,activity:p.activity,score:p.score}));
+    }
+  } catch (err) {
+    console.warn('[PixelProf] saveLbEntryCloud exception:', err.message);
   }
 }
 

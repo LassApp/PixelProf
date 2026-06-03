@@ -1346,15 +1346,15 @@ function _checkMatchEnd(){
     ms.currentIdx=0;
     ms.tbRound=1;
     // Pool spareggio: 1 domanda per squadra, nuova casualit
-    const tbPool=shuffle([...ms.frozenPool]).slice(0,1);
-    ms.frozenPool=tbPool;
+    const tbPool=shuffle([...(ms.frozenPool||[])]).slice(0,1);
+    ms.frozenPool=tbPool.length>0?tbPool:null;
     _showTiebreakerIntro(tied,()=>_startTeamTurn());
   }else if(tied.length>1&&ms.isTiebreak){
     // Ancora pareggio  un altro round di spareggio
     ms.currentIdx=0;
     ms.tbRound++;
-    const tbPool=shuffle([...(matchState._originalPool||ms.frozenPool)]).slice(0,1);
-    ms.frozenPool=tbPool;
+    const tbPool=shuffle([...(matchState._originalPool||ms.frozenPool||[])]).slice(0,1);
+    ms.frozenPool=tbPool.length>0?tbPool:null;
     _showTiebreakerIntro(tied,()=>_startTeamTurn());
   }else{
     // Vincitore determinato
@@ -1367,7 +1367,7 @@ function _checkMatchEnd(){
 /* Banner "Pareggio  Spareggio!" prima di ogni round extra */
 function _showTiebreakerIntro(tied,cb){
   // Preserva il pool originale per generare domande nuove a ogni round
-  if(!matchState._originalPool)matchState._originalPool=[...matchState.frozenPool];
+  if(!matchState._originalPool&&ms.frozenPool)matchState._originalPool=[...ms.frozenPool];
   setTb(null);showScreen('tab-quiz');
   sh('qz-game').classList.add('hidden');
   sh('qz-result').classList.remove('hidden');

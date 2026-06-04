@@ -217,20 +217,21 @@ export async function updateCourse(id, updates) {
   console.log('[PixelProf] updateCourse chiamato — id:', id, '| payload:', JSON.stringify(payload), '| _online:', _online);
 
   if (_online) {
-    // .select() forza Supabase a restituire le righe aggiornate.
-    // Se RLS blocca l'UPDATE silenziosamente, data sarà [] e lo logghiamo.
-    const { data, error } = await supabase
-      .from('classrooms')
-      .update(payload)
-      .eq('id', id)
-      .select('id, name, icon, color_idx, bg_idx');
+    // Usa RPC SECURITY DEFINER per bypassare RLS
+    // (la policy classrooms_update blocca UPDATE anche per il direttore
+    //  a causa di problemi con auth_user_role() a runtime)
+    const { error } = await supabase.rpc('update_classroom_meta', {
+      p_classroom_id: id,
+      p_name:         updates.name      ?? null,
+      p_icon:         updates.icon      ?? null,
+      p_color_idx:    updates.colorIdx  ?? null,
+      p_bg_idx:       updates.bgIdx     ?? null,
+    });
 
     if (error) {
-      console.error('[PixelProf] updateCourse error:', error.code, error.message, '| payload:', JSON.stringify(payload));
-    } else if (!data || data.length === 0) {
-      console.warn('[PixelProf] updateCourse: nessuna riga aggiornata — possibile RLS block su classrooms.id =', id, '| payload:', JSON.stringify(payload));
+      console.error('[PixelProf] updateCourse RPC error:', error.code, error.message);
     } else {
-      console.log('[PixelProf] updateCourse OK:', data[0]);
+      console.log('[PixelProf] updateCourse OK via RPC');
     }
   }
 

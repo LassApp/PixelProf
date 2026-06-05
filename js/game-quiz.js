@@ -1,5 +1,5 @@
 /* ==================================================
-   game-quiz.js — PixelProf v4.0.6
+   game-quiz.js — PixelProf v4.0.7
    Quiz engine: renderQ, ansQ, nextQ, forceEnd, endQuiz.
    Speed Quiz: pause/resume, timer management.
    Also: resetSpeedUI, restartActivity, qzAbort.

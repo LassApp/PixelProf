@@ -1,5 +1,5 @@
 /* ==================================================
-   game-memory.js — PixelProf v4.0.5
+   game-memory.js — PixelProf v4.0.7
    Memory game: image helpers, scoring, startMemory,
    memTogglePause, memFlip.
    _updateMemTimerUI, _updateMemScoreUI, stopMemTimer,
@@ -84,7 +84,7 @@ async function startMemory(cont,mod){
 
   const pairs=shuffle(src).slice(0,6);
   const cards=shuffle(pairs.flatMap(p=>[{txt:p[0],pair:p[0]},{txt:p[1],pair:p[0]}]));
-  memState={cards,flipped:[],matched:new Set(),lock:false,moves:0,pairs:pairs.length,paused:false};
+  memState={cards,flipped:[],matched:new Set(),lock:false,moves:0,pairs:pairs.length};
   memElapsed=0;memPaused=false;
 
   const hdr=buildGameHeader(
@@ -119,20 +119,18 @@ function memTogglePause(){
   const icon=sh('mem-pause-icon');
   const btn=sh('mem-pause-btn');
   if(gsIs(GS.PLAYING)){
-    //  PAUSE: identical pattern to speedTogglePause
+    // PAUSE — v4.0.7 I1 fix: memPaused gestito solo da pauseMemTimer()
     gsSet(GS.PAUSED);
-    pauseMemTimer();
-    s.paused=true;
+    pauseMemTimer();          // imposta memPaused=true internamente
     _setGamePauseLock(true);
     overlay?.classList.remove('hidden');
     if(icon)icon.className='ti ti-player-play';
     if(btn){btn.title='Riprendi';btn.classList.add('is-paused');}
     document.querySelectorAll('.mem-c.flip').forEach(el=>el.classList.add('paused-hidden'));
   }else{
-    //  PLAYING: unlock everything
+    // PLAYING — v4.0.7 I1 fix: memPaused gestito solo da resumeMemTimer()
     gsSet(GS.PLAYING);
-    resumeMemTimer();
-    s.paused=false;
+    resumeMemTimer();         // imposta memPaused=false internamente
     _setGamePauseLock(false);
     overlay?.classList.add('hidden');
     if(icon)icon.className='ti ti-player-pause';
@@ -197,4 +195,3 @@ function memFlip(i){
     }
   }
 }
-

@@ -1,5 +1,5 @@
 /* ==================================================
-   game-match.js — PixelProf v4.0.5
+   game-match.js — PixelProf v4.0.7
    Abbina (match) game: timer, combo scoring, pair logic.
    Depends on: game-engine-state.js, scoring.js
 ================================================== */
@@ -47,7 +47,9 @@ async function getMatchSet(mod){
      errore           combo = 1
 ================================================== */
 
-/* Timer state per Abbina  isolato da memTimer/speedTimer */
+/* Timer state per Abbina  isolato da memTimer/speedTimer
+   v4.0.7 I1 fix: mPaused sempre sincronizzato. Fonte di verità
+   per "è in pausa?" = mTimerInt === null (timer fermo). */
 let mTimerInt=null;
 let mTimeLeft=0;
 let mPaused=false;
@@ -57,14 +59,20 @@ function stopMatchTimer(){
   mTimeLeft=0;mPaused=false;
 }
 function pauseMatchTimer(){
-  if(!mPaused&&mTimerInt){clearInterval(mTimerInt);mTimerInt=null;mPaused=true;}
+  // Guard: non tentare di fermare un timer già fermo
+  if(mTimerInt){clearInterval(mTimerInt);mTimerInt=null;}
+  mPaused=true; // sempre sincronizzato
 }
 function resumeMatchTimer(){
-  if(mPaused){mPaused=false;_startMatchInterval();}
+  mPaused=false; // sempre sincronizzato
+  _startMatchInterval();
 }
 function _startMatchInterval(){
+  // Guard: non avviare se già un intervallo attivo
+  if(mTimerInt) return;
   mTimerInt=setInterval(()=>{
-    if(mPaused||!gsIs(GS.PLAYING))return;
+    // Double-check: blocca tick se gsState è PAUSED o non PLAYING
+    if(!gsIs(GS.PLAYING))return;
     mTimeLeft--;
     _updateMatchTimerUI();
     if(mTimeLeft<=0){clearInterval(mTimerInt);mTimerInt=null;_matchTimeUp();}
@@ -72,17 +80,15 @@ function _startMatchInterval(){
 }
 
 /* ── Abbina (Match) timer ─────────────────────────
-   fnPause:     pauseMatchTimer() se non già paused
-   fnResume:    resumeMatchTimer()
-   fnStop:      stopMatchTimer()
-   fnIsRunning: mTimerInt != null && !mPaused
+   v4.0.7 I1 fix: fnIsRunning usa solo mTimerInt (non !mPaused ridondante).
+   TimerManager.pauseAll() chiama fnPause() solo se fnIsRunning() è true.
 ─────────────────────────────────────────────────── */
 TimerManager.register(
   'match',
-  /* pause  */ () => { if(!mPaused) pauseMatchTimer(); },
-  /* resume */ () => { if(mPaused) resumeMatchTimer(); },
+  /* pause  */ () => { pauseMatchTimer(); },
+  /* resume */ () => { resumeMatchTimer(); },
   /* stop   */ () => { stopMatchTimer(); },
-  /* isRunning */ () => mTimerInt !== null && !mPaused
+  /* isRunning */ () => mTimerInt !== null   // timer attivo = non in pausa
 );
 
 function _updateMatchTimerUI(){
@@ -232,7 +238,9 @@ async function startMatch(cont,mod){
   _startMatchInterval();
 }
 
-/* -- Abbina pause/resume  mirrors Speed Quiz / Memory pattern -- */
+/* -- Abbina pause/resume — v4.0.7 I1 fix
+   mPaused è gestito solo da pauseMatchTimer()/resumeMatchTimer().
+   Non viene più assegnato direttamente qui per evitare double source of truth. -- */
 function matchTogglePause(){
   if(gameType!=='match')return;
   if(!gsIs(GS.PLAYING)&&!gsIs(GS.PAUSED))return;
@@ -241,8 +249,7 @@ function matchTogglePause(){
   const btn=sh('match-pause-btn');
   if(gsIs(GS.PLAYING)){
     gsSet(GS.PAUSED);
-    pauseMatchTimer();
-    mPaused=true;
+    pauseMatchTimer();    // imposta mPaused=true internamente
     _setGamePauseLock(true);
     overlay?.classList.remove('hidden');
     if(icon)icon.className='ti ti-player-play';
@@ -251,8 +258,7 @@ function matchTogglePause(){
     document.querySelectorAll('.match-item:not(.matched)').forEach(e=>e.classList.add('locked'));
   }else{
     gsSet(GS.PLAYING);
-    mPaused=false;
-    resumeMatchTimer();
+    resumeMatchTimer();   // imposta mPaused=false internamente
     _setGamePauseLock(false);
     overlay?.classList.add('hidden');
     if(icon)icon.className='ti ti-player-pause';

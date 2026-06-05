@@ -1,5 +1,5 @@
 /* ==================================================
-   stats.js — PixelProf v4.0.5
+   stats.js — PixelProf v4.0.7
    Stats screen: renderStats, resetStats.
    Depends on: game-engine-state.js (db global)
 ================================================== */
@@ -26,4 +26,3 @@ function resetStats(){
 /* ==================================================
    COURSES SYSTEM
 ================================================== */
-

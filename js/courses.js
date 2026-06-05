@@ -286,14 +286,16 @@ async function pickIcon(icon){
   const courses=loadCourses();
   const idx=courses.findIndex(c=>c.id===_ipCourseId);
   if(idx<0)return;
+  // Salva l'id prima di closeIconPicker() che azzera _ipCourseId
+  const courseId=_ipCourseId;
   courses[idx].icon=icon;
   saveCourses(courses);
   closeIconPicker();
   renderCoursesGrid();
   // Propaga al cloud e poi ricarica (await garantisce che il cloud sia aggiornato
   // prima che _reloadCourses sovrascriva il localStorage con i dati del server)
-  if(window.DB && _ipCourseId){
-    await window.DB.updateClassroom(_ipCourseId, { icon }).catch(()=>{});
+  if(window.DB && courseId){
+    await window.DB.updateClassroom(courseId, { icon }).catch(e=>console.error('[PixelProf] pickIcon cloud error:',e));
     await _reloadCourses();
   }
 }

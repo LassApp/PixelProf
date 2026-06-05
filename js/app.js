@@ -1,5 +1,5 @@
 /* ==================================================
-   app.js — PixelProf v4.0.6
+   app.js — PixelProf v4.0.7
    App bootstrap: auth flow, login, logout, set-password,
    module filter, wizard, director panel, and splash/init.
    Cloud sync functions (_reloadCourses, _applyModuleFilter,

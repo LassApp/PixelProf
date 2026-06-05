@@ -1,5 +1,5 @@
 /* ==================================================
-   renderer.js — PixelProf v4.0.5
+   renderer.js — PixelProf v4.0.7
    Renderer functions: buildResultHTML, buildPodiumHTML,
    renderLbResults, modBadgeHTML, resetLb
 ================================================== */
@@ -140,4 +140,3 @@ function resetLb(){
   db.lb2=makeEmptyLb2();save();
   lbType=null;lbAct=null;lbShowStep('type');
 }
-

@@ -1,5 +1,5 @@
 /* ==================================================
-   game-engine-state.js — PixelProf v4.0.6
+   game-engine-state.js — PixelProf v4.0.7
    Core engine: loader factory, course storage, database,
    session state (QuizSession/FillSession/PlayerSession),
    matchState, TimerManager, helpers, navigation core,
@@ -617,22 +617,26 @@ function ppConfirmRestart(onYes){
 }
 
 /* ==================================================
-   _pauseForDialog / _resumeAfterDialog — v4.0.3
+   _pauseForDialog / _resumeAfterDialog — v4.0.7
    Timer: TimerManager.pauseAll() / resumeAll().
    UI (overlay, icone, lock): invariata per gameType.
-   _dialogWasPaused e _dialogMatchWasPaused sono ora
-   mantenuti internamente da TimerManager.pausedByDialog,
-   ma restano come variabili locali per la logica UI
-   (es. syncMemPauseOverlay dipende da memPaused, non
-   dal flag interno del manager).
+
+   FIX I1: _dialogWasPaused e _dialogMatchWasPaused derivati da
+   memTimerInt/mTimerInt (stato timer effettivo) invece che da
+   memPaused/mPaused (flag che potevano essere stale).
+   Regola: se il timer era già fermo prima del dialog (memTimerInt===null)
+   E il gioco era avanzato (memElapsed>0 / mTimeLeft<60), l'utente aveva
+   già messo in pausa manualmente → non riaprire l'overlay al dismiss.
 ================================================== */
 function _pauseForDialog(){
   if(gsIs(GS.PLAYING)){
     gsSet(GS.PAUSED);
 
-    // ── Snapshot stati pre-dialog (usati dalla logica UI in _resumeAfterDialog) ──
-    _dialogWasPaused      = memPaused;   // era già in pausa manuale?
-    _dialogMatchWasPaused = mPaused;     // idem per Abbina
+    // ── FIX I1: snapshot da timer state (fonte di verità) non da flag ──
+    // memTimerInt===null + timer avviato (elapsed>0) = già in pausa manuale
+    _dialogWasPaused      = (memTimerInt === null && memElapsed > 0);
+    // mTimerInt===null + timer già avviato (timeLeft<60) = già in pausa manuale
+    _dialogMatchWasPaused = (mTimerInt === null && mTimeLeft > 0 && mTimeLeft < 60);
 
     // ── Pausa tutti i timer via manager ──
     TimerManager.pauseAll();
@@ -781,37 +785,47 @@ TimerManager.register(
   /* isRunning */ () => qTimerInt !== null
 );
 
-/* v10: memory timer helpers */
+/* v10: memory timer helpers — v4.0.7 I1 fix
+   memPaused è mantenuto in sincronia con gsState nei toggle.
+   Fonte di verità per "è in pausa?" = memTimerInt === null (timer fermo).
+   memPaused serve solo come guard per evitare doppi clearInterval/start. */
 function stopMemTimer(){
   if(memTimerInt){clearInterval(memTimerInt);memTimerInt=null;}
   memElapsed=0;memPaused=false;
 }
 function pauseMemTimer(){
-  if(!memPaused&&memTimerInt){clearInterval(memTimerInt);memTimerInt=null;memPaused=true;}
+  // Guard: non tentare di fermare un timer già fermo
+  if(memTimerInt){clearInterval(memTimerInt);memTimerInt=null;}
+  memPaused=true; // sempre sincronizzato: se pauseMemTimer() è chiamato, siamo in pausa
 }
 function resumeMemTimer(){
-  if(memPaused){memPaused=false;_startMemInterval();}
+  memPaused=false; // sempre sincronizzato: se resumeMemTimer() è chiamato, usciamo da pausa
+  _startMemInterval();
 }
 function _startMemInterval(){
+  // Guard: non avviare se già un intervallo attivo
+  if(memTimerInt) return;
   memTimerInt=setInterval(()=>{
-    if(memPaused)return;
+    // Double-check: blocca tick se gsState è PAUSED o non PLAYING
+    if(!gsIs(GS.PLAYING))return;
     memElapsed++;
     _updateMemTimerUI();
   },1000);
 }
 
 /* ── Memory timer ─────────────────────────────────
-   fnPause:     pauseMemTimer() se non già paused
-   fnResume:    resumeMemTimer() (imposta memPaused=false e fa start)
-   fnStop:      stopMemTimer()
-   fnIsRunning: memTimerInt != null && !memPaused
+   v4.0.7 I1 fix: fnIsRunning usa solo memTimerInt (non !memPaused ridondante).
+   TimerManager.pauseAll() chiama fnPause() solo se fnIsRunning() è true,
+   quindi pauseMemTimer() viene chiamato solo quando il timer sta girando.
+   Questo garantisce che _dialogWasPaused (snapshot pre-dialog) rifletta
+   correttamente se il timer era attivo al momento del dialog.
 ─────────────────────────────────────────────────── */
 TimerManager.register(
   'memory',
-  /* pause  */ () => { if(!memPaused) pauseMemTimer(); },
-  /* resume */ () => { if(memPaused) resumeMemTimer(); },
+  /* pause  */ () => { pauseMemTimer(); },
+  /* resume */ () => { resumeMemTimer(); },
   /* stop   */ () => { stopMemTimer(); },
-  /* isRunning */ () => memTimerInt !== null && !memPaused
+  /* isRunning */ () => memTimerInt !== null   // timer attivo = non in pausa
 );
 function _updateMemTimerUI(){
   const el=document.getElementById('mem-timer-pill');

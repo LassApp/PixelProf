@@ -1,5 +1,5 @@
 /* ==================================================
-   courses.js — PixelProf v4.0.6
+   courses.js — PixelProf v4.0.7
    Course/classroom system: grid, CRUD, icon picker,
    background/color picker, course menu.
    Cloud sync (DB.updateClassroom, _deleteClassroomRest,

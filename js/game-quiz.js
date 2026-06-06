@@ -1,24 +1,25 @@
 /* ==================================================
-   game-quiz.js — PixelProf v4.0.8
+   game-quiz.js — PixelProf v4.0.9
    Quiz engine: renderQ, ansQ, nextQ, forceEnd, endQuiz.
    Speed Quiz: pause/resume, timer management.
    Also: resetSpeedUI, restartActivity, qzAbort.
    hook_trackAnswer now embedded in ansQ —
    no override chain from app.js.
+   Fase 8: PauseUIRegistry handler registrato (M2).
    Depends on: game-engine-state.js, scoring.js, renderer.js
 ================================================== */
 
 function resetSpeedUI(){
-  const overlay=sh('qz-pause-overlay');
+  const overlay=shq('qz-pause-overlay');
   if(overlay)overlay.classList.add('hidden');
-  const icon=sh('qz-pause-icon');
+  const icon=shq('qz-pause-icon');
   if(icon)icon.className='ti ti-player-pause';
-  const btn=sh('qz-pause-btn');
+  const btn=shq('qz-pause-btn');
   if(btn){btn.title='Pausa';btn.classList.remove('is-paused');}
   // Restore all opts
   document.querySelectorAll('.opt').forEach(b=>{b.style.pointerEvents='';b.disabled=false;b.style.opacity='';});
   // Reset score pill display
-  const sv=sh('qz-score-val');if(sv)sv.textContent='0';
+  const sv=shq('qz-score-val');if(sv)sv.textContent='0';
   // Unlock all nav elements
   _setSpeedPauseLock(false);
 }
@@ -221,9 +222,9 @@ function _setSpeedPauseLock(locked){ _setGamePauseLock(locked); }
 function speedTogglePause(){
   if(sAct!=='speed')return;
   if(!gsIs(GS.PLAYING)&&!gsIs(GS.PAUSED))return;
-  const icon=sh('qz-pause-icon');
-  const btn=sh('qz-pause-btn');
-  const overlay=sh('qz-pause-overlay');
+  const icon=shq('qz-pause-icon');
+  const btn=shq('qz-pause-btn');
+  const overlay=shq('qz-pause-overlay');
   if(gsIs(GS.PLAYING)){
     //  PAUSE
     gsSet(GS.PAUSED);
@@ -253,8 +254,41 @@ function _restartSpeedTimer(){
   qTimerInt=setInterval(()=>{
     if(!gsIs(GS.PLAYING))return;
     qSpeedLeft--;
-    const el=sh('qz-timer');
+    const el=shq('qz-timer');
     if(el){el.textContent=qSpeedLeft+'s';el.classList.toggle('red',qSpeedLeft<=10);}
     if(qSpeedLeft<=0){clearInterval(qTimerInt);forceEnd();}
   },1000);
 }
+
+/* ==================================================
+   PAUSE UI REGISTRY — Speed Quiz handler
+   Fase 8 M2: registra gli handler UI pausa/ripresa
+   per lo Speed Quiz nel registro centralizzato.
+   _pauseForDialog/_resumeAfterDialog non contengono
+   più if(gameType==='speed') — delegano qui.
+================================================== */
+PauseUIRegistry.register('speed', {
+  onPause(/* wasManuallyPaused — sempre false da dialog */) {
+    const overlay = shq('qz-pause-overlay');
+    const btn     = shq('qz-pause-btn');
+    const icon    = shq('qz-pause-icon');
+    if(overlay) overlay.classList.remove('hidden');
+    if(btn)     btn.classList.add('is-paused');
+    if(icon)    icon.className = 'ti ti-player-play';
+    document.querySelectorAll('.opt:not(.correct):not(.wrong)').forEach(b=>{b.disabled=true;b.style.opacity='.35';});
+    _setSpeedPauseLock(true);
+  },
+  onResume(/* wasManuallyPaused — sempre false da dialog */) {
+    if(qSpeedLeft <= 0 || qAnswered) return;
+    const wasActive = !document.getElementById('qz-game')?.classList.contains('hidden');
+    if(!wasActive) return;
+    const icon    = shq('qz-pause-icon');
+    const overlay = shq('qz-pause-overlay');
+    const btn     = shq('qz-pause-btn');
+    if(icon)    icon.className = 'ti ti-player-pause';
+    if(overlay) overlay.classList.add('hidden');
+    if(btn)     { btn.title = 'Pausa'; btn.classList.remove('is-paused'); }
+    document.querySelectorAll('.opt:not(.correct):not(.wrong)').forEach(b=>{b.disabled=false;b.style.opacity='';});
+    _setSpeedPauseLock(false);
+  },
+});

@@ -1,5 +1,5 @@
 /* ==================================================
-   app.js — PixelProf v4.0.8
+   app.js — PixelProf v4.0.9
    App bootstrap: auth flow, login, logout, set-password,
    module filter, wizard, director panel, and splash/init.
    Cloud sync functions (_reloadCourses, _applyModuleFilter,
@@ -8,6 +8,8 @@
    All override chains removed — logic embedded directly
    in the respective source files (courses.js,
    game-engine-state.js, game-quiz.js).
+   Fase 8: invalidateCoursesCache() nei 2 punti di write
+   cloud/diretto su localStorage (M4).
    Depends on: all other modules.
 ================================================== */
 
@@ -117,6 +119,7 @@ async function _reloadCourses(){
       return c;
     });
     localStorage.setItem('pp5_courses', JSON.stringify(enriched));
+    invalidateCoursesCache(); // M4: il cloud ha scritto su localStorage — invalida la cache
     console.log('[PixelProf] _reloadCourses: caricate', enriched.length, 'aule');
   }catch(e){
     console.warn('[PixelProf] _reloadCourses fallback localStorage:', e);
@@ -542,6 +545,7 @@ async function _deleteClassroomRest(classroomId){
     try{
       const local = JSON.parse(localStorage.getItem('pp5_courses')||'[]');
       localStorage.setItem('pp5_courses', JSON.stringify(local.filter(c=>c.id!==classroomId)));
+      invalidateCoursesCache(); // M4: localStorage modificato direttamente — invalida la cache
       localStorage.removeItem('pp5_cdata_'+classroomId);
     }catch(e){}
 

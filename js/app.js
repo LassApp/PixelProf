@@ -256,6 +256,25 @@ function cwStep(n){
       setTimeout(()=>{ if(errEl)errEl.textContent=''; if(inp){inp.classList.remove('error');inp.style.borderColor='';} },3500);
       return;
     }
+    // Validazione date: la fine non può precedere l'inizio
+    const startVal=(sh('cw-start-date')?.value||'').trim();
+    const endVal  =(sh('cw-end-date')?.value  ||'').trim();
+    if(startVal && endVal && endVal < startVal){
+      const endInp=sh('cw-end-date');
+      if(endInp){ endInp.style.borderColor='#ff6b6b'; endInp.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)'; }
+      let errEl=document.getElementById('cw-date-err');
+      if(!errEl){ errEl=document.createElement('div'); errEl.id='cw-date-err'; errEl.style.cssText='font-size:11px;color:#ff6b6b;margin-top:4px;font-family:Share Tech Mono,monospace;grid-column:1/-1'; sh('cw-end-date')?.parentNode?.parentNode?.appendChild(errEl); }
+      errEl.textContent='✗ La data di fine non può essere precedente alla data di inizio.';
+      setTimeout(()=>{
+        if(errEl)errEl.textContent='';
+        if(endInp){endInp.style.borderColor='';endInp.style.boxShadow='';}
+      }, 3500);
+      sh('cw-end-date')?.focus();
+      return;
+    }
+    // Pulisce eventuale errore date precedente
+    const dateErrEl=document.getElementById('cw-date-err'); if(dateErrEl)dateErrEl.textContent='';
+    const endInp=sh('cw-end-date'); if(endInp){endInp.style.borderColor='';endInp.style.boxShadow='';}
     sh('cw-name-inp')?.classList.remove('error');
     sh('cw-name-inp')?.style && (sh('cw-name-inp').style.borderColor='');
     const errEl=document.getElementById('cw-name-err'); if(errEl)errEl.textContent='';

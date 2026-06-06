@@ -1,6 +1,7 @@
 /* ==================================================
-   game-match.js — PixelProf v4.0.8
+   game-match.js — PixelProf v4.0.9
    Abbina (match) game: timer, combo scoring, pair logic.
+   Fase 8: PauseUIRegistry handler registrato (M2).
    Depends on: game-engine-state.js, scoring.js
 ================================================== */
 
@@ -244,9 +245,9 @@ async function startMatch(cont,mod){
 function matchTogglePause(){
   if(gameType!=='match')return;
   if(!gsIs(GS.PLAYING)&&!gsIs(GS.PAUSED))return;
-  const overlay=sh('match-paused-overlay');
-  const icon=sh('match-pause-icon');
-  const btn=sh('match-pause-btn');
+  const overlay=shq('match-paused-overlay');
+  const icon=shq('match-pause-icon');
+  const btn=shq('match-pause-btn');
   if(gsIs(GS.PLAYING)){
     gsSet(GS.PAUSED);
     pauseMatchTimer();    // imposta mPaused=true internamente
@@ -296,7 +297,7 @@ function mSel(type,val){
 
   const dv=s.defs[s.selD];
   const ok=s.pairs.find(p=>p.t===s.selT&&p.d===dv);
-  const fb=sh('mfb');
+  const fb=shq('mfb');
   const te=document.getElementById('mt_'+s.selT.replace(/\W/g,'_'));
   const de=document.getElementById('md_'+s.selD);
 
@@ -363,3 +364,36 @@ function mSel(type,val){
   s.selT=null;s.selD=null;
 }
 
+
+/* ==================================================
+   PAUSE UI REGISTRY — Match (Abbina) handler
+   Fase 8 M2: registra gli handler UI pausa/ripresa
+   per l'Abbina nel registro centralizzato.
+   _pauseForDialog/_resumeAfterDialog non contengono
+   più if(gameType==='match') — delegano qui.
+   _dialogMatchWasPaused: snapshot da game-engine-state.js
+   (mTimerInt === null && mTimeLeft > 0 && mTimeLeft < 60).
+================================================== */
+PauseUIRegistry.register('match', {
+  onPause(/* wasManuallyPaused — sempre false da dialog */) {
+    _setGamePauseLock(true);
+    const mbtn  = shq('match-pause-btn');
+    const micon = shq('match-pause-icon');
+    if(mbtn){  mbtn.classList.add('is-paused');  mbtn.title = 'Riprendi'; }
+    if(micon)  micon.className = 'ti ti-player-play';
+    shq('match-paused-overlay')?.classList.remove('hidden');
+    document.querySelectorAll('.match-item:not(.matched)').forEach(e => e.classList.add('locked'));
+  },
+  onResume(/* wasManuallyPaused — sempre false da dialog */) {
+    _setGamePauseLock(false);
+    const mbtn  = shq('match-pause-btn');
+    const micon = shq('match-pause-icon');
+    if(mbtn){  mbtn.classList.remove('is-paused'); mbtn.title = 'Pausa'; }
+    if(micon)  micon.className = 'ti ti-player-pause';
+    // Ripristina overlay solo se il timer non era già fermo
+    if(!_dialogMatchWasPaused){
+      shq('match-paused-overlay')?.classList.add('hidden');
+      document.querySelectorAll('.match-item:not(.matched)').forEach(e => e.classList.remove('locked'));
+    }
+  },
+});

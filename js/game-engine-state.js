@@ -1021,8 +1021,17 @@ function selMode(m){
   sh('mb-'+m).classList.add('active');
   sh('ps-ind').classList.toggle('hidden',m!=='ind');
   sh('ps-sq').classList.toggle('hidden',m!=='sq');
-  if(m==='ind')renderIndChips();else renderSqUI();
-  checkCanStart(); // rivaluta sempre dopo cambio modalità
+  if(m==='ind') renderIndChips();
+  else renderSqUI();
+  // Aggiorna visibilità tasto + DOPO che ps-sq è visibile nel DOM
+  if(m==='sq') _updateAddSqBtn();
+  checkCanStart();
+}
+
+function _updateAddSqBtn(){
+  const btn=document.getElementById('add-sq-btn');
+  if(!btn) return;
+  btn.style.display = sTeams.length >= 4 ? 'none' : 'inline-flex';
 }
 
 function renderIndChips(){
@@ -1042,18 +1051,25 @@ function renderSqUI(){
     :'<span style="font-size:12px;color:rgba(255,255,255,.3)">Nessuna squadra salvata</span>';
   sTeams=[{name:'',color:COLORS[0]},{name:'',color:COLORS[1]}];
   renderSqRows();
-  checkCanStart(); // rivaluta dopo inizializzazione sTeams (nomi vuoti → disabilitato)
+  // NON chiamare _updateAddSqBtn qui — ps-sq potrebbe ancora essere hidden.
+  // ci pensa selMode() dopo aver rimosso hidden.
+  checkCanStart();
 }
-function addSavedTeam(name,color){if(!sTeams.find(t=>t.name===name))sTeams.push({name,color});renderSqRows();checkSqValid();}
+function addSavedTeam(name,color){
+  if(!sTeams.find(t=>t.name===name)) sTeams.push({name,color});
+  renderSqRows();
+  _updateAddSqBtn();
+  checkSqValid();
+}
 
 /* renderSqRows — v4.0.9 I3 fix:
    oninput aggiorna SOLO sTeams[i].name + checkSqValid senza re-render DOM.
    Il re-render (innerHTML completo) avviene solo su operazioni strutturali:
-   addSqRow() e splice (rimozione riga). Elimina il reflow ad ogni tasto. */
+   addSqRow() e splice (rimozione riga). Elimina il reflow ad ogni tasto.
+   NON gestisce add-sq-btn — delega a _updateAddSqBtn(). */
 let _sqValidDebounceTimer = null;
 function _sqOnInput(i, val){
   sTeams[i].name = val;
-  // Debounce 150ms: evita checkCanStart() su ogni singolo carattere
   clearTimeout(_sqValidDebounceTimer);
   _sqValidDebounceTimer = setTimeout(checkSqValid, 150);
 }
@@ -1061,11 +1077,16 @@ function _sqOnInput(i, val){
 function renderSqRows(){
   const cont = shq('sq-rows');
   if(!cont) return;
-  cont.innerHTML=sTeams.map((t,i)=>`<div class="team-row"><div class="team-dot" style="background:${escAttr(t.color)};box-shadow:0 0 6px ${escAttr(t.color)}"></div><input value="${escAttr(t.name)}" placeholder="Nome squadra ${i+1}..." oninput="_sqOnInput(${i},this.value)"/>${i>=2?`<button class="icon-btn" onclick="sTeams.splice(${i},1);renderSqRows();checkSqValid()">×</button>`:''}</div>`).join('');
-  const addBtn=shq('add-sq-btn');
-  if(addBtn) addBtn.style.display=sTeams.length>=4?'none':'inline-flex';
+  cont.innerHTML=sTeams.map((t,i)=>`<div class="team-row"><div class="team-dot" style="background:${escAttr(t.color)};box-shadow:0 0 6px ${escAttr(t.color)}"></div><input value="${escAttr(t.name)}" placeholder="Nome squadra ${i+1}..." oninput="_sqOnInput(${i},this.value)"/>${i>=2?`<button class="icon-btn" onclick="sTeams.splice(${i},1);renderSqRows();_updateAddSqBtn();checkSqValid()">×</button>`:''}</div>`).join('');
+  // add-sq-btn gestito da _updateAddSqBtn() — non toccato qui
 }
-function addSqRow(){if(sTeams.length>=4)return;sTeams.push({name:'',color:COLORS[sTeams.length%COLORS.length]});renderSqRows();checkSqValid();}
+function addSqRow(){
+  if(sTeams.length>=4) return;
+  sTeams.push({name:'',color:COLORS[sTeams.length%COLORS.length]});
+  renderSqRows();
+  _updateAddSqBtn();
+  checkSqValid();
+}
 function checkSqValid(){checkCanStart();}
 
 
@@ -1080,17 +1101,11 @@ async function launch(){
   // Guard: stato minimo necessario
   if(!sAct||!sMod||!sMode){console.warn('[PixelProf] launch() chiamato con stato invalido',{sAct,sMod,sMode});goHome();return;}
 
-  // Cloud hook: assicura che i partecipanti esistano nel DB prima di avviare la sessione
-  // v4.0.6: incorporato da ex override in app.js — fire-and-forget
+  // Cloud hook: assicura il giocatore individuale nel DB prima di avviare
+  // Per le squadre, la chiamata avviene nel blocco matchState dopo validazione nomi
   if(typeof window.hook_ensureParticipants==='function'){
     if(sMode==='ind'&&sIndPlayer){
       window.hook_ensureParticipants([{name:sIndPlayer,color:COLORS[0],type:'ind'}]);
-    }else if(sMode==='sq'&&sTeams.length){
-      window.hook_ensureParticipants(
-        sTeams.filter(t=>t.name.trim()).map((t,i)=>({
-          name:t.name.trim(),color:t.color||COLORS[i],type:'sq'
-        }))
-      );
     }
   }
 

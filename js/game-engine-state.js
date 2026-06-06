@@ -1059,10 +1059,11 @@ function _sqOnInput(i, val){
 }
 
 function renderSqRows(){
-  const cont = sh('sq-rows');
+  const cont = shq('sq-rows');
   if(!cont) return;
   cont.innerHTML=sTeams.map((t,i)=>`<div class="team-row"><div class="team-dot" style="background:${escAttr(t.color)};box-shadow:0 0 6px ${escAttr(t.color)}"></div><input value="${escAttr(t.name)}" placeholder="Nome squadra ${i+1}..." oninput="_sqOnInput(${i},this.value)"/>${i>=2?`<button class="icon-btn" onclick="sTeams.splice(${i},1);renderSqRows();checkSqValid()">×</button>`:''}</div>`).join('');
-  sh('add-sq-btn').style.display=sTeams.length>=4?'none':'';
+  const addBtn=shq('add-sq-btn');
+  if(addBtn) addBtn.style.display=sTeams.length>=4?'none':'inline-flex';
 }
 function addSqRow(){if(sTeams.length>=4)return;sTeams.push({name:'',color:COLORS[sTeams.length%COLORS.length]});renderSqRows();checkSqValid();}
 function checkSqValid(){checkCanStart();}
@@ -1102,6 +1103,13 @@ async function launch(){
       // Salva squadre nel db se nuove
       v.forEach(t=>{if(!db.teams.find(x=>x.name===t.name))db.teams.push({name:t.name.trim(),color:t.color});});
       save();
+      // Cloud hook: assicura i team su Supabase ORA che i nomi sono validati
+      // (la chiamata all'inizio di launch() avviene prima della validazione nomi)
+      if(typeof window.hook_ensureParticipants==='function'){
+        window.hook_ensureParticipants(
+          v.map((t,i)=>({name:t.name.trim(),color:t.color||COLORS[i],type:'sq'}))
+        );
+      }
       // Carica il pool UNA volta e lo condivide fra tutte le squadre
       let rawPool;
       const act=sAct;

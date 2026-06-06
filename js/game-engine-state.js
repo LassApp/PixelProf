@@ -1,13 +1,15 @@
 /* ==================================================
-   game-engine-state.js — PixelProf v4.0.8
+   game-engine-state.js — PixelProf v4.0.9
    Core engine: loader factory, course storage, database,
    session state (QuizSession/FillSession/PlayerSession),
-   matchState, TimerManager, helpers, navigation core,
-   dialog system, module/activity selection, launch,
-   team turn engine, score saving, ranking, leaderboard.
+   matchState, TimerManager, PauseUIRegistry, helpers,
+   navigation core, dialog system, module/activity selection,
+   launch, team turn engine, score saving, ranking, leaderboard.
    Cloud hooks (hook_saveLbEntry, hook_saveSession,
    hook_ensureParticipants) now embedded directly —
    no override chains from app.js.
+   Fase 8: PauseUIRegistry (M2), shq() (L1), _pauseForDialog
+   refactored — zero hardcoding per gameType.
    This is the central module — loaded before all games.
 ================================================== */
 
@@ -231,13 +233,27 @@ const COURSES_KEY='pp5_courses';
 
 let activeCourseId=null; // null = nessun corso selezionato
 
+/* _coursesCache — v4.0.9 M4:
+   Cache in memoria di loadCourses(). Evita 12+ JSON.parse(localStorage)
+   ad ogni render/action in courses.js. Invalidata esplicitamente da
+   saveCourses() ogni volta che la lista cambia. */
+let _coursesCache = null;
+
 function loadCourses(){
-  try{const s=localStorage.getItem(COURSES_KEY);return s?JSON.parse(s):[];}
-  catch(e){return[];}
+  if(_coursesCache) return _coursesCache;
+  try{
+    const s=localStorage.getItem(COURSES_KEY);
+    _coursesCache = s ? JSON.parse(s) : [];
+  }catch(e){ _coursesCache = []; }
+  return _coursesCache;
 }
 function saveCourses(list){
+  _coursesCache = list; // aggiorna cache — invalida il vecchio valore
   try{localStorage.setItem(COURSES_KEY,JSON.stringify(list));}catch(e){}
 }
+/** invalidateCoursesCache() — da chiamare quando il cloud sovrascrive
+ *  localStorage (es. _reloadCourses in app.js). */
+function invalidateCoursesCache(){ _coursesCache = null; }
 function courseDataKey(id){return'pp5_cdata_'+id;}
 function loadCourseData(id){
   try{
@@ -531,6 +547,56 @@ const TimerManager = (function(){
   return { register, pauseAll, resumeAll, stopAll, unregister, debug };
 })();
 
+/* ==================================================
+   PAUSE UI REGISTRY — v4.0.9 (Fase 8 M2)
+   Registro degli handler UI di pausa per ogni minigioco.
+   Sostituisce i blocchi if(gameType==='speed'|'memory'|'match')
+   in _pauseForDialog/_resumeAfterDialog — ora 4 righe ciascuno.
+   Ogni minigioco chiama PauseUIRegistry.register() al caricamento.
+
+   onPause(wasManuallyPaused):
+     - wasManuallyPaused è sempre false qui (viene da dialog,
+       non da pulsante pausa manuale)
+     - Deve: mostrare overlay, bloccare input, cambiare icona btn
+   onResume(wasManuallyPaused):
+     - wasManuallyPaused: true se il gioco era già in pausa
+       manuale PRIMA che si aprisse il dialog
+     - Se true: NON togliere overlay/lock (l'utente aveva paused)
+     - Se false: ripristina UI normalmente
+================================================== */
+const PauseUIRegistry = (function(){
+  const _handlers = {};
+
+  /**
+   * Registra gli handler UI pausa/ripresa per un minigioco.
+   * @param {string}   name       'speed' | 'memory' | 'match'
+   * @param {object}   handlers   { onPause, onResume }
+   */
+  function register(name, handlers){
+    _handlers[name] = handlers;
+  }
+
+  /**
+   * Chiama onPause per il gameType attivo.
+   * @param {boolean} wasManuallyPaused  sempre false da _pauseForDialog
+   */
+  function pauseActive(wasManuallyPaused){
+    const h = _handlers[gameType];
+    if(h && typeof h.onPause === 'function') h.onPause(wasManuallyPaused);
+  }
+
+  /**
+   * Chiama onResume per il gameType attivo.
+   * @param {boolean} wasManuallyPaused  true se gioco era già in pausa manuale
+   */
+  function resumeActive(wasManuallyPaused){
+    const h = _handlers[gameType];
+    if(h && typeof h.onResume === 'function') h.onResume(wasManuallyPaused);
+  }
+
+  return { register, pauseActive, resumeActive };
+})();
+
 /* Reset all transient game state between sessions */
 function resetSessionState(){
   TimerManager.stopAll();   // v4.0.5: centralizzato — handles all registered timers
@@ -552,8 +618,8 @@ function resetSessionState(){
   if(typeof _setGamePauseLock === 'function') _setGamePauseLock(false);
   // Reset speed quiz UI elements
   if(typeof resetSpeedUI === 'function') resetSpeedUI();
-  const sp=sh('qz-score-pill');if(sp)sp.classList.add('hidden');
-  const pb=sh('qz-pause-btn');if(pb)pb.classList.add('hidden');
+  const sp=shq('qz-score-pill');if(sp)sp.classList.add('hidden');
+  const pb=shq('qz-pause-btn');if(pb)pb.classList.add('hidden');
 }
 
 
@@ -561,6 +627,9 @@ function resetSessionState(){
    HELPERS
 ================================================== */
 function sh(id){const el=document.getElementById(id);if(!el&&typeof console!=='undefined')console.warn('[PixelProf] elemento non trovato: #'+id);return el;}
+/** shq — quiet lookup: elemento opzionale, nessun warning se assente. Usare per
+ *  elementi che esistono solo in certi stati UI (es. mem-pause-btn fuori dal Memory). */
+function shq(id){return document.getElementById(id);}
 function escHtml(s){const d=document.createElement('div');d.appendChild(document.createTextNode(String(s)));return d.innerHTML;}
 function escAttr(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
@@ -648,43 +717,14 @@ function _pauseForDialog(){
 
     // ── FIX I1: snapshot da timer state (fonte di verità) non da flag ──
     _dialogWasPaused      = (memTimerInt === null && memElapsed > 0);
-    _dialogMatchWasPaused = (mTimerInt === null && mTimeLeft > 0 && mTimeLeft < 60);
+    _dialogMatchWasPaused = (mTimerInt   === null && mTimeLeft  > 0 && mTimeLeft < 60);
 
     // ── Pausa tutti i timer via manager ──
     TimerManager.pauseAll();
 
-    // ── UI per gameType: Speed Quiz ──
-    if(gameType==='speed'){
-      const overlay=sh('qz-pause-overlay');
-      if(overlay)overlay.classList.remove('hidden');
-      const btn=sh('qz-pause-btn');
-      if(btn)btn.classList.add('is-paused');
-      const icon=sh('qz-pause-icon');
-      if(icon)icon.className='ti ti-player-play';
-      document.querySelectorAll('.opt:not(.correct):not(.wrong)').forEach(b=>{b.disabled=true;b.style.opacity='.35';});
-      _setSpeedPauseLock(true);
-    }
-
-    // ── UI per gameType: Memory ──
-    if(gameType==='memory'){
-      _setGamePauseLock(true);
-      const mbtn=sh('mem-pause-btn');
-      const micon=sh('mem-pause-icon');
-      if(mbtn){mbtn.classList.add('is-paused');mbtn.title='Riprendi';}
-      if(micon)micon.className='ti ti-player-play';
-      _syncMemPauseOverlay(true);
-    }
-
-    // ── UI per gameType: Abbina ──
-    if(gameType==='match'){
-      _setGamePauseLock(true);
-      const mbtn=sh('match-pause-btn');
-      const micon=sh('match-pause-icon');
-      if(mbtn){mbtn.classList.add('is-paused');mbtn.title='Riprendi';}
-      if(micon)micon.className='ti ti-player-play';
-      sh('match-paused-overlay')?.classList.remove('hidden');
-      document.querySelectorAll('.match-item:not(.matched)').forEach(e=>e.classList.add('locked'));
-    }
+    // ── UI pausa delegata al minigioco attivo via PauseUIRegistry ──
+    // Ogni gioco registra il proprio handler — zero if(gameType) qui.
+    PauseUIRegistry.pauseActive(false);
   }
   // Se il gioco era già GS.PAUSED: non cambiamo nulla.
   // _dialogGameWasPaused=true segnala a _resumeAfterDialog di
@@ -704,55 +744,20 @@ function _resumeAfterDialog(){
 
   gsSet(GS.PLAYING);
 
-  // ── Speed Quiz: UI da ripristinare prima del timer ──
-  if(gameType==='speed' && qSpeedLeft>0 && !qAnswered){
-    const wasActive=!sh('qz-game')?.classList.contains('hidden');
-    if(wasActive){
-      const icon=sh('qz-pause-icon');
-      const overlay=sh('qz-pause-overlay');
-      const btn=sh('qz-pause-btn');
-      if(icon)icon.className='ti ti-player-pause';
-      if(overlay)overlay.classList.add('hidden');
-      if(btn){btn.title='Pausa';btn.classList.remove('is-paused');}
-      document.querySelectorAll('.opt:not(.correct):not(.wrong)').forEach(b=>{b.disabled=false;b.style.opacity='';});
-      _setSpeedPauseLock(false);
-    }
-  }
-
-  // ── Memory: rilascia lock; overlay solo se il gioco non era già paused ──
-  if(gameType==='memory'){
-    _setGamePauseLock(false);
-    const mbtn=sh('mem-pause-btn');
-    const micon=sh('mem-pause-icon');
-    if(mbtn){mbtn.classList.remove('is-paused');mbtn.title='Pausa';}
-    if(micon)micon.className='ti ti-player-pause';
-    if(!_dialogWasPaused){
-      _syncMemPauseOverlay(false);
-    }
-  }
-
-  // ── Abbina: rilascia lock; overlay solo se non era già paused ──
-  if(gameType==='match'){
-    _setGamePauseLock(false);
-    const mbtn=sh('match-pause-btn');
-    const micon=sh('match-pause-icon');
-    if(mbtn){mbtn.classList.remove('is-paused');mbtn.title='Pausa';}
-    if(micon)micon.className='ti ti-player-pause';
-    if(!_dialogMatchWasPaused){
-      sh('match-paused-overlay')?.classList.add('hidden');
-      document.querySelectorAll('.match-item:not(.matched)').forEach(e=>e.classList.remove('locked'));
-    }
-  }
+  // ── UI ripresa delegata al minigioco attivo via PauseUIRegistry ──
+  // Ogni gioco conosce il proprio stato interno (_dialogWasPaused,
+  // _dialogMatchWasPaused) e decide autonomamente se ripristinare l'overlay.
+  PauseUIRegistry.resumeActive(false);
 
   // ── Riprende i timer (DOPO aggiornamento UI) ──
   TimerManager.resumeAll();
 }
 
 function _syncMemPauseOverlay(show){
-  const overlay=sh('mem-paused-overlay');
+  const overlay=shq('mem-paused-overlay');
   if(!overlay)return;
   overlay.classList.toggle('hidden',!show);
-  // Usa classe CSS invece di style inline  pi robusto e manutenibile
+  // Usa classe CSS invece di style inline — più robusto e manutenibile
   document.querySelectorAll('.mem-c.flip').forEach(el=>el.classList.toggle('paused-hidden',show));
 }
 
@@ -1040,8 +1045,23 @@ function renderSqUI(){
   checkCanStart(); // rivaluta dopo inizializzazione sTeams (nomi vuoti → disabilitato)
 }
 function addSavedTeam(name,color){if(!sTeams.find(t=>t.name===name))sTeams.push({name,color});renderSqRows();checkSqValid();}
+
+/* renderSqRows — v4.0.9 I3 fix:
+   oninput aggiorna SOLO sTeams[i].name + checkSqValid senza re-render DOM.
+   Il re-render (innerHTML completo) avviene solo su operazioni strutturali:
+   addSqRow() e splice (rimozione riga). Elimina il reflow ad ogni tasto. */
+let _sqValidDebounceTimer = null;
+function _sqOnInput(i, val){
+  sTeams[i].name = val;
+  // Debounce 150ms: evita checkCanStart() su ogni singolo carattere
+  clearTimeout(_sqValidDebounceTimer);
+  _sqValidDebounceTimer = setTimeout(checkSqValid, 150);
+}
+
 function renderSqRows(){
-  sh('sq-rows').innerHTML=sTeams.map((t,i)=>`<div class="team-row"><div class="team-dot" style="background:${escAttr(t.color)};box-shadow:0 0 6px ${escAttr(t.color)}"></div><input value="${escAttr(t.name)}" placeholder="Nome squadra ${i+1}..." oninput="sTeams[${i}].name=this.value;checkSqValid()"/>${i>=2?`<button class="icon-btn" onclick="sTeams.splice(${i},1);renderSqRows();checkSqValid()">×</button>`:''}</div>`).join('');
+  const cont = sh('sq-rows');
+  if(!cont) return;
+  cont.innerHTML=sTeams.map((t,i)=>`<div class="team-row"><div class="team-dot" style="background:${escAttr(t.color)};box-shadow:0 0 6px ${escAttr(t.color)}"></div><input value="${escAttr(t.name)}" placeholder="Nome squadra ${i+1}..." oninput="_sqOnInput(${i},this.value)"/>${i>=2?`<button class="icon-btn" onclick="sTeams.splice(${i},1);renderSqRows();checkSqValid()">×</button>`:''}</div>`).join('');
   sh('add-sq-btn').style.display=sTeams.length>=4?'none':'';
 }
 function addSqRow(){if(sTeams.length>=4)return;sTeams.push({name:'',color:COLORS[sTeams.length%COLORS.length]});renderSqRows();checkSqValid();}
@@ -1649,4 +1669,3 @@ function lbSelectAct(act){
     <span class="lb-nav-crumb current">${actLabel}</span>`;
   renderLbResults(lbType,act);
 }
-

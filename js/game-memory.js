@@ -1,10 +1,11 @@
 /* ==================================================
-   game-memory.js — PixelProf v4.0.8
+   game-memory.js — PixelProf v4.0.9
    Memory game: image helpers, scoring, startMemory,
    memTogglePause, memFlip.
    _updateMemTimerUI, _updateMemScoreUI, stopMemTimer,
    pauseMemTimer, resumeMemTimer, _startMemInterval
    → live in game-engine-state.js (TimerManager block).
+   Fase 8: PauseUIRegistry handler registrato (M2).
    Depends on: game-engine-state.js, scoring.js
 ================================================== */
 
@@ -115,9 +116,9 @@ function memTogglePause(){
   const s=memState;
   if(!s||s.matched?.size===s.pairs)return; // don't pause after win
   if(!gsIs(GS.PLAYING)&&!gsIs(GS.PAUSED))return;
-  const overlay=sh('mem-paused-overlay');
-  const icon=sh('mem-pause-icon');
-  const btn=sh('mem-pause-btn');
+  const overlay=shq('mem-paused-overlay');
+  const icon=shq('mem-pause-icon');
+  const btn=shq('mem-pause-btn');
   if(gsIs(GS.PLAYING)){
     // PAUSE — v4.0.8 I1 fix: memPaused gestito solo da pauseMemTimer()
     gsSet(GS.PAUSED);
@@ -156,7 +157,7 @@ function memFlip(i){
   if(s.flipped.length===2){
     s.lock=true;s.moves++;
     // Update moves display
-    const mv=sh('mem-moves-pill');if(mv)mv.textContent=s.moves;
+    const mv=shq('mem-moves-pill');if(mv)mv.textContent=s.moves;
     const[a,b]=s.flipped;
     if(s.cards[a].pair===s.cards[b].pair){
       [a,b].forEach(x=>document.getElementById('mc'+x)?.classList.add('matched'));
@@ -170,7 +171,7 @@ function memFlip(i){
         pauseMemTimer();
         const secs=memElapsed;
         const score=calcMemScore(s.pairs,s.moves,secs);
-        const msg=sh('mem-msg');
+        const msg=shq('mem-msg');
         if(msg)msg.textContent='🎉 Completato in '+s.moves+' mosse · '+_memTimerLabel()+'!';
         // Build scoreMap so podium shows correct value
         const memScoreMap={};
@@ -196,3 +197,35 @@ function memFlip(i){
   }
 }
 
+
+/* ==================================================
+   PAUSE UI REGISTRY — Memory handler
+   Fase 8 M2: registra gli handler UI pausa/ripresa
+   per il Memory nel registro centralizzato.
+   _pauseForDialog/_resumeAfterDialog non contengono
+   più if(gameType==='memory') — delegano qui.
+   _dialogWasPaused: snapshot da game-engine-state.js
+   (memTimerInt === null && memElapsed > 0).
+================================================== */
+PauseUIRegistry.register('memory', {
+  onPause(/* wasManuallyPaused — sempre false da dialog */) {
+    _setGamePauseLock(true);
+    const mbtn = shq('mem-pause-btn');
+    const micon = shq('mem-pause-icon');
+    if(mbtn){ mbtn.classList.add('is-paused'); mbtn.title = 'Riprendi'; }
+    if(micon) micon.className = 'ti ti-player-play';
+    _syncMemPauseOverlay(true);
+  },
+  onResume(/* wasManuallyPaused — sempre false da dialog */) {
+    _setGamePauseLock(false);
+    const mbtn = shq('mem-pause-btn');
+    const micon = shq('mem-pause-icon');
+    if(mbtn){ mbtn.classList.remove('is-paused'); mbtn.title = 'Pausa'; }
+    if(micon) micon.className = 'ti ti-player-pause';
+    // Ripristina overlay solo se il timer non era già fermo
+    // (_dialogWasPaused è il snapshot catturato in _pauseForDialog)
+    if(!_dialogWasPaused){
+      _syncMemPauseOverlay(false);
+    }
+  },
+});

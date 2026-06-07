@@ -184,14 +184,24 @@ async function loadLeaderboardForRender(classId, type, activity) {
 // ════════════════════════════════════════════════════════════════════
 async function ensureParticipants(participants) {
   const classId = _classId();
-  if (!classId || !Array.isArray(participants)) return;
+  if (!classId) {
+    console.warn('[PixelProf] ensureParticipants: classId null — aula non selezionata, skip Supabase');
+    return;
+  }
+  if (!Array.isArray(participants)) return;
+
+  console.log('[PixelProf] ensureParticipants →', classId, participants.map(p=>p.name));
 
   for (const p of participants) {
     if (!p?.name?.trim()) continue;
     if (p.type === 'sq') {
-      ensureTeam(classId, p.name.trim(), p.color).catch(() => {});
+      ensureTeam(classId, p.name.trim(), p.color)
+        .then(() => console.log('[PixelProf] ensureTeam OK:', p.name))
+        .catch(err => console.error('[PixelProf] ensureTeam FAIL:', p.name, err));
     } else {
-      ensurePlayer(classId, p.name.trim(), p.color || '#00ffc8').catch(() => {});
+      ensurePlayer(classId, p.name.trim(), p.color || '#00ffc8')
+        .then(() => console.log('[PixelProf] ensurePlayer OK:', p.name))
+        .catch(err => console.error('[PixelProf] ensurePlayer FAIL:', p.name, err));
     }
   }
 }

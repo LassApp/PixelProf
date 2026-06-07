@@ -1081,8 +1081,22 @@ function _sqOnInput(i, val){
 function renderSqRows(){
   const cont = shq('sq-rows');
   if(!cont) return;
-  cont.innerHTML=sTeams.map((t,i)=>`<div class="team-row"><div class="team-dot" style="background:${escAttr(t.color)};box-shadow:0 0 6px ${escAttr(t.color)}"></div><input value="${escAttr(t.name)}" placeholder="Nome squadra ${i+1}..." oninput="_sqOnInput(${i},this.value)"/>${i>=2?`<button class="icon-btn" onclick="sTeams.splice(${i},1);renderSqRows();_updateAddSqBtn();checkSqValid()">×</button>`:''}</div>`).join('');
-  // add-sq-btn gestito da _updateAddSqBtn() — non toccato qui
+  const isLast = i => i === sTeams.length - 1;
+  const canAdd  = sTeams.length < 4;
+  cont.innerHTML = sTeams.map((t,i) => {
+    const dot    = `<div class="team-dot" style="background:${escAttr(t.color)};box-shadow:0 0 6px ${escAttr(t.color)}"></div>`;
+    const input  = `<input value="${escAttr(t.name)}" placeholder="Nome squadra ${i+1}..." oninput="_sqOnInput(${i},this.value)" onkeydown="if(event.key==='Enter'&&${canAdd&&isLast(i)}){event.preventDefault();addSqRow();}"/>`;
+    // Tasto + sull'ultima riga se si possono aggiungere ancora squadre
+    const addBtn = (canAdd && isLast(i))
+      ? `<button class="btn btn-neon" onclick="addSqRow()" title="Aggiungi squadra" style="padding:6px 10px;font-size:13px;flex-shrink:0"><i class="ti ti-plus"></i></button>`
+      : '';
+    // Tasto × dalla terza riga in poi
+    const removeBtn = i >= 2
+      ? `<button class="icon-btn" onclick="sTeams.splice(${i},1);renderSqRows();_updateAddSqBtn();checkSqValid()" title="Rimuovi">×</button>`
+      : '';
+    return `<div class="team-row">${dot}${input}${addBtn}${removeBtn}</div>`;
+  }).join('');
+  // add-sq-btn (tasto testuale sotto le righe) gestito da _updateAddSqBtn()
 }
 function addSqRow(){
   if(sTeams.length>=4) return;

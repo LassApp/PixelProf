@@ -1,5 +1,5 @@
 /**
- * game_hooks.js — PixelProf v3.1.1
+ * game_hooks.js — PixelProf v5.0.1
  *
  * FIX v3.1.1 — mismatch firme tra HTML e JS (4 hook su 4 erano sbagliati):
  *
@@ -185,7 +185,7 @@ async function loadLeaderboardForRender(classId, type, activity) {
 async function ensureParticipants(participants) {
   const classId = _classId();
   if (!classId) {
-    console.warn('[PixelProf] ensureParticipants: classId null — aula non selezionata, skip Supabase');
+    console.log('[PixelProf] ensureParticipants: nessuna aula attiva — skip Supabase (modalità offline ok)');
     return;
   }
   if (!Array.isArray(participants)) return;

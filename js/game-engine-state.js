@@ -1029,9 +1029,13 @@ function selMode(m){
 }
 
 function _updateAddSqBtn(){
-  const btn=document.getElementById('add-sq-btn');
-  if(!btn) return;
-  btn.style.display = sTeams.length >= 4 ? 'none' : 'inline-flex';
+  // requestAnimationFrame garantisce che il display venga applicato
+  // DOPO che il browser ha calcolato il layout del parent (#ps-sq appena mostrato)
+  requestAnimationFrame(()=>{
+    const btn=document.getElementById('add-sq-btn');
+    if(!btn) return;
+    btn.style.display = sTeams.length >= 4 ? 'none' : 'inline-flex';
+  });
 }
 
 function renderIndChips(){

@@ -1,5 +1,5 @@
 /* ==================================================
-   game-engine-state.js — PixelProf v5.0.0
+   game-engine-state.js — PixelProf v5.0.1
    Core engine: loader factory, course storage, database,
    session state (QuizSession/FillSession/PlayerSession),
    matchState, TimerManager, PauseUIRegistry, helpers,
@@ -12,6 +12,7 @@
    refactored — zero hardcoding per gameType.
    Fase 9 / v5.0.0: P1 (add-sq-btn rimosso), P2 (mc-SS id),
    N1 (WP nel wizard). _updateAddSqBtn mantenuta come no-op.
+   v5.0.1: N2 (rinomina squadra salvata — inline chip editor).
    This is the central module — loaded before all games.
 ================================================== */
 
@@ -1054,9 +1055,31 @@ function pickInd(n){sIndPlayer=n;renderIndChips();checkCanStart();}
 function addInd(){const inp=sh('ind-inp');const n=inp.value.trim();if(!n)return;if(!db.players.includes(n))db.players.push(n);save();sIndPlayer=n;inp.value='';renderIndChips();checkCanStart();}
 function renderSqUI(){
   const s=sh('sq-saved');
-  s.innerHTML=db.teams.length
-    ?db.teams.map(t=>`<button class="pchip" style="border-left:3px solid ${escAttr(t.color)}" onclick="addSavedTeam('${escAttr(t.name)}','${escAttr(t.color)}')">${escHtml(t.name)}</button>`).join('')
-    :'<span style="font-size:12px;color:rgba(255,255,255,.3)">Nessuna squadra salvata</span>';
+  if(!db.teams.length){
+    s.innerHTML='<span style="font-size:12px;color:rgba(255,255,255,.3)">Nessuna squadra salvata</span>';
+  } else {
+    s.innerHTML=db.teams.map((t,i)=>`
+      <div class="pchip-wrap" style="display:inline-flex;align-items:center;gap:0;margin:3px 4px 3px 0;position:relative">
+        <button class="pchip" id="sqchip-${i}"
+          style="border-left:3px solid ${escAttr(t.color)};border-radius:20px 0 0 20px;margin:0;padding-right:6px"
+          onclick="addSavedTeam('${escAttr(t.name)}','${escAttr(t.color)}')">${escHtml(t.name)}</button>
+        <button
+          title="Rinomina squadra"
+          onclick="startRenameSavedTeam(${i},event)"
+          style="
+            display:inline-flex;align-items:center;justify-content:center;
+            height:30px;width:26px;padding:0;
+            background:rgba(255,255,255,.06);
+            border:1px solid rgba(255,255,255,.12);border-left:none;
+            border-radius:0 20px 20px 0;
+            color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;
+            transition:background .15s,color .15s;
+          "
+          onmouseover="this.style.background='rgba(0,255,200,.12)';this.style.color='#00ffc8'"
+          onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.4)'"
+        ><i class="ti ti-pencil"></i></button>
+      </div>`).join('');
+  }
   sTeams=[{name:'',color:COLORS[0]},{name:'',color:COLORS[1]}];
   renderSqRows();
   checkCanStart();
@@ -1066,6 +1089,88 @@ function addSavedTeam(name,color){
   renderSqRows();
   _updateAddSqBtn();
   checkSqValid();
+}
+
+/* ==================================================
+   RENAME SAVED TEAM — N2
+   Inline edit direttamente nel chip: nessun prompt(),
+   nessun modal. Input sostituisce il chip; ✓ salva,
+   ✗ annulla. Aggiorna db.teams + sTeams se la squadra
+   è già nella sessione corrente.
+================================================== */
+function startRenameSavedTeam(idx, evt){
+  evt.stopPropagation();
+  const team=db.teams[idx];
+  if(!team) return;
+  const wrap=document.querySelector(`#sqchip-${idx}`)?.parentElement;
+  if(!wrap) return;
+  const oldName=team.name;
+  const col=team.color;
+
+  wrap.innerHTML=`
+    <div style="display:inline-flex;align-items:center;gap:4px;padding:2px 4px;
+      border:1px solid rgba(0,255,200,.4);border-radius:20px;
+      background:rgba(0,255,200,.07);box-shadow:0 0 8px rgba(0,255,200,.12)">
+      <div style="width:8px;height:8px;border-radius:50%;background:${escAttr(col)};box-shadow:0 0 5px ${escAttr(col)};flex-shrink:0;margin-left:6px"></div>
+      <input id="sq-rename-inp-${idx}"
+        value="${escAttr(oldName)}"
+        style="
+          background:transparent;border:none;outline:none;
+          color:#fff;font-size:12px;font-family:'Space Grotesk',sans-serif;
+          font-weight:600;width:90px;padding:2px 4px;
+        "
+        onkeydown="if(event.key==='Enter'){event.preventDefault();confirmRenameSavedTeam(${idx},'${escAttr(oldName)}');}
+                   if(event.key==='Escape'){event.preventDefault();renderSqUI();}"
+        onfocus="this.select()"
+      />
+      <button onclick="confirmRenameSavedTeam(${idx},'${escAttr(oldName)}')" title="Salva"
+        style="background:rgba(0,255,200,.15);border:1px solid rgba(0,255,200,.3);border-radius:50%;
+               width:22px;height:22px;display:flex;align-items:center;justify-content:center;
+               color:#00ffc8;font-size:11px;cursor:pointer;flex-shrink:0;transition:background .15s"
+        onmouseover="this.style.background='rgba(0,255,200,.3)'"
+        onmouseout="this.style.background='rgba(0,255,200,.15)'"
+      ><i class="ti ti-check"></i></button>
+      <button onclick="renderSqUI()" title="Annulla"
+        style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:50%;
+               width:22px;height:22px;display:flex;align-items:center;justify-content:center;
+               color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;flex-shrink:0;transition:background .15s;margin-right:4px"
+        onmouseover="this.style.background='rgba(255,60,80,.2)';this.style.color='#ff4d6d'"
+        onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.4)'"
+      ><i class="ti ti-x"></i></button>
+    </div>`;
+  // Focus con delay per lasciar il DOM aggiornare
+  setTimeout(()=>document.getElementById(`sq-rename-inp-${idx}`)?.focus(), 30);
+}
+
+function confirmRenameSavedTeam(idx, oldName){
+  const inp=document.getElementById(`sq-rename-inp-${idx}`);
+  if(!inp) return;
+  const newName=inp.value.trim();
+  if(!newName){renderSqUI();return;}
+  if(newName===oldName){renderSqUI();return;}
+  // Controlla duplicati in db.teams
+  if(db.teams.find((t,i)=>i!==idx && t.name.trim().toLowerCase()===newName.toLowerCase())){
+    inp.style.borderBottom='1px solid #ff4d6d';
+    inp.style.color='#ff4d6d';
+    inp.title='Nome già usato';
+    inp.value='';
+    inp.placeholder='Nome già usato!';
+    inp.style.setProperty('--placeholder-color','#ff4d6d');
+    setTimeout(()=>renderSqUI(),1600);
+    return;
+  }
+  // Aggiorna db.teams
+  const col=db.teams[idx].color;
+  db.teams[idx].name=newName;
+  save();
+  // Aggiorna sTeams se la squadra è già presente nella sessione corrente
+  const inSession=sTeams.findIndex(t=>t.name===oldName);
+  if(inSession>=0){
+    sTeams[inSession].name=newName;
+    renderSqRows();
+  }
+  // Re-render chip
+  renderSqUI();
 }
 
 /* renderSqRows — v4.0.9 I3 fix / v5.0.0 P1:
@@ -1712,4 +1817,3 @@ function lbSelectAct(act){
     <span class="lb-nav-crumb current">${actLabel}</span>`;
   renderLbResults(lbType,act);
 }
-

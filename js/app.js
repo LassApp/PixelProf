@@ -182,7 +182,7 @@ async function _applyModuleFilter(classroomId){
   try{ keys = await window.DB.getEnabledModules(classroomId); }catch(e){}
   const ALL = ['CE','OE','MIX','WP','SS'];
   ALL.forEach(k=>{
-    const card = sh('mc-'+k);
+    const card = shq('mc-'+k);  // shq: SS non esiste nell'HTML, nessun warning
     if(!card) return;
     const show = !keys || keys.length===0 || keys.includes(k);
     card.style.display = show ? '' : 'none';

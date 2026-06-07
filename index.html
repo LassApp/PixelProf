@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v4.0.8</title>
+<title>PixelProf — ICDL Lab interattivo v5.0.0</title>
 <link rel="icon" href="public/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
@@ -80,7 +80,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v4.0.8</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v5.0.0</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -206,7 +206,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v4.0.8</span>
+        <span class="cs-logo-sub">ICDL Lab · v5.0.0</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v3.2.2 -->
@@ -304,6 +304,12 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <span class="cm-icon">🌐</span>
           <div class="cm-name">Online Essentials</div>
           <div class="cm-desc">Reti, protocolli, sicurezza</div>
+        </button>
+        <button class="cw-mod-btn" data-mod="WP" onclick="cwToggleMod(this)">
+          <div class="cm-check">✓</div>
+          <span class="cm-icon">📝</span>
+          <div class="cm-name">Word Processing</div>
+          <div class="cm-desc">Elaborazione testi con Word</div>
         </button>
         <button class="cw-mod-btn cw-full-btn" data-mod="MIX" onclick="cwToggleMod(this)">
           <div class="cm-check">✓</div>
@@ -495,7 +501,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v4.0.8</span>
+      <span class="logo-sub">ICDL Lab · v5.0.0</span>
     </div>
   </div>
   <!-- Course badge — icona + nome aula, cliccabile (v3.2.2) -->
@@ -520,6 +526,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     <button class="tb-btn active" id="tb-home" onclick="goHome()"><i class="ti ti-home"></i> Home</button>
     <button class="tb-btn" id="tb-lb" onclick="goTab('lb')"><i class="ti ti-trophy"></i> Classifica</button>
     <button class="tb-btn" id="tb-st" onclick="goTab('stats')"><i class="ti ti-chart-bar"></i> Progressi</button>
+    <button class="tb-btn" id="tb-hist" onclick="goTab('hist')"><i class="ti ti-history"></i> Storico</button>
   </nav>
   <!-- User badge: ruolo + nome + logout — sempre visibile nell'app -->
   <div id="tb-user-badge" style="display:none;align-items:center;gap:6px;flex-shrink:0">
@@ -719,7 +726,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     <div class="mod-grid-soon" style="grid-template-columns:1fr">
 
       <!-- Spreadsheets — coming soon -->
-      <div class="mod-card ss-card soon-card">
+      <div class="mod-card ss-card soon-card" id="mc-SS">
         <span class="cs-label">Coming Soon</span>
         <svg class="bg" viewBox="0 0 300 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
           <rect x="60" y="25" width="140" height="100" rx="5" fill="none" stroke="#30b060" stroke-width="1" opacity=".28"/>
@@ -801,7 +808,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
             <div class="divider"></div>
             <div class="slbl" style="margin-bottom:8px">Nuove squadre</div>
             <div id="sq-rows"></div>
-            <button class="back-link" id="add-sq-btn" onclick="addSqRow()" style="margin-bottom:6px"><i class="ti ti-plus"></i> Aggiungi squadra</button>
           </div>
         </div>
         <div style="padding-top:4px">
@@ -944,6 +950,47 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
   </div>
   <div id="st-mods"></div>
   <div style="margin-top:1rem"><button class="btn" onclick="resetStats()"><i class="ti ti-trash"></i> Azzera progressi</button></div>
+</div>
+
+<!-- ======================================
+     STORICO SESSIONI — v5.0.0 N3
+====================================== -->
+<div id="tab-hist" class="screen">
+
+  <!-- Header con filtri -->
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:10px">
+    <div style="font-size:16px;font-weight:700;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Storico sessioni</div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <!-- Filtro attività -->
+      <select id="hist-filter-act" onchange="renderHistory()"
+        style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:8px;
+               color:rgba(255,255,255,.7);font-family:'Share Tech Mono',monospace;font-size:11px;
+               padding:5px 10px;cursor:pointer;outline:none;color-scheme:dark">
+        <option value="">Tutte le attività</option>
+        <option value="quiz">Quiz</option>
+        <option value="speed">Speed Quiz</option>
+        <option value="match">Abbina</option>
+        <option value="memory">Memory</option>
+        <option value="fill">Completa</option>
+      </select>
+      <!-- Filtro modalità -->
+      <select id="hist-filter-mode" onchange="renderHistory()"
+        style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:8px;
+               color:rgba(255,255,255,.7);font-family:'Share Tech Mono',monospace;font-size:11px;
+               padding:5px 10px;cursor:pointer;outline:none;color-scheme:dark">
+        <option value="">Tutte le modalità</option>
+        <option value="ind">Individuale</option>
+        <option value="sq">Squadre</option>
+      </select>
+      <button class="btn" onclick="resetHistory()" style="padding:5px 12px;font-size:11px">
+        <i class="ti ti-trash"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Corpo lista sessioni -->
+  <div id="hist-body"></div>
+
 </div>
 
 </div><!-- /app -->

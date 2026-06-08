@@ -1,5 +1,5 @@
 /**
- * db_adapter.js — PixelProf v5.0.0
+ * db_adapter.js — PixelProf v5.0.3
  *
  * v5.0.0 M5: importa SUPABASE_URL e SUPABASE_ANON_KEY
  * da supabase_client.js — rimosso fallback hardcoded in
@@ -476,6 +476,26 @@ export async function resolvePlayerId(classId, name, color) {
   return data?.id || _localId();
 }
 
+/**
+ * Elimina un giocatore dalla tabella players su Supabase.
+ * Fire-and-forget: non blocca l'UI.
+ * @param {string} classId
+ * @param {string} playerName
+ */
+export async function deletePlayer(classId, playerName) {
+  if (!_online || !classId) return;
+  const { error } = await supabase
+    .from('players')
+    .delete()
+    .eq('classroom_id', classId)
+    .eq('name', playerName);
+  if (error) {
+    console.warn('[PixelProf] deletePlayer error:', error.message);
+  } else {
+    console.log('[PixelProf] deletePlayer OK:', playerName);
+  }
+}
+
 // ════════════════════════════════════════════════════════════════════
 // TEAMS API  (invariata — solo rename class_id → classroom_id)
 // ════════════════════════════════════════════════════════════════════
@@ -510,6 +530,26 @@ export async function resolveTeamId(classId, name, color) {
     'resolveTeamId'
   );
   return data?.id || _localId();
+}
+
+/**
+ * Elimina una squadra dalla tabella teams su Supabase.
+ * Fire-and-forget: non blocca l'UI.
+ * @param {string} classId
+ * @param {string} teamName
+ */
+export async function deleteTeam(classId, teamName) {
+  if (!_online || !classId) return;
+  const { error } = await supabase
+    .from('teams')
+    .delete()
+    .eq('classroom_id', classId)
+    .eq('name', teamName);
+  if (error) {
+    console.warn('[PixelProf] deleteTeam error:', error.message);
+  } else {
+    console.log('[PixelProf] deleteTeam OK:', teamName);
+  }
 }
 
 // ════════════════════════════════════════════════════════════════════
@@ -776,6 +816,8 @@ window.DB = {
   loadTeams,
   upsertPlayer:            (cid, p) => ensurePlayer(cid, p.name, p.color),
   upsertTeam:              (cid, t) => ensureTeam(cid, t.name, t.color),
+  deletePlayer:            (cid, name) => deletePlayer(cid, name),
+  deleteTeam:              (cid, name) => deleteTeam(cid, name),
   saveMatch,
   saveLbEntryCloud,
   loadLeaderboard,

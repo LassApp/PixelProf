@@ -1,7 +1,8 @@
 /* ==================================================
-   stats.js — PixelProf v5.0.0
+   stats.js — PixelProf v5.0.2
    Stats screen: renderStats, resetStats.
-   Storico sessioni: renderHistory, resetHistory.
+   Storico sessioni: renderHistory, resetHistory, exportHistoryCSV.
+   v5.0.2: resetStats include WP; exportHistoryCSV aggiunto.
    Depends on: game-engine-state.js (db global)
 ================================================== */
 
@@ -19,7 +20,7 @@ function renderStats(){
 
 function resetStats(){
   if(!confirm('Azzerare tutti i progressi?'))return;
-  db.stats={tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0}}};
+  db.stats={tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}}};
   save();
   renderStats();
 }
@@ -146,11 +147,21 @@ function renderHistory(){
     return;
   }
 
-  // Contatore sessioni visibili
+  // Contatore sessioni visibili + bottone export
   const counter=`<div style="font-size:10px;color:rgba(255,255,255,.3);font-family:'Share Tech Mono',monospace;
     margin-bottom:12px;display:flex;align-items:center;gap:6px">
     <span>${filtered.length} sessione${filtered.length!==1?'i':''} ${filterAct||filterMode?'filtrate':'totali'}</span>
     <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.08),transparent)"></span>
+    <button onclick="exportHistoryCSV()"
+      style="display:inline-flex;align-items:center;gap:5px;
+        padding:3px 10px;border-radius:8px;
+        background:rgba(0,255,200,.06);border:1px solid rgba(0,255,200,.2);
+        color:rgba(0,255,200,.7);font-size:10px;font-family:'Share Tech Mono',monospace;
+        cursor:pointer;transition:background .18s,border-color .18s;letter-spacing:.3px;flex-shrink:0"
+      onmouseover="this.style.background='rgba(0,255,200,.12)';this.style.borderColor='rgba(0,255,200,.4)'"
+      onmouseout="this.style.background='rgba(0,255,200,.06)';this.style.borderColor='rgba(0,255,200,.2)'">
+      <i class="ti ti-download" style="font-size:11px"></i> Esporta CSV
+    </button>
   </div>`;
 
   body.innerHTML=counter+filtered.map((s,i)=>_histBuildCard(s,i)).join('');
@@ -164,6 +175,88 @@ function resetHistory(){
 }
 
 /* ==================================================
+   EXPORT STORICO CSV — v5.0.2
+   Esporta le sessioni visibili (con filtri applicati)
+   come file .csv scaricabile. Pattern identico a
+   exportLbCSV() in renderer.js.
+   Colonne: Data, Attività, Modulo, Modalità,
+            Giocatore/Squadra, Punteggio, Posizione.
+   Una riga per partecipante → facile da pivottare
+   in Excel / Google Sheets.
+================================================== */
+function exportHistoryCSV(){
+  const filterAct =(shq('hist-filter-act') ?.value)||'';
+  const filterMode=(shq('hist-filter-mode')?.value)||'';
+
+  const sessions=[...(db.sessions||[])].reverse();
+  const filtered=sessions.filter(s=>{
+    if(filterAct  && s.game!==filterAct)  return false;
+    if(filterMode && s.mode!==filterMode) return false;
+    return true;
+  });
+
+  if(!filtered.length){
+    alert('Nessuna sessione da esportare.');
+    return;
+  }
+
+  const ACT_LABEL_MAP ={quiz:'Quiz',speed:'Speed Quiz',match:'Abbina',memory:'Memory',fill:'Completa la frase'};
+  const MOD_LABEL_MAP ={CE:'Computer Essentials',OE:'Online Essentials',MIX:'Mix moduli',WP:'Word Processing'};
+  const MODE_LABEL_MAP={ind:'Individuale',sq:'Squadre'};
+
+  const csvCell=v=>{
+    const s=String(v??'');
+    return(s.includes(',')||s.includes('"')||s.includes('\n'))?`"${s.replace(/"/g,'""')}"`:s;
+  };
+
+  const dateStr=new Date().toLocaleDateString('it-IT',{day:'2-digit',month:'2-digit',year:'numeric'});
+  const filterDesc=(filterAct||filterMode)
+    ?` — filtrato: ${filterAct?ACT_LABEL_MAP[filterAct]||filterAct:''}${filterAct&&filterMode?' · ':''}${filterMode?MODE_LABEL_MAP[filterMode]||filterMode:''}`
+    :'';
+
+  const lines=[
+    `# PixelProf — Storico sessioni${csvCell(filterDesc)}`,
+    `# Esportato il ${dateStr}`,
+    ``,
+    ['Data','Attività','Modulo','Modalità','Partecipante','Punteggio','Posizione'].map(csvCell).join(','),
+  ];
+
+  filtered.forEach(s=>{
+    const dataFmt=s.timestamp
+      ? new Date(s.timestamp).toLocaleString('it-IT',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})
+      : '—';
+    const act  = ACT_LABEL_MAP [s.game]||s.game||'—';
+    const mod  = MOD_LABEL_MAP [s.mod] ||s.mod ||'—';
+    const mode = MODE_LABEL_MAP[s.mode]||s.mode||'—';
+
+    // Ordina partecipanti per punteggio desc per calcolare posizione
+    const sorted=[...(s.teams||[])].sort((a,b)=>(b.score||0)-(a.score||0));
+    sorted.forEach((t,i)=>{
+      lines.push([
+        csvCell(dataFmt),
+        csvCell(act),
+        csvCell(mod),
+        csvCell(mode),
+        csvCell(t.name||'—'),
+        t.score!=null?t.score:'—',
+        i+1,
+      ].join(','));
+    });
+  });
+
+  const bom='\uFEFF';
+  const csv=bom+lines.join('\r\n');
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  const safeDate=dateStr.replace(/\//g,'-');
+  a.href=url;
+  a.download=`storico_sessioni_${safeDate}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(()=>{document.body.removeChild(a);URL.revokeObjectURL(url);},200);
+}
+
+/* ==================================================
    COURSES SYSTEM
 ================================================== */
-

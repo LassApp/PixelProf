@@ -1,5 +1,5 @@
 /* ==================================================
-   game-engine-state.js — PixelProf v5.0.1
+   game-engine-state.js — PixelProf v5.0.2
    Core engine: loader factory, course storage, database,
    session state (QuizSession/FillSession/PlayerSession),
    matchState, TimerManager, PauseUIRegistry, helpers,
@@ -13,6 +13,7 @@
    Fase 9 / v5.0.0: P1 (add-sq-btn rimosso), P2 (mc-SS id),
    N1 (WP nel wizard). _updateAddSqBtn mantenuta come no-op.
    v5.0.1: N2 (rinomina squadra salvata — inline chip editor).
+   v5.0.2: Delete giocatori/squadre salvati (inline × chip).
    This is the central module — loaded before all games.
 ================================================== */
 
@@ -1049,10 +1050,48 @@ function renderIndChips(){
     c.innerHTML='<span style="font-size:12px;color:rgba(255,255,255,.3)">Nessun giocatore salvato</span>';
     return;
   }
-  c.innerHTML=db.players.map(p=>`<button class="pchip${sIndPlayer===p?' active':''}" onclick="pickInd('${escAttr(p)}')">${escHtml(p)}</button>`).join('');
+  c.innerHTML=db.players.map((p,i)=>`
+    <div style="display:inline-flex;align-items:center;gap:0;margin:3px 4px 3px 0;position:relative">
+      <button class="pchip${sIndPlayer===p?' active':''}"
+        style="border-radius:20px 0 0 20px;margin:0;padding-right:6px"
+        onclick="pickInd('${escAttr(p)}')">${escHtml(p)}</button>
+      <button
+        title="Elimina giocatore"
+        onclick="deletePlayer(${i},event)"
+        style="
+          display:inline-flex;align-items:center;justify-content:center;
+          height:30px;width:24px;padding:0;
+          background:rgba(255,255,255,.06);
+          border:1px solid rgba(255,255,255,.12);border-left:none;
+          border-radius:0 20px 20px 0;
+          color:rgba(255,255,255,.35);font-size:11px;cursor:pointer;
+          transition:background .15s,color .15s;
+        "
+        onmouseover="this.style.background='rgba(255,60,80,.18)';this.style.color='#ff4d6d'"
+        onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.35)'"
+      ><i class="ti ti-x"></i></button>
+    </div>`).join('');
 }
 function pickInd(n){sIndPlayer=n;renderIndChips();checkCanStart();}
 function addInd(){const inp=sh('ind-inp');const n=inp.value.trim();if(!n)return;if(!db.players.includes(n))db.players.push(n);save();sIndPlayer=n;inp.value='';renderIndChips();checkCanStart();}
+
+/* ==================================================
+   DELETE PLAYER — v5.0.2
+   Rimuove un giocatore salvato dal db.players.
+   Se il giocatore era selezionato come sIndPlayer,
+   deseleziona e aggiorna checkCanStart.
+   Pattern identico al × delle squadre (splice inline).
+================================================== */
+function deletePlayer(idx, evt){
+  evt.stopPropagation();
+  const name=db.players[idx];
+  if(!name) return;
+  db.players.splice(idx,1);
+  save();
+  if(sIndPlayer===name){ sIndPlayer=null; }
+  renderIndChips();
+  checkCanStart();
+}
 function renderSqUI(){
   const s=sh('sq-saved');
   if(!db.teams.length){
@@ -1070,14 +1109,29 @@ function renderSqUI(){
             display:inline-flex;align-items:center;justify-content:center;
             height:30px;width:26px;padding:0;
             background:rgba(255,255,255,.06);
-            border:1px solid rgba(255,255,255,.12);border-left:none;
-            border-radius:0 20px 20px 0;
+            border:1px solid rgba(255,255,255,.12);border-left:none;border-right:none;
+            border-radius:0;
             color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;
             transition:background .15s,color .15s;
           "
           onmouseover="this.style.background='rgba(0,255,200,.12)';this.style.color='#00ffc8'"
           onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.4)'"
         ><i class="ti ti-pencil"></i></button>
+        <button
+          title="Elimina squadra"
+          onclick="deleteSavedTeam(${i},event)"
+          style="
+            display:inline-flex;align-items:center;justify-content:center;
+            height:30px;width:24px;padding:0;
+            background:rgba(255,255,255,.06);
+            border:1px solid rgba(255,255,255,.12);border-left:none;
+            border-radius:0 20px 20px 0;
+            color:rgba(255,255,255,.35);font-size:11px;cursor:pointer;
+            transition:background .15s,color .15s;
+          "
+          onmouseover="this.style.background='rgba(255,60,80,.18)';this.style.color='#ff4d6d'"
+          onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.35)'"
+        ><i class="ti ti-x"></i></button>
       </div>`).join('');
   }
   sTeams=[{name:'',color:COLORS[0]},{name:'',color:COLORS[1]}];
@@ -1089,6 +1143,29 @@ function addSavedTeam(name,color){
   renderSqRows();
   _updateAddSqBtn();
   checkSqValid();
+}
+
+/* ==================================================
+   DELETE SAVED TEAM — v5.0.2
+   Rimuove una squadra salvata da db.teams.
+   Se la squadra era in sTeams (sessione corrente),
+   la rimuove anche da lì e aggiorna le righe.
+   Stesso pattern del × inline delle squadre in fila.
+================================================== */
+function deleteSavedTeam(idx, evt){
+  evt.stopPropagation();
+  const team=db.teams[idx];
+  if(!team) return;
+  const name=team.name;
+  // Rimuove da db.teams
+  db.teams.splice(idx,1);
+  save();
+  // Rimuove anche da sTeams se presente nella sessione corrente
+  const si=sTeams.findIndex(t=>t.name===name);
+  if(si>=0) sTeams.splice(si,1);
+  // Re-render chip + righe
+  renderSqUI();
+  checkCanStart();
 }
 
 /* ==================================================

@@ -1,5 +1,5 @@
 /* ==================================================
-   game-engine-state.js — PixelProf v5.0.2
+   game-engine-state.js — PixelProf v5.0.3
    Core engine: loader factory, course storage, database,
    session state (QuizSession/FillSession/PlayerSession),
    matchState, TimerManager, PauseUIRegistry, helpers,
@@ -1076,21 +1076,133 @@ function pickInd(n){sIndPlayer=n;renderIndChips();checkCanStart();}
 function addInd(){const inp=sh('ind-inp');const n=inp.value.trim();if(!n)return;if(!db.players.includes(n))db.players.push(n);save();sIndPlayer=n;inp.value='';renderIndChips();checkCanStart();}
 
 /* ==================================================
-   DELETE PLAYER — v5.0.2
-   Rimuove un giocatore salvato dal db.players.
-   Se il giocatore era selezionato come sIndPlayer,
-   deseleziona e aggiorna checkCanStart.
-   Pattern identico al × delle squadre (splice inline).
+   _showDeleteConfirm — v5.0.3
+   Mini-popover di conferma inline sopra il chip ×.
+   Appare posizionato sopra il trigger, scompare
+   su Escape / click fuori / conferma / annulla.
+   Usato da deletePlayer() e deleteSavedTeam().
+
+   @param {HTMLElement} triggerEl  — il bottone × cliccato
+   @param {string}      label      — nome elemento (es. Rossi)
+   @param {string}      tipo       — giocatore | squadra
+   @param {function}    onConfirm  — callback eseguita dopo conferma
+================================================== */
+function _showDeleteConfirm(triggerEl, label, tipo, onConfirm){
+  // Rimuove eventuali popover già aperti
+  document.querySelectorAll('.pp-del-confirm').forEach(el=>el.remove());
+
+  const pop=document.createElement('div');
+  pop.className='pp-del-confirm';
+  pop.setAttribute('role','dialog');
+  pop.setAttribute('aria-modal','true');
+
+  // Stile del popover
+  Object.assign(pop.style,{
+    position:'fixed',
+    zIndex:'9999',
+    background:'rgba(12,16,28,.97)',
+    border:'1px solid rgba(255,60,80,.35)',
+    borderRadius:'12px',
+    padding:'12px 14px',
+    boxShadow:'0 8px 32px rgba(0,0,0,.6), 0 0 0 1px rgba(255,60,80,.15)',
+    minWidth:'200px',
+    maxWidth:'260px',
+    backdropFilter:'blur(8px)',
+  });
+
+  pop.innerHTML=`
+    <div style="font-size:11px;font-weight:700;color:rgba(255,60,80,.9);
+      text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;
+      font-family:'Share Tech Mono',monospace">
+      <i class="ti ti-alert-triangle" style="font-size:12px"></i> Elimina ${escHtml(tipo)}
+    </div>
+    <div style="font-size:12px;color:rgba(255,255,255,.65);margin-bottom:12px;line-height:1.45">
+      Eliminare <strong style="color:#fff">${escHtml(label)}</strong>?<br>
+      <span style="font-size:10px;color:rgba(255,255,255,.35);font-family:'Share Tech Mono',monospace">
+        L'azione rimuoverà il ${escHtml(tipo)} dall'aula.
+      </span>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button id="pp-del-cancel" style="
+        flex:1;padding:6px 10px;border-radius:8px;
+        background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+        color:rgba(255,255,255,.6);font-size:11px;cursor:pointer;
+        font-family:'Space Grotesk',sans-serif;font-weight:600;
+        transition:background .15s,color .15s;
+      "
+        onmouseover="this.style.background='rgba(255,255,255,.12)';this.style.color='#fff'"
+        onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.6)'"
+      >Annulla</button>
+      <button id="pp-del-confirm-btn" style="
+        flex:1;padding:6px 10px;border-radius:8px;
+        background:rgba(255,60,80,.15);border:1px solid rgba(255,60,80,.4);
+        color:#ff4d6d;font-size:11px;cursor:pointer;
+        font-family:'Space Grotesk',sans-serif;font-weight:700;
+        transition:background .15s,border-color .15s;
+      "
+        onmouseover="this.style.background='rgba(255,60,80,.28)';this.style.borderColor='rgba(255,60,80,.7)'"
+        onmouseout="this.style.background='rgba(255,60,80,.15)';this.style.borderColor='rgba(255,60,80,.4)'"
+      ><i class="ti ti-trash" style="font-size:11px"></i> Elimina</button>
+    </div>`;
+
+  document.body.appendChild(pop);
+
+  // Posizionamento: sopra il trigger, centrato orizzontalmente
+  const rect=triggerEl.getBoundingClientRect();
+  const pw=pop.offsetWidth||220;
+  let left=rect.left+rect.width/2-pw/2;
+  left=Math.max(8,Math.min(left,window.innerWidth-pw-8));
+  const top=rect.top-pop.offsetHeight-8;
+  pop.style.left=left+'px';
+  pop.style.top=(top<8?rect.bottom+8:top)+'px';
+
+  // Handlers
+  const _close=()=>{
+    pop.remove();
+    document.removeEventListener('keydown',_onKey);
+    document.removeEventListener('mousedown',_onOutside);
+  };
+  const _onKey=(e)=>{ if(e.key==='Escape'){ e.preventDefault(); _close(); } };
+  const _onOutside=(e)=>{ if(!pop.contains(e.target)&&e.target!==triggerEl) _close(); };
+
+  pop.querySelector('#pp-del-cancel').addEventListener('click',()=>_close());
+  pop.querySelector('#pp-del-confirm-btn').addEventListener('click',()=>{
+    _close();
+    onConfirm();
+  });
+
+  // Chiusura automatica su Escape o click fuori
+  setTimeout(()=>{
+    document.addEventListener('keydown',_onKey);
+    document.addEventListener('mousedown',_onOutside);
+  },10);
+
+  // Focus sul bottone Annulla per accessibilità
+  setTimeout(()=>pop.querySelector('#pp-del-cancel')?.focus(),30);
+}
+
+/* ==================================================
+   DELETE PLAYER — v5.0.3
+   Rimuove un giocatore salvato da db.players.
+   Mostra un mini-popover di conferma inline sopra il chip.
+   Dopo conferma: splice locale + save + cloud fire-and-forget.
 ================================================== */
 function deletePlayer(idx, evt){
   evt.stopPropagation();
   const name=db.players[idx];
   if(!name) return;
-  db.players.splice(idx,1);
-  save();
-  if(sIndPlayer===name){ sIndPlayer=null; }
-  renderIndChips();
-  checkCanStart();
+  _showDeleteConfirm(evt.currentTarget, name, 'giocatore', ()=>{
+    db.players.splice(idx,1);
+    save();
+    if(sIndPlayer===name){ sIndPlayer=null; }
+    // Cloud: fire-and-forget
+    if(window.DB && activeCourseId){
+      window.DB.deletePlayer(activeCourseId, name)
+        .catch(e=>console.warn('[PixelProf] deletePlayer cloud err:', e));
+    }
+    renderIndChips();
+    checkCanStart();
+  });
 }
 function renderSqUI(){
   const s=sh('sq-saved');
@@ -1146,26 +1258,31 @@ function addSavedTeam(name,color){
 }
 
 /* ==================================================
-   DELETE SAVED TEAM — v5.0.2
+   DELETE SAVED TEAM — v5.0.3
    Rimuove una squadra salvata da db.teams.
-   Se la squadra era in sTeams (sessione corrente),
-   la rimuove anche da lì e aggiorna le righe.
-   Stesso pattern del × inline delle squadre in fila.
+   Mostra un mini-popover di conferma inline sopra il chip.
+   Dopo conferma: splice locale + save + cloud fire-and-forget.
 ================================================== */
 function deleteSavedTeam(idx, evt){
   evt.stopPropagation();
   const team=db.teams[idx];
   if(!team) return;
   const name=team.name;
-  // Rimuove da db.teams
-  db.teams.splice(idx,1);
-  save();
-  // Rimuove anche da sTeams se presente nella sessione corrente
-  const si=sTeams.findIndex(t=>t.name===name);
-  if(si>=0) sTeams.splice(si,1);
-  // Re-render chip + righe
-  renderSqUI();
-  checkCanStart();
+  _showDeleteConfirm(evt.currentTarget, name, 'squadra', ()=>{
+    db.teams.splice(idx,1);
+    save();
+    // Cloud: fire-and-forget
+    if(window.DB && activeCourseId){
+      window.DB.deleteTeam(activeCourseId, name)
+        .catch(e=>console.warn('[PixelProf] deleteTeam cloud err:', e));
+    }
+    // Rimuove anche da sTeams se presente nella sessione corrente
+    const si=sTeams.findIndex(t=>t.name===name);
+    if(si>=0) sTeams.splice(si,1);
+    // Re-render chip + righe
+    renderSqUI();
+    checkCanStart();
+  });
 }
 
 /* ==================================================

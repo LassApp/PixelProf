@@ -126,16 +126,24 @@ function _updateMatchComboUI(){
   }
 }
 
-/* -- Pre-compute the color for the NEXT match immediately after a pair is found.
-   This ensures the color is ready before the player starts the new connection,
-   eliminating the one-click delay seen in the previous on-demand assignment. -- */
-function _pickNextMatchColor(){
+/* -- Pre-compute the color for the NEXT match and immediately write it as
+   --pair-color on every unmatched chip. This makes :hover and .sel pick up
+   the correct color without any click delay, because the CSS property is
+   already set on the DOM element before the user interacts with it.
+   Called once at game start and once after every correct match. -- */
+function _applyNextColor(){
   const s=mState;
+  // 1. Calculate next available color
   const usedColors=Object.values(s.pairColorMap);
   const availColors=PAIR_COLORS.filter(c=>!usedColors.includes(c));
   s.nextPairColor = availColors.length>0
     ? availColors[0]
     : PAIR_COLORS[s.matched.size % PAIR_COLORS.length];
+  // 2. Write it immediately to every unmatched chip in the DOM
+  //    so that CSS :hover and .sel rules read it without waiting for a click.
+  document.querySelectorAll('.match-item:not(.matched)').forEach(el=>{
+    el.style.setProperty('--pair-color', s.nextPairColor);
+  });
 }
 
 function _matchTimeUp(){
@@ -247,6 +255,10 @@ async function startMatch(cont,mod){
 
   // Start countdown
   _startMatchInterval();
+
+  // Apply initial color to all chips so :hover and .sel work immediately
+  // Must run after innerHTML is set so the DOM elements exist
+  _applyNextColor();
 }
 
 /* -- Abbina pause/resume — v4.0.8 I1 fix
@@ -327,9 +339,9 @@ function mSel(type,val){
 
     s.matched.add(s.selT);
 
-    // Pre-compute the color for the NEXT match immediately —
-    // before the player can click again, so no delay on the next selection.
-    _pickNextMatchColor();
+    // Compute next color AND write --pair-color on all remaining unmatched chips
+    // immediately — so :hover and .sel on the next interaction already show it.
+    _applyNextColor();
 
     // Combo
     s.combo=Math.min((s.combo||1)+1,5);

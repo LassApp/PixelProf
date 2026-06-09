@@ -1,5 +1,5 @@
 /* ==================================================
-   game-match.js — PixelProf v4.0.9
+   game-match.js — PixelProf v5.0.4
    Abbina (match) game: timer, combo scoring, pair logic.
    Fase 8: PauseUIRegistry handler registrato (M2).
    Depends on: game-engine-state.js, scoring.js
@@ -126,6 +126,18 @@ function _updateMatchComboUI(){
   }
 }
 
+/* -- Pre-compute the color for the NEXT match immediately after a pair is found.
+   This ensures the color is ready before the player starts the new connection,
+   eliminating the one-click delay seen in the previous on-demand assignment. -- */
+function _pickNextMatchColor(){
+  const s=mState;
+  const usedColors=Object.values(s.pairColorMap);
+  const availColors=PAIR_COLORS.filter(c=>!usedColors.includes(c));
+  s.nextPairColor = availColors.length>0
+    ? availColors[0]
+    : PAIR_COLORS[s.matched.size % PAIR_COLORS.length];
+}
+
 function _matchTimeUp(){
   // Tempo scaduto: concludi con punteggio attuale
   if(!gsIs(GS.PLAYING)&&!gsIs(GS.PAUSED))return;
@@ -185,14 +197,12 @@ async function startMatch(cont,mod){
     combo:1,
     score:0,
     pairColorMap:{},     // term → color string
+    nextPairColor: PAIR_COLORS[0], // pre-computed color ready for the next match
   };
 
   // Init timer
   mTimeLeft=60;
   mPaused=false;
-
-  // Build paircolor map (assigned at match time, not now)
-  // so colors appear only when a pair is matched
 
   const hdr=buildGameHeader(
     `<div class="match-hdr">
@@ -303,12 +313,8 @@ function mSel(type,val){
 
   if(ok){
     // -- CORRECT MATCH --
-    // Assign pair color (pick next unused color)
-    const usedColors=Object.values(s.pairColorMap);
-    const availColors=PAIR_COLORS.filter(c=>!usedColors.includes(c));
-    const pairColor=availColors.length>0
-      ? availColors[0]
-      : PAIR_COLORS[s.matched.size % PAIR_COLORS.length];
+    // Use the pre-computed color that was ready before this click
+    const pairColor = s.nextPairColor || PAIR_COLORS[s.matched.size % PAIR_COLORS.length];
     s.pairColorMap[s.selT]=pairColor;
 
     // Apply color + matched class to both elements
@@ -320,6 +326,10 @@ function mSel(type,val){
     });
 
     s.matched.add(s.selT);
+
+    // Pre-compute the color for the NEXT match immediately —
+    // before the player can click again, so no delay on the next selection.
+    _pickNextMatchColor();
 
     // Combo
     s.combo=Math.min((s.combo||1)+1,5);

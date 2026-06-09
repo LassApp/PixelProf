@@ -16,6 +16,7 @@
    v5.0.2: Delete giocatori/squadre salvati (inline × chip).
    v5.0.4: _showDeleteConfirm → modale centrato + backdrop + lock UI.
             confirmRenameSavedTeam → sync Supabase immediato.
+            startRenamePlayer / confirmRenamePlayer → rinomina inline giocatore + sync Supabase.
    This is the central module — loaded before all games.
 ================================================== */
 
@@ -1053,10 +1054,25 @@ function renderIndChips(){
     return;
   }
   c.innerHTML=db.players.map((p,i)=>`
-    <div style="display:inline-flex;align-items:center;gap:0;margin:3px 4px 3px 0;position:relative">
-      <button class="pchip${sIndPlayer===p?' active':''}"
+    <div class="pchip-wrap" style="display:inline-flex;align-items:center;gap:0;margin:3px 4px 3px 0;position:relative">
+      <button class="pchip${sIndPlayer===p?' active':''}" id="indchip-${i}"
         style="border-radius:20px 0 0 20px;margin:0;padding-right:6px"
         onclick="pickInd('${escAttr(p)}')">${escHtml(p)}</button>
+      <button
+        title="Rinomina giocatore"
+        onclick="startRenamePlayer(${i},event)"
+        style="
+          display:inline-flex;align-items:center;justify-content:center;
+          height:30px;width:26px;padding:0;
+          background:rgba(255,255,255,.06);
+          border:1px solid rgba(255,255,255,.12);border-left:none;border-right:none;
+          border-radius:0;
+          color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;
+          transition:background .15s,color .15s;
+        "
+        onmouseover="this.style.background='rgba(0,255,200,.12)';this.style.color='#00ffc8'"
+        onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.4)'"
+      ><i class="ti ti-pencil"></i></button>
       <button
         title="Elimina giocatore"
         onclick="deletePlayer(${i},event)"
@@ -1076,6 +1092,89 @@ function renderIndChips(){
 }
 function pickInd(n){sIndPlayer=n;renderIndChips();checkCanStart();}
 function addInd(){const inp=sh('ind-inp');const n=inp.value.trim();if(!n)return;if(!db.players.includes(n))db.players.push(n);save();sIndPlayer=n;inp.value='';renderIndChips();checkCanStart();}
+
+/* ==================================================
+   RENAME PLAYER — inline chip editor (speculare a N2 squadre)
+   Sostituisce il chip con un input inline; ✓ salva, ✗ annulla.
+   Aggiorna db.players + sIndPlayer se era selezionato.
+   Sync Supabase: deletePlayer(old) + ensurePlayer(new).
+================================================== */
+function startRenamePlayer(idx, evt){
+  evt.stopPropagation();
+  const oldName=db.players[idx];
+  if(!oldName) return;
+  const wrap=document.querySelector(`#indchip-${idx}`)?.parentElement;
+  if(!wrap) return;
+
+  wrap.innerHTML=`
+    <div style="display:inline-flex;align-items:center;gap:4px;padding:2px 4px;
+      border:1px solid rgba(0,255,200,.4);border-radius:20px;
+      background:rgba(0,255,200,.07);box-shadow:0 0 8px rgba(0,255,200,.12)">
+      <input id="ind-rename-inp-${idx}"
+        value="${escAttr(oldName)}"
+        style="
+          background:transparent;border:none;outline:none;
+          color:#fff;font-size:12px;font-family:'Space Grotesk',sans-serif;
+          font-weight:600;width:90px;padding:2px 4px;
+        "
+        onkeydown="if(event.key==='Enter'){event.preventDefault();confirmRenamePlayer(${idx},'${escAttr(oldName)}');}
+                   if(event.key==='Escape'){event.preventDefault();renderIndChips();}"
+        onfocus="this.select()"
+      />
+      <button onclick="confirmRenamePlayer(${idx},'${escAttr(oldName)}')" title="Salva"
+        style="background:rgba(0,255,200,.15);border:1px solid rgba(0,255,200,.3);border-radius:50%;
+               width:22px;height:22px;display:flex;align-items:center;justify-content:center;
+               color:#00ffc8;font-size:11px;cursor:pointer;flex-shrink:0;transition:background .15s"
+        onmouseover="this.style.background='rgba(0,255,200,.3)'"
+        onmouseout="this.style.background='rgba(0,255,200,.15)'"
+      ><i class="ti ti-check"></i></button>
+      <button onclick="renderIndChips()" title="Annulla"
+        style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:50%;
+               width:22px;height:22px;display:flex;align-items:center;justify-content:center;
+               color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;flex-shrink:0;transition:background .15s;margin-right:4px"
+        onmouseover="this.style.background='rgba(255,60,80,.2)';this.style.color='#ff4d6d'"
+        onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.4)'"
+      ><i class="ti ti-x"></i></button>
+    </div>`;
+  setTimeout(()=>document.getElementById(`ind-rename-inp-${idx}`)?.focus(), 30);
+}
+
+function confirmRenamePlayer(idx, oldName){
+  const inp=document.getElementById(`ind-rename-inp-${idx}`);
+  if(!inp) return;
+  const newName=inp.value.trim();
+  if(!newName){ renderIndChips(); return; }
+  if(newName===oldName){ renderIndChips(); return; }
+  // Controlla duplicati in db.players
+  if(db.players.find((p,i)=>i!==idx && p.trim().toLowerCase()===newName.toLowerCase())){
+    inp.style.borderBottom='1px solid #ff4d6d';
+    inp.style.color='#ff4d6d';
+    inp.title='Nome già usato';
+    inp.value='';
+    inp.placeholder='Nome già usato!';
+    setTimeout(()=>renderIndChips(), 1600);
+    return;
+  }
+  // Aggiorna db.players
+  db.players[idx]=newName;
+  save();
+  // Aggiorna sIndPlayer se era il giocatore selezionato
+  if(sIndPlayer===oldName){ sIndPlayer=newName; }
+  // ── Sync Supabase immediato (fire-and-forget) ──
+  if(window.DB && activeCourseId){
+    (async()=>{
+      try{
+        await window.DB.deletePlayer(activeCourseId, oldName);
+        await window.DB.upsertPlayer(activeCourseId, {name:newName, color:'#00ffc8'});
+        console.log('[PixelProf] renamePlayer cloud OK:', oldName, '→', newName);
+      }catch(e){
+        console.warn('[PixelProf] renamePlayer cloud err:', e);
+      }
+    })();
+  }
+  renderIndChips();
+  checkCanStart();
+}
 
 /* ==================================================
    _showDeleteConfirm — v5.0.4

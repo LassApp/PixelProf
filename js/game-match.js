@@ -126,24 +126,72 @@ function _updateMatchComboUI(){
   }
 }
 
-/* -- Pre-compute the color for the NEXT match and immediately write it as
-   --pair-color on every unmatched chip. This makes :hover and .sel pick up
-   the correct color without any click delay, because the CSS property is
-   already set on the DOM element before the user interacts with it.
-   Called once at game start and once after every correct match. -- */
+/* -- _applyNextColor: calcola nextPairColor e lo propaga su tutti i chip
+   non-matched in 3 modi:
+   1. --pair-color  (per .matched che lo usa già)
+   2. outline/border inline su :hover via mouseenter/mouseleave listeners
+   3. border-color/background inline quando .sel viene aggiunto
+   Chiamata all'avvio e dopo ogni match corretto. -- */
 function _applyNextColor(){
   const s=mState;
-  // 1. Calculate next available color
   const usedColors=Object.values(s.pairColorMap);
   const availColors=PAIR_COLORS.filter(c=>!usedColors.includes(c));
   s.nextPairColor = availColors.length>0
     ? availColors[0]
     : PAIR_COLORS[s.matched.size % PAIR_COLORS.length];
-  // 2. Write it immediately to every unmatched chip in the DOM
-  //    so that CSS :hover and .sel rules read it without waiting for a click.
+
+  const color = s.nextPairColor;
+  const colorDim = color + '22'; // ~13% alpha hex approximation via rgba fallback
+
   document.querySelectorAll('.match-item:not(.matched)').forEach(el=>{
-    el.style.setProperty('--pair-color', s.nextPairColor);
+    // Rimuove vecchi listener prima di aggiungerne di nuovi
+    if(el._matchHoverIn)  el.removeEventListener('mouseenter', el._matchHoverIn);
+    if(el._matchHoverOut) el.removeEventListener('mouseleave', el._matchHoverOut);
+
+    // Imposta --pair-color per .matched futuro
+    el.style.setProperty('--pair-color', color);
+
+    // Hover: applica colore dinamico inline (sovrascrive CSS .match-item:hover)
+    el._matchHoverIn = function(){
+      if(this.classList.contains('matched')||this.classList.contains('locked')) return;
+      this.style.borderColor = color;
+      this.style.color = color;
+      this.style.background = `rgba(${_hexToRgb(color)},0.08)`;
+    };
+    el._matchHoverOut = function(){
+      if(this.classList.contains('sel')) return; // mantieni se selezionato
+      this.style.borderColor = '';
+      this.style.color = '';
+      this.style.background = '';
+    };
+    el.addEventListener('mouseenter', el._matchHoverIn);
+    el.addEventListener('mouseleave', el._matchHoverOut);
   });
+}
+
+/* Converte hex (#rrggbb) in "r,g,b" per rgba() */
+function _hexToRgb(hex){
+  const r=parseInt(hex.slice(1,3),16);
+  const g=parseInt(hex.slice(3,5),16);
+  const b=parseInt(hex.slice(5,7),16);
+  return `${r},${g},${b}`;
+}
+
+/* Applica il colore nextPairColor inline su un chip appena selezionato (.sel) */
+function _applySelColor(el){
+  if(!el||!mState) return;
+  const color = mState.nextPairColor || PAIR_COLORS[0];
+  el.style.borderColor = color;
+  el.style.color = color;
+  el.style.background = `rgba(${_hexToRgb(color)},0.12)`;
+}
+
+/* Rimuove stili inline da un chip che perde .sel */
+function _clearSelColor(el){
+  if(!el) return;
+  el.style.borderColor = '';
+  el.style.color = '';
+  el.style.background = '';
 }
 
 function _matchTimeUp(){
@@ -298,19 +346,19 @@ function mSel(type,val){
 
   if(type==='t'){
     document.querySelectorAll('[id^=mt_]').forEach(e=>{
-      if(!e.classList.contains('matched'))e.classList.remove('sel');
+      if(!e.classList.contains('matched')){ e.classList.remove('sel'); _clearSelColor(e); }
     });
     const el=document.getElementById('mt_'+val.replace(/\W/g,'_'));
     if(el&&!el.classList.contains('matched')&&!el.classList.contains('locked')){
-      el.classList.add('sel');s.selT=val;
+      el.classList.add('sel'); _applySelColor(el); s.selT=val;
     }
   }else{
     document.querySelectorAll('[id^=md_]').forEach(e=>{
-      if(!e.classList.contains('matched'))e.classList.remove('sel');
+      if(!e.classList.contains('matched')){ e.classList.remove('sel'); _clearSelColor(e); }
     });
     const el=document.getElementById('md_'+val);
     if(el&&!el.classList.contains('matched')&&!el.classList.contains('locked')){
-      el.classList.add('sel');s.selD=val;
+      el.classList.add('sel'); _applySelColor(el); s.selD=val;
     }
   }
 
@@ -333,6 +381,7 @@ function mSel(type,val){
     [te,de].forEach(el=>{
       if(!el)return;
       el.classList.remove('sel');
+      _clearSelColor(el); // rimuove stili inline .sel prima di applicare .matched
       el.classList.add('matched');
       el.style.setProperty('--pair-color',pairColor);
     });
@@ -372,7 +421,7 @@ function mSel(type,val){
     [te,de].forEach(el=>{
       if(!el)return;
       el.classList.add('flash');
-      setTimeout(()=>el.classList.remove('flash','sel'),600);
+      setTimeout(()=>{ el.classList.remove('flash','sel'); _clearSelColor(el); },600);
     });
     if(fb)fb.innerHTML=`<span style="color:#ff3c50">✗ Non corrisponde — −${penalty} pt</span>`;
     _updateMatchScoreUI();

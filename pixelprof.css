@@ -664,12 +664,12 @@ body{
 }
 .match-item::after{
   content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
-  background:var(--accent);transform:scaleY(0);transition:transform var(--transition-fast);
+  background:var(--pair-color,var(--accent));transform:scaleY(0);transition:transform var(--transition-fast);
 }
-.match-item:hover:not(.matched):not(.locked){border-color:rgba(0,255,200,.3);color:#fff;background:var(--surface-2);}
+.match-item:hover:not(.matched):not(.locked){border-color:var(--pair-color,var(--accent));color:#fff;background:var(--surface-2);}
 .match-item:hover:not(.matched):not(.locked)::after{transform:scaleY(1);}
-.match-item.sel{border-color:var(--accent);background:var(--accent-dim);color:var(--accent);}
-.match-item.sel::after{background:var(--accent);transform:scaleY(1);}
+.match-item.sel{border-color:var(--pair-color,var(--accent));background:color-mix(in srgb,var(--pair-color,var(--accent)) 12%,transparent);color:var(--pair-color,var(--accent));}
+.match-item.sel::after{background:var(--pair-color,var(--accent));transform:scaleY(1);}
 /* v2.1.6: matched items use per-pair color via --pair-color CSS var */
 .match-item.matched{
   cursor:default;
@@ -1804,5 +1804,3 @@ body{
 #setpwd-new:focus ~ #setpwd-strength-bar { opacity: 1; }
 
 @keyframes spin{to{transform:rotate(360deg);}}
-
-

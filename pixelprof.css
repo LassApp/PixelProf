@@ -1818,3 +1818,808 @@ body{
 #setpwd-new:focus ~ #setpwd-strength-bar { opacity: 1; }
 
 @keyframes spin{to{transform:rotate(360deg);}}
+
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v6.0.0 — STREAMING PLATFORM LAYER
+   Design paradigm: Prime Video / Netflix / Apple TV+ aesthetic
+   ─────────────────────────────────────────────────────────────────
+   VINCOLO: Solo CSS. Zero JS. Zero HTML strutturale.
+   Tutte le classi originali rimangono funzionanti.
+   Questo layer sovrascrive selettivamente il visivo.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────
+   NUOVI TOKEN — Design system streaming
+   ───────────────────────────────────────────────────────────────── */
+:root {
+  /* Profondità cinematica */
+  --film-dark:         #04060f;
+  --film-surface:      #080c18;
+  --film-raised:       #0d1224;
+  --film-glass:        rgba(12,16,32,.82);
+  --film-glass-border: rgba(255,255,255,.08);
+
+  /* Glow per categoria */
+  --glow-ce:   rgba(30,144,255,.4);
+  --glow-oe:   rgba(124,106,255,.4);
+  --glow-mix:  rgba(0,255,200,.35);
+  --glow-wp:   rgba(40,160,80,.38);
+
+  /* Transizioni premium */
+  --ease-cinema: cubic-bezier(.25,.46,.45,.94);
+  --ease-spring: cubic-bezier(.34,1.56,.64,1);
+  --ease-soft:   cubic-bezier(.4,0,.2,1);
+
+  /* Hover system timing */
+  --t-hover:  .22s;
+  --t-focus:  .32s;
+  --t-shrink: .28s;
+
+  /* Tile dimensions */
+  --tile-h: 220px;
+  --tile-h-focus: 240px;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   APP CONTAINER — breathing room cinematico
+   ───────────────────────────────────────────────────────────────── */
+.app {
+  max-width: 720px;
+  padding: 0 .75rem .75rem;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   TOPBAR — "Cinematic Black Glass" header
+   ───────────────────────────────────────────────────────────────── */
+.topbar {
+  background: rgba(4,6,15,.97) !important;
+  backdrop-filter: blur(32px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(32px) saturate(180%) !important;
+  border-bottom: 1px solid rgba(255,255,255,.06) !important;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.04),
+    0 4px 40px rgba(0,0,0,.6),
+    0 0 80px rgba(0,0,0,.3) !important;
+  padding: .65rem 1.1rem !important;
+}
+
+/* Logo — più "brand mark", meno "tool label" */
+.logo-wrap {
+  padding: 5px 10px !important;
+  border-radius: 10px !important;
+  border-color: transparent !important;
+  transition:
+    background var(--t-hover) var(--ease-soft),
+    border-color var(--t-hover) var(--ease-soft),
+    box-shadow var(--t-hover) var(--ease-soft) !important;
+}
+.logo-wrap:hover {
+  background: rgba(0,255,200,.05) !important;
+  border-color: rgba(0,255,200,.12) !important;
+  box-shadow: 0 0 20px rgba(0,255,200,.06) !important;
+}
+.logo-main {
+  font-size: 16px !important;
+  letter-spacing: 1.5px !important;
+  text-shadow:
+    0 0 20px rgba(0,255,200,.5),
+    0 0 60px rgba(0,255,200,.15) !important;
+}
+.logo-sub {
+  font-size: 7px !important;
+  letter-spacing: 3px !important;
+  color: rgba(255,255,255,.18) !important;
+}
+
+/* Nav buttons — minimal, "platform nav" style */
+.tb-btn {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  letter-spacing: .6px !important;
+  padding: 5px 12px !important;
+  border-radius: 6px !important;
+  border-color: transparent !important;
+  background: transparent !important;
+  color: rgba(255,255,255,.5) !important;
+  transition:
+    color var(--t-hover) var(--ease-soft),
+    background var(--t-hover) var(--ease-soft) !important;
+}
+.tb-btn::after {
+  height: 1.5px !important;
+  bottom: -1px !important;
+  background: var(--accent) !important;
+  opacity: .7 !important;
+}
+.tb-btn:hover {
+  background: rgba(255,255,255,.06) !important;
+  color: rgba(255,255,255,.9) !important;
+  border-color: transparent !important;
+}
+.tb-btn.active {
+  background: rgba(255,255,255,.07) !important;
+  color: #fff !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   HOME HERO — "Platform editorial header"
+   ───────────────────────────────────────────────────────────────── */
+.home-hero {
+  padding: 2.5rem 0 1.25rem !important;
+  text-align: left !important;
+  position: relative;
+}
+.home-hero::before {
+  /* Dramatic spotlight radial — spostato in alto a sinistra */
+  background: radial-gradient(
+    ellipse 60% 40% at 0% 50%,
+    rgba(0,255,200,.07) 0%,
+    transparent 70%
+  ) !important;
+  animation: none !important;
+  width: 100% !important;
+  height: 100% !important;
+  top: 0; left: 0;
+  transform: none !important;
+}
+.home-hero-eyebrow {
+  font-size: 9px !important;
+  color: rgba(0,255,200,.4) !important;
+  letter-spacing: 4px !important;
+  margin-bottom: 8px !important;
+  text-align: left !important;
+}
+.home-hero-title {
+  font-size: 28px !important;
+  text-align: left !important;
+  margin-bottom: 6px !important;
+  text-shadow: 0 0 60px rgba(0,255,200,.08) !important;
+}
+.home-hero-sub {
+  font-size: 12px !important;
+  color: rgba(255,255,255,.3) !important;
+  max-width: 420px !important;
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   ROW LABEL — "Netflix row title"
+   ───────────────────────────────────────────────────────────────── */
+.home-divider {
+  margin: 1.75rem 0 .75rem !important;
+  gap: 10px !important;
+}
+.home-divider::before,
+.home-divider::after {
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.06), transparent) !important;
+}
+.home-divider span {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  color: rgba(255,255,255,.55) !important;
+  letter-spacing: 1.5px !important;
+  text-transform: uppercase !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   MODULE GRID — Streaming row layout
+   
+   Layout:
+   • Desktop: griglia 2 colonne con hover cinematico
+   • Hover system: card focused → zoom 1.08
+                   siblings → shrink + shift laterale
+   • La .full-card MIX rimane full-width sopra
+   ───────────────────────────────────────────────────────────────── */
+.mod-grid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 10px !important;
+  margin-bottom: 10px !important;
+  /* Permette alle card di "uscire" leggermente dai bordi su hover */
+  overflow: visible !important;
+}
+
+/* ── Contenitore streaming row (wrapper per hover group effect) ── */
+/* Usiamo il selector :has() per il "focus cinematico" tra siblings */
+/* Fallback per browser senza :has(): hover normale */
+
+.mod-grid:has(.mod-card:hover) .mod-card:not(:hover):not(.full-card) {
+  transform: scale(.96) !important;
+  filter: brightness(.65) saturate(.7) !important;
+  transition:
+    transform var(--t-shrink) var(--ease-cinema),
+    filter var(--t-shrink) var(--ease-cinema) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   MOD-CARD — "Streaming content tile"
+   ───────────────────────────────────────────────────────────────── */
+.mod-card {
+  position: relative !important;
+  border-radius: 14px !important;
+  min-height: var(--tile-h) !important;
+  overflow: hidden !important;
+  cursor: pointer !important;
+  /* Transizione fluida premium */
+  transition:
+    transform var(--t-hover) var(--ease-cinema),
+    box-shadow var(--t-hover) var(--ease-cinema),
+    filter var(--t-hover) var(--ease-cinema),
+    border-color var(--t-hover) var(--ease-soft) !important;
+  border: 1px solid rgba(255,255,255,.07) !important;
+  box-shadow:
+    0 2px 8px rgba(0,0,0,.4),
+    0 0 0 1px rgba(255,255,255,.03) inset !important;
+  /* Layout: contenuto in basso come un poster cinematico */
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-end !important;
+  padding: 0 !important;
+}
+
+/* Overlay gradiente cinematico — coprente in basso, trasparente in alto */
+.mod-card::after {
+  content: '' !important;
+  position: absolute !important;
+  inset: 0 !important;
+  border-radius: 14px !important;
+  background: linear-gradient(
+    180deg,
+    transparent 25%,
+    rgba(4,6,15,.3) 50%,
+    rgba(4,6,15,.82) 75%,
+    rgba(4,6,15,.95) 100%
+  ) !important;
+  opacity: 1 !important;
+  transition: opacity var(--t-hover) var(--ease-soft) !important;
+  z-index: 2 !important;
+}
+
+/* Bottom accent bar — più sottile, come un "progress bar" */
+.mod-card::before {
+  z-index: 4 !important;
+  height: 2px !important;
+  bottom: 0 !important;
+  top: auto !important;
+  border-radius: 0 !important;
+  transform: scaleX(0) !important;
+  transition: transform var(--t-focus) var(--ease-soft) !important;
+}
+
+/* Hover: zoom cinematico + glow intenso */
+.mod-card:hover {
+  transform: translateY(-6px) scale(1.04) !important;
+  z-index: 10 !important;
+}
+.mod-card:hover::before { transform: scaleX(1) !important; }
+.mod-card:hover::after {
+  background: linear-gradient(
+    180deg,
+    transparent 15%,
+    rgba(4,6,15,.2) 45%,
+    rgba(4,6,15,.78) 72%,
+    rgba(4,6,15,.96) 100%
+  ) !important;
+}
+.mod-card.active {
+  transform: translateY(-3px) scale(1.015) !important;
+}
+.mod-card.active::before { transform: scaleX(1) !important; }
+
+/* ── Contenuto della card — repositioning ── */
+.mod-card .mc-content {
+  position: relative !important;
+  z-index: 3 !important;
+  padding: 0 1.1rem 1.1rem !important;
+}
+
+/* Badge — più small e discreto */
+.mod-card .mc-badge {
+  top: 14px !important;
+  right: 14px !important;
+  font-size: 7px !important;
+  letter-spacing: 2px !important;
+  padding: 3px 9px !important;
+  border-radius: 4px !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+/* Icona — micro-parallax su hover */
+.mod-card .mc-icon {
+  font-size: 36px !important;
+  margin-bottom: 8px !important;
+  display: block !important;
+  transition:
+    transform var(--t-focus) var(--ease-spring),
+    filter var(--t-hover) var(--ease-soft) !important;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,.15)) !important;
+}
+.mod-card:hover .mc-icon {
+  transform: scale(1.18) translateY(-3px) !important;
+  filter: drop-shadow(0 0 18px rgba(255,255,255,.4)) !important;
+}
+
+/* Titolo — più grande, più dominante */
+.mod-card h3 {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  letter-spacing: -.3px !important;
+  margin-bottom: 4px !important;
+  line-height: 1.2 !important;
+  color: #fff !important;
+  transition: color var(--t-hover) var(--ease-soft) !important;
+}
+.mod-card p {
+  font-size: 11px !important;
+  color: rgba(255,255,255,.45) !important;
+  line-height: 1.45 !important;
+}
+
+/* Tags — inline row, minimal */
+.tags {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 4px !important;
+  margin-top: 8px !important;
+  opacity: 0 !important;
+  transform: translateY(6px) !important;
+  transition:
+    opacity var(--t-hover) var(--ease-soft),
+    transform var(--t-hover) var(--ease-soft) !important;
+}
+.mod-card:hover .tags,
+.mod-card.active .tags {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+.tag {
+  font-size: 9px !important;
+  padding: 2px 7px !important;
+  border-radius: 3px !important;
+  font-weight: 600 !important;
+  letter-spacing: .3px !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   CARD SPECIFICHE — glow cinematico per categoria
+   ───────────────────────────────────────────────────────────────── */
+
+/* CE — Electric Blue */
+.mod-card.ce-card {
+  background: linear-gradient(160deg, #060e1c 0%, #0a1a30 50%, #06101e 100%) !important;
+  border-color: rgba(30,144,255,.12) !important;
+}
+.mod-card.ce-card:hover {
+  border-color: rgba(30,144,255,.45) !important;
+  box-shadow:
+    0 16px 48px rgba(0,0,0,.6),
+    0 0 0 1px rgba(30,144,255,.2),
+    0 0 40px rgba(30,144,255,.12) !important;
+}
+.mod-card.ce-card::before {
+  background: linear-gradient(90deg, transparent, #1e90ff, #00cfff, transparent) !important;
+}
+.mod-card.ce-card:hover h3 { color: #7ec8ff !important; }
+
+/* OE — Violet */
+.mod-card.oe-card {
+  background: linear-gradient(160deg, #0a0618 0%, #140928 50%, #090518 100%) !important;
+  border-color: rgba(124,106,255,.12) !important;
+}
+.mod-card.oe-card:hover {
+  border-color: rgba(124,106,255,.45) !important;
+  box-shadow:
+    0 16px 48px rgba(0,0,0,.6),
+    0 0 0 1px rgba(124,106,255,.2),
+    0 0 40px rgba(124,106,255,.14) !important;
+}
+.mod-card.oe-card::before {
+  background: linear-gradient(90deg, transparent, #7c6aff, #b090ff, transparent) !important;
+}
+.mod-card.oe-card:hover h3 { color: #c4b0ff !important; }
+
+/* MIX — full-width tile, layout orizzontale */
+.mod-card.mix-card {
+  background: linear-gradient(135deg, #050d14 0%, #08181e 55%, #050d14 100%) !important;
+  border-color: rgba(0,255,200,.1) !important;
+  min-height: 90px !important;
+}
+.mod-card.mix-card:hover {
+  border-color: rgba(0,255,200,.4) !important;
+  box-shadow:
+    0 12px 40px rgba(0,0,0,.5),
+    0 0 0 1px rgba(0,255,200,.15),
+    0 0 30px rgba(0,255,200,.08) !important;
+}
+.mod-card.mix-card::before {
+  background: linear-gradient(90deg, transparent, #00ffc8, #7c6aff, transparent) !important;
+}
+.mod-card.mix-card:hover h3 { color: var(--accent) !important; }
+
+/* WP — Green */
+.mod-card.wp-card {
+  background: linear-gradient(160deg, #050e08 0%, #091610 50%, #050e08 100%) !important;
+  border-color: rgba(40,160,80,.12) !important;
+}
+.mod-card.wp-card:hover {
+  border-color: rgba(40,160,80,.45) !important;
+  box-shadow:
+    0 16px 48px rgba(0,0,0,.6),
+    0 0 0 1px rgba(40,160,80,.18),
+    0 0 40px rgba(40,160,80,.1) !important;
+}
+.mod-card.wp-card::before {
+  background: linear-gradient(90deg, transparent, #28a050, #32dc64, transparent) !important;
+}
+.mod-card.wp-card:hover h3 { color: #5ad47a !important; }
+
+/* ─────────────────────────────────────────────────────────────────
+   FULL-CARD (MIX) — orizzontale, layout streaming banner
+   ───────────────────────────────────────────────────────────────── */
+.full-card {
+  grid-column: 1 / -1 !important;
+  min-height: 88px !important;
+  max-height: 100px !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 14px !important;
+  padding: 0 !important;
+  justify-content: flex-start !important;
+}
+.full-card .mc-content {
+  padding: .875rem 1.25rem !important;
+  flex: 1 !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 16px !important;
+  flex-direction: row !important;
+}
+.full-card .mc-icon {
+  font-size: 28px !important;
+  margin-bottom: 0 !important;
+}
+.full-card h3 { font-size: 15px !important; margin-bottom: 2px !important; }
+.full-card p  { font-size: 11px !important; }
+.full-card .mc-content > div { flex: 1; }
+/* Override ::after per mix banner — gradient da sx a dx */
+.mod-card.mix-card.full-card::after {
+  background: linear-gradient(
+    90deg,
+    transparent 30%,
+    rgba(4,6,15,.3) 60%,
+    rgba(4,6,15,.7) 85%,
+    rgba(4,6,15,.92) 100%
+  ) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   COMING SOON SECTION — label row stile "Coming Soon" streaming
+   ───────────────────────────────────────────────────────────────── */
+.soon-section-label {
+  margin: 1.5rem 0 .6rem !important;
+  gap: 10px !important;
+}
+.soon-section-label span {
+  font-size: 9px !important;
+  color: rgba(255,255,255,.18) !important;
+  letter-spacing: 3px !important;
+  font-weight: 700 !important;
+}
+.soon-section-label::before,
+.soon-section-label::after {
+  background: rgba(255,255,255,.05) !important;
+}
+
+.mod-card.soon-card {
+  opacity: .38 !important;
+  filter: saturate(.2) brightness(.7) !important;
+  min-height: 120px !important;
+}
+.mod-card.soon-card:hover {
+  transform: none !important;
+  opacity: .42 !important;
+  filter: saturate(.25) brightness(.75) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   STEP-ACT — Activity selection "choose your experience"
+   ───────────────────────────────────────────────────────────────── */
+
+/* Back button — cinematic */
+.act-back-btn {
+  border-radius: 8px !important;
+  border-color: rgba(255,255,255,.08) !important;
+  background: rgba(255,255,255,.04) !important;
+  font-size: 11px !important;
+  letter-spacing: .4px !important;
+  transition:
+    background var(--t-hover) var(--ease-soft),
+    border-color var(--t-hover) var(--ease-soft),
+    color var(--t-hover) var(--ease-soft) !important;
+}
+.act-back-btn:hover {
+  background: rgba(255,255,255,.08) !important;
+  border-color: rgba(255,255,255,.18) !important;
+  color: #fff !important;
+}
+.act-back-btn::after { display: none !important; }
+
+/* Hero act — cinematic full banner */
+.act-hero {
+  border-radius: 16px !important;
+  min-height: 150px !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  box-shadow:
+    0 8px 40px rgba(0,0,0,.5),
+    0 0 0 1px rgba(255,255,255,.03) inset !important;
+  overflow: hidden !important;
+  margin-bottom: 14px !important;
+}
+.act-hero-icon {
+  font-size: 46px !important;
+  filter: drop-shadow(0 0 14px rgba(255,255,255,.25)) !important;
+}
+.act-hero-title {
+  font-size: 24px !important;
+  text-shadow: 0 2px 20px rgba(0,0,0,.6) !important;
+}
+.act-hero-sub {
+  font-size: 12px !important;
+  color: rgba(255,255,255,.45) !important;
+}
+
+/* Activity cards — più compatte, più "chapter selector" */
+.act-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 7px !important;
+  margin-bottom: 4px !important;
+}
+.act-card {
+  border-radius: 10px !important;
+  padding: .75rem !important;
+  border-color: rgba(255,255,255,.06) !important;
+  background: rgba(255,255,255,.035) !important;
+  gap: 10px !important;
+  transition:
+    background var(--t-hover) var(--ease-soft),
+    border-color var(--t-hover) var(--ease-soft),
+    transform var(--t-hover) var(--ease-spring) !important;
+}
+.act-card::after {
+  height: 1.5px !important;
+  bottom: 0 !important;
+}
+.act-card:hover {
+  background: rgba(255,255,255,.07) !important;
+  border-color: rgba(255,255,255,.15) !important;
+  transform: translateY(-2px) scale(1.015) !important;
+}
+.act-card .ai {
+  border-radius: 8px !important;
+  width: 36px !important;
+  height: 36px !important;
+}
+.act-card h3 { font-size: 13px !important; }
+.act-card p  { font-size: 10px !important; color: rgba(255,255,255,.32) !important; }
+
+/* ─────────────────────────────────────────────────────────────────
+   SETUP CARD — "Platform setup panel"
+   ───────────────────────────────────────────────────────────────── */
+.setup-card {
+  background: rgba(8,12,24,.92) !important;
+  border: 1px solid rgba(255,255,255,.08) !important;
+  border-radius: 16px !important;
+  backdrop-filter: blur(20px) !important;
+  box-shadow:
+    0 8px 40px rgba(0,0,0,.45),
+    0 0 0 1px rgba(255,255,255,.03) inset !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   COURSES SCREEN — "Platform dashboard" con card cinematiche
+   ───────────────────────────────────────────────────────────────── */
+#screen-courses {
+  background: var(--film-dark) !important;
+  background-image:
+    radial-gradient(ellipse 90% 60% at 15% 0%, rgba(0,255,200,.025) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 100%, rgba(124,106,255,.025) 0%, transparent 55%) !important;
+}
+
+.cs-topbar {
+  background: rgba(4,6,15,.98) !important;
+  backdrop-filter: blur(40px) saturate(200%) !important;
+  border-bottom-color: rgba(255,255,255,.05) !important;
+  padding: .8rem 1.5rem !important;
+}
+
+.cs-hero {
+  padding: 1.75rem 0 1.25rem !important;
+  text-align: left !important;
+}
+.cs-hero-title {
+  font-size: 24px !important;
+  text-align: left !important;
+}
+.cs-hero-sub {
+  text-align: left !important;
+}
+
+/* Grid aule — layout stile "My List" streaming */
+.cs-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)) !important;
+  gap: 10px !important;
+}
+
+/* Course card — poster style cinematico */
+.course-card {
+  border-radius: 12px !important;
+  border-color: rgba(255,255,255,.07) !important;
+  box-shadow: 0 4px 24px rgba(0,0,0,.5), 0 0 0 1px rgba(255,255,255,.03) inset !important;
+  transition:
+    transform var(--t-hover) var(--ease-cinema),
+    box-shadow var(--t-hover) var(--ease-cinema),
+    border-color var(--t-hover) var(--ease-soft) !important;
+  overflow: hidden !important;
+}
+.course-card:hover {
+  transform: translateY(-5px) scale(1.03) !important;
+  z-index: 5 !important;
+}
+
+/* Hover system per la griglia corsi */
+.cs-grid:has(.course-card:hover) .course-card:not(:hover) {
+  filter: brightness(.7) !important;
+  transform: scale(.98) !important;
+  transition:
+    filter var(--t-shrink) var(--ease-cinema),
+    transform var(--t-shrink) var(--ease-cinema) !important;
+}
+
+.course-card-name {
+  font-size: 13px !important;
+  font-weight: 700 !important;
+}
+.course-card-dates {
+  font-size: 9px !important;
+  color: rgba(255,255,255,.38) !important;
+}
+
+/* Add course form — "New content" button stile streaming */
+.cs-add-form {
+  border-color: rgba(0,255,200,.1) !important;
+  border-radius: 14px !important;
+  backdrop-filter: blur(16px) !important;
+  background: rgba(8,12,24,.7) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   DIALOG + OVERLAYS — più profondità cinematica
+   ───────────────────────────────────────────────────────────────── */
+.pp-dialog-overlay {
+  backdrop-filter: blur(12px) saturate(140%) !important;
+}
+.pp-dialog {
+  background: rgba(8,10,22,.97) !important;
+  border-color: rgba(255,80,80,.2) !important;
+  box-shadow:
+    0 24px 80px rgba(0,0,0,.8),
+    0 0 0 1px rgba(255,80,80,.08) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   QUIZ / GAME AREA — subtle refinements
+   ───────────────────────────────────────────────────────────────── */
+.q-card {
+  background: rgba(255,255,255,.035) !important;
+  border-color: rgba(255,255,255,.08) !important;
+  border-radius: 14px !important;
+}
+.q-card::before {
+  background: linear-gradient(90deg, transparent, rgba(0,255,200,.14), transparent) !important;
+}
+.opt {
+  border-radius: 10px !important;
+  border-color: rgba(255,255,255,.07) !important;
+  background: rgba(255,255,255,.03) !important;
+  transition:
+    background var(--t-hover) var(--ease-soft),
+    border-color var(--t-hover) var(--ease-soft),
+    transform var(--t-hover) var(--ease-spring) !important;
+}
+.opt:hover:not(:disabled) {
+  transform: translateX(3px) !important;
+  background: rgba(0,255,200,.06) !important;
+}
+.opt::after {
+  width: 3px !important;
+  border-radius: 0 2px 2px 0 !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   LEADERBOARD — "Rankings" stile platform
+   ───────────────────────────────────────────────────────────────── */
+.lb-type-card {
+  border-radius: 14px !important;
+  overflow: hidden !important;
+}
+.lb-entry {
+  border-radius: 10px !important;
+  transition:
+    background var(--t-hover) var(--ease-soft),
+    border-color var(--t-hover) var(--ease-soft),
+    padding-left var(--t-hover) var(--ease-soft) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   RESPONSIVE — mobile adjustments
+   ───────────────────────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  :root {
+    --tile-h: 190px;
+  }
+  .home-hero-title { font-size: 22px !important; }
+  .mod-grid { gap: 8px !important; }
+  .mod-card h3 { font-size: 14px !important; }
+  .act-grid { grid-template-columns: 1fr 1fr !important; }
+
+  /* Su mobile disabilita l'effetto sibling shrink (performance) */
+  .mod-grid:has(.mod-card:hover) .mod-card:not(:hover):not(.full-card) {
+    transform: none !important;
+    filter: none !important;
+  }
+  .cs-grid:has(.course-card:hover) .course-card:not(:hover) {
+    filter: none !important;
+    transform: none !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   REDUCED MOTION — accessibilità
+   ───────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .mod-card,
+  .mod-card .mc-icon,
+  .mod-card .tags,
+  .act-card,
+  .course-card,
+  .tb-btn,
+  .opt {
+    transition: none !important;
+    animation: none !important;
+  }
+  .mod-grid:has(.mod-card:hover) .mod-card:not(:hover):not(.full-card) {
+    transform: none !important;
+    filter: brightness(.7) !important;
+    transition: none !important;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   MICRO-ANIMAZIONE: card shimmer su load (una sola volta)
+   ───────────────────────────────────────────────────────────────── */
+@keyframes tileReveal {
+  from { opacity: 0; transform: translateY(14px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1);    }
+}
+#step-mod .mod-card {
+  animation: tileReveal .42s var(--ease-cinema) both;
+}
+#step-mod .mod-card:nth-child(1) { animation-delay: .04s; }
+#step-mod .mod-card:nth-child(2) { animation-delay: .08s; }
+#step-mod .mod-card:nth-child(3) { animation-delay: .12s; }
+#step-mod .mod-card:nth-child(4) { animation-delay: .16s; }
+#step-mod .mod-card:nth-child(5) { animation-delay: .20s; }
+
+/* ─────────────────────────────────────────────────────────────────
+   END PixelProf v6.0.0 — Streaming Platform Layer
+   ───────────────────────────────────────────────────────────────── */

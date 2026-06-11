@@ -1698,6 +1698,20 @@ body{
   color:var(--text-primary);font-size:12px;font-family:inherit;outline:none;
 }
 .dp-add-select:focus{border-color:var(--accent);}
+/* Fix option text in wizard teacher select — OS native picker uses light bg */
+.cw-teacher-select-styled{
+  background:#10162a;
+  color:#e2e8f0;
+  border-color:rgba(0,255,200,.3);
+}
+.cw-teacher-select-styled option{
+  background:#10162a;
+  color:#e2e8f0;
+}
+.cw-teacher-select-styled:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 3px rgba(0,255,200,.08);
+}
 .mod-toggle-grid{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:12px;}
 .mod-toggle-btn{
   padding:5px 14px;border-radius:20px;border:1px solid var(--border-mid);

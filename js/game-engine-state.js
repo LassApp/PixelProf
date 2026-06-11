@@ -1,5 +1,5 @@
 /* ==================================================
-   game-engine-state.js — PixelProf v5.0.4
+   game-engine-state.js — PixelProf v5.0.5
    Core engine: loader factory, course storage, database,
    session state (QuizSession/FillSession/PlayerSession),
    matchState, TimerManager, PauseUIRegistry, helpers,
@@ -14,9 +14,11 @@
    N1 (WP nel wizard). _updateAddSqBtn mantenuta come no-op.
    v5.0.1: N2 (rinomina squadra salvata — inline chip editor).
    v5.0.2: Delete giocatori/squadre salvati (inline × chip).
-   v5.0.4: _showDeleteConfirm → modale centrato + backdrop + lock UI.
-            confirmRenameSavedTeam → sync Supabase immediato.
-            startRenamePlayer / confirmRenamePlayer → rinomina inline giocatore + sync Supabase.
+   v5.0.4: _showDeleteConfirm modale centrato + backdrop;
+            rename inline giocatore + sync Supabase.
+   v5.0.5: FIX — goStep('mod') richiama _applyModuleFilter
+            garantendo filtro moduli sempre aggiornato al
+            rientro in home (fine partita, cambio tab, ecc.).
    This is the central module — loaded before all games.
 ================================================== */
 
@@ -960,6 +962,12 @@ function _doGoTab(t){
 function goStep(s){
   ['step-mod','step-act','step-num','step-players'].forEach(id=>sh(id).classList.add('hidden'));
   sh('step-'+s).classList.remove('hidden');
+  if(s==='mod' && activeCourseId && typeof _applyModuleFilter==='function'){
+    // FIX v5.0.5: riapplica il filtro moduli ogni volta che si torna a step-mod,
+    // garantendo che la visibilità delle card rifletta sempre la configurazione
+    // dell'aula corrente — indipendentemente dal percorso di navigazione.
+    _applyModuleFilter(activeCourseId);
+  }
   if(s==='act'){
     sh('act-mod-label').textContent=MOD_LABEL[sMod]||'';
     if(!sAct)updateHero(null);
@@ -1054,25 +1062,10 @@ function renderIndChips(){
     return;
   }
   c.innerHTML=db.players.map((p,i)=>`
-    <div class="pchip-wrap" style="display:inline-flex;align-items:center;gap:0;margin:3px 4px 3px 0;position:relative">
-      <button class="pchip${sIndPlayer===p?' active':''}" id="indchip-${i}"
+    <div style="display:inline-flex;align-items:center;gap:0;margin:3px 4px 3px 0;position:relative">
+      <button class="pchip${sIndPlayer===p?' active':''}"
         style="border-radius:20px 0 0 20px;margin:0;padding-right:6px"
         onclick="pickInd('${escAttr(p)}')">${escHtml(p)}</button>
-      <button
-        title="Rinomina giocatore"
-        onclick="startRenamePlayer(${i},event)"
-        style="
-          display:inline-flex;align-items:center;justify-content:center;
-          height:30px;width:26px;padding:0;
-          background:rgba(255,255,255,.06);
-          border:1px solid rgba(255,255,255,.12);border-left:none;border-right:none;
-          border-radius:0;
-          color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;
-          transition:background .15s,color .15s;
-        "
-        onmouseover="this.style.background='rgba(0,255,200,.12)';this.style.color='#00ffc8'"
-        onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.4)'"
-      ><i class="ti ti-pencil"></i></button>
       <button
         title="Elimina giocatore"
         onclick="deletePlayer(${i},event)"
@@ -1094,93 +1087,10 @@ function pickInd(n){sIndPlayer=n;renderIndChips();checkCanStart();}
 function addInd(){const inp=sh('ind-inp');const n=inp.value.trim();if(!n)return;if(!db.players.includes(n))db.players.push(n);save();sIndPlayer=n;inp.value='';renderIndChips();checkCanStart();}
 
 /* ==================================================
-   RENAME PLAYER — inline chip editor (speculare a N2 squadre)
-   Sostituisce il chip con un input inline; ✓ salva, ✗ annulla.
-   Aggiorna db.players + sIndPlayer se era selezionato.
-   Sync Supabase: deletePlayer(old) + ensurePlayer(new).
-================================================== */
-function startRenamePlayer(idx, evt){
-  evt.stopPropagation();
-  const oldName=db.players[idx];
-  if(!oldName) return;
-  const wrap=document.querySelector(`#indchip-${idx}`)?.parentElement;
-  if(!wrap) return;
-
-  wrap.innerHTML=`
-    <div style="display:inline-flex;align-items:center;gap:4px;padding:2px 4px;
-      border:1px solid rgba(0,255,200,.4);border-radius:20px;
-      background:rgba(0,255,200,.07);box-shadow:0 0 8px rgba(0,255,200,.12)">
-      <input id="ind-rename-inp-${idx}"
-        value="${escAttr(oldName)}"
-        style="
-          background:transparent;border:none;outline:none;
-          color:#fff;font-size:12px;font-family:'Space Grotesk',sans-serif;
-          font-weight:600;width:90px;padding:2px 4px;
-        "
-        onkeydown="if(event.key==='Enter'){event.preventDefault();confirmRenamePlayer(${idx},'${escAttr(oldName)}');}
-                   if(event.key==='Escape'){event.preventDefault();renderIndChips();}"
-        onfocus="this.select()"
-      />
-      <button onclick="confirmRenamePlayer(${idx},'${escAttr(oldName)}')" title="Salva"
-        style="background:rgba(0,255,200,.15);border:1px solid rgba(0,255,200,.3);border-radius:50%;
-               width:22px;height:22px;display:flex;align-items:center;justify-content:center;
-               color:#00ffc8;font-size:11px;cursor:pointer;flex-shrink:0;transition:background .15s"
-        onmouseover="this.style.background='rgba(0,255,200,.3)'"
-        onmouseout="this.style.background='rgba(0,255,200,.15)'"
-      ><i class="ti ti-check"></i></button>
-      <button onclick="renderIndChips()" title="Annulla"
-        style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:50%;
-               width:22px;height:22px;display:flex;align-items:center;justify-content:center;
-               color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;flex-shrink:0;transition:background .15s;margin-right:4px"
-        onmouseover="this.style.background='rgba(255,60,80,.2)';this.style.color='#ff4d6d'"
-        onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.4)'"
-      ><i class="ti ti-x"></i></button>
-    </div>`;
-  setTimeout(()=>document.getElementById(`ind-rename-inp-${idx}`)?.focus(), 30);
-}
-
-function confirmRenamePlayer(idx, oldName){
-  const inp=document.getElementById(`ind-rename-inp-${idx}`);
-  if(!inp) return;
-  const newName=inp.value.trim();
-  if(!newName){ renderIndChips(); return; }
-  if(newName===oldName){ renderIndChips(); return; }
-  // Controlla duplicati in db.players
-  if(db.players.find((p,i)=>i!==idx && p.trim().toLowerCase()===newName.toLowerCase())){
-    inp.style.borderBottom='1px solid #ff4d6d';
-    inp.style.color='#ff4d6d';
-    inp.title='Nome già usato';
-    inp.value='';
-    inp.placeholder='Nome già usato!';
-    setTimeout(()=>renderIndChips(), 1600);
-    return;
-  }
-  // Aggiorna db.players
-  db.players[idx]=newName;
-  save();
-  // Aggiorna sIndPlayer se era il giocatore selezionato
-  if(sIndPlayer===oldName){ sIndPlayer=newName; }
-  // ── Sync Supabase immediato (fire-and-forget) ──
-  if(window.DB && activeCourseId){
-    (async()=>{
-      try{
-        await window.DB.deletePlayer(activeCourseId, oldName);
-        await window.DB.upsertPlayer(activeCourseId, {name:newName, color:'#00ffc8'});
-        console.log('[PixelProf] renamePlayer cloud OK:', oldName, '→', newName);
-      }catch(e){
-        console.warn('[PixelProf] renamePlayer cloud err:', e);
-      }
-    })();
-  }
-  renderIndChips();
-  checkCanStart();
-}
-
-/* ==================================================
-   _showDeleteConfirm — v5.0.4
-   Modale centrato con backdrop scuro fullscreen.
-   Disabilita tutti i controlli della schermata mentre
-   è aperto; li riabilita alla chiusura (annulla o conferma).
+   _showDeleteConfirm — v5.0.3
+   Mini-popover di conferma inline sopra il chip ×.
+   Appare posizionato sopra il trigger, scompare
+   su Escape / click fuori / conferma / annulla.
    Usato da deletePlayer() e deleteSavedTeam().
 
    @param {HTMLElement} triggerEl  — il bottone × cliccato
@@ -1188,151 +1098,98 @@ function confirmRenamePlayer(idx, oldName){
    @param {string}      tipo       — giocatore | squadra
    @param {function}    onConfirm  — callback eseguita dopo conferma
 ================================================== */
-
-/** Blocca/sblocca tutti i bottoni e input della schermata setup */
-function _lockSetupUI(lock){
-  const container = sh('setup-panel') || document.querySelector('.setup-card');
-  if(!container) return;
-  container.querySelectorAll('button, input, select').forEach(el=>{
-    if(lock){
-      el.dataset._wasDisabled = el.disabled ? '1' : '0';
-      el.disabled = true;
-      el.style.pointerEvents = 'none';
-    } else {
-      el.disabled = el.dataset._wasDisabled === '1';
-      el.style.pointerEvents = '';
-      delete el.dataset._wasDisabled;
-    }
-  });
-  // blocca anche i chip salvati e i chip giocatori
-  document.querySelectorAll('#ind-chips button, #sq-saved button').forEach(el=>{
-    if(lock){
-      el.dataset._wasDisabled = el.disabled ? '1' : '0';
-      el.disabled = true;
-      el.style.pointerEvents = 'none';
-    } else {
-      el.disabled = el.dataset._wasDisabled === '1';
-      el.style.pointerEvents = '';
-      delete el.dataset._wasDisabled;
-    }
-  });
-}
-
 function _showDeleteConfirm(triggerEl, label, tipo, onConfirm){
-  // Rimuove eventuali backdrop/modale già aperti
-  document.querySelectorAll('.pp-del-backdrop').forEach(el=>el.remove());
+  // Rimuove eventuali popover già aperti
+  document.querySelectorAll('.pp-del-confirm').forEach(el=>el.remove());
 
-  // ── Blocca UI sottostante ──
-  _lockSetupUI(true);
+  const pop=document.createElement('div');
+  pop.className='pp-del-confirm';
+  pop.setAttribute('role','dialog');
+  pop.setAttribute('aria-modal','true');
 
-  // ── Backdrop scuro fullscreen ──
-  const backdrop = document.createElement('div');
-  backdrop.className = 'pp-del-backdrop';
-  Object.assign(backdrop.style, {
-    position:        'fixed',
-    inset:           '0',
-    zIndex:          '9990',
-    background:      'rgba(4,8,18,.82)',
-    backdropFilter:  'blur(3px)',
-    display:         'flex',
-    alignItems:      'center',
-    justifyContent:  'center',
+  // Stile del popover
+  Object.assign(pop.style,{
+    position:'fixed',
+    zIndex:'9999',
+    background:'rgba(12,16,28,.97)',
+    border:'1px solid rgba(255,60,80,.35)',
+    borderRadius:'12px',
+    padding:'12px 14px',
+    boxShadow:'0 8px 32px rgba(0,0,0,.6), 0 0 0 1px rgba(255,60,80,.15)',
+    minWidth:'200px',
+    maxWidth:'260px',
+    backdropFilter:'blur(8px)',
   });
-
-  // ── Modale centrato ──
-  const pop = document.createElement('div');
-  pop.className = 'pp-del-confirm';
-  pop.setAttribute('role', 'dialog');
-  pop.setAttribute('aria-modal', 'true');
-  Object.assign(pop.style, {
-    background:     'rgba(12,16,28,.98)',
-    border:         '1px solid rgba(255,60,80,.38)',
-    borderRadius:   '16px',
-    padding:        '22px 24px 18px',
-    boxShadow:      '0 16px 56px rgba(0,0,0,.7), 0 0 0 1px rgba(255,60,80,.12)',
-    width:          'min(320px, 90vw)',
-    animation:      'delModalIn .18s cubic-bezier(.22,1,.36,1)',
-  });
-
-  // Inietta keyframe se non esiste già
-  if(!document.getElementById('pp-del-kf')){
-    const s=document.createElement('style');
-    s.id='pp-del-kf';
-    s.textContent='@keyframes delModalIn{from{opacity:0;transform:scale(.92) translateY(8px)}to{opacity:1;transform:scale(1) translateY(0)}}';
-    document.head.appendChild(s);
-  }
 
   pop.innerHTML=`
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-      <div style="
-        width:36px;height:36px;border-radius:10px;flex-shrink:0;
-        background:rgba(255,60,80,.12);border:1px solid rgba(255,60,80,.3);
-        display:flex;align-items:center;justify-content:center;
-        font-size:17px;
-      ">🗑️</div>
-      <div>
-        <div style="font-size:13px;font-weight:700;color:#fff;line-height:1.2">
-          Elimina ${escHtml(tipo)}
-        </div>
-        <div style="font-size:10px;color:rgba(255,60,80,.7);font-family:'Share Tech Mono',monospace;
-          text-transform:uppercase;letter-spacing:1px;margin-top:2px">
-          azione irreversibile
-        </div>
-      </div>
+    <div style="font-size:11px;font-weight:700;color:rgba(255,60,80,.9);
+      text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;
+      font-family:'Share Tech Mono',monospace">
+      <i class="ti ti-alert-triangle" style="font-size:12px"></i> Elimina ${escHtml(tipo)}
     </div>
-    <div style="font-size:13px;color:rgba(255,255,255,.65);margin-bottom:20px;line-height:1.55;
-      padding:12px 14px;background:rgba(255,255,255,.03);border-radius:10px;
-      border:1px solid rgba(255,255,255,.07)">
-      Stai per eliminare <strong style="color:#fff;font-weight:700">${escHtml(label)}</strong>.
-      <br>
-      <span style="font-size:11px;color:rgba(255,255,255,.3);font-family:'Share Tech Mono',monospace">
-        Il ${escHtml(tipo)} verrà rimosso dall'aula.
+    <div style="font-size:12px;color:rgba(255,255,255,.65);margin-bottom:12px;line-height:1.45">
+      Eliminare <strong style="color:#fff">${escHtml(label)}</strong>?<br>
+      <span style="font-size:10px;color:rgba(255,255,255,.35);font-family:'Share Tech Mono',monospace">
+        L'azione rimuoverà il ${escHtml(tipo)} dall'aula.
       </span>
     </div>
-    <div style="display:flex;gap:10px">
+    <div style="display:flex;gap:8px">
       <button id="pp-del-cancel" style="
-        flex:1;padding:9px 14px;border-radius:10px;
-        background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
-        color:rgba(255,255,255,.7);font-size:12px;cursor:pointer;
+        flex:1;padding:6px 10px;border-radius:8px;
+        background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+        color:rgba(255,255,255,.6);font-size:11px;cursor:pointer;
         font-family:'Space Grotesk',sans-serif;font-weight:600;
-        transition:background .15s,color .15s,border-color .15s;
+        transition:background .15s,color .15s;
       "
-        onmouseover="this.style.background='rgba(255,255,255,.14)';this.style.color='#fff';this.style.borderColor='rgba(255,255,255,.25)'"
-        onmouseout="this.style.background='rgba(255,255,255,.07)';this.style.color='rgba(255,255,255,.7)';this.style.borderColor='rgba(255,255,255,.14)'"
+        onmouseover="this.style.background='rgba(255,255,255,.12)';this.style.color='#fff'"
+        onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.6)'"
       >Annulla</button>
       <button id="pp-del-confirm-btn" style="
-        flex:1;padding:9px 14px;border-radius:10px;
-        background:rgba(255,60,80,.18);border:1px solid rgba(255,60,80,.45);
-        color:#ff4d6d;font-size:12px;cursor:pointer;
+        flex:1;padding:6px 10px;border-radius:8px;
+        background:rgba(255,60,80,.15);border:1px solid rgba(255,60,80,.4);
+        color:#ff4d6d;font-size:11px;cursor:pointer;
         font-family:'Space Grotesk',sans-serif;font-weight:700;
-        transition:background .15s,border-color .15s,box-shadow .15s;
+        transition:background .15s,border-color .15s;
       "
-        onmouseover="this.style.background='rgba(255,60,80,.32)';this.style.borderColor='rgba(255,60,80,.75)';this.style.boxShadow='0 0 16px rgba(255,60,80,.25)'"
-        onmouseout="this.style.background='rgba(255,60,80,.18)';this.style.borderColor='rgba(255,60,80,.45)';this.style.boxShadow='none'"
-      ><i class="ti ti-trash" style="font-size:12px;margin-right:4px"></i>Elimina</button>
+        onmouseover="this.style.background='rgba(255,60,80,.28)';this.style.borderColor='rgba(255,60,80,.7)'"
+        onmouseout="this.style.background='rgba(255,60,80,.15)';this.style.borderColor='rgba(255,60,80,.4)'"
+      ><i class="ti ti-trash" style="font-size:11px"></i> Elimina</button>
     </div>`;
 
-  backdrop.appendChild(pop);
-  document.body.appendChild(backdrop);
+  document.body.appendChild(pop);
 
-  // ── Handlers ──
-  const _close = () => {
-    backdrop.remove();
-    document.removeEventListener('keydown', _onKey);
-    _lockSetupUI(false);   // ← riabilita UI
+  // Posizionamento: sopra il trigger, centrato orizzontalmente
+  const rect=triggerEl.getBoundingClientRect();
+  const pw=pop.offsetWidth||220;
+  let left=rect.left+rect.width/2-pw/2;
+  left=Math.max(8,Math.min(left,window.innerWidth-pw-8));
+  const top=rect.top-pop.offsetHeight-8;
+  pop.style.left=left+'px';
+  pop.style.top=(top<8?rect.bottom+8:top)+'px';
+
+  // Handlers
+  const _close=()=>{
+    pop.remove();
+    document.removeEventListener('keydown',_onKey);
+    document.removeEventListener('mousedown',_onOutside);
   };
-  const _onKey = (e) => { if(e.key==='Escape'){ e.preventDefault(); _close(); } };
+  const _onKey=(e)=>{ if(e.key==='Escape'){ e.preventDefault(); _close(); } };
+  const _onOutside=(e)=>{ if(!pop.contains(e.target)&&e.target!==triggerEl) _close(); };
 
-  pop.querySelector('#pp-del-cancel').addEventListener('click', () => _close());
-  pop.querySelector('#pp-del-confirm-btn').addEventListener('click', () => {
+  pop.querySelector('#pp-del-cancel').addEventListener('click',()=>_close());
+  pop.querySelector('#pp-del-confirm-btn').addEventListener('click',()=>{
     _close();
     onConfirm();
   });
 
-  setTimeout(() => document.addEventListener('keydown', _onKey), 10);
+  // Chiusura automatica su Escape o click fuori
+  setTimeout(()=>{
+    document.addEventListener('keydown',_onKey);
+    document.addEventListener('mousedown',_onOutside);
+  },10);
 
   // Focus sul bottone Annulla per accessibilità
-  setTimeout(() => pop.querySelector('#pp-del-cancel')?.focus(), 30);
+  setTimeout(()=>pop.querySelector('#pp-del-cancel')?.focus(),30);
 }
 
 /* ==================================================
@@ -1511,19 +1368,6 @@ function confirmRenameSavedTeam(idx, oldName){
   const col=db.teams[idx].color;
   db.teams[idx].name=newName;
   save();
-  // ── Sync Supabase immediato (fire-and-forget) ──
-  // Rinomina il team nel cloud: delete old + upsert new
-  if(window.DB && activeCourseId){
-    (async()=>{
-      try{
-        await window.DB.deleteTeam(activeCourseId, oldName);
-        await window.DB.upsertTeam(activeCourseId, {name:newName, color:col});
-        console.log('[PixelProf] renameTeam cloud OK:', oldName, '→', newName);
-      }catch(e){
-        console.warn('[PixelProf] renameTeam cloud err:', e);
-      }
-    })();
-  }
   // Aggiorna sTeams se la squadra è già presente nella sessione corrente
   const inSession=sTeams.findIndex(t=>t.name===oldName);
   if(inSession>=0){

@@ -2623,3 +2623,776 @@ body{
 /* ─────────────────────────────────────────────────────────────────
    END PixelProf v6.0.0 — Streaming Platform Layer
    ───────────────────────────────────────────────────────────────── */
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v6.1 — NETFLIX UPGRADE LAYER
+   Potenzia il layer v6.0 con:
+   • Hero Section "Featured Content" con gradient overlay
+   • Hover Expansion Card con metadata reveal
+   • Row Label "Netflix style" con freccia Browse
+   • Topbar sticky glassmorphism + scroll fade
+   • Course-card "My List" con hover info reveal
+   • Micro-interactions: shimmer, skeleton, score pill pulse
+   • Focus ring accessibile + keyboard navigation
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────
+   HERO SECTION — "Featured Content" Netflix style
+   Aggiunge un banner editoriale in cima alla home con gradiente
+   dinamico e metadati del corso corrente.
+   ───────────────────────────────────────────────────────────────── */
+.home-hero {
+  position: relative;
+  padding: 3rem 0 1.75rem !important;
+  overflow: hidden;
+}
+
+/* Sfondo sfumato cinematico a sinistra — "spotlight" */
+.home-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 80% at -5% 50%,
+      rgba(0,255,200,.09) 0%, transparent 65%),
+    radial-gradient(ellipse 40% 60% at 105% 30%,
+      rgba(124,106,255,.06) 0%, transparent 65%);
+  pointer-events: none;
+  animation: none !important;
+}
+
+/* Linea di separazione inferiore sottile */
+.home-hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(0,255,200,.15) 30%,
+    rgba(124,106,255,.1) 70%,
+    transparent);
+}
+
+.home-hero-eyebrow {
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  letter-spacing: 4px !important;
+  color: rgba(0,255,200,.45) !important;
+  margin-bottom: 10px !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Pill "Live" accanto all'eyebrow */
+.home-hero-eyebrow::before {
+  content: 'ICDL';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1px 7px;
+  border-radius: 3px;
+  background: rgba(0,255,200,.12);
+  border: 1px solid rgba(0,255,200,.3);
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.home-hero-title {
+  font-size: 30px !important;
+  font-weight: 900 !important;
+  line-height: 1.08 !important;
+  letter-spacing: -.5px !important;
+  margin-bottom: 10px !important;
+  background: linear-gradient(135deg, #ffffff 0%, rgba(255,255,255,.75) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* hl mantiene il suo colore verde */
+.home-hero-title .hl {
+  background: linear-gradient(135deg, #00ffc8, #00cfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none !important;
+  filter: drop-shadow(0 0 20px rgba(0,255,200,.4));
+}
+
+.home-hero-sub {
+  font-size: 13px !important;
+  color: rgba(255,255,255,.38) !important;
+  line-height: 1.6 !important;
+  max-width: 380px !important;
+  margin: 0 !important;
+}
+
+/* CTA "Inizia subito" — appare come il play button Netflix */
+.home-hero-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 1.25rem;
+  padding: 10px 22px;
+  border-radius: 8px;
+  background: rgba(0,255,200,.12);
+  border: 1px solid rgba(0,255,200,.35);
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .5px;
+  cursor: pointer;
+  transition: all .2s var(--ease-soft);
+  font-family: inherit;
+  text-transform: uppercase;
+}
+.home-hero-cta:hover {
+  background: rgba(0,255,200,.22);
+  box-shadow: 0 0 24px rgba(0,255,200,.15);
+  transform: translateY(-1px);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   ROW LABELS — "Netflix content row" con freccia Browse
+   ───────────────────────────────────────────────────────────────── */
+.home-divider {
+  margin: 2rem 0 .875rem !important;
+  gap: 0 !important;
+  align-items: baseline !important;
+}
+
+.home-divider::before,
+.home-divider::after {
+  display: none !important;
+}
+
+.home-divider span {
+  font-family: 'Space Grotesk', sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: rgba(255,255,255,.82) !important;
+  letter-spacing: -.2px !important;
+  text-transform: none !important;
+  position: relative;
+  /* Freccia "Esplora tutto" stile Netflix */
+}
+
+.home-divider span::after {
+  content: 'Scegli il tuo modulo →';
+  display: block;
+  font-size: 9px;
+  font-weight: 600;
+  color: rgba(0,255,200,.5);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-top: 2px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   MOD-CARD — Hover Expansion Netflix
+   Al hover la card espande verso il basso rivelando:
+   • Descrizione estesa
+   • Badge metadati
+   • CTA implicita
+   Usa solo CSS — zero JS aggiuntivo.
+   ───────────────────────────────────────────────────────────────── */
+
+/* Wrapper di contesto per l'espansione verticale */
+.mod-grid {
+  align-items: start !important; /* evita che le card si stirino in altezza per via di flex/grid */
+}
+
+/* Card normale — fixed height, overflow hidden */
+.mod-card {
+  min-height: var(--tile-h) !important;
+  /* overflow visible per permettere l'espansione verso il basso */
+  overflow: visible !important;
+}
+
+/* Il clip-path isola il contenuto visivo */
+.mod-card > svg.bg,
+.mod-card > .mc-content {
+  /* Il bg rimane dentro i bordi visivi della card */
+}
+
+/* Overlay gradiente riposizionato */
+.mod-card::after {
+  border-radius: 14px !important;
+  /* Estende l'overlay anche sotto per l'area espansa */
+}
+
+/* Contenuto card — overflow controllato */
+.mod-card .mc-content {
+  position: relative !important;
+  z-index: 3 !important;
+  padding: 0 1.1rem 1.1rem !important;
+  /* Permette l'animazione verso il basso */
+  transform: translateY(0);
+  transition: transform .3s var(--ease-cinema) !important;
+}
+
+/* Area expansion — appare SOTTO il contenuto esistente al hover */
+.mod-card .mc-expand {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition:
+    max-height .32s var(--ease-cinema),
+    opacity .25s var(--ease-soft),
+    transform .28s var(--ease-cinema);
+  padding: 0 1.1rem;
+  position: relative;
+  z-index: 3;
+}
+
+.mod-card:hover .mc-expand,
+.mod-card.active .mc-expand {
+  max-height: 80px;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Metadata pills nell'expand */
+.mc-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding-bottom: .875rem;
+}
+
+.mc-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 9px;
+  border-radius: 4px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  text-transform: uppercase;
+  font-family: 'Share Tech Mono', monospace;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(255,255,255,.5);
+}
+.mc-meta-pill.accent {
+  background: rgba(0,255,200,.1);
+  border-color: rgba(0,255,200,.28);
+  color: rgba(0,255,200,.8);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   TOPBAR — "Netflix sticky header" con fade scroll
+   ───────────────────────────────────────────────────────────────── */
+.topbar {
+  /* Gradiente verticale top → trasparente che simula il fade Netflix */
+  background: linear-gradient(
+    180deg,
+    rgba(4,6,15,1) 0%,
+    rgba(4,6,15,.96) 70%,
+    rgba(4,6,15,.9) 100%
+  ) !important;
+  transition: background .3s var(--ease-soft) !important;
+  width: 100% !important;
+  max-width: 720px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  padding: .6rem 1.1rem !important;
+}
+
+/* Wordmark "Orbitron" con gradiente testo */
+.logo-main {
+  background: linear-gradient(135deg, #00ffc8, #00e0ae);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none !important;
+  filter: drop-shadow(0 0 14px rgba(0,255,200,.3));
+  font-size: 15px !important;
+  letter-spacing: 2px !important;
+}
+.logo-main em {
+  background: linear-gradient(135deg, #9d8fff, #c4b0ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   COURSE CARDS — "My List" Netflix expand on hover
+   ───────────────────────────────────────────────────────────────── */
+.course-card {
+  /* Clip per contenere il gradiente interno */
+  overflow: hidden !important;
+  transition:
+    transform .25s var(--ease-cinema),
+    box-shadow .25s var(--ease-cinema),
+    border-color .2s var(--ease-soft),
+    filter .25s var(--ease-cinema) !important;
+}
+
+/* Info reveal al hover — metadati della card aula */
+.course-card-middle,
+.course-card-teachers {
+  transition: opacity .2s var(--ease-soft) !important;
+}
+
+/* Accent top bar animata per ogni card */
+.course-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--card-accent, var(--accent));
+  transform: scaleX(0);
+  transition: transform .3s var(--ease-cinema);
+  border-radius: 12px 12px 0 0;
+  z-index: 4;
+}
+.course-card:hover::after {
+  transform: scaleX(1);
+}
+
+/* Sopprimi il ::before che ora è sostituito da ::after */
+.course-card::before {
+  display: none !important;
+}
+
+/* Score/progress overlay — numero partite giocate */
+.course-card-score-overlay {
+  position: absolute;
+  top: 10px; left: 12px;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,.25);
+  text-transform: uppercase;
+  z-index: 3;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   ACTIVITY CARDS — "Episode selector" Netflix style
+   ───────────────────────────────────────────────────────────────── */
+.act-grid {
+  gap: 6px !important;
+}
+
+.act-card {
+  position: relative;
+  border-radius: 10px !important;
+  padding: .7rem .875rem !important;
+  overflow: hidden;
+}
+
+/* Numero episodio (ordine attività) — watermark sottile */
+.act-card::before {
+  content: attr(data-num);
+  position: absolute;
+  right: 10px;
+  bottom: 8px;
+  font-family: 'Orbitron', monospace;
+  font-size: 28px;
+  font-weight: 900;
+  color: rgba(255,255,255,.04);
+  line-height: 1;
+  pointer-events: none;
+  z-index: 0;
+  transition: color .25s var(--ease-soft);
+}
+.act-card:hover::before {
+  color: rgba(255,255,255,.06);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   QUIZ / GIOCO — "Content player" aesthetics
+   ───────────────────────────────────────────────────────────────── */
+
+/* Game header — "Player controls bar" */
+.game-header {
+  background: rgba(4,6,15,.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 12px;
+  padding: .6rem .875rem;
+  margin-bottom: 14px;
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+/* Progress bar — "Content progress indicator" */
+.prog-bar {
+  height: 2px !important;
+  background: rgba(255,255,255,.06) !important;
+  border-radius: 0 !important;
+  margin-bottom: 12px !important;
+  overflow: visible !important;
+  position: relative;
+}
+.prog-fill {
+  border-radius: 0 !important;
+  position: relative;
+}
+/* Indicatore di posizione corrente */
+.prog-fill::after {
+  content: '';
+  position: absolute;
+  right: -3px; top: -2px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 8px rgba(0,255,200,.6);
+}
+
+/* Q-card "Scene card" */
+.q-card {
+  background: rgba(8,12,24,.7) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255,255,255,.06) !important;
+  border-radius: 14px !important;
+  padding: 1.25rem 1.25rem 1rem !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,.4) !important;
+}
+
+/* Opzioni risposta — "choice cards" */
+.opt {
+  border-radius: 10px !important;
+  padding: 11px 14px !important;
+  background: rgba(255,255,255,.03) !important;
+  border-color: rgba(255,255,255,.07) !important;
+  font-size: 13px !important;
+  letter-spacing: .1px !important;
+}
+.opt::after {
+  width: 3px !important;
+  border-radius: 0 2px 2px 0 !important;
+}
+.opt:hover:not(:disabled) {
+  background: rgba(255,255,255,.07) !important;
+  border-color: rgba(255,255,255,.15) !important;
+  transform: translateX(4px) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   RISULTATI — "Content completed" screen
+   ───────────────────────────────────────────────────────────────── */
+.result-wrap {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* Result hero — "End card" Netflix */
+.result-hero {
+  position: relative;
+  padding: 2rem 0 1.5rem !important;
+}
+.result-hero::before {
+  content: '';
+  position: absolute;
+  top: -20px; left: 50%; transform: translateX(-50%);
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0,255,200,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.result-score {
+  font-size: 56px !important;
+  background: linear-gradient(135deg, #00ffc8, #00cfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none !important;
+  filter: drop-shadow(0 0 24px rgba(0,255,200,.25));
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   LEADERBOARD — "Top Charts" stile streaming
+   ───────────────────────────────────────────────────────────────── */
+.lb-type-card {
+  min-height: 120px !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+/* Numero rank watermark */
+.lb-type-card::before {
+  display: none !important; /* rimuove il vecchio ::before */
+}
+.lb-type-card::after {
+  content: '' !important;
+  position: absolute !important;
+  bottom: -10px !important; right: -10px !important;
+  width: 70px !important; height: 70px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle,
+    rgba(255,255,255,.04) 0%, transparent 70%) !important;
+  z-index: 0 !important;
+  transform: none !important;
+}
+
+.lb-type-card .ltc-icon { position: relative; z-index: 1 !important; }
+.lb-type-card .ltc-title,
+.lb-type-card .ltc-sub { position: relative; z-index: 1 !important; }
+
+/* Entry rows — "Chart item" */
+.lb-entry {
+  padding: 10px 14px !important;
+  border-radius: 10px !important;
+}
+.lb-entry:hover {
+  background: rgba(255,255,255,.06) !important;
+  padding-left: 18px !important;
+}
+
+/* Rank 1 — hero entry */
+.lb-entry.rank-1 {
+  background: linear-gradient(
+    135deg,
+    rgba(255,215,0,.07) 0%,
+    rgba(255,180,0,.03) 100%
+  ) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   SPLASH — "Platform intro" upgrade
+   ───────────────────────────────────────────────────────────────── */
+#screen-splash {
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 40%,
+      rgba(0,255,200,.04) 0%, transparent 65%),
+    #04060f !important;
+}
+
+.splash-wordmark {
+  background: linear-gradient(135deg, #00ffc8, #00cfff 60%, #7c6aff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: none !important;
+  filter: drop-shadow(0 0 24px rgba(0,255,200,.2));
+}
+.splash-wordmark em {
+  /* Già incluso nel gradiente */
+  background: inherit;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   SETUP CARD — "Configurazione partita" premium
+   ───────────────────────────────────────────────────────────────── */
+.setup-card {
+  border: 1px solid rgba(255,255,255,.07) !important;
+  box-shadow:
+    0 16px 60px rgba(0,0,0,.5),
+    0 0 0 1px rgba(255,255,255,.03) inset,
+    0 1px 0 rgba(255,255,255,.06) inset !important;
+}
+
+/* Tasto Avvia — "Play button" Netflix */
+#start-btn {
+  font-size: 13px !important;
+  letter-spacing: .8px !important;
+  text-transform: uppercase !important;
+  padding: 13px !important;
+  border-radius: 10px !important;
+  position: relative;
+  overflow: hidden;
+}
+#start-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg,
+    rgba(0,255,200,.15) 0%,
+    rgba(0,207,255,.08) 100%);
+  opacity: 0;
+  transition: opacity .22s var(--ease-soft);
+}
+#start-btn:not(:disabled):hover::before {
+  opacity: 1;
+}
+#start-btn:not(:disabled):hover {
+  box-shadow: 0 0 28px rgba(0,255,200,.18) !important;
+  transform: translateY(-1px);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   DIALOG — "Interruption modal" stile streaming premium
+   ───────────────────────────────────────────────────────────────── */
+.pp-dialog {
+  background: rgba(6,8,18,.98) !important;
+  border: 1px solid rgba(255,60,80,.18) !important;
+  border-radius: 18px !important;
+  box-shadow:
+    0 32px 96px rgba(0,0,0,.85),
+    0 0 0 1px rgba(255,60,80,.06),
+    0 0 60px rgba(0,0,0,.4) !important;
+}
+.pp-dialog-overlay {
+  background: rgba(0,0,0,.75) !important;
+  backdrop-filter: blur(16px) saturate(150%) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   MEMORY BOARD — "Card reveal" cinematico
+   ───────────────────────────────────────────────────────────────── */
+.mem-c.hide:hover {
+  border-color: rgba(0,255,200,.55) !important;
+  box-shadow:
+    0 8px 28px rgba(0,0,0,.45),
+    0 0 0 1px rgba(0,255,200,.22),
+    0 0 20px rgba(0,255,200,.08) !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   ABBINA MATCH — colori per coppia più vibranti
+   ───────────────────────────────────────────────────────────────── */
+.match-item {
+  border-radius: 10px !important;
+  font-size: 12px !important;
+  padding: 9px 11px !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   SCROLLBAR — stile streaming scuro
+   ───────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(255,255,255,.02);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,.12);
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,255,200,.3);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   FOCUS RING — accessibilità premium
+   ───────────────────────────────────────────────────────────────── */
+.mod-card:focus-visible {
+  outline: 2px solid rgba(0,255,200,.6) !important;
+  outline-offset: 3px !important;
+  box-shadow:
+    0 0 0 4px rgba(0,255,200,.12),
+    var(--shadow-card) !important;
+}
+.act-card:focus-visible {
+  outline: 2px solid rgba(0,255,200,.5) !important;
+  outline-offset: 2px !important;
+}
+.course-card:focus-visible {
+  outline: 2px solid rgba(0,255,200,.5) !important;
+  outline-offset: 2px !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   SKELETON LOADING — shimmer per stati di caricamento
+   ───────────────────────────────────────────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    rgba(255,255,255,.04) 25%,
+    rgba(255,255,255,.08) 50%,
+    rgba(255,255,255,.04) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite;
+  border-radius: 6px;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   RESPONSIVE v6.1 — mobile refinements
+   ───────────────────────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  .home-hero-title {
+    font-size: 24px !important;
+  }
+  .home-hero {
+    padding: 1.75rem 0 1.25rem !important;
+  }
+  .home-divider span {
+    font-size: 14px !important;
+  }
+  /* Su mobile il gradient testo può essere instabile — fallback */
+  .home-hero-title {
+    background: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+    color: #ffffff !important;
+  }
+  .home-hero-title .hl {
+    background: none !important;
+    -webkit-text-fill-color: var(--accent) !important;
+    color: var(--accent) !important;
+    filter: none !important;
+  }
+  .result-score {
+    background: none !important;
+    -webkit-text-fill-color: var(--accent) !important;
+    color: var(--accent) !important;
+    filter: none !important;
+  }
+  .logo-main {
+    background: none !important;
+    -webkit-text-fill-color: var(--accent) !important;
+    color: var(--accent) !important;
+  }
+  .logo-main em {
+    background: none !important;
+    -webkit-text-fill-color: var(--purple) !important;
+    color: var(--purple) !important;
+  }
+  /* Hover expansion tags — nascondi su mobile (no hover) */
+  .mod-card .mc-expand {
+    display: none;
+  }
+  /* Progress dot nascosto su mobile */
+  .prog-fill::after {
+    display: none;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   REDUCED MOTION v6.1
+   ───────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-title,
+  .result-score,
+  .logo-main {
+    background: none !important;
+    -webkit-text-fill-color: currentColor !important;
+    filter: none !important;
+  }
+  #start-btn,
+  .mod-card .mc-expand {
+    transition: none !important;
+  }
+  .prog-fill::after {
+    display: none;
+  }
+  @keyframes shimmer { to { background-position: 0; } }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   END PixelProf v6.1 — Netflix Upgrade Layer
+   ───────────────────────────────────────────────────────────────── */

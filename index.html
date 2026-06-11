@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v5.0.3</title>
+<title>PixelProf — ICDL Lab interattivo v5.0.4</title>
 <link rel="icon" href="public/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
@@ -80,7 +80,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v5.0.3</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v5.0.4</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -206,7 +206,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v5.0.3</span>
+        <span class="cs-logo-sub">ICDL Lab · v5.0.4</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v3.2.2 -->
@@ -267,20 +267,28 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <div class="slbl" style="margin-bottom:8px">Icona</div>
         <div style="display:flex;flex-wrap:wrap;gap:6px" id="cw-icon-grid"></div>
       </div>
-      <!-- DATE + FASCIA ORARIA -->
+      <!-- DATE + FASCIA ORARIA — tutti obbligatori -->
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
         <div>
-          <div class="slbl" style="margin-bottom:6px">Data inizio</div>
-          <input type="date" id="cw-start-date" class="cs-add-inp" style="width:100%;color-scheme:dark"/>
+          <div class="slbl" style="margin-bottom:6px">Data inizio <span style="color:#ff4d6d;font-size:10px">*</span></div>
+          <input type="date" id="cw-start-date" class="cs-add-inp" style="width:100%;color-scheme:dark" required/>
         </div>
         <div>
-          <div class="slbl" style="margin-bottom:6px">Data fine</div>
-          <input type="date" id="cw-end-date" class="cs-add-inp" style="width:100%;color-scheme:dark"/>
+          <div class="slbl" style="margin-bottom:6px">Data fine <span style="color:#ff4d6d;font-size:10px">*</span></div>
+          <input type="date" id="cw-end-date" class="cs-add-inp" style="width:100%;color-scheme:dark" required/>
         </div>
       </div>
+      <div id="cw-date-err-wrap" style="display:none;margin-top:-6px;margin-bottom:8px;font-size:11px;color:#ff6b6b;font-family:'Share Tech Mono',monospace"></div>
       <div style="margin-bottom:12px">
-        <div class="slbl" style="margin-bottom:6px">Fascia oraria <span style="color:rgba(255,255,255,.25);font-weight:400;text-transform:none;letter-spacing:0">(es. 14:00 – 17:00)</span></div>
-        <input type="text" id="cw-time-slot" class="cs-add-inp" placeholder="es. 14:00 – 17:00" style="width:100%"/>
+        <div class="slbl" style="margin-bottom:6px">Fascia oraria <span style="color:#ff4d6d;font-size:10px">*</span></div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <input type="time" id="cw-time-start" class="cs-add-inp"
+            style="flex:1;color-scheme:dark;min-width:0" required/>
+          <span style="color:rgba(255,255,255,.4);font-size:14px;font-weight:600;flex-shrink:0">–</span>
+          <input type="time" id="cw-time-end" class="cs-add-inp"
+            style="flex:1;color-scheme:dark;min-width:0" required/>
+        </div>
+        <div id="cw-time-err" style="display:none;margin-top:4px;font-size:11px;color:#ff6b6b;font-family:'Share Tech Mono',monospace"></div>
       </div>
       <div class="cw-btns">
         <button class="cw-btn-back" onclick="closeCourseWizard()">Annulla</button>
@@ -327,11 +335,24 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     <!-- STEP 3: Docenti -->
     <div class="cw-step" id="cw-step-3">
       <div class="cw-title">👩‍🏫 Docenti</div>
-      <div class="cw-subtitle">Assegna i docenti che potranno accedere a questa aula. Puoi aggiungerne altri in seguito dal pannello ⚙️ Gestisci.</div>
+      <div class="cw-subtitle">Assegna almeno un docente per questa aula. Potrai modificare l'assegnazione in seguito dal pannello ⚙️ Gestisci.</div>
+
+      <!-- Banner "almeno un docente richiesto" — nascosto dopo il primo aggiunto -->
+      <div id="cw-teacher-required-banner" style="
+        display:flex;align-items:center;gap:10px;
+        padding:10px 14px;border-radius:10px;margin-bottom:12px;
+        background:rgba(255,180,0,.08);border:1px solid rgba(255,180,0,.25);
+        font-size:11px;color:#ffb400;font-family:'Share Tech Mono',monospace;
+        line-height:1.45;
+      ">
+        <i class="ti ti-alert-triangle" style="font-size:16px;flex-shrink:0"></i>
+        <span>È obbligatorio aggiungere almeno un docente per procedere alla creazione dell'aula.</span>
+      </div>
+
       <div id="cw-teacher-list" style="margin-bottom:10px;max-height:180px;overflow-y:auto"></div>
       <div class="slbl" style="margin-bottom:6px">Aggiungi docente esistente</div>
       <div class="cw-invite-row" style="margin-bottom:12px">
-        <select id="cw-teacher-select" class="dp-add-select" style="flex:1">
+        <select id="cw-teacher-select" class="dp-add-select cw-teacher-select-styled" style="flex:1">
           <option value="">— Seleziona docente —</option>
         </select>
         <button class="btn btn-neon" onclick="cwAddTeacher()" style="padding:8px 14px;font-size:12px">
@@ -351,7 +372,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <div id="cw-invite-fb" class="cw-invite-fb"></div>
       <div class="cw-btns" style="margin-top:1.25rem">
         <button class="cw-btn-back" onclick="cwStep(2)"><i class="ti ti-arrow-left"></i> Indietro</button>
-        <button class="cw-btn-next" id="cw-btn-create" onclick="cwCreateClassroom()">
+        <button class="cw-btn-next" id="cw-btn-create" onclick="cwCreateClassroom()" disabled>
           <i class="ti ti-check"></i> Crea aula
         </button>
       </div>
@@ -501,7 +522,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v5.0.3</span>
+      <span class="logo-sub">ICDL Lab · v5.0.4</span>
     </div>
   </div>
   <!-- Course badge — icona + nome aula, cliccabile (v3.2.2) -->
@@ -953,7 +974,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div>
 
 <!-- ======================================
-     STORICO SESSIONI — v5.0.0 N3 / v5.0.3 export CSV
+     STORICO SESSIONI — v5.0.0 N3 / v5.0.4 export CSV
 ====================================== -->
 <div id="tab-hist" class="screen">
 

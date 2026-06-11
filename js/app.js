@@ -208,6 +208,12 @@ function openCourseWizard(){
   if(ig) ig.innerHTML = COURSE_ICONS.map(ic=>
     `<button class="icp-btn${_cw.icon===ic?' selected':''}" onclick="_cwPickIcon('${escAttr(ic)}')">${ic}</button>`
   ).join('');
+  // Reset tutti i campi Step 1
+  ['cw-start-date','cw-end-date','cw-time-start','cw-time-end'].forEach(id=>{
+    const el=sh(id); if(el){el.value='';el.style.borderColor='';el.style.boxShadow='';}
+  });
+  const dew=document.getElementById('cw-date-err-wrap');if(dew){dew.textContent='';dew.style.display='none';}
+  const tew=document.getElementById('cw-time-err');if(tew){tew.textContent='';tew.style.display='none';}
   const _fb = sh('cw-invite-fb'); if(_fb) _fb.textContent='';
   const _ei = sh('cw-invite-email'); if(_ei) _ei.value='';
   const _ni = sh('cw-invite-name'); if(_ni) _ni.value='';
@@ -236,6 +242,16 @@ function _cwGoStep(n){
   if(n===3) _cwInitTeacherStep();
 }
 
+function _cwShowFieldError(inpEl, msg, errContainerId){
+  if(inpEl){ inpEl.style.borderColor='#ff6b6b'; inpEl.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)'; }
+  const cont=document.getElementById(errContainerId);
+  if(cont){ cont.textContent='✗ '+msg; cont.style.display='block'; }
+  setTimeout(()=>{
+    if(inpEl){ inpEl.style.borderColor=''; inpEl.style.boxShadow=''; }
+    if(cont){ cont.textContent=''; cont.style.display='none'; }
+  },3500);
+}
+
 function cwStep(n){
   if(n===2){
     const name=(sh('cw-name-inp')?.value||'').trim();
@@ -250,25 +266,67 @@ function cwStep(n){
       setTimeout(()=>{ if(errEl)errEl.textContent=''; if(inp){inp.classList.remove('error');inp.style.borderColor='';} },3500);
       return;
     }
-    // Validazione date: la fine non può precedere l'inizio
+
+    // ── Date obbligatorie ──
     const startVal=(sh('cw-start-date')?.value||'').trim();
     const endVal  =(sh('cw-end-date')?.value  ||'').trim();
-    if(startVal && endVal && endVal < startVal){
-      const endInp=sh('cw-end-date');
-      if(endInp){ endInp.style.borderColor='#ff6b6b'; endInp.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)'; }
-      let errEl=document.getElementById('cw-date-err');
-      if(!errEl){ errEl=document.createElement('div'); errEl.id='cw-date-err'; errEl.style.cssText='font-size:11px;color:#ff6b6b;margin-top:4px;font-family:Share Tech Mono,monospace;grid-column:1/-1'; sh('cw-end-date')?.parentNode?.parentNode?.appendChild(errEl); }
-      errEl.textContent='✗ La data di fine non può essere precedente alla data di inizio.';
-      setTimeout(()=>{
-        if(errEl)errEl.textContent='';
-        if(endInp){endInp.style.borderColor='';endInp.style.boxShadow='';}
-      }, 3500);
-      sh('cw-end-date')?.focus();
-      return;
+    const errWrap = document.getElementById('cw-date-err-wrap');
+    const _clearDateErr=()=>{
+      ['cw-start-date','cw-end-date'].forEach(id=>{
+        const el=sh(id); if(el){el.style.borderColor='';el.style.boxShadow='';}
+      });
+      if(errWrap){errWrap.textContent='';errWrap.style.display='none';}
+    };
+    if(!startVal){
+      const el=sh('cw-start-date');
+      if(el){el.style.borderColor='#ff6b6b';el.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)';el.focus();}
+      if(errWrap){errWrap.textContent='✗ La data di inizio è obbligatoria.';errWrap.style.display='block';}
+      setTimeout(_clearDateErr,3500); return;
     }
-    // Pulisce eventuale errore date precedente
-    const dateErrEl=document.getElementById('cw-date-err'); if(dateErrEl)dateErrEl.textContent='';
-    const endInp=sh('cw-end-date'); if(endInp){endInp.style.borderColor='';endInp.style.boxShadow='';}
+    if(!endVal){
+      const el=sh('cw-end-date');
+      if(el){el.style.borderColor='#ff6b6b';el.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)';el.focus();}
+      if(errWrap){errWrap.textContent='✗ La data di fine è obbligatoria.';errWrap.style.display='block';}
+      setTimeout(_clearDateErr,3500); return;
+    }
+    if(endVal < startVal){
+      const el=sh('cw-end-date');
+      if(el){el.style.borderColor='#ff6b6b';el.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)';el.focus();}
+      if(errWrap){errWrap.textContent='✗ La data di fine non può essere precedente alla data di inizio.';errWrap.style.display='block';}
+      setTimeout(_clearDateErr,3500); return;
+    }
+
+    // ── Fascia oraria obbligatoria (2 picker) ──
+    const tStart=(sh('cw-time-start')?.value||'').trim();
+    const tEnd  =(sh('cw-time-end')?.value  ||'').trim();
+    const tErr=document.getElementById('cw-time-err');
+    const _clearTimeErr=()=>{
+      ['cw-time-start','cw-time-end'].forEach(id=>{
+        const el=sh(id); if(el){el.style.borderColor='';el.style.boxShadow='';}
+      });
+      if(tErr){tErr.textContent='';tErr.style.display='none';}
+    };
+    if(!tStart){
+      const el=sh('cw-time-start');
+      if(el){el.style.borderColor='#ff6b6b';el.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)';el.focus();}
+      if(tErr){tErr.textContent='✗ Inserisci l\'orario di inizio.';tErr.style.display='block';}
+      setTimeout(_clearTimeErr,3500); return;
+    }
+    if(!tEnd){
+      const el=sh('cw-time-end');
+      if(el){el.style.borderColor='#ff6b6b';el.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)';el.focus();}
+      if(tErr){tErr.textContent='✗ Inserisci l\'orario di fine.';tErr.style.display='block';}
+      setTimeout(_clearTimeErr,3500); return;
+    }
+    if(tEnd <= tStart){
+      const el=sh('cw-time-end');
+      if(el){el.style.borderColor='#ff6b6b';el.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)';el.focus();}
+      if(tErr){tErr.textContent='✗ L\'orario di fine deve essere successivo all\'inizio.';tErr.style.display='block';}
+      setTimeout(_clearTimeErr,3500); return;
+    }
+
+    // tutto ok — pulisce errori residui
+    _clearDateErr(); _clearTimeErr();
     sh('cw-name-inp')?.classList.remove('error');
     sh('cw-name-inp')?.style && (sh('cw-name-inp').style.borderColor='');
     const errEl=document.getElementById('cw-name-err'); if(errEl)errEl.textContent='';
@@ -322,11 +380,17 @@ async function _cwInitTeacherStep(){
 
 function _cwRenderTeachers(){
   const el = sh('cw-teacher-list');
+  const banner = document.getElementById('cw-teacher-required-banner');
+  const createBtn = sh('cw-btn-create');
   if(!el) return;
   if(!_cw.teachers.length){
-    el.innerHTML='<div style="font-size:12px;color:rgba(255,255,255,.3);margin-bottom:8px">Nessun docente aggiunto ancora (facoltativo)</div>';
+    el.innerHTML='';
+    if(banner) banner.style.display='flex';
+    if(createBtn) createBtn.disabled=true;
     return;
   }
+  if(banner) banner.style.display='none';
+  if(createBtn) createBtn.disabled=false;
   el.innerHTML = _cw.teachers.map((t,i)=>`
     <div class="cw-teacher-row">
       <div><div class="ct-name">${escHtml(t.name)}</div><div class="ct-email">${escHtml(t.id)}</div></div>
@@ -399,11 +463,24 @@ async function cwCreateClassroom(){
     if(btn){ btn.disabled=false; btn.innerHTML='<i class="ti ti-check"></i> Crea aula'; }
     alert('Errore: sessione non valida.'); return;
   }
+
+  // Docente obbligatorio — double-check lato JS
+  if(!_cw.teachers.length){
+    if(btn){ btn.disabled=true; btn.innerHTML='<i class="ti ti-check"></i> Crea aula'; }
+    const banner=document.getElementById('cw-teacher-required-banner');
+    if(banner){banner.style.display='flex';banner.style.animation='none';void banner.offsetWidth;banner.style.animation='';}
+    return;
+  }
+
   const courses  = loadCourses();
   const colorIdx = courses.length % COLOR_PALETTE.length;
   const startDate = sh('cw-start-date')?.value || null;
   const endDate   = sh('cw-end-date')?.value   || null;
-  const timeSlot  = (sh('cw-time-slot')?.value||'').trim() || null;
+  // Compone timeSlot dai 2 picker HH:MM – HH:MM
+  const tStart=(sh('cw-time-start')?.value||'').trim();
+  const tEnd  =(sh('cw-time-end')?.value  ||'').trim();
+  const timeSlot = (tStart && tEnd) ? (tStart + ' – ' + tEnd) : null;
+
   const res = await window.DB.createClassroom(teacherId, {
     name:     _cw.name,
     icon:     _cw.icon,
@@ -632,12 +709,16 @@ async function dpAssignTeacher(){
   await window.DB.assignTeacherToClassroom(_dpClassroomId, sel.value).catch(()=>{});
   sel.value='';
   await _dpLoadTeachers();
+  // Aggiorna le card nella griglia con i nuovi docenti
+  await _reloadCourses();
 }
 
 async function dpRemoveTeacher(teacherId){
   if(!confirm('Rimuovere il docente dall\'aula?')) return;
   await window.DB.removeTeacherFromClassroom(_dpClassroomId, teacherId).catch(()=>{});
   await _dpLoadTeachers();
+  // Aggiorna le card nella griglia con i docenti aggiornati
+  await _reloadCourses();
 }
 
 async function dpInviteTeacher(){

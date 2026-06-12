@@ -14,12 +14,6 @@
    N1 (WP nel wizard). _updateAddSqBtn mantenuta come no-op.
    v5.0.1: N2 (rinomina squadra salvata — inline chip editor).
    v5.0.2: Delete giocatori/squadre salvati (inline × chip).
-   v5.0.4: _showDeleteConfirm modale centrato + backdrop;
-            rename inline giocatore + sync Supabase.
-   v5.0.5: FIX — _renderModuleFilter() sincrona + window._activeModuleKeys
-            come fonte di verità. goStep('mod') chiama _renderModuleFilter()
-            garantendo filtro moduli sempre aggiornato al rientro in home
-            senza chiamate di rete extra. Reset su cambio aula e logout.
    This is the central module — loaded before all games.
 ================================================== */
 
@@ -905,7 +899,6 @@ function goHome(){
 function goCoursesFromApp(){
   const _execBack = () => {
     resetSessionState();
-    window._activeModuleKeys = null; // reset filtro moduli: nuova aula = nuovi moduli
     sh('screen-courses').classList.remove('hidden');
     document.querySelector('.app').style.display='none';
     renderCoursesGrid();
@@ -965,13 +958,12 @@ function goStep(s){
   ['step-mod','step-act','step-num','step-players'].forEach(id=>sh(id).classList.add('hidden'));
   sh('step-'+s).classList.remove('hidden');
   if(s==='mod'){
-    // FIX v5.0.5: riapplica il filtro moduli ad ogni accesso a step-mod.
+    // v5.0.5: riapplica il filtro moduli ad ogni accesso a step-mod.
     // _renderModuleFilter è sincrona e legge window._activeModuleKeys
     // (impostato da _applyModuleFilter al momento dell'ingresso nell'aula).
-    // In questo modo il filtro è sempre aggiornato senza fare nuove
-    // chiamate di rete ad ogni ritorno alla home o fine partita.
-    if(typeof _renderModuleFilter === 'function'){
-      _renderModuleFilter();
+    // Usato come window.* per garantire la visibilità cross-file (definita in app.js).
+    if(typeof window._renderModuleFilter === 'function'){
+      window._renderModuleFilter();
     }
   }
   if(s==='act'){

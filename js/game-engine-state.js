@@ -16,9 +16,10 @@
    v5.0.2: Delete giocatori/squadre salvati (inline × chip).
    v5.0.4: _showDeleteConfirm modale centrato + backdrop;
             rename inline giocatore + sync Supabase.
-   v5.0.5: FIX — goStep('mod') richiama _applyModuleFilter
-            garantendo filtro moduli sempre aggiornato al
-            rientro in home (fine partita, cambio tab, ecc.).
+   v5.0.5: FIX — _renderModuleFilter() sincrona + window._activeModuleKeys
+            come fonte di verità. goStep('mod') chiama _renderModuleFilter()
+            garantendo filtro moduli sempre aggiornato al rientro in home
+            senza chiamate di rete extra. Reset su cambio aula e logout.
    This is the central module — loaded before all games.
 ================================================== */
 
@@ -904,6 +905,7 @@ function goHome(){
 function goCoursesFromApp(){
   const _execBack = () => {
     resetSessionState();
+    window._activeModuleKeys = null; // reset filtro moduli: nuova aula = nuovi moduli
     sh('screen-courses').classList.remove('hidden');
     document.querySelector('.app').style.display='none';
     renderCoursesGrid();
@@ -962,11 +964,15 @@ function _doGoTab(t){
 function goStep(s){
   ['step-mod','step-act','step-num','step-players'].forEach(id=>sh(id).classList.add('hidden'));
   sh('step-'+s).classList.remove('hidden');
-  if(s==='mod' && activeCourseId && typeof _applyModuleFilter==='function'){
-    // FIX v5.0.5: riapplica il filtro moduli ogni volta che si torna a step-mod,
-    // garantendo che la visibilità delle card rifletta sempre la configurazione
-    // dell'aula corrente — indipendentemente dal percorso di navigazione.
-    _applyModuleFilter(activeCourseId);
+  if(s==='mod'){
+    // FIX v5.0.5: riapplica il filtro moduli ad ogni accesso a step-mod.
+    // _renderModuleFilter è sincrona e legge window._activeModuleKeys
+    // (impostato da _applyModuleFilter al momento dell'ingresso nell'aula).
+    // In questo modo il filtro è sempre aggiornato senza fare nuove
+    // chiamate di rete ad ogni ritorno alla home o fine partita.
+    if(typeof _renderModuleFilter === 'function'){
+      _renderModuleFilter();
+    }
   }
   if(s==='act'){
     sh('act-mod-label').textContent=MOD_LABEL[sMod]||'';

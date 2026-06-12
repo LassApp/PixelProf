@@ -155,6 +155,7 @@ async function _performLogout(){
   appState.classroom = null;
   activeCourseId     = null;
   db                 = makeEmptyDb();
+  window._activeModuleKeys = null; // reset filtro moduli aula
   const badge = sh('tb-course-badge');
   if(badge) badge.style.display = 'none';
   sh('screen-courses').classList.add('hidden');
@@ -170,15 +171,56 @@ async function _performLogout(){
    FILTRO MODULI — applica i moduli abilitati per l'aula
    keys=null => tutti visibili; keys=[] => nessuno
 ================================================== */
+/**
+ * _applyModuleFilter — v5.0.5
+ *
+ * Carica i moduli abilitati per l'aula dal cloud (async),
+ * li salva in window._activeModuleKeys come fonte di verità,
+ * poi chiama _renderModuleFilter() (sincrona) per aggiornare il DOM.
+ *
+ * Separare fetch e render permette a goStep('mod') di richiamare
+ * _renderModuleFilter() ogni volta senza fare una nuova chiamata
+ * di rete — risolvendo il bug dei moduli che riapparivano al
+ * ritorno in home dopo una partita.
+ *
+ * SEMANTICA keys:
+ *   null       → nessuna whitelist configurata → tutti i moduli visibili
+ *   []         → whitelist vuota configurata   → tutti i moduli visibili (edge case)
+ *   ['CE','WP'] → mostra solo CE e WP
+ */
 async function _applyModuleFilter(classroomId){
-  if(!window.DB) return;
+  if(!window.DB){ _renderModuleFilter(); return; }
   let keys = null;
-  try{ keys = await window.DB.getEnabledModules(classroomId); }catch(e){}
+  try{
+    keys = await window.DB.getEnabledModules(classroomId);
+  }catch(e){
+    console.warn('[PixelProf] _applyModuleFilter: getEnabledModules fallito, mostro tutto', e);
+  }
+  // Salva i moduli abilitati come fonte di verità per l'aula corrente.
+  // null e [] sono semanticamente equivalenti: nessun filtro.
+  window._activeModuleKeys = (keys && keys.length > 0) ? keys : null;
+  _renderModuleFilter();
+}
+
+/**
+ * _renderModuleFilter — sincrona, zero rete.
+ *
+ * Legge window._activeModuleKeys e aggiorna la visibilità
+ * delle card modulo nel DOM. Viene chiamata da:
+ *   • _applyModuleFilter (dopo il fetch)
+ *   • goStep('mod') (ad ogni ritorno alla home)
+ *
+ * In questo modo il filtro è sempre corretto indipendentemente
+ * dal percorso di navigazione, senza fare una nuova chiamata
+ * Supabase ad ogni pressione del tasto Home o fine partita.
+ */
+function _renderModuleFilter(){
+  const keys = window._activeModuleKeys || null;
   const ALL = ['CE','OE','MIX','WP','SS'];
   ALL.forEach(k=>{
-    const card = shq('mc-'+k);  // shq: SS non esiste nell'HTML, nessun warning
+    const card = shq('mc-'+k); // shq: silenzioso se #mc-SS non esiste
     if(!card) return;
-    const show = !keys || keys.length===0 || keys.includes(k);
+    const show = !keys || keys.includes(k);
     card.style.display = show ? '' : 'none';
   });
 }

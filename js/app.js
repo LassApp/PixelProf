@@ -1,5 +1,5 @@
 /* ==================================================
-   app.js — PixelProf v5.0.0
+   app.js — PixelProf v5.0.5
    App bootstrap: auth flow, login, logout, set-password,
    module filter, wizard, director panel, and splash/init.
    v5.0.0 M5: _deleteClassroomRest legge credenziali da
@@ -224,6 +224,9 @@ function _renderModuleFilter(){
     card.style.display = show ? '' : 'none';
   });
 }
+// Esposta su window per essere raggiungibile da goStep() in game-engine-state.js
+// (file caricato prima di app.js, non può referenziare funzioni locali di questo file)
+window._renderModuleFilter = _renderModuleFilter;
 
 /* ==================================================
    WIZARD NUOVA AULA — v3.1.2

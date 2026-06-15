@@ -156,6 +156,8 @@ async function _performLogout(){
   activeCourseId     = null;
   db                 = makeEmptyDb();
   window._activeModuleKeys = null; // reset filtro moduli aula
+  // Chiude Hub se aperto
+  if(typeof closeHubMenu === 'function') closeHubMenu();
   const badge = sh('tb-course-badge');
   if(badge) badge.style.display = 'none';
   sh('screen-courses').classList.add('hidden');
@@ -930,6 +932,68 @@ async function doSetPassword() {
     }
   }, 3000);
 }
+
+/* ==================================================
+   HUB MENU — v5.0.5
+   Menu compatto che raggruppa Classifica / Progressi / Storico.
+   toggleHubMenu apre/chiude il dropdown.
+   closeHubMenu viene chiamato da backdrop click e da ogni item.
+   setTb patch: tb-home è nascosto nel DOM ma usato da setTb() —
+   aggiorniamo tb-hub-btn per riflettere la sezione attiva.
+================================================== */
+function toggleHubMenu(evt){
+  if(evt) evt.stopPropagation();
+  const menu = sh('tb-hub-menu');
+  const chev = sh('tb-hub-chev');
+  const backdrop = sh('tb-hub-backdrop');
+  if(!menu) return;
+  const isOpen = !menu.classList.contains('hidden');
+  if(isOpen){
+    closeHubMenu();
+  } else {
+    menu.classList.remove('hidden');
+    if(chev) chev.classList.add('open');
+    if(backdrop){ backdrop.style.display='block'; }
+  }
+}
+
+function closeHubMenu(){
+  const menu = sh('tb-hub-menu');
+  const chev = sh('tb-hub-chev');
+  const backdrop = sh('tb-hub-backdrop');
+  if(menu) menu.classList.add('hidden');
+  if(chev) chev.classList.remove('open');
+  if(backdrop){ backdrop.style.display='none'; }
+}
+
+/* setTb patch v5.0.5:
+   tb-home è nascosto (display:none) ma setTb() lo cerca per rimuovere/aggiungere .active.
+   Il comportamento legacy rimane invariato — tb-home riceve .active invisibilmente.
+   In aggiunta, aggiorniamo .active sugli item Hub visibili. */
+(function _patchSetTb(){
+  const _HUB_TABS = ['lb','st','hist'];
+  const _origSetTb = window.setTb; // non esiste ancora — sarà definita da game-engine-state.js
+  // Monkey-patch dopo caricamento (DOMContentLoaded garantisce l'ordine)
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const _gse_setTb = window.setTb;
+    if(typeof _gse_setTb !== 'function') return;
+    window.setTb = function(active){
+      _gse_setTb(active);
+      // Aggiorna .active sugli hub items
+      document.querySelectorAll('.tb-hub-item').forEach(el => el.classList.remove('active'));
+      if(active && _HUB_TABS.some(t => 'tb-'+t === active)){
+        const item = sh(active);
+        if(item) item.classList.add('active');
+        // Evidenzia il pulsante Hub quando una sua sezione è attiva
+        const hubBtn = sh('tb-hub-btn');
+        if(hubBtn) hubBtn.classList.add('active');
+      } else {
+        const hubBtn = sh('tb-hub-btn');
+        if(hubBtn) hubBtn.classList.remove('active');
+      }
+    };
+  });
+})();
 
 /* ==================================================
    SPLASH + INIT v3.1.2

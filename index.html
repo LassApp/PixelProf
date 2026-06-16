@@ -504,9 +504,8 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 
 <!-- ======================================
      TOPBAR v5.0.5
-     Logo  → goCoursesFromApp (uscita aula)
-     Badge → goHome (ritorno selezione moduli)
-     Hub   → menu compatto lb/progressi/storico
+     Sinistra: Logo PixelProf
+     Destra: Badge Aula | Hub (solo icona) | Badge ruolo | Nome | Esci
 ====================================== -->
 <div class="topbar">
 
@@ -526,6 +525,8 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </div>
   </div>
 
+  <div style="flex:1"></div>
+
   <!-- Badge aula: clic → ritorno selezione moduli (goHome) -->
   <div id="tb-course-badge" class="tb-aula-badge" onclick="goHome()" title="Torna ai moduli">
     <span id="tb-course-icon" class="tb-aula-icon"></span>
@@ -533,17 +534,11 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     <i class="ti ti-home" style="font-size:10px;color:rgba(0,255,200,.45);flex-shrink:0;margin-left:2px"></i>
   </div>
 
-  <div style="flex:1"></div>
-
-  <!-- NAV: Hub compatto -->
+  <!-- NAV: Hub solo icona -->
   <nav class="tb-nav">
-
-    <!-- Hub dropdown -->
     <div class="tb-hub-wrap" id="tb-hub-wrap">
-      <button class="tb-btn tb-hub-btn" id="tb-hub-btn" onclick="toggleHubMenu(event)" title="Hub attività">
+      <button class="tb-btn tb-hub-btn tb-hub-icon-only" id="tb-hub-btn" onclick="toggleHubMenu(event)" title="Classifica, Progressi, Storico">
         <i class="ti ti-layout-grid"></i>
-        <span>Hub</span>
-        <i class="ti ti-chevron-down tb-hub-chev" id="tb-hub-chev"></i>
       </button>
       <div class="tb-hub-menu hidden" id="tb-hub-menu">
         <button class="tb-hub-item" id="tb-lb" onclick="closeHubMenu();goTab('lb')">
@@ -557,13 +552,11 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         </button>
       </div>
     </div>
-
     <!-- tb-home: nascosto visivamente, usato da setTb() -->
     <button id="tb-home" style="display:none" onclick="goHome()"></button>
-
   </nav>
 
-  <!-- User badge -->
+  <!-- User badge: ruolo | nome | esci -->
   <div id="tb-user-badge" style="display:none;align-items:center;gap:6px;flex-shrink:0">
     <span id="tb-user-role-pill" style="font-family:'Share Tech Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:20px;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.3);color:#ffd700"></span>
     <span id="tb-user-name" style="font-size:11px;color:rgba(255,255,255,.5);font-family:'Share Tech Mono',monospace;white-space:nowrap;max-width:80px;overflow:hidden;text-overflow:ellipsis"></span>
@@ -820,10 +813,50 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 
   </div>
 
+  <!-- STEP: CATEGORIA (Didattica / Minigiochi) -->
+  <div id="step-cat" class="hidden">
+    <div class="act-back-row">
+      <button class="act-back-btn" onclick="goStep('mod')"><i class="ti ti-arrow-left"></i> Modulo</button>
+      <span class="act-context-label" id="cat-mod-label"></span>
+    </div>
+    <div class="home-hero" style="padding:1.25rem 0 1rem;text-align:left">
+      <span class="home-hero-eyebrow">Cosa vuoi fare?</span>
+      <h1 class="home-hero-title" style="font-size:22px">Scegli la <span class="hl">modalità</span></h1>
+    </div>
+    <div class="cat-grid">
+      <!-- MINIGIOCHI -->
+      <div class="cat-card cat-games" role="button" tabindex="0"
+        aria-label="Minigiochi interattivi"
+        onclick="goStep('act')"
+        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goStep('act');}">
+        <div class="cat-card-inner">
+          <span class="cat-icon">🎮</span>
+          <div>
+            <div class="cat-title">Minigiochi</div>
+            <div class="cat-sub">Quiz, Memory, Abbina e altro</div>
+          </div>
+          <i class="ti ti-arrow-right cat-arrow"></i>
+        </div>
+      </div>
+      <!-- DIDATTICA — Coming Soon -->
+      <div class="cat-card cat-didattica soon-cat" style="cursor:not-allowed;opacity:.5;pointer-events:none"
+        aria-label="Didattica — Coming Soon" tabindex="-1">
+        <div class="cat-card-inner">
+          <span class="cat-icon">📖</span>
+          <div>
+            <div class="cat-title">Didattica</div>
+            <div class="cat-sub">Lezioni guidate · In arrivo</div>
+          </div>
+          <span class="cs-label" style="position:static;margin-left:auto;font-size:8px">Soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- STEP: ATTIVITÀ -->
   <div id="step-act" class="hidden">
     <div class="act-back-row">
-      <button class="act-back-btn" onclick="goStep('mod')"><i class="ti ti-arrow-left"></i> Modulo</button>
+      <button class="act-back-btn" onclick="goStep('cat')"><i class="ti ti-arrow-left"></i> Categoria</button>
       <span class="act-context-label" id="act-mod-label"></span>
     </div>
     <div class="act-hero" id="act-hero">

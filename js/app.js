@@ -146,7 +146,9 @@ async function doLogout(){
     sh('pp-dialog-no').onclick  = _prevNo;
     if(t) t.textContent=_prevT; if(s) s.textContent=_prevS; if(y) y.textContent=_prevY;
     _setDialogCopy('exit');
+    closeHubMenu(); // Bug fix: chiude Hub quando si annulla il logout
   };
+  closeHubMenu(); // Bug fix: chiude Hub prima di aprire il dialog
   sh('pp-dialog-overlay').classList.remove('hidden');
 }
 
@@ -954,7 +956,17 @@ function toggleHubMenu(evt){
     menu.classList.remove('hidden');
     if(chev) chev.classList.add('open');
     if(backdrop){ backdrop.style.display='block'; }
+    // Bug fix: chiude Hub cliccando fuori — listener una-tantum sul documento
+    setTimeout(()=>{
+      document.addEventListener('click', _hubOutsideClick, { once: true });
+    }, 10);
   }
+}
+
+function _hubOutsideClick(e){
+  const wrap = document.getElementById('tb-hub-wrap');
+  if(wrap && wrap.contains(e.target)) return; // click dentro il menu — non chiudere
+  closeHubMenu();
 }
 
 function closeHubMenu(){

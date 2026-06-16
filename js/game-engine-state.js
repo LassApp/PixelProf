@@ -955,16 +955,21 @@ function _doGoTab(t){
 }
 
 function goStep(s){
-  ['step-mod','step-act','step-num','step-players'].forEach(id=>sh(id).classList.add('hidden'));
-  sh('step-'+s).classList.remove('hidden');
+  ['step-mod','step-cat','step-act','step-num','step-players'].forEach(id=>{const el=shq(id);if(el)el.classList.add('hidden');});
+  const target=shq('step-'+s);if(target)target.classList.remove('hidden');
   if(s==='mod'){
     // v5.0.5: riapplica il filtro moduli ad ogni accesso a step-mod.
     // _renderModuleFilter è sincrona e legge window._activeModuleKeys
     // (impostato da _applyModuleFilter al momento dell'ingresso nell'aula).
-    // Usato come window.* per garantire la visibilità cross-file (definita in app.js).
+    // Esposta su window.* per garantire visibilità cross-file (definita in app.js).
     if(typeof window._renderModuleFilter === 'function'){
       window._renderModuleFilter();
     }
+  }
+  if(s==='cat'){
+    // Propaga il nome modulo selezionato nello step categoria
+    const catLabel=shq('cat-mod-label');
+    if(catLabel) catLabel.textContent=MOD_LABEL[sMod]||'';
   }
   if(s==='act'){
     sh('act-mod-label').textContent=MOD_LABEL[sMod]||'';
@@ -978,9 +983,9 @@ function goStep(s){
 ================================================== */
 function selMod(m){
   sMod=m;
-  ['CE','OE','MIX'].forEach(x=>sh('mc-'+x).classList.remove('active'));
-  sh('mc-'+m).classList.add('active');
-  setTimeout(()=>goStep('act'),180);
+  ['CE','OE','MIX','WP'].forEach(x=>{const el=shq('mc-'+x);if(el)el.classList.remove('active');});
+  const active=shq('mc-'+m);if(active)active.classList.add('active');
+  setTimeout(()=>goStep('cat'),180);
 }
 
 function updateHero(act){

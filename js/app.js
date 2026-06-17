@@ -1,5 +1,5 @@
 /* ==================================================
-   app.js — PixelProf v5.0.5
+   app.js — PixelProf v5.0.6
    App bootstrap: auth flow, login, logout, set-password,
    module filter, wizard, director panel, and splash/init.
    v5.0.0 M5: _deleteClassroomRest legge credenziali da
@@ -176,7 +176,7 @@ async function _performLogout(){
    keys=null => tutti visibili; keys=[] => nessuno
 ================================================== */
 /**
- * _applyModuleFilter — v5.0.5
+ * _applyModuleFilter — v5.0.6
  *
  * Carica i moduli abilitati per l'aula dal cloud (async),
  * li salva in window._activeModuleKeys come fonte di verità,
@@ -936,7 +936,7 @@ async function doSetPassword() {
 }
 
 /* ==================================================
-   HUB MENU — v5.0.5
+   HUB MENU — v5.0.6
    Menu compatto che raggruppa Classifica / Progressi / Storico.
    toggleHubMenu apre/chiude il dropdown.
    closeHubMenu viene chiamato da backdrop click e da ogni item.
@@ -978,7 +978,7 @@ function closeHubMenu(){
   if(backdrop){ backdrop.style.display='none'; }
 }
 
-/* setTb patch v5.0.5:
+/* setTb patch v5.0.6:
    tb-home è nascosto (display:none) ma setTb() lo cerca per rimuovere/aggiungere .active.
    Il comportamento legacy rimane invariato — tb-home riceve .active invisibilmente.
    In aggiunta, aggiorniamo .active sugli item Hub visibili. */

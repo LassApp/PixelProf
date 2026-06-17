@@ -2902,10 +2902,8 @@ body{
     rgba(4,6,15,.9) 100%
   ) !important;
   transition: background .3s var(--ease-soft) !important;
-  width: 100% !important;
-  max-width: 720px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
+  width: calc(100% + 2rem) !important;
+  max-width: none !important;
   padding: .6rem 1.1rem !important;
 }
 
@@ -3401,10 +3399,16 @@ body{
    PixelProf v5.0.5 — TOPBAR HUB + BADGE AULA + DIDATTICA
    ═══════════════════════════════════════════════════════════════════ */
 
-/* ── Fix larghezza topbar: nessun overflow/clip a sinistra ── */
+/* ── Fix larghezza topbar v5.0.6: ripristina il layout base corretto ──
+   I layer v6.0 e v6.1 sovrascrivono con left:50%/transform/max-width che
+   spostano la topbar. Qui resettiamo ai valori identici al base. */
 .topbar {
-  margin-left: 0 !important;
-  width: 100% !important;
+  width: calc(100% + 2rem) !important;
+  margin-left: -1rem !important;
+  margin-right: -1rem !important;
+  left: auto !important;
+  transform: none !important;
+  max-width: none !important;
   box-sizing: border-box !important;
   padding: .65rem 1rem !important;
 }

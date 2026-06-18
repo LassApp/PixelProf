@@ -1,5 +1,5 @@
 /* ==================================================
-   game-engine-state.js — PixelProf v5.0.3
+   game-engine-state.js — PixelProf v5.0.6
    Core engine: loader factory, course storage, database,
    session state (QuizSession/FillSession/PlayerSession),
    matchState, TimerManager, PauseUIRegistry, helpers,
@@ -14,6 +14,21 @@
    N1 (WP nel wizard). _updateAddSqBtn mantenuta come no-op.
    v5.0.1: N2 (rinomina squadra salvata — inline chip editor).
    v5.0.2: Delete giocatori/squadre salvati (inline × chip).
+   v5.0.6: FIX allineamento con HTML/app.js v5.0.6 —
+     - goStep(): aggiunto 'step-cat' all'array step da
+       nascondere/mostrare; ramo s==='cat' popola
+       cat-mod-label; ramo s==='mod' richiama
+       window._renderModuleFilter() (sync, definita in
+       app.js) per applicare il filtro moduli aula ad
+       ogni ritorno in home — niente fetch di rete extra.
+     - selMod(): inclusa 'WP' nel reset visivo delle card
+       modulo attive (mancava); goStep('act') → goStep('cat')
+       per passare dalla nuova schermata categoria
+       (Minigiochi/Didattica) prima dell'attività.
+     - goCoursesFromApp(): _execBack ora resetta
+       window._activeModuleKeys = null prima di mostrare
+       la grid aule, evitando che il filtro moduli
+       dell'aula precedente "sanguini" su quella successiva.
    This is the central module — loaded before all games.
 ================================================== */
 

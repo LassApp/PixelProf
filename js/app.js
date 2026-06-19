@@ -241,7 +241,14 @@ function _renderModuleFilter(){
     const card = shq('mc-'+k); // shq: silenzioso se #mc-SS non esiste
     if(!card) return;
     const show = !keys || keys.includes(k);
-    card.style.display = show ? '' : 'none';
+    const show = !keys || keys.includes(k);
+// FIX: il layer CSS streaming v6.0.0 forza .mod-card{display:flex !important},
+// che vince su uno style inline senza !important. Per nascondere una card in
+// modo che resti nascosta ANCHE con quella regola, usiamo setProperty con il
+// flag 'important'. Quando va mostrata, rimuoviamo l'override e lasciamo che
+// il CSS normale (flex del redesign) si applichi senza interferenze.
+if(show) card.style.removeProperty('display');
+else     card.style.setProperty('display', 'none', 'important');
   });
 }
 // Esposta su window per essere raggiungibile da goStep() in game-engine-state.js

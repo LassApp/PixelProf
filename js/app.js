@@ -1,10 +1,17 @@
 /* ==================================================
-   app.js — PixelProf v5.0.6
+   app.js — PixelProf v5.0.7
    App bootstrap: auth flow, login, logout, set-password,
    module filter, wizard, director panel, and splash/init.
    v5.0.0 M5: _deleteClassroomRest legge credenziali da
    window.__SB (impostato da supabase_client.js) —
    nessuna stringa hardcoded in questo file.
+   v5.0.7 FIX: _afterLogin() (ramo pendingId, ingresso aula
+     dopo location.reload per cambio aula) ora attende
+     _applyModuleFilter(pendingId) PRIMA di chiamare
+     _enterCourseDirect(pendingId). Stesso bug gemello di
+     enterCourse() in courses.js: due setTimeout indipendenti
+     facevano disegnare la UI prima che il fetch Supabase
+     della whitelist moduli fosse completo.
 ================================================== */
 
 /* ==================================================
@@ -85,10 +92,19 @@ async function _afterLogin(){
       const course  = courses.find(c=>c.id===pendingId);
       if(course){
         appState.classroom = course;
-        // Piccolo delay per permettere alla griglia di renderizzarsi
-        setTimeout(()=> _enterCourseDirect(pendingId), 80);
-        // Carica moduli in background
-        setTimeout(()=> _applyModuleFilter(pendingId), 200);
+        // Piccolo delay per permettere alla griglia di renderizzarsi,
+        // poi attende la risposta Supabase (getEnabledModules) PRIMA di
+        // mostrare l'aula con _enterCourseDirect.
+        // v5.0.7 FIX: in precedenza i due setTimeout erano indipendenti —
+        // _enterCourseDirect (80ms) disegnava step-mod con tutti i moduli
+        // visibili, e _applyModuleFilter (200ms) arrivava 120ms troppo tardi
+        // senza che nessuno richiamasse un secondo render. Risultato: la
+        // whitelist Supabase non veniva mai applicata su questo percorso
+        // (cambio aula con reload pagina).
+        setTimeout(async ()=>{
+          await _applyModuleFilter(pendingId);
+          _enterCourseDirect(pendingId);
+        }, 80);
         return;
       }
     }

@@ -1,10 +1,19 @@
 /* ==================================================
-   courses.js — PixelProf v4.0.8
+   courses.js — PixelProf v5.0.7
    Course/classroom system: grid, CRUD, icon picker,
    background/color picker, course menu.
    Cloud sync (DB.updateClassroom, _deleteClassroomRest,
    _reloadCourses, _applyModuleFilter) now embedded
    directly — no override chains from app.js.
+   v5.0.7 FIX: enterCourse() (ramo "stessa aula attiva")
+     ora attende _applyModuleFilter(id) PRIMA di chiamare
+     _enterCourseDirect()/goHome(). In precedenza la UI
+     veniva disegnata con il filtro moduli ancora in volo
+     verso Supabase — la whitelist arrivava troppo tardi e
+     nessuno richiamava un secondo render. Aggiunto lock
+     anti-doppio-click (_enterCourseLock) sulla card aula
+     durante il fetch, dato che ora c'è un await prima del
+     nascondere screen-courses.
    Depends on: game-engine-state.js
 ================================================== */
 
@@ -128,7 +137,9 @@ function renderCoursesGrid(){
    location.reload per aula diversa, _applyModuleFilter).
    Nessuna override chain necessaria.
 ================================================== */
+let _enterCourseLock=false;
 async function enterCourse(id){
+  if(_enterCourseLock)return; // evita doppio ingresso se l'utente clicca 2 volte durante il fetch Supabase
   const courses=loadCourses();
   const course=courses.find(c=>c.id===id);
   if(!course)return;
@@ -136,8 +147,22 @@ async function enterCourse(id){
   // Stessa aula già attiva → entra direttamente senza reload
   if(id===activeCourseId){
     if(window.appState) window.appState.classroom=course;
-    _enterCourseDirect(id);
-    await _applyModuleFilter(id);
+    _enterCourseLock=true;
+    const card=document.querySelector('[data-course-id="'+id+'"]');
+    if(card)card.style.opacity='.55';
+    try{
+      // v5.0.7 FIX: attende la risposta Supabase (getEnabledModules) PRIMA
+      // di mostrare l'aula. In precedenza _enterCourseDirect()→goHome() disegnava
+      // la UI in modo sincrono mentre _applyModuleFilter girava ancora in background:
+      // il filtro arrivava dopo che step-mod era già stato renderizzato, e nessuno
+      // richiamava un secondo render — risultato: tutti i moduli visibili o stato
+      // dell'aula precedente, indipendentemente dalla whitelist Supabase.
+      await _applyModuleFilter(id);
+      _enterCourseDirect(id);
+    }finally{
+      _enterCourseLock=false;
+      if(card)card.style.opacity='';
+    }
     return;
   }
 

@@ -241,7 +241,6 @@ function _renderModuleFilter(){
     const card = shq('mc-'+k); // shq: silenzioso se #mc-SS non esiste
     if(!card) return;
     const show = !keys || keys.includes(k);
-    const show = !keys || keys.includes(k);
 // FIX: il layer CSS streaming v6.0.0 forza .mod-card{display:flex !important},
 // che vince su uno style inline senza !important. Per nascondere una card in
 // modo che resti nascosta ANCHE con quella regola, usiamo setProperty con il

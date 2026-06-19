@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v5.0.4</title>
+<title>PixelProf — ICDL Lab interattivo v5.0.6</title>
 <link rel="icon" href="public/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
@@ -80,7 +80,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v5.0.4</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v5.0.6</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -206,7 +206,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v5.0.4</span>
+        <span class="cs-logo-sub">ICDL Lab · v5.0.6</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v3.2.2 -->
@@ -503,59 +503,69 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 <div class="app">
 
 <!-- ======================================
-     TOPBAR
+     TOPBAR v5.0.6
+     Sinistra: Logo PixelProf
+     Destra: Badge Aula | Hub (solo icona) | Badge ruolo | Nome | Esci
 ====================================== -->
 <div class="topbar">
-  <!-- LOGO -->
+
+  <!-- LOGO: clic → uscita aula -->
   <div class="logo-wrap" onclick="goCoursesFromApp()" title="Cambia aula">
     <svg class="logo-svg" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Outer hex ring -->
       <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".6"/>
-      <!-- Inner hex -->
       <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.06)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".4"/>
-      <!-- P letter -->
       <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
       <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <!-- Pixel dot accent -->
       <circle cx="26" cy="8" r="1.5" fill="#7c6aff" opacity=".8"/>
       <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".5"/>
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v5.0.4</span>
+      <span class="logo-sub">ICDL Lab · v5.0.6</span>
     </div>
   </div>
-  <!-- Course badge — icona + nome aula, cliccabile (v3.2.2) -->
-  <div id="tb-course-badge" style="
-    display:none;align-items:center;gap:5px;
-    padding:4px 10px 4px 7px;border-radius:20px;
-    background:rgba(0,255,200,.07);
-    border:1px solid rgba(0,255,200,.22);
-    cursor:pointer;flex-shrink:0;
-    transition:background var(--transition-fast),border-color var(--transition-fast),box-shadow var(--transition-fast);
-  " onclick="goCoursesFromApp()" title="Cambia aula">
-    <span id="tb-course-icon" style="font-size:14px;flex-shrink:0;line-height:1"></span>
-    <span id="tb-course-name" style="
-      font-weight:700;font-size:12px;color:#c8ffe8;
-      white-space:nowrap;
-      font-family:'Space Grotesk',sans-serif;letter-spacing:-.1px;
-      max-width:120px;overflow:hidden;text-overflow:ellipsis;
-    "></span>
+
+  <div style="flex:1"></div>
+
+  <!-- Badge aula: clic → ritorno selezione moduli (goHome) -->
+  <div id="tb-course-badge" class="tb-aula-badge" onclick="goHome()" title="Torna ai moduli">
+    <span id="tb-course-icon" class="tb-aula-icon"></span>
+    <span id="tb-course-name" class="tb-aula-name"></span>
+    <i class="ti ti-home" style="font-size:10px;color:rgba(0,255,200,.45);flex-shrink:0;margin-left:2px"></i>
   </div>
-  <!-- NAV -->
+
+  <!-- NAV: Hub solo icona -->
   <nav class="tb-nav">
-    <button class="tb-btn active" id="tb-home" onclick="goHome()"><i class="ti ti-home"></i> Home</button>
-    <button class="tb-btn" id="tb-lb" onclick="goTab('lb')"><i class="ti ti-trophy"></i> Classifica</button>
-    <button class="tb-btn" id="tb-st" onclick="goTab('stats')"><i class="ti ti-chart-bar"></i> Progressi</button>
-    <button class="tb-btn" id="tb-hist" onclick="goTab('hist')"><i class="ti ti-history"></i> Storico</button>
+    <div class="tb-hub-wrap" id="tb-hub-wrap">
+      <button class="tb-btn tb-hub-btn tb-hub-icon-only" id="tb-hub-btn" onclick="toggleHubMenu(event)" title="Classifica, Progressi, Storico">
+        <i class="ti ti-layout-grid"></i>
+      </button>
+      <div class="tb-hub-menu hidden" id="tb-hub-menu">
+        <button class="tb-hub-item" id="tb-lb" onclick="closeHubMenu();goTab('lb')">
+          <i class="ti ti-trophy"></i><span>Classifica</span>
+        </button>
+        <button class="tb-hub-item" id="tb-st" onclick="closeHubMenu();goTab('stats')">
+          <i class="ti ti-chart-bar"></i><span>Progressi</span>
+        </button>
+        <button class="tb-hub-item" id="tb-hist" onclick="closeHubMenu();goTab('hist')">
+          <i class="ti ti-history"></i><span>Storico</span>
+        </button>
+      </div>
+    </div>
+    <!-- tb-home: nascosto visivamente, usato da setTb() -->
+    <button id="tb-home" style="display:none" onclick="goHome()"></button>
   </nav>
-  <!-- User badge: ruolo + nome + logout — sempre visibile nell'app -->
+
+  <!-- User badge: ruolo | nome | esci -->
   <div id="tb-user-badge" style="display:none;align-items:center;gap:6px;flex-shrink:0">
     <span id="tb-user-role-pill" style="font-family:'Share Tech Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:20px;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.3);color:#ffd700"></span>
     <span id="tb-user-name" style="font-size:11px;color:rgba(255,255,255,.5);font-family:'Share Tech Mono',monospace;white-space:nowrap;max-width:80px;overflow:hidden;text-overflow:ellipsis"></span>
     <button class="cs-logout-btn" onclick="doLogout()" style="padding:4px 9px;font-size:10px"><i class="ti ti-logout"></i></button>
   </div>
+
 </div>
+<!-- Backdrop per chiudere Hub cliccando fuori -->
+<div id="tb-hub-backdrop" onclick="closeHubMenu()" style="display:none;position:fixed;inset:0;z-index:90"></div>
 
 <!-- ======================================
      HOME
@@ -740,11 +750,11 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </div>
     </div>
 
-    <!-- Coming Soon section — solo Spreadsheets -->
+    <!-- Sezione prossimamente: Spreadsheets + Didattica -->
     <div class="soon-section-label">
       <span>prossimamente</span>
     </div>
-    <div class="mod-grid-soon" style="grid-template-columns:1fr">
+    <div class="mod-grid-soon">
 
       <!-- Spreadsheets — coming soon -->
       <div class="mod-card ss-card soon-card" id="mc-SS">
@@ -770,14 +780,83 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <span class="cs-version">// versione futura</span>
         </div>
       </div>
+
+      <!-- Didattica — coming soon -->
+      <div class="mod-card soon-card didattica-card" id="mc-didattica" style="pointer-events:none">
+        <span class="cs-label">In Progettazione</span>
+        <svg class="bg" viewBox="0 0 300 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="hd" width="18" height="18" patternUnits="userSpaceOnUse"><circle cx="9" cy="9" r=".7" fill="#7c6aff" opacity=".2"/></pattern></defs>
+          <rect width="300" height="130" fill="url(#hd)"/>
+          <!-- libro aperto -->
+          <rect x="80" y="28" width="60" height="75" rx="4" fill="none" stroke="#7c6aff" stroke-width="1" opacity=".35"/>
+          <rect x="143" y="28" width="60" height="75" rx="4" fill="none" stroke="#9d8fff" stroke-width="1" opacity=".28"/>
+          <line x1="140" y1="28" x2="140" y2="103" stroke="#7c6aff" stroke-width=".8" opacity=".4"/>
+          <line x1="90" y1="45" x2="130" y2="45" stroke="#7c6aff" stroke-width=".6" opacity=".25"/>
+          <line x1="90" y1="55" x2="128" y2="55" stroke="#7c6aff" stroke-width=".6" opacity=".2"/>
+          <line x1="90" y1="65" x2="126" y2="65" stroke="#7c6aff" stroke-width=".6" opacity=".2"/>
+          <line x1="153" y1="45" x2="193" y2="45" stroke="#9d8fff" stroke-width=".6" opacity=".22"/>
+          <line x1="153" y1="55" x2="191" y2="55" stroke="#9d8fff" stroke-width=".6" opacity=".18"/>
+          <!-- stelle decorative -->
+          <circle cx="240" cy="35" r="2.5" fill="#7c6aff" opacity=".3"/>
+          <circle cx="55" cy="95" r="1.8" fill="#b4a0ff" opacity=".25"/>
+          <text x="210" y="95" font-family="monospace" font-size="32" fill="#7c6aff" opacity=".06" font-weight="bold">✦</text>
+        </svg>
+        <div class="mc-content">
+          <span class="mc-icon" style="font-size:24px;margin-bottom:6px">🎓</span>
+          <h3>Didattica</h3>
+          <p style="font-size:10px">Contenuti e lezioni guidate</p>
+          <span class="cs-version">// in progettazione</span>
+        </div>
+      </div>
+
     </div>
 
+  </div>
+
+  <!-- STEP: CATEGORIA (Didattica / Minigiochi) -->
+  <div id="step-cat" class="hidden">
+    <div class="act-back-row">
+      <button class="act-back-btn" onclick="goStep('mod')"><i class="ti ti-arrow-left"></i> Modulo</button>
+      <span class="act-context-label" id="cat-mod-label"></span>
+    </div>
+    <div class="home-hero" style="padding:1.25rem 0 1rem;text-align:left">
+      <span class="home-hero-eyebrow">Cosa vuoi fare?</span>
+      <h1 class="home-hero-title" style="font-size:22px">Scegli la <span class="hl">modalità</span></h1>
+    </div>
+    <div class="cat-grid">
+      <!-- MINIGIOCHI -->
+      <div class="cat-card cat-games" role="button" tabindex="0"
+        aria-label="Minigiochi interattivi"
+        onclick="goStep('act')"
+        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goStep('act');}">
+        <div class="cat-card-inner">
+          <span class="cat-icon">🎮</span>
+          <div>
+            <div class="cat-title">Minigiochi</div>
+            <div class="cat-sub">Quiz, Memory, Abbina e altro</div>
+          </div>
+          <i class="ti ti-arrow-right cat-arrow"></i>
+        </div>
+      </div>
+      <!-- DIDATTICA — Coming Soon -->
+      <div class="cat-card cat-didattica soon-cat" style="cursor:not-allowed;opacity:.5;pointer-events:none"
+        aria-label="Didattica — Coming Soon" tabindex="-1">
+        <div class="cat-card-inner">
+          <span class="cat-icon">📖</span>
+          <div>
+            <div class="cat-title">Didattica</div>
+            <div class="cat-sub">Lezioni guidate · In arrivo</div>
+          </div>
+          <span class="cs-label" style="position:static;margin-left:auto;font-size:8px">Soon</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- STEP: ATTIVITÀ -->
   <div id="step-act" class="hidden">
     <div class="act-back-row">
-      <button class="act-back-btn" onclick="goStep('mod')"><i class="ti ti-arrow-left"></i> Modulo</button>
+      <button class="act-back-btn" onclick="goStep('cat')"><i class="ti ti-arrow-left"></i> Categoria</button>
       <span class="act-context-label" id="act-mod-label"></span>
     </div>
     <div class="act-hero" id="act-hero">

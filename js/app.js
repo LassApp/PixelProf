@@ -1,10 +1,17 @@
 /* ==================================================
-   app.js — PixelProf v5.0.0
+   app.js — PixelProf v5.0.7
    App bootstrap: auth flow, login, logout, set-password,
    module filter, wizard, director panel, and splash/init.
    v5.0.0 M5: _deleteClassroomRest legge credenziali da
    window.__SB (impostato da supabase_client.js) —
    nessuna stringa hardcoded in questo file.
+   v5.0.7 FIX: _afterLogin() (ramo pendingId, ingresso aula
+     dopo location.reload per cambio aula) ora attende
+     _applyModuleFilter(pendingId) PRIMA di chiamare
+     _enterCourseDirect(pendingId). Stesso bug gemello di
+     enterCourse() in courses.js: due setTimeout indipendenti
+     facevano disegnare la UI prima che il fetch Supabase
+     della whitelist moduli fosse completo.
 ================================================== */
 
 /* ==================================================
@@ -85,10 +92,19 @@ async function _afterLogin(){
       const course  = courses.find(c=>c.id===pendingId);
       if(course){
         appState.classroom = course;
-        // Piccolo delay per permettere alla griglia di renderizzarsi
-        setTimeout(()=> _enterCourseDirect(pendingId), 80);
-        // Carica moduli in background
-        setTimeout(()=> _applyModuleFilter(pendingId), 200);
+        // Piccolo delay per permettere alla griglia di renderizzarsi,
+        // poi attende la risposta Supabase (getEnabledModules) PRIMA di
+        // mostrare l'aula con _enterCourseDirect.
+        // v5.0.7 FIX: in precedenza i due setTimeout erano indipendenti —
+        // _enterCourseDirect (80ms) disegnava step-mod con tutti i moduli
+        // visibili, e _applyModuleFilter (200ms) arrivava 120ms troppo tardi
+        // senza che nessuno richiamasse un secondo render. Risultato: la
+        // whitelist Supabase non veniva mai applicata su questo percorso
+        // (cambio aula con reload pagina).
+        setTimeout(async ()=>{
+          await _applyModuleFilter(pendingId);
+          _enterCourseDirect(pendingId);
+        }, 80);
         return;
       }
     }
@@ -146,7 +162,9 @@ async function doLogout(){
     sh('pp-dialog-no').onclick  = _prevNo;
     if(t) t.textContent=_prevT; if(s) s.textContent=_prevS; if(y) y.textContent=_prevY;
     _setDialogCopy('exit');
+    closeHubMenu(); // Bug fix: chiude Hub quando si annulla il logout
   };
+  closeHubMenu(); // Bug fix: chiude Hub prima di aprire il dialog
   sh('pp-dialog-overlay').classList.remove('hidden');
 }
 
@@ -155,6 +173,9 @@ async function _performLogout(){
   appState.classroom = null;
   activeCourseId     = null;
   db                 = makeEmptyDb();
+  window._activeModuleKeys = null; // reset filtro moduli aula
+  // Chiude Hub se aperto
+  if(typeof closeHubMenu === 'function') closeHubMenu();
   const badge = sh('tb-course-badge');
   if(badge) badge.style.display = 'none';
   sh('screen-courses').classList.add('hidden');
@@ -170,18 +191,62 @@ async function _performLogout(){
    FILTRO MODULI — applica i moduli abilitati per l'aula
    keys=null => tutti visibili; keys=[] => nessuno
 ================================================== */
+/**
+ * _applyModuleFilter — v5.0.6
+ *
+ * Carica i moduli abilitati per l'aula dal cloud (async),
+ * li salva in window._activeModuleKeys come fonte di verità,
+ * poi chiama _renderModuleFilter() (sincrona) per aggiornare il DOM.
+ *
+ * Separare fetch e render permette a goStep('mod') di richiamare
+ * _renderModuleFilter() ogni volta senza fare una nuova chiamata
+ * di rete — risolvendo il bug dei moduli che riapparivano al
+ * ritorno in home dopo una partita.
+ *
+ * SEMANTICA keys:
+ *   null       → nessuna whitelist configurata → tutti i moduli visibili
+ *   []         → whitelist vuota configurata   → tutti i moduli visibili (edge case)
+ *   ['CE','WP'] → mostra solo CE e WP
+ */
 async function _applyModuleFilter(classroomId){
-  if(!window.DB) return;
+  if(!window.DB){ _renderModuleFilter(); return; }
   let keys = null;
-  try{ keys = await window.DB.getEnabledModules(classroomId); }catch(e){}
+  try{
+    keys = await window.DB.getEnabledModules(classroomId);
+  }catch(e){
+    console.warn('[PixelProf] _applyModuleFilter: getEnabledModules fallito, mostro tutto', e);
+  }
+  // Salva i moduli abilitati come fonte di verità per l'aula corrente.
+  // null e [] sono semanticamente equivalenti: nessun filtro.
+  window._activeModuleKeys = (keys && keys.length > 0) ? keys : null;
+  _renderModuleFilter();
+}
+
+/**
+ * _renderModuleFilter — sincrona, zero rete.
+ *
+ * Legge window._activeModuleKeys e aggiorna la visibilità
+ * delle card modulo nel DOM. Viene chiamata da:
+ *   • _applyModuleFilter (dopo il fetch)
+ *   • goStep('mod') (ad ogni ritorno alla home)
+ *
+ * In questo modo il filtro è sempre corretto indipendentemente
+ * dal percorso di navigazione, senza fare una nuova chiamata
+ * Supabase ad ogni pressione del tasto Home o fine partita.
+ */
+function _renderModuleFilter(){
+  const keys = window._activeModuleKeys || null;
   const ALL = ['CE','OE','MIX','WP','SS'];
   ALL.forEach(k=>{
-    const card = shq('mc-'+k);  // shq: SS non esiste nell'HTML, nessun warning
+    const card = shq('mc-'+k); // shq: silenzioso se #mc-SS non esiste
     if(!card) return;
-    const show = !keys || keys.length===0 || keys.includes(k);
+    const show = !keys || keys.includes(k);
     card.style.display = show ? '' : 'none';
   });
 }
+// Esposta su window per essere raggiungibile da goStep() in game-engine-state.js
+// (file caricato prima di app.js, non può referenziare funzioni locali di questo file)
+window._renderModuleFilter = _renderModuleFilter;
 
 /* ==================================================
    WIZARD NUOVA AULA — v3.1.2
@@ -885,6 +950,78 @@ async function doSetPassword() {
     }
   }, 3000);
 }
+
+/* ==================================================
+   HUB MENU — v5.0.6
+   Menu compatto che raggruppa Classifica / Progressi / Storico.
+   toggleHubMenu apre/chiude il dropdown.
+   closeHubMenu viene chiamato da backdrop click e da ogni item.
+   setTb patch: tb-home è nascosto nel DOM ma usato da setTb() —
+   aggiorniamo tb-hub-btn per riflettere la sezione attiva.
+================================================== */
+function toggleHubMenu(evt){
+  if(evt) evt.stopPropagation();
+  const menu = sh('tb-hub-menu');
+  const chev = sh('tb-hub-chev');
+  const backdrop = sh('tb-hub-backdrop');
+  if(!menu) return;
+  const isOpen = !menu.classList.contains('hidden');
+  if(isOpen){
+    closeHubMenu();
+  } else {
+    menu.classList.remove('hidden');
+    if(chev) chev.classList.add('open');
+    if(backdrop){ backdrop.style.display='block'; }
+    // Bug fix: chiude Hub cliccando fuori — listener una-tantum sul documento
+    setTimeout(()=>{
+      document.addEventListener('click', _hubOutsideClick, { once: true });
+    }, 10);
+  }
+}
+
+function _hubOutsideClick(e){
+  const wrap = document.getElementById('tb-hub-wrap');
+  if(wrap && wrap.contains(e.target)) return; // click dentro il menu — non chiudere
+  closeHubMenu();
+}
+
+function closeHubMenu(){
+  const menu = sh('tb-hub-menu');
+  const chev = sh('tb-hub-chev');
+  const backdrop = sh('tb-hub-backdrop');
+  if(menu) menu.classList.add('hidden');
+  if(chev) chev.classList.remove('open');
+  if(backdrop){ backdrop.style.display='none'; }
+}
+
+/* setTb patch v5.0.6:
+   tb-home è nascosto (display:none) ma setTb() lo cerca per rimuovere/aggiungere .active.
+   Il comportamento legacy rimane invariato — tb-home riceve .active invisibilmente.
+   In aggiunta, aggiorniamo .active sugli item Hub visibili. */
+(function _patchSetTb(){
+  const _HUB_TABS = ['lb','st','hist'];
+  const _origSetTb = window.setTb; // non esiste ancora — sarà definita da game-engine-state.js
+  // Monkey-patch dopo caricamento (DOMContentLoaded garantisce l'ordine)
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const _gse_setTb = window.setTb;
+    if(typeof _gse_setTb !== 'function') return;
+    window.setTb = function(active){
+      _gse_setTb(active);
+      // Aggiorna .active sugli hub items
+      document.querySelectorAll('.tb-hub-item').forEach(el => el.classList.remove('active'));
+      if(active && _HUB_TABS.some(t => 'tb-'+t === active)){
+        const item = sh(active);
+        if(item) item.classList.add('active');
+        // Evidenzia il pulsante Hub quando una sua sezione è attiva
+        const hubBtn = sh('tb-hub-btn');
+        if(hubBtn) hubBtn.classList.add('active');
+      } else {
+        const hubBtn = sh('tb-hub-btn');
+        if(hubBtn) hubBtn.classList.remove('active');
+      }
+    };
+  });
+})();
 
 /* ==================================================
    SPLASH + INIT v3.1.2

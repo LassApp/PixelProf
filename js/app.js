@@ -993,6 +993,7 @@ function closeHubMenu(){
   const backdrop = sh('tb-hub-backdrop');
   if(menu) menu.classList.add('hidden');
   if(backdrop){ backdrop.style.display='none'; }
+  document.removeEventListener('click', _hubOutsideClick); // v5.0.7: rimozione esplicita — evita listener fantasma quando la chiusura avviene senza che il click raggiunga document (es. ri-click sul bottone hub, bloccato da stopPropagation)
 }
 
 /* setTb patch v5.0.6:

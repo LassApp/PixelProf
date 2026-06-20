@@ -967,7 +967,6 @@ async function doSetPassword() {
 function toggleHubMenu(evt){
   if(evt) evt.stopPropagation();
   const menu = sh('tb-hub-menu');
-  const chev = sh('tb-hub-chev');
   const backdrop = sh('tb-hub-backdrop');
   if(!menu) return;
   const isOpen = !menu.classList.contains('hidden');
@@ -975,7 +974,6 @@ function toggleHubMenu(evt){
     closeHubMenu();
   } else {
     menu.classList.remove('hidden');
-    if(chev) chev.classList.add('open');
     if(backdrop){ backdrop.style.display='block'; }
     // Bug fix: chiude Hub cliccando fuori — listener una-tantum sul documento
     setTimeout(()=>{
@@ -992,10 +990,8 @@ function _hubOutsideClick(e){
 
 function closeHubMenu(){
   const menu = sh('tb-hub-menu');
-  const chev = sh('tb-hub-chev');
   const backdrop = sh('tb-hub-backdrop');
   if(menu) menu.classList.add('hidden');
-  if(chev) chev.classList.remove('open');
   if(backdrop){ backdrop.style.display='none'; }
 }
 

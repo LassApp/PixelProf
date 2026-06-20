@@ -3485,7 +3485,8 @@ body{
 .tb-hub-menu {
   position: absolute;
   top: calc(100% + 8px);
-  right: 0;
+  left: 50%;                    /* ← era right: 0 */
+  transform: translateX(-50%);  /* ← nuovo: centra sul bottone */
   min-width: 160px;
   background: rgba(10,14,28,.97);
   border: 1px solid rgba(0,255,200,.15);
@@ -3496,8 +3497,8 @@ body{
   animation: hubMenuIn .18s cubic-bezier(.22,1,.36,1) both;
 }
 @keyframes hubMenuIn {
-  from { opacity:0; transform: translateY(-6px) scale(.97); }
-  to   { opacity:1; transform: translateY(0)    scale(1);   }
+  from { opacity:0; transform: translateX(-50%) translateY(-6px) scale(.97); }
+  to   { opacity:1; transform: translateX(-50%) translateY(0)    scale(1);   }
 }
 .tb-hub-menu.hidden { display: none; }
 

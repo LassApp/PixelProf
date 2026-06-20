@@ -202,6 +202,7 @@ function _setGamePauseLock(locked){
     document.querySelector('.logo-wrap'),
     sh('tb-course-badge'),          // badge aula in topbar — v4.0.8
     sh('tb-home'),
+    sh('tb-hub-wrap'),               // v5.0.8: hub (Classifica/Progressi/Storico) — copre bottone + menu anche se aperto
     sh('tb-lb'),
     sh('tb-st'),
     // quiz screen

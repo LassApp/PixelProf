@@ -997,7 +997,7 @@ function goStep(s){
 ================================================== */
 function selMod(m){
   sMod=m;
-  ['CE','OE','MIX','WP'].forEach(x=>{const el=shq('mc-'+x);if(el)el.classList.remove('active');});
+  ['CE','OE','WP'].forEach(x=>{const el=shq('mc-'+x);if(el)el.classList.remove('active');});
   const active=shq('mc-'+m);if(active)active.classList.add('active');
   setTimeout(()=>goStep('cat'),180);
 }

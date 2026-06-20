@@ -3679,3 +3679,20 @@ body{
 
 /* ── user badge ── */
 #tb-user-badge { flex-shrink: 0; }
+
+/* ===============================================
+   STATO — classi controllate dinamicamente da JS
+   ===============================================
+   Queste classi rappresentano stato applicativo, NON skin visiva.
+   Vanno SEMPRE definite qui, in fondo al file, con !important:
+   essendo selettori a 2 classi (es. .mod-card.is-hidden-by-filter)
+   hanno specificità maggiore di qualunque regola a 1 classe sulla
+   stessa proprietà (es. .mod-card{display:flex!important}), quindi
+   vincono sempre senza bisogno di hack nel JS (setProperty importance).
+
+   REGOLA: se introduci qui sotto una nuova classe di stato, il JS
+   deve SEMPRE usare classList.toggle/add/remove — mai style inline
+   diretto — su elementi le cui classi di skin potrebbero avere o
+   guadagnare in futuro una regola !important sulla stessa proprietà.
+=============================================== */
+.is-hidden-by-filter { display: none !important; }

@@ -236,7 +236,7 @@ async function _applyModuleFilter(classroomId){
  */
 function _renderModuleFilter(){
   const keys = window._activeModuleKeys || null;
-  const ALL = ['CE','OE','MIX','WP','SS'];
+  const ALL = ['CE','OE','WP','SS'];
   ALL.forEach(k=>{
     const card = shq('mc-'+k); // shq: silenzioso se #mc-SS non esiste
     if(!card) return;
@@ -726,7 +726,6 @@ let _dpEnabledModules = [];
 const ALL_MODULES = [
   { key:'CE',  label:'Computer Essentials' },
   { key:'OE',  label:'Online Essentials'   },
-  { key:'MIX', label:'Mix moduli'          },
   { key:'WP',  label:'Word Processing'     },
   { key:'SS',  label:'Spreadsheets'        },
 ];

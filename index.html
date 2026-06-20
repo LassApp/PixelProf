@@ -319,12 +319,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <div class="cm-name">Word Processing</div>
           <div class="cm-desc">Elaborazione testi con Word</div>
         </button>
-        <button class="cw-mod-btn cw-full-btn" data-mod="MIX" onclick="cwToggleMod(this)">
-          <div class="cm-check">✓</div>
-          <span class="cm-icon">🎯</span>
-          <div class="cm-name">Mix entrambi i moduli</div>
-          <div class="cm-desc">CE + OE — allenamento completo</div>
-        </button>
       </div>
       <div class="cw-btns">
         <button class="cw-btn-back" onclick="cwStep(1)"><i class="ti ti-arrow-left"></i> Indietro</button>
@@ -674,38 +668,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
             <span class="tag">HTTP/S</span>
             <span class="tag">Cookie</span>
           </div>
-        </div>
-      </div>
-
-      <!-- MIX — full-width -->
-      <div class="mod-card mix-card full-card" id="mc-MIX" role="button" tabindex="0" aria-label="Seleziona modalità Mix entrambi i moduli" onclick="selMod('MIX')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selMod('MIX');}">
-        <span class="mc-badge">MIX</span>
-        <svg class="bg" viewBox="0 0 620 96" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="dots-mix" width="20" height="20" patternUnits="userSpaceOnUse">
-              <circle cx="10" cy="10" r="1" fill="#00ffc8" opacity=".2"/>
-            </pattern>
-          </defs>
-          <rect width="620" height="96" fill="url(#dots-mix)"/>
-          <!-- left blob -->
-          <circle cx="150" cy="48" r="36" fill="none" stroke="#1e90ff" stroke-width=".8" opacity=".35"/>
-          <circle cx="150" cy="48" r="20" fill="rgba(30,144,255,.05)"/>
-          <!-- right blob -->
-          <circle cx="470" cy="48" r="36" fill="none" stroke="#7c6aff" stroke-width=".8" opacity=".35"/>
-          <circle cx="470" cy="48" r="20" fill="rgba(124,106,255,.05)"/>
-          <!-- center merge -->
-          <circle cx="310" cy="48" r="28" fill="none" stroke="#00ffc8" stroke-width="1" opacity=".4"/>
-          <circle cx="310" cy="48" r="14" fill="rgba(0,255,200,.07)"/>
-          <!-- connecting lines -->
-          <line x1="170" y1="48" x2="282" y2="48" stroke="#00ffc8" stroke-width=".8" opacity=".3" stroke-dasharray="4 3"/>
-          <line x1="338" y1="48" x2="450" y2="48" stroke="#00ffc8" stroke-width=".8" opacity=".3" stroke-dasharray="4 3"/>
-          <!-- glow -->
-          <ellipse cx="310" cy="48" rx="180" ry="40" fill="rgba(0,255,200,.025)"/>
-        </svg>
-        <div class="mc-content mc-icon" style="font-size:24px;margin-bottom:0;filter:drop-shadow(0 0 8px rgba(0,255,200,.4))">🎯</div>
-        <div class="mc-content" style="margin-left:4px">
-          <h3>Mix entrambi i moduli</h3>
-          <p>Computer Essentials + Online Essentials — allenamento completo</p>
         </div>
       </div>
 

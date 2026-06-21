@@ -3,7 +3,7 @@
 ================================================== */
 const COLORS=['#00ffc8','#7c6aff','#ff4d6d','#ffb400','#00cfff'];
 
-const MOD_LABEL={CE:'Computer Essentials',OE:'Online Essentials',MIX:'Mix moduli',WP:'Word Processing'};
+const MOD_LABEL={CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processing'};
 const ACT_LABEL={quiz:'Quiz',speed:'Speed Quiz',match:'Abbina',memory:'Memory',fill:'Completa la frase'};
 const ACT_ICON={quiz:'🧠',speed:'⚡',match:'🔗',memory:'🃏',fill:'✏️'};
 

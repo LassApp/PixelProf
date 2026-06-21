@@ -217,8 +217,8 @@ function exportLbCSV(type, act){
 
 function modBadgeHTML(mod){
   if(!mod||mod==='?')return'<span class="mod-badge mix">—</span>';
-  const cls={CE:'ce',OE:'oe',MIX:'mix',WP:'wp'}[mod]||'mix';
-  const short={CE:'Computer',OE:'Online',MIX:'Mix',WP:'Word'}[mod]||mod;
+  const cls={CE:'ce',OE:'oe',WP:'wp'}[mod]||'mix';
+  const short={CE:'Computer',OE:'Online',WP:'Word'}[mod]||mod;
   return`<span class="mod-badge ${cls}">${short}</span>`;
 }
 

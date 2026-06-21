@@ -999,7 +999,7 @@ function selMod(m){
   sMod=m;
   document.querySelectorAll('.mod-card').forEach(el=>el.classList.remove('active'));
   sh('mc-'+m).classList.add('active');
-  setTimeout(()=>goStep('act'),180);   // ← lascia questa riga com'è nel tuo codice live (act o cat)
+  setTimeout(()=>goStep('cat'),180);
 }
 
 function updateHero(act){

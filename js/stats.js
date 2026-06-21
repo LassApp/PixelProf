@@ -37,8 +37,8 @@ function resetStats(){
 /* Label e icone coerenti con game-constants.js */
 const _HIST_ACT_ICON ={quiz:'🧠',speed:'⚡',match:'🔗',memory:'🃏',fill:'✏️'};
 const _HIST_ACT_LABEL={quiz:'Quiz',speed:'Speed Quiz',match:'Abbina',memory:'Memory',fill:'Completa'};
-const _HIST_MOD_LABEL={CE:'Computer Essentials',OE:'Online Essentials',MIX:'Mix moduli',WP:'Word Processing'};
-const _HIST_MOD_COLOR={CE:'#00cfff',OE:'#7c6aff',MIX:'#00ffc8',WP:'#28a050'};
+const _HIST_MOD_LABEL={CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processing'};
+const _HIST_MOD_COLOR={CE:'#00cfff',OE:'#7c6aff',WP:'#28a050'};
 
 function _histFormatDate(iso){
   if(!iso)return'—';

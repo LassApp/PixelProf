@@ -72,13 +72,13 @@ function _createLoader(cfg) {
     return cache[mod];
   }
 
-  async function load(mod) {
-    if (mod === 'CE') return [...await _loadOne('CE')];
-    if (mod === 'OE') return [...await _loadOne('OE')];
-    // MIX: carica in parallelo
-    const [ce, oe] = await Promise.all([_loadOne('CE'), _loadOne('OE')]);
-    return shuffle([...ce, ...oe]);
-  }
+async function load(mod) {
+  return [...await _loadOne(mod)];
+}
+
+function isCached(mod) {
+  return !!cache[mod];
+}
 
   function isCached(mod) {
     return mod === 'MIX'

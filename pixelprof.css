@@ -2826,10 +2826,8 @@ body{
     rgba(4,6,15,.9) 100%
   ) !important;
   transition: background .3s var(--ease-soft) !important;
-  width: 100% !important;
-  max-width: 720px !important;
-  left: 50% !important;
-  transform: translateX(-50%) !important;
+  width: calc(100% + 2rem) !important;
+  max-width: none !important;
   padding: .6rem 1.1rem !important;
 }
 
@@ -3325,10 +3323,16 @@ body{
    PixelProf v5.0.5 — TOPBAR HUB + BADGE AULA + DIDATTICA
    ═══════════════════════════════════════════════════════════════════ */
 
-/* ── Fix larghezza topbar: nessun overflow/clip a sinistra ── */
+/* ── Fix larghezza topbar v5.0.6: ripristina il layout base corretto ──
+   I layer v6.0 e v6.1 sovrascrivono con left:50%/transform/max-width che
+   spostano la topbar. Qui resettiamo ai valori identici al base. */
 .topbar {
-  margin-left: 0 !important;
-  width: 100% !important;
+  width: calc(100% + 2rem) !important;
+  margin-left: -1rem !important;
+  margin-right: -1rem !important;
+  left: auto !important;
+  transform: none !important;
+  max-width: none !important;
   box-sizing: border-box !important;
   padding: .65rem 1rem !important;
 }
@@ -3405,7 +3409,8 @@ body{
 .tb-hub-menu {
   position: absolute;
   top: calc(100% + 8px);
-  right: 0;
+  left: 50%;                    /* ← era right: 0 */
+  transform: translateX(-50%);  /* ← nuovo: centra sul bottone */
   min-width: 160px;
   background: rgba(10,14,28,.97);
   border: 1px solid rgba(0,255,200,.15);
@@ -3416,8 +3421,8 @@ body{
   animation: hubMenuIn .18s cubic-bezier(.22,1,.36,1) both;
 }
 @keyframes hubMenuIn {
-  from { opacity:0; transform: translateY(-6px) scale(.97); }
-  to   { opacity:1; transform: translateY(0)    scale(1);   }
+  from { opacity:0; transform: translateX(-50%) translateY(-6px) scale(.97); }
+  to   { opacity:1; transform: translateX(-50%) translateY(0)    scale(1);   }
 }
 .tb-hub-menu.hidden { display: none; }
 
@@ -3599,3 +3604,20 @@ body{
 
 /* ── user badge ── */
 #tb-user-badge { flex-shrink: 0; }
+
+/* ===============================================
+   STATO — classi controllate dinamicamente da JS
+   ===============================================
+   Queste classi rappresentano stato applicativo, NON skin visiva.
+   Vanno SEMPRE definite qui, in fondo al file, con !important:
+   essendo selettori a 2 classi (es. .mod-card.is-hidden-by-filter)
+   hanno specificità maggiore di qualunque regola a 1 classe sulla
+   stessa proprietà (es. .mod-card{display:flex!important}), quindi
+   vincono sempre senza bisogno di hack nel JS (setProperty importance).
+
+   REGOLA: se introduci qui sotto una nuova classe di stato, il JS
+   deve SEMPRE usare classList.toggle/add/remove — mai style inline
+   diretto — su elementi le cui classi di skin potrebbero avere o
+   guadagnare in futuro una regola !important sulla stessa proprietà.
+=============================================== */
+.is-hidden-by-filter { display: none !important; }

@@ -20,19 +20,9 @@ function buildGameHeader(rightContent){
   return`<div class="game-header"><div class="game-header-left"><button class="game-exit-btn" onclick="ppConfirm(()=>goHome())"><i class="ti ti-x"></i> Esci</button><button class="game-restart-btn" onclick="restartActivity()"><i class="ti ti-refresh"></i> Ricomincia</button></div>${rightContent}</div>`;
 }
 
-/* CODE-04: balanced MIX  guarantees at least 2 CE and 2 OE pairs */
 async function getMatchSet(mod){
   const sets = await loadAbbinSets(mod);
-  if(mod==='CE'||mod==='OE'||mod==='WP'){
-    return shuffle(sets[Math.floor(Math.random()*sets.length)]).slice(0,5);
-  }
-  // MIX: garantisce almeno 2 CE e 2 OE usando il tag _mod iniettato dal loader
-  const ceCache = AbbinLoader.getCache()['CE'] || [];
-  const oeCache = AbbinLoader.getCache()['OE'] || [];
-  const cePairs = shuffle(ceCache.flat()).slice(0,3);
-  const oePairs = shuffle(oeCache.flat()).slice(0,2);
-  const mix = [...cePairs,...oePairs];
-  return shuffle(mix.length>=4 ? mix : shuffle(sets.flat()).slice(0,5));
+  return shuffle(sets[Math.floor(Math.random()*sets.length)]).slice(0,5);
 }
 
 /* ==================================================

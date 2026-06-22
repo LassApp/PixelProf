@@ -31,6 +31,33 @@ const COURSE_BG_PRESETS=[
 
 let _ddCourseId=null; // id del corso a cui appartiene il dropdown aperto
 
+/* ==================================================
+   MODALITÀ SCHERMATA AULE — v6.0.0 (Dashboard Direttore)
+   _csMode = 'select' (default, invariato) → click sulla card = enterCourse()
+   _csMode = 'manage' (da "Gestisci Aule")  → click sulla card = apre il
+     pannello direttore (docenti+moduli) della stessa aula, riusando al
+     100% dp-overlay/_dpLoadTeachers/_dpLoadTeacherSelect/_dpLoadModules
+     già definiti in app.js. Zero duplicazione di logica.
+   Il menu "..." (rinomina/icona/colore/elimina) resta invariato e
+   funzionante in ENTRAMBE le modalità.
+================================================== */
+let _csMode='select';
+function setCoursesScreenMode(mode){
+  _csMode=(mode==='manage')?'manage':'select';
+  const badge=document.getElementById('cs-mode-badge');
+  if(badge) badge.classList.toggle('hidden', _csMode!=='manage');
+}
+function _csCardClick(id){
+  if(_csMode==='manage'){
+    _dpClassroomId=id;
+    document.getElementById('dp-overlay')?.classList.remove('hidden');
+    const fb=document.getElementById('dp-invite-fb'); if(fb) fb.textContent='';
+    Promise.all([_dpLoadTeachers(), _dpLoadTeacherSelect(), _dpLoadModules()]);
+    return;
+  }
+  enterCourse(id);
+}
+
 function genCourseId(){return'c_'+Date.now()+'_'+Math.random().toString(36).slice(2,7);}
 
 function addCourse(){
@@ -107,7 +134,7 @@ function renderCoursesGrid(){
         --card-accent:${col.bar};
         --card-glow:${col.glow};
       "
-      onclick="enterCourse('${escAttr(c.id)}')"
+      onclick="_csCardClick('${escAttr(c.id)}')"
     >
       <div class="course-card-top">
         <span class="course-card-icon">${c.icon}</span>

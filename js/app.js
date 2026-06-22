@@ -54,6 +54,9 @@ async function _afterLogin(){
   const dirBadge  = sh('cs-director-badge');
   if(nameEl)    nameEl.textContent = appState.teacher?.name || window.Auth.getName();
   if(dirBadge)  dirBadge.classList.toggle('hidden', !isDir);
+  // v6.0.0: link "← Dashboard" nella topbar di screen-courses — solo Direttore
+  const backDashBtn = sh('cs-back-dashboard-btn');
+  if(backDashBtn) backDashBtn.classList.toggle('hidden', !isDir);
   // Badge ruolo docente nella screen-courses (visibile solo ai non-direttori)
   const teacherRoleBadge = sh('cs-teacher-role-badge');
   if(teacherRoleBadge) teacherRoleBadge.classList.toggle('hidden', isDir);
@@ -75,15 +78,12 @@ async function _afterLogin(){
   if(addForm) addForm.classList.toggle('teacher-mode', !isDir);
 
   sh('screen-login').classList.add('hidden');
-  const cs = sh('screen-courses');
-  cs.classList.remove('hidden');
-  cs.classList.add('entering');
-  setTimeout(()=>cs.classList.remove('entering'), 400);
 
   await _reloadCourses();
 
   // v3.2.2: se c'è un'aula pending da sessionStorage (cambio aula con reload),
-  // entra direttamente senza passare dalla griglia
+  // entra direttamente senza passare dalla griglia. INVARIATO — priorità
+  // assoluta per entrambi i ruoli, bypassa anche la Dashboard Direttore v6.0.0.
   try{
     const pendingId = sessionStorage.getItem('pp_pending_course');
     if(pendingId){
@@ -109,7 +109,189 @@ async function _afterLogin(){
       }
     }
   }catch(e){}
+
+  // v6.0.0: routing per ruolo — Direttore → Dashboard Direttore,
+  // Docente → griglia aule (flusso invariato, identico a prima della v6.0.0).
+  if(isDir){
+    openDirectorDashboard();
+  } else {
+    const cs = sh('screen-courses');
+    cs.classList.remove('hidden');
+    cs.classList.add('entering');
+    setTimeout(()=>cs.classList.remove('entering'), 400);
+  }
 }
+
+/* ==================================================
+   DASHBOARD DIRETTORE — v6.0.0
+   Schermata intermedia post-login, SOLO per il ruolo Direttore.
+   3 card: Gestisci Aule / Gestisci Docenti / Scegli Aula.
+   Riusa al 100% le funzioni di gestione aula (screen-courses,
+   dp-overlay, wizard) e aggiunge la nuova gestione docenti.
+   Il Docente non vede mai questa schermata (routing in _afterLogin).
+================================================== */
+function openDirectorDashboard(){
+  if(!window.Auth?.isDirector()) return; // guard lato client — RLS resta fonte di verità
+  sh('screen-courses')?.classList.add('hidden');
+  sh('screen-teacher-mgmt')?.classList.add('hidden');
+  const nameEl = sh('dd-teacher-name');
+  if(nameEl) nameEl.textContent = appState.teacher?.name || window.Auth.getName();
+  const dd = sh('screen-director-dashboard');
+  if(!dd) return;
+  dd.classList.remove('hidden');
+  dd.classList.add('entering');
+  setTimeout(()=>dd.classList.remove('entering'), 400);
+}
+
+/* Card "Scegli Aula" — comportamento IDENTICO al flusso pre-v6.0.0 */
+function ddGoSceltaAula(){
+  if(typeof setCoursesScreenMode==='function') setCoursesScreenMode('select');
+  sh('screen-director-dashboard')?.classList.add('hidden');
+  const cs = sh('screen-courses');
+  cs.classList.remove('hidden'); cs.classList.add('entering');
+  setTimeout(()=>cs.classList.remove('entering'), 400);
+}
+
+/* Card "Gestisci Aule" — stessa griglia, ma il click su una card apre
+   direttamente il pannello direttore (docenti+moduli) invece di entrare
+   nell'aula. Il menu "..." (rinomina/icona/colore/elimina) resta sempre
+   disponibile, in entrambe le modalità. Zero duplicazione di codice. */
+function ddGoGestisciAule(){
+  if(typeof setCoursesScreenMode==='function') setCoursesScreenMode('manage');
+  sh('screen-director-dashboard')?.classList.add('hidden');
+  const cs = sh('screen-courses');
+  cs.classList.remove('hidden'); cs.classList.add('entering');
+  setTimeout(()=>cs.classList.remove('entering'), 400);
+}
+
+/* Card "Gestisci Docenti" — nuova schermata, vedi sezione dedicata sotto */
+function ddGoGestisciDocenti(){
+  sh('screen-director-dashboard')?.classList.add('hidden');
+  openTeacherManagement();
+}
+
+/* Link "← Dashboard" mostrato nella topbar di screen-courses (solo Direttore) */
+function backToDirectorDashboard(){
+  if(typeof setCoursesScreenMode==='function') setCoursesScreenMode('select');
+  sh('screen-courses')?.classList.add('hidden');
+  openDirectorDashboard();
+}
+
+/* ==================================================
+   GESTIONE DOCENTI — v6.0.0 (solo Direttore)
+   Lista + crea (riusa Auth.inviteTeacher, già esistente e funzionante)
+   + modifica nome + disattiva/riattiva (flag logico, nessuna cancellazione).
+   La modifica dell'EMAIL non è disponibile: richiederebbe l'Admin API di
+   Supabase (service role) tramite una Edge Function dedicata non presente
+   in questo repo — vedi riepilogo consegnato per i dettagli e l'eventuale
+   bozza di Edge Function da implementare in futuro.
+================================================== */
+let _tmSelectedId   = null;
+let _tmShowInactive = false;
+
+async function openTeacherManagement(){
+  if(!window.Auth?.isDirector()) return;
+  const scr = sh('screen-teacher-mgmt');
+  if(!scr) return;
+  scr.classList.remove('hidden');
+  scr.classList.add('entering');
+  setTimeout(()=>scr.classList.remove('entering'), 400);
+  _tmSelectedId   = null;
+  _tmShowInactive = false;
+  const toggleBtn = sh('tm-toggle-inactive-btn');
+  if(toggleBtn) toggleBtn.textContent = 'Mostra disattivati';
+  _tmClearForm();
+  await _tmRenderList();
+}
+
+function closeTeacherManagement(){
+  sh('screen-teacher-mgmt')?.classList.add('hidden');
+  openDirectorDashboard();
+}
+
+function _tmClearForm(){
+  if(sh('tm-edit-name')) sh('tm-edit-name').value='';
+  sh('tm-edit-panel')?.classList.add('hidden');
+  if(sh('tm-create-email')) sh('tm-create-email').value='';
+  if(sh('tm-create-name'))  sh('tm-create-name').value='';
+  const fb=sh('tm-create-fb'); if(fb) fb.textContent='';
+}
+
+async function _tmRenderList(){
+  const el = sh('tm-list');
+  if(!el) return;
+  el.innerHTML = '<div style="font-size:12px;color:rgba(255,255,255,.3);padding:.5rem 0">Caricamento…</div>';
+  const list = await window.Auth.listTeachers(_tmShowInactive);
+  if(!list || !list.length){
+    el.innerHTML = '<div class="cs-empty" style="padding:1.5rem 1rem"><div class="cs-empty-text">Nessun docente trovato.</div></div>';
+    return;
+  }
+  el.innerHTML = list.map(t=>{
+    const inactive = t.active===false;
+    return `<div class="tm-row${inactive?' tm-inactive':''}${_tmSelectedId===t.id?' tm-selected':''}"
+        onclick="_tmSelectTeacher('${escAttr(t.id)}','${escAttr(t.name||'')}')">
+      <span class="tm-row-name">${escHtml(t.name||t.id)}</span>
+      ${inactive?'<span class="tm-badge-inactive">Disattivato</span>':''}
+    </div>`;
+  }).join('');
+}
+
+function _tmSelectTeacher(id, name){
+  _tmSelectedId = id;
+  const inp = sh('tm-edit-name');
+  if(inp) inp.value = name;
+  sh('tm-edit-panel')?.classList.remove('hidden');
+  _tmRenderList();
+}
+
+async function tmSaveName(){
+  if(!_tmSelectedId) return;
+  const newName = (sh('tm-edit-name')?.value||'').trim();
+  if(!newName) return;
+  const res = await window.Auth.updateTeacherProfile(_tmSelectedId, { name: newName });
+  if(res.ok) await _tmRenderList();
+  else alert('Errore salvataggio nome: '+(res.error||'sconosciuto'));
+}
+
+async function tmToggleActive(makeActive){
+  if(!_tmSelectedId) return;
+  const res = await window.Auth.setTeacherActive(_tmSelectedId, makeActive);
+  if(res.ok) await _tmRenderList();
+  else alert('Errore: '+(res.error||'sconosciuto')+'\n\nVerifica di aver eseguito la migrazione SQL (colonna "active" su profiles).');
+}
+
+function tmToggleShowInactive(){
+  _tmShowInactive = !_tmShowInactive;
+  const btn = sh('tm-toggle-inactive-btn');
+  if(btn) btn.textContent = _tmShowInactive ? 'Nascondi disattivati' : 'Mostra disattivati';
+  _tmRenderList();
+}
+
+async function tmCreateTeacher(){
+  const email = (sh('tm-create-email')?.value||'').trim();
+  const name  = (sh('tm-create-name')?.value||'').trim();
+  const fb = sh('tm-create-fb');
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!email || !emailRe.test(email)){
+    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='Inserisci un indirizzo email valido.'; }
+    return;
+  }
+  if(fb){ fb.style.color='rgba(255,255,255,.4)'; fb.textContent='⏳ Invio in corso...'; }
+  try{
+    const res = await window.Auth.inviteTeacher(email, name||email);
+    if(res.ok){
+      if(fb){ fb.style.color='#00ff96'; fb.textContent='✓ Docente creato — invito inviato a '+email; }
+      if(sh('tm-create-email')) sh('tm-create-email').value='';
+      if(sh('tm-create-name'))  sh('tm-create-name').value='';
+      await _tmRenderList();
+    } else {
+      if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore: '+(res.error||'sconosciuto'); }
+    }
+  }catch(e){
+    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore di rete. Riprova.'; }
+  }
+}
+
 
 /* Carica le aule dal cloud e aggiorna la griglia.
    v3.2.0: carica anche i docenti per ogni aula (display nelle card).

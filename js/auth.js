@@ -1,4 +1,25 @@
 /**
+ * auth.js — PixelProf v3.2.0
+ *
+ * v3.2.0 — Dashboard Direttore (Gestione Docenti):
+ *   - _loadProfile / listTeachers selezionano ora anche la colonna 'active'.
+ *     RICHIEDE la migrazione SQL (consegnata a parte):
+ *       ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS active boolean NOT NULL DEFAULT true;
+ *     Finché la colonna non esiste, Supabase la ignora/erra in SELECT — in tal
+ *     caso _currentProfile.active resta undefined e il codice tratta undefined
+ *     come "attivo" (fail-open): nessun docente esistente viene bloccato
+ *     accidentalmente prima di eseguire la migrazione.
+ *   - login(): dopo il caricamento profilo, se active===false forza il logout e
+ *     restituisce errore "Account disabilitato" — blocco lato client, nessuna
+ *     Edge Function richiesta.
+ *   - listTeachers(includeInactive=false): retrocompatibile — i chiamanti
+ *     esistenti (wizard aula, pannello direttore) continuano a vedere SOLO i
+ *     docenti attivi senza alcuna modifica al loro codice.
+ *   - Nuove funzioni: updateTeacherProfile(), setTeacherActive().
+ *   - NOTA: la modifica dell'email docente NON è implementata qui. Richiede
+ *     l'Admin API di Supabase (service role) via una Edge Function dedicata,
+ *     non presente in questo repo. Vedi riepilogo consegnato per i dettagli.
+ *
  * auth.js — PixelProf v3.1.3
  *
  * FIX v3.1.3 — Invite flow bloccato su spinner:
@@ -60,7 +81,7 @@ async function _loadProfile(userId, force = false) {
   try {
     const { data, error } = await supabase
       .from('profiles')
-      .select('id, name, role')
+      .select('id, name, role, active')
       .eq('id', userId)
       .single();
     if (!error && data) {
@@ -167,7 +188,18 @@ async function init() {
 async function login(email, password) {
   const { data, error } = await supabase.auth.signInWithPassword({ email, password });
   if (error) return { ok: false, error: error.message };
-  // onAuthStateChange SIGNED_IN caricherà il profilo
+  // onAuthStateChange SIGNED_IN caricherà il profilo in modo asincrono.
+  // Attende brevemente (max ~1s) che _loadProfile completi, poi verifica
+  // il flag 'active'. Se la colonna non esiste ancora (pre-migrazione),
+  // active resta undefined → fail-open, nessun blocco (vedi header v3.2.0).
+  for (let i = 0; i < 10 && !_profileLoaded; i++) {
+    await new Promise(r => setTimeout(r, 100));
+  }
+  if (_currentProfile && _currentProfile.active === false) {
+    await supabase.auth.signOut();
+    _currentUser = null; _currentProfile = null; _profileLoaded = false;
+    return { ok: false, error: 'Account disabilitato. Contatta il direttore.' };
+  }
   return { ok: true };
 }
 
@@ -258,20 +290,63 @@ async function inviteTeacher(email, name) {
 
 // ════════════════════════════════════════════════════════════════════
 // LISTA DOCENTI
+// v3.2.0: includeInactive=false (default) → filtra i docenti disattivati.
+// Retrocompatibile: tutti i chiamanti esistenti (wizard, pannello direttore)
+// non passano alcun argomento e continuano a vedere solo i docenti attivi.
 // ════════════════════════════════════════════════════════════════════
-async function listTeachers() {
+async function listTeachers(includeInactive = false) {
   if (!isDirector()) return [];
   try {
-    const { data, error } = await supabase
+    let q = supabase
       .from('profiles')
-      .select('id, name, role')
+      .select('id, name, role, active')
       .eq('role', 'teacher')
       .order('name');
+    if (!includeInactive) q = q.eq('active', true);
+    const { data, error } = await q;
     if (error) throw error;
     return data || [];
   } catch (err) {
     console.warn('[Auth] listTeachers fallito:', err.message);
     return [];
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════
+// GESTIONE DOCENTI — v3.2.0 (Dashboard Direttore)
+// ════════════════════════════════════════════════════════════════════
+
+/**
+ * Aggiorna i campi modificabili di un docente (solo 'name' per ora —
+ * l'email richiede l'Admin API di Supabase, non disponibile qui).
+ */
+async function updateTeacherProfile(teacherId, updates) {
+  if (!isDirector()) return { ok: false, error: 'Permesso negato' };
+  const payload = {};
+  if (updates.name !== undefined) payload.name = updates.name;
+  if (Object.keys(payload).length === 0) return { ok: false, error: 'Nessun campo da aggiornare' };
+  try {
+    const { error } = await supabase.from('profiles').update(payload).eq('id', teacherId);
+    if (error) throw error;
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, error: err.message };
+  }
+}
+
+/**
+ * Attiva/disattiva un docente (flag logico — nessuna cancellazione).
+ * Il docente disattivato non comparirà più in listTeachers() di default
+ * e non potrà più effettuare login (vedi login()).
+ */
+async function setTeacherActive(teacherId, active) {
+  if (!isDirector()) return { ok: false, error: 'Permesso negato' };
+  try {
+    const { error } = await supabase.from('profiles').update({ active: !!active }).eq('id', teacherId);
+    if (error) throw error;
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, error: err.message };
   }
 }
 
@@ -297,6 +372,8 @@ window.Auth = {
   checkSession,
   inviteTeacher,
   listTeachers,
+  updateTeacherProfile,
+  setTeacherActive,
   getUser,
   getProfile,
   getUserId,

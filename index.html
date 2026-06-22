@@ -309,8 +309,13 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <input id="tm-edit-name" placeholder="Nome docente"/>
         <button class="btn btn-neon" onclick="tmSaveName()"><i class="ti ti-device-floppy"></i> Salva nome</button>
       </div>
+      <div class="inp-row" style="margin-bottom:8px">
+        <input id="tm-edit-email" type="email" placeholder="Nuova email (es. nuovo@scuola.it)"/>
+        <button class="btn btn-neon" onclick="tmSaveEmail()"><i class="ti ti-mail"></i> Cambia email</button>
+      </div>
+      <div id="tm-email-fb" style="font-size:11px;min-height:16px;margin-bottom:8px"></div>
       <div style="font-size:10px;color:rgba(255,255,255,.3);margin-bottom:12px;line-height:1.5">
-        La modifica dell'email non è disponibile da qui: richiede privilegi di amministrazione lato Supabase.
+        Il cambio email richiede la Edge Function "update_teacher_email" (Admin API) — se non è stata deployata su Supabase, l'operazione mostrerà un errore esplicito qui sopra.
       </div>
       <div class="btn-row">
         <button class="btn" onclick="tmToggleActive(false)" style="border-color:rgba(255,80,80,.3);color:#ff6b6b"><i class="ti ti-user-off"></i> Disattiva</button>

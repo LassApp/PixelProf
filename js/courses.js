@@ -48,7 +48,14 @@ function setCoursesScreenMode(mode){
   if(badge) badge.classList.toggle('hidden', _csMode!=='manage');
 }
 function _csCardClick(id){
-  if(_csMode==='manage'){
+  // v6.0.1 FIX: _csMode è una variabile JS che NON viene resettata da un
+  // logout/login nella stessa tab (SPA, nessun reload). Se un Direttore
+  // lasciava _csMode='manage' (visitando "Gestisci Aule" senza poi tornare
+  // su "Scegli Aula") e poi un Docente faceva login nella stessa tab, il
+  // click sulla card apriva il pannello direttore invece di entrare in aula.
+  // Guard: la modalità 'manage' è onorata SOLO se l'utente è realmente
+  // Direttore — il ruolo è la fonte di verità, non lo stato residuo in RAM.
+  if(_csMode==='manage' && window.Auth?.isDirector()){
     _dpClassroomId=id;
     document.getElementById('dp-overlay')?.classList.remove('hidden');
     const fb=document.getElementById('dp-invite-fb'); if(fb) fb.textContent='';

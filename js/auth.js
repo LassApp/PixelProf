@@ -289,6 +289,42 @@ async function inviteTeacher(email, name) {
 }
 
 // ════════════════════════════════════════════════════════════════════
+// CAMBIA EMAIL DOCENTE — v6.0.1 (via Edge Function, Admin API)
+//
+// L'email vive in auth.users, non in profiles — non è raggiungibile
+// con un semplice UPDATE lato client (serve la service_role key).
+// Richiede il deploy della Edge Function 'update_teacher_email'
+// (vedi supabase/functions/update_teacher_email/index.ts consegnata
+// a parte). Stesso pattern di chiamata di inviteTeacher().
+// ════════════════════════════════════════════════════════════════════
+async function updateTeacherEmail(teacherId, newEmail) {
+  if (!isDirector()) return { ok: false, error: 'Permesso negato' };
+  try {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) return { ok: false, error: 'Sessione non valida' };
+    const res = await fetch(
+      'https://skrgqanqdyrybarinwwr.supabase.co/functions/v1/update_teacher_email',
+      {
+        method:  'POST',
+        headers: {
+          'Content-Type':  'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+          'apikey':        supabase.supabaseKey,
+        },
+        body: JSON.stringify({ teacherId, newEmail }),
+      }
+    );
+    if (!res.ok) {
+      const txt = await res.text().catch(() => '');
+      return { ok: false, error: `HTTP ${res.status} — ${txt || 'Edge Function non disponibile (deploy necessario?)'}` };
+    }
+    return await res.json();
+  } catch (err) {
+    return { ok: false, error: err.message };
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════
 // LISTA DOCENTI
 // v3.2.0: includeInactive=false (default) → filtra i docenti disattivati.
 // Retrocompatibile: tutti i chiamanti esistenti (wizard, pannello direttore)
@@ -319,14 +355,28 @@ async function listTeachers(includeInactive = false) {
 /**
  * Aggiorna i campi modificabili di un docente (solo 'name' per ora —
  * l'email richiede l'Admin API di Supabase, non disponibile qui).
+ *
+ * v3.2.1 FIX: l'UPDATE diretto su 'profiles' falliva in silenzio — le
+ * policy RLS di default permettono a un utente di scrivere solo sulla
+ * PROPRIA riga (auth.uid() = id), quindi un Direttore che tentava di
+ * rinominare un ALTRO profilo veniva bloccato da RLS. Supabase NON
+ * restituisce errore in questo caso (riga semplicemente invisibile
+ * all'UPDATE) — il client riceveva {ok:true} ma zero righe erano state
+ * realmente modificate. STESSO bug-pattern di updateCourse/classrooms.
+ * FIX: passa attraverso la RPC SECURITY DEFINER director_update_teacher_name
+ * (bypassa RLS, verifica il ruolo internamente). Richiede la SQL:
+ *   director_update_teacher_name(p_teacher_id uuid, p_name text)
+ * — vedi v6.0.1_director_teacher_rpc.sql.
  */
 async function updateTeacherProfile(teacherId, updates) {
   if (!isDirector()) return { ok: false, error: 'Permesso negato' };
-  const payload = {};
-  if (updates.name !== undefined) payload.name = updates.name;
-  if (Object.keys(payload).length === 0) return { ok: false, error: 'Nessun campo da aggiornare' };
+  const name = (updates.name ?? '').trim();
+  if (!name) return { ok: false, error: 'Nessun campo da aggiornare' };
   try {
-    const { error } = await supabase.from('profiles').update(payload).eq('id', teacherId);
+    const { error } = await supabase.rpc('director_update_teacher_name', {
+      p_teacher_id: teacherId,
+      p_name: name,
+    });
     if (error) throw error;
     return { ok: true };
   } catch (err) {
@@ -338,11 +388,18 @@ async function updateTeacherProfile(teacherId, updates) {
  * Attiva/disattiva un docente (flag logico — nessuna cancellazione).
  * Il docente disattivato non comparirà più in listTeachers() di default
  * e non potrà più effettuare login (vedi login()).
+ *
+ * v3.2.1 FIX: stesso bug-pattern di updateTeacherProfile — l'UPDATE
+ * diretto era silenziosamente bloccato da RLS. Ora passa dalla RPC
+ * SECURITY DEFINER director_set_teacher_active.
  */
 async function setTeacherActive(teacherId, active) {
   if (!isDirector()) return { ok: false, error: 'Permesso negato' };
   try {
-    const { error } = await supabase.from('profiles').update({ active: !!active }).eq('id', teacherId);
+    const { error } = await supabase.rpc('director_set_teacher_active', {
+      p_teacher_id: teacherId,
+      p_active: !!active,
+    });
     if (error) throw error;
     return { ok: true };
   } catch (err) {
@@ -374,6 +431,7 @@ window.Auth = {
   listTeachers,
   updateTeacherProfile,
   setTeacherActive,
+  updateTeacherEmail,
   getUser,
   getProfile,
   getUserId,

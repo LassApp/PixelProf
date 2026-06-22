@@ -115,6 +115,11 @@ async function _afterLogin(){
   if(isDir){
     openDirectorDashboard();
   } else {
+    // v6.0.1 FIX: azzera sempre _csMode per il Docente. Senza questo reset,
+    // _csMode poteva restare 'manage' da una precedente sessione Direttore
+    // nella stessa tab (SPA, nessun reload tra logout/login), causando
+    // l'apertura del pannello "Gestisci aula" al posto dell'ingresso in aula.
+    if(typeof setCoursesScreenMode==='function') setCoursesScreenMode('select');
     const cs = sh('screen-courses');
     cs.classList.remove('hidden');
     cs.classList.add('entering');
@@ -211,6 +216,8 @@ function closeTeacherManagement(){
 
 function _tmClearForm(){
   if(sh('tm-edit-name')) sh('tm-edit-name').value='';
+  if(sh('tm-edit-email')) sh('tm-edit-email').value='';
+  const efb=sh('tm-email-fb'); if(efb) efb.textContent='';
   sh('tm-edit-panel')?.classList.add('hidden');
   if(sh('tm-create-email')) sh('tm-create-email').value='';
   if(sh('tm-create-name'))  sh('tm-create-name').value='';
@@ -240,6 +247,8 @@ function _tmSelectTeacher(id, name){
   _tmSelectedId = id;
   const inp = sh('tm-edit-name');
   if(inp) inp.value = name;
+  if(sh('tm-edit-email')) sh('tm-edit-email').value='';
+  const efb=sh('tm-email-fb'); if(efb) efb.textContent='';
   sh('tm-edit-panel')?.classList.remove('hidden');
   _tmRenderList();
 }
@@ -251,6 +260,32 @@ async function tmSaveName(){
   const res = await window.Auth.updateTeacherProfile(_tmSelectedId, { name: newName });
   if(res.ok) await _tmRenderList();
   else alert('Errore salvataggio nome: '+(res.error||'sconosciuto'));
+}
+
+/**
+ * tmSaveEmail — v6.0.1
+ * Cambia l'email di accesso del docente selezionato tramite la Edge
+ * Function 'update_teacher_email' (Admin API, service role).
+ * Richiede il deploy della function — se assente, l'errore HTTP viene
+ * mostrato esplicitamente in #tm-email-fb (nessun fallimento silenzioso).
+ */
+async function tmSaveEmail(){
+  if(!_tmSelectedId) return;
+  const newEmail = (sh('tm-edit-email')?.value||'').trim();
+  const fb = sh('tm-email-fb');
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!newEmail || !emailRe.test(newEmail)){
+    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='Inserisci un indirizzo email valido.'; }
+    return;
+  }
+  if(fb){ fb.style.color='rgba(255,255,255,.4)'; fb.textContent='⏳ Aggiornamento in corso...'; }
+  const res = await window.Auth.updateTeacherEmail(_tmSelectedId, newEmail);
+  if(res.ok){
+    if(fb){ fb.style.color='#00ff96'; fb.textContent='✓ Email aggiornata a '+newEmail; }
+    if(sh('tm-edit-email')) sh('tm-edit-email').value='';
+  } else {
+    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore: '+(res.error||'sconosciuto'); }
+  }
 }
 
 async function tmToggleActive(makeActive){
@@ -356,6 +391,7 @@ async function _performLogout(){
   activeCourseId     = null;
   db                 = makeEmptyDb();
   window._activeModuleKeys = null; // reset filtro moduli aula
+  if(typeof setCoursesScreenMode==='function') setCoursesScreenMode('select'); // v6.0.1: igiene stato — evita leak 'manage' tra sessioni diverse nella stessa tab
   // Chiude Hub se aperto
   if(typeof closeHubMenu === 'function') closeHubMenu();
   const badge = sh('tb-course-badge');

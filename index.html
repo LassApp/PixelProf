@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v6.0.0</title>
+<title>PixelProf — ICDL Lab interattivo v6.0.2</title>
 <link rel="icon" href="public/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
@@ -318,8 +318,8 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         Il cambio email richiede la Edge Function "update_teacher_email" (Admin API) — se non è stata deployata su Supabase, l'operazione mostrerà un errore esplicito qui sopra.
       </div>
       <div class="btn-row">
-        <button class="btn" onclick="tmToggleActive(false)" style="border-color:rgba(255,80,80,.3);color:#ff6b6b"><i class="ti ti-user-off"></i> Disattiva</button>
-        <button class="btn" onclick="tmToggleActive(true)" style="border-color:rgba(0,255,150,.3);color:#00ff96"><i class="ti ti-user-check"></i> Riattiva</button>
+        <button id="tm-btn-deactivate" class="btn" onclick="tmToggleActive(false)" style="border-color:rgba(255,80,80,.3);color:#ff6b6b"><i class="ti ti-user-off"></i> Disattiva</button>
+        <button id="tm-btn-activate" class="btn" onclick="tmToggleActive(true)" style="border-color:rgba(0,255,150,.3);color:#00ff96"><i class="ti ti-user-check"></i> Riattiva</button>
       </div>
     </div>
   </div>

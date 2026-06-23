@@ -320,7 +320,16 @@ async function updateTeacherEmail(teacherId, newEmail) {
     }
     return await res.json();
   } catch (err) {
-    return { ok: false, error: err.message };
+    // Un fetch bloccato da CORS (perché l'endpoint non esiste ancora —
+    // la function non è stata deployata) arriva qui come generico
+    // "TypeError: Failed to fetch", senza alcun dettaglio HTTP utile.
+    // Lo riconosciamo e diamo un messaggio azionabile invece del crudo
+    // errore del browser.
+    const isNetworkFailure = err instanceof TypeError;
+    const msg = isNetworkFailure
+      ? 'Edge Function "update_teacher_email" non raggiungibile. Verifica di averla deployata su Supabase (supabase functions deploy update_teacher_email) — vedi il file .ts consegnato.'
+      : err.message;
+    return { ok: false, error: msg };
   }
 }
 

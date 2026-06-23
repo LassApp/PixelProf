@@ -191,8 +191,9 @@ function backToDirectorDashboard(){
    in questo repo — vedi riepilogo consegnato per i dettagli e l'eventuale
    bozza di Edge Function da implementare in futuro.
 ================================================== */
-let _tmSelectedId   = null;
-let _tmShowInactive = false;
+let _tmSelectedId     = null;
+let _tmShowInactive   = false;
+let _tmSelectedActive = true; // stato 'active' del docente correntemente selezionato — pilota i tasti Disattiva/Riattiva
 
 async function openTeacherManagement(){
   if(!window.Auth?.isDirector()) return;
@@ -236,21 +237,37 @@ async function _tmRenderList(){
   el.innerHTML = list.map(t=>{
     const inactive = t.active===false;
     return `<div class="tm-row${inactive?' tm-inactive':''}${_tmSelectedId===t.id?' tm-selected':''}"
-        onclick="_tmSelectTeacher('${escAttr(t.id)}','${escAttr(t.name||'')}')">
+        onclick="_tmSelectTeacher('${escAttr(t.id)}','${escAttr(t.name||'')}',${t.active!==false})">
       <span class="tm-row-name">${escHtml(t.name||t.id)}</span>
       ${inactive?'<span class="tm-badge-inactive">Disattivato</span>':''}
     </div>`;
   }).join('');
 }
 
-function _tmSelectTeacher(id, name){
-  _tmSelectedId = id;
+function _tmSelectTeacher(id, name, active){
+  _tmSelectedId     = id;
+  _tmSelectedActive = active !== false;
   const inp = sh('tm-edit-name');
   if(inp) inp.value = name;
   if(sh('tm-edit-email')) sh('tm-edit-email').value='';
   const efb=sh('tm-email-fb'); if(efb) efb.textContent='';
   sh('tm-edit-panel')?.classList.remove('hidden');
+  _tmUpdateActiveButtons();
   _tmRenderList();
+}
+
+/**
+ * _tmUpdateActiveButtons — v6.0.2
+ * Riflette lo stato 'active' del docente selezionato sui due tasti:
+ * docente attivo  → "Disattiva" abilitato, "Riattiva" disabilitato.
+ * docente inattivo → il contrario. Evita di poter cliccare un'azione
+ * già coerente con lo stato corrente (es. "Riattiva" su chi è già attivo).
+ */
+function _tmUpdateActiveButtons(){
+  const deactivateBtn = sh('tm-btn-deactivate');
+  const activateBtn   = sh('tm-btn-activate');
+  if(deactivateBtn) deactivateBtn.disabled = !_tmSelectedActive;
+  if(activateBtn)   activateBtn.disabled  = _tmSelectedActive;
 }
 
 async function tmSaveName(){
@@ -291,7 +308,11 @@ async function tmSaveEmail(){
 async function tmToggleActive(makeActive){
   if(!_tmSelectedId) return;
   const res = await window.Auth.setTeacherActive(_tmSelectedId, makeActive);
-  if(res.ok) await _tmRenderList();
+  if(res.ok){
+    _tmSelectedActive = makeActive;
+    _tmUpdateActiveButtons();
+    await _tmRenderList();
+  }
   else alert('Errore: '+(res.error||'sconosciuto')+'\n\nVerifica di aver eseguito la migrazione SQL (colonna "active" su profiles).');
 }
 

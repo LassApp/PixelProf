@@ -274,7 +274,9 @@ async function tmSaveName(){
   if(!_tmSelectedId) return;
   const newName = (sh('tm-edit-name')?.value||'').trim();
   if(!newName) return;
+  console.log('[PixelProf] tmSaveName → id:', _tmSelectedId, '| nuovo nome:', newName);
   const res = await window.Auth.updateTeacherProfile(_tmSelectedId, { name: newName });
+  console.log('[PixelProf] tmSaveName → risposta RPC:', res);
   if(res.ok) await _tmRenderList();
   else alert('Errore salvataggio nome: '+(res.error||'sconosciuto'));
 }

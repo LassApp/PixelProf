@@ -386,7 +386,10 @@ async function updateTeacherProfile(teacherId, updates) {
       p_teacher_id: teacherId,
       p_name: name,
     });
-    if (error) throw error;
+    if (error) {
+      console.error('[Auth] director_update_teacher_name RPC error — code:', error.code, '| message:', error.message, '| details:', error.details, '| hint:', error.hint);
+      throw error;
+    }
     return { ok: true };
   } catch (err) {
     return { ok: false, error: err.message };

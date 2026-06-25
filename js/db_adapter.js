@@ -346,6 +346,30 @@ export async function getClassroomTeachers(classroomId) {
   return data.map(row => row.profiles).filter(Boolean);
 }
 
+/**
+ * getTeacherClassrooms — v6.1.0
+ * Legge le aule assegnate a UN docente (prospettiva inversa di
+ * getClassroomTeachers). Query simmetrica e diretta sulla stessa
+ * tabella classroom_teachers — nessuna nuova tabella, nessuna RPC,
+ * nessuna modifica alle funzioni assignTeacher/removeTeacher esistenti.
+ * Usata dalla schermata redesign "Gestione Docenti" per mostrare/gestire
+ * le aule di ogni docente senza duplicare la logica di assegnazione.
+ *
+ * @param {string} teacherId
+ * @returns {Promise<Array<{id,name,icon}>>}
+ */
+export async function getTeacherClassrooms(teacherId) {
+  const data = await _sbCall(
+    () => supabase
+      .from('classroom_teachers')
+      .select('classroom_id, classrooms(id, name, icon)')
+      .eq('teacher_id', teacherId),
+    'getTeacherClassrooms'
+  );
+  if (!data) return [];
+  return data.map(row => row.classrooms).filter(Boolean);
+}
+
 // ════════════════════════════════════════════════════════════════════
 // CLASSROOM_MODULES API  (v3 — whitelist moduli per aula)
 // ════════════════════════════════════════════════════════════════════
@@ -810,6 +834,7 @@ window.DB = {
   assignTeacherToClassroom:assignTeacher,
   removeTeacherFromClassroom: removeTeacher,
   getClassroomTeachers,
+  getTeacherClassrooms,
   getEnabledModules,
   setEnabledModules,
   loadPlayers,

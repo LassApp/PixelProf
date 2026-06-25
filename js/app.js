@@ -1,7 +1,12 @@
 /* ==================================================
-   app.js — PixelProf v5.0.7
+   app.js — PixelProf v6.1.0
    App bootstrap: auth flow, login, logout, set-password,
    module filter, wizard, director panel, and splash/init.
+   v6.1.0 — Redesign "Gestione Docenti" (solo UI/UX): la vecchia
+     schermata combinata form+lista è sostituita da un flusso a 4
+     schermate (hub 2-card → crea / lista a card con tab / dettaglio
+     con gestione aule). Vedi sezione dedicata "GESTIONE DOCENTI" più
+     sotto per il changelog completo e il riepilogo del riuso logica.
    v5.0.0 M5: _deleteClassroomRest legge credenziali da
    window.__SB (impostato da supabase_client.js) —
    nessuna stringa hardcoded in questo file.
@@ -183,31 +188,56 @@ function backToDirectorDashboard(){
 }
 
 /* ==================================================
-   GESTIONE DOCENTI — v6.0.0 (solo Direttore)
-   Lista + crea (riusa Auth.inviteTeacher, già esistente e funzionante)
-   + modifica nome + disattiva/riattiva (flag logico, nessuna cancellazione).
-   La modifica dell'EMAIL non è disponibile: richiederebbe l'Admin API di
-   Supabase (service role) tramite una Edge Function dedicata non presente
-   in questo repo — vedi riepilogo consegnato per i dettagli e l'eventuale
-   bozza di Edge Function da implementare in futuro.
+   GESTIONE DOCENTI — v6.1.0 (solo Direttore) — REDESIGN
+   Sostituisce la vecchia schermata combinata (form+lista) con un
+   flusso a 4 schermate, stesso linguaggio visivo della Dashboard:
+     1) HUB (screen-teacher-mgmt)      → 2 card: Nuovo Docente / Docenti
+     2) CREATE (screen-teacher-create) → Nome, Cognome, Email, Genere
+     3) LIST (screen-teacher-list)     → Tab Attivi/Disattivati, card docente
+     4) DETAIL (screen-teacher-detail) → modifica profilo+email+genere
+                                          + gestione aule assegnate
+   RIUSO INTEGRALE della logica esistente — nessuna funzione di business
+   è stata duplicata o modificata nel comportamento:
+     - invito docente      → window.Auth.inviteTeacher()       (invariata)
+     - cambio email        → window.Auth.updateTeacherEmail()  (invariata)
+     - attiva/disattiva    → window.Auth.setTeacherActive()    (invariata)
+     - assegna/rimuovi aula→ window.DB.assignTeacherToClassroom /
+                              removeTeacherFromClassroom        (invariate,
+                              già usate dal pannello "Gestisci aula")
+   NUOVO solo ciò che il redesign richiede:
+     - window.Auth.updateTeacherProfile() ora accetta anche 'genere'
+       (vedi auth.js v6.1.0 + nuova RPC SQL consegnata a parte)
+     - window.DB.getTeacherClassrooms() — query simmetrica a
+       getClassroomTeachers, nessuna nuova tabella
+     - window.Auth.listTeacherEmails() — opzionale, per mostrare l'email
+       reale nelle card (richiede una nuova Edge Function facoltativa)
 ================================================== */
-let _tmSelectedId     = null;
-let _tmShowInactive   = false;
-let _tmSelectedActive = true; // stato 'active' del docente correntemente selezionato — pilota i tasti Disattiva/Riattiva
 
-async function openTeacherManagement(){
+/* -- Helpers Nome/Cognome — split/join sul campo 'profiles.name' esistente.
+      Nessuna nuova colonna DB: Nome+Cognome sono solo UI, concatenati in
+      un'unica stringa 'name' per il salvataggio (come già accadeva). -- */
+function _tmSplitName(fullName){
+  const parts = (fullName||'').trim().split(/\s+/).filter(Boolean);
+  if(!parts.length) return { nome:'', cognome:'' };
+  if(parts.length===1) return { nome:parts[0], cognome:'' };
+  return { nome:parts[0], cognome:parts.slice(1).join(' ') };
+}
+function _tmJoinName(nome, cognome){
+  return [ (nome||'').trim(), (cognome||'').trim() ].filter(Boolean).join(' ');
+}
+const _TM_GENDER_ICON = { uomo:'ti-gender-male', donna:'ti-gender-female' };
+
+/* ── 1) HUB ───────────────────────────────────────────────────────── */
+function openTeacherManagement(){
   if(!window.Auth?.isDirector()) return;
+  sh('screen-teacher-create')?.classList.add('hidden');
+  sh('screen-teacher-list')?.classList.add('hidden');
+  sh('screen-teacher-detail')?.classList.add('hidden');
   const scr = sh('screen-teacher-mgmt');
   if(!scr) return;
   scr.classList.remove('hidden');
   scr.classList.add('entering');
   setTimeout(()=>scr.classList.remove('entering'), 400);
-  _tmSelectedId   = null;
-  _tmShowInactive = false;
-  const toggleBtn = sh('tm-toggle-inactive-btn');
-  if(toggleBtn) toggleBtn.textContent = 'Mostra disattivati';
-  _tmClearForm();
-  await _tmRenderList();
 }
 
 function closeTeacherManagement(){
@@ -215,136 +245,341 @@ function closeTeacherManagement(){
   openDirectorDashboard();
 }
 
-function _tmClearForm(){
-  if(sh('tm-edit-name')) sh('tm-edit-name').value='';
-  if(sh('tm-edit-email')) sh('tm-edit-email').value='';
-  const efb=sh('tm-email-fb'); if(efb) efb.textContent='';
-  sh('tm-edit-panel')?.classList.add('hidden');
-  if(sh('tm-create-email')) sh('tm-create-email').value='';
-  if(sh('tm-create-name'))  sh('tm-create-name').value='';
-  const fb=sh('tm-create-fb'); if(fb) fb.textContent='';
+/* ── 2) CREATE — Nuovo Docente ───────────────────────────────────── */
+let _tmcGenere = null;
+
+function tmGoCreate(){
+  sh('screen-teacher-mgmt')?.classList.add('hidden');
+  _tmcGenere = null;
+  if(sh('tmc-nome'))    sh('tmc-nome').value = '';
+  if(sh('tmc-cognome')) sh('tmc-cognome').value = '';
+  if(sh('tmc-email'))   sh('tmc-email').value = '';
+  _tmcRenderGenere();
+  const fb = sh('tmc-fb'); if(fb){ fb.textContent=''; fb.style.color=''; }
+  const scr = sh('screen-teacher-create');
+  if(!scr) return;
+  scr.classList.remove('hidden');
+  scr.classList.add('entering');
+  setTimeout(()=>scr.classList.remove('entering'), 400);
+  setTimeout(()=>sh('tmc-nome')?.focus(), 120);
 }
 
-async function _tmRenderList(){
-  const el = sh('tm-list');
-  if(!el) return;
-  el.innerHTML = '<div style="font-size:12px;color:rgba(255,255,255,.3);padding:.5rem 0">Caricamento…</div>';
-  const list = await window.Auth.listTeachers(_tmShowInactive);
-  if(!list || !list.length){
-    el.innerHTML = '<div class="cs-empty" style="padding:1.5rem 1rem"><div class="cs-empty-text">Nessun docente trovato.</div></div>';
+function tmBackFromCreate(){
+  sh('screen-teacher-create')?.classList.add('hidden');
+  openTeacherManagement();
+}
+
+function tmcPickGenere(g){ _tmcGenere = g; _tmcRenderGenere(); }
+function _tmcRenderGenere(){
+  sh('tmc-gender-uomo')?.classList.toggle('active', _tmcGenere==='uomo');
+  sh('tmc-gender-donna')?.classList.toggle('active', _tmcGenere==='donna');
+}
+
+/**
+ * tmSubmitCreate — invita un nuovo docente.
+ * Step 1: window.Auth.inviteTeacher(email, nomeCompleto) — LOGICA ESISTENTE,
+ *         non toccata: stessa Edge Function 'invite_teacher' già in uso.
+ * Step 2: se l'invito ha successo e restituisce l'id del nuovo profilo,
+ *         chiama updateTeacherProfile per salvare il genere (la Edge
+ *         Function di invito non conosce questo campo nuovo — non è stata
+ *         modificata). Se questo secondo step fallisce, l'invito resta
+ *         comunque valido: il direttore può impostare il genere più tardi
+ *         dalla scheda docente.
+ */
+async function tmSubmitCreate(){
+  const nome    = (sh('tmc-nome')?.value||'').trim();
+  const cognome = (sh('tmc-cognome')?.value||'').trim();
+  const email   = (sh('tmc-email')?.value||'').trim();
+  const fb = sh('tmc-fb');
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const showErr = (msg)=>{ if(fb){ fb.style.color='#ff6b6b'; fb.textContent=msg; } };
+
+  if(!nome)    return showErr('Inserisci il nome.');
+  if(!cognome) return showErr('Inserisci il cognome.');
+  if(!email || !emailRe.test(email)) return showErr('Inserisci un indirizzo email valido.');
+  if(!_tmcGenere) return showErr('Seleziona il genere.');
+
+  const fullName = _tmJoinName(nome, cognome);
+  if(fb){ fb.style.color='rgba(255,255,255,.4)'; fb.textContent='⏳ Invio invito in corso...'; }
+
+  try{
+    const res = await window.Auth.inviteTeacher(email, fullName); // riuso integrale
+    if(!res.ok) return showErr('✗ Errore: '+(res.error||'sconosciuto'));
+
+    const newId = res.user_id || res.userId || null;
+    if(newId){
+      const gRes = await window.Auth.updateTeacherProfile(newId, { name: fullName, genere: _tmcGenere });
+      if(!gRes.ok){
+        if(fb){ fb.style.color='#ffb400'; fb.textContent='✓ Docente creato, ma il genere non è stato salvato ('+(gRes.error||'errore')+'). Potrai impostarlo dalla scheda docente.'; }
+        setTimeout(()=>tmGoList(), 1400);
+        return;
+      }
+    }
+    if(fb){ fb.style.color='#00ff96'; fb.textContent='✓ Docente creato — invito inviato a '+email; }
+    setTimeout(()=>tmGoList(), 900);
+  }catch(e){
+    showErr('✗ Errore di rete. Riprova.');
+  }
+}
+
+/* ── 3) LIST — Docenti (card, tab Attivi/Disattivati) ────────────── */
+let _tmTab = 'active'; // 'active' | 'inactive'
+
+function tmGoList(){
+  sh('screen-teacher-mgmt')?.classList.add('hidden');
+  sh('screen-teacher-create')?.classList.add('hidden');
+  sh('screen-teacher-detail')?.classList.add('hidden');
+  _tmTab = 'active';
+  _tmRenderTabs();
+  const scr = sh('screen-teacher-list');
+  if(scr){
+    scr.classList.remove('hidden');
+    scr.classList.add('entering');
+    setTimeout(()=>scr.classList.remove('entering'), 400);
+  }
+  _tmRenderCards();
+}
+
+function tmBackFromList(){
+  sh('screen-teacher-list')?.classList.add('hidden');
+  openTeacherManagement();
+}
+
+function tmSetTab(tab){
+  _tmTab = tab;
+  _tmRenderTabs();
+  _tmRenderCards();
+}
+function _tmRenderTabs(){
+  sh('tml-tab-active')?.classList.toggle('active', _tmTab==='active');
+  sh('tml-tab-inactive')?.classList.toggle('active', _tmTab==='inactive');
+}
+
+async function _tmRenderCards(){
+  const grid = sh('tml-grid');
+  if(!grid) return;
+  grid.innerHTML = '<div style="font-size:12px;color:rgba(255,255,255,.3);padding:1rem 0">Caricamento…</div>';
+
+  const all = await window.Auth.listTeachers(true); // true = includeInactive, filtriamo noi per tab
+  const filtered = (all||[]).filter(t => _tmTab==='active' ? t.active!==false : t.active===false);
+
+  if(!filtered.length){
+    grid.innerHTML = `<div class="cs-empty" style="grid-column:1/-1">
+      <div class="cs-empty-icon">👥</div>
+      <div class="cs-empty-text">${_tmTab==='active' ? 'Nessun docente attivo.' : 'Nessun docente disattivato.'}</div>
+    </div>`;
     return;
   }
-  el.innerHTML = list.map(t=>{
+
+  // Aule assegnate per ogni docente (riusa getTeacherClassrooms — nuova ma simmetrica)
+  // + email reali se la Edge Function opzionale è disponibile (altrimenti placeholder).
+  const [aulePerTeacher, emailMap] = await Promise.all([
+    Promise.all(filtered.map(t => window.DB?.getTeacherClassrooms ? window.DB.getTeacherClassrooms(t.id).catch(()=>[]) : Promise.resolve([]))),
+    window.Auth.listTeacherEmails(filtered.map(t=>t.id)).catch(()=>({})),
+  ]);
+
+  grid.innerHTML = filtered.map((t,i)=>{
     const inactive = t.active===false;
-    return `<div class="tm-row${inactive?' tm-inactive':''}${_tmSelectedId===t.id?' tm-selected':''}"
-        onclick="_tmSelectTeacher('${escAttr(t.id)}','${escAttr(t.name||'')}',${t.active!==false})">
-      <span class="tm-row-name">${escHtml(t.name||t.id)}</span>
-      ${inactive?'<span class="tm-badge-inactive">Disattivato</span>':''}
+    const genIcon  = _TM_GENDER_ICON[t.genere] || 'ti-user';
+    const genCls   = t.genere==='uomo' ? 'g-uomo' : t.genere==='donna' ? 'g-donna' : '';
+    const aule     = aulePerTeacher[i] || [];
+    const auleHtml = aule.length
+      ? aule.map(a=>`<span class="tdc-aula-chip">${escHtml(a.name||'')}</span>`).join('')
+      : '<span class="tdc-aule-empty">Nessuna aula assegnata</span>';
+    const email = emailMap?.[t.id] || 'email non disponibile';
+    return `<div class="tdc-card${inactive?' tdc-inactive':''}" onclick="tmOpenDetail('${escAttr(t.id)}')">
+      <div class="tdc-header">
+        <span class="tdc-gender-icon ${genCls}"><i class="ti ${genIcon}"></i></span>
+        <span class="tdc-name">${escHtml(t.name||t.id)}</span>
+        <span class="tdc-status-dot ${inactive?'inactive':'active'}" title="${inactive?'Disattivato':'Attivo'}"></span>
+      </div>
+      <div class="tdc-email">${escHtml(email)}</div>
+      <div class="tdc-aule-row">${auleHtml}</div>
     </div>`;
   }).join('');
 }
 
-function _tmSelectTeacher(id, name, active){
-  _tmSelectedId     = id;
-  _tmSelectedActive = active !== false;
-  const inp = sh('tm-edit-name');
-  if(inp) inp.value = name;
-  if(sh('tm-edit-email')) sh('tm-edit-email').value='';
-  const efb=sh('tm-email-fb'); if(efb) efb.textContent='';
-  sh('tm-edit-panel')?.classList.remove('hidden');
-  _tmUpdateActiveButtons();
-  _tmRenderList();
+/* ── 4) DETAIL — Scheda docente ──────────────────────────────────── */
+let _tmdId       = null;
+let _tmdGenere   = null;
+let _tmdActive   = true;
+let _tmdAssignedIds = new Set();
+
+async function tmOpenDetail(id){
+  sh('screen-teacher-list')?.classList.add('hidden');
+  _tmdId = id;
+  const scr = sh('screen-teacher-detail');
+  if(scr){
+    scr.classList.remove('hidden');
+    scr.classList.add('entering');
+    setTimeout(()=>scr.classList.remove('entering'), 400);
+  }
+
+  if(sh('tmd-email')) sh('tmd-email').value = '';
+  const efb = sh('tmd-email-fb'); if(efb) efb.textContent = '';
+  const hint = sh('tmd-current-email'); if(hint) hint.textContent = 'Email attuale: caricamento…';
+  const titleEl = sh('tmd-title');
+  if(titleEl) titleEl.textContent = 'Caricamento…';
+  const aGrid = sh('tmd-aule-grid');
+  if(aGrid) aGrid.innerHTML = '<div style="font-size:12px;color:rgba(255,255,255,.3)">Caricamento aule…</div>';
+
+  const all = await window.Auth.listTeachers(true);
+  const t = (all||[]).find(x=>x.id===id);
+  if(!t){
+    alert('Docente non trovato.');
+    tmBackFromDetail();
+    return;
+  }
+
+  _tmdActive = t.active !== false;
+  _tmdGenere = (t.genere==='uomo'||t.genere==='donna') ? t.genere : null;
+  const { nome, cognome } = _tmSplitName(t.name||'');
+  if(sh('tmd-nome'))    sh('tmd-nome').value = nome;
+  if(sh('tmd-cognome')) sh('tmd-cognome').value = cognome;
+  _tmdRenderGenere();
+  _tmdUpdateActiveButtons();
+  if(titleEl){
+    titleEl.innerHTML = escHtml(t.name||t.id) +
+      (t.active===false ? ' <span class="tm-badge-inactive" style="margin-left:8px;vertical-align:middle">Disattivato</span>' : '');
+  }
+
+  // Email attuale — best-effort, richiede la Edge Function opzionale list_teacher_emails
+  window.Auth.listTeacherEmails([id]).then(emails=>{
+    const curEmail = emails?.[id];
+    const h = sh('tmd-current-email');
+    if(h) h.textContent = curEmail
+      ? ('Email attuale: '+curEmail)
+      : 'Email attuale non disponibile (richiede il deploy della Edge Function list_teacher_emails).';
+  }).catch(()=>{});
+
+  await _tmdRenderAule(id);
+}
+
+function tmBackFromDetail(){
+  sh('screen-teacher-detail')?.classList.add('hidden');
+  tmGoList();
+}
+
+function tmdPickGenere(g){ _tmdGenere = g; _tmdRenderGenere(); }
+function _tmdRenderGenere(){
+  sh('tmd-gender-uomo')?.classList.toggle('active', _tmdGenere==='uomo');
+  sh('tmd-gender-donna')?.classList.toggle('active', _tmdGenere==='donna');
 }
 
 /**
- * _tmUpdateActiveButtons — v6.0.2
- * Riflette lo stato 'active' del docente selezionato sui due tasti:
- * docente attivo  → "Disattiva" abilitato, "Riattiva" disabilitato.
- * docente inattivo → il contrario. Evita di poter cliccare un'azione
- * già coerente con lo stato corrente (es. "Riattiva" su chi è già attivo).
+ * _tmdUpdateActiveButtons — riflette lo stato 'active' sui due tasti
+ * (stessa logica già validata in v6.0.2 per la vecchia schermata).
  */
-function _tmUpdateActiveButtons(){
-  const deactivateBtn = sh('tm-btn-deactivate');
-  const activateBtn   = sh('tm-btn-activate');
-  if(deactivateBtn) deactivateBtn.disabled = !_tmSelectedActive;
-  if(activateBtn)   activateBtn.disabled  = _tmSelectedActive;
+function _tmdUpdateActiveButtons(){
+  const deactivateBtn = sh('tmd-btn-deactivate');
+  const activateBtn   = sh('tmd-btn-activate');
+  if(deactivateBtn) deactivateBtn.disabled = !_tmdActive;
+  if(activateBtn)   activateBtn.disabled  = _tmdActive;
 }
 
-async function tmSaveName(){
-  if(!_tmSelectedId) return;
-  const newName = (sh('tm-edit-name')?.value||'').trim();
-  if(!newName) return;
-  const res = await window.Auth.updateTeacherProfile(_tmSelectedId, { name: newName });
-  if(res.ok) await _tmRenderList();
-  else alert('Errore salvataggio nome: '+(res.error||'sconosciuto'));
+async function tmDetailSaveProfile(){
+  if(!_tmdId) return;
+  const nome    = (sh('tmd-nome')?.value||'').trim();
+  const cognome = (sh('tmd-cognome')?.value||'').trim();
+  if(!nome || !cognome){ alert('Nome e cognome sono obbligatori.'); return; }
+  const fullName = _tmJoinName(nome, cognome);
+  const res = await window.Auth.updateTeacherProfile(_tmdId, { name: fullName, genere: _tmdGenere });
+  if(res.ok){
+    const titleEl = sh('tmd-title');
+    if(titleEl) titleEl.innerHTML = escHtml(fullName) +
+      (!_tmdActive ? ' <span class="tm-badge-inactive" style="margin-left:8px;vertical-align:middle">Disattivato</span>' : '');
+  } else {
+    alert('Errore salvataggio: '+(res.error||'sconosciuto'));
+  }
 }
 
 /**
- * tmSaveEmail — v6.0.1
- * Cambia l'email di accesso del docente selezionato tramite la Edge
- * Function 'update_teacher_email' (Admin API, service role).
- * Richiede il deploy della function — se assente, l'errore HTTP viene
- * mostrato esplicitamente in #tm-email-fb (nessun fallimento silenzioso).
+ * tmDetailSaveEmail — identica logica di tmSaveEmail v6.0.1, ricollegata
+ * agli ID della nuova schermata dettaglio. Edge Function invariata.
  */
-async function tmSaveEmail(){
-  if(!_tmSelectedId) return;
-  const newEmail = (sh('tm-edit-email')?.value||'').trim();
-  const fb = sh('tm-email-fb');
+async function tmDetailSaveEmail(){
+  if(!_tmdId) return;
+  const newEmail = (sh('tmd-email')?.value||'').trim();
+  const fb = sh('tmd-email-fb');
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if(!newEmail || !emailRe.test(newEmail)){
     if(fb){ fb.style.color='#ff6b6b'; fb.textContent='Inserisci un indirizzo email valido.'; }
     return;
   }
   if(fb){ fb.style.color='rgba(255,255,255,.4)'; fb.textContent='⏳ Aggiornamento in corso...'; }
-  const res = await window.Auth.updateTeacherEmail(_tmSelectedId, newEmail);
+  const res = await window.Auth.updateTeacherEmail(_tmdId, newEmail);
   if(res.ok){
     if(fb){ fb.style.color='#00ff96'; fb.textContent='✓ Email aggiornata a '+newEmail; }
-    if(sh('tm-edit-email')) sh('tm-edit-email').value='';
+    if(sh('tmd-email')) sh('tmd-email').value='';
+    const hint = sh('tmd-current-email');
+    if(hint) hint.textContent = 'Email attuale: '+newEmail;
   } else {
     if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore: '+(res.error||'sconosciuto'); }
   }
 }
 
-async function tmToggleActive(makeActive){
-  if(!_tmSelectedId) return;
-  const res = await window.Auth.setTeacherActive(_tmSelectedId, makeActive);
+/**
+ * tmDetailToggleActive — identica logica di tmToggleActive v6.0.1/v6.0.2.
+ */
+async function tmDetailToggleActive(makeActive){
+  if(!_tmdId) return;
+  const res = await window.Auth.setTeacherActive(_tmdId, makeActive);
   if(res.ok){
-    _tmSelectedActive = makeActive;
-    _tmUpdateActiveButtons();
-    await _tmRenderList();
+    _tmdActive = makeActive;
+    _tmdUpdateActiveButtons();
+    const titleEl = sh('tmd-title');
+    if(titleEl){
+      const baseName = titleEl.textContent.replace(/Disattivato\s*$/,'').trim();
+      titleEl.innerHTML = escHtml(baseName) +
+        (!makeActive ? ' <span class="tm-badge-inactive" style="margin-left:8px;vertical-align:middle">Disattivato</span>' : '');
+    }
+  } else {
+    alert('Errore: '+(res.error||'sconosciuto')+'\n\nVerifica di aver eseguito la migrazione SQL (colonna "active" su profiles).');
   }
-  else alert('Errore: '+(res.error||'sconosciuto')+'\n\nVerifica di aver eseguito la migrazione SQL (colonna "active" su profiles).');
 }
 
-function tmToggleShowInactive(){
-  _tmShowInactive = !_tmShowInactive;
-  const btn = sh('tm-toggle-inactive-btn');
-  if(btn) btn.textContent = _tmShowInactive ? 'Nascondi disattivati' : 'Mostra disattivati';
-  _tmRenderList();
-}
-
-async function tmCreateTeacher(){
-  const email = (sh('tm-create-email')?.value||'').trim();
-  const name  = (sh('tm-create-name')?.value||'').trim();
-  const fb = sh('tm-create-fb');
-  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  if(!email || !emailRe.test(email)){
-    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='Inserisci un indirizzo email valido.'; }
+/**
+ * _tmdRenderAule — gestione aule assegnate al docente in scheda.
+ * Mostra TUTTE le aule (window.DB.loadClassrooms, stessa funzione già usata
+ * dal Direttore per vedere "tutte le aule") con un toggle per ciascuna:
+ * acceso = il docente è assegnato. Click → assignTeacherToClassroom /
+ * removeTeacherFromClassroom — ENTRAMBE già esistenti e usate dal pannello
+ * "Gestisci aula" (dp-overlay), qui semplicemente invocate dalla
+ * prospettiva del docente invece che dell'aula. Nessuna logica duplicata.
+ */
+async function _tmdRenderAule(teacherId){
+  const grid = sh('tmd-aule-grid');
+  if(!grid) return;
+  const myId = window.Auth?.getUserId();
+  const [allClassrooms, assigned] = await Promise.all([
+    window.DB?.loadClassrooms ? window.DB.loadClassrooms(myId) : Promise.resolve([]),
+    window.DB?.getTeacherClassrooms ? window.DB.getTeacherClassrooms(teacherId) : Promise.resolve([]),
+  ]);
+  _tmdAssignedIds = new Set((assigned||[]).map(a=>a.id));
+  if(!allClassrooms || !allClassrooms.length){
+    grid.innerHTML = '<div style="font-size:12px;color:rgba(255,255,255,.3)">Nessuna aula creata.</div>';
     return;
   }
-  if(fb){ fb.style.color='rgba(255,255,255,.4)'; fb.textContent='⏳ Invio in corso...'; }
-  try{
-    const res = await window.Auth.inviteTeacher(email, name||email);
-    if(res.ok){
-      if(fb){ fb.style.color='#00ff96'; fb.textContent='✓ Docente creato — invito inviato a '+email; }
-      if(sh('tm-create-email')) sh('tm-create-email').value='';
-      if(sh('tm-create-name'))  sh('tm-create-name').value='';
-      await _tmRenderList();
-    } else {
-      if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore: '+(res.error||'sconosciuto'); }
-    }
-  }catch(e){
-    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore di rete. Riprova.'; }
+  grid.innerHTML = allClassrooms.map(c=>{
+    const on = _tmdAssignedIds.has(c.id);
+    return `<button type="button" class="tdc-aula-toggle-btn${on?' active':''}"
+      onclick="_tmdToggleAula('${escAttr(c.id)}',this)">${escHtml(c.icon||'🏫')} ${escHtml(c.name)}</button>`;
+  }).join('');
+}
+
+async function _tmdToggleAula(classroomId, btn){
+  if(!_tmdId) return;
+  const wasOn = btn.classList.contains('active');
+  btn.disabled = true;
+  const res = wasOn
+    ? await window.DB.removeTeacherFromClassroom(classroomId, _tmdId)
+    : await window.DB.assignTeacherToClassroom(classroomId, _tmdId);
+  btn.disabled = false;
+  if(res && res.ok !== false){
+    btn.classList.toggle('active', !wasOn);
+    if(wasOn) _tmdAssignedIds.delete(classroomId); else _tmdAssignedIds.add(classroomId);
+  } else {
+    alert('Errore aggiornamento aula: '+(res?.error||'sconosciuto'));
   }
 }
 

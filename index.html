@@ -257,7 +257,8 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div>
 
 <!-- ======================================
-     GESTIONE DOCENTI — v6.0.0 (solo Direttore)
+     GESTIONE DOCENTI — HUB v6.1.0 (solo Direttore)
+     2 card: Nuovo Docente / Docenti.
 ====================================== -->
 <div id="screen-teacher-mgmt" class="hidden">
   <div class="cs-topbar">
@@ -284,42 +285,207 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     <div class="cs-hero">
       <span class="cs-hero-eyebrow">Direttore · Account</span>
       <h1 class="cs-hero-title">Gestisci i <span class="hl">docenti</span></h1>
-      <p class="cs-hero-sub">Crea nuovi account, modifica i nomi o disattiva l'accesso.</p>
+      <p class="cs-hero-sub">Crea nuovi account oppure visualizza e gestisci i docenti già registrati.</p>
     </div>
-
-    <div class="cs-add-form">
-      <div class="slbl">Nuovo docente</div>
-      <div class="cs-add-row" style="margin-bottom:8px;flex-wrap:wrap">
-        <input id="tm-create-email" class="cs-add-inp" type="email" placeholder="email@scuola.it" style="min-width:160px"/>
-        <input id="tm-create-name" class="cs-add-inp" placeholder="Nome e cognome" style="max-width:180px"/>
-        <button class="cs-add-btn" onclick="tmCreateTeacher()"><i class="ti ti-user-plus"></i> Crea e invita</button>
+    <div class="dd-grid dd-grid-2">
+      <div class="dd-card dd-new-teacher" role="button" tabindex="0" aria-label="Nuovo Docente"
+        onclick="tmGoCreate()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tmGoCreate();}">
+        <div class="dd-card-inner">
+          <span class="dd-icon">🆕</span>
+          <div class="dd-title">Nuovo Docente</div>
+          <div class="dd-sub">Crea e invita un nuovo docente.</div>
+          <i class="ti ti-arrow-right dd-arrow"></i>
+        </div>
       </div>
-      <div id="tm-create-fb" style="font-size:11px;min-height:16px"></div>
-    </div>
-
-    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px">
-      <div class="slbl" style="margin-bottom:0;flex:1">Docenti</div>
-      <button class="back-link" id="tm-toggle-inactive-btn" onclick="tmToggleShowInactive()">Mostra disattivati</button>
-    </div>
-    <div id="tm-list" class="tm-list"></div>
-
-    <div id="tm-edit-panel" class="setup-card hidden" style="margin-top:16px">
-      <div class="slbl">Modifica docente selezionato</div>
-      <div class="inp-row" style="margin-bottom:10px">
-        <input id="tm-edit-name" placeholder="Nome docente"/>
-        <button class="btn btn-neon" onclick="tmSaveName()"><i class="ti ti-device-floppy"></i> Salva nome</button>
+      <div class="dd-card dd-teacher-list" role="button" tabindex="0" aria-label="Docenti"
+        onclick="tmGoList()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tmGoList();}">
+        <div class="dd-card-inner">
+          <span class="dd-icon">👥</span>
+          <div class="dd-title">Docenti</div>
+          <div class="dd-sub">Visualizza e gestisci i docenti registrati.</div>
+          <i class="ti ti-arrow-right dd-arrow"></i>
+        </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================
+     NUOVO DOCENTE — v6.1.0 (solo Direttore)
+====================================== -->
+<div id="screen-teacher-create" class="hidden">
+  <div class="cs-topbar">
+    <div class="cs-logo">
+      <svg class="cs-logo-svg" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".6"/>
+        <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.06)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".4"/>
+        <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+        <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="26" cy="8" r="1.5" fill="#7c6aff" opacity=".8"/>
+        <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".5"/>
+      </svg>
+      <div>
+        <span class="cs-logo-text">Pixel<em>Prof</em></span>
+        <span class="cs-logo-sub">Nuovo Docente</span>
+      </div>
+    </div>
+    <div class="cs-teacher-badge">
+      <button class="back-link" onclick="tmBackFromCreate()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Docenti</button>
+      <button class="cs-logout-btn" onclick="doLogout()"><i class="ti ti-logout"></i> Esci</button>
+    </div>
+  </div>
+  <div class="cs-body" style="max-width:520px">
+    <div class="cs-hero">
+      <span class="cs-hero-eyebrow">Direttore · Nuovo account</span>
+      <h1 class="cs-hero-title">Crea un nuovo <span class="hl">docente</span></h1>
+      <p class="cs-hero-sub">Riceverà un invito via email per impostare la password.</p>
+    </div>
+    <div class="setup-card">
+      <div class="setup-section">
+        <div class="slbl">Dati docente</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+          <div>
+            <label class="login-label" for="tmc-nome">Nome</label>
+            <input id="tmc-nome" class="login-inp" placeholder="Es. Maria" onkeydown="if(event.key==='Enter')sh('tmc-cognome')?.focus()"/>
+          </div>
+          <div>
+            <label class="login-label" for="tmc-cognome">Cognome</label>
+            <input id="tmc-cognome" class="login-inp" placeholder="Es. Rossi" onkeydown="if(event.key==='Enter')sh('tmc-email')?.focus()"/>
+          </div>
+        </div>
+        <div style="margin-bottom:12px">
+          <label class="login-label" for="tmc-email">Email</label>
+          <input id="tmc-email" type="email" class="login-inp" placeholder="docente@scuola.it" onkeydown="if(event.key==='Enter')tmSubmitCreate()"/>
+        </div>
+        <div style="margin-bottom:6px">
+          <label class="login-label">Genere</label>
+          <div class="gender-toggle">
+            <button type="button" class="gender-btn" id="tmc-gender-uomo" onclick="tmcPickGenere('uomo')"><i class="ti ti-gender-male"></i> Uomo</button>
+            <button type="button" class="gender-btn" id="tmc-gender-donna" onclick="tmcPickGenere('donna')"><i class="ti ti-gender-female"></i> Donna</button>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-neon" style="width:100%;justify-content:center;padding:11px;margin-top:8px" onclick="tmSubmitCreate()">
+        <i class="ti ti-mail-forward"></i> Invita Docente
+      </button>
+      <div id="tmc-fb" style="font-size:11px;min-height:16px;margin-top:8px;text-align:center"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================
+     LISTA DOCENTI — v6.1.0 (solo Direttore)
+====================================== -->
+<div id="screen-teacher-list" class="hidden">
+  <div class="cs-topbar">
+    <div class="cs-logo">
+      <svg class="cs-logo-svg" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".6"/>
+        <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.06)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".4"/>
+        <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+        <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="26" cy="8" r="1.5" fill="#7c6aff" opacity=".8"/>
+        <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".5"/>
+      </svg>
+      <div>
+        <span class="cs-logo-text">Pixel<em>Prof</em></span>
+        <span class="cs-logo-sub">Docenti</span>
+      </div>
+    </div>
+    <div class="cs-teacher-badge">
+      <button class="back-link" onclick="tmBackFromList()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Docenti</button>
+      <button class="cs-logout-btn" onclick="doLogout()"><i class="ti ti-logout"></i> Esci</button>
+    </div>
+  </div>
+  <div class="cs-body">
+    <div class="cs-hero">
+      <span class="cs-hero-eyebrow">Direttore · Account</span>
+      <h1 class="cs-hero-title">I tuoi <span class="hl">docenti</span></h1>
+      <p class="cs-hero-sub">Tocca un docente per modificarlo o gestire le sue aule.</p>
+    </div>
+    <div class="tm-tabs">
+      <button class="tm-tab active" id="tml-tab-active" onclick="tmSetTab('active')">Docenti Attivi</button>
+      <button class="tm-tab" id="tml-tab-inactive" onclick="tmSetTab('inactive')">Docenti Disattivati</button>
+    </div>
+    <div id="tml-grid" class="tdc-grid"></div>
+  </div>
+</div>
+
+<!-- ======================================
+     DETTAGLIO DOCENTE — v6.1.0 (solo Direttore)
+====================================== -->
+<div id="screen-teacher-detail" class="hidden">
+  <div class="cs-topbar">
+    <div class="cs-logo">
+      <svg class="cs-logo-svg" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".6"/>
+        <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.06)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".4"/>
+        <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+        <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="26" cy="8" r="1.5" fill="#7c6aff" opacity=".8"/>
+        <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".5"/>
+      </svg>
+      <div>
+        <span class="cs-logo-text">Pixel<em>Prof</em></span>
+        <span class="cs-logo-sub">Scheda Docente</span>
+      </div>
+    </div>
+    <div class="cs-teacher-badge">
+      <button class="back-link" onclick="tmBackFromDetail()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Lista</button>
+      <button class="cs-logout-btn" onclick="doLogout()"><i class="ti ti-logout"></i> Esci</button>
+    </div>
+  </div>
+  <div class="cs-body" style="max-width:600px">
+    <div class="cs-hero" style="padding:1.5rem 0 1rem">
+      <span class="cs-hero-eyebrow">Direttore · Scheda docente</span>
+      <h1 class="cs-hero-title" id="tmd-title" style="font-size:22px">Docente</h1>
+    </div>
+
+    <div class="setup-card" style="margin-bottom:16px">
+      <div class="slbl">Dati personali</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+        <div>
+          <label class="login-label" for="tmd-nome">Nome</label>
+          <input id="tmd-nome" class="login-inp" placeholder="Nome"/>
+        </div>
+        <div>
+          <label class="login-label" for="tmd-cognome">Cognome</label>
+          <input id="tmd-cognome" class="login-inp" placeholder="Cognome"/>
+        </div>
+      </div>
+      <div style="margin-bottom:12px">
+        <label class="login-label">Genere</label>
+        <div class="gender-toggle">
+          <button type="button" class="gender-btn" id="tmd-gender-uomo" onclick="tmdPickGenere('uomo')"><i class="ti ti-gender-male"></i> Uomo</button>
+          <button type="button" class="gender-btn" id="tmd-gender-donna" onclick="tmdPickGenere('donna')"><i class="ti ti-gender-female"></i> Donna</button>
+        </div>
+      </div>
+      <button class="btn btn-neon" onclick="tmDetailSaveProfile()"><i class="ti ti-device-floppy"></i> Salva nome, cognome e genere</button>
+    </div>
+
+    <div class="setup-card" style="margin-bottom:16px">
+      <div class="slbl">Email di accesso</div>
+      <div id="tmd-current-email" style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:10px;font-family:'Share Tech Mono',monospace">Email attuale: —</div>
       <div class="inp-row" style="margin-bottom:8px">
-        <input id="tm-edit-email" type="email" placeholder="Nuova email (es. nuovo@scuola.it)"/>
-        <button class="btn btn-neon" onclick="tmSaveEmail()"><i class="ti ti-mail"></i> Cambia email</button>
+        <input id="tmd-email" type="email" placeholder="nuova@scuola.it"/>
+        <button class="btn btn-neon" onclick="tmDetailSaveEmail()"><i class="ti ti-mail"></i> Cambia email</button>
       </div>
-      <div id="tm-email-fb" style="font-size:11px;min-height:16px;margin-bottom:8px"></div>
-      <div style="font-size:10px;color:rgba(255,255,255,.3);margin-bottom:12px;line-height:1.5">
-        Il cambio email richiede la Edge Function "update_teacher_email" (Admin API) — se non è stata deployata su Supabase, l'operazione mostrerà un errore esplicito qui sopra.
+      <div id="tmd-email-fb" style="font-size:11px;min-height:16px"></div>
+      <div style="font-size:10px;color:rgba(255,255,255,.3);margin-top:4px;line-height:1.5">
+        Richiede la Edge Function "update_teacher_email" (Admin API) — se non è stata deployata su Supabase, l'operazione mostrerà un errore esplicito qui sopra.
       </div>
+    </div>
+
+    <div class="setup-card" style="margin-bottom:16px">
+      <div class="slbl">Aule assegnate</div>
+      <div id="tmd-aule-grid" class="tdc-aule-toggle-grid"></div>
+    </div>
+
+    <div class="setup-card">
+      <div class="slbl">Stato account</div>
       <div class="btn-row">
-        <button id="tm-btn-deactivate" class="btn" onclick="tmToggleActive(false)" style="border-color:rgba(255,80,80,.3);color:#ff6b6b"><i class="ti ti-user-off"></i> Disattiva</button>
-        <button id="tm-btn-activate" class="btn" onclick="tmToggleActive(true)" style="border-color:rgba(0,255,150,.3);color:#00ff96"><i class="ti ti-user-check"></i> Riattiva</button>
+        <button id="tmd-btn-deactivate" class="btn" onclick="tmDetailToggleActive(false)" style="border-color:rgba(255,80,80,.3);color:#ff6b6b"><i class="ti ti-user-off"></i> Disattiva</button>
+        <button id="tmd-btn-activate" class="btn" onclick="tmDetailToggleActive(true)" style="border-color:rgba(0,255,150,.3);color:#00ff96"><i class="ti ti-user-check"></i> Riattiva</button>
       </div>
     </div>
   </div>

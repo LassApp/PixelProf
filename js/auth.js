@@ -1,4 +1,23 @@
 /**
+ * auth.js — PixelProf v6.1.0
+ *
+ * v6.1.0 — Redesign "Gestione Docenti" (solo UI/UX, vedi riepilogo):
+ *   - listTeachers() seleziona ora anche 'genere'. RICHIEDE la migrazione SQL
+ *     (consegnata a parte): ALTER TABLE public.profiles ADD COLUMN IF NOT
+ *     EXISTS genere text CHECK (genere IN ('uomo','donna')). Finché la colonna
+ *     non esiste, Supabase erra in SELECT — stesso comportamento fail-soft già
+ *     visto con 'active': i chiamanti vanno verificati dopo la migrazione.
+ *   - updateTeacherProfile() accetta ora anche updates.genere e chiama la
+ *     NUOVA RPC director_update_teacher_profile(p_teacher_id, p_name, p_genere)
+ *     al posto della precedente director_update_teacher_name (vedi SQL
+ *     consegnata). genere è opzionale — se omesso il valore esistente è
+ *     preservato lato DB (COALESCE).
+ *   - Nuova funzione listTeacherEmails(): legge le email reali dei docenti
+ *     (vivono in auth.users, non in profiles) tramite una NUOVA Edge Function
+ *     opzionale 'list_teacher_emails' (Admin API, stesso pattern di
+ *     update_teacher_email). Se non deployata, fallisce in silenzio e la UI
+ *     mostra un placeholder — nessuna funzionalità esistente ne dipende.
+ *
  * auth.js — PixelProf v3.2.0
  *
  * v3.2.0 — Dashboard Direttore (Gestione Docenti):
@@ -344,7 +363,7 @@ async function listTeachers(includeInactive = false) {
   try {
     let q = supabase
       .from('profiles')
-      .select('id, name, role, active')
+      .select('id, name, role, active, genere')
       .eq('role', 'teacher')
       .order('name');
     if (!includeInactive) q = q.eq('active', true);
@@ -362,8 +381,9 @@ async function listTeachers(includeInactive = false) {
 // ════════════════════════════════════════════════════════════════════
 
 /**
- * Aggiorna i campi modificabili di un docente (solo 'name' per ora —
- * l'email richiede l'Admin API di Supabase, non disponibile qui).
+ * Aggiorna i campi modificabili di un docente: 'name' e, dalla v6.1.0,
+ * anche 'genere' (uomo|donna). L'email richiede l'Admin API di Supabase
+ * (vedi updateTeacherEmail) e NON passa da qui.
  *
  * v3.2.1 FIX: l'UPDATE diretto su 'profiles' falliva in silenzio — le
  * policy RLS di default permettono a un utente di scrivere solo sulla
@@ -372,22 +392,28 @@ async function listTeachers(includeInactive = false) {
  * restituisce errore in questo caso (riga semplicemente invisibile
  * all'UPDATE) — il client riceveva {ok:true} ma zero righe erano state
  * realmente modificate. STESSO bug-pattern di updateCourse/classrooms.
- * FIX: passa attraverso la RPC SECURITY DEFINER director_update_teacher_name
- * (bypassa RLS, verifica il ruolo internamente). Richiede la SQL:
- *   director_update_teacher_name(p_teacher_id uuid, p_name text)
- * — vedi v6.0.1_director_teacher_rpc.sql.
+ *
+ * v6.1.0: la vecchia RPC director_update_teacher_name (solo nome) è
+ * sostituita da director_update_teacher_profile(p_teacher_id, p_name,
+ * p_genere), che aggiorna entrambi i campi in una sola chiamata —
+ * stesso pattern SECURITY DEFINER, stessa semantica di errore
+ * (RAISE EXCEPTION se zero righe aggiornate). Vedi SQL consegnata.
+ * updates.genere è opzionale: se assente/null, il valore esistente
+ * lato DB viene preservato (COALESCE nella RPC).
  */
 async function updateTeacherProfile(teacherId, updates) {
   if (!isDirector()) return { ok: false, error: 'Permesso negato' };
   const name = (updates.name ?? '').trim();
   if (!name) return { ok: false, error: 'Nessun campo da aggiornare' };
+  const genere = updates.genere === 'uomo' || updates.genere === 'donna' ? updates.genere : null;
   try {
-    const { error } = await supabase.rpc('director_update_teacher_name', {
+    const { error } = await supabase.rpc('director_update_teacher_profile', {
       p_teacher_id: teacherId,
       p_name: name,
+      p_genere: genere,
     });
     if (error) {
-      console.error('[Auth] director_update_teacher_name RPC error — code:', error.code, '| message:', error.message, '| details:', error.details, '| hint:', error.hint);
+      console.error('[Auth] director_update_teacher_profile RPC error — code:', error.code, '| message:', error.message, '| details:', error.details, '| hint:', error.hint);
       throw error;
     }
     return { ok: true };
@@ -420,6 +446,43 @@ async function setTeacherActive(teacherId, active) {
 }
 
 // ════════════════════════════════════════════════════════════════════
+// LISTA EMAIL DOCENTI — v6.1.0 (via Edge Function, Admin API)
+//
+// L'email vive in auth.users, non in profiles (vedi updateTeacherEmail).
+// Per mostrarla nelle card del redesign "Gestione Docenti" serve una
+// lettura Admin API — stessa Edge Function family di update_teacher_email,
+// ma in sola lettura. OPZIONALE: se la function 'list_teacher_emails' non
+// è deployata, ritorna semplicemente {} e la UI mostra un placeholder —
+// nessun'altra funzionalità è bloccata da questa mancanza.
+// ════════════════════════════════════════════════════════════════════
+async function listTeacherEmails(teacherIds) {
+  if (!isDirector()) return {};
+  if (!Array.isArray(teacherIds) || !teacherIds.length) return {};
+  try {
+    const { data: { session } } = await supabase.auth.getSession();
+    if (!session) return {};
+    const res = await fetch(
+      'https://skrgqanqdyrybarinwwr.supabase.co/functions/v1/list_teacher_emails',
+      {
+        method:  'POST',
+        headers: {
+          'Content-Type':  'application/json',
+          'Authorization': `Bearer ${session.access_token}`,
+          'apikey':        supabase.supabaseKey,
+        },
+        body: JSON.stringify({ teacherIds }),
+      }
+    );
+    if (!res.ok) return {};
+    const body = await res.json().catch(() => null);
+    return body?.ok ? (body.emails || {}) : {};
+  } catch (err) {
+    // Edge Function non deployata / rete assente — fallimento silenzioso per design.
+    return {};
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════
 // GETTERS
 // ════════════════════════════════════════════════════════════════════
 function getUser()            { return _currentUser; }
@@ -444,6 +507,7 @@ window.Auth = {
   updateTeacherProfile,
   setTeacherActive,
   updateTeacherEmail,
+  listTeacherEmails,
   getUser,
   getProfile,
   getUserId,

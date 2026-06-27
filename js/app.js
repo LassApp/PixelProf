@@ -1047,6 +1047,10 @@ async function cwCreateClassroom(){
     await window.DB.assignTeacherToClassroom(classroomId, t.id).catch(e=>console.warn('[PixelProf] assignTeacher:', e));
   }
   closeCourseWizard();
+  // v6.1.1 FIX: svuota la textbox "Nome aula" della quick-add card dopo
+  // la creazione riuscita — restava popolata con il nome appena creato,
+  // pronta a essere riusata per errore alla prossima apertura del wizard.
+  if(sh('cs-course-inp')) sh('cs-course-inp').value = '';
   await _reloadCourses();
   setTimeout(()=>{
     const card=document.querySelector('[data-course-id="'+classroomId+'"]');

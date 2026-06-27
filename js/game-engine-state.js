@@ -1223,10 +1223,17 @@ function deletePlayer(idx, evt){
     db.players.splice(idx,1);
     save();
     if(sIndPlayer===name){ sIndPlayer=null; }
-    // Cloud: fire-and-forget
+    // Cloud: fire-and-forget, ma ora con verifica esplicita dell'esito.
+    // FIX RLS silenzioso (v5.0.4): deletePlayer ritorna {ok,error} —
+    // se ok===false la riga è ancora viva sul cloud e ricomparirà al
+    // prossimo caricamento. Avvisiamo il docente invece di ignorarlo.
     if(window.DB && activeCourseId){
-      window.DB.deletePlayer(activeCourseId, name)
-        .catch(e=>console.warn('[PixelProf] deletePlayer cloud err:', e));
+      window.DB.deletePlayer(activeCourseId, name).then(res=>{
+        if(res && res.ok===false){
+          console.error('[PixelProf] deletePlayer cloud FAIL:', res.error);
+          alert('⚠️ "'+name+'" è stato rimosso solo in locale: la cancellazione sul cloud è fallita ('+res.error+'). Potrebbe ricomparire al prossimo accesso a questa aula.');
+        }
+      }).catch(e=>console.warn('[PixelProf] deletePlayer cloud err:', e));
     }
     renderIndChips();
     checkCanStart();
@@ -1299,10 +1306,15 @@ function deleteSavedTeam(idx, evt){
   _showDeleteConfirm(evt.currentTarget, name, 'squadra', ()=>{
     db.teams.splice(idx,1);
     save();
-    // Cloud: fire-and-forget
+    // Cloud: fire-and-forget, ma ora con verifica esplicita dell'esito.
+    // FIX RLS silenzioso (v5.0.4) — stesso pattern di deletePlayer.
     if(window.DB && activeCourseId){
-      window.DB.deleteTeam(activeCourseId, name)
-        .catch(e=>console.warn('[PixelProf] deleteTeam cloud err:', e));
+      window.DB.deleteTeam(activeCourseId, name).then(res=>{
+        if(res && res.ok===false){
+          console.error('[PixelProf] deleteTeam cloud FAIL:', res.error);
+          alert('⚠️ "'+name+'" è stata rimossa solo in locale: la cancellazione sul cloud è fallita ('+res.error+'). Potrebbe ricomparire al prossimo accesso a questa aula.');
+        }
+      }).catch(e=>console.warn('[PixelProf] deleteTeam cloud err:', e));
     }
     // Rimuove anche da sTeams se presente nella sessione corrente
     const si=sTeams.findIndex(t=>t.name===name);

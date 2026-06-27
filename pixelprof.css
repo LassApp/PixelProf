@@ -2868,16 +2868,19 @@ body{
   transition: opacity .2s var(--ease-soft) !important;
 }
 
-/* Accent top bar animata per ogni card */
+/* Accent bottom bar animata per ogni card — v6.1.1 FIX: era erroneamente
+   posizionata in alto (top:0) invece che in basso (bottom:0), come da
+   design originale v7 (.course-card::before, soppresso subito sotto
+   perché questo ::after lo sostituisce). */
 .course-card::after {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  bottom: 0; left: 0; right: 0;
   height: 2px;
   background: var(--card-accent, var(--accent));
   transform: scaleX(0);
   transition: transform .3s var(--ease-cinema);
-  border-radius: 12px 12px 0 0;
+  border-radius: 0 0 12px 12px;
   z-index: 4;
 }
 .course-card:hover::after {
@@ -3749,6 +3752,16 @@ body{
 .dd-new-teacher:hover{ border-color:rgba(0,255,200,.5); box-shadow:0 12px 36px rgba(0,255,200,.14); }
 .dd-new-teacher:hover .dd-title,.dd-new-teacher:hover .dd-arrow{ color:var(--accent); }
 
+/* v6.1.1 FIX: .dd-teacher-list non aveva alcuna regola di accento —
+   il bordo/bottom-bar restava trasparente (nessun background sul
+   ::after ereditato da .dd-card), quindi la card "Docenti" non si
+   illuminava al hover come "Nuovo Docente". Stessa palette violetta
+   già usata per .dd-docenti nella Dashboard Direttore. */
+.dd-teacher-list{ border-color:rgba(124,106,255,.15); }
+.dd-teacher-list::after{ background:linear-gradient(90deg,transparent,#7c6aff,transparent); }
+.dd-teacher-list:hover{ border-color:rgba(124,106,255,.5); box-shadow:0 12px 36px rgba(124,106,255,.14); }
+.dd-teacher-list:hover .dd-title,.dd-teacher-list:hover .dd-arrow{ color:#b4a0ff; }
+
 /* ── Toggle Genere (creazione + dettaglio) ── */
 .gender-toggle{ display:flex; gap:8px; }
 .gender-btn{
@@ -3777,12 +3790,24 @@ body{
 @media(min-width:600px){ .tdc-grid{ grid-template-columns:1fr 1fr; } }
 
 .tdc-card{
-  position:relative;border-radius:14px;
+  position:relative;border-radius:14px;overflow:hidden;
   border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);
   padding:14px 16px;cursor:pointer;
   transition:transform .2s cubic-bezier(.34,1.56,.64,1),border-color .2s,background .2s,box-shadow .2s;
   box-shadow:0 4px 16px rgba(0,0,0,.3);
 }
+/* v6.1.1 FIX: mancava la bottom accent bar presente su tutte le altre
+   card dell'app (.dd-card, .course-card, .cat-card) — la card docente
+   non si "illuminava" al hover come le altre. Colore semantico: verde
+   per i docenti attivi, rosso per i disattivati (stessa palette di
+   .tdc-status-dot). */
+.tdc-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:#00ff96;transform:scaleX(0);transform-origin:left;
+  transition:transform .2s cubic-bezier(.34,1.56,.64,1);
+}
+.tdc-card:hover::after{ transform:scaleX(1); }
+.tdc-card.tdc-inactive::after{ background:#ff4d6d; }
 .tdc-card:hover{ transform:translateY(-3px); border-color:rgba(0,255,200,.3); background:rgba(0,255,200,.04); box-shadow:0 10px 28px rgba(0,0,0,.4); }
 .tdc-card:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
 .tdc-card.tdc-inactive{ opacity:.55; }

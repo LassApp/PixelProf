@@ -501,22 +501,61 @@ export async function resolvePlayerId(classId, name, color) {
 }
 
 /**
- * Elimina un giocatore dalla tabella players su Supabase.
- * Fire-and-forget: non blocca l'UI.
+ * Elimina un giocatore tramite RPC SECURITY DEFINER (v5.0.4).
+ *
+ * FIX RLS SILENZIOSO: la DELETE diretta su 'players' poteva non
+ * cancellare nulla se la policy RLS blocca l'operazione per il ruolo
+ * authenticated — Postgres NON restituisce errore in questo caso
+ * (una DELETE che tocca 0 righe è "successo" dal punto di vista SQL),
+ * quindi il vecchio codice loggava sempre "OK" anche a fallimento.
+ * La RPC bypassa RLS (come director_delete_classroom) e restituisce
+ * il numero di righe realmente cancellate, permettendo di distinguere
+ * un vero successo da un fallimento muto.
+ *
+ * Nessun controllo auth.uid() interno alla RPC — stesso motivo già
+ * documentato per director_delete_classroom: su questo piano Supabase
+ * auth.uid() non è disponibile nel contesto SECURITY DEFINER. Il
+ * controllo di accesso resta lato client (azione disponibile solo
+ * dentro un'aula già aperta, activeCourseId valido).
+ *
+ * ── SQL DA ESEGUIRE NEL SQL EDITOR DI SUPABASE ──
+ *
+ *   CREATE OR REPLACE FUNCTION delete_player(p_classroom_id uuid, p_player_name text)
+ *   RETURNS integer LANGUAGE plpgsql SECURITY DEFINER SET search_path = public AS $$
+ *   DECLARE v_count integer;
+ *   BEGIN
+ *     DELETE FROM players WHERE classroom_id = p_classroom_id AND name = p_player_name;
+ *     GET DIAGNOSTICS v_count = ROW_COUNT;
+ *     RETURN v_count;
+ *   END;
+ *   $$;
+ *   GRANT EXECUTE ON FUNCTION delete_player(uuid, text) TO authenticated;
+ *
  * @param {string} classId
  * @param {string} playerName
+ * @returns {Promise<{ok:boolean, error?:string}>}
  */
 export async function deletePlayer(classId, playerName) {
-  if (!_online || !classId) return;
-  const { error } = await supabase
-    .from('players')
-    .delete()
-    .eq('classroom_id', classId)
-    .eq('name', playerName);
-  if (error) {
-    console.warn('[PixelProf] deletePlayer error:', error.message);
-  } else {
-    console.log('[PixelProf] deletePlayer OK:', playerName);
+  if (!_online || !classId) return { ok: false, error: 'Offline' };
+  try {
+    const { data, error } = await supabase.rpc('delete_player', {
+      p_classroom_id: classId,
+      p_player_name:  playerName,
+    });
+    if (error) {
+      console.error('[PixelProf] deletePlayer RPC error:', error.code, error.message);
+      return { ok: false, error: error.message };
+    }
+    const deletedCount = data ?? 0;
+    if (deletedCount === 0) {
+      console.warn('[PixelProf] deletePlayer: 0 righe cancellate per', playerName, '— giocatore già assente o blocco lato DB');
+      return { ok: false, error: 'Nessuna riga cancellata sul cloud.' };
+    }
+    console.log('[PixelProf] deletePlayer OK:', playerName, '— righe cancellate:', deletedCount);
+    return { ok: true };
+  } catch (err) {
+    console.warn('[PixelProf] deletePlayer eccezione:', err.message);
+    return { ok: false, error: err.message };
   }
 }
 
@@ -557,22 +596,47 @@ export async function resolveTeamId(classId, name, color) {
 }
 
 /**
- * Elimina una squadra dalla tabella teams su Supabase.
- * Fire-and-forget: non blocca l'UI.
+ * Elimina una squadra tramite RPC SECURITY DEFINER (v5.0.4).
+ * Stesso fix RLS silenzioso di deletePlayer — vedi commento sopra.
+ *
+ * ── SQL DA ESEGUIRE NEL SQL EDITOR DI SUPABASE ──
+ *
+ *   CREATE OR REPLACE FUNCTION delete_team(p_classroom_id uuid, p_team_name text)
+ *   RETURNS integer LANGUAGE plpgsql SECURITY DEFINER SET search_path = public AS $$
+ *   DECLARE v_count integer;
+ *   BEGIN
+ *     DELETE FROM teams WHERE classroom_id = p_classroom_id AND name = p_team_name;
+ *     GET DIAGNOSTICS v_count = ROW_COUNT;
+ *     RETURN v_count;
+ *   END;
+ *   $$;
+ *   GRANT EXECUTE ON FUNCTION delete_team(uuid, text) TO authenticated;
+ *
  * @param {string} classId
  * @param {string} teamName
+ * @returns {Promise<{ok:boolean, error?:string}>}
  */
 export async function deleteTeam(classId, teamName) {
-  if (!_online || !classId) return;
-  const { error } = await supabase
-    .from('teams')
-    .delete()
-    .eq('classroom_id', classId)
-    .eq('name', teamName);
-  if (error) {
-    console.warn('[PixelProf] deleteTeam error:', error.message);
-  } else {
-    console.log('[PixelProf] deleteTeam OK:', teamName);
+  if (!_online || !classId) return { ok: false, error: 'Offline' };
+  try {
+    const { data, error } = await supabase.rpc('delete_team', {
+      p_classroom_id: classId,
+      p_team_name:    teamName,
+    });
+    if (error) {
+      console.error('[PixelProf] deleteTeam RPC error:', error.code, error.message);
+      return { ok: false, error: error.message };
+    }
+    const deletedCount = data ?? 0;
+    if (deletedCount === 0) {
+      console.warn('[PixelProf] deleteTeam: 0 righe cancellate per', teamName, '— squadra già assente o blocco lato DB');
+      return { ok: false, error: 'Nessuna riga cancellata sul cloud.' };
+    }
+    console.log('[PixelProf] deleteTeam OK:', teamName, '— righe cancellate:', deletedCount);
+    return { ok: true };
+  } catch (err) {
+    console.warn('[PixelProf] deleteTeam eccezione:', err.message);
+    return { ok: false, error: err.message };
   }
 }
 

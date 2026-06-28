@@ -18,8 +18,12 @@ function renderStats(){
   }).join('');
 }
 
-function resetStats(){
-  if(!confirm('Azzerare tutti i progressi?'))return;
+async function resetStats(){
+  const ok = await ppConfirmBox(
+    'Questa azione azzera definitivamente domande totali, risposte corrette e accuratezza per modulo di questa aula.',
+    { title:'Azzerare i progressi?', icon:'📊', yesLabel:'Sì, azzera', danger:true }
+  );
+  if(!ok) return;
   db.stats={tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}}};
   save();
   renderStats();
@@ -167,8 +171,12 @@ function renderHistory(){
   body.innerHTML=counter+filtered.map((s,i)=>_histBuildCard(s,i)).join('');
 }
 
-function resetHistory(){
-  if(!confirm('Cancellare tutto lo storico sessioni?'))return;
+async function resetHistory(){
+  const ok = await ppConfirmBox(
+    'Tutte le sessioni salvate nello storico di questa aula verranno eliminate definitivamente.',
+    { title:'Cancellare lo storico?', icon:'📋', yesLabel:'Sì, cancella tutto', danger:true }
+  );
+  if(!ok) return;
   db.sessions=[];
   save();
   renderHistory();
@@ -196,7 +204,7 @@ function exportHistoryCSV(){
   });
 
   if(!filtered.length){
-    alert('Nessuna sessione da esportare.');
+    ppAlert('Non ci sono sessioni da esportare con i filtri selezionati.', { title:'Nessun dato da esportare', icon:'📋' });
     return;
   }
 
@@ -260,4 +268,3 @@ function exportHistoryCSV(){
 /* ==================================================
    COURSES SYSTEM
 ================================================== */
-

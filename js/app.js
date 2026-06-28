@@ -426,7 +426,7 @@ async function tmOpenDetail(id){
   const all = await window.Auth.listTeachers(true);
   const t = (all||[]).find(x=>x.id===id);
   if(!t){
-    alert('Docente non trovato.');
+    await ppAlert('Il docente selezionato non è stato trovato.', { title:'Docente non trovato', icon:'⚠️' });
     tmBackFromDetail();
     return;
   }
@@ -481,7 +481,7 @@ async function tmDetailSaveProfile(){
   if(!_tmdId) return;
   const nome    = (sh('tmd-nome')?.value||'').trim();
   const cognome = (sh('tmd-cognome')?.value||'').trim();
-  if(!nome || !cognome){ alert('Nome e cognome sono obbligatori.'); return; }
+  if(!nome || !cognome){ await ppAlert('Nome e cognome sono entrambi obbligatori.', { title:'Campi mancanti', icon:'✏️' }); return; }
   const fullName = _tmJoinName(nome, cognome);
   const res = await window.Auth.updateTeacherProfile(_tmdId, { name: fullName, genere: _tmdGenere });
   if(res.ok){
@@ -489,7 +489,7 @@ async function tmDetailSaveProfile(){
     if(titleEl) titleEl.innerHTML = escHtml(fullName) +
       (!_tmdActive ? ' <span class="tm-badge-inactive" style="margin-left:8px;vertical-align:middle">Disattivato</span>' : '');
   } else {
-    alert('Errore salvataggio: '+(res.error||'sconosciuto'));
+    await ppAlert('Errore durante il salvataggio: '+(res.error||'sconosciuto'), { title:'Errore', icon:'⚠️' });
   }
 }
 
@@ -534,7 +534,7 @@ async function tmDetailToggleActive(makeActive){
         (!makeActive ? ' <span class="tm-badge-inactive" style="margin-left:8px;vertical-align:middle">Disattivato</span>' : '');
     }
   } else {
-    alert('Errore: '+(res.error||'sconosciuto')+'\n\nVerifica di aver eseguito la migrazione SQL (colonna "active" su profiles).');
+    await ppAlert('Errore: '+(res.error||'sconosciuto')+'\n\nVerifica di aver eseguito la migrazione SQL (colonna "active" su profiles).', { title:'Operazione non riuscita', icon:'⚠️' });
   }
 }
 
@@ -579,7 +579,7 @@ async function _tmdToggleAula(classroomId, btn){
     btn.classList.toggle('active', !wasOn);
     if(wasOn) _tmdAssignedIds.delete(classroomId); else _tmdAssignedIds.add(classroomId);
   } else {
-    alert('Errore aggiornamento aula: '+(res?.error||'sconosciuto'));
+    await ppAlert('Errore aggiornamento aula: '+(res?.error||'sconosciuto'), { title:'Operazione non riuscita', icon:'⚠️' });
   }
 }
 
@@ -741,7 +741,7 @@ const _cw = {
 
 function openCourseWizard(){
   if(!window.Auth?.isDirector()){
-    alert('Solo il direttore puo\' creare nuove aule.');
+    ppAlert('Solo il direttore può creare nuove aule.', { title:'Permesso negato', icon:'🔒' });
     return;
   }
   const prefilledName = (sh('cs-course-inp')?.value || '').trim();
@@ -877,7 +877,7 @@ function cwStep(n){
     _cw.name=name;
   }
   if(n===3){
-    if(_cw.mods.length===0){ alert('Seleziona almeno un modulo.'); return; }
+    if(_cw.mods.length===0){ ppAlert('Seleziona almeno un modulo prima di continuare.', { title:'Modulo richiesto', icon:'📚' }); return; }
   }
   _cwGoStep(n);
 }
@@ -1005,7 +1005,7 @@ async function cwCreateClassroom(){
   const teacherId = window.Auth?.getUserId();
   if(!teacherId || !window.DB){
     if(btn){ btn.disabled=false; btn.innerHTML='<i class="ti ti-check"></i> Crea aula'; }
-    alert('Errore: sessione non valida.'); return;
+    await ppAlert('Sessione non valida. Ricarica la pagina e accedi nuovamente.', { title:'Errore di sessione', icon:'⚠️' }); return;
   }
 
   // Docente obbligatorio — double-check lato JS
@@ -1037,7 +1037,7 @@ async function cwCreateClassroom(){
   if(!res.ok){
     console.error('[PixelProf] createClassroom:', res.error);
     if(btn){ btn.disabled=false; btn.innerHTML='<i class="ti ti-check"></i> Crea aula'; }
-    alert('Errore creazione aula: '+res.error); return;
+    await ppAlert('Errore creazione aula: '+res.error, { title:'Errore', icon:'⚠️' }); return;
   }
   const classroomId = res.course?.id || res.id;
   if(_cw.mods.length > 0){
@@ -1211,7 +1211,7 @@ const ALL_MODULES = [
 async function openDirectorPanel(){
   if(!window.Auth?.isDirector()) return;
   _dpClassroomId = _ddCourseId || activeCourseId;
-  if(!_dpClassroomId){ alert('Seleziona prima un\'aula dal menu (tasto ...)'); return; }
+  if(!_dpClassroomId){ await ppAlert('Seleziona prima un\'aula dal menu (tasto ...).', { title:'Nessuna aula selezionata', icon:'🏫' }); return; }
   closeCourseMenu();
   sh('dp-overlay').classList.remove('hidden');
   sh('dp-invite-fb').textContent = '';
@@ -1261,7 +1261,11 @@ async function dpAssignTeacher(){
 }
 
 async function dpRemoveTeacher(teacherId){
-  if(!confirm('Rimuovere il docente dall\'aula?')) return;
+  const ok = await ppConfirmBox(
+    'Il docente non potrà più accedere a questa aula. Potrai assegnarlo di nuovo in qualsiasi momento.',
+    { title:'Rimuovere il docente?', icon:'👩\u200d🏫', yesLabel:'Sì, rimuovi' }
+  );
+  if(!ok) return;
   await window.DB.removeTeacherFromClassroom(_dpClassroomId, teacherId).catch(()=>{});
   await _dpLoadTeachers();
   // Aggiorna le card nella griglia con i docenti aggiornati
@@ -1316,7 +1320,7 @@ async function dpSaveModules(){
     if(_dpClassroomId === activeCourseId) await _applyModuleFilter(_dpClassroomId);
     closeDirectorPanel();
   } else {
-    alert('Errore salvataggio moduli: '+(res?.error||'sconosciuto'));
+    await ppAlert('Errore salvataggio moduli: '+(res?.error||'sconosciuto'), { title:'Operazione non riuscita', icon:'⚠️' });
   }
 }
 

@@ -705,6 +705,129 @@ function ppConfirmRestart(onYes){
 }
 
 /* ==================================================
+   GENERIC THEMED DIALOGS — v6.2.0
+   ppAlert() / ppConfirmBox() / ppPromptBox()
+
+   Sostituiscono alert()/confirm()/prompt() nativi in tutta
+   l'app con popup coerenti con l'estetica neon scura.
+   Markup creato dinamicamente da JS — zero modifiche a
+   index.html — stesso pattern già usato da _showDeleteConfirm()
+   per i chip ×. Indipendenti dal singleton #pp-dialog-overlay
+   (riservato a exit/restart partita): nessuna interferenza con
+   quel sistema, nessuna gestione manuale di onclick condivisi.
+
+   API (tutte Promise-based, usabili con await):
+     await ppAlert(message, {title, icon})              → undefined
+     await ppConfirmBox(message, {title, icon, yesLabel,
+                                   noLabel, danger})      → true|false
+     await ppPromptBox(message, defaultValue, {title,
+                                   icon, okLabel, maxlength}) → string|null
+
+   Un solo popup alla volta: l'apertura di uno nuovo chiude
+   immediatamente quello precedente (nessuna sovrapposizione).
+================================================== */
+let _ppActiveModal = null;
+
+function _ppCloseActiveModal(){
+  if(_ppActiveModal){
+    document.removeEventListener('keydown', _ppActiveModal._onKey);
+    _ppActiveModal.remove();
+    _ppActiveModal = null;
+  }
+}
+
+function _ppBuildModal(innerHTML){
+  _ppCloseActiveModal();
+  const overlay = document.createElement('div');
+  overlay.className = 'pp-generic-overlay';
+  overlay.innerHTML = `<div class="pp-generic-box" role="dialog" aria-modal="true">${innerHTML}</div>`;
+  document.body.appendChild(overlay);
+  _ppActiveModal = overlay;
+  return overlay;
+}
+
+function ppAlert(message, opts={}){
+  return new Promise(resolve=>{
+    const title = opts.title || 'Attenzione';
+    const icon  = opts.icon  || '⚠️';
+    const okLabel = opts.okLabel || 'Ho capito';
+    const overlay = _ppBuildModal(`
+      <div class="pp-generic-icon">${icon}</div>
+      <div class="pp-generic-title">${escHtml(title)}</div>
+      <div class="pp-generic-msg">${escHtml(message).replace(/\n/g,'<br>')}</div>
+      <div class="pp-generic-btns">
+        <button class="pp-generic-btn ok" id="pp-generic-ok">${escHtml(okLabel)}</button>
+      </div>`);
+    const okBtn = overlay.querySelector('#pp-generic-ok');
+    const _close = () => { _ppCloseActiveModal(); resolve(); };
+    okBtn.addEventListener('click', _close);
+    overlay.addEventListener('mousedown', e => { if(e.target===overlay) _close(); });
+    overlay._onKey = e => { if(e.key==='Escape'){ e.preventDefault(); _close(); } };
+    document.addEventListener('keydown', overlay._onKey);
+    setTimeout(()=>okBtn.focus(), 30);
+  });
+}
+
+function ppConfirmBox(message, opts={}){
+  return new Promise(resolve=>{
+    const title    = opts.title    || 'Confermi?';
+    const icon     = opts.icon     || '❓';
+    const yesLabel = opts.yesLabel || 'Sì, conferma';
+    const noLabel  = opts.noLabel  || 'Annulla';
+    const dangerCls= opts.danger   ? ' danger' : '';
+    const overlay = _ppBuildModal(`
+      <div class="pp-generic-icon">${icon}</div>
+      <div class="pp-generic-title">${escHtml(title)}</div>
+      <div class="pp-generic-msg">${escHtml(message).replace(/\n/g,'<br>')}</div>
+      <div class="pp-generic-btns">
+        <button class="pp-generic-btn cancel" id="pp-generic-no">${escHtml(noLabel)}</button>
+        <button class="pp-generic-btn confirm${dangerCls}" id="pp-generic-yes">${escHtml(yesLabel)}</button>
+      </div>`);
+    const yesBtn = overlay.querySelector('#pp-generic-yes');
+    const noBtn  = overlay.querySelector('#pp-generic-no');
+    const _resolve = (v) => { _ppCloseActiveModal(); resolve(v); };
+    yesBtn.addEventListener('click', ()=>_resolve(true));
+    noBtn.addEventListener('click',  ()=>_resolve(false));
+    overlay.addEventListener('mousedown', e => { if(e.target===overlay) _resolve(false); });
+    overlay._onKey = e => { if(e.key==='Escape'){ e.preventDefault(); _resolve(false); } };
+    document.addEventListener('keydown', overlay._onKey);
+    setTimeout(()=>noBtn.focus(), 30);
+  });
+}
+
+function ppPromptBox(message, defaultValue='', opts={}){
+  return new Promise(resolve=>{
+    const title   = opts.title   || 'Inserisci un valore';
+    const icon    = opts.icon    || '✏️';
+    const okLabel = opts.okLabel || 'Conferma';
+    const maxlen  = opts.maxlength || 60;
+    const overlay = _ppBuildModal(`
+      <div class="pp-generic-icon">${icon}</div>
+      <div class="pp-generic-title">${escHtml(title)}</div>
+      <div class="pp-generic-msg">${escHtml(message)}</div>
+      <input type="text" class="pp-generic-input" id="pp-generic-inp" maxlength="${maxlen}" value="${escAttr(defaultValue)}"/>
+      <div class="pp-generic-btns">
+        <button class="pp-generic-btn cancel" id="pp-generic-pcancel">Annulla</button>
+        <button class="pp-generic-btn confirm" id="pp-generic-pok">${escHtml(okLabel)}</button>
+      </div>`);
+    const inp   = overlay.querySelector('#pp-generic-inp');
+    const okBtn = overlay.querySelector('#pp-generic-pok');
+    const noBtn = overlay.querySelector('#pp-generic-pcancel');
+    const _resolve = (v) => { _ppCloseActiveModal(); resolve(v); };
+    okBtn.addEventListener('click', ()=>_resolve(inp.value.trim() || null));
+    noBtn.addEventListener('click', ()=>_resolve(null));
+    overlay.addEventListener('mousedown', e => { if(e.target===overlay) _resolve(null); });
+    inp.addEventListener('keydown', e => {
+      if(e.key==='Enter'){ e.preventDefault(); _resolve(inp.value.trim() || null); }
+      if(e.key==='Escape'){ e.preventDefault(); _resolve(null); }
+    });
+    overlay._onKey = e => { if(e.key==='Escape'){ e.preventDefault(); _resolve(null); } };
+    document.addEventListener('keydown', overlay._onKey);
+    setTimeout(()=>{ inp.focus(); inp.select(); }, 30);
+  });
+}
+
+/* ==================================================
    _pauseForDialog / _resumeAfterDialog — v4.0.8
    Timer: TimerManager.pauseAll() / resumeAll().
    UI (overlay, icone, lock): invariata per gameType.
@@ -1231,7 +1354,7 @@ function deletePlayer(idx, evt){
       window.DB.deletePlayer(activeCourseId, name).then(res=>{
         if(res && res.ok===false){
           console.error('[PixelProf] deletePlayer cloud FAIL:', res.error);
-          alert('⚠️ "'+name+'" è stato rimosso solo in locale: la cancellazione sul cloud è fallita ('+res.error+'). Potrebbe ricomparire al prossimo accesso a questa aula.');
+          ppAlert('"'+name+'" è stato rimosso solo in locale: la cancellazione sul cloud è fallita ('+res.error+'). Potrebbe ricomparire al prossimo accesso a questa aula.', {title:'Cancellazione cloud non riuscita', icon:'⚠️'});
         }
       }).catch(e=>console.warn('[PixelProf] deletePlayer cloud err:', e));
     }
@@ -1312,7 +1435,7 @@ function deleteSavedTeam(idx, evt){
       window.DB.deleteTeam(activeCourseId, name).then(res=>{
         if(res && res.ok===false){
           console.error('[PixelProf] deleteTeam cloud FAIL:', res.error);
-          alert('⚠️ "'+name+'" è stata rimossa solo in locale: la cancellazione sul cloud è fallita ('+res.error+'). Potrebbe ricomparire al prossimo accesso a questa aula.');
+          ppAlert('"'+name+'" è stata rimossa solo in locale: la cancellazione sul cloud è fallita ('+res.error+'). Potrebbe ricomparire al prossimo accesso a questa aula.', {title:'Cancellazione cloud non riuscita', icon:'⚠️'});
         }
       }).catch(e=>console.warn('[PixelProf] deleteTeam cloud err:', e));
     }

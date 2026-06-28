@@ -168,7 +168,7 @@ function exportLbCSV(type, act){
   rows.sort((a,b)=>b.pts-a.pts);
 
   if(!rows.length){
-    alert('Nessun dato da esportare per questa classifica.');
+    ppAlert('Non ci sono punteggi da esportare per questa classifica.', { title:'Nessun dato da esportare', icon:'🏆' });
     return;
   }
 
@@ -222,9 +222,12 @@ function modBadgeHTML(mod){
   return`<span class="mod-badge ${cls}">${short}</span>`;
 }
 
-function resetLb(){
-  if(!confirm('Azzerare tutta la classifica?'))return;
+async function resetLb(){
+  const ok = await ppConfirmBox(
+    'Tutti i punteggi salvati in classifica (Individuale e Squadre, tutte le attività) verranno eliminati definitivamente.',
+    { title:'Azzerare la classifica?', icon:'🏆', yesLabel:'Sì, azzera tutto', danger:true }
+  );
+  if(!ok) return;
   db.lb2=makeEmptyLb2();save();
   lbType=null;lbAct=null;lbShowStep('type');
 }
-

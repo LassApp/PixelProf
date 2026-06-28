@@ -288,8 +288,8 @@ async function cdAction(action){
   if(idx<0)return;
 
   if(action==='rename'){
-    const newName=prompt('Nuovo nome aula:',courses[idx].name);
-    if(!newName||!newName.trim())return;
+    const newName=await ppPromptBox('Inserisci il nuovo nome per questa aula.', courses[idx].name, { title:'Rinomina aula', icon:'✏️', maxlength:40 });
+    if(!newName)return;
     // Aggiorna localStorage
     courses[idx].name=newName.trim();
     saveCourses(courses);
@@ -312,7 +312,7 @@ async function cdAction(action){
           const m=errMsg.match(/\{.*\}/s);
           if(m){ const p=JSON.parse(m[0]); if(p.message) errMsg=p.message; }
         }catch(e){}
-        alert('❌ Impossibile eliminare l\'aula.\n\n'+errMsg+'\n\nEsegui la SQL director_delete_classroom nel Supabase SQL Editor.');
+        await ppAlert('Impossibile eliminare l\'aula.\n\n'+errMsg+'\n\nEsegui la SQL director_delete_classroom nel Supabase SQL Editor.', { title:'Eliminazione non riuscita', icon:'❌' });
         return;
       }
       if(activeCourseId===id){

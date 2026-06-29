@@ -652,7 +652,7 @@ function shq(id){return document.getElementById(id);}
 function escHtml(s){const d=document.createElement('div');d.appendChild(document.createTextNode(String(s)));return d.innerHTML;}
 function escAttr(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
-function setTb(active){['tb-home','tb-lb','tb-st','tb-hist'].forEach(id=>sh(id).classList.remove('active'));if(active)sh(active).classList.add('active');}
+function setTb(active){['tb-home','tb-lb','tb-st','tb-hist','tb-dash'].forEach(id=>sh(id).classList.remove('active'));if(active)sh(active).classList.add('active');}
 function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));sh(id).classList.add('active');}
 
 
@@ -1085,12 +1085,13 @@ function goTab(t){
 }
 function _doGoTab(t){
   resetSessionState();
-  const tbMap={lb:'tb-lb',stats:'tb-st',hist:'tb-hist'};
+  const tbMap={lb:'tb-lb',stats:'tb-st',hist:'tb-hist',dashboard:'tb-dash'};
   setTb(tbMap[t]||null);
   showScreen('tab-'+t);
   if(t==='lb'){lbType=null;lbAct=null;lbShowStep('type');}
   if(t==='stats')renderStats();
   if(t==='hist')renderHistory();
+  if(t==='dashboard')renderDashboard();
 }
 
 function goStep(s){

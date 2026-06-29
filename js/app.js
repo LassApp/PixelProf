@@ -1482,7 +1482,7 @@ function closeHubMenu(){
    Il comportamento legacy rimane invariato — tb-home riceve .active invisibilmente.
    In aggiunta, aggiorniamo .active sugli item Hub visibili. */
 (function _patchSetTb(){
-  const _HUB_TABS = ['lb','st','hist'];
+  const _HUB_TABS = ['lb','st','hist','dash'];
   const _origSetTb = window.setTb; // non esiste ancora — sarà definita da game-engine-state.js
   // Monkey-patch dopo caricamento (DOMContentLoaded garantisce l'ordine)
   document.addEventListener('DOMContentLoaded', ()=>{

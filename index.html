@@ -834,7 +834,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
   <!-- NAV: Hub solo icona -->
   <nav class="tb-nav">
     <div class="tb-hub-wrap" id="tb-hub-wrap">
-      <button class="tb-btn tb-hub-btn tb-hub-icon-only" id="tb-hub-btn" onclick="toggleHubMenu(event)" title="Classifica, Progressi, Storico">
+      <button class="tb-btn tb-hub-btn tb-hub-icon-only" id="tb-hub-btn" onclick="toggleHubMenu(event)" title="Classifica, Progressi, Storico, Salute Classe">
         <i class="ti ti-layout-grid"></i>
       </button>
       <div class="tb-hub-menu hidden" id="tb-hub-menu">
@@ -846,6 +846,9 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         </button>
         <button class="tb-hub-item" id="tb-hist" onclick="closeHubMenu();goTab('hist')">
           <i class="ti ti-history"></i><span>Storico</span>
+        </button>
+        <button class="tb-hub-item" id="tb-dash" onclick="closeHubMenu();goTab('dashboard')">
+          <i class="ti ti-heartbeat"></i><span>Salute Classe</span>
         </button>
       </div>
     </div>
@@ -1330,6 +1333,17 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 
 </div>
 
+<!-- ======================================
+     SALUTE DELLA CLASSE — Dashboard aggregata docente
+     v1.0.0: vista sintetica costruita sui dati già caricati
+     localmente per l'aula attiva (db.stats / db.sessions /
+     db.players / db.teams) — nessuna nuova chiamata cloud.
+====================================== -->
+<div id="tab-dashboard" class="screen">
+  <div style="font-size:16px;font-weight:700;margin-bottom:1rem;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Salute della classe</div>
+  <div id="dash-body"></div>
+</div>
+
 </div><!-- /app -->
 
 
@@ -1338,6 +1352,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 <script src="js/game-engine-state.js"></script>
 <script src="js/renderer.js"></script>
 <script src="js/stats.js"></script>
+<script src="js/dashboard.js"></script>
 <script src="js/game-quiz.js"></script>
 <script src="js/game-match.js"></script>
 <script src="js/game-memory.js"></script>

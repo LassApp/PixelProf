@@ -45,7 +45,7 @@
        (mostra/nascondi, lock di pausa, ecc.) → dentro @layer stato,
        con !important (qui è l'unico posto dove serve ancora).
    ═══════════════════════════════════════════════════════════════════ */
-@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs;
+@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth;
 
 @layer base {
 /* ===============================================
@@ -3976,4 +3976,115 @@ body{
 }
 .pp-generic-btn.confirm.danger::after{background:#ff4d6d;}
 .pp-generic-btn.confirm.danger:hover{background:rgba(255,60,80,.2);}
+}
+
+@layer classhealth {
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf — SALUTE DELLA CLASSE (dashboard.js)
+   Dashboard aggregata per il docente: accuratezza, modulo più debole,
+   partecipazione, attività più giocate. Nuove classi (prefisso chd-),
+   nessuna collisione con layer esistenti — dichiarato per ultimo per
+   coerenza con la regola "nuova feature → nuovo layer in fondo".
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── KPI hero row ── */
+.chd-kpi-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.1rem;
+}
+.chd-kpi-card{
+  background:var(--surface-1);border:1px solid var(--border-subtle);
+  border-radius:var(--radius-md);padding:14px 10px;text-align:center;
+  transition:all var(--transition-fast);position:relative;overflow:hidden;
+  box-shadow:var(--shadow-card);
+}
+.chd-kpi-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--accent);transform:scaleX(0);transition:transform var(--transition-fast);
+}
+.chd-kpi-card:hover{background:var(--surface-2);border-color:rgba(0,255,200,.2);}
+.chd-kpi-card:hover::after{transform:scaleX(1);}
+.chd-kpi-icon{font-size:20px;margin-bottom:4px;line-height:1}
+.chd-kpi-val{font-size:21px;font-weight:700;color:var(--accent);font-family:'Share Tech Mono',monospace;line-height:1.15}
+.chd-kpi-lbl{font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;line-height:1.3}
+
+/* ── Sezione generica ── */
+.chd-section{margin-bottom:1.25rem}
+.chd-section-title{
+  font-size:13px;font-weight:700;color:#fff;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+
+/* ── Card "modulo più debole" ── */
+.chd-weak-card{
+  background:rgba(255,255,255,.03);border:1px solid var(--border-subtle);
+  border-radius:var(--radius-md);padding:14px 16px;
+}
+.chd-weak-headline{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:14px;line-height:1.5;font-weight:500}
+.chd-mod-row{margin-bottom:10px}
+.chd-mod-row:last-child{margin-bottom:0}
+.chd-mod-row-top{display:flex;align-items:center;gap:7px;margin-bottom:5px;font-size:12px}
+.chd-mod-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;box-shadow:0 0 5px currentColor}
+.chd-mod-name{flex:1;color:rgba(255,255,255,.65);font-weight:500}
+.chd-mod-pct{font-family:'Share Tech Mono',monospace;font-weight:700;font-size:12px}
+.chd-mod-nodata{opacity:.4}
+
+/* ── Tabella partecipazione ── */
+.chd-part-table{
+  background:rgba(255,255,255,.03);border:1px solid var(--border-subtle);
+  border-radius:var(--radius-md);overflow:hidden;
+}
+.chd-part-row{
+  display:grid;grid-template-columns:1fr 72px 64px 84px;align-items:center;gap:6px;
+  padding:9px 14px;font-size:12px;color:rgba(255,255,255,.75);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.chd-part-row:last-child{border-bottom:none}
+.chd-part-header{
+  font-size:9px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;
+  letter-spacing:.6px;background:rgba(255,255,255,.02);
+}
+.chd-part-name{display:flex;align-items:center;gap:6px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chd-type-icon{font-size:11px;flex-shrink:0}
+.chd-color-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.chd-part-sessions,.chd-part-avg{text-align:center;font-family:'Share Tech Mono',monospace}
+.chd-part-last{text-align:right;color:rgba(255,255,255,.4);font-size:10px;white-space:nowrap}
+
+/* ── Banner "non ha mai giocato" ── */
+.chd-never-played{
+  display:flex;align-items:flex-start;gap:8px;margin-top:10px;
+  padding:10px 14px;border-radius:10px;
+  background:rgba(255,180,0,.08);border:1px solid rgba(255,180,0,.22);
+  color:#ffb400;font-size:11px;line-height:1.5;
+}
+.chd-never-played i{font-size:14px;flex-shrink:0;margin-top:1px}
+
+/* ── Attività più giocate ── */
+.chd-act-list{display:flex;flex-direction:column;gap:8px}
+.chd-act-row{display:flex;align-items:center;gap:10px;font-size:12px}
+.chd-act-icon{font-size:16px;flex-shrink:0;width:20px;text-align:center}
+.chd-act-name{width:108px;flex-shrink:0;color:rgba(255,255,255,.65);font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chd-act-bar-wrap{flex:1;height:6px;border-radius:3px;background:rgba(255,255,255,.06);overflow:hidden}
+.chd-act-bar{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--purple))}
+.chd-act-count{width:24px;flex-shrink:0;text-align:right;font-family:'Share Tech Mono',monospace;font-weight:700;color:var(--accent)}
+
+/* ── Empty state ── */
+.chd-empty{text-align:center;padding:3rem 1rem}
+.chd-empty-icon{font-size:40px;margin-bottom:14px;opacity:.4}
+.chd-empty-title{font-size:14px;font-weight:600;color:rgba(255,255,255,.35);margin-bottom:6px}
+.chd-empty-sub{font-size:12px;color:rgba(255,255,255,.2);max-width:280px;margin:0 auto;line-height:1.5}
+
+/* ── Footnote ── */
+.chd-footnote{
+  display:flex;align-items:flex-start;gap:6px;margin-top:.5rem;
+  font-size:10px;color:rgba(255,255,255,.25);line-height:1.5;
+}
+.chd-footnote i{flex-shrink:0;margin-top:1px;font-size:12px}
+
+/* ── Responsive ── */
+@media(max-width:420px){
+  .chd-kpi-grid{grid-template-columns:1fr;}
+  .chd-part-row{grid-template-columns:1fr 56px 50px;}
+  .chd-part-last{display:none;}
+  .chd-act-name{width:84px;}
+}
 }

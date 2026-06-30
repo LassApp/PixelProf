@@ -1,6 +1,6 @@
 /* ==================================================
-   dashboard.js — PixelProf v1.0.0
-   "Salute della Classe" — vista aggregata per il docente.
+   dashboard.js — PixelProf v2.0.0
+   "Panoramica Classe" — vista aggregata per il docente.
 
    Risponde a 3 domande che oggi richiedono di incrociare
    3 schermate diverse (Classifica + Progressi + Storico):
@@ -8,24 +8,30 @@
      2. Su quale modulo conviene fare lezione di ripasso?
      3. Chi ha giocato e chi non si è ancora mai esercitato?
 
-   FONTE DATI: esclusivamente db.stats / db.sessions /
-   db.players / db.teams — già caricati localmente per
-   l'aula attiva (stessa fonte di Progressi/Classifica/
-   Storico). Nessuna nuova chiamata Supabase: zero rischio,
-   zero costo di rete aggiuntivo, coerenza totale con i
-   numeri già visibili altrove nell'app.
+   v2.0.0 — FIX LIMITE CROSS-DEVICE (era il limite noto della v1):
+   La v1 leggeva ESCLUSIVAMENTE db.sessions locale (storico per-
+   dispositivo, max 100 voci) — su un'aula condivisa da più docenti
+   o PC di laboratorio, la vista poteva non riflettere tutte le
+   sessioni mai giocate.
 
-   LIMITE NOTO (da comunicare a Erasmo): db.sessions è uno
-   storico locale per-dispositivo (max 100 voci, vedi
-   game-engine-state.js → saveSessionResult). Su un'aula
-   condivisa da più docenti/dispositivi questa vista
-   potrebbe non riflettere TUTTE le sessioni mai giocate.
-   Un'evoluzione futura potrebbe leggere da una RPC
-   aggregata lato Supabase (tabella matches/scores) per una
-   vista realmente centralizzata — fuori scope per questa
-   v1, che resta deliberatamente client-side e a costo zero.
+   Ora renderDashboard() tenta PRIMA una lettura cloud via
+   window.DB.getClassroomOverview() (RPC SECURITY DEFINER
+   get_classroom_overview, vedi db_adapter.js), che aggrega
+   stats_aggregate + matches + scores + players + teams per
+   classroom_id — quindi è vera-aggregazione cross-device,
+   cross-docente, indipendente da quale browser ha giocato cosa.
 
-   Depends on: game-engine-state.js (db, sh, shq, escHtml, escAttr)
+   Se la RPC non è disponibile (offline, oppure non ancora creata
+   su Supabase) si ricade in automatico sul calcolo 100% locale
+   già esistente in v1 — stesso identico comportamento di prima,
+   zero regressioni. I builder HTML (_chdBuildWeakestCard,
+   _chdBuildParticipationSection, _chdBuildActivityBreakdown) sono
+   condivisi e invariati tra i due percorsi: ricevono sempre le
+   stesse forme-dati intermedie, sia che la fonte sia il cloud sia
+   che sia il locale.
+
+   Depends on: game-engine-state.js (db, activeCourseId, sh, shq,
+   escHtml, escAttr), window.DB (db_adapter.js, opzionale)
 ================================================== */
 
 const _CHD_MOD_LABEL = { CE: 'Computer Essentials', OE: 'Online Essentials', WP: 'Word Processing' };
@@ -74,7 +80,130 @@ function _chdComputeParticipation() {
   return map;
 }
 
-function renderDashboard() {
+/**
+ * renderDashboard — v2.0.0 orchestratore.
+ * Mostra un breve "Caricamento…", poi tenta la lettura cloud
+ * (cross-device) e ricade sul calcolo locale se non disponibile.
+ */
+async function renderDashboard() {
+  const body = shq('dash-body');
+  if (!body) return;
+
+  body.innerHTML = `<div style="text-align:center;padding:2.5rem 1rem;color:rgba(255,255,255,.3);
+    font-size:12px;font-family:'Share Tech Mono',monospace;letter-spacing:.5px">
+    <i class="ti ti-loader-2" style="font-size:20px;animation:spin .8s linear infinite;display:block;margin-bottom:10px"></i>
+    Caricamento panoramica…
+  </div>`;
+
+  let cloud = null;
+  if (window.DB?.getClassroomOverview && activeCourseId) {
+    cloud = await window.DB.getClassroomOverview(activeCourseId).catch(() => null);
+  }
+
+  if (cloud) {
+    _renderDashboardFromCloud(cloud);
+  } else {
+    _renderDashboardFromLocal();
+  }
+}
+
+/**
+ * _renderDashboardFromCloud — v2.0.0
+ * Sorgente: RPC get_classroom_overview — aggregazione VERA
+ * cross-device/cross-docente su scores+matches+stats_aggregate+
+ * players+teams per questa aula. Adatta il payload alle stesse
+ * forme-dati intermedie usate dal percorso locale, poi richiama
+ * gli STESSI builder HTML — zero duplicazione di markup.
+ */
+function _renderDashboardFromCloud(cloud) {
+  const body = shq('dash-body');
+  if (!body) return;
+
+  const stats = cloud.stats || { tot: 0, cor: 0, byMod: {} };
+  const totalSessions = cloud.totalSessions || 0;
+
+  if (totalSessions === 0 && stats.tot === 0) {
+    body.innerHTML = _chdEmptyState();
+    return;
+  }
+
+  const totalPlayers  = cloud.totalPlayers  || 0;
+  const activePlayers = cloud.activePlayers || 0;
+  const participation = cloud.participation || [];
+  const neverPlayed    = cloud.neverPlayedNames || [];
+
+  const quizAcc = _chdAccuracy(stats.cor, stats.tot);
+  const lastActivityLabel = cloud.lastSessionAt ? _chdRelativeDate(cloud.lastSessionAt) : 'nessuna sessione';
+
+  let kpi2Val, kpi2Lbl;
+  if (totalPlayers > 0) {
+    kpi2Val = `${activePlayers}/${totalPlayers}`;
+    kpi2Lbl = 'Giocatori attivi';
+  } else {
+    kpi2Val = String(participation.length);
+    kpi2Lbl = 'Partecipanti unici';
+  }
+
+  const modAccs = ['CE', 'OE', 'WP'].map(k => {
+    const m = stats.byMod?.[k] || { c: 0, w: 0 };
+    return { key: k, label: _CHD_MOD_LABEL[k], color: _CHD_MOD_COLOR[k], acc: _chdAccuracy(m.c, m.w), tot: m.c + m.w };
+  });
+  const modsWithData = modAccs.filter(m => m.tot > 0);
+  const weakest = modsWithData.length ? modsWithData.reduce((a, b) => (b.acc < a.acc ? b : a)) : null;
+
+  // participant_type cloud: 'player'|'team' → stessa convenzione 'ind'|'sq' usata dal builder
+  const partRows = participation
+    .map(p => ({
+      name: p.name,
+      type: p.type === 'team' ? 'sq' : 'ind',
+      color: p.color,
+      sessions: p.sessions || 0,
+      totalScore: p.totalScore || 0,
+      lastTs: p.lastPlayedAt,
+    }))
+    .sort((a, b) => b.sessions - a.sessions);
+
+  const actCounts = cloud.activityCounts || {};
+  const actRows = Object.entries(actCounts).sort((a, b) => b[1] - a[1]);
+  const maxActCount = actRows.length ? actRows[0][1] : 0;
+
+  body.innerHTML = `
+    <div class="chd-kpi-grid">
+      <div class="chd-kpi-card">
+        <div class="chd-kpi-icon">🎯</div>
+        <div class="chd-kpi-val">${quizAcc != null ? quizAcc + '%' : '—'}</div>
+        <div class="chd-kpi-lbl">Accuratezza Quiz</div>
+      </div>
+      <div class="chd-kpi-card">
+        <div class="chd-kpi-icon">👥</div>
+        <div class="chd-kpi-val">${kpi2Val}</div>
+        <div class="chd-kpi-lbl">${kpi2Lbl}</div>
+      </div>
+      <div class="chd-kpi-card">
+        <div class="chd-kpi-icon">🎮</div>
+        <div class="chd-kpi-val">${totalSessions}</div>
+        <div class="chd-kpi-lbl">Sessioni · ${escHtml(lastActivityLabel)}</div>
+      </div>
+    </div>
+
+    ${_chdBuildWeakestCard(weakest, modAccs)}
+    ${_chdBuildParticipationSection(partRows, neverPlayed)}
+    ${_chdBuildActivityBreakdown(actRows, maxActCount)}
+
+    <div class="chd-footnote">
+      <i class="ti ti-cloud-check"></i>
+      Dati aggregati su tutti i dispositivi e docenti di questa aula.
+    </div>
+  `;
+}
+
+/**
+ * _renderDashboardFromLocal — v1.0.0 (invariata, ora usata solo come
+ * fallback quando il cloud non è disponibile — offline, o RPC non
+ * ancora creata su Supabase). FONTE: db.stats / db.sessions /
+ * db.players / db.teams, già caricati localmente per l'aula attiva.
+ */
+function _renderDashboardFromLocal() {
   const body = shq('dash-body');
   if (!body) return;
 
@@ -153,17 +282,17 @@ function renderDashboard() {
     ${_chdBuildActivityBreakdown(actRows, maxActCount)}
 
     <div class="chd-footnote">
-      <i class="ti ti-info-circle"></i>
-      Calcolato su Quiz/Speed Quiz e sulle ultime ${Math.min(totalSessions, 100)} sessioni salvate su questo dispositivo per questa aula.
+      <i class="ti ti-device-desktop"></i>
+      Modalità offline: dati limitati alle ultime ${Math.min(totalSessions, 100)} sessioni salvate su questo dispositivo per questa aula.
     </div>
   `;
 }
 
 function _chdEmptyState() {
   return `<div class="chd-empty">
-    <div class="chd-empty-icon">🩺</div>
+    <div class="chd-empty-icon">🔭</div>
     <div class="chd-empty-title">Nessun dato ancora</div>
-    <div class="chd-empty-sub">Gioca almeno una sessione in questa aula per vedere la salute della classe qui.</div>
+    <div class="chd-empty-sub">Gioca almeno una sessione in questa aula per vedere la panoramica della classe qui.</div>
   </div>`;
 }
 

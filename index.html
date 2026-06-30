@@ -834,7 +834,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
   <!-- NAV: Hub solo icona -->
   <nav class="tb-nav">
     <div class="tb-hub-wrap" id="tb-hub-wrap">
-      <button class="tb-btn tb-hub-btn tb-hub-icon-only" id="tb-hub-btn" onclick="toggleHubMenu(event)" title="Classifica, Progressi, Storico, Salute Classe">
+      <button class="tb-btn tb-hub-btn tb-hub-icon-only" id="tb-hub-btn" onclick="toggleHubMenu(event)" title="Classifica, Progressi, Storico, Panoramica Classe">
         <i class="ti ti-layout-grid"></i>
       </button>
       <div class="tb-hub-menu hidden" id="tb-hub-menu">
@@ -848,7 +848,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <i class="ti ti-history"></i><span>Storico</span>
         </button>
         <button class="tb-hub-item" id="tb-dash" onclick="closeHubMenu();goTab('dashboard')">
-          <i class="ti ti-heartbeat"></i><span>Salute Classe</span>
+          <i class="ti ti-report-analytics"></i><span>Panoramica Classe</span>
         </button>
       </div>
     </div>
@@ -1334,13 +1334,15 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div>
 
 <!-- ======================================
-     SALUTE DELLA CLASSE — Dashboard aggregata docente
-     v1.0.0: vista sintetica costruita sui dati già caricati
-     localmente per l'aula attiva (db.stats / db.sessions /
-     db.players / db.teams) — nessuna nuova chiamata cloud.
+     PANORAMICA CLASSE — Dashboard aggregata docente
+     v2.0.0: vista cross-device. Legge l'overview aggregata
+     dal cloud (RPC get_classroom_overview, vedi db_adapter.js)
+     quando disponibile; fallback automatico ai dati locali
+     (db.stats / db.sessions / db.players / db.teams) se
+     offline o se la RPC non è ancora stata creata su Supabase.
 ====================================== -->
 <div id="tab-dashboard" class="screen">
-  <div style="font-size:16px;font-weight:700;margin-bottom:1rem;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Salute della classe</div>
+  <div style="font-size:16px;font-weight:700;margin-bottom:1rem;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Panoramica classe</div>
   <div id="dash-body"></div>
 </div>
 

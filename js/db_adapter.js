@@ -806,6 +806,42 @@ export async function loadStats(classId) {
   };
 }
 
+/**
+ * getClassroomOverview — v6.3.0
+ *
+ * Vista aggregata cross-device per "Panoramica classe" (dashboard.js).
+ * Legge stats_aggregate + matches + scores + players + teams tramite
+ * UNA SOLA RPC SECURITY DEFINER (get_classroom_overview), che gira sui
+ * dati dell'AULA — non sul dispositivo. Risolve il limite della v1
+ * della dashboard, che leggeva solo db.sessions locale (max 100 voci,
+ * per-dispositivo).
+ *
+ * Ritorna null se offline, se classroomId è assente, o se la RPC non
+ * è stata ancora creata su Supabase (fail-soft, stesso pattern di
+ * getEnabledModules) — dashboard.js in quel caso usa il fallback
+ * 100% locale già esistente, quindi l'app non si rompe finché la SQL
+ * sotto non viene eseguita.
+ *
+ * ── SQL DA ESEGUIRE NEL SUPABASE SQL EDITOR ──
+ * Vedi file consegnato a parte: get_classroom_overview.sql
+ * (crea la RPC + aggiunge in modo idempotente wp_correct/wp_wrong a
+ * stats_aggregate, dove abbiamo trovato che mancavano — vedi nota in
+ * quel file).
+ *
+ * @param {string} classroomId
+ * @returns {Promise<object|null>} {
+ *   stats, participation[], activityCounts{}, totalSessions,
+ *   totalPlayers, activePlayers, neverPlayedNames[], lastSessionAt
+ * }
+ */
+export async function getClassroomOverview(classroomId) {
+  if (!_online || !classroomId) return null;
+  return _sbCall(
+    () => supabase.rpc('get_classroom_overview', { p_classroom_id: classroomId }),
+    'getClassroomOverview'
+  );
+}
+
 // ════════════════════════════════════════════════════════════════════
 // loadCourseData — compatibilità drop-in col motore di gioco
 // ════════════════════════════════════════════════════════════════════
@@ -901,6 +937,7 @@ window.DB = {
   getTeacherClassrooms,
   getEnabledModules,
   setEnabledModules,
+  getClassroomOverview,
   loadPlayers,
   loadTeams,
   upsertPlayer:            (cid, p) => ensurePlayer(cid, p.name, p.color),

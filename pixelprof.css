@@ -3980,11 +3980,13 @@ body{
 
 @layer classhealth {
 /* ═══════════════════════════════════════════════════════════════════
-   PixelProf — SALUTE DELLA CLASSE (dashboard.js)
+   PixelProf — PANORAMICA CLASSE (dashboard.js)
    Dashboard aggregata per il docente: accuratezza, modulo più debole,
-   partecipazione, attività più giocate. Nuove classi (prefisso chd-),
-   nessuna collisione con layer esistenti — dichiarato per ultimo per
-   coerenza con la regola "nuova feature → nuovo layer in fondo".
+   partecipazione, attività più giocate. Nuove classi (prefisso chd-,
+   storico per "class health" — mantenuto invariato per non rompere
+   selettori esistenti), nessuna collisione con layer esistenti —
+   dichiarato per ultimo per coerenza con la regola "nuova feature →
+   nuovo layer in fondo".
    ═══════════════════════════════════════════════════════════════════ */
 
 /* ── KPI hero row ── */

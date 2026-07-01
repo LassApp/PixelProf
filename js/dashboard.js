@@ -89,6 +89,11 @@ async function renderDashboard() {
   const body = shq('dash-body');
   if (!body) return;
 
+  // Reset stato UI locale della sezione "Domande difficili" ad ogni
+  // ingresso nel tab (stesso pattern di lbType/lbAct in goTab('lb')) —
+  // evita che tab/filtro/espansione "sanguinino" da un'aula alla successiva.
+  _chdWqTab = 'problem'; _chdWqModFilter = 'all'; _chdWqExpanded = false;
+
   body.innerHTML = `<div style="text-align:center;padding:2.5rem 1rem;color:rgba(255,255,255,.3);
     font-size:12px;font-family:'Share Tech Mono',monospace;letter-spacing:.5px">
     <i class="ti ti-loader-2" style="font-size:20px;animation:spin .8s linear infinite;display:block;margin-bottom:10px"></i>
@@ -383,84 +388,187 @@ function _chdBuildActivityBreakdown(actRows, maxCount) {
 }
 
 /* ==================================================
-   DOMANDE DIFFICILI — v6.2.0
+   DOMANDE DIFFICILI — v6.3.0
    Legge db.wrongQ (campo locale per-aula) e costruisce
-   la sezione "Domande difficili" nella dashboard.
-   Ordina per tasso di errore (wrong / (wrong+right))
-   e mostra le top-10 più problematiche.
-   Un badge "recuperata ✓" appare se right > 0.
-   Bottone "Azzera" cancella db.wrongQ e aggiorna la vista.
+   la sezione "Domande difficili" nella dashboard con:
+     - 2 tab: Problematiche (right===0) / Recuperate (right>0)
+     - sotto-filtro per modulo (Tutti + CE/OE/WP con nomi estesi,
+       per non dare per scontato che il docente conosca le sigle)
+     - paginazione "mostra tutte" (default 10 righe, poi espande
+       fino al cap di 200 voci salvate in db.wrongQ)
+   Tab/filtro/espansione sono stato locale a QUESTO file
+   (_chdWq*): cambiarli non rifà mai un fetch cloud, si limita a
+   ri-renderizzare #chd-wq-section (vedi _chdWqRefresh) — il resto
+   della dashboard (KPI, partecipazione, ecc.) resta intatto.
+   resetWrongQ() usa il dialog tematizzato ppConfirmBox — stesso
+   pattern già in uso da resetLb()/resetStats()/resetHistory() —
+   al posto del confirm() nativo.
 ================================================== */
 
+const _CHD_WQ_PAGE_SIZE = 10;
+let _chdWqTab       = 'problem'; // 'problem' | 'recovered'
+let _chdWqModFilter = 'all';     // 'all' | 'CE' | 'OE' | 'WP'
+let _chdWqExpanded  = false;
+
+/** Ricostruisce e sostituisce SOLO #chd-wq-section — nessun re-fetch cloud. */
+function _chdWqRefresh() {
+  const el = shq('chd-wq-section');
+  if (!el) return;
+  el.outerHTML = _chdBuildWrongQ();
+}
+
+function chdWqSetTab(tab) {
+  _chdWqTab = tab === 'recovered' ? 'recovered' : 'problem';
+  _chdWqExpanded = false;
+  _chdWqRefresh();
+}
+
+function chdWqSetModFilter(mod) {
+  _chdWqModFilter = ['CE', 'OE', 'WP'].includes(mod) ? mod : 'all';
+  _chdWqExpanded = false;
+  _chdWqRefresh();
+}
+
+function chdWqToggleShowAll() {
+  _chdWqExpanded = !_chdWqExpanded;
+  _chdWqRefresh();
+}
+
+/** Comparatore condiviso — tasso d'errore desc, poi n. errori desc. */
+function _chdWqSort(a, b) {
+  const rateA = a.wrong / Math.max(a.wrong + a.right, 1);
+  const rateB = b.wrong / Math.max(b.wrong + b.right, 1);
+  if (rateB !== rateA) return rateB - rateA;
+  return b.wrong - a.wrong;
+}
+
+function _chdWqRowHtml(e, tab) {
+  const actIcon = _CHD_ACT_ICON[e.act] || '🎮';
+  const total   = e.wrong + e.right;
+  const errPct  = Math.round((e.wrong / Math.max(total, 1)) * 100);
+  const counts  = tab === 'recovered'
+    ? `${e.wrong} err · ${e.right} corrett${e.right === 1 ? 'a' : 'e'}`
+    : `${e.wrong} ${e.wrong === 1 ? 'errore' : 'errori'}`;
+
+  return `<div class="chd-wq-row">
+    <div class="chd-wq-header">
+      <span class="chd-wq-act-icon">${actIcon}</span>
+      ${modBadgeHTML(e.mod)}
+      <span class="chd-wq-errs">${counts}</span>
+    </div>
+    <div class="chd-wq-question">${escHtml(e.q || '—')}</div>
+    <div class="chd-wq-answer">Risposta corretta: <strong>${escHtml(e.answer || '—')}</strong></div>
+    <div class="chd-wq-bar-wrap">
+      <div class="chd-wq-bar" style="width:${errPct}%"></div>
+    </div>
+  </div>`;
+}
+
+function _chdWqEmptyHtml(tab, modFilter) {
+  const suffix = modFilter !== 'all' ? ` in ${escHtml(_CHD_MOD_LABEL[modFilter])}` : '';
+  if (tab === 'recovered') {
+    return `<div class="chd-wq-empty">
+      <div class="chd-wq-empty-icon">🔍</div>
+      <div class="chd-wq-empty-title">Nessuna domanda recuperata${suffix}</div>
+      <div class="chd-wq-empty-sub">Quando la classe risponderà correttamente a una domanda già sbagliata in passato, comparirà qui.</div>
+    </div>`;
+  }
+  return `<div class="chd-wq-empty">
+    <div class="chd-wq-empty-icon">🎉</div>
+    <div class="chd-wq-empty-title">Nessuna domanda problematica${suffix}</div>
+    <div class="chd-wq-empty-sub">Ottimo lavoro — al momento non ci sono domande in sospeso${modFilter !== 'all' ? ' per questo modulo' : ''}.</div>
+  </div>`;
+}
+
 /**
- * Costruisce l'HTML della sezione "Domande difficili".
- * Non richiede parametri — legge direttamente db.wrongQ.
+ * Costruisce l'HTML dell'intera sezione "Domande difficili"
+ * (tab + filtro modulo + lista + mostra-tutte + bottone azzera).
+ * Autonoma: legge db.wrongQ e lo stato _chdWq* correnti — richiamata
+ * sia dal render completo della dashboard sia da _chdWqRefresh().
  */
 function _chdBuildWrongQ() {
   const wq = db.wrongQ || {};
-  const entries = Object.values(wq);
+  const allEntries = Object.values(wq);
+  if (!allEntries.length) return '';
 
-  if (!entries.length) return '';
+  const problemEntries   = allEntries.filter(e => !e.right);
+  const recoveredEntries = allEntries.filter(e => e.right > 0);
+  const tab = _chdWqTab === 'recovered' ? 'recovered' : 'problem';
+  const activeTabEntries = tab === 'recovered' ? recoveredEntries : problemEntries;
 
-  // Ordina per numero di errori desc, poi per tasso di errore desc
-  const sorted = [...entries].sort((a, b) => {
-    const rateA = a.wrong / Math.max(a.wrong + a.right, 1);
-    const rateB = b.wrong / Math.max(b.wrong + b.right, 1);
-    if (rateB !== rateA) return rateB - rateA;
-    return b.wrong - a.wrong;
-  }).slice(0, 10);
+  // Conteggi per modulo calcolati sulla tab attiva — cambiano coerentemente
+  // quando si passa da Problematiche a Recuperate.
+  const modCounts = { all: activeTabEntries.length, CE: 0, OE: 0, WP: 0 };
+  activeTabEntries.forEach(e => { if (modCounts[e.mod] != null) modCounts[e.mod]++; });
 
-  const MOD_COLOR = { CE: '#00cfff', OE: '#7c6aff', WP: '#28a050' };
-  const ACT_ICON  = { quiz: '🧠', speed: '⚡', fill: '✏️' };
+  const mod = ['CE', 'OE', 'WP'].includes(_chdWqModFilter) ? _chdWqModFilter : 'all';
+  const filtered = (mod === 'all' ? activeTabEntries : activeTabEntries.filter(e => e.mod === mod))
+    .sort(_chdWqSort);
+  const totalFiltered = filtered.length;
+  const visible = _chdWqExpanded ? filtered : filtered.slice(0, _CHD_WQ_PAGE_SIZE);
 
-  const rows = sorted.map(e => {
-    const total = e.wrong + e.right;
-    const errPct = Math.round((e.wrong / Math.max(total, 1)) * 100);
-    const recovered = e.right > 0;
-    const modCol = MOD_COLOR[e.mod] || 'rgba(255,255,255,.4)';
-    const actIcon = ACT_ICON[e.act] || '🎮';
+  const listHtml = visible.length
+    ? visible.map(e => _chdWqRowHtml(e, tab)).join('')
+    : _chdWqEmptyHtml(tab, mod);
 
-    return `<div class="chd-wq-row${recovered ? ' chd-wq-recovered' : ''}">
-      <div class="chd-wq-header">
-        <span class="chd-wq-act-icon">${actIcon}</span>
-        <span class="chd-wq-mod" style="color:${modCol}">${escHtml(e.mod || '—')}</span>
-        ${recovered ? '<span class="chd-wq-badge-ok">recuperata ✓</span>' : ''}
-        <span class="chd-wq-errs">${e.wrong} ${e.wrong === 1 ? 'errore' : 'errori'}</span>
-      </div>
-      <div class="chd-wq-question">${escHtml(e.q || '—')}</div>
-      <div class="chd-wq-answer">Risposta corretta: <strong>${escHtml(e.answer || '—')}</strong></div>
-      <div class="chd-wq-bar-wrap">
-        <div class="chd-wq-bar" style="width:${errPct}%"></div>
-      </div>
-    </div>`;
-  }).join('');
+  const showAllHtml = totalFiltered > _CHD_WQ_PAGE_SIZE
+    ? `<button class="chd-wq-showall-btn" onclick="chdWqToggleShowAll()">
+         <i class="ti ti-chevron-${_chdWqExpanded ? 'up' : 'down'}"></i>
+         ${_chdWqExpanded ? 'Mostra solo le prime ' + _CHD_WQ_PAGE_SIZE : 'Mostra tutte le ' + totalFiltered + ' domande'}
+       </button>`
+    : '';
 
-  const total = entries.length;
-  const recoveredCount = entries.filter(e => e.right > 0).length;
+  const modFilterBtn = (key, label, icon) => {
+    const color = key === 'all' ? 'var(--accent)' : _CHD_MOD_COLOR[key];
+    const count = modCounts[key] ?? 0;
+    return `<button class="chd-wq-modfilter-btn${mod === key ? ' active' : ''}" style="--chd-wq-mf-color:${color}" onclick="chdWqSetModFilter('${key}')">
+      ${icon ? icon + ' ' : ''}${escHtml(label)} <span class="chd-wq-modfilter-count">${count}</span>
+    </button>`;
+  };
 
-  return `<div class="chd-section">
+  return `<div class="chd-section" id="chd-wq-section">
     <div class="chd-section-title" style="justify-content:space-between">
       <span>❓ Domande difficili</span>
       <button onclick="resetWrongQ()" class="chd-wq-reset-btn" title="Azzera storico domande sbagliate">
         <i class="ti ti-trash"></i> Azzera
       </button>
     </div>
-    <div class="chd-wq-summary">
-      <span>${total} domand${total === 1 ? 'a' : 'e'} problematic${total === 1 ? 'a' : 'he'}</span>
-      ${recoveredCount > 0 ? `<span class="chd-wq-summary-ok">${recoveredCount} recuperat${recoveredCount === 1 ? 'a' : 'e'} ✓</span>` : ''}
+
+    <div class="chd-wq-tabs">
+      <button class="chd-wq-tab chd-wq-tab-problem${tab === 'problem' ? ' active' : ''}" onclick="chdWqSetTab('problem')">
+        🔴 Problematiche <span class="chd-wq-tab-count">${problemEntries.length}</span>
+      </button>
+      <button class="chd-wq-tab chd-wq-tab-recovered${tab === 'recovered' ? ' active' : ''}" onclick="chdWqSetTab('recovered')">
+        ✅ Recuperate <span class="chd-wq-tab-count">${recoveredEntries.length}</span>
+      </button>
     </div>
-    <div class="chd-wq-list">${rows}</div>
-    ${total > 10 ? `<div class="chd-wq-more">+${total - 10} altre domande non mostrate</div>` : ''}
+
+    <div class="chd-wq-modfilter">
+      ${modFilterBtn('all', 'Tutti')}
+      ${modFilterBtn('CE', _CHD_MOD_LABEL.CE, '💻')}
+      ${modFilterBtn('OE', _CHD_MOD_LABEL.OE, '🌐')}
+      ${modFilterBtn('WP', _CHD_MOD_LABEL.WP, '📝')}
+    </div>
+
+    <div class="chd-wq-list${tab === 'recovered' ? ' chd-wq-list-recovered' : ''}">${listHtml}</div>
+    ${showAllHtml}
   </div>`;
 }
 
 /**
- * Azzera db.wrongQ e aggiorna la dashboard.
- * Esposta globalmente (chiamata da onclick inline).
+ * Azzera db.wrongQ tramite dialog tematizzato (ppConfirmBox — stesso
+ * pattern di resetLb()/resetStats()/resetHistory(), vedi renderer.js
+ * e stats.js) al posto del confirm() nativo, poi ri-renderizza la
+ * dashboard. Esposta globalmente (chiamata da onclick inline).
  */
-function resetWrongQ() {
-  if (!confirm('Azzerare lo storico delle domande sbagliate?')) return;
+async function resetWrongQ() {
+  const ok = await ppConfirmBox(
+    'Tutto lo storico delle domande sbagliate (comprese quelle già recuperate) di questa aula verrà eliminato definitivamente.',
+    { title: 'Azzerare le domande difficili?', icon: '❓', yesLabel: 'Sì, azzera tutto', danger: true }
+  );
+  if (!ok) return;
   db.wrongQ = {};
   save();
+  _chdWqTab = 'problem'; _chdWqModFilter = 'all'; _chdWqExpanded = false;
   renderDashboard();
 }

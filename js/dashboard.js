@@ -189,6 +189,7 @@ function _renderDashboardFromCloud(cloud) {
     ${_chdBuildWeakestCard(weakest, modAccs)}
     ${_chdBuildParticipationSection(partRows, neverPlayed)}
     ${_chdBuildActivityBreakdown(actRows, maxActCount)}
+    ${_chdBuildWrongQ()}
 
     <div class="chd-footnote">
       <i class="ti ti-cloud-check"></i>
@@ -280,6 +281,7 @@ function _renderDashboardFromLocal() {
     ${_chdBuildWeakestCard(weakest, modAccs)}
     ${_chdBuildParticipationSection(partRows, neverPlayed)}
     ${_chdBuildActivityBreakdown(actRows, maxActCount)}
+    ${_chdBuildWrongQ()}
 
     <div class="chd-footnote">
       <i class="ti ti-device-desktop"></i>
@@ -378,4 +380,87 @@ function _chdBuildActivityBreakdown(actRows, maxCount) {
     <div class="chd-section-title">🎮 Attività più giocate</div>
     <div class="chd-act-list">${rows}</div>
   </div>`;
+}
+
+/* ==================================================
+   DOMANDE DIFFICILI — v6.2.0
+   Legge db.wrongQ (campo locale per-aula) e costruisce
+   la sezione "Domande difficili" nella dashboard.
+   Ordina per tasso di errore (wrong / (wrong+right))
+   e mostra le top-10 più problematiche.
+   Un badge "recuperata ✓" appare se right > 0.
+   Bottone "Azzera" cancella db.wrongQ e aggiorna la vista.
+================================================== */
+
+/**
+ * Costruisce l'HTML della sezione "Domande difficili".
+ * Non richiede parametri — legge direttamente db.wrongQ.
+ */
+function _chdBuildWrongQ() {
+  const wq = db.wrongQ || {};
+  const entries = Object.values(wq);
+
+  if (!entries.length) return '';
+
+  // Ordina per numero di errori desc, poi per tasso di errore desc
+  const sorted = [...entries].sort((a, b) => {
+    const rateA = a.wrong / Math.max(a.wrong + a.right, 1);
+    const rateB = b.wrong / Math.max(b.wrong + b.right, 1);
+    if (rateB !== rateA) return rateB - rateA;
+    return b.wrong - a.wrong;
+  }).slice(0, 10);
+
+  const MOD_COLOR = { CE: '#00cfff', OE: '#7c6aff', WP: '#28a050' };
+  const ACT_ICON  = { quiz: '🧠', speed: '⚡', fill: '✏️' };
+
+  const rows = sorted.map(e => {
+    const total = e.wrong + e.right;
+    const errPct = Math.round((e.wrong / Math.max(total, 1)) * 100);
+    const recovered = e.right > 0;
+    const modCol = MOD_COLOR[e.mod] || 'rgba(255,255,255,.4)';
+    const actIcon = ACT_ICON[e.act] || '🎮';
+
+    return `<div class="chd-wq-row${recovered ? ' chd-wq-recovered' : ''}">
+      <div class="chd-wq-header">
+        <span class="chd-wq-act-icon">${actIcon}</span>
+        <span class="chd-wq-mod" style="color:${modCol}">${escHtml(e.mod || '—')}</span>
+        ${recovered ? '<span class="chd-wq-badge-ok">recuperata ✓</span>' : ''}
+        <span class="chd-wq-errs">${e.wrong} ${e.wrong === 1 ? 'errore' : 'errori'}</span>
+      </div>
+      <div class="chd-wq-question">${escHtml(e.q || '—')}</div>
+      <div class="chd-wq-answer">Risposta corretta: <strong>${escHtml(e.answer || '—')}</strong></div>
+      <div class="chd-wq-bar-wrap">
+        <div class="chd-wq-bar" style="width:${errPct}%"></div>
+      </div>
+    </div>`;
+  }).join('');
+
+  const total = entries.length;
+  const recoveredCount = entries.filter(e => e.right > 0).length;
+
+  return `<div class="chd-section">
+    <div class="chd-section-title" style="justify-content:space-between">
+      <span>❓ Domande difficili</span>
+      <button onclick="resetWrongQ()" class="chd-wq-reset-btn" title="Azzera storico domande sbagliate">
+        <i class="ti ti-trash"></i> Azzera
+      </button>
+    </div>
+    <div class="chd-wq-summary">
+      <span>${total} domand${total === 1 ? 'a' : 'e'} problematic${total === 1 ? 'a' : 'he'}</span>
+      ${recoveredCount > 0 ? `<span class="chd-wq-summary-ok">${recoveredCount} recuperat${recoveredCount === 1 ? 'a' : 'e'} ✓</span>` : ''}
+    </div>
+    <div class="chd-wq-list">${rows}</div>
+    ${total > 10 ? `<div class="chd-wq-more">+${total - 10} altre domande non mostrate</div>` : ''}
+  </div>`;
+}
+
+/**
+ * Azzera db.wrongQ e aggiorna la dashboard.
+ * Esposta globalmente (chiamata da onclick inline).
+ */
+function resetWrongQ() {
+  if (!confirm('Azzerare lo storico delle domande sbagliate?')) return;
+  db.wrongQ = {};
+  save();
+  renderDashboard();
 }

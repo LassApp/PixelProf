@@ -4091,15 +4091,64 @@ body{
 }
 }
 
-/* ── Domande difficili ── */
+/* ── Domande difficili — v6.3.0: tab Problematiche/Recuperate +
+   sotto-filtro modulo (nomi estesi) + mostra-tutte.
+   .chd-wq-summary/.chd-wq-badge-ok/.chd-wq-mod rimosse: l'informazione
+   che portavano (quante recuperate, quale modulo) è ora sui tab-count
+   e sulla chip .mod-badge riusata da renderer.js (stessa classe già
+   usata in Classifica — zero nuovo CSS per il badge modulo). ── */
 @layer classhealth {
-.chd-wq-summary{
-  display:flex;align-items:center;gap:10px;
-  font-size:11px;color:rgba(255,255,255,.4);
-  font-family:'Share Tech Mono',monospace;letter-spacing:.3px;
-  margin-bottom:10px;
+
+/* Tabs Problematiche / Recuperate — stesso pattern di .tm-tabs/.tm-tab
+   (Gestione Docenti), qui con accento cromatico rosso/verde coerente
+   col resto della sezione. */
+.chd-wq-tabs{
+  display:flex;gap:4px;margin-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,.08);
 }
-.chd-wq-summary-ok{color:#00ff96;}
+.chd-wq-tab{
+  display:flex;align-items:center;gap:6px;
+  padding:8px 14px;border:none;background:none;cursor:pointer;
+  font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.2px;
+  color:rgba(255,255,255,.4);border-bottom:2px solid transparent;
+  transition:color .18s,border-color .18s;
+}
+.chd-wq-tab:hover{color:rgba(255,255,255,.75);}
+.chd-wq-tab-problem.active{color:#ff6b85;border-bottom-color:#ff4d6d;}
+.chd-wq-tab-recovered.active{color:#00ff96;border-bottom-color:#00ff96;}
+.chd-wq-tab-count{
+  font-size:9px;font-weight:700;padding:1px 6px;border-radius:20px;
+  background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);
+  font-family:'Share Tech Mono',monospace;transition:all .18s;
+}
+.chd-wq-tab.active .chd-wq-tab-count{background:rgba(255,255,255,.14);color:inherit;}
+
+/* Sotto-filtro modulo — chip colorate, nomi estesi (un docente non
+   deve sapere a memoria cosa significano le sigle CE/OE/WP). Colore
+   per modulo allineato a _CHD_MOD_COLOR, la stessa palette già usata
+   sopra in questa dashboard per "Modulo più debole". */
+.chd-wq-modfilter{
+  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;
+}
+.chd-wq-modfilter-btn{
+  --chd-wq-mf-color:var(--accent);
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 12px;border-radius:20px;
+  border:1px solid var(--border-mid);background:var(--surface-1);
+  color:rgba(255,255,255,.5);font-size:11px;font-weight:600;
+  cursor:pointer;font-family:inherit;transition:all var(--transition-fast);
+}
+.chd-wq-modfilter-btn:hover{border-color:var(--chd-wq-mf-color);color:var(--chd-wq-mf-color);}
+.chd-wq-modfilter-btn.active{
+  background:color-mix(in srgb, var(--chd-wq-mf-color) 14%, transparent);
+  border-color:var(--chd-wq-mf-color);color:var(--chd-wq-mf-color);
+}
+.chd-wq-modfilter-count{
+  font-size:9px;font-weight:700;padding:0 5px;border-radius:20px;
+  background:rgba(255,255,255,.1);font-family:'Share Tech Mono',monospace;
+}
+.chd-wq-modfilter-btn.active .chd-wq-modfilter-count{background:color-mix(in srgb, var(--chd-wq-mf-color) 25%, transparent);}
+
 .chd-wq-list{display:flex;flex-direction:column;gap:8px;}
 .chd-wq-row{
   background:rgba(255,255,255,.03);
@@ -4114,30 +4163,23 @@ body{
   background:#ff4d6d;border-radius:2px 0 0 2px;
 }
 .chd-wq-row:hover{background:rgba(255,60,80,.04);border-color:rgba(255,60,80,.32);}
-.chd-wq-row.chd-wq-recovered{
-  border-color:rgba(0,255,150,.2);
-}
-.chd-wq-row.chd-wq-recovered::before{background:#00ff96;}
-.chd-wq-row.chd-wq-recovered:hover{background:rgba(0,255,150,.03);border-color:rgba(0,255,150,.35);}
+/* Modifier a livello di lista (non più per-riga): tutte le righe della
+   tab "Recuperate" condividono l'accento verde — un'unica sostituzione
+   di outerHTML su #chd-wq-section aggiorna tab+filtro+lista insieme. */
+.chd-wq-list-recovered .chd-wq-row{border-color:rgba(0,255,150,.2);}
+.chd-wq-list-recovered .chd-wq-row::before{background:#00ff96;}
+.chd-wq-list-recovered .chd-wq-row:hover{background:rgba(0,255,150,.03);border-color:rgba(0,255,150,.35);}
+.chd-wq-list-recovered .chd-wq-bar{background:linear-gradient(90deg,#00ff96,#00cfff);}
 .chd-wq-header{
   display:flex;align-items:center;gap:7px;margin-bottom:6px;flex-wrap:wrap;
 }
 .chd-wq-act-icon{font-size:13px;flex-shrink:0;}
-.chd-wq-mod{
-  font-size:9px;font-weight:700;text-transform:uppercase;
-  letter-spacing:.8px;font-family:'Share Tech Mono',monospace;
-}
-.chd-wq-badge-ok{
-  font-size:9px;font-weight:700;letter-spacing:.3px;
-  padding:1px 7px;border-radius:20px;
-  background:rgba(0,255,150,.1);border:1px solid rgba(0,255,150,.3);color:#00ff96;
-  flex-shrink:0;
-}
 .chd-wq-errs{
   margin-left:auto;font-size:10px;font-weight:700;
   color:rgba(255,80,80,.8);font-family:'Share Tech Mono',monospace;
   flex-shrink:0;
 }
+.chd-wq-list-recovered .chd-wq-errs{color:rgba(0,255,150,.8);}
 .chd-wq-question{
   font-size:13px;font-weight:500;color:rgba(255,255,255,.8);
   line-height:1.45;margin-bottom:4px;
@@ -4148,7 +4190,16 @@ body{
 .chd-wq-answer strong{color:rgba(0,255,200,.75);}
 .chd-wq-bar-wrap{height:3px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden;}
 .chd-wq-bar{height:100%;border-radius:2px;background:linear-gradient(90deg,#ff4d6d,#ff8080);}
-.chd-wq-row.chd-wq-recovered .chd-wq-bar{background:linear-gradient(90deg,#00ff96,#00cfff);}
+
+/* Stato vuoto per tab/filtro — stesso linguaggio visivo di .lb-empty/.chd-empty */
+.chd-wq-empty{
+  text-align:center;padding:2rem 1rem;
+  border:1px dashed rgba(255,255,255,.08);border-radius:var(--radius-md);
+}
+.chd-wq-empty-icon{font-size:30px;margin-bottom:10px;opacity:.6;}
+.chd-wq-empty-title{font-size:13px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:4px;}
+.chd-wq-empty-sub{font-size:11px;color:rgba(255,255,255,.25);line-height:1.5;max-width:320px;margin:0 auto;}
+
 .chd-wq-reset-btn{
   display:inline-flex;align-items:center;gap:4px;
   padding:4px 10px;border-radius:7px;
@@ -4157,13 +4208,22 @@ body{
   transition:all var(--transition-fast);font-weight:600;
 }
 .chd-wq-reset-btn:hover{background:rgba(255,80,80,.14);color:#ff6b6b;border-color:rgba(255,80,80,.4);}
-.chd-wq-more{
-  font-size:10px;color:rgba(255,255,255,.25);
-  font-family:'Share Tech Mono',monospace;text-align:center;
-  margin-top:8px;letter-spacing:.3px;
+
+/* Mostra tutte / mostra solo le prime N — sostituisce la vecchia
+   .chd-wq-more statica con un vero toggle cliccabile. */
+.chd-wq-showall-btn{
+  display:flex;align-items:center;justify-content:center;gap:5px;
+  width:100%;margin-top:10px;padding:8px;border-radius:8px;
+  background:rgba(255,255,255,.03);border:1px solid var(--border-subtle);
+  color:rgba(255,255,255,.5);font-size:11px;font-weight:600;cursor:pointer;
+  font-family:inherit;transition:all var(--transition-fast);
 }
+.chd-wq-showall-btn:hover{background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent);}
+.chd-wq-showall-btn i{font-size:13px;}
+
 @media(max-width:420px){
   .chd-wq-question{font-size:12px;}
   .chd-wq-errs{margin-left:0;}
+  .chd-wq-modfilter-btn{padding:5px 9px;font-size:10px;}
 }
 }

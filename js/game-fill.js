@@ -55,6 +55,7 @@ function checkFill(){
     fillTotalScore+=scoreEarned;
     fillAnswerLog.push({questionId:'f'+s.idx,correct:true,streak:fillStreak,streakBonus,scoreEarned});
     s.score++;
+    _trackRightQ(q.t, q.b);
     const bonusLine=streakBonus>0
       ?`<div style="font-size:11px;color:rgba(0,255,200,.75);margin-top:3px">🔥 +${streakBonus} streak ×${fillStreak} &nbsp;<strong>+${scoreEarned} pt totali</strong></div>`
       :`<div style="font-size:11px;color:rgba(0,255,200,.55);margin-top:3px">+${scoreEarned} pt</div>`;
@@ -62,6 +63,7 @@ function checkFill(){
   }else{
     fillStreak=0;
     fillAnswerLog.push({questionId:'f'+s.idx,correct:false,streak:0,streakBonus:0,scoreEarned:0});
+    _trackWrongQ(q.t, q.b, sMod, 'fill');
     sh('ffb').innerHTML=`<div class="fb ko" style="margin-top:6px">✗ Era: ${q.b}</div>`;
   }
   setTimeout(()=>{s.idx++;renderFill(sh('g-area'));},1000);

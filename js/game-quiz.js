@@ -92,8 +92,10 @@ function ansQ(idx){
           pill.addEventListener('animationend',()=>pill.classList.remove('score-bump'),{once:true});
         }
       }
+      _trackRightQ(q.q, q.opts[q.a]);
     }else{
       qAnswerLog.push({questionId:'q'+qIdx,correct:false,responseTimeMs,streak:0,speedBonus:0,streakBonus:0,scoreEarned:0});
+      _trackWrongQ(q.q, q.opts[q.a], getQuestionModule(q), 'speed');
     }
     const mod=getQuestionModule(q);
     db.stats.tot++;if(ok){db.stats.cor++;db.stats.byMod[mod].c++;}else db.stats.byMod[mod].w++;
@@ -118,6 +120,7 @@ function ansQ(idx){
     qTotalStreakBonus+=streakBonus;
     qAnswerLog.push({questionId:'q'+qIdx,correct:true,responseTimeMs,streak:qStreak,speedBonus,streakBonus,scoreEarned});
     checkOvertake();
+    _trackRightQ(q.q, q.opts[q.a]);
     // Feedback inline con dettaglio bonus
     const bonusBits=[];
     if(speedBonus>0)  bonusBits.push(`⚡ +${speedBonus} velocità`);
@@ -129,6 +132,7 @@ function ansQ(idx){
   }else{
     qStreak=0;
     qAnswerLog.push({questionId:'q'+qIdx,correct:false,responseTimeMs,streak:0,speedBonus:0,streakBonus:0,scoreEarned:0});
+    _trackWrongQ(q.q, q.opts[q.a], getQuestionModule(q), 'quiz');
     sh('qz-fb').innerHTML=`<div class="fb ko">✗ Sbagliato. ${q.exp}</div>`;
   }
 
@@ -293,4 +297,3 @@ PauseUIRegistry.register('speed', {
     _setSpeedPauseLock(false);
   },
 });
-

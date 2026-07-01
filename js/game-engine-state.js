@@ -289,7 +289,7 @@ function deleteCourseData(id){
 }
 
 function makeEmptyDb(){
-  return{players:[],teams:[],lb2:makeEmptyLb2(),sessions:[],stats:{tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}}}};
+  return{players:[],teams:[],lb2:makeEmptyLb2(),sessions:[],stats:{tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}}},wrongQ:{}};
 }
 
 
@@ -336,8 +336,75 @@ function migrateDb(p){
   if(!p.players)p.players=[];
   if(!p.teams)p.teams=[];
   if(!p.sessions)p.sessions=[];
+  if(!p.wrongQ)p.wrongQ={};
   return p;
-}/* ==================================================
+}
+
+/* ==================================================
+   WRONG-Q TRACKER — v6.2.0
+   Memorizza per ogni domanda sbagliata: quante volte è
+   stata sbagliata, quante volte è stata risposta
+   correttamente dopo, il testo della domanda, la
+   risposta corretta e il modulo. Struttura:
+     db.wrongQ[questionKey] = {
+       q:      testo domanda,
+       answer: risposta corretta,
+       mod:    'CE'|'OE'|'WP',
+       act:    'quiz'|'speed'|'fill',
+       wrong:  N (contatore errori),
+       right:  N (contatore risposte giuste successive),
+       lastTs: ISO timestamp ultimo sbaglio
+     }
+   questionKey: deterministic string basata su q+answer
+   per essere stabile anche se l'indice cambia.
+   Cap: max 200 voci (le più recenti per lastTs).
+================================================== */
+
+/**
+ * Calcola una chiave stabile per una domanda.
+ * Usa i primi 60 char del testo + answer, normalizzati.
+ */
+function _wrongQKey(qText, answer) {
+  const t = String(qText || '').trim().toLowerCase().slice(0, 60);
+  const a = String(answer || '').trim().toLowerCase().slice(0, 30);
+  return (t + '||' + a).replace(/\s+/g, ' ');
+}
+
+/**
+ * Registra una risposta SBAGLIATA su db.wrongQ.
+ * @param {string} qText     Testo della domanda
+ * @param {string} answer    Risposta corretta
+ * @param {string} mod       Modulo ('CE'|'OE'|'WP')
+ * @param {string} act       Attività ('quiz'|'speed'|'fill')
+ */
+function _trackWrongQ(qText, answer, mod, act) {
+  if (!db.wrongQ) db.wrongQ = {};
+  const key = _wrongQKey(qText, answer);
+  if (!db.wrongQ[key]) {
+    db.wrongQ[key] = { q: qText, answer, mod, act, wrong: 0, right: 0, lastTs: null };
+  }
+  db.wrongQ[key].wrong++;
+  db.wrongQ[key].lastTs = new Date().toISOString();
+  // Cap a 200 voci — elimina quelle con lastTs più vecchio
+  const keys = Object.keys(db.wrongQ);
+  if (keys.length > 200) {
+    const sorted = keys.sort((a, b) => (db.wrongQ[a].lastTs || '') < (db.wrongQ[b].lastTs || '') ? -1 : 1);
+    for (let i = 0; i < keys.length - 200; i++) delete db.wrongQ[sorted[i]];
+  }
+}
+
+/**
+ * Registra una risposta CORRETTA su db.wrongQ (se la domanda
+ * era già stata sbagliata in precedenza). Incrementa il
+ * contatore "right" come indicatore di recupero.
+ */
+function _trackRightQ(qText, answer) {
+  if (!db.wrongQ) return;
+  const key = _wrongQKey(qText, answer);
+  if (db.wrongQ[key]) db.wrongQ[key].right++;
+}
+
+/* ==================================================
    GAME LIFECYCLE  v10 centralized state machine
    States: IDLE | PLAYING | PAUSED | FINISHED
 ================================================== */

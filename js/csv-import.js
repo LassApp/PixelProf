@@ -168,7 +168,6 @@ function _csvShowPreview(names, dupCount){
 
   const _cancel = () => _ppCloseActiveModal();
   cancelBtn.addEventListener('click', _cancel);
-  overlay.addEventListener('mousedown', e => { if(e.target===overlay) _cancel(); });
   overlay._onKey = e => { if(e.key==='Escape'){ e.preventDefault(); _cancel(); } };
   document.addEventListener('keydown', overlay._onKey);
 

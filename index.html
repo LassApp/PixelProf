@@ -1141,6 +1141,11 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
               <input id="ind-inp" placeholder="Nome nuovo giocatore..." onkeydown="if(event.key==='Enter')addInd()"/>
               <button class="btn btn-neon" onclick="addInd()"><i class="ti ti-plus"></i></button>
             </div>
+            <div class="divider"></div>
+            <button class="csv-import-trigger-btn" type="button" onclick="triggerCsvImport()" title="Un nominativo per riga, oppure Cognome,Nome per riga (CSV a 2 colonne). Eventuali colonne extra (classe, data, ecc.) vengono ignorate.">
+              <i class="ti ti-upload"></i> Importa elenco studenti da CSV/TXT
+            </button>
+            <input type="file" id="csv-import-input" accept=".csv,.txt,text/csv,text/plain" style="display:none" onchange="handleCsvFileSelect(event)"/>
           </div>
           <div id="ps-sq" class="hidden">
             <div class="slbl" style="margin-bottom:8px">Squadre salvate</div>
@@ -1361,5 +1366,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 <script src="js/game-fill.js"></script>
 <script src="js/courses.js"></script>
 <script src="js/app.js"></script>
+<script src="js/csv-import.js"></script>
 </body>
 </html>

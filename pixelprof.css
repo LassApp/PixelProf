@@ -45,7 +45,7 @@
        (mostra/nascondi, lock di pausa, ecc.) → dentro @layer stato,
        con !important (qui è l'unico posto dove serve ancora).
    ═══════════════════════════════════════════════════════════════════ */
-@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth;
+@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport;
 
 @layer base {
 /* ===============================================
@@ -4226,4 +4226,75 @@ body{
   .chd-wq-errs{margin-left:0;}
   .chd-wq-modfilter-btn{padding:5px 9px;font-size:10px;}
 }
+}
+
+@layer csvimport {
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf — IMPORT GIOCATORI DA CSV (csv-import.js)
+   Pulsante trigger in #ps-ind + modal di anteprima pre-conferma.
+   Il modal riusa la struttura .pp-generic-overlay/.pp-generic-box
+   (game-engine-state.js — stesso sistema di ppAlert/ppConfirmBox):
+   nessun nuovo overlay/animazione da mantenere, solo classi per il
+   contenuto interno. Nuove classi, nessuna collisione con layer
+   esistenti — dichiarato per ultimo per coerenza con la regola
+   "nuova feature → nuovo layer in fondo" (vedi intestazione file).
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* Pulsante trigger — stile "dropzone" tratteggiato, secondario
+   rispetto al pulsante neon pieno di aggiunta manuale sopra. */
+.csv-import-trigger-btn{
+  display:flex;align-items:center;justify-content:center;gap:7px;
+  width:100%;padding:9px;
+  border-radius:var(--radius-sm);
+  border:1px dashed rgba(0,255,200,.28);
+  background:rgba(0,255,200,.04);
+  color:rgba(0,255,200,.75);
+  font-size:12px;font-weight:600;font-family:inherit;
+  cursor:pointer;transition:all var(--transition-fast);
+}
+.csv-import-trigger-btn:hover{
+  background:rgba(0,255,200,.09);
+  border-color:rgba(0,255,200,.5);
+  color:var(--accent);
+}
+.csv-import-trigger-btn i{font-size:15px}
+
+/* Nota duplicati esclusi automaticamente — dentro il modal anteprima */
+.csv-import-dupnote{
+  display:flex;align-items:flex-start;gap:6px;
+  font-size:11px;color:rgba(255,180,0,.85);line-height:1.5;
+  background:rgba(255,180,0,.07);border:1px solid rgba(255,180,0,.2);
+  border-radius:8px;padding:8px 10px;margin-bottom:12px;text-align:left;
+}
+.csv-import-dupnote i{font-size:13px;flex-shrink:0;margin-top:1px}
+
+/* Elenco scrollabile dei nominativi da importare — righe rimovibili */
+.csv-import-list{
+  max-height:220px;overflow-y:auto;
+  border:1px solid var(--border-subtle);border-radius:var(--radius-sm);
+  margin-bottom:1.1rem;text-align:left;
+  background:rgba(255,255,255,.02);
+}
+.csv-import-row{
+  display:flex;align-items:center;justify-content:space-between;gap:8px;
+  padding:7px 10px;font-size:12px;color:rgba(255,255,255,.8);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.csv-import-row:last-child{border-bottom:none}
+.csv-import-row-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.csv-import-row-del{
+  flex-shrink:0;background:none;border:none;cursor:pointer;
+  color:rgba(255,255,255,.25);font-size:13px;padding:2px 4px;line-height:1;
+  transition:color var(--transition-fast);
+}
+.csv-import-row-del:hover{color:#ff6b6b}
+.csv-import-empty-list{
+  padding:1.5rem 1rem;text-align:center;
+  font-size:11px;color:rgba(255,255,255,.25);
+}
+
+/* Stato disabilitato per i pulsanti del modal generico — non esisteva
+   ancora nessuna regola per .pp-generic-btn:disabled (puro additivo,
+   nessun rischio di conflitto con ppAlert/ppConfirmBox/ppPromptBox). */
+.pp-generic-btn:disabled{opacity:.35;cursor:default;pointer-events:none;}
 }

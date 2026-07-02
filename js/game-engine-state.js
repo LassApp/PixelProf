@@ -405,6 +405,102 @@ function _trackRightQ(qText, answer) {
 }
 
 /* ==================================================
+   SPACED REPETITION LEGGERA — v6.4.0
+   Sostituisce il puro shuffle() con uno shuffle PESATO nei
+   punti in cui viene costruito il pool di domande per Quiz,
+   Speed Quiz e Completa la frase — le 3 attività che già
+   alimentano db.wrongQ (vedi tracker sopra). Le domande
+   sbagliate di recente e non ancora "recuperate" hanno una
+   probabilità più alta di comparire prima / di essere incluse
+   quando il pool viene troncato a N domande — MAI la certezza,
+   e le altre domande non vengono mai escluse.
+
+   Nessuna nuova dipendenza cloud: legge lo stesso db.wrongQ
+   già popolato localmente da _trackWrongQ/_trackRightQ — lo
+   stesso dataset già mostrato in "Domande difficili" nella
+   Panoramica Classe.
+
+   Se db.wrongQ è vuoto (aula mai giocata) il peso di ogni
+   domanda è 1 per tutte → weightedShuffle degenera matematicamente
+   in uno shuffle uniforme puro, identico al comportamento
+   precedente: zero rischio finché non esiste storico.
+
+   NON applicato a: Abbina/Memory (nessun concetto di "risposta
+   sbagliata" tracciato), banca parole di Completa la frase
+   (solo l'ordine delle opzioni mostrate, non la domanda), e allo
+   spareggio a squadre (mantenuto pure-random per non introdurre
+   la percezione di uno svantaggio in un momento decisivo).
+================================================== */
+
+/** Boost massimo di peso per una domanda sbagliata di recente e
+ *  mai recuperata, rispetto al peso baseline 1. Tenuto "leggero"
+ *  per design (roadmap: "senza stravolgere nulla"). Con boost=2 il
+ *  peso massimo è 3 — una domanda così è ~3× più probabile di una
+ *  mai sbagliata, ma non garantita. Regolabile in futuro. */
+const _SR_MAX_BOOST = 2;
+/** Emivita in giorni: dopo questo tempo dall'ultimo errore il
+ *  boost residuo è dimezzato (cadenza tipica di un'aula scolastica). */
+const _SR_HALFLIFE_DAYS = 14;
+
+/**
+ * Calcola il peso "spaced repetition" di una domanda in base allo
+ * storico db.wrongQ dell'aula attiva.
+ * @param {string} qText   Testo domanda/frase
+ * @param {string} answer  Risposta corretta
+ * @returns {number} peso >= 1 (1 = nessun boost, mai sbagliata o già recuperata da tempo)
+ */
+function _srWeight(qText, answer) {
+  const wq = db && db.wrongQ;
+  if (!wq) return 1;
+  const entry = wq[_wrongQKey(qText, answer)];
+  if (!entry || !entry.wrong) return 1;
+
+  // Quanto è ancora "irrisolta": 1 = mai risposta bene dopo l'errore,
+  // scende verso 0 man mano che right cresce rispetto a wrong.
+  const unresolved = entry.right > 0
+    ? entry.wrong / (entry.wrong + entry.right)
+    : 1;
+
+  // Decadimento esponenziale sui giorni dall'ultimo errore.
+  let recency = 1;
+  if (entry.lastTs) {
+    const days = (Date.now() - new Date(entry.lastTs).getTime()) / 86400000;
+    recency = Math.pow(0.5, Math.max(days, 0) / _SR_HALFLIFE_DAYS);
+  }
+
+  return 1 + _SR_MAX_BOOST * unresolved * recency;
+}
+
+/**
+ * Shuffle pesato — weighted random permutation (algoritmo A-Res,
+ * Efraimidis & Spirakis): stessa imprevedibilità di shuffle(), ma
+ * gli elementi con peso più alto hanno più probabilità (mai
+ * certezza) di finire in cima. Se keyFn restituisce sempre 1,
+ * degenera matematicamente in uno shuffle uniforme puro.
+ * @param {Array}    arr
+ * @param {function} weightFn  arr[i] → peso numerico >= 0
+ */
+function _weightedShuffle(arr, weightFn) {
+  return arr
+    .map(item => ({ item, k: Math.pow(Math.random(), 1 / Math.max(weightFn(item), 1e-4)) }))
+    .sort((a, b) => b.k - a.k)
+    .map(o => o.item);
+}
+
+/** Weighted shuffle specializzato per il pool Quiz/Speed Quiz
+ *  (voci { q, opts, a, ... }) — usa lo stesso testo+risposta con
+ *  cui _trackWrongQ/_trackRightQ scrivono in db.wrongQ. */
+function _weightedShuffleQuizPool(pool) {
+  return _weightedShuffle(pool, q => _srWeight(q.q, q.opts && q.opts[q.a]));
+}
+
+/** Weighted shuffle specializzato per il pool Completa la frase
+ *  (voci { t, b, bank }). */
+function _weightedShuffleFillPool(pool) {
+  return _weightedShuffle(pool, q => _srWeight(q.t, q.b));
+}
+
+/* ==================================================
    GAME LIFECYCLE  v10 centralized state machine
    States: IDLE | PLAYING | PAUSED | FINISHED
 ================================================== */
@@ -1697,7 +1793,7 @@ async function launch(){
       // Per quiz/speed: shuffle + slicing + ogni domanda marcata con un indice univoco
       // per il tracking anti-duplicati tra turni squadra
       if(rawPool!==null){
-        let frozenPool=shuffle(rawPool.map((q,i)=>({...q,_uid:i})));
+        let frozenPool=_weightedShuffleQuizPool(rawPool.map((q,i)=>({...q,_uid:i})));
         if(act==='speed'){const n=sN>0?sN:10;frozenPool=frozenPool.slice(0,Math.min(n,frozenPool.length));}
         else if(sN>0){frozenPool=frozenPool.slice(0,Math.min(sN,frozenPool.length));}
         matchState.frozenPool=frozenPool;
@@ -1740,7 +1836,7 @@ async function launch(){
     }
     gsSet(GS.PLAYING);
     gameType=act;
-    let pool=shuffle(rawPool);
+    let pool=_weightedShuffleQuizPool(rawPool);
     if(act==='speed'){const n=sN>0?sN:10;pool=pool.slice(0,Math.min(n,pool.length));}
     else if(sN>0){pool=pool.slice(0,Math.min(sN,pool.length));}
     qPool=pool;qIdx=0;qAnswered=false;qStart=Date.now();
@@ -1825,7 +1921,7 @@ function _startTeamTurn(){
     // Pool completamente esaurito  reshuffle controllato e reset tracking
     console.warn('[PixelProf] Pool esaurito — reshuffle controllato per nuova squadra');
     ms.usedQIds=new Set();
-    const reshuffled=shuffle([...(ms.frozenPool||[])]);
+    const reshuffled=_weightedShuffleQuizPool([...(ms.frozenPool||[])]);
     ms.frozenPool=reshuffled;
   }
 

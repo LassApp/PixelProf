@@ -19,7 +19,7 @@ async function startFill(cont,mod){
     showCompletaFraseError('Impossibile caricare il gioco Completa la frase. Riprova o cambia modulo.');
     return;
   }
-  fillState={qs:shuffle([...src]),idx:0,score:0,mod};renderFill(cont);
+  fillState={qs:_weightedShuffleFillPool([...src]),idx:0,score:0,mod};renderFill(cont);
 }
 
 function renderFill(cont){

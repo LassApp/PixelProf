@@ -289,7 +289,7 @@ function deleteCourseData(id){
 }
 
 function makeEmptyDb(){
-  return{players:[],teams:[],lb2:makeEmptyLb2(),sessions:[],stats:{tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}}},wrongQ:{}};
+  return{players:[],teams:[],lb2:makeEmptyLb2(),sessions:[],stats:{tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}}},wrongQ:{},badges:{unlocked:{}}};
 }
 
 
@@ -337,6 +337,8 @@ function migrateDb(p){
   if(!p.teams)p.teams=[];
   if(!p.sessions)p.sessions=[];
   if(!p.wrongQ)p.wrongQ={};
+  if(!p.badges)p.badges={unlocked:{}};
+  if(!p.badges.unlocked)p.badges.unlocked={};
   return p;
 }
 
@@ -815,7 +817,7 @@ function shq(id){return document.getElementById(id);}
 function escHtml(s){const d=document.createElement('div');d.appendChild(document.createTextNode(String(s)));return d.innerHTML;}
 function escAttr(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
-function setTb(active){['tb-home','tb-lb','tb-st','tb-hist','tb-dash'].forEach(id=>sh(id).classList.remove('active'));if(active)sh(active).classList.add('active');}
+function setTb(active){['tb-home','tb-lb','tb-st','tb-hist','tb-dash','tb-badges'].forEach(id=>sh(id).classList.remove('active'));if(active)sh(active).classList.add('active');}
 function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));sh(id).classList.add('active');}
 
 
@@ -1248,13 +1250,14 @@ function goTab(t){
 }
 function _doGoTab(t){
   resetSessionState();
-  const tbMap={lb:'tb-lb',stats:'tb-st',hist:'tb-hist',dashboard:'tb-dash'};
+  const tbMap={lb:'tb-lb',stats:'tb-st',hist:'tb-hist',dashboard:'tb-dash',badges:'tb-badges'};
   setTb(tbMap[t]||null);
   showScreen('tab-'+t);
   if(t==='lb'){lbType=null;lbAct=null;lbShowStep('type');}
   if(t==='stats')renderStats();
   if(t==='hist')renderHistory();
   if(t==='dashboard')renderDashboard();
+  if(t==='badges')renderBadges();
 }
 
 function goStep(s){
@@ -2216,23 +2219,29 @@ function saveLbEntry(player, pts, act, mod){
 }
 
 /* Persiste la sessione completa  usata alla fine di ogni partita.
-   Struttura: { course, game, mode, teams[], timestamp }
+   Struttura: { course, game, mode, teams[], timestamp, ...extra }
    Salvata in db.sessions (array append-only, max 100 voci).
-   v4.0.6: incorpora hook_saveSession cloud (ex override in app.js). */
-function saveSessionResult(act, mod){
+   v4.0.6: incorpora hook_saveSession cloud (ex override in app.js).
+   v6.5.0: parametro opzionale `extra` — oggetto con campi aggiuntivi
+   (bestStreak, maxCombo, perfectRun) usati dal sistema Traguardi per
+   sbloccare badge legati a streak/combo/sessioni perfette senza dover
+   ricostruirli a posteriori dal solo punteggio finale. Retrocompatibile:
+   tutte le chiamate esistenti con 2 argomenti continuano a funzionare
+   invariate (extra=={} → nessun campo aggiuntivo scritto). */
+function saveSessionResult(act, mod, extra){
   if(!db.sessions)db.sessions=[];
   // In modalit squadre usa il quadro completo del matchState
   const teamsSnapshot=sMode==='sq'&&matchState.teams.length
     ?matchState.teams.map(t=>({name:t.name,color:t.color,score:matchState.scores[t.name]||0}))
     :players.map(p=>({name:p.name,color:p.color,score:qScores[p.name]||0}));
-  const entry={
+  const entry=Object.assign({
     course: activeCourseId||null,
     game:   act,
     mod:    mod,
     mode:   sMode,
     teams:  teamsSnapshot,
     timestamp: new Date().toISOString(),
-  };
+  }, extra||{});
   db.sessions.push(entry);
   if(db.sessions.length>100)db.sessions=db.sessions.slice(-100);
   // Cloud hook — fire-and-forget
@@ -2242,6 +2251,9 @@ function saveSessionResult(act, mod){
       :players.map(p=>({name:p.name,color:p.color,score:qScores[p.name]||0,type:'ind'}));
     window.hook_saveSession(act,mod,sMode,participants,activeCourseId,qPool.length||null);
   }
+  // Traguardi — v6.5.0: verifica se questa sessione sblocca nuovi badge.
+  // Guard difensivo: badges.js potrebbe non essere ancora caricato.
+  if(typeof checkAndShowNewBadges==='function') checkAndShowNewBadges();
 }
 
 /* ==================================================

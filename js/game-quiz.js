@@ -71,6 +71,7 @@ function ansQ(idx){
   qAnswered=true;
   const responseTimeMs=Date.now()-qQStart;
   const q=qPool[qIdx];const ok=idx===q.a;
+  if(typeof AudioManager!=='undefined')AudioManager.play(ok?'correct':'wrong');
   document.querySelectorAll('.opt').forEach((b,i)=>{b.disabled=true;if(i===q.a)b.classList.add('correct');else if(i===idx)b.classList.add('wrong');});
   const ap=players[0]; // sempre il giocatore/squadra del turno corrente
 
@@ -162,14 +163,16 @@ function endQuiz(){
 
   // -- MODALIT INDIVIDUALE --
   const tot=qPool.length;const rank=getRank();const winner=rank[0];const top=qScores[winner]||0;
+  const correctCount=qAnswerLog.filter(l=>l.correct).length;
   players.forEach(p=>{
     const pts=qScores[p.name]||0;
     saveLbEntry(p,pts,sAct,sMod);
   });
-  saveSessionResult(sAct,sMod);
+  // v6.5.0: bestStreak/perfectRun alimentano i badge "Streak Leggendaria" e "Quiz Perfetto"
+  // (perfectRun richiede almeno 5 domande per non banalizzare il traguardo)
+  saveSessionResult(sAct,sMod,{bestStreak:qBestStreak,perfectRun:(tot>=5&&correctCount===tot)});
   save();
   const isSpeed=(sAct==='speed');
-  const correctCount=qAnswerLog.filter(l=>l.correct).length;
   const pct=Math.round(correctCount/Math.max(tot,1)*100);
   const e=Math.floor((Date.now()-qStart)/1000);
   const msg=pct>=80?'Eccellente! Sei pronto per l\'esame ICDL.':pct>=60?'Buon lavoro! Continua ad allenarti.':'Ripassa i concetti e riprova.';

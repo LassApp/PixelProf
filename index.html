@@ -51,6 +51,19 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 <canvas id="confetti-canvas"></canvas>
 
 <!-- ======================================
+     BADGE UNLOCK POPUP — v6.5.0
+     Popolato/mostrato da _bdgShowNextToast() in js/badges.js
+====================================== -->
+<div id="badge-unlock-popup" class="hidden">
+  <div class="bup-icon" id="bup-icon">🏆</div>
+  <div class="bup-body">
+    <div class="bup-eyebrow">Nuovo traguardo!</div>
+    <div class="bup-title" id="bup-title"></div>
+    <div class="bup-desc" id="bup-desc"></div>
+  </div>
+</div>
+
+<!-- ======================================
      CUSTOM EXIT CONFIRM DIALOG — v9
 ====================================== -->
 <div id="pp-dialog-overlay" class="pp-dialog-overlay hidden">
@@ -517,6 +530,9 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <span id="cs-director-badge" class="cs-director-badge hidden">👑 Direttore</span>
       <span id="cs-teacher-role-badge" class="hidden" style="display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.25);color:#00cfff;font-size:10px;font-weight:700;font-family:'Share Tech Mono',monospace;letter-spacing:.5px">📖 Docente</span>
       <span class="cs-teacher-name" id="cs-teacher-name"></span>
+      <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
+        <i class="ti ti-volume-2 audio-toggle-icon"></i>
+      </button>
       <button class="cs-logout-btn" onclick="doLogout()">
         <i class="ti ti-logout"></i> Esci
       </button>
@@ -850,6 +866,9 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <button class="tb-hub-item" id="tb-dash" onclick="closeHubMenu();goTab('dashboard')">
           <i class="ti ti-report-analytics"></i><span>Panoramica Classe</span>
         </button>
+        <button class="tb-hub-item" id="tb-badges" onclick="closeHubMenu();goTab('badges')">
+          <i class="ti ti-award"></i><span>Traguardi</span>
+        </button>
       </div>
     </div>
     <!-- tb-home: nascosto visivamente, usato da setTb() -->
@@ -874,6 +893,13 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 
   <!-- STEP: MODULO -->
   <div id="step-mod">
+
+    <!-- v6.5.0: toggle audio — visibile SOLO qui e in Seleziona aula, ma lo stato è globale -->
+    <div class="step-mod-toolbar">
+      <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
+        <i class="ti ti-volume-2 audio-toggle-icon"></i>
+      </button>
+    </div>
 
     <!-- Hero headline -->
     <div class="home-hero">
@@ -1351,15 +1377,31 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
   <div id="dash-body"></div>
 </div>
 
+<!-- ======================================
+     TRAGUARDI — Sistema Badge/Achievement — v6.5.0
+     Legge db.badges.unlocked + calcola il progresso di ogni
+     badge dal catalogo BADGE_DEFS (js/badges.js) leggendo
+     db.sessions / db.stats / db.wrongQ. Isolato per aula.
+====================================== -->
+<div id="tab-badges" class="screen">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem">
+    <div style="font-size:16px;font-weight:700;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Traguardi</div>
+    <button class="lb-reset-btn" onclick="resetBadges()"><i class="ti ti-trash"></i> Azzera</button>
+  </div>
+  <div id="badges-body"></div>
+</div>
+
 </div><!-- /app -->
 
 
+<script src="js/audio-manager.js"></script>
 <script src="js/game-constants.js"></script>
 <script src="js/scoring.js"></script>
 <script src="js/game-engine-state.js"></script>
 <script src="js/renderer.js"></script>
 <script src="js/stats.js"></script>
 <script src="js/dashboard.js"></script>
+<script src="js/badges.js"></script>
 <script src="js/game-quiz.js"></script>
 <script src="js/game-match.js"></script>
 <script src="js/game-memory.js"></script>

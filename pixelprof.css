@@ -45,7 +45,7 @@
        (mostra/nascondi, lock di pausa, ecc.) → dentro @layer stato,
        con !important (qui è l'unico posto dove serve ancora).
    ═══════════════════════════════════════════════════════════════════ */
-@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport;
+@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport, audio, achievements;
 
 @layer base {
 /* ===============================================
@@ -4297,4 +4297,158 @@ body{
    ancora nessuna regola per .pp-generic-btn:disabled (puro additivo,
    nessun rischio di conflitto con ppAlert/ppConfirmBox/ppPromptBox). */
 .pp-generic-btn:disabled{opacity:.35;cursor:default;pointer-events:none;}
+}
+
+@layer audio {
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v6.5.0 — FEEDBACK SONORO + TOGGLE AUDIO
+   Pulsante toggle (icona altoparlante) — visibile SOLO nella
+   schermata "Seleziona aula" (screen-courses) e nello step
+   "Seleziona modulo" (step-mod) della home, come richiesto: lo
+   stato impostato da qui vale per l'intera webapp (gestito da
+   js/audio-manager.js, persistito in localStorage).
+   ═══════════════════════════════════════════════════════════════════ */
+
+.audio-toggle-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;flex-shrink:0;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.05);
+  color:rgba(255,255,255,.55);
+  cursor:pointer;font-family:inherit;font-size:14px;
+  transition:all var(--transition-fast);
+}
+.audio-toggle-btn:hover{
+  border-color:rgba(0,255,200,.35);
+  background:rgba(0,255,200,.08);
+  color:var(--accent);
+}
+.audio-toggle-btn .audio-toggle-icon{font-size:15px;line-height:1}
+.audio-toggle-btn.muted{
+  color:rgba(255,120,120,.65);
+  border-color:rgba(255,80,80,.22);
+  background:rgba(255,80,80,.05);
+}
+.audio-toggle-btn.muted:hover{
+  border-color:rgba(255,80,80,.4);
+  background:rgba(255,80,80,.1);
+  color:#ff6b6b;
+}
+
+/* Barra dedicata al toggle nello step Seleziona modulo — allineata
+   a destra, sopra l'home-hero, senza intaccarne il layout esistente. */
+.step-mod-toolbar{
+  display:flex;justify-content:flex-end;
+  padding-top:6px;
+}
+}
+
+@layer achievements {
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v6.5.0 — TRAGUARDI (badge/achievement system)
+   Stile coerente con .tdc-card/.dd-card/.chd-kpi-card già presenti:
+   cinematic lift on hover, bottom accent bar dorata, glow allo
+   sblocco. Nuove classi (prefisso bdg-), nessuna collisione con
+   layer esistenti — dichiarato per ultimo per coerenza con la
+   regola "nuova feature → nuovo layer in fondo" (vedi intestazione
+   file).
+   ═══════════════════════════════════════════════════════════════════ */
+
+.bdg-summary{
+  display:flex;align-items:center;gap:12px;margin-bottom:1.1rem;
+  background:rgba(255,215,0,.04);border:1px solid rgba(255,215,0,.15);
+  border-radius:var(--radius-md);padding:12px 16px;
+}
+.bdg-summary-icon{font-size:24px;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(255,215,0,.3))}
+.bdg-summary-text{flex:1;min-width:0}
+.bdg-summary-count{font-size:14px;font-weight:600;color:#fff;margin-bottom:6px}
+.bdg-summary-count strong{color:#ffd700;font-size:16px}
+.bdg-summary .prog-bar{margin:0}
+
+.bdg-grid{
+  display:grid;grid-template-columns:1fr;gap:10px;
+}
+@media(min-width:520px){ .bdg-grid{grid-template-columns:1fr 1fr;} }
+@media(min-width:820px){ .bdg-grid{grid-template-columns:1fr 1fr 1fr;} }
+
+.bdg-card{
+  position:relative;border-radius:14px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);
+  padding:16px;transition:all var(--transition-fast);
+  box-shadow:0 4px 16px rgba(0,0,0,.3);
+}
+.bdg-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,#ffd700,transparent);
+  transform:scaleX(0);transform-origin:center;
+  transition:transform var(--transition-fast);
+}
+.bdg-card.unlocked{
+  border-color:rgba(255,215,0,.22);
+  box-shadow:0 4px 20px rgba(255,215,0,.08);
+}
+.bdg-card.unlocked::after{transform:scaleX(1);}
+.bdg-card:hover{transform:translateY(-3px);border-color:rgba(255,215,0,.4);box-shadow:0 10px 28px rgba(0,0,0,.4);}
+.bdg-card.locked{opacity:.6}
+.bdg-card.locked:hover{opacity:.85}
+
+.bdg-card-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px}
+.bdg-icon{
+  font-size:24px;line-height:1;flex-shrink:0;
+  width:44px;height:44px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);
+}
+.bdg-card.locked .bdg-icon{
+  filter:grayscale(1) brightness(.7);
+  background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08);
+}
+.bdg-title-wrap{flex:1;min-width:0}
+.bdg-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px}
+.bdg-desc{font-size:11px;color:rgba(255,255,255,.4);line-height:1.45}
+
+.bdg-unlock-date{
+  display:inline-flex;align-items:center;gap:5px;margin-top:10px;
+  font-size:10px;color:#ffd700;font-family:'Share Tech Mono',monospace;
+  letter-spacing:.3px;
+}
+.bdg-unlock-date i{font-size:12px}
+.bdg-progress-wrap{margin-top:10px}
+.bdg-progress-label{
+  font-size:10px;color:rgba(255,255,255,.4);margin-bottom:5px;
+  font-family:'Share Tech Mono',monospace;
+}
+
+/* ── Popup "Nuovo traguardo!" — banner centrato che scende dall'alto,
+   stesso linguaggio visivo di #overtake-popup ma più prominente,
+   con glow dorato. ── */
+#badge-unlock-popup{
+  position:fixed;top:14px;left:50%;
+  transform:translate(-50%,-130%);
+  z-index:9999;
+  display:flex;align-items:center;gap:12px;
+  background:rgba(10,16,28,.97);
+  border:1px solid rgba(255,215,0,.4);
+  border-radius:var(--radius-lg);
+  padding:12px 18px 12px 14px;
+  box-shadow:0 0 30px rgba(255,215,0,.18),0 12px 40px rgba(0,0,0,.6);
+  max-width:min(360px,calc(100vw - 24px));
+  pointer-events:none;
+  transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s ease;
+  opacity:0;
+}
+#badge-unlock-popup.bup-show{
+  transform:translate(-50%,0);
+  opacity:1;
+}
+.bup-icon{font-size:32px;flex-shrink:0;filter:drop-shadow(0 0 10px rgba(255,215,0,.5));}
+.bup-body{min-width:0}
+.bup-eyebrow{font-size:9px;font-weight:700;color:#ffd700;text-transform:uppercase;letter-spacing:1.5px;font-family:'Share Tech Mono',monospace;margin-bottom:2px}
+.bup-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bup-desc{font-size:11px;color:rgba(255,255,255,.5);line-height:1.4}
+
+@media(max-width:420px){
+  .bdg-summary{flex-direction:row;padding:10px 12px}
+  .bup-desc{display:none}
+}
 }

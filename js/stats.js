@@ -73,51 +73,36 @@ function _histBuildCard(s,idx){
   const teamsHTML=sorted.map((t,i)=>{
     const medal=i<3?medals[i]:'';
     const colorDot=t.color
-      ?`<span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${escAttr(t.color)};box-shadow:0 0 5px ${escAttr(t.color)};flex-shrink:0;margin-right:5px"></span>`
+      ?`<span class="hist-color-dot" style="background:${escAttr(t.color)};box-shadow:0 0 5px ${escAttr(t.color)}"></span>`
       :'';
-    return`<div style="display:flex;align-items:center;justify-content:space-between;padding:4px 0;border-bottom:1px solid rgba(255,255,255,.04);">
-      <div style="display:flex;align-items:center;gap:2px;min-width:0">
-        <span style="font-size:12px;width:18px;flex-shrink:0">${medal}</span>
+    return`<div class="hist-team-row">
+      <div class="hist-team-left">
+        <span class="hist-team-medal">${medal}</span>
         ${colorDot}
-        <span style="font-size:12px;color:rgba(255,255,255,.8);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${escHtml(t.name||'—')}</span>
+        <span class="hist-team-name">${escHtml(t.name||'—')}</span>
       </div>
-      <span style="font-family:'Share Tech Mono',monospace;font-size:11px;font-weight:700;color:#00ffc8;flex-shrink:0;margin-left:8px">${t.score!=null?t.score+' pt':'—'}</span>
+      <span class="hist-team-pts">${t.score!=null?t.score+' pt':'—'}</span>
     </div>`;
   }).join('');
 
-  return`<div style="
-    background:rgba(255,255,255,.03);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:12px;
-    padding:14px 16px;
-    margin-bottom:10px;
-    transition:border-color .18s,background .18s;
-    position:relative;overflow:hidden;
-  " onmouseenter="this.style.borderColor='rgba(0,255,200,.2)';this.style.background='rgba(0,255,200,.03)'"
-     onmouseleave="this.style.borderColor='rgba(255,255,255,.08)';this.style.background='rgba(255,255,255,.03)'">
+  return`<div class="hist-card">
 
-    <!-- Accent bar top -->
-    <div style="position:absolute;top:0;left:0;right:0;height:2px;background:${modColor};opacity:.5;border-radius:12px 12px 0 0"></div>
+    <!-- Accent bar top — colore dinamico per modulo, resta inline -->
+    <div class="hist-card-accent" style="background:${modColor}"></div>
 
     <!-- Header riga: icona attività + label + badge modulo + data -->
-    <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap">
-      <span style="font-size:20px;line-height:1">${actIcon}</span>
-      <span style="font-size:13px;font-weight:700;color:#fff">${escHtml(actLabel)}</span>
-      <span style="font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
-        padding:2px 7px;border-radius:20px;
-        background:${modColor}18;border:1px solid ${modColor}40;color:${modColor};
-        font-family:'Share Tech Mono',monospace">${escHtml(modLabel)}</span>
-      <span style="font-size:9px;color:rgba(255,255,255,.3);font-family:'Share Tech Mono',monospace;
-        padding:2px 7px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08)">
-        ${modeIcon} ${escHtml(modeLabel)}
-      </span>
-      <span style="margin-left:auto;font-size:10px;color:rgba(255,255,255,.3);font-family:'Share Tech Mono',monospace;white-space:nowrap">
+    <div class="hist-card-header">
+      <span class="hist-card-icon">${actIcon}</span>
+      <span class="hist-card-title">${escHtml(actLabel)}</span>
+      <span class="hist-card-modtag" style="background:${modColor}18;border:1px solid ${modColor}40;color:${modColor}">${escHtml(modLabel)}</span>
+      <span class="hist-card-modetag">${modeIcon} ${escHtml(modeLabel)}</span>
+      <span class="hist-card-date">
         <i class="ti ti-clock" style="font-size:9px"></i> ${_histFormatDate(s.timestamp)}
       </span>
     </div>
 
     <!-- Partecipanti + punteggi -->
-    <div style="padding:0 2px">${teamsHTML||'<div style="font-size:11px;color:rgba(255,255,255,.25)">Nessun partecipante registrato</div>'}</div>
+    <div class="hist-card-body">${teamsHTML||'<div class="hist-card-empty">Nessun partecipante registrato</div>'}</div>
   </div>`;
 }
 

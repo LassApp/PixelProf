@@ -175,14 +175,62 @@ const loadCompletaFrasePool= mod => CompletaFraseLoader.load(mod);
 /* Helper sincrono  restituisce il modulo di una domanda */
 function getQuestionModule(q) { return q._src || 'CE'; }
 
-/* -- UI: loading spinners -- */
-function _showLoadingSpinner(cont, icon, label, path) {
-  const html = `
-    <div class="result-wrap" style="text-align:center;padding:3rem 1rem">
-      <div style="font-size:32px;margin-bottom:16px;animation:heroPulse 1s ease-in-out infinite alternate">${icon}</div>
-      <div style="font-size:14px;font-weight:600;color:rgba(255,255,255,.6);margin-bottom:6px">${label}</div>
-      <div style="font-size:11px;color:rgba(255,255,255,.25);font-family:'Share Tech Mono',monospace">${path}</div>
-    </div>`;
+/* -- UI: skeleton loaders — v6.6.0
+   Sostituisce lo spinner pulsante generico (icona+testo+path) con
+   uno scheletro che ricalca la geometria reale del minigioco in
+   arrivo (pillole header, card domanda, colonne Abbina, griglia
+   Memory, frase Completa) — percezione di velocità migliore,
+   soprattutto su PC di laboratorio non recentissimi, e nessun
+   "salto" di layout quando il contenuto vero sostituisce lo
+   scheletro. CSS in pixelprof.css, layer "loaders" (classi .skel-*),
+   già allineato al tema chiaro/scuro tramite i token esistenti. */
+function _skelPills(n){
+  return `<div class="skel-row">${Array.from({length:n}).map(()=>'<div class="skel-pill skel-base"></div>').join('')}</div>`;
+}
+function _skelQuizHTML(){
+  return `<div class="skel-wrap">
+    ${_skelPills(2)}
+    <div class="skel-bar skel-progress skel-base"></div>
+    <div class="skel-card">
+      <div class="skel-line skel-line-cat skel-base"></div>
+      <div class="skel-line skel-line-q1 skel-base"></div>
+      <div class="skel-line skel-line-q2 skel-base"></div>
+    </div>
+    <div class="skel-opts">
+      <div class="skel-opt skel-base"></div>
+      <div class="skel-opt skel-base"></div>
+      <div class="skel-opt skel-base"></div>
+      <div class="skel-opt skel-base"></div>
+    </div>
+  </div>`;
+}
+function _skelAbbinaHTML(){
+  const col=()=>Array.from({length:5}).map(()=>'<div class="skel-item skel-base"></div>').join('');
+  return `<div class="skel-wrap">
+    ${_skelPills(4)}
+    <div class="skel-match-cols"><div>${col()}</div><div>${col()}</div></div>
+  </div>`;
+}
+function _skelMemoryHTML(){
+  return `<div class="skel-wrap">
+    ${_skelPills(3)}
+    <div class="skel-mem-board">${Array.from({length:12}).map(()=>'<div class="skel-mem-card skel-base"></div>').join('')}</div>
+  </div>`;
+}
+function _skelFillHTML(){
+  return `<div class="skel-wrap">
+    ${_skelPills(1)}
+    <div class="skel-card"><div class="skel-line skel-line-sentence skel-base"></div></div>
+    <div class="skel-chips">
+      <div class="skel-chip skel-base"></div>
+      <div class="skel-chip skel-base"></div>
+      <div class="skel-chip skel-base"></div>
+      <div class="skel-chip skel-base"></div>
+    </div>
+    <div class="skel-btn skel-base"></div>
+  </div>`;
+}
+function _showSkeleton(cont, html) {
   if(cont) cont.innerHTML = html;
   else {
     setTb(null); showScreen('tab-quiz');
@@ -191,11 +239,11 @@ function _showLoadingSpinner(cont, icon, label, path) {
     sh('qz-result').innerHTML = html;
   }
 }
-function showQuizLoading(mod)      { _showLoadingSpinner(null,'📡','Caricamento domande…',      QuizLoader.moduleMap[mod]         || 'data/quiz/'); }
-function showSpeedQuizLoading(mod) { _showLoadingSpinner(null,'⚡','Caricamento Speed Quiz…',   SpeedQuizLoader.moduleMap[mod]    || 'data/speed_quiz/'); }
-function showAbbinLoading(cont,mod){ _showLoadingSpinner(cont,'🔗','Caricamento Abbina…',       AbbinLoader.moduleMap[mod]        || 'data/abbina/'); }
-function showMemoryLoading(cont,mod){ _showLoadingSpinner(cont,'🃏','Caricamento Memory…',      MemoryLoader.moduleMap[mod]       || 'data/memory/'); }
-function showCompletaFraseLoading(cont,mod){ _showLoadingSpinner(cont,'✏️','Caricamento Completa la frase…', CompletaFraseLoader.moduleMap[mod] || 'data/completa_frase/'); }
+function showQuizLoading(mod)      { _showSkeleton(null, _skelQuizHTML()); }
+function showSpeedQuizLoading(mod) { _showSkeleton(null, _skelQuizHTML()); }
+function showAbbinLoading(cont,mod){ _showSkeleton(cont, _skelAbbinaHTML()); }
+function showMemoryLoading(cont,mod){ _showSkeleton(cont, _skelMemoryHTML()); }
+function showCompletaFraseLoading(cont,mod){ _showSkeleton(cont, _skelFillHTML()); }
 
 /* -- UI: error screens -- */
 function _showGameError(cont, icon, title, color, path, msg) {

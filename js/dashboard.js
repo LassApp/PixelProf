@@ -311,7 +311,7 @@ function _chdBuildWeakestCard(weakest, modAccs) {
       <div class="chd-mod-row-top">
         <span class="chd-mod-dot" style="background:${m.color}"></span>
         <span class="chd-mod-name">${escHtml(m.label)}</span>
-        <span class="chd-mod-pct" style="color:${m.color}">${noData ? '—' : pct + '%'}</span>
+        <span class="chd-mod-pct chd-ink-${m.key.toLowerCase()}" style="color:${m.color}">${noData ? '—' : pct + '%'}</span>
       </div>
       <div class="prog-bar" style="margin:0"><div class="prog-fill" style="width:${pct}%;background:${m.color}"></div></div>
     </div>`;

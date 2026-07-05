@@ -1,8 +1,20 @@
 /* ==================================================
-   theme-manager.js — PixelProf v1.0.0
+   theme-manager.js — PixelProf v1.1.0
    Toggle globale tema chiaro/scuro (persistito in
    localStorage, condiviso da tutte le aule su questo
    dispositivo — stesso pattern di AudioManager).
+
+   v1.1.0 — CASCATA DI PRIORITÀ ALL'AVVIO:
+     1. Scelta manuale già salvata dall'utente (toggle) — invariata,
+        ha sempre precedenza assoluta.
+     2. Preferenza del sistema operativo (prefers-color-scheme),
+        se rilevabile, quando l'utente non ha mai scelto manualmente.
+     3. Fallback finale: tema Light (nessuna scelta utente, nessuna
+        preferenza di sistema rilevabile — es. browser molto vecchi).
+     In più: finché l'utente non compie la PRIMA scelta manuale, il
+     tema segue live gli eventuali cambi di preferenza del sistema
+     (es. passaggio automatico giorno/notte del dispositivo) senza
+     mai scrivere su localStorage — solo setLight()/toggle() persistono.
 
    Il tema chiaro NON è un redesign: la palette scura
    resta quella "vera" dell'app (card modulo, hero
@@ -30,11 +42,40 @@
 const ThemeManager = (function () {
   const STORAGE_KEY = 'pp5_theme_light';
 
-  let _light = false;
+  /**
+   * _detectSystemPreference — legge prefers-color-scheme dal
+   * sistema operativo/browser.
+   * @returns {boolean|null} true=light, false=dark, null=non determinabile
+   */
+  function _detectSystemPreference() {
+    try {
+      if (window.matchMedia) {
+        if (window.matchMedia('(prefers-color-scheme: light)').matches) return true;
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches)  return false;
+      }
+    } catch (e) {}
+    return null; // matchMedia assente o nessuna delle due media query soddisfatta
+  }
+
+  // _hasUserChoice: true solo se in localStorage esiste una scelta
+  // manuale valida ('0'/'1'). Distingue "utente ha scelto" da "mai
+  // scelto" — un valore assente (null) NON viene mai interpretato
+  // come "scuro" (comportamento precedente), ma innesca il fallback
+  // sulla preferenza di sistema.
+  let _light;
+  let _hasUserChoice = false;
   try {
     const stored = localStorage.getItem(STORAGE_KEY);
-    _light = stored === '1';
+    if (stored === '1' || stored === '0') {
+      _hasUserChoice = true;
+      _light = stored === '1';
+    }
   } catch (e) {}
+
+  if (!_hasUserChoice) {
+    const sys = _detectSystemPreference();
+    _light = (sys !== null) ? sys : true; // true = Light di default
+  }
 
   function _apply() {
     document.documentElement.setAttribute('data-theme', _light ? 'light' : 'dark');
@@ -54,6 +95,7 @@ const ThemeManager = (function () {
 
   function setLight(v) {
     _light = !!v;
+    _hasUserChoice = true; // scelta manuale — vince per sempre sulla preferenza di sistema
     try { localStorage.setItem(STORAGE_KEY, _light ? '1' : '0'); } catch (e) {}
     _apply();
     _updateAllToggleUI();
@@ -67,6 +109,27 @@ const ThemeManager = (function () {
   _apply();
   // Lo script è in fondo al <body>: il DOM dei pulsanti è già pronto.
   _updateAllToggleUI();
+
+  // Finché l'utente NON ha mai scelto manualmente, segue live gli eventuali
+  // cambi di preferenza del sistema operativo mentre la tab resta aperta
+  // (es. passaggio automatico giorno/notte del dispositivo). Si disattiva
+  // per sempre alla prima chiamata di setLight()/toggle() (_hasUserChoice
+  // diventa true), quindi non entra mai in conflitto con una scelta manuale.
+  try {
+    if (window.matchMedia) {
+      const _mq = window.matchMedia('(prefers-color-scheme: light)');
+      const _onSystemChange = () => {
+        if (_hasUserChoice) return;
+        const sys = _detectSystemPreference();
+        if (sys === null) return;
+        _light = sys;
+        _apply();
+        _updateAllToggleUI();
+      };
+      if (_mq.addEventListener) _mq.addEventListener('change', _onSystemChange);
+      else if (_mq.addListener) _mq.addListener(_onSystemChange); // fallback Safari <14
+    }
+  } catch (e) {}
 
   return { isLight, setLight, toggle };
 })();

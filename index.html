@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PixelProf — ICDL Lab interattivo v6.0.2</title>
+<link rel="icon" href="public/icons/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
+<link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+
+<!-- ======================================
+     ES MODULES — auth, db, hooks
+     type="module" = asincrono, non blocca il parser
+====================================== -->
+<script type="module" src="js/supabase_client.js"></script>
+<script type="module" src="js/auth.js"></script>
+<script type="module" src="js/db_adapter.js"></script>
+<script type="module" src="js/game_hooks.js"></script>
+
+<!-- Bootstrap gate: attende Auth + DB + Hooks prima di mostrare la UI -->
+<script>
+window.__authReady  = false;
+window.__dbReady    = false;
+window.__hooksReady = false;
+
+const _authPromise  = new Promise(res => { window.__resolveAuth  = () => { if(!window.__authReady) { window.__authReady=true;   res(); } }; });
+const _dbPromise    = new Promise(res => { window.__resolveDb    = () => { if(!window.__dbReady)   { window.__dbReady=true;     res(); } }; });
+const _hooksPromise = new Promise(res => { window.__resolveHooks = () => { if(!window.__hooksReady){ window.__hooksReady=true;  res(); } }; });
+
+/* Safety timeout 6s  procede in modalit offline se i moduli non rispondono */
+setTimeout(() => {
+  window.__resolveAuth();
+  window.__resolveDb();
+  window.__resolveHooks();
+}, 6000);
+
+window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
+</script>
+
+<link rel="stylesheet" href="pixelprof.css">
+</head>
+<body>
+
+<div id="app-theme-bg"></div>
+
+<div id="overtake-popup"><div class="ot-lbl">⚡ Sorpasso!</div><div id="ot-text"></div></div>
+<canvas id="confetti-canvas"></canvas>
+
+<!-- ======================================
+     BADGE UNLOCK POPUP — v6.5.0
+     Popolato/mostrato da _bdgShowNextToast() in js/badges.js
+====================================== -->
+<div id="badge-unlock-popup" class="hidden">
+  <div class="bup-icon" id="bup-icon">🏆</div>
+  <div class="bup-body">
+    <div class="bup-eyebrow">Nuovo traguardo!</div>
+    <div class="bup-title" id="bup-title"></div>
+    <div class="bup-desc" id="bup-desc"></div>
+  </div>
+</div>
+
+<!-- ======================================
+     CUSTOM EXIT CONFIRM DIALOG — v9
+====================================== -->
+<div id="pp-dialog-overlay" class="pp-dialog-overlay hidden">
+  <div class="pp-dialog">
+    <div class="pp-dialog-icon">⚠️</div>
+    <div class="pp-dialog-title" id="pp-dialog-title">Uscire dalla partita?</div>
+    <div class="pp-dialog-sub" id="pp-dialog-sub">La partita corrente verrà interrotta e il punteggio non verrà salvato.</div>
+    <div class="pp-dialog-btns">
+      <button class="pp-dialog-btn cancel" id="pp-dialog-no">No, continua</button>
+      <button class="pp-dialog-btn confirm" id="pp-dialog-yes">Sì, esci</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================
+     LOGIN SCREEN — v3.0.0
+====================================== -->
+<div id="screen-login" class="hidden">
+  <div class="login-box">
+    <div class="login-logo">
+      <svg class="login-logo-svg" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".7"/>
+        <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.07)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".5"/>
+        <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+        <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="26" cy="8" r="1.5" fill="#7c6aff" opacity=".9"/>
+        <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
+      </svg>
+      <div class="login-title">Pixel<em>Prof</em></div>
+      <div class="login-subtitle">ICDL Interactive Lab · v5.0.6</div>
+    </div>
+    <div class="login-field">
+      <label class="login-label" for="login-email">Email</label>
+      <input id="login-email" class="login-inp" type="email" placeholder="docente@scuola.it"
+        autocomplete="email" onkeydown="if(event.key==='Enter')doLogin()"/>
+    </div>
+    <div class="login-field">
+      <label class="login-label" for="login-pwd">Password</label>
+      <input id="login-pwd" class="login-inp" type="password" placeholder="••••••••"
+        autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()"/>
+    </div>
+    <button class="login-btn" id="login-submit-btn" onclick="doLogin()">
+      <i class="ti ti-login"></i> Accedi
+    </button>
+    <div class="login-error" id="login-error"></div>
+  </div>
+</div>
+
+<!-- ======================================
+     SET PASSWORD SCREEN — v3.1.2
+     Mostrato ai docenti al primo accesso
+     (magic link invite) prima di entrare
+     nell'app. Obbligatorio.
+====================================== -->
+<div id="screen-setpwd" class="hidden" style="
+  position:fixed;inset:0;z-index:8600;
+  background:var(--surface-0);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 0%,rgba(0,255,200,.03) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 100%,rgba(124,106,255,.03) 0%,transparent 60%);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:1.5rem;
+">
+  <div class="login-box" style="border-color:rgba(124,106,255,.2)">
+    <div class="login-logo">
+      <svg class="login-logo-svg" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".7"/>
+        <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.07)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".5"/>
+        <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+        <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="26" cy="8" r="1.5" fill="#7c6aff" opacity=".9"/>
+        <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
+      </svg>
+      <div class="login-title">Benvenuto!</div>
+      <div class="login-subtitle">Imposta la tua password per accedere</div>
+    </div>
+
+    <!-- Info utente -->
+    <div style="
+      background:rgba(124,106,255,.08);border:1px solid rgba(124,106,255,.2);
+      border-radius:var(--radius-sm);padding:10px 14px;margin-bottom:16px;
+      display:flex;align-items:center;gap:10px;
+    ">
+      <i class="ti ti-user-check" style="font-size:18px;color:#b4a0ff;flex-shrink:0"></i>
+      <div>
+        <div style="font-size:12px;font-weight:600;color:#e2e8f0" id="setpwd-email-label">—</div>
+        <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:1px">Account docente</div>
+      </div>
+    </div>
+
+    <div class="login-field">
+      <label class="login-label" for="setpwd-new">Nuova password</label>
+      <input id="setpwd-new" class="login-inp" type="password"
+        placeholder="Minimo 6 caratteri"
+        autocomplete="new-password"
+        onkeydown="if(event.key==='Enter')doSetPassword()"/>
+    </div>
+    <div class="login-field">
+      <label class="login-label" for="setpwd-confirm">Conferma password</label>
+      <input id="setpwd-confirm" class="login-inp" type="password"
+        placeholder="Ripeti la password"
+        autocomplete="new-password"
+        onkeydown="if(event.key==='Enter')doSetPassword()"/>
+    </div>
+
+    <!-- Indicatore forza password -->
+    <div id="setpwd-strength-bar" style="height:3px;border-radius:2px;margin-bottom:10px;background:rgba(255,255,255,.08);overflow:hidden">
+      <div id="setpwd-strength-fill" style="height:100%;width:0%;border-radius:2px;transition:width .25s,background .25s"></div>
+    </div>
+    <div id="setpwd-strength-label" style="font-size:10px;color:rgba(255,255,255,.3);margin-bottom:6px;min-height:14px;font-family:'Share Tech Mono',monospace;letter-spacing:.5px"></div>
+
+    <button class="login-btn" id="setpwd-submit-btn"
+      style="background:rgba(124,106,255,.15);border-color:#7c6aff;color:#b4a0ff"
+      onclick="doSetPassword()">
+      <i class="ti ti-lock-check"></i> Imposta password e accedi
+    </button>
+    <div class="login-error" id="setpwd-error"></div>
+  </div>
+</div>
+
+<!-- ======================================
+     SPLASH SCREEN
+====================================== -->
+<div id="screen-splash">
+  <div class="splash-inner">
+    <svg class="splash-logo-svg" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".7"/>
+      <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.07)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".5"/>
+      <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+      <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <circle cx="26" cy="8" r="1.5" fill="#7c6aff" opacity=".9"/>
+      <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
+    </svg>
+    <div class="splash-wordmark">Pixel<em>Prof</em></div>
+    <div class="splash-tagline">ICDL Interactive Lab</div>
+    <div class="splash-dot"></div>
+  </div>
+</div>
+
+<!-- ======================================
+     DASHBOARD DIRETTORE — v6.0.0
+     Schermata intermedia post-login, solo per il ruolo Direttore.
+     3 card cinematiche: Gestisci Aule / Gestisci Docenti / Scegli Aula.
+     Riusa al 100% screen-courses e dp-overlay già esistenti.
+====================================== -->
+<div id="screen-director-dashboard" class="hidden">
+  <div class="cs-topbar">
+    <div class="cs-logo">
+      <svg class="cs-logo-svg" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".6"/>
+        <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.06)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".4"/>
+        <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+        <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="26" cy="8" r="1.5" fill="#7c6aff" opacity=".8"/>
+        <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".5"/>
+      </svg>
+      <div>
+        <span class="cs-logo-text">Pixel<em>Prof</em></span>
+        <span class="cs-logo-sub">Dashboard Direttore</span>
+      </div>
+    </div>
+    <div class="cs-teacher-badge">
+      <span class="cs-director-badge">👑 Direttore</span>
+      <span class="cs-teacher-name" id="dd-teacher-name"></span>
+      <button class="cs-logout-btn" onclick="doLogout()"><i class="ti ti-logout"></i> Esci</button>
+    </div>
+  </div>
+  <div class="cs-body">
+    <div class="cs-hero">
+      <span class="cs-hero-eyebrow">Pannello di controllo</span>
+      <h1 class="cs-hero-title">Cosa vuoi<br>fare <span class="hl">oggi</span>?</h1>
+      <p class="cs-hero-sub">Gestisci aule e docenti, oppure entra direttamente in un'aula per esercitarti.</p>
+    </div>
+    <div class="dd-grid">
+      <div class="dd-card dd-aule" role="button" tabindex="0" aria-label="Gestisci Aule"
+        onclick="ddGoGestisciAule()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();ddGoGestisciAule();}">
+        <div class="dd-card-inner">
+          <span class="dd-icon">🏫</span>
+          <div class="dd-title">Gestisci Aule</div>
+          <div class="dd-sub">Crea, rinomina, assegna docenti e moduli, personalizza o elimina le aule.</div>
+          <i class="ti ti-arrow-right dd-arrow"></i>
+        </div>
+      </div>
+      <div class="dd-card dd-docenti" role="button" tabindex="0" aria-label="Gestisci Docenti"
+        onclick="ddGoGestisciDocenti()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();ddGoGestisciDocenti();}">
+        <div class="dd-card-inner">
+          <span class="dd-icon">👩‍🏫</span>
+          <div class="dd-title">Gestisci Docenti</div>
+          <div class="dd-sub">Crea nuovi account, modifica i nomi o disattiva l'accesso.</div>
+          <i class="ti ti-arrow-right dd-arrow"></i>
+        </div>
+      </div>
+      <div class="dd-card dd-scegli" role="button" tabindex="0" aria-label="Scegli Aula"
+        onclick="ddGoSceltaAula()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();ddGoSceltaAula();}">
+        <div class="dd-card-inner">
+          <span class="dd-icon">🎮</span>
+          <div class="dd-title">Scegli Aula</div>
+          <div class="dd-sub">Entra in un'aula ed esercitati con i moduli, come un docente.</div>
+          <i class="ti ti-arrow-right dd-arrow"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================
+     GESTIONE DOCENTI — HUB v6.1.0 (solo Direttore)
+     2 card: Nuovo Docente / Docenti.
+====================================== -->
+<div id="screen-teacher-mgmt" class="hidden">
+  <div class="cs-topbar">
+    <div class="cs-logo">
+      <svg class="cs-logo-svg" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".6"/>
+        <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.06)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".4"/>
+        <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+        <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="26" cy="8" r="1.5" fill="#7c6aff" opacity=".8"/>
+        <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".5"/>
+      </svg>
+      <div>
+        <span class="cs-logo-text">Pixel<em>Prof</em></span>
+        <span class="cs-logo-sub">Gestione Docenti</span>
+      </div>
+    </div>
+    <div class="cs-teacher-badge">
+      <button class="back-link" onclick="closeTeacherManagement()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Dashboard</button>
+      <button class="cs-logout-btn" onclick="doLogout()"><i class="ti ti-logout"></i> Esci</button>
+    </div>
+  </div>
+  <div class="cs-body">
+    <div class="cs-hero">
+      <span class="cs-hero-eyebrow">Direttore · Account</span>
+      <h1 class="cs-hero-title">Gestisci i <span class="hl">docenti</span></h1>
+      <p class="cs-hero-sub">Crea nuovi account oppure visualizza e gestisci i docenti già registrati.</p>
+    </div>
+    <div class="dd-grid dd-grid-2">
+      <div class="dd-card dd-new-teacher" role="button" tabindex="0" aria-label="Nuovo Docente"
+        onclick="tmGoCreate()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tmGoCreate();}">
+        <div class="dd-card-inner">
+          <span class="dd-icon">🆕</span>
+          <div class="dd-title">Nuovo Docente</div>
+          <div class="dd-sub">Crea e invita un nuovo docente.</div>
+          <i class="ti ti-arrow-right dd-arrow"></i>
+        </div>
+      </div>
+      <div class="dd-card dd-teacher-list" role="button" tabindex="0" aria-label="Docenti"
+        onclick="tmGoList()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tmGoList();}">
+        <div class="dd-card-inner">
+          <span class="dd-icon">👥</span>
+          <div class="dd-title">Docenti</div>
+          <div class="dd-sub">Visualizza e gestisci i docenti registrati.</div>
+          <i class="ti ti-arrow-right dd-arrow"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================
+     NUOVO DOCENTE — v6.1.0 (solo Direttore)
+====================================== -->
+<div id="screen-teacher-create" class="hidden">
+  <div class="cs-topbar">
+    <div class="cs-logo">
+      <svg class="cs-logo-svg" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".6"/>
+        <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.06)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".4"/>
+        <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+        <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="26" cy="8" r="1.5" fill="#7c6aff" opacity=".8"/>
+        <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".5"/>
+      </svg>
+      <div>
+        <span class="cs-logo-text">Pixel<em>Prof</em></span>
+        <span class="cs-logo-sub">Nuovo Docente</span>
+      </div>
+    </div>
+    <div class="cs-teacher-badge">
+      <button class="back-link" onclick="tmBackFromCreate()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Docenti</button>
+      <button class="cs-logout-btn" onclick="doLogout()"><i class="ti ti-logout"></i> Esci</button>
+    </div>
+  </div>
+  <div class="cs-body" style="max-width:520px">
+    <div class="cs-hero">
+      <span class="cs-hero-eyebrow">Direttore · Nuovo account</span>
+      <h1 class="cs-hero-title">Crea un nuovo <span class="hl">docente</span></h1>
+      <p class="cs-hero-sub">Riceverà un invito via email per impostare la password.</p>
+    </div>
+    <div class="setup-card">
+      <div class="setup-section">
+        <div class="slbl">Dati docente</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+          <div>
+            <label class="login-label" for="tmc-nome">Nome</label>
+            <input id="tmc-nome" class="login-inp" placeholder="Es. Maria" onkeydown="if(event.key==='Enter')sh('tmc-cognome')?.focus()"/>
+          </div>
+          <div>
+            <label class="login-label" for="tmc-cognome">Cognome</label>
+            <input id="tmc-cognome" class="login-inp" placeholder="Es. Rossi" onkeydown="if(event.key==='Enter')sh('tmc-email')?.focus()"/>
+          </div>
+        </div>
+        <div style="margin-bottom:12px">
+          <label class="login-label" for="tmc-email">Email</label>
+          <input id="tmc-email" type="email" class="login-inp" placeholder="docente@scuola.it" onkeydown="if(event.key==='Enter')tmSubmitCreate()"/>
+        </div>
+        <div style="margin-bottom:6px">
+          <label class="login-label">Genere</label>
+          <div class="gender-toggle">
+            <button type="button" class="gender-btn" id="tmc-gender-uomo" onclick="tmcPickGenere('uomo')"><i class="ti ti-gender-male"></i> Uomo</button>
+            <button type="button" class="gender-btn" id="tmc-gender-donna" onclick="tmcPickGenere('donna')"><i class="ti ti-gender-female"></i> Donna</button>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-neon" style="width:100%;justify-content:center;padding:11px;margin-top:8px" onclick="tmSubmitCreate()">
+        <i class="ti ti-mail-forward"></i> Invita Docente
+      </button>
+      <div id="tmc-fb" style="font-size:11px;min-height:16px;margin-top:8px;text-align:center"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================
+     LISTA DOCENTI — v6.1.0 (solo Direttore)
+====================================== -->
+<div id="screen-teacher-list" class="hidden">
+  <div class="cs-topbar">
+    <div class="cs-logo">
+      <svg class="cs-logo-svg" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".6"/>
+        <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.06)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".4"/>
+        <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+        <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="26" cy="8" r="1.5" fill="#7c6aff" opacity=".8"/>
+        <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".5"/>
+      </svg>
+      <div>
+        <span class="cs-logo-text">Pixel<em>Prof</em></span>
+        <span class="cs-logo-sub">Docenti</span>
+      </div>
+    </div>
+    <div class="cs-teacher-badge">
+      <button class="back-link" onclick="tmBackFromList()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Docenti</button>
+      <button class="cs-logout-btn" onclick="doLogout()"><i class="ti ti-logout"></i> Esci</button>
+    </div>
+  </div>
+  <div class="cs-body">
+    <div class="cs-hero">
+      <span class="cs-hero-eyebrow">Direttore · Account</span>
+      <h1 class="cs-hero-title">I tuoi <span class="hl">docenti</span></h1>
+      <p class="cs-hero-sub">Tocca un docente per modificarlo o gestire le sue aule.</p>
+    </div>
+    <div class="tm-tabs">
+      <button class="tm-tab active" id="tml-tab-active" onclick="tmSetTab('active')">Docenti Attivi</button>
+      <button class="tm-tab" id="tml-tab-inactive" onclick="tmSetTab('inactive')">Docenti Disattivati</button>
+    </div>
+    <div id="tml-grid" class="tdc-grid"></div>
+  </div>
+</div>
+
+<!-- ======================================
+     DETTAGLIO DOCENTE — v6.1.0 (solo Direttore)
+====================================== -->
+<div id="screen-teacher-detail" class="hidden">
+  <div class="cs-topbar">
+    <div class="cs-logo">
+      <svg class="cs-logo-svg" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".6"/>
+        <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.06)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".4"/>
+        <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+        <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="26" cy="8" r="1.5" fill="#7c6aff" opacity=".8"/>
+        <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".5"/>
+      </svg>
+      <div>
+        <span class="cs-logo-text">Pixel<em>Prof</em></span>
+        <span class="cs-logo-sub">Scheda Docente</span>
+      </div>
+    </div>
+    <div class="cs-teacher-badge">
+      <button class="back-link" onclick="tmBackFromDetail()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Lista</button>
+      <button class="cs-logout-btn" onclick="doLogout()"><i class="ti ti-logout"></i> Esci</button>
+    </div>
+  </div>
+  <div class="cs-body" style="max-width:600px">
+    <div class="cs-hero" style="padding:1.5rem 0 1rem">
+      <span class="cs-hero-eyebrow">Direttore · Scheda docente</span>
+      <h1 class="cs-hero-title" id="tmd-title" style="font-size:22px">Docente</h1>
+    </div>
+
+    <div class="setup-card" style="margin-bottom:16px">
+      <div class="slbl">Dati personali</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+        <div>
+          <label class="login-label" for="tmd-nome">Nome</label>
+          <input id="tmd-nome" class="login-inp" placeholder="Nome"/>
+        </div>
+        <div>
+          <label class="login-label" for="tmd-cognome">Cognome</label>
+          <input id="tmd-cognome" class="login-inp" placeholder="Cognome"/>
+        </div>
+      </div>
+      <div style="margin-bottom:12px">
+        <label class="login-label">Genere</label>
+        <div class="gender-toggle">
+          <button type="button" class="gender-btn" id="tmd-gender-uomo" onclick="tmdPickGenere('uomo')"><i class="ti ti-gender-male"></i> Uomo</button>
+          <button type="button" class="gender-btn" id="tmd-gender-donna" onclick="tmdPickGenere('donna')"><i class="ti ti-gender-female"></i> Donna</button>
+        </div>
+      </div>
+      <button class="btn btn-neon" onclick="tmDetailSaveProfile()"><i class="ti ti-device-floppy"></i> Salva nome, cognome e genere</button>
+    </div>
+
+    <div class="setup-card" style="margin-bottom:16px">
+      <div class="slbl">Email di accesso</div>
+      <div id="tmd-current-email" style="font-size:11px;color:rgba(255,255,255,.35);margin-bottom:10px;font-family:'Share Tech Mono',monospace">Email attuale: —</div>
+      <div class="inp-row" style="margin-bottom:8px">
+        <input id="tmd-email" type="email" placeholder="nuova@scuola.it"/>
+        <button class="btn btn-neon" onclick="tmDetailSaveEmail()"><i class="ti ti-mail"></i> Cambia email</button>
+      </div>
+      <div id="tmd-email-fb" style="font-size:11px;min-height:16px"></div>
+      <div style="font-size:10px;color:rgba(255,255,255,.3);margin-top:4px;line-height:1.5">
+        Richiede la Edge Function "update_teacher_email" (Admin API) — se non è stata deployata su Supabase, l'operazione mostrerà un errore esplicito qui sopra.
+      </div>
+    </div>
+
+    <div class="setup-card" style="margin-bottom:16px">
+      <div class="slbl">Aule assegnate</div>
+      <div id="tmd-aule-grid" class="tdc-aule-toggle-grid"></div>
+    </div>
+
+    <div class="setup-card">
+      <div class="slbl">Stato account</div>
+      <div class="btn-row">
+        <button id="tmd-btn-deactivate" class="btn" onclick="tmDetailToggleActive(false)" style="border-color:rgba(255,80,80,.3);color:#ff6b6b"><i class="ti ti-user-off"></i> Disattiva</button>
+        <button id="tmd-btn-activate" class="btn" onclick="tmDetailToggleActive(true)" style="border-color:rgba(0,255,150,.3);color:#00ff96"><i class="ti ti-user-check"></i> Riattiva</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================================
+     COURSES SCREEN
+====================================== -->
+<div id="screen-courses" class="hidden">
+  <div class="cs-topbar">
+    <div class="cs-logo">
+      <svg class="cs-logo-svg" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".6"/>
+        <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.06)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".4"/>
+        <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+        <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="26" cy="8" r="1.5" fill="#7c6aff" opacity=".8"/>
+        <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".5"/>
+      </svg>
+      <div>
+        <span class="cs-logo-text">Pixel<em>Prof</em></span>
+        <span class="cs-logo-sub">ICDL Lab · v5.0.6</span>
+      </div>
+    </div>
+    <!-- Badge docente loggato + azioni — v3.2.2 -->
+    <div class="cs-teacher-badge">
+      <button id="cs-back-dashboard-btn" class="back-link hidden" onclick="backToDirectorDashboard()" style="margin-right:4px"><i class="ti ti-arrow-left"></i> Dashboard</button>
+      <span id="cs-mode-badge" class="hidden">🛠️ Gestione</span>
+      <span id="cs-director-badge" class="cs-director-badge hidden">👑 Direttore</span>
+      <span id="cs-teacher-role-badge" class="hidden" style="display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.25);color:#00cfff;font-size:10px;font-weight:700;font-family:'Share Tech Mono',monospace;letter-spacing:.5px">📖 Docente</span>
+      <span class="cs-teacher-name" id="cs-teacher-name"></span>
+      <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
+        <i class="ti ti-volume-2 audio-toggle-icon"></i>
+      </button>
+      <button class="audio-toggle-btn theme-toggle-btn" onclick="ThemeManager.toggle()" title="Tema chiaro/scuro" aria-label="Passa al tema chiaro o scuro">
+        <i class="ti ti-moon theme-toggle-icon"></i>
+      </button>
+      <button class="cs-logout-btn" onclick="doLogout()">
+        <i class="ti ti-logout"></i> Esci
+      </button>
+    </div>
+  </div>
+  <div class="cs-body">
+    <div class="cs-hero">
+      <span class="cs-hero-eyebrow">Gestione Aule</span>
+      <h1 class="cs-hero-title">Seleziona<br>la tua <span class="hl">aula</span></h1>
+      <p class="cs-hero-sub">Ogni aula ha giocatori, classifiche e progressi dedicati.</p>
+    </div>
+    <div class="cs-add-form" id="cs-add-form-wrap">
+      <div class="slbl" style="margin-bottom:10px">Nuova aula</div>
+      <div class="cs-add-row">
+        <input id="cs-course-inp" class="cs-add-inp" placeholder="Es. 3A Informatica, 4B Marketing..." maxlength="40"
+          onkeydown="if(event.key==='Enter')openCourseWizard()"/>
+        <button class="cs-add-btn" onclick="openCourseWizard()"><i class="ti ti-plus"></i> Crea</button>
+      </div>
+    </div>
+    <div class="slbl">Aule salvate</div>
+    <div id="cs-grid" class="cs-grid"></div>
+  </div>
+</div>
+
+<!-- ======================================
+     WIZARD NUOVA AULA — v3.1.2
+     Step 1: nome + icona
+     Step 2: moduli abilitati
+     Step 3: docenti assegnati
+====================================== -->
+<div id="course-wizard-overlay" class="hidden">
+  <div class="cw-box">
+
+    <!-- Indicatore step -->
+    <div class="cw-progress">
+      <div class="cw-dot active" id="cw-dot-1"></div>
+      <div class="cw-dot" id="cw-dot-2"></div>
+      <div class="cw-dot" id="cw-dot-3"></div>
+    </div>
+
+    <!-- STEP 1: Nome aula -->
+    <div class="cw-step active" id="cw-step-1">
+      <div class="cw-title">🏫 Nuova aula</div>
+      <div class="cw-subtitle">Scegli nome e icona per la tua aula. Potrai modificarli in seguito.</div>
+      <div style="margin-bottom:12px">
+        <div class="slbl" style="margin-bottom:6px">Nome aula</div>
+        <input id="cw-name-inp" class="cs-add-inp" placeholder="Es. 3A Informatica, 4B Marketing..." maxlength="40"
+          style="width:100%" onkeydown="if(event.key==='Enter')cwStep(2)"/>
+      </div>
+      <div style="margin-bottom:12px">
+        <div class="slbl" style="margin-bottom:8px">Icona</div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px" id="cw-icon-grid"></div>
+      </div>
+      <!-- DATE + FASCIA ORARIA — tutti obbligatori -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px">
+        <div>
+          <div class="slbl" style="margin-bottom:6px">Data inizio <span style="color:#ff4d6d;font-size:10px">*</span></div>
+          <input type="date" id="cw-start-date" class="cs-add-inp" style="width:100%;color-scheme:dark" required/>
+        </div>
+        <div>
+          <div class="slbl" style="margin-bottom:6px">Data fine <span style="color:#ff4d6d;font-size:10px">*</span></div>
+          <input type="date" id="cw-end-date" class="cs-add-inp" style="width:100%;color-scheme:dark" required/>
+        </div>
+      </div>
+      <div id="cw-date-err-wrap" style="display:none;margin-top:-6px;margin-bottom:8px;font-size:11px;color:#ff6b6b;font-family:'Share Tech Mono',monospace"></div>
+      <div style="margin-bottom:12px">
+        <div class="slbl" style="margin-bottom:6px">Fascia oraria <span style="color:#ff4d6d;font-size:10px">*</span></div>
+        <div style="display:flex;align-items:center;gap:8px">
+          <input type="time" id="cw-time-start" class="cs-add-inp"
+            style="flex:1;color-scheme:dark;min-width:0" required/>
+          <span style="color:rgba(255,255,255,.4);font-size:14px;font-weight:600;flex-shrink:0">–</span>
+          <input type="time" id="cw-time-end" class="cs-add-inp"
+            style="flex:1;color-scheme:dark;min-width:0" required/>
+        </div>
+        <div id="cw-time-err" style="display:none;margin-top:4px;font-size:11px;color:#ff6b6b;font-family:'Share Tech Mono',monospace"></div>
+      </div>
+      <div class="cw-btns">
+        <button class="cw-btn-back" onclick="closeCourseWizard()">Annulla</button>
+        <button class="cw-btn-next" id="cw-next-1" onclick="cwStep(2)">Moduli <i class="ti ti-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 2: Moduli abilitati -->
+    <div class="cw-step" id="cw-step-2">
+      <div class="cw-title">📚 Moduli</div>
+      <div class="cw-subtitle">Seleziona i moduli che i docenti potranno usare in questa aula. Almeno uno è richiesto.</div>
+      <div class="cw-mod-grid" id="cw-mod-grid">
+        <button class="cw-mod-btn" data-mod="CE" onclick="cwToggleMod(this)">
+          <div class="cm-check">✓</div>
+          <span class="cm-icon">💻</span>
+          <div class="cm-name">Computer Essentials</div>
+          <div class="cm-desc">Hardware, software, OS</div>
+        </button>
+        <button class="cw-mod-btn" data-mod="OE" onclick="cwToggleMod(this)">
+          <div class="cm-check">✓</div>
+          <span class="cm-icon">🌐</span>
+          <div class="cm-name">Online Essentials</div>
+          <div class="cm-desc">Reti, protocolli, sicurezza</div>
+        </button>
+        <button class="cw-mod-btn" data-mod="WP" onclick="cwToggleMod(this)">
+          <div class="cm-check">✓</div>
+          <span class="cm-icon">📝</span>
+          <div class="cm-name">Word Processing</div>
+          <div class="cm-desc">Elaborazione testi con Word</div>
+        </button>
+      </div>
+      <div class="cw-btns">
+        <button class="cw-btn-back" onclick="cwStep(1)"><i class="ti ti-arrow-left"></i> Indietro</button>
+        <button class="cw-btn-next" id="cw-next-2" onclick="cwStep(3)" disabled>Docenti <i class="ti ti-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 3: Docenti -->
+    <div class="cw-step" id="cw-step-3">
+      <div class="cw-title">👩‍🏫 Docenti</div>
+      <div class="cw-subtitle">Assegna almeno un docente per questa aula. Potrai modificare l'assegnazione in seguito dal pannello ⚙️ Gestisci.</div>
+
+      <!-- Banner "almeno un docente richiesto" — nascosto dopo il primo aggiunto -->
+      <div id="cw-teacher-required-banner" style="
+        display:flex;align-items:center;gap:10px;
+        padding:10px 14px;border-radius:10px;margin-bottom:12px;
+        background:rgba(255,180,0,.08);border:1px solid rgba(255,180,0,.25);
+        font-size:11px;color:#ffb400;font-family:'Share Tech Mono',monospace;
+        line-height:1.45;
+      ">
+        <i class="ti ti-alert-triangle" style="font-size:16px;flex-shrink:0"></i>
+        <span>È obbligatorio aggiungere almeno un docente per procedere alla creazione dell'aula.</span>
+      </div>
+
+      <div id="cw-teacher-list" style="margin-bottom:10px;max-height:180px;overflow-y:auto"></div>
+      <div class="slbl" style="margin-bottom:6px">Aggiungi docente esistente</div>
+      <div class="cw-invite-row" style="margin-bottom:12px">
+        <select id="cw-teacher-select" class="dp-add-select cw-teacher-select-styled" style="flex:1">
+          <option value="">— Seleziona docente —</option>
+        </select>
+        <button class="btn btn-neon" onclick="cwAddTeacher()" style="padding:8px 14px;font-size:12px">
+          <i class="ti ti-plus"></i>
+        </button>
+      </div>
+      <div class="slbl" style="margin-bottom:6px">Oppure invita tramite email</div>
+      <div class="cw-invite-row">
+        <input id="cw-invite-email" class="cw-invite-inp" type="email" placeholder="email@scuola.it"
+          onkeydown="if(event.key==='Enter')cwInviteTeacher()"/>
+        <input id="cw-invite-name" class="cw-invite-inp" placeholder="Nome" style="max-width:100px"
+          onkeydown="if(event.key==='Enter')cwInviteTeacher()"/>
+        <button class="btn btn-neon" onclick="cwInviteTeacher()" style="padding:8px 12px;font-size:12px">
+          <i class="ti ti-mail-forward"></i>
+        </button>
+      </div>
+      <div id="cw-invite-fb" class="cw-invite-fb"></div>
+      <div class="cw-btns" style="margin-top:1.25rem">
+        <button class="cw-btn-back" onclick="cwStep(2)"><i class="ti ti-arrow-left"></i> Indietro</button>
+        <button class="cw-btn-next" id="cw-btn-create" onclick="cwCreateClassroom()" disabled>
+          <i class="ti ti-check"></i> Crea aula
+        </button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Dropdown menu aula -->
+<div id="course-dropdown" class="course-dropdown hidden">
+  <button class="cd-item" id="cd-manage" onclick="_cdManage()" style="display:none"><i class="ti ti-settings"></i> Gestisci aula</button>
+  <button class="cd-item" onclick="cdAction('rename')"><i class="ti ti-pencil"></i> Rinomina</button>
+  <button class="cd-item" onclick="cdAction('icon')"><i class="ti ti-mood-smile"></i> Cambia icona</button>
+  <button class="cd-item" onclick="cdAction('bg')"><i class="ti ti-palette"></i> Personalizza colore</button>
+  <button class="cd-item danger" onclick="cdAction('delete')"><i class="ti ti-trash"></i> Elimina aula</button>
+</div>
+
+<!-- Icon picker modal -->
+<div id="icon-picker-overlay" class="icon-picker-overlay hidden" onclick="if(event.target===this)closeIconPicker()">
+  <div class="icon-picker-box">
+    <div class="icp-title">Scegli un'icona</div>
+    <div class="icp-grid" id="icp-grid"></div>
+    <button class="icp-close" onclick="closeIconPicker()">Chiudi</button>
+  </div>
+</div>
+
+<!-- Color picker modal — v7 con anteprima live -->
+<div id="bg-picker-overlay" class="icon-picker-overlay hidden" onclick="if(event.target===this)closeBgPicker()">
+  <div class="icon-picker-box bg-picker-box" style="max-width:400px">
+    <div class="icp-title" style="display:flex;align-items:center;justify-content:space-between">
+      <span>Personalizza aula</span>
+      <button onclick="closeBgPicker()" style="background:none;border:none;color:rgba(255,255,255,.35);font-size:18px;cursor:pointer;padding:0;line-height:1;transition:color .18s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.35)'">×</button>
+    </div>
+
+    <!-- LIVE PREVIEW -->
+    <div id="cp-preview" style="
+      border-radius:12px;padding:1rem 1rem .875rem;margin-bottom:14px;
+      border:1px solid rgba(255,255,255,.1);
+      transition:background .35s ease,border-color .35s ease,box-shadow .35s ease;
+      position:relative;overflow:hidden;min-height:90px;
+      display:flex;align-items:flex-end;
+    ">
+      <!-- top accent bar preview -->
+      <div id="cp-preview-bar" style="position:absolute;top:0;left:0;right:0;height:2px;transition:background .35s ease;border-radius:0"></div>
+      <div style="position:relative;z-index:2;width:100%">
+        <div id="cp-preview-icon" style="font-size:28px;margin-bottom:6px;line-height:1;filter:drop-shadow(0 0 8px rgba(255,255,255,.2))">🏫</div>
+        <div id="cp-preview-name" style="font-size:14px;font-weight:700;color:#fff;margin-bottom:3px;line-height:1.2">Nome aula</div>
+        <div style="font-size:9px;font-family:'Share Tech Mono',monospace;color:rgba(255,255,255,.3);letter-spacing:.5px" id="cp-preview-label">Anteprima</div>
+      </div>
+    </div>
+
+    <!-- SFONDO -->
+    <div style="font-size:10px;font-weight:700;color:rgba(0,255,200,.6);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px;display:flex;align-items:center;gap:8px">
+      Sfondo
+      <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(0,255,200,.2),transparent)"></span>
+    </div>
+    <div id="bgp-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px"></div>
+
+    <!-- COLORE BORDO / ACCENTO -->
+    <div style="font-size:10px;font-weight:700;color:rgba(0,255,200,.6);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px;display:flex;align-items:center;gap:8px">
+      Colore accento
+      <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(0,255,200,.2),transparent)"></span>
+    </div>
+    <div id="cp-color-grid" style="display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-bottom:14px"></div>
+
+    <button class="icp-close" onclick="closeBgPicker()">Chiudi</button>
+  </div>
+</div>
+
+<!-- ======================================
+     DIRECTOR PANEL — v3.0.0
+     Gestione docenti e moduli per aula.
+     Visibile solo al ruolo 'director'.
+====================================== -->
+<div id="dp-overlay" class="dp-overlay hidden" onclick="if(event.target===this)closeDirectorPanel()">
+  <div class="dp-box">
+    <div class="dp-title">
+      <span>⚙️ Gestione aula</span>
+      <button class="dp-close-btn" onclick="closeDirectorPanel()">×</button>
+    </div>
+
+    <!-- Docenti assegnati -->
+    <div class="slbl" style="margin-bottom:8px">Docenti assegnati</div>
+    <div class="dp-teacher-list" id="dp-teacher-list">
+      <div style="font-size:12px;color:rgba(255,255,255,.3)">Caricamento…</div>
+    </div>
+    <div class="dp-add-row">
+      <select class="dp-add-select" id="dp-teacher-select">
+        <option value="">— Seleziona docente —</option>
+      </select>
+      <button class="btn btn-neon" onclick="dpAssignTeacher()" style="padding:7px 14px;font-size:12px">
+        <i class="ti ti-plus"></i> Aggiungi
+      </button>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Invita nuovo docente -->
+    <div class="slbl" style="margin-bottom:8px">Invita nuovo docente</div>
+    <div class="dp-add-row">
+      <input id="dp-invite-email" class="login-inp" type="email" placeholder="email@scuola.it"
+        style="font-size:12px;padding:8px 10px"
+        onkeydown="if(event.key==='Enter')dpInviteTeacher()"/>
+      <input id="dp-invite-name" class="login-inp" placeholder="Nome"
+        style="font-size:12px;padding:8px 10px;max-width:110px"
+        onkeydown="if(event.key==='Enter')dpInviteTeacher()"/>
+      <button class="btn btn-neon" onclick="dpInviteTeacher()" style="padding:7px 12px;font-size:12px">
+        <i class="ti ti-mail-forward"></i>
+      </button>
+    </div>
+    <div id="dp-invite-fb" style="font-size:11px;margin-top:6px;min-height:16px"></div>
+
+    <div class="divider"></div>
+
+    <!-- Moduli abilitati per questa aula -->
+    <div class="slbl" style="margin-bottom:6px">Moduli abilitati</div>
+    <div style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:10px">
+      Nessuna selezione = tutti i moduli visibili
+    </div>
+    <div class="mod-toggle-grid" id="dp-mod-grid"></div>
+    <button class="btn btn-neon" onclick="dpSaveModules()"
+      style="width:100%;justify-content:center;padding:9px;font-size:12px">
+      <i class="ti ti-device-floppy"></i> Salva moduli
+    </button>
+  </div>
+</div>
+
+<div class="app">
+
+<!-- ======================================
+     TOPBAR v5.0.6
+     Sinistra: Logo PixelProf
+     Destra: Badge Aula | Hub (solo icona) | Badge ruolo | Nome | Esci
+====================================== -->
+<div class="topbar">
+
+  <!-- LOGO: clic → uscita aula -->
+  <div class="logo-wrap" onclick="goCoursesFromApp()" title="Cambia aula">
+    <svg class="logo-svg" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".6"/>
+      <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.06)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".4"/>
+      <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+      <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <circle cx="26" cy="8" r="1.5" fill="#7c6aff" opacity=".8"/>
+      <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".5"/>
+    </svg>
+    <div class="logo-text">
+      <span class="logo-main">Pixel<em>Prof</em></span>
+      <span class="logo-sub">ICDL Lab · v5.0.6</span>
+    </div>
+  </div>
+
+  <div style="flex:1"></div>
+
+  <!-- Badge aula: clic → ritorno selezione moduli (goHome) -->
+  <div id="tb-course-badge" class="tb-aula-badge" onclick="goHome()" title="Torna ai moduli">
+    <span id="tb-course-icon" class="tb-aula-icon"></span>
+    <span id="tb-course-name" class="tb-aula-name"></span>
+    <i class="ti ti-home" style="font-size:10px;color:rgba(0,255,200,.45);flex-shrink:0;margin-left:2px"></i>
+  </div>
+
+  <!-- NAV: Hub solo icona -->
+  <nav class="tb-nav">
+    <button class="audio-toggle-btn theme-toggle-btn" onclick="ThemeManager.toggle()" title="Tema chiaro/scuro" aria-label="Passa al tema chiaro o scuro">
+      <i class="ti ti-moon theme-toggle-icon"></i>
+    </button>
+    <div class="tb-hub-wrap" id="tb-hub-wrap">
+      <button class="tb-btn tb-hub-btn tb-hub-icon-only" id="tb-hub-btn" onclick="toggleHubMenu(event)" title="Classifica, Progressi, Storico, Panoramica Classe">
+        <i class="ti ti-layout-grid"></i>
+      </button>
+      <div class="tb-hub-menu hidden" id="tb-hub-menu">
+        <button class="tb-hub-item" id="tb-lb" onclick="closeHubMenu();goTab('lb')">
+          <i class="ti ti-trophy"></i><span>Classifica</span>
+        </button>
+        <button class="tb-hub-item" id="tb-st" onclick="closeHubMenu();goTab('stats')">
+          <i class="ti ti-chart-bar"></i><span>Progressi</span>
+        </button>
+        <button class="tb-hub-item" id="tb-hist" onclick="closeHubMenu();goTab('hist')">
+          <i class="ti ti-history"></i><span>Storico</span>
+        </button>
+        <button class="tb-hub-item" id="tb-dash" onclick="closeHubMenu();goTab('dashboard')">
+          <i class="ti ti-report-analytics"></i><span>Panoramica Classe</span>
+        </button>
+        <button class="tb-hub-item" id="tb-badges" onclick="closeHubMenu();goTab('badges')">
+          <i class="ti ti-award"></i><span>Traguardi</span>
+        </button>
+      </div>
+    </div>
+    <!-- tb-home: nascosto visivamente, usato da setTb() -->
+    <button id="tb-home" style="display:none" onclick="goHome()"></button>
+  </nav>
+
+  <!-- User badge: ruolo | nome | esci -->
+  <div id="tb-user-badge" style="display:none;align-items:center;gap:6px;flex-shrink:0">
+    <span id="tb-user-role-pill" style="font-family:'Share Tech Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:20px;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.3);color:#ffd700"></span>
+    <span id="tb-user-name" style="font-size:11px;color:rgba(255,255,255,.5);font-family:'Share Tech Mono',monospace;white-space:nowrap;max-width:80px;overflow:hidden;text-overflow:ellipsis"></span>
+    <button class="cs-logout-btn" onclick="doLogout()" style="padding:4px 9px;font-size:10px"><i class="ti ti-logout"></i></button>
+  </div>
+
+</div>
+<!-- Backdrop per chiudere Hub cliccando fuori -->
+<div id="tb-hub-backdrop" onclick="closeHubMenu()" style="display:none;position:fixed;inset:0;z-index:90"></div>
+
+<!-- ======================================
+     HOME
+====================================== -->
+<div id="tab-home" class="screen active">
+
+  <!-- STEP: MODULO -->
+  <div id="step-mod">
+
+    <!-- v6.5.0: toggle audio — visibile SOLO qui e in Seleziona aula, ma lo stato è globale -->
+    <div class="step-mod-toolbar">
+      <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
+        <i class="ti ti-volume-2 audio-toggle-icon"></i>
+      </button>
+    </div>
+
+    <!-- Hero headline -->
+    <div class="home-hero">
+      <span class="home-hero-eyebrow">ICDL Base · Moduli disponibili</span>
+      <h1 class="home-hero-title">Scegli il tuo<br><span class="hl">modulo</span></h1>
+      <p class="home-hero-sub">Seleziona un modulo per iniziare a esercitarti con quiz, memory, abbinamenti e molto altro.</p>
+    </div>
+
+    <div class="home-divider"><span>moduli attivi</span></div>
+
+    <!-- Active module cards -->
+    <div class="mod-grid">
+
+      <!-- CE -->
+      <div class="mod-card ce-card" id="mc-CE" role="button" tabindex="0" aria-label="Seleziona modulo Computer Essentials" onclick="selMod('CE')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selMod('CE');}">
+        <span class="mc-badge">ICDL</span>
+        <svg class="bg" viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <!-- grid -->
+          <defs>
+            <pattern id="grid-ce" width="22" height="22" patternUnits="userSpaceOnUse">
+              <path d="M22 0L0 0 0 22" fill="none" stroke="#1e90ff" stroke-width=".4" opacity=".3"/>
+            </pattern>
+          </defs>
+          <rect width="300" height="180" fill="url(#grid-ce)"/>
+          <!-- CPU die -->
+          <rect x="170" y="50" width="100" height="80" rx="6" fill="none" stroke="#1e90ff" stroke-width="1.2" opacity=".45"/>
+          <rect x="182" y="62" width="76" height="56" rx="4" fill="rgba(30,144,255,.06)" stroke="#1e90ff" stroke-width=".8" opacity=".5"/>
+          <!-- CPU pins left -->
+          <line x1="170" y1="70" x2="155" y2="70" stroke="#00cfff" stroke-width="1.2" opacity=".5"/>
+          <line x1="170" y1="80" x2="155" y2="80" stroke="#00cfff" stroke-width="1.2" opacity=".4"/>
+          <line x1="170" y1="90" x2="155" y2="90" stroke="#00cfff" stroke-width="1.2" opacity=".5"/>
+          <line x1="170" y1="100" x2="155" y2="100" stroke="#00cfff" stroke-width="1.2" opacity=".4"/>
+          <line x1="170" y1="110" x2="155" y2="110" stroke="#00cfff" stroke-width="1.2" opacity=".5"/>
+          <!-- CPU pins top -->
+          <line x1="195" y1="50" x2="195" y2="35" stroke="#1e90ff" stroke-width="1.2" opacity=".4"/>
+          <line x1="215" y1="50" x2="215" y2="35" stroke="#1e90ff" stroke-width="1.2" opacity=".5"/>
+          <line x1="235" y1="50" x2="235" y2="35" stroke="#1e90ff" stroke-width="1.2" opacity=".4"/>
+          <line x1="255" y1="50" x2="255" y2="35" stroke="#1e90ff" stroke-width="1.2" opacity=".5"/>
+          <!-- CPU label -->
+          <text x="220" y="93" text-anchor="middle" font-family="monospace" font-size="10" fill="#00cfff" opacity=".6" font-weight="bold">CPU</text>
+          <!-- circuit traces left -->
+          <rect x="20" y="55" width="45" height="30" rx="4" fill="none" stroke="#00cfff" stroke-width="1" opacity=".55"/>
+          <rect x="20" y="95" width="25" height="16" rx="3" fill="none" stroke="#1e90ff" stroke-width=".8" opacity=".4"/>
+          <line x1="65" y1="70" x2="100" y2="70" stroke="#00cfff" stroke-width=".8" opacity=".5"/>
+          <line x1="65" y1="70" x2="65" y2="103" stroke="#00cfff" stroke-width=".8" opacity=".3"/>
+          <circle cx="65" cy="103" r="2" fill="#00cfff" opacity=".4"/>
+          <!-- RAM sticks bottom -->
+          <rect x="30" y="140" width="55" height="14" rx="3" fill="none" stroke="#1e90ff" stroke-width=".8" opacity=".4"/>
+          <rect x="95" y="140" width="55" height="14" rx="3" fill="none" stroke="#1e90ff" stroke-width=".8" opacity=".35"/>
+          <rect x="160" y="140" width="55" height="14" rx="3" fill="none" stroke="#1e90ff" stroke-width=".8" opacity=".3"/>
+          <!-- glow blob -->
+          <ellipse cx="220" cy="90" rx="60" ry="40" fill="rgba(0,144,255,.04)"/>
+        </svg>
+        <div class="mc-content">
+          <span class="mc-icon">💻</span>
+          <h3>Computer Essentials</h3>
+          <p>Hardware, software, OS e licenze</p>
+          <div class="tags">
+            <span class="tag">CPU · RAM · ROM</span>
+            <span class="tag">HDD / SSD</span>
+            <span class="tag">OS</span>
+            <span class="tag">Licenze</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- OE -->
+      <div class="mod-card oe-card" id="mc-OE" role="button" tabindex="0" aria-label="Seleziona modulo Online Essentials" onclick="selMod('OE')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selMod('OE');}">
+        <span class="mc-badge">ICDL</span>
+        <svg class="bg" viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <!-- globe rings -->
+          <ellipse cx="200" cy="90" rx="70" ry="70" fill="none" stroke="#7c6aff" stroke-width=".8" opacity=".4"/>
+          <ellipse cx="200" cy="90" rx="70" ry="30" fill="none" stroke="#7c6aff" stroke-width=".6" opacity=".3"/>
+          <ellipse cx="200" cy="90" rx="35" ry="70" fill="none" stroke="#a855f7" stroke-width=".6" opacity=".25"/>
+          <line x1="130" y1="90" x2="270" y2="90" stroke="#7c6aff" stroke-width=".6" opacity=".3"/>
+          <line x1="200" y1="20" x2="200" y2="160" stroke="#a855f7" stroke-width=".6" opacity=".25"/>
+          <!-- network nodes -->
+          <circle cx="50" cy="50" r="5" fill="none" stroke="#7c6aff" stroke-width="1.2" opacity=".6"/>
+          <circle cx="50" cy="130" r="5" fill="none" stroke="#a855f7" stroke-width="1.2" opacity=".5"/>
+          <circle cx="95" cy="90" r="4" fill="#7c6aff" opacity=".35"/>
+          <!-- node lines -->
+          <line x1="55" y1="53" x2="91" y2="88" stroke="#7c6aff" stroke-width=".8" opacity=".4"/>
+          <line x1="55" y1="127" x2="91" y2="92" stroke="#a855f7" stroke-width=".8" opacity=".35"/>
+          <line x1="99" y1="90" x2="130" y2="90" stroke="#7c6aff" stroke-width=".8" opacity=".35"/>
+          <!-- DNS / HTTP labels -->
+          <text x="34" y="38" font-family="monospace" font-size="7" fill="#a855f7" opacity=".5">DNS</text>
+          <text x="30" y="148" font-family="monospace" font-size="7" fill="#7c6aff" opacity=".45">HTTP/S</text>
+          <!-- glow blob -->
+          <ellipse cx="200" cy="90" rx="50" ry="50" fill="rgba(124,106,255,.04)"/>
+        </svg>
+        <div class="mc-content">
+          <span class="mc-icon">🌐</span>
+          <h3>Online Essentials</h3>
+          <p>Reti, protocolli e sicurezza web</p>
+          <div class="tags">
+            <span class="tag">LAN · MAN · WAN</span>
+            <span class="tag">IP · DNS</span>
+            <span class="tag">HTTP/S</span>
+            <span class="tag">Cookie</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Word Processing — ATTIVO v3.2.2 -->
+      <div class="mod-card wp-card" id="mc-WP" role="button" tabindex="0" aria-label="Seleziona modulo Word Processing" onclick="selMod('WP')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selMod('WP');}">
+        <span class="mc-badge">ICDL</span>
+        <svg class="bg" viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-wp" width="22" height="16" patternUnits="userSpaceOnUse">
+              <line x1="0" y1="15" x2="22" y2="15" fill="none" stroke="#28a050" stroke-width=".4" opacity=".3"/>
+            </pattern>
+          </defs>
+          <rect width="300" height="180" fill="url(#grid-wp)"/>
+          <rect x="160" y="25" width="110" height="135" rx="6" fill="rgba(40,160,80,.06)" stroke="#28a050" stroke-width="1.2" opacity=".45"/>
+          <polygon points="248,25 270,47 248,47" fill="rgba(40,160,80,.1)" stroke="#28a050" stroke-width=".8" opacity=".4"/>
+          <rect x="172" y="60"  width="80" height="5" rx="2" fill="#28a050" opacity=".22"/>
+          <rect x="172" y="72"  width="60" height="5" rx="2" fill="#28a050" opacity=".16"/>
+          <rect x="172" y="84"  width="72" height="5" rx="2" fill="#28a050" opacity=".19"/>
+          <rect x="172" y="96"  width="50" height="5" rx="2" fill="#28a050" opacity=".14"/>
+          <rect x="172" y="108" width="65" height="5" rx="2" fill="#28a050" opacity=".18"/>
+          <rect x="160" y="25" width="110" height="18" rx="6" fill="rgba(40,160,80,.1)"/>
+          <circle cx="172" cy="34" r="3" fill="#28a050" opacity=".4"/>
+          <circle cx="182" cy="34" r="3" fill="#28a050" opacity=".3"/>
+          <circle cx="192" cy="34" r="3" fill="#28a050" opacity=".35"/>
+          <text x="30" y="130" font-family="monospace" font-size="88" fill="#28a050" opacity=".05" font-weight="bold">W</text>
+          <rect x="20" y="40"  width="100" height="8"  rx="3" fill="#28a050" opacity=".1"/>
+          <rect x="20" y="56"  width="70"  height="6"  rx="2" fill="#28a050" opacity=".07"/>
+          <rect x="20" y="70"  width="85"  height="6"  rx="2" fill="#28a050" opacity=".08"/>
+          <rect x="20" y="84"  width="55"  height="6"  rx="2" fill="#28a050" opacity=".06"/>
+          <ellipse cx="215" cy="92" rx="55" ry="45" fill="rgba(40,160,80,.04)"/>
+        </svg>
+        <div class="mc-content">
+          <span class="mc-icon">📝</span>
+          <h3>Word Processing</h3>
+          <p>Elaborazione testi con Microsoft Word</p>
+          <div class="tags">
+            <span class="tag">Formattazione</span>
+            <span class="tag">Tabelle</span>
+            <span class="tag">Stili</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sezione prossimamente: Spreadsheets + Didattica -->
+    <div class="soon-section-label">
+      <span>prossimamente</span>
+    </div>
+    <div class="mod-grid-soon">
+
+      <!-- Spreadsheets — coming soon -->
+      <div class="mod-card ss-card soon-card" id="mc-SS">
+        <span class="cs-label">Coming Soon</span>
+        <svg class="bg" viewBox="0 0 300 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <rect x="60" y="25" width="140" height="100" rx="5" fill="none" stroke="#30b060" stroke-width="1" opacity=".28"/>
+          <rect x="60" y="25" width="140" height="18" rx="5" fill="rgba(40,160,80,.08)"/>
+          <line x1="100" y1="25" x2="100" y2="125" stroke="#30b060" stroke-width=".6" opacity=".2"/>
+          <line x1="140" y1="25" x2="140" y2="125" stroke="#30b060" stroke-width=".6" opacity=".2"/>
+          <line x1="180" y1="25" x2="180" y2="125" stroke="#30b060" stroke-width=".6" opacity=".2"/>
+          <line x1="60" y1="60" x2="200" y2="60" stroke="#30b060" stroke-width=".6" opacity=".2"/>
+          <line x1="60" y1="80" x2="200" y2="80" stroke="#30b060" stroke-width=".6" opacity=".2"/>
+          <line x1="60" y1="100" x2="200" y2="100" stroke="#30b060" stroke-width=".6" opacity=".2"/>
+          <rect x="220" y="80" width="10" height="40" rx="2" fill="#30b060" opacity=".15"/>
+          <rect x="234" y="60" width="10" height="60" rx="2" fill="#30b060" opacity=".12"/>
+          <rect x="248" y="70" width="10" height="50" rx="2" fill="#30b060" opacity=".1"/>
+          <text x="225" y="22" font-family="monospace" font-size="36" fill="#20a050" opacity=".06" font-weight="bold">X</text>
+        </svg>
+        <div class="mc-content">
+          <span class="mc-icon" style="font-size:24px;margin-bottom:6px">📊</span>
+          <h3>Spreadsheets</h3>
+          <p style="font-size:10px">Microsoft Excel · ICDL</p>
+          <span class="cs-version">// versione futura</span>
+        </div>
+      </div>
+         
+    </div>
+
+  </div>
+
+  <!-- STEP: CATEGORIA (Didattica / Minigiochi) -->
+  <div id="step-cat" class="hidden">
+    <div class="act-back-row">
+      <button class="act-back-btn" onclick="goStep('mod')"><i class="ti ti-arrow-left"></i> Modulo</button>
+      <span class="act-context-label" id="cat-mod-label"></span>
+    </div>
+    <div class="home-hero" style="padding:1.25rem 0 1rem;text-align:left">
+      <span class="home-hero-eyebrow">Cosa vuoi fare?</span>
+      <h1 class="home-hero-title" style="font-size:22px">Scegli la <span class="hl">modalità</span></h1>
+    </div>
+    <div class="cat-grid">
+      <!-- MINIGIOCHI -->
+      <div class="cat-card cat-games" role="button" tabindex="0"
+        aria-label="Minigiochi interattivi"
+        onclick="goStep('act')"
+        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goStep('act');}">
+        <div class="cat-card-inner">
+          <span class="cat-icon">🎮</span>
+          <div>
+            <div class="cat-title">Minigiochi</div>
+            <div class="cat-sub">Quiz, Memory, Abbina e altro</div>
+          </div>
+          <i class="ti ti-arrow-right cat-arrow"></i>
+        </div>
+      </div>
+      <!-- DIDATTICA — Coming Soon -->
+      <div class="cat-card cat-didattica soon-cat" style="cursor:not-allowed;opacity:.5;pointer-events:none"
+        aria-label="Didattica — Coming Soon" tabindex="-1">
+        <div class="cat-card-inner">
+          <span class="cat-icon">📖</span>
+          <div>
+            <div class="cat-title">Didattica</div>
+            <div class="cat-sub">Lezioni guidate · In arrivo</div>
+          </div>
+          <span class="cs-label" style="position:static;margin-left:auto;font-size:8px">Soon</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP: ATTIVITÀ -->
+  <div id="step-act" class="hidden">
+    <div class="act-back-row">
+      <button class="act-back-btn" onclick="goStep('cat')"><i class="ti ti-arrow-left"></i> Categoria</button>
+      <span class="act-context-label" id="act-mod-label"></span>
+    </div>
+    <div class="act-hero" id="act-hero">
+      <div class="act-hero-bg" id="act-hero-bg"></div>
+      <div class="act-hero-overlay"></div>
+      <div class="act-hero-content">
+        <span class="act-hero-icon" id="act-hero-icon">🎯</span>
+        <div class="act-hero-title" id="act-hero-title">Scegli un'attività</div>
+        <div class="act-hero-sub" id="act-hero-sub">Seleziona il tipo di esercizio</div>
+      </div>
+    </div>
+    <div class="act-grid">
+      <div class="act-card act-quiz" id="ac-quiz" role="button" tabindex="0" aria-label="Attività Quiz" onclick="selAct('quiz')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('quiz');}"><div class="ai" style="background:rgba(0,255,200,.1)"><i class="ti ti-help-circle" style="color:#00ffc8;font-size:20px"></i></div><div><h3>Quiz</h3><p>Risposta multipla</p></div></div>
+      <div class="act-card act-speed" id="ac-speed" role="button" tabindex="0" aria-label="Attività Speed Quiz" onclick="selAct('speed')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('speed');}"><div class="ai" style="background:rgba(255,180,0,.1)"><i class="ti ti-bolt" style="color:#ffb400;font-size:20px"></i></div><div><h3>Speed Quiz</h3><p>60 secondi</p></div></div>
+      <div class="act-card act-match" id="ac-match" role="button" tabindex="0" aria-label="Attività Abbina" onclick="selAct('match')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('match');}"><div class="ai" style="background:rgba(124,106,255,.1)"><i class="ti ti-link" style="color:#9d8fff;font-size:20px"></i></div><div><h3>Abbina</h3><p>Termine → definizione</p></div></div>
+      <div class="act-card act-memory" id="ac-memory" role="button" tabindex="0" aria-label="Attività Memory" onclick="selAct('memory')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('memory');}"><div class="ai" style="background:rgba(255,77,109,.1)"><i class="ti ti-cards" style="color:#ff6b85;font-size:20px"></i></div><div><h3>Memory</h3><p>Trova le coppie</p></div></div>
+      <div class="act-card act-fill full-act" id="ac-fill" role="button" tabindex="0" aria-label="Attività Completa la frase" onclick="selAct('fill')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('fill');}"><div class="ai" style="background:rgba(0,207,255,.1)"><i class="ti ti-pencil" style="color:#00cfff;font-size:20px"></i></div><div><h3>Completa la frase</h3><p>Inserisci il termine mancante</p></div></div>
+    </div>
+    <div id="setup-panel" class="hidden" style="margin-top:14px">
+      <div class="setup-card">
+        <div id="setup-num" class="setup-section hidden">
+          <div class="slbl">Quante domande?</div>
+          <div class="num-row">
+            <button class="num-btn" id="nb-5"  onclick="selNum(this,5)">5</button>
+            <button class="num-btn" id="nb-10" onclick="selNum(this,10)">10</button>
+            <button class="num-btn" id="nb-15" onclick="selNum(this,15)">15</button>
+            <button class="num-btn" id="nb-20" onclick="selNum(this,20)">20</button>
+            <button class="num-btn" id="nb-all" onclick="selNum(this,0)">Tutte</button>
+          </div>
+        </div>
+        <div id="setup-divider" class="divider hidden"></div>
+        <div class="setup-section">
+          <div class="slbl">Modalità e giocatori</div>
+          <div class="mode-row" style="margin-bottom:12px">
+            <button class="mode-btn" id="mb-ind" onclick="selMode('ind')"><i class="ti ti-user"></i> Individuale</button>
+            <button class="mode-btn" id="mb-sq" onclick="selMode('sq')"><i class="ti ti-users"></i> Squadre</button>
+          </div>
+          <div id="ps-ind" class="hidden">
+            <div class="slbl" style="margin-bottom:8px">Seleziona o crea giocatore</div>
+            <div class="pchips" id="ind-chips"></div>
+            <div class="inp-row">
+              <input id="ind-inp" placeholder="Nome nuovo giocatore..." onkeydown="if(event.key==='Enter')addInd()"/>
+              <button class="btn btn-neon" onclick="addInd()"><i class="ti ti-plus"></i></button>
+            </div>
+            <div class="divider"></div>
+            <button class="csv-import-trigger-btn" type="button" onclick="triggerCsvImport()" title="Un nominativo per riga, oppure Cognome,Nome per riga (CSV a 2 colonne). Eventuali colonne extra (classe, data, ecc.) vengono ignorate.">
+              <i class="ti ti-upload"></i> Importa elenco studenti da CSV/TXT
+            </button>
+            <input type="file" id="csv-import-input" accept=".csv,.txt,text/csv,text/plain" style="display:none" onchange="handleCsvFileSelect(event)"/>
+          </div>
+          <div id="ps-sq" class="hidden">
+            <div class="slbl" style="margin-bottom:8px">Squadre salvate</div>
+            <div class="pchips" id="sq-saved"></div>
+            <div class="divider"></div>
+            <div class="slbl" style="margin-bottom:8px">Nuove squadre</div>
+            <div id="sq-rows"></div>
+          </div>
+        </div>
+        <div style="padding-top:4px">
+          <button class="btn btn-neon" id="start-btn" onclick="launch()" disabled style="width:100%;justify-content:center;padding:11px">
+            <i class="ti ti-player-play"></i> Inizia sessione
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="step-num" class="hidden"></div>
+  <div id="step-players" class="hidden"></div>
+</div>
+
+<!-- ======================================
+     QUIZ
+====================================== -->
+<div id="tab-quiz" class="screen">
+  <div id="qz-game" class="hidden">
+    <div class="game-header">
+      <div class="game-header-left">
+        <button class="game-exit-btn" onclick="qzAbort()"><i class="ti ti-x"></i> Esci</button>
+        <button class="game-restart-btn" onclick="restartActivity()"><i class="ti ti-refresh"></i> Ricomincia</button>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <span class="timer-pill hidden" id="qz-timer"></span>
+        <span class="mem-stat-pill score-pill hidden" id="qz-score-pill"><i class="ti ti-star"></i><span id="qz-score-val">0</span></span>
+        <button class="mem-pause-btn hidden" id="qz-pause-btn" onclick="speedTogglePause()" title="Pausa"><i class="ti ti-player-pause" id="qz-pause-icon"></i></button>
+        <span style="font-size:11px;color:rgba(255,255,255,.35);font-family:'Share Tech Mono',monospace" id="qz-counter"></span>
+      </div>
+    </div>
+    <div class="live-bar" id="live-bar"></div>
+    <div class="turn-lbl" id="turn-lbl"></div>
+    <div class="prog-bar"><div class="prog-fill" id="qz-prog" style="width:0%"></div></div>
+    <div style="position:relative">
+      <div class="q-card"><div class="q-cat" id="qz-cat"></div><div class="q-text" id="qz-q"></div></div>
+      <div class="opts" id="qz-opts"></div>
+      <div id="qz-fb"></div>
+      <!-- Speed Quiz pause overlay -->
+      <div id="qz-pause-overlay" class="hidden" style="
+        position:absolute;inset:0;border-radius:var(--radius-md);
+        background:rgba(8,12,24,.84);
+        display:flex;flex-direction:column;align-items:center;justify-content:center;
+        gap:10px;z-index:10;backdrop-filter:blur(6px);
+        cursor:pointer;
+      " onclick="speedTogglePause()">
+        <div style="
+          width:52px;height:52px;border-radius:50%;
+          border:2px solid rgba(0,255,200,.5);
+          background:rgba(0,255,200,.08);
+          display:flex;align-items:center;justify-content:center;
+          font-size:22px;
+          box-shadow:0 0 20px rgba(0,255,200,.15);
+          animation:playPulse 1.4s ease-in-out infinite;
+        ">▶</div>
+        <div style="font-size:11px;color:rgba(0,255,200,.7);font-family:'Share Tech Mono',monospace;letter-spacing:1.5px;text-transform:uppercase">Premi per continuare</div>
+      </div>
+    </div>
+    <div style="text-align:right;margin-top:10px">
+      <button class="btn btn-neon hidden" id="next-btn" onclick="nextQ()">Prossima <i class="ti ti-arrow-right"></i></button>
+    </div>
+  </div>
+  <div id="qz-result" class="hidden"></div>
+</div>
+
+<!-- ======================================
+     GAMES
+====================================== -->
+<div id="tab-games" class="screen"><div id="g-area"></div></div>
+
+<!-- ======================================
+     CLASSIFICA  (3-step flow)
+====================================== -->
+<div id="tab-lb" class="screen">
+
+  <!-- Header fisso -->
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem">
+    <div style="font-size:16px;font-weight:700;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Classifica</div>
+    <button class="lb-reset-btn" onclick="resetLb()"><i class="ti ti-trash"></i> Azzera tutto</button>
+  </div>
+
+  <!-- STEP 1: Tipo -->
+  <div id="lb-step-type">
+    <div class="slbl">Seleziona il tipo</div>
+    <div class="lb-type-grid">
+      <div class="lb-type-card ind-card" onclick="lbSelectType('ind')">
+        <div class="ltc-icon">🧑‍💻</div>
+        <div class="ltc-title">Individuale</div>
+        <div class="ltc-sub">Punteggi personali<br>per giocatore</div>
+      </div>
+      <div class="lb-type-card sq-card" onclick="lbSelectType('sq')">
+        <div class="ltc-icon">🏆</div>
+        <div class="ltc-title">Squadre</div>
+        <div class="ltc-sub">Classifica di gruppo<br>per team</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STEP 2: Attività -->
+  <div id="lb-step-act" class="hidden">
+    <div class="lb-nav" id="lb-nav-act"></div>
+    <div class="slbl">Filtra per attività</div>
+    <div class="lb-act-grid">
+      <button class="lb-act-btn a-quiz" onclick="lbSelectAct('quiz')">
+        <span class="lab-icon">🧠</span><span class="lab-label">Quiz</span>
+      </button>
+      <button class="lb-act-btn a-speed" onclick="lbSelectAct('speed')">
+        <span class="lab-icon">⚡</span><span class="lab-label">Speed Quiz</span>
+      </button>
+      <button class="lb-act-btn a-match" onclick="lbSelectAct('match')">
+        <span class="lab-icon">🔗</span><span class="lab-label">Abbina</span>
+      </button>
+      <button class="lb-act-btn a-memory" onclick="lbSelectAct('memory')">
+        <span class="lab-icon">🃏</span><span class="lab-label">Memory</span>
+      </button>
+      <button class="lb-act-btn a-fill" onclick="lbSelectAct('fill')">
+        <span class="lab-icon">✏️</span><span class="lab-label">Completa</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- STEP 3: Risultati -->
+  <div id="lb-step-results" class="hidden">
+    <div class="lb-nav" id="lb-nav-results"></div>
+    <div id="lb-results-body"></div>
+  </div>
+
+</div>
+
+<!-- ======================================
+     PROGRESSI
+====================================== -->
+<div id="tab-stats" class="screen">
+  <div style="font-size:16px;font-weight:700;margin-bottom:1rem;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Progressi</div>
+  <div class="stat-grid">
+    <div class="stat-c"><div class="sv" id="st-tot">0</div><div class="sl">Domande</div></div>
+    <div class="stat-c"><div class="sv" id="st-cor">0</div><div class="sl">Corrette</div></div>
+    <div class="stat-c"><div class="sv" id="st-pct">0%</div><div class="sl">Accuratezza</div></div>
+  </div>
+  <div id="st-mods"></div>
+  <div style="margin-top:1rem"><button class="btn" onclick="resetStats()"><i class="ti ti-trash"></i> Azzera progressi</button></div>
+</div>
+
+<!-- ======================================
+     STORICO SESSIONI — v5.0.0 N3 / v5.0.4 export CSV
+====================================== -->
+<div id="tab-hist" class="screen">
+
+  <!-- Header con filtri -->
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:10px">
+    <div style="font-size:16px;font-weight:700;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Storico sessioni</div>
+    <div style="display:flex;align-items:center;gap:8px">
+      <!-- Filtro attività -->
+      <select id="hist-filter-act" onchange="renderHistory()"
+        style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:8px;
+               color:rgba(255,255,255,.7);font-family:'Share Tech Mono',monospace;font-size:11px;
+               padding:5px 10px;cursor:pointer;outline:none;color-scheme:dark">
+        <option value="">Tutte le attività</option>
+        <option value="quiz">Quiz</option>
+        <option value="speed">Speed Quiz</option>
+        <option value="match">Abbina</option>
+        <option value="memory">Memory</option>
+        <option value="fill">Completa</option>
+      </select>
+      <!-- Filtro modalità -->
+      <select id="hist-filter-mode" onchange="renderHistory()"
+        style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:8px;
+               color:rgba(255,255,255,.7);font-family:'Share Tech Mono',monospace;font-size:11px;
+               padding:5px 10px;cursor:pointer;outline:none;color-scheme:dark">
+        <option value="">Tutte le modalità</option>
+        <option value="ind">Individuale</option>
+        <option value="sq">Squadre</option>
+      </select>
+      <button class="btn" onclick="resetHistory()" style="padding:5px 12px;font-size:11px">
+        <i class="ti ti-trash"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Corpo lista sessioni -->
+  <div id="hist-body"></div>
+
+</div>
+
+<!-- ======================================
+     PANORAMICA CLASSE — Dashboard aggregata docente
+     v2.0.0: vista cross-device. Legge l'overview aggregata
+     dal cloud (RPC get_classroom_overview, vedi db_adapter.js)
+     quando disponibile; fallback automatico ai dati locali
+     (db.stats / db.sessions / db.players / db.teams) se
+     offline o se la RPC non è ancora stata creata su Supabase.
+====================================== -->
+<div id="tab-dashboard" class="screen">
+  <div style="font-size:16px;font-weight:700;margin-bottom:1rem;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Panoramica classe</div>
+  <div id="dash-body"></div>
+</div>
+
+<!-- ======================================
+     TRAGUARDI — Sistema Badge/Achievement — v6.5.0
+     Legge db.badges.unlocked + calcola il progresso di ogni
+     badge dal catalogo BADGE_DEFS (js/badges.js) leggendo
+     db.sessions / db.stats / db.wrongQ. Isolato per aula.
+====================================== -->
+<div id="tab-badges" class="screen">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem">
+    <div style="font-size:16px;font-weight:700;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Traguardi</div>
+    <button class="lb-reset-btn" onclick="resetBadges()"><i class="ti ti-trash"></i> Azzera</button>
+  </div>
+  <div id="badges-body"></div>
+</div>
+
+</div><!-- /app -->
+
+
+<script src="js/audio-manager.js"></script>
+<script src="js/theme-manager.js"></script>
+<script src="js/game-constants.js"></script>
+<script src="js/scoring.js"></script>
+<script src="js/game-engine-state.js"></script>
+<script src="js/renderer.js"></script>
+<script src="js/stats.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/badges.js"></script>
+<script src="js/game-quiz.js"></script>
+<script src="js/game-match.js"></script>
+<script src="js/game-memory.js"></script>
+<script src="js/game-fill.js"></script>
+<script src="js/courses.js"></script>
+<script src="js/app.js"></script>
+<script src="js/csv-import.js"></script>
+</body>
+</html>

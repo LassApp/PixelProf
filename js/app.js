@@ -73,6 +73,8 @@ async function _afterLogin(){
   const tbName    = sh('tb-user-name');
   if(tbBadge){ tbBadge.style.display='flex'; }
   if(tbRole){
+    tbRole.classList.toggle('tb-role-director', isDir);
+    tbRole.classList.toggle('tb-role-teacher', !isDir);
     if(isDir){ tbRole.textContent='👑 Dir'; tbRole.style.background='rgba(255,215,0,.12)'; tbRole.style.borderColor='rgba(255,215,0,.3)'; tbRole.style.color='#ffd700'; }
     else     { tbRole.textContent='📖 Doc'; tbRole.style.background='rgba(0,207,255,.1)'; tbRole.style.borderColor='rgba(0,207,255,.25)'; tbRole.style.color='#00cfff'; }
   }

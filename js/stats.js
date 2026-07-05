@@ -1,0 +1,255 @@
+/* ==================================================
+   stats.js — PixelProf v5.0.2
+   Stats screen: renderStats, resetStats.
+   Storico sessioni: renderHistory, resetHistory, exportHistoryCSV.
+   v5.0.2: resetStats include WP; exportHistoryCSV aggiunto.
+   Depends on: game-engine-state.js (db global)
+================================================== */
+
+/* ==================================================
+   STATS
+================================================== */
+function renderStats(){
+  sh('st-tot').textContent=db.stats.tot;sh('st-cor').textContent=db.stats.cor;
+  sh('st-pct').textContent=db.stats.tot>0?Math.round(db.stats.cor/db.stats.tot*100)+'%':'0%';
+  sh('st-mods').innerHTML=Object.entries({CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processing'}).map(([k,n])=>{
+    const m=db.stats.byMod[k]||{c:0,w:0};const tot=m.c+m.w;const pct=tot>0?Math.round(m.c/tot*100):0;
+    return`<div class="mod-stat"><div class="mod-stat-row"><span>${n}</span><span style="font-family:'Share Tech Mono',monospace;color:#00ffc8">${m.c}/${tot} · ${pct}%</span></div><div class="prog-bar" style="margin:0"><div class="prog-fill" style="width:${pct}%"></div></div></div>`;
+  }).join('');
+}
+
+async function resetStats(){
+  const ok = await ppConfirmBox(
+    'Questa azione azzera definitivamente domande totali, risposte corrette e accuratezza per modulo di questa aula.',
+    { title:'Azzerare i progressi?', icon:'📊', yesLabel:'Sì, azzera', danger:true }
+  );
+  if(!ok) return;
+  db.stats={tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}}};
+  save();
+  renderStats();
+}
+
+/* ==================================================
+   STORICO SESSIONI — v5.0.0 N3
+   Legge db.sessions (array append-only, max 100 voci)
+   e le visualizza in ordine cronologico inverso
+   (più recente in cima), con filtri per attività e
+   modalità. Ogni card mostra: gioco, modulo, modalità,
+   partecipanti + punteggi, data/ora.
+================================================== */
+
+/* Label e icone coerenti con game-constants.js */
+const _HIST_ACT_ICON ={quiz:'🧠',speed:'⚡',match:'🔗',memory:'🃏',fill:'✏️'};
+const _HIST_ACT_LABEL={quiz:'Quiz',speed:'Speed Quiz',match:'Abbina',memory:'Memory',fill:'Completa'};
+const _HIST_MOD_LABEL={CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processing'};
+const _HIST_MOD_COLOR={CE:'#00cfff',OE:'#7c6aff',WP:'#28a050'};
+
+function _histFormatDate(iso){
+  if(!iso)return'—';
+  try{
+    const d=new Date(iso);
+    const oggi=new Date();
+    const ieri=new Date(oggi);ieri.setDate(ieri.getDate()-1);
+    const isSameDay=(a,b)=>a.getDate()===b.getDate()&&a.getMonth()===b.getMonth()&&a.getFullYear()===b.getFullYear();
+    const timeStr=d.toLocaleTimeString('it-IT',{hour:'2-digit',minute:'2-digit'});
+    if(isSameDay(d,oggi)) return'Oggi · '+timeStr;
+    if(isSameDay(d,ieri)) return'Ieri · '+timeStr;
+    return d.toLocaleDateString('it-IT',{day:'2-digit',month:'short'})+' · '+timeStr;
+  }catch{return iso;}
+}
+
+function _histBuildCard(s,idx){
+  const actIcon =_HIST_ACT_ICON[s.game] ||'🎮';
+  const actLabel=_HIST_ACT_LABEL[s.game]||s.game;
+  const modLabel=_HIST_MOD_LABEL[s.mod] ||s.mod||'—';
+  const modColor=_HIST_MOD_COLOR[s.mod] ||'rgba(255,255,255,.3)';
+  const modeLabel=s.mode==='sq'?'Squadre':'Individuale';
+  const modeIcon =s.mode==='sq'?'👥':'👤';
+
+  // Ordina teams per punteggio desc
+  const sorted=[...(s.teams||[])].sort((a,b)=>(b.score||0)-(a.score||0));
+  const medals=['🥇','🥈','🥉'];
+
+  const teamsHTML=sorted.map((t,i)=>{
+    const medal=i<3?medals[i]:'';
+    const colorDot=t.color
+      ?`<span class="hist-color-dot" style="background:${escAttr(t.color)};box-shadow:0 0 5px ${escAttr(t.color)}"></span>`
+      :'';
+    return`<div class="hist-team-row">
+      <div class="hist-team-left">
+        <span class="hist-team-medal">${medal}</span>
+        ${colorDot}
+        <span class="hist-team-name">${escHtml(t.name||'—')}</span>
+      </div>
+      <span class="hist-team-pts">${t.score!=null?t.score+' pt':'—'}</span>
+    </div>`;
+  }).join('');
+
+  return`<div class="hist-card">
+
+    <!-- Accent bar top — colore dinamico per modulo, resta inline -->
+    <div class="hist-card-accent" style="background:${modColor}"></div>
+
+    <!-- Header riga: icona attività + label + badge modulo + data -->
+    <div class="hist-card-header">
+      <span class="hist-card-icon">${actIcon}</span>
+      <span class="hist-card-title">${escHtml(actLabel)}</span>
+      <span class="hist-card-modtag" style="background:${modColor}18;border:1px solid ${modColor}40;color:${modColor}">${escHtml(modLabel)}</span>
+      <span class="hist-card-modetag">${modeIcon} ${escHtml(modeLabel)}</span>
+      <span class="hist-card-date">
+        <i class="ti ti-clock" style="font-size:9px"></i> ${_histFormatDate(s.timestamp)}
+      </span>
+    </div>
+
+    <!-- Partecipanti + punteggi -->
+    <div class="hist-card-body">${teamsHTML||'<div class="hist-card-empty">Nessun partecipante registrato</div>'}</div>
+  </div>`;
+}
+
+function renderHistory(){
+  const body=shq('hist-body');
+  if(!body)return;
+
+  const filterAct =(shq('hist-filter-act') ?.value)||'';
+  const filterMode=(shq('hist-filter-mode')?.value)||'';
+
+  // db.sessions è in ordine cronologico ascendente — invertiamo per mostrare il più recente in cima
+  const sessions=[...(db.sessions||[])].reverse();
+
+  const filtered=sessions.filter(s=>{
+    if(filterAct  && s.game!==filterAct)  return false;
+    if(filterMode && s.mode!==filterMode) return false;
+    return true;
+  });
+
+  if(!filtered.length){
+    const hasAny=(db.sessions||[]).length>0;
+    body.innerHTML=`<div style="text-align:center;padding:3rem 1rem">
+      <div style="font-size:36px;margin-bottom:14px;opacity:.4">📋</div>
+      <div style="font-size:14px;font-weight:600;color:rgba(255,255,255,.35);margin-bottom:6px">
+        ${hasAny?'Nessuna sessione corrisponde ai filtri':'Nessuna sessione registrata'}
+      </div>
+      <div style="font-size:11px;color:rgba(255,255,255,.2);font-family:'Share Tech Mono',monospace">
+        ${hasAny?'Prova a cambiare i filtri':'Gioca una partita per vedere lo storico qui'}
+      </div>
+    </div>`;
+    return;
+  }
+
+  // Contatore sessioni visibili + bottone export
+  const counter=`<div style="font-size:10px;color:rgba(255,255,255,.3);font-family:'Share Tech Mono',monospace;
+    margin-bottom:12px;display:flex;align-items:center;gap:6px">
+    <span>${filtered.length} sessione${filtered.length!==1?'i':''} ${filterAct||filterMode?'filtrate':'totali'}</span>
+    <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.08),transparent)"></span>
+    <button onclick="exportHistoryCSV()"
+      style="display:inline-flex;align-items:center;gap:5px;
+        padding:3px 10px;border-radius:8px;
+        background:rgba(0,255,200,.06);border:1px solid rgba(0,255,200,.2);
+        color:rgba(0,255,200,.7);font-size:10px;font-family:'Share Tech Mono',monospace;
+        cursor:pointer;transition:background .18s,border-color .18s;letter-spacing:.3px;flex-shrink:0"
+      onmouseover="this.style.background='rgba(0,255,200,.12)';this.style.borderColor='rgba(0,255,200,.4)'"
+      onmouseout="this.style.background='rgba(0,255,200,.06)';this.style.borderColor='rgba(0,255,200,.2)'">
+      <i class="ti ti-download" style="font-size:11px"></i> Esporta CSV
+    </button>
+  </div>`;
+
+  body.innerHTML=counter+filtered.map((s,i)=>_histBuildCard(s,i)).join('');
+}
+
+async function resetHistory(){
+  const ok = await ppConfirmBox(
+    'Tutte le sessioni salvate nello storico di questa aula verranno eliminate definitivamente.',
+    { title:'Cancellare lo storico?', icon:'📋', yesLabel:'Sì, cancella tutto', danger:true }
+  );
+  if(!ok) return;
+  db.sessions=[];
+  save();
+  renderHistory();
+}
+
+/* ==================================================
+   EXPORT STORICO CSV — v5.0.2
+   Esporta le sessioni visibili (con filtri applicati)
+   come file .csv scaricabile. Pattern identico a
+   exportLbCSV() in renderer.js.
+   Colonne: Data, Attività, Modulo, Modalità,
+            Giocatore/Squadra, Punteggio, Posizione.
+   Una riga per partecipante → facile da pivottare
+   in Excel / Google Sheets.
+================================================== */
+function exportHistoryCSV(){
+  const filterAct =(shq('hist-filter-act') ?.value)||'';
+  const filterMode=(shq('hist-filter-mode')?.value)||'';
+
+  const sessions=[...(db.sessions||[])].reverse();
+  const filtered=sessions.filter(s=>{
+    if(filterAct  && s.game!==filterAct)  return false;
+    if(filterMode && s.mode!==filterMode) return false;
+    return true;
+  });
+
+  if(!filtered.length){
+    ppAlert('Non ci sono sessioni da esportare con i filtri selezionati.', { title:'Nessun dato da esportare', icon:'📋' });
+    return;
+  }
+
+  const ACT_LABEL_MAP ={quiz:'Quiz',speed:'Speed Quiz',match:'Abbina',memory:'Memory',fill:'Completa la frase'};
+  const MOD_LABEL_MAP ={CE:'Computer Essentials',OE:'Online Essentials',MIX:'Mix moduli',WP:'Word Processing'};
+  const MODE_LABEL_MAP={ind:'Individuale',sq:'Squadre'};
+
+  const csvCell=v=>{
+    const s=String(v??'');
+    return(s.includes(',')||s.includes('"')||s.includes('\n'))?`"${s.replace(/"/g,'""')}"`:s;
+  };
+
+  const dateStr=new Date().toLocaleDateString('it-IT',{day:'2-digit',month:'2-digit',year:'numeric'});
+  const filterDesc=(filterAct||filterMode)
+    ?` — filtrato: ${filterAct?ACT_LABEL_MAP[filterAct]||filterAct:''}${filterAct&&filterMode?' · ':''}${filterMode?MODE_LABEL_MAP[filterMode]||filterMode:''}`
+    :'';
+
+  const lines=[
+    `# PixelProf — Storico sessioni${csvCell(filterDesc)}`,
+    `# Esportato il ${dateStr}`,
+    ``,
+    ['Data','Attività','Modulo','Modalità','Partecipante','Punteggio','Posizione'].map(csvCell).join(','),
+  ];
+
+  filtered.forEach(s=>{
+    const dataFmt=s.timestamp
+      ? new Date(s.timestamp).toLocaleString('it-IT',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit'})
+      : '—';
+    const act  = ACT_LABEL_MAP [s.game]||s.game||'—';
+    const mod  = MOD_LABEL_MAP [s.mod] ||s.mod ||'—';
+    const mode = MODE_LABEL_MAP[s.mode]||s.mode||'—';
+
+    // Ordina partecipanti per punteggio desc per calcolare posizione
+    const sorted=[...(s.teams||[])].sort((a,b)=>(b.score||0)-(a.score||0));
+    sorted.forEach((t,i)=>{
+      lines.push([
+        csvCell(dataFmt),
+        csvCell(act),
+        csvCell(mod),
+        csvCell(mode),
+        csvCell(t.name||'—'),
+        t.score!=null?t.score:'—',
+        i+1,
+      ].join(','));
+    });
+  });
+
+  const bom='\uFEFF';
+  const csv=bom+lines.join('\r\n');
+  const blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
+  const url=URL.createObjectURL(blob);
+  const a=document.createElement('a');
+  const safeDate=dateStr.replace(/\//g,'-');
+  a.href=url;
+  a.download=`storico_sessioni_${safeDate}.csv`;
+  document.body.appendChild(a);
+  a.click();
+  setTimeout(()=>{document.body.removeChild(a);URL.revokeObjectURL(url);},200);
+}
+
+/* ==================================================
+   COURSES SYSTEM
+================================================== */

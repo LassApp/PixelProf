@@ -126,6 +126,12 @@ body{
   background-image:
     radial-gradient(ellipse 80% 50% at 20% 0%,rgba(0,255,200,.03) 0%,transparent 60%),
     radial-gradient(ellipse 60% 40% at 80% 100%,rgba(124,106,255,.03) 0%,transparent 60%);
+  /* v6.6: overflow-x:hidden è la controparte di sicurezza del fix
+     full-bleed su .topbar (vedi @layer topbar-fix) — la tecnica
+     100vw/-50vw può eccedere di qualche px su browser che riservano
+     spazio per la scrollbar verticale; questo evita uno scroll
+     orizzontale indesiderato senza toccare nessun altro layout. */
+  overflow-x:hidden;
 }
 .app{max-width:660px;margin:0 auto;padding:.75rem 1rem;position:relative}
 }
@@ -1496,6 +1502,16 @@ body{
 }
 .icp-close:hover{border-color:rgba(255,255,255,.2);color:#fff;}
 .icp-close:hover::after{transform:scaleX(1);}
+/* .icp-x-close — pulsante × in alto a destra del color/bg picker.
+   v6.6: estratto dallo stile inline + onmouseover/onmouseout in
+   index.html per poterlo tematizzare correttamente (era invisibile
+   sia a riposo che in hover nel tema chiaro). */
+.icp-x-close{
+  background:none;border:none;color:rgba(255,255,255,.35);
+  font-size:18px;cursor:pointer;padding:0;line-height:1;
+  transition:color .18s;font-family:inherit;
+}
+.icp-x-close:hover{color:#fff;}
 
 /* Bg picker */
 .bg-picker-box .icp-grid{grid-template-columns:repeat(4,1fr);}
@@ -1821,6 +1837,17 @@ body{
   cursor:pointer;font-size:11px;transition:all .18s;font-family:inherit;
 }
 .cw-teacher-row button:hover{background:rgba(255,80,80,.16);color:#ff6b6b;}
+/* .cw-warn-banner — banner ambra "docente richiesto" nel wizard aule.
+   v6.6: estratto dallo stile inline in index.html per poterlo
+   tematizzare (color:#ffb400 fisso aveva un contrasto molto basso
+   su sfondo bianco quando .cw-box diventa chiaro nel tema light). */
+.cw-warn-banner{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 14px;border-radius:10px;margin-bottom:12px;
+  background:rgba(255,180,0,.08);border:1px solid rgba(255,180,0,.25);
+  font-size:11px;color:#ffb400;font-family:'Share Tech Mono',monospace;
+  line-height:1.45;
+}
 .cw-invite-row{display:flex;gap:6px;margin-top:8px;}
 .cw-invite-inp{
   flex:1;padding:8px 12px;border-radius:var(--radius-sm);
@@ -3377,13 +3404,23 @@ body{
 
 /* ── Fix larghezza topbar v5.0.6: ripristina il layout base corretto ──
    I layer v6.0 e v6.1 sovrascrivono con left:50%/transform/max-width che
-   spostano la topbar. Qui resettiamo ai valori identici al base. */
+   spostano la topbar. Qui resettiamo ai valori identici al base.
+   v6.6 FIX: la vecchia compensazione (+2rem / -1rem) escludeva solo il
+   padding di .app, non il suo max-width:660px — su viewport larghi la
+   topbar restava quindi centrata e più stretta della piena larghezza
+   (a differenza di .cs-topbar in #screen-courses, che è già a piena
+   larghezza perché il suo antenato è position:fixed;inset:0). Tecnica
+   standard "full-bleed": ancora la topbar al 50% del viewport e la
+   compensa con margini negativi di -50vw, indipendentemente da quanto
+   sia stretto .app. overflow-x:hidden su body (vedi sopra) assorbe
+   l'eventuale scarto di qualche px dovuto alla scrollbar verticale. */
 .topbar {
-  width: calc(100% + 2rem) ;
-  margin-left: -1rem ;
-  margin-right: -1rem ;
-  left: auto ;
-  transform: none ;
+  position: relative ;
+  left: 50% ;
+  right: 50% ;
+  width: 100vw ;
+  margin-left: -50vw ;
+  margin-right: -50vw ;
   max-width: none ;
   box-sizing: border-box ;
   padding: .65rem 1rem ;
@@ -3907,6 +3944,29 @@ body{
 .tdc-aula-toggle-btn.active{ background:rgba(0,255,200,.12);border-color:var(--accent);color:var(--accent); }
 .tdc-aula-toggle-btn:disabled{ opacity:.4;cursor:default; }
 
+/* .tmd-email-hint — riga "Email attuale: ..." nella scheda docente
+   (screen-teacher-detail). v6.6: estratta dallo stile inline in
+   index.html per poterla tematizzare correttamente. */
+.tmd-email-hint{ font-size:11px;color:rgba(255,255,255,.35);font-family:'Share Tech Mono',monospace; }
+
+/* .tmd-close-btn — "X" rossa di chiusura rapida per la scheda docente,
+   accanto alla sezione "Dati personali" (v6.6: nuovo elemento). */
+.tmd-close-btn{
+  flex-shrink:0;width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,60,80,.1);border:1px solid rgba(255,60,80,.35);
+  color:#ff4d6d;cursor:pointer;font-size:14px;line-height:1;
+  transition:background .15s,border-color .15s,color .15s;
+  font-family:inherit;
+}
+.tmd-close-btn:hover{ background:rgba(255,60,80,.22);border-color:rgba(255,60,80,.6);color:#ff6b6b; }
+
+/* .dp-hint-text — didascalie informative statiche/dinamiche nel
+   pannello "⚙️ Gestione aula" e nella scheda docente (v6.6: sostituisce
+   diversi style inline con colore fisso rgba(255,255,255,.3),
+   illeggibili quando il contenitore diventa chiaro nel tema light). */
+.dp-hint-text{ font-size:11px;color:rgba(255,255,255,.3); }
+
 }
 @layer dialogs {
 /* ═══════════════════════════════════════════════════════════════════
@@ -4335,12 +4395,6 @@ body{
   color:#ff6b6b;
 }
 
-/* Barra dedicata al toggle nello step Seleziona modulo — allineata
-   a destra, sopra l'home-hero, senza intaccarne il layout esistente. */
-.step-mod-toolbar{
-  display:flex;justify-content:flex-end;
-  padding-top:6px;
-}
 }
 
 @layer achievements {
@@ -4659,6 +4713,15 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb{ background: rgba(20,30,60,.1
 html[data-theme="light"] ::-webkit-scrollbar-thumb:hover{ background: rgba(0,150,120,.35); }
 html[data-theme="light"] input[type="date"],
 html[data-theme="light"] input[type="time"]{ color-scheme: light !important; }
+/* #app-theme-bg: tinta di sfondo dell'aula, impostata inline da JS
+   (courses.js _enterCourseDirect) con uno dei gradienti scuri di
+   COURSE_BG_PRESETS a opacity .4 — pensata come atmosfera per il tema
+   Dark. Nel tema chiaro si sovrappone al fondo chiaro del body
+   creando un effetto "grigio sporco" invece del bianco pulito di
+   Seleziona Aula. JS re-imposta style.opacity ad ogni ingresso aula,
+   quindi qui serve !important per vincere sull'inline (stessa
+   eccezione documentata già in uso altrove in questo file). */
+html[data-theme="light"] #app-theme-bg{ opacity:0 !important; }
 
 /* ── 3. TOPBAR + LOGO + HUB + BADGE AULA/UTENTE ──────────────── */
 html[data-theme="light"] .topbar{
@@ -4690,6 +4753,24 @@ html[data-theme="light"] .cs-director-badge{ color:#a66d00; }
    stile, per quanto dichiarato in un layer successivo. */
 html[data-theme="light"] #tb-user-role-pill.tb-role-director{ color:#8a6400 !important; }
 html[data-theme="light"] #tb-user-role-pill.tb-role-teacher{ color:#056b80 !important; }
+
+/* .cs-hero-eyebrow — riusata da 5 hero (Gestione Aule / Pannello di
+   controllo / Direttore · Account+Nuovo account+Scheda docente):
+   nessun override esisteva, restava verde neon quasi invisibile su
+   sfondo bianco. .cs-teacher-name (nome docente in topbar, riusato
+   anche nella Dashboard Direttore) e .slbl (etichetta di sezione
+   riusata ovunque nell'app, es. "Aule salvate") avevano lo stesso
+   problema: colore neon fisso, mai adattato al tema chiaro. */
+html[data-theme="light"] .cs-hero-eyebrow{ color:#10182a; }
+html[data-theme="light"] .cs-teacher-name{ color:#10182a; }
+html[data-theme="light"] .slbl{ color: rgba(16,24,42,.75); }
+html[data-theme="light"] .slbl::after{ background: linear-gradient(90deg, rgba(0,150,120,.35), transparent); }
+/* .back-link ("← Dashboard" / "← Docenti" / "← Lista"): colore fisso
+   rgba(255,255,255,.55) — praticamente invisibile su sfondo bianco a
+   riposo, visibile solo in hover (che già usa var(--accent), quindi
+   sembrava "funzionare solo al passaggio del mouse"). */
+html[data-theme="light"] .back-link{ color: rgba(16,24,42,.55); }
+html[data-theme="light"] .back-link:hover{ color: var(--accent); background: rgba(0,150,120,.08); }
 
 /* ── 4. HOME HERO (selezione modulo) ─────────────────────────── */
 html[data-theme="light"] .home-hero-title{
@@ -4755,6 +4836,12 @@ html[data-theme="light"] .match-combo-pill.x2{ color:#0d6fbf; }
 html[data-theme="light"] .match-combo-pill.x3{ color:#6a4fd6; }
 html[data-theme="light"] .match-combo-pill.x4{ color:#c02350; }
 html[data-theme="light"] .match-combo-pill.xmax{ color:#a66d00; }
+/* .timer-pill: countdown Speed Quiz (#qz-timer) — l'ambra piena
+   #ffb400 su sfondo (quasi) bianco scende a un contrasto ~1.8:1,
+   ben sotto la soglia leggibile. Stessa "ink" ambra/rossa già usata
+   altrove in questo file per badge/pillole analoghe. */
+html[data-theme="light"] .timer-pill{ color:#a66d00; }
+html[data-theme="light"] .timer-pill.red{ color:#c22a3e; }
 
 /* ── 9. MATCH (Abbina) + MEMORY — testo neutro, bordo/sfondo hue-coded intatti ── */
 html[data-theme="light"] .match-item{ background: rgba(20,30,60,.03); border-color: rgba(20,30,60,.09); color: rgba(16,24,42,.72); }
@@ -4847,6 +4934,9 @@ html[data-theme="light"] .chd-wq-answer{ color: rgba(16,24,42,.45); }
 html[data-theme="light"] .chd-wq-empty{ border-color: rgba(20,30,60,.1); }
 html[data-theme="light"] .chd-wq-empty-title{ color: rgba(16,24,42,.5); }
 html[data-theme="light"] .chd-wq-empty-sub{ color: rgba(16,24,42,.3); }
+/* .chd-never-played: banner ambra "non ha ancora mai giocato" —
+   stesso #ffb400 su sfondo chiaro, stessa ink di riserva. */
+html[data-theme="light"] .chd-never-played{ color:#a66d00; }
 
 /* ── 15. TRAGUARDI (badges) ───────────────────────────────────── */
 html[data-theme="light"] .bdg-summary{ background: rgba(180,130,0,.05); border-color: rgba(180,130,0,.18); }
@@ -4876,13 +4966,38 @@ html[data-theme="light"] .cs-hero-sub{ color: rgba(16,24,42,.45); }
 html[data-theme="light"] .cs-add-form{ background:#ffffff; border-color: rgba(20,30,60,.08); }
 html[data-theme="light"] .cs-empty{ border-color: rgba(20,30,60,.14); }
 html[data-theme="light"] .cs-empty-text{ color: rgba(16,24,42,.35); }
-html[data-theme="light"] .course-card{ background:#ffffff; border-color: rgba(20,30,60,.08); }
-html[data-theme="light"] .course-card-name{ color:#10182a; }
-html[data-theme="light"] .course-card-dates{ color: rgba(16,24,42,.5); }
-html[data-theme="light"] .course-card-time,html[data-theme="light"] .course-card-meta{ color: rgba(16,24,42,.32); }
-html[data-theme="light"] .course-card-teachers{ border-top-color: rgba(20,30,60,.07); }
-html[data-theme="light"] .course-card-teacher-chip{ color: rgba(16,24,42,.42); }
-html[data-theme="light"] .course-card-menu{ background: rgba(20,30,60,.05); border-color: rgba(20,30,60,.1); color: rgba(16,24,42,.4); }
+/* v6.6 FIX: le Card Aula devono restare IDENTICHE al tema Dark in
+   entrambi i temi — sfondo e border-color arrivano già inline da JS
+   (courses.js renderCoursesGrid) con i gradienti scuri di
+   COURSE_BG_PRESETS, quindi qui sotto non serviva forzare anche lo
+   sfondo via classe (mai vinto contro l'inline, righe morte). Il vero
+   bug era che nome/date/orario/docenti/menu venivano ricolorati di
+   scuro da queste righe, finendo scuro-su-scuro (quasi illeggibile)
+   sopra lo sfondo a gradiente scuro invariato. Nessun override qui:
+   restano le regole base (testo chiaro), corrette in entrambi i temi. */
+
+/* Splash screen — v6.6 FIX: nessun override esisteva, restava sempre
+   nero indipendentemente dal tema attivo. Ricompare ad ogni cambio
+   aula diversa da quella attiva (courses.js enterCourse() fa
+   location.reload() → initApp() ridisegna lo splash da capo), quindi
+   il bug era visibile anche durante "Scelta Aula → Aula". ThemeManager
+   applica già l'attributo data-theme in modo sincrono prima che lo
+   splash inizi il proprio timer, quindi basta la sola regola CSS. */
+html[data-theme="light"] #screen-splash{
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 40%, rgba(0,150,120,.05) 0%, transparent 65%),
+    var(--surface-0);
+}
+html[data-theme="light"] .splash-logo-svg{ filter: drop-shadow(0 2px 10px rgba(16,24,42,.15)); }
+html[data-theme="light"] .splash-wordmark{
+  background: none; -webkit-text-fill-color: var(--accent); color: var(--accent);
+  text-shadow: none; filter: none;
+}
+html[data-theme="light"] .splash-wordmark em{
+  background: none; -webkit-text-fill-color: var(--purple); color: var(--purple);
+}
+html[data-theme="light"] .splash-tagline{ color: rgba(16,24,42,.35); }
+
 html[data-theme="light"] #screen-login,html[data-theme="light"] #screen-setpwd{
   background: var(--surface-0);
   background-image:
@@ -4907,6 +5022,27 @@ html[data-theme="light"] .cw-mod-btn,html[data-theme="light"] .cw-teacher-row,ht
 html[data-theme="light"] .cw-mod-btn .cm-name{ color:#10182a; }
 html[data-theme="light"] .cw-mod-btn .cm-desc{ color: rgba(16,24,42,.4); }
 html[data-theme="light"] .cw-teacher-row .ct-name{ color: rgba(16,24,42,.75); }
+html[data-theme="light"] .cw-teacher-row .ct-email{ color: rgba(16,24,42,.35); }
+/* .cw-warn-banner: stessa ink ambra di riserva usata per timer-pill/chd-never-played */
+html[data-theme="light"] .cw-warn-banner{ color:#a66d00; }
+/* .dp-teacher-row: bg/border-color erano già coperti sopra (riga
+   raggruppata con .cw-mod-btn/.cw-teacher-row), ma non il colore
+   testo — restava rgba(255,255,255,.7), quasi invisibile sul
+   fondo ormai chiaro di .dp-box. */
+html[data-theme="light"] .dp-teacher-row{ color: rgba(16,24,42,.75); }
+/* .dp-close-btn: "×" del pannello "⚙️ Gestione aula" — invisibile sia
+   a riposo (rgba(255,255,255,.35)) sia in hover (#fff), stesso tipo
+   di difetto segnalato per la scheda docente. */
+html[data-theme="light"] .dp-close-btn{ color: rgba(16,24,42,.4); }
+html[data-theme="light"] .dp-close-btn:hover{ color:#10182a; }
+html[data-theme="light"] .icp-close{ color: rgba(16,24,42,.55); }
+html[data-theme="light"] .icp-close:hover{ border-color: rgba(20,30,60,.2); color:#10182a; }
+html[data-theme="light"] .icp-x-close{ color: rgba(16,24,42,.35); }
+html[data-theme="light"] .icp-x-close:hover{ color:#10182a; }
+/* .mod-toggle-btn (moduli abilitati, pannello Gestione aula): stato
+   attivo/hover già usano var(--accent) e si adattano da soli; solo lo
+   stato di riposo era hardcoded rgba(255,255,255,.5). */
+html[data-theme="light"] .mod-toggle-btn{ color: rgba(16,24,42,.55); }
 html[data-theme="light"] .course-dropdown{ background:#ffffff; border-color: rgba(20,30,60,.1); }
 html[data-theme="light"] .cd-item{ color: rgba(16,24,42,.7); }
 html[data-theme="light"] .cd-item:hover{ background: rgba(20,30,60,.06); color:#10182a; }
@@ -4919,6 +5055,26 @@ html[data-theme="light"] .dd-card,html[data-theme="light"] .tdc-card{ background
 html[data-theme="light"] .dd-title,html[data-theme="light"] .tdc-name{ color:#10182a; }
 html[data-theme="light"] .dd-sub,html[data-theme="light"] .tdc-email{ color: rgba(16,24,42,.42); }
 html[data-theme="light"] .tm-tab{ color: rgba(16,24,42,.42); }
+html[data-theme="light"] .tm-tab:hover{ color: rgba(16,24,42,.75); }
+html[data-theme="light"] .tm-tabs{ border-bottom-color: rgba(20,30,60,.1); }
+/* .dd-arrow: freccia "›" sulle card Dashboard Direttore/Gestione
+   Docenti — rgba(255,255,255,.2) è quasi invisibile su sfondo bianco. */
+html[data-theme="light"] .dd-arrow{ color: rgba(16,24,42,.25); }
+/* .tdc-aula-toggle-btn — BUG ESPLICITO SEGNALATO: le aule NON
+   selezionate nella scheda docente usavano testo bianco translucido,
+   praticamente invisibile sul fondo ormai chiaro di .tdc-card /
+   .setup-card. Lo stato .active usa già var(--accent) e si adatta da
+   solo, qui serviva solo il default + hover. */
+html[data-theme="light"] .tdc-aula-toggle-btn{ color: rgba(16,24,42,.55); }
+html[data-theme="light"] .tdc-aula-toggle-btn:hover{ color: rgba(16,24,42,.85); }
+/* Chip "aule assegnate" nella card della lista docenti (screen-teacher-list) */
+html[data-theme="light"] .tdc-aula-chip{ color: rgba(16,24,42,.45); }
+html[data-theme="light"] .tdc-aula-chip + .tdc-aula-chip::before{ color: rgba(16,24,42,.22); }
+html[data-theme="light"] .tdc-aule-empty{ color: rgba(16,24,42,.28); }
+/* Icona genere di default (nessun genere impostato, fallback ti-user) */
+html[data-theme="light"] .tdc-gender-icon{ background: rgba(20,30,60,.05); border-color: rgba(20,30,60,.12); color: rgba(16,24,42,.4); }
+html[data-theme="light"] .tmd-email-hint{ color: rgba(16,24,42,.4); }
+html[data-theme="light"] .dp-hint-text{ color: rgba(16,24,42,.35); }
 
 /* ── 19. IMPORT CSV ───────────────────────────────────────────── */
 html[data-theme="light"] .csv-import-list{ background: rgba(20,30,60,.02); border-color: rgba(20,30,60,.09); }

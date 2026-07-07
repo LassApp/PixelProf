@@ -559,7 +559,7 @@ async function _tmdRenderAule(teacherId){
   ]);
   _tmdAssignedIds = new Set((assigned||[]).map(a=>a.id));
   if(!allClassrooms || !allClassrooms.length){
-    grid.innerHTML = '<div style="font-size:12px;color:rgba(255,255,255,.3)">Nessuna aula creata.</div>';
+    grid.innerHTML = '<div class="dp-hint-text">Nessuna aula creata.</div>';
     return;
   }
   grid.innerHTML = allClassrooms.map(c=>{
@@ -1230,7 +1230,7 @@ async function _dpLoadTeachers(){
   const el   = sh('dp-teacher-list');
   if(!el) return;
   if(!list || !list.length){
-    el.innerHTML='<div style="font-size:12px;color:rgba(255,255,255,.3)">Nessun docente assegnato</div>';
+    el.innerHTML='<div class="dp-hint-text">Nessun docente assegnato</div>';
     return;
   }
   el.innerHTML = list.map(t=>`

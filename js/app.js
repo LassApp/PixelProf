@@ -1,7 +1,13 @@
 /* ==================================================
-   app.js — PixelProf v6.1.0
+   app.js — PixelProf v6.1.1
    App bootstrap: auth flow, login, logout, set-password,
    module filter, wizard, director panel, and splash/init.
+   v6.1.1 — Fix pass Gestione Docenti + Scegli Aula: nome+badge
+     direttore ripristinati nella topbar delle 4 schermate Gestione
+     Docenti (mancavano dal redesign v6.1.0); form "Nuova aula"
+     nascosto quando si entra da "Scegli Aula" (creazione resta
+     possibile solo da "Gestisci Aule" — vedi setCoursesScreenMode
+     in courses.js).
    v6.1.0 — Redesign "Gestione Docenti" (solo UI/UX): la vecchia
      schermata combinata form+lista è sostituita da un flusso a 4
      schermate (hub 2-card → crea / lista a card con tab / dettaglio
@@ -59,6 +65,13 @@ async function _afterLogin(){
   const dirBadge  = sh('cs-director-badge');
   if(nameEl)    nameEl.textContent = appState.teacher?.name || window.Auth.getName();
   if(dirBadge)  dirBadge.classList.toggle('hidden', !isDir);
+  // v6.1.1: nome direttore nella topbar delle 4 schermate "Gestione Docenti"
+  // (hub/crea/lista/dettaglio) — il badge 👑 Direttore lì è già statico in
+  // HTML (schermate director-only, nessun toggle isDir necessario). Un solo
+  // punto di aggiornamento: appState.teacher non cambia più dopo il login.
+  document.querySelectorAll('.tm-topbar-name').forEach(el=>{
+    el.textContent = appState.teacher?.name || window.Auth.getName();
+  });
   // v6.0.0: link "← Dashboard" nella topbar di screen-courses — solo Direttore
   const backDashBtn = sh('cs-back-dashboard-btn');
   if(backDashBtn) backDashBtn.classList.toggle('hidden', !isDir);

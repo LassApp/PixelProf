@@ -1,6 +1,14 @@
 /* ==================================================
-   audio-manager.js — PixelProf v1.0.0
+   audio-manager.js — PixelProf v1.0.1
    Sistema centralizzato di feedback sonoro leggero.
+
+   v1.0.1 FIX: _updateAllToggleUI() ora esclude .theme-toggle-btn dal
+     selettore. Il pulsante tema condivide .audio-toggle-btn SOLO per lo
+     stile visivo (stesso cerchio/hover) — senza l'esclusione, ogni
+     toggle audio applicava .muted anche al pulsante tema (lo tingeva
+     di rosso) e ne sovrascriveva il title con "Audio attivo/disattivato",
+     nascondendo "Tema chiaro/scuro" al passaggio del mouse. Il tema
+     stesso non cambiava mai: era un problema di sola UI, non di stato.
 
    Un solo interruttore globale (persistito in localStorage,
    condiviso da tutte le aule su questo dispositivo). Il
@@ -57,7 +65,7 @@ const AudioManager = (function () {
   });
 
   function _updateAllToggleUI() {
-    document.querySelectorAll('.audio-toggle-btn').forEach(btn => {
+    document.querySelectorAll('.audio-toggle-btn:not(.theme-toggle-btn)').forEach(btn => {
       btn.classList.toggle('muted', !_enabled);
       btn.title = _enabled ? 'Audio attivo — clicca per disattivare' : 'Audio disattivato — clicca per attivare';
       btn.setAttribute('aria-pressed', String(!_enabled));

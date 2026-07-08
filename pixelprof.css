@@ -1861,6 +1861,29 @@ body{
 /* Courses screen — mostra "Crea" solo al direttore */
 #cs-add-form-wrap.teacher-mode{display:none;}
 
+/* ===============================================
+   FOOTER APP — copyright + credito audio
+=============================================== */
+.pp-footer{
+  text-align:center;
+  padding:1.75rem 1rem 1rem;
+  margin-top:.5rem;
+  font-size:10px;
+  color:rgba(255,255,255,.22);
+  font-family:'Share Tech Mono',monospace;
+  letter-spacing:.3px;
+}
+.pp-footer a{
+  color:rgba(0,255,200,.55);
+  text-decoration:none;
+  border-bottom:1px solid rgba(0,255,200,.25);
+  transition:color var(--transition-fast),border-color var(--transition-fast);
+}
+.pp-footer a:hover{
+  color:var(--accent);
+  border-color:var(--accent-border);
+}
+
 /* Set-password screen — indicatore forza */
 #setpwd-new:focus ~ #setpwd-strength-bar { opacity: 1; }
 
@@ -3718,6 +3741,14 @@ body{
    !important, esattamente come .is-hidden-by-filter sotto.
 =============================================== */
 .is-hidden-by-filter { display: none !important; }
+/* .is-hidden-by-cs-mode — nasconde il form "Nuova aula" (#cs-add-form-wrap)
+   quando screen-courses è in modalità 'select' (Scegli Aula): la creazione
+   aula resta possibile SOLO da "Gestisci Aule" (_csMode 'manage'), per
+   evitare un secondo percorso di creazione ridondante. Impostata da
+   setCoursesScreenMode() in courses.js. Non sostituisce #cs-add-form-wrap
+   .teacher-mode (layer base) — quel gate resta il filtro per i docenti
+   non-direttore, invariato. */
+.is-hidden-by-cs-mode { display: none !important; }
 }
 @layer topbar-fix {
 
@@ -3805,15 +3836,6 @@ body{
 .dd-scegli::after{ background:linear-gradient(90deg,transparent,var(--accent),transparent); }
 .dd-scegli:hover{ border-color:rgba(0,255,200,.5); box-shadow:0 12px 36px rgba(0,255,200,.14); }
 .dd-scegli:hover .dd-title,.dd-scegli:hover .dd-arrow{ color:var(--accent); }
-
-/* ── Badge "modalità Gestione" + link back-to-dashboard (screen-courses) ── */
-#cs-mode-badge{
-  display:inline-flex;align-items:center;gap:5px;
-  padding:3px 10px;border-radius:20px;
-  background:rgba(124,106,255,.1);border:1px solid rgba(124,106,255,.3);
-  color:#b4a0ff;font-size:10px;font-weight:700;
-  font-family:'Share Tech Mono',monospace;letter-spacing:.5px;
-}
 
 /* ── Gestione Docenti — lista + pannello modifica ── */
 .tm-list{ display:flex;flex-direction:column;gap:6px;margin-bottom:8px; }
@@ -5085,4 +5107,9 @@ html[data-theme="light"] .csv-import-empty-list{ color: rgba(16,24,42,.3); }
 html[data-theme="light"] .audio-toggle-btn{ border-color: rgba(20,30,60,.14); background: rgba(20,30,60,.04); color: rgba(16,24,42,.55); }
 html[data-theme="light"] .audio-toggle-btn:hover{ border-color: rgba(0,150,120,.35); background: rgba(0,150,120,.08); color: var(--accent); }
 html[data-theme="light"] .theme-toggle-btn.is-light{ color:#a66d00; border-color: rgba(180,130,0,.3); background: rgba(255,180,0,.08); }
+
+/* ── 21. FOOTER ───────────────────────────────────────────────── */
+html[data-theme="light"] .pp-footer{ color: rgba(16,24,42,.32); }
+html[data-theme="light"] .pp-footer a{ color:#00967a; border-color: rgba(0,150,120,.3); }
+html[data-theme="light"] .pp-footer a:hover{ color:#00786a; border-color:#00967a; }
 }

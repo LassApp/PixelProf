@@ -14,6 +14,8 @@
      anti-doppio-click (_enterCourseLock) sulla card aula
      durante il fetch, dato che ora c'è un await prima del
      nascondere screen-courses.
+   v6.1.1 FIX: vedi setCoursesScreenMode() — badge "🛠️ Gestione"
+     rimosso, form "Nuova aula" ora legato alla modalità corrente.
    Depends on: game-engine-state.js
 ================================================== */
 
@@ -40,12 +42,17 @@ let _ddCourseId=null; // id del corso a cui appartiene il dropdown aperto
      già definiti in app.js. Zero duplicazione di logica.
    Il menu "..." (rinomina/icona/colore/elimina) resta invariato e
    funzionante in ENTRAMBE le modalità.
+   v6.1.1 FIX: rimosso il badge "🛠️ Gestione" (ridondante, il contesto
+     è già chiaro dal titolo/back-link della schermata). Aggiunto il
+     controllo di visibilità del form "Nuova aula": ora visibile SOLO
+     in modalità 'manage' — evita un secondo percorso di creazione aula
+     ridondante quando si è in 'select' (da "Scegli Aula").
 ================================================== */
 let _csMode='select';
 function setCoursesScreenMode(mode){
   _csMode=(mode==='manage')?'manage':'select';
-  const badge=document.getElementById('cs-mode-badge');
-  if(badge) badge.classList.toggle('hidden', _csMode!=='manage');
+  const addForm=document.getElementById('cs-add-form-wrap');
+  if(addForm) addForm.classList.toggle('is-hidden-by-cs-mode', _csMode!=='manage');
 }
 function _csCardClick(id){
   // v6.0.1 FIX: _csMode è una variabile JS che NON viene resettata da un

@@ -228,6 +228,9 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     <div class="cs-teacher-badge">
       <span class="cs-director-badge">👑 Direttore</span>
       <span class="cs-teacher-name" id="dd-teacher-name"></span>
+      <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
+        <i class="ti ti-volume-2 audio-toggle-icon"></i>
+      </button>
       <button class="audio-toggle-btn theme-toggle-btn" onclick="ThemeManager.toggle()" title="Tema chiaro/scuro" aria-label="Passa al tema chiaro o scuro">
         <i class="ti ti-moon theme-toggle-icon"></i>
       </button>
@@ -294,6 +297,11 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </div>
     <div class="cs-teacher-badge">
       <button class="back-link" onclick="closeTeacherManagement()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Dashboard</button>
+      <span class="cs-director-badge">👑 Direttore</span>
+      <span class="cs-teacher-name tm-topbar-name"></span>
+      <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
+        <i class="ti ti-volume-2 audio-toggle-icon"></i>
+      </button>
       <button class="audio-toggle-btn theme-toggle-btn" onclick="ThemeManager.toggle()" title="Tema chiaro/scuro" aria-label="Passa al tema chiaro o scuro">
         <i class="ti ti-moon theme-toggle-icon"></i>
       </button>
@@ -350,6 +358,11 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </div>
     <div class="cs-teacher-badge">
       <button class="back-link" onclick="tmBackFromCreate()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Docenti</button>
+      <span class="cs-director-badge">👑 Direttore</span>
+      <span class="cs-teacher-name tm-topbar-name"></span>
+      <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
+        <i class="ti ti-volume-2 audio-toggle-icon"></i>
+      </button>
       <button class="audio-toggle-btn theme-toggle-btn" onclick="ThemeManager.toggle()" title="Tema chiaro/scuro" aria-label="Passa al tema chiaro o scuro">
         <i class="ti ti-moon theme-toggle-icon"></i>
       </button>
@@ -416,6 +429,11 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </div>
     <div class="cs-teacher-badge">
       <button class="back-link" onclick="tmBackFromList()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Docenti</button>
+      <span class="cs-director-badge">👑 Direttore</span>
+      <span class="cs-teacher-name tm-topbar-name"></span>
+      <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
+        <i class="ti ti-volume-2 audio-toggle-icon"></i>
+      </button>
       <button class="audio-toggle-btn theme-toggle-btn" onclick="ThemeManager.toggle()" title="Tema chiaro/scuro" aria-label="Passa al tema chiaro o scuro">
         <i class="ti ti-moon theme-toggle-icon"></i>
       </button>
@@ -457,6 +475,11 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </div>
     <div class="cs-teacher-badge">
       <button class="back-link" onclick="tmBackFromDetail()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Lista</button>
+      <span class="cs-director-badge">👑 Direttore</span>
+      <span class="cs-teacher-name tm-topbar-name"></span>
+      <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
+        <i class="ti ti-volume-2 audio-toggle-icon"></i>
+      </button>
       <button class="audio-toggle-btn theme-toggle-btn" onclick="ThemeManager.toggle()" title="Tema chiaro/scuro" aria-label="Passa al tema chiaro o scuro">
         <i class="ti ti-moon theme-toggle-icon"></i>
       </button>
@@ -546,7 +569,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     <!-- Badge docente loggato + azioni — v3.2.2 -->
     <div class="cs-teacher-badge">
       <button id="cs-back-dashboard-btn" class="back-link hidden" onclick="backToDirectorDashboard()" style="margin-right:4px"><i class="ti ti-arrow-left"></i> Dashboard</button>
-      <span id="cs-mode-badge" class="hidden">🛠️ Gestione</span>
       <span id="cs-director-badge" class="cs-director-badge hidden">👑 Direttore</span>
       <span id="cs-teacher-role-badge" class="hidden" style="display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.25);color:#00cfff;font-size:10px;font-weight:700;font-family:'Share Tech Mono',monospace;letter-spacing:.5px">📖 Docente</span>
       <span class="cs-teacher-name" id="cs-teacher-name"></span>
@@ -1407,6 +1429,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
   <div id="badges-body"></div>
 </div>
 
+<footer class="pp-footer">© 2026 PixelProf • Sounds from <a href="https://notificationsounds.com/" target="_blank" rel="noopener noreferrer">Notification Sounds</a></footer>
 </div><!-- /app -->
 
 

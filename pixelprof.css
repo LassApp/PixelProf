@@ -45,7 +45,7 @@
        (mostra/nascondi, lock di pausa, ecc.) → dentro @layer stato,
        con !important (qui è l'unico posto dove serve ancora).
    ═══════════════════════════════════════════════════════════════════ */
-@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport, audio, achievements, histcards, loaders, theme;
+@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport, audio, achievements, histcards, loaders, onboarding, theme;
 
 @layer base {
 /* ===============================================
@@ -4668,6 +4668,107 @@ body{
 .skel-btn{ height:40px;width:160px;border-radius:var(--radius-sm); }
 }
 
+@layer onboarding {
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf — ONBOARDING TOUR (js/onboarding.js) — v1.0.0
+   Tour "a spotlight" mostrato al primo accesso di ogni docente:
+   overlay scuro a tutto schermo + riquadro pulsante evidenziato
+   (tecnica box-shadow, nessuna maschera SVG) + tooltip con freccia
+   che punta verso l'elemento. Markup creato interamente da JS
+   (stesso approccio di ppAlert/ppConfirmBox in game-engine-state.js
+   e del modal di anteprima import CSV) — nessun markup statico
+   aggiunto a index.html, solo classi qui.
+   Nuove classi (prefisso onb-), nessuna collisione con layer
+   esistenti — dichiarato per ultimo prima di "theme" per coerenza
+   con la regola "nuova feature → nuovo layer in fondo" (vedi
+   intestazione file), lasciando comunque a "theme" l'ultima parola
+   sui colori in tema chiaro.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.onb-overlay{
+  position:fixed;inset:0;z-index:9750;
+  background:rgba(4,6,15,.68);
+  backdrop-filter:blur(3px);
+  -webkit-backdrop-filter:blur(3px);
+  animation:onbFadeIn .25s ease both;
+}
+@keyframes onbFadeIn{from{opacity:0}to{opacity:1}}
+
+.onb-ring{
+  position:fixed;
+  border-radius:14px;
+  border:2px solid var(--accent);
+  box-shadow:0 0 0 4px rgba(0,255,200,.15),0 0 30px rgba(0,255,200,.25);
+  pointer-events:none;
+  z-index:9760;
+  transition:top .35s cubic-bezier(.22,1,.36,1),left .35s cubic-bezier(.22,1,.36,1),
+             width .35s cubic-bezier(.22,1,.36,1),height .35s cubic-bezier(.22,1,.36,1);
+  animation:onbPulse 1.8s ease-in-out infinite;
+}
+@keyframes onbPulse{
+  0%,100%{box-shadow:0 0 0 4px rgba(0,255,200,.15),0 0 30px rgba(0,255,200,.25);}
+  50%{box-shadow:0 0 0 7px rgba(0,255,200,.22),0 0 40px rgba(0,255,200,.35);}
+}
+
+.onb-tooltip{
+  position:fixed;z-index:9770;
+  width:290px;max-width:calc(100vw - 24px);
+  background:rgba(10,15,30,.98);
+  border:1px solid rgba(0,255,200,.25);
+  border-radius:16px;
+  padding:16px 18px;
+  box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 0 1px rgba(0,255,200,.06);
+  animation:onbTtIn .3s cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes onbTtIn{from{opacity:0;transform:translateY(6px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* Freccia — piccolo quadrato ruotato 45°, stesso sfondo/bordo del tooltip.
+   onb-arrow-top: il tooltip è SOTTO il target → freccia in alto, punta in su.
+   onb-arrow-bottom: il tooltip è SOPRA il target → freccia in basso, punta in giù. */
+.onb-tooltip::before{
+  content:'';position:absolute;width:14px;height:14px;
+  background:rgba(10,15,30,.98);
+  border:1px solid rgba(0,255,200,.25);
+  transform:rotate(45deg);
+}
+.onb-tooltip.onb-arrow-top::before{ top:-8px;left:50%;margin-left:-7px;border-right:none;border-bottom:none; }
+.onb-tooltip.onb-arrow-bottom::before{ bottom:-8px;left:50%;margin-left:-7px;border-left:none;border-top:none; }
+
+.onb-progress{ height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;margin-bottom:12px; }
+.onb-progress-fill{ height:100%;background:linear-gradient(90deg,var(--accent),var(--purple));border-radius:2px;transition:width .3s; }
+
+.onb-step-label{
+  font-family:'Share Tech Mono',monospace;font-size:9px;font-weight:700;
+  color:rgba(0,255,200,.65);letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:6px;
+}
+.onb-title{ font-size:14px;font-weight:700;color:#fff;margin-bottom:5px;line-height:1.3; }
+.onb-body{ font-size:12px;color:rgba(255,255,255,.55);line-height:1.55;margin-bottom:14px; }
+
+.onb-actions{ display:flex;align-items:center;justify-content:space-between;gap:10px; }
+.onb-skip{
+  background:none;border:none;cursor:pointer;padding:2px 0;
+  font-family:inherit;font-size:11px;color:rgba(255,255,255,.35);
+  transition:color .18s;
+}
+.onb-skip:hover{ color:rgba(255,255,255,.6); }
+.onb-next{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 16px;border-radius:20px;
+  border:1px solid var(--accent);background:rgba(0,255,200,.12);
+  color:var(--accent);font-size:12px;font-weight:700;font-family:inherit;
+  cursor:pointer;transition:all .18s;white-space:nowrap;
+}
+.onb-next:hover{ background:rgba(0,255,200,.22);box-shadow:0 0 14px rgba(0,255,200,.15); }
+.onb-next:focus-visible{ outline:2px solid var(--accent);outline-offset:2px; }
+.onb-next i{ font-size:13px; }
+
+@media(prefers-reduced-motion: reduce){
+  .onb-overlay,.onb-tooltip{ animation:none; }
+  .onb-ring{ animation:none;transition:none; }
+}
+}
+
 @layer theme {
 /* ═══════════════════════════════════════════════════════════════════
    PixelProf — TEMA CHIARO (toggle opzionale, non un redesign) — v1.0.0
@@ -5112,4 +5213,20 @@ html[data-theme="light"] .theme-toggle-btn.is-light{ color:#a66d00; border-color
 html[data-theme="light"] .pp-footer{ color: rgba(16,24,42,.32); }
 html[data-theme="light"] .pp-footer a{ color:#00967a; border-color: rgba(0,150,120,.3); }
 html[data-theme="light"] .pp-footer a:hover{ color:#00786a; border-color:#00967a; }
+
+/* ── 22. ONBOARDING TOUR ──────────────────────────────────────── */
+/* --accent/--purple sono già ridefiniti nel §1 (token globali) —
+   ring, barra di avanzamento e pulsante "Avanti" ereditano il
+   colore corretto senza bisogno di override qui. Serve solo
+   ripatinare le superfici a sfondo pieno (overlay, tooltip) e i
+   testi a colore fisso, stesso identico pattern del resto del file. */
+html[data-theme="light"] .onb-overlay{ background: rgba(20,30,60,.5); }
+html[data-theme="light"] .onb-tooltip{ background:#ffffff; border-color: rgba(0,150,120,.25); box-shadow: 0 20px 50px rgba(20,30,60,.22), 0 0 0 1px rgba(0,150,120,.08); }
+html[data-theme="light"] .onb-tooltip::before{ background:#ffffff; border-color: rgba(0,150,120,.25); }
+html[data-theme="light"] .onb-title{ color:#10182a; }
+html[data-theme="light"] .onb-body{ color: rgba(16,24,42,.55); }
+html[data-theme="light"] .onb-step-label{ color: rgba(0,150,120,.75); }
+html[data-theme="light"] .onb-progress{ background: rgba(20,30,60,.08); }
+html[data-theme="light"] .onb-skip{ color: rgba(16,24,42,.4); }
+html[data-theme="light"] .onb-skip:hover{ color: rgba(16,24,42,.7); }
 }

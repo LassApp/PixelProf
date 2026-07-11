@@ -1318,6 +1318,11 @@ function goStep(s){
     if(typeof window._renderModuleFilter === 'function'){
       window._renderModuleFilter();
     }
+    // v8.0.0: passi 3-4/4 (Direttore) o 1-2/2 (Docente) del tour guidato —
+    // idempotente, si autolimita al primo accesso tramite lo stato in
+    // OnboardingTour (vedi js/onboarding.js); nei render successivi
+    // di step-mod è un no-op immediato.
+    if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showHomeSteps(), 500);
   }
   if(s==='cat'){
     const catLabel=shq('cat-mod-label');

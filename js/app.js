@@ -59,6 +59,12 @@ function _showLoginError(msg){
 async function _afterLogin(){
   appState.teacher = window.Auth.getProfile();
   const isDir = window.Auth.isDirector();
+  // v8.0.0: inizializza il tour guidato per questo docente — carica lo
+  // stato "già visto/saltato" da localStorage (vedi js/onboarding.js).
+  // Nessun effetto visivo qui: i singoli passi vengono mostrati più
+  // sotto, dai rispettivi hook (openDirectorDashboard, ddGoGestisciAule,
+  // goStep('mod') in game-engine-state.js).
+  if(typeof OnboardingTour!=='undefined') OnboardingTour.init(window.Auth.getUserId(), isDir);
 
   // Badge topbar screen-courses
   const nameEl    = sh('cs-teacher-name');
@@ -166,6 +172,10 @@ function openDirectorDashboard(){
   dd.classList.remove('hidden');
   dd.classList.add('entering');
   setTimeout(()=>dd.classList.remove('entering'), 400);
+  // v8.0.0: passo 1/4 del tour guidato (solo primo accesso, solo Direttore)
+  // — attende che il fade-in della schermata sia concluso prima di
+  // posizionare lo spotlight, per un ingresso più naturale.
+  if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showDashboardStep(), 500);
 }
 
 /* Card "Scegli Aula" — comportamento IDENTICO al flusso pre-v6.0.0 */
@@ -187,6 +197,11 @@ function ddGoGestisciAule(){
   const cs = sh('screen-courses');
   cs.classList.remove('hidden'); cs.classList.add('entering');
   setTimeout(()=>cs.classList.remove('entering'), 400);
+  // v8.0.0: passo 2/4 del tour guidato (solo primo accesso, solo Direttore) —
+  // il form "Nuova aula" è visibile solo in questa modalità (vedi
+  // setCoursesScreenMode in courses.js), quindi è l'unico punto d'ingresso
+  // corretto per questo passo.
+  if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showWizardStep(), 500);
 }
 
 /* Card "Gestisci Docenti" — nuova schermata, vedi sezione dedicata sotto */

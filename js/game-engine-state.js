@@ -1318,19 +1318,25 @@ function goStep(s){
     if(typeof window._renderModuleFilter === 'function'){
       window._renderModuleFilter();
     }
-    // v8.0.0: passi 3-4/4 (Direttore) o 1-2/2 (Docente) del tour guidato —
-    // idempotente, si autolimita al primo accesso tramite lo stato in
-    // OnboardingTour (vedi js/onboarding.js); nei render successivi
-    // di step-mod è un no-op immediato.
-    if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showHomeSteps(), 500);
+    // v9.0.0: passo "scegli modulo" del tour guidato (Direttore e Docente) —
+    // idempotente, si autolimita tramite lo stato in OnboardingTour (vedi
+    // js/onboarding.js); nei render successivi di step-mod è un no-op.
+    if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showHomeModuleStep(), 500);
   }
   if(s==='cat'){
     const catLabel=shq('cat-mod-label');
     if(catLabel) catLabel.textContent=MOD_LABEL[sMod]||'';
+    // v9.0.0: passo "scegli modalità" del tour guidato Docente.
+    if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showHomeCategoryStep(), 300);
   }
   if(s==='act'){
     sh('act-mod-label').textContent=MOD_LABEL[sMod]||'';
     if(!sAct)updateHero(null);
+    // v9.0.0: rete di sicurezza per il passo Hub del tour guidato — di
+    // norma già mostrato in modo opportunistico da _advance() non appena
+    // lo step precedente si conclude (il bottone Hub in topbar è sempre
+    // presente indipendentemente da quale step-* sia attivo).
+    if(typeof OnboardingTour!=='undefined') OnboardingTour.recheck();
   }
 }
 

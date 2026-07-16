@@ -4703,6 +4703,11 @@ body{
   z-index:9760;
   transition:top .35s cubic-bezier(.22,1,.36,1),left .35s cubic-bezier(.22,1,.36,1),
              width .35s cubic-bezier(.22,1,.36,1),height .35s cubic-bezier(.22,1,.36,1);
+}
+/* Pulsazione riservata ai passi 'action' (target realmente cliccabile) —
+   i passi 'info' mostrano un anello statico, coerente col fatto che il
+   target è solo evidenziato ma non cliccabile in quel momento. */
+.onb-ring-pulse{
   animation:onbPulse 1.8s ease-in-out infinite;
 }
 @keyframes onbPulse{
@@ -4765,7 +4770,7 @@ body{
 
 @media(prefers-reduced-motion: reduce){
   .onb-overlay,.onb-tooltip{ animation:none; }
-  .onb-ring{ animation:none;transition:none; }
+  .onb-ring,.onb-ring-pulse{ animation:none;transition:none; }
 }
 }
 

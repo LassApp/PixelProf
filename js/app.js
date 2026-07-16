@@ -150,6 +150,9 @@ async function _afterLogin(){
     cs.classList.remove('hidden');
     cs.classList.add('entering');
     setTimeout(()=>cs.classList.remove('entering'), 400);
+    // v9.0.0: passo 1/4 del tour guidato Docente (tutte le card aula
+    // abilitate — non sappiamo a quale aula il docente deve accedere).
+    if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showCoursesSelectStep(), 500);
   }
 }
 
@@ -185,6 +188,9 @@ function ddGoSceltaAula(){
   const cs = sh('screen-courses');
   cs.classList.remove('hidden'); cs.classList.add('entering');
   setTimeout(()=>cs.classList.remove('entering'), 400);
+  // v9.0.0: passo 9/11 del tour guidato Direttore (seleziona un'aula
+  // qualsiasi tra quelle disponibili).
+  if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showCoursesSelectStep(), 500);
 }
 
 /* Card "Gestisci Aule" — stessa griglia, ma il click su una card apre
@@ -268,6 +274,13 @@ function openTeacherManagement(){
   scr.classList.remove('hidden');
   scr.classList.add('entering');
   setTimeout(()=>scr.classList.remove('entering'), 400);
+  // v9.0.0: passo 5/11 del tour guidato Direttore. Centralizzato qui
+  // (invece che nella sola ddGoGestisciDocenti) perché questa funzione
+  // è il vero unico punto d'ingresso della schermata, richiamato anche
+  // da tmBackFromCreate()/tmBackFromList() — chiamata idempotente e
+  // innocua in quei casi (il tour, se attivo, è comunque già oltre
+  // questo passo quando quelle funzioni vengono usate).
+  if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showTeacherMgmtStep(), 500);
 }
 
 function closeTeacherManagement(){

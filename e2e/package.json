@@ -1,0 +1,18 @@
+{
+  "name": "pixelprof-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Smoke test Playwright per PixelProf — login, aula, minigiochi, pausa/ripresa, uscita.",
+  "scripts": {
+    "install:browsers": "playwright install --with-deps chromium",
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.0",
+    "http-server": "^14.1.1"
+  }
+}

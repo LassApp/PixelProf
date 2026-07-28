@@ -1,0 +1,80 @@
+name: Build Bundle
+
+# Rigenera automaticamente js/app.bundle.min.js (+ sourcemap) ogni volta
+# che cambia uno dei sorgenti in js/*.js, index.html, package.json o lo
+# script di build stesso — così non serve ricordarsi di lanciare
+# `npm run build` a mano prima di pushare su main.
+#
+# ANTI-LOOP: i pattern "!js/app.bundle.min.js*" in `paths` escludono il
+# bundle e la sua sourcemap dal trigger. Il commit automatico creato da
+# questo stesso workflow tocca SOLO quei due file, quindi non riattiva
+# il workflow — nessun ciclo infinito.
+#
+# PERMESSI RICHIESTI: il repo deve avere "Read and write permissions"
+# per il GITHUB_TOKEN attivo (Settings → Actions → General → Workflow
+# permissions), altrimenti lo step di push fallisce con 403.
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'js/**'
+      - 'index.html'
+      - 'package.json'
+      - 'tools/build.js'
+      - '!js/app.bundle.min.js'
+      - '!js/app.bundle.min.js.map'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Evita run sovrapposti sullo stesso branch (es. due push ravvicinati):
+# il run precedente ancora in coda viene annullato a favore dell'ultimo.
+concurrency:
+  group: build-bundle-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run build (tools/build.js)
+        run: npm run build
+
+      - name: Check for changes
+        id: diff
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push updated bundle
+        if: steps.diff.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add js/app.bundle.min.js js/app.bundle.min.js.map index.html
+          git commit -m "chore: rebuild automatico bundle JS [skip ci]"
+          git push origin HEAD:main
+
+      - name: Nessuna modifica
+        if: steps.diff.outputs.changed == 'false'
+        run: echo "Il bundle era già aggiornato — nessun commit necessario."

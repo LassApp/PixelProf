@@ -1,5 +1,5 @@
 /* ==================================================
-   dashboard.js — PixelProf v2.0.0
+   dashboard.js — PixelProf v2.0.0 commento
    "Panoramica Classe" — vista aggregata per il docente.
 
    Risponde a 3 domande che oggi richiedono di incrociare

@@ -562,6 +562,53 @@ body{
 .pchip:hover{border-color:var(--accent-border);color:var(--accent);background:var(--accent-dim);}
 .pchip.active{background:rgba(0,255,200,.12);border-color:var(--accent);color:var(--accent);font-weight:600;}
 
+/* ── Chip con azione (elimina/rinomina) — v1.0
+   Estratto dallo stile inline in game-engine-state.js (renderIndChips,
+   renderSqUI, startRenameSavedTeam): prima erano visibili solo su hover
+   (via onmouseover/onmouseout) perché i colori a riposo erano bianco
+   fisso — invisibili anche in tema scuro se non sull'accento hover, e
+   totalmente illeggibili in tema chiaro (bianco su bianco). ── */
+.pchip-row{ display:inline-flex; align-items:center; gap:0; margin:3px 4px 3px 0; position:relative; }
+.pchip-left{ border-radius:20px 0 0 20px; margin:0; padding-right:6px; }
+.pchip-action-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:30px;width:24px;padding:0;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);border-left:none;
+  color:rgba(255,255,255,.35);font-size:11px;cursor:pointer;
+  transition:background .15s,color .15s;font-family:inherit;
+}
+.pchip-action-btn.pchip-del-btn{ border-radius:0 20px 20px 0; }
+.pchip-action-btn.pchip-rename-btn{ width:26px;border-right:none;color:rgba(255,255,255,.4); }
+.pchip-action-btn.pchip-del-btn:hover{ background:rgba(255,60,80,.18); color:#ff4d6d; }
+.pchip-action-btn.pchip-rename-btn:hover{ background:rgba(0,255,200,.12); color:#00ffc8; }
+
+.pchip-rename-input-wrap{
+  display:inline-flex;align-items:center;gap:4px;padding:2px 4px;
+  border:1px solid rgba(0,255,200,.4);border-radius:20px;
+  background:rgba(0,255,200,.07);box-shadow:0 0 8px rgba(0,255,200,.12);
+}
+.pchip-rename-dot{ width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-left:6px; }
+.pchip-rename-input{
+  background:transparent;border:none;outline:none;
+  color:#fff;font-size:12px;font-family:'Space Grotesk',sans-serif;
+  font-weight:600;width:90px;padding:2px 4px;
+}
+.pchip-rename-save-btn{
+  background:rgba(0,255,200,.15);border:1px solid rgba(0,255,200,.3);border-radius:50%;
+  width:22px;height:22px;display:flex;align-items:center;justify-content:center;
+  color:#00ffc8;font-size:11px;cursor:pointer;flex-shrink:0;
+  transition:background .15s;font-family:inherit;
+}
+.pchip-rename-save-btn:hover{ background:rgba(0,255,200,.3); }
+.pchip-rename-cancel-btn{
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:50%;
+  width:22px;height:22px;display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;flex-shrink:0;
+  transition:background .15s;margin-right:4px;font-family:inherit;
+}
+.pchip-rename-cancel-btn:hover{ background:rgba(255,60,80,.2); color:#ff4d6d; }
+
 .inp-row{display:flex;gap:8px}
 .inp-row input{
   flex:1;padding:8px 12px;border-radius:var(--radius-sm);border:1px solid var(--border-mid);
@@ -1731,10 +1778,14 @@ body{
 .dp-add-row{display:flex;gap:8px;margin-top:6px;}
 .dp-add-select{
   flex:1;padding:8px 10px;border-radius:var(--radius-sm);
-  border:1px solid var(--border-mid);background:rgba(255,255,255,.04);
-  color:var(--text-primary);font-size:12px;font-family:inherit;outline:none;
+  border:1px solid var(--border-mid);background:#10162a;
+  color:#e2e8f0;font-size:12px;font-family:inherit;outline:none;
 }
 .dp-add-select:focus{border-color:var(--accent);}
+.dp-add-select option{
+  background:#10162a;
+  color:#e2e8f0;
+}
 /* Fix option text in wizard teacher select — OS native picker uses light bg */
 .cw-teacher-select-styled{
   background:#10162a;
@@ -4932,9 +4983,67 @@ html[data-theme="light"] .inp-row input,html[data-theme="light"] .team-row input
 html[data-theme="light"] .cs-add-inp,html[data-theme="light"] .login-inp,
 html[data-theme="light"] .cw-invite-inp,html[data-theme="light"] .dp-add-select,
 html[data-theme="light"] .pp-generic-input{ background: rgba(20,30,60,.035); color:#10182a; }
+html[data-theme="light"] .dp-add-select option{ background:#ffffff; color:#10182a; }
 html[data-theme="light"] .inp-row input::placeholder,html[data-theme="light"] .cs-add-inp::placeholder,
 html[data-theme="light"] .login-inp::placeholder{ color: rgba(16,24,42,.3); }
 html[data-theme="light"] .gender-btn{ color: rgba(16,24,42,.55); }
+
+/* ── 6bis. STEP-ATT: hero "Scegli attività" (stato inattivo) + card minigioco ──
+   L'hero con attività selezionata (.hero-quiz/.hero-speed/...) resta il
+   "poster" scuro voluto (testo bianco già a contrasto garantito) — qui si
+   corregge SOLO lo stato inattivo (nessuna selezione, sfondo scuro
+   "ereditato" dall'overlay) e le card, il cui testo era fisso chiaro. */
+html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill){
+  background:#ffffff;
+  border:1px solid rgba(20,30,60,.09);
+}
+html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill) .act-hero-overlay{
+  background:none;
+}
+html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill) .act-hero-title{
+  color:#10182a;
+  text-shadow:none;
+}
+html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill) .act-hero-sub{
+  color: rgba(16,24,42,.5);
+}
+html[data-theme="light"] .act-card{ background:#ffffff; border-color: rgba(20,30,60,.09); }
+html[data-theme="light"] .act-card:hover{ border-color: rgba(20,30,60,.18); background: rgba(20,30,60,.04); }
+html[data-theme="light"] .act-card:not(.active) h3{ color:#10182a; }
+html[data-theme="light"] .act-card p{ color: rgba(16,24,42,.42); }
+
+/* Chip con azione (elimina/rinomina) — v1.0, vedi @layer base per il
+   contesto completo del refactor da stile inline (Issue 5b) */
+html[data-theme="light"] .pchip-action-btn{
+  background: rgba(20,30,60,.05);
+  border-color: rgba(20,30,60,.14);
+  color: rgba(16,24,42,.45);
+}
+html[data-theme="light"] .pchip-action-btn.pchip-del-btn:hover{
+  background: rgba(255,60,80,.12);
+  color: #c22a3e;
+}
+html[data-theme="light"] .pchip-action-btn.pchip-rename-btn:hover{
+  background: rgba(0,150,120,.12);
+  color: #00967a;
+}
+html[data-theme="light"] .pchip-rename-input-wrap{
+  background: rgba(0,150,120,.06);
+  border-color: rgba(0,150,120,.35);
+}
+html[data-theme="light"] .pchip-rename-input{ color:#10182a; }
+html[data-theme="light"] .pchip-rename-save-btn{
+  background: rgba(0,150,120,.12);
+  border-color: rgba(0,150,120,.4);
+  color:#00967a;
+}
+html[data-theme="light"] .pchip-rename-save-btn:hover{ background: rgba(0,150,120,.22); }
+html[data-theme="light"] .pchip-rename-cancel-btn{
+  background: rgba(20,30,60,.05);
+  border-color: rgba(20,30,60,.14);
+  color: rgba(16,24,42,.45);
+}
+html[data-theme="light"] .pchip-rename-cancel-btn:hover{ background: rgba(255,60,80,.12); color:#c22a3e; }
 
 /* ── 7. GIOCO: header, feedback, opzioni Quiz ────────────────── */
 html[data-theme="light"] .game-header{ background: rgba(255,255,255,.7); border-color: rgba(20,30,60,.08); }
@@ -4991,6 +5100,23 @@ html[data-theme="light"] .result-wrap{
   background: linear-gradient(160deg, #0c1220 0%, #0a0e1c 100%);
   border-radius: 20px; padding: 1.75rem 1.25rem;
   box-shadow: 0 10px 40px rgba(20,30,60,.16);
+}
+html[data-theme="light"] .result-wrap .btn{
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.22);
+  color: #e2e8f0;
+}
+html[data-theme="light"] .result-wrap .btn:hover{
+  background: rgba(255,255,255,.14);
+  border-color: rgba(255,255,255,.32);
+}
+html[data-theme="light"] .result-wrap .btn-neon{
+  background: rgba(0,255,200,.14);
+  border-color: #00ffc8;
+  color: #00ffc8;
+}
+html[data-theme="light"] .result-wrap .btn-neon:hover{
+  background: rgba(0,255,200,.22);
 }
 
 /* ── 12. CLASSIFICA ───────────────────────────────────────────── */
@@ -5205,6 +5331,16 @@ html[data-theme="light"] .tmd-email-hint{ color: rgba(16,24,42,.4); }
 html[data-theme="light"] .dp-hint-text{ color: rgba(16,24,42,.35); }
 
 /* ── 19. IMPORT CSV ───────────────────────────────────────────── */
+html[data-theme="light"] .csv-import-trigger-btn{
+  border-color: rgba(0,150,120,.35);
+  background: rgba(0,150,120,.05);
+  color: #00786a;
+}
+html[data-theme="light"] .csv-import-trigger-btn:hover{
+  background: rgba(0,150,120,.1);
+  border-color: rgba(0,150,120,.55);
+  color: var(--accent);
+}
 html[data-theme="light"] .csv-import-list{ background: rgba(20,30,60,.02); border-color: rgba(20,30,60,.09); }
 html[data-theme="light"] .csv-import-row{ color: rgba(16,24,42,.8); border-bottom-color: rgba(20,30,60,.06); }
 html[data-theme="light"] .csv-import-empty-list{ color: rgba(16,24,42,.3); }

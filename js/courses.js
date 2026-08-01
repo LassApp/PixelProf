@@ -53,6 +53,18 @@ function setCoursesScreenMode(mode){
   _csMode=(mode==='manage')?'manage':'select';
   const addForm=document.getElementById('cs-add-form-wrap');
   if(addForm) addForm.classList.toggle('is-hidden-by-cs-mode', _csMode!=='manage');
+  // v8.x: titolo/sottotitolo hero dinamici — 'manage' (Direttore → Gestisci Aule)
+  // enfatizza creazione+assegnazione; 'select' (Docente, o Direttore → Scegli Aula)
+  // resta la copy originale orientata all'ingresso in aula.
+  const titleEl=document.getElementById('cs-courses-title');
+  const subEl  =document.getElementById('cs-courses-sub');
+  if(_csMode==='manage'){
+    if(titleEl) titleEl.innerHTML='Seleziona o<br>crea <span class="hl">aula</span>';
+    if(subEl)   subEl.textContent='Assegna docenti e moduli.';
+  }else{
+    if(titleEl) titleEl.innerHTML='Seleziona<br>la tua <span class="hl">aula</span>';
+    if(subEl)   subEl.textContent='Ogni aula ha giocatori, classifiche e progressi dedicati.';
+  }
 }
 function _csCardClick(id){
   // v6.0.1 FIX: _csMode è una variabile JS che NON viene resettata da un

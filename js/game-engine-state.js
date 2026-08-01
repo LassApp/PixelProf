@@ -1428,24 +1428,13 @@ function renderIndChips(){
     return;
   }
   c.innerHTML=db.players.map((p,i)=>`
-    <div style="display:inline-flex;align-items:center;gap:0;margin:3px 4px 3px 0;position:relative">
-      <button class="pchip${sIndPlayer===p?' active':''}"
-        style="border-radius:20px 0 0 20px;margin:0;padding-right:6px"
+    <div class="pchip-row">
+      <button class="pchip pchip-left${sIndPlayer===p?' active':''}"
         onclick="pickInd('${escAttr(p)}')">${escHtml(p)}</button>
       <button
+        class="pchip-action-btn pchip-del-btn"
         title="Elimina giocatore"
         onclick="deletePlayer(${i},event)"
-        style="
-          display:inline-flex;align-items:center;justify-content:center;
-          height:30px;width:24px;padding:0;
-          background:rgba(255,255,255,.06);
-          border:1px solid rgba(255,255,255,.12);border-left:none;
-          border-radius:0 20px 20px 0;
-          color:rgba(255,255,255,.35);font-size:11px;cursor:pointer;
-          transition:background .15s,color .15s;
-        "
-        onmouseover="this.style.background='rgba(255,60,80,.18)';this.style.color='#ff4d6d'"
-        onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.35)'"
       ><i class="ti ti-x"></i></button>
     </div>`).join('');
 }
@@ -1594,39 +1583,19 @@ function renderSqUI(){
     s.innerHTML='<span style="font-size:12px;color:rgba(255,255,255,.3)">Nessuna squadra salvata</span>';
   } else {
     s.innerHTML=db.teams.map((t,i)=>`
-      <div class="pchip-wrap" style="display:inline-flex;align-items:center;gap:0;margin:3px 4px 3px 0;position:relative">
-        <button class="pchip" id="sqchip-${i}"
-          style="border-left:3px solid ${escAttr(t.color)};border-radius:20px 0 0 20px;margin:0;padding-right:6px"
+      <div class="pchip-row">
+        <button class="pchip pchip-left" id="sqchip-${i}"
+          style="border-left:3px solid ${escAttr(t.color)}"
           onclick="addSavedTeam('${escAttr(t.name)}','${escAttr(t.color)}')">${escHtml(t.name)}</button>
         <button
+          class="pchip-action-btn pchip-rename-btn"
           title="Rinomina squadra"
           onclick="startRenameSavedTeam(${i},event)"
-          style="
-            display:inline-flex;align-items:center;justify-content:center;
-            height:30px;width:26px;padding:0;
-            background:rgba(255,255,255,.06);
-            border:1px solid rgba(255,255,255,.12);border-left:none;border-right:none;
-            border-radius:0;
-            color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;
-            transition:background .15s,color .15s;
-          "
-          onmouseover="this.style.background='rgba(0,255,200,.12)';this.style.color='#00ffc8'"
-          onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.4)'"
         ><i class="ti ti-pencil"></i></button>
         <button
+          class="pchip-action-btn pchip-del-btn"
           title="Elimina squadra"
           onclick="deleteSavedTeam(${i},event)"
-          style="
-            display:inline-flex;align-items:center;justify-content:center;
-            height:30px;width:24px;padding:0;
-            background:rgba(255,255,255,.06);
-            border:1px solid rgba(255,255,255,.12);border-left:none;
-            border-radius:0 20px 20px 0;
-            color:rgba(255,255,255,.35);font-size:11px;cursor:pointer;
-            transition:background .15s,color .15s;
-          "
-          onmouseover="this.style.background='rgba(255,60,80,.18)';this.style.color='#ff4d6d'"
-          onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.35)'"
         ><i class="ti ti-x"></i></button>
       </div>`).join('');
   }
@@ -1691,34 +1660,18 @@ function startRenameSavedTeam(idx, evt){
   const col=team.color;
 
   wrap.innerHTML=`
-    <div style="display:inline-flex;align-items:center;gap:4px;padding:2px 4px;
-      border:1px solid rgba(0,255,200,.4);border-radius:20px;
-      background:rgba(0,255,200,.07);box-shadow:0 0 8px rgba(0,255,200,.12)">
-      <div style="width:8px;height:8px;border-radius:50%;background:${escAttr(col)};box-shadow:0 0 5px ${escAttr(col)};flex-shrink:0;margin-left:6px"></div>
+    <div class="pchip-rename-input-wrap">
+      <div class="pchip-rename-dot" style="background:${escAttr(col)};box-shadow:0 0 5px ${escAttr(col)}"></div>
       <input id="sq-rename-inp-${idx}"
+        class="pchip-rename-input"
         value="${escAttr(oldName)}"
-        style="
-          background:transparent;border:none;outline:none;
-          color:#fff;font-size:12px;font-family:'Space Grotesk',sans-serif;
-          font-weight:600;width:90px;padding:2px 4px;
-        "
         onkeydown="if(event.key==='Enter'){event.preventDefault();confirmRenameSavedTeam(${idx},'${escAttr(oldName)}');}
                    if(event.key==='Escape'){event.preventDefault();renderSqUI();}"
         onfocus="this.select()"
       />
-      <button onclick="confirmRenameSavedTeam(${idx},'${escAttr(oldName)}')" title="Salva"
-        style="background:rgba(0,255,200,.15);border:1px solid rgba(0,255,200,.3);border-radius:50%;
-               width:22px;height:22px;display:flex;align-items:center;justify-content:center;
-               color:#00ffc8;font-size:11px;cursor:pointer;flex-shrink:0;transition:background .15s"
-        onmouseover="this.style.background='rgba(0,255,200,.3)'"
-        onmouseout="this.style.background='rgba(0,255,200,.15)'"
+      <button class="pchip-rename-save-btn" onclick="confirmRenameSavedTeam(${idx},'${escAttr(oldName)}')" title="Salva"
       ><i class="ti ti-check"></i></button>
-      <button onclick="renderSqUI()" title="Annulla"
-        style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:50%;
-               width:22px;height:22px;display:flex;align-items:center;justify-content:center;
-               color:rgba(255,255,255,.4);font-size:11px;cursor:pointer;flex-shrink:0;transition:background .15s;margin-right:4px"
-        onmouseover="this.style.background='rgba(255,60,80,.2)';this.style.color='#ff4d6d'"
-        onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.4)'"
+      <button class="pchip-rename-cancel-btn" onclick="renderSqUI()" title="Annulla"
       ><i class="ti ti-x"></i></button>
     </div>`;
   // Focus con delay per lasciar il DOM aggiornare

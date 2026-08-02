@@ -1,5 +1,5 @@
 /* ==================================================
-   game-match.js — PixelProf v5.0.4
+   game-match.js — PixelProf v5.0.4 commento prova
    Abbina (match) game: timer, combo scoring, pair logic.
    Fase 8: PauseUIRegistry handler registrato (M2).
    Depends on: game-engine-state.js, scoring.js

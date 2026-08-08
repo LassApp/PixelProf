@@ -67,6 +67,7 @@ const BUNDLE_FILES = [
   'game-match.js',
   'game-memory.js',
   'game-fill.js',
+  'game-truefalse.js',
   'courses.js',
   'app.js',
   'csv-import.js',

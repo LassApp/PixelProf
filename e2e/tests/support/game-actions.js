@@ -147,6 +147,17 @@ async function playFillQuestions(page, count) {
   }
 }
 
+/** Vero o Falso: risponde sempre "Vero" per `count` domande (non verifica la
+ *  correttezza — è compito dei test unitari; qui verifichiamo solo che il
+ *  flusso di gioco avanzi senza bloccarsi). */
+async function playTrueFalseQuestions(page, count) {
+  for (let i = 0; i < count; i++) {
+    await page.locator('.tf-btn.tf-true').waitFor({ state: 'visible' });
+    await page.locator('.tf-btn.tf-true').click();
+    await page.waitForTimeout(1300); // checkTF() attende 1.2s prima di passare alla successiva
+  }
+}
+
 // ══════════════════════════════════════════════════════════════════
 // USCITA DA UN MINIGIOCO — dialog di conferma condiviso da tutti
 // (raddoppia anche da test di pausa/ripresa "universale": aprire il
@@ -189,6 +200,7 @@ module.exports = {
   flipTwoMemoryCards,
   togglePauseAndResumeMemory,
   playFillQuestions,
+  playTrueFalseQuestions,
   exitDialogCancelIsResume,
   exitGameConfirm,
 };

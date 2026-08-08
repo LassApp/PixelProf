@@ -83,7 +83,7 @@ function _buildEmptyLb2() {
   const lb2 = {};
   ['ind', 'sq'].forEach(t => {
     lb2[t] = {};
-    ['quiz', 'speed', 'match', 'memory', 'fill'].forEach(a => { lb2[t][a] = {}; });
+    ['quiz', 'speed', 'match', 'memory', 'fill', 'truefalse'].forEach(a => { lb2[t][a] = {}; });
   });
   return lb2;
 }

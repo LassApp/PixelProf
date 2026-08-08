@@ -36,8 +36,8 @@
 
 const _CHD_MOD_LABEL = { CE: 'Computer Essentials', OE: 'Online Essentials', WP: 'Word Processing' };
 const _CHD_MOD_COLOR = { CE: '#00cfff', OE: '#7c6aff', WP: '#28a050' };
-const _CHD_ACT_LABEL = { quiz: 'Quiz', speed: 'Speed Quiz', match: 'Abbina', memory: 'Memory', fill: 'Completa la frase' };
-const _CHD_ACT_ICON  = { quiz: '🧠', speed: '⚡', match: '🔗', memory: '🃏', fill: '✏️' };
+const _CHD_ACT_LABEL = { quiz: 'Quiz', speed: 'Speed Quiz', match: 'Abbina', memory: 'Memory', fill: 'Completa la frase', truefalse: 'Vero o Falso' };
+const _CHD_ACT_ICON  = { quiz: '🧠', speed: '⚡', match: '🔗', memory: '🃏', fill: '✏️', truefalse: '⚖️' };
 
 /** Percentuale di accuratezza, o null se non ci sono ancora dati. */
 function _chdAccuracy(c, w) {

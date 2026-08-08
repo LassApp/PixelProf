@@ -511,6 +511,11 @@ body{
 .act-fill.active{border-color:rgba(0,207,255,.5);background:rgba(0,207,255,.07);box-shadow:0 0 16px rgba(0,207,255,.08);}
 .act-fill.active h3,.act-fill:hover h3{color:#00cfff;}
 
+.act-tf::after{background:#ffd166;}
+.act-tf:hover{border-color:rgba(255,209,102,.25);}
+.act-tf.active{border-color:rgba(255,209,102,.5);background:rgba(255,209,102,.07);box-shadow:0 0 16px rgba(255,209,102,.08);}
+.act-tf.active h3,.act-tf:hover h3{color:#ffd166;}
+
 /* ===============================================
    SETUP CARD — v7 unified hover
 =============================================== */
@@ -1030,6 +1035,27 @@ body{
 .chip:hover::after{transform:scaleX(1);}
 
 /* ===============================================
+   VERO O FALSO — v1.0.0
+=============================================== */
+.tf-card{ text-align:center; }
+.tf-btns{ display:flex; gap:10px; margin-top:4px; }
+.tf-btn{
+  flex:1; padding:16px; border-radius:var(--radius-md);
+  border:1.5px solid var(--border-mid); background:var(--surface-1);
+  font-size:15px; font-weight:700; cursor:pointer; font-family:inherit;
+  display:flex; align-items:center; justify-content:center; gap:8px;
+  transition:all var(--transition-fast); color:rgba(255,255,255,.75);
+}
+.tf-btn:disabled{ cursor:default; opacity:.85; }
+.tf-btn i{ font-size:18px; }
+.tf-true{ border-color:rgba(0,255,150,.25); }
+.tf-true:hover:not(:disabled){ background:rgba(0,255,150,.08); border-color:rgba(0,255,150,.5); color:#00ff96; }
+.tf-false{ border-color:rgba(255,60,80,.25); }
+.tf-false:hover:not(:disabled){ background:rgba(255,60,80,.08); border-color:rgba(255,60,80,.5); color:#ff6b6b; }
+.tf-btn.tf-correct{ background:rgba(0,255,150,.15); border-color:#00ff96; color:#00ff96; }
+.tf-btn.tf-wrong{ background:rgba(255,60,80,.12); border-color:#ff3c50; color:#ff3c50; }
+
+/* ===============================================
    STATS SCREEN — v7
 =============================================== */
 .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem}
@@ -1086,6 +1112,7 @@ body{
 .hero-match{background:linear-gradient(135deg,#0e0a20 0%,#160d2a 50%,#0c0818 100%)}
 .hero-memory{background:linear-gradient(135deg,#1a0810 0%,#220b16 50%,#180610 100%)}
 .hero-fill{background:linear-gradient(135deg,#001a22 0%,#001e2a 50%,#001520 100%)}
+.hero-truefalse{background:linear-gradient(135deg,#221a00 0%,#2a2000 50%,#1c1600 100%)}
 
 /* ===============================================
    OVERTAKE / CONFETTI — v7
@@ -1195,8 +1222,7 @@ body{
 .lb-type-card .ltc-sub{font-size:11px;color:rgba(255,255,255,.35);text-align:center;line-height:1.4}
 
 /* Step 2: activity filter */
-.lb-act-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:4px}
-@media(max-width:480px){.lb-act-grid{grid-template-columns:repeat(3,1fr)}}
+.lb-act-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:4px}
 @media(max-width:340px){.lb-act-grid{grid-template-columns:repeat(2,1fr)}}
 .lb-act-btn{
   border-radius:var(--radius-md);border:1px solid var(--border-subtle);background:var(--surface-1);
@@ -1242,6 +1268,11 @@ body{
 .lb-act-btn.a-fill.active{border-color:rgba(0,207,255,.5);background:rgba(0,207,255,.08);box-shadow:0 0 14px rgba(0,207,255,.08);}
 .lb-act-btn.a-fill:hover{border-color:rgba(0,207,255,.25);}
 .lb-act-btn.a-fill.active .lab-label,.lb-act-btn.a-fill:hover .lab-label{color:#00cfff;}
+
+.lb-act-btn.a-truefalse::after{background:#ffd166;}
+.lb-act-btn.a-truefalse.active{border-color:rgba(255,209,102,.5);background:rgba(255,209,102,.08);box-shadow:0 0 14px rgba(255,209,102,.08);}
+.lb-act-btn.a-truefalse:hover{border-color:rgba(255,209,102,.25);}
+.lb-act-btn.a-truefalse.active .lab-label,.lb-act-btn.a-truefalse:hover .lab-label{color:#ffd166;}
 
 /* Breadcrumb nav */
 .lb-nav{display:flex;align-items:center;gap:6px;margin-bottom:16px;flex-wrap:wrap}
@@ -4993,18 +5024,18 @@ html[data-theme="light"] .gender-btn{ color: rgba(16,24,42,.55); }
    "poster" scuro voluto (testo bianco già a contrasto garantito) — qui si
    corregge SOLO lo stato inattivo (nessuna selezione, sfondo scuro
    "ereditato" dall'overlay) e le card, il cui testo era fisso chiaro. */
-html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill){
+html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse){
   background:#ffffff;
   border:1px solid rgba(20,30,60,.09);
 }
-html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill) .act-hero-overlay{
+html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse) .act-hero-overlay{
   background:none;
 }
-html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill) .act-hero-title{
+html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse) .act-hero-title{
   color:#10182a;
   text-shadow:none;
 }
-html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill) .act-hero-sub{
+html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse) .act-hero-sub{
   color: rgba(16,24,42,.5);
 }
 html[data-theme="light"] .act-card{ background:#ffffff; border-color: rgba(20,30,60,.09); }
@@ -5056,6 +5087,11 @@ html[data-theme="light"] .opt.correct{ color:#12805a; }
 html[data-theme="light"] .opt.wrong{ color:#c22a3e; }
 html[data-theme="light"] .fb.ok{ color:#12805a; }
 html[data-theme="light"] .fb.ko{ color:#c22a3e; }
+html[data-theme="light"] .tf-btn{ background: rgba(20,30,60,.03); border-color: rgba(20,30,60,.09); color: rgba(16,24,42,.72); }
+html[data-theme="light"] .tf-true:hover:not(:disabled){ color:#0a8f5a; }
+html[data-theme="light"] .tf-false:hover:not(:disabled){ color:#c22a3e; }
+html[data-theme="light"] .tf-btn.tf-correct{ color:#0a8f5a; }
+html[data-theme="light"] .tf-btn.tf-wrong{ color:#c22a3e; }
 html[data-theme="light"] .live-chip{ background: rgba(20,30,60,.04); border-color: rgba(20,30,60,.1); }
 html[data-theme="light"] .turn-lbl{ color: rgba(16,24,42,.5); }
 html[data-theme="light"] .prog-bar{ background: rgba(20,30,60,.08); }
@@ -5130,6 +5166,7 @@ html[data-theme="light"] .lb-act-btn.a-speed.active .lab-label,html[data-theme="
 html[data-theme="light"] .lb-act-btn.a-match.active .lab-label,html[data-theme="light"] .lb-act-btn.a-match:hover .lab-label{ color:#6a4fd6; }
 html[data-theme="light"] .lb-act-btn.a-memory.active .lab-label,html[data-theme="light"] .lb-act-btn.a-memory:hover .lab-label{ color:#c02350; }
 html[data-theme="light"] .lb-act-btn.a-fill.active .lab-label,html[data-theme="light"] .lb-act-btn.a-fill:hover .lab-label{ color:#0d6fbf; }
+html[data-theme="light"] .lb-act-btn.a-truefalse.active .lab-label,html[data-theme="light"] .lb-act-btn.a-truefalse:hover .lab-label{ color:#a67c00; }
 html[data-theme="light"] .lb-nav-crumb{ color: rgba(0,150,120,.7); }
 html[data-theme="light"] .lb-nav-crumb.current{ color: rgba(16,24,42,.55); }
 html[data-theme="light"] .lb-nav-sep{ color: rgba(16,24,42,.2); }

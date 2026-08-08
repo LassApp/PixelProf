@@ -13,7 +13,8 @@
  *   5. Abbina             (+ pausa/ripresa via pulsante dedicato)
  *   6. Memory             (+ pausa/ripresa via pulsante dedicato)
  *   7. Completa la frase  (+ pausa/ripresa via dialog di uscita)
- *   8. Uscita dall'app (logout)
+ *   8. Vero o Falso       (+ pausa/ripresa via dialog di uscita)
+ *   9. Uscita dall'app (logout)
  *
  * Ogni fase è isolata con test.step() per una lettura rapida del report
  * HTML in caso di fallimento — si vede subito QUALE fase si è rotta,
@@ -38,6 +39,7 @@ const {
   flipTwoMemoryCards,
   togglePauseAndResumeMemory,
   playFillQuestions,
+  playTrueFalseQuestions,
   exitDialogCancelIsResume,
   exitGameConfirm,
 } = require('./support/game-actions');
@@ -116,6 +118,17 @@ test('flusso completo: login → entra in aula → ogni minigioco → pausa/ripr
     await expect(page.locator('.fill-sent')).toBeVisible();
 
     await playFillQuestions(page, 2);
+
+    await exitDialogCancelIsResume(page, '.game-exit-btn');
+    await exitGameConfirm(page, '.game-exit-btn');
+  });
+
+  await test.step('Vero o Falso — gioca, pausa/riprendi via dialog di uscita, esci', async () => {
+    await goToActivity(page, { module: 'CE', activity: 'truefalse' });
+    await setupIndividualAndStart(page, 'Alunno VeroFalso');
+    await expect(page.locator('.tf-btns')).toBeVisible();
+
+    await playTrueFalseQuestions(page, 2);
 
     await exitDialogCancelIsResume(page, '.game-exit-btn');
     await exitGameConfirm(page, '.game-exit-btn');

@@ -164,6 +164,20 @@ const CompletaFraseLoader = _createLoader({
   normalize: (raw) => raw.map(r => ({ t: r.sentence, b: r.answer, bank: r.bank })),
 });
 
+/* -- Vero o Falso -- */
+const TrueFalseLoader = _createLoader({
+  moduleMap: {
+    CE: 'data/vero_falso/computer_essentials.json',
+    OE: 'data/vero_falso/online_essentials.json',
+    WP: 'data/vero_falso/word_processing.json',
+  },
+  tag: 'VeroFalso',
+  validate: raw => Array.isArray(raw) && raw.length > 0,
+  normalize: (raw, mod) => raw.map(r => ({
+    q: r.statement, a: r.answer, exp: r.explanation, _src: mod,
+  })),
+});
+
 /* -- Alias pubblici — API invariata, WP ora gestito dal pipeline standard --
    WP viene caricato dai 5 loader unificati senza biforcazione speciale.    */
 const loadPool             = mod => QuizLoader.load(mod);
@@ -171,6 +185,7 @@ const loadSpeedPool        = mod => SpeedQuizLoader.load(mod);
 const loadAbbinSets        = mod => AbbinLoader.load(mod);
 const loadMemoryPairs      = mod => MemoryLoader.load(mod);
 const loadCompletaFrasePool= mod => CompletaFraseLoader.load(mod);
+const loadTrueFalsePool    = mod => TrueFalseLoader.load(mod);
 
 /* Helper sincrono  restituisce il modulo di una domanda */
 function getQuestionModule(q) { return q._src || 'CE'; }
@@ -244,6 +259,7 @@ function showSpeedQuizLoading(mod) { _showSkeleton(null, _skelQuizHTML()); }
 function showAbbinLoading(cont,mod){ _showSkeleton(cont, _skelAbbinaHTML()); }
 function showMemoryLoading(cont,mod){ _showSkeleton(cont, _skelMemoryHTML()); }
 function showCompletaFraseLoading(cont,mod){ _showSkeleton(cont, _skelFillHTML()); }
+function showTrueFalseLoading(cont,mod){ _showSkeleton(cont, _skelQuizHTML()); }
 
 /* -- UI: error screens -- */
 function _showGameError(cont, icon, title, color, path, msg) {
@@ -276,6 +292,7 @@ function showSpeedQuizError(msg)       { _showGameError(null,  '⚡','Speed Quiz
 function showAbbinError(msg)           { _showGameError(sh('g-area'),'🔗','Abbina non disponibile',      '#9d8fff','data/abbina/',          msg); }
 function showMemoryError(cont,msg)     { _showGameError(cont,  '🃏','Memory non disponibile',            '#ff6b85','data/memory/',          msg); }
 function showCompletaFraseError(msg)   { _showGameError(sh('g-area'),'✏️','Completa la frase non disponibile','#00cfff','data/completa_frase/', msg); }
+function showTrueFalseError(cont,msg)  { _showGameError(cont,  '⚖️','Vero o Falso non disponibile',       '#ffd166','data/vero_falso/',      msg); }
 
 /* Base URL calcolato una volta all'avvio  compatibile GitHub Pages.
    window.location.href non cambia durante la sessione. */
@@ -344,7 +361,7 @@ function makeEmptyDb(){
 /* ==================================================
    DATABASE  caricato per corso attivo
 ================================================== */
-const ACTIVITIES=['quiz','speed','match','memory','fill'];
+const ACTIVITIES=['quiz','speed','match','memory','fill','truefalse'];
 const TYPES=['ind','sq'];
 
 function makeEmptyLb2(){
@@ -612,6 +629,14 @@ const FillSession = {
   }
 };
 
+/* ── TrueFalseSession — stato Vero o Falso ── */
+const TrueFalseSession = {
+  streak:0, bestStreak:0, totalScore:0, answerLog:[],
+  reset(){
+    this.streak=0;this.bestStreak=0;this.totalScore=0;this.answerLog=[];
+  }
+};
+
 /* ── PlayerSession — giocatori attivi nel turno ── */
 const PlayerSession = {
   list:[], prevRank:[],
@@ -638,6 +663,10 @@ Object.defineProperties(window, {
   fillBestStreak:   { get(){ return FillSession.bestStreak;       }, set(v){ FillSession.bestStreak=v;       }, configurable:true, enumerable:true },
   fillTotalScore:   { get(){ return FillSession.totalScore;       }, set(v){ FillSession.totalScore=v;       }, configurable:true, enumerable:true },
   fillAnswerLog:    { get(){ return FillSession.answerLog;        }, set(v){ FillSession.answerLog=v;        }, configurable:true, enumerable:true },
+  tfStreak:         { get(){ return TrueFalseSession.streak;      }, set(v){ TrueFalseSession.streak=v;      }, configurable:true, enumerable:true },
+  tfBestStreak:     { get(){ return TrueFalseSession.bestStreak;  }, set(v){ TrueFalseSession.bestStreak=v;  }, configurable:true, enumerable:true },
+  tfTotalScore:     { get(){ return TrueFalseSession.totalScore;  }, set(v){ TrueFalseSession.totalScore=v;  }, configurable:true, enumerable:true },
+  tfAnswerLog:      { get(){ return TrueFalseSession.answerLog;   }, set(v){ TrueFalseSession.answerLog=v;   }, configurable:true, enumerable:true },
   players:          { get(){ return PlayerSession.list;           }, set(v){ PlayerSession.list=v;           }, configurable:true, enumerable:true },
   prevRank:         { get(){ return PlayerSession.prevRank;       }, set(v){ PlayerSession.prevRank=v;       }, configurable:true, enumerable:true },
 });
@@ -674,7 +703,7 @@ function matchReset(){
     _splashInterval:null,  // FIX C1: incluso nel reset per coerenza strutturale
   };
 }
-let mState={},memState={},fillState={};
+let mState={},memState={},fillState={},tfState={};
 
 /* Memory timer state  v10 */
 let memTimerInt=null;
@@ -842,8 +871,9 @@ function resetSessionState(){
   /* v4.0.5: FASE 4 — reset centralizzato via oggetti sessione */
   QuizSession.reset();
   FillSession.reset();
+  TrueFalseSession.reset();
   PlayerSession.reset();
-  mState={};memState={};fillState={};
+  mState={};memState={};fillState={};tfState={};
   sNumSelected=false;
   matchReset(); // v2.1.4: reset team-turn engine
   // Unlock any paused UI (speed quiz OR memory)
@@ -1359,7 +1389,7 @@ function updateHero(act){
 
 function selAct(a){
   sAct=a;
-  ['quiz','speed','match','memory','fill'].forEach(x=>sh('ac-'+x).classList.remove('active'));
+  ['quiz','speed','match','memory','fill','truefalse'].forEach(x=>sh('ac-'+x).classList.remove('active'));
   sh('ac-'+a).classList.add('active');
   updateHero(a);
   const needsNum=(a==='quiz'||a==='speed');
@@ -1880,6 +1910,7 @@ async function launch(){
     if(act==='match')await startMatch(sh('g-area'),sMod);
     else if(act==='memory')await startMemory(sh('g-area'),sMod);
     else if(act==='fill')await startFill(sh('g-area'),sMod);
+    else if(act==='truefalse')await startTrueFalse(sh('g-area'),sMod);
   }
 }
 
@@ -1906,16 +1937,17 @@ function _startTeamTurn(){
   gsSet(GS.PLAYING);
   gameType=sAct;
 
-  // -- GIOCHI NON-QUIZ (match / memory / fill) --
+  // -- GIOCHI NON-QUIZ (match / memory / fill / truefalse) --
   // Ognuno gioca la propria istanza indipendente  nessun pool condiviso,
   // nessun problema di duplicati.
-  if(sAct==='match'||sAct==='memory'||sAct==='fill'){
+  if(sAct==='match'||sAct==='memory'||sAct==='fill'||sAct==='truefalse'){
     _showTeamTurnSplash(team,async()=>{
       setTb(null);showScreen('tab-games');
       const cont=sh('g-area');
       if(sAct==='match')  await startMatch(cont,sMod);
       else if(sAct==='memory') await startMemory(cont,sMod);
       else if(sAct==='fill')   await startFill(cont,sMod);
+      else if(sAct==='truefalse') await startTrueFalse(cont,sMod);
     });
     return;
   }
@@ -2057,8 +2089,8 @@ function _onTeamTurnEnd(){
     setTimeout(()=>_startTeamTurn(),300);
   }else{
     // Tutti hanno giocato  controlla pareggio
-    // Per match/memory/fill salva sessione ora (per quiz lo fa endQuiz)
-    if(sAct==='match'||sAct==='memory'||sAct==='fill'){
+    // Per match/memory/fill/truefalse salva sessione ora (per quiz lo fa endQuiz)
+    if(sAct==='match'||sAct==='memory'||sAct==='fill'||sAct==='truefalse'){
       saveSessionResult(sAct,sMod);
       save();
     }

@@ -58,6 +58,20 @@ function calcFillAnswerScore(correct, newStreak){
   return { scoreEarned: 100 + streakBonus, streakBonus };
 }
 
+/**
+ * Calcola il punteggio di una risposta Vero o Falso.
+ * Base 100 pt (probabilità 50/50 — premia comunque la certezza),
+ * streak bonus dimezzato come in Completa la frase.
+ * @param {boolean} correct
+ * @param {number}  newStreak
+ * @returns {{ scoreEarned:number, streakBonus:number }}
+ */
+function calcTrueFalseAnswerScore(correct, newStreak){
+  if(!correct) return { scoreEarned:0, streakBonus:0 };
+  const streakBonus = Math.round(calcStreakBonus(newStreak) / 2);
+  return { scoreEarned: 100 + streakBonus, streakBonus };
+}
+
 
 /* Points per correct answer in Speed Quiz — scales with question count */
 function speedPtsPerQ(n){ return n<=5?1:n<=10?2:n<=15?3:4; }

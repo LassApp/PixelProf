@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "LAN è l'acronimo di Local Area Network.",
+    "answer": true,
+    "explanation": "Indica una rete locale limitata a un edificio."
+  },
+  {
+    "id": 2,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una WAN copre un'area più piccola di una LAN.",
+    "answer": false,
+    "explanation": "È vero il contrario: la WAN copre un'area geografica molto più ampia."
+  },
+  {
+    "id": 3,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Internet è definito come una 'rete di reti' che collega dispositivi in tutto il mondo.",
+    "answer": true,
+    "explanation": "Internet collega milioni di reti diverse a livello globale."
+  },
+  {
+    "id": 4,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Internet è gestito da un'unica azienda che ne controlla ogni parte.",
+    "answer": false,
+    "explanation": "Internet non ha un unico gestore centrale: è distribuito su moltissime reti."
+  },
+  {
+    "id": 5,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'indirizzo IP identifica in modo univoco un dispositivo collegato a una rete.",
+    "answer": true,
+    "explanation": "Ogni dispositivo in rete ha un proprio indirizzo IP."
+  },
+  {
+    "id": 6,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il DNS si occupa di stampare i documenti di rete.",
+    "answer": false,
+    "explanation": "Il DNS traduce nomi di dominio in indirizzi IP, non gestisce le stampe."
+  },
+  {
+    "id": 7,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il DNS traduce i nomi di dominio, come esempio.com, in indirizzi IP numerici.",
+    "answer": true,
+    "explanation": "Permette di digitare nomi invece di lunghe sequenze numeriche."
+  },
+  {
+    "id": 8,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel modello Client/Server è il server a inviare per primo la richiesta al client.",
+    "answer": false,
+    "explanation": "È il client (es. il browser) a inviare la richiesta iniziale."
+  },
+  {
+    "id": 9,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel modello Client/Server, il client invia la richiesta e il server risponde con i dati.",
+    "answer": true,
+    "explanation": "È il modello base di funzionamento di Internet."
+  },
+  {
+    "id": 10,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il protocollo HTTP cripta sempre i dati scambiati tra client e server.",
+    "answer": false,
+    "explanation": "HTTP non cripta i dati; è HTTPS a farlo."
+  },
+  {
+    "id": 11,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il protocollo HTTPS utilizza la crittografia per proteggere i dati scambiati.",
+    "answer": true,
+    "explanation": "La 'S' finale indica 'Secure', ovvero connessione protetta."
+  },
+  {
+    "id": 12,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un URL non può mai contenere un percorso, solo il nome del dominio.",
+    "answer": false,
+    "explanation": "Un URL è composto da protocollo, dominio e percorso della risorsa."
+  },
+  {
+    "id": 13,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un URL è composto da protocollo, dominio e percorso della risorsa.",
+    "answer": true,
+    "explanation": "Ogni parte identifica un elemento diverso dell'indirizzo web."
+  },
+  {
+    "id": 14,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'errore 404 indica che la connessione a Internet è troppo lenta.",
+    "answer": false,
+    "explanation": "L'errore 404 significa 'risorsa non trovata', non è legato alla velocità."
+  },
+  {
+    "id": 15,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'errore 404 indica che la risorsa richiesta non è stata trovata sul server.",
+    "answer": true,
+    "explanation": "È uno dei codici di errore HTTP più comuni."
+  },
+  {
+    "id": 16,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Chrome e Google sono esattamente la stessa cosa.",
+    "answer": false,
+    "explanation": "Chrome è un browser; Google è (anche) un motore di ricerca."
+  },
+  {
+    "id": 17,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Chrome è un browser, mentre Google è un motore di ricerca.",
+    "answer": true,
+    "explanation": "Il browser naviga sul web; il motore di ricerca trova informazioni."
+  },
+  {
+    "id": 18,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I cookie sono virus che infettano automaticamente il browser.",
+    "answer": false,
+    "explanation": "I cookie sono semplici file che memorizzano informazioni sull'utente, non virus."
+  },
+  {
+    "id": 19,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I cookie sono file che il browser salva per memorizzare informazioni sull'utente.",
+    "answer": true,
+    "explanation": "Servono ad esempio per ricordare le preferenze di navigazione."
+  },
+  {
+    "id": 20,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La cache del browser elimina automaticamente le password salvate.",
+    "answer": false,
+    "explanation": "La cache memorizza copie di pagine visitate per velocizzare il caricamento."
+  },
+  {
+    "id": 21,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La cache del browser memorizza copie di pagine già visitate per velocizzare il caricamento.",
+    "answer": true,
+    "explanation": "Riduce i tempi di caricamento delle pagine già viste."
+  },
+  {
+    "id": 22,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il phishing è una tecnica legittima usata dalle banche per verificare l'identità.",
+    "answer": false,
+    "explanation": "Il phishing è una truffa che imita entità affidabili per rubare dati."
+  },
+  {
+    "id": 23,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il phishing è una tecnica che utilizza email o siti falsi per rubare dati personali.",
+    "answer": true,
+    "explanation": "Spesso imita banche o servizi noti per sembrare credibile."
+  },
+  {
+    "id": 24,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la Netiquette, scrivere in MAIUSCOLO è il modo più educato per attirare attenzione.",
+    "answer": false,
+    "explanation": "Nella Netiquette, il MAIUSCOLO equivale a urlare ed è scortese."
+  },
+  {
+    "id": 25,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la Netiquette, scrivere in MAIUSCOLO equivale a urlare ed è considerato scortese.",
+    "answer": true,
+    "explanation": "È una delle regole base di comportamento online."
+  },
+  {
+    "id": 26,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una password sicura dovrebbe coincidere con il proprio nome o la data di nascita.",
+    "answer": false,
+    "explanation": "Sono informazioni facili da indovinare: vanno evitate in una password sicura."
+  },
+  {
+    "id": 27,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una password sicura combina lettere maiuscole, minuscole, numeri e simboli.",
+    "answer": true,
+    "explanation": "Più la password è varia e lunga, più risulta difficile da violare."
+  },
+  {
+    "id": 28,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il lucchetto nella barra degli indirizzi indica che il sito è scritto in italiano.",
+    "answer": false,
+    "explanation": "Il lucchetto indica una connessione HTTPS sicura, non la lingua del sito."
+  },
+  {
+    "id": 29,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il lucchetto nella barra degli indirizzi indica una connessione HTTPS attiva.",
+    "answer": true,
+    "explanation": "Segnala che i dati scambiati con il sito sono criptati."
+  },
+  {
+    "id": 30,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un antivirus serve a velocizzare la connessione Wi-Fi.",
+    "answer": false,
+    "explanation": "Un antivirus rileva e rimuove software dannoso, non velocizza il Wi-Fi."
+  },
+  {
+    "id": 31,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un antivirus rileva e rimuove software dannoso dal computer.",
+    "answer": true,
+    "explanation": "Protegge il sistema da virus e malware."
+  },
+  {
+    "id": 32,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una MAN copre un'area più piccola di una LAN, come una singola stanza.",
+    "answer": false,
+    "explanation": "È vero il contrario: la MAN copre un'area urbana, più ampia della LAN."
+  },
+  {
+    "id": 33,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una MAN (Metropolitan Area Network) copre un'area urbana, più ampia di una LAN.",
+    "answer": true,
+    "explanation": "Si colloca per estensione tra la LAN e la WAN."
+  },
+  {
+    "id": 34,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un motore di ricerca e un browser svolgono esattamente la stessa funzione.",
+    "answer": false,
+    "explanation": "Il browser naviga sul web; il motore di ricerca aiuta a trovare informazioni."
+  },
+  {
+    "id": 35,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un motore di ricerca, come Google, aiuta a trovare informazioni sul web.",
+    "answer": true,
+    "explanation": "Indicizza le pagine web per restituire risultati pertinenti."
+  },
+  {
+    "id": 36,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I dati trasmessi tramite una connessione HTTP sono sempre protetti da crittografia.",
+    "answer": false,
+    "explanation": "I dati HTTP non sono criptati: per la protezione serve HTTPS."
+  },
+  {
+    "id": 37,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un firewall filtra il traffico di rete per motivi di sicurezza.",
+    "answer": true,
+    "explanation": "Blocca connessioni sospette o non autorizzate."
+  },
+  {
+    "id": 38,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Condividere la propria password con sconosciuti è una buona pratica di sicurezza online.",
+    "answer": false,
+    "explanation": "La password non va mai condivisa: comprometterebbe la sicurezza dell'account."
+  },
+  {
+    "id": 39,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Aggiornare regolarmente software e sistema operativo aiuta a proteggersi da vulnerabilità note.",
+    "answer": true,
+    "explanation": "Gli aggiornamenti correggono spesso falle di sicurezza già scoperte."
+  },
+  {
+    "id": 40,
+    "module": "online_essentials",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La navigazione in incognito rende un dispositivo completamente immune da virus e malware.",
+    "answer": false,
+    "explanation": "La modalità incognito nasconde la cronologia locale, ma non protegge da virus e malware."
+  }
+]

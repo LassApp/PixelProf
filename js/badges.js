@@ -47,10 +47,10 @@ const BADGE_DEFS = [
   },
   {
     id: 'explorer', icon: '🗺️', title: 'Esploratore',
-    desc: 'Prova tutti e 5 i minigiochi almeno una volta: Quiz, Speed Quiz, Abbina, Memory, Completa la frase.',
+    desc: 'Prova tutti e 6 i minigiochi almeno una volta: Quiz, Speed Quiz, Abbina, Memory, Completa la frase, Vero o Falso.',
     calc(ctx) {
       const n = ctx.distinctGames.size;
-      return { unlocked: n >= 5, label: n + ' / 5 minigiochi provati', pct: Math.min(n / 5, 1) * 100 };
+      return { unlocked: n >= 6, label: n + ' / 6 minigiochi provati', pct: Math.min(n / 6, 1) * 100 };
     }
   },
   {
@@ -115,9 +115,9 @@ const BADGE_DEFS = [
   },
   {
     id: 'perfect_quiz', icon: '🌟', title: 'Quiz Perfetto',
-    desc: 'Completa un Quiz o un Completa la frase di almeno 5 domande senza sbagliarne nemmeno una.',
+    desc: 'Completa un Quiz, un Completa la frase o un Vero o Falso di almeno 5 domande senza sbagliarne nemmeno una.',
     calc(ctx) {
-      const has = ctx.sessions.some(s => (s.game === 'quiz' || s.game === 'fill') && s.perfectRun === true);
+      const has = ctx.sessions.some(s => (s.game === 'quiz' || s.game === 'fill' || s.game === 'truefalse') && s.perfectRun === true);
       return { unlocked: has, label: has ? 'Raggiunto' : 'Non ancora raggiunto', pct: has ? 100 : 0 };
     }
   },

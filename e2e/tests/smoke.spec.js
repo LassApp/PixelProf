@@ -125,6 +125,7 @@ test('flusso completo: login → entra in aula → ogni minigioco → pausa/ripr
 
   await test.step('Vero o Falso — gioca, pausa/riprendi via dialog di uscita, esci', async () => {
     await goToActivity(page, { module: 'CE', activity: 'truefalse' });
+    await selectQuestionCount(page, 5);
     await setupIndividualAndStart(page, 'Alunno VeroFalso');
     await expect(page.locator('.tf-btns')).toBeVisible();
 

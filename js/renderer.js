@@ -130,14 +130,7 @@ function renderLbResults(type,act){
   const typeLabel=type==='ind'?'Individuale':'Squadre';
   const actLabel=ACT_LABEL[act]||act;
   const exportBtn=`<div style="display:flex;justify-content:flex-end;margin-bottom:10px">
-    <button onclick="exportLbCSV('${escAttr(type)}','${escAttr(act)}')"
-      style="display:inline-flex;align-items:center;gap:6px;
-        padding:5px 12px;border-radius:8px;
-        background:rgba(0,255,200,.06);border:1px solid rgba(0,255,200,.2);
-        color:rgba(0,255,200,.8);font-size:11px;font-family:'Share Tech Mono',monospace;
-        cursor:pointer;transition:background .18s,border-color .18s;letter-spacing:.3px"
-      onmouseover="this.style.background='rgba(0,255,200,.12)';this.style.borderColor='rgba(0,255,200,.4)'"
-      onmouseout="this.style.background='rgba(0,255,200,.06)';this.style.borderColor='rgba(0,255,200,.2)'">
+    <button class="csv-export-btn" onclick="exportLbCSV('${escAttr(type)}','${escAttr(act)}')">
       <i class="ti ti-download" style="font-size:12px"></i> Esporta CSV
     </button>
   </div>`;

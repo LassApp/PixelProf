@@ -147,14 +147,18 @@ async function playFillQuestions(page, count) {
   }
 }
 
-/** Vero o Falso: risponde sempre "Vero" per `count` domande (non verifica la
- *  correttezza — è compito dei test unitari; qui verifichiamo solo che il
- *  flusso di gioco avanzi senza bloccarsi). */
+/** Vero o Falso: risponde sempre "Vero" per `count` domande e clicca
+ *  "Prosegui" dopo ciascuna (nessun auto-avanzamento — il docente decide
+ *  quando passare oltre). Non verifica la correttezza — è compito dei
+ *  test unitari; qui verifichiamo solo che il flusso di gioco avanzi
+ *  senza bloccarsi. */
 async function playTrueFalseQuestions(page, count) {
   for (let i = 0; i < count; i++) {
     await page.locator('.tf-btn.tf-true').waitFor({ state: 'visible' });
     await page.locator('.tf-btn.tf-true').click();
-    await page.waitForTimeout(1300); // checkTF() attende 1.2s prima di passare alla successiva
+    const nextBtn = page.locator('#tf-next-btn');
+    await nextBtn.waitFor({ state: 'visible' });
+    await nextBtn.click();
   }
 }
 

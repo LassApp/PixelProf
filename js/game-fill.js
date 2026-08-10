@@ -42,7 +42,7 @@ function renderFill(cont){
     showGameResult('Completa la frase',fillDetail,fillScoreMap);return;
   }
   const q=s.qs[s.idx];const pts=q.t.split('____');
-  const hdr=buildGameHeader(`<span style="font-size:11px;color:rgba(255,255,255,.35);font-family:'Share Tech Mono',monospace">${s.idx+1}/${s.qs.length} · ✓ ${s.score}</span>`,"startFill(sh('g-area'),sMod)");
+  const hdr=buildGameHeader(`<span class="game-counter-pill">${s.idx+1}/${s.qs.length} · ✓ ${s.score}</span>`,"startFill(sh('g-area'),sMod)");
   cont.innerHTML=`${hdr}<div class="q-card"><div class="fill-sent">${escHtml(pts[0])}<input class="blank-in" id="fi" placeholder="..."/>${escHtml(pts[1]||'')}</div></div><div style="font-size:10px;color:rgba(0,255,200,.5);margin-bottom:6px;text-transform:uppercase;letter-spacing:.6px">Scegli dalla banca:</div><div class="word-bank">${shuffle([...q.bank]).map(w=>`<button class="chip" onclick="document.getElementById('fi').value='${escAttr(w)}'">${escHtml(w)}</button>`).join('')}</div><div id="ffb"></div><div style="margin-top:10px"><button class="btn btn-neon" onclick="checkFill()">Verifica <i class="ti ti-arrow-right"></i></button></div>`;
 }
 

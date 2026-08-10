@@ -22,7 +22,9 @@ async function startTrueFalse(cont, mod){
   gsSet(GS.PLAYING);
   gameType = 'truefalse';
   tfStreak = 0; tfBestStreak = 0; tfTotalScore = 0; tfAnswerLog = [];
-  tfState = { qs: shuffle([...src]).slice(0, 10), idx: 0, score: 0, mod };
+  // sN: numero domande scelto in setup-num (0 = "Tutte") — stesso comportamento del Quiz.
+  const n = sN > 0 ? Math.min(sN, src.length) : src.length;
+  tfState = { qs: shuffle([...src]).slice(0, n), idx: 0, score: 0, mod };
   renderTF(cont);
 }
 
@@ -48,7 +50,7 @@ function renderTF(cont){
 
   const q = s.qs[s.idx];
   const hdr = buildGameHeader(
-    `<span style="font-size:11px;color:rgba(255,255,255,.35);font-family:'Share Tech Mono',monospace">${s.idx+1}/${s.qs.length} · ✓ ${s.score}</span>`,
+    `<span class="game-counter-pill">${s.idx+1}/${s.qs.length} · ✓ ${s.score}</span>`,
     "startTrueFalse(sh('g-area'),sMod)"
   );
   cont.innerHTML = `${hdr}
@@ -60,7 +62,10 @@ function renderTF(cont){
       <button class="tf-btn tf-true" onclick="checkTF(true)"><i class="ti ti-check"></i> Vero</button>
       <button class="tf-btn tf-false" onclick="checkTF(false)"><i class="ti ti-x"></i> Falso</button>
     </div>
-    <div id="tffb"></div>`;
+    <div id="tffb"></div>
+    <div style="text-align:right;margin-top:10px">
+      <button class="btn btn-neon hidden" id="tf-next-btn" onclick="nextTF()">Prosegui <i class="ti ti-arrow-right"></i></button>
+    </div>`;
 }
 
 function checkTF(choice){
@@ -102,5 +107,15 @@ function checkTF(choice){
   db.stats.tot++; if(ok){ db.stats.cor++; db.stats.byMod[mod].c++; } else db.stats.byMod[mod].w++;
   save();
 
-  setTimeout(() => { s.idx++; renderTF(sh('g-area')); }, 1200);
+  // Niente auto-avanzamento: il docente decide quando proseguire (tempo per
+  // leggere la spiegazione / commentarla in classe) — stesso principio del
+  // tasto "Prossima" nel Quiz normale.
+  sh('tf-next-btn')?.classList.remove('hidden');
+}
+
+function nextTF(){
+  const s = tfState;
+  if(!s) return;
+  s.idx++;
+  renderTF(sh('g-area'));
 }

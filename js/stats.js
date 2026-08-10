@@ -14,7 +14,7 @@ function renderStats(){
   sh('st-pct').textContent=db.stats.tot>0?Math.round(db.stats.cor/db.stats.tot*100)+'%':'0%';
   sh('st-mods').innerHTML=Object.entries({CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processing'}).map(([k,n])=>{
     const m=db.stats.byMod[k]||{c:0,w:0};const tot=m.c+m.w;const pct=tot>0?Math.round(m.c/tot*100):0;
-    return`<div class="mod-stat"><div class="mod-stat-row"><span>${n}</span><span style="font-family:'Share Tech Mono',monospace;color:#00ffc8">${m.c}/${tot} · ${pct}%</span></div><div class="prog-bar" style="margin:0"><div class="prog-fill" style="width:${pct}%"></div></div></div>`;
+    return`<div class="mod-stat"><div class="mod-stat-row"><span>${n}</span><span style="font-family:'Share Tech Mono',monospace;color:var(--accent)">${m.c}/${tot} · ${pct}%</span></div><div class="prog-bar" style="margin:0"><div class="prog-fill" style="width:${pct}%"></div></div></div>`;
   }).join('');
 }
 
@@ -137,18 +137,11 @@ function renderHistory(){
   }
 
   // Contatore sessioni visibili + bottone export
-  const counter=`<div style="font-size:10px;color:rgba(255,255,255,.3);font-family:'Share Tech Mono',monospace;
+  const counter=`<div class="hist-count-label" style="font-size:10px;font-family:'Share Tech Mono',monospace;
     margin-bottom:12px;display:flex;align-items:center;gap:6px">
     <span>${filtered.length} sessione${filtered.length!==1?'i':''} ${filterAct||filterMode?'filtrate':'totali'}</span>
     <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.08),transparent)"></span>
-    <button onclick="exportHistoryCSV()"
-      style="display:inline-flex;align-items:center;gap:5px;
-        padding:3px 10px;border-radius:8px;
-        background:rgba(0,255,200,.06);border:1px solid rgba(0,255,200,.2);
-        color:rgba(0,255,200,.7);font-size:10px;font-family:'Share Tech Mono',monospace;
-        cursor:pointer;transition:background .18s,border-color .18s;letter-spacing:.3px;flex-shrink:0"
-      onmouseover="this.style.background='rgba(0,255,200,.12)';this.style.borderColor='rgba(0,255,200,.4)'"
-      onmouseout="this.style.background='rgba(0,255,200,.06)';this.style.borderColor='rgba(0,255,200,.2)'">
+    <button class="csv-export-btn csv-export-btn-sm" onclick="exportHistoryCSV()">
       <i class="ti ti-download" style="font-size:11px"></i> Esporta CSV
     </button>
   </div>`;

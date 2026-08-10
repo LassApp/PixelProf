@@ -1392,7 +1392,7 @@ function selAct(a){
   ['quiz','speed','match','memory','fill','truefalse'].forEach(x=>sh('ac-'+x).classList.remove('active'));
   sh('ac-'+a).classList.add('active');
   updateHero(a);
-  const needsNum=(a==='quiz'||a==='speed');
+  const needsNum=(a==='quiz'||a==='speed'||a==='truefalse');
   sh('setup-num').classList.toggle('hidden',!needsNum);
   sh('setup-divider').classList.toggle('hidden',!needsNum);
   // Speed Quiz: hide "Tutte"  no meaning with fixed 60s timer
@@ -1413,7 +1413,7 @@ function selNum(btn,n){
 }
 
 function checkCanStart(){
-  const needsNum=(sAct==='quiz'||sAct==='speed');
+  const needsNum=(sAct==='quiz'||sAct==='speed'||sAct==='truefalse');
   const numOk=!needsNum||sNumSelected;
   let playerOk=false;
   if(sMode==='ind'){

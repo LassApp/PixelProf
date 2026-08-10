@@ -1247,7 +1247,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <span class="timer-pill hidden" id="qz-timer"></span>
         <span class="mem-stat-pill score-pill hidden" id="qz-score-pill"><i class="ti ti-star"></i><span id="qz-score-val">0</span></span>
         <button class="mem-pause-btn hidden" id="qz-pause-btn" onclick="speedTogglePause()" title="Pausa"><i class="ti ti-player-pause" id="qz-pause-icon"></i></button>
-        <span style="font-size:11px;color:rgba(255,255,255,.35);font-family:'Share Tech Mono',monospace" id="qz-counter"></span>
+        <span class="game-counter-pill" id="qz-counter"></span>
       </div>
     </div>
     <div class="live-bar" id="live-bar"></div>
@@ -1296,7 +1296,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 
   <!-- Header fisso -->
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem">
-    <div style="font-size:16px;font-weight:700;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Classifica</div>
+    <div style="font-size:16px;font-weight:700;color:var(--accent);font-family:'Share Tech Mono',monospace">// Classifica</div>
     <button class="lb-reset-btn" onclick="resetLb()"><i class="ti ti-trash"></i> Azzera tutto</button>
   </div>
 
@@ -1355,7 +1355,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
      PROGRESSI
 ====================================== -->
 <div id="tab-stats" class="screen">
-  <div style="font-size:16px;font-weight:700;margin-bottom:1rem;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Progressi</div>
+  <div style="font-size:16px;font-weight:700;margin-bottom:1rem;color:var(--accent);font-family:'Share Tech Mono',monospace">// Progressi</div>
   <div class="stat-grid">
     <div class="stat-c"><div class="sv" id="st-tot">0</div><div class="sl">Domande</div></div>
     <div class="stat-c"><div class="sv" id="st-cor">0</div><div class="sl">Corrette</div></div>
@@ -1372,13 +1372,10 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 
   <!-- Header con filtri -->
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-wrap:wrap;gap:10px">
-    <div style="font-size:16px;font-weight:700;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Storico sessioni</div>
+    <div style="font-size:16px;font-weight:700;color:var(--accent);font-family:'Share Tech Mono',monospace">// Storico sessioni</div>
     <div style="display:flex;align-items:center;gap:8px">
       <!-- Filtro attività -->
-      <select id="hist-filter-act" onchange="renderHistory()"
-        style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:8px;
-               color:rgba(255,255,255,.7);font-family:'Share Tech Mono',monospace;font-size:11px;
-               padding:5px 10px;cursor:pointer;outline:none;color-scheme:dark">
+      <select id="hist-filter-act" class="hist-filter-select" onchange="renderHistory()">
         <option value="">Tutte le attività</option>
         <option value="quiz">Quiz</option>
         <option value="speed">Speed Quiz</option>
@@ -1388,10 +1385,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <option value="truefalse">Vero o Falso</option>
       </select>
       <!-- Filtro modalità -->
-      <select id="hist-filter-mode" onchange="renderHistory()"
-        style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:8px;
-               color:rgba(255,255,255,.7);font-family:'Share Tech Mono',monospace;font-size:11px;
-               padding:5px 10px;cursor:pointer;outline:none;color-scheme:dark">
+      <select id="hist-filter-mode" class="hist-filter-select" onchange="renderHistory()">
         <option value="">Tutte le modalità</option>
         <option value="ind">Individuale</option>
         <option value="sq">Squadre</option>
@@ -1416,7 +1410,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
      offline o se la RPC non è ancora stata creata su Supabase.
 ====================================== -->
 <div id="tab-dashboard" class="screen">
-  <div style="font-size:16px;font-weight:700;margin-bottom:1rem;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Panoramica classe</div>
+  <div style="font-size:16px;font-weight:700;margin-bottom:1rem;color:var(--accent);font-family:'Share Tech Mono',monospace">// Panoramica classe</div>
   <div id="dash-body"></div>
 </div>
 
@@ -1428,7 +1422,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 ====================================== -->
 <div id="tab-badges" class="screen">
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem">
-    <div style="font-size:16px;font-weight:700;color:#00ffc8;font-family:'Share Tech Mono',monospace">// Traguardi</div>
+    <div style="font-size:16px;font-weight:700;color:var(--accent);font-family:'Share Tech Mono',monospace">// Traguardi</div>
     <button class="lb-reset-btn" onclick="resetBadges()"><i class="ti ti-trash"></i> Azzera</button>
   </div>
   <div id="badges-body"></div>

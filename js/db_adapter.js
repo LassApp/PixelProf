@@ -1,5 +1,17 @@
 /**
- * db_adapter.js — PixelProf v5.0.3
+ * db_adapter.js — PixelProf v5.1.0
+ *
+ * v5.1.0 — ROADMAP_AREE.md Fase 1 (Fondamenta dati):
+ *   - loadCourses: mappa area_key dalla RPC get_teacher_classrooms.
+ *   - createCourse: scrive area_key sull'INSERT in classrooms.
+ *   - updateCourse: accetta areaKey come campo aggiornabile.
+ *   - ATTENZIONE: la RPC get_teacher_classrooms deve restituire anche
+ *     la colonna area_key nel suo SELECT interno — non è stata
+ *     modificata da questa patch (il suo corpo non era disponibile
+ *     in questa sessione). Verificarla/aggiornarla nel Supabase SQL
+ *     Editor, altrimenti loadCourses riceverà sempre area_key=null
+ *     anche dopo aver eseguito la migrazione SQL allegata.
+ *     Vedi sql/v5.1.0_add_area_key_classrooms.sql.
  *
  * v5.0.0 M5: importa SUPABASE_URL e SUPABASE_ANON_KEY
  * da supabase_client.js — rimosso fallback hardcoded in
@@ -125,6 +137,7 @@ export async function loadCourses(teacherId) {
     startDate: r.start_date ?? null,
     endDate:   r.end_date   ?? null,
     timeSlot:  r.time_slot  ?? null,
+    areaKey:   r.area_key   ?? null,  // ← AGGIUNTO v5.1.0 — Sistema Aree Fase 1
     teachers:  Array.isArray(r.teachers) ? r.teachers : [],  // ← AGGIUNTO
   }));
 
@@ -167,6 +180,7 @@ export async function createCourse(teacherId, course) {
         start_date: course.startDate || null,
         end_date:   course.endDate   || null,
         time_slot:  course.timeSlot  || null,
+        area_key:   course.areaKey   || null,  // ← AGGIUNTO v5.1.0 — Sistema Aree Fase 1
       })
       .select()
       .single(),
@@ -193,6 +207,7 @@ export async function createCourse(teacherId, course) {
     startDate: cls.start_date || null,
     endDate:   cls.end_date   || null,
     timeSlot:  cls.time_slot  || null,
+    areaKey:   cls.area_key   || null,  // ← AGGIUNTO v5.1.0 — Sistema Aree Fase 1
   };
 
   // Aggiorna cache locale
@@ -215,6 +230,7 @@ export async function updateCourse(id, updates) {
   if (updates.icon      !== undefined) payload.icon      = updates.icon;
   if (updates.colorIdx  !== undefined) payload.color_idx = updates.colorIdx;
   if (updates.bgIdx     !== undefined) payload.bg_idx    = updates.bgIdx;
+  if (updates.areaKey   !== undefined) payload.area_key  = updates.areaKey;  // ← AGGIUNTO v5.1.0 — Sistema Aree Fase 1
 
   if (_online) {
     // .select() forza Supabase a restituire le righe aggiornate.
@@ -223,7 +239,7 @@ export async function updateCourse(id, updates) {
       .from('classrooms')
       .update(payload)
       .eq('id', id)
-      .select('id, name, icon, color_idx, bg_idx');
+      .select('id, name, icon, color_idx, bg_idx, area_key');
 
     if (error) {
       console.error('[PixelProf] updateCourse error:', error.code, error.message, '| payload:', JSON.stringify(payload));

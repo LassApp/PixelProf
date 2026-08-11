@@ -605,8 +605,9 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 <!-- ======================================
      WIZARD NUOVA AULA — v3.1.2
      Step 1: nome + icona
-     Step 2: moduli abilitati
-     Step 3: docenti assegnati
+     Step 2: area didattica (Sistema Aree — Fase 2)
+     Step 3: moduli abilitati (dinamici in base all'area scelta)
+     Step 4: docenti assegnati
 ====================================== -->
 <div id="course-wizard-overlay" class="hidden">
   <div class="cw-box">
@@ -616,6 +617,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <div class="cw-dot active" id="cw-dot-1"></div>
       <div class="cw-dot" id="cw-dot-2"></div>
       <div class="cw-dot" id="cw-dot-3"></div>
+      <div class="cw-dot" id="cw-dot-4"></div>
     </div>
 
     <!-- STEP 1: Nome aula -->
@@ -656,42 +658,34 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </div>
       <div class="cw-btns">
         <button class="cw-btn-back" onclick="closeCourseWizard()">Annulla</button>
-        <button class="cw-btn-next" id="cw-next-1" onclick="cwStep(2)">Moduli <i class="ti ti-arrow-right"></i></button>
+        <button class="cw-btn-next" id="cw-next-1" onclick="cwStep(2)">Area <i class="ti ti-arrow-right"></i></button>
       </div>
     </div>
 
-    <!-- STEP 2: Moduli abilitati -->
+    <!-- STEP 2: Area (Sistema Aree — Fase 2) -->
     <div class="cw-step" id="cw-step-2">
-      <div class="cw-title">📚 Moduli</div>
-      <div class="cw-subtitle">Seleziona i moduli che i docenti potranno usare in questa aula. Almeno uno è richiesto.</div>
-      <div class="cw-mod-grid" id="cw-mod-grid">
-        <button class="cw-mod-btn" data-mod="CE" onclick="cwToggleMod(this)">
-          <div class="cm-check">✓</div>
-          <span class="cm-icon">💻</span>
-          <div class="cm-name">Computer Essentials</div>
-          <div class="cm-desc">Hardware, software, OS</div>
-        </button>
-        <button class="cw-mod-btn" data-mod="OE" onclick="cwToggleMod(this)">
-          <div class="cm-check">✓</div>
-          <span class="cm-icon">🌐</span>
-          <div class="cm-name">Online Essentials</div>
-          <div class="cm-desc">Reti, protocolli, sicurezza</div>
-        </button>
-        <button class="cw-mod-btn" data-mod="WP" onclick="cwToggleMod(this)">
-          <div class="cm-check">✓</div>
-          <span class="cm-icon">📝</span>
-          <div class="cm-name">Word Processing</div>
-          <div class="cm-desc">Elaborazione testi con Word</div>
-        </button>
-      </div>
+      <div class="cw-title">🗂️ Area</div>
+      <div class="cw-subtitle">Scegli l'area didattica dell'aula. Determina quali moduli saranno disponibili al passo successivo.</div>
+      <div class="cw-area-grid" id="cw-area-grid"></div>
       <div class="cw-btns">
         <button class="cw-btn-back" onclick="cwStep(1)"><i class="ti ti-arrow-left"></i> Indietro</button>
-        <button class="cw-btn-next" id="cw-next-2" onclick="cwStep(3)" disabled>Docenti <i class="ti ti-arrow-right"></i></button>
+        <button class="cw-btn-next" id="cw-next-2" onclick="cwStep(3)" disabled>Moduli <i class="ti ti-arrow-right"></i></button>
       </div>
     </div>
 
-    <!-- STEP 3: Docenti -->
+    <!-- STEP 3: Moduli abilitati (dinamici in base all'Area scelta) -->
     <div class="cw-step" id="cw-step-3">
+      <div class="cw-title">📚 Moduli</div>
+      <div class="cw-subtitle" id="cw-mod-subtitle">Seleziona i moduli che i docenti potranno usare in questa aula. Almeno uno è richiesto.</div>
+      <div class="cw-mod-grid" id="cw-mod-grid"></div>
+      <div class="cw-btns">
+        <button class="cw-btn-back" onclick="cwStep(2)"><i class="ti ti-arrow-left"></i> Indietro</button>
+        <button class="cw-btn-next" id="cw-next-3" onclick="cwStep(4)" disabled>Docenti <i class="ti ti-arrow-right"></i></button>
+      </div>
+    </div>
+
+    <!-- STEP 4: Docenti -->
+    <div class="cw-step" id="cw-step-4">
       <div class="cw-title">👩‍🏫 Docenti</div>
       <div class="cw-subtitle">Assegna almeno un docente per questa aula. Potrai modificare l'assegnazione in seguito dal pannello ⚙️ Gestisci.</div>
 
@@ -723,7 +717,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </div>
       <div id="cw-invite-fb" class="cw-invite-fb"></div>
       <div class="cw-btns" style="margin-top:1.25rem">
-        <button class="cw-btn-back" onclick="cwStep(2)"><i class="ti ti-arrow-left"></i> Indietro</button>
+        <button class="cw-btn-back" onclick="cwStep(3)"><i class="ti ti-arrow-left"></i> Indietro</button>
         <button class="cw-btn-next" id="cw-btn-create" onclick="cwCreateClassroom()" disabled>
           <i class="ti ti-check"></i> Crea aula
         </button>
@@ -1432,6 +1426,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div><!-- /app -->
 
 
-<script src="js/app.bundle.min.js?v=8.0.0"></script>
+<script src="js/app.bundle.min.js?v=8.1.0"></script>
 </body>
 </html>

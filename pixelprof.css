@@ -45,7 +45,7 @@
        (mostra/nascondi, lock di pausa, ecc.) → dentro @layer stato,
        con !important (qui è l'unico posto dove serve ancora).
    ═══════════════════════════════════════════════════════════════════ */
-@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport, audio, achievements, histcards, loaders, onboarding, theme;
+@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport, audio, achievements, histcards, loaders, onboarding, areas, theme;
 
 @layer base {
 /* ===============================================
@@ -5469,4 +5469,75 @@ html[data-theme="light"] .onb-step-label{ color: rgba(0,150,120,.75); }
 html[data-theme="light"] .onb-progress{ background: rgba(20,30,60,.08); }
 html[data-theme="light"] .onb-skip{ color: rgba(16,24,42,.4); }
 html[data-theme="light"] .onb-skip:hover{ color: rgba(16,24,42,.7); }
+
+/* ── 23. WIZARD — STEP AREA (Fase 2 Sistema Aree, v8.1.0) ─────── */
+html[data-theme="light"] .cw-area-btn{ background: rgba(20,30,60,.03); border-color: rgba(20,30,60,.09); }
+html[data-theme="light"] .cw-area-btn:hover{ background: rgba(20,30,60,.06); border-color: rgba(0,150,120,.3); }
+html[data-theme="light"] .cw-area-btn.active{ background: rgba(0,150,120,.08); border-color: var(--accent); }
+html[data-theme="light"] .cw-area-name{ color:#10182a; }
+html[data-theme="light"] .cw-area-desc{ color: rgba(16,24,42,.45); }
+html[data-theme="light"] .cw-area-chip.soon{ color:#a66d00; }
+/* Moduli "in arrivo" (contentReady:false) — stesso trattamento del
+   badge Coming Soon già usato per le card modulo in home. */
+html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-color: rgba(20,30,60,.14); color: rgba(16,24,42,.35); }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v8.1.0 — WIZARD: STEP AREA (Sistema Aree, Fase 2)
+   ROADMAP_AREE.md Fase 2 — nuovo step "Area" nel wizard creazione
+   aula (tra Nome e Moduli) + stato "in arrivo" per i moduli con
+   contentReady:false nello step Moduli (ora dinamico su AREAS).
+   Layer dedicato, aggiunto in coda all'elenco (vedi intestazione file,
+   sez. "REGOLE") — vince su @layer base senza toccarne le regole
+   esistenti (.cw-mod-btn resta invariata, qui solo integrazioni).
+   ═══════════════════════════════════════════════════════════════════ */
+@layer areas {
+
+  /* ── Step Area — card selezione, stile affine a .cw-mod-btn ───── */
+  .cw-area-grid{
+    display:flex;flex-direction:column;gap:8px;
+    margin-bottom:16px;max-height:360px;overflow-y:auto;padding-right:2px;
+  }
+  .cw-area-btn{
+    position:relative;width:100%;text-align:left;
+    border-radius:var(--radius-md);border:1px solid var(--border-mid);
+    background:var(--surface-1);padding:.875rem 1rem;
+    cursor:pointer;transition:all var(--transition-fast);
+    font-family:inherit;display:flex;align-items:flex-start;gap:12px;
+  }
+  .cw-area-btn:hover{ border-color:rgba(0,255,200,.3); background:var(--surface-2); }
+  .cw-area-btn.active{ border-color:var(--accent); background:rgba(0,255,200,.08); }
+  .cw-area-btn .cm-check{
+    position:absolute;top:10px;right:10px;width:18px;height:18px;border-radius:50%;
+    background:var(--accent);color:#000;font-size:11px;font-weight:700;
+    display:none;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .cw-area-btn.active .cm-check{ display:flex; }
+  .cw-area-icon{ font-size:24px;line-height:1;flex-shrink:0;margin-top:1px; }
+  .cw-area-body{ flex:1;min-width:0; }
+  .cw-area-name{ font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;padding-right:20px;transition:color var(--transition-fast); }
+  .cw-area-btn.active .cw-area-name{ color:var(--accent); }
+  .cw-area-desc{ font-size:11px;color:rgba(255,255,255,.4);line-height:1.4;margin-bottom:7px; }
+  .cw-area-chip{
+    display:inline-flex;align-items:center;font-size:9px;font-weight:700;
+    padding:2px 8px;border-radius:20px;letter-spacing:.4px;
+    font-family:'Share Tech Mono',monospace;text-transform:uppercase;
+  }
+  .cw-area-chip.ready{ background:rgba(0,255,200,.1);border:1px solid rgba(0,255,200,.25);color:var(--accent); }
+  .cw-area-chip.soon{ background:rgba(255,180,0,.08);border:1px solid rgba(255,180,0,.2);color:#ffb400; }
+
+  /* ── Step Moduli — stato "in arrivo" (contentReady:false) ──────
+     Integrazione su .cw-mod-btn esistente (@layer base): qui solo
+     lo stato disabilitato + badge, la card base resta invariata. */
+  .cw-mod-btn.not-ready{ cursor:not-allowed;opacity:.5;filter:saturate(.4); }
+  .cw-mod-btn.not-ready:hover{ border-color:var(--border-mid);background:var(--surface-1); }
+  .cw-mod-btn:disabled{ pointer-events:none; }
+  .cm-soon-badge{
+    position:absolute;top:8px;right:8px;
+    font-family:'Share Tech Mono',monospace;font-size:7px;font-weight:700;
+    letter-spacing:1px;text-transform:uppercase;
+    padding:2px 7px;border-radius:20px;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    color:rgba(255,255,255,.35);
+  }
 }

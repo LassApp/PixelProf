@@ -57,6 +57,7 @@ const BUNDLE_FILES = [
   'theme-manager.js',
   'onboarding.js',
   'game-constants.js',
+  'areas-config.js',
   'scoring.js',
   'game-engine-state.js',
   'renderer.js',

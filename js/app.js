@@ -777,6 +777,7 @@ const _cw = {
   step:       1,
   name:       '',
   icon:       '🏫',
+  area:       null,   // ← AGGIUNTO Fase 2 Sistema Aree — areaKey scelta
   mods:       [],
   teachers:   [],
   pendingMods:[],
@@ -788,7 +789,9 @@ function openCourseWizard(){
     return;
   }
   const prefilledName = (sh('cs-course-inp')?.value || '').trim();
-  _cw.step=1; _cw.name=prefilledName; _cw.icon='🏫'; _cw.mods=[]; _cw.teachers=[];
+  // Default 'ecdl': è l'unica Area con moduli giocabili oggi — riduce
+  // l'attrito nel caso d'uso comune, restando comunque modificabile.
+  _cw.step=1; _cw.name=prefilledName; _cw.icon='🏫'; _cw.area='ecdl'; _cw.mods=[]; _cw.teachers=[];
   const inp = sh('cw-name-inp');
   if(inp) inp.value = prefilledName;
   const ig = sh('cw-icon-grid');
@@ -820,13 +823,14 @@ function _cwPickIcon(ic){
 
 function _cwGoStep(n){
   _cw.step=n;
-  [1,2,3].forEach(i=>{
+  [1,2,3,4].forEach(i=>{
     sh('cw-step-'+i)?.classList.toggle('active', i===n);
     const dot=sh('cw-dot-'+i);
     if(dot){ dot.classList.toggle('done', i<n); dot.classList.toggle('active', i===n); }
   });
-  if(n===2) _cwInitModStep();
-  if(n===3) _cwInitTeacherStep();
+  if(n===2) _cwInitAreaStep();
+  if(n===3) _cwInitModStep();
+  if(n===4) _cwInitTeacherStep();
 }
 
 function _cwShowFieldError(inpEl, msg, errContainerId){
@@ -920,20 +924,114 @@ function cwStep(n){
     _cw.name=name;
   }
   if(n===3){
-    if(_cw.mods.length===0){ ppAlert('Seleziona almeno un modulo prima di continuare.', { title:'Modulo richiesto', icon:'📚' }); return; }
+    if(!_cw.area){ ppAlert('Seleziona un\'area prima di continuare.', { title:'Area richiesta', icon:'🗂️' }); return; }
+  }
+  if(n===4){
+    // Se l'area scelta non ha ancora nessun modulo giocabile (contentReady),
+    // non ha senso bloccare la creazione dell'aula: non c'è nulla da
+    // selezionare. L'aula verrà creata senza whitelist moduli (= tutti
+    // visibili, semanticamente vuoto finché i JSON non saranno pronti).
+    const areaInfo=window.AreasConfig?.getAreaByKey(_cw.area);
+    const hasReady=areaInfo?areaInfo.modules.some(m=>m.contentReady===true):false;
+    if(hasReady && _cw.mods.length===0){
+      ppAlert('Seleziona almeno un modulo prima di continuare.', { title:'Modulo richiesto', icon:'📚' });
+      return;
+    }
   }
   _cwGoStep(n);
 }
 
-function _cwInitModStep(){
-  document.querySelectorAll('#cw-mod-grid .cw-mod-btn').forEach(btn=>{
-    const mod=btn.dataset.mod;
-    btn.classList.toggle('active', _cw.mods.includes(mod));
+/* ==================================================
+   STEP AREA — Fase 2 Sistema Aree (v8.1.0)
+   Card scelta Area, dati letti da window.AREAS
+   (js/areas-config.js). Cambiare Area azzera i moduli
+   già selezionati: appartenevano all'Area precedente
+   e le chiavi non hanno significato in quella nuova.
+================================================== */
+const _CW_MOD_ICONS = { CE:'💻', OE:'🌐', WP:'📝' }; // icone dedicate solo ai 3 moduli storici ECDL
+
+function _cwInitAreaStep(){
+  const grid = sh('cw-area-grid');
+  if(!grid) return;
+  const areas = window.AREAS || [];
+  if(!areas.length){
+    grid.innerHTML = '<div style="font-size:12px;color:rgba(255,255,255,.35);padding:1rem 0">Aree non disponibili — ricarica la pagina.</div>';
+    return;
+  }
+  grid.innerHTML = areas.map(a=>{
+    const ready = a.modules.filter(m=>m.contentReady===true).length;
+    const tot   = a.modules.length;
+    const active = _cw.area===a.key;
+    const chip = ready>0
+      ? `<span class="cw-area-chip ready">${ready}/${tot} moduli pronti</span>`
+      : `<span class="cw-area-chip soon">In preparazione</span>`;
+    return `<button type="button" class="cw-area-btn${active?' active':''}" data-area="${escAttr(a.key)}" onclick="cwPickArea('${escAttr(a.key)}')">
+      <div class="cm-check">✓</div>
+      <span class="cw-area-icon">${a.icon}</span>
+      <div class="cw-area-body">
+        <div class="cw-area-name">${escHtml(a.label)}</div>
+        <div class="cw-area-desc">${escHtml(a.description)}</div>
+        ${chip}
+      </div>
+    </button>`;
+  }).join('');
+  _cwUpdateAreaNext();
+}
+
+function cwPickArea(key){
+  if(_cw.area!==key) _cw.mods=[]; // reset: i moduli selezionati appartenevano all'area precedente
+  _cw.area=key;
+  document.querySelectorAll('#cw-area-grid .cw-area-btn').forEach(b=>{
+    b.classList.toggle('active', b.dataset.area===key);
   });
+  _cwUpdateAreaNext();
+}
+
+function _cwUpdateAreaNext(){
+  const next = sh('cw-next-2');
+  if(next) next.disabled = !_cw.area;
+}
+
+/* ==================================================
+   STEP MODULI — ora dinamico sull'Area scelta.
+   I moduli con contentReady:false sono mostrati ma
+   non selezionabili ("in arrivo") — nessun JSON di
+   gioco esiste ancora per loro.
+================================================== */
+function _cwInitModStep(){
+  const grid = sh('cw-mod-grid');
+  const sub  = sh('cw-mod-subtitle');
+  const area = window.AreasConfig?.getAreaByKey(_cw.area);
+  const modules = area ? area.modules : [];
+
+  if(sub){
+    const hasReady = modules.some(m=>m.contentReady===true);
+    sub.textContent = hasReady
+      ? 'Seleziona i moduli che i docenti potranno usare in questa aula. Almeno uno è richiesto.'
+      : 'Nessun modulo è ancora giocabile per questa area — i contenuti sono in preparazione. Potrai abilitarli appena saranno pubblicati.';
+  }
+
+  if(grid){
+    grid.innerHTML = modules.map(m=>{
+      const ready  = m.contentReady===true;
+      const active = _cw.mods.includes(m.key);
+      const icon   = _CW_MOD_ICONS[m.key] || (area?area.icon:'📘');
+      const cls    = 'cw-mod-btn'+(active?' active':'')+(ready?'':' not-ready');
+      const attrs  = ready ? `data-mod="${escAttr(m.key)}" onclick="cwToggleMod(this)"` : `disabled aria-disabled="true"`;
+      return `<button type="button" class="${cls}" ${attrs}>
+        <div class="cm-check">✓</div>
+        ${ready?'':'<span class="cm-soon-badge">In arrivo</span>'}
+        <span class="cm-icon">${icon}</span>
+        <div class="cm-name">${escHtml(m.label)}</div>
+        <div class="cm-desc">${ready?'Pronto per il gioco':'Contenuti in preparazione'}</div>
+      </button>`;
+    }).join('');
+  }
   _cwUpdateModNext();
 }
 
 function cwToggleMod(btn){
+  if(btn.disabled) return;
   const mod = btn.dataset.mod;
   const idx = _cw.mods.indexOf(mod);
   if(idx>=0) _cw.mods.splice(idx,1);
@@ -943,8 +1041,13 @@ function cwToggleMod(btn){
 }
 
 function _cwUpdateModNext(){
-  const next = sh('cw-next-2');
-  if(next) next.disabled = _cw.mods.length===0;
+  const next = sh('cw-next-3');
+  if(!next) return;
+  const area = window.AreasConfig?.getAreaByKey(_cw.area);
+  const hasReady = area ? area.modules.some(m=>m.contentReady===true) : false;
+  // Se l'area non ha ancora moduli pronti, il pulsante resta comunque
+  // abilitato: non c'è nulla di selezionabile e non deve bloccare il flusso.
+  next.disabled = hasReady ? (_cw.mods.length===0) : false;
 }
 
 async function _cwInitTeacherStep(){
@@ -1071,6 +1174,7 @@ async function cwCreateClassroom(){
   const res = await window.DB.createClassroom(teacherId, {
     name:     _cw.name,
     icon:     _cw.icon,
+    areaKey:  _cw.area || null,  // ← AGGIUNTO Fase 2 Sistema Aree
     colorIdx,
     bgIdx:    colorIdx,
     startDate,

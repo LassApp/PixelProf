@@ -112,68 +112,53 @@ function addCourse(){
   },80);
 }
 
+/* ==================================================
+   RAGGRUPPAMENTO PER AREA — v8.2.0 (ROADMAP_AREE.md Fase 3)
+   renderCoursesGrid raggruppa le aule caricate per Area (AREAS,
+   vedi js/areas-config.js) invece di un'unica griglia piatta.
+   Ordine sezioni = ordine AREAS. Sezioni senza aule non vengono
+   renderizzate (nessuno spazio vuoto in UI).
+   Aule legacy senza areaKey → sezione ECDL. Stesso fallback già
+   adottato dal wizard (Fase 2, _cw.area) e da _renderModuleFilter
+   (Home, fix Bug B): ECDL è l'unica Area con moduli giocabili oggi,
+   quindi è la lettura più corretta per le aule create prima del
+   Sistema Aree — evita una sezione "Da classificare" fantasma per
+   quella che sarà la stragrande maggioranza delle aule esistenti.
+   Puramente di visualizzazione: non scrive alcun areaKey sul DB
+   (vedi ROADMAP_AREE.md Fase 5 per l'eventuale backfill SQL).
+================================================== */
 function renderCoursesGrid(){
   const grid=sh('cs-grid');if(!grid)return;
   const courses=loadCourses();
   if(!courses.length){
-    grid.innerHTML=`<div class="cs-empty" style="grid-column:1/-1">
+    grid.innerHTML=`<div class="cs-empty">
       <div class="cs-empty-icon">🏫</div>
       <div class="cs-empty-text">Nessuna aula ancora.<br>Crea la prima per iniziare!</div>
     </div>`;
     return;
   }
-  const isDir=window.Auth?.isDirector();
-  grid.innerHTML=courses.map((c,i)=>{
-    const colIdx=(c.colorIdx??i)%COLOR_PALETTE.length;
-    const bgIdx =(c.bgIdx   ??i)%COURSE_BG_PRESETS.length;
-    const col=COLOR_PALETTE[colIdx];
-    const bg =COURSE_BG_PRESETS[bgIdx];
-    const fmtDate=d=>{
-      if(!d) return null;
-      try{
-        const dt=new Date(d);
-        if(isNaN(dt.getTime())) return d;
-        return dt.toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'2-digit'});
-      }catch{return d;}
-    };
-    const startFmt=fmtDate(c.startDate);
-    const endFmt  =fmtDate(c.endDate);
-    const dateRow = (startFmt||endFmt)
-      ? `<div class="course-card-dates"><i class="ti ti-calendar" style="font-size:9px;opacity:.5"></i> ${startFmt||'—'} → ${endFmt||'—'}</div>`
-      : `<div class="course-card-meta">Creata il ${new Date(c.createdAt||Date.now()).toLocaleDateString('it-IT',{day:'2-digit',month:'short'})}</div>`;
-    const timeRow = c.timeSlot
-      ? `<div class="course-card-time"><i class="ti ti-clock" style="font-size:10px;opacity:.5"></i> ${escHtml(c.timeSlot)}</div>`
-      : '';
-    const teacherChips=(c._teachers||[])
-      .filter(t=>t.role!=='director')
-      .map(t=>`<span class="course-card-teacher-chip">${escHtml(t.name||'')}</span>`)
-      .join('');
-    const teachersRow=teacherChips
-      ?`<div class="course-card-teachers">${teacherChips}</div>`:'';
-    return`<div class="course-card" data-course-id="${escAttr(c.id)}"
-      data-colidx="${colIdx}" data-bgidx="${bgIdx}"
-      style="
-        background:${bg.css};
-        border-color:${col.border};
-        box-shadow:0 4px 20px ${col.glow};
-        animation-delay:${i*0.04}s;
-        --card-accent:${col.bar};
-        --card-glow:${col.glow};
-      "
-      onclick="_csCardClick('${escAttr(c.id)}')"
-    >
-      <div class="course-card-top">
-        <span class="course-card-icon">${c.icon}</span>
-        <div class="course-card-name">${escHtml(c.name)}</div>
-        <button class="course-card-menu" onclick="event.stopPropagation();openCourseMenu('${escAttr(c.id)}',this)" title="Opzioni" aria-label="Opzioni aula" style="position:static;flex-shrink:0">⋯</button>
-      </div>
-      <div class="course-card-middle">
-        ${dateRow}
-        ${timeRow}
-      </div>
-      ${teachersRow}
-    </div>`;
-  }).join('');
+
+  const byArea={};
+  courses.forEach(c=>{
+    const key=c.areaKey||'ecdl';
+    (byArea[key]=byArea[key]||[]).push(c);
+  });
+
+  let gi=0; // indice globale — solo per fallback colore/bg e stagger animazione, invariato rispetto a prima
+  let html='';
+  (window.AREAS||[]).forEach(area=>{
+    const list=byArea[area.key];
+    if(!list||!list.length)return;
+    delete byArea[area.key];
+    html+=_csBuildAreaSection(area.key,area.label,area.icon,list,()=>gi++);
+  });
+  // areaKey orfane (non presenti in AREAS, es. dati corrotti o Area
+  // rimossa dalla config) — mostrate comunque in coda, mai perse.
+  Object.keys(byArea).forEach(key=>{
+    html+=_csBuildAreaSection(key,key,'🗂️',byArea[key],()=>gi++);
+  });
+
+  grid.innerHTML=html;
   grid.querySelectorAll('.course-card').forEach(card=>{
     const ci=parseInt(card.dataset.colidx)||0;
     const col=COLOR_PALETTE[ci%COLOR_PALETTE.length];
@@ -182,6 +167,72 @@ function renderCoursesGrid(){
     card.addEventListener('mouseenter',()=>{ card.style.boxShadow=glowHover; });
     card.addEventListener('mouseleave',()=>{ card.style.boxShadow=glowBase;  });
   });
+}
+
+/** Costruisce l'HTML di una sezione Area: header (icona+nome+contatore) + griglia aule. */
+function _csBuildAreaSection(areaKey,areaLabel,areaIcon,list,nextIdx){
+  const cardsHtml=list.map(c=>_csBuildCourseCard(c,nextIdx())).join('');
+  return`<div class="cs-area-section" data-area-key="${escAttr(areaKey)}">
+    <div class="cs-area-section-header">
+      <span class="cs-area-section-icon">${areaIcon}</span>
+      <span class="cs-area-section-label">${escHtml(areaLabel)}</span>
+      <span class="cs-area-section-count">${list.length}</span>
+    </div>
+    <div class="cs-grid">${cardsHtml}</div>
+  </div>`;
+}
+
+/** Costruisce l'HTML di una singola course-card. Logica invariata rispetto a prima di v8.2.0 — solo estratta in funzione per essere riusabile per-sezione. */
+function _csBuildCourseCard(c,i){
+  const colIdx=(c.colorIdx??i)%COLOR_PALETTE.length;
+  const bgIdx =(c.bgIdx   ??i)%COURSE_BG_PRESETS.length;
+  const col=COLOR_PALETTE[colIdx];
+  const bg =COURSE_BG_PRESETS[bgIdx];
+  const fmtDate=d=>{
+    if(!d) return null;
+    try{
+      const dt=new Date(d);
+      if(isNaN(dt.getTime())) return d;
+      return dt.toLocaleDateString('it-IT',{day:'2-digit',month:'short',year:'2-digit'});
+    }catch{return d;}
+  };
+  const startFmt=fmtDate(c.startDate);
+  const endFmt  =fmtDate(c.endDate);
+  const dateRow = (startFmt||endFmt)
+    ? `<div class="course-card-dates"><i class="ti ti-calendar" style="font-size:9px;opacity:.5"></i> ${startFmt||'—'} → ${endFmt||'—'}</div>`
+    : `<div class="course-card-meta">Creata il ${new Date(c.createdAt||Date.now()).toLocaleDateString('it-IT',{day:'2-digit',month:'short'})}</div>`;
+  const timeRow = c.timeSlot
+    ? `<div class="course-card-time"><i class="ti ti-clock" style="font-size:10px;opacity:.5"></i> ${escHtml(c.timeSlot)}</div>`
+    : '';
+  const teacherChips=(c._teachers||[])
+    .filter(t=>t.role!=='director')
+    .map(t=>`<span class="course-card-teacher-chip">${escHtml(t.name||'')}</span>`)
+    .join('');
+  const teachersRow=teacherChips
+    ?`<div class="course-card-teachers">${teacherChips}</div>`:'';
+  return`<div class="course-card" data-course-id="${escAttr(c.id)}"
+    data-colidx="${colIdx}" data-bgidx="${bgIdx}"
+    style="
+      background:${bg.css};
+      border-color:${col.border};
+      box-shadow:0 4px 20px ${col.glow};
+      animation-delay:${i*0.04}s;
+      --card-accent:${col.bar};
+      --card-glow:${col.glow};
+    "
+    onclick="_csCardClick('${escAttr(c.id)}')"
+  >
+    <div class="course-card-top">
+      <span class="course-card-icon">${c.icon}</span>
+      <div class="course-card-name">${escHtml(c.name)}</div>
+      <button class="course-card-menu" onclick="event.stopPropagation();openCourseMenu('${escAttr(c.id)}',this)" title="Opzioni" aria-label="Opzioni aula" style="position:static;flex-shrink:0">⋯</button>
+    </div>
+    <div class="course-card-middle">
+      ${dateRow}
+      ${timeRow}
+    </div>
+    ${teachersRow}
+  </div>`;
 }
 
 /* ==================================================

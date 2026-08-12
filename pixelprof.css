@@ -5580,3 +5580,67 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
   html[data-theme="light"] .mod-toggle-btn.not-ready{ color: rgba(16,24,42,.35); }
   html[data-theme="light"] .dp-soon-tag{ color:#a66d00; }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v8.2.0 — SCEGLI AULA: RAGGRUPPAMENTO PER AREA (Sistema
+   Aree, ROADMAP_AREE.md Fase 3).
+   #cs-grid non è più una griglia piatta di .course-card: è un
+   contenitore (.cs-catalog) di sezioni .cs-area-section, una per
+   Area con almeno un'aula. Ogni sezione ha un header (icona+nome+
+   contatore, stile "eyebrow" coerente con .slbl) e la propria
+   .cs-grid interna — la classe .cs-grid esistente (colonne, gap,
+   hover Netflix :has()) è riusata invariata, ora scoped per sezione:
+   l'effetto dimming al hover si applica correttamente per Area
+   invece che sull'intera pagina.
+   ═══════════════════════════════════════════════════════════════════ */
+@layer areas {
+
+  .cs-catalog{
+    display:flex;flex-direction:column;gap:2.25rem;
+  }
+
+  .cs-area-section-header{
+    display:flex;align-items:center;gap:10px;
+    margin-bottom:14px;
+  }
+  .cs-area-section-icon{
+    font-size:20px;line-height:1;flex-shrink:0;
+    filter:drop-shadow(0 0 8px rgba(0,255,200,.15));
+  }
+  .cs-area-section-label{
+    font-size:15px;font-weight:800;color:#fff;
+    letter-spacing:-.2px;white-space:nowrap;
+  }
+  .cs-area-section-count{
+    font-family:'Share Tech Mono',monospace;font-size:10px;font-weight:700;
+    color:rgba(0,255,200,.75);
+    background:rgba(0,255,200,.08);border:1px solid rgba(0,255,200,.22);
+    padding:2px 9px;border-radius:20px;
+    flex-shrink:0;letter-spacing:.3px;
+  }
+  /* linea a sfumatura finale — stesso pattern di .slbl::after */
+  .cs-area-section-header::after{
+    content:'';flex:1;height:1px;min-width:24px;
+    background:linear-gradient(90deg,rgba(0,255,200,.2),transparent);
+  }
+
+  /* Aule legacy/orfane raggruppate sotto una chiave non presente in
+     AREAS (vedi _csBuildAreaSection in courses.js) — stesso stile,
+     colore neutro invece dell'accento teal per non implicare che sia
+     un'Area "ufficiale" della config. */
+  .cs-area-section[data-area-key]:not([data-area-key="ecdl"]):not([data-area-key="cyberbullismo-sicurezza-online"]):not([data-area-key="cybersecurity"]):not([data-area-key="reti-internet"]):not([data-area-key="malware-minacce"]) .cs-area-section-count{
+    color:rgba(255,255,255,.5);
+    background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);
+  }
+}
+
+@layer theme {
+  /* ── Scegli Aula — raggruppamento per Area, tema chiaro ─────────── */
+  html[data-theme="light"] .cs-area-section-label{ color:#10182a; }
+  html[data-theme="light"] .cs-area-section-count{
+    color:#0a7a5c; background:rgba(0,150,110,.08); border-color:rgba(0,150,110,.22);
+  }
+  html[data-theme="light"] .cs-area-section-header::after{
+    background:linear-gradient(90deg,rgba(16,24,42,.16),transparent);
+  }
+}

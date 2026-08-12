@@ -583,6 +583,14 @@ async function tmDetailToggleActive(makeActive){
 
 /**
  * _tmdRenderAule — gestione aule assegnate al docente in scheda.
+ * v8.3.0 — ROADMAP_AREE.md Fase 4: le aule vengono raggruppate per
+ * Area (window.AREAS, vedi js/areas-config.js) invece di un'unica
+ * griglia piatta di toggle — stesso pattern di raggruppamento già
+ * adottato da renderCoursesGrid/_csBuildAreaSection in courses.js
+ * (Fase 3). Ordine blocchi = ordine AREAS; aule legacy senza areaKey
+ * → blocco ECDL (stesso fallback di Fase 2/3). Nessuna sezione vuota
+ * viene renderizzata.
+ *
  * Mostra TUTTE le aule (window.DB.loadClassrooms, stessa funzione già usata
  * dal Direttore per vedere "tutte le aule") con un toggle per ciascuna:
  * acceso = il docente è assegnato. Click → assignTeacherToClassroom /
@@ -603,11 +611,43 @@ async function _tmdRenderAule(teacherId){
     grid.innerHTML = '<div class="dp-hint-text">Nessuna aula creata.</div>';
     return;
   }
-  grid.innerHTML = allClassrooms.map(c=>{
+
+  const byArea = {};
+  allClassrooms.forEach(c=>{
+    const key = c.areaKey || 'ecdl';
+    (byArea[key] = byArea[key] || []).push(c);
+  });
+
+  let html = '';
+  (window.AREAS||[]).forEach(area=>{
+    const list = byArea[area.key];
+    if(!list || !list.length) return;
+    delete byArea[area.key];
+    html += _tmdBuildAreaBlock(area.key, area.label, area.icon, list);
+  });
+  // areaKey orfane (non presenti in AREAS, es. dati corrotti o Area
+  // rimossa dalla config) — mostrate comunque in coda, mai perse.
+  Object.keys(byArea).forEach(key=>{
+    html += _tmdBuildAreaBlock(key, key, '🗂️', byArea[key]);
+  });
+
+  grid.innerHTML = html;
+}
+
+/** Costruisce l'HTML di un blocco Area nella scheda docente: intestazione (icona+nome) + griglia toggle aule. */
+function _tmdBuildAreaBlock(areaKey, areaLabel, areaIcon, list){
+  const btnsHtml = list.map(c=>{
     const on = _tmdAssignedIds.has(c.id);
     return `<button type="button" class="tdc-aula-toggle-btn${on?' active':''}"
       onclick="_tmdToggleAula('${escAttr(c.id)}',this)">${escHtml(c.icon||'🏫')} ${escHtml(c.name)}</button>`;
   }).join('');
+  return `<div class="tdc-area-block" data-area-key="${escAttr(areaKey)}">
+    <div class="tdc-area-block-header">
+      <span class="tdc-area-block-icon">${areaIcon}</span>
+      <span class="tdc-area-block-label">${escHtml(areaLabel)}</span>
+    </div>
+    <div class="tdc-aule-toggle-grid">${btnsHtml}</div>
+  </div>`;
 }
 
 async function _tmdToggleAula(classroomId, btn){

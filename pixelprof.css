@@ -5644,3 +5644,47 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
     background:linear-gradient(90deg,rgba(16,24,42,.16),transparent);
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v8.3.0 — SCHEDA DOCENTE: RAGGRUPPAMENTO PER AREA (Sistema
+   Aree, ROADMAP_AREE.md Fase 4).
+   #tmd-aule-grid non è più un'unica griglia piatta di toggle: è un
+   contenitore (.tdc-aule-blocks) di blocchi .tdc-area-block, uno per
+   Area con almeno un'aula. Ogni blocco ha un'intestazione leggera
+   (icona+nome, family tipografica "eyebrow" come .cs-area-section-*
+   di Fase 3, ma più compatta per stare dentro la .setup-card) e la
+   propria .tdc-aule-toggle-grid interna — la classe esistente (flex-
+   wrap, gap) è riusata invariata, ora scoped per blocco invece che
+   sull'intero contenitore.
+   ═══════════════════════════════════════════════════════════════════ */
+@layer areas {
+
+  .tdc-aule-blocks{
+    display:flex;flex-direction:column;gap:16px;
+  }
+
+  .tdc-area-block-header{
+    display:flex;align-items:center;gap:7px;
+    margin-bottom:8px;
+  }
+  .tdc-area-block-icon{
+    font-size:13px;line-height:1;flex-shrink:0;
+  }
+  .tdc-area-block-label{
+    font-size:10px;font-weight:700;color:rgba(255,255,255,.45);
+    text-transform:uppercase;letter-spacing:1px;white-space:nowrap;
+  }
+  /* linea a sfumatura finale — stesso pattern di .slbl::after / .cs-area-section-header::after */
+  .tdc-area-block-header::after{
+    content:'';flex:1;height:1px;min-width:16px;
+    background:linear-gradient(90deg,rgba(255,255,255,.12),transparent);
+  }
+}
+
+@layer theme {
+  /* ── Scheda docente — raggruppamento per Area, tema chiaro ──────── */
+  html[data-theme="light"] .tdc-area-block-label{ color: rgba(16,24,42,.5); }
+  html[data-theme="light"] .tdc-area-block-header::after{
+    background:linear-gradient(90deg,rgba(16,24,42,.16),transparent);
+  }
+}

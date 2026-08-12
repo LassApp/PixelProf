@@ -940,6 +940,11 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <p class="home-hero-sub">Seleziona un modulo per iniziare a esercitarti con quiz, memory, abbinamenti e molto altro.</p>
     </div>
 
+    <!-- Stato vuoto — aule di Aree non-ECDL senza moduli pronti (Fase 2.1 Sistema Aree) -->
+    <div id="mod-area-empty" class="mod-area-empty hidden"></div>
+
+    <!-- Catalogo ECDL — nascosto in blocco per aule di Aree diverse da ECDL -->
+    <div id="mod-ecdl-catalog">
     <div class="home-divider"><span>moduli attivi</span></div>
 
     <!-- Active module cards -->
@@ -1108,6 +1113,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </div>
          
     </div>
+    </div><!-- /mod-ecdl-catalog -->
 
   </div>
 
@@ -1426,6 +1432,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div><!-- /app -->
 
 
-<script src="js/app.bundle.min.js?v=8.1.0"></script>
+<script src="js/app.bundle.min.js?v=8.1.1"></script>
 </body>
 </html>

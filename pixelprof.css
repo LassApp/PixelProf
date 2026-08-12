@@ -5541,3 +5541,42 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
     color:rgba(255,255,255,.35);
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v8.1.1 — FIX Sistema Aree (bug segnalato dopo Fase 2)
+   A) Pannello "Gestisci aula": stato "in arrivo" per moduli non pronti
+      dell'Area (mod-toggle-btn.not-ready, dp-soon-tag).
+   B) Home "Scegli modulo": stato vuoto per aule di Aree non-ECDL
+      senza moduli pronti (mod-area-empty).
+   ═══════════════════════════════════════════════════════════════════ */
+@layer areas {
+
+  /* ── B — Home: stato vuoto aule non-ECDL ───────────────────────── */
+  .mod-area-empty{
+    text-align:center;padding:3rem 1.5rem;
+    border:1px dashed rgba(255,255,255,.1);
+    border-radius:var(--radius-lg);
+    margin:.5rem 0 1rem;
+  }
+  .mod-area-empty .mae-icon{ font-size:40px;margin-bottom:14px;opacity:.55; }
+  .mod-area-empty .mae-title{ font-size:15px;font-weight:700;color:rgba(255,255,255,.6);margin-bottom:6px; }
+  .mod-area-empty .mae-sub{ font-size:12px;color:rgba(255,255,255,.32);line-height:1.6;max-width:320px;margin:0 auto; }
+
+  /* ── A — Pannello direttore: moduli "in arrivo" ────────────────── */
+  .mod-toggle-btn.not-ready{ cursor:not-allowed;opacity:.45;filter:saturate(.4); }
+  .mod-toggle-btn.not-ready:hover{ border-color:var(--border-mid);color:rgba(255,255,255,.5); }
+  .dp-soon-tag{
+    font-family:'Share Tech Mono',monospace;font-size:8px;font-weight:700;
+    letter-spacing:.5px;text-transform:uppercase;
+    color:rgba(255,180,0,.7);margin-left:2px;
+  }
+}
+
+@layer theme {
+  /* ── Fix Sistema Aree — tema chiaro ─────────────────────────────── */
+  html[data-theme="light"] .mod-area-empty{ border-color: rgba(20,30,60,.14); }
+  html[data-theme="light"] .mod-area-empty .mae-title{ color:#10182a; }
+  html[data-theme="light"] .mod-area-empty .mae-sub{ color: rgba(16,24,42,.45); }
+  html[data-theme="light"] .mod-toggle-btn.not-ready{ color: rgba(16,24,42,.35); }
+  html[data-theme="light"] .dp-soon-tag{ color:#a66d00; }
+}

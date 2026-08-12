@@ -754,10 +754,23 @@ async function _applyModuleFilter(classroomId){
 function _renderModuleFilter(){
   const keys = window._activeModuleKeys || null;
   const ALL = ['CE','OE','WP','SS'];
+
+  // Fase 2.1 Sistema Aree — fix difensivo minimo (bug segnalato).
+  // Le card CE/OE/WP/SS in home sono cablate esclusivamente per l'Area
+  // ECDL. keys=null significa "nessuna whitelist configurata" e prima
+  // d'ora veniva letto come "mostra tutto" — ma per un'aula di un'Area
+  // diversa (es. Reti e Internet) "tutto" non può voler dire "le card
+  // ECDL": semplicemente quell'aula non ha ancora nulla di giocabile.
+  // Il catalogo dedicato per-Area completo resta Fase 3/7 — qui ci si
+  // limita a non mostrare mai contenuti della Area sbagliata.
+  const course  = activeCourseId ? loadCourses().find(c=>c.id===activeCourseId) : null;
+  const areaKey = course?.areaKey || 'ecdl';
+  const isEcdl  = areaKey==='ecdl';
+
   ALL.forEach(k=>{
     const card = shq('mc-'+k); // shq: silenzioso se #mc-SS non esiste
     if(!card) return;
-    const show = !keys || keys.includes(k);
+    const show = isEcdl && (!keys || keys.includes(k));
     // Classe di stato dedicata (vedi pixelprof.css, sezione "STATO").
     // Mai impostare style inline su classi di skin condivise come .mod-card:
     // .mod-card.is-hidden-by-filter ha specificità maggiore di .mod-card da
@@ -765,6 +778,28 @@ function _renderModuleFilter(){
     // nuove regole !important durante il redesign.
     card.classList.toggle('is-hidden-by-filter', !show);
   });
+
+  const catalog = shq('mod-ecdl-catalog');
+  if(catalog) catalog.classList.toggle('hidden', !isEcdl);
+  _renderModAreaEmptyState(!isEcdl, areaKey);
+}
+
+/**
+ * _renderModAreaEmptyState — Fase 2.1 Sistema Aree.
+ * Mostra/nasconde lo stato vuoto per aule di Aree non-ECDL senza
+ * moduli pronti. Il messaggio include icona/nome Area quando disponibili.
+ */
+function _renderModAreaEmptyState(show, areaKey){
+  const box = shq('mod-area-empty');
+  if(!box) return;
+  if(!show){ box.classList.add('hidden'); return; }
+  const areaInfo = window.AreasConfig?.getAreaByKey(areaKey);
+  box.innerHTML = `
+    <div class="mae-icon">${areaInfo?.icon || '🗂️'}</div>
+    <div class="mae-title">${areaInfo ? escHtml(areaInfo.label) : 'Quest\u2019area'} — contenuti in preparazione</div>
+    <div class="mae-sub">Nessun modulo è ancora giocabile per quest'area. Verranno pubblicati non appena pronti.</div>
+  `;
+  box.classList.remove('hidden');
 }
 // Esposta su window per essere raggiungibile da goStep() in game-engine-state.js
 // (file caricato prima di app.js, non può referenziare funzioni locali di questo file)
@@ -1348,6 +1383,9 @@ async function _deleteClassroomRest(classroomId){
 let _dpClassroomId    = null;
 let _dpEnabledModules = [];
 
+// Fallback difensivo per _dpLoadModules() — usato solo se l'aula non ha
+// un'Area valida o AreasConfig non è disponibile. La fonte primaria è
+// AreasConfig.getAreaByKey(areaKey).modules (Fase 2.1 Sistema Aree).
 const ALL_MODULES = [
   { key:'CE',  label:'Computer Essentials' },
   { key:'OE',  label:'Online Essentials'   },
@@ -1445,12 +1483,27 @@ async function _dpLoadModules(){
   _dpEnabledModules = enabled ? [...enabled] : [];
   const grid = sh('dp-mod-grid');
   if(!grid) return;
-  grid.innerHTML = ALL_MODULES.map(m=>`
-    <button class="mod-toggle-btn${_dpEnabledModules.includes(m.key)?' active':''}"
-      data-modkey="${escAttr(m.key)}"
-      onclick="dpToggleModule('${escAttr(m.key)}',this)">
-      ${escHtml(m.label)}
-    </button>`).join('');
+
+  // Fase 2.1 Sistema Aree — i moduli mostrati sono quelli dell'Area
+  // dell'aula (stessa logica dello step Moduli nel wizard di creazione),
+  // non più la lista fissa ALL_MODULES. Fallback su ALL_MODULES/'ecdl'
+  // per aule legacy o se AreasConfig non fosse disponibile.
+  const course   = loadCourses().find(c=>c.id===_dpClassroomId);
+  const areaKey  = course?.areaKey || 'ecdl';
+  const areaInfo = window.AreasConfig?.getAreaByKey(areaKey);
+  const modules  = areaInfo ? areaInfo.modules : ALL_MODULES;
+
+  grid.innerHTML = modules.map(m=>{
+    const ready  = m.contentReady!==false; // ALL_MODULES legacy non ha il campo → default pronto
+    const active = _dpEnabledModules.includes(m.key);
+    const cls    = 'mod-toggle-btn'+(active?' active':'')+(ready?'':' not-ready');
+    const attrs  = ready
+      ? `data-modkey="${escAttr(m.key)}" onclick="dpToggleModule('${escAttr(m.key)}',this)"`
+      : `disabled aria-disabled="true" title="Contenuti in preparazione"`;
+    return `<button class="${cls}" ${attrs}>
+      ${escHtml(m.label)}${ready?'':' <span class="dp-soon-tag">in arrivo</span>'}
+    </button>`;
+  }).join('');
 }
 
 function dpToggleModule(key, btn){

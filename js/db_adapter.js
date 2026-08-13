@@ -5,13 +5,11 @@
  *   - loadCourses: mappa area_key dalla RPC get_teacher_classrooms.
  *   - createCourse: scrive area_key sull'INSERT in classrooms.
  *   - updateCourse: accetta areaKey come campo aggiornabile.
- *   - ATTENZIONE: la RPC get_teacher_classrooms deve restituire anche
- *     la colonna area_key nel suo SELECT interno — non è stata
- *     modificata da questa patch (il suo corpo non era disponibile
- *     in questa sessione). Verificarla/aggiornarla nel Supabase SQL
- *     Editor, altrimenti loadCourses riceverà sempre area_key=null
- *     anche dopo aver eseguito la migrazione SQL allegata.
- *     Vedi sql/v5.1.0_add_area_key_classrooms.sql.
+ *   - CONFERMATO (ROADMAP_AREE.md Fase 5, via pg_get_functiondef): la RPC
+ *     get_teacher_classrooms restituisce già area_key nel suo SELECT
+ *     interno (RETURNS TABLE(..., area_key text, ...)) — nessuna patch
+ *     necessaria. loadCourses riceve quindi area_key correttamente non
+ *     appena la migrazione SQL è stata eseguita sulle righe esistenti.
  *
  * v5.0.0 M5: importa SUPABASE_URL e SUPABASE_ANON_KEY
  * da supabase_client.js — rimosso fallback hardcoded in

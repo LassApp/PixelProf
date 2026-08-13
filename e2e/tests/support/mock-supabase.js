@@ -26,6 +26,19 @@
  * catch-all in fondo: risposta 200 "vuota", nessun blocco, nessun
  * errore in console.
  *
+ * v8.4.0 — ROADMAP_AREE.md Fase 6 (copertura e2e Sistema Aree):
+ *   - get_teacher_classrooms ora risponde con l'array configurabile
+ *     `opts.classrooms` invece di un singolo record hardcoded — permette
+ *     agli spec di simulare più aule su Aree diverse (vedi areas.spec.js).
+ *     Default invariato (stesso singolo record di prima) — zero impatto
+ *     sugli spec esistenti che non passano questa opzione.
+ *   - GET /rest/v1/profiles ora distingue la query del PROPRIO profilo
+ *     (.eq('id', userId).single(), usata da _loadProfile) dalla query
+ *     dell'elenco docenti (.eq('role','teacher'), usata da
+ *     Auth.listTeachers() nel pannello Direttore) leggendo il parametro
+ *     'role' nell'URL — la seconda risponde con `opts.teachersList`
+ *     (default: array vuoto, retrocompatibile).
+ *
  * ONBOARDING TOUR (js/onboarding.js): al primissimo accesso di un
  * docente, l'app mostra un tour guidato a tutto schermo (#onb-overlay)
  * che blocca i click finché non viene chiuso — comportamento corretto e
@@ -47,6 +60,83 @@ const SUPABASE_HOST = 'skrgqanqdyrybarinwwr.supabase.co';
 const TEST_USER_ID = '00000000-0000-4000-8000-000000000001';
 const TEST_CLASSROOM_ID = '00000000-0000-4000-8000-0000000000aa';
 const TEST_CLASSROOM_NAME = 'Aula Smoke Test';
+
+/** Aula di default restituita da get_teacher_classrooms quando lo spec
+ *  non passa opts.classrooms — stesso identico record di prima di v8.4.0. */
+const DEFAULT_TEST_CLASSROOM = {
+  id: TEST_CLASSROOM_ID,
+  name: TEST_CLASSROOM_NAME,
+  icon: '🧪',
+  color_idx: 0,
+  bg_idx: 0,
+  created_at: new Date().toISOString(),
+  start_date: '2026-01-01',
+  end_date: '2026-12-31',
+  time_slot: '08:00 – 09:00',
+  teachers: [],
+};
+
+/** Aule multi-Area — per i test di raggruppamento (Fasi 3/4 Sistema
+ *  Aree, vedi areas.spec.js). Copre: Area con 2 aule (ecdl, di cui una
+ *  legacy senza area_key), Area con 1 aula (reti-internet), 3 Aree
+ *  senza alcuna aula (cyberbullismo-sicurezza-online, cybersecurity,
+ *  malware-minacce — le sezioni corrispondenti non devono comparire). */
+const AREA_TEST_CLASSROOM_ECDL = {
+  id: '00000000-0000-4000-8000-0000000000a1',
+  name: 'Aula ECDL E2E',
+  icon: '🖥️',
+  color_idx: 0,
+  bg_idx: 0,
+  created_at: new Date().toISOString(),
+  start_date: '2026-01-01',
+  end_date: '2026-12-31',
+  time_slot: '08:00 – 09:00',
+  area_key: 'ecdl',
+  teachers: [],
+};
+const AREA_TEST_CLASSROOM_RETI = {
+  id: '00000000-0000-4000-8000-0000000000a2',
+  name: 'Aula Reti E2E',
+  icon: '🌐',
+  color_idx: 1,
+  bg_idx: 1,
+  created_at: new Date().toISOString(),
+  start_date: '2026-01-01',
+  end_date: '2026-12-31',
+  time_slot: '09:00 – 10:00',
+  area_key: 'reti-internet',
+  teachers: [],
+};
+const AREA_TEST_CLASSROOM_LEGACY = {
+  id: '00000000-0000-4000-8000-0000000000a3',
+  name: 'Aula Legacy E2E',
+  icon: '🏫',
+  color_idx: 2,
+  bg_idx: 2,
+  created_at: new Date().toISOString(),
+  start_date: '2026-01-01',
+  end_date: '2026-12-31',
+  time_slot: '10:00 – 11:00',
+  // area_key assente di proposito: simula una riga creata PRIMA del
+  // Sistema Aree, come se lo script di backfill (Fase 5) non fosse
+  // ancora stato eseguito in questo ambiente.
+  teachers: [],
+};
+const AREA_TEST_CLASSROOMS = [
+  AREA_TEST_CLASSROOM_ECDL,
+  AREA_TEST_CLASSROOM_RETI,
+  AREA_TEST_CLASSROOM_LEGACY,
+];
+
+/** Docente di test per il flusso Direttore → Gestisci Docenti → Docenti
+ *  → Scheda Docente (vedi areas.spec.js). */
+const AREA_TEST_TEACHER = {
+  id: '00000000-0000-4000-8000-0000000000b1',
+  name: 'Docente Aree E2E',
+  role: 'teacher',
+  active: true,
+  genere: 'donna',
+};
 
 function fakeSession(email) {
   const nowSec = Math.floor(Date.now() / 1000);
@@ -97,6 +187,11 @@ async function respondJson(route, status, body) {
  * @param {boolean} [opts.wrongCredentials=false]    forza sempre login fallito (400)
  * @param {string}  [opts.email='docente.e2e@pixelprof.test']
  * @param {boolean} [opts.skipOnboarding=true]       simula tour già visto/saltato
+ * @param {object[]} [opts.classrooms=[DEFAULT_TEST_CLASSROOM]] aule restituite da
+ *   get_teacher_classrooms (sia per il docente sia, con lo stesso teacherId
+ *   coincidente col Direttore loggato, per "tutte le aule" lato Direttore)
+ * @param {object[]} [opts.teachersList=[]]  docenti restituiti da
+ *   Auth.listTeachers() — lista di /rest/v1/profiles?role=eq.teacher
  */
 async function mockSupabase(page, opts = {}) {
   const {
@@ -105,6 +200,8 @@ async function mockSupabase(page, opts = {}) {
     wrongCredentials = false,
     email = 'docente.e2e@pixelprof.test',
     skipOnboarding = true,
+    classrooms = [DEFAULT_TEST_CLASSROOM],
+    teachersList = [],
   } = opts;
 
   if (skipOnboarding) {
@@ -136,6 +233,13 @@ async function mockSupabase(page, opts = {}) {
 
     // 2. PROFILO (ruolo + stato account) ----------------------------------
     if (path === '/rest/v1/profiles' && method === 'GET') {
+      // Auth.listTeachers() interroga .eq('role','teacher') → attende un
+      // array. Il fetch del PROPRIO profilo (_loadProfile) interroga
+      // .eq('id', userId).single() → attende un oggetto singolo. Si
+      // distinguono guardando il parametro 'role' nell'URL.
+      if (url.searchParams.get('role') === 'eq.teacher') {
+        return respondJson(route, 200, teachersList);
+      }
       return respondJson(route, 200, {
         id: TEST_USER_ID,
         name: role === 'director' ? 'Direttore E2E' : 'Docente E2E',
@@ -144,22 +248,11 @@ async function mockSupabase(page, opts = {}) {
       });
     }
 
-    // 3. AULE DEL DOCENTE --------------------------------------------------
+    // 3. AULE DEL DOCENTE (o, per il Direttore che vede "tutte le aule",
+    //    stessa RPC chiamata col proprio id — vedi js/app.js _tmdRenderAule)
+    // ------------------------------------------------------------------
     if (path === '/rest/v1/rpc/get_teacher_classrooms' && method === 'POST') {
-      return respondJson(route, 200, [
-        {
-          id: TEST_CLASSROOM_ID,
-          name: TEST_CLASSROOM_NAME,
-          icon: '🧪',
-          color_idx: 0,
-          bg_idx: 0,
-          created_at: new Date().toISOString(),
-          start_date: '2026-01-01',
-          end_date: '2026-12-31',
-          time_slot: '08:00 – 09:00',
-          teachers: [],
-        },
-      ]);
+      return respondJson(route, 200, classrooms);
     }
 
     // 4. MODULI ABILITATI PER L'AULA (whitelist vuota = tutti visibili) ---
@@ -179,4 +272,9 @@ module.exports = {
   TEST_USER_ID,
   TEST_CLASSROOM_ID,
   TEST_CLASSROOM_NAME,
+  AREA_TEST_CLASSROOM_ECDL,
+  AREA_TEST_CLASSROOM_RETI,
+  AREA_TEST_CLASSROOM_LEGACY,
+  AREA_TEST_CLASSROOMS,
+  AREA_TEST_TEACHER,
 };

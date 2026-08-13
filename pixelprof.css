@@ -5603,9 +5603,25 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
     display:flex;align-items:center;gap:10px;
     margin-bottom:14px;
   }
+
+  /* ── Colore per Area — v8.4.0 (ROADMAP_AREE.md Fase 7.1) ─────────
+     Un'unica custom property --area-rgb (tripletta R,G,B) assegnata
+     via [data-area-key] — attributo già presente su .cs-area-section
+     da _csBuildAreaSection (Fase 3), nessuna modifica a courses.js
+     necessaria. Icona/badge/linea sotto la leggono con rgba(var(...)),
+     tema chiaro la ridefinisce in @layer theme (dichiarato dopo areas,
+     vince senza toccare le regole "consumer" qui sotto). Palette
+     allineata agli hex già usati in COLOR_PALETTE (courses.js, color
+     picker aula) per coerenza visiva: Teal/Amber/Blue/Violet/Pink. */
+  .cs-area-section[data-area-key="ecdl"]{ --area-rgb:0,255,200; }
+  .cs-area-section[data-area-key="cyberbullismo-sicurezza-online"]{ --area-rgb:255,180,0; }
+  .cs-area-section[data-area-key="cybersecurity"]{ --area-rgb:30,144,255; }
+  .cs-area-section[data-area-key="reti-internet"]{ --area-rgb:124,106,255; }
+  .cs-area-section[data-area-key="malware-minacce"]{ --area-rgb:255,77,109; }
+
   .cs-area-section-icon{
     font-size:20px;line-height:1;flex-shrink:0;
-    filter:drop-shadow(0 0 8px rgba(0,255,200,.15));
+    filter:drop-shadow(0 0 8px rgba(var(--area-rgb,0,255,200),.15));
   }
   .cs-area-section-label{
     font-size:15px;font-weight:800;color:#fff;
@@ -5613,35 +5629,44 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
   }
   .cs-area-section-count{
     font-family:'Share Tech Mono',monospace;font-size:10px;font-weight:700;
-    color:rgba(0,255,200,.75);
-    background:rgba(0,255,200,.08);border:1px solid rgba(0,255,200,.22);
+    color:rgba(var(--area-rgb,255,255,255),.85);
+    background:rgba(var(--area-rgb,255,255,255),.08);border:1px solid rgba(var(--area-rgb,255,255,255),.22);
     padding:2px 9px;border-radius:20px;
     flex-shrink:0;letter-spacing:.3px;
   }
   /* linea a sfumatura finale — stesso pattern di .slbl::after */
   .cs-area-section-header::after{
     content:'';flex:1;height:1px;min-width:24px;
-    background:linear-gradient(90deg,rgba(0,255,200,.2),transparent);
+    background:linear-gradient(90deg,rgba(var(--area-rgb,0,255,200),.2),transparent);
   }
 
   /* Aule legacy/orfane raggruppate sotto una chiave non presente in
-     AREAS (vedi _csBuildAreaSection in courses.js) — stesso stile,
-     colore neutro invece dell'accento teal per non implicare che sia
-     un'Area "ufficiale" della config. */
-  .cs-area-section[data-area-key]:not([data-area-key="ecdl"]):not([data-area-key="cyberbullismo-sicurezza-online"]):not([data-area-key="cybersecurity"]):not([data-area-key="reti-internet"]):not([data-area-key="malware-minacce"]) .cs-area-section-count{
-    color:rgba(255,255,255,.5);
-    background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14);
-  }
+     AREAS (vedi _csBuildAreaSection in courses.js) — nessuna regola
+     --area-rgb assegnata per queste chiavi: icona/linea ricadono sul
+     fallback teal (invariato rispetto a prima di v8.4.0), il badge
+     numerico ricade sul fallback neutro (255,255,255) dichiarato sopra
+     — stesso colore neutro già usato prima di v8.4.0, per non
+     implicare che sia un'Area "ufficiale" della config. */
 }
 
 @layer theme {
   /* ── Scegli Aula — raggruppamento per Area, tema chiaro ─────────── */
   html[data-theme="light"] .cs-area-section-label{ color:#10182a; }
-  html[data-theme="light"] .cs-area-section-count{
-    color:#0a7a5c; background:rgba(0,150,110,.08); border-color:rgba(0,150,110,.22);
-  }
-  html[data-theme="light"] .cs-area-section-header::after{
-    background:linear-gradient(90deg,rgba(16,24,42,.16),transparent);
+
+  /* Colore per Area — varianti scure (leggibili su sfondo chiaro).
+     Stessa tecnica --area-rgb: ridefinita qui per data-theme="light",
+     vince nel layer theme (dichiarato dopo areas) senza duplicare le
+     regole "consumer" (icona/badge/linea) sopra. */
+  html[data-theme="light"] .cs-area-section[data-area-key="ecdl"]{ --area-rgb:10,122,92; }
+  html[data-theme="light"] .cs-area-section[data-area-key="cyberbullismo-sicurezza-online"]{ --area-rgb:146,64,14; }
+  html[data-theme="light"] .cs-area-section[data-area-key="cybersecurity"]{ --area-rgb:29,78,216; }
+  html[data-theme="light"] .cs-area-section[data-area-key="reti-internet"]{ --area-rgb:109,40,217; }
+  html[data-theme="light"] .cs-area-section[data-area-key="malware-minacce"]{ --area-rgb:190,18,60; }
+  /* Aule legacy/orfane — fallback neutro (255,255,255) del badge è
+     illeggibile su sfondo chiaro: qui ridefinito su un grigio scuro
+     coerente con .cs-area-section-label chiaro (#10182a). */
+  html[data-theme="light"] .cs-area-section:not([data-area-key="ecdl"]):not([data-area-key="cyberbullismo-sicurezza-online"]):not([data-area-key="cybersecurity"]):not([data-area-key="reti-internet"]):not([data-area-key="malware-minacce"]){
+    --area-rgb:16,24,42;
   }
 }
 

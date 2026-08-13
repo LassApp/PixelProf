@@ -189,12 +189,33 @@ function getReadyModules(areaKey) {
 // Esposizione globale — script classico (non ES module), stesso pattern
 // di game-constants.js / game-engine-state.js. Caricare PRIMA di
 // courses.js/app.js nelle fasi che consumeranno AREAS (Fase 2+).
-window.AREAS = AREAS;
-window.AreasConfig = {
-  AREAS,
-  getAreaForModule,
-  getModulesForArea,
-  getModuleInfo,
-  getAreaByKey,
-  getReadyModules,
-};
+// `typeof window` è undefined in Node (tooling, vedi sotto) — guardato
+// per evitare ReferenceError lì, zero impatto nel browser dove window
+// esiste sempre.
+if (typeof window !== 'undefined') {
+  window.AREAS = AREAS;
+  window.AreasConfig = {
+    AREAS,
+    getAreaForModule,
+    getModulesForArea,
+    getModuleInfo,
+    getAreaByKey,
+    getReadyModules,
+  };
+}
+
+// Export CommonJS — SOLO per tooling Node (es. tools/content-check.js,
+// Fase 7.2). `typeof module` è undefined nel browser: questo branch non
+// viene mai eseguito lato client, zero impatto sul runtime dell'app.
+// Evita di duplicare l'array AREAS in un secondo file di config per il
+// tool: stessa unica fonte di verità di NOTA 1 in cima a questo file.
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    AREAS,
+    getAreaForModule,
+    getModulesForArea,
+    getModuleInfo,
+    getAreaByKey,
+    getReadyModules,
+  };
+}

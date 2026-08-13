@@ -4,7 +4,8 @@
   "private": true,
   "description": "PixelProf — ICDL Interactive Lab. Build script per bundle/minify degli script JS lato client (vedi tools/build.js).",
   "scripts": {
-    "build": "node tools/build.js"
+    "build": "node tools/build.js",
+    "content:check": "node tools/content-check.js"
   },
   "devDependencies": {
     "terser": "^5.36.0"

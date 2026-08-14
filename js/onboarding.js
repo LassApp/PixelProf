@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.0.0
+   onboarding.js — PixelProf v2.1.0
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -37,6 +37,28 @@
        rilevato in localStorage, 'done' viene preservato (chi aveva
        già completato/saltato il tour non lo rivede), altrimenti si
        riparte da idx 0 sotto il nuovo schema.
+
+   v2.1.0 — Fase 7.3 Sistema Aree (ROADMAP_AREE.md): il tour non
+     menzionava mai il concetto di "Area" introdotto nelle Fasi 2-4,
+     né nel wizard, né in "Scegli Aula", né in "Scheda Docente".
+     Solo testo dei passi aggiornato (nessun nuovo screen/hook):
+       - DIRECTOR_STEPS[1] (wizard/#cs-add-form-wrap): corretto
+         "tre semplici passi" → "quattro passi" (nome, area, moduli,
+         docenti) — il conteggio era rimasto quello pre-Fase 2.
+       - DIRECTOR_STEPS[5] (teacherMgmt/.dd-teacher-list): aggiunto
+         cenno al raggruppamento per area delle aule in Scheda Docente.
+       - DIRECTOR_STEPS[8] e TEACHER_STEPS[0] (entrambi
+         coursesSelect/.course-card): aggiunto cenno al raggruppamento
+         per area in "Scegli Aula" (Fase 3).
+     Deliberatamente NON aggiunto un passo dedicato dentro il modale
+     wizard (step Area vero e proprio) né dentro "Scheda Docente"
+     (blocchi .tdc-area-block): il primo richiederebbe scriptare la
+     validazione di nome/date/orari obbligatori dello step 1 per poter
+     avanzare; il secondo richiederebbe almeno un docente già esistente,
+     non garantito nel percorso di primo accesso Direttore (il passo
+     "Nuovo Docente" del tour è 'info', non crea davvero un account).
+     Entrambi restano possibili in un secondo momento se richiesti
+     esplicitamente.
 
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
@@ -177,7 +199,7 @@ const OnboardingTour = (function () {
       body:'Inizia da qui: premi su "Gestisci Aule" per creare la tua prima aula e scegliere quali moduli rendere disponibili ai docenti.' },
     { screen:'wizard', target:'#cs-add-form-wrap', type:'info',
       title:'Crea la tua prima aula 🏫',
-      body:'Da qui avvii la creazione guidata: nome, moduli abilitati e docenti da assegnare, in tre semplici passi.' },
+      body:'Da qui avvii la creazione guidata in quattro passi: nome, area didattica, moduli abilitati e docenti da assegnare. L\'area scelta determina quali moduli saranno disponibili.' },
     { screen:'wizard', target:'#cs-back-dashboard-btn', type:'action',
       title:'Tutto pronto ✅',
       body:'Premi qui per tornare al pannello di controllo.' },
@@ -189,7 +211,7 @@ const OnboardingTour = (function () {
       body:'Qui puoi inserire un nuovo docente: bastano nome, cognome ed email — riceverà un invito automatico per impostare la password.' },
     { screen:'teacherMgmt', target:'.dd-teacher-list', type:'info',
       title:'Docenti già creati 👥',
-      body:'Qui trovi i docenti già registrati: da ogni scheda puoi assegnarli alle aule già create, modificarne i dati o disattivarli.' },
+      body:'Qui trovi i docenti già registrati: da ogni scheda puoi assegnarli alle aule già create (raggruppate per area didattica), modificarne i dati o disattivarli.' },
     { screen:'teacherMgmt', target:'#screen-teacher-mgmt .back-link', type:'action',
       title:'Torniamo alla dashboard ✅',
       body:'Premi qui per tornare al pannello di controllo.' },
@@ -198,7 +220,7 @@ const OnboardingTour = (function () {
       body:'Da qui puoi accedere a un\'aula ed esercitarti esattamente come farebbe un docente.' },
     { screen:'coursesSelect', target:'.course-card', type:'action',
       title:'Scegli un\'aula 🏫',
-      body:'Seleziona una qualsiasi aula tra quelle disponibili per continuare.' },
+      body:'Le aule sono raggruppate per area didattica: seleziona una qualsiasi aula tra quelle disponibili per continuare.' },
     { screen:'homeModule', target:'.mod-grid', type:'info',
       title:'Scegli il modulo 📚',
       body:'Ogni aula può abilitare solo alcuni moduli ICDL: qui vedi solo quelli disponibili per questa classe.' },
@@ -210,7 +232,7 @@ const OnboardingTour = (function () {
   const TEACHER_STEPS = [
     { screen:'coursesSelect', target:'.course-card', type:'action',
       title:'Benvenuto in PixelProf! 👋',
-      body:'Scegli una qualsiasi aula tra quelle disponibili per iniziare a esercitarti.' },
+      body:'Le aule sono raggruppate per area didattica: scegli una qualsiasi aula tra quelle disponibili per iniziare a esercitarti.' },
     { screen:'homeModule', target:'.mod-card:not(.soon-card)', type:'action',
       title:'Scegli il modulo 📚',
       body:'Ogni aula può abilitare solo alcuni moduli ICDL: qui vedi solo quelli disponibili per questa classe.' },

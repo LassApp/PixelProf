@@ -326,6 +326,29 @@ body{
   transition:all var(--transition-fast);
 }
 
+/* Generic area card — Fase 7.5 Sistema Aree. Card modulo per le Aree
+   extra-ECDL (Cybersecurity, Cyberbullismo, Reti, Malware...), generata
+   dinamicamente in JS (_renderModuleFilter, app.js) invece di una card
+   disegnata a mano per ciascuno dei 28 moduli come per CE/OE/WP. Riusa
+   --area-rgb già assegnata su #mod-area-catalog[data-area-key] (vedi
+   @layer areas sopra, stessa tecnica del raggruppamento "Scegli Aula"). */
+.mod-card.generic-card{
+  background:linear-gradient(145deg, rgba(var(--area-rgb,0,255,200),.05) 0%, rgba(var(--area-rgb,0,255,200),.12) 55%, rgba(var(--area-rgb,0,255,200),.05) 100%);
+  border-color:rgba(var(--area-rgb,0,255,200),.2);
+  box-shadow:0 4px 24px rgba(var(--area-rgb,0,255,200),.06);
+}
+.mod-card.generic-card::before{background:linear-gradient(90deg,transparent,rgba(var(--area-rgb,0,255,200),1),transparent);}
+.mod-card.generic-card:hover{
+  border-color:rgba(var(--area-rgb,0,255,200),.55);
+  box-shadow:0 12px 40px rgba(var(--area-rgb,0,255,200),.2),0 0 0 1px rgba(var(--area-rgb,0,255,200),.15),inset 0 1px 0 rgba(var(--area-rgb,0,255,200),.1);
+}
+.mod-card.generic-card:hover h3{color:rgba(var(--area-rgb,0,255,200),1);}
+.mod-card.generic-card .mc-badge{
+  background:rgba(var(--area-rgb,0,255,200),.14);color:rgba(var(--area-rgb,0,255,200),.95);
+  border:1px solid rgba(var(--area-rgb,0,255,200),.3);
+}
+.mod-card.generic-card .mc-icon{filter:drop-shadow(0 0 8px rgba(var(--area-rgb,0,255,200),.3));}
+
 /* CE card — electric blue */
 .mod-card.ce-card{
   background:linear-gradient(145deg,#081828 0%,#0d2040 55%,#0a1830 100%);
@@ -5619,6 +5642,14 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
   .cs-area-section[data-area-key="reti-internet"]{ --area-rgb:124,106,255; }
   .cs-area-section[data-area-key="malware-minacce"]{ --area-rgb:255,77,109; }
 
+  /* Fase 7.5 — stessa tripletta --area-rgb, applicata al contenitore delle
+     card modulo dinamiche nella schermata "Scegli modulo" (#mod-area-catalog,
+     vedi _renderModuleFilter in app.js) per le Aree extra-ECDL. */
+  #mod-area-catalog[data-area-key="cyberbullismo-sicurezza-online"]{ --area-rgb:255,180,0; }
+  #mod-area-catalog[data-area-key="cybersecurity"]{ --area-rgb:30,144,255; }
+  #mod-area-catalog[data-area-key="reti-internet"]{ --area-rgb:124,106,255; }
+  #mod-area-catalog[data-area-key="malware-minacce"]{ --area-rgb:255,77,109; }
+
   .cs-area-section-icon{
     font-size:20px;line-height:1;flex-shrink:0;
     filter:drop-shadow(0 0 8px rgba(var(--area-rgb,0,255,200),.15));
@@ -5662,6 +5693,12 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
   html[data-theme="light"] .cs-area-section[data-area-key="cybersecurity"]{ --area-rgb:29,78,216; }
   html[data-theme="light"] .cs-area-section[data-area-key="reti-internet"]{ --area-rgb:109,40,217; }
   html[data-theme="light"] .cs-area-section[data-area-key="malware-minacce"]{ --area-rgb:190,18,60; }
+
+  /* Fase 7.5 — equivalente light per #mod-area-catalog (vedi sopra). */
+  html[data-theme="light"] #mod-area-catalog[data-area-key="cyberbullismo-sicurezza-online"]{ --area-rgb:146,64,14; }
+  html[data-theme="light"] #mod-area-catalog[data-area-key="cybersecurity"]{ --area-rgb:29,78,216; }
+  html[data-theme="light"] #mod-area-catalog[data-area-key="reti-internet"]{ --area-rgb:109,40,217; }
+  html[data-theme="light"] #mod-area-catalog[data-area-key="malware-minacce"]{ --area-rgb:190,18,60; }
   /* Aule legacy/orfane — fallback neutro (255,255,255) del badge è
      illeggibile su sfondo chiaro: qui ridefinito su un grigio scuro
      coerente con .cs-area-section-label chiaro (#10182a). */

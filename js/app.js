@@ -795,14 +795,6 @@ function _renderModuleFilter(){
   const keys = window._activeModuleKeys || null;
   const ALL = ['CE','OE','WP','SS'];
 
-  // Fase 2.1 Sistema Aree — fix difensivo minimo (bug segnalato).
-  // Le card CE/OE/WP/SS in home sono cablate esclusivamente per l'Area
-  // ECDL. keys=null significa "nessuna whitelist configurata" e prima
-  // d'ora veniva letto come "mostra tutto" — ma per un'aula di un'Area
-  // diversa (es. Reti e Internet) "tutto" non può voler dire "le card
-  // ECDL": semplicemente quell'aula non ha ancora nulla di giocabile.
-  // Il catalogo dedicato per-Area completo resta Fase 3/7 — qui ci si
-  // limita a non mostrare mai contenuti della Area sbagliata.
   const course  = activeCourseId ? loadCourses().find(c=>c.id===activeCourseId) : null;
   const areaKey = course?.areaKey || 'ecdl';
   const isEcdl  = areaKey==='ecdl';
@@ -821,7 +813,61 @@ function _renderModuleFilter(){
 
   const catalog = shq('mod-ecdl-catalog');
   if(catalog) catalog.classList.toggle('hidden', !isEcdl);
-  _renderModAreaEmptyState(!isEcdl, areaKey);
+
+  const areaCatalog = shq('mod-area-catalog');
+  if(isEcdl){
+    if(areaCatalog) areaCatalog.classList.add('hidden');
+    _renderModAreaEmptyState(false, areaKey);
+    return;
+  }
+
+  // Fase 7.5 — catalogo dinamico per Aree extra-ECDL: mostra le card dei
+  // moduli con contentReady:true, ulteriormente filtrati dalla whitelist
+  // dell'aula (classroom_modules) quando configurata. Prima di v8.7.0 ogni
+  // Area diversa da ECDL finiva sempre nello stato vuoto, anche a moduli
+  // pronti (bug segnalato da Erasmo su Cybersecurity dopo v8.6.0).
+  const areaInfo  = window.AreasConfig?.getAreaByKey(areaKey) || null;
+  const readyMods = (areaInfo?.modules || []).filter(m =>
+    m.contentReady === true && (!keys || keys.includes(m.key))
+  );
+
+  if(readyMods.length === 0){
+    if(areaCatalog) areaCatalog.classList.add('hidden');
+    _renderModAreaEmptyState(true, areaKey);
+    return;
+  }
+
+  _renderModAreaEmptyState(false, areaKey);
+  if(areaCatalog){
+    areaCatalog.dataset.areaKey = areaKey; // attiva --area-rgb (pixelprof.css)
+    areaCatalog.classList.remove('hidden');
+  }
+  const grid = shq('mod-area-catalog-grid');
+  if(grid) grid.innerHTML = readyMods.map(m => _buildGenericModCard(m, areaInfo)).join('');
+}
+
+/**
+ * _buildGenericModCard — Fase 7.5 Sistema Aree.
+ * Card modulo per Aree extra-ECDL: stesso markup/comportamento click
+ * (id="mc-{key}", onclick="selMod(...)") delle card ECDL disegnate a
+ * mano, ma con uno stile generico riutilizzabile (.generic-card, colorato
+ * via --area-rgb) invece di un'illustrazione SVG dedicata per ciascuno
+ * dei 28 moduli extra-ECDL.
+ */
+function _buildGenericModCard(mod, areaInfo){
+  const icon      = areaInfo?.icon || '🗂️';
+  const areaLabel = areaInfo ? escHtml(_csAreaShortLabel(areaInfo.label)) : '';
+  return `
+    <div class="mod-card generic-card" id="mc-${escAttr(mod.key)}" role="button" tabindex="0"
+      aria-label="Seleziona modulo ${escAttr(mod.label)}"
+      onclick="selMod('${escAttr(mod.key)}')"
+      onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selMod('${escAttr(mod.key)}');}">
+      <span class="mc-badge">${areaLabel}</span>
+      <div class="mc-content">
+        <span class="mc-icon">${icon}</span>
+        <h3>${escHtml(mod.label)}</h3>
+      </div>
+    </div>`;
 }
 
 /**

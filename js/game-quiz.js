@@ -99,9 +99,8 @@ function ansQ(idx){
       _trackWrongQ(q.q, q.opts[q.a], getQuestionModule(q), 'speed');
     }
     const mod=getQuestionModule(q);
+    db.stats.byMod[mod]=db.stats.byMod[mod]||{c:0,w:0};
     db.stats.tot++;if(ok){db.stats.cor++;db.stats.byMod[mod].c++;}else db.stats.byMod[mod].w++;
-    save();renderLiveBar();
-    sh('qz-fb').innerHTML=`<div class="fb ${ok?'ok':'ko'}">${ok?'✓ Corretto! ':'✗ Sbagliato. '}${q.exp}</div>`;
     // Cloud hook — fire-and-forget
     if(typeof window.hook_trackAnswer==='function'&&qAnswerLog.length){
       const last=qAnswerLog[qAnswerLog.length-1];
@@ -138,6 +137,7 @@ function ansQ(idx){
   }
 
   const mod=getQuestionModule(q);
+  db.stats.byMod[mod]=db.stats.byMod[mod]||{c:0,w:0};
   db.stats.tot++;if(ok){db.stats.cor++;db.stats.byMod[mod].c++;}else db.stats.byMod[mod].w++;
   save();renderLiveBar();
   // Cloud hook — fire-and-forget

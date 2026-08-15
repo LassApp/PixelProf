@@ -960,6 +960,14 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     <!-- Stato vuoto — aule di Aree non-ECDL senza moduli pronti (Fase 2.1 Sistema Aree) -->
     <div id="mod-area-empty" class="mod-area-empty hidden"></div>
 
+    <!-- Catalogo dinamico — aule di Aree non-ECDL CON moduli pronti (Fase 7.5 Sistema Aree).
+         data-area-key viene impostato via JS da _renderModuleFilter per attivare
+         il colore --area-rgb corretto (vedi pixelprof.css, @layer areas). -->
+    <div id="mod-area-catalog" class="hidden">
+      <div class="home-divider"><span>moduli attivi</span></div>
+      <div class="mod-grid" id="mod-area-catalog-grid"></div>
+    </div>
+
     <!-- Catalogo ECDL — nascosto in blocco per aule di Aree diverse da ECDL -->
     <div id="mod-ecdl-catalog">
     <div class="home-divider"><span>moduli attivi</span></div>
@@ -1449,6 +1457,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div><!-- /app -->
 
 
-<script src="js/app.bundle.min.js?v=8.6.0"></script>
+<script src="js/app.bundle.min.js?v=8.7.0"></script>
 </body>
 </html>

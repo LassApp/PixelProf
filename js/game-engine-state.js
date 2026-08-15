@@ -1404,12 +1404,12 @@ function goStep(s){
   }
   if(s==='cat'){
     const catLabel=shq('cat-mod-label');
-    if(catLabel) catLabel.textContent=MOD_LABEL[sMod]||'';
+    if(catLabel) catLabel.textContent=modLabel(sMod);
     // v9.0.0: passo "scegli modalità" del tour guidato Docente.
     if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showHomeCategoryStep(), 300);
   }
   if(s==='act'){
-    sh('act-mod-label').textContent=MOD_LABEL[sMod]||'';
+    sh('act-mod-label').textContent=modLabel(sMod);
     if(!sAct)updateHero(null);
     // v9.0.0: rete di sicurezza per il passo Hub del tour guidato — di
     // norma già mostrato in modo opportunistico da _advance() non appena

@@ -61,7 +61,7 @@ function _histFormatDate(iso){
 function _histBuildCard(s,idx){
   const actIcon =_HIST_ACT_ICON[s.game] ||'🎮';
   const actLabel=_HIST_ACT_LABEL[s.game]||s.game;
-  const modLabel=_HIST_MOD_LABEL[s.mod] ||s.mod||'—';
+  const modLabelTxt=_HIST_MOD_LABEL[s.mod] ||(typeof modLabel==='function'?modLabel(s.mod):null)||s.mod||'—';
   const modColor=_HIST_MOD_COLOR[s.mod] ||'rgba(255,255,255,.3)';
   const modeLabel=s.mode==='sq'?'Squadre':'Individuale';
   const modeIcon =s.mode==='sq'?'👥':'👤';
@@ -94,7 +94,7 @@ function _histBuildCard(s,idx){
     <div class="hist-card-header">
       <span class="hist-card-icon">${actIcon}</span>
       <span class="hist-card-title">${escHtml(actLabel)}</span>
-      <span class="hist-card-modtag" style="background:${modColor}18;border:1px solid ${modColor}40;color:${modColor}">${escHtml(modLabel)}</span>
+      <span class="hist-card-modtag" style="background:${modColor}18;border:1px solid ${modColor}40;color:${modColor}">${escHtml(modLabelTxt)}</span>
       <span class="hist-card-modetag">${modeIcon} ${escHtml(modeLabel)}</span>
       <span class="hist-card-date">
         <i class="ti ti-clock" style="font-size:9px"></i> ${_histFormatDate(s.timestamp)}

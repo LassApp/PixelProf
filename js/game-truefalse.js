@@ -55,7 +55,7 @@ function renderTF(cont){
   );
   cont.innerHTML = `${hdr}
     <div class="q-card tf-card">
-      <div class="q-cat">// ${escHtml(MOD_LABEL[getQuestionModule(q)]||'')}</div>
+      <div class="q-cat">// ${escHtml(modLabel(getQuestionModule(q)))}</div>
       <div class="q-text">${escHtml(q.q)}</div>
     </div>
     <div class="tf-btns">
@@ -104,6 +104,7 @@ function checkTF(choice){
   // Progressi (Panoramica accuratezza per modulo) — Vero o Falso alimenta db.stats
   // come Quiz/Speed Quiz, a differenza di Completa la frase che non lo fa.
   const mod = getQuestionModule(q);
+  db.stats.byMod[mod] = db.stats.byMod[mod] || { c: 0, w: 0 };
   db.stats.tot++; if(ok){ db.stats.cor++; db.stats.byMod[mod].c++; } else db.stats.byMod[mod].w++;
   save();
 

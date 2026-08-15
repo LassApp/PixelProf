@@ -91,7 +91,7 @@
   - `speedquiz_fondamenti-cybersecurity.json`
   - `quiz_fondamenti-cybersecurity.json`
   - `abbina_fondamenti-cybersecurity.json`
-  - `verofalso_fondamenti-cybersecurity.json`
+  - `vero_o_falso_fondamenti-cybersecurity.json`
   - `completa_la_frase_fondamenti-cybersecurity.json`
 
 ```text
@@ -101,7 +101,7 @@ data/
         ├── speedquiz_fondamenti-cybersecurity.json
         ├── quiz_fondamenti-cybersecurity.json
         ├── abbina_fondamenti-cybersecurity.json
-        ├── verofalso_fondamenti-cybersecurity.json
+        ├── vero_o_falso_fondamenti-cybersecurity.json
         └── completa_la_frase_fondamenti-cybersecurity.json
 ```
 
@@ -117,7 +117,7 @@ data/
   - `completa_la_frase_sicurezza-account.json`
   - `quiz_sicurezza-account.json`
   - `speedquiz_sicurezza-account.json`
-  - `verofalso_sicurezza-account.json`
+  - `vero_o_falso_sicurezza-account.json`
 
 ```text
 data/
@@ -127,7 +127,7 @@ data/
         ├── completa_la_frase_sicurezza-account.json
         ├── quiz_sicurezza-account.json
         ├── speedquiz_sicurezza-account.json
-        └── verofalso_sicurezza-account.json
+        └── vero_o_falso_sicurezza-account.json
 ```
 
 ---
@@ -142,7 +142,7 @@ data/
   - `completa_la_frase_protezione-dati.json`
   - `quiz_protezione-dati.json`
   - `speedquiz_protezione-dati.json`
-  - `verofalso_protezione-dati.json`
+  - `vero_o_falso_protezione-dati.json`
 
 ```text
 data/
@@ -152,7 +152,7 @@ data/
         ├── completa_la_frase_protezione-dati.json
         ├── quiz_protezione-dati.json
         ├── speedquiz_protezione-dati.json
-        └── verofalso_protezione-dati.json
+        └── vero_o_falso_protezione-dati.json
 ```
 
 ---
@@ -240,7 +240,7 @@ data/
 - **File:**
   - `abbina_sicurezza-online-social-network.json`
   - `completa_la_frase_sicurezza-online-social-network.json`
-  - `quiz_privacy-sicurezza-online-social-network.json`
+  - `quiz_sicurezza-online-social-network.json`
   - `speedquiz_sicurezza-online-social-network.json`
   - `vero_o_falso_sicurezza-online-social-network.json`
 
@@ -250,7 +250,7 @@ data/
     └── modulo7/                         ← cartella comune
         ├── abbina_sicurezza-online-social-network.json
         ├── completa_la_frase_sicurezza-online-social-network.json
-        ├── quiz_privacy-sicurezza-online-social-network.json
+        ├── quiz_sicurezza-online-social-network.json
         ├── speedquiz_sicurezza-online-social-network.json
         └── vero_o_falso_sicurezza-online-social-network.json
 ```

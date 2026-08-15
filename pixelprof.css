@@ -5713,3 +5713,101 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
     background:linear-gradient(90deg,rgba(16,24,42,.16),transparent);
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v8.5.0 — GESTISCI/SCEGLI AULA: FILTRO E RICERCA PER AREA
+   (Sistema Aree, ROADMAP_AREE.md Fase 7.4).
+   Barra sopra #cs-grid, visibile solo al Direttore (courses.js,
+   _csRenderAreaFilterBar): input ricerca per nome aula + chip Area a
+   selezione singola. Pattern chip/interazione ripreso da
+   .chd-wq-modfilter-btn (@layer classhealth, dashboard.js — "Domande
+   difficili"). Colori per-Area riusano --area-rgb già introdotto in
+   Fase 7.1: ridefinita qui sulle chip (elemento diverso da
+   .cs-area-section, la custom property non eredita tra fratelli),
+   stessa palette, stesso fallback neutro (255,255,255) per la chip
+   "Tutte" — nessun nuovo colore introdotto nel sistema.
+   ═══════════════════════════════════════════════════════════════════ */
+@layer areas {
+
+  .cs-area-filterbar{
+    display:flex;flex-direction:column;gap:10px;
+    margin:0 0 1.75rem;
+  }
+
+  .cs-area-filter-search{
+    position:relative;display:flex;align-items:center;
+  }
+  .cs-area-filter-search i{
+    position:absolute;left:12px;font-size:14px;
+    color:rgba(255,255,255,.3);pointer-events:none;
+  }
+  .cs-area-filter-search input{
+    width:100%;padding:9px 34px;border-radius:20px;
+    border:1px solid var(--border-mid);background:var(--surface-1);
+    color:var(--text-primary);font-family:inherit;font-size:12.5px;
+    outline:none;transition:border var(--transition-fast),background var(--transition-fast);
+  }
+  .cs-area-filter-search input:focus{
+    border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,255,200,.08);
+  }
+  .cs-area-filter-search input::placeholder{ color:rgba(255,255,255,.25); }
+  .cs-area-filter-clear{
+    position:absolute;right:8px;width:20px;height:20px;border-radius:50%;
+    border:none;background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;
+    transition:background var(--transition-fast),color var(--transition-fast);
+  }
+  .cs-area-filter-clear:hover{ background:rgba(255,255,255,.14);color:#fff; }
+
+  .cs-area-filter-chips{ display:flex;flex-wrap:wrap;gap:6px; }
+
+  /* Palette per-chip — stessa tripletta di .cs-area-section (Fase 7.1) */
+  .cs-area-filter-chip[data-area-key="ecdl"]{ --area-rgb:0,255,200; }
+  .cs-area-filter-chip[data-area-key="cyberbullismo-sicurezza-online"]{ --area-rgb:255,180,0; }
+  .cs-area-filter-chip[data-area-key="cybersecurity"]{ --area-rgb:30,144,255; }
+  .cs-area-filter-chip[data-area-key="reti-internet"]{ --area-rgb:124,106,255; }
+  .cs-area-filter-chip[data-area-key="malware-minacce"]{ --area-rgb:255,77,109; }
+
+  .cs-area-filter-chip{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:6px 12px;border-radius:20px;
+    border:1px solid var(--border-mid);background:var(--surface-1);
+    color:rgba(255,255,255,.55);font-size:11.5px;font-weight:600;
+    cursor:pointer;font-family:inherit;transition:all var(--transition-fast);
+  }
+  .cs-area-filter-chip:hover{
+    border-color:rgba(var(--area-rgb,255,255,255),.4);
+    color:rgba(var(--area-rgb,255,255,255),.9);
+  }
+  .cs-area-filter-chip.active{
+    background:rgba(var(--area-rgb,255,255,255),.14);
+    border-color:rgba(var(--area-rgb,255,255,255),.5);
+    color:rgba(var(--area-rgb,255,255,255),1);
+  }
+  .cs-area-filter-chip-count{
+    font-size:9px;font-weight:700;padding:0 5px;border-radius:20px;
+    background:rgba(255,255,255,.1);font-family:'Share Tech Mono',monospace;
+    color:inherit;
+  }
+  .cs-area-filter-chip.active .cs-area-filter-chip-count{
+    background:rgba(var(--area-rgb,255,255,255),.25);
+  }
+
+  /* Card/sezioni nascoste dal filtro Area — classe dedicata, non
+     interferisce con .hidden (stato UI applicativo, vedi header file). */
+  .cs-area-section.caf-hidden,
+  .course-card.caf-hidden{ display:none; }
+}
+
+@layer theme {
+  /* ── Filtro Area — tema chiaro (stesse varianti scure di Fase 7.1) ── */
+  html[data-theme="light"] .cs-area-filter-search input{ color:#10182a; }
+  html[data-theme="light"] .cs-area-filter-search input::placeholder{ color:rgba(16,24,42,.35); }
+  html[data-theme="light"] .cs-area-filter-chip{ color:rgba(16,24,42,.55); }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="all"]{ --area-rgb:16,24,42; }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="ecdl"]{ --area-rgb:10,122,92; }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="cyberbullismo-sicurezza-online"]{ --area-rgb:146,64,14; }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="cybersecurity"]{ --area-rgb:29,78,216; }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="reti-internet"]{ --area-rgb:109,40,217; }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="malware-minacce"]{ --area-rgb:190,18,60; }
+}

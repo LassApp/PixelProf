@@ -51,6 +51,11 @@ let _ddCourseId=null; // id del corso a cui appartiene il dropdown aperto
 let _csMode='select';
 function setCoursesScreenMode(mode){
   _csMode=(mode==='manage')?'manage':'select';
+  // v8.5.0: ogni nuovo ingresso in screen-courses azzera filtro/ricerca Area
+  // (stesso ciclo di vita di _csMode) — vedi _csAreaFilterReset più sotto.
+  _csAreaFilterReset();
+  _csRenderAreaFilterBar();
+  _csApplyAreaFilter();
   const addForm=document.getElementById('cs-add-form-wrap');
   if(addForm) addForm.classList.toggle('is-hidden-by-cs-mode', _csMode!=='manage');
   // v8.x: titolo/sottotitolo hero dinamici — 'manage' (Direttore → Gestisci Aule)
@@ -135,6 +140,7 @@ function renderCoursesGrid(){
       <div class="cs-empty-icon">🏫</div>
       <div class="cs-empty-text">Nessuna aula ancora.<br>Crea la prima per iniziare!</div>
     </div>`;
+    _csRenderAreaFilterBar(); // nasconde la barra (0 aule) — v8.5.0
     return;
   }
 
@@ -167,6 +173,120 @@ function renderCoursesGrid(){
     card.addEventListener('mouseenter',()=>{ card.style.boxShadow=glowHover; });
     card.addEventListener('mouseleave',()=>{ card.style.boxShadow=glowBase;  });
   });
+
+  _csRenderAreaFilterBar(); // v8.5.0 — ricostruisce chip/contatori sul DOM appena renderizzato
+  _csApplyAreaFilter();
+}
+
+/* ==================================================
+   FILTRO/RICERCA PER AREA — v8.5.0 (ROADMAP_AREE.md Fase 7.4)
+   Barra sopra #cs-grid, SOLO Direttore (entrambe le modalità _csMode
+   'select'/'manage' — vedi setCoursesScreenMode) — ricerca per nome
+   aula + chip Area a selezione singola. Stato (_cafArea/_cafQuery)
+   persiste tra i re-render dello stesso ingresso in schermata (CRUD
+   aule chiamano renderCoursesGrid senza voler perdere il filtro) e
+   viene azzerato solo da setCoursesScreenMode(), stesso ciclo di vita
+   di _csMode.
+   Pattern chip/interazione ripreso da .chd-wq-modfilter-btn
+   (dashboard.js, "Domande difficili"); colori per-Area riusano
+   --area-rgb già introdotto in Fase 7.1 (ridefinito qui sulle chip:
+   elemento diverso da .cs-area-section, la custom property non
+   eredita tra fratelli — vedi pixelprof.css). Il ruolo è sempre la
+   fonte di verità, stesso guard già usato in _csCardClick.
+================================================== */
+let _cafArea='all', _cafQuery='';
+
+function _csAreaFilterReset(){
+  _cafArea='all'; _cafQuery='';
+  const inp=document.getElementById('cs-area-filter-search-inp');
+  if(inp) inp.value='';
+  const clearBtn=document.getElementById('cs-area-filter-clear-btn');
+  if(clearBtn) clearBtn.classList.add('hidden');
+}
+
+/** Solo per la label in chip: "Cybersecurity — Non solo..." → "Cybersecurity". Label completa invariata altrove. */
+function _csAreaShortLabel(label){
+  return String(label||'').split(' — ')[0];
+}
+
+/** Ricostruisce visibilità + chip della barra filtro in base a ruolo corrente e aule caricate. */
+function _csRenderAreaFilterBar(){
+  const bar=document.getElementById('cs-area-filterbar');
+  if(!bar) return;
+  const courses=loadCourses();
+  const visible=!!(window.Auth?.isDirector() && courses.length);
+  bar.classList.toggle('hidden', !visible);
+  if(!visible) return;
+
+  const byArea={};
+  courses.forEach(c=>{ const k=c.areaKey||'ecdl'; byArea[k]=(byArea[k]||0)+1; });
+
+  const chips=document.getElementById('cs-area-filter-chips');
+  if(!chips) return;
+  let html=`<button type="button" class="cs-area-filter-chip${_cafArea==='all'?' active':''}"
+      data-area-key="all" onclick="_csAreaFilterPick('all')">
+      <span>🗂️ Tutte</span><span class="cs-area-filter-chip-count">${courses.length}</span>
+    </button>`;
+  (window.AREAS||[]).forEach(area=>{
+    const count=byArea[area.key]||0;
+    if(!count) return; // niente chip per Aree senza aule — coerente con le sezioni (Fase 3)
+    html+=`<button type="button" class="cs-area-filter-chip${_cafArea===area.key?' active':''}"
+        data-area-key="${escAttr(area.key)}" onclick="_csAreaFilterPick('${escAttr(area.key)}')">
+        <span>${area.icon} ${escHtml(_csAreaShortLabel(area.label))}</span>
+        <span class="cs-area-filter-chip-count">${count}</span>
+      </button>`;
+  });
+  chips.innerHTML=html;
+}
+
+function _csAreaFilterPick(key){
+  _cafArea=key;
+  document.querySelectorAll('#cs-area-filter-chips .cs-area-filter-chip').forEach(btn=>{
+    btn.classList.toggle('active', btn.dataset.areaKey===key);
+  });
+  _csApplyAreaFilter();
+}
+
+function _csAreaFilterSearch(value){
+  _cafQuery=String(value||'').trim().toLowerCase();
+  const clearBtn=document.getElementById('cs-area-filter-clear-btn');
+  if(clearBtn) clearBtn.classList.toggle('hidden', !_cafQuery);
+  _csApplyAreaFilter();
+}
+
+function _csAreaFilterClear(){
+  const inp=document.getElementById('cs-area-filter-search-inp');
+  if(inp) inp.value='';
+  _csAreaFilterSearch('');
+}
+
+/** Applica _cafArea/_cafQuery al DOM già renderizzato da renderCoursesGrid(). */
+function _csApplyAreaFilter(){
+  const grid=document.getElementById('cs-grid');
+  if(!grid) return;
+  const sections=grid.querySelectorAll('.cs-area-section');
+  if(!sections.length) return; // 0 aule — stato vuoto già gestito da renderCoursesGrid
+
+  // Il ruolo resta la fonte di verità (stesso guard di _csCardClick): un
+  // filtro Direttore residuo in RAM non deve nascondere aule a un Docente.
+  if(!window.Auth?.isDirector()){ _cafArea='all'; _cafQuery=''; }
+
+  let anyVisible=false;
+  sections.forEach(section=>{
+    const areaMatches=(_cafArea==='all'||section.dataset.areaKey===_cafArea);
+    let visibleInSection=0;
+    section.querySelectorAll('.course-card').forEach(card=>{
+      const name=(card.querySelector('.course-card-name')?.textContent||'').toLowerCase();
+      const show=areaMatches&&(!_cafQuery||name.includes(_cafQuery));
+      card.classList.toggle('caf-hidden', !show);
+      if(show) visibleInSection++;
+    });
+    section.classList.toggle('caf-hidden', visibleInSection===0);
+    if(visibleInSection>0) anyVisible=true;
+  });
+
+  const empty=document.getElementById('cs-grid-empty-filtered');
+  if(empty) empty.classList.toggle('hidden', anyVisible);
 }
 
 /** Costruisce l'HTML di una sezione Area: header (icona+nome+contatore) + griglia aule. */

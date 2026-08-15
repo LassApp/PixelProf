@@ -597,7 +597,25 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <button class="cs-add-btn" onclick="openCourseWizard()"><i class="ti ti-plus"></i> Crea</button>
       </div>
     </div>
+    <!-- Filtro/ricerca per Area — v8.5.0 (ROADMAP_AREE.md Fase 7.4). Visibilità
+         (solo Direttore) e contenuto chip gestiti da courses.js (_csRenderAreaFilterBar). -->
+    <div class="cs-area-filterbar hidden" id="cs-area-filterbar">
+      <div class="cs-area-filter-search">
+        <i class="ti ti-search" aria-hidden="true"></i>
+        <input type="text" id="cs-area-filter-search-inp" placeholder="Cerca aula per nome..."
+          oninput="_csAreaFilterSearch(this.value)" aria-label="Cerca aula per nome">
+        <button type="button" class="cs-area-filter-clear hidden" id="cs-area-filter-clear-btn"
+          onclick="_csAreaFilterClear()" title="Cancella ricerca" aria-label="Cancella ricerca">
+          <i class="ti ti-x"></i>
+        </button>
+      </div>
+      <div class="cs-area-filter-chips" id="cs-area-filter-chips"></div>
+    </div>
     <div id="cs-grid" class="cs-catalog"></div>
+    <div class="cs-empty hidden" id="cs-grid-empty-filtered">
+      <div class="cs-empty-icon">🔍</div>
+      <div class="cs-empty-text">Nessuna aula trovata.<br>Prova a modificare ricerca o filtro Area.</div>
+    </div>
   </div>
 </div>
 
@@ -1431,6 +1449,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div><!-- /app -->
 
 
-<script src="js/app.bundle.min.js?v=8.4.1"></script>
+<script src="js/app.bundle.min.js?v=8.5.0"></script>
 </body>
 </html>

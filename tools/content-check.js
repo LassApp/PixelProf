@@ -23,8 +23,11 @@
 
    Convenzione di naming file (osservata sui 3 moduli ECDL esistenti,
    NOTA 1 in areas-config.js): per i moduli con `dataPaths` esplicito
-   (oggi solo CE/OE/WP) si usa quello; per tutti gli altri (28 moduli,
-   `key` già in forma slug) si deriva:
+   (CE/OE/WP + Area Cybersecurity, che usa una struttura a cartelle
+   per-modulo dedicata) si usano quei path, tipo per tipo, con fallback
+   alla convenzione sotto per i tipi non ancora specificati (es. un
+   modulo con "memory" non presente in dataPaths); per tutti gli altri
+   moduli (`key` già in forma slug, nessun dataPaths) si deriva:
      data/quiz/{slug}.json
      data/speed_quiz/{slug}.json
      data/abbina/{slug}_abbina.json
@@ -64,14 +67,30 @@ function slugFor(mod) {
   return mod.key;
 }
 
-function expectedPaths(slug) {
-  return {
+function expectedPaths(mod) {
+  const slug = slugFor(mod);
+  const conventional = {
     quiz:          `data/quiz/${slug}.json`,
     speed:         `data/speed_quiz/${slug}.json`,
     abbina:        `data/abbina/${slug}_abbina.json`,
     memory:        `data/memory/${slug}_memory.json`,
     completaFrase: `data/completa_frase/${slug}_completa_frase.json`,
     veroFalso:     `data/vero_falso/${slug}.json`,
+  };
+  if (!mod.dataPaths) return conventional;
+  // dataPaths esplicito (oggi CE/OE/WP + Area Cybersecurity, che usa una
+  // struttura a cartelle per-modulo diversa dalla convenzione flat sopra):
+  // rispettato tipo per tipo, con fallback alla convenzione per i soli
+  // tipi non ancora specificati (es. "memory" quando il JSON non esiste
+  // ancora) — così un modulo con dataPaths parziale viene comunque
+  // controllato correttamente invece di essere dato per "tutto mancante".
+  return {
+    quiz:          mod.dataPaths.quiz          || conventional.quiz,
+    speed:         mod.dataPaths.speed         || conventional.speed,
+    abbina:        mod.dataPaths.abbina        || conventional.abbina,
+    memory:        mod.dataPaths.memory        || conventional.memory,
+    completaFrase: mod.dataPaths.completaFrase || conventional.completaFrase,
+    veroFalso:     mod.dataPaths.veroFalso     || conventional.veroFalso,
   };
 }
 
@@ -199,7 +218,7 @@ function scan() {
     const areaReport = { key: area.key, label: area.label, icon: area.icon, modules: [] };
     area.modules.forEach(mod => {
       const slug = slugFor(mod);
-      const paths = expectedPaths(slug);
+      const paths = expectedPaths(mod);
       const files = {};
       let okCount = 0;
       Object.keys(paths).forEach(type => {

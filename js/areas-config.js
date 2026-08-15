@@ -109,14 +109,102 @@ const AREAS = [
     icon: '👤',
     description: 'Sviluppare consapevolezza e competenze per proteggere identità, account, dati e attività digitali.',
     modules: [
-      { key: 'fondamenti-cybersecurity',        label: 'Fondamenti di Cybersecurity',       contentReady: false },
-      { key: 'sicurezza-account',               label: 'Sicurezza degli Account',           contentReady: false },
-      { key: 'protezione-dati',                 label: 'Protezione dei Dati',               contentReady: false },
-      { key: 'sicurezza-quotidiana',            label: 'Sicurezza Quotidiana',              contentReady: false },
-      { key: 'sicurezza-pagamenti',             label: 'Sicurezza dei Pagamenti',           contentReady: false },
-      { key: 'privacy-normative',               label: 'Privacy e Normative',               contentReady: false },
-      { key: 'sicurezza-online-social-network', label: 'Sicurezza Online e Social Network', contentReady: false },
-      { key: 'nuove-minacce-digitali',          label: 'Nuove Minacce Digitali',            contentReady: false },
+      /* contentReady:true dal 15/08/2026 — JSON committati da Erasmo in
+         data/Cybersecurity_Non_solo_antivirus_e_password/moduloN/. Manca
+         solo il file "memory" per tutti gli 8 moduli (non ancora creato):
+         dataPaths quindi NON include la chiave memory — stesso pattern già
+         in uso per WP (contentReady:true con giochi parzialmente pronti).
+         Il pulsante Memory in UI resta visibile per uniformità con gli
+         altri moduli; il loader mostrerà la card "non disponibile" già
+         prevista per i moduli senza file, finché il JSON memory non arriva. */
+      {
+        key: 'fondamenti-cybersecurity', label: 'Fondamenti di Cybersecurity', contentReady: true,
+        dataPaths: {
+          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/quiz_fondamenti-cybersecurity.json',
+          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/speedquiz_fondamenti-cybersecurity.json',
+          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/abbina_fondamenti-cybersecurity.json',
+          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/completa_la_frase_fondamenti-cybersecurity.json',
+          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/vero_o_falso_fondamenti-cybersecurity.json',
+        },
+      },
+      {
+        key: 'sicurezza-account', label: 'Sicurezza degli Account', contentReady: true,
+        dataPaths: {
+          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/quiz__sicurezza-account.json',
+          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/speedquiz_sicurezza-account.json',
+          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/abbina_sicurezza-account.json',
+          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/completa_la_frase_sicurezza-account.json',
+          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/vero_o_falso_sicurezza-account.json',
+        },
+      },
+      {
+        key: 'protezione-dati', label: 'Protezione dei Dati', contentReady: true,
+        dataPaths: {
+          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/quiz_protezione-dati.json',
+          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/speedquiz_protezione-dati.json',
+          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/abbina_protezione-dati.json',
+          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/completa_la_frase_protezione-dati.json',
+          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/vero_o_falso_protezione-dati.json',
+        },
+      },
+      {
+        // BLOCCATO — vedi nota in cima al file: abbina_sicurezza_quotidiana.json
+        // usa lo schema alternativo "pairs" (array di round), incompatibile con
+        // l'AbbinLoader attuale che richiede {sets:[[...]]}. dataPaths già pronto,
+        // contentReady resta false finché non si decide come risolvere il formato.
+        key: 'sicurezza-quotidiana', label: 'Sicurezza Quotidiana', contentReady: false,
+        dataPaths: {
+          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/quiz_sicurezza_quotidiana.json',
+          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/speedquiz_sicurezza_quotidiana.json',
+          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/abbina_sicurezza_quotidiana.json',
+          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/completa_la_frase__sicurezza_quotidiana.json',
+          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/vero_o_falso_sicurezza_quotidiana.json',
+        },
+      },
+      {
+        // BLOCCATO — abbina_sicurezza-pagamenti.json usa schema "pairs", vedi nota sopra.
+        key: 'sicurezza-pagamenti', label: 'Sicurezza dei Pagamenti', contentReady: false,
+        dataPaths: {
+          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/quiz_sicurezza-pagamenti.json',
+          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/speedquiz_sicurezza-pagamenti.json',
+          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/abbina_sicurezza-pagamenti.json',
+          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/completa_la_frase_sicurezza-pagamenti.json',
+          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/vero_o_falso_sicurezza-pagamenti.json',
+        },
+      },
+      {
+        // BLOCCATO — abbina_privacy-normative.json usa schema "pairs", vedi nota sopra.
+        key: 'privacy-normative', label: 'Privacy e Normative', contentReady: false,
+        dataPaths: {
+          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/quiz_privacy-normative.json',
+          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/speedquiz_privacy-normative.json',
+          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/abbina_privacy-normative.json',
+          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/completa_la_frase_privacy-normative.json',
+          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/vero_o_falso_privacy-normative.json',
+        },
+      },
+      {
+        // BLOCCATO — abbina_sicurezza-online-social-network.json usa schema "pairs", vedi nota sopra.
+        key: 'sicurezza-online-social-network', label: 'Sicurezza Online e Social Network', contentReady: false,
+        dataPaths: {
+          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/quiz_sicurezza-online-social-network.json',
+          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/speedquiz_sicurezza-online-social-network.json',
+          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/abbina_sicurezza-online-social-network.json',
+          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/completa_la_frase_sicurezza-online-social-network.json',
+          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/vero_o_falso_sicurezza-online-social-network.json',
+        },
+      },
+      {
+        // BLOCCATO — abbina_nuove-minacce-digitali.json usa schema "pairs", vedi nota sopra.
+        key: 'nuove-minacce-digitali', label: 'Nuove Minacce Digitali', contentReady: false,
+        dataPaths: {
+          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/quiz_nuove-minacce-digitali.json',
+          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/speedquiz_nuove-minacce-digitali.json',
+          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/abbina_nuove-minacce-digitali.json',
+          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/completa_la_frase_nuove-minacce-digitali.json',
+          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/vero_o_falso_nuove-minacce-digitali.json',
+        },
+      },
     ],
   },
   {

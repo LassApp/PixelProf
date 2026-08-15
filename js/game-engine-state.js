@@ -105,7 +105,7 @@ const QuizLoader = _createLoader({
     OE: 'data/quiz/online_essentials.json',
     WP: 'data/quiz/word_processing.json',
     'fondamenti-cybersecurity': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/quiz_fondamenti-cybersecurity.json',
-    'sicurezza-account': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/quiz__sicurezza-account.json',
+    'sicurezza-account': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/quiz_sicurezza-account.json',
     'protezione-dati': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/quiz_protezione-dati.json',
     'sicurezza-quotidiana': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/quiz_sicurezza_quotidiana.json',
     'sicurezza-pagamenti': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/quiz_sicurezza-pagamenti.json',
@@ -143,6 +143,10 @@ const SpeedQuizLoader = _createLoader({
 });
 
 /* -- Abbina -- */
+// Due formati contenuto supportati:
+//  A) "sets"  — { sets: [ [ {term,definition}, ... ], ... ] }   (formato storico CE/OE/WP)
+//  B) "pairs" — [ { id, difficulty, pairs: [ {term,definition}, ... ] }, ... ]  (formato adottato da Erasmo per i round con difficulty propria)
+// normalize converte entrambi nella stessa forma interna [[{t,d},...],...].
 const AbbinLoader = _createLoader({
   moduleMap: {
     CE: 'data/abbina/computer_essentials_abbina.json',
@@ -158,10 +162,15 @@ const AbbinLoader = _createLoader({
     'nuove-minacce-digitali': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/abbina_nuove-minacce-digitali.json',
   },
   tag: 'Abbina',
-  validate: raw => raw && Array.isArray(raw.sets) && raw.sets.length > 0,
-  normalize: (raw) => raw.sets.map(set =>
-    set.map(pair => ({ t: pair.term, d: pair.definition }))
-  ),
+  validate: raw => {
+    if (raw && Array.isArray(raw.sets) && raw.sets.length > 0) return true;
+    if (Array.isArray(raw) && raw.length > 0 && raw.every(r => r && Array.isArray(r.pairs) && r.pairs.length > 0)) return true;
+    return false;
+  },
+  normalize: (raw) => {
+    const sets = Array.isArray(raw) ? raw.map(r => r.pairs) : raw.sets;
+    return sets.map(set => set.map(pair => ({ t: pair.term, d: pair.definition })));
+  },
 });
 
 /* -- Memory -- */
@@ -185,7 +194,7 @@ const CompletaFraseLoader = _createLoader({
     'fondamenti-cybersecurity': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/completa_la_frase_fondamenti-cybersecurity.json',
     'sicurezza-account': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/completa_la_frase_sicurezza-account.json',
     'protezione-dati': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/completa_la_frase_protezione-dati.json',
-    'sicurezza-quotidiana': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/completa_la_frase__sicurezza_quotidiana.json',
+    'sicurezza-quotidiana': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/completa_la_frase_sicurezza_quotidiana.json',
     'sicurezza-pagamenti': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/completa_la_frase_sicurezza-pagamenti.json',
     'privacy-normative': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/completa_la_frase_privacy-normative.json',
     'sicurezza-online-social-network': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/completa_la_frase_sicurezza-online-social-network.json',

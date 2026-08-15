@@ -110,13 +110,18 @@ const AREAS = [
     description: 'Sviluppare consapevolezza e competenze per proteggere identità, account, dati e attività digitali.',
     modules: [
       /* contentReady:true dal 15/08/2026 — JSON committati da Erasmo in
-         data/Cybersecurity_Non_solo_antivirus_e_password/moduloN/. Manca
-         solo il file "memory" per tutti gli 8 moduli (non ancora creato):
-         dataPaths quindi NON include la chiave memory — stesso pattern già
-         in uso per WP (contentReady:true con giochi parzialmente pronti).
-         Il pulsante Memory in UI resta visibile per uniformità con gli
-         altri moduli; il loader mostrerà la card "non disponibile" già
-         prevista per i moduli senza file, finché il JSON memory non arriva. */
+         data/Cybersecurity_Non_solo_antivirus_e_password/moduloN/.
+         AbbinLoader (game-engine-state.js) supporta due formati per il
+         gioco Abbina: "sets" (modulo1-3, storico CE/OE/WP) e "pairs"
+         (modulo4-8, nuovo formato con difficulty per round — quello che
+         Erasmo userà anche per aggiornare modulo1-3 ed ECDL in seguito).
+         Manca solo il file "memory" per tutti gli 8 moduli (non ancora
+         creato): dataPaths quindi NON include la chiave memory — stesso
+         pattern già in uso per WP (contentReady:true con giochi
+         parzialmente pronti). Il pulsante Memory in UI resta visibile per
+         uniformità con gli altri moduli; il loader mostrerà la card "non
+         disponibile" già prevista per i moduli senza file, finché il
+         JSON memory non arriva. */
       {
         key: 'fondamenti-cybersecurity', label: 'Fondamenti di Cybersecurity', contentReady: true,
         dataPaths: {
@@ -130,7 +135,7 @@ const AREAS = [
       {
         key: 'sicurezza-account', label: 'Sicurezza degli Account', contentReady: true,
         dataPaths: {
-          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/quiz__sicurezza-account.json',
+          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/quiz_sicurezza-account.json',
           speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/speedquiz_sicurezza-account.json',
           abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/abbina_sicurezza-account.json',
           completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/completa_la_frase_sicurezza-account.json',
@@ -148,22 +153,17 @@ const AREAS = [
         },
       },
       {
-        // BLOCCATO — vedi nota in cima al file: abbina_sicurezza_quotidiana.json
-        // usa lo schema alternativo "pairs" (array di round), incompatibile con
-        // l'AbbinLoader attuale che richiede {sets:[[...]]}. dataPaths già pronto,
-        // contentReady resta false finché non si decide come risolvere il formato.
-        key: 'sicurezza-quotidiana', label: 'Sicurezza Quotidiana', contentReady: false,
+        key: 'sicurezza-quotidiana', label: 'Sicurezza Quotidiana', contentReady: true,
         dataPaths: {
           quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/quiz_sicurezza_quotidiana.json',
           speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/speedquiz_sicurezza_quotidiana.json',
           abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/abbina_sicurezza_quotidiana.json',
-          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/completa_la_frase__sicurezza_quotidiana.json',
+          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/completa_la_frase_sicurezza_quotidiana.json',
           veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/vero_o_falso_sicurezza_quotidiana.json',
         },
       },
       {
-        // BLOCCATO — abbina_sicurezza-pagamenti.json usa schema "pairs", vedi nota sopra.
-        key: 'sicurezza-pagamenti', label: 'Sicurezza dei Pagamenti', contentReady: false,
+        key: 'sicurezza-pagamenti', label: 'Sicurezza dei Pagamenti', contentReady: true,
         dataPaths: {
           quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/quiz_sicurezza-pagamenti.json',
           speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/speedquiz_sicurezza-pagamenti.json',
@@ -173,8 +173,7 @@ const AREAS = [
         },
       },
       {
-        // BLOCCATO — abbina_privacy-normative.json usa schema "pairs", vedi nota sopra.
-        key: 'privacy-normative', label: 'Privacy e Normative', contentReady: false,
+        key: 'privacy-normative', label: 'Privacy e Normative', contentReady: true,
         dataPaths: {
           quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/quiz_privacy-normative.json',
           speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/speedquiz_privacy-normative.json',
@@ -184,8 +183,7 @@ const AREAS = [
         },
       },
       {
-        // BLOCCATO — abbina_sicurezza-online-social-network.json usa schema "pairs", vedi nota sopra.
-        key: 'sicurezza-online-social-network', label: 'Sicurezza Online e Social Network', contentReady: false,
+        key: 'sicurezza-online-social-network', label: 'Sicurezza Online e Social Network', contentReady: true,
         dataPaths: {
           quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/quiz_sicurezza-online-social-network.json',
           speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/speedquiz_sicurezza-online-social-network.json',
@@ -195,8 +193,7 @@ const AREAS = [
         },
       },
       {
-        // BLOCCATO — abbina_nuove-minacce-digitali.json usa schema "pairs", vedi nota sopra.
-        key: 'nuove-minacce-digitali', label: 'Nuove Minacce Digitali', contentReady: false,
+        key: 'nuove-minacce-digitali', label: 'Nuove Minacce Digitali', contentReady: true,
         dataPaths: {
           quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/quiz_nuove-minacce-digitali.json',
           speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/speedquiz_nuove-minacce-digitali.json',

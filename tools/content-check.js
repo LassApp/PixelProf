@@ -120,10 +120,20 @@ function validateQuizLike(raw) {
 }
 
 function validateAbbina(raw) {
-  if (!raw || !Array.isArray(raw.sets) || raw.sets.length === 0)
-    return '"sets" mancante o vuoto';
-  for (let i = 0; i < raw.sets.length; i++) {
-    const set = raw.sets[i];
+  // Due formati riconosciuti (vedi nota AbbinLoader in game-engine-state.js):
+  //  A) { sets: [[{term,definition},...],...] }               — storico CE/OE/WP
+  //  B) [ {id,difficulty,pairs:[{term,definition},...]}, ... ] — nuovo formato per round
+  let sets;
+  if (raw && Array.isArray(raw.sets)) {
+    sets = raw.sets;
+  } else if (Array.isArray(raw) && raw.length > 0 && raw.every(r => r && Array.isArray(r.pairs))) {
+    sets = raw.map(r => r.pairs);
+  } else {
+    return '"sets" (formato A) o array di round con "pairs" (formato B) mancante o non riconosciuto';
+  }
+  if (sets.length === 0) return '"sets" vuoto';
+  for (let i = 0; i < sets.length; i++) {
+    const set = sets[i];
     if (!Array.isArray(set) || set.length < 2)
       return `sets[${i}]: deve avere almeno 2 coppie term/definition`;
     for (let j = 0; j < set.length; j++) {

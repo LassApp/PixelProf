@@ -1,0 +1,646 @@
+[
+  {
+    "id": 1,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ digitale è il diritto di controllare come i propri dati personali vengono raccolti, utilizzati e condivisi online.",
+    "answer": "privacy",
+    "bank": [
+      "pubblicità",
+      "cronologia",
+      "privacy",
+      "connessione"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La privacy è il controllo sulle ____ che lasciamo nel mondo digitale.",
+    "answer": "tracce",
+    "bank": [
+      "fatture",
+      "password",
+      "notifiche",
+      "tracce"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I dati ____ sono qualsiasi informazione che permette di identificare direttamente o indirettamente una persona fisica.",
+    "answer": "personali",
+    "bank": [
+      "temporanei",
+      "pubblici",
+      "personali",
+      "aziendali"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nome, cognome e documento d'identità sono considerati dati direttamente ____.",
+    "answer": "identificativi",
+    "bank": [
+      "temporanei",
+      "identificativi",
+      "anonimi",
+      "pubblici"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il vero valore del dato non sta solo nell'informazione contenuta, ma nella possibilità di ____ ad altre informazioni.",
+    "answer": "collegarla",
+    "bank": [
+      "cancellarla",
+      "collegarla",
+      "nasconderla",
+      "venderla"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un'organizzazione non dovrebbe raccogliere dati semplicemente perché può farlo: deve esistere una finalità precisa, chiara e ____.",
+    "answer": "legittima",
+    "bank": [
+      "temporanea",
+      "legittima",
+      "pubblica",
+      "economica"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2018 il caso ____ mostrò come dati raccolti tramite una piattaforma digitale potessero essere usati per creare profili e influenzare comportamenti.",
+    "answer": "Cambridge Analytica",
+    "bank": [
+      "Colonial Pipeline",
+      "Target Corporation",
+      "Home Depot",
+      "Cambridge Analytica"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della biblioteca, una singola lettura dice poco, ma nel tempo si può costruire un ____ molto preciso di una persona.",
+    "answer": "ritratto",
+    "bank": [
+      "catalogo",
+      "ritratto",
+      "elenco",
+      "biglietto"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I dati personali sono frammenti della nostra ____ che, collegati tra loro, possono raccontare chi siamo.",
+    "answer": "identità",
+    "bank": [
+      "posizione",
+      "connessione",
+      "identità",
+      "password"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il GDPR è entrato in vigore nel ____ con l'obiettivo di aumentare la tutela delle persone nel mondo digitale.",
+    "answer": "2018",
+    "bank": [
+      "2020",
+      "2018",
+      "2015",
+      "2022"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il principio centrale del GDPR afferma che i dati appartengono alle ____, non alle organizzazioni che li raccolgono.",
+    "answer": "persone",
+    "bank": [
+      "piattaforme",
+      "aziende",
+      "banche",
+      "persone"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ significa che la persona deve sapere cosa succede ai propri dati.",
+    "answer": "trasparenza",
+    "bank": [
+      "minimizzazione",
+      "portabilità",
+      "trasparenza",
+      "responsabilità"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ significa che devono essere raccolti soltanto i dati necessari.",
+    "answer": "minimizzazione",
+    "bank": [
+      "profilazione",
+      "trasparenza",
+      "minimizzazione",
+      "responsabilità"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ significa che chi raccoglie informazioni deve anche proteggerle.",
+    "answer": "responsabilità",
+    "bank": [
+      "responsabilità",
+      "portabilità",
+      "minimizzazione",
+      "trasparenza"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le organizzazioni non sono proprietarie dei dati, ma ____ temporanee di informazioni che appartengono alle persone.",
+    "answer": "custodi",
+    "bank": [
+      "editrici",
+      "custodi",
+      "fondatrici",
+      "clienti"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2023 diversi enti pubblici e aziende europee hanno ricevuto ____ per violazioni legate al trattamento dei dati personali.",
+    "answer": "sanzioni",
+    "bank": [
+      "premi",
+      "finanziamenti",
+      "certificazioni",
+      "sanzioni"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il GDPR trasforma i dati personali da semplice risorsa digitale a ____ verso le persone a cui appartengono.",
+    "answer": "responsabilità",
+    "bank": [
+      "merce",
+      "pubblicità",
+      "proprietà",
+      "responsabilità"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I cookie sono piccoli file di dati salvati dal ____ che permettono ai siti di ricordare informazioni sull'utente.",
+    "answer": "browser",
+    "bank": [
+      "server",
+      "router",
+      "browser",
+      "modem"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il termine tecnico dei cookie è HTTP ____.",
+    "answer": "cookie",
+    "bank": [
+      "cache",
+      "cookie",
+      "token",
+      "packet"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Spesso il cookie contiene un ____, cioè un piccolo codice che permette al sito di riconoscere il dispositivo o la sessione precedente.",
+    "answer": "identificatore",
+    "bank": [
+      "documento",
+      "certificato",
+      "identificatore",
+      "indirizzo"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Alcuni cookie possono essere utilizzati per osservare il comportamento dell'utente: questo si chiama ____.",
+    "answer": "tracciamento",
+    "bank": [
+      "certificazione",
+      "aggiornamento",
+      "backup",
+      "tracciamento"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I cookie di ____ parte sono creati direttamente dal sito che si sta visitando.",
+    "answer": "prima",
+    "bank": [
+      "quarta",
+      "seconda",
+      "prima",
+      "terza"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I cookie di ____ parte sono creati da servizi esterni collegati al sito, ad esempio per pubblicità personalizzata.",
+    "answer": "terza",
+    "bank": [
+      "seconda",
+      "terza",
+      "quarta",
+      "prima"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I cookie sono piccole memorie digitali che rendono il Web più comodo, ma possono diventare strumenti capaci di osservare le nostre ____.",
+    "answer": "abitudini",
+    "bank": [
+      "abitudini",
+      "email",
+      "connessioni",
+      "password"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ è il processo automatizzato di analisi dei dati personali per valutare, prevedere o influenzare il comportamento di una persona.",
+    "answer": "profilazione",
+    "bank": [
+      "cifratura",
+      "profilazione",
+      "portabilità",
+      "minimizzazione"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Attraverso la profilazione, il digitale cambia natura: da archivio diventa ____.",
+    "answer": "previsione",
+    "bank": [
+      "pubblicità",
+      "cronologia",
+      "previsione",
+      "backup"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una ____ è un ambiente informativo personalizzato in cui si viene esposti prevalentemente a contenuti coerenti con i propri interessi.",
+    "answer": "filter bubble",
+    "bank": [
+      "cookie di terza parte",
+      "echo chamber",
+      "filter bubble",
+      "crittografia end-to-end"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una ____ è una situazione in cui le proprie convinzioni vengono continuamente confermate e rafforzate nel tempo.",
+    "answer": "echo chamber",
+    "bank": [
+      "function creep",
+      "data breach",
+      "echo chamber",
+      "filter bubble"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il GDPR considera la profilazione un'area sensibile, soprattutto quando produce decisioni automatiche senza intervento ____.",
+    "answer": "umano",
+    "bank": [
+      "bancario",
+      "umano",
+      "tecnico",
+      "legale"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "____ e Amazon vengono citati dal modulo come esempio reale di piattaforme che utilizzano sistemi di profilazione.",
+    "answer": "Netflix",
+    "bank": [
+      "Home Depot",
+      "Colonial Pipeline",
+      "Netflix",
+      "Intesa Sanpaolo"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I diritti digitali sono le facoltà riconosciute agli individui per accedere, controllare, correggere e ____ i propri dati personali.",
+    "answer": "cancellare",
+    "bank": [
+      "cancellare",
+      "nascondere",
+      "vendere",
+      "duplicare"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il diritto di ____ permette di chiedere quali dati vengono raccolti su di sé.",
+    "answer": "accesso",
+    "bank": [
+      "portabilità",
+      "opposizione",
+      "rettifica",
+      "accesso"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il diritto di ____ permette di correggere informazioni sbagliate presenti nei propri dati.",
+    "answer": "rettifica",
+    "bank": [
+      "rettifica",
+      "accesso",
+      "cancellazione",
+      "limitazione"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il diritto alla cancellazione è noto anche come diritto all'____.",
+    "answer": "oblio",
+    "bank": [
+      "opposizione",
+      "accesso",
+      "portabilità",
+      "oblio"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il diritto alla ____ permette di spostare i propri dati da un servizio a un altro.",
+    "answer": "portabilità",
+    "bank": [
+      "portabilità",
+      "cancellazione",
+      "limitazione",
+      "rettifica"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il diritto di ____ permette di dire \"non voglio che i miei dati vengano usati per questo scopo\".",
+    "answer": "opposizione",
+    "bank": [
+      "rettifica",
+      "accesso",
+      "portabilità",
+      "opposizione"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Senza i diritti digitali, il digitale diventa una memoria ____.",
+    "answer": "assoluta",
+    "bank": [
+      "assoluta",
+      "temporanea",
+      "condivisa",
+      "pubblica"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ è il nome utilizzato nel dibattito europeo per indicare proposte contro la diffusione online di materiale pedopornografico.",
+    "answer": "Chat Control",
+    "bank": [
+      "GDPR",
+      "Chat Control",
+      "SCA",
+      "NFC"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Dal ____ l'Unione Europea discute diverse proposte conosciute con il nome di Chat Control.",
+    "answer": "2022",
+    "bank": [
+      "2018",
+      "2022",
+      "2015",
+      "2023"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La crittografia ____ permette solo al mittente e al destinatario di leggere il contenuto delle comunicazioni.",
+    "answer": "end-to-end",
+    "bank": [
+      "a token",
+      "a chiave pubblica",
+      "end-to-end",
+      "simmetrica"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Introdurre controlli automatici sui messaggi potrebbe richiedere forme di ____ delle comunicazioni private.",
+    "answer": "analisi",
+    "bank": [
+      "cancellazione",
+      "pubblicazione",
+      "vendita",
+      "analisi"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ descritto nell'esempio ipotetico del modulo indica l'estensione delle funzionalità originali di un sistema oltre lo scopo per cui era stato creato.",
+    "answer": "function creep",
+    "bank": [
+      "data breach",
+      "function creep",
+      "filter bubble",
+      "echo chamber"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La domanda fondamentale del capitolo Chat Control è come aumentare la sicurezza senza trasformare uno strumento di protezione in uno strumento di ____.",
+    "answer": "sorveglianza",
+    "bank": [
+      "sorveglianza",
+      "comunicazione",
+      "backup",
+      "archiviazione"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il dibattito su Chat Control coinvolge istituzioni europee, esperti di cybersicurezza, associazioni per la tutela dei minori e organizzazioni per la difesa della ____.",
+    "answer": "privacy",
+    "bank": [
+      "concorrenza",
+      "pubblicità",
+      "connessione",
+      "privacy"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo la chiusura del modulo, il GDPR e i diritti digitali restituiscono alle persone strumenti per ____ i propri dati.",
+    "answer": "proteggere",
+    "bank": [
+      "proteggere",
+      "vendere",
+      "duplicare",
+      "pubblicare"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "privacy-normative",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo la chiusura del modulo, sicurezza e privacy devono convivere in un equilibrio ____.",
+    "answer": "delicato",
+    "bank": [
+      "delicato",
+      "pubblico",
+      "permanente",
+      "economico"
+    ]
+  }
+]

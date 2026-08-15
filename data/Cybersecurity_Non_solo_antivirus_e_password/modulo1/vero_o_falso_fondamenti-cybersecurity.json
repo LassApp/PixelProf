@@ -1,0 +1,911 @@
+[
+  {
+    "id": 1,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la cybersecurity non consiste nell'eliminare tutte le minacce, ma nel ridurre le vulnerabilità.",
+    "answer": true,
+    "explanation": "È quanto afferma esplicitamente il modulo."
+  },
+  {
+    "id": 2,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo spyware ha come obiettivo principale distruggere fisicamente l'hardware del dispositivo.",
+    "answer": false,
+    "explanation": "L'obiettivo dello spyware è raccogliere informazioni sull'utente, non distruggere il computer."
+  },
+  {
+    "id": 3,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una volta installato un buon sistema di sicurezza non è più necessario controllarlo o aggiornarlo.",
+    "answer": false,
+    "explanation": "Il modulo afferma che la sicurezza richiede manutenzione costante nel tempo."
+  },
+  {
+    "id": 4,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Tra i dispositivi che fanno parte della superficie d'attacco troviamo computer, smartphone, tablet, server e dispositivi IoT.",
+    "answer": true,
+    "explanation": "Il modulo elenca questi dispositivi come parte della superficie d'attacco."
+  },
+  {
+    "id": 5,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del castello, più aumentano porte, finestre e passaggi, più aumentano i possibili punti di accesso per un intruso.",
+    "answer": true,
+    "explanation": "È quanto illustrato nella metafora del castello del modulo."
+  },
+  {
+    "id": 6,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, lo Spear Phishing utilizza messaggi generici uguali per tutte le potenziali vittime.",
+    "answer": false,
+    "explanation": "Lo Spear Phishing è costruito su misura per la singola vittima, non è generico."
+  },
+  {
+    "id": 7,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio della cartella clinica, se un hacker legge e pubblica online i dati del paziente senza modificarli, viene violata l'integrità dei dati.",
+    "answer": false,
+    "explanation": "In questo caso viene violata la Confidentiality, poiché i dati non sono stati alterati ma solo diffusi senza autorizzazione."
+  },
+  {
+    "id": 8,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la mancanza di formazione non ha alcuna relazione con la capacità di riconoscere un tentativo di truffa.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: la mancanza di formazione è tra le cause del mancato riconoscimento delle truffe."
+  },
+  {
+    "id": 9,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo smishing è una forma di phishing che utilizza esclusivamente le chiamate telefoniche.",
+    "answer": false,
+    "explanation": "Lo smishing utilizza SMS o messaggi di testo; sono le telefonate a caratterizzare il vishing."
+  },
+  {
+    "id": 10,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, pagare il riscatto richiesto da un ransomware non garantisce che i dati vengano restituiti.",
+    "answer": true,
+    "explanation": "Il modulo afferma esplicitamente che il pagamento non garantisce la restituzione dei dati."
+  },
+  {
+    "id": 11,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Social Engineering è l'insieme delle tecniche utilizzate per manipolare una persona e convincerla a compiere spontaneamente un'azione favorevole al criminale.",
+    "answer": true,
+    "explanation": "È la definizione di Social Engineering fornita dal modulo."
+  },
+  {
+    "id": 12,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il furto di identità digitale si verifica quando un criminale ottiene informazioni sufficienti per impersonare un'altra persona online.",
+    "answer": true,
+    "explanation": "È la definizione fornita dal modulo."
+  },
+  {
+    "id": 13,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'attacco a Target coinvolse le informazioni personali di circa 70 milioni di clienti.",
+    "answer": true,
+    "explanation": "È il dato riportato nel caso reale descritto dal modulo."
+  },
+  {
+    "id": 14,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una minaccia è qualsiasi elemento capace di causare un danno.",
+    "answer": true,
+    "explanation": "È la definizione di minaccia fornita dal modulo."
+  },
+  {
+    "id": 15,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, aggirare una tecnologia progettata correttamente è generalmente più semplice che aggirare una persona.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: aggirare una persona è più semplice che aggirare una tecnologia ben progettata."
+  },
+  {
+    "id": 16,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La Reconnaissance comprende anche il fingerprinting, un'attività di raccolta di informazioni per pianificare l'attacco.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo riguardo alla fase di Reconnaissance."
+  },
+  {
+    "id": 17,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, molti malware preferiscono rimanere invisibili il più a lungo possibile per raccogliere più informazioni.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo riguardo al comportamento di molti malware."
+  },
+  {
+    "id": 18,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La Cybersecurity è l'insieme di tecnologie, procedure, strategie e comportamenti utilizzati per proteggere sistemi informatici.",
+    "answer": true,
+    "explanation": "È la definizione di Cybersecurity fornita dal modulo."
+  },
+  {
+    "id": 19,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Account Takeover significa presa di controllo completa di un account da parte di un criminale.",
+    "answer": true,
+    "explanation": "È la definizione di Account Takeover fornita dal modulo."
+  },
+  {
+    "id": 20,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il virus è un malware capace di diffondersi automaticamente in rete senza alcuna azione da parte dell'utente.",
+    "answer": false,
+    "explanation": "Questa è una caratteristica del worm; il virus, invece, ha bisogno di un'azione dell'utente per diffondersi."
+  },
+  {
+    "id": 21,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il keylogger registra tutto ciò che viene digitato sulla tastiera, comprese password ed email.",
+    "answer": true,
+    "explanation": "È la definizione di keylogger fornita dal modulo."
+  },
+  {
+    "id": 22,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il termine spyware deriva dalla parola inglese spy, che significa spia.",
+    "answer": true,
+    "explanation": "Spyware deriva da spy, spia."
+  },
+  {
+    "id": 23,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il termine malware deriva dall'unione di malicious e software.",
+    "answer": true,
+    "explanation": "Malware deriva da malicious (malevolo) e software (programma)."
+  },
+  {
+    "id": 24,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La CIA Triad è composta da Confidentiality, Integrity e Availability.",
+    "answer": true,
+    "explanation": "I tre principi della CIA Triad sono Confidentiality, Integrity e Availability."
+  },
+  {
+    "id": 25,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il principio di Integrity indica che le informazioni sono corrette e non alterate da soggetti non autorizzati.",
+    "answer": true,
+    "explanation": "Integrity riguarda la correttezza e la non alterazione non autorizzata delle informazioni."
+  },
+  {
+    "id": 26,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio dello Spear Phishing descritto nel modulo, un Trojan infetta il computer del direttore acquisti raccogliendo informazioni in silenzio.",
+    "answer": true,
+    "explanation": "È quanto descritto nell'esempio dello Spear Phishing del modulo."
+  },
+  {
+    "id": 27,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio del modulo, il criminale che ha ottenuto l'accesso a un'email può successivamente accedere anche ai social network della vittima.",
+    "answer": true,
+    "explanation": "È quanto descritto nell'esempio del modulo sul furto di identità digitale."
+  },
+  {
+    "id": 28,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio della cartella clinica, se un ransomware blocca l'accesso ai computer dell'ospedale, viene compromessa la disponibilità delle informazioni.",
+    "answer": true,
+    "explanation": "Se i dati non sono raggiungibili quando servono, viene compromessa l'Availability."
+  },
+  {
+    "id": 29,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una vulnerabilità è una debolezza che può essere sfruttata da una minaccia.",
+    "answer": true,
+    "explanation": "È la definizione di vulnerabilità fornita dal modulo."
+  },
+  {
+    "id": 30,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, anche con il miglior antivirus, se un utente consegna volontariamente la password a un truffatore, la sicurezza viene comunque compromessa.",
+    "answer": true,
+    "explanation": "Il modulo afferma che la sicurezza viene comunque compromessa anche in presenza di un buon antivirus."
+  },
+  {
+    "id": 31,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, quando un account con molti follower viene compromesso, il vero obiettivo del criminale è solo il nome utente dell'account, senza altri scopi.",
+    "answer": false,
+    "explanation": "Il vero obiettivo è la fiducia delle persone che seguono quell'account, non solo il nome utente."
+  },
+  {
+    "id": 32,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, senza vulnerabilità molte minacce diventano inefficaci.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 33,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il Social Engineering sfrutta principalmente vulnerabilità tecniche dei sistemi operativi, non le emozioni delle persone.",
+    "answer": false,
+    "explanation": "Il Social Engineering sfrutta fiducia, paura, urgenza, curiosità, autorità e distrazione, non vulnerabilità tecniche."
+  },
+  {
+    "id": 34,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il furto di identità digitale può avvenire soltanto attraverso il furto fisico di documenti cartacei.",
+    "answer": false,
+    "explanation": "Può avvenire anche tramite account compromessi e credenziali sottratte, non solo con documenti fisici."
+  },
+  {
+    "id": 35,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, i malware distruggono quasi sempre immediatamente il computer non appena lo infettano.",
+    "answer": false,
+    "explanation": "Il modulo afferma che molti malware preferiscono rimanere invisibili il più a lungo possibile."
+  },
+  {
+    "id": 36,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un software aggiornato regolarmente rappresenta sempre una vulnerabilità sfruttabile.",
+    "answer": false,
+    "explanation": "È un software non aggiornato a poter contenere vulnerabilità sfruttabili, non uno aggiornato regolarmente."
+  },
+  {
+    "id": 37,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2011 il servizio PlayStation Network subì un attacco che compromise circa 77 milioni di account.",
+    "answer": true,
+    "explanation": "È il dato riportato nel caso reale descritto nel modulo."
+  },
+  {
+    "id": 38,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, minaccia, vulnerabilità e rischio sono tre termini equivalenti che indicano esattamente la stessa cosa.",
+    "answer": false,
+    "explanation": "Sono tre concetti distinti, come spiegato nel modulo."
+  },
+  {
+    "id": 39,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, le persone possono rappresentare sia la prima linea di difesa sia il punto più vulnerabile del sistema.",
+    "answer": true,
+    "explanation": "È quanto afferma esplicitamente il modulo."
+  },
+  {
+    "id": 40,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, anche le persone fanno parte della superficie d'attacco.",
+    "answer": true,
+    "explanation": "Il modulo afferma esplicitamente che anche gli utenti fanno parte della superficie d'attacco."
+  },
+  {
+    "id": 41,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del castello con mura altissime, l'intruso trova una piccola porta di servizio lasciata aperta per entrare.",
+    "answer": true,
+    "explanation": "È quanto illustrato nella metafora del castello relativa al Movimento Laterale."
+  },
+  {
+    "id": 42,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, più sistemi, applicazioni e utenti si utilizzano, più la superficie d'attacco si riduce.",
+    "answer": false,
+    "explanation": "Più sistemi, applicazioni e utenti si utilizzano, più ampia diventa la superficie d'attacco, non più ridotta."
+  },
+  {
+    "id": 43,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La superficie d'attacco è l'insieme di tutti i punti attraverso cui un attaccante può tentare di accedere a un sistema.",
+    "answer": true,
+    "explanation": "È la definizione di superficie d'attacco fornita dal modulo."
+  },
+  {
+    "id": 44,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "In un attacco DDoS, migliaia o milioni di dispositivi inviano contemporaneamente richieste allo stesso servizio, sovraccaricandolo.",
+    "answer": true,
+    "explanation": "È il meccanismo di funzionamento del DDoS descritto nel modulo."
+  },
+  {
+    "id": 45,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il primo accesso ottenuto da un attaccante coincide quasi sempre con il suo vero obiettivo finale.",
+    "answer": false,
+    "explanation": "Il modulo afferma che l'ingresso iniziale raramente coincide con il vero bersaglio."
+  },
+  {
+    "id": 46,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'obiettivo principale di un attacco DDoS è rubare i dati degli utenti.",
+    "answer": false,
+    "explanation": "L'obiettivo di un DDoS non è rubare dati, ma rendere un servizio temporaneamente indisponibile."
+  },
+  {
+    "id": 47,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il phishing sfrutta soprattutto debolezze tecniche del computer piuttosto che le emozioni umane.",
+    "answer": false,
+    "explanation": "Il modulo afferma che il phishing raramente sfrutta una debolezza tecnica, ma sfrutta le emozioni umane."
+  },
+  {
+    "id": 48,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un Account Takeover può avvenire solo tramite accesso fisico diretto al dispositivo della vittima.",
+    "answer": false,
+    "explanation": "Può avvenire tramite password rubate, phishing, malware o Data Breach, non solo con accesso fisico."
+  },
+  {
+    "id": 49,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora dell'automobile, se l'auto è chiusa a chiave e dotata di antifurto, il rischio aumenta anche se il ladro è ancora presente.",
+    "answer": false,
+    "explanation": "Il rischio si riduce drasticamente, non aumenta, anche se la minaccia resta presente."
+  },
+  {
+    "id": 50,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, le truffe online sono il risultato dell'utilizzo combinato di diverse tecniche come phishing, smishing e vishing.",
+    "answer": true,
+    "explanation": "Il modulo afferma che le truffe online nascono dalla combinazione di più tecniche."
+  },
+  {
+    "id": 51,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora dell'automobile, un'auto lasciata aperta con le chiavi nel cruscotto rappresenta la vulnerabilità.",
+    "answer": true,
+    "explanation": "È quanto illustrato nella metafora dell'automobile del modulo."
+  },
+  {
+    "id": 52,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la cybersecurity riguarda esclusivamente la tecnologia e non i comportamenti delle persone.",
+    "answer": false,
+    "explanation": "Il modulo afferma che la cybersecurity riguarda anche persone, comportamenti, procedure e consapevolezza."
+  },
+  {
+    "id": 53,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il quishing nasce dall'unione delle parole QR Code e phishing.",
+    "answer": true,
+    "explanation": "È l'origine del termine quishing indicata dal modulo."
+  },
+  {
+    "id": 54,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio del vishing in aeroporto descritto nel modulo, il codice MFA ricevuto dalla vittima era falso.",
+    "answer": false,
+    "explanation": "Il codice era autentico: a essere falsa era la persona al telefono, non dichiarata la compagnia aerea."
+  },
+  {
+    "id": 55,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Movimento Laterale è la tecnica con cui un attaccante si sposta da un dispositivo all'altro dopo essere entrato in una rete.",
+    "answer": true,
+    "explanation": "È la definizione di Movimento Laterale fornita dal modulo."
+  },
+  {
+    "id": 56,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Aprire allegati sconosciuti o cliccare link sospetti può esporre dispositivi e dati a minacce informatiche.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo riguardo alla distrazione come comportamento a rischio."
+  },
+  {
+    "id": 57,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una delle difese più efficaci contro le truffe online consiste nel rispondere il più rapidamente possibile.",
+    "answer": false,
+    "explanation": "Il modulo consiglia di fermarsi, verificare e ragionare, non di rispondere rapidamente."
+  },
+  {
+    "id": 58,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio quotidiano descritto nel modulo, l'attacco all'azienda parte da una lampadina intelligente con la password predefinita mai modificata.",
+    "answer": true,
+    "explanation": "È quanto descritto nell'esempio del modulo."
+  },
+  {
+    "id": 59,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nello Scenario 2 descritto nel modulo, l'utente formato clicca comunque sul link di phishing, ma il rischio si annulla lo stesso.",
+    "answer": false,
+    "explanation": "Nello Scenario 2 l'utente formato non clicca sul link, ed è per questo che il rischio si annulla."
+  },
+  {
+    "id": 60,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio del modulo, un segnale di Account Takeover è che la password non funziona più e anche l'email di recupero risulta modificata.",
+    "answer": true,
+    "explanation": "È il segnale descritto nell'esempio del modulo."
+  },
+  {
+    "id": 61,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il quishing è una forma di phishing che utilizza un codice QR.",
+    "answer": true,
+    "explanation": "Quishing nasce dall'unione di QR Code e phishing."
+  },
+  {
+    "id": 62,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Data Breach si verifica quando informazioni riservate vengono esposte, sottratte o divulgate senza autorizzazione.",
+    "answer": true,
+    "explanation": "È la definizione di Data Breach fornita dal modulo."
+  },
+  {
+    "id": 63,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il ransomware ha l'obiettivo principale di raccogliere informazioni sull'utente senza farsi notare.",
+    "answer": false,
+    "explanation": "Questo è l'obiettivo dello spyware; il ransomware blocca o cifra i file chiedendo un riscatto."
+  },
+  {
+    "id": 64,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il worm si replica e si diffonde automaticamente attraverso le reti.",
+    "answer": true,
+    "explanation": "Il worm si diffonde automaticamente attraverso le reti, senza bisogno che l'utente apra un file."
+  },
+  {
+    "id": 65,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo Spear Phishing è una forma di phishing personalizzata, costruita su misura per la vittima.",
+    "answer": true,
+    "explanation": "È la definizione di Spear Phishing fornita dal modulo."
+  },
+  {
+    "id": 66,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ogni account compromesso può diventare una porta d'ingresso per l'attaccante.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo riguardo agli account come parte della superficie d'attacco."
+  },
+  {
+    "id": 67,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il vishing nasce dall'unione delle parole video e phishing.",
+    "answer": false,
+    "explanation": "Vishing nasce dall'unione di voice (voce) e phishing, non video."
+  },
+  {
+    "id": 68,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, gli utenti coinvolti nel Data Breach di PlayStation Network avevano tutti scelto password troppo semplici.",
+    "answer": false,
+    "explanation": "Il modulo afferma che molti utenti avevano scelto password robuste e utilizzato il servizio correttamente."
+  },
+  {
+    "id": 69,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il rischio è definito come un elemento capace di causare direttamente un danno, indipendentemente da qualsiasi vulnerabilità.",
+    "answer": false,
+    "explanation": "Il rischio è la possibilità che una minaccia sfrutti una vulnerabilità, non un elemento indipendente."
+  },
+  {
+    "id": 70,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la tecnologia protegge i sistemi, ma sono le persone a determinare quanto quella protezione sarà realmente efficace.",
+    "answer": true,
+    "explanation": "È quanto afferma esplicitamente il modulo."
+  },
+  {
+    "id": 71,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il meccanismo delle truffe online prevede prima di conquistare la fiducia della vittima, poi generare urgenza e infine ridurre il tempo per riflettere.",
+    "answer": true,
+    "explanation": "È il meccanismo psicologico descritto dal modulo per le truffe online."
+  },
+  {
+    "id": 72,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il termine phishing deriva dalla parola inglese fishing, che significa pescare.",
+    "answer": true,
+    "explanation": "Phishing deriva da fishing, pescare."
+  },
+  {
+    "id": 73,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Trojan si finge un programma legittimo e, una volta installato, svolge attività nascoste.",
+    "answer": true,
+    "explanation": "È la definizione di Trojan fornita dal modulo."
+  },
+  {
+    "id": 74,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, riutilizzare la stessa password su più servizi non comporta alcun rischio aggiuntivo per la sicurezza.",
+    "answer": false,
+    "explanation": "Il modulo afferma che riutilizzare la stessa password aumenta notevolmente il rischio di compromissione."
+  },
+  {
+    "id": 75,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I criminali possono utilizzare i dati ottenuti da un Data Breach per provare ad accedere ad altri servizi con la stessa email e password.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo riguardo al riutilizzo dei dati sottratti."
+  },
+  {
+    "id": 76,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la sicurezza informatica, una volta raggiunta, resta automaticamente valida per sempre senza bisogno di manutenzione.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: la sicurezza richiede manutenzione costante."
+  },
+  {
+    "id": 77,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "DDoS è l'acronimo di Distributed Denial of Service.",
+    "answer": true,
+    "explanation": "DDoS significa Distributed Denial of Service."
+  },
+  {
+    "id": 78,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un attaccante può fingersi un collega, una banca, un corriere, un tecnico informatico o un ente pubblico.",
+    "answer": true,
+    "explanation": "Il modulo elenca queste figure come possibili travestimenti dell'attaccante."
+  },
+  {
+    "id": 79,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il vishing è una forma di phishing che utilizza le telefonate.",
+    "answer": true,
+    "explanation": "Vishing nasce dall'unione di voice e phishing, ed è una forma di phishing telefonico."
+  },
+  {
+    "id": 80,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il termine Cyber, all'interno della parola Cybersecurity, si riferisce esclusivamente alla sicurezza fisica degli edifici.",
+    "answer": false,
+    "explanation": "Cyber si riferisce al mondo digitale e alle reti informatiche, non alla sicurezza fisica degli edifici."
+  },
+  {
+    "id": 81,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la superficie d'attacco riguarda esclusivamente i dispositivi elettronici, escludendo reti e account.",
+    "answer": false,
+    "explanation": "La superficie d'attacco include anche reti, account, software e persone, non solo i dispositivi."
+  },
+  {
+    "id": 82,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il fattore umano è l'insieme dei comportamenti, delle decisioni e delle azioni delle persone che possono influenzare la sicurezza di un sistema.",
+    "answer": true,
+    "explanation": "È la definizione di fattore umano fornita dal modulo."
+  },
+  {
+    "id": 83,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la sicurezza dei nostri dati dipende sia dai nostri comportamenti sia dalla sicurezza delle organizzazioni a cui li affidiamo.",
+    "answer": true,
+    "explanation": "È quanto afferma esplicitamente il modulo."
+  },
+  {
+    "id": 84,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il principio di Availability indica che le informazioni sono accessibili soltanto alle persone autorizzate.",
+    "answer": false,
+    "explanation": "Questa è la definizione di Confidentiality; Availability indica che le informazioni sono accessibili quando servono."
+  },
+  {
+    "id": 85,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la cybersecurity non si installa una volta sola: si mantiene nel tempo.",
+    "answer": true,
+    "explanation": "È la sintesi finale del capitolo sulla cybersecurity come processo."
+  },
+  {
+    "id": 86,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "A differenza del worm, il virus è in grado di propagarsi autonomamente attraverso la rete senza alcuna azione dell'utente.",
+    "answer": false,
+    "explanation": "È il contrario: il worm si propaga autonomamente, mentre il virus ha bisogno di un'azione dell'utente."
+  },
+  {
+    "id": 87,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la minaccia è il pericolo, la vulnerabilità è la debolezza e il rischio è la possibilità che dal loro incontro nasca un danno.",
+    "answer": true,
+    "explanation": "È la sintesi finale del capitolo sul rischio."
+  },
+  {
+    "id": 88,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la cybersecurity protegge l'intero ambiente in cui le persone operano, non soltanto le macchine.",
+    "answer": true,
+    "explanation": "Il modulo afferma che la cybersecurity non protegge solo le macchine, ma l'intero ambiente."
+  },
+  {
+    "id": 89,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il termine worm significa letteralmente ragno.",
+    "answer": false,
+    "explanation": "Worm significa verme, non ragno."
+  },
+  {
+    "id": 90,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La cybersecurity è un processo continuo di protezione, verifica e aggiornamento.",
+    "answer": true,
+    "explanation": "È la definizione fornita dal modulo."
+  },
+  {
+    "id": 91,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel caso reale di Target del 2013, l'attacco partì dall'account compromesso di un'azienda esterna incaricata della manutenzione degli impianti di climatizzazione.",
+    "answer": true,
+    "explanation": "È quanto riportato nel caso reale documentato dal modulo."
+  },
+  {
+    "id": 92,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il malware è una famiglia di programmi progettati per svolgere attività dannose.",
+    "answer": true,
+    "explanation": "Il modulo definisce il malware come una grande famiglia di programmi dannosi."
+  },
+  {
+    "id": 93,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il nome Trojan deriva dal racconto del Cavallo di Troia.",
+    "answer": true,
+    "explanation": "Il modulo spiega che il nome deriva dal Cavallo di Troia."
+  },
+  {
+    "id": 94,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il caso Target dimostra che il punto di ingresso coincide sempre con il vero obiettivo dell'attacco.",
+    "answer": false,
+    "explanation": "Il caso Target dimostra il contrario: il punto di ingresso non coincide quasi mai con il vero obiettivo."
+  },
+  {
+    "id": 95,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il keylogger deriva dalle parole inglesi key (chiave) e log (diario).",
+    "answer": false,
+    "explanation": "Keylogger deriva da key (tasto) e logger (registratore), non da key (chiave) e log (diario)."
+  },
+  {
+    "id": 96,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'attacco a Target del 2013 causò il furto dei dati di circa 4 milioni di carte di pagamento.",
+    "answer": false,
+    "explanation": "Furono coinvolte circa 40 milioni di carte di pagamento, non 4 milioni."
+  },
+  {
+    "id": 97,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il termine ransomware deriva dalla parola inglese ransom, che significa riscatto.",
+    "answer": true,
+    "explanation": "Ransomware deriva da ransom, riscatto."
+  },
+  {
+    "id": 98,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della casa, oltre a installare una porta blindata bisogna controllare le serrature e sostituire le chiavi smarrite.",
+    "answer": true,
+    "explanation": "È quanto illustrato nella metafora della casa del modulo."
+  },
+  {
+    "id": 99,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la Reconnaissance è la fase finale di un attacco, effettuata dopo aver già rubato i dati.",
+    "answer": false,
+    "explanation": "La Reconnaissance è la fase iniziale, in cui il criminale raccoglie informazioni prima di colpire."
+  },
+  {
+    "id": 100,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo smishing è una forma di phishing che utilizza SMS o messaggi di testo.",
+    "answer": true,
+    "explanation": "Smishing nasce dall'unione di SMS e phishing."
+  },
+  {
+    "id": 101,
+    "module": "fondamenti-cybersecurity",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il phishing può arrivare tramite email, SMS, WhatsApp, social network, telefonate e QR Code.",
+    "answer": true,
+    "explanation": "Il modulo elenca tutti questi canali come possibili veicoli di phishing."
+  }
+]

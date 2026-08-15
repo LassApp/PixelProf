@@ -1,0 +1,1532 @@
+[
+  {
+    "id": 1,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la sicurezza dei pagamenti, secondo la definizione del modulo?",
+    "options": [
+      "Una normativa che vieta l'uso del contante",
+      "Un servizio bancario a pagamento riservato ai clienti premium",
+      "Un'app che sostituisce tutte le carte di pagamento",
+      "L'insieme di tecnologie, controlli e comportamenti che proteggono le transazioni digitali da frodi, furti di dati e accessi non autorizzati"
+    ],
+    "correctIndex": 3,
+    "explanation": "È la definizione data all'inizio del modulo."
+  },
+  {
+    "id": 2,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali strumenti vengono citati dal modulo per proteggere le transazioni digitali?",
+    "options": [
+      "Solo la creazione di più conti bancari",
+      "Solo l'installazione di un antivirus",
+      "Crittografia, autenticazione e monitoraggio delle operazioni sospette",
+      "Solo l'uso di contanti"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo cita crittografia, autenticazione e monitoraggio come strumenti di protezione."
+  },
+  {
+    "id": 3,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, la tecnologia da sola è sufficiente a proteggere i pagamenti digitali?",
+    "options": [
+      "Sì, la tecnologia da sola garantisce sempre la sicurezza",
+      "No, servono solo controlli da parte dello Stato",
+      "Sì, ma solo se si utilizza esclusivamente il contante",
+      "No, sono fondamentali anche le scelte dell'utente, come usare password sicure e riconoscere le truffe"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo afferma che le scelte dell'utente sono fondamentali quanto la tecnologia."
+  },
+  {
+    "id": 4,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato un pagamento digitale nella metafora del modulo?",
+    "options": [
+      "A una cassaforte chiusa per sempre",
+      "A un semplice scambio di monete fisiche",
+      "A una consegna lungo una strada, dove ogni tratto deve essere protetto",
+      "A una lettera mai spedita"
+    ],
+    "correctIndex": 2,
+    "explanation": "La metafora del modulo descrive il pagamento come una consegna che deve essere protetta lungo tutto il tragitto."
+  },
+  {
+    "id": 5,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa deve garantire, secondo il modulo, ogni sistema che gestisce una transazione digitale?",
+    "options": [
+      "La gratuità assoluta di ogni operazione",
+      "L'assenza totale di controlli per essere più veloce",
+      "La possibilità di annullare qualsiasi pagamento senza motivo",
+      "Protezione, utilizzando strumenti come crittografia, autenticazione e monitoraggio"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo indica protezione come obiettivo primario del sistema, tramite crittografia, autenticazione e monitoraggio."
+  },
+  {
+    "id": 6,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i pagamenti digitali, secondo la definizione del modulo?",
+    "options": [
+      "Transazioni possibili solo con denaro contante convertito elettronicamente",
+      "Trasferimenti di denaro validi solo tra due banche dello stesso Paese",
+      "Operazioni riservate esclusivamente alle aziende",
+      "Transazioni economiche effettuate attraverso strumenti elettronici, senza utilizzare denaro contante"
+    ],
+    "correctIndex": 3,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 7,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali soggetti entrano in gioco in un pagamento con carta o smartphone, secondo il modulo?",
+    "options": [
+      "Solo l'operatore telefonico",
+      "Solo il cliente e il negozio, senza altri intermediari",
+      "Il circuito di pagamento, la banca e il sistema che autorizza la transazione",
+      "Solo lo sviluppatore dell'app utilizzata"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo elenca questi soggetti come intermediari del pagamento."
+  },
+  {
+    "id": 8,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i passaggi generali di un pagamento digitale, secondo il modulo?",
+    "options": [
+      "Il cliente inserisce solo il proprio nome e il pagamento viene approvato automaticamente",
+      "Il pagamento viene autorizzato solo dopo una settimana",
+      "Il cliente avvia il pagamento, il sistema verifica le informazioni, la banca controlla i fondi e autorizza il trasferimento",
+      "Il negozio invia il denaro alla banca senza alcuna verifica"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo descrive questi passaggi come processo generale di un pagamento digitale."
+  },
+  {
+    "id": 9,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali vantaggi dei pagamenti digitali vengono citati dal modulo?",
+    "options": [
+      "Sono veloci, permettono di acquistare a distanza e consentono un maggiore controllo delle operazioni",
+      "Non richiedono mai una connessione a Internet",
+      "Eliminano completamente ogni forma di rischio",
+      "Sono accettati solo in negozi fisici"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo elenca velocità, acquisto a distanza e controllo come vantaggi principali."
+  },
+  {
+    "id": 10,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa dipende un pagamento digitale, secondo il modulo?",
+    "options": [
+      "Esclusivamente dalla marca dello smartphone utilizzato",
+      "Esclusivamente dalla velocità della connessione Internet",
+      "Dalla sicurezza del dispositivo, dalla protezione delle credenziali e dalla capacità di riconoscere tentativi di frode",
+      "Esclusivamente dal saldo disponibile sul conto"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo indica questi tre fattori come determinanti per la sicurezza del pagamento."
+  },
+  {
+    "id": 11,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove si trova il rischio di un pagamento digitale, secondo il modulo?",
+    "options": [
+      "Esclusivamente nella velocità della transazione",
+      "Esclusivamente nella tecnologia utilizzata dalla banca",
+      "Esclusivamente nel tipo di dispositivo usato",
+      "Non nel pagamento digitale in sé, ma nel modo in cui viene utilizzato e protetto"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo sposta il focus dal pagamento in sé al modo in cui viene gestito."
+  },
+  {
+    "id": 12,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa avvenne nel 2021 alla società Colonial Pipeline, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Ricevette un premio per la sicurezza informatica",
+      "Lanciò un nuovo sistema di pagamento contactless",
+      "Fu acquistata da una banca concorrente",
+      "Subì un attacco informatico che portò alla sospensione temporanea delle operazioni"
+    ],
+    "correctIndex": 3,
+    "explanation": "È il caso reale citato dal modulo nel capitolo sui pagamenti digitali."
+  },
+  {
+    "id": 13,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostrò il caso Colonial Pipeline, secondo il modulo?",
+    "options": [
+      "Che solo le piccole aziende possono essere colpite da attacchi informatici",
+      "Che gli attacchi informatici colpiscono solo le banche",
+      "Che un attacco digitale può avere conseguenze concrete sull'economia e sulla vita quotidiana",
+      "Che i pagamenti digitali sono sempre immuni da rischi"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo trae questa conclusione dal caso Colonial Pipeline."
+  },
+  {
+    "id": 14,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde durante le proteste dei camionisti in Canada nel 2022, secondo il modulo?",
+    "options": [
+      "I circuiti di pagamento internazionali furono disattivati in tutto il mondo",
+      "I partecipanti ricevettero rimborsi automatici dalle banche",
+      "Le banche canadesi sospesero tutti i pagamenti digitali nel Paese",
+      "Alcune autorità intervennero bloccando l'accesso a determinati fondi e strumenti finanziari collegati ai partecipanti"
+    ],
+    "correctIndex": 3,
+    "explanation": "È il secondo caso reale citato dal modulo nel capitolo sui pagamenti digitali."
+  },
+  {
+    "id": 15,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale dibattito ha aperto l'episodio delle proteste dei camionisti in Canada, secondo il modulo?",
+    "options": [
+      "Il rapporto tra sicurezza, potere decisionale e dipendenza dai sistemi digitali",
+      "L'obbligo di utilizzare solo contanti in Canada",
+      "Il divieto di usare smartphone per pagare",
+      "La necessità di eliminare le carte di credito"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica questo come il tema del dibattito aperto dall'episodio."
+  },
+  {
+    "id": 16,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della rete autostradale usata dal modulo, cosa rappresenta il denaro?",
+    "options": [
+      "Il carburante utilizzato dai veicoli",
+      "Il veicolo che deve arrivare a destinazione",
+      "La segnaletica stradale",
+      "I caselli che controllano il traffico"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nella metafora, il denaro è il veicolo che percorre la rete."
+  },
+  {
+    "id": 17,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della rete autostradale, cosa rappresentano banche, circuiti e controlli?",
+    "options": [
+      "Le auto che trasportano il denaro",
+      "I passeggeri del veicolo",
+      "Le strade percorse dal denaro",
+      "I caselli e i sistemi di sicurezza che verificano che il viaggio avvenga correttamente"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nella metafora, banche e circuiti sono i caselli e i sistemi di controllo."
+  },
+  {
+    "id": 18,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permettono i pagamenti digitali, secondo la sintesi \"in una frase\" del modulo?",
+    "options": [
+      "Di eliminare completamente ogni forma di rischio finanziario",
+      "Di essere accettati solo da grandi aziende",
+      "Al denaro di viaggiare rapidamente attraverso reti informatiche, ma richiedono protezione e consapevolezza",
+      "Di funzionare sempre anche senza alcuna infrastruttura"
+    ],
+    "correctIndex": 2,
+    "explanation": "È la sintesi conclusiva del capitolo sui pagamenti digitali."
+  },
+  {
+    "id": 19,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa illustra la provocazione riflessiva del modulo sul POS che non funziona al supermercato?",
+    "options": [
+      "Che il contante non è più necessario in nessuna circostanza",
+      "Che i POS non funzionano mai correttamente",
+      "Che i pagamenti digitali sono sempre più affidabili del contante in ogni situazione",
+      "Che il denaro digitale dipende da una complessa infrastruttura fatta di reti, dispositivi e servizi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo usa questo scenario per ricordare la dipendenza del denaro digitale dall'infrastruttura."
+  },
+  {
+    "id": 20,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali strumenti comprendono i pagamenti digitali, secondo il modulo?",
+    "options": [
+      "Carte, smartphone, applicazioni bancarie, siti web e altri servizi online",
+      "Solo il denaro contante convertito in valuta digitale",
+      "Solo gli assegni bancari",
+      "Solo i bonifici effettuati allo sportello"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo elenca questi strumenti come esempi di pagamento digitale."
+  },
+  {
+    "id": 21,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le carte di pagamento, secondo la definizione del modulo?",
+    "options": [
+      "Strumenti elettronici che permettono di effettuare transazioni utilizzando denaro collegato a un conto o a un credito disponibile",
+      "Documenti che sostituiscono la carta d'identità",
+      "Dispositivi che generano automaticamente denaro contante",
+      "Strumenti che funzionano solo se collegati a Internet tramite Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 22,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa caratterizza la carta di debito, secondo il modulo?",
+    "options": [
+      "Utilizza direttamente il denaro disponibile sul conto corrente",
+      "Non richiede mai alcun controllo di sicurezza",
+      "Contiene una somma caricata in anticipo, non collegata al conto corrente",
+      "Permette di pagare con un credito concesso dalla banca, rimborsato successivamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo descrive così la carta di debito, distinguendola dalla carta di credito e da quella prepagata."
+  },
+  {
+    "id": 23,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa caratterizza la carta di credito, secondo il modulo?",
+    "options": [
+      "Utilizza direttamente il denaro disponibile sul conto corrente",
+      "È utilizzabile solo nei negozi fisici",
+      "Contiene una somma caricata in anticipo, non collegata al conto corrente",
+      "Permette di pagare utilizzando un credito concesso dalla banca, rimborsato successivamente"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo descrive così la carta di credito."
+  },
+  {
+    "id": 24,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa caratterizza la carta prepagata, secondo il modulo?",
+    "options": [
+      "Permette di pagare con un credito concesso dalla banca",
+      "È valida solo per un singolo acquisto",
+      "Contiene una somma caricata in anticipo e non è collegata direttamente al conto corrente",
+      "Utilizza direttamente il denaro disponibile sul conto corrente"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo descrive così la carta prepagata."
+  },
+  {
+    "id": 25,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali informazioni sono presenti su una carta di pagamento, secondo il modulo?",
+    "options": [
+      "Solo il logo del circuito di pagamento",
+      "Numero della carta, nome del proprietario, data di scadenza e codice CVV",
+      "Solo il nome della banca emittente",
+      "Solo il numero di telefono del titolare"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo elenca questi dati come informazioni presenti sulla carta."
+  },
+  {
+    "id": 26,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'acronimo CVV, secondo il modulo?",
+    "options": [
+      "Credit Verification Voucher - Buono di verifica del credito",
+      "Customer Value Verification - Verifica del valore cliente",
+      "Card Verification Value - Valore di verifica della carta",
+      "Card Validity Verification - Verifica di validità della carta"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo fornisce questa definizione esplicita dell'acronimo."
+  },
+  {
+    "id": 27,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali protezioni utilizzano i sistemi moderni per le carte di pagamento, secondo il modulo?",
+    "options": [
+      "Solo l'eliminazione del CVV dalle carte",
+      "Solo il divieto di usare la carta online",
+      "Solo l'obbligo di cambiare carta ogni mese",
+      "Comunicazioni cifrate, controlli antifrode, notifiche delle operazioni e sistemi di autenticazione aggiuntiva"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo elenca queste protezioni adottate dai sistemi moderni."
+  },
+  {
+    "id": 28,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali comportamenti dell'utente possono trasformare i dati della carta in una porta d'accesso al denaro, secondo il modulo?",
+    "options": [
+      "Utilizzare la carta in un negozio fisico",
+      "Coprire il PIN durante la digitazione",
+      "Conservare una foto della carta sul telefono, comunicare i dati tramite messaggi o inserirli in siti poco affidabili",
+      "Attivare le notifiche delle operazioni"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo indica questi comportamenti come rischiosi per la sicurezza dei dati della carta."
+  },
+  {
+    "id": 29,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio quotidiano del modulo, cosa chiede un messaggio che sembra provenire dalla banca?",
+    "options": [
+      "Di scaricare un'applicazione di intrattenimento",
+      "Di recarsi fisicamente in filiale entro un'ora",
+      "Di inserire numero della carta e codice di sicurezza per \"verificare un problema\"",
+      "Di chiamare un numero verde per un rimborso automatico"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo descrive un tentativo di phishing basato su un sito falso identico a quello ufficiale."
+  },
+  {
+    "id": 30,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può fare una persona vicina mentre si aspetta il proprio turno alla cassa, secondo il modulo?",
+    "options": [
+      "Osservare il numero della carta, la data di scadenza o tentare di registrare questi dati con lo smartphone",
+      "Modificare automaticamente il saldo del conto",
+      "Bloccare il terminale di pagamento",
+      "Attivare il contactless sulla carta altrui"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo descrive questo rischio legato a tenere la carta in mano senza necessità."
+  },
+  {
+    "id": 31,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa avvenne nel 2013 alla catena statunitense Target Corporation, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Vinse una causa legale contro un istituto bancario",
+      "Subì una violazione informatica che portò al furto di dati relativi a milioni di carte di pagamento dei clienti",
+      "Fu premiata per i migliori standard di sicurezza del settore",
+      "Introdusse per prima il pagamento contactless negli Stati Uniti"
+    ],
+    "correctIndex": 1,
+    "explanation": "È il caso reale citato dal modulo nel capitolo sulle carte di pagamento."
+  },
+  {
+    "id": 32,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostrò l'attacco a Target Corporation, secondo il modulo?",
+    "options": [
+      "Che la sicurezza delle carte dipende anche dalla capacità delle aziende di proteggere correttamente le informazioni dei clienti",
+      "Che i dati delle carte non hanno alcun valore per i criminali",
+      "Che le grandi aziende non possono mai essere attaccate",
+      "Che solo gli utenti sono responsabili della sicurezza delle proprie carte"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo trae questa conclusione dal caso Target Corporation."
+  },
+  {
+    "id": 33,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio tratto dalla serie televisiva Better Call Saul citato dal modulo, cosa fa il protagonista?",
+    "options": [
+      "Fotografa il fronte e il retro di una carta di credito per ottenere informazioni utili a un uso fraudolento",
+      "Ruba fisicamente la carta di credito dal portafoglio del proprietario",
+      "Clona la carta utilizzando un dispositivo elettronico nascosto",
+      "Convince il proprietario a consegnargli la carta volontariamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo cita questa scena per mostrare il valore dei dati visibili su una carta."
+  },
+  {
+    "id": 34,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Se fosse necessario fotografare una carta per inviarla temporaneamente a un familiare, quale precauzione suggerisce il modulo?",
+    "options": [
+      "Pubblicarla su un social network privato per tenerne traccia",
+      "Stamparla e conservarla in un cassetto",
+      "Eliminare la foto subito dopo l'utilizzo e svuotare anche il cestino del dispositivo",
+      "Salvarla permanentemente in una cartella dedicata"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo elenca queste precauzioni tra quelle consigliate in caso di necessità."
+  },
+  {
+    "id": 35,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale ulteriore precauzione suggerisce il modulo riguardo alle foto delle carte inviate in chat?",
+    "options": [
+      "Condividere l'immagine con più contatti per sicurezza",
+      "Salvarla automaticamente su più servizi cloud",
+      "Eliminare successivamente anche la conversazione contenente l'immagine",
+      "Lasciarla visibile nella chat come promemoria"
+    ],
+    "correctIndex": 2,
+    "explanation": "È una delle precauzioni elencate dal modulo per ridurre il rischio."
+  },
+  {
+    "id": 36,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata la carta di pagamento nella metafora del modulo?",
+    "options": [
+      "A un documento d'identità scaduto",
+      "A una cartolina postale",
+      "A un biglietto da visita",
+      "A una chiave di casa"
+    ],
+    "correctIndex": 3,
+    "explanation": "La metafora del modulo paragona la carta a una chiave che apre l'accesso alle risorse economiche."
+  },
+  {
+    "id": 37,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'NFC, secondo la definizione del modulo?",
+    "options": [
+      "Un protocollo che collega dispositivi tramite cavo USB",
+      "Una tecnologia che permette lo scambio di piccoli dati tra dispositivi vicini attraverso un collegamento wireless a corto raggio",
+      "Un sistema che richiede una connessione a Internet ad alta velocità",
+      "Un tipo di chip inserito solo nelle carte prepagate"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 38,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su quale tecnologia si basa il funzionamento del contactless, secondo il modulo?",
+    "options": [
+      "NFC (Near Field Communication)",
+      "GPS satellitare",
+      "Bluetooth a lungo raggio",
+      "Rete 5G dedicata"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica l'NFC come base tecnologica del contactless."
+  },
+  {
+    "id": 39,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede quando una carta o uno smartphone vengono avvicinati a un lettore contactless, secondo il modulo?",
+    "options": [
+      "Il dispositivo trasmette automaticamente tutti i dati della carta senza alcun controllo",
+      "I due sistemi comunicano e il pagamento viene autorizzato attraverso i controlli previsti dalla banca",
+      "Il terminale registra solo il nome del titolare",
+      "Il pagamento viene sempre rifiutato per motivi di sicurezza"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo descrive così il funzionamento del contactless."
+  },
+  {
+    "id": 40,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la tokenizzazione, secondo il modulo?",
+    "options": [
+      "Un metodo per duplicare la carta in modo sicuro",
+      "La conversione della carta fisica in una carta prepagata",
+      "Un sistema che elimina la necessità del PIN in ogni transazione",
+      "L'uso di un codice digitale sostitutivo al posto dei dati reali della carta per completare la transazione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo definisce così la tokenizzazione, usata spesso nei pagamenti da smartphone."
+  },
+  {
+    "id": 41,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale rischio legato ai terminali POS portatili viene descritto nel modulo?",
+    "options": [
+      "I terminali POS portatili funzionano solo con carte prepagate",
+      "I terminali POS portatili non possono mai essere utilizzati in modo illecito",
+      "Un truffatore potrebbe tentare una piccola transazione contactless senza che la vittima se ne accorga, sfruttando l'assenza del PIN sotto una certa soglia",
+      "I terminali POS portatili richiedono sempre il PIN indipendentemente dall'importo"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo descrive questo scenario come rischio possibile del contactless."
+  },
+  {
+    "id": 42,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa dipendono le soglie e le modalità di verifica per i pagamenti contactless senza PIN, secondo il modulo?",
+    "options": [
+      "Esclusivamente dall'orario in cui avviene il pagamento",
+      "Esclusivamente dal modello di smartphone utilizzato",
+      "Dal circuito di pagamento, dalla banca e dalle regole applicate nel Paese",
+      "Esclusivamente dalla velocità della connessione Wi-Fi"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo indica questi tre fattori come determinanti delle soglie."
+  },
+  {
+    "id": 43,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può fare chi non utilizza la funzione contactless, secondo il modulo?",
+    "options": [
+      "Disattivare automaticamente tutte le carte in circolazione",
+      "Restituire obbligatoriamente la carta alla banca",
+      "Utilizzare solo carte prepagate",
+      "Chiederne la disattivazione alla propria banca"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo suggerisce questa possibilità per chi non utilizza il contactless."
+  },
+  {
+    "id": 44,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "È possibile svuotare una carta semplicemente passando vicino a qualcuno con un dispositivo, secondo il modulo?",
+    "options": [
+      "No, perché il contactless è stato eliminato da tutte le banche",
+      "No, le transazioni sono soggette a limiti, controlli antifrode e sistemi di monitoraggio",
+      "Sì, ma solo se la carta non ha mai un PIN impostato",
+      "Sì, è sempre possibile senza alcun limite"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo smentisce questo scenario, spiegando i limiti e i controlli in vigore."
+  },
+  {
+    "id": 45,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il rischio più concreto legato al contactless, secondo il modulo?",
+    "options": [
+      "L'impossibilità di effettuare pagamenti superiori a un euro",
+      "La perdita della carta o dello smartphone senza un blocco tempestivo",
+      "L'obbligo di inserire sempre il PIN",
+      "Il malfunzionamento permanente del terminale POS"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo indica questo come il rischio più concreto, più che la manipolazione a distanza."
+  },
+  {
+    "id": 46,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa evidenziarono alcuni ricercatori di sicurezza nel 2019, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Che l'NFC non poteva più essere utilizzato per i pagamenti",
+      "Vulnerabilità nei sistemi di pagamento contactless che potevano consentire, in determinate condizioni, la manipolazione delle comunicazioni tra carta e terminale",
+      "Che tutte le carte contactless erano state ritirate dal mercato",
+      "Che il contactless era completamente privo di rischi"
+    ],
+    "correctIndex": 1,
+    "explanation": "È il caso reale citato dal modulo nel capitolo sul contactless."
+  },
+  {
+    "id": 47,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostrarono gli studi del 2019 sulle vulnerabilità contactless, secondo il modulo?",
+    "options": [
+      "Che solo gli smartphone sono vulnerabili, non le carte",
+      "Che la sicurezza informatica è una condizione definitiva una volta raggiunta",
+      "Che il contactless è meno sicuro del pagamento con contante in ogni caso",
+      "Che anche tecnologie considerate sicure devono essere continuamente aggiornate e controllate"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo trae questa lezione dagli studi del 2019."
+  },
+  {
+    "id": 48,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della porta automatica usata dal modulo per il contactless, perché la porta si apre?",
+    "options": [
+      "Perché la porta si apre automaticamente per chiunque passi davanti",
+      "Perché la porta riconosce il peso della persona",
+      "Perché il sistema verifica un segnale preciso e autorizzato, non perché chiunque possa entrare",
+      "Perché la porta è sempre aperta durante il giorno"
+    ],
+    "correctIndex": 2,
+    "explanation": "La metafora chiarisce che il meccanismo verifica un segnale specifico, non l'ingresso libero."
+  },
+  {
+    "id": 49,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rende i pagamenti più veloci, secondo la sintesi \"in una frase\" del capitolo sul contactless?",
+    "options": [
+      "La disattivazione del PIN su tutte le carte",
+      "La comunicazione NFC",
+      "L'eliminazione totale dei controlli di sicurezza",
+      "L'uso esclusivo del contante"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la sintesi conclusiva del capitolo sul contactless."
+  },
+  {
+    "id": 50,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mette in discussione la provocazione riflessiva del capitolo sul contactless?",
+    "options": [
+      "La necessità di eliminare completamente il contactless",
+      "L'obbligo di usare sempre il contante per sicurezza",
+      "L'impossibilità di proteggere i pagamenti mobili",
+      "Il rischio di usare una tecnologia senza comprenderne più il funzionamento, perché rende l'azione quasi invisibile e immediata"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo pone questa domanda riflessiva sulla comprensione della tecnologia usata."
+  },
+  {
+    "id": 51,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i pagamenti tramite smartphone, secondo la definizione del modulo?",
+    "options": [
+      "Pagamenti validi solo per acquisti superiori a una certa soglia",
+      "Pagamenti possibili solo tramite chiamata telefonica diretta alla banca",
+      "Transazioni che richiedono sempre la presenza fisica di una carta",
+      "Transazioni digitali effettuate utilizzando un dispositivo mobile attraverso applicazioni dedicate, portafogli digitali o servizi bancari"
+    ],
+    "correctIndex": 3,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 52,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permettono i wallet digitali, secondo il modulo?",
+    "options": [
+      "Di eliminare definitivamente la necessità di una carta di pagamento collegata",
+      "Di effettuare pagamenti solo all'interno di un'unica applicazione bancaria",
+      "Di trasferire denaro solo tra due smartphone dello stesso produttore",
+      "Di collegare una carta di pagamento al telefono e utilizzarlo nei negozi fisici o negli acquisti online"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo descrive così la funzione dei wallet digitali."
+  },
+  {
+    "id": 53,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può utilizzare il sistema al posto dei dati reali della carta in un pagamento da smartphone, secondo il modulo?",
+    "options": [
+      "Un identificativo temporaneo chiamato token",
+      "Il numero di serie dello smartphone",
+      "Una password inviata via SMS ogni volta",
+      "Il numero di telefono del titolare della carta"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica il token come sostituto dei dati reali della carta."
+  },
+  {
+    "id": 54,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può richiedere lo smartphone prima di autorizzare una transazione, secondo il modulo?",
+    "options": [
+      "Una verifica dell'identità tramite impronta digitale, riconoscimento del volto, PIN o altri sistemi di autenticazione",
+      "Solo l'inserimento del numero di carta per intero",
+      "Nessuna verifica aggiuntiva rispetto alla carta fisica",
+      "Solo la conferma via email dopo 24 ore"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo elenca queste possibili verifiche di identità."
+  },
+  {
+    "id": 55,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il pagamento tramite smartphone è spesso più sicuro dell'uso diretto della carta, secondo il modulo?",
+    "options": [
+      "Perché lo smartphone non contiene mai dati sensibili",
+      "Perché anche in caso di furto del dispositivo, un malintenzionato dovrebbe superare ulteriori barriere di protezione",
+      "Perché i pagamenti da smartphone non richiedono alcuna banca",
+      "Perché lo smartphone non può mai essere rubato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo spiega così il maggiore livello di sicurezza dei pagamenti da smartphone."
+  },
+  {
+    "id": 56,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali comportamenti possono aumentare i rischi nei pagamenti da smartphone, secondo il modulo?",
+    "options": [
+      "Installare applicazioni non affidabili, utilizzare reti insicure o lasciare il telefono senza blocco",
+      "Controllare regolarmente le notifiche delle operazioni",
+      "Attivare il riconoscimento dell'impronta digitale",
+      "Collegare una sola carta al wallet digitale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo elenca questi comportamenti come fattori di rischio."
+  },
+  {
+    "id": 57,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa dipende la sicurezza dei pagamenti mobili, secondo il modulo?",
+    "options": [
+      "Dall'unione di tecnologia, configurazioni corrette e comportamenti responsabili",
+      "Esclusivamente dal modello dello smartphone utilizzato",
+      "Esclusivamente dalla velocità della rete Internet",
+      "Esclusivamente dal numero di applicazioni installate"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica questi tre elementi come determinanti della sicurezza mobile."
+  },
+  {
+    "id": 58,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio quotidiano del modulo, dopo cosa viene autorizzato il pagamento in negozio con lo smartphone?",
+    "options": [
+      "Dopo l'inserimento manuale del numero della carta",
+      "Dopo una chiamata di conferma alla banca",
+      "Dopo aver mostrato un documento d'identità alla cassa",
+      "Dopo il riconoscimento dell'impronta digitale"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'esempio del modulo descrive un pagamento autorizzato tramite impronta digitale."
+  },
+  {
+    "id": 59,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della cassaforte digitale usata dal modulo, perché la cassaforte è sicura?",
+    "options": [
+      "Perché è collegata direttamente al conto corrente",
+      "Perché non contiene mai informazioni sensibili",
+      "Perché nessuno sa che esiste",
+      "Non solo perché è resistente, ma perché richiede diversi controlli prima di aprirsi"
+    ],
+    "correctIndex": 3,
+    "explanation": "La metafora sottolinea l'importanza dei controlli multipli, non solo della resistenza fisica."
+  },
+  {
+    "id": 60,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può diventare lo smartphone, secondo la sintesi \"in una frase\" del capitolo sui pagamenti mobili?",
+    "options": [
+      "Un sistema immune da ogni tipo di furto",
+      "Un portafoglio sicuro grazie a tecnologie avanzate, con protezione che dipende anche da come viene utilizzato",
+      "Un dispositivo che non necessita mai di aggiornamenti",
+      "Uno strumento che sostituisce completamente ogni forma di autenticazione bancaria"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la sintesi conclusiva del capitolo sui pagamenti da smartphone."
+  },
+  {
+    "id": 61,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mette in discussione la provocazione riflessiva sui pagamenti da smartphone?",
+    "options": [
+      "Se sia meglio tornare a utilizzare solo il contante",
+      "Se lo smartphone debba sostituire completamente le carte fisiche",
+      "Se i pagamenti da smartphone siano ormai obsoleti",
+      "Se si sta proteggendo adeguatamente lo smartphone, dato che contiene anche il proprio denaro"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo pone questa domanda riflessiva sulla protezione dello smartphone."
+  },
+  {
+    "id": 62,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa comprendono i sistemi di pagamento tramite smartphone, secondo il modulo?",
+    "options": [
+      "Solo i pagamenti effettuati tramite email",
+      "Solo i messaggi di testo con codici numerici",
+      "Applicazioni dedicate, portafogli digitali o servizi bancari",
+      "Solo le chiamate vocali con l'operatore bancario"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo elenca questi elementi nella definizione dei pagamenti da smartphone."
+  },
+  {
+    "id": 63,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le truffe nei pagamenti online, secondo la definizione del modulo?",
+    "options": [
+      "Errori tecnici dei sistemi bancari che causano perdite accidentali di denaro",
+      "Ritardi nei pagamenti causati da problemi di rete",
+      "Tentativi fraudolenti attraverso cui un attaccante cerca di ottenere denaro, dati personali o informazioni finanziarie sfruttando inganni rivolti agli utenti",
+      "Malfunzionamenti dei terminali POS non collegati a un intento fraudolento"
+    ],
+    "correctIndex": 2,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 64,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali tecniche sfruttano spesso le truffe nei pagamenti online, secondo il modulo?",
+    "options": [
+      "Tecniche di manipolazione psicologica per convincere la vittima a compiere un'azione pericolosa",
+      "Esclusivamente attacchi diretti ai server delle banche",
+      "Esclusivamente la manomissione dei terminali POS",
+      "Esclusivamente la clonazione fisica delle carte"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica la manipolazione psicologica come tecnica centrale di queste truffe."
+  },
+  {
+    "id": 65,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali strumenti utilizzano le truffe nei pagamenti online per convincere la vittima, secondo il modulo?",
+    "options": [
+      "Solo lettere cartacee inviate per posta",
+      "Phishing, falsi operatori bancari e siti di e-commerce fraudolenti",
+      "Solo annunci pubblicitari su siti ufficiali",
+      "Solo telefonate anonime senza alcun messaggio scritto"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo elenca questi strumenti come principali veicoli delle truffe online."
+  },
+  {
+    "id": 66,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la difesa fondamentale contro le truffe nei pagamenti online, secondo il modulo?",
+    "options": [
+      "Condividere i propri dati con più servizi per sicurezza",
+      "Rispondere immediatamente a ogni richiesta per evitare problemi",
+      "Verificare sempre richieste di denaro o di credenziali attraverso i canali ufficiali, senza lasciarsi guidare da urgenza o paura",
+      "Disattivare tutte le notifiche bancarie"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo indica questa verifica come difesa fondamentale."
+  },
+  {
+    "id": 67,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa dipende la sicurezza dei pagamenti, oltre che dalla banca, secondo il modulo?",
+    "options": [
+      "Esclusivamente dal numero di carte possedute",
+      "Esclusivamente dal circuito di pagamento utilizzato",
+      "Dalla capacità dell'utente di riconoscere un tentativo di truffa",
+      "Esclusivamente dalla velocità della connessione Internet"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo sottolinea il ruolo attivo dell'utente nel riconoscere le truffe."
+  },
+  {
+    "id": 68,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale strategia viene suggerita dal modulo per limitare i danni in caso di frode online?",
+    "options": [
+      "Disattivare ogni controllo antifrode per pagamenti più rapidi",
+      "Utilizzare sempre la carta di credito principale per ogni acquisto online",
+      "Condividere i dati della carta con più siti per velocizzare gli acquisti",
+      "Utilizzare una carta prepagata dedicata agli acquisti online, mantenendo un saldo molto basso o pari a zero"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo suggerisce questa strategia per contenere i danni economici."
+  },
+  {
+    "id": 69,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si utilizza in pratica la carta prepagata dedicata agli acquisti online, secondo il modulo?",
+    "options": [
+      "Si ricarica solo l'importo strettamente necessario prima di completare l'acquisto",
+      "Si utilizza esclusivamente per pagamenti superiori a 1000 euro",
+      "Si ricarica una somma illimitata una sola volta all'anno",
+      "Si collega automaticamente al conto corrente principale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo descrive così l'uso pratico della carta prepagata dedicata."
+  },
+  {
+    "id": 70,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "La strategia della carta prepagata dedicata sostituisce le altre misure di sicurezza, secondo il modulo?",
+    "options": [
+      "Sì, rende superflua ogni altra precauzione",
+      "No, aggiunge un ulteriore livello di protezione senza sostituire le altre misure",
+      "Sì, elimina la necessità dell'autenticazione forte",
+      "No, è meno efficace di qualsiasi altra misura"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo chiarisce che questa strategia integra, non sostituisce, le altre misure."
+  },
+  {
+    "id": 71,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio quotidiano del modulo, cosa fa la persona dopo aver ricevuto l'SMS sospetto dalla presunta banca?",
+    "options": [
+      "Chiama il numero indicato nell'SMS per conferma",
+      "Clicca subito sul link e inserisce tutti i propri dati",
+      "Ignora completamente il messaggio senza verificare nulla",
+      "Nota che il sito ha un indirizzo insolito ed entra invece nell'app ufficiale della banca, scoprendo che era una truffa"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'esempio del modulo mostra un comportamento corretto di verifica tramite canale ufficiale."
+  },
+  {
+    "id": 72,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde nel 2022 ad alcuni clienti della banca italiana Intesa Sanpaolo, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Ricevettero un rimborso automatico per un errore di sistema",
+      "Subirono un blocco temporaneo di tutti i pagamenti contactless",
+      "Furono coinvolti in campagne di phishing che imitavano comunicazioni bancarie ufficiali per sottrarre credenziali e dati personali",
+      "Beneficiarono di un nuovo sistema di pagamento contactless gratuito"
+    ],
+    "correctIndex": 2,
+    "explanation": "È il caso reale citato dal modulo nel capitolo sulle truffe online."
+  },
+  {
+    "id": 73,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostrarono gli episodi di phishing ai danni dei clienti bancari nel 2022, secondo il modulo?",
+    "options": [
+      "Che il phishing non riguarda più il settore bancario",
+      "Che l'ingegneria sociale è meno efficace degli attacchi tecnici diretti",
+      "Che i criminali informatici utilizzano sempre più spesso tecniche di ingegneria sociale invece di attaccare direttamente i sistemi tecnologici",
+      "Che le banche italiane non applicano alcun controllo antifrode"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo trae questa conclusione dal caso Intesa Sanpaolo."
+  },
+  {
+    "id": 74,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata una truffa online nella metafora del modulo?",
+    "options": [
+      "A una porta automatica con riconoscimento",
+      "A un falso negozio costruito in una strada molto frequentata, con vetrina curata ma senza un vero negozio dietro",
+      "A una rete autostradale con caselli di controllo",
+      "A una cassaforte con più serrature"
+    ],
+    "correctIndex": 1,
+    "explanation": "La metafora del modulo descrive così una truffa online."
+  },
+  {
+    "id": 75,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il bersaglio principale nelle truffe online, secondo la sintesi \"in una frase\" del modulo?",
+    "options": [
+      "Sempre e solo il dispositivo hardware utilizzato",
+      "Spesso non è il sistema informatico, ma la fiducia della persona",
+      "Sempre e solo il sistema informatico della banca",
+      "Sempre e solo il circuito di pagamento internazionale"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la sintesi conclusiva del capitolo sulle truffe online."
+  },
+  {
+    "id": 76,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la clonazione della carta, secondo la definizione del modulo?",
+    "options": [
+      "Un servizio bancario per sostituire carte danneggiate",
+      "Una tecnologia che protegge la carta da ogni tipo di frode",
+      "Una funzione ufficiale che permette di duplicare legalmente la propria carta",
+      "Una tecnica fraudolenta attraverso cui un attaccante copia o acquisisce i dati di una carta di pagamento per effettuare operazioni non autorizzate"
+    ],
+    "correctIndex": 3,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 77,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può riguardare la clonazione della carta, secondo il modulo?",
+    "options": [
+      "Esclusivamente le carte fisiche utilizzate nei negozi",
+      "Esclusivamente le carte prepagate",
+      "Esclusivamente i pagamenti effettuati tramite bonifico",
+      "Sia carte fisiche sia informazioni digitali utilizzate nei pagamenti online"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo chiarisce che la clonazione può riguardare sia il fisico sia il digitale."
+  },
+  {
+    "id": 78,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è spesso il vero obiettivo dei criminali nella clonazione della carta, secondo il modulo?",
+    "options": [
+      "Distruggere fisicamente la carta del proprietario",
+      "Impedire al proprietario di effettuare qualsiasi pagamento",
+      "Ottenere esclusivamente il nome del titolare della carta",
+      "Ottenere i dati necessari per effettuare transazioni, più che creare una copia identica dell'originale"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo chiarisce che l'obiettivo reale sono i dati, non la copia fisica."
+  },
+  {
+    "id": 79,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è lo skimming, secondo il modulo?",
+    "options": [
+      "La cattura dei dati della banda magnetica della carta attraverso dispositivi installati illegalmente su bancomat o terminali compromessi",
+      "Un metodo per proteggere la carta da eventuali clonazioni",
+      "Un sistema legale utilizzato dalle banche per verificare le transazioni",
+      "Una tecnica di pagamento contactless più veloce"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data dal modulo per lo skimming."
+  },
+  {
+    "id": 80,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Attraverso quali altri metodi i criminali possono ottenere informazioni per clonare una carta, secondo il modulo?",
+    "options": [
+      "Solo tramite chiamate dirette alla banca del titolare",
+      "Phishing, malware, furto di database aziendali o siti web falsi",
+      "Solo attraverso il contactless a distanza ravvicinata",
+      "Solo rubando fisicamente la carta dal portafoglio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo elenca questi metodi come evoluzione delle tecniche di attacco."
+  },
+  {
+    "id": 81,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il chip EMV, secondo il modulo?",
+    "options": [
+      "Un sistema che elimina la necessità del PIN in ogni transazione",
+      "Uno standard internazionale di sicurezza per le carte di pagamento con microchip (Europay, Mastercard e Visa)",
+      "Un tipo di carta prepagata utilizzabile solo online",
+      "Un'applicazione che sostituisce completamente la carta fisica"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo fornisce questa definizione dell'acronimo EMV."
+  },
+  {
+    "id": 82,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Le carte moderne con chip EMV sono completamente prive di rischi, secondo il modulo?",
+    "options": [
+      "No, nessun sistema è completamente privo di rischi",
+      "Sì, ma solo per i pagamenti contactless",
+      "Sì, il chip EMV elimina ogni possibilità di frode",
+      "No, il chip EMV aumenta i rischi rispetto alla banda magnetica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo precisa che, pur essendo più sicuro, nessun sistema è privo di rischi."
+  },
+  {
+    "id": 83,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali comportamenti vengono suggeriti dal modulo per ridurre il rischio di clonazione?",
+    "options": [
+      "Controllare gli sportelli prima dell'utilizzo, coprire il PIN durante la digitazione, attivare notifiche dei movimenti e verificare gli estratti conto",
+      "Disattivare le notifiche per non essere disturbati",
+      "Evitare completamente l'uso di carte di pagamento",
+      "Utilizzare sempre la stessa carta per ogni tipo di transazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo elenca questi comportamenti come buone pratiche preventive."
+  },
+  {
+    "id": 84,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale principio dimostra la clonazione della carta, secondo il modulo?",
+    "options": [
+      "Le informazioni digitali non hanno mai un valore economico reale",
+      "Gli attacchi informatici riguardano solo i grandi istituti bancari",
+      "Spesso non viene attaccato l'oggetto, ma il valore contenuto nelle informazioni che lo rappresentano",
+      "Solo gli oggetti fisici possono essere oggetto di un attacco informatico"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo trae questo principio generale dal fenomeno della clonazione."
+  },
+  {
+    "id": 85,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio quotidiano del modulo, come nota la vittima di un possibile skimming di aver subito un problema?",
+    "options": [
+      "Vedendo un messaggio di errore sullo sportello bancomat",
+      "Notando che la carta fisica è scomparsa dal portafoglio",
+      "Controllando il conto e notando movimenti che non ha mai effettuato, grazie anche alle notifiche bancarie",
+      "Ricevendo una chiamata diretta dal truffatore"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'esempio del modulo mostra come le notifiche bancarie aiutino a individuare il problema."
+  },
+  {
+    "id": 86,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa avvenne nel 2014 alla catena statunitense Home Depot, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Introdusse per prima il chip EMV nei negozi statunitensi",
+      "Sospese tutti i pagamenti digitali nei propri negozi",
+      "Subì una violazione informatica che portò alla sottrazione di dati relativi a milioni di carte di pagamento dei clienti",
+      "Fu premiata per i più alti standard di sicurezza informatica del settore"
+    ],
+    "correctIndex": 2,
+    "explanation": "È il caso reale citato dal modulo nel capitolo sulla clonazione della carta."
+  },
+  {
+    "id": 87,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata la carta di pagamento nella metafora del capitolo sulla clonazione?",
+    "options": [
+      "A una chiave che si rompe dopo un solo utilizzo",
+      "A una tessera per entrare in un edificio, che può essere copiata senza rubare l'originale",
+      "A un biglietto valido per un solo giorno",
+      "A un documento che scade automaticamente ogni anno"
+    ],
+    "correctIndex": 1,
+    "explanation": "La metafora del modulo descrive così la carta nel capitolo sulla clonazione."
+  },
+  {
+    "id": 88,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sfrutta la clonazione della carta, secondo la sintesi \"in una frase\" del modulo?",
+    "options": [
+      "Esclusivamente la debolezza fisica del materiale della carta",
+      "Esclusivamente la mancanza di connessione Internet",
+      "Esclusivamente la lentezza dei sistemi bancari",
+      "Il furto delle informazioni, per trasformare dati personali in strumenti di frode"
+    ],
+    "correctIndex": 3,
+    "explanation": "È la sintesi conclusiva del capitolo sulla clonazione della carta."
+  },
+  {
+    "id": 89,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la Strong Customer Authentication (SCA), secondo il modulo?",
+    "options": [
+      "Una tecnologia che sostituisce completamente il PIN con il contactless",
+      "Un servizio che elimina la necessità di password per sempre",
+      "Un sistema di sicurezza che richiede più elementi di verifica per autorizzare determinate operazioni di pagamento",
+      "Un tipo di carta di credito riservata ai clienti aziendali"
+    ],
+    "correctIndex": 2,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 90,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali categorie di fattori combina l'autenticazione forte, secondo il modulo?",
+    "options": [
+      "Solo l'indirizzo email e il numero di telefono",
+      "Qualcosa che l'utente conosce, qualcosa che possiede e qualcosa che è",
+      "Solo il numero della carta e il codice CVV",
+      "Solo il nome utente e la data di nascita"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo elenca queste tre categorie di fattori."
+  },
+  {
+    "id": 91,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale esempio di \"qualcosa che l'utente conosce\" viene citato dal modulo?",
+    "options": [
+      "Il riconoscimento del volto",
+      "Una password o un PIN",
+      "Un'impronta digitale",
+      "Uno smartphone"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo cita password e PIN come esempi di questa categoria."
+  },
+  {
+    "id": 92,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale esempio di \"qualcosa che l'utente possiede\" viene citato dal modulo?",
+    "options": [
+      "Il riconoscimento del volto",
+      "Un PIN",
+      "Una password",
+      "Uno smartphone o un dispositivo di sicurezza"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo cita lo smartphone o un dispositivo di sicurezza come esempi di questa categoria."
+  },
+  {
+    "id": 93,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale esempio di \"qualcosa che l'utente è\" viene citato dal modulo?",
+    "options": [
+      "Un PIN",
+      "Uno smartphone",
+      "Un'impronta digitale o il riconoscimento del volto",
+      "Una password"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo cita impronta digitale e riconoscimento del volto come esempi di questa categoria."
+  },
+  {
+    "id": 94,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quali operazioni si applica soprattutto l'autenticazione forte, secondo il modulo?",
+    "options": [
+      "Alle operazioni più sensibili, come i pagamenti online o le modifiche alle impostazioni del conto",
+      "Solo all'apertura di un nuovo conto corrente",
+      "Solo alle operazioni effettuate in filiale",
+      "Solo ai prelievi di contante allo sportello automatico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica queste operazioni come principali destinatarie dell'autenticazione forte."
+  },
+  {
+    "id": 95,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Un criminale che conosce la password o i dati della carta può normalmente completare un'operazione protetta da autenticazione forte, secondo il modulo?",
+    "options": [
+      "No, non potrebbe normalmente farlo senza superare la verifica aggiuntiva prevista dalla banca",
+      "No, l'autenticazione forte impedisce anche l'accesso al proprietario legittimo",
+      "Sì, se conosce anche il nome del titolare",
+      "Sì, la password è sempre sufficiente da sola"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo spiega che serve superare anche la verifica aggiuntiva."
+  },
+  {
+    "id": 96,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali altri strumenti utilizzano gli istituti di credito oltre all'autenticazione forte, secondo il modulo?",
+    "options": [
+      "Solo controlli manuali effettuati in filiale",
+      "Sistemi di monitoraggio delle transazioni, rilevamento di comportamenti anomali, notifiche in tempo reale e strumenti antifrode",
+      "Solo comunicazioni cartacee inviate una volta all'anno",
+      "Solo la richiesta di un documento d'identità a ogni operazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo elenca questi ulteriori strumenti di sicurezza bancaria."
+  },
+  {
+    "id": 97,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Le tecnologie di sicurezza bancaria possono impedire una truffa se è il cliente stesso ad autorizzare un pagamento a un malintenzionato, secondo il modulo?",
+    "options": [
+      "Sì, ma solo per importi superiori a una certa soglia",
+      "No, ma solo se il cliente utilizza una carta prepagata",
+      "Sì, bloccano sempre automaticamente ogni operazione sospetta",
+      "No, non possono impedirlo in questo caso"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo chiarisce questo limite delle tecnologie di sicurezza."
+  },
+  {
+    "id": 98,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa ricordano costantemente le banche, secondo il modulo?",
+    "options": [
+      "Che è sempre necessario comunicare il PIN telefonicamente per verifiche di routine",
+      "Che le password vanno cambiate ogni giorno",
+      "Che i codici OTP possono essere condivisi solo con il proprio consulente bancario",
+      "Che nessun operatore, dipendente o addetto dell'assistenza chiederà mai password, PIN, codici OTP o codici di autorizzazione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo riporta questo avviso costante delle banche ai clienti."
+  },
+  {
+    "id": 99,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio quotidiano del modulo, come viene confermato il pagamento online dopo l'inserimento dei dati?",
+    "options": [
+      "Automaticamente, senza alcuna verifica aggiuntiva",
+      "Con una telefonata di conferma da parte della banca",
+      "Con il riconoscimento dell'impronta digitale, dopo aver ricevuto una notifica sull'app della banca",
+      "Con l'invio di un documento d'identità via email"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'esempio del modulo mostra questo passaggio di conferma tramite impronta digitale."
+  },
+  {
+    "id": 100,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa cercarono di ottenere le campagne di phishing del 2023 ai danni di clienti bancari europei, secondo il caso reale citato nel modulo?",
+    "options": [
+      "L'indirizzo di residenza dei clienti",
+      "Il numero di conto corrente completo senza altri dati",
+      "Il nome del referente della propria filiale",
+      "Codici di autenticazione temporanei ricevuti tramite SMS o applicazioni bancarie"
+    ],
+    "correctIndex": 3,
+    "explanation": "È il caso reale citato dal modulo nel capitolo sull'autenticazione forte."
+  },
+  {
+    "id": 101,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostrarono gli attacchi di phishing del 2023 sui sistemi di autenticazione a più fattori, secondo il modulo?",
+    "options": [
+      "Che solo le password semplici possono essere compromesse",
+      "Che l'autenticazione a più fattori è completamente inutile",
+      "Che un utente manipolato può diventare il punto debole del sistema, anche con sistemi di sicurezza avanzati",
+      "Che il phishing non funziona più contro le banche europee"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo trae questa conclusione dagli attacchi del 2023."
+  },
+  {
+    "id": 102,
+    "module": "sicurezza-pagamenti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa aggiunge l'autenticazione forte ai pagamenti, secondo la sintesi \"in una frase\" del modulo?",
+    "options": [
+      "Un costo aggiuntivo obbligatorio per ogni transazione",
+      "Fiducia, verificando l'identità di chi autorizza il pagamento",
+      "La possibilità di annullare qualsiasi pagamento senza motivo",
+      "Un ritardo di alcuni giorni per ogni operazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la sintesi conclusiva del capitolo sull'autenticazione forte."
+  }
+]

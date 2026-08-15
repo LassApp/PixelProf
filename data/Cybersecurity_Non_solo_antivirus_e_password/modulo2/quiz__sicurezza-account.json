@@ -1,0 +1,1277 @@
+[
+  {
+    "id": 1,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, oggi il vero valore per un attaccante si trova più nel dispositivo o negli account?",
+    "options": [
+      "Negli account, perché permettono di recuperare email, foto, documenti, contatti e impostazioni da qualunque dispositivo",
+      "Nella connessione Internet utilizzata dall'utente",
+      "In entrambi allo stesso modo, senza alcuna differenza",
+      "Nel dispositivo fisico, perché ha un valore di rivendita maggiore"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che oggi il vero valore non si trova nel dispositivo ma negli account."
+  },
+  {
+    "id": 2,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa può essere sostituito e cosa no tra dispositivo e identità digitale?",
+    "options": [
+      "L'identità digitale può essere sostituita facilmente, il dispositivo no",
+      "Entrambi possono essere sostituiti con la stessa facilità",
+      "Lo smartphone o il computer possono essere sostituiti, la nostra identità digitale no",
+      "Nessuno dei due può essere sostituito"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo afferma: lo smartphone o il computer possono essere sostituiti, la nostra identità digitale no."
+  },
+  {
+    "id": 3,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, verso cosa si stanno spostando sempre più gli attaccanti?",
+    "options": [
+      "Verso l'impossessarsi degli account, sempre meno verso il furto del dispositivo fisico",
+      "Verso entrambi con la stessa frequenza di sempre",
+      "Verso il danneggiamento fisico delle infrastrutture di rete",
+      "Verso il furto fisico dei dispositivi, sempre meno verso gli account"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che gli attaccanti cercano sempre meno di rubare il dispositivo e sempre più di impossessarsi degli account."
+  },
+  {
+    "id": 4,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, qual è nella maggior parte dei casi la prima barriera che protegge un account?",
+    "options": [
+      "Una password",
+      "Un firewall aziendale",
+      "Una connessione VPN",
+      "Un antivirus"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che la prima barriera che protegge gli account è, nella maggior parte dei casi, una password."
+  },
+  {
+    "id": 5,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene definita una password, secondo il modulo?",
+    "options": [
+      "Un programma che genera codici temporanei",
+      "Un servizio che memorizza automaticamente le credenziali",
+      "Un dispositivo fisico usato per autenticarsi",
+      "Una sequenza di caratteri utilizzata per verificare l'identità di un utente e consentire l'accesso a un account o sistema"
+    ],
+    "correctIndex": 3,
+    "explanation": "È la definizione di password fornita dal modulo."
+  },
+  {
+    "id": 6,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando una password è considerata sicura, secondo il modulo?",
+    "options": [
+      "Quando viene cambiata ogni giorno",
+      "Quando è composta solo da numeri",
+      "Quando è sufficientemente lunga, complessa e difficile da indovinare o violare con strumenti automatici",
+      "Quando è breve ma contiene simboli particolari"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo definisce sicura una password lunga, complessa e difficile da indovinare o violare."
+  },
+  {
+    "id": 7,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa bisogna evitare per rendere una password difficile da prevedere, secondo il modulo?",
+    "options": [
+      "L'uso di più di 14 caratteri",
+      "L'uso di lettere maiuscole e minuscole insieme",
+      "Parole comuni, nomi propri, date significative o altre informazioni facilmente associabili al proprietario",
+      "L'uso di simboli speciali"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo indica di evitare parole comuni, nomi propri, date significative o informazioni facilmente associabili."
+  },
+  {
+    "id": 8,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per attacco a forza bruta (Brute Force), secondo il modulo?",
+    "options": [
+      "Un attacco che intercetta i messaggi SMS",
+      "Un attacco che sovraccarica un servizio con richieste multiple",
+      "Un attacco in cui vengono provate automaticamente moltissime password fino a trovare quella corretta",
+      "Un attacco che inganna l'utente convincendolo a rivelare la password"
+    ],
+    "correctIndex": 2,
+    "explanation": "È la definizione di attacco a forza bruta fornita dal modulo."
+  },
+  {
+    "id": 9,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, quale fattore è oggi tra i più importanti per la sicurezza di una password?",
+    "options": [
+      "Il colore dell'interfaccia utilizzata",
+      "La velocità con cui viene digitata",
+      "La lunghezza",
+      "Il numero di dispositivi su cui viene utilizzata"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo afferma che oggi la lunghezza è uno dei fattori più importanti."
+  },
+  {
+    "id": 10,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, una password lunga offre generalmente una protezione maggiore rispetto a...?",
+    "options": [
+      "Una password corta composta da pochi simboli complessi",
+      "Una password che non viene mai cambiata",
+      "Una password che contiene solo numeri",
+      "Una password condivisa con un familiare"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che una password lunga offre generalmente una protezione maggiore di una corta con pochi simboli complessi."
+  },
+  {
+    "id": 11,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quanti caratteri dovrebbe essere composta almeno una buona password, secondo il modulo?",
+    "options": [
+      "Almeno 20-30 caratteri",
+      "Non è indicato un numero minimo di caratteri",
+      "Almeno 14-16 caratteri",
+      "Almeno 6-8 caratteri"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo indica almeno 14-16 caratteri come lunghezza minima consigliata."
+  },
+  {
+    "id": 12,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dovrebbe includere una buona password, secondo il modulo?",
+    "options": [
+      "Lettere maiuscole e minuscole, numeri e simboli",
+      "Solo il nome dell'utente e la data di nascita",
+      "Solo lettere minuscole per essere più facile da ricordare",
+      "Solo numeri per essere più veloce da digitare"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica che una buona password dovrebbe includere maiuscole, minuscole, numeri e simboli."
+  },
+  {
+    "id": 13,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, come può essere costruita ancora meglio una password?",
+    "options": [
+      "Come il nome dell'account seguito da un numero",
+      "Come una frase lunga e facile da ricordare per il proprietario, ma difficile da prevedere per chiunque altro",
+      "Come una sequenza di numeri consecutivi",
+      "Come una singola parola comune ripetuta più volte"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo suggerisce di costruire la password come una frase lunga e personale ma difficile da prevedere."
+  },
+  {
+    "id": 14,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, ogni account importante dovrebbe avere...?",
+    "options": [
+      "Una password diversa",
+      "La stessa password di tutti gli altri account",
+      "Una password che cambia ogni ora",
+      "Nessuna password, solo la biometria"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che ogni account importante dovrebbe avere una password diversa."
+  },
+  {
+    "id": 15,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della cassaforte usata nel modulo, cosa succede se si usa la stessa combinazione per la cassaforte di casa, dell'ufficio e della banca?",
+    "options": [
+      "Sarebbe impossibile scoprire la combinazione",
+      "Non cambierebbe nulla rispetto a combinazioni diverse",
+      "Le casseforti diventerebbero automaticamente più sicure",
+      "Basterebbe scoprire una combinazione per aprirle tutte"
+    ],
+    "correctIndex": 3,
+    "explanation": "È quanto illustrato dalla metafora della cassaforte del modulo."
+  },
+  {
+    "id": 16,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene riassunta, in una frase, una password efficace, secondo il modulo?",
+    "options": [
+      "Complessa ma uguale su tutti gli account",
+      "Semplice e cambiata ogni settimana",
+      "Breve, condivisa e facile da ricordare",
+      "Lunga, unica e difficile da prevedere"
+    ],
+    "correctIndex": 3,
+    "explanation": "È la sintesi finale del capitolo sulle password sicure."
+  },
+  {
+    "id": 17,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come vengono definiti gli errori nella gestione delle password, secondo il modulo?",
+    "options": [
+      "Comportamenti che riducono il livello di sicurezza di un account, rendendolo più facile da compromettere",
+      "Difetti tecnici presenti nel software del sistema operativo",
+      "Attacchi informatici condotti da criminali esperti",
+      "Vulnerabilità hardware del dispositivo utilizzato"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione fornita dal modulo per gli errori nella gestione delle password."
+  },
+  {
+    "id": 18,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è uno degli errori più gravi nella gestione delle password, secondo il modulo?",
+    "options": [
+      "Cambiare la password dopo un Data Breach",
+      "Utilizzare una frase lunga come password",
+      "Utilizzare un password manager per generarle",
+      "Riutilizzare la stessa password su più servizi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo indica il riutilizzo della stessa password su più servizi come uno degli errori più gravi."
+  },
+  {
+    "id": 19,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per Credential Stuffing, secondo il modulo?",
+    "options": [
+      "La creazione automatica di password casuali da parte di un password manager",
+      "L'invio massivo di email di phishing a molte vittime",
+      "Un attacco che sovraccarica un servizio con richieste multiple",
+      "Il riutilizzo automatico di credenziali rubate su più siti"
+    ],
+    "correctIndex": 3,
+    "explanation": "È la definizione di Credential Stuffing fornita dal modulo."
+  },
+  {
+    "id": 20,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa possono fare gli aggressori se un sito subisce una violazione e le credenziali vengono sottratte?",
+    "options": [
+      "Bloccare automaticamente l'account su tutti i servizi",
+      "Cancellare automaticamente l'account compromesso",
+      "Provare automaticamente la stessa combinazione di email e password su altri servizi",
+      "Restituire i dati al proprietario dopo un pagamento"
+    ],
+    "correctIndex": 2,
+    "explanation": "È il meccanismo del Credential Stuffing descritto nel modulo."
+  },
+  {
+    "id": 21,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono esempi di password troppo prevedibili citati nel modulo?",
+    "options": [
+      "Sequenze come 123456, password, nomi propri, date di nascita",
+      "Frasi lunghe con simboli e numeri casuali",
+      "Combinazioni generate automaticamente da un password manager",
+      "Password di almeno 16 caratteri con simboli"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo cita queste sequenze come esempi di password prevedibili."
+  },
+  {
+    "id": 22,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, perché le password comuni sono tra le prime che un attaccante tenta?",
+    "options": [
+      "Perché richiedono meno tempo di calcolo rispetto alle altre",
+      "Perché sono le uniche combinazioni possibili da provare",
+      "Perché gli attaccanti provano prima le combinazioni che milioni di persone scelgono davvero",
+      "Perché sono elencate pubblicamente da ogni servizio online"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo spiega che gli attaccanti provano prima le password scelte davvero da milioni di persone."
+  },
+  {
+    "id": 23,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, perché una password è considerata debole?",
+    "options": [
+      "Perché è facile da ricordare, non perché è facile da indovinare",
+      "Perché contiene troppi simboli speciali",
+      "Perché è facile da indovinare, non perché è facile da ricordare",
+      "Perché è troppo lunga da digitare"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo afferma: una password non è debole perché è facile da ricordare, è debole perché è facile da indovinare."
+  },
+  {
+    "id": 24,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, condividere le proprie password con amici, familiari o colleghi rappresenta...?",
+    "options": [
+      "Una buona pratica di sicurezza raccomandata",
+      "Un'operazione priva di qualsiasi conseguenza",
+      "Un obbligo richiesto da molti servizi online",
+      "Un rischio, perché una password dovrebbe essere conosciuta soltanto dal suo proprietario"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo indica la condivisione delle password come un rischio."
+  },
+  {
+    "id": 25,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che modo, secondo il modulo, molte persone conservano le proprie password in modo poco sicuro?",
+    "options": [
+      "Su fogli lasciati accanto al computer, in documenti non protetti o nelle note dello smartphone senza protezione",
+      "Esclusivamente tramite un password manager cifrato",
+      "Scrivendole su un diario chiuso a chiave",
+      "Memorizzandole soltanto nella propria mente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo cita questi esempi di conservazione poco sicura delle password."
+  },
+  {
+    "id": 26,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa bisogna fare, secondo il modulo, quando un servizio subisce un Data Breach e le credenziali vengono esposte?",
+    "options": [
+      "Contattare direttamente l'attaccante per negoziare",
+      "Attendere qualche settimana prima di agire",
+      "Continuare a utilizzare la stessa password se è complessa",
+      "Modificare immediatamente la password"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo afferma che è fondamentale modificare immediatamente la password dopo un Data Breach."
+  },
+  {
+    "id": 27,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa significa continuare a utilizzare una credenziale ormai conosciuta dagli aggressori dopo un Data Breach?",
+    "options": [
+      "Obbligare il servizio a bloccare l'account",
+      "Lasciare aperta una porta di cui possiedono già la chiave",
+      "Rendere automaticamente l'account più sicuro",
+      "Non comporta alcun rischio aggiuntivo per l'account"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo usa questa immagine per descrivere il rischio di non cambiare la password dopo un Data Breach."
+  },
+  {
+    "id": 28,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del mazzo di chiavi usata nel modulo, cosa succede se la stessa chiave apre casa, auto, ufficio e cassaforte?",
+    "options": [
+      "Perderla significherebbe compromettere tutto",
+      "Aumenterebbe automaticamente la sicurezza di ogni luogo",
+      "Non cambierebbe nulla rispetto ad avere chiavi diverse",
+      "Sarebbe più semplice da custodire senza alcun rischio"
+    ],
+    "correctIndex": 0,
+    "explanation": "È quanto illustrato dalla metafora del mazzo di chiavi del modulo."
+  },
+  {
+    "id": 29,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene riassunto, in una frase, il capitolo sugli errori comuni, secondo il modulo?",
+    "options": [
+      "La sicurezza non dipende mai dalle abitudini dell'utente",
+      "La sicurezza dipende esclusivamente dalla lunghezza della password",
+      "La sicurezza non crolla per complessità, ma per ripetizione e cattive abitudini",
+      "La sicurezza crolla solo per la scelta di password troppo complesse"
+    ],
+    "correctIndex": 2,
+    "explanation": "È la sintesi finale del capitolo sugli errori comuni."
+  },
+  {
+    "id": 30,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, da cosa dipende la sicurezza degli account, oltre che dalla qualità della password?",
+    "options": [
+      "Dalle abitudini con cui la password viene gestita ogni giorno",
+      "Esclusivamente dal numero di account posseduti",
+      "Esclusivamente dalla marca del dispositivo utilizzato",
+      "Esclusivamente dalla velocità della connessione Internet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che la sicurezza dipende anche dalle abitudini quotidiane di gestione."
+  },
+  {
+    "id": 31,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per Password Manager, secondo il modulo?",
+    "options": [
+      "Un dispositivo fisico utilizzato per l'autenticazione biometrica",
+      "Un servizio che blocca automaticamente gli account compromessi",
+      "Un sistema che sostituisce completamente le password con le passkey",
+      "Un'applicazione progettata per generare, memorizzare e compilare automaticamente le password in modo sicuro"
+    ],
+    "correctIndex": 3,
+    "explanation": "È la definizione di Password Manager fornita dal modulo."
+  },
+  {
+    "id": 32,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa deve ricordare l'utente per utilizzare un Password Manager, secondo il modulo?",
+    "options": [
+      "Deve ricordare comunque tutte le password dei singoli account",
+      "Non deve ricordare nulla, l'accesso è sempre automatico",
+      "Una sola password principale, la Master Password, che protegge l'intero archivio delle credenziali",
+      "Deve ricordare un codice diverso ogni giorno"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo indica la Master Password come unica password da ricordare."
+  },
+  {
+    "id": 33,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa eliminano i password manager?",
+    "options": [
+      "Il compromesso tra sicurezza e praticità",
+      "La necessità di avere una connessione Internet",
+      "La necessità di aggiornare periodicamente i dispositivi",
+      "Il rischio di qualsiasi tipo di attacco informatico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che i password manager eliminano il compromesso tra sicurezza e praticità."
+  },
+  {
+    "id": 34,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può generare automaticamente un password manager, secondo il modulo?",
+    "options": [
+      "La stessa password per tutti i servizi collegati",
+      "Solo password numeriche di quattro cifre",
+      "Password brevi ma facili da ricordare",
+      "Password molto lunghe, casuali e uniche per ogni servizio"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo descrive la generazione automatica di password lunghe, casuali e uniche."
+  },
+  {
+    "id": 35,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che forma vengono archiviate le credenziali da un password manager, secondo il modulo?",
+    "options": [
+      "In forma condivisa pubblicamente online",
+      "In forma cifrata (encrypted)",
+      "In forma leggibile su un file di testo",
+      "Su un foglio di carta custodito dall'utente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo afferma che le credenziali vengono archiviate in forma cifrata."
+  },
+  {
+    "id": 36,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quali sistemi, oltre alla Master Password, si può accedere alle credenziali di un password manager, secondo il modulo?",
+    "options": [
+      "Solo tramite un codice inviato via posta cartacea",
+      "Solo tramite una domanda di sicurezza personale",
+      "Sistemi di autenticazione come l'impronta digitale o il riconoscimento del volto",
+      "Solo tramite l'inserimento del numero di telefono"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo cita l'impronta digitale e il riconoscimento del volto come alternative alla Master Password."
+  },
+  {
+    "id": 37,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può segnalare un password manager, oltre a memorizzare le password, secondo il modulo?",
+    "options": [
+      "Solo il numero di accessi effettuati in un giorno",
+      "Solo la posizione geografica dei dispositivi collegati",
+      "Che una credenziale è stata coinvolta in un Data Breach, o password duplicate o deboli",
+      "Solo la velocità della connessione Internet dell'utente"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo elenca queste funzionalità aggiuntive dei password manager."
+  },
+  {
+    "id": 38,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa altro, oltre alle password, permette di conservare in modo sicuro un password manager, secondo il modulo?",
+    "options": [
+      "Solo la cronologia di navigazione web",
+      "Solo i contatti della rubrica telefonica",
+      "Codici di recupero, documenti riservati e altre informazioni sensibili",
+      "Solo fotografie personali dell'utente"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo cita codici di recupero, documenti riservati e altre informazioni sensibili."
+  },
+  {
+    "id": 39,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, un password manager rende un account invulnerabile?",
+    "options": [
+      "No, nessun password manager rende un account invulnerabile",
+      "Sì, rende sempre l'account completamente invulnerabile",
+      "Sì, ma solo se si utilizza l'autenticazione biometrica",
+      "Il modulo non tratta questo aspetto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma esplicitamente che nessun password manager rende un account invulnerabile."
+  },
+  {
+    "id": 40,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quali casi, secondo il modulo, il rischio rimane anche utilizzando un password manager?",
+    "options": [
+      "Solo se il password manager non viene mai aggiornato",
+      "Solo se l'utente utilizza più di un dispositivo",
+      "Solo se il dispositivo non è collegato a Internet",
+      "Se l'utente comunica le proprie credenziali a un truffatore, approva un accesso fraudolento o usa una Master Password debole"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo elenca questi casi in cui il rischio rimane."
+  },
+  {
+    "id": 41,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, da cosa dipende sempre la sicurezza, anche con strumenti tecnologici efficaci come i password manager?",
+    "options": [
+      "Esclusivamente dalla velocità del dispositivo utilizzato",
+      "Anche dai comportamenti di chi li utilizza",
+      "Esclusivamente dalla marca del password manager scelto",
+      "Esclusivamente dal numero di password memorizzate"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo afferma che la sicurezza dipende sempre anche dai comportamenti dell'utente."
+  },
+  {
+    "id": 42,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della cassaforte con tutte le chiavi usata nel modulo per il password manager, cosa basta fare invece di portare con sé tutte le chiavi?",
+    "options": [
+      "Consegnare le chiavi a una persona di fiducia",
+      "Custodire con attenzione la chiave della cassaforte",
+      "Nascondere ogni chiave in un luogo diverso",
+      "Duplicare tutte le chiavi più volte"
+    ],
+    "correctIndex": 1,
+    "explanation": "È quanto illustrato dalla metafora della cassaforte con tutte le chiavi."
+  },
+  {
+    "id": 43,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene riassunto, in una frase, il ruolo di un password manager, secondo il modulo?",
+    "options": [
+      "Permette di utilizzare password uniche e robuste per ogni account senza doverle ricordare tutte",
+      "Elimina completamente la necessità di qualsiasi password",
+      "Sostituisce l'autenticazione multifattore in ogni caso",
+      "Permette di utilizzare la stessa password ovunque in modo sicuro"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la sintesi finale del capitolo sui password manager."
+  },
+  {
+    "id": 44,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per Autenticazione Multifattore (MFA), secondo il modulo?",
+    "options": [
+      "Un sistema di sicurezza che richiede due o più prove di identità prima di concedere l'accesso a un account",
+      "Un sistema che sostituisce completamente le password con le passkey",
+      "Un sistema che genera automaticamente password casuali",
+      "Un sistema che cifra tutte le credenziali dell'utente"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di MFA fornita dal modulo."
+  },
+  {
+    "id": 45,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando accediamo a un servizio inserendo solo la password, quanti fattori di autenticazione stiamo utilizzando, secondo il modulo?",
+    "options": [
+      "Due fattori: qualcosa che conosciamo e qualcosa che possediamo",
+      "Nessun fattore di autenticazione",
+      "Tre fattori differenti",
+      "Un solo fattore: qualcosa che conosciamo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Con la sola password si utilizza un solo fattore, qualcosa che conosciamo."
+  },
+  {
+    "id": 46,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama il sistema che richiede esattamente due fattori di autenticazione, secondo il modulo?",
+    "options": [
+      "Autenticazione Multifattore generica (MFA)",
+      "Risk-Based Authentication",
+      "Adaptive Authentication",
+      "Autenticazione a Due Fattori (2FA)"
+    ],
+    "correctIndex": 3,
+    "explanation": "Se vengono richiesti esattamente due fattori si parla di 2FA."
+  },
+  {
+    "id": 47,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la relazione tra 2FA e MFA, secondo il modulo?",
+    "options": [
+      "2FA e MFA sono termini completamente indipendenti tra loro",
+      "MFA è un caso particolare della 2FA",
+      "2FA e MFA indicano esattamente lo stesso numero di fattori",
+      "La 2FA è un caso particolare dell'MFA: ogni sistema 2FA è un sistema MFA, ma non viceversa"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo chiarisce che la 2FA è un caso particolare dell'MFA."
+  },
+  {
+    "id": 48,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del modulo (password + codice dell'app di autenticazione), quali due categorie di fattori vengono utilizzate?",
+    "options": [
+      "Qualcosa che si possiede e qualcosa che si è",
+      "Due elementi della stessa categoria, qualcosa che si conosce",
+      "Qualcosa che si conosce e qualcosa che si è",
+      "Qualcosa che si conosce (la password) e qualcosa che si possiede (lo smartphone)"
+    ],
+    "correctIndex": 3,
+    "explanation": "È l'esempio di 2FA descritto nel modulo."
+  },
+  {
+    "id": 49,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del modulo con password, codice dell'app e impronta digitale o riconoscimento del volto, quante categorie di fattori vengono utilizzate?",
+    "options": [
+      "Due categorie soltanto",
+      "Tre: qualcosa che si conosce, qualcosa che si possiede, qualcosa che si è",
+      "Quattro categorie differenti",
+      "Una sola categoria ripetuta tre volte"
+    ],
+    "correctIndex": 1,
+    "explanation": "È l'esempio con tre fattori, che costituisce un sistema MFA."
+  },
+  {
+    "id": 50,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, due password diverse costituiscono un sistema MFA?",
+    "options": [
+      "Sì, perché sono comunque due elementi di autenticazione distinti",
+      "No, perché appartengono entrambe alla stessa categoria: qualcosa che si conosce",
+      "Il modulo non tratta questo aspetto",
+      "Sì, ma solo se una delle due è più lunga dell'altra"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo afferma che due password diverse non costituiscono MFA."
+  },
+  {
+    "id": 51,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'aspetto fondamentale perché più fattori costituiscano davvero un sistema MFA, secondo il modulo?",
+    "options": [
+      "Che i fattori appartengano a categorie diverse",
+      "Che i fattori siano tutti numerici",
+      "Che i fattori vengano generati dallo stesso dispositivo",
+      "Che i fattori vengano inseriti nello stesso momento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che l'aspetto fondamentale è che i fattori appartengano a categorie diverse."
+  },
+  {
+    "id": 52,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa succede se un criminale ottiene la password ma il servizio utilizza l'MFA?",
+    "options": [
+      "Nella maggior parte dei casi non potrebbe comunque accedere all'account senza superare gli altri controlli",
+      "Potrebbe comunque accedere immediatamente all'account",
+      "Il servizio smetterebbe di funzionare per tutti gli utenti",
+      "L'account verrebbe automaticamente cancellato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo descrive questo vantaggio dell'MFA in caso di password compromessa."
+  },
+  {
+    "id": 53,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per Risk-Based Authentication, secondo il modulo?",
+    "options": [
+      "Un sistema che elimina completamente la necessità di password",
+      "Un sistema che richiede sempre esattamente quattro fattori di autenticazione",
+      "Un sistema che valuta il livello di rischio di un accesso, come dispositivo, posizione e orario, e decide se bloccare o richiedere ulteriori verifiche",
+      "Un sistema che genera automaticamente una nuova password ogni ora"
+    ],
+    "correctIndex": 2,
+    "explanation": "È la definizione di Risk-Based Authentication fornita dal modulo."
+  },
+  {
+    "id": 54,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per Adaptive Authentication, secondo il modulo?",
+    "options": [
+      "Un sistema che adatta automaticamente il livello di controllo in base al comportamento e al contesto dell'utente",
+      "Un sistema che sostituisce le password con le passkey",
+      "Un sistema che blocca sempre l'accesso da dispositivi nuovi",
+      "Un sistema che richiede sempre lo stesso livello di controllo per tutti gli utenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di Adaptive Authentication fornita dal modulo."
+  },
+  {
+    "id": 55,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza chiave tra Risk-Based Authentication e Adaptive Authentication, secondo il modulo?",
+    "options": [
+      "Risk-Based adatta i controlli, Adaptive valuta soltanto il rischio",
+      "Sono due termini equivalenti che indicano esattamente la stessa cosa",
+      "Risk-Based riguarda solo le password, Adaptive solo la biometria",
+      "Risk-Based valuta il rischio, Adaptive adatta i controlli in base al rischio"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo indica questa differenza chiave tra i due sistemi."
+  },
+  {
+    "id": 56,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, il livello di controllo basato sul contesto (paese mai usato, dispositivo nuovo, orario insolito) viene definito formalmente come un quarto fattore?",
+    "options": [
+      "No, non si parla formalmente di 4FA come standard tecnico",
+      "Sì, viene definito ufficialmente come quarto fattore standard",
+      "Il modulo non specifica questo aspetto",
+      "Sì, ma solo nei sistemi bancari"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che non si parla formalmente di 4FA come standard tecnico."
+  },
+  {
+    "id": 57,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene riassunta, con una frase chiave, la differenza tra i fattori di autenticazione tradizionali e il controllo del contesto, secondo il modulo?",
+    "options": [
+      "I primi fattori verificano il contesto, il resto verifica chi sei",
+      "I primi fattori verificano chi sei. Il contesto verifica se tutto torna",
+      "Il contesto sostituisce completamente i fattori di autenticazione",
+      "Non esiste alcuna differenza tra fattori e contesto"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la frase chiave riportata nel modulo su questo tema."
+  },
+  {
+    "id": 58,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, i codici inviati tramite SMS rappresentano un metodo MFA completamente sicuro e privo di vulnerabilità?",
+    "options": [
+      "Sì, sono considerati il metodo più sicuro in assoluto",
+      "No, sono un miglioramento rispetto alla sola password, ma possono essere vulnerabili a clonazione della SIM o intercettazione",
+      "Il modulo non tratta i codici SMS",
+      "Sì, non presentano alcuna vulnerabilità nota"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo descrive gli SMS come un miglioramento ma con alcune vulnerabilità note."
+  },
+  {
+    "id": 59,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali metodi MFA sono generalmente preferiti rispetto agli SMS, secondo il modulo?",
+    "options": [
+      "L'invio di email con la password in chiaro",
+      "Le telefonate automatiche di verifica",
+      "Le domande di sicurezza personali",
+      "Le app di autenticazione o le chiavi di sicurezza fisiche"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo indica app di autenticazione e chiavi di sicurezza fisiche come metodi oggi preferiti."
+  },
+  {
+    "id": 60,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quali tipi di servizi l'MFA è consigliato, e spesso obbligatorio, secondo il modulo?",
+    "options": [
+      "Solo per gli account creati da meno di un anno",
+      "Solo per i siti di intrattenimento",
+      "Solo per i social network personali",
+      "Email, servizi bancari, cloud, piattaforme di lavoro e qualsiasi servizio che custodisca dati sensibili"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo elenca questi servizi come ambiti in cui l'MFA è consigliato o obbligatorio."
+  },
+  {
+    "id": 61,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'aeroporto usata per spiegare l'MFA, cosa succede se qualcuno trovasse soltanto il biglietto d'imbarco?",
+    "options": [
+      "Potrebbe comunque salire sull'aereo senza altri controlli",
+      "Non potrebbe comunque salire sull'aereo",
+      "Il personale non effettuerebbe alcun controllo aggiuntivo",
+      "Il biglietto da solo sarebbe sufficiente per l'imbarco"
+    ],
+    "correctIndex": 1,
+    "explanation": "È quanto illustrato dalla metafora dell'aeroporto del modulo."
+  },
+  {
+    "id": 62,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene riassunta, in una frase, l'autenticazione multifattore, secondo il modulo?",
+    "options": [
+      "Protegge gli account richiedendo la stessa password inserita più volte",
+      "Protegge gli account richiedendo più prove di identità appartenenti a categorie diverse",
+      "Elimina completamente la necessità di qualsiasi verifica",
+      "Richiede sempre esattamente quattro prove di identità"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la sintesi finale del capitolo sull'MFA."
+  },
+  {
+    "id": 63,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le Passkey, secondo il modulo?",
+    "options": [
+      "Un servizio che memorizza le password in un archivio cifrato",
+      "Un tipo di password particolarmente lunga e complessa",
+      "Un sistema che genera codici temporanei via SMS",
+      "Un nuovo sistema di autenticazione che sostituisce le password tradizionali con una coppia di chiavi crittografiche"
+    ],
+    "correctIndex": 3,
+    "explanation": "È la definizione di Passkey fornita dal modulo."
+  },
+  {
+    "id": 64,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come avviene l'accesso tramite passkey, secondo il modulo?",
+    "options": [
+      "Digitando una password lunga almeno 20 caratteri",
+      "Rispondendo a una domanda di sicurezza personale",
+      "Inserendo un codice ricevuto via SMS",
+      "Confermando la propria identità attraverso il dispositivo, ad esempio con impronta digitale, riconoscimento del volto o PIN"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo descrive così l'accesso tramite passkey."
+  },
+  {
+    "id": 65,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, esiste con le passkey una parola segreta che può essere rubata, copiata o inserita in un sito falso?",
+    "options": [
+      "Sì, ma solo se l'utente la condivide volontariamente",
+      "No, non esiste una parola segreta perché la passkey non è un'informazione che l'utente deve inventare, ricordare o digitare",
+      "Sì, la passkey stessa è una parola segreta digitata dall'utente",
+      "Il modulo non tratta questo aspetto"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo afferma che non esiste una parola segreta rubabile con le passkey."
+  },
+  {
+    "id": 66,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa genera automaticamente il dispositivo quando si crea una passkey, secondo il modulo?",
+    "options": [
+      "Una coppia di chiavi crittografiche collegate tra loro",
+      "Un codice temporaneo valido per pochi minuti",
+      "Un elenco di domande di sicurezza personalizzate",
+      "Una password casuale di 16 caratteri"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo descrive la generazione della coppia di chiavi crittografiche."
+  },
+  {
+    "id": 67,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove rimane memorizzata la chiave privata di una passkey, secondo il modulo?",
+    "options": [
+      "In un archivio pubblico consultabile da chiunque",
+      "Su un foglio cartaceo custodito dall'utente",
+      "Sui server del servizio online che offre l'accesso",
+      "In modo sicuro sul dispositivo dell'utente, e non viene mai condivisa"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo afferma che la chiave privata resta sul dispositivo e non viene mai condivisa."
+  },
+  {
+    "id": 68,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi registra la chiave pubblica di una passkey, secondo il modulo?",
+    "options": [
+      "Un ente pubblico indipendente dal servizio",
+      "Il servizio online, che la utilizza per verificare l'identità dell'utente",
+      "Nessuno, la chiave pubblica non viene mai registrata",
+      "Il dispositivo dell'utente, che la conserva insieme alla chiave privata"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo afferma che la chiave pubblica viene registrata dal servizio online."
+  },
+  {
+    "id": 69,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Durante l'accesso con una passkey, il servizio riceve mai la chiave privata dell'utente, secondo il modulo?",
+    "options": [
+      "Sì, il servizio riceve sempre la chiave privata per verificarla",
+      "Sì, ma solo al primo accesso da un nuovo dispositivo",
+      "Il modulo non specifica questo aspetto",
+      "No, il servizio non riceve mai la chiave privata"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo afferma che il servizio non riceve mai la chiave privata durante l'accesso."
+  },
+  {
+    "id": 70,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come dimostra il dispositivo di possedere la chiave corretta durante l'accesso con una passkey, secondo il modulo?",
+    "options": [
+      "Confermando via email il possesso della chiave",
+      "Digitando manualmente la chiave pubblica",
+      "Attraverso un processo crittografico, in risposta a una richiesta inviata dal servizio",
+      "Inviando la chiave privata direttamente al servizio"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo descrive un processo crittografico di verifica."
+  },
+  {
+    "id": 71,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, la credenziale segreta di una passkey viaggia mai su Internet?",
+    "options": [
+      "Sì, viaggia sempre in forma cifrata su Internet",
+      "Sì, ma solo durante la creazione della passkey",
+      "No, la credenziale segreta non viaggia mai su Internet",
+      "Il modulo non tratta questo aspetto"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo afferma che la credenziale segreta non viaggia mai su Internet."
+  },
+  {
+    "id": 72,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché le passkey offrono una protezione particolarmente efficace contro il phishing, secondo il modulo?",
+    "options": [
+      "Perché non possono essere utilizzate su dispositivi mobili",
+      "Perché la credenziale è legata esclusivamente al servizio legittimo per cui è stata creata",
+      "Perché vengono cambiate automaticamente ogni giorno",
+      "Perché richiedono sempre una connessione Internet criptata"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo spiega così la protezione dal phishing offerta dalle passkey."
+  },
+  {
+    "id": 73,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se un utente con una passkey visita un sito contraffatto, secondo il modulo?",
+    "options": [
+      "Il dispositivo utilizza comunque la passkey senza alcun controllo",
+      "L'utente non se ne accorge in nessun caso",
+      "Il sito contraffatto riceve automaticamente la chiave privata",
+      "Il dispositivo riconosce che il sito non corrisponde al servizio autorizzato e non utilizza la passkey"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo descrive questa protezione automatica in caso di sito contraffatto."
+  },
+  {
+    "id": 74,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come avviene, nella maggior parte dei casi, l'accesso quotidiano tramite passkey, secondo il modulo?",
+    "options": [
+      "Digitando manualmente la chiave pubblica ogni volta",
+      "Confermando la propria identità tramite il dispositivo, ad esempio con impronta digitale, riconoscimento del volto o PIN",
+      "Inserendo un codice ricevuto via email",
+      "Rispondendo a una domanda di sicurezza personalizzata"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo descrive così la semplicità dell'accesso quotidiano con passkey."
+  },
+  {
+    "id": 75,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede quando si cambia dispositivo, riguardo alla gestione delle passkey, secondo il modulo?",
+    "options": [
+      "La passkey viene automaticamente trasferita come una normale password",
+      "L'account diventa inaccessibile fino a un intervento manuale del servizio",
+      "Può avvenire tramite sistemi di sincronizzazione sicuri oppure creando una nuova passkey associata allo stesso account",
+      "La chiave privata viene inviata via email al nuovo dispositivo"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo descrive queste due modalità di gestione al cambio dispositivo."
+  },
+  {
+    "id": 76,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, una passkey rende un account automaticamente invincibile?",
+    "options": [
+      "Sì, ma solo se associata anche a una password complessa",
+      "Sì, una passkey rende sempre l'account completamente invincibile",
+      "Il modulo non tratta questo aspetto",
+      "No, una passkey non rende un account automaticamente invincibile"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo afferma che una passkey non rende un account automaticamente invincibile."
+  },
+  {
+    "id": 77,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa potrebbe fare un criminale che riesce già a ottenere l'accesso a un account, ad esempio tramite furto della password o di un codice di verifica?",
+    "options": [
+      "Perderebbe automaticamente l'accesso già ottenuto",
+      "Dovrebbe obbligatoriamente informare il proprietario dell'account",
+      "Non potrebbe più fare nulla, l'account sarebbe automaticamente protetto",
+      "Potrebbe tentare di aggiungere un nuovo metodo di autenticazione, come una passkey"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo descrive questo rischio residuo anche con le passkey."
+  },
+  {
+    "id": 78,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio della cassaforte con lucchetto usato nel modulo per spiegare le passkey, cosa conserva lo smartphone dell'utente?",
+    "options": [
+      "Nessuna chiave, l'accesso avviene senza alcuna verifica",
+      "La chiave vera per aprire il lucchetto, che non viene mai consegnata al servizio",
+      "Il lucchetto stesso, che il servizio deve verificare",
+      "Una copia della chiave che viene inviata al servizio ogni volta"
+    ],
+    "correctIndex": 1,
+    "explanation": "È quanto descritto nell'esempio della cassaforte con lucchetto del modulo."
+  },
+  {
+    "id": 79,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo l'esempio del modulo, qual è la differenza tra password e passkey rispetto alla consegna della chiave?",
+    "options": [
+      "Non esiste alcuna differenza tra i due sistemi",
+      "Entrambe richiedono di consegnare sempre una copia della chiave",
+      "Con una passkey si consegna sempre una copia della chiave, con una password no",
+      "Con una password si consegna una copia della chiave, con una passkey la chiave non viene mai consegnata"
+    ],
+    "correctIndex": 3,
+    "explanation": "È la differenza illustrata nell'esempio del modulo."
+  },
+  {
+    "id": 80,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio dell'aeroporto con le passkey descritto nel modulo, cosa deve fare l'utente per confermare la propria identità?",
+    "options": [
+      "Digitare una password lunga almeno 16 caratteri",
+      "Rispondere a una serie di domande di sicurezza",
+      "Mostrare un documento cartaceo e un biglietto stampato",
+      "Sbloccare il proprio dispositivo tramite impronta digitale, riconoscimento del volto o PIN"
+    ],
+    "correctIndex": 3,
+    "explanation": "È quanto descritto nell'esempio dell'aeroporto con le passkey del modulo."
+  },
+  {
+    "id": 81,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene riassunta, in una frase, la differenza tra password e passkey, secondo il modulo?",
+    "options": [
+      "La passkey è una chiave che devi consegnare ogni volta, la password rimane sempre con te",
+      "Entrambe devono essere consegnate ogni volta al servizio",
+      "La password è una chiave che devi consegnare ogni volta, la passkey è una chiave che rimane sempre con te",
+      "La password e la passkey sono esattamente la stessa cosa"
+    ],
+    "correctIndex": 2,
+    "explanation": "È la frase di sintesi finale del capitolo sulle passkey."
+  },
+  {
+    "id": 82,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della serratura costruita per una sola chiave, cosa succede se qualcuno copia la porta o cerca di far usare la chiave altrove?",
+    "options": [
+      "La serratura originale smetterebbe di funzionare",
+      "La chiave funzionerebbe con qualsiasi altra serratura simile",
+      "La chiave funzionerebbe soltanto con la serratura originale",
+      "La copia della porta diventerebbe automaticamente valida"
+    ],
+    "correctIndex": 2,
+    "explanation": "È quanto illustrato dalla metafora della serratura del modulo."
+  },
+  {
+    "id": 83,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo la chiusura del modulo, da cosa dipende la sicurezza di un account?",
+    "options": [
+      "Esclusivamente dall'uso di un password manager",
+      "Esclusivamente dalla lunghezza della password utilizzata",
+      "Esclusivamente dalla presenza dell'autenticazione biometrica",
+      "Dalla combinazione di più strumenti e buone pratiche, non da un singolo elemento"
+    ],
+    "correctIndex": 3,
+    "explanation": "È quanto afferma la chiusura del modulo."
+  },
+  {
+    "id": 84,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo la chiusura del modulo, un account ben difeso può comunque essere a rischio se...?",
+    "options": [
+      "Ha una password più lunga di 20 caratteri",
+      "Viene utilizzato raramente dall'utente",
+      "Il dispositivo da cui si accede non è adeguatamente protetto",
+      "È protetto anche dall'autenticazione multifattore"
+    ],
+    "correctIndex": 2,
+    "explanation": "La chiusura del modulo afferma che anche l'account meglio difeso rischia se il dispositivo non è protetto."
+  },
+  {
+    "id": 85,
+    "module": "account_security",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo la chiusura del modulo, quale sarà l'argomento del modulo successivo?",
+    "options": [
+      "La normativa sulla privacy dei dati",
+      "La creazione di contenuti per i social network",
+      "La sicurezza dei dispositivi, attraverso aggiornamenti, antivirus, backup e altre pratiche",
+      "La sicurezza delle reti aziendali"
+    ],
+    "correctIndex": 2,
+    "explanation": "È quanto annuncia la transizione finale verso il modulo successivo."
+  }
+]

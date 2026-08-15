@@ -1,0 +1,502 @@
+[
+  {
+    "sentence": "Oggi il vero valore per un attaccante si trova sempre meno nel dispositivo e sempre più negli ____.",
+    "answer": "account",
+    "bank": [
+      "antivirus",
+      "account",
+      "firewall",
+      "backup"
+    ]
+  },
+  {
+    "sentence": "Nella maggior parte dei casi, la prima barriera che protegge un account è una ____.",
+    "answer": "password",
+    "bank": [
+      "VPN",
+      "chiave USB",
+      "password",
+      "passkey"
+    ]
+  },
+  {
+    "sentence": "Una password è considerata sicura quando è sufficientemente lunga, complessa e difficile da ____ o violare con strumenti automatici.",
+    "answer": "indovinare",
+    "bank": [
+      "digitare",
+      "memorizzare",
+      "indovinare",
+      "condividere"
+    ]
+  },
+  {
+    "sentence": "Un attacco in cui vengono provate automaticamente moltissime password fino a trovare quella corretta si chiama attacco a ____.",
+    "answer": "forza bruta",
+    "bank": [
+      "dizionario",
+      "forza sociale",
+      "phishing",
+      "forza bruta"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, oggi la ____ è uno dei fattori più importanti per la sicurezza di una password.",
+    "answer": "lunghezza",
+    "bank": [
+      "ripetizione",
+      "velocità",
+      "condivisione",
+      "lunghezza"
+    ]
+  },
+  {
+    "sentence": "Una buona password dovrebbe essere composta da almeno ____ caratteri.",
+    "answer": "14-16",
+    "bank": [
+      "20-30",
+      "6-8",
+      "14-16",
+      "4-6"
+    ]
+  },
+  {
+    "sentence": "Una buona password dovrebbe includere lettere maiuscole e minuscole, numeri e ____.",
+    "answer": "simboli",
+    "bank": [
+      "emoji",
+      "colori",
+      "simboli",
+      "spazi"
+    ]
+  },
+  {
+    "sentence": "Ancora meglio se la password viene costruita come una ____ lunga e facile da ricordare, ma difficile da prevedere.",
+    "answer": "frase",
+    "bank": [
+      "sigla",
+      "iniziale",
+      "data",
+      "frase"
+    ]
+  },
+  {
+    "sentence": "Ogni account importante dovrebbe avere una password ____.",
+    "answer": "diversa",
+    "bank": [
+      "diversa",
+      "condivisa",
+      "temporanea",
+      "breve"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, una password efficace è lunga, unica e difficile da ____.",
+    "answer": "prevedere",
+    "bank": [
+      "ricordare",
+      "digitare",
+      "prevedere",
+      "condividere"
+    ]
+  },
+  {
+    "sentence": "Il riutilizzo automatico di credenziali rubate su più siti si chiama ____.",
+    "answer": "Credential Stuffing",
+    "bank": [
+      "Account Takeover",
+      "Credential Stuffing",
+      "Data Breach",
+      "Brute Force"
+    ]
+  },
+  {
+    "sentence": "Una password non è debole perché è facile da ricordare: è debole perché è facile da ____.",
+    "answer": "indovinare",
+    "bank": [
+      "dimenticare",
+      "condividere",
+      "indovinare",
+      "digitare"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, condividere le proprie password con amici, familiari o colleghi rappresenta un ____.",
+    "answer": "rischio",
+    "bank": [
+      "obbligo",
+      "rischio",
+      "requisito",
+      "vantaggio"
+    ]
+  },
+  {
+    "sentence": "Quando un servizio subisce un Data Breach, è fondamentale modificare ____ la password.",
+    "answer": "immediatamente",
+    "bank": [
+      "mai",
+      "immediatamente",
+      "gradualmente",
+      "occasionalmente"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, la sicurezza non crolla per complessità, ma per ____ e cattive abitudini.",
+    "answer": "ripetizione",
+    "bank": [
+      "lunghezza",
+      "casualità",
+      "ripetizione",
+      "cifratura"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del mazzo di chiavi, se la stessa chiave apre casa, auto, ufficio e cassaforte, perderla significherebbe compromettere ____.",
+    "answer": "tutto",
+    "bank": [
+      "poco",
+      "solo la casa",
+      "solo l'ufficio",
+      "tutto"
+    ]
+  },
+  {
+    "sentence": "Sequenze come 123456, password, nomi propri o date di nascita sono esempi di password troppo ____.",
+    "answer": "prevedibili",
+    "bank": [
+      "sincronizzate",
+      "lunghe",
+      "prevedibili",
+      "cifrate"
+    ]
+  },
+  {
+    "sentence": "Gli attaccanti non iniziano inventando password a caso: iniziano provando quelle che ____ scelgono davvero.",
+    "answer": "milioni di persone",
+    "bank": [
+      "milioni di persone",
+      "gli amministratori di sistema",
+      "i password manager",
+      "le aziende"
+    ]
+  },
+  {
+    "sentence": "Un ____ è un'applicazione progettata per generare, memorizzare e compilare automaticamente le password in modo sicuro.",
+    "answer": "Password Manager",
+    "bank": [
+      "Antivirus",
+      "Backup automatico",
+      "Password Manager",
+      "Firewall"
+    ]
+  },
+  {
+    "sentence": "L'utente deve ricordare una sola password principale, chiamata ____.",
+    "answer": "Master Password",
+    "bank": [
+      "Passkey",
+      "Master Password",
+      "Codice MFA",
+      "Chiave pubblica"
+    ]
+  },
+  {
+    "sentence": "I password manager eliminano il compromesso tra sicurezza e ____.",
+    "answer": "praticità",
+    "bank": [
+      "praticità",
+      "riservatezza",
+      "condivisione",
+      "velocità"
+    ]
+  },
+  {
+    "sentence": "Le credenziali gestite da un password manager vengono archiviate in forma ____.",
+    "answer": "cifrata",
+    "bank": [
+      "cifrata",
+      "pubblica",
+      "condivisa",
+      "cartacea"
+    ]
+  },
+  {
+    "sentence": "Un password manager può avvisare quando una credenziale è stata coinvolta in un ____.",
+    "answer": "Data Breach",
+    "bank": [
+      "Account recovery",
+      "Credential Stuffing",
+      "Data Breach",
+      "Brute Force"
+    ]
+  },
+  {
+    "sentence": "Nessun password manager rende un account ____.",
+    "answer": "invulnerabile",
+    "bank": [
+      "accessibile",
+      "condiviso",
+      "temporaneo",
+      "invulnerabile"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, la sicurezza dipende sempre anche dai ____ di chi utilizza il password manager.",
+    "answer": "comportamenti",
+    "bank": [
+      "comportamenti",
+      "browser",
+      "provider Internet",
+      "dispositivi"
+    ]
+  },
+  {
+    "sentence": "Nella metafora della cassaforte con tutte le chiavi, basta custodire con attenzione la chiave della ____.",
+    "answer": "cassaforte",
+    "bank": [
+      "ufficio",
+      "casa",
+      "cassaforte",
+      "auto"
+    ]
+  },
+  {
+    "sentence": "L'Autenticazione Multifattore (MFA) richiede due o più ____ di identità prima di concedere l'accesso.",
+    "answer": "prove",
+    "bank": [
+      "dispositivi",
+      "applicazioni",
+      "prove",
+      "password"
+    ]
+  },
+  {
+    "sentence": "Se vengono richiesti esattamente due fattori di autenticazione, si parla di ____.",
+    "answer": "2FA",
+    "bank": [
+      "MFA",
+      "Risk-Based Authentication",
+      "2FA",
+      "Adaptive Authentication"
+    ]
+  },
+  {
+    "sentence": "La 2FA è un caso particolare dell'____.",
+    "answer": "MFA",
+    "bank": [
+      "Data Breach",
+      "Credential Stuffing",
+      "Password Manager",
+      "MFA"
+    ]
+  },
+  {
+    "sentence": "Nell'esempio del modulo, password e codice dell'app di autenticazione rappresentano rispettivamente qualcosa che si conosce e qualcosa che si ____.",
+    "answer": "possiede",
+    "bank": [
+      "possiede",
+      "condivide",
+      "è",
+      "dimentica"
+    ]
+  },
+  {
+    "sentence": "Un sistema con password, codice dell'app e impronta digitale utilizza tre categorie di fattori: qualcosa che si conosce, qualcosa che si possiede e qualcosa che si ____.",
+    "answer": "è",
+    "bank": [
+      "è",
+      "condivide",
+      "ricorda",
+      "scrive"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, due password diverse non costituiscono MFA perché appartengono entrambe alla stessa ____.",
+    "answer": "categoria",
+    "bank": [
+      "categoria",
+      "lunghezza",
+      "applicazione",
+      "azienda"
+    ]
+  },
+  {
+    "sentence": "Il sistema che valuta il livello di rischio di un accesso, in base a dispositivo, posizione e orario, si chiama ____.",
+    "answer": "Risk-Based Authentication",
+    "bank": [
+      "Credential Stuffing",
+      "Adaptive Authentication",
+      "Risk-Based Authentication",
+      "Brute Force"
+    ]
+  },
+  {
+    "sentence": "Il sistema che adatta automaticamente il livello di controllo in base al comportamento e al contesto dell'utente si chiama ____.",
+    "answer": "Adaptive Authentication",
+    "bank": [
+      "Adaptive Authentication",
+      "Credential Stuffing",
+      "2FA",
+      "Risk-Based Authentication"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, non si parla formalmente di ____ come standard tecnico per indicare il controllo basato sul contesto.",
+    "answer": "4FA",
+    "bank": [
+      "2FA",
+      "4FA",
+      "Passkey",
+      "MFA"
+    ]
+  },
+  {
+    "sentence": "I codici inviati tramite SMS possono essere vulnerabili alla clonazione della SIM o alla ____ dei messaggi.",
+    "answer": "intercettazione",
+    "bank": [
+      "condivisione",
+      "sincronizzazione",
+      "cifratura",
+      "intercettazione"
+    ]
+  },
+  {
+    "sentence": "Oggi sono generalmente preferite le app di autenticazione o le ____ di sicurezza fisiche.",
+    "answer": "chiavi",
+    "bank": [
+      "note",
+      "schede",
+      "password",
+      "chiavi"
+    ]
+  },
+  {
+    "sentence": "Nella metafora dell'aeroporto usata per l'MFA, se qualcuno trovasse soltanto il biglietto d'imbarco non potrebbe comunque ____.",
+    "answer": "salire sull'aereo",
+    "bank": [
+      "acquistare un altro biglietto",
+      "salire sull'aereo",
+      "prenotare un volo",
+      "superare i controlli doganali"
+    ]
+  },
+  {
+    "sentence": "Le Passkey sostituiscono le password tradizionali con una coppia di ____ crittografiche.",
+    "answer": "chiavi",
+    "bank": [
+      "chiavi",
+      "password",
+      "codici",
+      "applicazioni"
+    ]
+  },
+  {
+    "sentence": "La chiave ____ rimane memorizzata in modo sicuro sul dispositivo dell'utente e non viene mai condivisa.",
+    "answer": "privata",
+    "bank": [
+      "temporanea",
+      "pubblica",
+      "privata",
+      "condivisa"
+    ]
+  },
+  {
+    "sentence": "La chiave ____ viene registrata dal servizio online e utilizzata per verificare l'identità dell'utente.",
+    "answer": "pubblica",
+    "bank": [
+      "segreta",
+      "privata",
+      "pubblica",
+      "master"
+    ]
+  },
+  {
+    "sentence": "Durante l'accesso con una passkey, il servizio non riceve mai la chiave ____.",
+    "answer": "privata",
+    "bank": [
+      "privata",
+      "pubblica",
+      "di recupero",
+      "temporanea"
+    ]
+  },
+  {
+    "sentence": "Con una passkey, la credenziale segreta non viaggia mai su ____.",
+    "answer": "Internet",
+    "bank": [
+      "una rete privata",
+      "un dispositivo sicuro",
+      "un archivio locale",
+      "Internet"
+    ]
+  },
+  {
+    "sentence": "Le passkey offrono una forte protezione dal phishing perché la credenziale è legata esclusivamente al servizio ____ per cui è stata creata.",
+    "answer": "legittimo",
+    "bank": [
+      "legittimo",
+      "gratuito",
+      "più recente",
+      "più diffuso"
+    ]
+  },
+  {
+    "sentence": "Se un utente visita un sito contraffatto, il dispositivo riconosce che non corrisponde al servizio autorizzato e non utilizza la ____.",
+    "answer": "passkey",
+    "bank": [
+      "password",
+      "passkey",
+      "chiave pubblica",
+      "master password"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, una passkey non rende un account automaticamente ____.",
+    "answer": "invincibile",
+    "bank": [
+      "invincibile",
+      "accessibile",
+      "condiviso",
+      "temporaneo"
+    ]
+  },
+  {
+    "sentence": "Nell'esempio della cassaforte con lucchetto, lo smartphone dell'utente conserva la chiave vera, che non viene mai ____.",
+    "answer": "consegnata",
+    "bank": [
+      "cifrata",
+      "utilizzata",
+      "aggiornata",
+      "consegnata"
+    ]
+  },
+  {
+    "sentence": "Secondo la frase di sintesi del modulo, la password è una chiave che devi consegnare ogni volta, la passkey è una chiave che rimane sempre con ____.",
+    "answer": "te",
+    "bank": [
+      "il fornitore",
+      "il servizio",
+      "te",
+      "l'attaccante"
+    ]
+  },
+  {
+    "sentence": "Secondo la chiusura del modulo, la sicurezza di un account dipende dalla combinazione di più strumenti e ____.",
+    "answer": "buone pratiche",
+    "bank": [
+      "dispositivi costosi",
+      "buone pratiche",
+      "password brevi",
+      "connessioni veloci"
+    ]
+  },
+  {
+    "sentence": "Il modulo successivo si concentrerà sulla sicurezza dei ____, attraverso aggiornamenti, antivirus e backup.",
+    "answer": "dispositivi",
+    "bank": [
+      "dispositivi",
+      "account",
+      "social network",
+      "pagamenti online"
+    ]
+  }
+]

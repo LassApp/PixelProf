@@ -1,0 +1,1757 @@
+[
+  {
+    "id": 1,
+    "module": "fondamenti-cybersecurity",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per Cybersecurity secondo la definizione del modulo?",
+    "options": [
+      "Solo la scelta di password complesse",
+      "Solo l'utilizzo di un buon antivirus",
+      "Un singolo programma che blocca gli hacker",
+      "L'insieme di tecnologie, procedure, strategie e comportamenti utilizzati per proteggere sistemi informatici"
+    ],
+    "correctIndex": 3,
+    "explanation": "La cybersecurity è definita come l'insieme di tecnologie, procedure, strategie e comportamenti per proteggere i sistemi informatici, non un singolo strumento come l'antivirus."
+  },
+  {
+    "id": 2,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quali due termini deriva la parola Cybersecurity, secondo il modulo?",
+    "options": [
+      "Code e Security",
+      "Cyber e System",
+      "Cyber (mondo digitale e reti informatiche) e Security (sicurezza)",
+      "Computer e Security"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo spiega che Cyber indica tutto ciò che riguarda il mondo digitale e le reti informatiche, mentre Security significa sicurezza."
+  },
+  {
+    "id": 3,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresenta l'acronimo CIA Triad nella cybersecurity, secondo il modulo?",
+    "options": [
+      "Confidentiality, Identity, Availability",
+      "Confidentiality, Integrity, Authentication",
+      "Control, Integrity, Availability",
+      "Confidentiality, Integrity, Availability"
+    ],
+    "correctIndex": 3,
+    "explanation": "La CIA Triad è composta da Confidentiality (Riservatezza), Integrity (Integrità) e Availability (Disponibilità)."
+  },
+  {
+    "id": 4,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica il principio di Confidentiality (Riservatezza) nella CIA Triad?",
+    "options": [
+      "Le informazioni non vengono mai modificate",
+      "Le informazioni sono sempre disponibili online",
+      "Le informazioni sono accessibili soltanto alle persone autorizzate",
+      "Le informazioni vengono copiate su più dispositivi"
+    ],
+    "correctIndex": 2,
+    "explanation": "Riservate significa accessibili soltanto alle persone autorizzate."
+  },
+  {
+    "id": 5,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica il principio di Integrity (Integrità) nella CIA Triad?",
+    "options": [
+      "Le informazioni sono visibili a tutti",
+      "Le informazioni sono sempre accessibili quando servono",
+      "Le informazioni vengono cifrate automaticamente",
+      "Le informazioni sono corrette e non alterate da soggetti non autorizzati"
+    ],
+    "correctIndex": 3,
+    "explanation": "Integre significa corrette e non alterate da soggetti non autorizzati."
+  },
+  {
+    "id": 6,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica il principio di Availability (Disponibilità) nella CIA Triad?",
+    "options": [
+      "Le informazioni sono sempre segrete",
+      "Le informazioni vengono eliminate periodicamente",
+      "Le informazioni non possono mai essere lette",
+      "Le informazioni sono accessibili quando servono"
+    ],
+    "correctIndex": 3,
+    "explanation": "Disponibili significa accessibili quando servono."
+  },
+  {
+    "id": 7,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio della cartella clinica, se un hacker legge e pubblica online i dati del paziente senza modificarli, quale principio della CIA Triad viene violato?",
+    "options": [
+      "Availability",
+      "Integrity",
+      "Confidentiality",
+      "Nessuno, perché i dati non sono stati alterati"
+    ],
+    "correctIndex": 2,
+    "explanation": "Se il contenuto non viene modificato ma viene letto e diffuso senza autorizzazione, la riservatezza è violata anche se l'integrità resta intatta."
+  },
+  {
+    "id": 8,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio della cartella clinica, se un attaccante modifica il gruppo sanguigno del paziente senza rubare né bloccare i dati, quale principio viene violato?",
+    "options": [
+      "Confidentiality",
+      "Nessuno, perché il medico riesce comunque ad aprire la cartella",
+      "Integrity",
+      "Availability"
+    ],
+    "correctIndex": 2,
+    "explanation": "La modifica non autorizzata di un dato corretto viola l'integrità, anche se la riservatezza e la disponibilità restano intatte."
+  },
+  {
+    "id": 9,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio della cartella clinica, se un ransomware blocca l'accesso ai computer dell'ospedale senza rubare né modificare i dati, quale principio viene compromesso?",
+    "options": [
+      "Availability",
+      "Integrity",
+      "Confidentiality",
+      "Nessuno, perché i dati non sono stati toccati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se i dati non sono raggiungibili quando servono, viene compromessa la disponibilità, anche se riservatezza e integrità restano rispettate."
+  },
+  {
+    "id": 10,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo la metafora della casa usata nel modulo, cosa succede se un utente ha il miglior antivirus ma consegna volontariamente la password a un truffatore?",
+    "options": [
+      "L'antivirus impedisce sempre il danno",
+      "Il problema riguarda solo il truffatore, non l'utente",
+      "La sicurezza viene comunque compromessa",
+      "La sicurezza resta comunque garantita"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo spiega che anche con il miglior antivirus, se la password viene consegnata volontariamente, la sicurezza viene comunque compromessa."
+  },
+  {
+    "id": 11,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, qual è la domanda corretta da porsi riguardo al valore dei propri dati digitali?",
+    "options": [
+      "Chi vorrebbe attaccarmi?",
+      "Ho qualcosa da proteggere?",
+      "Quanto costa un buon antivirus?",
+      "Quanto mi costerebbe perdere ciò che possiedo digitalmente?"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo indica che la domanda corretta non è chiedersi se si ha qualcosa da proteggere, ma quanto costerebbe perderlo."
+  },
+  {
+    "id": 12,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, la cybersecurity riguarda soltanto la tecnologia?",
+    "options": [
+      "Riguarda solo le reti aziendali",
+      "Sì, riguarda solo gli antivirus installati",
+      "Sì, riguarda esclusivamente i software di protezione",
+      "No, riguarda anche persone, comportamenti, procedure e consapevolezza"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo afferma che la cybersecurity non riguarda soltanto la tecnologia, ma anche persone, comportamenti, procedure e consapevolezza."
+  },
+  {
+    "id": 13,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'acronimo DDoS, secondo il modulo?",
+    "options": [
+      "Digital Denial of Server",
+      "Direct Denial of System",
+      "Distributed Denial of Service",
+      "Distributed Data of Service"
+    ],
+    "correctIndex": 2,
+    "explanation": "DDoS significa Distributed Denial of Service, in italiano Negazione del Servizio Distribuita."
+  },
+  {
+    "id": 14,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'obiettivo principale di un attacco DDoS, secondo il modulo?",
+    "options": [
+      "Cifrare i file della vittima chiedendo un riscatto",
+      "Installare uno spyware sul dispositivo",
+      "Rubare le password degli utenti",
+      "Rendere un servizio temporaneamente indisponibile"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo specifica che l'obiettivo di un DDoS non è rubare dati, ma rendere il servizio temporaneamente indisponibile."
+  },
+  {
+    "id": 15,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come funziona concretamente un attacco DDoS, secondo il modulo?",
+    "options": [
+      "Migliaia o milioni di dispositivi inviano contemporaneamente richieste allo stesso servizio, sovraccaricandolo",
+      "Un singolo dispositivo cifra tutti i file del server",
+      "Un software registra ciò che l'utente digita sulla tastiera",
+      "Un virus infetta i file dell'utente diffondendosi da un file all'altro"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel DDoS, migliaia o milioni di dispositivi inviano richieste contemporanee sovraccaricando il servizio fino a impedirne il funzionamento."
+  },
+  {
+    "id": 16,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la definizione di minaccia digitale fornita nel modulo?",
+    "options": [
+      "Un sistema di backup automatico dei file",
+      "Qualsiasi evento, soggetto o attività che può compromettere la sicurezza di dati, dispositivi, reti o servizi informatici",
+      "Una password particolarmente complessa",
+      "Un software che protegge automaticamente i dati"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una minaccia digitale è definita come qualsiasi evento, soggetto o attività che può compromettere la sicurezza di dati, dispositivi, reti o servizi."
+  },
+  {
+    "id": 17,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quali due termini inglesi deriva la parola malware, secondo il modulo?",
+    "options": [
+      "Malfunction e software",
+      "Mal e ransom",
+      "Malicious e hardware",
+      "Malicious (malevolo) e software (programma)"
+    ],
+    "correctIndex": 3,
+    "explanation": "Malware deriva dall'unione di malicious (malevolo) e software (programma)."
+  },
+  {
+    "id": 18,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'obiettivo principale di un virus informatico, secondo il modulo?",
+    "options": [
+      "Registrare i tasti digitati sulla tastiera",
+      "Fingersi un programma legittimo",
+      "Infettare altri file",
+      "Bloccare e cifrare i file chiedendo un riscatto"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo indica che l'obiettivo del virus è infettare altri file."
+  },
+  {
+    "id": 19,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa serve al virus per diffondersi, a differenza del worm, secondo il modulo?",
+    "options": [
+      "Nessuna azione: si diffonde autonomamente come il worm",
+      "Un aggiornamento del sistema operativo",
+      "Una connessione a Internet ad alta velocità",
+      "Un'azione dell'utente, come aprire un file infetto"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il virus, a differenza del worm, non è in grado di propagarsi autonomamente e ha bisogno di un'azione dell'utente."
+  },
+  {
+    "id": 20,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché questo tipo di malware è stato chiamato virus, secondo la curiosità riportata nel modulo?",
+    "options": [
+      "Perché il suo comportamento ricorda quello dei virus biologici, che cercano continuamente nuovi ospiti",
+      "Perché fu scoperto per la prima volta in un laboratorio medico",
+      "Perché colpisce solo i dispositivi degli ospedali",
+      "Perché si attiva solo se il computer è connesso a una rete sanitaria"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il nome richiama il comportamento dei virus biologici, che non restano fermi ma cercano continuamente nuovi ospiti."
+  },
+  {
+    "id": 21,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, quali sono i fini principali per cui viene creato un virus informatico?",
+    "options": [
+      "Guadagno, controllo del sistema, raccolta e sorveglianza",
+      "Solo danneggiare fisicamente l'hardware",
+      "Solo bloccare la connessione Internet della vittima",
+      "Solo dimostrare le capacità tecniche del creatore"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo spiega che il fine di un virus è sempre guadagno, controllo del sistema oppure raccolta e sorveglianza, o una combinazione di questi."
+  },
+  {
+    "id": 22,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa caratterizza principalmente il worm rispetto agli altri malware, secondo il modulo?",
+    "options": [
+      "Si replica e si diffonde automaticamente attraverso le reti, senza bisogno che l'utente apra un file",
+      "Chiede un riscatto per sbloccare i file cifrati",
+      "Registra i tasti digitati sulla tastiera",
+      "Si finge un programma legittimo per ingannare l'utente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il worm si replica e diffonde automaticamente attraverso le reti; a differenza del virus non ha bisogno che l'utente apra un file infetto."
+  },
+  {
+    "id": 23,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa il termine inglese worm, secondo la curiosità riportata nel modulo?",
+    "options": [
+      "Ragno",
+      "Ombra",
+      "Virus",
+      "Verme"
+    ],
+    "correctIndex": 3,
+    "explanation": "Worm significa verme, e il nome richiama l'idea di qualcosa che avanza silenziosamente da un dispositivo all'altro."
+  },
+  {
+    "id": 24,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede nell'esempio dell'ufficio infettato da un worm descritto nel modulo?",
+    "options": [
+      "Il worm richiede sempre un pagamento per fermarsi",
+      "Il worm si attiva solo se un dipendente apre un allegato",
+      "Il malware sfrutta una vulnerabilità della rete e raggiunge automaticamente altri computer collegati",
+      "Il worm resta isolato su un solo dispositivo senza diffondersi"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nel giro di pochi minuti il worm sfrutta una vulnerabilità della rete e raggiunge automaticamente altri computer, creando un effetto a catena."
+  },
+  {
+    "id": 25,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa caratterizza principalmente il Trojan, secondo il modulo?",
+    "options": [
+      "Cifra i file del dispositivo chiedendo un riscatto",
+      "Si finge un programma legittimo e, una volta installato, svolge attività nascoste",
+      "Si replica automaticamente attraverso la rete",
+      "Registra tutte le password digitate sulla tastiera"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il Trojan si finge un programma legittimo e svolge attività nascoste senza che l'utente se ne accorga."
+  },
+  {
+    "id": 26,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale racconto storico deriva il nome Trojan, secondo il modulo?",
+    "options": [
+      "La battaglia delle Termopili",
+      "La caduta dell'Impero Romano",
+      "Il Cavallo di Troia",
+      "L'Odissea di Ulisse"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il nome deriva dal Cavallo di Troia: un dono apparentemente innocuo che nascondeva i soldati nemici, esattamente come il Trojan nasconde il pericolo al suo interno."
+  },
+  {
+    "id": 27,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del Trojan descritto nel modulo (versione gratuita di un programma a pagamento), cosa succede dopo l'installazione?",
+    "options": [
+      "Il computer si aggiorna automaticamente all'ultima versione",
+      "Il dispositivo si spegne automaticamente",
+      "Il programma si autodistrugge immediatamente dopo l'apertura",
+      "In background il Trojan installa altro malware oppure apre una porta per l'accesso remoto al computer"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo descrive che, in background, il Trojan installa altro malware oppure apre una porta per consentire l'accesso remoto al computer."
+  },
+  {
+    "id": 28,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'obiettivo principale dello spyware, secondo il modulo?",
+    "options": [
+      "Distruggere fisicamente l'hardware del dispositivo",
+      "Propagarsi automaticamente attraverso la rete aziendale",
+      "Raccogliere informazioni sull'utente, senza l'obiettivo di distruggere il computer",
+      "Cifrare tutti i file del dispositivo chiedendo un riscatto"
+    ],
+    "correctIndex": 2,
+    "explanation": "Lo spyware è progettato per spiare l'utente: il suo obiettivo non è distruggere il computer ma raccogliere informazioni."
+  },
+  {
+    "id": 29,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale parola inglese deriva il termine spyware, secondo il modulo?",
+    "options": [
+      "Spider (ragno)",
+      "Speed (velocità)",
+      "Spy (spia)",
+      "Spray"
+    ],
+    "correctIndex": 2,
+    "explanation": "Spyware deriva da spy, che significa spia: è un software che osserva senza farsi notare."
+  },
+  {
+    "id": 30,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del modulo, cosa registra un'applicazione gratuita infetta da spyware?",
+    "options": [
+      "I siti visitati, le ricerche effettuate e le pubblicità su cui si clicca",
+      "Solo la posizione GPS del dispositivo",
+      "Solo le fotografie scattate con la fotocamera",
+      "Solo le chiamate effettuate dallo smartphone"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo spiega che lo spyware registra i siti visitati, le ricerche effettuate e le pubblicità su cui si fa clic, per creare un profilo delle abitudini dell'utente."
+  },
+  {
+    "id": 31,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa registra un keylogger, secondo il modulo?",
+    "options": [
+      "Solo le fotografie salvate sul dispositivo",
+      "Tutto ciò che viene digitato sulla tastiera, incluse password ed email",
+      "Solo le applicazioni installate sul computer",
+      "Solo i siti visitati dall'utente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il keylogger registra tutto ciò che viene digitato sulla tastiera: password, email, messaggi e codici."
+  },
+  {
+    "id": 32,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quali due parole inglesi deriva il termine keylogger, secondo il modulo?",
+    "options": [
+      "Key (tasto) e logger (registratore)",
+      "Key e locker",
+      "Keep e logger",
+      "Key (chiave) e log (diario)"
+    ],
+    "correctIndex": 0,
+    "explanation": "Keylogger deriva da key (tasto) e logger (registratore), letteralmente registratore dei tasti."
+  },
+  {
+    "id": 33,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il ransomware ai file del dispositivo colpito, secondo il modulo?",
+    "options": [
+      "Li blocca oppure li cifra rendendoli inutilizzabili, chiedendo poi un pagamento per ripristinarli",
+      "Li cancella definitivamente senza alcuna possibilità di recupero",
+      "Li invia automaticamente a tutti i contatti della vittima",
+      "Li rende visibili pubblicamente online senza chiedere nulla"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il ransomware blocca oppure cifra i file rendendoli inutilizzabili e chiede un pagamento per ripristinare l'accesso."
+  },
+  {
+    "id": 34,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale parola inglese deriva il termine ransomware, secondo il modulo?",
+    "options": [
+      "Random",
+      "Ransack",
+      "Ransom (riscatto)",
+      "Range"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ransomware deriva da ransom, che significa riscatto: il criminale prende in ostaggio i dati della vittima."
+  },
+  {
+    "id": 35,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, pagare il riscatto richiesto da un ransomware garantisce la restituzione dei dati?",
+    "options": [
+      "Sì, il pagamento garantisce sempre il recupero completo dei dati",
+      "Sì, ma solo se effettuato entro un'ora dal blocco",
+      "No, il pagamento non garantisce affatto che i dati vengano restituiti",
+      "Il modulo non tratta questo aspetto"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo afferma chiaramente che il pagamento non garantisce affatto che i dati vengano restituiti."
+  },
+  {
+    "id": 36,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, come si comportano spesso i malware una volta infettato un dispositivo?",
+    "options": [
+      "Distruggono immediatamente il computer appena installati",
+      "Si disattivano automaticamente dopo 24 ore",
+      "Inviano subito una notifica di avviso all'utente",
+      "Preferiscono rimanere invisibili il più a lungo possibile per raccogliere più informazioni"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo spiega che molti malware preferiscono rimanere invisibili il più a lungo possibile: più tempo passano inosservati, più informazioni riescono a raccogliere."
+  },
+  {
+    "id": 37,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la principale differenza tra virus e worm, secondo il modulo?",
+    "options": [
+      "Il virus si diffonde autonomamente, il worm ha bisogno di un'azione dell'utente",
+      "Il worm si diffonde autonomamente in rete, il virus ha bisogno di un'azione dell'utente",
+      "Non esiste alcuna differenza tra i due, sono sinonimi",
+      "Il worm colpisce solo gli smartphone, il virus solo i computer fissi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il worm si diffonde automaticamente attraverso la rete, mentre il virus ha bisogno di un'azione dell'utente, come aprire un file infetto."
+  },
+  {
+    "id": 38,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per Social Engineering (Ingegneria Sociale), secondo il modulo?",
+    "options": [
+      "L'insieme delle tecniche per manipolare una persona e convincerla a compiere spontaneamente un'azione favorevole al criminale",
+      "Una tecnica per proteggere le reti aziendali dagli attacchi",
+      "Un tipo di software che blocca gli accessi non autorizzati",
+      "Un sistema di autenticazione a più fattori"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Social Engineering è l'insieme delle tecniche utilizzate per manipolare una persona e convincerla a compiere spontaneamente un'azione favorevole al criminale."
+  },
+  {
+    "id": 39,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può ottenere un criminale attraverso il Social Engineering, secondo il modulo?",
+    "options": [
+      "Solo l'indirizzo IP del dispositivo della vittima",
+      "Credenziali di accesso, dati personali, codici MFA, pagamenti, autorizzazioni",
+      "Solo la marca del dispositivo della vittima",
+      "Solo il numero di serie del computer utilizzato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gli obiettivi del Social Engineering elencati nel modulo includono credenziali, dati personali, codici MFA, pagamenti e autorizzazioni."
+  },
+  {
+    "id": 40,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali elementi sfrutta soprattutto il Social Engineering, secondo il modulo?",
+    "options": [
+      "Solo la marca del sistema operativo utilizzato",
+      "Solo la potenza di calcolo del computer della vittima",
+      "Solo la velocità della connessione Internet",
+      "Fiducia, paura, urgenza, curiosità, autorità, distrazione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo elenca fiducia, paura, urgenza, curiosità, autorità e distrazione come leve sfruttate dal Social Engineering."
+  },
+  {
+    "id": 41,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, perché oggi è spesso più semplice attaccare le persone piuttosto che i computer?",
+    "options": [
+      "Perché le persone sono sempre connesse a Internet",
+      "Perché le persone non utilizzano mai password",
+      "Perché il computer esegue istruzioni, mentre la persona prende decisioni su cui si può agire",
+      "Perché i computer non hanno più bisogno di alcuna protezione"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo afferma che il computer esegue istruzioni, la persona prende decisioni, ed è proprio sulle decisioni che agisce il Social Engineering."
+  },
+  {
+    "id": 42,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per phishing, secondo il modulo?",
+    "options": [
+      "Un sistema per proteggere gli account online da accessi non autorizzati",
+      "Un tipo di malware che cifra automaticamente i file",
+      "Una tecnica di inganno per convincere una persona a fornire credenziali, dati personali o effettuare pagamenti",
+      "Un protocollo di rete utilizzato dai firewall aziendali"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il phishing è una tecnica di inganno il cui obiettivo è ottenere credenziali, dati personali, pagamenti o accessi non legittimi."
+  },
+  {
+    "id": 43,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale parola inglese deriva il termine phishing, secondo il modulo?",
+    "options": [
+      "Fishery",
+      "Fish (pesce)",
+      "Finish",
+      "Fishing (pescare)"
+    ],
+    "correctIndex": 3,
+    "explanation": "Phishing deriva da fishing, che significa pescare: come un pescatore lancia un'esca, il criminale lancia un messaggio."
+  },
+  {
+    "id": 44,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del phishing via email descritto nel modulo (problema con la prenotazione del volo), qual è il vero scopo del messaggio?",
+    "options": [
+      "Confermare semplicemente l'orario di partenza",
+      "Farvi cliccare sul collegamento presente nell'email",
+      "Offrirvi un rimborso automatico per il disagio",
+      "Informarvi realmente sullo stato del volo prenotato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo chiarisce che lo scopo del messaggio non è informare, ma far cliccare sul collegamento."
+  },
+  {
+    "id": 45,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sfrutta principalmente il phishing, secondo il modulo?",
+    "options": [
+      "Debolezze tecniche del sistema operativo del computer",
+      "Le emozioni umane, come paura, fretta, curiosità, avidità e fiducia",
+      "La velocità della connessione Internet della vittima",
+      "Vulnerabilità del firewall aziendale"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo afferma che il phishing raramente sfrutta una debolezza tecnica, ma sfrutta le emozioni umane."
+  },
+  {
+    "id": 46,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Attraverso quali canali può arrivare il phishing, secondo il modulo?",
+    "options": [
+      "Solo tramite telefonate dirette",
+      "Email, SMS, WhatsApp, social network, telefonate, QR Code",
+      "Solo attraverso i social network",
+      "Solo tramite email"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo elenca email, SMS, WhatsApp, social network, telefonate e QR Code come possibili canali del phishing."
+  },
+  {
+    "id": 47,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa il termine vishing, secondo il modulo?",
+    "options": [
+      "Un sistema di verifica vocale della password",
+      "Una forma di phishing che utilizza i video online",
+      "Un tipo di virus che si diffonde tramite chiamate VoIP",
+      "Una forma di phishing che utilizza le telefonate, dall'unione di voice e phishing"
+    ],
+    "correctIndex": 3,
+    "explanation": "Vishing nasce dall'unione di voice (voce) e phishing ed è una forma di phishing che utilizza le telefonate."
+  },
+  {
+    "id": 48,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del vishing in aeroporto descritto nel modulo, cosa chiede il finto operatore alla vittima?",
+    "options": [
+      "Di fornire i dati della carta di imbarco cartacea",
+      "Di richiamare un altro numero di telefono",
+      "Di leggere il codice MFA ricevuto via SMS",
+      "Di scaricare un'applicazione dell'aeroporto"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il finto operatore chiede alla vittima di leggere il codice ricevuto via SMS, che in realtà è il codice dell'MFA del suo account."
+  },
+  {
+    "id": 49,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del vishing descritto nel modulo, il codice MFA ricevuto dalla vittima era falso?",
+    "options": [
+      "Il modulo non specifica questo dettaglio",
+      "No, il codice era autentico, ma la persona al telefono no",
+      "Sì, il codice era completamente falso",
+      "Il codice non esisteva realmente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo chiarisce che il codice era autentico, mentre la persona al telefono non lo era."
+  },
+  {
+    "id": 50,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa il termine smishing, secondo il modulo?",
+    "options": [
+      "Una forma di phishing che utilizza esclusivamente le email",
+      "Un tipo di malware diffuso tramite SMS che cancella i contatti",
+      "Un sistema di autenticazione tramite SMS",
+      "Una forma di phishing che utilizza SMS o messaggi di testo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Smishing nasce dall'unione di SMS e phishing ed è una forma di phishing che utilizza SMS o messaggi di testo."
+  },
+  {
+    "id": 51,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, perché lo smishing risulta particolarmente pericoloso?",
+    "options": [
+      "Perché richiede sempre un pagamento immediato in contanti",
+      "Perché gli SMS non possono essere bloccati dagli operatori telefonici",
+      "Perché è tecnicamente impossibile da individuare",
+      "Perché sfrutta la fiducia riposta nello smartphone e la fretta di risolvere un presunto problema"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo spiega che lo smishing è pericoloso perché sfrutta la fiducia riposta nello smartphone e la fretta di risolvere un presunto problema."
+  },
+  {
+    "id": 52,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa il termine quishing, secondo il modulo?",
+    "options": [
+      "Una forma di phishing che utilizza le chat vocali",
+      "Un sistema di pagamento tramite QR code protetto",
+      "Un tipo di malware nascosto all'interno di un'immagine",
+      "Una forma di phishing che utilizza un codice QR"
+    ],
+    "correctIndex": 3,
+    "explanation": "Quishing nasce dall'unione di QR Code e phishing ed è una forma di phishing che utilizza un codice QR."
+  },
+  {
+    "id": 53,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio della multa sul parabrezza (quishing) descritto nel modulo, perché l'attacco risulta particolarmente insidioso?",
+    "options": [
+      "Perché la vittima usa lo smartphone personale, spesso meno protetto e fuori dai controlli aziendali",
+      "Perché il pagamento avviene sempre esclusivamente in contanti",
+      "Perché il Comune reale invia sempre multe tramite QR Code",
+      "Perché il QR Code contiene sempre un virus eseguibile"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo spiega che, usando lo smartphone personale fuori dall'ufficio, il criminale aggira molte delle difese tecnologiche aziendali."
+  },
+  {
+    "id": 54,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa caratterizza principalmente lo Spear Phishing rispetto al phishing tradizionale, secondo il modulo?",
+    "options": [
+      "Il messaggio è costruito su misura per la vittima, con informazioni reali e personalizzate",
+      "Non richiede alcuna informazione sulla vittima",
+      "Viene inviato soltanto tramite codice QR",
+      "Utilizza esclusivamente le telefonate come canale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo Spear Phishing è un messaggio costruito su misura, che può contenere nome della vittima, luogo di lavoro e informazioni pubbliche raccolte online."
+  },
+  {
+    "id": 55,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio dello Spear Phishing descritto nel modulo (azienda di componenti meccanici), come ottiene il criminale le informazioni necessarie?",
+    "options": [
+      "Attraverso un ransomware che blocca il computer del direttore",
+      "Attraverso un Trojan che infetta silenziosamente il computer del direttore acquisti e osserva email e contratti",
+      "Attraverso un attacco DDoS al sito web aziendale",
+      "Attraverso una telefonata diretta al direttore acquisti dell'azienda"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un Trojan infetta il computer del direttore acquisti e rimane in silenzio, permettendo al criminale di osservare email, contratti e informazioni sui clienti."
+  },
+  {
+    "id": 56,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio dello Spear Phishing descritto nel modulo, quale richiesta fraudolenta viene inviata al cliente dell'azienda?",
+    "options": [
+      "Di utilizzare un nuovo IBAN per i pagamenti a causa di una presunta riorganizzazione bancaria",
+      "Di scaricare un nuovo software di fatturazione elettronica",
+      "Di inviare nuovamente tutti i documenti contrattuali firmati",
+      "Di cambiare immediatamente la password del proprio account aziendale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il messaggio fraudolento comunica un cambio di IBAN a seguito di una presunta riorganizzazione bancaria."
+  },
+  {
+    "id": 57,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa dimostra l'esempio dello Spear Phishing riguardo al ruolo del malware?",
+    "options": [
+      "Che un malware può non essere l'obiettivo finale, ma solo il primo passo per preparare una truffa più redditizia",
+      "Che il malware serve solo a distruggere fisicamente i dati aziendali",
+      "Che il malware non può mai essere collegato a una truffa economica",
+      "Che lo Spear Phishing non richiede mai l'uso di un malware"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo sottolinea che un malware può non essere l'obiettivo finale dell'attacco, ma solo il primo passo per preparare una truffa molto più redditizia."
+  },
+  {
+    "id": 58,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le truffe online, secondo il modulo?",
+    "options": [
+      "Una tecnica di attacco specifica e indipendente dalle altre tecniche",
+      "Un tipo di malware che si installa automaticamente sul dispositivo",
+      "Un sistema di protezione contro il furto di identità digitale",
+      "Il risultato dell'utilizzo combinato di diverse tecniche come phishing, smishing, vishing o spear phishing"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo chiarisce che le truffe online non sono una tecnica di attacco specifica, ma il risultato dell'utilizzo combinato di diverse tecniche."
+  },
+  {
+    "id": 59,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il meccanismo psicologico comune sfruttato dalle truffe online, secondo il modulo?",
+    "options": [
+      "Richiedere sempre un incontro di persona con la vittima",
+      "Inviare più messaggi da numeri di telefono diversi",
+      "Offrire sempre un rimborso economico immediato alla vittima",
+      "Conquistare la fiducia della vittima, generare urgenza e ridurre il tempo disponibile per riflettere"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo descrive il meccanismo: prima si conquista la fiducia, poi si genera urgenza, infine si riduce il tempo disponibile per riflettere."
+  },
+  {
+    "id": 60,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è, secondo il modulo, una delle difese più efficaci contro le truffe online?",
+    "options": [
+      "Ignorare sempre ogni messaggio ricevuto senza leggerlo",
+      "Fermarsi, verificare, ragionare",
+      "Cambiare subito dispositivo utilizzato",
+      "Rispondere immediatamente per bloccare il truffatore"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo suggerisce di fare esattamente ciò che il truffatore non desidera: fermarsi, verificare, ragionare."
+  },
+  {
+    "id": 61,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali elementi della vita quotidiana vengono spesso sfruttati per rendere credibile una truffa online, secondo il modulo?",
+    "options": [
+      "Solo messaggi provenienti da numeri di telefono sconosciuti",
+      "Solo email contenenti allegati eseguibili",
+      "Solo notifiche push inviate dai social network",
+      "Un corriere con un problema di consegna, una banca che richiede una verifica urgente, un annuncio conveniente, un falso operatore dell'assistenza"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo cita come esempi un corriere con un problema di consegna, una banca che richiede una verifica urgente, un annuncio di vendita conveniente e un falso operatore dell'assistenza clienti."
+  },
+  {
+    "id": 62,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per furto di identità digitale, secondo il modulo?",
+    "options": [
+      "Un attacco che sovraccarica un server rendendolo irraggiungibile",
+      "Il blocco temporaneo di un servizio digitale per manutenzione",
+      "Un criminale ottiene informazioni sufficienti per impersonare un'altra persona online",
+      "La cancellazione definitiva di un account online da parte del proprietario"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nel furto di identità digitale il criminale ottiene informazioni sufficienti per impersonare un'altra persona online."
+  },
+  {
+    "id": 63,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali strumenti può utilizzare un criminale per il furto di identità digitale, secondo il modulo?",
+    "options": [
+      "Solo l'indirizzo IP della vittima",
+      "Solo la cronologia di navigazione della vittima",
+      "Account compromessi, documenti rubati, credenziali sottratte",
+      "Solo il numero di telefono della vittima"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo indica che il criminale può utilizzare account compromessi, documenti rubati e credenziali sottratte."
+  },
+  {
+    "id": 64,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa Account Takeover, secondo il modulo?",
+    "options": [
+      "La presa di controllo completa di un account da parte di un criminale",
+      "La creazione di un nuovo account fittizio da parte del criminale",
+      "Il blocco temporaneo di un account per motivi di sicurezza",
+      "La cancellazione volontaria di un account da parte del proprietario"
+    ],
+    "correctIndex": 0,
+    "explanation": "Account Takeover significa presa di controllo di un account: il criminale ottiene l'accesso e ne assume completamente il controllo."
+  },
+  {
+    "id": 65,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Attraverso quali mezzi un criminale può riuscire in un Account Takeover, secondo il modulo?",
+    "options": [
+      "Solo tramite l'installazione di un worm",
+      "Password rubate, phishing, malware, Data Breach",
+      "Solo tramite un attacco DDoS al servizio",
+      "Solo attraverso l'accesso fisico diretto al dispositivo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo elenca password rubate, phishing, malware e Data Breach come possibili vie per un Account Takeover."
+  },
+  {
+    "id": 66,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del modulo, quali segnali indicano che un account email è stato preso sotto controllo da un criminale?",
+    "options": [
+      "Il dispositivo utilizzato si riavvia automaticamente",
+      "L'account riceve improvvisamente più messaggi pubblicitari del solito",
+      "La password non funziona più e anche l'indirizzo email di recupero risulta modificato",
+      "La connessione Internet diventa più lenta del normale"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo descrive che la password smette di funzionare e anche l'indirizzo email di recupero risulta modificato dal criminale."
+  },
+  {
+    "id": 67,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del modulo sull'account social con milioni di follower compromesso, quale falso messaggio viene pubblicato dal criminale?",
+    "options": [
+      "Un annuncio di una raccolta fondi per beneficenza",
+      "Un messaggio di scuse per l'assenza dai social network",
+      "Un annuncio di un coupon esclusivo con uno sconto disponibile solo per un numero limitato di codici",
+      "Un sondaggio sui prodotti preferiti dai follower"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il post falso descritto nel modulo promette un coupon esclusivo con uno sconto, disponibile solo per un numero limitato di codici, per creare urgenza."
+  },
+  {
+    "id": 68,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali meccanismi di Social Engineering vengono sfruttati contemporaneamente nell'esempio dell'account compromesso con il finto coupon?",
+    "options": [
+      "Solo l'autorità del mittente",
+      "Solo la paura di perdere l'account",
+      "Solo la distrazione dell'utente",
+      "Autorità, fiducia, curiosità, urgenza"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo elenca autorità (account riconosciuto), fiducia dei follower, curiosità verso il prodotto e urgenza del 'solo oggi' come leve sfruttate insieme."
+  },
+  {
+    "id": 69,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, quando un account con molti follower viene compromesso, qual è il vero obiettivo del criminale?",
+    "options": [
+      "La fiducia delle persone che seguono quell'account",
+      "Il nome utente da rivendere ad altri criminali",
+      "Solo l'account in sé, senza alcun altro scopo",
+      "Il numero totale di follower da eliminare"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che quando un account viene compromesso, il vero obiettivo non è l'account: è la fiducia delle persone che lo seguono."
+  },
+  {
+    "id": 70,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per Data Breach, secondo il modulo?",
+    "options": [
+      "Un aggiornamento software non andato a buon fine",
+      "La violazione dei dati, quando informazioni riservate vengono esposte, sottratte o divulgate senza autorizzazione",
+      "Un attacco DDoS su larga scala contro un'azienda",
+      "La perdita accidentale di un dispositivo da parte dell'utente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Data Breach significa violazione dei dati: informazioni riservate vengono esposte, sottratte o divulgate senza autorizzazione."
+  },
+  {
+    "id": 71,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde nel 2011 al servizio PlayStation Network (PSN) di Sony, secondo il caso reale descritto nel modulo?",
+    "options": [
+      "Un ransomware bloccò tutte le console degli utenti",
+      "Il servizio fu chiuso definitivamente per un guasto tecnico interno",
+      "Un attacco DDoS rese il sito irraggiungibile per un solo giorno",
+      "Un attacco informatico compromise circa 77 milioni di account"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nel 2011 il PSN subì un grave attacco informatico che compromise circa 77 milioni di account."
+  },
+  {
+    "id": 72,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali dati furono coinvolti nel Data Breach di PlayStation Network descritto nel modulo?",
+    "options": [
+      "Solo i numeri delle carte di credito degli utenti",
+      "Solo le password, senza altri dati",
+      "Indirizzo email, credenziali di accesso, nome e cognome, data di nascita",
+      "Solo gli indirizzi di casa degli utenti"
+    ],
+    "correctIndex": 2,
+    "explanation": "Tra i dati coinvolti nel Data Breach di PSN vi erano email, credenziali di accesso, nome e cognome, data di nascita e altri dati associati all'account."
+  },
+  {
+    "id": 73,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, gli utenti coinvolti nel Data Breach di PlayStation Network avevano necessariamente commesso un errore?",
+    "options": [
+      "Sì, avevano condiviso pubblicamente le proprie credenziali",
+      "Il modulo non specifica questo aspetto",
+      "No, molti avevano scelto password robuste e utilizzato il servizio in modo corretto",
+      "Sì, tutti avevano scelto password troppo semplici"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo chiarisce che molti utenti avevano scelto password robuste e utilizzato il servizio correttamente: l'attacco colpì l'azienda, non direttamente loro."
+  },
+  {
+    "id": 74,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, da cosa dipende la sicurezza dei nostri dati?",
+    "options": [
+      "Esclusivamente dalla sicurezza delle organizzazioni coinvolte",
+      "Sia dai nostri comportamenti, sia dalla sicurezza delle organizzazioni a cui li affidiamo",
+      "Solo dalla marca dell'antivirus utilizzato",
+      "Esclusivamente dai nostri comportamenti personali"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo afferma che la sicurezza dei dati dipende sia dai comportamenti personali sia dalla sicurezza delle organizzazioni a cui li affidiamo."
+  },
+  {
+    "id": 75,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa possono fare i criminali con i dati ottenuti da un Data Breach, secondo il modulo?",
+    "options": [
+      "Cancellarli automaticamente entro 24 ore dal furto",
+      "Provare ad accedere ad altri servizi utilizzando la stessa email e password della vittima",
+      "Restituire automaticamente i dati alle vittime coinvolte",
+      "Utilizzarli esclusivamente per scopi pubblicitari legittimi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo spiega che i criminali possono utilizzare i dati sottratti in un Data Breach per tentare nuovi attacchi su altri servizi con le stesse credenziali."
+  },
+  {
+    "id": 76,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo la sintesi del modulo, cosa sfruttano le minacce digitali moderne per ottenere accesso, denaro, dati o controllo?",
+    "options": [
+      "Solo il comportamento umano, senza alcuno strumento tecnologico",
+      "Solo la potenza di calcolo dei server",
+      "Solo la tecnologia, senza alcun coinvolgimento umano",
+      "Tecnologia e comportamento umano"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo riassume che le minacce digitali moderne sfruttano tecnologia e comportamento umano per ottenere accesso, denaro, dati o controllo."
+  },
+  {
+    "id": 77,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene definita una minaccia, secondo il modulo?",
+    "options": [
+      "Una debolezza che può essere sfruttata da un attaccante",
+      "Un sistema utilizzato per proteggersi dagli attacchi",
+      "La possibilità che un danno si verifichi realmente",
+      "Qualsiasi elemento capace di causare un danno"
+    ],
+    "correctIndex": 3,
+    "explanation": "Una minaccia è definita come qualsiasi elemento capace di causare un danno, come una persona, un software malevolo o un evento pericoloso."
+  },
+  {
+    "id": 78,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene definita una vulnerabilità, secondo il modulo?",
+    "options": [
+      "Un elemento capace di causare direttamente un danno",
+      "La possibilità che una minaccia sfrutti una debolezza",
+      "Un software antivirus non aggiornato correttamente",
+      "Una debolezza che può essere sfruttata da una minaccia"
+    ],
+    "correctIndex": 3,
+    "explanation": "Una vulnerabilità è definita come una debolezza che può essere sfruttata da una minaccia, sia essa tecnologica, procedurale o umana."
+  },
+  {
+    "id": 79,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene definito il rischio, secondo il modulo?",
+    "options": [
+      "La possibilità che una minaccia sfrutti una vulnerabilità causando un danno",
+      "Una debolezza presente in un sistema informatico",
+      "Un software malevolo che infetta i sistemi informatici",
+      "Un attacco già avvenuto con successo contro la vittima"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il rischio è definito come la possibilità che una minaccia sfrutti una vulnerabilità causando un danno."
+  },
+  {
+    "id": 80,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali esempi di vulnerabilità vengono citati nel modulo?",
+    "options": [
+      "Un tentativo di phishing già in corso",
+      "Password semplice, software non aggiornato, backup assente, dipendente poco formato",
+      "Un ransomware già diffuso all'interno della rete",
+      "Un cybercriminale organizzato che pianifica un attacco"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo cita come esempi di vulnerabilità una password semplice, un software non aggiornato, un backup assente e un dipendente poco formato."
+  },
+  {
+    "id": 81,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali esempi di minaccia vengono citati nel modulo?",
+    "options": [
+      "Un software non aggiornato installato sul dispositivo",
+      "Un cybercriminale, un ransomware, un tentativo di phishing, un furto di credenziali",
+      "Un dipendente poco formato sulla sicurezza",
+      "Una password semplice utilizzata dall'utente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo cita come esempi di minaccia un cybercriminale, un ransomware, un tentativo di phishing e un furto di credenziali."
+  },
+  {
+    "id": 82,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa succede quando manca una vulnerabilità da sfruttare?",
+    "options": [
+      "Molte minacce diventano inefficaci",
+      "La minaccia scompare automaticamente e per sempre",
+      "Il rischio aumenta comunque nonostante l'assenza di vulnerabilità",
+      "Il sistema diventa completamente inattaccabile in ogni caso"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che senza vulnerabilità molte minacce diventano inefficaci."
+  },
+  {
+    "id": 83,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nello Scenario 1 descritto nel modulo (email di phishing), cosa determina il rischio di furto delle credenziali?",
+    "options": [
+      "Il fatto che l'utente non riconosce l'inganno e clicca sul link",
+      "Il fatto che l'azienda non disponga di un firewall aggiornato",
+      "Il fatto che l'email arrivi da un mittente completamente sconosciuto",
+      "Il fatto che l'utente abbia un antivirus installato sul dispositivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nello Scenario 1 la vulnerabilità è che l'utente non riconosce l'inganno e clicca sul link, portando al furto delle credenziali."
+  },
+  {
+    "id": 84,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nello Scenario 2 descritto nel modulo, con la stessa email di phishing, perché il rischio si annulla?",
+    "options": [
+      "Perché il criminale decide di non inviare più l'email",
+      "Perché il collegamento contenuto nell'email smette di funzionare",
+      "Perché l'utente è formato, controlla il mittente e nota il dominio sospetto senza cliccare",
+      "Perché l'email viene bloccata automaticamente dal server di posta"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nello Scenario 2 la vulnerabilità è stata eliminata perché l'utente è formato e non clicca sul link sospetto."
+  },
+  {
+    "id": 85,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'automobile usata nel modulo, cosa rappresenta il fatto che l'auto sia lasciata aperta con le chiavi nel cruscotto?",
+    "options": [
+      "La conseguenza finale del furto",
+      "Il rischio",
+      "La vulnerabilità",
+      "La minaccia"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nella metafora, l'auto lasciata aperta con le chiavi nel cruscotto rappresenta la vulnerabilità che il ladro può sfruttare."
+  },
+  {
+    "id": 86,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'automobile, se l'auto è chiusa a chiave e dotata di antifurto, cosa succede al rischio anche se il ladro è ancora presente?",
+    "options": [
+      "Il rischio aumenta ulteriormente",
+      "La minaccia scompare del tutto",
+      "Il rischio si riduce drasticamente",
+      "Il rischio resta esattamente invariato"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo spiega che la minaccia non scompare, ma cambiando la vulnerabilità il rischio si riduce drasticamente."
+  },
+  {
+    "id": 87,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, in cosa consiste realmente la cybersecurity riguardo a minacce e vulnerabilità?",
+    "options": [
+      "Nell'eliminare completamente tutte le minacce esistenti",
+      "Nel ridurre le vulnerabilità, non nell'eliminare tutte le minacce",
+      "Nell'ignorare le minacce ritenute meno pericolose",
+      "Nel bloccare solo gli attacchi già avvenuti in passato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo afferma che la cybersecurity non consiste nell'eliminare tutte le minacce, ma nel ridurre le vulnerabilità."
+  },
+  {
+    "id": 88,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale relazione descrive correttamente i tre concetti di minaccia, vulnerabilità e rischio, secondo il modulo?",
+    "options": [
+      "La minaccia è la debolezza, la vulnerabilità è il pericolo, il rischio è la soluzione al problema",
+      "Sono tre termini equivalenti che indicano esattamente la stessa cosa",
+      "Il rischio è il pericolo, la minaccia è la debolezza, la vulnerabilità è la soluzione",
+      "La minaccia è il pericolo, la vulnerabilità è la debolezza, il rischio è la possibilità che dal loro incontro nasca un danno"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo riassume: la minaccia è il pericolo, la vulnerabilità è la debolezza, il rischio è la possibilità che dal loro incontro nasca un danno."
+  },
+  {
+    "id": 89,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per superficie d'attacco (Attack Surface), secondo il modulo?",
+    "options": [
+      "Il tempo necessario per violare una password",
+      "La quantità di dati archiviati in un sistema informatico",
+      "L'insieme di tutti i punti attraverso cui un attaccante può tentare di accedere a un sistema",
+      "Il numero totale di antivirus installati su un dispositivo"
+    ],
+    "correctIndex": 2,
+    "explanation": "La superficie d'attacco è l'insieme di tutti i punti attraverso cui un attaccante può tentare di accedere a un sistema."
+  },
+  {
+    "id": 90,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali dispositivi possono far parte della superficie d'attacco, secondo il modulo?",
+    "options": [
+      "Solo gli smartphone di uso personale",
+      "Computer, smartphone, tablet, server, dispositivi IoT",
+      "Solo i server centrali di un'organizzazione",
+      "Solo i computer utilizzati in ambito aziendale"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo include tra i dispositivi computer, smartphone, tablet, server e dispositivi Internet of Things (IoT)."
+  },
+  {
+    "id": 91,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può rendere vulnerabile un software o un'applicazione all'interno della superficie d'attacco, secondo il modulo?",
+    "options": [
+      "Il fatto di avere un'interfaccia grafica semplice",
+      "Il fatto di non essere aggiornato",
+      "Il fatto di essere stato installato di recente",
+      "Il fatto di essere un software open source"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo afferma che un software non aggiornato può contenere vulnerabilità sfruttabili."
+  },
+  {
+    "id": 92,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché ogni account compromesso può diventare parte della superficie d'attacco, secondo il modulo?",
+    "options": [
+      "Perché genera automaticamente notifiche pubblicitarie",
+      "Perché occupa spazio di archiviazione sul dispositivo",
+      "Perché rallenta la connessione Internet dell'utente",
+      "Perché può diventare una porta d'ingresso per l'attaccante"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo spiega che ogni account compromesso può diventare una porta d'ingresso per l'attaccante."
+  },
+  {
+    "id": 93,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, le persone fanno parte della superficie d'attacco?",
+    "options": [
+      "Solo se lavorano nel reparto informatico dell'azienda",
+      "No, la superficie d'attacco riguarda esclusivamente i dispositivi",
+      "Sì, anche gli utenti fanno parte della superficie d'attacco",
+      "No, la superficie d'attacco riguarda esclusivamente le reti"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo afferma chiaramente che anche gli utenti fanno parte della superficie d'attacco."
+  },
+  {
+    "id": 94,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del castello usata nel modulo, cosa rappresentano le porte, finestre e passaggi nascosti che aumentano con la crescita del castello?",
+    "options": [
+      "I punti di accesso della superficie d'attacco",
+      "I rischi già trasformati in un danno concreto",
+      "Le minacce esterne che circondano il castello",
+      "Le vulnerabilità già sfruttate con successo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Più il castello cresce, più aumentano le aperture, cioè i possibili punti di accesso, proprio come la superficie d'attacco nel mondo digitale."
+  },
+  {
+    "id": 95,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa succede alla superficie d'attacco quando si utilizzano più sistemi, applicazioni e utenti?",
+    "options": [
+      "Diventa più ampia",
+      "Si riduce progressivamente nel tempo",
+      "Rimane sempre esattamente invariata",
+      "Diventa automaticamente più sicura"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che più sistemi, applicazioni e utenti si utilizzano, più ampia diventa la superficie d'attacco."
+  },
+  {
+    "id": 96,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per Movimento Laterale (Lateral Movement), secondo il modulo?",
+    "options": [
+      "Un tipo di malware che si diffonde esclusivamente tramite email",
+      "La tecnica con cui un attaccante, dopo essere entrato in una rete, si sposta da un dispositivo all'altro per raggiungere obiettivi di maggior valore",
+      "Il primo accesso ottenuto da un attaccante in un sistema informatico",
+      "Una tecnica per bloccare un server con richieste multiple simultanee"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il Movimento Laterale è la tecnica con cui l'attaccante si sposta da un dispositivo all'altro dopo essere entrato in una rete, per raggiungere obiettivi di maggior valore."
+  },
+  {
+    "id": 97,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per Reconnaissance (ricognizione) in cybersecurity, secondo il modulo?",
+    "options": [
+      "Il processo di cifratura dei file effettuato dal ransomware",
+      "La verifica dell'identità dell'utente tramite MFA",
+      "La fase finale di un attacco, dopo aver già rubato i dati",
+      "La fase in cui il criminale osserva il bersaglio e raccoglie informazioni sui sistemi e le persone coinvolte"
+    ],
+    "correctIndex": 3,
+    "explanation": "La Reconnaissance è la fase in cui il criminale osserva il bersaglio e raccoglie informazioni sui sistemi e sulle persone prima di colpire."
+  },
+  {
+    "id": 98,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa comprende la fase di Reconnaissance, secondo il modulo?",
+    "options": [
+      "Solo l'invio di email di phishing alla vittima",
+      "Solo il pagamento del riscatto richiesto",
+      "Solo l'installazione di un ransomware sul dispositivo",
+      "Anche il fingerprinting, un'attività di raccolta di informazioni per pianificare l'attacco"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo spiega che la Reconnaissance comprende anche il fingerprinting, un'attività di raccolta di informazioni che permette di pianificare l'attacco."
+  },
+  {
+    "id": 99,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del ladro usata nel modulo per spiegare la Reconnaissance, cosa fa il ladro prima di agire?",
+    "options": [
+      "Installa un allarme per depistare le eventuali indagini",
+      "Entra subito nella casa senza alcuna pianificazione preventiva",
+      "Studia la casa, individua le telecamere, controlla gli accessi meno protetti e osserva quando i proprietari sono fuori",
+      "Chiede direttamente il permesso ai proprietari della casa"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo paragona la Reconnaissance a un ladro che, prima di agire, studia la casa, individua le telecamere, controlla gli accessi meno protetti e osserva quando i proprietari sono fuori."
+  },
+  {
+    "id": 100,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, il primo accesso ottenuto da un attaccante coincide solitamente con il suo vero obiettivo?",
+    "options": [
+      "Sì, ma soltanto nelle grandi aziende multinazionali",
+      "Sì, coincide sempre con l'obiettivo finale dell'attacco",
+      "Il modulo non tratta questo aspetto specifico",
+      "No, raramente il primo accesso coincide con il vero bersaglio"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo afferma che l'ingresso iniziale raramente coincide con il vero bersaglio dell'attaccante."
+  },
+  {
+    "id": 101,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio quotidiano descritto nel modulo, da quale dispositivo apparentemente innocuo parte l'attacco all'azienda?",
+    "options": [
+      "Il sistema di videosorveglianza dell'edificio",
+      "Il server principale protetto da firewall e antivirus",
+      "Una lampadina intelligente collegata alla rete Wi-Fi con la password predefinita mai modificata",
+      "Il computer personale del direttore generale dell'azienda"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo descrive che l'attacco parte da una lampadina intelligente del magazzino, con la password predefinita mai modificata."
+  },
+  {
+    "id": 102,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nel caso reale della catena americana Target del 2013 descritto nel modulo, da dove partì inizialmente l'attacco?",
+    "options": [
+      "Direttamente dai sistemi di pagamento dei punti vendita",
+      "Dall'account compromesso di un'azienda esterna incaricata della manutenzione degli impianti di climatizzazione",
+      "Da un dipendente interno che ha rubato fisicamente i dati",
+      "Da un attacco DDoS diretto al sito web aziendale"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo racconta che i criminali compromisero inizialmente l'account di un'azienda esterna incaricata della manutenzione degli impianti di climatizzazione."
+  },
+  {
+    "id": 103,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali furono le conseguenze dell'attacco a Target descritto nel modulo?",
+    "options": [
+      "Il blocco totale dei negozi per un anno intero",
+      "Il furto dei dati di circa 40 milioni di carte di pagamento e informazioni personali di circa 70 milioni di clienti",
+      "La chiusura definitiva dell'azienda a seguito dell'attacco",
+      "Il furto di circa 10.000 account email aziendali"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il risultato fu il furto dei dati di circa 40 milioni di carte di pagamento e delle informazioni personali di circa 70 milioni di clienti."
+  },
+  {
+    "id": 104,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostra il caso Target descritto nel modulo?",
+    "options": [
+      "Che i sistemi di climatizzazione non possono mai essere collegati alla rete",
+      "Che il punto di ingresso non coincide quasi mai con il vero obiettivo dell'attacco",
+      "Che gli attacchi DDoS sono la minaccia più diffusa in assoluto",
+      "Che gli attacchi informatici colpiscono solo le piccole aziende"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo afferma che l'attacco a Target dimostrò che il punto di ingresso non coincide quasi mai con il vero obiettivo."
+  },
+  {
+    "id": 105,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per fattore umano in cybersecurity, secondo il modulo?",
+    "options": [
+      "Un tipo specifico di malware progettato per colpire le persone",
+      "Il numero totale di utenti collegati a una rete aziendale",
+      "Un protocollo di autenticazione biometrica avanzato",
+      "L'insieme dei comportamenti, delle decisioni e delle azioni delle persone che possono influenzare la sicurezza di un sistema"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il fattore umano è l'insieme dei comportamenti, delle decisioni e delle azioni delle persone che possono influenzare la sicurezza di un sistema informatico."
+  },
+  {
+    "id": 106,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa possono rappresentare le persone in cybersecurity?",
+    "options": [
+      "Solo un fattore protettivo, mai una fonte di rischio",
+      "Sia la prima linea di difesa sia il punto più vulnerabile del sistema",
+      "Solo un elemento neutro privo di qualsiasi influenza",
+      "Solo una fonte di rischio, mai un elemento di protezione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo afferma che le persone possono rappresentare sia la prima linea di difesa sia il punto più vulnerabile dell'intero sistema."
+  },
+  {
+    "id": 107,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché utilizzare password semplici o riutilizzare la stessa password su più servizi è rischioso, secondo il modulo?",
+    "options": [
+      "Perché non è compatibile con gli smartphone più recenti",
+      "Perché rallenta la velocità di accesso ai servizi online",
+      "Perché aumenta notevolmente il rischio di compromissione",
+      "Perché genera conflitti tecnici tra i diversi sistemi"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo afferma che utilizzare password semplici o riutilizzare la stessa password su più servizi aumenta notevolmente il rischio di compromissione."
+  },
+  {
+    "id": 108,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può causare la distrazione come comportamento a rischio, secondo il modulo?",
+    "options": [
+      "Aumentare il consumo della batteria dello smartphone",
+      "Esporre dispositivi e dati a minacce, ad esempio aprendo allegati sconosciuti o cliccando link sospetti",
+      "Rallentare esclusivamente la velocità del computer utilizzato",
+      "Ridurre lo spazio di archiviazione disponibile sul dispositivo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo spiega che aprire allegati sconosciuti, cliccare link sospetti o ignorare avvisi di sicurezza può esporre dispositivi e dati a minacce informatiche."
+  },
+  {
+    "id": 109,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, come può presentarsi un attaccante per sfruttare l'eccesso di fiducia della vittima?",
+    "options": [
+      "Solo come un venditore porta a porta",
+      "Solo come un membro della famiglia della vittima",
+      "Solo come un rappresentante delle forze dell'ordine",
+      "Come un collega, una banca, un corriere, un tecnico informatico o un ente pubblico"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo elenca collega, banca, corriere, tecnico informatico ed ente pubblico come figure che l'attaccante può fingere di essere."
+  },
+  {
+    "id": 110,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la mancanza di formazione rappresenta un rischio, secondo il modulo?",
+    "options": [
+      "Perché riduce le prestazioni tecniche del computer utilizzato",
+      "Perché impedisce completamente l'accesso a Internet",
+      "Perché spesso gli utenti non riconoscono i segnali di un tentativo di truffa semplicemente perché non li hanno mai studiati",
+      "Perché aumenta il costo dell'antivirus installato"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo afferma che spesso gli utenti non riconoscono i segnali di un tentativo di truffa semplicemente perché non li hanno mai studiati."
+  },
+  {
+    "id": 111,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la condivisione eccessiva di informazioni personali online può rappresentare un rischio, secondo il modulo?",
+    "options": [
+      "Perché genera automaticamente dei virus informatici",
+      "Perché occupa troppo spazio di archiviazione sui social network",
+      "Perché può fornire dati preziosi agli attaccanti, spesso sfruttati nel Social Engineering",
+      "Perché rallenta la connessione Internet dell'utente"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo spiega che pubblicare online dettagli personali può fornire dati preziosi agli attaccanti, spesso sfruttati nelle attività di Social Engineering."
+  },
+  {
+    "id": 112,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'edificio protetto descritta nel modulo, cosa succede se un finto tecnico viene fatto entrare senza verificarne l'identità?",
+    "options": [
+      "Tutte le misure di sicurezza diventano inutili",
+      "Le telecamere bloccano automaticamente l'accesso del finto tecnico",
+      "L'allarme si attiva comunque nonostante l'ingresso",
+      "L'edificio diventa automaticamente più sicuro grazie al controllo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che se qualcuno apre senza verificare l'identità del finto tecnico, tutte le misure di sicurezza diventano inutili."
+  },
+  {
+    "id": 113,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa determina realmente l'efficacia della protezione tecnologica?",
+    "options": [
+      "Solo la marca dell'antivirus installato sul dispositivo",
+      "Le persone, che determinano quanto quella protezione sarà realmente efficace",
+      "Solo il costo complessivo del sistema di sicurezza",
+      "Solo la velocità della connessione Internet utilizzata"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo afferma che la tecnologia protegge i sistemi, ma sono le persone a determinare quanto quella protezione sarà realmente efficace."
+  },
+  {
+    "id": 114,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, tra attaccare un sistema tecnologicamente protetto e convincere una persona a consegnare l'accesso, quale strada sceglie spesso un criminale?",
+    "options": [
+      "Attaccare sempre e solo il sistema tecnologico, mai le persone",
+      "Nessuna delle due, preferendo abbandonare l'attacco",
+      "Dipende esclusivamente dal budget disponibile per l'attacco",
+      "Convincere una persona, perché aggirarla è più semplice che aggirare una tecnologia progettata correttamente"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo afferma che spesso il criminale sceglie di convincere una persona, perché aggirarla è più semplice che aggirare una tecnologia progettata correttamente."
+  },
+  {
+    "id": 115,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, la cybersecurity è un'azione da compiere una sola volta?",
+    "options": [
+      "Sì, basta scegliere una password sicura una sola volta",
+      "Sì, ma solo per i sistemi utilizzati in ambito aziendale",
+      "Sì, basta installare un antivirus una sola volta",
+      "No, è un processo continuo di protezione, verifica e aggiornamento"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo afferma che la cybersecurity è un processo continuo di protezione, verifica e aggiornamento, non un'azione da compiere una sola volta."
+  },
+  {
+    "id": 116,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della casa usata per descrivere la cybersecurity come processo, cosa bisogna fare oltre a installare una porta blindata?",
+    "options": [
+      "Cambiare casa periodicamente per motivi di sicurezza",
+      "Installare più porte blindate contemporaneamente",
+      "Controllare le serrature, sostituire le chiavi smarrite e verificare che porte e finestre siano sempre chiuse",
+      "Evitare del tutto di uscire di casa"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo spiega che bisogna controllare le serrature, sostituire le chiavi smarrite e verificare che porte e finestre siano sempre chiuse: la sicurezza richiede manutenzione costante."
+  },
+  {
+    "id": 117,
+    "module": "cybersecurity_fundamentals",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene riassunto, in una frase, il concetto di cybersecurity come processo, secondo il modulo?",
+    "options": [
+      "La cybersecurity termina subito dopo l'acquisto dell'antivirus",
+      "La cybersecurity non si installa una volta sola: si mantiene nel tempo",
+      "La cybersecurity si installa una volta e dura per sempre",
+      "La cybersecurity riguarda solo il primo accesso a un sistema"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo riassume con la frase: la cybersecurity non si installa una volta sola, si mantiene nel tempo."
+  }
+]

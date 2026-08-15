@@ -1,0 +1,632 @@
+[
+  {
+    "id": 1,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La chiave pubblica di una passkey viene registrata dal servizio online e utilizzata per verificare l'identità dell'utente.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 2,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una buona password dovrebbe essere composta da almeno 14-16 caratteri.",
+    "answer": true,
+    "explanation": "È quanto indicato dal modulo."
+  },
+  {
+    "id": 3,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le passkey offrono una forte protezione dal phishing perché sono legate esclusivamente al servizio legittimo per cui sono state create.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 4,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la chiusura del modulo, le passkey sono state presentate come una tecnologia ormai superata e in disuso.",
+    "answer": false,
+    "explanation": "Sono presentate come una delle evoluzioni più importanti, destinata a diffondersi ulteriormente."
+  },
+  {
+    "id": 5,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la nostra identità digitale può essere sostituita con la stessa facilità di uno smartphone.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: lo smartphone può essere sostituito, l'identità digitale no."
+  },
+  {
+    "id": 6,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un Password Manager può generare automaticamente password lunghe, casuali e uniche per ogni servizio.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 7,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, è consigliabile usare parole comuni o nomi propri per rendere una password facile da ricordare.",
+    "answer": false,
+    "explanation": "Il modulo consiglia di evitarli, perché rendono la password facile da indovinare."
+  },
+  {
+    "id": 8,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, i codici inviati tramite SMS sono considerati il metodo MFA più sicuro in assoluto.",
+    "answer": false,
+    "explanation": "Possono essere vulnerabili a clonazione della SIM o intercettazione dei messaggi."
+  },
+  {
+    "id": 9,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un password manager rende sempre un account completamente invulnerabile.",
+    "answer": false,
+    "explanation": "Il modulo afferma che nessun password manager rende un account invulnerabile."
+  },
+  {
+    "id": 10,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, se un utente visita un sito contraffatto, il dispositivo utilizza comunque la passkey normalmente.",
+    "answer": false,
+    "explanation": "Il dispositivo riconosce che il sito non corrisponde al servizio autorizzato e non la utilizza."
+  },
+  {
+    "id": 11,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la sicurezza degli account crolla soprattutto per la complessità eccessiva delle password.",
+    "answer": false,
+    "explanation": "Il modulo afferma che crolla per ripetizione e cattive abitudini, non per la complessità."
+  },
+  {
+    "id": 12,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, conservare le password su fogli accanto al computer è un metodo sicuro di gestione.",
+    "answer": false,
+    "explanation": "È indicato come un esempio di conservazione poco sicura delle password."
+  },
+  {
+    "id": 13,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, due password diverse costituiscono un sistema MFA valido.",
+    "answer": false,
+    "explanation": "Appartengono entrambe alla stessa categoria, quindi non costituiscono MFA."
+  },
+  {
+    "id": 14,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Molti password manager avvisano quando una credenziale è stata coinvolta in un Data Breach.",
+    "answer": true,
+    "explanation": "È una delle funzionalità descritte dal modulo."
+  },
+  {
+    "id": 15,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli attaccanti tendono a provare prima le password che milioni di persone scelgono davvero.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo sul comportamento degli attaccanti."
+  },
+  {
+    "id": 16,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Credential Stuffing consiste nel creare automaticamente password casuali per ogni servizio.",
+    "answer": false,
+    "explanation": "Il Credential Stuffing consiste nel riutilizzo automatico di credenziali rubate su più siti, non nella creazione di password."
+  },
+  {
+    "id": 17,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se vengono richiesti esattamente due fattori di autenticazione si parla di Autenticazione a Due Fattori (2FA).",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 18,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la chiave privata di una passkey viene condivisa con il servizio online durante l'accesso.",
+    "answer": false,
+    "explanation": "La chiave privata non viene mai condivisa né ricevuta dal servizio."
+  },
+  {
+    "id": 19,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la chiusura del modulo, un account ben protetto non può mai essere messo a rischio dal dispositivo utilizzato.",
+    "answer": false,
+    "explanation": "Può essere messo a rischio se il dispositivo non è adeguatamente protetto."
+  },
+  {
+    "id": 20,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, sequenze come 123456 o nomi propri sono considerate password particolarmente sicure.",
+    "answer": false,
+    "explanation": "Sono indicate come tra le password più prevedibili e rischiose."
+  },
+  {
+    "id": 21,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio del modulo, password e codice dell'app di autenticazione rappresentano due fattori di categorie diverse: qualcosa che si conosce e qualcosa che si possiede.",
+    "answer": true,
+    "explanation": "È l'esempio di 2FA descritto nel modulo."
+  },
+  {
+    "id": 22,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la chiusura del modulo, la sicurezza di un account dipende dalla combinazione di più strumenti e buone pratiche.",
+    "answer": true,
+    "explanation": "È quanto afferma la chiusura del modulo."
+  },
+  {
+    "id": 23,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una password è debole perché è facile da ricordare.",
+    "answer": false,
+    "explanation": "Il modulo afferma che è debole perché è facile da indovinare, non da ricordare."
+  },
+  {
+    "id": 24,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la sicurezza degli account dipende soltanto dalla qualità della password, non dalle abitudini con cui viene gestita.",
+    "answer": false,
+    "explanation": "Il modulo afferma che dipende anche dalle abitudini quotidiane di gestione."
+  },
+  {
+    "id": 25,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una password sicura può essere breve purché contenga simboli complessi.",
+    "answer": false,
+    "explanation": "Il modulo indica la lunghezza come uno dei fattori più importanti, non la sola complessità."
+  },
+  {
+    "id": 26,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, i password manager aumentano il compromesso tra sicurezza e praticità.",
+    "answer": false,
+    "explanation": "Il modulo afferma che lo eliminano, non che lo aumentano."
+  },
+  {
+    "id": 27,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un criminale che ha già ottenuto l'accesso a un account potrebbe tentare di aggiungere un nuovo metodo di autenticazione, come una passkey.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo sul rischio residuo."
+  },
+  {
+    "id": 28,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una passkey rende un account automaticamente invincibile a qualsiasi attacco.",
+    "answer": false,
+    "explanation": "Il modulo afferma che non rende l'account automaticamente invincibile."
+  },
+  {
+    "id": 29,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un Password Manager è un'applicazione progettata per generare, memorizzare e compilare automaticamente le password in modo sicuro.",
+    "answer": true,
+    "explanation": "È la definizione fornita dal modulo."
+  },
+  {
+    "id": 30,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio della cassaforte con lucchetto, il servizio online riceve e conserva la chiave vera dello smartphone dell'utente.",
+    "answer": false,
+    "explanation": "Il servizio non riceve mai la chiave, conserva solo il sistema per verificarla."
+  },
+  {
+    "id": 31,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Condividere le proprie password con amici o familiari rappresenta un rischio, secondo il modulo.",
+    "answer": true,
+    "explanation": "Il modulo indica la condivisione delle password come un rischio."
+  },
+  {
+    "id": 32,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con le passkey, l'accesso quotidiano avviene solitamente confermando l'identità tramite impronta digitale, riconoscimento del volto o PIN.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 33,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Credential Stuffing è il riutilizzo automatico di credenziali rubate su più siti.",
+    "answer": true,
+    "explanation": "È la definizione corretta fornita dal modulo."
+  },
+  {
+    "id": 34,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Quando si crea una passkey, il dispositivo genera automaticamente una coppia di chiavi crittografiche collegate tra loro.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 35,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, oggi il vero valore per un attaccante si trova più negli account che nel dispositivo fisico.",
+    "answer": true,
+    "explanation": "Il modulo afferma che oggi il vero valore non si trova nel dispositivo ma negli account."
+  },
+  {
+    "id": 36,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una password è una sequenza di caratteri utilizzata per verificare l'identità di un utente.",
+    "answer": true,
+    "explanation": "È la definizione di password fornita dal modulo."
+  },
+  {
+    "id": 37,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con un Password Manager l'utente deve comunque ricordare tutte le password dei singoli account.",
+    "answer": false,
+    "explanation": "Deve ricordare soltanto la Master Password, non tutte le singole password."
+  },
+  {
+    "id": 38,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una password efficace è breve, condivisa e facile da indovinare.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: una password efficace è lunga, unica e difficile da prevedere."
+  },
+  {
+    "id": 39,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'Autenticazione Multifattore (MFA) richiede due o più prove di identità prima di concedere l'accesso a un account.",
+    "answer": true,
+    "explanation": "È la definizione fornita dal modulo."
+  },
+  {
+    "id": 40,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la chiusura del modulo, il prossimo modulo tratterà la sicurezza dei dispositivi, tra cui aggiornamenti, antivirus e backup.",
+    "answer": true,
+    "explanation": "È quanto annuncia la chiusura del modulo."
+  },
+  {
+    "id": 41,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, con una passkey esiste comunque una parola segreta che l'utente deve digitare.",
+    "answer": false,
+    "explanation": "Non esiste una parola segreta da inventare, ricordare o digitare."
+  },
+  {
+    "id": 42,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, nella maggior parte dei casi la prima barriera che protegge un account è un antivirus.",
+    "answer": false,
+    "explanation": "La prima barriera è, nella maggior parte dei casi, una password, non un antivirus."
+  },
+  {
+    "id": 43,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se un utente comunica le proprie credenziali a un truffatore, il rischio rimane anche utilizzando un password manager.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo sui limiti del password manager."
+  },
+  {
+    "id": 44,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le Passkey sostituiscono le password tradizionali con una coppia di chiavi crittografiche.",
+    "answer": true,
+    "explanation": "È la definizione fornita dal modulo."
+  },
+  {
+    "id": 45,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della cassaforte, usare la stessa combinazione per più casseforti significa che basterebbe scoprirne una per aprirle tutte.",
+    "answer": true,
+    "explanation": "È quanto illustrato dalla metafora della cassaforte del modulo."
+  },
+  {
+    "id": 46,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le credenziali gestite da un password manager vengono archiviate in un file di testo non protetto.",
+    "answer": false,
+    "explanation": "Vengono archiviate in forma cifrata, non in un file di testo non protetto."
+  },
+  {
+    "id": 47,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'utente di un Password Manager deve ricordare una sola password principale, chiamata Master Password.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 48,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'Adaptive Authentication valuta il rischio, mentre la Risk-Based Authentication adatta i controlli.",
+    "answer": false,
+    "explanation": "È il contrario: Risk-Based valuta il rischio, Adaptive adatta i controlli."
+  },
+  {
+    "id": 49,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'aspetto fondamentale dell'MFA è che i fattori appartengano a categorie diverse.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 50,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la sicurezza offerta da un password manager non dipende in alcun modo dai comportamenti dell'utente.",
+    "answer": false,
+    "explanation": "Il modulo afferma che dipende sempre anche dai comportamenti di chi lo utilizza."
+  },
+  {
+    "id": 51,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora dell'aeroporto, se qualcuno trovasse soltanto il biglietto d'imbarco non potrebbe comunque salire sull'aereo.",
+    "answer": true,
+    "explanation": "È quanto illustrato dalla metafora dell'aeroporto del modulo."
+  },
+  {
+    "id": 52,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, se un criminale ottiene la password con l'MFA attivo può comunque accedere sempre senza problemi all'account.",
+    "answer": false,
+    "explanation": "Nella maggior parte dei casi non potrebbe accedere senza superare gli altri controlli."
+  },
+  {
+    "id": 53,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Riutilizzare la stessa password su più servizi è uno degli errori più gravi nella gestione delle password.",
+    "answer": true,
+    "explanation": "Il modulo indica questo come uno degli errori più gravi."
+  },
+  {
+    "id": 54,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una password può essere costruita come una frase lunga e facile da ricordare per il proprietario ma difficile da prevedere per altri.",
+    "answer": true,
+    "explanation": "È il consiglio fornito dal modulo per costruire una password efficace."
+  },
+  {
+    "id": 55,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La Risk-Based Authentication valuta il livello di rischio di un accesso in base a dispositivo, posizione e orario.",
+    "answer": true,
+    "explanation": "È la definizione fornita dal modulo."
+  },
+  {
+    "id": 56,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un attacco a forza bruta consiste nel provare automaticamente moltissime password fino a trovare quella corretta.",
+    "answer": true,
+    "explanation": "È la definizione di attacco a forza bruta fornita dal modulo."
+  },
+  {
+    "id": 57,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con la sola password si utilizzano già due fattori di autenticazione, secondo il modulo.",
+    "answer": false,
+    "explanation": "Con la sola password si utilizza un solo fattore: qualcosa che si conosce."
+  },
+  {
+    "id": 58,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la frase di sintesi del modulo, la passkey è una chiave che rimane sempre con l'utente, a differenza della password che va consegnata ogni volta.",
+    "answer": true,
+    "explanation": "È la frase di sintesi finale del capitolo sulle passkey."
+  },
+  {
+    "id": 59,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Dopo un Data Breach è fondamentale modificare immediatamente la password coinvolta.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 60,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la lunghezza di una password è oggi un fattore trascurabile per la sicurezza.",
+    "answer": false,
+    "explanation": "Il modulo afferma che la lunghezza è oggi uno dei fattori più importanti."
+  },
+  {
+    "id": 61,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la credenziale segreta di una passkey viaggia su Internet ogni volta che si effettua l'accesso.",
+    "answer": false,
+    "explanation": "Il modulo afferma che non viaggia mai su Internet."
+  },
+  {
+    "id": 62,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Oggi sono generalmente preferite le app di autenticazione o le chiavi di sicurezza fisiche rispetto agli SMS.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 63,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del mazzo di chiavi, usare la stessa chiave per casa, auto, ufficio e cassaforte comporta un rischio se viene persa.",
+    "answer": true,
+    "explanation": "È quanto illustrato dalla metafora del mazzo di chiavi del modulo."
+  },
+  {
+    "id": 64,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, gli attaccanti cercano sempre meno di rubare il dispositivo e sempre più di impossessarsi degli account.",
+    "answer": true,
+    "explanation": "È quanto afferma esplicitamente il modulo."
+  },
+  {
+    "id": 65,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della cassaforte con tutte le chiavi, basta custodire con attenzione la chiave della cassaforte per avere tutte le altre protette.",
+    "answer": true,
+    "explanation": "È quanto illustrato dalla metafora del modulo."
+  },
+  {
+    "id": 66,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'MFA è sconsigliato per proteggere account come email e servizi bancari.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: è consigliato, e spesso obbligatorio, per questi servizi."
+  },
+  {
+    "id": 67,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, è consigliabile usare la stessa password per tutti gli account importanti.",
+    "answer": false,
+    "explanation": "Il modulo consiglia il contrario: ogni account importante dovrebbe avere una password diversa."
+  },
+  {
+    "id": 68,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una copia della porta o della serratura permetterebbe alla chiave della passkey di funzionare comunque altrove.",
+    "answer": false,
+    "explanation": "La chiave funziona soltanto con la serratura originale."
+  },
+  {
+    "id": 69,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, non si parla formalmente di 4FA come standard tecnico.",
+    "answer": true,
+    "explanation": "È quanto afferma esplicitamente il modulo."
+  },
+  {
+    "id": 70,
+    "module": "account_security",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'MFA è un caso particolare della 2FA.",
+    "answer": false,
+    "explanation": "È il contrario: la 2FA è un caso particolare dell'MFA."
+  }
+]

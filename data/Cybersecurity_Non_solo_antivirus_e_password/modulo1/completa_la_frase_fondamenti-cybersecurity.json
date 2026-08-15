@@ -1,0 +1,602 @@
+[
+  {
+    "sentence": "La ____ è l'insieme di tecnologie, procedure, strategie e comportamenti utilizzati per proteggere sistemi informatici.",
+    "answer": "Cybersecurity",
+    "bank": [
+      "Reconnaissance",
+      "Vulnerabilità",
+      "Cybersecurity",
+      "Superficie d'attacco"
+    ]
+  },
+  {
+    "sentence": "Il termine Cybersecurity deriva dall'unione di Cyber, che riguarda il mondo digitale, e ____, che significa sicurezza.",
+    "answer": "Security",
+    "bank": [
+      "System",
+      "Software",
+      "Service",
+      "Security"
+    ]
+  },
+  {
+    "sentence": "La CIA Triad è composta da Confidentiality, Integrity e ____.",
+    "answer": "Availability",
+    "bank": [
+      "Authentication",
+      "Availability",
+      "Accountability",
+      "Authorization"
+    ]
+  },
+  {
+    "sentence": "Il principio di ____ indica che le informazioni sono accessibili soltanto alle persone autorizzate.",
+    "answer": "Confidentiality",
+    "bank": [
+      "Reconnaissance",
+      "Availability",
+      "Confidentiality",
+      "Integrity"
+    ]
+  },
+  {
+    "sentence": "Il principio di ____ indica che le informazioni sono corrette e non alterate da soggetti non autorizzati.",
+    "answer": "Integrity",
+    "bank": [
+      "Availability",
+      "Integrity",
+      "Confidentiality",
+      "Vulnerabilità"
+    ]
+  },
+  {
+    "sentence": "Il principio di ____ indica che le informazioni sono accessibili quando servono.",
+    "answer": "Availability",
+    "bank": [
+      "Integrity",
+      "Rischio",
+      "Availability",
+      "Confidentiality"
+    ]
+  },
+  {
+    "sentence": "Nell'esempio della cartella clinica, se un attaccante modifica il gruppo sanguigno del paziente senza rubare né bloccare i dati, viene violato il principio di ____.",
+    "answer": "Integrity",
+    "bank": [
+      "Confidentiality",
+      "Social Engineering",
+      "Availability",
+      "Integrity"
+    ]
+  },
+  {
+    "sentence": "Nell'esempio della cartella clinica, se un ransomware blocca l'accesso ai computer dell'ospedale, viene compromessa la ____.",
+    "answer": "disponibilità",
+    "bank": [
+      "autenticità",
+      "disponibilità",
+      "integrità",
+      "riservatezza"
+    ]
+  },
+  {
+    "sentence": "Il termine malware deriva dall'unione di malicious e ____.",
+    "answer": "software",
+    "bank": [
+      "hardware",
+      "network",
+      "software",
+      "firmware"
+    ]
+  },
+  {
+    "sentence": "Il ____ è un malware che infetta altri file e ha bisogno di un'azione dell'utente per diffondersi.",
+    "answer": "virus",
+    "bank": [
+      "worm",
+      "ransomware",
+      "trojan",
+      "virus"
+    ]
+  },
+  {
+    "sentence": "Il ____ è un malware che si replica e si diffonde automaticamente attraverso le reti, senza bisogno che l'utente apra un file.",
+    "answer": "worm",
+    "bank": [
+      "keylogger",
+      "worm",
+      "virus",
+      "trojan"
+    ]
+  },
+  {
+    "sentence": "Il termine worm significa letteralmente ____.",
+    "answer": "verme",
+    "bank": [
+      "insetto",
+      "ragno",
+      "ombra",
+      "verme"
+    ]
+  },
+  {
+    "sentence": "Il ____ è un malware che si finge un programma legittimo, nascondendo al suo interno attività dannose.",
+    "answer": "Trojan",
+    "bank": [
+      "spyware",
+      "worm",
+      "Trojan",
+      "virus"
+    ]
+  },
+  {
+    "sentence": "Il nome del Trojan deriva dal racconto del ____.",
+    "answer": "Cavallo di Troia",
+    "bank": [
+      "Minotauro",
+      "Tallone di Achille",
+      "Cavallo di Troia",
+      "Vaso di Pandora"
+    ]
+  },
+  {
+    "sentence": "Lo ____ è un malware progettato per raccogliere informazioni sull'utente senza distruggere il computer.",
+    "answer": "spyware",
+    "bank": [
+      "ransomware",
+      "trojan",
+      "worm",
+      "spyware"
+    ]
+  },
+  {
+    "sentence": "Il termine spyware deriva dalla parola inglese spy, che significa ____.",
+    "answer": "spia",
+    "bank": [
+      "spia",
+      "velocità",
+      "ragno",
+      "chiave"
+    ]
+  },
+  {
+    "sentence": "Il ____ registra tutto ciò che viene digitato sulla tastiera, comprese password ed email.",
+    "answer": "keylogger",
+    "bank": [
+      "keylogger",
+      "ransomware",
+      "spyware",
+      "worm"
+    ]
+  },
+  {
+    "sentence": "Il termine keylogger deriva da key (tasto) e ____ (registratore).",
+    "answer": "logger",
+    "bank": [
+      "lock",
+      "logger",
+      "locker",
+      "log"
+    ]
+  },
+  {
+    "sentence": "Il ____ blocca oppure cifra i file di un dispositivo, chiedendo poi un pagamento per ripristinarli.",
+    "answer": "ransomware",
+    "bank": [
+      "trojan",
+      "ransomware",
+      "worm",
+      "spyware"
+    ]
+  },
+  {
+    "sentence": "Il termine ransomware deriva dalla parola inglese ransom, che significa ____.",
+    "answer": "riscatto",
+    "bank": [
+      "ricognizione",
+      "richiesta",
+      "rischio",
+      "riscatto"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, pagare il riscatto di un ransomware non garantisce la ____ dei dati.",
+    "answer": "restituzione",
+    "bank": [
+      "restituzione",
+      "cancellazione",
+      "cifratura",
+      "condivisione"
+    ]
+  },
+  {
+    "sentence": "Molti malware preferiscono rimanere ____ il più a lungo possibile, per raccogliere più informazioni.",
+    "answer": "invisibili",
+    "bank": [
+      "visibili",
+      "invisibili",
+      "disattivati",
+      "cifrati"
+    ]
+  },
+  {
+    "sentence": "Il ____ è l'insieme delle tecniche utilizzate per manipolare una persona e convincerla a compiere un'azione favorevole al criminale.",
+    "answer": "Social Engineering",
+    "bank": [
+      "Account Takeover",
+      "Phishing",
+      "Data Breach",
+      "Social Engineering"
+    ]
+  },
+  {
+    "sentence": "Il ____ è una tecnica di inganno che punta a ottenere credenziali, dati personali o pagamenti dalla vittima.",
+    "answer": "phishing",
+    "bank": [
+      "ransomware",
+      "phishing",
+      "Data Breach",
+      "malware"
+    ]
+  },
+  {
+    "sentence": "Il termine phishing deriva dalla parola inglese fishing, che significa ____.",
+    "answer": "pescare",
+    "bank": [
+      "finire",
+      "pescare",
+      "pesce",
+      "nascondere"
+    ]
+  },
+  {
+    "sentence": "Il ____ è una forma di phishing che utilizza le telefonate al posto di email o messaggi.",
+    "answer": "vishing",
+    "bank": [
+      "spear phishing",
+      "smishing",
+      "quishing",
+      "vishing"
+    ]
+  },
+  {
+    "sentence": "Il termine vishing nasce dall'unione di voice e ____.",
+    "answer": "phishing",
+    "bank": [
+      "phishing",
+      "malware",
+      "hacking",
+      "spoofing"
+    ]
+  },
+  {
+    "sentence": "Lo ____ è una forma di phishing che utilizza SMS o messaggi di testo.",
+    "answer": "smishing",
+    "bank": [
+      "smishing",
+      "vishing",
+      "quishing",
+      "spear phishing"
+    ]
+  },
+  {
+    "sentence": "Il ____ è una forma di phishing che utilizza un codice QR per condurre la vittima verso un sito fraudolento.",
+    "answer": "quishing",
+    "bank": [
+      "vishing",
+      "smishing",
+      "spear phishing",
+      "quishing"
+    ]
+  },
+  {
+    "sentence": "Lo ____ è una forma di phishing personalizzata, costruita su misura per la vittima con informazioni reali.",
+    "answer": "Spear Phishing",
+    "bank": [
+      "vishing",
+      "Spear Phishing",
+      "smishing",
+      "quishing"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, il phishing raramente sfrutta una debolezza tecnica: sfrutta invece le ____ umane.",
+    "answer": "emozioni",
+    "bank": [
+      "reti",
+      "password",
+      "connessioni",
+      "emozioni"
+    ]
+  },
+  {
+    "sentence": "Nell'esempio del vishing in aeroporto descritto nel modulo, il codice MFA era autentico, ma a essere falsa era la ____ al telefono.",
+    "answer": "persona",
+    "bank": [
+      "persona",
+      "compagnia",
+      "telefonata",
+      "prenotazione"
+    ]
+  },
+  {
+    "sentence": "Le truffe online sono il risultato dell'utilizzo combinato di tecniche come phishing, smishing, vishing o ____.",
+    "answer": "spear phishing",
+    "bank": [
+      "DDoS",
+      "ransomware",
+      "spear phishing",
+      "keylogger"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, una delle difese più efficaci contro le truffe online consiste nel fermarsi, verificare e ____.",
+    "answer": "ragionare",
+    "bank": [
+      "cliccare",
+      "pagare",
+      "ragionare",
+      "condividere"
+    ]
+  },
+  {
+    "sentence": "L'____ significa presa di controllo completa di un account da parte di un criminale.",
+    "answer": "Account Takeover",
+    "bank": [
+      "Account Recovery",
+      "Account Sharing",
+      "Account Takeover",
+      "Account Backup"
+    ]
+  },
+  {
+    "sentence": "Il ____ si verifica quando informazioni riservate vengono esposte, sottratte o divulgate senza autorizzazione.",
+    "answer": "Data Breach",
+    "bank": [
+      "Account Takeover",
+      "Movimento Laterale",
+      "Data Breach",
+      "Social Engineering"
+    ]
+  },
+  {
+    "sentence": "Nel 2011 il servizio PlayStation Network subì un attacco che compromise circa ____ milioni di account.",
+    "answer": "77",
+    "bank": [
+      "77",
+      "70",
+      "40",
+      "90"
+    ]
+  },
+  {
+    "sentence": "Nel Data Breach di PlayStation Network, tra i dati coinvolti vi erano email, credenziali, nome, cognome e ____.",
+    "answer": "data di nascita",
+    "bank": [
+      "indirizzo di casa",
+      "numero di carta di credito",
+      "codice fiscale",
+      "data di nascita"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, quando un account con molti follower viene compromesso, il vero obiettivo del criminale è la ____ delle persone che lo seguono.",
+    "answer": "fiducia",
+    "bank": [
+      "fiducia",
+      "password",
+      "posizione",
+      "età"
+    ]
+  },
+  {
+    "sentence": "Una ____ è qualsiasi elemento capace di causare un danno.",
+    "answer": "minaccia",
+    "bank": [
+      "minaccia",
+      "rischio",
+      "superficie d'attacco",
+      "vulnerabilità"
+    ]
+  },
+  {
+    "sentence": "Una ____ è una debolezza che può essere sfruttata da una minaccia.",
+    "answer": "vulnerabilità",
+    "bank": [
+      "vulnerabilità",
+      "rischio",
+      "minaccia",
+      "reconnaissance"
+    ]
+  },
+  {
+    "sentence": "Il ____ è la possibilità che una minaccia sfrutti una vulnerabilità causando un danno.",
+    "answer": "rischio",
+    "bank": [
+      "movimento laterale",
+      "fattore umano",
+      "rischio",
+      "malware"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, senza vulnerabilità molte minacce diventano ____.",
+    "answer": "inefficaci",
+    "bank": [
+      "permanenti",
+      "più pericolose",
+      "inefficaci",
+      "invisibili"
+    ]
+  },
+  {
+    "sentence": "Nella metafora dell'automobile, un'auto lasciata aperta con le chiavi nel cruscotto rappresenta la ____.",
+    "answer": "vulnerabilità",
+    "bank": [
+      "rischio",
+      "conseguenza",
+      "vulnerabilità",
+      "minaccia"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, la cybersecurity non consiste nell'eliminare tutte le minacce, ma nel ridurre le ____.",
+    "answer": "vulnerabilità",
+    "bank": [
+      "vulnerabilità",
+      "reti",
+      "applicazioni",
+      "password"
+    ]
+  },
+  {
+    "sentence": "La ____ è l'insieme di tutti i punti attraverso cui un attaccante può tentare di accedere a un sistema.",
+    "answer": "superficie d'attacco",
+    "bank": [
+      "vulnerabilità",
+      "minaccia",
+      "reconnaissance",
+      "superficie d'attacco"
+    ]
+  },
+  {
+    "sentence": "Tra i dispositivi che fanno parte della superficie d'attacco troviamo computer, smartphone, tablet, server e dispositivi ____.",
+    "answer": "IoT",
+    "bank": [
+      "IoT",
+      "VPN",
+      "GPU",
+      "CPU"
+    ]
+  },
+  {
+    "sentence": "Un software non ____ può contenere vulnerabilità sfruttabili da un attaccante.",
+    "answer": "aggiornato",
+    "bank": [
+      "condiviso",
+      "aggiornato",
+      "disinstallato",
+      "installato"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, anche le ____ fanno parte della superficie d'attacco.",
+    "answer": "persone",
+    "bank": [
+      "persone",
+      "reti",
+      "password",
+      "applicazioni"
+    ]
+  },
+  {
+    "sentence": "Il ____ è la tecnica con cui un attaccante, dopo essere entrato in una rete, si sposta da un dispositivo all'altro per raggiungere obiettivi di maggior valore.",
+    "answer": "Movimento Laterale",
+    "bank": [
+      "Movimento Laterale",
+      "Data Breach",
+      "Social Engineering",
+      "Account Takeover"
+    ]
+  },
+  {
+    "sentence": "La fase in cui il criminale osserva il bersaglio e raccoglie informazioni prima di attaccare si chiama ____.",
+    "answer": "Reconnaissance",
+    "bank": [
+      "Data Breach",
+      "Social Engineering",
+      "Movimento Laterale",
+      "Reconnaissance"
+    ]
+  },
+  {
+    "sentence": "La Reconnaissance comprende anche il ____, un'attività di raccolta di informazioni per pianificare l'attacco.",
+    "answer": "fingerprinting",
+    "bank": [
+      "keylogging",
+      "spoofing",
+      "phishing",
+      "fingerprinting"
+    ]
+  },
+  {
+    "sentence": "Nel caso reale della catena Target del 2013, l'attacco partì dall'account compromesso di un'azienda esterna incaricata della manutenzione degli impianti di ____.",
+    "answer": "climatizzazione",
+    "bank": [
+      "sicurezza",
+      "climatizzazione",
+      "pagamento",
+      "illuminazione"
+    ]
+  },
+  {
+    "sentence": "L'attacco a Target del 2013 causò il furto dei dati di circa 40 milioni di carte di pagamento e informazioni personali di circa ____ milioni di clienti.",
+    "answer": "70",
+    "bank": [
+      "40",
+      "90",
+      "77",
+      "70"
+    ]
+  },
+  {
+    "sentence": "Il ____ è l'insieme dei comportamenti, delle decisioni e delle azioni delle persone che possono influenzare la sicurezza di un sistema.",
+    "answer": "fattore umano",
+    "bank": [
+      "social engineering",
+      "data breach",
+      "malware",
+      "fattore umano"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, le persone possono rappresentare sia la prima linea di difesa sia il punto più ____ dell'intero sistema.",
+    "answer": "vulnerabile",
+    "bank": [
+      "protetto",
+      "aggiornato",
+      "sicuro",
+      "vulnerabile"
+    ]
+  },
+  {
+    "sentence": "Utilizzare password semplici o riutilizzare la stessa password su più servizi aumenta notevolmente il rischio di ____.",
+    "answer": "compromissione",
+    "bank": [
+      "backup",
+      "aggiornamento",
+      "autenticazione",
+      "compromissione"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, la tecnologia protegge i sistemi, ma sono le ____ a determinare quanto quella protezione sarà realmente efficace.",
+    "answer": "persone",
+    "bank": [
+      "persone",
+      "applicazioni",
+      "password",
+      "reti"
+    ]
+  },
+  {
+    "sentence": "La cybersecurity è un ____ continuo di protezione, verifica e aggiornamento.",
+    "answer": "processo",
+    "bank": [
+      "processo",
+      "prodotto",
+      "servizio",
+      "evento"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, la sicurezza informatica non si installa una volta sola: si ____ nel tempo.",
+    "answer": "mantiene",
+    "bank": [
+      "esaurisce",
+      "blocca",
+      "mantiene",
+      "cancella"
+    ]
+  }
+]

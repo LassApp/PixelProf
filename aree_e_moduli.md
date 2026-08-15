@@ -323,29 +323,27 @@ data/
 **Stato:** attiva  
 **Nota:** contenuti presenti, JSON da realizzare.
 
-- **Virus**
-  - Chiave: `virus`
-  - Stato: `attivo`
+- **Malware e Minacce Informatiche**
 
-- **Worm**
-  - Chiave: `worm`
-  - Stato: `attivo`
+- **Chiave:** `malware-e-minacce-informatiche`
+- **Stato:** `attivo`
+- **Path base:** `data/Malware_e_Minacce_Informatiche/modulo1/`
+- **File:**
+  - `abbina_Malware_e_Minacce_Informatiche.json`
+  - `completa_la_frase_Malware_e_Minacce_Informatiche.json`
+  - `quiz_Malware_e_Minacce_Informatiche.json`
+  - `speedquiz_Malware_e_Minacce_Informatiche.json`
+  - `vero_o_falso_Malware_e_Minacce_Informatiche.json`
 
-- **Trojan**
-  - Chiave: `trojan`
-  - Stato: `attivo`
-
-- **Spyware**
-  - Chiave: `spyware`
-  - Stato: `attivo`
-
-- **Keylogger**
-  - Chiave: `keylogger`
-  - Stato: `attivo`
-
-- **Ransomware**
-  - Chiave: `ransomware`
-  - Stato: `attivo`
+```text
+data/
+└── Malware_e_Minacce_Informatiche/
+    └── modulo1/                         ← cartella comune
+        ├── abbina__Malware_e_Minacce_Informatiche.json
+        ├── completa_la_frase_Malware_e_Minacce_Informatiche.json
+        ├── quiz_Malware_e_Minacce_Informatiche.json
+        ├── speedquiz_Malware_e_Minacce_Informatiche.json
+        └── vero_o_falso_Malware_e_Minacce_Informatiche.json
 
 
 ---
@@ -353,8 +351,8 @@ data/
 # Riepilogo
 
 - **Aree:** 5
-- **Moduli totali:** 31
-- **Moduli attivi:** 31
+- **Moduli totali:** 26
+- **Moduli attivi:** 26
 - **Moduli coming soon:** 0
-- **JSON già presenti:** solo i 3 moduli ECDL
-- **JSON da realizzare:** 28 moduli
+- **JSON già presenti:** 3 moduli ECDL + 8 moduli Cybersecurity — Non solo antivirus e password totale 11
+- **JSON da realizzare:** 17 moduli

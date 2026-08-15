@@ -1,0 +1,650 @@
+[
+  {
+    "id": 1,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la cifratura dei dati è descritta come un processo magico e non spiegabile.",
+    "answer": false,
+    "explanation": "Il modulo afferma che non è magia, ma matematica."
+  },
+  {
+    "id": 2,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una copia di backup dimenticata o mai aggiornata può dare un falso senso di sicurezza.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 3,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della biblioteca storica usata nel modulo, non basta mettere i libri sugli scaffali: bisogna controllare gli accessi e restaurare i volumi danneggiati.",
+    "answer": true,
+    "explanation": "È quanto illustrato dalla metafora della biblioteca storica del modulo."
+  },
+  {
+    "id": 4,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio dei filmati di famiglia, i file erano ancora integri ma la Smart TV moderna non riusciva a riprodurli per un problema di formato.",
+    "answer": true,
+    "explanation": "È quanto descritto nell'esempio dei filmati di famiglia."
+  },
+  {
+    "id": 5,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il Disaster Recovery riguarda principalmente la prevenzione degli attacchi, non il recupero.",
+    "answer": false,
+    "explanation": "Riguarda il recupero dopo un'interruzione grave, non la prevenzione."
+  },
+  {
+    "id": 6,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un backup remoto è conservato esclusivamente su un hard disk esterno collegato fisicamente al computer.",
+    "answer": false,
+    "explanation": "Il backup remoto è conservato nel cloud, su server esterni accessibili via Internet."
+  },
+  {
+    "id": 7,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la maggior parte dei dati viene rubata da criminali informatici, non persa accidentalmente.",
+    "answer": false,
+    "explanation": "Il modulo afferma che molti dati non vengono rubati, ma semplicemente persi."
+  },
+  {
+    "id": 8,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Come riassunto nel modulo, il Disaster Recovery è definito come l'arte di prevenire ogni possibile problema futuro.",
+    "answer": false,
+    "explanation": "È definito come l'arte di rimettere in moto ciò che si è fermato, non di prevenire."
+  },
+  {
+    "id": 9,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio quotidiano descritto nel modulo, le foto di famiglia vengono conservate sul computer, su un hard disk esterno e su un servizio cloud.",
+    "answer": true,
+    "explanation": "È l'esempio quotidiano descritto nel modulo sulla regola 3-2-1."
+  },
+  {
+    "id": 10,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la terza copia esterna prevista dalla regola 3-2-1 dovrebbe trovarsi nello stesso ambiente delle altre due.",
+    "answer": false,
+    "explanation": "Dovrebbe introdurre distanza, essere separata dall'ambiente principale."
+  },
+  {
+    "id": 11,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'interruzione di Colonial Pipeline non causò alcuna conseguenza visibile per i consumatori.",
+    "answer": false,
+    "explanation": "Causò acquisti di massa e carenze temporanee alle stazioni di servizio."
+  },
+  {
+    "id": 12,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, ogni giorno produciamo solo una quantità trascurabile di dati digitali.",
+    "answer": false,
+    "explanation": "Il modulo afferma che produciamo una quantità enorme di dati digitali."
+  },
+  {
+    "id": 13,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, è importante distinguere tra proteggere i dati con la cifratura e subire una cifratura malevola da parte di un attaccante, come nei ransomware.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo a proposito del caso NotPetya."
+  },
+  {
+    "id": 14,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il miglior backup è sempre quello tecnicamente più sofisticato disponibile.",
+    "answer": false,
+    "explanation": "Il miglior backup è quello eseguito con continuità, non necessariamente il più sofisticato."
+  },
+  {
+    "id": 15,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Come riassunto nel modulo, la cifratura trasforma i dati in segreti matematici leggibili solo da chi possiede la chiave.",
+    "answer": true,
+    "explanation": "È la sintesi finale del capitolo sulla cifratura."
+  },
+  {
+    "id": 16,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la regola 3-2-1 non è soltanto una regola tecnica, ma anche una filosofia di resilienza.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 17,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, proteggere i dati significa adottare pratiche e strumenti per conservarli in modo sicuro, evitando che vengano persi, danneggiati, alterati o consultati da persone non autorizzate.",
+    "answer": true,
+    "explanation": "È la definizione fornita dal modulo."
+  },
+  {
+    "id": 18,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora delle chiavi di casa, tutte e tre le copie vengono conservate nello stesso cassetto di casa.",
+    "answer": false,
+    "explanation": "Una copia resta con te, una dai genitori, una dai suoceri, in luoghi diversi."
+  },
+  {
+    "id": 19,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, le organizzazioni con backup separati e non raggiungibili dagli attaccanti possono ripristinare i dati senza dipendere dal pagamento del riscatto.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo sui vantaggi dei backup separati."
+  },
+  {
+    "id": 20,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il caso reale degli archivi digitali della NASA dimostra che alcuni dati furono registrati su supporti e formati che diventarono obsoleti nel tempo.",
+    "answer": true,
+    "explanation": "È quanto descritto nel caso reale del modulo."
+  },
+  {
+    "id": 21,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'attacco ransomware a Colonial Pipeline avvenne nel 2013.",
+    "answer": false,
+    "explanation": "Avvenne nel maggio 2021."
+  },
+  {
+    "id": 22,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il caso Equifax dimostrò che basta impedire l'accesso a un sistema per essere completamente al sicuro.",
+    "answer": false,
+    "explanation": "Dimostrò che bisogna anche impedire che i dati sottratti possano essere utilizzati facilmente."
+  },
+  {
+    "id": 23,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la differenza fondamentale tra backup e sincronizzazione è strategica, non tecnica.",
+    "answer": true,
+    "explanation": "È quanto afferma esplicitamente il modulo."
+  },
+  {
+    "id": 24,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la sicurezza della cifratura nasce dal nascondere l'esistenza del sistema, non dal rendere inutile l'accesso non autorizzato.",
+    "answer": false,
+    "explanation": "Nasce dal rendere inutile l'accesso senza autorizzazione, non dal nascondere il sistema."
+  },
+  {
+    "id": 25,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, i due supporti diversi previsti dalla regola 3-2-1 evitano che un singolo tipo di guasto distrugga tutte le copie.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo sul ruolo dei due supporti diversi."
+  },
+  {
+    "id": 26,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel caso Apple e San Bernardino, Apple accettò immediatamente di creare una procedura speciale per accedere ai dati richiesti.",
+    "answer": false,
+    "explanation": "Apple rifiutò di creare tale procedura."
+  },
+  {
+    "id": 27,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, in molte realtà il costo del backup è più importante del tempo di recupero.",
+    "answer": false,
+    "explanation": "È il tempo di recupero a essere indicato come più importante della perdita stessa."
+  },
+  {
+    "id": 28,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, tre copie dei dati non offrono alcuna forma di ridondanza aggiuntiva rispetto a una sola copia.",
+    "answer": false,
+    "explanation": "Tre copie significano che esiste sempre una ridondanza."
+  },
+  {
+    "id": 29,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il malware NotPetya del 2017 fu utilizzato per proteggere i dati di alcune aziende.",
+    "answer": false,
+    "explanation": "Causò gravi interruzioni operative, non proteggeva i dati."
+  },
+  {
+    "id": 30,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un dato è considerato realmente conservato anche se esiste ma non è più possibile leggerlo o utilizzarlo.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: non è realmente conservato se non può più essere letto o utilizzato."
+  },
+  {
+    "id": 31,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il backup è la copia di sicurezza dei dati, creata per poterli recuperare in caso di perdita, danneggiamento o cancellazione accidentale.",
+    "answer": true,
+    "explanation": "È la definizione di backup fornita dal modulo."
+  },
+  {
+    "id": 32,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la crittografia end-to-end di WhatsApp impedisce ai messaggi di essere inviati.",
+    "answer": false,
+    "explanation": "Non impedisce l'invio, impedisce che il contenuto venga compreso da chi non è autorizzato."
+  },
+  {
+    "id": 33,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'espressione \"Data is the new oil\" indica che i dati hanno esattamente lo stesso valore economico del petrolio grezzo.",
+    "answer": false,
+    "explanation": "L'espressione indica che i dati sono una risorsa essenziale per l'economia digitale, non un'equivalenza di valore economico letterale."
+  },
+  {
+    "id": 34,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, lo scopo della regola 3-2-1 è aumentare la velocità di accesso ai dati.",
+    "answer": false,
+    "explanation": "Lo scopo è ridurre il rischio di perdita totale delle informazioni."
+  },
+  {
+    "id": 35,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un database cifrato, anche se copiato da un attaccante, può risultare inutilizzabile senza le corrette chiavi di decodifica.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 36,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la regola 3-2-1 è considerata una delle pratiche fondamentali della cyber resilience.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 37,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La cifratura dei dati è il processo che trasforma le informazioni in una forma illeggibile senza una chiave di decodifica.",
+    "answer": true,
+    "explanation": "È la definizione fornita dal modulo."
+  },
+  {
+    "id": 38,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'esempio dei filmati di famiglia dimostra che una volta digitalizzati, i dati restano sempre leggibili su qualsiasi dispositivo per sempre.",
+    "answer": false,
+    "explanation": "Dimostra che la compatibilità e la leggibilità nel tempo devono essere garantite attivamente."
+  },
+  {
+    "id": 39,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la cifratura garantisce la riservatezza dei dati solo durante l'archiviazione, mai durante la trasmissione.",
+    "answer": false,
+    "explanation": "Garantisce la riservatezza sia durante l'archiviazione sia durante la trasmissione."
+  },
+  {
+    "id": 40,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2017 Equifax subì una grave violazione informatica che espose i dati personali di milioni di persone.",
+    "answer": true,
+    "explanation": "È il caso reale descritto nel modulo."
+  },
+  {
+    "id": 41,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un file corrotto o alterato può essere tanto pericoloso quanto un file rubato.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 42,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio quotidiano descritto nel modulo, quando WhatsApp non è disponibile molti utenti si spostano temporaneamente su Telegram.",
+    "answer": true,
+    "explanation": "È l'esempio quotidiano descritto nel modulo."
+  },
+  {
+    "id": 43,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la sincronizzazione replica automaticamente le modifiche e le eliminazioni su più dispositivi collegati.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo sulla sincronizzazione."
+  },
+  {
+    "id": 44,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il Disaster Recovery include la priorità dei sistemi da riattivare e i tempi di recupero accettabili.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 45,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la chiusura del modulo, la protezione dei dati è il processo continuo che garantisce sicurezza, disponibilità e affidabilità delle informazioni nel tempo.",
+    "answer": true,
+    "explanation": "È la definizione fornita nella chiusura del modulo."
+  },
+  {
+    "id": 46,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora usata nel modulo, il piano di evacuazione di una città serve soprattutto quando tutto crolla, non quando tutto funziona.",
+    "answer": true,
+    "explanation": "È quanto illustrato dalla metafora del modulo."
+  },
+  {
+    "id": 47,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la sicurezza nella conservazione riguarda solo la protezione da attacchi esterni, non la gestione interna degli accessi.",
+    "answer": false,
+    "explanation": "Riguarda anche la gestione interna: chi può accedere, modificare o cancellare."
+  },
+  {
+    "id": 48,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, i dati che esistono in una sola copia rischiano, prima o poi, di andare perduti.",
+    "answer": true,
+    "explanation": "È la regola non scritta citata dal modulo."
+  },
+  {
+    "id": 49,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, nel 2021 il ransomware che colpì Acer non causò alcun danno significativo all'azienda.",
+    "answer": false,
+    "explanation": "Rese inaccessibili parte dei sistemi aziendali e comportò una delle richieste di riscatto più elevate fino ad allora."
+  },
+  {
+    "id": 50,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la conservazione sicura riguarda soltanto il salvare i dati, non il mantenerli affidabili nel tempo.",
+    "answer": false,
+    "explanation": "Riguarda anche il mantenere i dati affidabili nel tempo, non solo il salvarli."
+  },
+  {
+    "id": 51,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un backup è utile anche se non può mai essere effettivamente ripristinato.",
+    "answer": false,
+    "explanation": "Un backup è davvero utile solo se può essere ripristinato."
+  },
+  {
+    "id": 52,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, Apple rifiutò di creare una backdoor perché avrebbe potuto diventare una vulnerabilità sfruttabile anche da altri.",
+    "answer": true,
+    "explanation": "È la motivazione descritta nel modulo."
+  },
+  {
+    "id": 53,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, solo chi possiede la chiave corretta può riportare un dato cifrato al suo stato iniziale.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 54,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la chiusura del modulo, proteggere i dati significa eliminare completamente ogni possibile problema.",
+    "answer": false,
+    "explanation": "Significa essere preparati a gestirlo e riprendersi, non eliminarlo completamente."
+  },
+  {
+    "id": 55,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Come riassunto nel modulo, la regola 3-2-1 trasforma la protezione dei dati da strategia a semplice speranza.",
+    "answer": false,
+    "explanation": "È il contrario: la trasforma da speranza a strategia."
+  },
+  {
+    "id": 56,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la chiusura del modulo, basta una sola soluzione, come il backup, per garantire una protezione perfetta dei dati.",
+    "answer": false,
+    "explanation": "Nessuna soluzione è perfetta da sola: la sicurezza nasce dall'unione di più livelli di protezione."
+  },
+  {
+    "id": 57,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, i dati non sono statici: cambiano, si spostano, vengono copiati, modificati e duplicati.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 58,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il valore del backup non sta nella copia in sé, ma nella possibilità di riportare in vita ciò che sembrava perduto.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 59,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una copia di backup dovrebbe essere conservata nello stesso identico file dell'originale.",
+    "answer": false,
+    "explanation": "Dovrebbe essere conservata in un luogo diverso dall'originale."
+  },
+  {
+    "id": 60,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, basta avere i dati per essere considerati pronti ad affrontare un disastro, senza bisogno di altro.",
+    "answer": false,
+    "explanation": "Bisogna anche saperli rimettere in piedi e ripristinare i servizi essenziali."
+  },
+  {
+    "id": 61,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La regola 3-2-1 prevede tre copie dei dati, su due supporti diversi, con una copia conservata in un luogo esterno.",
+    "answer": true,
+    "explanation": "È la definizione della regola 3-2-1 fornita dal modulo."
+  },
+  {
+    "id": 62,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la chiusura del modulo, backup, ridondanza, Disaster Recovery, cifratura e conservazione sicura lavorano insieme per ridurre i rischi.",
+    "answer": true,
+    "explanation": "È quanto afferma la chiusura del modulo."
+  },
+  {
+    "id": 63,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora dell'archivio usata nel modulo, non basta conservare i documenti importanti: bisogna anche proteggerli e sapere come recuperarli.",
+    "answer": true,
+    "explanation": "È quanto illustrato dalla metafora dell'archivio del modulo."
+  },
+  {
+    "id": 64,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un backup locale viene conservato su dispositivi fisici come hard disk esterni.",
+    "answer": true,
+    "explanation": "È la definizione di backup locale fornita dal modulo."
+  },
+  {
+    "id": 65,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La conservazione sicura delle informazioni è l'insieme di pratiche e sistemi che garantiscono che i dati restino integri, accessibili solo a chi è autorizzato e protetti nel lungo periodo.",
+    "answer": true,
+    "explanation": "È la definizione fornita dal modulo."
+  },
+  {
+    "id": 66,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La cifratura protegge i dati sia quando viaggiano attraverso la rete sia quando sono conservati nei sistemi.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo."
+  },
+  {
+    "id": 67,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Disaster Recovery è l'insieme di strategie, procedure e tecnologie che permettono di ripristinare sistemi, dati e operatività dopo un evento critico.",
+    "answer": true,
+    "explanation": "È la definizione fornita dal modulo."
+  },
+  {
+    "id": 68,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'attacco ransomware a Colonial Pipeline del 2021 causò problemi nella distribuzione del carburante in diversi Stati degli USA.",
+    "answer": true,
+    "explanation": "È quanto descritto nel caso reale del modulo."
+  },
+  {
+    "id": 69,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio dei filmati di famiglia, i vecchi video furono digitalizzati inizialmente nel formato MKV.",
+    "answer": false,
+    "explanation": "Furono digitalizzati inizialmente nel formato AVI."
+  },
+  {
+    "id": 70,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il backup e la sincronizzazione sono esattamente lo stesso concetto.",
+    "answer": false,
+    "explanation": "Sono due concetti diversi, con scopi differenti."
+  },
+  {
+    "id": 71,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della lettera in lingua sconosciuta, la lettera resta protetta perché viene nascosta fisicamente, non perché è incomprensibile.",
+    "answer": false,
+    "explanation": "Resta protetta perché è incomprensibile senza la chiave linguistica, non perché nascosta."
+  },
+  {
+    "id": 72,
+    "module": "data_protection",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, se il backup è la copia della memoria, il Disaster Recovery è il piano per farla tornare viva.",
+    "answer": true,
+    "explanation": "È quanto afferma il modulo su questa relazione."
+  }
+]

@@ -1,0 +1,77 @@
+{
+  "module": "account_security",
+  "sets": [
+    [
+      {
+        "term": "Password",
+        "definition": "Sequenza di caratteri utilizzata per verificare l'identità di un utente e consentire l'accesso a un account"
+      },
+      {
+        "term": "Master Password",
+        "definition": "L'unica password che l'utente deve ricordare per accedere all'intero archivio di credenziali di un password manager"
+      },
+      {
+        "term": "Password Manager",
+        "definition": "Applicazione progettata per generare, memorizzare e compilare automaticamente le password in modo sicuro"
+      },
+      {
+        "term": "Credential Stuffing",
+        "definition": "Il riutilizzo automatico di credenziali rubate su più siti"
+      }
+    ],
+    [
+      {
+        "term": "Brute Force",
+        "definition": "Attacco in cui vengono provate automaticamente moltissime password fino a trovare quella corretta"
+      },
+      {
+        "term": "Autenticazione Multifattore (MFA)",
+        "definition": "Sistema di sicurezza che richiede due o più prove di identità prima di concedere l'accesso a un account"
+      },
+      {
+        "term": "Autenticazione a Due Fattori (2FA)",
+        "definition": "Sistema che richiede esattamente due fattori di autenticazione"
+      },
+      {
+        "term": "Risk-Based Authentication",
+        "definition": "Sistema che valuta il livello di rischio di un accesso, come dispositivo, posizione e orario, e decide se bloccare o richiedere ulteriori verifiche"
+      }
+    ],
+    [
+      {
+        "term": "Adaptive Authentication",
+        "definition": "Sistema che adatta automaticamente il livello di controllo in base al comportamento e al contesto dell'utente"
+      },
+      {
+        "term": "Passkey",
+        "definition": "Sistema di autenticazione che sostituisce le password tradizionali con una coppia di chiavi crittografiche"
+      },
+      {
+        "term": "Chiave privata",
+        "definition": "La chiave che rimane memorizzata in modo sicuro sul dispositivo dell'utente e non viene mai condivisa"
+      },
+      {
+        "term": "Chiave pubblica",
+        "definition": "La chiave registrata dal servizio online e utilizzata per verificare l'identità dell'utente"
+      }
+    ],
+    [
+      {
+        "term": "Riutilizzare la stessa password su più servizi",
+        "definition": "Rende possibile il Credential Stuffing se uno di quei servizi subisce una violazione"
+      },
+      {
+        "term": "Condividere la password con altre persone",
+        "definition": "Fa sì che la password non sia più conosciuta soltanto dal proprietario, come dovrebbe essere"
+      },
+      {
+        "term": "Non cambiare la password dopo un Data Breach",
+        "definition": "Lascia aperta una porta di cui gli aggressori possiedono già la chiave"
+      },
+      {
+        "term": "Scegliere una password prevedibile",
+        "definition": "La rende una delle prime combinazioni che un attaccante proverà"
+      }
+    ]
+  ]
+}

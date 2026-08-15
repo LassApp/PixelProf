@@ -1,0 +1,1367 @@
+[
+  {
+    "id": 1,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa sono smartphone e tablet?",
+    "options": [
+      "Strumenti che garantiscono automaticamente la sicurezza dei dati personali",
+      "Dispositivi che funzionano solo offline e non necessitano protezioni particolari",
+      "Dispositivi utilizzabili solo per scopi lavorativi",
+      "Dispositivi mobili connessi a Internet che permettono comunicazione, accesso ai dati e uso di app, ma richiedono misure di sicurezza"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo definisce smartphone e tablet come dispositivi mobili connessi a Internet che richiedono misure di sicurezza per proteggere le informazioni personali."
+  },
+  {
+    "id": 2,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché smartphone e tablet sono particolarmente esposti ai rischi, secondo il modulo?",
+    "options": [
+      "Perché non ricevono mai aggiornamenti di sicurezza",
+      "Perché vengono utilizzati solo su reti Wi-Fi pubbliche",
+      "Perché sono quasi sempre connessi e quasi sempre sbloccati",
+      "Perché non possono essere protetti da PIN o password"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo indica che il punto critico è essere sempre connessi e quasi sempre sbloccati, il che li rende potenti ma esposti."
+  },
+  {
+    "id": 3,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa, secondo il modulo, che oggi non esiste più una distinzione netta tra online e offline per questi dispositivi?",
+    "options": [
+      "Che il dispositivo funziona sempre senza connessione a Internet",
+      "Che la sicurezza dipende solo dalla rete Wi-Fi utilizzata",
+      "Che i dati personali non vengono mai memorizzati sul dispositivo",
+      "Che il dispositivo è un ponte continuo tra la persona e il mondo digitale"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo spiega che il dispositivo è ormai un ponte continuo tra l'utente e il mondo digitale."
+  },
+  {
+    "id": 4,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i tre livelli fondamentali su cui si gioca la sicurezza dello smartphone, secondo il modulo?",
+    "options": [
+      "Antivirus, firewall, backup",
+      "Password, VPN, crittografia",
+      "Accesso, aggiornamenti, consapevolezza",
+      "Hardware, software, rete"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo individua tre livelli fondamentali: accesso, aggiornamenti e consapevolezza."
+  },
+  {
+    "id": 5,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa si riferisce il livello \"accesso\" nella sicurezza dello smartphone, secondo il modulo?",
+    "options": [
+      "Alla velocità della connessione Internet",
+      "Al numero di app installate",
+      "Alla marca del dispositivo",
+      "A chi può entrare nel dispositivo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il livello accesso riguarda chi può entrare nel dispositivo."
+  },
+  {
+    "id": 6,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa si riferisce il livello \"aggiornamenti\" nella sicurezza dello smartphone, secondo il modulo?",
+    "options": [
+      "Alla quantità di memoria disponibile sul dispositivo",
+      "Alla durata della batteria",
+      "Al numero di contatti salvati in rubrica",
+      "Alla capacità del sistema di difendersi da vulnerabilità note"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il livello aggiornamenti riguarda la capacità del sistema di difendersi da vulnerabilità note."
+  },
+  {
+    "id": 7,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa si riferisce il livello \"consapevolezza\" nella sicurezza dello smartphone, secondo il modulo?",
+    "options": [
+      "Al sapere quante app sono installate",
+      "Al conoscere il prezzo del dispositivo",
+      "Al capire che ogni app, ogni permesso e ogni connessione è una scelta",
+      "Al ricordare la password del Wi-Fi di casa"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il livello consapevolezza è umano: capire che ogni app, permesso e connessione è una scelta."
+  },
+  {
+    "id": 8,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come agiscono, secondo il modulo, molti attacchi rivolti agli smartphone?",
+    "options": [
+      "Danneggiano fisicamente lo schermo del dispositivo",
+      "Agiscono solo quando il dispositivo è spento",
+      "Non forzano il dispositivo, ma lo convincono ad aprirsi da solo",
+      "Bloccano permanentemente il dispositivo senza possibilità di sblocco"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo afferma che molti attacchi non forzano il dispositivo, ma lo convincono ad aprirsi da solo."
+  },
+  {
+    "id": 9,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può accadere se uno smartphone viene lasciato incustodito senza protezione dell'accesso, secondo il modulo?",
+    "options": [
+      "Chiunque potrebbe leggere messaggi, accedere a email, vedere foto o usare app bancarie",
+      "Le app si disinstallano automaticamente",
+      "Il dispositivo si spegne automaticamente per sicurezza",
+      "Il dispositivo si blocca in modo permanente"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'esempio del modulo mostra che senza PIN, impronta o riconoscimento facciale chiunque può accedere a informazioni sensibili."
+  },
+  {
+    "id": 10,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali metodi vengono citati nel modulo per proteggere l'accesso a uno smartphone?",
+    "options": [
+      "Backup automatico, firewall, crittografia dei file",
+      "Modalità aereo, risparmio energetico, blocco chiamate",
+      "PIN, impronta digitale, riconoscimento facciale",
+      "Password del Wi-Fi, VPN, antivirus"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo cita PIN, impronta digitale e riconoscimento facciale come metodi di protezione dell'accesso."
+  },
+  {
+    "id": 11,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa contengono spesso smartphone e tablet, oltre alla tecnologia?",
+    "options": [
+      "Esclusivamente applicazioni preinstallate dal produttore",
+      "Solo file di sistema senza informazioni personali",
+      "Solo dati relativi al produttore del dispositivo",
+      "Foto, messaggi, credenziali, spostamenti, abitudini, vita privata"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo descrive smartphone e tablet come estensioni dell'identità digitale, contenenti foto, messaggi, credenziali e abitudini."
+  },
+  {
+    "id": 12,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è, secondo il modulo, lo spazio personale che diventa vulnerabile quando si smette di controllarlo?",
+    "options": [
+      "Il computer da ufficio",
+      "L'account email",
+      "La rete Wi-Fi domestica",
+      "Il dispositivo mobile (smartphone o tablet)"
+    ],
+    "correctIndex": 3,
+    "explanation": "In una frase, il modulo definisce il dispositivo mobile uno spazio personale vulnerabile quando si smette di controllarlo."
+  },
+  {
+    "id": 13,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rende uno smartphone \"potente ma anche esposto\", secondo il modulo?",
+    "options": [
+      "Il fatto di avere una batteria ricaricabile",
+      "Il fatto di avere uno schermo touch",
+      "Il fatto di essere sempre connesso e quasi sempre sbloccato",
+      "Il fatto di poter scattare fotografie"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo lega la doppia natura di potenza ed esposizione alla connessione costante e allo sblocco frequente."
+  },
+  {
+    "id": 14,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo l'esempio del modulo, in quanto tempo si possono compromettere informazioni personali da uno smartphone incustodito?",
+    "options": [
+      "Solo se il dispositivo resta incustodito per mesi",
+      "Non è mai possibile senza conoscere la password Wi-Fi",
+      "Solo dopo diverse settimane",
+      "Bastano pochi istanti"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo sottolinea che bastano pochi istanti per compromettere informazioni personali e account importanti."
+  },
+  {
+    "id": 15,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le app sicure, secondo il modulo?",
+    "options": [
+      "Applicazioni verificate, affidabili e aggiornate che rispettano criteri di protezione dei dati",
+      "Applicazioni gratuite disponibili su qualsiasi sito web",
+      "Applicazioni sviluppate esclusivamente da grandi aziende",
+      "Applicazioni che non richiedono mai alcun permesso"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo definisce le app sicure come applicazioni verificate, affidabili e aggiornate che riducono il rischio di malware."
+  },
+  {
+    "id": 16,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresenta, secondo il modulo, scaricare app dagli store ufficiali?",
+    "options": [
+      "Un'azione che elimina completamente ogni rischio di malware",
+      "Una delle migliori pratiche di sicurezza, anche se non elimina completamente il rischio",
+      "Una pratica sconsigliata perché più rischiosa",
+      "L'unico modo per garantire sicurezza assoluta"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo spiega che i controlli degli store riducono notevolmente il rischio, ma non lo eliminano completamente."
+  },
+  {
+    "id": 17,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa bisogna verificare, secondo il modulo, prima di considerare affidabile un'app?",
+    "options": [
+      "Solo il numero di download totali",
+      "Solo la lingua disponibile nell'app",
+      "Solo il colore dell'icona dell'app",
+      "Lo sviluppatore, i permessi richiesti e se l'app è mantenuta aggiornata"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo consiglia di verificare sempre lo sviluppatore, i permessi richiesti e gli aggiornamenti."
+  },
+  {
+    "id": 18,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, tutti i permessi richiesti da un'app sono ugualmente necessari?",
+    "options": [
+      "Sì, ogni permesso richiesto è sempre indispensabile",
+      "Sì, ma solo per le app gratuite",
+      "No, alcuni sono indispensabili, altri possono essere eccessivi",
+      "No, nessun permesso è mai davvero necessario"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo distingue tra permessi indispensabili e permessi eccessivi."
+  },
+  {
+    "id": 19,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale richiesta di permesso è considerata normale per un'app di navigazione, secondo il modulo?",
+    "options": [
+      "L'accesso alla galleria fotografica",
+      "L'accesso al microfono",
+      "L'accesso ai contatti telefonici",
+      "L'accesso alla posizione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo indica come esempio coerente un'app di navigazione che chiede l'accesso alla posizione."
+  },
+  {
+    "id": 20,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale richiesta di permesso è considerata normale per un'app di messaggistica, secondo il modulo?",
+    "options": [
+      "L'accesso alla fotocamera",
+      "L'accesso alla cronologia delle chiamate di altre app",
+      "L'accesso ai file di sistema del dispositivo",
+      "L'accesso alle impostazioni bancarie"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica come esempio coerente un'app di messaggistica che chiede l'accesso alla fotocamera."
+  },
+  {
+    "id": 21,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale richiesta di permesso viene definita \"insolita\" per una semplice app torcia, secondo il modulo?",
+    "options": [
+      "Leggere i contatti o accedere al microfono",
+      "Rimanere attiva quando lo schermo è acceso",
+      "Utilizzare la fotocamera per illuminare",
+      "Accendere il flash del dispositivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica come esempio insolito un'app torcia che chiede di leggere i contatti o accedere al microfono."
+  },
+  {
+    "id": 22,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa dipende la sicurezza di un'app, secondo il modulo?",
+    "options": [
+      "Non solo dalla funzione, ma anche dall'origine, dai permessi richiesti e dagli aggiornamenti ricevuti",
+      "Esclusivamente dalla dimensione del file di installazione",
+      "Esclusivamente dal prezzo dell'applicazione",
+      "Esclusivamente dal numero di recensioni positive"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo elenca funzione, origine, permessi e aggiornamenti come fattori della sicurezza di un'app."
+  },
+  {
+    "id": 23,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa installare un'app senza verificarne origine e permessi, secondo il modulo?",
+    "options": [
+      "Non avere alcun effetto sulla sicurezza del dispositivo",
+      "Rendere il dispositivo immune da malware",
+      "Garantire automaticamente la protezione dei propri dati",
+      "Concederle fiducia prima ancora di sapere come utilizzerà le informazioni a cui può accedere"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo avverte che installare senza verifiche significa concedere fiducia in anticipo."
+  },
+  {
+    "id": 24,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa viene raccontato nell'esempio reale relativo alla pubblicazione di un'app sugli store ufficiali, secondo il modulo?",
+    "options": [
+      "Un'app è stata pubblicata senza che lo sviluppatore lo sapesse",
+      "Un'app ha ricevuto un premio per la sicurezza",
+      "Un'app è stata rifiutata durante un aggiornamento perché non rispettava alcune linee guida dello store",
+      "Un'app è stata approvata senza alcun controllo"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'esempio reale racconta di un'app rifiutata durante un aggiornamento per il mancato rispetto delle linee guida."
+  },
+  {
+    "id": 25,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostra l'episodio del rifiuto dell'app durante l'aggiornamento, secondo il modulo?",
+    "options": [
+      "Che gli sviluppatori non possono correggere le app rifiutate",
+      "Che gli store ufficiali effettuano controlli per migliorare sicurezza e qualità delle app",
+      "Che gli store ufficiali non controllano mai le app pubblicate",
+      "Che le app rifiutate vengono eliminate senza spiegazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo trae la conclusione che gli store effettuano controlli reali per migliorare sicurezza e qualità."
+  },
+  {
+    "id": 26,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come sono riuscite alcune applicazioni malevole a essere pubblicate sugli store ufficiali, secondo il modulo?",
+    "options": [
+      "Pagando una tassa aggiuntiva allo store",
+      "Ottenendo un certificato governativo",
+      "Imitando app conosciute o sembrando legittime",
+      "Modificando il sistema operativo del dispositivo"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo racconta che alcune app malevole imitavano app conosciute per superare i controlli iniziali."
+  },
+  {
+    "id": 27,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa è successo alle app malevole individuate sugli store ufficiali, secondo il modulo?",
+    "options": [
+      "Hanno ricevuto un avviso ma sono rimaste attive",
+      "Sono state automaticamente rese sicure dallo store",
+      "Sono rimaste disponibili senza alcuna conseguenza",
+      "Sono state individuate e rimosse dopo segnalazioni e verifiche"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo spiega che, dopo segnalazioni e verifiche, tali app sono state individuate e rimosse."
+  },
+  {
+    "id": 28,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è, secondo il modulo, la definizione sintetica di \"app sicura\"?",
+    "options": [
+      "Un'app che non richiede mai alcuna connessione a Internet",
+      "Un'app che non necessita mai di aggiornamenti",
+      "Un'app a cui concedi solo gli accessi necessari e di cui conosci la provenienza",
+      "Un'app che è sempre completamente gratuita"
+    ],
+    "correctIndex": 2,
+    "explanation": "In una frase, il modulo sintetizza: un'app sicura è un'app a cui concedi solo gli accessi necessari e di cui conosci la provenienza."
+  },
+  {
+    "id": 29,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i QR Code malevoli, secondo il modulo?",
+    "options": [
+      "Codici QR utilizzabili solo da dispositivi Apple",
+      "Codici QR che funzionano solo in determinati paesi",
+      "Codici QR manipolati o creati per reindirizzare l'utente verso siti fraudolenti, download pericolosi o azioni non desiderate",
+      "Codici QR che si autodistruggono dopo una scansione"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo definisce i QR Code malevoli come codici manipolati per reindirizzare verso siti fraudolenti o download pericolosi."
+  },
+  {
+    "id": 30,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un QR Code, secondo la definizione del modulo?",
+    "options": [
+      "Un codice grafico bidimensionale che può contenere collegamenti web, testi o altri dati",
+      "Un tipo di password monouso generata dal dispositivo",
+      "Un componente hardware installato sugli smartphone",
+      "Un protocollo di connessione Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo descrive il QR Code come un codice grafico bidimensionale che può contenere link, testi o altri dati."
+  },
+  {
+    "id": 31,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché l'occhio umano non può valutare la sicurezza di un QR Code, secondo il modulo?",
+    "options": [
+      "Perché i QR Code cambiano forma continuamente",
+      "Perché non può leggere realmente il contenuto nascosto dentro il codice",
+      "Perché i QR Code sono visibili solo con app specifiche",
+      "Perché i QR Code sono sempre stampati a colori"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo evidenzia che vediamo solo quadrati bianchi e neri, senza sapere quale destinazione si attiverà."
+  },
+  {
+    "id": 32,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può accadere con un QR Code dinamico, secondo il modulo?",
+    "options": [
+      "La destinazione collegata può essere modificata senza cambiare l'immagine del codice",
+      "Il codice si aggiorna automaticamente in modo sicuro",
+      "Il codice diventa illeggibile dopo la prima scansione",
+      "Il codice cambia colore ogni volta che viene scansionato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo spiega che nei QR Code dinamici la destinazione può cambiare senza modificare l'immagine visibile."
+  },
+  {
+    "id": 33,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può fare un attaccante con un QR Code presente in un luogo pubblico, secondo il modulo?",
+    "options": [
+      "Sostituirlo fisicamente con un nuovo codice che mantiene l'aspetto originale ma porta a una destinazione diversa",
+      "Renderlo permanentemente inutilizzabile",
+      "Trasformarlo automaticamente in un link sicuro",
+      "Bloccare l'accesso a Internet nell'area circostante"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo descrive la sostituzione fisica di un QR Code legittimo con uno falso dall'aspetto identico."
+  },
+  {
+    "id": 34,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del ristorante descritto nel modulo, cosa potrebbe fare un truffatore?",
+    "options": [
+      "Modificare il menù cartaceo del ristorante",
+      "Rubare fisicamente il tavolo con il codice",
+      "Applicare un adesivo con un nuovo QR Code sopra quello originale del menù",
+      "Disattivare il Wi-Fi del locale"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'esempio quotidiano descrive un adesivo con un nuovo codice applicato sopra quello originale del menù."
+  },
+  {
+    "id": 35,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa potrebbe accadere scansionando un QR Code malevolo, secondo l'esempio del ristorante?",
+    "options": [
+      "Il dispositivo si spegne automaticamente",
+      "Viene inviato un messaggio di errore e nulla accade",
+      "Inserire email e password su un servizio falso, scaricare un'app malevola o inserire dati di una carta per un pagamento falso",
+      "L'app del ristorante si aggiorna automaticamente"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo elenca i possibili esiti dannosi: furto di credenziali, app malevola o dati di pagamento."
+  },
+  {
+    "id": 36,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato, nell'esempio reale del modulo, il principio dei QR Code malevoli?",
+    "options": [
+      "Ai virus diffusi tramite email",
+      "Agli attacchi alle reti Wi-Fi aziendali",
+      "Al furto fisico di dispositivi mobili",
+      "Alle manomissioni dei terminali di pagamento nei distributori automatici di carburante"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo accosta i QR Code malevoli alle manomissioni dei terminali di pagamento nei distributori di carburante."
+  },
+  {
+    "id": 37,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa hanno in comune QR Code malevoli e manomissioni dei distributori di carburante, secondo il modulo?",
+    "options": [
+      "Entrambi richiedono l'accesso fisico al dispositivo della vittima",
+      "L'utente si fida del contesto e non verifica ciò che sta realmente accadendo dietro lo strumento",
+      "Entrambi funzionano solo con connessione Wi-Fi pubblica",
+      "Entrambi possono avvenire solo di notte"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il principio comune indicato dal modulo è la fiducia automatica dell'utente verso il contesto familiare."
+  },
+  {
+    "id": 38,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può portare un QR Code manomesso, secondo il modulo?",
+    "options": [
+      "A un sito identico all'originale, a una pagina di phishing, a un download dannoso o alla raccolta di informazioni personali",
+      "Alla disattivazione automatica della fotocamera",
+      "Sempre e solo a un messaggio di errore",
+      "Al blocco permanente dello smartphone"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo elenca le possibili destinazioni dannose di un QR Code manomesso."
+  },
+  {
+    "id": 39,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove si trova il vero pericolo di un QR Code, secondo il modulo?",
+    "options": [
+      "Nel colore utilizzato per stamparlo",
+      "Nella destinazione nascosta dietro il codice, non nel codice in sé",
+      "Nel tipo di carta su cui è stampato",
+      "Nella dimensione fisica del codice"
+    ],
+    "correctIndex": 1,
+    "explanation": "In una frase, il modulo afferma che il pericolo è nella destinazione nascosta, non nel codice stesso."
+  },
+  {
+    "id": 40,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la regola fondamentale sui QR Code indicata nel modulo?",
+    "options": [
+      "Un QR Code è sicuro se contiene un logo riconoscibile",
+      "Un QR Code è sempre sicuro se stampato su carta di qualità",
+      "Un QR Code è sicuro se si trova in un locale conosciuto",
+      "Un QR Code non deve essere considerato sicuro solo perché è stampato o si trova in un ambiente familiare"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo stabilisce che la familiarità del contesto non garantisce la sicurezza del codice."
+  },
+  {
+    "id": 41,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le chiavette USB, secondo la definizione del modulo?",
+    "options": [
+      "Strumenti utilizzati esclusivamente per la ricarica dei dispositivi",
+      "Dispositivi che si collegano solo tramite Wi-Fi",
+      "Dispositivi di memoria rimovibili utilizzati per archiviare e trasferire dati tra dispositivi diversi",
+      "Componenti interni fissi del computer"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo definisce le chiavette USB come dispositivi di memoria rimovibili per archiviare e trasferire dati."
+  },
+  {
+    "id": 42,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può succedere se una chiavetta USB proviene da una fonte non affidabile, secondo il modulo?",
+    "options": [
+      "Danneggia sempre fisicamente la porta USB",
+      "Non può mai causare problemi al computer",
+      "Può contenere file dannosi o essere utilizzata per diffondere malware",
+      "Funziona solo se collegata a un caricabatterie"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo avverte che chiavette da fonti non affidabili possono contenere file dannosi o diffondere malware."
+  },
+  {
+    "id": 43,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa crea il collegamento di una chiavetta USB a un computer, secondo il modulo?",
+    "options": [
+      "Un aggiornamento del sistema operativo",
+      "Una connessione automatica a Internet",
+      "Un backup automatico di tutti i file del computer",
+      "Un collegamento diretto tra un dispositivo esterno e il sistema"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo spiega che collegare una chiavetta crea un collegamento diretto tra un dispositivo esterno e il sistema."
+  },
+  {
+    "id": 44,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama la tecnica descritta nel modulo che sfrutta la curiosità delle persone lasciando chiavette USB in luoghi pubblici?",
+    "options": [
+      "USB cracking",
+      "USB baiting (adescamento tramite USB)",
+      "USB phishing",
+      "USB spoofing"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo chiama questa tecnica USB baiting, ovvero adescamento tramite USB."
+  },
+  {
+    "id": 45,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali nomi invitanti vengono citati nel modulo come esempio per ingannare chi trova una chiavetta USB?",
+    "options": [
+      "\"Aggiornamento sistema\", \"Setup Windows\", \"Driver ufficiali\"",
+      "\"Foto vacanza\", \"Documenti riservati\", \"Stipendi 2026\"",
+      "\"Antivirus gratuito\", \"Licenza software\", \"Chiave di attivazione\"",
+      "\"Backup automatico\", \"File temporanei\", \"Cache di sistema\""
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo cita esattamente questi tre esempi di nomi invitanti usati nell'USB baiting."
+  },
+  {
+    "id": 46,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa induce la vittima a fare la tecnica dello USB baiting, secondo il modulo?",
+    "options": [
+      "A disconnettersi da Internet",
+      "A compiere spontaneamente l'azione che permette all'attacco di iniziare",
+      "A cambiare la propria password Wi-Fi",
+      "A formattare immediatamente il proprio computer"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo spiega che questa tecnica non forza il sistema, ma induce la vittima ad agire spontaneamente."
+  },
+  {
+    "id": 47,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'errore più comune riguardo agli oggetti fisici come le chiavette USB, secondo il modulo?",
+    "options": [
+      "Pensare che le chiavette USB si guastino rapidamente",
+      "Pensare che le chiavette USB non funzionino mai correttamente",
+      "Pensare che tutte le chiavette USB siano identiche",
+      "Pensare che un oggetto fisico sia automaticamente sicuro"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo indica come errore comune il credere che un oggetto fisico sia automaticamente sicuro."
+  },
+  {
+    "id": 48,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale buona pratica viene suggerita nel modulo riguardo alle chiavette USB di provenienza incerta?",
+    "options": [
+      "Collegarle solo di notte per maggiore sicurezza",
+      "Copiarne subito il contenuto su più dispositivi",
+      "Non collegarle mai e utilizzare controlli di sicurezza come l'analisi antivirus prima di aprire il contenuto",
+      "Formattarle prima di analizzarne il contenuto"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo consiglia di non collegare mai chiavette incerte e di usare un antivirus prima di aprirle."
+  },
+  {
+    "id": 49,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è Stuxnet, secondo l'esempio storico citato nel modulo?",
+    "options": [
+      "Un'applicazione di messaggistica compromessa nel 2010",
+      "Un malware scoperto nel 2010 che colpì gli impianti nucleari iraniani",
+      "Un antivirus sviluppato per proteggere le chiavette USB",
+      "Un protocollo di sicurezza per reti Wi-Fi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo cita Stuxnet come malware scoperto nel 2010 che colpì gli impianti nucleari iraniani."
+  },
+  {
+    "id": 50,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si diffuse Stuxnet, secondo il modulo?",
+    "options": [
+      "Esclusivamente tramite email di phishing",
+      "Esclusivamente tramite reti Wi-Fi pubbliche",
+      "Esclusivamente tramite QR Code malevoli",
+      "Anche attraverso chiavette USB infette introdotte fisicamente nei sistemi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo spiega che la diffusione avvenne anche tramite chiavette USB infette introdotte fisicamente."
+  },
+  {
+    "id": 51,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostra il caso Stuxnet riguardo ai computer non collegati direttamente a Internet, secondo il modulo?",
+    "options": [
+      "Che solo i computer connessi a Internet possono essere infettati",
+      "Che i computer isolati dalla rete sono sempre completamente sicuri",
+      "Che Stuxnet non poteva infettare computer isolati",
+      "Che un computer isolato dalla rete non è necessariamente isolato dal rischio"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo trae la lezione che un computer isolato dalla rete non è isolato dal rischio."
+  },
+  {
+    "id": 52,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può diventare una chiavetta USB, secondo la sintesi del modulo?",
+    "options": [
+      "Un dispositivo che protegge automaticamente il computer da virus",
+      "Un componente che rallenta permanentemente il sistema",
+      "Uno strumento che rileva sempre il malware al suo interno",
+      "Una porta d'accesso al computer, pur sembrando un semplice dispositivo di memoria"
+    ],
+    "correctIndex": 3,
+    "explanation": "In una frase, il modulo sintetizza che una chiavetta USB può diventare una porta d'accesso al computer."
+  },
+  {
+    "id": 53,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i download e gli allegati, secondo la definizione del modulo?",
+    "options": [
+      "File scaricati o ricevuti tramite Internet, email o app di messaggistica che, se da fonti non affidabili, possono contenere malware",
+      "File disponibili solo su piattaforme a pagamento",
+      "File che non possono mai essere aperti senza una password",
+      "File che vengono sempre analizzati automaticamente da un antivirus integrato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo definisce download e allegati come file che, da fonti non affidabili, possono contenere malware."
+  },
+  {
+    "id": 54,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa dipende il rischio di un file, secondo il modulo?",
+    "options": [
+      "Non dall'aspetto del file, ma da ciò che accade quando viene aperto",
+      "Esclusivamente dal formato del file",
+      "Esclusivamente dal nome del mittente",
+      "Esclusivamente dalla dimensione del file"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo chiarisce che il rischio non dipende dall'aspetto del file, ma da cosa accade all'apertura."
+  },
+  {
+    "id": 55,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può nascondere un archivio compresso, secondo il modulo?",
+    "options": [
+      "Solo documenti di testo semplice",
+      "Programmi dannosi",
+      "Solo file audio",
+      "Solo immagini a bassa risoluzione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo indica che un archivio compresso può nascondere programmi dannosi."
+  },
+  {
+    "id": 56,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come può essere camuffato un file eseguibile dannoso, secondo il modulo?",
+    "options": [
+      "Con un nome o un'icona che lo fanno apparire innocuo",
+      "Bloccando l'apertura di altri programmi",
+      "Cambiando automaticamente estensione ogni giorno",
+      "Diventando invisibile nel sistema operativo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo spiega che un file eseguibile può essere camuffato con nome o icona innocui."
+  },
+  {
+    "id": 57,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su cosa fanno leva molti attacchi legati a download e allegati, secondo il modulo?",
+    "options": [
+      "Sull'urgenza o sulla curiosità dell'utente",
+      "Solo su errori del sistema operativo",
+      "Solo su problemi di connessione Internet",
+      "Solo sulla lentezza del dispositivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che molti attacchi fanno leva sull'urgenza o sulla curiosità."
+  },
+  {
+    "id": 58,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale messaggio viene citato come esempio di testo che spinge ad agire senza verificare, secondo il modulo?",
+    "options": [
+      "\"Aggiornamento completato con successo\"",
+      "\"Benvenuto nella nostra newsletter\"",
+      "\"Il tuo abbonamento è stato rinnovato\"",
+      "\"Fattura in scadenza\" o \"documento urgente\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo cita questi esempi di messaggi che spingono ad agire senza verificare la provenienza."
+  },
+  {
+    "id": 59,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la migliore difesa prima di aprire un allegato o avviare un download, secondo il modulo?",
+    "options": [
+      "Inoltrarlo subito ad altri contatti per un controllo",
+      "Rispondere al mittente chiedendo una conferma via allegato",
+      "Aprirlo il più velocemente possibile per evitare virus",
+      "Fermarsi qualche istante, verificare chi lo ha inviato e se lo si stava realmente aspettando"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo consiglia di fermarsi, verificare il mittente e il contesto prima di aprire."
+  },
+  {
+    "id": 60,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio quotidiano del modulo, cosa promette la falsa email del corriere?",
+    "options": [
+      "Che il corriere ha cambiato numero di telefono",
+      "Che il pacco non può essere consegnato e invita ad aprire l'allegato per aggiornare i dati",
+      "Che è stato applicato uno sconto sulla prossima spedizione",
+      "Che il pacco è stato consegnato con successo"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'esempio quotidiano descrive un'email che finge un mancato recapito per far aprire l'allegato."
+  },
+  {
+    "id": 61,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il messaggio dell'email falsa del corriere risulta credibile, secondo il modulo?",
+    "options": [
+      "Perché contiene il logo ufficiale verificato dal produttore del dispositivo",
+      "Perché arriva sempre da un numero di telefono conosciuto",
+      "Perché è scritto in un linguaggio tecnico complesso",
+      "Perché l'utente aspetta davvero una consegna"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo spiega che il messaggio è credibile perché l'utente aspetta davvero una consegna."
+  },
+  {
+    "id": 62,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'era il malware ILOVEYOU, secondo l'esempio storico del modulo?",
+    "options": [
+      "Un attacco diffuso tramite QR Code nei ristoranti",
+      "Un'applicazione malevola pubblicata su uno store ufficiale",
+      "Un malware diffuso nel 2000 tramite email con un allegato chiamato LOVE-LETTER-FOR-YOU.txt.vbs",
+      "Un virus diffuso tramite reti Wi-Fi pubbliche nel 2010"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo cita ILOVEYOU come malware del 2000 diffuso via email con quel preciso allegato."
+  },
+  {
+    "id": 63,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché molti utenti aprirono l'allegato del malware ILOVEYOU, secondo il modulo?",
+    "options": [
+      "Perché erano obbligati da un messaggio di sistema",
+      "Perché l'allegato prometteva un premio in denaro",
+      "Perché il nome e il messaggio facevano pensare a una semplice lettera personale",
+      "Perché il file si apriva automaticamente senza alcuna azione"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo spiega che il nome e il messaggio suggerivano una lettera personale, inducendo all'apertura."
+  },
+  {
+    "id": 64,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa faceva concretamente il malware ILOVEYOU una volta aperto, secondo il modulo?",
+    "options": [
+      "Si replicava inviandosi automaticamente ad altri contatti, causando danni a milioni di computer",
+      "Cancellava solo le foto presenti sul dispositivo",
+      "Criptava i dati richiedendo un riscatto",
+      "Bloccava esclusivamente l'accesso a Internet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo descrive la replicazione automatica del malware verso altri contatti."
+  },
+  {
+    "id": 65,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la lezione ancora attuale legata al caso ILOVEYOU, secondo il modulo?",
+    "options": [
+      "Gli allegati di testo non possono mai essere dannosi",
+      "Un allegato non diventa sicuro solo perché arriva da una persona conosciuta",
+      "Solo i file eseguibili possono essere pericolosi",
+      "Gli allegati provenienti da persone conosciute sono sempre sicuri"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo trae la lezione che un mittente legittimo può essere stato compromesso o ingannato."
+  },
+  {
+    "id": 66,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Attraverso quale piattaforma si sono diffuse le campagne malware descritte nel secondo esempio reale del modulo?",
+    "options": [
+      "Chiamate telefoniche",
+      "SMS",
+      "Facebook Messenger",
+      "Posta cartacea"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo descrive campagne malware diffuse tramite Facebook Messenger."
+  },
+  {
+    "id": 67,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il meccanismo delle campagne malware su Facebook Messenger era efficace, secondo il modulo?",
+    "options": [
+      "Perché il messaggio veniva inviato da un numero sconosciuto",
+      "Perché richiedeva il pagamento immediato di una somma",
+      "Perché sfruttava la fiducia verso un link ricevuto da una persona conosciuta",
+      "Perché bloccava automaticamente l'account della vittima"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo spiega che il meccanismo sfruttava una debolezza umana: la fiducia verso un contatto conosciuto."
+  },
+  {
+    "id": 68,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può accadere anche quando un link arriva da un account legittimo, secondo il modulo?",
+    "options": [
+      "Il link viene automaticamente verificato dalla piattaforma",
+      "Il link è sempre sicuro senza eccezioni",
+      "Il link non può mai contenere malware",
+      "L'account del mittente può essere stato compromesso"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo avverte che anche un account legittimo può essere stato compromesso."
+  },
+  {
+    "id": 69,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le reti Wi-Fi pubbliche, secondo la definizione del modulo?",
+    "options": [
+      "Connessioni wireless accessibili a molte persone, spesso offerte in luoghi pubblici per un accesso rapido a Internet",
+      "Reti utilizzabili solo da dispositivi aziendali",
+      "Reti disponibili solo previa registrazione con documento d'identità",
+      "Reti che garantiscono sempre una connessione cifrata"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo definisce le reti Wi-Fi pubbliche come connessioni accessibili a molte persone in luoghi pubblici."
+  },
+  {
+    "id": 70,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa dipende la sicurezza di una rete Wi-Fi pubblica, secondo il modulo?",
+    "options": [
+      "Esclusivamente dal numero di persone connesse",
+      "Da come è configurata e gestita",
+      "Esclusivamente dalla velocità della connessione",
+      "Esclusivamente dal nome assegnato alla rete"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo afferma che la sicurezza dipende da come la rete è configurata e gestita."
+  },
+  {
+    "id": 71,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa aumenta quando una connessione Wi-Fi viene condivisa da molte persone, secondo il modulo?",
+    "options": [
+      "La durata della batteria dei dispositivi connessi",
+      "La velocità di connessione per ogni utente",
+      "Il numero di aggiornamenti disponibili",
+      "La superficie di rischio"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo indica che condividere la connessione tra molte persone aumenta la superficie di rischio."
+  },
+  {
+    "id": 72,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il rischio principale di una rete Wi-Fi pubblica, secondo il modulo?",
+    "options": [
+      "Il costo elevato della connessione",
+      "Il consumo eccessivo della batteria del dispositivo",
+      "L'invisibilità, ovvero non sapere chi gestisce la rete o come è configurata",
+      "L'impossibilità di navigare velocemente"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo individua il rischio principale nell'invisibilità di chi gestisce e configura la rete."
+  },
+  {
+    "id": 73,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Attraverso cosa viaggiano i dati quando si naviga online, secondo il modulo?",
+    "options": [
+      "Vengono trasformati automaticamente in file audio",
+      "Vengono salvati solo sul dispositivo dell'utente",
+      "Vengono divisi in piccole unità chiamate pacchetti",
+      "Viaggiano come un unico blocco indivisibile"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo spiega che i dati vengono divisi in pacchetti che attraversano vari punti della rete."
+  },
+  {
+    "id": 74,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa impedisce la cifratura, secondo il modulo?",
+    "options": [
+      "Di scaricare file di grandi dimensioni",
+      "Di leggere facilmente il contenuto dei dati per chi non possiede le autorizzazioni corrette",
+      "Di utilizzare app di messaggistica",
+      "Di collegarsi a qualsiasi rete Wi-Fi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo spiega che la cifratura rende i dati incomprensibili a chi non ha le autorizzazioni."
+  },
+  {
+    "id": 75,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dei camion usata nel modulo, cosa rappresenta il carico custodito in una cassaforte?",
+    "options": [
+      "Il nome della rete Wi-Fi",
+      "I dati protetti dalla cifratura",
+      "La velocità della connessione",
+      "Il numero di dispositivi collegati alla rete"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nella metafora, il carico nella cassaforte rappresenta i dati protetti dalla cifratura."
+  },
+  {
+    "id": 76,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono gli \"sniffer\", secondo il modulo?",
+    "options": [
+      "Dispositivi che proteggono la rete da accessi non autorizzati",
+      "Applicazioni per la modifica delle password Wi-Fi",
+      "Programmi che velocizzano automaticamente la connessione",
+      "Strumenti di monitoraggio progettati per osservare i pacchetti che attraversano una connessione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo definisce gli sniffer come strumenti per osservare i pacchetti di rete."
+  },
+  {
+    "id": 77,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può osservare un attaccante che utilizza uno sniffer su una connessione non cifrata, secondo il modulo?",
+    "options": [
+      "Solo il nome del dispositivo connesso, senza altri dati",
+      "Nessuna informazione, poiché lo sniffer è sempre bloccato",
+      "Solo la marca del router utilizzato",
+      "Il contenuto del traffico che passa attraverso la connessione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Se il carico non è cifrato, l'attaccante può osservarne il contenuto tramite lo sniffer."
+  },
+  {
+    "id": 78,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa crea una VPN, secondo il modulo?",
+    "options": [
+      "Una nuova rete Wi-Fi pubblica gratuita",
+      "Un antivirus integrato nel sistema operativo",
+      "Una copia di backup automatica dei file",
+      "Un collegamento cifrato tra il dispositivo dell'utente e un server VPN"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo definisce la VPN come un collegamento cifrato tra dispositivo e server VPN."
+  },
+  {
+    "id": 79,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale parte del percorso protegge soprattutto una VPN, secondo il modulo?",
+    "options": [
+      "La prima parte del percorso, ad esempio quando si utilizza una rete pubblica",
+      "L'intero percorso in ogni situazione senza eccezioni",
+      "Solo la parte finale del percorso verso il sito di destinazione",
+      "Nessuna parte del percorso, ha solo funzione decorativa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo precisa che la VPN protegge soprattutto la prima parte del percorso, ad esempio su rete pubblica."
+  },
+  {
+    "id": 80,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa NON protegge una VPN, secondo il modulo?",
+    "options": [
+      "Dalla lettura dei pacchetti da parte di uno sniffer",
+      "Da phishing, malware, siti fraudolenti o comportamenti poco sicuri",
+      "Dalla vulnerabilità dei dati non cifrati",
+      "Dall'intercettazione del traffico su rete pubblica"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo chiarisce che la VPN non impedisce phishing, malware, siti fraudolenti o comportamenti poco sicuri."
+  },
+  {
+    "id": 81,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come deve essere considerata una VPN, secondo il modulo?",
+    "options": [
+      "Una misura inutile e superata",
+      "Uno strumento aggiuntivo di protezione, non una soluzione definitiva",
+      "Un sostituto completo dell'antivirus",
+      "L'unica misura di sicurezza necessaria"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo definisce la VPN come strumento aggiuntivo, non come soluzione definitiva."
+  },
+  {
+    "id": 82,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono gli attacchi \"evil twin\", secondo il modulo?",
+    "options": [
+      "Reti Wi-Fi create per imitare connessioni legittime",
+      "Applicazioni che copiano le password salvate",
+      "Virus che si duplicano automaticamente sul dispositivo",
+      "Chiavette USB con doppia memoria"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo definisce gli evil twin come reti Wi-Fi create per imitare connessioni legittime."
+  },
+  {
+    "id": 83,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quali contesti sono stati individuati esempi di reti \"evil twin\", secondo il modulo?",
+    "options": [
+      "In luoghi molto frequentati come aeroporti, hotel e conferenze",
+      "Solo in ambienti scolastici",
+      "Solo in abitazioni private",
+      "Solo in uffici governativi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo cita aeroporti, hotel e conferenze come contesti in cui sono state individuate reti evil twin."
+  },
+  {
+    "id": 84,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può fare un attaccante dopo che una vittima si collega a una rete \"evil twin\", secondo il modulo?",
+    "options": [
+      "Disattivare permanentemente la connessione Internet della vittima",
+      "Installare fisicamente hardware sul dispositivo della vittima",
+      "Osservare il traffico, raccogliere informazioni non protette o indirizzare l'utente verso pagine false",
+      "Formattare automaticamente il dispositivo della vittima"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo elenca le azioni possibili dell'attaccante dopo la connessione della vittima alla rete falsa."
+  },
+  {
+    "id": 85,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale principio fondamentale dimostrano gli attacchi evil twin, secondo il modulo?",
+    "options": [
+      "Le reti evil twin non possono essere create in luoghi pubblici affollati",
+      "Solo i dispositivi datati sono vulnerabili a questo tipo di attacco",
+      "Spesso il punto debole non è la tecnologia, ma la fiducia automatica dell'utente verso ciò che appare familiare",
+      "La tecnologia Wi-Fi è sempre insicura per definizione"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo conclude che il punto debole è spesso la fiducia automatica dell'utente, non la tecnologia."
+  },
+  {
+    "id": 86,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la definizione di sicurezza quotidiana, secondo il modulo?",
+    "options": [
+      "Un insieme di regole valide solo per i professionisti IT",
+      "Un servizio a pagamento offerto dai fornitori di rete",
+      "L'insieme di comportamenti che proteggono dispositivi, dati e identità digitale nelle attività di ogni giorno",
+      "Una misura tecnica installata automaticamente sui dispositivi"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo apre definendo la sicurezza quotidiana come insieme di comportamenti protettivi di ogni giorno."
+  },
+  {
+    "id": 87,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata la sicurezza quotidiana nella metafora del modulo?",
+    "options": [
+      "A installare un allarme molto costoso",
+      "A chiudere la porta di casa prima di uscire",
+      "A cambiare casa ogni anno",
+      "A costruire un muro attorno all'abitazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "La metafora del modulo paragona la sicurezza quotidiana al gesto di chiudere la porta di casa."
+  },
+  {
+    "id": 88,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, la sicurezza informatica riguarda solo gli esperti?",
+    "options": [
+      "Sì, riguarda esclusivamente i professionisti del settore",
+      "No, riguarda solo chi utilizza dispositivi aziendali",
+      "Sì, ma solo chi lavora con i computer deve preoccuparsene",
+      "No, ogni clic, download o connessione è una scelta che può aumentare o ridurre i rischi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo chiarisce che ogni clic, download o connessione è una scelta di tutti, non solo degli esperti."
+  },
+  {
+    "id": 89,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove nasce la sicurezza digitale, secondo la sintesi finale del modulo?",
+    "options": [
+      "Esclusivamente dall'uso di dispositivi di ultima generazione",
+      "Esclusivamente da corsi di formazione avanzati",
+      "Dalle abitudini quotidiane, ovvero dalle piccole attenzioni ripetute ogni giorno",
+      "Esclusivamente dall'acquisto di software costosi"
+    ],
+    "correctIndex": 2,
+    "explanation": "La chiusura del modulo ribadisce che la sicurezza digitale nasce dalle piccole attenzioni quotidiane."
+  },
+  {
+    "id": 90,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali azioni comuni, secondo la chiusura del modulo, possono nascondere rischi?",
+    "options": [
+      "Solo cambiare lo sfondo dello smartphone",
+      "Installare un'app, scansionare un QR Code, aprire un file, collegarsi a una rete Wi-Fi",
+      "Solo ricaricare la batteria del dispositivo",
+      "Solo spegnere e riaccendere il dispositivo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo riassume nella chiusura le azioni quotidiane in cui possono nascondersi i rischi trattati."
+  },
+  {
+    "id": 91,
+    "module": "sicurezza-quotidiana",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa nasce, secondo il modulo, dall'abitudine di fermarsi, verificare e scegliere prima di agire?",
+    "options": [
+      "Un aumento dei costi di connessione",
+      "La vera protezione digitale",
+      "Una riduzione delle funzionalità del dispositivo",
+      "Un rallentamento inutile nell'uso della tecnologia"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo conclude che la vera protezione nasce dall'abitudine di fermarsi, verificare e scegliere."
+  }
+]

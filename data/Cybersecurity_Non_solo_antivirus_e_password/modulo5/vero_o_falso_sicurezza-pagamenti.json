@@ -1,0 +1,488 @@
+[
+  {
+    "id": 1,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La sicurezza dei pagamenti è l'insieme di tecnologie, controlli e comportamenti che proteggono le transazioni digitali da frodi, furti di dati e accessi non autorizzati.",
+    "answer": true,
+    "explanation": "È la definizione data all'inizio del modulo."
+  },
+  {
+    "id": 2,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la tecnologia da sola è sempre sufficiente a garantire la sicurezza dei pagamenti.",
+    "answer": false,
+    "explanation": "Il modulo afferma che sono fondamentali anche le scelte dell'utente."
+  },
+  {
+    "id": 3,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il modulo cita crittografia, autenticazione e monitoraggio come strumenti per proteggere le transazioni.",
+    "answer": true,
+    "explanation": "Sono gli strumenti citati nell'introduzione del modulo."
+  },
+  {
+    "id": 4,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il modulo paragona un pagamento digitale a una consegna lungo una strada, dove ogni tratto deve essere protetto.",
+    "answer": true,
+    "explanation": "È la metafora usata nell'introduzione del modulo."
+  },
+  {
+    "id": 5,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I pagamenti digitali sono transazioni economiche effettuate attraverso strumenti elettronici, senza utilizzare denaro contante.",
+    "answer": true,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 6,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, in un pagamento con carta entrano in gioco solo il cliente e il negozio, senza altri intermediari.",
+    "answer": false,
+    "explanation": "Il modulo indica che entrano in gioco anche il circuito di pagamento e la banca."
+  },
+  {
+    "id": 7,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Tra i vantaggi dei pagamenti digitali, il modulo cita la velocità e la possibilità di acquistare a distanza.",
+    "answer": true,
+    "explanation": "Sono tra i vantaggi elencati dal modulo."
+  },
+  {
+    "id": 8,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il rischio di un pagamento digitale è sempre nel pagamento in sé, indipendentemente da come viene utilizzato.",
+    "answer": false,
+    "explanation": "Il modulo afferma che il rischio è nel modo in cui il pagamento viene utilizzato e protetto."
+  },
+  {
+    "id": 9,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2021 la società Colonial Pipeline subì un attacco informatico che portò alla sospensione temporanea delle operazioni.",
+    "answer": true,
+    "explanation": "È il caso reale citato nel capitolo sui pagamenti digitali."
+  },
+  {
+    "id": 10,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante le proteste dei camionisti in Canada nel 2022, alcune autorità bloccarono l'accesso a determinati fondi collegati ai partecipanti.",
+    "answer": true,
+    "explanation": "È il secondo caso reale citato nel capitolo sui pagamenti digitali."
+  },
+  {
+    "id": 11,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, i pagamenti digitali funzionano sempre anche senza alcuna infrastruttura di rete.",
+    "answer": false,
+    "explanation": "Il modulo ricorda, tramite l'esempio del POS senza connessione, che il denaro digitale dipende da un'infrastruttura."
+  },
+  {
+    "id": 12,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le carte di pagamento sono strumenti elettronici che permettono di effettuare transazioni utilizzando denaro collegato a un conto o a un credito disponibile.",
+    "answer": true,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 13,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La carta di debito permette di pagare utilizzando un credito concesso dalla banca, rimborsato successivamente.",
+    "answer": false,
+    "explanation": "È la carta di credito a farlo; la carta di debito utilizza direttamente il denaro sul conto corrente."
+  },
+  {
+    "id": 14,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La carta prepagata contiene una somma caricata in anticipo e non è collegata direttamente al conto corrente.",
+    "answer": true,
+    "explanation": "È la descrizione data dal modulo per la carta prepagata."
+  },
+  {
+    "id": 15,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il CVV è il codice di sicurezza presente sul retro della carta.",
+    "answer": true,
+    "explanation": "È quanto indicato dal modulo."
+  },
+  {
+    "id": 16,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, conservare una foto della carta sul telefono non comporta alcun rischio.",
+    "answer": false,
+    "explanation": "Il modulo indica questo comportamento come rischioso per la sicurezza dei dati."
+  },
+  {
+    "id": 17,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2013 la catena Target Corporation subì una violazione informatica che portò al furto di dati di milioni di carte.",
+    "answer": true,
+    "explanation": "È il caso reale citato nel capitolo sulle carte di pagamento."
+  },
+  {
+    "id": 18,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la sicurezza delle carte dipende solo dal comportamento del singolo utente, non dalle aziende.",
+    "answer": false,
+    "explanation": "Il modulo afferma che dipende anche dalla capacità delle aziende di proteggere i dati."
+  },
+  {
+    "id": 19,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il modulo paragona i dati della carta di pagamento alle chiavi di casa.",
+    "answer": true,
+    "explanation": "È la metafora usata nel capitolo sulle carte di pagamento."
+  },
+  {
+    "id": 20,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "NFC è una tecnologia che permette lo scambio di piccoli dati tra dispositivi vicini attraverso un collegamento wireless a corto raggio.",
+    "answer": true,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 21,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella tokenizzazione, al posto dei dati reali della carta viene utilizzato un codice digitale sostitutivo chiamato token.",
+    "answer": true,
+    "explanation": "È quanto descritto dal modulo."
+  },
+  {
+    "id": 22,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, per ogni pagamento contactless è sempre obbligatorio inserire il PIN, indipendentemente dall'importo.",
+    "answer": false,
+    "explanation": "Il modulo indica che sotto una certa soglia il PIN può non essere richiesto."
+  },
+  {
+    "id": 23,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, è possibile svuotare completamente una carta semplicemente passando vicino a qualcuno con un dispositivo, senza alcun limite.",
+    "answer": false,
+    "explanation": "Il modulo chiarisce che le transazioni sono soggette a limiti, controlli antifrode e monitoraggio."
+  },
+  {
+    "id": 24,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il rischio più concreto legato al contactless, secondo il modulo, è la perdita della carta o dello smartphone senza un blocco tempestivo.",
+    "answer": true,
+    "explanation": "È quanto indicato esplicitamente dal modulo."
+  },
+  {
+    "id": 25,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2019 alcuni ricercatori di sicurezza evidenziarono vulnerabilità nei sistemi di pagamento contactless.",
+    "answer": true,
+    "explanation": "È il caso reale citato nel capitolo sul contactless."
+  },
+  {
+    "id": 26,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, chi non utilizza la funzione contactless non può in alcun modo disattivarla.",
+    "answer": false,
+    "explanation": "Il modulo afferma che è possibile chiederne la disattivazione alla propria banca."
+  },
+  {
+    "id": 27,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I pagamenti tramite smartphone sono transazioni digitali effettuate utilizzando un dispositivo mobile attraverso applicazioni dedicate, portafogli digitali o servizi bancari.",
+    "answer": true,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 28,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il pagamento tramite smartphone comunica sempre i dati reali della carta, senza usare un token.",
+    "answer": false,
+    "explanation": "Il modulo indica che spesso viene usato un token al posto dei dati reali."
+  },
+  {
+    "id": 29,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Prima di autorizzare una transazione, lo smartphone può richiedere una verifica dell'identità tramite impronta digitale, riconoscimento del volto o PIN.",
+    "answer": true,
+    "explanation": "È quanto descritto dal modulo."
+  },
+  {
+    "id": 30,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, installare applicazioni non affidabili può aumentare i rischi nei pagamenti da smartphone.",
+    "answer": true,
+    "explanation": "È uno dei comportamenti rischiosi elencati dal modulo."
+  },
+  {
+    "id": 31,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il pagamento tramite smartphone è sempre meno sicuro dell'uso diretto della carta.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: è spesso più sicuro grazie a ulteriori barriere di protezione."
+  },
+  {
+    "id": 32,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il modulo paragona lo smartphone a una cassaforte digitale che richiede diversi controlli prima di aprirsi.",
+    "answer": true,
+    "explanation": "È la metafora usata nel capitolo sui pagamenti da smartphone."
+  },
+  {
+    "id": 33,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le truffe nei pagamenti online sono tentativi fraudolenti che sfruttano inganni rivolti agli utenti per ottenere denaro o dati personali.",
+    "answer": true,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 34,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, le truffe nei pagamenti online sfruttano spesso tecniche di manipolazione psicologica.",
+    "answer": true,
+    "explanation": "È quanto affermato dal modulo."
+  },
+  {
+    "id": 35,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il modulo consiglia di rispondere sempre rapidamente a ogni richiesta di dati, per evitare problemi con la banca.",
+    "answer": false,
+    "explanation": "Il modulo consiglia di verificare tramite canali ufficiali senza farsi guidare da urgenza o paura."
+  },
+  {
+    "id": 36,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una strategia suggerita dal modulo per limitare i danni da frode è usare una carta prepagata dedicata agli acquisti online con saldo basso.",
+    "answer": true,
+    "explanation": "È la strategia descritta esplicitamente dal modulo."
+  },
+  {
+    "id": 37,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, questa strategia della carta prepagata sostituisce completamente le altre misure di sicurezza.",
+    "answer": false,
+    "explanation": "Il modulo chiarisce che aggiunge un ulteriore livello di protezione, senza sostituire le altre misure."
+  },
+  {
+    "id": 38,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2022 alcuni clienti della banca Intesa Sanpaolo furono coinvolti in campagne di phishing che imitavano comunicazioni bancarie ufficiali.",
+    "answer": true,
+    "explanation": "È il caso reale citato nel capitolo sulle truffe online."
+  },
+  {
+    "id": 39,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, nelle truffe online il bersaglio principale è spesso la fiducia della persona, non il sistema informatico.",
+    "answer": true,
+    "explanation": "È la sintesi conclusiva del capitolo sulle truffe online."
+  },
+  {
+    "id": 40,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La clonazione della carta è una tecnica fraudolenta con cui un attaccante copia o acquisisce i dati di una carta per operazioni non autorizzate.",
+    "answer": true,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 41,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo skimming cattura i dati della banda magnetica della carta tramite dispositivi installati illegalmente su bancomat o terminali compromessi.",
+    "answer": true,
+    "explanation": "È la definizione data dal modulo per lo skimming."
+  },
+  {
+    "id": 42,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, i criminali possono ottenere dati per la clonazione anche tramite phishing, malware o furto di database aziendali.",
+    "answer": true,
+    "explanation": "È quanto elencato dal modulo come evoluzione delle tecniche di attacco."
+  },
+  {
+    "id": 43,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il chip EMV è uno standard internazionale di sicurezza per le carte di pagamento con microchip.",
+    "answer": true,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 44,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, le carte con chip EMV sono completamente prive di rischi.",
+    "answer": false,
+    "explanation": "Il modulo precisa che nessun sistema è completamente privo di rischi."
+  },
+  {
+    "id": 45,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2014 la catena Home Depot subì una violazione informatica che portò alla sottrazione di dati di milioni di carte di pagamento.",
+    "answer": true,
+    "explanation": "È il caso reale citato nel capitolo sulla clonazione della carta."
+  },
+  {
+    "id": 46,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la clonazione dimostra che spesso viene attaccato l'oggetto fisico e non il valore delle informazioni che rappresenta.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: spesso non viene attaccato l'oggetto, ma il valore delle informazioni."
+  },
+  {
+    "id": 47,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La Strong Customer Authentication (SCA) richiede più elementi di verifica per autorizzare determinate operazioni di pagamento.",
+    "answer": true,
+    "explanation": "È la definizione data dal modulo."
+  },
+  {
+    "id": 48,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'autenticazione forte combina almeno due fattori appartenenti a categorie diverse, come una password e un'impronta digitale.",
+    "answer": true,
+    "explanation": "È quanto descritto dal modulo."
+  },
+  {
+    "id": 49,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un criminale che conosce solo la password può normalmente completare un'operazione protetta da autenticazione forte.",
+    "answer": false,
+    "explanation": "Il modulo afferma che servirebbe superare anche la verifica aggiuntiva."
+  },
+  {
+    "id": 50,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le banche utilizzano anche sistemi di monitoraggio delle transazioni, notifiche in tempo reale e strumenti antifrode, oltre all'autenticazione forte.",
+    "answer": true,
+    "explanation": "È quanto elencato dal modulo."
+  },
+  {
+    "id": 51,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, le tecnologie di sicurezza bancaria possono impedire una truffa anche se è il cliente stesso ad autorizzare il pagamento a un malintenzionato.",
+    "answer": false,
+    "explanation": "Il modulo chiarisce che in questo caso le tecnologie non possono impedire la truffa."
+  },
+  {
+    "id": 52,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, nessun operatore o dipendente di banca chiederà mai password, PIN o codici OTP al cliente.",
+    "answer": true,
+    "explanation": "È l'avviso costante delle banche riportato dal modulo."
+  },
+  {
+    "id": 53,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2023 diversi clienti bancari in Europa furono bersaglio di campagne di phishing per ottenere codici di autenticazione temporanei.",
+    "answer": true,
+    "explanation": "È il caso reale citato nel capitolo sull'autenticazione forte."
+  },
+  {
+    "id": 54,
+    "module": "sicurezza-pagamenti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'autenticazione forte aggiunge fiducia ai pagamenti verificando l'identità di chi li autorizza.",
+    "answer": true,
+    "explanation": "È la sintesi conclusiva del capitolo sull'autenticazione forte."
+  }
+]

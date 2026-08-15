@@ -1,0 +1,130 @@
+{
+    "id": 1,
+    "module": "fondamenti-cybersecurity",
+    "type": "matching",
+    "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Virus",
+        "definition": "Malware che infetta altri file e ha bisogno di un'azione dell'utente, come aprire un file infetto, per diffondersi"
+      },
+      {
+        "term": "Worm",
+        "definition": "Malware che si replica e si diffonde automaticamente attraverso le reti, senza bisogno che l'utente apra un file"
+      },
+      {
+        "term": "Trojan",
+        "definition": "Malware che si finge un programma legittimo e, una volta installato, svolge attività nascoste"
+      },
+      {
+        "term": "Spyware",
+        "definition": "Malware progettato per raccogliere informazioni sull'utente, senza l'obiettivo di distruggere il computer"
+      },
+      {
+        "term": "Keylogger",
+        "definition": "Malware che registra tutto ciò che viene digitato sulla tastiera, comprese password ed email"
+      },
+      {
+        "term": "Ransomware",
+        "definition": "Malware che blocca o cifra i file di un dispositivo, chiedendo un pagamento per ripristinarli"
+      }
+    ],
+    [
+      {
+        "term": "Phishing",
+        "definition": "Tecnica di inganno che punta a ottenere credenziali, dati personali o pagamenti tramite messaggi ingannevoli"
+      },
+      {
+        "term": "Vishing",
+        "definition": "Forma di phishing che utilizza le telefonate invece di email o messaggi"
+      },
+      {
+        "term": "Smishing",
+        "definition": "Forma di phishing che utilizza SMS o messaggi di testo"
+      },
+      {
+        "term": "Quishing",
+        "definition": "Forma di phishing che utilizza un codice QR per condurre la vittima verso un sito fraudolento"
+      },
+      {
+        "term": "Spear Phishing",
+        "definition": "Forma di phishing personalizzata, costruita su misura con informazioni reali sulla vittima"
+      }
+    ],
+    [
+      {
+        "term": "Confidentiality",
+        "definition": "Principio secondo cui le informazioni sono accessibili soltanto alle persone autorizzate"
+      },
+      {
+        "term": "Integrity",
+        "definition": "Principio secondo cui le informazioni sono corrette e non alterate da soggetti non autorizzati"
+      },
+      {
+        "term": "Availability",
+        "definition": "Principio secondo cui le informazioni sono accessibili quando servono"
+      },
+      {
+        "term": "Minaccia",
+        "definition": "Qualsiasi elemento capace di causare un danno"
+      },
+      {
+        "term": "Vulnerabilità",
+        "definition": "Una debolezza che può essere sfruttata da una minaccia"
+      },
+      {
+        "term": "Rischio",
+        "definition": "La possibilità che una minaccia sfrutti una vulnerabilità causando un danno"
+      }
+    ],
+    [
+      {
+        "term": "Account Takeover",
+        "definition": "Presa di controllo completa di un account da parte di un criminale"
+      },
+      {
+        "term": "Data Breach",
+        "definition": "Violazione dei dati: informazioni riservate vengono esposte, sottratte o divulgate senza autorizzazione"
+      },
+      {
+        "term": "Superficie d'attacco",
+        "definition": "L'insieme di tutti i punti attraverso cui un attaccante può tentare di accedere a un sistema"
+      },
+      {
+        "term": "Movimento Laterale",
+        "definition": "Tecnica con cui un attaccante si sposta da un dispositivo all'altro dopo essere entrato in una rete"
+      },
+      {
+        "term": "Reconnaissance",
+        "definition": "Fase in cui il criminale osserva il bersaglio e raccoglie informazioni prima di colpire"
+      },
+      {
+        "term": "Social Engineering",
+        "definition": "Insieme delle tecniche per manipolare una persona e convincerla a compiere un'azione favorevole al criminale"
+      }
+    ],
+    [
+      {
+        "term": "DDoS",
+        "definition": "Attacco in cui migliaia o milioni di dispositivi sovraccaricano un servizio rendendolo temporaneamente indisponibile"
+      },
+      {
+        "term": "Fattore umano",
+        "definition": "Insieme dei comportamenti, delle decisioni e delle azioni delle persone che influenzano la sicurezza di un sistema"
+      },
+      {
+        "term": "Furto di identità digitale",
+        "definition": "Situazione in cui un criminale ottiene informazioni sufficienti per impersonare un'altra persona online"
+      },
+      {
+        "term": "Cybersecurity",
+        "definition": "Processo continuo di protezione, verifica e aggiornamento dei sistemi informatici"
+      },
+      {
+        "term": "CIA Triad",
+        "definition": "L'insieme dei tre principi di riservatezza, integrità e disponibilità delle informazioni"
+      }
+    ]
+  ]
+}

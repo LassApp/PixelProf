@@ -1,0 +1,174 @@
+[
+  {
+    "id": 1,
+    "module": "sicurezza-quotidiana",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Accesso",
+        "definition": "Livello di sicurezza che riguarda chi può entrare nel dispositivo"
+      },
+      {
+        "term": "Aggiornamenti",
+        "definition": "Livello di sicurezza legato alla capacità del sistema di difendersi da vulnerabilità note"
+      },
+      {
+        "term": "Consapevolezza",
+        "definition": "Livello di sicurezza che riguarda il capire che ogni app, permesso e connessione è una scelta"
+      },
+      {
+        "term": "Smartphone incustodito senza protezione",
+        "definition": "Situazione che permette a chiunque di leggere messaggi, email o foto"
+      },
+      {
+        "term": "PIN, impronta digitale, riconoscimento facciale",
+        "definition": "Metodi citati dal modulo per proteggere l'accesso al dispositivo mobile"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "module": "sicurezza-quotidiana",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "App sicura",
+        "definition": "Applicazione verificata, affidabile e aggiornata che rispetta criteri di protezione dei dati"
+      },
+      {
+        "term": "Store ufficiale",
+        "definition": "Canale di distribuzione che effettua controlli sulle app, riducendo ma non eliminando i rischi"
+      },
+      {
+        "term": "Permesso eccessivo",
+        "definition": "Autorizzazione richiesta da un'app non coerente con la sua funzione, come un'app torcia che chiede i contatti"
+      },
+      {
+        "term": "Permesso coerente",
+        "definition": "Autorizzazione richiesta da un'app in linea con la sua funzione, come un'app di navigazione che chiede la posizione"
+      },
+      {
+        "term": "App malevola che imita un'app nota",
+        "definition": "Applicazione che riesce inizialmente a essere pubblicata su uno store ufficiale sembrando legittima"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "module": "sicurezza-quotidiana",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "QR Code",
+        "definition": "Codice grafico bidimensionale che può contenere collegamenti web, testi o altri dati"
+      },
+      {
+        "term": "QR Code malevolo",
+        "definition": "Codice manipolato per reindirizzare l'utente verso siti fraudolenti o download pericolosi"
+      },
+      {
+        "term": "QR Code dinamico",
+        "definition": "Codice la cui destinazione può essere modificata senza cambiare l'immagine visibile"
+      },
+      {
+        "term": "Sostituzione fisica del QR Code",
+        "definition": "Tecnica in cui un attaccante applica un adesivo con un nuovo codice sopra quello originale"
+      },
+      {
+        "term": "Manomissione dei distributori di carburante",
+        "definition": "Esempio reale di dispositivo abusivo installato per intercettare dati di pagamento, simile al principio dei QR Code malevoli"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "module": "sicurezza-quotidiana",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Chiavetta USB",
+        "definition": "Dispositivo di memoria rimovibile utilizzato per archiviare e trasferire dati"
+      },
+      {
+        "term": "USB baiting",
+        "definition": "Tecnica che lascia chiavette USB in luoghi pubblici con nomi invitanti per indurre la vittima ad aprirle"
+      },
+      {
+        "term": "Stuxnet",
+        "definition": "Malware scoperto nel 2010 che colpì impianti nucleari iraniani diffondendosi anche tramite chiavette USB infette"
+      },
+      {
+        "term": "Computer isolato dalla rete",
+        "definition": "Sistema che, secondo il caso Stuxnet, non è necessariamente isolato dal rischio"
+      },
+      {
+        "term": "Analisi antivirus prima dell'apertura",
+        "definition": "Buona pratica consigliata prima di aprire il contenuto di una chiavetta USB di provenienza incerta"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "module": "sicurezza-quotidiana",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Download e allegati",
+        "definition": "File scaricati o ricevuti tramite Internet, email o app di messaggistica, a rischio se da fonti non affidabili"
+      },
+      {
+        "term": "ILOVEYOU",
+        "definition": "Malware diffuso nel 2000 tramite un allegato email che si replicava inviandosi ai contatti"
+      },
+      {
+        "term": "Email falsa del corriere",
+        "definition": "Messaggio che finge un mancato recapito per convincere l'utente ad aprire un allegato pericoloso"
+      },
+      {
+        "term": "Campagne malware su Facebook Messenger",
+        "definition": "Messaggi apparentemente inviati da amici con link verso pagine false"
+      },
+      {
+        "term": "Archivio compresso",
+        "definition": "Formato di file che può nascondere programmi dannosi"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "module": "sicurezza-quotidiana",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Wi-Fi pubblico",
+        "definition": "Connessione wireless accessibile a molte persone, la cui sicurezza dipende da come è configurata"
+      },
+      {
+        "term": "Cifratura",
+        "definition": "Meccanismo che rende i dati illeggibili a chi non possiede le autorizzazioni corrette"
+      },
+      {
+        "term": "Sniffer",
+        "definition": "Strumento di monitoraggio che osserva i pacchetti che attraversano una connessione"
+      },
+      {
+        "term": "VPN",
+        "definition": "Strumento che crea un collegamento cifrato tra il dispositivo e un server, proteggendo soprattutto la prima parte del percorso"
+      },
+      {
+        "term": "Evil twin",
+        "definition": "Rete Wi-Fi creata per imitare una connessione legittima e ingannare l'utente"
+      },
+      {
+        "term": "Pacchetti",
+        "definition": "Piccole unità in cui vengono divisi i dati durante la navigazione online"
+      }
+    ]
+  }
+]

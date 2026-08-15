@@ -1,0 +1,77 @@
+{
+  "module": "data_protection",
+  "sets": [
+    [
+      {
+        "term": "Backup",
+        "definition": "Copia di sicurezza dei dati, creata per poterli recuperare in caso di perdita, danneggiamento o cancellazione accidentale"
+      },
+      {
+        "term": "Sincronizzazione",
+        "definition": "Mantiene gli stessi file aggiornati su più dispositivi, replicando modifiche ed eliminazioni su tutte le copie collegate"
+      },
+      {
+        "term": "Regola 3-2-1",
+        "definition": "Strategia di backup con tre copie dei dati, su due supporti diversi, con una copia conservata in un luogo esterno"
+      },
+      {
+        "term": "Disaster Recovery",
+        "definition": "Insieme di strategie, procedure e tecnologie che permettono di ripristinare sistemi, dati e operatività dopo un evento critico"
+      }
+    ],
+    [
+      {
+        "term": "Cifratura dei dati",
+        "definition": "Processo che trasforma le informazioni in una forma illeggibile senza una chiave di decodifica"
+      },
+      {
+        "term": "Conservazione sicura delle informazioni",
+        "definition": "Insieme di pratiche e sistemi che garantiscono che i dati restino integri, accessibili solo a chi è autorizzato e protetti nel lungo periodo"
+      },
+      {
+        "term": "Backup locale",
+        "definition": "Backup conservato su dispositivi fisici, come hard disk esterni"
+      },
+      {
+        "term": "Backup remoto",
+        "definition": "Backup conservato nel cloud, su server esterni accessibili via Internet"
+      }
+    ],
+    [
+      {
+        "term": "Ransomware ad Acer (2021)",
+        "definition": "Rese inaccessibili parte dei sistemi aziendali e comportò una delle richieste di riscatto più elevate mai registrate fino a quel momento"
+      },
+      {
+        "term": "Ransomware a Colonial Pipeline (2021)",
+        "definition": "Portò alla sospensione temporanea delle operazioni e a carenze di carburante in diversi Stati degli USA"
+      },
+      {
+        "term": "Violazione dei dati di Equifax (2017)",
+        "definition": "Espose i dati personali di milioni di persone"
+      },
+      {
+        "term": "Malware NotPetya (2017)",
+        "definition": "Causò gravi interruzioni operative in numerose organizzazioni nel mondo"
+      }
+    ],
+    [
+      {
+        "term": "Backup (metafora)",
+        "definition": "Come il negativo di una fotografia: anche se la copia stampata si rovina, permette di crearne sempre una nuova"
+      },
+      {
+        "term": "Sincronizzazione (metafora)",
+        "definition": "Come due fogli collegati da un filo invisibile: ciò che scompare su uno, scompare anche sull'altro"
+      },
+      {
+        "term": "Regola 3-2-1 (metafora)",
+        "definition": "Come tre copie delle chiavi di casa affidate a persone diverse, per distribuire il rischio"
+      },
+      {
+        "term": "Disaster Recovery (metafora)",
+        "definition": "Come il piano di evacuazione di una città: non serve quando tutto funziona, serve quando tutto crolla"
+      }
+    ]
+  ]
+}

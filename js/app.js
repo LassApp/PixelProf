@@ -855,7 +855,7 @@ function _renderModuleFilter(){
  * dei 28 moduli extra-ECDL.
  */
 function _buildGenericModCard(mod, areaInfo){
-  const icon      = areaInfo?.icon || '🗂️';
+  const icon      = mod.icon || areaInfo?.icon || '🗂️';
   const areaLabel = areaInfo ? escHtml(_csAreaShortLabel(areaInfo.label)) : '';
   return `
     <div class="mod-card generic-card" id="mc-${escAttr(mod.key)}" role="button" tabindex="0"

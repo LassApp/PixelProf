@@ -210,9 +210,17 @@ function exportLbCSV(type, act){
 
 function modBadgeHTML(mod){
   if(!mod||mod==='?')return'<span class="mod-badge mix">—</span>';
-  const cls={CE:'ce',OE:'oe',WP:'wp'}[mod]||'mix';
-  const short={CE:'Computer',OE:'Online',WP:'Word'}[mod]||mod;
-  return`<span class="mod-badge ${cls}">${short}</span>`;
+  const known={CE:'ce',OE:'oe',WP:'wp'}[mod];
+  if(known){
+    const short={CE:'Computer',OE:'Online',WP:'Word'}[mod];
+    return`<span class="mod-badge ${known}">${short}</span>`;
+  }
+  // Modulo extra-ECDL: nessuna classe colore dedicata (sarebbero 28+),
+  // colore inline derivato dall'Area di appartenenza (vedi modColor()
+  // in game-constants.js) invece della classe fissa ce/oe/wp/mix.
+  const label=escHtml(modLabel(mod));
+  const color=modColor(mod);
+  return`<span class="mod-badge" style="background:${color}1f;border-color:${color}55;color:${color}">${label}</span>`;
 }
 
 async function resetLb(){

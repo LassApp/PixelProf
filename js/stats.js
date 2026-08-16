@@ -12,9 +12,20 @@
 function renderStats(){
   sh('st-tot').textContent=db.stats.tot;sh('st-cor').textContent=db.stats.cor;
   sh('st-pct').textContent=db.stats.tot>0?Math.round(db.stats.cor/db.stats.tot*100)+'%':'0%';
-  sh('st-mods').innerHTML=Object.entries({CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processing'}).map(([k,n])=>{
+
+  // v8.8.0 — moduli mostrati dinamici in base all'Area dell'aula attiva
+  // (prima erano fissi a CE/OE/WP per qualunque aula: un'aula Cybersecurity
+  // mostrava sempre "Word/Computer/Online Essentials" con dati a zero).
+  const course   = (typeof activeCourseId!=='undefined' && activeCourseId) ? loadCourses().find(c=>c.id===activeCourseId) : null;
+  const areaKey  = course?.areaKey || 'ecdl';
+  const areaInfo = window.AreasConfig?.getAreaByKey(areaKey);
+  const mods = areaInfo
+    ? areaInfo.modules.filter(m=>m.contentReady===true).map(m=>({key:m.key,label:m.label}))
+    : [{key:'CE',label:'Computer Essentials'},{key:'OE',label:'Online Essentials'},{key:'WP',label:'Word Processing'}];
+
+  sh('st-mods').innerHTML=mods.map(({key:k,label:n})=>{
     const m=db.stats.byMod[k]||{c:0,w:0};const tot=m.c+m.w;const pct=tot>0?Math.round(m.c/tot*100):0;
-    return`<div class="mod-stat"><div class="mod-stat-row"><span>${n}</span><span style="font-family:'Share Tech Mono',monospace;color:var(--accent)">${m.c}/${tot} · ${pct}%</span></div><div class="prog-bar" style="margin:0"><div class="prog-fill" style="width:${pct}%"></div></div></div>`;
+    return`<div class="mod-stat"><div class="mod-stat-row"><span>${escHtml(n)}</span><span style="font-family:'Share Tech Mono',monospace;color:var(--accent)">${m.c}/${tot} · ${pct}%</span></div><div class="prog-bar" style="margin:0"><div class="prog-fill" style="width:${pct}%"></div></div></div>`;
   }).join('');
 }
 
@@ -24,7 +35,7 @@ async function resetStats(){
     { title:'Azzerare i progressi?', icon:'📊', yesLabel:'Sì, azzera', danger:true }
   );
   if(!ok) return;
-  db.stats={tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}}};
+  db.stats={tot:0,cor:0,byMod:{}};
   save();
   renderStats();
 }

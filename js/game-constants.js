@@ -11,6 +11,26 @@ const MOD_LABEL={CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Proces
 function modLabel(key){
   return MOD_LABEL[key] || (window.AreasConfig && window.AreasConfig.getModuleInfo(key)?.label) || key || '';
 }
+// Colore per-modulo (badge Classifica/Domande difficili, barre Progressi/
+// Panoramica Classe). CE/OE/WP mantengono i colori fissi storici già
+// usati altrove (.ce-card/.oe-card/.wp-card in pixelprof.css); per
+// qualsiasi altro modulo si deriva dal colore della sua Area — stessa
+// tripletta di --area-rgb in pixelprof.css, mirrorata qui in esadecimale
+// per l'uso lato JS (style inline, non può leggere le CSS custom
+// properties di un elemento non ancora nel DOM).
+const MOD_COLOR_HEX  = { CE:'#1e90ff', OE:'#7c6aff', WP:'#28a050' };
+const AREA_COLOR_HEX = {
+  'ecdl': '#00ffc8',
+  'cyberbullismo-sicurezza-online': '#ffb400',
+  'cybersecurity': '#1e90ff',
+  'reti-internet': '#7c6aff',
+  'malware-minacce': '#ff4d6d',
+};
+function modColor(key){
+  if(MOD_COLOR_HEX[key]) return MOD_COLOR_HEX[key];
+  const area = window.AreasConfig && window.AreasConfig.getAreaForModule(key);
+  return (area && AREA_COLOR_HEX[area.key]) || '#8a8fa3';
+}
 const ACT_LABEL={quiz:'Quiz',speed:'Speed Quiz',match:'Abbina',memory:'Memory',fill:'Completa la frase',truefalse:'Vero o Falso'};
 const ACT_ICON={quiz:'🧠',speed:'⚡',match:'🔗',memory:'🃏',fill:'✏️',truefalse:'⚖️'};
 

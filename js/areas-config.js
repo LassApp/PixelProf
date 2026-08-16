@@ -123,7 +123,7 @@ const AREAS = [
          disponibile" già prevista per i moduli senza file, finché il
          JSON memory non arriva. */
       {
-        key: 'fondamenti-cybersecurity', label: 'Fondamenti di Cybersecurity', contentReady: true,
+        key: 'fondamenti-cybersecurity', label: 'Fondamenti di Cybersecurity', icon: '🛡️', contentReady: true,
         dataPaths: {
           quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/quiz_fondamenti-cybersecurity.json',
           speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/speedquiz_fondamenti-cybersecurity.json',
@@ -133,7 +133,7 @@ const AREAS = [
         },
       },
       {
-        key: 'sicurezza-account', label: 'Sicurezza degli Account', contentReady: true,
+        key: 'sicurezza-account', label: 'Sicurezza degli Account', icon: '🔑', contentReady: true,
         dataPaths: {
           quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/quiz_sicurezza-account.json',
           speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/speedquiz_sicurezza-account.json',
@@ -143,7 +143,7 @@ const AREAS = [
         },
       },
       {
-        key: 'protezione-dati', label: 'Protezione dei Dati', contentReady: true,
+        key: 'protezione-dati', label: 'Protezione dei Dati', icon: '🗄️', contentReady: true,
         dataPaths: {
           quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/quiz_protezione-dati.json',
           speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/speedquiz_protezione-dati.json',
@@ -153,7 +153,7 @@ const AREAS = [
         },
       },
       {
-        key: 'sicurezza-quotidiana', label: 'Sicurezza Quotidiana', contentReady: true,
+        key: 'sicurezza-quotidiana', label: 'Sicurezza Quotidiana', icon: '📱', contentReady: true,
         dataPaths: {
           quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/quiz_sicurezza_quotidiana.json',
           speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/speedquiz_sicurezza_quotidiana.json',
@@ -163,7 +163,7 @@ const AREAS = [
         },
       },
       {
-        key: 'sicurezza-pagamenti', label: 'Sicurezza dei Pagamenti', contentReady: true,
+        key: 'sicurezza-pagamenti', label: 'Sicurezza dei Pagamenti', icon: '💳', contentReady: true,
         dataPaths: {
           quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/quiz_sicurezza-pagamenti.json',
           speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/speedquiz_sicurezza-pagamenti.json',
@@ -173,7 +173,7 @@ const AREAS = [
         },
       },
       {
-        key: 'privacy-normative', label: 'Privacy e Normative', contentReady: true,
+        key: 'privacy-normative', label: 'Privacy e Normative', icon: '⚖️', contentReady: true,
         dataPaths: {
           quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/quiz_privacy-normative.json',
           speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/speedquiz_privacy-normative.json',
@@ -183,7 +183,7 @@ const AREAS = [
         },
       },
       {
-        key: 'sicurezza-online-social-network', label: 'Sicurezza Online e Social Network', contentReady: true,
+        key: 'sicurezza-online-social-network', label: 'Sicurezza Online e Social Network', icon: '💬', contentReady: true,
         dataPaths: {
           quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/quiz_sicurezza-online-social-network.json',
           speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/speedquiz_sicurezza-online-social-network.json',
@@ -193,7 +193,7 @@ const AREAS = [
         },
       },
       {
-        key: 'nuove-minacce-digitali', label: 'Nuove Minacce Digitali', contentReady: true,
+        key: 'nuove-minacce-digitali', label: 'Nuove Minacce Digitali', icon: '⚠️', contentReady: true,
         dataPaths: {
           quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/quiz_nuove-minacce-digitali.json',
           speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/speedquiz_nuove-minacce-digitali.json',

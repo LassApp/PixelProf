@@ -36,8 +36,33 @@
 
 const _CHD_MOD_LABEL = { CE: 'Computer Essentials', OE: 'Online Essentials', WP: 'Word Processing' };
 const _CHD_MOD_COLOR = { CE: '#00cfff', OE: '#7c6aff', WP: '#28a050' };
+const _CHD_MOD_FILTER_ICON = { CE: '💻', OE: '🌐', WP: '📝' };
 const _CHD_ACT_LABEL = { quiz: 'Quiz', speed: 'Speed Quiz', match: 'Abbina', memory: 'Memory', fill: 'Completa la frase', truefalse: 'Vero o Falso' };
 const _CHD_ACT_ICON  = { quiz: '🧠', speed: '⚡', match: '🔗', memory: '🃏', fill: '✏️', truefalse: '⚖️' };
+
+/**
+ * _chdModuleList — v8.8.0. Elenco chiavi modulo da mostrare nella card
+ * "Modulo più debole", dinamico in base all'Area dell'aula attiva
+ * (prima era fisso a ['CE','OE','WP'] per qualunque aula: un'aula
+ * Cybersecurity mostrava sempre i 3 moduli ECDL, tutti a zero dati).
+ * Fallback a CE/OE/WP invariato se l'Area non è determinabile.
+ */
+function _chdModuleList() {
+  const course  = (typeof activeCourseId !== 'undefined' && activeCourseId) ? loadCourses().find(c => c.id === activeCourseId) : null;
+  const areaKey = course?.areaKey || 'ecdl';
+  const areaInfo = window.AreasConfig?.getAreaByKey(areaKey);
+  return areaInfo
+    ? areaInfo.modules.filter(m => m.contentReady === true).map(m => m.key)
+    : ['CE', 'OE', 'WP'];
+}
+
+/** Calcola { key, label, color, acc, tot } per ogni modulo di _chdModuleList(), dati stats.byMod. */
+function _chdComputeModAccs(byMod) {
+  return _chdModuleList().map(k => {
+    const m = byMod?.[k] || { c: 0, w: 0 };
+    return { key: k, label: _CHD_MOD_LABEL[k] || modLabel(k), color: _CHD_MOD_COLOR[k] || modColor(k), acc: _chdAccuracy(m.c, m.w), tot: m.c + m.w };
+  });
+}
 
 /** Percentuale di accuratezza, o null se non ci sono ancora dati. */
 function _chdAccuracy(c, w) {
@@ -149,10 +174,7 @@ function _renderDashboardFromCloud(cloud) {
     kpi2Lbl = 'Partecipanti unici';
   }
 
-  const modAccs = ['CE', 'OE', 'WP'].map(k => {
-    const m = stats.byMod?.[k] || { c: 0, w: 0 };
-    return { key: k, label: _CHD_MOD_LABEL[k], color: _CHD_MOD_COLOR[k], acc: _chdAccuracy(m.c, m.w), tot: m.c + m.w };
-  });
+  const modAccs = _chdComputeModAccs(stats.byMod);
   const modsWithData = modAccs.filter(m => m.tot > 0);
   const weakest = modsWithData.length ? modsWithData.reduce((a, b) => (b.acc < a.acc ? b : a)) : null;
 
@@ -246,10 +268,7 @@ function _renderDashboardFromLocal() {
   }
 
   // ── 3. MODULO PIÙ DEBOLE ──
-  const modAccs = ['CE', 'OE', 'WP'].map(k => {
-    const m = stats.byMod?.[k] || { c: 0, w: 0 };
-    return { key: k, label: _CHD_MOD_LABEL[k], color: _CHD_MOD_COLOR[k], acc: _chdAccuracy(m.c, m.w), tot: m.c + m.w };
-  });
+  const modAccs = _chdComputeModAccs(stats.byMod);
   const modsWithData = modAccs.filter(m => m.tot > 0);
   const weakest = modsWithData.length ? modsWithData.reduce((a, b) => (b.acc < a.acc ? b : a)) : null;
 
@@ -424,7 +443,7 @@ function chdWqSetTab(tab) {
 }
 
 function chdWqSetModFilter(mod) {
-  _chdWqModFilter = ['CE', 'OE', 'WP'].includes(mod) ? mod : 'all';
+  _chdWqModFilter = (typeof mod === 'string' && mod) ? mod : 'all';
   _chdWqExpanded = false;
   _chdWqRefresh();
 }
@@ -465,7 +484,7 @@ function _chdWqRowHtml(e, tab) {
 }
 
 function _chdWqEmptyHtml(tab, modFilter) {
-  const suffix = modFilter !== 'all' ? ` in ${escHtml(_CHD_MOD_LABEL[modFilter])}` : '';
+  const suffix = modFilter !== 'all' ? ` in ${escHtml(_CHD_MOD_LABEL[modFilter] || modLabel(modFilter))}` : '';
   if (tab === 'recovered') {
     return `<div class="chd-wq-empty">
       <div class="chd-wq-empty-icon">🔍</div>
@@ -496,12 +515,22 @@ function _chdBuildWrongQ() {
   const tab = _chdWqTab === 'recovered' ? 'recovered' : 'problem';
   const activeTabEntries = tab === 'recovered' ? recoveredEntries : problemEntries;
 
-  // Conteggi per modulo calcolati sulla tab attiva — cambiano coerentemente
-  // quando si passa da Problematiche a Recuperate.
-  const modCounts = { all: activeTabEntries.length, CE: 0, OE: 0, WP: 0 };
-  activeTabEntries.forEach(e => { if (modCounts[e.mod] != null) modCounts[e.mod]++; });
+  // Moduli realmente presenti nella tab attiva (dinamico — prima era
+  // fisso a CE/OE/WP, un'aula Cybersecurity mostrava filtri per moduli
+  // che non esistono in quell'aula). CE/OE/WP restano in testa quando
+  // presenti per zero regressione visiva sulle aule ECDL esistenti.
+  const _ORDER_HINT = ['CE', 'OE', 'WP'];
+  const modKeys = [...new Set(activeTabEntries.map(e => e.mod).filter(Boolean))].sort((a, b) => {
+    const ia = _ORDER_HINT.indexOf(a), ib = _ORDER_HINT.indexOf(b);
+    if (ia !== -1 && ib !== -1) return ia - ib;
+    if (ia !== -1) return -1;
+    if (ib !== -1) return 1;
+    return 0;
+  });
+  const modCounts = { all: activeTabEntries.length };
+  modKeys.forEach(k => { modCounts[k] = activeTabEntries.filter(e => e.mod === k).length; });
 
-  const mod = ['CE', 'OE', 'WP'].includes(_chdWqModFilter) ? _chdWqModFilter : 'all';
+  const mod = modKeys.includes(_chdWqModFilter) ? _chdWqModFilter : 'all';
   const filtered = (mod === 'all' ? activeTabEntries : activeTabEntries.filter(e => e.mod === mod))
     .sort(_chdWqSort);
   const totalFiltered = filtered.length;
@@ -519,9 +548,9 @@ function _chdBuildWrongQ() {
     : '';
 
   const modFilterBtn = (key, label, icon) => {
-    const color = key === 'all' ? 'var(--accent)' : _CHD_MOD_COLOR[key];
+    const color = key === 'all' ? 'var(--accent)' : (_CHD_MOD_COLOR[key] || modColor(key));
     const count = modCounts[key] ?? 0;
-    return `<button class="chd-wq-modfilter-btn${mod === key ? ' active' : ''}" style="--chd-wq-mf-color:${color}" onclick="chdWqSetModFilter('${key}')">
+    return `<button class="chd-wq-modfilter-btn${mod === key ? ' active' : ''}" style="--chd-wq-mf-color:${color}" onclick="chdWqSetModFilter('${escAttr(key)}')">
       ${icon ? icon + ' ' : ''}${escHtml(label)} <span class="chd-wq-modfilter-count">${count}</span>
     </button>`;
   };
@@ -545,9 +574,7 @@ function _chdBuildWrongQ() {
 
     <div class="chd-wq-modfilter">
       ${modFilterBtn('all', 'Tutti')}
-      ${modFilterBtn('CE', _CHD_MOD_LABEL.CE, '💻')}
-      ${modFilterBtn('OE', _CHD_MOD_LABEL.OE, '🌐')}
-      ${modFilterBtn('WP', _CHD_MOD_LABEL.WP, '📝')}
+      ${modKeys.map(k => modFilterBtn(k, _CHD_MOD_LABEL[k] || modLabel(k), _CHD_MOD_FILTER_ICON[k] || window.AreasConfig?.getModuleInfo(k)?.icon || '')).join('')}
     </div>
 
     <div class="chd-wq-list${tab === 'recovered' ? ' chd-wq-list-recovered' : ''}">${listHtml}</div>

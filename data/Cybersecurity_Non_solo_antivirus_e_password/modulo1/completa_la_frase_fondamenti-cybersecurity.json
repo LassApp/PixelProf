@@ -1,5 +1,9 @@
 [
   {
+    "id": 1,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "La ____ è l'insieme di tecnologie, procedure, strategie e comportamenti utilizzati per proteggere sistemi informatici.",
     "answer": "Cybersecurity",
     "bank": [
@@ -10,6 +14,10 @@
     ]
   },
   {
+    "id": 2,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il termine Cybersecurity deriva dall'unione di Cyber, che riguarda il mondo digitale, e ____, che significa sicurezza.",
     "answer": "Security",
     "bank": [
@@ -20,6 +28,10 @@
     ]
   },
   {
+    "id": 3,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "La CIA Triad è composta da Confidentiality, Integrity e ____.",
     "answer": "Availability",
     "bank": [
@@ -30,6 +42,10 @@
     ]
   },
   {
+    "id": 4,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il principio di ____ indica che le informazioni sono accessibili soltanto alle persone autorizzate.",
     "answer": "Confidentiality",
     "bank": [
@@ -40,6 +56,10 @@
     ]
   },
   {
+    "id": 5,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il principio di ____ indica che le informazioni sono corrette e non alterate da soggetti non autorizzati.",
     "answer": "Integrity",
     "bank": [
@@ -50,6 +70,10 @@
     ]
   },
   {
+    "id": 6,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il principio di ____ indica che le informazioni sono accessibili quando servono.",
     "answer": "Availability",
     "bank": [
@@ -60,6 +84,10 @@
     ]
   },
   {
+    "id": 7,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nell'esempio della cartella clinica, se un attaccante modifica il gruppo sanguigno del paziente senza rubare né bloccare i dati, viene violato il principio di ____.",
     "answer": "Integrity",
     "bank": [
@@ -70,6 +98,10 @@
     ]
   },
   {
+    "id": 8,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nell'esempio della cartella clinica, se un ransomware blocca l'accesso ai computer dell'ospedale, viene compromessa la ____.",
     "answer": "disponibilità",
     "bank": [
@@ -80,6 +112,10 @@
     ]
   },
   {
+    "id": 9,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il termine malware deriva dall'unione di malicious e ____.",
     "answer": "software",
     "bank": [
@@ -90,6 +126,10 @@
     ]
   },
   {
+    "id": 10,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ____ è un malware che infetta altri file e ha bisogno di un'azione dell'utente per diffondersi.",
     "answer": "virus",
     "bank": [
@@ -100,6 +140,10 @@
     ]
   },
   {
+    "id": 11,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ____ è un malware che si replica e si diffonde automaticamente attraverso le reti, senza bisogno che l'utente apra un file.",
     "answer": "worm",
     "bank": [
@@ -110,6 +154,10 @@
     ]
   },
   {
+    "id": 12,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il termine worm significa letteralmente ____.",
     "answer": "verme",
     "bank": [
@@ -120,6 +168,10 @@
     ]
   },
   {
+    "id": 13,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ____ è un malware che si finge un programma legittimo, nascondendo al suo interno attività dannose.",
     "answer": "Trojan",
     "bank": [
@@ -130,6 +182,10 @@
     ]
   },
   {
+    "id": 14,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il nome del Trojan deriva dal racconto del ____.",
     "answer": "Cavallo di Troia",
     "bank": [
@@ -140,6 +196,10 @@
     ]
   },
   {
+    "id": 15,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Lo ____ è un malware progettato per raccogliere informazioni sull'utente senza distruggere il computer.",
     "answer": "spyware",
     "bank": [
@@ -150,6 +210,10 @@
     ]
   },
   {
+    "id": 16,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il termine spyware deriva dalla parola inglese spy, che significa ____.",
     "answer": "spia",
     "bank": [
@@ -160,6 +224,10 @@
     ]
   },
   {
+    "id": 17,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ____ registra tutto ciò che viene digitato sulla tastiera, comprese password ed email.",
     "answer": "keylogger",
     "bank": [
@@ -170,6 +238,10 @@
     ]
   },
   {
+    "id": 18,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il termine keylogger deriva da key (tasto) e ____ (registratore).",
     "answer": "logger",
     "bank": [
@@ -180,6 +252,10 @@
     ]
   },
   {
+    "id": 19,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ____ blocca oppure cifra i file di un dispositivo, chiedendo poi un pagamento per ripristinarli.",
     "answer": "ransomware",
     "bank": [
@@ -190,6 +266,10 @@
     ]
   },
   {
+    "id": 20,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il termine ransomware deriva dalla parola inglese ransom, che significa ____.",
     "answer": "riscatto",
     "bank": [
@@ -200,6 +280,10 @@
     ]
   },
   {
+    "id": 21,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, pagare il riscatto di un ransomware non garantisce la ____ dei dati.",
     "answer": "restituzione",
     "bank": [
@@ -210,6 +294,10 @@
     ]
   },
   {
+    "id": 22,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Molti malware preferiscono rimanere ____ il più a lungo possibile, per raccogliere più informazioni.",
     "answer": "invisibili",
     "bank": [
@@ -220,6 +308,10 @@
     ]
   },
   {
+    "id": 23,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ____ è l'insieme delle tecniche utilizzate per manipolare una persona e convincerla a compiere un'azione favorevole al criminale.",
     "answer": "Social Engineering",
     "bank": [
@@ -230,6 +322,10 @@
     ]
   },
   {
+    "id": 24,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ____ è una tecnica di inganno che punta a ottenere credenziali, dati personali o pagamenti dalla vittima.",
     "answer": "phishing",
     "bank": [
@@ -240,6 +336,10 @@
     ]
   },
   {
+    "id": 25,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il termine phishing deriva dalla parola inglese fishing, che significa ____.",
     "answer": "pescare",
     "bank": [
@@ -250,6 +350,10 @@
     ]
   },
   {
+    "id": 26,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ____ è una forma di phishing che utilizza le telefonate al posto di email o messaggi.",
     "answer": "vishing",
     "bank": [
@@ -260,6 +364,10 @@
     ]
   },
   {
+    "id": 27,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il termine vishing nasce dall'unione di voice e ____.",
     "answer": "phishing",
     "bank": [
@@ -270,6 +378,10 @@
     ]
   },
   {
+    "id": 28,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Lo ____ è una forma di phishing che utilizza SMS o messaggi di testo.",
     "answer": "smishing",
     "bank": [
@@ -280,6 +392,10 @@
     ]
   },
   {
+    "id": 29,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ____ è una forma di phishing che utilizza un codice QR per condurre la vittima verso un sito fraudolento.",
     "answer": "quishing",
     "bank": [
@@ -290,6 +406,10 @@
     ]
   },
   {
+    "id": 30,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Lo ____ è una forma di phishing personalizzata, costruita su misura per la vittima con informazioni reali.",
     "answer": "Spear Phishing",
     "bank": [
@@ -300,6 +420,10 @@
     ]
   },
   {
+    "id": 31,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, il phishing raramente sfrutta una debolezza tecnica: sfrutta invece le ____ umane.",
     "answer": "emozioni",
     "bank": [
@@ -310,6 +434,10 @@
     ]
   },
   {
+    "id": 32,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nell'esempio del vishing in aeroporto descritto nel modulo, il codice MFA era autentico, ma a essere falsa era la ____ al telefono.",
     "answer": "persona",
     "bank": [
@@ -320,6 +448,10 @@
     ]
   },
   {
+    "id": 33,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Le truffe online sono il risultato dell'utilizzo combinato di tecniche come phishing, smishing, vishing o ____.",
     "answer": "spear phishing",
     "bank": [
@@ -330,6 +462,10 @@
     ]
   },
   {
+    "id": 34,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, una delle difese più efficaci contro le truffe online consiste nel fermarsi, verificare e ____.",
     "answer": "ragionare",
     "bank": [
@@ -340,6 +476,10 @@
     ]
   },
   {
+    "id": 35,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "L'____ significa presa di controllo completa di un account da parte di un criminale.",
     "answer": "Account Takeover",
     "bank": [
@@ -350,6 +490,10 @@
     ]
   },
   {
+    "id": 36,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ____ si verifica quando informazioni riservate vengono esposte, sottratte o divulgate senza autorizzazione.",
     "answer": "Data Breach",
     "bank": [
@@ -360,6 +504,10 @@
     ]
   },
   {
+    "id": 37,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nel 2011 il servizio PlayStation Network subì un attacco che compromise circa ____ milioni di account.",
     "answer": "77",
     "bank": [
@@ -370,6 +518,10 @@
     ]
   },
   {
+    "id": 38,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nel Data Breach di PlayStation Network, tra i dati coinvolti vi erano email, credenziali, nome, cognome e ____.",
     "answer": "data di nascita",
     "bank": [
@@ -380,6 +532,10 @@
     ]
   },
   {
+    "id": 39,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, quando un account con molti follower viene compromesso, il vero obiettivo del criminale è la ____ delle persone che lo seguono.",
     "answer": "fiducia",
     "bank": [
@@ -390,6 +546,10 @@
     ]
   },
   {
+    "id": 40,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Una ____ è qualsiasi elemento capace di causare un danno.",
     "answer": "minaccia",
     "bank": [
@@ -400,6 +560,10 @@
     ]
   },
   {
+    "id": 41,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Una ____ è una debolezza che può essere sfruttata da una minaccia.",
     "answer": "vulnerabilità",
     "bank": [
@@ -410,6 +574,10 @@
     ]
   },
   {
+    "id": 42,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ____ è la possibilità che una minaccia sfrutti una vulnerabilità causando un danno.",
     "answer": "rischio",
     "bank": [
@@ -420,6 +588,10 @@
     ]
   },
   {
+    "id": 43,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, senza vulnerabilità molte minacce diventano ____.",
     "answer": "inefficaci",
     "bank": [
@@ -430,6 +602,10 @@
     ]
   },
   {
+    "id": 44,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nella metafora dell'automobile, un'auto lasciata aperta con le chiavi nel cruscotto rappresenta la ____.",
     "answer": "vulnerabilità",
     "bank": [
@@ -440,6 +616,10 @@
     ]
   },
   {
+    "id": 45,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, la cybersecurity non consiste nell'eliminare tutte le minacce, ma nel ridurre le ____.",
     "answer": "vulnerabilità",
     "bank": [
@@ -450,6 +630,10 @@
     ]
   },
   {
+    "id": 46,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "La ____ è l'insieme di tutti i punti attraverso cui un attaccante può tentare di accedere a un sistema.",
     "answer": "superficie d'attacco",
     "bank": [
@@ -460,6 +644,10 @@
     ]
   },
   {
+    "id": 47,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Tra i dispositivi che fanno parte della superficie d'attacco troviamo computer, smartphone, tablet, server e dispositivi ____.",
     "answer": "IoT",
     "bank": [
@@ -470,6 +658,10 @@
     ]
   },
   {
+    "id": 48,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Un software non ____ può contenere vulnerabilità sfruttabili da un attaccante.",
     "answer": "aggiornato",
     "bank": [
@@ -480,6 +672,10 @@
     ]
   },
   {
+    "id": 49,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, anche le ____ fanno parte della superficie d'attacco.",
     "answer": "persone",
     "bank": [
@@ -490,6 +686,10 @@
     ]
   },
   {
+    "id": 50,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ____ è la tecnica con cui un attaccante, dopo essere entrato in una rete, si sposta da un dispositivo all'altro per raggiungere obiettivi di maggior valore.",
     "answer": "Movimento Laterale",
     "bank": [
@@ -500,6 +700,10 @@
     ]
   },
   {
+    "id": 51,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "La fase in cui il criminale osserva il bersaglio e raccoglie informazioni prima di attaccare si chiama ____.",
     "answer": "Reconnaissance",
     "bank": [
@@ -510,6 +714,10 @@
     ]
   },
   {
+    "id": 52,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "La Reconnaissance comprende anche il ____, un'attività di raccolta di informazioni per pianificare l'attacco.",
     "answer": "fingerprinting",
     "bank": [
@@ -520,6 +728,10 @@
     ]
   },
   {
+    "id": 53,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nel caso reale della catena Target del 2013, l'attacco partì dall'account compromesso di un'azienda esterna incaricata della manutenzione degli impianti di ____.",
     "answer": "climatizzazione",
     "bank": [
@@ -530,6 +742,10 @@
     ]
   },
   {
+    "id": 54,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "L'attacco a Target del 2013 causò il furto dei dati di circa 40 milioni di carte di pagamento e informazioni personali di circa ____ milioni di clienti.",
     "answer": "70",
     "bank": [
@@ -540,6 +756,10 @@
     ]
   },
   {
+    "id": 55,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ____ è l'insieme dei comportamenti, delle decisioni e delle azioni delle persone che possono influenzare la sicurezza di un sistema.",
     "answer": "fattore umano",
     "bank": [
@@ -550,6 +770,10 @@
     ]
   },
   {
+    "id": 56,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, le persone possono rappresentare sia la prima linea di difesa sia il punto più ____ dell'intero sistema.",
     "answer": "vulnerabile",
     "bank": [
@@ -560,6 +784,10 @@
     ]
   },
   {
+    "id": 57,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Utilizzare password semplici o riutilizzare la stessa password su più servizi aumenta notevolmente il rischio di ____.",
     "answer": "compromissione",
     "bank": [
@@ -570,6 +798,10 @@
     ]
   },
   {
+    "id": 58,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, la tecnologia protegge i sistemi, ma sono le ____ a determinare quanto quella protezione sarà realmente efficace.",
     "answer": "persone",
     "bank": [
@@ -580,6 +812,10 @@
     ]
   },
   {
+    "id": 59,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "La cybersecurity è un ____ continuo di protezione, verifica e aggiornamento.",
     "answer": "processo",
     "bank": [
@@ -590,6 +826,10 @@
     ]
   },
   {
+    "id": 60,
+    "module": "fondamenti-cybersecurity",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, la sicurezza informatica non si installa una volta sola: si ____ nel tempo.",
     "answer": "mantiene",
     "bank": [

@@ -1,7 +1,10 @@
-{
-  "module": "account_security",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "sicurezza-account",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Password",
         "definition": "Sequenza di caratteri utilizzata per verificare l'identità di un utente e consentire l'accesso a un account"
@@ -18,8 +21,14 @@
         "term": "Credential Stuffing",
         "definition": "Il riutilizzo automatico di credenziali rubate su più siti"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "sicurezza-account",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Brute Force",
         "definition": "Attacco in cui vengono provate automaticamente moltissime password fino a trovare quella corretta"
@@ -36,8 +45,14 @@
         "term": "Risk-Based Authentication",
         "definition": "Sistema che valuta il livello di rischio di un accesso, come dispositivo, posizione e orario, e decide se bloccare o richiedere ulteriori verifiche"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "sicurezza-account",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Adaptive Authentication",
         "definition": "Sistema che adatta automaticamente il livello di controllo in base al comportamento e al contesto dell'utente"
@@ -54,8 +69,14 @@
         "term": "Chiave pubblica",
         "definition": "La chiave registrata dal servizio online e utilizzata per verificare l'identità dell'utente"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "sicurezza-account",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Riutilizzare la stessa password su più servizi",
         "definition": "Rende possibile il Credential Stuffing se uno di quei servizi subisce una violazione"
@@ -73,5 +94,5 @@
         "definition": "La rende una delle prime combinazioni che un attaccante proverà"
       }
     ]
-  ]
-}
+  }
+]

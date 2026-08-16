@@ -1,7 +1,10 @@
-{
-  "module": "data_protection",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "protezione-dati",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Backup",
         "definition": "Copia di sicurezza dei dati, creata per poterli recuperare in caso di perdita, danneggiamento o cancellazione accidentale"
@@ -18,8 +21,14 @@
         "term": "Disaster Recovery",
         "definition": "Insieme di strategie, procedure e tecnologie che permettono di ripristinare sistemi, dati e operatività dopo un evento critico"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "protezione-dati",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Cifratura dei dati",
         "definition": "Processo che trasforma le informazioni in una forma illeggibile senza una chiave di decodifica"
@@ -36,8 +45,14 @@
         "term": "Backup remoto",
         "definition": "Backup conservato nel cloud, su server esterni accessibili via Internet"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "protezione-dati",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Ransomware ad Acer (2021)",
         "definition": "Rese inaccessibili parte dei sistemi aziendali e comportò una delle richieste di riscatto più elevate mai registrate fino a quel momento"
@@ -54,8 +69,14 @@
         "term": "Malware NotPetya (2017)",
         "definition": "Causò gravi interruzioni operative in numerose organizzazioni nel mondo"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "protezione-dati",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Backup (metafora)",
         "definition": "Come il negativo di una fotografia: anche se la copia stampata si rovina, permette di crearne sempre una nuova"
@@ -73,5 +94,5 @@
         "definition": "Come il piano di evacuazione di una città: non serve quando tutto funziona, serve quando tutto crolla"
       }
     ]
-  ]
-}
+  }
+]

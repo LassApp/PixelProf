@@ -1,10 +1,10 @@
-{
+[
+  {
     "id": 1,
     "module": "fondamenti-cybersecurity",
     "type": "matching",
     "difficulty": "easy",
-  "sets": [
-    [
+    "pairs": [
       {
         "term": "Virus",
         "definition": "Malware che infetta altri file e ha bisogno di un'azione dell'utente, come aprire un file infetto, per diffondersi"
@@ -29,8 +29,14 @@
         "term": "Ransomware",
         "definition": "Malware che blocca o cifra i file di un dispositivo, chiedendo un pagamento per ripristinarli"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "fondamenti-cybersecurity",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Phishing",
         "definition": "Tecnica di inganno che punta a ottenere credenziali, dati personali o pagamenti tramite messaggi ingannevoli"
@@ -51,8 +57,14 @@
         "term": "Spear Phishing",
         "definition": "Forma di phishing personalizzata, costruita su misura con informazioni reali sulla vittima"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "fondamenti-cybersecurity",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Confidentiality",
         "definition": "Principio secondo cui le informazioni sono accessibili soltanto alle persone autorizzate"
@@ -77,8 +89,14 @@
         "term": "Rischio",
         "definition": "La possibilità che una minaccia sfrutti una vulnerabilità causando un danno"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "fondamenti-cybersecurity",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Account Takeover",
         "definition": "Presa di controllo completa di un account da parte di un criminale"
@@ -103,8 +121,14 @@
         "term": "Social Engineering",
         "definition": "Insieme delle tecniche per manipolare una persona e convincerla a compiere un'azione favorevole al criminale"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 5,
+    "module": "fondamenti-cybersecurity",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "DDoS",
         "definition": "Attacco in cui migliaia o milioni di dispositivi sovraccaricano un servizio rendendolo temporaneamente indisponibile"
@@ -126,5 +150,5 @@
         "definition": "L'insieme dei tre principi di riservatezza, integrità e disponibilità delle informazioni"
       }
     ]
-  ]
-}
+  }
+]

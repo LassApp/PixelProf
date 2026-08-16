@@ -5660,6 +5660,25 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
   #mod-area-catalog[data-area-key="reti-internet"]{ --area-rgb:124,106,255; }
   #mod-area-catalog[data-area-key="malware-minacce"]{ --area-rgb:255,77,109; }
 
+  /* Fase 7.7 — card modulo tematizzate (.generic-card, v. _buildGenericModCard
+     in app.js). Scelta esplicita di Erasmo: i tag (.tags) si rivelano SOLO
+     al focus (tastiera o tap su elementi tabindex="0"), MAI al semplice
+     hover — a differenza delle card ECDL storiche (ce-card/oe-card/wp-card),
+     che restano invariate e continuano a rivelarsi su hover. Il comportamento
+     ".active" (breve flash alla selezione, gestito da selMod in game-engine-
+     state.js) resta invariato, ereditato da @layer streaming.
+     Questo blocco vince su @layer streaming perché "areas" è dichiarato
+     dopo nell'ordine @layer in cima al file, non per specificità selettore:
+     NON aggiungere qui !important né spostare regole di .tags generiche. */
+  .mod-card.generic-card:hover .tags{
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  .mod-card.generic-card:focus .tags{
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .cs-area-section-icon{
     font-size:20px;line-height:1;flex-shrink:0;
     filter:drop-shadow(0 0 8px rgba(var(--area-rgb,0,255,200),.15));

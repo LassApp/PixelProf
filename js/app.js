@@ -639,7 +639,7 @@ function _tmdBuildAreaBlock(areaKey, areaLabel, areaIcon, list){
   const btnsHtml = list.map(c=>{
     const on = _tmdAssignedIds.has(c.id);
     return `<button type="button" class="tdc-aula-toggle-btn${on?' active':''}"
-      onclick="_tmdToggleAula('${escAttr(c.id)}',this)">${escHtml(c.icon||'🏫')} ${escHtml(c.name)}</button>`;
+      onclick="_tmdToggleAula('${escAttr(c.id)}','${escAttr(c.name)}',this)">${escHtml(c.icon||'🏫')} ${escHtml(c.name)}</button>`;
   }).join('');
   return `<div class="tdc-area-block" data-area-key="${escAttr(areaKey)}">
     <div class="tdc-area-block-header">
@@ -650,9 +650,27 @@ function _tmdBuildAreaBlock(areaKey, areaLabel, areaIcon, list){
   </div>`;
 }
 
-async function _tmdToggleAula(classroomId, btn){
+/**
+ * _tmdToggleAula — v8.9.1: chiede sempre conferma (ppConfirmBox, stesso
+ * pattern di dpRemoveTeacher) prima di assegnare O rimuovere un'aula
+ * dalla scheda docente, per evitare click accidentali che modificano
+ * l'accesso di un docente senza volerlo. Messaggio diverso per le due
+ * direzioni; se l'utente annulla, il toggle resta invariato e nessuna
+ * chiamata a window.DB viene effettuata.
+ */
+async function _tmdToggleAula(classroomId, classroomName, btn){
   if(!_tmdId) return;
   const wasOn = btn.classList.contains('active');
+  const confirmed = wasOn
+    ? await ppConfirmBox(
+        `Il docente non potrà più accedere all'aula "${classroomName}". Potrai riassegnarla in qualsiasi momento.`,
+        { title:'Rimuovere l\'aula?', icon:'🏫', yesLabel:'Sì, rimuovi' }
+      )
+    : await ppConfirmBox(
+        `Il docente potrà accedere all'aula "${classroomName}" e ai suoi dati (giocatori, classifiche, progressi).`,
+        { title:'Assegnare l\'aula?', icon:'🏫', yesLabel:'Sì, assegna' }
+      );
+  if(!confirmed) return;
   btn.disabled = true;
   const res = wasOn
     ? await window.DB.removeTeacherFromClassroom(classroomId, _tmdId)
@@ -847,25 +865,59 @@ function _renderModuleFilter(){
 }
 
 /**
- * _buildGenericModCard — Fase 7.5 Sistema Aree.
+ * _buildGenericModCard — Fase 7.5 Sistema Aree, arricchita in Fase 7.7
+ * (card modulo tematizzate, mockup approvato: fase_cybersecurity_card_
+ * redesign_mockup.html).
  * Card modulo per Aree extra-ECDL: stesso markup/comportamento click
  * (id="mc-{key}", onclick="selMod(...)") delle card ECDL disegnate a
- * mano, ma con uno stile generico riutilizzabile (.generic-card, colorato
- * via --area-rgb) invece di un'illustrazione SVG dedicata per ciascuno
- * dei 28 moduli extra-ECDL.
+ * mano, con uno stile generico riutilizzabile (.generic-card, colorato
+ * via --area-rgb).
+ *
+ * Struttura dati generica — vale per QUALSIASI Area futura (Reti,
+ * Malware, Cyberbullismo), non solo Cybersecurity:
+ *   mod.desc     (string, opz.)   sottotitolo breve sotto il titolo
+ *   mod.tags     (string[], opz.) 2-4 chip di contenuto (v. tag ECDL)
+ *   mod.cardArt  (string, opz.)   markup SVG del solo "motivo" (senza
+ *                wrapper <svg>/grid/glow, aggiunti qui) — usa SEMPRE
+ *                currentColor per stroke/fill così eredita --area-rgb
+ *                automaticamente via lo style inline sotto, qualsiasi
+ *                Area lo usi in futuro (zero lavoro di ricolorazione).
+ * Tutti e tre i campi sono opzionali e retrocompatibili: un modulo
+ * senza questi campi (i 28 extra-ECDL non ancora tematizzati) rende
+ * esattamente come prima (icona + titolo soltanto).
+ *
+ * IMPORTANTE — prima di compilare tags/cardArt per un nuovo modulo,
+ * chiedere SEMPRE a Erasmo l'elenco ufficiale degli argomenti trattati
+ * (mai dedurli dal JSON quiz): vedi cronologia Fase 7.7.
  */
 function _buildGenericModCard(mod, areaInfo){
   const icon      = mod.icon || areaInfo?.icon || '🗂️';
   const areaLabel = areaInfo ? escHtml(_csAreaShortLabel(areaInfo.label)) : '';
+  const descHtml  = mod.desc ? `<p>${escHtml(mod.desc)}</p>` : '';
+  const tagsHtml  = (Array.isArray(mod.tags) && mod.tags.length)
+    ? `<div class="tags">${mod.tags.map(t => `<span class="tag">${escHtml(t)}</span>`).join('')}</div>`
+    : '';
+  const artHtml   = mod.cardArt ? `
+      <svg class="bg" viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice"
+        style="color:rgb(var(--area-rgb,30,144,255))" xmlns="http://www.w3.org/2000/svg">
+        <defs><pattern id="grid-${escAttr(mod.key)}" width="22" height="22" patternUnits="userSpaceOnUse">
+          <path d="M22 0L0 0 0 22" fill="none" stroke="currentColor" stroke-width=".4" opacity=".3"/>
+        </pattern></defs>
+        <rect width="300" height="180" fill="url(#grid-${escAttr(mod.key)})"/>
+        ${mod.cardArt}
+        <ellipse cx="210" cy="88" rx="62" ry="42" fill="currentColor" fill-opacity=".045"/>
+      </svg>` : '';
   return `
-    <div class="mod-card generic-card" id="mc-${escAttr(mod.key)}" role="button" tabindex="0"
+    <div class="mod-card generic-card${mod.cardArt ? ' has-art' : ''}" id="mc-${escAttr(mod.key)}" role="button" tabindex="0"
       aria-label="Seleziona modulo ${escAttr(mod.label)}"
       onclick="selMod('${escAttr(mod.key)}')"
       onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selMod('${escAttr(mod.key)}');}">
-      <span class="mc-badge">${areaLabel}</span>
+      <span class="mc-badge">${areaLabel}</span>${artHtml}
       <div class="mc-content">
         <span class="mc-icon">${icon}</span>
         <h3>${escHtml(mod.label)}</h3>
+        ${descHtml}
+        ${tagsHtml}
       </div>
     </div>`;
 }

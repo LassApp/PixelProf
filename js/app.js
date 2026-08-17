@@ -1188,7 +1188,7 @@ function _cwInitModStep(){
     grid.innerHTML = modules.map(m=>{
       const ready  = m.contentReady===true;
       const active = _cw.mods.includes(m.key);
-      const icon   = _CW_MOD_ICONS[m.key] || (area?area.icon:'📘');
+      const icon   = m.icon || _CW_MOD_ICONS[m.key] || (area?area.icon:'📘');
       const cls    = 'cw-mod-btn'+(active?' active':'')+(ready?'':' not-ready');
       const attrs  = ready ? `data-mod="${escAttr(m.key)}" onclick="cwToggleMod(this)"` : `disabled aria-disabled="true"`;
       return `<button type="button" class="${cls}" ${attrs}>

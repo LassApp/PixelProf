@@ -381,14 +381,244 @@ const AREAS = [
     icon: '🌐',
     description: 'Comprendere come funzionano Internet, le reti e le tecnologie che permettono ai dispositivi di comunicare.',
     modules: [
-      { key: 'fondamenta-reti',           label: 'Le fondamenta delle reti',             contentReady: false },
-      { key: 'tcp-ip',                    label: 'Il protocollo TCP/IP',                 contentReady: false },
-      { key: 'dns',                       label: 'DNS: la rubrica di Internet',          contentReady: false },
-      { key: 'router-switch-dispositivi', label: 'Router, Switch e dispositivi di rete', contentReady: false },
-      { key: 'wifi-reti-wireless',        label: 'Wi-Fi e reti wireless',                contentReady: false },
-      { key: 'cloud-networking',          label: 'Cloud Networking',                     contentReady: false },
-      { key: 'vpn',                       label: 'VPN e comunicazioni sicure',           contentReady: false },
-      { key: 'troubleshooting-reti',      label: 'Troubleshooting delle reti',           contentReady: false },
+      {
+        key: 'fondamenta-reti', label: 'Le fondamenta delle reti', icon: '🕸️', contentReady: true,
+        desc: 'Reti, Internet e come viaggiano i dati',
+        tags: ['Tipi di rete', 'Come viaggiano i dati', 'Client e Server', 'Indirizzi IP'],
+        dataPaths: {
+          quiz: 'data/Reti_e_Internet/modulo1/quiz_fondamenta-reti.json',
+          speed: 'data/Reti_e_Internet/modulo1/speedquiz_fondamenta-reti.json',
+          abbina: 'data/Reti_e_Internet/modulo1/abbina_fondamenta-reti.json',
+          completaFrase: 'data/Reti_e_Internet/modulo1/completa_la_frase_fondamenta-reti.json',
+          veroFalso: 'data/Reti_e_Internet/modulo1/vero_o_falso_fondamenta-reti.json',
+        },
+      cardArt: `
+<!-- server rack -->
+<rect x="196" y="46" width="60" height="80" rx="4" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="204" y1="60" x2="248" y2="60" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<line x1="204" y1="76" x2="248" y2="76" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<line x1="204" y1="92" x2="248" y2="92" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<line x1="204" y1="108" x2="248" y2="108" stroke="currentColor" stroke-width=".8" opacity=".3"/>
+<circle cx="212" cy="60" r="1.6" fill="currentColor" opacity=".6"/>
+<circle cx="212" cy="76" r="1.6" fill="currentColor" opacity=".55"/>
+<!-- client nodes (star topology) -->
+<circle cx="60" cy="50" r="9" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
+<circle cx="40" cy="94" r="9" fill="none" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<circle cx="66" cy="136" r="9" fill="none" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<line x1="68" y1="54" x2="196" y2="66" stroke="currentColor" stroke-width=".7" opacity=".3" stroke-dasharray="2,3"/>
+<line x1="49" y1="94" x2="196" y2="86" stroke="currentColor" stroke-width=".7" opacity=".3" stroke-dasharray="2,3"/>
+<line x1="74" y1="132" x2="196" y2="106" stroke="currentColor" stroke-width=".7" opacity=".3" stroke-dasharray="2,3"/>
+<text x="226" y="150" text-anchor="middle" font-family="monospace" font-size="8" fill="currentColor" opacity=".55" font-weight="bold">192.168.x.x</text>
+      `,
+      },
+      {
+        key: 'tcp-ip', label: 'Il protocollo TCP/IP', icon: '🔀', contentReady: true,
+        desc: 'TCP, UDP e il viaggio dei pacchetti dati',
+        tags: ['TCP e UDP', 'Porte di rete', 'HTTP e HTTPS', 'Dal browser al server'],
+        dataPaths: {
+          quiz: 'data/Reti_e_Internet/modulo2/quiz_tcp-ip.json',
+          speed: 'data/Reti_e_Internet/modulo2/speedquiz_tcp-ip.json',
+          abbina: 'data/Reti_e_Internet/modulo2/abbina_tcp-ip.json',
+          completaFrase: 'data/Reti_e_Internet/modulo2/completa_la_frase_tcp-ip.json',
+          veroFalso: 'data/Reti_e_Internet/modulo2/vero_o_falso_tcp-ip.json',
+        },
+      cardArt: `
+<!-- protocol stack -->
+<rect x="176" y="30" width="86" height="18" rx="3" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1" opacity=".5"/>
+<rect x="176" y="52" width="86" height="18" rx="3" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<rect x="176" y="74" width="86" height="18" rx="3" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<rect x="176" y="96" width="86" height="18" rx="3" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1" opacity=".35"/>
+<text x="219" y="43" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".7">APP</text>
+<text x="219" y="65" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".65">TCP/UDP</text>
+<text x="219" y="87" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".6">IP</text>
+<text x="219" y="109" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".55">LINK</text>
+<!-- handshake arrows -->
+<line x1="40" y1="60" x2="140" y2="60" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<polygon points="140,60 132,56 132,64" fill="currentColor" opacity=".4"/>
+<text x="90" y="54" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".5">SYN</text>
+<line x1="140" y1="80" x2="40" y2="80" stroke="currentColor" stroke-width="1" opacity=".35"/>
+<polygon points="40,80 48,76 48,84" fill="currentColor" opacity=".35"/>
+<text x="90" y="94" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".45">ACK</text>
+<text x="90" y="140" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">TCP/IP</text>
+      `,
+      },
+      {
+        key: 'dns', label: 'DNS: la rubrica di Internet', icon: '📖', contentReady: true,
+        desc: 'La rubrica che traduce i nomi in indirizzi IP',
+        tags: ['Domini e IP', 'Risoluzione DNS', 'Cache DNS', 'Sicurezza DNS'],
+        dataPaths: {
+          quiz: 'data/Reti_e_Internet/modulo3/quiz_dns.json',
+          speed: 'data/Reti_e_Internet/modulo3/speedquiz_dns.json',
+          abbina: 'data/Reti_e_Internet/modulo3/abbina_dns.json',
+          completaFrase: 'data/Reti_e_Internet/modulo3/completa_la_frase_dns.json',
+          veroFalso: 'data/Reti_e_Internet/modulo3/vero_o_falso_dns.json',
+        },
+      cardArt: `
+<!-- address book -->
+<rect x="34" y="40" width="60" height="80" rx="5" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="44" y1="56" x2="84" y2="56" stroke="currentColor" stroke-width=".7" opacity=".4"/>
+<line x1="44" y1="70" x2="84" y2="70" stroke="currentColor" stroke-width=".7" opacity=".35"/>
+<line x1="44" y1="84" x2="84" y2="84" stroke="currentColor" stroke-width=".7" opacity=".35"/>
+<line x1="44" y1="98" x2="70" y2="98" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<circle cx="34" cy="56" r="2" fill="currentColor" opacity=".5"/>
+<!-- lookup arrow -->
+<line x1="100" y1="80" x2="176" y2="80" stroke="currentColor" stroke-width="1.1" opacity=".45"/>
+<polygon points="176,80 168,76 168,84" fill="currentColor" opacity=".45"/>
+<text x="138" y="72" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".5">query</text>
+<!-- domain to ip -->
+<rect x="184" y="60" width="86" height="40" rx="6" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1" opacity=".5"/>
+<text x="227" y="78" text-anchor="middle" font-family="monospace" font-size="8" fill="currentColor" opacity=".65">sito.it</text>
+<line x1="200" y1="84" x2="254" y2="84" stroke="currentColor" stroke-width=".6" opacity=".3" stroke-dasharray="2,2"/>
+<text x="227" y="94" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".55">93.184.x.x</text>
+<text x="227" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">DNS</text>
+      `,
+      },
+      {
+        key: 'router-switch-dispositivi', label: 'Router, Switch e dispositivi di rete', icon: '📡', contentReady: true,
+        desc: 'Router, switch e dispositivi che collegano la rete',
+        tags: ['Router e Switch', 'NAT', 'DHCP', 'La rete di casa'],
+        dataPaths: {
+          quiz: 'data/Reti_e_Internet/modulo4/quiz_router-switch-dispositivi.json',
+          speed: 'data/Reti_e_Internet/modulo4/speedquiz_router-switch-dispositivi.json',
+          abbina: 'data/Reti_e_Internet/modulo4/abbina_router-switch-dispositivi.json',
+          completaFrase: 'data/Reti_e_Internet/modulo4/completa_la_frase_router-switch-dispositivi.json',
+          veroFalso: 'data/Reti_e_Internet/modulo4/vero_o_falso_router-switch-dispositivi.json',
+        },
+      cardArt: `
+<!-- router -->
+<rect x="176" y="70" width="90" height="34" rx="6" fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="188" cy="87" r="2" fill="currentColor" opacity=".55"/>
+<circle cx="198" cy="87" r="2" fill="currentColor" opacity=".5"/>
+<circle cx="208" cy="87" r="2" fill="currentColor" opacity=".45"/>
+<!-- antenna waves -->
+<line x1="230" y1="70" x2="230" y2="50" stroke="currentColor" stroke-width="1" opacity=".5"/>
+<path d="M216,50 a18,18 0 0 1 28,0" fill="none" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<path d="M208,42 a30,30 0 0 1 44,0" fill="none" stroke="currentColor" stroke-width=".7" opacity=".28"/>
+<!-- switch ports row -->
+<rect x="186" y="112" width="70" height="14" rx="2" fill="none" stroke="currentColor" stroke-width=".8" opacity=".45"/>
+<line x1="192" y1="112" x2="192" y2="126" stroke="currentColor" stroke-width=".6" opacity=".3"/>
+<line x1="202" y1="112" x2="202" y2="126" stroke="currentColor" stroke-width=".6" opacity=".3"/>
+<line x1="212" y1="112" x2="212" y2="126" stroke="currentColor" stroke-width=".6" opacity=".3"/>
+<line x1="222" y1="112" x2="222" y2="126" stroke="currentColor" stroke-width=".6" opacity=".3"/>
+<!-- devices left -->
+<rect x="34" y="60" width="26" height="18" rx="2" fill="none" stroke="currentColor" stroke-width=".9" opacity=".4"/>
+<rect x="34" y="92" width="26" height="18" rx="2" fill="none" stroke="currentColor" stroke-width=".9" opacity=".35"/>
+<line x1="60" y1="69" x2="176" y2="82" stroke="currentColor" stroke-width=".6" opacity=".28" stroke-dasharray="2,3"/>
+<line x1="60" y1="101" x2="176" y2="92" stroke="currentColor" stroke-width=".6" opacity=".28" stroke-dasharray="2,3"/>
+<text x="221" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">LAN</text>
+      `,
+      },
+      {
+        key: 'wifi-reti-wireless', label: 'Wi-Fi e reti wireless', icon: '📶', contentReady: true,
+        desc: 'Wi-Fi, bande di frequenza e sicurezza wireless',
+        tags: ['Bande di frequenza', 'SSID e accesso', 'Sicurezza Wi-Fi', 'Segnale e interferenze'],
+        dataPaths: {
+          quiz: 'data/Reti_e_Internet/modulo5/quiz_wifi-reti-wireless.json',
+          speed: 'data/Reti_e_Internet/modulo5/speedquiz_wifi-reti-wireless.json',
+          abbina: 'data/Reti_e_Internet/modulo5/abbina_wifi-reti-wireless.json',
+          completaFrase: 'data/Reti_e_Internet/modulo5/completa_la_frase_wifi-reti-wireless.json',
+          veroFalso: 'data/Reti_e_Internet/modulo5/vero_o_falso_wifi-reti-wireless.json',
+        },
+      cardArt: `
+<!-- wifi arcs large -->
+<circle cx="220" cy="118" r="2.4" fill="currentColor" opacity=".6"/>
+<path d="M204,118 a16,16 0 0 1 32,0" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<path d="M192,118 a28,28 0 0 1 56,0" fill="none" stroke="currentColor" stroke-width="1" opacity=".38"/>
+<path d="M180,118 a40,40 0 0 1 80,0" fill="none" stroke="currentColor" stroke-width=".8" opacity=".26"/>
+<!-- device -->
+<rect x="204" y="122" width="32" height="20" rx="3" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1" opacity=".5"/>
+<!-- ssid chip -->
+<rect x="34" y="48" width="80" height="24" rx="12" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<text x="74" y="64" text-anchor="middle" font-family="monospace" font-size="8" fill="currentColor" opacity=".6">CasaWiFi</text>
+<!-- lock -->
+<rect x="52" y="90" width="24" height="18" rx="3" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
+<path d="M58,90 v-6 a6,6 0 0 1 12,0 v6" fill="none" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<text x="220" y="160" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">WPA3</text>
+      `,
+      },
+      {
+        key: 'cloud-networking', label: 'Cloud Networking', icon: '☁️', contentReady: true,
+        desc: 'Data center, CDN e scalabilità nel cloud',
+        tags: ['Data Center', 'CDN', 'Load Balancing', 'Scalabilità'],
+        dataPaths: {
+          quiz: 'data/Reti_e_Internet/modulo6/quiz_cloud-networking.json',
+          speed: 'data/Reti_e_Internet/modulo6/speedquiz_cloud-networking.json',
+          abbina: 'data/Reti_e_Internet/modulo6/abbina_cloud-networking.json',
+          completaFrase: 'data/Reti_e_Internet/modulo6/completa_la_frase_cloud-networking.json',
+          veroFalso: 'data/Reti_e_Internet/modulo6/vero_o_falso_cloud-networking.json',
+        },
+      cardArt: `
+<!-- cloud -->
+<path d="M170,70 a18,18 0 0 1 34,-10 a14,14 0 0 1 26,10 a14,14 0 0 1 -4,28 h-52 a13,13 0 0 1 -4,-28 z"
+      fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<!-- data center racks below -->
+<rect x="184" y="100" width="16" height="26" rx="2" fill="none" stroke="currentColor" stroke-width=".8" opacity=".45"/>
+<rect x="204" y="100" width="16" height="26" rx="2" fill="none" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<rect x="224" y="100" width="16" height="26" rx="2" fill="none" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<circle cx="190" cy="107" r="1.4" fill="currentColor" opacity=".55"/>
+<circle cx="210" cy="107" r="1.4" fill="currentColor" opacity=".5"/>
+<circle cx="230" cy="107" r="1.4" fill="currentColor" opacity=".5"/>
+<!-- CDN edge nodes -->
+<circle cx="48" cy="60" r="7" fill="none" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<circle cx="40" cy="102" r="7" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<circle cx="66" cy="132" r="7" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<line x1="54" y1="64" x2="170" y2="76" stroke="currentColor" stroke-width=".6" opacity=".28" stroke-dasharray="2,3"/>
+<line x1="47" y1="102" x2="170" y2="90" stroke="currentColor" stroke-width=".6" opacity=".28" stroke-dasharray="2,3"/>
+<line x1="72" y1="128" x2="184" y2="104" stroke="currentColor" stroke-width=".6" opacity=".28" stroke-dasharray="2,3"/>
+<text x="210" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">CLOUD</text>
+      `,
+      },
+      {
+        key: 'vpn', label: 'VPN e comunicazioni sicure', icon: '🔐', contentReady: true,
+        desc: 'Tunnel sicuri per proteggere le comunicazioni',
+        tags: ['Tunnel VPN', 'Tipi di VPN', 'VPN e privacy', 'Limiti delle VPN'],
+        dataPaths: {
+          quiz: 'data/Reti_e_Internet/modulo7/quiz_vpn.json',
+          speed: 'data/Reti_e_Internet/modulo7/speedquiz_vpn.json',
+          abbina: 'data/Reti_e_Internet/modulo7/abbina_vpn.json',
+          completaFrase: 'data/Reti_e_Internet/modulo7/completa_la_frase_vpn.json',
+          veroFalso: 'data/Reti_e_Internet/modulo7/vero_o_falso_vpn.json',
+        },
+      cardArt: `
+<!-- tunnel -->
+<line x1="60" y1="70" x2="200" y2="50" stroke="currentColor" stroke-width="1" opacity=".4" stroke-dasharray="4,3"/>
+<line x1="60" y1="110" x2="200" y2="110" stroke="currentColor" stroke-width="1" opacity=".4" stroke-dasharray="4,3"/>
+<!-- endpoints -->
+<circle cx="50" cy="90" r="12" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="230" cy="80" r="12" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<!-- lock in middle of tunnel -->
+<rect x="126" y="70" width="22" height="17" rx="3" fill="#0c1420" stroke="currentColor" stroke-width="1" opacity=".6"/>
+<path d="M130,70 v-6 a7,7 0 0 1 14,0 v6" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/>
+<text x="140" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">VPN</text>
+      `,
+      },
+      {
+        key: 'troubleshooting-reti', label: 'Troubleshooting delle reti', icon: '🛠️', contentReady: true,
+        desc: 'Diagnosticare e risolvere i problemi di rete',
+        tags: ['Ping', 'Traceroute', 'Ipconfig e Ifconfig', 'Metodo di diagnosi'],
+        dataPaths: {
+          quiz: 'data/Reti_e_Internet/modulo8/quiz_troubleshooting-reti.json',
+          speed: 'data/Reti_e_Internet/modulo8/speedquiz_troubleshooting-reti.json',
+          abbina: 'data/Reti_e_Internet/modulo8/abbina_troubleshooting-reti.json',
+          completaFrase: 'data/Reti_e_Internet/modulo8/completa_la_frase_troubleshooting-reti.json',
+          veroFalso: 'data/Reti_e_Internet/modulo8/vero_o_falso_troubleshooting-reti.json',
+        },
+      cardArt: `
+<!-- terminal window -->
+<rect x="160" y="34" width="106" height="76" rx="6" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="170" cy="42" r="1.6" fill="currentColor" opacity=".5"/>
+<circle cx="176" cy="42" r="1.6" fill="currentColor" opacity=".45"/>
+<line x1="168" y1="58" x2="230" y2="58" stroke="currentColor" stroke-width=".7" opacity=".4"/>
+<line x1="168" y1="68" x2="248" y2="68" stroke="currentColor" stroke-width=".7" opacity=".35"/>
+<line x1="168" y1="78" x2="220" y2="78" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<text x="168" y="98" font-family="monospace" font-size="7" fill="currentColor" opacity=".55">64 bytes: time=12ms</text>
+<!-- wrench -->
+<path d="M46,60 a12,12 0 1 1 -8,20 l-18,18 -8,-8 18,-18 a12,12 0 0 1 16,-12 z"
+      fill="none" stroke="currentColor" stroke-width="1.1" opacity=".45"/>
+<text x="213" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">PING</text>
+      `,
+      },
+
     ],
   },
   {
@@ -397,12 +627,41 @@ const AREAS = [
     icon: '🦠',
     description: 'Conoscere le principali minacce informatiche, comprenderne il funzionamento e imparare a prevenirle.',
     modules: [
-      { key: 'virus',      label: 'Virus',      contentReady: false },
-      { key: 'worm',       label: 'Worm',       contentReady: false },
-      { key: 'trojan',     label: 'Trojan',     contentReady: false },
-      { key: 'spyware',    label: 'Spyware',    contentReady: false },
-      { key: 'keylogger',  label: 'Keylogger',  contentReady: false },
-      { key: 'ransomware', label: 'Ransomware', contentReady: false },
+      {
+        key: 'malware-e-minacce-informatiche', label: 'Malware e Minacce Informatiche', icon: '🦠', contentReady: true,
+        desc: 'Virus, worm, trojan, spyware e keylogger',
+        tags: ['Virus e Worm', 'Trojan', 'Spyware', 'Keylogger'],
+        dataPaths: {
+          quiz: 'data/Malware_e_Minacce_Informatiche/modulo1/quiz_malware-e-minacce-informatiche.json',
+          speed: 'data/Malware_e_Minacce_Informatiche/modulo1/speedquiz_malware-e-minacce-informatiche.json',
+          abbina: 'data/Malware_e_Minacce_Informatiche/modulo1/abbina_malware-e-minacce-informatiche.json',
+          completaFrase: 'data/Malware_e_Minacce_Informatiche/modulo1/completa_la_frase_malware-e-minacce-informatiche.json',
+          veroFalso: 'data/Malware_e_Minacce_Informatiche/modulo1/vero_o_falso_malware-e-minacce-informatiche.json',
+        },
+      cardArt: `
+<!-- virus/bug body -->
+<ellipse cx="216" cy="80" rx="26" ry="20" fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="196" y1="64" x2="184" y2="52" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<line x1="236" y1="64" x2="248" y2="52" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<line x1="192" y1="80" x2="176" y2="80" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<line x1="240" y1="80" x2="256" y2="80" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<line x1="196" y1="96" x2="184" y2="108" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<line x1="236" y1="96" x2="248" y2="108" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<circle cx="208" cy="76" r="2" fill="currentColor" opacity=".5"/>
+<circle cx="224" cy="76" r="2" fill="currentColor" opacity=".5"/>
+<!-- spreading dots (infection) -->
+<circle cx="60" cy="54" r="5" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<circle cx="42" cy="90" r="4" fill="none" stroke="currentColor" stroke-width=".9" opacity=".35"/>
+<circle cx="72" cy="120" r="4.5" fill="none" stroke="currentColor" stroke-width=".9" opacity=".35"/>
+<line x1="64" y1="58" x2="192" y2="72" stroke="currentColor" stroke-width=".6" opacity=".25" stroke-dasharray="2,3"/>
+<line x1="46" y1="90" x2="192" y2="82" stroke="currentColor" stroke-width=".6" opacity=".25" stroke-dasharray="2,3"/>
+<line x1="76" y1="118" x2="196" y2="92" stroke="currentColor" stroke-width=".6" opacity=".25" stroke-dasharray="2,3"/>
+<!-- shield hint (mitigation) -->
+<path d="M50,110 L64,116 L64,128 Q64,138 50,144 Q36,138 36,128 L36,116 Z" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+<text x="216" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">MALWARE</text>
+      `,
+      },
+
     ],
   },
 ];

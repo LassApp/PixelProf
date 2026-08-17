@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup — Card modulo tematizzate — Fase Cybersecurity Card Redesign</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#00ffc8;
+  --surface-0:#080c18;
+  --text-primary:#e2e8f0;
+  --radius-xl:20px;
+  --tile-h:220px;
+  --ease-cinema: cubic-bezier(.25,.46,.45,.94);
+  --ease-soft:   cubic-bezier(.4,0,.2,1);
+  --t-hover:  .22s;
+  --t-focus:  .32s;
+  --area-rgb: 30,144,255; /* Cybersecurity */
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Space Grotesk',system-ui,sans-serif;
+  background:var(--surface-0);color:var(--text-primary);
+  padding:0 0 80px;
+}
+
+/* ── Pannello annotazioni (fuori dal frame simulato) ─────────────── */
+.annot{
+  max-width:1040px;margin:0 auto;padding:28px 24px 20px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+  background:#0d1220;
+}
+.annot h1{font-size:20px;margin-bottom:6px;}
+.annot .sub{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:18px;}
+.annot .diag{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;
+}
+@media(max-width:720px){.annot .diag{grid-template-columns:1fr}}
+.diag-box{
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;padding:14px 16px;
+}
+.diag-box h3{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.4);margin-bottom:8px;font-family:'Share Tech Mono',monospace;}
+.diag-box p, .diag-box li{font-size:13px;line-height:1.6;color:rgba(255,255,255,.72);}
+.diag-box ul{padding-left:18px;margin-top:4px;}
+.diag-box.before h3{color:#ff8a8a}
+.diag-box.after h3{color:#5eb8ff}
+.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:rgba(255,255,255,.5);}
+.legend b{color:#5eb8ff}
+
+.section-title{
+  max-width:1040px;margin:34px auto 14px;padding:0 24px;
+  font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:2px;
+  text-transform:uppercase;color:rgba(255,255,255,.4);
+  display:flex;align-items:center;gap:10px;
+}
+.section-title::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.08);}
+.section-title.dopo{color:#5eb8ff}
+
+/* ── Frame simulato (app) ─────────────────────────────────────────── */
+.frame{max-width:1040px;margin:0 auto;padding:0 24px;}
+.mod-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:14px;
+}
+.mod-grid.prima{grid-template-columns:repeat(2,1fr);max-width:520px;}
+@media(max-width:900px){.mod-grid{grid-template-columns:repeat(2,1fr);}}
+
+/* ── MOD-CARD — replica esatta layer "streaming" (produzione) ─────── */
+.mod-card{
+  position:relative;border-radius:14px;min-height:var(--tile-h);overflow:hidden;cursor:pointer;
+  transition:transform var(--t-hover) var(--ease-cinema),box-shadow var(--t-hover) var(--ease-cinema),
+             filter var(--t-hover) var(--ease-cinema),border-color var(--t-hover) var(--ease-soft);
+  border:1px solid rgba(255,255,255,.07);
+  box-shadow:0 2px 8px rgba(0,0,0,.4),0 0 0 1px rgba(255,255,255,.03) inset;
+  display:flex;flex-direction:column;justify-content:flex-end;padding:0;
+}
+.mod-card::after{
+  content:'';position:absolute;inset:0;border-radius:14px;
+  background:linear-gradient(180deg,transparent 25%,rgba(4,6,15,.3) 50%,rgba(4,6,15,.82) 75%,rgba(4,6,15,.95) 100%);
+  opacity:1;transition:opacity var(--t-hover) var(--ease-soft);z-index:2;
+}
+.mod-card::before{
+  content:'';position:absolute;bottom:0;left:0;right:0;z-index:4;height:2px;
+  transform:scaleX(0);transition:transform var(--t-focus) var(--ease-soft);
+}
+.mod-card:hover{transform:translateY(-6px) scale(1.04);z-index:10;}
+.mod-card:hover::before{transform:scaleX(1);}
+.mod-card svg.bg{position:absolute;inset:0;width:100%;height:100%;}
+.mod-card .mc-content{position:relative;z-index:3;padding:0 1.1rem 1.1rem;}
+.mod-card .mc-badge{
+  position:absolute;top:14px;right:14px;z-index:3;
+  font-family:'Share Tech Mono',monospace;font-size:7px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:3px 9px;border-radius:4px;backdrop-filter:blur(8px);
+}
+.mod-card .mc-icon{
+  font-size:36px;margin-bottom:8px;display:block;
+  filter:drop-shadow(0 0 10px rgba(255,255,255,.15));
+  transition:transform var(--t-focus) var(--ease-soft),filter var(--t-hover) var(--ease-soft);
+}
+.mod-card:hover .mc-icon{transform:scale(1.18) translateY(-3px);filter:drop-shadow(0 0 18px rgba(255,255,255,.4));}
+.mod-card h3{font-size:16px;font-weight:700;letter-spacing:-.3px;margin-bottom:4px;line-height:1.2;color:#fff;}
+.mod-card p{font-size:11px;color:rgba(255,255,255,.45);line-height:1.45;}
+.tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:8px;opacity:1;transform:none;}
+/* NB: nel mockup i tag restano visibili senza hover per revisione — in
+   produzione seguono .mod-card:hover .tags {opacity:1} come le card ECDL. */
+.tag{font-size:9px;padding:2px 7px;border-radius:20px;font-weight:600;letter-spacing:.2px;backdrop-filter:blur(4px);}
+
+/* ── generic-card — replica esatta (pixelprof.css riga 340) ────────── */
+.mod-card.generic-card{
+  background:linear-gradient(145deg,#0c1420 0%,#131f36 55%,#0c1420 100%);
+  border-color:rgba(var(--area-rgb),.28);
+  box-shadow:0 4px 24px rgba(var(--area-rgb),.08);
+}
+.mod-card.generic-card::before{background:linear-gradient(90deg,transparent,rgb(var(--area-rgb)),transparent);}
+.mod-card.generic-card:hover{
+  border-color:rgba(var(--area-rgb),.6);
+  box-shadow:0 12px 40px rgba(var(--area-rgb),.22),0 0 0 1px rgba(var(--area-rgb),.16),inset 0 1px 0 rgba(var(--area-rgb),.12);
+}
+.mod-card.generic-card:hover h3{color:rgb(var(--area-rgb));}
+.mod-card.generic-card::after{background:radial-gradient(ellipse at 30% 110%,rgba(var(--area-rgb),.18),transparent 60%),
+  linear-gradient(180deg,transparent 25%,rgba(4,6,15,.3) 50%,rgba(4,6,15,.82) 75%,rgba(4,6,15,.95) 100%);}
+.mod-card.generic-card .mc-badge{
+  background:rgba(var(--area-rgb),.16);color:rgb(var(--area-rgb));border:1px solid rgba(var(--area-rgb),.35);
+}
+.mod-card.generic-card .mc-icon{filter:drop-shadow(0 0 8px rgba(var(--area-rgb),.4));}
+.mod-card.generic-card .tag{background:rgba(var(--area-rgb),.1);border:1px solid rgba(var(--area-rgb),.22);color:rgba(150,200,255,.85);}
+.mod-card.generic-card:hover .tag{background:rgba(var(--area-rgb),.16);border-color:rgba(var(--area-rgb),.4);}
+
+.caption{
+  max-width:1040px;margin:8px auto 0;padding:0 24px;
+  font-size:11px;color:rgba(255,255,255,.35);font-style:italic;
+}
+</style>
+</head>
+<body>
+
+  <div class="annot">
+    <h1>🎨 Mockup — Card modulo tematizzate (Area Cybersecurity)</h1>
+    <div class="sub">Confronto PRIMA/DOPO · nessuna modifica al codice reale · in attesa di approvazione</div>
+
+    <div class="diag">
+      <div class="diag-box before">
+        <h3>⚠ Diagnosi — perché sono "scarne"</h3>
+        <p><code>_buildGenericModCard()</code> in <code>js/app.js</code> genera <b>solo</b> icona + titolo. A differenza delle card ECDL (disegnate a mano per CE/OE/WP), le card delle Aree extra-ECDL non hanno mai avuto illustrazione SVG, descrizione né tag — il div <code>.tags</code> e il tag <code>&lt;p&gt;</code> non vengono nemmeno prodotti nel markup.</p>
+      </div>
+      <div class="diag-box after">
+        <h3>✓ Proposta</h3>
+        <ul>
+          <li>Aggiungere <code>desc</code> + <code>tags[]</code> per modulo in <code>areas-config.js</code></li>
+          <li>Illustrazione SVG unica per modulo (stessa grammatica grafica di CE/OE/WP: grid + line-art tecnico + glow)</li>
+          <li>Colore sempre derivato da <code>--area-rgb</code> (blu Cybersecurity) — coerenza con Fase 7.1, zero rottura del sistema colore per Area</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="legend">
+      <span><b>Riuso pattern:</b> stesso "motivo grafico" applicabile a Reti/Malware/Cyberbullismo quando arrivano i contenuti</span>
+      <span><b>Costo:</b> 1 SVG + 1 desc + 4 tag per modulo (non zero-cost come il colore, ma sistematico)</span>
+    </div>
+  </div>
+
+  <div class="section-title">Prima — stato attuale in produzione (v8.8.0)</div>
+  <div class="frame">
+    <div class="mod-grid prima">
+      
+    <div class="mod-card generic-card" id="mc-prima-fondamenti-cybersecurity" role="button" tabindex="0">
+      <span class="mc-badge">CYBERSECURITY</span>
+      <div class="mc-content">
+        <span class="mc-icon">🛡️</span>
+        <h3>Fondamenti di Cybersecurity</h3>
+      </div>
+    </div>
+    <div class="mod-card generic-card" id="mc-prima-sicurezza-account" role="button" tabindex="0">
+      <span class="mc-badge">CYBERSECURITY</span>
+      <div class="mc-content">
+        <span class="mc-icon">🔑</span>
+        <h3>Sicurezza degli Account</h3>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="caption">↑ Solo icona + titolo. Nessuna illustrazione, nessuna descrizione, nessun tag.</div>
+
+  <div class="section-title dopo">Dopo — proposta, 8 moduli Cybersecurity</div>
+  <div class="frame">
+    <div class="mod-grid">
+      
+    <div class="mod-card generic-card themed-card" id="mc-fondamenti-cybersecurity" role="button" tabindex="0">
+      <span class="mc-badge">CYBERSECURITY</span>
+      <svg class="bg" viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="grid-fc" width="22" height="22" patternUnits="userSpaceOnUse">
+    <path d="M22 0L0 0 0 22" fill="none" stroke="#1e90ff" stroke-width=".4" opacity=".3"/>
+  </pattern>
+</defs>
+<rect width="300" height="180" fill="url(#grid-fc)"/>
+
+<!-- shield -->
+<path d="M220,28 L266,44 L266,96 Q266,138 220,158 Q174,138 174,96 L174,44 Z"
+      fill="rgba(30,144,255,.05)" stroke="#1e90ff" stroke-width="1.2" opacity=".5"/>
+<!-- CIA triangle nodes -->
+<line x1="220" y1="62" x2="197" y2="108" stroke="#00cfff" stroke-width=".8" opacity=".45"/>
+<line x1="220" y1="62" x2="243" y2="108" stroke="#00cfff" stroke-width=".8" opacity=".45"/>
+<line x1="197" y1="108" x2="243" y2="108" stroke="#00cfff" stroke-width=".8" opacity=".45"/>
+<circle cx="220" cy="62" r="7" fill="rgba(0,207,255,.08)" stroke="#00cfff" stroke-width="1" opacity=".65"/>
+<circle cx="197" cy="108" r="7" fill="rgba(0,207,255,.08)" stroke="#00cfff" stroke-width="1" opacity=".6"/>
+<circle cx="243" cy="108" r="7" fill="rgba(0,207,255,.08)" stroke="#00cfff" stroke-width="1" opacity=".6"/>
+<text x="220" y="66" text-anchor="middle" font-family="monospace" font-size="8" fill="#00cfff" opacity=".8">C</text>
+<text x="197" y="112" text-anchor="middle" font-family="monospace" font-size="8" fill="#00cfff" opacity=".75">I</text>
+<text x="243" y="112" text-anchor="middle" font-family="monospace" font-size="8" fill="#00cfff" opacity=".75">A</text>
+<!-- padlock -->
+<rect x="28" y="108" width="36" height="28" rx="4" fill="none" stroke="#1e90ff" stroke-width="1.2" opacity=".5"/>
+<path d="M34,108 v-10 a12,12 0 0 1 24,0 v10" fill="none" stroke="#1e90ff" stroke-width="1.2" opacity=".45"/>
+<circle cx="46" cy="122" r="2.4" fill="#00cfff" opacity=".5"/>
+<!-- trace -->
+<line x1="64" y1="122" x2="120" y2="122" stroke="#00cfff" stroke-width=".8" opacity=".35" stroke-dasharray="2,3"/>
+<text x="220" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="#00cfff" opacity=".55" font-weight="bold">CIA</text>
+
+<ellipse cx="210" cy="88" rx="62" ry="42" fill="rgba(0,144,255,.045)"/>
+</svg>
+      <div class="mc-content">
+        <span class="mc-icon">🛡️</span>
+        <h3>Fondamenti di Cybersecurity</h3>
+        <p>Basi della sicurezza informatica e CIA Triad</p>
+        <div class="tags"><span class="tag">CIA Triad</span><span class="tag">Minacce comuni</span><span class="tag">Malware</span><span class="tag">Phishing</span></div>
+      </div>
+    </div>
+    <div class="mod-card generic-card themed-card" id="mc-sicurezza-account" role="button" tabindex="0">
+      <span class="mc-badge">CYBERSECURITY</span>
+      <svg class="bg" viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="grid-sa" width="22" height="22" patternUnits="userSpaceOnUse">
+    <path d="M22 0L0 0 0 22" fill="none" stroke="#1e90ff" stroke-width=".4" opacity=".3"/>
+  </pattern>
+</defs>
+<rect width="300" height="180" fill="url(#grid-sa)"/>
+
+<!-- main padlock -->
+<rect x="182" y="72" width="72" height="56" rx="8" fill="rgba(30,144,255,.06)" stroke="#1e90ff" stroke-width="1.2" opacity=".5"/>
+<path d="M194,72 v-14 a24,24 0 0 1 48,0 v14" fill="none" stroke="#1e90ff" stroke-width="1.3" opacity=".45"/>
+<circle cx="207" cy="96" r="3" fill="#00cfff" opacity=".55"/>
+<circle cx="218" cy="96" r="3" fill="#00cfff" opacity=".5"/>
+<circle cx="229" cy="96" r="3" fill="#00cfff" opacity=".45"/>
+<!-- 2FA token chip -->
+<rect x="28" y="52" width="66" height="36" rx="6" fill="none" stroke="#00cfff" stroke-width="1" opacity=".5"/>
+<rect x="34" y="62" width="9" height="9" rx="1.5" fill="none" stroke="#00cfff" stroke-width=".8" opacity=".55"/>
+<rect x="46" y="62" width="9" height="9" rx="1.5" fill="none" stroke="#00cfff" stroke-width=".8" opacity=".45"/>
+<rect x="58" y="62" width="9" height="9" rx="1.5" fill="none" stroke="#00cfff" stroke-width=".8" opacity=".55"/>
+<rect x="70" y="62" width="9" height="9" rx="1.5" fill="none" stroke="#00cfff" stroke-width=".8" opacity=".4"/>
+<!-- auth flow dashed link -->
+<line x1="94" y1="70" x2="182" y2="96" stroke="#00cfff" stroke-width=".8" opacity=".3" stroke-dasharray="3,3"/>
+<!-- fingerprint arcs -->
+<path d="M45,130 a16,16 0 1 1 0,0.1" fill="none" stroke="#1e90ff" stroke-width=".8" opacity=".35"/>
+<path d="M45,130 m-10,0 a10,10 0 1 1 0,0.1" fill="none" stroke="#1e90ff" stroke-width=".8" opacity=".3"/>
+<text x="218" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="#00cfff" opacity=".55" font-weight="bold">2FA</text>
+
+<ellipse cx="210" cy="88" rx="62" ry="42" fill="rgba(0,144,255,.045)"/>
+</svg>
+      <div class="mc-content">
+        <span class="mc-icon">🔑</span>
+        <h3>Sicurezza degli Account</h3>
+        <p>Password, autenticazione e accessi sicuri</p>
+        <div class="tags"><span class="tag">Password</span><span class="tag">2FA / MFA</span><span class="tag">Biometria</span><span class="tag">PIN</span></div>
+      </div>
+    </div>
+    <div class="mod-card generic-card themed-card" id="mc-protezione-dati" role="button" tabindex="0">
+      <span class="mc-badge">CYBERSECURITY</span>
+      <svg class="bg" viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="grid-pd" width="22" height="22" patternUnits="userSpaceOnUse">
+    <path d="M22 0L0 0 0 22" fill="none" stroke="#1e90ff" stroke-width=".4" opacity=".3"/>
+  </pattern>
+</defs>
+<rect width="300" height="180" fill="url(#grid-pd)"/>
+
+<!-- db cylinder -->
+<ellipse cx="216" cy="46" rx="42" ry="12" fill="rgba(30,144,255,.06)" stroke="#1e90ff" stroke-width="1.1" opacity=".5"/>
+<line x1="174" y1="46" x2="174" y2="122" stroke="#1e90ff" stroke-width="1.1" opacity=".45"/>
+<line x1="258" y1="46" x2="258" y2="122" stroke="#1e90ff" stroke-width="1.1" opacity=".45"/>
+<path d="M174,84 a42,12 0 0 0 84,0" fill="none" stroke="#1e90ff" stroke-width=".8" opacity=".35"/>
+<ellipse cx="216" cy="122" rx="42" ry="12" fill="none" stroke="#1e90ff" stroke-width="1.1" opacity=".5"/>
+<!-- lock overlay (cifratura) -->
+<rect x="200" y="104" width="24" height="18" rx="3" fill="#0c1420" stroke="#00cfff" stroke-width="1" opacity=".7"/>
+<path d="M204,104 v-6 a8,8 0 0 1 16,0 v6" fill="none" stroke="#00cfff" stroke-width="1" opacity=".6"/>
+<!-- backup refresh arrow -->
+<path d="M48,90 a20,20 0 1 1 -4,12" fill="none" stroke="#00cfff" stroke-width="1.1" opacity=".45"/>
+<polygon points="44,98 48,86 58,94" fill="#00cfff" opacity=".45"/>
+<!-- data blocks flowing -->
+<rect x="90" y="70" width="8" height="8" fill="none" stroke="#1e90ff" stroke-width=".7" opacity=".4"/>
+<rect x="106" y="80" width="8" height="8" fill="none" stroke="#1e90ff" stroke-width=".7" opacity=".35"/>
+<rect x="122" y="70" width="8" height="8" fill="none" stroke="#1e90ff" stroke-width=".7" opacity=".3"/>
+<text x="216" y="148" text-anchor="middle" font-family="monospace" font-size="9" fill="#00cfff" opacity=".55" font-weight="bold">BACKUP</text>
+
+<ellipse cx="210" cy="88" rx="62" ry="42" fill="rgba(0,144,255,.045)"/>
+</svg>
+      <div class="mc-content">
+        <span class="mc-icon">🗄️</span>
+        <h3>Protezione dei Dati</h3>
+        <p>Backup, cifratura e gestione dei dati</p>
+        <div class="tags"><span class="tag">Backup</span><span class="tag">Cifratura</span><span class="tag">Permessi</span><span class="tag">Ransomware</span></div>
+      </div>
+    </div>
+    <div class="mod-card generic-card themed-card" id="mc-sicurezza-quotidiana" role="button" tabindex="0">
+      <span class="mc-badge">CYBERSECURITY</span>
+      <svg class="bg" viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="grid-sq" width="22" height="22" patternUnits="userSpaceOnUse">
+    <path d="M22 0L0 0 0 22" fill="none" stroke="#1e90ff" stroke-width=".4" opacity=".3"/>
+  </pattern>
+</defs>
+<rect width="300" height="180" fill="url(#grid-sq)"/>
+
+<!-- phone -->
+<rect x="188" y="26" width="66" height="128" rx="11" fill="rgba(30,144,255,.05)" stroke="#1e90ff" stroke-width="1.2" opacity=".5"/>
+<rect x="196" y="38" width="50" height="86" rx="2" fill="none" stroke="#1e90ff" stroke-width=".7" opacity=".3"/>
+<rect x="213" y="132" width="16" height="3" rx="1.5" fill="#1e90ff" opacity=".4"/>
+<!-- sensor ring -->
+<circle cx="221" cy="30" r="3" fill="none" stroke="#00cfff" stroke-width="1" opacity=".6"/>
+<!-- app grid -->
+<circle cx="206" cy="52" r="3.4" fill="none" stroke="#00cfff" stroke-width=".7" opacity=".45"/>
+<circle cx="221" cy="52" r="3.4" fill="none" stroke="#00cfff" stroke-width=".7" opacity=".4"/>
+<circle cx="236" cy="52" r="3.4" fill="none" stroke="#00cfff" stroke-width=".7" opacity=".45"/>
+<circle cx="206" cy="67" r="3.4" fill="none" stroke="#00cfff" stroke-width=".7" opacity=".35"/>
+<circle cx="221" cy="67" r="3.4" fill="none" stroke="#00cfff" stroke-width=".7" opacity=".4"/>
+<circle cx="236" cy="67" r="3.4" fill="none" stroke="#00cfff" stroke-width=".7" opacity=".35"/>
+<!-- wifi arcs -->
+<circle cx="54" cy="138" r="2.2" fill="#00cfff" opacity=".55"/>
+<path d="M42,138 a17,17 0 0 1 24,0" fill="none" stroke="#00cfff" stroke-width=".9" opacity=".4"/>
+<path d="M34,138 a29,29 0 0 1 40,0" fill="none" stroke="#00cfff" stroke-width=".8" opacity=".28"/>
+<!-- bluetooth glyph -->
+<path d="M64,72 v28 l10,-9 l-16,-12 l16,-12 l-10,-9 z" fill="none" stroke="#1e90ff" stroke-width="1" opacity=".4"/>
+<text x="221" y="176" text-anchor="middle" font-family="monospace" font-size="9" fill="#00cfff" opacity="0" font-weight="bold">APP</text>
+<text x="130" y="30" text-anchor="middle" font-family="monospace" font-size="9" fill="#00cfff" opacity=".5" font-weight="bold">APP</text>
+
+<ellipse cx="210" cy="88" rx="62" ry="42" fill="rgba(0,144,255,.045)"/>
+</svg>
+      <div class="mc-content">
+        <span class="mc-icon">📱</span>
+        <h3>Sicurezza Quotidiana</h3>
+        <p>Smartphone, app e reti sicure ogni giorno</p>
+        <div class="tags"><span class="tag">App e permessi</span><span class="tag">Wi-Fi / VPN</span><span class="tag">Aggiornamenti</span><span class="tag">Bluetooth</span></div>
+      </div>
+    </div>
+    <div class="mod-card generic-card themed-card" id="mc-sicurezza-pagamenti" role="button" tabindex="0">
+      <span class="mc-badge">CYBERSECURITY</span>
+      <svg class="bg" viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="grid-sp" width="22" height="22" patternUnits="userSpaceOnUse">
+    <path d="M22 0L0 0 0 22" fill="none" stroke="#1e90ff" stroke-width=".4" opacity=".3"/>
+  </pattern>
+</defs>
+<rect width="300" height="180" fill="url(#grid-sp)"/>
+
+<!-- card -->
+<rect x="146" y="58" width="112" height="70" rx="9" fill="rgba(30,144,255,.06)" stroke="#1e90ff" stroke-width="1.2" opacity=".5"/>
+<rect x="146" y="76" width="112" height="10" fill="#1e90ff" opacity=".14"/>
+<rect x="158" y="98" width="20" height="15" rx="3" fill="none" stroke="#00cfff" stroke-width="1" opacity=".55"/>
+<line x1="158" y1="103" x2="178" y2="103" stroke="#00cfff" stroke-width=".6" opacity=".4"/>
+<line x1="192" y1="112" x2="230" y2="112" stroke="#1e90ff" stroke-width="1" opacity=".3"/>
+<!-- contactless waves -->
+<path d="M266,78 a24,24 0 0 1 0,32" fill="none" stroke="#00cfff" stroke-width="1" opacity=".45"/>
+<path d="M274,70 a36,36 0 0 1 0,48" fill="none" stroke="#00cfff" stroke-width=".8" opacity=".3"/>
+<!-- shield-check badge -->
+<path d="M56,86 L80,94 L80,114 Q80,130 56,140 Q32,130 32,114 L32,94 Z"
+      fill="rgba(0,207,255,.06)" stroke="#00cfff" stroke-width="1" opacity=".55"/>
+<path d="M44,112 l8,8 l14,-16" fill="none" stroke="#00cfff" stroke-width="1.4" opacity=".65" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="202" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="#00cfff" opacity=".55" font-weight="bold">PAY</text>
+
+<ellipse cx="210" cy="88" rx="62" ry="42" fill="rgba(0,144,255,.045)"/>
+</svg>
+      <div class="mc-content">
+        <span class="mc-icon">💳</span>
+        <h3>Sicurezza dei Pagamenti</h3>
+        <p>Transazioni, e-commerce e frodi digitali</p>
+        <div class="tags"><span class="tag">Carta e PIN</span><span class="tag">OTP</span><span class="tag">Contactless</span><span class="tag">E-commerce</span></div>
+      </div>
+    </div>
+    <div class="mod-card generic-card themed-card" id="mc-privacy-normative" role="button" tabindex="0">
+      <span class="mc-badge">CYBERSECURITY</span>
+      <svg class="bg" viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="grid-pn" width="22" height="22" patternUnits="userSpaceOnUse">
+    <path d="M22 0L0 0 0 22" fill="none" stroke="#1e90ff" stroke-width=".4" opacity=".3"/>
+  </pattern>
+</defs>
+<rect width="300" height="180" fill="url(#grid-pn)"/>
+
+<!-- scale -->
+<line x1="216" y1="34" x2="216" y2="122" stroke="#1e90ff" stroke-width="1.2" opacity=".5"/>
+<line x1="176" y1="50" x2="256" y2="50" stroke="#1e90ff" stroke-width="1.1" opacity=".5"/>
+<line x1="180" y1="50" x2="180" y2="70" stroke="#1e90ff" stroke-width=".8" opacity=".4"/>
+<line x1="252" y1="50" x2="252" y2="70" stroke="#1e90ff" stroke-width=".8" opacity=".4"/>
+<path d="M168,70 a12,10 0 0 0 24,0 z" fill="none" stroke="#00cfff" stroke-width="1" opacity=".5"/>
+<path d="M240,70 a12,10 0 0 0 24,0 z" fill="none" stroke="#00cfff" stroke-width="1" opacity=".5"/>
+<polygon points="200,122 232,122 222,134 210,134" fill="none" stroke="#1e90ff" stroke-width="1" opacity=".4"/>
+<!-- document -->
+<rect x="38" y="46" width="52" height="68" rx="3" fill="rgba(30,144,255,.05)" stroke="#1e90ff" stroke-width="1.1" opacity=".5"/>
+<line x1="46" y1="60" x2="82" y2="60" stroke="#1e90ff" stroke-width=".7" opacity=".35"/>
+<line x1="46" y1="70" x2="82" y2="70" stroke="#1e90ff" stroke-width=".7" opacity=".3"/>
+<line x1="46" y1="80" x2="70" y2="80" stroke="#1e90ff" stroke-width=".7" opacity=".3"/>
+<rect x="55" y="92" width="18" height="14" rx="2" fill="#0c1420" stroke="#00cfff" stroke-width=".9" opacity=".6"/>
+<path d="M58,92 v-5 a6,6 0 0 1 12,0 v5" fill="none" stroke="#00cfff" stroke-width=".9" opacity=".55"/>
+<text x="216" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="#00cfff" opacity=".55" font-weight="bold">GDPR</text>
+
+<ellipse cx="210" cy="88" rx="62" ry="42" fill="rgba(0,144,255,.045)"/>
+</svg>
+      <div class="mc-content">
+        <span class="mc-icon">⚖️</span>
+        <h3>Privacy e Normative</h3>
+        <p>GDPR, consenso e dati personali</p>
+        <div class="tags"><span class="tag">GDPR</span><span class="tag">Consenso</span><span class="tag">Cookie</span><span class="tag">Dati sensibili</span></div>
+      </div>
+    </div>
+    <div class="mod-card generic-card themed-card" id="mc-sicurezza-online-social-network" role="button" tabindex="0">
+      <span class="mc-badge">CYBERSECURITY</span>
+      <svg class="bg" viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="grid-ss" width="22" height="22" patternUnits="userSpaceOnUse">
+    <path d="M22 0L0 0 0 22" fill="none" stroke="#1e90ff" stroke-width=".4" opacity=".3"/>
+  </pattern>
+</defs>
+<rect width="300" height="180" fill="url(#grid-ss)"/>
+
+<!-- bubble 1 -->
+<path d="M182,42 h64 a8,8 0 0 1 8,8 v34 a8,8 0 0 1 -8,8 h-40 l-12,12 v-12 h-12 a8,8 0 0 1 -8,-8 v-34 a8,8 0 0 1 8,-8 z"
+      fill="rgba(30,144,255,.06)" stroke="#1e90ff" stroke-width="1.1" opacity=".5"/>
+<line x1="192" y1="58" x2="240" y2="58" stroke="#1e90ff" stroke-width=".7" opacity=".35"/>
+<line x1="192" y1="68" x2="228" y2="68" stroke="#1e90ff" stroke-width=".7" opacity=".3"/>
+<!-- bubble 2 with heart -->
+<path d="M204,92 h56 a7,7 0 0 1 7,7 v26 a7,7 0 0 1 -7,7 h-10 v10 l-11,-10 h-35 a7,7 0 0 1 -7,-7 v-26 a7,7 0 0 1 7,-7 z"
+      fill="rgba(0,207,255,.05)" stroke="#00cfff" stroke-width="1" opacity=".5"/>
+<path d="M223,108 c-3,-4 -9,-1 -9,4 c0,5 9,9 9,9 s9,-4 9,-9 c0,-5 -6,-8 -9,-4 z" fill="#00cfff" opacity=".4"/>
+<!-- network nodes (people) -->
+<circle cx="46" cy="70" r="7" fill="none" stroke="#1e90ff" stroke-width="1" opacity=".5"/>
+<path d="M34,92 a12,10 0 0 1 24,0" fill="none" stroke="#1e90ff" stroke-width="1" opacity=".4"/>
+<circle cx="46" cy="122" r="6" fill="none" stroke="#00cfff" stroke-width=".9" opacity=".4"/>
+<path d="M36,140 a10,8 0 0 1 20,0" fill="none" stroke="#00cfff" stroke-width=".9" opacity=".35"/>
+<line x1="58" y1="75" x2="182" y2="60" stroke="#1e90ff" stroke-width=".7" opacity=".3" stroke-dasharray="2,3"/>
+<line x1="58" y1="118" x2="204" y2="110" stroke="#00cfff" stroke-width=".7" opacity=".3" stroke-dasharray="2,3"/>
+<text x="222" y="150" text-anchor="middle" font-family="monospace" font-size="8.5" fill="#00cfff" opacity=".55" font-weight="bold">SOCIAL</text>
+
+<ellipse cx="210" cy="88" rx="62" ry="42" fill="rgba(0,144,255,.045)"/>
+</svg>
+      <div class="mc-content">
+        <span class="mc-icon">💬</span>
+        <h3>Sicurezza Online e Social</h3>
+        <p>Reputazione, privacy e rischi sui social</p>
+        <div class="tags"><span class="tag">Reputazione</span><span class="tag">Privacy</span><span class="tag">Minori</span><span class="tag">Social engineering</span></div>
+      </div>
+    </div>
+    <div class="mod-card generic-card themed-card" id="mc-nuove-minacce-digitali" role="button" tabindex="0">
+      <span class="mc-badge">CYBERSECURITY</span>
+      <svg class="bg" viewBox="0 0 300 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <pattern id="grid-nm" width="22" height="22" patternUnits="userSpaceOnUse">
+    <path d="M22 0L0 0 0 22" fill="none" stroke="#1e90ff" stroke-width=".4" opacity=".3"/>
+  </pattern>
+</defs>
+<rect width="300" height="180" fill="url(#grid-nm)"/>
+
+<!-- warning triangle -->
+<polygon points="236,28 272,90 200,90" fill="rgba(0,207,255,.04)" stroke="#00cfff" stroke-width="1.1" opacity=".5"/>
+<line x1="236" y1="46" x2="236" y2="70" stroke="#00cfff" stroke-width="1.4" opacity=".55"/>
+<circle cx="236" cy="80" r="1.8" fill="#00cfff" opacity=".55"/>
+<!-- glitched face -->
+<circle cx="80" cy="76" r="26" fill="none" stroke="#1e90ff" stroke-width="1.1" opacity=".45"/>
+<path d="M54,120 a26,20 0 0 1 52,0" fill="none" stroke="#1e90ff" stroke-width="1" opacity=".4"/>
+<line x1="52" y1="66" x2="108" y2="70" stroke="#00cfff" stroke-width="1" opacity=".4" stroke-dasharray="6,3"/>
+<line x1="48" y1="86" x2="112" y2="82" stroke="#00cfff" stroke-width="1" opacity=".35" stroke-dasharray="4,4"/>
+<rect x="88" y="60" width="14" height="8" fill="#0c1420" opacity=".85"/>
+<!-- circuit brain -->
+<path d="M160,120 q-10,-14 4,-20 q4,-8 14,-4 q10,-6 16,4 q12,2 8,14 q6,10 -6,14 q-2,8 -12,4 q-10,6 -16,-4 q-12,0 -8,-8 z"
+      fill="none" stroke="#1e90ff" stroke-width=".9" opacity=".4"/>
+<line x1="168" y1="112" x2="178" y2="120" stroke="#1e90ff" stroke-width=".6" opacity=".35"/>
+<line x1="182" y1="110" x2="182" y2="124" stroke="#1e90ff" stroke-width=".6" opacity=".3"/>
+<text x="236" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="#00cfff" opacity=".55" font-weight="bold">AI</text>
+
+<ellipse cx="210" cy="88" rx="62" ry="42" fill="rgba(0,144,255,.045)"/>
+</svg>
+      <div class="mc-content">
+        <span class="mc-icon">⚠️</span>
+        <h3>Nuove Minacce Digitali</h3>
+        <p>Deepfake, IA generativa e fake news</p>
+        <div class="tags"><span class="tag">Deepfake</span><span class="tag">IA generativa</span><span class="tag">Fake news</span><span class="tag">Disinformazione</span></div>
+      </div>
+    </div>
+    </div>
+  </div>
+  <div class="caption">↑ Illustrazione SVG tematizzata per modulo + descrizione + tag contenuto, stesso "look" delle card ECDL. Tag mostrati sempre visibili qui per revisione (in produzione appaiono su hover, come per CE/OE/WP).</div>
+
+</body>
+</html>

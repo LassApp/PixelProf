@@ -426,6 +426,18 @@ body{
   font-family:'Share Tech Mono',monospace;letter-spacing:.5px;
   margin-top:4px;
 }
+/* v8.9.3: badge "coming soon" ad alto contrasto per elementi piccoli
+   (es. .act-card), dove .cs-label (pensato per le grandi .mod-card) è
+   troppo tenue per restare leggibile — soprattutto in dark. Ambra piena
+   invece di bianco trasparente, coerente col colore già usato per
+   .dp-soon-tag nel pannello direttore. */
+.act-soon-badge{
+  font-family:'Share Tech Mono',monospace;font-size:9px;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;flex-shrink:0;margin-left:auto;
+  padding:3px 9px;border-radius:20px;
+  background:rgba(255,180,0,.16);border:1px solid rgba(255,180,0,.45);
+  color:#ffcf5c;
+}
 /* WP card — document green */
 .mod-card.wp-card{
   background:linear-gradient(145deg,#091a0d 0%,#0f2416 55%,#091a0d 100%);
@@ -2579,6 +2591,15 @@ body{
 }
 .act-card h3 { font-size: 13px ; }
 .act-card p  { font-size: 10px ; color: rgba(255,255,255,.32) ; }
+
+/* v8.9.3 — Memory "coming soon" (v8.9.2): il vecchio opacity:.5 sull'intera
+   card dimezzava un testo già a bassa opacità di suo, rendendo "Trova le
+   coppie" quasi illeggibile in dark. Qui si disattiva solo l'icona
+   (indizio visivo di stato disattivato) mentre testo e badge restano a
+   contrasto normale — il "disabilitato" resta comunicato da cursor:not-
+   allowed + pointer-events:none (inline in index.html) + .act-soon-badge. */
+#ac-memory .ai { filter: saturate(.3) brightness(.8) ; }
+#ac-memory p   { color: rgba(255,255,255,.5) ; }
 
 /* ─────────────────────────────────────────────────────────────────
    SETUP CARD — "Platform setup panel"
@@ -5110,6 +5131,10 @@ html[data-theme="light"] .act-card{ background:#ffffff; border-color: rgba(20,30
 html[data-theme="light"] .act-card:hover{ border-color: rgba(20,30,60,.18); background: rgba(20,30,60,.04); }
 html[data-theme="light"] .act-card:not(.active) h3{ color:#10182a; }
 html[data-theme="light"] .act-card p{ color: rgba(16,24,42,.42); }
+html[data-theme="light"] #ac-memory p{ color: rgba(16,24,42,.6); }
+html[data-theme="light"] .act-soon-badge{
+  background:rgba(180,120,0,.1); border-color:rgba(180,120,0,.35); color:#a66d00;
+}
 
 /* Chip con azione (elimina/rinomina) — v1.0, vedi @layer base per il
    contesto completo del refactor da stile inline (Issue 5b) */
@@ -5660,24 +5685,14 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
   #mod-area-catalog[data-area-key="reti-internet"]{ --area-rgb:124,106,255; }
   #mod-area-catalog[data-area-key="malware-minacce"]{ --area-rgb:255,77,109; }
 
-  /* Fase 7.7 — card modulo tematizzate (.generic-card, v. _buildGenericModCard
-     in app.js). Scelta esplicita di Erasmo: i tag (.tags) si rivelano SOLO
-     al focus (tastiera o tap su elementi tabindex="0"), MAI al semplice
-     hover — a differenza delle card ECDL storiche (ce-card/oe-card/wp-card),
-     che restano invariate e continuano a rivelarsi su hover. Il comportamento
-     ".active" (breve flash alla selezione, gestito da selMod in game-engine-
-     state.js) resta invariato, ereditato da @layer streaming.
-     Questo blocco vince su @layer streaming perché "areas" è dichiarato
-     dopo nell'ordine @layer in cima al file, non per specificità selettore:
-     NON aggiungere qui !important né spostare regole di .tags generiche. */
-  .mod-card.generic-card:hover .tags{
-    opacity: 0;
-    transform: translateY(6px);
-  }
-  .mod-card.generic-card:focus .tags{
-    opacity: 1;
-    transform: translateY(0);
-  }
+  /* Fase 7.7 (v8.9.0) → corretta in v8.9.3: Erasmo intendeva "al passaggio
+     del mouse" quando ha detto "on focus" — cioè lo STESSO comportamento
+     hover già usato dalle card ECDL storiche (ce-card/oe-card/wp-card).
+     L'override :focus-only introdotto in v8.9.0 è stato quindi rimosso:
+     .generic-card ora eredita semplicemente la regola hover condivisa
+     .mod-card:hover .tags{opacity:1} già definita in @layer streaming,
+     identica per ECDL e per le Aree extra-ECDL. Nessuna regola extra
+     necessaria qui. */
 
   .cs-area-section-icon{
     font-size:20px;line-height:1;flex-shrink:0;

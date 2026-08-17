@@ -1201,16 +1201,19 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <div class="act-card act-quiz" id="ac-quiz" role="button" tabindex="0" aria-label="Attività Quiz" onclick="selAct('quiz')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('quiz');}"><div class="ai" style="background:rgba(0,255,200,.1)"><i class="ti ti-help-circle" style="color:#00ffc8;font-size:20px"></i></div><div><h3>Quiz</h3><p>Risposta multipla</p></div></div>
       <div class="act-card act-speed" id="ac-speed" role="button" tabindex="0" aria-label="Attività Speed Quiz" onclick="selAct('speed')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('speed');}"><div class="ai" style="background:rgba(255,180,0,.1)"><i class="ti ti-bolt" style="color:#ffb400;font-size:20px"></i></div><div><h3>Speed Quiz</h3><p>60 secondi</p></div></div>
       <div class="act-card act-match" id="ac-match" role="button" tabindex="0" aria-label="Attività Abbina" onclick="selAct('match')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('match');}"><div class="ai" style="background:rgba(124,106,255,.1)"><i class="ti ti-link" style="color:#9d8fff;font-size:20px"></i></div><div><h3>Abbina</h3><p>Termine → definizione</p></div></div>
-      <!-- Memory in pausa (v8.9.2): tasto disattivato per TUTTI i moduli di
-           TUTTE le aree, dato che questa griglia attività è markup statico
-           condiviso e non viene rigenerata per modulo/area. Nessun dato o
-           motore rimosso (js/game-memory.js, loader, storico invariati) —
-           solo impossibile avviare una NUOVA partita. Stesso pattern
-           "coming soon" già usato per la card categoria Didattica sopra
-           (opacity+pointer-events via inline style, tabindex=-1, niente
-           onclick/onkeydown). Per riattivare: ripristinare onclick/
-           onkeydown/tabindex="0" e rimuovere lo style inline e il badge. -->
-      <div class="act-card act-memory soon-act" id="ac-memory" aria-label="Attività Memory — Coming Soon" tabindex="-1" style="cursor:not-allowed;opacity:.5;pointer-events:none"><div class="ai" style="background:rgba(255,77,109,.1)"><i class="ti ti-cards" style="color:#ff6b85;font-size:20px"></i></div><div><h3>Memory</h3><p>Trova le coppie · In arrivo</p></div><span class="cs-label" style="position:static;margin-left:auto;font-size:8px">Soon</span></div>
+      <!-- Memory in pausa (v8.9.2, badge corretto in v8.9.3): tasto
+           disattivato per TUTTI i moduli di TUTTE le aree, dato che
+           questa griglia attività è markup statico condiviso e non
+           viene rigenerata per modulo/area. Nessun dato o motore
+           rimosso (js/game-memory.js, loader, storico invariati) —
+           solo impossibile avviare una NUOVA partita.
+           v8.9.3: badge .act-soon-badge (ambra, alto contrasto) al
+           posto di .cs-label (troppo tenue su una card piccola);
+           testo tornato a "Trova le coppie" semplice — lo stato
+           "in arrivo" lo comunica ora il badge, non più il testo.
+           Per riattivare: ripristinare onclick/onkeydown/tabindex="0",
+           rimuovere lo style inline e il badge. -->
+      <div class="act-card act-memory soon-act" id="ac-memory" aria-label="Attività Memory — Coming Soon" tabindex="-1" style="cursor:not-allowed;pointer-events:none"><div class="ai" style="background:rgba(255,77,109,.1)"><i class="ti ti-cards" style="color:#ff6b85;font-size:20px"></i></div><div><h3>Memory</h3><p>Trova le coppie</p></div><span class="act-soon-badge">Soon</span></div>
       <div class="act-card act-fill" id="ac-fill" role="button" tabindex="0" aria-label="Attività Completa la frase" onclick="selAct('fill')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('fill');}"><div class="ai" style="background:rgba(0,207,255,.1)"><i class="ti ti-pencil" style="color:#00cfff;font-size:20px"></i></div><div><h3>Completa la frase</h3><p>Inserisci il termine mancante</p></div></div>
       <div class="act-card act-tf" id="ac-truefalse" role="button" tabindex="0" aria-label="Attività Vero o Falso" onclick="selAct('truefalse')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('truefalse');}"><div class="ai" style="background:rgba(255,209,102,.12)"><i class="ti ti-scale" style="color:#ffd166;font-size:20px"></i></div><div><h3>Vero o Falso</h3><p>Vero o falso?</p></div></div>
     </div>
@@ -1466,6 +1469,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div><!-- /app -->
 
 
-<script src="js/app.bundle.min.js?v=8.9.2"></script>
+<script src="js/app.bundle.min.js?v=8.9.3"></script>
 </body>
 </html>

@@ -11,7 +11,9 @@
  *   3. Quiz               (+ pausa/ripresa via dialog di uscita)
  *   4. Speed Quiz         (+ pausa/ripresa via pulsante dedicato)
  *   5. Abbina             (+ pausa/ripresa via pulsante dedicato)
- *   6. Memory             (+ pausa/ripresa via pulsante dedicato)
+ *   6. [SALTATO — v8.9.2: Memory in pausa, tasto disattivato in tutta
+ *      l'app. Vedi blocco commentato più sotto: NON cancellato, va
+ *      riattivato non appena il tasto #ac-memory torna cliccabile.]
  *   7. Completa la frase  (+ pausa/ripresa via dialog di uscita)
  *   8. Vero o Falso       (+ pausa/ripresa via dialog di uscita)
  *   9. Uscita dall'app (logout)
@@ -102,6 +104,10 @@ test('flusso completo: login → entra in aula → ogni minigioco → pausa/ripr
     await exitGameConfirm(page, '.game-exit-btn');
   });
 
+  // v8.9.2: Memory è in pausa (tasto #ac-memory disattivato in tutta
+  // l'app, index.html). Step commentato, NON cancellato — riattivare
+  // rimuovendo il blocco /* */ non appena il tasto torna cliccabile.
+  /*
   await test.step('Memory — gioca, pausa/riprendi via pulsante dedicato, esci', async () => {
     await goToActivity(page, { module: 'CE', activity: 'memory' });
     await setupIndividualAndStart(page, 'Alunno Memory');
@@ -111,6 +117,7 @@ test('flusso completo: login → entra in aula → ogni minigioco → pausa/ripr
     await togglePauseAndResumeMemory(page);
     await exitGameConfirm(page, '.game-exit-btn');
   });
+  */
 
   await test.step('Completa la frase — gioca, pausa/riprendi via dialog di uscita, esci', async () => {
     await goToActivity(page, { module: 'CE', activity: 'fill' });

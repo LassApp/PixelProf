@@ -1,0 +1,317 @@
+[
+  {
+    "id": 1,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il router è un dispositivo che collega due o più reti differenti e decide il percorso dei dati.",
+    "answer": true,
+    "explanation": "Il router collega reti differenti e decide il percorso che i dati devono seguire."
+  },
+  {
+    "id": 2,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella maggior parte delle abitazioni, il router collega la rete locale a Internet.",
+    "answer": true,
+    "explanation": "Il router collega la rete locale (LAN) domestica a Internet (WAN)."
+  },
+  {
+    "id": 3,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il router copia sempre i dati su tutte le sue porte, indipendentemente dal destinatario.",
+    "answer": false,
+    "explanation": "Questo è il comportamento dell'hub, non del router: il router decide il percorso in base all'indirizzo IP di destinazione."
+  },
+  {
+    "id": 4,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il router può creare la rete Wi-Fi domestica oltre a instradare il traffico.",
+    "answer": true,
+    "explanation": "Nelle reti domestiche il router crea spesso la rete Wi-Fi e protegge la connessione."
+  },
+  {
+    "id": 5,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il router è un dispositivo utilizzato esclusivamente per collegare due computer nella stessa stanza.",
+    "answer": false,
+    "explanation": "Il router collega reti differenti, come la rete domestica e Internet, non solo due computer nella stessa stanza."
+  },
+  {
+    "id": 6,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2016 il malware Mirai trasformò centinaia di migliaia di router domestici in una botnet.",
+    "answer": true,
+    "explanation": "Mirai infettò centinaia di migliaia di router e dispositivi IoT trasformandoli in una botnet."
+  },
+  {
+    "id": 7,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'attacco della botnet Mirai nel 2016 colpì esclusivamente dispositivi con password uniche e complesse.",
+    "answer": false,
+    "explanation": "Mirai sfruttò dispositivi protetti da password predefinite o troppo deboli, non password complesse."
+  },
+  {
+    "id": 8,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'attacco DDoS generato dalla botnet Mirai colpì il provider DNS Dyn nel 2016.",
+    "answer": true,
+    "explanation": "L'attacco colpì il provider DNS Dyn, causando l'interruzione di numerosi servizi online."
+  },
+  {
+    "id": 9,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo switch collega la rete domestica direttamente a Internet, proprio come il router.",
+    "answer": false,
+    "explanation": "Lo switch gestisce la comunicazione all'interno della rete locale, non collega la rete a Internet."
+  },
+  {
+    "id": 10,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo switch inoltra i dati soltanto verso il dispositivo destinatario, analizzando il suo MAC Address.",
+    "answer": true,
+    "explanation": "Lo switch analizza il MAC Address del destinatario e inoltra i dati solo verso la porta corretta."
+  },
+  {
+    "id": 11,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo switch costruisce automaticamente una tabella osservando il traffico di rete per sapere su quale porta si trova ogni dispositivo.",
+    "answer": true,
+    "explanation": "Grazie a questa tabella lo switch sa su quale porta è collegato ogni dispositivo."
+  },
+  {
+    "id": 12,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli switch unmanaged permettono di configurare VLAN e monitorare il traffico di rete.",
+    "answer": false,
+    "explanation": "Questa è una caratteristica degli switch managed, non degli unmanaged."
+  },
+  {
+    "id": 13,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le quattro porte Ethernet sul retro di molti router domestici sono, di fatto, un piccolo switch incorporato.",
+    "answer": true,
+    "explanation": "Molti router domestici integrano al loro interno un piccolo switch."
+  },
+  {
+    "id": 14,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel marzo 2021 un attaccante tentò di modificare i livelli di idrossido di sodio nell'acqua potabile di un impianto a Oldsmar, in Florida.",
+    "answer": true,
+    "explanation": "L'incidente di Oldsmar riguardò un accesso remoto non autorizzato ai sistemi di controllo dell'impianto."
+  },
+  {
+    "id": 15,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'hub inoltra i dati soltanto al dispositivo destinatario, come fa lo switch.",
+    "answer": false,
+    "explanation": "L'hub replica i dati su tutte le porte, mentre lo switch li invia solo al destinatario."
+  },
+  {
+    "id": 16,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un hub può generare collisioni quando più dispositivi trasmettono nello stesso momento.",
+    "answer": true,
+    "explanation": "Quando più dispositivi trasmettono contemporaneamente su un hub possono verificarsi collisioni."
+  },
+  {
+    "id": 17,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli hub sono praticamente scomparsi dalle reti moderne perché gli switch offrono prestazioni superiori a costi contenuti.",
+    "answer": true,
+    "explanation": "Gli switch offrono prestazioni nettamente superiori agli hub a costi molto contenuti."
+  },
+  {
+    "id": 18,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nelle reti con hub, era impossibile intercettare il traffico destinato ad altri dispositivi collegati allo stesso hub.",
+    "answer": false,
+    "explanation": "Era invece possibile, con strumenti relativamente semplici, intercettare quel traffico."
+  },
+  {
+    "id": 19,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il modem è il dispositivo che permette di comunicare con la rete del provider Internet, convertendo i segnali.",
+    "answer": true,
+    "explanation": "Il modem converte i segnali affinché possano viaggiare sul mezzo trasmissivo del provider."
+  },
+  {
+    "id": 20,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'acronimo modem significa Modulator-Router.",
+    "answer": false,
+    "explanation": "Modem significa MOdulator-DEModulator, non Modulator-Router."
+  },
+  {
+    "id": 21,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella maggior parte delle abitazioni moderne, modem e router sono integrati in un unico apparecchio chiamato modem-router.",
+    "answer": true,
+    "explanation": "Oggi le due funzioni sono spesso integrate in un unico apparecchio chiamato modem-router."
+  },
+  {
+    "id": 22,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il router si occupa della connessione fisica con il provider Internet, mentre il modem gestisce il traffico verso i dispositivi.",
+    "answer": false,
+    "explanation": "È il contrario: il modem si collega al provider, il router gestisce il traffico verso i dispositivi."
+  },
+  {
+    "id": 23,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2021 milioni di modem-router furono colpiti da vulnerabilità nel software di gestione remoto.",
+    "answer": true,
+    "explanation": "Le vulnerabilità del 2021 riguardarono il software di gestione remoto di milioni di modem-router."
+  },
+  {
+    "id": 24,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il NAT permette a più dispositivi di una rete locale di condividere un unico indirizzo IP pubblico.",
+    "answer": true,
+    "explanation": "Il NAT permette a più dispositivi di condividere lo stesso indirizzo IP pubblico durante la comunicazione con Internet."
+  },
+  {
+    "id": 25,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli indirizzi IP privati utilizzati nella rete domestica sono direttamente raggiungibili da Internet.",
+    "answer": false,
+    "explanation": "Gli indirizzi IP privati non sono direttamente raggiungibili da Internet."
+  },
+  {
+    "id": 26,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Port Forwarding associa una porta di rete a un dispositivo specifico per renderlo raggiungibile da Internet.",
+    "answer": true,
+    "explanation": "Il Port Forwarding permette di inoltrare correttamente le connessioni provenienti dall'esterno verso un dispositivo specifico."
+  },
+  {
+    "id": 27,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il NAT sta diventando obsoleto perché gli indirizzi IPv4 disponibili sono in continuo aumento.",
+    "answer": false,
+    "explanation": "Il NAT è diventato fondamentale proprio a causa del progressivo esaurimento degli indirizzi IPv4."
+  },
+  {
+    "id": 28,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Grazie al NAT, chi si trova all'esterno della rete domestica vede soltanto l'indirizzo IP pubblico del router.",
+    "answer": true,
+    "explanation": "Il NAT nasconde i singoli dispositivi, mostrando all'esterno solo l'indirizzo IP pubblico del router."
+  },
+  {
+    "id": 29,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il DHCP assegna automaticamente ai dispositivi indirizzo IP, subnet mask, gateway predefinito e server DNS.",
+    "answer": true,
+    "explanation": "Tra le informazioni assegnate dal DHCP rientrano indirizzo IP, subnet mask, gateway predefinito e server DNS."
+  },
+  {
+    "id": 30,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nelle reti domestiche il servizio DHCP è quasi sempre integrato nello switch.",
+    "answer": false,
+    "explanation": "Il servizio DHCP è quasi sempre integrato nel router, non nello switch."
+  },
+  {
+    "id": 31,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il periodo di tempo per cui viene concesso un indirizzo IP dal DHCP si chiama lease.",
+    "answer": true,
+    "explanation": "Gli indirizzi assegnati dal DHCP sono concessi per un periodo chiamato lease."
+  },
+  {
+    "id": 32,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un rogue DHCP server può causare configurazioni di rete errate in un'azienda.",
+    "answer": true,
+    "explanation": "Un server DHCP non autorizzato può far ricevere ai computer configurazioni di rete errate."
+  },
+  {
+    "id": 33,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per dispositivi come server o telecamere di videosorveglianza si preferisce sempre un indirizzo IP dinamico che cambia ogni giorno.",
+    "answer": false,
+    "explanation": "Per questi dispositivi si preferisce un indirizzo IP fisso o una prenotazione DHCP, non un indirizzo che cambia continuamente."
+  },
+  {
+    "id": 34,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una rete domestica può essere composta da collegamenti via cavo Ethernet, wireless Wi-Fi o entrambi.",
+    "answer": true,
+    "explanation": "Una rete domestica può essere composta da collegamenti via cavo, wireless, o da una combinazione di entrambi."
+  },
+  {
+    "id": 35,
+    "module": "router-switch-dispositivi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "DHCP, switch, router e NAT collaborano automaticamente affinché ogni dato raggiunga la destinazione corretta in una rete domestica.",
+    "answer": true,
+    "explanation": "Questi elementi collaborano automaticamente per far raggiungere a ogni dato la destinazione corretta."
+  }
+]

@@ -1,0 +1,115 @@
+{
+  "module": "cloud-networking",
+  "sets": [
+    [
+      {
+        "term": "Cloud Networking",
+        "definition": "Insieme di tecnologie e infrastrutture di rete che permettono di utilizzare servizi, applicazioni e risorse informatiche attraverso Internet, invece di mantenerle solo sui dispositivi locali"
+      },
+      {
+        "term": "Cloud (nuvola)",
+        "definition": "Ambiente digitale remoto composto da server collegati in rete"
+      },
+      {
+        "term": "Networking",
+        "definition": "La comunicazione e lo scambio di dati tra dispositivi"
+      },
+      {
+        "term": "Cloud provider",
+        "definition": "Server remoti su cui vengono ospitati dati e applicazioni del cloud"
+      },
+      {
+        "term": "Data Center",
+        "definition": "Struttura fisica che ospita migliaia di server, dispositivi di rete e sistemi di archiviazione per erogare servizi digitali in modo continuo"
+      },
+      {
+        "term": "Rack",
+        "definition": "Armadio metallico in cui sono organizzati i server all'interno di un Data Center"
+      }
+    ],
+    [
+      {
+        "term": "Ridondanza",
+        "definition": "Replica automatica dei dati su più dispositivi o Data Center per mantenere il servizio sempre disponibile in caso di guasto"
+      },
+      {
+        "term": "Backup",
+        "definition": "Copia di sicurezza conservata per recuperare dati persi o cancellati accidentalmente"
+      },
+      {
+        "term": "Sicurezza fisica del Data Center",
+        "definition": "Controllo degli accessi tramite badge, sistemi biometrici, videosorveglianza e personale autorizzato"
+      },
+      {
+        "term": "Sistemi di raffreddamento",
+        "definition": "Impianti che mantengono costante la temperatura per evitare il surriscaldamento dei server"
+      },
+      {
+        "term": "Gruppi di continuità e generatori",
+        "definition": "Sistemi che garantiscono l'alimentazione elettrica del Data Center anche in caso di guasto"
+      }
+    ],
+    [
+      {
+        "term": "Sincronizzazione",
+        "definition": "Processo con cui il servizio cloud aggiorna automaticamente tutte le copie di un documento collegate allo stesso account"
+      },
+      {
+        "term": "Pacchetti di dati",
+        "definition": "Piccole unità in cui il sistema operativo suddivide i dati prima di inviarli in rete"
+      },
+      {
+        "term": "Router di casa",
+        "definition": "Il punto di accesso attraverso cui il traffico locale entra in Internet verso il cloud"
+      }
+    ],
+    [
+      {
+        "term": "CDN (Content Delivery Network)",
+        "definition": "Rete di server distribuiti nel mondo che conserva copie dei contenuti più richiesti e li invia dal nodo più vicino all'utente"
+      },
+      {
+        "term": "Load Balancing",
+        "definition": "Tecnica che distribuisce automaticamente le richieste tra più server, evitando che uno solo venga sovraccaricato"
+      },
+      {
+        "term": "Scalabilità",
+        "definition": "Capacità del cloud di aumentare o ridurre automaticamente le proprie risorse in base al numero di utenti e al carico di lavoro"
+      },
+      {
+        "term": "Scalabilità verticale (Vertical Scaling)",
+        "definition": "Potenziamento di un singolo server aggiungendo processori, memoria RAM o altre risorse hardware"
+      },
+      {
+        "term": "Scalabilità orizzontale (Horizontal Scaling)",
+        "definition": "Aggiunta di nuovi server che lavorano insieme; è il modello più utilizzato nel Cloud Networking"
+      }
+    ],
+    [
+      {
+        "term": "Google Drive",
+        "definition": "Servizio di cloud storage per l'archiviazione e la sincronizzazione dei file nel cloud"
+      },
+      {
+        "term": "Netflix",
+        "definition": "Piattaforma di streaming che distribuisce contenuti audio e video attraverso Internet"
+      },
+      {
+        "term": "Incendio del Data Center OVHcloud (2021)",
+        "definition": "Distrusse un edificio a Strasburgo e causò l'interruzione di migliaia di siti web e servizi online"
+      },
+      {
+        "term": "Interruzione di Google Cloud (2022)",
+        "definition": "Provocò disservizi temporanei per numerose applicazioni in una regione degli Stati Uniti"
+      },
+      {
+        "term": "Malfunzionamento della CDN di Fastly (2021)",
+        "definition": "Causò l'interruzione temporanea di migliaia di siti web nel mondo"
+      },
+      {
+        "term": "Riduzione del bitrate di Netflix (2020)",
+        "definition": "Diminuzione temporanea della qualità video per ridurre il carico sulle reti Internet europee durante la pandemia"
+      }
+    ]
+  ]
+}

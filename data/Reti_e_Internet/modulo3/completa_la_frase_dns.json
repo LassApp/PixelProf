@@ -1,0 +1,688 @@
+[
+  {
+    "id": 1,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ traduce i nomi di dominio, facili da ricordare per le persone, nei corrispondenti indirizzi IP.",
+    "answer": "DNS",
+    "bank": [
+      "DNS",
+      "TCP",
+      "HTTP",
+      "TLS"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il DNS è una gigantesca ____ distribuita su Internet che associa un nome leggibile al suo indirizzo IP.",
+    "answer": "rubrica",
+    "bank": [
+      "rubrica",
+      "cache",
+      "porta",
+      "catena"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il compito del DNS termina nel momento in cui comunica al dispositivo quale ____ deve essere raggiunto.",
+    "answer": "indirizzo IP",
+    "bank": [
+      "indirizzo IP",
+      "nome di dominio",
+      "numero di porta",
+      "certificato digitale"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Senza il DNS, Internet continuerebbe a funzionare, ma sarebbe estremamente difficile da ____.",
+    "answer": "utilizzare",
+    "bank": [
+      "utilizzare",
+      "cifrare",
+      "costruire",
+      "vendere"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il 21 ottobre 2016 un attacco colpì l'azienda ____, uno dei principali fornitori di servizi DNS.",
+    "answer": "Dyn",
+    "bank": [
+      "Dyn",
+      "Alphabet",
+      "Cloudflare",
+      "Cisco"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Durante l'attacco a Dyn, gli aggressori utilizzarono una rete di dispositivi ____ compromessi.",
+    "answer": "IoT",
+    "bank": [
+      "IoT",
+      "DNS",
+      "TLD",
+      "VoIP"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del ristorante, il nome del locale corrisponde al nome del sito, mentre l'indirizzo fisico corrisponde all'____.",
+    "answer": "indirizzo IP",
+    "bank": [
+      "indirizzo IP",
+      "TTL",
+      "TLD",
+      "sottodominio"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un ____ di dominio è un nome leggibile dalle persone che identifica un servizio o un sito Internet.",
+    "answer": "nome",
+    "bank": [
+      "nome",
+      "indirizzo IP",
+      "protocollo",
+      "certificato"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "In www.uniba.it, .it è chiamato Top-Level Domain, cioè Dominio di Primo ____.",
+    "answer": "Livello",
+    "bank": [
+      "Livello",
+      "Grado",
+      "Ordine",
+      "Rango"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Alcuni TLD rappresentano uno Stato, come .it per l'Italia o .fr per la ____.",
+    "answer": "Francia",
+    "bank": [
+      "Francia",
+      "Germania",
+      "Spagna",
+      "Svizzera"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "In www.uniba.it, www rappresenta un ____ (subdomain).",
+    "answer": "sottodominio",
+    "bank": [
+      "sottodominio",
+      "TLD",
+      "indirizzo IP",
+      "server autorevole"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "mail.google.com, maps.google.com e drive.google.com appartengono tutti allo stesso dominio ____.",
+    "answer": "principale",
+    "bank": [
+      "principale",
+      "segreto",
+      "temporaneo",
+      "privato"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2015 Google registrò il dominio abc.xyz per rappresentare la nuova società ____.",
+    "answer": "Alphabet",
+    "bank": [
+      "Alphabet",
+      "Cloudflare",
+      "Dyn",
+      "OpenDNS"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del palazzo, i diversi appartamenti rappresentano i diversi ____ ospitati sullo stesso server.",
+    "answer": "siti Web",
+    "bank": [
+      "siti Web",
+      "router",
+      "indirizzi IP",
+      "TLD"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ DNS è il processo attraverso il quale un nome di dominio viene tradotto nel corrispondente indirizzo IP.",
+    "answer": "risoluzione",
+    "bank": [
+      "risoluzione",
+      "cifratura",
+      "indicizzazione",
+      "sincronizzazione"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La prima verifica nella risoluzione DNS viene effettuata controllando la ____ del dispositivo stesso.",
+    "answer": "cache",
+    "bank": [
+      "cache",
+      "porta",
+      "password",
+      "connessione"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se la cache non contiene la risposta, il dispositivo invia una richiesta al server DNS configurato nella ____.",
+    "answer": "rete",
+    "bank": [
+      "rete",
+      "cache",
+      "porta",
+      "tabella"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se nemmeno il server DNS possiede la risposta, inizia una ricerca attraverso il sistema DNS ____.",
+    "answer": "mondiale",
+    "bank": [
+      "mondiale",
+      "locale",
+      "privato",
+      "temporaneo"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il server DNS consulta progressivamente altri server, ognuno competente per una parte di ____.",
+    "answer": "Internet",
+    "bank": [
+      "Internet",
+      "una rete locale",
+      "un singolo Paese",
+      "un solo dominio"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Ottenuto l'indirizzo IP corretto, il server DNS lo restituisce al computer e lo memorizza nella propria ____.",
+    "answer": "cache",
+    "bank": [
+      "cache",
+      "porta",
+      "tabella di routing",
+      "chiave"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'intera sequenza della risoluzione DNS richiede normalmente pochi ____.",
+    "answer": "millisecondi",
+    "bank": [
+      "millisecondi",
+      "minuti",
+      "ore",
+      "giorni"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La cache DNS è una memoria ____ nella quale vengono salvate le associazioni tra nomi di dominio e indirizzi IP.",
+    "answer": "temporanea",
+    "bank": [
+      "temporanea",
+      "permanente",
+      "pubblica",
+      "cifrata"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Ogni record DNS è associato a un ____ (Time To Live), un tempo di validità espresso in secondi.",
+    "answer": "TTL",
+    "bank": [
+      "TTL",
+      "TLD",
+      "DNS",
+      "ISP"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se un record DNS ha un TTL di 3.600 secondi, corrisponde a ____ ora.",
+    "answer": "1",
+    "bank": [
+      "1",
+      "2",
+      "5",
+      "24"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Quando il TTL scade, il dispositivo avvia una nuova ____ DNS per ottenere un indirizzo IP aggiornato.",
+    "answer": "risoluzione",
+    "bank": [
+      "risoluzione",
+      "cifratura",
+      "indicizzazione",
+      "registrazione"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Prima di una migrazione importante, i gestori di un sito spesso riducono il TTL, ad esempio da 24 ore a ____ minuti.",
+    "answer": "5",
+    "bank": [
+      "5",
+      "60",
+      "120",
+      "180"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Durante la migrazione, il vecchio server viene generalmente mantenuto ancora ____.",
+    "answer": "operativo",
+    "bank": [
+      "operativo",
+      "spento",
+      "cifrato",
+      "privato"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del bar, dopo alcune visite l'indirizzo viene ricordato a ____, senza consultare la mappa.",
+    "answer": "memoria",
+    "bank": [
+      "memoria",
+      "voce alta",
+      "matita",
+      "distanza"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un DNS ____ è un server DNS accessibile a tutti gli utenti di Internet.",
+    "answer": "pubblico",
+    "bank": [
+      "pubblico",
+      "privato",
+      "locale",
+      "temporaneo"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un DNS ____ è utilizzato all'interno di una rete specifica, come quella di un'azienda o di una scuola.",
+    "answer": "privato",
+    "bank": [
+      "privato",
+      "pubblico",
+      "mondiale",
+      "gratuito"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Grazie al protocollo ____, un dispositivo riceve automaticamente dal router l'indirizzo del server DNS da utilizzare.",
+    "answer": "DHCP",
+    "bank": [
+      "DHCP",
+      "DNSSEC",
+      "TLS",
+      "HTTP"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella maggior parte dei casi, il server DNS utilizzato appartiene all'____ (Internet Service Provider).",
+    "answer": "ISP",
+    "bank": [
+      "ISP",
+      "TLD",
+      "IoT",
+      "ACK"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Tra i fornitori di DNS pubblici gratuiti citati nel modulo troviamo Google, Cloudflare e Cisco ____.",
+    "answer": "OpenDNS",
+    "bank": [
+      "OpenDNS",
+      "Alphabet",
+      "Dyn",
+      "DNSSEC"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un ospedale utilizza un DNS privato per i propri sistemi interni, come le ____ cliniche.",
+    "answer": "cartelle",
+    "bank": [
+      "cartelle",
+      "password",
+      "porte",
+      "antenne"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2018 Cloudflare lanciò il servizio DNS pubblico ____.",
+    "answer": "1.1.1.1",
+    "bank": [
+      "1.1.1.1",
+      "8.8.8.8",
+      "192.168.1.1",
+      "0.0.0.0"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un errore ____ si verifica quando il dispositivo non riesce a tradurre un nome di dominio nel corrispondente indirizzo IP.",
+    "answer": "DNS",
+    "bank": [
+      "DNS",
+      "TLS",
+      "HTTP",
+      "IP"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una delle cause più comuni di errore DNS è un semplice errore di ____ nel nome del dominio.",
+    "answer": "digitazione",
+    "bank": [
+      "digitazione",
+      "cifratura",
+      "instradamento",
+      "indicizzazione"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una cache DNS non ____ può contenere un vecchio indirizzo IP non più valido.",
+    "answer": "aggiornata",
+    "bank": [
+      "aggiornata",
+      "pubblica",
+      "privata",
+      "cifrata"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per individuare la causa di un errore DNS, i tecnici possono provare a utilizzare temporaneamente un server DNS ____.",
+    "answer": "diverso",
+    "bank": [
+      "diverso",
+      "pubblico",
+      "privato",
+      "locale"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il codice ____ (Non-Existent Domain) indica che il nome richiesto non è stato trovato.",
+    "answer": "NXDOMAIN",
+    "bank": [
+      "NXDOMAIN",
+      "DNSSEC",
+      "TTL",
+      "DHCP"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel messaggio di errore DNS_PROBE_FINISHED_NXDOMAIN, la parola FINISHED indica che la ricerca DNS è ____.",
+    "answer": "terminata",
+    "bank": [
+      "terminata",
+      "iniziata",
+      "bloccata",
+      "cifrata"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'irraggiungibilità di Facebook, Instagram e WhatsApp il 4 ottobre 2021 fu causata da un errore nella ____ della rete.",
+    "answer": "configurazione",
+    "bank": [
+      "configurazione",
+      "cifratura",
+      "indicizzazione",
+      "registrazione"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La sicurezza ____ comprende tutte le tecnologie e le pratiche usate per proteggere il sistema da manipolazioni e utilizzi fraudolenti.",
+    "answer": "DNS",
+    "bank": [
+      "DNS",
+      "TLS",
+      "HTTP",
+      "IP"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il DNS ____ è la falsificazione delle risposte DNS, che fa credere che un dominio corrisponda a un indirizzo IP diverso da quello reale.",
+    "answer": "Spoofing",
+    "bank": [
+      "Spoofing",
+      "Hijacking",
+      "Cache Poisoning",
+      "Scanning"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il DNS Cache ____ consiste nell'inserimento di informazioni false all'interno della cache DNS.",
+    "answer": "Poisoning",
+    "bank": [
+      "Poisoning",
+      "Spoofing",
+      "Resolution",
+      "Scanning"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ (Domain Name System Security Extensions) utilizza firme digitali per verificare l'autenticità delle informazioni DNS.",
+    "answer": "DNSSEC",
+    "bank": [
+      "DNSSEC",
+      "DoH",
+      "DoT",
+      "TTL"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il DNS over ____ (DoH) protegge le richieste DNS utilizzando una connessione cifrata basata su HTTPS.",
+    "answer": "HTTPS",
+    "bank": [
+      "HTTPS",
+      "TLS",
+      "TCP",
+      "IP"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il DNS over TLS (____) utilizza il protocollo TLS per proteggere la comunicazione tra dispositivo e server DNS.",
+    "answer": "DoT",
+    "bank": [
+      "DoT",
+      "DoH",
+      "DNSSEC",
+      "VPN"
+    ]
+  },
+  {
+    "id": 49,
+    "module": "dns",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2019 diverse organizzazioni furono coinvolte in una campagna di attacchi nota come ____.",
+    "answer": "DNSpionage",
+    "bank": [
+      "DNSpionage",
+      "Firesheep",
+      "PageRank",
+      "Flag Day"
+    ]
+  }
+]

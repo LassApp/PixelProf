@@ -1,0 +1,123 @@
+{
+  "module": "router-switch-dispositivi",
+  "sets": [
+    [
+      {
+        "term": "Router",
+        "definition": "Dispositivo di rete che collega due o più reti differenti e decide il percorso che i dati devono seguire"
+      },
+      {
+        "term": "Switch",
+        "definition": "Dispositivo di rete che collega più dispositivi della stessa rete locale e inoltra i dati solo al destinatario"
+      },
+      {
+        "term": "Hub",
+        "definition": "Dispositivo di rete che copia i dati verso tutte le porte a cui è collegato"
+      },
+      {
+        "term": "Modem",
+        "definition": "Dispositivo che converte i segnali per permettere la comunicazione con la rete del provider Internet"
+      },
+      {
+        "term": "NAT",
+        "definition": "Tecnologia che permette a più dispositivi di una rete locale di condividere un unico indirizzo IP pubblico"
+      },
+      {
+        "term": "DHCP",
+        "definition": "Protocollo che assegna automaticamente ai dispositivi le impostazioni necessarie per comunicare in rete"
+      }
+    ],
+    [
+      {
+        "term": "MAC Address",
+        "definition": "Indirizzo fisico univoco della scheda di rete"
+      },
+      {
+        "term": "Unmanaged switch",
+        "definition": "Modello di switch che funziona non appena viene collegato"
+      },
+      {
+        "term": "Managed switch",
+        "definition": "Modello di switch che permette di configurare reti complesse, creare VLAN e monitorare il traffico"
+      },
+      {
+        "term": "Port Forwarding",
+        "definition": "Configurazione che associa una porta di rete a un dispositivo specifico per renderlo raggiungibile da Internet"
+      },
+      {
+        "term": "Lease",
+        "definition": "Periodo di tempo per cui viene concesso un indirizzo IP dal DHCP"
+      },
+      {
+        "term": "Rogue DHCP server",
+        "definition": "Server DHCP non autorizzato collegato erroneamente a una rete"
+      }
+    ],
+    [
+      {
+        "term": "Indirizzo IP privato",
+        "definition": "Indirizzo utilizzato all'interno della rete domestica, non raggiungibile direttamente da Internet"
+      },
+      {
+        "term": "Indirizzo IP pubblico",
+        "definition": "Indirizzo assegnato dal provider e visibile dall'esterno della rete"
+      },
+      {
+        "term": "Subnet mask",
+        "definition": "Indica quali dispositivi appartengono alla stessa rete locale"
+      },
+      {
+        "term": "Gateway predefinito",
+        "definition": "Il router a cui inviare i dati destinati ad altre reti"
+      },
+      {
+        "term": "Modem-router",
+        "definition": "Apparecchio che integra le funzioni di modem e router in un unico dispositivo"
+      }
+    ],
+    [
+      {
+        "term": "Malware Mirai (2016)",
+        "definition": "Infettò centinaia di migliaia di router domestici e dispositivi IoT trasformandoli in una botnet per un attacco DDoS"
+      },
+      {
+        "term": "Attacco al provider Dyn (2016)",
+        "definition": "Causò l'interruzione temporanea di servizi come Netflix, Spotify, Reddit e X"
+      },
+      {
+        "term": "Incidente di Oldsmar (2021)",
+        "definition": "Un attaccante tentò di modificare da remoto i livelli di idrossido di sodio in un impianto di trattamento delle acque"
+      },
+      {
+        "term": "Vulnerabilità nei modem-router (2021)",
+        "definition": "Falle nel software di gestione remoto scoperte in milioni di dispositivi"
+      }
+    ],
+    [
+      {
+        "term": "Router (metafora)",
+        "definition": "L'incrocio principale dotato di semafori intelligenti che indirizza ogni automobile verso la strada corretta"
+      },
+      {
+        "term": "Switch (metafora)",
+        "definition": "Il centralino interno che consegna la busta direttamente alla stanza del destinatario"
+      },
+      {
+        "term": "Hub (metafora)",
+        "definition": "La persona che fotocopia ogni lettera per consegnarla a tutti i dipendenti"
+      },
+      {
+        "term": "Modem (metafora)",
+        "definition": "Il grande cancello d'ingresso che collega la città al resto del mondo"
+      },
+      {
+        "term": "NAT (metafora)",
+        "definition": "Il portiere del condominio che conosce ogni appartamento ma mostra all'esterno un unico indirizzo"
+      },
+      {
+        "term": "DHCP (metafora)",
+        "definition": "Il receptionist dell'albergo che assegna la camera e le informazioni necessarie a ogni nuovo ospite"
+      }
+    ]
+  ]
+}

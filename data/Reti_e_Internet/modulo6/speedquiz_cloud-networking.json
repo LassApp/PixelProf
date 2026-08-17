@@ -1,0 +1,587 @@
+[
+  {
+    "id": 1,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il Cloud Networking?",
+    "options": [
+      "L'insieme di tecnologie e infrastrutture di rete che permettono di utilizzare servizi, applicazioni e risorse attraverso Internet invece di mantenerle solo sui dispositivi locali",
+      "Un protocollo che assegna automaticamente gli indirizzi IP",
+      "Un dispositivo fisico che collega due reti differenti",
+      "Un tipo di cavo Ethernet ad alta velocità"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Cloud Networking è l'insieme di tecnologie e infrastrutture di rete che permettono di usare servizi e risorse attraverso Internet invece di tenerli solo sui dispositivi locali."
+  },
+  {
+    "id": 2,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica il termine \"cloud\" (nuvola) secondo il modulo?",
+    "options": [
+      "Un ambiente digitale remoto composto da server collegati in rete",
+      "Un dispositivo fisico installato nello smartphone",
+      "Un tipo di connessione Wi-Fi",
+      "Un protocollo di sicurezza"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il termine cloud indica un ambiente digitale remoto composto da server collegati in rete."
+  },
+  {
+    "id": 3,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica il termine \"networking\" nel contesto del Cloud Networking?",
+    "options": [
+      "La comunicazione e lo scambio di dati tra dispositivi",
+      "La protezione dei dati tramite cifratura",
+      "L'archiviazione permanente dei file su un solo server",
+      "La riduzione della velocità di connessione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Networking indica la comunicazione e lo scambio di dati tra dispositivi."
+  },
+  {
+    "id": 4,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come vengono spesso chiamati i server remoti su cui sono ospitati dati e applicazioni del cloud?",
+    "options": [
+      "Cloud provider",
+      "Data Center locali",
+      "Router domestici",
+      "Switch gestiti"
+    ],
+    "correctIndex": 0,
+    "explanation": "I dati e le applicazioni possono essere ospitati su server remoti, chiamati spesso cloud provider."
+  },
+  {
+    "id": 5,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede a un file salvato su un servizio come Google Drive quando viene modificato da più dispositivi?",
+    "options": [
+      "Rimane custodito nel cloud e viene sincronizzato attraverso la rete",
+      "Viene copiato manualmente su ogni dispositivo con una chiavetta USB",
+      "Viene cancellato automaticamente dopo la prima modifica",
+      "Deve essere inviato via email a ogni dispositivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il file non viene spostato manualmente: rimane custodito nel cloud e viene sincronizzato attraverso la rete."
+  },
+  {
+    "id": 6,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali vantaggi offre il Cloud Networking secondo il modulo?",
+    "options": [
+      "Accessibilità, collaborazione, riduzione dei costi e continuità del servizio",
+      "Solo una maggiore velocità di connessione Wi-Fi",
+      "Solo la possibilità di usare cavi Ethernet più corti",
+      "Solo l'eliminazione totale della necessità di una password"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Cloud Networking è fondamentale perché permette accessibilità, collaborazione, riduzione dei costi e continuità del servizio."
+  },
+  {
+    "id": 7,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale limite del Cloud Networking è indicato nel modulo?",
+    "options": [
+      "Senza una connessione Internet stabile molti servizi cloud diventano difficili da utilizzare",
+      "Il cloud funziona solo con dispositivi Apple",
+      "Il cloud richiede sempre un cavo Ethernet",
+      "Il cloud non permette mai la collaborazione tra più persone"
+    ],
+    "correctIndex": 0,
+    "explanation": "Senza una connessione Internet stabile, molti servizi cloud possono diventare difficili da utilizzare."
+  },
+  {
+    "id": 8,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostrò la crescita dei servizi cloud durante la pandemia di COVID-19?",
+    "options": [
+      "Che una rete moderna deve potersi adattare rapidamente al numero di utenti e alle richieste del momento",
+      "Che i servizi cloud sono diventati inutili durante le emergenze",
+      "Che tutte le aziende avevano già infrastrutture sufficienti",
+      "Che il cloud non era più necessario dopo il 2020"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'evento ha dimostrato che una rete moderna deve essere in grado di adattarsi rapidamente al numero di utenti e alle richieste del momento."
+  },
+  {
+    "id": 9,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un Data Center?",
+    "options": [
+      "Una struttura fisica che ospita migliaia di server, dispositivi di rete e sistemi di archiviazione per erogare servizi digitali in modo continuo, sicuro e affidabile",
+      "Un software che gestisce la posta elettronica",
+      "Un tipo di router domestico avanzato",
+      "Un protocollo di sicurezza Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un Data Center è una struttura fisica che ospita migliaia di server, dispositivi di rete e sistemi di archiviazione."
+  },
+  {
+    "id": 10,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come sono organizzati i server all'interno di un Data Center?",
+    "options": [
+      "In lunghe file di armadi metallici chiamati rack",
+      "In singole stanze isolate per ogni server",
+      "In contenitori di plastica impilati",
+      "Non sono organizzati in alcun modo specifico"
+    ],
+    "correctIndex": 0,
+    "explanation": "I server sono organizzati in lunghe file di armadi metallici chiamati rack."
+  },
+  {
+    "id": 11,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa garantiscono gruppi di continuità e generatori di emergenza in un Data Center?",
+    "options": [
+      "L'alimentazione elettrica anche in caso di guasto",
+      "La sicurezza informatica contro il malware",
+      "La velocità massima della connessione Internet",
+      "La cifratura automatica dei dati"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'alimentazione elettrica è garantita da gruppi di continuità e generatori di emergenza."
+  },
+  {
+    "id": 12,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa servono gli impianti di raffreddamento in un Data Center?",
+    "options": [
+      "A mantenere costante la temperatura evitando il surriscaldamento dei server",
+      "A velocizzare la connessione Internet",
+      "A proteggere i dati da accessi non autorizzati",
+      "A ridurre il consumo di energia elettrica del router"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli impianti di raffreddamento mantengono costante la temperatura per evitare il surriscaldamento dei server."
+  },
+  {
+    "id": 13,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene controllato l'accesso fisico a un Data Center?",
+    "options": [
+      "Tramite badge, sistemi biometrici, videosorveglianza e personale autorizzato",
+      "Tramite una semplice password condivisa",
+      "Non viene controllato in alcun modo",
+      "Solo tramite una chiave meccanica tradizionale"
+    ],
+    "correctIndex": 0,
+    "explanation": "La sicurezza fisica è molto rigorosa: l'accesso è controllato tramite badge, sistemi biometrici, videosorveglianza e personale autorizzato."
+  },
+  {
+    "id": 14,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la ridondanza in un Data Center?",
+    "options": [
+      "La replica automatica dei dati su più dispositivi o Data Center per mantenere il servizio sempre disponibile",
+      "Una copia di sicurezza usata solo per recuperare dati cancellati per errore",
+      "Un sistema che elimina automaticamente i dati duplicati",
+      "Un protocollo di sicurezza Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ridondanza replica i dati su più dispositivi e, in molti casi, anche in Data Center differenti, per mantenere il servizio sempre disponibile."
+  },
+  {
+    "id": 15,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra ridondanza e backup secondo il modulo?",
+    "options": [
+      "La ridondanza protegge dai guasti dell'infrastruttura, il backup protegge dagli errori umani o dalla perdita di dati",
+      "Sono esattamente la stessa cosa",
+      "Il backup protegge dai guasti hardware, la ridondanza dagli errori umani",
+      "La ridondanza riguarda solo i backup su chiavetta USB"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ridondanza protegge dai guasti dell'infrastruttura, mentre il backup protegge dagli errori umani, dai malware o da altri eventi che causano perdita di dati."
+  },
+  {
+    "id": 16,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde nel marzo 2021 al Data Center di OVHcloud a Strasburgo?",
+    "options": [
+      "Un incendio distrusse un edificio e ne rese inutilizzabili altri, causando l'interruzione di migliaia di siti web",
+      "Subì un attacco informatico che rubò tutti i dati dei clienti",
+      "Fu chiuso definitivamente per manutenzione programmata",
+      "Fu ampliato con nuovi server per aumentare la capacità"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un incendio distrusse uno degli edifici e ne rese inutilizzabili altri, causando l'interruzione di migliaia di siti web e servizi online."
+  },
+  {
+    "id": 17,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il percorso dal dispositivo al cloud?",
+    "options": [
+      "L'insieme delle comunicazioni di rete che permettono di inviare e ricevere dati da un servizio cloud attraverso Internet",
+      "Un cavo fisico che collega direttamente lo smartphone al Data Center",
+      "Un protocollo di sicurezza usato solo dalle aziende",
+      "Un tipo di backup automatico giornaliero"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il percorso dal dispositivo al cloud è l'insieme delle comunicazioni di rete che permettono di inviare e ricevere dati da un servizio cloud attraverso Internet."
+  },
+  {
+    "id": 18,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il sistema operativo prima di inviare i dati verso il cloud?",
+    "options": [
+      "Li suddivide in piccoli pacchetti",
+      "Li cancella temporaneamente dal dispositivo",
+      "Li converte in un formato audio",
+      "Li invia direttamente senza alcuna elaborazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sistema operativo prepara i dati e li suddivide in piccoli pacchetti prima di inviarli in rete."
+  },
+  {
+    "id": 19,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale dispositivo rappresenta il punto di accesso verso Internet dalla rete locale?",
+    "options": [
+      "Il router di casa",
+      "Il Data Center",
+      "Il cloud provider",
+      "Il server DNS"
+    ],
+    "correctIndex": 0,
+    "explanation": "I pacchetti raggiungono il router di casa, che rappresenta il punto di accesso verso Internet."
+  },
+  {
+    "id": 20,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa verifica il server del cloud prima di salvare un documento inviato da un dispositivo?",
+    "options": [
+      "Che l'utente abbia i permessi necessari",
+      "Il colore dello sfondo del documento",
+      "Il modello dello smartphone utilizzato",
+      "La marca del router di casa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il server riceve la richiesta, verifica che l'utente abbia i permessi necessari, salva il documento e invia una risposta."
+  },
+  {
+    "id": 21,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per sincronizzazione nel contesto del cloud?",
+    "options": [
+      "L'aggiornamento automatico di tutte le copie di un documento collegate allo stesso account",
+      "La cancellazione automatica dei file più vecchi",
+      "Il trasferimento manuale dei file tramite USB",
+      "La creazione di una copia di backup separata"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se un documento viene modificato su un dispositivo, il servizio cloud rileva il cambiamento e aggiorna automaticamente tutte le copie collegate allo stesso account."
+  },
+  {
+    "id": 22,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fanno molti servizi cloud quando manca la connessione Internet?",
+    "options": [
+      "Salvano temporaneamente le modifiche sul dispositivo e le inviano appena la connessione torna disponibile",
+      "Cancellano automaticamente tutte le modifiche non salvate",
+      "Bloccano permanentemente l'accesso al documento",
+      "Inviano un messaggio di errore e chiudono l'applicazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Molti servizi salvano temporaneamente le modifiche sul dispositivo e le inviano al cloud appena la connessione torna disponibile."
+  },
+  {
+    "id": 23,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa provocò nel giugno 2022 l'interruzione della rete di Google Cloud in una regione degli Stati Uniti?",
+    "options": [
+      "Disservizi temporanei per numerose applicazioni e siti web",
+      "La chiusura definitiva del servizio",
+      "Un aumento permanente dei prezzi degli abbonamenti",
+      "La perdita irreversibile di tutti i dati degli utenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'interruzione provocò disservizi temporanei per numerose applicazioni e siti web che utilizzavano quella piattaforma."
+  },
+  {
+    "id": 24,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa dipende la velocità del percorso tra dispositivo e cloud?",
+    "options": [
+      "Dalla qualità della connessione, dalla distanza dal Data Center e dall'efficienza dell'infrastruttura di rete",
+      "Solo dal modello dello smartphone utilizzato",
+      "Solo dal numero di applicazioni installate",
+      "Solo dal colore del router"
+    ],
+    "correctIndex": 0,
+    "explanation": "La velocità dipende dalla qualità della connessione, dalla distanza dal Data Center e dall'efficienza dell'infrastruttura di rete."
+  },
+  {
+    "id": 25,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una CDN (Content Delivery Network)?",
+    "options": [
+      "Una rete di server distribuiti nel mondo che conserva copie dei contenuti più richiesti e li invia dal nodo più vicino all'utente",
+      "Un protocollo di sicurezza per le reti Wi-Fi",
+      "Un tipo di backup automatico dei dati",
+      "Un dispositivo fisico installato nei router domestici"
+    ],
+    "correctIndex": 0,
+    "explanation": "La CDN è una rete di server distribuiti nel mondo che conserva copie dei contenuti più richiesti e li invia dal nodo più vicino all'utente."
+  },
+  {
+    "id": 26,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il Load Balancing?",
+    "options": [
+      "Una tecnica che distribuisce automaticamente le richieste tra più server, evitando che uno solo venga sovraccaricato",
+      "Un sistema che elimina automaticamente i file duplicati",
+      "Un protocollo per cifrare i dati in transito",
+      "Un metodo per ridurre il numero di server disponibili"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Load Balancing distribuisce automaticamente le richieste tra più server, evitando che uno solo venga sovraccaricato."
+  },
+  {
+    "id": 27,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la scalabilità nel Cloud Networking?",
+    "options": [
+      "La capacità del cloud di aumentare o ridurre automaticamente le risorse in base al numero di utenti e al carico di lavoro",
+      "La capacità di un router di gestire più reti Wi-Fi contemporaneamente",
+      "La capacità di un dispositivo di collegarsi a più bande di frequenza",
+      "Un sinonimo di backup automatico"
+    ],
+    "correctIndex": 0,
+    "explanation": "La scalabilità è la capacità del cloud di aumentare o ridurre automaticamente le proprie risorse in base al numero di utenti e al carico di lavoro."
+  },
+  {
+    "id": 28,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In cosa consiste la scalabilità verticale (Vertical Scaling)?",
+    "options": [
+      "Nel potenziare un singolo server aggiungendo processori, memoria RAM o altre risorse hardware",
+      "Nell'aggiungere nuovi server che lavorano insieme",
+      "Nel ridurre il numero di server attivi",
+      "Nel collegare più Data Center tramite una CDN"
+    ],
+    "correctIndex": 0,
+    "explanation": "La scalabilità verticale consiste nel potenziare un singolo server aggiungendo processori, memoria RAM o altre risorse hardware."
+  },
+  {
+    "id": 29,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In cosa consiste la scalabilità orizzontale (Horizontal Scaling)?",
+    "options": [
+      "Nell'aggiungere nuovi server che lavorano insieme",
+      "Nel potenziare un singolo server con più memoria RAM",
+      "Nel ridurre il numero di Data Center disponibili",
+      "Nel disattivare temporaneamente la CDN"
+    ],
+    "correctIndex": 0,
+    "explanation": "La scalabilità orizzontale consiste nell'aggiungere nuovi server che lavorano insieme ed è il modello più utilizzato nel Cloud Networking."
+  },
+  {
+    "id": 30,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale limite presenta la scalabilità verticale?",
+    "options": [
+      "Un limite fisico: oltre una certa capacità il server non può più essere potenziato",
+      "Non presenta alcun limite",
+      "Funziona solo con i Data Center più piccoli",
+      "Richiede sempre l'intervento manuale di un tecnico ogni giorno"
+    ],
+    "correctIndex": 0,
+    "explanation": "La scalabilità verticale è semplice da implementare, ma presenta un limite fisico: oltre una certa capacità il server non può più essere potenziato."
+  },
+  {
+    "id": 31,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa causò nel maggio 2021 un malfunzionamento della CDN di Fastly?",
+    "options": [
+      "L'interruzione temporanea di migliaia di siti web nel mondo",
+      "Un aumento permanente della velocità di Internet",
+      "La chiusura definitiva del servizio Netflix",
+      "La perdita di tutti i dati di Google Drive"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il malfunzionamento della CDN di Fastly causò l'interruzione temporanea di migliaia di siti web nel mondo."
+  },
+  {
+    "id": 32,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Grazie a quali tecnologie Amazon e Zoom hanno gestito enormi aumenti di traffico?",
+    "options": [
+      "Load Balancing e Scalabilità",
+      "Solo l'aumento manuale del numero di router",
+      "Solo l'utilizzo di cavi Ethernet più veloci",
+      "Solo la riduzione della qualità video"
+    ],
+    "correctIndex": 0,
+    "explanation": "Amazon e Zoom hanno gestito enormi aumenti di traffico grazie alla combinazione di Load Balancing e Scalabilità."
+  },
+  {
+    "id": 33,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è Google Drive secondo il modulo?",
+    "options": [
+      "Un servizio di cloud storage per l'archiviazione e la sincronizzazione dei file nel cloud",
+      "Una piattaforma di streaming video",
+      "Un protocollo di sicurezza Wi-Fi",
+      "Un dispositivo di rete fisico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Google Drive è un servizio di cloud storage, cioè di archiviazione e sincronizzazione dei file nel cloud."
+  },
+  {
+    "id": 34,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è Netflix secondo il modulo?",
+    "options": [
+      "Una piattaforma di streaming che distribuisce contenuti audio e video attraverso Internet",
+      "Un servizio di cloud storage per documenti di lavoro",
+      "Un protocollo di sicurezza per le reti wireless",
+      "Un tipo di Data Center specializzato in backup"
+    ],
+    "correctIndex": 0,
+    "explanation": "Netflix è una piattaforma di streaming che distribuisce contenuti audio e video attraverso Internet."
+  },
+  {
+    "id": 35,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali infrastrutture di Cloud Networking utilizzano sia Google Drive sia Netflix?",
+    "options": [
+      "Data Center, CDN, Load Balancing e sistemi di scalabilità",
+      "Solo Data Center, senza altre tecnologie",
+      "Solo la scalabilità verticale",
+      "Nessuna infrastruttura in comune"
+    ],
+    "correctIndex": 0,
+    "explanation": "Entrambi utilizzano infrastrutture di Cloud Networking basate su Data Center, CDN, Load Balancing e sistemi di scalabilità."
+  },
+  {
+    "id": 36,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede a un documento salvato su Google Drive per ridurre il rischio di perdita dei dati?",
+    "options": [
+      "Viene replicato su più sistemi",
+      "Viene cancellato automaticamente dopo un mese",
+      "Viene salvato solo su un unico server senza copie",
+      "Viene convertito in un formato non modificabile"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il file viene memorizzato in modo sicuro e replicato su più sistemi per ridurre il rischio di perdita dei dati."
+  },
+  {
+    "id": 37,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'obiettivo principale di Netflix rispetto a Google Drive?",
+    "options": [
+      "Distribuire enormi quantità di contenuti video a milioni di utenti contemporaneamente, non archiviare documenti personali",
+      "Archiviare documenti di lavoro personali degli utenti",
+      "Sostituire completamente i Data Center",
+      "Fornire connessioni Wi-Fi gratuite agli utenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'obiettivo principale di Netflix non è archiviare documenti personali, ma distribuire enormi quantità di contenuti video a milioni di utenti."
+  },
+  {
+    "id": 38,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come utilizza Netflix la CDN?",
+    "options": [
+      "Per avvicinare i film e le serie TV agli spettatori riducendo i tempi di caricamento",
+      "Per cifrare le password degli utenti",
+      "Per assegnare automaticamente gli indirizzi IP",
+      "Per sostituire il protocollo DHCP"
+    ],
+    "correctIndex": 0,
+    "explanation": "Netflix sfrutta una vasta rete di server distribuiti tramite CDN, che avvicinano i contenuti agli spettatori riducendo i tempi di caricamento."
+  },
+  {
+    "id": 39,
+    "module": "cloud-networking",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fecero Netflix e altri servizi di streaming nel marzo 2020?",
+    "options": [
+      "Diminuirono temporaneamente il bitrate dei video per ridurre il consumo di banda sulle reti europee",
+      "Aumentarono permanentemente la qualità video al massimo",
+      "Sospesero completamente il servizio in Europa",
+      "Eliminarono l'uso delle CDN"
+    ],
+    "correctIndex": 0,
+    "explanation": "Per ridurre il carico sulle reti Internet europee, Netflix e altri servizi diminuirono temporaneamente il bitrate dei video."
+  }
+]

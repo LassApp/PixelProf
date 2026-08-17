@@ -1,0 +1,752 @@
+[
+  {
+    "id": 1,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa il termine \"router\" in inglese (to route)?",
+    "options": [
+      "Instradare",
+      "Collegare",
+      "Proteggere",
+      "Velocizzare"
+    ],
+    "correctIndex": 0,
+    "explanation": "Router deriva dall'inglese to route, che significa instradare."
+  },
+  {
+    "id": 2,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un router?",
+    "options": [
+      "Un dispositivo che collega due o più reti differenti e decide il percorso dei dati",
+      "Un dispositivo che collega solo dispositivi della stessa rete locale",
+      "Un dispositivo che converte i segnali per la linea telefonica",
+      "Un dispositivo che assegna automaticamente gli indirizzi IP"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il router collega reti differenti e decide il percorso che i dati devono seguire."
+  },
+  {
+    "id": 3,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella maggior parte delle abitazioni, quali reti collega il router?",
+    "options": [
+      "La rete locale (LAN) e Internet (WAN)",
+      "Due reti Wi-Fi differenti",
+      "La rete elettrica e la rete dati",
+      "Due dispositivi tramite Bluetooth"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il router collega la rete locale domestica (LAN) a Internet (WAN)."
+  },
+  {
+    "id": 4,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il router quando riceve un pacchetto di dati?",
+    "options": [
+      "Legge l'indirizzo IP di destinazione e decide il percorso da seguire",
+      "Copia il pacchetto su tutte le porte disponibili",
+      "Analizza il MAC Address del mittente",
+      "Cifra automaticamente il contenuto del pacchetto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il router legge l'indirizzo IP di destinazione contenuto nel pacchetto e stabilisce quale strada far percorrere ai dati."
+  },
+  {
+    "id": 5,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Oltre a instradare il traffico, quali funzioni può svolgere un router in una rete domestica?",
+    "options": [
+      "Creare la rete Wi-Fi, proteggere la connessione e condividere Internet tra più dispositivi",
+      "Stampare documenti in rete",
+      "Aggiornare automaticamente i software installati sui dispositivi",
+      "Registrare le password digitate dagli utenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nelle reti domestiche il router crea spesso la rete Wi-Fi, protegge la connessione e permette a più dispositivi di condividere Internet."
+  },
+  {
+    "id": 6,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nel 2016 quale malware infettò centinaia di migliaia di router domestici e dispositivi IoT sfruttando password predefinite o deboli?",
+    "options": [
+      "Mirai",
+      "NotPetya",
+      "WannaCry",
+      "Stuxnet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il malware Mirai infettò router e dispositivi IoT protetti da password predefinite o troppo deboli."
+  },
+  {
+    "id": 7,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fecero i criminali informatici con i dispositivi infettati dal malware Mirai?",
+    "options": [
+      "Li trasformarono in una botnet per lanciare un attacco DDoS",
+      "Li utilizzarono per minare criptovalute",
+      "Li usarono per inviare spam via email",
+      "Li bloccarono chiedendo un riscatto"
+    ],
+    "correctIndex": 0,
+    "explanation": "I dispositivi infettati da Mirai furono trasformati in una gigantesca botnet usata per un attacco DDoS."
+  },
+  {
+    "id": 8,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale provider DNS fu colpito dall'attacco DDoS generato dalla botnet Mirai nel 2016?",
+    "options": [
+      "Dyn",
+      "Cloudflare",
+      "Google",
+      "Akamai"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'attacco colpì il provider DNS Dyn, causando l'interruzione di numerosi servizi online."
+  },
+  {
+    "id": 9,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è uno switch?",
+    "options": [
+      "Un dispositivo che collega più dispositivi della stessa rete locale e inoltra i dati solo al destinatario",
+      "Un dispositivo che collega due reti differenti come LAN e Internet",
+      "Un dispositivo che copia i dati su tutte le porte",
+      "Un dispositivo che converte i segnali della linea telefonica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo switch collega dispositivi della stessa LAN e inoltra i dati soltanto verso il destinatario."
+  },
+  {
+    "id": 10,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa analizza lo switch per capire a chi inoltrare i dati?",
+    "options": [
+      "Il MAC Address del destinatario",
+      "L'indirizzo IP pubblico",
+      "Il nome del dominio",
+      "La password dell'utente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo switch analizza il MAC Address, l'indirizzo fisico univoco della scheda di rete del destinatario."
+  },
+  {
+    "id": 11,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il MAC Address?",
+    "options": [
+      "L'indirizzo fisico univoco della scheda di rete",
+      "L'indirizzo IP assegnato dal provider",
+      "Il nome del dispositivo scelto dall'utente",
+      "Il codice di attivazione del router"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il MAC Address (Media Access Control) è l'indirizzo fisico univoco della scheda di rete."
+  },
+  {
+    "id": 12,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come fa lo switch a sapere su quale porta è collegato ogni dispositivo?",
+    "options": [
+      "Costruisce automaticamente una tabella osservando il traffico",
+      "Richiede all'utente di configurarla manualmente",
+      "La riceve dal provider Internet",
+      "La copia dal router"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo switch costruisce automaticamente una tabella osservando il traffico che attraversa le sue porte."
+  },
+  {
+    "id": 13,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiamano gli switch semplici che funzionano non appena vengono collegati?",
+    "options": [
+      "Unmanaged switch",
+      "Managed switch",
+      "Smart switch",
+      "Core switch"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli unmanaged switch funzionano appena vengono collegati, senza bisogno di configurazione."
+  },
+  {
+    "id": 14,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permettono di fare gli switch managed, utilizzati nelle aziende?",
+    "options": [
+      "Configurare reti complesse, creare VLAN e monitorare il traffico",
+      "Convertire automaticamente i segnali analogici",
+      "Assegnare indirizzi IP pubblici",
+      "Bloccare automaticamente ogni attacco informatico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli switch managed permettono agli amministratori di configurare reti complesse, creare VLAN, monitorare il traffico e applicare regole di sicurezza."
+  },
+  {
+    "id": 15,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono, di fatto, le quattro porte Ethernet presenti sul retro di molti router domestici?",
+    "options": [
+      "Un piccolo switch incorporato",
+      "Un hub incorporato",
+      "Un modem incorporato",
+      "Un server DHCP esterno"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le porte Ethernet dei router domestici sono, di fatto, un piccolo switch incorporato."
+  },
+  {
+    "id": 16,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa tentò di fare l'attaccante nell'incidente di Oldsmar, in Florida, nel marzo 2021?",
+    "options": [
+      "Modificare i livelli di idrossido di sodio nell'acqua potabile",
+      "Bloccare l'accesso a Internet dell'impianto",
+      "Rubare i dati personali dei dipendenti",
+      "Disattivare le telecamere di sorveglianza"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'attaccante tentò di modificare i livelli di idrossido di sodio nell'acqua potabile tramite un accesso remoto non autorizzato."
+  },
+  {
+    "id": 17,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa un hub quando riceve un pacchetto di dati?",
+    "options": [
+      "Lo replica su tutte le sue porte",
+      "Lo invia solo al dispositivo destinatario",
+      "Lo cifra prima di inoltrarlo",
+      "Lo blocca se non riconosce il mittente"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'hub non sa chi sia il destinatario, quindi replica i dati su tutte le sue porte."
+  },
+  {
+    "id": 18,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può verificarsi quando più dispositivi trasmettono contemporaneamente su un hub?",
+    "options": [
+      "Collisioni che rallentano la rete",
+      "Un aumento della velocità di trasmissione",
+      "Una cifratura automatica dei dati",
+      "Un blocco permanente della rete"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sull'hub possono verificarsi collisioni quando più dispositivi trasmettono nello stesso momento."
+  },
+  {
+    "id": 19,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza principale tra hub e switch?",
+    "options": [
+      "L'hub copia i dati su tutte le porte, lo switch li invia solo al destinatario corretto",
+      "L'hub collega reti diverse, lo switch collega dispositivi della stessa rete",
+      "L'hub cifra i dati, lo switch no",
+      "L'hub è più recente dello switch"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'hub replica i dati su tutte le porte, mentre lo switch li invia esclusivamente al destinatario corretto."
+  },
+  {
+    "id": 20,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché gli hub sono praticamente scomparsi dalle reti moderne?",
+    "options": [
+      "Perché gli switch offrono prestazioni nettamente superiori a costi contenuti",
+      "Perché generano interferenze con il Wi-Fi",
+      "Perché non sono compatibili con i router moderni",
+      "Perché non hanno mai avuto un vero utilizzo pratico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli switch offrono prestazioni nettamente superiori agli hub a costi molto contenuti."
+  },
+  {
+    "id": 21,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del salvataggio delle fotografie su un hard disk collegato alla rete locale, quale dispositivo indirizza i dati direttamente alla Smart TV senza coinvolgere Internet?",
+    "options": [
+      "Lo switch",
+      "Il modem",
+      "Il server DNS",
+      "Il firewall"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quando i dati restano nella LAN, è lo switch a indirizzarli direttamente al dispositivo destinatario."
+  },
+  {
+    "id": 22,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Se al posto dello switch fosse presente un hub, cosa accadrebbe inviando una fotografia alla Smart TV?",
+    "options": [
+      "La fotografia verrebbe inviata anche a tutti gli altri dispositivi collegati",
+      "La fotografia non potrebbe essere visualizzata",
+      "La connessione Internet si interromperebbe",
+      "Il router bloccherebbe automaticamente la trasmissione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Con un hub, ogni fotografia verrebbe inviata contemporaneamente a tutti i dispositivi collegati, generando traffico inutile."
+  },
+  {
+    "id": 23,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa era possibile fare, con strumenti relativamente semplici, nelle reti con hub degli anni '90 e primi anni 2000?",
+    "options": [
+      "Intercettare il traffico destinato ad altri computer collegati allo stesso hub",
+      "Modificare da remoto la configurazione del router",
+      "Assegnare automaticamente indirizzi IP pubblici",
+      "Creare VLAN per separare i reparti aziendali"
+    ],
+    "correctIndex": 0,
+    "explanation": "Poiché l'hub trasmette ogni pacchetto a tutte le porte, era possibile intercettare il traffico destinato ad altri computer."
+  },
+  {
+    "id": 24,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa deriva l'acronimo \"modem\"?",
+    "options": [
+      "MOdulator-DEModulator",
+      "MOdule-DEsign",
+      "MOnitor-DEvice",
+      "MObile-DEvice"
+    ],
+    "correctIndex": 0,
+    "explanation": "Modem è l'abbreviazione di MOdulator-DEModulator, modulatore-demodulatore."
+  },
+  {
+    "id": 25,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la funzione principale del modem?",
+    "options": [
+      "Convertire i segnali per comunicare con la rete del provider Internet",
+      "Decidere il percorso dei pacchetti tra reti diverse",
+      "Inviare i dati solo al dispositivo destinatario nella LAN",
+      "Assegnare automaticamente gli indirizzi IP ai dispositivi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modem converte i segnali affinché possano viaggiare sul mezzo trasmissivo del provider Internet."
+  },
+  {
+    "id": 26,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra modem e router secondo il modulo?",
+    "options": [
+      "Il modem si occupa della connessione con l'esterno, il router gestisce il traffico tra rete domestica e Internet",
+      "Il modem gestisce il traffico interno, il router si collega al provider",
+      "Il modem e il router svolgono esattamente la stessa funzione",
+      "Il modem serve solo per le connessioni Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modem si occupa della connessione con l'esterno, mentre il router si occupa della gestione del traffico tra la rete domestica e Internet."
+  },
+  {
+    "id": 27,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama il dispositivo che integra sia le funzioni del modem sia quelle del router?",
+    "options": [
+      "Modem-router",
+      "Access point",
+      "Gateway DNS",
+      "Switch gestito"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nella maggior parte delle abitazioni entrambe le funzioni sono integrate in un unico apparecchio chiamato modem-router."
+  },
+  {
+    "id": 28,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali altre funzioni sono spesso integrate nei dispositivi modem-router moderni?",
+    "options": [
+      "Switch Ethernet, punto di accesso Wi-Fi, firewall, NAT e DHCP",
+      "Antivirus e password manager",
+      "Server di posta elettronica",
+      "Sistema di videosorveglianza"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nei dispositivi moderni sono spesso presenti anche switch Ethernet, punto di accesso Wi-Fi, firewall e servizi NAT e DHCP."
+  },
+  {
+    "id": 29,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa successe nel 2021 a milioni di modem-router distribuiti da diversi operatori?",
+    "options": [
+      "Furono colpiti da vulnerabilità nel software di gestione remoto",
+      "Smisero di funzionare per un problema di alimentazione",
+      "Furono sostituiti gratuitamente da tutti gli operatori",
+      "Vennero dotati automaticamente di crittografia end-to-end"
+    ],
+    "correctIndex": 0,
+    "explanation": "Milioni di modem-router furono colpiti da vulnerabilità nel software di gestione remoto."
+  },
+  {
+    "id": 30,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa hanno evidenziato le vulnerabilità del 2021 nei modem-router?",
+    "options": [
+      "L'importanza di mantenere aggiornato il firmware e installare gli aggiornamenti di sicurezza",
+      "La necessità di eliminare completamente il NAT",
+      "L'inutilità del Wi-Fi nelle reti domestiche",
+      "La necessità di tornare a utilizzare gli hub"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli episodi hanno evidenziato l'importanza di mantenere aggiornato il firmware del modem-router."
+  },
+  {
+    "id": 31,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'acronimo NAT?",
+    "options": [
+      "Network Address Translation",
+      "Network Access Technology",
+      "New Address Terminal",
+      "Network Authentication Token"
+    ],
+    "correctIndex": 0,
+    "explanation": "NAT significa Network Address Translation, traducibile come Traduzione degli Indirizzi di Rete."
+  },
+  {
+    "id": 32,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve il NAT?",
+    "options": [
+      "A permettere a più dispositivi di una rete locale di condividere un unico indirizzo IP pubblico",
+      "Ad assegnare automaticamente un nome di dominio a ogni sito",
+      "A cifrare i dati trasmessi in rete",
+      "A creare automaticamente una rete Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il NAT permette a più dispositivi di una rete locale di condividere un unico indirizzo IP pubblico durante la comunicazione con Internet."
+  },
+  {
+    "id": 33,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa traduce il NAT?",
+    "options": [
+      "Gli indirizzi IP privati della rete domestica nell'indirizzo IP pubblico e viceversa",
+      "I nomi di dominio in indirizzi IP",
+      "Gli indirizzi MAC in indirizzi IP",
+      "Le password in codici cifrati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il NAT traduce automaticamente gli indirizzi IP privati nell'indirizzo IP pubblico assegnato dal provider e viceversa."
+  },
+  {
+    "id": 34,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché nella rete domestica si utilizzano indirizzi IP privati?",
+    "options": [
+      "Perché gli indirizzi IP pubblici disponibili sono limitati",
+      "Perché sono più veloci di quelli pubblici",
+      "Perché il router non è in grado di gestire indirizzi pubblici",
+      "Perché lo richiede obbligatoriamente il DHCP"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli indirizzi IP pubblici disponibili sono limitati, quindi nella rete domestica si usano indirizzi IP privati."
+  },
+  {
+    "id": 35,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale vantaggio di sicurezza offre il NAT secondo il modulo?",
+    "options": [
+      "Nasconde i dispositivi della rete domestica, che non sono direttamente raggiungibili da Internet",
+      "Impedisce qualsiasi tipo di attacco informatico",
+      "Cifra automaticamente tutto il traffico di rete",
+      "Blocca automaticamente i siti pericolosi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Grazie al NAT, i dispositivi della rete domestica utilizzano indirizzi IP privati non direttamente raggiungibili dall'esterno."
+  },
+  {
+    "id": 36,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il Port Forwarding?",
+    "options": [
+      "La configurazione che associa una porta di rete a un dispositivo specifico per renderlo raggiungibile da Internet",
+      "La traduzione automatica degli indirizzi IP privati",
+      "Il processo di assegnazione automatica degli indirizzi IP",
+      "La creazione automatica di una VLAN"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Port Forwarding associa una specifica porta di rete a un dispositivo della rete locale per inoltrare le connessioni dall'esterno."
+  },
+  {
+    "id": 37,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il NAT è diventato una tecnologia fondamentale per la crescita di Internet?",
+    "options": [
+      "Perché gli indirizzi IPv4 disponibili si sono progressivamente esauriti",
+      "Perché ha sostituito completamente il protocollo TCP/IP",
+      "Perché elimina la necessità del DHCP",
+      "Perché velocizza la connessione Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Con l'esaurimento progressivo degli indirizzi IPv4, il NAT è diventato fondamentale per consentire a più dispositivi di condividere lo stesso IP pubblico."
+  },
+  {
+    "id": 38,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'acronimo DHCP?",
+    "options": [
+      "Dynamic Host Configuration Protocol",
+      "Domestic Host Connection Process",
+      "Dynamic Hub Control Point",
+      "Direct Host Configuration Path"
+    ],
+    "correctIndex": 0,
+    "explanation": "DHCP significa Dynamic Host Configuration Protocol."
+  },
+  {
+    "id": 39,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve il DHCP?",
+    "options": [
+      "Ad assegnare automaticamente ai dispositivi le impostazioni necessarie per comunicare in rete",
+      "A cifrare i dati trasmessi tra dispositivi",
+      "A creare automaticamente una VLAN",
+      "A bloccare i dispositivi non autorizzati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il DHCP assegna automaticamente ai dispositivi le impostazioni necessarie per comunicare sulla rete."
+  },
+  {
+    "id": 40,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali informazioni assegna tipicamente il DHCP a un dispositivo?",
+    "options": [
+      "Indirizzo IP, subnet mask, gateway predefinito e server DNS",
+      "Solo il nome della rete Wi-Fi",
+      "Solo la password di accesso alla rete",
+      "Solo l'indirizzo MAC del dispositivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tra le informazioni assegnate dal DHCP rientrano l'indirizzo IP, la subnet mask, il gateway predefinito e i server DNS."
+  },
+  {
+    "id": 41,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove è quasi sempre integrato il servizio DHCP nelle reti domestiche?",
+    "options": [
+      "Nel router",
+      "Nel modem",
+      "Nello switch",
+      "Nel firewall"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nelle reti domestiche il servizio DHCP è quasi sempre integrato nel router."
+  },
+  {
+    "id": 42,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama il periodo di tempo per cui viene concesso un indirizzo IP dal DHCP?",
+    "options": [
+      "Lease",
+      "Token",
+      "Ticket",
+      "Slot"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli indirizzi assegnati dal DHCP vengono concessi per un determinato periodo chiamato lease."
+  },
+  {
+    "id": 43,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può causare un rogue DHCP server in un'azienda?",
+    "options": [
+      "Configurazioni di rete errate e perdita di accesso a Internet o ai servizi aziendali",
+      "Un aumento della velocità della rete",
+      "La creazione automatica di nuove VLAN",
+      "Il blocco definitivo di tutti gli attacchi informatici"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un rogue DHCP server, come un router domestico collegato erroneamente alla rete aziendale, può causare configurazioni di rete errate."
+  },
+  {
+    "id": 44,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quali dispositivi si preferisce utilizzare un indirizzo IP fisso o una prenotazione DHCP?",
+    "options": [
+      "Server, stampanti di rete o telecamere di videosorveglianza",
+      "Smartphone e tablet degli ospiti",
+      "Dispositivi che si collegano una sola volta",
+      "Dispositivi Bluetooth"
+    ],
+    "correctIndex": 0,
+    "explanation": "Per server, stampanti di rete o telecamere di videosorveglianza si preferisce un indirizzo IP fisso o una prenotazione DHCP."
+  },
+  {
+    "id": 45,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una rete domestica secondo il modulo?",
+    "options": [
+      "L'insieme dei dispositivi di un'abitazione che comunicano tra loro e condividono la connessione Internet tramite il router",
+      "Solo l'insieme dei dispositivi collegati via cavo Ethernet",
+      "Un servizio fornito esclusivamente dal provider Internet",
+      "Un dispositivo fisico che sostituisce il modem"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una rete domestica è l'insieme dei dispositivi che comunicano tra loro e condividono la connessione Internet attraverso il router."
+  },
+  {
+    "id": 46,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa riceve automaticamente un nuovo dispositivo grazie al DHCP quando si collega alla rete domestica?",
+    "options": [
+      "Un indirizzo IP privato",
+      "Un indirizzo IP pubblico fisso",
+      "Una password amministrativa",
+      "Un certificato di sicurezza"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ogni nuovo dispositivo che si collega riceve automaticamente un indirizzo IP privato grazie al DHCP."
+  },
+  {
+    "id": 47,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale dispositivo entra in gioco quando due dispositivi della stessa rete comunicano tra loro, ad esempio con un NAS o una stampante?",
+    "options": [
+      "Lo switch",
+      "Il modem",
+      "Il server DNS",
+      "Il firewall esterno"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quando due dispositivi della stessa rete comunicano, entra in gioco lo switch, che indirizza i dati verso il destinatario corretto."
+  },
+  {
+    "id": 48,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa utilizza il router, oltre a inoltrare il traffico, quando la destinazione di un pacchetto è su Internet?",
+    "options": [
+      "Il NAT, per tradurre l'indirizzo IP privato nell'indirizzo IP pubblico",
+      "Il DHCP, per assegnare un nuovo indirizzo IP al server remoto",
+      "Il MAC Address del server di destinazione",
+      "Una VLAN dedicata"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quando la destinazione è su Internet, il router inoltra il traffico e utilizza il NAT per tradurre l'indirizzo IP."
+  },
+  {
+    "id": 49,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali dispositivi/protocolli collaborano automaticamente affinché ogni dato raggiunga la destinazione corretta in una rete domestica?",
+    "options": [
+      "DHCP, switch, router e NAT",
+      "Solo il modem e il DNS",
+      "Solo il firewall e l'antivirus",
+      "Solo lo switch e il DHCP"
+    ],
+    "correctIndex": 0,
+    "explanation": "DHCP, switch, router e NAT collaborano automaticamente affinché ogni dato raggiunga la destinazione corretta."
+  },
+  {
+    "id": 50,
+    "module": "router-switch-dispositivi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali dispositivi sono stati spesso presi di mira da attacchi informatici nelle abitazioni, quando lasciati con password predefinite o firmware non aggiornato?",
+    "options": [
+      "Telecamere IP, DVR e router",
+      "Solo gli smartphone",
+      "Solo i computer portatili",
+      "Solo le smart TV"
+    ],
+    "correctIndex": 0,
+    "explanation": "Numerosi attacchi hanno preso di mira dispositivi IoT come telecamere IP, DVR e router con password predefinite o firmware non aggiornato."
+  }
+]

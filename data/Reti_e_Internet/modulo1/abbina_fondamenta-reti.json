@@ -1,0 +1,130 @@
+[
+  {
+    "id": 1,
+    "module": "fondamenta-reti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Rete informatica",
+        "definition": "Insieme di due o più dispositivi collegati tra loro che possono scambiarsi dati e condividere risorse"
+      },
+      {
+        "term": "Collegamento via cavo",
+        "definition": "Una delle due modalità con cui i dispositivi di una rete possono comunicare"
+      },
+      {
+        "term": "Collegamento senza fili",
+        "definition": "Tecnologia come il Wi-Fi che permette ai dispositivi di comunicare senza cavi"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "module": "fondamenta-reti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "PAN",
+        "definition": "Rete personale che collega i dispositivi di un singolo utente a breve distanza"
+      },
+      {
+        "term": "LAN",
+        "definition": "Rete locale che collega i dispositivi di un'abitazione, una scuola o un ufficio"
+      },
+      {
+        "term": "MAN",
+        "definition": "Rete metropolitana che collega più reti locali all'interno della stessa città"
+      },
+      {
+        "term": "WAN",
+        "definition": "Rete geografica estesa che collega reti su grandi distanze, fino a nazioni e continenti"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "module": "fondamenta-reti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Internet",
+        "definition": "Rete mondiale che collega milioni di reti e dispositivi tra loro"
+      },
+      {
+        "term": "Web (World Wide Web)",
+        "definition": "Uno dei servizi che utilizzano Internet, permette di consultare pagine e siti web"
+      },
+      {
+        "term": "Servizio non Web su Internet",
+        "definition": "Ad esempio l'invio di un'email o una videochiamata, che sfruttano Internet senza passare dal Web"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "module": "fondamenta-reti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Pacchetto (packet)",
+        "definition": "Piccolo blocco di informazioni che viaggia autonomamente attraverso la rete"
+      },
+      {
+        "term": "Instradamento (routing)",
+        "definition": "La scelta del percorso che ogni pacchetto deve seguire per raggiungere la destinazione"
+      },
+      {
+        "term": "Ricomposizione dei pacchetti",
+        "definition": "Avviene quando tutti i pacchetti arrivano a destinazione e vengono rimessi nell'ordine corretto"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "module": "fondamenta-reti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Client",
+        "definition": "Il dispositivo che richiede un servizio o un'informazione"
+      },
+      {
+        "term": "Server",
+        "definition": "Il dispositivo che riceve la richiesta, la elabora e restituisce una risposta"
+      },
+      {
+        "term": "Browser",
+        "definition": "Riceve le pagine dal server, interpreta il codice e le trasforma nella pagina visualizzata"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "module": "fondamenta-reti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Indirizzo IP",
+        "definition": "Indirizzo numerico che identifica un dispositivo all'interno di una rete"
+      },
+      {
+        "term": "IPv4",
+        "definition": "Versione di indirizzo IP formata da quattro gruppi di numeri separati da un punto"
+      },
+      {
+        "term": "IP pubblico",
+        "definition": "Assegnato dal provider Internet, identifica l'intera rete di casa verso il resto del mondo"
+      },
+      {
+        "term": "IP privato",
+        "definition": "Assegnato dal router a ciascun dispositivo, utilizzato all'interno della LAN"
+      }
+    ]
+  }
+]

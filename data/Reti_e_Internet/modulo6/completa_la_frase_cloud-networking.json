@@ -1,0 +1,402 @@
+[
+  {
+    "sentence": "Il ____ è l'insieme di tecnologie e infrastrutture di rete che permettono di utilizzare servizi, applicazioni e risorse attraverso Internet.",
+    "answer": "Cloud Networking",
+    "bank": [
+      "Cloud Networking",
+      "Data Center",
+      "NAT",
+      "DHCP"
+    ]
+  },
+  {
+    "sentence": "Il termine cloud, cioè \"nuvola\", indica un ambiente digitale remoto composto da ____ collegati in rete.",
+    "answer": "server",
+    "bank": [
+      "server",
+      "router",
+      "modem",
+      "switch"
+    ]
+  },
+  {
+    "sentence": "Il termine networking indica la comunicazione e lo ____ di dati tra dispositivi.",
+    "answer": "scambio",
+    "bank": [
+      "scambio",
+      "backup",
+      "salvataggio",
+      "blocco"
+    ]
+  },
+  {
+    "sentence": "I dati e le applicazioni cloud possono essere ospitati su server remoti chiamati ____.",
+    "answer": "cloud provider",
+    "bank": [
+      "cloud provider",
+      "Data Center locali",
+      "router domestici",
+      "switch gestiti"
+    ]
+  },
+  {
+    "sentence": "Grazie al Cloud Networking, un file può essere creato su un dispositivo e modificato su un altro senza essere spostato ____.",
+    "answer": "manualmente",
+    "bank": [
+      "manualmente",
+      "mai",
+      "automaticamente",
+      "temporaneamente"
+    ]
+  },
+  {
+    "sentence": "Tra i vantaggi del Cloud Networking c'è la ____, cioè la possibilità di utilizzare dati e servizi da qualsiasi luogo.",
+    "answer": "accessibilità",
+    "bank": [
+      "accessibilità",
+      "ridondanza",
+      "scalabilità",
+      "latenza"
+    ]
+  },
+  {
+    "sentence": "Il Cloud Networking permette anche la ____, perché più persone possono lavorare sugli stessi contenuti.",
+    "answer": "collaborazione",
+    "bank": [
+      "collaborazione",
+      "cifratura",
+      "ridondanza",
+      "sincronizzazione manuale"
+    ]
+  },
+  {
+    "sentence": "Senza una connessione Internet ____, molti servizi cloud possono diventare difficili da utilizzare.",
+    "answer": "stabile",
+    "bank": [
+      "stabile",
+      "gratuita",
+      "veloce",
+      "wireless"
+    ]
+  },
+  {
+    "sentence": "Durante la pandemia di COVID-19, piattaforme come ____ hanno dovuto gestire milioni di utenti collegati contemporaneamente.",
+    "answer": "Microsoft Teams",
+    "bank": [
+      "Microsoft Teams",
+      "WhatsApp",
+      "Instagram",
+      "TikTok"
+    ]
+  },
+  {
+    "sentence": "Un ____ è una struttura fisica che ospita migliaia di server, dispositivi di rete e sistemi di archiviazione.",
+    "answer": "Data Center",
+    "bank": [
+      "Data Center",
+      "router",
+      "modem",
+      "access point"
+    ]
+  },
+  {
+    "sentence": "All'interno di un Data Center i server sono organizzati in lunghe file di armadi metallici chiamati ____.",
+    "answer": "rack",
+    "bank": [
+      "rack",
+      "switch",
+      "nodi",
+      "cluster"
+    ]
+  },
+  {
+    "sentence": "L'alimentazione elettrica di un Data Center è garantita da gruppi di continuità e ____ di emergenza.",
+    "answer": "generatori",
+    "bank": [
+      "generatori",
+      "router",
+      "server",
+      "ripetitori"
+    ]
+  },
+  {
+    "sentence": "Gli impianti di ____ mantengono costante la temperatura per evitare il surriscaldamento dei server.",
+    "answer": "raffreddamento",
+    "bank": [
+      "raffreddamento",
+      "backup",
+      "sincronizzazione",
+      "cifratura"
+    ]
+  },
+  {
+    "sentence": "L'accesso fisico a un Data Center è controllato tramite badge, sistemi biometrici e ____.",
+    "answer": "videosorveglianza",
+    "bank": [
+      "videosorveglianza",
+      "VPN",
+      "firewall software",
+      "DNS"
+    ]
+  },
+  {
+    "sentence": "La ____ replica automaticamente i dati su più dispositivi o Data Center per mantenere il servizio sempre disponibile.",
+    "answer": "ridondanza",
+    "bank": [
+      "ridondanza",
+      "sincronizzazione",
+      "scalabilità",
+      "latenza"
+    ]
+  },
+  {
+    "sentence": "A differenza della ridondanza, il ____ è una copia di sicurezza conservata per recuperare dati persi o cancellati accidentalmente.",
+    "answer": "backup",
+    "bank": [
+      "backup",
+      "load balancing",
+      "CDN",
+      "rack"
+    ]
+  },
+  {
+    "sentence": "Nel marzo 2021 un incendio colpì un importante Data Center della società ____ a Strasburgo, in Francia.",
+    "answer": "OVHcloud",
+    "bank": [
+      "OVHcloud",
+      "Google Cloud",
+      "Amazon",
+      "Microsoft Azure"
+    ]
+  },
+  {
+    "sentence": "L'incendio di Strasburgo causò l'interruzione di migliaia di siti web e alcuni clienti senza backup persero definitivamente parte dei propri ____.",
+    "answer": "dati",
+    "bank": [
+      "dati",
+      "server",
+      "router",
+      "Data Center"
+    ]
+  },
+  {
+    "sentence": "Il percorso dal dispositivo al cloud è l'insieme delle comunicazioni di rete che permettono di inviare e ricevere dati da un servizio cloud attraverso ____.",
+    "answer": "Internet",
+    "bank": [
+      "Internet",
+      "Bluetooth",
+      "una VPN",
+      "un cavo USB"
+    ]
+  },
+  {
+    "sentence": "Prima di essere inviati in rete, i dati vengono suddivisi dal sistema operativo in piccoli ____.",
+    "answer": "pacchetti",
+    "bank": [
+      "pacchetti",
+      "nodi",
+      "rack",
+      "cluster"
+    ]
+  },
+  {
+    "sentence": "I pacchetti di dati raggiungono innanzitutto il ____ di casa, punto di accesso verso Internet.",
+    "answer": "router",
+    "bank": [
+      "router",
+      "Data Center",
+      "cloud provider",
+      "server DNS"
+    ]
+  },
+  {
+    "sentence": "Quando un documento viene modificato su un dispositivo e aggiornato automaticamente su tutti gli altri collegati allo stesso account, si parla di ____.",
+    "answer": "sincronizzazione",
+    "bank": [
+      "sincronizzazione",
+      "ridondanza",
+      "scalabilità",
+      "backup"
+    ]
+  },
+  {
+    "sentence": "Se la connessione è assente, molti servizi salvano temporaneamente le modifiche sul dispositivo e le inviano al cloud appena la connessione ____.",
+    "answer": "torna disponibile",
+    "bank": [
+      "torna disponibile",
+      "viene disattivata",
+      "si interrompe",
+      "si cifra"
+    ]
+  },
+  {
+    "sentence": "Nel giugno 2022 un'interruzione della rete di ____ in una regione degli Stati Uniti provocò disservizi temporanei per numerose applicazioni.",
+    "answer": "Google Cloud",
+    "bank": [
+      "Google Cloud",
+      "OVHcloud",
+      "Netflix",
+      "Fastly"
+    ]
+  },
+  {
+    "sentence": "La ____ (Content Delivery Network) è una rete di server distribuiti nel mondo che conserva copie dei contenuti più richiesti.",
+    "answer": "CDN",
+    "bank": [
+      "CDN",
+      "VPN",
+      "LAN",
+      "WAN"
+    ]
+  },
+  {
+    "sentence": "Grazie alla CDN, un contenuto viene scaricato dal server più vicino oppure da quello meno ____.",
+    "answer": "congestionato",
+    "bank": [
+      "congestionato",
+      "sicuro",
+      "recente",
+      "economico"
+    ]
+  },
+  {
+    "sentence": "Il ____ è la tecnica che distribuisce automaticamente le richieste tra più server, evitando che uno solo venga sovraccaricato.",
+    "answer": "Load Balancing",
+    "bank": [
+      "Load Balancing",
+      "CDN",
+      "backup",
+      "ridondanza"
+    ]
+  },
+  {
+    "sentence": "Se un server è troppo occupato o presenta un guasto, il Load Balancer indirizza automaticamente il traffico verso altri server ____.",
+    "answer": "disponibili",
+    "bank": [
+      "disponibili",
+      "spenti",
+      "più lenti",
+      "remoti"
+    ]
+  },
+  {
+    "sentence": "La ____ è la capacità del cloud di aumentare o ridurre automaticamente le proprie risorse in base al numero di utenti.",
+    "answer": "scalabilità",
+    "bank": [
+      "scalabilità",
+      "ridondanza",
+      "sincronizzazione",
+      "latenza"
+    ]
+  },
+  {
+    "sentence": "La scalabilità ____ consiste nel potenziare un singolo server aggiungendo processori o memoria RAM.",
+    "answer": "verticale",
+    "bank": [
+      "verticale",
+      "orizzontale",
+      "automatica",
+      "distribuita"
+    ]
+  },
+  {
+    "sentence": "La scalabilità ____ consiste nell'aggiungere nuovi server che lavorano insieme ed è il modello più utilizzato nel Cloud Networking.",
+    "answer": "orizzontale",
+    "bank": [
+      "orizzontale",
+      "verticale",
+      "manuale",
+      "statica"
+    ]
+  },
+  {
+    "sentence": "La scalabilità verticale presenta un limite fisico: oltre una certa capacità il server non può più essere ____.",
+    "answer": "potenziato",
+    "bank": [
+      "potenziato",
+      "spento",
+      "sostituito",
+      "collegato"
+    ]
+  },
+  {
+    "sentence": "Nel maggio 2021 un malfunzionamento della CDN di ____ causò l'interruzione temporanea di migliaia di siti web nel mondo.",
+    "answer": "Fastly",
+    "bank": [
+      "Fastly",
+      "OVHcloud",
+      "Google Cloud",
+      "Netflix"
+    ]
+  },
+  {
+    "sentence": "Durante il Black Friday, Amazon ha gestito enormi aumenti di traffico grazie alla combinazione di Load Balancing e ____.",
+    "answer": "Scalabilità",
+    "bank": [
+      "Scalabilità",
+      "CDN",
+      "backup",
+      "ridondanza"
+    ]
+  },
+  {
+    "sentence": "____ è un servizio di cloud storage per l'archiviazione e la sincronizzazione dei file nel cloud.",
+    "answer": "Google Drive",
+    "bank": [
+      "Google Drive",
+      "Netflix",
+      "Fastly",
+      "OVHcloud"
+    ]
+  },
+  {
+    "sentence": "____ è una piattaforma di streaming che distribuisce contenuti audio e video attraverso Internet.",
+    "answer": "Netflix",
+    "bank": [
+      "Netflix",
+      "Google Drive",
+      "un Data Center",
+      "una CDN"
+    ]
+  },
+  {
+    "sentence": "Quando un documento su Google Drive viene modificato da un dispositivo, il servizio sincronizza automaticamente le modifiche mantenendo tutte le copie ____.",
+    "answer": "aggiornate",
+    "bank": [
+      "aggiornate",
+      "cifrate",
+      "cancellate",
+      "private"
+    ]
+  },
+  {
+    "sentence": "Netflix sfrutta una vasta rete di server distribuiti tramite CDN per avvicinare i contenuti agli spettatori e ridurre i tempi di ____.",
+    "answer": "caricamento",
+    "bank": [
+      "caricamento",
+      "cifratura",
+      "backup",
+      "sincronizzazione"
+    ]
+  },
+  {
+    "sentence": "Nel marzo 2020, per ridurre il carico sulle reti Internet europee, Netflix diminuì temporaneamente il ____ dei video.",
+    "answer": "bitrate",
+    "bank": [
+      "bitrate",
+      "prezzo",
+      "numero di server",
+      "backup"
+    ]
+  },
+  {
+    "sentence": "Sia Google Drive sia Netflix utilizzano infrastrutture di Cloud Networking basate su Data Center, CDN, Load Balancing e sistemi di ____.",
+    "answer": "scalabilità",
+    "bank": [
+      "scalabilità",
+      "cifratura WEP",
+      "port forwarding",
+      "DHCP"
+    ]
+  }
+]

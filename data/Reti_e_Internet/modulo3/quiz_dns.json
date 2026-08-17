@@ -1,0 +1,1172 @@
+[
+  {
+    "id": 1,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il DNS (Domain Name System)?",
+    "options": [
+      "Il servizio che traduce i nomi di dominio nei corrispondenti indirizzi IP",
+      "Un protocollo che cifra le comunicazioni tra browser e server",
+      "Un dispositivo fisico che instrada i pacchetti di rete",
+      "Un algoritmo che ordina i risultati di una ricerca"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il DNS è il servizio che traduce i nomi di dominio, facili da ricordare per le persone, nei corrispondenti indirizzi IP."
+  },
+  {
+    "id": 2,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene definito il DNS nella metafora del modulo?",
+    "options": [
+      "Una gigantesca rubrica distribuita su Internet che associa un nome leggibile al suo indirizzo IP",
+      "Un elenco di password utilizzate dagli utenti",
+      "Un catalogo di pagine Web già visitate",
+      "Un registro di porte di comunicazione aperte"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il DNS è una gigantesca rubrica distribuita su Internet che associa un nome leggibile, come www.google.com, al suo indirizzo IP."
+  },
+  {
+    "id": 3,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché è stato creato il DNS, secondo il modulo?",
+    "options": [
+      "Perché gli esseri umani ricordano facilmente parole, non lunghe sequenze di numeri come gli indirizzi IP",
+      "Perché i dispositivi non possono avere un indirizzo IP",
+      "Perché i siti Web non hanno bisogno di un indirizzo IP",
+      "Perché i browser non possono comunicare tra loro"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli esseri umani ricordano facilmente parole, non lunghe sequenze di numeri: per questo è stato creato il DNS."
+  },
+  {
+    "id": 4,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il compito specifico del DNS, secondo il modulo?",
+    "options": [
+      "Ricevere il nome del sito richiesto, cercare l'indirizzo IP corrispondente e restituirlo al dispositivo",
+      "Scaricare e mostrare le pagine Web sullo schermo",
+      "Cifrare i dati scambiati tra browser e server",
+      "Gestire le porte di comunicazione di un dispositivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il compito del DNS consiste nel ricevere il nome del sito richiesto, cercare l'indirizzo IP corrispondente e restituirlo al dispositivo."
+  },
+  {
+    "id": 5,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "È vero che il DNS trasporta i dati del sito Web e ne contiene le pagine?",
+    "options": [
+      "Sì, il DNS scarica e memorizza tutte le pagine dei siti",
+      "No, il compito del DNS termina nel momento in cui comunica l'indirizzo IP al dispositivo",
+      "Sì, ma solo per i siti più popolari",
+      "No, perché il DNS si occupa solo della cifratura dei dati"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il DNS non trasporta i dati del sito e non contiene le pagine web; il suo compito termina quando comunica l'indirizzo IP."
+  },
+  {
+    "id": 6,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadrebbe a Internet senza il DNS, secondo il modulo?",
+    "options": [
+      "Smetterebbe completamente di funzionare",
+      "Continuerebbe a funzionare, ma sarebbe estremamente difficile da utilizzare, perché servirebbe conoscere direttamente gli indirizzi IP",
+      "Diventerebbe più veloce, eliminando un passaggio inutile",
+      "Funzionerebbe solo per i siti con HTTPS"
+    ],
+    "correctIndex": 1,
+    "explanation": "Senza il DNS Internet continuerebbe a funzionare, ma sarebbe estremamente difficile da utilizzare."
+  },
+  {
+    "id": 7,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde il 21 ottobre 2016, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Un attacco informatico colpì l'azienda Dyn, uno dei principali fornitori di servizi DNS, sfruttando una rete di dispositivi IoT compromessi",
+      "Fu annunciato l'esaurimento degli indirizzi IPv4",
+      "Cloudflare lanciò il servizio DNS pubblico 1.1.1.1",
+      "Google registrò il dominio abc.xyz per Alphabet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il 21 ottobre 2016 un massiccio attacco informatico colpì l'azienda Dyn sfruttando dispositivi IoT compromessi."
+  },
+  {
+    "id": 8,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Durante l'attacco a Dyn del 2016, i siti come Twitter, Spotify e Netflix erano realmente spenti?",
+    "options": [
+      "Sì, i loro server furono completamente disattivati",
+      "No, i loro server continuavano a funzionare regolarmente: il problema era che il DNS non riusciva più a indicare agli utenti dove trovarli",
+      "Sì, ma solo per gli utenti europei",
+      "No, il problema riguardava solo la cifratura HTTPS"
+    ],
+    "correctIndex": 1,
+    "explanation": "Quei siti non erano spenti: i loro server continuavano a funzionare regolarmente, ma il DNS non riusciva più a indicare dove trovarli."
+  },
+  {
+    "id": 9,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del ristorante usata per spiegare il DNS, a cosa corrisponde l'indirizzo IP?",
+    "options": [
+      "Al nome del ristorante",
+      "Al menu del ristorante",
+      "All'indirizzo fisico, cioè via e numero civico, del ristorante",
+      "Alla recensione online del ristorante"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il nome del sito corrisponde al nome del ristorante, mentre l'indirizzo IP rappresenta il suo indirizzo fisico."
+  },
+  {
+    "id": 10,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un nome di dominio, secondo la definizione del modulo?",
+    "options": [
+      "Un indirizzo numerico utilizzato dai dispositivi per comunicare",
+      "Un nome leggibile dalle persone che identifica un servizio o un sito Internet",
+      "Un protocollo di sicurezza per proteggere le comunicazioni Web",
+      "Una porta di comunicazione riservata al traffico DNS"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un nome di dominio è un nome leggibile dalle persone che identifica un servizio o un sito Internet."
+  },
+  {
+    "id": 11,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il TLD (Top-Level Domain), prendendo come esempio www.uniba.it?",
+    "options": [
+      "La parte a sinistra dell'indirizzo, come www",
+      "La parte più a destra dell'indirizzo, come .it, che identifica una categoria generale del dominio",
+      "Il nome dell'organizzazione che ha registrato il dominio",
+      "L'indirizzo IP del server che ospita il sito"
+    ],
+    "correctIndex": 1,
+    "explanation": "Partendo da destra troviamo .it, chiamato Top-Level Domain, che identifica una categoria generale del dominio."
+  },
+  {
+    "id": 12,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali tra questi sono esempi di TLD che rappresentano uno Stato, secondo il modulo?",
+    "options": [
+      ".com e .org",
+      ".it e .fr",
+      ".net e .xyz",
+      "www e mail"
+    ],
+    "correctIndex": 1,
+    "explanation": "Alcuni TLD rappresentano uno Stato, come .it per l'Italia o .fr per la Francia."
+  },
+  {
+    "id": 13,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è \"www\" in un indirizzo come www.uniba.it, secondo il modulo?",
+    "options": [
+      "Il Top-Level Domain",
+      "Il dominio registrato dall'organizzazione",
+      "Un sottodominio (subdomain), utilizzato per identificare uno specifico servizio",
+      "L'indirizzo IP del server"
+    ],
+    "correctIndex": 2,
+    "explanation": "www rappresenta un sottodominio, utilizzato per identificare uno specifico servizio."
+  },
+  {
+    "id": 14,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali servizi rappresentano mail.google.com, maps.google.com e drive.google.com, secondo il modulo?",
+    "options": [
+      "Tre domini completamente indipendenti tra loro",
+      "Sottodomini diversi che appartengono tutti allo stesso dominio principale google.com, ma identificano servizi differenti",
+      "Tre indirizzi IP dello stesso server",
+      "Tre TLD differenti registrati da Google"
+    ],
+    "correctIndex": 1,
+    "explanation": "Tutti appartengono allo stesso dominio principale (google.com), ma identificano servizi differenti."
+  },
+  {
+    "id": 15,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Il rapporto tra un nome di dominio e il suo indirizzo IP è sempre fisso, secondo il modulo?",
+    "options": [
+      "Sì, un dominio corrisponde sempre e solo a un unico indirizzo IP",
+      "No, un grande servizio può restituire indirizzi IP diversi a seconda della posizione dell'utente o del carico della rete",
+      "Sì, ma solo per i siti che utilizzano HTTPS",
+      "No, perché i domini non hanno mai un indirizzo IP"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il DNS può restituire un indirizzo IP diverso a seconda della posizione dell'utente o del carico della rete."
+  },
+  {
+    "id": 16,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della catena di negozi usata nel modulo, cosa rimane sempre uguale?",
+    "options": [
+      "L'indirizzo del negozio",
+      "Il nome del negozio",
+      "Il numero di dipendenti",
+      "L'orario di apertura"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il nome del negozio è uguale in ogni città, ma l'indirizzo cambia in base al luogo in cui ci si trova."
+  },
+  {
+    "id": 17,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può accadere quando più domini vengono ospitati sul medesimo server, secondo il modulo?",
+    "options": [
+      "Possono condividere lo stesso indirizzo IP",
+      "Devono necessariamente avere lo stesso TLD",
+      "Non è mai possibile, ogni server ospita un solo dominio",
+      "Perdono automaticamente la possibilità di essere raggiunti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Più domini possono condividere lo stesso indirizzo IP quando vengono ospitati sul medesimo server."
+  },
+  {
+    "id": 18,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del palazzo usata per descrivere più domini sullo stesso server, cosa rappresentano gli appartamenti?",
+    "options": [
+      "I diversi siti Web ospitati sullo stesso server",
+      "I diversi indirizzi IP di un singolo sito",
+      "I sottodomini di un unico sito",
+      "I server DNS coinvolti nella risoluzione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un unico server può ospitare più siti Web differenti, ciascuno identificato dal proprio dominio, come gli appartamenti di un palazzo."
+  },
+  {
+    "id": 19,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa avvenne nel 2015, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Google annunciò la riorganizzazione della propria struttura aziendale con la nascita di Alphabet, registrando il dominio abc.xyz",
+      "Cloudflare lanciò il servizio DNS pubblico 1.1.1.1",
+      "Un attacco colpì l'azienda Dyn",
+      "Facebook, Instagram e WhatsApp rimasero irraggiungibili per sei ore"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel 2015 Google annunciò la nascita di Alphabet e registrò il dominio abc.xyz, utilizzando il nuovo TLD .xyz."
+  },
+  {
+    "id": 20,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'insegna aziendale usata per spiegare domini e IP, a cosa corrisponde il nome di dominio?",
+    "options": [
+      "Alle coordinate GPS dell'edificio",
+      "Al nome scritto sull'insegna, come \"Biblioteca Comunale\" o \"Ospedale San Carlo\"",
+      "Al numero civico dell'edificio",
+      "Al numero di telefono dell'attività"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il nome di dominio è come il nome di un'azienda scritto sull'insegna."
+  },
+  {
+    "id": 21,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la risoluzione DNS (DNS Resolution)?",
+    "options": [
+      "Il processo attraverso il quale un nome di dominio viene tradotto nel corrispondente indirizzo IP",
+      "Il processo che cifra le comunicazioni tra browser e server",
+      "Il processo che assegna una porta a ogni applicazione",
+      "Il processo che ripara un errore di connessione Internet"
+    ],
+    "correctIndex": 0,
+    "explanation": "La risoluzione DNS è il processo attraverso il quale un nome di dominio viene tradotto nel corrispondente indirizzo IP."
+  },
+  {
+    "id": 22,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la prima verifica effettuata quando si digita un nome di dominio, secondo il modulo?",
+    "options": [
+      "Il dispositivo controlla se l'informazione è già presente nella cache DNS",
+      "Il dispositivo contatta direttamente il server autorevole del dominio",
+      "Il dispositivo invia una richiesta a tutti i server DNS del mondo contemporaneamente",
+      "Il browser cifra automaticamente la richiesta con TLS"
+    ],
+    "correctIndex": 0,
+    "explanation": "La prima verifica viene effettuata sul dispositivo stesso: il sistema controlla se l'informazione è già presente nella cache DNS."
+  },
+  {
+    "id": 23,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se l'indirizzo IP richiesto è già presente nella cache e il suo periodo di validità non è scaduto?",
+    "options": [
+      "Il browser deve comunque effettuare una nuova ricerca",
+      "Il browser può utilizzarlo immediatamente senza effettuare una nuova ricerca",
+      "Il dispositivo elimina automaticamente l'informazione dalla cache",
+      "Il sito risulta sempre irraggiungibile"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se l'indirizzo è presente nella cache ed è ancora valido, il browser può utilizzarlo immediatamente."
+  },
+  {
+    "id": 24,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A chi invia una richiesta il dispositivo se la propria cache non contiene la risposta?",
+    "options": [
+      "Al server DNS configurato nella rete, spesso quello del provider Internet o di un servizio DNS pubblico",
+      "Direttamente al server che ospita il sito Web",
+      "A un motore di ricerca",
+      "A un server DHCP"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il dispositivo invia una richiesta al server DNS configurato nella rete, che spesso appartiene al provider Internet o a un servizio DNS pubblico."
+  },
+  {
+    "id": 25,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il server DNS se non conosce già l'indirizzo IP richiesto, secondo il modulo?",
+    "options": [
+      "Restituisce immediatamente un errore definitivo",
+      "Inizia una ricerca attraverso il sistema DNS mondiale, chiedendo informazioni ad altri server specializzati",
+      "Interrompe la connessione dell'utente",
+      "Richiede all'utente di inserire manualmente l'indirizzo IP"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se nemmeno il server DNS possiede la risposta, inizia una ricerca attraverso il sistema DNS mondiale."
+  },
+  {
+    "id": 26,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora usata nel modulo per la risoluzione DNS, come viene descritta la ricerca dell'indirizzo di una persona sconosciuta?",
+    "options": [
+      "Si chiede a un amico, che indirizza verso qualcun altro, un passo alla volta, fino a trovare chi conosce l'indirizzo esatto",
+      "Si controlla immediatamente un unico elenco universale",
+      "Si attende che la persona si presenti spontaneamente",
+      "Si utilizza esclusivamente un motore di ricerca"
+    ],
+    "correctIndex": 0,
+    "explanation": "Chiediamo prima a un amico; se non lo sa, ci indirizza verso qualcun altro, un passo alla volta, finché non troviamo chi conosce l'indirizzo esatto."
+  },
+  {
+    "id": 27,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il server DNS una volta ottenuto l'indirizzo IP corretto dal server autorevole?",
+    "options": [
+      "Lo restituisce al computer e lo memorizza temporaneamente nella propria cache",
+      "Lo elimina immediatamente per motivi di sicurezza",
+      "Lo condivide pubblicamente con tutti gli altri utenti di Internet",
+      "Richiede una conferma manuale all'utente prima di utilizzarlo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ottenuto l'indirizzo IP corretto, lo restituisce al computer e lo memorizza temporaneamente nella propria cache."
+  },
+  {
+    "id": 28,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanto tempo richiede normalmente l'intera sequenza della risoluzione DNS, secondo il modulo?",
+    "options": [
+      "Diverse ore",
+      "Pochi millisecondi",
+      "Alcuni minuti",
+      "Un giorno intero"
+    ],
+    "correctIndex": 1,
+    "explanation": "Tutta questa sequenza di operazioni richiede normalmente pochi millisecondi."
+  },
+  {
+    "id": 29,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "È vero che il DNS scarica il sito Web richiesto?",
+    "options": [
+      "Sì, il DNS scarica direttamente tutte le pagine del sito",
+      "No, il compito del DNS termina nel momento in cui comunica al dispositivo l'indirizzo IP corretto",
+      "Sì, ma solo per i siti più visitati",
+      "No, perché il DNS non è collegato a Internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il DNS non scarica il sito web: il suo compito termina nel momento in cui comunica al dispositivo l'indirizzo IP corretto."
+  },
+  {
+    "id": 30,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fanno i grandi fornitori di servizi Internet durante eventi come i Mondiali di calcio o il Black Friday, secondo il caso reale citato?",
+    "options": [
+      "Disattivano temporaneamente il DNS per motivi di sicurezza",
+      "Utilizzano infrastrutture DNS distribuite in tutto il mondo per ridurre i tempi di risposta e distribuire il carico di lavoro",
+      "Richiedono agli utenti di inserire manualmente gli indirizzi IP",
+      "Bloccano l'accesso ai siti più richiesti"
+    ],
+    "correctIndex": 1,
+    "explanation": "I grandi fornitori utilizzano infrastrutture DNS distribuite in tutto il mondo, riducendo i tempi di risposta e distribuendo il carico."
+  },
+  {
+    "id": 31,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del navigatore usata per la risoluzione DNS, cosa succede se un luogo è già stato cercato in passato?",
+    "options": [
+      "L'indirizzo compare immediatamente, senza bisogno di una nuova ricerca",
+      "Il navigatore deve sempre ripetere la ricerca da capo",
+      "Il navigatore restituisce sempre un indirizzo diverso",
+      "Il navigatore richiede una connessione a un server esterno"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se avete già cercato quel luogo in passato, l'indirizzo compare immediatamente."
+  },
+  {
+    "id": 32,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la cache DNS, secondo la definizione del modulo?",
+    "options": [
+      "Una memoria temporanea nella quale vengono salvate le associazioni tra nomi di dominio e indirizzi IP già risolte",
+      "Un elenco di siti bloccati dal provider Internet",
+      "Un protocollo di sicurezza per cifrare le richieste DNS",
+      "Un server che gestisce esclusivamente i domini di primo livello"
+    ],
+    "correctIndex": 0,
+    "explanation": "La cache DNS è una memoria temporanea nella quale vengono salvate le associazioni tra nomi di dominio e indirizzi IP già risolte."
+  },
+  {
+    "id": 33,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è lo scopo della cache DNS, secondo il modulo?",
+    "options": [
+      "Evitare di ripetere continuamente la stessa ricerca, rendendo la navigazione più veloce e riducendo le richieste ai server DNS",
+      "Bloccare l'accesso ai siti non sicuri",
+      "Cifrare tutte le comunicazioni tra browser e server",
+      "Assegnare automaticamente nuovi indirizzi IP ai dispositivi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il suo scopo è evitare di ripetere continuamente la stessa ricerca, rendendo la navigazione più veloce."
+  },
+  {
+    "id": 34,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali dispositivi o livelli, oltre al computer o smartphone, possono conservare una cache DNS, secondo il modulo?",
+    "options": [
+      "Solo il browser",
+      "Il browser, il sistema operativo, il router di casa, il provider Internet e gli stessi server DNS",
+      "Solo il router di casa",
+      "Solo i server DNS autorevoli"
+    ],
+    "correctIndex": 1,
+    "explanation": "Anche il browser, il sistema operativo, il router, il provider Internet e i server DNS conservano una propria cache."
+  },
+  {
+    "id": 35,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il TTL (Time To Live) di un record DNS?",
+    "options": [
+      "Il numero massimo di dispositivi che possono usare quel record",
+      "Un tempo di validità espresso in secondi, entro il quale il dispositivo continua a utilizzare l'indirizzo IP memorizzato nella cache",
+      "Il tempo necessario per completare la risoluzione DNS la prima volta",
+      "Il numero di server DNS coinvolti nella risoluzione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ogni record DNS è associato a un TTL, un tempo di validità espresso in secondi."
+  },
+  {
+    "id": 36,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Se un record DNS ha un TTL di 3.600 secondi (1 ora), cosa succede dopo che questo tempo è trascorso?",
+    "options": [
+      "L'indirizzo IP resta valido per sempre",
+      "La voce nella cache viene considerata non più valida e viene avviata una nuova risoluzione DNS",
+      "Il sito diventa automaticamente irraggiungibile in modo permanente",
+      "Il TTL si azzera e la cache viene cancellata su tutti i dispositivi del mondo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se il TTL è scaduto, la voce viene considerata non più valida e il dispositivo avvia una nuova risoluzione DNS."
+  },
+  {
+    "id": 37,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la cache DNS potrebbe contenere un indirizzo IP non più aggiornato, secondo il modulo?",
+    "options": [
+      "Perché un sito ha cambiato server prima della scadenza del TTL",
+      "Perché il DNS aggiorna sempre la cache ogni secondo",
+      "Perché la cache DNS non esiste sui dispositivi moderni",
+      "Perché il TTL non ha mai una scadenza"
+    ],
+    "correctIndex": 0,
+    "explanation": "Questo può succedere quando un sito cambia server prima della scadenza del TTL."
+  },
+  {
+    "id": 38,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può accadere se il vecchio server di un sito trasferito non è più disponibile e la cache non è ancora aggiornata?",
+    "options": [
+      "Il sito potrebbe risultare temporaneamente irraggiungibile oppure mostrare una versione non aggiornata del servizio",
+      "Il dispositivo trova automaticamente il nuovo server senza alcun problema",
+      "Il TTL si azzera immediatamente in automatico",
+      "Il browser blocca permanentemente l'accesso al dominio"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se il vecchio server non è più disponibile, il sito potrebbe risultare temporaneamente irraggiungibile o mostrare una versione non aggiornata."
+  },
+  {
+    "id": 39,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fanno spesso i gestori di un sito prima di una migrazione pianificata verso un nuovo server, secondo il modulo?",
+    "options": [
+      "Aumentano il TTL per mantenere la cache più a lungo possibile",
+      "Riducono temporaneamente il valore del TTL, così che i dispositivi aggiornino più rapidamente le informazioni in cache",
+      "Eliminano completamente la cache DNS di tutti gli utenti",
+      "Disattivano il vecchio server immediatamente, senza alcun preavviso"
+    ],
+    "correctIndex": 1,
+    "explanation": "Spesso riducono temporaneamente il valore del TTL, così che i dispositivi aggiornino più rapidamente le informazioni memorizzate."
+  },
+  {
+    "id": 40,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Durante una migrazione, cosa accade generalmente al vecchio server, secondo il modulo?",
+    "options": [
+      "Viene generalmente mantenuto ancora operativo, permettendo agli utenti con cache non aggiornata di continuare ad accedere al sito",
+      "Viene spento immediatamente per motivi di sicurezza",
+      "Viene automaticamente sostituito da un DNS pubblico",
+      "Smette di rispondere a qualsiasi richiesta"
+    ],
+    "correctIndex": 0,
+    "explanation": "Durante la migrazione, il vecchio server viene generalmente mantenuto ancora operativo."
+  },
+  {
+    "id": 41,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può fare un utente, in casi particolari, se sospetta che la propria cache DNS contenga informazioni obsolete?",
+    "options": [
+      "Attendere sempre e comunque 24 ore senza intervenire",
+      "Svuotare manualmente la cache DNS, costringendo il dispositivo a una nuova risoluzione DNS",
+      "Disinstallare il browser",
+      "Modificare l'indirizzo IP del proprio dispositivo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Può essere utile svuotare manualmente la cache DNS, costringendo il dispositivo a eseguire una nuova risoluzione DNS."
+  },
+  {
+    "id": 42,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale vantaggio offre la cache DNS mantenuta dal provider Internet (ISP), secondo il modulo?",
+    "options": [
+      "Può soddisfare la richiesta di milioni di utenti che visitano siti molto popolari senza dover eseguire ogni volta una nuova ricerca",
+      "Permette di cifrare automaticamente tutte le comunicazioni HTTPS",
+      "Elimina completamente la necessità di indirizzi IP",
+      "Blocca automaticamente i siti non aggiornati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il provider Internet può soddisfare la richiesta di milioni di utenti che visitano siti popolari senza eseguire ogni volta una nuova ricerca."
+  },
+  {
+    "id": 43,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché gli amministratori di sistema riducono il TTL dei record DNS prima di una migrazione importante, secondo il caso reale citato?",
+    "options": [
+      "Per far sì che le cache si aggiornino più rapidamente e il passaggio al nuovo server avvenga con minori disservizi",
+      "Per bloccare l'accesso al sito durante la migrazione",
+      "Per aumentare la velocità della connessione Internet degli utenti",
+      "Per impedire che il vecchio server venga mai più utilizzato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Riducendo il TTL, le cache si aggiornano più rapidamente e il passaggio al nuovo server avviene con minori disservizi."
+  },
+  {
+    "id": 44,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del bar usata nel modulo, cosa succede dopo alcune visite allo stesso locale?",
+    "options": [
+      "È necessario cercare l'indirizzo sul navigatore ogni singola volta",
+      "L'indirizzo viene ricordato a memoria, senza bisogno di consultare la mappa",
+      "Il locale cambia automaticamente indirizzo",
+      "Serve sempre chiedere indicazioni a un passante"
+    ],
+    "correctIndex": 1,
+    "explanation": "Dopo qualche visita, l'indirizzo viene ricordato a memoria, senza più bisogno di consultare la mappa."
+  },
+  {
+    "id": 45,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un DNS pubblico, secondo la definizione del modulo?",
+    "options": [
+      "Un server DNS accessibile a tutti gli utenti di Internet, gestito da organizzazioni specializzate",
+      "Un server DNS utilizzabile solo dai dipendenti di un'azienda",
+      "Un dispositivo hardware installato solo nei router domestici",
+      "Un protocollo che sostituisce completamente TCP/IP"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un DNS pubblico è un server DNS accessibile a tutti gli utenti di Internet e gestito da organizzazioni specializzate."
+  },
+  {
+    "id": 46,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un DNS privato, secondo la definizione del modulo?",
+    "options": [
+      "Un server DNS accessibile gratuitamente a chiunque nel mondo",
+      "Un server DNS utilizzato all'interno di una rete specifica, come quella di un'azienda o di una scuola, per gestire la risoluzione dei nomi interni",
+      "Un server DNS gestito esclusivamente da Google",
+      "Un tipo di indirizzo IP riservato ai dispositivi mobili"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un DNS privato è un server DNS utilizzato all'interno di una rete specifica per gestire la risoluzione dei nomi dei dispositivi e servizi interni."
+  },
+  {
+    "id": 47,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Grazie a quale protocollo un dispositivo riceve automaticamente, tra le altre informazioni, l'indirizzo del server DNS da utilizzare quando si collega alla rete di casa?",
+    "options": [
+      "HTTP",
+      "TLS",
+      "DHCP",
+      "DNSSEC"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il dispositivo riceve automaticamente diverse informazioni dal router grazie al protocollo DHCP, tra cui l'indirizzo del server DNS."
+  },
+  {
+    "id": 48,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A chi appartiene, nella maggior parte dei casi, il server DNS utilizzato da un dispositivo connesso a Internet, secondo il modulo?",
+    "options": [
+      "A un'università",
+      "All'ISP (Internet Service Provider), cioè il fornitore di servizi Internet",
+      "A un ospedale",
+      "A un motore di ricerca"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nella maggior parte dei casi, il server DNS utilizzato appartiene agli ISP."
+  },
+  {
+    "id": 49,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali aziende vengono citate nel modulo come fornitrici di DNS pubblici gratuiti?",
+    "options": [
+      "Google, Cloudflare e Cisco OpenDNS",
+      "Amazon, Meta e Netflix",
+      "Trenitalia e Wikipedia",
+      "Dyn e ARPANET"
+    ],
+    "correctIndex": 0,
+    "explanation": "Esistono numerosi DNS pubblici, messi gratuitamente a disposizione da aziende come Google, Cloudflare e Cisco OpenDNS."
+  },
+  {
+    "id": 50,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "I DNS pubblici sono sempre più veloci di quelli forniti dal provider Internet, secondo il modulo?",
+    "options": [
+      "Sì, sono sempre più veloci in ogni situazione",
+      "No, non sono necessariamente più veloci: molti utenti li scelgono per affidabilità, sicurezza, privacy o controllo",
+      "Sì, ma solo di notte",
+      "No, sono sempre più lenti di quelli del provider"
+    ],
+    "correctIndex": 1,
+    "explanation": "I DNS pubblici non sono necessariamente più veloci di quelli forniti dal provider Internet."
+  },
+  {
+    "id": 51,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché, secondo l'esempio dell'ospedale citato nel modulo, viene utilizzato un DNS privato?",
+    "options": [
+      "Perché i sistemi con cartelle cliniche, prenotazioni e stampanti di reparto non devono essere accessibili da Internet, ma solo dal personale autorizzato",
+      "Perché i DNS pubblici sono troppo costosi per un ospedale",
+      "Perché gli ospedali non possono collegarsi a Internet",
+      "Perché il DNS privato è obbligatorio per legge in ogni edificio pubblico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Questi sistemi non devono essere accessibili da Internet, ma soltanto dal personale autorizzato, per questo si usa un DNS privato."
+  },
+  {
+    "id": 52,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è, in sintesi, la differenza tra DNS pubblici e DNS privati, secondo il modulo?",
+    "options": [
+      "I DNS pubblici aiutano a trovare siti e servizi su Internet, mentre i DNS privati organizzano dispositivi e servizi di una rete interna",
+      "I DNS pubblici sono più lenti, i DNS privati sono sempre gratuiti",
+      "Non esiste alcuna differenza pratica tra i due",
+      "I DNS privati servono solo per inviare email"
+    ],
+    "correctIndex": 0,
+    "explanation": "I DNS pubblici aiutano a trovare i siti e i servizi presenti su Internet; i DNS privati organizzano dispositivi e servizi di una rete interna."
+  },
+  {
+    "id": 53,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa avvenne nel 2018, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Cloudflare lanciò il servizio DNS pubblico 1.1.1.1, progettato per tempi di risposta rapidi e attenzione alla privacy",
+      "Fu registrato il dominio abc.xyz per Alphabet",
+      "Un attacco colpì l'azienda Dyn",
+      "Fu introdotto per la prima volta il protocollo DNSSEC"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel 2018 Cloudflare lanciò il servizio DNS pubblico 1.1.1.1."
+  },
+  {
+    "id": 54,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa spinse il lancio del servizio 1.1.1.1 di Cloudflare, secondo il modulo?",
+    "options": [
+      "Milioni di persone a sostituire i DNS predefiniti del proprio provider con un servizio pubblico alternativo",
+      "La chiusura definitiva di tutti i DNS privati esistenti",
+      "L'eliminazione degli indirizzi IPv4",
+      "La creazione di un nuovo TLD internazionale"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'iniziativa spinse milioni di persone a sostituire i DNS predefiniti del proprio provider con un servizio pubblico alternativo."
+  },
+  {
+    "id": 55,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'azienda usata per spiegare DNS pubblici e privati, a cosa corrisponde il DNS privato?",
+    "options": [
+      "Al centralino pubblico aperto a clienti e fornitori",
+      "Alla rubrica interna riservata ai dipendenti, con numeri e reparti non visibili dall'esterno",
+      "Al sito Web ufficiale dell'azienda",
+      "Al logo dell'azienda"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il DNS privato è come la rubrica interna dell'azienda, utilizzata esclusivamente da chi lavora al suo interno."
+  },
+  {
+    "id": 56,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando si verifica un errore DNS, secondo la definizione del modulo?",
+    "options": [
+      "Quando il dispositivo non riesce a tradurre un nome di dominio nel corrispondente indirizzo IP",
+      "Quando un sito Web ha un problema grafico nella pagina",
+      "Quando la connessione Internet è troppo lenta",
+      "Quando un file scaricato risulta danneggiato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un errore DNS si verifica quando il dispositivo non riesce a tradurre un nome di dominio nel corrispondente indirizzo IP."
+  },
+  {
+    "id": 57,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede, in un errore DNS, secondo il modulo?",
+    "options": [
+      "Il dispositivo conosce il nome del sito richiesto, ma non riesce a individuare l'indirizzo del server che lo ospita",
+      "Il dispositivo perde completamente la connessione Internet",
+      "Il browser si blocca in modo permanente",
+      "Il sito viene automaticamente rimosso dall'indice dei motori di ricerca"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il computer conosce il nome del sito richiesto, ma non riesce a individuare l'indirizzo del server che lo ospita."
+  },
+  {
+    "id": 58,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale delle seguenti è indicata dal modulo come una delle cause più comuni di errore DNS?",
+    "options": [
+      "Un semplice errore di digitazione nel nome del dominio",
+      "Un aggiornamento del sistema operativo",
+      "L'uso di HTTPS al posto di HTTP",
+      "La presenza di troppi sottodomini"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una delle cause più comuni è un semplice errore di digitazione nel nome del dominio."
+  },
+  {
+    "id": 59,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come può una cache DNS non aggiornata causare un errore o un problema di connessione, secondo il modulo?",
+    "options": [
+      "Se contiene un vecchio indirizzo IP ormai non più valido, il dispositivo continuerà a tentare di raggiungere il server sbagliato",
+      "Impedisce sempre l'apertura di qualsiasi sito Web",
+      "Cancella automaticamente tutti i domini registrati",
+      "Blocca permanentemente l'accesso a Internet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se la cache contiene un vecchio indirizzo IP non più valido, il dispositivo continuerà a tentare di raggiungere il server sbagliato."
+  },
+  {
+    "id": 60,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali controlli seguono normalmente i tecnici per individuare la causa di un errore DNS, secondo il modulo?",
+    "options": [
+      "Verificano la connessione Internet, controllano il nome del dominio, provano altri siti, svuotano la cache DNS e provano un server DNS diverso",
+      "Riavviano sempre l'intero router senza altre verifiche",
+      "Contattano direttamente il proprietario del sito richiesto",
+      "Disattivano temporaneamente tutti i DNS pubblici"
+    ],
+    "correctIndex": 0,
+    "explanation": "I tecnici verificano la connessione, controllano il dominio, provano altri siti, svuotano la cache e provano un server DNS diverso."
+  },
+  {
+    "id": 61,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa il codice di errore NXDOMAIN, secondo il modulo?",
+    "options": [
+      "Che la connessione Internet è assente",
+      "Che il nome di dominio richiesto non è stato trovato (Non-Existent Domain)",
+      "Che il server DNS è stato violato",
+      "Che il sito richiede l'autenticazione a due fattori"
+    ],
+    "correctIndex": 1,
+    "explanation": "NXDOMAIN (Non-Existent Domain) indica che il nome richiesto non è stato trovato."
+  },
+  {
+    "id": 62,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica la parola \"FINISHED\" nel messaggio di errore DNS_PROBE_FINISHED_NXDOMAIN, secondo il modulo?",
+    "options": [
+      "Che la ricerca DNS è terminata",
+      "Che la connessione Internet è stata interrotta",
+      "Che il sito è stato bloccato dal provider",
+      "Che il dominio è stato appena registrato"
+    ],
+    "correctIndex": 0,
+    "explanation": "FINISHED indica che la ricerca DNS è terminata."
+  },
+  {
+    "id": 63,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del modulo, cosa causa l'errore DNS quando si digita per sbaglio un nome di dominio inesistente?",
+    "options": [
+      "Il DNS controlla le informazioni disponibili ma non trova alcun dominio registrato con quel nome",
+      "Il router smette automaticamente di funzionare",
+      "Il provider Internet blocca l'accesso alla rete",
+      "Il browser si aggiorna automaticamente all'ultima versione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il DNS controlla le informazioni disponibili, ma non trova alcun dominio registrato con il nome digitato erroneamente."
+  },
+  {
+    "id": 64,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa causò l'irraggiungibilità di Facebook, Instagram e WhatsApp il 4 ottobre 2021, secondo il modulo?",
+    "options": [
+      "Un attacco hacker su larga scala",
+      "Un errore nella configurazione della rete che rese indisponibili le informazioni necessarie per raggiungere i server dei servizi",
+      "Un guasto hardware nei data center",
+      "L'esaurimento degli indirizzi IPv4"
+    ],
+    "correctIndex": 1,
+    "explanation": "La causa non fu un attacco hacker, bensì un errore nella configurazione della rete."
+  },
+  {
+    "id": 65,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Durante l'incidente del 4 ottobre 2021, i server di Facebook erano realmente spenti, secondo il modulo?",
+    "options": [
+      "Sì, tutti i server furono spenti per manutenzione",
+      "No, molti server erano ancora operativi, ma senza le corrette informazioni di instradamento e risoluzione dei nomi i dispositivi non riuscivano più a trovarli",
+      "Sì, l'azienda decise di interrompere volontariamente il servizio",
+      "No, il problema riguardava solo gli utenti asiatici"
+    ],
+    "correctIndex": 1,
+    "explanation": "Molti server erano ancora operativi, ma senza le corrette informazioni di instradamento e risoluzione dei nomi non riuscivano più a essere trovati."
+  },
+  {
+    "id": 66,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'albergo usata per spiegare un errore DNS, perché non si riesce a raggiungere la destinazione?",
+    "options": [
+      "Perché l'albergo ha chiuso definitivamente",
+      "Perché il navigatore non riesce a trovare l'indirizzo, dato che la mappa è incompleta o contiene un'informazione sbagliata",
+      "Perché l'albergo non ha mai avuto un indirizzo",
+      "Perché il navigatore non è collegato a Internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'albergo continua a esistere, ma il navigatore non riesce a trovare il suo indirizzo perché la mappa è incompleta o sbagliata."
+  },
+  {
+    "id": 67,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa comprende la sicurezza DNS, secondo la definizione del modulo?",
+    "options": [
+      "Tutte le tecnologie e le pratiche utilizzate per proteggere il sistema DNS da manipolazioni, intercettazioni e utilizzi fraudolenti",
+      "Solo la crittografia dei dati contenuti in un sito Web",
+      "Solo la protezione fisica dei server che ospitano i siti",
+      "Le regole che stabiliscono la lunghezza minima di una password"
+    ],
+    "correctIndex": 0,
+    "explanation": "La sicurezza DNS comprende tutte le tecnologie e le pratiche utilizzate per proteggere il sistema DNS."
+  },
+  {
+    "id": 68,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'obiettivo della sicurezza DNS, secondo il modulo?",
+    "options": [
+      "Garantire che la corrispondenza tra nome di dominio e indirizzo IP sia corretta, autentica e affidabile",
+      "Aumentare la velocità massima di connessione a Internet",
+      "Eliminare completamente la necessità di indirizzi IP",
+      "Sostituire il protocollo HTTP con HTTPS in ogni situazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il suo obiettivo è garantire che la corrispondenza tra nome di dominio e indirizzo IP sia corretta, autentica e affidabile."
+  },
+  {
+    "id": 69,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il DNS Spoofing, secondo il modulo?",
+    "options": [
+      "La falsificazione delle risposte DNS, con cui un aggressore fa credere che un dominio corrisponda a un indirizzo IP diverso da quello reale",
+      "Un servizio DNS pubblico gratuito",
+      "Un protocollo di sicurezza che cifra le richieste DNS",
+      "Una tecnica per velocizzare la risoluzione DNS"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il DNS Spoofing è la falsificazione delle risposte DNS."
+  },
+  {
+    "id": 70,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il DNS Cache Poisoning, secondo il modulo?",
+    "options": [
+      "L'inserimento di informazioni false all'interno della cache DNS, che può indirizzare gli utenti verso destinazioni errate",
+      "Un metodo legittimo per velocizzare la navigazione",
+      "Una tecnologia che protegge la cache DNS da ogni tipo di attacco",
+      "Il processo con cui un server DNS elimina automaticamente le informazioni obsolete"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il DNS Cache Poisoning è l'inserimento di informazioni false all'interno della cache DNS."
+  },
+  {
+    "id": 71,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può fare un criminale se riesce a compromettere un dispositivo e modificarne le impostazioni DNS, secondo il modulo?",
+    "options": [
+      "Sostituire i server DNS legittimi con server controllati da lui, deviando la richiesta anche se l'utente digita l'indirizzo corretto",
+      "Cambiare automaticamente la password Wi-Fi di tutta la rete",
+      "Bloccare permanentemente la connessione Internet dell'utente",
+      "Cancellare tutti i domini registrati su Internet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il criminale può sostituire i server legittimi con server controllati da lui, deviando la richiesta anche se l'indirizzo digitato è corretto."
+  },
+  {
+    "id": 72,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il DNSSEC (Domain Name System Security Extensions)?",
+    "options": [
+      "Una tecnologia che utilizza firme digitali per verificare che le informazioni DNS provengano dalla fonte corretta e non siano state modificate",
+      "Un servizio DNS pubblico gestito da Cloudflare",
+      "Un protocollo che sostituisce completamente il DNS tradizionale",
+      "Un tipo di attacco informatico rivolto ai server DNS"
+    ],
+    "correctIndex": 0,
+    "explanation": "DNSSEC utilizza firme digitali per verificare che le informazioni DNS provengano dalla fonte corretta e non siano state modificate."
+  },
+  {
+    "id": 73,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il DNS over HTTPS (DoH), secondo il modulo?",
+    "options": [
+      "Un protocollo che protegge le richieste DNS utilizzando una connessione HTTPS cifrata, rendendo più difficile intercettarle",
+      "Un sinonimo di DNSSEC",
+      "Un tipo di attacco informatico",
+      "Il nome del server DNS più veloce al mondo"
+    ],
+    "correctIndex": 0,
+    "explanation": "DNS over HTTPS protegge le richieste DNS utilizzando una connessione HTTPS cifrata."
+  },
+  {
+    "id": 74,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale protocollo viene utilizzato dal DNS over TLS (DoT) per proteggere la comunicazione tra dispositivo e server DNS?",
+    "options": [
+      "HTTP",
+      "TLS",
+      "FTP",
+      "DHCP"
+    ],
+    "correctIndex": 1,
+    "explanation": "DNS over TLS utilizza il protocollo TLS per proteggere la comunicazione tra dispositivo e server DNS."
+  },
+  {
+    "id": 75,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, la sicurezza DNS dipende soltanto dalla tecnologia utilizzata?",
+    "options": [
+      "Sì, la tecnologia è l'unico fattore rilevante",
+      "No, anche le abitudini degli utenti sono importanti, come mantenere aggiornati i dispositivi ed evitare link sospetti",
+      "Sì, ma solo per i DNS pubblici",
+      "No, la sicurezza DNS non riguarda mai gli utenti comuni"
+    ],
+    "correctIndex": 1,
+    "explanation": "La sicurezza DNS non dipende solo dalla tecnologia: anche le abitudini degli utenti sono importanti."
+  },
+  {
+    "id": 76,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa avvenne nel 2019, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Diverse organizzazioni governative e aziende furono coinvolte in una campagna di attacchi nota come DNSpionage e in altre operazioni di DNS hijacking",
+      "Fu lanciato il servizio DNS pubblico 1.1.1.1 di Cloudflare",
+      "ARPANET adottò TCP/IP come protocollo standard",
+      "Fu registrato il dominio abc.xyz per Alphabet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel 2019 diverse organizzazioni governative e aziende furono coinvolte nella campagna nota come DNSpionage."
+  },
+  {
+    "id": 77,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è stato l'obiettivo degli attacchi legati a DNSpionage, secondo il modulo?",
+    "options": [
+      "Rubare credenziali e informazioni riservate reindirizzando le vittime verso pagine controllate dagli attaccanti",
+      "Aumentare la velocità dei server DNS colpiti",
+      "Registrare nuovi TLD internazionali",
+      "Migliorare la sicurezza dei DNS pubblici esistenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le vittime venivano reindirizzate verso pagine controllate dagli attaccanti, con l'obiettivo di rubare credenziali e informazioni riservate."
+  },
+  {
+    "id": 78,
+    "module": "dns",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dei cartelli stradali usata per spiegare la sicurezza DNS, cosa accadrebbe se qualcuno li sostituisse durante la notte?",
+    "options": [
+      "Gli automobilisti se ne accorgerebbero immediatamente e si fermerebbero",
+      "Gli automobilisti continuerebbero a seguire le indicazioni convinti che siano corrette, ma finirebbero in luoghi diversi",
+      "Le strade cambierebbero automaticamente percorso",
+      "I cartelli si aggiornerebbero automaticamente da soli"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gli automobilisti continuerebbero a seguire le indicazioni convinti che siano corrette, ma finirebbero in luoghi diversi."
+  }
+]

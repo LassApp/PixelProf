@@ -1,0 +1,596 @@
+[
+  {
+    "id": 1,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il TCP/IP è l'insieme di protocolli che permette ai dispositivi di comunicare attraverso le reti e su Internet.",
+    "answer": true,
+    "explanation": "Il TCP/IP è l'insieme di protocolli, cioè di regole condivise, che permette ai dispositivi di comunicare attraverso le reti e su Internet."
+  },
+  {
+    "id": 2,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il TCP si occupa di identificare la destinazione dei dati e di permetterne l'instradamento nella rete.",
+    "answer": false,
+    "explanation": "Quello è il compito dell'IP; il TCP garantisce che lo scambio di informazioni avvenga in modo affidabile."
+  },
+  {
+    "id": 3,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "TCP/IP funziona solo se tutti i dispositivi sono prodotti dalla stessa azienda.",
+    "answer": false,
+    "explanation": "La vera forza di TCP/IP è la sua universalità: non importa il produttore del dispositivo, se utilizza TCP/IP può comunicare con gli altri."
+  },
+  {
+    "id": 4,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il 1° gennaio 1983, durante il Flag Day, ARPANET adottò TCP/IP come protocollo standard di comunicazione.",
+    "answer": true,
+    "explanation": "Il 1° gennaio 1983, durante il Flag Day, ARPANET adottò TCP/IP come protocollo standard di comunicazione."
+  },
+  {
+    "id": 5,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "ARPANET è considerata l'antenata di Internet.",
+    "answer": true,
+    "explanation": "ARPANET è la rete sperimentale nata durante la Guerra Fredda per collegare università e centri di ricerca, considerata l'antenata di Internet."
+  },
+  {
+    "id": 6,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, TCP/IP decide cosa devono dire le persone che comunicano su Internet.",
+    "answer": false,
+    "explanation": "TCP/IP non decide cosa devono dire le persone, ma stabilisce le regole affinché possano comprendersi."
+  },
+  {
+    "id": 7,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Insieme, TCP e IP rappresentano la base del funzionamento di Internet.",
+    "answer": true,
+    "explanation": "Insieme, TCP e IP rappresentano la base del funzionamento di Internet."
+  },
+  {
+    "id": 8,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il modello TCP/IP organizza la comunicazione di rete in quattro livelli.",
+    "answer": true,
+    "explanation": "Il modello TCP/IP organizza la comunicazione di rete in quattro livelli, ciascuno specializzato in un compito preciso."
+  },
+  {
+    "id": 9,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Livello Applicazione è il livello più vicino all'hardware.",
+    "answer": false,
+    "explanation": "È il Livello Accesso alla Rete a essere più vicino all'hardware; il Livello Applicazione è quello più vicino all'utente."
+  },
+  {
+    "id": 10,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Livello Trasporto decide se utilizzare un protocollo affidabile come TCP oppure uno più veloce come UDP.",
+    "answer": true,
+    "explanation": "Il Livello Trasporto prende i dati e decide come consegnarli, scegliendo tra TCP e UDP."
+  },
+  {
+    "id": 11,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Livello Internet si occupa dell'indirizzamento tramite gli indirizzi IP.",
+    "answer": true,
+    "explanation": "Il Livello Internet si occupa dell'indirizzamento e utilizza gli indirizzi IP per far raggiungere il destinatario corretto."
+  },
+  {
+    "id": 12,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Livello Accesso alla Rete trasforma le informazioni in segnali elettrici, luminosi o radio.",
+    "answer": true,
+    "explanation": "Il Livello Accesso alla Rete rappresenta il punto in cui le informazioni diventano segnali elettrici, luminosi o radio."
+  },
+  {
+    "id": 13,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ogni livello del modello TCP/IP deve conoscere tutti i dettagli di funzionamento degli altri livelli.",
+    "answer": false,
+    "explanation": "Ogni livello può concentrarsi esclusivamente sulla propria funzione senza conoscere tutti i dettagli degli altri."
+  },
+  {
+    "id": 14,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il meccanismo di incapsulamento avviene durante la ricezione dei dati, mentre il decapsulamento avviene durante l'invio.",
+    "answer": false,
+    "explanation": "È il contrario: l'incapsulamento avviene durante l'invio, il decapsulamento durante la ricezione."
+  },
+  {
+    "id": 15,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Passando dal Wi-Fi alla rete cellulare, cambia generalmente solo il Livello Accesso alla Rete, mentre gli altri livelli continuano a operare nello stesso modo.",
+    "answer": true,
+    "explanation": "Cambierà il Livello Accesso alla Rete, mentre gli altri livelli continueranno a operare praticamente nello stesso modo."
+  },
+  {
+    "id": 16,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il TCP/IP è considerato uno dei progetti ingegneristici più riusciti della storia dell'informatica.",
+    "answer": true,
+    "explanation": "Questo è uno dei motivi principali per cui il modello TCP/IP è considerato uno dei progetti ingegneristici più riusciti della storia dell'informatica."
+  },
+  {
+    "id": 17,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "TCP è un protocollo del Livello Trasporto progettato per garantire una comunicazione affidabile, ordinata e senza errori.",
+    "answer": true,
+    "explanation": "Il TCP è un protocollo del Livello Trasporto progettato per garantire una comunicazione affidabile, ordinata e senza errori."
+  },
+  {
+    "id": 18,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "TCP non crea alcuna connessione prima di iniziare la trasmissione dei dati.",
+    "answer": false,
+    "explanation": "Prima di iniziare la trasmissione, TCP crea una connessione tra mittente e destinatario."
+  },
+  {
+    "id": 19,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "In TCP, ogni segmento del messaggio viene numerato.",
+    "answer": true,
+    "explanation": "Il messaggio viene suddiviso in piccoli segmenti, ciascuno numerato."
+  },
+  {
+    "id": 20,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli ACK sono segnali che comunicano al mittente che alcuni segmenti sono arrivati correttamente.",
+    "answer": true,
+    "explanation": "Gli ACK (Acknowledgment) sono segnali che comunicano al mittente che determinati segmenti sono arrivati correttamente."
+  },
+  {
+    "id": 21,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se un segmento TCP non arriva o viene danneggiato, il protocollo lo ignora e prosegue senza ritrasmetterlo.",
+    "answer": false,
+    "explanation": "TCP rileva il problema e ne richiede nuovamente l'invio."
+  },
+  {
+    "id": 22,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La priorità principale di TCP è la velocità, non l'affidabilità.",
+    "answer": false,
+    "explanation": "La grande caratteristica di TCP è l'affidabilità, non la velocità: il suo obiettivo è garantire che il destinatario riceva esattamente ciò che è stato inviato."
+  },
+  {
+    "id": 23,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La navigazione web, la posta elettronica e i servizi cloud utilizzano tipicamente TCP.",
+    "answer": true,
+    "explanation": "Tra i servizi che utilizzano TCP troviamo la navigazione web, la posta elettronica, il trasferimento di file e i servizi cloud."
+  },
+  {
+    "id": 24,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una perdita o modifica dei dati durante un bonifico bancario online potrebbe compromettere la transazione.",
+    "answer": true,
+    "explanation": "Una perdita o una modifica dei dati potrebbe compromettere una transazione bancaria."
+  },
+  {
+    "id": 25,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "UDP privilegia la velocità e la semplicità della comunicazione rispetto all'affidabilità.",
+    "answer": true,
+    "explanation": "UDP è progettato per privilegiare la velocità e la semplicità della comunicazione."
+  },
+  {
+    "id": 26,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "A differenza di TCP, UDP stabilisce sempre una connessione preventiva prima di inviare i dati.",
+    "answer": false,
+    "explanation": "A differenza di TCP, UDP non stabilisce una connessione preventiva."
+  },
+  {
+    "id": 27,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "UDP ritrasmette automaticamente qualsiasi dato che venga perso durante il percorso.",
+    "answer": false,
+    "explanation": "UDP non tenta di recuperare i dati eventualmente persi durante il percorso."
+  },
+  {
+    "id": 28,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La latenza rappresenta il tempo necessario affinché un'informazione raggiunga il destinatario.",
+    "answer": true,
+    "explanation": "La latenza rappresenta il tempo necessario affinché un'informazione raggiunga il destinatario."
+  },
+  {
+    "id": 29,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nei giochi online e nelle videochiamate, ridurre la latenza è spesso più importante che garantire la ricezione perfetta di ogni pacchetto.",
+    "answer": true,
+    "explanation": "Nei giochi online, nelle videoconferenze e nello streaming in tempo reale, ridurre la latenza è spesso più importante della ricezione perfetta."
+  },
+  {
+    "id": 30,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "UDP garantisce sempre che i dati arrivino tutti e nell'ordine corretto.",
+    "answer": false,
+    "explanation": "UDP non garantisce che i dati arrivino tutti, né che vengano ricevuti nell'ordine corretto."
+  },
+  {
+    "id": 31,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante la pandemia di COVID-19, piattaforme come Zoom, Teams e Google Meet utilizzarono ampiamente protocolli basati su UDP per audio e video in tempo reale.",
+    "answer": true,
+    "explanation": "Questi servizi impiegano ampiamente protocolli basati su UDP per la trasmissione dell'audio e del video in tempo reale."
+  },
+  {
+    "id": 32,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, TCP viene paragonato a una lettera ordinaria priva di conferma di ricezione.",
+    "answer": false,
+    "explanation": "È UDP a essere paragonato a una lettera ordinaria; TCP è paragonato a una raccomandata con ricevuta di ritorno."
+  },
+  {
+    "id": 33,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le porte sono identificatori numerici utilizzati da TCP e UDP per indirizzare i dati verso l'applicazione corretta.",
+    "answer": true,
+    "explanation": "Le porte sono identificatori numerici utilizzati dai protocolli TCP e UDP per indirizzare i dati verso la corretta applicazione o servizio."
+  },
+  {
+    "id": 34,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'indirizzo IP identifica il programma, mentre la porta identifica il dispositivo.",
+    "answer": false,
+    "explanation": "È il contrario: l'IP identifica il dispositivo, la porta identifica il programma con cui si desidera comunicare."
+  },
+  {
+    "id": 35,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ogni porta è rappresentata da un numero compreso tra 0 e 65535.",
+    "answer": true,
+    "explanation": "Ogni porta è rappresentata da un numero compreso tra 0 e 65535."
+  },
+  {
+    "id": 36,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La porta 443 è storicamente utilizzata dal protocollo HTTPS.",
+    "answer": true,
+    "explanation": "La porta 443 è utilizzata da HTTPS, mentre la porta 80 è storicamente utilizzata da HTTP."
+  },
+  {
+    "id": 37,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una porta effimera è una porta fissa che rimane sempre assegnata allo stesso programma.",
+    "answer": false,
+    "explanation": "La porta effimera è una porta temporanea, liberata al termine della comunicazione e riutilizzabile per connessioni successive."
+  },
+  {
+    "id": 38,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I firewall controllano spesso quali porte possono essere utilizzate, bloccando quelle non autorizzate.",
+    "answer": true,
+    "explanation": "I firewall controllano spesso quali porte possono essere utilizzate, bloccando quelle non autorizzate e riducendo la superficie d'attacco."
+  },
+  {
+    "id": 39,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una porta di rete corrisponde fisicamente a una porta USB o Ethernet del computer.",
+    "answer": false,
+    "explanation": "La porta non è un dispositivo fisico: è semplicemente un numero utilizzato dal sistema operativo per organizzare le comunicazioni."
+  },
+  {
+    "id": 40,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il port scanning è una tecnica con cui gli aggressori verificano quali porte di un dispositivo risultano aperte.",
+    "answer": true,
+    "explanation": "Il port scanning è la scansione delle porte di un dispositivo connesso alla rete, usata dagli aggressori per verificare quali porte sono aperte."
+  },
+  {
+    "id": 41,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "HTTP è il protocollo del Livello Applicazione utilizzato per richiedere e trasferire pagine Web tra browser e server.",
+    "answer": true,
+    "explanation": "HTTP è il protocollo del Livello Applicazione utilizzato per richiedere e trasferire pagine Web tra browser e server."
+  },
+  {
+    "id": 42,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con HTTP i dati vengono trasmessi in forma cifrata, proteggendo automaticamente la comunicazione.",
+    "answer": false,
+    "explanation": "Con HTTP i dati vengono trasmessi senza essere cifrati; è HTTPS a proteggere la comunicazione tramite crittografia."
+  },
+  {
+    "id": 43,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "HTTPS è il risultato dell'unione tra il protocollo applicativo HTTP e il protocollo di sicurezza TLS.",
+    "answer": true,
+    "explanation": "HTTPS non è un protocollo di trasporto come TCP, ma il risultato dell'unione tra HTTP e TLS."
+  },
+  {
+    "id": 44,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le tre garanzie offerte da HTTPS sono riservatezza, integrità e autenticità.",
+    "answer": true,
+    "explanation": "HTTPS offre tre importanti garanzie: Riservatezza, Integrità e Autenticità."
+  },
+  {
+    "id": 45,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un sito che utilizza HTTPS non può mai essere fraudolento.",
+    "answer": false,
+    "explanation": "Un sito fraudolento può comunque avere un certificato valido e utilizzare HTTPS."
+  },
+  {
+    "id": 46,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Grazie al certificato digitale, il browser può verificare l'identità del server.",
+    "answer": true,
+    "explanation": "L'Autenticità garantisce che il browser possa verificare l'identità del server grazie al certificato digitale."
+  },
+  {
+    "id": 47,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Firesheep, presentato nel 2010, dimostrò quanto fosse semplice sottrarre sessioni di accesso su reti Wi-Fi pubbliche quando i siti non proteggevano completamente le comunicazioni.",
+    "answer": true,
+    "explanation": "Firesheep, presentato nel 2010, dimostrò quanto fosse semplice sottrarre sessioni di accesso a siti che non proteggevano completamente le comunicazioni."
+  },
+  {
+    "id": 48,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'episodio legato a Firesheep rallentò l'adozione di HTTPS su larga scala.",
+    "answer": false,
+    "explanation": "Al contrario, questo episodio contribuì ad accelerare l'adozione di HTTPS su larga scala."
+  },
+  {
+    "id": 49,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, HTTP viene paragonato a una cartolina che chiunque può leggere durante il tragitto.",
+    "answer": true,
+    "explanation": "Con HTTP è come spedire una cartolina: durante il tragitto chiunque la prenda in mano può leggere ciò che è scritto."
+  },
+  {
+    "id": 50,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli esseri umani utilizzano i nomi dei siti Web perché sono più facili da ricordare rispetto agli indirizzi IP.",
+    "answer": true,
+    "explanation": "Gli esseri umani utilizzano i nomi dei siti Web, perché sono facili da ricordare rispetto a un indirizzo IP completo."
+  },
+  {
+    "id": 51,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il browser chiede a un server DNS quale indirizzo IP corrisponde al nome del sito digitato.",
+    "answer": true,
+    "explanation": "Prima di collegarsi al sito, il browser chiede a un server DNS quale indirizzo IP corrisponde al nome digitato."
+  },
+  {
+    "id": 52,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Livello Applicazione del modello TCP/IP si occupa di trasformare i dati in segnali elettrici o radio.",
+    "answer": false,
+    "explanation": "Questo compito appartiene al Livello Accesso alla Rete; il Livello Applicazione prepara il messaggio HTTP."
+  },
+  {
+    "id": 53,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ogni router lungo il percorso conosce l'intero tragitto che un pacchetto seguirà fino a destinazione.",
+    "answer": false,
+    "explanation": "Nessun router conosce necessariamente l'intero percorso: ciascuno prende una decisione locale basandosi sulla propria tabella di instradamento."
+  },
+  {
+    "id": 54,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il decapsulamento avviene quando i pacchetti raggiungono il server e ogni livello elabora le informazioni fino a ricostruire il messaggio originale.",
+    "answer": true,
+    "explanation": "Quando i pacchetti raggiungono il server, il processo avviene al contrario: è il decapsulamento."
+  },
+  {
+    "id": 55,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il 15 marzo 2019 un'interruzione dei servizi di un importante provider DNS rese temporaneamente irraggiungibili numerosi siti Web.",
+    "answer": true,
+    "explanation": "Il 15 marzo 2019 un'interruzione dei servizi di un importante provider DNS rese temporaneamente irraggiungibili numerosi siti Web."
+  },
+  {
+    "id": 56,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante l'interruzione del 15 marzo 2019, i server ospitanti i siti erano realmente spenti.",
+    "answer": false,
+    "explanation": "Molti server funzionavano perfettamente; il problema riguardava la traduzione dei nomi di dominio in indirizzi IP."
+  },
+  {
+    "id": 57,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, nessun protocollo da solo sarebbe sufficiente a far funzionare una richiesta Web: ognuno svolge il proprio compito in collaborazione con gli altri.",
+    "answer": true,
+    "explanation": "Nessun protocollo sarebbe sufficiente da solo: ogni protocollo svolge il proprio compito e, insieme, rendono possibile Internet."
+  },
+  {
+    "id": 58,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della libreria usata nel modulo, il corriere che prende in carico l'ordine rappresenta il protocollo HTTP.",
+    "answer": false,
+    "explanation": "Il corriere rappresenta TCP; HTTP rappresenta le istruzioni su quale libro richiedere."
+  },
+  {
+    "id": 59,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un motore di ricerca visita tutti i siti del mondo esattamente nel momento in cui un utente effettua una ricerca.",
+    "answer": false,
+    "explanation": "Il motore interroga il proprio indice, già costruito in precedenza, e non visita il Web in tempo reale."
+  },
+  {
+    "id": 60,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I crawler sono programmi automatici che esplorano continuamente Internet seguendo i collegamenti tra le pagine.",
+    "answer": true,
+    "explanation": "I crawler sono programmi automatici che esplorano continuamente Internet seguendo i collegamenti tra le pagine."
+  },
+  {
+    "id": 61,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le pagine analizzate dai crawler vengono inserite in un grande indice (Index).",
+    "answer": true,
+    "explanation": "Le pagine trovate vengono analizzate, archiviate e inserite in un grande indice (Index)."
+  },
+  {
+    "id": 62,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli algoritmi di ranking valutano centinaia di fattori per stimare quali pagine siano più utili rispetto alla ricerca effettuata.",
+    "answer": true,
+    "explanation": "Gli algoritmi di ranking valutano centinaia di fattori per stimare quali pagine siano più utili rispetto alla ricerca effettuata."
+  },
+  {
+    "id": 63,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I risultati sponsorizzati vengono ordinati esclusivamente in base alla rilevanza calcolata dall'algoritmo, esattamente come quelli organici.",
+    "answer": false,
+    "explanation": "I risultati sponsorizzati sono annunci pubblicitari acquistati dagli inserzionisti, distinti dai risultati organici ordinati per rilevanza."
+  },
+  {
+    "id": 64,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un sito appena pubblicato può comparire immediatamente nei risultati di ricerca, prima ancora di essere visitato da un crawler.",
+    "answer": false,
+    "explanation": "Il sito deve prima essere visitato dal crawler e successivamente inserito nell'indice."
+  },
+  {
+    "id": 65,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il browser e il motore di ricerca sono esattamente la stessa cosa.",
+    "answer": false,
+    "explanation": "Il browser permette di navigare sul Web, il motore di ricerca è il servizio che aiuta a trovare le informazioni."
+  },
+  {
+    "id": 66,
+    "module": "tcp-ip",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "PageRank, introdotto nel 1998, valutava anche i collegamenti tra le pagine Web, considerando un link come un \"voto\" di fiducia.",
+    "answer": true,
+    "explanation": "PageRank valutava anche i collegamenti tra le pagine Web, considerando un link come una sorta di \"voto\" di fiducia."
+  }
+]

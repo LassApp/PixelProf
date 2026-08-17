@@ -1,0 +1,121 @@
+{
+  "module": "vpn",
+  "sets": [
+    [
+      {
+        "term": "VPN",
+        "definition": "Tecnologia che crea una connessione protetta e cifrata tra un dispositivo e un server remoto attraverso Internet"
+      },
+      {
+        "term": "Tunnel VPN",
+        "definition": "Canale di comunicazione sicuro creato tra il dispositivo dell'utente e il server VPN"
+      },
+      {
+        "term": "Cifratura (in ambito VPN)",
+        "definition": "Processo che trasforma i dati in una forma illeggibile per chi non possiede la chiave corretta"
+      },
+      {
+        "term": "Server VPN",
+        "definition": "Riceve i dati cifrati, li decifra e li inoltra verso il servizio richiesto"
+      },
+      {
+        "term": "IP pubblico con VPN attiva",
+        "definition": "Può risultare diverso da quello realmente assegnato dal provider Internet, poiché la connessione sembra provenire dal server VPN"
+      }
+    ],
+    [
+      {
+        "term": "Funzionamento del tunnel VPN",
+        "definition": "I dati vengono cifrati, trasmessi attraverso Internet e decifrati solo una volta raggiunto il server VPN"
+      },
+      {
+        "term": "Router e provider Internet durante il tunneling",
+        "definition": "Possono vedere che esiste una comunicazione tra dispositivo e server VPN, ma non il contenuto dei dati"
+      },
+      {
+        "term": "Tratto oltre il server VPN",
+        "definition": "È protetto se il sito usa HTTPS, mentre non è protetto se il sito usa ancora HTTP"
+      },
+      {
+        "term": "VPN e HTTPS",
+        "definition": "Tecnologie complementari, non alternative, che lavorano insieme per aumentare la sicurezza delle comunicazioni"
+      }
+    ],
+    [
+      {
+        "term": "VPN Remote Access",
+        "definition": "Permette a un singolo utente di collegarsi in modo sicuro alla rete di un'organizzazione attraverso Internet"
+      },
+      {
+        "term": "VPN Site-to-Site",
+        "definition": "Collega due o più reti geograficamente separate, gestita direttamente da router o firewall aziendali"
+      },
+      {
+        "term": "VPN Commerciali",
+        "definition": "Servizi offerti da aziende specializzate per proteggere la navigazione dell'utente, soprattutto su Wi-Fi pubbliche, e aumentare la privacy online"
+      }
+    ],
+    [
+      {
+        "term": "Wi-Fi pubblica",
+        "definition": "Rete condivisa da numerosi utenti sulla quale non abbiamo alcun controllo"
+      },
+      {
+        "term": "Lavoro da remoto (VPN)",
+        "definition": "Molte aziende consentono l'accesso ai server interni esclusivamente tramite VPN, mantenendo una connessione cifrata"
+      },
+      {
+        "term": "Strumenti che la VPN non sostituisce",
+        "definition": "Antivirus, firewall, autenticazione a più fattori, aggiornamenti di sicurezza e comportamento prudente"
+      },
+      {
+        "term": "Prestazioni della connessione VPN",
+        "definition": "Possono risultare più lente, soprattutto se il server è distante o congestionato"
+      },
+      {
+        "term": "Accesso a contenuti online con VPN",
+        "definition": "Alcuni servizi possono rilevare l'utilizzo di server VPN e limitarne o impedirne l'accesso"
+      }
+    ],
+    [
+      {
+        "term": "Privacy",
+        "definition": "Diritto di controllare le informazioni che ci riguardano e decidere come vengono raccolte, utilizzate e condivise"
+      },
+      {
+        "term": "Browser fingerprint",
+        "definition": "Tecniche che identificano un dispositivo in base alle sue caratteristiche"
+      },
+      {
+        "term": "Politica \"no-log\"",
+        "definition": "Impegno di alcuni provider VPN a non conservare registri delle attività degli utenti"
+      },
+      {
+        "term": "Fiducia nel fornitore VPN",
+        "definition": "Parte della fiducia si sposta dal provider Internet al fornitore della VPN quando si utilizza il servizio"
+      }
+    ],
+    [
+      {
+        "term": "Metafora del tunnel sotto la città",
+        "definition": "Nessuno dall'esterno può osservare ciò che viene trasportato durante il tratto protetto"
+      },
+      {
+        "term": "Metafora del contenitore blindato",
+        "definition": "Tutti vedono che il contenitore sta viaggiando, ma nessuno può aprirlo o conoscerne il contenuto"
+      },
+      {
+        "term": "Metafora dell'impermeabile",
+        "definition": "La VPN offre il massimo vantaggio quando ci si trova in ambienti digitali più esposti"
+      },
+      {
+        "term": "Metafora del mantello",
+        "definition": "Rende più discreto il percorso, ma non cancella l'identità quando viene rivelata volontariamente"
+      },
+      {
+        "term": "Metafora dell'auto blindata",
+        "definition": "Protegge i passeggeri durante il viaggio, ma non può impedire una decisione sbagliata presa dal conducente"
+      }
+    ]
+  ]
+}

@@ -1,0 +1,852 @@
+[
+  {
+    "sentence": "Una VPN, in italiano Rete ____ Virtuale, crea una connessione protetta e cifrata tra un dispositivo e un server remoto.",
+    "answer": "Privata",
+    "bank": [
+      "Privata",
+      "Pubblica",
+      "Locale",
+      "Aziendale"
+    ]
+  },
+  {
+    "sentence": "Il termine VPN sta per Virtual Private ____.",
+    "answer": "Network",
+    "bank": [
+      "Network",
+      "Server",
+      "Connection",
+      "System"
+    ]
+  },
+  {
+    "sentence": "Grazie alla VPN, i dati viaggiano in un canale sicuro che rende più difficile l'____ delle informazioni durante la trasmissione.",
+    "answer": "intercettazione",
+    "bank": [
+      "intercettazione",
+      "cancellazione",
+      "duplicazione",
+      "condivisione"
+    ]
+  },
+  {
+    "sentence": "Internet è una gigantesca rete ____ nella quale i dati attraversano numerosi router prima di raggiungere la destinazione.",
+    "answer": "pubblica",
+    "bank": [
+      "pubblica",
+      "privata",
+      "aziendale",
+      "locale"
+    ]
+  },
+  {
+    "sentence": "Prima che i dati lascino il dispositivo, vengono ____, cioè trasformati in una forma illeggibile senza la chiave corretta.",
+    "answer": "cifrati",
+    "bank": [
+      "cifrati",
+      "cancellati",
+      "duplicati",
+      "compressi"
+    ]
+  },
+  {
+    "sentence": "I dati cifrati vengono inviati a un server VPN, che li ____ e li inoltra verso il servizio richiesto.",
+    "answer": "decifra",
+    "bank": [
+      "decifra",
+      "cancella",
+      "duplica",
+      "blocca"
+    ]
+  },
+  {
+    "sentence": "Dal punto di vista dei siti web visitati, la connessione sembra provenire dal server VPN e non direttamente dal ____ dell'utente.",
+    "answer": "dispositivo",
+    "bank": [
+      "dispositivo",
+      "provider",
+      "router",
+      "browser"
+    ]
+  },
+  {
+    "sentence": "Utilizzando una VPN, il proprio indirizzo IP pubblico può risultare ____ da quello realmente assegnato dal provider Internet.",
+    "answer": "diverso",
+    "bank": [
+      "diverso",
+      "identico",
+      "nascosto",
+      "cancellato"
+    ]
+  },
+  {
+    "sentence": "Le VPN vengono utilizzate soprattutto per proteggere la riservatezza delle comunicazioni e ridurre i rischi sulle reti Wi-Fi ____.",
+    "answer": "pubbliche",
+    "bank": [
+      "pubbliche",
+      "aziendali",
+      "domestiche",
+      "private"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, una VPN non rende invisibili su Internet e non elimina i ____.",
+    "answer": "malware",
+    "bank": [
+      "malware",
+      "backup",
+      "cookie",
+      "log"
+    ]
+  },
+  {
+    "sentence": "Una VPN non sostituisce antivirus, firewall o buone pratiche di ____.",
+    "answer": "sicurezza",
+    "bank": [
+      "sicurezza",
+      "archiviazione",
+      "connessione",
+      "navigazione"
+    ]
+  },
+  {
+    "sentence": "Nella metafora della città, una VPN è come un tunnel privato e ____ costruito sotto la città.",
+    "answer": "sorvegliato",
+    "bank": [
+      "sorvegliato",
+      "illuminato",
+      "pubblico",
+      "temporaneo"
+    ]
+  },
+  {
+    "sentence": "Nella metafora della città, durante il tragitto nel tunnel nessuno dall'esterno può ____ ciò che viene trasportato.",
+    "answer": "osservare",
+    "bank": [
+      "osservare",
+      "guidare",
+      "pagare",
+      "costruire"
+    ]
+  },
+  {
+    "sentence": "Il ____ VPN è il canale di comunicazione sicuro creato tra il dispositivo dell'utente e il server VPN.",
+    "answer": "tunnel",
+    "bank": [
+      "tunnel",
+      "firewall",
+      "proxy",
+      "gateway"
+    ]
+  },
+  {
+    "sentence": "All'interno del tunnel VPN, i dati vengono cifrati, trasmessi attraverso Internet e decifrati solo una volta raggiunto il ____.",
+    "answer": "server VPN",
+    "bank": [
+      "server VPN",
+      "router locale",
+      "provider Internet",
+      "firewall aziendale"
+    ]
+  },
+  {
+    "sentence": "Il termine tunnel non indica un collegamento fisico dedicato, ma un canale ____ protetto creato sopra la normale infrastruttura di Internet.",
+    "answer": "logico",
+    "bank": [
+      "logico",
+      "fisico",
+      "wireless",
+      "temporaneo"
+    ]
+  },
+  {
+    "sentence": "Prima di inviare una richiesta, il dispositivo cifra i dati utilizzando algoritmi ____.",
+    "answer": "crittografici",
+    "bank": [
+      "crittografici",
+      "statistici",
+      "grafici",
+      "predittivi"
+    ]
+  },
+  {
+    "sentence": "Durante il tragitto nel tunnel, router e provider Internet possono vedere solo che esiste una comunicazione, ma non possono leggere il ____.",
+    "answer": "contenuto",
+    "bank": [
+      "contenuto",
+      "mittente",
+      "orario",
+      "destinatario"
+    ]
+  },
+  {
+    "sentence": "Una volta arrivati al server VPN, i dati vengono decifrati e ____ verso il servizio richiesto.",
+    "answer": "inoltrati",
+    "bank": [
+      "inoltrati",
+      "cancellati",
+      "duplicati",
+      "archiviati"
+    ]
+  },
+  {
+    "sentence": "Le risposte seguono lo stesso percorso in senso inverso: vengono cifrate, attraversano il tunnel e vengono decifrate soltanto sul ____ dell'utente.",
+    "answer": "dispositivo",
+    "bank": [
+      "dispositivo",
+      "server",
+      "router",
+      "provider"
+    ]
+  },
+  {
+    "sentence": "Il tunnel protegge il tragitto tra il dispositivo e il server VPN; da quel punto in poi la comunicazione prosegue ____.",
+    "answer": "normalmente",
+    "bank": [
+      "normalmente",
+      "cifrata",
+      "bloccata",
+      "sospesa"
+    ]
+  },
+  {
+    "sentence": "Se il sito utilizza il protocollo ____, anche il tratto oltre il server VPN sarà cifrato.",
+    "answer": "HTTPS",
+    "bank": [
+      "HTTPS",
+      "HTTP",
+      "FTP",
+      "SMTP"
+    ]
+  },
+  {
+    "sentence": "Se il sito utilizza ancora HTTP, il traffico oltre il server VPN non sarà ____.",
+    "answer": "protetto",
+    "bank": [
+      "protetto",
+      "veloce",
+      "visibile",
+      "pubblico"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, VPN e HTTPS non sono tecnologie alternative, ma ____.",
+    "answer": "complementari",
+    "bank": [
+      "complementari",
+      "incompatibili",
+      "identiche",
+      "opzionali"
+    ]
+  },
+  {
+    "sentence": "Chi è collegato alla stessa rete Wi-Fi può vedere che un dispositivo comunica con un server VPN, ma non può leggere le ____ di accesso.",
+    "answer": "credenziali",
+    "bank": [
+      "credenziali",
+      "notifiche",
+      "impostazioni",
+      "applicazioni"
+    ]
+  },
+  {
+    "sentence": "Con la diffusione dello smart working, molte organizzazioni hanno iniziato a permettere l'accesso ai sistemi aziendali esclusivamente tramite ____.",
+    "answer": "VPN",
+    "bank": [
+      "VPN",
+      "email",
+      "SMS",
+      "cloud pubblico"
+    ]
+  },
+  {
+    "sentence": "Questa architettura ha ridotto notevolmente il rischio di ____ delle comunicazioni durante il collegamento remoto.",
+    "answer": "intercettazione",
+    "bank": [
+      "intercettazione",
+      "archiviazione",
+      "duplicazione",
+      "compressione"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del contenitore blindato, tutti vedono che il contenitore sta viaggiando, ma nessuno può ____ o conoscerne il contenuto.",
+    "answer": "aprirlo",
+    "bank": [
+      "aprirlo",
+      "spedirlo",
+      "pesarlo",
+      "tracciarlo"
+    ]
+  },
+  {
+    "sentence": "Secondo la metafora, il tunnel VPN protegge il contenuto del viaggio, non la ____ su cui esso si muove.",
+    "answer": "strada",
+    "bank": [
+      "strada",
+      "velocità",
+      "distanza",
+      "direzione"
+    ]
+  },
+  {
+    "sentence": "Le VPN possono essere classificate in base al loro ____.",
+    "answer": "scopo",
+    "bank": [
+      "scopo",
+      "prezzo",
+      "colore",
+      "peso"
+    ]
+  },
+  {
+    "sentence": "Le principali tipologie di VPN sono Remote Access, Site-to-Site e ____.",
+    "answer": "Commerciali",
+    "bank": [
+      "Commerciali",
+      "Governative",
+      "Militari",
+      "Educative"
+    ]
+  },
+  {
+    "sentence": "Le diverse tipologie di VPN si differenziano per chi viene collegato, per la finalità della connessione e per chi gestisce l'____.",
+    "answer": "infrastruttura",
+    "bank": [
+      "infrastruttura",
+      "password",
+      "licenza",
+      "larghezza di banda"
+    ]
+  },
+  {
+    "sentence": "La VPN ____ permette a un singolo utente di collegarsi in modo sicuro alla rete di un'organizzazione attraverso Internet.",
+    "answer": "Remote Access",
+    "bank": [
+      "Remote Access",
+      "Site-to-Site",
+      "Commerciale",
+      "Locale"
+    ]
+  },
+  {
+    "sentence": "La VPN Remote Access è la soluzione più comune nel lavoro da ____.",
+    "answer": "remoto",
+    "bank": [
+      "remoto",
+      "ufficio",
+      "gruppo",
+      "squadra"
+    ]
+  },
+  {
+    "sentence": "Dopo essersi autenticato tramite un'applicazione dedicata, il dipendente può accedere a file, server e applicazioni aziendali come se si trovasse fisicamente in ____.",
+    "answer": "ufficio",
+    "bank": [
+      "ufficio",
+      "viaggio",
+      "aeroporto",
+      "hotel"
+    ]
+  },
+  {
+    "sentence": "La VPN ____ non collega una persona, ma due o più reti geograficamente separate.",
+    "answer": "Site-to-Site",
+    "bank": [
+      "Site-to-Site",
+      "Remote Access",
+      "Commerciale",
+      "Domestica"
+    ]
+  },
+  {
+    "sentence": "Grazie alla VPN Site-to-Site, due sedi aziendali possono comunicare in modo sicuro come se appartenessero alla stessa rete ____.",
+    "answer": "locale",
+    "bank": [
+      "locale",
+      "pubblica",
+      "mobile",
+      "virtuale"
+    ]
+  },
+  {
+    "sentence": "Il collegamento Site-to-Site è generalmente permanente ed è gestito direttamente dai router o dai ____ aziendali.",
+    "answer": "firewall",
+    "bank": [
+      "firewall",
+      "browser",
+      "antivirus",
+      "backup"
+    ]
+  },
+  {
+    "sentence": "Le VPN ____ sono servizi offerti da aziende specializzate per proteggere la navigazione dell'utente.",
+    "answer": "commerciali",
+    "bank": [
+      "commerciali",
+      "governative",
+      "aziendali",
+      "universitarie"
+    ]
+  },
+  {
+    "sentence": "Le VPN commerciali fanno apparire la connessione come proveniente da uno dei server del provider e sono molto utilizzate per aumentare la ____ online.",
+    "answer": "privacy",
+    "bank": [
+      "privacy",
+      "velocità",
+      "memoria",
+      "larghezza di banda"
+    ]
+  },
+  {
+    "sentence": "Utilizzando una VPN commerciale, una parte della ____ viene trasferita al gestore della VPN.",
+    "answer": "fiducia",
+    "bank": [
+      "fiducia",
+      "connessione",
+      "memoria",
+      "batteria"
+    ]
+  },
+  {
+    "sentence": "In tutte le tipologie di VPN il meccanismo rimane identico: i dati vengono cifrati e decifrati solo nel punto ____.",
+    "answer": "previsto",
+    "bank": [
+      "previsto",
+      "casuale",
+      "pubblico",
+      "temporaneo"
+    ]
+  },
+  {
+    "sentence": "Molte multinazionali utilizzano VPN Site-to-Site per collegare le proprie reti senza ricorrere a costosi collegamenti ____.",
+    "answer": "dedicati",
+    "bank": [
+      "dedicati",
+      "wireless",
+      "pubblici",
+      "temporanei"
+    ]
+  },
+  {
+    "sentence": "Nella metafora delle autostrade private, la VPN Remote Access è come un pass speciale che permette a una singola persona di entrare in una città ____.",
+    "answer": "riservata",
+    "bank": [
+      "riservata",
+      "pubblica",
+      "virtuale",
+      "deserta"
+    ]
+  },
+  {
+    "sentence": "Nella stessa metafora, la VPN Site-to-Site è un'autostrada privata costruita tra due ____.",
+    "answer": "città",
+    "bank": [
+      "città",
+      "aziende",
+      "dispositivi",
+      "continenti"
+    ]
+  },
+  {
+    "sentence": "Una VPN dovrebbe essere utilizzata quando è necessario proteggere le comunicazioni su reti non completamente ____.",
+    "answer": "affidabili",
+    "bank": [
+      "affidabili",
+      "veloci",
+      "gratuite",
+      "recenti"
+    ]
+  },
+  {
+    "sentence": "Uno degli scenari più comuni per l'uso della VPN è l'utilizzo di reti Wi-Fi ____, come quelle di aeroporti, alberghi e bar.",
+    "answer": "pubbliche",
+    "bank": [
+      "pubbliche",
+      "domestiche",
+      "aziendali",
+      "private"
+    ]
+  },
+  {
+    "sentence": "Le reti Wi-Fi pubbliche sono infrastrutture condivise da numerosi utenti sulle quali non abbiamo alcun ____.",
+    "answer": "controllo",
+    "bank": [
+      "controllo",
+      "accesso",
+      "abbonamento",
+      "segnale"
+    ]
+  },
+  {
+    "sentence": "Molte aziende consentono ai dipendenti di collegarsi ai server interni esclusivamente tramite ____ durante il lavoro da remoto.",
+    "answer": "VPN",
+    "bank": [
+      "VPN",
+      "email",
+      "cloud pubblico",
+      "social network"
+    ]
+  },
+  {
+    "sentence": "Le VPN sono utilizzate anche da professionisti che viaggiano frequentemente e da amministratori di sistema che gestiscono infrastrutture da ____.",
+    "answer": "remoto",
+    "bank": [
+      "remoto",
+      "ufficio",
+      "sede",
+      "aula"
+    ]
+  },
+  {
+    "sentence": "Se un sito utilizza HTTPS, la comunicazione è già cifrata tra il ____ e il sito web.",
+    "answer": "browser",
+    "bank": [
+      "browser",
+      "router",
+      "provider",
+      "firewall"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, una VPN non è una tecnologia da lasciare sempre attiva per principio, ma uno strumento da usare quando aggiunge un reale ____.",
+    "answer": "beneficio",
+    "bank": [
+      "beneficio",
+      "costo",
+      "ritardo",
+      "limite"
+    ]
+  },
+  {
+    "sentence": "Durante grandi eventi internazionali, gli esperti di sicurezza consigliano di utilizzare una VPN quando ci si collega ai Wi-Fi pubblici messi a disposizione degli ____.",
+    "answer": "ospiti",
+    "bank": [
+      "ospiti",
+      "organizzatori",
+      "sponsor",
+      "relatori"
+    ]
+  },
+  {
+    "sentence": "Le reti Wi-Fi degli eventi, utilizzate da migliaia di persone, possono diventare bersaglio di attacchi o tentativi di ____ del traffico.",
+    "answer": "intercettazione",
+    "bank": [
+      "intercettazione",
+      "backup",
+      "sincronizzazione",
+      "cifratura"
+    ]
+  },
+  {
+    "sentence": "Molte aziende raccomandano ai propri dipendenti di utilizzare sempre una VPN durante le ____.",
+    "answer": "trasferte",
+    "bank": [
+      "trasferte",
+      "riunioni",
+      "pause",
+      "ferie"
+    ]
+  },
+  {
+    "sentence": "Nella metafora dell'impermeabile, se fuori c'è il sole e si è al sicuro in casa, probabilmente non si ha ____ della VPN.",
+    "answer": "bisogno",
+    "bank": [
+      "bisogno",
+      "paura",
+      "voglia",
+      "tempo"
+    ]
+  },
+  {
+    "sentence": "Secondo la metafora, la VPN offre il massimo vantaggio quando ci si trova in ambienti digitali più ____.",
+    "answer": "esposti",
+    "bank": [
+      "esposti",
+      "lenti",
+      "gratuiti",
+      "recenti"
+    ]
+  },
+  {
+    "sentence": "La ____ è il diritto di controllare le informazioni che ci riguardano e decidere come vengono raccolte, utilizzate e condivise.",
+    "answer": "privacy",
+    "bank": [
+      "privacy",
+      "sicurezza",
+      "autenticazione",
+      "cifratura"
+    ]
+  },
+  {
+    "sentence": "Una VPN può migliorare la privacy online perché nasconde il proprio indirizzo IP pubblico ai siti visitati, ma non garantisce l'____ assoluto.",
+    "answer": "anonimato",
+    "bank": [
+      "anonimato",
+      "accesso",
+      "aggiornamento",
+      "backup"
+    ]
+  },
+  {
+    "sentence": "I siti web non vedono direttamente l'indirizzo IP assegnato dal provider Internet, ma quello del ____.",
+    "answer": "server VPN",
+    "bank": [
+      "server VPN",
+      "router locale",
+      "dispositivo",
+      "firewall"
+    ]
+  },
+  {
+    "sentence": "Il traffico cifrato impedisce a chi gestisce la rete Wi-Fi di leggere il ____ delle comunicazioni.",
+    "answer": "contenuto",
+    "bank": [
+      "contenuto",
+      "orario",
+      "mittente",
+      "indirizzo IP"
+    ]
+  },
+  {
+    "sentence": "Chi gestisce la rete può sapere che è stata stabilita una connessione verso un server VPN, ma non conoscere i ____ che transitano nel tunnel.",
+    "answer": "dati",
+    "bank": [
+      "dati",
+      "orari",
+      "dispositivi",
+      "indirizzi"
+    ]
+  },
+  {
+    "sentence": "Se un utente accede al proprio account di posta elettronica, quel servizio continua a riconoscerlo attraverso le ____ di accesso.",
+    "answer": "credenziali",
+    "bank": [
+      "credenziali",
+      "cookie",
+      "notifiche",
+      "impostazioni"
+    ]
+  },
+  {
+    "sentence": "Il termine ____ indica le tecniche che identificano un dispositivo in base alle sue caratteristiche.",
+    "answer": "browser fingerprint",
+    "bank": [
+      "browser fingerprint",
+      "server VPN",
+      "indirizzo IP",
+      "tunnel cifrato"
+    ]
+  },
+  {
+    "sentence": "Quando si utilizza una VPN, parte della fiducia si sposta dal provider Internet al ____ della VPN.",
+    "answer": "fornitore",
+    "bank": [
+      "fornitore",
+      "governo",
+      "browser",
+      "dispositivo"
+    ]
+  },
+  {
+    "sentence": "Il fornitore VPN gestisce il server attraverso cui passa il traffico e, secondo la propria politica, potrebbe ____ alcuni dati di connessione.",
+    "answer": "conservare",
+    "bank": [
+      "conservare",
+      "cifrare",
+      "cancellare",
+      "condividere"
+    ]
+  },
+  {
+    "sentence": "È fondamentale scegliere servizi VPN ____ e comprendere che non garantiscono l'anonimato totale.",
+    "answer": "affidabili",
+    "bank": [
+      "affidabili",
+      "gratuiti",
+      "veloci",
+      "recenti"
+    ]
+  },
+  {
+    "sentence": "Alcuni provider VPN dichiarano di adottare una politica \"____\", cioè di non conservare registri delle attività degli utenti.",
+    "answer": "no-log",
+    "bank": [
+      "no-log",
+      "full-log",
+      "auto-log",
+      "pre-log"
+    ]
+  },
+  {
+    "sentence": "Alcune aziende VPN hanno accettato verifiche indipendenti, chiamate ____, per dimostrare il rispetto delle proprie politiche sulla privacy.",
+    "answer": "audit",
+    "bank": [
+      "audit",
+      "backup",
+      "benchmark",
+      "screening"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del mantello, se si entra in banca e si mostra un documento d'identità, il personale saprà comunque ____.",
+    "answer": "chi sei",
+    "bank": [
+      "chi sei",
+      "dove abiti",
+      "cosa cerchi",
+      "quanto hai"
+    ]
+  },
+  {
+    "sentence": "Secondo la metafora, la VPN rende più discreto il percorso, ma non cancella l'identità quando si decide di ____.",
+    "answer": "rivelarla",
+    "bank": [
+      "rivelarla",
+      "nasconderla",
+      "condividerla",
+      "proteggerla"
+    ]
+  },
+  {
+    "sentence": "Una VPN protegge la connessione tra il dispositivo e il server VPN, ma non elimina tutte le ____ informatiche.",
+    "answer": "minacce",
+    "bank": [
+      "minacce",
+      "connessioni",
+      "password",
+      "reti"
+    ]
+  },
+  {
+    "sentence": "Una VPN non sostituisce un antivirus, un firewall, l'autenticazione a più fattori o gli aggiornamenti di ____.",
+    "answer": "sicurezza",
+    "bank": [
+      "sicurezza",
+      "sistema",
+      "rete",
+      "browser"
+    ]
+  },
+  {
+    "sentence": "La VPN svolge un compito preciso: protegge il trasporto dei dati, non tutto ciò che accade durante la ____.",
+    "answer": "navigazione",
+    "bank": [
+      "navigazione",
+      "cifratura",
+      "connessione",
+      "sincronizzazione"
+    ]
+  },
+  {
+    "sentence": "Se un utente inserisce volontariamente le proprie credenziali in un sito fraudolento, la VPN trasmetterà quei dati in modo cifrato ma li consegnerà comunque al sito ____.",
+    "answer": "malevolo",
+    "bank": [
+      "malevolo",
+      "ufficiale",
+      "aziendale",
+      "protetto"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, in questo caso il problema non è la sicurezza della connessione, bensì il ____ sbagliato.",
+    "answer": "destinatario",
+    "bank": [
+      "destinatario",
+      "mittente",
+      "protocollo",
+      "server"
+    ]
+  },
+  {
+    "sentence": "Una VPN non blocca automaticamente virus o ____ e non corregge le vulnerabilità del sistema operativo.",
+    "answer": "ransomware",
+    "bank": [
+      "ransomware",
+      "backup",
+      "cookie",
+      "firewall"
+    ]
+  },
+  {
+    "sentence": "Le prestazioni di una connessione VPN possono risentirne, risultando più ____, specialmente se il server è distante o congestionato.",
+    "answer": "lente",
+    "bank": [
+      "lente",
+      "veloci",
+      "stabili",
+      "economiche"
+    ]
+  },
+  {
+    "sentence": "Una VPN non garantisce l'accesso a qualsiasi contenuto online: alcuni servizi possono rilevarne l'utilizzo e ____ o impedirne l'accesso.",
+    "answer": "limitarne",
+    "bank": [
+      "limitarne",
+      "velocizzarne",
+      "cifrarne",
+      "duplicarne"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, la VPN è uno degli strumenti della sicurezza, non la sicurezza nel suo ____.",
+    "answer": "insieme",
+    "bank": [
+      "insieme",
+      "prezzo",
+      "futuro",
+      "passato"
+    ]
+  },
+  {
+    "sentence": "Una protezione efficace nasce dalla combinazione di più ____ che lavorano insieme.",
+    "answer": "misure",
+    "bank": [
+      "misure",
+      "dispositivi",
+      "account",
+      "reti"
+    ]
+  },
+  {
+    "sentence": "Numerose campagne di phishing hanno colpito utenti e aziende indipendentemente dall'utilizzo di una ____.",
+    "answer": "VPN",
+    "bank": [
+      "VPN",
+      "password",
+      "email",
+      "connessione"
+    ]
+  },
+  {
+    "sentence": "In queste campagne, gli attaccanti non hanno intercettato le comunicazioni, ma hanno convinto le vittime a inserire spontaneamente le proprie credenziali in siti ____.",
+    "answer": "falsi",
+    "bank": [
+      "falsi",
+      "lenti",
+      "cifrati",
+      "pubblici"
+    ]
+  },
+  {
+    "sentence": "Questo dimostra che molti attacchi sfruttano il fattore ____ più che le debolezze della connessione.",
+    "answer": "umano",
+    "bank": [
+      "umano",
+      "tecnico",
+      "economico",
+      "geografico"
+    ]
+  },
+  {
+    "sentence": "Nella metafora dell'auto blindata, se il conducente decide di consegnare le chiavi a uno sconosciuto, la ____ non può impedirlo.",
+    "answer": "blindatura",
+    "bank": [
+      "blindatura",
+      "velocità",
+      "VPN",
+      "cifratura"
+    ]
+  }
+]

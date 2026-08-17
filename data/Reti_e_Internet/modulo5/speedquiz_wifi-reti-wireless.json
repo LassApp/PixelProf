@@ -1,0 +1,797 @@
+[
+  {
+    "id": 1,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il Wi-Fi?",
+    "options": [
+      "Una tecnologia di comunicazione wireless che permette ai dispositivi di collegarsi a una rete locale e a Internet senza cavi",
+      "Un protocollo che assegna automaticamente gli indirizzi IP",
+      "Un dispositivo fisico che collega due reti differenti",
+      "Un tipo di cavo Ethernet ad alta velocità"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Wi-Fi è una tecnologia wireless che permette ai dispositivi di collegarsi a una rete locale e a Internet senza utilizzare cavi."
+  },
+  {
+    "id": 2,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa deriva il nome \"Wi-Fi\"?",
+    "options": [
+      "Non è un acronimo tecnico, ma un marchio commerciale creato dalla Wi-Fi Alliance",
+      "È l'acronimo di Wireless Fidelity Internet",
+      "È l'acronimo di Wired Frequency",
+      "È il nome del primo router prodotto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il nome Wi-Fi non è un acronimo tecnico, ma un marchio commerciale creato dalla Wi-Fi Alliance."
+  },
+  {
+    "id": 3,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa certifica la Wi-Fi Alliance?",
+    "options": [
+      "La compatibilità dei dispositivi wireless",
+      "La velocità massima di Internet",
+      "La sicurezza delle password bancarie",
+      "La qualità dei cavi Ethernet"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Wi-Fi Alliance è l'organizzazione che certifica la compatibilità dei dispositivi wireless."
+  },
+  {
+    "id": 4,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa utilizza il Wi-Fi per trasmettere i dati tra dispositivi e router?",
+    "options": [
+      "Onde radio",
+      "Impulsi luminosi",
+      "Segnali sonori",
+      "Cavi in fibra ottica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Wi-Fi utilizza onde radio per trasmettere i dati tra i dispositivi e il punto di accesso alla rete."
+  },
+  {
+    "id": 5,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se il collegamento tra router e Internet viene interrotto, ma il Wi-Fi resta attivo?",
+    "options": [
+      "I dispositivi possono ancora comunicare nella rete locale ma non accedere a Internet",
+      "Il Wi-Fi smette immediatamente di funzionare del tutto",
+      "I dispositivi si disconnettono automaticamente dal router",
+      "Il router si spegne automaticamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se il collegamento con Internet si interrompe, il Wi-Fi continua a esistere e i dispositivi possono comunicare nella rete locale, ma non accedere ai servizi online."
+  },
+  {
+    "id": 6,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali fattori possono attenuare le onde radio del Wi-Fi?",
+    "options": [
+      "Muri spessi, pavimenti, mobili metallici o interferenze di altri dispositivi",
+      "Solo la distanza dal modem",
+      "Solo il numero di dispositivi collegati",
+      "Solo la velocità della connessione Internet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le onde radio possono essere attenuate da muri spessi, pavimenti, mobili metallici o interferenze generate da altri dispositivi elettronici."
+  },
+  {
+    "id": 7,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando è preferibile il collegamento via cavo rispetto al Wi-Fi secondo il modulo?",
+    "options": [
+      "Quando servono la massima stabilità e le migliori prestazioni, ad esempio per server o postazioni dedicate ai videogiochi",
+      "Sempre, in qualsiasi situazione",
+      "Solo quando il router è molto vecchio",
+      "Mai, il Wi-Fi è sempre preferibile"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il collegamento via cavo resta la scelta ideale quando servono la massima stabilità e le migliori prestazioni."
+  },
+  {
+    "id": 8,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa è diventato il Wi-Fi domestico durante la pandemia di COVID-19?",
+    "options": [
+      "Un'infrastruttura essenziale per videoconferenze, lezioni online e streaming",
+      "Un servizio utilizzato solo dalle aziende",
+      "Un servizio che ha perso importanza",
+      "Un servizio sostituito completamente dal cavo Ethernet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Durante la pandemia il Wi-Fi domestico è diventato un'infrastruttura essenziale per videoconferenze, lezioni online, servizi cloud e streaming."
+  },
+  {
+    "id": 9,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono gli standard Wi-Fi?",
+    "options": [
+      "Le diverse versioni della tecnologia Wi-Fi che definiscono come i dispositivi comunicano tramite onde radio",
+      "I nomi delle reti Wi-Fi scelti dagli utenti",
+      "I protocolli di sicurezza utilizzati dal router",
+      "Le bande di frequenza utilizzate dal 5G"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli standard Wi-Fi sono le diverse versioni della tecnologia che definiscono come i dispositivi comunicano tramite onde radio."
+  },
+  {
+    "id": 10,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dal 2018 come ha reso più semplice la denominazione degli standard la Wi-Fi Alliance?",
+    "options": [
+      "Sostituendo le sigle tecniche complesse con una numerazione progressiva",
+      "Eliminando del tutto i nomi degli standard",
+      "Utilizzando solo lettere dell'alfabeto",
+      "Numerando gli standard in base alla velocità massima teorica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dal 2018 la Wi-Fi Alliance ha sostituito le complesse sigle tecniche con una numerazione progressiva (Wi-Fi 4, 5, 6, 7)."
+  },
+  {
+    "id": 11,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa ha introdotto il Wi-Fi 4 rispetto alle versioni precedenti?",
+    "options": [
+      "L'utilizzo sia della banda 2,4 GHz sia della banda 5 GHz, con velocità sensibilmente maggiore",
+      "L'utilizzo esclusivo della banda 6 GHz",
+      "La possibilità di funzionare senza router",
+      "La compatibilità con il Bluetooth"
+    ],
+    "correctIndex": 0,
+    "explanation": "Wi-Fi 4 ha aumentato sensibilmente la velocità e ha introdotto l'utilizzo sia della banda 2,4 GHz sia di quella a 5 GHz."
+  },
+  {
+    "id": 12,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quale banda il Wi-Fi 5 ha migliorato soprattutto le prestazioni?",
+    "options": [
+      "5 GHz",
+      "2,4 GHz",
+      "6 GHz",
+      "10 GHz"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Wi-Fi 5 ha migliorato ulteriormente le prestazioni, soprattutto nella banda a 5 GHz."
+  },
+  {
+    "id": 13,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per cosa è stato progettato principalmente il Wi-Fi 6?",
+    "options": [
+      "Per gestire ambienti molto affollati riducendo la congestione",
+      "Per eliminare completamente la necessità del router",
+      "Per funzionare solo su cavo Ethernet",
+      "Per sostituire il protocollo DHCP"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Wi-Fi 6 è stato progettato per gestire ambienti molto affollati, come scuole, aeroporti o abitazioni con molti dispositivi, riducendo la congestione."
+  },
+  {
+    "id": 14,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa offre il Wi-Fi 7 rispetto agli standard precedenti?",
+    "options": [
+      "Prestazioni superiori, latenza molto ridotta e migliore gestione di applicazioni esigenti come realtà virtuale e cloud gaming",
+      "Solo una copertura leggermente maggiore",
+      "La possibilità di funzionare senza password",
+      "Un consumo energetico molto più elevato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Wi-Fi 7 offre prestazioni superiori, latenza molto ridotta e una migliore gestione delle applicazioni più esigenti."
+  },
+  {
+    "id": 15,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede quando un router Wi-Fi 6 si collega a uno smartphone Wi-Fi 4?",
+    "options": [
+      "La connessione utilizza le caratteristiche supportate dal dispositivo meno recente",
+      "La connessione utilizza automaticamente le caratteristiche del Wi-Fi 6",
+      "La connessione non è possibile",
+      "Il router si aggiorna automaticamente allo standard dello smartphone"
+    ],
+    "correctIndex": 0,
+    "explanation": "La velocità massima dipende sempre dall'elemento più \"lento\" della comunicazione, quindi si useranno le caratteristiche del dispositivo meno recente."
+  },
+  {
+    "id": 16,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché molte strutture come aeroporti e stadi hanno adottato il Wi-Fi 6?",
+    "options": [
+      "Per migliorare la capacità della rete di gestire migliaia di dispositivi contemporaneamente",
+      "Per ridurre il costo dell'abbonamento Internet",
+      "Perché richiesto per legge",
+      "Per eliminare la necessità della banda 5 GHz"
+    ],
+    "correctIndex": 0,
+    "explanation": "Con il Wi-Fi 6 molte strutture hanno migliorato la capacità della rete più che la sola velocità, riducendo rallentamenti in presenza di molti utenti."
+  },
+  {
+    "id": 17,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono le principali bande di frequenza Wi-Fi indicate nel modulo?",
+    "options": [
+      "2,4 GHz, 5 GHz e 6 GHz",
+      "1 GHz, 3 GHz e 9 GHz",
+      "2 GHz, 4 GHz e 8 GHz",
+      "5 GHz, 10 GHz e 20 GHz"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le principali bande utilizzate oggi sono 2,4 GHz, 5 GHz e 6 GHz."
+  },
+  {
+    "id": 18,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale caratteristica principale ha la banda 2,4 GHz?",
+    "options": [
+      "Maggiore copertura ma velocità inferiore",
+      "Velocità elevata ma copertura ridotta",
+      "Nessuna interferenza con altri dispositivi",
+      "Disponibilità solo su Wi-Fi 7"
+    ],
+    "correctIndex": 0,
+    "explanation": "La banda 2,4 GHz offre maggiore copertura, ma velocità inferiore ed è più soggetta a interferenze."
+  },
+  {
+    "id": 19,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale caratteristica principale ha la banda 5 GHz?",
+    "options": [
+      "Velocità più elevata ma copertura più ridotta",
+      "Copertura massima ma velocità minima",
+      "Nessuna perdita di segnale attraverso i muri",
+      "È utilizzata solo dai dispositivi IoT"
+    ],
+    "correctIndex": 0,
+    "explanation": "La banda 5 GHz offre velocità decisamente superiori, ma il segnale perde intensità più facilmente attraverso gli ostacoli."
+  },
+  {
+    "id": 20,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quali standard è stata introdotta la banda 6 GHz?",
+    "options": [
+      "Wi-Fi 6E e Wi-Fi 7",
+      "Wi-Fi 4 e Wi-Fi 5",
+      "Wi-Fi 3 e Wi-Fi 4",
+      "Nessuno standard specifico"
+    ],
+    "correctIndex": 0,
+    "explanation": "La banda 6 GHz è stata introdotta con Wi-Fi 6E e Wi-Fi 7."
+  },
+  {
+    "id": 21,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la banda 2,4 GHz è più soggetta a interferenze?",
+    "options": [
+      "Perché è utilizzata anche da molti altri dispositivi elettronici",
+      "Perché ha una velocità troppo elevata",
+      "Perché non può attraversare i muri",
+      "Perché è disponibile solo sui router più recenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "La banda 2,4 GHz è più soggetta a interferenze perché viene utilizzata anche da molti altri dispositivi elettronici."
+  },
+  {
+    "id": 22,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come scelgono automaticamente la frequenza molti router moderni?",
+    "options": [
+      "Analizzando il dispositivo collegato, la qualità del segnale e il traffico della rete",
+      "In base all'orario del giorno",
+      "In base al colore del router",
+      "Chiedendo sempre conferma manuale all'utente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Molti router moderni gestiscono automaticamente le bande, scegliendo la frequenza più adatta senza richiedere interventi dell'utente."
+  },
+  {
+    "id": 23,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché molti dispositivi IoT devono essere configurati inizialmente sulla banda 2,4 GHz?",
+    "options": [
+      "Perché numerosi dispositivi IoT supportano esclusivamente questa banda",
+      "Perché la banda 2,4 GHz è più veloce",
+      "Perché è obbligatorio per legge",
+      "Perché la banda 5 GHz non esiste ancora"
+    ],
+    "correctIndex": 0,
+    "explanation": "Numerosi dispositivi IoT supportano esclusivamente la banda 2,4 GHz, per questo si consiglia di collegarsi a quella rete durante la configurazione."
+  },
+  {
+    "id": 24,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'acronimo SSID?",
+    "options": [
+      "Service Set Identifier",
+      "Secure System Identity Device",
+      "Standard Service Internet Domain",
+      "System Setup ID"
+    ],
+    "correctIndex": 0,
+    "explanation": "SSID significa Service Set Identifier, cioè Identificatore del Servizio di Rete."
+  },
+  {
+    "id": 25,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve l'SSID?",
+    "options": [
+      "A identificare e mostrare ai dispositivi il nome di una rete Wi-Fi",
+      "A cifrare i dati trasmessi in rete",
+      "Ad assegnare automaticamente un indirizzo IP",
+      "A misurare la velocità della connessione"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'SSID è il nome con cui una rete Wi-Fi viene identificata e mostrata ai dispositivi."
+  },
+  {
+    "id": 26,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede dopo che il router verifica che la password inserita sia corretta?",
+    "options": [
+      "Il router autorizza il dispositivo e gli assegna un indirizzo IP tramite DHCP",
+      "Il router disattiva temporaneamente il Wi-Fi",
+      "Il dispositivo viene aggiunto automaticamente alla rete ospiti",
+      "Il router cambia automaticamente l'SSID"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dopo aver verificato la password, il router autorizza il dispositivo a entrare nella rete e gli assegna un indirizzo IP tramite DHCP."
+  },
+  {
+    "id": 27,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "La funzione di nascondere l'SSID rappresenta una vera misura di sicurezza?",
+    "options": [
+      "No, un utente esperto può comunque individuare la rete con strumenti adeguati",
+      "Sì, rende la rete completamente invisibile e inattaccabile",
+      "Sì, ma solo se combinata con il protocollo WEP",
+      "No, perché disattiva automaticamente il Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nascondere l'SSID non è una vera misura di sicurezza: un utente esperto può comunque individuare la rete con strumenti adeguati."
+  },
+  {
+    "id": 28,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una rete ospiti (Guest Network)?",
+    "options": [
+      "Una seconda rete Wi-Fi separata dalla principale che impedisce l'accesso ai dispositivi della rete domestica",
+      "Una rete riservata esclusivamente agli amministratori di sistema",
+      "Una rete che sostituisce completamente la rete principale",
+      "Una rete che funziona solo con cavo Ethernet"
+    ],
+    "correctIndex": 0,
+    "explanation": "La rete ospiti è una seconda rete Wi-Fi separata da quella principale, che permette a visitatori di accedere a Internet senza raggiungere i dispositivi domestici."
+  },
+  {
+    "id": 29,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale rischio comportavano i router distribuiti con SSID e password predefiniti?",
+    "options": [
+      "Accessi non autorizzati, soprattutto con password deboli o prevedibili",
+      "Un aumento della velocità di connessione",
+      "L'impossibilità di configurare una rete ospiti",
+      "Una riduzione automatica della copertura Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Utenti che non modificavano le credenziali predefinite sono stati vittime di accessi non autorizzati, soprattutto con password deboli."
+  },
+  {
+    "id": 30,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del condominio usata nel modulo, cosa rappresenta l'SSID?",
+    "options": [
+      "Il nome riportato sul citofono",
+      "La chiave del portone",
+      "Il numero civico dell'edificio",
+      "Il custode del condominio"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nella metafora, l'SSID è come il nome riportato sul citofono, che identifica quale rete si vuole raggiungere."
+  },
+  {
+    "id": 31,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la sicurezza Wi-Fi?",
+    "options": [
+      "L'insieme di tecnologie e configurazioni per proteggere una rete wireless da accessi non autorizzati",
+      "Un dispositivo fisico che si collega al router",
+      "Un tipo di cavo di rete schermato",
+      "Un servizio a pagamento offerto solo da alcuni provider"
+    ],
+    "correctIndex": 0,
+    "explanation": "La sicurezza Wi-Fi è l'insieme delle tecnologie e delle configurazioni utilizzate per proteggere una rete wireless da accessi non autorizzati."
+  },
+  {
+    "id": 32,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale protocollo di sicurezza Wi-Fi è ormai considerato insicuro?",
+    "options": [
+      "WEP",
+      "WPA2",
+      "WPA3",
+      "Nessuno, sono tutti ugualmente sicuri"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il WEP (Wired Equivalent Privacy) è un vecchio sistema di protezione ormai considerato insicuro."
+  },
+  {
+    "id": 33,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale protocollo è stato per molti anni lo standard di sicurezza Wi-Fi più utilizzato?",
+    "options": [
+      "WPA2",
+      "WEP",
+      "WPA",
+      "SSID"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il WPA2 è diventato per molti anni lo standard di sicurezza principale nelle abitazioni e nelle aziende."
+  },
+  {
+    "id": 34,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa introduce il WPA3 rispetto ai protocolli precedenti?",
+    "options": [
+      "Sistemi di autenticazione più resistenti agli attacchi e migliore protezione anche con password non complesse",
+      "L'eliminazione totale della necessità di una password",
+      "Una copertura Wi-Fi più ampia",
+      "La possibilità di nascondere permanentemente l'SSID"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il WPA3 introduce sistemi di autenticazione più resistenti agli attacchi e offre protezione migliore anche con password non particolarmente complesse."
+  },
+  {
+    "id": 35,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché una rete protetta con WPA3 può comunque essere vulnerabile?",
+    "options": [
+      "Se la password scelta è debole o prevedibile",
+      "Perché il WPA3 non cifra i dati",
+      "Perché il WPA3 funziona solo sulla banda 2,4 GHz",
+      "Perché il WPA3 non è compatibile con nessun router"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una rete protetta con WPA3 ma con una password debole, come \"12345678\", rimane vulnerabile."
+  },
+  {
+    "id": 36,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale vulnerabilità fu scoperta nel 2017 e riguardava il protocollo WPA2?",
+    "options": [
+      "KRACK (Key Reinstallation Attack)",
+      "Mirai",
+      "Heartbleed",
+      "WannaCry"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel 2017 fu scoperta la vulnerabilità KRACK, che riguardava il protocollo WPA2."
+  },
+  {
+    "id": 37,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permetteva di fare la vulnerabilità KRACK a un aggressore vicino alla vittima?",
+    "options": [
+      "Manipolare alcune fasi della connessione e, in determinate condizioni, intercettare parte del traffico",
+      "Spegnere da remoto il router della vittima",
+      "Cambiare automaticamente l'SSID della rete",
+      "Assumere il controllo completo dello smartphone della vittima"
+    ],
+    "correctIndex": 0,
+    "explanation": "La vulnerabilità KRACK permetteva a un aggressore vicino alla vittima di manipolare alcune fasi della connessione e intercettare parte del traffico."
+  },
+  {
+    "id": 38,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale tra queste è indicata nel modulo come buona pratica di sicurezza Wi-Fi?",
+    "options": [
+      "Cambiare la password predefinita del router",
+      "Utilizzare sempre il protocollo WEP",
+      "Condividere pubblicamente l'SSID e la password",
+      "Disattivare tutti gli aggiornamenti del firmware"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tra le buone pratiche indicate ci sono cambiare la password predefinita, usare almeno WPA2/WPA3 e aggiornare il firmware."
+  },
+  {
+    "id": 39,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il segnale Wi-Fi?",
+    "options": [
+      "L'intensità dell'onda radio con cui il router comunica con i dispositivi collegati",
+      "Il nome della rete Wi-Fi",
+      "La password di accesso alla rete",
+      "Il protocollo di sicurezza utilizzato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il segnale Wi-Fi è l'intensità dell'onda radio con cui il router comunica con i dispositivi collegati."
+  },
+  {
+    "id": 40,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le interferenze secondo il modulo?",
+    "options": [
+      "Disturbi causati da altri segnali radio o ostacoli fisici che riducono la qualità della connessione",
+      "Errori nel software del router",
+      "Virus che infettano la rete Wi-Fi",
+      "Aggiornamenti automatici del firmware"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le interferenze sono disturbi causati da altri segnali radio o ostacoli fisici che possono ridurre la qualità della connessione Wi-Fi."
+  },
+  {
+    "id": 41,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede quando il segnale Wi-Fi diventa troppo debole?",
+    "options": [
+      "Il dispositivo deve ripetere più volte l'invio dei dati, causando rallentamenti o disconnessioni",
+      "La connessione diventa automaticamente più veloce",
+      "Il router si spegne automaticamente",
+      "L'SSID della rete cambia automaticamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se il segnale diventa troppo debole, il dispositivo deve ripetere più volte l'invio dei dati, causando rallentamenti, ritardi o disconnessioni."
+  },
+  {
+    "id": 42,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali ostacoli fisici possono attenuare le onde radio del Wi-Fi?",
+    "options": [
+      "Pareti in cemento armato, strutture metalliche, mobili grandi o elettrodomestici",
+      "Solo le tende di stoffa",
+      "Solo i tappeti",
+      "Solo gli oggetti in plastica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pareti in cemento armato, strutture metalliche, mobili molto grandi o elettrodomestici possono attenuare le onde radio."
+  },
+  {
+    "id": 43,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali dispositivi possono generare interferenze nella banda 2,4 GHz?",
+    "options": [
+      "Forni a microonde, telefoni cordless, dispositivi Bluetooth e altre reti Wi-Fi vicine",
+      "Solo altri router dello stesso modello",
+      "Solo i cavi Ethernet",
+      "Solo gli smartphone spenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Forni a microonde, telefoni cordless, dispositivi Bluetooth e altre reti Wi-Fi vicine possono creare disturbi nella banda 2,4 GHz."
+  },
+  {
+    "id": 44,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "È sufficiente guardare il numero di \"tacche\" del segnale per valutare la qualità della connessione Wi-Fi?",
+    "options": [
+      "No, un segnale apparentemente forte può comunque essere disturbato da molte interferenze",
+      "Sì, è l'unico indicatore affidabile",
+      "Sì, ma solo se il router è nuovo",
+      "No, bisogna guardare solo il colore del LED del router"
+    ],
+    "correctIndex": 0,
+    "explanation": "Per valutare la qualità del collegamento non basta guardare il numero di tacche: un segnale forte può comunque avere problemi se disturbato da interferenze."
+  },
+  {
+    "id": 45,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa hanno scoperto molte famiglie durante la pandemia riguardo ai problemi di connessione domestica?",
+    "options": [
+      "Che spesso il problema non era la linea Internet dell'operatore, ma la rete Wi-Fi interna",
+      "Che il problema era sempre ed esclusivamente la linea Internet dell'operatore",
+      "Che il Wi-Fi non serviva più durante il lavoro da remoto",
+      "Che bastava cambiare operatore per risolvere ogni problema"
+    ],
+    "correctIndex": 0,
+    "explanation": "In molti casi la difficoltà non era dovuta alla linea Internet, ma alla copertura Wi-Fi interna all'abitazione."
+  },
+  {
+    "id": 46,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa migliorare il Wi-Fi secondo il modulo?",
+    "options": [
+      "Adottare strategie e strumenti per aumentare qualità, copertura e stabilità di una rete wireless",
+      "Acquistare semplicemente un router più costoso",
+      "Disattivare la banda 5 GHz",
+      "Utilizzare solo dispositivi cablati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Migliorare il Wi-Fi significa adottare strategie e strumenti per aumentare la qualità, la copertura e la stabilità di una rete wireless."
+  },
+  {
+    "id": 47,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove dovrebbe essere posizionato il router per una copertura ottimale?",
+    "options": [
+      "In una zona centrale della casa, possibilmente rialzata e libera da ostacoli",
+      "Sempre dentro un mobile chiuso",
+      "Il più vicino possibile al pavimento",
+      "In un angolo isolato della casa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il router dovrebbe essere collocato in una zona abbastanza centrale della casa, rialzata e libera da ostacoli."
+  },
+  {
+    "id": 48,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché è importante aggiornare il firmware del router?",
+    "options": [
+      "Per correggere problemi di sicurezza, migliorare la stabilità e ottimizzare le prestazioni",
+      "Per cambiare automaticamente l'SSID",
+      "Per aumentare il numero massimo di dispositivi collegabili",
+      "Per disattivare la crittografia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli aggiornamenti del firmware possono correggere problemi di sicurezza, migliorare la stabilità e ottimizzare le prestazioni."
+  },
+  {
+    "id": 49,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come funziona un ripetitore Wi-Fi (Range Extender)?",
+    "options": [
+      "Si collega via Wi-Fi al router e rilancia il segnale esistente nelle zone dove arriva più debole",
+      "Si collega via cavo Ethernet al router e crea un nuovo punto di accesso",
+      "Sostituisce completamente il router",
+      "Funziona solo se collegato direttamente a Internet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il ripetitore Wi-Fi si collega via Wi-Fi al router, riceve il segnale esistente e lo rilancia nelle zone con segnale debole."
+  },
+  {
+    "id": 50,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale svantaggio ha il ripetitore Wi-Fi rispetto all'access point?",
+    "options": [
+      "Può ridurre la velocità perché utilizza parte della banda per comunicare con il router",
+      "Non può essere utilizzato in nessuna abitazione",
+      "Richiede sempre un cavo Ethernet",
+      "Non è compatibile con nessuno standard Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il ripetitore può ridurre la velocità perché utilizza parte della banda per comunicare con il router."
+  },
+  {
+    "id": 51,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si collega un access point (AP) al router?",
+    "options": [
+      "Tramite cavo Ethernet",
+      "Tramite Wi-Fi",
+      "Tramite Bluetooth",
+      "Tramite una connessione satellitare"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'access point si collega tramite cavo Ethernet al router e crea un nuovo punto di accesso Wi-Fi."
+  },
+  {
+    "id": 52,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come funziona un sistema Wi-Fi Mesh?",
+    "options": [
+      "Più nodi collaborano per creare un'unica rete Wi-Fi distribuita, e i dispositivi si collegano automaticamente al nodo con il segnale migliore",
+      "Un solo dispositivo centrale gestisce tutta la rete senza altri nodi",
+      "Richiede che l'utente cambi manualmente rete quando si sposta",
+      "Funziona solo se tutti i dispositivi sono collegati via cavo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sistema Wi-Fi Mesh è formato da più nodi che collaborano tra loro, e i dispositivi si collegano automaticamente al nodo con il segnale migliore."
+  },
+  {
+    "id": 53,
+    "module": "wifi-reti-wireless",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale soluzione è indicata come più efficace per abitazioni grandi o su più piani?",
+    "options": [
+      "Il sistema Wi-Fi Mesh",
+      "Il ripetitore Wi-Fi economico",
+      "Un solo router centrale senza altri dispositivi",
+      "La disattivazione della banda 5 GHz"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sistema Wi-Fi Mesh è indicato come la soluzione più efficace per abitazioni grandi o distribuite su più piani."
+  }
+]

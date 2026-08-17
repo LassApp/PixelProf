@@ -1,0 +1,174 @@
+[
+  {
+    "id": 1,
+    "module": "tcp-ip",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "TCP/IP",
+        "definition": "Insieme di protocolli che permette ai dispositivi di comunicare attraverso le reti e su Internet"
+      },
+      {
+        "term": "IP (all'interno di TCP/IP)",
+        "definition": "Identifica la destinazione dei dati e ne permette l'instradamento nella rete"
+      },
+      {
+        "term": "TCP (all'interno di TCP/IP)",
+        "definition": "Garantisce una comunicazione affidabile, assicurandosi che lo scambio avvenga correttamente"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "module": "tcp-ip",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Livello Applicazione",
+        "definition": "Il livello più vicino all'utente, dove operano navigazione web, email e streaming"
+      },
+      {
+        "term": "Livello Trasporto",
+        "definition": "Decide come consegnare i dati, scegliendo tra un protocollo affidabile o uno più veloce"
+      },
+      {
+        "term": "Livello Internet",
+        "definition": "Si occupa dell'indirizzamento, utilizzando gli indirizzi IP"
+      },
+      {
+        "term": "Livello Accesso alla Rete",
+        "definition": "Il livello più vicino all'hardware, che trasmette i dati come segnali elettrici, luminosi o radio"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "module": "tcp-ip",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "TCP",
+        "definition": "Protocollo del Livello Trasporto che garantisce una comunicazione affidabile, ordinata e senza errori"
+      },
+      {
+        "term": "Segmento",
+        "definition": "Piccola parte numerata in cui viene suddiviso un messaggio trasmesso tramite TCP"
+      },
+      {
+        "term": "ACK (Acknowledgment)",
+        "definition": "Segnale che comunica al mittente che un segmento è arrivato correttamente"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "module": "tcp-ip",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "UDP",
+        "definition": "Protocollo del Livello Trasporto che privilegia velocità e semplicità rispetto all'affidabilità"
+      },
+      {
+        "term": "Latenza",
+        "definition": "Il tempo necessario affinché un'informazione raggiunga il destinatario"
+      },
+      {
+        "term": "Datagramma UDP",
+        "definition": "Viene inviato senza connessione preventiva e senza attesa di conferme di ricezione"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "module": "tcp-ip",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Porta",
+        "definition": "Identificatore numerico che indirizza i dati verso l'applicazione corretta su un dispositivo"
+      },
+      {
+        "term": "Porta 80",
+        "definition": "Storicamente utilizzata dal protocollo HTTP"
+      },
+      {
+        "term": "Porta 443",
+        "definition": "Utilizzata dal protocollo HTTPS"
+      },
+      {
+        "term": "Porta effimera",
+        "definition": "Porta temporanea assegnata automaticamente al browser, liberata al termine della comunicazione"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "module": "tcp-ip",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "HTTP",
+        "definition": "Protocollo del Livello Applicazione utilizzato per richiedere e trasferire pagine Web senza cifratura"
+      },
+      {
+        "term": "HTTPS",
+        "definition": "Evoluzione di HTTP che utilizza la crittografia per proteggere i dati scambiati"
+      },
+      {
+        "term": "TLS",
+        "definition": "Protocollo di sicurezza che, insieme a HTTP, dà origine a HTTPS"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "module": "tcp-ip",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "DNS",
+        "definition": "Server interrogato dal browser per scoprire quale indirizzo IP corrisponde al nome di un sito"
+      },
+      {
+        "term": "Routing (instradamento)",
+        "definition": "Processo con cui ogni router decide a quale router successivo inoltrare un pacchetto"
+      },
+      {
+        "term": "Decapsulamento",
+        "definition": "Processo con cui, all'arrivo al server, ogni livello elabora le informazioni fino a ricostruire il messaggio originale"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "module": "tcp-ip",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Crawler",
+        "definition": "Programma automatico che esplora continuamente Internet seguendo i collegamenti tra le pagine"
+      },
+      {
+        "term": "Indice (Index)",
+        "definition": "Archivio in cui vengono inserite le pagine analizzate, da cui il motore di ricerca seleziona i risultati"
+      },
+      {
+        "term": "Ranking",
+        "definition": "Fase in cui il motore ordina i risultati in base alla loro rilevanza rispetto alla ricerca"
+      },
+      {
+        "term": "PageRank",
+        "definition": "Algoritmo che valuta anche i collegamenti tra le pagine, considerando un link come un voto di fiducia"
+      }
+    ]
+  }
+]

@@ -1,0 +1,1397 @@
+[
+  {
+    "id": 1,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il TCP/IP, secondo la definizione del modulo?",
+    "options": [
+      "Un singolo dispositivo che collega router e server",
+      "L'insieme di protocolli, cioè di regole condivise, che permette ai dispositivi di comunicare attraverso le reti e su Internet",
+      "Un tipo di cavo usato per le connessioni Ethernet",
+      "Un browser utilizzato per navigare sul Web"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il TCP/IP è l'insieme di protocolli, cioè di regole condivise, che permette ai dispositivi di comunicare attraverso le reti e su Internet."
+  },
+  {
+    "id": 2,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il compito specifico dell'IP all'interno di TCP/IP?",
+    "options": [
+      "Garantire che lo scambio di informazioni avvenga correttamente",
+      "Cifrare i dati scambiati tra browser e server",
+      "Identificare la destinazione dei dati e permetterne l'instradamento nella rete",
+      "Gestire le porte di comunicazione dei dispositivi"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'IP si occupa di identificare la destinazione dei dati e di permettere il loro instradamento nella rete."
+  },
+  {
+    "id": 3,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il compito specifico del TCP all'interno di TCP/IP?",
+    "options": [
+      "Identificare la destinazione dei dati nella rete",
+      "Garantire una comunicazione affidabile, assicurandosi che lo scambio di informazioni avvenga correttamente",
+      "Trasformare i dati in segnali elettrici o radio",
+      "Tradurre i nomi di dominio in indirizzi IP"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il TCP garantisce una comunicazione affidabile, assicurandosi che lo scambio di informazioni avvenga correttamente."
+  },
+  {
+    "id": 4,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succederebbe se ogni dispositivo su Internet utilizzasse regole di comunicazione differenti, secondo la metafora del modulo?",
+    "options": [
+      "Non ci sarebbe alcun problema, perché Internet funziona senza regole comuni",
+      "I dispositivi comunicherebbero comunque più velocemente",
+      "Si creerebbe lo stesso problema di due persone che parlano lingue diverse, senza riuscire a comprendersi",
+      "Sarebbe necessario un solo produttore di dispositivi per tutto il mondo"
+    ],
+    "correctIndex": 2,
+    "explanation": "Lo stesso problema esisterebbe su Internet se ogni dispositivo utilizzasse regole differenti, come due persone che parlano lingue diverse."
+  },
+  {
+    "id": 5,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la standardizzazione di TCP/IP è considerata la sua vera forza, secondo il modulo?",
+    "options": [
+      "Perché funziona solo con dispositivi prodotti dalla stessa azienda",
+      "Perché qualsiasi dispositivo che utilizza il linguaggio TCP/IP può comunicare con altri dispositivi collegati alla rete, indipendentemente dal produttore",
+      "Perché elimina completamente la necessità di indirizzi IP",
+      "Perché richiede una connessione via cavo per funzionare"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non importa se il dispositivo è prodotto da Apple, Microsoft, Google o altri: se utilizza il linguaggio TCP/IP può comunicare con gli altri dispositivi."
+  },
+  {
+    "id": 6,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa avvenne durante il Flag Day, il 1° gennaio 1983?",
+    "options": [
+      "Fu inventato il primo indirizzo IP",
+      "ARPANET adottò TCP/IP come protocollo standard di comunicazione",
+      "Fu introdotto per la prima volta il protocollo HTTPS",
+      "La IANA annunciò l'esaurimento degli indirizzi IPv4"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il 1° gennaio 1983, durante il Flag Day, ARPANET adottò TCP/IP come protocollo standard di comunicazione."
+  },
+  {
+    "id": 7,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'era ARPANET, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Un moderno servizio di videoconferenza",
+      "La rete sperimentale nata durante la Guerra Fredda per collegare università e centri di ricerca, considerata l'antenata di Internet",
+      "Un algoritmo di ricerca sviluppato da Google",
+      "Il primo browser Web mai creato"
+    ],
+    "correctIndex": 1,
+    "explanation": "ARPANET era la rete sperimentale nata durante la Guerra Fredda per collegare università e centri di ricerca, considerata l'antenata di Internet."
+  },
+  {
+    "id": 8,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostrò l'adozione di TCP/IP da parte di ARPANET nel 1983?",
+    "options": [
+      "Che sistemi diversi potevano comunicare tra loro in modo affidabile utilizzando regole comuni",
+      "Che Internet non aveva più bisogno di protocolli standard",
+      "Che il Web era diventato più importante di Internet",
+      "Che gli indirizzi IP non erano più necessari"
+    ],
+    "correctIndex": 0,
+    "explanation": "Questa scelta permise a reti differenti di dialogare utilizzando regole comuni, dimostrando che sistemi diversi potevano comunicare in modo affidabile."
+  },
+  {
+    "id": 9,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della città internazionale usata nel modulo, quale ruolo svolge TCP/IP?",
+    "options": [
+      "Decide cosa devono dire le persone",
+      "Stabilisce le regole affinché le persone possano comprendersi e scambiarsi informazioni",
+      "Impedisce alle persone di comunicare tra loro",
+      "Sostituisce la necessità di una lingua comune"
+    ],
+    "correctIndex": 1,
+    "explanation": "TCP/IP non decide cosa devono dire le persone, ma stabilisce le regole affinché possano comprendersi e scambiarsi informazioni."
+  },
+  {
+    "id": 10,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quanti livelli il modello TCP/IP organizza la comunicazione di rete?",
+    "options": [
+      "Due",
+      "Tre",
+      "Quattro",
+      "Sei"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modello TCP/IP organizza la comunicazione di rete in quattro livelli, ciascuno specializzato in un compito preciso."
+  },
+  {
+    "id": 11,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il livello più vicino all'utente nel modello TCP/IP?",
+    "options": [
+      "Il Livello Accesso alla Rete",
+      "Il Livello Internet",
+      "Il Livello Trasporto",
+      "Il Livello Applicazione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il Livello Applicazione è quello più vicino all'utente; è qui che operano i servizi che utilizziamo quotidianamente."
+  },
+  {
+    "id": 12,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali servizi operano nel Livello Applicazione, secondo il modulo?",
+    "options": [
+      "La navigazione web, la posta elettronica, le app di messaggistica e lo streaming video",
+      "Solo la trasmissione fisica dei segnali",
+      "Solo l'assegnazione degli indirizzi IP",
+      "Solo il controllo degli errori di trasmissione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel Livello Applicazione operano i servizi quotidiani: navigazione web, posta elettronica, app di messaggistica e streaming video."
+  },
+  {
+    "id": 13,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa decide il Livello Trasporto, secondo il modulo?",
+    "options": [
+      "Quale indirizzo IP assegnare al dispositivo",
+      "Come consegnare i dati, scegliendo tra un protocollo affidabile come TCP o uno più veloce come UDP",
+      "Attraverso quale mezzo fisico trasmettere i segnali",
+      "Quale nome di dominio corrisponde a un sito"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il Livello Trasporto prende i dati e decide come consegnarli, scegliendo tra TCP e UDP."
+  },
+  {
+    "id": 14,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Di cosa si occupa il Livello Internet nel modello TCP/IP?",
+    "options": [
+      "Dell'indirizzamento, utilizzando gli indirizzi IP affinché ogni pacchetto raggiunga il destinatario corretto",
+      "Della cifratura dei dati scambiati",
+      "Della scelta tra TCP e UDP",
+      "Della visualizzazione delle pagine Web sullo schermo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Livello Internet si occupa dell'indirizzamento e utilizza gli indirizzi IP per far arrivare ogni pacchetto al destinatario corretto."
+  },
+  {
+    "id": 15,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette il Livello Accesso alla Rete, secondo il modulo?",
+    "options": [
+      "Di scegliere tra risultati organici e sponsorizzati",
+      "Ai dati di essere trasmessi fisicamente attraverso Ethernet, Wi-Fi, fibra ottica o rete mobile",
+      "Di stabilire una connessione TCP affidabile",
+      "Di tradurre un nome di dominio in un indirizzo IP"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il Livello Accesso alla Rete permette ai dati di essere trasmessi fisicamente attraverso Ethernet, Wi-Fi, fibra ottica o rete mobile."
+  },
+  {
+    "id": 16,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In cosa risiede, secondo il modulo, la forza del modello TCP/IP?",
+    "options": [
+      "Nella velocità superiore rispetto a ogni altro sistema di comunicazione",
+      "Nella separazione dei compiti tra livelli, ciascuno concentrato sulla propria funzione",
+      "Nell'utilizzo di un solo protocollo per tutte le comunicazioni",
+      "Nell'eliminazione della necessità di indirizzi IP"
+    ],
+    "correctIndex": 1,
+    "explanation": "La forza del modello TCP/IP risiede nella separazione dei compiti: ogni livello si concentra sulla propria funzione senza conoscere i dettagli degli altri."
+  },
+  {
+    "id": 17,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama il meccanismo con cui ogni livello aggiunge un'informazione durante l'invio dei dati?",
+    "options": [
+      "Decapsulamento",
+      "Instradamento",
+      "Incapsulamento",
+      "Indicizzazione"
+    ],
+    "correctIndex": 2,
+    "explanation": "Questo meccanismo prende il nome di incapsulamento durante l'invio."
+  },
+  {
+    "id": 18,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama il processo inverso, che avviene alla ricezione dei dati, in cui le informazioni aggiunte durante il viaggio vengono rimosse?",
+    "options": [
+      "Incapsulamento",
+      "Decapsulamento",
+      "Ranking",
+      "Crawling"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il processo di rimozione delle informazioni aggiunte durante il viaggio, alla ricezione, si chiama decapsulamento."
+  },
+  {
+    "id": 19,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede, secondo il modulo, se un utente passa dal Wi-Fi alla rete cellulare durante uno scaricamento?",
+    "options": [
+      "Tutti i livelli del modello TCP/IP devono ricominciare da capo",
+      "Cambia solo il Livello Accesso alla Rete, mentre gli altri livelli continuano a operare praticamente nello stesso modo",
+      "La comunicazione si interrompe definitivamente",
+      "Cambia solo il Livello Applicazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cambierà il Livello Accesso alla Rete, mentre gli altri livelli continueranno a operare praticamente nello stesso modo."
+  },
+  {
+    "id": 20,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il TCP/IP è considerato uno dei progetti ingegneristici più riusciti della storia dell'informatica, secondo il modulo?",
+    "options": [
+      "Perché ha eliminato la necessità di nuove tecnologie di rete",
+      "Perché la sua architettura a livelli ha permesso l'evoluzione delle tecnologie di accesso senza dover riscrivere Internet ogni volta",
+      "Perché utilizza esclusivamente connessioni via cavo",
+      "Perché non richiede alcun indirizzo IP"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'architettura a livelli ha permesso l'evoluzione delle tecnologie di accesso (fibra, Wi-Fi, 4G, 5G) senza che gli sviluppatori dovessero riscrivere Internet ogni volta."
+  },
+  {
+    "id": 21,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'azienda di spedizioni usata per i livelli TCP/IP, a cosa corrisponde il Livello Trasporto?",
+    "options": [
+      "Al cliente che consegna il pacco allo sportello",
+      "Al reparto logistico che decide come prepararlo e quali procedure seguire",
+      "Al centro di smistamento che stabilisce il percorso",
+      "Al corriere che trasporta fisicamente il pacco"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il reparto logistico che decide come prepararlo e quali procedure seguire per la spedizione rappresenta il Livello Trasporto."
+  },
+  {
+    "id": 22,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il TCP (Transmission Control Protocol)?",
+    "options": [
+      "Un protocollo del Livello Applicazione utilizzato per navigare sul Web",
+      "Un protocollo del Livello Trasporto progettato per garantire una comunicazione affidabile, ordinata e senza errori",
+      "Un protocollo che identifica i dispositivi tramite indirizzi IP",
+      "Un algoritmo utilizzato dai motori di ricerca"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il TCP è un protocollo del Livello Trasporto progettato per garantire una comunicazione affidabile, ordinata e senza errori."
+  },
+  {
+    "id": 23,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa TCP prima di iniziare la trasmissione dei dati?",
+    "options": [
+      "Cifra automaticamente tutti i dati con TLS",
+      "Crea una connessione tra mittente e destinatario, verificando che siano pronti a comunicare",
+      "Interroga un server DNS per ottenere l'indirizzo IP",
+      "Assegna una porta effimera al browser"
+    ],
+    "correctIndex": 1,
+    "explanation": "Prima di iniziare la trasmissione, TCP crea una connessione tra mittente e destinatario."
+  },
+  {
+    "id": 24,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In cosa viene suddiviso il messaggio quando viene trasmesso tramite TCP?",
+    "options": [
+      "In datagrammi non numerati",
+      "In piccoli segmenti numerati",
+      "In un unico blocco indivisibile",
+      "In indirizzi IP temporanei"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il messaggio viene suddiviso in piccoli segmenti, ciascuno numerato."
+  },
+  {
+    "id": 25,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono gli ACK (Acknowledgment) nel funzionamento di TCP?",
+    "options": [
+      "Segmenti contenenti dati non ancora inviati",
+      "Segnali che comunicano al mittente che determinati segmenti sono arrivati correttamente",
+      "Indirizzi IP temporanei assegnati al destinatario",
+      "Errori che bloccano definitivamente la trasmissione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gli ACK sono segnali che comunicano al mittente che determinati segmenti sono arrivati correttamente."
+  },
+  {
+    "id": 26,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa TCP se un segmento non arriva o viene danneggiato?",
+    "options": [
+      "Ignora il problema e prosegue con i dati successivi",
+      "Lo rileva e ne richiede nuovamente l'invio",
+      "Interrompe definitivamente la connessione",
+      "Passa automaticamente al protocollo UDP"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se un segmento non arriva o viene danneggiato, TCP lo rileva e ne richiede nuovamente l'invio."
+  },
+  {
+    "id": 27,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la principale caratteristica di TCP, secondo il modulo?",
+    "options": [
+      "La velocità massima possibile",
+      "L'affidabilità: garantire che il destinatario riceva esattamente ciò che il mittente ha inviato",
+      "L'assenza di qualsiasi controllo sui dati",
+      "La capacità di funzionare senza consumare risorse"
+    ],
+    "correctIndex": 1,
+    "explanation": "La grande caratteristica di TCP è l'affidabilità: il suo obiettivo è garantire che il destinatario riceva esattamente ciò che il mittente ha inviato."
+  },
+  {
+    "id": 28,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché TCP richiede più tempo e più risorse rispetto a protocolli più semplici?",
+    "options": [
+      "Perché non stabilisce mai una connessione",
+      "Perché la sicurezza e l'affidabilità che offre comportano controlli e verifiche aggiuntive",
+      "Perché utilizza sempre la crittografia TLS",
+      "Perché deve interrogare un server DNS ogni volta"
+    ],
+    "correctIndex": 1,
+    "explanation": "Questa sicurezza richiede più tempo e più risorse rispetto a protocolli più semplici."
+  },
+  {
+    "id": 29,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali servizi, secondo il modulo, utilizzano tipicamente TCP?",
+    "options": [
+      "Solo i videogiochi online",
+      "La navigazione web, la posta elettronica, il trasferimento di file e i servizi cloud",
+      "Solo le videochiamate in tempo reale",
+      "Solo lo streaming in diretta"
+    ],
+    "correctIndex": 1,
+    "explanation": "Tra i servizi che utilizzano TCP troviamo la navigazione web, la posta elettronica, il trasferimento di file e i servizi cloud."
+  },
+  {
+    "id": 30,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché i servizi bancari online rappresentano un esempio concreto dell'importanza di TCP, secondo il caso reale citato?",
+    "options": [
+      "Perché non richiedono alcuna affidabilità nella trasmissione",
+      "Perché una perdita o modifica dei dati durante un bonifico potrebbe compromettere la transazione",
+      "Perché utilizzano esclusivamente UDP per velocizzare le operazioni",
+      "Perché non sono mai soggetti a controlli di sicurezza"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una perdita o una modifica dei dati potrebbe compromettere una transazione bancaria, per questo si utilizzano protocolli affidabili come TCP."
+  },
+  {
+    "id": 31,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del corriere usata per spiegare TCP, cosa fa il mittente se non riceve conferma della consegna entro un certo tempo?",
+    "options": [
+      "Presume che il pacco non sia giunto a destinazione e ne invia un altro",
+      "Interrompe definitivamente ogni comunicazione",
+      "Ignora il problema e considera la spedizione conclusa",
+      "Passa automaticamente a un altro corriere senza verifiche"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se la conferma non arriva entro un certo tempo, il mittente presume che il pacco non sia giunto a destinazione e ne invia un altro."
+  },
+  {
+    "id": 32,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché su Internet è importante che TCP controlli l'ordine dei segmenti ricevuti?",
+    "options": [
+      "Perché i dati possono seguire percorsi differenti e arrivare in momenti diversi",
+      "Perché tutti i segmenti viaggiano sempre nello stesso ordine in cui sono stati inviati",
+      "Perché altrimenti il destinatario non potrebbe mai ricevere alcun dato",
+      "Perché i segmenti non vengono mai numerati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Su Internet i dati possono seguire percorsi differenti e arrivare in momenti diversi, per questo TCP controlla che vengano ricomposti nell'ordine corretto."
+  },
+  {
+    "id": 33,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è UDP (User Datagram Protocol)?",
+    "options": [
+      "Un protocollo del Livello Trasporto progettato per privilegiare la velocità e la semplicità della comunicazione",
+      "Un protocollo del Livello Applicazione usato per cifrare i dati",
+      "Un protocollo che garantisce sempre la consegna ordinata dei dati",
+      "Un algoritmo usato dai motori di ricerca per l'indicizzazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "UDP è un protocollo del Livello Trasporto progettato per privilegiare la velocità e la semplicità della comunicazione."
+  },
+  {
+    "id": 34,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A differenza di TCP, cosa NON fa UDP?",
+    "options": [
+      "Non stabilisce una connessione preventiva, non verifica la ricezione e non ritrasmette i dati persi",
+      "Non permette mai la trasmissione di dati",
+      "Non utilizza mai indirizzi IP",
+      "Non può essere usato per le videochiamate"
+    ],
+    "correctIndex": 0,
+    "explanation": "A differenza di TCP, UDP non stabilisce una connessione preventiva, non verifica che i dati siano stati ricevuti e non ritrasmette quelli persi."
+  },
+  {
+    "id": 35,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa UDP una volta spedito un datagramma?",
+    "options": [
+      "Attende sempre una conferma di ricezione prima di considerare concluso il proprio compito",
+      "Considera concluso il proprio compito, senza attendere alcuna conferma",
+      "Ritrasmette automaticamente il datagramma più volte",
+      "Interroga un server DNS per verificare l'arrivo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una volta spedito un datagramma, il protocollo considera concluso il proprio compito."
+  },
+  {
+    "id": 36,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la latenza, secondo la definizione data nel modulo?",
+    "options": [
+      "Il numero di porte disponibili su un dispositivo",
+      "Il tempo necessario affinché un'informazione raggiunga il destinatario",
+      "La quantità di dati persi durante una trasmissione",
+      "Il nome assegnato a un indirizzo IP"
+    ],
+    "correctIndex": 1,
+    "explanation": "La latenza rappresenta il tempo necessario affinché un'informazione raggiunga il destinatario."
+  },
+  {
+    "id": 37,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quali situazioni, secondo il modulo, ridurre la latenza è spesso più importante che garantire la ricezione perfetta di ogni pacchetto?",
+    "options": [
+      "Nei giochi online, nelle videoconferenze e nello streaming in tempo reale",
+      "Nei bonifici bancari online",
+      "Nel caricamento di documenti universitari",
+      "Nell'invio di email importanti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nei giochi online, nelle videoconferenze e nello streaming in tempo reale, ridurre la latenza è spesso più importante della ricezione perfetta."
+  },
+  {
+    "id": 38,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se un'applicazione ha bisogno della garanzia che tutti i dati arrivino nell'ordine corretto?",
+    "options": [
+      "Deve necessariamente utilizzare UDP",
+      "Deve utilizzare TCP oppure implementare meccanismi di controllo propri",
+      "Non esiste alcuna soluzione possibile",
+      "Deve rinunciare a qualsiasi tipo di controllo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se un'applicazione ha bisogno di queste garanzie, dovrà utilizzare TCP oppure implementare meccanismi di controllo propri."
+  },
+  {
+    "id": 39,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali servizi, secondo il modulo, utilizzano frequentemente UDP?",
+    "options": [
+      "Solo la posta elettronica",
+      "Le videochiamate, le chiamate VoIP, i videogiochi online e lo streaming in diretta",
+      "Solo il trasferimento di file di grandi dimensioni",
+      "Solo i servizi bancari online"
+    ],
+    "correctIndex": 1,
+    "explanation": "Tra i servizi che utilizzano frequentemente UDP troviamo le videochiamate, le chiamate VoIP, i videogiochi online e lo streaming in diretta."
+  },
+  {
+    "id": 40,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene sintetizzata, nel modulo, la differenza di filosofia tra TCP e UDP?",
+    "options": [
+      "TCP dice \"preferisco arrivare un po' più tardi, ma arrivare completo\"; UDP dice \"preferisco arrivare subito, anche se manca qualcosa\"",
+      "TCP dice \"non mi importa se arrivo incompleto\"; UDP dice \"aspetto sempre la conferma\"",
+      "Sono due protocolli identici, senza alcuna differenza pratica",
+      "TCP è più veloce di UDP in ogni situazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "TCP dice \"preferisco arrivare un po' più tardi, ma arrivare completo\", mentre UDP dice \"preferisco arrivare subito, anche se manca qualcosa\"."
+  },
+  {
+    "id": 41,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché, durante la pandemia di COVID-19, le piattaforme di videoconferenza utilizzarono ampiamente protocolli basati su UDP, secondo il caso reale citato?",
+    "options": [
+      "Perché gli sviluppatori preferivano perdere qualche immagine o frammento audio piuttosto che bloccare la comunicazione per recuperare ogni pacchetto mancante",
+      "Perché UDP garantisce una qualità video perfetta in ogni condizione",
+      "Perché TCP non era ancora stato inventato",
+      "Perché UDP richiede una connessione preventiva più sicura"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli sviluppatori preferiscono che venga persa qualche immagine o frammento di audio piuttosto che bloccare la comunicazione per recuperare ogni pacchetto mancante."
+  },
+  {
+    "id": 42,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della corrispondenza usata nel modulo, a cosa viene paragonato UDP?",
+    "options": [
+      "A una raccomandata con ricevuta di ritorno",
+      "A una lettera ordinaria, senza conferma di ricezione",
+      "A un pacco tracciato in tempo reale",
+      "A una telefonata con conferma vocale"
+    ],
+    "correctIndex": 1,
+    "explanation": "UDP è come una lettera ordinaria: viene imbucata e spedita, ma il mittente non riceve alcuna conferma."
+  },
+  {
+    "id": 43,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accade in un videogioco online se un pacchetto viene perso durante una partita basata su UDP, secondo l'esempio del modulo?",
+    "options": [
+      "Il gioco si blocca fino al recupero del pacchetto mancante",
+      "Un personaggio compie un movimento leggermente meno fluido, ma la partita continua senza interruzioni",
+      "La connessione viene interrotta definitivamente",
+      "Il gioco passa automaticamente a utilizzare TCP"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sullo schermo un personaggio compie un movimento leggermente meno fluido, ma la partita continua senza interruzioni."
+  },
+  {
+    "id": 44,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono le porte di comunicazione (Ports), secondo la definizione del modulo?",
+    "options": [
+      "Identificatori numerici utilizzati da TCP e UDP per indirizzare i dati verso la corretta applicazione o servizio su un dispositivo",
+      "Dispositivi fisici collegati tramite cavo Ethernet",
+      "Indirizzi che identificano un dispositivo all'interno di una rete",
+      "Algoritmi che ordinano i risultati di una ricerca"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le porte sono identificatori numerici utilizzati dai protocolli TCP e UDP per indirizzare i dati verso la corretta applicazione o servizio."
+  },
+  {
+    "id": 45,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra un indirizzo IP e una porta, secondo il modulo?",
+    "options": [
+      "Non c'è alcuna differenza, sono sinonimi",
+      "L'IP identifica il dispositivo, la porta identifica il programma con cui si desidera comunicare all'interno di quel dispositivo",
+      "La porta identifica il dispositivo, l'IP identifica il programma",
+      "L'IP riguarda solo TCP, la porta riguarda solo UDP"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se l'indirizzo IP identifica il dispositivo, la porta identifica il programma con cui si desidera comunicare all'interno di quel dispositivo."
+  },
+  {
+    "id": 46,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quale intervallo numerico è compresa ogni porta?",
+    "options": [
+      "Tra 0 e 100",
+      "Tra 1 e 1000",
+      "Tra 0 e 65535",
+      "Tra 0 e 999999"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ogni porta è rappresentata da un numero compreso tra 0 e 65535."
+  },
+  {
+    "id": 47,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale porta è storicamente utilizzata dal protocollo HTTP?",
+    "options": [
+      "La porta 21",
+      "La porta 80",
+      "La porta 443",
+      "La porta 25"
+    ],
+    "correctIndex": 1,
+    "explanation": "La porta 80 è storicamente utilizzata dal protocollo HTTP."
+  },
+  {
+    "id": 48,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale porta è utilizzata da HTTPS?",
+    "options": [
+      "La porta 80",
+      "La porta 21",
+      "La porta 443",
+      "La porta 8080"
+    ],
+    "correctIndex": 2,
+    "explanation": "La porta 443 è utilizzata da HTTPS."
+  },
+  {
+    "id": 49,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene identificata una connessione, secondo il modulo, oltre che dal numero di porta?",
+    "options": [
+      "Solo dal nome del programma in esecuzione",
+      "Anche dagli indirizzi IP di origine e destinazione",
+      "Solo dalla marca del dispositivo",
+      "Solo dal tipo di cavo utilizzato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ogni connessione viene identificata non solo dal numero di porta, ma anche dagli indirizzi IP di origine e destinazione."
+  },
+  {
+    "id": 50,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una porta effimera (ephemeral port)?",
+    "options": [
+      "Una porta fissa riservata esclusivamente al protocollo HTTPS",
+      "Una porta temporanea assegnata automaticamente al browser, liberata al termine della comunicazione",
+      "Una porta che non può mai essere riutilizzata",
+      "Un numero di porta riservato solo ai server"
+    ],
+    "correctIndex": 1,
+    "explanation": "La porta effimera è una porta temporanea assegnata automaticamente al browser; terminata la comunicazione viene liberata e può essere riutilizzata."
+  },
+  {
+    "id": 51,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché le porte sono fondamentali anche per la sicurezza informatica, secondo il modulo?",
+    "options": [
+      "Perché un servizio può essere raggiunto solo se esiste un'applicazione in ascolto sulla porta corrispondente, e i firewall controllano quali porte possono essere utilizzate",
+      "Perché impediscono sempre qualsiasi tipo di attacco informatico",
+      "Perché sostituiscono la necessità di un indirizzo IP",
+      "Perché cifrano automaticamente tutti i dati in transito"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un servizio può essere raggiunto solo se esiste un'applicazione in ascolto sulla porta corrispondente; i firewall controllano spesso quali porte possono essere utilizzate."
+  },
+  {
+    "id": 52,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "È corretto affermare che una porta sia un dispositivo fisico, come una porta USB?",
+    "options": [
+      "Sì, una porta di rete corrisponde sempre a una porta fisica del computer",
+      "No, la porta è semplicemente un numero utilizzato dal sistema operativo per organizzare le comunicazioni di rete",
+      "Sì, ma solo per le porte inferiori a 1024",
+      "No, ma solo per le porte effimere"
+    ],
+    "correctIndex": 1,
+    "explanation": "La porta non è un dispositivo fisico: è semplicemente un numero utilizzato dal sistema operativo per organizzare le comunicazioni di rete."
+  },
+  {
+    "id": 53,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il port scanning, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Una tecnica con cui gli aggressori verificano quali porte di un dispositivo risultano aperte e quali servizi sono in ascolto",
+      "Un metodo per aumentare la velocità di una connessione Internet",
+      "Un servizio offerto dai motori di ricerca per indicizzare le pagine",
+      "Una tecnica utilizzata esclusivamente dagli amministratori per velocizzare la rete"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il port scanning è la scansione delle porte di un dispositivo, con cui gli aggressori verificano quali porte risultano aperte e quali servizi sono in ascolto."
+  },
+  {
+    "id": 54,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fanno amministratori di sistema e professionisti della cybersecurity per proteggersi dal port scanning, secondo il modulo?",
+    "options": [
+      "Aprono tutte le porte disponibili per facilitare le connessioni",
+      "Controllano costantemente le porte esposte, chiudendo quelle inutilizzate e proteggendo quelle necessarie con firewall",
+      "Disattivano completamente ogni indirizzo IP pubblico",
+      "Ignorano il problema poiché non rappresenta un rischio reale"
+    ],
+    "correctIndex": 1,
+    "explanation": "Amministratori e professionisti della cybersecurity controllano costantemente le porte esposte su Internet, chiudendo quelle inutilizzate."
+  },
+  {
+    "id": 55,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del palazzo di uffici usata per spiegare le porte, a cosa corrisponde il numero della porta?",
+    "options": [
+      "All'indirizzo dell'intero edificio",
+      "Al numero dell'ufficio specifico a cui consegnare il documento",
+      "Al nome del corriere che effettua la consegna",
+      "Al piano dell'edificio in cui si trova la reception"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'indirizzo dell'edificio è l'indirizzo IP, mentre il numero sulla porta di ogni ufficio corrisponde al numero della porta di comunicazione."
+  },
+  {
+    "id": 56,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è HTTP (HyperText Transfer Protocol)?",
+    "options": [
+      "Il protocollo del Livello Trasporto che garantisce l'affidabilità della connessione",
+      "Il protocollo del Livello Applicazione utilizzato per richiedere e trasferire pagine Web tra browser e server",
+      "L'insieme di identificatori numerici che indirizzano i dati verso l'applicazione corretta",
+      "Il sistema che traduce i nomi di dominio in indirizzi IP"
+    ],
+    "correctIndex": 1,
+    "explanation": "HTTP è il protocollo del Livello Applicazione utilizzato per richiedere e trasferire pagine Web tra browser e server."
+  },
+  {
+    "id": 57,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è HTTPS, secondo il modulo?",
+    "options": [
+      "Un protocollo completamente indipendente da HTTP",
+      "L'evoluzione di HTTP che utilizza la crittografia per proteggere i dati scambiati tra browser e server",
+      "Un sinonimo di TCP",
+      "Un protocollo utilizzato solo dai motori di ricerca"
+    ],
+    "correctIndex": 1,
+    "explanation": "HTTPS è l'evoluzione di HTTP che utilizza la crittografia per proteggere i dati scambiati tra browser e server."
+  },
+  {
+    "id": 58,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale modello di comunicazione seguono HTTP e HTTPS, secondo il modulo?",
+    "options": [
+      "Il modello client-server, dove il browser è il client e il sito è il server",
+      "Un modello peer-to-peer, senza distinzione di ruoli",
+      "Il modello a livelli TCP/IP applicato solo al browser",
+      "Nessun modello particolare"
+    ],
+    "correctIndex": 0,
+    "explanation": "Questa comunicazione segue il modello client-server: il browser svolge il ruolo di client, il computer che ospita il sito svolge il ruolo di server."
+  },
+  {
+    "id": 59,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza fondamentale tra HTTP e HTTPS, secondo il modulo?",
+    "options": [
+      "HTTP è più recente di HTTPS",
+      "La sicurezza: con HTTP i dati sono trasmessi senza essere cifrati, mentre HTTPS protegge la comunicazione tramite crittografia",
+      "HTTP funziona solo su reti locali, HTTPS solo su Internet",
+      "HTTPS non richiede una connessione TCP"
+    ],
+    "correctIndex": 1,
+    "explanation": "La differenza fondamentale riguarda la sicurezza: con HTTP i dati sono trasmessi senza essere cifrati, HTTPS protegge la comunicazione attraverso la crittografia."
+  },
+  {
+    "id": 60,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale protocollo di sicurezza viene utilizzato per instaurare un canale sicuro dopo l'apertura di una connessione TCP in HTTPS?",
+    "options": [
+      "UDP",
+      "DNS",
+      "TLS (Transport Layer Security)",
+      "ARPANET"
+    ],
+    "correctIndex": 2,
+    "explanation": "Dopo aver aperto una normale connessione TCP, browser e server instaurano un canale sicuro utilizzando il protocollo TLS."
+  },
+  {
+    "id": 61,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cos'è esattamente HTTPS dal punto di vista tecnico?",
+    "options": [
+      "Un protocollo di trasporto alternativo a TCP",
+      "Il risultato dell'unione tra il protocollo applicativo HTTP e il protocollo di sicurezza TLS",
+      "Una versione più lenta di HTTP",
+      "Un sinonimo esatto di TCP/IP"
+    ],
+    "correctIndex": 1,
+    "explanation": "HTTPS non è un protocollo di trasporto come TCP, ma il risultato dell'unione tra il protocollo applicativo HTTP e il protocollo di sicurezza TLS."
+  },
+  {
+    "id": 62,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono le tre garanzie offerte da HTTPS, secondo il modulo?",
+    "options": [
+      "Velocità, semplicità e universalità",
+      "Riservatezza, Integrità e Autenticità",
+      "Instradamento, indicizzazione e ranking",
+      "Crawling, indicizzazione e ranking"
+    ],
+    "correctIndex": 1,
+    "explanation": "HTTPS offre tre importanti garanzie: Riservatezza, Integrità e Autenticità."
+  },
+  {
+    "id": 63,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa garantisce nello specifico l'Autenticità offerta da HTTPS?",
+    "options": [
+      "Che i dati non possano mai essere intercettati",
+      "Che il browser possa verificare l'identità del server grazie al certificato digitale",
+      "Che il sito sia sempre affidabile e legittimo",
+      "Che la connessione sia sempre più veloce di HTTP"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'Autenticità permette al browser di verificare l'identità del server grazie al certificato digitale, riducendo il rischio di collegarsi a siti contraffatti."
+  },
+  {
+    "id": 64,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "È vero che HTTPS garantisce sempre che un sito sia affidabile?",
+    "options": [
+      "Sì, un sito con HTTPS non può mai essere fraudolento",
+      "No, un sito fraudolento può comunque avere un certificato valido e utilizzare HTTPS",
+      "Sì, ma solo per i siti bancari",
+      "No, HTTPS non protegge in alcun modo la comunicazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un sito fraudolento può avere un certificato valido e utilizzare HTTPS: il lucchetto indica solo che la comunicazione è protetta, non che il sito sia legittimo."
+  },
+  {
+    "id": 65,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali tipi di servizi, secondo il modulo, utilizzano oggi praticamente sempre HTTPS?",
+    "options": [
+      "Solo i motori di ricerca",
+      "Banche, social network, negozi online e portali della Pubblica Amministrazione",
+      "Solo i siti che non richiedono credenziali",
+      "Solo i siti governativi statunitensi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Praticamente tutti i servizi che richiedono credenziali o dati personali, come banche, social network, negozi online e portali della PA, utilizzano HTTPS."
+  },
+  {
+    "id": 66,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'era Firesheep, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Il primo browser a supportare HTTPS",
+      "Uno strumento presentato nel 2010 che dimostrò quanto fosse semplice sottrarre sessioni di accesso su siti che non proteggevano completamente le comunicazioni",
+      "Un algoritmo di ranking sviluppato da Google",
+      "Un protocollo alternativo a TLS"
+    ],
+    "correctIndex": 1,
+    "explanation": "Firesheep, presentato nel 2010, dimostrò quanto fosse semplice sottrarre sessioni di accesso a siti che non proteggevano completamente le comunicazioni."
+  },
+  {
+    "id": 67,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa contribuì ad accelerare, secondo il modulo, l'episodio legato a Firesheep?",
+    "options": [
+      "L'abbandono definitivo del protocollo HTTP",
+      "L'adozione di HTTPS su larga scala",
+      "La creazione del modello client-server",
+      "L'introduzione delle porte di comunicazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Questo episodio contribuì ad accelerare l'adozione di HTTPS su larga scala."
+  },
+  {
+    "id": 68,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della lettera usata per HTTP e HTTPS, a cosa viene paragonato HTTPS?",
+    "options": [
+      "A una cartolina che chiunque può leggere durante il tragitto",
+      "A una lettera inserita in una busta sigillata, firmata e autenticata",
+      "A un messaggio urlato in una piazza pubblica",
+      "A un pacco senza alcuna protezione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Con HTTPS è come inserire la lettera in una busta sigillata, firmata e autenticata."
+  },
+  {
+    "id": 69,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché, secondo il modulo, digitiamo il nome di un sito e non direttamente il suo indirizzo IP?",
+    "options": [
+      "Perché gli indirizzi IP non esistono più",
+      "Perché gli esseri umani ricordano molto più facilmente un nome che un indirizzo numerico completo",
+      "Perché i browser non accettano indirizzi IP",
+      "Perché i nomi dei siti sono più corti degli indirizzi IP"
+    ],
+    "correctIndex": 1,
+    "explanation": "Noi esseri umani ricordiamo molto più facilmente un nome che un indirizzo completo."
+  },
+  {
+    "id": 70,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quale server si rivolge il browser per scoprire quale indirizzo IP corrisponde al nome di un sito digitato?",
+    "options": [
+      "Un server DNS (Domain Name System)",
+      "Un server DHCP",
+      "Un server FTP",
+      "Un server proxy"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il browser chiede a un server DNS quale indirizzo IP corrisponde al nome digitato."
+  },
+  {
+    "id": 71,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa avviene subito dopo che il browser ottiene l'indirizzo IP del server, se il sito utilizza HTTPS?",
+    "options": [
+      "Viene aperta una connessione TCP e successivamente instaurata una connessione sicura tramite TLS",
+      "Il browser interroga direttamente un motore di ricerca",
+      "Il browser invia immediatamente i dati senza alcuna connessione preventiva",
+      "Il sito viene automaticamente indicizzato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Poiché il sito utilizza HTTPS, viene aperta una connessione TCP e subito dopo viene instaurata una connessione sicura tramite TLS."
+  },
+  {
+    "id": 72,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale livello del modello TCP/IP prepara il messaggio HTTP durante una richiesta Web?",
+    "options": [
+      "Il Livello Accesso alla Rete",
+      "Il Livello Internet",
+      "Il Livello Applicazione",
+      "Il Livello Trasporto"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il Livello Applicazione prepara il messaggio HTTP."
+  },
+  {
+    "id": 73,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il Livello Trasporto durante il viaggio di una richiesta Web, secondo il modulo?",
+    "options": [
+      "Trasforma i dati in segnali elettrici o radio",
+      "Utilizza TCP per suddividere i dati in segmenti numerati e controllarne la consegna",
+      "Traduce il nome del sito nel suo indirizzo IP",
+      "Interpreta il codice HTML ricevuto"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il Livello Trasporto utilizza TCP per suddividere i dati in segmenti numerati e controllarne la consegna."
+  },
+  {
+    "id": 74,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa inserisce il Livello Internet durante il viaggio dei dati, secondo il modulo?",
+    "options": [
+      "Gli indirizzi IP del mittente e del destinatario, permettendo ai router di instradare correttamente i pacchetti",
+      "Il codice HTML della pagina richiesta",
+      "Le porte effimere del browser",
+      "Il certificato digitale del server"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Livello Internet inserisce gli indirizzi IP del mittente e del destinatario, permettendo ai router di instradare correttamente i pacchetti."
+  },
+  {
+    "id": 75,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresenta generalmente il primo router attraversato dai pacchetti in uscita da una rete domestica?",
+    "options": [
+      "Il server DNS",
+      "Il router di casa o dell'ufficio, punto di accesso a Internet",
+      "Il server che ospita il sito richiesto",
+      "Un motore di ricerca"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il primo router è generalmente il router di casa o dell'ufficio, che rappresenta il punto di accesso a Internet."
+  },
+  {
+    "id": 76,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa decide ogni router lungo il percorso di un pacchetto, secondo il modulo?",
+    "options": [
+      "L'intero percorso che il pacchetto seguirà fino a destinazione",
+      "A quale router successivo inoltrare il pacchetto, basandosi sulla propria tabella di instradamento",
+      "Il contenuto del messaggio HTTP",
+      "Il certificato digitale da utilizzare"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ogni router legge l'indirizzo IP di destinazione e decide a quale router successivo inoltrare il pacchetto, basandosi sulla propria tabella di instradamento."
+  },
+  {
+    "id": 77,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa avviene quando i pacchetti raggiungono il server, secondo il modulo?",
+    "options": [
+      "Il processo di incapsulamento viene ripetuto una seconda volta",
+      "Avviene il decapsulamento: ogni livello elabora le informazioni fino a ricostruire il messaggio originale",
+      "I pacchetti vengono automaticamente cancellati",
+      "Il server richiede sempre una nuova connessione DNS"
+    ],
+    "correctIndex": 1,
+    "explanation": "Quando i pacchetti raggiungono il server, il processo avviene al contrario: è il decapsulamento."
+  },
+  {
+    "id": 78,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde il 15 marzo 2019, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Un'interruzione dei servizi di un importante provider DNS rese temporaneamente irraggiungibili numerosi siti Web",
+      "Fu annunciato l'esaurimento degli indirizzi IPv4",
+      "ARPANET adottò ufficialmente TCP/IP",
+      "Fu presentato per la prima volta lo strumento Firesheep"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il 15 marzo 2019 un'interruzione dei servizi di un importante provider DNS rese temporaneamente irraggiungibili numerosi siti Web."
+  },
+  {
+    "id": 79,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché, durante l'interruzione del 15 marzo 2019, gli utenti pensavano che i siti fossero \"offline\", secondo il modulo?",
+    "options": [
+      "Perché i server erano realmente spenti",
+      "Perché i browser non riuscivano più a tradurre i nomi dei domini nei rispettivi indirizzi IP, anche se i server funzionavano perfettamente",
+      "Perché tutti gli indirizzi IPv4 erano stati esauriti",
+      "Perché il protocollo HTTPS aveva smesso di funzionare"
+    ],
+    "correctIndex": 1,
+    "explanation": "Molti server funzionavano perfettamente, ma i browser non riuscivano più a tradurre i nomi dei domini nei rispettivi indirizzi IP."
+  },
+  {
+    "id": 80,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale principio generale dimostra l'episodio del 15 marzo 2019, secondo il modulo?",
+    "options": [
+      "Che Internet è un sistema composto da molti elementi interdipendenti, e il malfunzionamento di uno solo può compromettere l'intera esperienza di navigazione",
+      "Che i provider DNS non sono mai necessari",
+      "Che HTTPS è meno affidabile di HTTP",
+      "Che i router non hanno alcun ruolo nella navigazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'episodio dimostra che Internet è composto da molti elementi interdipendenti: il malfunzionamento di uno solo può compromettere l'intera esperienza di navigazione."
+  },
+  {
+    "id": 81,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della libreria usata per descrivere l'intero viaggio di una richiesta Web, a cosa corrisponde il DNS?",
+    "options": [
+      "Al corriere che prende in carico l'ordine",
+      "Alla ricerca dell'indirizzo corretto del negozio",
+      "Alla busta sigillata che protegge la conversazione",
+      "Alle strade e autostrade percorse dal pacco"
+    ],
+    "correctIndex": 1,
+    "explanation": "Prima bisogna trovare l'indirizzo corretto del negozio: questo rappresenta il DNS."
+  },
+  {
+    "id": 82,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un Search Engine (motore di ricerca), secondo la definizione del modulo?",
+    "options": [
+      "Un programma che visita in tempo reale tutti i siti del mondo ogni volta che un utente effettua una ricerca",
+      "Un servizio online che permette di trovare informazioni presenti sul Web analizzando un archivio di pagine già raccolte e organizzate",
+      "Un protocollo utilizzato per cifrare le comunicazioni Web",
+      "Un sinonimo di browser"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un motore di ricerca è un servizio online che permette di trovare informazioni presenti sul Web analizzando un archivio di pagine già raccolte e organizzate."
+  },
+  {
+    "id": 83,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono i crawler (o web crawler, spider, bot)?",
+    "options": [
+      "Programmi automatici che esplorano continuamente Internet seguendo i collegamenti tra le pagine",
+      "Server che traducono i nomi di dominio in indirizzi IP",
+      "Algoritmi che cifrano le comunicazioni tra browser e server",
+      "Dispositivi fisici che instradano i pacchetti di rete"
+    ],
+    "correctIndex": 0,
+    "explanation": "I crawler sono programmi automatici che esplorano continuamente Internet seguendo i collegamenti tra le pagine."
+  },
+  {
+    "id": 84,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove vengono inserite le pagine analizzate dai crawler, secondo il modulo?",
+    "options": [
+      "In un grande indice (Index)",
+      "In una porta effimera",
+      "In un certificato digitale",
+      "In una tabella di instradamento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le pagine trovate vengono analizzate, archiviate e inserite in un grande indice (Index)."
+  },
+  {
+    "id": 85,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "È vero che, quando un utente effettua una ricerca, il motore di ricerca visita in quel momento tutti i siti del mondo?",
+    "options": [
+      "Sì, è esattamente ciò che accade",
+      "No, il motore interroga semplicemente il proprio indice, già costruito in precedenza",
+      "Sì, ma solo per le ricerche più recenti",
+      "No, perché i motori di ricerca non usano alcun indice"
+    ],
+    "correctIndex": 1,
+    "explanation": "Quando un utente digita una ricerca, il motore non visita il Web in tempo reale: interroga semplicemente il proprio indice, già costruito in precedenza."
+  },
+  {
+    "id": 86,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa un crawler quando visita una pagina Web, secondo il modulo?",
+    "options": [
+      "Ne analizza il contenuto e individua tutti i collegamenti presenti al suo interno, per poi seguirli",
+      "Cancella automaticamente la pagina dall'indice",
+      "Effettua un pagamento per accedere ai contenuti",
+      "Traduce il nome del dominio nel corrispondente indirizzo IP"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un crawler visita una pagina Web, ne analizza il contenuto e individua tutti i collegamenti presenti al suo interno, per poi seguirli."
+  },
+  {
+    "id": 87,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa avviene durante la fase di indicizzazione, secondo il modulo?",
+    "options": [
+      "Il contenuto della pagina viene analizzato e inserito in un database che permette di ritrovarlo rapidamente",
+      "Il browser interpreta il codice HTML della pagina",
+      "Il router instrada i pacchetti verso il server corretto",
+      "Viene aperta una connessione TCP con il sito"
+    ],
+    "correctIndex": 0,
+    "explanation": "Durante l'indicizzazione, il contenuto della pagina viene analizzato e inserito in un enorme database che permette di ritrovarlo rapidamente."
+  },
+  {
+    "id": 88,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa valutano gli algoritmi di ranking, secondo il modulo?",
+    "options": [
+      "Solo la velocità della connessione Internet dell'utente",
+      "Centinaia di fattori, come la pertinenza del contenuto, l'autorevolezza del sito e la qualità delle informazioni",
+      "Esclusivamente il numero di parole presenti in una pagina",
+      "Solo il numero di immagini presenti nella pagina"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gli algoritmi di ranking valutano centinaia di fattori: pertinenza del contenuto, autorevolezza del sito, qualità delle informazioni ed esperienza utente."
+  },
+  {
+    "id": 89,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra risultati organici e risultati sponsorizzati, secondo il modulo?",
+    "options": [
+      "I risultati organici sono ordinati dall'algoritmo in base alla rilevanza, mentre quelli sponsorizzati sono annunci pubblicitari acquistati dagli inserzionisti",
+      "Non esiste alcuna differenza tra le due categorie",
+      "I risultati sponsorizzati sono sempre più pertinenti di quelli organici",
+      "I risultati organici sono visibili solo agli utenti abbonati"
+    ],
+    "correctIndex": 0,
+    "explanation": "I risultati organici vengono ordinati dall'algoritmo in base alla rilevanza, mentre quelli sponsorizzati sono annunci pubblicitari acquistati dagli inserzionisti."
+  },
+  {
+    "id": 90,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono le tre fasi descritte nel modulo per il funzionamento di un motore di ricerca?",
+    "options": [
+      "Incapsulamento, instradamento e decapsulamento",
+      "Crawling, Indicizzazione e Ranking",
+      "Richiesta, risposta e cifratura",
+      "Connessione, trasmissione e conferma"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le tre fasi sono Crawling (il crawler scopre e visita le pagine), Indicizzazione e Ranking."
+  },
+  {
+    "id": 91,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un sito appena pubblicato potrebbe non comparire immediatamente nei risultati di ricerca, secondo il modulo?",
+    "options": [
+      "Perché deve prima essere visitato dal crawler e successivamente inserito nell'indice",
+      "Perché tutti i siti nuovi vengono bloccati per un anno",
+      "Perché i motori di ricerca accettano solo siti con HTTPS",
+      "Perché serve un pagamento per essere indicizzati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un sito appena pubblicato deve prima essere visitato dal crawler e successivamente inserito nell'indice."
+  },
+  {
+    "id": 92,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra un browser e un motore di ricerca, secondo il modulo?",
+    "options": [
+      "Sono esattamente la stessa cosa",
+      "Il browser permette di navigare sul Web, mentre il motore di ricerca è il servizio che aiuta a trovare le informazioni presenti sul Web",
+      "Il motore di ricerca serve solo per inviare email",
+      "Il browser serve solo per effettuare ricerche, il motore di ricerca per visualizzare le pagine"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il browser è il programma che permette di navigare sul Web; il motore di ricerca è il servizio che aiuta a trovare le informazioni presenti sul Web."
+  },
+  {
+    "id": 93,
+    "module": "tcp-ip",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'era PageRank, l'algoritmo introdotto nel 1998 da Larry Page e Sergey Brin, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Un algoritmo che si limitava a cercare parole chiave nelle pagine",
+      "Un algoritmo che valutava anche i collegamenti tra le pagine Web, considerando un link come un \"voto\" di fiducia",
+      "Un protocollo di sicurezza per cifrare le comunicazioni tra motori di ricerca",
+      "Un sistema per assegnare porte di comunicazione ai server"
+    ],
+    "correctIndex": 1,
+    "explanation": "PageRank valutava anche i collegamenti tra le pagine Web, considerando un link come una sorta di \"voto\" di fiducia."
+  }
+]

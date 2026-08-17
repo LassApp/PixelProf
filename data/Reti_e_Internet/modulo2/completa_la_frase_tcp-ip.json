@@ -1,0 +1,772 @@
+[
+  {
+    "id": 1,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il TCP/IP è l'insieme di protocolli, cioè di regole ____, che permette ai dispositivi di comunicare attraverso le reti e su Internet.",
+    "answer": "condivise",
+    "bank": [
+      "condivise",
+      "private",
+      "temporanee",
+      "segrete"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____ si occupa di identificare la destinazione dei dati e di permetterne l'instradamento nella rete.",
+    "answer": "IP",
+    "bank": [
+      "IP",
+      "TCP",
+      "DNS",
+      "HTTP"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ garantisce una comunicazione affidabile, assicurandosi che lo scambio di informazioni avvenga correttamente.",
+    "answer": "TCP",
+    "bank": [
+      "TCP",
+      "IP",
+      "UDP",
+      "DNS"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La vera forza del sistema TCP/IP è la sua ____.",
+    "answer": "universalità",
+    "bank": [
+      "universalità",
+      "velocità",
+      "segretezza",
+      "gratuità"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il 1° gennaio 1983, durante il cosiddetto ____, ARPANET adottò TCP/IP come protocollo standard di comunicazione.",
+    "answer": "Flag Day",
+    "bank": [
+      "Flag Day",
+      "Black Friday",
+      "Ranking Day",
+      "Crawling Day"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "ARPANET è considerata l'____ di Internet.",
+    "answer": "antenata",
+    "bank": [
+      "antenata",
+      "copia",
+      "erede",
+      "concorrente"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il modello TCP/IP organizza la comunicazione di rete in quattro ____.",
+    "answer": "livelli",
+    "bank": [
+      "livelli",
+      "protocolli",
+      "indirizzi",
+      "porte"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il Livello ____ è quello più vicino all'utente, dove operano navigazione web, posta elettronica e streaming video.",
+    "answer": "Applicazione",
+    "bank": [
+      "Applicazione",
+      "Trasporto",
+      "Internet",
+      "Accesso alla Rete"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il Livello Trasporto può scegliere un protocollo affidabile come TCP oppure uno più veloce come ____.",
+    "answer": "UDP",
+    "bank": [
+      "UDP",
+      "HTTP",
+      "DNS",
+      "TLS"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il Livello Internet utilizza gli indirizzi ____ per fare in modo che ogni pacchetto raggiunga il destinatario corretto.",
+    "answer": "IP",
+    "bank": [
+      "IP",
+      "MAC",
+      "DNS",
+      "URL"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il Livello Accesso alla Rete è il livello più vicino all'____.",
+    "answer": "hardware",
+    "bank": [
+      "hardware",
+      "utente",
+      "indice",
+      "server"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il meccanismo con cui ogni livello aggiunge un'etichetta durante l'invio dei dati si chiama ____.",
+    "answer": "incapsulamento",
+    "bank": [
+      "incapsulamento",
+      "decapsulamento",
+      "instradamento",
+      "indicizzazione"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Grazie all'architettura a livelli, se un utente passa dal Wi-Fi alla rete cellulare cambia solo il Livello ____.",
+    "answer": "Accesso alla Rete",
+    "bank": [
+      "Accesso alla Rete",
+      "Applicazione",
+      "Trasporto",
+      "Internet"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ è un protocollo del Livello Trasporto progettato per garantire una comunicazione affidabile, ordinata e senza errori.",
+    "answer": "TCP",
+    "bank": [
+      "TCP",
+      "UDP",
+      "HTTP",
+      "DNS"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Prima di iniziare la trasmissione, TCP crea una ____ tra mittente e destinatario.",
+    "answer": "connessione",
+    "bank": [
+      "connessione",
+      "porta",
+      "latenza",
+      "cifratura"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il messaggio viene suddiviso in piccoli ____, ciascuno numerato.",
+    "answer": "segmenti",
+    "bank": [
+      "segmenti",
+      "indici",
+      "certificati",
+      "router"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il destinatario invia delle conferme chiamate ____ (Acknowledgment).",
+    "answer": "ACK",
+    "bank": [
+      "ACK",
+      "DNS",
+      "TLS",
+      "URL"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se un segmento non arriva o viene danneggiato, TCP lo rileva e ne richiede nuovamente l'____.",
+    "answer": "invio",
+    "bank": [
+      "invio",
+      "indirizzo",
+      "indice",
+      "certificato"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La grande caratteristica di TCP è quindi l'____.",
+    "answer": "affidabilità",
+    "bank": [
+      "affidabilità",
+      "velocità",
+      "gratuità",
+      "semplicità"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Tra i servizi che utilizzano TCP troviamo la navigazione web, la posta elettronica e il trasferimento di ____.",
+    "answer": "file",
+    "bank": [
+      "file",
+      "porte",
+      "indirizzi",
+      "certificati"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Lo ____ è un protocollo del Livello Trasporto progettato per privilegiare la velocità e la semplicità della comunicazione.",
+    "answer": "UDP",
+    "bank": [
+      "UDP",
+      "TCP",
+      "HTTP",
+      "DNS"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "A differenza di TCP, UDP non stabilisce una connessione preventiva e non ____ i dati eventualmente persi.",
+    "answer": "ritrasmette",
+    "bank": [
+      "ritrasmette",
+      "cifra",
+      "indirizza",
+      "numera"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ rappresenta il tempo necessario affinché un'informazione raggiunga il destinatario.",
+    "answer": "latenza",
+    "bank": [
+      "latenza",
+      "porta",
+      "indicizzazione",
+      "connessione"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nei giochi online e nello streaming in tempo reale, ridurre la latenza è spesso più importante che garantire la ricezione ____ di ogni pacchetto.",
+    "answer": "perfetta",
+    "bank": [
+      "perfetta",
+      "lenta",
+      "cifrata",
+      "gratuita"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Tra i servizi che utilizzano frequentemente UDP troviamo le videochiamate e le chiamate ____.",
+    "answer": "VoIP",
+    "bank": [
+      "VoIP",
+      "DNS",
+      "HTTPS",
+      "TLS"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo la sintesi del modulo, TCP preferisce arrivare più tardi ma completo, mentre UDP preferisce arrivare subito anche se manca ____.",
+    "answer": "qualcosa",
+    "bank": [
+      "qualcosa",
+      "tutto",
+      "nulla",
+      "il mittente"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della corrispondenza, UDP viene paragonato a una lettera ____.",
+    "answer": "ordinaria",
+    "bank": [
+      "ordinaria",
+      "raccomandata",
+      "sigillata",
+      "cifrata"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le ____ sono identificatori numerici utilizzati dai protocolli TCP e UDP per indirizzare i dati verso l'applicazione corretta.",
+    "answer": "porte",
+    "bank": [
+      "porte",
+      "reti",
+      "chiavi",
+      "tabelle"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se l'indirizzo IP identifica il dispositivo, la porta identifica il ____ con cui si desidera comunicare.",
+    "answer": "programma",
+    "bank": [
+      "programma",
+      "router",
+      "cavo",
+      "certificato"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Ogni porta è rappresentata da un numero compreso tra 0 e ____.",
+    "answer": "65535",
+    "bank": [
+      "65535",
+      "1000",
+      "999",
+      "255"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La porta ____ è storicamente utilizzata dal protocollo HTTP.",
+    "answer": "80",
+    "bank": [
+      "80",
+      "443",
+      "21",
+      "25"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La porta ____ è utilizzata dal protocollo HTTPS.",
+    "answer": "443",
+    "bank": [
+      "443",
+      "80",
+      "8080",
+      "21"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una porta temporanea assegnata automaticamente al browser viene detta porta ____.",
+    "answer": "effimera",
+    "bank": [
+      "effimera",
+      "fissa",
+      "pubblica",
+      "privata"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La tecnica con cui gli aggressori verificano quali porte di un dispositivo risultano aperte si chiama port ____.",
+    "answer": "scanning",
+    "bank": [
+      "scanning",
+      "ranking",
+      "routing",
+      "crawling"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'HyperText Transfer Protocol (____) è il protocollo del Livello Applicazione utilizzato per richiedere e trasferire pagine Web.",
+    "answer": "HTTP",
+    "bank": [
+      "HTTP",
+      "HTTPS",
+      "TCP",
+      "DNS"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'HTTPS utilizza la ____ per proteggere i dati scambiati tra browser e server.",
+    "answer": "crittografia",
+    "bank": [
+      "crittografia",
+      "latenza",
+      "indicizzazione",
+      "porta"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Dopo una connessione TCP, browser e server instaurano un canale sicuro utilizzando il protocollo ____.",
+    "answer": "TLS",
+    "bank": [
+      "TLS",
+      "DNS",
+      "UDP",
+      "HTTP"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le tre garanzie offerte da HTTPS sono riservatezza, integrità e ____.",
+    "answer": "autenticità",
+    "bank": [
+      "autenticità",
+      "velocità",
+      "gratuità",
+      "semplicità"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Grazie al certificato digitale, il browser può verificare l'identità del ____.",
+    "answer": "server",
+    "bank": [
+      "server",
+      "client",
+      "crawler",
+      "router"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2010 fu presentato ____, uno strumento che dimostrò quanto fosse semplice sottrarre sessioni su reti Wi-Fi pubbliche.",
+    "answer": "Firesheep",
+    "bank": [
+      "Firesheep",
+      "PageRank",
+      "ARPANET",
+      "TLS"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, HTTP viene paragonato a una ____, che chiunque può leggere durante il tragitto.",
+    "answer": "cartolina",
+    "bank": [
+      "cartolina",
+      "busta sigillata",
+      "raccomandata",
+      "lettera cifrata"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Prima di collegarsi al sito, il browser chiede a un server ____ quale indirizzo IP corrisponde al nome digitato.",
+    "answer": "DNS",
+    "bank": [
+      "DNS",
+      "TLS",
+      "HTTP",
+      "ACK"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il Livello ____ prepara il messaggio HTTP durante una richiesta Web.",
+    "answer": "Applicazione",
+    "bank": [
+      "Applicazione",
+      "Trasporto",
+      "Internet",
+      "Accesso alla Rete"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il primo router attraversato dai pacchetti in uscita da una rete domestica è generalmente il router di casa o dell'____.",
+    "answer": "ufficio",
+    "bank": [
+      "ufficio",
+      "hardware",
+      "hosting",
+      "indice"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Ogni router legge l'indirizzo IP di destinazione e decide a quale router successivo ____ il pacchetto.",
+    "answer": "inoltrare",
+    "bank": [
+      "inoltrare",
+      "cifrare",
+      "indicizzare",
+      "cancellare"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Questo processo di scelta del percorso si chiama routing, oppure ____.",
+    "answer": "instradamento",
+    "bank": [
+      "instradamento",
+      "indicizzazione",
+      "incapsulamento",
+      "ranking"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Quando i pacchetti raggiungono il server, il processo avviene al contrario e viene chiamato ____.",
+    "answer": "decapsulamento",
+    "bank": [
+      "decapsulamento",
+      "incapsulamento",
+      "crawling",
+      "ranking"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il 15 marzo 2019 un'interruzione dei servizi di un importante provider ____ rese irraggiungibili numerosi siti Web.",
+    "answer": "DNS",
+    "bank": [
+      "DNS",
+      "TLS",
+      "HTTP",
+      "ACK"
+    ]
+  },
+  {
+    "id": 49,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un ____ è un servizio online che permette di trovare informazioni presenti sul Web analizzando un archivio di pagine già raccolte.",
+    "answer": "motore di ricerca",
+    "bank": [
+      "motore di ricerca",
+      "browser",
+      "crawler",
+      "provider DNS"
+    ]
+  },
+  {
+    "id": 50,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I programmi automatici che esplorano continuamente Internet seguendo i collegamenti tra le pagine si chiamano ____.",
+    "answer": "crawler",
+    "bank": [
+      "crawler",
+      "router",
+      "certificati",
+      "indici"
+    ]
+  },
+  {
+    "id": 51,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le pagine trovate vengono analizzate, archiviate e inserite in un grande ____.",
+    "answer": "indice",
+    "bank": [
+      "indice",
+      "segmento",
+      "certificato",
+      "datagramma"
+    ]
+  },
+  {
+    "id": 52,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Quando un utente effettua una ricerca, il motore interroga il proprio ____, già costruito in precedenza.",
+    "answer": "indice",
+    "bank": [
+      "indice",
+      "crawler",
+      "router",
+      "certificato"
+    ]
+  },
+  {
+    "id": 53,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Gli algoritmi di ____ valutano centinaia di fattori per stimare quali pagine siano più utili rispetto alla ricerca effettuata.",
+    "answer": "ranking",
+    "bank": [
+      "ranking",
+      "routing",
+      "crawling",
+      "hosting"
+    ]
+  },
+  {
+    "id": 54,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I risultati ____ sono annunci pubblicitari acquistati dagli inserzionisti.",
+    "answer": "sponsorizzati",
+    "bank": [
+      "sponsorizzati",
+      "organici",
+      "indicizzati",
+      "cifrati"
+    ]
+  },
+  {
+    "id": 55,
+    "module": "tcp-ip",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 1998 Larry Page e Sergey Brin introdussero l'algoritmo ____.",
+    "answer": "PageRank",
+    "bank": [
+      "PageRank",
+      "Firesheep",
+      "TLS",
+      "ARPANET"
+    ]
+  }
+]

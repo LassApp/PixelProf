@@ -1,0 +1,872 @@
+[
+  {
+    "id": 1,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una rete informatica?",
+    "options": [
+      "Un insieme di due o più dispositivi collegati tra loro che possono scambiarsi dati e condividere risorse",
+      "Un singolo dispositivo capace di connettersi a Internet",
+      "Un programma che permette di navigare sul Web",
+      "Un indirizzo numerico che identifica un dispositivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una rete informatica è un insieme di due o più dispositivi collegati tra loro che possono scambiarsi dati e condividere risorse."
+  },
+  {
+    "id": 2,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali dispositivi possono far parte di una rete informatica, secondo il modulo?",
+    "options": [
+      "Solo computer e smartphone",
+      "Computer, smartphone, tablet, stampanti, server, Smart TV, videocamere di sorveglianza e altri oggetti digitali",
+      "Solo dispositivi collegati tramite cavo Ethernet",
+      "Solo dispositivi dotati di indirizzo IP pubblico"
+    ],
+    "correctIndex": 1,
+    "explanation": "I dispositivi possono essere computer, smartphone, tablet, stampanti, server, Smart TV, videocamere di sorveglianza e molti altri oggetti digitali."
+  },
+  {
+    "id": 3,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che modo può avvenire il collegamento tra i dispositivi di una rete?",
+    "options": [
+      "Solo tramite cavi",
+      "Solo tramite tecnologie senza fili",
+      "Tramite cavi oppure attraverso tecnologie senza fili, come il Wi-Fi",
+      "Solo tramite Bluetooth"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il collegamento può avvenire tramite cavi oppure attraverso tecnologie senza fili, come il Wi-Fi."
+  },
+  {
+    "id": 4,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è lo scopo di una rete, secondo la definizione del modulo?",
+    "options": [
+      "Permettere ai dispositivi di comunicare",
+      "Aumentare la potenza dei singoli dispositivi",
+      "Proteggere i dispositivi da attacchi esterni",
+      "Sostituire completamente Internet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo scopo di una rete è semplice: permettere ai dispositivi di comunicare."
+  },
+  {
+    "id": 5,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la relazione tra una rete domestica e Internet, secondo il modulo?",
+    "options": [
+      "Non hanno alcuna relazione tra loro",
+      "Internet segue lo stesso principio di una piccola rete domestica, cambia solo la scala",
+      "Una rete domestica è un tipo di server",
+      "Internet sostituisce la necessità di avere una rete domestica"
+    ],
+    "correctIndex": 1,
+    "explanation": "Internet rappresenta la più grande rete esistente, ma segue lo stesso principio di una piccola rete domestica: la differenza è soltanto la scala."
+  },
+  {
+    "id": 6,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostrò concretamente la pandemia di COVID-19 riguardo alle reti domestiche, secondo il modulo?",
+    "options": [
+      "Che le reti domestiche non erano più necessarie",
+      "Che le reti domestiche sono diventate un'infrastruttura essenziale, usata anche per lavoro e studio",
+      "Che Internet smise di funzionare in molte case",
+      "Che le reti domestiche potevano ospitare solo un dispositivo alla volta"
+    ],
+    "correctIndex": 1,
+    "explanation": "Durante la pandemia le reti domestiche sono diventate vere e proprie reti di lavoro, mostrando quanto una rete informatica sia un'infrastruttura essenziale della vita quotidiana."
+  },
+  {
+    "id": 7,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della città usata nel modulo, cosa rappresentano le strade?",
+    "options": [
+      "I dispositivi",
+      "I dati",
+      "I collegamenti tra i dispositivi",
+      "Gli indirizzi IP"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nella metafora, le case rappresentano i dispositivi e le strade rappresentano i collegamenti."
+  },
+  {
+    "id": 8,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo la metafora del modulo, cosa permette una rete informatica?",
+    "options": [
+      "Crea i dati che vengono scambiati",
+      "Permette ai dati di viaggiare, così come le strade permettono alle persone di incontrarsi",
+      "Elimina la necessità di scambiare dati",
+      "Sostituisce completamente i dispositivi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le strade non creano le persone, permettono loro di incontrarsi: allo stesso modo, una rete non crea i dati, permette ai dati di viaggiare."
+  },
+  {
+    "id": 9,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, che cosa fanno oggi le macchine, proprio come un tempo hanno imparato a fare gli esseri umani?",
+    "options": [
+      "Comunicano tra loro utilizzando regole ben precise",
+      "Si costruiscono autonomamente",
+      "Sostituiscono completamente il lavoro umano",
+      "Si connettono solo tramite cavo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Prima l'uomo ha imparato a comunicare con altri esseri umani; oggi anche le macchine comunicano tra loro utilizzando regole ben precise."
+  },
+  {
+    "id": 10,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In base a cosa vengono classificate le reti informatiche, secondo il modulo?",
+    "options": [
+      "In base alla marca dei dispositivi",
+      "In base alla loro estensione geografica",
+      "In base al numero di utenti collegati",
+      "In base al tipo di sistema operativo utilizzato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le reti informatiche possono essere classificate in base alla loro estensione geografica, cioè alla distanza che separa i dispositivi collegati."
+  },
+  {
+    "id": 11,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una PAN (Personal Area Network)?",
+    "options": [
+      "Una rete che collega più reti locali di un'intera città",
+      "Una rete che collega reti su grandi distanze",
+      "Una rete personale che collega i dispositivi di un singolo utente a breve distanza",
+      "Una rete che collega i dispositivi di un'intera abitazione"
+    ],
+    "correctIndex": 2,
+    "explanation": "La PAN è una rete personale che collega i dispositivi di un singolo utente a breve distanza, ad esempio auricolari Bluetooth e smartwatch collegati allo smartphone."
+  },
+  {
+    "id": 12,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una LAN (Local Area Network)?",
+    "options": [
+      "Una rete che collega i dispositivi presenti in un'abitazione, una scuola o un ufficio",
+      "Una rete personale a breve distanza",
+      "Una rete che collega più città",
+      "Una rete che collega nazioni e continenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "La LAN è una rete locale che collega i dispositivi presenti in un'abitazione, in una scuola o in un ufficio."
+  },
+  {
+    "id": 13,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una MAN (Metropolitan Area Network)?",
+    "options": [
+      "Una rete che collega i dispositivi di una singola abitazione",
+      "Una rete che collega più reti locali distribuite all'interno della stessa città",
+      "Una rete che collega dispositivi a brevissima distanza",
+      "Una rete che collega continenti diversi"
+    ],
+    "correctIndex": 1,
+    "explanation": "La MAN è una rete metropolitana che collega più reti locali distribuite all'interno della stessa città."
+  },
+  {
+    "id": 14,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una WAN (Wide Area Network)?",
+    "options": [
+      "Una rete che collega dispositivi personali a breve distanza",
+      "Una rete limitata a una sola città",
+      "Una rete che collega reti distribuite su grandi distanze, fino a nazioni e continenti",
+      "Una rete utilizzabile solo tramite cavo Ethernet"
+    ],
+    "correctIndex": 2,
+    "explanation": "La WAN è una rete geografica estesa che collega reti distribuite su grandi distanze, fino a comprendere nazioni e continenti."
+  },
+  {
+    "id": 15,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché Internet viene definito nel modulo come la WAN più grande esistente?",
+    "options": [
+      "Perché collega reti distribuite su scala mondiale",
+      "Perché utilizza solo connessioni via cavo",
+      "Perché è composto da un unico grande server",
+      "Perché collega solo dispositivi PAN"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quando si visita un sito ospitato su un server dall'altra parte del mondo si utilizza Internet, la WAN più grande esistente."
+  },
+  {
+    "id": 16,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale vantaggio offre generalmente il cavo Ethernet rispetto al Wi-Fi, secondo il modulo?",
+    "options": [
+      "Maggiore comodità e libertà di movimento",
+      "Maggiore stabilità e velocità",
+      "Nessun vantaggio particolare",
+      "Un raggio di copertura più ampio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il cavo offre generalmente maggiore stabilità e velocità, mentre il Wi-Fi privilegia la comodità e la libertà di movimento."
+  },
+  {
+    "id": 17,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede a una LAN se manca la connessione a Internet?",
+    "options": [
+      "Smette completamente di funzionare",
+      "I dispositivi continuano a comunicare tra loro, ma non possono raggiungere servizi e siti su Internet",
+      "Si trasforma automaticamente in una WAN",
+      "Tutti i dispositivi perdono il proprio indirizzo IP"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una LAN può funzionare perfettamente anche senza una connessione a Internet: ciò che viene meno è soltanto la possibilità di raggiungere servizi e siti presenti su Internet."
+  },
+  {
+    "id": 18,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come nasce Internet, secondo la spiegazione del modulo?",
+    "options": [
+      "Da un'unica grande rete costruita da un solo governo",
+      "Dal collegamento progressivo di milioni di PAN, LAN, MAN e altre reti",
+      "Dalla trasformazione di una singola LAN aziendale",
+      "Dall'unione di soli dispositivi Wi-Fi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Internet esiste perché milioni di PAN, LAN, MAN e altre reti sono state progressivamente collegate tra loro."
+  },
+  {
+    "id": 19,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa hanno mostrato le reti utilizzate durante le Olimpiadi di Parigi 2024, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Che le LAN non possono mai essere collegate a reti più estese",
+      "Che reti di dimensioni differenti possono integrarsi per realizzare un'unica grande infrastruttura di comunicazione",
+      "Che le WAN non sono adatte a eventi sportivi",
+      "Che le reti locali sono sempre più veloci delle reti geografiche"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le LAN interne agli impianti sportivi erano collegate a WAN più estese, permettendo la trasmissione in tempo reale verso milioni di spettatori nel mondo."
+  },
+  {
+    "id": 20,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora delle strade usata per i tipi di rete, a cosa corrisponde la WAN?",
+    "options": [
+      "Al vialetto che collega il cancello di casa al garage",
+      "All'intero quartiere",
+      "A tutte le strade della città",
+      "All'autostrada che collega città, regioni e nazioni"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nella metafora, la WAN è l'autostrada che collega città, regioni e nazioni."
+  },
+  {
+    "id": 21,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è Internet, secondo la definizione del modulo?",
+    "options": [
+      "Un singolo sito Web molto grande",
+      "Una rete mondiale che collega milioni di reti e dispositivi tra loro",
+      "Un programma installato su ogni computer",
+      "Un servizio che funziona solo con il Wi-Fi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Internet è una rete mondiale che collega milioni di reti e dispositivi tra loro."
+  },
+  {
+    "id": 22,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il World Wide Web (Web), secondo il modulo?",
+    "options": [
+      "Un sinonimo esatto di Internet",
+      "Un dispositivo che collega reti diverse",
+      "Uno dei servizi che utilizzano Internet, che permette di consultare pagine e siti web",
+      "Il nome tecnico di un indirizzo IP"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il World Wide Web è uno dei servizi che utilizzano Internet e permette di consultare pagine e siti web."
+  },
+  {
+    "id": 23,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la relazione corretta tra Internet e Web, secondo il modulo?",
+    "options": [
+      "Internet è la rete, il Web è uno dei servizi che funzionano sopra quella rete",
+      "Il Web è la rete, Internet è uno dei servizi che funzionano sopra il Web",
+      "Sono due nomi diversi per indicare la stessa identica cosa",
+      "Internet esiste solo grazie al Web"
+    ],
+    "correctIndex": 0,
+    "explanation": "Internet è la rete. Il Web è uno dei servizi che funzionano sopra quella rete."
+  },
+  {
+    "id": 24,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale tra queste attività, secondo il modulo, sfrutta Internet senza necessariamente utilizzare il Web?",
+    "options": [
+      "Visitare il sito di una scuola",
+      "Consultare una pagina Wikipedia",
+      "Effettuare una videochiamata",
+      "Leggere un articolo di un giornale online"
+    ],
+    "correctIndex": 2,
+    "explanation": "Quando effettuiamo una videochiamata, inviamo un'email o utilizziamo un'app di messaggistica, stiamo sfruttando Internet, ma spesso non stiamo utilizzando il Web."
+  },
+  {
+    "id": 25,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa, secondo il modulo, se un sito Web smette di funzionare?",
+    "options": [
+      "Significa sempre che l'intera connessione Internet è guasta",
+      "Non significa necessariamente che Internet sia guasto: potrebbe essere solo quel servizio ad avere un problema",
+      "Significa che il Wi-Fi di casa è spento",
+      "Significa che il router deve essere riavviato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se un sito web smette di funzionare, non significa necessariamente che Internet sia guasto: potrebbe essere semplicemente quel servizio ad avere un problema."
+  },
+  {
+    "id": 26,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde il 4 ottobre 2021, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Tutta la rete Internet mondiale smise di funzionare per un giorno intero",
+      "Facebook, Instagram e WhatsApp rimasero irraggiungibili per circa sei ore a causa di un problema nella rete di Meta",
+      "Fu annunciato l'esaurimento degli indirizzi IPv4",
+      "Furono danneggiati alcuni cavi sottomarini nel Mar Mediterraneo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il 4 ottobre 2021 Facebook, Instagram e WhatsApp rimasero irraggiungibili per circa sei ore a causa di un problema nella rete di Meta, mentre Internet nel suo complesso continuava a funzionare regolarmente."
+  },
+  {
+    "id": 27,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della città usata per spiegare Internet e Web, a cosa corrisponde il Web?",
+    "options": [
+      "Alle strade stesse",
+      "A uno dei mezzi che circolano sulle strade",
+      "Al postino che consegna le lettere",
+      "Al numero civico di ogni abitazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le strade rappresentano Internet; il Web è uno dei mezzi che vi circolano, insieme a email, videochiamate e altri servizi."
+  },
+  {
+    "id": 28,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i pacchetti (packet), secondo la definizione del modulo?",
+    "options": [
+      "Programmi che proteggono i dati durante il trasferimento",
+      "Piccoli blocchi di informazioni che possono viaggiare autonomamente attraverso la rete",
+      "Indirizzi numerici assegnati ai dispositivi",
+      "Cavi che collegano fisicamente due dispositivi"
+    ],
+    "correctIndex": 1,
+    "explanation": "I dati vengono suddivisi in pacchetti, cioè piccoli blocchi di informazioni che possono viaggiare autonomamente attraverso la rete."
+  },
+  {
+    "id": 29,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa contiene ogni pacchetto, secondo il modulo?",
+    "options": [
+      "Una parte del messaggio e le informazioni necessarie per raggiungere la destinazione corretta",
+      "Solo l'indirizzo IP del mittente",
+      "L'intero messaggio originale, senza suddivisioni",
+      "Solo un numero identificativo casuale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ogni pacchetto contiene una parte del messaggio e le informazioni necessarie per raggiungere la destinazione corretta."
+  },
+  {
+    "id": 30,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché è più efficiente suddividere i dati in tanti piccoli pacchetti piuttosto che inviare un unico file di grandi dimensioni?",
+    "options": [
+      "Perché i pacchetti non necessitano di alcun indirizzo di destinazione",
+      "Perché, se un pacchetto si perde, basta ritrasmettere solo quello, senza rinviare l'intero file",
+      "Perché i pacchetti viaggiano sempre più lentamente dei file interi",
+      "Perché un unico file non potrebbe mai raggiungere la destinazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se durante il viaggio un pacchetto si perde o subisce un errore, sarà sufficiente ritrasmettere solo quello, senza dover inviare nuovamente l'intero file."
+  },
+  {
+    "id": 31,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene chiamata la scelta del percorso che un pacchetto deve seguire per raggiungere la destinazione?",
+    "options": [
+      "Instradamento (routing)",
+      "Indirizzamento (addressing)",
+      "Trasmissione (streaming)",
+      "Sincronizzazione (syncing)"
+    ],
+    "correctIndex": 0,
+    "explanation": "La scelta del percorso che ogni pacchetto deve seguire prende il nome di instradamento (routing)."
+  },
+  {
+    "id": 32,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi valuta continuamente quale sia il percorso più efficiente per far arrivare i dati a destinazione?",
+    "options": [
+      "Il browser",
+      "Il client",
+      "Router e altri dispositivi della rete",
+      "Il World Wide Web"
+    ],
+    "correctIndex": 2,
+    "explanation": "Router e altri dispositivi della rete valutano continuamente quale sia il percorso più efficiente per far arrivare i dati alla destinazione."
+  },
+  {
+    "id": 33,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Due pacchetti appartenenti allo stesso file possono percorrere strade diverse all'interno della rete?",
+    "options": [
+      "No, devono sempre seguire lo stesso identico percorso",
+      "Sì, possono percorrere strade completamente diverse",
+      "Solo se appartengono a reti WAN diverse",
+      "Solo se il file è più piccolo di un certo limite"
+    ],
+    "correctIndex": 1,
+    "explanation": "Due pacchetti appartenenti allo stesso file possono percorrere strade completamente diverse."
+  },
+  {
+    "id": 34,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede ai pacchetti quando tutti raggiungono il dispositivo destinatario?",
+    "options": [
+      "Vengono automaticamente cancellati",
+      "Vengono ricomposti automaticamente nell'ordine corretto",
+      "Restano separati fino a un'azione manuale dell'utente",
+      "Vengono rinviati al mittente per conferma"
+    ],
+    "correctIndex": 1,
+    "explanation": "Quando tutti i pacchetti raggiungono il dispositivo destinatario, vengono ricomposti automaticamente nell'ordine corretto."
+  },
+  {
+    "id": 35,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se un collegamento di rete si interrompe durante il viaggio dei pacchetti?",
+    "options": [
+      "La comunicazione si interrompe definitivamente",
+      "I pacchetti possono essere instradati lungo percorsi alternativi, permettendo alla comunicazione di proseguire",
+      "Tutti i pacchetti già inviati vengono persi per sempre",
+      "Il file viene automaticamente compresso per essere reinviato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Anche se un collegamento si interrompe, i pacchetti possono essere instradati lungo percorsi alternativi, permettendo alla comunicazione di proseguire."
+  },
+  {
+    "id": 36,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene descritto, in sintesi, il criterio con cui Internet sceglie il percorso dei dati?",
+    "options": [
+      "Cerca sempre la strada più corta, indipendentemente dalle condizioni della rete",
+      "Cerca la strada migliore in quel preciso momento, non necessariamente la più corta",
+      "Sceglie sempre lo stesso percorso per ogni tipo di dato",
+      "Lascia che sia l'utente a scegliere manualmente il percorso"
+    ],
+    "correctIndex": 1,
+    "explanation": "Secondo il modulo, Internet non cerca sempre la strada più corta: cerca la strada migliore in quel preciso momento."
+  },
+  {
+    "id": 37,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde nel 2008 secondo il caso reale citato nel modulo?",
+    "options": [
+      "L'esaurimento degli indirizzi IPv4 disponibili",
+      "Il danneggiamento di alcuni cavi sottomarini nel Mar Mediterraneo, con rallentamenti tra Europa, Medio Oriente e Asia",
+      "L'interruzione dei servizi di Meta per sei ore",
+      "Il lancio della versione IPv6 del protocollo Internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nel 2008 il danneggiamento di diversi cavi sottomarini nel Mar Mediterraneo causò rallentamenti tra Europa, Medio Oriente e Asia, ma gran parte del traffico continuò grazie a percorsi alternativi."
+  },
+  {
+    "id": 38,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della mappa cittadina usata per spiegare l'instradamento, cosa rappresentano i dispositivi collegati alla rete?",
+    "options": [
+      "Le strade",
+      "I punti della mappa, chiamati nodi",
+      "I pacchetti in viaggio",
+      "Gli indirizzi civici"
+    ],
+    "correctIndex": 1,
+    "explanation": "I dispositivi collegati alla rete rappresentano i punti della mappa, cioè i nodi; i collegamenti rappresentano le strade."
+  },
+  {
+    "id": 39,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il modello Client-Server?",
+    "options": [
+      "Un sistema in cui un solo dispositivo svolge tutti i ruoli della comunicazione",
+      "Un sistema di comunicazione nel quale due dispositivi svolgono ruoli differenti: uno richiede, l'altro risponde",
+      "Un protocollo utilizzato solo per l'invio di email",
+      "Un tipo di rete che collega dispositivi a breve distanza"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modello Client-Server è un sistema di comunicazione nel quale due dispositivi svolgono ruoli differenti."
+  },
+  {
+    "id": 40,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il ruolo del client nel modello Client-Server?",
+    "options": [
+      "Riceve la richiesta, la elabora e restituisce una risposta",
+      "Assegna gli indirizzi IP ai dispositivi della rete",
+      "Richiede un servizio o un'informazione",
+      "Suddivide i dati in pacchetti"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il client è il dispositivo che richiede un servizio o un'informazione."
+  },
+  {
+    "id": 41,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il ruolo del server nel modello Client-Server?",
+    "options": [
+      "Richiede un servizio o un'informazione",
+      "Riceve la richiesta, la elabora e restituisce una risposta",
+      "Interpreta il codice delle pagine Web per mostrarle sullo schermo",
+      "Si collega solo tramite Bluetooth"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il server è il dispositivo che riceve la richiesta, la elabora e restituisce una risposta."
+  },
+  {
+    "id": 42,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è, secondo il modulo, il ruolo del browser?",
+    "options": [
+      "Crea autonomamente le pagine Web che vediamo",
+      "Riceve le pagine dal server, interpreta il codice e le trasforma nella pagina visualizzata",
+      "Assegna l'indirizzo IP pubblico alla rete domestica",
+      "Suddivide i pacchetti in file di grandi dimensioni"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il browser non crea le pagine Web: le riceve dal server, interpreta il codice con cui sono state realizzate e le trasforma nella pagina che vediamo."
+  },
+  {
+    "id": 43,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa osserviamo realmente sullo schermo quando navighiamo su un sito, secondo il modulo?",
+    "options": [
+      "Internet stesso",
+      "La rappresentazione grafica dei dati ricevuti dal browser",
+      "Il codice sorgente del server",
+      "Un indirizzo IP tradotto in immagini"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ciò che osserviamo non è Internet: è la rappresentazione grafica dei dati ricevuti dal browser."
+  },
+  {
+    "id": 44,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali tra questi servizi funzionano secondo il modello Client-Server, secondo il modulo?",
+    "options": [
+      "Solo l'invio di email",
+      "Guardare video, inviare messaggi, usare i social network e consultare il conto corrente online",
+      "Solo la stampa di documenti in rete locale",
+      "Solo i servizi che non richiedono una connessione a Internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Quando guardiamo un video, inviamo un messaggio, utilizziamo un social network o consultiamo il conto corrente online, il dispositivo invia richieste ai server che rispondono con i dati necessari."
+  },
+  {
+    "id": 45,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostra il caso reale del Black Friday citato nel modulo?",
+    "options": [
+      "Che il modello Client-Server non regge un numero elevato di richieste",
+      "Che le aziende distribuiscono il lavoro su migliaia di server per gestire milioni di richieste contemporaneamente",
+      "Che i siti di e-commerce funzionano senza server",
+      "Che durante il Black Friday i client smettono di inviare richieste"
+    ],
+    "correctIndex": 1,
+    "explanation": "Per gestire un numero così elevato di richieste, le aziende distribuiscono il lavoro su migliaia di server, evitando che uno solo debba rispondere a tutti gli utenti."
+  },
+  {
+    "id": 46,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della biblioteca usata per il modello Client-Server, chi rappresenta il server?",
+    "options": [
+      "Il lettore",
+      "Il libro richiesto",
+      "Il bibliotecario, che conosce dove si trovano i libri e li consegna",
+      "Lo scaffale della biblioteca"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nella metafora, il client è il lettore mentre il server è il bibliotecario, che recupera e consegna il libro richiesto."
+  },
+  {
+    "id": 47,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un indirizzo IP (Internet Protocol)?",
+    "options": [
+      "Un indirizzo numerico che identifica un dispositivo all'interno di una rete",
+      "Il nome del proprietario di un dispositivo",
+      "Un tipo di cavo utilizzato per collegare i dispositivi",
+      "Un protocollo usato solo per l'invio di email"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un Internet Protocol (IP) è un indirizzo numerico che identifica un dispositivo all'interno di una rete."
+  },
+  {
+    "id": 48,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è attualmente la versione di indirizzi IP più diffusa?",
+    "options": [
+      "IPv6",
+      "IPv4",
+      "IPv8",
+      "IPv2"
+    ],
+    "correctIndex": 1,
+    "explanation": "Attualmente la versione più diffusa è Internet Protocol versione 4 (IPv4), che sta progressivamente lasciando spazio a IPv6."
+  },
+  {
+    "id": 49,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché è stato sviluppato IPv6, secondo il modulo?",
+    "options": [
+      "Per sostituire completamente il Wi-Fi",
+      "Perché gli indirizzi IPv4 non sono più sufficienti per la crescita del numero di dispositivi connessi",
+      "Per eliminare la necessità del modello Client-Server",
+      "Per collegare solo dispositivi PAN"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gli indirizzi IPv4, pur essendo oltre quattro miliardi, non sono più sufficienti per soddisfare la crescita dei dispositivi connessi: per questo è stato sviluppato IPv6."
+  },
+  {
+    "id": 50,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come è formato un indirizzo IPv4?",
+    "options": [
+      "Da quattro gruppi di numeri separati da un punto",
+      "Da una sequenza di lettere e numeri separati da due punti",
+      "Da un unico numero molto lungo",
+      "Da un nome di dominio come www.esempio.it"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un indirizzo IPv4 è formato da quattro gruppi di numeri separati da un punto, ad esempio 192.168.1.10."
+  },
+  {
+    "id": 51,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato l'indirizzo IP nella metafora del modulo?",
+    "options": [
+      "Al nome di una persona",
+      "Al numero civico di una casa",
+      "Alla targa di un'automobile",
+      "Al codice fiscale di un cittadino"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'indirizzo IP viene paragonato al numero civico di una casa: sapere che un dispositivo è collegato a Internet non basta, serve conoscere il suo indirizzo."
+  },
+  {
+    "id": 52,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanti sono, circa, gli indirizzi IPv4 disponibili secondo il modulo?",
+    "options": [
+      "Poco più di un milione",
+      "Oltre quattro miliardi",
+      "Circa diecimila",
+      "Un numero praticamente infinito"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gli indirizzi IPv4 sono oltre quattro miliardi, ma non sono più sufficienti a soddisfare la crescita di Internet."
+  },
+  {
+    "id": 53,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che caratteristica hanno gli indirizzi IPv6 rispetto a quelli IPv4?",
+    "options": [
+      "Sono più corti e semplici da ricordare",
+      "Sono molto più lunghi e offrono un numero praticamente inesauribile di indirizzi",
+      "Non richiedono alcun numero, solo lettere",
+      "Sono validi solo all'interno di una LAN"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gli indirizzi IPv6 sono molto più lunghi di quelli IPv4 e garantiscono un numero praticamente inesauribile di indirizzi."
+  },
+  {
+    "id": 54,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è l'indirizzo IP pubblico, secondo il modulo?",
+    "options": [
+      "L'indirizzo assegnato dal router a ogni singolo dispositivo della rete locale",
+      "L'indirizzo assegnato dal provider Internet, che identifica l'intera rete di casa verso il resto del mondo",
+      "Un indirizzo temporaneo valido solo per pochi minuti",
+      "Un indirizzo visibile soltanto all'interno della LAN"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'indirizzo IP pubblico è assegnato dal provider Internet e identifica l'intera rete di casa verso il resto del mondo, cioè la WAN."
+  },
+  {
+    "id": 55,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è l'indirizzo IP privato, secondo il modulo?",
+    "options": [
+      "L'indirizzo assegnato dal provider Internet a tutta la rete di casa",
+      "L'indirizzo assegnato dal router a ciascun dispositivo, utilizzato all'interno della LAN",
+      "Un indirizzo valido solo per i server",
+      "L'indirizzo che identifica un sito Web"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il router assegna a ciascun dispositivo un indirizzo IP privato, utilizzato all'interno della LAN."
+  },
+  {
+    "id": 56,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del condominio usata nel modulo, a cosa corrisponde l'indirizzo IP privato?",
+    "options": [
+      "Al numero civico del condominio",
+      "Al numero dell'appartamento",
+      "Al nome della via",
+      "Al citofono condominiale"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'IP pubblico è paragonabile al numero civico del condominio, mentre l'IP privato è paragonabile al numero dell'appartamento."
+  },
+  {
+    "id": 57,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa annunciò la IANA il 3 febbraio 2011, secondo il caso reale citato nel modulo?",
+    "options": [
+      "Il lancio ufficiale di IPv6",
+      "L'esaurimento dell'ultimo blocco di indirizzi IPv4 disponibili",
+      "La chiusura di Internet in alcune nazioni",
+      "L'introduzione del modello Client-Server"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il 3 febbraio 2011 la IANA annunciò l'esaurimento dell'ultimo blocco di indirizzi IPv4 disponibili."
+  },
+  {
+    "id": 58,
+    "module": "fondamenta-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della città usata per gli indirizzi IP, chi consegna le informazioni conoscendo solo l'indirizzo e non la persona?",
+    "options": [
+      "Il bibliotecario",
+      "Il server",
+      "Il postino",
+      "Il router"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il postino non conosce personalmente gli abitanti: conosce gli indirizzi e consegna la lettera all'abitazione corretta, proprio come avviene con l'indirizzo IP."
+  }
+]

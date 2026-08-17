@@ -1,0 +1,416 @@
+[
+  {
+    "id": 1,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una rete informatica è un insieme di due o più dispositivi collegati tra loro che possono scambiarsi dati.",
+    "answer": true,
+    "explanation": "Una rete informatica è un insieme di due o più dispositivi collegati tra loro che possono scambiarsi dati e condividere risorse."
+  },
+  {
+    "id": 2,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il collegamento tra dispositivi di una rete può avvenire solo tramite cavi.",
+    "answer": false,
+    "explanation": "Il collegamento può avvenire tramite cavi oppure attraverso tecnologie senza fili, come il Wi-Fi."
+  },
+  {
+    "id": 3,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una rete informatica coincide esattamente con Internet.",
+    "answer": false,
+    "explanation": "Una rete non è Internet: una rete è, prima di tutto, comunicazione. Internet è la rete più grande, ma segue lo stesso principio."
+  },
+  {
+    "id": 4,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Internet segue lo stesso principio di una piccola rete domestica, cambia solo la scala.",
+    "answer": true,
+    "explanation": "Internet rappresenta la più grande rete esistente, ma segue lo stesso principio di una piccola rete domestica: la differenza è soltanto la scala."
+  },
+  {
+    "id": 5,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante la pandemia di COVID-19 le reti domestiche sono diventate anche reti di lavoro e di studio.",
+    "answer": true,
+    "explanation": "Le reti domestiche, che servivano principalmente per navigare o guardare film, sono diventate vere e proprie reti di lavoro durante la pandemia."
+  },
+  {
+    "id": 6,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della città, le strade rappresentano i dispositivi e le case i collegamenti.",
+    "answer": false,
+    "explanation": "È il contrario: le case rappresentano i dispositivi e le strade rappresentano i collegamenti."
+  },
+  {
+    "id": 7,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una rete non crea i dati, ma permette ai dati di viaggiare.",
+    "answer": true,
+    "explanation": "Come le strade non creano le persone ma permettono loro di incontrarsi, una rete non crea i dati ma permette ai dati di viaggiare."
+  },
+  {
+    "id": 8,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le reti informatiche possono essere classificate in base alla loro estensione geografica.",
+    "answer": true,
+    "explanation": "Le reti informatiche possono essere classificate in base alla loro estensione geografica, cioè alla distanza tra i dispositivi collegati."
+  },
+  {
+    "id": 9,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una PAN collega dispositivi presenti in un'intera città.",
+    "answer": false,
+    "explanation": "È la MAN a collegare più reti locali nella stessa città; la PAN collega i dispositivi di un singolo utente a breve distanza."
+  },
+  {
+    "id": 10,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una LAN collega i dispositivi presenti in un'abitazione, in una scuola o in un ufficio.",
+    "answer": true,
+    "explanation": "La LAN è la rete locale che collega i dispositivi presenti in un'abitazione, in una scuola o in un ufficio."
+  },
+  {
+    "id": 11,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una WAN collega reti distribuite su grandi distanze, fino a nazioni e continenti.",
+    "answer": true,
+    "explanation": "La WAN è la rete geografica estesa che collega reti distribuite su grandi distanze, fino a nazioni e continenti."
+  },
+  {
+    "id": 12,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Internet è un esempio di WAN, anzi la WAN più grande esistente.",
+    "answer": true,
+    "explanation": "Quando si visita un sito ospitato su un server dall'altra parte del mondo si utilizza Internet, la WAN più grande esistente."
+  },
+  {
+    "id": 13,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una LAN può funzionare, per alcune attività come la stampa o la condivisione di file, anche senza una connessione a Internet.",
+    "answer": true,
+    "explanation": "Una LAN può funzionare perfettamente anche senza Internet: viene meno solo la possibilità di raggiungere servizi e siti esterni."
+  },
+  {
+    "id": 14,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il cavo Ethernet garantisce generalmente maggiore comodità e libertà di movimento rispetto al Wi-Fi.",
+    "answer": false,
+    "explanation": "È il contrario: il cavo offre generalmente maggiore stabilità e velocità, mentre il Wi-Fi privilegia comodità e libertà di movimento."
+  },
+  {
+    "id": 15,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante le Olimpiadi di Parigi 2024 le reti locali degli impianti sportivi sono state collegate a reti geografiche più estese per trasmettere le immagini nel mondo.",
+    "answer": true,
+    "explanation": "Le LAN interne agli impianti erano collegate a WAN più estese, permettendo la trasmissione in tempo reale verso milioni di spettatori."
+  },
+  {
+    "id": 16,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Internet e Web sono due parole che indicano esattamente la stessa cosa.",
+    "answer": false,
+    "explanation": "Internet e Web indicano due concetti diversi: Internet è la rete, il Web è uno dei servizi che vi funzionano sopra."
+  },
+  {
+    "id": 17,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Internet è la rete, mentre il Web è uno dei servizi che funzionano sopra quella rete.",
+    "answer": true,
+    "explanation": "Internet è la rete. Il Web è uno dei servizi che funzionano sopra quella rete."
+  },
+  {
+    "id": 18,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Inviare un'email o effettuare una videochiamata significa sempre utilizzare il Web.",
+    "answer": false,
+    "explanation": "Queste attività sfruttano Internet, ma spesso non utilizzano il Web."
+  },
+  {
+    "id": 19,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se un sito Web smette di funzionare, significa sempre che l'intera connessione Internet è guasta.",
+    "answer": false,
+    "explanation": "Non significa necessariamente che Internet sia guasto: potrebbe essere semplicemente quel servizio ad avere un problema."
+  },
+  {
+    "id": 20,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il 4 ottobre 2021 Facebook, Instagram e WhatsApp rimasero irraggiungibili per circa sei ore.",
+    "answer": true,
+    "explanation": "Il 4 ottobre 2021 questi servizi rimasero irraggiungibili per circa sei ore a causa di un problema nella rete di Meta."
+  },
+  {
+    "id": 21,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante l'interruzione del 4 ottobre 2021, anche milioni di altri siti e applicazioni smisero di funzionare insieme a quelli di Meta.",
+    "answer": false,
+    "explanation": "Milioni di altri siti e applicazioni continuarono a funzionare senza alcun problema durante quell'interruzione."
+  },
+  {
+    "id": 22,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della città, il Web viene paragonato a uno dei mezzi che circolano sulle strade, che rappresentano Internet.",
+    "answer": true,
+    "explanation": "Le strade rappresentano Internet; il Web è uno dei mezzi che vi circolano, insieme a email e videochiamate."
+  },
+  {
+    "id": 23,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Quando due dispositivi comunicano, le informazioni vengono inviate come un unico blocco indivisibile.",
+    "answer": false,
+    "explanation": "Le informazioni vengono suddivise in pacchetti, piccoli blocchi che viaggiano autonomamente attraverso la rete."
+  },
+  {
+    "id": 24,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ogni pacchetto contiene una parte del messaggio e le informazioni necessarie per raggiungere la destinazione corretta.",
+    "answer": true,
+    "explanation": "Ogni pacchetto contiene una parte del messaggio e le informazioni necessarie per raggiungere la destinazione corretta."
+  },
+  {
+    "id": 25,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se un pacchetto si perde durante il viaggio, è necessario ritrasmettere l'intero file originale.",
+    "answer": false,
+    "explanation": "Basta ritrasmettere solo il pacchetto perso, senza dover inviare nuovamente l'intero file."
+  },
+  {
+    "id": 26,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La scelta del percorso che un pacchetto deve seguire si chiama instradamento (routing).",
+    "answer": true,
+    "explanation": "La scelta del percorso che ogni pacchetto deve seguire prende il nome di instradamento (routing)."
+  },
+  {
+    "id": 27,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Due pacchetti appartenenti allo stesso file percorrono sempre esattamente lo stesso identico percorso.",
+    "answer": false,
+    "explanation": "Due pacchetti dello stesso file possono percorrere strade completamente diverse."
+  },
+  {
+    "id": 28,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se un collegamento di rete si interrompe, i pacchetti possono comunque essere instradati lungo percorsi alternativi.",
+    "answer": true,
+    "explanation": "Anche se un collegamento si interrompe, i pacchetti possono essere instradati lungo percorsi alternativi, permettendo alla comunicazione di proseguire."
+  },
+  {
+    "id": 29,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, Internet cerca sempre la strada più corta, indipendentemente dalle condizioni della rete.",
+    "answer": false,
+    "explanation": "Internet non cerca sempre la strada più corta: cerca la strada migliore in quel preciso momento."
+  },
+  {
+    "id": 30,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2008 il danneggiamento di cavi sottomarini nel Mar Mediterraneo causò rallentamenti, ma gran parte del traffico continuò grazie a percorsi alternativi.",
+    "answer": true,
+    "explanation": "Nonostante la perdita di alcune connessioni, gran parte del traffico continuò a funzionare grazie all'instradamento su percorsi alternativi."
+  },
+  {
+    "id": 31,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel modello Client-Server, il client è il dispositivo che richiede un servizio o un'informazione.",
+    "answer": true,
+    "explanation": "Il client è il dispositivo che richiede un servizio o un'informazione."
+  },
+  {
+    "id": 32,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel modello Client-Server, è il client a elaborare e restituire la risposta.",
+    "answer": false,
+    "explanation": "È il server a ricevere la richiesta, elaborarla e restituire una risposta."
+  },
+  {
+    "id": 33,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il browser crea autonomamente le pagine Web che visualizziamo.",
+    "answer": false,
+    "explanation": "Il browser non crea le pagine Web: le riceve dal server e interpreta il codice con cui sono state realizzate."
+  },
+  {
+    "id": 34,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Quando navighiamo un sito, ciò che osserviamo è la rappresentazione grafica dei dati ricevuti dal browser.",
+    "answer": true,
+    "explanation": "Ciò che osserviamo non è Internet: è la rappresentazione grafica dei dati ricevuti dal browser."
+  },
+  {
+    "id": 35,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Guardare un video, inviare un messaggio o consultare il conto corrente online funzionano tutti secondo il modello Client-Server.",
+    "answer": true,
+    "explanation": "La maggior parte dei servizi che utilizziamo ogni giorno su Internet funziona secondo il modello Client-Server."
+  },
+  {
+    "id": 36,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante il Black Friday, le aziende di e-commerce distribuiscono il lavoro su migliaia di server per gestire le richieste.",
+    "answer": true,
+    "explanation": "Per gestire un numero elevato di richieste, le aziende distribuiscono il lavoro su migliaia di server."
+  },
+  {
+    "id": 37,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della biblioteca, è il lettore a recuperare da solo il libro dal magazzino.",
+    "answer": false,
+    "explanation": "È il bibliotecario a recuperare il libro e consegnarlo al lettore, che non entra nel magazzino."
+  },
+  {
+    "id": 38,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un indirizzo IP è un indirizzo numerico che identifica un dispositivo all'interno di una rete.",
+    "answer": true,
+    "explanation": "Un Internet Protocol (IP) è un indirizzo numerico che identifica un dispositivo all'interno di una rete."
+  },
+  {
+    "id": 39,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Attualmente la versione di indirizzi IP più diffusa è IPv6.",
+    "answer": false,
+    "explanation": "Attualmente la versione più diffusa è ancora IPv4, con IPv6 in progressiva diffusione."
+  },
+  {
+    "id": 40,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un indirizzo IPv4 è formato da quattro gruppi di numeri separati da un punto.",
+    "answer": true,
+    "explanation": "Un indirizzo IPv4 è formato da quattro gruppi di numeri separati da un punto, ad esempio 192.168.1.10."
+  },
+  {
+    "id": 41,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli indirizzi IPv4 disponibili sono praticamente illimitati e non pongono alcun problema alla crescita di Internet.",
+    "answer": false,
+    "explanation": "Gli indirizzi IPv4 sono oltre quattro miliardi, ma non sono più sufficienti per soddisfare la crescita di Internet."
+  },
+  {
+    "id": 42,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli indirizzi IPv6 sono più lunghi di quelli IPv4 e offrono un numero praticamente inesauribile di indirizzi.",
+    "answer": true,
+    "explanation": "Gli indirizzi IPv6 sono molto più lunghi e garantiscono un numero praticamente inesauribile di indirizzi."
+  },
+  {
+    "id": 43,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'indirizzo IP pubblico viene assegnato dal router a ciascun dispositivo della rete locale.",
+    "answer": false,
+    "explanation": "È l'indirizzo IP privato ad essere assegnato dal router a ciascun dispositivo; l'IP pubblico è assegnato dal provider Internet."
+  },
+  {
+    "id": 44,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'indirizzo IP privato viene utilizzato all'interno della LAN per identificare i dispositivi della rete locale.",
+    "answer": true,
+    "explanation": "Il router assegna a ciascun dispositivo un indirizzo IP privato, utilizzato all'interno della LAN."
+  },
+  {
+    "id": 45,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il 3 febbraio 2011 la IANA annunciò l'esaurimento dell'ultimo blocco di indirizzi IPv4 disponibili.",
+    "answer": true,
+    "explanation": "Il 3 febbraio 2011 la IANA annunciò l'esaurimento dell'ultimo blocco di indirizzi IPv4 disponibili."
+  },
+  {
+    "id": 46,
+    "module": "fondamenta-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della città, l'indirizzo IP viene paragonato al numero civico che permette di consegnare un'informazione nel posto giusto.",
+    "answer": true,
+    "explanation": "L'indirizzo IP è il numero civico che permette di consegnare ogni informazione nel posto giusto, proprio come fa il postino con le lettere."
+  }
+]

@@ -1,0 +1,562 @@
+[
+  {
+    "id": 1,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una ____ informatica è un insieme di due o più dispositivi collegati tra loro che possono scambiarsi dati e condividere risorse.",
+    "answer": "rete",
+    "bank": [
+      "rete",
+      "pacchetto",
+      "server",
+      "protocollo"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il collegamento tra dispositivi può avvenire tramite cavi oppure attraverso tecnologie senza fili, come il ____.",
+    "answer": "Wi-Fi",
+    "bank": [
+      "Wi-Fi",
+      "Bluetooth",
+      "router",
+      "IP"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una rete non è Internet: una rete è, prima di tutto, ____.",
+    "answer": "comunicazione",
+    "bank": [
+      "comunicazione",
+      "instradamento",
+      "navigazione",
+      "programmazione"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Internet rappresenta la più grande rete esistente, ma segue lo stesso principio di una piccola rete ____.",
+    "answer": "domestica",
+    "bank": [
+      "domestica",
+      "pubblica",
+      "aziendale",
+      "scolastica"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Durante la pandemia di COVID-19, le reti domestiche sono diventate vere e proprie reti di ____.",
+    "answer": "lavoro",
+    "bank": [
+      "lavoro",
+      "gioco",
+      "vendita",
+      "trasporto"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della città, le case rappresentano i dispositivi e le strade rappresentano i ____.",
+    "answer": "collegamenti",
+    "bank": [
+      "collegamenti",
+      "pacchetti",
+      "indirizzi",
+      "server"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le reti informatiche possono essere classificate in base alla loro ____ geografica.",
+    "answer": "estensione",
+    "bank": [
+      "estensione",
+      "velocità",
+      "sicurezza",
+      "potenza"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ è una rete personale che collega i dispositivi di un singolo utente a breve distanza.",
+    "answer": "PAN",
+    "bank": [
+      "PAN",
+      "LAN",
+      "MAN",
+      "WAN"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ collega i dispositivi presenti in un'abitazione, in una scuola o in un ufficio.",
+    "answer": "LAN",
+    "bank": [
+      "LAN",
+      "PAN",
+      "MAN",
+      "WAN"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ collega più reti locali distribuite all'interno della stessa città.",
+    "answer": "MAN",
+    "bank": [
+      "MAN",
+      "PAN",
+      "LAN",
+      "WAN"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ collega reti distribuite su grandi distanze, fino a comprendere nazioni e continenti.",
+    "answer": "WAN",
+    "bank": [
+      "WAN",
+      "PAN",
+      "LAN",
+      "MAN"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il cavo Ethernet offre generalmente maggiore stabilità e ____ rispetto al Wi-Fi.",
+    "answer": "velocità",
+    "bank": [
+      "velocità",
+      "comodità",
+      "sicurezza",
+      "copertura"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una LAN può funzionare perfettamente anche senza una connessione a ____.",
+    "answer": "Internet",
+    "bank": [
+      "Internet",
+      "Wi-Fi",
+      "router",
+      "rete"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Internet è una rete mondiale che collega milioni di reti e ____ tra loro.",
+    "answer": "dispositivi",
+    "bank": [
+      "dispositivi",
+      "pacchetti",
+      "indirizzi",
+      "server"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il World Wide Web è uno dei ____ che utilizzano Internet e permette di consultare pagine e siti web.",
+    "answer": "servizi",
+    "bank": [
+      "servizi",
+      "protocolli",
+      "indirizzi",
+      "pacchetti"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Quando inviamo un'email o effettuiamo una videochiamata, stiamo sfruttando Internet, ma spesso non stiamo utilizzando il ____.",
+    "answer": "Web",
+    "bank": [
+      "Web",
+      "router",
+      "server",
+      "client"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se un sito Web smette di funzionare, non significa necessariamente che ____ sia guasto.",
+    "answer": "Internet",
+    "bank": [
+      "Internet",
+      "il Wi-Fi",
+      "il router",
+      "il cavo"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il 4 ottobre 2021 Facebook, Instagram e WhatsApp rimasero irraggiungibili per circa ____ ore.",
+    "answer": "sei",
+    "bank": [
+      "sei",
+      "due",
+      "dodici",
+      "ventiquattro"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della città, le strade rappresentano Internet e i mezzi che vi circolano rappresentano i ____.",
+    "answer": "servizi",
+    "bank": [
+      "servizi",
+      "dispositivi",
+      "pacchetti",
+      "indirizzi"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I dati vengono suddivisi in ____, piccoli blocchi di informazioni che possono viaggiare autonomamente attraverso la rete.",
+    "answer": "pacchetti",
+    "bank": [
+      "pacchetti",
+      "indirizzi",
+      "server",
+      "protocolli"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una volta arrivati a destinazione, tutti i pacchetti vengono ____ nell'ordine corretto.",
+    "answer": "ricomposti",
+    "bank": [
+      "ricomposti",
+      "cancellati",
+      "duplicati",
+      "cifrati"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La scelta del percorso che ogni pacchetto deve seguire prende il nome di ____.",
+    "answer": "instradamento",
+    "bank": [
+      "instradamento",
+      "indirizzamento",
+      "instaurazione",
+      "irradiamento"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Router e altri dispositivi della rete valutano continuamente quale sia il percorso più ____ per far arrivare i dati a destinazione.",
+    "answer": "efficiente",
+    "bank": [
+      "efficiente",
+      "corto",
+      "economico",
+      "sicuro"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della mappa cittadina usata per spiegare il routing, i dispositivi collegati alla rete rappresentano i punti della mappa, chiamati ____.",
+    "answer": "nodi",
+    "bank": [
+      "nodi",
+      "pacchetti",
+      "indirizzi",
+      "server"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, Internet non cerca sempre la strada più corta, ma la strada ____ in quel preciso momento.",
+    "answer": "migliore",
+    "bank": [
+      "migliore",
+      "più corta",
+      "più lunga",
+      "più economica"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2008 il danneggiamento di cavi ____ nel Mar Mediterraneo causò rallentamenti tra Europa, Medio Oriente e Asia.",
+    "answer": "sottomarini",
+    "bank": [
+      "sottomarini",
+      "elettrici",
+      "telefonici",
+      "stradali"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel modello Client-Server, il ____ è il dispositivo che richiede un servizio o un'informazione.",
+    "answer": "client",
+    "bank": [
+      "client",
+      "server",
+      "router",
+      "pacchetto"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel modello Client-Server, il ____ riceve la richiesta, la elabora e restituisce una risposta.",
+    "answer": "server",
+    "bank": [
+      "server",
+      "client",
+      "browser",
+      "router"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il browser non crea le pagine Web: le riceve dal server e ____ il codice con cui sono state realizzate.",
+    "answer": "interpreta",
+    "bank": [
+      "interpreta",
+      "cifra",
+      "cancella",
+      "duplica"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Ciò che osserviamo sullo schermo non è Internet, ma la rappresentazione grafica dei dati ricevuti dal ____.",
+    "answer": "browser",
+    "bank": [
+      "browser",
+      "router",
+      "server",
+      "modem"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Durante il Black Friday, le aziende di e-commerce distribuiscono il lavoro su migliaia di ____ per gestire milioni di richieste.",
+    "answer": "server",
+    "bank": [
+      "server",
+      "client",
+      "router",
+      "pacchetti"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della biblioteca, il ____ conosce dove si trovano tutti i libri e li consegna al lettore.",
+    "answer": "bibliotecario",
+    "bank": [
+      "bibliotecario",
+      "lettore",
+      "postino",
+      "corriere"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un Internet Protocol (IP) è un indirizzo ____ che identifica un dispositivo all'interno di una rete.",
+    "answer": "numerico",
+    "bank": [
+      "numerico",
+      "alfabetico",
+      "grafico",
+      "temporaneo"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Attualmente la versione più diffusa è Internet Protocol versione 4, ma sta lasciando spazio alla più recente versione ____.",
+    "answer": "6",
+    "bank": [
+      "6",
+      "5",
+      "8",
+      "10"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un indirizzo IPv4 è formato da quattro gruppi di numeri separati da un ____.",
+    "answer": "punto",
+    "bank": [
+      "punto",
+      "trattino",
+      "due punti",
+      "spazio"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Possiamo immaginare l'indirizzo IP come il ____ di una casa.",
+    "answer": "numero civico",
+    "bank": [
+      "numero civico",
+      "nome del proprietario",
+      "codice postale",
+      "numero di telefono"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Gli indirizzi IPv4, pur essendo oltre quattro miliardi, non sono più sufficienti per soddisfare la crescita dei dispositivi ____.",
+    "answer": "connessi",
+    "bank": [
+      "connessi",
+      "cifrati",
+      "locali",
+      "pubblici"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'indirizzo IP ____ viene assegnato dal provider Internet e identifica l'intera rete di casa verso il resto del mondo.",
+    "answer": "pubblico",
+    "bank": [
+      "pubblico",
+      "privato",
+      "locale",
+      "temporaneo"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'indirizzo IP ____ viene assegnato dal router a ciascun dispositivo e viene utilizzato all'interno della LAN.",
+    "answer": "privato",
+    "bank": [
+      "privato",
+      "pubblico",
+      "statico",
+      "remoto"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "fondamenta-reti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il 3 febbraio 2011 la IANA annunciò l'esaurimento dell'ultimo blocco di indirizzi ____ disponibili.",
+    "answer": "IPv4",
+    "bank": [
+      "IPv4",
+      "IPv6",
+      "Wi-Fi",
+      "Ethernet"
+    ]
+  }
+]

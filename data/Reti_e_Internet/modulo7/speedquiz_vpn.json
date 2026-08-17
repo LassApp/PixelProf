@@ -1,0 +1,737 @@
+[
+  {
+    "id": 1,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'acronimo VPN?",
+    "options": [
+      "Virtual Public Network",
+      "Virtual Private Network",
+      "Verified Private Network",
+      "Virtual Protected Node"
+    ],
+    "correctIndex": 1,
+    "explanation": "VPN sta per Virtual Private Network, in italiano Rete Privata Virtuale."
+  },
+  {
+    "id": 2,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa crea una VPN tra un dispositivo e un server remoto?",
+    "options": [
+      "Una connessione protetta e cifrata",
+      "Una connessione più veloce ma non protetta",
+      "Un collegamento fisico dedicato",
+      "Una rete Wi-Fi separata"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una VPN crea una connessione protetta e cifrata attraverso Internet."
+  },
+  {
+    "id": 3,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché i dati vengono cifrati prima di lasciare il dispositivo quando si usa una VPN?",
+    "options": [
+      "Per aumentare la velocità di trasmissione",
+      "Per renderli illeggibili a chi non possiede la chiave corretta",
+      "Per ridurne le dimensioni",
+      "Per renderli compatibili con più dispositivi"
+    ],
+    "correctIndex": 1,
+    "explanation": "La cifratura trasforma i dati in una forma illeggibile per chiunque non possieda la chiave corretta."
+  },
+  {
+    "id": 4,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dal punto di vista di un sito web visitato, da dove sembra provenire la connessione di un utente che utilizza una VPN?",
+    "options": [
+      "Dal dispositivo dell'utente",
+      "Dal provider Internet dell'utente",
+      "Dal server VPN",
+      "Dal router di casa dell'utente"
+    ],
+    "correctIndex": 2,
+    "explanation": "I siti visitati vedono la connessione provenire dal server VPN, non direttamente dal dispositivo."
+  },
+  {
+    "id": 5,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa NON fa una VPN, secondo il modulo?",
+    "options": [
+      "Non rende invisibili su Internet e non elimina i malware",
+      "Non cifra mai i dati",
+      "Non può collegarsi a reti aziendali",
+      "Non funziona su reti Wi-Fi pubbliche"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo specifica che una VPN non rende invisibili su Internet, non elimina i malware e non sostituisce antivirus, firewall o buone pratiche di sicurezza."
+  },
+  {
+    "id": 6,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della città utilizzata nel modulo, a cosa viene paragonata una VPN?",
+    "options": [
+      "A un semaforo",
+      "A un tunnel privato e sorvegliato costruito sotto la città",
+      "A un parcheggio pubblico",
+      "A un ponte aperto a tutti"
+    ],
+    "correctIndex": 1,
+    "explanation": "La VPN viene paragonata a un tunnel privato e sorvegliato, dove nessuno dall'esterno può osservare cosa viene trasportato."
+  },
+  {
+    "id": 7,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per cosa vengono utilizzate soprattutto le VPN, secondo il modulo?",
+    "options": [
+      "Per proteggere la riservatezza delle comunicazioni, accedere alle reti aziendali e ridurre i rischi sulle reti Wi-Fi pubbliche",
+      "Per aumentare la memoria del dispositivo",
+      "Per eliminare completamente i virus",
+      "Per velocizzare il download di file"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le VPN vengono utilizzate per proteggere la riservatezza delle comunicazioni, accedere in modo sicuro alle reti aziendali e ridurre i rischi sulle reti Wi-Fi pubbliche."
+  },
+  {
+    "id": 8,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se i dati transitano attraverso reti come il Wi-Fi di un hotel, senza VPN?",
+    "options": [
+      "Sono automaticamente protetti da HTTPS",
+      "Possono transitare attraverso reti che non controlliamo direttamente",
+      "Vengono bloccati dal provider",
+      "Diventano invisibili agli attaccanti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Normalmente le informazioni possono transitare attraverso reti che non controlliamo, come il Wi-Fi di un hotel, di un aeroporto o di un bar."
+  },
+  {
+    "id": 9,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il tunnel VPN?",
+    "options": [
+      "Un collegamento fisico dedicato tra due edifici",
+      "Il canale di comunicazione sicuro creato tra il dispositivo e il server VPN",
+      "Un tipo di malware",
+      "Un protocollo per velocizzare Internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il tunnel VPN è il canale di comunicazione sicuro creato tra il dispositivo dell'utente e il server VPN."
+  },
+  {
+    "id": 10,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa possono vedere router e provider Internet durante il transito dei dati nel tunnel VPN?",
+    "options": [
+      "Il contenuto completo dei dati trasmessi",
+      "Solo che esiste una comunicazione tra dispositivo e server VPN",
+      "Le password digitate dall'utente",
+      "I documenti scaricati dall'utente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Router e provider possono vedere solo che esiste una comunicazione verso il server VPN, ma non il contenuto dei dati."
+  },
+  {
+    "id": 11,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se un sito visitato oltre il server VPN utilizza ancora il protocollo HTTP?",
+    "options": [
+      "Il traffico oltre il server VPN non sarà protetto",
+      "La VPN blocca automaticamente la connessione",
+      "I dati vengono cifrati due volte",
+      "Il sito diventa inaccessibile"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se il sito utilizza HTTP invece di HTTPS, il traffico oltre il server VPN non sarà protetto."
+  },
+  {
+    "id": 12,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, qual è il rapporto tra VPN e HTTPS?",
+    "options": [
+      "Sono tecnologie alternative e incompatibili",
+      "Sono tecnologie complementari che lavorano insieme",
+      "L'HTTPS sostituisce completamente la VPN",
+      "La VPN rende inutile l'HTTPS"
+    ],
+    "correctIndex": 1,
+    "explanation": "VPN e HTTPS non sono tecnologie alternative, ma complementari: lavorano insieme per aumentare la sicurezza delle comunicazioni."
+  },
+  {
+    "id": 13,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché molte organizzazioni hanno iniziato a permettere l'accesso ai sistemi aziendali esclusivamente tramite VPN con la diffusione dello smart working?",
+    "options": [
+      "Per ridurre i costi delle licenze software",
+      "Per ridurre il rischio di intercettazione delle comunicazioni durante il collegamento remoto",
+      "Per aumentare la velocità di connessione",
+      "Per eliminare la necessità di password"
+    ],
+    "correctIndex": 1,
+    "explanation": "Questa architettura ha ridotto notevolmente il rischio di intercettazione delle comunicazioni durante il collegamento remoto."
+  },
+  {
+    "id": 14,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del contenitore blindato, cosa rappresenta il tunnel VPN?",
+    "options": [
+      "La velocità di consegna",
+      "La corsia riservata su cui viaggia il contenitore, di cui nessuno può conoscere il contenuto",
+      "Il prezzo del trasporto",
+      "Il numero di veicoli sulla strada"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il tunnel VPN protegge il contenuto del viaggio, non la strada su cui esso si muove, come un contenitore blindato trasportato su una corsia riservata."
+  },
+  {
+    "id": 15,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa un dispositivo prima di trasmettere una richiesta attraverso una VPN?",
+    "options": [
+      "Cifra i dati utilizzando algoritmi crittografici",
+      "Invia i dati senza alcuna protezione",
+      "Contatta direttamente il sito di destinazione",
+      "Elimina la cronologia di navigazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Prima di trasmettere la richiesta, il dispositivo cifra i dati utilizzando algoritmi crittografici."
+  },
+  {
+    "id": 16,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In base a cosa si classificano le VPN, secondo il modulo?",
+    "options": [
+      "In base al colore dell'icona",
+      "In base al loro scopo",
+      "In base alla marca del dispositivo",
+      "In base alla velocità della connessione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le VPN possono essere classificate in base al loro scopo."
+  },
+  {
+    "id": 17,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono le tre principali tipologie di VPN indicate nel modulo?",
+    "options": [
+      "Remote Access, Site-to-Site, Commerciali",
+      "Pubbliche, Private, Miste",
+      "Domestiche, Aziendali, Governative",
+      "Gratuite, A pagamento, Ibride"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le principali tipologie di VPN sono Remote Access, Site-to-Site e Commerciali."
+  },
+  {
+    "id": 18,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette una VPN Remote Access?",
+    "options": [
+      "Il collegamento permanente tra due sedi aziendali",
+      "A un singolo utente di collegarsi in modo sicuro alla rete di un'organizzazione attraverso Internet",
+      "Di nascondere completamente l'identità su Internet",
+      "Di velocizzare la connessione domestica"
+    ],
+    "correctIndex": 1,
+    "explanation": "La VPN Remote Access permette a un singolo utente di collegarsi in modo sicuro alla rete di un'organizzazione attraverso Internet."
+  },
+  {
+    "id": 19,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa collega una VPN Site-to-Site?",
+    "options": [
+      "Un singolo dispositivo a un server pubblico",
+      "Due o più reti geograficamente separate",
+      "Un utente a un social network",
+      "Un router a uno smartphone"
+    ],
+    "correctIndex": 1,
+    "explanation": "La VPN Site-to-Site collega due o più reti geograficamente separate, facendole comunicare come se appartenessero alla stessa rete locale."
+  },
+  {
+    "id": 20,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi gestisce generalmente il collegamento di una VPN Site-to-Site?",
+    "options": [
+      "Ogni singolo dipendente manualmente",
+      "I router o i firewall aziendali",
+      "Un provider di posta elettronica",
+      "Il sistema operativo del computer"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il collegamento è generalmente permanente ed è gestito direttamente dai router o dai firewall aziendali, senza richiedere alcun intervento da parte degli utenti."
+  },
+  {
+    "id": 21,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'obiettivo principale di una VPN commerciale?",
+    "options": [
+      "Collegare due sedi aziendali",
+      "Proteggere la navigazione dell'utente e aumentare la privacy online",
+      "Sostituire completamente l'antivirus",
+      "Velocizzare il caricamento dei siti web"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le VPN commerciali hanno l'obiettivo di proteggere la navigazione dell'utente, soprattutto su reti Wi-Fi pubbliche, e aumentare la privacy online."
+  },
+  {
+    "id": 22,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa comporta l'utilizzo di una VPN commerciale, secondo il modulo?",
+    "options": [
+      "Una parte della fiducia viene trasferita al gestore della VPN",
+      "L'utente diventa completamente anonimo",
+      "La connessione diventa sempre più veloce",
+      "Il traffico non passa più attraverso alcun server"
+    ],
+    "correctIndex": 0,
+    "explanation": "Utilizzando servizi VPN commerciali, una parte della fiducia viene trasferita al gestore della VPN, poiché il traffico passa attraverso i suoi server."
+  },
+  {
+    "id": 23,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rimane identico in tutte le tipologie di VPN, secondo il modulo?",
+    "options": [
+      "Il prezzo del servizio",
+      "Il meccanismo: i dati vengono cifrati, attraversano un tunnel protetto e vengono decifrati nel punto previsto",
+      "Il numero di utenti collegati",
+      "La velocità della connessione"
+    ],
+    "correctIndex": 1,
+    "explanation": "In tutte le soluzioni il meccanismo rimane identico: cambia lo scopo della connessione e il contesto in cui la VPN viene utilizzata."
+  },
+  {
+    "id": 24,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa hanno in comune tutte le tipologie di VPN nonostante i diversi scopi?",
+    "options": [
+      "Il costo del servizio",
+      "La creazione di un tunnel cifrato basato sullo stesso principio",
+      "Il numero massimo di utenti collegabili",
+      "La velocità della connessione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le VPN si basano sullo stesso principio, cioè la creazione di un tunnel cifrato, pur differenziandosi per chi viene collegato e per lo scopo."
+  },
+  {
+    "id": 25,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché molte multinazionali utilizzano VPN Site-to-Site tra le proprie sedi?",
+    "options": [
+      "Per condividere applicazioni, database e servizi interni senza costosi collegamenti dedicati",
+      "Per ridurre il numero di dipendenti",
+      "Per eliminare la necessità di server aziendali",
+      "Per aumentare la pubblicità online"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le VPN Site-to-Site permettono di condividere applicazioni, database e servizi interni senza ricorrere a costosi collegamenti dedicati tra le sedi."
+  },
+  {
+    "id": 26,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede al collegamento in una VPN Site-to-Site rispetto all'intervento degli utenti?",
+    "options": [
+      "Richiede continui interventi manuali degli utenti",
+      "È gestito direttamente da router o firewall, senza intervento degli utenti",
+      "Richiede una nuova autenticazione ogni ora",
+      "Funziona solo se gli utenti sono online contemporaneamente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il collegamento Site-to-Site è generalmente permanente ed è gestito direttamente dai router o dai firewall aziendali, senza richiedere intervento da parte degli utenti."
+  },
+  {
+    "id": 27,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando dovrebbe essere utilizzata una VPN, secondo la definizione del modulo?",
+    "options": [
+      "Solo quando si naviga su siti senza HTTPS",
+      "Ogni volta che è necessario proteggere le comunicazioni su reti non completamente affidabili",
+      "Solo per accedere ai social network",
+      "Solo di notte"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una VPN dovrebbe essere utilizzata per proteggere le comunicazioni, accedere in sicurezza a una rete privata o ridurre l'esposizione delle informazioni su reti non completamente affidabili."
+  },
+  {
+    "id": 28,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché le reti Wi-Fi pubbliche rappresentano uno scenario comune per l'uso della VPN?",
+    "options": [
+      "Perché sono sempre gratuite",
+      "Perché sono infrastrutture condivise da numerosi utenti su cui non abbiamo alcun controllo",
+      "Perché offrono sempre una connessione più veloce",
+      "Perché richiedono sempre una password complessa"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le reti Wi-Fi pubbliche sono infrastrutture condivise da numerosi utenti e sulle quali non abbiamo alcun controllo."
+  },
+  {
+    "id": 29,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa consentono molte aziende ai propri dipendenti tramite VPN durante il lavoro da remoto?",
+    "options": [
+      "Di collegarsi ai server interni mantenendo una connessione cifrata",
+      "Di accedere gratuitamente a qualsiasi sito web",
+      "Di eliminare la necessità di password",
+      "Di aumentare automaticamente la velocità della rete domestica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Molte aziende consentono ai dipendenti di collegarsi ai server interni esclusivamente tramite VPN, mantenendo una connessione cifrata."
+  },
+  {
+    "id": 30,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, in una normale navigazione domestica su un sito HTTPS, la VPN è...?",
+    "options": [
+      "Sempre indispensabile",
+      "Non sempre strettamente necessaria, anche se può offrire vantaggi di privacy",
+      "Vietata dalla legge",
+      "Inefficace contro qualsiasi minaccia"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se il sito utilizza HTTPS, la comunicazione è già cifrata; la VPN può offrire vantaggi di privacy ma non è sempre strettamente necessaria."
+  },
+  {
+    "id": 31,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa consigliano gli esperti di sicurezza durante grandi eventi internazionali come fiere o conferenze?",
+    "options": [
+      "Di disattivare sempre il Wi-Fi",
+      "Di utilizzare una VPN quando ci si collega ai Wi-Fi pubblici messi a disposizione degli ospiti",
+      "Di condividere la password Wi-Fi con altri partecipanti",
+      "Di utilizzare solo reti dati mobili"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gli esperti consigliano di utilizzare una VPN sui Wi-Fi pubblici degli eventi, poiché queste reti possono diventare bersaglio di attacchi o intercettazioni."
+  },
+  {
+    "id": 32,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'impermeabile, quando la VPN offre il massimo vantaggio?",
+    "options": [
+      "Quando si è al sicuro in casa con il sole",
+      "Quando ci si trova in ambienti digitali più esposti",
+      "Solo di sera",
+      "Solo su dispositivi nuovi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Come un impermeabile è utile quando piove, la VPN offre il massimo vantaggio negli ambienti digitali più esposti, come le reti pubbliche."
+  },
+  {
+    "id": 33,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi, oltre ai dipendenti in smart working, utilizza frequentemente le VPN secondo il modulo?",
+    "options": [
+      "Solo i turisti",
+      "Professionisti che viaggiano, studenti universitari e amministratori di sistema",
+      "Solo i minori di 18 anni",
+      "Solo il personale bancario"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le VPN sono utilizzate anche da professionisti che viaggiano frequentemente, studenti che accedono ai servizi universitari e amministratori di sistema."
+  },
+  {
+    "id": 34,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene definita la privacy nel modulo?",
+    "options": [
+      "Il diritto di controllare le informazioni che ci riguardano e decidere come vengono raccolte, utilizzate e condivise",
+      "La possibilità di navigare senza mai autenticarsi",
+      "L'assenza totale di dati personali online",
+      "Un servizio offerto solo dalle VPN commerciali"
+    ],
+    "correctIndex": 0,
+    "explanation": "La privacy è il diritto di controllare le informazioni che ci riguardano e decidere come vengono raccolte, utilizzate e condivise."
+  },
+  {
+    "id": 35,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Una VPN garantisce l'anonimato assoluto su Internet?",
+    "options": [
+      "Sì, sempre",
+      "No, migliora la privacy ma non garantisce l'anonimato assoluto",
+      "Solo se si usa una VPN commerciale",
+      "Solo su reti Wi-Fi pubbliche"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una VPN può migliorare la privacy nascondendo l'indirizzo IP, ma non garantisce l'anonimato assoluto."
+  },
+  {
+    "id": 36,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa continua a riconoscere un servizio come la posta elettronica anche quando si utilizza una VPN?",
+    "options": [
+      "L'indirizzo IP del server VPN",
+      "Le credenziali di accesso dell'utente",
+      "Il tipo di dispositivo utilizzato",
+      "La velocità della connessione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se un utente accede al proprio account di posta elettronica, il servizio continua a riconoscerlo attraverso le credenziali di accesso, indipendentemente dalla VPN."
+  },
+  {
+    "id": 37,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i browser fingerprint, secondo il modulo?",
+    "options": [
+      "Tecniche che identificano un dispositivo in base alle sue caratteristiche",
+      "Un tipo di password biometrica",
+      "Un componente hardware della VPN",
+      "Un protocollo di cifratura"
+    ],
+    "correctIndex": 0,
+    "explanation": "I browser fingerprint sono tecniche che identificano un dispositivo in base alle sue caratteristiche e possono raccogliere informazioni sull'utente anche con la VPN attiva."
+  },
+  {
+    "id": 38,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede alla fiducia quando si utilizza un servizio VPN?",
+    "options": [
+      "Scompare completamente",
+      "Si sposta dal provider Internet al fornitore della VPN",
+      "Aumenta automaticamente verso tutti i siti visitati",
+      "Viene trasferita al browser utilizzato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Quando si utilizza una VPN, parte della fiducia si sposta dal provider Internet al fornitore della VPN."
+  },
+  {
+    "id": 39,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica una politica \"no-log\" dichiarata da alcuni provider VPN?",
+    "options": [
+      "Di non conservare registri delle attività degli utenti",
+      "Di bloccare tutti gli accessi non autorizzati",
+      "Di offrire il servizio gratuitamente",
+      "Di cifrare i dati due volte"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una politica \"no-log\" indica l'impegno a non conservare registri delle attività degli utenti."
+  },
+  {
+    "id": 40,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del mantello, cosa succede quando si entra in banca e si mostra un documento d'identità?",
+    "options": [
+      "Il personale non riesce comunque a riconoscere la persona",
+      "Il personale saprà comunque chi è la persona",
+      "La banca rifiuta l'accesso",
+      "Il mantello diventa invisibile"
+    ],
+    "correctIndex": 1,
+    "explanation": "Anche indossando un mantello che rende discreti, mostrando un documento d'identità il personale della banca saprà comunque chi sei; la VPN funziona in modo simile."
+  },
+  {
+    "id": 41,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa impedisce il traffico cifrato di una VPN a chi gestisce la rete Wi-Fi o al provider Internet?",
+    "options": [
+      "Di sapere che esiste una connessione",
+      "Di leggere il contenuto delle comunicazioni",
+      "Di fornire l'accesso a Internet",
+      "Di bloccare il dispositivo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il traffico cifrato impedisce a chi gestisce la rete Wi-Fi o al provider Internet di leggere il contenuto delle comunicazioni, anche se possono sapere che esiste una connessione verso un server VPN."
+  },
+  {
+    "id": 42,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa protegge principalmente una VPN, secondo il capitolo sui limiti?",
+    "options": [
+      "Ogni aspetto della sicurezza informatica",
+      "La connessione tra il dispositivo e il server VPN",
+      "Solo i dispositivi mobili",
+      "Solo le reti aziendali"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una VPN protegge la connessione tra il dispositivo e il server VPN, ma non elimina tutte le minacce informatiche."
+  },
+  {
+    "id": 43,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa NON sostituisce una VPN, secondo il modulo?",
+    "options": [
+      "Antivirus, firewall, autenticazione a più fattori e aggiornamenti di sicurezza",
+      "Solo l'antivirus",
+      "Solo il firewall",
+      "Nessuno strumento, la VPN li sostituisce tutti"
+    ],
+    "correctIndex": 0,
+    "explanation": "La VPN non sostituisce un antivirus, un firewall, l'autenticazione a più fattori, gli aggiornamenti di sicurezza o un comportamento prudente."
+  },
+  {
+    "id": 44,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accade se un utente inserisce volontariamente le proprie credenziali in un sito fraudolento mentre usa una VPN?",
+    "options": [
+      "La VPN blocca automaticamente l'invio dei dati",
+      "La VPN trasmette i dati in modo cifrato, ma li consegna comunque al sito malevolo",
+      "I dati vengono automaticamente cancellati",
+      "Il sito diventa inaccessibile"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il problema non è la sicurezza della connessione, ma il destinatario sbagliato: la VPN cifra il trasporto ma non impedisce di consegnare dati a un sito malevolo."
+  },
+  {
+    "id": 45,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che modo le prestazioni di una connessione possono essere influenzate dall'uso di una VPN?",
+    "options": [
+      "Diventano sempre più veloci",
+      "Possono risultare più lente, specialmente se il server VPN è distante o congestionato",
+      "Non cambiano mai",
+      "Migliorano solo su reti Wi-Fi pubbliche"
+    ],
+    "correctIndex": 1,
+    "explanation": "Poiché tutto il traffico deve attraversare il server VPN, la connessione può risultare più lenta, soprattutto se il server è distante o congestionato."
+  },
+  {
+    "id": 46,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché alcuni servizi online possono limitare o impedire l'accesso a chi utilizza una VPN?",
+    "options": [
+      "Perché rilevano l'utilizzo di server VPN per motivi di sicurezza o di licenza",
+      "Perché le VPN sono sempre illegali",
+      "Perché le VPN rallentano i loro server",
+      "Perché le VPN consumano troppa energia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Alcuni servizi possono rilevare l'utilizzo di server VPN e limitarne o impedirne l'accesso per motivi di sicurezza o di licenza."
+  },
+  {
+    "id": 47,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostrano le numerose campagne di phishing citate nel modulo?",
+    "options": [
+      "Che le VPN sono completamente inefficaci",
+      "Che molti attacchi sfruttano il fattore umano più che le debolezze della connessione",
+      "Che il phishing avviene solo su reti Wi-Fi pubbliche",
+      "Che le VPN aumentano il rischio di phishing"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le campagne di phishing hanno colpito utenti indipendentemente dall'uso della VPN, dimostrando che molti attacchi sfruttano il fattore umano."
+  },
+  {
+    "id": 48,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'auto blindata, cosa succede se il conducente consegna le chiavi a uno sconosciuto?",
+    "options": [
+      "La blindatura impedisce comunque il furto",
+      "La blindatura non può impedirlo, perché il mezzo era sicuro ma la decisione ha vanificato la protezione",
+      "L'auto si blocca automaticamente",
+      "Nulla, la situazione non cambia"
+    ],
+    "correctIndex": 1,
+    "explanation": "Come un'auto blindata non può impedire una decisione sbagliata del conducente, la VPN non può impedire che un utente consegni volontariamente le proprie credenziali."
+  },
+  {
+    "id": 49,
+    "module": "vpn",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa NON impedisce direttamente una VPN, secondo il capitolo sui limiti?",
+    "options": [
+      "Il download di un programma infetto",
+      "L'accesso a un server VPN",
+      "La creazione del tunnel cifrato",
+      "La cifratura dei dati in transito"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una VPN non impedisce di scaricare un programma infetto, non blocca automaticamente virus o ransomware e non corregge le vulnerabilità del sistema."
+  }
+]

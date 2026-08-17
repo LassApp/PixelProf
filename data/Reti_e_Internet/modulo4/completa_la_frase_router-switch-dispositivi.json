@@ -1,0 +1,502 @@
+[
+  {
+    "sentence": "Un ____ è un dispositivo di rete che collega due o più reti differenti e decide il percorso dei dati.",
+    "answer": "router",
+    "bank": [
+      "switch",
+      "modem",
+      "router",
+      "hub"
+    ]
+  },
+  {
+    "sentence": "Il termine router deriva dall'inglese to route, che significa ____.",
+    "answer": "instradare",
+    "bank": [
+      "collegare",
+      "instradare",
+      "proteggere",
+      "velocizzare"
+    ]
+  },
+  {
+    "sentence": "Nella maggior parte delle abitazioni il router collega la rete locale (LAN) a ____.",
+    "answer": "Internet (WAN)",
+    "bank": [
+      "Internet (WAN)",
+      "un altro router",
+      "il modem soltanto",
+      "la rete elettrica"
+    ]
+  },
+  {
+    "sentence": "Il router legge l'indirizzo ____ di destinazione contenuto nel pacchetto per decidere il percorso.",
+    "answer": "IP",
+    "bank": [
+      "MAC",
+      "IP",
+      "DNS",
+      "URL"
+    ]
+  },
+  {
+    "sentence": "Oltre a instradare il traffico, il router può creare la rete ____, proteggere la connessione e permettere la condivisione di Internet.",
+    "answer": "Wi-Fi",
+    "bank": [
+      "Wi-Fi",
+      "Ethernet",
+      "Bluetooth",
+      "NFC"
+    ]
+  },
+  {
+    "sentence": "Nel 2016 il malware ____ infettò centinaia di migliaia di router domestici e dispositivi IoT.",
+    "answer": "Mirai",
+    "bank": [
+      "Mirai",
+      "NotPetya",
+      "WannaCry",
+      "Stuxnet"
+    ]
+  },
+  {
+    "sentence": "Il malware Mirai sfruttò router protetti da password ____ o troppo deboli.",
+    "answer": "predefinite",
+    "bank": [
+      "predefinite",
+      "casuali",
+      "cifrate",
+      "temporanee"
+    ]
+  },
+  {
+    "sentence": "I dispositivi infettati da Mirai furono trasformati in una gigantesca ____.",
+    "answer": "botnet",
+    "bank": [
+      "botnet",
+      "VLAN",
+      "LAN",
+      "DMZ"
+    ]
+  },
+  {
+    "sentence": "L'attacco della botnet Mirai del 2016 colpì il provider DNS ____.",
+    "answer": "Dyn",
+    "bank": [
+      "Dyn",
+      "Cloudflare",
+      "Akamai",
+      "Google"
+    ]
+  },
+  {
+    "sentence": "A seguito dell'attacco a Dyn, servizi come Netflix, Spotify, Reddit e ____ subirono interruzioni.",
+    "answer": "X (Twitter)",
+    "bank": [
+      "X (Twitter)",
+      "Amazon",
+      "LinkedIn",
+      "TikTok"
+    ]
+  },
+  {
+    "sentence": "Uno ____ è un dispositivo che collega più dispositivi della stessa LAN e inoltra i dati solo al destinatario.",
+    "answer": "switch",
+    "bank": [
+      "switch",
+      "modem",
+      "router",
+      "hub"
+    ]
+  },
+  {
+    "sentence": "Lo switch analizza il ____ del destinatario per sapere dove inoltrare i dati.",
+    "answer": "MAC Address",
+    "bank": [
+      "MAC Address",
+      "indirizzo IP pubblico",
+      "nome host",
+      "numero di porta"
+    ]
+  },
+  {
+    "sentence": "Lo switch costruisce automaticamente una ____ osservando il traffico di rete.",
+    "answer": "tabella",
+    "bank": [
+      "tabella",
+      "VLAN",
+      "password",
+      "chiave"
+    ]
+  },
+  {
+    "sentence": "Gli switch più semplici, che funzionano appena collegati, si chiamano ____ switch.",
+    "answer": "unmanaged",
+    "bank": [
+      "unmanaged",
+      "managed",
+      "core",
+      "virtual"
+    ]
+  },
+  {
+    "sentence": "Gli switch ____ permettono di configurare reti complesse, creare VLAN e monitorare il traffico.",
+    "answer": "managed",
+    "bank": [
+      "managed",
+      "unmanaged",
+      "wireless",
+      "mobile"
+    ]
+  },
+  {
+    "sentence": "Le quattro porte Ethernet sul retro di un router domestico sono, di fatto, un piccolo ____ incorporato.",
+    "answer": "switch",
+    "bank": [
+      "switch",
+      "hub",
+      "modem",
+      "server DNS"
+    ]
+  },
+  {
+    "sentence": "Nel marzo 2021, a Oldsmar in Florida, un attaccante tentò di modificare i livelli di ____ nell'acqua potabile di un impianto di trattamento.",
+    "answer": "idrossido di sodio",
+    "bank": [
+      "idrossido di sodio",
+      "cloro liquido",
+      "anidride carbonica",
+      "ammoniaca"
+    ]
+  },
+  {
+    "sentence": "Nel caso di Oldsmar, per separare i sistemi di controllo dai computer degli uffici si utilizzano switch gestiti con ____.",
+    "answer": "VLAN",
+    "bank": [
+      "VLAN",
+      "NAT",
+      "DHCP",
+      "DNS"
+    ]
+  },
+  {
+    "sentence": "Un ____ è un dispositivo che copia i dati verso tutte le porte a cui è collegato.",
+    "answer": "hub",
+    "bank": [
+      "hub",
+      "switch",
+      "router",
+      "modem"
+    ]
+  },
+  {
+    "sentence": "Quando più dispositivi trasmettono nello stesso momento su un hub, possono verificarsi ____.",
+    "answer": "collisioni",
+    "bank": [
+      "collisioni",
+      "cifrature",
+      "sincronizzazioni",
+      "traduzioni"
+    ]
+  },
+  {
+    "sentence": "Gli hub sono praticamente scomparsi dalle reti moderne perché gli switch offrono prestazioni superiori a costi ____.",
+    "answer": "contenuti",
+    "bank": [
+      "contenuti",
+      "elevatissimi",
+      "variabili",
+      "nascosti"
+    ]
+  },
+  {
+    "sentence": "Se al posto dello switch fosse presente un hub, ogni fotografia verrebbe inviata anche ai dispositivi che non devono ____ le immagini.",
+    "answer": "visualizzare",
+    "bank": [
+      "visualizzare",
+      "cifrare",
+      "sincronizzare",
+      "cancellare"
+    ]
+  },
+  {
+    "sentence": "Nelle reti con hub degli anni '90 e primi anni 2000 era possibile ____ il traffico destinato ad altri computer collegati allo stesso hub.",
+    "answer": "intercettare",
+    "bank": [
+      "intercettare",
+      "cifrare",
+      "duplicare",
+      "bloccare"
+    ]
+  },
+  {
+    "sentence": "L'acronimo modem deriva da MOdulator-____.",
+    "answer": "DEModulator",
+    "bank": [
+      "DEModulator",
+      "DEcoder",
+      "DEvice",
+      "DEsign"
+    ]
+  },
+  {
+    "sentence": "Il modem converte i segnali affinché possano viaggiare sul mezzo trasmissivo, come la linea telefonica, la fibra ottica o la rete via ____.",
+    "answer": "cavo",
+    "bank": [
+      "cavo",
+      "satellite",
+      "radio",
+      "laser"
+    ]
+  },
+  {
+    "sentence": "Il router, a differenza del modem, si occupa della gestione del ____ tra la rete domestica e Internet.",
+    "answer": "traffico",
+    "bank": [
+      "traffico",
+      "segnale",
+      "cavo",
+      "firmware"
+    ]
+  },
+  {
+    "sentence": "Il dispositivo che integra sia le funzioni di modem sia quelle di router si chiama ____.",
+    "answer": "modem-router",
+    "bank": [
+      "modem-router",
+      "access point",
+      "gateway DNS",
+      "switch gestito"
+    ]
+  },
+  {
+    "sentence": "Nei dispositivi moderni, oltre a modem e router, sono spesso integrati anche lo switch Ethernet, il punto di accesso Wi-Fi e il ____.",
+    "answer": "firewall",
+    "bank": [
+      "firewall",
+      "DNS pubblico",
+      "VPN",
+      "NAS"
+    ]
+  },
+  {
+    "sentence": "Nel 2021, milioni di modem-router furono colpiti da vulnerabilità nel software di gestione ____.",
+    "answer": "remoto",
+    "bank": [
+      "remoto",
+      "locale",
+      "vocale",
+      "grafico"
+    ]
+  },
+  {
+    "sentence": "Le vulnerabilità del 2021 nei modem-router evidenziarono l'importanza di mantenere aggiornato il ____.",
+    "answer": "firmware",
+    "bank": [
+      "firmware",
+      "DNS",
+      "NAT",
+      "MAC Address"
+    ]
+  },
+  {
+    "sentence": "Il ____ permette a più dispositivi di una rete locale di condividere un unico indirizzo IP pubblico.",
+    "answer": "NAT",
+    "bank": [
+      "NAT",
+      "DHCP",
+      "DNS",
+      "VLAN"
+    ]
+  },
+  {
+    "sentence": "L'acronimo NAT sta per Network Address ____.",
+    "answer": "Translation",
+    "bank": [
+      "Translation",
+      "Transmission",
+      "Transfer",
+      "Tracking"
+    ]
+  },
+  {
+    "sentence": "All'interno della rete domestica vengono utilizzati indirizzi IP ____, che non sono raggiungibili direttamente da Internet.",
+    "answer": "privati",
+    "bank": [
+      "privati",
+      "pubblici",
+      "statici",
+      "temporanei"
+    ]
+  },
+  {
+    "sentence": "Prima di inoltrare un pacchetto verso Internet, il router sostituisce l'indirizzo IP privato con l'indirizzo IP ____ della connessione.",
+    "answer": "pubblico",
+    "bank": [
+      "pubblico",
+      "privato",
+      "temporaneo",
+      "locale"
+    ]
+  },
+  {
+    "sentence": "Grazie al NAT, chi si trova all'esterno della rete domestica vede soltanto l'indirizzo IP ____ del router.",
+    "answer": "pubblico",
+    "bank": [
+      "pubblico",
+      "privato",
+      "MAC",
+      "DNS"
+    ]
+  },
+  {
+    "sentence": "La configurazione che associa una porta di rete a un dispositivo specifico per renderlo raggiungibile da Internet si chiama ____.",
+    "answer": "Port Forwarding",
+    "bank": [
+      "Port Forwarding",
+      "Port Scanning",
+      "Port Mirroring",
+      "Port Blocking"
+    ]
+  },
+  {
+    "sentence": "Il NAT è diventato fondamentale perché gli indirizzi ____ disponibili si sono progressivamente esauriti.",
+    "answer": "IPv4",
+    "bank": [
+      "IPv4",
+      "IPv6",
+      "MAC",
+      "DNS"
+    ]
+  },
+  {
+    "sentence": "Il ____ è un protocollo che assegna automaticamente ai dispositivi le impostazioni necessarie per comunicare in rete.",
+    "answer": "DHCP",
+    "bank": [
+      "DHCP",
+      "NAT",
+      "DNS",
+      "VLAN"
+    ]
+  },
+  {
+    "sentence": "L'acronimo DHCP sta per Dynamic Host Configuration ____.",
+    "answer": "Protocol",
+    "bank": [
+      "Protocol",
+      "Process",
+      "Provider",
+      "Program"
+    ]
+  },
+  {
+    "sentence": "Tra le informazioni assegnate dal DHCP rientrano l'indirizzo IP, la subnet mask, il gateway predefinito e i server ____.",
+    "answer": "DNS",
+    "bank": [
+      "DNS",
+      "MAC",
+      "NAT",
+      "VLAN"
+    ]
+  },
+  {
+    "sentence": "Nelle reti domestiche, il servizio DHCP è quasi sempre integrato nel ____.",
+    "answer": "router",
+    "bank": [
+      "router",
+      "modem",
+      "switch",
+      "firewall"
+    ]
+  },
+  {
+    "sentence": "Quando un dispositivo si collega per la prima volta alla rete senza un indirizzo IP, invia una richiesta in ____.",
+    "answer": "broadcast",
+    "bank": [
+      "broadcast",
+      "unicast",
+      "multicast",
+      "anycast"
+    ]
+  },
+  {
+    "sentence": "Il periodo di tempo per cui viene concesso un indirizzo IP dal DHCP si chiama ____.",
+    "answer": "lease",
+    "bank": [
+      "lease",
+      "token",
+      "slot",
+      "ticket"
+    ]
+  },
+  {
+    "sentence": "Un server DHCP non autorizzato collegato erroneamente alla rete si chiama ____ DHCP server.",
+    "answer": "rogue",
+    "bank": [
+      "rogue",
+      "remote",
+      "shadow",
+      "backup"
+    ]
+  },
+  {
+    "sentence": "Per dispositivi come server, stampanti di rete o telecamere di videosorveglianza si preferisce un indirizzo IP ____ oppure una prenotazione DHCP.",
+    "answer": "fisso",
+    "bank": [
+      "fisso",
+      "dinamico",
+      "temporaneo",
+      "pubblico"
+    ]
+  },
+  {
+    "sentence": "Una rete domestica è l'insieme dei dispositivi che comunicano tra loro e condividono la connessione Internet attraverso il ____.",
+    "answer": "router",
+    "bank": [
+      "router",
+      "DNS",
+      "ISP",
+      "firmware"
+    ]
+  },
+  {
+    "sentence": "Una rete domestica può essere composta da collegamenti via cavo Ethernet, wireless ____ oppure da una combinazione di entrambi.",
+    "answer": "Wi-Fi",
+    "bank": [
+      "Wi-Fi",
+      "Bluetooth",
+      "NFC",
+      "satellite"
+    ]
+  },
+  {
+    "sentence": "Quando due dispositivi della stessa rete comunicano, ad esempio con un NAS o una stampante, entra in gioco lo ____.",
+    "answer": "switch",
+    "bank": [
+      "switch",
+      "modem",
+      "DNS",
+      "firewall"
+    ]
+  },
+  {
+    "sentence": "DHCP, switch, router e ____ collaborano automaticamente affinché ogni dato raggiunga la destinazione corretta.",
+    "answer": "NAT",
+    "bank": [
+      "NAT",
+      "DNS",
+      "VPN",
+      "firmware"
+    ]
+  },
+  {
+    "sentence": "Dispositivi come telecamere IP, DVR e router lasciati con password predefinite o firmware non aggiornato sono stati spesso presi di mira per creare grandi ____.",
+    "answer": "botnet",
+    "bank": [
+      "botnet",
+      "VLAN",
+      "subnet",
+      "gateway"
+    ]
+  }
+]

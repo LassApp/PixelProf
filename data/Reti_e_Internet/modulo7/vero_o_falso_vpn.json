@@ -1,0 +1,380 @@
+[
+  {
+    "id": 1,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una VPN crea una connessione protetta e cifrata tra un dispositivo e un server remoto attraverso Internet.",
+    "answer": true,
+    "explanation": "È la definizione di VPN fornita nel modulo."
+  },
+  {
+    "id": 2,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una VPN rende completamente invisibili su Internet ed elimina tutti i malware.",
+    "answer": false,
+    "explanation": "Il modulo specifica che una VPN non rende invisibili su Internet e non elimina i malware."
+  },
+  {
+    "id": 3,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Grazie alla cifratura, i dati diventano illeggibili per chi non possiede la chiave corretta.",
+    "answer": true,
+    "explanation": "La cifratura trasforma le informazioni in una forma illeggibile senza la chiave corretta."
+  },
+  {
+    "id": 4,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Quando si utilizza una VPN, un sito visitato vede sempre l'indirizzo IP reale assegnato dal provider Internet dell'utente.",
+    "answer": false,
+    "explanation": "Il sito vede l'indirizzo IP del server VPN, non quello reale assegnato dal provider."
+  },
+  {
+    "id": 5,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le VPN vengono utilizzate per ridurre i rischi quando si utilizzano reti Wi-Fi pubbliche.",
+    "answer": true,
+    "explanation": "Le VPN riducono i rischi legati all'utilizzo di reti Wi-Fi pubbliche non controllate."
+  },
+  {
+    "id": 6,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una VPN sostituisce completamente antivirus e firewall.",
+    "answer": false,
+    "explanation": "La VPN non sostituisce antivirus, firewall o buone pratiche di sicurezza."
+  },
+  {
+    "id": 7,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Prima di lasciare il dispositivo, i dati vengono cifrati per proteggerli durante la trasmissione.",
+    "answer": true,
+    "explanation": "Prima che i dati lascino il dispositivo, vengono cifrati in una forma illeggibile senza la chiave corretta."
+  },
+  {
+    "id": 8,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il tunnel VPN è il canale di comunicazione sicuro creato tra il dispositivo dell'utente e il server VPN.",
+    "answer": true,
+    "explanation": "È la definizione di tunnel VPN fornita nel modulo."
+  },
+  {
+    "id": 9,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il termine \"tunnel\" nella VPN indica un collegamento fisico dedicato tra due edifici.",
+    "answer": false,
+    "explanation": "Il tunnel non è un collegamento fisico, ma un canale logico protetto creato sopra l'infrastruttura di Internet."
+  },
+  {
+    "id": 10,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Router e provider Internet possono vedere che esiste una comunicazione verso il server VPN, ma non il contenuto dei dati.",
+    "answer": true,
+    "explanation": "Durante il tragitto nel tunnel, il contenuto dei dati rimane illeggibile senza le chiavi di cifratura."
+  },
+  {
+    "id": 11,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se un sito utilizza HTTP oltre il server VPN, il traffico rimane comunque protetto.",
+    "answer": false,
+    "explanation": "Se il sito utilizza ancora HTTP, il traffico oltre il server VPN non sarà protetto."
+  },
+  {
+    "id": 12,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "VPN e HTTPS sono tecnologie complementari, non alternative.",
+    "answer": true,
+    "explanation": "VPN e HTTPS lavorano insieme per aumentare la sicurezza delle comunicazioni."
+  },
+  {
+    "id": 13,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Chi è collegato alla stessa rete Wi-Fi di un utente con VPN attiva può leggere le sue credenziali di accesso.",
+    "answer": false,
+    "explanation": "Chi è collegato alla stessa rete può vedere solo che esiste una comunicazione con un server VPN, non le credenziali."
+  },
+  {
+    "id": 14,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le risposte inviate dal server VPN al dispositivo dell'utente viaggiano sempre in chiaro, senza cifratura.",
+    "answer": false,
+    "explanation": "Le risposte vengono cifrate dal server VPN, attraversano il tunnel e vengono decifrate solo sul dispositivo dell'utente."
+  },
+  {
+    "id": 15,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le VPN si classificano in base al loro scopo.",
+    "answer": true,
+    "explanation": "Il modulo indica che le VPN possono essere classificate in base al loro scopo."
+  },
+  {
+    "id": 16,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La VPN Remote Access permette a un singolo utente di collegarsi in modo sicuro alla rete di un'organizzazione.",
+    "answer": true,
+    "explanation": "È la definizione di VPN Remote Access fornita nel modulo."
+  },
+  {
+    "id": 17,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La VPN Site-to-Site collega un singolo utente a un server pubblico.",
+    "answer": false,
+    "explanation": "La VPN Site-to-Site collega due o più reti geograficamente separate, non un singolo utente a un server pubblico."
+  },
+  {
+    "id": 18,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il collegamento di una VPN Site-to-Site è generalmente permanente e gestito da router o firewall aziendali.",
+    "answer": true,
+    "explanation": "Il collegamento è generalmente permanente e non richiede intervento da parte degli utenti."
+  },
+  {
+    "id": 19,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le VPN commerciali sono gestite esclusivamente dalle aziende che le utilizzano internamente per le proprie sedi.",
+    "answer": false,
+    "explanation": "Le VPN commerciali sono servizi offerti da aziende specializzate agli utenti, non collegamenti interni tra sedi aziendali."
+  },
+  {
+    "id": 20,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Utilizzando una VPN commerciale, una parte della fiducia viene trasferita al gestore della VPN.",
+    "answer": true,
+    "explanation": "Il traffico dell'utente passa attraverso i server del gestore della VPN commerciale."
+  },
+  {
+    "id": 21,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "In tutte le tipologie di VPN, i dati vengono cifrati, attraversano un tunnel protetto e vengono decifrati solo nel punto previsto.",
+    "answer": true,
+    "explanation": "Il meccanismo rimane identico in tutte le tipologie di VPN; cambia solo lo scopo della connessione."
+  },
+  {
+    "id": 22,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le reti Wi-Fi pubbliche sono infrastrutture condivise su cui non abbiamo alcun controllo.",
+    "answer": true,
+    "explanation": "Il modulo descrive le reti Wi-Fi pubbliche come infrastrutture condivise da numerosi utenti, senza controllo da parte del singolo."
+  },
+  {
+    "id": 23,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una VPN dovrebbe essere sempre attiva per principio, anche quando non aggiunge alcun beneficio.",
+    "answer": false,
+    "explanation": "La VPN non è una tecnologia da lasciare sempre attiva per principio, ma uno strumento da usare quando aggiunge un reale beneficio."
+  },
+  {
+    "id": 24,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Molte aziende permettono l'accesso ai server interni esclusivamente tramite VPN durante il lavoro da remoto.",
+    "answer": true,
+    "explanation": "Questo consente ai dipendenti di lavorare da casa mantenendo una connessione cifrata."
+  },
+  {
+    "id": 25,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se un sito utilizza HTTPS, la VPN è sempre strettamente indispensabile per proteggere la comunicazione.",
+    "answer": false,
+    "explanation": "Se il sito usa HTTPS la comunicazione è già cifrata; la VPN può offrire vantaggi ma non è sempre strettamente necessaria."
+  },
+  {
+    "id": 26,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante grandi eventi internazionali, gli esperti consigliano di usare una VPN sui Wi-Fi pubblici degli ospiti.",
+    "answer": true,
+    "explanation": "Le reti Wi-Fi pubbliche degli eventi possono diventare bersaglio di attacchi o tentativi di intercettazione."
+  },
+  {
+    "id": 27,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella normale navigazione domestica su un sito HTTPS, la comunicazione non è mai cifrata senza una VPN.",
+    "answer": false,
+    "explanation": "Se il sito utilizza HTTPS, la comunicazione è già cifrata tra il browser e il sito web, indipendentemente dalla VPN."
+  },
+  {
+    "id": 28,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La privacy è il diritto di controllare le informazioni che ci riguardano e decidere come vengono raccolte, utilizzate e condivise.",
+    "answer": true,
+    "explanation": "È la definizione di privacy fornita nel modulo."
+  },
+  {
+    "id": 29,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una VPN garantisce sempre l'anonimato assoluto su Internet.",
+    "answer": false,
+    "explanation": "Una VPN migliora la privacy ma non garantisce l'anonimato assoluto."
+  },
+  {
+    "id": 30,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I siti web vedono l'indirizzo IP del server VPN e non quello assegnato dal provider Internet dell'utente.",
+    "answer": true,
+    "explanation": "Questo rende più difficile associare immediatamente una connessione a una specifica rete domestica o aziendale."
+  },
+  {
+    "id": 31,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Accedendo al proprio account di posta elettronica mentre si usa una VPN, il servizio non può più riconoscere l'utente.",
+    "answer": false,
+    "explanation": "Il servizio continua a riconoscere l'utente attraverso le credenziali di accesso, indipendentemente dalla VPN."
+  },
+  {
+    "id": 32,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I browser fingerprint sono tecniche che identificano un dispositivo in base alle sue caratteristiche.",
+    "answer": true,
+    "explanation": "I browser fingerprint possono raccogliere informazioni sull'utente anche quando la VPN è attiva."
+  },
+  {
+    "id": 33,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Alcuni provider VPN dichiarano politiche \"no-log\" per non conservare registri delle attività degli utenti.",
+    "answer": true,
+    "explanation": "Alcune aziende hanno anche accettato verifiche indipendenti (audit) per dimostrare il rispetto di queste politiche."
+  },
+  {
+    "id": 34,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Quando si utilizza una VPN, la fiducia rimane interamente presso il provider Internet originale.",
+    "answer": false,
+    "explanation": "Parte della fiducia si sposta dal provider Internet al fornitore della VPN."
+  },
+  {
+    "id": 35,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una VPN protegge la connessione tra il dispositivo e il server VPN, ma non elimina tutte le minacce informatiche.",
+    "answer": true,
+    "explanation": "È la definizione dei limiti della VPN fornita nel modulo."
+  },
+  {
+    "id": 36,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una VPN sostituisce l'autenticazione a più fattori.",
+    "answer": false,
+    "explanation": "La VPN non sostituisce l'autenticazione a più fattori, l'antivirus, il firewall o gli aggiornamenti di sicurezza."
+  },
+  {
+    "id": 37,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se un utente inserisce le proprie credenziali in un sito fraudolento, la VPN cifra comunque l'invio dei dati al sito malevolo.",
+    "answer": true,
+    "explanation": "La VPN protegge il trasporto dei dati, ma non impedisce che vengano consegnati a un destinatario sbagliato."
+  },
+  {
+    "id": 38,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le prestazioni di una connessione VPN non sono mai influenzate dalla distanza del server.",
+    "answer": false,
+    "explanation": "La connessione può risultare più lenta, soprattutto se il server VPN è distante o congestionato."
+  },
+  {
+    "id": 39,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Alcuni servizi online possono rilevare l'uso di una VPN e limitarne o impedirne l'accesso.",
+    "answer": true,
+    "explanation": "Questo può avvenire per motivi di sicurezza o di licenza."
+  },
+  {
+    "id": 40,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le campagne di phishing colpiscono solo gli utenti che non utilizzano una VPN.",
+    "answer": false,
+    "explanation": "Numerose campagne di phishing hanno colpito utenti indipendentemente dall'utilizzo di una VPN."
+  },
+  {
+    "id": 41,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, molti attacchi sfruttano il fattore umano più che le debolezze della connessione.",
+    "answer": true,
+    "explanation": "Gli attaccanti spesso convincono le vittime a inserire spontaneamente le proprie credenziali in siti falsi."
+  },
+  {
+    "id": 42,
+    "module": "vpn",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la VPN è uno degli strumenti della sicurezza, non la sicurezza nel suo insieme.",
+    "answer": true,
+    "explanation": "Una protezione efficace nasce dalla combinazione di più misure che lavorano insieme."
+  }
+]

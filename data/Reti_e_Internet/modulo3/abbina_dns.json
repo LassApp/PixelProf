@@ -1,0 +1,150 @@
+[
+  {
+    "id": 1,
+    "module": "dns",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "DNS",
+        "definition": "Servizio che traduce i nomi di dominio nei corrispondenti indirizzi IP"
+      },
+      {
+        "term": "Compito del DNS",
+        "definition": "Termina nel momento in cui comunica al dispositivo l'indirizzo IP corretto"
+      },
+      {
+        "term": "Attacco a Dyn (2016)",
+        "definition": "Rese irraggiungibili servizi come Twitter, Spotify e Netflix sfruttando dispositivi IoT compromessi"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "module": "dns",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Nome di dominio",
+        "definition": "Nome leggibile dalle persone che identifica un servizio o un sito Internet"
+      },
+      {
+        "term": "TLD (Top-Level Domain)",
+        "definition": "Parte più a destra di un dominio, come .it o .com, che identifica una categoria generale"
+      },
+      {
+        "term": "Sottodominio (subdomain)",
+        "definition": "Come www o mail, identifica uno specifico servizio all'interno dello stesso dominio principale"
+      },
+      {
+        "term": "Dominio abc.xyz",
+        "definition": "Registrato da Google nel 2015 per rappresentare la nuova società Alphabet"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "module": "dns",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Risoluzione DNS",
+        "definition": "Processo attraverso il quale un nome di dominio viene tradotto nel corrispondente indirizzo IP"
+      },
+      {
+        "term": "Cache DNS del dispositivo",
+        "definition": "Prima verifica effettuata quando si digita un nome di dominio"
+      },
+      {
+        "term": "Server autorevole",
+        "definition": "Server DNS che possiede la risposta definitiva per il dominio richiesto"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "module": "dns",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Cache DNS",
+        "definition": "Memoria temporanea che conserva le associazioni tra nomi di dominio e indirizzi IP già risolte"
+      },
+      {
+        "term": "TTL (Time To Live)",
+        "definition": "Tempo di validità di un record DNS, espresso in secondi"
+      },
+      {
+        "term": "Riduzione del TTL prima di una migrazione",
+        "definition": "Permette alle cache di aggiornarsi più rapidamente durante il passaggio a un nuovo server"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "module": "dns",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "DNS pubblico",
+        "definition": "Server DNS accessibile a tutti gli utenti di Internet, gestito da organizzazioni specializzate"
+      },
+      {
+        "term": "DNS privato",
+        "definition": "Server DNS utilizzato all'interno di una rete specifica, come quella di un'azienda o di una scuola"
+      },
+      {
+        "term": "Cloudflare 1.1.1.1",
+        "definition": "Servizio DNS pubblico lanciato nel 2018, con attenzione particolare alla privacy"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "module": "dns",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "Errore DNS",
+        "definition": "Si verifica quando il dispositivo non riesce a tradurre un nome di dominio nel corrispondente indirizzo IP"
+      },
+      {
+        "term": "NXDOMAIN",
+        "definition": "Codice che indica che il nome di dominio richiesto non è stato trovato"
+      },
+      {
+        "term": "Interruzione dei servizi Meta (4 ottobre 2021)",
+        "definition": "Causata da un errore di configurazione della rete, non da un attacco hacker"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "module": "dns",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
+      {
+        "term": "DNS Spoofing",
+        "definition": "Falsificazione delle risposte DNS per far credere che un dominio corrisponda a un IP diverso da quello reale"
+      },
+      {
+        "term": "DNS Cache Poisoning",
+        "definition": "Inserimento di informazioni false all'interno della cache DNS"
+      },
+      {
+        "term": "DNSSEC",
+        "definition": "Tecnologia che utilizza firme digitali per verificare l'autenticità delle informazioni DNS"
+      },
+      {
+        "term": "DNS over HTTPS (DoH)",
+        "definition": "Protegge le richieste DNS utilizzando una connessione HTTPS cifrata"
+      }
+    ]
+  }
+]

@@ -1,0 +1,151 @@
+{
+  "module": "troubleshooting-reti",
+  "sets": [
+    [
+      {
+        "term": "Troubleshooting",
+        "definition": "Processo di individuazione, analisi e risoluzione di un problema tecnico"
+      },
+      {
+        "term": "Approccio casuale (errore comune)",
+        "definition": "Riavviare continuamente il dispositivo o modificare impostazioni senza sapere cosa fanno, rischiando di peggiorare la situazione"
+      },
+      {
+        "term": "Obiettivo del troubleshooting",
+        "definition": "Raccogliere indizi fino a individuare la vera causa del problema, non indovinare la soluzione"
+      },
+      {
+        "term": "Sequenza di verifiche dei tecnici",
+        "definition": "Si parte dai controlli più semplici e probabili fino ad arrivare a quelli più complessi"
+      },
+      {
+        "term": "Metafora dell'automobile che non si avvia",
+        "definition": "Il meccanico controlla prima carburante, batteria e motorino d'avviamento, solo dopo verifiche più complesse"
+      }
+    ],
+    [
+      {
+        "term": "Individuare il problema",
+        "definition": "Raccogliere informazioni per stabilire con precisione quale componente della rete causa il malfunzionamento"
+      },
+      {
+        "term": "Problema locale",
+        "definition": "Riguarda il dispositivo o la rete vicina all'utente, come un cavo scollegato o il Wi-Fi disattivato"
+      },
+      {
+        "term": "Problema remoto",
+        "definition": "Si trova oltre la rete locale, come un server DNS non raggiungibile o un guasto presso il provider"
+      },
+      {
+        "term": "Metafora della telefonata senza risposta",
+        "definition": "Si controlla il campo, si prova a chiamare un'altra persona o si chiede a qualcuno vicino di fare la stessa chiamata"
+      }
+    ],
+    [
+      {
+        "term": "Controlli iniziali",
+        "definition": "Verifiche di base per individuare rapidamente le cause più comuni di un malfunzionamento"
+      },
+      {
+        "term": "Spie luminose del router",
+        "definition": "Forniscono informazioni immediate su alimentazione, connessione a Internet, attività di rete e collegamenti Ethernet"
+      },
+      {
+        "term": "Riavvio del dispositivo o del router",
+        "definition": "Rimedio semplice che elimina errori temporanei e ripristina il normale funzionamento"
+      },
+      {
+        "term": "Metafora della lampada che non si accende",
+        "definition": "Si controlla la spina, l'interruttore e se manca corrente in tutta la casa prima di chiamare un elettricista"
+      }
+    ],
+    [
+      {
+        "term": "Ping",
+        "definition": "Strumento di diagnostica che verifica se un dispositivo è raggiungibile, misurando il tempo di andata e ritorno di un messaggio"
+      },
+      {
+        "term": "Origine del nome Ping",
+        "definition": "Deriva dal suono emesso dal sonar dei sottomarini"
+      },
+      {
+        "term": "Tempo di risposta del Ping",
+        "definition": "Indica la qualità della connessione, misurato in millisecondi"
+      },
+      {
+        "term": "Ping senza risposta",
+        "definition": "Non significa necessariamente un guasto, poiché molti server e firewall ignorano questi messaggi per sicurezza"
+      },
+      {
+        "term": "Metafora del campanello",
+        "definition": "Se qualcuno risponde, la casa è raggiungibile; se no, potrebbe non esserci nessuno o il campanello essere rotto"
+      }
+    ],
+    [
+      {
+        "term": "Traceroute",
+        "definition": "Strumento che mostra il percorso seguito dai pacchetti di dati per raggiungere una destinazione"
+      },
+      {
+        "term": "Hop",
+        "definition": "Ogni router incontrato lungo il tragitto, che rappresenta un passaggio da un dispositivo al successivo"
+      },
+      {
+        "term": "Tracert",
+        "definition": "Il nome del comando Traceroute su Windows"
+      },
+      {
+        "term": "Simboli * * * in Traceroute",
+        "definition": "Indicano che un dispositivo lungo il tragitto non ha risposto, senza indicare necessariamente un guasto"
+      },
+      {
+        "term": "Metafora del pacco spedito",
+        "definition": "Traceroute è come consultare il registro delle spedizioni per vedere in quale centro di smistamento si è fermato il viaggio"
+      }
+    ],
+    [
+      {
+        "term": "Ipconfig",
+        "definition": "Comando Windows che visualizza la configurazione di rete del computer, come indirizzo IP, subnet mask, gateway e server DNS"
+      },
+      {
+        "term": "Ifconfig",
+        "definition": "Strumento tradizionale di Linux e macOS per visualizzare la configurazione di rete"
+      },
+      {
+        "term": "Indirizzo che inizia con 169.254",
+        "definition": "Indica che il dispositivo non è riuscito a ottenere un indirizzo IP dal server DHCP"
+      },
+      {
+        "term": "Distinguere DNS e connessione",
+        "definition": "Capire se il dispositivo non riesce a raggiungere Internet oppure non può tradurre i nomi dei siti in indirizzi IP"
+      },
+      {
+        "term": "Test con Ping su IP e su nome di dominio",
+        "definition": "Permette di distinguere un problema di DNS da un problema di connessione"
+      },
+      {
+        "term": "Metafora del ristorante senza indirizzo",
+        "definition": "Conoscere il nome ma non l'indirizzo di un ristorante non significa che le strade siano chiuse"
+      }
+    ],
+    [
+      {
+        "term": "Metodo di diagnosi",
+        "definition": "Procedura logica e ordinata che analizza una possibile causa alla volta fino a identificare quella reale"
+      },
+      {
+        "term": "Network Operation Center (NOC)",
+        "definition": "Dove gli operatori dei grandi provider seguono procedure di troubleshooting standardizzate per gestire guasti che coinvolgono milioni di utenti"
+      },
+      {
+        "term": "Principio fondamentale del metodo di diagnosi",
+        "definition": "Non modificare configurazioni a caso, ma intervenire solo dopo aver raccolto elementi che ne giustifichino la necessità"
+      },
+      {
+        "term": "Metafora del medico",
+        "definition": "Raccoglie i sintomi, misura i parametri vitali e visita il paziente prima di richiedere esami più approfonditi"
+      }
+    ]
+  ]
+}

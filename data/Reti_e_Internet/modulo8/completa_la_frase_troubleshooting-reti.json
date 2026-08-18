@@ -1,0 +1,942 @@
+[
+  {
+    "sentence": "Il ____ è il processo di individuazione, analisi e risoluzione di un problema tecnico.",
+    "answer": "troubleshooting",
+    "bank": [
+      "troubleshooting",
+      "ping",
+      "traceroute",
+      "ipconfig"
+    ]
+  },
+  {
+    "sentence": "Nel contesto delle reti informatiche, il troubleshooting consiste nell'identificare la causa di un malfunzionamento seguendo un metodo ____.",
+    "answer": "logico",
+    "bank": [
+      "logico",
+      "casuale",
+      "grafico",
+      "temporaneo"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, l'errore più frequente consiste nel cercare una soluzione ____.",
+    "answer": "casuale",
+    "bank": [
+      "casuale",
+      "documentata",
+      "condivisa",
+      "pianificata"
+    ]
+  },
+  {
+    "sentence": "Riavviare continuamente il computer o modificare impostazioni senza sapere cosa fanno rischia di ____ la situazione.",
+    "answer": "peggiorare",
+    "bank": [
+      "peggiorare",
+      "semplificare",
+      "documentare",
+      "velocizzare"
+    ]
+  },
+  {
+    "sentence": "L'obiettivo del troubleshooting non è indovinare la soluzione, ma raccogliere ____ fino a individuare la vera causa.",
+    "answer": "indizi",
+    "bank": [
+      "indizi",
+      "costi",
+      "dispositivi",
+      "aggiornamenti"
+    ]
+  },
+  {
+    "sentence": "Un malfunzionamento di rete può dipendere da fattori come un cavo scollegato, il Wi-Fi disattivato o un server DNS non ____.",
+    "answer": "raggiungibile",
+    "bank": [
+      "raggiungibile",
+      "aggiornato",
+      "condiviso",
+      "temporaneo"
+    ]
+  },
+  {
+    "sentence": "Anche se il sintomo può essere sempre lo stesso, ad esempio \"Internet non funziona\", le ____ possono essere completamente diverse.",
+    "answer": "cause",
+    "bank": [
+      "cause",
+      "spie",
+      "reti",
+      "password"
+    ]
+  },
+  {
+    "sentence": "I tecnici affrontano i problemi seguendo una sequenza di verifiche, partendo dai controlli più semplici e ____.",
+    "answer": "probabili",
+    "bank": [
+      "probabili",
+      "costosi",
+      "lenti",
+      "recenti"
+    ]
+  },
+  {
+    "sentence": "Gli strumenti fondamentali di diagnosi presentati nel modulo sono Ping, Traceroute e ____.",
+    "answer": "Ipconfig",
+    "bank": [
+      "Ipconfig",
+      "Antivirus",
+      "Firewall",
+      "Backup"
+    ]
+  },
+  {
+    "sentence": "Questi strumenti sono efficaci solo se utilizzati all'interno di un metodo di analisi logico e ____.",
+    "answer": "ordinato",
+    "bank": [
+      "ordinato",
+      "casuale",
+      "gratuito",
+      "temporaneo"
+    ]
+  },
+  {
+    "sentence": "Nel 2021, un aggiornamento errato distribuito da Facebook causò un'interruzione globale dei servizi di Facebook, Instagram e ____.",
+    "answer": "WhatsApp",
+    "bank": [
+      "WhatsApp",
+      "Telegram",
+      "Gmail",
+      "YouTube"
+    ]
+  },
+  {
+    "sentence": "Il guasto Facebook del 2021 non era dovuto a un guasto fisico, ma a una ____ errata dei sistemi che gestivano il traffico Internet.",
+    "answer": "configurazione",
+    "bank": [
+      "configurazione",
+      "password",
+      "licenza",
+      "connessione fisica"
+    ]
+  },
+  {
+    "sentence": "Nella metafora dell'automobile che non si avvia, un meccanico esperto controlla prima il carburante, la batteria e il ____.",
+    "answer": "motorino d'avviamento",
+    "bank": [
+      "motorino d'avviamento",
+      "cambio",
+      "radiatore",
+      "cruscotto"
+    ]
+  },
+  {
+    "sentence": "Individuare il problema significa raccogliere informazioni per stabilire con precisione quale ____ della rete sta causando il malfunzionamento.",
+    "answer": "componente",
+    "bank": [
+      "componente",
+      "prezzo",
+      "colore",
+      "marca"
+    ]
+  },
+  {
+    "sentence": "L'obiettivo non è trovare subito la soluzione, ma restringere progressivamente il campo delle possibili ____.",
+    "answer": "cause",
+    "bank": [
+      "cause",
+      "spie",
+      "reti",
+      "password"
+    ]
+  },
+  {
+    "sentence": "Un problema ____ riguarda il dispositivo o la rete vicina all'utente, come un cavo scollegato o il Wi-Fi disattivato.",
+    "answer": "locale",
+    "bank": [
+      "locale",
+      "remoto",
+      "globale",
+      "temporaneo"
+    ]
+  },
+  {
+    "sentence": "Un problema ____ si trova oltre la rete locale, come un server DNS non raggiungibile o un guasto presso il provider.",
+    "answer": "remoto",
+    "bank": [
+      "remoto",
+      "locale",
+      "fisico",
+      "momentaneo"
+    ]
+  },
+  {
+    "sentence": "Per distinguere un problema locale da uno remoto è utile chiedersi se il problema interessa un solo dispositivo oppure ____ quelli presenti in casa.",
+    "answer": "tutti",
+    "bank": [
+      "tutti",
+      "nessuno",
+      "alcuni",
+      "pochi"
+    ]
+  },
+  {
+    "sentence": "Un altro modo per restringere il campo è verificare se il problema riguarda un solo sito oppure qualsiasi servizio ____.",
+    "answer": "online",
+    "bank": [
+      "online",
+      "telefonico",
+      "locale",
+      "fisico"
+    ]
+  },
+  {
+    "sentence": "Un buon troubleshooting assomiglia a un'____: ogni risposta elimina alcune ipotesi.",
+    "answer": "indagine",
+    "bank": [
+      "indagine",
+      "applicazione",
+      "spedizione",
+      "licenza"
+    ]
+  },
+  {
+    "sentence": "Nel 2022, numerosi utenti non riuscirono ad accedere ai servizi di ____, un'azienda che fornisce infrastrutture di rete a milioni di siti web.",
+    "answer": "Cloudflare",
+    "bank": [
+      "Cloudflare",
+      "Akamai",
+      "Google",
+      "Microsoft"
+    ]
+  },
+  {
+    "sentence": "Durante il guasto di Cloudflare del 2022, la connessione domestica degli utenti funzionava correttamente: il problema era concentrato nei ____ dell'azienda.",
+    "answer": "server",
+    "bank": [
+      "server",
+      "router",
+      "cavi",
+      "provider"
+    ]
+  },
+  {
+    "sentence": "Chi provava a visitare altri siti non collegati al servizio Cloudflare riusciva a navigare ____.",
+    "answer": "normalmente",
+    "bank": [
+      "normalmente",
+      "lentamente",
+      "parzialmente",
+      "mai"
+    ]
+  },
+  {
+    "sentence": "Nella metafora della telefonata senza risposta, prima di pensare che il telefono sia rotto si controlla se si ha ____.",
+    "answer": "campo",
+    "bank": [
+      "campo",
+      "credito",
+      "batteria",
+      "wifi"
+    ]
+  },
+  {
+    "sentence": "I ____ sono le verifiche di base che permettono di individuare rapidamente le cause più comuni di un malfunzionamento.",
+    "answer": "controlli iniziali",
+    "bank": [
+      "controlli iniziali",
+      "strumenti avanzati",
+      "protocolli di rete",
+      "server DNS"
+    ]
+  },
+  {
+    "sentence": "La prima verifica consiste nel controllare la connessione ____, assicurandosi che il cavo Ethernet sia inserito correttamente.",
+    "answer": "fisica",
+    "bank": [
+      "fisica",
+      "wireless",
+      "remota",
+      "virtuale"
+    ]
+  },
+  {
+    "sentence": "Se la connessione è Wi-Fi, occorre assicurarsi che il computer sia collegato alla rete corretta e che il Wi-Fi non sia stato disattivato ____.",
+    "answer": "accidentalmente",
+    "bank": [
+      "accidentalmente",
+      "volontariamente",
+      "temporaneamente",
+      "manualmente"
+    ]
+  },
+  {
+    "sentence": "Le spie luminose del router forniscono informazioni immediate su alimentazione, connessione a Internet, attività della rete e collegamenti ____.",
+    "answer": "Ethernet",
+    "bank": [
+      "Ethernet",
+      "Bluetooth",
+      "USB",
+      "HDMI"
+    ]
+  },
+  {
+    "sentence": "Una spia spenta o lampeggiante in modo anomalo può già suggerire dove si trova il ____.",
+    "answer": "problema",
+    "bank": [
+      "problema",
+      "router",
+      "cavo",
+      "provider"
+    ]
+  },
+  {
+    "sentence": "Se smartphone, tablet e computer presentano lo stesso problema, è probabile che la causa sia il router o la connessione del ____.",
+    "answer": "provider",
+    "bank": [
+      "provider",
+      "DNS",
+      "browser",
+      "firewall"
+    ]
+  },
+  {
+    "sentence": "Se un solo sito web non risponde mentre gli altri funzionano normalmente, potrebbe essere il ____ del sito a essere temporaneamente non disponibile.",
+    "answer": "server",
+    "bank": [
+      "server",
+      "router",
+      "DNS",
+      "gateway"
+    ]
+  },
+  {
+    "sentence": "Uno dei rimedi più semplici ed efficaci consiste nel ____ il dispositivo interessato oppure il router.",
+    "answer": "riavviare",
+    "bank": [
+      "riavviare",
+      "sostituire",
+      "spegnere",
+      "disconnettere"
+    ]
+  },
+  {
+    "sentence": "Durante il funzionamento possono verificarsi errori ____ che un riavvio è in grado di eliminare.",
+    "answer": "temporanei",
+    "bank": [
+      "temporanei",
+      "permanenti",
+      "fisici",
+      "gravi"
+    ]
+  },
+  {
+    "sentence": "Solo dopo aver completato i controlli iniziali ha senso utilizzare strumenti di diagnosi come Ping, Traceroute o ____.",
+    "answer": "Ipconfig",
+    "bank": [
+      "Ipconfig",
+      "Antivirus",
+      "VPN",
+      "Firewall"
+    ]
+  },
+  {
+    "sentence": "Nel 2021, numerosi utenti italiani rimasero temporaneamente senza connessione a causa di un guasto sulla rete di alcuni ____.",
+    "answer": "provider",
+    "bank": [
+      "provider",
+      "browser",
+      "router domestici",
+      "server DNS"
+    ]
+  },
+  {
+    "sentence": "Nella metafora della lampada che non si accende, prima di chiamare un elettricista si controlla la spina, l'interruttore e se manca ____ in tutta la casa.",
+    "answer": "corrente",
+    "bank": [
+      "corrente",
+      "luce",
+      "gas",
+      "acqua"
+    ]
+  },
+  {
+    "sentence": "Il ____ è uno strumento di diagnostica di rete che verifica se un dispositivo è raggiungibile attraverso la rete.",
+    "answer": "Ping",
+    "bank": [
+      "Ping",
+      "Traceroute",
+      "Ipconfig",
+      "DNS"
+    ]
+  },
+  {
+    "sentence": "Il Ping invia un piccolo messaggio al dispositivo di destinazione e attende una risposta, misurando il tempo impiegato per il viaggio di andata e ____.",
+    "answer": "ritorno",
+    "bank": [
+      "ritorno",
+      "partenza",
+      "arrivo",
+      "transito"
+    ]
+  },
+  {
+    "sentence": "Il nome Ping deriva dal suono emesso dal ____ dei sottomarini.",
+    "answer": "sonar",
+    "bank": [
+      "sonar",
+      "radar",
+      "motore",
+      "segnale"
+    ]
+  },
+  {
+    "sentence": "Il comando ping 8.8.8.8 invia alcuni piccoli ____ di dati verso la destinazione scelta.",
+    "answer": "pacchetti",
+    "bank": [
+      "pacchetti",
+      "cavi",
+      "segnali",
+      "hop"
+    ]
+  },
+  {
+    "sentence": "Il tempo di risposta del Ping è espresso generalmente in ____.",
+    "answer": "millisecondi",
+    "bank": [
+      "millisecondi",
+      "secondi",
+      "minuti",
+      "microsecondi"
+    ]
+  },
+  {
+    "sentence": "Se le risposte al Ping non arrivano, potrebbe esserci un problema lungo il percorso oppure il dispositivo remoto potrebbe essere spento o configurato per non rispondere ai ____.",
+    "answer": "Ping",
+    "bank": [
+      "Ping",
+      "Traceroute",
+      "DNS",
+      "hop"
+    ]
+  },
+  {
+    "sentence": "Valori bassi del tempo di risposta indicano generalmente una rete veloce e ____.",
+    "answer": "reattiva",
+    "bank": [
+      "reattiva",
+      "lenta",
+      "instabile",
+      "temporanea"
+    ]
+  },
+  {
+    "sentence": "Tempi di risposta elevati possono causare ritardi nelle videoconferenze, nei giochi online o nelle chiamate ____.",
+    "answer": "VoIP",
+    "bank": [
+      "VoIP",
+      "DNS",
+      "HTTP",
+      "VPN"
+    ]
+  },
+  {
+    "sentence": "Un Ping senza risposta non significa necessariamente che il dispositivo sia ____.",
+    "answer": "guasto",
+    "bank": [
+      "guasto",
+      "lento",
+      "remoto",
+      "condiviso"
+    ]
+  },
+  {
+    "sentence": "Molti server e firewall ignorano volontariamente i messaggi Ping per motivi di ____.",
+    "answer": "sicurezza",
+    "bank": [
+      "sicurezza",
+      "velocità",
+      "risparmio",
+      "compatibilità"
+    ]
+  },
+  {
+    "sentence": "Durante il guasto globale di Facebook, Instagram e WhatsApp del 4 ottobre 2021, molti amministratori di rete iniziarono le verifiche proprio con il ____.",
+    "answer": "Ping",
+    "bank": [
+      "Ping",
+      "Traceroute",
+      "Ipconfig",
+      "DNS"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del campanello, se nessuno risponde le possibilità sono diverse: potrebbe non esserci nessuno, il campanello potrebbe essere rotto oppure gli occupanti potrebbero scegliere di non ____.",
+    "answer": "aprire",
+    "bank": [
+      "aprire",
+      "rispondere",
+      "uscire",
+      "chiamare"
+    ]
+  },
+  {
+    "sentence": "Il ____ è uno strumento di diagnostica che mostra il percorso seguito dai pacchetti di dati per raggiungere una destinazione.",
+    "answer": "Traceroute",
+    "bank": [
+      "Traceroute",
+      "Ping",
+      "Ipconfig",
+      "DNS"
+    ]
+  },
+  {
+    "sentence": "Su Windows il comando Traceroute si chiama ____.",
+    "answer": "Tracert",
+    "bank": [
+      "Tracert",
+      "Pathping",
+      "Netstat",
+      "Ipconfig"
+    ]
+  },
+  {
+    "sentence": "Ogni router incontrato lungo il tragitto viene chiamato ____, perché rappresenta un passaggio da un dispositivo al successivo.",
+    "answer": "hop",
+    "bank": [
+      "hop",
+      "ping",
+      "nodo",
+      "salto DNS"
+    ]
+  },
+  {
+    "sentence": "Il risultato del comando tracert è un elenco di hop con i relativi tempi di ____.",
+    "answer": "risposta",
+    "bank": [
+      "risposta",
+      "attesa",
+      "invio",
+      "trasmissione"
+    ]
+  },
+  {
+    "sentence": "Se il percorso Traceroute si interrompe o compaiono simboli come * * *, significa che uno dei dispositivi lungo il tragitto non ha ____.",
+    "answer": "risposto",
+    "bank": [
+      "risposto",
+      "funzionato",
+      "trasmesso",
+      "ricevuto"
+    ]
+  },
+  {
+    "sentence": "I simboli * * * in Traceroute non indicano necessariamente un guasto: alcuni router scelgono di non rispondere pur continuando a ____ regolarmente il traffico.",
+    "answer": "inoltrare",
+    "bank": [
+      "inoltrare",
+      "bloccare",
+      "analizzare",
+      "duplicare"
+    ]
+  },
+  {
+    "sentence": "Traceroute è particolarmente utile quando il problema non si trova nella rete domestica, ma lungo il percorso ____.",
+    "answer": "Internet",
+    "bank": [
+      "Internet",
+      "locale",
+      "fisico",
+      "elettrico"
+    ]
+  },
+  {
+    "sentence": "Traceroute è uno strumento molto utilizzato dagli amministratori di rete e dai ____ per individuare dove una comunicazione smette di funzionare.",
+    "answer": "provider",
+    "bank": [
+      "provider",
+      "browser",
+      "produttori",
+      "rivenditori"
+    ]
+  },
+  {
+    "sentence": "Nel 2008, un errore di instradamento causato da un provider in ____ rese temporaneamente irraggiungibile YouTube in molte parti del mondo.",
+    "answer": "Pakistan",
+    "bank": [
+      "Pakistan",
+      "Brasile",
+      "Giappone",
+      "Canada"
+    ]
+  },
+  {
+    "sentence": "Nell'incidente YouTube del 2008, un annuncio di rete errato deviò il traffico verso una destinazione ____.",
+    "answer": "sbagliata",
+    "bank": [
+      "sbagliata",
+      "criptata",
+      "duplicata",
+      "temporanea"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del pacco spedito, Traceroute è come consultare il registro delle spedizioni per vedere in quale centro logistico si è fermato il ____.",
+    "answer": "viaggio",
+    "bank": [
+      "viaggio",
+      "pacco",
+      "mittente",
+      "corriere"
+    ]
+  },
+  {
+    "sentence": "____ è un comando disponibile nei sistemi Windows che permette di visualizzare la configurazione di rete del computer.",
+    "answer": "Ipconfig",
+    "bank": [
+      "Ipconfig",
+      "Ifconfig",
+      "Traceroute",
+      "Ping"
+    ]
+  },
+  {
+    "sentence": "Nei sistemi Linux e macOS lo strumento tradizionale per visualizzare la configurazione di rete si chiama ____.",
+    "answer": "Ifconfig",
+    "bank": [
+      "Ifconfig",
+      "Ipconfig",
+      "Tracert",
+      "Netstat"
+    ]
+  },
+  {
+    "sentence": "Nelle distribuzioni Linux moderne, Ifconfig è spesso sostituito dal comando ____, più completo e aggiornato.",
+    "answer": "ip",
+    "bank": [
+      "ip",
+      "net",
+      "config",
+      "route"
+    ]
+  },
+  {
+    "sentence": "Per visualizzare maggiori dettagli su Windows si utilizza il comando ____.",
+    "answer": "ipconfig /all",
+    "bank": [
+      "ipconfig /all",
+      "ipconfig /full",
+      "ipconfig /detail",
+      "ipconfig /extra"
+    ]
+  },
+  {
+    "sentence": "Tra le informazioni più importanti mostrate da Ipconfig troviamo l'indirizzo IP, il gateway predefinito e i server ____.",
+    "answer": "DNS",
+    "bank": [
+      "DNS",
+      "HTTP",
+      "VoIP",
+      "VPN"
+    ]
+  },
+  {
+    "sentence": "Il gateway predefinito rappresenta il router attraverso cui il traffico esce dalla ____.",
+    "answer": "rete",
+    "bank": [
+      "rete",
+      "cache",
+      "memoria",
+      "cronologia"
+    ]
+  },
+  {
+    "sentence": "I server DNS traducono i nomi dei siti web nei corrispondenti indirizzi ____.",
+    "answer": "IP",
+    "bank": [
+      "IP",
+      "MAC",
+      "DNS",
+      "hop"
+    ]
+  },
+  {
+    "sentence": "Se il computer mostra un indirizzo che inizia con 169.254, significa generalmente che non è riuscito a ottenere automaticamente un indirizzo IP dal server ____.",
+    "answer": "DHCP",
+    "bank": [
+      "DHCP",
+      "DNS",
+      "dominio",
+      "gateway"
+    ]
+  },
+  {
+    "sentence": "Un dispositivo con indirizzo 169.254.x.x si assegna un indirizzo temporaneo, ma normalmente non riesce a comunicare con ____.",
+    "answer": "Internet",
+    "bank": [
+      "Internet",
+      "il router",
+      "lo switch",
+      "il DNS"
+    ]
+  },
+  {
+    "sentence": "Ipconfig e Ifconfig non risolvono direttamente il problema, ma permettono di verificare se la configurazione del dispositivo è ____.",
+    "answer": "coerente",
+    "bank": [
+      "coerente",
+      "gratuita",
+      "aggiornata",
+      "condivisa"
+    ]
+  },
+  {
+    "sentence": "Nella metafora della lettera da spedire, se l'indirizzo o il codice postale sulla busta sono sbagliati o mancanti, la lettera non ____ mai.",
+    "answer": "partirà",
+    "bank": [
+      "partirà",
+      "arriverà",
+      "tornerà",
+      "si perderà"
+    ]
+  },
+  {
+    "sentence": "Distinguere un problema di DNS da un problema di connessione significa capire se il dispositivo non riesce a raggiungere Internet oppure non può ____ i nomi dei siti web negli indirizzi IP.",
+    "answer": "tradurre",
+    "bank": [
+      "tradurre",
+      "cifrare",
+      "memorizzare",
+      "duplicare"
+    ]
+  },
+  {
+    "sentence": "Quando scriviamo un indirizzo web, il computer deve prima chiedere a un server ____ quale indirizzo IP corrisponde a quel nome.",
+    "answer": "DNS",
+    "bank": [
+      "DNS",
+      "DHCP",
+      "gateway",
+      "proxy"
+    ]
+  },
+  {
+    "sentence": "Se il DNS non risponde o restituisce un errore, il browser non riesce a trovare il sito, anche se la connessione Internet è perfettamente ____.",
+    "answer": "funzionante",
+    "bank": [
+      "funzionante",
+      "cifrata",
+      "temporanea",
+      "condivisa"
+    ]
+  },
+  {
+    "sentence": "Un primo test per distinguere i due problemi consiste nell'eseguire un Ping verso un indirizzo IP noto, ad esempio ____.",
+    "answer": "8.8.8.8",
+    "bank": [
+      "8.8.8.8",
+      "169.254.0.1",
+      "192.168.1.1",
+      "127.0.0.1"
+    ]
+  },
+  {
+    "sentence": "L'indirizzo 8.8.8.8 è uno dei server DNS pubblici di ____.",
+    "answer": "Google",
+    "bank": [
+      "Google",
+      "Microsoft",
+      "Apple",
+      "Amazon"
+    ]
+  },
+  {
+    "sentence": "Se il Ping verso l'indirizzo IP funziona ma quello verso il nome del sito restituisce un errore di risoluzione, è probabile che il problema riguardi il ____.",
+    "answer": "DNS",
+    "bank": [
+      "DNS",
+      "router",
+      "provider",
+      "cavo"
+    ]
+  },
+  {
+    "sentence": "Se non risponde nemmeno il Ping verso l'indirizzo IP, il problema è più generale e interessa la connessione di rete, il router oppure il ____.",
+    "answer": "provider",
+    "bank": [
+      "provider",
+      "DNS",
+      "browser",
+      "sito"
+    ]
+  },
+  {
+    "sentence": "Nel 2021, un malfunzionamento dei servizi DNS di ____ rese temporaneamente irraggiungibili numerosi siti web e servizi online.",
+    "answer": "Akamai",
+    "bank": [
+      "Akamai",
+      "Cloudflare",
+      "Google",
+      "Facebook"
+    ]
+  },
+  {
+    "sentence": "Durante il guasto DNS di Akamai del 2021, la rete degli utenti funzionava correttamente: era il sistema di ____ dei nomi a non riuscire più a indirizzare gli utenti.",
+    "answer": "risoluzione",
+    "bank": [
+      "risoluzione",
+      "cifratura",
+      "sincronizzazione",
+      "backup"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del ristorante, se il navigatore non riesce a trovare l'indirizzo non significa che le strade siano ____.",
+    "answer": "chiuse",
+    "bank": [
+      "chiuse",
+      "lunghe",
+      "pericolose",
+      "nuove"
+    ]
+  },
+  {
+    "sentence": "Il ____ di diagnosi è una procedura logica e ordinata che permette di individuare e risolvere un problema di rete.",
+    "answer": "metodo",
+    "bank": [
+      "metodo",
+      "comando",
+      "protocollo",
+      "hop"
+    ]
+  },
+  {
+    "sentence": "L'obiettivo del metodo di diagnosi non è trovare rapidamente una soluzione qualsiasi, ma trovare la soluzione ____.",
+    "answer": "corretta",
+    "bank": [
+      "corretta",
+      "veloce",
+      "gratuita",
+      "temporanea"
+    ]
+  },
+  {
+    "sentence": "Il troubleshooting parte sempre dall'____ del problema: cosa non funziona, da quando, su un dispositivo o su tutta la rete.",
+    "answer": "osservazione",
+    "bank": [
+      "osservazione",
+      "cancellazione",
+      "sostituzione",
+      "duplicazione"
+    ]
+  },
+  {
+    "sentence": "Dopo l'osservazione, si eseguono i controlli più semplici, verificando collegamenti, Wi-Fi, alimentazione del router e stato della ____.",
+    "answer": "connessione",
+    "bank": [
+      "connessione",
+      "cifratura",
+      "configurazione DNS",
+      "licenza"
+    ]
+  },
+  {
+    "sentence": "Il Ping permette di verificare se una destinazione è ____.",
+    "answer": "raggiungibile",
+    "bank": [
+      "raggiungibile",
+      "cifrata",
+      "aggiornata",
+      "condivisa"
+    ]
+  },
+  {
+    "sentence": "Traceroute mostra dove il percorso dei dati si ____.",
+    "answer": "interrompe",
+    "bank": [
+      "interrompe",
+      "cifra",
+      "duplica",
+      "sincronizza"
+    ]
+  },
+  {
+    "sentence": "Ipconfig o Ifconfig consentono di controllare se il dispositivo possiede una ____ di rete corretta.",
+    "answer": "configurazione",
+    "bank": [
+      "configurazione",
+      "password",
+      "licenza",
+      "cronologia"
+    ]
+  },
+  {
+    "sentence": "Confrontando il comportamento di un indirizzo IP con quello di un nome di dominio è possibile capire se il problema riguarda il DNS oppure la connessione ____.",
+    "answer": "Internet",
+    "bank": [
+      "Internet",
+      "locale",
+      "fisica",
+      "wireless"
+    ]
+  },
+  {
+    "sentence": "Il metodo di diagnosi viene utilizzato non solo dagli amministratori di rete, ma anche dai tecnici dell'assistenza informatica, dai provider Internet e dai grandi ____.",
+    "answer": "Data Center",
+    "bank": [
+      "Data Center",
+      "social network",
+      "motori di ricerca",
+      "browser"
+    ]
+  },
+  {
+    "sentence": "Il principio fondamentale del metodo di diagnosi è: non modificare ____ a caso.",
+    "answer": "configurazioni",
+    "bank": [
+      "configurazioni",
+      "cavi",
+      "dispositivi",
+      "router"
+    ]
+  },
+  {
+    "sentence": "Ogni intervento dovrebbe essere eseguito solo dopo aver raccolto elementi che ne giustifichino la ____.",
+    "answer": "necessità",
+    "bank": [
+      "necessità",
+      "velocità",
+      "economicità",
+      "popolarità"
+    ]
+  },
+  {
+    "sentence": "Nei Network Operation Center (NOC) dei grandi provider Internet, gli operatori gestiscono quotidianamente guasti che possono coinvolgere milioni di ____.",
+    "answer": "utenti",
+    "bank": [
+      "utenti",
+      "router",
+      "cavi",
+      "server DNS"
+    ]
+  },
+  {
+    "sentence": "Nei NOC si seguono procedure di troubleshooting standardizzate per ridurre i tempi di ____.",
+    "answer": "ripristino",
+    "bank": [
+      "ripristino",
+      "acquisto",
+      "produzione",
+      "installazione"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del medico, prima di prescrivere una cura si raccolgono i sintomi, si misurano i parametri vitali e si ____ il paziente.",
+    "answer": "visita",
+    "bank": [
+      "visita",
+      "cura",
+      "opera",
+      "dimette"
+    ]
+  }
+]

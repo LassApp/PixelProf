@@ -1,0 +1,443 @@
+[
+  {
+    "id": 1,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il troubleshooting è il processo di individuazione, analisi e risoluzione di un problema tecnico.",
+    "answer": true,
+    "explanation": "È la definizione di troubleshooting fornita nel modulo."
+  },
+  {
+    "id": 2,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la soluzione migliore ai problemi di rete è modificare impostazioni a caso finché qualcosa funziona.",
+    "answer": false,
+    "explanation": "L'errore più frequente è proprio cercare una soluzione casuale, un approccio che rischia di peggiorare la situazione."
+  },
+  {
+    "id": 3,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un malfunzionamento di rete può dipendere da fattori molto diversi anche se il sintomo è sempre lo stesso.",
+    "answer": true,
+    "explanation": "Il sintomo può essere sempre lo stesso, ma le cause possono essere completamente diverse."
+  },
+  {
+    "id": 4,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I tecnici affrontano i problemi di rete partendo dai controlli più semplici e probabili.",
+    "answer": true,
+    "explanation": "Seguono una sequenza precisa di verifiche, dai controlli più semplici a quelli più complessi."
+  },
+  {
+    "id": 5,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'interruzione globale di Facebook, Instagram e WhatsApp del 2021 fu causata da un guasto fisico ai cavi di rete.",
+    "answer": false,
+    "explanation": "Fu causata da una configurazione errata dei sistemi che gestivano il traffico Internet, non da un guasto fisico."
+  },
+  {
+    "id": 6,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora dell'automobile che non si avvia, il meccanico controlla prima le cause più semplici, come il carburante e la batteria.",
+    "answer": true,
+    "explanation": "Il troubleshooting segue la stessa logica: si procede passo dopo passo, eliminando una possibile causa alla volta."
+  },
+  {
+    "id": 7,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Individuare il problema significa raccogliere informazioni per stabilire quale componente della rete causa il malfunzionamento.",
+    "answer": true,
+    "explanation": "È la definizione fornita nel modulo."
+  },
+  {
+    "id": 8,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un problema \"remoto\" riguarda sempre un cavo scollegato nella rete domestica.",
+    "answer": false,
+    "explanation": "Un cavo scollegato è un esempio di problema locale, non remoto."
+  },
+  {
+    "id": 9,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per distinguere un problema locale da uno remoto è utile verificare se il problema interessa un solo dispositivo o tutti quelli in casa.",
+    "answer": true,
+    "explanation": "Questa domanda permette di restringere il campo delle possibili cause."
+  },
+  {
+    "id": 10,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2022 il guasto ai servizi di Cloudflare dimostrò che il problema può trovarsi in un'infrastruttura remota condivisa da molti siti.",
+    "answer": true,
+    "explanation": "Il problema era concentrato nei server di Cloudflare, non nei dispositivi o router degli utenti."
+  },
+  {
+    "id": 11,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante il guasto Cloudflare del 2022, nessun sito web era raggiungibile in tutto il mondo.",
+    "answer": false,
+    "explanation": "Chi visitava siti non collegati al servizio Cloudflare riusciva a navigare normalmente."
+  },
+  {
+    "id": 12,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della telefonata senza risposta, si controlla se si ha campo prima di pensare che il telefono sia rotto.",
+    "answer": true,
+    "explanation": "Confrontando più informazioni si riesce a capire dove si trova il problema."
+  },
+  {
+    "id": 13,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I controlli iniziali permettono di individuare rapidamente le cause più comuni di un malfunzionamento di rete.",
+    "answer": true,
+    "explanation": "È la definizione di controlli iniziali fornita nel modulo."
+  },
+  {
+    "id": 14,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le spie luminose del router forniscono informazioni su alimentazione, connessione a Internet e attività di rete.",
+    "answer": true,
+    "explanation": "Questi indicatori forniscono informazioni immediate sullo stato del dispositivo."
+  },
+  {
+    "id": 15,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se tutti i dispositivi di casa hanno lo stesso problema di rete, la causa è quasi sempre un virus sullo smartphone.",
+    "answer": false,
+    "explanation": "È più probabile che la causa sia il router o la connessione del provider."
+  },
+  {
+    "id": 16,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Riavviare il dispositivo o il router è uno dei rimedi più semplici ed efficaci contro errori temporanei.",
+    "answer": true,
+    "explanation": "Un riavvio è in grado di eliminare errori temporanei, ripristinando il normale funzionamento."
+  },
+  {
+    "id": 17,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli strumenti di diagnosi avanzati come Ping e Traceroute dovrebbero essere usati prima dei controlli iniziali.",
+    "answer": false,
+    "explanation": "I controlli iniziali vengono eseguiti prima di utilizzare strumenti di diagnosi più avanzati."
+  },
+  {
+    "id": 18,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2021 alcuni utenti italiani rimasero temporaneamente senza connessione a causa di un guasto sulla rete di alcuni provider.",
+    "answer": true,
+    "explanation": "Chi verificò le spie del router e altri dispositivi capì che il guasto era esterno alla rete domestica."
+  },
+  {
+    "id": 19,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Ping verifica se un dispositivo è raggiungibile attraverso la rete.",
+    "answer": true,
+    "explanation": "È la definizione di Ping fornita nel modulo."
+  },
+  {
+    "id": 20,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il nome \"Ping\" deriva dal nome di un'azienda produttrice di router.",
+    "answer": false,
+    "explanation": "Il nome deriva dal suono emesso dal sonar dei sottomarini."
+  },
+  {
+    "id": 21,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il tempo di risposta del Ping è generalmente espresso in millisecondi.",
+    "answer": true,
+    "explanation": "Il computer misura il tempo necessario per ricevere la risposta, espresso in millisecondi (ms)."
+  },
+  {
+    "id": 22,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un Ping senza risposta significa sempre che il dispositivo di destinazione è spento o guasto.",
+    "answer": false,
+    "explanation": "Molti server e firewall ignorano volontariamente i Ping per motivi di sicurezza, pur funzionando normalmente."
+  },
+  {
+    "id": 23,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante il guasto globale di Facebook, Instagram e WhatsApp del 2021, i test con Ping mostrarono sistemi irraggiungibili.",
+    "answer": true,
+    "explanation": "I test mostrarono che numerosi sistemi dell'azienda risultavano irraggiungibili dalla rete Internet."
+  },
+  {
+    "id": 24,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Tempi di risposta del Ping elevati possono causare ritardi nelle videoconferenze o nelle chiamate VoIP.",
+    "answer": true,
+    "explanation": "Tempi elevati possono causare ritardi in attività sensibili alla latenza."
+  },
+  {
+    "id": 25,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Traceroute mostra il percorso seguito dai pacchetti di dati per raggiungere una destinazione.",
+    "answer": true,
+    "explanation": "È la definizione di Traceroute fornita nel modulo."
+  },
+  {
+    "id": 26,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Su Windows il comando Traceroute si chiama Ifconfig.",
+    "answer": false,
+    "explanation": "Su Windows il comando si chiama Tracert; Ifconfig è lo strumento di Linux e macOS."
+  },
+  {
+    "id": 27,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ogni router incontrato lungo il tragitto in Traceroute viene chiamato hop.",
+    "answer": true,
+    "explanation": "L'hop rappresenta un passaggio da un dispositivo di rete al successivo."
+  },
+  {
+    "id": 28,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I simboli * * * in Traceroute indicano sempre un guasto grave nella rete.",
+    "answer": false,
+    "explanation": "Non indicano necessariamente un guasto: alcuni router scelgono di non rispondere pur inoltrando regolarmente il traffico."
+  },
+  {
+    "id": 29,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2008 un errore di instradamento causato da un provider in Pakistan rese temporaneamente irraggiungibile YouTube.",
+    "answer": true,
+    "explanation": "Un annuncio di rete errato deviò il traffico verso una destinazione sbagliata."
+  },
+  {
+    "id": 30,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Traceroute è particolarmente utile quando il problema si trova lungo il percorso Internet e non nella rete domestica.",
+    "answer": true,
+    "explanation": "Permette di capire se l'interruzione avviene vicino al router, nella rete del provider o lungo il percorso Internet."
+  },
+  {
+    "id": 31,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ipconfig permette di visualizzare la configurazione di rete del computer su sistemi Windows.",
+    "answer": true,
+    "explanation": "È la definizione di Ipconfig fornita nel modulo."
+  },
+  {
+    "id": 32,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ifconfig è lo strumento utilizzato su Windows per visualizzare la configurazione di rete.",
+    "answer": false,
+    "explanation": "Ifconfig è lo strumento tradizionale di Linux e macOS, non di Windows."
+  },
+  {
+    "id": 33,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il gateway predefinito rappresenta il router attraverso cui il traffico esce dalla rete.",
+    "answer": true,
+    "explanation": "È la definizione di gateway predefinito fornita nel modulo."
+  },
+  {
+    "id": 34,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un indirizzo IP che inizia con 169.254 indica generalmente che il dispositivo non ha ottenuto un indirizzo dal server DHCP.",
+    "answer": true,
+    "explanation": "In questo caso il dispositivo si assegna un indirizzo temporaneo e normalmente non comunica con Internet."
+  },
+  {
+    "id": 35,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ipconfig e Ifconfig risolvono automaticamente qualsiasi problema di rete rilevato.",
+    "answer": false,
+    "explanation": "Questi strumenti permettono solo di verificare la configurazione, non la risolvono direttamente."
+  },
+  {
+    "id": 36,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I server DNS mostrati da Ipconfig traducono i nomi dei siti web nei corrispondenti indirizzi IP.",
+    "answer": true,
+    "explanation": "È la funzione dei server DNS descritta nel modulo."
+  },
+  {
+    "id": 37,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Distinguere un problema DNS da un problema di connessione significa capire se il dispositivo non raggiunge Internet oppure non può tradurre i nomi dei siti in indirizzi IP.",
+    "answer": true,
+    "explanation": "È la definizione fornita nel modulo."
+  },
+  {
+    "id": 38,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se il DNS non funziona, anche la connessione Internet smette sempre di funzionare completamente.",
+    "answer": false,
+    "explanation": "La connessione può essere perfettamente funzionante anche se il DNS non risponde."
+  },
+  {
+    "id": 39,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'indirizzo 8.8.8.8 è uno dei server DNS pubblici di Google.",
+    "answer": true,
+    "explanation": "È l'indirizzo citato nel modulo come esempio di server DNS pubblico di Google."
+  },
+  {
+    "id": 40,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un primo test utile consiste nell'eseguire un Ping verso un indirizzo IP noto per verificare se la connessione Internet è attiva.",
+    "answer": true,
+    "explanation": "Se il Ping verso l'indirizzo IP risponde, la connessione Internet è attiva."
+  },
+  {
+    "id": 41,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2021 il malfunzionamento dei servizi DNS di Akamai fu causato da un guasto della connessione domestica degli utenti.",
+    "answer": false,
+    "explanation": "La rete degli utenti funzionava correttamente; era il sistema di risoluzione dei nomi a non funzionare."
+  },
+  {
+    "id": 42,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se il Ping verso un indirizzo IP funziona ma quello verso un nome di dominio restituisce un errore, è probabile un problema di DNS.",
+    "answer": true,
+    "explanation": "Questa combinazione di risultati indica che il problema riguarda probabilmente il DNS."
+  },
+  {
+    "id": 43,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il metodo di diagnosi è una procedura logica e ordinata che analizza una possibile causa alla volta.",
+    "answer": true,
+    "explanation": "È la definizione di metodo di diagnosi fornita nel modulo."
+  },
+  {
+    "id": 44,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'obiettivo del metodo di diagnosi è trovare rapidamente una soluzione qualsiasi, anche se non corretta.",
+    "answer": false,
+    "explanation": "L'obiettivo è trovare la soluzione corretta, non una qualsiasi soluzione rapida."
+  },
+  {
+    "id": 45,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il troubleshooting parte sempre dall'osservazione del problema, prima di eseguire controlli e usare strumenti diagnostici.",
+    "answer": true,
+    "explanation": "Si parte sempre dall'osservazione: cosa non funziona, da quando, su un dispositivo o su tutta la rete."
+  },
+  {
+    "id": 46,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il metodo di diagnosi viene utilizzato anche dai grandi Data Center e dai provider Internet.",
+    "answer": true,
+    "explanation": "Viene utilizzato da amministratori di rete, tecnici dell'assistenza, provider Internet e grandi Data Center."
+  },
+  {
+    "id": 47,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, è consigliabile modificare le configurazioni di rete a caso per risparmiare tempo.",
+    "answer": false,
+    "explanation": "Il principio fondamentale è non modificare configurazioni a caso."
+  },
+  {
+    "id": 48,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nei Network Operation Center (NOC) gli operatori seguono procedure di troubleshooting standardizzate per gestire guasti che coinvolgono milioni di utenti.",
+    "answer": true,
+    "explanation": "Questo approccio metodico consente di individuare rapidamente il punto del guasto."
+  },
+  {
+    "id": 49,
+    "module": "troubleshooting-reti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del medico, una buona diagnosi nasce dall'osservazione, dalla raccolta di informazioni e da verifiche eseguite con metodo.",
+    "answer": true,
+    "explanation": "Come un medico non prescrive una cura appena il paziente entra, ma raccoglie sintomi e informazioni prima di agire."
+  }
+]

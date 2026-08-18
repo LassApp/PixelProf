@@ -1,0 +1,857 @@
+[
+  {
+    "id": 1,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il troubleshooting, secondo il modulo?",
+    "options": [
+      "Il processo di individuazione, analisi e risoluzione di un problema tecnico",
+      "Un protocollo di rete per la cifratura dei dati",
+      "Un dispositivo hardware per il monitoraggio della rete",
+      "Un tipo di malware che colpisce i router"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il troubleshooting è il processo di individuazione, analisi e risoluzione di un problema tecnico."
+  },
+  {
+    "id": 2,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'errore più frequente nella risoluzione dei problemi di rete, secondo il modulo?",
+    "options": [
+      "Documentare ogni passaggio",
+      "Cercare una soluzione casuale, come riavviare continuamente o modificare impostazioni senza sapere cosa fanno",
+      "Chiedere aiuto a un tecnico esperto",
+      "Controllare prima le spie del router"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'errore più frequente è cercare una soluzione casuale, un approccio che rischia di peggiorare la situazione."
+  },
+  {
+    "id": 3,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'obiettivo del troubleshooting, secondo la spiegazione del modulo?",
+    "options": [
+      "Indovinare rapidamente una soluzione",
+      "Raccogliere indizi fino a individuare la vera causa del problema",
+      "Sostituire tutti i dispositivi di rete",
+      "Modificare tutte le impostazioni contemporaneamente"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'obiettivo non è indovinare la soluzione, ma raccogliere indizi fino a individuare la vera causa del problema."
+  },
+  {
+    "id": 4,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un malfunzionamento di rete può avere lo stesso sintomo ma cause diverse?",
+    "options": [
+      "Perché il sintomo \"Internet non funziona\" può dipendere da cavo scollegato, Wi-Fi disattivato, router bloccato, IP errato, DNS irraggiungibile o guasto del provider",
+      "Perché tutti i problemi di rete hanno sempre la stessa causa",
+      "Perché i sintomi cambiano sempre in base al sistema operativo",
+      "Perché ogni dispositivo genera un sintomo diverso"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sintomo può essere sempre lo stesso, ma le cause possono essere completamente diverse tra loro."
+  },
+  {
+    "id": 5,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che ordine i tecnici affrontano i problemi di rete, secondo il modulo?",
+    "options": [
+      "Dai controlli più complessi a quelli più semplici",
+      "In ordine casuale",
+      "Dai controlli più semplici e probabili fino ad arrivare a quelli più complessi",
+      "Sempre partendo dalla sostituzione dei dispositivi"
+    ],
+    "correctIndex": 2,
+    "explanation": "I tecnici seguono una sequenza precisa di verifiche, partendo dai controlli più semplici e probabili."
+  },
+  {
+    "id": 6,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa causò l'interruzione globale dei servizi Facebook, Instagram e WhatsApp nel 2021?",
+    "options": [
+      "Un attacco hacker esterno",
+      "Un guasto fisico ai cavi sottomarini",
+      "Una configurazione errata dei sistemi che gestivano il traffico Internet",
+      "Un sovraccarico di utenti connessi contemporaneamente"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il problema non era dovuto a un guasto fisico, ma a una configurazione errata dei sistemi che gestivano il traffico Internet."
+  },
+  {
+    "id": 7,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'automobile che non si avvia, cosa fa per primo un meccanico esperto?",
+    "options": [
+      "Sostituisce subito il motore",
+      "Controlla se c'è carburante, se la batteria è carica e se il motorino d'avviamento funziona",
+      "Chiama immediatamente un carro attrezzi",
+      "Cambia tutte le gomme"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il meccanico controlla prima le cause più semplici e probabili, procedendo passo dopo passo verso verifiche più complesse."
+  },
+  {
+    "id": 8,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"individuare il problema\" nel contesto del troubleshooting di rete?",
+    "options": [
+      "Sostituire immediatamente il router",
+      "Raccogliere informazioni per stabilire con precisione quale componente della rete causa il malfunzionamento",
+      "Chiamare subito l'assistenza tecnica",
+      "Riavviare tutti i dispositivi contemporaneamente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Individuare il problema significa raccogliere informazioni per stabilire con precisione quale componente della rete sta causando il malfunzionamento."
+  },
+  {
+    "id": 9,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa caratterizza un problema di rete \"locale\"?",
+    "options": [
+      "Riguarda il dispositivo o la rete vicina all'utente, come un cavo scollegato o il Wi-Fi disattivato",
+      "Riguarda sempre un guasto del provider Internet",
+      "Riguarda esclusivamente i server DNS",
+      "Riguarda sempre un sito web specifico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un problema locale riguarda il dispositivo o la rete vicina all'utente."
+  },
+  {
+    "id": 10,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa caratterizza un problema di rete \"remoto\"?",
+    "options": [
+      "Un cavo Ethernet scollegato",
+      "Un Wi-Fi disattivato accidentalmente",
+      "Un server DNS non raggiungibile o un guasto presso il provider Internet",
+      "Un router che necessita di essere riavviato"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un problema remoto si trova oltre la rete locale, come un server DNS non raggiungibile o un guasto presso il provider."
+  },
+  {
+    "id": 11,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale domanda aiuta a distinguere se un problema riguarda un solo dispositivo o l'intera rete domestica?",
+    "options": [
+      "Che colore ha il router?",
+      "Il problema interessa un solo dispositivo oppure tutti quelli presenti in casa?",
+      "Quanti anni ha il router?",
+      "Il router è collegato alla presa elettrica giusta?"
+    ],
+    "correctIndex": 1,
+    "explanation": "Questa domanda permette di restringere il campo delle possibili cause."
+  },
+  {
+    "id": 12,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostrò il caso di Cloudflare del 2022?",
+    "options": [
+      "Che tutti i router domestici erano difettosi",
+      "Che il problema non era nei dispositivi degli utenti né nei loro router, ma in un'infrastruttura remota condivisa da molti servizi online",
+      "Che il DNS globale era stato disattivato",
+      "Che gli utenti dovevano cambiare provider Internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il problema era concentrato nei server di Cloudflare, un'infrastruttura remota condivisa da moltissimi servizi online."
+  },
+  {
+    "id": 13,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nel caso Cloudflare del 2022, cosa succedeva a chi provava a visitare siti non collegati a quel servizio?",
+    "options": [
+      "Non riusciva a navigare comunque",
+      "Riusciva a navigare normalmente",
+      "Riceveva sempre un errore di connessione",
+      "Doveva riavviare il router"
+    ],
+    "correctIndex": 1,
+    "explanation": "Chi provava a visitare altri siti non collegati al servizio Cloudflare riusciva a navigare normalmente."
+  },
+  {
+    "id": 14,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della telefonata senza risposta, cosa si fa prima di pensare che il proprio telefono sia rotto?",
+    "options": [
+      "Si acquista un nuovo telefono",
+      "Si controlla se si ha campo, si prova a chiamare un'altra persona o si chiede a qualcuno vicino di fare la stessa chiamata",
+      "Si spegne il telefono per un'ora",
+      "Si cambia gestore telefonico"
+    ],
+    "correctIndex": 1,
+    "explanation": "Confrontando più informazioni si riesce a capire se il problema è il telefono, la rete telefonica o il destinatario."
+  },
+  {
+    "id": 15,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i controlli iniziali nel troubleshooting di rete?",
+    "options": [
+      "Le verifiche di base che permettono di individuare rapidamente le cause più comuni di un malfunzionamento",
+      "Gli strumenti di diagnosi più avanzati come Traceroute",
+      "Le impostazioni avanzate del firewall",
+      "I protocolli di cifratura della rete"
+    ],
+    "correctIndex": 0,
+    "explanation": "I controlli iniziali sono le verifiche di base eseguite prima di utilizzare strumenti di diagnosi più avanzati."
+  },
+  {
+    "id": 16,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa bisogna verificare per primo riguardo alla connessione fisica?",
+    "options": [
+      "Che il cavo Ethernet sia inserito correttamente nel dispositivo e nel router, oppure che il Wi-Fi sia collegato alla rete corretta",
+      "Che il computer abbia l'ultimo aggiornamento installato",
+      "Che l'antivirus sia attivo",
+      "Che il browser sia aggiornato"
+    ],
+    "correctIndex": 0,
+    "explanation": "La prima verifica consiste nel controllare la connessione fisica del cavo o del Wi-Fi."
+  },
+  {
+    "id": 17,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indicano le spie luminose del router?",
+    "options": [
+      "Solo la marca del dispositivo",
+      "Alimentazione, connessione a Internet, attività della rete e collegamenti Ethernet",
+      "Il numero di dispositivi collegati",
+      "La velocità massima supportata dal router"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le spie luminose forniscono informazioni immediate sullo stato del router."
+  },
+  {
+    "id": 18,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Se smartphone, tablet e computer presentano tutti lo stesso problema di rete, quale causa è più probabile?",
+    "options": [
+      "Un virus sullo smartphone",
+      "Il router o la connessione del provider",
+      "Un problema del solo computer",
+      "Un problema del browser"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se tutti i dispositivi presentano lo stesso problema, è probabile che la causa sia il router o la connessione del provider."
+  },
+  {
+    "id": 19,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può indicare il fatto che un solo sito web non risponde mentre tutti gli altri funzionano normalmente?",
+    "options": [
+      "Un problema del router domestico",
+      "Il server di quel sito potrebbe essere temporaneamente non disponibile",
+      "Un problema del provider Internet",
+      "Un problema della scheda di rete"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se solo un sito non risponde, potrebbe essere il server di quel sito a essere temporaneamente non disponibile."
+  },
+  {
+    "id": 20,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è uno dei rimedi più semplici ed efficaci per risolvere errori temporanei di rete?",
+    "options": [
+      "Sostituire il router",
+      "Riavviare il dispositivo interessato oppure il router",
+      "Cambiare provider Internet",
+      "Reinstallare il sistema operativo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un riavvio è in grado di eliminare errori temporanei, ripristinando il normale funzionamento della rete."
+  },
+  {
+    "id": 21,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della lampada che non si accende, cosa si controlla prima di chiamare un elettricista?",
+    "options": [
+      "Solo il colore della lampadina",
+      "La spina, l'interruttore e se manca corrente in tutta la casa",
+      "Il produttore della lampada",
+      "Il consumo energetico"
+    ],
+    "correctIndex": 1,
+    "explanation": "Si parte sempre dalle verifiche più semplici, perché spesso sono proprio quelle a risolvere il problema."
+  },
+  {
+    "id": 22,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il Ping?",
+    "options": [
+      "Uno strumento che mostra il percorso dei pacchetti verso una destinazione",
+      "Uno strumento di diagnostica di rete che verifica se un dispositivo è raggiungibile attraverso la rete",
+      "Un comando per visualizzare la configurazione IP del computer",
+      "Un protocollo di cifratura dei dati"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ping verifica se un dispositivo è raggiungibile inviando un messaggio e attendendo una risposta."
+  },
+  {
+    "id": 23,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa deriva il nome \"Ping\"?",
+    "options": [
+      "Dal suono emesso dal sonar dei sottomarini",
+      "Da un acronimo inglese",
+      "Dal nome del suo inventore",
+      "Dal rumore di un router"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il nome Ping deriva dal suono emesso dal sonar dei sottomarini, che invia un impulso e attende l'eco."
+  },
+  {
+    "id": 24,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che unità di misura viene generalmente espresso il tempo di risposta del Ping?",
+    "options": [
+      "Secondi",
+      "Millisecondi",
+      "Minuti",
+      "Byte al secondo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il tempo di risposta è espresso generalmente in millisecondi (ms)."
+  },
+  {
+    "id": 25,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indicano tempi di risposta del Ping elevati?",
+    "options": [
+      "Una connessione molto veloce",
+      "Possibili ritardi nelle videoconferenze, nei giochi online o nelle chiamate VoIP",
+      "Un dispositivo spento",
+      "Un errore di configurazione DNS"
+    ],
+    "correctIndex": 1,
+    "explanation": "Tempi elevati possono causare ritardi in attività sensibili alla latenza come videoconferenze, giochi online e VoIP."
+  },
+  {
+    "id": 26,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Un Ping senza risposta significa sempre che il dispositivo di destinazione è guasto?",
+    "options": [
+      "Sì, sempre",
+      "No, molti server e firewall ignorano volontariamente i Ping per motivi di sicurezza pur funzionando normalmente",
+      "Solo se il dispositivo è un router",
+      "Solo se si usa una VPN"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un Ping senza risposta non significa necessariamente che il dispositivo sia guasto."
+  },
+  {
+    "id": 27,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostrarono i test con Ping durante il guasto globale di Facebook, Instagram e WhatsApp del 4 ottobre 2021?",
+    "options": [
+      "Che i dispositivi degli utenti erano danneggiati",
+      "Che numerosi sistemi dell'azienda risultavano irraggiungibili dalla rete Internet",
+      "Che il problema riguardava solo l'Italia",
+      "Che il DNS pubblico di Google non funzionava"
+    ],
+    "correctIndex": 1,
+    "explanation": "I test con Ping mostrarono che numerosi sistemi dell'azienda risultavano irraggiungibili."
+  },
+  {
+    "id": 28,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del campanello, cosa significa non ricevere risposta?",
+    "options": [
+      "Che la casa è sicuramente vuota per sempre",
+      "Che le possibilità sono diverse: potrebbe non esserci nessuno, il campanello essere rotto o gli occupanti scegliere di non aprire",
+      "Che il campanello è sempre rotto",
+      "Che bisogna chiamare la polizia"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il Ping verifica se arriva una risposta, ma non sempre spiega il motivo per cui questa manca."
+  },
+  {
+    "id": 29,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra Traceroute?",
+    "options": [
+      "Il percorso seguito dai pacchetti di dati per raggiungere una destinazione sulla rete",
+      "La velocità massima della connessione",
+      "Il consumo di banda del router",
+      "La configurazione IP del dispositivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Traceroute mostra il percorso seguito dai pacchetti di dati per raggiungere una destinazione."
+  },
+  {
+    "id": 30,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama il comando Traceroute su Windows?",
+    "options": [
+      "Ipconfig",
+      "Tracert",
+      "Netstat",
+      "Pathfind"
+    ],
+    "correctIndex": 1,
+    "explanation": "Su Windows il comando si chiama Tracert, mentre su Linux e macOS si utilizza Traceroute."
+  },
+  {
+    "id": 31,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresenta un \"hop\" in Traceroute?",
+    "options": [
+      "Un errore di connessione",
+      "Ogni router incontrato lungo il tragitto dei pacchetti",
+      "Il tempo totale del viaggio dei dati",
+      "Un tipo di malware"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ogni router incontrato lungo il tragitto viene chiamato hop, perché rappresenta un passaggio da un dispositivo al successivo."
+  },
+  {
+    "id": 32,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indicano i simboli * * * in un risultato di Traceroute?",
+    "options": [
+      "Che la connessione è sicuramente interrotta per sempre",
+      "Che uno dei dispositivi lungo il tragitto non ha risposto, senza indicare necessariamente un guasto",
+      "Che il sito di destinazione non esiste",
+      "Che il computer ha un virus"
+    ],
+    "correctIndex": 1,
+    "explanation": "Alcuni router, per motivi di sicurezza o configurazione, scelgono di non rispondere alle richieste di Traceroute pur continuando a inoltrare il traffico."
+  },
+  {
+    "id": 33,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando è particolarmente utile Traceroute?",
+    "options": [
+      "Quando il problema non si trova nella rete domestica ma lungo il percorso Internet",
+      "Solo quando il computer non si accende",
+      "Solo per verificare la velocità del Wi-Fi",
+      "Solo per controllare l'indirizzo IP locale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Traceroute permette di capire se l'interruzione avviene vicino al proprio router, nella rete del provider o lungo il percorso Internet."
+  },
+  {
+    "id": 34,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa causò l'irraggiungibilità temporanea di YouTube in molte parti del mondo nel 2008?",
+    "options": [
+      "Un attacco informatico su larga scala",
+      "Un errore di instradamento (routing) causato da un provider in Pakistan",
+      "Un guasto ai server DNS di Google",
+      "Un sovraccarico dei server YouTube"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un annuncio di rete errato si propagò su Internet, deviando il traffico verso una destinazione sbagliata."
+  },
+  {
+    "id": 35,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del pacco spedito, a cosa viene paragonato Traceroute?",
+    "options": [
+      "Al corriere che consegna il pacco",
+      "Al registro delle spedizioni che mostra in quale centro logistico si è fermato il viaggio",
+      "Al mittente del pacco",
+      "Al destinatario del pacco"
+    ],
+    "correctIndex": 1,
+    "explanation": "Traceroute non spiega perché il pacco si è bloccato, ma mostra esattamente l'ultima tappa raggiunta."
+  },
+  {
+    "id": 36,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette di visualizzare il comando Ipconfig?",
+    "options": [
+      "Solo la velocità della connessione",
+      "La configurazione di rete del computer, come indirizzo IP, subnet mask, gateway predefinito e server DNS",
+      "Solo l'elenco dei siti visitati",
+      "Solo lo stato dell'antivirus"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ipconfig permette di visualizzare la configurazione di rete del computer."
+  },
+  {
+    "id": 37,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è lo strumento tradizionale per visualizzare la configurazione di rete su Linux e macOS?",
+    "options": [
+      "Tracert",
+      "Ifconfig",
+      "Ping",
+      "Netstat"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nei sistemi Linux e macOS lo strumento tradizionale è Ifconfig, anche se nelle distribuzioni moderne è spesso sostituito dal comando ip."
+  },
+  {
+    "id": 38,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresenta il \"gateway predefinito\" mostrato da Ipconfig?",
+    "options": [
+      "L'indirizzo del sito web visitato",
+      "Il router attraverso cui il traffico esce dalla rete",
+      "Il nome del provider Internet",
+      "La velocità massima del Wi-Fi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il gateway predefinito rappresenta il router attraverso cui il traffico esce dalla rete."
+  },
+  {
+    "id": 39,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fanno i server DNS mostrati da Ipconfig?",
+    "options": [
+      "Cifrano i dati in transito",
+      "Traducono i nomi dei siti web nei corrispondenti indirizzi IP",
+      "Bloccano il traffico non autorizzato",
+      "Misurano la velocità della connessione"
+    ],
+    "correctIndex": 1,
+    "explanation": "I server DNS traducono i nomi dei siti web nei corrispondenti indirizzi IP."
+  },
+  {
+    "id": 40,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa generalmente se un computer mostra un indirizzo IP che inizia con 169.254?",
+    "options": [
+      "Che il dispositivo è collegato correttamente a Internet",
+      "Che il dispositivo non è riuscito a ottenere automaticamente un indirizzo IP dal server DHCP",
+      "Che il dispositivo sta usando una VPN",
+      "Che il dispositivo ha un indirizzo IP statico configurato manualmente"
+    ],
+    "correctIndex": 1,
+    "explanation": "In questo caso il dispositivo si assegna un indirizzo temporaneo, ma normalmente non riesce a comunicare con Internet."
+  },
+  {
+    "id": 41,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Ipconfig e Ifconfig risolvono direttamente i problemi di rete?",
+    "options": [
+      "Sì, sempre",
+      "No, permettono solo di verificare se la configurazione del dispositivo è coerente",
+      "Sì, ma solo su Windows",
+      "Sì, ma solo su Linux"
+    ],
+    "correctIndex": 1,
+    "explanation": "Questi strumenti non risolvono direttamente il problema, ma permettono di verificare la configurazione."
+  },
+  {
+    "id": 42,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della lettera da spedire, cosa succede se l'indirizzo o il codice postale sulla busta sono sbagliati?",
+    "options": [
+      "La lettera arriva comunque, ma in ritardo",
+      "La lettera non partirà mai",
+      "La lettera viene automaticamente corretta",
+      "Non cambia nulla"
+    ],
+    "correctIndex": 1,
+    "explanation": "Allo stesso modo, Ipconfig e Ifconfig permettono di verificare che la configurazione del computer sia corretta."
+  },
+  {
+    "id": 43,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa distinguere un problema di DNS da un problema di connessione?",
+    "options": [
+      "Capire se il dispositivo non riesce a raggiungere Internet oppure non può tradurre i nomi dei siti web nei corrispondenti indirizzi IP",
+      "Capire se il router è vecchio o nuovo",
+      "Capire se il provider Internet è economico o costoso",
+      "Capire se il computer ha un virus"
+    ],
+    "correctIndex": 0,
+    "explanation": "Questa distinzione è fondamentale perché le due situazioni hanno cause e soluzioni differenti."
+  },
+  {
+    "id": 44,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se il server DNS non risponde o restituisce un errore?",
+    "options": [
+      "Il browser non riesce a trovare il sito, anche se la connessione Internet è perfettamente funzionante",
+      "L'intera connessione Internet si blocca",
+      "Il computer si riavvia automaticamente",
+      "Il router smette di funzionare"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se il DNS non risponde, il browser non trova il sito anche se la connessione Internet funziona correttamente."
+  },
+  {
+    "id": 45,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è un primo test utile per distinguere un problema DNS da un problema di connessione?",
+    "options": [
+      "Riavviare il computer",
+      "Eseguire un Ping verso un indirizzo IP noto, come 8.8.8.8",
+      "Disinstallare il browser",
+      "Cambiare la password del Wi-Fi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se il Ping verso l'indirizzo IP risponde, significa che la connessione Internet è attiva."
+  },
+  {
+    "id": 46,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "L'indirizzo 8.8.8.8 citato nel modulo è...?",
+    "options": [
+      "Un indirizzo IP privato del router",
+      "Uno dei server DNS pubblici di Google",
+      "L'indirizzo di un sito web",
+      "Un indirizzo di test locale"
+    ],
+    "correctIndex": 1,
+    "explanation": "8.8.8.8 è uno dei server DNS pubblici di Google."
+  },
+  {
+    "id": 47,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Se il Ping verso un indirizzo IP funziona ma quello verso il nome del sito restituisce un errore di risoluzione, qual è la causa probabile?",
+    "options": [
+      "Un problema di DNS",
+      "Un router guasto",
+      "Un cavo Ethernet scollegato",
+      "Un problema del provider Internet"
+    ],
+    "correctIndex": 0,
+    "explanation": "È molto probabile che il problema riguardi il DNS quando l'IP risponde ma il nome del sito no."
+  },
+  {
+    "id": 48,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa evidenziò il malfunzionamento dei servizi DNS di Akamai nel 2021?",
+    "options": [
+      "Che la connessione Internet degli utenti era guasta",
+      "Che era il sistema di risoluzione dei nomi a non riuscire più a indirizzare gli utenti verso i server corretti, mentre la rete funzionava correttamente",
+      "Che tutti i router dovevano essere sostituiti",
+      "Che il problema riguardava solo gli Stati Uniti"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'episodio evidenziò l'importanza di distinguere un problema DNS da un guasto della connessione."
+  },
+  {
+    "id": 49,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del ristorante, cosa succede se si conosce il nome ma non l'indirizzo?",
+    "options": [
+      "Le strade sono sicuramente chiuse",
+      "Il navigatore non riesce a trovare quell'indirizzo, ma questo non significa che le strade siano chiuse",
+      "Il ristorante non esiste",
+      "Bisogna cambiare navigatore"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il DNS trasforma un nome in una destinazione precisa; se smette di funzionare, Internet continua a esistere ma diventa più difficile raggiungere i siti."
+  },
+  {
+    "id": 50,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il metodo di diagnosi, secondo il modulo?",
+    "options": [
+      "Una procedura logica e ordinata che permette di individuare e risolvere un problema di rete, analizzando una possibile causa alla volta",
+      "Un elenco di dispositivi da sostituire",
+      "Un software antivirus",
+      "Un protocollo di cifratura"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il metodo di diagnosi analizza una possibile causa alla volta fino a identificare quella reale."
+  },
+  {
+    "id": 51,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'obiettivo del metodo di diagnosi?",
+    "options": [
+      "Trovare rapidamente una soluzione qualsiasi",
+      "Trovare la soluzione corretta",
+      "Sostituire tutti i dispositivi di rete",
+      "Evitare di usare strumenti diagnostici"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'obiettivo non è trovare rapidamente una soluzione qualsiasi, ma trovare la soluzione corretta."
+  },
+  {
+    "id": 52,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa si parte sempre nel metodo di diagnosi?",
+    "options": [
+      "Dalla sostituzione del router",
+      "Dall'osservazione del problema: cosa non funziona, da quando, su un dispositivo o su tutta la rete",
+      "Dall'installazione di un nuovo sistema operativo",
+      "Dalla chiamata al provider Internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Si parte sempre dall'osservazione del problema prima di eseguire controlli e usare strumenti diagnostici."
+  },
+  {
+    "id": 53,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette di verificare il Ping all'interno del metodo di diagnosi?",
+    "options": [
+      "Se una destinazione è raggiungibile",
+      "La configurazione IP del dispositivo",
+      "Il percorso completo dei pacchetti",
+      "Se il problema riguarda il DNS"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Ping permette di verificare se una destinazione è raggiungibile."
+  },
+  {
+    "id": 54,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi utilizza il metodo di diagnosi descritto nel modulo?",
+    "options": [
+      "Solo i produttori di router",
+      "Amministratori di rete, tecnici dell'assistenza informatica, provider Internet e grandi Data Center",
+      "Solo gli utenti privati",
+      "Solo le aziende di sicurezza informatica"
+    ],
+    "correctIndex": 1,
+    "explanation": "Questo approccio viene utilizzato da diverse figure professionali che gestiscono reti e infrastrutture."
+  },
+  {
+    "id": 55,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il principio fondamentale del metodo di diagnosi?",
+    "options": [
+      "Modificare tutte le configurazioni possibili finché il problema non si risolve",
+      "Non modificare configurazioni a caso; ogni intervento va eseguito solo dopo aver raccolto elementi che ne giustifichino la necessità",
+      "Sostituire sempre il dispositivo più economico",
+      "Ignorare i controlli iniziali"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ogni intervento dovrebbe essere eseguito solo dopo aver raccolto elementi che ne giustifichino la necessità."
+  },
+  {
+    "id": 56,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fanno gli operatori nei Network Operation Center (NOC) dei grandi provider Internet?",
+    "options": [
+      "Gestiscono quotidianamente guasti che possono coinvolgere milioni di utenti seguendo procedure di troubleshooting standardizzate",
+      "Producono nuovi router",
+      "Vendono abbonamenti Internet",
+      "Sviluppano nuovi siti web"
+    ],
+    "correctIndex": 0,
+    "explanation": "Seguono procedure standardizzate per individuare rapidamente il punto del guasto e limitare l'impatto sulla rete."
+  },
+  {
+    "id": 57,
+    "module": "troubleshooting-reti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del medico, cosa fa prima di prescrivere una cura?",
+    "options": [
+      "Prescrive subito un farmaco generico",
+      "Raccoglie i sintomi, misura i parametri vitali, visita il paziente e, solo se necessario, richiede esami più approfonditi",
+      "Manda il paziente direttamente in ospedale",
+      "Chiede un secondo parere a un collega"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una buona diagnosi nasce dall'osservazione, dalla raccolta di informazioni e da verifiche eseguite con metodo."
+  }
+]

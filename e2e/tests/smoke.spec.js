@@ -121,6 +121,10 @@ test('flusso completo: login → entra in aula → ogni minigioco → pausa/ripr
 
   await test.step('Completa la frase — gioca, pausa/riprendi via dialog di uscita, esci', async () => {
     await goToActivity(page, { module: 'CE', activity: 'fill' });
+    // v8.12.1: 'fill' ora richiede la selezione "Quante domande?" (era
+    // mancante — vedi game-engine-state.js needsNum) prima che
+    // #start-btn si abiliti, stesso comportamento di quiz/speed/truefalse.
+    await selectQuestionCount(page, 5);
     await setupIndividualAndStart(page, 'Alunno Fill');
     await expect(page.locator('.fill-sent')).toBeVisible();
 

@@ -95,12 +95,12 @@ const AREAS = [
     icon: '🛡️',
     description: 'Riconoscere i rischi nelle relazioni digitali e imparare a proteggersi e agire responsabilmente online.',
     modules: [
-      { key: 'identita-reputazione-digitale', label: 'Identità e reputazione digitale', contentReady: false },
-      { key: 'cyberbullismo',                 label: 'Cyberbullismo',                   contentReady: false },
-      { key: 'hate-speech',                   label: 'Hate Speech',                     contentReady: false },
-      { key: 'sexting-revenge-porn',          label: 'Sexting e Revenge Porn',          contentReady: false },
-      { key: 'grooming',                      label: 'Grooming',                        contentReady: false },
-      { key: 'difendersi-online',             label: 'Difendersi online',               contentReady: false },
+      { key: 'identita-reputazione-digitale', label: 'Identità e reputazione digitale', icon: '🪪', contentReady: false },
+      { key: 'cyberbullismo',                 label: 'Cyberbullismo',                   icon: '🛑', contentReady: false },
+      { key: 'hate-speech',                   label: 'Hate Speech',                     icon: '🗯️', contentReady: false },
+      { key: 'sexting-revenge-porn',          label: 'Sexting e Revenge Porn',          icon: '🔞', contentReady: false },
+      { key: 'grooming',                      label: 'Grooming',                        icon: '🎣', contentReady: false },
+      { key: 'difendersi-online',             label: 'Difendersi online',               icon: '🔒', contentReady: false },
     ],
   },
   {
@@ -664,6 +664,259 @@ const AREAS = [
 
     ],
   },
+  {
+    key: 'intelligenza-artificiale',
+    label: 'Intelligenza Artificiale',
+    icon: '🤖',
+    description: 'Comprendere come funziona l\'intelligenza artificiale, i suoi rischi, le opportunità e come usarla in modo consapevole e responsabile.',
+    modules: [
+      {
+        key: 'cos-e-ai', label: "Cos'è l'AI", icon: '✨', contentReady: false,
+        desc: "Cos'è davvero l'intelligenza artificiale, tra mito e realtà",
+        tags: ['AI tradizionale e generativa', 'AI nella vita quotidiana', 'Opportunità e limiti'],
+      cardArt: `
+<circle cx="220" cy="80" r="34" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="220" cy="60" r="3" fill="currentColor" opacity=".5"/>
+<circle cx="200" cy="90" r="3" fill="currentColor" opacity=".45"/>
+<circle cx="240" cy="90" r="3" fill="currentColor" opacity=".45"/>
+<circle cx="220" cy="100" r="3" fill="currentColor" opacity=".4"/>
+<line x1="220" y1="60" x2="200" y2="90" stroke="currentColor" stroke-width=".7" opacity=".35"/>
+<line x1="220" y1="60" x2="240" y2="90" stroke="currentColor" stroke-width=".7" opacity=".35"/>
+<line x1="200" y1="90" x2="220" y2="100" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<line x1="240" y1="90" x2="220" y2="100" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<text x="220" y="86" text-anchor="middle" font-family="monospace" font-size="20" fill="currentColor" opacity=".5" font-weight="bold">?</text>
+<circle cx="55" cy="60" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<circle cx="40" cy="100" r="5" fill="none" stroke="currentColor" stroke-width=".9" opacity=".35"/>
+<circle cx="72" cy="128" r="5.5" fill="none" stroke="currentColor" stroke-width=".9" opacity=".35"/>
+<text x="220" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">AI</text>
+      `,
+      },
+      {
+        key: 'come-funziona-ai', label: "Come funziona l'AI", icon: '⚙️', contentReady: false,
+        desc: 'Dati, machine learning e reti neurali in breve',
+        tags: ['Dati', 'Machine Learning', 'Reti neurali', 'Modelli'],
+      cardArt: `
+<circle cx="60" cy="70" r="20" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".45"/>
+<circle cx="60" cy="70" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<line x1="60" y1="50" x2="60" y2="44" stroke="currentColor" stroke-width="1.4" opacity=".4"/>
+<line x1="60" y1="90" x2="60" y2="96" stroke="currentColor" stroke-width="1.4" opacity=".4"/>
+<line x1="40" y1="70" x2="34" y2="70" stroke="currentColor" stroke-width="1.4" opacity=".4"/>
+<line x1="80" y1="70" x2="86" y2="70" stroke="currentColor" stroke-width="1.4" opacity=".4"/>
+<circle cx="98" cy="110" r="12" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<circle cx="98" cy="110" r="3.6" fill="none" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<circle cx="200" cy="50" r="4" fill="currentColor" opacity=".5"/>
+<circle cx="200" cy="80" r="4" fill="currentColor" opacity=".45"/>
+<circle cx="200" cy="110" r="4" fill="currentColor" opacity=".4"/>
+<circle cx="240" cy="60" r="4" fill="currentColor" opacity=".5"/>
+<circle cx="240" cy="95" r="4" fill="currentColor" opacity=".45"/>
+<circle cx="270" cy="78" r="5" fill="currentColor" opacity=".55"/>
+<line x1="200" y1="50" x2="240" y2="60" stroke="currentColor" stroke-width=".6" opacity=".3"/>
+<line x1="200" y1="50" x2="240" y2="95" stroke="currentColor" stroke-width=".6" opacity=".25"/>
+<line x1="200" y1="80" x2="240" y2="60" stroke="currentColor" stroke-width=".6" opacity=".3"/>
+<line x1="200" y1="80" x2="240" y2="95" stroke="currentColor" stroke-width=".6" opacity=".25"/>
+<line x1="200" y1="110" x2="240" y2="95" stroke="currentColor" stroke-width=".6" opacity=".3"/>
+<line x1="240" y1="60" x2="270" y2="78" stroke="currentColor" stroke-width=".7" opacity=".35"/>
+<line x1="240" y1="95" x2="270" y2="78" stroke="currentColor" stroke-width=".7" opacity=".35"/>
+<text x="225" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">ML</text>
+      `,
+      },
+      {
+        key: 'llm-fondamenti', label: 'Come funzionano gli LLM', icon: '🔤', contentReady: false,
+        desc: 'Token, contesto e generazione del testo',
+        tags: ['LLM', 'Token', 'Contesto e finestra di contesto', 'Generazione della risposta'],
+      cardArt: `
+<rect x="176" y="58" width="80" height="52" rx="6" fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<text x="216" y="90" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".6" font-weight="bold">LLM</text>
+<rect x="30" y="50" width="26" height="14" rx="3" fill="none" stroke="currentColor" stroke-width=".8" opacity=".45"/>
+<rect x="60" y="50" width="20" height="14" rx="3" fill="none" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<rect x="30" y="70" width="18" height="14" rx="3" fill="none" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<rect x="52" y="70" width="26" height="14" rx="3" fill="none" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<line x1="80" y1="60" x2="176" y2="76" stroke="currentColor" stroke-width=".7" opacity=".3" stroke-dasharray="2,3"/>
+<line x1="78" y1="78" x2="176" y2="88" stroke="currentColor" stroke-width=".7" opacity=".3" stroke-dasharray="2,3"/>
+<line x1="256" y1="70" x2="270" y2="70" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<line x1="256" y1="82" x2="278" y2="82" stroke="currentColor" stroke-width="1" opacity=".35"/>
+<line x1="256" y1="94" x2="268" y2="94" stroke="currentColor" stroke-width="1" opacity=".3"/>
+<text x="216" y="132" text-anchor="middle" font-family="monospace" font-size="8" fill="currentColor" opacity=".5">finestra di contesto</text>
+      `,
+      },
+      {
+        key: 'ai-generativa', label: 'AI Generativa', icon: '🎨', contentReady: false,
+        desc: 'Testo, immagini, audio, video e codice generati dall\'AI',
+        tags: ['Testo', 'Immagini', 'Audio e Video', 'Codice'],
+      cardArt: `
+<circle cx="70" cy="80" r="34" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="58" cy="66" r="4" fill="currentColor" opacity=".5"/>
+<circle cx="82" cy="66" r="4" fill="currentColor" opacity=".45"/>
+<circle cx="90" cy="86" r="4" fill="currentColor" opacity=".4"/>
+<circle cx="60" cy="98" r="4" fill="currentColor" opacity=".4"/>
+<text x="180" y="55" font-family="monospace" font-size="14" fill="currentColor" opacity=".5">Aa</text>
+<rect x="175" y="66" width="26" height="20" rx="2" fill="none" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<circle cx="183" cy="74" r="2.4" fill="currentColor" opacity=".4"/>
+<path d="M177,84 l8,-8 6,6 8,-8" fill="none" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<text x="215" y="55" font-family="monospace" font-size="12" fill="currentColor" opacity=".5">&lt;/&gt;</text>
+<path d="M178,100 q6,-8 12,0 q6,8 12,0" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<circle cx="240" cy="100" r="3" fill="currentColor" opacity=".4"/>
+<text x="215" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">GENERATIVE AI</text>
+      `,
+      },
+      {
+        key: 'prompt-engineering', label: 'Prompt Engineering', icon: '⌨️', contentReady: false,
+        desc: 'Scrivere istruzioni efficaci per ottenere risposte migliori',
+        tags: ['Istruzioni e contesto', 'Ruolo ed esempi', 'Tecniche avanzate', 'Prompt injection e sicurezza'],
+      cardArt: `
+<rect x="170" y="40" width="96" height="70" rx="8" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="182" y1="56" x2="240" y2="56" stroke="currentColor" stroke-width=".8" opacity=".45"/>
+<line x1="182" y1="68" x2="252" y2="68" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<line x1="182" y1="80" x2="230" y2="80" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<rect x="182" y="92" width="8" height="12" fill="currentColor" opacity=".45"/>
+<rect x="30" y="60" width="46" height="18" rx="9" fill="none" stroke="currentColor" stroke-width=".9" opacity=".45"/>
+<text x="53" y="72" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".55">ruolo</text>
+<rect x="30" y="88" width="60" height="18" rx="9" fill="none" stroke="currentColor" stroke-width=".9" opacity=".4"/>
+<text x="60" y="100" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".5">contesto</text>
+<text x="218" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">PROMPT</text>
+      `,
+      },
+      {
+        key: 'agenti-automazione', label: 'Agenti e Automazione', icon: '🔁', contentReady: false,
+        desc: 'Chatbot, agenti autonomi e workflow automatizzati',
+        tags: ['Chatbot e agenti', 'Agenti autonomi', 'Workflow e integrazioni', 'Produttività'],
+      cardArt: `
+<circle cx="60" cy="70" r="14" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<rect x="52" y="80" width="16" height="10" rx="2" fill="none" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<line x1="74" y1="70" x2="120" y2="70" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<polygon points="120,70 112,66 112,74" fill="currentColor" opacity=".4"/>
+<rect x="122" y="58" width="36" height="24" rx="4" fill="none" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<text x="140" y="74" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".5">task</text>
+<line x1="158" y1="70" x2="200" y2="70" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<polygon points="200,70 192,66 192,74" fill="currentColor" opacity=".4"/>
+<rect x="202" y="58" width="36" height="24" rx="4" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<text x="220" y="74" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".45">API</text>
+<path d="M220,82 q0,30 -140,30 q-30,0 -30,-24" fill="none" stroke="currentColor" stroke-width=".8" opacity=".3" stroke-dasharray="3,3"/>
+<polygon points="50,88 46,98 58,96" fill="currentColor" opacity=".3"/>
+<text x="160" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">WORKFLOW</text>
+      `,
+      },
+      {
+        key: 'deepfake-contenuti-sintetici', label: 'Deepfake e Contenuti Sintetici', icon: '🎭', contentReady: false,
+        desc: 'Riconoscere immagini, video e voci sintetiche',
+        tags: ['Deepfake', 'Immagini e video sintetici', 'Clonazione vocale', 'Rischi e opportunità'],
+      cardArt: `
+<circle cx="220" cy="76" r="30" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".45"/>
+<path d="M195,112 a25,20 0 0 1 50,0" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<line x1="196" y1="64" x2="244" y2="68" stroke="currentColor" stroke-width="1" opacity=".4" stroke-dasharray="5,3"/>
+<line x1="192" y1="84" x2="248" y2="80" stroke="currentColor" stroke-width="1" opacity=".35" stroke-dasharray="4,4"/>
+<rect x="228" y="58" width="16" height="8" fill="#0c1420" opacity=".8"/>
+<path d="M255,60 L275,50 L275,90 L255,100 Z" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<circle cx="60" cy="70" r="5" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<path d="M50,110 q10,-12 20,0" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
+<text x="220" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">DEEPFAKE</text>
+      `,
+      },
+      {
+        key: 'provenienza-contenuti', label: 'Provenienza dei Contenuti', icon: '🏷️', contentReady: false,
+        desc: 'Watermark e strumenti per tracciare l\'origine dei contenuti',
+        tags: ['Watermark e SynthID', 'Content Credentials', 'Provenienza digitale', 'Limiti'],
+      cardArt: `
+<rect x="176" y="46" width="80" height="60" rx="6" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="196" cy="64" r="5" fill="none" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<path d="M182,96 l16,-16 12,12 20,-20 18,18" fill="none" stroke="currentColor" stroke-width=".9" opacity=".35"/>
+<circle cx="246" cy="94" r="16" fill="currentColor" fill-opacity=".08" stroke="currentColor" stroke-width="1.1" opacity=".55"/>
+<path d="M240,94 l4,4 8,-8" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".6" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="34" y="70" width="70" height="22" rx="4" fill="none" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<circle cx="44" cy="81" r="2.4" fill="currentColor" opacity=".5"/>
+<text x="69" y="85" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".5">C2PA</text>
+<text x="216" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">PROVENANCE</text>
+      `,
+      },
+      {
+        key: 'verificare-ai', label: "Verificare l'AI", icon: '🔍', contentReady: false,
+        desc: 'Allucinazioni, fonti e fact-checking dei contenuti AI',
+        tags: ['Allucinazioni', 'Fonti', 'Verifica e fact-checking', 'Affidabilità'],
+      cardArt: `
+<circle cx="212" cy="72" r="26" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".5"/>
+<line x1="230" y1="90" x2="252" y2="112" stroke="currentColor" stroke-width="3" opacity=".5" stroke-linecap="round"/>
+<line x1="200" y1="64" x2="224" y2="64" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<line x1="200" y1="74" x2="220" y2="74" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<line x1="200" y1="84" x2="216" y2="84" stroke="currentColor" stroke-width=".8" opacity=".3"/>
+<rect x="36" y="52" width="50" height="66" rx="3" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<line x1="44" y1="66" x2="78" y2="66" stroke="currentColor" stroke-width=".7" opacity=".35"/>
+<line x1="44" y1="78" x2="78" y2="78" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<line x1="44" y1="90" x2="64" y2="90" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<text x="200" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">FACT-CHECK</text>
+      `,
+      },
+      {
+        key: 'etica-ai', label: "Etica dell'AI", icon: '🧭', contentReady: false,
+        desc: 'Trasparenza, responsabilità e impatto sociale dell\'AI',
+        tags: ['Trasparenza e responsabilità', 'Privacy', 'Proprietà intellettuale', 'Impatto sociale'],
+      cardArt: `
+<circle cx="220" cy="76" r="34" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="220" cy="76" r="3" fill="currentColor" opacity=".5"/>
+<polygon points="220,50 226,76 220,102 214,76" fill="currentColor" fill-opacity=".08" stroke="currentColor" stroke-width="1" opacity=".5"/>
+<text x="220" y="44" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".5">trasparenza</text>
+<text x="220" y="120" text-anchor="middle" font-family="monospace" font-size="7" fill="currentColor" opacity=".45">privacy</text>
+<circle cx="56" cy="70" r="16" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<circle cx="56" cy="70" r="4" fill="currentColor" opacity=".4"/>
+<text x="216" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">ETICA</text>
+      `,
+      },
+      {
+        key: 'bias-algoritmici', label: 'Bias Algoritmici', icon: '📊', contentReady: false,
+        desc: 'Come nascono i pregiudizi negli algoritmi e come limitarli',
+        tags: ['Bias nei dati', 'Discriminazione', 'Casi reali', 'Mitigazione'],
+      cardArt: `
+<line x1="40" y1="120" x2="270" y2="120" stroke="currentColor" stroke-width="1" opacity=".35"/>
+<rect x="55" y="90" width="20" height="30" fill="currentColor" fill-opacity=".08" stroke="currentColor" stroke-width="1" opacity=".5"/>
+<rect x="85" y="60" width="20" height="60" fill="currentColor" fill-opacity=".1" stroke="currentColor" stroke-width="1" opacity=".55"/>
+<rect x="115" y="100" width="20" height="20" fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<rect x="145" y="108" width="20" height="12" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1" opacity=".35"/>
+<circle cx="95" cy="80" r="20" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".45"/>
+<line x1="110" y1="95" x2="124" y2="109" stroke="currentColor" stroke-width="2.4" opacity=".45" stroke-linecap="round"/>
+<text x="215" y="80" font-family="monospace" font-size="9" fill="currentColor" opacity=".5">dati non</text>
+<text x="215" y="92" font-family="monospace" font-size="9" fill="currentColor" opacity=".5">rappresentativi</text>
+<text x="155" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">BIAS</text>
+      `,
+      },
+      {
+        key: 'ai-act', label: 'AI Act', icon: '📜', contentReady: false,
+        desc: "Il regolamento europeo che disciplina l'uso dell'AI",
+        tags: ['Livelli di rischio', 'Sistemi vietati e ad alto rischio', 'Obblighi', 'Cittadini e professionisti'],
+      cardArt: `
+<circle cx="220" cy="70" r="30" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="220" cy="46" r="2" fill="currentColor" opacity=".5"/>
+<circle cx="238" cy="52" r="2" fill="currentColor" opacity=".45"/>
+<circle cx="244" cy="70" r="2" fill="currentColor" opacity=".45"/>
+<circle cx="238" cy="88" r="2" fill="currentColor" opacity=".45"/>
+<circle cx="220" cy="94" r="2" fill="currentColor" opacity=".45"/>
+<circle cx="202" cy="88" r="2" fill="currentColor" opacity=".4"/>
+<circle cx="196" cy="70" r="2" fill="currentColor" opacity=".4"/>
+<circle cx="202" cy="52" r="2" fill="currentColor" opacity=".4"/>
+<rect x="40" y="100" width="14" height="18" fill="currentColor" fill-opacity=".08" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<rect x="58" y="88" width="14" height="30" fill="currentColor" fill-opacity=".1" stroke="currentColor" stroke-width=".8" opacity=".45"/>
+<rect x="76" y="70" width="14" height="48" fill="currentColor" fill-opacity=".12" stroke="currentColor" stroke-width=".8" opacity=".5"/>
+<text x="215" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">AI ACT</text>
+      `,
+      },
+      {
+        key: 'futuro-ai', label: "Il Futuro dell'AI", icon: '🚀', contentReady: false,
+        desc: 'Multimodalità, agenti, robotica e nuove competenze',
+        tags: ['Multimodalità e agenti', 'Robotica', 'AI personale e assistenti', 'Lavoro e competenze future'],
+      cardArt: `
+<path d="M220,40 q14,20 14,46 q0,10 -14,18 q-14,-8 -14,-18 q0,-26 14,-46 z"
+      fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="220" cy="66" r="5" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
+<path d="M206,90 l-10,16 M234,90 l10,16" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<path d="M212,104 l-6,20 M228,104 l6,20" stroke="currentColor" stroke-width="1.4" opacity=".4"/>
+<circle cx="70" cy="70" r="34" fill="none" stroke="currentColor" stroke-width=".8" opacity=".25" stroke-dasharray="3,4"/>
+<circle cx="104" cy="70" r="4" fill="currentColor" opacity=".5"/>
+<circle cx="52" cy="42" r="4" fill="currentColor" opacity=".45"/>
+<circle cx="52" cy="98" r="4" fill="currentColor" opacity=".4"/>
+<text x="200" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">FUTURE</text>
+      `,
+      },
+    ],
+  },
+
 ];
 
 /* ==================================================

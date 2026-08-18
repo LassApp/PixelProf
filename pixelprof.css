@@ -5676,6 +5676,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
   .cs-area-section[data-area-key="cybersecurity"]{ --area-rgb:30,144,255; }
   .cs-area-section[data-area-key="reti-internet"]{ --area-rgb:124,106,255; }
   .cs-area-section[data-area-key="malware-minacce"]{ --area-rgb:255,77,109; }
+  .cs-area-section[data-area-key="intelligenza-artificiale"]{ --area-rgb:236,72,153; }
 
   /* Fase 7.5 — stessa tripletta --area-rgb, applicata al contenitore delle
      card modulo dinamiche nella schermata "Scegli modulo" (#mod-area-catalog,
@@ -5684,6 +5685,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
   #mod-area-catalog[data-area-key="cybersecurity"]{ --area-rgb:30,144,255; }
   #mod-area-catalog[data-area-key="reti-internet"]{ --area-rgb:124,106,255; }
   #mod-area-catalog[data-area-key="malware-minacce"]{ --area-rgb:255,77,109; }
+  #mod-area-catalog[data-area-key="intelligenza-artificiale"]{ --area-rgb:236,72,153; }
 
   /* Fase 7.7 (v8.9.0) → corretta in v8.9.3: Erasmo intendeva "al passaggio
      del mouse" quando ha detto "on focus" — cioè lo STESSO comportamento
@@ -5737,16 +5739,18 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
   html[data-theme="light"] .cs-area-section[data-area-key="cybersecurity"]{ --area-rgb:29,78,216; }
   html[data-theme="light"] .cs-area-section[data-area-key="reti-internet"]{ --area-rgb:109,40,217; }
   html[data-theme="light"] .cs-area-section[data-area-key="malware-minacce"]{ --area-rgb:190,18,60; }
+  html[data-theme="light"] .cs-area-section[data-area-key="intelligenza-artificiale"]{ --area-rgb:157,23,77; }
 
   /* Fase 7.5 — equivalente light per #mod-area-catalog (vedi sopra). */
   html[data-theme="light"] #mod-area-catalog[data-area-key="cyberbullismo-sicurezza-online"]{ --area-rgb:146,64,14; }
   html[data-theme="light"] #mod-area-catalog[data-area-key="cybersecurity"]{ --area-rgb:29,78,216; }
   html[data-theme="light"] #mod-area-catalog[data-area-key="reti-internet"]{ --area-rgb:109,40,217; }
   html[data-theme="light"] #mod-area-catalog[data-area-key="malware-minacce"]{ --area-rgb:190,18,60; }
+  html[data-theme="light"] #mod-area-catalog[data-area-key="intelligenza-artificiale"]{ --area-rgb:157,23,77; }
   /* Aule legacy/orfane — fallback neutro (255,255,255) del badge è
      illeggibile su sfondo chiaro: qui ridefinito su un grigio scuro
      coerente con .cs-area-section-label chiaro (#10182a). */
-  html[data-theme="light"] .cs-area-section:not([data-area-key="ecdl"]):not([data-area-key="cyberbullismo-sicurezza-online"]):not([data-area-key="cybersecurity"]):not([data-area-key="reti-internet"]):not([data-area-key="malware-minacce"]){
+  html[data-theme="light"] .cs-area-section:not([data-area-key="ecdl"]):not([data-area-key="cyberbullismo-sicurezza-online"]):not([data-area-key="cybersecurity"]):not([data-area-key="reti-internet"]):not([data-area-key="malware-minacce"]):not([data-area-key="intelligenza-artificiale"]){
     --area-rgb:16,24,42;
   }
 }
@@ -5848,6 +5852,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
   .cs-area-filter-chip[data-area-key="cybersecurity"]{ --area-rgb:30,144,255; }
   .cs-area-filter-chip[data-area-key="reti-internet"]{ --area-rgb:124,106,255; }
   .cs-area-filter-chip[data-area-key="malware-minacce"]{ --area-rgb:255,77,109; }
+  .cs-area-filter-chip[data-area-key="intelligenza-artificiale"]{ --area-rgb:236,72,153; }
 
   .cs-area-filter-chip{
     display:inline-flex;align-items:center;gap:6px;
@@ -5891,4 +5896,5 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
   html[data-theme="light"] .cs-area-filter-chip[data-area-key="cybersecurity"]{ --area-rgb:29,78,216; }
   html[data-theme="light"] .cs-area-filter-chip[data-area-key="reti-internet"]{ --area-rgb:109,40,217; }
   html[data-theme="light"] .cs-area-filter-chip[data-area-key="malware-minacce"]{ --area-rgb:190,18,60; }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="intelligenza-artificiale"]{ --area-rgb:157,23,77; }
 }

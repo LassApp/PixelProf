@@ -81,11 +81,19 @@ ormai inutili una volta tolto lo stile inline:
 - `cd e2e && npm test` → tutti gli step, incluso Memory, devono passare
 - Push su `main` → il workflow "E2E Smoke Test" deve tornare verde
 
-## 4. Decisione ancora aperta — badge "Esploratore" 🗺️
+## 4. Decisione presa — badge "Esploratore" 🗺️ (v8.12.0)
 
-Segnalata in v8.9.2 e mai risolta: il badge "Esploratore" richiede di
-aver provato **tutti e 6** i minigiochi. Con Memory in pausa è
-impossibile da sbloccare per chi non lo aveva già ottenuto prima.
-Quando riattivi Memory il problema si risolve da solo — se invece
-Memory resta in pausa a lungo, valuta se abbassare temporaneamente la
-soglia a 5/5 disponibili (in `js/badges.js`, `BADGE_DEFS`).
+Segnalata in v8.9.2, **risolta in v8.12.0**: soglia abbassata da 6/6 a
+5/5 minigiochi disponibili (`js/badges.js`, `BADGE_DEFS`, id
+`explorer`). La `desc` del badge è stata aggiornata per non citare più
+"Memory" tra i minigiochi da provare, così da non confondere chi lo
+legge mentre il tasto è disattivato.
+
+### Quando riattivi Memory (oltre ai passi di cui sopra)
+In `js/badges.js`, badge `explorer`:
+- `calc(ctx)`: riporta `n >= 5` → `n >= 6` e `' / 5 minigiochi provati'`
+  → `' / 6 minigiochi provati'` (in entrambi i punti, `unlocked` e `label`)
+- `desc`: reinserisci "Memory" nell'elenco → `'Prova tutti e 6 i
+  minigiochi almeno una volta: Quiz, Speed Quiz, Abbina, Memory,
+  Completa la frase, Vero o Falso.'`
+- Rilancia `npm run build` (badges.js è in `BUNDLE_FILES`).

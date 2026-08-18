@@ -94,13 +94,161 @@ const AREAS = [
     label: 'Cyberbullismo e Sicurezza Online',
     icon: '🛡️',
     description: 'Riconoscere i rischi nelle relazioni digitali e imparare a proteggersi e agire responsabilmente online.',
+    /* v8.12.0 — desc/tags/cardArt aggiunti ai 6 moduli (stesso pattern
+       Fase 7.7 già usato per Cybersecurity/Reti/Malware/AI). Tag da
+       elenco ufficiale fornito da Erasmo il 18/08/2026, sintetizzati a
+       4 per modulo (voci intro/chiusura escluse, voci affini accorpate
+       — es. "Prevenzione e normativa" in Cyberbullismo).
+       contentReady resta false per tutti: nessun JSON committato.
+
+       Modulo 6 — la label è stata aggiornata da "Difendersi online" a
+       "Cittadinanza Digitale" per allinearsi al titolo dell'elenco
+       ufficiale; l'icona è passata da 🔒 a 🧭 (coerente col nuovo
+       tema "cittadinanza" più che "difesa"). La key interna resta
+       'difendersi-online' (nessun dato ancora collegato, rinominarla
+       ora o in futuro è a costo zero — da confermare con Erasmo).
+       L'elenco ufficiale per questo modulo aveva solo 2 voci ("Essere
+       cittadini digitali", "Conclusioni"): 2 dei 4 tag sono stati
+       sintetizzati dall'Obiettivo dichiarato del modulo, non da un
+       elenco puntato — da rivedere se Erasmo fornisce un elenco più
+       dettagliato. */
     modules: [
-      { key: 'identita-reputazione-digitale', label: 'Identità e reputazione digitale', icon: '🪪', contentReady: false },
-      { key: 'cyberbullismo',                 label: 'Cyberbullismo',                   icon: '🛑', contentReady: false },
-      { key: 'hate-speech',                   label: 'Hate Speech',                     icon: '🗯️', contentReady: false },
-      { key: 'sexting-revenge-porn',          label: 'Sexting e Revenge Porn',          icon: '🔞', contentReady: false },
-      { key: 'grooming',                      label: 'Grooming',                        icon: '🎣', contentReady: false },
-      { key: 'difendersi-online',             label: 'Difendersi online',               icon: '🔒', contentReady: false },
+      {
+        key: 'identita-reputazione-digitale', label: 'Identità e reputazione digitale', icon: '🪪', contentReady: false,
+        desc: 'Come si costruisce l\'identità digitale e perché lascia sempre una traccia',
+        tags: ['Tracce digitali', 'Reputazione online', 'Privacy online', 'Diritto all\'oblio'],
+      cardArt: `
+<!-- id card -->
+<rect x="28" y="46" width="94" height="62" rx="7" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="53" cy="76" r="14" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
+<path d="M42,100 a11,9 0 0 1 22,0" fill="none" stroke="currentColor" stroke-width=".9" opacity=".4"/>
+<line x1="76" y1="62" x2="112" y2="62" stroke="currentColor" stroke-width=".7" opacity=".4"/>
+<line x1="76" y1="74" x2="106" y2="74" stroke="currentColor" stroke-width=".7" opacity=".35"/>
+<line x1="76" y1="86" x2="98" y2="86" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<!-- footprint trail -->
+<circle cx="140" cy="90" r="1.8" fill="currentColor" opacity=".35"/>
+<circle cx="160" cy="84" r="1.8" fill="currentColor" opacity=".3"/>
+<circle cx="180" cy="80" r="1.8" fill="currentColor" opacity=".28"/>
+<line x1="122" y1="94" x2="196" y2="80" stroke="currentColor" stroke-width=".7" opacity=".25" stroke-dasharray="2,3"/>
+<!-- fingerprint rings -->
+<circle cx="222" cy="76" r="30" fill="none" stroke="currentColor" stroke-width=".9" opacity=".2"/>
+<circle cx="222" cy="76" r="22" fill="none" stroke="currentColor" stroke-width=".9" opacity=".3"/>
+<circle cx="222" cy="76" r="14" fill="none" stroke="currentColor" stroke-width=".9" opacity=".4"/>
+<circle cx="222" cy="76" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity=".5"/>
+<text x="200" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">TRACCE</text>
+      `,
+      },
+      {
+        key: 'cyberbullismo', label: 'Cyberbullismo', icon: '🛑', contentReady: false,
+        desc: 'Riconoscere il cyberbullismo, le sue forme e le conseguenze per chi lo subisce',
+        tags: ['Forme di cyberbullismo', 'Vittime e spettatori', 'Le conseguenze', 'Prevenzione e normativa'],
+      cardArt: `
+<!-- speech bubble under attack -->
+<path d="M170,40 h70 a9,9 0 0 1 9,9 v40 a9,9 0 0 1 -9,9 h-30 l-14,14 v-14 h-26 a9,9 0 0 1 -9,-9 v-40 a9,9 0 0 1 9,-9 z"
+      fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="184" y1="58" x2="236" y2="58" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<line x1="184" y1="70" x2="224" y2="70" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<line x1="184" y1="82" x2="212" y2="82" stroke="currentColor" stroke-width=".8" opacity=".3"/>
+<!-- crack across bubble -->
+<path d="M196,40 l10,20 -8,6 12,22" fill="none" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<!-- shield block -->
+<path d="M54,72 L78,80 L78,102 Q78,120 54,132 Q30,120 30,102 L30,80 Z"
+      fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="42" y1="96" x2="66" y2="112" stroke="currentColor" stroke-width="1.3" opacity=".5" stroke-linecap="round"/>
+<line x1="66" y1="96" x2="42" y2="112" stroke="currentColor" stroke-width="1.3" opacity=".5" stroke-linecap="round"/>
+<!-- notification dots trailing -->
+<circle cx="100" cy="60" r="2" fill="currentColor" opacity=".4"/>
+<circle cx="116" cy="66" r="2" fill="currentColor" opacity=".35"/>
+<circle cx="132" cy="72" r="2" fill="currentColor" opacity=".3"/>
+<text x="200" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">STOP</text>
+      `,
+      },
+      {
+        key: 'hate-speech', label: 'Hate Speech', icon: '🗯️', contentReady: false,
+        desc: 'Tra libertà di parola e linguaggio d\'odio: dove sta il confine online',
+        tags: ['Libertà di espressione', 'Linguaggio d\'odio', 'Echo chamber', 'Riconoscerlo'],
+      cardArt: `
+<!-- two opposing bubbles -->
+<path d="M160,44 h60 a8,8 0 0 1 8,8 v30 a8,8 0 0 1 -8,8 h-8 v12 l-14,-12 h-38 a8,8 0 0 1 -8,-8 v-30 a8,8 0 0 1 8,-8 z"
+      fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-width="1" opacity=".5"/>
+<path d="M52,92 h60 a8,8 0 0 1 8,8 v30 a8,8 0 0 1 -8,8 h-38 l-14,12 v-12 h-8 a8,8 0 0 1 -8,-8 v-30 a8,8 0 0 1 8,-8 z"
+      fill="currentColor" fill-opacity=".04" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<line x1="172" y1="60" x2="208" y2="60" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<line x1="172" y1="70" x2="198" y2="70" stroke="currentColor" stroke-width=".8" opacity=".3"/>
+<line x1="64" y1="108" x2="100" y2="108" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<line x1="64" y1="118" x2="90" y2="118" stroke="currentColor" stroke-width=".8" opacity=".28"/>
+<!-- echo rings -->
+<circle cx="230" cy="120" r="8" fill="none" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<circle cx="230" cy="120" r="16" fill="none" stroke="currentColor" stroke-width=".7" opacity=".28"/>
+<circle cx="230" cy="120" r="24" fill="none" stroke="currentColor" stroke-width=".6" opacity=".18"/>
+<text x="150" y="158" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">HATE SPEECH</text>
+      `,
+      },
+      {
+        key: 'sexting-revenge-porn', label: 'Sexting e Revenge Porn', icon: '🔞', contentReady: false,
+        desc: 'Consenso, rischi e conseguenze nella condivisione di contenuti intimi',
+        tags: ['Il consenso', 'I rischi', 'Revenge porn', 'Chiedere aiuto'],
+      cardArt: `
+<!-- photo frame -->
+<rect x="150" y="42" width="86" height="62" rx="6" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="168" cy="60" r="6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".4"/>
+<path d="M156,96 l20,-20 14,14 20,-24 20,30" fill="none" stroke="currentColor" stroke-width=".9" opacity=".35"/>
+<!-- padlock overlay -->
+<rect x="176" y="76" width="30" height="22" rx="4" fill="#0c1420" stroke="currentColor" stroke-width="1.1" opacity=".7"/>
+<path d="M182,76 v-8 a9,9 0 0 1 18,0 v8" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".6"/>
+<circle cx="191" cy="87" r="2.2" fill="currentColor" opacity=".55"/>
+<!-- consent checkmark badge -->
+<circle cx="56" cy="90" r="24" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<path d="M44,90 l9,9 17,-19" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".6" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="191" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">CONSENSO</text>
+      `,
+      },
+      {
+        key: 'grooming', label: 'Grooming', icon: '🎣', contentReady: false,
+        desc: 'Riconoscere le tecniche di adescamento online e sapersi difendere',
+        tags: ['Le tecniche', 'Le fasi', 'I segnali', 'Difendersi'],
+      cardArt: `
+<!-- chat bubble -->
+<path d="M170,40 h70 a8,8 0 0 1 8,8 v36 a8,8 0 0 1 -8,8 h-44 l-14,14 v-14 h-12 a8,8 0 0 1 -8,-8 v-36 a8,8 0 0 1 8,-8 z"
+      fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<!-- hidden figure silhouette -->
+<circle cx="196" cy="60" r="8" fill="currentColor" fill-opacity=".12" stroke="currentColor" stroke-width=".9" opacity=".5"/>
+<path d="M182,80 a14,10 0 0 1 28,0" fill="currentColor" fill-opacity=".1" stroke="currentColor" stroke-width=".9" opacity=".45"/>
+<line x1="188" y1="56" x2="204" y2="64" stroke="currentColor" stroke-width=".8" opacity=".4" stroke-dasharray="2,2"/>
+<!-- fishing hook -->
+<path d="M54,40 v46 a10,10 0 1 0 14,-9" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".5"/>
+<circle cx="54" cy="40" r="2" fill="currentColor" opacity=".5"/>
+<!-- warning triangle -->
+<polygon points="60,110 84,150 36,150" fill="currentColor" fill-opacity=".04" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<line x1="60" y1="122" x2="60" y2="138" stroke="currentColor" stroke-width="1.3" opacity=".5"/>
+<circle cx="60" cy="144" r="1.6" fill="currentColor" opacity=".5"/>
+<text x="196" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">GROOMING</text>
+      `,
+      },
+      {
+        key: 'difendersi-online', label: 'Cittadinanza Digitale', icon: '🧭', contentReady: false,
+        desc: 'Diventare cittadini digitali responsabili: proteggersi e proteggere gli altri',
+        tags: ['Cittadinanza digitale', 'Proteggere sé e gli altri', 'Gestire i rischi online', 'Uso responsabile della rete'],
+      cardArt: `
+<!-- globe -->
+<circle cx="200" cy="80" r="34" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".45"/>
+<ellipse cx="200" cy="80" rx="34" ry="14" fill="none" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<ellipse cx="200" cy="80" rx="14" ry="34" fill="none" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<line x1="166" y1="80" x2="234" y2="80" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<!-- people nodes around -->
+<circle cx="200" cy="38" r="4" fill="currentColor" opacity=".5"/>
+<circle cx="238" cy="62" r="4" fill="currentColor" opacity=".45"/>
+<circle cx="238" cy="98" r="4" fill="currentColor" opacity=".45"/>
+<circle cx="200" cy="122" r="4" fill="currentColor" opacity=".4"/>
+<circle cx="162" cy="98" r="4" fill="currentColor" opacity=".4"/>
+<circle cx="162" cy="62" r="4" fill="currentColor" opacity=".4"/>
+<!-- compass -->
+<circle cx="54" cy="90" r="22" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<polygon points="54,74 60,90 54,106 48,90" fill="currentColor" fill-opacity=".15" stroke="currentColor" stroke-width=".8" opacity=".55"/>
+<circle cx="54" cy="90" r="2" fill="currentColor" opacity=".6"/>
+<text x="197" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">CIVIC</text>
+      `,
+      },
     ],
   },
   {

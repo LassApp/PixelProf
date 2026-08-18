@@ -46,11 +46,14 @@ const BADGE_DEFS = [
     }
   },
   {
+    // v8.12.0 — soglia abbassata da 6 a 5 mentre Memory è in pausa
+    // (REATTIVAZIONE_MEMORY.md §4, decisione Erasmo). Riportare a 6
+    // e reinserire "Memory" nella desc quando Memory viene riattivato.
     id: 'explorer', icon: '🗺️', title: 'Esploratore',
-    desc: 'Prova tutti e 6 i minigiochi almeno una volta: Quiz, Speed Quiz, Abbina, Memory, Completa la frase, Vero o Falso.',
+    desc: 'Prova tutti i minigiochi disponibili almeno una volta: Quiz, Speed Quiz, Abbina, Completa la frase, Vero o Falso.',
     calc(ctx) {
       const n = ctx.distinctGames.size;
-      return { unlocked: n >= 6, label: n + ' / 6 minigiochi provati', pct: Math.min(n / 6, 1) * 100 };
+      return { unlocked: n >= 5, label: n + ' / 5 minigiochi provati', pct: Math.min(n / 5, 1) * 100 };
     }
   },
   {

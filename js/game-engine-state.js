@@ -29,6 +29,12 @@
        window._activeModuleKeys = null prima di mostrare
        la grid aule, evitando che il filtro moduli
        dell'aula precedente "sanguini" su quella successiva.
+   v5.0.7: FIX — 'fill' (Completa la frase) aggiunto a
+     needsNum in selAct()/checkCanStart(): mancava tra
+     quiz/speed/truefalse, per cui il selettore "Quante
+     domande?" (5/10/15/20/Tutte) non veniva mai mostrato
+     e la partita usava sempre l'intero pool JSON del
+     modulo (vedi anche game-fill.js v4.0.9).
    This is the central module — loaded before all games.
 ================================================== */
 
@@ -1486,7 +1492,7 @@ function selAct(a){
   ['quiz','speed','match','memory','fill','truefalse'].forEach(x=>sh('ac-'+x).classList.remove('active'));
   sh('ac-'+a).classList.add('active');
   updateHero(a);
-  const needsNum=(a==='quiz'||a==='speed'||a==='truefalse');
+  const needsNum=(a==='quiz'||a==='speed'||a==='truefalse'||a==='fill');
   sh('setup-num').classList.toggle('hidden',!needsNum);
   sh('setup-divider').classList.toggle('hidden',!needsNum);
   // Speed Quiz: hide "Tutte"  no meaning with fixed 60s timer
@@ -1507,7 +1513,7 @@ function selNum(btn,n){
 }
 
 function checkCanStart(){
-  const needsNum=(sAct==='quiz'||sAct==='speed'||sAct==='truefalse');
+  const needsNum=(sAct==='quiz'||sAct==='speed'||sAct==='truefalse'||sAct==='fill');
   const numOk=!needsNum||sNumSelected;
   let playerOk=false;
   if(sMode==='ind'){

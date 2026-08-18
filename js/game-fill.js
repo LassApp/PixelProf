@@ -1,7 +1,13 @@
 /* ==================================================
-   game-fill.js — PixelProf v4.0.8
+   game-fill.js — PixelProf v4.0.9
    Completa la frase game logic.
    Depends on: game-engine-state.js, scoring.js
+   v4.0.9: FIX — applicato sN (selettore "Quante domande?"
+   5/10/15/20/Tutte) al pool prima di iniziare la partita,
+   come già avviene per Quiz/Speed/Vero o Falso. Prima
+   d'ora la partita usava sempre l'intero pool JSON del
+   modulo, ignorando la selezione (mai richiesta perché
+   'fill' non era incluso in needsNum — vedi game-engine-state.js).
 ================================================== */
 
 /* ==================================================
@@ -19,7 +25,10 @@ async function startFill(cont,mod){
     showCompletaFraseError('Impossibile caricare il gioco Completa la frase. Riprova o cambia modulo.');
     return;
   }
-  fillState={qs:_weightedShuffleFillPool([...src]),idx:0,score:0,mod};renderFill(cont);
+  // sN: numero frasi scelto in setup-num (0 = "Tutte") — stesso comportamento di Quiz/Vero o Falso.
+  let pool=_weightedShuffleFillPool([...src]);
+  if(sN>0) pool=pool.slice(0,Math.min(sN,pool.length));
+  fillState={qs:pool,idx:0,score:0,mod};renderFill(cont);
 }
 
 function renderFill(cont){

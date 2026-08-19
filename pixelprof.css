@@ -5094,8 +5094,9 @@ html[data-theme="light"] .cat-sub{ color: rgba(16,24,42,.45); }
 html[data-theme="light"] .cat-arrow{ color: rgba(16,24,42,.22); }
 
 /* ── 6. ACT-BACK-BTN, SETUP CARD, CONTROLLI FORM ─────────────── */
-html[data-theme="light"] .act-back-btn{ background: rgba(20,30,60,.05); border-color: rgba(20,30,60,.09); }
+html[data-theme="light"] .act-back-btn{ background: rgba(20,30,60,.05); border-color: rgba(20,30,60,.09); color: rgba(16,24,42,.65); }
 html[data-theme="light"] .act-back-btn:hover{ background: rgba(20,30,60,.09); color:#10182a; }
+html[data-theme="light"] .act-context-label{ color: rgba(16,24,42,.65); }
 html[data-theme="light"] .setup-card{ background:#ffffff; border-color: rgba(20,30,60,.09); }
 html[data-theme="light"] .num-btn,html[data-theme="light"] .mode-btn,
 html[data-theme="light"] .pchip,html[data-theme="light"] .chip{ color: rgba(16,24,42,.6); }

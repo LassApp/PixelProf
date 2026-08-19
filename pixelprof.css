@@ -485,7 +485,7 @@ body{
 .act-back-btn{
   display:inline-flex;align-items:center;gap:6px;padding:7px 14px;
   border-radius:var(--radius-sm);border:1px solid var(--border-mid);
-  background:var(--surface-1);color:var(--text-muted);
+  background:var(--surface-1);color:rgba(255,255,255,.58);
   font-size:12px;font-weight:500;cursor:pointer;font-family:inherit;
   transition:all var(--transition-fast);position:relative;overflow:hidden;
 }
@@ -496,7 +496,7 @@ body{
 .act-back-btn:hover{border-color:var(--accent-border);color:var(--accent);background:var(--accent-dim);}
 .act-back-btn:hover::after{transform:scaleX(1);}
 .act-back-btn i{font-size:14px}
-.act-context-label{font-size:11px;color:var(--text-dim);letter-spacing:.8px;text-transform:uppercase;font-family:'Share Tech Mono',monospace}
+.act-context-label{font-size:11px;color:rgba(255,255,255,.58);letter-spacing:.8px;text-transform:uppercase;font-family:'Share Tech Mono',monospace}
 .act-hero{position:relative;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:16px;min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.5rem;transition:all .4s;box-shadow:var(--shadow-card);}
 .act-hero-bg{position:absolute;inset:0;width:100%;height:100%}
 .act-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,24,.3) 0%,rgba(8,12,24,.75) 100%)}
@@ -1820,7 +1820,7 @@ body{
   outline:none;transition:border var(--transition-fast),box-shadow var(--transition-fast);
 }
 .login-inp:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,255,200,.08);}
-.login-inp::placeholder{color:rgba(255,255,255,.2);}
+.login-inp::placeholder{color:rgba(255,255,255,.42);}
 .login-btn{
   width:100%;padding:11px;border-radius:var(--radius-sm);
   border:1px solid var(--accent);background:var(--accent-dim);
@@ -2018,7 +2018,7 @@ body{
   transition:border var(--transition-fast);
 }
 .cw-invite-inp:focus{border-color:var(--accent);}
-.cw-invite-inp::placeholder{color:rgba(255,255,255,.2);}
+.cw-invite-inp::placeholder{color:rgba(255,255,255,.42);}
 .cw-invite-fb{font-size:11px;min-height:16px;margin-top:4px;}
 /* Courses screen — mostra "Crea" solo al direttore */
 #cs-add-form-wrap.teacher-mode{display:none;}
@@ -5105,7 +5105,7 @@ html[data-theme="light"] .cw-invite-inp,html[data-theme="light"] .dp-add-select,
 html[data-theme="light"] .pp-generic-input{ background: rgba(20,30,60,.035); color:#10182a; }
 html[data-theme="light"] .dp-add-select option{ background:#ffffff; color:#10182a; }
 html[data-theme="light"] .inp-row input::placeholder,html[data-theme="light"] .cs-add-inp::placeholder,
-html[data-theme="light"] .login-inp::placeholder{ color: rgba(16,24,42,.3); }
+html[data-theme="light"] .login-inp::placeholder,html[data-theme="light"] .cw-invite-inp::placeholder{ color: rgba(16,24,42,.5); }
 html[data-theme="light"] .gender-btn{ color: rgba(16,24,42,.55); }
 
 /* ── 6bis. STEP-ATT: hero "Scegli attività" (stato inattivo) + card minigioco ──
@@ -5130,6 +5130,7 @@ html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-ma
 html[data-theme="light"] .act-card{ background:#ffffff; border-color: rgba(20,30,60,.09); }
 html[data-theme="light"] .act-card:hover{ border-color: rgba(20,30,60,.18); background: rgba(20,30,60,.04); }
 html[data-theme="light"] .act-card:not(.active) h3{ color:#10182a; }
+html[data-theme="light"] .act-card.active h3{ color:#10182a; }
 html[data-theme="light"] .act-card p{ color: rgba(16,24,42,.42); }
 html[data-theme="light"] #ac-memory p{ color: rgba(16,24,42,.6); }
 html[data-theme="light"] .act-soon-badge{
@@ -5500,6 +5501,7 @@ html[data-theme="light"] .csv-import-trigger-btn:hover{
 }
 html[data-theme="light"] .csv-import-list{ background: rgba(20,30,60,.02); border-color: rgba(20,30,60,.09); }
 html[data-theme="light"] .csv-import-row{ color: rgba(16,24,42,.8); border-bottom-color: rgba(20,30,60,.06); }
+html[data-theme="light"] .csv-import-row-del{ color: rgba(16,24,42,.35); }
 html[data-theme="light"] .csv-import-empty-list{ color: rgba(16,24,42,.3); }
 
 /* ── 20. TOGGLE AUDIO/TEMA ────────────────────────────────────── */

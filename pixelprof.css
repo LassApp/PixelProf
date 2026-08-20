@@ -4008,18 +4008,12 @@ body{
 .dd-scegli:hover{ border-color:rgba(0,255,200,.5); box-shadow:0 12px 36px rgba(0,255,200,.14); }
 .dd-scegli:hover .dd-title,.dd-scegli:hover .dd-arrow{ color:var(--accent); }
 
-/* ── Gestione Docenti — lista + pannello modifica ── */
-.tm-list{ display:flex;flex-direction:column;gap:6px;margin-bottom:8px; }
-.tm-row{
-  display:flex;align-items:center;justify-content:space-between;gap:10px;
-  padding:10px 14px;border-radius:10px;
-  border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.03);
-  cursor:pointer;transition:all .18s;
-}
-.tm-row:hover{ background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.18); }
-.tm-row.tm-selected{ border-color:var(--accent);background:rgba(0,255,200,.07); }
-.tm-row.tm-inactive{ opacity:.5; }
-.tm-row-name{ font-size:13px;font-weight:600;color:#fff; }
+/* ── Gestione Docenti — badge "Disattivato" (scheda docente) ──
+   v8.14.0: rimossa la famiglia .tm-list/.tm-row/.tm-row-name (vecchio
+   design a lista, mai più referenziata da JS/HTML — vedi
+   UX_AUDIT_grafica_dark_light.md §6). .tm-badge-inactive invece è
+   attivamente usata in js/app.js (tmOpenDetail, tmDetailSaveProfile,
+   tmDetailToggleActive) quindi resta e viene tematizzata sotto. */
 .tm-badge-inactive{
   font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
   padding:2px 8px;border-radius:20px;flex-shrink:0;
@@ -4363,7 +4357,7 @@ body{
   display:flex;align-items:center;gap:6px;
   padding:8px 14px;border:none;background:none;cursor:pointer;
   font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.2px;
-  color:rgba(255,255,255,.4);border-bottom:2px solid transparent;
+  color:var(--text-muted);border-bottom:2px solid transparent; /* v8.14.0 FIX: era rgba(255,255,255,.4) hardcoded = 3.78:1 scuro, 2.88:1 chiaro (duplicato sotto ignorava il token) */
   transition:color .18s,border-color .18s;
 }
 .chd-wq-tab:hover{color:rgba(255,255,255,.75);}
@@ -4429,7 +4423,7 @@ body{
 .chd-wq-act-icon{font-size:13px;flex-shrink:0;}
 .chd-wq-errs{
   margin-left:auto;font-size:10px;font-weight:700;
-  color:rgba(255,80,80,.8);font-family:'Share Tech Mono',monospace;
+  color:rgba(255,80,80,.9);font-family:'Share Tech Mono',monospace; /* v8.14.0 FIX: era .8 = 4.02:1 -> ora 4.82:1 */
   flex-shrink:0;
 }
 .chd-wq-list-recovered .chd-wq-errs{color:rgba(0,255,150,.8);}
@@ -4451,13 +4445,13 @@ body{
 }
 .chd-wq-empty-icon{font-size:30px;margin-bottom:10px;opacity:.6;}
 .chd-wq-empty-title{font-size:13px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:4px;}
-.chd-wq-empty-sub{font-size:11px;color:rgba(255,255,255,.25);line-height:1.5;max-width:320px;margin:0 auto;}
+.chd-wq-empty-sub{font-size:11px;color:var(--text-dim);line-height:1.5;max-width:320px;margin:0 auto;} /* v8.14.0 FIX: era rgba(255,255,255,.25) = 2.16:1, sfuggito al giro Fase 2 */
 
 .chd-wq-reset-btn{
   display:inline-flex;align-items:center;gap:4px;
   padding:4px 10px;border-radius:7px;
   background:rgba(255,80,80,.06);border:1px solid rgba(255,80,80,.2);
-  color:rgba(255,100,100,.6);font-size:10px;cursor:pointer;font-family:inherit;
+  color:rgba(255,100,100,.85);font-size:10px;cursor:pointer;font-family:inherit; /* v8.14.0 FIX: era .6 = 3.03:1 -> ora 4.94:1 */
   transition:all var(--transition-fast);font-weight:600;
 }
 .chd-wq-reset-btn:hover{background:rgba(255,80,80,.14);color:#ff6b6b;border-color:rgba(255,80,80,.4);}
@@ -5336,15 +5330,29 @@ html[data-theme="light"] .chd-act-bar-wrap{ background: rgba(20,30,60,.07); }
 html[data-theme="light"] .chd-empty-title{ color: rgba(16,24,42,.4); }
 html[data-theme="light"] .chd-empty-sub{ color: rgba(16,24,42,.28); }
 /* v8.13.1: override chd-footnote rimosso (era 2.03:1 anche in chiaro) — ora var(--text-dim) */
-html[data-theme="light"] .chd-wq-tab{ color: rgba(16,24,42,.45); }
-html[data-theme="light"] .chd-wq-modfilter-btn{ background:#ffffff; border-color: rgba(20,30,60,.1); color: rgba(16,24,42,.5); }
+/* v8.14.0: .chd-wq-tab non ha più un override qui — la regola base
+   (@layer classhealth) usa ora var(--text-muted), che cambia già
+   valore da sola in chiaro. Il vecchio override hardcoded rgba(16,24,42,.45)
+   (2.88:1) ignorava silenziosamente il token, stesso pattern già visto
+   per .logo-sub in Fase 2. */
+html[data-theme="light"] .chd-wq-tab-count{ background: rgba(20,30,60,.08); color: var(--text-muted); } /* v8.14.0 FIX: nessun override esisteva -> 1.04:1, quasi invisibile */
+html[data-theme="light"] .chd-wq-tab.active .chd-wq-tab-count{ color:inherit; }
+html[data-theme="light"] .chd-wq-tab-problem.active{ color:#c22a3e; } /* v8.14.0 FIX: #ff6b85 su chiaro = 2.50:1 */
+html[data-theme="light"] .chd-wq-tab-recovered.active{ color:#12805a; } /* v8.14.0 FIX: #00ff96 su chiaro = 1.22:1 */
+html[data-theme="light"] .chd-wq-modfilter-btn{ background:#ffffff; border-color: rgba(20,30,60,.1); color: var(--text-muted); } /* v8.14.0 FIX: era rgba(16,24,42,.5) = 3.32:1 */
 html[data-theme="light"] .chd-wq-modfilter-btn.active{ color: var(--text-primary); }
+html[data-theme="light"] .chd-wq-modfilter-count{ background: rgba(20,30,60,.08); }
 html[data-theme="light"] .chd-wq-row{ background:#ffffff; }
 html[data-theme="light"] .chd-wq-question{ color: rgba(16,24,42,.82); }
 html[data-theme="light"] .chd-wq-answer{ color: rgba(16,24,42,.45); }
+html[data-theme="light"] .chd-wq-answer strong{ color:#12805a; } /* v8.14.0 FIX: rgba(0,255,200,.75) su chiaro = 1.27:1 */
+html[data-theme="light"] .chd-wq-errs{ color:#c22a3e; } /* v8.14.0 FIX: rgba(255,80,80,.9) su chiaro = 2.64:1 */
+html[data-theme="light"] .chd-wq-list-recovered .chd-wq-errs{ color:#12805a; } /* v8.14.0 FIX: rgba(0,255,150,.8) su chiaro = 1.31:1 */
+html[data-theme="light"] .chd-wq-reset-btn{ background: rgba(194,42,62,.06); border-color: rgba(194,42,62,.25); color:#c22a3e; } /* v8.14.0 FIX: nessun override -> 1.77:1 */
 html[data-theme="light"] .chd-wq-empty{ border-color: rgba(20,30,60,.1); }
-html[data-theme="light"] .chd-wq-empty-title{ color: rgba(16,24,42,.5); }
-html[data-theme="light"] .chd-wq-empty-sub{ color: rgba(16,24,42,.3); }
+html[data-theme="light"] .chd-wq-empty-title{ color: var(--text-muted); } /* v8.14.0 FIX: era rgba(16,24,42,.5) = 3.32:1 */
+html[data-theme="light"] .chd-wq-empty-sub{ color: var(--text-dim); } /* v8.14.0 FIX: era rgba(16,24,42,.3) = 1.93:1 */
+html[data-theme="light"] .tm-badge-inactive{ background: rgba(194,42,62,.08); border-color: rgba(194,42,62,.3); color:#c22a3e; } /* v8.14.0 FIX: #ff6b6b su chiaro = 2.55-2.78:1 */
 /* .chd-never-played: banner ambra "non ha ancora mai giocato" —
    stesso #ffb400 su sfondo chiaro, stessa ink di riserva. */
 html[data-theme="light"] .chd-never-played{ color:#a66d00; }

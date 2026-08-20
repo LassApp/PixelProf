@@ -69,8 +69,8 @@
   --border-subtle:rgba(255,255,255,.07);
   --border-mid:rgba(255,255,255,.12);
   --text-primary:#e2e8f0;
-  --text-muted:rgba(255,255,255,.4);
-  --text-dim:rgba(255,255,255,.25);
+  --text-muted:rgba(255,255,255,.45); /* v8.13.0 FIX: era .4 (3.78:1) -> ora 4.51:1 AA testo normale */
+  --text-dim:rgba(255,255,255,.34); /* v8.13.0 FIX: era .25 (2.16:1) -> ora 3.04:1 soglia UI/testo grande */
   --radius-sm:8px;
   --radius-md:12px;
   --radius-lg:16px;
@@ -4985,8 +4985,8 @@ html[data-theme="light"]{
   --border-subtle: rgba(20,30,60,.1);
   --border-mid: rgba(20,30,60,.16);
   --text-primary: #10182a;
-  --text-muted: rgba(16,24,42,.58);
-  --text-dim: rgba(16,24,42,.4);
+  --text-muted: rgba(16,24,42,.6); /* v8.13.0 FIX: era .58 (4.25:1) -> ora 4.52:1 AA testo normale */
+  --text-dim: rgba(16,24,42,.47); /* v8.13.0 FIX: era .4 (2.50:1) -> ora 3.05:1 soglia UI/testo grande */
   --shadow-card: 0 2px 14px rgba(20,30,60,.08), 0 1px 0 rgba(255,255,255,.6) inset;
   --skel-c1: rgba(20,30,60,.06);
   --skel-c2: rgba(20,30,60,.14);

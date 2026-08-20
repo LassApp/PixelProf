@@ -1334,7 +1334,7 @@ body{
 
 /* Result table */
 .lb-table-header{display:flex;padding:6px 14px;margin-bottom:4px}
-.lb-th{font-size:9px;font-weight:600;color:rgba(255,255,255,.2);text-transform:uppercase;letter-spacing:.8px}
+.lb-th{font-size:9px;font-weight:600;color:var(--text-muted);text-transform:uppercase;letter-spacing:.8px} /* v8.13.1 FIX: era rgba(255,255,255,.2) = 1.79:1 */
 .lb-th.pos{width:40px;flex-shrink:0}
 .lb-th.name{flex:1}
 .lb-th.mod{width:130px;flex-shrink:0;text-align:center}
@@ -1382,8 +1382,8 @@ body{
 
 .lb-empty{padding:3rem 1rem;text-align:center}
 .lb-empty .le-icon{font-size:40px;margin-bottom:12px;opacity:.4}
-.lb-empty .le-title{font-size:14px;font-weight:600;color:rgba(255,255,255,.3);margin-bottom:4px}
-.lb-empty .le-sub{font-size:12px;color:rgba(255,255,255,.18)}
+.lb-empty .le-title{font-size:14px;font-weight:600;color:var(--text-muted);margin-bottom:4px} /* v8.13.1 FIX: era .3 = 2.62:1 */
+.lb-empty .le-sub{font-size:12px;color:var(--text-dim)} /* v8.13.1 FIX: era .18 = 1.66:1 */
 
 /* Reset button */
 .lb-reset-btn{
@@ -1426,7 +1426,7 @@ body{
   color:rgba(255,255,255,.7);font-family:'Share Tech Mono',monospace;font-size:11px;
   padding:5px 10px;cursor:pointer;outline:none;color-scheme:dark;
 }
-.hist-count-label{color:rgba(255,255,255,.3);}
+.hist-count-label{color:var(--text-muted);} /* v8.13.1 FIX: era .3 = 2.62:1 */
 
 /* ===============================================
    COURSES SCREEN — v7 unified
@@ -1454,7 +1454,7 @@ body{
 .cs-logo-svg{width:28px;height:28px;flex-shrink:0;}
 .cs-logo-text{font-family:'Orbitron',monospace;font-size:14px;font-weight:900;color:var(--accent);letter-spacing:1px;}
 .cs-logo-text em{color:var(--purple);font-style:normal;}
-.cs-logo-sub{font-family:'Share Tech Mono',monospace;font-size:8px;color:rgba(255,255,255,.2);letter-spacing:2px;display:block;margin-top:1px;}
+.cs-logo-sub{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text-muted);letter-spacing:2px;display:block;margin-top:1px;} /* v8.13.1 FIX: era rgba(255,255,255,.2) hardcoded */
 
 .cs-body{
   max-width:660px;width:100%;margin:0 auto;
@@ -1467,7 +1467,7 @@ body{
 }
 .cs-hero-eyebrow{
   font-family:'Share Tech Mono',monospace;font-size:9px;
-  color:rgba(0,255,200,.45);letter-spacing:3px;text-transform:uppercase;
+  color:rgba(0,255,200,.52);letter-spacing:3px;text-transform:uppercase; /* v8.13.1 FIX: era .45 = 3.68:1 */
   display:block;margin-bottom:10px;
 }
 .cs-hero-title{
@@ -1476,7 +1476,7 @@ body{
   text-shadow:0 0 30px rgba(0,255,200,.1);
 }
 .cs-hero-title .hl{color:var(--accent);text-shadow:0 0 20px rgba(0,255,200,.4);}
-.cs-hero-sub{font-size:13px;color:rgba(255,255,255,.3);line-height:1.5;}
+.cs-hero-sub{font-size:13px;color:var(--text-muted);line-height:1.5;} /* v8.13.1 FIX: era .3 = 2.62:1 */
 
 /* Add-course form */
 .cs-add-form{
@@ -1501,7 +1501,7 @@ body{
   outline:none;transition:border var(--transition-fast),box-shadow var(--transition-fast);
 }
 .cs-add-inp:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,255,200,.08);}
-.cs-add-inp::placeholder{color:rgba(255,255,255,.25);}
+.cs-add-inp::placeholder{color:rgba(255,255,255,.42);} /* v8.13.1 FIX: allineato a .login-inp/.cw-invite-inp (Fase 1), era rimasto a .25 */
 .cs-add-btn{
   padding:10px 18px;border-radius:9px;
   border:1px solid var(--accent);background:var(--accent-dim);
@@ -2031,7 +2031,7 @@ body{
   padding:1.75rem 1rem 1rem;
   margin-top:.5rem;
   font-size:10px;
-  color:rgba(255,255,255,.22);
+  color:var(--text-dim); /* v8.13.1 FIX: era .22 = 1.93:1 */
   font-family:'Share Tech Mono',monospace;
   letter-spacing:.3px;
 }
@@ -2144,7 +2144,7 @@ body{
 .logo-sub {
   font-size: 7px ;
   letter-spacing: 3px ;
-  color: rgba(255,255,255,.18) ;
+  color: var(--text-muted) ; /* v8.13.1 FIX: era rgba(255,255,255,.18) hardcoded, ignorava il token */
 }
 
 /* Nav buttons — minimal, "platform nav" style */
@@ -4331,7 +4331,7 @@ body{
 /* ── Footnote ── */
 .chd-footnote{
   display:flex;align-items:flex-start;gap:6px;margin-top:.5rem;
-  font-size:10px;color:rgba(255,255,255,.25);line-height:1.5;
+  font-size:10px;color:var(--text-dim);line-height:1.5; /* v8.13.1 FIX: era .25 = 2.16:1 */
 }
 .chd-footnote i{flex-shrink:0;margin-top:1px;font-size:12px}
 
@@ -4467,8 +4467,8 @@ body{
 .chd-wq-showall-btn{
   display:flex;align-items:center;justify-content:center;gap:5px;
   width:100%;margin-top:10px;padding:8px;border-radius:8px;
-  background:rgba(255,255,255,.03);border:1px solid var(--border-subtle);
-  color:rgba(255,255,255,.5);font-size:11px;font-weight:600;cursor:pointer;
+  background:var(--surface-1);border:1px solid var(--border-subtle);
+  color:var(--text-muted);font-size:11px;font-weight:600;cursor:pointer; /* v8.13.1 FIX: era hardcoded bianco, illeggibile in chiaro */
   font-family:inherit;transition:all var(--transition-fast);
 }
 .chd-wq-showall-btn:hover{background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent);}
@@ -4652,7 +4652,7 @@ body{
 }
 .bdg-title-wrap{flex:1;min-width:0}
 .bdg-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px}
-.bdg-desc{font-size:11px;color:rgba(255,255,255,.4);line-height:1.45}
+.bdg-desc{font-size:11px;color:rgba(255,255,255,.58);line-height:1.45} /* v8.13.1 FIX: era .4, ma .bdg-card.locked{opacity:.6} la dimezza ulteriormente (.4×.6=.24 effettivo) — alzata per restare leggibile anche da bloccata */
 
 .bdg-unlock-date{
   display:inline-flex;align-items:center;gap:5px;margin-top:10px;
@@ -4737,11 +4737,11 @@ body{
   padding:2px 7px;border-radius:20px;font-family:'Share Tech Mono',monospace;
 }
 .hist-card-modetag{
-  font-size:9px;color:rgba(255,255,255,.3);font-family:'Share Tech Mono',monospace;
+  font-size:9px;color:var(--text-muted);font-family:'Share Tech Mono',monospace; /* v8.13.1 FIX: era .3 = 2.62:1 */
   padding:2px 7px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
 }
 .hist-card-date{
-  margin-left:auto;font-size:10px;color:rgba(255,255,255,.3);
+  margin-left:auto;font-size:10px;color:var(--text-muted); /* v8.13.1 FIX: era .3 = 2.62:1 */
   font-family:'Share Tech Mono',monospace;white-space:nowrap;
 }
 .hist-card-body{ padding:0 2px; }
@@ -5275,12 +5275,11 @@ html[data-theme="light"] .lb-nav-sep{ color: rgba(16,24,42,.2); }
 html[data-theme="light"] .lb-entry{ background:#ffffff; border-color: rgba(20,30,60,.08); }
 html[data-theme="light"] .lb-td{ color:#10182a; }
 html[data-theme="light"] .lb-td.name .player-sub{ color: rgba(16,24,42,.35); }
-html[data-theme="light"] .lb-th{ color: rgba(16,24,42,.28); }
+/* v8.13.1: override .lb-th rimosso — la regola base ora usa var(--text-muted), già tematizzato */
 html[data-theme="light"] .mod-badge.ce{ color:#0d6fbf; }
 html[data-theme="light"] .mod-badge.oe{ color:#6a4fd6; }
 html[data-theme="light"] .mod-badge.wp{ color:#1f7a42; }
-html[data-theme="light"] .lb-empty .le-title{ color: rgba(16,24,42,.4); }
-html[data-theme="light"] .lb-empty .le-sub{ color: rgba(16,24,42,.25); }
+/* v8.13.1: override le-title/le-sub rimossi — ora usano var(--text-muted)/var(--text-dim), già tematizzati */
 /* .csv-export-btn: usato da Classifica e Storico. .lb-reset-btn: usato
    da "Azzera tutto" (Classifica) e "Azzera" (Traguardi) — stesso identico
    pulsante, un solo override copre entrambe le schermate. */
@@ -5305,12 +5304,11 @@ html[data-theme="light"] .hist-filter-select{
 }
 html[data-theme="light"] .hist-filter-select option{ color:#10182a; background:#ffffff; }
 html[data-theme="light"] .csv-export-btn-sm{ color: var(--accent); }
-html[data-theme="light"] .hist-count-label{ color: rgba(16,24,42,.35); }
+/* v8.13.1: override hist-count-label rimosso (era 2.19:1 anche in chiaro) — ora var(--text-muted) */
 html[data-theme="light"] .hist-card{ background:#ffffff; border-color: rgba(20,30,60,.09); }
 html[data-theme="light"] .hist-card:hover{ border-color: rgba(0,150,120,.3); background: rgba(0,150,120,.03); }
 html[data-theme="light"] .hist-card-title{ color:#10182a; }
-html[data-theme="light"] .hist-card-modetag{ background: rgba(20,30,60,.04); border-color: rgba(20,30,60,.1); color: rgba(16,24,42,.4); }
-html[data-theme="light"] .hist-card-date{ color: rgba(16,24,42,.35); }
+html[data-theme="light"] .hist-card-modetag{ background: rgba(20,30,60,.04); border-color: rgba(20,30,60,.1); } /* v8.13.1: color rimosso, ora var(--text-muted) */
 html[data-theme="light"] .hist-card-empty{ color: rgba(16,24,42,.3); }
 html[data-theme="light"] .hist-team-row{ border-bottom-color: rgba(20,30,60,.06); }
 html[data-theme="light"] .hist-team-name{ color: rgba(16,24,42,.75); }
@@ -5337,7 +5335,7 @@ html[data-theme="light"] .chd-act-name{ color: rgba(16,24,42,.65); }
 html[data-theme="light"] .chd-act-bar-wrap{ background: rgba(20,30,60,.07); }
 html[data-theme="light"] .chd-empty-title{ color: rgba(16,24,42,.4); }
 html[data-theme="light"] .chd-empty-sub{ color: rgba(16,24,42,.28); }
-html[data-theme="light"] .chd-footnote{ color: rgba(16,24,42,.32); }
+/* v8.13.1: override chd-footnote rimosso (era 2.03:1 anche in chiaro) — ora var(--text-dim) */
 html[data-theme="light"] .chd-wq-tab{ color: rgba(16,24,42,.45); }
 html[data-theme="light"] .chd-wq-modfilter-btn{ background:#ffffff; border-color: rgba(20,30,60,.1); color: rgba(16,24,42,.5); }
 html[data-theme="light"] .chd-wq-modfilter-btn.active{ color: var(--text-primary); }
@@ -5357,7 +5355,7 @@ html[data-theme="light"] .bdg-summary-count{ color:#10182a; }
 html[data-theme="light"] .bdg-card{ background:#ffffff; border-color: rgba(20,30,60,.08); }
 html[data-theme="light"] .bdg-card.unlocked{ border-color: rgba(180,130,0,.28); }
 html[data-theme="light"] .bdg-title{ color:#10182a; }
-html[data-theme="light"] .bdg-desc{ color: rgba(16,24,42,.45); }
+html[data-theme="light"] .bdg-desc{ color: rgba(16,24,42,.78); } /* v8.13.1 FIX: era .45, compensata per l'opacità composta con .bdg-card.locked{opacity:.6} */
 html[data-theme="light"] .bdg-icon{ background: rgba(180,130,0,.08); border-color: rgba(180,130,0,.22); }
 html[data-theme="light"] .bdg-unlock-date{ color:#a66d00; }
 html[data-theme="light"] .bdg-progress-label{ color: rgba(16,24,42,.45); }
@@ -5373,9 +5371,9 @@ html[data-theme="light"] #screen-courses{
     radial-gradient(ellipse 70% 50% at 85% 100%, rgba(106,79,214,.04) 0%, transparent 55%);
 }
 html[data-theme="light"] .cs-topbar{ background: rgba(255,255,255,.96); border-bottom-color: rgba(20,30,60,.07); }
-html[data-theme="light"] .cs-logo-sub{ color: rgba(16,24,42,.3); }
+html[data-theme="light"] .cs-logo-sub{ color: var(--text-muted); }
 html[data-theme="light"] .cs-hero-title{ color:#10182a; text-shadow:none; }
-html[data-theme="light"] .cs-hero-sub{ color: rgba(16,24,42,.45); }
+/* v8.13.1: override cs-hero-sub rimosso (era 2.87:1 anche in chiaro) — ora var(--text-muted) */
 html[data-theme="light"] .cs-add-form{ background:#ffffff; border-color: rgba(20,30,60,.08); }
 html[data-theme="light"] .cs-empty{ border-color: rgba(20,30,60,.14); }
 html[data-theme="light"] .cs-empty-text{ color: rgba(16,24,42,.35); }
@@ -5511,7 +5509,7 @@ html[data-theme="light"] .audio-toggle-btn:hover{ border-color: rgba(0,150,120,.
 html[data-theme="light"] .theme-toggle-btn.is-light{ color:#a66d00; border-color: rgba(180,130,0,.3); background: rgba(255,180,0,.08); }
 
 /* ── 21. FOOTER ───────────────────────────────────────────────── */
-html[data-theme="light"] .pp-footer{ color: rgba(16,24,42,.32); }
+/* v8.13.1: override .pp-footer rimosso (era 2.03:1 anche in chiaro) — ora var(--text-dim) */
 html[data-theme="light"] .pp-footer a{ color:#00967a; border-color: rgba(0,150,120,.3); }
 html[data-theme="light"] .pp-footer a:hover{ color:#00786a; border-color:#00967a; }
 
@@ -5838,7 +5836,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
   .cs-area-filter-search input:focus{
     border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,255,200,.08);
   }
-  .cs-area-filter-search input::placeholder{ color:rgba(255,255,255,.25); }
+  .cs-area-filter-search input::placeholder{ color:rgba(255,255,255,.42); } /* v8.13.1 FIX: era .25 = 2.16:1 */
   .cs-area-filter-clear{
     position:absolute;right:8px;width:20px;height:20px;border-radius:50%;
     border:none;background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);
@@ -5891,7 +5889,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
 @layer theme {
   /* ── Filtro Area — tema chiaro (stesse varianti scure di Fase 7.1) ── */
   html[data-theme="light"] .cs-area-filter-search input{ color:#10182a; }
-  html[data-theme="light"] .cs-area-filter-search input::placeholder{ color:rgba(16,24,42,.35); }
+  html[data-theme="light"] .cs-area-filter-search input::placeholder{ color:rgba(16,24,42,.5); } /* v8.13.1 FIX: era .35 = 2.19:1 */
   html[data-theme="light"] .cs-area-filter-chip{ color:rgba(16,24,42,.55); }
   html[data-theme="light"] .cs-area-filter-chip[data-area-key="all"]{ --area-rgb:16,24,42; }
   html[data-theme="light"] .cs-area-filter-chip[data-area-key="ecdl"]{ --area-rgb:10,122,92; }

@@ -4283,8 +4283,8 @@ body{
 /* ── Empty state ── */
 .chd-empty{text-align:center;padding:3rem 1rem}
 .chd-empty-icon{font-size:40px;margin-bottom:14px;opacity:.4}
-.chd-empty-title{font-size:14px;font-weight:600;color:rgba(255,255,255,.35);margin-bottom:6px}
-.chd-empty-sub{font-size:12px;color:rgba(255,255,255,.2);max-width:280px;margin:0 auto;line-height:1.5}
+.chd-empty-title{font-size:14px;font-weight:600;color:var(--text-muted);margin-bottom:6px} /* v8.15.1 FIX: era rgba(255,255,255,.35) ~3.1:1 in scuro -> ora var(--text-muted), stesso pattern di .lb-empty .le-title (v8.13.1) */
+.chd-empty-sub{font-size:12px;color:var(--text-dim);max-width:280px;margin:0 auto;line-height:1.5} /* v8.15.1 FIX: era rgba(255,255,255,.2) ~1.8:1, quasi invisibile -> ora var(--text-dim), stesso pattern di .lb-empty .le-sub (v8.13.1) */
 
 /* ── Footnote ── */
 .chd-footnote{
@@ -5291,9 +5291,11 @@ html[data-theme="light"] .chd-part-row{ color: rgba(16,24,42,.75); border-bottom
 html[data-theme="light"] .chd-part-last{ color: rgba(16,24,42,.4); }
 html[data-theme="light"] .chd-act-name{ color: rgba(16,24,42,.65); }
 html[data-theme="light"] .chd-act-bar-wrap{ background: rgba(20,30,60,.07); }
-html[data-theme="light"] .chd-empty-title{ color: rgba(16,24,42,.4); }
-html[data-theme="light"] .chd-empty-sub{ color: rgba(16,24,42,.28); }
 /* v8.13.1: override chd-footnote rimosso (era 2.03:1 anche in chiaro) — ora var(--text-dim) */
+/* v8.15.1: override chd-empty-title/chd-empty-sub rimossi (erano rgba(16,24,42,.4)
+   ~2.9:1 e rgba(16,24,42,.28) ~2.1:1, entrambi sotto AA anche in chiaro) — ora
+   var(--text-muted)/var(--text-dim), già tematizzati, stesso pattern di .chd-wq-tab
+   in v8.14.0. */
 /* v8.14.0: .chd-wq-tab non ha più un override qui — la regola base
    (@layer classhealth) usa ora var(--text-muted), che cambia già
    valore da sola in chiaro. Il vecchio override hardcoded rgba(16,24,42,.45)

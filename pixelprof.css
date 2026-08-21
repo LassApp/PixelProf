@@ -3030,58 +3030,6 @@ body{
   transition: transform .3s var(--ease-cinema) ;
 }
 
-/* Area expansion — appare SOTTO il contenuto esistente al hover */
-.mod-card .mc-expand {
-  overflow: hidden;
-  max-height: 0;
-  opacity: 0;
-  transform: translateY(-8px);
-  transition:
-    max-height .32s var(--ease-cinema),
-    opacity .25s var(--ease-soft),
-    transform .28s var(--ease-cinema);
-  padding: 0 1.1rem;
-  position: relative;
-  z-index: 3;
-}
-
-.mod-card:hover .mc-expand,
-.mod-card.active .mc-expand {
-  max-height: 80px;
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Metadata pills nell'expand */
-.mc-meta-row {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
-  padding-bottom: .875rem;
-}
-
-.mc-meta-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  padding: 3px 9px;
-  border-radius: 4px;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: .8px;
-  text-transform: uppercase;
-  font-family: 'Share Tech Mono', monospace;
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.12);
-  color: rgba(255,255,255,.5);
-}
-.mc-meta-pill.accent {
-  background: rgba(0,255,200,.1);
-  border-color: rgba(0,255,200,.28);
-  color: rgba(0,255,200,.8);
-}
-
 /* ─────────────────────────────────────────────────────────────────
    TOPBAR — "Netflix sticky header" con fade scroll
    ───────────────────────────────────────────────────────────────── */
@@ -3555,10 +3503,6 @@ body{
     -webkit-text-fill-color: var(--purple) ;
     color: var(--purple) ;
   }
-  /* Hover expansion tags — nascondi su mobile (no hover) */
-  .mod-card .mc-expand {
-    display: none;
-  }
   /* Progress dot nascosto su mobile */
   .prog-fill::after {
     display: none;
@@ -3576,8 +3520,7 @@ body{
     -webkit-text-fill-color: currentColor ;
     filter: none ;
   }
-  #start-btn,
-  .mod-card .mc-expand {
+  #start-btn {
     transition: none ;
   }
   .prog-fill::after {

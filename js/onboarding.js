@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.1.3
+   onboarding.js — PixelProf v2.1.4
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -116,6 +116,27 @@
      tooltip sempre dentro il viewport verticale, qualunque sia
      l'altezza del target — stesso principio già in uso per il clamp
      orizzontale (left) poco sotto.
+
+   v2.1.4 — il fix v2.1.3 (clamp verticale) non risolveva il bug
+     realmente segnalato: "step 6, tour fuori schermo, impossibile
+     continuare" persisteva. Causa reale, diversa: il click-listener di
+     avanzamento è registrato in CAPTURE-phase su document (vedi
+     _renderStep sotto), quindi scatta PRIMA dell'onclick nativo
+     dell'elemento (bubble-phase). .dd-teacher-list ha onclick="tmGoList()"
+     e .dd-new-teacher onclick="tmGoCreate()" — entrambi nascondono
+     screen-teacher-mgmt e mostrano un'altra sezione. _advance() calcolava
+     "stesso screen del passo precedente" (vero, sono entrambi
+     'teacherMgmt') e renderizzava SUBITO il passo successivo — ma in
+     quel preciso istante l'onclick nativo non aveva ancora navigato,
+     quindi il target risultava temporaneamente ancora visibile; un
+     istante dopo l'onclick nativo eseguiva e la sezione spariva,
+     lasciando l'anello/tooltip già posizionati orfani sulla schermata
+     nuova. Fix in _advance(): il controllo di render viene rimandato di
+     un tick (setTimeout 0) così avviene DOPO che l'intero dispatch del
+     click, incluso l'onclick nativo, è già completato — vede quindi lo
+     stato reale del DOM. Il fix v2.1.3 resta comunque valido come
+     protezione generale per target più alti del viewport, indipendente
+     da questo bug.
 
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
@@ -393,7 +414,26 @@ const OnboardingTour = (function () {
     // attivo in quel momento, quindi sempre sicuro da controllare.
     const sameScreen = prevDef && nextDef.screen === prevDef.screen;
     const hubTarget  = nextDef.target === '#tb-hub-btn';
-    if (sameScreen || hubTarget) _tryRenderCurrentStep();
+    if (sameScreen || hubTarget) {
+      // v2.1.4 — bug segnalato: "step 6, tour fuori schermo, impossibile
+      // continuare". Causa: questo _advance() viene chiamato dal listener
+      // di click in CAPTURE-phase (vedi sotto), che scatta PRIMA
+      // dell'eventuale onclick nativo dell'elemento (bubble-phase). Per
+      // target come .dd-teacher-list/.dd-new-teacher — stesso "screen"
+      // del passo successivo, ma il cui onclick nativo (tmGoList(),
+      // tmGoCreate()...) nasconde la sezione corrente e ne mostra
+      // un'altra — renderizzare qui in modo sincrono catturava il DOM
+      // ancora nello stato "vecchio" (pre-navigazione): il tooltip/anello
+      // veniva posizionato su un target che, un istante dopo, spariva
+      // dietro la nuova schermata — overlay orfano, mal posizionato,
+      // apparentemente "fuori schermo". Rimandando di un tick (dopo che
+      // l'intero dispatch sincrono del click, incluso l'onclick nativo,
+      // è già completato) il controllo vede lo stato REALE del DOM: se
+      // il target è sparito, non renderizza nulla (si riallinea più
+      // tardi tramite l'hook già presente, es. openTeacherManagement());
+      // se è ancora visibile, renderizza correttamente come prima.
+      setTimeout(_tryRenderCurrentStep, 0);
+    }
   }
 
   function _tryRenderCurrentStep() {

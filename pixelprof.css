@@ -4062,6 +4062,14 @@ body{
 .tdc-card:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
 .tdc-card.tdc-inactive{ opacity:.55; }
 .tdc-card.tdc-inactive:hover{ opacity:.75; }
+/* v8.15.2: .tdc-card.tdc-inactive{opacity:.55} moltiplica il colore di TUTTI i
+   figli (stesso pattern già risolto per .bdg-card.locked/.bdg-desc in v8.13.1).
+   var(--text-muted) 4.51:1 × .55 = ~2.48:1, var(--text-dim) 3.04:1 × .55 = ~1.67:1
+   — entrambi sotto ogni soglia AA. Override scoped solo al contesto disattivato,
+   per non alterare (né oscurare eccessivamente) lo stato attivo. */
+.tdc-card.tdc-inactive .tdc-email,
+.tdc-card.tdc-inactive .tdc-aula-chip,
+.tdc-card.tdc-inactive .tdc-aule-empty{ color: rgba(255,255,255,.72); } /* effettivo ×.55 ≈ .396, sopra soglia --text-dim (.34) */
 
 .tdc-header{ display:flex;align-items:center;gap:10px;margin-bottom:10px; }
 .tdc-gender-icon{
@@ -4076,12 +4084,12 @@ body{
 .tdc-status-dot.active{ background:#00ff96;color:#00ff96; }
 .tdc-status-dot.inactive{ background:#ff4d6d;color:#ff4d6d; }
 
-.tdc-email{ font-size:11px;color:rgba(255,255,255,.4);margin-bottom:10px;font-family:'Share Tech Mono',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.tdc-email{ font-size:11px;color:var(--text-muted);margin-bottom:10px;font-family:'Share Tech Mono',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; } /* v8.15.2 FIX: era rgba(255,255,255,.4) ~3.78:1 in scuro -> ora var(--text-muted), AA piena e già tematizzato */
 
 .tdc-aule-row{ border-top:1px solid rgba(255,255,255,.06);padding-top:9px;display:flex;flex-wrap:wrap;line-height:1.6; }
-.tdc-aula-chip{ font-size:10px;font-weight:500;color:rgba(255,255,255,.45);font-family:'Share Tech Mono',monospace;white-space:nowrap; }
-.tdc-aula-chip + .tdc-aula-chip::before{ content:' | ';color:rgba(255,255,255,.18);white-space:pre; }
-.tdc-aule-empty{ font-size:10px;color:rgba(255,255,255,.2);font-style:italic; }
+.tdc-aula-chip{ font-size:10px;font-weight:500;color:var(--text-muted);font-family:'Share Tech Mono',monospace;white-space:nowrap; } /* v8.15.2 FIX: era rgba(255,255,255,.45) */
+.tdc-aula-chip + .tdc-aula-chip::before{ content:' | ';color:rgba(255,255,255,.18);white-space:pre; } /* separatore puramente decorativo, non testo informativo — non soggetto a soglie AA */
+.tdc-aule-empty{ font-size:10px;color:var(--text-dim);font-style:italic; } /* v8.15.2 FIX: era rgba(255,255,255,.2) ~1.5:1 */
 
 /* ── Toggle aule (scheda dettaglio docente) ── */
 .tdc-aule-toggle-grid{ display:flex;flex-wrap:wrap;gap:7px; }
@@ -5438,7 +5446,10 @@ html[data-theme="light"] #screen-teacher-create,html[data-theme="light"] #screen
 html[data-theme="light"] #screen-teacher-detail{ background: var(--surface-0); }
 html[data-theme="light"] .dd-card,html[data-theme="light"] .tdc-card{ background:#ffffff; border-color: rgba(20,30,60,.08); }
 html[data-theme="light"] .dd-title,html[data-theme="light"] .tdc-name{ color:#10182a; }
-html[data-theme="light"] .dd-sub,html[data-theme="light"] .tdc-email{ color: rgba(16,24,42,.42); }
+html[data-theme="light"] .dd-sub{ color: rgba(16,24,42,.42); }
+/* v8.15.2: .tdc-email non ha più bisogno di override qui — ora usa
+   var(--text-muted), già tematizzato (era condiviso con .dd-sub, separato
+   per non alterare .dd-sub che non ha alcun problema di leggibilità). */
 html[data-theme="light"] .tm-tab{ color: rgba(16,24,42,.42); }
 html[data-theme="light"] .tm-tab:hover{ color: rgba(16,24,42,.75); }
 html[data-theme="light"] .tm-tabs{ border-bottom-color: rgba(20,30,60,.1); }
@@ -5453,9 +5464,15 @@ html[data-theme="light"] .dd-arrow{ color: rgba(16,24,42,.25); }
 html[data-theme="light"] .tdc-aula-toggle-btn{ color: rgba(16,24,42,.55); }
 html[data-theme="light"] .tdc-aula-toggle-btn:hover{ color: rgba(16,24,42,.85); }
 /* Chip "aule assegnate" nella card della lista docenti (screen-teacher-list) */
-html[data-theme="light"] .tdc-aula-chip{ color: rgba(16,24,42,.45); }
+/* v8.15.2: .tdc-aula-chip/.tdc-aule-empty non hanno più bisogno di override
+   qui — ora usano var(--text-muted)/var(--text-dim), già tematizzati. */
 html[data-theme="light"] .tdc-aula-chip + .tdc-aula-chip::before{ color: rgba(16,24,42,.22); }
-html[data-theme="light"] .tdc-aule-empty{ color: rgba(16,24,42,.28); }
+/* v8.15.2: compensazione opacità composta per .tdc-card.tdc-inactive{opacity:.55}
+   in tema chiaro — stesso problema e stessa soluzione scoped del tema scuro
+   (vedi @layer classhealth ~riga 4066). */
+html[data-theme="light"] .tdc-card.tdc-inactive .tdc-email,
+html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aula-chip,
+html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aule-empty{ color: rgba(16,24,42,.85); } /* effettivo ×.55 ≈ .4675, ≈ soglia --text-dim (.47) */
 /* Icona genere di default (nessun genere impostato, fallback ti-user) */
 html[data-theme="light"] .tdc-gender-icon{ background: rgba(20,30,60,.05); border-color: rgba(20,30,60,.12); color: rgba(16,24,42,.4); }
 html[data-theme="light"] .tmd-email-hint{ color: rgba(16,24,42,.4); }

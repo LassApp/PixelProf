@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.1.0
+   onboarding.js — PixelProf v2.1.1
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -59,6 +59,20 @@
      "Nuovo Docente" del tour è 'info', non crea davvero un account).
      Entrambi restano possibili in un secondo momento se richiesti
      esplicitamente.
+
+   v2.1.1 — richiesta esplicita utente: le 6 aree didattiche sono ora
+     considerate tutte attive (i JSON dei contenuti arrivano
+     progressivamente). Rimosso l'unico residuo testuale non generico:
+     DIRECTOR_STEPS[9] e TEACHER_STEPS[1] (entrambi homeModule) dicevano
+     "alcuni moduli ICDL", presupponendo che tutti i moduli appartenessero
+     all'area ECDL — non più vero con Cybersecurity/Reti/Malware/
+     Cyberbullismo/AI. Testo generalizzato a "alcuni moduli" (invariato
+     tutto il resto: nessun nuovo screen/hook, nessun riferimento
+     hardcoded al nome o al conteggio delle aree). Scelta deliberata,
+     richiesta esplicitamente: così facendo il tour NON necessita più
+     di aggiornamenti quando in futuro verrà aggiunta una nuova area in
+     js/areas-config.js — a differenza di altri punti dell'app (es. i
+     filtri Dashboard) che invece enumerano le aree esplicitamente.
 
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
@@ -223,7 +237,7 @@ const OnboardingTour = (function () {
       body:'Le aule sono raggruppate per area didattica: seleziona una qualsiasi aula tra quelle disponibili per continuare.' },
     { screen:'homeModule', target:'.mod-grid', type:'info',
       title:'Scegli il modulo 📚',
-      body:'Ogni aula può abilitare solo alcuni moduli ICDL: qui vedi solo quelli disponibili per questa classe.' },
+      body:'Ogni aula può abilitare solo alcuni moduli: qui vedi solo quelli disponibili per questa classe.' },
     { screen:'hub', target:'#tb-hub-btn', type:'info',
       title:'Il tuo Hub 🎯',
       body:'Classifica, Progressi, Storico, Panoramica Classe e Traguardi: tutto qui, in un solo tocco.' },
@@ -235,7 +249,7 @@ const OnboardingTour = (function () {
       body:'Le aule sono raggruppate per area didattica: scegli una qualsiasi aula tra quelle disponibili per iniziare a esercitarti.' },
     { screen:'homeModule', target:'.mod-card:not(.soon-card)', type:'action',
       title:'Scegli il modulo 📚',
-      body:'Ogni aula può abilitare solo alcuni moduli ICDL: qui vedi solo quelli disponibili per questa classe.' },
+      body:'Ogni aula può abilitare solo alcuni moduli: qui vedi solo quelli disponibili per questa classe.' },
     { screen:'homeCategory', target:'.cat-games', type:'action',
       title:'Scegli la modalità 🎮',
       body:'Al momento sono disponibili i Minigiochi; la sezione Didattica arriverà presto.' },

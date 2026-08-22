@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.1.1
+   onboarding.js — PixelProf v2.1.2
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -73,6 +73,37 @@
      di aggiornamenti quando in futuro verrà aggiunta una nuova area in
      js/areas-config.js — a differenza di altri punti dell'app (es. i
      filtri Dashboard) che invece enumerano le aree esplicitamente.
+
+   v2.1.2 — bug segnalato (solo Direttore): nei passi 'info' il target
+     restava coperto dal velo scuro sfocato (by design, v2.0.0) — si
+     vedeva solo il bordo dell'anello su sfondo nero, senza distinguere
+     cosa venisse indicato. Richiesta esplicita utente: "uguale alle
+     altre, stesso comportamento di docente" (cioè come i passi
+     'action' già esistenti, e come l'unico passo analogo già presente
+     in TEACHER_STEPS — "Scegli il modulo", già di tipo 'action').
+       - DIRECTOR_STEPS[4] .dd-new-teacher, [5] .dd-teacher-list,
+         [9] .mod-grid: da 'info' ad 'action'. Target singoli con
+         un'azione univoca (aprono un'altra schermata/vista) — il
+         motore del tour già gestisce il caso in cui il target del
+         passo successivo non sia immediatamente visibile dopo la
+         navigazione (si riallinea al prossimo show*Step() rilevante),
+         stesso meccanismo già in uso per gli altri passi 'action'.
+       - DIRECTOR_STEPS[1] #cs-add-form-wrap: NON convertito ad
+         'action'. Il target è l'intero form di creazione aula
+         multi-campo (nome, area, moduli, docenti): un click reale in
+         un punto qualsiasi al suo interno (es. il campo nome) non ha
+         un significato univoco di "ho finito con questo passo", e
+         avrebbe fatto avanzare il tour al passo successivo ("Tutto
+         pronto ✅ — torna al pannello") ancora a wizard non concluso.
+         Introdotta invece la proprietà revealTarget:true (solo per
+         passi 'info'): il velo ottiene comunque il buco reale — il
+         form torna visibile e utilizzabile, non più nascosto dietro
+         un riquadro nero — ma l'avanzamento resta legato
+         esclusivamente al pulsante "Avanti" del tooltip, non al click
+         sul form. Vedi commento SEQUENZE sopra per il dettaglio.
+       - DIRECTOR_STEPS[10] #tb-hub-btn (ultimo passo): lasciato
+         invariato — resta 'info' esattamente come l'analogo ultimo
+         passo di TEACHER_STEPS, quindi già "uguale al docente".
 
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
@@ -202,16 +233,31 @@ const OnboardingTour = (function () {
                le card aula), TUTTI diventano contemporaneamente
                il "buco" nel velo per i passi 'action'.
        type    'action' → serve un click reale sul target per
-                           avanzare (nessun pulsante Avanti).
-               'info'   → si avanza col pulsante Avanti/Fatto,
-                           il target resta visivamente cerchiato
-                           ma NON cliccabile.
+                           avanzare (nessun pulsante Avanti). Il
+                           target ottiene sempre un buco reale nel
+                           velo (vedi revealTarget).
+               'info'   → si avanza col pulsante Avanti/Fatto. Di
+                           default il target resta coperto dal velo
+                           (solo l'anello lo indica visivamente) —
+                           vedi revealTarget per il caso contrario.
+       revealTarget  (opzionale, solo per passi 'info') → true forza
+               comunque il buco reale nel velo (target visibile e
+               fisicamente interagibile, es. digitabile) SENZA
+               collegare il click all'avanzamento del tour, che
+               resta legato solo al pulsante Avanti. Usato per i
+               passi 'info' il cui target non è un singolo elemento
+               con un'azione univoca (es. un form multi-campo): un
+               click reale su un punto qualsiasi al suo interno non
+               ha un significato univoco di "ho finito qui", quindi
+               non deve far avanzare il tour da solo — ma il target
+               non deve comunque restare nascosto dietro un riquadro
+               nero (v2.1.2, richiesta esplicita utente).
   ================================================ */
   const DIRECTOR_STEPS = [
     { screen:'dashboard', target:'.dd-aule', type:'action',
       title:'Benvenuto in PixelProf! 👋',
       body:'Inizia da qui: premi su "Gestisci Aule" per creare la tua prima aula e scegliere quali moduli rendere disponibili ai docenti.' },
-    { screen:'wizard', target:'#cs-add-form-wrap', type:'info',
+    { screen:'wizard', target:'#cs-add-form-wrap', type:'info', revealTarget:true,
       title:'Crea la tua prima aula 🏫',
       body:'Da qui avvii la creazione guidata in quattro passi: nome, area didattica, moduli abilitati e docenti da assegnare. L\'area scelta determina quali moduli saranno disponibili.' },
     { screen:'wizard', target:'#cs-back-dashboard-btn', type:'action',
@@ -220,10 +266,10 @@ const OnboardingTour = (function () {
     { screen:'dashboard', target:'.dd-docenti', type:'action',
       title:'Gestisci i docenti 👩\u200d🏫',
       body:'Da qui puoi creare nuovi account e gestire quelli esistenti. Premi per continuare.' },
-    { screen:'teacherMgmt', target:'.dd-new-teacher', type:'info',
+    { screen:'teacherMgmt', target:'.dd-new-teacher', type:'action',
       title:'Crea un nuovo account 🆕',
       body:'Qui puoi inserire un nuovo docente: bastano nome, cognome ed email — riceverà un invito automatico per impostare la password.' },
-    { screen:'teacherMgmt', target:'.dd-teacher-list', type:'info',
+    { screen:'teacherMgmt', target:'.dd-teacher-list', type:'action',
       title:'Docenti già creati 👥',
       body:'Qui trovi i docenti già registrati: da ogni scheda puoi assegnarli alle aule già create (raggruppate per area didattica), modificarne i dati o disattivarli.' },
     { screen:'teacherMgmt', target:'#screen-teacher-mgmt .back-link', type:'action',
@@ -235,7 +281,7 @@ const OnboardingTour = (function () {
     { screen:'coursesSelect', target:'.course-card', type:'action',
       title:'Scegli un\'aula 🏫',
       body:'Le aule sono raggruppate per area didattica: seleziona una qualsiasi aula tra quelle disponibili per continuare.' },
-    { screen:'homeModule', target:'.mod-grid', type:'info',
+    { screen:'homeModule', target:'.mod-grid', type:'action',
       title:'Scegli il modulo 📚',
       body:'Ogni aula può abilitare solo alcuni moduli: qui vedi solo quelli disponibili per questa classe.' },
     { screen:'hub', target:'#tb-hub-btn', type:'info',
@@ -363,6 +409,11 @@ const OnboardingTour = (function () {
     const pct = Math.round(((idx + 1) / list.length) * 100);
     const stepLabel = (idx + 1) + ' di ' + list.length;
     const isAction = def.type === 'action';
+    // Passi 'info' con revealTarget:true ottengono comunque il buco reale
+    // (target visibile/interagibile) ma NON il pulsante Avanti nascosto né
+    // il listener di avanzamento-su-click: l'avanzamento resta legato
+    // esclusivamente al pulsante "Avanti" del tooltip (v2.1.2).
+    const isInteractive = isAction || def.revealTarget === true;
 
     const veil = document.createElement('div');
     veil.className = 'onb-overlay';
@@ -408,10 +459,11 @@ const OnboardingTour = (function () {
         ring.style.height = (r.height + pad * 2) + 'px';
       });
 
-      // 'action' → buco reale nel velo (target cliccabile).
-      // 'info'   → nessun buco, il velo copre anche il target
-      //            (resta solo visivamente cerchiato dall'anello sopra).
-      veil.style.clipPath = isAction ? _buildClipPath(rects, pad) : '';
+      // 'action' (sempre) e 'info' con revealTarget:true → buco reale nel
+      // velo (target visibile e fisicamente interagibile). 'info' senza
+      // revealTarget → nessun buco, il velo copre anche il target (resta
+      // solo visivamente cerchiato dall'anello sopra).
+      veil.style.clipPath = isInteractive ? _buildClipPath(rects, pad) : '';
 
       const ttRect = tooltip.getBoundingClientRect();
       const ttW = ttRect.width || 290, ttH = ttRect.height || 170;

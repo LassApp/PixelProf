@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.1.2
+   onboarding.js — PixelProf v2.1.3
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -104,6 +104,18 @@
        - DIRECTOR_STEPS[10] #tb-hub-btn (ultimo passo): lasciato
          invariato — resta 'info' esattamente come l'analogo ultimo
          passo di TEACHER_STEPS, quindi già "uguale al docente".
+
+   v2.1.3 — bug segnalato: allo step 6 (.dd-teacher-list) il tour finiva
+     fuori schermo, impossibile continuare. Causa: in _position(), il
+     ramo top=union.bottom+18 non aveva un limite superiore — se il
+     target è più alto del viewport (lista docenti lunga, dopo aver
+     creato più account nei test), union.bottom supera
+     window.innerHeight e il tooltip si piazza sotto il bordo visibile,
+     irraggiungibile (bottoni "Avanti"/"Salta il tour" inclusi). Fix
+     generale, non specifico a questo step: clamp finale che tiene il
+     tooltip sempre dentro il viewport verticale, qualunque sia
+     l'altezza del target — stesso principio già in uso per il clamp
+     orizzontale (left) poco sotto.
 
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
@@ -472,8 +484,16 @@ const OnboardingTour = (function () {
       if (spaceBelow > ttH + 28 || union.top < ttH + 28) {
         top = union.bottom + 18; arrowCls = 'onb-arrow-top';
       } else {
-        top = Math.max(12, union.top - ttH - 18); arrowCls = 'onb-arrow-bottom';
+        top = union.top - ttH - 18; arrowCls = 'onb-arrow-bottom';
       }
+      // Clamp verticale finale, sempre applicato: se il target è più alto
+      // del viewport (es. .dd-teacher-list con molti docenti registrati),
+      // union.bottom può superare window.innerHeight e mandare il tooltip
+      // fuori schermo, irraggiungibile — tour bloccato. Il tooltip resta
+      // sempre entro i bordi visibili, qualunque sia l'altezza del target
+      // (v2.1.3, bug segnalato: "step 6, tour fuori schermo, impossibile
+      // continuare").
+      top = Math.max(12, Math.min(top, window.innerHeight - ttH - 12));
       tooltip.classList.remove('onb-arrow-top', 'onb-arrow-bottom');
       tooltip.classList.add(arrowCls);
 

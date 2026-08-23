@@ -305,6 +305,9 @@ function tmGoCreate(){
   scr.classList.add('entering');
   setTimeout(()=>scr.classList.remove('entering'), 400);
   setTimeout(()=>sh('tmc-nome')?.focus(), 120);
+  // v8.15.5: passo 6/13 del tour guidato Direttore (pulsante "indietro"
+  // di questa schermata) — stesso pattern di openTeacherManagement().
+  if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showTeacherCreateStep(), 500);
 }
 
 function tmBackFromCreate(){
@@ -381,6 +384,9 @@ function tmGoList(){
     setTimeout(()=>scr.classList.remove('entering'), 400);
   }
   _tmRenderCards();
+  // v8.15.5: passo 8/13 del tour guidato Direttore (pulsante "indietro"
+  // di questa schermata) — stesso pattern di openTeacherManagement().
+  if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showTeacherListStep(), 500);
 }
 
 function tmBackFromList(){

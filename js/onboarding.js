@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.1.4
+   onboarding.js — PixelProf v2.2.0
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -137,6 +137,25 @@
      stato reale del DOM. Il fix v2.1.3 resta comunque valido come
      protezione generale per target più alti del viewport, indipendente
      da questo bug.
+
+   v2.2.0 — richiesta esplicita utente: 2 nuovi step nel tour Direttore
+     (ora 13 invece di 11), per coprire i pulsanti "indietro" delle due
+     sottoschermate raggiunte dai passi 5 e 7 (ex 6):
+       - Nuovo screen:'teacherCreate', target:'#screen-teacher-create
+         .back-link' — inserito subito dopo ".dd-new-teacher" (nuovo
+         passo 6/13). Aggancio in tmGoCreate() (js/app.js), stesso
+         pattern già usato in openTeacherManagement().
+       - Nuovo screen:'teacherList', target:'#screen-teacher-list
+         .back-link' — inserito subito dopo ".dd-teacher-list" (nuovo
+         passo 8/13). Aggancio in tmGoList() (js/app.js).
+     Aggiunti showTeacherCreateStep()/showTeacherListStep() all'API
+     pubblica, stesso pattern delle altre show*Step(). Entrambi i nuovi
+     passi sono 'action' (si avanza cliccando il pulsante "← Docenti"
+     stesso) — al ritorno sulla schermata teacherMgmt il tour si
+     riallinea correttamente al passo successivo tramite l'hook già
+     esistente in openTeacherManagement(). Il contatore "X di N" nel
+     tooltip è calcolato dinamicamente da list.length: passa da solo a
+     "di 13", nessun valore hardcoded da aggiornare altrove.
 
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
@@ -302,9 +321,15 @@ const OnboardingTour = (function () {
     { screen:'teacherMgmt', target:'.dd-new-teacher', type:'action',
       title:'Crea un nuovo account 🆕',
       body:'Qui puoi inserire un nuovo docente: bastano nome, cognome ed email — riceverà un invito automatico per impostare la password.' },
+    { screen:'teacherCreate', target:'#screen-teacher-create .back-link', type:'action',
+      title:'Puoi tornare indietro quando vuoi ↩️',
+      body:'Se cambi idea, questo pulsante ti riporta alla gestione docenti senza creare nulla.' },
     { screen:'teacherMgmt', target:'.dd-teacher-list', type:'action',
       title:'Docenti già creati 👥',
       body:'Qui trovi i docenti già registrati: da ogni scheda puoi assegnarli alle aule già create (raggruppate per area didattica), modificarne i dati o disattivarli.' },
+    { screen:'teacherList', target:'#screen-teacher-list .back-link', type:'action',
+      title:'Torna alla gestione docenti ↩️',
+      body:'Questo pulsante ti riporta al pannello principale della gestione docenti.' },
     { screen:'teacherMgmt', target:'#screen-teacher-mgmt .back-link', type:'action',
       title:'Torniamo alla dashboard ✅',
       body:'Premi qui per tornare al pannello di controllo.' },
@@ -586,6 +611,8 @@ const OnboardingTour = (function () {
   function showDashboardStep()     { _tryRenderCurrentStep(); }
   function showWizardStep()        { _tryRenderCurrentStep(); }
   function showTeacherMgmtStep()   { _tryRenderCurrentStep(); }
+  function showTeacherCreateStep() { _tryRenderCurrentStep(); }
+  function showTeacherListStep()   { _tryRenderCurrentStep(); }
   function showCoursesSelectStep() { _tryRenderCurrentStep(); }
   function showHomeModuleStep()    { _tryRenderCurrentStep(); }
   function showHomeCategoryStep()  { _tryRenderCurrentStep(); }
@@ -594,6 +621,7 @@ const OnboardingTour = (function () {
   return {
     init,
     showDashboardStep, showWizardStep, showTeacherMgmtStep,
+    showTeacherCreateStep, showTeacherListStep,
     showCoursesSelectStep, showHomeModuleStep, showHomeCategoryStep,
     recheck, skip, reset,
   };

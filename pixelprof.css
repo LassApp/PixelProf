@@ -4828,6 +4828,9 @@ body{
   backdrop-filter:blur(3px);
   -webkit-backdrop-filter:blur(3px);
   animation:onbFadeIn .25s ease both;
+  touch-action:pan-y; /* v8.15.6: garantisce lo scroll verticale touch anche
+    toccando il velo (non solo sui "buchi" ritagliati) — possibile causa
+    concorrente del bug "scelta aula, scroll bloccato" su mobile */
 }
 @keyframes onbFadeIn{from{opacity:0}to{opacity:1}}
 
@@ -4890,10 +4893,9 @@ body{
 .onb-actions{ display:flex;align-items:center;justify-content:space-between;gap:10px; }
 .onb-skip{
   background:none;border:none;cursor:pointer;padding:2px 0;
-  font-family:inherit;font-size:11px;color:rgba(255,255,255,.35);
+  font-family:inherit;font-size:11px;color:rgba(255,255,255,.6);
   transition:color .18s;
-}
-.onb-skip:hover{ color:rgba(255,255,255,.6); }
+} /* v8.15.6 FIX: default era .35 (~2.9:1, quasi illeggibile), :hover era già .6 (leggibile) — richiesta esplicita utente: stesso valore .6 sempre, non solo on-hover */
 .onb-next{
   display:inline-flex;align-items:center;gap:6px;
   padding:8px 16px;border-radius:20px;
@@ -5517,8 +5519,7 @@ html[data-theme="light"] .onb-title{ color:#10182a; }
 html[data-theme="light"] .onb-body{ color: rgba(16,24,42,.55); }
 html[data-theme="light"] .onb-step-label{ color: rgba(0,150,120,.75); }
 html[data-theme="light"] .onb-progress{ background: rgba(20,30,60,.08); }
-html[data-theme="light"] .onb-skip{ color: rgba(16,24,42,.4); }
-html[data-theme="light"] .onb-skip:hover{ color: rgba(16,24,42,.7); }
+html[data-theme="light"] .onb-skip{ color: rgba(16,24,42,.6); } /* v8.15.6: stesso fix anche in chiaro per coerenza — era .4 (~3:1) vs :hover .7, ora uguali, .6 = stesso valore di --text-muted (4.52:1 AA) */
 
 /* ── 23. WIZARD — STEP AREA (Fase 2 Sistema Aree, v8.1.0) ─────── */
 html[data-theme="light"] .cw-area-btn{ background: rgba(20,30,60,.03); border-color: rgba(20,30,60,.09); }

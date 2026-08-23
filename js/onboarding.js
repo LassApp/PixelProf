@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.2.0
+   onboarding.js — PixelProf v2.2.1
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -156,6 +156,30 @@
      esistente in openTeacherManagement(). Il contatore "X di N" nel
      tooltip è calcolato dinamicamente da list.length: passa da solo a
      "di 13", nessun valore hardcoded da aggiornare altrove.
+
+   v2.2.1 — bug segnalato: "scelta aula" (Direttore step 11/13, Docente
+     step 1/4), scroll bloccato. Unico step del tour il cui selettore
+     (.course-card) può matchare MOLTE card contemporaneamente (tutte le
+     aule) — a differenza degli altri step, tutti su target singoli.
+     Diagnosi non confermata al 100% senza test live (Playwright bloccato
+     nel sandbox): due cause plausibili affrontate insieme, entrambe a
+     rischio nullo/basso indipendentemente da quale sia quella reale:
+       1) _position() ricalcola i rect di OGNI card e ricostruisce
+          l'intero clip-path a ogni evento 'scroll' grezzo — su una
+          lista lunga di aule, durante uno scroll fluido/inerziale
+          questo evento può scattare decine di volte al secondo,
+          causando scatti pesanti percepibili come "scroll bloccato" sui
+          dispositivi più lenti. Throttling a un ricalcolo per
+          requestAnimationFrame.
+       2) .onb-overlay è un div fixed a tutto schermo senza touch-action
+          esplicito: su alcuni browser mobile il gesto di scroll che
+          parte su un elemento fixed non scrollabile può non propagarsi
+          correttamente alla pagina sottostante. Aggiunto
+          touch-action:pan-y (pixelprof.css) per garantire lo scroll
+          verticale touch sempre, anche fuori dai "buchi" ritagliati.
+     Se il problema persiste dopo questo fix, serve sapere se il test è
+     su desktop (rotellina/trackpad) o mobile (touch) per restringere
+     ulteriormente la diagnosi.
 
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
@@ -570,7 +594,22 @@ const OnboardingTour = (function () {
 
     _position();
     requestAnimationFrame(_position); // ricalcola con le dimensioni reali del tooltip
-    _reposition = _position;
+    // v8.15.6 — bug segnalato: "scelta aula, non funziona lo scroll" (sia
+    // Direttore che Docente, unico step con selettore che può matchare
+    // MOLTE card contemporaneamente — tutte le aule). _position()
+    // ricalcola i rect di ogni target e ricostruisce l'intero clip-path:
+    // agganciato direttamente all'evento scroll grezzo, su una lista
+    // lunga di aule questo può scattare decine di volte al secondo
+    // durante uno scroll fluido/inerziale, causando scatti pesanti che
+    // sui dispositivi più lenti si percepiscono come scroll bloccato.
+    // Throttling a un ricalcolo per frame (invariato tutto il resto).
+    let _rafPending = false;
+    const _throttledPosition = () => {
+      if (_rafPending) return;
+      _rafPending = true;
+      requestAnimationFrame(() => { _rafPending = false; _position(); });
+    };
+    _reposition = _throttledPosition;
     window.addEventListener('resize', _reposition);
     window.addEventListener('scroll', _reposition, true);
 

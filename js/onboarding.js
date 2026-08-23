@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.2.1
+   onboarding.js — PixelProf v2.2.2
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -180,6 +180,26 @@
      Se il problema persiste dopo questo fix, serve sapere se il test è
      su desktop (rotellina/trackpad) o mobile (touch) per restringere
      ulteriormente la diagnosi.
+
+   v2.2.2 — il fix v2.2.1 (throttling + touch-action) non risolveva il
+     bug realmente segnalato ("scelta aula" bloccato, testato su
+     desktop/rotellina). Diagnosi corretta, confermata confrontando con
+     "scelta modulo" (che invece funziona): #screen-courses è
+     position:fixed + overflow-y:auto PROPRIO (scroll interno al
+     pannello), mentre #tab-home (dove vive .mod-grid) è un semplice div
+     a flusso normale che scrolla insieme al body. Il velo del tour è
+     sempre figlio diretto di <body> — per #tab-home questo lo rende
+     ANTENATO del body che scrolla (la catena nativa del browser
+     funziona), ma per #screen-courses lo rende FRATELLO del pannello
+     con lo scroll proprio, mai suo antenato: lo scroll nativo non può
+     strutturalmente raggiungerlo, indipendentemente da throttling o
+     touch-action. Vera soluzione: _findScrollableAncestor() risale dal
+     target reale del passo corrente fino a trovare il contenitore con
+     overflow-y effettivo, e wheel/touchmove sul velo vengono inoltrati
+     manualmente lì (scrollTop +=), invece di affidarsi alla catena
+     nativa che qui non esiste. Generale, non specifico a
+     #screen-courses: funziona per qualunque schermata futura con lo
+     stesso pattern position:fixed+overflow-y:auto proprio.
 
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
@@ -425,6 +445,33 @@ const OnboardingTour = (function () {
     return { left, top, right, bottom, width: right - left, height: bottom - top };
   }
 
+  /** v8.15.7 — bug segnalato: "scelta aula", scroll bloccato (solo
+   *  desktop, rotellina). Causa reale: alcune schermate (es.
+   *  #screen-courses) sono pannelli position:fixed con overflow-y:auto
+   *  PROPRIO — lo scroll avviene AL LORO INTERNO, non sul body. Il velo
+   *  del tour (.onb-overlay) è aggiunto come figlio diretto di <body>,
+   *  quindi è un FRATELLO di questi pannelli, mai un loro discendente:
+   *  lo scroll naturale del browser (che risale la catena di ANTENATI
+   *  dell'elemento sotto il cursore, dal velo verso <body>) non incontra
+   *  mai quel overflow-y:auto e non trova nient'altro da scrollare —
+   *  bloccato. Altre schermate (es. #tab-home/.mod-grid) sono invece
+   *  semplici <div> a flusso normale: lì è il body stesso a scrollare
+   *  ed essendo il velo figlio di body la catena funziona già da sola —
+   *  per questo lì "funziona". Risolto individuando qui il vero
+   *  contenitore con overflow e inoltrandoci manualmente wheel/touch
+   *  dal velo (vedi _renderStep). */
+  function _findScrollableAncestor(el) {
+    let node = el && el.parentElement;
+    while (node && node !== document.body) {
+      const cs = getComputedStyle(node);
+      if ((cs.overflowY === 'auto' || cs.overflowY === 'scroll') && node.scrollHeight > node.clientHeight + 1) {
+        return node;
+      }
+      node = node.parentElement;
+    }
+    return document.scrollingElement || document.documentElement;
+  }
+
   /** Costruisce un clip-path (regola evenodd) = intero viewport MENO un
    *  rettangolo per ciascun rect fornito, con pad px di margine. Il
    *  risultato ritaglia SIA il rendering SIA l'hit-test dell'elemento a
@@ -520,6 +567,23 @@ const OnboardingTour = (function () {
     veil.className = 'onb-overlay';
     document.body.appendChild(veil);
     _domNodes.push(veil);
+
+    // v8.15.7: inoltro manuale dello scroll — vedi commento su
+    // _findScrollableAncestor per il perché è necessario.
+    const scrollHost = _findScrollableAncestor(targets[0]);
+    const _forwardWheel = (e) => { scrollHost.scrollTop += e.deltaY; e.preventDefault(); };
+    let _touchY = null;
+    const _forwardTouchStart = (e) => { _touchY = e.touches[0] ? e.touches[0].clientY : null; };
+    const _forwardTouchMove = (e) => {
+      if (_touchY === null || !e.touches[0]) return;
+      const y = e.touches[0].clientY;
+      scrollHost.scrollTop += (_touchY - y);
+      _touchY = y;
+      e.preventDefault();
+    };
+    veil.addEventListener('wheel', _forwardWheel, { passive: false });
+    veil.addEventListener('touchstart', _forwardTouchStart, { passive: true });
+    veil.addEventListener('touchmove', _forwardTouchMove, { passive: false });
 
     const rings = targets.map(() => {
       const r = document.createElement('div');

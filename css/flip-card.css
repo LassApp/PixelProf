@@ -1,0 +1,158 @@
+/* ==================================================
+   flip-card.css — PixelProf (Didattica · Flip Card)
+   Foglio dedicato e isolato da pixelprof.css. Il layer
+   "flipcard" è dichiarato nell'ordine master in
+   pixelprof.css (tra "areas" e "theme"): questo file va
+   quindi caricato con un <link> separato DOPO quello di
+   pixelprof.css in index.html, cosicché l'ordine dei layer
+   sia già stabilito quando questo foglio viene applicato.
+
+   Riusa esclusivamente variabili/token già definiti in
+   :root (pixelprof.css): --purple, --purple-dim,
+   --purple-border, --surface-1, --border-subtle/mid,
+   --radius-*, --transition-*, --shadow-card, --text-*.
+   Nessun nuovo token globale introdotto.
+================================================== */
+@layer flipcard {
+
+  /* Card "Didattica" in step-cat: accento viola (identità
+     già usata da .didattica-card altrove nel progetto,
+     finora mai mostrata) al posto del teal di default di
+     .cat-card. Vince per priorità di layer: non serve
+     toccare la regola .cat-card:hover originale in
+     pixelprof.css. */
+  .cat-card.cat-didattica:hover{
+    border-color: var(--purple-border);
+    background: rgba(124,106,255,.06);
+    box-shadow: 0 12px 36px rgba(0,0,0,.45), 0 0 0 1px rgba(124,106,255,.15);
+  }
+  .cat-card.cat-didattica:hover::after{ background: var(--purple); }
+  .cat-card.cat-didattica:hover .cat-title{ color: var(--purple); }
+  .cat-card.cat-didattica:hover .cat-arrow{ color: var(--purple); }
+
+  .fc-loading{
+    text-align: center;
+    padding: 2.5rem 1rem;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  /* -- Scena 3D -- */
+  .fc-scene{ perspective: 1400px; margin-bottom: 16px; }
+  .fc-card{
+    position: relative;
+    height: 240px;
+    max-width: 480px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  .fc-card-inner{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform .55s cubic-bezier(.4,.1,.2,1);
+    transform-style: preserve-3d;
+  }
+  .fc-card.flipped .fc-card-inner{ transform: rotateY(180deg); }
+  .fc-card:hover .fc-card-inner{ transform: translateY(-2px); }
+  .fc-card.flipped:hover .fc-card-inner{ transform: rotateY(180deg) translateY(-2px); }
+  .fc-card:focus-visible{
+    outline: 2px solid var(--purple);
+    outline-offset: 4px;
+    border-radius: var(--radius-lg);
+  }
+
+  .fc-face{
+    position: absolute; inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: var(--radius-lg);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    text-align: center;
+    padding: 1.75rem 1.5rem;
+    box-shadow: var(--shadow-card);
+    border: 1px solid var(--purple-border);
+  }
+  .fc-front{
+    background: linear-gradient(160deg,#0c0820 0%,#150d30 55%,#0c0820 100%);
+  }
+  .fc-back{
+    transform: rotateY(180deg);
+    background: linear-gradient(160deg,#081a16 0%,#0d2a22 55%,#081a16 100%);
+    border-color: rgba(0,255,150,.3);
+  }
+  .fc-eyebrow{
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--purple); margin-bottom: 14px; opacity: .9;
+  }
+  .fc-back .fc-eyebrow{ color: #00ff96; }
+  .fc-text{
+    font-size: clamp(15px, 2.4vw, 20px);
+    line-height: 1.5;
+    color: var(--text-primary);
+    font-weight: 500;
+    max-height: 130px;
+    overflow-y: auto;
+  }
+  .fc-hint{
+    position: absolute; bottom: 12px; left: 0; right: 0;
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px; color: var(--text-dim); letter-spacing: .5px;
+  }
+
+  /* -- Navigazione -- */
+  .fc-nav{ display: flex; align-items: center; justify-content: center; gap: 16px; }
+  .fc-nav-btn{
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-mid);
+    background: var(--surface-1);
+    color: rgba(255,255,255,.7);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: 16px;
+  }
+  .fc-nav-btn:hover:not(:disabled){
+    border-color: var(--purple-border);
+    color: var(--purple);
+    background: var(--purple-dim);
+  }
+  .fc-nav-btn:disabled{ opacity: .3; cursor: not-allowed; }
+  .fc-counter-nav{
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 13px; color: rgba(255,255,255,.55);
+    min-width: 52px; text-align: center; letter-spacing: .5px;
+  }
+
+  @media (max-width: 480px){
+    .fc-card{ height: 220px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .fc-card-inner{ transition: none; }
+  }
+}
+
+@layer theme {
+  /* Fronte/retro restano scuri anche in tema chiaro (poster
+     look): stesso principio già applicato a .mem-c.hide e a
+     .didattica-card — vedi UX_AUDIT_grafica_dark_light.md. */
+  html[data-theme="light"] .fc-hint{ color: rgba(16,24,42,.4); }
+  html[data-theme="light"] .fc-nav-btn{
+    background: rgba(20,30,60,.04);
+    border-color: rgba(20,30,60,.14);
+    color: rgba(16,24,42,.6);
+  }
+  html[data-theme="light"] .fc-nav-btn:hover:not(:disabled){
+    background: rgba(124,106,255,.08);
+    border-color: rgba(124,106,255,.4);
+    color: #5b3fd6;
+  }
+  html[data-theme="light"] .fc-counter-nav{ color: rgba(16,24,42,.55); }
+  html[data-theme="light"] .fc-loading{ color: rgba(16,24,42,.5); }
+  html[data-theme="light"] .cat-card.cat-didattica:hover .cat-title{ color: #5b3fd6; }
+  html[data-theme="light"] .cat-card.cat-didattica:hover .cat-arrow{ color: #5b3fd6; }
+}

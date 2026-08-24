@@ -400,7 +400,7 @@ const OnboardingTour = (function () {
       body:'Ogni aula può abilitare solo alcuni moduli: qui vedi solo quelli disponibili per questa classe.' },
     { screen:'homeCategory', target:'.cat-games', type:'action',
       title:'Scegli la modalità 🎮',
-      body:'Al momento sono disponibili i Minigiochi; la sezione Didattica arriverà presto.' },
+      body:'Da qui scegli come far esercitare la classe: Minigiochi per le sei modalità di gioco, oppure Didattica per il ripasso con le Flip Card.' },
     { screen:'hub', target:'#tb-hub-btn', type:'info',
       title:'Il tuo Hub 🎯',
       body:'Classifica, Progressi, Storico, Panoramica Classe e Traguardi: tutto qui, in un solo tocco.' },

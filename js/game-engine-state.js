@@ -1439,7 +1439,7 @@ function _doGoTab(t){
 }
 
 function goStep(s){
-  ['step-mod','step-cat','step-act','step-num','step-players'].forEach(id=>{const el=shq(id);if(el)el.classList.add('hidden');});
+  ['step-mod','step-cat','step-act','step-didattica','step-num','step-players'].forEach(id=>{const el=shq(id);if(el)el.classList.add('hidden');});
   const target=shq('step-'+s);if(target)target.classList.remove('hidden');
   if(s==='mod'){
     // v5.0.6: riapplica il filtro moduli ad ogni accesso a step-mod.
@@ -1458,6 +1458,12 @@ function goStep(s){
     if(catLabel) catLabel.textContent=modLabel(sMod);
     // v9.0.0: passo "scegli modalità" del tour guidato Docente.
     if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showHomeCategoryStep(), 300);
+  }
+  if(s==='didattica'){
+    // v8.16.0: stesso mirror del caso 'cat' — solo l'etichetta di
+    // contesto, Flip Card non ha un passo del tour guidato dedicato.
+    const didLabel=shq('didattica-mod-label');
+    if(didLabel) didLabel.textContent=modLabel(sMod);
   }
   if(s==='act'){
     sh('act-mod-label').textContent=modLabel(sMod);

@@ -1,18 +1,29 @@
 /* ==================================================
-   flip-card.js — PixelProf v8.16.0 (Didattica · Flip Card)
+   flip-card.js — PixelProf v8.17.0 (Didattica · Flip Card)
    Prima "attività didattica" di PixelProf, accanto ai
    Minigiochi: mazzo di carte domanda/risposta con flip 3D,
-   caricato da un CSV dedicato per modulo.
+   caricato da CSV dedicati per modulo + livello.
 
    File interamente isolato: nessuna riga di questa
    funzionalità è stata aggiunta ai file "core" di PixelProf
    (game-engine-state.js, app.js, ecc.) — vengono solo letti.
 
+   v8.17.0: introdotto lo step "scegli livello" (Facile/Medio)
+   tra la card "Flip Card" e il mazzo. Ogni modulo è ora
+   suddiviso in 4 sotto-argomenti (Modulo1..4 secondo
+   Flip_Card.md) che vengono concatenati in un unico mazzo per
+   livello — nessuna UI di scelta sotto-argomento: la selezione
+   avviene già a monte scegliendo il modulo (CE/OE/WP), come
+   per i minigiochi.
+
    Contenuto:
-     - FLIPCARD_MODULE_MAP   associazione modulo -> path CSV
-                              (nessun path inventato: solo CE
-                              ha un mazzo DEMO per collaudo,
-                              vedi commento sotto)
+     - FLIPCARD_MODULE_MAP   modulo -> { facile:[path,...],
+                              medio:[path,...] }. Ogni livello è
+                              un array di path (i 4 sotto-argomenti
+                              di quel modulo): FlipCardLoader li
+                              scarica e concatena in un mazzo solo,
+                              nell'ordine dell'array (Modulo1..4,
+                              nessuno shuffle).
      - _fcParseCsv()          parser CSV robusto (RFC4180-ish)
      - _fcRowsToCards()       righe grezze -> [{q,a}]
      - FlipCardLoader         loader dedicato: stessa forma di
@@ -20,32 +31,57 @@
                               game-engine-state.js (cache,
                               moduleMap, stessa risoluzione
                               path via _resolveJsonPath), ma
-                              per testo CSV anziché JSON —
-                              l'unica differenza è il formato.
-     - selDidattica/startFlipCard/_renderFlipCard/fcFlip/fcNav
-                              entry point, rendering, stato e
-                              navigazione del mazzo
+                              per testo CSV anziché JSON, con
+                              fetch+concat di più file per
+                              livello anziché un singolo file.
+     - selDidattica/_renderFlipCardLevelSelect/fcSelLevel/
+       startFlipCard/_renderFlipCard/fcFlip/fcNav
+                              entry point, scelta livello,
+                              rendering, stato e navigazione
+                              del mazzo
 
    Depends on (letti, MAI modificati): game-engine-state.js
    (sh, shq, escHtml, showScreen, setTb, sMod, modLabel,
-   _resolveJsonPath, goStep).
+   _resolveJsonPath, goStep). Riusa le classi CSS globali
+   .act-back-row/.act-back-btn/.act-context-label/.act-grid/
+   .act-card già definite in pixelprof.css (step-act,
+   step-didattica): nessuna nuova classe CSS per lo step
+   "scegli livello".
 
    Caricamento: aggiunto a BUNDLE_FILES in tools/build.js,
    subito dopo gli altri game-*.js — stesso meccanismo con
    cui il bundle di produzione carica già tutti i minigiochi.
 ================================================== */
 
-/* Path CSV per modulo. Erasmo fornirà i path reali dei
-   moduli man mano che i mazzi saranno pronti: finché un
-   modulo non compare qui, PixelProf mostra correttamente lo
-   stato "nessun mazzo disponibile" (mai un errore JS).
-   L'unica voce già presente (CE) punta a un mazzo DEMO con
-   contenuti segnaposto, incluso solo per collaudare la
-   pipeline end-to-end: va sostituita con il CSV reale. */
+/* Path CSV per modulo e livello. Struttura:
+     <MOD>: { facile: [4 path sotto-argomenti], medio: [4 path] }
+   Erasmo fornirà i path reali dei moduli man mano che i mazzi
+   saranno pronti: finché un modulo non compare qui (o un
+   livello ha array vuoto/assente), PixelProf mostra
+   correttamente lo stato "nessun mazzo disponibile" o il
+   livello disabilitato nello step di scelta (mai un errore JS).
+   Path verificati contro il repo reale: cartella "Flip_Card"
+   con la F maiuscola (coerente con le altre cartelle area del
+   progetto) — ATTENZIONE, Flip_Card.md la documenta in
+   minuscolo ("flip_card"): il documento va corretto, i path
+   qui sotto usano quella reale, case-sensitive su GitHub Pages. */
 const FLIPCARD_MODULE_MAP = {
-  CE: 'data/flip_card/computer_essentials_flip_DEMO.csv',
-  // OE: 'data/flip_card/....csv',
-  // WP: 'data/flip_card/....csv',
+  CE: {
+    facile: [
+      'data/Flip_Card/ECDL/Computer_Essentials/Modulo1/Flip_Card_Facile_Modulo_1.csv',
+      'data/Flip_Card/ECDL/Computer_Essentials/Modulo2/Flip_Card_Facile_Modulo_2.csv',
+      'data/Flip_Card/ECDL/Computer_Essentials/Modulo3/Flip_Card_Facile_Modulo_3.csv',
+      'data/Flip_Card/ECDL/Computer_Essentials/Modulo4/Flip_Card_Facile_Modulo_4.csv',
+    ],
+    medio: [
+      'data/Flip_Card/ECDL/Computer_Essentials/Modulo1/Flip_Card_Medio_Modulo_1.csv',
+      'data/Flip_Card/ECDL/Computer_Essentials/Modulo2/Flip_Card_Medio_Modulo_2.csv',
+      'data/Flip_Card/ECDL/Computer_Essentials/Modulo3/Flip_Card_Medio_Modulo_3.csv',
+      'data/Flip_Card/ECDL/Computer_Essentials/Modulo4/Flip_Card_Medio_Modulo_4.csv',
+    ],
+  },
+  // OE: { facile: ['data/Flip_Card/ECDL/Online_Essentials/Modulo1/....csv', ...], medio: [...] },
+  // WP: { facile: [...], medio: [...] },
 };
 
 /* -- Parser CSV robusto (RFC4180-ish) --------------------
@@ -94,32 +130,49 @@ function _fcRowsToCards(rows){
 
 /* -- Loader CSV dedicato -----------------------------------
    Stessa FORMA di _createLoader() in game-engine-state.js
-   (cache per modulo, moduleMap, stesso _resolveJsonPath per
-   il path) ma riscritto qui perché quello è specifico per
-   JSON (.json()) — qui serve testo CSV. Isolato in questo
-   file: nessuna modifica a game-engine-state.js. */
+   (cache, moduleMap, stesso _resolveJsonPath per il path) ma
+   riscritto qui perché quello è specifico per JSON (.json())
+   e per un solo file per modulo — qui servono più file CSV
+   (i 4 sotto-argomenti) concatenati in un mazzo per livello.
+   Isolato in questo file: nessuna modifica a
+   game-engine-state.js. */
 const FlipCardLoader = (function(){
-  const cache = {};
-  async function _load(mod){
-    if(cache[mod]) return cache[mod];
-    const rel = FLIPCARD_MODULE_MAP[mod];
-    if(!rel) throw new Error('[FlipCard] Modulo non registrato: "' + mod + '".');
-    const url = _resolveJsonPath(rel);
-    const res = await fetch(url);
-    if(!res.ok) throw new Error(`[FlipCard] HTTP ${res.status} — ${url}`);
-    const text = await res.text();
-    const cards = _fcRowsToCards(_fcParseCsv(text));
-    return cache[mod] = cards;
+  const cache = {}; // chiave "MOD|livello" -> [{q,a},...]
+  const LEVELS = ['facile', 'medio'];
+  function _key(mod, liv){ return mod + '|' + liv; }
+  function _entry(mod){ return FLIPCARD_MODULE_MAP[mod]; }
+  async function _load(mod, liv){
+    const k = _key(mod, liv);
+    if(cache[k]) return cache[k];
+    const rels = (_entry(mod) || {})[liv];
+    if(!rels || !rels.length) throw new Error('[FlipCard] Livello non registrato: "' + mod + '/' + liv + '".');
+    const cards = [];
+    for(const rel of rels){
+      const url = _resolveJsonPath(rel);
+      const res = await fetch(url);
+      if(!res.ok) throw new Error(`[FlipCard] HTTP ${res.status} — ${url}`);
+      const text = await res.text();
+      cards.push(..._fcRowsToCards(_fcParseCsv(text)));
+    }
+    return cache[k] = cards;
   }
   return {
-    load: async mod => [...(await _load(mod))],
-    isCached: mod => !!cache[mod],
-    hasModule: mod => !!FLIPCARD_MODULE_MAP[mod],
+    load: async (mod, liv) => [...(await _load(mod, liv))],
+    isCached: (mod, liv) => !!cache[_key(mod, liv)],
+    hasModule: mod => !!_entry(mod),
+    // Livelli con almeno un path registrato per quel modulo,
+    // nell'ordine "facile, medio" — usato dallo step di scelta
+    // livello per abilitare solo le card con contenuti pronti.
+    levelsFor: mod => {
+      const entry = _entry(mod);
+      if(!entry) return [];
+      return LEVELS.filter(l => entry[l] && entry[l].length);
+    },
   };
 })();
 
 /* -- Stato mazzo corrente ---------------------------------- */
-let fcState = null; // { cards, idx, flipped, mod }
+let fcState = null; // { cards, idx, flipped, mod, liv }
 
 /* Card di stato (nessun mazzo / vuoto / errore) — riusa le
    stesse classi CSS di _showGameError (.result-wrap, ecc.,
@@ -183,15 +236,32 @@ async function exitFlipCardConfirm(){
 
 /* Entry point chiamato dalla card "Flip Card" in
    step-didattica. Il parametro "type" prepara l'estensione a
-   futuri metodi didattici senza dover cambiare questa firma. */
+   futuri metodi didattici senza dover cambiare questa firma.
+   Non carica più il mazzo direttamente: da v8.17.0 mostra
+   prima lo step "scegli livello" (Facile/Medio). */
 async function selDidattica(type){
   if(type !== 'flipcard') return;
   setTb(null);
   showScreen('tab-games');
-  await startFlipCard(sh('g-area'), sMod);
+  _renderFlipCardLevelSelect(sh('g-area'), sMod);
 }
 
-async function startFlipCard(cont, mod){
+/* Definizione presentazionale dei 2 livelli — riusa i due
+   colori già presenti nel tema Flip Card (verde della faccia
+   "Risposta", viola della faccia "Domanda"/dell'icona Flip
+   Card in step-didattica): nessun colore nuovo introdotto. */
+const FC_LEVELS = [
+  { key: 'facile', label: 'Facile', desc: 'Concetti base, ripasso rapido', icon: 'ti-mood-smile', rgb: '0,255,150', color: '#00ff96' },
+  { key: 'medio', label: 'Medio', desc: 'Approfondimento, dettagli tecnici', icon: 'ti-cards', rgb: '124,106,255', color: '#a996ff' },
+];
+
+/* Step "scegli livello": stessa struttura di act-back-row +
+   act-grid + act-card già usata da step-act/step-didattica
+   (classi globali in pixelprof.css) — nessuna nuova classe
+   CSS. Le card dei livelli senza contenuti pronti (es. OE
+   finché non ha CSV) restano visibili ma disabilitate, con
+   la stessa logica "mai un errore JS" del resto del file. */
+function _renderFlipCardLevelSelect(cont, mod){
   if(!FlipCardLoader.hasModule(mod)){
     cont.innerHTML = _fcHeader() + _fcStateHTML({
       icon: '🗂️', color: '#a996ff', title: 'Nessun mazzo disponibile',
@@ -199,12 +269,46 @@ async function startFlipCard(cont, mod){
     });
     return;
   }
-  if(!FlipCardLoader.isCached(mod)){
+  const available = FlipCardLoader.levelsFor(mod);
+  const cardsHtml = FC_LEVELS.map(l => {
+    const ok = available.includes(l.key);
+    const icon = `<div class="ai" style="background:rgba(${l.rgb},.12)"><i class="ti ${l.icon}" style="color:${l.color};font-size:20px"></i></div>`;
+    const body = `<div><h3>${l.label}</h3><p>${escHtml(ok ? l.desc : 'Non ancora disponibile')}</p></div>`;
+    if(!ok){
+      return `<div class="act-card" style="opacity:.4;cursor:not-allowed" aria-disabled="true" aria-label="Livello ${l.label}, non disponibile">${icon}${body}</div>`;
+    }
+    return `<div class="act-card" role="button" tabindex="0" aria-label="Livello ${l.label}"
+      onclick="fcSelLevel('${l.key}')"
+      onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();fcSelLevel('${l.key}');}">${icon}${body}</div>`;
+  }).join('');
+  cont.innerHTML = `<div class="act-back-row">
+      <button class="act-back-btn" onclick="exitFlipCard()"><i class="ti ti-arrow-left"></i> Didattica</button>
+      <span class="act-context-label">Flip Card — scegli il livello</span>
+    </div>
+    <div class="act-grid">${cardsHtml}</div>`;
+}
+
+/* Click su una card livello nello step precedente: passa a
+   sMod (fissato all'ingresso in selDidattica, come i
+   minigiochi) + il livello scelto. */
+function fcSelLevel(liv){
+  startFlipCard(sh('g-area'), sMod, liv);
+}
+
+async function startFlipCard(cont, mod, liv){
+  if(!FlipCardLoader.hasModule(mod) || !FlipCardLoader.levelsFor(mod).includes(liv)){
+    cont.innerHTML = _fcHeader() + _fcStateHTML({
+      icon: '🗂️', color: '#a996ff', title: 'Nessun mazzo disponibile',
+      msg: `Il modulo "${modLabel(mod)}" non ha ancora un set di carte Flip Card associato per questo livello.`,
+    });
+    return;
+  }
+  if(!FlipCardLoader.isCached(mod, liv)){
     cont.innerHTML = _fcHeader() + '<div class="fc-loading">Caricamento mazzo…</div>';
   }
   let cards;
   try{
-    cards = await FlipCardLoader.load(mod);
+    cards = await FlipCardLoader.load(mod, liv);
   }catch(err){
     console.error('[PixelProf] FlipCard load error:', err);
     cont.innerHTML = _fcHeader() + _fcStateHTML({
@@ -216,11 +320,11 @@ async function startFlipCard(cont, mod){
   if(!cards.length){
     cont.innerHTML = _fcHeader() + _fcStateHTML({
       icon: '📭', color: '#a996ff', title: 'Mazzo vuoto',
-      msg: 'Il file CSV è stato trovato ma non contiene righe valide (colonne domanda,risposta).',
+      msg: 'I file CSV sono stati trovati ma non contengono righe valide (colonne domanda,risposta).',
     });
     return;
   }
-  fcState = { cards, idx: 0, flipped: false, mod };
+  fcState = { cards, idx: 0, flipped: false, mod, liv };
   _renderFlipCard(cont);
 }
 

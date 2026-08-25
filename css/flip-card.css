@@ -20,13 +20,19 @@
      finora mai mostrata) al posto del teal di default di
      .cat-card. Vince per priorità di layer: non serve
      toccare la regola .cat-card:hover originale in
-     pixelprof.css. */
+     pixelprof.css.
+     NB: il colore della barra (::after) è impostato SEMPRE,
+     non solo su :hover — altrimenti al mouseout il colore
+     scatta istantaneamente al teal di base (nessuna
+     transizione su "background", solo su "transform" nella
+     regola originale) mentre la barra si ritira: si vedeva
+     un lampo verde/teal. Fix v8.16.1. */
+  .cat-card.cat-didattica::after{ background: var(--purple); }
   .cat-card.cat-didattica:hover{
     border-color: var(--purple-border);
     background: rgba(124,106,255,.06);
     box-shadow: 0 12px 36px rgba(0,0,0,.45), 0 0 0 1px rgba(124,106,255,.15);
   }
-  .cat-card.cat-didattica:hover::after{ background: var(--purple); }
   .cat-card.cat-didattica:hover .cat-title{ color: var(--purple); }
   .cat-card.cat-didattica:hover .cat-arrow{ color: var(--purple); }
 
@@ -79,18 +85,25 @@
   .fc-back{
     transform: rotateY(180deg);
     background: linear-gradient(160deg,#081a16 0%,#0d2a22 55%,#081a16 100%);
-    border-color: rgba(0,255,150,.3);
   }
+  /* Colori fissi (non var(--purple)/var(--text-*)): le facce
+     restano scure "apposta" in entrambi i temi (poster look,
+     come .mem-c.hide/.didattica-card — vedi
+     UX_AUDIT_grafica_dark_light.md), ma --text-primary e
+     --purple in tema chiaro diventano varianti scure pensate
+     per testo su sfondo bianco (vedi pixelprof.css riga
+     ~4955: "ink" per leggibilità su bianco) — su questo sfondo
+     sempre scuro risultavano illeggibili. Fix v8.16.1. */
   .fc-eyebrow{
     font-family: 'Share Tech Mono', monospace;
     font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--purple); margin-bottom: 14px; opacity: .9;
+    color: #a996ff; margin-bottom: 14px; opacity: .9;
   }
   .fc-back .fc-eyebrow{ color: #00ff96; }
   .fc-text{
     font-size: clamp(15px, 2.4vw, 20px);
     line-height: 1.5;
-    color: var(--text-primary);
+    color: #e2e8f0;
     font-weight: 500;
     max-height: 130px;
     overflow-y: auto;
@@ -99,7 +112,7 @@
     position: absolute; bottom: 12px; left: 0; right: 0;
     text-align: center;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 10px; color: var(--text-dim); letter-spacing: .5px;
+    font-size: 10px; color: rgba(255,255,255,.35); letter-spacing: .5px;
   }
 
   /* -- Navigazione -- */
@@ -127,6 +140,24 @@
     min-width: 52px; text-align: center; letter-spacing: .5px;
   }
 
+  /* Bug: .game-exit-btn da sola (senza game-restart-btn accanto,
+     che Flip Card non ha) risultava poco visibile in dark — è
+     pensata per stare accanto al pulsante teal più acceso.
+     .fc-exit-btn le dà un contrasto proprio, sempre visibile,
+     tema viola coerente con Didattica invece del generico
+     "quasi invisibile finché non ci passi sopra". Fix v8.16.1. */
+  .fc-exit-btn{
+    border-color: var(--purple-border);
+    background: var(--purple-dim);
+    color: #c9befa;
+  }
+  .fc-exit-btn:hover{
+    border-color: var(--purple);
+    background: rgba(124,106,255,.18);
+    color: #fff;
+  }
+  .fc-exit-btn::after{ background: var(--purple); }
+
   @media (max-width: 480px){
     .fc-card{ height: 220px; }
   }
@@ -137,10 +168,13 @@
 }
 
 @layer theme {
-  /* Fronte/retro restano scuri anche in tema chiaro (poster
-     look): stesso principio già applicato a .mem-c.hide e a
-     .didattica-card — vedi UX_AUDIT_grafica_dark_light.md. */
-  html[data-theme="light"] .fc-hint{ color: rgba(16,24,42,.4); }
+  /* .fc-hint (e fc-text, fc-eyebrow) NON hanno più un override
+     qui: sono colori fissi in @layer flipcard, corretti in
+     entrambi i temi perché le facce della card restano scure
+     "apposta" in entrambi (vedi commento sopra .fc-front/.fc-back).
+     Un override qui era il bug originale del tema chiaro: dava
+     un colore pensato per sfondo bianco a un elemento che sta
+     sempre su sfondo scuro. Fix v8.16.1. */
   html[data-theme="light"] .fc-nav-btn{
     background: rgba(20,30,60,.04);
     border-color: rgba(20,30,60,.14);
@@ -155,4 +189,17 @@
   html[data-theme="light"] .fc-loading{ color: rgba(16,24,42,.5); }
   html[data-theme="light"] .cat-card.cat-didattica:hover .cat-title{ color: #5b3fd6; }
   html[data-theme="light"] .cat-card.cat-didattica:hover .cat-arrow{ color: #5b3fd6; }
+  /* fc-exit-btn sta sull'header normale (non sulla card scura),
+     quindi qui SEGUE il tema come .fc-nav-btn — a differenza di
+     fc-text/fc-hint/fc-eyebrow sopra. */
+  html[data-theme="light"] .fc-exit-btn{
+    background: rgba(124,106,255,.07);
+    border-color: rgba(124,106,255,.3);
+    color: #5b3fd6;
+  }
+  html[data-theme="light"] .fc-exit-btn:hover{
+    background: rgba(124,106,255,.14);
+    border-color: #6a4fd6;
+    color: #4a2fb8;
+  }
 }

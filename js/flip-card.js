@@ -142,24 +142,43 @@ function _fcStateHTML({ icon, title, msg, color }){
 
 /* Header minimo dedicato — NON riusa buildGameHeader()
    (game-match.js): lì "Ricomincia" chiama restartActivity()
-   -> launch(), che richiede sAct/sMod/sMode valorizzati come
-   nei minigiochi, e "Esci" apre ppConfirm(()=>goHome()) con
-   un testo pensato per un punteggio da perdere. Flip Card non
-   ha punteggio né sAct/sMode: uscire torna direttamente a
-   step-didattica, senza dialogo di conferma. */
+   -> launch(), che richiede sAct/sMode valorizzati come nei
+   minigiochi. Flip Card non ha punteggio né sAct/sMode.
+   Classe "fc-exit-btn" aggiuntiva (oltre a game-exit-btn):
+   quest'ultima da sola è pensata per stare accanto a
+   game-restart-btn (più colorato, fa risaltare l'accoppiata);
+   qui è da sola ed era poco visibile in dark — fc-exit-btn le
+   dà un contrasto proprio, tema viola coerente con Didattica. */
 function _fcHeader(){
   return `<div class="game-header">
     <div class="game-header-left">
-      <button class="game-exit-btn" onclick="exitFlipCard()"><i class="ti ti-x"></i> Esci</button>
+      <button class="game-exit-btn fc-exit-btn" onclick="exitFlipCardConfirm()"><i class="ti ti-x"></i> Esci</button>
     </div>
   </div>`;
 }
 
+/* Uscita diretta, senza conferma: usata dagli stati vuoto/errore
+   (nulla da abbandonare, chiedere conferma sarebbe solo attrito)
+   e internamente da exitFlipCardConfirm() una volta confermato. */
 function exitFlipCard(){
   fcState = null;
   setTb(null);
   showScreen('tab-home');
   goStep('didattica');
+}
+
+/* Uscita dalla sessione attiva: chiede conferma, come richiesto,
+   riusando il dialogo generico già presente in game-engine-state.js
+   (ppConfirmBox — indipendente da ppConfirm/ppConfirmRestart, che
+   sono legati al punteggio partita e non calzano qui). */
+async function exitFlipCardConfirm(){
+  const ok = await ppConfirmBox('Uscendo tornerai alla scelta del metodo di studio in Didattica.', {
+    title: 'Uscire da Flip Card?',
+    icon: '📖',
+    yesLabel: 'Sì, esci',
+    noLabel: 'Annulla',
+  });
+  if(ok) exitFlipCard();
 }
 
 /* Entry point chiamato dalla card "Flip Card" in

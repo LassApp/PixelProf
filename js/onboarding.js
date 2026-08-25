@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.2.2
+   onboarding.js — PixelProf v2.3.0
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -201,6 +201,38 @@
      #screen-courses: funziona per qualunque schermata futura con lo
      stesso pattern position:fixed+overflow-y:auto proprio.
 
+   v2.3.0 — richiesta esplicita utente: attivata la Didattica (Flip Card),
+     il tour va aggiornato per coprirla. Due interventi:
+       1) DOCENTE — riordino dei passi esistenti: il passo Hub (ex 4/4)
+          diventa il passo 3/10; il passo "Scegli la modalità" (ex 3/4,
+          .cat-games) diventa il passo 4/10, ritestato per parlare solo
+          di Minigiochi (Didattica ha ora i suoi passi dedicati sotto).
+       2) ENTRAMBI I RUOLI — 6 nuovi passi dopo Hub (Direttore 14-20/20,
+          Docente 4-10/10, stessa sequenza):
+            Minigiochi (.cat-games, action) → panoramica delle modalità
+            di gioco (#step-act .act-grid, info revealTarget) → pulsante
+            "← Modalità" di step-act (action) → Didattica (.cat-didattica,
+            action) → Flip Card (#step-didattica .act-card, info
+            revealTarget) → pulsante "← Modalità" di step-didattica
+            (action) → messaggio finale "Tour completato" (.cat-grid,
+            info, ultimo passo).
+     Testo dei due pulsanti "indietro" rinominato da "Categoria" a
+     "Modalità" in index.html (step-act e step-didattica): riportano
+     entrambi alla schermata "Scegli la modalità", non a una "categoria"
+     — testo ora coerente.
+     Nuovo aggancio in game-engine-state.js: goStep('didattica') ora
+     chiama anche OnboardingTour.showDidatticaStep() (nuova, stesso
+     pattern del ramo 'cat' esistente) — prima assente perché Flip Card
+     non aveva ancora passi del tour dedicati.
+     _advance(): nuova condizione afterHub, mirror di hubTarget ma
+     valutata sul passo PRECEDENTE invece che sul successivo. Necessaria
+     perché il passo Hub ('info', bottone sempre presente in topbar) può
+     ora essere seguito da altri passi invece di essere l'ultimo: la
+     schermata dietro al suo tooltip è già garantita attiva (il passo Hub
+     si limita a spiegare il pulsante topbar, non naviga altrove), quindi
+     sicuro renderizzare subito il passo successivo — stesso principio già
+     applicato a hubTarget, solo speculare.
+
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
 
@@ -220,11 +252,13 @@
        ddGoSceltaAula()         → OnboardingTour.showCoursesSelectStep() (nuovo)
        openTeacherManagement()  → OnboardingTour.showTeacherMgmtStep() (nuovo)
      game-engine-state.js:
-       goStep('mod')  → OnboardingTour.showHomeModuleStep()
-       goStep('cat')  → OnboardingTour.showHomeCategoryStep() (nuovo)
-       goStep('act')  → OnboardingTour.recheck() (nuovo, rete di sicurezza
-                         per il passo Hub, già raggiungibile comunque in modo
-                         opportunistico da _advance())
+       goStep('mod')       → OnboardingTour.showHomeModuleStep()
+       goStep('cat')       → OnboardingTour.showHomeCategoryStep() (nuovo)
+       goStep('act')       → OnboardingTour.recheck() (nuovo, rete di
+                              sicurezza per il passo Hub, già raggiungibile
+                              comunque in modo opportunistico da _advance())
+       goStep('didattica') → OnboardingTour.showDidatticaStep() (nuovo,
+                              v2.3.0 — stesso pattern del ramo 'cat')
 
    API pubblica:
      OnboardingTour.init(teacherId, isDirector)
@@ -234,6 +268,7 @@
      OnboardingTour.showCoursesSelectStep()
      OnboardingTour.showHomeModuleStep()
      OnboardingTour.showHomeCategoryStep()
+     OnboardingTour.showDidatticaStep()   — (v2.3.0)
      OnboardingTour.recheck()             — ri-tenta il render del passo
                                              corrente, no-op se non pertinente
      OnboardingTour.skip()                — chiude il passo attivo e
@@ -389,6 +424,31 @@ const OnboardingTour = (function () {
     { screen:'hub', target:'#tb-hub-btn', type:'info',
       title:'Il tuo Hub 🎯',
       body:'Classifica, Progressi, Storico, Panoramica Classe e Traguardi: tutto qui, in un solo tocco.' },
+    // v2.3.0 — passi 14-20: coprono il flusso Minigiochi/Didattica raggiunto
+    // dopo la scelta del modulo (già visto ai passi 11-12). Testo identico
+    // ai corrispondenti passi 4-10 di TEACHER_STEPS: stessa schermata,
+    // stesso flusso, indipendente dal ruolo.
+    { screen:'homeCategory', target:'.cat-games', type:'action',
+      title:'Minigiochi 🎮',
+      body:'Premi qui per scegliere tra le modalità di gioco: Quiz, Speed Quiz, Abbina, Completa la frase e Vero o Falso.' },
+    { screen:'act', target:'#step-act .act-grid', type:'info', revealTarget:true,
+      title:'Le modalità di gioco 🕹️',
+      body:'Scegli quella più adatta alla lezione: dopo deciderai il numero di domande e se far giocare la classe in Individuale o a Squadre.' },
+    { screen:'act', target:'#step-act .act-back-btn', type:'action',
+      title:'Torna alla modalità ↩️',
+      body:'Questo pulsante ti riporta alla scelta tra Minigiochi e Didattica.' },
+    { screen:'homeCategory', target:'.cat-didattica', type:'action',
+      title:'Didattica 📖',
+      body:'L\'alternativa ai minigiochi: qui la classe ripassa con le Flip Card, domanda su un lato e risposta sull\'altro.' },
+    { screen:'didattica', target:'#step-didattica .act-card', type:'info', revealTarget:true,
+      title:'Flip Card 🃏',
+      body:'Per ora è l\'unico metodo disponibile: scegli il livello e la classe potrà ripassare voltando le carte.' },
+    { screen:'didattica', target:'#step-didattica .act-back-btn', type:'action',
+      title:'Torna alla modalità ↩️',
+      body:'Anche da qui puoi tornare alla scelta tra Minigiochi e Didattica.' },
+    { screen:'homeCategory', target:'.cat-grid', type:'info',
+      title:'Tour completato! 🎉',
+      body:'Ora conosci tutti gli strumenti di PixelProf. Buona lezione!' },
   ];
 
   const TEACHER_STEPS = [
@@ -398,12 +458,33 @@ const OnboardingTour = (function () {
     { screen:'homeModule', target:'.mod-card:not(.soon-card)', type:'action',
       title:'Scegli il modulo 📚',
       body:'Ogni aula può abilitare solo alcuni moduli: qui vedi solo quelli disponibili per questa classe.' },
-    { screen:'homeCategory', target:'.cat-games', type:'action',
-      title:'Scegli la modalità 🎮',
-      body:'Da qui scegli come far esercitare la classe: Minigiochi per le sei modalità di gioco, oppure Didattica per il ripasso con le Flip Card.' },
     { screen:'hub', target:'#tb-hub-btn', type:'info',
       title:'Il tuo Hub 🎯',
       body:'Classifica, Progressi, Storico, Panoramica Classe e Traguardi: tutto qui, in un solo tocco.' },
+    // v2.3.0 — ex passo "Scegli la modalità" (era qui, prima di Hub):
+    // ritestato per parlare solo di Minigiochi, dato che Didattica ha ora
+    // il suo passo dedicato più sotto (passo 7/10).
+    { screen:'homeCategory', target:'.cat-games', type:'action',
+      title:'Minigiochi 🎮',
+      body:'Premi qui per scegliere tra le modalità di gioco: Quiz, Speed Quiz, Abbina, Completa la frase e Vero o Falso.' },
+    { screen:'act', target:'#step-act .act-grid', type:'info', revealTarget:true,
+      title:'Le modalità di gioco 🕹️',
+      body:'Scegli quella più adatta alla lezione: dopo deciderai il numero di domande e se far giocare la classe in Individuale o a Squadre.' },
+    { screen:'act', target:'#step-act .act-back-btn', type:'action',
+      title:'Torna alla modalità ↩️',
+      body:'Questo pulsante ti riporta alla scelta tra Minigiochi e Didattica.' },
+    { screen:'homeCategory', target:'.cat-didattica', type:'action',
+      title:'Didattica 📖',
+      body:'L\'alternativa ai minigiochi: qui la classe ripassa con le Flip Card, domanda su un lato e risposta sull\'altro.' },
+    { screen:'didattica', target:'#step-didattica .act-card', type:'info', revealTarget:true,
+      title:'Flip Card 🃏',
+      body:'Per ora è l\'unico metodo disponibile: scegli il livello e la classe potrà ripassare voltando le carte.' },
+    { screen:'didattica', target:'#step-didattica .act-back-btn', type:'action',
+      title:'Torna alla modalità ↩️',
+      body:'Anche da qui puoi tornare alla scelta tra Minigiochi e Didattica.' },
+    { screen:'homeCategory', target:'.cat-grid', type:'info',
+      title:'Tour completato! 🎉',
+      body:'Ora conosci tutti gli strumenti di PixelProf. Buona lezione!' },
   ];
 
   function _stepList() { return _isDirector ? DIRECTOR_STEPS : TEACHER_STEPS; }
@@ -510,7 +591,15 @@ const OnboardingTour = (function () {
     // attivo in quel momento, quindi sempre sicuro da controllare.
     const sameScreen = prevDef && nextDef.screen === prevDef.screen;
     const hubTarget  = nextDef.target === '#tb-hub-btn';
-    if (sameScreen || hubTarget) {
+    // v2.3.0 — mirror di hubTarget ma sul passo PRECEDENTE: il passo Hub
+    // (sempre 'info') può ora essere seguito da altri passi invece di
+    // essere l'ultimo. Il suo tooltip si limita a spiegare il pulsante
+    // topbar sempre presente, senza mai navigare altrove — quindi la
+    // schermata dietro di esso (qualunque step-mod/cat/act/didattica fosse
+    // già attivo PRIMA che Hub venisse mostrato) è garantita ancora
+    // quella, sicuro controllare subito anche in questo caso.
+    const afterHub = prevDef && prevDef.target === '#tb-hub-btn';
+    if (sameScreen || hubTarget || afterHub) {
       // v2.1.4 — bug segnalato: "step 6, tour fuori schermo, impossibile
       // continuare". Causa: questo _advance() viene chiamato dal listener
       // di click in CAPTURE-phase (vedi sotto), che scatta PRIMA
@@ -719,6 +808,7 @@ const OnboardingTour = (function () {
   function showCoursesSelectStep() { _tryRenderCurrentStep(); }
   function showHomeModuleStep()    { _tryRenderCurrentStep(); }
   function showHomeCategoryStep()  { _tryRenderCurrentStep(); }
+  function showDidatticaStep()     { _tryRenderCurrentStep(); } // v2.3.0
   function recheck()               { _tryRenderCurrentStep(); }
 
   return {
@@ -726,6 +816,7 @@ const OnboardingTour = (function () {
     showDashboardStep, showWizardStep, showTeacherMgmtStep,
     showTeacherCreateStep, showTeacherListStep,
     showCoursesSelectStep, showHomeModuleStep, showHomeCategoryStep,
+    showDidatticaStep,
     recheck, skip, reset,
   };
 })();

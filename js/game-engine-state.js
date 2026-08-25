@@ -1460,10 +1460,13 @@ function goStep(s){
     if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showHomeCategoryStep(), 300);
   }
   if(s==='didattica'){
-    // v8.16.0: stesso mirror del caso 'cat' — solo l'etichetta di
-    // contesto, Flip Card non ha un passo del tour guidato dedicato.
     const didLabel=shq('didattica-mod-label');
     if(didLabel) didLabel.textContent=modLabel(sMod);
+    // v8.18.0: passo "tipo di didattica" del tour guidato (Direttore e
+    // Docente) — stesso aggancio del ramo 'cat' sopra, prima assente
+    // perché Flip Card non aveva ancora un passo dedicato nel tour
+    // (vedi js/onboarding.js v2.3.0).
+    if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showDidatticaStep(), 300);
   }
   if(s==='act'){
     sh('act-mod-label').textContent=modLabel(sMod);

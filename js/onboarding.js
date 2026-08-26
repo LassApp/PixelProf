@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.3.1
+   onboarding.js — PixelProf v2.4.0
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -269,6 +269,35 @@
           show*Step() rilevante, quando l'utente torna sulla schermata
           giusta).
 
+   v2.4.0 — richiesta esplicita utente: dopo "Flip Card" (ora 'action')
+     il tour saltava direttamente al pulsante "torna alla modalità",
+     incoerente con quanto succede davvero in app. 3 nuovi passi
+     'action' inseriti tra "Flip Card" e "torna alla modalità" (Direttore
+     19-21/23, Docente 9-11/13), che seguono il flusso reale:
+       - flipcardLevel  #g-area .act-grid          "Scegli il livello"
+       - flipcardExit   .fc-exit-btn               "Uscire in ogni momento"
+       - flipcardConfirm #pp-generic-yes           "Conferma richiesta"
+     Hook dedicati in js/flip-card.js (file isolato, nessuna modifica ai
+     file core, stesso principio già dichiarato in testa a quel file):
+       - _renderFlipCardLevelSelect() → showFlipCardLevelStep(), subito
+         dopo cont.innerHTML: la card del livello appena cliccata ha già
+         fatto avanzare il tour in CAPTURE-phase (stesso meccanismo
+         v2.1.4), quindi al momento di questa chiamata target e stato
+         sono già allineati — nessun ritardo necessario.
+       - _renderFlipCard() → showFlipCardExitStep(), 1 tick dopo la fine
+         del render (stesso studio delle carte, hook aggiunto solo qui e
+         non anche negli stati di caricamento/errore di startFlipCard():
+         il modulo CE ha già i mazzi reali per entrambi i livelli, quindi
+         questo è il percorso che verrà davvero testato — se in futuro
+         serve coprire anche gli stati vuoti/errore, stesso hook lì).
+       - exitFlipCardConfirm() → showFlipCardConfirmStep() chiamata
+         SUBITO dopo aver invocato ppConfirmBox() ma PRIMA di attenderne
+         la Promise: _ppBuildModal() dentro ppConfirmBox() inserisce il
+         markup del dialogo in modo sincrono, quindi #pp-generic-yes
+         esiste già a quel punto — niente aggiunto a ppConfirmBox() né a
+         game-engine-state.js, che restano generici e usati anche altrove
+         nell'app.
+
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
 
@@ -479,6 +508,23 @@ const OnboardingTour = (function () {
     { screen:'didattica', target:'#step-didattica .act-card', type:'action',
       title:'Flip Card 🃏',
       body:'Per ora è l\'unico metodo disponibile: scegli il livello e la classe potrà ripassare voltando le carte.' },
+    // v2.4.0 — 3 nuovi passi (richiesta esplicita utente): coprono il
+    // flusso REALE dentro Flip Card, raggiunto cliccando la card sopra
+    // (ora 'action', v2.3.1) — prima il tour saltava direttamente al
+    // pulsante "torna alla modalità", incoerente con quanto succede
+    // davvero in app (scelta livello, poi sessione con pulsante Esci e
+    // relativa conferma). Hook dedicati in js/flip-card.js (file isolato,
+    // nessuna modifica ai file core): vedi showFlipCardLevelStep/
+    // showFlipCardExitStep/showFlipCardConfirmStep più sotto.
+    { screen:'flipcardLevel', target:'#g-area .act-grid', type:'action',
+      title:'Scegli il livello 🎚️',
+      body:'Facile o Medio: la classe può scegliere il livello di approfondimento prima di iniziare.' },
+    { screen:'flipcardExit', target:'.fc-exit-btn', type:'action',
+      title:'Uscire in ogni momento ✖️',
+      body:'Da qui la classe può interrompere la sessione e tornare alla scelta del metodo di studio quando vuole.' },
+    { screen:'flipcardConfirm', target:'#pp-generic-yes', type:'action',
+      title:'Conferma richiesta ✅',
+      body:'Per evitare uscite accidentali viene sempre chiesta una conferma prima di abbandonare la sessione.' },
     { screen:'didattica', target:'#step-didattica .act-back-btn', type:'action',
       title:'Torna alla modalità ↩️',
       body:'Anche da qui puoi tornare alla scelta tra Minigiochi e Didattica.' },
@@ -515,6 +561,23 @@ const OnboardingTour = (function () {
     { screen:'didattica', target:'#step-didattica .act-card', type:'action',
       title:'Flip Card 🃏',
       body:'Per ora è l\'unico metodo disponibile: scegli il livello e la classe potrà ripassare voltando le carte.' },
+    // v2.4.0 — 3 nuovi passi (richiesta esplicita utente): coprono il
+    // flusso REALE dentro Flip Card, raggiunto cliccando la card sopra
+    // (ora 'action', v2.3.1) — prima il tour saltava direttamente al
+    // pulsante "torna alla modalità", incoerente con quanto succede
+    // davvero in app (scelta livello, poi sessione con pulsante Esci e
+    // relativa conferma). Hook dedicati in js/flip-card.js (file isolato,
+    // nessuna modifica ai file core): vedi showFlipCardLevelStep/
+    // showFlipCardExitStep/showFlipCardConfirmStep più sotto.
+    { screen:'flipcardLevel', target:'#g-area .act-grid', type:'action',
+      title:'Scegli il livello 🎚️',
+      body:'Facile o Medio: la classe può scegliere il livello di approfondimento prima di iniziare.' },
+    { screen:'flipcardExit', target:'.fc-exit-btn', type:'action',
+      title:'Uscire in ogni momento ✖️',
+      body:'Da qui la classe può interrompere la sessione e tornare alla scelta del metodo di studio quando vuole.' },
+    { screen:'flipcardConfirm', target:'#pp-generic-yes', type:'action',
+      title:'Conferma richiesta ✅',
+      body:'Per evitare uscite accidentali viene sempre chiesta una conferma prima di abbandonare la sessione.' },
     { screen:'didattica', target:'#step-didattica .act-back-btn', type:'action',
       title:'Torna alla modalità ↩️',
       body:'Anche da qui puoi tornare alla scelta tra Minigiochi e Didattica.' },
@@ -845,6 +908,9 @@ const OnboardingTour = (function () {
   function showHomeModuleStep()    { _tryRenderCurrentStep(); }
   function showHomeCategoryStep()  { _tryRenderCurrentStep(); }
   function showDidatticaStep()     { _tryRenderCurrentStep(); } // v2.3.0
+  function showFlipCardLevelStep()   { _tryRenderCurrentStep(); } // v2.4.0
+  function showFlipCardExitStep()    { _tryRenderCurrentStep(); } // v2.4.0
+  function showFlipCardConfirmStep() { _tryRenderCurrentStep(); } // v2.4.0
   function recheck()               { _tryRenderCurrentStep(); }
 
   return {
@@ -853,6 +919,7 @@ const OnboardingTour = (function () {
     showTeacherCreateStep, showTeacherListStep,
     showCoursesSelectStep, showHomeModuleStep, showHomeCategoryStep,
     showDidatticaStep,
+    showFlipCardLevelStep, showFlipCardExitStep, showFlipCardConfirmStep,
     recheck, skip, reset,
   };
 })();

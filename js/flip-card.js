@@ -1,8 +1,16 @@
 /* ==================================================
-   flip-card.js — PixelProf v8.17.0 (Didattica · Flip Card)
+   flip-card.js — PixelProf v8.19.0 (Didattica · Flip Card)
    Prima "attività didattica" di PixelProf, accanto ai
    Minigiochi: mazzo di carte domanda/risposta con flip 3D,
    caricato da CSV dedicati per modulo + livello.
+
+   v8.19.0: 3 hook aggiunti per il tour guidato (richiesta
+   esplicita utente, vedi js/onboarding.js v2.4.0) —
+   _renderFlipCardLevelSelect() → showFlipCardLevelStep(),
+   _renderFlipCard() → showFlipCardExitStep(),
+   exitFlipCardConfirm() → showFlipCardConfirmStep(). File
+   isolato: chiamano solo l'API pubblica già esposta da
+   window.OnboardingTour, nessuna modifica ai file core.
 
    File interamente isolato: nessuna riga di questa
    funzionalità è stata aggiunta ai file "core" di PixelProf
@@ -225,12 +233,19 @@ function exitFlipCard(){
    (ppConfirmBox — indipendente da ppConfirm/ppConfirmRestart, che
    sono legati al punteggio partita e non calzano qui). */
 async function exitFlipCardConfirm(){
-  const ok = await ppConfirmBox('Uscendo tornerai alla scelta del metodo di studio in Didattica.', {
+  const p = ppConfirmBox('Uscendo tornerai alla scelta del metodo di studio in Didattica.', {
     title: 'Uscire da Flip Card?',
     icon: '📖',
     yesLabel: 'Sì, esci',
     noLabel: 'Annulla',
   });
+  // v2.4.0 (onboarding.js): ppConfirmBox() inserisce il markup del
+  // dialogo in modo sincrono (_ppBuildModal, prima di restituire la
+  // Promise) — #pp-generic-yes esiste già qui, prima dell'await.
+  // Niente aggiunto a ppConfirmBox()/game-engine-state.js: restano
+  // generici, usati anche altrove nell'app.
+  if(typeof OnboardingTour !== 'undefined') OnboardingTour.showFlipCardConfirmStep();
+  const ok = await p;
   if(ok) exitFlipCard();
 }
 
@@ -286,6 +301,10 @@ function _renderFlipCardLevelSelect(cont, mod){
       <span class="act-context-label">Flip Card — scegli il livello</span>
     </div>
     <div class="act-grid">${cardsHtml}</div>`;
+  // v2.4.0 (onboarding.js): la card livello appena cliccata ha già fatto
+  // avanzare il tour guidato in capture-phase (stesso meccanismo del
+  // resto del motore) — a questo punto stato e DOM sono già allineati.
+  if(typeof OnboardingTour !== 'undefined') OnboardingTour.showFlipCardLevelStep();
 }
 
 /* Click su una card livello nello step precedente: passa a
@@ -358,6 +377,9 @@ function _renderFlipCard(cont){
       <button class="fc-nav-btn" id="fc-next" onclick="fcNav(1)" aria-label="Card successiva"><i class="ti ti-chevron-right"></i></button>
     </div>`;
   _fcUpdateFaces();
+  // v2.4.0 (onboarding.js): pulsante Esci pronto in DOM — 1 tick per
+  // coerenza con lo stesso pattern usato altrove nel motore del tour.
+  if(typeof OnboardingTour !== 'undefined') setTimeout(()=>OnboardingTour.showFlipCardExitStep(), 0);
 }
 
 function _fcUpdateFaces(){

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup — Card "Flip Card" in Didattica — PixelProf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="stylesheet" href="mockup-flipcard-entry-card.css">
+</head>
+<body>
+
+  <div class="annot">
+    <h1>Mockup — card "Flip Card" in stile modulo (step-didattica)</h1>
+    <p class="sub">Oggi il tasto per entrare in Flip Card è un semplice <code>.act-card</code> orizzontale (icona + titolo + sottotitolo), identico nello stile alle card di Quiz/Speed Quiz/Abbina. Qui sotto la versione nuova: una card grande come quelle dei moduli (Computer Essentials, Online Essentials...), con badge, icona, sfondo decorativo e chip informative.</p>
+
+    <div class="qa-box">
+      <h3>Decisioni prese — da confermare</h3>
+      <ol>
+        <li><b>Badge "Didattica"</b>: come le altre card-modulo mostrano l'area (es. "Cybersecurity"), qui il badge in alto a destra mostra la categoria "Didattica" invece di "ICDL" (Flip Card non è un modulo ICDL a sé, funziona dentro qualunque modulo).</li>
+        <li><b>Icona</b>: sostituita 🃏 → <b>📇</b>. Il progetto usa già 🃏 per il minigioco <code>Memory</code> (oggi in pausa, <code>REATTIVAZIONE_MEMORY.md</code>) — con 📇 evito la stessa icona su due funzioni diverse quando Memory verrà riattivato.</li>
+        <li><b>Chip informative</b>: "Facile · Medio" (i due livelli che si scelgono subito dopo) e "Nessun punteggio" (Flip Card non ha punteggio, coerente con <code>js/flip-card.js</code>). Testo libero, cambio in un secondo se preferisci altro.</li>
+        <li><b>Larghezza intera</b>: con una sola modalità didattica oggi, la card usa <code>.full-act</code> (a tutta larghezza) invece di stare a metà griglia con un buco a fianco. Quando aggiungerai una seconda modalità, basta togliere <code>full-act</code> da questa card: torna automaticamente ad affiancarsi nella stessa <code>.act-grid</code> a 2 colonne, zero altro lavoro CSS.</li>
+      </ol>
+    </div>
+
+    <div class="dead-box">
+      <h3>Codice morto trovato (da eliminare in fase di implementazione)</h3>
+      <p><code>pixelprof.css</code> ~riga 3810 — blocco <code>.didattica-card</code> (2 regole, commento "── Card Didattica ──"). Era lo stile della card "Didattica" quando era ancora un modulo "coming soon" affiancato a Spreadsheets in <code>.mod-grid-soon</code>, prima che Didattica diventasse una categoria a sé (v8.16.0). Verificato con grep su <code>index.html</code> e su tutti i <code>js/*.js</code> sorgente (non sul bundle minificato): zero riferimenti rimasti. Lo tolgo quando implemento, salvo tuo diniego.</p>
+    </div>
+  </div>
+
+  <div class="section-title">Confronto — schermata "Didattica" (dopo aver scelto il modulo)</div>
+  <div class="compare-wrap">
+
+    <!-- ============ PRIMA ============ -->
+    <div>
+      <div class="compare-col-label old"><span class="dot old"></span>Prima</div>
+      <div class="phone-frame">
+        <div class="act-back-row">
+          <button class="act-back-btn"><i class="ti ti-arrow-left"></i> Modalità</button>
+          <span class="act-context-label">Computer Essentials</span>
+        </div>
+        <div class="act-grid">
+          <div class="act-card" role="button" tabindex="0" aria-label="Flip Card">
+            <div class="ai" style="background:rgba(124,106,255,.12)"><i class="ti ti-cards" style="color:#a996ff;font-size:20px"></i></div>
+            <div><h3>Flip Card</h3><p>Ripassa domanda → risposta</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="hint-tap">metà griglia, il resto resta vuoto →</div>
+    </div>
+
+    <!-- ============ DOPO ============ -->
+    <div>
+      <div class="compare-col-label now"><span class="dot now"></span>Dopo</div>
+      <div class="phone-frame">
+        <div class="act-back-row">
+          <button class="act-back-btn"><i class="ti ti-arrow-left"></i> Modalità</button>
+          <span class="act-context-label">Computer Essentials</span>
+        </div>
+        <div class="act-grid">
+          <div class="act-card dm-card full-act" role="button" tabindex="0" aria-label="Flip Card">
+            <span class="dm-badge">Didattica</span>
+            <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <pattern id="grid-dm" width="24" height="24" patternUnits="userSpaceOnUse">
+                  <path d="M24 0L0 0 0 24" fill="none" stroke="#7c6aff" stroke-width=".4" opacity=".22"/>
+                </pattern>
+              </defs>
+              <rect width="660" height="180" fill="url(#grid-dm)"/>
+              <!-- carta dietro, ruotata -->
+              <rect x="468" y="44" width="118" height="86" rx="10" transform="rotate(-8 527 87)"
+                    fill="rgba(124,106,255,.05)" stroke="#7c6aff" stroke-width="1" opacity=".35"/>
+              <!-- carta davanti -->
+              <rect x="500" y="36" width="118" height="86" rx="10"
+                    fill="rgba(124,106,255,.07)" stroke="#a996ff" stroke-width="1.2" opacity=".55"/>
+              <text x="559" y="90" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="32" fill="#a996ff" opacity=".4" font-weight="bold">?</text>
+              <!-- freccia di rotazione (flip) -->
+              <path d="M468 88 a58 58 0 1 1 12 35" fill="none" stroke="#7c6aff" stroke-width="1.4" opacity=".4" stroke-linecap="round"/>
+              <polygon points="480,123 468,117 474,105" fill="#7c6aff" opacity=".4"/>
+              <!-- glow -->
+              <ellipse cx="558" cy="88" rx="90" ry="58" fill="rgba(124,106,255,.05)"/>
+            </svg>
+            <div class="dm-content">
+              <span class="dm-icon">📇</span>
+              <h3>Flip Card</h3>
+              <p>Ripassa domanda → risposta</p>
+              <div class="tags">
+                <span class="tag">Facile · Medio</span>
+                <span class="tag">Nessun punteggio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hint-tap">passa il mouse sulla card per l'hover →</div>
+    </div>
+
+  </div>
+
+  <div class="section-title new">Nota tecnica</div>
+  <div class="compare-wrap" style="grid-template-columns:1fr;">
+    <div class="qa-box" style="margin:0 24px 40px;max-width:1052px">
+      <h3>Cosa cambia in produzione (quando approvi)</h3>
+      <ol>
+        <li>Markup nuovo solo dentro <code>#step-didattica</code> in <code>index.html</code> (questo file, righe ~1201-1206): stesso <code>onclick="selDidattica('flipcard')"</code>, stesso <code>role/aria-label/tabindex</code> — il tour di onboarding e <code>selDidattica()</code> non vengono toccati.</li>
+        <li>CSS di sezione 3 (sopra) → dentro <code>css/flip-card.css</code>, già linkato in <code>index.html</code> dopo <code>pixelprof.css</code> e già nel layer <code>flipcard</code>: <b>nessun nuovo <code>&lt;link&gt;</code> da aggiungere</b>.</li>
+        <li>Rimozione blocco morto <code>.didattica-card</code> da <code>pixelprof.css</code> (vedi sopra).</li>
+        <li>Bump di versione (patch/minor UI) nelle 5 posizioni di <code>index.html</code> + <code>package.json</code>, come da convenzione.</li>
+      </ol>
+    </div>
+  </div>
+
+</body>
+</html>

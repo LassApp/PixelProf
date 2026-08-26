@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.3.0
+   onboarding.js — PixelProf v2.3.1
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -233,6 +233,42 @@
      sicuro renderizzare subito il passo successivo — stesso principio già
      applicato a hubTarget, solo speculare.
 
+   v2.3.1 — 2 bug segnalati dal test live (Direttore + Docente) sui passi
+     introdotti in v2.3.0:
+       1) "Hub — c'è il focus ma non si vede" (passo Hub, entrambi i
+          ruoli): il passo era 'info' SENZA revealTarget, quindi il velo
+          copriva anche il pulsante Hub stesso — restava visibile solo
+          l'anello, non il pulsante che indica. Fix: aggiunto
+          revealTarget:true (stesso trattamento già usato dal passo
+          wizard #cs-add-form-wrap) — il velo ottiene un buco reale, il
+          pulsante Hub torna visibile sotto l'anello. Il pulsante resta
+          comunque cliccabile (apre il vero menu Hub) ma questo non è un
+          problema: a differenza di Flip Card/act-grid sotto, aprire il
+          menu Hub non naviga via dalla schermata corrente, quindi non
+          orfanizza il tooltip (stesso principio già valido per il passo
+          wizard, che ha campi realmente compilabili).
+       2) "Flip Card: cliccandoci parte la flipcard ma il tour non
+          prosegue" (passo 18/20 Direttore, 8/10 Docente — stesso bug,
+          per lo stesso motivo, sul passo "sui minigiochi" #step-act
+          .act-grid): erano 'info' con revealTarget:true, quindi il buco
+          nel velo rendeva il target realmente cliccabile — click che
+          lanciava la vera azione dell'app (Flip Card / setup minigioco)
+          — ma l'avanzamento del tour è cablato solo su 'action'
+          (_renderStep, isAction) o sul pulsante "Avanti" dei passi
+          'info': un 'info' non registra MAI il listener di avanzamento
+          su click, quindi il tour restava fermo. Fix: entrambi i passi
+          diventano 'action' (revealTarget non serve più: 'action' apre
+          comunque il buco nel velo, via isInteractive) — cliccare il
+          target reale ora avanza anche il tour, coerente con tutti gli
+          altri passi di scelta della sequenza (Minigiochi, Didattica,
+          pulsanti "torna alla modalità"). Il passo successivo (pulsante
+          "torna alla modalità") non troverà da subito il proprio target
+          se l'utente naviga davvero dentro un minigioco/Flip Card — non
+          è un problema nuovo: è lo stesso comportamento "auto-riparante"
+          già usato ovunque nel motore (si riallinea al prossimo
+          show*Step() rilevante, quando l'utente torna sulla schermata
+          giusta).
+
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
 
@@ -421,7 +457,7 @@ const OnboardingTour = (function () {
     { screen:'homeModule', target:'.mod-grid', type:'action',
       title:'Scegli il modulo 📚',
       body:'Ogni aula può abilitare solo alcuni moduli: qui vedi solo quelli disponibili per questa classe.' },
-    { screen:'hub', target:'#tb-hub-btn', type:'info',
+    { screen:'hub', target:'#tb-hub-btn', type:'info', revealTarget:true,
       title:'Il tuo Hub 🎯',
       body:'Classifica, Progressi, Storico, Panoramica Classe e Traguardi: tutto qui, in un solo tocco.' },
     // v2.3.0 — passi 14-20: coprono il flusso Minigiochi/Didattica raggiunto
@@ -431,7 +467,7 @@ const OnboardingTour = (function () {
     { screen:'homeCategory', target:'.cat-games', type:'action',
       title:'Minigiochi 🎮',
       body:'Premi qui per scegliere tra le modalità di gioco: Quiz, Speed Quiz, Abbina, Completa la frase e Vero o Falso.' },
-    { screen:'act', target:'#step-act .act-grid', type:'info', revealTarget:true,
+    { screen:'act', target:'#step-act .act-grid', type:'action',
       title:'Le modalità di gioco 🕹️',
       body:'Scegli quella più adatta alla lezione: dopo deciderai il numero di domande e se far giocare la classe in Individuale o a Squadre.' },
     { screen:'act', target:'#step-act .act-back-btn', type:'action',
@@ -440,7 +476,7 @@ const OnboardingTour = (function () {
     { screen:'homeCategory', target:'.cat-didattica', type:'action',
       title:'Didattica 📖',
       body:'L\'alternativa ai minigiochi: qui la classe ripassa con le Flip Card, domanda su un lato e risposta sull\'altro.' },
-    { screen:'didattica', target:'#step-didattica .act-card', type:'info', revealTarget:true,
+    { screen:'didattica', target:'#step-didattica .act-card', type:'action',
       title:'Flip Card 🃏',
       body:'Per ora è l\'unico metodo disponibile: scegli il livello e la classe potrà ripassare voltando le carte.' },
     { screen:'didattica', target:'#step-didattica .act-back-btn', type:'action',
@@ -458,7 +494,7 @@ const OnboardingTour = (function () {
     { screen:'homeModule', target:'.mod-card:not(.soon-card)', type:'action',
       title:'Scegli il modulo 📚',
       body:'Ogni aula può abilitare solo alcuni moduli: qui vedi solo quelli disponibili per questa classe.' },
-    { screen:'hub', target:'#tb-hub-btn', type:'info',
+    { screen:'hub', target:'#tb-hub-btn', type:'info', revealTarget:true,
       title:'Il tuo Hub 🎯',
       body:'Classifica, Progressi, Storico, Panoramica Classe e Traguardi: tutto qui, in un solo tocco.' },
     // v2.3.0 — ex passo "Scegli la modalità" (era qui, prima di Hub):
@@ -467,7 +503,7 @@ const OnboardingTour = (function () {
     { screen:'homeCategory', target:'.cat-games', type:'action',
       title:'Minigiochi 🎮',
       body:'Premi qui per scegliere tra le modalità di gioco: Quiz, Speed Quiz, Abbina, Completa la frase e Vero o Falso.' },
-    { screen:'act', target:'#step-act .act-grid', type:'info', revealTarget:true,
+    { screen:'act', target:'#step-act .act-grid', type:'action',
       title:'Le modalità di gioco 🕹️',
       body:'Scegli quella più adatta alla lezione: dopo deciderai il numero di domande e se far giocare la classe in Individuale o a Squadre.' },
     { screen:'act', target:'#step-act .act-back-btn', type:'action',
@@ -476,7 +512,7 @@ const OnboardingTour = (function () {
     { screen:'homeCategory', target:'.cat-didattica', type:'action',
       title:'Didattica 📖',
       body:'L\'alternativa ai minigiochi: qui la classe ripassa con le Flip Card, domanda su un lato e risposta sull\'altro.' },
-    { screen:'didattica', target:'#step-didattica .act-card', type:'info', revealTarget:true,
+    { screen:'didattica', target:'#step-didattica .act-card', type:'action',
       title:'Flip Card 🃏',
       body:'Per ora è l\'unico metodo disponibile: scegli il livello e la classe potrà ripassare voltando le carte.' },
     { screen:'didattica', target:'#step-didattica .act-back-btn', type:'action',

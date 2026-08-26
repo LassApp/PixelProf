@@ -4820,10 +4820,22 @@ body{
    con la regola "nuova feature → nuovo layer in fondo" (vedi
    intestazione file), lasciando comunque a "theme" l'ultima parola
    sui colori in tema chiaro.
+
+   v2.4.1 (bugfix): z-index dell'intero stack (velo/anello/tooltip)
+   alzato da 9750/9760/9770 a 9850/9860/9870. Causa: il passo del tour
+   guidato "Conferma richiesta" (Flip Card, v2.4.0) evidenzia un
+   pulsante DENTRO il dialogo generico ppConfirmBox() — che usa
+   .pp-generic-overlay a z-index:9800 (vedi @layer dialogs). Con lo
+   stack onboarding sotto quota 9800, l'intero tooltip (testo, barra di
+   avanzamento, pulsanti) spariva dietro il dialogo — segnalato da test
+   live come "tour impossibile da completare". 9850/60/70 restano sotto
+   #confetti-canvas (9998) e #overtake-popup (9999): coincidenza
+   estremamente improbabile con un passo del tour, invarianza non
+   toccata di proposito.
    ═══════════════════════════════════════════════════════════════════ */
 
 .onb-overlay{
-  position:fixed;inset:0;z-index:9750;
+  position:fixed;inset:0;z-index:9850;
   background:rgba(4,6,15,.68);
   backdrop-filter:blur(3px);
   -webkit-backdrop-filter:blur(3px);
@@ -4840,7 +4852,7 @@ body{
   border:2px solid var(--accent);
   box-shadow:0 0 0 4px rgba(0,255,200,.15),0 0 30px rgba(0,255,200,.25);
   pointer-events:none;
-  z-index:9760;
+  z-index:9860;
   transition:top .35s cubic-bezier(.22,1,.36,1),left .35s cubic-bezier(.22,1,.36,1),
              width .35s cubic-bezier(.22,1,.36,1),height .35s cubic-bezier(.22,1,.36,1);
 }
@@ -4856,7 +4868,7 @@ body{
 }
 
 .onb-tooltip{
-  position:fixed;z-index:9770;
+  position:fixed;z-index:9870;
   width:290px;max-width:calc(100vw - 24px);
   background:rgba(10,15,30,.98);
   border:1px solid rgba(0,255,200,.25);

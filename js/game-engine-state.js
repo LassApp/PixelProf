@@ -1118,23 +1118,33 @@ function ppConfirmBox(message, opts={}){
     const yesLabel = opts.yesLabel || 'Sì, conferma';
     const noLabel  = opts.noLabel  || 'Annulla';
     const dangerCls= opts.danger   ? ' danger' : '';
+    // v8.19.1: forceConfirm (opt-in, default false) — nasconde il
+    // pulsante Annulla e disattiva click-fuori/Esc, lasciando "Sì" come
+    // unica via d'uscita dal dialogo. Generico e retrocompatibile: tutte
+    // le chiamate esistenti restano invariate (forceConfirm non passato
+    // = comportamento identico a prima). Introdotto per il passo del
+    // tour guidato su Flip Card (vedi js/flip-card.js), ma riusabile da
+    // qualsiasi altra chiamata futura che abbia lo stesso bisogno.
+    const forceConfirm = !!opts.forceConfirm;
     const overlay = _ppBuildModal(`
       <div class="pp-generic-icon">${icon}</div>
       <div class="pp-generic-title">${escHtml(title)}</div>
       <div class="pp-generic-msg">${escHtml(message).replace(/\n/g,'<br>')}</div>
       <div class="pp-generic-btns">
-        <button class="pp-generic-btn cancel" id="pp-generic-no">${escHtml(noLabel)}</button>
+        ${forceConfirm ? '' : `<button class="pp-generic-btn cancel" id="pp-generic-no">${escHtml(noLabel)}</button>`}
         <button class="pp-generic-btn confirm${dangerCls}" id="pp-generic-yes">${escHtml(yesLabel)}</button>
       </div>`);
     const yesBtn = overlay.querySelector('#pp-generic-yes');
     const noBtn  = overlay.querySelector('#pp-generic-no');
     const _resolve = (v) => { _ppCloseActiveModal(); resolve(v); };
     yesBtn.addEventListener('click', ()=>_resolve(true));
-    noBtn.addEventListener('click',  ()=>_resolve(false));
-    overlay.addEventListener('mousedown', e => { if(e.target===overlay) _resolve(false); });
-    overlay._onKey = e => { if(e.key==='Escape'){ e.preventDefault(); _resolve(false); } };
+    if (noBtn) noBtn.addEventListener('click', ()=>_resolve(false));
+    if (!forceConfirm) {
+      overlay.addEventListener('mousedown', e => { if(e.target===overlay) _resolve(false); });
+    }
+    overlay._onKey = e => { if(e.key==='Escape' && !forceConfirm){ e.preventDefault(); _resolve(false); } };
     document.addEventListener('keydown', overlay._onKey);
-    setTimeout(()=>noBtn.focus(), 30);
+    setTimeout(()=>(noBtn||yesBtn).focus(), 30);
   });
 }
 

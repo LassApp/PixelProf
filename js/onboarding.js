@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.4.0
+   onboarding.js — PixelProf v2.4.1
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -297,6 +297,33 @@
          esiste già a quel punto — niente aggiunto a ppConfirmBox() né a
          game-engine-state.js, che restano generici e usati anche altrove
          nell'app.
+
+   v2.4.1 — 2 bug segnalati dal test live sul passo "Conferma richiesta"
+     (Flip Card, Direttore 21/23, Docente 11/13):
+       1) "il tooltip si colloca sotto il dialog di conferma,
+          impossibilitando il completamento del tour": .pp-generic-overlay
+          (ppConfirmBox, game-engine-state.js) usa z-index:9800 — sopra
+          l'intero stack onboarding (9750/60/70). Fix: z-index dello
+          stack alzato a 9850/60/70 in pixelprof.css (vedi commento lì
+          per il dettaglio). Nessuna modifica di logica, solo stacking.
+       2) Richiesta esplicita: "disattivare il tasto annulla del dialog
+          di conferma uscita da flip card per forzare su sì esci"
+          durante il tour — altrimenti l'utente poteva annullare
+          l'uscita, lasciando anello/tooltip "orfani" puntati su un
+          pulsante ormai scomparso (nessun passo successivo raggiunto,
+          nessun modo di tornare a quello attuale). Fix in due parti:
+            a) nuova query isCurrentStep(screenName) qui sotto — sola
+               lettura, non renderizza nulla, dice al chiamante se il
+               tour è ESATTAMENTE su un dato passo;
+            b) nuova opzione generica opts.forceConfirm su ppConfirmBox()
+               (game-engine-state.js) — nasconde Annulla e disattiva
+               click-fuori/Esc, restando "Sì" l'unica uscita dal
+               dialogo. Opt-in, retrocompatibile: tutte le chiamate
+               esistenti restano invariate.
+            js/flip-card.js, exitFlipCardConfirm(): passa
+            forceConfirm:true a ppConfirmBox() solo quando
+            OnboardingTour.isCurrentStep('flipcardConfirm') è vero —
+            fuori dal tour il dialogo si comporta come sempre.
 
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
@@ -911,6 +938,18 @@ const OnboardingTour = (function () {
   function showFlipCardLevelStep()   { _tryRenderCurrentStep(); } // v2.4.0
   function showFlipCardExitStep()    { _tryRenderCurrentStep(); } // v2.4.0
   function showFlipCardConfirmStep() { _tryRenderCurrentStep(); } // v2.4.0
+
+  // v2.4.1: query di sola lettura sullo stato del tour — non
+  // renderizza nulla, serve a chi chiama (es. js/flip-card.js) per
+  // decidere un comportamento condizionale (es. forzare la conferma
+  // d'uscita solo mentre il tour è esattamente su questo passo).
+  function isCurrentStep(screenName) {
+    if (_state.done) return false;
+    const list = _stepList();
+    const def = list[_state.idx];
+    return !!def && def.screen === screenName;
+  }
+
   function recheck()               { _tryRenderCurrentStep(); }
 
   return {
@@ -920,6 +959,7 @@ const OnboardingTour = (function () {
     showCoursesSelectStep, showHomeModuleStep, showHomeCategoryStep,
     showDidatticaStep,
     showFlipCardLevelStep, showFlipCardExitStep, showFlipCardConfirmStep,
+    isCurrentStep,
     recheck, skip, reset,
   };
 })();

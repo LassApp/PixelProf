@@ -1,8 +1,13 @@
 /* ==================================================
-   flip-card.js — PixelProf v8.19.0 (Didattica · Flip Card)
+   flip-card.js — PixelProf v8.19.1 (Didattica · Flip Card)
    Prima "attività didattica" di PixelProf, accanto ai
    Minigiochi: mazzo di carte domanda/risposta con flip 3D,
    caricato da CSV dedicati per modulo + livello.
+
+   v8.19.1: exitFlipCardConfirm() ora forza la conferma (niente
+   Annulla) quando il tour guidato è esattamente sul passo dedicato —
+   vedi js/onboarding.js v2.4.1 e ppConfirmBox() in
+   game-engine-state.js (nuova opzione opts.forceConfirm).
 
    v8.19.0: 3 hook aggiunti per il tour guidato (richiesta
    esplicita utente, vedi js/onboarding.js v2.4.0) —
@@ -233,11 +238,19 @@ function exitFlipCard(){
    (ppConfirmBox — indipendente da ppConfirm/ppConfirmRestart, che
    sono legati al punteggio partita e non calzano qui). */
 async function exitFlipCardConfirm(){
+  // v2.4.1 (onboarding.js): mentre il tour guidato è esattamente su
+  // questo passo, forziamo la conferma (niente Annulla/click-fuori/Esc)
+  // — altrimenti l'utente potrebbe annullare e lasciare il tour con
+  // anello/tooltip "orfani", puntati su un pulsante ormai scomparso.
+  // Fuori dal tour il dialogo si comporta come sempre (Annulla incluso).
+  const forceExit = typeof OnboardingTour !== 'undefined'
+    && OnboardingTour.isCurrentStep('flipcardConfirm');
   const p = ppConfirmBox('Uscendo tornerai alla scelta del metodo di studio in Didattica.', {
     title: 'Uscire da Flip Card?',
     icon: '📖',
     yesLabel: 'Sì, esci',
     noLabel: 'Annulla',
+    forceConfirm: forceExit,
   });
   // v2.4.0 (onboarding.js): ppConfirmBox() inserisce il markup del
   // dialogo in modo sincrono (_ppBuildModal, prima di restituire la

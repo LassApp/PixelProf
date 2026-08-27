@@ -3807,14 +3807,10 @@ body{
 .soon-cat .cat-title { color: rgba(255,255,255,.4); }
 .soon-cat .cat-icon { filter: none; opacity: .5; }
 
-/* ── Card Didattica ── */
-.didattica-card {
-  background: linear-gradient(160deg, #0c0820 0%, #150d30 55%, #0c0820 100%) ;
-  border-color: rgba(124,106,255,.12) ;
-}
-.didattica-card .mc-icon { filter: drop-shadow(0 0 8px rgba(124,106,255,.3)); }
-
-/* ── soon-card griglia 2 colonne (Spreadsheets + Didattica) ── */
+/* ── soon-card griglia 2 colonne (oggi solo Spreadsheets; .didattica-card
+   rimossa in v8.19.2, era la card "coming soon" di Didattica prima che
+   diventasse categoria a sé in v8.16.0 — zero riferimenti rimasti in
+   index.html/js/*.js sorgente) ── */
 .mod-grid-soon {
   grid-template-columns: 1fr 1fr ;
 }

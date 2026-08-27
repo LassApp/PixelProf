@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v8.17.0</title>
+<title>PixelProf — ICDL Lab interattivo v8.19.2</title>
 <link rel="icon" href="public/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
@@ -94,7 +94,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v8.17.0</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v8.19.2</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -564,7 +564,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v8.17.0</span>
+        <span class="cs-logo-sub">ICDL Lab · v8.19.2</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v3.2.2 -->
@@ -885,7 +885,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v8.17.0</span>
+      <span class="logo-sub">ICDL Lab · v8.19.2</span>
       <span class="logo-hint">cambia aula</span>
     </div>
   </div>
@@ -1198,11 +1198,41 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <span class="act-context-label" id="didattica-mod-label"></span>
     </div>
     <div class="act-grid">
-      <div class="act-card" role="button" tabindex="0" aria-label="Flip Card"
+      <!-- v8.19.2: card in stile modulo (mockup-flipcard-entry-card),
+           al posto del vecchio .act-card orizzontale. full-act finché
+           esiste una sola modalità didattica: quando se ne aggiunge
+           una seconda, togliere full-act per tornare ad affiancarle
+           nella griglia a 2 colonne. onclick/aria/tabindex invariati:
+           il tour onboarding continua a targettare "#step-didattica .act-card". -->
+      <div class="act-card dm-card full-act" role="button" tabindex="0" aria-label="Flip Card"
         onclick="selDidattica('flipcard')"
         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selDidattica('flipcard');}">
-        <div class="ai" style="background:rgba(124,106,255,.12)"><i class="ti ti-cards" style="color:#a996ff;font-size:20px"></i></div>
-        <div><h3>Flip Card</h3><p>Ripassa domanda → risposta</p></div>
+        <span class="dm-badge">Didattica</span>
+        <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-dm" width="24" height="24" patternUnits="userSpaceOnUse">
+              <path d="M24 0L0 0 0 24" fill="none" stroke="#7c6aff" stroke-width=".4" opacity=".22"/>
+            </pattern>
+          </defs>
+          <rect width="660" height="180" fill="url(#grid-dm)"/>
+          <rect x="468" y="44" width="118" height="86" rx="10" transform="rotate(-8 527 87)"
+                fill="rgba(124,106,255,.05)" stroke="#7c6aff" stroke-width="1" opacity=".35"/>
+          <rect x="500" y="36" width="118" height="86" rx="10"
+                fill="rgba(124,106,255,.07)" stroke="#a996ff" stroke-width="1.2" opacity=".55"/>
+          <text x="559" y="90" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="32" fill="#a996ff" opacity=".4" font-weight="bold">?</text>
+          <path d="M468 88 a58 58 0 1 1 12 35" fill="none" stroke="#7c6aff" stroke-width="1.4" opacity=".4" stroke-linecap="round"/>
+          <polygon points="480,123 468,117 474,105" fill="#7c6aff" opacity=".4"/>
+          <ellipse cx="558" cy="88" rx="90" ry="58" fill="rgba(124,106,255,.05)"/>
+        </svg>
+        <div class="dm-content">
+          <span class="dm-icon">📇</span>
+          <h3>Flip Card</h3>
+          <p>Ripassa domanda → risposta</p>
+          <div class="tags">
+            <span class="tag">Facile · Medio</span>
+            <span class="tag">Nessun punteggio</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1494,6 +1524,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div><!-- /app -->
 
 
-<script src="js/app.bundle.min.js?v=8.19.1"></script>
+<script src="js/app.bundle.min.js?v=8.19.2"></script>
 </body>
 </html>

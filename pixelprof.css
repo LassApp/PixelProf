@@ -5104,11 +5104,11 @@ html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-ma
 html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse) .act-hero-sub{
   color: rgba(16,24,42,.5);
 }
-html[data-theme="light"] .act-card{ background:#ffffff; border-color: rgba(20,30,60,.09); }
-html[data-theme="light"] .act-card:hover{ border-color: rgba(20,30,60,.18); background: rgba(20,30,60,.04); }
-html[data-theme="light"] .act-card:not(.active) h3{ color:#10182a; }
-html[data-theme="light"] .act-card.active h3{ color:#10182a; }
-html[data-theme="light"] .act-card p{ color: rgba(16,24,42,.42); }
+html[data-theme="light"] .act-card:not(.dm-card){ background:#ffffff; border-color: rgba(20,30,60,.09); }
+html[data-theme="light"] .act-card:not(.dm-card):hover{ border-color: rgba(20,30,60,.18); background: rgba(20,30,60,.04); }
+html[data-theme="light"] .act-card:not(.dm-card):not(.active) h3{ color:#10182a; }
+html[data-theme="light"] .act-card.active:not(.dm-card) h3{ color:#10182a; }
+html[data-theme="light"] .act-card:not(.dm-card) p{ color: rgba(16,24,42,.42); }
 html[data-theme="light"] #ac-memory p{ color: rgba(16,24,42,.6); }
 html[data-theme="light"] .act-soon-badge{
   background:rgba(180,120,0,.1); border-color:rgba(180,120,0,.35); color:#a66d00;

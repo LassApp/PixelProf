@@ -277,18 +277,51 @@ async function selDidattica(type){
 /* Definizione presentazionale dei 2 livelli — riusa i due
    colori già presenti nel tema Flip Card (verde della faccia
    "Risposta", viola della faccia "Domanda"/dell'icona Flip
-   Card in step-didattica): nessun colore nuovo introdotto. */
+   Card in step-didattica): nessun colore nuovo introdotto.
+   emoji sostituisce icon/color (Tabler) da v8.19.3: le card
+   ora sono .dm-card come quella di step-didattica, che usa
+   icone emoji (.dm-icon) invece del box .ai. */
 const FC_LEVELS = [
-  { key: 'facile', label: 'Facile', desc: 'Concetti base, ripasso rapido', icon: 'ti-mood-smile', rgb: '0,255,150', color: '#00ff96' },
-  { key: 'medio', label: 'Medio', desc: 'Approfondimento, dettagli tecnici', icon: 'ti-cards', rgb: '124,106,255', color: '#a996ff' },
+  { key: 'facile', label: 'Facile', desc: 'Concetti base, ripasso rapido', emoji: '🙂', rgb: '0,255,150' },
+  { key: 'medio', label: 'Medio', desc: 'Approfondimento, dettagli tecnici', emoji: '🧠', rgb: '124,106,255' },
 ];
 
-/* Step "scegli livello": stessa struttura di act-back-row +
-   act-grid + act-card già usata da step-act/step-didattica
-   (classi globali in pixelprof.css) — nessuna nuova classe
-   CSS. Le card dei livelli senza contenuti pronti (es. OE
-   finché non ha CSV) restano visibili ma disabilitate, con
-   la stessa logica "mai un errore JS" del resto del file. */
+/* Sfondo decorativo SVG per le due card livello — stessa
+   tecnica del motivo "carte" di step-didattica (griglia +
+   forme + glow, viewBox 660x180, xMidYMid slice), motivo
+   diverso per dare identità a colpo d'occhio: una carta sola
+   con spunta per Facile ("un concetto alla volta"), tre carte
+   sovrapposte per Medio ("più livelli di dettaglio"). */
+const FC_LEVEL_BG = {
+  facile: `<svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs><pattern id="grid-fac" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0L0 0 0 24" fill="none" stroke="#00ff96" stroke-width=".4" opacity=".18"/>
+    </pattern></defs>
+    <rect width="660" height="180" fill="url(#grid-fac)"/>
+    <rect x="500" y="34" width="120" height="112" rx="12" fill="rgba(0,255,150,.06)" stroke="#00ff96" stroke-width="1.2" opacity=".5"/>
+    <path d="M528 92l16 16 32-36" fill="none" stroke="#00ff96" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+    <ellipse cx="560" cy="90" rx="90" ry="58" fill="rgba(0,255,150,.05)"/>
+  </svg>`,
+  medio: `<svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+    <defs><pattern id="grid-med" width="24" height="24" patternUnits="userSpaceOnUse">
+      <path d="M24 0L0 0 0 24" fill="none" stroke="#7c6aff" stroke-width=".4" opacity=".22"/>
+    </pattern></defs>
+    <rect width="660" height="180" fill="url(#grid-med)"/>
+    <rect x="486" y="50" width="108" height="80" rx="10" transform="rotate(-11 540 90)" fill="rgba(124,106,255,.04)" stroke="#7c6aff" stroke-width="1" opacity=".28"/>
+    <rect x="498" y="42" width="108" height="80" rx="10" transform="rotate(-4 552 82)" fill="rgba(124,106,255,.05)" stroke="#7c6aff" stroke-width="1" opacity=".4"/>
+    <rect x="512" y="36" width="108" height="80" rx="10" fill="rgba(124,106,255,.07)" stroke="#a996ff" stroke-width="1.2" opacity=".55"/>
+    <ellipse cx="560" cy="88" rx="90" ry="58" fill="rgba(124,106,255,.05)"/>
+  </svg>`,
+};
+
+/* Step "scegli livello": v8.19.3, stesso design della card
+   Flip Card in step-didattica (.dm-card, definita in
+   css/flip-card.css) — stesso hover viola su entrambe le
+   card per coerenza visiva con l'ingresso Flip Card; badge
+   e sfondo decorativo tinti per livello (verde/viola, via
+   l.rgb) per distinguerle a colpo d'occhio. Le card dei
+   livelli senza contenuti pronti (es. OE finché non ha CSV)
+   restano visibili ma disabilitate, come prima. */
 function _renderFlipCardLevelSelect(cont, mod){
   if(!FlipCardLoader.hasModule(mod)){
     cont.innerHTML = _fcHeader() + _fcStateHTML({
@@ -300,14 +333,18 @@ function _renderFlipCardLevelSelect(cont, mod){
   const available = FlipCardLoader.levelsFor(mod);
   const cardsHtml = FC_LEVELS.map(l => {
     const ok = available.includes(l.key);
-    const icon = `<div class="ai" style="background:rgba(${l.rgb},.12)"><i class="ti ${l.icon}" style="color:${l.color};font-size:20px"></i></div>`;
-    const body = `<div><h3>${l.label}</h3><p>${escHtml(ok ? l.desc : 'Non ancora disponibile')}</p></div>`;
+    const badge = `<span class="dm-badge" style="background:rgba(${l.rgb},.12);border-color:rgba(${l.rgb},.35);color:${l.key==='facile'?'#00ff96':'#b4a0ff'}">Livello</span>`;
+    const body = `<div class="dm-content">
+        <span class="dm-icon" style="filter:drop-shadow(0 0 8px rgba(${l.rgb},.35))">${l.emoji}</span>
+        <h3>${l.label}</h3>
+        <p>${escHtml(ok ? l.desc : 'Non ancora disponibile')}</p>
+      </div>`;
     if(!ok){
-      return `<div class="act-card" style="opacity:.4;cursor:not-allowed" aria-disabled="true" aria-label="Livello ${l.label}, non disponibile">${icon}${body}</div>`;
+      return `<div class="act-card dm-card" style="opacity:.4;cursor:not-allowed" aria-disabled="true" aria-label="Livello ${l.label}, non disponibile">${badge}${FC_LEVEL_BG[l.key]}${body}</div>`;
     }
-    return `<div class="act-card" role="button" tabindex="0" aria-label="Livello ${l.label}"
+    return `<div class="act-card dm-card" role="button" tabindex="0" aria-label="Livello ${l.label}"
       onclick="fcSelLevel('${l.key}')"
-      onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();fcSelLevel('${l.key}');}">${icon}${body}</div>`;
+      onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();fcSelLevel('${l.key}');}">${badge}${FC_LEVEL_BG[l.key]}${body}</div>`;
   }).join('');
   cont.innerHTML = `<div class="act-back-row">
       <button class="act-back-btn" onclick="exitFlipCard()"><i class="ti ti-arrow-left"></i> Didattica</button>

@@ -233,61 +233,79 @@
      aggiungerà una seconda modalità didattica, basta togliere
      "full-act" da questa card perché torni ad affiancarsi nella
      griglia a 2 colonne di .act-grid — zero altre modifiche CSS.
-  ================================================================ */
-  .act-card.dm-card{
+
+     v8.20.0 — GENERALIZZATO: selettore ".act-card.dm-card" reso
+     generico ".dm-card" (funziona anche su .cat-card, riusato dal
+     redesign delle card modalità/minigiochi — vedi
+     css/act-select.css) e colore accento reso parametrico con due
+     custom property a TRIPLETTA RGB (non hex/rgba dirette): --dma-rgb
+     (fallback 124,106,255 = var(--purple) in cifre) per bordo/barra/
+     badge/ombre, --dma-text-rgb (fallback 180,160,255 = #b4a0ff in
+     cifre) per il testo più chiaro di badge/hover-titolo/tag — sono
+     DUE toni distinti già nell'originale (non un solo colore), da
+     qui la tripletta separata invece di un unico --dm-accent. Ogni
+     rgba() sotto usa lo STESSO identico valore alpha dell'originale:
+     questa card (Flip Card) e le card Livello (sotto, generate da
+     js/flip-card.js) non impostano le custom property quindi
+     restano PIXEL-IDENTICHE a prima — nessuna regressione. Le nuove
+     card modalità/minigioco impostano le due triplette inline,
+     stessa tecnica già usata qui sotto per badge/icona Livello. */
+  .dm-card{
+    --dma-rgb: var(--dm-accent-rgb, 124,106,255);
+    --dma-text-rgb: var(--dm-accent-text-rgb, 180,160,255);
     position:relative; overflow:hidden;
     display:flex; flex-direction:column; justify-content:flex-end;
     padding:1.15rem 1.25rem;
     min-height:172px;
     border-radius:var(--radius-xl);
-    border:1px solid rgba(124,106,255,.2);
+    border:1px solid rgba(var(--dma-rgb),.2);
     background:linear-gradient(160deg,#0c0820 0%,#150d30 55%,#0c0820 100%);
-    box-shadow:0 4px 24px rgba(124,106,255,.07);
+    box-shadow:0 4px 24px rgba(var(--dma-rgb),.07);
     cursor:pointer;
     transition:transform var(--transition-bounce), box-shadow var(--transition-fast), border-color var(--transition-fast);
   }
-  .act-card.dm-card::after{
+  .dm-card::after{
     /* barra accento in basso — stessa tecnica di .mod-card::before */
     content:''; position:absolute; bottom:0; left:0; right:0; height:2px;
-    background:linear-gradient(90deg,transparent,var(--purple),transparent);
+    background:linear-gradient(90deg,transparent,rgb(var(--dma-rgb)),transparent);
     transform:scaleX(0); transition:transform var(--transition-fast); z-index:4;
   }
-  .act-card.dm-card:hover{
+  .dm-card:hover{
     transform:translateY(-5px) scale(1.01);
-    border-color:var(--purple-border);
-    box-shadow:0 12px 40px rgba(124,106,255,.2), 0 0 0 1px rgba(124,106,255,.15), inset 0 1px 0 rgba(124,106,255,.1);
+    border-color:rgba(var(--dma-rgb),.35);
+    box-shadow:0 12px 40px rgba(var(--dma-rgb),.2), 0 0 0 1px rgba(var(--dma-rgb),.15), inset 0 1px 0 rgba(var(--dma-rgb),.1);
   }
-  .act-card.dm-card:hover::after{ transform:scaleX(1); }
-  .act-card.dm-card:hover h3{ color:#b4a0ff; }
+  .dm-card:hover::after{ transform:scaleX(1); }
+  .dm-card:hover h3{ color:rgb(var(--dma-text-rgb)); }
 
-  .act-card.dm-card svg.bg{ position:absolute; inset:0; width:100%; height:100%; }
+  .dm-card svg.bg{ position:absolute; inset:0; width:100%; height:100%; }
 
-  .act-card.dm-card .dm-badge{
+  .dm-card .dm-badge{
     position:absolute; top:12px; right:12px; z-index:3;
     font-family:'Share Tech Mono',monospace; font-size:8px; font-weight:700;
     letter-spacing:1.5px; text-transform:uppercase;
     padding:3px 8px; border-radius:20px;
-    background:var(--purple-dim); border:1px solid var(--purple-border); color:#b4a0ff;
+    background:rgba(var(--dma-rgb),.12); border:1px solid rgba(var(--dma-rgb),.35); color:rgb(var(--dma-text-rgb));
   }
-  .act-card.dm-card .dm-content{ position:relative; z-index:3; }
-  .act-card.dm-card .dm-icon{
+  .dm-card .dm-content{ position:relative; z-index:3; }
+  .dm-card .dm-icon{
     font-size:28px; margin-bottom:8px; display:block;
-    filter:drop-shadow(0 0 8px rgba(124,106,255,.35));
+    filter:drop-shadow(0 0 8px rgba(var(--dma-rgb),.35));
     transition:transform var(--transition-bounce);
   }
-  .act-card.dm-card:hover .dm-icon{ transform:scale(1.12); }
-  .act-card.dm-card h3{ font-size:15px; font-weight:700; color:#fff; margin-bottom:4px; letter-spacing:-.2px; transition:color var(--transition-fast); }
-  .act-card.dm-card p{ font-size:12px; color:rgba(255,255,255,.45); line-height:1.4; margin:0; }
-  .act-card.dm-card .tags{ display:flex; flex-wrap:wrap; gap:4px; margin-top:9px; }
-  .act-card.dm-card .tag{
+  .dm-card:hover .dm-icon{ transform:scale(1.12); }
+  .dm-card h3{ font-size:15px; font-weight:700; color:#fff; margin-bottom:4px; letter-spacing:-.2px; transition:color var(--transition-fast); }
+  .dm-card p{ font-size:12px; color:rgba(255,255,255,.45); line-height:1.4; margin:0; }
+  .dm-card .tags{ display:flex; flex-wrap:wrap; gap:4px; margin-top:9px; }
+  .dm-card .tag{
     font-size:9px; padding:2px 7px; border-radius:20px; font-weight:600; letter-spacing:.2px;
-    background:rgba(124,106,255,.1); color:rgba(180,160,255,.8); border:1px solid rgba(124,106,255,.2);
+    background:rgba(var(--dma-rgb),.1); color:rgba(var(--dma-text-rgb),.8); border:1px solid rgba(var(--dma-rgb),.2);
     transition:all var(--transition-fast);
   }
-  .act-card.dm-card:hover .tag{ background:rgba(124,106,255,.15); border-color:rgba(124,106,255,.35); }
+  .dm-card:hover .tag{ background:rgba(var(--dma-rgb),.15); border-color:rgba(var(--dma-rgb),.35); }
 
   @media (prefers-reduced-motion: reduce){
-    .act-card.dm-card{ transition:none; }
-    .act-card.dm-card .dm-icon{ transition:none; }
+    .dm-card{ transition:none; }
+    .dm-card .dm-icon{ transition:none; }
   }
 }

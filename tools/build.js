@@ -70,6 +70,7 @@ const BUNDLE_FILES = [
   'game-fill.js',
   'game-truefalse.js',
   'flip-card.js',
+  'act-select.js',
   'courses.js',
   'app.js',
   'csv-import.js',

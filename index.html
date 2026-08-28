@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v8.19.3</title>
+<title>PixelProf — ICDL Lab interattivo v8.20.0</title>
 <link rel="icon" href="public/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
@@ -43,6 +43,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 
 <link rel="stylesheet" href="pixelprof.css">
 <link rel="stylesheet" href="css/flip-card.css">
+<link rel="stylesheet" href="css/act-select.css">
 </head>
 <body>
 
@@ -94,7 +95,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v8.19.3</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v8.20.0</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -564,7 +565,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v8.19.3</span>
+        <span class="cs-logo-sub">ICDL Lab · v8.20.0</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v3.2.2 -->
@@ -885,7 +886,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v8.19.3</span>
+      <span class="logo-sub">ICDL Lab · v8.20.0</span>
       <span class="logo-hint">cambia aula</span>
     </div>
   </div>
@@ -1156,33 +1157,64 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <span class="home-hero-eyebrow">Cosa vuoi fare?</span>
       <h1 class="home-hero-title" style="font-size:22px">Scegli la <span class="hl">modalità</span></h1>
     </div>
+    <!-- v8.20.0: card in stile "modulo" (.dm-card, generalizzato da
+         css/flip-card.css — vedi css/act-select.css), stesso
+         linguaggio visivo del redesign Flip Card. Classi
+         cat-games/cat-grid/cat-didattica INVARIATE (il tour
+         onboarding le seleziona, js/onboarding.js righe 523/558/
+         576/611) — solo restilizzate. -->
     <div class="cat-grid">
-      <!-- MINIGIOCHI -->
-      <div class="cat-card cat-games" role="button" tabindex="0"
+      <!-- MINIGIOCHI — accento teal via --dm-accent-rgb inline
+           (stessa tecnica già usata da js/flip-card.js per le card
+           Livello: coppia di custom property invece di una classe
+           dedicata, un solo .dm-card generico per tutte). -->
+      <div class="cat-card cat-games dm-card" role="button" tabindex="0"
         aria-label="Minigiochi interattivi"
         onclick="goStep('act')"
-        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goStep('act');}">
-        <div class="cat-card-inner">
-          <span class="cat-icon">🎮</span>
-          <div>
-            <div class="cat-title">Minigiochi</div>
-            <div class="cat-sub">Quiz, Memory, Abbina e altro</div>
-          </div>
-          <i class="ti ti-arrow-right cat-arrow"></i>
+        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goStep('act');}"
+        style="--dm-accent-rgb:0,255,200;--dm-accent-text-rgb:0,255,200">
+        <span class="dm-badge">Modalità</span>
+        <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="grid-mg" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#00ffc8" stroke-width=".4" opacity=".18"/></pattern></defs>
+          <rect width="660" height="180" fill="url(#grid-mg)"/>
+          <rect x="470" y="50" width="70" height="70" rx="14" transform="rotate(-10 505 85)" fill="rgba(0,255,200,.05)" stroke="#00ffc8" stroke-width="1" opacity=".35"/>
+          <rect x="540" y="60" width="70" height="70" rx="14" transform="rotate(8 575 95)" fill="rgba(0,255,200,.08)" stroke="#5cffde" stroke-width="1.2" opacity=".55"/>
+          <circle cx="558" cy="82" r="4" fill="#5cffde" opacity=".5"/><circle cx="578" cy="82" r="4" fill="#5cffde" opacity=".5"/>
+          <circle cx="558" cy="102" r="4" fill="#5cffde" opacity=".5"/><circle cx="578" cy="102" r="4" fill="#5cffde" opacity=".5"/>
+          <circle cx="568" cy="92" r="4" fill="#5cffde" opacity=".5"/>
+          <ellipse cx="558" cy="90" rx="90" ry="58" fill="rgba(0,255,200,.05)"/>
+        </svg>
+        <div class="dm-content">
+          <span class="dm-icon">🎮</span>
+          <h3>Minigiochi</h3>
+          <p>Quiz, Memory, Abbina e altro</p>
+          <div class="tags"><span class="tag">6 attività</span><span class="tag">Individuale o squadre</span></div>
         </div>
       </div>
-      <!-- DIDATTICA — v8.16.0: attivata, porta a step-didattica -->
-      <div class="cat-card cat-didattica" role="button" tabindex="0"
+      <!-- DIDATTICA — v8.16.0: attivata, porta a step-didattica.
+           Nessun --dm-accent-*-rgb inline: eredita il fallback
+           viola di .dm-card (stesso accento della card Flip Card
+           dentro step-didattica), invariato. -->
+      <div class="cat-card cat-didattica dm-card" role="button" tabindex="0"
         aria-label="Didattica"
         onclick="goStep('didattica')"
         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();goStep('didattica');}">
-        <div class="cat-card-inner">
-          <span class="cat-icon">📖</span>
-          <div>
-            <div class="cat-title">Didattica</div>
-            <div class="cat-sub">Flip Card e altri metodi</div>
-          </div>
-          <i class="ti ti-arrow-right cat-arrow"></i>
+        <span class="dm-badge">Modalità</span>
+        <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="grid-did" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#7c6aff" stroke-width=".4" opacity=".2"/></pattern></defs>
+          <rect width="660" height="180" fill="url(#grid-did)"/>
+          <path d="M560 50 Q560 45 555 45 L500 45 Q495 45 495 50 L495 128 Q495 133 500 133 L555 133 Q560 133 560 128 Z" fill="rgba(124,106,255,.06)" stroke="#7c6aff" stroke-width="1" opacity=".4"/>
+          <path d="M560 50 Q560 45 565 45 L620 45 Q625 45 625 50 L625 128 Q625 133 620 133 L565 133 Q560 133 560 128 Z" fill="rgba(124,106,255,.08)" stroke="#a996ff" stroke-width="1.2" opacity=".55"/>
+          <line x1="560" y1="50" x2="560" y2="128" stroke="#a996ff" stroke-width="1" opacity=".4"/>
+          <line x1="572" y1="62" x2="612" y2="62" stroke="#a996ff" stroke-width="1.5" opacity=".35"/>
+          <line x1="572" y1="74" x2="605" y2="74" stroke="#a996ff" stroke-width="1.5" opacity=".3"/>
+          <ellipse cx="558" cy="88" rx="90" ry="58" fill="rgba(124,106,255,.05)"/>
+        </svg>
+        <div class="dm-content">
+          <span class="dm-icon">📖</span>
+          <h3>Didattica</h3>
+          <p>Flip Card e altri metodi</p>
+          <div class="tags"><span class="tag">Flip Card</span><span class="tag">Facile · Medio</span></div>
         </div>
       </div>
     </div>
@@ -1252,28 +1284,134 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <div class="act-hero-sub" id="act-hero-sub">Seleziona il tipo di esercizio</div>
       </div>
     </div>
-    <div class="act-grid">
-      <div class="act-card act-quiz" id="ac-quiz" role="button" tabindex="0" aria-label="Attività Quiz" onclick="selAct('quiz')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('quiz');}"><div class="ai" style="background:rgba(0,255,200,.1)"><i class="ti ti-help-circle" style="color:#00ffc8;font-size:20px"></i></div><div><h3>Quiz</h3><p>Risposta multipla</p></div></div>
-      <div class="act-card act-speed" id="ac-speed" role="button" tabindex="0" aria-label="Attività Speed Quiz" onclick="selAct('speed')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('speed');}"><div class="ai" style="background:rgba(255,180,0,.1)"><i class="ti ti-bolt" style="color:#ffb400;font-size:20px"></i></div><div><h3>Speed Quiz</h3><p>60 secondi</p></div></div>
-      <div class="act-card act-match" id="ac-match" role="button" tabindex="0" aria-label="Attività Abbina" onclick="selAct('match')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('match');}"><div class="ai" style="background:rgba(124,106,255,.1)"><i class="ti ti-link" style="color:#9d8fff;font-size:20px"></i></div><div><h3>Abbina</h3><p>Termine → definizione</p></div></div>
+    <!-- v8.20.0: card in stile .dm-card (vedi commento sopra su
+         #step-cat) — griglia compattata con .dm-grid-act
+         (css/act-select.css). Ogni card imposta --dm-accent-rgb/
+         --dm-accent-text-rgb con lo stesso colore identità già in
+         uso altrove nell'app (dashboard/storico) — id/onclick/
+         onkeydown/role/tabindex/aria-label INVARIATI. -->
+    <div class="act-grid dm-grid-act">
+      <div class="act-card act-quiz dm-card" id="ac-quiz" role="button" tabindex="0" aria-label="Attività Quiz" onclick="selAct('quiz')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('quiz');}" style="--dm-accent-rgb:0,255,200;--dm-accent-text-rgb:0,255,200">
+        <span class="dm-badge">Minigioco</span>
+        <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="grid-quiz" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#00ffc8" stroke-width=".4" opacity=".16"/></pattern></defs>
+          <rect width="660" height="180" fill="url(#grid-quiz)"/>
+          <path d="M500 45 h90 a14 14 0 0 1 14 14 v40 a14 14 0 0 1 -14 14 h-55 l-18 18 v-18 h-17 a14 14 0 0 1 -14 -14 v-40 a14 14 0 0 1 14 -14 Z" fill="rgba(0,255,200,.06)" stroke="#00ffc8" stroke-width="1.2" opacity=".45"/>
+          <text x="545" y="92" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="34" fill="#5cffde" opacity=".55" font-weight="bold">?</text>
+          <ellipse cx="558" cy="90" rx="90" ry="58" fill="rgba(0,255,200,.05)"/>
+        </svg>
+        <div class="dm-content"><span class="dm-icon"><i class="ti ti-help-circle" style="color:#00ffc8"></i></span><h3>Quiz</h3><p>Risposta multipla</p></div>
+      </div>
+      <div class="act-card act-speed dm-card" id="ac-speed" role="button" tabindex="0" aria-label="Attività Speed Quiz" onclick="selAct('speed')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('speed');}" style="--dm-accent-rgb:255,180,0;--dm-accent-text-rgb:255,180,0">
+        <span class="dm-badge">Minigioco</span>
+        <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="grid-speed" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#ffb400" stroke-width=".4" opacity=".18"/></pattern></defs>
+          <rect width="660" height="180" fill="url(#grid-speed)"/>
+          <circle cx="560" cy="90" r="48" fill="rgba(255,180,0,.05)" stroke="#ffb400" stroke-width="1.2" opacity=".4"/>
+          <line x1="560" y1="90" x2="560" y2="60" stroke="#ffcf5c" stroke-width="2" opacity=".5" stroke-linecap="round"/>
+          <line x1="560" y1="90" x2="580" y2="90" stroke="#ffcf5c" stroke-width="2" opacity=".5" stroke-linecap="round"/>
+          <path d="M566 55 l-24 34 h16 l-8 30 26 -36 h-16 Z" fill="#ffb400" opacity=".55"/>
+          <ellipse cx="558" cy="90" rx="90" ry="58" fill="rgba(255,180,0,.04)"/>
+        </svg>
+        <div class="dm-content"><span class="dm-icon"><i class="ti ti-bolt" style="color:#ffb400"></i></span><h3>Speed Quiz</h3><p>60 secondi</p></div>
+      </div>
+      <div class="act-card act-match dm-card" id="ac-match" role="button" tabindex="0" aria-label="Attività Abbina" onclick="selAct('match')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('match');}" style="--dm-accent-rgb:124,106,255;--dm-accent-text-rgb:157,143,255">
+        <span class="dm-badge">Minigioco</span>
+        <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="grid-match" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#9d8fff" stroke-width=".4" opacity=".18"/></pattern></defs>
+          <rect width="660" height="180" fill="url(#grid-match)"/>
+          <rect x="480" y="66" width="60" height="28" rx="8" fill="rgba(157,143,255,.07)" stroke="#9d8fff" stroke-width="1.2" opacity=".5"/>
+          <rect x="580" y="86" width="60" height="28" rx="8" fill="rgba(157,143,255,.07)" stroke="#9d8fff" stroke-width="1.2" opacity=".5"/>
+          <path d="M540 80 Q565 80 580 100" fill="none" stroke="#c4baff" stroke-width="1.6" opacity=".55" stroke-dasharray="3 4"/>
+          <circle cx="540" cy="80" r="4" fill="#c4baff" opacity=".6"/><circle cx="580" cy="100" r="4" fill="#c4baff" opacity=".6"/>
+          <ellipse cx="558" cy="90" rx="90" ry="58" fill="rgba(124,106,255,.05)"/>
+        </svg>
+        <div class="dm-content"><span class="dm-icon"><i class="ti ti-link" style="color:#9d8fff"></i></span><h3>Abbina</h3><p>Termine → definizione</p></div>
+      </div>
       <!-- Memory in pausa (v8.9.2, badge corretto in v8.9.3): tasto
            disattivato per TUTTI i moduli di TUTTE le aree, dato che
            questa griglia attività è markup statico condiviso e non
            viene rigenerata per modulo/area. Nessun dato o motore
            rimosso (js/game-memory.js, loader, storico invariati) —
            solo impossibile avviare una NUOVA partita.
-           v8.9.3: badge .act-soon-badge (ambra, alto contrasto) al
-           posto di .cs-label (troppo tenue su una card piccola);
-           testo tornato a "Trova le coppie" semplice — lo stato
-           "in arrivo" lo comunica ora il badge, non più il testo.
-           Per riattivare: ripristinare onclick/onkeydown/tabindex="0",
-           rimuovere lo style inline e il badge. -->
-      <div class="act-card act-memory soon-act" id="ac-memory" aria-label="Attività Memory — Coming Soon" tabindex="-1" style="cursor:not-allowed;pointer-events:none"><div class="ai" style="background:rgba(255,77,109,.1)"><i class="ti ti-cards" style="color:#ff6b85;font-size:20px"></i></div><div><h3>Memory</h3><p>Trova le coppie</p></div><span class="act-soon-badge">Soon</span></div>
-      <div class="act-card act-fill" id="ac-fill" role="button" tabindex="0" aria-label="Attività Completa la frase" onclick="selAct('fill')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('fill');}"><div class="ai" style="background:rgba(0,207,255,.1)"><i class="ti ti-pencil" style="color:#00cfff;font-size:20px"></i></div><div><h3>Completa la frase</h3><p>Inserisci il termine mancante</p></div></div>
-      <div class="act-card act-tf" id="ac-truefalse" role="button" tabindex="0" aria-label="Attività Vero o Falso" onclick="selAct('truefalse')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('truefalse');}"><div class="ai" style="background:rgba(255,209,102,.12)"><i class="ti ti-scale" style="color:#ffd166;font-size:20px"></i></div><div><h3>Vero o Falso</h3><p>Vero o falso?</p></div></div>
+           v8.20.0: card riportata allo stile .dm-card come le altre
+           5 (solo sbiadita via .dm-disabled), badge in alto a destra
+           passato da "Soon" (.act-soon-badge) a "Coming Soon"
+           (.dm-badge.soon, stesso slot delle altre card — niente
+           doppio badge). .act-soon-badge resta in pixelprof.css
+           (non più referenziata qui, non rimossa: innocua, riusabile
+           per un futuro altro "coming soon").
+           Per riattivare: ripristinare onclick/onkeydown/tabindex="0"/
+           role="button", rimuovere lo style inline, .dm-disabled e
+           il badge "soon" (torna badge "Minigioco" come le altre). -->
+      <div class="act-card act-memory soon-act dm-card dm-disabled" id="ac-memory" aria-label="Attività Memory — Coming Soon" tabindex="-1" style="cursor:not-allowed;pointer-events:none;--dm-accent-rgb:255,77,109;--dm-accent-text-rgb:255,107,133">
+        <span class="dm-badge soon">Coming Soon</span>
+        <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="grid-mem" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#ff6b85" stroke-width=".4" opacity=".16"/></pattern></defs>
+          <rect width="660" height="180" fill="url(#grid-mem)"/>
+          <rect x="486" y="48" width="60" height="84" rx="8" fill="rgba(255,107,133,.05)" stroke="#ff6b85" stroke-width="1" opacity=".4"/>
+          <rect x="556" y="48" width="60" height="84" rx="8" fill="rgba(255,107,133,.05)" stroke="#ff6b85" stroke-width="1" opacity=".4"/>
+          <path d="M508 78l8 8 12 -16" fill="none" stroke="#ff9fb0" stroke-width="2" opacity=".4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M578 78l8 8 12 -16" fill="none" stroke="#ff9fb0" stroke-width="2" opacity=".4" stroke-linecap="round" stroke-linejoin="round"/>
+          <ellipse cx="558" cy="90" rx="90" ry="58" fill="rgba(255,77,109,.04)"/>
+        </svg>
+        <div class="dm-content"><span class="dm-icon"><i class="ti ti-cards" style="color:#ff6b85"></i></span><h3>Memory</h3><p>Trova le coppie</p></div>
+      </div>
+      <div class="act-card act-fill dm-card" id="ac-fill" role="button" tabindex="0" aria-label="Attività Completa la frase" onclick="selAct('fill')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('fill');}" style="--dm-accent-rgb:0,207,255;--dm-accent-text-rgb:0,207,255">
+        <span class="dm-badge">Minigioco</span>
+        <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="grid-fill" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#00cfff" stroke-width=".4" opacity=".18"/></pattern></defs>
+          <rect width="660" height="180" fill="url(#grid-fill)"/>
+          <line x1="484" y1="100" x2="530" y2="100" stroke="#00cfff" stroke-width="2" opacity=".4" stroke-linecap="round"/>
+          <line x1="546" y1="100" x2="600" y2="100" stroke="#00cfff" stroke-width="2" opacity=".4" stroke-linecap="round" stroke-dasharray="1 7"/>
+          <line x1="484" y1="118" x2="560" y2="118" stroke="#00cfff" stroke-width="2" opacity=".25" stroke-linecap="round"/>
+          <path d="M596 62 l14 14 -34 34 -18 4 4 -18 Z" fill="rgba(0,207,255,.08)" stroke="#5ce3ff" stroke-width="1.2" opacity=".55" stroke-linejoin="round"/>
+          <ellipse cx="558" cy="90" rx="90" ry="58" fill="rgba(0,207,255,.04)"/>
+        </svg>
+        <div class="dm-content"><span class="dm-icon"><i class="ti ti-pencil" style="color:#00cfff"></i></span><h3>Completa la frase</h3><p>Inserisci il termine mancante</p></div>
+      </div>
+      <div class="act-card act-tf dm-card" id="ac-truefalse" role="button" tabindex="0" aria-label="Attività Vero o Falso" onclick="selAct('truefalse')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('truefalse');}" style="--dm-accent-rgb:255,209,102;--dm-accent-text-rgb:255,209,102">
+        <span class="dm-badge">Minigioco</span>
+        <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="grid-tf" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#ffd166" stroke-width=".4" opacity=".18"/></pattern></defs>
+          <rect width="660" height="180" fill="url(#grid-tf)"/>
+          <line x1="558" y1="48" x2="558" y2="120" stroke="#ffd166" stroke-width="2" opacity=".4"/>
+          <line x1="510" y1="66" x2="606" y2="66" stroke="#ffd166" stroke-width="2" opacity=".4" stroke-linecap="round"/>
+          <path d="M510 66 a24 20 0 0 0 -24 30 h48 a24 20 0 0 0 -24 -30 Z" fill="rgba(255,209,102,.06)" stroke="#ffe4a3" stroke-width="1.2" opacity=".5"/>
+          <path d="M606 66 a24 20 0 0 0 -24 30 h48 a24 20 0 0 0 -24 -30 Z" fill="rgba(255,209,102,.06)" stroke="#ffe4a3" stroke-width="1.2" opacity=".5"/>
+          <rect x="546" y="120" width="24" height="8" rx="2" fill="rgba(255,209,102,.1)" stroke="#ffd166" stroke-width="1" opacity=".4"/>
+          <ellipse cx="558" cy="88" rx="90" ry="58" fill="rgba(255,209,102,.04)"/>
+        </svg>
+        <div class="dm-content"><span class="dm-icon"><i class="ti ti-scale" style="color:#ffd166"></i></span><h3>Vero o Falso</h3><p>Vero o falso?</p></div>
+      </div>
     </div>
-    <div id="setup-panel" class="hidden" style="margin-top:14px">
-      <div class="setup-card">
+    <!-- v8.20.0: pannello impostazioni portato da inline a overlay
+         modale. #setup-overlay-backdrop resta SEMPRE nel DOM ma è
+         invisibile finché #setup-panel ha la classe "hidden" — la
+         stessa che selAct() (game-engine-state.js, invariata) già
+         toglie/mette oggi: apertura 100% CSS (css/act-select.css,
+         regola :has()), zero JS necessario per mostrarlo.
+         #setup-panel diventa il box centrato (era: pannello inline,
+         margin-top:14px — rimosso). Il titolo di contesto sotto
+         (5 varianti, una per attività) è anch'esso 100% CSS: mostra
+         solo quella la cui card #ac-XXX ha già la classe "active"
+         che selAct() imposta comunque (invariato) — zero JS anche
+         per il titolo. Contenuto di .setup-card sotto INVARIATO
+         (stessi id, stesso markup): solo neutralizzato lo sfondo/
+         bordo/ombra inline perché ora li fornisce #setup-panel. -->
+    <div id="setup-overlay-backdrop">
+      <div id="setup-panel" class="hidden">
+        <div class="setup-overlay-head">
+          <div class="setup-overlay-title">
+            <div class="ov-title-variant for-quiz"><span class="ai" style="background:rgba(0,255,200,.1)"><i class="ti ti-help-circle" style="color:#00ffc8"></i></span><span>Impostazioni · Quiz</span></div>
+            <div class="ov-title-variant for-speed"><span class="ai" style="background:rgba(255,180,0,.1)"><i class="ti ti-bolt" style="color:#ffb400"></i></span><span>Impostazioni · Speed Quiz</span></div>
+            <div class="ov-title-variant for-match"><span class="ai" style="background:rgba(124,106,255,.1)"><i class="ti ti-link" style="color:#9d8fff"></i></span><span>Impostazioni · Abbina</span></div>
+            <div class="ov-title-variant for-fill"><span class="ai" style="background:rgba(0,207,255,.1)"><i class="ti ti-pencil" style="color:#00cfff"></i></span><span>Impostazioni · Completa la frase</span></div>
+            <div class="ov-title-variant for-truefalse"><span class="ai" style="background:rgba(255,209,102,.12)"><i class="ti ti-scale" style="color:#ffd166"></i></span><span>Impostazioni · Vero o Falso</span></div>
+          </div>
+          <button class="setup-close-btn" onclick="closeSetupOverlay()" aria-label="Chiudi impostazioni">×</button>
+        </div>
+      <div class="setup-card" style="background:none;border:none;padding:0;backdrop-filter:none;box-shadow:none">
         <div id="setup-num" class="setup-section hidden">
           <div class="slbl">Quante domande?</div>
           <div class="num-row">
@@ -1317,6 +1455,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
             <i class="ti ti-player-play"></i> Inizia sessione
           </button>
         </div>
+      </div>
       </div>
     </div>
   </div>
@@ -1524,6 +1663,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div><!-- /app -->
 
 
-<script src="js/app.bundle.min.js?v=8.19.3"></script>
+<script src="js/app.bundle.min.js?v=8.20.0"></script>
 </body>
 </html>

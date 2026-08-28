@@ -45,7 +45,7 @@
        (mostra/nascondi, lock di pausa, ecc.) → dentro @layer stato,
        con !important (qui è l'unico posto dove serve ancora).
    ═══════════════════════════════════════════════════════════════════ */
-@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport, audio, achievements, histcards, loaders, onboarding, areas, flipcard, theme;
+@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport, audio, achievements, histcards, loaders, onboarding, areas, flipcard, actselect, theme;
 
 @layer base {
 /* ===============================================
@@ -5063,8 +5063,15 @@ html[data-theme="light"] .home-divider span::after{ color: rgba(0,150,120,.6); }
 html[data-theme="light"] .soon-section-label span{ color: rgba(16,24,42,.28); }
 
 /* ── 5. CAT-CARD (Minigiochi/Didattica) ──────────────────────── */
-html[data-theme="light"] .cat-card{ background:#ffffff; border-color: rgba(20,30,60,.09); box-shadow: 0 2px 12px rgba(20,30,60,.06); }
-html[data-theme="light"] .cat-card:hover{ border-color: rgba(0,150,120,.35); background: rgba(0,150,120,.04); }
+/* v8.20.0: esclusione ":not(.dm-card)" aggiunta — le card modalità
+   diventano .dm-card (css/flip-card.css, generalizzato da
+   css/act-select.css), che restano scure "poster look" in entrambi
+   i temi (stessa scelta già fatta per la card Flip Card). Senza
+   questa esclusione il bianco qui vincerebbe comunque sul gradiente
+   scuro di .dm-card, essendo nel layer "theme" (ultimo, vince
+   sempre) — stesso pattern già usato sotto per .act-card:not(.dm-card). */
+html[data-theme="light"] .cat-card:not(.dm-card){ background:#ffffff; border-color: rgba(20,30,60,.09); box-shadow: 0 2px 12px rgba(20,30,60,.06); }
+html[data-theme="light"] .cat-card:not(.dm-card):hover{ border-color: rgba(0,150,120,.35); background: rgba(0,150,120,.04); }
 html[data-theme="light"] .cat-title{ color:#10182a; }
 html[data-theme="light"] .cat-sub{ color: rgba(16,24,42,.45); }
 html[data-theme="light"] .cat-arrow{ color: rgba(16,24,42,.22); }
@@ -5109,7 +5116,12 @@ html[data-theme="light"] .act-card:not(.dm-card):hover{ border-color: rgba(20,30
 html[data-theme="light"] .act-card:not(.dm-card):not(.active) h3{ color:#10182a; }
 html[data-theme="light"] .act-card.active:not(.dm-card) h3{ color:#10182a; }
 html[data-theme="light"] .act-card:not(.dm-card) p{ color: rgba(16,24,42,.42); }
-html[data-theme="light"] #ac-memory p{ color: rgba(16,24,42,.6); }
+/* v8.20.0: esclusione ":not(.dm-card)" aggiunta — #ac-memory diventa
+   .dm-card (sfondo scuro fisso in entrambi i temi), il testo chiaro
+   di .dm-card p resta quindi corretto; questa riga era pensata per
+   il vecchio sfondo bianco di #ac-memory:not(.dm-card) sopra e
+   renderebbe illeggibile il testo se applicata anche al nuovo. */
+html[data-theme="light"] #ac-memory:not(.dm-card) p{ color: rgba(16,24,42,.6); }
 html[data-theme="light"] .act-soon-badge{
   background:rgba(180,120,0,.1); border-color:rgba(180,120,0,.35); color:#a66d00;
 }

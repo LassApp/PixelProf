@@ -1,0 +1,172 @@
+/* ==================================================
+   act-select.css — PixelProf (redesign card modalità/
+   minigiochi + overlay impostazioni, v8.20.0)
+   ------------------------------------------------------------------
+   Foglio dedicato e isolato (richiesta esplicita: CSS/JS di questo
+   nuovo "menu" a parte, per alleggerire index.html) — stessa
+   impostazione di css/flip-card.css: caricato con un <link> separato
+   DOPO pixelprof.css e DOPO css/flip-card.css in index.html.
+
+   Il layer "actselect" è dichiarato nell'ordine master in
+   pixelprof.css (dopo "flipcard", prima di "theme"): qui sotto solo
+   le regole DARK (default). Le regole di tema chiaro vivono invece
+   nel layer "theme" già esistente (stesso file, blocco separato più
+   in basso) — stessa tecnica di css/flip-card.css.
+
+   Riusa esclusivamente variabili già definite in :root
+   (pixelprof.css) e il componente .dm-card generico (ora
+   generalizzato in css/flip-card.css, vedi commento lì). Nessun
+   nuovo token globale introdotto.
+
+   Contenuto:
+   1) layout compatto per la griglia dei 6 minigiochi (.dm-grid-act)
+   2) variante badge "Coming Soon" (Memory) e stato disabilitato
+   3) overlay impostazioni (adattato da .pp-generic-overlay/
+      .pp-generic-box di pixelprof.css, @layer dialogs) — box più
+      largo (più contenuto: chip giocatori, import CSV) con scroll
+      interno, chiusura × in stile .dp-close-btn (sobrio)
+================================================== */
+@layer actselect {
+
+  /* -- 1) griglia compatta per le 6 card minigioco --
+     .cat-grid (2 sole card modalità) non ha bisogno di questa
+     riduzione: usa .dm-card alle dimensioni di default. */
+  .act-grid.dm-grid-act .dm-card{
+    min-height: 140px;
+    padding: 1rem 1.1rem;
+  }
+  .act-grid.dm-grid-act .dm-card .dm-icon{ font-size: 24px; margin-bottom: 5px; }
+  .act-grid.dm-grid-act .dm-card h3{ font-size: 13.5px; }
+  .act-grid.dm-grid-act .dm-card p{ font-size: 11px; }
+
+  /* -- 2) Memory — badge "Coming Soon" al posto di "Minigioco",
+     stesso slot in alto a destra (niente doppio badge). Colori
+     ambra riusati 1:1 da .act-soon-badge (pixelprof.css) per
+     coerenza con lo stesso stato altrove nell'app (es. .cs-label
+     "Coming Soon" di Spreadsheets in .mod-grid-soon). -- */
+  .dm-card .dm-badge.soon{
+    background: rgba(255,180,0,.16);
+    border-color: rgba(255,180,0,.45);
+    color: #ffcf5c;
+  }
+  /* Card visibile ma non cliccabile — tabindex="-1"/pointer-events:none
+     restano inline in index.html (invariato), qui solo l'aspetto
+     sbiadito/disattivato richiesto. */
+  .dm-card.dm-disabled{
+    opacity: .5;
+    cursor: not-allowed;
+    filter: saturate(.4);
+  }
+  .dm-card.dm-disabled:hover{ transform: none; box-shadow: 0 4px 24px rgba(0,0,0,.2); }
+  .dm-card.dm-disabled:hover::after{ transform: scaleX(0); }
+  .dm-card.dm-disabled:hover .dm-icon{ transform: none; }
+  .dm-card.dm-disabled:hover h3{ color: #fff; }
+
+  /* -- 3) overlay impostazioni --
+     #setup-overlay-backdrop avvolge #setup-panel in index.html
+     (~riga 1275): resta SEMPRE nel DOM, ma è invisibile finché
+     #setup-panel ha la classe "hidden" — la stessa che selAct() già
+     toglie/mette oggi (invariato). Nessun JS necessario per
+     l'apertura, solo per la chiusura (vedi js/act-select.js). */
+  #setup-overlay-backdrop{ display: none; }
+  #setup-overlay-backdrop:has(#setup-panel:not(.hidden)){
+    display: flex;
+    position: fixed; inset: 0; z-index: 9800;
+    background: rgba(0,0,0,.72);
+    backdrop-filter: blur(10px) saturate(140%);
+    -webkit-backdrop-filter: blur(10px) saturate(140%);
+    align-items: center; justify-content: center;
+    padding: 1rem;
+    animation: asOverlayFadeIn .18s ease both;
+  }
+  @keyframes asOverlayFadeIn{ from{ opacity: 0; } to{ opacity: 1; } }
+
+  /* #setup-panel diventa il box centrato (prima: pannello inline,
+     margin-top:14px in flusso normale — quell'inline style va tolto
+     in index.html). ".setup-card" al suo interno resta invariata
+     nel markup ma viene neutralizzata via style inline locale
+     (background/border/padding/backdrop-filter/box-shadow:none):
+     è un componente riusato altrove nell'app (screen-teacher-detail,
+     director panel, ecc. — vedi index.html righe 379/496/523/536/541)
+     quindi la sua regola CSS globale non va toccata, si neutralizza
+     solo QUESTA istanza per evitare un doppio box visivo. */
+  #setup-panel{
+    position: relative;
+    background: #0a1022;
+    border: 1px solid rgba(0,255,200,.18);
+    border-radius: var(--radius-lg);
+    padding: 1.4rem 1.4rem 1.25rem;
+    width: 100%; max-width: 440px; max-height: 90vh; overflow-y: auto;
+    box-shadow: 0 20px 70px rgba(0,0,0,.75), 0 0 0 1px rgba(0,255,200,.06);
+    animation: asDropIn .2s cubic-bezier(.22,1,.36,1) both;
+  }
+  @keyframes asDropIn{ from{ opacity: 0; transform: translateY(10px) scale(.97); } to{ opacity: 1; transform: translateY(0) scale(1); } }
+
+  .setup-overlay-head{
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 10px; margin-bottom: 14px;
+  }
+  .setup-overlay-title{
+    display: flex; align-items: center; gap: 10px;
+    font-size: 14px; font-weight: 700; color: #fff;
+  }
+  /* × sobria, stile .dp-close-btn (pannello "Gestione aula") — non
+     il cerchio rosso di .tmd-close-btn, pensato per un'azione
+     distruttiva: qui è solo "chiudi". */
+  .setup-close-btn{
+    flex-shrink: 0; background: none; border: none;
+    color: rgba(255,255,255,.35); font-size: 20px; line-height: 1;
+    cursor: pointer; padding: 4px; transition: color var(--transition-fast);
+  }
+  .setup-close-btn:hover{ color: #fff; }
+
+  /* -- titolo di contesto dell'overlay, 100% CSS --
+     5 varianti pre-scritte (una per attività cliccabile — Memory
+     esclusa, non diventa mai .active), tutte nascoste di default:
+     si mostra solo quella la cui card #ac-XXX ha già la classe
+     "active" che selAct() (invariata) imposta comunque ad ogni
+     click. Nessun JS necessario neanche per il titolo. */
+  .ov-title-variant{ display: none; align-items: center; gap: 10px; }
+  .ov-title-variant .ai{
+    width: 32px; height: 32px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px; flex-shrink: 0;
+  }
+  #step-act:has(#ac-quiz.active) .ov-title-variant.for-quiz{ display: flex; }
+  #step-act:has(#ac-speed.active) .ov-title-variant.for-speed{ display: flex; }
+  #step-act:has(#ac-match.active) .ov-title-variant.for-match{ display: flex; }
+  #step-act:has(#ac-fill.active) .ov-title-variant.for-fill{ display: flex; }
+  #step-act:has(#ac-truefalse.active) .ov-title-variant.for-truefalse{ display: flex; }
+
+  @media (prefers-reduced-motion: reduce){
+    #setup-overlay-backdrop:has(#setup-panel:not(.hidden)),
+    #setup-panel{ animation: none; }
+  }
+}
+
+@layer theme {
+  html[data-theme="light"] #setup-overlay-backdrop:has(#setup-panel:not(.hidden)){
+    background: rgba(20,30,60,.35);
+  }
+  html[data-theme="light"] #setup-panel{
+    background: #ffffff;
+    border-color: rgba(20,30,60,.1);
+  }
+  html[data-theme="light"] .setup-overlay-title{ color: #10182a; }
+  html[data-theme="light"] .setup-close-btn{ color: rgba(16,24,42,.4); }
+  html[data-theme="light"] .setup-close-btn:hover{ color: #10182a; }
+
+  /* Le 2 card modalità e le 6 card minigioco diventano .dm-card:
+     restano volutamente scure in entrambi i temi ("poster look",
+     stessa scelta già fatta per la card Flip Card — vedi commento
+     in css/flip-card.css sopra .fc-front/.fc-back). NOTA: questo
+     richiede due correzioni MINIME direttamente in pixelprof.css
+     (non simulabili da qui: stessa @layer "theme", uno "shadow
+     override" qui duplicherebbe i valori scuri invece di correggere
+     alla fonte) — ".cat-card{background:#ffffff...}"/".cat-card:hover"
+     (riga ~5066) e "#ac-memory p" (riga ~5112) non avevano
+     l'esclusione ":not(.dm-card)" perché .cat-card.dm-card e
+     #ac-memory.dm-card non esistevano ancora. Corrette con lo stesso
+     pattern già usato per ".act-card:not(.dm-card)" poco sopra nello
+     stesso file — vedi commento lì al momento della modifica. */
+}

@@ -1338,9 +1338,10 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
            5 (solo sbiadita via .dm-disabled), badge in alto a destra
            passato da "Soon" (.act-soon-badge) a "Coming Soon"
            (.dm-badge.soon, stesso slot delle altre card — niente
-           doppio badge). .act-soon-badge resta in pixelprof.css
-           (non più referenziata qui, non rimossa: innocua, riusabile
-           per un futuro altro "coming soon").
+           doppio badge).
+           v8.20.1: .act-soon-badge rimossa da pixelprof.css (non più
+           referenziata da nessun elemento — richiesta esplicita di
+           pulizia codice morto).
            Per riattivare: ripristinare onclick/onkeydown/tabindex="0"/
            role="button", rimuovere lo style inline, .dm-disabled e
            il badge "soon" (torna badge "Minigioco" come le altre). -->

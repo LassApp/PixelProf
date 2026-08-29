@@ -1449,7 +1449,17 @@ function _doGoTab(t){
 }
 
 function goStep(s){
-  ['step-mod','step-cat','step-act','step-didattica','step-num','step-players'].forEach(id=>{const el=shq(id);if(el)el.classList.add('hidden');});
+  // v8.20.1: "setup-panel" aggiunto all'elenco — prima non serviva
+  // (pannello inline, invisibile perché dentro #step-act quando questo
+  // veniva nascosto); ora è un overlay fisso (#setup-overlay-backdrop,
+  // css/act-select.css) che altrimenti resta aperto tra una sessione e
+  // l'altra e ricompare con i dati dell'attività precedente al primo
+  // rientro su #step-act — bug segnalato (pannello della sessione
+  // precedente visibile tornando alla selezione minigiochi) + causa del
+  // fallimento e2e "Speed Quiz" (click su #ac-speed intercettato dal
+  // backdrop rimasto aperto dopo Quiz). selAct() (invariata) lo riapre
+  // comunque al click su una card.
+  ['step-mod','step-cat','step-act','step-didattica','step-num','step-players','setup-panel'].forEach(id=>{const el=shq(id);if(el)el.classList.add('hidden');});
   const target=shq('step-'+s);if(target)target.classList.remove('hidden');
   if(s==='mod'){
     // v5.0.6: riapplica il filtro moduli ad ogni accesso a step-mod.

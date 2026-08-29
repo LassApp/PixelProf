@@ -427,18 +427,10 @@ body{
   font-family:'Share Tech Mono',monospace;letter-spacing:.5px;
   margin-top:4px;
 }
-/* v8.9.3: badge "coming soon" ad alto contrasto per elementi piccoli
-   (es. .act-card), dove .cs-label (pensato per le grandi .mod-card) è
-   troppo tenue per restare leggibile — soprattutto in dark. Ambra piena
-   invece di bianco trasparente, coerente col colore già usato per
-   .dp-soon-tag nel pannello direttore. */
-.act-soon-badge{
-  font-family:'Share Tech Mono',monospace;font-size:9px;font-weight:700;
-  letter-spacing:1px;text-transform:uppercase;flex-shrink:0;margin-left:auto;
-  padding:3px 9px;border-radius:20px;
-  background:rgba(255,180,0,.16);border:1px solid rgba(255,180,0,.45);
-  color:#ffcf5c;
-}
+/* v8.20.0 — RIMOSSO codice morto: .act-soon-badge (badge "coming soon"
+   della vecchia card Memory piatta, non più nel markup — sostituita
+   da .dm-badge.soon nello stesso slot delle altre card, testo
+   "Coming Soon", css/act-select.css). */
 /* WP card — document green */
 .mod-card.wp-card{
   background:linear-gradient(145deg,#091a0d 0%,#0f2416 55%,#091a0d 100%);
@@ -523,44 +515,23 @@ body{
 .act-card:hover::after{transform:scaleX(1);}
 .act-card.active{border-width:1.5px;transform:translateY(-2px);}
 .act-card.active::after{transform:scaleX(1);}
-.act-card .ai{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;transition:transform var(--transition-bounce);}
-.act-card:hover .ai,.act-card.active .ai{transform:scale(1.1);}
-.act-card h3{font-size:13px;font-weight:600;color:#e2e8f0;margin-bottom:1px;transition:color var(--transition-fast);}
-.act-card p{font-size:11px;color:rgba(255,255,255,.38);margin-top:1px}
+.act-card.active{border-width:1.5px;transform:translateY(-2px);}
+.act-card.active::after{transform:scaleX(1);}
 .act-card.active h3{color:#fff}
 .full-act{grid-column:1/-1}
 
-/* per-activity colors */
-.act-quiz::after{background:var(--accent);}
-.act-quiz:hover{border-color:rgba(0,255,200,.25);}
-.act-quiz.active{border-color:rgba(0,255,200,.5);background:rgba(0,255,200,.07);box-shadow:0 0 16px rgba(0,255,200,.08);}
-.act-quiz.active h3{color:var(--accent);}
-.act-quiz:hover h3{color:var(--accent);}
-
-.act-speed::after{background:#ffb400;}
-.act-speed:hover{border-color:rgba(255,180,0,.25);}
-.act-speed.active{border-color:rgba(255,180,0,.5);background:rgba(255,180,0,.07);box-shadow:0 0 16px rgba(255,180,0,.08);}
-.act-speed.active h3,.act-speed:hover h3{color:#ffb400;}
-
-.act-match::after{background:var(--purple);}
-.act-match:hover{border-color:rgba(124,106,255,.25);}
-.act-match.active{border-color:rgba(124,106,255,.5);background:rgba(124,106,255,.07);box-shadow:0 0 16px rgba(124,106,255,.08);}
-.act-match.active h3,.act-match:hover h3{color:#9d8fff;}
-
-.act-memory::after{background:#ff4d6d;}
-.act-memory:hover{border-color:rgba(255,77,109,.25);}
-.act-memory.active{border-color:rgba(255,77,109,.5);background:rgba(255,77,109,.07);box-shadow:0 0 16px rgba(255,77,109,.08);}
-.act-memory.active h3,.act-memory:hover h3{color:#ff6b85;}
-
-.act-fill::after{background:#00cfff;}
-.act-fill:hover{border-color:rgba(0,207,255,.25);}
-.act-fill.active{border-color:rgba(0,207,255,.5);background:rgba(0,207,255,.07);box-shadow:0 0 16px rgba(0,207,255,.08);}
-.act-fill.active h3,.act-fill:hover h3{color:#00cfff;}
-
-.act-tf::after{background:#ffd166;}
-.act-tf:hover{border-color:rgba(255,209,102,.25);}
-.act-tf.active{border-color:rgba(255,209,102,.5);background:rgba(255,209,102,.07);box-shadow:0 0 16px rgba(255,209,102,.08);}
-.act-tf.active h3,.act-tf:hover h3{color:#ffd166;}
+/* v8.20.0 — RIMOSSO codice morto: .act-card .ai/.act-card:hover .ai
+   (nessun .act-card ha più un figlio .ai, sostituito da .dm-icon),
+   .act-card h3/.act-card p (mascherati da .dm-card h3/.dm-card p,
+   layer "flipcard" successivo — stesse proprietà, valori diversi,
+   .dm-card vince sempre) e l'intero blocco colori per-attività
+   ".act-quiz/.act-speed/.act-match/.act-memory/.act-fill/.act-tf"
+   (ogni sua proprietà — ::after/:hover/.active/:hover h3 — è
+   coperta 1:1 da regole equivalenti di .dm-card, che riceve lo
+   stesso colore per card via le custom property --dm-accent-rgb/
+   --dm-accent-text-rgb inline in index.html, css/act-select.css).
+   .act-quiz/.act-speed/ecc. restano come classi sul markup (usate
+   solo come selettori CSS ormai innocui, non toccate). */
 
 /* ===============================================
    SETUP CARD — v7 unified hover
@@ -2585,22 +2556,12 @@ body{
   border-color: rgba(255,255,255,.15) ;
   transform: translateY(-2px) scale(1.015) ;
 }
-.act-card .ai {
-  border-radius: 8px ;
-  width: 36px ;
-  height: 36px ;
-}
-.act-card h3 { font-size: 13px ; }
-.act-card p  { font-size: 10px ; color: rgba(255,255,255,.32) ; }
-
-/* v8.9.3 — Memory "coming soon" (v8.9.2): il vecchio opacity:.5 sull'intera
-   card dimezzava un testo già a bassa opacità di suo, rendendo "Trova le
-   coppie" quasi illeggibile in dark. Qui si disattiva solo l'icona
-   (indizio visivo di stato disattivato) mentre testo e badge restano a
-   contrasto normale — il "disabilitato" resta comunicato da cursor:not-
-   allowed + pointer-events:none (inline in index.html) + .act-soon-badge. */
-#ac-memory .ai { filter: saturate(.3) brightness(.8) ; }
-#ac-memory p   { color: rgba(255,255,255,.5) ; }
+/* v8.20.0 — RIMOSSO codice morto: .act-card .ai/h3/p (duplicato del
+   blocco base, stesso motivo — vedi commento lì) e #ac-memory .ai/p
+   (vecchio approccio v8.9.3: dimming solo sull'icona di Memory,
+   testo/badge a contrasto normale; sostituito dal dimming sull'intera
+   card via .dm-disabled — opacity+saturate uniformi, badge diventato
+   "Coming Soon" nello stesso slot delle altre card). */
 
 /* ─────────────────────────────────────────────────────────────────
    SETUP CARD — "Platform setup panel"
@@ -3136,24 +3097,10 @@ body{
   overflow: hidden;
 }
 
-/* Numero episodio (ordine attività) — watermark sottile */
-.act-card::before {
-  content: attr(data-num);
-  position: absolute;
-  right: 10px;
-  bottom: 8px;
-  font-family: 'Orbitron', monospace;
-  font-size: 28px;
-  font-weight: 900;
-  color: rgba(255,255,255,.04);
-  line-height: 1;
-  pointer-events: none;
-  z-index: 0;
-  transition: color .25s var(--ease-soft);
-}
-.act-card:hover::before {
-  color: rgba(255,255,255,.06);
-}
+/* v8.20.0 — RIMOSSO codice morto: .act-card::before/.act-card:hover::before
+   (watermark numero episodio via content:attr(data-num) — nessun
+   .act-card ha mai avuto l'attributo data-num nel markup, sempre stato
+   irraggiungibile fin da prima di questo redesign, non solo mascherato). */
 
 /* ─────────────────────────────────────────────────────────────────
    QUIZ / GIOCO — "Content player" aesthetics
@@ -3759,53 +3706,11 @@ body{
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
-.cat-card-inner {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 1.4rem 1.25rem;
-}
-.cat-icon {
-  font-size: 32px;
-  flex-shrink: 0;
-  line-height: 1;
-  filter: drop-shadow(0 0 8px rgba(255,255,255,.15));
-  transition: transform .22s cubic-bezier(.34,1.56,.64,1), filter .2s ease;
-}
-.cat-card:hover .cat-icon {
-  transform: scale(1.14);
-  filter: drop-shadow(0 0 14px rgba(0,255,200,.3));
-}
-.cat-title {
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
-  margin-bottom: 3px;
-  transition: color .18s;
-}
-.cat-card:hover .cat-title { color: var(--accent); }
-.cat-sub {
-  font-size: 11px;
-  color: rgba(255,255,255,.38);
-  line-height: 1.4;
-}
-.cat-arrow {
-  margin-left: auto;
-  font-size: 16px;
-  color: rgba(255,255,255,.2);
-  flex-shrink: 0;
-  transition: color .18s, transform .18s;
-}
-.cat-card:hover .cat-arrow {
-  color: var(--accent);
-  transform: translateX(3px);
-}
-/* Card Didattica disabilitata */
-.soon-cat {
-  filter: saturate(.3) brightness(.7);
-}
-.soon-cat .cat-title { color: rgba(255,255,255,.4); }
-.soon-cat .cat-icon { filter: none; opacity: .5; }
+/* v8.20.0 — RIMOSSO codice morto: .cat-card-inner/.cat-icon/.cat-title/
+   .cat-sub/.cat-arrow/.soon-cat (vecchia card piatta icona+testo+freccia,
+   nessun elemento del markup le usa più — sostituite da .dm-card/
+   .dm-content/.dm-icon/h3/p/.tags, css/flip-card.css + css/act-select.css).
+   Verificato: 0 occorrenze nel markup prima della rimozione. */
 
 /* ── soon-card griglia 2 colonne (oggi solo Spreadsheets; .didattica-card
    rimossa in v8.19.2, era la card "coming soon" di Didattica prima che
@@ -5072,9 +4977,8 @@ html[data-theme="light"] .soon-section-label span{ color: rgba(16,24,42,.28); }
    sempre) — stesso pattern già usato sotto per .act-card:not(.dm-card). */
 html[data-theme="light"] .cat-card:not(.dm-card){ background:#ffffff; border-color: rgba(20,30,60,.09); box-shadow: 0 2px 12px rgba(20,30,60,.06); }
 html[data-theme="light"] .cat-card:not(.dm-card):hover{ border-color: rgba(0,150,120,.35); background: rgba(0,150,120,.04); }
-html[data-theme="light"] .cat-title{ color:#10182a; }
-html[data-theme="light"] .cat-sub{ color: rgba(16,24,42,.45); }
-html[data-theme="light"] .cat-arrow{ color: rgba(16,24,42,.22); }
+/* v8.20.0 — RIMOSSO codice morto: .cat-title/.cat-sub/.cat-arrow (vedi
+   nota sopra al blocco dark equivalente, ~riga 3762). */
 
 /* ── 6. ACT-BACK-BTN, SETUP CARD, CONTROLLI FORM ─────────────── */
 html[data-theme="light"] .act-back-btn{ background: rgba(20,30,60,.05); border-color: rgba(20,30,60,.09); color: rgba(16,24,42,.65); }
@@ -5122,9 +5026,8 @@ html[data-theme="light"] .act-card:not(.dm-card) p{ color: rgba(16,24,42,.42); }
    il vecchio sfondo bianco di #ac-memory:not(.dm-card) sopra e
    renderebbe illeggibile il testo se applicata anche al nuovo. */
 html[data-theme="light"] #ac-memory:not(.dm-card) p{ color: rgba(16,24,42,.6); }
-html[data-theme="light"] .act-soon-badge{
-  background:rgba(180,120,0,.1); border-color:rgba(180,120,0,.35); color:#a66d00;
-}
+/* v8.20.0 — RIMOSSO codice morto: .act-soon-badge light-theme (vedi
+   nota sopra al blocco dark equivalente, ~riga 430). */
 
 /* Chip con azione (elimina/rinomina) — v1.0, vedi @layer base per il
    contesto completo del refactor da stile inline (Issue 5b) */

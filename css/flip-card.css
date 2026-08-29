@@ -15,26 +15,14 @@
 ================================================== */
 @layer flipcard {
 
-  /* Card "Didattica" in step-cat: accento viola (identità
-     già usata da .didattica-card altrove nel progetto,
-     finora mai mostrata) al posto del teal di default di
-     .cat-card. Vince per priorità di layer: non serve
-     toccare la regola .cat-card:hover originale in
-     pixelprof.css.
-     NB: il colore della barra (::after) è impostato SEMPRE,
-     non solo su :hover — altrimenti al mouseout il colore
-     scatta istantaneamente al teal di base (nessuna
-     transizione su "background", solo su "transform" nella
-     regola originale) mentre la barra si ritira: si vedeva
-     un lampo verde/teal. Fix v8.16.1. */
-  .cat-card.cat-didattica::after{ background: var(--purple); }
-  .cat-card.cat-didattica:hover{
-    border-color: var(--purple-border);
-    background: rgba(124,106,255,.06);
-    box-shadow: 0 12px 36px rgba(0,0,0,.45), 0 0 0 1px rgba(124,106,255,.15);
-  }
-  .cat-card.cat-didattica:hover .cat-title{ color: var(--purple); }
-  .cat-card.cat-didattica:hover .cat-arrow{ color: var(--purple); }
+  /* v8.20.0 — RIMOSSO codice morto: il blocco .cat-card.cat-didattica
+     (accento viola v8.16.1, sotto) è ora mascherato/irraggiungibile —
+     .cat-didattica è diventata .dm-card (vedi css/act-select.css),
+     che riproduce lo STESSO identico viola come fallback di default
+     (nessun --dm-accent-rgb impostato su quella card) vincendo comunque
+     per ordine di layer; inoltre .cat-title/.cat-arrow qui sotto non
+     esistono più nel markup di .cat-didattica (sostituiti da
+     .dm-content/h3/.tags). */
 
   .fc-loading{
     text-align: center;
@@ -187,8 +175,8 @@
   }
   html[data-theme="light"] .fc-counter-nav{ color: rgba(16,24,42,.55); }
   html[data-theme="light"] .fc-loading{ color: rgba(16,24,42,.5); }
-  html[data-theme="light"] .cat-card.cat-didattica:hover .cat-title{ color: #5b3fd6; }
-  html[data-theme="light"] .cat-card.cat-didattica:hover .cat-arrow{ color: #5b3fd6; }
+  /* v8.20.0 — RIMOSSO codice morto: vedi nota sopra al blocco dark
+     equivalente. */
   /* fc-exit-btn sta sull'header normale (non sulla card scura),
      quindi qui SEGUE il tema come .fc-nav-btn — a differenza di
      fc-text/fc-hint/fc-eyebrow sopra. */
@@ -249,12 +237,26 @@
      js/flip-card.js) non impostano le custom property quindi
      restano PIXEL-IDENTICHE a prima — nessuna regressione. Le nuove
      card modalità/minigioco impostano le due triplette inline,
-     stessa tecnica già usata qui sotto per badge/icona Livello. */
+     stessa tecnica già usata qui sotto per badge/icona Livello.
+
+     v8.20.1 — "align-items:normal;gap:0" aggiunti esplicitamente:
+     .act-card (pixelprof.css) imposta "align-items:center;gap:10px"
+     per il suo vecchio layout a riga (icona+testo affiancati) e,
+     a differenza di display/padding/border/ecc. (già tutti coperti),
+     nessun layer successivo li ridichiarava per .dm-card — un varco
+     che nel layout a colonna avrebbe potuto centrare .dm-content
+     invece di allinearlo a sinistra. Non verificabile a video da qui
+     (nessun accesso a browser in sandbox): chiuso in via preventiva,
+     .dm-card è ora autosufficiente su ogni proprietà indipendente-
+     mente da cosa fa .act-card altrove — se il rendering non cambia
+     va bene così, se invece la sinistra-allineata di Flip Card/
+     Livello risultasse diversa da prima, segnalalo. */
   .dm-card{
     --dma-rgb: var(--dm-accent-rgb, 124,106,255);
     --dma-text-rgb: var(--dm-accent-text-rgb, 180,160,255);
     position:relative; overflow:hidden;
     display:flex; flex-direction:column; justify-content:flex-end;
+    align-items:normal; gap:0;
     padding:1.15rem 1.25rem;
     min-height:172px;
     border-radius:var(--radius-xl);

@@ -79,6 +79,19 @@
     padding: 1rem;
     animation: asOverlayFadeIn .18s ease both;
   }
+  /* v8.20.2 — rete di sicurezza aggiuntiva: il backdrop non deve MAI
+     poter essere visibile se #step-act stesso non è la schermata
+     attiva — anche nell'eventualità (causa esatta non isolata con
+     certezza tramite sola lettura del codice, e2e ancora in fallo
+     sul click di #ac-speed dopo Quiz→Home nonostante il fix v8.20.1
+     su goStep()) che #setup-panel non abbia la propria classe
+     "hidden" impostata correttamente in qualche percorso. #step-act
+     è gestito dallo stesso elenco di goStep() ben da prima di questo
+     redesign, quindi il suo stato è affidabile indipendentemente da
+     #setup-panel — usarlo come ulteriore condizione chiude il varco
+     comunque, root cause o meno. !important necessario per vincere
+     sempre sulla regola :has() qui sopra, stessa @layer. */
+  #step-act.hidden #setup-overlay-backdrop{ display: none !important; }
   @keyframes asOverlayFadeIn{ from{ opacity: 0; } to{ opacity: 1; } }
 
   /* #setup-panel diventa il box centrato (prima: pannello inline,

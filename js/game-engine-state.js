@@ -996,7 +996,18 @@ function escHtml(s){const d=document.createElement('div');d.appendChild(document
 function escAttr(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
 function setTb(active){['tb-home','tb-lb','tb-st','tb-hist','tb-dash','tb-badges'].forEach(id=>sh(id).classList.remove('active'));if(active)sh(active).classList.add('active');}
-function showScreen(id){document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));sh(id).classList.add('active');}
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  sh(id).classList.add('active');
+  // v8.20.2: passando a un tab diverso da tab-home (es. launch() verso
+  // tab-quiz/tab-games), richiude anche #setup-panel — altrimenti
+  // resta con la propria classe "hidden" NON impostata per l'intera
+  // sessione di gioco: invisibile solo perché #tab-home (suo antenato)
+  // è inattivo, non perché davvero chiuso. goStep() (v8.20.1) copre i
+  // passaggi tra step-mod/cat/act/ecc., questo copre l'altro percorso
+  // di cambio schermata dell'app (i tab di gioco).
+  if(id!=='tab-home'){ const sp=shq('setup-panel'); if(sp) sp.classList.add('hidden'); }
+}
 
 
 

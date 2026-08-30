@@ -526,18 +526,25 @@ const OnboardingTour = (function () {
     { screen:'act', target:'#step-act .act-grid', type:'action',
       title:'Le modalità di gioco 🕹️',
       body:'Scegli quella più adatta alla lezione: dopo deciderai il numero di domande e se far giocare la classe in Individuale o a Squadre.' },
-    // v8.20.3: 'action' → 'info' — dal redesign v8.20.0 il pannello
-    // impostazioni si apre come overlay a tutto schermo subito dopo il
-    // passo precedente (click su una card minigioco), coprendo questo
-    // stesso pulsante "← Modalità" prima ancora che questo passo venga
-    // disegnato: come 'action' il tour restava bloccato in attesa di un
-    // click su un elemento non raggiungibile. Come 'info' si avanza con
-    // "Avanti" nel tooltip, senza dover interagire col pulsante coperto.
+    // v8.20.4: la v8.20.3 aveva reso questo passo 'info' (si avanzava
+    // con "Avanti" senza interagire col pulsante "← Modalità", coperto
+    // dal pannello impostazioni aperto dal passo precedente) ma
+    // lasciava l'utente bloccato dopo: chiuso il velo del tour restava
+    // comunque sul pannello aperto, senza sapere come chiuderlo per
+    // arrivare al passo dopo (.cat-didattica, screen 'homeCategory' —
+    // irraggiungibile finché il pannello resta aperto sopra step-act).
+    // Ora due azioni reali in sequenza: prima si chiude il pannello con
+    // la × (passo qui sotto), poi "← Modalità" torna visibile e
+    // cliccabile per davvero (passo successivo, di nuovo 'action') —
+    // niente più salti "a sorpresa" nell'interfaccia.
+    { screen:'act', target:'.setup-close-btn', type:'action',
+      title:'Chiudi le impostazioni ✖️',
+      body:'Il pannello si è aperto cliccando sulla card. Chiudilo con questa ×: tornerai alla scelta dei minigiochi.' },
     // La variante gemella di questo passo dentro Flip Card (poco più
-    // sotto, target '#step-didattica .act-back-btn') resta 'action':
-    // quel pulsante non è mai coperto da nessun overlay, nessun problema
-    // lì.
-    { screen:'act', target:'#step-act .act-back-btn', type:'info',
+    // sotto, target '#step-didattica .act-back-btn') resta invariata,
+    // 'action': quel pulsante non è mai coperto da nessun overlay,
+    // nessun problema lì.
+    { screen:'act', target:'#step-act .act-back-btn', type:'action',
       title:'Torna alla modalità ↩️',
       body:'Questo pulsante ti riporta alla scelta tra Minigiochi e Didattica.' },
     { screen:'homeCategory', target:'.cat-didattica', type:'action',
@@ -590,18 +597,25 @@ const OnboardingTour = (function () {
     { screen:'act', target:'#step-act .act-grid', type:'action',
       title:'Le modalità di gioco 🕹️',
       body:'Scegli quella più adatta alla lezione: dopo deciderai il numero di domande e se far giocare la classe in Individuale o a Squadre.' },
-    // v8.20.3: 'action' → 'info' — dal redesign v8.20.0 il pannello
-    // impostazioni si apre come overlay a tutto schermo subito dopo il
-    // passo precedente (click su una card minigioco), coprendo questo
-    // stesso pulsante "← Modalità" prima ancora che questo passo venga
-    // disegnato: come 'action' il tour restava bloccato in attesa di un
-    // click su un elemento non raggiungibile. Come 'info' si avanza con
-    // "Avanti" nel tooltip, senza dover interagire col pulsante coperto.
+    // v8.20.4: la v8.20.3 aveva reso questo passo 'info' (si avanzava
+    // con "Avanti" senza interagire col pulsante "← Modalità", coperto
+    // dal pannello impostazioni aperto dal passo precedente) ma
+    // lasciava l'utente bloccato dopo: chiuso il velo del tour restava
+    // comunque sul pannello aperto, senza sapere come chiuderlo per
+    // arrivare al passo dopo (.cat-didattica, screen 'homeCategory' —
+    // irraggiungibile finché il pannello resta aperto sopra step-act).
+    // Ora due azioni reali in sequenza: prima si chiude il pannello con
+    // la × (passo qui sotto), poi "← Modalità" torna visibile e
+    // cliccabile per davvero (passo successivo, di nuovo 'action') —
+    // niente più salti "a sorpresa" nell'interfaccia.
+    { screen:'act', target:'.setup-close-btn', type:'action',
+      title:'Chiudi le impostazioni ✖️',
+      body:'Il pannello si è aperto cliccando sulla card. Chiudilo con questa ×: tornerai alla scelta dei minigiochi.' },
     // La variante gemella di questo passo dentro Flip Card (poco più
-    // sotto, target '#step-didattica .act-back-btn') resta 'action':
-    // quel pulsante non è mai coperto da nessun overlay, nessun problema
-    // lì.
-    { screen:'act', target:'#step-act .act-back-btn', type:'info',
+    // sotto, target '#step-didattica .act-back-btn') resta invariata,
+    // 'action': quel pulsante non è mai coperto da nessun overlay,
+    // nessun problema lì.
+    { screen:'act', target:'#step-act .act-back-btn', type:'action',
       title:'Torna alla modalità ↩️',
       body:'Questo pulsante ti riporta alla scelta tra Minigiochi e Didattica.' },
     { screen:'homeCategory', target:'.cat-didattica', type:'action',

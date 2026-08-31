@@ -21,7 +21,7 @@ function renderStats(){
   const areaInfo = window.AreasConfig?.getAreaByKey(areaKey);
   const mods = areaInfo
     ? areaInfo.modules.filter(m=>m.contentReady===true).map(m=>({key:m.key,label:m.label}))
-    : [{key:'CE',label:'Computer Essentials'},{key:'OE',label:'Online Essentials'},{key:'WP',label:'Word Processing'}];
+    : [{key:'CE',label:'Computer Essentials'},{key:'OE',label:'Online Essentials'},{key:'WP',label:'Word Processor'},{key:'SS',label:'Spreadsheets'},{key:'PP',label:'Power Point'}];
 
   sh('st-mods').innerHTML=mods.map(({key:k,label:n})=>{
     const m=db.stats.byMod[k]||{c:0,w:0};const tot=m.c+m.w;const pct=tot>0?Math.round(m.c/tot*100):0;
@@ -52,8 +52,8 @@ async function resetStats(){
 /* Label e icone coerenti con game-constants.js */
 const _HIST_ACT_ICON ={quiz:'🧠',speed:'⚡',match:'🔗',memory:'🃏',fill:'✏️',truefalse:'⚖️'};
 const _HIST_ACT_LABEL={quiz:'Quiz',speed:'Speed Quiz',match:'Abbina',memory:'Memory',fill:'Completa',truefalse:'Vero o Falso'};
-const _HIST_MOD_LABEL={CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processing'};
-const _HIST_MOD_COLOR={CE:'#00cfff',OE:'#7c6aff',WP:'#28a050'};
+const _HIST_MOD_LABEL={CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processor',SS:'Spreadsheets',PP:'Power Point'};
+const _HIST_MOD_COLOR={CE:'#ffcf5c',OE:'#7c6aff',WP:'#00cfff',SS:'#44c76a',PP:'#ffa564'};
 
 function _histFormatDate(iso){
   if(!iso)return'—';
@@ -198,7 +198,7 @@ function exportHistoryCSV(){
   }
 
   const ACT_LABEL_MAP ={quiz:'Quiz',speed:'Speed Quiz',match:'Abbina',memory:'Memory',fill:'Completa la frase',truefalse:'Vero o Falso'};
-  const MOD_LABEL_MAP ={CE:'Computer Essentials',OE:'Online Essentials',MIX:'Mix moduli',WP:'Word Processing'};
+  const MOD_LABEL_MAP ={CE:'Computer Essentials',OE:'Online Essentials',MIX:'Mix moduli',WP:'Word Processor',SS:'Spreadsheets',PP:'Power Point'};
   const MODE_LABEL_MAP={ind:'Individuale',sq:'Squadre'};
 
   const csvCell=v=>{

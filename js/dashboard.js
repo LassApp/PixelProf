@@ -34,9 +34,9 @@
    escHtml, escAttr), window.DB (db_adapter.js, opzionale)
 ================================================== */
 
-const _CHD_MOD_LABEL = { CE: 'Computer Essentials', OE: 'Online Essentials', WP: 'Word Processing' };
-const _CHD_MOD_COLOR = { CE: '#00cfff', OE: '#7c6aff', WP: '#28a050' };
-const _CHD_MOD_FILTER_ICON = { CE: '💻', OE: '🌐', WP: '📝' };
+const _CHD_MOD_LABEL = { CE: 'Computer Essentials', OE: 'Online Essentials', WP: 'Word Processor', SS: 'Spreadsheets', PP: 'Power Point' };
+const _CHD_MOD_COLOR = { CE: '#ffcf5c', OE: '#7c6aff', WP: '#00cfff', SS: '#44c76a', PP: '#ffa564' };
+const _CHD_MOD_FILTER_ICON = { CE: '💻', OE: '🌐', WP: '📝', SS: '📊', PP: '📽️' };
 const _CHD_ACT_LABEL = { quiz: 'Quiz', speed: 'Speed Quiz', match: 'Abbina', memory: 'Memory', fill: 'Completa la frase', truefalse: 'Vero o Falso' };
 const _CHD_ACT_ICON  = { quiz: '🧠', speed: '⚡', match: '🔗', memory: '🃏', fill: '✏️', truefalse: '⚖️' };
 
@@ -519,7 +519,7 @@ function _chdBuildWrongQ() {
   // fisso a CE/OE/WP, un'aula Cybersecurity mostrava filtri per moduli
   // che non esistono in quell'aula). CE/OE/WP restano in testa quando
   // presenti per zero regressione visiva sulle aule ECDL esistenti.
-  const _ORDER_HINT = ['CE', 'OE', 'WP'];
+  const _ORDER_HINT = ['CE', 'OE', 'WP', 'SS', 'PP'];
   const modKeys = [...new Set(activeTabEntries.map(e => e.mod).filter(Boolean))].sort((a, b) => {
     const ia = _ORDER_HINT.indexOf(a), ib = _ORDER_HINT.indexOf(b);
     if (ia !== -1 && ib !== -1) return ia - ib;

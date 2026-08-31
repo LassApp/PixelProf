@@ -58,10 +58,10 @@ const BADGE_DEFS = [
   },
   {
     id: 'polyglot', icon: '🌍', title: 'Tuttologo',
-    desc: 'Gioca almeno una volta in ciascuno dei 3 moduli: Computer Essentials, Online Essentials, Word Processing.',
+    desc: 'Gioca almeno una volta in ciascuno dei 5 moduli: Computer Essentials, Online Essentials, Word Processor, Spreadsheets, Power Point.',
     calc(ctx) {
       const n = ctx.distinctMods.size;
-      return { unlocked: n >= 3, label: n + ' / 3 moduli provati', pct: Math.min(n / 3, 1) * 100 };
+      return { unlocked: n >= 5, label: n + ' / 5 moduli provati', pct: Math.min(n / 5, 1) * 100 };
     }
   },
   {
@@ -160,7 +160,7 @@ function _bdgBuildContext() {
   const stats = db.stats || { tot: 0, cor: 0, byMod: {} };
   const wrongQ = db.wrongQ || {};
   const distinctGames = new Set(sessions.map(s => s.game).filter(Boolean));
-  const distinctMods = new Set(sessions.map(s => s.mod).filter(m => m === 'CE' || m === 'OE' || m === 'WP'));
+  const distinctMods = new Set(sessions.map(s => s.mod).filter(m => m === 'CE' || m === 'OE' || m === 'WP' || m === 'SS' || m === 'PP'));
   const sqSessions = sessions.filter(s => s.mode === 'sq').length;
   const bestStreakEver = sessions.reduce((mx, s) => Math.max(mx, s.bestStreak || 0), 0);
   const maxComboEver = sessions.reduce((mx, s) => Math.max(mx, s.maxCombo || 0), 0);

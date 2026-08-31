@@ -3,7 +3,7 @@
 ================================================== */
 const COLORS=['#00ffc8','#7c6aff','#ff4d6d','#ffb400','#00cfff'];
 
-const MOD_LABEL={CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processing'};
+const MOD_LABEL={CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processor',SS:'Spreadsheets',PP:'Power Point'};
 // Etichetta modulo con fallback ad AreasConfig — MOD_LABEL resta la scorciatoia
 // rapida per i 3 moduli ECDL storici; per qualsiasi altro modulo (Cybersecurity,
 // Cyberbullismo, Reti, Malware, ...) si consulta window.AreasConfig, così le
@@ -18,7 +18,7 @@ function modLabel(key){
 // tripletta di --area-rgb in pixelprof.css, mirrorata qui in esadecimale
 // per l'uso lato JS (style inline, non può leggere le CSS custom
 // properties di un elemento non ancora nel DOM).
-const MOD_COLOR_HEX  = { CE:'#1e90ff', OE:'#7c6aff', WP:'#28a050' };
+const MOD_COLOR_HEX  = { CE:'#ffb400', OE:'#7c6aff', WP:'#1e90ff', SS:'#28a050', PP:'#ff7828' };
 const AREA_COLOR_HEX = {
   'ecdl': '#00ffc8',
   'cyberbullismo-sicurezza-online': '#ffb400',

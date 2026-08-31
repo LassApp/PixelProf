@@ -582,7 +582,7 @@ const OnboardingTour = (function () {
     { screen:'coursesSelect', target:'.course-card', type:'action',
       title:'Benvenuto in PixelProf! 👋',
       body:'Le aule sono raggruppate per area didattica: scegli una qualsiasi aula tra quelle disponibili per iniziare a esercitarti.' },
-    { screen:'homeModule', target:'.mod-card:not(.soon-card)', type:'action',
+    { screen:'homeModule', target:'.mod-card', type:'action',
       title:'Scegli il modulo 📚',
       body:'Ogni aula può abilitare solo alcuni moduli: qui vedi solo quelli disponibili per questa classe.' },
     { screen:'hub', target:'#tb-hub-btn', type:'info', revealTarget:true,

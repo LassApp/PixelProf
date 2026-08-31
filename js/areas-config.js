@@ -78,13 +78,41 @@ const AREAS = [
         },
       },
       {
-        key: 'WP', label: 'Word Processing', contentReady: true,
+        key: 'WP', label: 'Word Processor', contentReady: true,
         dataPaths: {
           quiz: 'data/quiz/word_processing.json',
           speed: 'data/speed_quiz/word_processing.json',
           abbina: 'data/abbina/word_processing_abbina.json',
           memory: 'data/memory/word_processing_memory.json',
           completaFrase: 'data/completa_frase/word_processing_completa_frase.json',
+        },
+      },
+      {
+        // v8.21.0 — sblocco Spreadsheets (era "coming soon"). JSON di
+        // gioco in arrivo da Erasmo: contentReady:true per richiesta
+        // esplicita (modulo selezionabile subito), stesso pattern già
+        // in uso per WP quando i suoi JSON erano parziali — il fallback
+        // per-game su fetch fallita mostra la card "non disponibile"
+        // finché i file non arrivano in data/.
+        key: 'SS', label: 'Spreadsheets', contentReady: true,
+        dataPaths: {
+          quiz: 'data/quiz/spreadsheets.json',
+          speed: 'data/speed_quiz/spreadsheets.json',
+          abbina: 'data/abbina/spreadsheets_abbina.json',
+          memory: 'data/memory/spreadsheets_memory.json',
+          completaFrase: 'data/completa_frase/spreadsheets_completa_frase.json',
+        },
+      },
+      {
+        // v8.21.0 — nuovo modulo Power Point. Stesso trattamento di SS
+        // (vedi commento sopra): contentReady:true, JSON in arrivo.
+        key: 'PP', label: 'Power Point', contentReady: true,
+        dataPaths: {
+          quiz: 'data/quiz/powerpoint.json',
+          speed: 'data/speed_quiz/powerpoint.json',
+          abbina: 'data/abbina/powerpoint_abbina.json',
+          memory: 'data/memory/powerpoint_memory.json',
+          completaFrase: 'data/completa_frase/powerpoint_completa_frase.json',
         },
       },
     ],

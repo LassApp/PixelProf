@@ -149,7 +149,7 @@ function renderLbResults(type,act){
 ================================================== */
 function exportLbCSV(type, act){
   const bucket=db.lb2?.[type]?.[act]||{};
-  const MOD_LABEL_MAP={CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processing'};
+  const MOD_LABEL_MAP={CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processor',SS:'Spreadsheets',PP:'Power Point'};
   const ACT_LABEL_MAP={quiz:'Quiz',speed:'Speed Quiz',match:'Abbina',memory:'Memory',fill:'Completa la frase',truefalse:'Vero o Falso'};
 
   // Costruisce le righe ordinate per punteggio desc

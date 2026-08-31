@@ -817,7 +817,7 @@ async function _applyModuleFilter(classroomId){
  */
 function _renderModuleFilter(){
   const keys = window._activeModuleKeys || null;
-  const ALL = ['CE','OE','WP','SS'];
+  const ALL = ['CE','OE','WP','SS','PP'];
 
   const course  = activeCourseId ? loadCourses().find(c=>c.id===activeCourseId) : null;
   const areaKey = course?.areaKey || 'ecdl';
@@ -1127,7 +1127,7 @@ function cwStep(n){
    già selezionati: appartenevano all'Area precedente
    e le chiavi non hanno significato in quella nuova.
 ================================================== */
-const _CW_MOD_ICONS = { CE:'💻', OE:'🌐', WP:'📝' }; // icone dedicate solo ai 3 moduli storici ECDL
+const _CW_MOD_ICONS = { CE:'💻', OE:'🌐', WP:'📝', SS:'📊', PP:'📽️' }; // icone dedicate ai 5 moduli storici ECDL
 
 function _cwInitAreaStep(){
   const grid = sh('cw-area-grid');
@@ -1533,8 +1533,9 @@ let _dpEnabledModules = [];
 const ALL_MODULES = [
   { key:'CE',  label:'Computer Essentials' },
   { key:'OE',  label:'Online Essentials'   },
-  { key:'WP',  label:'Word Processing'     },
+  { key:'WP',  label:'Word Processor'      },
   { key:'SS',  label:'Spreadsheets'        },
+  { key:'PP',  label:'Power Point'         },
 ];
 
 async function openDirectorPanel(){

@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.4.1
+   onboarding.js — PixelProf v2.5.0
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -325,6 +325,53 @@
             OnboardingTour.isCurrentStep('flipcardConfirm') è vero —
             fuori dal tour il dialogo si comporta come sempre.
 
+   v2.5.0 — richiesta esplicita utente: 6 nuovi passi finali per entrambi
+     i ruoli (Direttore 24-29/30, Docente 14-19/20), inseriti subito dopo
+     l'ultimo "Torna alla modalità ↩️" esistente e prima del messaggio di
+     chiusura ("Tour completato" diventa così l'ultimo passo, 30/30 e
+     20/20 anziché 24/24 e 14/14). Spiegano gli elementi PERMANENTI della
+     topbar, mai toccati finora dal tour: nome utente, tasto tema
+     chiaro/scuro, tasto audio, badge aula (torna ai moduli), logo
+     PixelProf (cambia aula) e il dialogo di conferma che il logo apre.
+       - I 4 passi "di lettura" (nome, tema, audio, badge aula) sono
+         'info' con revealTarget:true: elementi reali e cliccabili (tema
+         e audio lo sono davvero), ma nessuno dei due ha un click con
+         significato univoco di "passo successivo" richiesto per essere
+         'action' — si avanza solo col pulsante "Avanti" del tooltip,
+         stesso principio già discusso per #tb-hub-btn più sopra.
+       - Il passo sul logo PixelProf è invece 'action': serve il click
+         REALE per aprire davvero il dialogo di conferma richiesto dal
+         passo successivo — un 'info' con solo revealTarget non
+         garantirebbe che il dialogo sia già aperto al momento del render
+         del passo dopo. Il fix v2.1.4 (avanzamento rimandato di un tick
+         in _advance()) garantisce che l'onclick nativo di
+         goCoursesFromApp() sia già stato eseguito quando il passo
+         successivo viene renderizzato.
+       - L'ultimo passo (dialogo #pp-dialog-no/#pp-dialog-yes) torna
+         'info' con revealTarget:true: il dialogo ha due pulsanti con
+         esiti opposti, nessuno dei due ha un significato univoco di "ho
+         finito qui" (stesso principio già discusso per
+         #cs-add-form-wrap più sopra). Essendo il dialogo VERO (aperto dal
+         passo precedente), entrambi i pulsanti restano realmente
+         cliccabili: se durante questo passo l'utente preme davvero "Sì,
+         cambia aula", l'app esce per davvero dall'aula e il tour resta
+         con tooltip orfano (nessun passo successivo raggiungibile finché
+         non si rientra in un'aula) — stesso comportamento "esplorabile
+         ma a rischio" già accettato per il passo Hub più sopra, nessun
+         workaround introdotto di proposito.
+     Tutti e 6 i nuovi passi restano dichiarati con screen:'homeCategory',
+     lo stesso già usato dal passo "Torna alla modalità" prima e da "Tour
+     completato" dopo: la topbar (nome, tema, audio, badge aula, logo) è
+     sempre visibile qualunque sia lo step-X/tab-X attivo sotto di essa,
+     quindi la catena di 6 passi si auto-renderizza da sola tramite il
+     controllo "stesso screen" già presente in _advance() — nessun nuovo
+     show*Step(), nessuna modifica ad app.js o game-engine-state.js,
+     nessuna nuova voce nell'API pubblica. Verificato inoltre lo stacking
+     z-index: .pp-dialog-overlay è a 9700 (pixelprof.css), sotto lo stack
+     onboarding 9850/60/70 già alzato in v2.4.1 — stesso principio che
+     risolveva il caso analogo di .pp-generic-overlay (9800), qui con
+     margine ulteriore, nessuna modifica CSS necessaria.
+
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
 
@@ -573,6 +620,28 @@ const OnboardingTour = (function () {
     { screen:'didattica', target:'#step-didattica .act-back-btn', type:'action',
       title:'Torna alla modalità ↩️',
       body:'Anche da qui puoi tornare alla scelta tra Minigiochi e Didattica.' },
+    // v2.5.0 — 6 nuovi passi finali (richiesta esplicita utente): vedi
+    // changelog in testa al file per il dettaglio del ragionamento
+    // (screen:'homeCategory' condiviso, action solo sul logo, dialogo
+    // reale con entrambi i pulsanti realmente cliccabili).
+    { screen:'homeCategory', target:'#tb-user-name', type:'info', revealTarget:true,
+      title:'Il tuo nome 👤',
+      body:'In alto a destra vedi sempre il ruolo e il nome con cui hai effettuato l\'accesso.' },
+    { screen:'homeCategory', target:'.theme-toggle-btn', type:'info', revealTarget:true,
+      title:'Tema chiaro o scuro 🌗',
+      body:'Passa dal tema scuro a quello chiaro, e viceversa, in qualsiasi momento con un tocco.' },
+    { screen:'homeCategory', target:'.audio-toggle-btn:not(.theme-toggle-btn)', type:'info', revealTarget:true,
+      title:'Audio on/off 🔊',
+      body:'Attiva o disattiva gli effetti sonori del gioco quando vuoi.' },
+    { screen:'homeCategory', target:'#tb-course-badge', type:'info', revealTarget:true,
+      title:'Torna ai moduli 🏫',
+      body:'Il nome dell\'aula in alto: premilo in qualsiasi momento per tornare alla scelta dei moduli.' },
+    { screen:'homeCategory', target:'.logo-wrap', type:'action',
+      title:'Il logo PixelProf 🔄',
+      body:'Premilo in alto a sinistra per uscire da questa aula e sceglierne un\'altra.' },
+    { screen:'homeCategory', target:'#pp-dialog-no, #pp-dialog-yes', type:'info', revealTarget:true,
+      title:'Scegli cosa fare ✅',
+      body:'"No, continua" annulla e resta qui; "Sì, cambia aula" ti porta alla schermata di selezione aule.' },
     { screen:'homeCategory', target:'.cat-grid', type:'info',
       title:'Tour completato! 🎉',
       body:'Ora conosci tutti gli strumenti di PixelProf. Buona lezione!' },
@@ -644,6 +713,28 @@ const OnboardingTour = (function () {
     { screen:'didattica', target:'#step-didattica .act-back-btn', type:'action',
       title:'Torna alla modalità ↩️',
       body:'Anche da qui puoi tornare alla scelta tra Minigiochi e Didattica.' },
+    // v2.5.0 — 6 nuovi passi finali (richiesta esplicita utente): vedi
+    // changelog in testa al file per il dettaglio del ragionamento
+    // (screen:'homeCategory' condiviso, action solo sul logo, dialogo
+    // reale con entrambi i pulsanti realmente cliccabili).
+    { screen:'homeCategory', target:'#tb-user-name', type:'info', revealTarget:true,
+      title:'Il tuo nome 👤',
+      body:'In alto a destra vedi sempre il ruolo e il nome con cui hai effettuato l\'accesso.' },
+    { screen:'homeCategory', target:'.theme-toggle-btn', type:'info', revealTarget:true,
+      title:'Tema chiaro o scuro 🌗',
+      body:'Passa dal tema scuro a quello chiaro, e viceversa, in qualsiasi momento con un tocco.' },
+    { screen:'homeCategory', target:'.audio-toggle-btn:not(.theme-toggle-btn)', type:'info', revealTarget:true,
+      title:'Audio on/off 🔊',
+      body:'Attiva o disattiva gli effetti sonori del gioco quando vuoi.' },
+    { screen:'homeCategory', target:'#tb-course-badge', type:'info', revealTarget:true,
+      title:'Torna ai moduli 🏫',
+      body:'Il nome dell\'aula in alto: premilo in qualsiasi momento per tornare alla scelta dei moduli.' },
+    { screen:'homeCategory', target:'.logo-wrap', type:'action',
+      title:'Il logo PixelProf 🔄',
+      body:'Premilo in alto a sinistra per uscire da questa aula e sceglierne un\'altra.' },
+    { screen:'homeCategory', target:'#pp-dialog-no, #pp-dialog-yes', type:'info', revealTarget:true,
+      title:'Scegli cosa fare ✅',
+      body:'"No, continua" annulla e resta qui; "Sì, cambia aula" ti porta alla schermata di selezione aule.' },
     { screen:'homeCategory', target:'.cat-grid', type:'info',
       title:'Tour completato! 🎉',
       body:'Ora conosci tutti gli strumenti di PixelProf. Buona lezione!' },

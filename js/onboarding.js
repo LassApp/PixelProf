@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.5.1
+   onboarding.js — PixelProf v2.5.2
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -414,6 +414,26 @@
           "premilo in qualsiasi momento", ma invito a usare "Avanti").
      Nessuna modifica a app.js/game-engine-state.js/index.html/CSS: tutto
      contenuto in onboarding.js (motore + step-data).
+
+   v2.5.2 — bug segnalato: passo "flipcardExit" (Uscire in ogni momento).
+     Tra il click sulla card livello (che fa già avanzare il tour) e il
+     caricamento effettivo del mazzo CSV (1-2s, dipende dalla rete) c'è un
+     gap in cui js/flip-card.js mostra già il pulsante Esci reale
+     (_fcHeader(), sempre presente anche nel placeholder "Caricamento
+     mazzo…") ma il tour non ha ancora renderizzato questo passo
+     (showFlipCardExitStep() arriva solo a caricamento concluso) — durante
+     il gap né l'Esci né la topbar (torna ai moduli/logo PixelProf/logout)
+     hanno alcuna protezione, un click reale su uno di questi rompe il
+     tour in modo irrecuperabile. Fix interamente in js/flip-card.js
+     (file isolato, invariato il resto): i 4 pulsanti a rischio vengono
+     congelati (pointer-events + opacità, stesso linguaggio visivo già
+     usato lì per le card livello disabilitate) subito prima di avviare il
+     caricamento e scongelati in un finally non appena il caricamento
+     termina (successo, errore o mazzo vuoto) — da quel momento in poi ci
+     pensa di nuovo il velo reale del passo, invariato. Attivo solo se il
+     gap è reale (mazzo non già in cache) e solo per chi ha ancora il tour
+     da fare — nuovo metodo pubblico isActive() (sopra) usato apposta per
+     non toccare nulla a chi l'ha già completato o saltato.
 
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
@@ -1217,6 +1237,14 @@ const OnboardingTour = (function () {
     return !!def && def.screen === screenName;
   }
 
+  // v2.5.2 — nuovo, richiesto da js/flip-card.js (file isolato): sapere se
+  // QUESTO utente ha ancora il tour da fare (non l'ha già completato né
+  // saltato in una sessione precedente o in questa), senza dover leggere
+  // _state direttamente né duplicare la logica di isCurrentStep(). true
+  // dall'init() fino al completamento/skip incluso — stesso significato
+  // di "non ancora _state.done" usato internamente in tutto il file.
+  function isActive() { return !_state.done; }
+
   function recheck()               { _tryRenderCurrentStep(); }
 
   return {
@@ -1226,7 +1254,7 @@ const OnboardingTour = (function () {
     showCoursesSelectStep, showHomeModuleStep, showHomeCategoryStep,
     showDidatticaStep,
     showFlipCardLevelStep, showFlipCardExitStep, showFlipCardConfirmStep,
-    isCurrentStep,
+    isCurrentStep, isActive,
     recheck, skip, reset,
   };
 })();

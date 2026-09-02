@@ -1,8 +1,20 @@
 /* ==================================================
-   flip-card.js — PixelProf v8.19.1 (Didattica · Flip Card)
+   flip-card.js — PixelProf v8.19.2 (Didattica · Flip Card)
    Prima "attività didattica" di PixelProf, accanto ai
    Minigiochi: mazzo di carte domanda/risposta con flip 3D,
    caricato da CSV dedicati per modulo + livello.
+
+   v8.19.2: bug segnalato — gap di 1-2s tra l'avanzamento del tour
+   guidato al click sulla card livello e il caricamento reale del mazzo
+   CSV, durante cui il pulsante Esci (già presente nel placeholder di
+   caricamento) e la topbar (torna ai moduli/logo PixelProf/logout)
+   restavano cliccabili per davvero senza alcuna protezione del tour —
+   un click reale su uno di questi rompeva il tour in modo
+   irrecuperabile. Nuovi helper _fcFreezeNavForTour()/
+   _fcUnfreezeNavForTour(), richiamati da startFlipCard() solo durante il
+   gap reale e solo se l'utente ha ancora il tour da fare
+   (OnboardingTour.isActive(), nuovo in onboarding.js v2.5.2). Vedi
+   commenti inline più sotto per il dettaglio.
 
    v8.19.1: exitFlipCardConfirm() ora forza la conferma (niente
    Annulla) quando il tour guidato è esattamente sul passo dedicato —
@@ -364,6 +376,52 @@ function fcSelLevel(liv){
   startFlipCard(sh('g-area'), sMod, liv);
 }
 
+/* v8.19.2 — bug segnalato: gap 1-2s tra l'avanzamento del tour guidato
+   (già gestito da onboarding.js al click sulla card livello) e il
+   caricamento reale del mazzo CSV. Durante il gap _fcHeader() ha già
+   creato il vero pulsante Esci nel placeholder "Caricamento mazzo…" —
+   ma il tour non ha ancora renderizzato il passo "flipcardExit"
+   (showFlipCardExitStep() arriva solo a caricamento concluso, dentro
+   _renderFlipCard()), quindi né l'Esci né la topbar (torna ai
+   moduli/logo PixelProf/logout) hanno alcuna protezione: un click reale
+   su uno di questi 4 pulsanti naviga per davvero altrove mentre il tour
+   è già avanzato internamente al passo successivo — tour irrecuperabile.
+   Congela/scongela SOLO questi 4 selettori, SOLO durante il gap
+   (chiamato da startFlipCard() più sotto): pointer-events + opacità,
+   stesso linguaggio visivo già usato qui sotto per le card livello
+   disabilitate (style="opacity:.4;cursor:not-allowed"). dataset come
+   guardia anti-doppio-congelamento e per ripristinare l'esatto valore
+   inline precedente (di norma nessuno, ma non si sa mai). */
+const FC_TOUR_RISK_SELECTORS = ['.fc-exit-btn', '#tb-course-badge', '.logo-wrap', '.cs-logout-btn'];
+
+function _fcFreezeNavForTour(){
+  FC_TOUR_RISK_SELECTORS.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      if(el.dataset.fcFrozen) return; // già congelato, non sovrascrivere i valori salvati
+      el.dataset.fcFrozen = '1';
+      el.dataset.fcPrevPe = el.style.pointerEvents;
+      el.dataset.fcPrevOp = el.style.opacity;
+      el.style.pointerEvents = 'none';
+      el.style.opacity = '.4';
+      el.setAttribute('aria-disabled', 'true');
+    });
+  });
+}
+
+function _fcUnfreezeNavForTour(){
+  FC_TOUR_RISK_SELECTORS.forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      if(!el.dataset.fcFrozen) return;
+      el.style.pointerEvents = el.dataset.fcPrevPe || '';
+      el.style.opacity = el.dataset.fcPrevOp || '';
+      el.removeAttribute('aria-disabled');
+      delete el.dataset.fcFrozen;
+      delete el.dataset.fcPrevPe;
+      delete el.dataset.fcPrevOp;
+    });
+  });
+}
+
 async function startFlipCard(cont, mod, liv){
   if(!FlipCardLoader.hasModule(mod) || !FlipCardLoader.levelsFor(mod).includes(liv)){
     cont.innerHTML = _fcHeader() + _fcStateHTML({
@@ -372,29 +430,56 @@ async function startFlipCard(cont, mod, liv){
     });
     return;
   }
+  // v8.19.2 — guardTour true solo se il gap è reale (mazzo non già in
+  // cache: se è in cache l'await sotto risolve subito, nessun gap) e solo
+  // se questo utente ha ancora il tour da fare (OnboardingTour.isActive(),
+  // onboarding.js v2.5.2) — chi l'ha già completato/saltato non viene
+  // toccato, i 4 pulsanti restano sempre e comunque cliccabili per lui.
+  const guardTour = typeof OnboardingTour !== 'undefined'
+    && OnboardingTour.isActive()
+    && !FlipCardLoader.isCached(mod, liv);
   if(!FlipCardLoader.isCached(mod, liv)){
     cont.innerHTML = _fcHeader() + '<div class="fc-loading">Caricamento mazzo…</div>';
+    if(guardTour) _fcFreezeNavForTour();
   }
-  let cards;
   try{
-    cards = await FlipCardLoader.load(mod, liv);
-  }catch(err){
-    console.error('[PixelProf] FlipCard load error:', err);
-    cont.innerHTML = _fcHeader() + _fcStateHTML({
-      icon: '⚠️', color: '#a996ff', title: 'Flip Card non disponibile',
-      msg: 'Impossibile caricare il mazzo. Riprova o cambia modulo.',
-    });
-    return;
+    let cards;
+    try{
+      cards = await FlipCardLoader.load(mod, liv);
+    }catch(err){
+      console.error('[PixelProf] FlipCard load error:', err);
+      cont.innerHTML = _fcHeader() + _fcStateHTML({
+        icon: '⚠️', color: '#a996ff', title: 'Flip Card non disponibile',
+        msg: 'Impossibile caricare il mazzo. Riprova o cambia modulo.',
+      });
+      return;
+    }
+    if(!cards.length){
+      cont.innerHTML = _fcHeader() + _fcStateHTML({
+        icon: '📭', color: '#a996ff', title: 'Mazzo vuoto',
+        msg: 'I file CSV sono stati trovati ma non contengono righe valide (colonne domanda,risposta).',
+      });
+      return;
+    }
+    fcState = { cards, idx: 0, flipped: false, mod, liv };
+    _renderFlipCard(cont);
+  } finally {
+    // v8.19.2 — scongela SEMPRE (successo, errore o mazzo vuoto): la
+    // topbar non viene mai ricreata da _renderFlipCard() (è fuori da
+    // #g-area), quindi senza questo finally resterebbe congelata per
+    // sempre in caso di errore/mazzo vuoto. .fc-exit-btn invece viene
+    // comunque ricreato da zero (nuovo nodo, mai congelato) da
+    // _fcHeader() dentro ognuno dei rami sopra — lo scongelamento qui è
+    // per lui ridondante ma innocuo (guardia dataset.fcFrozen).
+    // setTimeout(...,0) anziché chiamata diretta: nel ramo di successo,
+    // _renderFlipCard() qui sopra ha già schedulato il PROPRIO
+    // setTimeout(...,0) per mostrare il velo reale del passo
+    // (showFlipCardExitStep()) — schedulandolo qui, il nostro arriva in
+    // coda DOPO il suo (stesso ritardo, ordine di schedulazione FIFO):
+    // il velo è già su quando la topbar torna cliccabile, azzerando
+    // anche il margine teorico di un frame tra le due cose.
+    if(guardTour) setTimeout(_fcUnfreezeNavForTour, 0);
   }
-  if(!cards.length){
-    cont.innerHTML = _fcHeader() + _fcStateHTML({
-      icon: '📭', color: '#a996ff', title: 'Mazzo vuoto',
-      msg: 'I file CSV sono stati trovati ma non contengono righe valide (colonne domanda,risposta).',
-    });
-    return;
-  }
-  fcState = { cards, idx: 0, flipped: false, mod, liv };
-  _renderFlipCard(cont);
 }
 
 function _renderFlipCard(cont){

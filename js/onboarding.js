@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.5.0
+   onboarding.js — PixelProf v2.5.1
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -372,6 +372,39 @@
      risolveva il caso analogo di .pp-generic-overlay (9800), qui con
      margine ulteriore, nessuna modifica CSS necessaria.
 
+   v2.5.1 — due bug segnalati da test manuale sul passo del dialogo
+     cambio-aula (v2.5.0, "Scegli cosa fare") + un nuovo passo richiesto:
+       1) I due pulsanti reali del dialogo risultavano cliccabili per
+          davvero durante il passo (revealTarget dava un buco vero, quindi
+          hit-test vero) — ma dovevano restare solo visibili, con
+          avanzamento possibile solo da "Avanti". Introdotta la nuova
+          proprietà di passo blockClicks (vedi doc del formato più sopra):
+          uno "scudo" trasparente per target, posizionato sul buco come i
+          rings, che intercetta e ignora il click reale senza coprire
+          visivamente il target. Generico, riusabile da qualsiasi passo
+          futuro con lo stesso bisogno (target vero ma non azionabile).
+       2) Lasciando il passo del dialogo con "Avanti" (senza premere per
+          davvero uno dei due pulsanti — cosa impossibile comunque dopo il
+          fix del punto 1), il dialogo VERO restava aperto: il velo suo
+          proprio non spariva e il passo finale "Tour completato" appariva
+          comunque sopra, sovrapposto. Introdotta la nuova proprietà di
+          passo onLeave (funzione, opzionale — vedi doc più sopra):
+          richiamata da _advance() e _markDone() subito prima di lasciare
+          il passo corrente. Il passo del dialogo la usa per chiuderlo per
+          davvero simulando un click reale su "No, continua" — riusa la
+          logica vera già scritta in goCoursesFromApp()
+          (game-engine-state.js), zero duplicazione.
+       3) Nuovo passo richiesto, focus sul tasto logout (.cs-logout-btn),
+          inserito subito dopo il passo del dialogo e prima di "Tour
+          completato" (Direttore 30/31, Docente 20/21). Stesso trattamento
+          blockClicks del punto 1 (pulsante vero, uscita immediata
+          dall'account: non deve essere azionabile per sbaglio durante il
+          tour) — qui senza onLeave, perché il passo non apre nulla e
+          blockClicks da solo basta a neutralizzare l'unico effetto
+          collaterale possibile.
+     Nessuna modifica a app.js/game-engine-state.js/index.html/CSS: tutto
+     contenuto in onboarding.js (motore + step-data).
+
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
 
@@ -471,6 +504,20 @@ const OnboardingTour = (function () {
   }
 
   function _markDone() {
+    // v2.5.1 — copre l'uscita via "Salta il tour" mentre il passo attivo
+    // ha un onLeave (es. il dialogo cambio-aula bloccato da blockClicks):
+    // _advance() gestisce il caso "avanzamento normale", ma il pulsante
+    // Salta chiama _markDone() direttamente, bypassando _advance().
+    // Guardia su _state.idx < list.length: quando _markDone() arriva QUI
+    // già chiamata da _advance() (fine naturale del tour), _state.idx è
+    // già oltre l'ultimo passo — nessun onLeave da richiamare due volte.
+    if (!_state.done) {
+      const list = _stepList();
+      const curDef = _state.idx < list.length ? list[_state.idx] : null;
+      if (curDef && typeof curDef.onLeave === 'function') {
+        try { curDef.onLeave(); } catch (e) {}
+      }
+    }
     _state.done = true;
     _save();
     _teardown();
@@ -522,6 +569,27 @@ const OnboardingTour = (function () {
                non deve far avanzare il tour da solo — ma il target
                non deve comunque restare nascosto dietro un riquadro
                nero (v2.1.2, richiesta esplicita utente).
+       blockClicks  (opzionale, v2.5.1, solo insieme a revealTarget:true)
+               → true aggiunge uno "scudo" trasparente sopra ciascun
+               target, con lo stesso rettangolo del buco nel velo:
+               il target resta visibile (il buco c'è comunque, per
+               via di revealTarget) ma i click reali su di esso
+               vengono intercettati e ignorati invece di raggiungere
+               l'elemento vero sottostante. Usato quando il target è
+               un elemento REALE e funzionante che però, in questo
+               punto specifico del tour, non deve poter essere
+               azionato per davvero (es. i due pulsanti di un dialogo
+               di conferma reale, dove nessuno dei due deve poter
+               essere premuto sul serio finché il tour è a questo
+               passo — richiesta esplicita utente).
+       onLeave (opzionale) → funzione richiamata una sola volta,
+               subito PRIMA di lasciare questo passo (sia avanzando
+               col pulsante Avanti, sia con "Salta il tour" mentre il
+               passo è quello attivo). Serve a ripulire un effetto
+               collaterale reale innescato da questo stesso passo (es.
+               chiudere per davvero un dialogo reale rimasto aperto
+               perché blockClicks impediva di chiuderlo cliccandolo
+               per davvero) — vedi _advance()/_markDone() più sotto.
   ================================================ */
   const DIRECTOR_STEPS = [
     { screen:'dashboard', target:'.dd-aule', type:'action',
@@ -639,9 +707,33 @@ const OnboardingTour = (function () {
     { screen:'homeCategory', target:'.logo-wrap', type:'action',
       title:'Il logo PixelProf 🔄',
       body:'Premilo in alto a sinistra per uscire da questa aula e sceglierne un\'altra.' },
-    { screen:'homeCategory', target:'#pp-dialog-no, #pp-dialog-yes', type:'info', revealTarget:true,
+    { screen:'homeCategory', target:'#pp-dialog-no, #pp-dialog-yes', type:'info', revealTarget:true, blockClicks:true,
       title:'Scegli cosa fare ✅',
-      body:'"No, continua" annulla e resta qui; "Sì, cambia aula" ti porta alla schermata di selezione aule.' },
+      body:'"No, continua" annulla e resta qui; "Sì, cambia aula" ti porta alla schermata di selezione aule.',
+      // v2.5.1 — richiesta esplicita utente: il dialogo è vero (aperto dal
+      // passo precedente) ma i suoi due pulsanti non devono essere
+      // azionabili per davvero durante questo passo, solo "Avanti" deve
+      // far proseguire il tour (blockClicks, vedi doc più sopra). Se il
+      // dialogo è ancora aperto quando si lascia questo passo, onLeave lo
+      // chiude per davvero simulando un click reale su "No, continua":
+      // riusa la logica vera già scritta in goCoursesFromApp()
+      // (game-engine-state.js), niente da duplicare qui.
+      onLeave: function () {
+        var overlay = document.getElementById('pp-dialog-overlay');
+        var noBtn = document.getElementById('pp-dialog-no');
+        if (overlay && !overlay.classList.contains('hidden') && noBtn) { noBtn.click(); }
+      } },
+    // v2.5.1 — nuovo passo richiesto: focus sul tasto logout, subito
+    // prima della chiusura del tour. blockClicks:true come sopra: il
+    // pulsante è vero e realmente funzionante (uscita immediata
+    // dall'account), quindi non deve poter essere azionato per sbaglio
+    // solo perché il tour lo sta mostrando — nessun onLeave necessario
+    // qui: a differenza del passo del dialogo, questo passo non apre
+    // nulla, blockClicks da solo basta a impedire l'unico effetto
+    // collaterale possibile (il logout stesso).
+    { screen:'homeCategory', target:'.cs-logout-btn', type:'info', revealTarget:true, blockClicks:true,
+      title:'Esci dall\'account 🚪',
+      body:'Il pulsante per uscire dal tuo account, sempre disponibile. Per ora premi "Avanti" per continuare il tour.' },
     { screen:'homeCategory', target:'.cat-grid', type:'info',
       title:'Tour completato! 🎉',
       body:'Ora conosci tutti gli strumenti di PixelProf. Buona lezione!' },
@@ -732,9 +824,19 @@ const OnboardingTour = (function () {
     { screen:'homeCategory', target:'.logo-wrap', type:'action',
       title:'Il logo PixelProf 🔄',
       body:'Premilo in alto a sinistra per uscire da questa aula e sceglierne un\'altra.' },
-    { screen:'homeCategory', target:'#pp-dialog-no, #pp-dialog-yes', type:'info', revealTarget:true,
+    { screen:'homeCategory', target:'#pp-dialog-no, #pp-dialog-yes', type:'info', revealTarget:true, blockClicks:true,
       title:'Scegli cosa fare ✅',
-      body:'"No, continua" annulla e resta qui; "Sì, cambia aula" ti porta alla schermata di selezione aule.' },
+      body:'"No, continua" annulla e resta qui; "Sì, cambia aula" ti porta alla schermata di selezione aule.',
+      // v2.5.1 — vedi commento gemello in DIRECTOR_STEPS più sopra.
+      onLeave: function () {
+        var overlay = document.getElementById('pp-dialog-overlay');
+        var noBtn = document.getElementById('pp-dialog-no');
+        if (overlay && !overlay.classList.contains('hidden') && noBtn) { noBtn.click(); }
+      } },
+    // v2.5.1 — vedi commento gemello in DIRECTOR_STEPS più sopra.
+    { screen:'homeCategory', target:'.cs-logout-btn', type:'info', revealTarget:true, blockClicks:true,
+      title:'Esci dall\'account 🚪',
+      body:'Il pulsante per uscire dal tuo account, sempre disponibile. Per ora premi "Avanti" per continuare il tour.' },
     { screen:'homeCategory', target:'.cat-grid', type:'info',
       title:'Tour completato! 🎉',
       body:'Ora conosci tutti gli strumenti di PixelProf. Buona lezione!' },
@@ -831,6 +933,11 @@ const OnboardingTour = (function () {
   function _advance() {
     const list = _stepList();
     const prevDef = list[_state.idx];
+    // v2.5.1 — vedi doc di onLeave più sopra: richiamata qui, prima di
+    // lasciare davvero il passo, per il percorso "Avanti"/"Fatto".
+    if (prevDef && typeof prevDef.onLeave === 'function') {
+      try { prevDef.onLeave(); } catch (e) {}
+    }
     _state.idx++;
     _save();
     _renderedIdx = -1;
@@ -935,6 +1042,22 @@ const OnboardingTour = (function () {
       return r;
     });
 
+    // v2.5.1 — blockClicks: uno "scudo" trasparente per target, posizionato
+    // esattamente sul buco del velo (vedi _position()). Sta sopra il target
+    // reale (z-index) e intercetta il click prima che lo raggiunga, senza
+    // coprirlo visivamente (background trasparente: il buco resta visibile
+    // come con un revealTarget normale). Il target resta quindi visibile
+    // ma non azionabile per davvero — l'unico avanzamento resta "Avanti".
+    const blockClicks = def.blockClicks === true;
+    const shields = blockClicks ? targets.map(() => {
+      const s = document.createElement('div');
+      s.style.cssText = 'position:fixed;z-index:9865;background:transparent;cursor:not-allowed;';
+      s.addEventListener('click', (e) => { e.preventDefault(); e.stopPropagation(); }, true);
+      document.body.appendChild(s);
+      _domNodes.push(s);
+      return s;
+    }) : [];
+
     const tooltip = document.createElement('div');
     tooltip.className = 'onb-tooltip';
     tooltip.setAttribute('role', 'dialog');
@@ -964,6 +1087,13 @@ const OnboardingTour = (function () {
         ring.style.left   = (r.left - pad) + 'px';
         ring.style.width  = (r.width + pad * 2) + 'px';
         ring.style.height = (r.height + pad * 2) + 'px';
+        if (blockClicks) {
+          const s = shields[i];
+          s.style.top    = ring.style.top;
+          s.style.left   = ring.style.left;
+          s.style.width  = ring.style.width;
+          s.style.height = ring.style.height;
+        }
       });
 
       // 'action' (sempre) e 'info' con revealTarget:true → buco reale nel

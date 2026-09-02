@@ -1,8 +1,19 @@
 /* ==================================================
-   flip-card.js — PixelProf v8.19.3 (Didattica · Flip Card)
+   flip-card.js — PixelProf v8.20.0 (Didattica · Flip Card)
    Prima "attività didattica" di PixelProf, accanto ai
    Minigiochi: mazzo di carte domanda/risposta con flip 3D,
    caricato da CSV dedicati per modulo + livello.
+
+   v8.20.0: richiesta esplicita utente, indipendente dal tour guidato —
+   torna ai moduli/Hub (Classifica/Progressi/Storico/Panoramica Classe/
+   Traguardi) ora chiedono conferma prima di interrompere una sessione
+   Flip Card attiva, stessa UX già presente per i minigiochi (isGameActive
+   + ppConfirm) e per il pulsante Esci di questo file (ppConfirmBox).
+   Nuove isFlipCardActive()/confirmExitFlipCard() qui; goHome()/goTab()
+   in game-engine-state.js le richiamano con un ramo aggiuntivo ciascuna —
+   ESPANSIONE DI SCOPO ESPLICITA, rompe volutamente l'isolamento
+   dichiarato più sotto ("nessuna riga aggiunta ai file core"): vedi
+   commento esteso sopra isFlipCardActive() per il perché è inevitabile.
 
    v8.19.3: bug segnalato — anche il tasto Hub (apre il menu con
    Classifica/Progressi/Storico/Panoramica Classe) soffriva dello stesso
@@ -37,9 +48,14 @@
    isolato: chiamano solo l'API pubblica già esposta da
    window.OnboardingTour, nessuna modifica ai file core.
 
-   File interamente isolato: nessuna riga di questa
-   funzionalità è stata aggiunta ai file "core" di PixelProf
-   (game-engine-state.js, app.js, ecc.) — vengono solo letti.
+   File isolato FINO a v8.19.x: nessuna riga di quelle
+   funzionalità era stata aggiunta ai file "core" di PixelProf
+   (game-engine-state.js, app.js, ecc.) — venivano solo letti.
+   Da v8.20.0 non è più vero al 100%: goHome()/goTab() in
+   game-engine-state.js hanno un ramo aggiuntivo ciascuna (vedi
+   changelog v8.20.0 più sopra) — scelta consapevole, l'unico
+   punto dove intercettare quei 6 pulsanti è dove già decidono
+   se confermare per i minigiochi.
 
    v8.17.0: introdotto lo step "scegli livello" (Facile/Medio)
    tra la card "Flip Card" e il mazzo. Ogni modulo è ora
@@ -251,6 +267,55 @@ function exitFlipCard(){
   setTb(null);
   showScreen('tab-home');
   goStep('didattica');
+}
+
+/* v8.20.0 — richiesta esplicita utente (indipendente dal tour): durante
+   una partita ai minigiochi attiva, i pulsanti Hub (Classifica/Progressi/
+   Storico/Panoramica Classe/Traguardi) e "torna ai moduli" chiedono
+   sempre conferma prima di interrompere — vedi isGameActive()/ppConfirm()
+   in game-engine-state.js, richiamati da goHome()/goTab() lì. Durante
+   una sessione Flip Card attiva questo non accadeva mai: Flip Card non
+   tocca gameState (usa fcState, sistema separato), quindi isGameActive()
+   non la vede mai attiva.
+   ESPANSIONE DI SCOPO ESPLICITA: per intercettare questi 6 pulsanti serve
+   toccare goHome()/goTab() in game-engine-state.js — sono loro a
+   decidere se confermare, stessa cosa già succede per i minigiochi.
+   Rompe volutamente l'isolamento dichiarato in testa a questo file
+   ("nessuna riga aggiunta ai file core"): inevitabile per questa
+   richiesta, non c'è modo di intercettarli altrove. Modifica lì ridotta
+   al minimo indispensabile: un solo ramo aggiuntivo per funzione, che si
+   limita a richiamare le due funzioni qui sotto — tutta la conoscenza di
+   cosa sia "Flip Card attiva" e come si comunica resta qui.
+   isFlipCardActive(): vero solo quando ci sono DAVVERO carte in
+   visualizzazione (fcState valorizzato) — non durante lo step "scegli
+   livello" (ancora nessun mazzo caricato, come lo step di setup/scelta
+   modalità dei minigiochi, dove infatti isGameActive() è false a sua
+   volta: nessuna "sessione" ancora da perdere) né durante il breve gap
+   di caricamento (fcState non è ancora stato valorizzato in quel momento
+   — coerente col fix v8.19.2/v8.19.3 qui sopra, che copre esattamente
+   quella finestra separatamente, solo durante il tour). */
+function isFlipCardActive(){
+  return document.getElementById('tab-games')?.classList.contains('active') && fcState !== null;
+}
+
+/* Stessa identica UX del pulsante Esci (ppConfirmBox, "Uscire da Flip
+   Card?"): unica differenza, il testo non presuppone dove si finisce
+   dopo (qui può essere ai moduli, in Classifica, ecc. — non sempre "la
+   scelta del metodo di studio" come per exitFlipCardConfirm()). Se
+   confermato, azzera fcState (nessun'altra pulizia di stato serve: Flip
+   Card non ha timer/punteggio) e poi esegue davvero la navigazione
+   originale, passata da game-engine-state.js. */
+async function confirmExitFlipCard(continueFn){
+  const ok = await ppConfirmBox('Stai per lasciare la sessione Flip Card in corso.', {
+    title: 'Uscire da Flip Card?',
+    icon: '📖',
+    yesLabel: 'Sì, esci',
+    noLabel: 'Annulla',
+  });
+  if(ok){
+    fcState = null;
+    continueFn();
+  }
 }
 
 /* Uscita dalla sessione attiva: chiede conferma, come richiesto,

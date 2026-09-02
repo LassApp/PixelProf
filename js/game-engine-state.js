@@ -1407,6 +1407,17 @@ function goHome(){
     ppConfirm(()=>{resetSessionState();setTb('tb-home');showScreen('tab-home');goStep('mod');});
     return;
   }
+  // v8.20.0 (flip-card.js) — richiesta esplicita utente, indipendente dal
+  // tour: stessa conferma dei minigiochi, ora anche per una sessione Flip
+  // Card attiva. isFlipCardActive()/confirmExitFlipCard() vivono in
+  // flip-card.js (unico file che conosce fcState) — qui solo l'aggancio,
+  // guardia typeof per restare sicuro anche se quel file non fosse
+  // caricato. Vedi commento esteso in flip-card.js per il perché tocca
+  // questo file "core".
+  if(typeof isFlipCardActive === 'function' && isFlipCardActive()){
+    confirmExitFlipCard(()=>{resetSessionState();setTb('tb-home');showScreen('tab-home');goStep('mod');});
+    return;
+  }
   resetSessionState();setTb('tb-home');showScreen('tab-home');goStep('mod');
 }
 
@@ -1455,6 +1466,11 @@ function goCoursesFromApp(){
 function goTab(t){
   if(isGameActive()){
     ppConfirm(()=>{_doGoTab(t);});
+    return;
+  }
+  // v8.20.0 (flip-card.js) — vedi commento gemello in goHome() più sopra.
+  if(typeof isFlipCardActive === 'function' && isFlipCardActive()){
+    confirmExitFlipCard(()=>{_doGoTab(t);});
     return;
   }
   _doGoTab(t);

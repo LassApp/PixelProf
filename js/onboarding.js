@@ -402,6 +402,16 @@
           tour) — qui senza onLeave, perché il passo non apre nulla e
           blockClicks da solo basta a neutralizzare l'unico effetto
           collaterale possibile.
+       4) Richiesta successiva: anche il passo "Torna ai moduli 🏫"
+          (#tb-course-badge) aveva lo stesso problema del punto 1 — è
+          l'unico momento dell'intero tour in cui quel pulsante ha
+          davvero un buco nel velo (fuori da questo passo il velo lo
+          copre già come qualsiasi altro elemento della pagina, quindi è
+          già di fatto non cliccabile). Stesso trattamento del punto 3:
+          aggiunto blockClicks:true, nessun onLeave necessario (nessun
+          effetto collaterale da annullare, il click viene semplicemente
+          ignorato). Testo del passo aggiornato di conseguenza (non più
+          "premilo in qualsiasi momento", ma invito a usare "Avanti").
      Nessuna modifica a app.js/game-engine-state.js/index.html/CSS: tutto
      contenuto in onboarding.js (motore + step-data).
 
@@ -701,9 +711,9 @@ const OnboardingTour = (function () {
     { screen:'homeCategory', target:'.audio-toggle-btn:not(.theme-toggle-btn)', type:'info', revealTarget:true,
       title:'Audio on/off 🔊',
       body:'Attiva o disattiva gli effetti sonori del gioco quando vuoi.' },
-    { screen:'homeCategory', target:'#tb-course-badge', type:'info', revealTarget:true,
+    { screen:'homeCategory', target:'#tb-course-badge', type:'info', revealTarget:true, blockClicks:true,
       title:'Torna ai moduli 🏫',
-      body:'Il nome dell\'aula in alto: premilo in qualsiasi momento per tornare alla scelta dei moduli.' },
+      body:'Il nome dell\'aula in alto: da qui puoi sempre tornare alla scelta dei moduli. Per ora premi "Avanti" per continuare il tour.' },
     { screen:'homeCategory', target:'.logo-wrap', type:'action',
       title:'Il logo PixelProf 🔄',
       body:'Premilo in alto a sinistra per uscire da questa aula e sceglierne un\'altra.' },
@@ -818,9 +828,9 @@ const OnboardingTour = (function () {
     { screen:'homeCategory', target:'.audio-toggle-btn:not(.theme-toggle-btn)', type:'info', revealTarget:true,
       title:'Audio on/off 🔊',
       body:'Attiva o disattiva gli effetti sonori del gioco quando vuoi.' },
-    { screen:'homeCategory', target:'#tb-course-badge', type:'info', revealTarget:true,
+    { screen:'homeCategory', target:'#tb-course-badge', type:'info', revealTarget:true, blockClicks:true,
       title:'Torna ai moduli 🏫',
-      body:'Il nome dell\'aula in alto: premilo in qualsiasi momento per tornare alla scelta dei moduli.' },
+      body:'Il nome dell\'aula in alto: da qui puoi sempre tornare alla scelta dei moduli. Per ora premi "Avanti" per continuare il tour.' },
     { screen:'homeCategory', target:'.logo-wrap', type:'action',
       title:'Il logo PixelProf 🔄',
       body:'Premilo in alto a sinistra per uscire da questa aula e sceglierne un\'altra.' },

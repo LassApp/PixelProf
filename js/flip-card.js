@@ -1,8 +1,16 @@
 /* ==================================================
-   flip-card.js — PixelProf v8.19.2 (Didattica · Flip Card)
+   flip-card.js — PixelProf v8.19.3 (Didattica · Flip Card)
    Prima "attività didattica" di PixelProf, accanto ai
    Minigiochi: mazzo di carte domanda/risposta con flip 3D,
    caricato da CSV dedicati per modulo + livello.
+
+   v8.19.3: bug segnalato — anche il tasto Hub (apre il menu con
+   Classifica/Progressi/Storico/Panoramica Classe) soffriva dello stesso
+   problema del v8.19.2 qui sotto: durante il gap di caricamento restava
+   cliccabile per davvero, e da lì si poteva navigare via da Flip Card
+   (es. verso Classifica) rompendo il tour. Aggiunto #tb-hub-btn a
+   FC_TOUR_RISK_SELECTORS — stesso identico meccanismo, nessun altro
+   cambiamento.
 
    v8.19.2: bug segnalato — gap di 1-2s tra l'avanzamento del tour
    guidato al click sulla card livello e il caricamento reale del mazzo
@@ -383,16 +391,21 @@ function fcSelLevel(liv){
    ma il tour non ha ancora renderizzato il passo "flipcardExit"
    (showFlipCardExitStep() arriva solo a caricamento concluso, dentro
    _renderFlipCard()), quindi né l'Esci né la topbar (torna ai
-   moduli/logo PixelProf/logout) hanno alcuna protezione: un click reale
-   su uno di questi 4 pulsanti naviga per davvero altrove mentre il tour
-   è già avanzato internamente al passo successivo — tour irrecuperabile.
-   Congela/scongela SOLO questi 4 selettori, SOLO durante il gap
+   moduli/logo PixelProf/logout/Hub — v8.19.3) hanno alcuna protezione:
+   un click reale su uno di questi pulsanti naviga per davvero altrove
+   mentre il tour è già avanzato internamente al passo successivo — tour
+   irrecuperabile.
+   v8.19.3 — bug segnalato: anche il tasto Hub (apre il menu con
+   Classifica/Progressi/Storico/Panoramica Classe, ognuna delle quali
+   naviga via da Flip Card) soffriva dello stesso problema — aggiunto
+   alla lista, stesso trattamento identico agli altri 4.
+   Congela/scongela SOLO questi 5 selettori, SOLO durante il gap
    (chiamato da startFlipCard() più sotto): pointer-events + opacità,
    stesso linguaggio visivo già usato qui sotto per le card livello
    disabilitate (style="opacity:.4;cursor:not-allowed"). dataset come
    guardia anti-doppio-congelamento e per ripristinare l'esatto valore
    inline precedente (di norma nessuno, ma non si sa mai). */
-const FC_TOUR_RISK_SELECTORS = ['.fc-exit-btn', '#tb-course-badge', '.logo-wrap', '.cs-logout-btn'];
+const FC_TOUR_RISK_SELECTORS = ['.fc-exit-btn', '#tb-course-badge', '.logo-wrap', '.cs-logout-btn', '#tb-hub-btn'];
 
 function _fcFreezeNavForTour(){
   FC_TOUR_RISK_SELECTORS.forEach(sel => {

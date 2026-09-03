@@ -35,6 +35,29 @@
      domande?" (5/10/15/20/Tutte) non veniva mai mostrato
      e la partita usava sempre l'intero pool JSON del
      modulo (vedi anche game-fill.js v4.0.9).
+   v5.1.0 (app v8.22.0): FIX path di caricamento minigiochi.
+     - _loadOne(): ora accetta moduleMap[mod] come array di
+       path oltre che stringa singola — fetch in parallelo +
+       merge dei risultati normalizzati. Retrocompatibile al
+       100% con i path singoli esistenti.
+     - CE/OE: passati da 1 file flat a 4 file (uno per
+       sotto-modulo, in data/Minigiochi/ECDL/<Area>/moduloN/)
+       fusi in un unico pool — contenuto reale caricato da
+       Erasmo, sostituisce il vecchio data/quiz|abbina|... .
+     - WP/SS/PP: path "pronti" verso data/Minigiochi/ECDL/
+       <Area>/moduloN/ (5/5/3 sotto-moduli) — JSON non ancora
+       caricati, mostreranno "Errore caricamento" finché non
+       arrivano (atteso, vedi Aree_e_Moduli.md).
+     - Cybersecurity/Reti_e_Internet/Malware: FIX bug — nei 5
+       moduleMap mancava il segmento "Minigiochi/" nel path
+       (root reale è data/Minigiochi/<Area>/..., non
+       data/<Area>/...) — causava "Errore caricamento" su
+       moduli già caricati da Erasmo.
+     - Cyberbullismo (6) e Intelligenza Artificiale (13):
+       aggiunte le 19 chiavi (path futuri, stesso pattern) —
+       "terreno pronto", contentReady resta false finché
+       Erasmo non conferma lo sblocco.
+     Vedi anche areas-config.js (dataPaths, stessa fase).
    This is the central module — loaded before all games.
 ================================================== */
 
@@ -64,17 +87,28 @@ function _createLoader(cfg) {
     const rel = cfg.moduleMap[mod];
     if (!rel) throw new Error(`[${cfg.tag}] Modulo non registrato: "${mod}".`);
 
-    const url = _resolveJsonPath(rel);
-    const resp = await fetch(url);
-    if (!resp.ok) throw new Error(`[${cfg.tag}] HTTP ${resp.status} — ${url}`);
+    // v5.1.0 — moduleMap[mod] può essere un singolo path (string, comportamento
+    // storico) oppure un array di path: in tal caso i file vengono scaricati in
+    // parallelo e i risultati normalizzati concatenati in un unico pool. Serve
+    // per i moduli ECDL (CE/OE/WP/SS/PP) il cui contenuto è ora organizzato in
+    // più file per sotto-modulo (vedi data/Minigiochi/ECDL/<Area>/moduloN/).
+    const relList = Array.isArray(rel) ? rel : [rel];
 
-    let raw;
-    try { raw = await resp.json(); }
-    catch(e) { throw new Error(`[${cfg.tag}] JSON non valido in ${url}: ${e.message}`); }
+    const parts = await Promise.all(relList.map(async (relPath) => {
+      const url = _resolveJsonPath(relPath);
+      const resp = await fetch(url);
+      if (!resp.ok) throw new Error(`[${cfg.tag}] HTTP ${resp.status} — ${url}`);
 
-    if (!cfg.validate(raw)) throw new Error(`[${cfg.tag}] Dati non validi o vuoti in ${url}`);
+      let raw;
+      try { raw = await resp.json(); }
+      catch(e) { throw new Error(`[${cfg.tag}] JSON non valido in ${url}: ${e.message}`); }
 
-    cache[mod] = cfg.normalize(raw, mod);
+      if (!cfg.validate(raw)) throw new Error(`[${cfg.tag}] Dati non validi o vuoti in ${url}`);
+
+      return cfg.normalize(raw, mod);
+    }));
+
+    cache[mod] = parts.flat();
     return cache[mod];
   }
 
@@ -107,28 +141,73 @@ function isCached(mod) {
 /* -- Quiz -- */
 const QuizLoader = _createLoader({
   moduleMap: {
-    CE: 'data/quiz/computer_essentials.json',
-    OE: 'data/quiz/online_essentials.json',
-    WP: 'data/quiz/word_processing.json',
-    SS: 'data/quiz/spreadsheets.json',
-    PP: 'data/quiz/powerpoint.json',
-    'fondamenti-cybersecurity': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/quiz_fondamenti-cybersecurity.json',
-    'sicurezza-account': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/quiz_sicurezza-account.json',
-    'protezione-dati': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/quiz_protezione-dati.json',
-    'sicurezza-quotidiana': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/quiz_sicurezza_quotidiana.json',
-    'sicurezza-pagamenti': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/quiz_sicurezza-pagamenti.json',
-    'privacy-normative': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/quiz_privacy-normative.json',
-    'sicurezza-online-social-network': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/quiz_sicurezza-online-social-network.json',
-    'nuove-minacce-digitali': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/quiz_nuove-minacce-digitali.json',
-    'fondamenta-reti': 'data/Reti_e_Internet/modulo1/quiz_fondamenta-reti.json',
-    'tcp-ip': 'data/Reti_e_Internet/modulo2/quiz_tcp-ip.json',
-    'dns': 'data/Reti_e_Internet/modulo3/quiz_dns.json',
-    'router-switch-dispositivi': 'data/Reti_e_Internet/modulo4/quiz_router-switch-dispositivi.json',
-    'wifi-reti-wireless': 'data/Reti_e_Internet/modulo5/quiz_wifi-reti-wireless.json',
-    'cloud-networking': 'data/Reti_e_Internet/modulo6/quiz_cloud-networking.json',
-    'vpn': 'data/Reti_e_Internet/modulo7/quiz_vpn.json',
-    'troubleshooting-reti': 'data/Reti_e_Internet/modulo8/quiz_troubleshooting-reti.json',
-    'malware-e-minacce-informatiche': 'data/Malware_e_Minacce_Informatiche/modulo1/quiz_malware-e-minacce-informatiche.json',
+    CE: [
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo1/quiz_fondamenti-digitali.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo2/quiz_cpu-architettura.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo3/quiz_memorie.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo4/quiz_software.json',
+    ],
+    OE: [
+      'data/Minigiochi/ECDL/Online_Essentials/modulo1/quiz_rete-e-dati.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo2/quiz_identita-e-comunicazione.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo3/quiz_navigazione-e-tracciamento.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo4/quiz_sicurezza-e-comportamento-online.json',
+    ],
+    WP: [
+      'data/Minigiochi/ECDL/Word_Processing/modulo1/quiz_word-e-ambiente.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo2/quiz_scrivere-e-salvare.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo3/quiz_formattare-il-testo.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo4/quiz_elementi-grafici.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo5/quiz_strutturare-il-documento.json',
+    ],
+    SS: [
+      'data/Minigiochi/ECDL/Spreadsheet/modulo1/quiz_excel-e-l-ambiente-di-lavoro.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo2/quiz_inserire-e-gestire-i-dati.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo3/quiz_formattare-il-foglio.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo4/quiz_formule-e-calcoli.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo5/quiz_organizzare-e-visualizzare-i-dati.json',
+    ],
+    PP: [
+      'data/Minigiochi/ECDL/Presentation/modulo1/quiz_creare-una-presentazione.json',
+      'data/Minigiochi/ECDL/Presentation/modulo2/quiz_oggetti-grafici.json',
+      'data/Minigiochi/ECDL/Presentation/modulo3/quiz_preparare-e-presentare.json',
+    ],
+    'fondamenti-cybersecurity': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/quiz_fondamenti-cybersecurity.json',
+    'sicurezza-account': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/quiz_sicurezza-account.json',
+    'protezione-dati': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/quiz_protezione-dati.json',
+    'sicurezza-quotidiana': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/quiz_sicurezza_quotidiana.json',
+    'sicurezza-pagamenti': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/quiz_sicurezza-pagamenti.json',
+    'privacy-normative': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/quiz_privacy-normative.json',
+    'sicurezza-online-social-network': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/quiz_sicurezza-online-social-network.json',
+    'nuove-minacce-digitali': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/quiz_nuove-minacce-digitali.json',
+    'fondamenta-reti': 'data/Minigiochi/Reti_e_Internet/modulo1/quiz_fondamenta-reti.json',
+    'tcp-ip': 'data/Minigiochi/Reti_e_Internet/modulo2/quiz_tcp-ip.json',
+    'dns': 'data/Minigiochi/Reti_e_Internet/modulo3/quiz_dns.json',
+    'router-switch-dispositivi': 'data/Minigiochi/Reti_e_Internet/modulo4/quiz_router-switch-dispositivi.json',
+    'wifi-reti-wireless': 'data/Minigiochi/Reti_e_Internet/modulo5/quiz_wifi-reti-wireless.json',
+    'cloud-networking': 'data/Minigiochi/Reti_e_Internet/modulo6/quiz_cloud-networking.json',
+    'vpn': 'data/Minigiochi/Reti_e_Internet/modulo7/quiz_vpn.json',
+    'troubleshooting-reti': 'data/Minigiochi/Reti_e_Internet/modulo8/quiz_troubleshooting-reti.json',
+    'malware-e-minacce-informatiche': 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/quiz_malware-e-minacce-informatiche.json',
+    'identita-reputazione-digitale': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/quiz_identita-reputazione-digitale.json',
+    'cyberbullismo': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/quiz_cyberbullismo.json',
+    'hate-speech': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/quiz_hate-speech.json',
+    'sexting-revenge-porn': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/quiz_sexting-revenge-porn.json',
+    'grooming': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/quiz_grooming.json',
+    'difendersi-online': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/quiz_difendersi-online.json',
+    'cos-e-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo1/quiz_cos-e-ai.json',
+    'come-funziona-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo2/quiz_come-funziona-ai.json',
+    'llm-fondamenti': 'data/Minigiochi/Intelligenza_Artificiale/modulo3/quiz_llm-fondamenti.json',
+    'ai-generativa': 'data/Minigiochi/Intelligenza_Artificiale/modulo4/quiz_ai-generativa.json',
+    'prompt-engineering': 'data/Minigiochi/Intelligenza_Artificiale/modulo5/quiz_prompt-engineering.json',
+    'agenti-automazione': 'data/Minigiochi/Intelligenza_Artificiale/modulo6/quiz_agenti-automazione.json',
+    'deepfake-contenuti-sintetici': 'data/Minigiochi/Intelligenza_Artificiale/modulo7/quiz_deepfake-contenuti-sintetici.json',
+    'provenienza-contenuti': 'data/Minigiochi/Intelligenza_Artificiale/modulo8/quiz_provenienza-contenuti.json',
+    'verificare-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo9/quiz_verificare-ai.json',
+    'etica-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo10/quiz_etica-ai.json',
+    'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/quiz_bias-algoritmici.json',
+    'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/quiz_ai-act.json',
+    'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/quiz_futuro-ai.json',
   },
   tag: 'Quiz',
   validate: raw => Array.isArray(raw) && raw.length > 0,
@@ -140,28 +219,73 @@ const QuizLoader = _createLoader({
 /* -- Speed Quiz -- */
 const SpeedQuizLoader = _createLoader({
   moduleMap: {
-    CE: 'data/speed_quiz/computer_essentials.json',
-    OE: 'data/speed_quiz/online_essentials.json',
-    WP: 'data/speed_quiz/word_processing.json',
-    SS: 'data/speed_quiz/spreadsheets.json',
-    PP: 'data/speed_quiz/powerpoint.json',
-    'fondamenti-cybersecurity': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/speedquiz_fondamenti-cybersecurity.json',
-    'sicurezza-account': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/speedquiz_sicurezza-account.json',
-    'protezione-dati': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/speedquiz_protezione-dati.json',
-    'sicurezza-quotidiana': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/speedquiz_sicurezza_quotidiana.json',
-    'sicurezza-pagamenti': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/speedquiz_sicurezza-pagamenti.json',
-    'privacy-normative': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/speedquiz_privacy-normative.json',
-    'sicurezza-online-social-network': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/speedquiz_sicurezza-online-social-network.json',
-    'nuove-minacce-digitali': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/speedquiz_nuove-minacce-digitali.json',
-    'fondamenta-reti': 'data/Reti_e_Internet/modulo1/speedquiz_fondamenta-reti.json',
-    'tcp-ip': 'data/Reti_e_Internet/modulo2/speedquiz_tcp-ip.json',
-    'dns': 'data/Reti_e_Internet/modulo3/speedquiz_dns.json',
-    'router-switch-dispositivi': 'data/Reti_e_Internet/modulo4/speedquiz_router-switch-dispositivi.json',
-    'wifi-reti-wireless': 'data/Reti_e_Internet/modulo5/speedquiz_wifi-reti-wireless.json',
-    'cloud-networking': 'data/Reti_e_Internet/modulo6/speedquiz_cloud-networking.json',
-    'vpn': 'data/Reti_e_Internet/modulo7/speedquiz_vpn.json',
-    'troubleshooting-reti': 'data/Reti_e_Internet/modulo8/speedquiz_troubleshooting-reti.json',
-    'malware-e-minacce-informatiche': 'data/Malware_e_Minacce_Informatiche/modulo1/speedquiz_malware-e-minacce-informatiche.json',
+    CE: [
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo1/speedquiz_fondamenti-digitali.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo2/speedquiz_cpu-architettura.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo3/speedquiz_memorie.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo4/speedquiz_software.json',
+    ],
+    OE: [
+      'data/Minigiochi/ECDL/Online_Essentials/modulo1/speedquiz_rete-e-dati.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo2/speedquiz_identita-e-comunicazione.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo3/speedquiz_navigazione-e-tracciamento.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo4/speedquiz_sicurezza-e-comportamento-online.json',
+    ],
+    WP: [
+      'data/Minigiochi/ECDL/Word_Processing/modulo1/speedquiz_word-e-ambiente.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo2/speedquiz_scrivere-e-salvare.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo3/speedquiz_formattare-il-testo.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo4/speedquiz_elementi-grafici.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo5/speedquiz_strutturare-il-documento.json',
+    ],
+    SS: [
+      'data/Minigiochi/ECDL/Spreadsheet/modulo1/speedquiz_excel-e-l-ambiente-di-lavoro.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo2/speedquiz_inserire-e-gestire-i-dati.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo3/speedquiz_formattare-il-foglio.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo4/speedquiz_formule-e-calcoli.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo5/speedquiz_organizzare-e-visualizzare-i-dati.json',
+    ],
+    PP: [
+      'data/Minigiochi/ECDL/Presentation/modulo1/speedquiz_creare-una-presentazione.json',
+      'data/Minigiochi/ECDL/Presentation/modulo2/speedquiz_oggetti-grafici.json',
+      'data/Minigiochi/ECDL/Presentation/modulo3/speedquiz_preparare-e-presentare.json',
+    ],
+    'fondamenti-cybersecurity': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/speedquiz_fondamenti-cybersecurity.json',
+    'sicurezza-account': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/speedquiz_sicurezza-account.json',
+    'protezione-dati': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/speedquiz_protezione-dati.json',
+    'sicurezza-quotidiana': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/speedquiz_sicurezza_quotidiana.json',
+    'sicurezza-pagamenti': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/speedquiz_sicurezza-pagamenti.json',
+    'privacy-normative': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/speedquiz_privacy-normative.json',
+    'sicurezza-online-social-network': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/speedquiz_sicurezza-online-social-network.json',
+    'nuove-minacce-digitali': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/speedquiz_nuove-minacce-digitali.json',
+    'fondamenta-reti': 'data/Minigiochi/Reti_e_Internet/modulo1/speedquiz_fondamenta-reti.json',
+    'tcp-ip': 'data/Minigiochi/Reti_e_Internet/modulo2/speedquiz_tcp-ip.json',
+    'dns': 'data/Minigiochi/Reti_e_Internet/modulo3/speedquiz_dns.json',
+    'router-switch-dispositivi': 'data/Minigiochi/Reti_e_Internet/modulo4/speedquiz_router-switch-dispositivi.json',
+    'wifi-reti-wireless': 'data/Minigiochi/Reti_e_Internet/modulo5/speedquiz_wifi-reti-wireless.json',
+    'cloud-networking': 'data/Minigiochi/Reti_e_Internet/modulo6/speedquiz_cloud-networking.json',
+    'vpn': 'data/Minigiochi/Reti_e_Internet/modulo7/speedquiz_vpn.json',
+    'troubleshooting-reti': 'data/Minigiochi/Reti_e_Internet/modulo8/speedquiz_troubleshooting-reti.json',
+    'malware-e-minacce-informatiche': 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/speedquiz_malware-e-minacce-informatiche.json',
+    'identita-reputazione-digitale': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/speedquiz_identita-reputazione-digitale.json',
+    'cyberbullismo': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/speedquiz_cyberbullismo.json',
+    'hate-speech': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/speedquiz_hate-speech.json',
+    'sexting-revenge-porn': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/speedquiz_sexting-revenge-porn.json',
+    'grooming': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/speedquiz_grooming.json',
+    'difendersi-online': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/speedquiz_difendersi-online.json',
+    'cos-e-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo1/speedquiz_cos-e-ai.json',
+    'come-funziona-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo2/speedquiz_come-funziona-ai.json',
+    'llm-fondamenti': 'data/Minigiochi/Intelligenza_Artificiale/modulo3/speedquiz_llm-fondamenti.json',
+    'ai-generativa': 'data/Minigiochi/Intelligenza_Artificiale/modulo4/speedquiz_ai-generativa.json',
+    'prompt-engineering': 'data/Minigiochi/Intelligenza_Artificiale/modulo5/speedquiz_prompt-engineering.json',
+    'agenti-automazione': 'data/Minigiochi/Intelligenza_Artificiale/modulo6/speedquiz_agenti-automazione.json',
+    'deepfake-contenuti-sintetici': 'data/Minigiochi/Intelligenza_Artificiale/modulo7/speedquiz_deepfake-contenuti-sintetici.json',
+    'provenienza-contenuti': 'data/Minigiochi/Intelligenza_Artificiale/modulo8/speedquiz_provenienza-contenuti.json',
+    'verificare-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo9/speedquiz_verificare-ai.json',
+    'etica-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo10/speedquiz_etica-ai.json',
+    'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/speedquiz_bias-algoritmici.json',
+    'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/speedquiz_ai-act.json',
+    'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/speedquiz_futuro-ai.json',
   },
   tag: 'SpeedQuiz',
   validate: raw => Array.isArray(raw) && raw.length > 0,
@@ -177,28 +301,73 @@ const SpeedQuizLoader = _createLoader({
 // normalize converte entrambi nella stessa forma interna [[{t,d},...],...].
 const AbbinLoader = _createLoader({
   moduleMap: {
-    CE: 'data/abbina/computer_essentials_abbina.json',
-    OE: 'data/abbina/online_essentials_abbina.json',
-    WP: 'data/abbina/word_processing_abbina.json',
-    SS: 'data/abbina/spreadsheets_abbina.json',
-    PP: 'data/abbina/powerpoint_abbina.json',
-    'fondamenti-cybersecurity': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/abbina_fondamenti-cybersecurity.json',
-    'sicurezza-account': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/abbina_sicurezza-account.json',
-    'protezione-dati': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/abbina_protezione-dati.json',
-    'sicurezza-quotidiana': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/abbina_sicurezza_quotidiana.json',
-    'sicurezza-pagamenti': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/abbina_sicurezza-pagamenti.json',
-    'privacy-normative': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/abbina_privacy-normative.json',
-    'sicurezza-online-social-network': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/abbina_sicurezza-online-social-network.json',
-    'nuove-minacce-digitali': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/abbina_nuove-minacce-digitali.json',
-    'fondamenta-reti': 'data/Reti_e_Internet/modulo1/abbina_fondamenta-reti.json',
-    'tcp-ip': 'data/Reti_e_Internet/modulo2/abbina_tcp-ip.json',
-    'dns': 'data/Reti_e_Internet/modulo3/abbina_dns.json',
-    'router-switch-dispositivi': 'data/Reti_e_Internet/modulo4/abbina_router-switch-dispositivi.json',
-    'wifi-reti-wireless': 'data/Reti_e_Internet/modulo5/abbina_wifi-reti-wireless.json',
-    'cloud-networking': 'data/Reti_e_Internet/modulo6/abbina_cloud-networking.json',
-    'vpn': 'data/Reti_e_Internet/modulo7/abbina_vpn.json',
-    'troubleshooting-reti': 'data/Reti_e_Internet/modulo8/abbina_troubleshooting-reti.json',
-    'malware-e-minacce-informatiche': 'data/Malware_e_Minacce_Informatiche/modulo1/abbina_malware-e-minacce-informatiche.json',
+    CE: [
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo1/abbina_fondamenti-digitali.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo2/abbina_cpu-architettura.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo3/abbina_memorie.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo4/abbina_software.json',
+    ],
+    OE: [
+      'data/Minigiochi/ECDL/Online_Essentials/modulo1/abbina_rete-e-dati.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo2/abbina_identita-e-comunicazione.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo3/abbina_navigazione-e-tracciamento.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo4/abbina_sicurezza-e-comportamento-online.json',
+    ],
+    WP: [
+      'data/Minigiochi/ECDL/Word_Processing/modulo1/abbina_word-e-ambiente.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo2/abbina_scrivere-e-salvare.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo3/abbina_formattare-il-testo.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo4/abbina_elementi-grafici.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo5/abbina_strutturare-il-documento.json',
+    ],
+    SS: [
+      'data/Minigiochi/ECDL/Spreadsheet/modulo1/abbina_excel-e-l-ambiente-di-lavoro.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo2/abbina_inserire-e-gestire-i-dati.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo3/abbina_formattare-il-foglio.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo4/abbina_formule-e-calcoli.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo5/abbina_organizzare-e-visualizzare-i-dati.json',
+    ],
+    PP: [
+      'data/Minigiochi/ECDL/Presentation/modulo1/abbina_creare-una-presentazione.json',
+      'data/Minigiochi/ECDL/Presentation/modulo2/abbina_oggetti-grafici.json',
+      'data/Minigiochi/ECDL/Presentation/modulo3/abbina_preparare-e-presentare.json',
+    ],
+    'fondamenti-cybersecurity': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/abbina_fondamenti-cybersecurity.json',
+    'sicurezza-account': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/abbina_sicurezza-account.json',
+    'protezione-dati': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/abbina_protezione-dati.json',
+    'sicurezza-quotidiana': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/abbina_sicurezza_quotidiana.json',
+    'sicurezza-pagamenti': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/abbina_sicurezza-pagamenti.json',
+    'privacy-normative': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/abbina_privacy-normative.json',
+    'sicurezza-online-social-network': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/abbina_sicurezza-online-social-network.json',
+    'nuove-minacce-digitali': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/abbina_nuove-minacce-digitali.json',
+    'fondamenta-reti': 'data/Minigiochi/Reti_e_Internet/modulo1/abbina_fondamenta-reti.json',
+    'tcp-ip': 'data/Minigiochi/Reti_e_Internet/modulo2/abbina_tcp-ip.json',
+    'dns': 'data/Minigiochi/Reti_e_Internet/modulo3/abbina_dns.json',
+    'router-switch-dispositivi': 'data/Minigiochi/Reti_e_Internet/modulo4/abbina_router-switch-dispositivi.json',
+    'wifi-reti-wireless': 'data/Minigiochi/Reti_e_Internet/modulo5/abbina_wifi-reti-wireless.json',
+    'cloud-networking': 'data/Minigiochi/Reti_e_Internet/modulo6/abbina_cloud-networking.json',
+    'vpn': 'data/Minigiochi/Reti_e_Internet/modulo7/abbina_vpn.json',
+    'troubleshooting-reti': 'data/Minigiochi/Reti_e_Internet/modulo8/abbina_troubleshooting-reti.json',
+    'malware-e-minacce-informatiche': 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/abbina_malware-e-minacce-informatiche.json',
+    'identita-reputazione-digitale': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/abbina_identita-reputazione-digitale.json',
+    'cyberbullismo': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/abbina_cyberbullismo.json',
+    'hate-speech': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/abbina_hate-speech.json',
+    'sexting-revenge-porn': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/abbina_sexting-revenge-porn.json',
+    'grooming': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/abbina_grooming.json',
+    'difendersi-online': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/abbina_difendersi-online.json',
+    'cos-e-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo1/abbina_cos-e-ai.json',
+    'come-funziona-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo2/abbina_come-funziona-ai.json',
+    'llm-fondamenti': 'data/Minigiochi/Intelligenza_Artificiale/modulo3/abbina_llm-fondamenti.json',
+    'ai-generativa': 'data/Minigiochi/Intelligenza_Artificiale/modulo4/abbina_ai-generativa.json',
+    'prompt-engineering': 'data/Minigiochi/Intelligenza_Artificiale/modulo5/abbina_prompt-engineering.json',
+    'agenti-automazione': 'data/Minigiochi/Intelligenza_Artificiale/modulo6/abbina_agenti-automazione.json',
+    'deepfake-contenuti-sintetici': 'data/Minigiochi/Intelligenza_Artificiale/modulo7/abbina_deepfake-contenuti-sintetici.json',
+    'provenienza-contenuti': 'data/Minigiochi/Intelligenza_Artificiale/modulo8/abbina_provenienza-contenuti.json',
+    'verificare-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo9/abbina_verificare-ai.json',
+    'etica-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo10/abbina_etica-ai.json',
+    'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/abbina_bias-algoritmici.json',
+    'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/abbina_ai-act.json',
+    'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/abbina_futuro-ai.json',
   },
   tag: 'Abbina',
   validate: raw => {
@@ -229,28 +398,73 @@ const MemoryLoader = _createLoader({
 /* -- Completa la frase -- */
 const CompletaFraseLoader = _createLoader({
   moduleMap: {
-    CE: 'data/completa_frase/computer_essentials_completa_frase.json',
-    OE: 'data/completa_frase/online_essentials_completa_frase.json',
-    WP: 'data/completa_frase/word_processing_completa_frase.json',
-    SS: 'data/completa_frase/spreadsheets_completa_frase.json',
-    PP: 'data/completa_frase/powerpoint_completa_frase.json',
-    'fondamenti-cybersecurity': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/completa_la_frase_fondamenti-cybersecurity.json',
-    'sicurezza-account': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/completa_la_frase_sicurezza-account.json',
-    'protezione-dati': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/completa_la_frase_protezione-dati.json',
-    'sicurezza-quotidiana': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/completa_la_frase_sicurezza_quotidiana.json',
-    'sicurezza-pagamenti': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/completa_la_frase_sicurezza-pagamenti.json',
-    'privacy-normative': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/completa_la_frase_privacy-normative.json',
-    'sicurezza-online-social-network': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/completa_la_frase_sicurezza-online-social-network.json',
-    'nuove-minacce-digitali': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/completa_la_frase_nuove-minacce-digitali.json',
-    'fondamenta-reti': 'data/Reti_e_Internet/modulo1/completa_la_frase_fondamenta-reti.json',
-    'tcp-ip': 'data/Reti_e_Internet/modulo2/completa_la_frase_tcp-ip.json',
-    'dns': 'data/Reti_e_Internet/modulo3/completa_la_frase_dns.json',
-    'router-switch-dispositivi': 'data/Reti_e_Internet/modulo4/completa_la_frase_router-switch-dispositivi.json',
-    'wifi-reti-wireless': 'data/Reti_e_Internet/modulo5/completa_la_frase_wifi-reti-wireless.json',
-    'cloud-networking': 'data/Reti_e_Internet/modulo6/completa_la_frase_cloud-networking.json',
-    'vpn': 'data/Reti_e_Internet/modulo7/completa_la_frase_vpn.json',
-    'troubleshooting-reti': 'data/Reti_e_Internet/modulo8/completa_la_frase_troubleshooting-reti.json',
-    'malware-e-minacce-informatiche': 'data/Malware_e_Minacce_Informatiche/modulo1/completa_la_frase_malware-e-minacce-informatiche.json',
+    CE: [
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo1/completa_la_frase_fondamenti-digitali.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo2/completa_la_frase_cpu-architettura.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo3/completa_la_frase_memorie.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo4/completa_la_frase_software.json',
+    ],
+    OE: [
+      'data/Minigiochi/ECDL/Online_Essentials/modulo1/completa_la_frase_rete-e-dati.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo2/completa_la_frase_identita-e-comunicazione.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo3/completa_la_frase_navigazione-e-tracciamento.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo4/completa_la_frase_sicurezza-e-comportamento-online.json',
+    ],
+    WP: [
+      'data/Minigiochi/ECDL/Word_Processing/modulo1/completa_la_frase_word-e-ambiente.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo2/completa_la_frase_scrivere-e-salvare.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo3/completa_la_frase_formattare-il-testo.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo4/completa_la_frase_elementi-grafici.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo5/completa_la_frase_strutturare-il-documento.json',
+    ],
+    SS: [
+      'data/Minigiochi/ECDL/Spreadsheet/modulo1/completa_la_frase_excel-e-l-ambiente-di-lavoro.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo2/completa_la_frase_inserire-e-gestire-i-dati.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo3/completa_la_frase_formattare-il-foglio.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo4/completa_la_frase_formule-e-calcoli.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo5/completa_la_frase_organizzare-e-visualizzare-i-dati.json',
+    ],
+    PP: [
+      'data/Minigiochi/ECDL/Presentation/modulo1/completa_la_frase_creare-una-presentazione.json',
+      'data/Minigiochi/ECDL/Presentation/modulo2/completa_la_frase_oggetti-grafici.json',
+      'data/Minigiochi/ECDL/Presentation/modulo3/completa_la_frase_preparare-e-presentare.json',
+    ],
+    'fondamenti-cybersecurity': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/completa_la_frase_fondamenti-cybersecurity.json',
+    'sicurezza-account': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/completa_la_frase_sicurezza-account.json',
+    'protezione-dati': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/completa_la_frase_protezione-dati.json',
+    'sicurezza-quotidiana': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/completa_la_frase_sicurezza_quotidiana.json',
+    'sicurezza-pagamenti': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/completa_la_frase_sicurezza-pagamenti.json',
+    'privacy-normative': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/completa_la_frase_privacy-normative.json',
+    'sicurezza-online-social-network': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/completa_la_frase_sicurezza-online-social-network.json',
+    'nuove-minacce-digitali': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/completa_la_frase_nuove-minacce-digitali.json',
+    'fondamenta-reti': 'data/Minigiochi/Reti_e_Internet/modulo1/completa_la_frase_fondamenta-reti.json',
+    'tcp-ip': 'data/Minigiochi/Reti_e_Internet/modulo2/completa_la_frase_tcp-ip.json',
+    'dns': 'data/Minigiochi/Reti_e_Internet/modulo3/completa_la_frase_dns.json',
+    'router-switch-dispositivi': 'data/Minigiochi/Reti_e_Internet/modulo4/completa_la_frase_router-switch-dispositivi.json',
+    'wifi-reti-wireless': 'data/Minigiochi/Reti_e_Internet/modulo5/completa_la_frase_wifi-reti-wireless.json',
+    'cloud-networking': 'data/Minigiochi/Reti_e_Internet/modulo6/completa_la_frase_cloud-networking.json',
+    'vpn': 'data/Minigiochi/Reti_e_Internet/modulo7/completa_la_frase_vpn.json',
+    'troubleshooting-reti': 'data/Minigiochi/Reti_e_Internet/modulo8/completa_la_frase_troubleshooting-reti.json',
+    'malware-e-minacce-informatiche': 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/completa_la_frase_malware-e-minacce-informatiche.json',
+    'identita-reputazione-digitale': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/completa_la_frase_identita-reputazione-digitale.json',
+    'cyberbullismo': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/completa_la_frase_cyberbullismo.json',
+    'hate-speech': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/completa_la_frase_hate-speech.json',
+    'sexting-revenge-porn': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/completa_la_frase_sexting-revenge-porn.json',
+    'grooming': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/completa_la_frase_grooming.json',
+    'difendersi-online': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/completa_la_frase_difendersi-online.json',
+    'cos-e-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo1/completa_la_frase_cos-e-ai.json',
+    'come-funziona-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo2/completa_la_frase_come-funziona-ai.json',
+    'llm-fondamenti': 'data/Minigiochi/Intelligenza_Artificiale/modulo3/completa_la_frase_llm-fondamenti.json',
+    'ai-generativa': 'data/Minigiochi/Intelligenza_Artificiale/modulo4/completa_la_frase_ai-generativa.json',
+    'prompt-engineering': 'data/Minigiochi/Intelligenza_Artificiale/modulo5/completa_la_frase_prompt-engineering.json',
+    'agenti-automazione': 'data/Minigiochi/Intelligenza_Artificiale/modulo6/completa_la_frase_agenti-automazione.json',
+    'deepfake-contenuti-sintetici': 'data/Minigiochi/Intelligenza_Artificiale/modulo7/completa_la_frase_deepfake-contenuti-sintetici.json',
+    'provenienza-contenuti': 'data/Minigiochi/Intelligenza_Artificiale/modulo8/completa_la_frase_provenienza-contenuti.json',
+    'verificare-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo9/completa_la_frase_verificare-ai.json',
+    'etica-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo10/completa_la_frase_etica-ai.json',
+    'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/completa_la_frase_bias-algoritmici.json',
+    'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/completa_la_frase_ai-act.json',
+    'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/completa_la_frase_futuro-ai.json',
   },
   tag: 'CompletaFrase',
   validate: raw => Array.isArray(raw) && raw.length > 0,
@@ -260,28 +474,73 @@ const CompletaFraseLoader = _createLoader({
 /* -- Vero o Falso -- */
 const TrueFalseLoader = _createLoader({
   moduleMap: {
-    CE: 'data/vero_falso/computer_essentials.json',
-    OE: 'data/vero_falso/online_essentials.json',
-    WP: 'data/vero_falso/word_processing.json',
-    SS: 'data/vero_falso/spreadsheets.json',
-    PP: 'data/vero_falso/powerpoint.json',
-    'fondamenti-cybersecurity': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/vero_o_falso_fondamenti-cybersecurity.json',
-    'sicurezza-account': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/vero_o_falso_sicurezza-account.json',
-    'protezione-dati': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/vero_o_falso_protezione-dati.json',
-    'sicurezza-quotidiana': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/vero_o_falso_sicurezza_quotidiana.json',
-    'sicurezza-pagamenti': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/vero_o_falso_sicurezza-pagamenti.json',
-    'privacy-normative': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/vero_o_falso_privacy-normative.json',
-    'sicurezza-online-social-network': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/vero_o_falso_sicurezza-online-social-network.json',
-    'nuove-minacce-digitali': 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/vero_o_falso_nuove-minacce-digitali.json',
-    'fondamenta-reti': 'data/Reti_e_Internet/modulo1/vero_o_falso_fondamenta-reti.json',
-    'tcp-ip': 'data/Reti_e_Internet/modulo2/vero_o_falso_tcp-ip.json',
-    'dns': 'data/Reti_e_Internet/modulo3/vero_o_falso_dns.json',
-    'router-switch-dispositivi': 'data/Reti_e_Internet/modulo4/vero_o_falso_router-switch-dispositivi.json',
-    'wifi-reti-wireless': 'data/Reti_e_Internet/modulo5/vero_o_falso_wifi-reti-wireless.json',
-    'cloud-networking': 'data/Reti_e_Internet/modulo6/vero_o_falso_cloud-networking.json',
-    'vpn': 'data/Reti_e_Internet/modulo7/vero_o_falso_vpn.json',
-    'troubleshooting-reti': 'data/Reti_e_Internet/modulo8/vero_o_falso_troubleshooting-reti.json',
-    'malware-e-minacce-informatiche': 'data/Malware_e_Minacce_Informatiche/modulo1/vero_o_falso_malware-e-minacce-informatiche.json',
+    CE: [
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo1/vero_o_falso_fondamenti-digitali.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo2/vero_o_falso_cpu-architettura.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo3/vero_o_falso_memorie.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo4/vero_o_falso_software.json',
+    ],
+    OE: [
+      'data/Minigiochi/ECDL/Online_Essentials/modulo1/vero_o_falso_rete-e-dati.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo2/vero_o_falso_identita-e-comunicazione.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo3/vero_o_falso_navigazione-e-tracciamento.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo4/vero_o_falso_sicurezza-e-comportamento-online.json',
+    ],
+    WP: [
+      'data/Minigiochi/ECDL/Word_Processing/modulo1/vero_o_falso_word-e-ambiente.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo2/vero_o_falso_scrivere-e-salvare.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo3/vero_o_falso_formattare-il-testo.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo4/vero_o_falso_elementi-grafici.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo5/vero_o_falso_strutturare-il-documento.json',
+    ],
+    SS: [
+      'data/Minigiochi/ECDL/Spreadsheet/modulo1/vero_o_falso_excel-e-l-ambiente-di-lavoro.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo2/vero_o_falso_inserire-e-gestire-i-dati.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo3/vero_o_falso_formattare-il-foglio.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo4/vero_o_falso_formule-e-calcoli.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo5/vero_o_falso_organizzare-e-visualizzare-i-dati.json',
+    ],
+    PP: [
+      'data/Minigiochi/ECDL/Presentation/modulo1/vero_o_falso_creare-una-presentazione.json',
+      'data/Minigiochi/ECDL/Presentation/modulo2/vero_o_falso_oggetti-grafici.json',
+      'data/Minigiochi/ECDL/Presentation/modulo3/vero_o_falso_preparare-e-presentare.json',
+    ],
+    'fondamenti-cybersecurity': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/vero_o_falso_fondamenti-cybersecurity.json',
+    'sicurezza-account': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/vero_o_falso_sicurezza-account.json',
+    'protezione-dati': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/vero_o_falso_protezione-dati.json',
+    'sicurezza-quotidiana': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/vero_o_falso_sicurezza_quotidiana.json',
+    'sicurezza-pagamenti': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/vero_o_falso_sicurezza-pagamenti.json',
+    'privacy-normative': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/vero_o_falso_privacy-normative.json',
+    'sicurezza-online-social-network': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/vero_o_falso_sicurezza-online-social-network.json',
+    'nuove-minacce-digitali': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/vero_o_falso_nuove-minacce-digitali.json',
+    'fondamenta-reti': 'data/Minigiochi/Reti_e_Internet/modulo1/vero_o_falso_fondamenta-reti.json',
+    'tcp-ip': 'data/Minigiochi/Reti_e_Internet/modulo2/vero_o_falso_tcp-ip.json',
+    'dns': 'data/Minigiochi/Reti_e_Internet/modulo3/vero_o_falso_dns.json',
+    'router-switch-dispositivi': 'data/Minigiochi/Reti_e_Internet/modulo4/vero_o_falso_router-switch-dispositivi.json',
+    'wifi-reti-wireless': 'data/Minigiochi/Reti_e_Internet/modulo5/vero_o_falso_wifi-reti-wireless.json',
+    'cloud-networking': 'data/Minigiochi/Reti_e_Internet/modulo6/vero_o_falso_cloud-networking.json',
+    'vpn': 'data/Minigiochi/Reti_e_Internet/modulo7/vero_o_falso_vpn.json',
+    'troubleshooting-reti': 'data/Minigiochi/Reti_e_Internet/modulo8/vero_o_falso_troubleshooting-reti.json',
+    'malware-e-minacce-informatiche': 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/vero_o_falso_malware-e-minacce-informatiche.json',
+    'identita-reputazione-digitale': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/vero_o_falso_identita-reputazione-digitale.json',
+    'cyberbullismo': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/vero_o_falso_cyberbullismo.json',
+    'hate-speech': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/vero_o_falso_hate-speech.json',
+    'sexting-revenge-porn': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/vero_o_falso_sexting-revenge-porn.json',
+    'grooming': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/vero_o_falso_grooming.json',
+    'difendersi-online': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/vero_o_falso_difendersi-online.json',
+    'cos-e-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo1/vero_o_falso_cos-e-ai.json',
+    'come-funziona-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo2/vero_o_falso_come-funziona-ai.json',
+    'llm-fondamenti': 'data/Minigiochi/Intelligenza_Artificiale/modulo3/vero_o_falso_llm-fondamenti.json',
+    'ai-generativa': 'data/Minigiochi/Intelligenza_Artificiale/modulo4/vero_o_falso_ai-generativa.json',
+    'prompt-engineering': 'data/Minigiochi/Intelligenza_Artificiale/modulo5/vero_o_falso_prompt-engineering.json',
+    'agenti-automazione': 'data/Minigiochi/Intelligenza_Artificiale/modulo6/vero_o_falso_agenti-automazione.json',
+    'deepfake-contenuti-sintetici': 'data/Minigiochi/Intelligenza_Artificiale/modulo7/vero_o_falso_deepfake-contenuti-sintetici.json',
+    'provenienza-contenuti': 'data/Minigiochi/Intelligenza_Artificiale/modulo8/vero_o_falso_provenienza-contenuti.json',
+    'verificare-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo9/vero_o_falso_verificare-ai.json',
+    'etica-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo10/vero_o_falso_etica-ai.json',
+    'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/vero_o_falso_bias-algoritmici.json',
+    'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/vero_o_falso_ai-act.json',
+    'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/vero_o_falso_futuro-ai.json',
   },
   tag: 'VeroFalso',
   validate: raw => Array.isArray(raw) && raw.length > 0,

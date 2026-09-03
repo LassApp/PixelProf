@@ -48,6 +48,21 @@
    config unica" (vedi ROADMAP_AREE.md Fase 1, punto 2) — da eseguire
    quando i JSON dei nuovi moduli saranno pronti, per evitare di
    introdurre ora percorsi verso file che non esistono ancora.
+
+   v8.22.0 — FIX path (allineato a game-engine-state.js v5.1.0):
+   - CE/OE/WP/SS/PP: dataPaths ora array di N path (uno per
+     sotto-modulo, "Aree_e_Moduli.md") invece di 1 file flat;
+     aggiunta anche la chiave veroFalso (mancava). memory invariato
+     (Memory in pausa, nessun nuovo JSON per-modulo).
+   - Cybersecurity/Reti_e_Internet/Malware: FIX segmento
+     "Minigiochi/" mancante nei path (bug — causava "Errore
+     caricamento" sui moduli già pronti).
+   - Cyberbullismo (6) e Intelligenza Artificiale (13): NESSUN
+     dataPaths aggiunto qui, restano contentReady:false — coerente
+     con NOTA 3. I path "pronti" per queste 19 chiavi esistono già
+     nei 5 moduleMap di game-engine-state.js (v5.1.0): quando i JSON
+     arriveranno basterà creare i file e flippare contentReady:true,
+     nessuna altra modifica al motore.
    ================================================== */
 
 const AREAS = [
@@ -60,31 +75,114 @@ const AREAS = [
       {
         key: 'CE', label: 'Computer Essentials', contentReady: true,
         dataPaths: {
-          quiz: 'data/quiz/computer_essentials.json',
-          speed: 'data/speed_quiz/computer_essentials.json',
-          abbina: 'data/abbina/computer_essentials_abbina.json',
-          memory: 'data/memory/computer_essentials_memory.json',
-          completaFrase: 'data/completa_frase/computer_essentials_completa_frase.json',
+          quiz: [
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo1/quiz_fondamenti-digitali.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo2/quiz_cpu-architettura.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo3/quiz_memorie.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo4/quiz_software.json',
+          ],
+          speed: [
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo1/speedquiz_fondamenti-digitali.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo2/speedquiz_cpu-architettura.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo3/speedquiz_memorie.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo4/speedquiz_software.json',
+          ],
+          abbina: [
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo1/abbina_fondamenti-digitali.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo2/abbina_cpu-architettura.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo3/abbina_memorie.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo4/abbina_software.json',
+          ],
+          completaFrase: [
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo1/completa_la_frase_fondamenti-digitali.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo2/completa_la_frase_cpu-architettura.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo3/completa_la_frase_memorie.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo4/completa_la_frase_software.json',
+          ],
+          veroFalso: [
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo1/vero_o_falso_fondamenti-digitali.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo2/vero_o_falso_cpu-architettura.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo3/vero_o_falso_memorie.json',
+            'data/Minigiochi/ECDL/Computer_Essentials/modulo4/vero_o_falso_software.json',
+          ],
+          memory: 'data/memory/computer_essentials_memory.json', // invariato — Memory in pausa, nessun nuovo JSON per-modulo
         },
       },
       {
         key: 'OE', label: 'Online Essentials', contentReady: true,
         dataPaths: {
-          quiz: 'data/quiz/online_essentials.json',
-          speed: 'data/speed_quiz/online_essentials.json',
-          abbina: 'data/abbina/online_essentials_abbina.json',
-          memory: 'data/memory/online_essentials_memory.json',
-          completaFrase: 'data/completa_frase/online_essentials_completa_frase.json',
+          quiz: [
+            'data/Minigiochi/ECDL/Online_Essentials/modulo1/quiz_rete-e-dati.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo2/quiz_identita-e-comunicazione.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo3/quiz_navigazione-e-tracciamento.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo4/quiz_sicurezza-e-comportamento-online.json',
+          ],
+          speed: [
+            'data/Minigiochi/ECDL/Online_Essentials/modulo1/speedquiz_rete-e-dati.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo2/speedquiz_identita-e-comunicazione.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo3/speedquiz_navigazione-e-tracciamento.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo4/speedquiz_sicurezza-e-comportamento-online.json',
+          ],
+          abbina: [
+            'data/Minigiochi/ECDL/Online_Essentials/modulo1/abbina_rete-e-dati.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo2/abbina_identita-e-comunicazione.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo3/abbina_navigazione-e-tracciamento.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo4/abbina_sicurezza-e-comportamento-online.json',
+          ],
+          completaFrase: [
+            'data/Minigiochi/ECDL/Online_Essentials/modulo1/completa_la_frase_rete-e-dati.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo2/completa_la_frase_identita-e-comunicazione.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo3/completa_la_frase_navigazione-e-tracciamento.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo4/completa_la_frase_sicurezza-e-comportamento-online.json',
+          ],
+          veroFalso: [
+            'data/Minigiochi/ECDL/Online_Essentials/modulo1/vero_o_falso_rete-e-dati.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo2/vero_o_falso_identita-e-comunicazione.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo3/vero_o_falso_navigazione-e-tracciamento.json',
+            'data/Minigiochi/ECDL/Online_Essentials/modulo4/vero_o_falso_sicurezza-e-comportamento-online.json',
+          ],
+          memory: 'data/memory/online_essentials_memory.json', // invariato — Memory in pausa, nessun nuovo JSON per-modulo
         },
       },
       {
         key: 'WP', label: 'Word Processor', contentReady: true,
         dataPaths: {
-          quiz: 'data/quiz/word_processing.json',
-          speed: 'data/speed_quiz/word_processing.json',
-          abbina: 'data/abbina/word_processing_abbina.json',
-          memory: 'data/memory/word_processing_memory.json',
-          completaFrase: 'data/completa_frase/word_processing_completa_frase.json',
+          quiz: [
+            'data/Minigiochi/ECDL/Word_Processing/modulo1/quiz_word-e-ambiente.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo2/quiz_scrivere-e-salvare.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo3/quiz_formattare-il-testo.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo4/quiz_elementi-grafici.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo5/quiz_strutturare-il-documento.json',
+          ],
+          speed: [
+            'data/Minigiochi/ECDL/Word_Processing/modulo1/speedquiz_word-e-ambiente.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo2/speedquiz_scrivere-e-salvare.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo3/speedquiz_formattare-il-testo.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo4/speedquiz_elementi-grafici.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo5/speedquiz_strutturare-il-documento.json',
+          ],
+          abbina: [
+            'data/Minigiochi/ECDL/Word_Processing/modulo1/abbina_word-e-ambiente.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo2/abbina_scrivere-e-salvare.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo3/abbina_formattare-il-testo.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo4/abbina_elementi-grafici.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo5/abbina_strutturare-il-documento.json',
+          ],
+          completaFrase: [
+            'data/Minigiochi/ECDL/Word_Processing/modulo1/completa_la_frase_word-e-ambiente.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo2/completa_la_frase_scrivere-e-salvare.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo3/completa_la_frase_formattare-il-testo.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo4/completa_la_frase_elementi-grafici.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo5/completa_la_frase_strutturare-il-documento.json',
+          ],
+          veroFalso: [
+            'data/Minigiochi/ECDL/Word_Processing/modulo1/vero_o_falso_word-e-ambiente.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo2/vero_o_falso_scrivere-e-salvare.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo3/vero_o_falso_formattare-il-testo.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo4/vero_o_falso_elementi-grafici.json',
+            'data/Minigiochi/ECDL/Word_Processing/modulo5/vero_o_falso_strutturare-il-documento.json',
+          ],
+          memory: 'data/memory/word_processing_memory.json', // invariato — Memory in pausa, nessun nuovo JSON per-modulo
         },
       },
       {
@@ -96,11 +194,42 @@ const AREAS = [
         // finché i file non arrivano in data/.
         key: 'SS', label: 'Spreadsheets', contentReady: true,
         dataPaths: {
-          quiz: 'data/quiz/spreadsheets.json',
-          speed: 'data/speed_quiz/spreadsheets.json',
-          abbina: 'data/abbina/spreadsheets_abbina.json',
-          memory: 'data/memory/spreadsheets_memory.json',
-          completaFrase: 'data/completa_frase/spreadsheets_completa_frase.json',
+          quiz: [
+            'data/Minigiochi/ECDL/Spreadsheet/modulo1/quiz_excel-e-l-ambiente-di-lavoro.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo2/quiz_inserire-e-gestire-i-dati.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo3/quiz_formattare-il-foglio.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo4/quiz_formule-e-calcoli.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo5/quiz_organizzare-e-visualizzare-i-dati.json',
+          ],
+          speed: [
+            'data/Minigiochi/ECDL/Spreadsheet/modulo1/speedquiz_excel-e-l-ambiente-di-lavoro.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo2/speedquiz_inserire-e-gestire-i-dati.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo3/speedquiz_formattare-il-foglio.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo4/speedquiz_formule-e-calcoli.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo5/speedquiz_organizzare-e-visualizzare-i-dati.json',
+          ],
+          abbina: [
+            'data/Minigiochi/ECDL/Spreadsheet/modulo1/abbina_excel-e-l-ambiente-di-lavoro.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo2/abbina_inserire-e-gestire-i-dati.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo3/abbina_formattare-il-foglio.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo4/abbina_formule-e-calcoli.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo5/abbina_organizzare-e-visualizzare-i-dati.json',
+          ],
+          completaFrase: [
+            'data/Minigiochi/ECDL/Spreadsheet/modulo1/completa_la_frase_excel-e-l-ambiente-di-lavoro.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo2/completa_la_frase_inserire-e-gestire-i-dati.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo3/completa_la_frase_formattare-il-foglio.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo4/completa_la_frase_formule-e-calcoli.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo5/completa_la_frase_organizzare-e-visualizzare-i-dati.json',
+          ],
+          veroFalso: [
+            'data/Minigiochi/ECDL/Spreadsheet/modulo1/vero_o_falso_excel-e-l-ambiente-di-lavoro.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo2/vero_o_falso_inserire-e-gestire-i-dati.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo3/vero_o_falso_formattare-il-foglio.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo4/vero_o_falso_formule-e-calcoli.json',
+            'data/Minigiochi/ECDL/Spreadsheet/modulo5/vero_o_falso_organizzare-e-visualizzare-i-dati.json',
+          ],
+          memory: 'data/memory/spreadsheets_memory.json', // invariato — Memory in pausa, nessun nuovo JSON per-modulo
         },
       },
       {
@@ -108,11 +237,32 @@ const AREAS = [
         // (vedi commento sopra): contentReady:true, JSON in arrivo.
         key: 'PP', label: 'Power Point', contentReady: true,
         dataPaths: {
-          quiz: 'data/quiz/powerpoint.json',
-          speed: 'data/speed_quiz/powerpoint.json',
-          abbina: 'data/abbina/powerpoint_abbina.json',
-          memory: 'data/memory/powerpoint_memory.json',
-          completaFrase: 'data/completa_frase/powerpoint_completa_frase.json',
+          quiz: [
+            'data/Minigiochi/ECDL/Presentation/modulo1/quiz_creare-una-presentazione.json',
+            'data/Minigiochi/ECDL/Presentation/modulo2/quiz_oggetti-grafici.json',
+            'data/Minigiochi/ECDL/Presentation/modulo3/quiz_preparare-e-presentare.json',
+          ],
+          speed: [
+            'data/Minigiochi/ECDL/Presentation/modulo1/speedquiz_creare-una-presentazione.json',
+            'data/Minigiochi/ECDL/Presentation/modulo2/speedquiz_oggetti-grafici.json',
+            'data/Minigiochi/ECDL/Presentation/modulo3/speedquiz_preparare-e-presentare.json',
+          ],
+          abbina: [
+            'data/Minigiochi/ECDL/Presentation/modulo1/abbina_creare-una-presentazione.json',
+            'data/Minigiochi/ECDL/Presentation/modulo2/abbina_oggetti-grafici.json',
+            'data/Minigiochi/ECDL/Presentation/modulo3/abbina_preparare-e-presentare.json',
+          ],
+          completaFrase: [
+            'data/Minigiochi/ECDL/Presentation/modulo1/completa_la_frase_creare-una-presentazione.json',
+            'data/Minigiochi/ECDL/Presentation/modulo2/completa_la_frase_oggetti-grafici.json',
+            'data/Minigiochi/ECDL/Presentation/modulo3/completa_la_frase_preparare-e-presentare.json',
+          ],
+          veroFalso: [
+            'data/Minigiochi/ECDL/Presentation/modulo1/vero_o_falso_creare-una-presentazione.json',
+            'data/Minigiochi/ECDL/Presentation/modulo2/vero_o_falso_oggetti-grafici.json',
+            'data/Minigiochi/ECDL/Presentation/modulo3/vero_o_falso_preparare-e-presentare.json',
+          ],
+          memory: 'data/memory/powerpoint_memory.json', // invariato — Memory in pausa, nessun nuovo JSON per-modulo
         },
       },
     ],
@@ -286,7 +436,7 @@ const AREAS = [
     description: 'Sviluppare consapevolezza e competenze per proteggere identità, account, dati e attività digitali.',
     modules: [
       /* contentReady:true dal 15/08/2026 — JSON committati da Erasmo in
-         data/Cybersecurity_Non_solo_antivirus_e_password/moduloN/.
+         data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/moduloN/.
          AbbinLoader (game-engine-state.js) supporta due formati per il
          gioco Abbina: "sets" (modulo1-3, storico CE/OE/WP) e "pairs"
          (modulo4-8, nuovo formato con difficulty per round — quello che
@@ -303,11 +453,11 @@ const AREAS = [
         desc: 'Le basi: rischio, minaccia e superficie d\'attacco',
         tags: ['Minacce digitali', 'Rischio e vulnerabilità', 'Superficie d\'attacco', 'Fattore umano'],
         dataPaths: {
-          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/quiz_fondamenti-cybersecurity.json',
-          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/speedquiz_fondamenti-cybersecurity.json',
-          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/abbina_fondamenti-cybersecurity.json',
-          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/completa_la_frase_fondamenti-cybersecurity.json',
-          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/vero_o_falso_fondamenti-cybersecurity.json',
+          quiz: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/quiz_fondamenti-cybersecurity.json',
+          speed: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/speedquiz_fondamenti-cybersecurity.json',
+          abbina: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/abbina_fondamenti-cybersecurity.json',
+          completaFrase: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/completa_la_frase_fondamenti-cybersecurity.json',
+          veroFalso: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/vero_o_falso_fondamenti-cybersecurity.json',
         },
       cardArt: `
 <!-- shield -->
@@ -337,11 +487,11 @@ const AREAS = [
         desc: 'Password, MFA e passkey per accessi sicuri',
         tags: ['Password sicure', 'Password Manager', 'MFA', 'Passkey'],
         dataPaths: {
-          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/quiz_sicurezza-account.json',
-          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/speedquiz_sicurezza-account.json',
-          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/abbina_sicurezza-account.json',
-          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/completa_la_frase_sicurezza-account.json',
-          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/vero_o_falso_sicurezza-account.json',
+          quiz: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/quiz_sicurezza-account.json',
+          speed: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/speedquiz_sicurezza-account.json',
+          abbina: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/abbina_sicurezza-account.json',
+          completaFrase: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/completa_la_frase_sicurezza-account.json',
+          veroFalso: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/vero_o_falso_sicurezza-account.json',
         },
       cardArt: `
 <!-- main padlock -->
@@ -369,11 +519,11 @@ const AREAS = [
         desc: 'Backup, regola 3-2-1 e cifratura dei dati',
         tags: ['Backup', 'Regola 3-2-1', 'Disaster Recovery', 'Cifratura dati'],
         dataPaths: {
-          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/quiz_protezione-dati.json',
-          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/speedquiz_protezione-dati.json',
-          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/abbina_protezione-dati.json',
-          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/completa_la_frase_protezione-dati.json',
-          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/vero_o_falso_protezione-dati.json',
+          quiz: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/quiz_protezione-dati.json',
+          speed: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/speedquiz_protezione-dati.json',
+          abbina: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/abbina_protezione-dati.json',
+          completaFrase: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/completa_la_frase_protezione-dati.json',
+          veroFalso: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/vero_o_falso_protezione-dati.json',
         },
       cardArt: `
 <!-- db cylinder -->
@@ -400,11 +550,11 @@ const AREAS = [
         desc: 'Smartphone, app e Wi-Fi in sicurezza ogni giorno',
         tags: ['QR Code malevoli', 'Chiavette USB', 'Download e allegati', 'Wi-Fi pubblici'],
         dataPaths: {
-          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/quiz_sicurezza_quotidiana.json',
-          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/speedquiz_sicurezza_quotidiana.json',
-          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/abbina_sicurezza_quotidiana.json',
-          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/completa_la_frase_sicurezza_quotidiana.json',
-          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/vero_o_falso_sicurezza_quotidiana.json',
+          quiz: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/quiz_sicurezza_quotidiana.json',
+          speed: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/speedquiz_sicurezza_quotidiana.json',
+          abbina: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/abbina_sicurezza_quotidiana.json',
+          completaFrase: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/completa_la_frase_sicurezza_quotidiana.json',
+          veroFalso: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/vero_o_falso_sicurezza_quotidiana.json',
         },
       cardArt: `
 <!-- phone -->
@@ -435,11 +585,11 @@ const AREAS = [
         desc: 'Carte, contactless e frodi nei pagamenti digitali',
         tags: ['Contactless e NFC', 'Truffe online', 'Clonazione carta', 'Autenticazione forte'],
         dataPaths: {
-          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/quiz_sicurezza-pagamenti.json',
-          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/speedquiz_sicurezza-pagamenti.json',
-          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/abbina_sicurezza-pagamenti.json',
-          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/completa_la_frase_sicurezza-pagamenti.json',
-          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/vero_o_falso_sicurezza-pagamenti.json',
+          quiz: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/quiz_sicurezza-pagamenti.json',
+          speed: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/speedquiz_sicurezza-pagamenti.json',
+          abbina: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/abbina_sicurezza-pagamenti.json',
+          completaFrase: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/completa_la_frase_sicurezza-pagamenti.json',
+          veroFalso: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/vero_o_falso_sicurezza-pagamenti.json',
         },
       cardArt: `
 <!-- card -->
@@ -463,11 +613,11 @@ const AREAS = [
         desc: 'GDPR, cookie e tutela dei dati personali',
         tags: ['GDPR', 'Cookie e tracciamento', 'Profilazione', 'Diritti digitali'],
         dataPaths: {
-          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/quiz_privacy-normative.json',
-          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/speedquiz_privacy-normative.json',
-          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/abbina_privacy-normative.json',
-          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/completa_la_frase_privacy-normative.json',
-          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/vero_o_falso_privacy-normative.json',
+          quiz: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/quiz_privacy-normative.json',
+          speed: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/speedquiz_privacy-normative.json',
+          abbina: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/abbina_privacy-normative.json',
+          completaFrase: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/completa_la_frase_privacy-normative.json',
+          veroFalso: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/vero_o_falso_privacy-normative.json',
         },
       cardArt: `
 <!-- scale -->
@@ -493,11 +643,11 @@ const AREAS = [
         desc: 'Reputazione e rischi sui social network',
         tags: ['Oversharing', 'Furto di identità', 'Account compromessi', 'Reputazione digitale'],
         dataPaths: {
-          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/quiz_sicurezza-online-social-network.json',
-          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/speedquiz_sicurezza-online-social-network.json',
-          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/abbina_sicurezza-online-social-network.json',
-          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/completa_la_frase_sicurezza-online-social-network.json',
-          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/vero_o_falso_sicurezza-online-social-network.json',
+          quiz: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/quiz_sicurezza-online-social-network.json',
+          speed: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/speedquiz_sicurezza-online-social-network.json',
+          abbina: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/abbina_sicurezza-online-social-network.json',
+          completaFrase: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/completa_la_frase_sicurezza-online-social-network.json',
+          veroFalso: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/vero_o_falso_sicurezza-online-social-network.json',
         },
       cardArt: `
 <!-- bubble 1 -->
@@ -524,11 +674,11 @@ const AREAS = [
         desc: 'Deepfake, IA generativa e nuove minacce digitali',
         tags: ['AI generativa', 'Deepfake', 'Clonazione vocale', 'Fake news'],
         dataPaths: {
-          quiz: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/quiz_nuove-minacce-digitali.json',
-          speed: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/speedquiz_nuove-minacce-digitali.json',
-          abbina: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/abbina_nuove-minacce-digitali.json',
-          completaFrase: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/completa_la_frase_nuove-minacce-digitali.json',
-          veroFalso: 'data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/vero_o_falso_nuove-minacce-digitali.json',
+          quiz: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/quiz_nuove-minacce-digitali.json',
+          speed: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/speedquiz_nuove-minacce-digitali.json',
+          abbina: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/abbina_nuove-minacce-digitali.json',
+          completaFrase: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/completa_la_frase_nuove-minacce-digitali.json',
+          veroFalso: 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/vero_o_falso_nuove-minacce-digitali.json',
         },
       cardArt: `
 <!-- warning triangle -->
@@ -562,11 +712,11 @@ const AREAS = [
         desc: 'Reti, Internet e come viaggiano i dati',
         tags: ['Tipi di rete', 'Come viaggiano i dati', 'Client e Server', 'Indirizzi IP'],
         dataPaths: {
-          quiz: 'data/Reti_e_Internet/modulo1/quiz_fondamenta-reti.json',
-          speed: 'data/Reti_e_Internet/modulo1/speedquiz_fondamenta-reti.json',
-          abbina: 'data/Reti_e_Internet/modulo1/abbina_fondamenta-reti.json',
-          completaFrase: 'data/Reti_e_Internet/modulo1/completa_la_frase_fondamenta-reti.json',
-          veroFalso: 'data/Reti_e_Internet/modulo1/vero_o_falso_fondamenta-reti.json',
+          quiz: 'data/Minigiochi/Reti_e_Internet/modulo1/quiz_fondamenta-reti.json',
+          speed: 'data/Minigiochi/Reti_e_Internet/modulo1/speedquiz_fondamenta-reti.json',
+          abbina: 'data/Minigiochi/Reti_e_Internet/modulo1/abbina_fondamenta-reti.json',
+          completaFrase: 'data/Minigiochi/Reti_e_Internet/modulo1/completa_la_frase_fondamenta-reti.json',
+          veroFalso: 'data/Minigiochi/Reti_e_Internet/modulo1/vero_o_falso_fondamenta-reti.json',
         },
       cardArt: `
 <!-- server rack -->
@@ -592,11 +742,11 @@ const AREAS = [
         desc: 'TCP, UDP e il viaggio dei pacchetti dati',
         tags: ['TCP e UDP', 'Porte di rete', 'HTTP e HTTPS', 'Dal browser al server'],
         dataPaths: {
-          quiz: 'data/Reti_e_Internet/modulo2/quiz_tcp-ip.json',
-          speed: 'data/Reti_e_Internet/modulo2/speedquiz_tcp-ip.json',
-          abbina: 'data/Reti_e_Internet/modulo2/abbina_tcp-ip.json',
-          completaFrase: 'data/Reti_e_Internet/modulo2/completa_la_frase_tcp-ip.json',
-          veroFalso: 'data/Reti_e_Internet/modulo2/vero_o_falso_tcp-ip.json',
+          quiz: 'data/Minigiochi/Reti_e_Internet/modulo2/quiz_tcp-ip.json',
+          speed: 'data/Minigiochi/Reti_e_Internet/modulo2/speedquiz_tcp-ip.json',
+          abbina: 'data/Minigiochi/Reti_e_Internet/modulo2/abbina_tcp-ip.json',
+          completaFrase: 'data/Minigiochi/Reti_e_Internet/modulo2/completa_la_frase_tcp-ip.json',
+          veroFalso: 'data/Minigiochi/Reti_e_Internet/modulo2/vero_o_falso_tcp-ip.json',
         },
       cardArt: `
 <!-- protocol stack -->
@@ -623,11 +773,11 @@ const AREAS = [
         desc: 'La rubrica che traduce i nomi in indirizzi IP',
         tags: ['Domini e IP', 'Risoluzione DNS', 'Cache DNS', 'Sicurezza DNS'],
         dataPaths: {
-          quiz: 'data/Reti_e_Internet/modulo3/quiz_dns.json',
-          speed: 'data/Reti_e_Internet/modulo3/speedquiz_dns.json',
-          abbina: 'data/Reti_e_Internet/modulo3/abbina_dns.json',
-          completaFrase: 'data/Reti_e_Internet/modulo3/completa_la_frase_dns.json',
-          veroFalso: 'data/Reti_e_Internet/modulo3/vero_o_falso_dns.json',
+          quiz: 'data/Minigiochi/Reti_e_Internet/modulo3/quiz_dns.json',
+          speed: 'data/Minigiochi/Reti_e_Internet/modulo3/speedquiz_dns.json',
+          abbina: 'data/Minigiochi/Reti_e_Internet/modulo3/abbina_dns.json',
+          completaFrase: 'data/Minigiochi/Reti_e_Internet/modulo3/completa_la_frase_dns.json',
+          veroFalso: 'data/Minigiochi/Reti_e_Internet/modulo3/vero_o_falso_dns.json',
         },
       cardArt: `
 <!-- address book -->
@@ -654,11 +804,11 @@ const AREAS = [
         desc: 'Router, switch e dispositivi che collegano la rete',
         tags: ['Router e Switch', 'NAT', 'DHCP', 'La rete di casa'],
         dataPaths: {
-          quiz: 'data/Reti_e_Internet/modulo4/quiz_router-switch-dispositivi.json',
-          speed: 'data/Reti_e_Internet/modulo4/speedquiz_router-switch-dispositivi.json',
-          abbina: 'data/Reti_e_Internet/modulo4/abbina_router-switch-dispositivi.json',
-          completaFrase: 'data/Reti_e_Internet/modulo4/completa_la_frase_router-switch-dispositivi.json',
-          veroFalso: 'data/Reti_e_Internet/modulo4/vero_o_falso_router-switch-dispositivi.json',
+          quiz: 'data/Minigiochi/Reti_e_Internet/modulo4/quiz_router-switch-dispositivi.json',
+          speed: 'data/Minigiochi/Reti_e_Internet/modulo4/speedquiz_router-switch-dispositivi.json',
+          abbina: 'data/Minigiochi/Reti_e_Internet/modulo4/abbina_router-switch-dispositivi.json',
+          completaFrase: 'data/Minigiochi/Reti_e_Internet/modulo4/completa_la_frase_router-switch-dispositivi.json',
+          veroFalso: 'data/Minigiochi/Reti_e_Internet/modulo4/vero_o_falso_router-switch-dispositivi.json',
         },
       cardArt: `
 <!-- router -->
@@ -689,11 +839,11 @@ const AREAS = [
         desc: 'Wi-Fi, bande di frequenza e sicurezza wireless',
         tags: ['Bande di frequenza', 'SSID e accesso', 'Sicurezza Wi-Fi', 'Segnale e interferenze'],
         dataPaths: {
-          quiz: 'data/Reti_e_Internet/modulo5/quiz_wifi-reti-wireless.json',
-          speed: 'data/Reti_e_Internet/modulo5/speedquiz_wifi-reti-wireless.json',
-          abbina: 'data/Reti_e_Internet/modulo5/abbina_wifi-reti-wireless.json',
-          completaFrase: 'data/Reti_e_Internet/modulo5/completa_la_frase_wifi-reti-wireless.json',
-          veroFalso: 'data/Reti_e_Internet/modulo5/vero_o_falso_wifi-reti-wireless.json',
+          quiz: 'data/Minigiochi/Reti_e_Internet/modulo5/quiz_wifi-reti-wireless.json',
+          speed: 'data/Minigiochi/Reti_e_Internet/modulo5/speedquiz_wifi-reti-wireless.json',
+          abbina: 'data/Minigiochi/Reti_e_Internet/modulo5/abbina_wifi-reti-wireless.json',
+          completaFrase: 'data/Minigiochi/Reti_e_Internet/modulo5/completa_la_frase_wifi-reti-wireless.json',
+          veroFalso: 'data/Minigiochi/Reti_e_Internet/modulo5/vero_o_falso_wifi-reti-wireless.json',
         },
       cardArt: `
 <!-- wifi arcs large -->
@@ -717,11 +867,11 @@ const AREAS = [
         desc: 'Data center, CDN e scalabilità nel cloud',
         tags: ['Data Center', 'CDN', 'Load Balancing', 'Scalabilità'],
         dataPaths: {
-          quiz: 'data/Reti_e_Internet/modulo6/quiz_cloud-networking.json',
-          speed: 'data/Reti_e_Internet/modulo6/speedquiz_cloud-networking.json',
-          abbina: 'data/Reti_e_Internet/modulo6/abbina_cloud-networking.json',
-          completaFrase: 'data/Reti_e_Internet/modulo6/completa_la_frase_cloud-networking.json',
-          veroFalso: 'data/Reti_e_Internet/modulo6/vero_o_falso_cloud-networking.json',
+          quiz: 'data/Minigiochi/Reti_e_Internet/modulo6/quiz_cloud-networking.json',
+          speed: 'data/Minigiochi/Reti_e_Internet/modulo6/speedquiz_cloud-networking.json',
+          abbina: 'data/Minigiochi/Reti_e_Internet/modulo6/abbina_cloud-networking.json',
+          completaFrase: 'data/Minigiochi/Reti_e_Internet/modulo6/completa_la_frase_cloud-networking.json',
+          veroFalso: 'data/Minigiochi/Reti_e_Internet/modulo6/vero_o_falso_cloud-networking.json',
         },
       cardArt: `
 <!-- cloud -->
@@ -749,11 +899,11 @@ const AREAS = [
         desc: 'Tunnel sicuri per proteggere le comunicazioni',
         tags: ['Tunnel VPN', 'Tipi di VPN', 'VPN e privacy', 'Limiti delle VPN'],
         dataPaths: {
-          quiz: 'data/Reti_e_Internet/modulo7/quiz_vpn.json',
-          speed: 'data/Reti_e_Internet/modulo7/speedquiz_vpn.json',
-          abbina: 'data/Reti_e_Internet/modulo7/abbina_vpn.json',
-          completaFrase: 'data/Reti_e_Internet/modulo7/completa_la_frase_vpn.json',
-          veroFalso: 'data/Reti_e_Internet/modulo7/vero_o_falso_vpn.json',
+          quiz: 'data/Minigiochi/Reti_e_Internet/modulo7/quiz_vpn.json',
+          speed: 'data/Minigiochi/Reti_e_Internet/modulo7/speedquiz_vpn.json',
+          abbina: 'data/Minigiochi/Reti_e_Internet/modulo7/abbina_vpn.json',
+          completaFrase: 'data/Minigiochi/Reti_e_Internet/modulo7/completa_la_frase_vpn.json',
+          veroFalso: 'data/Minigiochi/Reti_e_Internet/modulo7/vero_o_falso_vpn.json',
         },
       cardArt: `
 <!-- tunnel -->
@@ -773,11 +923,11 @@ const AREAS = [
         desc: 'Diagnosticare e risolvere i problemi di rete',
         tags: ['Ping', 'Traceroute', 'Ipconfig e Ifconfig', 'Metodo di diagnosi'],
         dataPaths: {
-          quiz: 'data/Reti_e_Internet/modulo8/quiz_troubleshooting-reti.json',
-          speed: 'data/Reti_e_Internet/modulo8/speedquiz_troubleshooting-reti.json',
-          abbina: 'data/Reti_e_Internet/modulo8/abbina_troubleshooting-reti.json',
-          completaFrase: 'data/Reti_e_Internet/modulo8/completa_la_frase_troubleshooting-reti.json',
-          veroFalso: 'data/Reti_e_Internet/modulo8/vero_o_falso_troubleshooting-reti.json',
+          quiz: 'data/Minigiochi/Reti_e_Internet/modulo8/quiz_troubleshooting-reti.json',
+          speed: 'data/Minigiochi/Reti_e_Internet/modulo8/speedquiz_troubleshooting-reti.json',
+          abbina: 'data/Minigiochi/Reti_e_Internet/modulo8/abbina_troubleshooting-reti.json',
+          completaFrase: 'data/Minigiochi/Reti_e_Internet/modulo8/completa_la_frase_troubleshooting-reti.json',
+          veroFalso: 'data/Minigiochi/Reti_e_Internet/modulo8/vero_o_falso_troubleshooting-reti.json',
         },
       cardArt: `
 <!-- terminal window -->
@@ -808,11 +958,11 @@ const AREAS = [
         desc: 'Virus, worm, trojan, spyware e keylogger',
         tags: ['Virus e Worm', 'Trojan', 'Spyware', 'Keylogger'],
         dataPaths: {
-          quiz: 'data/Malware_e_Minacce_Informatiche/modulo1/quiz_malware-e-minacce-informatiche.json',
-          speed: 'data/Malware_e_Minacce_Informatiche/modulo1/speedquiz_malware-e-minacce-informatiche.json',
-          abbina: 'data/Malware_e_Minacce_Informatiche/modulo1/abbina_malware-e-minacce-informatiche.json',
-          completaFrase: 'data/Malware_e_Minacce_Informatiche/modulo1/completa_la_frase_malware-e-minacce-informatiche.json',
-          veroFalso: 'data/Malware_e_Minacce_Informatiche/modulo1/vero_o_falso_malware-e-minacce-informatiche.json',
+          quiz: 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/quiz_malware-e-minacce-informatiche.json',
+          speed: 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/speedquiz_malware-e-minacce-informatiche.json',
+          abbina: 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/abbina_malware-e-minacce-informatiche.json',
+          completaFrase: 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/completa_la_frase_malware-e-minacce-informatiche.json',
+          veroFalso: 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/vero_o_falso_malware-e-minacce-informatiche.json',
         },
       cardArt: `
 <!-- virus/bug body -->

@@ -43,32 +43,32 @@ data/
   - Stato: `attivo`
   - Path base: `data/Flip_Card/ECDL/Computer_Essentials/Modulo1/`
   - File:
-    - `Flip_Card_Facile_Modulo_1.csv` *(csv creato)*
-    - `Flip_Card_Medio_Modulo_1.csv` *(csv creato)*
+    - `Flip_Card_Facile_Modulo_1.csv` *(csv da creare)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(csv da creare)*
 
 - **CPU e architettura**
   - Chiave: `cpu-architettura`
   - Stato: `attivo`
   - Path base: `data/Flip_Card/ECDL/Computer_Essentials/Modulo2/`
   - File:
-    - `Flip_Card_Facile_Modulo_2.csv` *(csv creato)*
-    - `Flip_Card_Medio_Modulo_2.csv` *(csv creato)*
+    - `Flip_Card_Facile_Modulo_2.csv` *(csv da creare)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(csv da creare)*
 
 - **Memorie**
   - Chiave: `memorie`
   - Stato: `attivo`
   - Path base: `data/Flip_Card/ECDL/Computer_Essentials/Modulo3/`
   - File:
-    - `Flip_Card_Facile_Modulo_3.csv` *(csv creato)*
-    - `Flip_Card_Medio_Modulo_3.csv` *(csv creato)*
+    - `Flip_Card_Facile_Modulo_3.csv` *(csv da creare)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(csv da creare)*
 
 - **Software**
   - Chiave: `software`
   - Stato: `attivo`
   - Path base: `data/Flip_Card/ECDL/Computer_Essentials/Modulo4/`
   - File:
-    - `Flip_Card_Facile_Modulo_4.csv` *(csv creato)*
-    - `Flip_Card_Medio_Modulo_4.csv` *(csv creato)*
+    - `Flip_Card_Facile_Modulo_4.csv` *(csv da creare)*
+    - `Flip_Card_Medio_Modulo_4.csv` *(csv da creare)*
 
 #### Online Essentials
 
@@ -77,32 +77,32 @@ data/
   - Stato: `attivo`
   - Path base: `data/Flip_Card/ECDL/Online_Essentials/Modulo1/`
   - File:
-    - `Flip_Card_Facile_Modulo_1.csv` *(csv creato)*
-    - `Flip_Card_Medio_Modulo_1.csv` *(csv creato)*
+    - `Flip_Card_Facile_Modulo_1.csv` *(csv da creare)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(csv da creare)*
 
 - **Identità e comunicazione**
   - Chiave: `identita-e-comunicazione`
   - Stato: `attivo`
   - Path base: `data/Flip_Card/ECDL/Online_Essentials/Modulo2/`
   - File:
-    - `Flip_Card_Facile_Modulo_2.csv` *(csv creato)*
-    - `Flip_Card_Medio_Modulo_2.csv` *(csv creato)*
+    - `Flip_Card_Facile_Modulo_2.csv` *(csv da creare)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(csv da creare)*
 
 - **Navigazione e tracciamento**
   - Chiave: `navigazione-e-tracciamento`
   - Stato: `attivo`
   - Path base: `data/Flip_Card/ECDL/Online_Essentials/Modulo3/`
   - File:
-    - `Flip_Card_Facile_Modulo_3.csv` *(csv creato)*
-    - `Flip_Card_Medio_Modulo_3.csv` *(csv creato)*
+    - `Flip_Card_Facile_Modulo_3.csv` *(csv da creare)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(csv da creare)*
 
 - **Sicurezza e comportamento online**
   - Chiave: `sicurezza-e-comportamento-online`
   - Stato: `attivo`
   - Path base: `data/Flip_Card/ECDL/Online_Essentials/Modulo4/`
   - File:
-    - `Flip_Card_Facile_Modulo_4.csv` *(csv creato)*
-    - `Flip_Card_Medio_Modulo_4.csv` *(csv creato)*
+    - `Flip_Card_Facile_Modulo_4.csv` *(csv da creare)*
+    - `Flip_Card_Medio_Modulo_4.csv` *(csv da creare)*
 
 #### Word
 

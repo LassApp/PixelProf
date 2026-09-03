@@ -1,0 +1,155 @@
+{
+  "module": "cpu-architettura",
+  "sets": [
+    [
+      {
+        "term": "Scheda madre",
+        "definition": "Il grande circuito stampato a cui tutti gli altri componenti si collegano fisicamente"
+      },
+      {
+        "term": "CPU (componente)",
+        "definition": "L'unità che elabora le istruzioni e prende le decisioni"
+      },
+      {
+        "term": "RAM",
+        "definition": "La memoria veloce e temporanea in cui vengono caricati i programmi mentre li si usa"
+      },
+      {
+        "term": "ROM",
+        "definition": "La memoria permanente che contiene le istruzioni base per l'avvio"
+      },
+      {
+        "term": "Memorie di massa",
+        "definition": "Conservano i dati anche a computer spento, come HDD e SSD"
+      },
+      {
+        "term": "Dispositivi di input/output",
+        "definition": "Permettono lo scambio di informazioni con l'esterno"
+      }
+    ],
+    [
+      {
+        "term": "CPU (Central Processing Unit)",
+        "definition": "Unità Centrale di Elaborazione: il componente che elabora, decide ed esegue le istruzioni del computer"
+      },
+      {
+        "term": "Input (nel ciclo della CPU)",
+        "definition": "Il segnale che arriva alla CPU, ad esempio un clic del mouse"
+      },
+      {
+        "term": "Output (nel ciclo della CPU)",
+        "definition": "Il risultato prodotto dalla CPU, ad esempio l'apertura di una finestra"
+      },
+      {
+        "term": "Rallentamento della CPU",
+        "definition": "Si verifica quando il flusso di richieste supera la capacità della CPU di gestirle in quell'istante"
+      }
+    ],
+    [
+      {
+        "term": "CPU multicore",
+        "definition": "Processore che contiene al proprio interno più unità di elaborazione capaci di lavorare in parallelo"
+      },
+      {
+        "term": "Core",
+        "definition": "Una singola unità di elaborazione all'interno di una CPU"
+      },
+      {
+        "term": "CPU a singolo core",
+        "definition": "Può gestire davvero una cosa alla volta, per quanto velocemente passi da un compito all'altro"
+      },
+      {
+        "term": "CPU con più core",
+        "definition": "Permette di eseguire realmente più operazioni nello stesso istante, come una divisione del lavoro"
+      }
+    ],
+    [
+      {
+        "term": "GHz (Gigahertz)",
+        "definition": "Unità di misura della velocità di una CPU, corrisponde a circa un miliardo di operazioni elementari al secondo"
+      },
+      {
+        "term": "Aumento dei GHz",
+        "definition": "Non cambia il tipo di operazioni eseguite dalla CPU, ma aumenta quante ne vengono completate in un secondo"
+      },
+      {
+        "term": "Legge di Moore",
+        "definition": "Osservazione empirica secondo cui il numero di componenti su un circuito integrato raddoppia periodicamente"
+      }
+    ],
+    [
+      {
+        "term": "Byte",
+        "definition": "Un gruppo di 8 bit, l'unità base con cui il computer misura e organizza le informazioni"
+      },
+      {
+        "term": "KB (Kilobyte)",
+        "definition": "1.024 Byte, l'ordine di grandezza di un breve testo"
+      },
+      {
+        "term": "MB (Megabyte)",
+        "definition": "1.024 KB, l'ordine di grandezza di una foto o di un brano musicale"
+      },
+      {
+        "term": "GB (Gigabyte)",
+        "definition": "1.024 MB, l'ordine di grandezza di un'app o di un video"
+      },
+      {
+        "term": "TB (Terabyte)",
+        "definition": "1.024 GB, l'ordine di grandezza di archivi molto grandi"
+      }
+    ],
+    [
+      {
+        "term": "IBM Personal Computer 5150",
+        "definition": "Presentato nel 1981 con architettura aperta e cinque slot di espansione, diede origine al mercato dei 'compatibili IBM'"
+      },
+      {
+        "term": "Project Chess",
+        "definition": "Il nome in codice del team che sviluppò in segreto l'IBM PC 5150"
+      },
+      {
+        "term": "Intel 4004",
+        "definition": "Il primo microprocessore commerciale della storia, lanciato nel 1971 con 2.300 transistor"
+      },
+      {
+        "term": "Federico Faggin",
+        "definition": "Uno dei quattro ingegneri, insieme a Ted Hoff, Stanley Mazor e Masatoshi Shima, che svilupparono l'Intel 4004"
+      },
+      {
+        "term": "AMD Athlon 64 X2",
+        "definition": "Uno dei primi processori dual-core per il mercato consumer desktop, lanciato ufficialmente il 31 maggio 2005"
+      },
+      {
+        "term": "Gordon Moore",
+        "definition": "L'autore dell'osservazione nota come Legge di Moore, pubblicata nel 1965"
+      },
+      {
+        "term": "Werner Buchholz",
+        "definition": "L'ingegnere IBM che coniò il termine byte nel luglio 1956"
+      }
+    ],
+    [
+      {
+        "term": "Metafora del cantiere edile",
+        "definition": "La scheda madre come impalcatura, la CPU come capocantiere, la RAM come area di lavoro, la ROM come libretto di istruzioni, le memorie di massa come magazzino"
+      },
+      {
+        "term": "Metafora del vigile urbano",
+        "definition": "La CPU che decide chi può passare a un incrocio, smistando le richieste in arrivo"
+      },
+      {
+        "term": "Metafora dei vigili multipli",
+        "definition": "La CPU multicore paragonata a più vigili che lavorano insieme nello stesso incrocio"
+      },
+      {
+        "term": "Metafora del limite di velocità",
+        "definition": "I GHz paragonati al limite di velocità di una strada, che determina quanto rapidamente le stesse auto la percorrono"
+      },
+      {
+        "term": "Metafora delle unità di peso",
+        "definition": "I multipli del byte (KB, MB, GB, TB) paragonati a grammi, etti, chili e quintali"
+      }
+    ]
+  ]
+}

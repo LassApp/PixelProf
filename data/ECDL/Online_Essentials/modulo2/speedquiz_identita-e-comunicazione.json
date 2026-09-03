@@ -1,0 +1,752 @@
+[
+  {
+    "id": 1,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'IP pubblico?",
+    "options": [
+      "L'indirizzo con cui l'intera rete di un luogo viene identificata dall'esterno",
+      "L'indirizzo che identifica un singolo dispositivo dentro una rete locale",
+      "Il servizio che traduce nomi di dominio in indirizzi IP",
+      "Il protocollo con cui client e server si scambiano dati"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'IP pubblico è l'indirizzo con cui l'intera rete di un luogo viene identificata dall'esterno."
+  },
+  {
+    "id": 2,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove ha senso un indirizzo IP locale come 192.168.1.1, secondo il modulo?",
+    "options": [
+      "Solo dentro la rete locale a cui appartiene",
+      "Su qualsiasi rete del mondo",
+      "Solo per i dispositivi mobili",
+      "Solo per i server web"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un indirizzo IP locale ha senso solo dentro la rete locale a cui appartiene."
+  },
+  {
+    "id": 3,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi assegna l'indirizzo IP pubblico a una connessione, secondo il modulo?",
+    "options": [
+      "L'operatore telefonico",
+      "Il produttore del router",
+      "Il DNS",
+      "Il browser"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'IP pubblico viene assegnato dal proprio operatore telefonico."
+  },
+  {
+    "id": 4,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa identifica realmente un indirizzo IP pubblico, secondo il modulo?",
+    "options": [
+      "Il punto di accesso da cui la connessione sta uscendo verso la rete",
+      "Una persona specifica",
+      "Un dispositivo specifico",
+      "Una carta di credito"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'IP pubblico identifica il punto di accesso da cui la connessione sta uscendo, non una persona."
+  },
+  {
+    "id": 5,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa possono conservare gli operatori di telecomunicazioni riguardo alle connessioni, secondo il modulo?",
+    "options": [
+      "Alcuni dati tecnici relativi alla connessione, per un periodo limitato",
+      "Il contenuto completo di ogni messaggio inviato",
+      "Le password di ogni utente",
+      "I numeri di carta di credito"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli operatori conservano alcuni dati tecnici relativi alla connessione per un periodo limitato."
+  },
+  {
+    "id": 6,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fece l'azienda MaxMind a partire dal 2002?",
+    "options": [
+      "Fece ricadere gli indirizzi IP statunitensi incerti su un punto fisso al centro degli Stati Uniti",
+      "Vendette il primo dominio .com della storia",
+      "Sviluppò il primo browser web",
+      "Creò il protocollo HTTPS"
+    ],
+    "correctIndex": 0,
+    "explanation": "MaxMind fece ricadere gli indirizzi IP incerti su un punto fisso al centro degli Stati Uniti."
+  },
+  {
+    "id": 7,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Vicino a quale cittadina si trovava il punto scelto da MaxMind per gli indirizzi IP incerti?",
+    "options": [
+      "Potwin, in Kansas",
+      "Phoenix, in Arizona",
+      "San Diego, in California",
+      "Ginevra, in Svizzera"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il punto si trovava vicino a Potwin, in Kansas."
+  },
+  {
+    "id": 8,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi visitò ripetutamente la fattoria di Potwin, convinto di dover cercare lì dei criminali?",
+    "options": [
+      "Agenti dell'FBI, sceriffi locali e altre forze dell'ordine",
+      "Solo giornalisti curiosi",
+      "Solo tecnici informatici di MaxMind",
+      "Solo avvocati della famiglia proprietaria"
+    ],
+    "correctIndex": 0,
+    "explanation": "Agenti dell'FBI, sceriffi locali e altre forze dell'ordine visitarono ripetutamente la fattoria."
+  },
+  {
+    "id": 9,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si concluse la vicenda legale tra i proprietari della fattoria di Potwin e MaxMind?",
+    "options": [
+      "MaxMind spostò la coordinata predefinita e chiuse la causa nel 2017",
+      "I proprietari persero la causa e non ricevettero nulla",
+      "MaxMind chiuse definitivamente l'attività",
+      "La causa è ancora in corso oggi"
+    ],
+    "correctIndex": 0,
+    "explanation": "MaxMind spostò la coordinata predefinita e la vertenza si chiuse nel 2017."
+  },
+  {
+    "id": 10,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato l'IP pubblico nella metafora del modulo?",
+    "options": [
+      "Al citofono all'ingresso di un condominio",
+      "Alla rubrica del telefono",
+      "A una cartolina",
+      "A un taxi"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'IP pubblico è paragonato al citofono all'ingresso di un condominio."
+  },
+  {
+    "id": 11,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una VPN?",
+    "options": [
+      "Un servizio che instrada la connessione attraverso un server intermedio, cambiando il punto da cui si esce verso Internet",
+      "Il protocollo con cui client e server si scambiano dati",
+      "L'indirizzo che identifica un dispositivo su una rete",
+      "Il servizio che traduce nomi di dominio in indirizzi IP"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una VPN instrada la connessione attraverso un server intermedio, cambiando il punto di uscita verso Internet."
+  },
+  {
+    "id": 12,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa vede chi osserva dall'esterno una connessione protetta da VPN?",
+    "options": [
+      "L'indirizzo IP pubblico del server intermedio",
+      "L'indirizzo IP reale del dispositivo originale",
+      "Nessun indirizzo IP",
+      "Il nome utente della persona collegata"
+    ],
+    "correctIndex": 0,
+    "explanation": "Chi osserva dall'esterno vede l'indirizzo IP pubblico del server intermedio, non quello reale."
+  },
+  {
+    "id": 13,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Una VPN rende completamente invisibili, secondo il modulo?",
+    "options": [
+      "No, cambia il punto da cui si viene visti ma non elimina ogni traccia",
+      "Sì, rende impossibile risalire a chiunque la usi",
+      "Sì, ma solo se il fornitore del servizio lo garantisce per contratto",
+      "No, non protegge in alcun modo la connessione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una VPN cambia il punto da cui si viene visti, ma non elimina ogni traccia."
+  },
+  {
+    "id": 14,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può fare il fornitore di un servizio VPN, secondo il modulo?",
+    "options": [
+      "Conoscere e in alcuni casi conservare i dati di connessione",
+      "Vedere sempre in chiaro il contenuto di ogni messaggio scambiato",
+      "Bloccare automaticamente ogni sito visitato",
+      "Vendere sempre i dati degli utenti senza alcun vincolo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il fornitore VPN può conoscere e in alcuni casi conservare i dati di connessione."
+  },
+  {
+    "id": 15,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi fu arrestato dall'FBI nel settembre 2011 come membro di LulzSec?",
+    "options": [
+      "Cody Kretsinger",
+      "Eric Butler",
+      "Tim Berners-Lee",
+      "Paul Mockapetris"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cody Kretsinger fu arrestato dall'FBI nel settembre 2011."
+  },
+  {
+    "id": 16,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Di quale attacco informatico fu accusato Cody Kretsinger?",
+    "options": [
+      "L'attacco contro Sony Pictures Entertainment",
+      "L'attacco contro Facebook",
+      "Il blackout di Instagram e WhatsApp",
+      "Il furto degli indirizzi IPv4"
+    ],
+    "correctIndex": 0,
+    "explanation": "Kretsinger fu accusato dell'attacco contro Sony Pictures Entertainment."
+  },
+  {
+    "id": 17,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale servizio VPN utilizzò Kretsinger per condurre l'attacco?",
+    "options": [
+      "HideMyAss",
+      "MaxMind",
+      "Firesheep",
+      "Symbolics"
+    ],
+    "correctIndex": 0,
+    "explanation": "Kretsinger utilizzò il servizio VPN britannico HideMyAss."
+  },
+  {
+    "id": 18,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come fu possibile rintracciare Kretsinger nonostante l'uso della VPN?",
+    "options": [
+      "Un tribunale britannico obbligò HideMyAss a consegnare i registri di connessione",
+      "La VPN si guastò durante l'attacco",
+      "Kretsinger confessò spontaneamente subito dopo l'attacco",
+      "L'FBI intercettò direttamente la sua connessione Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un tribunale britannico obbligò HideMyAss a consegnare i registri di connessione di Kretsinger."
+  },
+  {
+    "id": 19,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quanto fu condannato Kretsinger nel 2013?",
+    "options": [
+      "Poco più di un anno di carcere",
+      "Cinque anni di carcere",
+      "Una semplice ammenda",
+      "L'ergastolo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Kretsinger fu condannato a poco più di un anno di carcere nel 2013."
+  },
+  {
+    "id": 20,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato l'uso di una VPN nella metafora del modulo?",
+    "options": [
+      "Al passare da un'altra casa prima di raggiungere la destinazione",
+      "A una cartolina spedita per posta",
+      "A un citofono condominiale",
+      "A un cameriere che porta un piatto al tavolo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Usare una VPN è paragonato al passare da un'altra casa prima di raggiungere la destinazione."
+  },
+  {
+    "id": 21,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il client nel modello client/server?",
+    "options": [
+      "Il dispositivo che effettua una richiesta",
+      "Il sistema che riceve una richiesta e restituisce una risposta",
+      "Il protocollo che cifra i dati",
+      "L'indirizzo che identifica una risorsa su Internet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il client è il dispositivo che effettua una richiesta."
+  },
+  {
+    "id": 22,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il server nel modello client/server?",
+    "options": [
+      "Il sistema che riceve una richiesta e restituisce una risposta con i dati richiesti",
+      "Il dispositivo che effettua una richiesta",
+      "L'indirizzo pubblico di una rete",
+      "Il programma che naviga sul Web"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il server riceve una richiesta e restituisce una risposta con i dati richiesti."
+  },
+  {
+    "id": 23,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se un client non riceve mai risposta da un server, secondo la logica del modulo?",
+    "options": [
+      "Non ha nulla da mostrare, perché dipende dal server per i dati",
+      "Continua comunque a funzionare normalmente",
+      "Diventa automaticamente un server",
+      "Si trasforma in un indirizzo IP pubblico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un client, da solo, non ha nulla da mostrare: dipende dal server per i dati."
+  },
+  {
+    "id": 24,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa allestì Tim Berners-Lee alla fine del 1990 al CERN di Ginevra?",
+    "options": [
+      "Il primo server web della storia",
+      "Il primo protocollo HTTPS",
+      "La prima VPN",
+      "Il primo dominio .com"
+    ],
+    "correctIndex": 0,
+    "explanation": "Berners-Lee allestì il primo server web della storia."
+  },
+  {
+    "id": 25,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale indirizzo era raggiungibile il primo server web della storia?",
+    "options": [
+      "info.cern.ch",
+      "symbolics.com",
+      "www.web.org",
+      "cern.web.ch"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il primo server web era raggiungibile con l'indirizzo info.cern.ch."
+  },
+  {
+    "id": 26,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiamava il primo programma client sviluppato da Berners-Lee?",
+    "options": [
+      "WorldWideWeb",
+      "Firesheep",
+      "HideMyAss",
+      "Netscape Navigator"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il primo programma client si chiamava WorldWideWeb."
+  },
+  {
+    "id": 27,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa scrisse Berners-Lee sull'adesivo attaccato al computer NeXT del primo server web?",
+    "options": [
+      "DO NOT POWER IT DOWN",
+      "HANDLE WITH CARE",
+      "WORK IN PROGRESS",
+      "DO NOT DISTURB"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'adesivo diceva 'DO NOT POWER IT DOWN'."
+  },
+  {
+    "id": 28,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché quell'adesivo era così importante, secondo il modulo?",
+    "options": [
+      "Perché non esisteva ancora nessun altro server in grado di rispondere alle richieste",
+      "Perché il computer NeXT era molto costoso",
+      "Perché conteneva la password di accesso al server",
+      "Perché era un requisito legale del CERN"
+    ],
+    "correctIndex": 0,
+    "explanation": "Non esisteva ancora nessun altro server: se spento, l'intero Web sarebbe scomparso."
+  },
+  {
+    "id": 29,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che mese e anno fu reso pubblico il progetto del primo server e client web?",
+    "options": [
+      "Agosto 1991",
+      "Dicembre 1990",
+      "Marzo 1985",
+      "Ottobre 2010"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il progetto fu reso pubblico nell'agosto 1991."
+  },
+  {
+    "id": 30,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato il rapporto client/server nella metafora del modulo?",
+    "options": [
+      "A un cliente al ristorante e alla cucina",
+      "A un citofono condominiale",
+      "A una cartolina e una busta sigillata",
+      "A un taxi e la sua destinazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il rapporto client/server è paragonato a un cliente al ristorante e alla cucina."
+  },
+  {
+    "id": 31,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'HTTP?",
+    "options": [
+      "Il protocollo con cui client e server si scambiano dati sul Web",
+      "L'indirizzo che identifica una risorsa su Internet",
+      "Il servizio che traduce nomi di dominio in indirizzi IP",
+      "Il sistema che instrada i dati attraverso una rete"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'HTTP è il protocollo con cui client e server si scambiano dati sul Web."
+  },
+  {
+    "id": 32,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'HTTPS?",
+    "options": [
+      "La versione sicura dell'HTTP, in cui i dati vengono cifrati durante il trasferimento",
+      "Un tipo di indirizzo IP pubblico",
+      "Un servizio VPN gratuito",
+      "Il nome di dominio di un sito"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'HTTPS è la versione sicura dell'HTTP, con i dati cifrati durante il trasferimento."
+  },
+  {
+    "id": 33,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come vengono trasmessi i dati nella forma originale dell'HTTP?",
+    "options": [
+      "In chiaro, leggibili da chiunque si trovi lungo il percorso",
+      "Sempre cifrati con una chiave segreta",
+      "Solo tramite connessioni VPN",
+      "Solo se il sito ha un certificato valido"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nella sua forma originale, l'HTTP trasmette i dati in chiaro."
+  },
+  {
+    "id": 34,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa che un sito usa HTTPS, secondo il modulo?",
+    "options": [
+      "Che la comunicazione tra client e server è protetta, non che il sito sia sicuro nei contenuti",
+      "Che il sito è automaticamente sicuro e affidabile in tutto ciò che pubblica",
+      "Che il sito non può essere visitato da reti Wi-Fi pubbliche",
+      "Che il sito appartiene a un'azienda certificata"
+    ],
+    "correctIndex": 0,
+    "explanation": "HTTPS significa solo che la comunicazione è protetta, non che i contenuti siano sicuri."
+  },
+  {
+    "id": 35,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa presentò Eric Butler nell'ottobre 2010 durante una conferenza a San Diego?",
+    "options": [
+      "L'estensione Firesheep per il browser Firefox",
+      "Il protocollo HTTPS",
+      "La VPN HideMyAss",
+      "Il primo browser web della storia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Eric Butler presentò l'estensione Firesheep per Firefox."
+  },
+  {
+    "id": 36,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale debolezza sfruttava Firesheep?",
+    "options": [
+      "Molti siti proteggevano con HTTPS solo il momento dell'accesso, non il resto della sessione",
+      "Molti siti non avevano alcun tipo di password",
+      "Molti siti non avevano un indirizzo IP valido",
+      "Molti siti non utilizzavano ancora il DNS"
+    ],
+    "correctIndex": 0,
+    "explanation": "Firesheep sfruttava siti che proteggevano con HTTPS solo l'accesso, non l'intera sessione."
+  },
+  {
+    "id": 37,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permetteva di fare Firesheep a chi lo utilizzava su una rete Wi-Fi pubblica?",
+    "options": [
+      "Impersonare l'account di chiunque altro fosse collegato alla stessa rete",
+      "Bloccare la connessione di altri utenti",
+      "Cambiare l'indirizzo IP pubblico della rete",
+      "Cifrare automaticamente tutto il traffico della rete"
+    ],
+    "correctIndex": 0,
+    "explanation": "Firesheep permetteva di impersonare l'account di altri utenti sulla stessa rete Wi-Fi."
+  },
+  {
+    "id": 38,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quante volte fu scaricata Firesheep nelle prime quarantotto ore dal rilascio?",
+    "options": [
+      "Circa 129.000 volte",
+      "Circa 1.290 volte",
+      "Circa 12.900.000 volte",
+      "Circa 1.290.000 volte"
+    ],
+    "correctIndex": 0,
+    "explanation": "Firesheep fu scaricata circa 129.000 volte nelle prime quarantotto ore."
+  },
+  {
+    "id": 39,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale effetto ebbe il caso Firesheep sull'adozione dell'HTTPS?",
+    "options": [
+      "Contribuì a spingere i grandi siti web ad adottare l'HTTPS per l'intera sessione di navigazione",
+      "Non ebbe alcun effetto sull'adozione dell'HTTPS",
+      "Portò all'abbandono definitivo dell'HTTP",
+      "Causò la chiusura di Facebook e Twitter"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il caso contribuì a spingere i grandi siti verso l'adozione dell'HTTPS per l'intera sessione."
+  },
+  {
+    "id": 40,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato l'HTTPS nella metafora del modulo?",
+    "options": [
+      "A una lettera chiusa in una busta sigillata",
+      "A una cartolina leggibile da chiunque",
+      "A un citofono condominiale",
+      "A un taxi con autista"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'HTTPS è paragonato a una lettera chiusa in una busta sigillata."
+  },
+  {
+    "id": 41,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un URL?",
+    "options": [
+      "L'indirizzo completo che permette di individuare in modo univoco una risorsa specifica su Internet",
+      "Il protocollo con cui client e server si scambiano dati",
+      "L'indirizzo che identifica un dispositivo su una rete locale",
+      "Il servizio che cifra i dati durante il trasferimento"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'URL è l'indirizzo completo che permette di individuare una risorsa specifica su Internet."
+  },
+  {
+    "id": 42,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quali tre parti principali si può scomporre un URL, secondo il modulo?",
+    "options": [
+      "Protocollo, dominio e percorso",
+      "Client, server e protocollo",
+      "IP pubblico, IP locale e DNS",
+      "HTTP, HTTPS e VPN"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un URL si scompone in protocollo, dominio e percorso."
+  },
+  {
+    "id": 43,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica il protocollo all'interno di un URL?",
+    "options": [
+      "Come comunicare",
+      "Dove andare",
+      "Cosa chiedere",
+      "Chi ha creato il sito"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il protocollo indica come comunicare."
+  },
+  {
+    "id": 44,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica il dominio all'interno di un URL?",
+    "options": [
+      "Dove andare",
+      "Come comunicare",
+      "Cosa chiedere",
+      "Quando accedere"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il dominio indica dove andare."
+  },
+  {
+    "id": 45,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica il percorso all'interno di un URL?",
+    "options": [
+      "Cosa chiedere, la risorsa specifica su quel server",
+      "Come comunicare con il server",
+      "Dove si trova fisicamente il server",
+      "Chi ha registrato il dominio"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il percorso indica cosa chiedere, la risorsa specifica su quel server."
+  },
+  {
+    "id": 46,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'errore 404 restituito da un server?",
+    "options": [
+      "Il server esiste ed è raggiungibile, ma la risorsa richiesta non si trova in quel punto",
+      "Il server non esiste affatto",
+      "Il dominio non è mai stato registrato",
+      "La connessione Internet è assente"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'errore 404 significa che il server esiste ma la risorsa richiesta non si trova in quel punto."
+  },
+  {
+    "id": 47,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale azienda registrò il 15 marzo 1985 il dominio symbolics.com?",
+    "options": [
+      "Symbolics",
+      "MaxMind",
+      "HideMyAss",
+      "IANA"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'azienda Symbolics registrò symbolics.com il 15 marzo 1985."
+  },
+  {
+    "id": 48,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresentò symbolics.com nella storia di Internet?",
+    "options": [
+      "Il primo dominio .com mai registrato",
+      "Il primo sito protetto da HTTPS",
+      "Il primo server web della storia",
+      "Il primo indirizzo IP pubblico mai assegnato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Symbolics.com fu il primo dominio .com mai registrato nella storia."
+  },
+  {
+    "id": 49,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa successe all'azienda Symbolics nel 1996?",
+    "options": [
+      "Cessò l'attività",
+      "Registrò il suo secondo dominio",
+      "Fu acquisita da Tim Berners-Lee",
+      "Lanciò il primo browser web"
+    ],
+    "correctIndex": 0,
+    "explanation": "Symbolics cessò l'attività nel 1996."
+  },
+  {
+    "id": 50,
+    "module": "identita-e-comunicazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresenta ancora oggi il dominio symbolics.com?",
+    "options": [
+      "Il più antico dominio .com ancora attivo al mondo",
+      "Il dominio con più traffico al mondo",
+      "Un dominio ormai disattivato e inutilizzabile",
+      "Il dominio ufficiale del CERN"
+    ],
+    "correctIndex": 0,
+    "explanation": "Symbolics.com resta il più antico dominio .com ancora attivo al mondo."
+  }
+]

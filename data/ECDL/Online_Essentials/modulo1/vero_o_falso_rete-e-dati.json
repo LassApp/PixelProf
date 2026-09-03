@@ -1,0 +1,326 @@
+[
+  {
+    "id": 1,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una rete è un insieme di due o più dispositivi collegati tra loro, capaci di scambiarsi informazioni.",
+    "answer": true,
+    "explanation": "È la definizione di rete fornita dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una rete nasce solo quando si installa un router professionale.",
+    "answer": false,
+    "explanation": "Una rete nasce ogni volta che due o più dispositivi comunicano tra loro, non solo con un router."
+  },
+  {
+    "id": 3,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il primo messaggio della storia tra due computer in rete fu inviato il 29 ottobre 1969.",
+    "answer": true,
+    "explanation": "È la data indicata dal modulo per il primo messaggio in rete."
+  },
+  {
+    "id": 4,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il primo messaggio in rete del 1969 fu inviato da Leonard Kleinrock e Charley Kline.",
+    "answer": true,
+    "explanation": "Sono gli autori indicati dal modulo per il primo messaggio in rete."
+  },
+  {
+    "id": 5,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La parola trasmessa con successo al primo tentativo nel 1969 fu l'intera parola 'login'.",
+    "answer": false,
+    "explanation": "Il sistema si bloccò dopo le lettere 'lo', non trasmettendo la parola intera."
+  },
+  {
+    "id": 6,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La rete ARPANET del 1969 era finanziata dal Dipartimento della Difesa statunitense.",
+    "answer": true,
+    "explanation": "È quanto indicato dal modulo sul finanziamento di ARPANET."
+  },
+  {
+    "id": 7,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 1969 ARPANET collegava già centinaia di nodi in tutto il mondo.",
+    "answer": false,
+    "explanation": "ARPANET collegava solo quattro nodi negli Stati Uniti nel 1969."
+  },
+  {
+    "id": 8,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La LAN è la rete più piccola, che collega dispositivi in uno spazio limitato come un'abitazione o un negozio.",
+    "answer": true,
+    "explanation": "È la definizione di LAN fornita dal modulo."
+  },
+  {
+    "id": 9,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La MAN collega più reti locali a livello di città o area metropolitana.",
+    "answer": true,
+    "explanation": "È la definizione di MAN fornita dal modulo."
+  },
+  {
+    "id": 10,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La WAN è la rete più estesa possibile, che può coprire intere nazioni o il pianeta intero.",
+    "answer": true,
+    "explanation": "È la definizione di WAN fornita dal modulo."
+  },
+  {
+    "id": 11,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, Internet è una piccola LAN privata.",
+    "answer": false,
+    "explanation": "Internet è descritta come la più grande WAN mai costruita, non come una LAN."
+  },
+  {
+    "id": 12,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "In una rete MAN, se il punto centrale che collega tutte le sedi si guasta, l'intera rete ne risente.",
+    "answer": true,
+    "explanation": "È il rischio descritto dal modulo per le reti MAN."
+  },
+  {
+    "id": 13,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'Ethernet fu sviluppata nel 1973 presso i laboratori Xerox PARC da Robert Metcalfe e collaboratori.",
+    "answer": true,
+    "explanation": "È quanto indicato dal modulo sull'origine dell'Ethernet."
+  },
+  {
+    "id": 14,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'Ethernet nacque per risolvere l'esaurimento degli indirizzi IPv4.",
+    "answer": false,
+    "explanation": "L'Ethernet nacque per collegare i computer Xerox Alto e la stampante laser, non per l'esaurimento IPv4."
+  },
+  {
+    "id": 15,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il primo schema dell'Ethernet fu presentato il 22 maggio 1973.",
+    "answer": true,
+    "explanation": "È la data indicata dal modulo per la presentazione del primo schema Ethernet."
+  },
+  {
+    "id": 16,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'instradamento (routing) è il processo attraverso cui i dati vengono indirizzati attraverso una rete fino a raggiungere la destinazione.",
+    "answer": true,
+    "explanation": "È la definizione di instradamento fornita dal modulo."
+  },
+  {
+    "id": 17,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I dati viaggiano sempre in un unico blocco, senza mai essere suddivisi.",
+    "answer": false,
+    "explanation": "I dati vengono suddivisi in pacchetti prima di attraversare la rete."
+  },
+  {
+    "id": 18,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se un nodo della rete è sovraccarico, il sistema può individuare un percorso alternativo.",
+    "answer": true,
+    "explanation": "È il comportamento del sistema di instradamento descritto dal modulo."
+  },
+  {
+    "id": 19,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il blackout di Facebook, Instagram e WhatsApp del 4 ottobre 2021 durò circa sei ore.",
+    "answer": true,
+    "explanation": "È la durata indicata dal modulo per il blackout del 2021."
+  },
+  {
+    "id": 20,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il blackout del 2021 fu causato da un attacco informatico esterno.",
+    "answer": false,
+    "explanation": "Fu causato da un errore umano durante un'attività di manutenzione interna, non da un attacco esterno."
+  },
+  {
+    "id": 21,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante il blackout del 2021, i server di Facebook smisero di annunciare come raggiungere i propri data center.",
+    "answer": true,
+    "explanation": "È quanto descritto dal modulo sulla causa tecnica del blackout."
+  },
+  {
+    "id": 22,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un indirizzo IP è la sequenza numerica univoca che identifica un dispositivo all'interno di una rete.",
+    "answer": true,
+    "explanation": "È la definizione di indirizzo IP fornita dal modulo."
+  },
+  {
+    "id": 23,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Senza un indirizzo IP, i pacchetti di dati non saprebbero dove essere consegnati.",
+    "answer": true,
+    "explanation": "È quanto indicato dal modulo sull'importanza dell'indirizzo IP."
+  },
+  {
+    "id": 24,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il 3 febbraio 2011 lo IANA distribuì i primi indirizzi IPv6 mai assegnati.",
+    "answer": false,
+    "explanation": "In quella data lo IANA distribuì gli ultimi blocchi disponibili di indirizzi IPv4, non i primi IPv6."
+  },
+  {
+    "id": 25,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo standard IPv4 prevede circa 4,3 miliardi di indirizzi possibili.",
+    "answer": true,
+    "explanation": "È il numero indicato dal modulo per lo standard IPv4."
+  },
+  {
+    "id": 26,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'esaurimento degli indirizzi IPv4 ha accelerato l'adozione dello standard IPv6.",
+    "answer": true,
+    "explanation": "È quanto indicato dal modulo sulla transizione a IPv6."
+  },
+  {
+    "id": 27,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il DNS è il servizio che traduce i nomi di dominio negli indirizzi IP corrispondenti.",
+    "answer": true,
+    "explanation": "È la definizione di DNS fornita dal modulo."
+  },
+  {
+    "id": 28,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, quando si digita il nome di un sito, la rete instrada la richiesta direttamente senza bisogno di un indirizzo IP.",
+    "answer": false,
+    "explanation": "La rete ha comunque bisogno di un indirizzo IP, ottenuto tramite la traduzione del DNS."
+  },
+  {
+    "id": 29,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Paul Mockapetris ideò e testò il DNS nel 1983 insieme a Jon Postel.",
+    "answer": true,
+    "explanation": "È quanto indicato dal modulo sull'invenzione del DNS."
+  },
+  {
+    "id": 30,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Prima del DNS, tutti i nomi dei computer erano conservati in un unico file di testo centralizzato, aggiornato manualmente.",
+    "answer": true,
+    "explanation": "È il sistema precedente al DNS descritto dal modulo."
+  },
+  {
+    "id": 31,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il nuovo sistema DNS proposto da Mockapetris era ancora più centralizzato del sistema precedente.",
+    "answer": false,
+    "explanation": "Mockapetris propose un sistema distribuito e automatico, non più centralizzato."
+  },
+  {
+    "id": 32,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Tra i primi domini creati con il DNS vi erano .com, .edu, .gov e .org.",
+    "answer": true,
+    "explanation": "Sono i primi domini indicati dal modulo."
+  },
+  {
+    "id": 33,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, la rete viene paragonata a una conversazione tra due persone.",
+    "answer": true,
+    "explanation": "È la metafora usata dal modulo per la rete."
+  },
+  {
+    "id": 34,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, LAN, MAN e WAN vengono paragonate a cerchi concentrici che si allargano da un punto centrale.",
+    "answer": true,
+    "explanation": "È la metafora usata dal modulo per i tipi di rete."
+  },
+  {
+    "id": 35,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, il DNS viene paragonato al navigatore satellitare di un'automobile.",
+    "answer": false,
+    "explanation": "È l'instradamento a essere paragonato al navigatore satellitare; il DNS è paragonato alla rubrica del telefono."
+  },
+  {
+    "id": 36,
+    "module": "rete-e-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, l'indirizzo IP viene paragonato all'indirizzo completo di un'abitazione.",
+    "answer": true,
+    "explanation": "È la metafora usata dal modulo per l'indirizzo IP."
+  }
+]

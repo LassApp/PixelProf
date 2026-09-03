@@ -1,0 +1,752 @@
+[
+  {
+    "id": 1,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il software secondo il modulo?",
+    "options": [
+      "L'insieme dei programmi che dicono al computer cosa fare, in ogni istante",
+      "L'insieme dei componenti fisici del computer",
+      "La memoria permanente che contiene le istruzioni base per l'avvio",
+      "L'unità che elabora le istruzioni del computer"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il software è l'insieme dei programmi che dicono al computer cosa fare, in ogni istante."
+  },
+  {
+    "id": 2,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quali due grandi famiglie si divide il software, secondo il modulo?",
+    "options": [
+      "Software di sistema e software applicativo",
+      "Hardware e firmware",
+      "RAM e ROM",
+      "Proprietario e open source"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il software si divide in software di sistema e software applicativo."
+  },
+  {
+    "id": 3,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il software di sistema?",
+    "options": [
+      "Fa funzionare il computer stesso",
+      "Permette di scrivere una fattura",
+      "Naviga su Internet",
+      "Riproduce musica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il software di sistema fa funzionare il computer stesso."
+  },
+  {
+    "id": 4,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette di fare il software applicativo?",
+    "options": [
+      "Usare il computer per fare qualcosa di concreto e specifico",
+      "Avviare il computer dallo stato spento",
+      "Gestire le risorse hardware",
+      "Conservare i dati a computer spento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il software applicativo permette di usare il computer per fare qualcosa di concreto e specifico."
+  },
+  {
+    "id": 5,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde al computer di bordo dell'Apollo 11 durante la discesa verso la Luna il 20 luglio 1969?",
+    "options": [
+      "Segnalò ripetutamente un allarme di sovraccarico identificato con il codice 1202",
+      "Si spense completamente",
+      "Perse il collegamento con il controllo missione",
+      "Cancellò tutti i dati di navigazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il computer di bordo segnalò ripetutamente l'allarme di sovraccarico identificato con il codice 1202."
+  },
+  {
+    "id": 6,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi guidava il gruppo che scrisse il software del computer di bordo dell'Apollo 11?",
+    "options": [
+      "Margaret Hamilton",
+      "Richard Stallman",
+      "Dan Bricklin",
+      "Mark Russinovich"
+    ],
+    "correctIndex": 0,
+    "explanation": "Margaret Hamilton guidava il gruppo del MIT che scrisse il software di bordo."
+  },
+  {
+    "id": 7,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come fu progettato il software dell'Apollo 11 per gestire il sovraccarico?",
+    "options": [
+      "Per scartare automaticamente le attività meno prioritarie e continuare quelle indispensabili",
+      "Per bloccarsi immediatamente e richiedere l'intervento manuale",
+      "Per spegnere tutti i sistemi di bordo",
+      "Per riavviarsi automaticamente ogni pochi secondi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il software scartava automaticamente le attività meno prioritarie per continuare quelle indispensabili."
+  },
+  {
+    "id": 8,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa successe pochi minuti dopo che il controllo missione diede il via libera durante l'allunaggio dell'Apollo 11?",
+    "options": [
+      "Neil Armstrong mise piede sulla Luna",
+      "La missione fu abortita",
+      "Il computer di bordo si guastò definitivamente",
+      "L'equipaggio tornò sulla Terra"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pochi minuti dopo il via libera, Neil Armstrong mise piede sulla Luna."
+  },
+  {
+    "id": 9,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il caso dell'Apollo 11 è spesso citato nel campo del software, secondo il modulo?",
+    "options": [
+      "Mostra come il software possa determinare il successo o il fallimento di un'impresa critica",
+      "Dimostra che l'hardware è sempre più importante del software",
+      "Fu il primo caso di virus informatico della storia",
+      "Segnò la nascita del primo sistema operativo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il caso mostra come il software possa determinare il successo o il fallimento di un'impresa critica."
+  },
+  {
+    "id": 10,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato il software nella metafora del modulo?",
+    "options": [
+      "All'insieme delle regole, delle mappe e delle decisioni che dicono al guidatore dove andare",
+      "A un direttore d'orchestra",
+      "A un regolamento di condominio",
+      "A un contratto d'affitto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il software è paragonato all'insieme di regole, mappe e decisioni che guidano il conducente."
+  },
+  {
+    "id": 11,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il sistema operativo?",
+    "options": [
+      "Il software principale del computer, che gestisce le risorse hardware e coordina i programmi",
+      "Un programma per scrivere documenti",
+      "Un tipo di licenza software",
+      "Un dispositivo di memoria di massa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sistema operativo è il software principale che gestisce le risorse hardware e coordina i programmi."
+  },
+  {
+    "id": 12,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede al sistema operativo una volta caricato nella RAM?",
+    "options": [
+      "Resta sempre attivo per tutto il tempo in cui il computer è acceso",
+      "Si disattiva dopo pochi secondi",
+      "Viene trasferito automaticamente sulla ROM",
+      "Si duplica su ogni programma aperto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sistema operativo resta sempre attivo per tutto il tempo in cui il computer è acceso."
+  },
+  {
+    "id": 13,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale sistema operativo è diffuso sui computer, secondo il modulo?",
+    "options": [
+      "Windows",
+      "Android",
+      "iOS",
+      "GNU"
+    ],
+    "correctIndex": 0,
+    "explanation": "Windows è indicato come il sistema operativo diffuso sui computer."
+  },
+  {
+    "id": 14,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale sistema operativo è diffuso sui Mac?",
+    "options": [
+      "macOS",
+      "Windows",
+      "Android",
+      "iOS"
+    ],
+    "correctIndex": 0,
+    "explanation": "macOS è il sistema operativo diffuso sui Mac."
+  },
+  {
+    "id": 15,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale sistema operativo è diffuso sugli iPhone?",
+    "options": [
+      "iOS",
+      "Android",
+      "Windows",
+      "macOS"
+    ],
+    "correctIndex": 0,
+    "explanation": "iOS è il sistema operativo diffuso sugli iPhone."
+  },
+  {
+    "id": 16,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succederebbe senza un sistema operativo, secondo il modulo?",
+    "options": [
+      "Il computer non sarebbe utilizzabile",
+      "Il computer funzionerebbe più velocemente",
+      "Solo l'hardware smetterebbe di funzionare",
+      "La RAM si riempirebbe automaticamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Senza un sistema operativo, il computer semplicemente non sarebbe utilizzabile."
+  },
+  {
+    "id": 17,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Di cosa fu accusata Microsoft nel processo antitrust tra il 1998 e il 2001?",
+    "options": [
+      "Di aver abusato della propria posizione dominante nel mercato dei sistemi operativi",
+      "Di aver copiato il codice sorgente di un concorrente",
+      "Di aver venduto Windows a un prezzo troppo basso",
+      "Di aver rifiutato di vendere Windows fuori dagli Stati Uniti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Microsoft fu accusata di abuso di posizione dominante nel mercato dei sistemi operativi."
+  },
+  {
+    "id": 18,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale browser Microsoft fu accusata di includere forzatamente in Windows?",
+    "options": [
+      "Internet Explorer",
+      "Google Chrome",
+      "Netscape Navigator",
+      "Safari"
+    ],
+    "correctIndex": 0,
+    "explanation": "Microsoft fu accusata di includere forzatamente Internet Explorer in Windows."
+  },
+  {
+    "id": 19,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si concluse infine il caso antitrust contro Microsoft?",
+    "options": [
+      "Con un accordo che imponeva regole più severe sull'integrazione dei programmi in Windows",
+      "Con la chiusura definitiva di Microsoft",
+      "Con l'assoluzione completa senza alcuna conseguenza",
+      "Con la vendita di Windows a un'altra azienda"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il caso si chiuse con un accordo che imponeva regole più severe sull'integrazione dei programmi."
+  },
+  {
+    "id": 20,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato il sistema operativo nella metafora del modulo?",
+    "options": [
+      "A un direttore d'orchestra",
+      "A un guidatore",
+      "A un regolamento di condominio",
+      "A un contratto d'affitto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sistema operativo è paragonato a un direttore d'orchestra che coordina i musicisti."
+  },
+  {
+    "id": 21,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il software applicativo?",
+    "options": [
+      "L'insieme dei programmi che permettono di svolgere attività specifiche e concrete",
+      "Il software principale che gestisce le risorse hardware",
+      "Un tipo di licenza software",
+      "L'insieme di regole per l'utilizzo di un programma"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il software applicativo permette di svolgere attività specifiche e concrete."
+  },
+  {
+    "id": 22,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale software applicativo viene indicato dal modulo come esempio per scrivere?",
+    "options": [
+      "Microsoft Word",
+      "Microsoft Excel",
+      "Google Chrome",
+      "Spotify"
+    ],
+    "correctIndex": 0,
+    "explanation": "Microsoft Word è indicato come esempio di software applicativo per scrivere."
+  },
+  {
+    "id": 23,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale software applicativo viene indicato dal modulo come esempio per calcolare?",
+    "options": [
+      "Microsoft Excel",
+      "Microsoft Word",
+      "WhatsApp",
+      "Spotify"
+    ],
+    "correctIndex": 0,
+    "explanation": "Microsoft Excel è indicato come esempio di software applicativo per calcolare."
+  },
+  {
+    "id": 24,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succederebbe senza software applicativo, secondo il modulo?",
+    "options": [
+      "Il computer continuerebbe a funzionare ma non servirebbe a nulla di pratico",
+      "Il computer smetterebbe immediatamente di funzionare",
+      "Il sistema operativo si disinstallerebbe automaticamente",
+      "La RAM si svuoterebbe definitivamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Senza software applicativo il computer continuerebbe a funzionare ma non servirebbe a nulla di pratico."
+  },
+  {
+    "id": 25,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi mise in vendita VisiCalc nell'ottobre del 1979?",
+    "options": [
+      "Dan Bricklin e Bob Frankston",
+      "Margaret Hamilton e Richard Stallman",
+      "Mark Russinovich e Dov Moran",
+      "Bill Gates e Steve Jobs"
+    ],
+    "correctIndex": 0,
+    "explanation": "VisiCalc fu messo in vendita da Dan Bricklin e Bob Frankston."
+  },
+  {
+    "id": 26,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'era VisiCalc?",
+    "options": [
+      "Il primo foglio di calcolo elettronico della storia",
+      "Il primo sistema operativo commerciale",
+      "Il primo virus informatico documentato",
+      "La prima licenza open source"
+    ],
+    "correctIndex": 0,
+    "explanation": "VisiCalc fu il primo foglio di calcolo elettronico della storia."
+  },
+  {
+    "id": 27,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quale computer fu pensato VisiCalc?",
+    "options": [
+      "Apple II",
+      "IBM PC 5150",
+      "Osborne 1",
+      "Apple Macintosh"
+    ],
+    "correctIndex": 0,
+    "explanation": "VisiCalc fu pensato per il computer Apple II."
+  },
+  {
+    "id": 28,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permise VisiCalc per la prima volta a contabili e piccoli imprenditori?",
+    "options": [
+      "Sostituire i registri cartacei con un foglio digitale capace di ricalcolare automaticamente i valori",
+      "Collegarsi a Internet per la prima volta",
+      "Scrivere documenti di testo formattati",
+      "Creare presentazioni multimediali"
+    ],
+    "correctIndex": 0,
+    "explanation": "VisiCalc permise di sostituire i registri cartacei con un foglio digitale che ricalcolava automaticamente i valori."
+  },
+  {
+    "id": 29,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché molte persone acquistavano un intero Apple II secondo il modulo?",
+    "options": [
+      "Soltanto per poter usare VisiCalc",
+      "Per giocare ai primi videogiochi",
+      "Per usare il primo sistema operativo grafico",
+      "Per collegarsi ai primi social network"
+    ],
+    "correctIndex": 0,
+    "explanation": "Molte persone acquistavano un intero Apple II soltanto per poter usare VisiCalc."
+  },
+  {
+    "id": 30,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato il software applicativo nella metafora del modulo?",
+    "options": [
+      "Allo strumento musicale che ciascun musicista usa per suonare un pezzo",
+      "Al direttore d'orchestra",
+      "Al regolamento di un condominio",
+      "A un contratto d'affitto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il software applicativo è paragonato allo strumento musicale usato da ciascun musicista."
+  },
+  {
+    "id": 31,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una licenza software?",
+    "options": [
+      "L'insieme di regole che stabilisce come un programma può essere usato, copiato, modificato o distribuito",
+      "Il software che gestisce le risorse hardware del computer",
+      "Un programma per svolgere attività specifiche",
+      "Il contratto che regola solo il prezzo di un software"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una licenza software stabilisce come un programma può essere usato, copiato, modificato o distribuito."
+  },
+  {
+    "id": 32,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale tipologia di licenza prevede un uso limitato, spesso a pagamento, con codice sorgente non accessibile?",
+    "options": [
+      "Proprietario",
+      "Open source",
+      "Shareware",
+      "Freeware"
+    ],
+    "correctIndex": 0,
+    "explanation": "La licenza proprietaria prevede un uso limitato, spesso a pagamento, con codice sorgente non accessibile."
+  },
+  {
+    "id": 33,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale tipologia di licenza rende il codice sorgente accessibile e modificabile liberamente?",
+    "options": [
+      "Open source",
+      "Proprietario",
+      "Shareware",
+      "Freeware"
+    ],
+    "correctIndex": 0,
+    "explanation": "La licenza open source rende il codice sorgente accessibile e modificabile liberamente."
+  },
+  {
+    "id": 34,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è lo shareware?",
+    "options": [
+      "Una versione di prova temporanea di un programma, prima di un eventuale acquisto",
+      "Un programma gratuito con codice sorgente pubblico",
+      "Un programma a pagamento con codice sorgente accessibile",
+      "Un tipo di malware distribuito gratuitamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo shareware è una versione di prova temporanea, prima di un eventuale acquisto."
+  },
+  {
+    "id": 35,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il freeware?",
+    "options": [
+      "Software gratuito, pur senza rendere necessariamente pubblico il codice sorgente",
+      "Software a pagamento con codice sorgente pubblico",
+      "Una versione di prova a tempo limitato",
+      "Un tipo di sistema operativo open source"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il freeware è gratuito, pur senza rendere necessariamente pubblico il codice sorgente."
+  },
+  {
+    "id": 36,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi annunciò il 27 settembre 1983 l'inizio del progetto GNU?",
+    "options": [
+      "Richard Stallman",
+      "Margaret Hamilton",
+      "Dan Bricklin",
+      "Mark Russinovich"
+    ],
+    "correctIndex": 0,
+    "explanation": "Richard Stallman annunciò il progetto GNU il 27 settembre 1983."
+  },
+  {
+    "id": 37,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove lavorava Richard Stallman quando annunciò il progetto GNU?",
+    "options": [
+      "Al MIT",
+      "Ad Apple",
+      "A Microsoft",
+      "A Toshiba"
+    ],
+    "correctIndex": 0,
+    "explanation": "Stallman era allora ricercatore al MIT."
+  },
+  {
+    "id": 38,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual era l'obiettivo del progetto GNU?",
+    "options": [
+      "Costruire un intero sistema operativo composto solo da software libero",
+      "Creare il primo foglio di calcolo elettronico",
+      "Sviluppare il primo browser Internet",
+      "Progettare il primo microprocessore commerciale"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'obiettivo di GNU era costruire un sistema operativo composto solo da software libero."
+  },
+  {
+    "id": 39,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fondò Richard Stallman nel 1985?",
+    "options": [
+      "La Free Software Foundation",
+      "Microsoft",
+      "Apple",
+      "M-Systems"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel 1985 Stallman fondò la Free Software Foundation."
+  },
+  {
+    "id": 40,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonate le licenze software nella metafora del modulo?",
+    "options": [
+      "Al regolamento di un condominio",
+      "A un direttore d'orchestra",
+      "A un contratto d'affitto",
+      "A uno strumento musicale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le licenze software sono paragonate al regolamento di un condominio."
+  },
+  {
+    "id": 41,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'EULA?",
+    "options": [
+      "Il contratto che regola il rapporto tra chi crea un software e chi lo usa",
+      "Un tipo di licenza open source",
+      "Il software che gestisce le risorse hardware",
+      "Un virus informatico che danneggia la ROM"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'EULA è il contratto che regola il rapporto tra chi crea un software e chi lo usa."
+  },
+  {
+    "id": 42,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'acronimo EULA?",
+    "options": [
+      "End User License Agreement",
+      "European Union License Act",
+      "External User License Access",
+      "End Use License Application"
+    ],
+    "correctIndex": 0,
+    "explanation": "EULA sta per End User License Agreement."
+  },
+  {
+    "id": 43,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Possono cambiare nel tempo le condizioni di una licenza, secondo il modulo?",
+    "options": [
+      "Sì, a seconda di chi controlla il software in un dato momento",
+      "No, restano sempre identiche",
+      "Solo se lo decide un tribunale",
+      "Solo per il software open source"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le condizioni possono cambiare a seconda di chi controlla il software in un dato momento."
+  },
+  {
+    "id": 44,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi scoprì nell'ottobre 2005 un software di protezione anticopia nascosto nei CD musicali Sony BMG?",
+    "options": [
+      "Mark Russinovich",
+      "Richard Stallman",
+      "Dan Bricklin",
+      "Margaret Hamilton"
+    ],
+    "correctIndex": 0,
+    "explanation": "Mark Russinovich scoprì il software di protezione anticopia nei CD Sony BMG."
+  },
+  {
+    "id": 45,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiamava il software di protezione anticopia scoperto nei CD Sony BMG?",
+    "options": [
+      "XCP",
+      "GNU",
+      "VisiCalc",
+      "DRAM"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il software si chiamava XCP."
+  },
+  {
+    "id": 46,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che modo si comportava il software XCP sul sistema operativo Windows?",
+    "options": [
+      "Si nascondeva in modo simile a un rootkit",
+      "Si disinstallava automaticamente dopo un giorno",
+      "Chiedeva sempre conferma prima di ogni azione",
+      "Funzionava solo con licenza open source"
+    ],
+    "correctIndex": 0,
+    "explanation": "XCP si nascondeva nel sistema operativo Windows in modo simile a un rootkit."
+  },
+  {
+    "id": 47,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quante conseguenze ebbe il caso Sony BMG, secondo il modulo?",
+    "options": [
+      "Cause legali, un'indagine della Federal Trade Commission e il ritiro dei dischi",
+      "Nessuna conseguenza legale",
+      "Solo un avviso informale da parte di un'associazione di consumatori",
+      "Il fallimento immediato di Sony BMG"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il caso provocò cause legali, un'indagine della Federal Trade Commission e il ritiro dei dischi."
+  },
+  {
+    "id": 48,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da chi fu acquistata WhatsApp nel febbraio 2014?",
+    "options": [
+      "Facebook",
+      "Microsoft",
+      "Sony BMG",
+      "Apple"
+    ],
+    "correctIndex": 0,
+    "explanation": "WhatsApp fu acquistata da Facebook nel febbraio 2014."
+  },
+  {
+    "id": 49,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa cambiò nel modello di WhatsApp dopo l'acquisizione da parte di Facebook?",
+    "options": [
+      "Passò da un modello a pagamento a un modello gratuito (freeware)",
+      "Passò da gratuito a un modello interamente a pagamento",
+      "Divenne un software open source",
+      "Fu chiuso definitivamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "WhatsApp passò da un modello a pagamento a un modello gratuito, cioè freeware."
+  },
+  {
+    "id": 50,
+    "module": "software",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato firmare un EULA senza leggerlo, nella metafora del modulo?",
+    "options": [
+      "A firmare un contratto d'affitto guardando solo il numero in fondo alla pagina",
+      "A comprare un biglietto del teatro senza guardare la fila",
+      "A cucinare senza seguire una ricetta",
+      "A cercare un solco su un vinile senza guardare"
+    ],
+    "correctIndex": 0,
+    "explanation": "È paragonato a firmare un contratto d'affitto guardando solo il numero in fondo alla pagina, senza leggere le clausole."
+  }
+]

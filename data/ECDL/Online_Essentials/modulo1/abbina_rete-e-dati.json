@@ -1,0 +1,134 @@
+{
+  "id": 1,
+  "module": "rete-e-dati",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Rete (network)",
+        "definition": "Un insieme di due o più dispositivi collegati tra loro, capaci di scambiarsi informazioni"
+      },
+      {
+        "term": "Internet (definizione generale)",
+        "definition": "L'estensione più grande possibile del principio di comunicazione tra dispositivi, su scala planetaria"
+      }
+    ],
+    [
+      {
+        "term": "LAN (Local Area Network)",
+        "definition": "La rete più piccola, che collega dispositivi in uno spazio limitato come un'abitazione, un ufficio o un negozio"
+      },
+      {
+        "term": "MAN (Metropolitan Area Network)",
+        "definition": "Rete che collega più reti locali a livello di una città o di un'area metropolitana"
+      },
+      {
+        "term": "WAN (Wide Area Network)",
+        "definition": "La rete più estesa possibile, che copre distanze oltre la singola città, fino a intere nazioni o il pianeta intero"
+      },
+      {
+        "term": "Internet (come WAN)",
+        "definition": "La più grande WAN mai costruita, una rete di reti che collega tra loro innumerevoli LAN e MAN in tutto il mondo"
+      }
+    ],
+    [
+      {
+        "term": "Instradamento (routing)",
+        "definition": "Il processo attraverso cui i dati, suddivisi in pacchetti, vengono indirizzati attraverso una rete fino a raggiungere la destinazione"
+      },
+      {
+        "term": "Pacchetto",
+        "definition": "Una piccola unità in cui vengono suddivisi i dati prima di attraversare la rete"
+      },
+      {
+        "term": "Nodo",
+        "definition": "Un dispositivo o un punto di passaggio della rete attraverso cui passano i pacchetti"
+      }
+    ],
+    [
+      {
+        "term": "Indirizzo IP",
+        "definition": "La sequenza numerica univoca che identifica un dispositivo all'interno di una rete"
+      },
+      {
+        "term": "Indirizzo IP locale",
+        "definition": "Identifica un dispositivo all'interno di una rete locale (LAN), come 192.168.1.1"
+      },
+      {
+        "term": "IPv4",
+        "definition": "Lo standard di indirizzi IP che prevede circa 4,3 miliardi di indirizzi possibili"
+      },
+      {
+        "term": "IPv6",
+        "definition": "Il nuovo standard di indirizzi IP, capace di fornire un numero di indirizzi enormemente più grande"
+      }
+    ],
+    [
+      {
+        "term": "DNS (Domain Name System)",
+        "definition": "Il servizio che traduce i nomi di dominio, facili da ricordare per le persone, negli indirizzi IP corrispondenti"
+      },
+      {
+        "term": "Nome di dominio",
+        "definition": "Un'informazione pensata per essere comoda da ricordare per le persone, tradotta dal DNS in un indirizzo IP"
+      },
+      {
+        "term": "Sistema centralizzato pre-DNS",
+        "definition": "Un unico file di testo, aggiornato manualmente e distribuito a tutti i partecipanti della rete, usato prima dell'introduzione del DNS"
+      }
+    ],
+    [
+      {
+        "term": "Leonard Kleinrock e Charley Kline",
+        "definition": "Gli autori del primo messaggio della storia inviato in rete, il 29 ottobre 1969, da UCLA verso lo Stanford Research Institute"
+      },
+      {
+        "term": "ARPANET",
+        "definition": "La rete, finanziata dal Dipartimento della Difesa statunitense, che nel 1969 collegava solo quattro nodi e da cui sarebbe nata Internet"
+      },
+      {
+        "term": "Robert Metcalfe",
+        "definition": "L'ingegnere che, insieme a David Boggs, Butler Lampson e Chuck Thacker, sviluppò l'Ethernet nel 1973 presso Xerox PARC"
+      },
+      {
+        "term": "Ethernet",
+        "definition": "La tecnologia diventata lo standard mondiale per le reti locali via cavo, sviluppata nel 1973"
+      },
+      {
+        "term": "Blackout di Facebook, Instagram e WhatsApp (2021)",
+        "definition": "L'interruzione di circa sei ore del 4 ottobre 2021, causata da un errore umano che disconnesse i data center dal resto di Internet"
+      },
+      {
+        "term": "IANA",
+        "definition": "L'organizzazione che il 3 febbraio 2011 distribuì gli ultimi blocchi disponibili di indirizzi IPv4"
+      },
+      {
+        "term": "Paul Mockapetris",
+        "definition": "Il ricercatore che, insieme a Jon Postel, ideò e testò il DNS nel 1983"
+      }
+    ],
+    [
+      {
+        "term": "Metafora della rete",
+        "definition": "Una conversazione tra due persone, che devono parlare la stessa lingua e ascoltarsi a turno"
+      },
+      {
+        "term": "Metafora di LAN, MAN e WAN",
+        "definition": "Cerchi concentrici che si allargano: il cortile di casa, il quartiere o la città, e ciò che sta oltre i confini della città"
+      },
+      {
+        "term": "Metafora dell'instradamento",
+        "definition": "Il navigatore satellitare di un'automobile, che ricalcola il tragitto quando incontra un ostacolo"
+      },
+      {
+        "term": "Metafora dell'indirizzo IP",
+        "definition": "L'indirizzo completo di un'abitazione: via, numero civico, città"
+      },
+      {
+        "term": "Metafora del DNS",
+        "definition": "La rubrica del telefono, che permette di salvare un nome senza dover ricordare il numero"
+      }
+    ]
+  ]
+}

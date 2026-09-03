@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le memorie di massa conservano i dati anche quando il computer è spento.",
+    "answer": true,
+    "explanation": "È la definizione di memorie di massa fornita dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I circuiti elettrici che elaborano i byte funzionano anche quando il computer è spento.",
+    "answer": false,
+    "explanation": "I circuiti elettrici funzionano solo finché il computer è acceso."
+  },
+  {
+    "id": 3,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'IBM 350, introdotto nel 1956, fu il primo hard disk della storia.",
+    "answer": true,
+    "explanation": "Il modulo presenta l'IBM 350 come il primo hard disk della storia."
+  },
+  {
+    "id": 4,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'IBM 350 pesava pochi grammi ed era facilmente trasportabile.",
+    "answer": false,
+    "explanation": "L'IBM 350 pesava circa una tonnellata."
+  },
+  {
+    "id": 5,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'IBM 350 faceva parte del sistema IBM 305 RAMAC.",
+    "answer": true,
+    "explanation": "È il sistema indicato dal modulo per l'IBM 350."
+  },
+  {
+    "id": 6,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'HDD conserva i dati su dischi magnetici rotanti, letti e scritti tramite una testina mobile.",
+    "answer": true,
+    "explanation": "È la definizione di HDD fornita dal modulo."
+  },
+  {
+    "id": 7,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'HDD, i dischi sono organizzati in celle di memoria flash.",
+    "answer": false,
+    "explanation": "I dischi dell'HDD sono organizzati in tracce, settori e cluster, non in celle flash."
+  },
+  {
+    "id": 8,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'ST-506, presentato nel 1980, fu il primo hard disk da 5,25 pollici pensato per i personal computer.",
+    "answer": true,
+    "explanation": "È quanto indicato dal modulo sull'ST-506."
+  },
+  {
+    "id": 9,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Prima dell'ST-506, gli hard disk erano riservati a grandi computer aziendali, ingombranti quanto un frigorifero.",
+    "answer": true,
+    "explanation": "È la descrizione fornita dal modulo sugli hard disk precedenti all'ST-506."
+  },
+  {
+    "id": 10,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'SSD conserva i dati su dischi magnetici rotanti, proprio come l'HDD.",
+    "answer": false,
+    "explanation": "L'SSD non ha parti meccaniche in movimento: scrive i dati su celle di memoria flash."
+  },
+  {
+    "id": 11,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'SSD è generalmente più veloce dell'HDD perché non richiede alcun movimento meccanico.",
+    "answer": true,
+    "explanation": "È la caratteristica principale dell'SSD indicata dal modulo."
+  },
+  {
+    "id": 12,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'SSD soffre del problema della frammentazione più dell'HDD.",
+    "answer": false,
+    "explanation": "È l'HDD a soffrire di frammentazione; l'SSD non ne è affetto."
+  },
+  {
+    "id": 13,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Fujio Masuoka sviluppò la memoria flash lavorando presso Toshiba a partire dal 1980.",
+    "answer": true,
+    "explanation": "Il modulo colloca Masuoka presso Toshiba a partire dal 1980."
+  },
+  {
+    "id": 14,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La memoria flash fu chiamata così perché un collega di Masuoka la paragonò al lampo di una macchina fotografica.",
+    "answer": true,
+    "explanation": "È l'origine del nome 'flash' indicata dal modulo."
+  },
+  {
+    "id": 15,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Masuoka presentò la variante NAND della memoria flash prima della variante NOR.",
+    "answer": false,
+    "explanation": "Presentò prima la variante NOR nel 1984, poi la variante NAND nel 1987."
+  },
+  {
+    "id": 16,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La RAM conserva i dati anche a computer spento, esattamente come le memorie di massa.",
+    "answer": false,
+    "explanation": "La RAM si svuota completamente quando il computer viene spento."
+  },
+  {
+    "id": 17,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Quando si apre un programma, questo viene caricato nella RAM.",
+    "answer": true,
+    "explanation": "È il funzionamento descritto dal modulo per la RAM."
+  },
+  {
+    "id": 18,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se si aprono troppi programmi insieme, la RAM può saturarsi.",
+    "answer": true,
+    "explanation": "È quanto indicato dal modulo sulla saturazione della RAM."
+  },
+  {
+    "id": 19,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Robert Dennard ebbe l'intuizione che portò all'invenzione della DRAM nel 1966.",
+    "answer": true,
+    "explanation": "È la data indicata dal modulo per l'intuizione di Dennard."
+  },
+  {
+    "id": 20,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Prima dell'intuizione di Dennard, per conservare un bit servivano due transistor.",
+    "answer": false,
+    "explanation": "Ne servivano sei, non due."
+  },
+  {
+    "id": 21,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "IBM ottenne il brevetto per la DRAM nel 1968.",
+    "answer": true,
+    "explanation": "È la data indicata dal modulo per il brevetto della DRAM."
+  },
+  {
+    "id": 22,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La ROM si svuota completamente ogni volta che il computer viene spento, proprio come la RAM.",
+    "answer": false,
+    "explanation": "La ROM non si svuota: resta sempre presente, a differenza della RAM."
+  },
+  {
+    "id": 23,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il piccolo insieme di istruzioni contenuto nella ROM è spesso chiamato firmware o BIOS.",
+    "answer": true,
+    "explanation": "È la terminologia usata dal modulo per le istruzioni della ROM."
+  },
+  {
+    "id": 24,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il virus CIH, noto anche come Chernobyl, causò il blocco di centinaia di migliaia di computer il 26 aprile 1999.",
+    "answer": true,
+    "explanation": "È la data indicata dal modulo per l'attivazione del virus CIH."
+  },
+  {
+    "id": 25,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il virus CIH fu creato da un ingegnere di Toshiba.",
+    "answer": false,
+    "explanation": "Fu creato da Chen Ing-hau, uno studente universitario taiwanese, non da un ingegnere Toshiba."
+  },
+  {
+    "id": 26,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il virus CIH, su alcune schede madri, poteva sovrascrivere il contenuto della ROM/BIOS.",
+    "answer": true,
+    "explanation": "È la capacità distruttiva del CIH descritta dal modulo."
+  },
+  {
+    "id": 27,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Quando il virus CIH danneggiava la ROM, bastava un riavvio software per risolvere il problema.",
+    "answer": false,
+    "explanation": "Serviva l'intervento fisico di un tecnico per sostituire il chip danneggiato."
+  },
+  {
+    "id": 28,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante l'avvio del sistema, la prima componente ad attivarsi è la ROM.",
+    "answer": true,
+    "explanation": "È la prima fase del boot descritta dal modulo."
+  },
+  {
+    "id": 29,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante l'avvio, la CPU riceve dalla ROM l'istruzione di cercare il sistema operativo sulla memoria di massa.",
+    "answer": true,
+    "explanation": "È la sequenza di avvio descritta dal modulo."
+  },
+  {
+    "id": 30,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Su un computer con SSD, la ricerca del sistema operativo durante l'avvio è generalmente più lenta rispetto a un computer con HDD.",
+    "answer": false,
+    "explanation": "Su SSD la ricerca è quasi istantanea; su HDD richiede più tempo, non il contrario."
+  },
+  {
+    "id": 31,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il passaggio decisivo dell'avvio del sistema avviene quando il sistema operativo viene caricato nella RAM.",
+    "answer": true,
+    "explanation": "È il passaggio decisivo descritto dal modulo."
+  },
+  {
+    "id": 32,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Hard disk esterni e chiavette USB sono definiti dal modulo come memorie di massa portatili.",
+    "answer": true,
+    "explanation": "È la definizione fornita dal modulo per i dispositivi esterni."
+  },
+  {
+    "id": 33,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 1999 l'azienda M-Systems, guidata da Dov Moran, depositò un brevetto per il dispositivo DiskOnKey.",
+    "answer": true,
+    "explanation": "È quanto riportato dal modulo sul brevetto DiskOnKey."
+  },
+  {
+    "id": 34,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il DiskOnKey di M-Systems aveva una capacità di 8 MB.",
+    "answer": true,
+    "explanation": "È la capacità indicata dal modulo per il DiskOnKey."
+  },
+  {
+    "id": 35,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'azienda Trek Technology sviluppò indipendentemente un dispositivo USB chiamato 'ThumbDrive'.",
+    "answer": true,
+    "explanation": "È quanto riportato dal modulo su Trek Technology."
+  },
+  {
+    "id": 36,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, esiste un solo protagonista certo nella storia dell'invenzione della chiavetta USB.",
+    "answer": false,
+    "explanation": "Il modulo indica che più aziende rivendicano la paternità dell'invenzione, con diverse cause legali."
+  },
+  {
+    "id": 37,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, la ROM viene paragonata alla prima pagina del copione di un teatro.",
+    "answer": true,
+    "explanation": "È la metafora usata dal modulo per la ROM."
+  },
+  {
+    "id": 38,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, la RAM viene paragonata a un giradischi che cerca il solco giusto.",
+    "answer": false,
+    "explanation": "È l'HDD a essere paragonato al giradischi; la RAM è paragonata al bancone di una cucina."
+  },
+  {
+    "id": 39,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, l'SSD viene paragonato a chi risponde a una domanda di cui conosce già la risposta a memoria.",
+    "answer": true,
+    "explanation": "È la metafora usata dal modulo per l'SSD."
+  },
+  {
+    "id": 40,
+    "module": "memorie",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, i dispositivi esterni vengono paragonati a un baule che si può portare via dal teatro.",
+    "answer": true,
+    "explanation": "È la metafora usata dal modulo per i dispositivi esterni."
+  }
+]

@@ -1,0 +1,326 @@
+[
+  {
+    "id": 1,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'IP pubblico è l'indirizzo con cui l'intera rete di un luogo viene identificata dall'esterno.",
+    "answer": true,
+    "explanation": "È la definizione di IP pubblico fornita dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un indirizzo IP locale come 192.168.1.1 ha senso anche al di fuori della rete locale a cui appartiene.",
+    "answer": false,
+    "explanation": "Ha senso solo dentro la rete locale a cui appartiene, non al di fuori."
+  },
+  {
+    "id": 3,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'IP pubblico viene assegnato dal proprio operatore telefonico a tutta la connessione.",
+    "answer": true,
+    "explanation": "È quanto indicato dal modulo sull'assegnazione dell'IP pubblico."
+  },
+  {
+    "id": 4,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'IP pubblico identifica sempre con certezza una persona specifica.",
+    "answer": false,
+    "explanation": "L'IP pubblico identifica il punto di accesso della connessione, non una persona."
+  },
+  {
+    "id": 5,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "A partire dal 2002, MaxMind associò per errore centinaia di milioni di indirizzi IP incerti a una fattoria in Kansas.",
+    "answer": true,
+    "explanation": "È il caso descritto dal modulo su MaxMind."
+  },
+  {
+    "id": 6,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La fattoria coinvolta nel caso MaxMind si trovava vicino alla cittadina di Potwin.",
+    "answer": true,
+    "explanation": "È la località indicata dal modulo."
+  },
+  {
+    "id": 7,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "MaxMind risolse il problema immediatamente nel 2002, appena si accorse dell'errore.",
+    "answer": false,
+    "explanation": "Il problema durò oltre un decennio, con causa legale nel 2016 e chiusura nel 2017."
+  },
+  {
+    "id": 8,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una VPN instrada la connessione attraverso un server intermedio, cambiando il punto da cui si esce verso Internet.",
+    "answer": true,
+    "explanation": "È la definizione di VPN fornita dal modulo."
+  },
+  {
+    "id": 9,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, usare una VPN rende completamente impossibile risalire all'utente in ogni caso.",
+    "answer": false,
+    "explanation": "Una VPN non rende invisibili: il fornitore può conservare i dati di connessione."
+  },
+  {
+    "id": 10,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Cody Kretsinger fu arrestato dall'FBI nel settembre 2011 come membro del collettivo LulzSec.",
+    "answer": true,
+    "explanation": "È quanto indicato dal modulo sull'arresto di Kretsinger."
+  },
+  {
+    "id": 11,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Kretsinger utilizzò il servizio VPN HideMyAss convinto che lo avrebbe reso irrintracciabile.",
+    "answer": true,
+    "explanation": "È quanto descritto dal modulo sull'uso della VPN da parte di Kretsinger."
+  },
+  {
+    "id": 12,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "HideMyAss si rifiutò di consegnare i registri di connessione richiesti dal tribunale britannico.",
+    "answer": false,
+    "explanation": "HideMyAss si conformò all'ordine del tribunale e fornì i dati richiesti."
+  },
+  {
+    "id": 13,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel modello client/server, il client effettua una richiesta e il server la riceve, restituendo una risposta.",
+    "answer": true,
+    "explanation": "È il funzionamento del modello client/server descritto dal modulo."
+  },
+  {
+    "id": 14,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un server resta utile anche se nessun client gli invia mai una richiesta.",
+    "answer": false,
+    "explanation": "Un server resta inutile finché nessun client gli invia una richiesta."
+  },
+  {
+    "id": 15,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Tim Berners-Lee allestì il primo server web della storia alla fine del 1990, al CERN di Ginevra.",
+    "answer": true,
+    "explanation": "È quanto indicato dal modulo sull'origine del primo server web."
+  },
+  {
+    "id": 16,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il primo server web della storia era raggiungibile con l'indirizzo info.cern.ch.",
+    "answer": true,
+    "explanation": "È l'indirizzo indicato dal modulo per il primo server web."
+  },
+  {
+    "id": 17,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Berners-Lee attaccò al computer del primo server web un adesivo con scritto 'DO NOT POWER IT DOWN'.",
+    "answer": true,
+    "explanation": "È l'adesivo descritto dal modulo."
+  },
+  {
+    "id": 18,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il progetto del primo server e client web fu reso pubblico nel dicembre 1990, subito dopo la sua creazione.",
+    "answer": false,
+    "explanation": "Fu reso pubblico nell'agosto 1991, non nel dicembre 1990."
+  },
+  {
+    "id": 19,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'HTTP è il protocollo con cui client e server si scambiano dati sul Web.",
+    "answer": true,
+    "explanation": "È la definizione di HTTP fornita dal modulo."
+  },
+  {
+    "id": 20,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'HTTPS trasmette i dati in chiaro, esattamente come l'HTTP nella sua forma originale.",
+    "answer": false,
+    "explanation": "L'HTTPS aggiunge un livello di cifratura, a differenza dell'HTTP in chiaro."
+  },
+  {
+    "id": 21,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un sito con HTTPS è automaticamente sicuro anche nei contenuti che pubblica.",
+    "answer": false,
+    "explanation": "HTTPS protegge solo la comunicazione, non garantisce che i contenuti siano sicuri."
+  },
+  {
+    "id": 22,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Eric Butler presentò l'estensione Firesheep nell'ottobre 2010 a San Diego.",
+    "answer": true,
+    "explanation": "È quanto indicato dal modulo sulla presentazione di Firesheep."
+  },
+  {
+    "id": 23,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Firesheep sfruttava siti che proteggevano con HTTPS solo il momento dell'accesso, non l'intera sessione.",
+    "answer": true,
+    "explanation": "È la debolezza sfruttata da Firesheep descritta dal modulo."
+  },
+  {
+    "id": 24,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Firesheep fu scaricata solo poche decine di volte nei primi due giorni dal rilascio.",
+    "answer": false,
+    "explanation": "Fu scaricata circa 129.000 volte nelle prime quarantotto ore."
+  },
+  {
+    "id": 25,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il caso Firesheep contribuì a spingere i grandi siti web ad adottare l'HTTPS per l'intera sessione di navigazione.",
+    "answer": true,
+    "explanation": "È l'effetto del caso Firesheep descritto dal modulo."
+  },
+  {
+    "id": 26,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un URL è l'indirizzo completo che permette di individuare in modo univoco una risorsa specifica su Internet.",
+    "answer": true,
+    "explanation": "È la definizione di URL fornita dal modulo."
+  },
+  {
+    "id": 27,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un URL si compone di protocollo, dominio e percorso.",
+    "answer": true,
+    "explanation": "Sono le tre parti principali di un URL indicate dal modulo."
+  },
+  {
+    "id": 28,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il dominio all'interno di un URL indica come comunicare con il server.",
+    "answer": false,
+    "explanation": "Il dominio indica dove andare; è il protocollo a indicare come comunicare."
+  },
+  {
+    "id": 29,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'errore 404 indica che il server non esiste e non è raggiungibile.",
+    "answer": false,
+    "explanation": "L'errore 404 indica che il server esiste ed è raggiungibile, ma la risorsa non si trova in quel punto."
+  },
+  {
+    "id": 30,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il 15 marzo 1985 l'azienda Symbolics registrò il primo dominio .com della storia.",
+    "answer": true,
+    "explanation": "È la data indicata dal modulo per la registrazione di symbolics.com."
+  },
+  {
+    "id": 31,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Web, con il suo sistema di URL, esisteva già nel 1985, quando fu registrato il primo dominio .com.",
+    "answer": false,
+    "explanation": "Il Web nacque solo cinque anni dopo, nel 1990, con il lavoro di Tim Berners-Lee."
+  },
+  {
+    "id": 32,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'azienda Symbolics cessò l'attività nel 1996.",
+    "answer": true,
+    "explanation": "È l'anno indicato dal modulo per la cessazione dell'attività di Symbolics."
+  },
+  {
+    "id": 33,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il dominio symbolics.com è ancora oggi il più antico dominio .com attivo al mondo.",
+    "answer": true,
+    "explanation": "È quanto indicato dal modulo sullo stato attuale di symbolics.com."
+  },
+  {
+    "id": 34,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, l'IP pubblico viene paragonato al citofono all'ingresso di un condominio.",
+    "answer": true,
+    "explanation": "È la metafora usata dal modulo per l'IP pubblico."
+  },
+  {
+    "id": 35,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, l'HTTPS viene paragonato a una cartolina leggibile da chiunque.",
+    "answer": false,
+    "explanation": "È l'HTTP a essere paragonato a una cartolina; l'HTTPS è paragonato a una lettera chiusa in busta sigillata."
+  },
+  {
+    "id": 36,
+    "module": "identita-e-comunicazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, un URL viene paragonato all'istruzione completa data a un taxi.",
+    "answer": true,
+    "explanation": "È la metafora usata dal modulo per l'URL."
+  }
+]

@@ -1,0 +1,716 @@
+[
+  {
+    "id": 1,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____ è l'indirizzo con cui l'intera rete di un luogo viene identificata dall'esterno, cioè dal resto di Internet.",
+    "answer": "IP pubblico",
+    "bank": [
+      "IP pubblico",
+      "IP locale",
+      "DNS",
+      "URL"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un indirizzo come 192.168.1.1 ha senso solo ____ la rete locale a cui appartiene.",
+    "answer": "dentro",
+    "bank": [
+      "dentro",
+      "fuori",
+      "oltre",
+      "prima di"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Quando qualcosa esce verso Internet, a essere visibile dall'esterno non è più l'indirizzo del singolo dispositivo, ma un unico indirizzo ____.",
+    "answer": "pubblico",
+    "bank": [
+      "pubblico",
+      "locale",
+      "temporaneo",
+      "cifrato"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'indirizzo IP pubblico viene assegnato dal proprio ____ a tutta la connessione.",
+    "answer": "operatore telefonico",
+    "bank": [
+      "operatore telefonico",
+      "router locale",
+      "DNS",
+      "browser"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, l'IP pubblico non identifica una persona, ma il punto di ____ da cui la connessione sta uscendo.",
+    "answer": "accesso",
+    "bank": [
+      "accesso",
+      "arrivo",
+      "pagamento",
+      "backup"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "In molti paesi la legge prevede che alcuni dati tecnici relativi alla connessione vengano conservati dagli operatori per un periodo ____ di tempo.",
+    "answer": "limitato",
+    "bank": [
+      "limitato",
+      "illimitato",
+      "casuale",
+      "minimo"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "A partire dal 2002, l'azienda statunitense ____ adottò la scelta di far ricadere gli indirizzi IP incerti su un punto fisso al centro degli Stati Uniti.",
+    "answer": "MaxMind",
+    "bank": [
+      "MaxMind",
+      "HideMyAss",
+      "Symbolics",
+      "IANA"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il punto fisso scelto da MaxMind corrispondeva a un terreno agricolo vicino alla cittadina di ____, in Kansas.",
+    "answer": "Potwin",
+    "bank": [
+      "Potwin",
+      "Phoenix",
+      "Ginevra",
+      "San Diego"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il terreno agricolo di Potwin era di proprietà della famiglia ____.",
+    "answer": "Vogelman-Taylor",
+    "bank": [
+      "Vogelman-Taylor",
+      "Kretsinger",
+      "Berners-Lee",
+      "Butler"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel corso di oltre un decennio, più di ____ milioni di indirizzi IP incerti vennero associati alla fattoria di Potwin.",
+    "answer": "600",
+    "bank": [
+      "600",
+      "60",
+      "6",
+      "6.000"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2016 i proprietari della fattoria fecero causa a MaxMind, che chiuse la vertenza nel ____.",
+    "answer": "2017",
+    "bank": [
+      "2017",
+      "2011",
+      "2002",
+      "1985"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una ____ è un servizio che instrada la connessione attraverso un server intermedio, cambiando il punto da cui si esce verso Internet.",
+    "answer": "VPN",
+    "bank": [
+      "VPN",
+      "URL",
+      "DNS",
+      "HTTP"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "VPN è l'acronimo di Virtual Private ____.",
+    "answer": "Network",
+    "bank": [
+      "Network",
+      "Node",
+      "Number",
+      "Navigator"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Quando si attiva una VPN, chi osserva la connessione dall'esterno vede comparire l'indirizzo IP pubblico del ____ intermedio.",
+    "answer": "server",
+    "bank": [
+      "server",
+      "router",
+      "browser",
+      "dominio"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, una VPN non rende ____.",
+    "answer": "invisibili",
+    "bank": [
+      "invisibili",
+      "più lenti",
+      "illegali",
+      "anonimi per sempre"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il fornitore del servizio VPN può conoscere e in alcuni casi conservare i dati di ____ che passano attraverso i propri server.",
+    "answer": "connessione",
+    "bank": [
+      "connessione",
+      "pagamento",
+      "fatturazione",
+      "navigazione GPS"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel settembre 2011 l'FBI arrestò ____, ritenuto membro del collettivo di hacker LulzSec.",
+    "answer": "Cody Kretsinger",
+    "bank": [
+      "Cody Kretsinger",
+      "Eric Butler",
+      "Tim Berners-Lee",
+      "Paul Mockapetris"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Kretsinger fu accusato di aver preso parte all'attacco informatico contro ____.",
+    "answer": "Sony Pictures Entertainment",
+    "bank": [
+      "Sony Pictures Entertainment",
+      "Facebook",
+      "Twitter",
+      "CERN"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per condurre l'attacco, Kretsinger si era servito del servizio VPN britannico chiamato ____.",
+    "answer": "HideMyAss",
+    "bank": [
+      "HideMyAss",
+      "MaxMind",
+      "Symbolics",
+      "Firesheep"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un tribunale britannico obbligò HideMyAss a consegnare i registri di ____ associati all'account di Kretsinger.",
+    "answer": "connessione",
+    "bank": [
+      "connessione",
+      "pagamento",
+      "navigazione",
+      "fatturazione"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2013 Kretsinger fu condannato a poco più di un ____ di carcere.",
+    "answer": "anno",
+    "bank": [
+      "anno",
+      "mese",
+      "decennio",
+      "giorno"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel modello client/server, il ____ è il dispositivo che effettua una richiesta.",
+    "answer": "client",
+    "bank": [
+      "client",
+      "server",
+      "router",
+      "dominio"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel modello client/server, il ____ è il sistema che riceve una richiesta e restituisce una risposta.",
+    "answer": "server",
+    "bank": [
+      "server",
+      "client",
+      "browser",
+      "protocollo"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un client, da solo, non ha nulla da mostrare: dipende sempre da un ____ che gli fornisca i dati.",
+    "answer": "server",
+    "bank": [
+      "server",
+      "dominio",
+      "protocollo",
+      "IP pubblico"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un server, per quanto pieno di informazioni, resta inutile finché nessun ____ gli invia una richiesta.",
+    "answer": "client",
+    "bank": [
+      "client",
+      "dominio",
+      "DNS",
+      "protocollo"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Alla fine del 1990, il ricercatore britannico ____ allestì il primo server web della storia al CERN di Ginevra.",
+    "answer": "Tim Berners-Lee",
+    "bank": [
+      "Tim Berners-Lee",
+      "Eric Butler",
+      "Cody Kretsinger",
+      "Paul Mockapetris"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il primo server web della storia era raggiungibile con l'indirizzo ____.",
+    "answer": "info.cern.ch",
+    "bank": [
+      "info.cern.ch",
+      "symbolics.com",
+      "www.cern.org",
+      "web.cern.ch"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il primo programma client in grado di interrogare il primo server web si chiamava ____.",
+    "answer": "WorldWideWeb",
+    "bank": [
+      "WorldWideWeb",
+      "Firesheep",
+      "HideMyAss",
+      "Netscape Navigator"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Sul computer NeXT del primo server web, Berners-Lee attaccò un adesivo con scritto '____'.",
+    "answer": "DO NOT POWER IT DOWN",
+    "bank": [
+      "DO NOT POWER IT DOWN",
+      "DO NOT DISTURB",
+      "HANDLE WITH CARE",
+      "WORK IN PROGRESS"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il progetto del primo server e client web venne reso pubblico nell'agosto ____.",
+    "answer": "1991",
+    "bank": [
+      "1991",
+      "1990",
+      "1985",
+      "2010"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____ è il protocollo con cui client e server si scambiano dati sul Web.",
+    "answer": "HTTP",
+    "bank": [
+      "HTTP",
+      "HTTPS",
+      "DNS",
+      "URL"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____ è la versione sicura dell'HTTP, in cui i dati vengono cifrati durante il trasferimento.",
+    "answer": "HTTPS",
+    "bank": [
+      "HTTPS",
+      "HTTP",
+      "VPN",
+      "DNS"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella sua forma originale, l'HTTP trasmette i dati 'in ____', cioè leggibili da chiunque si trovi lungo il percorso.",
+    "answer": "chiaro",
+    "bank": [
+      "chiaro",
+      "ritardo",
+      "streaming",
+      "background"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'HTTPS aggiunge un livello di ____, che rende i dati incomprensibili senza la chiave corretta.",
+    "answer": "cifratura",
+    "bank": [
+      "cifratura",
+      "instradamento",
+      "compressione",
+      "duplicazione"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, HTTPS non significa che un sito sia sicuro nei ____ che offre, ma solo che la comunicazione è protetta.",
+    "answer": "contenuti",
+    "bank": [
+      "contenuti",
+      "prezzi",
+      "server",
+      "protocolli"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'ottobre 2010, il programmatore ____ presentò l'estensione Firesheep per il browser Firefox.",
+    "answer": "Eric Butler",
+    "bank": [
+      "Eric Butler",
+      "Tim Berners-Lee",
+      "Cody Kretsinger",
+      "Paul Mockapetris"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Firesheep sfruttava il fatto che molti siti proteggevano con HTTPS solo il momento dell'accesso, lasciando in chiaro il ____ che identificava l'utente già collegato.",
+    "answer": "cookie",
+    "bank": [
+      "cookie",
+      "dominio",
+      "indirizzo IP",
+      "protocollo"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Firesheep permetteva di impersonare l'account di chiunque fosse collegato alla stessa rete Wi-Fi ____.",
+    "answer": "pubblica",
+    "bank": [
+      "pubblica",
+      "privata",
+      "aziendale",
+      "cifrata"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nelle prime quarantotto ore dal rilascio, Firesheep venne scaricata circa ____ volte.",
+    "answer": "129.000",
+    "bank": [
+      "129.000",
+      "12.900",
+      "1.290.000",
+      "1.290"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, l'HTTP viene paragonato a una ____, leggibile da chiunque la maneggi.",
+    "answer": "cartolina",
+    "bank": [
+      "cartolina",
+      "busta sigillata",
+      "lettera raccomandata",
+      "cassaforte"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____ è l'indirizzo completo che permette di individuare in modo univoco una risorsa specifica su Internet.",
+    "answer": "URL",
+    "bank": [
+      "URL",
+      "IP",
+      "DNS",
+      "HTTP"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un URL si può scomporre in tre parti principali: protocollo, dominio e ____.",
+    "answer": "percorso",
+    "bank": [
+      "percorso",
+      "server",
+      "client",
+      "cookie"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il protocollo in un URL indica ____ comunicare.",
+    "answer": "come",
+    "bank": [
+      "come",
+      "dove",
+      "cosa",
+      "quando"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il dominio in un URL indica ____ andare.",
+    "answer": "dove",
+    "bank": [
+      "dove",
+      "come",
+      "cosa",
+      "chi"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il percorso in un URL indica ____ chiedere.",
+    "answer": "cosa",
+    "bank": [
+      "cosa",
+      "dove",
+      "come",
+      "quando"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se il percorso indicato in un URL non corrisponde a nulla di realmente presente sul server, quest'ultimo risponde con l'errore ____.",
+    "answer": "404",
+    "bank": [
+      "404",
+      "200",
+      "500",
+      "403"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'errore 404 significa che il server esiste ed è raggiungibile, ma la risorsa richiesta non si trova in quel ____.",
+    "answer": "punto",
+    "bank": [
+      "punto",
+      "momento",
+      "giorno",
+      "paese"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il 15 marzo 1985 l'azienda statunitense ____ registrò il dominio symbolics.com.",
+    "answer": "Symbolics",
+    "bank": [
+      "Symbolics",
+      "MaxMind",
+      "HideMyAss",
+      "IANA"
+    ]
+  },
+  {
+    "id": 49,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Symbolics.com fu il primo dominio '____' mai registrato nella storia di Internet.",
+    "answer": ".com",
+    "bank": [
+      ".com",
+      ".org",
+      ".net",
+      ".edu"
+    ]
+  },
+  {
+    "id": 50,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'azienda Symbolics cessò l'attività nel ____.",
+    "answer": "1996",
+    "bank": [
+      "1996",
+      "1985",
+      "2009",
+      "1991"
+    ]
+  },
+  {
+    "id": 51,
+    "module": "identita-e-comunicazione",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il dominio symbolics.com fu venduto nel 2009 e resta ancora oggi il più antico dominio '.com' ____ al mondo.",
+    "answer": "attivo",
+    "bank": [
+      "attivo",
+      "gratuito",
+      "sicuro",
+      "italiano"
+    ]
+  }
+]

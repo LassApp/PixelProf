@@ -1,0 +1,752 @@
+[
+  {
+    "id": 1,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'e' una password?",
+    "options": [
+      "La chiave che protegge l'accesso a un account o a un servizio digitale riservato",
+      "L'insieme di tecniche per ingannare una persona",
+      "Un programma progettato per danneggiare un dispositivo",
+      "L'insieme di regole di comportamento online"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una password e' la chiave che protegge l'accesso a un account o a un servizio digitale riservato."
+  },
+  {
+    "id": 2,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual e' il rischio principale del riutilizzare la stessa password su piu' account?",
+    "options": [
+      "Se un servizio subisce una violazione, la password puo' essere provata su tutti gli altri account",
+      "La password diventa automaticamente piu' debole nel tempo",
+      "Il servizio blocca automaticamente l'account dopo il primo utilizzo",
+      "Nessun rischio, se la password e' abbastanza lunga"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se un servizio subisce una violazione, la password sottratta puo' essere provata su tutti gli altri account che la usano."
+  },
+  {
+    "id": 3,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perche' una password prevedibile e' pericolosa, secondo il modulo?",
+    "options": [
+      "Puo' essere indovinata o testata automaticamente da un programma in tempi brevi",
+      "Occupa troppo spazio nel sistema",
+      "Rallenta la connessione di rete",
+      "Non puo' essere memorizzata dai gestori di password"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una password prevedibile puo' essere indovinata o testata automaticamente da un programma in tempi brevi."
+  },
+  {
+    "id": 4,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa determina la qualita' di una buona password, secondo il modulo?",
+    "options": [
+      "La sua resistenza, cioe' quanto e' imprevedibile",
+      "La sua lunghezza in caratteri speciali soltanto",
+      "Il fatto che contenga il nome dell'utente",
+      "La data in cui e' stata creata"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una buona password e' tale per la sua resistenza, cioe' per quanto sia imprevedibile."
+  },
+  {
+    "id": 5,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi sfrutto' nel dicembre 2009 una vulnerabilita' del sito RockYou.com?",
+    "options": [
+      "Un aggressore noto con lo pseudonimo 'igigi'",
+      "Il gruppo Fancy Bear",
+      "Il gruppo Shadow Brokers",
+      "Il giornalista Mat Honan"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'attacco fu condotto da un aggressore noto con lo pseudonimo 'igigi'."
+  },
+  {
+    "id": 6,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quante credenziali furono sottratte nell'attacco a RockYou.com?",
+    "options": [
+      "Oltre 32 milioni di account",
+      "Oltre 200.000 account",
+      "Oltre 87 milioni di account",
+      "Oltre 22 milioni di account"
+    ],
+    "correctIndex": 0,
+    "explanation": "Furono sottratte le credenziali di oltre 32 milioni di account."
+  },
+  {
+    "id": 7,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perche' il danno dell'attacco a RockYou.com fu particolarmente grave?",
+    "options": [
+      "Le password non erano protette da alcuna cifratura, ma conservate in chiaro",
+      "L'azienda non aveva mai avuto un sito web",
+      "Le password erano gia' state rubate in un attacco precedente",
+      "L'azienda si rifiuto' di informare gli utenti colpiti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le password erano conservate in chiaro, senza alcuna cifratura."
+  },
+  {
+    "id": 8,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale fu la password piu' diffusa tra quelle rubate a RockYou.com?",
+    "options": [
+      "123456",
+      "qwerty",
+      "admin",
+      "letmein"
+    ],
+    "correctIndex": 0,
+    "explanation": "La password piu' diffusa era '123456'."
+  },
+  {
+    "id": 9,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene chiamato ancora oggi l'elenco delle password rubate a RockYou.com?",
+    "options": [
+      "rockyou.txt",
+      "igigi.txt",
+      "passwordlist.com",
+      "leakedpass.txt"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'elenco e' ancora oggi conosciuto come 'rockyou.txt'."
+  },
+  {
+    "id": 10,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonate le password nella metafora del modulo?",
+    "options": [
+      "A un mazzo di chiavi, dove ogni chiave dovrebbe aprire una sola porta",
+      "A una chiave maestra che apre ogni porta",
+      "A un tesserino da tecnico",
+      "A un regalo incartato con cura"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le password sono paragonate a un mazzo di chiavi, ognuna per una sola porta."
+  },
+  {
+    "id": 11,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'e' l'ingegneria sociale?",
+    "options": [
+      "L'insieme di tecniche con cui un malintenzionato inganna una persona per ottenere informazioni riservate",
+      "Un programma che si diffonde copiandosi da un dispositivo all'altro",
+      "L'insieme di regole di comportamento online",
+      "Una tecnica che sfrutta esclusivamente vulnerabilita' tecniche di un sistema"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'ingegneria sociale inganna una persona per ottenere informazioni riservate o accessi."
+  },
+  {
+    "id": 12,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual e' il punto debole su cui fa leva l'ingegneria sociale, secondo il modulo?",
+    "options": [
+      "Le persone, non i sistemi informatici",
+      "La velocita' della connessione Internet",
+      "La qualita' dell'hardware utilizzato",
+      "Il tipo di browser installato"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'ingegneria sociale fa leva sulle persone, non sui sistemi informatici."
+  },
+  {
+    "id": 13,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che ruolo particolare svolge la posta elettronica nella sicurezza online, secondo il modulo?",
+    "options": [
+      "E' quasi sempre il punto a cui fanno riferimento le procedure di recupero password di altri servizi",
+      "Serve solo per ricevere messaggi pubblicitari",
+      "Non ha alcun collegamento con gli altri account online",
+      "Viene usata solo per il lavoro, mai per servizi personali"
+    ],
+    "correctIndex": 0,
+    "explanation": "La posta elettronica e' il punto a cui fanno riferimento le procedure di recupero password di altri servizi."
+  },
+  {
+    "id": 14,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa raccontò pubblicamente il giornalista Mat Honan nell'agosto 2012?",
+    "options": [
+      "Come la propria intera vita digitale fu cancellata in un solo pomeriggio",
+      "Come scopri' il rootkit XCP nei CD Sony BMG",
+      "Come fu vittima di un attacco ransomware",
+      "Come recupero' l'accesso a un account rubato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Honan racconto' come la propria vita digitale fu cancellata in un solo pomeriggio."
+  },
+  {
+    "id": 15,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come riusci' l'aggressore a colpire Mat Honan?",
+    "options": [
+      "Convincendo il servizio clienti di Amazon e il supporto Apple a compiere azioni che non avrebbero dovuto fare",
+      "Indovinando la sua password con un attacco a forza bruta",
+      "Intercettando la sua connessione Wi-Fi pubblica",
+      "Infettando il suo computer con un ransomware"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'aggressore convinse il servizio clienti di Amazon e il supporto Apple a compiere azioni scorrette."
+  },
+  {
+    "id": 16,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa ottenne l'aggressore telefonando al servizio clienti di Amazon fingendosi Honan?",
+    "options": [
+      "L'aggiunta di una nuova carta di credito al suo account",
+      "L'accesso diretto alla sua email",
+      "La cancellazione del suo account Twitter",
+      "Il reset immediato di tutte le sue password"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ottenne l'aggiunta di una nuova carta di credito al suo account Amazon."
+  },
+  {
+    "id": 17,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come uso' l'aggressore le informazioni ottenute da Amazon nei confronti di Apple?",
+    "options": [
+      "Per convincere il supporto tecnico Apple a reimpostare la password dell'account iCloud",
+      "Per accedere direttamente ai server di Apple",
+      "Per acquistare dispositivi Apple a nome di Honan",
+      "Per ottenere un rimborso fraudolento da Apple"
+    ],
+    "correctIndex": 0,
+    "explanation": "Uso' le ultime cifre della carta per convincere Apple a reimpostare la password iCloud."
+  },
+  {
+    "id": 18,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fu cancellato da remoto nell'attacco contro Mat Honan?",
+    "options": [
+      "Il contenuto del suo iPhone, iPad e MacBook, incluse foto di famiglia",
+      "Solo la sua casella di posta elettronica",
+      "Solo il suo account bancario",
+      "Solo il suo profilo LinkedIn"
+    ],
+    "correctIndex": 0,
+    "explanation": "Furono cancellati da remoto iPhone, iPad e MacBook, incluse foto di famiglia."
+  },
+  {
+    "id": 19,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Fu violato tecnicamente qualche sistema nell'attacco contro Mat Honan, secondo il modulo?",
+    "options": [
+      "No, bastò convincere due persone al telefono a fare qualcosa che non avrebbero dovuto fare",
+      "Sì, l'aggressore sfruttò una falla informatica in iCloud",
+      "Sì, l'aggressore uso' un virus per accedere ai dispositivi",
+      "No, l'aggressore indovino' semplicemente la password"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nessun sistema fu violato tecnicamente: bastò convincere due persone al telefono."
+  },
+  {
+    "id": 20,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata la posta elettronica nella metafora del modulo?",
+    "options": [
+      "Alla chiave maestra dell'intero edificio",
+      "A un mazzo di chiavi normali",
+      "A un tesserino da tecnico",
+      "A un regalo incartato con cura"
+    ],
+    "correctIndex": 0,
+    "explanation": "La posta elettronica e' paragonata alla chiave maestra dell'intero edificio."
+  },
+  {
+    "id": 21,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'e' il phishing?",
+    "options": [
+      "Una tecnica di inganno online in cui un malintenzionato si finge un mittente affidabile per ottenere dati riservati",
+      "Un programma che cifra i file di un dispositivo",
+      "L'insieme di regole di comportamento online",
+      "Un tipo di password particolarmente debole"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il phishing e' una tecnica di inganno in cui il malintenzionato si finge un mittente affidabile."
+  },
+  {
+    "id": 22,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Il phishing sfonda protezioni tecniche, secondo il modulo?",
+    "options": [
+      "No, si limita a chiedere con inganno che sia la vittima a fornire l'informazione",
+      "Sì, sfrutta sempre una falla nel sistema operativo",
+      "Sì, richiede sempre un virus per funzionare",
+      "No, funziona solo tramite una rete Wi-Fi compromessa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il phishing non sfonda protezioni tecniche, chiede con inganno che sia la vittima a fornire l'informazione."
+  },
+  {
+    "id": 23,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale elemento crea tipicamente un messaggio di phishing, secondo il modulo?",
+    "options": [
+      "Un senso di urgenza o di allarme",
+      "Un tono neutro e distaccato",
+      "Nessun riferimento a un'azione da compiere",
+      "Un lungo elenco di termini tecnici"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un messaggio di phishing crea tipicamente un senso di urgenza o di allarme."
+  },
+  {
+    "id": 24,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi ricevette il 19 marzo 2016 un'email di phishing che sembrava provenire da Google?",
+    "options": [
+      "John Podesta",
+      "Mat Honan",
+      "Virginia Shea",
+      "Mark Russinovich"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'email fu ricevuta da John Podesta."
+  },
+  {
+    "id": 25,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che ruolo si trovava John Podesta al momento dell'attacco di phishing?",
+    "options": [
+      "A capo della campagna presidenziale di Hillary Clinton",
+      "Ricercatore di sicurezza informatica",
+      "Amministratore delegato di una societa' tecnologica",
+      "Giudice federale statunitense"
+    ],
+    "correctIndex": 0,
+    "explanation": "Podesta era a capo della campagna presidenziale di Hillary Clinton."
+  },
+  {
+    "id": 26,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rispose per errore un collaboratore del supporto informatico della campagna riguardo all'email di phishing?",
+    "options": [
+      "Che si trattava di un'email 'legittima'",
+      "Che si trattava certamente di una truffa",
+      "Che l'email andava ignorata",
+      "Che l'email era stata gia' bloccata dal sistema"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il collaboratore rispose per errore che l'email era 'legittima'."
+  },
+  {
+    "id": 27,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi creo' la pagina di phishing contraffatta usata contro Podesta?",
+    "options": [
+      "Il gruppo di hacker noto come Fancy Bear",
+      "Il gruppo Shadow Brokers",
+      "Il collettivo LulzSec",
+      "Un singolo aggressore chiamato 'igigi'"
+    ],
+    "correctIndex": 0,
+    "explanation": "La pagina fu creata dal gruppo di hacker noto come Fancy Bear."
+  },
+  {
+    "id": 28,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa successe dopo che Podesta inseri' le proprie credenziali nella pagina falsa?",
+    "options": [
+      "Gli aggressori ottennero l'accesso a decine di migliaia di email della sua casella personale",
+      "Il suo computer fu immediatamente bloccato da un ransomware",
+      "Il suo account fu automaticamente disattivato per sicurezza",
+      "Nessuna conseguenza, perche' la pagina era solo dimostrativa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli aggressori ottennero l'accesso a decine di migliaia di email della sua casella."
+  },
+  {
+    "id": 29,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra il caso Podesta, secondo il modulo?",
+    "options": [
+      "Che anche un'organizzazione con personale tecnico dedicato puo' cadere in un phishing ben costruito",
+      "Che il phishing funziona solo contro utenti privati inesperti",
+      "Che Google e' responsabile di tutti gli attacchi di phishing",
+      "Che il phishing richiede sempre un virus per avere successo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il caso mostra che anche organizzazioni con personale tecnico possono cadere in un phishing ben costruito."
+  },
+  {
+    "id": 30,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato il phishing nella metafora del modulo?",
+    "options": [
+      "A qualcuno vestito da tecnico con un tesserino apparentemente ufficiale",
+      "A una chiave maestra",
+      "A un mazzo di chiavi",
+      "A un regalo incartato con cura"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il phishing e' paragonato a qualcuno vestito da tecnico con un tesserino apparentemente ufficiale."
+  },
+  {
+    "id": 31,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'e' il malware?",
+    "options": [
+      "Qualunque programma progettato per danneggiare, spiare o prendere il controllo di un dispositivo",
+      "Una tecnica di inganno che sfrutta la fiducia delle persone",
+      "L'insieme di regole di comportamento online",
+      "Un tipo di password particolarmente sicura"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il malware e' qualunque programma progettato per danneggiare, spiare o controllare un dispositivo."
+  },
+  {
+    "id": 32,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa deriva il termine 'malware'?",
+    "options": [
+      "Dalla crasi inglese di malicious e software",
+      "Dal nome del suo primo sviluppatore",
+      "Da un acronimo governativo statunitense",
+      "Dalla parola latina 'malus'"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il termine deriva dalla crasi inglese di malicious e software."
+  },
+  {
+    "id": 33,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si comporta un virus informatico, secondo il modulo?",
+    "options": [
+      "Si attacca ad altri file o programmi e si diffonde copiandosi da un dispositivo all'altro",
+      "Cifra i file e chiede un riscatto",
+      "Si finge un programma utile nascondendo una funzione dannosa",
+      "Convince una persona a rivelare informazioni riservate"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il virus si attacca ad altri file o programmi e si diffonde copiandosi."
+  },
+  {
+    "id": 34,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si comporta un trojan, secondo il modulo?",
+    "options": [
+      "Si presenta come qualcosa di utile o desiderabile, ma nasconde una funzione dannosa",
+      "Si diffonde copiandosi automaticamente da un dispositivo all'altro",
+      "Cifra i file del dispositivo colpito",
+      "Inganna una persona al telefono"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il trojan si presenta come qualcosa di utile, nascondendo una funzione dannosa."
+  },
+  {
+    "id": 35,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa un ransomware, secondo il modulo?",
+    "options": [
+      "Cifra i file del dispositivo colpito e chiede un pagamento per restituirne l'accesso",
+      "Si finge un mittente affidabile per rubare credenziali",
+      "Si presenta come un programma utile nascondendo una funzione dannosa",
+      "Convince una persona a fornire informazioni riservate"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il ransomware cifra i file e chiede un pagamento per restituirne l'accesso."
+  },
+  {
+    "id": 36,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come arriva spesso il malware su un dispositivo, secondo il modulo?",
+    "options": [
+      "Camuffato da qualcosa che l'utente stesso decide di aprire, installare o eseguire",
+      "Sempre tramite un attacco a forza bruta contro il sistema operativo",
+      "Sempre attraverso una falla hardware del dispositivo",
+      "Solo tramite reti Wi-Fi pubbliche non protette"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il malware arriva spesso camuffato da qualcosa che l'utente stesso decide di aprire."
+  },
+  {
+    "id": 37,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando inizio' a diffondersi il ransomware WannaCry?",
+    "options": [
+      "Il 12 maggio 2017",
+      "Il 19 marzo 2016",
+      "L'agosto 2012",
+      "Il dicembre 2009"
+    ],
+    "correctIndex": 0,
+    "explanation": "WannaCry inizio' a diffondersi il 12 maggio 2017."
+  },
+  {
+    "id": 38,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale falla nei sistemi Windows sfruttava WannaCry?",
+    "options": [
+      "EternalBlue",
+      "Fancy Bear",
+      "Shadow Brokers",
+      "RockYou"
+    ],
+    "correctIndex": 0,
+    "explanation": "WannaCry sfruttava la falla chiamata EternalBlue."
+  },
+  {
+    "id": 39,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale agenzia fu sviluppato in origine lo strumento EternalBlue?",
+    "options": [
+      "La NSA, agenzia statunitense per la sicurezza nazionale",
+      "La CIA",
+      "L'FBI",
+      "La Federal Trade Commission"
+    ],
+    "correctIndex": 0,
+    "explanation": "EternalBlue fu sviluppato in origine dalla NSA."
+  },
+  {
+    "id": 40,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale importante organizzazione britannica fu tra le vittime piu' colpite da WannaCry?",
+    "options": [
+      "Il Servizio Sanitario Nazionale (NHS)",
+      "La Banca d'Inghilterra",
+      "La BBC",
+      "Scotland Yard"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tra le vittime piu' colpite ci fu il Servizio Sanitario Nazionale britannico."
+  },
+  {
+    "id": 41,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'e' la netiquette?",
+    "options": [
+      "L'insieme di regole di comportamento, non scritte ma largamente condivise, che regolano la comunicazione online",
+      "Un tipo di malware che si diffonde tramite email",
+      "La chiave che protegge l'accesso a un account",
+      "Una tecnica di inganno online"
+    ],
+    "correctIndex": 0,
+    "explanation": "La netiquette e' l'insieme di regole di comportamento non scritte per la comunicazione online."
+  },
+  {
+    "id": 42,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa deriva il termine 'netiquette'?",
+    "options": [
+      "Dalla crasi di 'network' ed 'etichetta'",
+      "Dal nome della sua autrice",
+      "Da un acronimo tecnico dell'IETF",
+      "Dalla parola inglese 'net' e 'quiet'"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il termine deriva dalla crasi di 'network' ed 'etichetta'."
+  },
+  {
+    "id": 43,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa equivale, secondo la netiquette, a scrivere in maiuscolo in un messaggio?",
+    "options": [
+      "Alzare la voce",
+      "Sussurrare",
+      "Essere formali",
+      "Essere anonimi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Scrivere in maiuscolo equivale ad alzare la voce nella comunicazione scritta."
+  },
+  {
+    "id": 44,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perche' un messaggio vago richiede piu' sforzo a chi deve rispondere, secondo il modulo?",
+    "options": [
+      "Perche' manca di informazioni specifiche su cosa non e' chiaro",
+      "Perche' e' sempre troppo lungo da leggere",
+      "Perche' viene automaticamente ignorato dai sistemi di posta",
+      "Perche' richiede una traduzione professionale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un messaggio vago manca di informazioni specifiche, richiedendo piu' sforzo per rispondere."
+  },
+  {
+    "id": 45,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual e' la domanda guida che riassume lo spirito della netiquette, secondo il modulo?",
+    "options": [
+      "Lo si direbbe allo stesso modo guardando negli occhi la persona a cui e' indirizzato?",
+      "Quanto tempo impieghero' a scrivere questo messaggio?",
+      "Questo messaggio verra' letto entro un'ora?",
+      "Sto usando abbastanza emoji per essere chiaro?"
+    ],
+    "correctIndex": 0,
+    "explanation": "La domanda guida chiede se si direbbe la stessa cosa guardando negli occhi la persona."
+  },
+  {
+    "id": 46,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi pubblico' nel 1994 il libro 'Netiquette'?",
+    "options": [
+      "Virginia Shea",
+      "Margaret Hamilton",
+      "Mat Honan",
+      "Lou Montulli"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il libro 'Netiquette' fu pubblicato da Virginia Shea."
+  },
+  {
+    "id": 47,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale documento pubblico' l'IETF nell'ottobre 1995?",
+    "options": [
+      "RFC 1855, 'Netiquette Guidelines'",
+      "RFC 1202, 'Password Standards'",
+      "RFC 1994, 'Email Security'",
+      "RFC 1855, 'Malware Prevention'"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'IETF pubblico' il documento RFC 1855, 'Netiquette Guidelines'."
+  },
+  {
+    "id": 48,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'e' l'IETF, secondo il modulo?",
+    "options": [
+      "L'organizzazione tecnica che tuttora definisce molti degli standard fondamentali di Internet",
+      "Un'agenzia governativa per la sicurezza informatica",
+      "Un'azienda produttrice di software antivirus",
+      "Un tribunale internazionale per i reati informatici"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'IETF e' l'organizzazione tecnica che definisce molti standard fondamentali di Internet."
+  },
+  {
+    "id": 49,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale principio comune emerge sia dal libro di Virginia Shea sia dal documento RFC 1855?",
+    "options": [
+      "Ricordarsi sempre che, dall'altra parte di ogni messaggio, c'e' una persona reale",
+      "Usare sempre e solo l'inglese nelle comunicazioni online",
+      "Rispondere sempre entro cinque minuti da un messaggio ricevuto",
+      "Evitare qualsiasi forma di comunicazione scritta online"
+    ],
+    "correctIndex": 0,
+    "explanation": "Entrambi i testi insistono sul ricordarsi che c'e' sempre una persona reale dall'altra parte."
+  },
+  {
+    "id": 50,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata la comunicazione online priva di netiquette nella metafora del modulo?",
+    "options": [
+      "A rivolgersi bruscamente al proprietario di un negozio, come se non contasse come le persone incontrate di persona",
+      "A un tesserino da tecnico falso",
+      "A una chiave universale",
+      "A un regalo incartato con cura"
+    ],
+    "correctIndex": 0,
+    "explanation": "E' paragonata a rivolgersi bruscamente al proprietario di un negozio."
+  }
+]

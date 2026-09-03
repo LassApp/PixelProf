@@ -1,0 +1,592 @@
+[
+  {
+    "sentence": "Un computer funziona grazie alla collaborazione di più componenti, tra cui la scheda madre, la CPU, la RAM, la ROM, le memorie di massa e i dispositivi di ____.",
+    "answer": "input/output",
+    "bank": [
+      "input/output",
+      "byte",
+      "GHz",
+      "core"
+    ]
+  },
+  {
+    "sentence": "La ____ è il grande circuito stampato a cui tutti gli altri componenti si collegano fisicamente.",
+    "answer": "scheda madre",
+    "bank": [
+      "scheda madre",
+      "CPU",
+      "RAM",
+      "ROM"
+    ]
+  },
+  {
+    "sentence": "La CPU è l'unità che elabora le istruzioni e prende le ____.",
+    "answer": "decisioni",
+    "bank": [
+      "decisioni",
+      "foto",
+      "connessioni",
+      "misure"
+    ]
+  },
+  {
+    "sentence": "La ____ è la memoria veloce e temporanea in cui vengono caricati i programmi mentre li si usa.",
+    "answer": "RAM",
+    "bank": [
+      "RAM",
+      "ROM",
+      "CPU",
+      "scheda madre"
+    ]
+  },
+  {
+    "sentence": "La ____ è la memoria permanente che contiene le istruzioni base per l'avvio.",
+    "answer": "ROM",
+    "bank": [
+      "ROM",
+      "RAM",
+      "CPU",
+      "byte"
+    ]
+  },
+  {
+    "sentence": "Le memorie di massa, come HDD e SSD, conservano i dati anche a computer ____.",
+    "answer": "spento",
+    "bank": [
+      "spento",
+      "acceso",
+      "connesso",
+      "bloccato"
+    ]
+  },
+  {
+    "sentence": "Nessun componente da solo farebbe funzionare un computer: è la loro ____, coordinata attraverso la scheda madre, a rendere possibile ogni operazione.",
+    "answer": "collaborazione",
+    "bank": [
+      "collaborazione",
+      "velocità",
+      "temperatura",
+      "dimensione"
+    ]
+  },
+  {
+    "sentence": "Il 12 agosto 1981, alla presenza della stampa al Waldorf Astoria di New York, IBM presentò il Personal Computer ____.",
+    "answer": "5150",
+    "bank": [
+      "5150",
+      "4004",
+      "7030",
+      "9700"
+    ]
+  },
+  {
+    "sentence": "L'IBM PC 5150 fu sviluppato in gran segreto da un team con il nome in codice 'Project ____'.",
+    "answer": "Chess",
+    "bank": [
+      "Chess",
+      "Stretch",
+      "Moore",
+      "Athlon"
+    ]
+  },
+  {
+    "sentence": "La scheda madre dell'IBM PC 5150 offriva cinque slot di espansione, che diedero origine al futuro standard ____.",
+    "answer": "ISA",
+    "bank": [
+      "ISA",
+      "ASCII",
+      "UPC",
+      "GHz"
+    ]
+  },
+  {
+    "sentence": "La scelta di IBM di pubblicare documentazione tecnica dettagliata diede il via a un intero mercato di 'computer compatibili ____'.",
+    "answer": "IBM",
+    "bank": [
+      "IBM",
+      "Intel",
+      "AMD",
+      "Xerox"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del cantiere edile, la CPU viene paragonata al ____.",
+    "answer": "capocantiere",
+    "bank": [
+      "capocantiere",
+      "magazzino",
+      "cancello",
+      "libretto di istruzioni"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del cantiere edile, le memorie di massa vengono paragonate al ____ dove viene conservato tutto il materiale.",
+    "answer": "magazzino",
+    "bank": [
+      "magazzino",
+      "capocantiere",
+      "cancello",
+      "libretto di istruzioni"
+    ]
+  },
+  {
+    "sentence": "La CPU è, in tutto e per tutto, il ____ del computer.",
+    "answer": "cervello",
+    "bank": [
+      "cervello",
+      "cuore",
+      "motore",
+      "scheletro"
+    ]
+  },
+  {
+    "sentence": "Quando si dà un comando al computer, un input arriva, la CPU lo riceve, la CPU lo elabora, e infine viene prodotto un ____.",
+    "answer": "output",
+    "bank": [
+      "output",
+      "byte",
+      "core",
+      "GHz"
+    ]
+  },
+  {
+    "sentence": "La CPU non esegue semplicemente tutto ciò che le arriva: lo ____.",
+    "answer": "organizza",
+    "bank": [
+      "organizza",
+      "ignora",
+      "cancella",
+      "duplica"
+    ]
+  },
+  {
+    "sentence": "Se arrivano troppe richieste nello stesso momento, si crea un rallentamento perché il flusso supera la capacità della CPU di gestirle: è un problema di ____, non di competenza.",
+    "answer": "capacità",
+    "bank": [
+      "capacità",
+      "memoria",
+      "temperatura",
+      "alimentazione"
+    ]
+  },
+  {
+    "sentence": "Nel novembre 1971, l'azienda ____ mise in commercio l'Intel 4004, il primo microprocessore commerciale della storia.",
+    "answer": "Intel",
+    "bank": [
+      "Intel",
+      "IBM",
+      "AMD",
+      "Xerox"
+    ]
+  },
+  {
+    "sentence": "L'Intel 4004 conteneva ____ transistor al proprio interno.",
+    "answer": "2.300",
+    "bank": [
+      "2.300",
+      "1.000",
+      "5.000",
+      "100"
+    ]
+  },
+  {
+    "sentence": "L'Intel 4004 fu sviluppato dagli ingegneri Federico Faggin, Ted Hoff, Stanley Mazor e dal progettista giapponese ____.",
+    "answer": "Masatoshi Shima",
+    "bank": [
+      "Masatoshi Shima",
+      "Gordon Moore",
+      "Werner Buchholz",
+      "Clyde Dawson"
+    ]
+  },
+  {
+    "sentence": "L'Intel 4004 fu sviluppato originariamente per una calcolatrice da tavolo dell'azienda ____.",
+    "answer": "Busicom",
+    "bank": [
+      "Busicom",
+      "IBM",
+      "AMD",
+      "Xerox"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del vigile urbano, la CPU decide chi può ____ e chi deve aspettare.",
+    "answer": "passare",
+    "bank": [
+      "passare",
+      "tornare indietro",
+      "fermarsi definitivamente",
+      "accelerare"
+    ]
+  },
+  {
+    "sentence": "Secondo la metafora del vigile urbano, se le richieste sono troppe si forma una coda non perché il vigile sia lento, ma perché l'incrocio è ____.",
+    "answer": "saturo",
+    "bank": [
+      "saturo",
+      "vuoto",
+      "chiuso",
+      "danneggiato"
+    ]
+  },
+  {
+    "sentence": "Una CPU ____ è un processore che contiene al proprio interno più unità di elaborazione capaci di lavorare in parallelo.",
+    "answer": "multicore",
+    "bank": [
+      "multicore",
+      "singlecore",
+      "ROM",
+      "ASCII"
+    ]
+  },
+  {
+    "sentence": "Le unità di elaborazione all'interno di una CPU multicore si chiamano ____.",
+    "answer": "core",
+    "bank": [
+      "core",
+      "byte",
+      "bit",
+      "GHz"
+    ]
+  },
+  {
+    "sentence": "Con un solo core, il processore può gestire davvero una cosa alla volta, per quanto velocemente passi da un compito all'____.",
+    "answer": "altro",
+    "bank": [
+      "altro",
+      "avvio",
+      "spegnimento",
+      "output"
+    ]
+  },
+  {
+    "sentence": "Con più core, più operazioni possono essere eseguite realmente nello stesso ____.",
+    "answer": "istante",
+    "bank": [
+      "istante",
+      "giorno",
+      "anno",
+      "mese"
+    ]
+  },
+  {
+    "sentence": "Avere più core non significa automaticamente avere prestazioni migliori: se il carico di lavoro è leggero, i core aggiuntivi restano semplicemente ____.",
+    "answer": "inutilizzati",
+    "bank": [
+      "inutilizzati",
+      "danneggiati",
+      "più veloci",
+      "disattivati permanentemente"
+    ]
+  },
+  {
+    "sentence": "Nel maggio 2005, sia AMD, con l'Athlon 64 X2, sia Intel, con il ____, misero in commercio i primi processori dual-core per il mercato consumer desktop.",
+    "answer": "Pentium D",
+    "bank": [
+      "Pentium D",
+      "Intel 4004",
+      "Xerox 9700",
+      "Osborne 1"
+    ]
+  },
+  {
+    "sentence": "L'AMD Athlon 64 X2 fu lanciato ufficialmente il 31 maggio ____.",
+    "answer": "2005",
+    "bank": [
+      "2005",
+      "1981",
+      "1971",
+      "1965"
+    ]
+  },
+  {
+    "sentence": "Prima dell'arrivo dei processori dual-core, i produttori puntavano quasi esclusivamente sull'aumento della velocità di un ____ core.",
+    "answer": "singolo",
+    "bank": [
+      "singolo",
+      "doppio",
+      "quadruplo",
+      "ottuplo"
+    ]
+  },
+  {
+    "sentence": "Nella metafora dei vigili multipli, se il traffico è scarso, avere otto vigili nello stesso incrocio non serve a nulla, anzi può farli ____ a vicenda.",
+    "answer": "intralciare",
+    "bank": [
+      "intralciare",
+      "aiutare",
+      "sostituire",
+      "pagare"
+    ]
+  },
+  {
+    "sentence": "Il ____ è l'unità di misura della velocità di una CPU.",
+    "answer": "GHz",
+    "bank": [
+      "GHz",
+      "byte",
+      "core",
+      "ISA"
+    ]
+  },
+  {
+    "sentence": "Un GHz corrisponde a circa un ____ di operazioni elementari eseguite dal processore ogni secondo.",
+    "answer": "miliardo",
+    "bank": [
+      "miliardo",
+      "milione",
+      "migliaio",
+      "centinaio"
+    ]
+  },
+  {
+    "sentence": "Aumentando i GHz di una CPU non cambia il tipo di operazioni che esegue, ma cambia quante ne riesce a completare in un ____.",
+    "answer": "secondo",
+    "bank": [
+      "secondo",
+      "minuto",
+      "giorno",
+      "anno"
+    ]
+  },
+  {
+    "sentence": "Il 19 aprile 1965, Gordon Moore pubblicò sulla rivista Electronics un articolo intitolato 'Cramming More Components onto Integrated ____'.",
+    "answer": "Circuits",
+    "bank": [
+      "Circuits",
+      "Chips",
+      "Processors",
+      "Systems"
+    ]
+  },
+  {
+    "sentence": "Nel 1965 Gordon Moore era direttore ricerca e sviluppo dell'azienda ____.",
+    "answer": "Fairchild Semiconductor",
+    "bank": [
+      "Fairchild Semiconductor",
+      "Intel",
+      "IBM",
+      "AMD"
+    ]
+  },
+  {
+    "sentence": "Gordon Moore in seguito divenne co-fondatore dell'azienda ____.",
+    "answer": "Intel",
+    "bank": [
+      "Intel",
+      "IBM",
+      "AMD",
+      "Xerox"
+    ]
+  },
+  {
+    "sentence": "Nell'articolo del 1965, Moore osservò che il numero di componenti su un circuito integrato era raddoppiato ogni ____ nei precedenti anni.",
+    "answer": "anno",
+    "bank": [
+      "anno",
+      "mese",
+      "decennio",
+      "semestre"
+    ]
+  },
+  {
+    "sentence": "Nel 1975 Gordon Moore rivide la sua stima, parlando di un raddoppio ogni ____ anni.",
+    "answer": "due",
+    "bank": [
+      "due",
+      "tre",
+      "cinque",
+      "dieci"
+    ]
+  },
+  {
+    "sentence": "L'osservazione di Moore è diventata nota come ____ di Moore.",
+    "answer": "Legge",
+    "bank": [
+      "Legge",
+      "Teoria",
+      "Regola",
+      "Formula"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del limite di velocità, una CPU a bassa velocità è come una strada con limite a 30 km/h, mentre una CPU ad alta velocità è come la stessa strada con limite a ____ km/h.",
+    "answer": "90",
+    "bank": [
+      "90",
+      "60",
+      "120",
+      "50"
+    ]
+  },
+  {
+    "sentence": "Un ____ è un gruppo di 8 bit.",
+    "answer": "byte",
+    "bank": [
+      "byte",
+      "GHz",
+      "core",
+      "ISA"
+    ]
+  },
+  {
+    "sentence": "1 Byte equivale a ____ bit.",
+    "answer": "8",
+    "bank": [
+      "8",
+      "4",
+      "16",
+      "2"
+    ]
+  },
+  {
+    "sentence": "La lettera A, in codice binario, corrisponde alla sequenza ____, un byte.",
+    "answer": "01000001",
+    "bank": [
+      "01000001",
+      "01000011",
+      "01001001",
+      "01001111"
+    ]
+  },
+  {
+    "sentence": "Il computer non vede mai davvero immagini, testi o video: conserva sempre e soltanto sequenze di ____.",
+    "answer": "byte",
+    "bank": [
+      "byte",
+      "colori",
+      "pixel",
+      "suoni"
+    ]
+  },
+  {
+    "sentence": "1 KB (Kilobyte) equivale a ____ Byte.",
+    "answer": "1.024",
+    "bank": [
+      "1.024",
+      "1.000",
+      "512",
+      "2.048"
+    ]
+  },
+  {
+    "sentence": "1 MB (Megabyte) equivale a ____ KB.",
+    "answer": "1.024",
+    "bank": [
+      "1.024",
+      "1.000",
+      "512",
+      "100"
+    ]
+  },
+  {
+    "sentence": "1 GB (Gigabyte) equivale a ____ MB.",
+    "answer": "1.024",
+    "bank": [
+      "1.024",
+      "1.000",
+      "512",
+      "2.048"
+    ]
+  },
+  {
+    "sentence": "1 TB (Terabyte) equivale a ____ GB.",
+    "answer": "1.024",
+    "bank": [
+      "1.024",
+      "1.000",
+      "512",
+      "2.048"
+    ]
+  },
+  {
+    "sentence": "Un KB rappresenta l'ordine di grandezza di un ____ testo.",
+    "answer": "breve",
+    "bank": [
+      "breve",
+      "lunghissimo",
+      "illeggibile",
+      "cifrato"
+    ]
+  },
+  {
+    "sentence": "Un MB rappresenta l'ordine di grandezza di una foto o di un ____ musicale.",
+    "answer": "brano",
+    "bank": [
+      "brano",
+      "video",
+      "archivio",
+      "programma"
+    ]
+  },
+  {
+    "sentence": "Un GB rappresenta l'ordine di grandezza di un'app o di un ____.",
+    "answer": "video",
+    "bank": [
+      "video",
+      "carattere",
+      "bit",
+      "byte"
+    ]
+  },
+  {
+    "sentence": "Nell'esempio della parola CIAO scritta in un file di testo puro, ogni lettera occupa un byte, per un totale di ____ byte.",
+    "answer": "4",
+    "bank": [
+      "4",
+      "8",
+      "2",
+      "16"
+    ]
+  },
+  {
+    "sentence": "Nel luglio del 1956, l'ingegnere ____ coniò il termine byte.",
+    "answer": "Werner Buchholz",
+    "bank": [
+      "Werner Buchholz",
+      "Gordon Moore",
+      "Federico Faggin",
+      "Douglas Engelbart"
+    ]
+  },
+  {
+    "sentence": "Werner Buchholz lavorava per IBM alla progettazione del supercomputer IBM ____ Stretch.",
+    "answer": "7030",
+    "bank": [
+      "7030",
+      "5150",
+      "4004",
+      "9700"
+    ]
+  },
+  {
+    "sentence": "Buchholz scelse di modificare l'ortografia in 'byte' per evitare confusione con la parola ____.",
+    "answer": "bit",
+    "bank": [
+      "bit",
+      "byte",
+      "bite",
+      "bug"
+    ]
+  },
+  {
+    "sentence": "Nella metafora delle unità di peso, i byte vengono paragonati ai ____.",
+    "answer": "grammi",
+    "bank": [
+      "grammi",
+      "chili",
+      "quintali",
+      "etti"
+    ]
+  },
+  {
+    "sentence": "Nella metafora delle unità di peso, i GB vengono paragonati ai ____.",
+    "answer": "quintali",
+    "bank": [
+      "quintali",
+      "grammi",
+      "chili",
+      "etti"
+    ]
+  }
+]

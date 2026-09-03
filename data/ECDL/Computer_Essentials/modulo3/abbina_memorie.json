@@ -1,0 +1,151 @@
+{
+  "module": "memorie",
+  "sets": [
+    [
+      {
+        "term": "Memorie di massa",
+        "definition": "I dispositivi che conservano i dati anche quando il computer è spento, permettendo di ritrovarli intatti alla riaccensione successiva"
+      },
+      {
+        "term": "HDD (Hard Disk)",
+        "definition": "Dispositivo di memoria di massa che conserva i dati su dischi magnetici rotanti, letti e scritti tramite una testina mobile"
+      },
+      {
+        "term": "SSD (Solid State Drive)",
+        "definition": "Memoria di massa priva di parti meccaniche in movimento, che scrive e legge i dati direttamente in celle di memoria elettroniche"
+      },
+      {
+        "term": "RAM",
+        "definition": "Memoria veloce e temporanea che conserva i dati e i programmi mentre vengono utilizzati attivamente dal computer"
+      },
+      {
+        "term": "ROM",
+        "definition": "Memoria permanente che contiene le istruzioni base necessarie per avviare il sistema"
+      }
+    ],
+    [
+      {
+        "term": "Traccia",
+        "definition": "Cerchio concentrico in cui è organizzato un disco magnetico dell'HDD"
+      },
+      {
+        "term": "Settore",
+        "definition": "Suddivisione di una traccia in un disco magnetico"
+      },
+      {
+        "term": "Cluster",
+        "definition": "Raggruppamento di più settori vicini, in cui viene scritta una parte di un file"
+      },
+      {
+        "term": "Testina",
+        "definition": "Il componente mobile che si sposta fisicamente per leggere e scrivere le informazioni su un HDD"
+      }
+    ],
+    [
+      {
+        "term": "Velocità dell'SSD",
+        "definition": "Generalmente molto più veloce dell'HDD nell'accesso ai dati, perché non richiede alcun movimento meccanico"
+      },
+      {
+        "term": "Controller (SSD)",
+        "definition": "Il componente elettronico che individua le celle libere e distribuisce i dati in modo efficiente"
+      },
+      {
+        "term": "Memoria flash",
+        "definition": "La tecnologia elettronica alla base di SSD e chiavette USB, capace di essere cancellata e riscritta rapidamente"
+      },
+      {
+        "term": "Frammentazione",
+        "definition": "Problema di dati sparsi in punti lontani del disco, tipico dell'HDD e non dell'SSD"
+      }
+    ],
+    [
+      {
+        "term": "RAM (a computer spento)",
+        "definition": "Si svuota completamente quando il computer viene spento"
+      },
+      {
+        "term": "ROM (a computer spento)",
+        "definition": "Non si svuota quando il computer viene spento, resta sempre presente"
+      },
+      {
+        "term": "Firmware/BIOS",
+        "definition": "L'insieme di istruzioni fondamentali contenute nella ROM che si attivano all'accensione del computer"
+      },
+      {
+        "term": "Saturazione della RAM",
+        "definition": "Si verifica quando si aprono troppi programmi insieme, causando rallentamenti o chiusure automatiche"
+      }
+    ],
+    [
+      {
+        "term": "Avvio del sistema (boot)",
+        "definition": "La sequenza di operazioni attraverso cui un computer passa dallo stato spento alla piena disponibilità per l'utente"
+      },
+      {
+        "term": "Prima fase del boot",
+        "definition": "L'attivazione della ROM, che contiene le istruzioni base e sveglia la CPU"
+      },
+      {
+        "term": "Fase finale del boot",
+        "definition": "Il caricamento del sistema operativo nella RAM, da cui parte ogni azione dell'utente"
+      },
+      {
+        "term": "Dispositivi esterni",
+        "definition": "Memorie di massa portatili, come hard disk esterni e chiavette USB, che si collegano e scollegano quando serve"
+      }
+    ],
+    [
+      {
+        "term": "IBM 350",
+        "definition": "Il primo hard disk della storia, introdotto nel 1956 come parte del sistema IBM 305 RAMAC"
+      },
+      {
+        "term": "ST-506",
+        "definition": "Il primo hard disk da 5,25 pollici pensato per i personal computer, presentato nel 1980 da Shugart Technology"
+      },
+      {
+        "term": "Fujio Masuoka",
+        "definition": "L'ingegnere Toshiba che sviluppò la memoria flash a partire dal 1980"
+      },
+      {
+        "term": "Robert Dennard",
+        "definition": "L'ingegnere IBM che ebbe l'intuizione alla base della DRAM nel 1966, brevettata nel 1968"
+      },
+      {
+        "term": "CIH (Chernobyl)",
+        "definition": "Il virus che nel 1999 poteva sovrascrivere il contenuto della ROM/BIOS, creato da Chen Ing-hau"
+      },
+      {
+        "term": "Dov Moran",
+        "definition": "L'ingegnere israeliano di M-Systems che depositò nel 1999 il brevetto per la chiavetta USB DiskOnKey"
+      }
+    ],
+    [
+      {
+        "term": "Metafora delle memorie di massa",
+        "definition": "Un magazzino con le luci spente, dove tutto resta al proprio posto anche senza corrente"
+      },
+      {
+        "term": "Metafora dell'HDD",
+        "definition": "Un giradischi che deve fisicamente cercare il solco giusto sul vinile"
+      },
+      {
+        "term": "Metafora dell'SSD",
+        "definition": "Rispondere a una domanda di cui si conosce già la risposta a memoria, senza alcuna ricerca"
+      },
+      {
+        "term": "Metafora della RAM",
+        "definition": "Il bancone di una cucina, che si riempie di ingredienti e utensili mentre si cucina"
+      },
+      {
+        "term": "Metafora della ROM",
+        "definition": "La prima pagina del copione di un teatro, che dice agli attori dove e come iniziare"
+      },
+      {
+        "term": "Metafora dell'avvio del sistema",
+        "definition": "L'apertura di un teatro al mattino, dalle luci di servizio agli attori sul palco"
+      }
+    ]
+  ]
+}

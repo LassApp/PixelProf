@@ -1,0 +1,752 @@
+[
+  {
+    "id": 1,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una rete secondo il modulo?",
+    "options": [
+      "Un insieme di due o più dispositivi collegati tra loro, capaci di scambiarsi informazioni",
+      "Un singolo dispositivo capace di elaborare dati da solo",
+      "Un indirizzo che identifica un dispositivo",
+      "Un servizio che traduce nomi in numeri"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una rete è un insieme di due o più dispositivi collegati tra loro, capaci di scambiarsi informazioni."
+  },
+  {
+    "id": 2,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando nasce una rete, secondo il modulo?",
+    "options": [
+      "Quando due o più dispositivi comunicano tra loro",
+      "Solo quando si installa un router",
+      "Solo quando si collega un computer a Internet",
+      "Solo quando si usa il Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una rete nasce ogni volta che due o più dispositivi comunicano tra loro."
+  },
+  {
+    "id": 3,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene descritto Internet nel modulo?",
+    "options": [
+      "Come l'estensione più grande possibile del principio di comunicazione tra dispositivi",
+      "Come un singolo grande computer centrale",
+      "Come una rete esclusivamente militare",
+      "Come un insieme di soli indirizzi IP"
+    ],
+    "correctIndex": 0,
+    "explanation": "Internet è descritto come l'estensione più grande possibile del principio di comunicazione tra dispositivi."
+  },
+  {
+    "id": 4,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che data fu inviato il primo messaggio della storia tra due computer in rete?",
+    "options": [
+      "29 ottobre 1969",
+      "22 maggio 1973",
+      "3 febbraio 2011",
+      "4 ottobre 2021"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il primo messaggio in rete fu inviato il 29 ottobre 1969."
+  },
+  {
+    "id": 5,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi inviò il primo messaggio in rete nel 1969?",
+    "options": [
+      "Leonard Kleinrock e Charley Kline",
+      "Robert Metcalfe e David Boggs",
+      "Paul Mockapetris e Jon Postel",
+      "Bill Duvall e Chuck Thacker"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il primo messaggio fu inviato da Leonard Kleinrock e Charley Kline."
+  },
+  {
+    "id": 6,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale parola doveva essere trasmessa nel primo messaggio in rete del 1969?",
+    "options": [
+      "login",
+      "hello",
+      "start",
+      "connect"
+    ],
+    "correctIndex": 0,
+    "explanation": "La parola da trasmettere doveva essere 'login'."
+  },
+  {
+    "id": 7,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa venne effettivamente trasmesso nel primo tentativo, prima che il sistema si bloccasse?",
+    "options": [
+      "Le lettere 'lo'",
+      "La parola intera 'login'",
+      "Solo la lettera 'l'",
+      "Nessuna lettera"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sistema si bloccò dopo le prime due lettere, trasmettendo solo 'lo'."
+  },
+  {
+    "id": 8,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove fu inviato il primo messaggio in rete della storia?",
+    "options": [
+      "Dall'Università della California a Los Angeles (UCLA)",
+      "Dallo Stanford Research Institute",
+      "Dal MIT",
+      "Da Xerox PARC"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il messaggio fu inviato da UCLA verso lo Stanford Research Institute."
+  },
+  {
+    "id": 9,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiamava la rete sperimentale finanziata dal Dipartimento della Difesa statunitense che collegava quattro nodi nel 1969?",
+    "options": [
+      "ARPANET",
+      "Ethernet",
+      "Internet",
+      "DNS"
+    ],
+    "correctIndex": 0,
+    "explanation": "La rete si chiamava ARPANET."
+  },
+  {
+    "id": 10,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata una rete nella metafora del modulo?",
+    "options": [
+      "A una conversazione tra due persone",
+      "A una rubrica telefonica",
+      "A un indirizzo postale",
+      "A un navigatore satellitare"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una rete è paragonata a una conversazione tra due persone che devono parlare la stessa lingua."
+  },
+  {
+    "id": 11,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In base a cosa si classificano principalmente le reti, secondo il modulo?",
+    "options": [
+      "La loro estensione geografica",
+      "Il numero di utenti collegati",
+      "Il tipo di cavo utilizzato",
+      "La velocità di connessione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le reti si classificano principalmente in base alla loro estensione geografica."
+  },
+  {
+    "id": 12,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una LAN?",
+    "options": [
+      "La rete più piccola, che collega dispositivi in uno spazio limitato",
+      "La rete più estesa possibile",
+      "Una rete che collega più città",
+      "Il servizio che traduce nomi in indirizzi IP"
+    ],
+    "correctIndex": 0,
+    "explanation": "La LAN è la rete più piccola, che collega dispositivi in uno spazio limitato."
+  },
+  {
+    "id": 13,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una MAN?",
+    "options": [
+      "Una rete che collega più reti locali a livello di città o area metropolitana",
+      "La rete più piccola possibile",
+      "La rete più estesa possibile, a livello mondiale",
+      "Un tipo di indirizzo IP"
+    ],
+    "correctIndex": 0,
+    "explanation": "La MAN collega più reti locali a livello di città o area metropolitana."
+  },
+  {
+    "id": 14,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una WAN?",
+    "options": [
+      "La rete più estesa possibile, che copre nazioni o il pianeta intero",
+      "Una rete limitata a una sola stanza",
+      "Una rete che collega solo due dispositivi",
+      "Un protocollo di instradamento"
+    ],
+    "correctIndex": 0,
+    "explanation": "La WAN è la rete più estesa possibile."
+  },
+  {
+    "id": 15,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresenta Internet, secondo la classificazione del modulo?",
+    "options": [
+      "La più grande WAN mai costruita",
+      "Una singola grande LAN",
+      "Un tipo speciale di MAN",
+      "Un indirizzo IP globale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Internet è descritta come la più grande WAN mai costruita."
+  },
+  {
+    "id": 16,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede in una rete MAN se il punto centrale che collega tutte le sedi si guasta?",
+    "options": [
+      "L'intera rete ne risente",
+      "Solo una sede viene isolata, le altre continuano regolarmente",
+      "La rete si trasforma automaticamente in una WAN",
+      "Nulla, perché ogni sede è indipendente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se il punto centrale si guasta, l'intera rete ne risente."
+  },
+  {
+    "id": 17,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi sviluppò l'Ethernet nel 1973 presso Xerox PARC?",
+    "options": [
+      "Robert Metcalfe, insieme a David Boggs, Butler Lampson e Chuck Thacker",
+      "Leonard Kleinrock e Charley Kline",
+      "Paul Mockapetris e Jon Postel",
+      "Gary Starkweather e Fujio Masuoka"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'Ethernet fu sviluppata da Robert Metcalfe insieme a David Boggs, Butler Lampson e Chuck Thacker."
+  },
+  {
+    "id": 18,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quale esigenza concreta nacque l'Ethernet?",
+    "options": [
+      "Collegare i computer Xerox Alto e farli comunicare con la nuova stampante laser",
+      "Sostituire il vecchio elenco centralizzato dei nomi di dominio",
+      "Risolvere l'esaurimento degli indirizzi IPv4",
+      "Ripristinare la connettività dopo un blackout di rete"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'Ethernet nacque per collegare i computer Xerox Alto e farli comunicare con la nuova stampante laser."
+  },
+  {
+    "id": 19,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando fu presentato il primo schema dell'Ethernet?",
+    "options": [
+      "22 maggio 1973",
+      "11 novembre 1973",
+      "29 ottobre 1969",
+      "3 febbraio 2011"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il primo schema dell'Ethernet fu presentato il 22 maggio 1973."
+  },
+  {
+    "id": 20,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonate LAN, MAN e WAN nella metafora del modulo?",
+    "options": [
+      "A cerchi concentrici che si allargano da un punto centrale",
+      "A una conversazione tra due persone",
+      "A una rubrica telefonica",
+      "A un indirizzo postale"
+    ],
+    "correctIndex": 0,
+    "explanation": "LAN, MAN e WAN sono paragonate a cerchi concentrici che si allargano da un punto centrale."
+  },
+  {
+    "id": 21,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'instradamento (routing)?",
+    "options": [
+      "Il processo attraverso cui i dati vengono indirizzati attraverso una rete fino a raggiungere la destinazione",
+      "Il servizio che traduce nomi di dominio in indirizzi IP",
+      "La sequenza numerica che identifica un dispositivo",
+      "La tecnologia che collega dispositivi in una rete locale via cavo"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'instradamento è il processo che indirizza i dati attraverso una rete fino alla destinazione."
+  },
+  {
+    "id": 22,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In cosa vengono suddivisi i dati prima di attraversare la rete?",
+    "options": [
+      "In pacchetti",
+      "In byte singoli",
+      "In indirizzi IP",
+      "In nomi di dominio"
+    ],
+    "correctIndex": 0,
+    "explanation": "I dati vengono suddivisi in pacchetti prima di attraversare la rete."
+  },
+  {
+    "id": 23,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se un nodo della rete è sovraccarico o irraggiungibile?",
+    "options": [
+      "Il sistema individua un percorso alternativo",
+      "L'intero messaggio viene perso definitivamente",
+      "La rete si blocca fino a nuova configurazione manuale",
+      "I pacchetti vengono duplicati automaticamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se un nodo è sovraccarico, il sistema individua un percorso alternativo."
+  },
+  {
+    "id": 24,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede ai pacchetti una volta arrivati tutti a destinazione?",
+    "options": [
+      "Vengono ricomposti nell'ordine corretto",
+      "Vengono eliminati automaticamente",
+      "Restano separati per motivi di sicurezza",
+      "Vengono rispediti al mittente per conferma"
+    ],
+    "correctIndex": 0,
+    "explanation": "I pacchetti vengono ricomposti nell'ordine corretto una volta a destinazione."
+  },
+  {
+    "id": 25,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché, ricaricando due volte la stessa pagina web, i tempi di risposta possono variare?",
+    "options": [
+      "Perché i dati possono percorrere un tragitto diverso ogni volta",
+      "Perché l'indirizzo IP del sito cambia ogni volta",
+      "Perché il DNS si disattiva temporaneamente",
+      "Perché la LAN si disconnette automaticamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "I dati possono percorrere un tragitto diverso ogni volta, anche verso la stessa destinazione."
+  },
+  {
+    "id": 26,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che data Facebook, Instagram e WhatsApp smisero di funzionare per circa sei ore?",
+    "options": [
+      "4 ottobre 2021",
+      "29 ottobre 1969",
+      "3 febbraio 2011",
+      "22 maggio 1973"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il blackout avvenne il 4 ottobre 2021."
+  },
+  {
+    "id": 27,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa causò il blackout di Facebook, Instagram e WhatsApp del 2021?",
+    "options": [
+      "Un errore umano durante un'attività di manutenzione della rete interna",
+      "Un attacco informatico esterno",
+      "Un guasto hardware nei data center",
+      "Un sovraccarico di utenti in un giorno festivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il blackout fu causato da un errore umano durante un'attività di manutenzione interna."
+  },
+  {
+    "id": 28,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde nello specifico durante il blackout del 2021?",
+    "options": [
+      "I server smisero di annunciare come raggiungere i data center di Facebook",
+      "I data center furono fisicamente danneggiati",
+      "Gli utenti persero tutti i loro dati salvati",
+      "Gli indirizzi IP di tutti gli utenti furono cambiati"
+    ],
+    "correctIndex": 0,
+    "explanation": "I server smisero di annunciare come raggiungere i data center, rendendoli irraggiungibili."
+  },
+  {
+    "id": 29,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostra il caso del blackout del 2021, secondo il modulo?",
+    "options": [
+      "Che una destinazione deve restare raggiungibile attraverso un percorso instradabile, non basta che esista",
+      "Che gli attacchi informatici sono sempre la causa dei blackout di rete",
+      "Che Facebook non aveva backup dei propri dati",
+      "Che il DNS non era mai stato configurato correttamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il caso mostra che una destinazione deve restare raggiungibile attraverso un percorso instradabile."
+  },
+  {
+    "id": 30,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato l'instradamento nella metafora del modulo?",
+    "options": [
+      "Al navigatore satellitare di un'automobile",
+      "Alla rubrica del telefono",
+      "All'indirizzo di un'abitazione",
+      "A una conversazione tra due persone"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'instradamento è paragonato al navigatore satellitare di un'automobile."
+  },
+  {
+    "id": 31,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un indirizzo IP?",
+    "options": [
+      "La sequenza numerica univoca che identifica un dispositivo all'interno di una rete",
+      "Il nome facile da ricordare di un sito web",
+      "La tecnologia che collega dispositivi via cavo",
+      "Il processo che suddivide i dati in pacchetti"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'indirizzo IP è la sequenza numerica univoca che identifica un dispositivo in una rete."
+  },
+  {
+    "id": 32,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa identifica un indirizzo IP come 192.168.1.1?",
+    "options": [
+      "Un dispositivo all'interno di una rete locale",
+      "Un intero paese collegato a Internet",
+      "Il nome di un sito web",
+      "Un pacchetto di dati in transito"
+    ],
+    "correctIndex": 0,
+    "explanation": "192.168.1.1 identifica un dispositivo all'interno di una rete locale."
+  },
+  {
+    "id": 33,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succederebbe senza un indirizzo IP, secondo il modulo?",
+    "options": [
+      "I pacchetti di dati non saprebbero dove essere consegnati",
+      "La rete diventerebbe automaticamente più veloce",
+      "Il DNS smetterebbe di funzionare",
+      "I dispositivi si collegherebbero comunque senza problemi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Senza un indirizzo IP, i pacchetti non saprebbero dove essere consegnati."
+  },
+  {
+    "id": 34,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa distribuì lo IANA il 3 febbraio 2011?",
+    "options": [
+      "Gli ultimi blocchi disponibili di indirizzi IPv4",
+      "I primi domini .com, .edu e .org",
+      "Il primo schema dell'Ethernet",
+      "I primi indirizzi IPv6"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo IANA distribuì gli ultimi blocchi disponibili di indirizzi IPv4."
+  },
+  {
+    "id": 35,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanti indirizzi possibili prevede circa lo standard IPv4?",
+    "options": [
+      "Circa 4,3 miliardi",
+      "Circa 4,3 milioni",
+      "Circa 4,3 mila",
+      "Un numero illimitato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo standard IPv4 prevede circa 4,3 miliardi di indirizzi possibili."
+  },
+  {
+    "id": 36,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa ha accelerato l'esaurimento degli indirizzi IPv4?",
+    "options": [
+      "L'adozione del nuovo standard IPv6",
+      "La crescita di computer, smartphone e altri dispositivi connessi",
+      "La nascita del DNS",
+      "L'invenzione dell'Ethernet"
+    ],
+    "correctIndex": 0,
+    "explanation": "La crescita di dispositivi connessi ha accelerato l'esaurimento degli indirizzi IPv4."
+  },
+  {
+    "id": 37,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa caratterizza lo standard IPv6, secondo il modulo?",
+    "options": [
+      "Fornisce un numero di indirizzi enormemente più grande, pensato per non esaurirsi mai",
+      "È stato il primo standard di indirizzi IP mai creato",
+      "Riguarda solo le reti LAN, non le WAN",
+      "Ha sostituito completamente il concetto di indirizzo IP"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'IPv6 fornisce un numero di indirizzi enormemente più grande, pensato per non esaurirsi mai."
+  },
+  {
+    "id": 38,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché router diversi, in case e negozi diversi, possono avere indirizzi IP locali molto simili senza generare confusione?",
+    "options": [
+      "Perché identificano dispositivi all'interno di reti locali distinte",
+      "Perché tutti gli indirizzi IP nel mondo sono uguali",
+      "Perché il DNS impedisce le sovrapposizioni",
+      "Perché ogni indirizzo IP cambia ogni giorno"
+    ],
+    "correctIndex": 0,
+    "explanation": "Identificano dispositivi all'interno di reti locali distinte, come strade con lo stesso nome in città diverse."
+  },
+  {
+    "id": 39,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra IP e instradamento, secondo il modulo?",
+    "options": [
+      "L'IP identifica il luogo, l'instradamento decide come raggiungerlo",
+      "L'IP decide il percorso, l'instradamento identifica il luogo",
+      "Sono esattamente la stessa cosa",
+      "L'IP riguarda solo le WAN, l'instradamento solo le LAN"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'IP identifica il luogo, mentre l'instradamento decide come raggiungerlo."
+  },
+  {
+    "id": 40,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato l'indirizzo IP nella metafora del modulo?",
+    "options": [
+      "All'indirizzo completo di un'abitazione",
+      "A una conversazione tra due persone",
+      "Al navigatore satellitare di un'automobile",
+      "Alla rubrica del telefono"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'indirizzo IP è paragonato all'indirizzo completo di un'abitazione."
+  },
+  {
+    "id": 41,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il DNS?",
+    "options": [
+      "Il servizio che traduce i nomi di dominio negli indirizzi IP corrispondenti",
+      "La sequenza numerica che identifica un dispositivo",
+      "Il processo che suddivide i dati in pacchetti",
+      "La tecnologia che collega dispositivi via cavo in una LAN"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il DNS traduce i nomi di dominio negli indirizzi IP corrispondenti."
+  },
+  {
+    "id": 42,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'acronimo DNS?",
+    "options": [
+      "Domain Name System",
+      "Digital Network Service",
+      "Data Node System",
+      "Domain Network Standard"
+    ],
+    "correctIndex": 0,
+    "explanation": "DNS sta per Domain Name System."
+  },
+  {
+    "id": 43,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa scrive una persona quando vuole raggiungere un sito, secondo il modulo?",
+    "options": [
+      "Un nome facile da ricordare",
+      "Direttamente l'indirizzo IP del server",
+      "Un indirizzo MAC",
+      "Un numero di porta"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una persona scrive un nome facile da ricordare, non un indirizzo IP."
+  },
+  {
+    "id": 44,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi ideò e testò per la prima volta il Domain Name System nel 1983?",
+    "options": [
+      "Paul Mockapetris, insieme a Jon Postel",
+      "Robert Metcalfe e David Boggs",
+      "Leonard Kleinrock e Charley Kline",
+      "Bill Duvall e Chuck Thacker"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il DNS fu ideato da Paul Mockapetris insieme a Jon Postel."
+  },
+  {
+    "id": 45,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Presso quale istituto lavorava Paul Mockapetris?",
+    "options": [
+      "L'Information Sciences Institute dell'Università della California del Sud",
+      "Il MIT Instrumentation Laboratory",
+      "I laboratori Xerox PARC",
+      "Lo Stanford Research Institute"
+    ],
+    "correctIndex": 0,
+    "explanation": "Mockapetris lavorava presso l'Information Sciences Institute dell'Università della California del Sud."
+  },
+  {
+    "id": 46,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come venivano conservati i nomi dei computer collegati alla rete prima del DNS?",
+    "options": [
+      "In un unico file di testo centralizzato, aggiornato manualmente",
+      "In un database distribuito su più server",
+      "Non venivano conservati in alcun modo",
+      "In un sistema automatico simile all'attuale DNS"
+    ],
+    "correctIndex": 0,
+    "explanation": "Erano conservati in un unico file di testo centralizzato, aggiornato manualmente."
+  },
+  {
+    "id": 47,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa propose Mockapetris al posto del vecchio elenco centralizzato?",
+    "options": [
+      "Un sistema distribuito e automatico in cui ogni organizzazione gestisce i propri nomi di dominio",
+      "Un sistema ancora più centralizzato e controllato da un solo ente",
+      "L'eliminazione totale dei nomi di dominio a favore dei soli indirizzi IP",
+      "Un sistema basato esclusivamente su numeri di telefono"
+    ],
+    "correctIndex": 0,
+    "explanation": "Mockapetris propose un sistema distribuito e automatico."
+  },
+  {
+    "id": 48,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali erano tra i primi domini creati con il nuovo sistema DNS?",
+    "options": [
+      ".com, .edu, .gov e .org",
+      ".net, .info, .biz e .app",
+      ".it, .uk, .fr e .de",
+      ".www, .web, .site e .online"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tra i primi domini vi erano .com, .edu, .gov e .org."
+  },
+  {
+    "id": 49,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quanto tempo il nuovo sistema DNS sostituì il vecchio elenco centralizzato, secondo il modulo?",
+    "options": [
+      "Nel giro di pochi anni",
+      "Immediatamente, nello stesso giorno",
+      "Dopo circa un secolo",
+      "Non lo ha mai sostituito completamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il DNS sostituì il vecchio elenco nel giro di pochi anni."
+  },
+  {
+    "id": 50,
+    "module": "rete-e-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato il DNS nella metafora del modulo?",
+    "options": [
+      "Alla rubrica del telefono",
+      "A una conversazione tra due persone",
+      "Al navigatore satellitare di un'automobile",
+      "All'indirizzo di un'abitazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il DNS è paragonato alla rubrica del telefono."
+  }
+]

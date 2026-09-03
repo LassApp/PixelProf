@@ -1,0 +1,752 @@
+[
+  {
+    "id": 1,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i principali componenti di un computer indicati dal modulo?",
+    "options": [
+      "Scheda madre, CPU, RAM, ROM, memorie di massa, dispositivi di input/output",
+      "Desktop, laptop, tablet, smartphone",
+      "ASCII, bit, byte, GHz",
+      "ICT, hardware, software, output"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo elenca scheda madre, CPU, RAM, ROM, memorie di massa e dispositivi di input/output come componenti principali."
+  },
+  {
+    "id": 2,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la scheda madre?",
+    "options": [
+      "Il grande circuito stampato a cui tutti gli altri componenti si collegano fisicamente",
+      "La memoria veloce e temporanea del computer",
+      "L'unità che elabora le istruzioni",
+      "La memoria permanente per l'avvio"
+    ],
+    "correctIndex": 0,
+    "explanation": "La scheda madre è il grande circuito stampato a cui tutti gli altri componenti si collegano fisicamente."
+  },
+  {
+    "id": 3,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il ruolo della RAM secondo il modulo?",
+    "options": [
+      "È la memoria veloce e temporanea in cui vengono caricati i programmi mentre li si usa",
+      "È la memoria permanente che contiene le istruzioni base per l'avvio",
+      "È il componente che elabora le istruzioni",
+      "È il dispositivo che scambia informazioni con l'esterno"
+    ],
+    "correctIndex": 0,
+    "explanation": "La RAM è la memoria veloce e temporanea in cui vengono caricati i programmi mentre li si usa."
+  },
+  {
+    "id": 4,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa conserva la ROM?",
+    "options": [
+      "Le istruzioni base per l'avvio del computer",
+      "I programmi in uso in quel momento",
+      "I dati anche a computer spento",
+      "Le richieste in arrivo dalla tastiera"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ROM è la memoria permanente che contiene le istruzioni base per l'avvio."
+  },
+  {
+    "id": 5,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa hanno in comune HDD e SSD secondo il modulo?",
+    "options": [
+      "Sono memorie di massa che conservano i dati anche a computer spento",
+      "Sono entrambi tipi di CPU",
+      "Elaborano le istruzioni del computer",
+      "Sono periferiche di input"
+    ],
+    "correctIndex": 0,
+    "explanation": "HDD e SSD sono memorie di massa: conservano i dati anche quando il computer è spento."
+  },
+  {
+    "id": 6,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che data fu presentato l'IBM Personal Computer 5150?",
+    "options": [
+      "12 agosto 1981",
+      "9 dicembre 1968",
+      "26 giugno 1974",
+      "19 aprile 1965"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'IBM PC 5150 fu presentato il 12 agosto 1981 al Waldorf Astoria di New York."
+  },
+  {
+    "id": 7,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiamava il nome in codice del team che sviluppò l'IBM PC 5150?",
+    "options": [
+      "Project Chess",
+      "Project Stretch",
+      "Project Moore",
+      "Project Athlon"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il team che sviluppò l'IBM PC 5150 in gran segreto aveva il nome in codice 'Project Chess'."
+  },
+  {
+    "id": 8,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rese innovativa l'architettura dell'IBM PC 5150?",
+    "options": [
+      "Offriva cinque slot di espansione e una documentazione tecnica pubblica",
+      "Era il primo computer con CPU multicore",
+      "Era il primo computer portatile",
+      "Utilizzava per la prima volta un microprocessore"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'IBM PC 5150 aveva un'architettura aperta, con cinque slot di espansione e documentazione tecnica pubblicata da IBM."
+  },
+  {
+    "id": 9,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permise la pubblicazione della documentazione tecnica dell'IBM PC 5150?",
+    "options": [
+      "La nascita di un mercato di componenti e 'computer compatibili IBM'",
+      "L'invenzione del mouse",
+      "Lo sviluppo del primo microprocessore",
+      "La diffusione del codice a barre"
+    ],
+    "correctIndex": 0,
+    "explanation": "La documentazione tecnica pubblica diede il via a un mercato di componenti e computer compatibili IBM."
+  },
+  {
+    "id": 10,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del cantiere edile, a cosa viene paragonata la scheda madre?",
+    "options": [
+      "All'impalcatura che collega ogni reparto del cantiere",
+      "Al capocantiere",
+      "Al magazzino",
+      "Al libretto di istruzioni"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nella metafora del cantiere, la scheda madre è l'impalcatura che collega ogni reparto."
+  },
+  {
+    "id": 11,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'acronimo CPU?",
+    "options": [
+      "Central Processing Unit",
+      "Computer Processing Utility",
+      "Central Program Unit",
+      "Core Processing Unit"
+    ],
+    "correctIndex": 0,
+    "explanation": "CPU sta per Central Processing Unit, Unità Centrale di Elaborazione."
+  },
+  {
+    "id": 12,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la sequenza descritta dal modulo quando si dà un comando al computer?",
+    "options": [
+      "Un input arriva, la CPU lo riceve, la CPU lo elabora, viene prodotto un output",
+      "Un output arriva, la CPU lo elabora, viene prodotto un input",
+      "La RAM riceve il comando e lo invia direttamente allo schermo",
+      "La ROM elabora il comando e lo salva permanentemente"
+    ],
+    "correctIndex": 0,
+    "explanation": "La sequenza descritta è: input, ricezione da parte della CPU, elaborazione, output."
+  },
+  {
+    "id": 13,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché a volte il computer rallenta quando arrivano troppe richieste insieme?",
+    "options": [
+      "Perché il flusso di richieste supera la capacità della CPU di gestirle in quell'istante",
+      "Perché la CPU si guasta temporaneamente",
+      "Perché la RAM si cancella automaticamente",
+      "Perché la scheda madre si scollega"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il rallentamento è un problema di capacità: il flusso di richieste supera ciò che la CPU riesce a gestire in quel momento."
+  },
+  {
+    "id": 14,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno Intel mise in commercio l'Intel 4004?",
+    "options": [
+      "1971",
+      "1981",
+      "1965",
+      "2005"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'Intel 4004 fu messo in commercio nel novembre 1971."
+  },
+  {
+    "id": 15,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanti transistor conteneva l'Intel 4004?",
+    "options": [
+      "2.300",
+      "23.000",
+      "230",
+      "23"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'Intel 4004 conteneva 2.300 transistor in un unico chip di silicio."
+  },
+  {
+    "id": 16,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi sviluppò l'Intel 4004 insieme a Federico Faggin?",
+    "options": [
+      "Ted Hoff, Stanley Mazor e Masatoshi Shima",
+      "Gordon Moore e Werner Buchholz",
+      "Douglas Engelbart e Gary Starkweather",
+      "Clyde Dawson e Sharon Buchanan"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'Intel 4004 fu sviluppato da Federico Faggin insieme a Ted Hoff, Stanley Mazor e Masatoshi Shima."
+  },
+  {
+    "id": 17,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quale azienda fu sviluppato originariamente l'Intel 4004?",
+    "options": [
+      "Busicom",
+      "IBM",
+      "AMD",
+      "Xerox"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'Intel 4004 fu sviluppato originariamente per una calcolatrice da tavolo dell'azienda Busicom."
+  },
+  {
+    "id": 18,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permise, secondo il modulo, racchiudere tutta la capacità di elaborazione in un solo chip come l'Intel 4004?",
+    "options": [
+      "Aprì la strada ai personal computer e ai dispositivi elettronici moderni",
+      "Rese inutili le schede madri",
+      "Eliminò la necessità della RAM",
+      "Permise la nascita del codice a barre"
+    ],
+    "correctIndex": 0,
+    "explanation": "Racchiudere la capacità di elaborazione in un solo chip aprì la strada ai personal computer e ai dispositivi moderni."
+  },
+  {
+    "id": 19,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata la CPU nella metafora del vigile urbano?",
+    "options": [
+      "A un vigile che decide chi può passare a un incrocio",
+      "A un capocantiere",
+      "A un magazziniere",
+      "A un postino"
+    ],
+    "correctIndex": 0,
+    "explanation": "La CPU è paragonata a un vigile urbano che smista le richieste in arrivo da diverse direzioni."
+  },
+  {
+    "id": 20,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo la metafora del vigile urbano, cosa succede quando arrivano troppe richieste insieme?",
+    "options": [
+      "Si forma una coda perché l'incrocio è saturo",
+      "Il vigile si guasta",
+      "Le richieste vengono cancellate automaticamente",
+      "Il traffico si ferma per sempre"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se le richieste sono troppe si forma una coda, non perché il vigile sia lento ma perché l'incrocio è saturo."
+  },
+  {
+    "id": 21,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una CPU multicore?",
+    "options": [
+      "Un processore che contiene più unità di elaborazione capaci di lavorare in parallelo",
+      "Un processore con una sola unità di elaborazione molto veloce",
+      "Una memoria capace di conservare più dati contemporaneamente",
+      "Un dispositivo di input con più sensori"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una CPU multicore contiene più unità di elaborazione (core) capaci di lavorare in parallelo."
+  },
+  {
+    "id": 22,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come vengono chiamate le unità di elaborazione all'interno di una CPU multicore?",
+    "options": [
+      "Core",
+      "Byte",
+      "Bit",
+      "Slot"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le unità di elaborazione all'interno di una CPU multicore si chiamano core."
+  },
+  {
+    "id": 23,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può fare davvero un processore con un solo core?",
+    "options": [
+      "Gestire una cosa alla volta, per quanto velocemente passi da un compito all'altro",
+      "Eseguire infinite operazioni contemporaneamente",
+      "Funzionare solo se collegato a Internet",
+      "Gestire solo periferiche di output"
+    ],
+    "correctIndex": 0,
+    "explanation": "Con un solo core il processore può gestire davvero una cosa alla volta."
+  },
+  {
+    "id": 24,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede quando il carico di lavoro è leggero su una CPU multicore?",
+    "options": [
+      "I core aggiuntivi restano semplicemente inutilizzati",
+      "Tutti i core si danneggiano",
+      "La CPU si spegne automaticamente",
+      "La velocità in GHz aumenta automaticamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se il carico di lavoro è leggero, i core aggiuntivi restano semplicemente inutilizzati."
+  },
+  {
+    "id": 25,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali aziende lanciarono i primi processori dual-core per il mercato consumer desktop nel maggio 2005?",
+    "options": [
+      "AMD e Intel",
+      "IBM e Xerox",
+      "Intel e Osborne Computer Corporation",
+      "AMD e IBM"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel maggio 2005 sia AMD (Athlon 64 X2) sia Intel (Pentium D) lanciarono i primi processori dual-core consumer."
+  },
+  {
+    "id": 26,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiamava il processore dual-core lanciato da AMD nel maggio 2005?",
+    "options": [
+      "Athlon 64 X2",
+      "Pentium D",
+      "Intel 4004",
+      "Xerox 9700"
+    ],
+    "correctIndex": 0,
+    "explanation": "AMD lanciò l'Athlon 64 X2 ufficialmente il 31 maggio 2005."
+  },
+  {
+    "id": 27,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiamava il processore dual-core lanciato da Intel nello stesso periodo?",
+    "options": [
+      "Pentium D",
+      "Athlon 64 X2",
+      "Intel 4004",
+      "Osborne 1"
+    ],
+    "correctIndex": 0,
+    "explanation": "Intel lanciò il Pentium D nello stesso periodo di maggio 2005."
+  },
+  {
+    "id": 28,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su cosa puntavano quasi esclusivamente i produttori di processori prima dell'arrivo dei processori dual-core?",
+    "options": [
+      "Sull'aumento della velocità di un singolo core",
+      "Sull'aumento del numero di slot di espansione",
+      "Sulla riduzione dei consumi energetici",
+      "Sull'aumento della RAM disponibile"
+    ],
+    "correctIndex": 0,
+    "explanation": "Prima del 2005 i produttori puntavano quasi esclusivamente sull'aumento della velocità di un singolo core."
+  },
+  {
+    "id": 29,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può succedere se il traffico è scarso ma ci sono troppi 'vigili' (core) nello stesso incrocio, secondo la metafora del modulo?",
+    "options": [
+      "I vigili possono intralciarsi a vicenda invece di aiutare",
+      "Il traffico raddoppia",
+      "L'incrocio si allarga automaticamente",
+      "I vigili si sostituiscono a vicenda"
+    ],
+    "correctIndex": 0,
+    "explanation": "Con traffico scarso, troppi vigili nello stesso incrocio possono intralciarsi a vicenda invece di essere utili."
+  },
+  {
+    "id": 30,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando aiuta maggiormente avere più core, secondo il modulo?",
+    "options": [
+      "Quando ci sono davvero più operazioni da gestire in parallelo",
+      "Sempre, indipendentemente dal carico di lavoro",
+      "Solo quando il computer è spento",
+      "Solo per le periferiche di output"
+    ],
+    "correctIndex": 0,
+    "explanation": "Più core aiutano soprattutto quando ci sono davvero più operazioni da gestire in parallelo."
+  },
+  {
+    "id": 31,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa misura il GHz?",
+    "options": [
+      "La velocità di una CPU",
+      "La quantità di RAM disponibile",
+      "Il numero di core di un processore",
+      "La capacità di una memoria di massa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il GHz è l'unità di misura della velocità di una CPU."
+  },
+  {
+    "id": 32,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa corrisponde circa un GHz?",
+    "options": [
+      "Un miliardo di operazioni elementari al secondo",
+      "Un milione di operazioni elementari al secondo",
+      "Mille operazioni elementari al secondo",
+      "Cento operazioni elementari al secondo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un GHz corrisponde a circa un miliardo di operazioni elementari eseguite dal processore ogni secondo."
+  },
+  {
+    "id": 33,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa cambia aumentando i GHz di una CPU, secondo il modulo?",
+    "options": [
+      "Quante operazioni la CPU riesce a completare in un secondo, non il tipo di operazioni",
+      "Il numero di core disponibili",
+      "La quantità di RAM installata",
+      "Il tipo di periferiche collegabili"
+    ],
+    "correctIndex": 0,
+    "explanation": "Aumentando i GHz non cambia il tipo di operazioni eseguite, ma quante ne vengono completate in un secondo."
+  },
+  {
+    "id": 34,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi pubblicò nel 1965 l'articolo che diede origine alla Legge di Moore?",
+    "options": [
+      "Gordon Moore",
+      "Werner Buchholz",
+      "Federico Faggin",
+      "Douglas Engelbart"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gordon Moore pubblicò l'articolo del 1965 sulla rivista Electronics."
+  },
+  {
+    "id": 35,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su quale rivista fu pubblicato l'articolo di Gordon Moore nel 1965?",
+    "options": [
+      "Electronics",
+      "Wired",
+      "Nature",
+      "Scientific American"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'articolo fu pubblicato sulla rivista Electronics."
+  },
+  {
+    "id": 36,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale ruolo ricopriva Gordon Moore nel 1965?",
+    "options": [
+      "Direttore ricerca e sviluppo di Fairchild Semiconductor",
+      "CEO di IBM",
+      "Ingegnere presso Xerox",
+      "Fondatore di AMD"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel 1965 Gordon Moore era direttore ricerca e sviluppo di Fairchild Semiconductor."
+  },
+  {
+    "id": 37,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa osservò Gordon Moore nel suo articolo del 1965?",
+    "options": [
+      "Che il numero di componenti su un circuito integrato raddoppiava ogni anno",
+      "Che la velocità della CPU non sarebbe mai aumentata",
+      "Che i processori multicore avrebbero sostituito i core singoli entro un anno",
+      "Che il prezzo dei computer sarebbe raddoppiato ogni anno"
+    ],
+    "correctIndex": 0,
+    "explanation": "Moore osservò che il numero di componenti su un circuito integrato era raddoppiato ogni anno nei precedenti anni."
+  },
+  {
+    "id": 38,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come rivide Gordon Moore la sua stima nel 1975?",
+    "options": [
+      "Un raddoppio ogni due anni",
+      "Un raddoppio ogni cinque anni",
+      "Un raddoppio ogni sei mesi",
+      "Nessuna revisione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel 1975 Moore rivide la sua stima, parlando di un raddoppio ogni due anni."
+  },
+  {
+    "id": 39,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa NON è, in senso stretto, la Legge di Moore secondo il modulo?",
+    "options": [
+      "Una legge scientifica in senso stretto",
+      "Un'osservazione empirica",
+      "Un riferimento per l'industria dei semiconduttori",
+      "Un'osservazione sui circuiti integrati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo precisa che la Legge di Moore non è una legge scientifica in senso stretto, ma un'osservazione empirica."
+  },
+  {
+    "id": 40,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonati i GHz nella metafora del modulo?",
+    "options": [
+      "Al limite di velocità di una strada",
+      "Al numero di corsie di una strada",
+      "Al numero di semafori di un incrocio",
+      "Alla larghezza di una strada"
+    ],
+    "correctIndex": 0,
+    "explanation": "I GHz sono paragonati al limite di velocità di una strada: stesso traffico, ma percorso più rapidamente."
+  },
+  {
+    "id": 41,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un byte?",
+    "options": [
+      "Un gruppo di 8 bit",
+      "Un gruppo di 4 bit",
+      "Una singola scelta tra 0 e 1",
+      "Un'unità di velocità della CPU"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un byte è un gruppo di 8 bit, l'unità base con cui il computer misura le informazioni."
+  },
+  {
+    "id": 42,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quale sequenza binaria corrisponde la lettera A, secondo il modulo?",
+    "options": [
+      "01000001",
+      "01000011",
+      "01001001",
+      "01001111"
+    ],
+    "correctIndex": 0,
+    "explanation": "La lettera A corrisponde alla sequenza binaria 01000001, un byte."
+  },
+  {
+    "id": 43,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quanti byte corrisponde 1 KB?",
+    "options": [
+      "1.024",
+      "1.000",
+      "512",
+      "100"
+    ],
+    "correctIndex": 0,
+    "explanation": "1 KB (Kilobyte) equivale a 1.024 Byte."
+  },
+  {
+    "id": 44,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quanti KB corrisponde 1 MB?",
+    "options": [
+      "1.024",
+      "1.000",
+      "512",
+      "2.048"
+    ],
+    "correctIndex": 0,
+    "explanation": "1 MB (Megabyte) equivale a 1.024 KB."
+  },
+  {
+    "id": 45,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'ordine di grandezza tipico associato a un GB, secondo il modulo?",
+    "options": [
+      "Un'app o un video",
+      "Un breve testo",
+      "Un singolo carattere",
+      "Una singola foto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il GB rappresenta l'ordine di grandezza di un'app o di un video."
+  },
+  {
+    "id": 46,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanti byte occupa la parola CIAO in un file di testo puro, secondo l'esempio del modulo?",
+    "options": [
+      "4",
+      "8",
+      "2",
+      "16"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nell'esempio del modulo, ogni lettera occupa un byte, per un totale di 4 byte per la parola CIAO."
+  },
+  {
+    "id": 47,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi coniò il termine 'byte' nel luglio 1956?",
+    "options": [
+      "Werner Buchholz",
+      "Gordon Moore",
+      "Federico Faggin",
+      "Douglas Engelbart"
+    ],
+    "correctIndex": 0,
+    "explanation": "Werner Buchholz coniò il termine byte nel luglio 1956."
+  },
+  {
+    "id": 48,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quale progetto lavorava Werner Buchholz quando coniò il termine byte?",
+    "options": [
+      "Il supercomputer IBM 7030 Stretch",
+      "L'Intel 4004",
+      "L'IBM PC 5150",
+      "La stampante Xerox 9700"
+    ],
+    "correctIndex": 0,
+    "explanation": "Buchholz lavorava per IBM alla progettazione del supercomputer IBM 7030 Stretch."
+  },
+  {
+    "id": 49,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché Buchholz modificò l'ortografia in 'byte' invece di 'bite'?",
+    "options": [
+      "Per evitare confusione con la parola 'bit'",
+      "Per motivi di copyright",
+      "Perché 'bite' non esisteva in inglese",
+      "Per abbreviare il termine"
+    ],
+    "correctIndex": 0,
+    "explanation": "Buchholz scelse deliberatamente 'byte' per evitare confusione con la parola 'bit'."
+  },
+  {
+    "id": 50,
+    "module": "cpu-architettura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonati i multipli del byte nella metafora del modulo?",
+    "options": [
+      "Alle unità di peso, come grammi, etti, chili e quintali",
+      "Alle unità di velocità, come km/h",
+      "Alle unità di tempo, come secondi e minuti",
+      "Alle unità di lunghezza, come metri e chilometri"
+    ],
+    "correctIndex": 0,
+    "explanation": "I multipli del byte sono paragonati alle unità di peso: grammi, etti, chili, quintali e tonnellate."
+  }
+]

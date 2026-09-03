@@ -1,0 +1,744 @@
+[
+  {
+    "id": 1,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una ____ è un insieme di due o più dispositivi collegati tra loro, capaci di scambiarsi informazioni.",
+    "answer": "rete",
+    "bank": [
+      "rete",
+      "DNS",
+      "pacchetto",
+      "nodo"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Quando due o più dispositivi comunicano tra loro, nasce una ____.",
+    "answer": "rete",
+    "bank": [
+      "rete",
+      "LAN",
+      "WAN",
+      "IP"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, Internet non è altro che l'estensione più grande possibile del principio di comunicazione tra dispositivi, su scala ____.",
+    "answer": "planetaria",
+    "bank": [
+      "planetaria",
+      "locale",
+      "cittadina",
+      "regionale"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il 29 ottobre 1969, alle 22:30, Leonard Kleinrock e Charley Kline inviarono il primo messaggio della storia tra due computer collegati in ____.",
+    "answer": "rete",
+    "bank": [
+      "rete",
+      "DNS",
+      "cavo",
+      "satellite"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il primo messaggio inviato in rete doveva essere la parola 'login', ma il sistema si bloccò dopo le prime due lettere, trasmettendo solo '____'.",
+    "answer": "lo",
+    "bank": [
+      "lo",
+      "log",
+      "lgn",
+      "l"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il messaggio del 1969 fu inviato da UCLA verso lo ____.",
+    "answer": "Stanford Research Institute",
+    "bank": [
+      "Stanford Research Institute",
+      "MIT Instrumentation Laboratory",
+      "Xerox PARC",
+      "Information Sciences Institute"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Dall'altra parte del primo collegamento in rete del 1969 attendeva il ricercatore ____.",
+    "answer": "Bill Duvall",
+    "bank": [
+      "Bill Duvall",
+      "Charley Kline",
+      "Robert Metcalfe",
+      "Paul Mockapetris"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La rete sperimentale del 1969, chiamata ____, era finanziata dal Dipartimento della Difesa statunitense.",
+    "answer": "ARPANET",
+    "bank": [
+      "ARPANET",
+      "Ethernet",
+      "DNS",
+      "IANA"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 1969, ARPANET collegava soltanto ____ nodi in tutti gli Stati Uniti.",
+    "answer": "quattro",
+    "bank": [
+      "quattro",
+      "due",
+      "dieci",
+      "cento"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, una rete viene paragonata a una ____ tra due persone.",
+    "answer": "conversazione",
+    "bank": [
+      "conversazione",
+      "rubrica",
+      "mappa",
+      "cassaforte"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le reti si classificano soprattutto in base alla loro estensione ____.",
+    "answer": "geografica",
+    "bank": [
+      "geografica",
+      "temporale",
+      "economica",
+      "tecnologica"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ è la rete più piccola, che collega dispositivi in uno spazio limitato come un'abitazione, un ufficio o un negozio.",
+    "answer": "LAN",
+    "bank": [
+      "LAN",
+      "MAN",
+      "WAN",
+      "DNS"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La LAN può essere realizzata via cavo, più stabile e veloce, oppure via ____, più comoda ma più soggetta a interferenze.",
+    "answer": "Wi-Fi",
+    "bank": [
+      "Wi-Fi",
+      "Ethernet",
+      "fibra ottica",
+      "Bluetooth"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ allarga la scala a livello di una città o di un'area metropolitana.",
+    "answer": "MAN",
+    "bank": [
+      "MAN",
+      "LAN",
+      "WAN",
+      "IP"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "In una rete di tipo MAN, se il punto centrale che collega tutte le sedi si guasta, l'intera rete ne ____.",
+    "answer": "risente",
+    "bank": [
+      "risente",
+      "beneficia",
+      "approfitta",
+      "si rafforza"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, una rete è solida quanto il suo punto più ____.",
+    "answer": "debole",
+    "bank": [
+      "debole",
+      "forte",
+      "veloce",
+      "economico"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ è la rete più estesa possibile, che copre distanze fino a intere nazioni o il pianeta intero.",
+    "answer": "WAN",
+    "bank": [
+      "WAN",
+      "LAN",
+      "MAN",
+      "DNS"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Internet stessa non è altro che la più grande ____ mai costruita.",
+    "answer": "WAN",
+    "bank": [
+      "WAN",
+      "LAN",
+      "MAN",
+      "rete locale"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 1973, presso i laboratori Xerox PARC, l'ingegnere ____ sviluppò l'Ethernet insieme ad altri collaboratori.",
+    "answer": "Robert Metcalfe",
+    "bank": [
+      "Robert Metcalfe",
+      "Paul Mockapetris",
+      "Leonard Kleinrock",
+      "Gary Starkweather"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'Ethernet fu sviluppata da Robert Metcalfe insieme a David Boggs, Butler Lampson e ____.",
+    "answer": "Chuck Thacker",
+    "bank": [
+      "Chuck Thacker",
+      "Charley Kline",
+      "Jon Postel",
+      "Bill Duvall"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il primo schema dell'Ethernet fu presentato il 22 maggio ____.",
+    "answer": "1973",
+    "bank": [
+      "1973",
+      "1969",
+      "1983",
+      "1971"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il primo sistema Ethernet funzionante entrò in funzione l'11 novembre ____.",
+    "answer": "1973",
+    "bank": [
+      "1973",
+      "1969",
+      "1983",
+      "1971"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____ è il processo attraverso cui i dati vengono indirizzati attraverso una rete fino a raggiungere la destinazione.",
+    "answer": "instradamento",
+    "bank": [
+      "instradamento",
+      "indirizzamento IP",
+      "DNS",
+      "Ethernet"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Prima di attraversare la rete, i dati vengono suddivisi in piccole unità chiamate ____.",
+    "answer": "pacchetti",
+    "bank": [
+      "pacchetti",
+      "nodi",
+      "indirizzi",
+      "domini"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Ogni pacchetto passa da un ____ all'altro, come un server o un router, fino a raggiungere la destinazione.",
+    "answer": "nodo",
+    "bank": [
+      "nodo",
+      "dominio",
+      "indirizzo",
+      "pacchetto"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se un nodo è sovraccarico o irraggiungibile, il sistema individua un percorso ____.",
+    "answer": "alternativo",
+    "bank": [
+      "alternativo",
+      "più lungo",
+      "casuale",
+      "bloccato"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Alla fine del viaggio, tutti i pacchetti arrivano a destinazione e vengono ricomposti nell'ordine ____.",
+    "answer": "corretto",
+    "bank": [
+      "corretto",
+      "casuale",
+      "inverso",
+      "alfabetico"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il 4 ottobre 2021, Facebook, Instagram e WhatsApp smisero di funzionare per circa ____ ore.",
+    "answer": "sei",
+    "bank": [
+      "sei",
+      "due",
+      "dodici",
+      "ventiquattro"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il blackout del 2021 non fu causato da un attacco esterno, ma da un errore ____ durante un'attività di manutenzione.",
+    "answer": "umano",
+    "bank": [
+      "umano",
+      "hardware",
+      "di alimentazione",
+      "climatico"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Durante il blackout del 2021, i server addetti a indicare come raggiungere i data center di Facebook ritirarono le proprie indicazioni di ____.",
+    "answer": "instradamento",
+    "bank": [
+      "instradamento",
+      "dominio",
+      "indirizzo IP",
+      "autenticazione"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il caso del 2021 mostra che, su Internet, una destinazione deve anche restare ____ attraverso un percorso instradabile.",
+    "answer": "raggiungibile",
+    "bank": [
+      "raggiungibile",
+      "gratuita",
+      "cifrata",
+      "anonima"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, l'instradamento viene paragonato al ____ satellitare di un'automobile.",
+    "answer": "navigatore",
+    "bank": [
+      "navigatore",
+      "cruscotto",
+      "motore",
+      "semaforo"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____ è la sequenza numerica univoca che identifica un dispositivo all'interno di una rete.",
+    "answer": "indirizzo IP",
+    "bank": [
+      "indirizzo IP",
+      "nome di dominio",
+      "pacchetto",
+      "nodo"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un indirizzo IP come 192.168.1.1 identifica un dispositivo all'interno di una rete ____.",
+    "answer": "locale",
+    "bank": [
+      "locale",
+      "geografica",
+      "mondiale",
+      "temporanea"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Senza un indirizzo IP, i pacchetti di dati non saprebbero letteralmente dove essere ____.",
+    "answer": "consegnati",
+    "bank": [
+      "consegnati",
+      "cifrati",
+      "duplicati",
+      "cancellati"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il 3 febbraio 2011 lo ____ distribuì alle cinque autorità regionali gli ultimi blocchi disponibili di indirizzi IPv4.",
+    "answer": "IANA",
+    "bank": [
+      "IANA",
+      "DNS",
+      "ARPANET",
+      "W3C"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Lo standard IPv4 prevede circa ____ miliardi di indirizzi possibili.",
+    "answer": "4,3",
+    "bank": [
+      "4,3",
+      "1",
+      "10",
+      "100"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'esaurimento degli indirizzi IPv4 ha accelerato l'adozione del nuovo standard ____.",
+    "answer": "IPv6",
+    "bank": [
+      "IPv6",
+      "DNS",
+      "ARPANET",
+      "Ethernet"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'IPv6 è stato pensato per non ____ mai.",
+    "answer": "esaurirsi",
+    "bank": [
+      "esaurirsi",
+      "cifrarsi",
+      "duplicarsi",
+      "rallentare"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Router diversi, in case e negozi diversi, possono avere indirizzi IP locali molto ____ tra loro senza generare confusione.",
+    "answer": "simili",
+    "bank": [
+      "simili",
+      "diversi",
+      "casuali",
+      "pubblici"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, l'indirizzo IP viene paragonato all'indirizzo completo di un'____.",
+    "answer": "abitazione",
+    "bank": [
+      "abitazione",
+      "azienda",
+      "scuola",
+      "biblioteca"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'IP identifica il luogo, mentre l'____ decide come raggiungerlo.",
+    "answer": "instradamento",
+    "bank": [
+      "instradamento",
+      "DNS",
+      "firmware",
+      "Ethernet"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ è il servizio che traduce i nomi di dominio negli indirizzi IP corrispondenti.",
+    "answer": "DNS",
+    "bank": [
+      "DNS",
+      "IANA",
+      "IP",
+      "Ethernet"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "DNS è l'acronimo di Domain Name ____.",
+    "answer": "System",
+    "bank": [
+      "System",
+      "Server",
+      "Service",
+      "Standard"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Quando si scrive il nome di un sito, si sta usando un'informazione comoda da ricordare per le ____.",
+    "answer": "persone",
+    "bank": [
+      "persone",
+      "macchine",
+      "reti",
+      "aziende"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il DNS traduce il nome scritto dall'utente nell'indirizzo IP del ____ che ospita quel sito.",
+    "answer": "server",
+    "bank": [
+      "server",
+      "router",
+      "browser",
+      "dominio"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 1983, il ricercatore ____ ideò e testò per la prima volta il Domain Name System.",
+    "answer": "Paul Mockapetris",
+    "bank": [
+      "Paul Mockapetris",
+      "Robert Metcalfe",
+      "Leonard Kleinrock",
+      "Bill Duvall"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Paul Mockapetris ideò il DNS insieme al collega ____.",
+    "answer": "Jon Postel",
+    "bank": [
+      "Jon Postel",
+      "Chuck Thacker",
+      "Charley Kline",
+      "David Boggs"
+    ]
+  },
+  {
+    "id": 49,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Paul Mockapetris lavorava presso l'Information Sciences Institute dell'Università della California del ____.",
+    "answer": "Sud",
+    "bank": [
+      "Sud",
+      "Nord",
+      "Est",
+      "Ovest"
+    ]
+  },
+  {
+    "id": 50,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Prima del DNS, tutti i nomi dei computer collegati alla rete erano conservati in un unico file di testo ____.",
+    "answer": "centralizzato",
+    "bank": [
+      "centralizzato",
+      "cifrato",
+      "temporaneo",
+      "distribuito"
+    ]
+  },
+  {
+    "id": 51,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il sistema centralizzato precedente al DNS era aggiornato ____ e distribuito a tutti i partecipanti della rete.",
+    "answer": "manualmente",
+    "bank": [
+      "manualmente",
+      "automaticamente",
+      "settimanalmente",
+      "casualmente"
+    ]
+  },
+  {
+    "id": 52,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Tra i primi domini creati con il nuovo sistema DNS vi erano .com, .edu, .gov e ____.",
+    "answer": ".org",
+    "bank": [
+      ".org",
+      ".net",
+      ".info",
+      ".it"
+    ]
+  },
+  {
+    "id": 53,
+    "module": "rete-e-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, il DNS viene paragonato alla ____ del telefono.",
+    "answer": "rubrica",
+    "bank": [
+      "rubrica",
+      "mappa",
+      "cassaforte",
+      "conversazione"
+    ]
+  }
+]

@@ -1,0 +1,344 @@
+[
+  {
+    "id": 1,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un computer funziona grazie alla collaborazione di più componenti, tra cui la scheda madre, la CPU, la RAM e la ROM.",
+    "answer": true,
+    "explanation": "Il modulo descrive il computer come frutto della collaborazione di più componenti."
+  },
+  {
+    "id": 2,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La scheda madre è la memoria veloce e temporanea del computer.",
+    "answer": false,
+    "explanation": "La scheda madre è il circuito a cui si collegano gli altri componenti; è la RAM la memoria veloce e temporanea."
+  },
+  {
+    "id": 3,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La ROM è la memoria permanente che contiene le istruzioni base per l'avvio.",
+    "answer": true,
+    "explanation": "È la definizione di ROM fornita dal modulo."
+  },
+  {
+    "id": 4,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le memorie di massa perdono tutti i dati quando il computer viene spento.",
+    "answer": false,
+    "explanation": "Le memorie di massa, come HDD e SSD, conservano i dati anche a computer spento."
+  },
+  {
+    "id": 5,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'IBM Personal Computer 5150 fu presentato nel 1981 al Waldorf Astoria di New York.",
+    "answer": true,
+    "explanation": "Il modulo colloca la presentazione dell'IBM PC 5150 nel 1981 al Waldorf Astoria."
+  },
+  {
+    "id": 6,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'IBM PC 5150 fu sviluppato da un team con il nome in codice 'Project Chess'.",
+    "answer": true,
+    "explanation": "È il nome in codice indicato dal modulo per il team di sviluppo."
+  },
+  {
+    "id": 7,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'architettura dell'IBM PC 5150 era chiusa e non permetteva ad aziende esterne di costruire componenti compatibili.",
+    "answer": false,
+    "explanation": "L'architettura era invece aperta, con cinque slot di espansione pensati per componenti esterni."
+  },
+  {
+    "id": 8,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La CPU è definita dal modulo come il cervello del computer.",
+    "answer": true,
+    "explanation": "Il modulo descrive la CPU come il cervello del computer."
+  },
+  {
+    "id": 9,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la CPU esegue tutto ciò che le arriva senza organizzare le richieste.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: la CPU organizza le richieste, non le esegue in modo casuale."
+  },
+  {
+    "id": 10,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un rallentamento della CPU quando arrivano troppe richieste è un problema di capacità, non di competenza.",
+    "answer": true,
+    "explanation": "È la distinzione esplicitamente fatta dal modulo."
+  },
+  {
+    "id": 11,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'Intel 4004, lanciato nel 1971, fu il primo microprocessore commerciale della storia.",
+    "answer": true,
+    "explanation": "Il modulo presenta l'Intel 4004 come il primo microprocessore commerciale."
+  },
+  {
+    "id": 12,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'Intel 4004 conteneva 2.300 transistor.",
+    "answer": true,
+    "explanation": "Il modulo indica 2.300 transistor come numero contenuto nell'Intel 4004."
+  },
+  {
+    "id": 13,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'Intel 4004 fu sviluppato originariamente per un personal computer IBM.",
+    "answer": false,
+    "explanation": "Fu sviluppato originariamente per una calcolatrice da tavolo dell'azienda Busicom."
+  },
+  {
+    "id": 14,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una CPU multicore contiene al proprio interno più unità di elaborazione chiamate core.",
+    "answer": true,
+    "explanation": "È la definizione di CPU multicore fornita dal modulo."
+  },
+  {
+    "id": 15,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con un solo core, un processore può eseguire realmente più operazioni nello stesso istante.",
+    "answer": false,
+    "explanation": "Con un solo core il processore può gestire davvero una cosa alla volta."
+  },
+  {
+    "id": 16,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Avere più core garantisce sempre prestazioni migliori, indipendentemente dal carico di lavoro.",
+    "answer": false,
+    "explanation": "Se il carico di lavoro è leggero, i core aggiuntivi restano semplicemente inutilizzati."
+  },
+  {
+    "id": 17,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel maggio 2005, sia AMD sia Intel lanciarono i primi processori dual-core per il mercato consumer desktop.",
+    "answer": true,
+    "explanation": "Il modulo indica che entrambe le aziende lanciarono processori dual-core nel maggio 2005."
+  },
+  {
+    "id": 18,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'AMD Athlon 64 X2 fu lanciato ufficialmente il 31 maggio 2005.",
+    "answer": true,
+    "explanation": "È la data indicata dal modulo per il lancio ufficiale dell'Athlon 64 X2."
+  },
+  {
+    "id": 19,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il GHz è l'unità di misura della quantità di RAM disponibile in un computer.",
+    "answer": false,
+    "explanation": "Il GHz è l'unità di misura della velocità di una CPU, non della RAM."
+  },
+  {
+    "id": 20,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un GHz corrisponde a circa un miliardo di operazioni elementari eseguite dal processore ogni secondo.",
+    "answer": true,
+    "explanation": "È la definizione di GHz fornita dal modulo."
+  },
+  {
+    "id": 21,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Aumentando i GHz di una CPU cambia il tipo di operazioni che essa esegue.",
+    "answer": false,
+    "explanation": "Non cambia il tipo di operazioni, ma quante ne vengono completate in un secondo."
+  },
+  {
+    "id": 22,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gordon Moore pubblicò il suo articolo sulla rivista Electronics nel 1965.",
+    "answer": true,
+    "explanation": "Il modulo colloca la pubblicazione dell'articolo nel 1965 sulla rivista Electronics."
+  },
+  {
+    "id": 23,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 1965 Gordon Moore era direttore ricerca e sviluppo di Fairchild Semiconductor.",
+    "answer": true,
+    "explanation": "È il ruolo indicato dal modulo per Gordon Moore nel 1965."
+  },
+  {
+    "id": 24,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 1975 Gordon Moore rivide la sua stima, parlando di un raddoppio ogni cinque anni.",
+    "answer": false,
+    "explanation": "Nel 1975 Moore parlò di un raddoppio ogni due anni, non ogni cinque."
+  },
+  {
+    "id": 25,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La Legge di Moore è definita dal modulo come una legge scientifica in senso stretto.",
+    "answer": false,
+    "explanation": "Il modulo precisa che non è una legge scientifica in senso stretto, ma un'osservazione empirica."
+  },
+  {
+    "id": 26,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un byte è un gruppo di 8 bit.",
+    "answer": true,
+    "explanation": "È la definizione di byte fornita dal modulo."
+  },
+  {
+    "id": 27,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La lettera A, in codice binario, corrisponde alla sequenza 01000001.",
+    "answer": true,
+    "explanation": "Il modulo indica questa sequenza binaria per la lettera A."
+  },
+  {
+    "id": 28,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "1 KB equivale a 1.024 Byte.",
+    "answer": true,
+    "explanation": "È il valore indicato dal modulo per il Kilobyte."
+  },
+  {
+    "id": 29,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "1 MB equivale a 1.024 KB.",
+    "answer": true,
+    "explanation": "È il valore indicato dal modulo per il Megabyte."
+  },
+  {
+    "id": 30,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio del modulo, la parola CIAO scritta in un file di testo puro occupa 8 byte.",
+    "answer": false,
+    "explanation": "Occupa 4 byte, uno per ogni lettera, in un file di testo puro."
+  },
+  {
+    "id": 31,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Werner Buchholz coniò il termine byte nel luglio 1956.",
+    "answer": true,
+    "explanation": "È la data indicata dal modulo per il conio del termine byte."
+  },
+  {
+    "id": 32,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Werner Buchholz lavorava per IBM alla progettazione del supercomputer IBM 7030 Stretch.",
+    "answer": true,
+    "explanation": "Il modulo colloca Buchholz al progetto del supercomputer IBM 7030 Stretch."
+  },
+  {
+    "id": 33,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Buchholz scelse l'ortografia 'byte' per evitare confusione con la parola 'bit'.",
+    "answer": true,
+    "explanation": "È la motivazione indicata dal modulo per la scelta ortografica."
+  },
+  {
+    "id": 34,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un messaggio 'ciao' inviato su WhatsApp pesa esattamente 4 byte, come nel file di testo puro.",
+    "answer": false,
+    "explanation": "Nella realtà pesa molto di più, perché porta con sé mittente, orario, stato di consegna e altri dati."
+  },
+  {
+    "id": 35,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del cantiere edile, la RAM viene paragonata all'area di lavoro dove vengono tenuti gli attrezzi in uso in quel momento.",
+    "answer": true,
+    "explanation": "È la metafora usata dal modulo per descrivere la RAM."
+  },
+  {
+    "id": 36,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del vigile urbano, più richieste arrivano, più velocemente la CPU le elabora senza alcun limite.",
+    "answer": false,
+    "explanation": "Se le richieste sono troppe si forma una coda: la CPU ha un limite di capacità."
+  },
+  {
+    "id": 37,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora delle unità di peso, il TB viene paragonato a una tonnellata.",
+    "answer": true,
+    "explanation": "È l'associazione fatta dal modulo tra TB e tonnellata nella metafora del peso."
+  },
+  {
+    "id": 38,
+    "module": "cpu-architettura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un core è una singola unità di elaborazione all'interno di una CPU.",
+    "answer": true,
+    "explanation": "È la definizione di core fornita dal modulo."
+  }
+]

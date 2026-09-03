@@ -1,0 +1,136 @@
+{
+  "id": 1,
+  "module": "navigazione-e-tracciamento",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Browser",
+        "definition": "Il programma che permette di accedere e navigare le risorse del Web, interpretando il codice ricevuto dai server e mostrandolo a schermo in una forma leggibile"
+      },
+      {
+        "term": "HTML (nel contesto del browser)",
+        "definition": "Il codice, pensato per essere interpretato da una macchina, che il browser riceve dal server e trasforma in testo, immagini, pulsanti e menu"
+      },
+      {
+        "term": "Rappresentazione visiva",
+        "definition": "Ciò che l'utente vede sullo schermo, costruito dal browser a partire dal codice ricevuto, diverso sia da Internet in senso stretto sia dal codice grezzo"
+      }
+    ],
+    [
+      {
+        "term": "Motore di ricerca",
+        "definition": "Un sistema che permette di trovare risorse sul Web a partire da parole chiave, senza che l'utente conosca in anticipo l'indirizzo esatto"
+      },
+      {
+        "term": "Rilevanza",
+        "definition": "Il criterio secondo cui un motore di ricerca ordina i risultati rispetto alle parole chiave digitate"
+      }
+    ],
+    [
+      {
+        "term": "Browser (differenza)",
+        "definition": "Il programma che permette di accedere al Web, la porta d'accesso"
+      },
+      {
+        "term": "Motore di ricerca (differenza)",
+        "definition": "Un servizio, raggiungibile tramite il browser, che aiuta a trovare contenuti al suo interno"
+      },
+      {
+        "term": "Sito",
+        "definition": "La destinazione finale a cui si arriva navigando"
+      }
+    ],
+    [
+      {
+        "term": "Cookie",
+        "definition": "Piccoli file che i siti fanno salvare nel browser dell'utente, per ricordare informazioni tra una visita e l'altra"
+      },
+      {
+        "term": "Cookie di prima parte",
+        "definition": "Creati e utilizzati soltanto dal sito che si sta visitando in quel momento"
+      },
+      {
+        "term": "Cookie di terza parte",
+        "definition": "Appartengono ad altre aziende, spesso pubblicitarie, i cui contenuti sono incorporati in molti siti diversi"
+      }
+    ],
+    [
+      {
+        "term": "Cache",
+        "definition": "Una memoria temporanea in cui il browser conserva parti già scaricate di un sito, per non doverle richiedere di nuovo al server"
+      },
+      {
+        "term": "Differenza tra cache e cookie",
+        "definition": "La cache ricorda i contenuti di un sito, i cookie ricordano informazioni su chi sta navigando"
+      }
+    ],
+    [
+      {
+        "term": "Personalizzazione",
+        "definition": "L'insieme dei meccanismi attraverso cui Internet adatta ciò che mostra a ciascun utente sulla base dei suoi comportamenti passati"
+      },
+      {
+        "term": "Cosa sa davvero Internet, secondo il modulo",
+        "definition": "Non conosce la persona nel senso profondo del termine, ma riconosce i suoi comportamenti"
+      }
+    ],
+    [
+      {
+        "term": "Marc Andreessen ed Eric Bina",
+        "definition": "I programmatori che nel 1993 rilasciarono Mosaic, uno dei primi browser a mostrare testo e immagini insieme"
+      },
+      {
+        "term": "Larry Page e Sergey Brin",
+        "definition": "Gli studenti di dottorato di Stanford che nel 1998 fondarono Google a partire dal progetto 'BackRub'"
+      },
+      {
+        "term": "PageRank",
+        "definition": "L'algoritmo di Google che valuta l'importanza di una pagina anche in base a quante altre pagine vi facciano riferimento"
+      },
+      {
+        "term": "Giudice Amit Mehta",
+        "definition": "Il giudice che nell'agosto 2024 stabilì che Google avesse costruito un monopolio illegale nel mercato della ricerca online"
+      },
+      {
+        "term": "Lou Montulli",
+        "definition": "L'ingegnere di Netscape che nel 1994 ideò l'HTTP cookie"
+      },
+      {
+        "term": "Akamai",
+        "definition": "L'azienda fondata nel 1998 da Tom Leighton e Danny Lewin per distribuire contenuti su server sparsi nel mondo"
+      },
+      {
+        "term": "Cambridge Analytica",
+        "definition": "L'azienda coinvolta nello scandalo del 2018 sulla raccolta di dati fino a 87 milioni di profili Facebook"
+      }
+    ],
+    [
+      {
+        "term": "Metafora del browser",
+        "definition": "Un interprete simultaneo durante una conferenza internazionale"
+      },
+      {
+        "term": "Metafora del motore di ricerca",
+        "definition": "Chiedere indicazioni a un abitante del posto molto informato"
+      },
+      {
+        "term": "Metafora di browser e motore di ricerca",
+        "definition": "L'automobile (browser) e il navigatore satellitare a bordo (motore di ricerca)"
+      },
+      {
+        "term": "Metafora del cookie",
+        "definition": "Un biscotto della fortuna, con un piccolo biglietto scritto al suo interno"
+      },
+      {
+        "term": "Metafora della cache",
+        "definition": "Avere già in tasca il menu di un ristorante in cui si è già stati"
+      },
+      {
+        "term": "Metafora della personalizzazione",
+        "definition": "Uno specchio costruito apposta per l'utente, che riflette una versione del mondo ricomposta dalle sue tracce passate"
+      }
+    ]
+  ]
+}

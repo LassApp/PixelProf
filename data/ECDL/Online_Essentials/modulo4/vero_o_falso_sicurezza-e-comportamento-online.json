@@ -1,0 +1,326 @@
+[
+  {
+    "id": 1,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una password e' la chiave che protegge l'accesso a un account o a un servizio digitale riservato.",
+    "answer": true,
+    "explanation": "E' la definizione di password fornita dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, riutilizzare la stessa password su piu' account non comporta alcun rischio aggiuntivo.",
+    "answer": false,
+    "explanation": "Se un servizio subisce una violazione, la password puo' essere provata su tutti gli altri account."
+  },
+  {
+    "id": 3,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una password prevedibile puo' essere indovinata o testata automaticamente da un programma in tempi molto brevi.",
+    "answer": true,
+    "explanation": "E' il rischio delle password prevedibili descritto dal modulo."
+  },
+  {
+    "id": 4,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel dicembre 2009, un aggressore noto come 'igigi' sottrasse le credenziali di oltre 32 milioni di account da RockYou.com.",
+    "answer": true,
+    "explanation": "E' quanto indicato dal modulo sull'attacco a RockYou.com."
+  },
+  {
+    "id": 5,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le password rubate a RockYou.com erano protette da una solida cifratura.",
+    "answer": false,
+    "explanation": "Non erano protette da alcuna cifratura, erano conservate in chiaro."
+  },
+  {
+    "id": 6,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La password piu' diffusa tra quelle rubate a RockYou.com era '123456'.",
+    "answer": true,
+    "explanation": "E' la password indicata dal modulo come la piu' diffusa."
+  },
+  {
+    "id": 7,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'ingegneria sociale inganna un sistema informatico, non una persona.",
+    "answer": false,
+    "explanation": "L'ingegneria sociale inganna una persona, non un sistema informatico."
+  },
+  {
+    "id": 8,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La posta elettronica e' quasi sempre il punto a cui fanno riferimento le procedure di recupero password di altri servizi.",
+    "answer": true,
+    "explanation": "E' il ruolo della posta elettronica descritto dal modulo."
+  },
+  {
+    "id": 9,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'agosto 2012, Mat Honan vide la propria vita digitale cancellata senza che nessun sistema fosse tecnicamente violato.",
+    "answer": true,
+    "explanation": "E' quanto raccontato da Mat Honan secondo il modulo."
+  },
+  {
+    "id": 10,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'aggressore che colpi' Mat Honan riusci' nell'attacco indovinando la sua password originale con un attacco a forza bruta.",
+    "answer": false,
+    "explanation": "L'aggressore convinse due persone al telefono a compiere azioni scorrette, senza violare tecnicamente nulla."
+  },
+  {
+    "id": 11,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il phishing sfrutta sempre una falla tecnica in un sistema informatico.",
+    "answer": false,
+    "explanation": "Il phishing non sfonda protezioni tecniche, chiede con inganno che sia la vittima a fornire l'informazione."
+  },
+  {
+    "id": 12,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un messaggio di phishing tende a creare un senso di urgenza o di allarme.",
+    "answer": true,
+    "explanation": "E' lo schema tipico del phishing descritto dal modulo."
+  },
+  {
+    "id": 13,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il 19 marzo 2016, John Podesta ricevette un'email di phishing che sembrava provenire da Google.",
+    "answer": true,
+    "explanation": "E' la data indicata dal modulo per l'attacco a Podesta."
+  },
+  {
+    "id": 14,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un collaboratore del supporto informatico della campagna di Podesta identifico' correttamente l'email come una truffa evidente.",
+    "answer": false,
+    "explanation": "Rispose per errore che si trattava di un'email 'legittima'."
+  },
+  {
+    "id": 15,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La pagina di phishing usata contro Podesta fu creata dal gruppo di hacker noto come Fancy Bear.",
+    "answer": true,
+    "explanation": "E' il gruppo indicato dal modulo."
+  },
+  {
+    "id": 16,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il malware e' qualunque programma progettato per danneggiare, spiare o prendere il controllo di un dispositivo, installato senza consenso consapevole.",
+    "answer": true,
+    "explanation": "E' la definizione di malware fornita dal modulo."
+  },
+  {
+    "id": 17,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un virus informatico cifra i file di un dispositivo e chiede un riscatto per sbloccarli.",
+    "answer": false,
+    "explanation": "E' il ransomware a cifrare i file; il virus si attacca ad altri file e si diffonde copiandosi."
+  },
+  {
+    "id": 18,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un trojan si presenta come qualcosa di utile o desiderabile, ma nasconde una funzione dannosa.",
+    "answer": true,
+    "explanation": "E' la definizione di trojan fornita dal modulo."
+  },
+  {
+    "id": 19,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il ransomware chiede quasi sempre un pagamento in criptovaluta per restituire l'accesso ai file cifrati.",
+    "answer": true,
+    "explanation": "E' il comportamento del ransomware descritto dal modulo."
+  },
+  {
+    "id": 20,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il ransomware WannaCry inizio' a diffondersi il 12 maggio 2017.",
+    "answer": true,
+    "explanation": "E' la data indicata dal modulo per l'inizio della diffusione di WannaCry."
+  },
+  {
+    "id": 21,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "WannaCry sfruttava una falla nei sistemi Windows chiamata EternalBlue, sviluppata in origine dalla NSA.",
+    "answer": true,
+    "explanation": "E' quanto indicato dal modulo sull'origine di EternalBlue."
+  },
+  {
+    "id": 22,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Microsoft non aveva mai pubblicato una correzione per la falla sfruttata da WannaCry.",
+    "answer": false,
+    "explanation": "Microsoft aveva pubblicato la correzione circa due mesi prima dell'attacco."
+  },
+  {
+    "id": 23,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Tra le vittime piu' colpite da WannaCry ci fu il Servizio Sanitario Nazionale britannico (NHS).",
+    "answer": true,
+    "explanation": "E' l'organizzazione indicata dal modulo tra le vittime piu' colpite."
+  },
+  {
+    "id": 24,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La netiquette e' l'insieme di regole di comportamento scritte per legge che regolano la comunicazione online.",
+    "answer": false,
+    "explanation": "Sono regole non scritte ma largamente condivise, non imposte per legge."
+  },
+  {
+    "id": 25,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la netiquette, scrivere in maiuscolo equivale ad alzare la voce nella comunicazione scritta.",
+    "answer": true,
+    "explanation": "E' il principio della netiquette descritto dal modulo."
+  },
+  {
+    "id": 26,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un messaggio vago richiede meno tempo e sforzo a chi deve rispondere rispetto a uno specifico.",
+    "answer": false,
+    "explanation": "Un messaggio vago richiede piu' tempo e sforzo, non meno."
+  },
+  {
+    "id": 27,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 1994 Virginia Shea pubblico' il libro 'Netiquette'.",
+    "answer": true,
+    "explanation": "E' la data indicata dal modulo per la pubblicazione del libro."
+  },
+  {
+    "id": 28,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'ottobre 1995 l'IETF pubblico' il documento RFC 1855, intitolato 'Netiquette Guidelines'.",
+    "answer": true,
+    "explanation": "E' quanto indicato dal modulo sulla pubblicazione dell'RFC 1855."
+  },
+  {
+    "id": 29,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'IETF e' l'organizzazione tecnica che tuttora definisce molti degli standard fondamentali di Internet.",
+    "answer": true,
+    "explanation": "E' la definizione di IETF fornita dal modulo."
+  },
+  {
+    "id": 30,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sia il libro di Virginia Shea sia il documento RFC 1855 insistono sul principio di ricordarsi che dall'altra parte di ogni messaggio c'e' una persona reale.",
+    "answer": true,
+    "explanation": "E' il principio comune indicato dal modulo."
+  },
+  {
+    "id": 31,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, le password vengono paragonate a un mazzo di chiavi, dove ogni chiave dovrebbe aprire una sola porta.",
+    "answer": true,
+    "explanation": "E' la metafora usata dal modulo per le password."
+  },
+  {
+    "id": 32,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, la posta elettronica viene paragonata a una singola chiave che apre una sola porta, come le altre password.",
+    "answer": false,
+    "explanation": "La posta elettronica e' paragonata alla chiave maestra che apre tutte le porte collegate."
+  },
+  {
+    "id": 33,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, il phishing viene paragonato a qualcuno vestito da tecnico con un tesserino apparentemente ufficiale.",
+    "answer": true,
+    "explanation": "E' la metafora usata dal modulo per il phishing."
+  },
+  {
+    "id": 34,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, il malware viene paragonato a un ospite che si presenta a una festa con un regalo incartato con cura.",
+    "answer": true,
+    "explanation": "E' la metafora usata dal modulo per il malware."
+  },
+  {
+    "id": 35,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, comunicare online senza netiquette viene paragonato a rivolgersi bruscamente al proprietario di un negozio.",
+    "answer": true,
+    "explanation": "E' la metafora usata dal modulo per la netiquette."
+  },
+  {
+    "id": 36,
+    "module": "sicurezza-e-comportamento-online",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'elenco 'rockyou.txt' e' oggi utilizzato dai criminali informatici e vietato ai ricercatori di sicurezza.",
+    "answer": false,
+    "explanation": "E' diventato uno strumento standard usato dagli stessi ricercatori di sicurezza per testare la robustezza dei sistemi."
+  }
+]

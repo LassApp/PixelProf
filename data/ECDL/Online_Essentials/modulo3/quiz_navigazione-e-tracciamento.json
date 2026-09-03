@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il browser?",
+    "options": [
+      "Il programma che permette di accedere e navigare le risorse del Web",
+      "Un sistema che trova risorse a partire da parole chiave",
+      "Un piccolo file che i siti salvano per ricordare informazioni",
+      "Una memoria temporanea che conserva parti di un sito"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il browser è il programma che permette di accedere e navigare le risorse del Web."
+  },
+  {
+    "id": 2,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa interpreta il browser quando riceve una risposta da un server?",
+    "options": [
+      "Codice, soprattutto HTML, pensato per essere letto da una macchina",
+      "Solo immagini già pronte per essere mostrate",
+      "Solo testo semplice senza formattazione",
+      "Solo indirizzi IP"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il browser interpreta codice, soprattutto HTML, pensato per essere letto da una macchina."
+  },
+  {
+    "id": 3,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa vede davvero l'utente sullo schermo, secondo il modulo?",
+    "options": [
+      "Una rappresentazione costruita dal browser a partire dal codice ricevuto",
+      "Il codice grezzo arrivato dal server",
+      "Internet in senso stretto",
+      "Il contenuto della cache del server"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'utente vede una rappresentazione costruita dal browser, non il codice grezzo."
+  },
+  {
+    "id": 4,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché browser diversi possono mostrare la stessa pagina con piccole differenze?",
+    "options": [
+      "Perché ciascuno interpreta il codice ricevuto secondo le proprie regole interne",
+      "Perché ogni browser riceve un codice diverso dallo stesso server",
+      "Perché solo alcuni browser supportano Internet",
+      "Perché ogni sito ha una versione diversa per ogni browser"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ogni browser interpreta il codice secondo le proprie regole interne."
+  },
+  {
+    "id": 5,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi rilasciò la prima versione del browser Mosaic il 23 gennaio 1993?",
+    "options": [
+      "Marc Andreessen ed Eric Bina",
+      "Larry Page e Sergey Brin",
+      "Lou Montulli",
+      "Tom Leighton e Danny Lewin"
+    ],
+    "correctIndex": 0,
+    "explanation": "Mosaic fu rilasciato da Marc Andreessen ed Eric Bina."
+  },
+  {
+    "id": 6,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Presso quale istituzione lavoravano Andreessen e Bina quando svilupparono Mosaic?",
+    "options": [
+      "Il National Center for Supercomputing Applications dell'Università dell'Illinois",
+      "Il MIT",
+      "Stanford University",
+      "Il CERN di Ginevra"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lavoravano al NCSA dell'Università dell'Illinois."
+  },
+  {
+    "id": 7,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rese innovativo Mosaic rispetto ai browser precedenti?",
+    "options": [
+      "Mostrava testo e immagini insieme nella stessa pagina",
+      "Fu il primo browser a pagamento",
+      "Fu il primo a supportare i cookie",
+      "Fu il primo a usare un motore di ricerca integrato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Mosaic fu tra i primi a mostrare testo e immagini insieme, nella stessa pagina."
+  },
+  {
+    "id": 8,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene definito Mosaic nel modulo, per il suo impatto sul pubblico non specialistico?",
+    "options": [
+      "Una 'killer application'",
+      "Un 'motore di ricerca universale'",
+      "Un 'protocollo standard'",
+      "Una 'rete privata virtuale'"
+    ],
+    "correctIndex": 0,
+    "explanation": "Mosaic viene definito una 'killer application'."
+  },
+  {
+    "id": 9,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali elementi ancora oggi presenti nei browser derivano direttamente da Mosaic?",
+    "options": [
+      "Il pulsante 'indietro', i segnalibri, le immagini incorporate nel testo",
+      "I cookie e la cache",
+      "Il protocollo HTTPS",
+      "Gli indirizzi IP pubblici"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il pulsante 'indietro', i segnalibri e le immagini incorporate derivano da Mosaic."
+  },
+  {
+    "id": 10,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato il browser nella metafora del modulo?",
+    "options": [
+      "A un interprete simultaneo durante una conferenza internazionale",
+      "A un navigatore satellitare",
+      "A un citofono condominiale",
+      "A un biscotto della fortuna"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il browser è paragonato a un interprete simultaneo durante una conferenza internazionale."
+  },
+  {
+    "id": 11,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un motore di ricerca?",
+    "options": [
+      "Un sistema che permette di trovare risorse sul Web a partire da parole chiave",
+      "Il programma che permette di accedere al Web",
+      "Un piccolo file che ricorda le preferenze dell'utente",
+      "Una memoria temporanea che velocizza il caricamento dei siti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un motore di ricerca permette di trovare risorse sul Web a partire da parole chiave."
+  },
+  {
+    "id": 12,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In base a cosa un motore di ricerca ordina i risultati?",
+    "options": [
+      "La rilevanza rispetto alle parole chiave digitate",
+      "La data di registrazione del dominio",
+      "Il numero di cookie installati sul sito",
+      "La velocità del server che ospita il sito"
+    ],
+    "correctIndex": 0,
+    "explanation": "I risultati vengono ordinati per rilevanza rispetto alle parole chiave."
+  },
+  {
+    "id": 13,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Un motore di ricerca 'contiene' il Web, secondo il modulo?",
+    "options": [
+      "No, aiuta semplicemente a orientarsi al suo interno",
+      "Sì, il Web esiste solo grazie ai motori di ricerca",
+      "Sì, ogni sito è fisicamente ospitato su un motore di ricerca",
+      "No, sostituisce completamente la necessità di un browser"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un motore di ricerca non contiene il Web, aiuta solo a orientarsi al suo interno."
+  },
+  {
+    "id": 14,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi fondò nel 1998 l'azienda che sarebbe diventata Google?",
+    "options": [
+      "Larry Page e Sergey Brin",
+      "Marc Andreessen ed Eric Bina",
+      "Lou Montulli",
+      "Tom Leighton e Danny Lewin"
+    ],
+    "correctIndex": 0,
+    "explanation": "Google fu fondata da Larry Page e Sergey Brin."
+  },
+  {
+    "id": 15,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Presso quale università studiavano Page e Brin quando fondarono Google?",
+    "options": [
+      "Stanford",
+      "MIT",
+      "Università dell'Illinois",
+      "CERN di Ginevra"
+    ],
+    "correctIndex": 0,
+    "explanation": "Page e Brin studiavano a Stanford."
+  },
+  {
+    "id": 16,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiamava il progetto di ricerca originario da cui nacque Google?",
+    "options": [
+      "BackRub",
+      "PageRank",
+      "Mosaic",
+      "Akamai"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il progetto originario si chiamava BackRub."
+  },
+  {
+    "id": 17,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama l'algoritmo alla base del successo di Google?",
+    "options": [
+      "PageRank",
+      "BackRub",
+      "HTML",
+      "HTTPS"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'algoritmo si chiama PageRank."
+  },
+  {
+    "id": 18,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su cosa si basa PageRank per valutare l'importanza di una pagina, oltre al suo contenuto?",
+    "options": [
+      "Su quante altre pagine vi facciano riferimento con un collegamento",
+      "Sulla data di creazione della pagina",
+      "Sul numero di cookie installati",
+      "Sulla velocità di caricamento della pagina"
+    ],
+    "correctIndex": 0,
+    "explanation": "PageRank considera quante altre pagine facciano riferimento a quella pagina."
+  },
+  {
+    "id": 19,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quante ricerche al giorno elaborava già Google entro il 1999?",
+    "options": [
+      "Circa 500.000",
+      "Circa 5.000",
+      "Circa 5.000.000",
+      "Circa 50.000"
+    ],
+    "correctIndex": 0,
+    "explanation": "Entro il 1999 Google elaborava circa 500.000 ricerche al giorno."
+  },
+  {
+    "id": 20,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato l'uso di un motore di ricerca nella metafora del modulo?",
+    "options": [
+      "A chiedere indicazioni a un abitante del posto molto informato",
+      "A guidare un'automobile senza navigatore",
+      "A leggere un biscotto della fortuna",
+      "A consultare un menu già in tasca"
+    ],
+    "correctIndex": 0,
+    "explanation": "Usare un motore di ricerca è paragonato a chiedere indicazioni a un abitante informato."
+  },
+  {
+    "id": 21,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra browser e motore di ricerca, secondo il modulo?",
+    "options": [
+      "Il browser è il programma per accedere al Web, il motore di ricerca è un servizio che aiuta a trovare contenuti al suo interno",
+      "Sono esattamente la stessa cosa con nomi diversi",
+      "Il motore di ricerca sostituisce completamente il browser",
+      "Il browser esiste solo dopo aver aperto un motore di ricerca"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il browser è il programma per accedere al Web; il motore di ricerca è un servizio raggiungibile tramite esso."
+  },
+  {
+    "id": 22,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il sito, secondo la distinzione fatta nel modulo?",
+    "options": [
+      "La destinazione finale a cui si arriva navigando",
+      "Il programma che permette di accedere al Web",
+      "Un servizio che aiuta a trovare contenuti sul Web",
+      "Un piccolo file che ricorda le preferenze dell'utente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sito è la destinazione finale a cui si arriva navigando."
+  },
+  {
+    "id": 23,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando si usa direttamente l'URL nel browser, senza passare da un motore di ricerca?",
+    "options": [
+      "Quando si conosce già la destinazione",
+      "Sempre, in ogni caso",
+      "Mai, perché serve sempre un motore di ricerca",
+      "Solo per i siti protetti da HTTPS"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si digita direttamente l'URL quando si conosce già la destinazione."
+  },
+  {
+    "id": 24,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa stabilì il giudice Amit Mehta nell'agosto 2024?",
+    "options": [
+      "Che Google avesse costruito un monopolio illegale nel mercato della ricerca online",
+      "Che i cookie di terza parte fossero illegali",
+      "Che Mosaic violasse le leggi sul copyright",
+      "Che Akamai avesse un monopolio sulla distribuzione di contenuti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il giudice Mehta stabilì che Google avesse un monopolio illegale nella ricerca online."
+  },
+  {
+    "id": 25,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Circa quanti miliardi di dollari all'anno pagava Google ad Apple per essere il motore di ricerca predefinito su Safari, secondo quanto emerso nel processo?",
+    "options": [
+      "Circa 20 miliardi",
+      "Circa 5 miliardi",
+      "Circa 50 miliardi",
+      "Circa 2 miliardi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Google pagava circa 20 miliardi di dollari all'anno ad Apple."
+  },
+  {
+    "id": 26,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come definì il giudice Mehta la posizione di motore di ricerca predefinito?",
+    "options": [
+      "'Un bene immobile estremamente prezioso'",
+      "'Un servizio pubblico gratuito'",
+      "'Una violazione minore delle norme'",
+      "'Un vantaggio trascurabile'"
+    ],
+    "correctIndex": 0,
+    "explanation": "Mehta la definì 'un bene immobile estremamente prezioso'."
+  },
+  {
+    "id": 27,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché Google pagava Apple per essere impostato come motore di ricerca predefinito su Safari?",
+    "options": [
+      "Perché la maggior parte degli utenti non sceglie mai attivamente un'alternativa",
+      "Perché Apple obbligava per legge a pagare per ogni motore di ricerca",
+      "Perché Safari non permetteva di cambiare motore di ricerca in alcun modo",
+      "Perché Google voleva impedire l'uso di altri browser"
+    ],
+    "correctIndex": 0,
+    "explanation": "La maggior parte degli utenti non sceglie mai attivamente un'alternativa al predefinito."
+  },
+  {
+    "id": 28,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato il motore di ricerca nella metafora dell'automobile del modulo?",
+    "options": [
+      "Al navigatore satellitare a bordo dell'automobile",
+      "All'automobile stessa",
+      "Alla strada percorsa",
+      "Al carburante dell'automobile"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il motore di ricerca è paragonato al navigatore satellitare a bordo dell'automobile."
+  },
+  {
+    "id": 29,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra il caso della sentenza contro Google, secondo il modulo?",
+    "options": [
+      "Quanto valga concretamente la distinzione tra aprire un browser e usare un motore di ricerca",
+      "Che i motori di ricerca sono sempre gratuiti per l'utente",
+      "Che Apple ha sviluppato un proprio motore di ricerca alternativo",
+      "Che i browser non possono avere un motore di ricerca predefinito"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il caso mostra su scala miliardaria il valore della distinzione tra browser e motore di ricerca."
+  },
+  {
+    "id": 30,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la maggior parte delle persone aprendo un browser, secondo il modulo?",
+    "options": [
+      "Si ritrova immediatamente davanti alla pagina di un motore di ricerca",
+      "Digita sempre direttamente l'URL desiderato",
+      "Apre sempre prima un sito di posta elettronica",
+      "Configura manualmente un motore di ricerca ogni volta"
+    ],
+    "correctIndex": 0,
+    "explanation": "La maggior parte delle persone si ritrova subito davanti a un motore di ricerca."
+  },
+  {
+    "id": 31,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i cookie?",
+    "options": [
+      "Piccoli file che i siti fanno salvare nel browser dell'utente per ricordare informazioni tra una visita e l'altra",
+      "Programmi che permettono di accedere al Web",
+      "Sistemi che trovano risorse a partire da parole chiave",
+      "Memorie temporanee che conservano parti di un sito già scaricate"
+    ],
+    "correctIndex": 0,
+    "explanation": "I cookie sono piccoli file che i siti fanno salvare nel browser per ricordare informazioni."
+  },
+  {
+    "id": 32,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un sito, da solo, non 'ricorda' un visitatore, secondo il modulo?",
+    "options": [
+      "Perché ogni volta che viene caricata una nuova pagina è come se si presentasse un visitatore mai visto prima",
+      "Perché i server cancellano automaticamente ogni dato ogni notte",
+      "Perché i cookie sono vietati dalla legge",
+      "Perché ogni sito ha un solo visitatore alla volta"
+    ],
+    "correctIndex": 0,
+    "explanation": "Per il server ogni nuova pagina caricata è come un visitatore mai visto prima."
+  },
+  {
+    "id": 33,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa viene davvero conservato dentro un cookie, secondo il modulo?",
+    "options": [
+      "Una traccia delle azioni precedenti dell'utente, non l'utente stesso",
+      "Una fotografia dell'utente",
+      "La password dell'utente in chiaro",
+      "L'indirizzo IP pubblico permanente dell'utente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Viene conservata una traccia delle azioni precedenti, non l'utente stesso."
+  },
+  {
+    "id": 34,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi ideò l'HTTP cookie nel giugno 1994?",
+    "options": [
+      "Lou Montulli",
+      "Marc Andreessen",
+      "Tim Berners-Lee",
+      "Danny Lewin"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'HTTP cookie fu ideato da Lou Montulli."
+  },
+  {
+    "id": 35,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quale azienda lavorava Lou Montulli quando ideò il cookie?",
+    "options": [
+      "Netscape Communications",
+      "Google",
+      "Akamai",
+      "NCSA"
+    ],
+    "correctIndex": 0,
+    "explanation": "Montulli lavorava per Netscape Communications."
+  },
+  {
+    "id": 36,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quale browser fu integrata la prima versione del sistema di cookie, già nell'autunno 1994?",
+    "options": [
+      "Netscape",
+      "Mosaic",
+      "Chrome",
+      "Safari"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sistema fu integrato nel browser Netscape nell'autunno 1994."
+  },
+  {
+    "id": 37,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale problema pratico doveva risolvere l'invenzione del cookie, secondo il modulo?",
+    "options": [
+      "Permettere a un carrello della spesa di seguire l'utente lungo tutto il sito",
+      "Velocizzare il caricamento delle immagini",
+      "Tradurre automaticamente le pagine web",
+      "Proteggere le connessioni con la cifratura"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il cookie doveva permettere a un carrello della spesa di seguire l'utente lungo il sito."
+  },
+  {
+    "id": 38,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa raccontò pubblicamente Montulli anni dopo riguardo alla sua invenzione?",
+    "options": [
+      "Un certo rammarico per come fosse diventata anche lo strumento alla base della pubblicità mirata online",
+      "Grande orgoglio per aver reso Internet completamente sicuro",
+      "Che il cookie non era mai stato usato davvero",
+      "Che avrebbe preferito non lavorare mai per Netscape"
+    ],
+    "correctIndex": 0,
+    "explanation": "Montulli espresse un certo rammarico per l'uso della sua invenzione nella pubblicità mirata."
+  },
+  {
+    "id": 39,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonati i cookie nella metafora del modulo?",
+    "options": [
+      "Ai biscotti della fortuna, con un biglietto scritto al loro interno",
+      "A un menu di un ristorante già visitato",
+      "A un citofono condominiale",
+      "A una lettera chiusa in una busta sigillata"
+    ],
+    "correctIndex": 0,
+    "explanation": "I cookie sono paragonati ai biscotti della fortuna."
+  },
+  {
+    "id": 40,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede quando si torna su un sito già visitato, secondo la metafora del biscotto della fortuna?",
+    "options": [
+      "È l'utente stesso, attraverso il browser, a riportare il biglietto al sito",
+      "Il sito dimentica sempre tutto ciò che sapeva prima",
+      "Il biglietto viene generato da zero ogni volta",
+      "Il sito chiede sempre un nuovo consenso esplicito scritto"
+    ],
+    "correctIndex": 0,
+    "explanation": "È l'utente, tramite il browser, a riportare il biglietto (cookie) al sito."
+  },
+  {
+    "id": 41,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la cache?",
+    "options": [
+      "Una memoria temporanea in cui il browser conserva parti già scaricate di un sito",
+      "Un piccolo file che ricorda informazioni su chi sta navigando",
+      "Un sistema che trova risorse a partire da parole chiave",
+      "Il programma che permette di accedere al Web"
+    ],
+    "correctIndex": 0,
+    "explanation": "La cache è una memoria temporanea che conserva parti già scaricate di un sito."
+  },
+  {
+    "id": 42,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza principale tra cache e cookie, secondo il modulo?",
+    "options": [
+      "La cache ricorda i contenuti di un sito, i cookie ricordano informazioni su chi lo visita",
+      "Sono esattamente la stessa cosa con nomi diversi",
+      "La cache riguarda solo le immagini, i cookie riguardano solo il testo",
+      "I cookie sono più veloci della cache"
+    ],
+    "correctIndex": 0,
+    "explanation": "La cache ricorda i contenuti; i cookie ricordano informazioni sul visitatore."
+  },
+  {
+    "id": 43,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il browser alla visita successiva a un sito già visitato, grazie alla cache?",
+    "options": [
+      "Riutilizza ciò che ha già conservato, scaricando dal server solo ciò che è cambiato",
+      "Ricarica sempre tutti gli elementi da zero",
+      "Cancella automaticamente tutti i cookie del sito",
+      "Blocca l'accesso al sito per motivi di sicurezza"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il browser riutilizza ciò che ha già conservato, scaricando solo ciò che è cambiato."
+  },
+  {
+    "id": 44,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "La memoria della cache è permanente, secondo il modulo?",
+    "options": [
+      "No, viene aggiornata o svuotata periodicamente",
+      "Sì, resta invariata per sempre",
+      "Sì, ma solo per i siti visitati più di dieci volte",
+      "No, viene cancellata a ogni chiusura del browser senza eccezioni"
+    ],
+    "correctIndex": 0,
+    "explanation": "La memoria della cache viene aggiornata o svuotata periodicamente."
+  },
+  {
+    "id": 45,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa lanciò Tim Berners-Lee nel 1995 alla comunità informatica del MIT?",
+    "options": [
+      "Una sfida per risolvere il crescente rallentamento di Internet",
+      "Il primo prototipo di cookie",
+      "Il primo motore di ricerca della storia",
+      "Una causa legale contro Netscape"
+    ],
+    "correctIndex": 0,
+    "explanation": "Berners-Lee lanciò una sfida per risolvere il rallentamento di Internet."
+  },
+  {
+    "id": 46,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale azienda nacque nel 1998 dalla sfida lanciata da Berners-Lee?",
+    "options": [
+      "Akamai",
+      "Google",
+      "Netscape",
+      "Mosaic"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dalla sfida nacque Akamai."
+  },
+  {
+    "id": 47,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi fondò Akamai?",
+    "options": [
+      "Tom Leighton e Danny Lewin",
+      "Larry Page e Sergey Brin",
+      "Marc Andreessen ed Eric Bina",
+      "Lou Montulli e Tim Berners-Lee"
+    ],
+    "correctIndex": 0,
+    "explanation": "Akamai fu fondata da Tom Leighton e Danny Lewin."
+  },
+  {
+    "id": 48,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual era l'idea centrale di Akamai?",
+    "options": [
+      "Distribuire copie dei contenuti più richiesti su migliaia di server sparsi nel mondo",
+      "Creare il primo browser con cookie integrati",
+      "Sviluppare un algoritmo di ricerca alternativo a PageRank",
+      "Vendere pubblicità mirata basata sui cookie di terza parte"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'idea era distribuire copie dei contenuti su migliaia di server nel mondo."
+  },
+  {
+    "id": 49,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde nel maggio 1999 legato all'uscita del trailer di Star Wars: Episodio I?",
+    "options": [
+      "Numerosi siti andarono in sovraccarico per l'enorme numero di persone che tentavano di scaricarlo",
+      "Il trailer fu il primo contenuto mai protetto da HTTPS",
+      "Il trailer fu distribuito solo tramite cookie di terza parte",
+      "Il trailer causò la chiusura definitiva di diversi browser"
+    ],
+    "correctIndex": 0,
+    "explanation": "Numerosi siti andarono in sovraccarico per la richiesta del trailer."
+  },
+  {
+    "id": 50,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come fu soprannominato ironicamente il fenomeno dei siti sovraccarichi dell'epoca?",
+    "options": [
+      "'World Wide Wait'",
+      "'World Wide Web'",
+      "'Killer Application'",
+      "'BackRub Overload'"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il fenomeno fu soprannominato 'World Wide Wait'."
+  },
+  {
+    "id": 51,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la personalizzazione, secondo il modulo?",
+    "options": [
+      "L'insieme dei meccanismi attraverso cui Internet adatta ciò che mostra a ciascun utente sulla base dei suoi comportamenti passati",
+      "Un tipo di cookie usato solo dai motori di ricerca",
+      "La memoria temporanea che velocizza il caricamento dei siti",
+      "Il protocollo che cifra i dati durante la navigazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "La personalizzazione adatta ciò che Internet mostra in base ai comportamenti passati."
+  },
+  {
+    "id": 52,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i cookie di prima parte?",
+    "options": [
+      "Cookie creati e utilizzati soltanto dal sito che si sta visitando in quel momento",
+      "Cookie appartenenti a un'azienda pubblicitaria esterna",
+      "Cookie che non possono mai essere cancellati",
+      "Cookie usati esclusivamente dai motori di ricerca"
+    ],
+    "correctIndex": 0,
+    "explanation": "I cookie di prima parte sono creati e usati solo dal sito visitato."
+  },
+  {
+    "id": 53,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permettono di fare i cookie di terza parte, secondo il modulo?",
+    "options": [
+      "Fare in modo che un annuncio pubblicitario visto su un sito segua l'utente anche su siti diversi",
+      "Velocizzare il caricamento delle pagine indipendentemente dal contenuto",
+      "Bloccare completamente la pubblicità su tutti i siti",
+      "Sostituire completamente la cache del browser"
+    ],
+    "correctIndex": 0,
+    "explanation": "I cookie di terza parte permettono a un annuncio di seguire l'utente su siti diversi."
+  },
+  {
+    "id": 54,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sa davvero Internet dell'utente, secondo il modulo?",
+    "options": [
+      "Non conosce la persona nel senso profondo del termine, ma riconosce i suoi comportamenti",
+      "Conosce sempre l'identità reale e i pensieri della persona",
+      "Non sa assolutamente nulla di nessun utente",
+      "Conosce solo il nome scritto sulla carta d'identità"
+    ],
+    "correctIndex": 0,
+    "explanation": "Internet non conosce la persona, ma riconosce i suoi comportamenti."
+  },
+  {
+    "id": 55,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rivelò nel marzo 2018 un'inchiesta giornalistica del Guardian e del New York Times?",
+    "options": [
+      "Che Cambridge Analytica aveva raccolto dati relativi fino a 87 milioni di profili utente",
+      "Che Google aveva un monopolio illegale nella ricerca online",
+      "Che Akamai copiava contenuti senza autorizzazione",
+      "Che i cookie erano stati vietati in tutto il mondo"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'inchiesta rivelò la raccolta di dati fino a 87 milioni di profili da parte di Cambridge Analytica."
+  },
+  {
+    "id": 56,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Attraverso quale mezzo Cambridge Analytica raccolse i dati degli utenti?",
+    "options": [
+      "Un'app di test della personalità distribuita su Facebook",
+      "Un virus diffuso tramite email",
+      "Un motore di ricerca falso",
+      "Una VPN compromessa"
+    ],
+    "correctIndex": 0,
+    "explanation": "I dati furono raccolti tramite un'app di test della personalità su Facebook."
+  },
+  {
+    "id": 57,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per cosa furono utilizzati i dati raccolti da Cambridge Analytica?",
+    "options": [
+      "Per indirizzare contenuti politici su misura in vista delle elezioni presidenziali statunitensi del 2016",
+      "Per migliorare la sicurezza informatica di Facebook",
+      "Per sviluppare un nuovo algoritmo di ricerca",
+      "Per creare il primo browser con cookie integrati"
+    ],
+    "correctIndex": 0,
+    "explanation": "I dati furono usati per indirizzare contenuti politici per le elezioni del 2016."
+  },
+  {
+    "id": 58,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa successe al fondatore di Facebook in seguito allo scandalo Cambridge Analytica?",
+    "options": [
+      "Fu chiamato a un'audizione davanti al Congresso degli Stati Uniti",
+      "Fu arrestato immediatamente dall'FBI",
+      "Si dimise definitivamente da ogni carica",
+      "Vendette l'azienda a un'altra società"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il fondatore di Facebook fu chiamato a un'audizione al Congresso."
+  },
+  {
+    "id": 59,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale sanzione impose la Federal Trade Commission a Facebook in seguito allo scandalo?",
+    "options": [
+      "5 miliardi di dollari",
+      "20 miliardi di dollari",
+      "87 milioni di dollari",
+      "600 milioni di dollari"
+    ],
+    "correctIndex": 0,
+    "explanation": "La FTC impose una sanzione da 5 miliardi di dollari."
+  },
+  {
+    "id": 60,
+    "module": "navigazione-e-tracciamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata la navigazione su Internet nella metafora finale del modulo?",
+    "options": [
+      "A uno specchio costruito apposta per l'utente",
+      "A un citofono condominiale",
+      "A un biscotto della fortuna",
+      "A un menu già in tasca"
+    ],
+    "correctIndex": 0,
+    "explanation": "Navigare su Internet è paragonato a guardarsi in uno specchio costruito apposta per l'utente."
+  }
+]

@@ -1,0 +1,142 @@
+{
+  "id": 1,
+  "module": "identita-e-comunicazione",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "IP pubblico",
+        "definition": "L'indirizzo con cui l'intera rete di un luogo (es. un negozio) viene identificata dall'esterno, cioè dal resto di Internet"
+      },
+      {
+        "term": "IP locale (differenza da pubblico)",
+        "definition": "Ha senso solo dentro la rete locale, mentre l'IP pubblico è visibile dall'esterno"
+      },
+      {
+        "term": "Dati tecnici di connessione",
+        "definition": "Informazioni che gli operatori di telecomunicazioni conservano per un periodo limitato, richiedibili dalle autorità nell'ambito di indagini"
+      }
+    ],
+    [
+      {
+        "term": "VPN (Virtual Private Network)",
+        "definition": "Un servizio che instrada la connessione attraverso un server intermedio, cambiando il punto da cui si esce verso Internet"
+      },
+      {
+        "term": "Server intermedio (VPN)",
+        "definition": "Il server attraverso cui passa la connessione quando si usa una VPN, che nasconde l'indirizzo IP reale"
+      },
+      {
+        "term": "Limite della VPN",
+        "definition": "Non rende invisibili: il fornitore del servizio può conoscere e conservare i dati di connessione"
+      }
+    ],
+    [
+      {
+        "term": "Client",
+        "definition": "Il dispositivo che effettua una richiesta nel modello client/server"
+      },
+      {
+        "term": "Server",
+        "definition": "Il sistema che riceve una richiesta e restituisce una risposta con i dati richiesti"
+      },
+      {
+        "term": "Richiesta",
+        "definition": "Il messaggio inviato dal client al server per ottenere un'informazione"
+      },
+      {
+        "term": "Risposta",
+        "definition": "Il messaggio che il server restituisce al client contenente i dati richiesti"
+      }
+    ],
+    [
+      {
+        "term": "HTTP (HyperText Transfer Protocol)",
+        "definition": "Il protocollo con cui client e server si scambiano dati sul Web"
+      },
+      {
+        "term": "HTTPS",
+        "definition": "La versione sicura dell'HTTP, in cui i dati vengono cifrati durante il trasferimento"
+      },
+      {
+        "term": "Dati \"in chiaro\" (HTTP)",
+        "definition": "Dati leggibili da chiunque si trovi lungo il percorso della rete"
+      },
+      {
+        "term": "Cifratura (HTTPS)",
+        "definition": "Il livello aggiunto dall'HTTPS che trasforma i dati in una forma incomprensibile senza la chiave corretta"
+      }
+    ],
+    [
+      {
+        "term": "URL (Uniform Resource Locator)",
+        "definition": "L'indirizzo completo che permette di individuare in modo univoco una risorsa specifica su Internet"
+      },
+      {
+        "term": "Protocollo (nell'URL)",
+        "definition": "La parte dell'URL che indica come comunicare, ad esempio https://"
+      },
+      {
+        "term": "Dominio (nell'URL)",
+        "definition": "La parte dell'URL che indica dove andare, tradotta dal DNS nell'indirizzo IP del server"
+      },
+      {
+        "term": "Percorso (nell'URL)",
+        "definition": "La parte dell'URL che indica cosa chiedere, la risorsa specifica su quel server"
+      },
+      {
+        "term": "Errore 404",
+        "definition": "La risposta del server quando il percorso richiesto non corrisponde a nulla di realmente presente"
+      }
+    ],
+    [
+      {
+        "term": "MaxMind",
+        "definition": "L'azienda che dal 2002 associò per errore centinaia di milioni di indirizzi IP incerti a una fattoria vicino a Potwin, in Kansas"
+      },
+      {
+        "term": "Cody Kretsinger",
+        "definition": "Il membro di LulzSec arrestato nel 2011, rintracciato nonostante l'uso di una VPN"
+      },
+      {
+        "term": "HideMyAss",
+        "definition": "Il servizio VPN britannico che, sotto ordine di un tribunale, consegnò i registri di connessione usati per rintracciare Kretsinger"
+      },
+      {
+        "term": "Tim Berners-Lee",
+        "definition": "Il ricercatore del CERN che allestì il primo server web della storia alla fine del 1990"
+      },
+      {
+        "term": "Eric Butler",
+        "definition": "Il programmatore che presentò Firesheep nel 2010, mostrando la debolezza dell'HTTP non esteso a tutta la sessione"
+      },
+      {
+        "term": "Symbolics",
+        "definition": "L'azienda che nel 1985 registrò symbolics.com, il primo dominio .com della storia"
+      }
+    ],
+    [
+      {
+        "term": "Metafora dell'IP pubblico",
+        "definition": "Il citofono all'ingresso di un condominio, che mostra solo il nome del palazzo, non dell'appartamento"
+      },
+      {
+        "term": "Metafora della VPN",
+        "definition": "Passare da un'altra casa prima di raggiungere la destinazione, cambiando il punto da cui si viene visti"
+      },
+      {
+        "term": "Metafora del client/server",
+        "definition": "Un cliente al ristorante che ordina un piatto, mentre la cucina lo prepara"
+      },
+      {
+        "term": "Metafora di HTTP e HTTPS",
+        "definition": "Una cartolina leggibile da chiunque contro una lettera chiusa in una busta sigillata"
+      },
+      {
+        "term": "Metafora dell'URL",
+        "definition": "L'istruzione completa data a un taxi: come arrivarci, dove arrivare, quale porta raggiungere"
+      }
+    ]
+  ]
+}

@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.6.0
+   onboarding.js — PixelProf v2.6.1
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -463,6 +463,26 @@
      game-engine-state.js/index.html/CSS: tutto contenuto in
      onboarding.js (solo dati dei passi).
 
+   v2.6.1 — bug segnalato (test Direttore, passo 27/41 "Il pannello si
+     apre"): premendo "Avanti" il tour si bloccava senza passare al passo
+     successivo né chiudersi in modo pulito. Causa: toggleHubMenu() in
+     js/app.js registra un listener reale (document, click, {once:true},
+     10ms di ritardo dall'apertura) che chiude il menu Hub al primo click
+     fuori da #tb-hub-wrap — e il pulsante "Avanti" del tour, nel tooltip,
+     è per costruzione fuori da #tb-hub-wrap. Il click su "Avanti" chiude
+     quindi per davvero il menu prima ancora che il passo successivo
+     (#tb-lb) venga renderizzato, che non trova più un target visibile e
+     rinuncia in silenzio — i blockClicks già presenti non bastavano,
+     proteggono solo i click sui target del tour, non questo listener
+     esterno che ascolta l'intero documento. Fix: nuova proprietà generica
+     onEnter (funzione, opzionale, simmetrica a onLeave — vedi
+     _renderStep()) richiamata una sola volta al primo render effettivo di
+     un passo; usata solo sul passo "Il pannello si apre" per rimuovere
+     quel listener con 50ms di ritardo (> i 10ms di app.js, per essere
+     sicuri che sia già stato registrato quando lo rimuoviamo — altrimenti
+     la rimozione sarebbe un no-op). Nessuna modifica ad app.js: il fix
+     resta interamente in onboarding.js.
+
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
 
@@ -778,9 +798,31 @@ const OnboardingTour = (function () {
     // su ciascuna delle 5 voci. Il menu resta aperto per tutta la
     // sequenza; onLeave sull'ultimo passo (Traguardi) lo richiude per
     // davvero prima di passare a "Torna ai moduli".
+    // v2.6.1 — bug segnalato: cliccando "Avanti" su questo passo il tour
+    // si bloccava (nessun passo successivo, nessuna chiusura pulita). Causa:
+    // toggleHubMenu() (js/app.js) registra un listener reale
+    // document.addEventListener('click', _hubOutsideClick, {once:true}) con
+    // 10ms di ritardo dopo l'apertura, per chiudere il menu al primo click
+    // fuori da #tb-hub-wrap — e il pulsante "Avanti" del tour (nel
+    // tooltip, fuori da #tb-hub-wrap per definizione) lo soddisfa: il click
+    // chiude per davvero il menu prima ancora che il passo successivo
+    // (#tb-lb) venga renderizzato, che quindi non trova più un target
+    // visibile e rinuncia in silenzio. Fix: onEnter su questo passo rimuove
+    // quel listener — con un ritardo di 50ms (> i 10ms di app.js) per
+    // essere sicuri che sia già stato registrato quando lo rimuoviamo, o la
+    // rimozione sarebbe un no-op e app.js lo ri-registrerebbe comunque poco
+    // dopo. Da qui in poi il menu resta aperto "per davvero" fino
+    // all'onLeave del passo Traguardi, che lo richiude esplicitamente.
     { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
       title:'Il pannello si apre 📂',
-      body:'Ecco le cinque scorciatoie dell\'Hub. Iniziamo dalla prima.' },
+      body:'Ecco le cinque scorciatoie dell\'Hub. Iniziamo dalla prima.',
+      onEnter: function () {
+        setTimeout(function () {
+          if (typeof _hubOutsideClick === 'function') {
+            document.removeEventListener('click', _hubOutsideClick);
+          }
+        }, 50);
+      } },
     { screen:'homeCategory', target:'#tb-lb', type:'info', revealTarget:true, blockClicks:true,
       title:'Classifica 🏆',
       body:'Il podio della classe per ogni minigioco, sia in modalità Individuale che a Squadre.' },
@@ -953,9 +995,31 @@ const OnboardingTour = (function () {
     // su ciascuna delle 5 voci. Il menu resta aperto per tutta la
     // sequenza; onLeave sull'ultimo passo (Traguardi) lo richiude per
     // davvero prima di passare a "Torna ai moduli".
+    // v2.6.1 — bug segnalato: cliccando "Avanti" su questo passo il tour
+    // si bloccava (nessun passo successivo, nessuna chiusura pulita). Causa:
+    // toggleHubMenu() (js/app.js) registra un listener reale
+    // document.addEventListener('click', _hubOutsideClick, {once:true}) con
+    // 10ms di ritardo dopo l'apertura, per chiudere il menu al primo click
+    // fuori da #tb-hub-wrap — e il pulsante "Avanti" del tour (nel
+    // tooltip, fuori da #tb-hub-wrap per definizione) lo soddisfa: il click
+    // chiude per davvero il menu prima ancora che il passo successivo
+    // (#tb-lb) venga renderizzato, che quindi non trova più un target
+    // visibile e rinuncia in silenzio. Fix: onEnter su questo passo rimuove
+    // quel listener — con un ritardo di 50ms (> i 10ms di app.js) per
+    // essere sicuri che sia già stato registrato quando lo rimuoviamo, o la
+    // rimozione sarebbe un no-op e app.js lo ri-registrerebbe comunque poco
+    // dopo. Da qui in poi il menu resta aperto "per davvero" fino
+    // all'onLeave del passo Traguardi, che lo richiude esplicitamente.
     { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
       title:'Il pannello si apre 📂',
-      body:'Ecco le cinque scorciatoie dell\'Hub. Iniziamo dalla prima.' },
+      body:'Ecco le cinque scorciatoie dell\'Hub. Iniziamo dalla prima.',
+      onEnter: function () {
+        setTimeout(function () {
+          if (typeof _hubOutsideClick === 'function') {
+            document.removeEventListener('click', _hubOutsideClick);
+          }
+        }, 50);
+      } },
     { screen:'homeCategory', target:'#tb-lb', type:'info', revealTarget:true, blockClicks:true,
       title:'Classifica 🏆',
       body:'Il podio della classe per ogni minigioco, sia in modalità Individuale che a Squadre.' },
@@ -1172,6 +1236,16 @@ const OnboardingTour = (function () {
   ================================================ */
   function _renderStep(def, targets) {
     _teardown(); // sicurezza, normalmente già vuoto
+
+    // v2.6.1 — nuova proprietà generica onEnter (funzione, opzionale),
+    // simmetrica a onLeave: richiamata una sola volta qui, nel momento in
+    // cui il passo viene effettivamente renderizzato per la prima volta
+    // (protetta dal controllo _renderedIdx in _tryRenderCurrentStep, come
+    // per onLeave). Introdotta per il bug del passo "Il pannello si apre"
+    // — vedi commento sul relativo passo in DIRECTOR_STEPS/TEACHER_STEPS.
+    if (typeof def.onEnter === 'function') {
+      try { def.onEnter(); } catch (e) {}
+    }
 
     const list = _stepList();
     const idx = _state.idx;

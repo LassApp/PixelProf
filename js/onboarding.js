@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.5.2
+   onboarding.js — PixelProf v2.6.0
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -435,6 +435,34 @@
      da fare — nuovo metodo pubblico isActive() (sopra) usato apposta per
      non toccare nulla a chi l'ha già completato o saltato.
 
+   v2.6.0 — richiesta esplicita utente: il passo "Il tuo Hub" (subito dopo
+     "Scegli il modulo") non era coerente con gli altri elementi permanenti
+     della topbar (nome, tema, audio, badge aula, logo, logout), spiegati
+     tutti insieme più avanti nel tour. Spostato lì, subito prima di
+     "Torna ai moduli", e trasformato da 'info' ad 'action': il click
+     reale sul pulsante Hub apre per davvero il menu a tendina (stesso
+     meccanismo già discusso per il logo PixelProf, v2.1.4 — avanzamento
+     rimandato di un tick in _advance() garantisce che l'onclick nativo
+     toggleHubMenu() sia già stato eseguito quando il passo successivo
+     viene renderizzato). Aggiunti 10 nuovi passi che esplorano il menu
+     appena aperto: 5 coppie che alternano una vista d'insieme del
+     pannello (target #tb-hub-menu) a un dettaglio su ciascuna delle 5
+     voci (#tb-lb Classifica, #tb-st Progressi, #tb-hist Storico, #tb-dash
+     Panoramica Classe, #tb-badges Traguardi) — tutti 'info' con
+     revealTarget:true e blockClicks:true, stesso trattamento già usato
+     per il badge aula e il dialogo cambio-aula: i pulsanti sono reali e
+     cliccabili ma il click viene ignorato, si avanza solo con "Avanti"
+     (ognuno chiuderebbe il menu e/o navigherebbe altrove, rompendo la
+     sequenza). Il menu resta aperto per tutta la sequenza; onLeave
+     sull'ultimo passo (Traguardi) lo richiude per davvero prima di
+     passare a "Torna ai moduli" — stesso principio già discusso per
+     onLeave sul passo del dialogo cambio-aula. Sequenza totale: Direttore
+     31→41 passi, Docente 21→31 passi. Nessuna modifica al motore
+     (_advance/_renderStep invariati: gli stessi controlli sameScreen/
+     hubTarget/afterHub già presenti bastano) né a app.js/
+     game-engine-state.js/index.html/CSS: tutto contenuto in
+     onboarding.js (solo dati dei passi).
+
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
 
@@ -658,13 +686,11 @@ const OnboardingTour = (function () {
     { screen:'homeModule', target:'.mod-grid', type:'action',
       title:'Scegli il modulo 📚',
       body:'Ogni aula può abilitare solo alcuni moduli: qui vedi solo quelli disponibili per questa classe.' },
-    { screen:'hub', target:'#tb-hub-btn', type:'info', revealTarget:true,
-      title:'Il tuo Hub 🎯',
-      body:'Classifica, Progressi, Storico, Panoramica Classe e Traguardi: tutto qui, in un solo tocco.' },
-    // v2.3.0 — passi 14-20: coprono il flusso Minigiochi/Didattica raggiunto
-    // dopo la scelta del modulo (già visto ai passi 11-12). Testo identico
-    // ai corrispondenti passi 4-10 di TEACHER_STEPS: stessa schermata,
-    // stesso flusso, indipendente dal ruolo.
+    // v2.3.0 — coprono il flusso Minigiochi/Didattica raggiunto dopo la
+    // scelta del modulo. Testo identico ai corrispondenti passi di
+    // TEACHER_STEPS: stessa schermata, stesso flusso, indipendente dal
+    // ruolo. (Il passo Hub che era qui è stato spostato più sotto, subito
+    // prima di "Torna ai moduli" — v2.6.0, vedi commento là.)
     { screen:'homeCategory', target:'.cat-games', type:'action',
       title:'Minigiochi 🎮',
       body:'Premi qui per scegliere tra le modalità di gioco: Quiz, Speed Quiz, Abbina, Completa la frase e Vero o Falso.' },
@@ -731,6 +757,65 @@ const OnboardingTour = (function () {
     { screen:'homeCategory', target:'.audio-toggle-btn:not(.theme-toggle-btn)', type:'info', revealTarget:true,
       title:'Audio on/off 🔊',
       body:'Attiva o disattiva gli effetti sonori del gioco quando vuoi.' },
+    // v2.6.0 — richiesta esplicita utente: il passo Hub (era qui) è stato
+    // spostato subito prima di "Torna ai moduli" più sotto, insieme ai 10
+    // nuovi passi che ne esplorano il contenuto — coerenza con gli altri
+    // pulsanti permanenti della topbar spiegati in quella stessa zona. Ora
+    // è 'action': il click reale apre per davvero il menu a tendina, così
+    // i 10 passi successivi possono mostrarne il contenuto esploso. Stesso
+    // meccanismo già usato per il logo PixelProf più sotto (v2.1.4,
+    // avanzamento rimandato di un tick in _advance()): quando il passo
+    // "Il pannello si apre" viene renderizzato, l'onclick nativo
+    // toggleHubMenu() ha già rimosso la classe "hidden" dal menu.
+    { screen:'homeCategory', target:'#tb-hub-btn', type:'action',
+      title:'Il tuo Hub 🎯',
+      body:'Raggruppa Classifica, Progressi, Storico, Panoramica Classe e Traguardi. Premilo per scoprire cosa contiene.' },
+    // v2.6.0 — 10 nuovi passi (richiesta esplicita utente): esplorano il
+    // menu Hub appena aperto dal passo precedente, alternando una vista
+    // d'insieme del pannello (#tb-hub-menu, blockClicks:true come per il
+    // badge aula e il dialogo cambio-aula più sotto — i 5 pulsanti reali
+    // non devono navigare via per sbaglio durante il tour) a un dettaglio
+    // su ciascuna delle 5 voci. Il menu resta aperto per tutta la
+    // sequenza; onLeave sull'ultimo passo (Traguardi) lo richiude per
+    // davvero prima di passare a "Torna ai moduli".
+    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
+      title:'Il pannello si apre 📂',
+      body:'Ecco le cinque scorciatoie dell\'Hub. Iniziamo dalla prima.' },
+    { screen:'homeCategory', target:'#tb-lb', type:'info', revealTarget:true, blockClicks:true,
+      title:'Classifica 🏆',
+      body:'Il podio della classe per ogni minigioco, sia in modalità Individuale che a Squadre.' },
+    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
+      title:'Torniamo al pannello 📂',
+      body:'Passiamo alla voce successiva.' },
+    { screen:'homeCategory', target:'#tb-st', type:'info', revealTarget:true, blockClicks:true,
+      title:'Progressi 📊',
+      body:'Le tue statistiche personali: domande totali, risposte corrette e andamento per modulo.' },
+    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
+      title:'Ancora nel pannello 📂',
+      body:'Avanti con la prossima sezione.' },
+    { screen:'homeCategory', target:'#tb-hist', type:'info', revealTarget:true, blockClicks:true,
+      title:'Storico 🕐',
+      body:'L\'elenco delle sessioni giocate, filtrabile per attività e modalità.' },
+    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
+      title:'Un passo alla volta 📂',
+      body:'Manca ancora qualche voce.' },
+    { screen:'homeCategory', target:'#tb-dash', type:'info', revealTarget:true, blockClicks:true,
+      title:'Panoramica Classe 📈',
+      body:'La vista d\'insieme della classe: risultati, partecipazione e le domande più difficili.' },
+    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
+      title:'Ultima voce nel pannello 📂',
+      body:'Chiudiamo con l\'ultima sezione.' },
+    { screen:'homeCategory', target:'#tb-badges', type:'info', revealTarget:true, blockClicks:true,
+      title:'Traguardi 🏅',
+      body:'I badge sbloccati dalla classe e il progresso verso i prossimi.',
+      // v2.6.0 — il menu Hub è stato aperto per davvero dal passo "Il tuo
+      // Hub" (v. sopra) e non è più servito da allora: va richiuso per
+      // davvero prima del passo successivo ("Torna ai moduli"), altrimenti
+      // resterebbe aperto sopra la topbar. Stesso principio già discusso
+      // per onLeave sul passo del dialogo cambio-aula più sotto.
+      onLeave: function () {
+        if (typeof closeHubMenu === 'function') { closeHubMenu(); }
+      } },
     { screen:'homeCategory', target:'#tb-course-badge', type:'info', revealTarget:true, blockClicks:true,
       title:'Torna ai moduli 🏫',
       body:'Il nome dell\'aula in alto: da qui puoi sempre tornare alla scelta dei moduli. Per ora premi "Avanti" per continuare il tour.' },
@@ -776,12 +861,11 @@ const OnboardingTour = (function () {
     { screen:'homeModule', target:'.mod-card', type:'action',
       title:'Scegli il modulo 📚',
       body:'Ogni aula può abilitare solo alcuni moduli: qui vedi solo quelli disponibili per questa classe.' },
-    { screen:'hub', target:'#tb-hub-btn', type:'info', revealTarget:true,
-      title:'Il tuo Hub 🎯',
-      body:'Classifica, Progressi, Storico, Panoramica Classe e Traguardi: tutto qui, in un solo tocco.' },
     // v2.3.0 — ex passo "Scegli la modalità" (era qui, prima di Hub):
     // ritestato per parlare solo di Minigiochi, dato che Didattica ha ora
-    // il suo passo dedicato più sotto (passo 7/10).
+    // il suo passo dedicato più sotto. (Il passo Hub che era qui è stato
+    // spostato più sotto, subito prima di "Torna ai moduli" — v2.6.0,
+    // vedi commento là.)
     { screen:'homeCategory', target:'.cat-games', type:'action',
       title:'Minigiochi 🎮',
       body:'Premi qui per scegliere tra le modalità di gioco: Quiz, Speed Quiz, Abbina, Completa la frase e Vero o Falso.' },
@@ -848,6 +932,65 @@ const OnboardingTour = (function () {
     { screen:'homeCategory', target:'.audio-toggle-btn:not(.theme-toggle-btn)', type:'info', revealTarget:true,
       title:'Audio on/off 🔊',
       body:'Attiva o disattiva gli effetti sonori del gioco quando vuoi.' },
+    // v2.6.0 — richiesta esplicita utente: il passo Hub (era qui) è stato
+    // spostato subito prima di "Torna ai moduli" più sotto, insieme ai 10
+    // nuovi passi che ne esplorano il contenuto — coerenza con gli altri
+    // pulsanti permanenti della topbar spiegati in quella stessa zona. Ora
+    // è 'action': il click reale apre per davvero il menu a tendina, così
+    // i 10 passi successivi possono mostrarne il contenuto esploso. Stesso
+    // meccanismo già usato per il logo PixelProf più sotto (v2.1.4,
+    // avanzamento rimandato di un tick in _advance()): quando il passo
+    // "Il pannello si apre" viene renderizzato, l'onclick nativo
+    // toggleHubMenu() ha già rimosso la classe "hidden" dal menu.
+    { screen:'homeCategory', target:'#tb-hub-btn', type:'action',
+      title:'Il tuo Hub 🎯',
+      body:'Raggruppa Classifica, Progressi, Storico, Panoramica Classe e Traguardi. Premilo per scoprire cosa contiene.' },
+    // v2.6.0 — 10 nuovi passi (richiesta esplicita utente): esplorano il
+    // menu Hub appena aperto dal passo precedente, alternando una vista
+    // d'insieme del pannello (#tb-hub-menu, blockClicks:true come per il
+    // badge aula e il dialogo cambio-aula più sotto — i 5 pulsanti reali
+    // non devono navigare via per sbaglio durante il tour) a un dettaglio
+    // su ciascuna delle 5 voci. Il menu resta aperto per tutta la
+    // sequenza; onLeave sull'ultimo passo (Traguardi) lo richiude per
+    // davvero prima di passare a "Torna ai moduli".
+    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
+      title:'Il pannello si apre 📂',
+      body:'Ecco le cinque scorciatoie dell\'Hub. Iniziamo dalla prima.' },
+    { screen:'homeCategory', target:'#tb-lb', type:'info', revealTarget:true, blockClicks:true,
+      title:'Classifica 🏆',
+      body:'Il podio della classe per ogni minigioco, sia in modalità Individuale che a Squadre.' },
+    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
+      title:'Torniamo al pannello 📂',
+      body:'Passiamo alla voce successiva.' },
+    { screen:'homeCategory', target:'#tb-st', type:'info', revealTarget:true, blockClicks:true,
+      title:'Progressi 📊',
+      body:'Le tue statistiche personali: domande totali, risposte corrette e andamento per modulo.' },
+    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
+      title:'Ancora nel pannello 📂',
+      body:'Avanti con la prossima sezione.' },
+    { screen:'homeCategory', target:'#tb-hist', type:'info', revealTarget:true, blockClicks:true,
+      title:'Storico 🕐',
+      body:'L\'elenco delle sessioni giocate, filtrabile per attività e modalità.' },
+    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
+      title:'Un passo alla volta 📂',
+      body:'Manca ancora qualche voce.' },
+    { screen:'homeCategory', target:'#tb-dash', type:'info', revealTarget:true, blockClicks:true,
+      title:'Panoramica Classe 📈',
+      body:'La vista d\'insieme della classe: risultati, partecipazione e le domande più difficili.' },
+    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
+      title:'Ultima voce nel pannello 📂',
+      body:'Chiudiamo con l\'ultima sezione.' },
+    { screen:'homeCategory', target:'#tb-badges', type:'info', revealTarget:true, blockClicks:true,
+      title:'Traguardi 🏅',
+      body:'I badge sbloccati dalla classe e il progresso verso i prossimi.',
+      // v2.6.0 — il menu Hub è stato aperto per davvero dal passo "Il tuo
+      // Hub" (v. sopra) e non è più servito da allora: va richiuso per
+      // davvero prima del passo successivo ("Torna ai moduli"), altrimenti
+      // resterebbe aperto sopra la topbar. Stesso principio già discusso
+      // per onLeave sul passo del dialogo cambio-aula più sotto.
+      onLeave: function () {
+        if (typeof closeHubMenu === 'function') { closeHubMenu(); }
+      } },
     { screen:'homeCategory', target:'#tb-course-badge', type:'info', revealTarget:true, blockClicks:true,
       title:'Torna ai moduli 🏫',
       body:'Il nome dell\'aula in alto: da qui puoi sempre tornare alla scelta dei moduli. Per ora premi "Avanti" per continuare il tour.' },

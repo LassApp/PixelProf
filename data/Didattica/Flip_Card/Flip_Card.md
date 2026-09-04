@@ -110,7 +110,7 @@ data/
 - **Modulo 1 — Word e ambiente**
   - Chiave: `word-e-ambiente`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo1/`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(csv da creare)*
     - `Flip_Card_Medio_Modulo_1.csv` *(csv da creare)*
@@ -118,7 +118,7 @@ data/
 - **Modulo 2 — Scrivere e salvare**
   - Chiave: `scrivere-e-salvare`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo2/`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(csv da creare)*
     - `Flip_Card_Medio_Modulo_2.csv` *(csv da creare)*
@@ -126,7 +126,7 @@ data/
 - **Modulo 3 — Formattare il testo**
   - Chiave: `formattare-il-testo`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo3/`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(csv da creare)*
     - `Flip_Card_Medio_Modulo_3.csv` *(csv da creare)*
@@ -134,7 +134,7 @@ data/
 - **Modulo 4 — Elementi grafici**
   - Chiave: `elementi-grafici`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo4/`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(csv da creare)*
     - `Flip_Card_Medio_Modulo_4.csv` *(csv da creare)*
@@ -142,7 +142,7 @@ data/
 - **Modulo 5 — Strutturare il documento**
   - Chiave: `strutturare-il-documento`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo5/`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo5/`
   - File:
     - `Flip_Card_Facile_Modulo_5.csv` *(csv da creare)*
     - `Flip_Card_Medio_Modulo_5.csv` *(csv da creare)*

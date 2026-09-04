@@ -1,8 +1,14 @@
 /* ==================================================
-   flip-card.js — PixelProf v8.23.0 (Didattica · Flip Card)
+   flip-card.js — PixelProf v8.23.1 (Didattica · Flip Card)
    Prima "attività didattica" di PixelProf, accanto ai
    Minigiochi: mazzo di carte domanda/risposta con flip 3D,
    caricato da CSV dedicati per modulo + livello.
+
+   v8.23.1: FIX path Word Processing — Erasmo ha aggiornato
+   Flip_Card.md, cartella cambiata da "ECDL/Word" a
+   "ECDL/Word_Processing" (ora simmetrica ai minigiochi JSON).
+   Aggiornati i 10 path (5 moduli x 2 livelli) in
+   FLIPCARD_MODULE_MAP.WP. Nessun altro modulo toccato.
 
    v8.23.0: FIX path di caricamento CSV (bug segnalato — Flip Card
    funzionava solo per Computer Essentials, "Errore caricamento" o
@@ -22,6 +28,8 @@
        "ECDL/Word" (NON "ECDL/Word_Processing" come nei minigiochi
        JSON) — così documentato in Flip_Card.md, rispettato alla
        lettera pur essendo asimmetrico rispetto ai path JSON.
+       [SUPERATO in v8.23.1, vedi sotto — Erasmo ha corretto
+       Flip_Card.md: ora è "ECDL/Word_Processing" per entrambi.]
      - ATTENZIONE chiavi: per Cyberbullismo e Intelligenza Artificiale,
        Flip_Card.md usa alcune Chiavi diverse da quelle già presenti
        in areas-config.js (es. doc 'cittadinanza-digitale' vs codice
@@ -175,18 +183,18 @@ const FLIPCARD_MODULE_MAP = {
   },
   WP: {
     facile: [
-      'data/Didattica/Flip_Card/ECDL/Word/Modulo1/Flip_Card_Facile_Modulo_1.csv',
-      'data/Didattica/Flip_Card/ECDL/Word/Modulo2/Flip_Card_Facile_Modulo_2.csv',
-      'data/Didattica/Flip_Card/ECDL/Word/Modulo3/Flip_Card_Facile_Modulo_3.csv',
-      'data/Didattica/Flip_Card/ECDL/Word/Modulo4/Flip_Card_Facile_Modulo_4.csv',
-      'data/Didattica/Flip_Card/ECDL/Word/Modulo5/Flip_Card_Facile_Modulo_5.csv',
+      'data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo1/Flip_Card_Facile_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo2/Flip_Card_Facile_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo3/Flip_Card_Facile_Modulo_3.csv',
+      'data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo4/Flip_Card_Facile_Modulo_4.csv',
+      'data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo5/Flip_Card_Facile_Modulo_5.csv',
     ],
     medio: [
-      'data/Didattica/Flip_Card/ECDL/Word/Modulo1/Flip_Card_Medio_Modulo_1.csv',
-      'data/Didattica/Flip_Card/ECDL/Word/Modulo2/Flip_Card_Medio_Modulo_2.csv',
-      'data/Didattica/Flip_Card/ECDL/Word/Modulo3/Flip_Card_Medio_Modulo_3.csv',
-      'data/Didattica/Flip_Card/ECDL/Word/Modulo4/Flip_Card_Medio_Modulo_4.csv',
-      'data/Didattica/Flip_Card/ECDL/Word/Modulo5/Flip_Card_Medio_Modulo_5.csv',
+      'data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo1/Flip_Card_Medio_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo2/Flip_Card_Medio_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo3/Flip_Card_Medio_Modulo_3.csv',
+      'data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo4/Flip_Card_Medio_Modulo_4.csv',
+      'data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo5/Flip_Card_Medio_Modulo_5.csv',
     ],
   },
   SS: {

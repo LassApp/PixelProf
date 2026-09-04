@@ -1,5 +1,5 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.6.1
+   onboarding.js — PixelProf v2.7.0
    Tour guidato al primo accesso docente ("dove clicco?").
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
@@ -483,6 +483,34 @@
      la rimozione sarebbe un no-op). Nessuna modifica ad app.js: il fix
      resta interamente in onboarding.js.
 
+   v2.7.0 — richiesta esplicita utente: i 5 passi di dettaglio sulle voci
+     dell'Hub (Classifica/Progressi/Storico/Panoramica Classe/Traguardi,
+     introdotti in v2.6.0) non navigavano per davvero — erano 'info' con
+     blockClicks:true, il pulsante reale restava visibile ma il click era
+     intercettato, il tour si limitava a descrivere la schermata da dietro
+     un velo. Ora ogni voce ENTRA per davvero nella propria schermata:
+       - passo 'action' sul pulsante reale nel menu (es. #tb-lb) → click
+         vero → naviga sul serio (goTab() chiude il menu Hub per davvero);
+       - passo 'action' successivo con target #tb-hub-btn (sempre presente
+         in topbar, qualunque schermata sia attiva dietro — vedi hubTarget
+         in _advance()): spiega la sezione appena visitata e il click reale
+         riapre il pannello Hub, avanzando insieme al passo successivo
+         (stesso meccanismo già usato dal passo "Il tuo Hub" originale).
+     Ripetuto per le prime 4 voci; l'ultima (Traguardi) resta 'info' con
+     revealTarget+blockClicks (nessuna voce successiva da aprire, basta
+     "Avanti"). Passi totali: Direttore 41→42, Docente 31→32.
+     Effetto collaterale: navigando per davvero, a fine sequenza la
+     schermata reale è tab-badges e non più tab-home come in v2.6.0 — i
+     passi successivi (Torna ai moduli/logo/dialogo/logout) restano validi
+     perché tutti su elementi di topbar sempre visibili, ma l'ultimissimo
+     passo del tour ('.cat-grid', "Tour completato") vive dentro tab-home e
+     fallirebbe in silenzio a schermata sbagliata (vedi
+     _tryRenderCurrentStep, nessun retry automatico). Fix: onLeave sul
+     passo Traguardi richiama showScreen('tab-home')+goStep('cat') prima di
+     proseguire, riportando la UI reale su Home/Categoria per il resto
+     della sequenza. Nessuna modifica ad app.js/game-engine-state.js: il
+     fix resta interamente in onboarding.js.
+
    PERSISTENZA: localStorage, chiave per-docente
    (pp5_onboarding_<teacherId>) — invariata.
 
@@ -790,14 +818,17 @@ const OnboardingTour = (function () {
     { screen:'homeCategory', target:'#tb-hub-btn', type:'action',
       title:'Il tuo Hub 🎯',
       body:'Raggruppa Classifica, Progressi, Storico, Panoramica Classe e Traguardi. Premilo per scoprire cosa contiene.' },
-    // v2.6.0 — 10 nuovi passi (richiesta esplicita utente): esplorano il
+    // v2.6.0 — richiesta esplicita utente: 10 nuovi passi esplorano il
     // menu Hub appena aperto dal passo precedente, alternando una vista
-    // d'insieme del pannello (#tb-hub-menu, blockClicks:true come per il
-    // badge aula e il dialogo cambio-aula più sotto — i 5 pulsanti reali
-    // non devono navigare via per sbaglio durante il tour) a un dettaglio
-    // su ciascuna delle 5 voci. Il menu resta aperto per tutta la
-    // sequenza; onLeave sull'ultimo passo (Traguardi) lo richiude per
-    // davvero prima di passare a "Torna ai moduli".
+    // d'insieme del pannello (#tb-hub-menu, blockClicks:true — i 5
+    // pulsanti reali non devono navigare via per sbaglio durante il tour)
+    // a un dettaglio su ciascuna delle 5 voci.
+    // v2.7.0 — richiesta esplicita utente: i passi di dettaglio sulle 5
+    // voci (subito sotto) sono stati riscritti per navigare per davvero
+    // in ciascuna schermata invece di limitarsi a descriverla da dietro
+    // il velo — vedi changelog in testa al file per il pattern completo.
+    // Questo passo ("Il pannello si apre") resta invariato: overview
+    // bloccata dell'intero menu appena aperto, invariata dalla v2.6.0.
     // v2.6.1 — bug segnalato: cliccando "Avanti" su questo passo il tour
     // si bloccava (nessun passo successivo, nessuna chiusura pulita). Causa:
     // toggleHubMenu() (js/app.js) registra un listener reale
@@ -823,40 +854,62 @@ const OnboardingTour = (function () {
           }
         }, 50);
       } },
-    { screen:'homeCategory', target:'#tb-lb', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'homeCategory', target:'#tb-lb', type:'action',
       title:'Classifica 🏆',
-      body:'Il podio della classe per ogni minigioco, sia in modalità Individuale che a Squadre.' },
-    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
-      title:'Torniamo al pannello 📂',
-      body:'Passiamo alla voce successiva.' },
-    { screen:'homeCategory', target:'#tb-st', type:'info', revealTarget:true, blockClicks:true,
+      body:'Premi qui per entrare davvero nella Classifica.' },
+    { screen:'hubLeaderboard', target:'#tb-hub-btn', type:'action',
+      title:'Nella Classifica 🏆',
+      body:'Il podio della classe per ogni minigioco, sia in modalità Individuale che a Squadre. Premi di nuovo l\'Hub per tornare al pannello.' },
+    { screen:'homeCategory', target:'#tb-st', type:'action',
       title:'Progressi 📊',
-      body:'Le tue statistiche personali: domande totali, risposte corrette e andamento per modulo.' },
-    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
-      title:'Ancora nel pannello 📂',
-      body:'Avanti con la prossima sezione.' },
-    { screen:'homeCategory', target:'#tb-hist', type:'info', revealTarget:true, blockClicks:true,
+      body:'Premi qui per entrare nei Progressi.' },
+    { screen:'hubStats', target:'#tb-hub-btn', type:'action',
+      title:'Nei Progressi 📊',
+      body:'Le tue statistiche personali: domande totali, risposte corrette e andamento per modulo. Premi di nuovo l\'Hub per continuare.' },
+    { screen:'homeCategory', target:'#tb-hist', type:'action',
       title:'Storico 🕐',
-      body:'L\'elenco delle sessioni giocate, filtrabile per attività e modalità.' },
-    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
-      title:'Un passo alla volta 📂',
-      body:'Manca ancora qualche voce.' },
-    { screen:'homeCategory', target:'#tb-dash', type:'info', revealTarget:true, blockClicks:true,
+      body:'Premi qui per entrare nello Storico.' },
+    { screen:'hubHistory', target:'#tb-hub-btn', type:'action',
+      title:'Nello Storico 🕐',
+      body:'L\'elenco delle sessioni giocate, filtrabile per attività e modalità. Premi di nuovo l\'Hub per continuare.' },
+    { screen:'homeCategory', target:'#tb-dash', type:'action',
       title:'Panoramica Classe 📈',
-      body:'La vista d\'insieme della classe: risultati, partecipazione e le domande più difficili.' },
-    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
-      title:'Ultima voce nel pannello 📂',
-      body:'Chiudiamo con l\'ultima sezione.' },
-    { screen:'homeCategory', target:'#tb-badges', type:'info', revealTarget:true, blockClicks:true,
+      body:'Premi qui per entrare nella Panoramica Classe.' },
+    { screen:'hubDashboard', target:'#tb-hub-btn', type:'action',
+      title:'Nella Panoramica Classe 📈',
+      body:'La vista d\'insieme della classe: risultati, partecipazione e le domande più difficili. Premi di nuovo l\'Hub per continuare.' },
+    { screen:'homeCategory', target:'#tb-badges', type:'action',
       title:'Traguardi 🏅',
-      body:'I badge sbloccati dalla classe e il progresso verso i prossimi.',
-      // v2.6.0 — il menu Hub è stato aperto per davvero dal passo "Il tuo
-      // Hub" (v. sopra) e non è più servito da allora: va richiuso per
-      // davvero prima del passo successivo ("Torna ai moduli"), altrimenti
-      // resterebbe aperto sopra la topbar. Stesso principio già discusso
-      // per onLeave sul passo del dialogo cambio-aula più sotto.
+      body:'Premi qui per entrare nei Traguardi.' },
+    { screen:'hubBadges', target:'#tb-hub-btn', type:'info', revealTarget:true, blockClicks:true,
+      title:'Nei Traguardi 🏅',
+      body:'I badge sbloccati dalla classe e il progresso verso i prossimi. Hai esplorato tutte le sezioni dell\'Hub!',
+      // v2.7.0 — richiesta esplicita utente: i 5 passi precedenti ora
+      // ENTRANO per davvero in ciascuna schermata dell'Hub invece di
+      // limitarsi a descriverla da dietro un velo bloccato (v2.6.0).
+      // Pattern per voce: passo 'action' sul pulsante reale dentro il
+      // menu (es. #tb-lb) → click vero → naviga sul serio nella
+      // schermata (goTab() chiude il menu per davvero) → passo 'action'
+      // successivo con target #tb-hub-btn, sempre presente in topbar
+      // qualunque sia la schermata dietro (vedi hubTarget in _advance()):
+      // spiega la sezione appena vista e il click reale riapre il
+      // pannello, avanzando al tempo stesso al passo successivo (stesso
+      // meccanismo già usato dal passo "Il tuo Hub" più sopra). Ultima
+      // voce (Traguardi) trattata come le vecchie viste d'insieme —
+      // 'info'+revealTarget+blockClicks — perché non c'è una voce
+      // successiva da aprire: qui serve solo il pulsante "Avanti".
+      // Poiché ora si naviga sul serio, la schermata sotto al termine
+      // della sequenza è tab-badges e non più tab-home come nella v2.6.0:
+      // onLeave riporta a schermata Home/Categoria PRIMA del passo
+      // "Torna ai moduli" e dei successivi, così il passo finale
+      // ('.cat-grid', unico non presente in topbar) trova ancora il suo
+      // target — altrimenti fallirebbe in silenzio (vedi _tryRenderCurrentStep).
       onLeave: function () {
         if (typeof closeHubMenu === 'function') { closeHubMenu(); }
+        if (typeof showScreen === 'function' && typeof goStep === 'function') {
+          showScreen('tab-home');
+          goStep('cat');
+        }
       } },
     { screen:'homeCategory', target:'#tb-course-badge', type:'info', revealTarget:true, blockClicks:true,
       title:'Torna ai moduli 🏫',
@@ -987,14 +1040,17 @@ const OnboardingTour = (function () {
     { screen:'homeCategory', target:'#tb-hub-btn', type:'action',
       title:'Il tuo Hub 🎯',
       body:'Raggruppa Classifica, Progressi, Storico, Panoramica Classe e Traguardi. Premilo per scoprire cosa contiene.' },
-    // v2.6.0 — 10 nuovi passi (richiesta esplicita utente): esplorano il
+    // v2.6.0 — richiesta esplicita utente: 10 nuovi passi esplorano il
     // menu Hub appena aperto dal passo precedente, alternando una vista
-    // d'insieme del pannello (#tb-hub-menu, blockClicks:true come per il
-    // badge aula e il dialogo cambio-aula più sotto — i 5 pulsanti reali
-    // non devono navigare via per sbaglio durante il tour) a un dettaglio
-    // su ciascuna delle 5 voci. Il menu resta aperto per tutta la
-    // sequenza; onLeave sull'ultimo passo (Traguardi) lo richiude per
-    // davvero prima di passare a "Torna ai moduli".
+    // d'insieme del pannello (#tb-hub-menu, blockClicks:true — i 5
+    // pulsanti reali non devono navigare via per sbaglio durante il tour)
+    // a un dettaglio su ciascuna delle 5 voci.
+    // v2.7.0 — richiesta esplicita utente: i passi di dettaglio sulle 5
+    // voci (subito sotto) sono stati riscritti per navigare per davvero
+    // in ciascuna schermata invece di limitarsi a descriverla da dietro
+    // il velo — vedi changelog in testa al file per il pattern completo.
+    // Questo passo ("Il pannello si apre") resta invariato: overview
+    // bloccata dell'intero menu appena aperto, invariata dalla v2.6.0.
     // v2.6.1 — bug segnalato: cliccando "Avanti" su questo passo il tour
     // si bloccava (nessun passo successivo, nessuna chiusura pulita). Causa:
     // toggleHubMenu() (js/app.js) registra un listener reale
@@ -1020,40 +1076,62 @@ const OnboardingTour = (function () {
           }
         }, 50);
       } },
-    { screen:'homeCategory', target:'#tb-lb', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'homeCategory', target:'#tb-lb', type:'action',
       title:'Classifica 🏆',
-      body:'Il podio della classe per ogni minigioco, sia in modalità Individuale che a Squadre.' },
-    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
-      title:'Torniamo al pannello 📂',
-      body:'Passiamo alla voce successiva.' },
-    { screen:'homeCategory', target:'#tb-st', type:'info', revealTarget:true, blockClicks:true,
+      body:'Premi qui per entrare davvero nella Classifica.' },
+    { screen:'hubLeaderboard', target:'#tb-hub-btn', type:'action',
+      title:'Nella Classifica 🏆',
+      body:'Il podio della classe per ogni minigioco, sia in modalità Individuale che a Squadre. Premi di nuovo l\'Hub per tornare al pannello.' },
+    { screen:'homeCategory', target:'#tb-st', type:'action',
       title:'Progressi 📊',
-      body:'Le tue statistiche personali: domande totali, risposte corrette e andamento per modulo.' },
-    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
-      title:'Ancora nel pannello 📂',
-      body:'Avanti con la prossima sezione.' },
-    { screen:'homeCategory', target:'#tb-hist', type:'info', revealTarget:true, blockClicks:true,
+      body:'Premi qui per entrare nei Progressi.' },
+    { screen:'hubStats', target:'#tb-hub-btn', type:'action',
+      title:'Nei Progressi 📊',
+      body:'Le tue statistiche personali: domande totali, risposte corrette e andamento per modulo. Premi di nuovo l\'Hub per continuare.' },
+    { screen:'homeCategory', target:'#tb-hist', type:'action',
       title:'Storico 🕐',
-      body:'L\'elenco delle sessioni giocate, filtrabile per attività e modalità.' },
-    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
-      title:'Un passo alla volta 📂',
-      body:'Manca ancora qualche voce.' },
-    { screen:'homeCategory', target:'#tb-dash', type:'info', revealTarget:true, blockClicks:true,
+      body:'Premi qui per entrare nello Storico.' },
+    { screen:'hubHistory', target:'#tb-hub-btn', type:'action',
+      title:'Nello Storico 🕐',
+      body:'L\'elenco delle sessioni giocate, filtrabile per attività e modalità. Premi di nuovo l\'Hub per continuare.' },
+    { screen:'homeCategory', target:'#tb-dash', type:'action',
       title:'Panoramica Classe 📈',
-      body:'La vista d\'insieme della classe: risultati, partecipazione e le domande più difficili.' },
-    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
-      title:'Ultima voce nel pannello 📂',
-      body:'Chiudiamo con l\'ultima sezione.' },
-    { screen:'homeCategory', target:'#tb-badges', type:'info', revealTarget:true, blockClicks:true,
+      body:'Premi qui per entrare nella Panoramica Classe.' },
+    { screen:'hubDashboard', target:'#tb-hub-btn', type:'action',
+      title:'Nella Panoramica Classe 📈',
+      body:'La vista d\'insieme della classe: risultati, partecipazione e le domande più difficili. Premi di nuovo l\'Hub per continuare.' },
+    { screen:'homeCategory', target:'#tb-badges', type:'action',
       title:'Traguardi 🏅',
-      body:'I badge sbloccati dalla classe e il progresso verso i prossimi.',
-      // v2.6.0 — il menu Hub è stato aperto per davvero dal passo "Il tuo
-      // Hub" (v. sopra) e non è più servito da allora: va richiuso per
-      // davvero prima del passo successivo ("Torna ai moduli"), altrimenti
-      // resterebbe aperto sopra la topbar. Stesso principio già discusso
-      // per onLeave sul passo del dialogo cambio-aula più sotto.
+      body:'Premi qui per entrare nei Traguardi.' },
+    { screen:'hubBadges', target:'#tb-hub-btn', type:'info', revealTarget:true, blockClicks:true,
+      title:'Nei Traguardi 🏅',
+      body:'I badge sbloccati dalla classe e il progresso verso i prossimi. Hai esplorato tutte le sezioni dell\'Hub!',
+      // v2.7.0 — richiesta esplicita utente: i 5 passi precedenti ora
+      // ENTRANO per davvero in ciascuna schermata dell'Hub invece di
+      // limitarsi a descriverla da dietro un velo bloccato (v2.6.0).
+      // Pattern per voce: passo 'action' sul pulsante reale dentro il
+      // menu (es. #tb-lb) → click vero → naviga sul serio nella
+      // schermata (goTab() chiude il menu per davvero) → passo 'action'
+      // successivo con target #tb-hub-btn, sempre presente in topbar
+      // qualunque sia la schermata dietro (vedi hubTarget in _advance()):
+      // spiega la sezione appena vista e il click reale riapre il
+      // pannello, avanzando al tempo stesso al passo successivo (stesso
+      // meccanismo già usato dal passo "Il tuo Hub" più sopra). Ultima
+      // voce (Traguardi) trattata come le vecchie viste d'insieme —
+      // 'info'+revealTarget+blockClicks — perché non c'è una voce
+      // successiva da aprire: qui serve solo il pulsante "Avanti".
+      // Poiché ora si naviga sul serio, la schermata sotto al termine
+      // della sequenza è tab-badges e non più tab-home come nella v2.6.0:
+      // onLeave riporta a schermata Home/Categoria PRIMA del passo
+      // "Torna ai moduli" e dei successivi, così il passo finale
+      // ('.cat-grid', unico non presente in topbar) trova ancora il suo
+      // target — altrimenti fallirebbe in silenzio (vedi _tryRenderCurrentStep).
       onLeave: function () {
         if (typeof closeHubMenu === 'function') { closeHubMenu(); }
+        if (typeof showScreen === 'function' && typeof goStep === 'function') {
+          showScreen('tab-home');
+          goStep('cat');
+        }
       } },
     { screen:'homeCategory', target:'#tb-course-badge', type:'info', revealTarget:true, blockClicks:true,
       title:'Torna ai moduli 🏫',

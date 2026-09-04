@@ -1,8 +1,34 @@
 /* ==================================================
-   flip-card.js — PixelProf v8.20.0 (Didattica · Flip Card)
+   flip-card.js — PixelProf v8.23.0 (Didattica · Flip Card)
    Prima "attività didattica" di PixelProf, accanto ai
    Minigiochi: mazzo di carte domanda/risposta con flip 3D,
    caricato da CSV dedicati per modulo + livello.
+
+   v8.23.0: FIX path di caricamento CSV (bug segnalato — Flip Card
+   funzionava solo per Computer Essentials, "Errore caricamento" o
+   card grigia per tutto il resto).
+     - FLIPCARD_MODULE_MAP: a CE (unico modulo presente finora)
+       mancava il segmento "Didattica/" nel path — puntava a
+       data/Flip_Card/... invece di data/Didattica/Flip_Card/...
+       (root reale, confermata da Flip_Card.md e dal repo).
+     - Aggiunte le 40 chiavi mancanti (OE/WP/SS/PP + 8 Cybersecurity +
+       8 Reti_e_Internet + 1 Malware + 6 Cyberbullismo + 13 AI) — path
+       "pronti" verso i CSV, che Erasmo caricherà mano a mano. Finché
+       assenti, il fetch dà 404 → startFlipCard() lo gestisce già
+       (vedi più sotto) mostrando la card "Flip Card non disponibile",
+       mai un errore JS. Stesso pattern già adottato in
+       game-engine-state.js v5.1.0 per i minigiochi JSON.
+     - ATTENZIONE naming: la cartella Word Processing per Flip Card è
+       "ECDL/Word" (NON "ECDL/Word_Processing" come nei minigiochi
+       JSON) — così documentato in Flip_Card.md, rispettato alla
+       lettera pur essendo asimmetrico rispetto ai path JSON.
+     - ATTENZIONE chiavi: per Cyberbullismo e Intelligenza Artificiale,
+       Flip_Card.md usa alcune Chiavi diverse da quelle già presenti
+       in areas-config.js (es. doc 'cittadinanza-digitale' vs codice
+       'difendersi-online'; 7 casi simili in AI). Usate qui le chiavi
+       già in areas-config.js (uniche che il motore riconosce per
+       instradare sMod) — stesso disallineamento già segnalato per i
+       minigiochi JSON, non ancora risolto da Erasmo.
 
    v8.20.0: richiesta esplicita utente, indipendente dal tour guidato —
    torna ai moduli/Hub (Classifica/Progressi/Storico/Panoramica Classe/
@@ -103,34 +129,130 @@
 ================================================== */
 
 /* Path CSV per modulo e livello. Struttura:
-     <MOD>: { facile: [4 path sotto-argomenti], medio: [4 path] }
-   Erasmo fornirà i path reali dei moduli man mano che i mazzi
-   saranno pronti: finché un modulo non compare qui (o un
-   livello ha array vuoto/assente), PixelProf mostra
-   correttamente lo stato "nessun mazzo disponibile" o il
-   livello disabilitato nello step di scelta (mai un errore JS).
-   Path verificati contro il repo reale: cartella "Flip_Card"
-   con la F maiuscola (coerente con le altre cartelle area del
-   progetto) — ATTENZIONE, Flip_Card.md la documenta in
-   minuscolo ("flip_card"): il documento va corretto, i path
-   qui sotto usano quella reale, case-sensitive su GitHub Pages. */
+     <MOD>: { facile: [N path sotto-argomenti], medio: [N path] }
+   Fonte: Flip_Card.md (fonte ufficiale e vincolante per Aree/Moduli/
+   Chiavi/Path/naming di Flip Card — NON modificare questo file senza
+   prima allinearlo lì). Tutti i 41 moduli documentati sono mappati:
+   solo Computer Essentials ha CSV reali caricati (8 file); tutti gli
+   altri (Online Essentials, Word/Spreadsheet/Presentation, Cybersecurity,
+   Reti e Internet, Malware, Cyberbullismo, Intelligenza Artificiale)
+   hanno path "pronti" verso CSV non ancora creati — finché Erasmo non
+   li carica, il fetch darà 404 e PixelProf mostrerà correttamente la
+   card "Errore caricamento" (mai un errore JS non gestito).
+   v8.23.0: nota precedente ("path verificati... ATTENZIONE Flip_Card.md
+   la documenta in minuscolo, il documento va corretto") superata — il
+   file Flip_Card.md è la fonte corretta (data/Didattica/Flip_Card/...,
+   F maiuscola); era questo file ad avere il path sbagliato (mancava
+   il segmento "Didattica/"), ora corretto. */
 const FLIPCARD_MODULE_MAP = {
   CE: {
     facile: [
-      'data/Flip_Card/ECDL/Computer_Essentials/Modulo1/Flip_Card_Facile_Modulo_1.csv',
-      'data/Flip_Card/ECDL/Computer_Essentials/Modulo2/Flip_Card_Facile_Modulo_2.csv',
-      'data/Flip_Card/ECDL/Computer_Essentials/Modulo3/Flip_Card_Facile_Modulo_3.csv',
-      'data/Flip_Card/ECDL/Computer_Essentials/Modulo4/Flip_Card_Facile_Modulo_4.csv',
+      'data/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo1/Flip_Card_Facile_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo2/Flip_Card_Facile_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo3/Flip_Card_Facile_Modulo_3.csv',
+      'data/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo4/Flip_Card_Facile_Modulo_4.csv',
     ],
     medio: [
-      'data/Flip_Card/ECDL/Computer_Essentials/Modulo1/Flip_Card_Medio_Modulo_1.csv',
-      'data/Flip_Card/ECDL/Computer_Essentials/Modulo2/Flip_Card_Medio_Modulo_2.csv',
-      'data/Flip_Card/ECDL/Computer_Essentials/Modulo3/Flip_Card_Medio_Modulo_3.csv',
-      'data/Flip_Card/ECDL/Computer_Essentials/Modulo4/Flip_Card_Medio_Modulo_4.csv',
+      'data/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo1/Flip_Card_Medio_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo2/Flip_Card_Medio_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo3/Flip_Card_Medio_Modulo_3.csv',
+      'data/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo4/Flip_Card_Medio_Modulo_4.csv',
     ],
   },
-  // OE: { facile: ['data/Flip_Card/ECDL/Online_Essentials/Modulo1/....csv', ...], medio: [...] },
-  // WP: { facile: [...], medio: [...] },
+  OE: {
+    facile: [
+      'data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo1/Flip_Card_Facile_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo2/Flip_Card_Facile_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo3/Flip_Card_Facile_Modulo_3.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo4/Flip_Card_Facile_Modulo_4.csv',
+    ],
+    medio: [
+      'data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo1/Flip_Card_Medio_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo2/Flip_Card_Medio_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo3/Flip_Card_Medio_Modulo_3.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo4/Flip_Card_Medio_Modulo_4.csv',
+    ],
+  },
+  WP: {
+    facile: [
+      'data/Didattica/Flip_Card/ECDL/Word/Modulo1/Flip_Card_Facile_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/Word/Modulo2/Flip_Card_Facile_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/Word/Modulo3/Flip_Card_Facile_Modulo_3.csv',
+      'data/Didattica/Flip_Card/ECDL/Word/Modulo4/Flip_Card_Facile_Modulo_4.csv',
+      'data/Didattica/Flip_Card/ECDL/Word/Modulo5/Flip_Card_Facile_Modulo_5.csv',
+    ],
+    medio: [
+      'data/Didattica/Flip_Card/ECDL/Word/Modulo1/Flip_Card_Medio_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/Word/Modulo2/Flip_Card_Medio_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/Word/Modulo3/Flip_Card_Medio_Modulo_3.csv',
+      'data/Didattica/Flip_Card/ECDL/Word/Modulo4/Flip_Card_Medio_Modulo_4.csv',
+      'data/Didattica/Flip_Card/ECDL/Word/Modulo5/Flip_Card_Medio_Modulo_5.csv',
+    ],
+  },
+  SS: {
+    facile: [
+      'data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo1/Flip_Card_Facile_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo2/Flip_Card_Facile_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo3/Flip_Card_Facile_Modulo_3.csv',
+      'data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo4/Flip_Card_Facile_Modulo_4.csv',
+      'data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo5/Flip_Card_Facile_Modulo_5.csv',
+    ],
+    medio: [
+      'data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo1/Flip_Card_Medio_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo2/Flip_Card_Medio_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo3/Flip_Card_Medio_Modulo_3.csv',
+      'data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo4/Flip_Card_Medio_Modulo_4.csv',
+      'data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo5/Flip_Card_Medio_Modulo_5.csv',
+    ],
+  },
+  PP: {
+    facile: [
+      'data/Didattica/Flip_Card/ECDL/Presentation/Modulo1/Flip_Card_Facile_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/Presentation/Modulo2/Flip_Card_Facile_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/Presentation/Modulo3/Flip_Card_Facile_Modulo_3.csv',
+    ],
+    medio: [
+      'data/Didattica/Flip_Card/ECDL/Presentation/Modulo1/Flip_Card_Medio_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/Presentation/Modulo2/Flip_Card_Medio_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/Presentation/Modulo3/Flip_Card_Medio_Modulo_3.csv',
+    ],
+  },
+  'fondamenti-cybersecurity': { facile: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo1/Flip_Card_Facile_Modulo_1.csv'], medio: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo1/Flip_Card_Medio_Modulo_1.csv'] },
+  'sicurezza-account': { facile: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo2/Flip_Card_Facile_Modulo_2.csv'], medio: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo2/Flip_Card_Medio_Modulo_2.csv'] },
+  'protezione-dati': { facile: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo3/Flip_Card_Facile_Modulo_3.csv'], medio: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo3/Flip_Card_Medio_Modulo_3.csv'] },
+  'sicurezza-quotidiana': { facile: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo4/Flip_Card_Facile_Modulo_4.csv'], medio: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo4/Flip_Card_Medio_Modulo_4.csv'] },
+  'sicurezza-pagamenti': { facile: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo5/Flip_Card_Facile_Modulo_5.csv'], medio: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo5/Flip_Card_Medio_Modulo_5.csv'] },
+  'privacy-normative': { facile: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo6/Flip_Card_Facile_Modulo_6.csv'], medio: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo6/Flip_Card_Medio_Modulo_6.csv'] },
+  'sicurezza-online-social-network': { facile: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo7/Flip_Card_Facile_Modulo_7.csv'], medio: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo7/Flip_Card_Medio_Modulo_7.csv'] },
+  'nuove-minacce-digitali': { facile: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo8/Flip_Card_Facile_Modulo_8.csv'], medio: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo8/Flip_Card_Medio_Modulo_8.csv'] },
+  'fondamenta-reti': { facile: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo1/Flip_Card_Facile_Modulo_1.csv'], medio: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo1/Flip_Card_Medio_Modulo_1.csv'] },
+  'tcp-ip': { facile: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo2/Flip_Card_Facile_Modulo_2.csv'], medio: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo2/Flip_Card_Medio_Modulo_2.csv'] },
+  'dns': { facile: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo3/Flip_Card_Facile_Modulo_3.csv'], medio: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo3/Flip_Card_Medio_Modulo_3.csv'] },
+  'router-switch-dispositivi': { facile: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo4/Flip_Card_Facile_Modulo_4.csv'], medio: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo4/Flip_Card_Medio_Modulo_4.csv'] },
+  'wifi-reti-wireless': { facile: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo5/Flip_Card_Facile_Modulo_5.csv'], medio: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo5/Flip_Card_Medio_Modulo_5.csv'] },
+  'cloud-networking': { facile: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo6/Flip_Card_Facile_Modulo_6.csv'], medio: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo6/Flip_Card_Medio_Modulo_6.csv'] },
+  'vpn': { facile: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo7/Flip_Card_Facile_Modulo_7.csv'], medio: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo7/Flip_Card_Medio_Modulo_7.csv'] },
+  'troubleshooting-reti': { facile: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo8/Flip_Card_Facile_Modulo_8.csv'], medio: ['data/Didattica/Flip_Card/Reti_e_Internet/Modulo8/Flip_Card_Medio_Modulo_8.csv'] },
+  'malware-e-minacce-informatiche': { facile: ['data/Didattica/Flip_Card/Malware_e_Minacce_Informatiche/Modulo1/Flip_Card_Facile_Modulo_1.csv'], medio: ['data/Didattica/Flip_Card/Malware_e_Minacce_Informatiche/Modulo1/Flip_Card_Medio_Modulo_1.csv'] },
+  'identita-reputazione-digitale': { facile: ['data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo1/Flip_Card_Facile_Modulo_1.csv'], medio: ['data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo1/Flip_Card_Medio_Modulo_1.csv'] },
+  'cyberbullismo': { facile: ['data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo2/Flip_Card_Facile_Modulo_2.csv'], medio: ['data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo2/Flip_Card_Medio_Modulo_2.csv'] },
+  'hate-speech': { facile: ['data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo3/Flip_Card_Facile_Modulo_3.csv'], medio: ['data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo3/Flip_Card_Medio_Modulo_3.csv'] },
+  'sexting-revenge-porn': { facile: ['data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo4/Flip_Card_Facile_Modulo_4.csv'], medio: ['data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo4/Flip_Card_Medio_Modulo_4.csv'] },
+  'grooming': { facile: ['data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo5/Flip_Card_Facile_Modulo_5.csv'], medio: ['data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo5/Flip_Card_Medio_Modulo_5.csv'] },
+  'difendersi-online': { facile: ['data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo6/Flip_Card_Facile_Modulo_6.csv'], medio: ['data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo6/Flip_Card_Medio_Modulo_6.csv'] },
+  'cos-e-ai': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo1/Flip_Card_Facile_Modulo_1.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo1/Flip_Card_Medio_Modulo_1.csv'] },
+  'come-funziona-ai': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo2/Flip_Card_Facile_Modulo_2.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo2/Flip_Card_Medio_Modulo_2.csv'] },
+  'llm-fondamenti': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo3/Flip_Card_Facile_Modulo_3.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo3/Flip_Card_Medio_Modulo_3.csv'] },
+  'ai-generativa': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo4/Flip_Card_Facile_Modulo_4.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo4/Flip_Card_Medio_Modulo_4.csv'] },
+  'prompt-engineering': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo5/Flip_Card_Facile_Modulo_5.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo5/Flip_Card_Medio_Modulo_5.csv'] },
+  'agenti-automazione': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo6/Flip_Card_Facile_Modulo_6.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo6/Flip_Card_Medio_Modulo_6.csv'] },
+  'deepfake-contenuti-sintetici': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo7/Flip_Card_Facile_Modulo_7.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo7/Flip_Card_Medio_Modulo_7.csv'] },
+  'provenienza-contenuti': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo8/Flip_Card_Facile_Modulo_8.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo8/Flip_Card_Medio_Modulo_8.csv'] },
+  'verificare-ai': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo9/Flip_Card_Facile_Modulo_9.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo9/Flip_Card_Medio_Modulo_9.csv'] },
+  'etica-ai': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo10/Flip_Card_Facile_Modulo_10.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo10/Flip_Card_Medio_Modulo_10.csv'] },
+  'bias-algoritmici': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo11/Flip_Card_Facile_Modulo_11.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo11/Flip_Card_Medio_Modulo_11.csv'] },
+  'ai-act': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo12/Flip_Card_Facile_Modulo_12.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo12/Flip_Card_Medio_Modulo_12.csv'] },
+  'futuro-ai': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo13/Flip_Card_Facile_Modulo_13.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo13/Flip_Card_Medio_Modulo_13.csv'] },
 };
 
 /* -- Parser CSV robusto (RFC4180-ish) --------------------

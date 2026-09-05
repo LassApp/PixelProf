@@ -1,0 +1,131 @@
+{
+  "module": "strutturare-il-documento",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Interruzione di pagina",
+        "definition": "Comando che forza l'inizio di una nuova pagina in un punto preciso del documento, indipendentemente da quanto testo la preceda o la segua"
+      },
+      {
+        "term": "CTRL+INVIO",
+        "definition": "Scorciatoia da tastiera per inserire un'interruzione di pagina"
+      },
+      {
+        "term": "Interruzione di colonna",
+        "definition": "Forza il passaggio da una colonna alla successiva, in un documento impaginato su più colonne, senza doverla riempire per intero"
+      },
+      {
+        "term": "Simbolo dell'interruzione di pagina (pilcrow)",
+        "definition": "Con il pilcrow attivato, appare come una linea tratteggiata etichettata, distinta da una sequenza di paragrafi vuoti"
+      }
+    ],
+    [
+      {
+        "term": "Donald Knuth",
+        "definition": "Informatico statunitense che nel 1977, sconvolto dalla scarsa qualità tipografica del proprio libro, cominciò a lavorare al sistema di composizione TeX"
+      },
+      {
+        "term": "TeX",
+        "definition": "Sistema di composizione tipografica in cui l'autore dichiara istruzioni esplicite sulla struttura, lasciando al programma il compito di tradurle in impaginazione"
+      },
+      {
+        "term": "The Art of Computer Programming",
+        "definition": "Libro di Donald Knuth le cui bozze, di scarsa qualità tipografica, lo spinsero a creare TeX"
+      }
+    ],
+    [
+      {
+        "term": "Muoversi in un documento",
+        "definition": "Spostarsi rapidamente da un punto all'altro del testo, senza doverlo necessariamente leggere o scorrere per intero"
+      },
+      {
+        "term": "Trova (CTRL+F)",
+        "definition": "Cerca una parola o una frase specifica in tutto il documento, evidenziando ogni occorrenza trovata"
+      },
+      {
+        "term": "Trova e sostituisci (CTRL+H)",
+        "definition": "Sostituisce un testo ovunque compaia nel documento con un altro testo scelto, in un solo comando"
+      },
+      {
+        "term": "CTRL+Home / CTRL+Fine",
+        "definition": "Spostano rispettivamente all'inizio o alla fine dell'intero documento"
+      }
+    ],
+    [
+      {
+        "term": "Ken Thompson",
+        "definition": "Informatico statunitense, ideatore del sistema operativo Unix, che nel 1973 trasformò una funzione di ricerca dell'editor ed in un programma indipendente"
+      },
+      {
+        "term": "Grep",
+        "definition": "Programma nato dal comando g/re/p (global regular expression print), presentato da Thompson il mattino dopo la richiesta del collega Doug McIlroy"
+      },
+      {
+        "term": "Doug McIlroy",
+        "definition": "Collega che chiese a Thompson se fosse possibile avere la ricerca per espressioni regolari come strumento a sé stante"
+      }
+    ],
+    [
+      {
+        "term": "Intestazione (header)",
+        "definition": "Area della pagina che occupa la parte alta, esterna al testo principale, che può contenere titolo, nome, data o logo"
+      },
+      {
+        "term": "Piè di pagina (footer)",
+        "definition": "Area della pagina che occupa la parte bassa, esterna al testo principale, che ospita più spesso numeri di pagina, note o riferimenti"
+      },
+      {
+        "term": "Elementi globali (intestazione/piè di pagina)",
+        "definition": "Una modifica fatta all'intestazione o al piè di pagina si applica automaticamente a tutte le pagine del documento"
+      },
+      {
+        "term": "Numerazione di pagina",
+        "definition": "Campo dinamico che Word calcola e aggiorna automaticamente ogni volta che il documento si allunga o si accorcia"
+      },
+      {
+        "term": "Inserisci → Numero di pagina",
+        "definition": "Percorso alternativo al doppio clic per attivare la numerazione di pagina nel piè di pagina"
+      }
+    ],
+    [
+      {
+        "term": "Foliazione",
+        "definition": "Pratica dei manoscritti medievali più antichi in cui veniva numerata solo la facciata anteriore di ciascun foglio (il recto)"
+      },
+      {
+        "term": "Recto",
+        "definition": "La facciata anteriore di un foglio manoscritto, l'unica numerata nella pratica della foliazione"
+      },
+      {
+        "term": "Numerazione continua",
+        "definition": "Sistema diffuso a partire dal XII secolo in cui ogni singola facciata, recto e verso, riceveva un proprio numero progressivo"
+      }
+    ],
+    [
+      {
+        "term": "Anteprima di stampa",
+        "definition": "Visualizzazione, prima della stampa effettiva, di come il documento apparirà fisicamente su carta"
+      },
+      {
+        "term": "File → Stampa",
+        "definition": "Percorso da cui si raggiunge l'anteprima di stampa in Word"
+      }
+    ],
+    [
+      {
+        "term": "Bozze di stampa (galley proofs)",
+        "definition": "Stampe preliminari, prodotte dal Seicento in poi, tirate dal galley, il vassoio metallico allungato in cui veniva composto il testo con caratteri mobili"
+      },
+      {
+        "term": "Galley",
+        "definition": "Il vassoio metallico allungato in cui i tipografi componevano il testo con i caratteri mobili prima dell'impaginazione definitiva"
+      },
+      {
+        "term": "Correttore di tipografia",
+        "definition": "Specialista che usava le bozze di stampa per individuare errori di composizione prima della stampa su larga scala"
+      }
+    ]
+  ]
+}

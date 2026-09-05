@@ -1,0 +1,326 @@
+[
+  {
+    "id": 1,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un'interruzione di pagina forza l'inizio di una nuova pagina in un punto preciso, indipendentemente da quanto testo la preceda.",
+    "answer": true,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 2,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Premere INVIO più volte per spingere il testo a una nuova pagina è il metodo consigliato dal modulo.",
+    "answer": false,
+    "explanation": "Il modulo indica questo metodo come inaffidabile, non come consigliato."
+  },
+  {
+    "id": 3,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ogni INVIO in più crea un paragrafo vuoto, non uno spazio stabile.",
+    "answer": true,
+    "explanation": "È quanto indicato nel modulo."
+  },
+  {
+    "id": 4,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'interruzione di pagina si inserisce con la scorciatoia CTRL+INVIO.",
+    "answer": true,
+    "explanation": "È la scorciatoia indicata nel modulo."
+  },
+  {
+    "id": 5,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "A differenza dell'INVIO ripetuto, l'interruzione di pagina aggiunge sempre uno spazio visibile.",
+    "answer": false,
+    "explanation": "L'interruzione di pagina non aggiunge spazio: crea un confine strutturale."
+  },
+  {
+    "id": 6,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con il pilcrow attivato, un'interruzione di pagina appare come una linea tratteggiata etichettata.",
+    "answer": true,
+    "explanation": "È quanto indicato nel modulo."
+  },
+  {
+    "id": 7,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'interruzione di colonna è utile solo nei documenti impaginati su un'unica colonna.",
+    "answer": false,
+    "explanation": "È utile nei documenti impaginati su più colonne affiancate."
+  },
+  {
+    "id": 8,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Donald Knuth cominciò a lavorare al sistema TeX nel 1977.",
+    "answer": true,
+    "explanation": "È l'anno indicato nel modulo."
+  },
+  {
+    "id": 9,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Knuth completò il progetto TeX esattamente nei sei mesi previsti.",
+    "answer": false,
+    "explanation": "Il progetto ne richiese quasi dieci, non sei."
+  },
+  {
+    "id": 10,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Muoversi in un documento significa spostarsi rapidamente da un punto all'altro del testo.",
+    "answer": true,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 11,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con lo scroll, è il documento a muoversi realmente, non la finestra.",
+    "answer": false,
+    "explanation": "È la finestra a muoversi sopra il documento, che resta fermo."
+  },
+  {
+    "id": 12,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il comando Trova si attiva con CTRL+F.",
+    "answer": true,
+    "explanation": "È la scorciatoia indicata nel modulo."
+  },
+  {
+    "id": 13,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il comando Trova e sostituisci si attiva con CTRL+H.",
+    "answer": true,
+    "explanation": "È la scorciatoia indicata nel modulo."
+  },
+  {
+    "id": 14,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Trova e sostituisci si limita a evidenziare il testo, senza poterlo sostituire.",
+    "answer": false,
+    "explanation": "Trova e sostituisci sostituisce il testo ovunque compaia nel documento."
+  },
+  {
+    "id": 15,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "CTRL+Home sposta all'inizio dell'intero documento.",
+    "answer": true,
+    "explanation": "È quanto indicato nel modulo."
+  },
+  {
+    "id": 16,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ken Thompson è il creatore del sistema operativo Unix, secondo il modulo.",
+    "answer": true,
+    "explanation": "È quanto indicato nel modulo."
+  },
+  {
+    "id": 17,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il programma grep fu sviluppato da Ken Thompson nel giro di una notte.",
+    "answer": true,
+    "explanation": "È quanto riportato nel modulo."
+  },
+  {
+    "id": 18,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il nome grep non ha alcun legame con un comando dell'editor ed.",
+    "answer": false,
+    "explanation": "Il nome deriva dal comando g/re/p usato nell'editor ed."
+  },
+  {
+    "id": 19,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'intestazione occupa la parte alta della pagina, esterna al testo principale.",
+    "answer": true,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 20,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il piè di pagina ospita più spesso numeri di pagina, note o riferimenti.",
+    "answer": true,
+    "explanation": "È quanto indicato nel modulo."
+  },
+  {
+    "id": 21,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una modifica all'intestazione riguarda solo la pagina in cui viene fatta.",
+    "answer": false,
+    "explanation": "Si applica automaticamente a tutte le pagine del documento."
+  },
+  {
+    "id": 22,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La numerazione di pagina in Word è un campo dinamico calcolato automaticamente.",
+    "answer": true,
+    "explanation": "È quanto indicato nel modulo."
+  },
+  {
+    "id": 23,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Scrivere i numeri di pagina a mano funziona sempre, anche aggiungendo pagine nel mezzo del documento.",
+    "answer": false,
+    "explanation": "La numerazione scritta a mano si sfasa se si aggiungono o tolgono pagine."
+  },
+  {
+    "id": 24,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nei manoscritti medievali più antichi venivano numerate entrambe le facciate di ogni foglio.",
+    "answer": false,
+    "explanation": "Veniva numerata solo la facciata anteriore, il recto."
+  },
+  {
+    "id": 25,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La pratica di numerare solo il recto si chiamava foliazione.",
+    "answer": true,
+    "explanation": "È il termine indicato nel modulo."
+  },
+  {
+    "id": 26,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una vera numerazione continua di ogni facciata si diffuse a partire dal XII secolo.",
+    "answer": true,
+    "explanation": "È il secolo indicato nel modulo."
+  },
+  {
+    "id": 27,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nei manoscritti medievali, la numerazione era compito di chi copiava il testo.",
+    "answer": false,
+    "explanation": "Era affidata a uno specialista dedicato, non a chi copiava il testo."
+  },
+  {
+    "id": 28,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'anteprima di stampa mostra come il documento apparirà fisicamente su carta, prima della stampa effettiva.",
+    "answer": true,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 29,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'anteprima di stampa è raggiungibile da File → Stampa.",
+    "answer": true,
+    "explanation": "È quanto indicato nel modulo."
+  },
+  {
+    "id": 30,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, quello che si vede sullo schermo durante la scrittura è già, in senso stretto, la realtà fisica della pagina stampata.",
+    "answer": false,
+    "explanation": "È una rappresentazione fedele ma pur sempre digitale, non la realtà fisica."
+  },
+  {
+    "id": 31,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'anteprima di stampa è descritta come un passaggio del tutto reversibile e privo di conseguenze.",
+    "answer": false,
+    "explanation": "È descritta come un passaggio fisico spesso poco reversibile."
+  },
+  {
+    "id": 32,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le bozze di stampa (galley proofs) esistono fin dal Seicento.",
+    "answer": true,
+    "explanation": "È il secolo indicato nel modulo."
+  },
+  {
+    "id": 33,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le bozze di stampa erano tirate dal galley, il vassoio metallico dei caratteri mobili.",
+    "answer": true,
+    "explanation": "È quanto indicato nel modulo."
+  },
+  {
+    "id": 34,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le bozze di stampa contenevano sempre titoli, immagini e numerazione complete.",
+    "answer": false,
+    "explanation": "Erano prive di questi elementi, stampate su carta economica."
+  },
+  {
+    "id": 35,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le bozze di stampa servivano a un correttore di tipografia per individuare errori di composizione.",
+    "answer": true,
+    "explanation": "È quanto indicato nel modulo."
+  },
+  {
+    "id": 36,
+    "module": "strutturare-il-documento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'anteprima di stampa di Word svolge, secondo il modulo, la stessa funzione di controllo delle bozze di stampa storiche.",
+    "answer": true,
+    "explanation": "È quanto affermato nella chiusura del capitolo."
+  }
+]

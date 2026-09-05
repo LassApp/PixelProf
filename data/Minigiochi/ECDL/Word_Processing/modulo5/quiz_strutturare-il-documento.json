@@ -1,0 +1,632 @@
+[
+  {
+    "id": 1,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un'interruzione di pagina, secondo il modulo?",
+    "options": [
+      "Un comando che forza l'inizio di una nuova pagina in un punto preciso del documento",
+      "Uno strumento per allineare il testo su più colonne",
+      "Un tipo di immagine mobile",
+      "Un campo dinamico che conta le parole del documento"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 2,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il metodo di premere INVIO più volte per iniziare una nuova pagina non è affidabile?",
+    "options": [
+      "Perché Word lo blocca dopo dieci pressioni",
+      "Perché ogni INVIO crea un paragrafo vuoto che si sfasa se cambia il testo prima di quel punto",
+      "Perché richiede una connessione internet",
+      "Perché cancella automaticamente il testo precedente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ogni INVIO in più crea un paragrafo vuoto che si sfasa se si aggiunge testo più in alto nel documento."
+  },
+  {
+    "id": 3,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale scheda si inserisce un'interruzione di pagina, secondo il modulo?",
+    "options": [
+      "Inserisci (o Layout) → Interruzione di pagina",
+      "Home → Paragrafo",
+      "Visualizza → Zoom",
+      "Revisione → Commenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si inserisce da Inserisci (o Layout) → Interruzione di pagina."
+  },
+  {
+    "id": 4,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale scorciatoia da tastiera inserisce un'interruzione di pagina?",
+    "options": [
+      "CTRL+INVIO",
+      "SHIFT+INVIO",
+      "ALT+INVIO",
+      "CTRL+TAB"
+    ],
+    "correctIndex": 0,
+    "explanation": "CTRL+INVIO inserisce un'interruzione di pagina."
+  },
+  {
+    "id": 5,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa un'interruzione di pagina, a differenza dell'INVIO ripetuto?",
+    "options": [
+      "Aggiunge molteplici righe vuote",
+      "Non aggiunge spazio, ma crea un confine strutturale nel documento",
+      "Cancella tutto il testo successivo",
+      "Cambia automaticamente il font"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'interruzione di pagina crea un confine strutturale, senza aggiungere spazio come fa l'INVIO ripetuto."
+  },
+  {
+    "id": 6,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come appare un'interruzione di pagina con il pilcrow attivato?",
+    "options": [
+      "Come una linea tratteggiata etichettata",
+      "Come il simbolo ¶ ripetuto più volte",
+      "Come uno spazio bianco invisibile",
+      "Come una piccola freccia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Appare come una linea tratteggiata etichettata, distinta dai paragrafi vuoti."
+  },
+  {
+    "id": 7,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un'interruzione di colonna, secondo il modulo?",
+    "options": [
+      "Uno strumento che forza il passaggio da una colonna alla successiva senza doverla riempire per intero",
+      "Un tipo di tabulazione decimale",
+      "Un modo per unire due colonne in una",
+      "Un errore comune di formattazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Forza il passaggio da una colonna alla successiva in documenti impaginati su più colonne."
+  },
+  {
+    "id": 8,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno Donald Knuth cominciò a lavorare al sistema TeX?",
+    "options": [
+      "1970",
+      "1973",
+      "1977",
+      "1986"
+    ],
+    "correctIndex": 2,
+    "explanation": "Knuth iniziò a lavorare a TeX nel 1977."
+  },
+  {
+    "id": 9,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa spinse Donald Knuth a creare TeX, secondo il modulo?",
+    "options": [
+      "La scarsa qualità tipografica delle bozze del proprio libro",
+      "Una richiesta del suo editore di velocizzare la stampa",
+      "Un concorso universitario di informatica",
+      "La necessità di comprimere le immagini"
+    ],
+    "correctIndex": 0,
+    "explanation": "Knuth rimase sconvolto dalla scarsa qualità tipografica delle bozze del proprio libro."
+  },
+  {
+    "id": 10,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permetteva di fare TeX, a differenza degli aggiustamenti manuali e approssimativi?",
+    "options": [
+      "Dichiarare istruzioni esplicite sulla struttura, lasciando al programma il compito di tradurle in impaginazione",
+      "Comprimere automaticamente le immagini",
+      "Tradurre il testo in altre lingue",
+      "Correggere automaticamente gli errori grammaticali"
+    ],
+    "correctIndex": 0,
+    "explanation": "TeX permetteva di dichiarare la struttura invece di simularla a occhio."
+  },
+  {
+    "id": 11,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanto tempo impiegò Knuth a completare il progetto TeX, rispetto ai sei mesi previsti?",
+    "options": [
+      "Esattamente sei mesi",
+      "Circa un anno",
+      "Quasi dieci mesi",
+      "Più di cinque anni"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il progetto, previsto in sei mesi, ne richiese quasi dieci."
+  },
+  {
+    "id": 12,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa muoversi in un documento, secondo il modulo?",
+    "options": [
+      "Spostarsi rapidamente da un punto all'altro del testo, senza doverlo leggere per intero",
+      "Cambiare il formato del file",
+      "Copiare il documento in un'altra cartella",
+      "Stampare solo alcune pagine"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 13,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come funziona lo scroll, secondo quanto ricordato nel modulo?",
+    "options": [
+      "È il documento a muoversi, non la finestra",
+      "È la finestra a muoversi sopra il documento fermo",
+      "Sposta fisicamente il testo sul foglio",
+      "Funziona solo con la tastiera"
+    ],
+    "correctIndex": 1,
+    "explanation": "Con lo scroll è la finestra a muoversi sopra il documento, che resta fermo."
+  },
+  {
+    "id": 14,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il comando Trova (CTRL+F)?",
+    "options": [
+      "Sostituisce automaticamente un testo con un altro",
+      "Cerca una parola o una frase specifica, evidenziando ogni occorrenza",
+      "Crea un'interruzione di pagina",
+      "Inserisce un numero di pagina"
+    ],
+    "correctIndex": 1,
+    "explanation": "Trova cerca una parola o frase, evidenziando ogni occorrenza trovata."
+  },
+  {
+    "id": 15,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il comando Trova e sostituisci (CTRL+H), in più rispetto a Trova?",
+    "options": [
+      "Sostituisce un testo ovunque compaia nel documento con un altro testo scelto",
+      "Cerca solo nella prima pagina del documento",
+      "Cancella tutte le occorrenze trovate senza sostituirle",
+      "Funziona solo con i numeri"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trova e sostituisci sostituisce il testo trovato con un altro, in un solo comando."
+  },
+  {
+    "id": 16,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la scorciatoia CTRL+frecce?",
+    "options": [
+      "Sposta il cursore di una parola (o di un paragrafo) alla volta",
+      "Cancella l'intero documento",
+      "Attiva il pilcrow",
+      "Apre l'anteprima di stampa"
+    ],
+    "correctIndex": 0,
+    "explanation": "CTRL+frecce sposta il cursore di una parola o paragrafo alla volta."
+  },
+  {
+    "id": 17,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fanno Home e Fine?",
+    "options": [
+      "Spostano all'inizio o alla fine della riga corrente",
+      "Spostano all'inizio o alla fine dell'intero documento",
+      "Aprono e chiudono il documento",
+      "Attivano e disattivano il pilcrow"
+    ],
+    "correctIndex": 0,
+    "explanation": "Home e Fine spostano all'inizio o alla fine della riga corrente."
+  },
+  {
+    "id": 18,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fanno CTRL+Home e CTRL+Fine?",
+    "options": [
+      "Spostano all'inizio o alla fine della riga corrente",
+      "Spostano rispettivamente all'inizio o alla fine dell'intero documento",
+      "Salvano il documento",
+      "Aprono la finestra Trova e sostituisci"
+    ],
+    "correctIndex": 1,
+    "explanation": "CTRL+Home e CTRL+Fine spostano all'inizio o alla fine dell'intero documento."
+  },
+  {
+    "id": 19,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi ideò il sistema operativo Unix, citato nel modulo a proposito della ricerca del testo?",
+    "options": [
+      "Doug McIlroy",
+      "Ken Thompson",
+      "Donald Knuth",
+      "Edgar F. Codd"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ken Thompson è l'ideatore del sistema operativo Unix."
+  },
+  {
+    "id": 20,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno Ken Thompson trasformò la funzione di ricerca dell'editor ed in un programma indipendente?",
+    "options": [
+      "1969",
+      "1973",
+      "1977",
+      "1986"
+    ],
+    "correctIndex": 1,
+    "explanation": "Thompson trasformò quella funzione in un programma indipendente nel 1973."
+  },
+  {
+    "id": 21,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa deriva il nome del programma grep?",
+    "options": [
+      "Dal comando g/re/p (global regular expression print)",
+      "Dal cognome del suo inventore",
+      "Da un acronimo casuale scelto da Thompson",
+      "Dal nome dell'editor ed"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il nome grep deriva dal comando g/re/p."
+  },
+  {
+    "id": 22,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi chiese a Thompson di avere la ricerca per espressioni regolari come strumento a sé stante?",
+    "options": [
+      "Donald Knuth",
+      "Doug McIlroy",
+      "Edgar F. Codd",
+      "Charles Goldfarb"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fu il collega Doug McIlroy a fare questa richiesta."
+  },
+  {
+    "id": 23,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono intestazione e piè di pagina, secondo il modulo?",
+    "options": [
+      "Aree della pagina esterne al testo principale, che compaiono automaticamente in cima o in fondo a ogni pagina",
+      "Comandi per cercare parole nel documento",
+      "Tipi di interruzione di pagina",
+      "Strumenti per ridimensionare le immagini"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 24,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può contenere l'intestazione di un documento, secondo il modulo?",
+    "options": [
+      "Solo numeri di pagina",
+      "Un titolo, un nome, una data o un logo",
+      "Solo immagini",
+      "Solo tabelle"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'intestazione può contenere titolo, nome, data o logo."
+  },
+  {
+    "id": 25,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa ospita più spesso il piè di pagina, secondo il modulo?",
+    "options": [
+      "Titoli di capitolo",
+      "Numeri di pagina, note o riferimenti",
+      "Immagini decorative",
+      "Tabelle di dati"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il piè di pagina ospita più spesso numeri di pagina, note o riferimenti."
+  },
+  {
+    "id": 26,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si attiva l'intestazione di un documento, secondo il modulo?",
+    "options": [
+      "Con un doppio clic nella zona superiore del foglio",
+      "Solo tramite un comando da tastiera",
+      "Automaticamente all'apertura di ogni documento",
+      "Solo dalla scheda Inserisci → Tabella"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si attiva con un doppio clic nella zona superiore del foglio."
+  },
+  {
+    "id": 27,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il concetto fondamentale comune a intestazione e piè di pagina, secondo il modulo?",
+    "options": [
+      "Sono elementi globali: una modifica si applica automaticamente a tutte le pagine",
+      "Possono essere modificati solo una volta per documento",
+      "Non possono contenere numeri di pagina",
+      "Scompaiono automaticamente in fase di stampa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono elementi globali: una modifica si applica a tutte le pagine del documento."
+  },
+  {
+    "id": 28,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la numerazione di pagina, secondo il modulo?",
+    "options": [
+      "Un numero scritto a mano da chi scrive il documento",
+      "Un campo dinamico che Word calcola e aggiorna automaticamente",
+      "Un tipo di interruzione di pagina",
+      "Un elemento visibile solo in anteprima di stampa"
+    ],
+    "correctIndex": 1,
+    "explanation": "È un campo dinamico calcolato e aggiornato automaticamente da Word."
+  },
+  {
+    "id": 29,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se si scrivono i numeri di pagina a mano e poi si aggiunge o toglie una pagina?",
+    "options": [
+      "Nulla, la numerazione resta sempre corretta",
+      "Tutta la numerazione successiva si sfasa",
+      "Il documento si blocca",
+      "Word corregge automaticamente l'errore"
+    ],
+    "correctIndex": 1,
+    "explanation": "La numerazione scritta a mano si sfasa se si aggiunge o toglie una pagina."
+  },
+  {
+    "id": 30,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nei manoscritti medievali più antichi, quale facciata di ciascun foglio veniva numerata?",
+    "options": [
+      "Entrambe le facciate",
+      "Solo la facciata anteriore (recto)",
+      "Solo la facciata posteriore (verso)",
+      "Nessuna facciata"
+    ],
+    "correctIndex": 1,
+    "explanation": "Veniva numerata solo la facciata anteriore, il recto."
+  },
+  {
+    "id": 31,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiamava la pratica di numerare solo la facciata anteriore di un foglio?",
+    "options": [
+      "Rubricazione",
+      "Foliazione",
+      "Capitolazione",
+      "Paginazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Questa pratica si chiamava foliazione."
+  },
+  {
+    "id": 32,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A partire da quale secolo si diffuse una vera numerazione continua di ogni facciata, recto e verso?",
+    "options": [
+      "VIII secolo",
+      "XII secolo",
+      "XV secolo",
+      "XVIII secolo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una vera numerazione continua si diffuse a partire dal XII secolo."
+  },
+  {
+    "id": 33,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'anteprima di stampa, secondo il modulo?",
+    "options": [
+      "La visualizzazione, prima della stampa effettiva, di come il documento apparirà fisicamente su carta",
+      "Un comando per correggere automaticamente gli errori",
+      "Uno strumento per comprimere le immagini",
+      "Un tipo di interruzione di pagina"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 34,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove è raggiungibile l'anteprima di stampa in Word, secondo il modulo?",
+    "options": [
+      "Da File → Stampa",
+      "Da Home → Paragrafo",
+      "Da Inserisci → Tabella",
+      "Da Layout → Margini"
+    ],
+    "correctIndex": 0,
+    "explanation": "È raggiungibile da File → Stampa."
+  },
+  {
+    "id": 35,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra l'anteprima di stampa, a differenza della semplice visualizzazione WYSIWYG durante la scrittura?",
+    "options": [
+      "Esattamente come il documento si disporrà sul foglio reale, inclusi margini e interruzioni",
+      "Solo il numero totale di pagine",
+      "Solo il conteggio delle parole",
+      "Solo la lingua del documento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Mostra esattamente come il documento si disporrà sul foglio reale."
+  },
+  {
+    "id": 36,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché l'anteprima di stampa è descritta come un'ultima verifica importante, secondo il modulo?",
+    "options": [
+      "Perché la stampa è un passaggio fisico e spesso poco reversibile",
+      "Perché altrimenti Word non permette di stampare",
+      "Perché cambia automaticamente la formattazione",
+      "Perché riduce il numero di pagine del documento"
+    ],
+    "correctIndex": 0,
+    "explanation": "È un'ultima verifica logica prima di un passaggio fisico e spesso poco reversibile."
+  },
+  {
+    "id": 37,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Fin da quale secolo, secondo il modulo, i tipografi producevano le bozze di stampa?",
+    "options": [
+      "Dal Cinquecento",
+      "Dal Seicento",
+      "Dall'Ottocento",
+      "Dal Novecento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le bozze di stampa esistono fin dal Seicento."
+  },
+  {
+    "id": 38,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa venivano tirate le bozze di stampa (galley proofs)?",
+    "options": [
+      "Dal galley, il vassoio metallico allungato dei caratteri mobili",
+      "Da una stampante digitale",
+      "Da un torchio di legno senza caratteri mobili",
+      "Da una lastra fotografica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Erano tirate dal galley, il vassoio metallico dei caratteri mobili."
+  },
+  {
+    "id": 39,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa servivano le bozze di stampa a un correttore di tipografia?",
+    "options": [
+      "A decorare il testo con immagini",
+      "A individuare errori di composizione prima della stampa su larga scala",
+      "A calcolare il prezzo della stampa",
+      "A scegliere il font definitivo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Servivano a individuare errori di composizione prima della stampa su larga scala."
+  },
+  {
+    "id": 40,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come erano le bozze di stampa, in termini di carta e contenuto, secondo il modulo?",
+    "options": [
+      "Su carta pregiata, con titoli e immagini complete",
+      "Su carta economica, prive di titoli, immagini o numerazione",
+      "Identiche in tutto e per tutto all'edizione finale",
+      "Stampate solo a colori"
+    ],
+    "correctIndex": 1,
+    "explanation": "Erano stampate su carta economica e prive di titoli, immagini o numerazione."
+  },
+  {
+    "id": 41,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa avveniva solo dopo la verifica delle bozze di stampa, secondo il modulo?",
+    "options": [
+      "Si procedeva con l'impaginazione vera e propria",
+      "Il testo veniva riscritto da capo",
+      "Il libro veniva tradotto in altre lingue",
+      "Si sceglieva il titolo dell'opera"
+    ],
+    "correctIndex": 0,
+    "explanation": "Solo dopo la verifica si procedeva con l'impaginazione definitiva."
+  },
+  {
+    "id": 42,
+    "module": "strutturare-il-documento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che funzione svolge oggi l'anteprima di stampa di Word, rispetto alle bozze di stampa storiche, secondo il modulo?",
+    "options": [
+      "Una funzione completamente diversa e non paragonabile",
+      "La stessa funzione di controllo, ma gratuita e istantanea",
+      "Nessuna funzione di controllo",
+      "Solo una funzione decorativa"
+    ],
+    "correctIndex": 1,
+    "explanation": "Svolge la stessa funzione di controllo, ma gratuita e istantanea."
+  }
+]

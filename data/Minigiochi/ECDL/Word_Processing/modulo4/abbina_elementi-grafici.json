@@ -1,0 +1,155 @@
+{
+  "module": "elementi-grafici",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Inserire un'immagine",
+        "definition": "Aggiungere un contenuto grafico — una fotografia, un disegno, uno screenshot — all'interno di un documento di testo, in un punto preciso scelto dall'utente"
+      },
+      {
+        "term": "Trascinamento (drag & drop)",
+        "definition": "Si trascina il file immagine direttamente dalla cartella del computer al punto desiderato nel documento"
+      },
+      {
+        "term": "Immagini online",
+        "definition": "Si cerca un'immagine direttamente sul web senza uscire da Word, con l'attenzione dovuta al diritto d'autore"
+      },
+      {
+        "term": "Screenshot (cattura schermata)",
+        "definition": "Si acquisisce direttamente ciò che è visibile sullo schermo in quel momento, utile per guide, tutorial o documentazione tecnica"
+      },
+      {
+        "term": "Copia e incolla (immagini)",
+        "definition": "Si copia un'immagine da un'altra fonte con CTRL+C e la si incolla nel documento con CTRL+V"
+      }
+    ],
+    [
+      {
+        "term": "Ridimensionare dagli angoli",
+        "definition": "Mantiene invariate le proporzioni originali (l'aspect ratio) mentre l'immagine si ingrandisce o rimpicciolisce"
+      },
+      {
+        "term": "Ridimensionare dai lati",
+        "definition": "Cambia solo la larghezza o solo l'altezza, deformando l'immagine rispetto all'originale"
+      },
+      {
+        "term": "Aspect ratio",
+        "definition": "Il rapporto tra larghezza e altezza di un'immagine"
+      }
+    ],
+    [
+      {
+        "term": "Joint Photographic Experts Group",
+        "definition": "Comitato internazionale nato nel 1986 con il compito di sviluppare un metodo efficiente per comprimere le fotografie digitali"
+      },
+      {
+        "term": "JPEG",
+        "definition": "Standard di compressione pubblicato nel 1992 dal comitato omonimo"
+      },
+      {
+        "term": "Compressione lossy",
+        "definition": "Compressione con perdita di alcune informazioni, che elimina selettivamente le sfumature di colore poco percepibili dall'occhio umano"
+      }
+    ],
+    [
+      {
+        "term": "Immagine in linea",
+        "definition": "Si comporta come una lettera gigante: occupa spazio dentro la riga e si sposta insieme al testo quando questo viene modificato"
+      },
+      {
+        "term": "Immagine mobile",
+        "definition": "Può essere spostata liberamente in qualsiasi punto della pagina, indipendentemente dal flusso del testo"
+      },
+      {
+        "term": "Ancoraggio",
+        "definition": "Il collegamento di un'immagine mobile a un paragrafo specifico del documento, che ne determina lo spostamento se il paragrafo si sposta"
+      }
+    ],
+    [
+      {
+        "term": "Quadrato (testo a capo)",
+        "definition": "Il testo circonda l'immagine seguendo un riquadro"
+      },
+      {
+        "term": "Ravvicinato (testo a capo)",
+        "definition": "Il testo segue il profilo reale dell'immagine, non solo il suo riquadro"
+      },
+      {
+        "term": "Dietro al testo / Davanti al testo",
+        "definition": "L'immagine si sovrappone al testo, in un senso o nell'altro"
+      }
+    ],
+    [
+      {
+        "term": "Ventura Publisher",
+        "definition": "Programma di desktop publishing lanciato nel 1986 dalla Ventura Software, capace di automatizzare l'impaginazione attraverso fogli di stile"
+      },
+      {
+        "term": "PageMaker",
+        "definition": "Programma della Aldus, rivale di Ventura Publisher, uscito l'anno prima"
+      },
+      {
+        "term": "Wraparound (o runaround)",
+        "definition": "Termine tecnico che indica la capacità del testo di scorrere intorno a un oggetto grafico, seguendone il contorno"
+      }
+    ],
+    [
+      {
+        "term": "Tabella",
+        "definition": "Struttura ordinata di righe e colonne, la cui intersezione forma delle celle"
+      },
+      {
+        "term": "Riga (tabella)",
+        "definition": "Elemento orizzontale di una tabella"
+      },
+      {
+        "term": "Colonna (tabella)",
+        "definition": "Elemento verticale di una tabella"
+      },
+      {
+        "term": "Cella",
+        "definition": "Intersezione tra una riga e una colonna, capace di contenere testo, numeri o altri elementi in modo indipendente dalle celle vicine"
+      }
+    ],
+    [
+      {
+        "term": "Edgar F. Codd",
+        "definition": "Ricercatore britannico che nel 1970, lavorando per IBM, pubblicò l'articolo che propose il modello relazionale dei dati"
+      },
+      {
+        "term": "Modello relazionale",
+        "definition": "Idea secondo cui qualunque insieme di dati può essere rappresentato come una tabella, con righe che rappresentano elementi e colonne che rappresentano attributi"
+      },
+      {
+        "term": "\"A Relational Model of Data for Large Shared Data Banks\"",
+        "definition": "Titolo dell'articolo scientifico del 1970 in cui Codd propose il modello relazionale"
+      }
+    ],
+    [
+      {
+        "term": "Forme",
+        "definition": "Oggetti grafici semplici — rettangoli, cerchi, frecce, linee, callout — inseribili in un documento"
+      },
+      {
+        "term": "SmartArt",
+        "definition": "Diagramma predefinito, con una struttura logica già pronta, in cui basta inserire il proprio testo"
+      },
+      {
+        "term": "Categorie SmartArt",
+        "definition": "Elenchi, Processi, Cicli, Gerarchie, Relazioni: le categorie in cui sono organizzati i diagrammi SmartArt"
+      }
+    ],
+    [
+      {
+        "term": "Frank e Lillian Gilbreth",
+        "definition": "Ingegneri statunitensi che nel 1921 presentarono all'ASME i «process chart», una delle prime rappresentazioni grafiche sistematiche di un processo produttivo"
+      },
+      {
+        "term": "ASME",
+        "definition": "American Society of Mechanical Engineers, che nel 1947 adottò ufficialmente un insieme standardizzato di simboli per i diagrammi di processo"
+      }
+    ]
+  ]
+}

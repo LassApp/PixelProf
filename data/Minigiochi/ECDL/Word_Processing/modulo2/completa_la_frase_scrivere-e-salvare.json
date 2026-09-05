@@ -1,0 +1,674 @@
+[
+  {
+    "id": 1,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "____ e incolla sono due comandi che permettono di duplicare un contenuto senza doverlo riscrivere manualmente.",
+    "answer": "Copia",
+    "bank": [
+      "Copia",
+      "Salva",
+      "Zoom",
+      "Scroll"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Prima di copiare un testo, è necessario ____lo, cioè indicare a Word cosa si vuole prendere.",
+    "answer": "selezionare",
+    "bank": [
+      "selezionare",
+      "cancellare",
+      "salvare",
+      "stampare"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La scorciatoia da tastiera per copiare un contenuto selezionato è CTRL+____.",
+    "answer": "C",
+    "bank": [
+      "C",
+      "X",
+      "V",
+      "Z"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La scorciatoia da tastiera per tagliare un contenuto, cioè copiarlo e rimuovere l'originale, è CTRL+____.",
+    "answer": "X",
+    "bank": [
+      "X",
+      "C",
+      "V",
+      "S"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La scorciatoia da tastiera per incollare un contenuto copiato è CTRL+____.",
+    "answer": "V",
+    "bank": [
+      "V",
+      "C",
+      "X",
+      "B"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il contenuto copiato viene conservato in una piccola area di memoria temporanea chiamata ____.",
+    "answer": "appunti",
+    "bank": [
+      "appunti",
+      "cronologia",
+      "cestino",
+      "archivio"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Gli appunti funzionano come una piccola porzione di ____ dedicata a un solo compito.",
+    "answer": "RAM",
+    "bank": [
+      "RAM",
+      "ROM",
+      "CPU",
+      "SSD"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 1973 l'informatico Larry Tesler entrò a far parte dello ____.",
+    "answer": "Xerox PARC",
+    "bank": [
+      "Xerox PARC",
+      "Apple",
+      "IBM",
+      "Microsoft"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Tesler sviluppò l'editor Gypsy insieme al collega ____.",
+    "answer": "Tim Mott",
+    "bank": [
+      "Tim Mott",
+      "Richard McClintock",
+      "Galyn Susman",
+      "Charles Simonyi"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'editor Gypsy introdusse per la prima volta, tra il 1974 e il 1976, i comandi taglia, copia e ____.",
+    "answer": "incolla",
+    "bank": [
+      "incolla",
+      "salva",
+      "stampa",
+      "cancella"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Dopo Xerox, Tesler passò alla ____, contribuendo a portare gli stessi principi sui primi Macintosh.",
+    "answer": "Apple",
+    "bank": [
+      "Apple",
+      "IBM",
+      "Microsoft",
+      "Remington"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ è un testo generato automaticamente da Word, privo di significato reale, usato per fare pratica con l'impaginazione.",
+    "answer": "testo riempitivo",
+    "bank": [
+      "testo riempitivo",
+      "testo formattato",
+      "testo protetto",
+      "testo cifrato"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Digitando il comando ____ seguito da INVIO, Word genera alcuni paragrafi di testo segnaposto.",
+    "answer": "=lorem()",
+    "bank": [
+      "=lorem()",
+      "=salva()",
+      "=copia()",
+      "=stampa()"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Lo ____ è lo scorrimento verticale (e orizzontale) della pagina, azionabile con la rotellina del mouse.",
+    "answer": "scroll",
+    "bank": [
+      "scroll",
+      "zoom",
+      "righello",
+      "salvataggio"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Con lo scroll, non è il contenuto del documento a spostarsi, ma la ____ che si vede sullo schermo.",
+    "answer": "finestra",
+    "bank": [
+      "finestra",
+      "tastiera",
+      "stampante",
+      "RAM"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Lo ____ permette di ingrandire o rimpicciolire ciò che si vede a schermo, senza cambiare le dimensioni reali del testo.",
+    "answer": "zoom",
+    "bank": [
+      "zoom",
+      "scroll",
+      "righello",
+      "margine"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Lo strumento zoom si trova nella barra di stato in basso o nella scheda ____.",
+    "answer": "Visualizza",
+    "bank": [
+      "Visualizza",
+      "Home",
+      "Layout",
+      "Inserisci"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ mostra le misure esatte della pagina e dei margini.",
+    "answer": "righello",
+    "bank": [
+      "righello",
+      "zoom",
+      "scroll",
+      "tema"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La barra di stato mostra in tempo reale il numero di pagine, il conteggio delle parole, la lingua del documento e il livello di ____.",
+    "answer": "zoom",
+    "bank": [
+      "zoom",
+      "margine",
+      "salvataggio",
+      "formattazione"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le parole del Lorem Ipsum derivano da un passo del De finibus bonorum et malorum, scritto nel 45 a.C. da ____.",
+    "answer": "Marco Tullio Cicerone",
+    "bank": [
+      "Marco Tullio Cicerone",
+      "Richard McClintock",
+      "Larry Tesler",
+      "Christopher Sholes"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo la ricostruzione dello studioso ____, i tipografi usavano il Lorem Ipsum come riempitivo già dal Cinquecento.",
+    "answer": "Richard McClintock",
+    "bank": [
+      "Richard McClintock",
+      "Larry Tesler",
+      "Tim Mott",
+      "Galyn Susman"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Negli anni Sessanta l'azienda ____ stampò il Lorem Ipsum sui propri fogli di caratteri trasferibili.",
+    "answer": "Letraset",
+    "bank": [
+      "Letraset",
+      "Aldus Corporation",
+      "Xerox",
+      "Remington"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Negli anni Ottanta la Aldus Corporation inserì il Lorem Ipsum nei modelli del software di impaginazione ____.",
+    "answer": "PageMaker",
+    "bank": [
+      "PageMaker",
+      "Word",
+      "Gypsy",
+      "PARC"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I ____ sono lo spazio bianco che circonda il testo su ciascun lato della pagina.",
+    "answer": "margini",
+    "bank": [
+      "margini",
+      "righelli",
+      "temi",
+      "appunti"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le stampanti, per motivi meccanici, non riescono quasi mai a stampare fino al ____ estremo del foglio.",
+    "answer": "bordo",
+    "bank": [
+      "bordo",
+      "centro",
+      "margine",
+      "righello"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "In Word i margini si gestiscono dalla scheda Layout → Imposta pagina → ____.",
+    "answer": "Margini",
+    "bank": [
+      "Margini",
+      "Zoom",
+      "Temi",
+      "Righello"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Tra le impostazioni predefinite dei margini in Word ci sono Normali, Stretti e ____.",
+    "answer": "Larghi",
+    "bank": [
+      "Larghi",
+      "Ampi",
+      "Standard",
+      "Ridotti"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un testo scritto troppo vicino al bordo della pagina rischia di essere ____ in stampa.",
+    "answer": "tagliato",
+    "bank": [
+      "tagliato",
+      "ingrandito",
+      "colorato",
+      "sottolineato"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il formato di carta più diffuso in Europa, su cui sono calibrati i margini di Word, è il formato ____.",
+    "answer": "A4",
+    "bank": [
+      "A4",
+      "A3",
+      "A5",
+      "Letter"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il formato A4 misura 210 per ____ millimetri.",
+    "answer": "297",
+    "bank": [
+      "297",
+      "210",
+      "420",
+      "148"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il formato A4 nasce dalla norma tedesca DIN 476, adottata nel ____ dal Deutsches Institut für Normung.",
+    "answer": "1922",
+    "bank": [
+      "1922",
+      "1975",
+      "1998",
+      "2007"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il formato A4 divenne standard internazionale con la sigla ISO ____.",
+    "answer": "216",
+    "bank": [
+      "216",
+      "476",
+      "2007",
+      "9001"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella serie di formati A, i lati sono in rapporto di 1 a ____.",
+    "answer": "radice di 2",
+    "bank": [
+      "radice di 2",
+      "radice di 3",
+      "due",
+      "tre"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "____ un documento significa trasferire il suo contenuto dalla memoria temporanea del computer a una memoria di massa.",
+    "answer": "Salvare",
+    "bank": [
+      "Salvare",
+      "Copiare",
+      "Chiudere",
+      "Formattare"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Mentre si scrive in Word, il documento esiste solo nella ____, prima di essere salvato.",
+    "answer": "RAM",
+    "bank": [
+      "RAM",
+      "ROM",
+      "memoria di massa",
+      "clipboard"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il comando ____ aggiorna il file già esistente con le ultime modifiche, sovrascrivendo la versione precedente.",
+    "answer": "Salva",
+    "bank": [
+      "Salva",
+      "Salva con nome",
+      "Chiudi",
+      "Zoom"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il comando ____ crea un file nuovo, con un nome diverso, lasciando intatto l'originale.",
+    "answer": "Salva con nome",
+    "bank": [
+      "Salva con nome",
+      "Salva",
+      "Chiudi",
+      "Riapri"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il processo che trasforma la struttura viva del documento in una sequenza ordinata di dati scritta su disco si chiama ____.",
+    "answer": "serializzazione",
+    "bank": [
+      "serializzazione",
+      "deserializzazione",
+      "formattazione",
+      "compressione"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il procedimento inverso, quando si riapre un file, si chiama ____.",
+    "answer": "deserializzazione",
+    "bank": [
+      "deserializzazione",
+      "serializzazione",
+      "salvataggio",
+      "chiusura"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 1998, durante la lavorazione del film Toy Story 2 negli studi Pixar, fu cancellato per errore circa il ____% di un anno di lavoro.",
+    "answer": "90",
+    "bank": [
+      "90",
+      "50",
+      "30",
+      "70"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso di Toy Story 2, i backup di routine non funzionavano correttamente da ____.",
+    "answer": "settimane",
+    "bank": [
+      "settimane",
+      "anni",
+      "giorni",
+      "mesi"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il film Toy Story 2 fu salvato grazie a una copia personale conservata da ____, supervisore tecnico della produzione.",
+    "answer": "Galyn Susman",
+    "bank": [
+      "Galyn Susman",
+      "Richard McClintock",
+      "Larry Tesler",
+      "Tim Mott"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "____ un documento significa terminarne la visualizzazione e la modifica nel programma, senza cancellarlo se è stato salvato.",
+    "answer": "Chiudere",
+    "bank": [
+      "Chiudere",
+      "Salvare",
+      "Copiare",
+      "Formattare"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per riaprire un documento, Word offre l'elenco dei file ____, la ricerca nel file system o il doppio clic sul file.",
+    "answer": "recenti",
+    "bank": [
+      "recenti",
+      "condivisi",
+      "protetti",
+      "temporanei"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Fino al ____ Word salvava i propri file in un formato binario chiamato .doc.",
+    "answer": "2007",
+    "bank": [
+      "2007",
+      "1998",
+      "1983",
+      "2010"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Con il lancio di Office 2007, Microsoft introdusse il nuovo formato ____, basato sul linguaggio XML.",
+    "answer": ".docx",
+    "bank": [
+      ".docx",
+      ".doc",
+      ".pdf",
+      ".txt"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il formato .docx divenne standard internazionale ISO nel ____.",
+    "answer": "2008",
+    "bank": [
+      "2008",
+      "2007",
+      "1998",
+      "1975"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "scrivere-e-salvare",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un file .docx, aperto con gli strumenti giusti, si rivela essere in realtà un piccolo archivio ____ contenente diversi file di testo strutturato.",
+    "answer": "compresso",
+    "bank": [
+      "compresso",
+      "cifrato",
+      "protetto",
+      "temporaneo"
+    ]
+  }
+]

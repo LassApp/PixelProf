@@ -1,0 +1,261 @@
+{
+  "module": "formattare-il-testo",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Selezionare un testo",
+        "definition": "Indicare a Word, evidenziandolo, quale porzione di contenuto sarà interessata dal comando successivo"
+      },
+      {
+        "term": "Doppio clic",
+        "definition": "Seleziona una parola intera"
+      },
+      {
+        "term": "Triplo clic",
+        "definition": "Seleziona un intero paragrafo"
+      },
+      {
+        "term": "Barra di selezione",
+        "definition": "Margine sinistro della riga; cliccandoci una volta si seleziona l'intera riga"
+      },
+      {
+        "term": "CTRL + selezione",
+        "definition": "Permette di selezionare più paragrafi non vicini tra loro, uno alla volta"
+      }
+    ],
+    [
+      {
+        "term": "Bravo",
+        "definition": "Primo editor di testo WYSIWYG della storia, sviluppato allo Xerox PARC, operativo dal 14 settembre 1974 sul computer Xerox Alto"
+      },
+      {
+        "term": "Butler Lampson",
+        "definition": "Ricercatore che, insieme a Charles Simonyi e colleghi, sviluppò Bravo allo Xerox PARC"
+      },
+      {
+        "term": "Douglas Engelbart",
+        "definition": "Inventore del mouse, dispositivo usato già da Bravo per indicare posizioni e selezionare testo"
+      },
+      {
+        "term": "Tim Mott",
+        "definition": "Ricercatore che aggiunse a Bravo il doppio clic per selezionare una parola intera"
+      }
+    ],
+    [
+      {
+        "term": "Formattazione del carattere",
+        "definition": "Insieme delle modifiche applicate all'aspetto visivo del testo selezionato: stile, colore, dimensione e tipo di carattere"
+      },
+      {
+        "term": "Grassetto (CTRL+B)",
+        "definition": "Rende i tratti delle lettere più spessi, utile per far risaltare parole chiave"
+      },
+      {
+        "term": "Corsivo (CTRL+I)",
+        "definition": "Inclina il testo, tradizionalmente usato per titoli di opere, parole straniere o per dare enfasi in modo discreto"
+      },
+      {
+        "term": "Sottolineato (CTRL+U)",
+        "definition": "Aggiunge una linea sotto il testo"
+      },
+      {
+        "term": "Apice e pedice",
+        "definition": "Spostano il testo leggermente sopra o sotto la riga, utili per unità di misura o note a piè di pagina"
+      }
+    ],
+    [
+      {
+        "term": "Aldo Manuzio",
+        "definition": "Stampatore ed editore che nel 1501 a Venezia pubblicò un'edizione di Virgilio interamente composta con il nuovo carattere corsivo"
+      },
+      {
+        "term": "Francesco Griffo",
+        "definition": "Incisore che disegnò il carattere corsivo per Aldo Manuzio, ispirato alla scrittura a mano degli intellettuali dell'epoca"
+      },
+      {
+        "term": "Italic",
+        "definition": "Nome preso dal carattere corsivo in altre lingue europee, in onore della tipografia italiana da cui nacque"
+      }
+    ],
+    [
+      {
+        "term": "Font (tipo di carattere)",
+        "definition": "Lo stile grafico con cui vengono disegnate le lettere di un testo"
+      },
+      {
+        "term": "Font serif",
+        "definition": "Font con piccoli tratti terminali (grazie) alle estremità delle lettere, come Times New Roman, associati a un aspetto classico e formale"
+      },
+      {
+        "term": "Font sans serif",
+        "definition": "Font senza grazie, con tratti puliti e uniformi, come Arial, percepiti come più moderni e diretti"
+      },
+      {
+        "term": "Punto tipografico (pt)",
+        "definition": "Unità di misura della dimensione del carattere; il corpo di testo standard si aggira sugli 11-12 pt"
+      }
+    ],
+    [
+      {
+        "term": "Stanley Morison",
+        "definition": "Tipografo britannico che nel 1929 accusò pubblicamente il quotidiano The Times di essere tipograficamente antiquato"
+      },
+      {
+        "term": "Victor Lardent",
+        "definition": "Grafico del reparto pubblicitario del Times che disegnò materialmente il nuovo carattere Times New Roman"
+      },
+      {
+        "term": "Plantin",
+        "definition": "Font più vecchio su cui fu basato il disegno del Times New Roman"
+      },
+      {
+        "term": "Times New Roman",
+        "definition": "Carattere debuttato sulle pagine del Times nell'ottobre 1932, messo in vendita al pubblico l'anno successivo"
+      }
+    ],
+    [
+      {
+        "term": "Allineamento a sinistra (CTRL+L)",
+        "definition": "Il testo parte allineato al margine sinistro, lasciando il destro irregolare; è l'impostazione predefinita"
+      },
+      {
+        "term": "Allineamento centrato (CTRL+E)",
+        "definition": "Ogni riga è centrata rispetto alla pagina, spesso usato per titoli"
+      },
+      {
+        "term": "Allineamento a destra (CTRL+R)",
+        "definition": "Il testo si allinea al margine destro, lasciando irregolare il sinistro; usato raramente, per esempio per date o firme"
+      },
+      {
+        "term": "Allineamento giustificato (CTRL+J)",
+        "definition": "Entrambi i margini risultano perfettamente dritti, come nei libri stampati, allargando leggermente gli spazi tra le parole"
+      },
+      {
+        "term": "Rientro",
+        "definition": "Sposta l'intero paragrafo, o solo la sua prima riga, più all'interno rispetto al margine"
+      }
+    ],
+    [
+      {
+        "term": "Bibbia a 42 linee",
+        "definition": "Bibbia stampata da Johannes Gutenberg a Magonza, completata attorno al 1455, tra i primi grandi testi con ogni riga perfettamente giustificata"
+      },
+      {
+        "term": "Johannes Gutenberg",
+        "definition": "Stampatore che, senza spazi di larghezza variabile, dovette variare punteggiatura, usare legature e abbreviazioni per giustificare ogni riga a mano"
+      }
+    ],
+    [
+      {
+        "term": "File modello (.dotx)",
+        "definition": "Documento speciale che contiene un insieme di regole di formattazione preimpostate, pronte per essere riutilizzate ogni volta che si crea un nuovo documento"
+      },
+      {
+        "term": "Boilerplate",
+        "definition": "Termine inglese, originario della siderurgia ottocentesca, poi usato dagli editori di giornali per testi standard riutilizzabili, oggi riferito ai modelli di documento"
+      }
+    ],
+    [
+      {
+        "term": "Interlinea",
+        "definition": "Lo spazio verticale tra le righe di uno stesso paragrafo"
+      },
+      {
+        "term": "Spaziatura",
+        "definition": "Lo spazio aggiuntivo prima o dopo un intero paragrafo, rispetto a quello successivo"
+      },
+      {
+        "term": "SHIFT+INVIO",
+        "definition": "Inserisce un'interruzione di riga senza aprire un nuovo paragrafo"
+      },
+      {
+        "term": "Leading",
+        "definition": "Termine inglese con cui i tipografi indicano ancora oggi l'interlinea, dall'inglese lead (piombo)"
+      },
+      {
+        "term": "Wilhelm Haas",
+        "definition": "Tipografo svizzero che, verso il 1772, introdusse un sistema sistematico per calcolare lo spessore dei listelli di piombo tra le righe"
+      }
+    ],
+    [
+      {
+        "term": "Stile",
+        "definition": "Pacchetto di formattazioni predefinite — font, dimensione, colore, spaziatura — applicabile a un testo con un solo clic"
+      },
+      {
+        "term": "Titolo 1",
+        "definition": "Stile che eredita un font più grande, uno spessore diverso e una spaziatura automatica sopra e sotto, rispetto al corpo del testo"
+      },
+      {
+        "term": "Modifica globale (stili)",
+        "definition": "Cambiando le impostazioni di uno stile, tutto il testo a cui quello stile è applicato cambia insieme, in un solo istante"
+      }
+    ],
+    [
+      {
+        "term": "Charles Goldfarb",
+        "definition": "Ricercatore che nel 1969 sviluppò per IBM, insieme a Edward Mosher e Raymond Lorie, il sistema GML"
+      },
+      {
+        "term": "GML",
+        "definition": "Sistema sviluppato per IBM nel 1969, pensato per descrivere la struttura logica di un documento separandola dalla sua formattazione"
+      },
+      {
+        "term": "SGML",
+        "definition": "Versione più completa e formale del GML, sviluppata da Goldfarb nel 1974, diventata standard internazionale ISO nel 1986"
+      }
+    ],
+    [
+      {
+        "term": "Pilcrow (¶)",
+        "definition": "Simbolo, attivabile con CTRL+SHIFT+8, che mostra a schermo i segni di formattazione normalmente invisibili: fine paragrafo, spazi, tabulazioni, interruzioni di riga"
+      },
+      {
+        "term": "Paragraphos",
+        "definition": "Trattino orizzontale usato dai copisti dell'antica Grecia per segnalare un cambio di argomento nei testi"
+      },
+      {
+        "term": "Rubricatori",
+        "definition": "Amanuensi medievali, dal latino per «colorare di rosso», che arricchirono il segno del pilcrow con una o due aste verticali"
+      },
+      {
+        "term": "Capitulum",
+        "definition": "Parola latina, «piccola testa», da cui deriva sia il segno che nel XII secolo sostituì la lettera K, sia la parola italiana «capitolo»"
+      }
+    ],
+    [
+      {
+        "term": "Tabulazioni",
+        "definition": "Punti di arresto predefiniti lungo la riga, richiamabili con il tasto TAB, che permettono di disporre il testo in colonne ordinate"
+      },
+      {
+        "term": "Tabulazione sinistra",
+        "definition": "Il testo parte dal punto di tabulazione e prosegue verso destra"
+      },
+      {
+        "term": "Tabulazione centrale",
+        "definition": "Il testo si centra sul punto di tabulazione"
+      },
+      {
+        "term": "Tabulazione destra",
+        "definition": "Il testo si allinea terminando esattamente sul punto di tabulazione"
+      },
+      {
+        "term": "Tabulazione decimale",
+        "definition": "Allinea le cifre sulla virgola (o sul punto) decimale, indipendentemente da quante cifre precedono o seguono"
+      }
+    ],
+    [
+      {
+        "term": "Edward Hess",
+        "definition": "Dipendente della Royal Typewriter Company che nel 1904 brevettò un sistema di tabulazione con arresti fissi attivabili o disattivabili"
+      },
+      {
+        "term": "James Koca",
+        "definition": "Inventore che nel 1940 brevettò un meccanismo per impostare e cancellare i punti di tabulazione direttamente dalla tastiera"
+      }
+    ]
+  ]
+}

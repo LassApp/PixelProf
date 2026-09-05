@@ -1,0 +1,40 @@
+Che cos'è il DNS?;Il servizio che traduce i nomi di dominio facili da ricordare per le persone nei corrispondenti indirizzi IP utilizzati dai dispositivi
+Qual è il compito principale del DNS?;Ricevere il nome del sito richiesto cercare l'indirizzo IP corrispondente e restituirlo al dispositivo
+Il DNS trasporta i dati o le pagine di un sito web?;No il suo compito termina nel momento in cui comunica al dispositivo quale indirizzo IP deve essere raggiunto
+Perché è stato creato il DNS?;Perché gli esseri umani ricordano facilmente parole ma non lunghe sequenze di numeri come gli indirizzi IP
+Il DNS esegue le sue traduzioni in modo visibile all'utente?;No l'operazione avviene in pochi millisecondi ed è completamente trasparente all'utente
+Il DNS è indispensabile per il funzionamento tecnico di Internet?;No Internet continuerebbe a funzionare ma sarebbe estremamente difficile da utilizzare senza il DNS
+Che cos'è un nome di dominio?;Un nome leggibile dalle persone che identifica un servizio o un sito Internet
+Che cos'è il Top-Level Domain o TLD?;Il dominio di primo livello che identifica una categoria generale come .it .com .org o .net
+Come si chiama la parte di un dominio che rappresenta un servizio specifico come www o mail?;Sottodominio
+Un dominio corrisponde sempre allo stesso indirizzo IP?;No un grande servizio può restituire indirizzi IP diversi a seconda della posizione dell'utente o del carico della rete
+Più domini possono condividere lo stesso indirizzo IP?;Sì quando vengono ospitati sul medesimo server
+Cosa sono mail.google.com maps.google.com e drive.google.com esempi di?;Sottodomini che appartengono allo stesso dominio principale ma identificano servizi differenti
+Che cos'è la risoluzione DNS?;Il processo attraverso il quale un nome di dominio viene tradotto nel corrispondente indirizzo IP
+Cosa controlla per primo il dispositivo quando deve risolvere un nome di dominio?;La propria cache DNS una memoria temporanea che conserva le associazioni tra domini e indirizzi IP usate di recente
+Cosa succede se la cache del dispositivo non contiene la risposta cercata?;Il dispositivo invia una richiesta al server DNS configurato nella rete
+Cosa fa il server DNS se non conosce già l'indirizzo IP richiesto?;Inizia una ricerca attraverso il sistema DNS mondiale interrogando altri server specializzati
+Cosa fa il browser dopo aver ottenuto l'indirizzo IP tramite la risoluzione DNS?;Avvia la connessione con il server utilizzando l'indirizzo IP ricevuto
+Che cos'è la cache DNS?;Una memoria temporanea nella quale vengono salvate le associazioni tra nomi di dominio e indirizzi IP già risolte
+Qual è lo scopo della cache DNS?;Evitare di ripetere continuamente la stessa ricerca rendendo la navigazione più veloce
+Quali livelli possono conservare una cache DNS oltre al dispositivo dell'utente?;Il browser il sistema operativo il router il provider Internet e gli stessi server DNS
+Che cos'è il TTL di un record DNS?;Il tempo di validità espresso in secondi durante il quale il dispositivo continua a utilizzare l'indirizzo IP memorizzato nella cache
+Cosa succede quando il TTL di un record DNS scade?;La voce nella cache non è più valida e il dispositivo avvia una nuova risoluzione DNS
+Che cos'è un DNS pubblico?;Un server DNS accessibile a tutti gli utenti di Internet e gestito da organizzazioni specializzate
+Che cos'è un DNS privato?;Un server DNS utilizzato all'interno di una rete specifica per gestire la risoluzione dei nomi dei dispositivi e dei servizi interni
+Chi fornisce solitamente il server DNS utilizzato di default da un dispositivo collegato a Internet?;L'ISP cioè il fornitore di servizi Internet
+Quali aziende offrono DNS pubblici gratuiti citate nel testo?;Google Cloudflare e Cisco OpenDNS
+Grazie a quale protocollo un dispositivo riceve automaticamente dal router anche l'indirizzo del server DNS da utilizzare?;Il DHCP
+Perché scegliere un DNS pubblico diverso da quello dell'ISP?;Per motivi di affidabilità sicurezza privacy o per avere maggiore controllo sulle funzionalità offerte
+Perché un ospedale utilizza un DNS privato per i propri sistemi interni?;Perché sistemi come cartelle cliniche e prenotazioni non devono essere accessibili da Internet ma solo dal personale autorizzato
+Che cos'è un errore DNS?;Una situazione in cui il dispositivo non riesce a tradurre un nome di dominio nel corrispondente indirizzo IP
+Quali sono alcune cause comuni di un errore DNS?;Un errore di digitazione nel nome del dominio un server DNS che non risponde o una cache DNS non aggiornata
+Un errore DNS significa sempre che il sito è offline?;No spesso il server è attivo ma il dispositivo non riesce a ottenere il suo indirizzo IP
+Quali controlli seguono i tecnici per individuare la causa di un errore DNS?;Verificano la connessione Internet controllano il nome del dominio provano altri siti svuotano la cache DNS e provano un server DNS diverso
+Che cos'è la sicurezza DNS?;L'insieme di tecnologie e pratiche utilizzate per proteggere il sistema DNS da manipolazioni intercettazioni e utilizzi fraudolenti
+Che cos'è il DNS Spoofing?;La falsificazione delle risposte DNS per far credere a un dispositivo che un dominio corrisponda a un indirizzo IP diverso da quello reale
+Che cos'è il DNS Cache Poisoning?;L'inserimento di informazioni false all'interno della cache DNS che possono indirizzare gli utenti verso destinazioni errate
+Che cos'è il DNSSEC?;Le Estensioni di Sicurezza del Sistema dei Nomi di Dominio che utilizzano firme digitali per verificare l'autenticità delle informazioni DNS
+Che cos'è il DNS over HTTPS o DoH?;Un protocollo che protegge le richieste DNS utilizzando una connessione HTTPS cifrata
+Che cos'è il DNS over TLS o DoT?;Un protocollo che utilizza TLS per proteggere la comunicazione tra dispositivo e server DNS
+Quali comportamenti degli utenti aiutano a proteggere la sicurezza DNS?;Mantenere aggiornati router e dispositivi utilizzare DNS affidabili evitare link sospetti e verificare l'autenticità dei siti visitati

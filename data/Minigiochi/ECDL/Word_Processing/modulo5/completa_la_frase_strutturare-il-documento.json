@@ -1,0 +1,590 @@
+[
+  {
+    "id": 1,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un'____ di pagina forza l'inizio di una nuova pagina in un punto preciso del documento.",
+    "answer": "interruzione",
+    "bank": [
+      "interruzione",
+      "spaziatura",
+      "tabulazione",
+      "formattazione"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il metodo di premere INVIO più volte crea, ogni volta, un paragrafo ____.",
+    "answer": "vuoto",
+    "bank": [
+      "vuoto",
+      "formattato",
+      "protetto",
+      "nascosto"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'interruzione di pagina si inserisce da Inserisci (o Layout) → Interruzione di ____.",
+    "answer": "pagina",
+    "bank": [
+      "pagina",
+      "riga",
+      "colonna",
+      "paragrafo"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La scorciatoia da tastiera per inserire un'interruzione di pagina è CTRL+____.",
+    "answer": "INVIO",
+    "bank": [
+      "INVIO",
+      "TAB",
+      "SHIFT",
+      "ALT"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "A differenza dell'INVIO ripetuto, l'interruzione di pagina crea un confine ____ nel documento.",
+    "answer": "strutturale",
+    "bank": [
+      "strutturale",
+      "temporaneo",
+      "invisibile",
+      "decorativo"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Con il pilcrow attivato, un'interruzione di pagina appare come una linea ____ etichettata.",
+    "answer": "tratteggiata",
+    "bank": [
+      "tratteggiata",
+      "continua",
+      "rossa",
+      "ondulata"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'interruzione di ____ è utile nei documenti impaginati su più colonne affiancate.",
+    "answer": "colonna",
+    "bank": [
+      "colonna",
+      "pagina",
+      "riga",
+      "sezione"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 1977 l'informatico Donald ____ ricevette le bozze del proprio libro e rimase sconvolto dalla scarsa qualità tipografica.",
+    "answer": "Knuth",
+    "bank": [
+      "Knuth",
+      "Thompson",
+      "McIlroy",
+      "Codd"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il sistema di composizione creato da Knuth si chiama ____.",
+    "answer": "TeX",
+    "bank": [
+      "TeX",
+      "grep",
+      "SmartArt",
+      "GML"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Con TeX, l'autore dichiara istruzioni esplicite sulla struttura, lasciando al programma il compito di tradurle in un'____.",
+    "answer": "impaginazione",
+    "bank": [
+      "impaginazione",
+      "tabulazione",
+      "spaziatura",
+      "ricerca"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il progetto TeX, che Knuth pensava di completare in sei mesi, ne richiese quasi ____.",
+    "answer": "dieci",
+    "bank": [
+      "dieci",
+      "tre",
+      "venti",
+      "due"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "____ in un documento significa spostarsi rapidamente da un punto all'altro del testo.",
+    "answer": "Muoversi",
+    "bank": [
+      "Muoversi",
+      "Salvare",
+      "Stampare",
+      "Formattare"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Con lo scroll, non è il documento a spostarsi, ma la ____ che si vede sullo schermo.",
+    "answer": "finestra",
+    "bank": [
+      "finestra",
+      "tastiera",
+      "stampante",
+      "pagina"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il comando ____ cerca una parola o una frase specifica in tutto il documento.",
+    "answer": "Trova",
+    "bank": [
+      "Trova",
+      "Sostituisci",
+      "Salva",
+      "Stampa"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il comando Trova si attiva con la scorciatoia CTRL+____.",
+    "answer": "F",
+    "bank": [
+      "F",
+      "H",
+      "R",
+      "G"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il comando Trova e sostituisci si attiva con la scorciatoia CTRL+____.",
+    "answer": "H",
+    "bank": [
+      "H",
+      "F",
+      "S",
+      "R"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Trova e sostituisci sostituisce un testo ovunque compaia nel documento con un altro testo scelto, in un solo ____.",
+    "answer": "comando",
+    "bank": [
+      "comando",
+      "foglio",
+      "capitolo",
+      "paragrafo"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La scorciatoia CTRL+frecce sposta il cursore di una ____ (o di un paragrafo) alla volta.",
+    "answer": "parola",
+    "bank": [
+      "parola",
+      "pagina",
+      "riga",
+      "lettera"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "CTRL+Home e CTRL+Fine spostano rispettivamente all'inizio o alla fine dell'intero ____.",
+    "answer": "documento",
+    "bank": [
+      "documento",
+      "paragrafo",
+      "riga",
+      "capitolo"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Ken Thompson è l'ideatore del sistema operativo ____.",
+    "answer": "Unix",
+    "bank": [
+      "Unix",
+      "Windows",
+      "MS-DOS",
+      "Linux"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il programma grep nacque dal comando g/re/p, che sta per global regular expression ____.",
+    "answer": "print",
+    "bank": [
+      "print",
+      "page",
+      "path",
+      "program"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il collega che chiese a Thompson di avere la ricerca per espressioni regolari come strumento a sé stante si chiamava ____.",
+    "answer": "Doug McIlroy",
+    "bank": [
+      "Doug McIlroy",
+      "Donald Knuth",
+      "Edgar Codd",
+      "Charles Goldfarb"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____ (header) occupa la parte alta della pagina, esterna al testo principale.",
+    "answer": "intestazione",
+    "bank": [
+      "intestazione",
+      "tabella",
+      "tabulazione",
+      "forma"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ (footer) occupa la parte bassa della pagina e ospita più spesso numeri di pagina.",
+    "answer": "piè di pagina",
+    "bank": [
+      "piè di pagina",
+      "righello",
+      "margine",
+      "pilcrow"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'intestazione si attiva con un doppio ____ nella zona superiore del foglio.",
+    "answer": "clic",
+    "bank": [
+      "clic",
+      "tocco",
+      "trascinamento",
+      "comando"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una modifica all'intestazione o al piè di pagina si applica automaticamente a ____ le pagine del documento.",
+    "answer": "tutte",
+    "bank": [
+      "tutte",
+      "alcune",
+      "due",
+      "nessuna"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La numerazione di pagina è un campo ____ che Word calcola e aggiorna automaticamente.",
+    "answer": "dinamico",
+    "bank": [
+      "dinamico",
+      "statico",
+      "manuale",
+      "nascosto"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Scrivere i numeri di pagina a mano funziona finché il documento resta identico, ma si sfasa se si aggiunge o toglie una ____.",
+    "answer": "pagina",
+    "bank": [
+      "pagina",
+      "riga",
+      "parola",
+      "immagine"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nei manoscritti medievali più antichi veniva numerata solo la facciata anteriore di ciascun foglio, chiamata ____.",
+    "answer": "recto",
+    "bank": [
+      "recto",
+      "verso",
+      "foliazione",
+      "capitulum"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La pratica di numerare solo il recto si chiamava ____.",
+    "answer": "foliazione",
+    "bank": [
+      "foliazione",
+      "rubricazione",
+      "capitolazione",
+      "paginazione"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una vera numerazione continua di ogni facciata si diffuse a partire dal ____ secolo.",
+    "answer": "XII",
+    "bank": [
+      "XII",
+      "VIII",
+      "XV",
+      "XVIII"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nei manoscritti medievali, la numerazione era affidata a uno ____ dedicato, non a chi copiava il testo.",
+    "answer": "specialista",
+    "bank": [
+      "specialista",
+      "editore",
+      "correttore",
+      "tipografo"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____ di stampa mostra come il documento apparirà fisicamente su carta, prima della stampa effettiva.",
+    "answer": "anteprima",
+    "bank": [
+      "anteprima",
+      "interruzione",
+      "intestazione",
+      "numerazione"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'anteprima di stampa è raggiungibile da File → ____.",
+    "answer": "Stampa",
+    "bank": [
+      "Stampa",
+      "Salva",
+      "Layout",
+      "Inserisci"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Quello che si vede sullo schermo durante la scrittura è una rappresentazione fedele, ma pur sempre ____.",
+    "answer": "digitale",
+    "bank": [
+      "digitale",
+      "stampata",
+      "cartacea",
+      "fisica"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'anteprima di stampa è definita un'ultima verifica logica prima di un passaggio fisico e spesso poco ____.",
+    "answer": "reversibile",
+    "bank": [
+      "reversibile",
+      "costoso",
+      "veloce",
+      "complicato"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Fin dal ____, i tipografi producevano le bozze di stampa.",
+    "answer": "Seicento",
+    "bank": [
+      "Seicento",
+      "Ottocento",
+      "Novecento",
+      "Cinquecento"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le bozze di stampa, in inglese, si chiamano galley ____.",
+    "answer": "proofs",
+    "bank": [
+      "proofs",
+      "prints",
+      "sheets",
+      "pages"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ era il vassoio metallico allungato in cui veniva composto il testo con i caratteri mobili.",
+    "answer": "galley",
+    "bank": [
+      "galley",
+      "pilcrow",
+      "righello",
+      "torchio"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le bozze di stampa servivano a un ____ di tipografia per individuare errori di composizione.",
+    "answer": "correttore",
+    "bank": [
+      "correttore",
+      "editore",
+      "tipografo",
+      "autore"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le bozze di stampa erano stampate su carta economica e prive di titoli, immagini o ____.",
+    "answer": "numerazione",
+    "bank": [
+      "numerazione",
+      "testo",
+      "colore",
+      "formato"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "strutturare-il-documento",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Solo dopo la verifica delle bozze si procedeva con l'____ vera e propria.",
+    "answer": "impaginazione",
+    "bank": [
+      "impaginazione",
+      "stampa",
+      "scrittura",
+      "correzione"
+    ]
+  }
+]

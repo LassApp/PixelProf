@@ -1,0 +1,37 @@
+Che cos'è un router?;Un dispositivo di rete che collega due o più reti differenti e decide il percorso che i dati devono seguire per raggiungere la loro destinazione
+Quali reti collega solitamente il router in un'abitazione?;La rete locale LAN domestica alla rete Internet WAN
+Cosa fa il router quando riceve un pacchetto destinato a un dispositivo della rete domestica?;Mantiene la comunicazione all'interno della casa
+Cosa fa il router quando un pacchetto è destinato a un sito Internet?;Inoltra i dati verso il provider Internet ISP che li fa proseguire lungo la rete mondiale
+Quali altre funzioni può svolgere un router in una rete domestica oltre all'instradamento?;Creare la rete Wi-Fi proteggere la connessione e permettere a più dispositivi di condividere la stessa connessione Internet
+Chi rappresentano gli utenti della rete rispetto al router?;Computer smartphone e tablet sono gli utenti mentre il router è il punto di passaggio obbligato tra la rete domestica e Internet
+Che cos'è uno switch?;Un dispositivo di rete che collega più dispositivi della stessa rete locale e inoltra i dati soltanto verso il dispositivo destinatario
+In cosa si differenzia lo switch dal router?;Lo switch non collega Internet alla rete locale ma gestisce la comunicazione all'interno della rete stessa
+Che cos'è il MAC Address?;L'indirizzo fisico univoco della scheda di rete di un dispositivo
+Come sa lo switch su quale porta è collegato ogni dispositivo?;Grazie a una tabella che costruisce automaticamente osservando il traffico di rete
+Che cos'è un unmanaged switch?;Un modello semplice di switch che funziona non appena viene collegato
+Che cos'è un managed switch?;Un modello di switch utilizzato nelle aziende che permette di configurare reti complesse creare VLAN e monitorare il traffico
+Perché lo switch è più efficiente di un dispositivo che invia i dati a tutte le porte?;Perché invia i pacchetti soltanto alla porta dove si trova il dispositivo destinatario riducendo il traffico inutile
+Cosa fa un hub quando riceve un pacchetto?;Lo replica su tutte le sue porte contemporaneamente senza sapere chi sia il destinatario
+Quale problema può generare l'utilizzo di un hub rispetto a uno switch?;Genera molto traffico inutile e può causare collisioni quando più dispositivi trasmettono nello stesso momento
+All'interno di quale ambito lavorano principalmente hub e switch rispetto al router?;All'interno della rete locale mentre il router collega la rete locale al resto del mondo
+Perché oggi gli hub sono praticamente scomparsi dalle reti moderne?;Perché gli switch offrono prestazioni nettamente superiori a costi molto contenuti
+Che cos'è un modem?;Il dispositivo che permette di comunicare con la rete del provider Internet convertendo i segnali affinché possano viaggiare sul mezzo trasmissivo
+Qual è la differenza tra modem e router?;Il modem si occupa della connessione con l'esterno mentre il router si occupa della gestione del traffico tra la rete domestica e Internet
+Come si chiama il dispositivo che integra sia le funzioni del modem sia quelle del router?;Modem-router
+Quali altre funzioni può integrare un dispositivo modem-router moderno?;Lo switch Ethernet il punto di accesso Wi-Fi il firewall e i servizi NAT e DHCP
+Perché è comune dire riavvia il modem quando in realtà si intende l'intero dispositivo?;Perché nella maggior parte delle abitazioni moderne modem e router sono integrati in un unico apparecchio
+Che cos'è il NAT?;Una tecnologia implementata nel router che permette a più dispositivi di una rete locale di condividere un unico indirizzo IP pubblico
+Cosa traduce automaticamente il NAT?;Gli indirizzi IP privati della rete domestica nell'indirizzo IP pubblico assegnato dal provider e viceversa
+Quale vantaggio di sicurezza offre il NAT?;I dispositivi della rete domestica rimangono nascosti dietro l'unico indirizzo IP pubblico del router e non sono direttamente raggiungibili da Internet
+Che cos'è il Port Forwarding?;La configurazione con cui il router associa una porta di rete a un determinato dispositivo locale per renderlo raggiungibile da Internet
+Perché non è pratico assegnare un indirizzo IP pubblico diverso a ogni dispositivo domestico?;Perché gli indirizzi IP pubblici disponibili sono limitati
+Che cos'è il DHCP?;Un protocollo di rete che assegna automaticamente ai dispositivi le impostazioni necessarie per comunicare sulla rete
+Quali informazioni assegna tipicamente il DHCP a un dispositivo?;L'indirizzo IP la subnet mask il gateway predefinito e gli indirizzi dei server DNS
+Cosa fa un dispositivo quando si collega per la prima volta a una rete senza possedere un indirizzo IP?;Invia una richiesta in broadcast chiedendo se nella rete è presente un server DHCP
+Come si chiama il periodo di tempo per cui viene concesso un indirizzo IP dal DHCP?;Lease
+Perché in alcuni casi come server o stampanti di rete si preferisce non usare indirizzi assegnati dinamicamente?;Perché si preferisce che il dispositivo riceva sempre lo stesso indirizzo tramite un IP fisso o una prenotazione DHCP
+Perché il DHCP semplifica la gestione di una rete aziendale con centinaia di computer?;Perché evita di dover configurare manualmente ogni singola postazione
+Che cos'è una rete domestica?;L'insieme dei dispositivi presenti in un'abitazione che comunicano tra loro e condividono la stessa connessione Internet attraverso il router
+Quali dispositivi collaborano automaticamente per far funzionare una rete domestica?;DHCP switch router e NAT
+Cosa riceve automaticamente un nuovo dispositivo quando si collega alla rete domestica grazie al DHCP?;Un indirizzo IP privato
+Attraverso quali collegamenti può essere composta una rete domestica?;Collegamenti via cavo Ethernet wireless Wi-Fi o una combinazione di entrambi

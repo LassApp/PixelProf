@@ -1,0 +1,662 @@
+[
+  {
+    "id": 1,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa inserire un'immagine in Word, secondo il modulo?",
+    "options": [
+      "Aggiungere un contenuto grafico — una fotografia, un disegno, uno screenshot — in un punto preciso scelto dall'utente",
+      "Convertire un documento in formato immagine",
+      "Comprimere un file per ridurne le dimensioni",
+      "Creare automaticamente una didascalia per ogni foto"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 2,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale metodo permette di inserire un'immagine trascinando il file direttamente dalla cartella del computer al documento?",
+    "options": [
+      "Screenshot",
+      "Trascinamento (drag & drop)",
+      "Immagini online",
+      "Copia e incolla"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il trascinamento (drag & drop) permette di trascinare il file direttamente nel documento."
+  },
+  {
+    "id": 3,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale scheda si sceglie un file immagine salvato sul dispositivo?",
+    "options": [
+      "Inserisci → Immagini",
+      "Layout → Immagini",
+      "Home → Immagini",
+      "Visualizza → Immagini"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si sceglie da Inserisci → Immagini."
+  },
+  {
+    "id": 4,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa bisogna considerare cercando immagini online direttamente da Word, secondo il modulo?",
+    "options": [
+      "Il formato del file",
+      "Il diritto d'autore delle immagini trovate",
+      "La velocità della connessione internet",
+      "Il numero massimo di immagini inseribili"
+    ],
+    "correctIndex": 1,
+    "explanation": "Bisogna prestare attenzione al diritto d'autore delle immagini trovate."
+  },
+  {
+    "id": 5,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve principalmente lo screenshot (cattura schermata), secondo il modulo?",
+    "options": [
+      "A ridurre il peso di un'immagine",
+      "A guide, tutorial o documentazione tecnica",
+      "A convertire un'immagine in tabella",
+      "A cercare immagini online"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lo screenshot è utile per guide, tutorial o documentazione tecnica."
+  },
+  {
+    "id": 6,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale avvertenza riguarda il copia e incolla di immagini, secondo il modulo?",
+    "options": [
+      "Non è mai possibile copiare un'immagine",
+      "La qualità copiata non è sempre identica all'originale",
+      "Funziona solo con immagini in bianco e nero",
+      "Richiede sempre una connessione internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "La qualità copiata non è sempre identica all'originale."
+  },
+  {
+    "id": 7,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede ridimensionando un'immagine trascinando uno degli angoli?",
+    "options": [
+      "Le proporzioni originali (aspect ratio) restano invariate",
+      "L'immagine viene automaticamente ruotata",
+      "Solo la larghezza cambia",
+      "L'immagine viene convertita in un'altra risoluzione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trascinando un angolo, le proporzioni originali restano invariate."
+  },
+  {
+    "id": 8,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede ridimensionando un'immagine trascinando uno dei lati?",
+    "options": [
+      "Le proporzioni restano sempre invariate",
+      "L'immagine risulta deformata, allungata o schiacciata",
+      "L'immagine viene automaticamente centrata",
+      "L'immagine cambia formato file"
+    ],
+    "correctIndex": 1,
+    "explanation": "Trascinando un lato, l'immagine risulta deformata rispetto all'originale."
+  },
+  {
+    "id": 9,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno nacque il Joint Photographic Experts Group?",
+    "options": [
+      "1970",
+      "1986",
+      "1992",
+      "1947"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il comitato nacque nel 1986."
+  },
+  {
+    "id": 10,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno il comitato pubblicò lo standard JPEG?",
+    "options": [
+      "1986",
+      "1990",
+      "1992",
+      "2000"
+    ],
+    "correctIndex": 2,
+    "explanation": "Lo standard JPEG fu pubblicato nel 1992."
+  },
+  {
+    "id": 11,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa elimina selettivamente la compressione lossy del formato JPEG?",
+    "options": [
+      "Le sfumature di colore che l'occhio umano fatica a percepire",
+      "Tutti i colori dell'immagine",
+      "Solo lo sfondo dell'immagine",
+      "I metadati del file"
+    ],
+    "correctIndex": 0,
+    "explanation": "La compressione lossy elimina selettivamente le sfumature di colore poco percepibili."
+  },
+  {
+    "id": 12,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rese possibile, secondo il modulo, il compromesso della compressione JPEG?",
+    "options": [
+      "L'esplosione delle fotocamere digitali e la possibilità di inserire foto nei documenti senza appesantirli",
+      "La nascita di Word",
+      "L'invenzione dello screenshot",
+      "La creazione delle tabelle"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il compromesso della compressione JPEG rese possibile l'esplosione delle fotocamere digitali."
+  },
+  {
+    "id": 13,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa determina il comportamento del testo rispetto a un'immagine, secondo il modulo?",
+    "options": [
+      "Se l'immagine si muove insieme al testo (in linea) o resta libera sulla pagina (mobile)",
+      "Il formato del file immagine",
+      "La dimensione dello schermo",
+      "Il numero di pagine del documento"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 14,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si comporta un'immagine in linea con il testo?",
+    "options": [
+      "Come una lettera gigante, che occupa spazio dentro la riga e si sposta con il testo",
+      "Resta sempre fissa in un angolo della pagina",
+      "Si sovrappone sempre al testo",
+      "Non può mai essere ridimensionata"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un'immagine in linea si comporta come una lettera gigante."
+  },
+  {
+    "id": 15,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si comporta un'immagine mobile?",
+    "options": [
+      "Si sposta sempre insieme al testo, come una lettera",
+      "Può essere spostata liberamente in qualsiasi punto della pagina, indipendentemente dal testo",
+      "Non può mai essere selezionata",
+      "Cambia colore automaticamente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un'immagine mobile può essere spostata liberamente sulla pagina."
+  },
+  {
+    "id": 16,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale opzione di testo a capo fa sì che il testo circondi l'immagine seguendo un riquadro?",
+    "options": [
+      "In linea con il testo",
+      "Quadrato",
+      "Ravvicinato",
+      "Dietro al testo"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'opzione Quadrato fa circondare l'immagine seguendo un riquadro."
+  },
+  {
+    "id": 17,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale opzione di testo a capo fa sì che il testo segua il profilo reale dell'immagine, non solo il riquadro?",
+    "options": [
+      "Quadrato",
+      "Ravvicinato",
+      "Davanti al testo",
+      "In linea con il testo"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'opzione Ravvicinato fa seguire al testo il profilo reale dell'immagine."
+  },
+  {
+    "id": 18,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fanno le opzioni \"Dietro al testo\" e \"Davanti al testo\"?",
+    "options": [
+      "Allineano l'immagine al centro della pagina",
+      "Fanno sovrapporre l'immagine al testo, in un senso o nell'altro",
+      "Ridimensionano automaticamente l'immagine",
+      "Convertono l'immagine in una forma"
+    ],
+    "correctIndex": 1,
+    "explanation": "Queste opzioni fanno sovrapporre l'immagine al testo."
+  },
+  {
+    "id": 19,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene sempre ancorata un'immagine mobile, secondo il modulo?",
+    "options": [
+      "Alla prima pagina del documento",
+      "A un paragrafo specifico del documento",
+      "Al margine destro della pagina",
+      "Al titolo del documento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un'immagine mobile è sempre ancorata a un paragrafo specifico."
+  },
+  {
+    "id": 20,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno Ventura Software lanciò Ventura Publisher?",
+    "options": [
+      "1974",
+      "1985",
+      "1986",
+      "1992"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ventura Publisher fu lanciato nel 1986."
+  },
+  {
+    "id": 21,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale programma rivale, uscito l'anno prima di Ventura Publisher, è citato nel modulo?",
+    "options": [
+      "PageMaker della Aldus",
+      "Bravo della Xerox",
+      "Word di Microsoft",
+      "WordStar"
+    ],
+    "correctIndex": 0,
+    "explanation": "PageMaker della Aldus, uscito l'anno prima, è il rivale citato."
+  },
+  {
+    "id": 22,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama il termine tecnico che indica la capacità del testo di scorrere intorno a un oggetto grafico?",
+    "options": [
+      "Boilerplate",
+      "Leading",
+      "Wraparound (o runaround)",
+      "Aspect ratio"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il termine tecnico è wraparound (o runaround)."
+  },
+  {
+    "id": 23,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa differenziava Ventura Publisher da PageMaker, secondo il modulo?",
+    "options": [
+      "Ventura Publisher automatizzava l'impaginazione attraverso fogli di stile, invece del posizionamento manuale",
+      "PageMaker era gratuito, Ventura Publisher no",
+      "Ventura Publisher funzionava solo su Macintosh",
+      "PageMaker non supportava le immagini"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ventura Publisher automatizzava l'impaginazione attraverso fogli di stile."
+  },
+  {
+    "id": 24,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una tabella, secondo il modulo?",
+    "options": [
+      "Una struttura ordinata di righe e colonne, la cui intersezione forma delle celle",
+      "Un tipo di immagine vettoriale",
+      "Un insieme di tabulazioni decimali",
+      "Uno stile predefinito di Word"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 25,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il limite delle tabulazioni rispetto alle tabelle, secondo il modulo?",
+    "options": [
+      "Le tabulazioni non esistono più in Word",
+      "Restano un'illusione visiva che diventa scomoda con più colonne o dati di lunghezza molto diversa",
+      "Le tabulazioni funzionano solo con i numeri",
+      "Le tabulazioni richiedono sempre una connessione internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le tabulazioni restano un'illusione visiva scomoda con molte colonne o dati molto diversi."
+  },
+  {
+    "id": 26,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale scheda si inserisce una tabella in Word?",
+    "options": [
+      "Inserisci → Tabella",
+      "Home → Tabella",
+      "Layout → Tabella",
+      "Visualizza → Tabella"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si inserisce da Inserisci → Tabella."
+  },
+  {
+    "id": 27,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quali modi si può scegliere il numero di righe e colonne di una tabella, secondo il modulo?",
+    "options": [
+      "Solo tramite una griglia rapida",
+      "Tramite una griglia rapida, un inserimento numerico preciso, o disegnandola manualmente",
+      "Solo scrivendo un comando testuale",
+      "Solo copiando una tabella già esistente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ci sono tre modi: griglia rapida, inserimento numerico preciso, o disegno manuale."
+  },
+  {
+    "id": 28,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "È possibile convertire un testo già scritto, separato da virgole o tabulazioni, in una tabella?",
+    "options": [
+      "Sì, con il comando apposito",
+      "No, mai",
+      "Solo se il testo è già formattato con lo stile Titolo 1",
+      "Solo se il testo è in un file separato"
+    ],
+    "correctIndex": 0,
+    "explanation": "È possibile convertirlo con il comando apposito."
+  },
+  {
+    "id": 29,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si comporta il testo dentro una cella di una tabella?",
+    "options": [
+      "Non può mai andare a capo",
+      "Va a capo automaticamente restando dentro i confini della cella",
+      "Rompe sempre la struttura delle righe vicine",
+      "Si comporta come un'immagine mobile"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il testo va a capo automaticamente restando dentro i confini della cella."
+  },
+  {
+    "id": 30,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'errore comune descritto nel modulo per chi non ha familiarità con le tabelle?",
+    "options": [
+      "Usare troppi colori nelle celle",
+      "Simulare una tabella con soli spazi o tabulazioni ripetute, allineando tutto \"a occhio\"",
+      "Inserire troppe righe",
+      "Non salvare il documento"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'errore comune è simulare una tabella con spazi o tabulazioni, allineando \"a occhio\"."
+  },
+  {
+    "id": 31,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno Edgar F. Codd pubblicò l'articolo sul modello relazionale dei dati?",
+    "options": [
+      "1947",
+      "1970",
+      "1986",
+      "1992"
+    ],
+    "correctIndex": 1,
+    "explanation": "Codd pubblicò l'articolo nel 1970."
+  },
+  {
+    "id": 32,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quale azienda lavorava Edgar F. Codd quando pubblicò il suo articolo?",
+    "options": [
+      "Microsoft",
+      "Apple",
+      "IBM",
+      "Xerox"
+    ],
+    "correctIndex": 2,
+    "explanation": "Codd lavorava per IBM."
+  },
+  {
+    "id": 33,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresentano, nel modello relazionale, le righe e le colonne di una tabella?",
+    "options": [
+      "Le righe rappresentano elementi distinti, le colonne attributi specifici",
+      "Le righe rappresentano colori, le colonne dimensioni",
+      "Le righe rappresentano formule, le colonne funzioni",
+      "Le righe rappresentano font, le colonne stili"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le righe rappresentano elementi distinti, le colonne attributi specifici di quell'elemento."
+  },
+  {
+    "id": 34,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché IBM fu lenta ad adottare l'idea di Codd, secondo il modulo?",
+    "options": [
+      "Perché non credeva funzionasse tecnicamente",
+      "Perché preoccupata di proteggere i ricavi dei propri sistemi di database più vecchi e gerarchici",
+      "Perché Codd non lavorava per l'azienda",
+      "Perché mancavano i computer necessari"
+    ],
+    "correctIndex": 1,
+    "explanation": "IBM era preoccupata di proteggere i ricavi dei propri sistemi di database più vecchi e gerarchici."
+  },
+  {
+    "id": 35,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le forme, secondo il modulo?",
+    "options": [
+      "Oggetti grafici semplici come rettangoli, cerchi, frecce, linee e callout",
+      "Diagrammi predefiniti con struttura logica già pronta",
+      "Un tipo di tabella speciale",
+      "Uno stile di formattazione del testo"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 36,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è lo SmartArt, secondo il modulo?",
+    "options": [
+      "Un oggetto grafico semplice come un rettangolo",
+      "Un diagramma predefinito, con una struttura logica già pronta, in cui basta inserire il proprio testo",
+      "Un formato di file per le immagini",
+      "Uno strumento per comprimere le fotografie"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 37,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale scheda si inseriscono le forme in Word?",
+    "options": [
+      "Inserisci → Forme",
+      "Layout → Forme",
+      "Home → Forme",
+      "Visualizza → Forme"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si inseriscono da Inserisci → Forme."
+  },
+  {
+    "id": 38,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali categorie di diagrammi SmartArt sono elencate nel modulo?",
+    "options": [
+      "Elenchi, Processi, Cicli, Gerarchie, Relazioni",
+      "Fotografie, Grafici, Tabelle, Forme, Font",
+      "Titoli, Sottotitoli, Note, Indici, Bibliografie",
+      "Colori, Stili, Temi, Margini, Layout"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le categorie elencate sono Elenchi, Processi, Cicli, Gerarchie, Relazioni."
+  },
+  {
+    "id": 39,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette di ottenere in pochi secondi un diagramma SmartArt di tipo Processo, secondo l'esempio del modulo?",
+    "options": [
+      "Una sequenza chiara e già collegata tra i blocchi",
+      "Una tabella con righe e colonne",
+      "Un'immagine ad alta risoluzione",
+      "Un documento completamente formattato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Permette di ottenere una sequenza chiara e già collegata."
+  },
+  {
+    "id": 40,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede al layout di uno SmartArt quando si aggiunge un nuovo passaggio?",
+    "options": [
+      "Bisogna ridisegnare l'intero schema a mano",
+      "L'intero layout si adatta da solo, mantenendo coerenti proporzioni e collegamenti",
+      "Lo SmartArt si cancella automaticamente",
+      "Bisogna creare un nuovo documento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il layout si adatta da solo, mantenendo coerenti proporzioni e collegamenti."
+  },
+  {
+    "id": 41,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno Frank e Lillian Gilbreth presentarono i \"process chart\" all'ASME?",
+    "options": [
+      "1901",
+      "1921",
+      "1947",
+      "1970"
+    ],
+    "correctIndex": 1,
+    "explanation": "Presentarono i \"process chart\" nel 1921."
+  },
+  {
+    "id": 42,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa erano pensati i \"process chart\" di Gilbreth, secondo il modulo?",
+    "options": [
+      "A individuare inefficienze nelle fabbriche",
+      "A decorare i documenti aziendali",
+      "A sostituire le tabelle nei report finanziari",
+      "A creare loghi aziendali"
+    ],
+    "correctIndex": 0,
+    "explanation": "Erano pensati per individuare inefficienze nelle fabbriche."
+  },
+  {
+    "id": 43,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno l'ASME adottò ufficialmente un insieme standardizzato di simboli per i diagrammi di processo?",
+    "options": [
+      "1921",
+      "1947",
+      "1970",
+      "1986"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'ASME adottò i simboli standardizzati nel 1947."
+  },
+  {
+    "id": 44,
+    "module": "elementi-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In cosa si sarebbero evoluti, nei decenni successivi, i simboli adottati dall'ASME, secondo il modulo?",
+    "options": [
+      "Nei font tipografici moderni",
+      "Nei diagrammi di flusso usati nella programmazione informatica",
+      "Nelle tabelle dei database relazionali",
+      "Negli standard di compressione delle immagini"
+    ],
+    "correctIndex": 1,
+    "explanation": "Si sarebbero evoluti fino a comprendere anche i diagrammi di flusso della programmazione."
+  }
+]

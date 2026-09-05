@@ -1,0 +1,617 @@
+[
+  {
+    "id": 1,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un elaboratore di testi (word processor), secondo il modulo?",
+    "options": [
+      "Un programma che permette di scrivere, modificare e impaginare documenti direttamente sullo schermo, prima di stamparli o condividerli",
+      "Un programma che permette solo di stampare documenti già pronti",
+      "Un dispositivo hardware per digitare testo senza schermo",
+      "Un servizio online per inviare soltanto email"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un elaboratore di testi è un programma che permette di scrivere, modificare e impaginare documenti sullo schermo prima di stamparli o condividerli."
+  },
+  {
+    "id": 2,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'acronimo WYSIWYG?",
+    "options": [
+      "What You See Is What You Get",
+      "What You Save Is What You Get",
+      "Word You See Is Word You Get",
+      "What You Send Is What You Get"
+    ],
+    "correctIndex": 0,
+    "explanation": "WYSIWYG è la sigla inglese per \"What You See Is What You Get\", cioè \"quello che vedi è quello che ottieni\"."
+  },
+  {
+    "id": 3,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa in pratica il principio WYSIWYG?",
+    "options": [
+      "Che il documento va immaginato, perché il risultato si scopre solo dopo la stampa",
+      "Che a schermo si vede già l'aspetto finale del documento, invece di doverlo immaginare o scoprirlo solo dopo la stampa",
+      "Che il documento può essere modificato solo dopo averlo stampato",
+      "Che il testo digitato non corrisponde mai a quello stampato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Con il WYSIWYG, mentre si scrive si vede già a schermo l'aspetto finale del documento, invece di doverlo immaginare o scoprirlo solo dopo la stampa."
+  },
+  {
+    "id": 4,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali altri due elaboratori di testi, oltre a Word, vengono citati nel modulo?",
+    "options": [
+      "Excel e PowerPoint",
+      "Notepad e WordPad",
+      "OpenOffice Writer e Google Docs",
+      "Photoshop e Illustrator"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo cita OpenOffice Writer e Google Docs come altri elaboratori di testi che svolgono lo stesso compito di Word."
+  },
+  {
+    "id": 5,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accomuna Word, OpenOffice Writer e Google Docs, secondo il modulo?",
+    "options": [
+      "Il principio WYSIWYG",
+      "L'essere tutti prodotti dalla stessa azienda",
+      "L'assenza di un'interfaccia grafica",
+      "Il fatto di essere tutti fogli di calcolo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ciò che accomuna questi programmi è proprio il principio WYSIWYG, pur con differenze nell'interfaccia e nelle funzioni disponibili."
+  },
+  {
+    "id": 6,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno Microsoft assunse Charles Simonyi e Richard Brodie, dando avvio al progetto che sarebbe diventato Word?",
+    "options": [
+      "1975",
+      "1981",
+      "1983",
+      "1990"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il programma nasce nel 1981, quando Microsoft assunse Charles Simonyi e Richard Brodie."
+  },
+  {
+    "id": 7,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove avevano lavorato in precedenza Charles Simonyi e Richard Brodie, prima di essere assunti da Microsoft?",
+    "options": [
+      "Nei laboratori di ricerca Xerox, sul Bravo",
+      "Negli uffici IBM, su un editor per MS-DOS",
+      "Alla Remington, su una macchina da scrivere elettrica",
+      "Alla Apple, su un word processor per Macintosh"
+    ],
+    "correctIndex": 0,
+    "explanation": "Simonyi e Brodie avevano lavorato nei laboratori di ricerca Xerox proprio sul Bravo, il primo editor di testo WYSIWYG mai realizzato."
+  },
+  {
+    "id": 8,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale nome fu messo in commercio nel 1983 il programma poi diventato Microsoft Word?",
+    "options": [
+      "Microsoft Word",
+      "Multi-Tool Word",
+      "WordPerfect",
+      "Office Writer"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nel 1983 il programma fu messo in commercio con il nome Multi-Tool Word, pensato per i sistemi Xenix e MS-DOS, poi ribattezzato Microsoft Word."
+  },
+  {
+    "id": 9,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali erano i due programmi di videoscrittura già affermati con cui Word dovette competere fin da subito?",
+    "options": [
+      "OpenOffice Writer e Google Docs",
+      "Bravo e Multi-Tool Word",
+      "WordPerfect e WordStar",
+      "Notepad e WordPad"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il mercato non era vuoto: Word dovette competere fin da subito con WordPerfect e WordStar, usciti l'anno precedente."
+  },
+  {
+    "id": 10,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa distinse Word, fin dall'inizio, dai programmi di videoscrittura più antichi?",
+    "options": [
+      "Il prezzo più basso",
+      "Il principio WYSIWYG ereditato da Bravo",
+      "La disponibilità solo su Macintosh",
+      "L'assenza di una barra multifunzione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il principio WYSIWYG ereditato da Bravo fu proprio ciò che distinse Word fin dall'inizio dai programmi di videoscrittura più antichi."
+  },
+  {
+    "id": 11,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la schermata iniziale di Word?",
+    "options": [
+      "La finestra che compare a ogni avvio del programma, prima di aprire un documento specifico, con diverse modalità per iniziare a scrivere",
+      "La finestra che compare solo alla primissima installazione del programma",
+      "La schermata che appare quando si stampa un documento",
+      "La finestra delle impostazioni avanzate di Word"
+    ],
+    "correctIndex": 0,
+    "explanation": "La schermata iniziale compare a ogni avvio di Word, prima di aprire un documento specifico, e offre diverse modalità per iniziare a scrivere."
+  },
+  {
+    "id": 12,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono le due modalità principali offerte dalla schermata iniziale di Word?",
+    "options": [
+      "Documento vuoto oppure un modello (template) predefinito",
+      "Stampa immediata oppure salvataggio automatico",
+      "Modalità lettura oppure modalità modifica",
+      "Documento protetto oppure documento condiviso"
+    ],
+    "correctIndex": 0,
+    "explanation": "Alla schermata iniziale si può scegliere tra un documento vuoto e un modello (template) predefinito."
+  },
+  {
+    "id": 13,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un modello (template) in Word?",
+    "options": [
+      "Un documento già pronto, con formattazione, colori e struttura già decisi, in cui basta sostituire il contenuto segnaposto",
+      "Un documento completamente bianco, senza nulla di preimpostato",
+      "Un file che può essere solo letto, mai modificato",
+      "Un tipo di font disponibile in Word"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un modello è un documento già pronto, con formattazione, colori e struttura decisi da chi lo ha creato: basta sostituire il contenuto segnaposto."
+  },
+  {
+    "id": 14,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i temi grafici di un modello?",
+    "options": [
+      "Le lingue disponibili per il correttore ortografico",
+      "Variazioni di colore e stile applicate alla stessa struttura di base",
+      "I margini predefiniti del documento",
+      "Le versioni di Word compatibili con il modello"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ogni modello può presentarsi in temi grafici diversi: variazioni di colore e stile applicate alla stessa struttura di base."
+  },
+  {
+    "id": 15,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come è orientato il foglio quando si apre un documento vuoto in Word?",
+    "options": [
+      "In orizzontale",
+      "In verticale",
+      "In diagonale",
+      "Dipende sempre dal modello scelto"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il foglio è orientato in verticale, la forma più comune per un documento di testo."
+  },
+  {
+    "id": 16,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama lo spazio bianco ai bordi del foglio che delimita l'area in cui si può scrivere?",
+    "options": [
+      "I margini",
+      "Le intestazioni",
+      "I bordi di pagina",
+      "Le colonne"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quello spazio bianco ai bordi del foglio si chiama margini."
+  },
+  {
+    "id": 17,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama la barra che corre lungo la parte alta della finestra di Word, organizzata in schede come \"Home\"?",
+    "options": [
+      "Barra di stato",
+      "Barra multifunzione (Ribbon)",
+      "Barra laterale",
+      "Barra degli indirizzi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Si chiama barra multifunzione (Ribbon) ed è organizzata in schede come \"Home\"."
+  },
+  {
+    "id": 18,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale versione di Office fu introdotta la barra multifunzione al posto dei vecchi menu a tendina e delle barre degli strumenti separate?",
+    "options": [
+      "Office 2003",
+      "Office 2007",
+      "Office 2010",
+      "Office 2013"
+    ],
+    "correctIndex": 1,
+    "explanation": "Con il lancio di Office 2007, Microsoft sostituì il vecchio sistema di menu con la barra multifunzione."
+  },
+  {
+    "id": 19,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la tastiera, secondo il modulo?",
+    "options": [
+      "La principale periferica di output per la stampa",
+      "La principale periferica di input per la scrittura",
+      "Un accessorio opzionale non necessario per scrivere in Word",
+      "Un dispositivo che serve solo per i comandi, non per i caratteri"
+    ],
+    "correctIndex": 1,
+    "explanation": "La tastiera è definita come la principale periferica di input per la scrittura."
+  },
+  {
+    "id": 20,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa converte la tastiera quando un tasto viene premuto?",
+    "options": [
+      "La pressione del tasto in un segnale che il computer interpreta come carattere o comando",
+      "Il suono del tasto in un file audio",
+      "La pressione del tasto in un'immagine sullo schermo",
+      "Il tasto premuto in un comando vocale"
+    ],
+    "correctIndex": 0,
+    "explanation": "La tastiera converte la pressione di ogni tasto in un segnale che il computer interpreta come carattere o comando."
+  },
+  {
+    "id": 21,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama la disposizione dei tasti usata, con piccole varianti, sulla maggior parte delle tastiere del mondo?",
+    "options": [
+      "AZERTY",
+      "QWERTY",
+      "ASCII",
+      "Ribbon"
+    ],
+    "correctIndex": 1,
+    "explanation": "Si chiama QWERTY, dal nome delle prime sei lettere della riga superiore della tastiera."
+  },
+  {
+    "id": 22,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa deriva il nome QWERTY?",
+    "options": [
+      "Dalle prime sei lettere della riga superiore della tastiera",
+      "Dal nome del suo inventore",
+      "Dall'acronimo di una società produttrice",
+      "Dalle iniziali dei tasti di comando principali"
+    ],
+    "correctIndex": 0,
+    "explanation": "QWERTY deriva dalle prime sei lettere della riga superiore della tastiera."
+  },
+  {
+    "id": 23,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa aggiungono le tastiere italiane rispetto alla versione originale in lingua inglese?",
+    "options": [
+      "I tasti numerici",
+      "Le lettere accentate (à, è, ì, ò, ù)",
+      "I tasti funzione F1-F12",
+      "Il tasto ALT GR"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le tastiere italiane aggiungono le lettere accentate (à, è, ì, ò, ù), assenti nella versione originale in lingua inglese."
+  },
+  {
+    "id": 24,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi brevettò nel 1868, insieme a Carlos Glidden e Samuel Soulé, una delle prime macchine da scrivere pratiche della storia?",
+    "options": [
+      "Christopher Latham Sholes",
+      "Charles Simonyi",
+      "Richard Brodie",
+      "Samuel Remington"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu il giornalista ed editore statunitense Christopher Latham Sholes a brevettare, nel 1868, una delle prime macchine da scrivere pratiche."
+  },
+  {
+    "id": 25,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A chi vendette Sholes, nel 1873, i diritti della sua macchina da scrivere?",
+    "options": [
+      "Alla Remington",
+      "Alla Microsoft",
+      "Alla Xerox",
+      "Alla IBM"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel 1873 Sholes vendette i diritti alla Remington, che la commercializzò come Remington No. 1."
+  },
+  {
+    "id": 26,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, quale ipotesi più recente è stata avanzata sull'origine della disposizione QWERTY?",
+    "options": [
+      "Un'origine legata alle esigenze dei telegrafisti che trascrivevano il codice Morse",
+      "Un'origine legata alla necessità di ridurre il peso della tastiera",
+      "Un'origine legata a un concorso di design del 1900",
+      "Un'origine legata all'uso della tastiera nei primi computer"
+    ],
+    "correctIndex": 0,
+    "explanation": "Alcuni studi più recenti suggeriscono un'origine legata alle esigenze dei telegrafisti che trascrivevano il codice Morse."
+  },
+  {
+    "id": 27,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il tasto INVIO?",
+    "options": [
+      "Chiude la riga corrente e ne apre una nuova",
+      "Cancella l'intero documento",
+      "Sposta il cursore di uno scatto preciso",
+      "Blocca il maiuscolo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il tasto INVIO (Enter) chiude la riga corrente e ne apre una nuova."
+  },
+  {
+    "id": 28,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il tasto SHIFT se tenuto premuto insieme a una lettera?",
+    "options": [
+      "Cancella la lettera",
+      "Restituisce la sua versione maiuscola o un simbolo alternativo",
+      "Sposta il cursore alla riga successiva",
+      "Attiva il blocco maiuscolo permanente"
+    ],
+    "correctIndex": 1,
+    "explanation": "SHIFT, tenuto premuto insieme a un'altra lettera, restituisce la sua versione maiuscola o un simbolo alternativo."
+  },
+  {
+    "id": 29,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve il tasto CAPS LOCK?",
+    "options": [
+      "A cancellare il testo selezionato",
+      "A bloccare il maiuscolo, senza dover tenere premuto SHIFT a ogni lettera",
+      "A inserire simboli speciali come @",
+      "A confermare l'inserimento di un carattere"
+    ],
+    "correctIndex": 1,
+    "explanation": "CAPS LOCK blocca il maiuscolo, senza dover tenere premuto SHIFT a ogni lettera."
+  },
+  {
+    "id": 30,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il tasto CTRL, se premuto da solo, secondo il modulo?",
+    "options": [
+      "Scrive un carattere di controllo speciale",
+      "Non scrive nulla, ma cambia il significato del tasto premuto insieme a lui",
+      "Cancella l'ultimo carattere digitato",
+      "Attiva la modalità maiuscolo"
+    ],
+    "correctIndex": 1,
+    "explanation": "CTRL non scrive nulla da solo, ma cambia il significato del tasto premuto insieme a lui, ed è alla base di gran parte delle scorciatoie."
+  },
+  {
+    "id": 31,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale tasto elimina il carattere alla destra del cursore?",
+    "options": [
+      "CANC",
+      "BACKSPACE",
+      "TAB",
+      "SHIFT"
+    ],
+    "correctIndex": 0,
+    "explanation": "CANC (Delete) elimina il carattere alla destra del cursore."
+  },
+  {
+    "id": 32,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale tasto elimina il carattere alla sinistra del cursore?",
+    "options": [
+      "CANC",
+      "BACKSPACE",
+      "CAPS LOCK",
+      "ALT GR"
+    ],
+    "correctIndex": 1,
+    "explanation": "BACKSPACE elimina il carattere alla sinistra del cursore."
+  },
+  {
+    "id": 33,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette di fare il tasto ALT, ad esempio con la combinazione Alt + F4?",
+    "options": [
+      "Chiudere una finestra",
+      "Salvare il documento",
+      "Stampare il documento",
+      "Aprire un nuovo file"
+    ],
+    "correctIndex": 0,
+    "explanation": "ALT permette di attivare funzioni alternative: ad esempio Alt + F4 chiude una finestra."
+  },
+  {
+    "id": 34,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette di ottenere il tasto ALT GR, come SHIFT?",
+    "options": [
+      "Simboli diversi premendo lo stesso tasto",
+      "Il blocco permanente del maiuscolo",
+      "Lo spostamento del cursore di uno scatto preciso",
+      "La cancellazione del carattere a destra"
+    ],
+    "correctIndex": 0,
+    "explanation": "ALT GR, come SHIFT, permette di ottenere simboli diversi premendo lo stesso tasto."
+  },
+  {
+    "id": 35,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del modulo, quale simbolo si ottiene premendo da solo il tasto a destra della lettera L?",
+    "options": [
+      "ò",
+      "ç",
+      "@",
+      "€"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il tasto da solo restituisce il simbolo centrale: ò."
+  },
+  {
+    "id": 36,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nello stesso esempio, quale simbolo si ottiene con SHIFT + quel tasto?",
+    "options": [
+      "ò",
+      "ç",
+      "@",
+      "€"
+    ],
+    "correctIndex": 1,
+    "explanation": "SHIFT + tasto restituisce il simbolo in alto: ç."
+  },
+  {
+    "id": 37,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "E con ALT GR + quel tasto, quale simbolo si ottiene?",
+    "options": [
+      "ò",
+      "ç",
+      "@",
+      "€"
+    ],
+    "correctIndex": 2,
+    "explanation": "ALT GR + tasto restituisce il simbolo a destra: @."
+  },
+  {
+    "id": 38,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il tasto TAB?",
+    "options": [
+      "Inserisce uno spazio vuoto tra le parole",
+      "Sposta il cursore in avanti di uno scatto preciso, non di un semplice spazio",
+      "Cancella l'intera riga",
+      "Blocca il maiuscolo"
+    ],
+    "correctIndex": 1,
+    "explanation": "TAB (Tabulation) sposta il cursore in avanti di uno scatto preciso, non di un semplice spazio."
+  },
+  {
+    "id": 39,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale dispositivo meccanico deriva, secondo il modulo, il tasto INVIO?",
+    "options": [
+      "Dalla leva del ritorno carrello delle macchine da scrivere",
+      "Dal tasto SHIFT della Remington No. 2",
+      "Dalla telescrivente",
+      "Dal sistema QWERTY"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sulle macchine da scrivere meccaniche esisteva una leva, il ritorno carrello, che riportava fisicamente il foglio alla riga successiva; INVIO ne ha ereditato il significato."
+  },
+  {
+    "id": 40,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale macchina da scrivere nacque il tasto SHIFT, nel 1878?",
+    "options": [
+      "Remington No. 1",
+      "Remington No. 2",
+      "IBM Electric",
+      "Sholes and Glidden"
+    ],
+    "correctIndex": 1,
+    "explanation": "SHIFT nacque nel 1878 con la Remington No. 2, la prima macchina da scrivere capace di stampare sia maiuscole sia minuscole."
+  },
+  {
+    "id": 41,
+    "module": "word-e-ambiente",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale dispositivo deriva il tasto CTRL, secondo il modulo?",
+    "options": [
+      "Dalla macchina da scrivere meccanica",
+      "Dalla telescrivente",
+      "Dalla Remington No. 1",
+      "Dal Bravo di Xerox"
+    ],
+    "correctIndex": 1,
+    "explanation": "CTRL deriva dalla telescrivente, un dispositivo che introdusse per primo tasti capaci di generare codici di controllo invece di caratteri."
+  }
+]

@@ -1,0 +1,722 @@
+[
+  {
+    "id": 1,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono copia e incolla, secondo il modulo?",
+    "options": [
+      "Due comandi che permettono di duplicare un contenuto da un punto all'altro senza doverlo riscrivere manualmente",
+      "Due comandi che permettono solo di stampare un documento",
+      "Due strumenti per correggere automaticamente gli errori di battitura",
+      "Due comandi disponibili solo per le immagini, non per il testo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Copia e incolla permettono di duplicare un contenuto — testo, immagine, o altro — da un punto all'altro, senza doverlo riscrivere manualmente."
+  },
+  {
+    "id": 2,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa bisogna fare prima di copiare un testo in Word?",
+    "options": [
+      "Salvarlo",
+      "Selezionarlo",
+      "Stamparlo",
+      "Cancellarlo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Per copiare qualcosa bisogna prima selezionarlo, indicando a Word esattamente cosa si vuole prendere."
+  },
+  {
+    "id": 3,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i tre modi per copiare un testo, secondo il modulo?",
+    "options": [
+      "Solo con la tastiera",
+      "Con il mouse (tasto destro), con la tastiera (scorciatoie), dal menu nella scheda Home",
+      "Solo trascinando il file in una nuova cartella",
+      "Solo tramite un comando vocale"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo indica tre modi ugualmente validi: mouse, scorciatoie da tastiera, menu nella scheda Home."
+  },
+  {
+    "id": 4,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale scorciatoia da tastiera copia il contenuto selezionato?",
+    "options": [
+      "CTRL+C",
+      "CTRL+X",
+      "CTRL+V",
+      "CTRL+Z"
+    ],
+    "correctIndex": 0,
+    "explanation": "CTRL+C è la scorciatoia per copiare."
+  },
+  {
+    "id": 5,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale scorciatoia da tastiera taglia il contenuto, cioè lo copia e rimuove l'originale?",
+    "options": [
+      "CTRL+C",
+      "CTRL+X",
+      "CTRL+V",
+      "CTRL+S"
+    ],
+    "correctIndex": 1,
+    "explanation": "CTRL+X taglia il contenuto: lo copia e rimuove l'originale."
+  },
+  {
+    "id": 6,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale scorciatoia da tastiera incolla il contenuto copiato?",
+    "options": [
+      "CTRL+V",
+      "CTRL+C",
+      "CTRL+X",
+      "CTRL+B"
+    ],
+    "correctIndex": 0,
+    "explanation": "CTRL+V incolla il contenuto precedentemente copiato o tagliato."
+  },
+  {
+    "id": 7,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove viene conservato temporaneamente un contenuto copiato?",
+    "options": [
+      "Negli appunti (clipboard)",
+      "Nella barra di stato",
+      "Nel righello",
+      "Nel formato .docx"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il contenuto copiato viene conservato in una piccola area di memoria temporanea chiamata appunti (clipboard)."
+  },
+  {
+    "id": 8,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonati gli appunti, in termini di memoria del computer?",
+    "options": [
+      "Una piccola porzione di RAM dedicata a un solo compito",
+      "Una porzione di memoria di massa permanente",
+      "Un file salvato su disco",
+      "Una cartella del file system"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli appunti funzionano come una piccola porzione di RAM dedicata a conservare l'ultimo contenuto copiato."
+  },
+  {
+    "id": 9,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno Larry Tesler entrò a far parte dello Xerox PARC?",
+    "options": [
+      "1968",
+      "1973",
+      "1981",
+      "1998"
+    ],
+    "correctIndex": 1,
+    "explanation": "Tesler entrò allo Xerox PARC nel 1973."
+  },
+  {
+    "id": 10,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiamava l'editor di testo sviluppato da Tesler e Tim Mott che introdusse i comandi taglia, copia e incolla?",
+    "options": [
+      "Bravo",
+      "Gypsy",
+      "PageMaker",
+      "Multi-Tool Word"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'editor si chiamava Gypsy, sviluppato tra il 1974 e il 1976."
+  },
+  {
+    "id": 11,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il testo riempitivo, secondo il modulo?",
+    "options": [
+      "Un testo generato automaticamente da Word, privo di significato reale, usato per fare pratica con l'impaginazione",
+      "Un testo copiato da un sito web ufficiale",
+      "Un testo che Word corregge automaticamente",
+      "Un testo che si può inserire solo nei modelli predefiniti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il testo riempitivo è generato automaticamente, privo di significato reale, e serve a fare pratica con l'impaginazione."
+  },
+  {
+    "id": 12,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale comando, digitato in Word e seguito da INVIO, genera testo riempitivo?",
+    "options": [
+      "=salva()",
+      "=lorem()",
+      "=copia()",
+      "=zoom()"
+    ],
+    "correctIndex": 1,
+    "explanation": "Digitando =lorem() (oppure =rand()) seguito da INVIO, Word riempie il documento con testo segnaposto."
+  },
+  {
+    "id": 13,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è lo scroll?",
+    "options": [
+      "Lo scorrimento verticale (e, quando serve, orizzontale) della pagina",
+      "Lo strumento che ingrandisce il testo senza spostare la pagina",
+      "Il comando che salva il documento",
+      "Il comando che copia un contenuto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo scroll è lo scorrimento verticale e, quando serve, orizzontale della pagina."
+  },
+  {
+    "id": 14,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con cosa si può azionare lo scroll, secondo il modulo?",
+    "options": [
+      "Solo con il touchpad",
+      "Con la rotellina del mouse o con le frecce della tastiera",
+      "Solo con un comando vocale",
+      "Solo cliccando sulla barra di stato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lo scroll è azionabile con la rotellina del mouse o con le frecce della tastiera."
+  },
+  {
+    "id": 15,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa lo zoom in Word?",
+    "options": [
+      "Cambia le dimensioni reali del testo sul foglio",
+      "Ingrandisce o rimpicciolisce ciò che si vede a schermo, senza cambiare le dimensioni reali del testo",
+      "Sposta fisicamente il contenuto del documento",
+      "Salva automaticamente il documento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lo zoom ingrandisce o rimpicciolisce ciò che si vede a schermo, senza cambiare le dimensioni reali del testo sul foglio."
+  },
+  {
+    "id": 16,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove si trova lo strumento zoom in Word?",
+    "options": [
+      "Solo nella scheda Home",
+      "Nella barra di stato in basso o nella scheda Visualizza",
+      "Solo nel menu Layout",
+      "Solo negli appunti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lo zoom si trova nella barra di stato in basso o nella scheda Visualizza."
+  },
+  {
+    "id": 17,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra il righello, attivabile da Visualizza?",
+    "options": [
+      "Il conteggio delle parole",
+      "Le misure esatte della pagina e dei margini",
+      "La cronologia delle modifiche",
+      "Il livello di zoom attuale"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il righello mostra le misure esatte della pagina e dei margini."
+  },
+  {
+    "id": 18,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali informazioni mostra la barra di stato in tempo reale?",
+    "options": [
+      "Numero di pagine, conteggio delle parole, lingua del documento e livello di zoom",
+      "Solo il nome del file",
+      "Solo la data dell'ultimo salvataggio",
+      "Solo il formato del file"
+    ],
+    "correctIndex": 0,
+    "explanation": "La barra di stato mostra numero di pagine, conteggio delle parole, lingua del documento e livello di zoom."
+  },
+  {
+    "id": 19,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale opera antica deriva il testo Lorem Ipsum?",
+    "options": [
+      "Dal De finibus bonorum et malorum di Cicerone",
+      "Da un manuale di stampa medievale",
+      "Da un testo scritto appositamente per Word",
+      "Da un poema epico greco"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le parole del Lorem Ipsum derivano da un passo del De finibus bonorum et malorum, scritto nel 45 a.C. da Marco Tullio Cicerone."
+  },
+  {
+    "id": 20,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo la ricostruzione dello studioso Richard McClintock, da quale secolo i tipografi usavano il Lorem Ipsum come riempitivo?",
+    "options": [
+      "Dal Cinquecento",
+      "Dall'Ottocento",
+      "Dal Novecento",
+      "Dal Duemila"
+    ],
+    "correctIndex": 0,
+    "explanation": "Secondo McClintock, i tipografi usavano frammenti di quel testo come riempitivo già a partire almeno dal Cinquecento."
+  },
+  {
+    "id": 21,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i margini, secondo il modulo?",
+    "options": [
+      "Lo spazio bianco che circonda il testo su ciascun lato della pagina",
+      "La parte centrale del foglio dove si scrive il titolo",
+      "Un tipo di font predefinito in Word",
+      "Lo strumento che ingrandisce il testo a schermo"
+    ],
+    "correctIndex": 0,
+    "explanation": "I margini sono lo spazio bianco che circonda il testo su ciascun lato della pagina, delimitando l'area in cui è possibile scrivere."
+  },
+  {
+    "id": 22,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché esiste un'area stampabile più piccola del foglio intero?",
+    "options": [
+      "Perché le stampanti, per motivi meccanici, non riescono quasi mai a stampare fino al bordo estremo",
+      "Perché Word riduce sempre la pagina del 10%",
+      "Perché la carta si restringe durante la stampa",
+      "Perché serve a risparmiare inchiostro"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le stampanti, per motivi meccanici, non riescono quasi mai a stampare fino al bordo estremo del foglio."
+  },
+  {
+    "id": 23,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale percorso in Word si gestiscono i margini?",
+    "options": [
+      "Home → Carattere → Margini",
+      "Layout → Imposta pagina → Margini",
+      "Inserisci → Tabella → Margini",
+      "Visualizza → Zoom → Margini"
+    ],
+    "correctIndex": 1,
+    "explanation": "I margini si gestiscono dalla scheda Layout → Imposta pagina → Margini."
+  },
+  {
+    "id": 24,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali impostazioni predefinite di margine offre Word, secondo il modulo?",
+    "options": [
+      "Normali, Stretti, Larghi",
+      "Piccoli, Medi, Grandi",
+      "Standard, Compatti, Estesi",
+      "Base, Avanzati, Personali"
+    ],
+    "correctIndex": 0,
+    "explanation": "Word offre le impostazioni predefinite Normali, Stretti e Larghi, oltre a misure personalizzate."
+  },
+  {
+    "id": 25,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rischia un testo scritto troppo vicino al bordo della pagina?",
+    "options": [
+      "Di essere tagliato in stampa",
+      "Di cambiare colore automaticamente",
+      "Di essere cancellato da Word",
+      "Di attivare il testo riempitivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un testo troppo vicino al bordo rischia di essere tagliato in stampa."
+  },
+  {
+    "id": 26,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su quale formato di carta sono calibrati i margini predefiniti di Word?",
+    "options": [
+      "A3",
+      "A4",
+      "A5",
+      "Letter"
+    ],
+    "correctIndex": 1,
+    "explanation": "I margini predefiniti sono calibrati sul formato A4, 210 per 297 millimetri."
+  },
+  {
+    "id": 27,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale norma tedesca del 1922 nasce il formato A4?",
+    "options": [
+      "ISO 216",
+      "DIN 476",
+      "ISO 9001",
+      "DIN 2007"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il formato A4 nasce dalla norma tedesca DIN 476, adottata nel 1922 dal Deutsches Institut für Normung."
+  },
+  {
+    "id": 28,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno il formato A4 divenne standard internazionale con la sigla ISO 216?",
+    "options": [
+      "1922",
+      "1975",
+      "1998",
+      "2007"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il formato A4 divenne standard internazionale ISO 216 nel 1975."
+  },
+  {
+    "id": 29,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il principio geometrico alla base della serie di formati A, secondo il modulo?",
+    "options": [
+      "I lati sono in rapporto di 1 a radice di 2",
+      "I lati sono sempre uguali tra loro",
+      "I lati sono in rapporto di 1 a 3",
+      "Non esiste alcun rapporto fisso tra i lati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ogni formato della serie A ha i lati in rapporto di 1 a radice di 2, così piegando un A4 si ottengono due A5."
+  },
+  {
+    "id": 30,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa salvare un documento, secondo il modulo?",
+    "options": [
+      "Trasferire il suo contenuto dalla memoria temporanea del computer a una memoria di massa",
+      "Stampare il documento su carta",
+      "Copiarlo negli appunti",
+      "Cambiarne il livello di zoom"
+    ],
+    "correctIndex": 0,
+    "explanation": "Salvare significa trasferire il contenuto del documento dalla memoria temporanea a una memoria di massa."
+  },
+  {
+    "id": 31,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove esiste un documento mentre lo si sta scrivendo in Word, prima di essere salvato?",
+    "options": [
+      "Solo su disco",
+      "Nella RAM",
+      "Negli appunti",
+      "Nel formato .docx"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mentre si scrive, il documento esiste solo nella RAM, la memoria di lavoro temporanea del computer."
+  },
+  {
+    "id": 32,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede al contenuto nella RAM se il computer si spegne senza aver salvato?",
+    "options": [
+      "Resta comunque disponibile",
+      "Sparisce",
+      "Viene automaticamente stampato",
+      "Viene spostato negli appunti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se il computer si spegne senza aver salvato, tutto ciò che è nella RAM sparisce."
+  },
+  {
+    "id": 33,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il comando Salva?",
+    "options": [
+      "Crea sempre un nuovo file distinto dall'originale",
+      "Aggiorna il file già esistente con le ultime modifiche, sovrascrivendo la versione precedente",
+      "Cancella il file esistente",
+      "Cambia il formato del file in .doc"
+    ],
+    "correctIndex": 1,
+    "explanation": "Salva aggiorna il file già esistente con le ultime modifiche, sovrascrivendo la versione precedente."
+  },
+  {
+    "id": 34,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il comando Salva con nome?",
+    "options": [
+      "Aggiorna il file esistente sovrascrivendolo",
+      "Crea un file nuovo, con un nome (e magari un percorso) diverso, lasciando intatto l'originale",
+      "Elimina l'originale e lo sostituisce",
+      "Copia il file negli appunti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Salva con nome crea un file nuovo, con un nome diverso, lasciando intatto l'originale."
+  },
+  {
+    "id": 35,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama il processo che trasforma la struttura viva del documento in RAM in una sequenza ordinata di dati scritta su disco?",
+    "options": [
+      "Deserializzazione",
+      "Serializzazione",
+      "Compressione",
+      "Formattazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Questo processo si chiama serializzazione."
+  },
+  {
+    "id": 36,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama il procedimento inverso, quando si riapre un file?",
+    "options": [
+      "Serializzazione",
+      "Deserializzazione",
+      "Sincronizzazione",
+      "Salvataggio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il procedimento inverso, quando si riapre il file, si chiama deserializzazione."
+  },
+  {
+    "id": 37,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno avvenne l'episodio della cancellazione accidentale dei file di Toy Story 2 negli studi Pixar?",
+    "options": [
+      "1995",
+      "1998",
+      "2001",
+      "2007"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'episodio avvenne nel 1998, durante la lavorazione del film."
+  },
+  {
+    "id": 38,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale percentuale di un anno di lavoro fu cancellata per errore durante la lavorazione di Toy Story 2?",
+    "options": [
+      "Circa il 50%",
+      "Circa il 70%",
+      "Circa il 90%",
+      "Circa il 30%"
+    ],
+    "correctIndex": 2,
+    "explanation": "Fu cancellato circa il 90% di un anno di lavoro."
+  },
+  {
+    "id": 39,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché i backup di routine non poterono risolvere subito il problema, nel caso di Toy Story 2?",
+    "options": [
+      "Perché non esistevano backup",
+      "Perché non funzionavano correttamente da settimane",
+      "Perché erano stati cancellati insieme ai file originali",
+      "Perché richiedevano un mese per essere ripristinati"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il team scoprì che i backup di routine non funzionavano correttamente da settimane."
+  },
+  {
+    "id": 40,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi permise di recuperare il materiale di Toy Story 2, grazie a una copia personale?",
+    "options": [
+      "Larry Tesler",
+      "Richard McClintock",
+      "Galyn Susman",
+      "Tim Mott"
+    ],
+    "correctIndex": 2,
+    "explanation": "Galyn Susman, supervisore tecnico della produzione, aveva una copia personale sul computer di casa."
+  },
+  {
+    "id": 41,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa chiudere un documento, secondo il modulo?",
+    "options": [
+      "Cancellarlo definitivamente dal disco",
+      "Terminarne la visualizzazione e la modifica nel programma",
+      "Trasformarlo in formato .doc",
+      "Copiarlo negli appunti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Chiudere un documento significa terminarne la visualizzazione e la modifica nel programma, senza cancellare nulla."
+  },
+  {
+    "id": 42,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa riaprire un documento?",
+    "options": [
+      "Crearne una copia negli appunti",
+      "Recuperarlo dalla memoria di massa in cui è stato salvato",
+      "Stamparlo di nuovo",
+      "Cambiarne il formato in .docx"
+    ],
+    "correctIndex": 1,
+    "explanation": "Riaprire un documento significa recuperarlo dalla memoria di massa in cui è stato salvato."
+  },
+  {
+    "id": 43,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali strade offre Word per riaprire un documento, secondo il modulo?",
+    "options": [
+      "Solo la ricerca nel file system",
+      "L'elenco dei file recenti, la ricerca nel file system, il doppio clic sul file",
+      "Solo l'elenco dei file recenti",
+      "Solo il doppio clic sul file"
+    ],
+    "correctIndex": 1,
+    "explanation": "Word offre più strade: file recenti nella schermata iniziale, ricerca nel file system, doppio clic sul file."
+  },
+  {
+    "id": 44,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Fino a che anno Word salvava i propri file in un formato binario chiamato .doc?",
+    "options": [
+      "Fino al 1998",
+      "Fino al 2007",
+      "Fino al 2010",
+      "Fino al 2013"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fino al 2007 Word salvava i file in formato .doc."
+  },
+  {
+    "id": 45,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale versione di Office fu introdotto il formato .docx?",
+    "options": [
+      "Office 2003",
+      "Office 2007",
+      "Office 2010",
+      "Office 2013"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il formato .docx fu introdotto con il lancio di Office 2007."
+  },
+  {
+    "id": 46,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su quale linguaggio è basato il formato .docx?",
+    "options": [
+      "HTML",
+      "XML",
+      "JSON",
+      "CSS"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il formato .docx è basato sul linguaggio XML."
+  },
+  {
+    "id": 47,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno il formato .docx divenne standard internazionale ISO?",
+    "options": [
+      "2007",
+      "2008",
+      "2010",
+      "1998"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il formato .docx divenne standard internazionale ISO nel 2008."
+  },
+  {
+    "id": 48,
+    "module": "scrivere-e-salvare",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si scopre aprendo un file .docx con gli strumenti giusti?",
+    "options": [
+      "Che è in realtà un piccolo archivio compresso contenente diversi file di testo strutturato",
+      "Che è un file eseguibile identico a un programma",
+      "Che contiene solo immagini, senza testo",
+      "Che è protetto da una password fissa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un file .docx, aperto con gli strumenti giusti, si rivela un piccolo archivio compresso contenente diversi file di testo strutturato."
+  }
+]

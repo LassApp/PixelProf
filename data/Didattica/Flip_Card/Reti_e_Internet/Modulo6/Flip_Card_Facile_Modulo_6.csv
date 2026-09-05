@@ -1,0 +1,42 @@
+Cos'è il Cloud Networking?;L'insieme di tecnologie e infrastrutture di rete che permettono di utilizzare servizi applicazioni e risorse informatiche attraverso Internet invece di mantenerle solo sui dispositivi locali
+Cosa indica il termine cloud in informatica?;Un ambiente digitale remoto composto da server collegati in rete
+Cosa indica il termine networking?;La comunicazione e lo scambio di dati tra dispositivi
+Come venivano conservati programmi e file prima della diffusione del cloud?;Erano salvati fisicamente sul disco rigido del computer o nella memoria dello smartphone
+Cosa sono i cloud provider?;I server remoti che ospitano dati e applicazioni collegati attraverso Internet
+Cosa serve a un utente per accedere a un file conservato nel cloud?;Una connessione a Internet e le autorizzazioni corrette
+Quali sono i principali vantaggi del Cloud Networking?;Accessibilità collaborazione riduzione dei costi e continuità del servizio
+Cosa significa accessibilità nel Cloud Networking?;La possibilità di utilizzare dati e servizi da qualsiasi luogo
+Cosa permette la collaborazione nel Cloud Networking?;Permette a più persone di lavorare sugli stessi contenuti
+Perché il Cloud Networking riduce i costi per aziende e utenti?;Perché non devono acquistare grandi infrastrutture proprie
+Quali sono i principali limiti del Cloud Networking?;La necessità di una connessione Internet stabile e l'attenzione richiesta per la sicurezza e la privacy dei dati
+Cos'è un Data Center?;Una struttura fisica che ospita migliaia di server dispositivi di rete e sistemi di archiviazione per conservare dati ed erogare servizi digitali in modo continuo sicuro e affidabile
+Cosa significa Data Center in italiano?;Centro Elaborazione Dati
+Su cosa si basano il cloud i siti web e le applicazioni online?;Sui Data Center che ne costituiscono l'infrastruttura materiale
+Come sono organizzati i server all'interno di un Data Center?;In lunghe file di armadi metallici chiamati rack
+Quali sistemi garantiscono l'alimentazione elettrica di un Data Center?;Gruppi di continuità e generatori di emergenza
+A cosa servono gli impianti di raffreddamento in un Data Center?;A mantenere costante la temperatura ed evitare il surriscaldamento dei server
+Come viene protetto fisicamente l'accesso a un Data Center?;Tramite badge sistemi biometrici videosorveglianza e personale autorizzato
+Cos'è la ridondanza in un Data Center?;La replica automatica dei dati su più dispositivi o Data Center differenti così che il servizio resti disponibile anche in caso di guasto
+Qual è la differenza tra ridondanza e backup?;La ridondanza mantiene il servizio sempre disponibile in caso di guasto mentre il backup è una copia di sicurezza per recuperare dati persi o cancellati
+Da cosa protegge la ridondanza?;Dai guasti dell'infrastruttura
+Da cosa protegge il backup?;Dagli errori umani dai malware o da altri eventi che causano la perdita dei dati
+Cos'è il percorso dal dispositivo al cloud?;L'insieme delle comunicazioni di rete che permettono a un dispositivo di inviare e ricevere dati da un servizio cloud attraverso Internet
+Cosa fa il sistema operativo prima di inviare dati al cloud?;Prepara i dati e li suddivide in piccoli pacchetti
+Attraverso quali collegamenti i pacchetti raggiungono il router di casa?;Attraverso il Wi-Fi oppure un collegamento Ethernet
+Cosa fa un server quando riceve una richiesta dal cloud?;Verifica i permessi dell'utente salva il documento e invia una risposta al dispositivo
+Da cosa dipende la velocità di comunicazione con il cloud?;Dalla qualità della connessione dalla distanza dal Data Center e dall'efficienza dell'infrastruttura di rete
+Cos'è la sincronizzazione nel cloud?;Il processo con cui il servizio cloud aggiorna automaticamente tutte le copie di un file collegate allo stesso account
+Cosa fanno molti servizi cloud quando la connessione Internet non è disponibile?;Salvano temporaneamente le modifiche sul dispositivo e le inviano al cloud appena la connessione torna disponibile
+Cosa significa CDN?;Content Delivery Network cioè Rete di Distribuzione dei Contenuti
+Cos'è una CDN?;Una rete di server distribuiti nel mondo che conserva copie dei contenuti più richiesti e li invia dal nodo più vicino all'utente
+Cos'è il Load Balancing?;Una tecnica che distribuisce automaticamente le richieste tra più server evitando che uno solo venga sovraccaricato
+Cosa fa un Load Balancer quando un server è troppo occupato o guasto?;Indirizza automaticamente il traffico verso altri server disponibili
+Cos'è la scalabilità nel Cloud Networking?;La capacità del cloud di aumentare o ridurre automaticamente le proprie risorse in base al numero di utenti e al carico di lavoro
+Cos'è la scalabilità verticale?;Il potenziamento di un singolo server aggiungendo processori memoria RAM o altre risorse hardware
+Qual è il limite principale della scalabilità verticale?;Oltre una certa capacità il server non può più essere potenziato
+Cos'è la scalabilità orizzontale?;L'aggiunta di nuovi server che lavorano insieme per gestire il carico
+Quale tipo di scalabilità è più utilizzato nel Cloud Networking?;La scalabilità orizzontale
+Quali tre tecnologie collaborano per rendere il Cloud Networking veloce affidabile ed elastico?;CDN Load Balancing e Scalabilità
+Cos'è Google Drive?;Un servizio di cloud storage cioè di archiviazione e sincronizzazione dei file nel cloud
+Cos'è Netflix?;Una piattaforma di streaming che distribuisce contenuti audio e video attraverso Internet
+Su quali infrastrutture si basano servizi come Google Drive e Netflix?;Su Data Center CDN Load Balancing e sistemi di scalabilità

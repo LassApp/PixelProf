@@ -1,0 +1,39 @@
+Cos'è una VPN?;Una tecnologia che crea una connessione protetta e cifrata tra un dispositivo e un server remoto attraverso Internet
+Cosa significa VPN?;Virtual Private Network cioè Rete Privata Virtuale
+Cosa rende difficile l'intercettazione dei dati grazie a una VPN?;Il fatto che i dati viaggiano all'interno di un canale sicuro
+Su quali reti possono transitare normalmente i dati prima di raggiungere la destinazione?;Su reti che non controlliamo come il Wi-Fi di un hotel di un aeroporto o di un bar
+Cosa succede ai dati prima che lascino il dispositivo quando si usa una VPN?;Vengono cifrati cioè trasformati in una forma illeggibile per chi non possiede la chiave corretta
+Cosa fa un server VPN quando riceve i dati cifrati?;Li decifra e li inoltra verso il servizio richiesto
+Come appare la connessione ai siti web visitati quando si usa una VPN?;Sembra provenire dal server VPN e non direttamente dal dispositivo dell'utente
+Per quali scopi vengono utilizzate soprattutto le VPN?;Per proteggere la riservatezza delle comunicazioni accedere in modo sicuro alle reti aziendali e ridurre i rischi sulle reti Wi-Fi pubbliche
+Una VPN rende completamente invisibili su Internet?;No non elimina i malware e non sostituisce antivirus firewall o buone pratiche di sicurezza
+Cos'è il tunnel VPN?;Il canale di comunicazione sicuro creato tra il dispositivo dell'utente e il server VPN
+Cosa avviene ai dati all'interno del tunnel VPN?;Vengono cifrati trasmessi attraverso Internet e decifrati solo una volta raggiunto il server VPN
+Il termine tunnel indica un collegamento fisico dedicato?;No indica un canale logico protetto creato sopra la normale infrastruttura di Internet
+Cosa possono vedere router e provider Internet durante il tragitto dei dati nel tunnel VPN?;Solo che esiste una comunicazione tra il dispositivo e il server VPN ma non il contenuto dei dati
+Fino a dove protegge il tunnel VPN la comunicazione?;Solo il tragitto tra il dispositivo e il server VPN
+Cosa succede oltre il server VPN se il sito utilizza il protocollo HTTPS?;Anche quel secondo tratto della comunicazione sarà cifrato
+VPN e HTTPS sono tecnologie alternative tra loro?;No sono complementari e lavorano insieme per aumentare la sicurezza delle comunicazioni
+Quali sono le principali tipologie di VPN?;VPN Remote Access VPN Site-to-Site e VPN Commerciali
+Cos'è una VPN Remote Access?;Una VPN che permette a un singolo utente di collegarsi in modo sicuro alla rete di un'organizzazione attraverso Internet
+Cos'è una VPN Site-to-Site?;Una VPN che collega due o più reti geograficamente separate come se appartenessero alla stessa rete locale
+Chi gestisce solitamente il collegamento di una VPN Site-to-Site?;I router o i firewall aziendali senza richiedere intervento da parte degli utenti
+Cosa sono le VPN commerciali?;Servizi offerti da aziende specializzate per proteggere la navigazione dell'utente e aumentare la privacy online
+Cosa comporta l'utilizzo di una VPN commerciale in termini di fiducia?;Una parte della fiducia viene trasferita al gestore della VPN poiché il traffico passa attraverso i suoi server
+Quando dovrebbe essere utilizzata una VPN?;Ogni volta che è necessario proteggere le comunicazioni accedere in sicurezza a una rete privata o ridurre l'esposizione delle informazioni su reti non completamente affidabili
+In quale scenario comune è particolarmente utile attivare una VPN?;Quando si utilizzano reti Wi-Fi pubbliche come quelle di aeroporti alberghi biblioteche o bar
+Perché molte aziende richiedono l'uso della VPN per il lavoro da remoto?;Per permettere ai dipendenti di collegarsi ai server interni mantenendo una connessione cifrata
+Una VPN è sempre strettamente necessaria durante la normale navigazione domestica su siti HTTPS?;No perché la comunicazione tra browser e sito è già cifrata anche se la VPN può comunque offrire vantaggi di privacy
+Cos'è la privacy secondo la definizione presentata?;Il diritto di controllare le informazioni che ci riguardano e decidere come vengono raccolte utilizzate e condivise
+In che modo una VPN può migliorare la privacy online?;Nascondendo il proprio indirizzo IP pubblico ai siti visitati e proteggendo il traffico tra dispositivo e server VPN
+Una VPN garantisce l'anonimato assoluto?;No non garantisce l'anonimato assoluto
+Cosa vedono i siti web quando ci si collega tramite VPN invece del proprio indirizzo IP?;L'indirizzo IP del server VPN
+Cosa possono sapere chi gestisce la rete Wi-Fi o il provider Internet quando si usa una VPN?;Che è stata stabilita una connessione verso un server VPN ma non i dati che transitano nel tunnel
+Cosa sono i browser fingerprint?;Tecniche che identificano un dispositivo in base alle sue caratteristiche
+Cosa succede alla fiducia dell'utente quando utilizza una VPN?;Parte della fiducia si sposta dal provider Internet al fornitore della VPN
+Cosa protegge concretamente una VPN secondo i suoi limiti?;La connessione tra il dispositivo e il server VPN ma non tutte le minacce informatiche
+Quali strumenti di sicurezza non sostituisce una VPN?;Un antivirus un firewall l'autenticazione a più fattori gli aggiornamenti di sicurezza o un comportamento prudente dell'utente
+Cosa succede se un utente inserisce volontariamente le proprie credenziali su un sito fraudolento mentre usa una VPN?;La VPN trasmette i dati in modo cifrato ma li consegna comunque al sito malevolo
+Una VPN blocca automaticamente virus o ransomware?;No e non corregge le vulnerabilità del sistema operativo o delle applicazioni installate
+Perché una VPN può rendere la connessione più lenta?;Perché tutto il traffico deve attraversare il server VPN specialmente se distante o congestionato
+Una VPN garantisce sempre l'accesso a qualsiasi contenuto online?;No alcuni servizi possono rilevare l'utilizzo di una VPN e limitarne o impedirne l'accesso

@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup — Tasto Profilo + Pannello Laterale (Topbar)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#00ffc8;
+  --purple:#7c6aff;
+  --surface-0:#080c18;
+  --text-primary:#e2e8f0;
+  --text-muted:rgba(255,255,255,.45);
+  --transition-fast:.18s cubic-bezier(.4,0,.2,1);
+  --role-color:#1e90ff;
+  --role-glow:rgba(30,144,255,.35);
+  --role-dim:rgba(30,144,255,.1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Space Grotesk',system-ui,sans-serif;
+  background:var(--surface-0);color:var(--text-primary);min-height:100vh;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 0%,rgba(0,255,200,.03) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 100%,rgba(124,106,255,.03) 0%,transparent 60%);
+  padding:1.25rem 1rem 3rem;
+}
+.wrap{max-width:660px;margin:0 auto}
+
+/* ── note di design (solo nel mockup, non in produzione) ── */
+.designer-note{
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;padding:1rem 1.1rem;margin-bottom:1.5rem;
+}
+.designer-note h2{font-size:13px;color:var(--accent);margin-bottom:8px;letter-spacing:.3px}
+.designer-note ul{margin:0 0 0 1.1rem;padding:0}
+.designer-note li{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:4px}
+.designer-note li b{color:#fff}
+.designer-note .swatches{display:flex;gap:14px;margin-top:10px;flex-wrap:wrap}
+.swatch{display:flex;align-items:center;gap:6px;font-size:11px;color:rgba(255,255,255,.6);font-family:'Share Tech Mono',monospace}
+.swatch i{width:12px;height:12px;border-radius:50%;display:inline-block;box-shadow:0 0 6px currentColor}
+
+.section-lbl{
+  font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.35);margin:1.75rem 0 .7rem;display:flex;align-items:center;gap:10px;
+}
+.section-lbl::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.15),transparent)}
+
+/* ── selettore ruolo (solo anteprima mockup) ── */
+.role-switch{display:flex;gap:8px;flex-wrap:wrap}
+.role-btn{
+  font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;
+  padding:8px 14px;border-radius:20px;cursor:pointer;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.6);transition:all var(--transition-fast);
+}
+.role-btn:hover{background:rgba(255,255,255,.08);color:#fff}
+.role-btn.active{background:var(--role-dim);border-color:var(--role-color);color:var(--role-color)}
+
+/* ══════ TOPBAR — replica della produzione ══════ */
+.topbar-mock{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(8,12,24,.9);border:1px solid rgba(255,255,255,.07);
+  border-radius:14px;padding:.65rem 1rem;
+}
+.logo-wrap-mock{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.logo-svg-mock{width:26px;height:26px}
+.logo-text-mock{display:flex;flex-direction:column;line-height:1.1}
+.logo-main-mock{font-family:'Orbitron',monospace;font-size:13px;font-weight:900;color:var(--accent)}
+.logo-main-mock em{color:var(--purple);font-style:normal}
+.tb-aula-badge-mock{
+  display:none;
+}
+@media (min-width:480px){
+  .tb-aula-badge-mock{
+    display:flex;flex-direction:column;align-items:flex-end;gap:1px;
+    padding:4px 10px 4px 8px;border-radius:14px;
+    background:rgba(0,255,200,.07);border:1px solid rgba(0,255,200,.2);
+    flex-shrink:0;
+  }
+}
+.tb-aula-name-mock{font-size:12px;font-weight:700;color:#c8ffe8;font-family:'Space Grotesk',sans-serif}
+.tb-aula-hint-mock{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text-muted)}
+.tb-icon-btn-mock{
+  display:flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.6);font-size:16px;cursor:pointer;transition:all var(--transition-fast);
+}
+.tb-icon-btn-mock:hover{background:rgba(255,255,255,.09);color:#fff}
+.tb-spacer{flex:1}
+
+/* ── NUOVO: tasto profilo (sostituisce ruolo-pill + nome + esci) ── */
+.profile-btn{
+  display:flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;cursor:pointer;
+  background:rgba(255,255,255,.04);
+  border:2px solid var(--role-color);
+  color:var(--role-color);font-size:16px;
+  box-shadow:0 0 0 rgba(0,0,0,0);
+  transition:box-shadow var(--transition-fast),transform var(--transition-fast),background var(--transition-fast);
+}
+.profile-btn:hover{background:var(--role-dim);box-shadow:0 0 14px var(--role-glow);transform:translateY(-1px)}
+.profile-btn:active{transform:translateY(0)}
+
+/* ══════ PANNELLO LATERALE ══════ */
+.panel-backdrop{
+  position:fixed;inset:0;background:rgba(4,6,15,.55);backdrop-filter:blur(2px);
+  z-index:9550;opacity:0;pointer-events:none;transition:opacity .22s ease;
+}
+.panel-backdrop.open{opacity:1;pointer-events:auto}
+
+.side-panel{
+  position:fixed;top:0;right:0;bottom:0;width:min(320px,86vw);
+  background:rgba(10,14,28,.98);backdrop-filter:blur(24px);
+  border-left:1px solid rgba(255,255,255,.08);
+  box-shadow:-12px 0 40px rgba(0,0,0,.5);
+  z-index:9560;padding:1.4rem 1.2rem;
+  transform:translateX(100%);transition:transform .3s cubic-bezier(.22,1,.36,1);
+  display:flex;flex-direction:column;
+}
+.side-panel.open{transform:translateX(0)}
+
+.panel-close{
+  position:absolute;top:1rem;right:1rem;
+  width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);
+  font-size:16px;line-height:1;cursor:pointer;transition:all var(--transition-fast);
+}
+.panel-close:hover{color:#fff;background:rgba(255,255,255,.1)}
+
+.panel-header{display:flex;align-items:center;gap:12px;margin:.2rem 0 1.4rem}
+.panel-avatar{
+  width:52px;height:52px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:24px;
+  background:rgba(255,255,255,.04);border:2px solid var(--role-color);
+  color:var(--role-color);box-shadow:0 0 16px var(--role-glow);
+}
+.panel-name{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:4px}
+.panel-role-pill{
+  display:inline-flex;align-items:center;gap:4px;
+  font-family:'Share Tech Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;
+  text-transform:uppercase;padding:2px 9px;border-radius:20px;
+  background:var(--role-dim);border:1px solid var(--role-color);color:var(--role-color);
+}
+
+.panel-info{display:flex;flex-direction:column;gap:14px;margin-bottom:1.3rem}
+.info-row{display:flex;align-items:flex-start;gap:10px}
+.info-row i{font-size:16px;color:rgba(255,255,255,.35);margin-top:2px;flex-shrink:0}
+.info-label{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:2px}
+.info-value{font-size:13px;color:rgba(255,255,255,.85);font-weight:500}
+
+.panel-divider{height:1px;background:rgba(255,255,255,.08);margin:.4rem 0 1rem}
+
+.panel-action{
+  display:flex;align-items:center;gap:9px;width:100%;
+  padding:11px 14px;border-radius:12px;margin-bottom:10px;
+  font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;
+  border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);
+  color:rgba(255,255,255,.75);cursor:pointer;transition:all var(--transition-fast);
+}
+.panel-action i{font-size:16px}
+.panel-action:hover{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.2)}
+.panel-action.tour-action:hover{border-color:rgba(0,255,200,.4);color:var(--accent)}
+.panel-action.logout-action{border-color:rgba(255,80,80,.2);background:rgba(255,80,80,.05);color:rgba(255,100,100,.75)}
+.panel-action.logout-action:hover{border-color:rgba(255,80,80,.4);color:#ff6b6b;background:rgba(255,80,80,.1)}
+
+.panel-footnote{margin-top:auto;font-family:'Share Tech Mono',monospace;font-size:9.5px;color:rgba(255,255,255,.25);line-height:1.6}
+
+.note-text{font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:.6rem}
+.note-text b{color:#fff}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="designer-note">
+    <h2>Note di design — non fa parte del prodotto finale</h2>
+    <ul>
+      <li><b>Un solo tasto</b> sostituisce ruolo-pill + nome + Esci: un cerchio col bordo colorato, come un "profilo" — meno affollamento nella topbar, soprattutto su mobile dove nome+pill+esci si spezzavano.</li>
+      <li><b>Colore del bordo</b> = identità a colpo d'occhio: blu per un docente uomo, rosa per una docente donna, oro per il Direttore (stesso oro già usato per il badge "👑 Direttore" esistente — nessun nuovo colore introdotto per quel ruolo).</li>
+      <li><b>Il click</b> apre un pannello laterale, non un dropdown: c'è più contenuto (nome, ultimo accesso, ultima aula) e due azioni, quindi merita più spazio e una gerarchia chiara dall'alto in basso.</li>
+      <li><b>Esci</b> è la stessa funzione di sempre (doLogout), solo spostata in fondo al pannello — nessuna riscrittura della logica.</li>
+      <li><b>Nuovo:</b> "Rivedi il tour guidato" — riavvia l'onboarding per chi si è perso qualche passaggio, sia per Docente che per Direttore.</li>
+    </ul>
+    <div class="swatches">
+      <span class="swatch"><i style="background:#1e90ff;color:#1e90ff"></i>Docente uomo · #1e90ff</span>
+      <span class="swatch"><i style="background:#ff64b4;color:#ff64b4"></i>Docente donna · #ff64b4</span>
+      <span class="swatch"><i style="background:#ffd700;color:#ffd700"></i>Direttore · #ffd700 (già in uso)</span>
+    </div>
+  </div>
+
+  <div class="section-lbl">Anteprima ruolo (solo controllo del mockup)</div>
+  <div class="role-switch">
+    <button class="role-btn active" data-role="uomo" onclick="setRole('uomo')"><i class="ti ti-gender-male"></i> Docente uomo</button>
+    <button class="role-btn" data-role="donna" onclick="setRole('donna')"><i class="ti ti-gender-female"></i> Docente donna</button>
+    <button class="role-btn" data-role="direttore" onclick="setRole('direttore')"><i class="ti ti-crown"></i> Direttore</button>
+  </div>
+
+  <div class="section-lbl">Topbar — clicca il tasto profilo a destra</div>
+  <div class="topbar-mock">
+    <div class="logo-wrap-mock">
+      <svg class="logo-svg-mock" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".6"/>
+        <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.06)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".4"/>
+        <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+        <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text-mock">
+        <span class="logo-main-mock">Pixel<em>Prof</em></span>
+      </div>
+    </div>
+    <div class="tb-spacer"></div>
+    <div class="tb-aula-badge-mock">
+      <span class="tb-aula-name-mock">3ª B</span>
+      <span class="tb-aula-hint-mock">torna ai moduli</span>
+    </div>
+    <button class="tb-icon-btn-mock" title="Audio"><i class="ti ti-volume-2"></i></button>
+    <button class="tb-icon-btn-mock" title="Tema"><i class="ti ti-moon"></i></button>
+    <button class="tb-icon-btn-mock" title="Hub"><i class="ti ti-layout-grid"></i></button>
+    <button class="profile-btn" id="profileBtn" onclick="togglePanel()" title="Profilo">
+      <i class="ti ti-user" id="profileIcon"></i>
+    </button>
+  </div>
+
+  <div class="section-lbl">Cosa contiene il pannello</div>
+  <p class="note-text">Nome + ruolo in alto, poi due informazioni di sola lettura (<b>ultimo accesso</b> e <b>ultima aula collegata</b> — oggi non salvate su Supabase, richiedono una piccola migrazione + due punti di scrittura lato codice, vedi riepilogo), poi le due azioni: <b>Esci</b> e <b>Rivedi il tour guidato</b>.</p>
+
+</div>
+
+<div class="panel-backdrop" id="backdrop" onclick="closePanel()"></div>
+<aside class="side-panel" id="sidePanel" role="dialog" aria-label="Profilo">
+  <button class="panel-close" onclick="closePanel()" aria-label="Chiudi">×</button>
+
+  <div class="panel-header">
+    <span class="panel-avatar" id="panelAvatar"><i class="ti ti-user"></i></span>
+    <div>
+      <div class="panel-name" id="panelName">Marco Bianchi</div>
+      <span class="panel-role-pill" id="panelRolePill">📖 Docente</span>
+    </div>
+  </div>
+
+  <div class="panel-info">
+    <div class="info-row">
+      <i class="ti ti-clock"></i>
+      <div>
+        <div class="info-label">Ultimo accesso</div>
+        <div class="info-value">Oggi · 09:42</div>
+      </div>
+    </div>
+    <div class="info-row">
+      <i class="ti ti-door"></i>
+      <div>
+        <div class="info-label">Ultima aula collegata</div>
+        <div class="info-value">3ª B — Informatica</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-divider"></div>
+
+  <button class="panel-action logout-action" onclick="alert('In produzione: chiama doLogout() esistente, invariata')">
+    <i class="ti ti-logout"></i> Esci
+  </button>
+  <button class="panel-action tour-action" onclick="alert('In produzione: riavvia OnboardingTour per Docente o Direttore')">
+    <i class="ti ti-map-2"></i> Rivedi il tour guidato
+  </button>
+
+  <div class="panel-footnote">Il colore del bordo profilo segue il ruolo: blu / rosa / oro.</div>
+</aside>
+
+<script>
+const ROLE_DATA = {
+  uomo:      { color:'#1e90ff', glow:'rgba(30,144,255,.35)', dim:'rgba(30,144,255,.1)',  name:'Marco Bianchi', pill:'📖 Docente',   icon:'ti-user'  },
+  donna:     { color:'#ff64b4', glow:'rgba(255,100,180,.35)',dim:'rgba(255,100,180,.1)', name:'Maria Rossi',   pill:'📖 Docente',   icon:'ti-user'  },
+  direttore: { color:'#ffd700', glow:'rgba(255,215,0,.35)',  dim:'rgba(255,215,0,.1)',   name:'Anna Verdi',    pill:'👑 Direttore', icon:'ti-crown' }
+};
+
+function setRole(role){
+  const d = ROLE_DATA[role];
+  document.documentElement.style.setProperty('--role-color', d.color);
+  document.documentElement.style.setProperty('--role-glow', d.glow);
+  document.documentElement.style.setProperty('--role-dim', d.dim);
+  document.querySelectorAll('.role-btn').forEach(b=>b.classList.toggle('active', b.dataset.role===role));
+  document.getElementById('panelName').textContent = d.name;
+  document.getElementById('panelRolePill').textContent = d.pill;
+  ['profileIcon','panelAvatar'].forEach(id=>{});
+  document.getElementById('profileIcon').className = 'ti ' + d.icon;
+  document.getElementById('panelAvatar').innerHTML = '<i class="ti ' + d.icon + '"></i>';
+}
+
+function togglePanel(){
+  document.getElementById('sidePanel').classList.toggle('open');
+  document.getElementById('backdrop').classList.toggle('open');
+}
+function closePanel(){
+  document.getElementById('sidePanel').classList.remove('open');
+  document.getElementById('backdrop').classList.remove('open');
+}
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closePanel(); });
+
+setRole('uomo');
+</script>
+</body>
+</html>

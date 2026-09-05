@@ -1,0 +1,1517 @@
+[
+  {
+    "id": 1,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa selezionare un testo, secondo il modulo?",
+    "options": [
+      "Indicare a Word, evidenziandolo, quale porzione di contenuto sarà interessata dal comando successivo",
+      "Cancellare definitivamente una porzione di testo",
+      "Salvare una porzione di testo negli appunti",
+      "Applicare automaticamente il grassetto a un testo"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 2,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si seleziona una singola parola in Word?",
+    "options": [
+      "Con un clic singolo",
+      "Con un doppio clic su di essa",
+      "Con un triplo clic",
+      "Tenendo premuto CTRL"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il doppio clic seleziona una parola intera."
+  },
+  {
+    "id": 3,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si seleziona un intero paragrafo?",
+    "options": [
+      "Con un doppio clic al suo interno",
+      "Con un triplo clic in un punto qualsiasi al suo interno",
+      "Trascinando il mouse dalla barra di selezione",
+      "Premendo CTRL+A"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il triplo clic in un punto qualsiasi del paragrafo lo seleziona interamente."
+  },
+  {
+    "id": 4,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si seleziona un'intera riga usando la barra di selezione?",
+    "options": [
+      "Cliccando una volta nel margine sinistro della riga",
+      "Cliccando due volte al centro della riga",
+      "Trascinando il mouse dalla fine all'inizio della riga",
+      "Tenendo premuto ALT e cliccando sulla riga"
+    ],
+    "correctIndex": 0,
+    "explanation": "Posizionandosi nella barra di selezione, a sinistra della riga, e cliccando una volta si seleziona l'intera riga."
+  },
+  {
+    "id": 5,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si selezionano più paragrafi non vicini tra loro?",
+    "options": [
+      "Si selezionano tutti con un solo triplo clic",
+      "Si seleziona il primo normalmente, poi si tiene premuto CTRL selezionando gli altri uno alla volta",
+      "Non è possibile selezionare paragrafi non vicini",
+      "Si usa solo la barra di selezione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Si seleziona il primo, poi si tiene premuto CTRL per selezionare gli altri, uno alla volta."
+  },
+  {
+    "id": 6,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale comando da menu seleziona l'intero documento?",
+    "options": [
+      "Home → Modifica → Seleziona → Seleziona tutto",
+      "Layout → Imposta pagina → Seleziona tutto",
+      "Inserisci → Tabella → Seleziona tutto",
+      "Visualizza → Zoom → Seleziona tutto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il comando Home → Modifica → Seleziona → Seleziona tutto seleziona l'intero documento."
+  },
+  {
+    "id": 7,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come appare un testo selezionato a schermo?",
+    "options": [
+      "Con un bordo rosso attorno",
+      "Con uno sfondo colorato",
+      "In corsivo automaticamente",
+      "In una finestra separata"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il testo selezionato appare evidenziato con uno sfondo colorato."
+  },
+  {
+    "id": 8,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che data divenne operativo Bravo sul computer sperimentale Xerox Alto?",
+    "options": [
+      "14 settembre 1974",
+      "1 gennaio 1981",
+      "14 settembre 1981",
+      "1 marzo 1969"
+    ],
+    "correctIndex": 0,
+    "explanation": "Bravo divenne operativo il 14 settembre 1974 sul computer Xerox Alto."
+  },
+  {
+    "id": 9,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi inventò il mouse, già usato da Bravo per indicare posizioni e selezionare testo?",
+    "options": [
+      "Charles Simonyi",
+      "Douglas Engelbart",
+      "Tim Mott",
+      "Butler Lampson"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il mouse fu inventato da Douglas Engelbart pochi anni prima."
+  },
+  {
+    "id": 10,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi aggiunse a Bravo, in un secondo momento, il doppio clic per selezionare una parola intera?",
+    "options": [
+      "Butler Lampson",
+      "Charles Simonyi",
+      "Tim Mott",
+      "Douglas Engelbart"
+    ],
+    "correctIndex": 2,
+    "explanation": "Fu il ricercatore Tim Mott ad aggiungere questa funzione a Bravo."
+  },
+  {
+    "id": 11,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la formattazione del carattere, secondo il modulo?",
+    "options": [
+      "L'insieme delle modifiche applicate all'aspetto visivo del testo selezionato: stile, colore, dimensione e tipo di carattere",
+      "Il processo di salvataggio di un documento",
+      "La scelta del formato del file (.doc o .docx)",
+      "L'organizzazione del testo in paragrafi"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 12,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale scorciatoia applica il grassetto?",
+    "options": [
+      "CTRL+B",
+      "CTRL+I",
+      "CTRL+U",
+      "CTRL+G"
+    ],
+    "correctIndex": 0,
+    "explanation": "CTRL+B applica il grassetto."
+  },
+  {
+    "id": 13,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale scorciatoia applica il corsivo?",
+    "options": [
+      "CTRL+U",
+      "CTRL+I",
+      "CTRL+B",
+      "CTRL+C"
+    ],
+    "correctIndex": 1,
+    "explanation": "CTRL+I applica il corsivo."
+  },
+  {
+    "id": 14,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale scorciatoia applica il sottolineato?",
+    "options": [
+      "CTRL+U",
+      "CTRL+S",
+      "CTRL+I",
+      "CTRL+L"
+    ],
+    "correctIndex": 0,
+    "explanation": "CTRL+U applica il sottolineato."
+  },
+  {
+    "id": 15,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa servono apice e pedice, secondo il modulo?",
+    "options": [
+      "A cambiare il colore del testo",
+      "A spostare il testo leggermente sopra o sotto la riga, utili per unità di misura o note",
+      "A sottolineare il testo con una doppia linea",
+      "A centrare il testo sulla pagina"
+    ],
+    "correctIndex": 1,
+    "explanation": "Apice e pedice spostano il testo sopra o sotto la riga, utili ad esempio per m² o note a piè di pagina."
+  },
+  {
+    "id": 16,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale scheda e gruppo di Word sono raggiungibili gli strumenti di formattazione del carattere?",
+    "options": [
+      "Dalla scheda Home, nel gruppo Carattere",
+      "Dalla scheda Layout, nel gruppo Pagina",
+      "Dalla scheda Inserisci, nel gruppo Testo",
+      "Dalla scheda Visualizza, nel gruppo Zoom"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli strumenti si trovano nella scheda Home, gruppo Carattere."
+  },
+  {
+    "id": 17,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa si applica ogni comando di formattazione del carattere, come il grassetto?",
+    "options": [
+      "All'intero documento, sempre",
+      "Solo al testo selezionato in quel momento",
+      "Solo al primo paragrafo del documento",
+      "A tutti i titoli automaticamente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ogni comando si applica sempre e soltanto al testo selezionato in quel momento."
+  },
+  {
+    "id": 18,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno Aldo Manuzio pubblicò a Venezia l'edizione di Virgilio con il nuovo carattere corsivo?",
+    "options": [
+      "1455",
+      "1501",
+      "1601",
+      "1932"
+    ],
+    "correctIndex": 1,
+    "explanation": "Manuzio pubblicò l'edizione nel 1501."
+  },
+  {
+    "id": 19,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi disegnò il carattere corsivo per Aldo Manuzio?",
+    "options": [
+      "Victor Lardent",
+      "Stanley Morison",
+      "Francesco Griffo",
+      "William Starling Burgess"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il carattere fu disegnato dall'incisore Francesco Griffo."
+  },
+  {
+    "id": 20,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Oltre che esteticamente, perché il carattere corsivo di Manuzio era vantaggioso?",
+    "options": [
+      "Perché costava meno da stampare",
+      "Perché, essendo più compatto, permetteva di stampare più testo nella stessa pagina",
+      "Perché era più facile da leggere per chi aveva problemi di vista",
+      "Perché richiedeva meno inchiostro"
+    ],
+    "correctIndex": 1,
+    "explanation": "Essendo più compatto del carattere tondo, permetteva di stampare più testo nella stessa pagina."
+  },
+  {
+    "id": 21,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che nome prese il carattere corsivo in altre lingue europee, in onore della tipografia italiana?",
+    "options": [
+      "\"Roman\"",
+      "\"Gothic\"",
+      "\"Italic\"",
+      "\"Serif\""
+    ],
+    "correctIndex": 2,
+    "explanation": "Il carattere prese il nome di \"italic\" in onore della tipografia italiana da cui nacque."
+  },
+  {
+    "id": 22,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale opera fu la prima stampata interamente con il nuovo corsivo di Manuzio?",
+    "options": [
+      "La Bibbia a 42 linee",
+      "Le opere di Virgilio",
+      "Il De finibus bonorum et malorum",
+      "Un manuale di tipografia"
+    ],
+    "correctIndex": 1,
+    "explanation": "Manuzio pubblicò un'edizione delle opere di Virgilio con il nuovo carattere."
+  },
+  {
+    "id": 23,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un font, secondo il modulo?",
+    "options": [
+      "Lo stile grafico con cui vengono disegnate le lettere di un testo",
+      "Il colore predefinito del testo",
+      "Lo spazio tra una riga e l'altra",
+      "Il formato del file del documento"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 24,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa distingue i font serif da quelli sans serif?",
+    "options": [
+      "Il colore predefinito",
+      "La presenza o assenza delle grazie, i piccoli tratti terminali alle estremità delle lettere",
+      "La dimensione minima consentita",
+      "La compatibilità con la stampa"
+    ],
+    "correctIndex": 1,
+    "explanation": "I font serif hanno le grazie, i sans serif ne sono privi."
+  },
+  {
+    "id": 25,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale font è citato nel modulo come esempio di font serif?",
+    "options": [
+      "Arial",
+      "Times New Roman",
+      "Calibri",
+      "Verdana"
+    ],
+    "correctIndex": 1,
+    "explanation": "Times New Roman è citato come esempio di font serif."
+  },
+  {
+    "id": 26,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale font è citato nel modulo come esempio di font sans serif?",
+    "options": [
+      "Times New Roman",
+      "Georgia",
+      "Arial",
+      "Garamond"
+    ],
+    "correctIndex": 2,
+    "explanation": "Arial è citato come esempio di font sans serif."
+  },
+  {
+    "id": 27,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In cosa si misura la dimensione di un font?",
+    "options": [
+      "In pixel",
+      "In punti tipografici (pt)",
+      "In centimetri",
+      "In percentuale"
+    ],
+    "correctIndex": 1,
+    "explanation": "La dimensione si misura in punti tipografici (pt)."
+  },
+  {
+    "id": 28,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale dimensione ha in genere il corpo di testo standard, secondo il modulo?",
+    "options": [
+      "6-8 pt",
+      "11-12 pt",
+      "20-24 pt",
+      "30-36 pt"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il corpo di testo standard si aggira sugli 11-12 pt."
+  },
+  {
+    "id": 29,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Di quanti punti dovrebbe essere più grande un titolo rispetto al corpo del testo, secondo la regola citata nel modulo?",
+    "options": [
+      "Almeno 1 punto",
+      "Almeno 4 punti",
+      "Almeno 10 punti",
+      "Almeno 20 punti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un titolo dovrebbe essere più grande di almeno 4 punti rispetto al corpo del testo."
+  },
+  {
+    "id": 30,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi accusò pubblicamente, nel 1929, il quotidiano The Times di essere tipograficamente antiquato?",
+    "options": [
+      "Victor Lardent",
+      "Stanley Morison",
+      "William Starling Burgess",
+      "Aldo Manuzio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fu il tipografo britannico Stanley Morison."
+  },
+  {
+    "id": 31,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi disegnò materialmente il carattere Times New Roman?",
+    "options": [
+      "Stanley Morison",
+      "Francesco Griffo",
+      "Victor Lardent",
+      "William Starling Burgess"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il disegno materiale fu opera del grafico Victor Lardent, del reparto pubblicitario del giornale."
+  },
+  {
+    "id": 32,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su quale font più vecchio si basò il disegno del Times New Roman?",
+    "options": [
+      "Plantin",
+      "Garamond",
+      "Bravo",
+      "Griffo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Times New Roman fu basato su un font più vecchio chiamato Plantin."
+  },
+  {
+    "id": 33,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che mese e anno debuttò il Times New Roman sulle pagine del Times?",
+    "options": [
+      "Ottobre 1932",
+      "Gennaio 1931",
+      "Ottobre 1929",
+      "Marzo 1933"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il nuovo carattere debuttò nell'ottobre del 1932."
+  },
+  {
+    "id": 34,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa emerse dalle ricerche del 1994 sulla paternità del Times New Roman?",
+    "options": [
+      "Che il font non fu mai usato dal Times",
+      "Che il font si sarebbe ispirato a un disegno del 1904 di William Starling Burgess",
+      "Che il font fu disegnato da Aldo Manuzio",
+      "Che il Times non lo adottò mai ufficialmente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le ricerche del 1994 suggerirono un'ispirazione a un disegno del 1904 di William Starling Burgess."
+  },
+  {
+    "id": 35,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa determina l'allineamento di un paragrafo, secondo il modulo?",
+    "options": [
+      "Come le sue righe si dispongono rispetto ai margini della pagina",
+      "Il colore del testo",
+      "La dimensione del font",
+      "Lo spazio tra le lettere"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 36,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale scorciatoia applica l'allineamento a sinistra?",
+    "options": [
+      "CTRL+L",
+      "CTRL+E",
+      "CTRL+R",
+      "CTRL+J"
+    ],
+    "correctIndex": 0,
+    "explanation": "CTRL+L allinea il testo a sinistra."
+  },
+  {
+    "id": 37,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale scorciatoia applica l'allineamento centrato?",
+    "options": [
+      "CTRL+L",
+      "CTRL+E",
+      "CTRL+R",
+      "CTRL+J"
+    ],
+    "correctIndex": 1,
+    "explanation": "CTRL+E centra il testo."
+  },
+  {
+    "id": 38,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale scorciatoia applica l'allineamento a destra?",
+    "options": [
+      "CTRL+L",
+      "CTRL+E",
+      "CTRL+R",
+      "CTRL+J"
+    ],
+    "correctIndex": 2,
+    "explanation": "CTRL+R allinea il testo a destra."
+  },
+  {
+    "id": 39,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale scorciatoia applica l'allineamento giustificato?",
+    "options": [
+      "CTRL+L",
+      "CTRL+E",
+      "CTRL+R",
+      "CTRL+J"
+    ],
+    "correctIndex": 3,
+    "explanation": "CTRL+J giustifica il testo su entrambi i margini."
+  },
+  {
+    "id": 40,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come ottiene Word l'effetto dell'allineamento giustificato?",
+    "options": [
+      "Riducendo la dimensione del font",
+      "Allargando leggermente gli spazi tra le parole, riga per riga",
+      "Aggiungendo automaticamente rientri",
+      "Eliminando la punteggiatura"
+    ],
+    "correctIndex": 1,
+    "explanation": "Word allarga leggermente gli spazi tra le parole per ottenere margini dritti su entrambi i lati."
+  },
+  {
+    "id": 41,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il rientro di un paragrafo?",
+    "options": [
+      "Uno strumento che sposta l'intero paragrafo, o solo la sua prima riga, più all'interno rispetto al margine",
+      "Un tipo di allineamento alternativo al giustificato",
+      "Lo spazio tra una riga e l'altra",
+      "Un simbolo che precede ogni riga in un elenco"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo per il rientro."
+  },
+  {
+    "id": 42,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa servono gli elenchi puntati o numerati, secondo il modulo?",
+    "options": [
+      "A cambiare il font del documento",
+      "Ad anticipare ogni riga con un simbolo o un numero, per presentare informazioni come voci distinte",
+      "A giustificare automaticamente il testo",
+      "A creare automaticamente un modello"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gli elenchi anticipano ogni riga con un simbolo o numero, utili per sequenze di voci distinte."
+  },
+  {
+    "id": 43,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale testo è citato nel modulo come uno dei primi grandi esempi di testo perfettamente giustificato?",
+    "options": [
+      "Il De finibus bonorum et malorum di Cicerone",
+      "La Bibbia a 42 linee di Gutenberg",
+      "Le opere di Virgilio stampate da Manuzio",
+      "Il GML di Charles Goldfarb"
+    ],
+    "correctIndex": 1,
+    "explanation": "La Bibbia a 42 linee di Gutenberg fu tra i primi grandi testi con ogni riga perfettamente giustificata."
+  },
+  {
+    "id": 44,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno fu completata circa la Bibbia a 42 linee di Gutenberg?",
+    "options": [
+      "1455",
+      "1501",
+      "1932",
+      "1974"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Bibbia a 42 linee fu completata attorno al 1455."
+  },
+  {
+    "id": 45,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Non potendo contare su spazi di larghezza variabile, cosa dovette fare Gutenberg per giustificare ogni riga?",
+    "options": [
+      "Stampare due volte ogni pagina",
+      "Variare la larghezza della punteggiatura, usare legature e abbreviazioni, calcolando tutto a mano",
+      "Utilizzare solo parole di lunghezza identica",
+      "Ridurre il numero di righe per pagina"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gutenberg dovette variare punteggiatura, usare legature tra lettere e abbreviazioni, calcolando tutto manualmente."
+  },
+  {
+    "id": 46,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale allineamento è quello predefinito in Word, secondo il modulo?",
+    "options": [
+      "Centrato",
+      "A sinistra",
+      "A destra",
+      "Giustificato"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'allineamento a sinistra è l'impostazione predefinita, la più naturale per la lettura."
+  },
+  {
+    "id": 47,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un file modello (.dotx), secondo il modulo?",
+    "options": [
+      "Un documento che contiene solo testo, senza formattazione",
+      "Un documento speciale che contiene regole di formattazione preimpostate, pronte per essere riutilizzate",
+      "Un file che può essere aperto solo in sola lettura",
+      "Un tipo particolare di font"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 48,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra un documento (.docx) e un modello (.dotx), secondo il modulo?",
+    "options": [
+      "Non c'è alcuna differenza",
+      "Il documento contiene contenuto, il modello contiene regole su come quel contenuto dovrà presentarsi",
+      "Il modello può contenere solo immagini",
+      "Il documento è sempre più grande del modello"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il documento contiene contenuto; il modello contiene le regole di formattazione."
+  },
+  {
+    "id": 49,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede quando si apre un nuovo documento a partire da un modello?",
+    "options": [
+      "Word copia semplicemente il file del modello",
+      "Word crea un documento nuovo che eredita tutte le impostazioni del modello",
+      "Il modello viene cancellato automaticamente",
+      "Il nuovo documento resta collegato in tempo reale al modello originale"
+    ],
+    "correctIndex": 1,
+    "explanation": "Word crea un documento nuovo che eredita le impostazioni del modello, pronto per essere riempito."
+  },
+  {
+    "id": 50,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale settore, estraneo alla scrittura, arriva il concetto alla base del termine dei modelli riutilizzabili?",
+    "options": [
+      "Dalla siderurgia",
+      "Dall'edilizia",
+      "Dalla nautica",
+      "Dall'agricoltura"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il termine boilerplate arriva dalla siderurgia ottocentesca."
+  },
+  {
+    "id": 51,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indicava originariamente il termine inglese \"boilerplate\", nell'Ottocento?",
+    "options": [
+      "Un tipo di carattere tipografico",
+      "Le lastre di acciaio standardizzate usate per costruire le caldaie a vapore",
+      "Un formato di documento",
+      "Un componente delle prime macchine da scrivere"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il termine indicava lastre di acciaio standardizzate per costruire caldaie a vapore."
+  },
+  {
+    "id": 52,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa presero in prestito gli editori di giornali statunitensi, alla fine dell'Ottocento, dal termine boilerplate?",
+    "options": [
+      "Un sistema di stampa a colori",
+      "Le lastre metalliche già incise con testi standard, inviabili identiche a più giornali",
+      "Un nuovo formato di carta",
+      "Un sistema di allineamento del testo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gli editori usarono lastre metalliche con testi standard, inviabili a più giornali contemporaneamente."
+  },
+  {
+    "id": 53,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa passò a indicare, nel Novecento, il termine boilerplate?",
+    "options": [
+      "Solo ai testi religiosi",
+      "Qualunque testo standardizzato pensato per essere riusato con variazioni minime",
+      "Solo ai contratti legali",
+      "Solo ai manuali tecnici"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il termine passò a indicare qualunque testo standardizzato riusabile con variazioni minime, dai contratti al software."
+  },
+  {
+    "id": 54,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa contiene un modello, a differenza di un documento normale, secondo il modulo?",
+    "options": [
+      "Solo immagini",
+      "Regole su come il contenuto dovrà presentarsi — font, margini, colori, struttura",
+      "Solo il testo definitivo, senza possibilità di modifica",
+      "Un elenco di comandi da tastiera"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modello contiene regole di formattazione preimpostate: font, margini, colori, struttura."
+  },
+  {
+    "id": 55,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa risparmierebbe, secondo l'esempio del modulo, la creazione di un modello per chi scrive più volte un documento simile?",
+    "options": [
+      "Di dover ripetere ogni volta le stesse scelte di formattazione già prese la prima volta",
+      "Di dover installare Word ogni volta",
+      "Di dover salvare il documento",
+      "Di dover scegliere il formato del file"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un modello evita di dover ripetere ogni volta le stesse scelte di formattazione."
+  },
+  {
+    "id": 56,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'interlinea, secondo il modulo?",
+    "options": [
+      "Lo spazio verticale tra le righe di uno stesso paragrafo",
+      "Lo spazio aggiuntivo prima o dopo un intero paragrafo",
+      "La distanza tra il testo e il margine della pagina",
+      "La dimensione del font in punti"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 57,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la spaziatura, secondo il modulo?",
+    "options": [
+      "Lo spazio verticale tra le righe di uno stesso paragrafo",
+      "Lo spazio aggiuntivo prima o dopo un intero paragrafo, rispetto a quello successivo",
+      "La larghezza dei margini della pagina",
+      "Lo spazio tra le lettere di una parola"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 58,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa Word ogni volta che si preme INVIO, secondo il modulo?",
+    "options": [
+      "Aggiunge solo uno spazio",
+      "Chiude il paragrafo corrente e ne apre uno nuovo",
+      "Salva automaticamente il documento",
+      "Attiva il pilcrow"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ogni pressione di INVIO chiude un paragrafo e ne apre uno nuovo."
+  },
+  {
+    "id": 59,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale combinazione di tasti inserisce un'interruzione di riga senza aprire un nuovo paragrafo?",
+    "options": [
+      "CTRL+INVIO",
+      "SHIFT+INVIO",
+      "ALT+INVIO",
+      "TAB+INVIO"
+    ],
+    "correctIndex": 1,
+    "explanation": "SHIFT+INVIO inserisce un'interruzione di riga restando nello stesso paragrafo."
+  },
+  {
+    "id": 60,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove si raggiungono le impostazioni di interlinea e spaziatura in Word?",
+    "options": [
+      "Solo da Inserisci → Tabella",
+      "Da Home → Paragrafo → Interlinea e spaziatura, oppure da Layout → Spaziatura paragrafo",
+      "Solo dalla barra di stato",
+      "Solo dal righello"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sono raggiungibili da entrambi questi percorsi, secondo il modulo."
+  },
+  {
+    "id": 61,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'errore comune descritto nel modulo per creare spazio tra i paragrafi?",
+    "options": [
+      "Usare più INVIO consecutivi invece della Spaziatura dopo",
+      "Usare troppi rientri",
+      "Cambiare il font troppo spesso",
+      "Attivare il pilcrow"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'errore comune è usare più INVIO consecutivi per creare visivamente uno spazio più ampio."
+  },
+  {
+    "id": 62,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché usare INVIO multipli per creare spazio rende la struttura del documento più fragile?",
+    "options": [
+      "Perché rallenta il salvataggio del file",
+      "Perché ogni INVIO in più crea un nuovo paragrafo vuoto, che cambia dimensione in modo imprevedibile se si modifica il font",
+      "Perché aumenta il numero di pagine",
+      "Perché disattiva automaticamente lo stile Titolo 1"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ogni INVIO extra crea un paragrafo vuoto il cui spazio dipende dal font, cambiando in modo imprevedibile."
+  },
+  {
+    "id": 63,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la Spaziatura dopo resta invece sempre coerente, secondo il modulo?",
+    "options": [
+      "Perché non dipende da paragrafi vuoti ma da una regola esplicita applicata al paragrafo stesso",
+      "Perché è calcolata automaticamente dalla stampante",
+      "Perché si applica solo ai titoli",
+      "Perché non può mai essere modificata"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Spaziatura dopo è una regola esplicita, non dipende da paragrafi vuoti."
+  },
+  {
+    "id": 64,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama, in inglese, il termine con cui i tipografi indicano ancora oggi l'interlinea?",
+    "options": [
+      "Kerning",
+      "Leading",
+      "Tracking",
+      "Spacing"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il termine inglese è \"leading\"."
+  },
+  {
+    "id": 65,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa deriva fisicamente il termine \"leading\"?",
+    "options": [
+      "Dai listelli di piombo (lead) inseriti tra una riga composta e la successiva",
+      "Dal nome dell'inventore del carattere corsivo",
+      "Dal materiale con cui erano fatte le prime tastiere",
+      "Dal nome della prima macchina da scrivere"
+    ],
+    "correctIndex": 0,
+    "explanation": "I tipografi inserivano listelli di piombo (\"lead\") tra le righe per aumentarne lo spazio."
+  },
+  {
+    "id": 66,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi introdusse, verso il 1772, un sistema sistematico per calcolare lo spessore dei listelli di piombo usati per l'interlinea?",
+    "options": [
+      "Johannes Gutenberg",
+      "Wilhelm Haas",
+      "Edward Hess",
+      "James Koca"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fu lo svizzero Wilhelm Haas a introdurre questo sistema sistematico."
+  },
+  {
+    "id": 67,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è uno stile, secondo il modulo?",
+    "options": [
+      "Un pacchetto di formattazioni predefinite applicabile a un testo con un solo clic",
+      "Un tipo di allineamento del paragrafo",
+      "Un formato di file alternativo a .docx",
+      "Uno strumento per selezionare il testo"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 68,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove si trovano gli stili in Word, secondo il modulo?",
+    "options": [
+      "Nel gruppo Carattere della scheda Home",
+      "Nel gruppo Stili della scheda Home",
+      "Nella scheda Layout",
+      "Nella scheda Inserisci"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gli stili si trovano nel gruppo Stili della scheda Home."
+  },
+  {
+    "id": 69,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa eredita un titolo formattato con lo stile Titolo 1, secondo il modulo?",
+    "options": [
+      "Solo il colore rosso predefinito",
+      "Un font più grande, uno spessore diverso e una spaziatura automatica sopra e sotto",
+      "Solo l'allineamento centrato",
+      "Solo il corsivo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lo stile Titolo 1 eredita un font più grande, uno spessore diverso e spaziatura automatica."
+  },
+  {
+    "id": 70,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la prima ragione per cui gli stili sono uno strumento fondamentale, secondo il modulo?",
+    "options": [
+      "Il risparmio di spazio su disco",
+      "La struttura: Word riconosce automaticamente titoli e corpo del testo, costruendo una gerarchia navigabile",
+      "La possibilità di stampare più velocemente",
+      "La compatibilità con altri programmi"
+    ],
+    "correctIndex": 1,
+    "explanation": "La prima ragione riguarda la struttura del documento e la gerarchia navigabile."
+  },
+  {
+    "id": 71,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la seconda ragione, ancora più importante secondo il modulo, per cui usare gli stili?",
+    "options": [
+      "La modifica globale: cambiando lo stile, tutto il testo a cui è applicato cambia insieme",
+      "La possibilità di nascondere il testo",
+      "La riduzione delle dimensioni del file",
+      "La compatibilità con le vecchie versioni di Word"
+    ],
+    "correctIndex": 0,
+    "explanation": "La modifica globale permette di aggiornare tutte le occorrenze di uno stile in un solo istante."
+  },
+  {
+    "id": 72,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se si cambia il colore dello stile Titolo 1 applicato a più titoli nel documento?",
+    "options": [
+      "Cambia solo il primo titolo",
+      "Tutti i titoli a cui quello stile è applicato cambiano insieme, in un solo istante",
+      "Bisogna comunque modificare ogni titolo singolarmente",
+      "Il colore cambia solo dopo aver salvato e riaperto il documento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Tutti i titoli con quello stile cambiano insieme, senza intervenire su ognuno singolarmente."
+  },
+  {
+    "id": 73,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno Charles Goldfarb sviluppò per IBM il sistema GML?",
+    "options": [
+      "1969",
+      "1974",
+      "1986",
+      "1932"
+    ],
+    "correctIndex": 0,
+    "explanation": "GML fu sviluppato nel 1969."
+  },
+  {
+    "id": 74,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quali colleghi sviluppò Goldfarb il sistema GML?",
+    "options": [
+      "Butler Lampson e Charles Simonyi",
+      "Edward Mosher e Raymond Lorie",
+      "Tim Mott e Larry Tesler",
+      "Stanley Morison e Victor Lardent"
+    ],
+    "correctIndex": 1,
+    "explanation": "Goldfarb sviluppò GML insieme a Edward Mosher e Raymond Lorie."
+  },
+  {
+    "id": 75,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa derivano le iniziali del nome GML?",
+    "options": [
+      "Da un acronimo casuale",
+      "Dai cognomi dei tre autori: Goldfarb, Mosher, Lorie",
+      "Dal nome del linguaggio \"General Markup Language\" senza legame con gli autori",
+      "Dal nome dell'azienda produttrice"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le iniziali GML derivano proprio dai cognomi dei tre autori."
+  },
+  {
+    "id": 76,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama la versione più completa e formale sviluppata da Goldfarb nel 1974?",
+    "options": [
+      "HTML",
+      "SGML",
+      "XML",
+      "DOCX"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nel 1974 Goldfarb sviluppò lo SGML."
+  },
+  {
+    "id": 77,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno lo SGML diventò standard internazionale ISO?",
+    "options": [
+      "1974",
+      "1986",
+      "1969",
+      "1990"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lo SGML diventò standard ISO nel 1986."
+  },
+  {
+    "id": 78,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale linguaggio del Web pose le basi, alla fine degli anni Ottanta, grazie ai principi dello SGML?",
+    "options": [
+      "XML",
+      "HTML",
+      "CSS",
+      "JSON"
+    ],
+    "correctIndex": 1,
+    "explanation": "I principi dello SGML posero le basi anche dell'HTML."
+  },
+  {
+    "id": 79,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il pilcrow, secondo il modulo?",
+    "options": [
+      "Un simbolo che mostra a schermo i segni di formattazione normalmente invisibili",
+      "Uno stile predefinito per i titoli",
+      "Un tipo di allineamento del paragrafo",
+      "Un font tradizionalmente usato per i titoli"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 80,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale scorciatoia da tastiera si attiva il pilcrow?",
+    "options": [
+      "CTRL+SHIFT+8",
+      "CTRL+P",
+      "CTRL+ALT+P",
+      "CTRL+SHIFT+P"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il pilcrow si attiva con CTRL+SHIFT+8."
+  },
+  {
+    "id": 81,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come appare uno spazio, quando il pilcrow è attivato?",
+    "options": [
+      "Come una piccola freccia",
+      "Come un piccolo punto a metà altezza",
+      "Come il simbolo ¶",
+      "Come una linea tratteggiata"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ogni spazio appare come un piccolo punto a metà altezza."
+  },
+  {
+    "id": 82,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come appare una tabulazione, quando il pilcrow è attivato?",
+    "options": [
+      "Come un piccolo punto",
+      "Come il simbolo ¶",
+      "Come una piccola freccia",
+      "Come uno spazio vuoto invisibile"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ogni tabulazione appare come una piccola freccia."
+  },
+  {
+    "id": 83,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve principalmente attivare il pilcrow, secondo il modulo?",
+    "options": [
+      "A stampare il documento più velocemente",
+      "A individuare errori altrimenti invisibili, come spazi ripetuti o INVIO multipli",
+      "A cambiare automaticamente il font",
+      "A creare un nuovo modello"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il pilcrow aiuta a individuare errori invisibili come spazi ripetuti al posto di una tabulazione."
+  },
+  {
+    "id": 84,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Il pilcrow aggiunge qualcosa al contenuto del documento?",
+    "options": [
+      "Sì, aggiunge nuovi caratteri",
+      "No, si limita a rendere visibile una struttura che esiste già",
+      "Sì, cambia automaticamente la formattazione",
+      "Sì, aggiunge un nuovo paragrafo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il pilcrow non aggiunge nulla, rende solo visibile una struttura già esistente."
+  },
+  {
+    "id": 85,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale segno usavano i copisti dell'antica Grecia per segnalare un cambio di argomento?",
+    "options": [
+      "La lettera K",
+      "La lettera C",
+      "Un trattino orizzontale chiamato paragraphos",
+      "Il simbolo ¶"
+    ],
+    "correctIndex": 2,
+    "explanation": "I copisti greci usavano il paragraphos, un trattino orizzontale."
+  },
+  {
+    "id": 86,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale lettera fu sostituito il paragraphos, verso il II secolo?",
+    "options": [
+      "La lettera C",
+      "La lettera K",
+      "La lettera P",
+      "La lettera G"
+    ],
+    "correctIndex": 1,
+    "explanation": "Verso il II secolo il segno fu sostituito dalla lettera K, iniziale di \"kaput\"."
+  },
+  {
+    "id": 87,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale lettera fu sostituita, entro il XII secolo, la lettera K?",
+    "options": [
+      "La lettera P",
+      "La lettera C",
+      "La lettera G",
+      "La lettera R"
+    ],
+    "correctIndex": 1,
+    "explanation": "Entro il XII secolo la K lasciò il posto alla C, iniziale di \"capitulum\"."
+  },
+  {
+    "id": 88,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi arricchì la lettera C con una o due aste verticali, fino a farla diventare il pilcrow che conosciamo oggi?",
+    "options": [
+      "Gli amanuensi medievali, detti rubricatori",
+      "I tipografi rinascimentali",
+      "Gli editori di giornali dell'Ottocento",
+      "Gli sviluppatori di Word"
+    ],
+    "correctIndex": 0,
+    "explanation": "Furono gli amanuensi medievali, i rubricatori, ad arricchire la C fino a farla diventare il pilcrow."
+  },
+  {
+    "id": 89,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale colore veniva disegnato il pilcrow nei manoscritti medievali, per risaltare sulla pagina?",
+    "options": [
+      "Blu",
+      "Nero",
+      "Rosso",
+      "Oro"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il pilcrow veniva disegnato in inchiostro rosso, da cui il nome \"rubricatori\"."
+  },
+  {
+    "id": 90,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le tabulazioni, secondo il modulo?",
+    "options": [
+      "Punti di arresto predefiniti lungo la riga, richiamabili con il tasto TAB, per disporre il testo in colonne ordinate",
+      "Simboli che mostrano i segni di formattazione invisibili",
+      "Uno stile predefinito per i titoli",
+      "Uno strumento per allineare le immagini"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione data nel modulo."
+  },
+  {
+    "id": 91,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché allineare il testo con la barra spaziatrice non funziona in modo affidabile, secondo il modulo?",
+    "options": [
+      "Perché la barra spaziatrice non esiste su tutte le tastiere",
+      "Perché ogni spazio ha una larghezza che dipende dal font e dalla dimensione del testo",
+      "Perché Word blocca l'uso ripetuto della barra spaziatrice",
+      "Perché crea automaticamente un nuovo paragrafo"
+    ],
+    "correctIndex": 1,
+    "explanation": "La larghezza di ogni spazio dipende dal font e dalla dimensione, quindi l'allineamento si rompe se cambiano."
+  },
+  {
+    "id": 92,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove sono richiamabili le coordinate delle tabulazioni, indipendenti dal font?",
+    "options": [
+      "Dal righello",
+      "Dalla barra di stato",
+      "Dal pilcrow",
+      "Dallo stile Titolo 1"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le tabulazioni ancorano il testo a coordinate precise sul righello."
+  },
+  {
+    "id": 93,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanti tipi di tabulazione esistono, secondo il modulo?",
+    "options": [
+      "Due",
+      "Tre",
+      "Quattro",
+      "Cinque"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo elenca quattro tipi: sinistra, centrale, destra, decimale."
+  },
+  {
+    "id": 94,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la tabulazione sinistra?",
+    "options": [
+      "Il testo si centra sul punto di tabulazione",
+      "Il testo parte dal punto di tabulazione e prosegue verso destra",
+      "Il testo si allinea terminando sul punto di tabulazione",
+      "Il testo si allinea sulla virgola decimale"
+    ],
+    "correctIndex": 1,
+    "explanation": "La tabulazione sinistra fa proseguire il testo verso destra a partire dal punto."
+  },
+  {
+    "id": 95,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la tabulazione centrale?",
+    "options": [
+      "Il testo parte dal punto di tabulazione",
+      "Il testo si centra sul punto di tabulazione",
+      "Il testo si allinea sulla virgola",
+      "Il testo termina esattamente sul punto di tabulazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "La tabulazione centrale centra il testo sul punto."
+  },
+  {
+    "id": 96,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la tabulazione destra?",
+    "options": [
+      "Il testo si centra sul punto",
+      "Il testo parte dal punto e prosegue verso destra",
+      "Il testo si allinea terminando esattamente sul punto di tabulazione",
+      "Il testo si allinea sulla virgola decimale"
+    ],
+    "correctIndex": 2,
+    "explanation": "La tabulazione destra fa terminare il testo esattamente sul punto."
+  },
+  {
+    "id": 97,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la tabulazione decimale?",
+    "options": [
+      "Allinea le cifre sulla virgola (o sul punto) decimale, indipendentemente dal numero di cifre",
+      "Allinea il testo al centro della pagina",
+      "Elimina automaticamente gli spazi in eccesso",
+      "Trasforma i numeri in testo"
+    ],
+    "correctIndex": 0,
+    "explanation": "La tabulazione decimale è pensata apposta per i numeri, allineandoli sulla virgola."
+  },
+  {
+    "id": 98,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale tipo di tabulazione dà il risultato più professionale per un elenco di prezzi, secondo il modulo?",
+    "options": [
+      "Sinistra",
+      "Centrale",
+      "Destra",
+      "Decimale"
+    ],
+    "correctIndex": 3,
+    "explanation": "La tabulazione decimale allinea ogni prezzo perfettamente sulla virgola."
+  },
+  {
+    "id": 99,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su quali macchine nasce il tasto TAB, per risolvere il problema di scrivere colonne di numeri?",
+    "options": [
+      "Sui primi computer",
+      "Sulle macchine da scrivere meccaniche di fine Ottocento",
+      "Sulle telescriventi del Novecento",
+      "Sulle prime stampanti a getto d'inchiostro"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il tasto TAB nasce sulle macchine da scrivere meccaniche di fine Ottocento."
+  },
+  {
+    "id": 100,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno Edward Hess brevettò un sistema di tabulazione con arresti fissi attivabili o disattivabili?",
+    "options": [
+      "1904",
+      "1940",
+      "1974",
+      "1932"
+    ],
+    "correctIndex": 0,
+    "explanation": "Edward Hess brevettò questo sistema nel 1904."
+  },
+  {
+    "id": 101,
+    "module": "formattare-il-testo",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno James Koca brevettò il meccanismo per impostare i punti di tabulazione direttamente dalla tastiera?",
+    "options": [
+      "1904",
+      "1940",
+      "1969",
+      "1986"
+    ],
+    "correctIndex": 1,
+    "explanation": "James Koca brevettò questo meccanismo nel 1940."
+  }
+]

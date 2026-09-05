@@ -4775,8 +4775,16 @@ body{
 .onb-ring{
   position:fixed;
   border-radius:14px;
-  border:2px solid var(--accent);
-  box-shadow:0 0 0 4px rgba(0,255,200,.15),0 0 30px rgba(0,255,200,.25);
+  border:3px solid var(--accent);
+  box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 6px rgba(0,255,200,.35),0 0 34px rgba(0,255,200,.45);
+  /* v8.24.1 — richiesta esplicita utente: dopo aver schiarito .onb-overlay
+     (v8.24.0), l'anello (bordo 2px + glow debole, alpha .15/.25) risultava
+     poco visibile: con più UI reale visibile dietro al velo, l'anello
+     aveva meno contrasto per "staccare" dal resto. Bordo portato a 3px,
+     aggiunto un sottile anello scuro (0 0 0 1px nero .55) appena fuori dal
+     bordo per garantire un distacco netto qualunque sia lo sfondo dietro
+     (chiaro, scuro o già tendente al teal come le card), poi il consueto
+     alone ciano ma con alpha quasi raddoppiata (.35/.45 invece di .15/.25). */
   pointer-events:none;
   z-index:9860;
   transition:top .35s cubic-bezier(.22,1,.36,1),left .35s cubic-bezier(.22,1,.36,1),
@@ -4789,8 +4797,8 @@ body{
   animation:onbPulse 1.8s ease-in-out infinite;
 }
 @keyframes onbPulse{
-  0%,100%{box-shadow:0 0 0 4px rgba(0,255,200,.15),0 0 30px rgba(0,255,200,.25);}
-  50%{box-shadow:0 0 0 7px rgba(0,255,200,.22),0 0 40px rgba(0,255,200,.35);}
+  0%,100%{box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 6px rgba(0,255,200,.35),0 0 34px rgba(0,255,200,.45);}
+  50%{box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 9px rgba(0,255,200,.45),0 0 46px rgba(0,255,200,.6);}
 }
 
 .onb-tooltip{

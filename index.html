@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v8.24.2</title>
+<title>PixelProf — ICDL Lab interattivo v8.25.0</title>
 <link rel="icon" href="public/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
@@ -44,6 +44,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 <link rel="stylesheet" href="pixelprof.css">
 <link rel="stylesheet" href="css/flip-card.css">
 <link rel="stylesheet" href="css/act-select.css">
+<link rel="stylesheet" href="css/topbar-profile.css">
 </head>
 <body>
 
@@ -95,7 +96,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v8.24.2</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v8.25.0</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -565,7 +566,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v8.24.2</span>
+        <span class="cs-logo-sub">ICDL Lab · v8.25.0</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v3.2.2 -->
@@ -886,7 +887,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v8.24.2</span>
+      <span class="logo-sub">ICDL Lab · v8.25.0</span>
       <span class="logo-hint">cambia aula</span>
     </div>
   </div>
@@ -936,16 +937,60 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     <button id="tb-home" style="display:none" onclick="goHome()"></button>
   </nav>
 
-  <!-- User badge: ruolo | nome | esci -->
-  <div id="tb-user-badge" style="display:none;align-items:center;gap:6px;flex-shrink:0">
-    <span id="tb-user-role-pill" style="font-family:'Share Tech Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:2px 8px;border-radius:20px;background:rgba(255,215,0,.12);border:1px solid rgba(255,215,0,.3);color:#ffd700"></span>
-    <span id="tb-user-name" style="font-size:11px;color:rgba(255,255,255,.5);font-family:'Share Tech Mono',monospace;white-space:nowrap;max-width:80px;overflow:hidden;text-overflow:ellipsis"></span>
-    <button class="cs-logout-btn" onclick="doLogout()" style="padding:4px 9px;font-size:10px"><i class="ti ti-logout"></i></button>
-  </div>
+  <!-- Tasto profilo unico (v8.25.0) — sostituisce ruolo-pill + nome +
+       esci separati. Bordo colorato per ruolo/genere impostato via JS
+       (js/profile-panel.js render()). Click apre il pannello laterale
+       qui sotto (#profile-panel). -->
+  <button id="tb-profile-btn" class="tb-profile-btn" onclick="ProfilePanel.toggle()" title="Profilo">
+    <i class="ti ti-user" id="tb-profile-icon"></i>
+  </button>
 
 </div>
 <!-- Backdrop per chiudere Hub cliccando fuori -->
 <div id="tb-hub-backdrop" onclick="closeHubMenu()" style="display:none;position:fixed;inset:0;z-index:90"></div>
+
+<!-- Pannello Profilo (v8.25.0) — nome, ruolo, ultimo accesso, ultima
+     aula collegata, poi Esci e Rivedi il tour guidato. Markup e stili
+     in css/topbar-profile.css, logica in js/profile-panel.js. -->
+<div id="profile-panel-backdrop" class="profile-panel-backdrop" onclick="ProfilePanel.close()"></div>
+<aside id="profile-panel" class="profile-panel" role="dialog" aria-label="Profilo">
+  <button class="pp-panel-close" onclick="ProfilePanel.close()" aria-label="Chiudi">×</button>
+
+  <div class="pp-panel-header">
+    <span class="pp-profile-avatar" id="pp-profile-avatar"><i class="ti ti-user"></i></span>
+    <div>
+      <div class="pp-profile-name" id="pp-profile-name">—</div>
+      <span class="pp-profile-role" id="pp-profile-role">📖 Docente</span>
+    </div>
+  </div>
+
+  <div class="pp-panel-info">
+    <div class="pp-info-row">
+      <i class="ti ti-clock"></i>
+      <div>
+        <div class="pp-info-label">Ultimo accesso</div>
+        <div class="pp-info-value" id="pp-profile-last-access">—</div>
+      </div>
+    </div>
+    <div class="pp-info-row">
+      <i class="ti ti-door"></i>
+      <div>
+        <div class="pp-info-label">Ultima aula collegata</div>
+        <div class="pp-info-value" id="pp-profile-last-classroom">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pp-panel-divider"></div>
+
+  <button class="pp-panel-action pp-logout-action cs-logout-btn" onclick="doLogout()">
+    <i class="ti ti-logout"></i> Esci
+  </button>
+  <button class="pp-panel-action pp-tour-action" onclick="ProfilePanel.restartTour()">
+    <i class="ti ti-map-2"></i> Rivedi il tour guidato
+  </button>
+</aside>
+
 
 <!-- ======================================
      HOME

@@ -634,7 +634,7 @@ function fcSelLevel(liv){
    disabilitate (style="opacity:.4;cursor:not-allowed"). dataset come
    guardia anti-doppio-congelamento e per ripristinare l'esatto valore
    inline precedente (di norma nessuno, ma non si sa mai). */
-const FC_TOUR_RISK_SELECTORS = ['.fc-exit-btn', '#tb-course-badge', '.logo-wrap', '.cs-logout-btn', '#tb-hub-btn'];
+const FC_TOUR_RISK_SELECTORS = ['.fc-exit-btn', '#tb-course-badge', '.logo-wrap', '#tb-profile-btn', '#tb-hub-btn'];
 
 function _fcFreezeNavForTour(){
   FC_TOUR_RISK_SELECTORS.forEach(sel => {

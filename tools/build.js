@@ -73,6 +73,7 @@ const BUNDLE_FILES = [
   'act-select.js',
   'courses.js',
   'app.js',
+  'profile-panel.js',
   'csv-import.js',
 ];
 

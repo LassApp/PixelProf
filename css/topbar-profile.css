@@ -1,0 +1,191 @@
+/* ==================================================
+   topbar-profile.css — PixelProf (tasto Profilo + pannello
+   laterale in topbar, v8.25.0)
+   ------------------------------------------------------------------
+   Foglio dedicato e isolato (richiesta esplicita: CSS/JS di questo
+   nuovo tasto a parte, per alleggerire pixelprof.css) — stessa
+   impostazione di css/flip-card.css e css/act-select.css: caricato
+   con un <link> separato DOPO pixelprof.css e DOPO css/act-select.css
+   in index.html.
+
+   Il layer "topbarprofile" è dichiarato nell'ordine master in
+   pixelprof.css (dopo "actselect", prima di "theme"): qui sotto solo
+   le regole DARK (default). Le regole di tema chiaro vivono nel
+   layer "theme" già esistente, in un blocco separato più in basso in
+   QUESTO stesso file — stessa tecnica di css/act-select.css.
+
+   SOSTITUISCE il vecchio #tb-user-badge (ruolo-pill + nome + pulsante
+   esci, tutti inline-style in index.html, nessuna regola dedicata in
+   pixelprof.css a parte "#tb-user-badge{flex-shrink:0}" — rimossa).
+
+   Colori: --profile-ring/--profile-bg sono impostati inline via JS
+   (js/profile-panel.js, funzione render()) in base a ruolo/genere —
+   qui solo il fallback e la struttura. Nessun nuovo colore
+   introdotto: riusa 1:1 quelli già in pixelprof.css per
+   .tdc-gender-icon (scheda docente del Direttore) e per il badge
+   "👑 Dir" esistente.
+================================================== */
+
+@layer topbarprofile {
+
+/* ── Tasto profilo in topbar ── */
+.tb-profile-btn{
+  display:none;
+  align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;cursor:pointer;
+  background:rgba(255,255,255,.04);
+  border:2px solid var(--profile-ring, #00cfff);
+  color:var(--profile-ring, #00cfff);
+  font-size:16px;
+  transition:box-shadow .18s cubic-bezier(.4,0,.2,1),
+             transform .18s cubic-bezier(.4,0,.2,1),
+             background .18s cubic-bezier(.4,0,.2,1);
+}
+.tb-profile-btn.visible{ display:flex; }
+.tb-profile-btn:hover{
+  background:var(--profile-bg, rgba(0,207,255,.1));
+  box-shadow:0 0 14px var(--profile-bg, rgba(0,207,255,.3));
+  transform:translateY(-1px);
+}
+.tb-profile-btn:active{ transform:translateY(0); }
+
+/* ── Backdrop + pannello laterale ──
+   NOTA: display:none (non solo transform) nello stato chiuso — stesso
+   meccanismo già usato da .tb-hub-menu.hidden. Necessario perché il
+   motore del tour guidato (js/onboarding.js) verifica la visibilità
+   reale di un target con offsetParent!==null: un elemento sempre
+   "display:flex" ma solo spostato fuori schermo via transform
+   risulterebbe sempre "visibile" agli occhi del tour, anche a
+   pannello chiuso. L'animazione di apertura usa perciò una keyframe
+   (parte da display:none) invece di una transition su transform. */
+.profile-panel-backdrop{
+  display:none;
+  position:fixed; inset:0;
+  background:rgba(4,6,15,.55); backdrop-filter:blur(2px);
+  z-index:9550;
+}
+.profile-panel-backdrop.open{
+  display:block;
+  animation:ppBackdropIn .22s ease both;
+}
+@keyframes ppBackdropIn{ from{ opacity:0; } to{ opacity:1; } }
+
+.profile-panel{
+  display:none;
+  position:fixed; top:0; right:0; bottom:0;
+  width:min(320px, 86vw);
+  background:rgba(10,14,28,.98); backdrop-filter:blur(24px);
+  border-left:1px solid rgba(255,255,255,.08);
+  box-shadow:-12px 0 40px rgba(0,0,0,.5);
+  z-index:9560; padding:1.4rem 1.2rem;
+  flex-direction:column;
+}
+.profile-panel.open{
+  display:flex;
+  animation:ppPanelIn .3s cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes ppPanelIn{
+  from{ transform:translateX(100%); }
+  to{ transform:translateX(0); }
+}
+
+.pp-panel-close{
+  position:absolute; top:1rem; right:1rem;
+  width:28px; height:28px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04); color:rgba(255,255,255,.5);
+  font-size:16px; line-height:1; cursor:pointer;
+  transition:all .18s cubic-bezier(.4,0,.2,1);
+}
+.pp-panel-close:hover{ color:#fff; background:rgba(255,255,255,.1); }
+
+/* ── Header: avatar + nome + ruolo ── */
+.pp-panel-header{ display:flex; align-items:center; gap:12px; margin:.2rem 0 1.4rem; }
+.pp-profile-avatar{
+  width:52px; height:52px; border-radius:50%; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; font-size:24px;
+  background:rgba(255,255,255,.04);
+  border:2px solid var(--profile-ring, #00cfff);
+  color:var(--profile-ring, #00cfff);
+  box-shadow:0 0 16px var(--profile-bg, rgba(0,207,255,.3));
+}
+.pp-profile-name{
+  font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:700;
+  color:#fff; margin-bottom:4px;
+}
+.pp-profile-role{
+  display:inline-flex; align-items:center; gap:4px;
+  font-family:'Share Tech Mono',monospace; font-size:9px; font-weight:700;
+  letter-spacing:1px; text-transform:uppercase; padding:2px 9px; border-radius:20px;
+  background:var(--profile-bg, rgba(0,207,255,.1));
+  border:1px solid var(--profile-ring, #00cfff);
+  color:var(--profile-ring, #00cfff);
+}
+
+/* ── Info: ultimo accesso / ultima aula ── */
+.pp-panel-info{ display:flex; flex-direction:column; gap:14px; margin-bottom:1.3rem; }
+.pp-info-row{ display:flex; align-items:flex-start; gap:10px; }
+.pp-info-row i{ font-size:16px; color:rgba(255,255,255,.35); margin-top:2px; flex-shrink:0; }
+.pp-info-label{
+  font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:1px;
+  text-transform:uppercase; color:rgba(255,255,255,.35); margin-bottom:2px;
+}
+.pp-info-value{ font-size:13px; color:rgba(255,255,255,.85); font-weight:500; }
+
+.pp-panel-divider{ height:1px; background:rgba(255,255,255,.08); margin:.4rem 0 1rem; }
+
+/* ── Azioni: Esci / Rivedi il tour ── */
+.pp-panel-action{
+  display:flex; align-items:center; gap:9px; width:100%;
+  padding:11px 14px; border-radius:12px; margin-bottom:10px;
+  font-family:'Space Grotesk',sans-serif; font-size:13px; font-weight:600;
+  border:1px solid rgba(255,255,255,.1); background:rgba(255,255,255,.03);
+  color:rgba(255,255,255,.75); cursor:pointer;
+  transition:all .18s cubic-bezier(.4,0,.2,1);
+}
+.pp-panel-action i{ font-size:16px; }
+.pp-panel-action:hover{ background:rgba(255,255,255,.07); color:#fff; border-color:rgba(255,255,255,.2); }
+
+.pp-panel-action.pp-tour-action:hover{ border-color:rgba(0,255,200,.4); color:var(--accent); }
+
+.pp-panel-action.pp-logout-action{
+  border-color:rgba(255,80,80,.2); background:rgba(255,80,80,.05); color:rgba(255,100,100,.75);
+}
+.pp-panel-action.pp-logout-action:hover{
+  border-color:rgba(255,80,80,.4); color:#ff6b6b; background:rgba(255,80,80,.1);
+}
+
+} /* @layer topbarprofile */
+
+/* ── Tema chiaro — stesso layer "theme" già dichiarato in
+   pixelprof.css, blocco aggiuntivo in questo file (tecnica identica
+   a css/act-select.css) ── */
+@layer theme {
+  html[data-theme="light"] .tb-profile-btn{ background:rgba(0,0,0,.03); }
+  html[data-theme="light"] .profile-panel-backdrop{ background:rgba(20,30,60,.25); }
+  html[data-theme="light"] .profile-panel{
+    background:rgba(255,255,255,.97);
+    border-left-color:rgba(20,30,60,.08);
+    box-shadow:-12px 0 40px rgba(20,30,60,.12);
+  }
+  html[data-theme="light"] .pp-panel-close{
+    background:rgba(0,0,0,.04); border-color:rgba(20,30,60,.12); color:rgba(16,24,42,.5);
+  }
+  html[data-theme="light"] .pp-panel-close:hover{ color:#10182a; background:rgba(0,0,0,.08); }
+  html[data-theme="light"] .pp-profile-name{ color:#10182a; }
+  html[data-theme="light"] .pp-info-label{ color:rgba(16,24,42,.45); }
+  html[data-theme="light"] .pp-info-value{ color:rgba(16,24,42,.85); }
+  html[data-theme="light"] .pp-panel-divider{ background:rgba(20,30,60,.1); }
+  html[data-theme="light"] .pp-panel-action{
+    background:rgba(0,0,0,.02); border-color:rgba(20,30,60,.1); color:rgba(16,24,42,.65);
+  }
+  html[data-theme="light"] .pp-panel-action:hover{
+    background:rgba(0,0,0,.05); color:#10182a; border-color:rgba(20,30,60,.2);
+  }
+  html[data-theme="light"] .pp-panel-action.pp-logout-action{
+    border-color:rgba(255,60,80,.25); background:rgba(255,60,80,.04); color:#c93a4f;
+  }
+  html[data-theme="light"] .pp-panel-action.pp-logout-action:hover{
+    border-color:rgba(255,60,80,.5); background:rgba(255,60,80,.08); color:#a8283c;
+  }
+}

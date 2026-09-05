@@ -1,6 +1,19 @@
 /**
  * auth.js — PixelProf v6.1.0
  *
+ * v8.25.0 — Pannello Profilo in topbar (icona + anello colorato per
+ *   ruolo/genere → pannello laterale):
+ *   - _loadProfile() seleziona ora anche 'genere, last_login_at,
+ *     last_classroom_id' (prima solo id/name/role/active — 'genere'
+ *     era già selezionato in listTeachers() per la vista Direttore,
+ *     ma mancava per il PROPRIO profilo del docente loggato).
+ *   - Nuova funzione touchLoginMeta(classroomId?): chiama la NUOVA RPC
+ *     update_own_login_meta(p_classroom_id uuid) (SQL consegnata a
+ *     parte, sql/v5.2.0_add_profile_login_meta.sql — RICHIEDE quella
+ *     migrazione: aggiunge last_login_at/last_classroom_id a profiles).
+ *     Fire-and-forget: fallisce in silenzio (solo console.warn) finché
+ *     la migrazione non è applicata, non blocca mai login o cambio aula.
+ *
  * v6.1.0 — Redesign "Gestione Docenti" (solo UI/UX, vedi riepilogo):
  *   - listTeachers() seleziona ora anche 'genere'. RICHIEDE la migrazione SQL
  *     (consegnata a parte): ALTER TABLE public.profiles ADD COLUMN IF NOT
@@ -100,7 +113,7 @@ async function _loadProfile(userId, force = false) {
   try {
     const { data, error } = await supabase
       .from('profiles')
-      .select('id, name, role, active')
+      .select('id, name, role, active, genere, last_login_at, last_classroom_id')
       .eq('id', userId)
       .single();
     if (!error && data) {
@@ -112,6 +125,32 @@ async function _loadProfile(userId, force = false) {
     }
   } catch (err) {
     console.warn('[Auth] _loadProfile eccezione:', err.message);
+  }
+}
+
+/**
+ * v8.25.0 — Aggiorna last_login_at (sempre, now()) e last_classroom_id
+ * (solo se classroomId è passato) sulla riga profilo dell'utente
+ * corrente, per il pannello Profilo in topbar. Chiama la RPC
+ * update_own_login_meta (sql/v5.2.0_add_profile_login_meta.sql).
+ * Fire-and-forget: non lancia mai, solo console.warn se la migrazione
+ * non è ancora applicata — non deve MAI bloccare login o cambio aula.
+ */
+async function touchLoginMeta(classroomId) {
+  try {
+    const { error } = await supabase.rpc('update_own_login_meta', {
+      p_classroom_id: classroomId || null
+    });
+    if (error) {
+      console.warn('[Auth] touchLoginMeta RPC error (migrazione sql/v5.2.0_add_profile_login_meta.sql applicata?):', error.message);
+      return;
+    }
+    if (_currentProfile) {
+      _currentProfile.last_login_at = new Date().toISOString();
+      if (classroomId) _currentProfile.last_classroom_id = classroomId;
+    }
+  } catch (err) {
+    console.warn('[Auth] touchLoginMeta eccezione:', err.message);
   }
 }
 
@@ -515,6 +554,7 @@ window.Auth = {
   isLoggedIn,
   isDirector,
   needsPasswordSetup,
+  touchLoginMeta,
 };
 
 await init();

@@ -86,18 +86,14 @@ async function _afterLogin(){
   if(teacherRoleBadge) teacherRoleBadge.classList.toggle('hidden', isDir);
   if(teacherRoleBadge) teacherRoleBadge.style.display = isDir ? 'none' : 'inline-flex';
 
-  // Badge ruolo+nome nella topbar dell'app (sempre visibile quando si è in gioco)
-  const tbBadge   = sh('tb-user-badge');
-  const tbRole    = sh('tb-user-role-pill');
-  const tbName    = sh('tb-user-name');
-  if(tbBadge){ tbBadge.style.display='flex'; }
-  if(tbRole){
-    tbRole.classList.toggle('tb-role-director', isDir);
-    tbRole.classList.toggle('tb-role-teacher', !isDir);
-    if(isDir){ tbRole.textContent='👑 Dir'; tbRole.style.background='rgba(255,215,0,.12)'; tbRole.style.borderColor='rgba(255,215,0,.3)'; tbRole.style.color='#ffd700'; }
-    else     { tbRole.textContent='📖 Doc'; tbRole.style.background='rgba(0,207,255,.1)'; tbRole.style.borderColor='rgba(0,207,255,.25)'; tbRole.style.color='#00cfff'; }
-  }
-  if(tbName) tbName.textContent = appState.teacher?.name || window.Auth.getName();
+  // Tasto profilo + pannello laterale nella topbar dell'app (v8.25.0)
+  // — sostituisce il vecchio blocco tbBadge/tbRole/tbName. Logica e
+  // markup in js/profile-panel.js / index.html #profile-panel.
+  if (typeof ProfilePanel !== 'undefined') ProfilePanel.render(appState.teacher, isDir);
+  // v8.25.0: registra l'orario di questo accesso (fire-and-forget —
+  // non deve mai bloccare il login; fallisce silenziosamente finché
+  // sql/v5.2.0_add_profile_login_meta.sql non è stata applicata).
+  if (window.Auth && window.Auth.touchLoginMeta) window.Auth.touchLoginMeta();
 
   // Il form "Crea aula" e' solo per il direttore
   const addForm = sh('cs-add-form-wrap');

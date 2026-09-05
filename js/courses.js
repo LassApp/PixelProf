@@ -402,6 +402,9 @@ function _enterCourseDirect(id){
   if(!course)return;
   activeCourseId=id;
   db=loadCourseData(id);
+  // v8.25.0: registra questa come ultima aula collegata per il
+  // pannello Profilo (fire-and-forget, vedi js/profile-panel.js).
+  if(window.Auth && window.Auth.touchLoginMeta) window.Auth.touchLoginMeta(id);
 
   const bgIdx=(course.bgIdx??0)%COURSE_BG_PRESETS.length;
   const bg=COURSE_BG_PRESETS[bgIdx];

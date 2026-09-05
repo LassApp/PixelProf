@@ -796,9 +796,26 @@ const OnboardingTour = (function () {
     // changelog in testa al file per il dettaglio del ragionamento
     // (screen:'homeCategory' condiviso, action solo sul logo, dialogo
     // reale con entrambi i pulsanti realmente cliccabili).
-    { screen:'homeCategory', target:'#tb-user-name', type:'info', revealTarget:true,
-      title:'Il tuo nome 👤',
-      body:'In alto a destra vedi sempre il ruolo e il nome con cui hai effettuato l\'accesso.' },
+    // v8.25.0 -- il vecchio #tb-user-name (ruolo+nome sempre visibili
+    // in topbar) e' stato sostituito dal tasto Profilo unico, che apre
+    // un pannello laterale: 4 passi al posto di 1, stesso principio
+    // gia' usato per l'Hub qui sotto (action che apre per davvero +
+    // reveal del contenuto). Il passo D chiude il pannello in onLeave
+    // prima di proseguire con tema/audio -- stesso pattern di chiusura
+    // gia' usato per hubBadges piu' sotto.
+    { screen:'homeCategory', target:'#tb-profile-btn', type:'action',
+      title:'Il tuo profilo 👤',
+      body:'In alto a destra trovi il tuo profilo — il colore dell\'anello indica il ruolo. Premilo per aprirlo.' },
+    { screen:'homeCategory', target:'.pp-panel-header, .pp-panel-info', type:'info', revealTarget:true, blockClicks:true,
+      title:'Le tue informazioni 🪪',
+      body:'Qui trovi il tuo nome, il ruolo, l\'ultimo accesso e l\'ultima aula collegata.' },
+    { screen:'homeCategory', target:'.pp-tour-action', type:'info', revealTarget:true, blockClicks:true,
+      title:'Rivedi il tour quando vuoi 🧭',
+      body:'Hai dimenticato qualche passaggio? Da qui puoi far ripartire questo tour guidato in qualsiasi momento.' },
+    { screen:'homeCategory', target:'.pp-logout-action', type:'info', revealTarget:true, blockClicks:true,
+      title:'Esci dall\'account 🚪',
+      body:'Il pulsante per uscire dal tuo account, sempre disponibile da qui. Per ora premi "Avanti" per continuare il tour.',
+      onLeave:function(){ if(typeof ProfilePanel!=='undefined') ProfilePanel.close(); } },
     { screen:'homeCategory', target:'.theme-toggle-btn', type:'info', revealTarget:true,
       title:'Tema chiaro o scuro 🌗',
       body:'Passa dal tema scuro a quello chiaro, e viceversa, in qualsiasi momento con un tocco.' },
@@ -933,17 +950,10 @@ const OnboardingTour = (function () {
         var noBtn = document.getElementById('pp-dialog-no');
         if (overlay && !overlay.classList.contains('hidden') && noBtn) { noBtn.click(); }
       } },
-    // v2.5.1 — nuovo passo richiesto: focus sul tasto logout, subito
-    // prima della chiusura del tour. blockClicks:true come sopra: il
-    // pulsante è vero e realmente funzionante (uscita immediata
-    // dall'account), quindi non deve poter essere azionato per sbaglio
-    // solo perché il tour lo sta mostrando — nessun onLeave necessario
-    // qui: a differenza del passo del dialogo, questo passo non apre
-    // nulla, blockClicks da solo basta a impedire l'unico effetto
-    // collaterale possibile (il logout stesso).
-    { screen:'homeCategory', target:'.cs-logout-btn', type:'info', revealTarget:true, blockClicks:true,
-      title:'Esci dall\'account 🚪',
-      body:'Il pulsante per uscire dal tuo account, sempre disponibile. Per ora premi "Avanti" per continuare il tour.' },
+    // v8.25.0 — rimosso: il tasto Esci non è più sempre visibile in
+    // topbar (ora vive nel pannello Profilo) — già mostrato dal passo
+    // dedicato .pp-logout-action più sopra, subito dopo l'apertura
+    // del pannello. Nessun passo aggiuntivo qui.
     { screen:'homeCategory', target:'.cat-grid', type:'info',
       title:'Tour completato! 🎉',
       body:'Ora conosci tutti gli strumenti di PixelProf. Buona lezione!' },
@@ -1018,9 +1028,26 @@ const OnboardingTour = (function () {
     // changelog in testa al file per il dettaglio del ragionamento
     // (screen:'homeCategory' condiviso, action solo sul logo, dialogo
     // reale con entrambi i pulsanti realmente cliccabili).
-    { screen:'homeCategory', target:'#tb-user-name', type:'info', revealTarget:true,
-      title:'Il tuo nome 👤',
-      body:'In alto a destra vedi sempre il ruolo e il nome con cui hai effettuato l\'accesso.' },
+    // v8.25.0 -- il vecchio #tb-user-name (ruolo+nome sempre visibili
+    // in topbar) e' stato sostituito dal tasto Profilo unico, che apre
+    // un pannello laterale: 4 passi al posto di 1, stesso principio
+    // gia' usato per l'Hub qui sotto (action che apre per davvero +
+    // reveal del contenuto). Il passo D chiude il pannello in onLeave
+    // prima di proseguire con tema/audio -- stesso pattern di chiusura
+    // gia' usato per hubBadges piu' sotto.
+    { screen:'homeCategory', target:'#tb-profile-btn', type:'action',
+      title:'Il tuo profilo 👤',
+      body:'In alto a destra trovi il tuo profilo — il colore dell\'anello indica il ruolo. Premilo per aprirlo.' },
+    { screen:'homeCategory', target:'.pp-panel-header, .pp-panel-info', type:'info', revealTarget:true, blockClicks:true,
+      title:'Le tue informazioni 🪪',
+      body:'Qui trovi il tuo nome, il ruolo, l\'ultimo accesso e l\'ultima aula collegata.' },
+    { screen:'homeCategory', target:'.pp-tour-action', type:'info', revealTarget:true, blockClicks:true,
+      title:'Rivedi il tour quando vuoi 🧭',
+      body:'Hai dimenticato qualche passaggio? Da qui puoi far ripartire questo tour guidato in qualsiasi momento.' },
+    { screen:'homeCategory', target:'.pp-logout-action', type:'info', revealTarget:true, blockClicks:true,
+      title:'Esci dall\'account 🚪',
+      body:'Il pulsante per uscire dal tuo account, sempre disponibile da qui. Per ora premi "Avanti" per continuare il tour.',
+      onLeave:function(){ if(typeof ProfilePanel!=='undefined') ProfilePanel.close(); } },
     { screen:'homeCategory', target:'.theme-toggle-btn', type:'info', revealTarget:true,
       title:'Tema chiaro o scuro 🌗',
       body:'Passa dal tema scuro a quello chiaro, e viceversa, in qualsiasi momento con un tocco.' },
@@ -1148,10 +1175,7 @@ const OnboardingTour = (function () {
         var noBtn = document.getElementById('pp-dialog-no');
         if (overlay && !overlay.classList.contains('hidden') && noBtn) { noBtn.click(); }
       } },
-    // v2.5.1 — vedi commento gemello in DIRECTOR_STEPS più sopra.
-    { screen:'homeCategory', target:'.cs-logout-btn', type:'info', revealTarget:true, blockClicks:true,
-      title:'Esci dall\'account 🚪',
-      body:'Il pulsante per uscire dal tuo account, sempre disponibile. Per ora premi "Avanti" per continuare il tour.' },
+    // v8.25.0 — rimosso: vedi commento gemello in DIRECTOR_STEPS più sopra.
     { screen:'homeCategory', target:'.cat-grid', type:'info',
       title:'Tour completato! 🎉',
       body:'Ora conosci tutti gli strumenti di PixelProf. Buona lezione!' },

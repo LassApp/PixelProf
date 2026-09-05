@@ -1,8 +1,19 @@
 /* ==================================================
-   flip-card.js — PixelProf v8.23.1 (Didattica · Flip Card)
+   flip-card.js — PixelProf v8.23.2 (Didattica · Flip Card)
    Prima "attività didattica" di PixelProf, accanto ai
    Minigiochi: mazzo di carte domanda/risposta con flip 3D,
    caricato da CSV dedicati per modulo + livello.
+
+   v8.23.2: FIX parsing CSV con delimitatore ";" — i CSV reali
+   (CE/OE/Reti e Internet, 22 file) sono tutti esportati con ";"
+   (Excel locale IT), ma _fcParseCsv() presupponeva "," fisso
+   -> "Mazzo vuoto" nonostante il fetch avesse successo.
+     - Aggiunta _fcDetectDelimiter(): ispeziona la prima riga
+       del file (fuori virgolette) e sceglie "," o ";" in base
+       al carattere più frequente. Nessuna modifica ai 22 CSV
+       esistenti, nessuna assunzione rigida sul formato futuro.
+     - _fcParseCsv() ora usa il delimitatore rilevato invece di
+       "," hard-coded.
 
    v8.23.1: FIX path Word Processing — Erasmo ha aggiornato
    Flip_Card.md, cartella cambiata da "ECDL/Word" a
@@ -263,15 +274,38 @@ const FLIPCARD_MODULE_MAP = {
   'futuro-ai': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo13/Flip_Card_Facile_Modulo_13.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo13/Flip_Card_Medio_Modulo_13.csv'] },
 };
 
+/* -- Rilevamento automatico del delimitatore --------------
+   Excel in locale IT esporta i CSV con ";" (perché usa "," come
+   separatore decimale); Excel US/Google Sheets usa ",". Invece
+   di presupporre l'uno o l'altro, si ispeziona la prima riga
+   (fuori dalle virgolette) e si sceglie il carattere più
+   frequente tra "," e ";". Se il file cambia formato in futuro
+   (Erasmo riesporta con un altro programma) non serve toccare
+   il codice: ogni file viene valutato per conto proprio. */
+function _fcDetectDelimiter(s){
+  let firstLine = '', inQuotes = false;
+  for(let i = 0; i < s.length; i++){
+    const c = s[i];
+    if(c === '"') inQuotes = !inQuotes;
+    else if(c === '\n' && !inQuotes) break;
+    else firstLine += c;
+  }
+  const semi = (firstLine.match(/;/g) || []).length;
+  const comma = (firstLine.match(/,/g) || []).length;
+  return semi > comma ? ';' : ',';
+}
+
 /* -- Parser CSV robusto (RFC4180-ish) --------------------
    Gestisce virgolette, virgolette raddoppiate ("") per il
-   escaping, virgole/accenti/apostrofi nel testo, celle
+   escaping, delimitatore/accenti/apostrofi nel testo, celle
    multilinea tra virgolette, righe vuote e spazi superflui.
-   Non presuppone che un semplice split(',') sia sufficiente. */
+   Il delimitatore ("," oppure ";") è rilevato per singolo file
+   da _fcDetectDelimiter() — non presuppone né l'uno né l'altro. */
 function _fcParseCsv(text){
   const rows = [];
   let row = [], field = '', inQuotes = false;
   const s = String(text || '').replace(/^\uFEFF/, ''); // rimuove BOM se presente
+  const delim = _fcDetectDelimiter(s);
   for(let i = 0; i < s.length; i++){
     const c = s[i], next = s[i + 1];
     if(inQuotes){
@@ -280,7 +314,7 @@ function _fcParseCsv(text){
       else field += c;
     } else {
       if(c === '"') inQuotes = true;
-      else if(c === ','){ row.push(field); field = ''; }
+      else if(c === delim){ row.push(field); field = ''; }
       else if(c === '\r'){ /* ignorato: il fine riga è gestito da \n */ }
       else if(c === '\n'){ row.push(field); rows.push(row); row = []; field = ''; }
       else field += c;

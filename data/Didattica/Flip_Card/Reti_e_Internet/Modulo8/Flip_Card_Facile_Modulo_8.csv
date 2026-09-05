@@ -1,0 +1,41 @@
+Cos'è il troubleshooting?;Il processo di individuazione analisi e risoluzione di un problema tecnico
+Cosa significa fare troubleshooting nel contesto delle reti informatiche?;Identificare la causa di un malfunzionamento della connessione seguendo un metodo logico
+Qual è l'errore più comune quando si cerca di risolvere un problema di rete senza un metodo?;Cercare una soluzione casuale come riavviare continuamente il computer o modificare impostazioni senza sapere cosa fanno
+Qual è l'obiettivo del troubleshooting secondo un approccio ordinato?;Raccogliere indizi fino a individuare la vera causa del problema invece di indovinare la soluzione
+Da quali fattori può dipendere un malfunzionamento di rete?;Un cavo scollegato il Wi-Fi disattivato un router bloccato un IP assegnato male un server DNS non raggiungibile o un'interruzione del provider
+In che ordine i tecnici affrontano solitamente i controlli durante il troubleshooting?;Partendo dai controlli più semplici e probabili fino ad arrivare a quelli più complessi
+Quali sono alcuni strumenti fondamentali del troubleshooting di rete?;Ping Traceroute e Ipconfig
+Cosa significa individuare il problema in fase di troubleshooting?;Raccogliere informazioni per stabilire con precisione quale componente della rete sta causando il malfunzionamento
+Cos'è un problema locale di rete?;Un problema che riguarda il dispositivo o la rete vicina all'utente come un cavo scollegato o il Wi-Fi disattivato
+Cos'è un problema remoto di rete?;Un problema che si trova oltre la rete locale come un server DNS non raggiungibile o un guasto presso il provider Internet
+Quali domande aiutano a distinguere un problema locale da uno remoto?;Se il problema riguarda un solo dispositivo o tutti e se riguarda un solo sito o tutti i servizi online
+Cosa sono i controlli iniziali nel troubleshooting?;Le verifiche di base che permettono di individuare rapidamente le cause più comuni di un malfunzionamento della rete
+Cosa bisogna verificare per prima cosa quando si controlla la connessione fisica?;Che il cavo Ethernet sia inserito correttamente oppure che il Wi-Fi sia collegato alla rete corretta
+Cosa indicano le spie luminose del router?;Alimentazione connessione a Internet attività della rete e collegamenti Ethernet
+Cosa può risolvere spesso in pochi minuti un problema di rete temporaneo?;Il riavvio del dispositivo interessato o del router
+Cos'è Ping?;Uno strumento di diagnostica di rete che verifica se un dispositivo è raggiungibile attraverso la rete
+Cosa fa il comando Ping?;Invia un piccolo messaggio al dispositivo di destinazione e attende una risposta misurando il tempo del viaggio di andata e ritorno
+Da cosa deriva il nome Ping?;Dal suono emesso dal sonar dei sottomarini che invia un impulso e attende l'eco
+In quale unità di misura viene espresso generalmente il tempo di risposta del Ping?;In millisecondi
+Cosa indicano tempi di risposta bassi al Ping?;Generalmente una rete veloce e reattiva
+Un Ping senza risposta significa sempre che il dispositivo è guasto?;No molti server e firewall ignorano volontariamente i Ping per motivi di sicurezza pur continuando a offrire i propri servizi
+Cos'è Traceroute?;Uno strumento di diagnostica che mostra il percorso seguito dai pacchetti di dati per raggiungere una destinazione sulla rete
+Come si chiama il comando Traceroute su Windows?;Tracert
+Cosa si intende per hop in una rete?;Ogni router incontrato lungo il tragitto dei dati che rappresenta un passaggio da un dispositivo di rete al successivo
+Cosa indica un percorso Traceroute che si interrompe con simboli come i tre asterischi?;Che uno dei dispositivi lungo il tragitto non ha risposto anche se questo non indica necessariamente un guasto
+Quando è particolarmente utile utilizzare Traceroute?;Quando il problema non si trova nella rete domestica ma lungo il percorso Internet
+Cos'è Ipconfig?;Un comando dei sistemi Windows che mostra la configurazione di rete del computer come indirizzo IP subnet mask gateway predefinito e server DNS
+Cosa significa Ifconfig?;Interface Configuration
+Quale comando sostituisce spesso Ifconfig nelle distribuzioni Linux moderne?;Il comando ip
+Cosa rappresenta il gateway predefinito nella configurazione di rete?;Il router attraverso cui il traffico esce dalla rete
+Cosa indica generalmente un indirizzo IP che inizia con 169.254?;Che il dispositivo non è riuscito a ottenere automaticamente un indirizzo IP dal server DHCP
+Cosa significa distinguere un problema di DNS da un problema di connessione?;Capire se il dispositivo non riesce a raggiungere Internet oppure se comunica sulla rete ma non può tradurre i nomi dei siti negli indirizzi IP
+Cosa deve fare il computer prima di stabilire la connessione con il server di un sito?;Chiedere a un server DNS quale indirizzo IP corrisponde al nome del sito
+Come si può verificare se la connessione Internet è attiva usando il Ping?;Eseguendo un Ping verso un indirizzo IP noto come 8.8.8.8
+Cosa indica un Ping che funziona verso un indirizzo IP ma restituisce un errore verso un nome di dominio?;Che il problema riguarda probabilmente il DNS
+Cos'è il metodo di diagnosi nel troubleshooting?;Una procedura logica e ordinata che permette di individuare e risolvere un problema di rete analizzando una possibile causa alla volta
+Qual è il primo passo del metodo di diagnosi?;L'osservazione del problema cioè cosa non funziona da quando e se riguarda un dispositivo o tutta la rete
+Cosa permette di verificare Ping all'interno del metodo di diagnosi?;Se una destinazione è raggiungibile
+Cosa permette di verificare Traceroute all'interno del metodo di diagnosi?;Dove si interrompe il percorso dei dati
+Cosa permettono di verificare Ipconfig o Ifconfig all'interno del metodo di diagnosi?;Se il dispositivo possiede una configurazione di rete corretta
+Qual è il principio fondamentale del metodo di diagnosi riguardo alle modifiche di configurazione?;Non modificare configurazioni a caso ma intervenire solo dopo aver raccolto elementi che ne giustifichino la necessità

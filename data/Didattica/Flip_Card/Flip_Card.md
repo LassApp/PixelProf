@@ -280,8 +280,8 @@ data/
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo1/`
   - File:
-    - `Flip_Card_Facile_Modulo_1.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_1.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_1.csv` *(creato — 48 Flip Card)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(creato — 44 Flip Card)*
 
 - **Sicurezza degli Account**
   - Chiave: `sicurezza-account`
@@ -545,15 +545,15 @@ data/
 | ECDL — Spreadsheet | 5 | 10 | 0 | 10 | attivo |
 | ECDL — Presentation | 3 | 6 | 0 | 6 | attivo |
 | Cyberbullismo e Sicurezza Online | 6 | 12 | 0 | 12 | disattivato |
-| Cybersecurity — Non solo antivirus e password | 8 | 16 | 0 | 16 | disattivato |
+| Cybersecurity — Non solo antivirus e password | 8 | 16 | 2 | 14 | disattivato |
 | Reti e Internet | 8 | 16 | 14 | 2 | disattivato |
 | Malware e Minacce Informatiche | 1 | 2 | 2 | 0 | disattivato |
 | Intelligenza Artificiale | 13 | 26 | 0 | 26 | disattivato |
-| **Totale** | **57** | **114** | **26** | **88** | — |
+| **Totale** | **57** | **114** | **28** | **86** | — |
 
 - **Moduli totali mappati:** 57
-- **File CSV creati:** 26 (8 in Computer Essentials — area completa; 2 in Online Essentials — La rete e i dati Modulo1; 2 in Malware e Minacce Informatiche — Modulo1, area completa; 14 in Reti e Internet — Le fondamenta delle reti Modulo1, Il protocollo TCP/IP Modulo2, DNS la rubrica di Internet Modulo3, Router Switch e dispositivi di rete Modulo4, Wi-Fi e reti wireless Modulo5, Cloud Networking Modulo6 e VPN e comunicazioni sicure Modulo7)
-- **File CSV da creare:** 88
+- **File CSV creati:** 28 (8 in Computer Essentials — area completa; 2 in Online Essentials — La rete e i dati Modulo1; 2 in Malware e Minacce Informatiche — Modulo1, area completa; 14 in Reti e Internet — Le fondamenta delle reti Modulo1, Il protocollo TCP/IP Modulo2, DNS la rubrica di Internet Modulo3, Router Switch e dispositivi di rete Modulo4, Wi-Fi e reti wireless Modulo5, Cloud Networking Modulo6 e VPN e comunicazioni sicure Modulo7; 2 in Cybersecurity — Non solo antivirus e password — Fondamenti di Cybersecurity Modulo1)
+- **File CSV da creare:** 86
 - **File CSV totali attesi:** 114
 
-*Nota: il conteggio "Creati" di Computer Essentials era stato inizialmente corretto da 8 a 2 perché l'elenco dettagliato segnava tutti i file come "da creare" nonostante la tabella li indicasse già completi. Con il completamento di tutti i quattro moduli tramite generazione da PDF/Markdown, il conteggio di 8/8 per Computer Essentials è ora effettivamente verificato riga per riga. La stessa discrepanza è emersa anche per Online Essentials, che la tabella indicava come 8/8 completi mentre l'elenco dettagliato segnava tutti i file come "da creare": con la generazione del primo modulo (La rete e i dati) il conteggio reale risulta invece 2/8, corretto di conseguenza. Restano da verificare gli altri tre moduli di Online Essentials (Identità e comunicazione, Navigazione e tracciamento, Sicurezza e comportamento online). Con la generazione del Modulo5 (Wi-Fi e reti wireless), del Modulo6 (Cloud Networking) e del Modulo7 (VPN e comunicazioni sicure), l'area Reti e Internet passa da 8/16 a 14/16 file creati; resta da completare solo il Modulo8 (Troubleshooting delle reti).*
+*Nota: il conteggio "Creati" di Computer Essentials era stato inizialmente corretto da 8 a 2 perché l'elenco dettagliato segnava tutti i file come "da creare" nonostante la tabella li indicasse già completi. Con il completamento di tutti i quattro moduli tramite generazione da PDF/Markdown, il conteggio di 8/8 per Computer Essentials è ora effettivamente verificato riga per riga. La stessa discrepanza è emersa anche per Online Essentials, che la tabella indicava come 8/8 completi mentre l'elenco dettagliato segnava tutti i file come "da creare": con la generazione del primo modulo (La rete e i dati) il conteggio reale risulta invece 2/8, corretto di conseguenza. Restano da verificare gli altri tre moduli di Online Essentials (Identità e comunicazione, Navigazione e tracciamento, Sicurezza e comportamento online). Con la generazione del Modulo5 (Wi-Fi e reti wireless), del Modulo6 (Cloud Networking) e del Modulo7 (VPN e comunicazioni sicure), l'area Reti e Internet passa da 8/16 a 14/16 file creati; resta da completare solo il Modulo8 (Troubleshooting delle reti). Con la generazione del Modulo1 (Fondamenti di Cybersecurity) l'area Cybersecurity — Non solo antivirus e password passa da 0/16 a 2/16 file creati; restano da completare i Moduli 2-8.*

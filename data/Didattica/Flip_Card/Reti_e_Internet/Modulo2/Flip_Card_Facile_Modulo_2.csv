@@ -1,0 +1,46 @@
+Che cos'è il TCP/IP?;L'insieme di protocolli cioè di regole condivise che permette ai dispositivi di comunicare attraverso le reti e su Internet
+Qual è il compito dell'IP all'interno del TCP/IP?;Identificare la destinazione dei dati e permetterne l'instradamento nella rete
+Qual è il compito del TCP all'interno del TCP/IP?;Garantire una comunicazione affidabile assicurandosi che lo scambio di informazioni avvenga correttamente
+Perché la standardizzazione del TCP/IP è considerata la sua vera forza?;Perché permette a dispositivi di aziende diverse di comunicare tra loro purché utilizzino lo stesso linguaggio TCP/IP
+In quanti livelli organizza la comunicazione il modello TCP/IP?;In quattro livelli ciascuno specializzato in un compito preciso
+Che cos'è il Livello Applicazione?;Il livello più vicino all'utente dove operano i servizi come navigazione web posta elettronica messaggistica e streaming video
+Che cos'è il Livello Trasporto?;Il livello che decide come consegnare i dati scegliendo tra un protocollo affidabile come TCP o uno più veloce come UDP
+Che cos'è il Livello Internet?;Il livello che si occupa dell'indirizzamento utilizzando gli indirizzi IP per far raggiungere ogni pacchetto al destinatario corretto
+Che cos'è il Livello Accesso alla Rete?;Il livello più vicino all'hardware che permette ai dati di essere trasmessi fisicamente tramite Ethernet Wi-Fi fibra ottica o rete mobile
+Come si chiama il processo di aggiunta delle informazioni da parte di ogni livello durante l'invio?;Incapsulamento
+Come si chiama il processo di rimozione delle informazioni da parte di ogni livello durante la ricezione?;Decapsulamento
+Che cos'è il TCP?;Un protocollo del Livello Trasporto progettato per garantire una comunicazione affidabile ordinata e senza errori
+Cosa fa il TCP prima di iniziare la trasmissione dei dati?;Crea una connessione tra mittente e destinatario
+In cosa viene suddiviso il messaggio quando si utilizza il TCP?;In piccoli segmenti numerati
+Che cosa sono gli ACK nel protocollo TCP?;Conferme di ricezione segnali che comunicano al mittente che determinati segmenti sono arrivati correttamente
+Cosa fa il TCP se un segmento non arriva o viene danneggiato?;Lo rileva e ne richiede nuovamente l'invio
+Quali servizi utilizzano tipicamente il TCP?;Navigazione web posta elettronica trasferimento di file e servizi cloud
+Che cos'è l'UDP?;Un protocollo del Livello Trasporto progettato per privilegiare la velocità e la semplicità della comunicazione
+In cosa si differenzia l'UDP dal TCP?;Non stabilisce una connessione preventiva non verifica che i dati siano stati ricevuti e non ritrasmette quelli persi
+Cosa rappresenta la latenza?;Il tempo necessario affinché un'informazione raggiunga il destinatario
+Quali servizi utilizzano tipicamente l'UDP?;Videochiamate chiamate VoIP videogiochi online e streaming in diretta
+Che cosa sono le porte di comunicazione?;Identificatori numerici utilizzati dai protocolli TCP e UDP per indirizzare i dati verso la corretta applicazione o servizio su un dispositivo
+Qual è la differenza tra un indirizzo IP e una porta?;L'indirizzo IP identifica il dispositivo mentre la porta identifica il programma con cui si desidera comunicare all'interno di quel dispositivo
+Tra quali numeri è compresa una porta?;Tra 0 e 65535
+Quale porta è storicamente utilizzata dal protocollo HTTP?;La porta 80
+Quale porta è utilizzata dal protocollo HTTPS?;La porta 443
+Che cos'è una porta effimera?;Una porta temporanea assegnata automaticamente dal sistema operativo per distinguere una specifica connessione dalle altre
+Cosa controllano spesso i firewall riguardo alle porte?;Quali porte possono essere utilizzate bloccando quelle non autorizzate
+Che cos'è l'HTTP?;Il protocollo del Livello Applicazione utilizzato per richiedere e trasferire pagine Web tra browser e server
+Che cos'è l'HTTPS?;L'evoluzione sicura dell'HTTP che utilizza la crittografia per proteggere i dati scambiati tra browser e server
+Cosa invia il browser al server per ottenere una pagina Web?;Una richiesta chiamata Request
+Cosa restituisce il server dopo aver elaborato una richiesta?;Una risposta chiamata Response contenente i dati richiesti o un messaggio sull'esito dell'operazione
+Quale protocollo di sicurezza utilizza l'HTTPS per creare un canale cifrato?;Il protocollo TLS Transport Layer Security
+Quali sono le tre garanzie offerte da HTTPS?;Riservatezza integrità e autenticità
+L'HTTPS garantisce che un sito sia affidabile?;No garantisce solo che la comunicazione sia protetta non che il contenuto del sito sia sicuro o legittimo
+Perché il browser chiede a un server DNS l'indirizzo IP corrispondente a un nome di dominio?;Perché gli esseri umani ricordano più facilmente un nome mentre i computer comunicano utilizzando gli indirizzi IP
+Quale livello del TCP/IP prepara il messaggio HTTP durante una richiesta Web?;Il Livello Applicazione
+Quale livello del TCP/IP suddivide i dati in segmenti numerati e ne controlla la consegna?;Il Livello Trasporto tramite TCP
+Quale livello del TCP/IP inserisce gli indirizzi IP del mittente e del destinatario?;Il Livello Internet
+Come si chiama il processo con cui i router decidono a quale router successivo inoltrare un pacchetto?;Routing o instradamento
+Che cos'è un motore di ricerca?;Un servizio online che permette di trovare informazioni sul Web analizzando un archivio di pagine già raccolte e organizzate
+Che cosa sono i crawler?;Programmi automatici anche detti spider o bot che esplorano continuamente Internet seguendo i collegamenti tra le pagine
+Che cos'è l'indice di un motore di ricerca?;Il grande database in cui vengono inserite le pagine analizzate dai crawler da cui il motore seleziona i risultati pertinenti
+Quali sono le tre fasi principali del funzionamento di un motore di ricerca?;Crawling indicizzazione e ranking
+Qual è la differenza tra risultati organici e risultati sponsorizzati?;I risultati organici sono ordinati dall'algoritmo in base alla rilevanza mentre quelli sponsorizzati sono annunci pubblicitari acquistati dagli inserzionisti
+Qual è la differenza tra un browser e un motore di ricerca?;Il browser è il programma che permette di navigare sul Web mentre il motore di ricerca è il servizio che aiuta a trovare le informazioni presenti sul Web

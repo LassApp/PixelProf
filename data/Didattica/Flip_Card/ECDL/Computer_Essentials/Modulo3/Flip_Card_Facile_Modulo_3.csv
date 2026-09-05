@@ -1,80 +1,26 @@
-Qual è la funzione principale delle memorie di massa in un computer?,Conservare i dati in modo permanente anche quando il dispositivo è spento.
-In che modo il computer traduce ogni informazione a livello base?,In sequenze di $0$ e $1$ raggruppate in byte.
-"Senza un supporto di memorizzazione, cosa accadrebbe ai dati processati dai circuiti elettrici allo spegnimento?",Ogni informazione sparirebbe nell'istante stesso in cui si interrompe la corrente.
-Quali sono i due tipi di tecnologie più diffusi per le memorie di massa?,L'Hard Disk (HDD) e l'SSD.
-"Nella metafora del magazzino a luci spente, cosa rappresentano gli scaffali?",I supporti della memoria di massa che conservano i dati al proprio posto.
-Quale azienda ha introdotto il primo hard disk della storia nel giugno $1956$?,IBM.
-Come si chiamava il primo modello di hard disk della storia?,IBM $350$ (parte del sistema RAMAC).
-Qual era la capacità di archiviazione approssimativa dell'IBM $350$ del $1956$?,"Tra $3,75$ e $5$ megabyte."
-Quale sistema di archiviazione lento e fisico è stato sostituito dai primi hard disk aziendali?,Le schede perforate.
-Cosa significa l'acronimo HDD?,Hard Disk Drive.
-Su quale tipo di supporto fisico l'Hard Disk (HDD) conserva i dati?,Dischi magnetici rotanti.
-Quale componente meccanico si sposta sopra la superficie dei dischi di un HDD per leggere i dati?,La testina mobile.
-"In un HDD, come vengono chiamati i cerchi concentrici in cui è organizzato ogni disco?",Tracce.
-"In un HDD, qual è l'unità di suddivisione interna delle tracce?",I settori.
-Termine: Cluster,Definizione: Raggruppamento di più settori vicini in cui viene scritta una parte di un file.
-Qual è lo svantaggio principale dell'HDD rispetto alle tecnologie moderne?,È più lento perché la testina deve spostarsi fisicamente per cercare il dato.
-Qual è il vantaggio economico dell'HDD rispetto agli SSD?,Offre una grande capacità di memoria a un prezzo relativamente basso.
-A quale oggetto della vita quotidiana viene paragonato il funzionamento dell'HDD?,A un giradischi.
-"Quale modello fu il primo hard disk da $5,25$ pollici pensato per i personal computer?",L'ST-$506$ di Shugart Technology.
-"In che anno è stato presentato l'ST-$506$, aprendo la strada ai dischi rigidi interni per PC?",Nel $1980$.
-Cosa significa l'acronimo SSD?,Solid State Drive.
-In quale tipo di componenti l'SSD scrive e legge i dati?,Celle di memoria elettroniche.
-Qual è la differenza strutturale principale tra un SSD e un HDD?,L'SSD è privo di parti meccaniche in movimento.
-Quale componente dell'SSD gestisce l'efficienza della distribuzione dei dati nelle celle?,Il controller elettronico.
-Perché gli SSD sono generalmente più resistenti agli urti rispetto agli HDD?,A causa dell'assenza di movimenti meccanici interni.
-Quale fenomeno di rallentamento dei dati tipico dell'HDD non affligge l'SSD?,La frammentazione.
-Chi ha inventato la memoria flash presso Toshiba negli anni Ottanta?,Fujio Masuoka.
-Quale variante della memoria flash è oggi la più utilizzata negli SSD moderni?,La variante NAND.
-In quale anno è stata presentata la variante NAND della memoria flash?,Nel $1987$.
-A cosa viene paragonata l'immediatezza della risposta di un SSD?,Al rispondere a una domanda di cui si conosce già la risposta a memoria.
-Cosa significa l'acronimo RAM?,Random Access Memory.
-Qual è il compito principale della RAM durante l'uso del computer?,Conservare temporaneamente dati e programmi mentre vengono utilizzati attivamente.
-Cosa accade alla memoria RAM allo spegnimento del dispositivo?,"Si svuota completamente, perdendo ogni dato non salvato."
-Perché la RAM è definita il 'presente' del computer?,Perché tiene a portata di mano solo ciò che serve nell'istante attuale.
-Cosa accade se la RAM si satura a causa di troppi programmi aperti?,Il sistema rallenta o chiude automaticamente alcune applicazioni.
-Quale ingegnere dell'IBM ha inventato la DRAM nel $1966$?,Robert Dennard.
-Qual è stata l'intuizione chiave di Dennard per ridurre la dimensione della memoria RAM?,Usare un solo transistor abbinato a un condensatore per ogni bit.
-Quanta RAM è considerata una dotazione sufficiente per un uso normale del PC oggi?,$8$ GB.
-Quale dotazione di RAM è consigliata per attività professionali o multitasking intenso?,$32$ GB o più.
-"Nella metafora della cucina, cosa rappresenta la RAM?",Il bancone su cui si appoggiano ingredienti e strumenti in uso.
-Perché un bancone della cucina più grande (più RAM) è vantaggioso?,Permette di avere più strumenti pronti all'uso senza doverli riporre continuamente.
-Cosa significa l'acronimo ROM?,Read-Only Memory (memoria di sola lettura).
-Qual è la differenza fondamentale tra RAM e ROM riguardo alla persistenza?,La ROM non si svuota quando il dispositivo viene spento.
-Qual è lo scopo principale della ROM?,Custodire le istruzioni base necessarie per avviare il sistema (firmware/BIOS).
-In quale momento preciso entrano in azione le istruzioni della ROM?,Nell'istante stesso in cui il computer viene acceso.
-Cosa accadrebbe a un computer privo di istruzioni ROM all'accensione?,Non saprebbe da dove cominciare l'avvio e resterebbe inattivo.
-Quale virus del $1999$ era noto per sovrascrivere il contenuto del BIOS/ROM?,Il virus CIH (noto anche come Chernobyl).
-Perché il virus CIH rendeva spesso necessaria la sostituzione fisica del chip?,Perché rendeva il computer incapace di avviarsi cancellando le istruzioni base.
-A cosa è paragonata la ROM nella metafora del teatro?,Alla prima pagina del copione che indica come iniziare la scena.
-Cos'è il 'boot' del sistema?,La sequenza di operazioni che porta il computer dallo stato spento alla disponibilità per l'utente.
-Qual è il primo componente che 'sveglia' la CPU durante l'avvio?,La ROM.
-Cosa cerca la CPU sulla memoria di massa subito dopo l'attivazione iniziale?,Il sistema operativo.
-Perché l'avvio con un SSD è quasi istantaneo rispetto a un HDD?,Perché non richiede il movimento fisico di una testina per trovare il sistema operativo.
-In quale memoria viene caricato il sistema operativo per diventare operativo?,Nella RAM.
-Cosa sono le chiavette USB e gli hard disk esterni rispetto alle memorie interne?,Sono memorie di massa portatili e scollegabili.
-Quale azienda israeliana brevettò il dispositivo USB 'DiskOnKey' nel $1999$?,M-Systems.
-Qual era la capacità della prima chiavetta USB 'DiskOnKey'?,$8$ MB.
-Quale azienda singaporiana sviluppò il dispositivo USB 'ThumbDrive'?,Trek Technology.
-"Nella metafora del teatro, chi rappresenta gli attori che prendono posizione sul palco?",La RAM.
-"Nella metafora del teatro, cosa rappresenta il baule portatile?",I dispositivi di memoria esterni come le chiavette USB.
-Quale componente elettronico coordina l'intera sequenza di avvio del computer?,La CPU.
-Perché l'HDD produce spesso un ronzio durante il funzionamento?,A causa dei dischi magnetici che ruotano ad alta velocità.
-In che anno Toshiba presentò la variante flash NOR?,Nel $1984$.
-Qual è la caratteristica della memoria di lavoro temporanea rispetto alla persistenza?,"È volatile, ovvero perde i dati senza alimentazione."
-Quanta RAM garantisce un lavoro fluido con più applicazioni impegnative contemporaneamente?,$16$ GB.
-Perché si dice che la ROM contiene informazioni di 'sola lettura'?,Perché non viene modificata durante il normale utilizzo del computer.
-Quale studente universitario taiwanese ha creato il virus CIH?,Chen Ing-hau.
-Qual era la funzione del primo hard disk IBM $350$ nell'ambito aziendale?,Fornire informazioni sempre disponibili e recuperabili rapidamente.
-Perché un computer con poca RAM sembra 'vecchio' anche se non è rotto?,Perché la risorsa limitata impedisce di gestire troppi dati simultaneamente.
-Cosa garantisce che una fotografia resti intatta alla riaccensione del PC?,La scrittura fisica della sequenza di byte sulla memoria di massa.
-Quale termine definisce il lampo di velocità delle memorie inventate da Masuoka?,Flash.
-In che anno IBM ha ottenuto il brevetto per la Dynamic Random Access Memory (DRAM)?,Nel $1968$.
-Qual è il diametro dei dischi magnetici dell'IBM $350$?,$24$ pollici.
-Quale azienda cinese ha depositato rivendicazioni sulla tecnologia delle chiavette USB?,Netac.
-Qual era il peso approssimativo del primo hard disk IBM $350$?,Circa una tonnellata.
-"Nella metafora della cucina, cosa rappresenta la credenza dove si ripone l'olio?",L'archivio della memoria di massa.
-Il termine BIOS è sinonimo di quale tipo di software contenuto nella ROM?,Firmware.
-Quale fu il primo hard disk compatto abbastanza da stare dentro un computer da scrivania?,Il modello ST-$506$.
-Cosa accomuna HDD e SSD nonostante le tecnologie diverse?,Entrambi hanno l'obiettivo di dare stabilità nel tempo ai dati digitali.
-Perché l'ST-$506$ ha rappresentato una rivoluzione nel $1980$?,Ha reso possibile l'integrazione di un hard disk nei personal computer.
+Cosa sono le memorie di massa?;I dispositivi che conservano i dati anche quando il computer è spento permettendo di ritrovarli intatti alla riaccensione
+Quali sono le due tecnologie più diffuse per realizzare le memorie di massa?;Hard Disk HDD e SSD
+Perché senza le memorie di massa ogni informazione sparirebbe quando il computer si spegne?;Perché i circuiti elettrici che elaborano i byte funzionano solo finché il computer è acceso
+Cosa significa l'acronimo HDD?;Hard Disk Drive
+Come conserva i dati un Hard Disk?;Su dischi magnetici rotanti letti e scritti tramite una testina mobile
+Come sono organizzati i dati all'interno di un disco HDD?;In tracce divise in settori a loro volta raggruppati in cluster
+Perché l'HDD è più lento delle tecnologie più moderne?;Perché la testina deve spostarsi fisicamente fino al punto esatto in cui un dato è registrato
+Quali sono i due principali vantaggi di un HDD?;È molto capiente e relativamente economico
+Cosa significa l'acronimo SSD?;Solid State Drive
+Come scrive e legge i dati un SSD?;Direttamente in celle di memoria elettroniche senza parti meccaniche in movimento
+Quali vantaggi ha un SSD rispetto a un HDD?;È più veloce più silenzioso più resistente agli urti e non soffre di frammentazione
+Cos'è la frammentazione che non riguarda gli SSD?;Dati sparsi in punti lontani del disco che possono rallentare le prestazioni di un HDD nel tempo
+Cosa significa l'acronimo RAM?;Random Access Memory
+Cos'è la RAM secondo la sua definizione?;Una memoria veloce e temporanea che conserva i dati e i programmi mentre vengono utilizzati attivamente
+Cosa succede alla RAM quando il computer viene spento?;Si svuota completamente e tutto ciò che non è stato salvato su una memoria di massa va perso
+Perché un computer può rallentare se si aprono troppi programmi insieme?;Perché la RAM è una risorsa limitata e può saturarsi
+La RAM è pensata per conservare i dati nel tempo?;No è pensata per tenerli immediatamente a portata di mano mentre servono
+Cosa significa l'acronimo ROM?;Read-Only Memory cioè memoria di sola lettura
+Cos'è la ROM secondo la sua definizione?;Una memoria permanente che contiene le istruzioni base per avviare il sistema
+Cosa succede alla ROM quando il computer viene spento?;Resta sempre presente e non si svuota indipendentemente dall'uso
+Come viene spesso chiamato il piccolo insieme di istruzioni contenute nella ROM?;Firmware o BIOS
+Quando si attivano le istruzioni contenute nella ROM?;Nell'istante stesso in cui il computer viene acceso ancora prima di qualsiasi programma o sistema operativo
+Cos'è l'avvio del sistema o boot?;La sequenza di operazioni sempre identica attraverso cui un computer passa dallo stato spento alla piena disponibilità per l'utente
+Qual è la prima memoria che si attiva quando si accende un computer?;La ROM
+In quale memoria viene infine caricato il sistema operativo perché l'utente possa iniziare a lavorare?;Nella RAM
+Cosa sono i dispositivi esterni come hard disk esterni e chiavette USB?;Memorie di massa portatili che si collegano e si scollegano quando serve

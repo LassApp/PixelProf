@@ -4756,9 +4756,15 @@ body{
 
 .onb-overlay{
   position:fixed;inset:0;z-index:9850;
-  background:rgba(4,6,15,.68);
-  backdrop-filter:blur(3px);
-  -webkit-backdrop-filter:blur(3px);
+  background:rgba(4,6,15,.5); /* v8.24.0 — richiesta esplicita utente: era
+    .68 + blur 3px, troppo scuro in tema scuro (default), mascherava
+    troppo la schermata sotto il velo fuori dal "buco" ritagliato dal
+    passo corrente. Portato a .5 (stesso livello del tema chiaro sotto,
+    v. html[data-theme="light"] .onb-overlay in @layer theme) e blur
+    ridotto a 2px: resta leggibile ma il resto della UI dietro il velo
+    si intravede meglio. */
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
   animation:onbFadeIn .25s ease both;
   touch-action:pan-y; /* v8.15.6: garantisce lo scroll verticale touch anche
     toccando il velo (non solo sui "buchi" ritagliati) — possibile causa

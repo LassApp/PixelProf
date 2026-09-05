@@ -1,80 +1,30 @@
-Quale componente hardware funge da base fisica e mette in comunicazione tutti gli altri componenti di un computer?,La scheda madre (Motherboard).
-Qual è il compito principale della CPU (Central Processing Unit)?,Elaborare le istruzioni e prendere decisioni.
-Come viene definita la memoria veloce e temporanea utilizzata per caricare i programmi in uso?,RAM (Random Access Memory).
-Quale memoria conserva i dati in modo permanente anche quando il computer è spento?,Le memorie di massa (come HDD e SSD).
-Qual è la funzione specifica della ROM (Read-Only Memory) all'interno di un computer?,Contenere le istruzioni base necessarie per l'avvio del sistema.
-Quale categoria di dispositivi permette lo scambio di informazioni tra il computer e l'ambiente esterno?,Dispositivi di input/output.
-In quale data storica venne presentato l'IBM Personal Computer 5150?,Il 12 agosto 1981.
-Qual era il nome in codice del progetto segreto che portò alla creazione del PC IBM 5150?,Project Chess.
-Quale innovazione strutturale dell'IBM 5150 permise ad aziende esterne di creare componenti aggiuntivi compatibili?,L'architettura aperta basata su slot di espansione (standard ISA).
-"Nella metafora del cantiere edile, cosa rappresenta la CPU?",Il capocantiere che decide cosa fare.
-"Nella metafora del cantiere edile, cosa rappresenta la scheda madre?",L'impalcatura che collega ogni reparto.
-"Nella metafora del cantiere edile, cosa rappresenta la RAM?",L'area di lavoro dove si tengono gli attrezzi in uso.
-"Nella metafora del cantiere edile, cosa rappresenta il magazzino dei materiali?",Le memorie di massa.
-"Quale componente è considerato il vero e proprio ""cervello"" del computer?",La CPU (Central Processing Unit).
-Qual è la sequenza logica standard che avviene ogni volta che viene impartito un comando al computer?,Input $\rightarrow$ Elaborazione (CPU) $\rightarrow$ Output.
-Perché si verifica un rallentamento del computer quando arrivano troppe richieste simultanee alla CPU?,Perché il flusso di richieste supera la capacità istantanea di gestione della CPU.
-"In che anno l'azienda Intel mise in commercio il primo microprocessore commerciale, l'Intel 4004?",Nel novembre 1971.
-Quanti transistor erano contenuti all'interno del chip dell'Intel 4004?,2.300 transistor.
-Quale ingegnere italiano faceva parte del team di sviluppo dell'Intel 4004?,Federico Faggin.
-Per quale tipo di dispositivo fu originariamente progettato l'Intel 4004?,Una calcolatrice da tavolo dell'azienda Busicom.
-"Nella metafora del vigile urbano, cosa rappresenta il traffico stradale?","Le richieste provenienti da tastiera, mouse e programmi."
-Definizione di CPU multicore.,Processore contenente più unità di elaborazione (core) capaci di lavorare in parallelo.
-Qual è il vantaggio principale di una CPU multicore rispetto a una single-core nel multitasking?,Permette di eseguire più operazioni realmente nello stesso istante senza dover saltare da un compito all'altro.
-Cosa accade ai core aggiuntivi di una CPU se il carico di lavoro è estremamente leggero?,Restano inutilizzati.
-Quali furono i primi processori dual-core per il mercato consumer desktop lanciati nel 2005?,AMD Athlon 64 X2 e Intel Pentium D.
-Quale unità di misura viene utilizzata per indicare la velocità di una CPU?,Il GHz (Gigahertz).
-A quante operazioni elementari al secondo corrisponde un Gigahertz (GHz)?,Circa un miliardo.
-"Nella metafora della strada, cosa rappresentano i GHz rispetto alle automobili?",Il limite di velocità della strada.
-"Chi fu l'autore dell'articolo che diede origine alla nota ""Legge di Moore"" nel 1965?",Gordon Moore.
-"Secondo la revisione del 1975 della Legge di Moore, ogni quanto tempo raddoppia il numero di componenti in un circuito integrato?",Ogni due anni.
-Come viene definito un gruppo di 8 bit?,Un byte.
-Quanti bit compongono l'unità base di misura dell'informazione chiamata byte?,8 bit.
-"In codice binario, a quale sequenza di 8 bit corrisponde la lettera 'A'?",01000001.
-A quanti byte corrisponde un Kilobyte (KB)?,1.024 byte.
-Quale multiplo del byte equivale a $1.024$ Kilobyte?,1 Megabyte (MB).
-Un Gigabyte (GB) è composto da quanti Megabyte (MB)?,1.024 MB.
-"Qual è il multiplo del byte utilizzato per indicare archivi molto grandi, pari a $1.024$ GB?",1 Terabyte (TB).
-Perché un messaggio WhatsApp pesa digitalmente più della somma dei byte delle sue singole lettere?,"Perché include metadati come mittente, orario e stato di consegna."
-Chi coniò il termine 'byte' nel 1956 lavorando al progetto IBM 7030 Stretch?,Werner Buchholz.
-Per quale motivo Werner Buchholz scelse l'ortografia 'byte' invece di 'bite'?,Per evitare confusione accidentale con il termine 'bit'.
-"Nella metafora della spesa, quale multiplo del byte rappresenta idealmente un 'quintale'?",Il Gigabyte (GB).
-"Quale componente coordina la collaborazione tra CPU, RAM e memorie di massa?",La scheda madre.
-"In un sistema multicore, cosa succede se lo spazio di coordinamento tra i core è gestito male?",Si può generare confusione ed inefficienza invece che prestazioni migliori.
-"Prima dell'era multicore, su quale parametro si concentravano i produttori per aumentare le prestazioni dei processori?",Sull'aumento della velocità (GHz) del singolo core.
-Cosa indica il termine 'microprocessore' rispetto ai vecchi processori distribuiti su interi armadi?,Un intero cervello elaborativo racchiuso in un unico chip di silicio.
-"In informatica, cos'è tecnicamente un bit?",Una singola scelta binaria tra 0 e 1.
-"Nel contesto della CPU, cosa si intende per 'output'?","Il risultato finale di un'elaborazione, come un'immagine proiettata o un file salvato."
-Quale azienda produsse il computer IBM 5150?,IBM.
-Qual era l'obiettivo del team Project Chess?,Sviluppare in segreto il Personal Computer IBM 5150.
-Cosa permise la pubblicazione della documentazione tecnica dell'IBM 5150?,La nascita del mercato dei 'computer compatibili IBM'.
-Metafora vigile urbano: Cosa succede se le auto (richieste) sono poche?,Il traffico scorre senza intoppi anche con un solo vigile.
-Definisci il concetto di 'elaborazione in parallelo' in una CPU.,L'esecuzione di più operazioni nello stesso istante tramite unità distinte (core).
-Qual è il limite principale nell'aggiungere troppi core in uno spazio ridotto?,I core possono intralciarsi a vicenda se non sono coordinati correttamente.
-"A parità di core, cosa determina la rapidità con cui viene eseguita una singola istruzione?",La velocità di clock misurata in GHz.
-Come ha influito la Legge di Moore sullo sviluppo dei dispositivi moderni?,Ha guidato la crescita costante della potenza e velocità dei processori per decenni.
-Quale unità di misura dell'informazione è l'ordine di grandezza tipico di un breve testo?,Il Kilobyte (KB).
-Un file musicale o una fotografia digitale sono solitamente misurati in _____.,Megabyte (MB).
-Quale unità di misura si usa per quantificare la capacità di un'app o di un video ad alta definizione?,Il Gigabyte (GB).
-Il termine 'byte' fu originariamente descritto come il più piccolo '_____ digital' che un computer potesse elaborare.,Morso (bite).
-Quale componente del PC è paragonabile al 'cancello d'ingresso e uscita' di un cantiere?,I dispositivi di input/output.
-Cosa significa letteralmente l'acronimo CPU?,Central Processing Unit (Unità Centrale di Elaborazione).
-Quale componente impedisce la perdita definitiva di un documento quando spegniamo il computer?,La memoria di massa (HDD/SSD).
-La velocità della CPU influenza il tipo di operazioni eseguite o solo la loro frequenza?,Solo la frequenza (quante ne vengono completate in un secondo).
-Un vigile urbano veloce può triplicare il flusso di auto rispetto a uno lento: questa analogia spiega l'effetto dei _____.,GHz (Gigahertz).
-"Nella metafora della spesa, i grammi corrispondono ai _____.",Byte.
-Perché la CPU deve organizzare le richieste che riceve invece di eseguirle casualmente?,"Per gestire segnali provenienti da più fonti (tastiera, mouse, software) in modo ordinato."
-In quale rivista Gordon Moore pubblicò la sua osservazione sui circuiti integrati nel 1965?,Electronics.
-Qual è il rapporto numerico tra un Gigabyte e un Megabyte?,$1$ GB = $1.024$ MB.
-Chi è stato il progettista giapponese coinvolto nella creazione dell'Intel 4004?,Masatoshi Shima.
-Quale componente è descritto come un 'piccolo quadrato metallico' all'interno del computer?,La CPU.
-Cosa differenzia un processore multicore da uno single-core nella gestione di musica e video simultanei?,"Il multicore distribuisce il carico su unità dedicate, mantenendo il sistema reattivo."
-Il termine 'Standard ISA' è legato a quale innovazione dell'IBM 5150?,Gli slot di espansione sulla scheda madre.
-Quale azione dell'utente attiva la sequenza input-elaborazione-output descritta nel testo?,"Qualsiasi comando, come un clic del mouse."
-La CPU è definita 'competente' ma soggetta a limiti di '_____' quando si sovraccarica.,Capacità.
-Quale memoria è paragonata al 'libretto di istruzioni iniziale' di un cantiere?,La ROM.
-"Nella metafora della strada, le corsie aggiuntive rappresentano i _____ della CPU.",Core.
-Qual è l'unità base che il computer usa per rappresentare un singolo carattere testuale?,Il byte.
-A quanti byte corrispondono le quattro lettere della parola 'CIAO' in un file di testo puro?,4 byte.
-Quale dei seguenti multipli è più grande: Megabyte o Kilobyte?,Megabyte.
-"In termini di potenza di 2, a quanto corrisponde il valore $1.024$?",$2^{10}$.
+Quali sono i principali componenti di un computer?;La scheda madre la CPU la RAM la ROM le memorie di massa e i dispositivi di input/output
+Cosa significa l'acronimo MB riferito alla scheda madre?;Motherboard
+Cos'è la scheda madre?;Il grande circuito stampato a cui tutti gli altri componenti si collegano fisicamente
+Cosa significa l'acronimo RAM?;Random Access Memory
+Cos'è la RAM?;La memoria veloce e temporanea in cui vengono caricati i programmi mentre li si usa
+Cosa significa l'acronimo ROM?;Read-Only Memory
+Cos'è la ROM?;La memoria permanente che contiene le istruzioni base per l'avvio
+A cosa servono le memorie di massa?;A conservare i dati anche a computer spento
+Quali sono esempi di memorie di massa?;HDD e SSD
+Perché nessun componente da solo fa funzionare un computer?;Perché è la loro collaborazione coordinata attraverso la scheda madre a rendere possibile ogni operazione
+Cosa significa l'acronimo CPU?;Central Processing Unit cioè Unità Centrale di Elaborazione
+Cos'è la CPU secondo la sua definizione?;Il componente che elabora decide ed esegue le istruzioni del computer paragonabile al suo cervello
+Qual è la sequenza base che segue ogni comando dato al computer?;Un input arriva la CPU lo riceve la CPU lo elabora e infine viene prodotto un output
+Cos'è una CPU multicore?;Un processore che contiene al proprio interno più unità di elaborazione chiamate core capaci di lavorare in parallelo
+Cosa sono i core in una CPU multicore?;Le singole unità di elaborazione che lavorano in parallelo all'interno del processore
+Cosa può fare un processore con un solo core rispetto a uno con più core?;Può gestire davvero una sola cosa alla volta per quanto velocemente passi da una all'altra
+Cosa indica l'unità di misura GHz riferita a una CPU?;La velocità della CPU cioè quante operazioni elementari esegue ogni secondo
+A quante operazioni elementari corrisponde circa un GHz?;A circa un miliardo di operazioni al secondo
+Cosa cambia in una CPU quando aumenta la sua velocità in GHz?;Non cambia il tipo di operazioni che esegue ma cambia quante ne completa in un secondo
+Cos'è un byte?;Un gruppo di 8 bit
+Quanti bit corrispondono a 1 byte?;8 bit
+Quanti byte corrispondono a 1 KB?;1024 byte
+Quanti KB corrispondono a 1 MB?;1024 KB
+Quanti MB corrispondono a 1 GB?;1024 MB
+Quanti GB corrispondono a 1 TB?;1024 GB
+Qual è l'ordine di grandezza tipico misurato in KB?;Un breve testo
+Qual è l'ordine di grandezza tipico misurato in MB?;Una foto o un brano musicale
+Qual è l'ordine di grandezza tipico misurato in GB?;Un'app o un video
+Qual è l'ordine di grandezza tipico misurato in TB?;Archivi molto grandi
+Quanti byte occupa la parola CIAO in un file di testo puro?;4 byte uno per ogni lettera

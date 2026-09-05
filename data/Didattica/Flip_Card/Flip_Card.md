@@ -105,12 +105,12 @@ data/
     - `Flip_Card_Facile_Modulo_4.csv` *(csv da creare)*
     - `Flip_Card_Medio_Modulo_4.csv` *(csv da creare)*
 
-#### Word Processing
+#### Word
 
 - **Modulo 1 — Word e ambiente**
   - Chiave: `word-e-ambiente`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo1/`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(csv da creare)*
     - `Flip_Card_Medio_Modulo_1.csv` *(csv da creare)*
@@ -118,7 +118,7 @@ data/
 - **Modulo 2 — Scrivere e salvare**
   - Chiave: `scrivere-e-salvare`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo2/`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(csv da creare)*
     - `Flip_Card_Medio_Modulo_2.csv` *(csv da creare)*
@@ -126,7 +126,7 @@ data/
 - **Modulo 3 — Formattare il testo**
   - Chiave: `formattare-il-testo`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo3/`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(csv da creare)*
     - `Flip_Card_Medio_Modulo_3.csv` *(csv da creare)*
@@ -134,7 +134,7 @@ data/
 - **Modulo 4 — Elementi grafici**
   - Chiave: `elementi-grafici`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo4/`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(csv da creare)*
     - `Flip_Card_Medio_Modulo_4.csv` *(csv da creare)*
@@ -142,7 +142,7 @@ data/
 - **Modulo 5 — Strutturare il documento**
   - Chiave: `strutturare-il-documento`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo5/`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo5/`
   - File:
     - `Flip_Card_Facile_Modulo_5.csv` *(csv da creare)*
     - `Flip_Card_Medio_Modulo_5.csv` *(csv da creare)*
@@ -350,16 +350,16 @@ data/
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo1/`
   - File:
-    - `Flip_Card_Facile_Modulo_1.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_1.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_1.csv` *(creato — 32 Flip Card)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(creato — 21 Flip Card)*
 
 - **Il protocollo TCP/IP**
   - Chiave: `tcp-ip`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo2/`
   - File:
-    - `Flip_Card_Facile_Modulo_2.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_2.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_2.csv` *(creato — 46 Flip Card)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(creato — 26 Flip Card)*
 
 - **DNS: la rubrica di Internet**
   - Chiave: `dns`
@@ -420,8 +420,8 @@ data/
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Malware_e_Minacce_Informatiche/Modulo1/`
   - File:
-    - `Flip_Card_Facile_Modulo_1.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_1.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_1.csv` *(creato — 33 Flip Card)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(creato — 25 Flip Card)*
 
 ---
 
@@ -546,14 +546,14 @@ data/
 | ECDL — Presentation | 3 | 6 | 0 | 6 | attivo |
 | Cyberbullismo e Sicurezza Online | 6 | 12 | 0 | 12 | disattivato |
 | Cybersecurity — Non solo antivirus e password | 8 | 16 | 0 | 16 | disattivato |
-| Reti e Internet | 8 | 16 | 0 | 16 | disattivato |
-| Malware e Minacce Informatiche | 1 | 2 | 0 | 2 | disattivato |
+| Reti e Internet | 8 | 16 | 4 | 12 | disattivato |
+| Malware e Minacce Informatiche | 1 | 2 | 2 | 0 | disattivato |
 | Intelligenza Artificiale | 13 | 26 | 0 | 26 | disattivato |
-| **Totale** | **57** | **114** | **10** | **104** | — |
+| **Totale** | **57** | **114** | **16** | **98** | — |
 
 - **Moduli totali mappati:** 57
-- **File CSV creati:** 10 (8 in Computer Essentials — area completa; 2 in Online Essentials — La rete e i dati Modulo1)
-- **File CSV da creare:** 104
+- **File CSV creati:** 16 (8 in Computer Essentials — area completa; 2 in Online Essentials — La rete e i dati Modulo1; 2 in Malware e Minacce Informatiche — Modulo1, area completa; 4 in Reti e Internet — Le fondamenta delle reti Modulo1 e Il protocollo TCP/IP Modulo2)
+- **File CSV da creare:** 98
 - **File CSV totali attesi:** 114
 
 *Nota: il conteggio "Creati" di Computer Essentials era stato inizialmente corretto da 8 a 2 perché l'elenco dettagliato segnava tutti i file come "da creare" nonostante la tabella li indicasse già completi. Con il completamento di tutti i quattro moduli tramite generazione da PDF/Markdown, il conteggio di 8/8 per Computer Essentials è ora effettivamente verificato riga per riga. La stessa discrepanza è emersa anche per Online Essentials, che la tabella indicava come 8/8 completi mentre l'elenco dettagliato segnava tutti i file come "da creare": con la generazione del primo modulo (La rete e i dati) il conteggio reale risulta invece 2/8, corretto di conseguenza. Restano da verificare gli altri tre moduli di Online Essentials (Identità e comunicazione, Navigazione e tracciamento, Sicurezza e comportamento online).*

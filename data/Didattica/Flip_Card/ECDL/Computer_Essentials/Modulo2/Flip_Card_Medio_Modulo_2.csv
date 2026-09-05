@@ -1,85 +1,42 @@
-Qual è il componente che funge da base per la comunicazione fisica di tutte le parti del computer?,La scheda madre (Motherboard).
-Quale unità ha il compito di elaborare le istruzioni e prendere decisioni nel computer?,La CPU (Central Processing Unit).
-Come viene definita la memoria veloce e temporanea usata per caricare i programmi in esecuzione?,RAM (Random Access Memory).
-Quale memoria permanente contiene le istruzioni base necessarie per l'avvio del computer?,ROM (Read-Only Memory).
-Qual è la funzione principale delle memorie di massa come HDD e SSD?,"Conservare i dati in modo permanente, anche a computer spento."
-Quali componenti permettono lo scambio di informazioni tra il computer e l'ambiente esterno?,I dispositivi di input/output.
-In quale data storica IBM presentò il Personal Computer 5150?,Il 12 agosto 1981.
-Qual era il nome in codice del progetto segreto per lo sviluppo dell'IBM PC 5150?,Project Chess.
-Perché la scelta dell'architettura aperta di IBM fu innovativa nel 1981?,Permise ad aziende esterne di costruire componenti aggiuntivi compatibili tramite slot di espansione.
-Quale standard di espansione futuro nacque grazie ai cinque slot della scheda madre dell'IBM PC 5150?,Lo standard ISA.
-"Nella metafora del cantiere edile, cosa rappresenta l'impalcatura che collega ogni reparto?",La scheda madre.
-Chi rappresenta il capocantiere che decide cosa fare nella metafora del cantiere edile?,La CPU.
-"Nella metafora del cantiere, quale parte rappresenta l'area di lavoro con gli attrezzi in uso?",La RAM.
-Cosa rappresenta il libretto di istruzioni iniziale nella metafora del cantiere edile?,La ROM.
-"Nella metafora del cantiere, quale luogo rappresenta il magazzino per i materiali?",Le memorie di massa.
-Cosa rappresentano il cancello d'ingresso e d'uscita nella metafora del cantiere edile?,I dispositivi di input/output.
-Qual è la sequenza tipica di gestione di un comando da parte della CPU?,"Ricezione dell'input, elaborazione e produzione dell'output."
-Perché la CPU non esegue semplicemente tutto ciò che riceve?,Perché deve organizzare e ordinare i segnali provenienti da più fonti in ogni istante.
-Cosa causa un rallentamento del computer quando arrivano troppe richieste contemporaneamente?,Il flusso di richieste supera la capacità istantanea di gestione della CPU.
-"In quale anno fu messo in commercio il primo microprocessore commerciale, l'Intel 4004?",Nel novembre 1971.
-Quali ingegneri svilupparono l'Intel 4004 insieme a Masatoshi Shima?,"Federico Faggin, Ted Hoff e Stanley Mazor."
-Quanti transistor erano contenuti all'interno del chip Intel 4004?,2.300 transistor.
-Per quale tipo di dispositivo fu originariamente progettato l'Intel 4004?,Una calcolatrice da tavolo dell'azienda Busicom.
-"Prima dell'Intel 4004, come venivano distribuite le funzioni di un processore?","Su interi armadi di circuiti separati, ingombranti e costosi."
-"Nella metafora del vigile urbano, quale compito della CPU viene evidenziato?",La capacità di decidere chi può passare (elaborare) e chi deve aspettare.
-Cos'è una CPU multicore?,Un processore che contiene più unità di elaborazione (core) capaci di lavorare in parallelo.
-Qual è il vantaggio principale di una CPU multicore rispetto a una single-core?,Permette di eseguire più operazioni realmente nello stesso istante senza dover saltare da un compito all'altro.
-In quale condizione i core aggiuntivi di una CPU multicore restano inutilizzati?,Quando il carico di lavoro è leggero e non richiede elaborazione parallela.
-Quale problema può insorgere se lo spazio di coordinamento tra i core è mal gestito?,Si può generare confusione ed inefficienza invece che prestazioni migliori.
-Quali processori dual-core per il mercato consumer furono lanciati nel maggio 2005?,L'AMD Athlon 64 X2 e l'Intel Pentium D.
-Come cambiò la strategia dei produttori di processori con l'arrivo dei sistemi multicore?,Si passò dal puntare solo sulla velocità del singolo core all'aggiunta di più core che lavorano insieme.
-Cosa indica l'unità di misura GHz (Gigahertz) nella scheda tecnica di una CPU?,"La velocità del processore, ovvero il numero di operazioni eseguibili ogni secondo."
-A quante operazioni elementari al secondo corrisponde un GHz?,Circa un miliardo di operazioni.
-"Utilizzando la metafora del vigile, cosa rappresentano i GHz?",La velocità con cui il singolo vigile riesce a far passare le automobili.
-Perché una CPU con GHz più alti è utile nell'apertura frequente di programmi?,Permette di completare le operazioni necessarie all'avvio in una frazione di secondo in meno.
-Chi formulò l'osservazione empirica nota come Legge di Moore nel 1965?,"Gordon Moore, futuro co-fondatore di Intel."
-Cosa prevede la Legge di Moore riguardo ai componenti di un circuito integrato?,Che il numero di componenti che è possibile inserire raddoppi a intervalli regolari (circa ogni due anni).
-In quale rivista fu pubblicato l'articolo originale di Gordon Moore nel 1965?,Electronics.
-"Nella metafora stradale, a cosa corrisponde l'aumento dei GHz?",All'innalzamento del limite di velocità della strada.
-Quanti bit compongono esattamente un byte?,8 bit.
-Qual è la minima unità che un computer usa per misurare e organizzare le informazioni?,Il byte.
-"In codice binario, a quale sequenza di bit corrisponde la lettera A?",01000001.
-A quanti Byte corrisponde un Kilobyte (KB)?,$1.024$ Byte.
-Qual è l'equivalente in KB di un Megabyte (MB)?,$1.024$ KB.
-A quanti Megabyte (MB) corrisponde un Gigabyte (GB)?,$1.024$ MB.
-Qual è il valore di un Terabyte (TB) espresso in Gigabyte (GB)?,$1.024$ GB.
-Perché un messaggio WhatsApp pesa più dei singoli byte dei caratteri che lo compongono?,"Perché include metadati come mittente, orario di invio e stato di consegna."
-Chi coniò il termine 'byte' nel luglio del 1956?,Werner Buchholz.
-Per quale progetto informatico fu inventato il termine 'byte'?,La progettazione del supercomputer IBM 7030 Stretch.
-Perché Buchholz scelse l'ortografia 'byte' invece di 'bite'?,Per evitare confusione con il termine 'bit'.
-"Nella metafora della spesa, quale unità rappresenta i Kilobyte (KB)?",L'etto.
-"In un file di testo puro, quanto spazio occupa la parola 'CIAO'?",4 byte.
-Qual è l'ordine di grandezza tipico per la dimensione di una singola foto?,Il Megabyte (MB).
-Quale multiplo del byte si usa solitamente per misurare la capacità di un'intera app o di un video?,Il Gigabyte (GB).
-Qual è il compito della ROM durante la fase di accensione del computer?,Fornire le istruzioni base necessarie per l'avvio del sistema.
-Cosa differenzia fisicamente la RAM dai moduli di memoria di massa nella descrizione di Marco?,"La RAM si presenta come moduli allungati, mentre la memoria di massa conserva i dati stabilmente."
-Quale componente è descritto come un 'piccolo quadrato metallico' all'interno del computer?,La CPU.
-Cosa si intende per 'elaborazione parallela' in un contesto multicore?,La capacità di svolgere più compiti differenti contemporaneamente usando unità distinte.
-"Nella metafora dei vigili, cosa accade se ci sono troppi vigili in un incrocio troppo piccolo?","Possono intralciarsi a vicenda, riducendo l'efficienza complessiva."
-Perché la Legge di Moore non è considerata una legge scientifica in senso stretto?,Perché è un'osservazione empirica basata sull'andamento storico dell'industria.
-In quale modo il computer 'vede' immagini o suoni?,Come sequenze di byte organizzate secondo regole precise.
-"In termini di potenza di calcolo, qual era la caratteristica fondamentale dell'Intel 4004?",Racchiudeva l'intera capacità elaborativa in un unico chip di silicio di pochi millimetri.
-Cosa determina il numero di 'corsie' disponibili per il traffico dati in una CPU?,Il numero di core presenti nel processore.
-Quale componente del PC garantisce che tutti i pezzi collaborino correttamente per eseguire un'operazione?,La scheda madre (coordinando la comunicazione).
-Termine: Bit,"Definizione: La più piccola unità di informazione digitale, rappresentata da 0 o 1."
-Termine: Gigahertz (GHz),"Definizione: Unità di misura della frequenza di clock di una CPU, pari a un miliardo di cicli al secondo."
-In quale anno Moore rivide la sua stima sul raddoppio dei componenti portandola a ogni due anni?,Nel 1975.
-"Nella metafora del cantiere, dove finisce il materiale quando il cantiere è chiuso?",Nelle memorie di massa (il magazzino).
-Quale unità di misura si usa tipicamente per archivi di dati molto grandi?,Il Terabyte (TB).
-Quale componente riceve il segnale fisico del clic del mouse per primo nell'elaborazione?,La CPU (tramite i canali di input).
-"Perché avere più core è utile per chi usa contemporaneamente Excel, WhatsApp e video?",Perché il carico di lavoro si distribuisce tra le diverse unità rendendo il sistema reattivo.
-Cosa indica l'abbreviazione MB citata nel testo riguardo alla scheda madre?,Motherboard.
-Qual era l'obiettivo dell'articolo 'Cramming More Components onto Integrated Circuits'?,Descrivere e prevedere la crescita della densità dei componenti nei circuiti integrati.
-"Nel 1981, quale importante decisione di IBM favorì la nascita del mercato dei 'computer compatibili'?",La pubblicazione di una documentazione tecnica dettagliata sulla struttura interna del PC.
-Qual è l'ordine di grandezza di un breve testo in termini di byte?,Il Kilobyte (KB).
-Cosa succede alla RAM quando il computer viene spento?,I dati in essa contenuti vengono persi perché è una memoria temporanea.
-Quale ingegnere giapponese collaborò allo sviluppo dell'Intel 4004?,Masatoshi Shima.
-"In che modo la CPU decide quale richiesta gestire tra tastiera, mouse e programmi?",Ordinando ed eseguendo le richieste a grandissima velocità una dopo l'altra.
-"Nella metafora stradale, cosa rappresenta una CPU a bassa velocità?",Una strada con limite a 30 km/h.
-Qual è il rapporto numerico tra un Byte e un bit?,1 a 8 ($1 \text{ Byte} = 8 \text{ bit}$).
-Quale componente è paragonato al 'motore' dell'automobile nel primo capitolo?,La CPU.
-Perché la CPU è definita il 'cervello' del computer?,"Perché elabora, decide ed esegue tutte le istruzioni del sistema."
-"Secondo la metafora della spesa, a cosa corrisponde una tonnellata di dati?",Al Terabyte (TB).
-"Quale azienda produsse l'Athlon 64 X2, uno dei primi processori dual-core?",AMD.
-Chi era il datore di lavoro di Werner Buchholz quando inventò il termine 'byte'?,IBM.
+Con quale metafora si può descrivere il ruolo della scheda madre in un computer?;Come l'impalcatura di un cantiere che collega ogni reparto
+Con quale metafora si può descrivere il ruolo della CPU secondo la metafora del cantiere?;Come il capocantiere che riceve le richieste e decide cosa fare
+Con quale metafora si può descrivere il ruolo della RAM secondo la metafora del cantiere?;Come l'area di lavoro dove vengono tenuti gli attrezzi in uso in quel momento
+Con quale metafora si può descrivere il ruolo della ROM secondo la metafora del cantiere?;Come il libretto di istruzioni iniziale che dice da dove cominciare ogni mattina
+Con quale metafora si possono descrivere le memorie di massa secondo la metafora del cantiere?;Come il magazzino dove viene conservato il materiale anche quando il cantiere è chiuso
+Con quale metafora si possono descrivere i dispositivi di input/output secondo la metafora del cantiere?;Come il cancello d'ingresso e d'uscita da cui passano richieste e risultati
+Con quale altra immagine si può descrivere il rapporto tra componenti che sembrano scollegati ma lavorano insieme?;Come guardare sotto il cofano di un'automobile dove motore batteria alternatore e serbatoio insieme fanno muovere l'auto
+Quando e dove fu presentato l'IBM Personal Computer 5150?;Il 12 agosto 1981 al Waldorf Astoria di New York
+Con quale nome in codice fu sviluppato l'IBM PC 5150?;Project Chess
+Cosa rese particolarmente innovativa l'architettura dell'IBM PC 5150?;La sua architettura aperta con cinque slot di espansione pensati per componenti aggiuntivi di aziende esterne
+Quale standard di espansione avrebbe poi preso il nome dai cinque slot della scheda madre del PC 5150?;Lo standard ISA
+Quale conseguenza ebbe la decisione di IBM di pubblicare la documentazione tecnica del PC 5150?;Diede il via a un intero mercato di componenti e computer compatibili IBM prodotti da altre aziende
+Perché il computer rallenta quando arrivano troppe richieste insieme alla CPU?;Perché il flusso di richieste supera la capacità della CPU di gestirle in quell'istante e non per mancanza di competenza
+Come gestisce la CPU le richieste che arrivano da più fonti contemporaneamente?;Le ordina e le esegue a grandissima velocità decidendo quale gestire e in che ordine
+Con quale metafora si può descrivere il funzionamento della CPU?;Come un vigile urbano al centro di un incrocio che decide chi può passare e chi deve aspettare
+In che anno e da quale azienda fu commercializzato il primo microprocessore della storia?;Nel novembre 1971 dall'azienda Intel
+Come si chiamava il primo microprocessore commerciale e quanti transistor conteneva?;Intel 4004 con 2300 transistor
+In quale formato fisico fu racchiusa la capacità di elaborazione dell'Intel 4004?;In un unico chip di silicio grande pochi millimetri
+Chi sviluppò l'Intel 4004?;Gli ingegneri Federico Faggin Ted Hoff e Stanley Mazor insieme al progettista Masatoshi Shima
+Per quale scopo fu originariamente sviluppato l'Intel 4004?;Per una calcolatrice da tavolo dell'azienda Busicom
+Come venivano gestite le funzioni di un processore prima dell'Intel 4004?;Erano distribuite su interi armadi di circuiti separati ingombranti e costosi
+Quale effetto ebbe la nascita del microprocessore sui dispositivi elettronici moderni?;Aprì la strada ai personal computer e a tutti i dispositivi elettronici moderni come smartphone e bancomat
+Con quale metafora si può descrivere una CPU multicore rispetto a una CPU con un solo core?;Come più vigili urbani che lavorano insieme nello stesso incrocio invece di uno solo
+Perché avere più core non significa sempre avere prestazioni migliori?;Perché se il carico di lavoro è leggero i core aggiuntivi restano inutilizzati e se il coordinamento tra i core è mal gestito si può generare confusione
+In quale situazione più core aiutano davvero le prestazioni?;Quando ci sono realmente più operazioni da gestire in parallelo
+Quando fu lanciato ufficialmente il primo processore dual-core AMD per il mercato consumer?;Il 31 maggio 2005 con l'Athlon 64 X2
+Quale altra azienda lanciò un processore dual-core consumer nello stesso periodo del 2005?;Intel con il Pentium D
+Come cambiò la strategia dei produttori di processori dopo l'arrivo dei processori dual-core?;Passarono dal puntare solo sulla velocità di un singolo core a usare più core che lavorano insieme
+Perché troppi core possono risultare inutili se il traffico di richieste è scarso?;Perché come troppi vigili in un incrocio poco trafficato possono restare inutilizzati o persino intralciarsi a vicenda
+Con quale metafora si può descrivere la differenza tra numero di core e GHz di una CPU?;I core determinano quanti vigili lavorano insieme mentre i GHz determinano quanto velocemente ciascun vigile fa passare le auto
+Con quale esempio numerico si può capire la differenza tra una CPU lenta e una veloce?;Un vigile lento fa passare circa venti automobili al minuto mentre uno veloce ne fa passare circa sessanta triplicando il flusso
+Chi pubblicò nel 1965 l'osservazione diventata nota come Legge di Moore?;Gordon Moore allora direttore ricerca e sviluppo di Fairchild Semiconductor
+Su quale rivista e con quale titolo fu pubblicato l'articolo di Gordon Moore del 1965?;Sulla rivista Electronics con il titolo Cramming More Components onto Integrated Circuits
+Cosa osservava originariamente la Legge di Moore e come fu rivista nel 1975?;Un raddoppio dei componenti su un circuito integrato ogni anno rivisto poi in un raddoppio ogni due anni
+La Legge di Moore è una legge scientifica in senso stretto?;No è un'osservazione empirica che ha guidato per decenni l'industria dei semiconduttori
+Perché il computer non vede mai davvero immagini testi o video così come li vediamo noi?;Perché conserva sempre e soltanto sequenze di byte organizzate secondo regole precise
+Perché un messaggio ciao su WhatsApp pesa molto più di 4 byte anche se il testo scritto è lo stesso di un file di testo puro?;Perché porta con sé anche mittente orario di invio stato di consegna e altri dati gestiti dall'app
+Chi coniò il termine byte e in che anno?;L'ingegnere Werner Buchholz nel luglio 1956
+Per quale progetto lavorava Werner Buchholz quando coniò il termine byte?;Per il supercomputer IBM 7030 Stretch
+Perché Buchholz scelse di scrivere byte invece di bite?;Per evitare confusione con la parola bit
+Il byte si stabilizzò subito sulla misura di 8 bit?;No si stabilizzò universalmente su questa misura solo negli anni successivi
+Con quale metafora si possono descrivere i multipli del byte?;Come le unità di peso della spesa dove i grammi diventano etti poi chili poi quintali e infine tonnellate

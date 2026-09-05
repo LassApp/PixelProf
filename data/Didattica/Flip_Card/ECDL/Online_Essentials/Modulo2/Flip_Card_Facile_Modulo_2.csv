@@ -1,0 +1,29 @@
+Cos'è l'IP pubblico?;L'indirizzo con cui l'intera rete locale di un utente viene identificata dall'esterno cioè da Internet
+Cosa identifica realmente un indirizzo IP pubblico?;Il punto di accesso da cui una connessione esce verso Internet in un determinato momento
+Un indirizzo IP pubblico identifica una persona o un dispositivo specifico?;No identifica solo il punto di accesso della connessione
+Chi assegna l'indirizzo IP pubblico a una connessione?;L'operatore di telecomunicazioni che gestisce la connessione
+Chi può richiedere ai gestori i dati tecnici di una connessione Internet?;Le autorità competenti nell'ambito di indagini specifiche
+Ogni accesso a Internet lascia una traccia tecnica di passaggio?;Sì attraverso l'operatore di telecomunicazioni che gestisce la connessione
+Cosa significa l'acronimo VPN?;Virtual Private Network cioè Rete Privata Virtuale
+Cos'è una VPN?;Un servizio che instrada la connessione attraverso un server intermedio proteggendo il traffico
+Quale indirizzo IP diventa visibile all'esterno quando si usa una VPN?;L'indirizzo IP pubblico del server intermedio e non quello reale dell'utente
+Una VPN rende completamente invisibili sulla rete?;No cambia solo il punto da cui si viene visti ma non elimina ogni traccia
+Chi può conoscere e conservare i dati di connessione che passano attraverso una VPN?;Il fornitore stesso del servizio VPN
+Cos'è un client nel modello client/server?;Il dispositivo che effettua una richiesta
+Cos'è un server nel modello client/server?;Il sistema che riceve una richiesta e restituisce una risposta con i dati richiesti
+Un client da solo può mostrare dati senza un server?;No dipende sempre da un server che gli fornisca i dati
+Un server è utile anche se nessun client gli invia richieste?;No resta inutile finché nessun client gli invia una richiesta
+Quante richieste può ricevere contemporaneamente un server?;Anche migliaia di richieste da client diversi nello stesso momento
+Cosa significa l'acronimo HTTP?;HyperText Transfer Protocol
+Cos'è l'HTTP?;Il protocollo cioè l'insieme di regole condivise con cui client e server si scambiano dati sul Web
+Cos'è l'HTTPS?;La versione sicura dell'HTTP in cui i dati vengono cifrati durante il trasferimento
+Come vengono trasmessi i dati con il semplice protocollo HTTP?;In chiaro cioè leggibili da chiunque si trovi lungo il percorso
+Cosa aggiunge l'HTTPS rispetto all'HTTP?;Un livello di cifratura che rende i dati incomprensibili a chi non possiede la chiave corretta
+L'HTTPS garantisce che i contenuti di un sito siano sicuri e veritieri?;No garantisce solo che la comunicazione tra client e server sia protetta e cifrata
+Cosa significa l'acronimo URL?;Uniform Resource Locator cioè localizzatore uniforme di risorse
+Cos'è un URL?;L'indirizzo completo che permette di individuare in modo univoco una risorsa specifica su Internet
+Quali sono le tre parti principali in cui si scompone un URL?;Protocollo dominio e percorso
+Cosa indica la parte del protocollo in un URL?;Come comunicare cioè le regole HTTP o HTTPS
+Cosa indica il dominio in un URL?;Dove andare cioè il nome che il DNS traduce nell'indirizzo IP del server
+Cosa indica il percorso in un URL?;Cosa chiedere cioè la risorsa specifica desiderata su quel server
+Cosa significa l'errore 404 restituito da un server?;Che il server esiste ed è raggiungibile ma la risorsa specifica richiesta non si trova in quel punto

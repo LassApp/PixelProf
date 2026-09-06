@@ -155,6 +155,20 @@
   border-color:rgba(255,80,80,.4); color:#ff6b6b; background:rgba(255,80,80,.1);
 }
 
+/* ── Quando il pannello è aperto, la topbar "fa spazio" spostando i
+   suoi tasti a sinistra invece di restare ferma sotto/accanto al
+   bordo del pannello (richiesta esplicita — prima il pannello si
+   limitava a sovrapporsi, lasciando i tasti della topbar dov'erano).
+   Solo da una certa larghezza in su: sotto, il pannello è quasi a
+   piena larghezza (width:min(320px,86vw)) e comprimere la topbar
+   lascerebbe troppo poco spazio ai suoi pulsanti. ── */
+@media (min-width: 720px) {
+  .topbar.pp-open, .cs-topbar.pp-open{
+    padding-right: calc(min(320px, 86vw) + 1.5rem);
+    transition: padding-right .3s cubic-bezier(.22,1,.36,1);
+  }
+}
+
 } /* @layer topbarprofile */
 
 /* ── Tema chiaro — stesso layer "theme" già dichiarato in

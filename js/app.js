@@ -66,25 +66,15 @@ async function _afterLogin(){
   // goStep('mod') in game-engine-state.js).
   if(typeof OnboardingTour!=='undefined') OnboardingTour.init(window.Auth.getUserId(), isDir);
 
-  // Badge topbar screen-courses
-  const nameEl    = sh('cs-teacher-name');
-  const dirBadge  = sh('cs-director-badge');
-  if(nameEl)    nameEl.textContent = appState.teacher?.name || window.Auth.getName();
-  if(dirBadge)  dirBadge.classList.toggle('hidden', !isDir);
-  // v6.1.1: nome direttore nella topbar delle 4 schermate "Gestione Docenti"
-  // (hub/crea/lista/dettaglio) — il badge 👑 Direttore lì è già statico in
-  // HTML (schermate director-only, nessun toggle isDir necessario). Un solo
-  // punto di aggiornamento: appState.teacher non cambia più dopo il login.
-  document.querySelectorAll('.tm-topbar-name').forEach(el=>{
-    el.textContent = appState.teacher?.name || window.Auth.getName();
-  });
+  // v8.25.1: rimossi qui i vecchi aggiornamenti di badge/nome docente
+  // sparsi nelle topbar (cs-teacher-name, cs-director-badge,
+  // cs-teacher-role-badge, .tm-topbar-name) — quegli elementi non
+  // esistono più: nome, ruolo e genere si vedono ora nel pannello
+  // Profilo unico (ProfilePanel.render() poco sotto), su tutte le
+  // schermate.
   // v6.0.0: link "← Dashboard" nella topbar di screen-courses — solo Direttore
   const backDashBtn = sh('cs-back-dashboard-btn');
   if(backDashBtn) backDashBtn.classList.toggle('hidden', !isDir);
-  // Badge ruolo docente nella screen-courses (visibile solo ai non-direttori)
-  const teacherRoleBadge = sh('cs-teacher-role-badge');
-  if(teacherRoleBadge) teacherRoleBadge.classList.toggle('hidden', isDir);
-  if(teacherRoleBadge) teacherRoleBadge.style.display = isDir ? 'none' : 'inline-flex';
 
   // Tasto profilo + pannello laterale nella topbar dell'app (v8.25.0)
   // — sostituisce il vecchio blocco tbBadge/tbRole/tbName. Logica e
@@ -164,8 +154,7 @@ function openDirectorDashboard(){
   if(!window.Auth?.isDirector()) return; // guard lato client — RLS resta fonte di verità
   sh('screen-courses')?.classList.add('hidden');
   sh('screen-teacher-mgmt')?.classList.add('hidden');
-  const nameEl = sh('dd-teacher-name');
-  if(nameEl) nameEl.textContent = appState.teacher?.name || window.Auth.getName();
+  // v8.25.1: rimosso dd-teacher-name — il nome si vede ora nel pannello Profilo.
   const dd = sh('screen-director-dashboard');
   if(!dd) return;
   dd.classList.remove('hidden');

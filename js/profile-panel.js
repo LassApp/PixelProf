@@ -65,20 +65,21 @@ const ProfilePanel = (function () {
   }
 
   /** Chiamata da app.js _afterLogin() al posto del vecchio blocco
-   *  tbBadge/tbRole/tbName — popola il tasto e il contenuto del
-   *  pannello. Non deve mai lanciare: usata nel percorso di login. */
+   *  tbBadge/tbRole/tbName — popola TUTTE le istanze del tasto
+   *  profilo (v8.25.1: presente su ogni schermata, non solo nel
+   *  gioco) e il contenuto del pannello, condiviso e unico. */
   function render(profile, isDir) {
     _isDir = !!isDir;
     const st = _styleFor(_isDir, profile && profile.genere);
 
-    const btn = sh('tb-profile-btn');
-    if (btn) {
+    document.querySelectorAll('.tb-profile-btn').forEach(btn => {
       btn.style.setProperty('--profile-ring', st.ring);
       btn.style.setProperty('--profile-bg', st.bg);
       btn.classList.add('visible');
-    }
-    const icon = sh('tb-profile-icon');
-    if (icon) icon.className = 'ti ' + st.icon;
+    });
+    document.querySelectorAll('.tb-profile-icon').forEach(icon => {
+      icon.className = 'ti ' + st.icon + ' tb-profile-icon';
+    });
 
     const name = (profile && profile.name) || (window.Auth && window.Auth.getName && window.Auth.getName()) || '—';
 
@@ -105,12 +106,17 @@ const ProfilePanel = (function () {
     if (lastClass) lastClass.textContent = _lastClassroomName(profile && profile.last_classroom_id);
   }
 
+  function _setTopbarShift(open) {
+    document.querySelectorAll('.topbar, .cs-topbar').forEach(tb => tb.classList.toggle('pp-open', open));
+  }
+
   function toggle() {
     const panel = sh('profile-panel');
     const backdrop = sh('profile-panel-backdrop');
     if (!panel || !backdrop) return;
     const open = panel.classList.toggle('open');
     backdrop.classList.toggle('open', open);
+    _setTopbarShift(open);
     if (typeof closeHubMenu === 'function') closeHubMenu();
   }
 
@@ -119,6 +125,7 @@ const ProfilePanel = (function () {
     const backdrop = sh('profile-panel-backdrop');
     if (panel) panel.classList.remove('open');
     if (backdrop) backdrop.classList.remove('open');
+    _setTopbarShift(false);
   }
 
   /** "Rivedi il tour guidato" — riazzera lo stato del tour e riporta

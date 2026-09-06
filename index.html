@@ -229,15 +229,15 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </div>
     </div>
     <div class="cs-teacher-badge">
-      <span class="cs-director-badge">👑 Direttore</span>
-      <span class="cs-teacher-name" id="dd-teacher-name"></span>
       <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
         <i class="ti ti-volume-2 audio-toggle-icon"></i>
       </button>
       <button class="audio-toggle-btn theme-toggle-btn" onclick="ThemeManager.toggle()" title="Tema chiaro/scuro" aria-label="Passa al tema chiaro o scuro">
         <i class="ti ti-moon theme-toggle-icon"></i>
       </button>
-      <button class="cs-logout-btn" onclick="doLogout()"><i class="ti ti-logout"></i> Esci</button>
+      <button class="tb-profile-btn" onclick="ProfilePanel.toggle()" title="Profilo">
+        <i class="ti ti-user tb-profile-icon"></i>
+      </button>
     </div>
   </div>
   <div class="cs-body">
@@ -300,15 +300,15 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </div>
     <div class="cs-teacher-badge">
       <button class="back-link" onclick="closeTeacherManagement()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Dashboard</button>
-      <span class="cs-director-badge">👑 Direttore</span>
-      <span class="cs-teacher-name tm-topbar-name"></span>
       <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
         <i class="ti ti-volume-2 audio-toggle-icon"></i>
       </button>
       <button class="audio-toggle-btn theme-toggle-btn" onclick="ThemeManager.toggle()" title="Tema chiaro/scuro" aria-label="Passa al tema chiaro o scuro">
         <i class="ti ti-moon theme-toggle-icon"></i>
       </button>
-      <button class="cs-logout-btn" onclick="doLogout()"><i class="ti ti-logout"></i> Esci</button>
+      <button class="tb-profile-btn" onclick="ProfilePanel.toggle()" title="Profilo">
+        <i class="ti ti-user tb-profile-icon"></i>
+      </button>
     </div>
   </div>
   <div class="cs-body">
@@ -361,15 +361,15 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </div>
     <div class="cs-teacher-badge">
       <button class="back-link" onclick="tmBackFromCreate()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Docenti</button>
-      <span class="cs-director-badge">👑 Direttore</span>
-      <span class="cs-teacher-name tm-topbar-name"></span>
       <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
         <i class="ti ti-volume-2 audio-toggle-icon"></i>
       </button>
       <button class="audio-toggle-btn theme-toggle-btn" onclick="ThemeManager.toggle()" title="Tema chiaro/scuro" aria-label="Passa al tema chiaro o scuro">
         <i class="ti ti-moon theme-toggle-icon"></i>
       </button>
-      <button class="cs-logout-btn" onclick="doLogout()"><i class="ti ti-logout"></i> Esci</button>
+      <button class="tb-profile-btn" onclick="ProfilePanel.toggle()" title="Profilo">
+        <i class="ti ti-user tb-profile-icon"></i>
+      </button>
     </div>
   </div>
   <div class="cs-body" style="max-width:520px">
@@ -432,15 +432,15 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </div>
     <div class="cs-teacher-badge">
       <button class="back-link" onclick="tmBackFromList()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Docenti</button>
-      <span class="cs-director-badge">👑 Direttore</span>
-      <span class="cs-teacher-name tm-topbar-name"></span>
       <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
         <i class="ti ti-volume-2 audio-toggle-icon"></i>
       </button>
       <button class="audio-toggle-btn theme-toggle-btn" onclick="ThemeManager.toggle()" title="Tema chiaro/scuro" aria-label="Passa al tema chiaro o scuro">
         <i class="ti ti-moon theme-toggle-icon"></i>
       </button>
-      <button class="cs-logout-btn" onclick="doLogout()"><i class="ti ti-logout"></i> Esci</button>
+      <button class="tb-profile-btn" onclick="ProfilePanel.toggle()" title="Profilo">
+        <i class="ti ti-user tb-profile-icon"></i>
+      </button>
     </div>
   </div>
   <div class="cs-body">
@@ -478,15 +478,15 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </div>
     <div class="cs-teacher-badge">
       <button class="back-link" onclick="tmBackFromDetail()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Lista</button>
-      <span class="cs-director-badge">👑 Direttore</span>
-      <span class="cs-teacher-name tm-topbar-name"></span>
       <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
         <i class="ti ti-volume-2 audio-toggle-icon"></i>
       </button>
       <button class="audio-toggle-btn theme-toggle-btn" onclick="ThemeManager.toggle()" title="Tema chiaro/scuro" aria-label="Passa al tema chiaro o scuro">
         <i class="ti ti-moon theme-toggle-icon"></i>
       </button>
-      <button class="cs-logout-btn" onclick="doLogout()"><i class="ti ti-logout"></i> Esci</button>
+      <button class="tb-profile-btn" onclick="ProfilePanel.toggle()" title="Profilo">
+        <i class="ti ti-user tb-profile-icon"></i>
+      </button>
     </div>
   </div>
   <div class="cs-body" style="max-width:600px">
@@ -569,20 +569,17 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <span class="cs-logo-sub">ICDL Lab · v8.25.0</span>
       </div>
     </div>
-    <!-- Badge docente loggato + azioni — v3.2.2 -->
+    <!-- Badge docente loggato + azioni — v8.25.1: sostituito da tasto Profilo unico -->
     <div class="cs-teacher-badge">
       <button id="cs-back-dashboard-btn" class="back-link hidden" onclick="backToDirectorDashboard()" style="margin-right:4px"><i class="ti ti-arrow-left"></i> Dashboard</button>
-      <span id="cs-director-badge" class="cs-director-badge hidden">👑 Direttore</span>
-      <span id="cs-teacher-role-badge" class="hidden" style="display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;background:rgba(0,207,255,.1);border:1px solid rgba(0,207,255,.25);color:#00cfff;font-size:10px;font-weight:700;font-family:'Share Tech Mono',monospace;letter-spacing:.5px">📖 Docente</span>
-      <span class="cs-teacher-name" id="cs-teacher-name"></span>
       <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
         <i class="ti ti-volume-2 audio-toggle-icon"></i>
       </button>
       <button class="audio-toggle-btn theme-toggle-btn" onclick="ThemeManager.toggle()" title="Tema chiaro/scuro" aria-label="Passa al tema chiaro o scuro">
         <i class="ti ti-moon theme-toggle-icon"></i>
       </button>
-      <button class="cs-logout-btn" onclick="doLogout()">
-        <i class="ti ti-logout"></i> Esci
+      <button class="tb-profile-btn" onclick="ProfilePanel.toggle()" title="Profilo">
+        <i class="ti ti-user tb-profile-icon"></i>
       </button>
     </div>
   </div>
@@ -948,49 +945,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div>
 <!-- Backdrop per chiudere Hub cliccando fuori -->
 <div id="tb-hub-backdrop" onclick="closeHubMenu()" style="display:none;position:fixed;inset:0;z-index:90"></div>
-
-<!-- Pannello Profilo (v8.25.0) — nome, ruolo, ultimo accesso, ultima
-     aula collegata, poi Esci e Rivedi il tour guidato. Markup e stili
-     in css/topbar-profile.css, logica in js/profile-panel.js. -->
-<div id="profile-panel-backdrop" class="profile-panel-backdrop" onclick="ProfilePanel.close()"></div>
-<aside id="profile-panel" class="profile-panel" role="dialog" aria-label="Profilo">
-  <button class="pp-panel-close" onclick="ProfilePanel.close()" aria-label="Chiudi">×</button>
-
-  <div class="pp-panel-header">
-    <span class="pp-profile-avatar" id="pp-profile-avatar"><i class="ti ti-user"></i></span>
-    <div>
-      <div class="pp-profile-name" id="pp-profile-name">—</div>
-      <span class="pp-profile-role" id="pp-profile-role">📖 Docente</span>
-    </div>
-  </div>
-
-  <div class="pp-panel-info">
-    <div class="pp-info-row">
-      <i class="ti ti-clock"></i>
-      <div>
-        <div class="pp-info-label">Ultimo accesso</div>
-        <div class="pp-info-value" id="pp-profile-last-access">—</div>
-      </div>
-    </div>
-    <div class="pp-info-row">
-      <i class="ti ti-door"></i>
-      <div>
-        <div class="pp-info-label">Ultima aula collegata</div>
-        <div class="pp-info-value" id="pp-profile-last-classroom">—</div>
-      </div>
-    </div>
-  </div>
-
-  <div class="pp-panel-divider"></div>
-
-  <button class="pp-panel-action pp-logout-action cs-logout-btn" onclick="doLogout()">
-    <i class="ti ti-logout"></i> Esci
-  </button>
-  <button class="pp-panel-action pp-tour-action" onclick="ProfilePanel.restartTour()">
-    <i class="ti ti-map-2"></i> Rivedi il tour guidato
-  </button>
-</aside>
-
 
 <!-- ======================================
      HOME
@@ -1764,6 +1718,53 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div><!-- /app -->
 
 
-<script src="js/app.bundle.min.js?v=8.25.0"></script>
+<script src="js/app.bundle.min.js?v=8.24.2"></script>
+<!-- Pannello Profilo (v8.25.0) — nome, ruolo, ultimo accesso, ultima
+     aula collegata, poi Esci e Rivedi il tour guidato. Markup e stili
+     in css/topbar-profile.css, logica in js/profile-panel.js.
+     Volutamente FUORI da .app (stessa convenzione già usata da
+     #pp-dialog-overlay, #dp-overlay, #course-wizard-overlay) — .app
+     confina i figli position:fixed al proprio riquadro (max-width
+     centrato), quindi qualunque overlay a schermo intero deve vivere
+     qui, a livello di <body>. -->
+<div id="profile-panel-backdrop" class="profile-panel-backdrop" onclick="ProfilePanel.close()"></div>
+<aside id="profile-panel" class="profile-panel" role="dialog" aria-label="Profilo">
+  <button class="pp-panel-close" onclick="ProfilePanel.close()" aria-label="Chiudi">×</button>
+
+  <div class="pp-panel-header">
+    <span class="pp-profile-avatar" id="pp-profile-avatar"><i class="ti ti-user"></i></span>
+    <div>
+      <div class="pp-profile-name" id="pp-profile-name">—</div>
+      <span class="pp-profile-role" id="pp-profile-role">📖 Docente</span>
+    </div>
+  </div>
+
+  <div class="pp-panel-info">
+    <div class="pp-info-row">
+      <i class="ti ti-clock"></i>
+      <div>
+        <div class="pp-info-label">Ultimo accesso</div>
+        <div class="pp-info-value" id="pp-profile-last-access">—</div>
+      </div>
+    </div>
+    <div class="pp-info-row">
+      <i class="ti ti-door"></i>
+      <div>
+        <div class="pp-info-label">Ultima aula collegata</div>
+        <div class="pp-info-value" id="pp-profile-last-classroom">—</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pp-panel-divider"></div>
+
+  <button class="pp-panel-action pp-logout-action cs-logout-btn" onclick="doLogout()">
+    <i class="ti ti-logout"></i> Esci
+  </button>
+  <button class="pp-panel-action pp-tour-action" onclick="ProfilePanel.restartTour()">
+    <i class="ti ti-map-2"></i> Rivedi il tour guidato
+  </button>
+</aside>
+
 </body>
 </html>

@@ -226,48 +226,48 @@ data/
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo1/`
   - File:
-    - `Flip_Card_Facile_Modulo_1.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_1.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_1.csv` *(creato — 31 Flip Card)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(creato — 31 Flip Card)*
 
 - **Cyberbullismo**
   - Chiave: `cyberbullismo`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo2/`
   - File:
-    - `Flip_Card_Facile_Modulo_2.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_2.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_2.csv` *(creato — 33 Flip Card)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(creato — 33 Flip Card)*
 
 - **Hate Speech**
   - Chiave: `hate-speech`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo3/`
   - File:
-    - `Flip_Card_Facile_Modulo_3.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_3.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_3.csv` *(creato — 29 Flip Card)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(creato — 28 Flip Card)*
 
 - **Sexting e Revenge Porn**
   - Chiave: `sexting-revenge-porn`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo4/`
   - File:
-    - `Flip_Card_Facile_Modulo_4.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_4.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_4.csv` *(creato — 28 Flip Card)*
+    - `Flip_Card_Medio_Modulo_4.csv` *(creato — 25 Flip Card)*
 
 - **Grooming**
   - Chiave: `grooming`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo5/`
   - File:
-    - `Flip_Card_Facile_Modulo_5.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_5.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_5.csv` *(creato — 9 Flip Card)*
+    - `Flip_Card_Medio_Modulo_5.csv` *(creato — 12 Flip Card)*
 
 - **Cittadinanza Digitale**
   - Chiave: `cittadinanza-digitale`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo6/`
   - File:
-    - `Flip_Card_Facile_Modulo_6.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_6.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_6.csv` *(creato — 9 Flip Card)*
+    - `Flip_Card_Medio_Modulo_6.csv` *(creato — 8 Flip Card)*
 
 ---
 
@@ -288,32 +288,32 @@ data/
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo2/`
   - File:
-    - `Flip_Card_Facile_Modulo_2.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_2.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_2.csv` *(creato — conteggio da confermare)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(creato — conteggio da confermare)*
 
 - **Protezione dei Dati**
   - Chiave: `protezione-dati`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo3/`
   - File:
-    - `Flip_Card_Facile_Modulo_3.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_3.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_3.csv` *(creato — conteggio da confermare)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(creato — conteggio da confermare)*
 
 - **Sicurezza Quotidiana**
   - Chiave: `sicurezza-quotidiana`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo4/`
   - File:
-    - `Flip_Card_Facile_Modulo_4.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_4.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_4.csv` *(creato — conteggio da confermare)*
+    - `Flip_Card_Medio_Modulo_4.csv` *(creato — conteggio da confermare)*
 
 - **Sicurezza dei Pagamenti**
   - Chiave: `sicurezza-pagamenti`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo5/`
   - File:
-    - `Flip_Card_Facile_Modulo_5.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_5.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_5.csv` *(creato — conteggio da confermare)*
+    - `Flip_Card_Medio_Modulo_5.csv` *(creato — conteggio da confermare)*
 
 - **Privacy e Normative**
   - Chiave: `privacy-normative`
@@ -544,16 +544,16 @@ data/
 | ECDL — Word | 5 | 10 | 0 | 10 | attivo |
 | ECDL — Spreadsheet | 5 | 10 | 0 | 10 | attivo |
 | ECDL — Presentation | 3 | 6 | 0 | 6 | attivo |
-| Cyberbullismo e Sicurezza Online | 6 | 12 | 0 | 12 | disattivato |
-| Cybersecurity — Non solo antivirus e password | 8 | 16 | 8 | 8 | disattivato |
+| Cyberbullismo e Sicurezza Online | 6 | 12 | 12 | 0 | disattivato |
+| Cybersecurity — Non solo antivirus e password | 8 | 16 | 16 | 0 | disattivato |
 | Reti e Internet | 8 | 16 | 14 | 2 | disattivato |
 | Malware e Minacce Informatiche | 1 | 2 | 2 | 0 | disattivato |
 | Intelligenza Artificiale | 13 | 26 | 0 | 26 | disattivato |
-| **Totale** | **57** | **114** | **34** | **80** | — |
+| **Totale** | **57** | **114** | **54** | **60** | — |
 
 - **Moduli totali mappati:** 57
-- **File CSV creati:** 34 (8 in Computer Essentials — area completa; 2 in Online Essentials — La rete e i dati Modulo1; 2 in Malware e Minacce Informatiche — Modulo1, area completa; 14 in Reti e Internet — Le fondamenta delle reti Modulo1, Il protocollo TCP/IP Modulo2, DNS la rubrica di Internet Modulo3, Router Switch e dispositivi di rete Modulo4, Wi-Fi e reti wireless Modulo5, Cloud Networking Modulo6 e VPN e comunicazioni sicure Modulo7; 8 in Cybersecurity — Non solo antivirus e password — Fondamenti di Cybersecurity Modulo1, Privacy e Normative Modulo6, Sicurezza Online e Social Network Modulo7 e Nuove Minacce Digitali Modulo8)
-- **File CSV da creare:** 80
+- **File CSV creati:** 54 (8 in Computer Essentials — area completa; 2 in Online Essentials — La rete e i dati Modulo1; 2 in Malware e Minacce Informatiche — Modulo1, area completa; 14 in Reti e Internet — Le fondamenta delle reti Modulo1, Il protocollo TCP/IP Modulo2, DNS la rubrica di Internet Modulo3, Router Switch e dispositivi di rete Modulo4, Wi-Fi e reti wireless Modulo5, Cloud Networking Modulo6 e VPN e comunicazioni sicure Modulo7; 16 in Cybersecurity — Non solo antivirus e password — area completa, tutti gli 8 moduli; 12 in Cyberbullismo e Sicurezza Online — area completa, tutti i 6 moduli)
+- **File CSV da creare:** 60
 - **File CSV totali attesi:** 114
 
-*Nota: il conteggio "Creati" di Computer Essentials era stato inizialmente corretto da 8 a 2 perché l'elenco dettagliato segnava tutti i file come "da creare" nonostante la tabella li indicasse già completi. Con il completamento di tutti i quattro moduli tramite generazione da PDF/Markdown, il conteggio di 8/8 per Computer Essentials è ora effettivamente verificato riga per riga. La stessa discrepanza è emersa anche per Online Essentials, che la tabella indicava come 8/8 completi mentre l'elenco dettagliato segnava tutti i file come "da creare": con la generazione del primo modulo (La rete e i dati) il conteggio reale risulta invece 2/8, corretto di conseguenza. Restano da verificare gli altri tre moduli di Online Essentials (Identità e comunicazione, Navigazione e tracciamento, Sicurezza e comportamento online). Con la generazione del Modulo5 (Wi-Fi e reti wireless), del Modulo6 (Cloud Networking) e del Modulo7 (VPN e comunicazioni sicure), l'area Reti e Internet passa da 8/16 a 14/16 file creati; resta da completare solo il Modulo8 (Troubleshooting delle reti). Con la generazione del Modulo1 (Fondamenti di Cybersecurity) l'area Cybersecurity — Non solo antivirus e password passa da 0/16 a 2/16 file creati; restano da completare i Moduli 2-8. Con la generazione del Modulo6 (Privacy e Normative) l'area Cybersecurity — Non solo antivirus e password passa da 2/16 a 4/16 file creati; restano da completare i Moduli 2, 3, 4, 5, 7 e 8. Con la generazione del Modulo7 (Sicurezza Online e Social Network) l'area Cybersecurity — Non solo antivirus e password passa da 4/16 a 6/16 file creati; restano da completare i Moduli 2, 3, 4, 5 e 8. Con la generazione del Modulo8 (Nuove Minacce Digitali) l'area Cybersecurity — Non solo antivirus e password passa da 6/16 a 8/16 file creati; restano da completare i Moduli 2, 3, 4 e 5.*
+*Nota: il conteggio "Creati" di Computer Essentials era stato inizialmente corretto da 8 a 2 perché l'elenco dettagliato segnava tutti i file come "da creare" nonostante la tabella li indicasse già completi. Con il completamento di tutti i quattro moduli tramite generazione da PDF/Markdown, il conteggio di 8/8 per Computer Essentials è ora effettivamente verificato riga per riga. La stessa discrepanza è emersa anche per Online Essentials, che la tabella indicava come 8/8 completi mentre l'elenco dettagliato segnava tutti i file come "da creare": con la generazione del primo modulo (La rete e i dati) il conteggio reale risulta invece 2/8, corretto di conseguenza. Restano da verificare gli altri tre moduli di Online Essentials (Identità e comunicazione, Navigazione e tracciamento, Sicurezza e comportamento online). Con la generazione del Modulo5 (Wi-Fi e reti wireless), del Modulo6 (Cloud Networking) e del Modulo7 (VPN e comunicazioni sicure), l'area Reti e Internet passa da 8/16 a 14/16 file creati; resta da completare solo il Modulo8 (Troubleshooting delle reti). Con la generazione del Modulo6 (Cittadinanza Digitale) l'area Cyberbullismo e Sicurezza Online è ora completa (12/12 file, tutti i 6 moduli). Il Modulo5 (Grooming) è stato intenzionalmente generato con un numero di Flip Card più contenuto (9 Facile, 12 Medio) rispetto agli altri moduli, mantenendo il contenuto a livello protettivo e concettuale invece di scomporre in dettaglio le singole tecniche o fasi di manipolazione; anche il Modulo6 (Cittadinanza Digitale, 9 Facile e 8 Medio) ha un conteggio più contenuto perché il PDF sorgente è più breve e riassuntivo rispetto agli altri moduli dell'area. L'utente ha confermato che l'area Cybersecurity — Non solo antivirus e password è stata completata in tutti gli 8 moduli (16/16 file); i conteggi delle Flip Card per i Moduli 2 (Sicurezza degli Account), 3 (Protezione dei Dati), 4 (Sicurezza Quotidiana) e 5 (Sicurezza dei Pagamenti) restano da confermare, poiché non generati in questa sessione.*

@@ -1,0 +1,737 @@
+[
+  {
+    "id": 1,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è l'Hate Speech, secondo la definizione del modulo?",
+    "options": [
+      "Un disaccordo espresso in modo educato in una discussione online",
+      "Espressioni che attaccano, umiliano, discriminano o incitano all'ostilità o alla violenza contro una persona o un gruppo sulla base di caratteristiche come origine, etnia, religione o genere",
+      "Qualsiasi commento negativo scritto sotto un video sui social",
+      "Una critica rivolta a una decisione politica o sportiva"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'Hate Speech attacca persone o gruppi sulla base di caratteristiche identitarie, non riguarda semplici critiche o disaccordi."
+  },
+  {
+    "id": 2,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, che cosa distingue l'Hate Speech da un semplice insulto personale?",
+    "options": [
+      "L'Hate Speech riguarda soltanto le discussioni sportive online",
+      "L'Hate Speech prende di mira una persona o un gruppo per una caratteristica identitaria o di appartenenza",
+      "L'insulto personale non può mai essere considerato un comportamento aggressivo",
+      "L'Hate Speech è sempre meno grave di un insulto personale"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'insulto personale attacca la persona direttamente, mentre l'Hate Speech colpisce una caratteristica identitaria o di appartenenza."
+  },
+  {
+    "id": 3,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono le tre situazioni che il modulo invita a distinguere?",
+    "options": [
+      "Fatto, opinione, menzogna",
+      "Critica o opinione, insulto personale, Hate Speech",
+      "Discussione, litigio, silenzio",
+      "Ironia, sarcasmo, provocazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo distingue tra critica di un'idea, insulto rivolto alla persona e Hate Speech rivolto a una caratteristica identitaria."
+  },
+  {
+    "id": 4,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come può l'ambiente online amplificare l'Hate Speech, secondo il modulo?",
+    "options": [
+      "Perché online è impossibile condividere un contenuto più di una volta",
+      "Perché i social network limitano sempre la visibilità dei contenuti offensivi",
+      "Un messaggio può essere condiviso, copiato e ripubblicato in pochi secondi, raggiungendo un pubblico molto più ampio",
+      "Perché ogni messaggio online viene automaticamente verificato da un moderatore umano"
+    ],
+    "correctIndex": 2,
+    "explanation": "Online un messaggio può diffondersi molto rapidamente, raggiungendo un pubblico molto più ampio rispetto alla situazione originale."
+  },
+  {
+    "id": 5,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa evidenziò la missione internazionale d'inchiesta delle Nazioni Unite nel 2018 riguardo al Myanmar?",
+    "options": [
+      "Un accordo commerciale tra piattaforme social e governo locale",
+      "Un attacco informatico contro le infrastrutture governative del paese",
+      "Il ruolo della piattaforma Facebook nella diffusione di contenuti che contribuivano a creare un clima di ostilità contro la minoranza Rohingya",
+      "La creazione di una nuova legge sulla protezione dei dati personali"
+    ],
+    "correctIndex": 2,
+    "explanation": "La missione ONU del 2018 evidenziò il ruolo di Facebook nella diffusione di contenuti d'odio contro i Rohingya in Myanmar."
+  },
+  {
+    "id": 6,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa dimostra il caso del Myanmar, secondo il modulo?",
+    "options": [
+      "Che le piattaforme digitali risolvono sempre autonomamente questi problemi",
+      "Che il linguaggio d'odio online può contribuire a normalizzare pregiudizi e ostilità nella società reale",
+      "Che il linguaggio d'odio rimane sempre confinato alla dimensione virtuale",
+      "Che i social network non hanno mai alcuna influenza sulla vita reale"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il caso mostra che le parole online possono avere conseguenze concrete offline."
+  },
+  {
+    "id": 7,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato Internet nella metafora del modulo?",
+    "options": [
+      "A una biblioteca silenziosa",
+      "A un diario personale mai condiviso",
+      "A una piazza con un megafono",
+      "A una stanza chiusa senza finestre"
+    ],
+    "correctIndex": 2,
+    "explanation": "Internet è paragonato a una piazza con un megafono: le parole possono raggiungere moltissime persone, aumentando la responsabilità di chi le pronuncia."
+  },
+  {
+    "id": 8,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la libertà di espressione, secondo il modulo?",
+    "options": [
+      "Il diritto di comunicare idee, opinioni, informazioni e convinzioni senza essere sottoposti a censura o interferenze arbitrarie",
+      "L'obbligo di essere sempre d'accordo con le opinioni della maggioranza",
+      "Il diritto di dire qualsiasi cosa senza subire mai alcuna conseguenza",
+      "Il diritto esclusivo delle piattaforme digitali di stabilire cosa sia vero"
+    ],
+    "correctIndex": 0,
+    "explanation": "La libertà di espressione è il diritto di comunicare idee e opinioni senza censura, mantenendo comunque delle responsabilità."
+  },
+  {
+    "id": 9,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa comprende la libertà di espressione, secondo il modulo?",
+    "options": [
+      "Anche il diritto di esprimere opinioni scomode, impopolari o controverse",
+      "Solo il diritto di parlare di argomenti non controversi",
+      "Il diritto di ignorare qualsiasi regola delle piattaforme digitali",
+      "Solo il diritto di esprimere opinioni condivise dalla maggioranza"
+    ],
+    "correctIndex": 0,
+    "explanation": "La libertà di espressione comprende anche opinioni scomode, impopolari o controverse, non solo quelle condivise da tutti."
+  },
+  {
+    "id": 10,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con che cosa deve convivere il diritto alla libera espressione, secondo il modulo?",
+    "options": [
+      "Con altri diritti e con le norme previste dalla legge",
+      "Con nessun altro principio, essendo un diritto assoluto",
+      "Solo con le decisioni delle singole piattaforme digitali",
+      "Esclusivamente con le regole personali di ciascun utente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il diritto alla libera espressione deve convivere con altri diritti e con le norme di legge, non è un diritto illimitato."
+  },
+  {
+    "id": 11,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa può fare una piattaforma digitale riguardo ai contenuti pubblicati, secondo il modulo?",
+    "options": [
+      "Stabilire proprie regole di utilizzo e rimuovere contenuti quando violano le sue condizioni",
+      "Deve consultare un tribunale prima di ogni singola decisione",
+      "Deve sempre pubblicare qualsiasi contenuto senza alcuna limitazione",
+      "Non può mai intervenire sui contenuti pubblicati dagli utenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una piattaforma digitale può stabilire regole proprie e rimuovere contenuti che violano le sue condizioni d'uso."
+  },
+  {
+    "id": 12,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa riguardava il caso Elonis v. United States del 2015?",
+    "options": [
+      "Una controversia relativa ai diritti d'autore di contenuti musicali",
+      "Un attacco informatico a un'infrastruttura governativa statunitense",
+      "Una violazione dei dati personali di milioni di utenti Facebook",
+      "Messaggi pubblicati su Facebook che contenevano minacce, per cui la Corte Suprema ritenne necessario considerare anche lo stato mentale dell'autore"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nel caso Elonis, la Corte Suprema annullò una condanna per minacce online, ritenendo necessario considerare anche lo stato mentale dell'autore."
+  },
+  {
+    "id": 13,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa mostra il caso Elonis v. United States, secondo il modulo?",
+    "options": [
+      "Che ogni messaggio minaccioso online è sempre perseguibile allo stesso modo",
+      "Quanto possa essere complesso stabilire il confine tra espressione, linguaggio offensivo e minaccia",
+      "Che le piattaforme social non possono mai essere coinvolte in procedimenti legali",
+      "Che il contesto non ha mai alcuna importanza nella valutazione di una comunicazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il caso mostra che contesto e circostanze possono essere determinanti nel valutare una comunicazione online."
+  },
+  {
+    "id": 14,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata la libertà di espressione nella metafora del modulo?",
+    "options": [
+      "A un palco aperto in una piazza pubblica, dove tutti possono salire e parlare",
+      "A una stanza chiusa accessibile solo a poche persone",
+      "A un microfono spento durante un evento pubblico",
+      "A un libro che nessuno può leggere"
+    ],
+    "correctIndex": 0,
+    "explanation": "La libertà di espressione è paragonata a un palco aperto in una piazza pubblica dove tutti possono esprimere le proprie idee."
+  },
+  {
+    "id": 15,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il linguaggio d'odio, secondo la definizione del modulo?",
+    "options": [
+      "Un errore grammaticale commesso durante una conversazione online",
+      "Una forma di comunicazione che attacca o discrimina una persona o un gruppo sulla base di caratteristiche personali o sociali",
+      "Una critica rivolta a un prodotto o un servizio commerciale",
+      "Qualsiasi discussione accesa tra due utenti su un tema controverso"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il linguaggio d'odio attacca o discrimina persone o gruppi sulla base di caratteristiche personali o sociali come origine, religione o genere."
+  },
+  {
+    "id": 16,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è una caratteristica fondamentale del linguaggio d'odio, secondo il modulo?",
+    "options": [
+      "La generalizzazione, che attribuisce caratteristiche negative a tutte le persone di un gruppo",
+      "Il riferimento a fatti verificabili e documentati",
+      "L'uso esclusivo di un linguaggio tecnico e formale",
+      "La precisione nel descrivere un singolo episodio specifico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una caratteristica fondamentale del linguaggio d'odio è la generalizzazione, che attribuisce caratteristiche negative a un intero gruppo."
+  },
+  {
+    "id": 17,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono gli stereotipi, secondo il modulo?",
+    "options": [
+      "Rappresentazioni semplificate e negative di un gruppo",
+      "Regole stabilite dalle piattaforme digitali per moderare i contenuti",
+      "Informazioni verificate e basate su dati statistici accurati",
+      "Opinioni personali su un singolo comportamento individuale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli stereotipi sono rappresentazioni semplificate e negative di un gruppo, una delle tecniche del linguaggio d'odio."
+  },
+  {
+    "id": 18,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la disumanizzazione, secondo il modulo?",
+    "options": [
+      "Quando una categoria di persone viene descritta come meno importante o meno degna di rispetto",
+      "Quando una persona viene elogiata per le sue qualità personali",
+      "Quando un contenuto viene rimosso da una piattaforma digitale",
+      "Quando un gruppo di persone riceve un trattamento di favore ingiustificato"
+    ],
+    "correctIndex": 0,
+    "explanation": "La disumanizzazione consiste nel descrivere una categoria di persone come meno importante o meno degna di rispetto."
+  },
+  {
+    "id": 19,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il capro espiatorio, come tecnica del linguaggio d'odio?",
+    "options": [
+      "Analizzare in modo approfondito le cause di un fenomeno sociale",
+      "Assumersi la responsabilità personale di un proprio errore",
+      "Attribuire problemi complessi a un intero gruppo",
+      "Premiare un gruppo per il proprio contributo alla comunità"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il capro espiatorio consiste nell'attribuire problemi complessi a un intero gruppo, semplificando situazioni articolate."
+  },
+  {
+    "id": 20,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa annunciò Facebook nel 2019, secondo il modulo?",
+    "options": [
+      "L'eliminazione totale della possibilità di commentare i post",
+      "Un aggiornamento delle proprie politiche sui contenuti per contrastare forme di odio e discriminazione",
+      "Un nuovo servizio di messaggistica criptata per tutti gli utenti",
+      "La chiusura definitiva della piattaforma in diversi Paesi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nel 2019 Facebook annunciò un aggiornamento delle politiche sui contenuti per contrastare odio e discriminazione."
+  },
+  {
+    "id": 21,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato il linguaggio d'odio nella metafora del modulo?",
+    "options": [
+      "A una crepa in un muro che, se ignorata, può allargarsi fino a compromettere l'intera struttura",
+      "A una porta sempre chiusa a chiave",
+      "A un dipinto appeso a una parete",
+      "A un fiume che scorre sempre nella stessa direzione senza mai cambiare"
+    ],
+    "correctIndex": 0,
+    "explanation": "Come una crepa in un muro, il linguaggio d'odio può sembrare insignificante ma allargarsi se non viene affrontato."
+  },
+  {
+    "id": 22,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una Echo Chamber, secondo il modulo?",
+    "options": [
+      "Un gruppo di persone che si incontra esclusivamente di persona",
+      "Un sistema che elimina automaticamente ogni contenuto pubblicato online",
+      "Un ambiente digitale nel quale una persona tende a incontrare soprattutto informazioni, opinioni e contenuti simili ai propri",
+      "Un dispositivo tecnico utilizzato per amplificare il suono nei video online"
+    ],
+    "correctIndex": 2,
+    "explanation": "Una Echo Chamber è un ambiente digitale in cui si incontrano principalmente contenuti simili ai propri, mentre le idee diverse vengono limitate."
+  },
+  {
+    "id": 23,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa utilizzano le piattaforme digitali per selezionare e mostrare contenuti, secondo il modulo?",
+    "options": [
+      "Sondaggi quotidiani rivolti a tutti gli utenti",
+      "Sistemi automatici chiamati algoritmi",
+      "Comitati di redazione che scelgono manualmente ogni contenuto",
+      "Decisioni prese esclusivamente da autorità governative"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le piattaforme digitali utilizzano algoritmi per selezionare e mostrare contenuti che potrebbero interessare l'utente."
+  },
+  {
+    "id": 24,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali fenomeni possono verificarsi all'interno di una Echo Chamber, secondo il modulo?",
+    "options": [
+      "Le opinioni diverse vengono sempre accolte con grande interesse",
+      "Gli utenti smettono automaticamente di utilizzare i social network",
+      "Le proprie convinzioni vengono rafforzate e possono diffondersi più facilmente informazioni false o messaggi estremi",
+      "Le informazioni false vengono sempre immediatamente corrette"
+    ],
+    "correctIndex": 2,
+    "explanation": "In una Echo Chamber le convinzioni vengono rafforzate e possono diffondersi più facilmente informazioni false o messaggi estremi."
+  },
+  {
+    "id": 25,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, che cosa distingue una comunità online sana da una Echo Chamber chiusa?",
+    "options": [
+      "L'apertura al confronto con punti di vista diversi",
+      "Il tipo di dispositivo utilizzato per accedervi",
+      "La lingua ufficiale utilizzata nelle conversazioni",
+      "Il numero esatto di partecipanti al gruppo"
+    ],
+    "correctIndex": 0,
+    "explanation": "La differenza sta nell'apertura al confronto: una comunità sana accetta punti di vista diversi, una Echo Chamber chiusa no."
+  },
+  {
+    "id": 26,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il fenomeno della Echo Chamber è importante nel contesto dell'Hate Speech, secondo il modulo?",
+    "options": [
+      "Perché riduce automaticamente il numero di utenti attivi su una piattaforma",
+      "Perché elimina completamente la possibilità che l'Hate Speech si diffonda",
+      "Perché se un gruppo condivide continuamente messaggi discriminatori senza incontrare opinioni alternative, quei messaggi possono sembrare normali",
+      "Perché impedisce sempre la condivisione di qualsiasi contenuto offensivo"
+    ],
+    "correctIndex": 2,
+    "explanation": "In una Echo Chamber, i messaggi discriminatori ripetuti senza contraddittorio possono apparire normali e diffondersi maggiormente."
+  },
+  {
+    "id": 27,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa evidenziarono diversi studi nel 2018 riguardo agli algoritmi di raccomandazione, secondo il modulo?",
+    "options": [
+      "Che riducevano automaticamente il tempo trascorso online dagli utenti",
+      "Che potevano favorire percorsi di esposizione progressiva a contenuti sempre più estremi",
+      "Che eliminavano completamente ogni forma di contenuto violento",
+      "Che garantivano sempre un'informazione equilibrata e imparziale"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gli studi del 2018 mostrarono che gli algoritmi potevano favorire l'esposizione progressiva a contenuti sempre più estremi."
+  },
+  {
+    "id": 28,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata una Echo Chamber nella metafora del modulo?",
+    "options": [
+      "A una piazza aperta piena di persone con opinioni diverse",
+      "A una stanza con pareti ricoperte di specchi, dove la propria voce rimbalza sempre uguale",
+      "A una finestra sempre aperta su un paesaggio in cambiamento",
+      "A un libro con molte pagine bianche"
+    ],
+    "correctIndex": 1,
+    "explanation": "La Echo Chamber è paragonata a una stanza di specchi in cui si sente sempre la stessa voce che ritorna, senza incontrare punti di vista diversi."
+  },
+  {
+    "id": 29,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa significa riconoscere il linguaggio d'odio, secondo il modulo?",
+    "options": [
+      "Individuare messaggi che prendono di mira persone o gruppi sulla base di caratteristiche identitarie o di appartenenza",
+      "Contare il numero di commenti ricevuti da un post",
+      "Riconoscere automaticamente ogni opinione con cui non si è d'accordo",
+      "Identificare esclusivamente gli errori grammaticali in un testo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Riconoscere il linguaggio d'odio significa individuare messaggi che colpiscono persone o gruppi per caratteristiche identitarie o di appartenenza."
+  },
+  {
+    "id": 30,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il primo elemento da osservare per riconoscere il linguaggio d'odio, secondo il modulo?",
+    "options": [
+      "Il numero di caratteri utilizzati nel testo",
+      "Il bersaglio del messaggio",
+      "L'orario in cui il messaggio è stato pubblicato",
+      "La lunghezza del messaggio pubblicato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il primo elemento da osservare è il bersaglio: se riguarda un comportamento oppure una caratteristica identitaria della persona."
+  },
+  {
+    "id": 31,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il terzo elemento da osservare secondo il modulo, oltre a bersaglio e linguaggio?",
+    "options": [
+      "La velocità della connessione Internet",
+      "Il tipo di dispositivo utilizzato per scrivere il messaggio",
+      "Il numero di follower dell'autore del messaggio",
+      "Il contesto della comunicazione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il terzo elemento da osservare è il contesto, che comprende ciò che è stato scritto prima e come gli altri utenti reagiscono."
+  },
+  {
+    "id": 32,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, che cosa NON dobbiamo confondere con la tutela delle persone?",
+    "options": [
+      "La segnalazione di contenuti gravi",
+      "La censura delle idee",
+      "La conservazione delle prove di un messaggio offensivo",
+      "Il rispetto reciproco tra utenti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo avverte che, se definiamo Hate Speech ogni opinione che non ci piace, rischiamo di confondere la tutela delle persone con la censura delle idee."
+  },
+  {
+    "id": 33,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché, secondo il modulo, non è consigliabile rilanciare automaticamente un contenuto offensivo?",
+    "options": [
+      "Perché un contenuto condiviso scompare automaticamente entro poche ore",
+      "Perché anche una risposta indignata può contribuire a far circolare ulteriormente il messaggio",
+      "Perché le piattaforme vietano sempre la condivisione di qualsiasi contenuto",
+      "Perché condividere un contenuto lo rende automaticamente meno visibile"
+    ],
+    "correctIndex": 1,
+    "explanation": "Anche una condivisione fatta per indignazione può aumentare la visibilità e la diffusione di un messaggio offensivo."
+  },
+  {
+    "id": 34,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa documentarono organizzazioni internazionali e piattaforme digitali durante la pandemia di COVID-19, secondo il modulo?",
+    "options": [
+      "Un aumento esclusivo di contenuti relativi a notizie mediche verificate",
+      "L'assenza totale di contenuti discriminatori durante il periodo pandemico",
+      "Un aumento di contenuti razzisti e xenofobi legati alla pandemia, rivolti a comunità asiatiche",
+      "Una diminuzione generale di ogni forma di comunicazione online"
+    ],
+    "correctIndex": 2,
+    "explanation": "Durante la pandemia, organizzazioni internazionali documentarono un aumento di contenuti razzisti e xenofobi rivolti a comunità asiatiche."
+  },
+  {
+    "id": 35,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa indica il colore rosso nella metafora del semaforo usata dal modulo?",
+    "options": [
+      "Che il messaggio esprime semplicemente un'opinione o un dissenso",
+      "Che il messaggio promuove odio, discriminazione, minacce o violenza",
+      "Che il messaggio contiene solo lievi imprecisioni grammaticali",
+      "Che il messaggio è stato scritto in un'altra lingua"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nella metafora del semaforo, il rosso indica un messaggio che promuove odio, discriminazione, minacce o violenza: bisogna fermarsi."
+  },
+  {
+    "id": 36,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono i casi reali di Hate Speech, secondo il modulo?",
+    "options": [
+      "Opinioni personali espresse esclusivamente in ambito accademico",
+      "Episodi documentati nei quali messaggi di odio, discriminazione o incitamento all'ostilità sono stati diffusi attraverso Internet, con conseguenze concrete",
+      "Esercizi teorici privi di qualsiasi riscontro nella realtà",
+      "Regolamenti tecnici relativi alla sicurezza delle reti informatiche"
+    ],
+    "correctIndex": 1,
+    "explanation": "I casi reali di Hate Speech sono episodi documentati con conseguenze concrete su persone, comunità o società."
+  },
+  {
+    "id": 37,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i due errori opposti da evitare quando si parla di Hate Speech, secondo il modulo?",
+    "options": [
+      "Usare troppe emoji oppure non usarne affatto",
+      "Condividere troppi contenuti oppure non condividerne nessuno",
+      "Scrivere messaggi troppo lunghi oppure troppo brevi",
+      "Pensare che \"sono solo parole\" oppure considerare automaticamente ogni frase offensiva come Hate Speech"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo indica come errori opposti il minimizzare l'Hate Speech e il considerare ogni frase offensiva come tale."
+  },
+  {
+    "id": 38,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa accadde a Christchurch, in Nuova Zelanda, il 15 marzo 2019?",
+    "options": [
+      "Una piattaforma social lanciò un nuovo strumento di moderazione automatica",
+      "Si tenne una conferenza internazionale sulla sicurezza informatica",
+      "Fu approvata una nuova legge internazionale sulla privacy dei dati",
+      "Un attentatore uccise 51 persone in due moschee e diffuse online un manifesto e una diretta dell'attacco"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il 15 marzo 2019 un attentatore uccise 51 persone in due moschee a Christchurch, diffondendo online un manifesto e una diretta dell'attacco."
+  },
+  {
+    "id": 39,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la Christchurch Call, secondo il modulo?",
+    "options": [
+      "Una nuova applicazione di messaggistica sviluppata dopo l'attentato",
+      "Un'iniziativa internazionale promossa da Nuova Zelanda e Francia per contrastare la diffusione online di contenuti terroristici ed estremisti",
+      "Un accordo commerciale tra diverse piattaforme social",
+      "Un tribunale internazionale creato per giudicare crimini informatici"
+    ],
+    "correctIndex": 1,
+    "explanation": "La Christchurch Call è un'iniziativa internazionale nata dopo l'attentato, per contrastare la diffusione online di contenuti terroristici ed estremisti."
+  },
+  {
+    "id": 40,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa dimostrano, secondo il modulo, i casi del Myanmar e di Christchurch?",
+    "options": [
+      "Che Internet non crea automaticamente l'odio, ma può amplificarlo enormemente",
+      "Che Internet è sempre l'unica causa di ogni forma di violenza nel mondo",
+      "Che le piattaforme digitali non hanno alcuna responsabilità nella diffusione dei contenuti",
+      "Che i contenuti violenti non possono mai essere condivisi rapidamente online"
+    ],
+    "correctIndex": 0,
+    "explanation": "I casi mostrano che Internet può amplificare enormemente l'odio esistente, anche se non lo crea da solo."
+  },
+  {
+    "id": 41,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fece Facebook dopo il rapporto delle Nazioni Unite sul Myanmar, secondo il modulo?",
+    "options": [
+      "Smise completamente di operare in qualsiasi Paese del mondo",
+      "Chiuse definitivamente la piattaforma in tutto il sud-est asiatico",
+      "Eliminò la possibilità di pubblicare contenuti in lingue diverse dall'inglese",
+      "Aumentò gli investimenti nella moderazione dei contenuti e nella capacità di individuare materiale problematico in lingue locali"
+    ],
+    "correctIndex": 3,
+    "explanation": "Dopo il rapporto ONU, Facebook aumentò gli investimenti nella moderazione dei contenuti, anche in lingue locali."
+  },
+  {
+    "id": 42,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato un messaggio d'odio nella metafora della scintilla, secondo il modulo?",
+    "options": [
+      "A una pioggia che spegne automaticamente ogni forma di conflitto",
+      "A una scintilla che si spegne sempre immediatamente senza alcuna conseguenza",
+      "A una scintilla che, se trova materiale infiammabile e viene trasportata dal vento, può trasformarsi in un incendio molto più grande",
+      "A un fuoco già acceso che non può essere in alcun modo alimentato"
+    ],
+    "correctIndex": 2,
+    "explanation": "Come una scintilla che trova materiale infiammabile, un messaggio d'odio può essere alimentato dalle condivisioni fino a diventare un incendio molto più grande."
+  },
+  {
+    "id": 43,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la comunicazione rispettosa, secondo il modulo?",
+    "options": [
+      "L'obbligo di essere sempre d'accordo con l'interlocutore per evitare conflitti",
+      "La scelta di non esprimere mai un'opinione personale online",
+      "Il modo di esprimere opinioni, critiche e disaccordi riconoscendo la dignità dell'interlocutore, evitando insulti e attacchi personali",
+      "L'uso esclusivo di un linguaggio tecnico e formale in ogni conversazione"
+    ],
+    "correctIndex": 2,
+    "explanation": "La comunicazione rispettosa permette di dissentire senza trasformare il dissenso in ostilità o attacco personale."
+  },
+  {
+    "id": 44,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa manca nella comunicazione online rispetto a quella dal vivo, secondo il modulo?",
+    "options": [
+      "La necessità di rispettare le regole grammaticali",
+      "La possibilità di scrivere più di un messaggio al giorno",
+      "Il tono della voce, l'espressione del volto e il linguaggio del corpo",
+      "La possibilità di utilizzare emoji o immagini"
+    ],
+    "correctIndex": 2,
+    "explanation": "Online manca il tono della voce, l'espressione del volto e il linguaggio del corpo, elementi importanti della comunicazione umana."
+  },
+  {
+    "id": 45,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale principio suggerisce il modulo per comunicare con rispetto?",
+    "options": [
+      "Ignorare completamente ogni opinione diversa dalla propria",
+      "Separare la persona dal comportamento, criticando un'idea senza attaccare chi la sostiene",
+      "Rispondere sempre nel modo più duro possibile a ogni critica ricevuta",
+      "Evitare sempre qualsiasi forma di disaccordo con gli altri"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un principio utile è separare persona e comportamento: si può criticare un'idea senza attaccare chi la sostiene."
+  },
+  {
+    "id": 46,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un troll, secondo il modulo?",
+    "options": [
+      "Un utente che condivide sempre contenuti verificati e affidabili",
+      "Un utente che provoca deliberatamente gli altri per ottenere una reazione",
+      "Un moderatore ufficiale di una piattaforma digitale",
+      "Un algoritmo che seleziona automaticamente i contenuti da mostrare"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il troll è un utente che provoca deliberatamente gli altri per ottenere una reazione, spesso alimentando discussioni aggressive."
+  },
+  {
+    "id": 47,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa suggerisce il modulo di fare quando una discussione online diventa troppo aggressiva?",
+    "options": [
+      "Condividere la discussione su tutte le piattaforme social disponibili",
+      "Non rispondere, bloccare un utente, segnalare un contenuto oppure chiedere aiuto",
+      "Continuare sempre la discussione fino a quando non si ha ragione",
+      "Coinvolgere il maggior numero possibile di altri utenti nella discussione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo suggerisce che a volte la scelta più intelligente è non rispondere, bloccare, segnalare o chiedere aiuto."
+  },
+  {
+    "id": 48,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'obiettivo della comunicazione rispettosa, secondo il modulo?",
+    "options": [
+      "Impedire a chiunque di esprimere critiche o dissenso",
+      "Eliminare completamente ogni possibilità di disaccordo online",
+      "Fare in modo che il conflitto rimanga confronto, senza diventare aggressione",
+      "Garantire che una sola opinione prevalga sempre sulle altre"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'obiettivo non è eliminare il conflitto, ma fare in modo che rimanga un confronto costruttivo e non diventi un'aggressione."
+  },
+  {
+    "id": 49,
+    "module": "hate-speech",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato Internet nella metafora della strada trafficata, secondo il modulo?",
+    "options": [
+      "A un'autostrada dove tutti devono viaggiare nella stessa direzione",
+      "A una strada priva di qualsiasi regola o limite",
+      "A una strada dove le regole non eliminano le differenze, ma permettono a tutti di muoversi senza mettere in pericolo gli altri",
+      "A un percorso chiuso al traffico in ogni momento della giornata"
+    ],
+    "correctIndex": 2,
+    "explanation": "Come le regole della strada permettono a tutti di muoversi in sicurezza pur andando in direzioni diverse, il rispetto online permette la convivenza di opinioni diverse."
+  }
+]

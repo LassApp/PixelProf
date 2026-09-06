@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup — Dashboard Direttore + Gestisci Direttore</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#00ffc8; --accent-dim:rgba(0,255,200,.12); --accent-border:rgba(0,255,200,.35);
+  --purple:#7c6aff; --blue:#1e90ff; --gold:#ffd700;
+  --surface-0:#080c18; --surface-1:rgba(255,255,255,.04);
+  --border-mid:rgba(255,255,255,.12); --border-subtle:rgba(255,255,255,.07);
+  --text-primary:#e2e8f0; --text-muted:rgba(255,255,255,.45); --text-dim:rgba(255,255,255,.34);
+  --radius-sm:8px; --radius-md:12px; --radius-lg:16px;
+  --transition-fast:.18s cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Space Grotesk',system-ui,sans-serif;
+  background:var(--surface-0);color:var(--text-primary);min-height:100vh;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 0%,rgba(0,255,200,.03) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 100%,rgba(124,106,255,.03) 0%,transparent 60%);
+  padding:1.25rem 1rem 4rem; transition:background .25s ease,color .25s ease;
+}
+html[data-theme="light"] body{ background:#f4f6fb; color:#10182a; }
+.wrap{max-width:700px;margin:0 auto}
+
+/* ── barra strumenti mockup (non in produzione) ── */
+.mock-toolbar{ display:flex;justify-content:space-between;align-items:center;margin-bottom:1.25rem;gap:10px;flex-wrap:wrap }
+.mock-toolbar .tag{ font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4) }
+html[data-theme="light"] .mock-toolbar .tag{ color:rgba(16,24,42,.45) }
+.theme-btn{
+  font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;padding:7px 14px;border-radius:20px;cursor:pointer;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:var(--text-primary);
+}
+html[data-theme="light"] .theme-btn{ background:#fff;border-color:rgba(20,30,60,.15);color:#10182a }
+
+/* ── note di design ── */
+.designer-note{
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;padding:1rem 1.1rem;margin-bottom:1.75rem;
+}
+html[data-theme="light"] .designer-note{ background:#fff;border-color:rgba(20,30,60,.09) }
+.designer-note h2{font-size:13px;color:var(--accent);margin-bottom:8px;letter-spacing:.3px}
+.designer-note ul{margin:0 0 0 1.1rem;padding:0}
+.designer-note li{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.65;margin-bottom:5px}
+html[data-theme="light"] .designer-note li{ color:rgba(16,24,42,.7) }
+.designer-note li b{color:#fff}
+html[data-theme="light"] .designer-note li b{ color:#10182a }
+
+.section-lbl{
+  font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.35);margin:2.25rem 0 .8rem;display:flex;align-items:center;gap:10px;
+}
+html[data-theme="light"] .section-lbl{ color:rgba(16,24,42,.45) }
+.section-lbl::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.15),transparent)}
+
+/* ══════════════ HERO (riuso .cs-hero) ══════════════ */
+.cs-hero{ text-align:center;padding:1.25rem 0 1.5rem; }
+.cs-hero-eyebrow{
+  font-family:'Share Tech Mono',monospace;font-size:9px;color:rgba(0,255,200,.55);
+  letter-spacing:3px;text-transform:uppercase;display:block;margin-bottom:10px;
+}
+html[data-theme="light"] .cs-hero-eyebrow{ color:#10182a }
+.cs-hero-title{ font-family:'Orbitron',monospace;font-size:22px;font-weight:900;color:#fff;line-height:1.15;margin-bottom:8px; }
+html[data-theme="light"] .cs-hero-title{ color:#10182a; text-shadow:none; }
+.cs-hero-title .hl{ color:var(--accent);text-shadow:0 0 20px rgba(0,255,200,.4); }
+.cs-hero-sub{ font-size:13px;color:var(--text-muted);line-height:1.5;max-width:440px;margin:0 auto; }
+
+/* ══════════════ DASHBOARD — griglia 3 card gestione ══════════════ */
+.dd-grid{ display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px; }
+@media(min-width:640px){ .dd-grid{ grid-template-columns:1fr 1fr 1fr; } }
+
+.dd-card{
+  position:relative;border-radius:16px;border:1px solid rgba(255,255,255,.09);
+  background:rgba(255,255,255,.04);cursor:pointer;overflow:hidden;
+  box-shadow:0 4px 20px rgba(0,0,0,.35);
+  transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .2s ease,border-color .2s ease;
+}
+html[data-theme="light"] .dd-card{ background:#fff;border-color:rgba(20,30,60,.08); box-shadow:0 4px 20px rgba(20,30,60,.08); }
+.dd-card::after{ content:'';position:absolute;bottom:0;left:0;right:0;height:2px;transform:scaleX(0);transition:transform .22s ease; }
+.dd-card:hover{ transform:translateY(-4px) scale(1.02); }
+.dd-card:hover::after{ transform:scaleX(1); }
+.dd-card-inner{ display:flex;flex-direction:column;align-items:flex-start;gap:8px;padding:1.5rem 1.25rem;min-height:140px;position:relative; }
+.dd-icon{ font-size:32px;line-height:1;filter:drop-shadow(0 0 8px rgba(255,255,255,.15));transition:transform .22s cubic-bezier(.34,1.56,.64,1); }
+.dd-card:hover .dd-icon{ transform:scale(1.14); }
+.dd-title{ font-size:16px;font-weight:700;color:#fff; }
+html[data-theme="light"] .dd-title{ color:#10182a }
+.dd-sub{ font-size:11px;color:rgba(255,255,255,.4);line-height:1.5;padding-right:24px; }
+html[data-theme="light"] .dd-sub{ color:rgba(16,24,42,.42) }
+.dd-arrow{ position:absolute;bottom:1.25rem;right:1.25rem;font-size:16px;color:rgba(255,255,255,.2);transition:color .18s,transform .18s; }
+.dd-card:hover .dd-arrow{ transform:translateX(3px); }
+
+.dd-aule{ border-color:rgba(30,144,255,.15); }
+.dd-aule::after{ background:linear-gradient(90deg,transparent,var(--blue),transparent); }
+.dd-aule:hover{ border-color:rgba(30,144,255,.5); box-shadow:0 12px 36px rgba(30,144,255,.14); }
+.dd-aule:hover .dd-title,.dd-aule:hover .dd-arrow{ color:#5eb8ff; }
+
+.dd-docenti{ border-color:rgba(124,106,255,.15); }
+.dd-docenti::after{ background:linear-gradient(90deg,transparent,var(--purple),transparent); }
+.dd-docenti:hover{ border-color:rgba(124,106,255,.5); box-shadow:0 12px 36px rgba(124,106,255,.14); }
+.dd-docenti:hover .dd-title,.dd-docenti:hover .dd-arrow{ color:#b4a0ff; }
+
+/* NUOVA card "Gestisci Direttore" — accento oro, coerente con l'anello
+   del pannello Profilo (sempre oro per il ruolo Direttore) */
+.dd-direttore{ border-color:rgba(255,215,0,.18); }
+.dd-direttore::after{ background:linear-gradient(90deg,transparent,var(--gold),transparent); }
+.dd-direttore:hover{ border-color:rgba(255,215,0,.55); box-shadow:0 12px 36px rgba(255,215,0,.16); }
+.dd-direttore:hover .dd-title,.dd-direttore:hover .dd-arrow{ color:var(--gold); }
+
+/* ══════════════ BANNER "Entra in un'aula" — DELIBERATAMENTE diverso
+   dalle 3 card sopra: forma orizzontale a fascia (non verticale),
+   pulsante CTA esplicito invece della sola freccina, eyebrow dedicato
+   "Accesso rapido" per segnalare che non è una gestione. ══════════════ */
+.dd-enter-banner{
+  position:relative;margin-top:16px;border-radius:18px;overflow:hidden;cursor:pointer;
+  border:1px dashed rgba(0,255,200,.35);
+  background:linear-gradient(120deg,rgba(0,255,200,.08),rgba(124,106,255,.05) 60%,rgba(0,255,200,.08));
+  box-shadow:0 4px 24px rgba(0,0,0,.3);
+  transition:transform .2s cubic-bezier(.34,1.56,.64,1),border-color .2s ease,box-shadow .2s ease;
+}
+html[data-theme="light"] .dd-enter-banner{
+  background:linear-gradient(120deg,rgba(0,255,200,.10),rgba(124,106,255,.06) 60%,rgba(0,255,200,.10));
+  border-color:rgba(0,180,150,.4); box-shadow:0 4px 20px rgba(20,30,60,.08);
+}
+.dd-enter-banner:hover{ transform:translateY(-2px); border-color:rgba(0,255,200,.7); box-shadow:0 10px 32px rgba(0,255,200,.14); }
+.dd-enter-inner{
+  display:flex;align-items:center;gap:16px;padding:1.1rem 1.35rem;
+}
+.dd-enter-icon{
+  flex-shrink:0;width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:22px;background:rgba(0,255,200,.12);border:1px solid rgba(0,255,200,.3);
+}
+.dd-enter-text{ flex:1;min-width:0; }
+.dd-enter-eyebrow{
+  font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(0,255,200,.65);display:block;margin-bottom:3px;
+}
+.dd-enter-title{ font-size:15px;font-weight:700;color:#fff; }
+html[data-theme="light"] .dd-enter-title{ color:#10182a }
+.dd-enter-sub{ font-size:11px;color:rgba(255,255,255,.45);line-height:1.4; }
+html[data-theme="light"] .dd-enter-sub{ color:rgba(16,24,42,.5) }
+.dd-enter-cta{
+  flex-shrink:0;display:flex;align-items:center;gap:6px;padding:9px 16px;border-radius:24px;
+  background:var(--accent-dim);border:1px solid var(--accent);color:var(--accent);
+  font-size:12.5px;font-weight:700;white-space:nowrap;
+}
+@media(max-width:520px){ .dd-enter-cta span{display:none} .dd-enter-cta{padding:9px 11px} }
+
+/* ══════════════ FORM "Gestisci Direttore" (riuso stile setup-card/login-*) ══════════════ */
+.cs-body-mock{ max-width:560px;margin:0 auto; }
+.setup-card{
+  background:rgba(10,15,30,.9);border:1px solid var(--border-mid);border-radius:var(--radius-lg);
+  padding:1.25rem;backdrop-filter:blur(12px);
+  box-shadow:0 8px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.04);
+  margin-bottom:16px;
+}
+html[data-theme="light"] .setup-card{ background:#fff;border-color:rgba(20,30,60,.09); box-shadow:0 4px 20px rgba(20,30,60,.06); }
+.slbl{ font-size:10px;font-weight:700;color:rgba(0,255,200,.7);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;display:flex;align-items:center;gap:8px }
+html[data-theme="light"] .slbl{ color:rgba(16,24,42,.75) }
+.login-label{ display:block;font-size:10px;font-weight:700;color:rgba(0,255,200,.6);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px; }
+html[data-theme="light"] .login-label{ color:rgba(0,150,120,.75) }
+.login-inp{
+  width:100%;padding:10px 14px;border-radius:var(--radius-sm);border:1px solid var(--border-mid);
+  background:rgba(255,255,255,.04);color:var(--text-primary);font-size:13px;font-family:inherit;outline:none;
+}
+html[data-theme="light"] .login-inp{ background:rgba(20,30,60,.04);color:#10182a; }
+.login-inp:focus{ border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,255,200,.08); }
+.gender-toggle{ display:flex;gap:8px; }
+.gender-btn{
+  flex:1;padding:10px;border-radius:var(--radius-sm);border:1px solid var(--border-mid);background:var(--surface-1);
+  cursor:pointer;font-size:13px;font-weight:600;color:rgba(255,255,255,.55);
+  display:flex;align-items:center;justify-content:center;gap:6px;font-family:inherit;
+}
+html[data-theme="light"] .gender-btn{ color:rgba(16,24,42,.55) }
+.gender-btn:hover{ border-color:var(--accent-border);color:var(--accent);background:var(--accent-dim); }
+.gender-btn.active{ border:1.5px solid var(--accent);background:rgba(0,255,200,.14);color:var(--accent);font-weight:700; }
+.btn-neon{
+  background:var(--accent-dim);border:1px solid var(--accent);color:var(--accent);font-weight:600;
+  padding:11px;border-radius:var(--radius-sm);width:100%;display:flex;align-items:center;justify-content:center;gap:8px;
+  font-family:inherit;font-size:13px;cursor:pointer;margin-top:8px;
+}
+.inp-row{display:flex;gap:8px}
+.inp-row input{ flex:1;padding:8px 12px;border-radius:var(--radius-sm);border:1px solid var(--border-mid);background:rgba(255,255,255,.04);color:var(--text-primary);font-size:13px;font-family:inherit; }
+html[data-theme="light"] .inp-row input{ background:rgba(20,30,60,.04);color:#10182a }
+.inp-row button{
+  background:var(--accent-dim);border:1px solid var(--accent);color:var(--accent);font-weight:600;
+  padding:8px 14px;border-radius:var(--radius-sm);font-family:inherit;font-size:13px;cursor:pointer;
+  display:flex;align-items:center;gap:6px;white-space:nowrap;
+}
+.email-hint{ font-size:11px;color:rgba(255,255,255,.35);font-family:'Share Tech Mono',monospace;margin-bottom:10px; }
+html[data-theme="light"] .email-hint{ color:rgba(16,24,42,.4) }
+.email-note{ font-size:10px;color:rgba(255,200,0,.75);margin-top:8px;line-height:1.5;display:flex;gap:6px; }
+
+/* Nota informativa "non modificabile" */
+.dp-locked-note{
+  display:flex;gap:10px;align-items:flex-start;padding:.9rem 1rem;border-radius:14px;
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);
+  font-size:11.5px;color:rgba(255,255,255,.5);line-height:1.55;
+}
+html[data-theme="light"] .dp-locked-note{ background:#fff;border-color:rgba(20,30,60,.08);color:rgba(16,24,42,.55) }
+.dp-locked-note i{ color:rgba(255,215,0,.8);font-size:16px;flex-shrink:0;margin-top:1px; }
+
+.back-link{ font-size:12px;color:rgba(255,255,255,.55);display:inline-flex;align-items:center;gap:4px;margin-bottom:1rem;cursor:pointer; }
+html[data-theme="light"] .back-link{ color:rgba(16,24,42,.6) }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="mock-toolbar">
+    <span class="tag">Mockup — non collegato al backend</span>
+    <button class="theme-btn" onclick="toggleTheme()"><i class="ti ti-moon"></i> Tema chiaro/scuro</button>
+  </div>
+
+  <div class="designer-note">
+    <h2>Note di design</h2>
+    <ul>
+      <li><b>3 card di gestione</b> (Aule / Docenti / Direttore) restano nella stessa griglia <code>.dd-grid</code> esistente — zero regressioni sulle prime due.</li>
+      <li><b>"Gestisci Direttore"</b> usa l'accento <b>oro</b>, lo stesso già usato dall'anello del pannello Profilo per il ruolo Direttore — coerenza cromatica immediata, nessun nuovo colore introdotto.</li>
+      <li><b>"Entra in un'aula"</b> è volutamente <b>diverso</b>: fascia orizzontale a piena larghezza (non una card verticale), bordo tratteggiato, eyebrow "Accesso rapido" e pulsante CTA esplicito invece della sola freccina — comunica a colpo d'occhio "non è una gestione".</li>
+      <li>Nello screen Direttore <b>non compaiono</b> né la griglia aule né i pulsanti Attiva/Disattiva: sostituiti da una nota informativa (in fondo) che spiega perché, invece di lasciare un vuoto poco chiaro.</li>
+      <li><b>Email:</b> a differenza della scheda docente (che richiede l'Edge Function Admin API), il Direttore cambia la propria email con l'API self-service di Supabase — comparirà quindi un avviso "riceverai un'email di conferma", diverso dal messaggio già visto per i docenti.</li>
+    </ul>
+  </div>
+
+  <!-- ══════════════ 1) DASHBOARD DIRETTORE — nuovo layout ══════════════ -->
+  <div class="section-lbl">1 · Dashboard Direttore (nuovo layout)</div>
+
+  <div class="cs-hero">
+    <span class="cs-hero-eyebrow">Pannello di controllo</span>
+    <h1 class="cs-hero-title">Cosa vuoi<br>fare <span class="hl">oggi</span>?</h1>
+    <p class="cs-hero-sub">Gestisci aule, docenti e il tuo account, oppure entra direttamente in un'aula per esercitarti.</p>
+  </div>
+
+  <div class="dd-grid">
+    <div class="dd-card dd-aule">
+      <div class="dd-card-inner">
+        <span class="dd-icon">🏫</span>
+        <div class="dd-title">Gestisci Aule</div>
+        <div class="dd-sub">Crea, rinomina, assegna docenti e moduli, personalizza o elimina le aule.</div>
+        <i class="ti ti-arrow-right dd-arrow"></i>
+      </div>
+    </div>
+    <div class="dd-card dd-docenti">
+      <div class="dd-card-inner">
+        <span class="dd-icon">👩‍🏫</span>
+        <div class="dd-title">Gestisci Docenti</div>
+        <div class="dd-sub">Crea nuovi account, modifica i dati o disattiva l'accesso.</div>
+        <i class="ti ti-arrow-right dd-arrow"></i>
+      </div>
+    </div>
+    <div class="dd-card dd-direttore" onclick="showScreen('dp')">
+      <div class="dd-card-inner">
+        <span class="dd-icon">👑</span>
+        <div class="dd-title">Gestisci Direttore</div>
+        <div class="dd-sub">Modifica nome, cognome, email e genere del tuo account.</div>
+        <i class="ti ti-arrow-right dd-arrow"></i>
+      </div>
+    </div>
+  </div>
+
+  <div class="dd-enter-banner">
+    <div class="dd-enter-inner">
+      <span class="dd-enter-icon">🎮</span>
+      <div class="dd-enter-text">
+        <span class="dd-enter-eyebrow">Accesso rapido · non è una gestione</span>
+        <div class="dd-enter-title">Entra in un'aula</div>
+        <div class="dd-enter-sub">Accedi a un'aula esistente ed esercitati come farebbe un docente.</div>
+      </div>
+      <span class="dd-enter-cta"><span>Entra</span> <i class="ti ti-arrow-right"></i></span>
+    </div>
+  </div>
+
+  <!-- ══════════════ 2) NUOVA SCHERMATA "Gestisci Direttore" ══════════════ -->
+  <div class="section-lbl">2 · Nuova schermata "Gestisci Direttore"</div>
+
+  <div class="cs-body-mock">
+    <div class="back-link"><i class="ti ti-arrow-left"></i> Dashboard</div>
+    <div class="cs-hero" style="padding:.25rem 0 1.25rem">
+      <span class="cs-hero-eyebrow">Direttore · Account</span>
+      <h1 class="cs-hero-title" style="font-size:20px">Il tuo <span class="hl">profilo</span></h1>
+      <p class="cs-hero-sub">Le tue aule e il tuo accesso restano sempre attivi: qui puoi modificare solo i tuoi dati personali.</p>
+    </div>
+
+    <div class="setup-card">
+      <div class="slbl">Dati personali</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px">
+        <div>
+          <label class="login-label">Nome</label>
+          <input class="login-inp" value="Erasmo">
+        </div>
+        <div>
+          <label class="login-label">Cognome</label>
+          <input class="login-inp" value="Rossi">
+        </div>
+      </div>
+      <div style="margin-bottom:6px">
+        <label class="login-label">Genere</label>
+        <div class="gender-toggle">
+          <button type="button" class="gender-btn active" onclick="pickGenere(this)"><i class="ti ti-gender-male"></i> Uomo</button>
+          <button type="button" class="gender-btn" onclick="pickGenere(this)"><i class="ti ti-gender-female"></i> Donna</button>
+        </div>
+      </div>
+      <button class="btn-neon"><i class="ti ti-device-floppy"></i> Salva nome, cognome e genere</button>
+    </div>
+
+    <div class="setup-card">
+      <div class="slbl">Email di accesso</div>
+      <div class="email-hint">Email attuale: direttore@scuola.it</div>
+      <div class="inp-row">
+        <input type="email" placeholder="nuova@scuola.it">
+        <button><i class="ti ti-mail"></i> Aggiorna email</button>
+      </div>
+      <div class="email-note"><i class="ti ti-info-circle"></i> Riceverai un'email di conferma al nuovo indirizzo: il cambio sarà effettivo solo dopo aver confermato.</div>
+    </div>
+
+    <div class="dp-locked-note">
+      <i class="ti ti-lock"></i>
+      <div>Le <b>aule assegnate</b> e lo <b>stato dell'account</b> non sono modificabili per il ruolo Direttore: puoi sempre accedere a tutte le aule e il tuo accesso non può mai essere disattivato, per evitare che la piattaforma resti senza un Direttore operativo.</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function toggleTheme(){
+  const html = document.documentElement;
+  html.dataset.theme = html.dataset.theme === 'light' ? 'dark' : 'light';
+}
+function pickGenere(btn){
+  btn.parentElement.querySelectorAll('.gender-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+function showScreen(){ /* solo per mostrare il cursore "cliccabile" nel mockup */ }
+</script>
+</body>
+</html>

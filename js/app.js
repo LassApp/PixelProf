@@ -742,6 +742,11 @@ async function _performLogout(){
   if(typeof setCoursesScreenMode==='function') setCoursesScreenMode('select'); // v6.0.1: igiene stato — evita leak 'manage' tra sessioni diverse nella stessa tab
   // Chiude Hub se aperto
   if(typeof closeHubMenu === 'function') closeHubMenu();
+  // v8.25.2 FIX: chiude anche il pannello Profilo — vive fuori da .app/
+  // screen-courses (stessa convenzione di pp-dialog-overlay/dp-overlay),
+  // quindi nascondere quelle schermate non lo tocca: restava aperto,
+  // velo compreso, sopra la schermata di login dopo il logout.
+  if(typeof ProfilePanel !== 'undefined') ProfilePanel.close();
   const badge = sh('tb-course-badge');
   if(badge) badge.style.display = 'none';
   sh('screen-courses').classList.add('hidden');

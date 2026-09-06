@@ -148,7 +148,11 @@ test('flusso completo: login → entra in aula → ogni minigioco → pausa/ripr
 
   await test.step('Uscita dall\'app (logout)', async () => {
     await expect(page.locator('#step-mod')).toBeVisible();
-    await page.locator('#tb-user-badge .cs-logout-btn').click();
+    // v8.25.0 — il pulsante Esci non è più sempre visibile in topbar:
+    // vive nel pannello Profilo, aperto dal nuovo tasto #tb-profile-btn.
+    await page.locator('#tb-profile-btn').click();
+    await expect(page.locator('#profile-panel')).toBeVisible();
+    await page.locator('#profile-panel .pp-logout-action').click();
 
     const overlay = page.locator('#pp-dialog-overlay');
     await expect(overlay).toBeVisible();

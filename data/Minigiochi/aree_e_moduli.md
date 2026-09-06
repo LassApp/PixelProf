@@ -10,12 +10,12 @@ Questo file è l'**unica fonte ufficiale e vincolante** per identificare Aree, M
 
 Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prima di consultare il dettaglio.
 
-- **Area ECDL** → `attiva` — Computer Essentials, Online Essentials e Word Processing: JSON realizzati e caricati. Spreadsheet e Presentation: moduli e chiavi definiti, JSON da realizzare.
-- **Area Cyberbullismo e Sicurezza Online** → `attiva` — contenuti presenti, JSON da realizzare.
+- **Area ECDL** → `attiva` — Computer Essentials, Online Essentials e Word Processing: JSON realizzati e caricati. Spreadsheet: moduli e chiavi definiti, JSON da realizzare.
+- **Area Cyberbullismo e Sicurezza Online** → `attiva` — contenuti presenti, JSON realizzati e caricati.
 - **Area Cybersecurity — Non solo antivirus e password** → `attiva` — JSON realizzati e caricati.
 - **Area Reti e Internet** → `attiva` — JSON realizzati e caricati.
 - **Area Malware e Minacce Informatiche** → `attiva` — JSON realizzati e caricati.
-- **Area Intelligenza Artificiale** → `attiva` — contenuti presenti, JSON da realizzare.
+- **Area Intelligenza Artificiale** → `attiva` — contenuti presenti, JSON realizzati e caricati.
 
 ---
 
@@ -24,12 +24,12 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 ### 🖥️ Area ECDL
 **Descrizione:** Acquisire le competenze fondamentali per utilizzare computer, applicazioni e servizi digitali.
 **Stato:** attiva
-**Nota:** Computer Essentials, Online Essentials e Word Processing — JSON realizzati e caricati. Spreadsheet e Presentation — sotto-aree di nuova introduzione, JSON da realizzare.
+**Nota:** Computer Essentials, Online Essentials, Word Processing e Presentation — JSON realizzati e caricati. Spreadsheet — JSON da realizzare.
 
 ### 🛡️ Area Cyberbullismo e Sicurezza Online
 **Descrizione:** Riconoscere i rischi nelle relazioni digitali e imparare a proteggersi e agire responsabilmente online.
 **Stato:** attiva
-**Nota:** contenuti presenti, JSON da realizzare.
+**Nota:** contenuti presenti, JSON realizzati e caricati.
 
 ### 👤 Area Cybersecurity — Non solo antivirus e password
 **Descrizione:** Sviluppare consapevolezza e competenze per proteggere identità, account, dati e attività digitali.
@@ -49,7 +49,7 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 ### 🤖 Area Intelligenza Artificiale
 **Descrizione:** Comprendere i concetti fondamentali dell'intelligenza artificiale, il funzionamento dei principali sistemi AI e il loro utilizzo consapevole, sicuro e responsabile.
 **Stato:** attiva
-**Nota:** contenuti presenti, JSON da realizzare.
+**Nota:** contenuti presenti, JSON realizzati e caricati.
 
 ---
 
@@ -283,37 +283,37 @@ data/
 
 - **Modulo 1 — Excel e l'ambiente di lavoro**
   - Chiave: `excel-e-l-ambiente-di-lavoro`
-  - Stato: `attivo` (JSON da realizzare)
+  - Stato: `attivo`
   - Path base: `data/ECDL/Spreadsheet/modulo1/`
   - File: `abbina_excel-e-l-ambiente-di-lavoro.json`, `completa_la_frase_excel-e-l-ambiente-di-lavoro.json`, `quiz_excel-e-l-ambiente-di-lavoro.json`, `speedquiz_excel-e-l-ambiente-di-lavoro.json`, `vero_o_falso_excel-e-l-ambiente-di-lavoro.json`
 
 - **Modulo 2 — Inserire e gestire i dati**
   - Chiave: `inserire-e-gestire-i-dati`
-  - Stato: `attivo` (JSON da realizzare)
+  - Stato: `attivo`
   - Path base: `data/ECDL/Spreadsheet/modulo2/`
   - File: `abbina_inserire-e-gestire-i-dati.json`, `completa_la_frase_inserire-e-gestire-i-dati.json`, `quiz_inserire-e-gestire-i-dati.json`, `speedquiz_inserire-e-gestire-i-dati.json`, `vero_o_falso_inserire-e-gestire-i-dati.json`
 
 - **Modulo 3 — Formattare il foglio**
   - Chiave: `formattare-il-foglio`
-  - Stato: `attivo` (JSON da realizzare)
+  - Stato: `attivo`
   - Path base: `data/ECDL/Spreadsheet/modulo3/`
   - File: `abbina_formattare-il-foglio.json`, `completa_la_frase_formattare-il-foglio.json`, `quiz_formattare-il-foglio.json`, `speedquiz_formattare-il-foglio.json`, `vero_o_falso_formattare-il-foglio.json`
 
 - **Modulo 4 — Formule e calcoli**
   - Chiave: `formule-e-calcoli`
-  - Stato: `attivo` (JSON da realizzare)
+  - Stato: `attivo`
   - Path base: `data/ECDL/Spreadsheet/modulo4/`
   - File: `abbina_formule-e-calcoli.json`, `completa_la_frase_formule-e-calcoli.json`, `quiz_formule-e-calcoli.json`, `speedquiz_formule-e-calcoli.json`, `vero_o_falso_formule-e-calcoli.json`
 
 - **Modulo 5 — Organizzare e visualizzare i dati**
   - Chiave: `organizzare-e-visualizzare-i-dati`
-  - Stato: `attivo` (JSON da realizzare)
+  - Stato: `attivo`
   - Path base: `data/ECDL/Spreadsheet/modulo5/`
   - File: `abbina_organizzare-e-visualizzare-i-dati.json`, `completa_la_frase_organizzare-e-visualizzare-i-dati.json`, `quiz_organizzare-e-visualizzare-i-dati.json`, `speedquiz_organizzare-e-visualizzare-i-dati.json`, `vero_o_falso_organizzare-e-visualizzare-i-dati.json`
 
 #### Presentation
 
-> JSON da realizzare.
+> JSON realizzati e caricati.
 
 ```text
 data/
@@ -341,30 +341,30 @@ data/
 
 - **Modulo 1 — Creare una presentazione**
   - Chiave: `creare-una-presentazione`
-  - Stato: `attivo` (JSON da realizzare)
+  - Stato: `attivo`
   - Path base: `data/ECDL/Presentation/modulo1/`
   - File: `abbina_creare-una-presentazione.json`, `completa_la_frase_creare-una-presentazione.json`, `quiz_creare-una-presentazione.json`, `speedquiz_creare-una-presentazione.json`, `vero_o_falso_creare-una-presentazione.json`
 
 - **Modulo 2 — Oggetti grafici**
   - Chiave: `oggetti-grafici`
-  - Stato: `attivo` (JSON da realizzare)
+  - Stato: `attivo`
   - Path base: `data/ECDL/Presentation/modulo2/`
   - File: `abbina_oggetti-grafici.json`, `completa_la_frase_oggetti-grafici.json`, `quiz_oggetti-grafici.json`, `speedquiz_oggetti-grafici.json`, `vero_o_falso_oggetti-grafici.json`
 
 - **Modulo 3 — Preparare e presentare**
   - Chiave: `preparare-e-presentare`
-  - Stato: `attivo` (JSON da realizzare)
+  - Stato: `attivo`
   - Path base: `data/ECDL/Presentation/modulo3/`
   - File: `abbina_preparare-e-presentare.json`, `completa_la_frase_preparare-e-presentare.json`, `quiz_preparare-e-presentare.json`, `speedquiz_preparare-e-presentare.json`, `vero_o_falso_preparare-e-presentare.json`
 
-> Le sotto-aree ECDL attualmente definite sono cinque: **Computer Essentials**, **Online Essentials**, **Word Processing**, **Spreadsheet** e **Presentation**. Computer Essentials, Online Essentials e Word Processing hanno JSON realizzati e caricati. Spreadsheet e Presentation hanno moduli e chiavi definiti ma JSON da realizzare.
+> Le sotto-aree ECDL attualmente definite sono cinque: **Computer Essentials**, **Online Essentials**, **Word Processing**, **Spreadsheet** e **Presentation**. Computer Essentials, Online Essentials, Word Processing e Presentation hanno JSON realizzati e caricati. Spreadsheet ha moduli e chiavi definiti ma JSON da realizzare.
 
 ---
 
 ### 🛡️ Area Cyberbullismo e Sicurezza Online
 
 **Stato:** attiva
-**Nota:** contenuti presenti, JSON da realizzare.
+**Nota:** contenuti presenti, JSON realizzati e caricati.
 
 - **Identità e reputazione digitale**
   - Chiave: `identita-reputazione-digitale`
@@ -635,7 +635,7 @@ data/
 ### 🤖 Area Intelligenza Artificiale
 
 **Stato:** attiva
-**Nota:** contenuti presenti, JSON da realizzare.
+**Nota:** contenuti presenti, JSON realizzati e caricati.
 
 ```text
 data/
@@ -802,23 +802,25 @@ data/
 
 ## 4. Riepilogo
 
+> **Aggiornamento:** tutti i JSON sono stati realizzati e caricati, ad eccezione di **Spreadsheet**. Tutte le **6 aree** sono attive.
+
 | Area / Sotto-area | Moduli | File attesi | Realizzati | Da realizzare | Stato area |
 |---|---|---|---|---|---|
 | ECDL — Computer Essentials | 4 | 20 | 20 | 0 | attivo |
 | ECDL — Online Essentials | 4 | 20 | 20 | 0 | attivo |
 | ECDL — Word Processing | 5 | 25 | 25 | 0 | attivo |
 | ECDL — Spreadsheet | 5 | 25 | 0 | 25 | attivo |
-| ECDL — Presentation | 3 | 15 | 0 | 15 | attivo |
-| Cyberbullismo e Sicurezza Online | 6 | 30 | 0 | 30 | attiva |
+| ECDL — Presentation | 3 | 15 | 15 | 0 | attivo |
+| Cyberbullismo e Sicurezza Online | 6 | 30 | 30 | 0 | attiva |
 | Cybersecurity — Non solo antivirus e password | 8 | 40 | 40 | 0 | attiva |
 | Reti e Internet | 8 | 40 | 40 | 0 | attiva |
 | Malware e Minacce Informatiche | 1 | 5 | 5 | 0 | attiva |
-| Intelligenza Artificiale | 13 | 65 | 0 | 65 | attiva |
-| **Totale** | **57** | **285** | **150** | **135** | — |
+| Intelligenza Artificiale | 13 | 65 | 65 | 0 | attiva |
+| **Totale** | **57** | **285** | **260** | **25** | — |
 
 - **Aree:** 6
 - **Sotto-aree ECDL:** 5 (Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation)
 - **Moduli totali mappati:** 57
-- **File JSON realizzati:** 150
-- **File JSON da realizzare:** 135
+- **File JSON realizzati:** 260
+- **File JSON da realizzare:** 25
 - **File JSON totali attesi:** 285

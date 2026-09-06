@@ -1,0 +1,29 @@
+Cos'è una password?;Una sequenza di caratteri utilizzata per verificare l'identità di un utente e consentire l'accesso a un account o a un sistema informatico
+Quando una password è considerata sicura?;Quando è sufficientemente lunga complessa e difficile da indovinare o violare con strumenti automatici
+Cos'è un attacco a forza bruta (Brute Force)?;Un attacco in cui vengono provate automaticamente moltissime password fino a trovare quella corretta
+Quanti caratteri dovrebbe avere almeno una buona password?;Almeno 14-16 caratteri includendo lettere maiuscole e minuscole numeri e simboli
+Quale principio riguarda l'uso della password su account diversi?;Ogni account importante dovrebbe avere una password diversa
+Cos'è il Credential Stuffing?;Il riutilizzo automatico di credenziali rubate su più siti diversi
+Qual è uno degli errori più gravi nella gestione delle password secondo il testo?;Riutilizzare la stessa password su più servizi
+Quali tipi di password sono tra le prime che un attaccante prova?;Sequenze come 123456 password nomi propri o date di nascita
+Cosa rende una password debole secondo il testo?;Non il fatto di essere facile da ricordare ma il fatto di essere facile da indovinare
+Cosa bisogna fare quando un servizio subisce un Data Breach e le credenziali vengono esposte?;Modificare immediatamente la password
+Cos'è un Password Manager?;Un'applicazione progettata per generare memorizzare e compilare automaticamente le password in modo sicuro
+Cos'è la Master Password?;L'unica password principale che l'utente deve ricordare e che protegge l'intero archivio delle credenziali nel password manager
+In che formato vengono archiviate le credenziali in un password manager?;In forma cifrata ossia encrypted
+Oltre a memorizzare le password cosa può fare un password manager?;Avvisare quando una credenziale è coinvolta in un Data Breach segnalare password duplicate o deboli e conservare codici di recupero e documenti riservati
+Cos'è l'Autenticazione Multifattore MFA?;Un sistema di sicurezza che richiede due o più prove di identità prima di concedere l'accesso a un account
+Cos'è l'Autenticazione a Due Fattori 2FA?;Un sistema che richiede esattamente due fattori di autenticazione ed è un caso particolare dell'MFA
+Quali sono le tre categorie di fattori di autenticazione?;Qualcosa che si conosce qualcosa che si possiede e qualcosa che si è
+Perché due password diverse non costituiscono un sistema MFA?;Perché appartengono entrambe alla stessa categoria ossia qualcosa che si conosce
+Quali metodi MFA sono generalmente preferiti rispetto ai codici via SMS?;Le app di autenticazione o le chiavi di sicurezza fisiche
+Perché i codici MFA via SMS sono considerati meno sicuri?;Perché possono essere vulnerabili alla clonazione della SIM o all'intercettazione dei messaggi
+Cos'è la Risk-Based Authentication?;Un sistema che valuta il livello di rischio di un accesso in base a dispositivo posizione e orario e decide se bloccare o richiedere ulteriori verifiche
+Cos'è l'Adaptive Authentication?;Un sistema che adatta automaticamente il livello di controllo in base al comportamento e al contesto dell'utente
+Qual è la differenza chiave tra Risk-Based e Adaptive Authentication?;Il Risk-Based valuta il rischio mentre l'Adaptive adatta i controlli in base al rischio
+Cosa sono le Passkey?;Un nuovo sistema di autenticazione che sostituisce le password tradizionali con una coppia di chiavi crittografiche
+Come avviene l'accesso con una Passkey?;Confermando la propria identità attraverso il dispositivo ad esempio con impronta digitale riconoscimento del volto o PIN
+Cosa sono la chiave privata e la chiave pubblica in una Passkey?;La chiave privata resta memorizzata sul dispositivo dell'utente e non viene mai condivisa mentre la chiave pubblica viene registrata dal servizio online
+Perché le passkey offrono una protezione maggiore contro il phishing rispetto alle password?;Perché la credenziale è legata esclusivamente al servizio legittimo per cui è stata creata e non funziona su siti contraffatti
+Cosa succede quando si cambia dispositivo con le passkey?;La gestione avviene tramite sistemi di sincronizzazione sicuri oppure creando una nuova passkey associata allo stesso account
+Cosa è diventato oggi più prezioso del dispositivo stesso secondo il modulo?;Gli account che utilizziamo ogni giorno poiché permettono di recuperare email fotografie documenti e altre informazioni personali

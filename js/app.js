@@ -2,6 +2,9 @@
    app.js — PixelProf v6.1.1
    App bootstrap: auth flow, login, logout, set-password,
    module filter, wizard, director panel, and splash/init.
+   v8.26.1 — Bug fix onboarding: closeHubMenu() notifica sempre il tour
+     guidato (OnboardingTour.invalidateAndRecheck()) per evitare
+     tooltip/riquadri orfani nel menu Hub. Vedi js/onboarding.js.
    v8.26.0 — Nuova card "Gestisci Direttore" in Dashboard Direttore
      (screen-director-profile): il Direttore modifica NOME, COGNOME,
      GENERE ed EMAIL del proprio account — MAI le aule assegnate né lo
@@ -1921,6 +1924,20 @@ function closeHubMenu(){
   if(menu) menu.classList.add('hidden');
   if(backdrop){ backdrop.style.display='none'; }
   document.removeEventListener('click', _hubOutsideClick); // v5.0.7: rimozione esplicita — evita listener fantasma quando la chiusura avviene senza che il click raggiunga document (es. ri-click sul bottone hub, bloccato da stopPropagation)
+  // v8.26.1 — bug fix: se il tour guidato ha un passo in evidenza dentro
+  // il menu Hub (es. "Storico", target #tb-hist) e l'utente chiude il
+  // menu cliccando un ALTRO elemento del menu (es. "Panoramica Classe")
+  // invece di quello evidenziato, il target del passo sparisce mentre il
+  // tour non se ne accorge da solo: tooltip/riquadro restano orfani a
+  // schermo, tour apparentemente bloccato. Notifica sempre il tour alla
+  // chiusura del menu, per qualunque causa (item, backdrop, click fuori):
+  // se il target del passo corrente è ancora visibile non fa nulla
+  // (percorso corretto, zero rischio), altrimenti smonta il riquadro
+  // orfano e il tour si riallinea in silenzio al prossimo passo
+  // raggiungibile. Vedi doc completa in js/onboarding.js.
+  if(typeof OnboardingTour !== 'undefined' && typeof OnboardingTour.invalidateAndRecheck === 'function'){
+    OnboardingTour.invalidateAndRecheck();
+  }
 }
 
 /* setTb patch v5.0.6:

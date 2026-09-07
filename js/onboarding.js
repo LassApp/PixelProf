@@ -1,6 +1,12 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.8.0
+   onboarding.js — PixelProf v2.8.1
    Tour guidato al primo accesso docente ("dove clicco?").
+
+   v2.8.1 — Bug fix: tour "bloccato" nel menu Hub (riquadro/tooltip
+     orfani se si clicca un item del menu diverso da quello evidenziato
+     dal tour). Nuova invalidateAndRecheck(), chiamata da
+     closeHubMenu() (app.js) ad ogni chiusura del menu Hub. Vedi doc
+     completa sopra la funzione.
 
    v2.8.0 — Nuova card "Gestisci Direttore" in Dashboard Direttore
      (v8.26.0 app-wide): aggiunti 2 step in DIRECTOR_STEPS (card
@@ -1349,6 +1355,39 @@ const OnboardingTour = (function () {
     return true;
   }
 
+  /** v8.26.1 — bug segnalato: tour "bloccato" nel menu Hub (es. passo
+   *  "Storico", target #tb-hist). Causa reale: i 5 elementi del menu
+   *  Hub (#tb-lb/#tb-st/#tb-hist/#tb-dash/#tb-badges) sono TUTTI visibili
+   *  insieme nello stesso dropdown aperto — nulla impedisce di cliccarne
+   *  uno DIVERSO da quello evidenziato dal tour (i passi Hub non hanno
+   *  blockClicks). Quel click reale chiude comunque il menu
+   *  (closeHubMenu(), chiamata da ogni item) e cambia scheda, ma NON
+   *  corrisponde al target del passo corrente: _advance() non scatta,
+   *  l'indice del tour non cambia. Il target del passo (es. #tb-hist)
+   *  sparisce dietro al menu ora chiuso (display:none), ma la guardia di
+   *  cache qui sopra (_renderedIdx===_state.idx) impedisce di
+   *  accorgersene finché nessuno forza un controllo — riquadro/tooltip
+   *  restano "orfani" a schermo, il tour appare bloccato.
+   *  Fix: chiamata da closeHubMenu() (app.js) ad OGNI chiusura del menu
+   *  Hub, per qualsiasi causa. Se il target del passo corrente è ancora
+   *  visibile (es. #tb-hub-btn, sempre presente in topbar — percorso
+   *  corretto) non fa nulla: zero rischio di flicker sul flusso normale.
+   *  Se invece non è più visibile (percorso col bug) smonta il
+   *  riquadro/tooltip orfano invece di lasciarlo a schermo: il tour resta
+   *  in silenzio, pronto a riprendere al prossimo passo raggiungibile. */
+  function invalidateAndRecheck() {
+    if (_state.done) return;
+    const list = _stepList();
+    const def = list[_state.idx];
+    if (!def) return;
+    const stillVisible = _resolveVisibleTargets(def.target).length > 0;
+    if (!stillVisible) {
+      _teardown();
+      _renderedIdx = -1;
+    }
+    _tryRenderCurrentStep();
+  }
+
   /* ================================================
      RENDERING — velo con clip-path + anello/i + tooltip
   ================================================ */
@@ -1591,7 +1630,7 @@ const OnboardingTour = (function () {
     showDidatticaStep,
     showFlipCardLevelStep, showFlipCardExitStep, showFlipCardConfirmStep,
     isCurrentStep, isActive,
-    recheck, skip, reset,
+    recheck, invalidateAndRecheck, skip, reset,
   };
 })();
 window.OnboardingTour = OnboardingTour;

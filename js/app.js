@@ -2,6 +2,18 @@
    app.js — PixelProf v6.1.1
    App bootstrap: auth flow, login, logout, set-password,
    module filter, wizard, director panel, and splash/init.
+   v8.26.0 — Nuova card "Gestisci Direttore" in Dashboard Direttore
+     (screen-director-profile): il Direttore modifica NOME, COGNOME,
+     GENERE ed EMAIL del proprio account — MAI le aule assegnate né lo
+     stato attivo/disattivo (il Direttore ha sempre accesso a tutte le
+     aule ed è sempre attivo, altrimenti la piattaforma resterebbe
+     senza un Direttore operativo). Riusa window.Auth.updateOwnProfile/
+     updateOwnEmail (auth.js) e gli helper _tmSplitName/_tmJoinName già
+     esistenti per Nome+Cognome. La card "Scegli Aula" (ex .dd-scegli)
+     è stata spostata FUORI dalla griglia di gestione, sotto le 3 card,
+     come fascia orizzontale distinta (.dd-enter-banner, vedi index.html
+     + css/director-profile.css): stesso identico comportamento
+     (ddGoSceltaAula(), invariata), solo markup/CSS diversi.
    v6.1.1 — Fix pass Gestione Docenti + Scegli Aula: nome+badge
      direttore ripristinati nella topbar delle 4 schermate Gestione
      Docenti (mancavano dal redesign v6.1.0); form "Nuova aula"
@@ -145,9 +157,12 @@ async function _afterLogin(){
 /* ==================================================
    DASHBOARD DIRETTORE — v6.0.0
    Schermata intermedia post-login, SOLO per il ruolo Direttore.
-   3 card: Gestisci Aule / Gestisci Docenti / Scegli Aula.
+   v8.26.0 — layout aggiornato: 3 card di gestione (Gestisci Aule /
+     Gestisci Docenti / Gestisci Direttore) + fascia "Entra in un'aula"
+     spostata sotto la griglia, deliberatamente diversa (non è una
+     gestione — vedi .dd-enter-banner in index.html/css).
    Riusa al 100% le funzioni di gestione aula (screen-courses,
-   dp-overlay, wizard) e aggiunge la nuova gestione docenti.
+   dp-overlay, wizard) e aggiunge la nuova gestione docenti/direttore.
    Il Docente non vede mai questa schermata (routing in _afterLogin).
 ================================================== */
 function openDirectorDashboard(){
@@ -199,6 +214,12 @@ function ddGoGestisciAule(){
 function ddGoGestisciDocenti(){
   sh('screen-director-dashboard')?.classList.add('hidden');
   openTeacherManagement();
+}
+
+/* Card "Gestisci Direttore" — v8.26.0, vedi sezione dedicata sotto */
+function ddGoGestisciDirettore(){
+  sh('screen-director-dashboard')?.classList.add('hidden');
+  openDirectorProfile();
 }
 
 /* Link "← Dashboard" mostrato nella topbar di screen-courses (solo Direttore) */
@@ -672,6 +693,96 @@ async function _tmdToggleAula(classroomId, classroomName, btn){
     if(wasOn) _tmdAssignedIds.delete(classroomId); else _tmdAssignedIds.add(classroomId);
   } else {
     await ppAlert('Errore aggiornamento aula: '+(res?.error||'sconosciuto'), { title:'Operazione non riuscita', icon:'⚠️' });
+  }
+}
+
+
+/* ==================================================
+   GESTISCI DIRETTORE — v8.26.0
+   Nuova card in Dashboard Direttore: il Direttore modifica NOME,
+   COGNOME, GENERE ed EMAIL del PROPRIO account. A differenza della
+   Scheda Docente, qui NON c'è alcuna griglia aule né pulsanti
+   Attiva/Disattiva — il Direttore ha sempre accesso a tutte le aule e
+   non può mai essere disattivato, per non lasciare la piattaforma
+   senza un Direttore operativo (vedi nota informativa in HTML,
+   .dp-locked-note). Riusa _tmSplitName/_tmJoinName (sopra) e le nuove
+   window.Auth.updateOwnProfile/updateOwnEmail/getEmail (auth.js).
+================================================== */
+let _dpGenere = null;
+
+function openDirectorProfile(){
+  if(!window.Auth?.isDirector()) return;
+  const profile = window.Auth.getProfile() || {};
+  const { nome, cognome } = _tmSplitName(profile.name||'');
+  if(sh('dp-nome'))    sh('dp-nome').value = nome;
+  if(sh('dp-cognome')) sh('dp-cognome').value = cognome;
+  _dpGenere = (profile.genere==='uomo' || profile.genere==='donna') ? profile.genere : null;
+  _dpRenderGenere();
+  if(sh('dp-profile-fb')) sh('dp-profile-fb').textContent = '';
+  const curEmail = window.Auth.getEmail ? window.Auth.getEmail() : '';
+  if(sh('dp-current-email')) sh('dp-current-email').textContent = curEmail ? ('Email attuale: '+curEmail) : 'Email attuale non disponibile.';
+  if(sh('dp-email')) sh('dp-email').value = '';
+  if(sh('dp-email-fb')) sh('dp-email-fb').textContent = '';
+  const scr = sh('screen-director-profile');
+  if(!scr) return;
+  scr.classList.remove('hidden');
+  scr.classList.add('entering');
+  setTimeout(()=>scr.classList.remove('entering'), 400);
+  if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showDirectorProfileStep(), 500);
+}
+
+function dpBackToDashboard(){
+  sh('screen-director-profile')?.classList.add('hidden');
+  openDirectorDashboard();
+}
+
+function dpPickGenere(g){
+  _dpGenere = g;
+  _dpRenderGenere();
+}
+function _dpRenderGenere(){
+  sh('dp-gender-uomo')?.classList.toggle('active', _dpGenere==='uomo');
+  sh('dp-gender-donna')?.classList.toggle('active', _dpGenere==='donna');
+}
+
+async function dpSaveProfile(){
+  const nome    = (sh('dp-nome')?.value||'').trim();
+  const cognome = (sh('dp-cognome')?.value||'').trim();
+  const fb = sh('dp-profile-fb');
+  if(!nome || !cognome){
+    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='Nome e cognome sono entrambi obbligatori.'; }
+    return;
+  }
+  const fullName = _tmJoinName(nome, cognome);
+  if(fb){ fb.style.color='rgba(255,255,255,.4)'; fb.textContent='⏳ Salvataggio in corso...'; }
+  const res = await window.Auth.updateOwnProfile({ name: fullName, genere: _dpGenere });
+  if(res && res.ok){
+    if(fb){ fb.style.color='#00ff96'; fb.textContent='✓ Dati aggiornati.'; }
+    // Aggiorna il pannello Profilo in topbar (nome mostrato lì);
+    // l'anello resta oro — invariato, il Direttore è sempre oro a
+    // prescindere dal genere (vedi profile-panel.js).
+    appState.teacher = window.Auth.getProfile();
+    if(typeof ProfilePanel!=='undefined') ProfilePanel.render(appState.teacher, true);
+  } else {
+    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore: '+(res?.error||'sconosciuto'); }
+  }
+}
+
+async function dpSaveEmail(){
+  const newEmail = (sh('dp-email')?.value||'').trim();
+  const fb = sh('dp-email-fb');
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if(!newEmail || !emailRe.test(newEmail)){
+    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='Inserisci un indirizzo email valido.'; }
+    return;
+  }
+  if(fb){ fb.style.color='rgba(255,255,255,.4)'; fb.textContent='⏳ Invio richiesta in corso...'; }
+  const res = await window.Auth.updateOwnEmail(newEmail);
+  if(res && res.ok){
+    if(fb){ fb.style.color='#00ff96'; fb.textContent='✓ Richiesta inviata — controlla '+newEmail+' per confermare il cambio email.'; }
+    if(sh('dp-email')) sh('dp-email').value = '';
+  } else {
+    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore: '+(res?.error||'sconosciuto'); }
   }
 }
 

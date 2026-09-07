@@ -45,7 +45,7 @@
        (mostra/nascondi, lock di pausa, ecc.) → dentro @layer stato,
        con !important (qui è l'unico posto dove serve ancora).
    ═══════════════════════════════════════════════════════════════════ */
-@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport, audio, achievements, histcards, loaders, onboarding, areas, flipcard, actselect, topbarprofile, theme;
+@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport, audio, achievements, histcards, loaders, onboarding, areas, flipcard, actselect, topbarprofile, dirprofilo, theme;
 
 @layer base {
 /* ===============================================
@@ -3886,10 +3886,10 @@ body{
 .dd-docenti:hover{ border-color:rgba(124,106,255,.5); box-shadow:0 12px 36px rgba(124,106,255,.14); }
 .dd-docenti:hover .dd-title,.dd-docenti:hover .dd-arrow{ color:#b4a0ff; }
 
-.dd-scegli{ border-color:rgba(0,255,200,.15); }
-.dd-scegli::after{ background:linear-gradient(90deg,transparent,var(--accent),transparent); }
-.dd-scegli:hover{ border-color:rgba(0,255,200,.5); box-shadow:0 12px 36px rgba(0,255,200,.14); }
-.dd-scegli:hover .dd-title,.dd-scegli:hover .dd-arrow{ color:var(--accent); }
+/* v8.26.0: rimosse le regole .dd-scegli (dead code) — la card "Scegli
+   Aula" è stata sostituita dalla fascia .dd-enter-banner, sempre
+   distinta dalle card di gestione, stile in css/director-profile.css.
+   Nuova card .dd-direttore (accento oro) anch'essa nel file dedicato. */
 
 /* ── Gestione Docenti — badge "Disattivato" (scheda docente) ──
    v8.14.0: rimossa la famiglia .tm-list/.tm-row/.tm-row-name (vecchio

@@ -1,6 +1,24 @@
 /**
  * auth.js — PixelProf v6.1.0
  *
+ * v8.26.0 — "Gestisci Direttore" (nuova card in Dashboard Direttore):
+ *   - Nuove funzioni updateOwnProfile()/updateOwnEmail()/getEmail() per
+ *     permettere al Direttore di modificare NOME, COGNOME, GENERE ed
+ *     EMAIL del PROPRIO account (non è possibile farlo per le aule
+ *     assegnate né per lo stato attivo/disattivo — il Direttore ha
+ *     sempre accesso a tutte le aule e non può mai essere disattivato).
+ *   - updateOwnProfile() scrive DIRETTAMENTE su 'profiles' (nessuna RPC):
+ *     a differenza di updateTeacherProfile(), che scrive sul profilo di
+ *     UN ALTRO utente e richiede la RPC SECURITY DEFINER per bypassare
+ *     RLS, qui la riga aggiornata è la PROPRIA (auth.uid() = id) — le
+ *     policy RLS di default permettono già l'UPDATE della propria riga.
+ *   - updateOwnEmail() usa l'API self-service supabase.auth.updateUser()
+ *     invece dell'Admin API/Edge Function usata da updateTeacherEmail()
+ *     (che serve solo per modificare l'email di UN ALTRO utente).
+ *     Supabase invia un'email di conferma al nuovo indirizzo prima che
+ *     il cambio sia effettivo — non è un cambio immediato come per i
+ *     docenti.
+ *
  * v8.25.0 — Pannello Profilo in topbar (icona + anello colorato per
  *   ruolo/genere → pannello laterale):
  *   - _loadProfile() seleziona ora anche 'genere, last_login_at,
@@ -485,6 +503,62 @@ async function setTeacherActive(teacherId, active) {
 }
 
 // ════════════════════════════════════════════════════════════════════
+// GESTISCI DIRETTORE — v8.26.0 (il Direttore modifica il PROPRIO account)
+// ════════════════════════════════════════════════════════════════════
+
+/**
+ * Aggiorna 'name' e 'genere' della riga 'profiles' dell'utente
+ * CORRENTE. Nessuna RPC: le policy RLS di default già permettono a un
+ * utente di scrivere sulla propria riga (auth.uid() = id) — il
+ * problema che rende necessaria una RPC per updateTeacherProfile() è
+ * che lì il Direttore scrive sul profilo di un ALTRO utente.
+ * Ristretto a isDirector() perché questa funzione alimenta solo lo
+ * screen "Gestisci Direttore", accessibile esclusivamente al ruolo
+ * Direttore.
+ */
+async function updateOwnProfile(updates) {
+  if (!isDirector()) return { ok: false, error: 'Permesso negato' };
+  const id = getUserId();
+  if (!id) return { ok: false, error: 'Sessione non valida' };
+  const name = (updates.name ?? '').trim();
+  if (!name) return { ok: false, error: 'Nessun campo da aggiornare' };
+  const genere = updates.genere === 'uomo' || updates.genere === 'donna' ? updates.genere : null;
+  try {
+    const { error } = await supabase
+      .from('profiles')
+      .update({ name, genere })
+      .eq('id', id);
+    if (error) throw error;
+    if (_currentProfile) { _currentProfile.name = name; _currentProfile.genere = genere; }
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, error: err.message };
+  }
+}
+
+/**
+ * Cambia l'email dell'account CORRENTE tramite l'API self-service di
+ * Supabase Auth (auth.updateUser) — NON l'Admin API/Edge Function usata
+ * da updateTeacherEmail() per modificare l'email di un ALTRO utente.
+ * Supabase invia un'email di conferma al nuovo indirizzo (ed
+ * eventualmente anche al vecchio, se "Secure email change" è attivo sul
+ * progetto): il cambio NON è immediato, il chiamante deve informarne
+ * l'utente.
+ */
+async function updateOwnEmail(newEmail) {
+  if (!isDirector()) return { ok: false, error: 'Permesso negato' };
+  const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!newEmail || !emailRe.test(newEmail)) return { ok: false, error: 'Indirizzo email non valido' };
+  try {
+    const { error } = await supabase.auth.updateUser({ email: newEmail });
+    if (error) throw error;
+    return { ok: true };
+  } catch (err) {
+    return { ok: false, error: err.message };
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════
 // LISTA EMAIL DOCENTI — v6.1.0 (via Edge Function, Admin API)
 //
 // L'email vive in auth.users, non in profiles (vedi updateTeacherEmail).
@@ -528,6 +602,7 @@ function getUser()            { return _currentUser; }
 function getProfile()         { return _currentProfile; }
 function getUserId()          { return _currentUser?.id ?? null; }
 function getName()            { return _currentProfile?.name ?? _currentUser?.email ?? ''; }
+function getEmail()           { return _currentUser?.email ?? ''; }
 function isLoggedIn()         { return !!_currentUser; }
 function isDirector()         { return _currentProfile?.role === 'director'; }
 function needsPasswordSetup() { return _needsPasswordSetup; }
@@ -547,10 +622,13 @@ window.Auth = {
   setTeacherActive,
   updateTeacherEmail,
   listTeacherEmails,
+  updateOwnProfile,
+  updateOwnEmail,
   getUser,
   getProfile,
   getUserId,
   getName,
+  getEmail,
   isLoggedIn,
   isDirector,
   needsPasswordSetup,

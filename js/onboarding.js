@@ -1,6 +1,16 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.7.0
+   onboarding.js — PixelProf v2.8.0
    Tour guidato al primo accesso docente ("dove clicco?").
+
+   v2.8.0 — Nuova card "Gestisci Direttore" in Dashboard Direttore
+     (v8.26.0 app-wide): aggiunti 2 step in DIRECTOR_STEPS (card
+     .dd-direttore → screen "Gestisci Direttore" → ritorno) e la nuova
+     showDirectorProfileStep(), chiamata da openDirectorProfile() in
+     app.js. Il target del passo "Entra in un'aula" è stato rinominato
+     da '.dd-scegli' a '.dd-enter-banner' (la card è diventata una
+     fascia orizzontale distinta, vedi index.html/css/director-profile
+     .css) — solo il selettore CSS cambia, comportamento invariato.
+     TEACHER_STEPS non tocca la Dashboard Direttore: nessuna modifica lì.
 
    v2.0.0 — RISCRITTURA MOTORE (richiesta esplicita utente):
      - Esc e click-fuori-dal-tooltip NON chiudono più il tour.
@@ -725,7 +735,13 @@ const OnboardingTour = (function () {
     { screen:'teacherMgmt', target:'#screen-teacher-mgmt .back-link', type:'action',
       title:'Torniamo alla dashboard ✅',
       body:'Premi qui per tornare al pannello di controllo.' },
-    { screen:'dashboard', target:'.dd-scegli', type:'action',
+    { screen:'dashboard', target:'.dd-direttore', type:'action',
+      title:'Il tuo profilo 👑',
+      body:'Da qui puoi modificare i tuoi dati personali: nome, cognome, genere ed email. Le tue aule restano sempre tutte accessibili.' },
+    { screen:'directorProfile', target:'#screen-director-profile .back-link', type:'action',
+      title:'Torna alla dashboard ↩️',
+      body:'Premi qui per tornare al pannello di controllo.' },
+    { screen:'dashboard', target:'.dd-enter-banner', type:'action',
       title:'Entra in un\'aula 🎮',
       body:'Da qui puoi accedere a un\'aula ed esercitarti esattamente come farebbe un docente.' },
     { screen:'coursesSelect', target:'.course-card', type:'action',
@@ -1533,6 +1549,7 @@ const OnboardingTour = (function () {
      di navigazione, anche più volte.
   ================================================ */
   function showDashboardStep()     { _tryRenderCurrentStep(); }
+  function showDirectorProfileStep(){ _tryRenderCurrentStep(); }
   function showWizardStep()        { _tryRenderCurrentStep(); }
   function showTeacherMgmtStep()   { _tryRenderCurrentStep(); }
   function showTeacherCreateStep() { _tryRenderCurrentStep(); }
@@ -1568,7 +1585,7 @@ const OnboardingTour = (function () {
 
   return {
     init,
-    showDashboardStep, showWizardStep, showTeacherMgmtStep,
+    showDashboardStep, showDirectorProfileStep, showWizardStep, showTeacherMgmtStep,
     showTeacherCreateStep, showTeacherListStep,
     showCoursesSelectStep, showHomeModuleStep, showHomeCategoryStep,
     showDidatticaStep,

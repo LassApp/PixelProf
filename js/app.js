@@ -2,6 +2,14 @@
    app.js — PixelProf v6.1.1
    App bootstrap: auth flow, login, logout, set-password,
    module filter, wizard, director panel, and splash/init.
+   v8.26.2 — Bug fix onboarding (parte 2): dopo che
+     invalidateAndRecheck() smonta un tooltip orfano nel menu Hub,
+     rimuove anche il listener di click che fa avanzare il tour. Se poi
+     l'utente riapre il menu, senza un nuovo controllo il tour restava
+     "muto" (nessun listener) anche cliccando il target giusto.
+     toggleHubMenu() ora chiama OnboardingTour.recheck() anche in
+     APERTURA (non solo closeHubMenu() in chiusura), ri-registrando il
+     listener quando il target torna visibile. Vedi js/onboarding.js.
    v8.26.1 — Bug fix onboarding: closeHubMenu() notifica sempre il tour
      guidato (OnboardingTour.invalidateAndRecheck()) per evitare
      tooltip/riquadri orfani nel menu Hub. Vedi js/onboarding.js.
@@ -1909,6 +1917,22 @@ function toggleHubMenu(evt){
     setTimeout(()=>{
       document.addEventListener('click', _hubOutsideClick, { once: true });
     }, 10);
+    // v8.26.2 — bug fix: invalidateAndRecheck() (chiamata da
+    // closeHubMenu(), sopra) smonta il tooltip/riquadro E rimuove il
+    // listener di click che fa avanzare il tour, quando il target del
+    // passo corrente non è più visibile a menu chiuso. Se poi l'utente
+    // RIAPRE il menu e clicca stavolta il target giusto, senza questa
+    // chiamata il tour non se ne accorgerebbe: nessun listener registrato
+    // → il click non fa avanzare nulla, il tour resta bloccato in
+    // silenzio. recheck() qui forza un nuovo controllo di visibilità ad
+    // OGNI apertura del menu: se il passo corrente punta a un elemento
+    // del menu (ora di nuovo visibile) lo ri-mostra e ri-registra il
+    // listener; se il passo corrente non c'entra nulla con il menu Hub
+    // è un no-op sicuro (comportamento identico a quello già usato dagli
+    // altri hook show*Step()).
+    if(typeof OnboardingTour !== 'undefined' && typeof OnboardingTour.recheck === 'function'){
+      OnboardingTour.recheck();
+    }
   }
 }
 

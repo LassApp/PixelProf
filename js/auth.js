@@ -106,6 +106,32 @@ let _currentProfile     = null;
 let _profileLoaded      = false;
 let _needsPasswordSetup = false;
 
+// v8.26.4 — FIX conferma cambio email: logout automatico.
+//
+// PROBLEMA 6: cliccare il link di conferma nella mail genera un evento
+//   USER_UPDATED identico a quello emesso al termine di setPassword()
+//   (primo accesso via invite). Il vecchio codice trattava OGNI
+//   USER_UPDATED come "password impostata" e chiamava __onPasswordSet(),
+//   che fa entrare direttamente nell'app con la sessione già aperta —
+//   nessun logout, nessun avviso. Risultato: il Direttore restava
+//   operativo con la vecchia sessione finché non ricaricava la pagina o
+//   usciva manualmente, il che confondeva il flusso e rendeva difficile
+//   capire se il cambio email fosse davvero andato a buon fine.
+//   FIX: leggiamo (senza consumare) il parametro "type" dall'URL hash
+//   PRIMA che Supabase lo elabori — i link di conferma email includono
+//   sempre "type=email_change" nel fragment. Se USER_UPDATED scatta con
+//   questo tipo in sospeso, invece di entrare nell'app forziamo il
+//   logout (vedi window.__onEmailChangeConfirmed in app.js) così il
+//   Direttore deve ri-accedere esplicitamente con il nuovo indirizzo.
+//   NON usiamo history.replaceState per ripulire l'hash: Supabase deve
+//   ancora leggerlo per completare lo scambio del token — pulirlo prima
+//   romperebbe l'intero flusso di conferma.
+let _pendingAuthType = null;
+try {
+  const _hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+  _pendingAuthType = _hashParams.get('type'); // 'email_change' | 'recovery' | 'invite' | 'signup' | null
+} catch (e) { /* no-op: ambiente senza location.hash valido */ }
+
 // ── Guard anti-doppio-trigger per onPasswordRecovery ─────────────
 let _recoveryScreenShown = false;
 
@@ -231,8 +257,18 @@ async function init() {
       return;
     }
 
-    // ── USER_UPDATED: password impostata con successo ─────────────
+    // ── USER_UPDATED: conferma cambio email OPPURE password impostata ──
     if (event === 'USER_UPDATED' && session?.user) {
+      // v8.26.4: link di conferma cambio email cliccato → logout forzato,
+      // non entriamo nell'app con la sessione già aperta. Vedi PROBLEMA 6.
+      if (_pendingAuthType === 'email_change') {
+        _pendingAuthType = null;
+        if (typeof window.__onEmailChangeConfirmed === 'function') {
+          window.__onEmailChangeConfirmed();
+        }
+        return;
+      }
+
       _currentUser        = session.user;
       _needsPasswordSetup = false;
       _profileLoaded      = false;      // forza reload profilo aggiornato

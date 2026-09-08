@@ -1805,6 +1805,22 @@ window.__onPasswordSet = async function() {
   await _afterLogin();
 };
 
+/**
+ * v8.26.4 — Chiamato da auth.js quando l'evento USER_UPDATED arriva da
+ * una CONFERMA CAMBIO EMAIL (link cliccato dalla mail), non da un
+ * primo accesso/password. Invece di entrare nell'app con la sessione
+ * già aperta, forziamo un logout completo (stesso percorso del logout
+ * manuale) e mostriamo un avviso: l'utente deve ri-accedere con il
+ * nuovo indirizzo email. Vedi PROBLEMA 6 in js/auth.js per il contesto.
+ */
+window.__onEmailChangeConfirmed = async function() {
+  await _performLogout();
+  await ppAlert(
+    'La tua email è stata aggiornata con successo. Accedi di nuovo con il nuovo indirizzo email.',
+    { title: 'Email aggiornata', icon: '📧' }
+  );
+};
+
 (function() {
   function _attachPwdStrength() {
     const inp = sh('setpwd-new');

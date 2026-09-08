@@ -550,7 +550,20 @@ async function updateOwnEmail(newEmail) {
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!newEmail || !emailRe.test(newEmail)) return { ok: false, error: 'Indirizzo email non valido' };
   try {
-    const { error } = await supabase.auth.updateUser({ email: newEmail });
+    // v8.26.4: emailRedirectTo esplicito. Senza questa opzione Supabase usa
+    // il "Site URL" configurato nel Dashboard come default: se quel valore
+    // non include il path della GitHub Pages project site (/PixelProf/),
+    // il link nell'email di conferma atterra sulla root del dominio
+    // (https://lassapp.github.io/) che risponde 404 "There isn't a GitHub
+    // Pages site here" — il cambio email lato Supabase può comunque essere
+    // andato a buon fine, ma l'utente non vede mai la pagina che completa
+    // il flusso lato client (detectSessionInUrl in supabase_client.js).
+    // NB: perché funzioni, l'URL corrente deve essere anche in whitelist su
+    // Supabase Dashboard → Authentication → URL Configuration → Redirect URLs.
+    const { error } = await supabase.auth.updateUser(
+      { email: newEmail },
+      { emailRedirectTo: window.location.origin + window.location.pathname }
+    );
     if (error) throw error;
     return { ok: true };
   } catch (err) {

@@ -1,0 +1,33 @@
+Cos'è una formula in Excel?;Un'istruzione di calcolo scritta dentro una cella
+Con quale simbolo comincia sempre una formula in Excel?;Con il segno uguale
+Cosa succede se si scrive un calcolo in una cella senza il segno uguale davanti?;Excel lo tratta semplicemente come testo invece di eseguirlo
+Cosa restituisce la formula =2+2 in Excel?;4
+Cosa restituisce la formula =5*4 in Excel?;20
+Cosa indica il codice di errore #DIV/0! in Excel?;Che la formula sta tentando una divisione per zero
+Cosa indica il codice di errore #NOME? in Excel?;Che Excel non riconosce un elemento scritto nella formula spesso per un errore di battitura
+Cosa indica il codice di errore #RIF! in Excel?;Che la formula fa riferimento a una cella che non esiste più
+Cosa indicano i codici di errore mostrati da Excel invece di un risultato sbagliato?;Comunicano con precisione cosa non ha funzionato nella formula
+Cos'è un riferimento di cella in una formula?;L'uso dell'indirizzo di un'altra cella al posto di un numero scritto direttamente
+Cosa succede al risultato di una formula con riferimenti di cella se cambia il valore di una delle celle richiamate?;Il risultato si aggiorna automaticamente da solo
+Come si scrive in una formula un riferimento a una cella di un altro foglio della stessa cartella di lavoro?;Con il nome del foglio seguito da un punto esclamativo e dall'indirizzo della cella
+Quali sono i quattro operatori matematici di base in Excel?;Addizione sottrazione moltiplicazione e divisione
+A cosa servono le parentesi in una formula Excel?;A controllare l'ordine in cui vengono eseguite le operazioni
+Qual è l'ordine delle operazioni seguito da Excel in una formula con più operatori?;Moltiplicazioni e divisioni vengono eseguite prima di addizioni e sottrazioni
+Cosa calcola per prima la formula =A1-B1*C1?;B1 moltiplicato per C1 e solo dopo sottrae il risultato da A1
+Cosa vengono sempre calcolate per prime in una formula Excel?;Le operazioni racchiuse tra parentesi
+Cos'è una funzione in Excel?;Un'operazione già pronta e integrata che riceve uno o più dati in ingresso e restituisce un risultato
+Cosa restituisce la funzione SOMMA applicata a un intervallo?;La somma di tutti i valori nell'intervallo indicato
+Cosa restituisce la funzione MEDIA applicata a un intervallo?;La media aritmetica dei valori nell'intervallo
+Cosa restituisce la funzione MIN applicata a un intervallo?;Il valore più basso presente nell'intervallo
+Cosa restituisce la funzione MAX applicata a un intervallo?;Il valore più alto presente nell'intervallo
+Cosa restituisce la funzione CONTA.NUMERI applicata a un intervallo?;Quante celle nell'intervallo contengono effettivamente un numero
+Cosa restituisce la funzione CONTA.VALORI applicata a un intervallo?;Quante celle nell'intervallo non sono vuote sia che contengano un numero sia del testo
+A cosa serve la funzione ARROTONDA?;A restituire il valore di una cella arrotondato al numero di cifre decimali specificato
+Cosa prende come argomento la maggior parte delle funzioni base di Excel?;Un intervallo di celle
+Cos'è la maniglia di riempimento in Excel?;Il piccolo quadratino visibile nell'angolo in basso a destra di una cella selezionata
+A cosa serve trascinare la maniglia di riempimento su una cella che contiene una formula?;A estendere automaticamente la formula alle celle vicine adattandone i riferimenti
+Cosa fa Excel quando si trascina una formula con la maniglia di riempimento invece di copiarla identica?;Adatta automaticamente i riferimenti di cella riga per riga
+Cos'è un riferimento relativo in una formula?;Un riferimento come A1 che cambia automaticamente quando la formula viene copiata o trascinata
+Cos'è un riferimento assoluto in una formula?;Un riferimento come $A$1 che resta sempre fisso sulla stessa cella indipendentemente da dove la formula viene copiata
+Come si blocca un riferimento di cella per renderlo assoluto?;Aggiungendo un simbolo di dollaro prima della lettera di colonna e uno prima del numero di riga
+Qual è la regola pratica per ricordare la differenza tra riferimento relativo e assoluto?;Relativo si sposta assoluto resta ancorato

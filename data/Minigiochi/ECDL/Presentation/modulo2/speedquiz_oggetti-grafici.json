@@ -1,0 +1,737 @@
+[
+  {
+    "id": 1,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un grafico inserito in PowerPoint?",
+    "options": [
+      "Un tipo di transizione tra diapositive",
+      "La rappresentazione visiva di una serie di dati, dello stesso tipo di Excel",
+      "Un elenco puntato numerato",
+      "Un formato di file per immagini"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un grafico inserito in PowerPoint è la rappresentazione visiva di una serie di dati, dello stesso tipo di quelli incontrati in Excel."
+  },
+  {
+    "id": 2,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove si inserisce un grafico in PowerPoint?",
+    "options": [
+      "Home → Grafico",
+      "Progettazione → Grafico",
+      "Inserisci → Grafico",
+      "Visualizza → Grafico"
+    ],
+    "correctIndex": 2,
+    "explanation": "Per inserire un grafico si sceglie Inserisci → Grafico, selezionando il tipo desiderato."
+  },
+  {
+    "id": 3,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale finestra compare quando si inserisce un grafico in PowerPoint?",
+    "options": [
+      "Una finestra di Word",
+      "Una finestra della Guida",
+      "Una finestra di Access",
+      "Una finestra di Excel con una tabella di dati di esempio"
+    ],
+    "correctIndex": 3,
+    "explanation": "Compare una finestra di Excel con una piccola tabella di dati di esempio, da sostituire con i propri numeri."
+  },
+  {
+    "id": 4,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché PowerPoint non ha un motore di calcolo proprio per i grafici?",
+    "options": [
+      "Perché non supporta i numeri",
+      "Perché richiama direttamente quello di Excel",
+      "Perché usa il motore di calcolo di Word",
+      "Perché i grafici vengono creati manualmente pixel per pixel"
+    ],
+    "correctIndex": 1,
+    "explanation": "PowerPoint richiama direttamente il motore di calcolo di Excel per gestire i dati alla base di ogni grafico."
+  },
+  {
+    "id": 5,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa servono i grafici a colonne e a barre?",
+    "options": [
+      "A mostrare un andamento nel tempo",
+      "A mostrare come un totale si divide in parti proporzionali",
+      "A confrontare valori diversi tra loro",
+      "A mostrare una sequenza di immagini"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le colonne e le barre confrontano valori diversi tra loro."
+  },
+  {
+    "id": 6,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve il grafico a linee?",
+    "options": [
+      "A confrontare valori diversi tra loro",
+      "A mostrare un andamento nel tempo",
+      "A mostrare come un totale si divide in parti proporzionali",
+      "A indicare una direzione sulla diapositiva"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le linee mostrano un andamento nel tempo."
+  },
+  {
+    "id": 7,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve il grafico a torta?",
+    "options": [
+      "A confrontare valori diversi tra loro",
+      "A mostrare un andamento nel tempo",
+      "A mostrare come un totale si divide in parti proporzionali",
+      "A catturare una schermata"
+    ],
+    "correctIndex": 2,
+    "explanation": "La torta mostra come un totale si divide in parti proporzionali."
+  },
+  {
+    "id": 8,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se si modificano i dati di origine di un grafico dalla scheda Struttura Grafico?",
+    "options": [
+      "Bisogna ricreare il grafico da zero",
+      "Il grafico si blocca e va reinserito",
+      "L'immagine sulla diapositiva si aggiorna da sola",
+      "Nulla, il grafico resta invariato"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il grafico resta collegato ai propri dati di origine: se vengono modificati, l'immagine si aggiorna da sola."
+  },
+  {
+    "id": 9,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi pubblicò nel 1786 il Commercial and Political Atlas?",
+    "options": [
+      "James Watt",
+      "Earl Hurd",
+      "William Playfair",
+      "Bernard Forest de Bélidor"
+    ],
+    "correctIndex": 2,
+    "explanation": "William Playfair pubblicò il Commercial and Political Atlas nel 1786."
+  },
+  {
+    "id": 10,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Presso chi William Playfair fece pratica come disegnatore tecnico?",
+    "options": [
+      "John Bray",
+      "James Watt, l'inventore della macchina a vapore",
+      "Earl Hurd",
+      "Massimo Vignelli"
+    ],
+    "correctIndex": 1,
+    "explanation": "Playfair aveva fatto pratica come disegnatore tecnico assistendo James Watt."
+  },
+  {
+    "id": 11,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali grafici comparvero per la prima volta nel Commercial and Political Atlas del 1786?",
+    "options": [
+      "Il grafico a torta e a colonne",
+      "Il grafico a torta e a linee",
+      "Il grafico a linee e il grafico a barre",
+      "Solo il grafico a torta"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nell'opera del 1786 comparvero per la prima volta nella storia il grafico a linee e il grafico a barre."
+  },
+  {
+    "id": 12,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale opera, nel 1801, Playfair introdusse il grafico a torta?",
+    "options": [
+      "Il Commercial and Political Atlas",
+      "Il Breviarium totius juris canonici",
+      "Lo Statistical Breviary",
+      "Il Graphics Standards Manual"
+    ],
+    "correctIndex": 2,
+    "explanation": "Playfair introdusse il grafico a torta nel 1801, con il suo Statistical Breviary."
+  },
+  {
+    "id": 13,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per cosa Playfair usò per la prima volta colori diversi in un grafico a torta?",
+    "options": [
+      "Per confrontare le vendite di un negozio",
+      "Per confrontare l'estensione dei territori dell'Impero Ottomano",
+      "Per rappresentare le vendite mensili",
+      "Per indicare le fasi di una riparazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Playfair colorò a mano ciascuna \"fetta\" per confrontare l'estensione dei territori dell'Impero Ottomano."
+  },
+  {
+    "id": 14,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come è considerato oggi William Playfair?",
+    "options": [
+      "L'inventore della macchina a vapore",
+      "Il padre della grafica statistica moderna",
+      "L'inventore dello storyboard",
+      "Il creatore del primo tasto Stamp"
+    ],
+    "correctIndex": 1,
+    "explanation": "Playfair è considerato il padre della grafica statistica moderna."
+  },
+  {
+    "id": 15,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"inserire immagini e schermate\" in PowerPoint?",
+    "options": [
+      "Aggiungere un grafico basato su dati Excel",
+      "Aggiungere una forma geometrica",
+      "Aggiungere a una diapositiva un contenuto visivo, come foto, immagini online o catture di schermo",
+      "Aggiungere un effetto di transizione"
+    ],
+    "correctIndex": 2,
+    "explanation": "Significa aggiungere a una diapositiva un contenuto visivo: fotografia, immagine online, cattura di schermata o album di foto."
+  },
+  {
+    "id": 16,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale percorso si usa per inserire un'immagine salvata sul computer?",
+    "options": [
+      "Inserisci → Grafico",
+      "Inserisci → Forme",
+      "Inserisci → Schema diapositiva",
+      "Inserisci → Immagini → Questo dispositivo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il metodo più diretto è Inserisci → Immagini → Questo dispositivo, per scegliere un file salvato sul computer."
+  },
+  {
+    "id": 17,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette la funzione \"immagini online\"?",
+    "options": [
+      "Catturare lo schermo in un clic",
+      "Cercare immagini direttamente sul web senza uscire dal programma",
+      "Disegnare forme geometriche",
+      "Creare un grafico automaticamente"
+    ],
+    "correctIndex": 1,
+    "explanation": "\"Immagini online\" permette di cercare direttamente sul web senza uscire da PowerPoint."
+  },
+  {
+    "id": 18,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa cattura la funzione \"Schermata\" di PowerPoint?",
+    "options": [
+      "Solo la prima diapositiva della presentazione",
+      "Un'immagine salvata in precedenza sul computer",
+      "Ciò che è visibile su un'altra finestra aperta, o una porzione scelta dello schermo",
+      "Un grafico creato in Excel"
+    ],
+    "correctIndex": 2,
+    "explanation": "La \"Schermata\" cattura in un solo clic ciò che è visibile in quel momento su un'altra finestra, o una porzione scelta dello schermo."
+  },
+  {
+    "id": 19,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa genera automaticamente la funzione \"Album foto\"?",
+    "options": [
+      "Un unico grafico con tutte le immagini",
+      "Una cartella compressa di immagini",
+      "Una diapositiva per ciascuna immagine scelta, con layout e didascalie già pronti",
+      "Un video con le foto in sequenza"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'album foto permette di scegliere più immagini insieme e generare automaticamente una diapositiva per ciascuna."
+  },
+  {
+    "id": 20,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno comparve il tasto Stamp (Print Screen) con le tastiere compatibili IBM PC come l'IBM Model F?",
+    "options": [
+      "1786",
+      "1914",
+      "1981",
+      "2003"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il tasto Stamp comparve nei primi anni Ottanta, con tastiere come l'IBM Model F del 1981."
+  },
+  {
+    "id": 21,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa faceva il tasto Stamp in ambienti a riga di comando come MS-DOS?",
+    "options": [
+      "Catturava un'immagine dello schermo",
+      "Inviava alla stampante il contenuto testuale visualizzato sullo schermo",
+      "Apriva un menu di opzioni",
+      "Chiudeva il programma attivo"
+    ],
+    "correctIndex": 1,
+    "explanation": "In MS-DOS il tasto Stamp inviava direttamente alla stampante il contenuto testuale visualizzato sullo schermo."
+  },
+  {
+    "id": 22,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Attraverso quale porta il tasto Stamp inviava i dati alla stampante?",
+    "options": [
+      "La porta USB",
+      "La porta HDMI",
+      "La porta COM1",
+      "La porta LPT1"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il tasto Stamp inviava i dati alla stampante attraverso la porta LPT1."
+  },
+  {
+    "id": 23,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove deriva il nome del tasto Stamp (Print Screen)?",
+    "options": [
+      "Dal nome del suo inventore",
+      "Dalla funzione originale di \"stampare lo schermo\"",
+      "Da un errore di traduzione",
+      "Dal materiale del tasto stesso"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il nome deriva dalla funzione originale: \"stampa lo schermo\"."
+  },
+  {
+    "id": 24,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa oggi il tasto Stamp, con la diffusione delle interfacce grafiche?",
+    "options": [
+      "Stampa direttamente il documento aperto",
+      "Cancella il contenuto dello schermo",
+      "Copia un'immagine dello schermo negli appunti del computer",
+      "Salva un file audio"
+    ],
+    "correctIndex": 2,
+    "explanation": "Con le interfacce grafiche il tasto ha iniziato a copiare un'immagine dello schermo negli appunti del computer."
+  },
+  {
+    "id": 25,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene descritto oggi il tasto Stamp nel modulo?",
+    "options": [
+      "Uno strumento obsoleto da rimuovere",
+      "Un tasto ancora usato per la sua funzione originale",
+      "Un piccolo fossile informatico",
+      "Un componente hardware raro"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modulo descrive il tasto Stamp come un piccolo fossile informatico, il cui nome racconta una funzione ormai scomparsa."
+  },
+  {
+    "id": 26,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le \"forme\" in PowerPoint?",
+    "options": [
+      "Fotografie catturate dallo schermo",
+      "Grafici basati su dati Excel",
+      "Oggetti grafici semplici come linee, frecce, rettangoli, ovali e caselle di testo",
+      "Modelli di presentazione predefiniti"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le forme sono oggetti grafici semplici: linee, frecce, rettangoli, ovali, caselle di testo."
+  },
+  {
+    "id": 27,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale scheda si disegnano le forme?",
+    "options": [
+      "Home → Forme",
+      "Progettazione → Forme",
+      "Visualizza → Forme",
+      "Inserisci → Forme"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le forme si disegnano dalla scheda Inserisci → Forme."
+  },
+  {
+    "id": 28,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si disegna una forma su una diapositiva?",
+    "options": [
+      "Scrivendo un comando da tastiera",
+      "Trascinando il mouse nel punto e con le dimensioni desiderate",
+      "Selezionandola dallo schema diapositiva",
+      "Importandola da un file Excel"
+    ],
+    "correctIndex": 1,
+    "explanation": "Dopo aver scelto una forma dalla raccolta, la si disegna trascinando il mouse sulla diapositiva."
+  },
+  {
+    "id": 29,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa servono in particolare rettangoli, ovali e caselle di testo?",
+    "options": [
+      "A mostrare un andamento nel tempo",
+      "A catturare una schermata",
+      "A evidenziare un'area o inserire una didascalia isolata",
+      "A confrontare valori diversi tra loro"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le forme più semplici funzionano bene per evidenziare un'area o inserire una didascalia isolata dal resto del testo."
+  },
+  {
+    "id": 30,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa servono in particolare linee e frecce?",
+    "options": [
+      "A evidenziare un'area con un colore di sfondo",
+      "A generare automaticamente diapositive",
+      "A raccogliere dati numerici",
+      "A collegare o indicare una relazione, una direzione o un percorso"
+    ],
+    "correctIndex": 3,
+    "explanation": "Linee e frecce servono a collegare o indicare, mostrando una relazione, una direzione o un percorso."
+  },
+  {
+    "id": 31,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si scrive del testo dentro una forma?",
+    "options": [
+      "Trascinando una casella di testo separata sopra di essa",
+      "Con un doppio clic sulla forma e digitando",
+      "Solo tramite la vista struttura",
+      "Non è possibile scrivere testo dentro una forma"
+    ],
+    "correctIndex": 1,
+    "explanation": "Per scrivere testo dentro una forma basta fare doppio clic sulla forma stessa e digitare."
+  },
+  {
+    "id": 32,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiamava il simbolo medievale a forma di mano con l'indice puntato?",
+    "options": [
+      "Cel",
+      "Carousel",
+      "Segnaposto",
+      "Manicule"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il simbolo si chiamava \"manicule\"."
+  },
+  {
+    "id": 33,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quale secolo comparve per la prima volta la manicule, nei manoscritti medievali spagnoli?",
+    "options": [
+      "Il IX secolo",
+      "Il XII secolo",
+      "Il XV secolo",
+      "Il XVIII secolo"
+    ],
+    "correctIndex": 1,
+    "explanation": "La manicule comparve già nel XII secolo nei manoscritti medievali spagnoli."
+  },
+  {
+    "id": 34,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quale libro comparve per la prima volta la manicule in un testo stampato, nel 1479?",
+    "options": [
+      "Il Commercial and Political Atlas",
+      "Lo Statistical Breviary",
+      "Il Graphics Standards Manual",
+      "Il Breviarium totius juris canonici"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il 28 agosto 1479, a Milano, la manicule comparve per la prima volta nel Breviarium totius juris canonici."
+  },
+  {
+    "id": 35,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come veniva soprannominata la manicule nella tradizione tipografica?",
+    "options": [
+      "\"Mano del copista\"",
+      "\"Dito del lettore\"",
+      "\"Pugno del tipografo\" (printer's fist)",
+      "\"Segno del margine\""
+    ],
+    "correctIndex": 2,
+    "explanation": "La manicule si guadagnò il soprannome di \"pugno del tipografo\"."
+  },
+  {
+    "id": 36,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quale anno risale la prima comparsa documentata della freccia come simbolo grafico?",
+    "options": [
+      "1479",
+      "1737",
+      "1801",
+      "1914"
+    ],
+    "correctIndex": 1,
+    "explanation": "La prima comparsa documentata della freccia come simbolo grafico risale al 1737."
+  },
+  {
+    "id": 37,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quale contesto comparve per la prima volta la freccia come simbolo grafico, secondo il modulo?",
+    "options": [
+      "In una mappa commerciale di William Playfair",
+      "In un manoscritto religioso medievale",
+      "In un trattato di idraulica di Bernard Forest de Bélidor",
+      "In un manuale di animazione Disney"
+    ],
+    "correctIndex": 2,
+    "explanation": "La freccia comparve nel 1737 in un trattato di idraulica di Bernard Forest de Bélidor, per indicare il flusso dell'acqua."
+  },
+  {
+    "id": 38,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"disporre e organizzare gli oggetti\" in PowerPoint?",
+    "options": [
+      "Applicare un tema all'intera presentazione",
+      "Inserire un grafico basato su dati Excel",
+      "Modificarne orientamento e posizione e gestire come più oggetti convivono sulla diapositiva",
+      "Catturare una schermata dello schermo"
+    ],
+    "correctIndex": 2,
+    "explanation": "Significa modificare orientamento e posizione degli oggetti (ruotare, capovolgere, allineare) e gestire la loro convivenza sulla diapositiva."
+  },
+  {
+    "id": 39,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si ruota un oggetto selezionato?",
+    "options": [
+      "Dal menu File → Opzioni",
+      "Scrivendo un valore in gradi nella Guida",
+      "Trascinando la piccola freccia circolare che compare sopra di esso",
+      "Solo tramite lo schema diapositiva"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un oggetto selezionato può essere ruotato trascinando la piccola freccia circolare che compare sopra di esso."
+  },
+  {
+    "id": 40,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale menu si può capovolgere un oggetto orizzontalmente o verticalmente?",
+    "options": [
+      "Il menu Formato sfondo, nella scheda Progettazione",
+      "Il menu Struttura Grafico",
+      "Il menu Album foto",
+      "Il menu Disponi, nella scheda Home"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un oggetto può essere capovolto dal menu Disponi nella scheda Home."
+  },
+  {
+    "id": 41,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette di fare, tra le altre cose, il menu Disponi?",
+    "options": [
+      "Cambiare il tema della presentazione",
+      "Inserire una nuova diapositiva",
+      "Catturare una schermata",
+      "Allineare un oggetto rispetto alla diapositiva o più oggetti tra loro"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il menu Disponi permette di allineare un oggetto al centro, a sinistra o a destra, oppure più oggetti tra loro."
+  },
+  {
+    "id": 42,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che ordine PowerPoint tiene gli oggetti quando si sovrappongono?",
+    "options": [
+      "In ordine alfabetico",
+      "In ordine casuale a ogni apertura del file",
+      "In un ordine preciso, uno \"sopra\" l'altro, come fogli impilati",
+      "Nell'ordine in cui appaiono nella Guida"
+    ],
+    "correctIndex": 2,
+    "explanation": "Quando più oggetti si sovrappongono, PowerPoint li tiene in un ordine preciso, come fogli impilati."
+  },
+  {
+    "id": 43,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permettono di fare i comandi \"Porta avanti\" e \"Porta indietro\"?",
+    "options": [
+      "Spostare un oggetto su un'altra diapositiva",
+      "Ruotare un oggetto di 90 gradi",
+      "Raggruppare automaticamente due oggetti",
+      "Cambiare l'ordine di sovrapposizione degli oggetti, uno strato alla volta"
+    ],
+    "correctIndex": 3,
+    "explanation": "\"Porta avanti\" e \"Porta indietro\" permettono di cambiare l'ordine di sovrapposizione, uno strato alla volta."
+  },
+  {
+    "id": 44,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permettono di fare i comandi \"Porta in primo piano\" e \"Porta sullo sfondo\"?",
+    "options": [
+      "Cambiare il colore di sfondo della diapositiva",
+      "Allineare automaticamente gli oggetti",
+      "Creare una nuova diapositiva",
+      "Spostamenti più netti nell'ordine di sovrapposizione degli oggetti"
+    ],
+    "correctIndex": 3,
+    "explanation": "Questi comandi permettono spostamenti più netti nell'ordine di sovrapposizione rispetto a \"Porta avanti\" e \"Porta indietro\"."
+  },
+  {
+    "id": 45,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede quando si \"raggruppano\" più oggetti?",
+    "options": [
+      "Vengono uniti in una sola forma indivisibile per sempre",
+      "Vengono eliminati e sostituiti da uno nuovo",
+      "Si comportano come un unico oggetto, spostabile e ridimensionabile insieme",
+      "Vengono spostati automaticamente sullo sfondo"
+    ],
+    "correctIndex": 2,
+    "explanation": "Raggruppare più oggetti li fa comportare come un unico oggetto, finché non si decide di separarli di nuovo."
+  },
+  {
+    "id": 46,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi depositò, nel dicembre 1914, il brevetto della tecnica dei fogli di celluloide sovrapposti?",
+    "options": [
+      "William Playfair",
+      "Massimo Vignelli e Bob Noorda",
+      "Robert Gaskins e Dennis Austin",
+      "L'animatore Earl Hurd, insieme a John Bray"
+    ],
+    "correctIndex": 3,
+    "explanation": "Earl Hurd, insieme al collega John Bray, depositò nel dicembre 1914 il brevetto di questa tecnica di animazione."
+  },
+  {
+    "id": 47,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiamavano i fogli trasparenti su cui si disegnavano i personaggi, da sovrapporre a uno sfondo dipinto?",
+    "options": [
+      "Manicule",
+      "Segnaposto",
+      "Schema diapositiva",
+      "Cel (celluloide)"
+    ],
+    "correctIndex": 3,
+    "explanation": "I fogli trasparenti si chiamavano \"cel\", dal materiale celluloide."
+  },
+  {
+    "id": 48,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permetteva agli animatori la separazione in strati con i fogli di celluloide?",
+    "options": [
+      "Colorare automaticamente ogni fotogramma",
+      "Stampare le scene su carta lucida",
+      "Proiettare i cartoni animati a colori per la prima volta",
+      "Riutilizzare lo stesso sfondo per centinaia di fotogrammi, ridisegnando solo il personaggio in movimento"
+    ],
+    "correctIndex": 3,
+    "explanation": "Grazie alla separazione in strati, gli animatori potevano riutilizzare lo stesso sfondo per centinaia di fotogrammi."
+  },
+  {
+    "id": 49,
+    "module": "oggetti-grafici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sovrapponeva la \"macchina multiplano\", perfezionamento successivo del metodo dei cel?",
+    "options": [
+      "Più proiettori Carousel contemporaneamente",
+      "Più schermi diversi collegati allo stesso computer",
+      "Più diapositive PowerPoint nello stesso file",
+      "Più livelli di vetro a profondità diverse, per un effetto di prospettiva"
+    ],
+    "correctIndex": 3,
+    "explanation": "La macchina multiplano sovrapponeva più livelli di vetro a profondità diverse per dare un effetto di prospettiva."
+  }
+]

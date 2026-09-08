@@ -106,31 +106,38 @@ let _currentProfile     = null;
 let _profileLoaded      = false;
 let _needsPasswordSetup = false;
 
-// v8.26.4 — FIX conferma cambio email: logout automatico.
+// v8.26.4/8.26.6 — FIX conferma cambio email: logout automatico.
 //
 // PROBLEMA 6: cliccare il link di conferma nella mail genera un evento
 //   USER_UPDATED identico a quello emesso al termine di setPassword()
 //   (primo accesso via invite). Il vecchio codice trattava OGNI
 //   USER_UPDATED come "password impostata" e chiamava __onPasswordSet(),
 //   che fa entrare direttamente nell'app con la sessione già aperta —
-//   nessun logout, nessun avviso. Risultato: il Direttore restava
-//   operativo con la vecchia sessione finché non ricaricava la pagina o
-//   usciva manualmente, il che confondeva il flusso e rendeva difficile
-//   capire se il cambio email fosse davvero andato a buon fine.
-//   FIX: leggiamo (senza consumare) il parametro "type" dall'URL hash
-//   PRIMA che Supabase lo elabori — i link di conferma email includono
-//   sempre "type=email_change" nel fragment. Se USER_UPDATED scatta con
-//   questo tipo in sospeso, invece di entrare nell'app forziamo il
-//   logout (vedi window.__onEmailChangeConfirmed in app.js) così il
-//   Direttore deve ri-accedere esplicitamente con il nuovo indirizzo.
-//   NON usiamo history.replaceState per ripulire l'hash: Supabase deve
-//   ancora leggerlo per completare lo scambio del token — pulirlo prima
-//   romperebbe l'intero flusso di conferma.
+//   nessun logout, nessun avviso.
+//   v8.26.4: prima versione del fix, basata SOLO sul parametro "type"
+//   letto dall'URL hash. Rivelatasi inaffidabile: Supabase Cloud ha di
+//   default "Secure email change" attivo → arrivano DUE mail (vecchio +
+//   nuovo indirizzo), entrambe con link type=email_change, ma il cambio
+//   si applica solo dopo il SECONDO click — la sola presenza di "type"
+//   non basta a distinguere le due situazioni.
+//   v8.26.6: il segnale primario diventa il confronto tra l'email già
+//   nota (_currentUser, se presente) e quella nella nuova sessione — se
+//   sono diverse, il cambio è realmente avvenuto, indipendentemente dal
+//   formato con cui Supabase ha costruito il redirect. Il "type" letto
+//   qui resta come fallback solo per una tab nuova senza sessione
+//   precedente con cui confrontare. Vedi anche session.user.new_email
+//   nel blocco USER_UPDATED più sotto per riconoscere la "prima" delle
+//   due conferme e non forzare nulla in quel caso.
+//   NON usiamo history.replaceState per ripulire l'hash/query: Supabase
+//   deve ancora leggerli per completare lo scambio del token — pulirli
+//   prima romperebbe l'intero flusso di conferma.
 let _pendingAuthType = null;
 try {
-  const _hashParams = new URLSearchParams(window.location.hash.replace(/^#/, ''));
-  _pendingAuthType = _hashParams.get('type'); // 'email_change' | 'recovery' | 'invite' | 'signup' | null
-} catch (e) { /* no-op: ambiente senza location.hash valido */ }
+  const _hashParams   = new URLSearchParams(window.location.hash.replace(/^#/, ''));
+  const _searchParams = new URLSearchParams(window.location.search);
+  _pendingAuthType = _hashParams.get('type') || _searchParams.get('type');
+  // 'email_change' | 'recovery' | 'invite' | 'signup' | null
+} catch (e) { /* no-op: ambiente senza location valido */ }
 
 // ── Guard anti-doppio-trigger per onPasswordRecovery ─────────────
 let _recoveryScreenShown = false;
@@ -259,13 +266,49 @@ async function init() {
 
     // ── USER_UPDATED: conferma cambio email OPPURE password impostata ──
     if (event === 'USER_UPDATED' && session?.user) {
-      // v8.26.4: link di conferma cambio email cliccato → logout forzato,
-      // non entriamo nell'app con la sessione già aperta. Vedi PROBLEMA 6.
-      if (_pendingAuthType === 'email_change') {
-        _pendingAuthType = null;
+      const _authType = _pendingAuthType;
+      _pendingAuthType = null; // consumato una tantum, non deve influenzare eventi futuri
+
+      // v8.26.6 — FIX: il solo controllo su _pendingAuthType (letto
+      // dall'URL) si è rivelato inaffidabile in pratica (probabile causa:
+      // Supabase Cloud ha di default "Secure email change" ATTIVO, che
+      // invia DUE mail di conferma — vecchio E nuovo indirizzo — ed
+      // entrambe generano un link con type=email_change; il cambio reale
+      // si applica solo dopo il SECONDO click, e in quella finestra
+      // intermedia il campo session.user.new_email resta valorizzato).
+      // Segnale primario ora: l'email in sessione è DAVVERO cambiata
+      // rispetto a quella già nota (_currentUser), indipendentemente dal
+      // formato esatto con cui Supabase ha costruito l'URL di redirect.
+      // _authType resta come fallback SOLO per una tab nuova senza una
+      // sessione precedente con cui confrontare.
+      const _previousEmail = _currentUser?.email || null;
+      const _newEmail      = session.user.email || null;
+      const _pendingSecondConfirmation = !!(session.user.new_email);
+      const _emailActuallyChanged = !!(_previousEmail && _newEmail && _previousEmail !== _newEmail);
+      const _isEmailChangeConfirm = !_pendingSecondConfirmation &&
+        (_emailActuallyChanged || (!_previousEmail && _authType === 'email_change'));
+
+      console.debug('[PixelProf] USER_UPDATED', {
+        authType: _authType,
+        previousEmail: _previousEmail,
+        newEmail: _newEmail,
+        pendingField_new_email: session.user.new_email || null,
+        pendingSecondConfirmation: _pendingSecondConfirmation,
+        isEmailChangeConfirm: _isEmailChangeConfirm
+      });
+
+      if (_isEmailChangeConfirm) {
         if (typeof window.__onEmailChangeConfirmed === 'function') {
           window.__onEmailChangeConfirmed();
         }
+        return;
+      }
+
+      if (_pendingSecondConfirmation) {
+        // Secure Email Change: manca ancora l'altra conferma (vecchio o
+        // nuovo indirizzo, a seconda di quale link è stato cliccato per
+        // primo). Il cambio non è ancora effettivo: non tocchiamo la
+        // sessione corrente e non mostriamo alcun messaggio.
         return;
       }
 

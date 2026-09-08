@@ -1,6 +1,14 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.8.1
+   onboarding.js — PixelProf v2.8.2
    Tour guidato al primo accesso docente ("dove clicco?").
+
+   v2.8.2 — Su richiesta esplicita utente (opzione 3 tra quelle
+     proposte per il bug del menu Hub): invece di lasciare il tour
+     silenzioso dopo un click sbagliato nel menu Hub, i 5 passi Hub
+     ora hanno onRecover(), che riapre da sola il menu — il
+     tooltip/anello giusto ricompare subito, senza richiedere
+     all'utente di riaprire l'Hub per proprio conto. Vedi doc completa
+     su onRecover (formato passo) e invalidateAndRecheck().
 
    v2.8.1 — Bug fix: tour "bloccato" nel menu Hub (riquadro/tooltip
      orfani se si clicca un item del menu diverso da quello evidenziato
@@ -712,6 +720,16 @@ const OnboardingTour = (function () {
                chiudere per davvero un dialogo reale rimasto aperto
                perché blockClicks impediva di chiuderlo cliccandolo
                per davvero) — vedi _advance()/_markDone() più sotto.
+       onRecover (opzionale, v8.26.3) → funzione richiamata da
+               invalidateAndRecheck() SOLO quando il target di questo
+               passo, già mostrato, viene trovato non più visibile
+               (es. l'utente ha chiuso un menu/dropdown cliccando un
+               elemento reale DIVERSO da quello evidenziato dal tour —
+               vedi doc completa su invalidateAndRecheck() più sotto).
+               Serve a "riportare" da sola l'interfaccia in uno stato
+               dove il target torna visibile (es. riaprire il menu
+               Hub), invece di lasciare il tour semplicemente in
+               silenzio in attesa che sia l'utente a capire cosa fare.
   ================================================ */
   const DIRECTOR_STEPS = [
     { screen:'dashboard', target:'.dd-aule', type:'action',
@@ -895,31 +913,36 @@ const OnboardingTour = (function () {
       } },
     { screen:'homeCategory', target:'#tb-lb', type:'action',
       title:'Classifica 🏆',
-      body:'Premi qui per entrare davvero nella Classifica.' },
+      body:'Premi qui per entrare davvero nella Classifica.',
+      onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
     { screen:'hubLeaderboard', target:'#tb-hub-btn', type:'action',
       title:'Nella Classifica 🏆',
       body:'Il podio della classe per ogni minigioco, sia in modalità Individuale che a Squadre. Premi di nuovo l\'Hub per tornare al pannello.' },
     { screen:'homeCategory', target:'#tb-st', type:'action',
       title:'Progressi 📊',
-      body:'Premi qui per entrare nei Progressi.' },
+      body:'Premi qui per entrare nei Progressi.',
+      onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
     { screen:'hubStats', target:'#tb-hub-btn', type:'action',
       title:'Nei Progressi 📊',
       body:'Le tue statistiche personali: domande totali, risposte corrette e andamento per modulo. Premi di nuovo l\'Hub per continuare.' },
     { screen:'homeCategory', target:'#tb-hist', type:'action',
       title:'Storico 🕐',
-      body:'Premi qui per entrare nello Storico.' },
+      body:'Premi qui per entrare nello Storico.',
+      onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
     { screen:'hubHistory', target:'#tb-hub-btn', type:'action',
       title:'Nello Storico 🕐',
       body:'L\'elenco delle sessioni giocate, filtrabile per attività e modalità. Premi di nuovo l\'Hub per continuare.' },
     { screen:'homeCategory', target:'#tb-dash', type:'action',
       title:'Panoramica Classe 📈',
-      body:'Premi qui per entrare nella Panoramica Classe.' },
+      body:'Premi qui per entrare nella Panoramica Classe.',
+      onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
     { screen:'hubDashboard', target:'#tb-hub-btn', type:'action',
       title:'Nella Panoramica Classe 📈',
       body:'La vista d\'insieme della classe: risultati, partecipazione e le domande più difficili. Premi di nuovo l\'Hub per continuare.' },
     { screen:'homeCategory', target:'#tb-badges', type:'action',
       title:'Traguardi 🏅',
-      body:'Premi qui per entrare nei Traguardi.' },
+      body:'Premi qui per entrare nei Traguardi.',
+      onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
     { screen:'hubBadges', target:'#tb-hub-btn', type:'info', revealTarget:true, blockClicks:true,
       title:'Nei Traguardi 🏅',
       body:'I badge sbloccati dalla classe e il progresso verso i prossimi. Hai esplorato tutte le sezioni dell\'Hub!',
@@ -1127,31 +1150,36 @@ const OnboardingTour = (function () {
       } },
     { screen:'homeCategory', target:'#tb-lb', type:'action',
       title:'Classifica 🏆',
-      body:'Premi qui per entrare davvero nella Classifica.' },
+      body:'Premi qui per entrare davvero nella Classifica.',
+      onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
     { screen:'hubLeaderboard', target:'#tb-hub-btn', type:'action',
       title:'Nella Classifica 🏆',
       body:'Il podio della classe per ogni minigioco, sia in modalità Individuale che a Squadre. Premi di nuovo l\'Hub per tornare al pannello.' },
     { screen:'homeCategory', target:'#tb-st', type:'action',
       title:'Progressi 📊',
-      body:'Premi qui per entrare nei Progressi.' },
+      body:'Premi qui per entrare nei Progressi.',
+      onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
     { screen:'hubStats', target:'#tb-hub-btn', type:'action',
       title:'Nei Progressi 📊',
       body:'Le tue statistiche personali: domande totali, risposte corrette e andamento per modulo. Premi di nuovo l\'Hub per continuare.' },
     { screen:'homeCategory', target:'#tb-hist', type:'action',
       title:'Storico 🕐',
-      body:'Premi qui per entrare nello Storico.' },
+      body:'Premi qui per entrare nello Storico.',
+      onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
     { screen:'hubHistory', target:'#tb-hub-btn', type:'action',
       title:'Nello Storico 🕐',
       body:'L\'elenco delle sessioni giocate, filtrabile per attività e modalità. Premi di nuovo l\'Hub per continuare.' },
     { screen:'homeCategory', target:'#tb-dash', type:'action',
       title:'Panoramica Classe 📈',
-      body:'Premi qui per entrare nella Panoramica Classe.' },
+      body:'Premi qui per entrare nella Panoramica Classe.',
+      onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
     { screen:'hubDashboard', target:'#tb-hub-btn', type:'action',
       title:'Nella Panoramica Classe 📈',
       body:'La vista d\'insieme della classe: risultati, partecipazione e le domande più difficili. Premi di nuovo l\'Hub per continuare.' },
     { screen:'homeCategory', target:'#tb-badges', type:'action',
       title:'Traguardi 🏅',
-      body:'Premi qui per entrare nei Traguardi.' },
+      body:'Premi qui per entrare nei Traguardi.',
+      onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
     { screen:'hubBadges', target:'#tb-hub-btn', type:'info', revealTarget:true, blockClicks:true,
       title:'Nei Traguardi 🏅',
       body:'I badge sbloccati dalla classe e il progresso verso i prossimi. Hai esplorato tutte le sezioni dell\'Hub!',
@@ -1368,13 +1396,26 @@ const OnboardingTour = (function () {
    *  cache qui sopra (_renderedIdx===_state.idx) impedisce di
    *  accorgersene finché nessuno forza un controllo — riquadro/tooltip
    *  restano "orfani" a schermo, il tour appare bloccato.
-   *  Fix: chiamata da closeHubMenu() (app.js) ad OGNI chiusura del menu
-   *  Hub, per qualsiasi causa. Se il target del passo corrente è ancora
-   *  visibile (es. #tb-hub-btn, sempre presente in topbar — percorso
-   *  corretto) non fa nulla: zero rischio di flicker sul flusso normale.
-   *  Se invece non è più visibile (percorso col bug) smonta il
-   *  riquadro/tooltip orfano invece di lasciarlo a schermo: il tour resta
-   *  in silenzio, pronto a riprendere al prossimo passo raggiungibile. */
+   *  Fix (v8.26.1): chiamata da closeHubMenu() (app.js) ad OGNI chiusura
+   *  del menu Hub, per qualsiasi causa. Se il target del passo corrente
+   *  è ancora visibile (es. #tb-hub-btn, sempre presente in topbar —
+   *  percorso corretto) non fa nulla: zero rischio di flicker sul
+   *  flusso normale. Se invece non è più visibile (percorso col bug)
+   *  smonta il riquadro/tooltip orfano invece di lasciarlo a schermo.
+   *
+   *  v8.26.3 — richiesta esplicita utente ("riapri il menu da solo",
+   *  opzione 3 tra quelle proposte): lasciare il tour semplicemente
+   *  "silenzioso" dopo un click sbagliato costringeva l'utente a capire
+   *  da solo di dover riaprire l'Hub, rischiando di credere che il tour
+   *  fosse finito. Nuova proprietà opzionale per-passo onRecover
+   *  (presente solo sui 5 passi Hub, in entrambi DIRECTOR_STEPS e
+   *  TEACHER_STEPS): quando il target risulta non più visibile, PRIMA
+   *  di ritentare il render viene invocata onRecover(), che riapre da
+   *  sola il menu Hub (toggleHubMenu() in app.js) — il tooltip/anello
+   *  giusto ricompare immediatamente, senza bisogno che l'utente clicchi
+   *  di nuovo il bottone Hub per proprio conto. Sui passi che NON hanno
+   *  onRecover (tutti gli altri) il comportamento resta quello di
+   *  v8.26.1: nasconde in silenzio, nessuna riapertura forzata. */
   function invalidateAndRecheck() {
     if (_state.done) return;
     const list = _stepList();
@@ -1384,6 +1425,9 @@ const OnboardingTour = (function () {
     if (!stillVisible) {
       _teardown();
       _renderedIdx = -1;
+      if (typeof def.onRecover === 'function') {
+        try { def.onRecover(); } catch (e) {}
+      }
     }
     _tryRenderCurrentStep();
   }

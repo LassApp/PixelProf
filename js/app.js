@@ -2,6 +2,11 @@
    app.js — PixelProf v6.1.1
    App bootstrap: auth flow, login, logout, set-password,
    module filter, wizard, director panel, and splash/init.
+   v8.26.3 — Nessuna modifica di codice qui: il fix "riapri il menu Hub
+     da solo" (richiesta esplicita utente) vive interamente nei dati
+     dei passi Hub e nel motore in js/onboarding.js (onRecover /
+     invalidateAndRecheck()), che richiama toggleHubMenu() — già
+     definita in questo file — senza bisogno di modificarla.
    v8.26.2 — Bug fix onboarding (parte 2): dopo che
      invalidateAndRecheck() smonta un tooltip orfano nel menu Hub,
      rimuove anche il listener di click che fa avanzare il tour. Se poi

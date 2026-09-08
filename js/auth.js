@@ -269,35 +269,46 @@ async function init() {
       const _authType = _pendingAuthType;
       _pendingAuthType = null; // consumato una tantum, non deve influenzare eventi futuri
 
-      // v8.26.6 — FIX: il solo controllo su _pendingAuthType (letto
-      // dall'URL) si è rivelato inaffidabile in pratica (probabile causa:
-      // Supabase Cloud ha di default "Secure email change" ATTIVO, che
-      // invia DUE mail di conferma — vecchio E nuovo indirizzo — ed
-      // entrambe generano un link con type=email_change; il cambio reale
-      // si applica solo dopo il SECONDO click, e in quella finestra
-      // intermedia il campo session.user.new_email resta valorizzato).
-      // Segnale primario ora: l'email in sessione è DAVVERO cambiata
-      // rispetto a quella già nota (_currentUser), indipendentemente dal
-      // formato esatto con cui Supabase ha costruito l'URL di redirect.
-      // _authType resta come fallback SOLO per una tab nuova senza una
-      // sessione precedente con cui confrontare.
+      // v8.26.7 — FIX: sia il confronto _currentUser (fallisce su una tab
+      // nuova, senza sessione precedente) sia il controllo su "type"
+      // nell'URL (si è rivelato NON rilevabile in questo progetto — vedi
+      // log diagnostico sotto, "authType" risultava sempre null anche
+      // sul link di conferma) non bastavano da soli. Aggiunto un terzo
+      // segnale, il più affidabile: un marker in localStorage — scritto
+      // da updateOwnEmail() nel momento stesso in cui il cambio viene
+      // richiesto, con l'email di destinazione — che è CONDIVISO tra
+      // tutte le tab della stessa origine (quindi visibile anche in una
+      // tab nuova aperta dal link nella mail) e NON dipende in alcun modo
+      // dal formato dell'URL di redirect costruito da Supabase.
+      let _pendingMarker = null;
+      try {
+        const _raw = localStorage.getItem('pp_pending_email_change');
+        if (_raw) _pendingMarker = JSON.parse(_raw);
+      } catch (e) { /* no-op */ }
+      // Validità 24h: tempo ragionevole per aprire la mail di conferma.
+      const _markerFresh   = !!(_pendingMarker && (Date.now() - (_pendingMarker.requestedAt || 0)) < 24 * 60 * 60 * 1000);
+      const _markerMatches = !!(_markerFresh && _pendingMarker.newEmail && session.user.email === _pendingMarker.newEmail);
+
       const _previousEmail = _currentUser?.email || null;
       const _newEmail      = session.user.email || null;
       const _pendingSecondConfirmation = !!(session.user.new_email);
       const _emailActuallyChanged = !!(_previousEmail && _newEmail && _previousEmail !== _newEmail);
       const _isEmailChangeConfirm = !_pendingSecondConfirmation &&
-        (_emailActuallyChanged || (!_previousEmail && _authType === 'email_change'));
+        (_markerMatches || _emailActuallyChanged || (!_previousEmail && _authType === 'email_change'));
 
       console.debug('[PixelProf] USER_UPDATED', {
+        rawHref: window.location.href,
         authType: _authType,
         previousEmail: _previousEmail,
         newEmail: _newEmail,
         pendingField_new_email: session.user.new_email || null,
         pendingSecondConfirmation: _pendingSecondConfirmation,
+        markerMatches: _markerMatches,
         isEmailChangeConfirm: _isEmailChangeConfirm
       });
 
       if (_isEmailChangeConfirm) {
+        try { localStorage.removeItem('pp_pending_email_change'); } catch (e) { /* no-op */ }
         if (typeof window.__onEmailChangeConfirmed === 'function') {
           window.__onEmailChangeConfirmed();
         }
@@ -644,6 +655,20 @@ async function updateOwnEmail(newEmail) {
       { emailRedirectTo: window.location.origin + window.location.pathname }
     );
     if (error) throw error;
+
+    // v8.26.7: marker in localStorage con l'email target, per riconoscere
+    // la conferma in QUALSIASI tab (anche una nuova, senza sessione
+    // precedente con cui confrontare) senza dipendere dal formato esatto
+    // dell'URL di redirect. Vedi PROBLEMA 6 più sopra per il contesto
+    // completo: il rilevamento basato solo su "type" nell'URL si è
+    // rivelato inaffidabile in questo progetto.
+    try {
+      localStorage.setItem('pp_pending_email_change', JSON.stringify({
+        newEmail: newEmail,
+        requestedAt: Date.now()
+      }));
+    } catch (e) { /* no-op: storage non disponibile */ }
+
     return { ok: true };
   } catch (err) {
     return { ok: false, error: err.message };

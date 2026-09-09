@@ -257,6 +257,18 @@ function _detectEmailChangeConfirm(session) {
   const _isEmailChangeConfirm = !_pendingSecondConfirmation &&
     (_markerMatches || _emailActuallyChanged || (!_previousEmail && _authType === 'email_change'));
 
+  // v8.27.3 — il campo session.user.new_email può restare valorizzato per
+  // una breve finestra dopo il click (il backend Supabase non ha ancora
+  // "digerito" del tutto il cambio), anche a conferma singola già
+  // avvenuta: non è una vera "seconda conferma mancante" in quel caso,
+  // solo dati di sessione non ancora aggiornati. Se il valore pendente
+  // coincide con il marker NOSTRO, lo sappiamo per certo e possiamo
+  // ricontrollare attivamente invece di aspettare il refresh automatico
+  // di Supabase (che avviene solo ogni tot tempo, da cui il ritardo
+  // percepito di circa un minuto osservato in test).
+  const _pendingMatchesOurMarker = !!(_pendingSecondConfirmation && _markerFresh &&
+    _pendingMarker.newEmail && session.user.new_email === _pendingMarker.newEmail);
+
   console.debug('[PixelProf] emailChangeCheck', {
     rawHref: window.location.href,
     authType: _authType,
@@ -264,14 +276,48 @@ function _detectEmailChangeConfirm(session) {
     newEmail: _newEmail,
     pendingField_new_email: session.user.new_email || null,
     pendingSecondConfirmation: _pendingSecondConfirmation,
+    pendingMatchesOurMarker: _pendingMatchesOurMarker,
     markerMatches: _markerMatches,
     isEmailChangeConfirm: _isEmailChangeConfirm
   });
 
   if (_isEmailChangeConfirm) {
     try { localStorage.removeItem('pp_pending_email_change'); } catch (e) { /* no-op */ }
+  } else if (_pendingMatchesOurMarker) {
+    _scheduleEmailChangeRecheck();
   }
   return { isEmailChangeConfirm: _isEmailChangeConfirm, pendingSecondConfirmation: _pendingSecondConfirmation };
+}
+
+/**
+ * v8.27.3 — Ricontrollo attivo (fino a 10 tentativi, ogni 3s = max 30s)
+ * quando sappiamo per certo che siamo in attesa che Supabase finisca di
+ * applicare il NOSTRO cambio email (vedi _pendingMatchesOurMarker sopra).
+ * Molto più reattivo del semplice refresh automatico del token di
+ * Supabase, che avviene solo periodicamente.
+ */
+let _emailChangeRecheckInFlight = false;
+function _scheduleEmailChangeRecheck(attemptsLeft = 10) {
+  if (attemptsLeft <= 0 || _emailChangeRecheckInFlight) return;
+  _emailChangeRecheckInFlight = true;
+  setTimeout(async () => {
+    _emailChangeRecheckInFlight = false;
+    try {
+      const { data, error } = await supabase.auth.refreshSession();
+      if (!error && data?.session?.user) {
+        const _check = _detectEmailChangeConfirm(data.session);
+        if (_check.isEmailChangeConfirm) {
+          if (typeof window.__onEmailChangeConfirmed === 'function') {
+            window.__onEmailChangeConfirmed();
+          }
+          return;
+        }
+        if (_check.pendingSecondConfirmation) {
+          _scheduleEmailChangeRecheck(attemptsLeft - 1);
+        }
+      }
+    } catch (e) { /* no-op: si torna comunque al refresh automatico di Supabase */ }
+  }, 3000);
 }
 
 // ════════════════════════════════════════════════════════════════════

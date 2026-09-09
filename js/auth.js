@@ -216,6 +216,64 @@ function _triggerPasswordRecovery() {
   }
 }
 
+/**
+ * v8.27.2 — Rileva se una sessione appena arrivata (da SIGNED_IN O da
+ * USER_UPDATED) è la conferma di un cambio email in sospeso.
+ *
+ * PROBLEMA 7: il log diagnostico ha mostrato che quando il link di
+ *   conferma viene aperto come NAVIGAZIONE PAGINA INTERA (nuova tab
+ *   aperta dalla mail, o URL incollato in barra indirizzi) Supabase NON
+ *   emette USER_UPDATED — emette INITIAL_SESSION seguito da SIGNED_IN,
+ *   già con l'email aggiornata. USER_UPDATED scatta SOLO quando il
+ *   cambio viene richiesto mentre la pagina è già aperta e attiva (es.
+ *   la tab da cui parte la richiesta). Il fix v8.26.7 controllava solo
+ *   USER_UPDATED e per questo non scattava mai nello scenario reale.
+ *   Fix: stessa logica di rilevamento (marker localStorage + confronto
+ *   email + type da URL) estratta qui ed applicata a ENTRAMBI gli eventi.
+ *
+ * Ritorna { isEmailChangeConfirm, pendingSecondConfirmation }.
+ * Consuma _pendingAuthType e il marker localStorage se il rilevamento
+ * ha successo (per evitare falsi positivi su eventi successivi).
+ */
+function _detectEmailChangeConfirm(session) {
+  const _authType = _pendingAuthType;
+  _pendingAuthType = null; // consumato una tantum, non deve influenzare eventi futuri
+
+  // Marker scritto da updateOwnEmail() al momento della richiesta, con
+  // l'email di destinazione — condiviso tra tutte le tab della stessa
+  // origine, non dipende dal formato dell'URL di redirect.
+  let _pendingMarker = null;
+  try {
+    const _raw = localStorage.getItem('pp_pending_email_change');
+    if (_raw) _pendingMarker = JSON.parse(_raw);
+  } catch (e) { /* no-op */ }
+  const _markerFresh   = !!(_pendingMarker && (Date.now() - (_pendingMarker.requestedAt || 0)) < 24 * 60 * 60 * 1000);
+  const _markerMatches = !!(_markerFresh && _pendingMarker.newEmail && session.user.email === _pendingMarker.newEmail);
+
+  const _previousEmail = _currentUser?.email || null;
+  const _newEmail      = session.user.email || null;
+  const _pendingSecondConfirmation = !!(session.user.new_email);
+  const _emailActuallyChanged = !!(_previousEmail && _newEmail && _previousEmail !== _newEmail);
+  const _isEmailChangeConfirm = !_pendingSecondConfirmation &&
+    (_markerMatches || _emailActuallyChanged || (!_previousEmail && _authType === 'email_change'));
+
+  console.debug('[PixelProf] emailChangeCheck', {
+    rawHref: window.location.href,
+    authType: _authType,
+    previousEmail: _previousEmail,
+    newEmail: _newEmail,
+    pendingField_new_email: session.user.new_email || null,
+    pendingSecondConfirmation: _pendingSecondConfirmation,
+    markerMatches: _markerMatches,
+    isEmailChangeConfirm: _isEmailChangeConfirm
+  });
+
+  if (_isEmailChangeConfirm) {
+    try { localStorage.removeItem('pp_pending_email_change'); } catch (e) { /* no-op */ }
+  }
+  return { isEmailChangeConfirm: _isEmailChangeConfirm, pendingSecondConfirmation: _pendingSecondConfirmation };
+}
+
 // ════════════════════════════════════════════════════════════════════
 // INIT — eseguito all'avvio del modulo
 // ════════════════════════════════════════════════════════════════════
@@ -246,8 +304,22 @@ async function init() {
       return;
     }
 
-    // ── SIGNED_IN: login normale O primo accesso via invite ───────
+    // ── SIGNED_IN: login normale, primo accesso via invite, OPPURE ──
+    // ── conferma cambio email aperta come navigazione pagina intera ──
     if (event === 'SIGNED_IN' && session?.user) {
+      const _emailCheck = _detectEmailChangeConfirm(session);
+      if (_emailCheck.isEmailChangeConfirm) {
+        if (typeof window.__onEmailChangeConfirmed === 'function') {
+          window.__onEmailChangeConfirmed();
+        }
+        return;
+      }
+      if (_emailCheck.pendingSecondConfirmation) {
+        // Secure Email Change: manca ancora l'altra conferma. Non
+        // tocchiamo la sessione corrente e non mostriamo messaggi.
+        return;
+      }
+
       _currentUser = session.user;
       const needs  = _checkNeedsPassword(session.user);
 
@@ -264,58 +336,18 @@ async function init() {
       return;
     }
 
-    // ── USER_UPDATED: conferma cambio email OPPURE password impostata ──
+    // ── USER_UPDATED: conferma cambio email (pagina già aperta) OPPURE password impostata ──
     if (event === 'USER_UPDATED' && session?.user) {
-      const _authType = _pendingAuthType;
-      _pendingAuthType = null; // consumato una tantum, non deve influenzare eventi futuri
+      const _emailCheck = _detectEmailChangeConfirm(session);
 
-      // v8.26.7 — FIX: sia il confronto _currentUser (fallisce su una tab
-      // nuova, senza sessione precedente) sia il controllo su "type"
-      // nell'URL (si è rivelato NON rilevabile in questo progetto — vedi
-      // log diagnostico sotto, "authType" risultava sempre null anche
-      // sul link di conferma) non bastavano da soli. Aggiunto un terzo
-      // segnale, il più affidabile: un marker in localStorage — scritto
-      // da updateOwnEmail() nel momento stesso in cui il cambio viene
-      // richiesto, con l'email di destinazione — che è CONDIVISO tra
-      // tutte le tab della stessa origine (quindi visibile anche in una
-      // tab nuova aperta dal link nella mail) e NON dipende in alcun modo
-      // dal formato dell'URL di redirect costruito da Supabase.
-      let _pendingMarker = null;
-      try {
-        const _raw = localStorage.getItem('pp_pending_email_change');
-        if (_raw) _pendingMarker = JSON.parse(_raw);
-      } catch (e) { /* no-op */ }
-      // Validità 24h: tempo ragionevole per aprire la mail di conferma.
-      const _markerFresh   = !!(_pendingMarker && (Date.now() - (_pendingMarker.requestedAt || 0)) < 24 * 60 * 60 * 1000);
-      const _markerMatches = !!(_markerFresh && _pendingMarker.newEmail && session.user.email === _pendingMarker.newEmail);
-
-      const _previousEmail = _currentUser?.email || null;
-      const _newEmail      = session.user.email || null;
-      const _pendingSecondConfirmation = !!(session.user.new_email);
-      const _emailActuallyChanged = !!(_previousEmail && _newEmail && _previousEmail !== _newEmail);
-      const _isEmailChangeConfirm = !_pendingSecondConfirmation &&
-        (_markerMatches || _emailActuallyChanged || (!_previousEmail && _authType === 'email_change'));
-
-      console.debug('[PixelProf] USER_UPDATED', {
-        rawHref: window.location.href,
-        authType: _authType,
-        previousEmail: _previousEmail,
-        newEmail: _newEmail,
-        pendingField_new_email: session.user.new_email || null,
-        pendingSecondConfirmation: _pendingSecondConfirmation,
-        markerMatches: _markerMatches,
-        isEmailChangeConfirm: _isEmailChangeConfirm
-      });
-
-      if (_isEmailChangeConfirm) {
-        try { localStorage.removeItem('pp_pending_email_change'); } catch (e) { /* no-op */ }
+      if (_emailCheck.isEmailChangeConfirm) {
         if (typeof window.__onEmailChangeConfirmed === 'function') {
           window.__onEmailChangeConfirmed();
         }
         return;
       }
 
-      if (_pendingSecondConfirmation) {
+      if (_emailCheck.pendingSecondConfirmation) {
         // Secure Email Change: manca ancora l'altra conferma (vecchio o
         // nuovo indirizzo, a seconda di quale link è stato cliccato per
         // primo). Il cambio non è ancora effettivo: non tocchiamo la

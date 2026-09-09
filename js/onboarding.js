@@ -995,13 +995,33 @@ const OnboardingTour = (function () {
         var noBtn = document.getElementById('pp-dialog-no');
         if (overlay && !overlay.classList.contains('hidden') && noBtn) { noBtn.click(); }
       } },
+    // v8.27.0 — nuovo step (richiesta esplicita utente, solo DIRECTOR_STEPS):
+    // dopo il dialog "cambia aula" (annullato in onLeave sopra, restiamo su
+    // homeCategory) mostra il tasto "← Dashboard" sempre presente in
+    // topbar (v8.26.8/9, #tb-dashboard-btn) — coerente col fatto che il
+    // Direttore ha INIZIATO il tour dalla Dashboard (primo passo, .dd-aule):
+    // il tour lo riaccompagna lì, così ricomincia a usare l'app proprio da
+    // dove l'aveva lasciata. 'action' reale: il click esegue per davvero
+    // backToDashboardFromApp() (game-engine-state.js) — nessun minigioco/
+    // Flip Card attivo qui, quindi naviga subito senza dialog di conferma.
+    // openDirectorDashboard() (app.js) chiama già da sola, 500ms dopo,
+    // OnboardingTour.showDashboardStep() → _tryRenderCurrentStep(): non
+    // serve nessun hook nuovo, il passo successivo (screen:'dashboard')
+    // si renderizza da solo non appena la Dashboard è visibile.
+    { screen:'homeCategory', target:'#tb-dashboard-btn', type:'action',
+      title:'Torna alla Dashboard, in ogni momento 🏠',
+      body:'Questo pulsante è sempre presente, anche dentro un\'aula o un minigioco: ti riporta subito al pannello di controllo. Premilo per concludere il tour.' },
     // v8.25.0 — rimosso: il tasto Esci non è più sempre visibile in
     // topbar (ora vive nel pannello Profilo) — già mostrato dal passo
     // dedicato .pp-logout-action più sopra, subito dopo l'apertura
     // del pannello. Nessun passo aggiuntivo qui.
-    { screen:'homeCategory', target:'.cat-grid', type:'info',
+    // v8.27.0 — spostato da screen:'homeCategory'/.cat-grid a
+    // screen:'dashboard'/.cs-hero: chiude il tour esattamente dove è
+    // iniziato (stesso .cs-hero del primo passo, .dd-aule, è al suo
+    // interno), invece di lasciare il Direttore ancora dentro l'aula.
+    { screen:'dashboard', target:'.cs-hero', type:'info',
       title:'Tour completato! 🎉',
-      body:'Ora conosci tutti gli strumenti di PixelProf. Buona lezione!' },
+      body:'Sei di nuovo nella tua Dashboard, pronto per iniziare davvero. Ora conosci tutti gli strumenti di PixelProf — buona lezione!' },
   ];
 
   const TEACHER_STEPS = [

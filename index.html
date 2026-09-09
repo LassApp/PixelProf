@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v8.26.8</title>
+<title>PixelProf — ICDL Lab interattivo v8.26.9</title>
 <link rel="icon" href="public/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
@@ -97,7 +97,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v8.26.8</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v8.26.9</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -321,6 +321,11 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </div>
     </div>
     <div class="cs-teacher-badge">
+      <!-- v8.26.9: spostato qui da .cs-body (era sopra il titolo, unico
+           schermo Direttore fuori standard) — stesso pattern identico di
+           screen-teacher-mgmt/-create/-list/-detail e screen-courses:
+           back-link sempre nella cs-topbar, mai nel corpo della pagina. -->
+      <button class="back-link" onclick="dpBackToDashboard()" style="margin-right:6px"><i class="ti ti-arrow-left"></i> Dashboard</button>
       <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
         <i class="ti ti-volume-2 audio-toggle-icon"></i>
       </button>
@@ -333,7 +338,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </div>
   </div>
   <div class="cs-body">
-    <div class="back-link" onclick="dpBackToDashboard()"><i class="ti ti-arrow-left"></i> Dashboard</div>
     <div class="cs-hero" style="padding-top:.25rem">
       <span class="cs-hero-eyebrow">Direttore · Account</span>
       <h1 class="cs-hero-title">Il tuo <span class="hl">profilo</span></h1>
@@ -667,7 +671,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v8.26.8</span>
+        <span class="cs-logo-sub">ICDL Lab · v8.26.9</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v8.26.3: sostituito da tasto Profilo unico -->
@@ -985,12 +989,29 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v8.26.8</span>
+      <span class="logo-sub">ICDL Lab · v8.26.9</span>
       <span class="logo-hint">cambia aula</span>
     </div>
   </div>
 
   <div style="flex:1"></div>
+
+  <!-- v8.26.9: "← Dashboard" SEMPRE presente qui (solo Direttore, toggle in
+       _afterLogin/app.js) — a differenza del logo (che cambia aula) e del
+       gemello in screen-courses (raggiungibile solo dopo essere già usciti
+       dall'aula), questo riporta il Direttore alla Dashboard da qualunque
+       schermata dentro un'aula: moduli, Hub, minigiochi e Flip Card.
+       Stesso identico stile/markup di #cs-back-dashboard-btn (.back-link,
+       icona+testo) — NON .audio-toggle-btn: quella classe è intercettata
+       da AudioManager._updateAllToggleUI() (selettore globale sui bottoni
+       audio), che ridipingeva questo tasto di rosso e ne sovrascriveva il
+       title con "Audio disattivato" (stesso bug storico già risolto per
+       .theme-toggle-btn — v1.0.1 di audio-manager.js). Posizionato PRIMA
+       del badge aula ("torna ai moduli"), non dentro <nav class="tb-nav">.
+       Disattivato durante la pausa di un minigioco — vedi lockTargets in
+       _setGamePauseLock(), js/game-quiz.js. Logica click in
+       backToDashboardFromApp(), js/game-engine-state.js. -->
+  <button class="back-link hidden" id="tb-dashboard-btn" onclick="backToDashboardFromApp()" title="Torna alla Dashboard Direttore" style="margin-right:4px"><i class="ti ti-arrow-left"></i> Dashboard</button>
 
   <!-- Badge aula: clic → ritorno selezione moduli (goHome) -->
   <div id="tb-course-badge" class="tb-aula-badge" onclick="goHome()" title="Torna ai moduli">
@@ -1003,17 +1024,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 
   <!-- NAV: Hub solo icona -->
   <nav class="tb-nav">
-    <!-- v8.26.8: "← Dashboard" SEMPRE presente qui (solo Direttore, toggle
-         in _afterLogin/app.js) — a differenza del logo (che cambia aula) e
-         del gemello in screen-courses (raggiungibile solo dopo essere già
-         usciti dall'aula), questo riporta il Direttore alla Dashboard da
-         qualunque schermata dentro un'aula: moduli, Hub, minigiochi e Flip
-         Card. Icona sola (stile .audio-toggle-btn) per non affollare la
-         topbar già densa qui dentro. Logica in backToDashboardFromApp(),
-         js/game-engine-state.js. -->
-    <button class="audio-toggle-btn hidden" id="tb-dashboard-btn" onclick="backToDashboardFromApp()" title="Torna alla Dashboard Direttore" aria-label="Torna alla Dashboard Direttore">
-      <i class="ti ti-arrow-left"></i>
-    </button>
     <button class="audio-toggle-btn" onclick="AudioManager.toggle()" title="Audio" aria-label="Attiva o disattiva l'audio">
       <i class="ti ti-volume-2 audio-toggle-icon"></i>
     </button>
@@ -1830,7 +1840,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div><!-- /app -->
 
 
-<script src="js/app.bundle.min.js?v=8.26.8"></script>
+<script src="js/app.bundle.min.js?v=8.26.9"></script>
 <!-- Pannello Profilo (v8.25.0) — nome, ruolo, ultimo accesso, ultima
      aula collegata, poi Esci e Rivedi il tour guidato. Markup e stili
      in css/topbar-profile.css, logica in js/profile-panel.js.

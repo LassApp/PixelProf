@@ -212,6 +212,8 @@ function _setGamePauseLock(locked){
     sh('tb-hub-wrap'),               // v5.0.8: hub (Classifica/Progressi/Storico) — copre bottone + menu anche se aperto
     sh('tb-lb'),
     sh('tb-st'),
+    sh('tb-dashboard-btn'),           // v8.26.9: "← Dashboard" (solo Direttore) — bloccato in pausa
+    sh('tb-profile-btn'),             // v8.26.9: tasto profilo — bloccato in pausa
     // quiz screen
     sh('qz-game')?.querySelector('.game-exit-btn'),
     sh('qz-game')?.querySelector('.game-restart-btn'),

@@ -1722,6 +1722,40 @@ function goCoursesFromApp(){
   _execBack();
 }
 
+/* v8.26.8: pulsante "← Dashboard" SEMPRE presente nella topbar dell'app
+   (solo Direttore — bottone #tb-dashboard-btn, toggle in _afterLogin()/
+   app.js). A differenza del logo (goCoursesFromApp, sopra: cambia aula,
+   torna a screen-courses) questo riporta DIRETTAMENTE alla Dashboard
+   Direttore, da qualunque schermata dentro un'aula: selezione modulo/
+   modalità, Hub (Classifica/Progressi/Storico/Panoramica Classe/
+   Traguardi), un minigioco o una sessione Flip Card in corso.
+   Se un minigioco è attivo, interrompe la partita chiedendo prima
+   conferma — stesso identico ppConfirm() già usato da goHome()/
+   goCoursesFromApp()/goTab() più sopra (nessun nuovo dialogo). Stessa
+   cosa per Flip Card via confirmExitFlipCard() (js/flip-card.js) — vedi
+   commento gemello in goHome(). Nessuna conferma "Esci da quest'aula?"
+   fuori da un minigioco/Flip Card (a differenza del logo): è un tasto
+   di navigazione rapida, non un cambio aula. */
+function backToDashboardFromApp(){
+  if(!window.Auth?.isDirector()) return; // guard lato client — la UI nasconde già il tasto ai Docenti
+  const _execBack = () => {
+    resetSessionState();
+    window._activeModuleKeys = null; // v5.0.6: reset filtro moduli — evita bleed tra aule
+    document.querySelector('.app').style.display = 'none';
+    if(typeof setCoursesScreenMode === 'function') setCoursesScreenMode('select');
+    openDirectorDashboard();
+  };
+  if(isGameActive()){
+    ppConfirm(_execBack);
+    return;
+  }
+  if(typeof isFlipCardActive === 'function' && isFlipCardActive()){
+    confirmExitFlipCard(_execBack);
+    return;
+  }
+  _execBack();
+}
+
 function goTab(t){
   if(isGameActive()){
     ppConfirm(()=>{_doGoTab(t);});

@@ -104,6 +104,13 @@ async function _afterLogin(){
   const backDashBtn = sh('cs-back-dashboard-btn');
   if(backDashBtn) backDashBtn.classList.toggle('hidden', !isDir);
 
+  // v8.26.8: gemello SEMPRE visibile nella topbar dell'app (dentro un'aula,
+  // moduli, Hub, minigiochi, Flip Card) — stesso identico criterio di
+  // visibilità del pulsante sopra, solo Direttore. Vedi backToDashboardFromApp()
+  // in js/game-engine-state.js.
+  const tbDashBtn = sh('tb-dashboard-btn');
+  if(tbDashBtn) tbDashBtn.classList.toggle('hidden', !isDir);
+
   // Tasto profilo + pannello laterale nella topbar dell'app (v8.25.0)
   // — sostituisce il vecchio blocco tbBadge/tbRole/tbName. Logica e
   // markup in js/profile-panel.js / index.html #profile-panel.

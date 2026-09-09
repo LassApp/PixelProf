@@ -1687,6 +1687,15 @@ function goCoursesFromApp(){
     sh('screen-courses').classList.remove('hidden');
     document.querySelector('.app').style.display='none';
     renderCoursesGrid();
+    // v8.27.1: analogo a _afterLogin()/ddGoSceltaAula() (app.js) — notifica
+    // il tour, se attivo, che screen-courses è ora visibile. Serve al passo
+    // finale del tour Docente ("Tour completato", .course-card): a
+    // differenza del Direttore (dove lo stesso dialog "cambia aula" viene
+    // sempre auto-annullato in onLeave), qui l'utente clicca per davvero
+    // "Sì, cambia aula" e questo è il punto in cui la navigazione avviene
+    // sul serio. Idempotente/no-op se il tour non è attivo o non si
+    // aspetta questa schermata (vedi showCoursesSelectStep in onboarding.js).
+    if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showCoursesSelectStep(), 500);
   };
   if(isGameActive()){
     ppConfirm(_execBack);

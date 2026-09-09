@@ -1016,12 +1016,18 @@ const OnboardingTour = (function () {
     // dedicato .pp-logout-action più sopra, subito dopo l'apertura
     // del pannello. Nessun passo aggiuntivo qui.
     // v8.27.0 — spostato da screen:'homeCategory'/.cat-grid a
-    // screen:'dashboard'/.cs-hero: chiude il tour esattamente dove è
-    // iniziato (stesso .cs-hero del primo passo, .dd-aule, è al suo
-    // interno), invece di lasciare il Direttore ancora dentro l'aula.
-    { screen:'dashboard', target:'.cs-hero', type:'info',
+    // screen:'dashboard': chiude il tour esattamente dove è iniziato,
+    // invece di lasciare il Direttore ancora dentro l'aula.
+    // v8.27.1 — bug segnalato: l'anello finiva sull'header ("Cosa vuoi
+    // fare oggi?", .cs-hero) invece che sulle 4 card di scelta. Target
+    // corretto in '.dd-grid, .dd-enter-banner' — selettore multiplo
+    // (stesso meccanismo già usato per '#pp-dialog-no, #pp-dialog-yes'
+    // più sopra): _unionRect() disegna UN solo riquadro che racchiude
+    // sia le 3 card di gestione (.dd-grid: Aule/Docenti/Direttore) sia
+    // la fascia "Entra in un'aula" (.dd-enter-banner) subito sotto.
+    { screen:'dashboard', target:'.dd-grid, .dd-enter-banner', type:'info',
       title:'Tour completato! 🎉',
-      body:'Sei di nuovo nella tua Dashboard, pronto per iniziare davvero. Ora conosci tutti gli strumenti di PixelProf — buona lezione!' },
+      body:'Da qui puoi gestire aule, docenti e il tuo account, oppure entrare direttamente in un\'aula. Ora conosci tutti gli strumenti di PixelProf — buona lezione!' },
   ];
 
   const TEACHER_STEPS = [
@@ -1236,19 +1242,32 @@ const OnboardingTour = (function () {
     { screen:'homeCategory', target:'.logo-wrap', type:'action',
       title:'Il logo PixelProf 🔄',
       body:'Premilo in alto a sinistra per uscire da questa aula e sceglierne un\'altra.' },
-    { screen:'homeCategory', target:'#pp-dialog-no, #pp-dialog-yes', type:'info', revealTarget:true, blockClicks:true,
-      title:'Scegli cosa fare ✅',
-      body:'"No, continua" annulla e resta qui; "Sì, cambia aula" ti porta alla schermata di selezione aule.',
-      // v2.5.1 — vedi commento gemello in DIRECTOR_STEPS più sopra.
-      onLeave: function () {
-        var overlay = document.getElementById('pp-dialog-overlay');
-        var noBtn = document.getElementById('pp-dialog-no');
-        if (overlay && !overlay.classList.contains('hidden') && noBtn) { noBtn.click(); }
-      } },
+    // v8.27.1 — richiesta esplicita utente: a differenza del gemello in
+    // DIRECTOR_STEPS (bloccato, auto-annullato in onLeave — il Direttore
+    // NON deve lasciare l'aula qui, ci pensa il passo Dashboard dedicato
+    // più avanti), qui il click su "Sì, cambia aula" deve essere REALE:
+    // il tour Docente inizia dalla scelta dell'aula (TEACHER_STEPS[0]) e
+    // deve chiudersi lì. type:'action' con target SOLO su #pp-dialog-yes
+    // (non anche #pp-dialog-no): il buco nel velo si apre solo sul "Sì",
+    // "No, continua" resta coperto e non cliccabile — stesso principio
+    // dei passi blockClicks ma ottenuto qui semplicemente NON includendo
+    // quel bottone tra i target (nessun nuovo meccanismo).
+    { screen:'homeCategory', target:'#pp-dialog-yes', type:'action',
+      title:'Conferma il cambio aula ✅',
+      body:'Premi "Sì, cambia aula" per continuare: tornerai alla schermata di selezione aule e il tour si concluderà lì.' },
     // v8.25.0 — rimosso: vedi commento gemello in DIRECTOR_STEPS più sopra.
-    { screen:'homeCategory', target:'.cat-grid', type:'info',
+    // v8.27.1 — richiesta esplicita utente, coerenza con la stessa
+    // decisione presa per il Direttore: il tour finisce dove è iniziato.
+    // Il passo sopra ("Conferma il cambio aula") fa cliccare per davvero
+    // "Sì, cambia aula" — la navigazione REALE a screen-courses
+    // (goCoursesFromApp → _execBack(), game-engine-state.js) ora chiama
+    // anche OnboardingTour.showCoursesSelectStep() (v8.27.1, stesso hook
+    // già usato da _afterLogin()/ddGoSceltaAula() in app.js), che fa
+    // apparire questo passo finale non appena la griglia aule è di nuovo
+    // visibile — stesso .course-card di TEACHER_STEPS[0].
+    { screen:'coursesSelect', target:'.course-card', type:'info',
       title:'Tour completato! 🎉',
-      body:'Ora conosci tutti gli strumenti di PixelProf. Buona lezione!' },
+      body:'Sei di nuovo nella schermata di selezione aule, pronto per iniziare davvero. Ora conosci tutti gli strumenti di PixelProf — buona lezione!' },
   ];
 
   function _stepList() { return _isDirector ? DIRECTOR_STEPS : TEACHER_STEPS; }

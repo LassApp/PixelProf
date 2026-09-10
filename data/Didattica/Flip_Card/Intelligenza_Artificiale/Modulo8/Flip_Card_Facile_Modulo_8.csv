@@ -1,0 +1,29 @@
+Che cos'è un watermark o filigrana digitale?;Un'informazione inserita all'interno di un contenuto digitale per identificarlo attribuirne l'origine o permetterne il riconoscimento
+A cosa può servire un watermark nel caso dei contenuti generati dall'AI?;A segnalare che un'immagine un audio un video o un testo è stato generato o modificato da un sistema di AI
+Che differenza c'è tra un watermark visibile e uno invisibile?;Il watermark visibile è un logo o una scritta percepibile direttamente mentre quello invisibile è incorporato nel contenuto senza essere percepibile
+Perché un watermark tradizionale come una scritta nell'angolo di una foto è facilmente eliminabile?;Perché può essere semplicemente ritagliato dall'immagine
+Cosa cercano di fare i watermark invisibili più moderni rispetto a quelli tradizionali?;Resistere a modifiche comuni come compressione filtri o ridimensionamento
+L'assenza di un watermark dimostra che un contenuto è autentico?;No il segnale potrebbe non essere mai stato inserito essere stato degradato oppure il contenuto potrebbe provenire da un sistema che utilizza un'altra tecnologia
+Che cos'è SynthID?;Una tecnologia sviluppata da Google DeepMind per inserire watermark digitali invisibili nei contenuti generati dall'intelligenza artificiale e permetterne il successivo rilevamento
+Per quale tipo di contenuto è stato inizialmente introdotto SynthID e a cosa è stato poi esteso?;Inizialmente per le immagini generate con AI e successivamente esteso anche a testo audio e video
+SynthID è un rilevatore universale capace di distinguere sempre un contenuto umano da uno artificiale?;No SynthID funziona come meccanismo di identificazione dei contenuti provenienti da determinati sistemi non come rilevatore infallibile di tutto ciò che è artificiale
+Cosa significa l'espressione latina Ad fontes nel contesto della verifica dei contenuti?;Alle fonti cioè non fermarsi all'apparenza del contenuto ma cercare informazioni sulla sua origine
+Che cosa sono i Content Credentials?;Informazioni digitali associate a un contenuto che permettono di documentarne la provenienza cioè la sua origine e la sua storia di creazione e modifica
+Cosa significa l'acronimo C2PA?;Coalition for Content Provenance and Authenticity
+Che cos'è lo standard C2PA?;Uno standard sviluppato per fornire informazioni verificabili sulla provenienza dei contenuti digitali
+Cosa possono registrare i Content Credentials di un contenuto?;Chi o quale strumento ha creato il contenuto quali modifiche sono state effettuate e quali strumenti sono stati utilizzati nel processo
+Qual è la differenza principale tra un watermark e i Content Credentials?;Il watermark lascia una traccia dentro il contenuto mentre i Content Credentials accompagnano il contenuto con informazioni strutturate sulla sua provenienza
+A cosa servono le firme digitali utilizzate dallo standard C2PA?;A permettere di verificare che le informazioni sulla provenienza non siano state alterate dopo essere state firmate
+Che cos'è la provenienza digitale?;L'insieme delle informazioni che permettono di ricostruire verificare e comprendere l'origine la creazione le modifiche e la diffusione di un contenuto digitale
+Come si può rappresentare la sequenza tipica della provenienza digitale di un contenuto?;Origine poi creazione poi modifica poi pubblicazione poi diffusione
+La provenienza digitale coincide con un singolo strumento come il watermark o i Content Credentials?;No è un concetto più ampio che indica un modo di documentare la storia di un contenuto e non un singolo strumento
+La provenienza documentata di un contenuto garantisce automaticamente che sia autentico o vero?;No un contenuto può avere una provenienza perfettamente documentata e rappresentare comunque una situazione falsa
+L'assenza di informazioni sulla provenienza significa che un contenuto è falso?;No non significa necessariamente che il contenuto sia falso
+Quali sono i limiti principali della provenienza digitale secondo il modulo?;La copertura non universale la possibile perdita delle informazioni lungo il percorso e il fatto che la provenienza non dimostra necessariamente la verità
+Perché la copertura è un limite della provenienza digitale?;Perché non tutti i contenuti digitali possiedono watermark o Content Credentials
+Perché la perdita delle informazioni è un limite della provenienza digitale?;Perché un contenuto può essere scaricato convertito modificato o pubblicato attraverso servizi che non conservano le informazioni di provenienza
+Cosa significa dire che la provenienza documenta come un contenuto è stato prodotto ma non perché o cosa significhi?;Che sapere lo strumento e il processo di creazione non spiega automaticamente lo scopo o il significato del contenuto
+Quali elementi dovrebbe combinare un approccio solido per verificare l'AI secondo il modulo?;Informazioni sulla provenienza metadati quando disponibili fonte originale contesto confronto con altre fonti e capacità critica dell'utente
+Qual è l'errore da evitare secondo il modulo riguardo ai certificati digitali di provenienza?;Sostituire l'idea se lo vedo allora è vero con la nuova idea se ha un certificato digitale allora è vero
+Chi ha sviluppato SynthID e a quale azienda appartiene?;Google DeepMind
+Qual è il ruolo dell'interpretazione umana secondo il modulo rispetto alle tracce lasciate dalla tecnologia?;La tecnologia può lasciare tracce ma interpretarle rimane un compito umano

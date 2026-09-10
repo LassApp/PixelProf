@@ -1,0 +1,42 @@
+Che cos'è un chatbot?;Un sistema software progettato per dialogare con una persona attraverso messaggi voce o altri strumenti di comunicazione
+Che cos'è un agente AI?;Un sistema basato sull'intelligenza artificiale capace di comprendere una richiesta e decidere quali azioni compiere per raggiungere un obiettivo usando strumenti e servizi disponibili
+Qual è la differenza fondamentale tra un chatbot e un agente?;Il chatbot dialoga mentre l'agente può agire
+Verso cosa è orientato principalmente un chatbot?;Verso la conversazione
+Verso cosa è orientato principalmente un agente?;Verso il raggiungimento di un obiettivo
+Quali sono i componenti principali di un agente AI?;Un modello di AI per ragionare una memoria o contesto per mantenere le informazioni e degli strumenti detti tools per interagire con servizi esterni
+Come si può rappresentare il ciclo di funzionamento di un agente AI?;Obiettivo poi analisi poi scelta dell'azione poi utilizzo di uno strumento poi verifica del risultato poi eventuale azione successiva
+Da cosa dipendono le capacità di un agente AI?;Dagli strumenti a cui ha accesso e dalle autorizzazioni che gli vengono concesse
+Cosa implica il principio secondo cui più un sistema può agire maggiore deve essere il controllo?;Che all'aumentare della capacità di azione di un sistema deve aumentare anche il controllo sulle sue azioni
+Che cos'è un workflow?;Una sequenza organizzata di attività che devono essere eseguite per raggiungere un determinato risultato
+Cosa stabilisce un workflow in un sistema di automazione?;Cosa deve accadere in quale ordine quali condizioni devono essere verificate e quali azioni devono essere eseguite
+Come si può rappresentare la logica generale di un workflow?;Evento poi elaborazione poi decisione poi azione poi risultato
+Che cos'è un workflow deterministico?;Un workflow basato su una regola fissa che non richiede l'interpretazione del contenuto da parte del sistema
+Come potrebbe funzionare una regola di un workflow tradizionale senza AI?;Se arriva un file PDF il sistema lo salva automaticamente nella cartella Documenti senza bisogno di interpretarne il contenuto
+Come potrebbe funzionare una regola di un workflow che utilizza l'AI?;Analizzando il contenuto di un'email per determinare se si tratta di una richiesta di assistenza di una fattura o di una comunicazione generica
+L'automazione e l'intelligenza artificiale sono sinonimi?;No un workflow può funzionare perfettamente anche senza intelligenza artificiale
+Quando diventa utile l'AI all'interno di un workflow?;Quando il processo deve comprendere informazioni non strutturate prendere decisioni sul contenuto o adattarsi a situazioni meno prevedibili
+Quali sono i vantaggi di un workflow ben progettato?;Rende i processi più ordinati riduce le attività ripetitive diminuisce gli errori manuali e permette di sapere con precisione cosa è successo durante l'esecuzione
+Cosa può succedere se una regola di un workflow è sbagliata?;Il workflow può ripetere automaticamente lo stesso errore
+Cosa deve prevedere un buon workflow per essere sicuro?;Controlli condizioni e punti di intervento umano
+Quali passaggi potrebbe includere un workflow per gestire una richiesta ricevuta via email?;Analizzare il contenuto identificare il tipo di richiesta recuperare le informazioni necessarie preparare una risposta e infine inviarla o sottoporla per approvazione
+Che cos'è un agente autonomo?;Un sistema di intelligenza artificiale capace di perseguire un obiettivo attraverso una sequenza di azioni valutando i risultati ottenuti e adattando il proprio comportamento quando necessario
+Qual è la differenza principale tra un workflow e un agente autonomo?;Nel workflow i passaggi sono definiti in anticipo mentre l'agente autonomo può selezionare o modificare il percorso operativo in base alla situazione
+L'autonomia di un agente significa libertà assoluta?;No l'agente opera all'interno di istruzioni strumenti autorizzazioni e limiti stabiliti in fase di progettazione
+Come si può rappresentare il ciclo di funzionamento di un agente autonomo?;Obiettivo poi pianificazione poi azione poi osservazione poi nuova decisione poi risultato
+Quali sono i tre elementi fondamentali di un agente autonomo?;Un obiettivo da raggiungere la capacità di decidere i passaggi necessari e gli strumenti con cui eseguire tali passaggi
+Un agente autonomo possiede una volontà propria?;No l'obiettivo viene stabilito dall'esterno mentre il sistema decide come procedere
+Quali sono i diversi gradi di autonomia che può avere un agente?;Può limitarsi a proporre la prossima azione eseguirla dopo l'approvazione dell'utente oppure procedere autonomamente quando l'azione rientra nelle regole stabilite
+Che cos'è un'integrazione tra sistemi software?;Un collegamento tra due o più sistemi software che permette loro di scambiarsi informazioni ed eseguire operazioni l'uno attraverso l'altro
+Cosa permettono le integrazioni a un agente AI?;Di utilizzare servizi e applicazioni esterne trasformando la capacità di conversazione in una capacità operativa
+Cosa significa l'acronimo API?;Application Programming Interface
+Che cos'è una API?;Un'interfaccia che permette a un programma di comunicare con un altro programma secondo regole definite
+Come si può rappresentare il percorso di un'integrazione tra AI e servizio esterno?;AI poi strumento poi servizio poi risultato poi AI
+Che cos'è il principio del minimo privilegio?;Concedere a un sistema soltanto i permessi realmente necessari per svolgere il compito
+Che cos'è la produttività?;La capacità di ottenere un determinato risultato utilizzando nel modo più efficace possibile le risorse disponibili come tempo attenzione strumenti e lavoro umano
+Cosa significa aumentare la produttività nel contesto dell'AI e dell'automazione?;Ridurre il lavoro ripetitivo e dedicare più tempo alle attività che richiedono comprensione creatività giudizio e responsabilità
+Una maggiore velocità corrisponde sempre a una maggiore produttività?;No più veloce non significa automaticamente più produttivo
+Quando nasce davvero la produttività secondo il modulo?;Quando l'automazione produce un risultato utile corretto e verificabile
+Quali compiti deve mantenere la persona in una collaborazione con l'AI?;Stabilire l'obiettivo fornire il contesto definire i limiti controllare i risultati e intervenire quando il sistema sbaglia
+Quali attività sono generalmente adatte all'automazione?;Classificare informazioni riassumere documenti organizzare dati preparare bozze trasferire informazioni tra applicazioni e monitorare eventi
+In quali casi bisogna essere più prudenti nell'automatizzare un'attività?;Quando richiede responsabilità valutazioni etiche conoscenza profonda del contesto o decisioni con conseguenze rilevanti
+Qual è la domanda chiave da porsi invece di puntare ad automatizzare tutto?;Quale parte del lavoro è opportuno automatizzare e quale parte deve rimanere sotto il controllo umano

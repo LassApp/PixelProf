@@ -1,0 +1,24 @@
+Che cos'è il bias algoritmico?;Una distorsione sistematica nel funzionamento o nei risultati di un sistema algoritmico che può portarlo a favorire o sfavorire determinati individui o gruppi
+Un risultato prodotto da un algoritmo è automaticamente un risultato imparziale?;No un sistema può produrre risultati apparentemente oggettivi ma contenere comunque delle distorsioni
+Il bias significa sempre che un algoritmo è stato programmato intenzionalmente per discriminare?;No il problema può nascere dai dati utilizzati per l'addestramento dalle modalità con cui sono stati raccolti oppure dalle scelte di chi ha progettato l'algoritmo
+Un sistema di AI possiede un senso umano di giustizia o di equità?;No analizza dati individua schemi e produce risultati sulla base di ciò che ha appreso
+Cosa può succedere se nei dati usati per addestrare un sistema esiste una distorsione?;Il sistema può apprenderla riprodurla e in alcuni casi persino amplificarla
+Che cosa sono i dati nel contesto dell'AI?;Le informazioni utilizzate da un sistema di intelligenza artificiale per apprendere riconoscere schemi fare previsioni o prendere decisioni
+Quali caratteristiche dei dati possono influenzare la qualità dei risultati di un sistema AI?;La qualità la quantità e la rappresentatività dei dati
+In quali modi un dataset può presentare problemi secondo il modulo?;Può essere incompleto sbilanciato storicamente distorto oppure non aggiornato
+Cosa significa il principio informatico Garbage in garbage out?;Che se forniamo informazioni problematiche a un sistema non possiamo aspettarci automaticamente risultati corretti
+I dati utilizzati da un sistema di AI sono semplicemente numeri neutrali?;No sono una rappresentazione della realtà costruita attraverso scelte come cosa raccogliere cosa escludere e come classificare le informazioni
+Che cos'è la discriminazione algoritmica?;Quando un sistema automatizzato produce direttamente o indirettamente un trattamento ingiustamente sfavorevole nei confronti di una persona o di un gruppo
+Qual è la differenza tra bias e discriminazione secondo il modulo?;Il bias è una distorsione nel modo in cui un sistema analizza o tratta le informazioni mentre la discriminazione riguarda le conseguenze che quella distorsione può produrre sulle persone
+Che differenza c'è tra discriminazione algoritmica diretta e indiretta?;La discriminazione diretta utilizza esplicitamente una caratteristica personale mentre quella indiretta utilizza altre informazioni che pur sembrando neutrali sono fortemente correlate con quella caratteristica
+Che cos'è la fairness in ambito tecnologico?;L'obiettivo di evitare trattamenti ingiustamente svantaggiosi nei sistemi automatizzati
+La fairness significa che tutti devono ricevere esattamente lo stesso risultato da un algoritmo?;No significa interrogarsi sulle condizioni nelle quali risultati differenti possono essere considerati giustificati ed equi
+Che cos'è un caso reale di bias algoritmico secondo il modulo?;Un episodio documentato nel quale un sistema automatizzato ha prodotto risultati problematici mostrando una distorsione nei dati nella progettazione nell'utilizzo o nella valutazione del sistema
+Quali domande dovremmo porci per valutare un sistema di AI oltre a chiederci se funziona secondo il modulo?;Funziona per chi con quale accuratezza in quali condizioni e con quali conseguenze
+Che cos'è la mitigazione del bias algoritmico?;L'insieme di tecniche controlli e decisioni progettuali utilizzati per individuare ridurre e monitorare le distorsioni presenti nei sistemi di intelligenza artificiale
+Qual è l'obiettivo della mitigazione del bias secondo il modulo?;Non promettere un algoritmo perfettamente neutrale ma costruire sistemi più equi controllabili e trasparenti
+Quali sono alcune strategie di mitigazione del bias indicate nel modulo?;Controllare e migliorare i dati misurare le prestazioni separatamente per gruppo effettuare test prima e dopo il rilascio mantenere supervisione umana e documentare il funzionamento del sistema
+Correggere un bias significa semplicemente modificare una formula matematica?;No significa intervenire sull'intero processo dai dati alla progettazione dai test all'utilizzo concreto
+La mitigazione del bias è un intervento singolo o un processo continuo secondo il modulo?;È un processo continuo di controllo e miglioramento
+Perché non basta valutare un sistema di AI soltanto attraverso una percentuale generale di accuratezza secondo il modulo?;Perché una percentuale generale può nascondere problemi importanti se il sistema funziona molto peggio per alcuni gruppi specifici
+Cosa dovrebbe fare chi progetta un sistema di AI riguardo alla supervisione umana secondo il modulo?;Mantenere una forma di supervisione umana quando le decisioni possono avere conseguenze significative sulle persone in modo da comprendere il processo individuare anomalie e intervenire quando necessario

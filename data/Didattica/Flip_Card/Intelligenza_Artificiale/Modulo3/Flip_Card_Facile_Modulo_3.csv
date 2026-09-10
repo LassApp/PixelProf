@@ -1,0 +1,20 @@
+Cos'è un Large Language Model (LLM)?;Un modello di intelligenza artificiale addestrato su grandi quantità di testo per elaborare e generare linguaggio naturale
+Un LLM comprende il linguaggio come una persona?;No analizza le sequenze di testo e impara le relazioni statistiche tra le parole
+Cos'è il prompt?;Il testo fornito a un LLM che può essere una domanda un'istruzione o una richiesta
+Cosa calcola un LLM per generare una risposta?;Quali elementi linguistici siano più probabili come continuazione del testo ricevuto
+Un LLM è un archivio di testi da cui copia le risposte?;No utilizza ciò che ha appreso durante l'addestramento per calcolare le continuazioni più appropriate
+Cos'è un token?;Un'unità di testo utilizzata da un modello linguistico per rappresentare e analizzare ciò che riceve
+A cosa può corrispondere un token?;A una parola intera a una parte di parola a un segno di punteggiatura o ad altri elementi del testo
+Cos'è il tokenizer?;Il componente che trasforma il testo in una sequenza di token
+Cosa sono gli embedding?;Rappresentazioni numeriche più ricche a cui vengono trasformati i numeri identificativi dei token
+Cos'è il contesto in un LLM?;L'insieme delle informazioni testuali disponibili al modello durante l'elaborazione di una richiesta
+Cosa può comprendere il contesto?;Il messaggio dell'utente le istruzioni fornite al modello i messaggi precedenti della conversazione e altri contenuti inseriti nell'input
+Il contesto di un LLM è una memoria infinita?;No il modello può utilizzare soltanto le informazioni effettivamente fornite nel contesto disponibile
+Cos'è la finestra di contesto?;La quantità massima di testo espressa generalmente in token che un modello può considerare contemporaneamente durante un'elaborazione
+Una finestra di contesto più grande rende un modello più intelligente?;No significa principalmente che il modello può considerare una quantità maggiore di informazioni contemporaneamente
+Cos'è la generazione della risposta in un LLM?;Il processo attraverso cui il modello produce testo prevedendo passo dopo passo quale token sia più adatto a seguire quelli già elaborati
+Cosa utilizza il modello per calcolare le possibili continuazioni del testo?;Ciò che ha appreso durante l'addestramento e il contesto disponibile
+Il modello genera sempre la parola statisticamente più frequente?;No il sistema assegna probabilità alle diverse possibilità e può scegliere tra alternative differenti
+Il modello genera l'intera risposta in un'unica operazione?;No la produce in una successione di passi prevedendo ogni volta l'elemento linguistico successivo
+Qual è la funzione fondamentale di un LLM durante la generazione secondo il modulo?;Produrre una continuazione coerente e plausibile rispetto all'input non verificare la verità di ciò che scrive
+Da cosa dipende quanto testo un modello può elaborare contemporaneamente?;Dal numero di token utilizzati e dalla finestra di contesto disponibile

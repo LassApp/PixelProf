@@ -1,0 +1,34 @@
+Cosa significa ordinare i dati in un foglio Excel?;Disporre le righe di un elenco secondo un criterio crescente o decrescente
+Cosa significa filtrare i dati in un foglio Excel?;Mostrare temporaneamente solo le righe che soddisfano una condizione nascondendo le altre senza cancellarle
+Dove si trovano gli strumenti di ordinamento e filtro in Excel?;Nella scheda Home nel gruppo Ordina e filtra oppure nella scheda Dati
+Cosa fa un ordinamento crescente rispetto a uno decrescente?;Dispone i dati dal più piccolo al più grande invece che dal più grande al più piccolo
+Cosa succede alle righe nascoste da un filtro?;Restano nel foglio pronte a riapparire non appena il filtro viene rimosso
+Come si attiva un filtro su una colonna in Excel?;Con un clic sull'intestazione della colonna
+Cosa permettono di fare gli operatori logici E e O quando si combinano più condizioni?;Con E tutte le condizioni devono essere vere insieme con O basta che almeno una lo sia
+Cosa succede applicando due filtri su colonne diverse in Excel?;I due filtri si sommano ed Excel mostra solo le righe che soddisfano entrambe le condizioni
+Da dove si impostano due condizioni sulla stessa colonna in un filtro?;Dal menu del filtro scegliendo Filtri numero e poi Personalizza filtro
+Cosa restituisce la funzione E applicata a due condizioni?;VERO solo se entrambe le condizioni sono vere
+Cosa restituisce la funzione O applicata a due condizioni?;VERO se almeno una delle due condizioni è vera
+Cos'è una tabella in Excel?;Un intervallo di celle trasformato in una struttura riconosciuta come un unico oggetto coerente con intestazioni stile grafico e filtri automatici
+Qual è la differenza principale tra una tabella di Word e una tabella di Excel?;In Word la tabella organizza visivamente i dati restando statica in Excel è una struttura dinamica che cresce con i dati
+Come si trasforma un intervallo di celle in una tabella vera e propria in Excel?;Selezionando l'area di dati e usando Inserisci Tabella oppure la scorciatoia CTRL+T
+Cosa riceve automaticamente ogni intestazione di colonna quando un intervallo diventa una tabella?;Un piccolo pulsante per ordinare e filtrare
+Cosa succede quando si aggiunge una nuova riga subito sotto l'ultima riga di una tabella Excel?;La riga viene automaticamente inclusa nella tabella ereditando lo stile e le formule presenti
+Cos'è la formattazione condizionale in Excel?;Un insieme di regole che applicano automaticamente una formattazione alle celle che soddisfano una condizione aggiornandosi da sole quando il valore cambia
+Qual è la differenza tra colorare una cella a mano e usare la formattazione condizionale?;La colorazione manuale resta fissa mentre la formattazione condizionale si aggiorna automaticamente quando il valore cambia
+Da dove si raggiunge la formattazione condizionale in Excel?;Da Home Formattazione condizionale
+Quali sono alcune condizioni comuni nelle regole di evidenziazione celle?;Minore di maggiore di tra e uguale a
+Cosa rappresentano le barre di dati e le scale di colore nella formattazione condizionale?;L'intero intervallo di valori con una gradazione continua invece di una singola soglia
+Cosa fa la funzione SE in Excel?;Restituisce un risultato diverso a seconda che una condizione sia vera o falsa
+Qual è la sintassi della funzione SE?;SE condizione punto e virgola risultato se vero punto e virgola risultato se falso
+Quale struttura logica riassume il funzionamento della funzione SE?;Condizione decisione risultato
+La funzione SE può essere trascinata con la maniglia di riempimento?;Sì adattando automaticamente il riferimento di cella riga per riga
+Qual è la differenza tra la funzione SE e la formattazione condizionale usate insieme?;La funzione SE decide cosa scrivere mentre la formattazione condizionale decide come farlo apparire
+Cos'è un grafico in Excel?;La rappresentazione visiva dei dati contenuti in un intervallo del foglio
+Quali sono i quattro tipi principali di grafico in Excel?;Grafico a colonne grafico a barre grafico a linee e grafico a torta
+Quando è più adatto usare un grafico a colonne?;Per confrontare valori diversi lungo un asse verticale
+Quando è più adatto usare un grafico a barre rispetto a uno a colonne?;Quando le etichette sono lunghe perché il confronto orizzontale risulta più leggibile
+Quando è più adatto usare un grafico a linee?;Quando i dati riguardano un andamento nel tempo
+Quando è più adatto usare un grafico a torta?;Quando si vuole mostrare come un totale si divide in parti proporzionali
+Cosa succede a un grafico se cambia un valore nella tabella di origine da cui è stato generato?;Il grafico si aggiorna da solo senza bisogno di essere ricostruito
+Qual è la differenza tra ciò che mostra una tabella e ciò che rende visibile un grafico?;Una tabella mostra i dati mentre un grafico rende visibili le relazioni tra quei dati

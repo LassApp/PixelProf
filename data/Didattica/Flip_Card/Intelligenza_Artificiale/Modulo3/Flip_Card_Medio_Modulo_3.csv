@@ -1,0 +1,17 @@
+Quale semplice sequenza numerica viene usata come esempio per spiegare la previsione di un LLM?;La sequenza 1 2 3 che porta a prevedere 4 5 e 6
+Quale frase italiana viene usata come esempio di completamento automatico?;Rosso di sera bel tempo si spera
+A cosa viene paragonato un LLM nella metafora del musicista?;A un musicista che ha ascoltato milioni di melodie e utilizza ciò che ha imparato per comporre qualcosa di nuovo invece di copiare una canzone precisa
+Perché l'utilizzo responsabile di un LLM richiede di verificare le informazioni importanti?;Perché una risposta formulata in modo convincente non è necessariamente corretta
+Come misurano spesso l'utilizzo degli LLM i servizi commerciali?;Attraverso il numero di token elaborati distinguendo tra token in ingresso e token generati in uscita
+Cosa comporta per il consumo di risorse computazionali l'invio e la generazione di più testo?;Un consumo maggiore poiché la tokenizzazione fa parte del modo in cui vengono gestite prestazioni e costi
+A cosa viene paragonata la tokenizzazione nella metafora del panificio?;A prodotti da forno più o meno lavorati dove una parola comune corrisponde a un solo token e una più complessa a più token
+Perché la domanda Quanto costa risulta ambigua senza contesto?;Perché da sola non indica se ci si riferisce per esempio a un biglietto del cinema o a uno smartphone
+Cosa può includere il contesto oltre al messaggio dell'utente secondo l'esempio delle istruzioni?;Istruzioni come rispondere sempre in modo semplice e usare esempi pratici che influenzano le risposte successive
+Perché la gestione del contesto è diventata una questione centrale nelle applicazioni reali basate su LLM?;Perché gli utenti tendono a costruire conversazioni sempre più lunghe rischiando di perdere informazioni precedenti
+A cosa viene paragonato il contesto nella metafora della riunione?;A entrare in una stanza dove si sta svolgendo una riunione e capire un riferimento solo se si è ascoltata tutta la discussione
+Cosa deve fare un'applicazione se il contenuto supera la finestra di contesto disponibile?;Può eliminare alcune informazioni precedenti riassumerle o utilizzare tecniche diverse a seconda dell'applicazione
+Cosa hanno reso possibile le finestre di contesto progressivamente più ampie nell'evoluzione degli LLM?;L'analisi di documenti molto estesi conversazioni più lunghe e l'elaborazione di grandi quantità di codice
+A cosa viene paragonata la finestra di contesto nella metafora della scrivania?;Alla dimensione di una scrivania che determina quanti documenti si possono tenere aperti contemporaneamente senza rendere la persona più intelligente
+Cosa considera il modello a ogni passo del processo di generazione della risposta?;Il contesto disponibile per calcolare quali token potrebbero essere una continuazione plausibile
+Su quale principio si basano modelli come GPT per generare testo?;Il funzionamento autoregressivo che prevede progressivamente i token successivi sulla base del contesto disponibile
+A cosa viene paragonata la generazione di un LLM nella metafora del domino?;A posare una tessera alla volta dove ogni scelta determina le possibilità della tessera successiva

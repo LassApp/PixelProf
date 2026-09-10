@@ -15,7 +15,7 @@ Questo file è la **fonte ufficiale e vincolante** per Flip Card: Aree e Moduli 
 Sezione dedicata ai file CSV del metodo di apprendimento Flip Card, in due livelli di difficoltà (Facile / Medio). La struttura di Aree, Moduli e Chiavi tecniche è la stessa definita in `aree_e_moduli.md`; cambiano solo il path base (`data/Didattica/Flip_Card/...`) e il naming dei file.
 
 **Stato Aree:**
-- Tutte le aree: `disattivato`
+- Tutte le aree: `attivate`
 - Area ECDL: `attivo`
 
 **Esempio di struttura path:**
@@ -86,24 +86,24 @@ data/
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo2/`
   - File:
-    - `Flip_Card_Facile_Modulo_2.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_2.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_2.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(creato)*
 
 - **Navigazione e tracciamento**
   - Chiave: `navigazione-e-tracciamento`
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo3/`
   - File:
-    - `Flip_Card_Facile_Modulo_3.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_3.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_3.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(creato)*
 
 - **Sicurezza e comportamento online**
   - Chiave: `sicurezza-e-comportamento-online`
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo4/`
   - File:
-    - `Flip_Card_Facile_Modulo_4.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_4.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_4.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_4.csv` *(creato)*
 
 #### Word
 
@@ -112,40 +112,40 @@ data/
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo1/`
   - File:
-    - `Flip_Card_Facile_Modulo_1.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_1.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_1.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(creato)*
 
 - **Modulo 2 — Scrivere e salvare**
   - Chiave: `scrivere-e-salvare`
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo2/`
   - File:
-    - `Flip_Card_Facile_Modulo_2.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_2.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_2.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(creato)*
 
 - **Modulo 3 — Formattare il testo**
   - Chiave: `formattare-il-testo`
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo3/`
   - File:
-    - `Flip_Card_Facile_Modulo_3.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_3.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_3.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(creato)*
 
 - **Modulo 4 — Elementi grafici**
   - Chiave: `elementi-grafici`
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo4/`
   - File:
-    - `Flip_Card_Facile_Modulo_4.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_4.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_4.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_4.csv` *(creato)*
 
 - **Modulo 5 — Strutturare il documento**
   - Chiave: `strutturare-il-documento`
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo5/`
   - File:
-    - `Flip_Card_Facile_Modulo_5.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_5.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_5.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_5.csv` *(creato)*
 
 #### Spreadsheet
 
@@ -186,8 +186,16 @@ data/
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo5/`
   - File:
-    - `Flip_Card_Facile_Modulo_5.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_5.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_5.csv` *(csv creato)*
+    - `Flip_Card_Medio_Modulo_5.csv` *(csv creato)*
+
+- **Modulo 6 — Preparare e stampare il foglio**
+  - Chiave: `preparare-e-stampare-il-foglio`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo6/`
+  - File:
+    - `Flip_Card_Facile_Modulo_6.csv` *(csv creato)*
+    - `Flip_Card_Medio_Modulo_6.csv` *(csv creato)*
 
 #### Presentation
 
@@ -196,24 +204,24 @@ data/
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/Presentation/Modulo1/`
   - File:
-    - `Flip_Card_Facile_Modulo_1.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_1.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_1.csv` *(csv creato)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(csv creato)*
 
 - **Modulo 2 — Oggetti grafici**
   - Chiave: `oggetti-grafici`
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/Presentation/Modulo2/`
   - File:
-    - `Flip_Card_Facile_Modulo_2.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_2.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_2.csv` *(csv creato)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(csv creato)*
 
 - **Modulo 3 — Preparare e presentare**
   - Chiave: `preparare-e-presentare`
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/Presentation/Modulo3/`
   - File:
-    - `Flip_Card_Facile_Modulo_3.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_3.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_3.csv` *(csv creato)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(csv creato)*
 
 ---
 
@@ -406,8 +414,8 @@ data/
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo8/`
   - File:
-    - `Flip_Card_Facile_Modulo_8.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_8.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_8.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_8.csv` *(creato)*
 
 ---
 
@@ -434,40 +442,40 @@ data/
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo1/`
   - File:
-    - `Flip_Card_Facile_Modulo_1.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_1.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_1.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(creato)*
 
 - **Come funziona l'AI**
   - Chiave: `come-funziona-l-ai`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo2/`
   - File:
-    - `Flip_Card_Facile_Modulo_2.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_2.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_2.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(creato)*
 
 - **Come funzionano gli LLM**
   - Chiave: `come-funzionano-gli-llm`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo3/`
   - File:
-    - `Flip_Card_Facile_Modulo_3.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_3.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_3.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(creato)*
 
 - **AI Generativa**
   - Chiave: `ai-generativa`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo4/`
   - File:
-    - `Flip_Card_Facile_Modulo_4.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_4.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_4.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_4.csv` *(creato)*
 
 - **Prompt Engineering**
   - Chiave: `prompt-engineering`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo5/`
   - File:
-    - `Flip_Card_Facile_Modulo_5.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_5.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_5.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_5.csv` *(creato)*
 
 - **Agenti e Automazione**
   - Chiave: `agenti-automazione`
@@ -506,54 +514,143 @@ data/
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo10/`
   - File:
-    - `Flip_Card_Facile_Modulo_10.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_10.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_10.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_10.csv` *(creato)*
 
 - **Bias Algoritmici**
   - Chiave: `bias-algoritmici`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo11/`
   - File:
-    - `Flip_Card_Facile_Modulo_11.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_11.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_11.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_11.csv` *(creato)*
 
 - **AI Act**
   - Chiave: `ai-act`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo12/`
   - File:
-    - `Flip_Card_Facile_Modulo_12.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_12.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_12.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_12.csv` *(creato)*
 
 - **Il Futuro dell'AI**
   - Chiave: `futuro-dell-ai`
   - Stato: `disattivato`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo13/`
   - File:
-    - `Flip_Card_Facile_Modulo_13.csv` *(csv da creare)*
-    - `Flip_Card_Medio_Modulo_13.csv` *(csv da creare)*
+    - `Flip_Card_Facile_Modulo_13.csv` *(creato)*
+    - `Flip_Card_Medio_Modulo_13.csv` *(creato)*
 
 ---
 
-## 2. Resoconto
+## 2. Moduli completi e da creare
+
+### 🖥️ ECDL — Computer Essentials — COMPLETO
+- Modulo 1 — Fondamenti digitali
+- Modulo 2 — CPU e architettura
+- Modulo 3 — Memorie
+- Modulo 4 — Software
+
+### 🌐 ECDL — Online Essentials — COMPLETO
+- Modulo 1 — La rete e i dati
+- Modulo 2 — Identità e comunicazione
+- Modulo 3 — Navigazione e tracciamento
+- Modulo 4 — Sicurezza e comportamento online
+
+### 📄 ECDL — Word — COMPLETO
+- Modulo 1 — Word e ambiente
+- Modulo 2 — Scrivere e salvare
+- Modulo 3 — Formattare il testo
+- Modulo 4 — Elementi grafici
+- Modulo 5 — Strutturare il documento
+
+### 📊 ECDL — Spreadsheet — COMPLETO
+- Modulo 1 — Excel e l'ambiente di lavoro
+- Modulo 2 — Inserire e gestire i dati
+- Modulo 3 — Formattare il foglio
+- Modulo 4 — Formule e calcoli
+- Modulo 5 — Organizzare e visualizzare i dati
+- Modulo 6 — Preparare e stampare il foglio
+
+### 📽️ ECDL — Presentation — COMPLETO
+- Modulo 1 — Creare una presentazione
+- Modulo 2 — Oggetti grafici
+- Modulo 3 — Preparare e presentare
+
+### 🛡️ Cyberbullismo e Sicurezza Online — COMPLETO
+- Modulo 1 — Identità e reputazione digitale
+- Modulo 2 — Cyberbullismo
+- Modulo 3 — Hate Speech
+- Modulo 4 — Sexting e Revenge Porn
+- Modulo 5 — Grooming
+- Modulo 6 — Cittadinanza Digitale
+
+### 👤 Cybersecurity — Non solo antivirus e password — COMPLETO
+- Modulo 1 — Fondamenti di Cybersecurity
+- Modulo 2 — Sicurezza degli Account
+- Modulo 3 — Protezione dei Dati
+- Modulo 4 — Sicurezza Quotidiana
+- Modulo 5 — Sicurezza dei Pagamenti
+- Modulo 6 — Privacy e Normative
+- Modulo 7 — Sicurezza Online e Social Network
+- Modulo 8 — Nuove Minacce Digitali
+
+### 🌐 Reti e Internet — COMPLETO
+- Modulo 1 — Le fondamenta delle reti
+- Modulo 2 — Il protocollo TCP/IP
+- Modulo 3 — DNS: la rubrica di Internet
+- Modulo 4 — Router, Switch e dispositivi di rete
+- Modulo 5 — Wi-Fi e reti wireless
+- Modulo 6 — Cloud Networking
+- Modulo 7 — VPN e comunicazioni sicure
+- Modulo 8 — Troubleshooting delle reti
+
+### 🦠 Malware e Minacce Informatiche — COMPLETO
+- Modulo 1 — Malware e Minacce Informatiche
+
+### 🤖 Intelligenza Artificiale — COMPLETO
+- Modulo 1 — Cos'è l'AI
+- Modulo 2 — Come funziona l'AI
+- Modulo 3 — Come funzionano gli LLM
+- Modulo 4 — AI Generativa
+- Modulo 5 — Prompt Engineering
+- Modulo 6 — Agenti e Automazione
+- Modulo 7 — Deepfake e Contenuti Sintetici
+- Modulo 8 — Provenienza dei Contenuti
+- Modulo 9 — Verificare l'AI
+- Modulo 10 — Etica dell'AI
+- Modulo 11 — Bias Algoritmici
+- Modulo 12 — AI Act
+- Modulo 13 — Il Futuro dell'AI
+
+---
+
+**Riepilogo:**
+- **Moduli completi:** 58
+- **Moduli da creare:** 0
+- **Moduli totali:** 58
+
+*Per i moduli indicati come "DA CREARE", entrambi i file — Facile e Medio — sono ancora da creare.*
+
+## 3. Resoconto
 
 | Area / Sotto-area | Moduli | File attesi | Creati | Da creare | Stato area |
-|---|---|---|---|---|---|
+|---|---:|---:|---:|---:|---|
 | ECDL — Computer Essentials | 4 | 8 | 8 | 0 | attivo |
-| ECDL — Online Essentials | 4 | 8 | 2 | 6 | attivo |
-| ECDL — Word | 5 | 10 | 0 | 10 | attivo |
-| ECDL — Spreadsheet | 5 | 10 | 8 | 2 | attivo |
-| ECDL — Presentation | 3 | 6 | 0 | 6 | attivo |
-| Cyberbullismo e Sicurezza Online | 6 | 12 | 12 | 0 | disattivato |
-| Cybersecurity — Non solo antivirus e password | 8 | 16 | 16 | 0 | disattivato |
-| Reti e Internet | 8 | 16 | 14 | 2 | disattivato |
-| Malware e Minacce Informatiche | 1 | 2 | 2 | 0 | disattivato |
-| Intelligenza Artificiale | 13 | 26 | 8 | 18 | disattivato |
-| **Totale** | **57** | **114** | **70** | **44** | — |
+| ECDL — Online Essentials | 4 | 8 | 8 | 0 | attivo |
+| ECDL — Word | 5 | 10 | 10 | 0 | attivo |
+| ECDL — Spreadsheet | 6 | 12 | 12 | 0 | attivo |
+| ECDL — Presentation | 3 | 6 | 6 | 0 | attivo |
+| Cyberbullismo e Sicurezza Online | 6 | 12 | 12 | 0 | attivo |
+| Cybersecurity — Non solo antivirus e password | 8 | 16 | 16 | 0 | attivo |
+| Reti e Internet | 8 | 16 | 16 | 0 | attivo |
+| Malware e Minacce Informatiche | 1 | 2 | 2 | 0 | attivo |
+| Intelligenza Artificiale | 13 | 26 | 26 | 0 | attivo |
+| **Totale** | **58** | **116** | **116** | **0** | — |
 
-- **Moduli totali mappati:** 57
-- **File CSV creati:** 70 (8 in Computer Essentials — area completa; 2 in Online Essentials — La rete e i dati Modulo1; 2 in Malware e Minacce Informatiche — Modulo1, area completa; 14 in Reti e Internet — Le fondamenta delle reti Modulo1, Il protocollo TCP/IP Modulo2, DNS la rubrica di Internet Modulo3, Router Switch e dispositivi di rete Modulo4, Wi-Fi e reti wireless Modulo5, Cloud Networking Modulo6 e VPN e comunicazioni sicure Modulo7; 16 in Cybersecurity — Non solo antivirus e password — area completa, tutti gli 8 moduli; 12 in Cyberbullismo e Sicurezza Online — area completa, tutti i 6 moduli; 8 in Intelligenza Artificiale — Agenti e Automazione Modulo6, Deepfake e Contenuti Sintetici Modulo7, Provenienza dei Contenuti Modulo8 e Verificare l'AI Modulo9; 8 in ECDL Spreadsheet — Excel e l'ambiente di lavoro Modulo1, Inserire e gestire i dati Modulo2, Formattare il foglio Modulo3 e Formule e calcoli Modulo4)
-- **File CSV da creare:** 44
-- **File CSV totali attesi:** 114
-
-*Nota: il conteggio "Creati" di Computer Essentials era stato inizialmente corretto da 8 a 2 perché l'elenco dettagliato segnava tutti i file come "da creare" nonostante la tabella li indicasse già completi. Con il completamento di tutti i quattro moduli tramite generazione da PDF/Markdown, il conteggio di 8/8 per Computer Essentials è ora effettivamente verificato riga per riga. La stessa discrepanza è emersa anche per Online Essentials, che la tabella indicava come 8/8 completi mentre l'elenco dettagliato segnava tutti i file come "da creare": con la generazione del primo modulo (La rete e i dati) il conteggio reale risulta invece 2/8, corretto di conseguenza. Restano da verificare gli altri tre moduli di Online Essentials (Identità e comunicazione, Navigazione e tracciamento, Sicurezza e comportamento online). Con la generazione del Modulo5 (Wi-Fi e reti wireless), del Modulo6 (Cloud Networking) e del Modulo7 (VPN e comunicazioni sicure), l'area Reti e Internet passa da 8/16 a 14/16 file creati; resta da completare solo il Modulo8 (Troubleshooting delle reti). Con la generazione del Modulo6 (Cittadinanza Digitale) l'area Cyberbullismo e Sicurezza Online è ora completa (12/12 file, tutti i 6 moduli). Il Modulo5 (Grooming) è stato intenzionalmente generato con un numero di Flip Card più contenuto (9 Facile, 12 Medio) rispetto agli altri moduli, mantenendo il contenuto a livello protettivo e concettuale invece di scomporre in dettaglio le singole tecniche o fasi di manipolazione; anche il Modulo6 (Cittadinanza Digitale, 9 Facile e 8 Medio) ha un conteggio più contenuto perché il PDF sorgente è più breve e riassuntivo rispetto agli altri moduli dell'area. L'utente ha confermato che l'area Cybersecurity — Non solo antivirus e password è stata completata in tutti gli 8 moduli (16/16 file); i conteggi delle Flip Card per i Moduli 2 (Sicurezza degli Account), 3 (Protezione dei Dati), 4 (Sicurezza Quotidiana) e 5 (Sicurezza dei Pagamenti) restano da confermare, poiché non generati in questa sessione. Con la generazione del Modulo6 (Agenti e Automazione, 42 Facile e 28 Medio) l'area Intelligenza Artificiale passa da 0/26 a 2/26 file creati; con la generazione del Modulo7 (Deepfake e Contenuti Sintetici, 32 Facile e 21 Medio) l'area passa a 4/26; con la generazione del Modulo8 (Provenienza dei Contenuti, 29 Facile e 18 Medio) l'area passa a 6/26; con la generazione del Modulo9 (Verificare l'AI, 26 Facile e 17 Medio) l'area passa a 8/26 file creati; restano da completare i Moduli 1-5 e 10-13. Nota: questo file (`/mnt/project/Flip_Card.md`) indicava tutti i 13 moduli di Intelligenza Artificiale, inclusi i Moduli 1-5, come "csv da creare" prima di questa sessione — se i Moduli 1-5 sono stati generati in una sessione precedente, i relativi aggiornamenti al tracker non risultano essere stati salvati nel file di progetto e andrebbero verificati/ripristinati. Con la generazione del Modulo1 (Excel e l'ambiente di lavoro, 31 Facile e 31 Medio) l'area ECDL — Spreadsheet passa da 0/10 a 2/10 file creati; con la generazione del Modulo2 (Inserire e gestire i dati, 41 Facile e 27 Medio) l'area passa a 4/10 file creati; con la generazione del Modulo3 (Formattare il foglio, 22 Facile e 14 Medio) l'area passa a 6/10 file creati; con la generazione del Modulo4 (Formule e calcoli, 33 Facile e 27 Medio) l'area passa a 8/10 file creati; resta da completare solo il Modulo5.*
+- **Moduli totali mappati:** 58
+- **Moduli completi:** 58
+- **Moduli da creare:** 0
+- **File CSV creati:** 116
+- **File CSV da creare:** 0
+- **File CSV totali attesi:** 116

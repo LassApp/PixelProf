@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il bias algoritmico è una distorsione sistematica nel funzionamento o nei risultati di un sistema, che può favorire o sfavorire determinati individui o gruppi.",
+    "answer": true,
+    "explanation": "È la definizione di bias algoritmico fornita dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il bias implica sempre che l'algoritmo sia stato programmato intenzionalmente per discriminare qualcuno.",
+    "answer": false,
+    "explanation": "Il problema può nascere dai dati o dalle scelte progettuali, non necessariamente da un'intenzione discriminatoria."
+  },
+  {
+    "id": 3,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, se nei dati esiste una distorsione, il sistema può apprenderla e persino amplificarla.",
+    "answer": true,
+    "explanation": "È quanto affermato esplicitamente dal modulo."
+  },
+  {
+    "id": 4,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un risultato prodotto da un algoritmo è sempre automaticamente un risultato imparziale.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: non è automaticamente imparziale."
+  },
+  {
+    "id": 5,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il sistema sperimentale di Amazon per la selezione dei curriculum sviluppò una preferenza verso i candidati uomini per alcuni ruoli tecnici.",
+    "answer": true,
+    "explanation": "È il caso reale documentato nel modulo."
+  },
+  {
+    "id": 6,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Amazon continuò a utilizzare il sistema sperimentale di selezione dei curriculum senza apportare alcuna modifica.",
+    "answer": false,
+    "explanation": "Amazon abbandonò successivamente il progetto."
+  },
+  {
+    "id": 7,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del giudice con la vecchia mappa, l'algoritmo rappresenta il giudice e i dati rappresentano la mappa.",
+    "answer": true,
+    "explanation": "È la metafora usata esplicitamente nel modulo."
+  },
+  {
+    "id": 8,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, non è necessario chiedersi da dove arrivano i dati che hanno insegnato al sistema a decidere.",
+    "answer": false,
+    "explanation": "Il modulo afferma che è necessario chiederselo prima di valutare una decisione algoritmica."
+  },
+  {
+    "id": 9,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I dati sono le informazioni utilizzate da un sistema di intelligenza artificiale per apprendere, riconoscere schemi, fare previsioni o prendere decisioni.",
+    "answer": true,
+    "explanation": "È la definizione di dati fornita dal modulo."
+  },
+  {
+    "id": 10,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un dataset non può mai essere sbilanciato o incompleto.",
+    "answer": false,
+    "explanation": "Il modulo afferma che un dataset può essere incompleto, sbilanciato, storicamente distorto o non aggiornato."
+  },
+  {
+    "id": 11,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'espressione «garbage in, garbage out» indica che informazioni problematiche in ingresso non producono automaticamente risultati corretti in uscita.",
+    "answer": true,
+    "explanation": "È il significato dell'espressione citata nel modulo."
+  },
+  {
+    "id": 12,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, i dati sono semplicemente numeri neutrali, privi di qualsiasi relazione con scelte umane.",
+    "answer": false,
+    "explanation": "Il modulo afferma che i dati sono una rappresentazione della realtà costruita attraverso scelte."
+  },
+  {
+    "id": 13,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo studio Gender Shades, pubblicato nel 2018, fu condotto da Joy Buolamwini e Timnit Gebru.",
+    "answer": true,
+    "explanation": "È il caso reale documentato nel modulo."
+  },
+  {
+    "id": 14,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo studio Gender Shades evidenziò che gli errori erano più frequenti per gli uomini con pelle chiara rispetto alle donne con pelle scura.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: gli errori erano più frequenti per le donne con pelle più scura."
+  },
+  {
+    "id": 15,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, valutare un sistema soltanto attraverso una percentuale generale di accuratezza può nascondere problemi importanti.",
+    "answer": true,
+    "explanation": "È quanto affermato esplicitamente dal modulo."
+  },
+  {
+    "id": 16,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della torta, assaggiare un solo ingrediente è sufficiente per conoscere davvero il sapore dell'intera torta.",
+    "answer": false,
+    "explanation": "Il modulo afferma che bisogna considerare tutti gli ingredienti e le loro proporzioni."
+  },
+  {
+    "id": 17,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La discriminazione algoritmica si verifica quando un sistema automatizzato produce un trattamento ingiustamente sfavorevole nei confronti di una persona o di un gruppo.",
+    "answer": true,
+    "explanation": "È la definizione di discriminazione algoritmica fornita dal modulo."
+  },
+  {
+    "id": 18,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, ogni differenza tra i risultati di un sistema costituisce automaticamente una discriminazione.",
+    "answer": false,
+    "explanation": "Il modulo afferma che non ogni differenza è necessariamente discriminazione."
+  },
+  {
+    "id": 19,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La discriminazione algoritmica diretta si verifica quando il sistema utilizza esplicitamente una caratteristica personale per prendere una decisione.",
+    "answer": true,
+    "explanation": "È la definizione di discriminazione diretta fornita dal modulo."
+  },
+  {
+    "id": 20,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la discriminazione indiretta non può mai verificarsi utilizzando informazioni apparentemente neutrali.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: la discriminazione indiretta si basa proprio su informazioni apparentemente neutrali ma correlate."
+  },
+  {
+    "id": 21,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La fairness significa che tutte le persone devono ricevere esattamente lo stesso risultato da un sistema automatizzato.",
+    "answer": false,
+    "explanation": "Il modulo afferma che la fairness non implica necessariamente risultati identici per tutti."
+  },
+  {
+    "id": 22,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il sistema COMPAS viene utilizzato negli Stati Uniti per stimare il rischio di recidiva nel sistema giudiziario.",
+    "answer": true,
+    "explanation": "È quanto descritto nel modulo."
+  },
+  {
+    "id": 23,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo l'inchiesta di ProPublica del 2016, le persone nere risultavano più frequentemente classificate come ad alto rischio rispetto alle persone bianche classificate nello stesso modo.",
+    "answer": true,
+    "explanation": "È quanto sostenuto dall'inchiesta di ProPublica, secondo il modulo."
+  },
+  {
+    "id": 24,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, ricercatori e sviluppatori concordavano pienamente su un unico criterio statistico per definire un sistema equo nel caso COMPAS.",
+    "answer": false,
+    "explanation": "Il modulo afferma che non concordavano nemmeno su quale criterio fosse necessario."
+  },
+  {
+    "id": 25,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un caso reale di bias algoritmico è un episodio documentato in cui un sistema automatizzato ha prodotto risultati problematici.",
+    "answer": true,
+    "explanation": "È la definizione fornita dal modulo."
+  },
+  {
+    "id": 26,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il bias algoritmico è soltanto un problema teorico, senza conseguenze pratiche.",
+    "answer": false,
+    "explanation": "Il modulo afferma che può influenzare lavoro, credito, giustizia, sicurezza e accesso ai servizi."
+  },
+  {
+    "id": 27,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il caso Amazon, lo studio Gender Shades e il caso COMPAS mostrano tutti che l'AI utilizza dati prodotti dalla società e viene applicata in contesti con conseguenze reali sulle persone.",
+    "answer": true,
+    "explanation": "È il principio comune individuato esplicitamente dal modulo."
+  },
+  {
+    "id": 28,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un sistema dovrebbe essere valutato soltanto chiedendosi se funziona, senza considerare per chi funziona.",
+    "answer": false,
+    "explanation": "Il modulo afferma che bisogna chiedersi anche per chi funziona, con quale accuratezza e con quali conseguenze."
+  },
+  {
+    "id": 29,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio quotidiano del modulo, analizzando centinaia di fotografie si scopre che gli errori del sistema si concentrano sistematicamente su alcune persone o condizioni.",
+    "answer": true,
+    "explanation": "È quanto descritto nell'esempio quotidiano del modulo."
+  },
+  {
+    "id": 30,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo studio Gender Shades trasformò una questione astratta in una domanda misurabile su quanto sbaglia il sistema per persone diverse.",
+    "answer": true,
+    "explanation": "È la trasformazione descritta esplicitamente dal modulo."
+  },
+  {
+    "id": 31,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una media generale non può mai nascondere una disuguaglianza tra i gruppi.",
+    "answer": false,
+    "explanation": "Il modulo afferma che una media può nascondere una disuguaglianza."
+  },
+  {
+    "id": 32,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della scuola, i cinque studenti che non superano l'esame appartengono tutti alla stessa classe, nonostante la media generale sembri ottima.",
+    "answer": true,
+    "explanation": "È la metafora usata esplicitamente nel modulo."
+  },
+  {
+    "id": 33,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La mitigazione del bias algoritmico comprende tecniche, controlli e decisioni progettuali per individuare, ridurre e monitorare le distorsioni nei sistemi di AI.",
+    "answer": true,
+    "explanation": "È la definizione fornita dal modulo."
+  },
+  {
+    "id": 34,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'obiettivo della mitigazione è ottenere un algoritmo perfettamente neutrale al cento per cento.",
+    "answer": false,
+    "explanation": "L'obiettivo è costruire sistemi più equi, controllabili e trasparenti, non la neutralità assoluta."
+  },
+  {
+    "id": 35,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, correggere i dati è sufficiente, senza bisogno di verificare come si comporta il modello.",
+    "answer": false,
+    "explanation": "Il modulo afferma che bisogna anche verificare come si comporta il modello."
+  },
+  {
+    "id": 36,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'AI non dovrebbe essere considerata un prodotto che, una volta programmato, non necessita più di controlli.",
+    "answer": true,
+    "explanation": "È quanto affermato esplicitamente dal modulo."
+  },
+  {
+    "id": 37,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la supervisione umana deve sempre sostituire completamente l'algoritmo.",
+    "answer": false,
+    "explanation": "Il modulo afferma che non deve necessariamente sostituirlo, ma comprenderlo e intervenire quando serve."
+  },
+  {
+    "id": 38,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio quotidiano del modulo, l'azienda continua a monitorare i risultati del sistema anche dopo il rilascio.",
+    "answer": true,
+    "explanation": "È quanto descritto nell'esempio quotidiano del modulo."
+  },
+  {
+    "id": 39,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il caso Gender Shades dimostra che misurare un problema è il primo passo per poterlo correggere.",
+    "answer": true,
+    "explanation": "È il principio generale tratto dal caso, secondo il modulo."
+  },
+  {
+    "id": 40,
+    "module": "bias-algoritmici",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora dell'automobile, i controlli di sicurezza vengono effettuati soltanto prima della vendita, senza necessità di manutenzione successiva.",
+    "answer": false,
+    "explanation": "Il modulo afferma che l'auto continua a essere sottoposta a manutenzione anche dopo la vendita."
+  }
+]

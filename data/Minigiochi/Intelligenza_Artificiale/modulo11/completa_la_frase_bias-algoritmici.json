@@ -1,0 +1,898 @@
+[
+  {
+    "id": 1,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ algoritmico è una distorsione sistematica nel funzionamento o nei risultati di un sistema, che può portarlo a favorire o sfavorire determinati individui o gruppi.",
+    "answer": "bias",
+    "bank": [
+      "bias",
+      "dato",
+      "fairness",
+      "output"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un sistema può produrre risultati apparentemente oggettivi, ma contenere comunque delle ____.",
+    "answer": "distorsioni",
+    "bank": [
+      "distorsioni",
+      "licenze",
+      "traduzioni",
+      "credenziali"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, un'AI non possiede un senso umano di giustizia o di ____.",
+    "answer": "equità",
+    "bank": [
+      "equità",
+      "velocità",
+      "memoria",
+      "precisione"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se nei dati esiste una distorsione, il sistema può apprenderla e ____.",
+    "answer": "riprodurla",
+    "bank": [
+      "riprodurla",
+      "correggerla",
+      "eliminarla",
+      "ignorarla"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio della selezione dei curriculum, il sistema non «decide» di discriminare: riconosce un ____ presente nei dati e lo utilizza per fare previsioni.",
+    "answer": "modello",
+    "bank": [
+      "modello",
+      "nome",
+      "colore",
+      "prezzo"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, un risultato prodotto da un algoritmo non è automaticamente un risultato ____.",
+    "answer": "imparziale",
+    "bank": [
+      "imparziale",
+      "veloce",
+      "gratuito",
+      "pubblico"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio quotidiano del modulo, un'applicazione mostra alcune offerte di lavoro più frequentemente ad alcuni utenti e molto meno ad ____.",
+    "answer": "altri",
+    "bank": [
+      "altri",
+      "amici",
+      "colleghi",
+      "sconosciuti"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un caso noto riguarda un sistema sperimentale utilizzato da ____ per valutare curriculum.",
+    "answer": "Amazon",
+    "bank": [
+      "Amazon",
+      "Google",
+      "ProPublica",
+      "COMPAS"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo quanto riportato nel 2018, il sistema di Amazon aveva sviluppato una preferenza verso i candidati ____ per alcuni ruoli tecnici.",
+    "answer": "uomini",
+    "bank": [
+      "uomini",
+      "giovani",
+      "esperti",
+      "laureati"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il problema del sistema Amazon era legato ai dati ____ utilizzati per l'addestramento.",
+    "answer": "storici",
+    "bank": [
+      "storici",
+      "cifrati",
+      "pubblici",
+      "casuali"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Dopo aver scoperto il problema, Amazon ____ successivamente il progetto.",
+    "answer": "abbandonò",
+    "bank": [
+      "abbandonò",
+      "vendette",
+      "brevettò",
+      "pubblicò"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del giudice con la vecchia mappa, l'algoritmo è il giudice e i dati sono la sua ____.",
+    "answer": "mappa",
+    "bank": [
+      "mappa",
+      "bussola",
+      "sentenza",
+      "decisione"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Prima di chiederci se una decisione algoritmica sia corretta, dobbiamo domandarci da dove arrivano i ____ che hanno insegnato al sistema a decidere.",
+    "answer": "dati",
+    "bank": [
+      "dati",
+      "soldi",
+      "permessi",
+      "algoritmi"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I ____ sono le informazioni utilizzate da un sistema di intelligenza artificiale per apprendere, riconoscere schemi, fare previsioni o prendere decisioni.",
+    "answer": "dati",
+    "bank": [
+      "dati",
+      "bias",
+      "algoritmi",
+      "risultati"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La qualità, la quantità e la ____ dei dati possono influenzare direttamente la qualità dei risultati prodotti.",
+    "answer": "rappresentatività",
+    "bank": [
+      "rappresentatività",
+      "velocità",
+      "gratuità",
+      "popolarità"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il sistema cerca nei dati delle ____, cioè degli schemi che può utilizzare per produrre una previsione.",
+    "answer": "regolarità",
+    "bank": [
+      "regolarità",
+      "eccezioni",
+      "anomalie",
+      "licenze"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se in un dataset sono presenti soprattutto immagini di un determinato gruppo, il sistema potrebbe avere maggiori difficoltà a riconoscere gli altri ____.",
+    "answer": "gruppi",
+    "bank": [
+      "gruppi",
+      "colori",
+      "formati",
+      "algoritmi"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un dataset può essere incompleto, sbilanciato, storicamente distorto oppure non ____.",
+    "answer": "aggiornato",
+    "bank": [
+      "aggiornato",
+      "condiviso",
+      "cifrato",
+      "tradotto"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Quando valutiamo un sistema di AI, non basta chiedersi «quanto è intelligente?»: dobbiamo anche chiederci «su quali ____ ha imparato?».",
+    "answer": "dati",
+    "bank": [
+      "dati",
+      "server",
+      "linguaggi",
+      "budget"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, i dati non sono semplicemente numeri neutrali: sono una ____ della realtà.",
+    "answer": "rappresentazione",
+    "bank": [
+      "rappresentazione",
+      "traduzione",
+      "copia",
+      "licenza"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'espressione «garbage in, garbage out» significa letteralmente «spazzatura dentro, spazzatura ____».",
+    "answer": "fuori",
+    "bank": [
+      "fuori",
+      "sopra",
+      "sotto",
+      "dentro"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio quotidiano del modulo, un'applicazione fotografica potrebbe riconoscere alcune persone meglio di altre se addestrata con immagini scattate in condizioni di ____ molto diverse da quelle abituali.",
+    "answer": "luce",
+    "bank": [
+      "luce",
+      "silenzio",
+      "velocità",
+      "distanza"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Lo studio ____, pubblicato nel 2018, analizzò diversi sistemi commerciali di classificazione del genere.",
+    "answer": "Gender Shades",
+    "bank": [
+      "Gender Shades",
+      "COMPAS",
+      "AI Act",
+      "Future of Jobs Report"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Lo studio Gender Shades fu condotto da Joy Buolamwini e ____.",
+    "answer": "Timnit Gebru",
+    "bank": [
+      "Timnit Gebru",
+      "ProPublica",
+      "ChatGPT",
+      "OpenAI"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo lo studio Gender Shades, gli errori risultavano molto più frequenti per le donne con pelle più scura rispetto agli uomini con pelle più ____.",
+    "answer": "chiara",
+    "bank": [
+      "chiara",
+      "scura",
+      "abbronzata",
+      "pallida"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della torta, per conoscerla davvero dobbiamo considerare tutti gli ingredienti e le loro ____.",
+    "answer": "proporzioni",
+    "bank": [
+      "proporzioni",
+      "ricette",
+      "calorie",
+      "temperature"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ algoritmica si verifica quando un sistema automatizzato produce un trattamento ingiustamente sfavorevole nei confronti di una persona o di un gruppo.",
+    "answer": "discriminazione",
+    "bank": [
+      "discriminazione",
+      "trasparenza",
+      "mitigazione",
+      "fairness"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, non ogni differenza tra i risultati è necessariamente ____.",
+    "answer": "discriminazione",
+    "bank": [
+      "discriminazione",
+      "bias",
+      "un errore",
+      "un dato"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il bias è una distorsione nel modo in cui un sistema tratta le informazioni; la discriminazione riguarda le ____ che quella distorsione può produrre sulle persone.",
+    "answer": "conseguenze",
+    "bank": [
+      "conseguenze",
+      "cause",
+      "definizioni",
+      "licenze"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La discriminazione algoritmica può essere diretta, quando il sistema utilizza esplicitamente una ____ personale per prendere una decisione.",
+    "answer": "caratteristica",
+    "bank": [
+      "caratteristica",
+      "password",
+      "licenza",
+      "connessione"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La discriminazione può essere anche ____, quando il sistema utilizza informazioni che, pur sembrando neutrali, sono fortemente correlate con una caratteristica personale.",
+    "answer": "indiretta",
+    "bank": [
+      "indiretta",
+      "visibile",
+      "temporanea",
+      "pubblica"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un algoritmo può essere apparentemente neutrale nel codice e produrre comunque risultati non ____.",
+    "answer": "neutrali",
+    "bank": [
+      "neutrali",
+      "veloci",
+      "pubblici",
+      "gratuiti"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "In ambito tecnologico si parla spesso di ____ per indicare l'obiettivo di evitare trattamenti ingiustamente svantaggiosi.",
+    "answer": "fairness",
+    "bank": [
+      "fairness",
+      "bias",
+      "mitigazione",
+      "discriminazione"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La fairness non significa necessariamente che tutti debbano ricevere esattamente lo stesso ____.",
+    "answer": "risultato",
+    "bank": [
+      "risultato",
+      "dato",
+      "algoritmo",
+      "accesso"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio quotidiano del modulo, una persona riceve una risposta automatica alla propria richiesta di finanziamento: richiesta ____.",
+    "answer": "respinta",
+    "bank": [
+      "respinta",
+      "approvata",
+      "sospesa",
+      "duplicata"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il sistema ____ è utilizzato negli Stati Uniti per stimare il rischio di recidiva di persone coinvolte nel sistema giudiziario.",
+    "answer": "COMPAS",
+    "bank": [
+      "COMPAS",
+      "AI Act",
+      "GDPR",
+      "NIST"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2016 un'inchiesta di ____ analizzò i risultati del sistema COMPAS.",
+    "answer": "ProPublica",
+    "bank": [
+      "ProPublica",
+      "Amazon",
+      "Google DeepMind",
+      "Reuters"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo l'inchiesta di ProPublica, le persone nere risultavano più frequentemente classificate come ad alto ____ rispetto alle persone bianche classificate nello stesso modo.",
+    "answer": "rischio",
+    "bank": [
+      "rischio",
+      "reddito",
+      "livello di istruzione",
+      "punteggio di credito"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della porta automatica, se il sensore riconosce correttamente alcune persone e molto meno altre, la porta non funziona davvero nello stesso modo per ____.",
+    "answer": "tutti",
+    "bank": [
+      "tutti",
+      "nessuno",
+      "pochi",
+      "molti"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un ____ di bias algoritmico è un episodio documentato nel quale un sistema automatizzato ha prodotto risultati problematici.",
+    "answer": "caso reale",
+    "bank": [
+      "caso reale",
+      "dataset",
+      "algoritmo",
+      "dato numerico"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Analizzare i casi reali di bias permette di capire che il bias non è soltanto un problema ____.",
+    "answer": "teorico",
+    "bank": [
+      "teorico",
+      "economico",
+      "informatico",
+      "temporaneo"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso Amazon, i dati storici riflettevano una realtà nella quale gli uomini erano stati più numerosi nei ruoli ____.",
+    "answer": "tecnici",
+    "bank": [
+      "tecnici",
+      "amministrativi",
+      "commerciali",
+      "artistici"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Lo studio Gender Shades del 2018 mostrò differenze marcate nelle prestazioni a seconda del genere e della ____ della pelle della persona analizzata.",
+    "answer": "tonalità",
+    "bank": [
+      "tonalità",
+      "forma",
+      "età",
+      "temperatura"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La vicenda di COMPAS portò a un acceso dibattito sulla possibilità di definire matematicamente cosa significhi «____» quando un algoritmo prende decisioni con conseguenze giudiziarie.",
+    "answer": "equità",
+    "bank": [
+      "equità",
+      "velocità",
+      "precisione",
+      "popolarità"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, un sistema non dovrebbe essere valutato soltanto chiedendosi se funziona, ma anche «funziona per ____?».",
+    "answer": "chi",
+    "bank": [
+      "chi",
+      "quanto",
+      "quando",
+      "dove"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio quotidiano del modulo, un'applicazione che filtra fotografie e riconosce le persone può sembrare perfetta se osserviamo solo la percentuale generale di ____.",
+    "answer": "successo",
+    "bank": [
+      "successo",
+      "costo",
+      "velocità",
+      "popolarità"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, è diverso dire «il sistema è accurato al 95%» e chiedersi «per chi si verifica quel 5% di ____?».",
+    "answer": "errore",
+    "bank": [
+      "errore",
+      "costo",
+      "tempo",
+      "ritardo"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Lo studio Gender Shades fu condotto da Joy Buolamwini e Timnit Gebru nel ____.",
+    "answer": "2018",
+    "bank": [
+      "2018",
+      "2016",
+      "2023",
+      "2024"
+    ]
+  },
+  {
+    "id": 49,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nello studio Gender Shades, le ricercatrici testarono sistemi commerciali di classificazione del genere utilizzando un dataset costruito per includere persone con differenti tonalità della ____.",
+    "answer": "pelle",
+    "bank": [
+      "pelle",
+      "voce",
+      "età",
+      "altezza"
+    ]
+  },
+  {
+    "id": 50,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il caso Gender Shades trasformò una questione astratta in una domanda ____: quanto sbaglia il sistema per persone diverse?",
+    "answer": "misurabile",
+    "bank": [
+      "misurabile",
+      "segreta",
+      "illegale",
+      "gratuita"
+    ]
+  },
+  {
+    "id": 51,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, una media può nascondere una ____.",
+    "answer": "disuguaglianza",
+    "bank": [
+      "disuguaglianza",
+      "licenza",
+      "traduzione",
+      "password"
+    ]
+  },
+  {
+    "id": 52,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della scuola con cento studenti, i cinque studenti che hanno fallito l'esame appartengono tutti alla stessa ____.",
+    "answer": "classe",
+    "bank": [
+      "classe",
+      "città",
+      "famiglia",
+      "scuola"
+    ]
+  },
+  {
+    "id": 53,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ del bias algoritmico comprende l'insieme di tecniche, controlli e decisioni progettuali utilizzati per individuare, ridurre e monitorare le distorsioni nei sistemi di AI.",
+    "answer": "mitigazione",
+    "bank": [
+      "mitigazione",
+      "discriminazione",
+      "fairness",
+      "trasparenza"
+    ]
+  },
+  {
+    "id": 54,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'obiettivo della mitigazione non è promettere un algoritmo perfettamente neutrale, ma costruire sistemi più equi, controllabili e ____.",
+    "answer": "trasparenti",
+    "bank": [
+      "trasparenti",
+      "veloci",
+      "economici",
+      "popolari"
+    ]
+  },
+  {
+    "id": 55,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La prima forma di mitigazione consiste nel controllare i ____.",
+    "answer": "dati",
+    "bank": [
+      "dati",
+      "prezzi",
+      "algoritmi",
+      "brevetti"
+    ]
+  },
+  {
+    "id": 56,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se un dataset è incompleto, possiamo intervenire migliorando la raccolta dei dati o aumentando la rappresentazione delle categorie meno ____.",
+    "answer": "presenti",
+    "bank": [
+      "presenti",
+      "costose",
+      "recenti",
+      "popolari"
+    ]
+  },
+  {
+    "id": 57,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un sistema può essere molto preciso nel complesso e, allo stesso tempo, funzionare molto peggio per un determinato ____.",
+    "answer": "gruppo",
+    "bank": [
+      "gruppo",
+      "algoritmo",
+      "formato",
+      "dataset"
+    ]
+  },
+  {
+    "id": 58,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un'altra strategia di mitigazione consiste nell'effettuare test prima e ____ il rilascio del sistema.",
+    "answer": "dopo",
+    "bank": [
+      "dopo",
+      "durante",
+      "senza",
+      "oltre"
+    ]
+  },
+  {
+    "id": 59,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, l'AI non dovrebbe essere considerata un prodotto che, una volta programmato, non necessita più di ____.",
+    "answer": "controlli",
+    "bank": [
+      "controlli",
+      "aggiornamenti gratuiti",
+      "pubblicità",
+      "brevetti"
+    ]
+  },
+  {
+    "id": 60,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "È importante mantenere una forma di supervisione ____ quando le decisioni possono avere conseguenze significative sulle persone.",
+    "answer": "umana",
+    "bank": [
+      "umana",
+      "automatica",
+      "digitale",
+      "remota"
+    ]
+  },
+  {
+    "id": 61,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, correggere un bias non significa semplicemente modificare una formula ____.",
+    "answer": "matematica",
+    "bank": [
+      "matematica",
+      "legale",
+      "economica",
+      "grafica"
+    ]
+  },
+  {
+    "id": 62,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, la mitigazione è un processo continuo di controllo e ____.",
+    "answer": "miglioramento",
+    "bank": [
+      "miglioramento",
+      "guadagno",
+      "marketing",
+      "traduzione"
+    ]
+  },
+  {
+    "id": 63,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il caso Gender Shades dimostra che misurare un problema è il primo passo per poterlo ____.",
+    "answer": "correggere",
+    "bank": [
+      "correggere",
+      "ignorare",
+      "nascondere",
+      "vendere"
+    ]
+  },
+  {
+    "id": 64,
+    "module": "bias-algoritmici",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora dell'automobile, i dati sono il carburante, l'algoritmo è il motore e i controlli sono i sistemi di ____.",
+    "answer": "sicurezza",
+    "bank": [
+      "sicurezza",
+      "navigazione",
+      "illuminazione",
+      "climatizzazione"
+    ]
+  }
+]

@@ -1,0 +1,898 @@
+[
+  {
+    "id": 1,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un'____ è una risposta generata dall'AI che contiene informazioni false, inventate o non supportate dai fatti, presentata in modo plausibile e convincente.",
+    "answer": "allucinazione",
+    "bank": [
+      "allucinazione",
+      "fonte",
+      "verifica",
+      "affidabilità"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso degli LLM, il modello genera una risposta prevedendo quali elementi linguistici siano più ____ in base al contesto e a ciò che ha appreso.",
+    "answer": "appropriati",
+    "bank": [
+      "appropriati",
+      "casuali",
+      "brevi",
+      "tecnici"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'errore di un'allucinazione può riguardare una data, un nome, un evento storico, una citazione, una fonte o persino l'____ stessa di una persona o di un documento.",
+    "answer": "esistenza",
+    "bank": [
+      "esistenza",
+      "opinione",
+      "traduzione",
+      "popolarità"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un'allucinazione può essere scritta con tono sicuro, con dettagli precisi e con una struttura perfettamente ____.",
+    "answer": "ordinata",
+    "bank": [
+      "ordinata",
+      "breve",
+      "casuale",
+      "incompleta"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, la sicurezza con cui l'AI presenta un'informazione non è una prova della sua ____.",
+    "answer": "verità",
+    "bank": [
+      "verità",
+      "lunghezza",
+      "popolarità",
+      "origine"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso Mata v. Avianca, nel 2023 alcuni avvocati presentarono in tribunale precedenti giudiziari inesistenti generati da ____.",
+    "answer": "ChatGPT",
+    "bank": [
+      "ChatGPT",
+      "Google",
+      "NIST",
+      "un tribunale"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso Mata v. Avianca, il tribunale accertò che i precedenti giudiziari erano stati inventati e impose ____.",
+    "answer": "sanzioni",
+    "bank": [
+      "sanzioni",
+      "premi",
+      "correzioni",
+      "rimborsi"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio quotidiano del modulo, di fronte a un nome e una data forniti dall'AI sull'invenzione dello smartphone, la domanda corretta da porsi è «da dove ____ questa informazione?».",
+    "answer": "arriva",
+    "bank": [
+      "arriva",
+      "inizia",
+      "finisce",
+      "costa"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso Mata v. Avianca, il sistema produsse sei decisioni giudiziarie ____, complete di nomi, citazioni e riferimenti apparentemente autentici.",
+    "answer": "inesistenti",
+    "bank": [
+      "inesistenti",
+      "tradotte",
+      "pubbliche",
+      "recenti"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il giudice del caso Mata v. Avianca sottolineò che l'utilizzo di uno strumento di AI non elimina la responsabilità ____ di controllare l'accuratezza delle informazioni.",
+    "answer": "umana",
+    "bank": [
+      "umana",
+      "legale",
+      "tecnica",
+      "aziendale"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, l'AI può aiutare a cercare e organizzare informazioni, ma non può essere considerata automaticamente una fonte di ____.",
+    "answer": "verità",
+    "bank": [
+      "verità",
+      "ispirazione",
+      "velocità",
+      "opinioni"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del bibliotecario, la voce è sicura e il racconto è convincente, ma il libro non ____.",
+    "answer": "esiste",
+    "bank": [
+      "esiste",
+      "si trova",
+      "si vende",
+      "si presta"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, un sistema di AI generativa non ragiona come una persona che, prima di parlare, consulta necessariamente un'____.",
+    "answer": "enciclopedia",
+    "bank": [
+      "enciclopedia",
+      "immagine",
+      "fonte visiva",
+      "biblioteca digitale"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una ____ è un documento, una persona, un'organizzazione o una risorsa da cui proviene un'informazione e che può essere utilizzata per controllarne l'origine.",
+    "answer": "fonte",
+    "bank": [
+      "fonte",
+      "allucinazione",
+      "verifica",
+      "affidabilità"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una fonte può essere un sito istituzionale, un documento ufficiale, un libro, un articolo scientifico, un giornale, un archivio, un database o una pagina ____.",
+    "answer": "web",
+    "bank": [
+      "web",
+      "stampata",
+      "privata",
+      "temporanea"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, avere una fonte non significa automaticamente avere una ____ fonte.",
+    "answer": "buona",
+    "bank": [
+      "buona",
+      "digitale",
+      "recente",
+      "gratuita"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Di fronte a una fonte dovremmo chiederci chi ha prodotto l'informazione, quando è stata pubblicata, con quale competenza e su quali ____ si basa.",
+    "answer": "dati",
+    "bank": [
+      "dati",
+      "colori",
+      "immagini",
+      "emozioni"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per conoscere il numero degli abitanti di una città, una pagina ufficiale dell'istituto statistico è generalmente più adatta di un commento trovato casualmente sui ____.",
+    "answer": "social",
+    "bank": [
+      "social",
+      "giornali",
+      "libri",
+      "archivi"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le fonti diventano una sorta di ____ tra ciò che l'AI afferma e ciò che possiamo controllare nel mondo reale.",
+    "answer": "ponte",
+    "bank": [
+      "ponte",
+      "ostacolo",
+      "specchio",
+      "filtro"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella valutazione dei sistemi di AI, il NIST considera importanti caratteristiche come validità, affidabilità, trasparenza e ____.",
+    "answer": "verificabilità",
+    "bank": [
+      "verificabilità",
+      "velocità",
+      "popolarità",
+      "estetica"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio quotidiano del modulo, invece di copiare il numero fornito dall'AI sulla popolazione di Milano, è utile cercare una fonte ____ e confrontare il dato.",
+    "answer": "istituzionale",
+    "bank": [
+      "istituzionale",
+      "casuale",
+      "anonima",
+      "straniera"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2024 Google dovette intervenire sui propri ____ dopo che alcuni risultati avevano fornito informazioni errate.",
+    "answer": "AI Overviews",
+    "bank": [
+      "AI Overviews",
+      "Content Credentials",
+      "C2PA",
+      "SynthID"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso degli AI Overviews, alcuni risultati generati dall'AI avevano interpretato contenuti ____ come consigli reali.",
+    "answer": "satirici",
+    "bank": [
+      "satirici",
+      "ufficiali",
+      "scientifici",
+      "istituzionali"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, la presenza di un sistema di ricerca non rende automaticamente ____ ogni risposta generata dall'AI.",
+    "answer": "corretta",
+    "bank": [
+      "corretta",
+      "veloce",
+      "pubblica",
+      "gratuita"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della città, la fonte è paragonata a un ____ stradale che possiamo controllare direttamente.",
+    "answer": "cartello",
+    "bank": [
+      "cartello",
+      "semaforo",
+      "incrocio",
+      "marciapiede"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della città, se non troviamo alcun cartello o troviamo indicazioni contraddittorie, dobbiamo fermarci e ____ meglio.",
+    "answer": "controllare",
+    "bank": [
+      "controllare",
+      "proseguire",
+      "ignorare",
+      "condividere"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ è il processo attraverso il quale controlliamo se un'informazione è corretta, confrontandola con fonti, dati o evidenze attendibili.",
+    "answer": "verifica",
+    "bank": [
+      "verifica",
+      "allucinazione",
+      "fonte",
+      "affidabilità"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, verificare significa non fermarsi alla prima ____ che troviamo.",
+    "answer": "conferma",
+    "bank": [
+      "conferma",
+      "fonte",
+      "domanda",
+      "risposta"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se più fonti indipendenti e autorevoli concordano su un'informazione, la nostra ____ aumenta.",
+    "answer": "fiducia",
+    "bank": [
+      "fiducia",
+      "velocità",
+      "curiosità",
+      "distanza"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La verifica è particolarmente importante quando l'informazione riguarda argomenti delicati, come salute, denaro, diritto, sicurezza, politica o eventi ____.",
+    "answer": "recenti",
+    "bank": [
+      "recenti",
+      "sportivi",
+      "culturali",
+      "artistici"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'espressione latina «dubium sapientiae initium» significa che il ____ è l'inizio della conoscenza.",
+    "answer": "dubbio",
+    "bank": [
+      "dubbio",
+      "silenzio",
+      "errore",
+      "tempo"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, dubitare non significa rifiutare l'informazione: significa chiedere ____ prima di accettarla.",
+    "answer": "prove",
+    "bank": [
+      "prove",
+      "scuse",
+      "permessi",
+      "opinioni"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il NIST considera la validazione come una conferma basata su evidenze ____.",
+    "answer": "oggettive",
+    "bank": [
+      "oggettive",
+      "personali",
+      "casuali",
+      "provvisorie"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il NIST sottolinea l'importanza di test e ____ continui per valutare accuratezza e affidabilità dei sistemi AI.",
+    "answer": "monitoraggio",
+    "bank": [
+      "monitoraggio",
+      "marketing",
+      "finanziamento",
+      "addestramento"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio quotidiano del modulo, prima di considerare attendibile un'informazione su un'applicazione, è utile controllare il sito ____ dell'azienda.",
+    "answer": "ufficiale",
+    "bank": [
+      "ufficiale",
+      "personale",
+      "straniero",
+      "temporaneo"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso Mata v. Avianca, il problema decisivo fu che le informazioni prodotte da ChatGPT non vennero ____ prima di essere utilizzate in un documento legale.",
+    "answer": "verificate",
+    "bank": [
+      "verificate",
+      "tradotte",
+      "cancellate",
+      "pubblicate"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il tribunale, nel caso Mata v. Avianca, rilevò esplicitamente che gli avvocati avevano mancato il controllo delle ____.",
+    "answer": "fonti",
+    "bank": [
+      "fonti",
+      "spese",
+      "scadenze",
+      "testimonianze"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, l'errore dell'AI può essere inevitabile, mentre la mancata verifica dell'utente è invece una ____.",
+    "answer": "scelta",
+    "bank": [
+      "scelta",
+      "colpa dell'AI",
+      "casualità",
+      "eccezione"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora dello spioncino, la verifica significa non aprire la porta solo perché qualcuno ha detto che fuori c'è il ____.",
+    "answer": "postino",
+    "bank": [
+      "postino",
+      "vicino",
+      "corriere",
+      "amico"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ è l'attività sistematica di controllo della veridicità di affermazioni, notizie e contenuti, attraverso il confronto con fonti ed evidenze verificabili.",
+    "answer": "fact-checking",
+    "bank": [
+      "fact-checking",
+      "watermark",
+      "provenienza digitale",
+      "allucinazione"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il fact-checking parte dalla domanda molto semplice: «Questa affermazione è ____?»",
+    "answer": "vera",
+    "bank": [
+      "vera",
+      "breve",
+      "popolare",
+      "recente"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per rispondere alla domanda del fact-checking, dobbiamo prima trasformare una frase vaga in qualcosa di ____.",
+    "answer": "controllabile",
+    "bank": [
+      "controllabile",
+      "breve",
+      "popolare",
+      "casuale"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel fact-checking, dobbiamo cercare le fonti pertinenti, preferibilmente quelle più vicine all'____ dell'informazione.",
+    "answer": "origine",
+    "bank": [
+      "origine",
+      "opinione",
+      "traduzione",
+      "popolarità"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se una notizia parla di una legge, nel fact-checking cercheremo il testo della legge o una fonte ____.",
+    "answer": "istituzionale",
+    "bank": [
+      "istituzionale",
+      "anonima",
+      "straniera",
+      "casuale"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se una notizia parla di una ricerca scientifica, cercheremo lo studio originale o una fonte ____ affidabile.",
+    "answer": "accademica",
+    "bank": [
+      "accademica",
+      "social",
+      "satirica",
+      "anonima"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una frase può essere tecnicamente vera ma utilizzata in modo ____.",
+    "answer": "ingannevole",
+    "bank": [
+      "ingannevole",
+      "breve",
+      "popolare",
+      "tecnico"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una statistica reale può essere presentata senza il ____ necessario.",
+    "answer": "contesto",
+    "bank": [
+      "contesto",
+      "colore",
+      "formato",
+      "titolo"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, il fact-checking non consiste semplicemente nel cercare su Google se qualcuno ha già detto che una frase è vera, ma nel ricostruire il ____ dell'informazione fino alle evidenze disponibili.",
+    "answer": "percorso",
+    "bank": [
+      "percorso",
+      "titolo",
+      "formato",
+      "prezzo"
+    ]
+  },
+  {
+    "id": 49,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio quotidiano del modulo, prima di inoltrare un messaggio su una presunta nuova legge, è utile cercare il testo ufficiale della norma e controllare la ____.",
+    "answer": "data",
+    "bank": [
+      "data",
+      "lunghezza",
+      "popolarità",
+      "lingua"
+    ]
+  },
+  {
+    "id": 50,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio del messaggio sulla legge, si scopre che il messaggio aveva preso una vecchia notizia e l'aveva trasformata in qualcosa di completamente ____.",
+    "answer": "diverso",
+    "bank": [
+      "diverso",
+      "breve",
+      "pubblico",
+      "recente"
+    ]
+  },
+  {
+    "id": 51,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Negli episodi degli AI Overviews del 2024, Google spiegò che alcuni risultati avevano utilizzato contenuti satirici o provenienti da ____ come se fossero informazioni affidabili.",
+    "answer": "forum",
+    "bank": [
+      "forum",
+      "enciclopedie",
+      "tribunali",
+      "università"
+    ]
+  },
+  {
+    "id": 52,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora dell'investigatore, il fact-checking non cerca la storia più convincente, ma le ____ che permettono di ricostruire ciò che è realmente accaduto.",
+    "answer": "prove",
+    "bank": [
+      "prove",
+      "opinioni",
+      "ipotesi",
+      "emozioni"
+    ]
+  },
+  {
+    "id": 53,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____ è la capacità di un sistema di produrre risultati corretti e coerenti nelle condizioni e per gli scopi per i quali viene utilizzato.",
+    "answer": "affidabilità",
+    "bank": [
+      "affidabilità",
+      "allucinazione",
+      "verifica",
+      "fonte"
+    ]
+  },
+  {
+    "id": 54,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, dire semplicemente che un'AI è «affidabile» oppure «inaffidabile» è troppo ____.",
+    "answer": "generico",
+    "bank": [
+      "generico",
+      "tecnico",
+      "breve",
+      "raro"
+    ]
+  },
+  {
+    "id": 55,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'affidabilità dipende almeno da tre elementi: il compito, il contesto e il rischio dell'____.",
+    "answer": "errore",
+    "bank": [
+      "errore",
+      "utente",
+      "sistema",
+      "algoritmo"
+    ]
+  },
+  {
+    "id": 56,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se una persona chiede all'AI dieci idee per il titolo di una presentazione, un errore può essere facilmente ____.",
+    "answer": "corretto",
+    "bank": [
+      "corretto",
+      "ignorato",
+      "pubblicato",
+      "tradotto"
+    ]
+  },
+  {
+    "id": 57,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se invece si chiedono informazioni su una terapia, un investimento finanziario o una norma giuridica, lo stesso tipo di errore può avere conseguenze molto più ____.",
+    "answer": "serie",
+    "bank": [
+      "serie",
+      "brevi",
+      "rare",
+      "economiche"
+    ]
+  },
+  {
+    "id": 58,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, non dobbiamo chiederci soltanto «l'AI è affidabile?», ma «è sufficientemente affidabile per questo compito, in questo contesto e con questo livello di ____?».",
+    "answer": "rischio",
+    "bank": [
+      "rischio",
+      "costo",
+      "tempo",
+      "popolarità"
+    ]
+  },
+  {
+    "id": 59,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il NIST considera validità e affidabilità tra le caratteristiche fondamentali di un sistema AI degno di ____.",
+    "answer": "fiducia",
+    "bank": [
+      "fiducia",
+      "velocità",
+      "popolarità",
+      "originalità"
+    ]
+  },
+  {
+    "id": 60,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, l'affidabilità dell'AI non sostituisce la responsabilità dell'essere ____.",
+    "answer": "umano",
+    "bank": [
+      "umano",
+      "artificiale",
+      "digitale",
+      "automatico"
+    ]
+  },
+  {
+    "id": 61,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio quotidiano del modulo, quando l'AI propone una data storica, un dato statistico o il nome di una fonte, l'atteggiamento corretto cambia e diventa quello di ____.",
+    "answer": "controllare",
+    "bank": [
+      "controllare",
+      "copiare",
+      "ignorare",
+      "condividere"
+    ]
+  },
+  {
+    "id": 62,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso Mata v. Avianca, informazioni giuridiche inventate furono inserite in un atto giudiziario e il tribunale impose ____.",
+    "answer": "sanzioni",
+    "bank": [
+      "sanzioni",
+      "premi",
+      "rimborsi",
+      "correzioni"
+    ]
+  },
+  {
+    "id": 63,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, NIST considera insieme validità, affidabilità, sicurezza, trasparenza, spiegabilità, privacy e gestione dei ____, perché nessuna singola caratteristica è sufficiente da sola.",
+    "answer": "bias",
+    "bank": [
+      "bias",
+      "costi",
+      "dati",
+      "algoritmi"
+    ]
+  },
+  {
+    "id": 64,
+    "module": "verificare-l-ai",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della bussola, se siamo vicino a un grande oggetto metallico o se la bussola è danneggiata, può portarci fuori ____.",
+    "answer": "strada",
+    "bank": [
+      "strada",
+      "tempo",
+      "budget",
+      "contesto"
+    ]
+  }
+]

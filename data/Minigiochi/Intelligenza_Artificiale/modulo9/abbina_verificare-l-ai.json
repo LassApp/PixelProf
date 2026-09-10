@@ -1,0 +1,118 @@
+{
+  "id": 1,
+  "module": "verificare-l-ai",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Allucinazione (hallucination)",
+        "definition": "Risposta generata dall'AI che contiene informazioni false, inventate o non supportate dai fatti, presentata però in modo plausibile e convincente"
+      },
+      {
+        "term": "Perché un LLM può produrre un'allucinazione",
+        "definition": "Il modello genera una risposta prevedendo quali elementi linguistici siano più appropriati in base al contesto, non verificando ogni informazione come farebbe una persona"
+      },
+      {
+        "term": "Segnale ingannevole delle allucinazioni",
+        "definition": "La sicurezza con cui l'AI presenta un'informazione non è una prova della sua verità"
+      },
+      {
+        "term": "Caso Mata v. Avianca (2023)",
+        "definition": "Alcuni avvocati presentarono in tribunale precedenti giudiziari inesistenti generati da ChatGPT; il tribunale accertò che erano stati inventati e impose sanzioni"
+      },
+      {
+        "term": "Metafora del bibliotecario",
+        "definition": "Rappresenta l'allucinazione: descrive con sicurezza il contenuto di un libro che in realtà non esiste nello scaffale"
+      }
+    ],
+    [
+      {
+        "term": "Fonte",
+        "definition": "Documento, persona, organizzazione o risorsa da cui proviene un'informazione e che può essere utilizzata per controllarne l'origine e l'attendibilità"
+      },
+      {
+        "term": "Domande da porsi su una fonte",
+        "definition": "Chi ha prodotto l'informazione, quando è stata pubblicata, con quale competenza, su quali dati si basa e se altre fonti indipendenti la confermano"
+      },
+      {
+        "term": "Funzione delle fonti",
+        "definition": "Fare da ponte tra ciò che l'AI afferma e ciò che possiamo controllare nel mondo reale"
+      },
+      {
+        "term": "Caso degli AI Overviews di Google (2024)",
+        "definition": "Google dovette intervenire dopo che alcuni risultati generati dall'AI avevano fornito informazioni errate o interpretato contenuti satirici come consigli reali"
+      },
+      {
+        "term": "Metafora del cartello stradale",
+        "definition": "Rappresenta la fonte: un'indicazione che possiamo andare a controllare direttamente"
+      }
+    ],
+    [
+      {
+        "term": "Verifica",
+        "definition": "Processo attraverso il quale controlliamo se un'informazione è corretta, confrontandola con fonti, dati o evidenze attendibili"
+      },
+      {
+        "term": "Dubium sapientiae initium",
+        "definition": "Espressione latina: il dubbio è l'inizio della conoscenza; dubitare non significa rifiutare l'informazione ma chiedere prove prima di accettarla"
+      },
+      {
+        "term": "Ruolo del NIST nella validazione",
+        "definition": "Considera la validazione come una conferma basata su evidenze oggettive e sottolinea l'importanza di test e monitoraggio continui"
+      },
+      {
+        "term": "Lezione del caso Mata v. Avianca sulla verifica",
+        "definition": "L'errore dell'AI può essere inevitabile; la mancata verifica dell'utente è invece una scelta"
+      },
+      {
+        "term": "Metafora dello spioncino",
+        "definition": "Rappresenta la verifica: non aprire la porta solo perché qualcuno ha detto che fuori c'è il postino, ma guardare prima"
+      }
+    ],
+    [
+      {
+        "term": "Fact-checking",
+        "definition": "Attività sistematica di controllo della veridicità di affermazioni, notizie e contenuti, attraverso il confronto con fonti ed evidenze verificabili"
+      },
+      {
+        "term": "Primo passo del fact-checking",
+        "definition": "Individuare esattamente che cosa viene affermato, trasformando una frase vaga in qualcosa di controllabile"
+      },
+      {
+        "term": "Perché una frase vera può comunque ingannare",
+        "definition": "Una frase può essere tecnicamente vera ma utilizzata in modo ingannevole, per esempio fuori dal suo contesto originale"
+      },
+      {
+        "term": "Caso degli AI Overviews e i contenuti satirici",
+        "definition": "Google spiegò che alcuni risultati avevano utilizzato contenuti satirici o provenienti da forum come se fossero informazioni affidabili"
+      },
+      {
+        "term": "Metafora dell'investigatore",
+        "definition": "Rappresenta il fact-checking: non cerca la storia più convincente, ma le prove che permettono di ricostruire ciò che è realmente accaduto"
+      }
+    ],
+    [
+      {
+        "term": "Affidabilità",
+        "definition": "Capacità di un sistema di produrre risultati corretti e coerenti nelle condizioni e per gli scopi per i quali viene utilizzato"
+      },
+      {
+        "term": "Elementi da cui dipende l'affidabilità",
+        "definition": "Il compito, il contesto e il rischio dell'errore"
+      },
+      {
+        "term": "Caratteristiche considerate dal NIST per la trustworthiness dell'AI",
+        "definition": "Validità, affidabilità, sicurezza, trasparenza, spiegabilità, privacy e gestione dei bias"
+      },
+      {
+        "term": "Conseguenza pratica dell'affidabilità",
+        "definition": "L'affidabilità dell'AI non sostituisce la responsabilità dell'essere umano"
+      },
+      {
+        "term": "Metafora della bussola",
+        "definition": "Rappresenta l'AI: uno strumento utile per orientarsi, che richiede di imparare quando fidarsi e quando controllare la direzione in altro modo"
+      }
+    ]
+  ]
+}

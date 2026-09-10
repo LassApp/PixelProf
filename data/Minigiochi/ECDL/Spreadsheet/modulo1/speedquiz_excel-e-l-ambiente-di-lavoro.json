@@ -1,0 +1,932 @@
+[
+  {
+    "id": 1,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un foglio di calcolo (spreadsheet)?",
+    "options": [
+      "Un programma per scrivere testo continuo",
+      "Un programma pensato per inserire, organizzare, calcolare e analizzare dati, soprattutto numerici",
+      "Un programma per creare presentazioni",
+      "Un programma per gestire la posta elettronica"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un foglio di calcolo è un programma pensato per inserire, organizzare, calcolare e analizzare dati, soprattutto numerici."
+  },
+  {
+    "id": 2,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il foglio di calcolo più diffuso al mondo?",
+    "options": [
+      "Lotus 1-2-3",
+      "Multiplan",
+      "Microsoft Word",
+      "Microsoft Excel"
+    ],
+    "correctIndex": 3,
+    "explanation": "Microsoft Excel è indicato nel modulo come il foglio di calcolo più diffuso al mondo."
+  },
+  {
+    "id": 3,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per cosa esiste Word, secondo il modulo?",
+    "options": [
+      "Per i dati e i calcoli",
+      "Per il testo",
+      "Per le immagini",
+      "Per le presentazioni"
+    ],
+    "correctIndex": 1,
+    "explanation": "Word esiste per il testo: una lettera, un cartello, un listino scritto in righe leggibili."
+  },
+  {
+    "id": 4,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per cosa esiste Excel, secondo il modulo?",
+    "options": [
+      "Per il testo continuo",
+      "Per le immagini",
+      "Per i dati e i calcoli",
+      "Per le animazioni"
+    ],
+    "correctIndex": 2,
+    "explanation": "Excel esiste per i dati e i calcoli: numeri da sommare, confrontare, aggiornare, mettere in relazione."
+  },
+  {
+    "id": 5,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede in Excel se si modifica un valore da cui altri dipendono?",
+    "options": [
+      "Bisogna aggiornare manualmente ogni altro valore",
+      "Il foglio si blocca",
+      "Tutto ciò che ne dipende (totale, somma, media) si aggiorna da solo",
+      "Nulla cambia finché non si salva il file"
+    ],
+    "correctIndex": 2,
+    "explanation": "In Excel un valore può dipendere da un altro valore: cambiando l'origine, tutto ciò che ne dipende si aggiorna da solo."
+  },
+  {
+    "id": 6,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si trova aprendo Excel per la prima volta, a differenza di Word?",
+    "options": [
+      "Una pagina bianca identica a Word",
+      "Una struttura fatta di righe e colonne, non un foglio bianco",
+      "Una schermata vuota senza alcuna struttura",
+      "Un elenco di modelli obbligatori"
+    ],
+    "correctIndex": 1,
+    "explanation": "Aprendo Excel si trova una struttura fatta di righe e colonne, già pronta ad accogliere dati."
+  },
+  {
+    "id": 7,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che data Microsoft mise in vendita Excel 1.0?",
+    "options": [
+      "Il 20 aprile 1987",
+      "Il 1982",
+      "Il 30 settembre 1985",
+      "Il 1995"
+    ],
+    "correctIndex": 2,
+    "explanation": "Microsoft mise in vendita Excel 1.0 il 30 settembre 1985."
+  },
+  {
+    "id": 8,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale nome in codice fu sviluppato Excel 1.0?",
+    "options": [
+      "Multiplan",
+      "Carousel",
+      "Presenter",
+      "Odyssey"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel 1.0 fu sviluppato con il nome in codice \"Odyssey\"."
+  },
+  {
+    "id": 9,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quali computer era esclusivo Excel 1.0?",
+    "options": [
+      "Per i PC IBM",
+      "Per Commodore 64",
+      "Per i computer Apple Macintosh",
+      "Per qualsiasi computer"
+    ],
+    "correctIndex": 2,
+    "explanation": "Excel 1.0 era esclusivo per i computer Apple Macintosh."
+  },
+  {
+    "id": 10,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale programma dominava il mercato dei fogli di calcolo su MS-DOS prima di Excel?",
+    "options": [
+      "Multiplan",
+      "WordPerfect",
+      "VisiCalc",
+      "Lotus 1-2-3"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il mercato era dominato da Lotus 1-2-3, uscito nel 1982."
+  },
+  {
+    "id": 11,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'era il \"ricalcolo intelligente\" di Excel?",
+    "options": [
+      "La capacità di ricalcolare sempre l'intero foglio",
+      "Un sistema per correggere automaticamente gli errori di formula",
+      "La capacità di aggiornare solo le celle effettivamente interessate da un cambiamento",
+      "Una funzione per tradurre automaticamente i numeri in testo"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il ricalcolo intelligente permetteva a Excel di aggiornare solo le celle effettivamente interessate da un cambiamento."
+  },
+  {
+    "id": 12,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quanto fu messo in commercio Excel 1.0?",
+    "options": [
+      "14 dollari",
+      "1 milione di dollari",
+      "250.000 dollari",
+      "395 dollari"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel 1.0 fu messo in commercio a 395 dollari."
+  },
+  {
+    "id": 13,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando Excel superò Lotus 1-2-3 in diffusione?",
+    "options": [
+      "Subito dopo il lancio nel 1985",
+      "Nel 1982, prima ancora di uscire",
+      "Mai, restò sempre in secondo piano",
+      "Solo dopo il suo arrivo su Windows, nel 1987"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel superò Lotus 1-2-3 in diffusione solo dopo il suo arrivo su Windows, nel 1987."
+  },
+  {
+    "id": 14,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una matrice, secondo il modulo?",
+    "options": [
+      "Un elenco di nomi senza struttura",
+      "Una struttura organizzata in righe e colonne, in cui ogni cella nasce dall'incrocio tra una riga e una colonna precisa",
+      "Un tipo di grafico a torta",
+      "Un formato di stampa"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una matrice è una struttura organizzata in righe e colonne, in cui ogni cella nasce dall'incrocio tra riga e colonna."
+  },
+  {
+    "id": 15,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresentano le colonne Nome, Età e Città in una tabella di dati?",
+    "options": [
+      "I record",
+      "I database",
+      "Gli indirizzi",
+      "I campi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le colonne Nome, Età e Città rappresentano i campi, cioè i diversi tipi di informazioni registrate."
+  },
+  {
+    "id": 16,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa forma l'insieme dei campi riferiti a una singola persona?",
+    "options": [
+      "Un campo",
+      "Un database",
+      "Un indirizzo",
+      "Un record"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'insieme dei campi riferiti a una singola persona forma una riga, chiamata record."
+  },
+  {
+    "id": 17,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un database, secondo il modulo?",
+    "options": [
+      "Un singolo campo isolato",
+      "Una cella vuota",
+      "Un tipo di grafico",
+      "Un insieme organizzato di record"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un database è un insieme di record, una raccolta organizzata di dati."
+  },
+  {
+    "id": 18,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa definiscono i campi in una matrice di dati?",
+    "options": [
+      "Le righe",
+      "Le celle",
+      "Gli indirizzi",
+      "Le colonne"
+    ],
+    "correctIndex": 3,
+    "explanation": "I campi definiscono le colonne della matrice."
+  },
+  {
+    "id": 19,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa forma un record in una matrice di dati?",
+    "options": [
+      "Una colonna",
+      "Una cella isolata",
+      "Un database",
+      "Una riga"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un record forma una riga della matrice."
+  },
+  {
+    "id": 20,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette al telefono di non confondere due contatti con lo stesso nome?",
+    "options": [
+      "Il telefono ordina i contatti per data di aggiunta",
+      "I contatti con lo stesso nome vengono uniti automaticamente",
+      "Ogni contatto occupa un record distinto con un ID univoco",
+      "Non è possibile avere due contatti con lo stesso nome"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ogni contatto occupa un record distinto e possiede un ID univoco che l'utente non vede mai."
+  },
+  {
+    "id": 21,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come riprende Excel la logica della matrice?",
+    "options": [
+      "Un foglio è un elenco di testo senza struttura",
+      "Un foglio contiene solo immagini",
+      "Un foglio è diviso in pagine come Word",
+      "Un foglio è una grande matrice organizzata in righe e colonne"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel riprende esattamente la logica della matrice: un foglio è organizzato in righe e colonne."
+  },
+  {
+    "id": 22,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi depositò, nel 1794, il primo brevetto per la carta a quadretti?",
+    "options": [
+      "Il matematico E.H. Moore",
+      "Lo scacchista Philipp Stamma",
+      "L'ingegnere Kerns H. Powers",
+      "Il dottor Buxton"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il dottor Buxton, medico inglese, depositò nel 1794 il primo brevetto per la carta a quadretti."
+  },
+  {
+    "id": 23,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serviva originariamente la carta a quadretti brevettata nel 1794?",
+    "options": [
+      "A fare calcoli matematici complessi",
+      "A scrivere lettere formali",
+      "A stampare mappe geografiche",
+      "A tracciare più facilmente grafici e dati sperimentali"
+    ],
+    "correctIndex": 3,
+    "explanation": "La carta a quadretti serviva originariamente a tracciare più facilmente grafici e dati sperimentali."
+  },
+  {
+    "id": 24,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi promosse l'uso della griglia nelle scuole e nelle università, un secolo dopo il brevetto della carta a quadretti?",
+    "options": [
+      "Il dottor Buxton",
+      "Philipp Stamma",
+      "André Danican Philidor",
+      "Il matematico E.H. Moore, dell'Università di Chicago"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il matematico E.H. Moore, dell'Università di Chicago, promosse l'uso della griglia nelle scuole."
+  },
+  {
+    "id": 25,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo E.H. Moore, a cosa serviva una griglia già tracciata per gli studenti?",
+    "options": [
+      "A colorare i disegni più velocemente",
+      "A scrivere più velocemente i testi",
+      "A memorizzare le formule matematiche",
+      "Ad aiutarli a ragionare per righe e colonne invece che a occhio"
+    ],
+    "correctIndex": 3,
+    "explanation": "Moore era convinto che una griglia già tracciata aiutasse gli studenti a ragionare per righe e colonne."
+  },
+  {
+    "id": 26,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama il file che Excel crea?",
+    "options": [
+      "Foglio di lavoro",
+      "Database",
+      "Matrice",
+      "Cartella di lavoro (workbook)"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il file che Excel crea si chiama cartella di lavoro (workbook)."
+  },
+  {
+    "id": 27,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può contenere una cartella di lavoro?",
+    "options": [
+      "Solo un unico foglio, mai modificabile",
+      "Solo immagini e grafici",
+      "Solo testo senza celle",
+      "Uno o più fogli di lavoro"
+    ],
+    "correctIndex": 3,
+    "explanation": "Una cartella di lavoro può contenere uno o più fogli di lavoro (worksheet)."
+  },
+  {
+    "id": 28,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la gerarchia descritta nel modulo per Excel?",
+    "options": [
+      "Programma → Foglio → Cartella di lavoro → Righe",
+      "Cartella di lavoro → Programma → Celle → Foglio",
+      "Foglio → Celle → Programma → Cartella di lavoro",
+      "Programma → Cartella di lavoro → Foglio → Celle"
+    ],
+    "correctIndex": 3,
+    "explanation": "La gerarchia descritta è: Programma → Cartella di lavoro → Foglio → Celle."
+  },
+  {
+    "id": 29,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa propone la schermata iniziale di Excel, oltre alla cartella di lavoro vuota?",
+    "options": [
+      "Solo un foglio bianco, senza altre opzioni",
+      "Solo la possibilità di aprire file da Word",
+      "Solo un tutorial obbligatorio",
+      "Cartelle di lavoro recenti e modelli già pronti"
+    ],
+    "correctIndex": 3,
+    "explanation": "La schermata iniziale propone cartelle di lavoro recenti, modelli già pronti e la cartella vuota."
+  },
+  {
+    "id": 30,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno Microsoft mise in commercio \"Multiplan\"?",
+    "options": [
+      "1985",
+      "1984",
+      "1995",
+      "1982"
+    ],
+    "correctIndex": 3,
+    "explanation": "Multiplan fu messo in commercio da Microsoft nel 1982."
+  },
+  {
+    "id": 31,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quali sistemi era disponibile Multiplan?",
+    "options": [
+      "Solo per Macintosh",
+      "Solo per Windows",
+      "Solo per Linux",
+      "MS-DOS, CP/M, Xenix e altri"
+    ],
+    "correctIndex": 3,
+    "explanation": "Multiplan era disponibile per una quantità sorprendente di sistemi diversi, tra cui MS-DOS, CP/M e Xenix."
+  },
+  {
+    "id": 32,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quali computer, tra gli altri, era disponibile Multiplan?",
+    "options": [
+      "Solo per i PC IBM",
+      "Solo per i Macintosh",
+      "Solo per i computer Amiga",
+      "Dal Commodore 64 all'Apple II"
+    ],
+    "correctIndex": 3,
+    "explanation": "Multiplan era disponibile per computer che andavano dal Commodore 64 all'Apple II."
+  },
+  {
+    "id": 33,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno arrivò una versione di Multiplan per Macintosh?",
+    "options": [
+      "1982",
+      "1985",
+      "1995",
+      "1984"
+    ],
+    "correctIndex": 3,
+    "explanation": "Una versione di Multiplan per Macintosh arrivò nel 1984."
+  },
+  {
+    "id": 34,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale programma Multiplan non riuscì mai a competere seriamente?",
+    "options": [
+      "Excel",
+      "WordPerfect",
+      "VisiCalc",
+      "Lotus 1-2-3"
+    ],
+    "correctIndex": 3,
+    "explanation": "Multiplan non riuscì mai a competere seriamente con il dominante Lotus 1-2-3."
+  },
+  {
+    "id": 35,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A partire da quale anno Microsoft iniziò a lavorare al progetto \"Odyssey\", poi diventato Excel?",
+    "options": [
+      "1982",
+      "1985",
+      "1995",
+      "1983"
+    ],
+    "correctIndex": 3,
+    "explanation": "A partire dal 1983 Microsoft cominciò a lavorare al progetto con nome in codice \"Odyssey\"."
+  },
+  {
+    "id": 36,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale sistema di indirizzamento delle celle introdusse Multiplan?",
+    "options": [
+      "Il sistema A1B1, basato su lettere doppie",
+      "Il sistema alfabetico puro",
+      "Il sistema decimale",
+      "Il sistema R1C1, basato su numero di riga e numero di colonna"
+    ],
+    "correctIndex": 3,
+    "explanation": "Multiplan introdusse il sistema di indirizzamento R1C1, basato su numero di riga e numero di colonna."
+  },
+  {
+    "id": 37,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Il sistema R1C1 introdotto da Multiplan è oggi disponibile in Excel come...?",
+    "options": [
+      "Unico sistema disponibile",
+      "Funzione ormai rimossa",
+      "Opzione solo per utenti avanzati con licenza speciale",
+      "Opzione alternativa al sistema standard"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il sistema R1C1 è ancora oggi disponibile in Excel come opzione alternativa al sistema standard."
+  },
+  {
+    "id": 38,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quali elementi è composto l'ambiente di lavoro di Excel?",
+    "options": [
+      "Solo dalla barra multifunzione e dall'area di lavoro",
+      "Solo dalle schede dei fogli",
+      "Solo dalla barra della formula e dalla casella nome",
+      "Barra multifunzione, area di lavoro, barra della formula, casella nome, barra di stato, schede dei fogli"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'ambiente di lavoro comprende tutti questi elementi elencati nel modulo."
+  },
+  {
+    "id": 39,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come funziona la barra multifunzione in Excel?",
+    "options": [
+      "Mostra solo il contenuto della cella selezionata",
+      "Permette di passare da un foglio all'altro",
+      "Riporta informazioni sul foglio in quel momento",
+      "Come in Word, raggruppa i comandi in schede organizzate per compito"
+    ],
+    "correctIndex": 3,
+    "explanation": "La barra multifunzione funziona esattamente come in Word, raggruppando i comandi in schede."
+  },
+  {
+    "id": 40,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza principale tra lo spazio di lavoro di Word e quello di Excel?",
+    "options": [
+      "In Word lo spazio principale è una griglia, in Excel è una pagina",
+      "Sono identici in entrambi i programmi",
+      "Excel non ha uno spazio principale",
+      "In Word lo spazio principale è la pagina, in Excel è una griglia"
+    ],
+    "correctIndex": 3,
+    "explanation": "In Word lo spazio principale è la pagina, in Excel lo spazio principale è una griglia."
+  },
+  {
+    "id": 41,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra la barra della formula?",
+    "options": [
+      "Solo il nome del foglio attivo",
+      "Solo il numero totale di celle compilate",
+      "Solo la formattazione applicata alla cella",
+      "Il contenuto reale della cella selezionata in quel momento"
+    ],
+    "correctIndex": 3,
+    "explanation": "La barra della formula mostra il contenuto reale della cella selezionata."
+  },
+  {
+    "id": 42,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra sempre la casella nome?",
+    "options": [
+      "Il contenuto della cella selezionata",
+      "Il nome dell'autore del file",
+      "Il numero totale di fogli nella cartella",
+      "L'indirizzo della cella attualmente selezionata"
+    ],
+    "correctIndex": 3,
+    "explanation": "La casella nome mostra sempre l'indirizzo della cella attualmente selezionata."
+  },
+  {
+    "id": 43,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa riporta la barra di stato, in fondo alla finestra?",
+    "options": [
+      "Solo la data di creazione del file",
+      "Solo il nome del programma",
+      "Solo la versione di Excel installata",
+      "Informazioni utili sul foglio in quel momento"
+    ],
+    "correctIndex": 3,
+    "explanation": "La barra di stato riporta informazioni utili sul foglio in quel momento."
+  },
+  {
+    "id": 44,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa servono le schede dei fogli, in basso nella finestra?",
+    "options": [
+      "A cambiare il tema grafico del foglio",
+      "A stampare la cartella di lavoro",
+      "A inserire nuove colonne",
+      "A passare da un foglio di lavoro all'altro all'interno della stessa cartella"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le schede dei fogli permettono di passare da un foglio di lavoro all'altro nella stessa cartella."
+  },
+  {
+    "id": 45,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede alla casella nome quando si clicca su una cella diversa?",
+    "options": [
+      "Resta sempre uguale",
+      "Si svuota completamente",
+      "Mostra un messaggio di errore",
+      "Cambia immediatamente, mostrando il nuovo indirizzo"
+    ],
+    "correctIndex": 3,
+    "explanation": "La casella nome cambia immediatamente per mostrare l'indirizzo della nuova cella selezionata."
+  },
+  {
+    "id": 46,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale versione di Excel fu introdotto in modo sistematico il sistema di schede cliccabili in fondo allo schermo?",
+    "options": [
+      "Excel 1.0",
+      "Excel per Macintosh del 1985",
+      "Multiplan",
+      "Excel 95"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il sistema di schede cliccabili fu introdotto in modo sistematico con Excel 95."
+  },
+  {
+    "id": 47,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno uscì Excel 95?",
+    "options": [
+      "1985",
+      "1987",
+      "1982",
+      "1995"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel 95 uscì nell'agosto 1995."
+  },
+  {
+    "id": 48,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Di quale pacchetto faceva parte Excel 95?",
+    "options": [
+      "Microsoft Office per Macintosh",
+      "Microsoft Works",
+      "Microsoft Office 3.0",
+      "Microsoft Office per Windows 95"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel 95 uscì come parte di Microsoft Office per Windows 95."
+  },
+  {
+    "id": 49,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Oltre alle schede dei fogli, cosa introdusse Excel 95?",
+    "options": [
+      "Il ricalcolo intelligente",
+      "Il sistema di indirizzamento R1C1",
+      "La carta a quadretti digitale",
+      "Barre degli strumenti più accessibili e il completamento automatico delle formule"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel 95 introdusse anche barre degli strumenti più accessibili e il completamento automatico delle formule."
+  },
+  {
+    "id": 50,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Prima di Excel 95, come si gestivano più fogli all'interno della stessa cartella di lavoro?",
+    "options": [
+      "Non era affatto possibile",
+      "Si potevano gestire solo tramite comandi da tastiera",
+      "Ogni foglio richiedeva un file separato",
+      "Era possibile, ma molto meno immediato dal punto di vista visivo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Gestire più fogli era già possibile prima di Excel 95, ma molto meno immediato visivamente."
+  },
+  {
+    "id": 51,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come sono identificate le colonne in una griglia di Excel?",
+    "options": [
+      "Da numeri",
+      "Da colori",
+      "Da simboli",
+      "Da lettere (A, B, C…)"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le colonne sono le strisce verticali, identificate da lettere."
+  },
+  {
+    "id": 52,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come sono identificate le righe in una griglia di Excel?",
+    "options": [
+      "Da lettere",
+      "Da colori",
+      "Da simboli",
+      "Da numeri (1, 2, 3…)"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le righe sono le strisce orizzontali, identificate da numeri."
+  },
+  {
+    "id": 53,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una cella, secondo il modulo?",
+    "options": [
+      "Solo il contenuto scritto in una casella",
+      "Un tipo di formula",
+      "Un foglio di lavoro separato",
+      "Il punto di incontro tra una colonna e una riga, identificato da un indirizzo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Una cella è il punto di incontro tra una colonna e una riga, identificato da un indirizzo."
+  },
+  {
+    "id": 54,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica un indirizzo come A1, secondo il modulo?",
+    "options": [
+      "Il nome del proprietario del file",
+      "Il tipo di dato contenuto",
+      "Il colore di sfondo della cella",
+      "Una posizione, non un nome"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un indirizzo come A1 non è un nome, è una posizione precisa."
+  },
+  {
+    "id": 55,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la funzione principale di una formula in Excel?",
+    "options": [
+      "Cambiare il colore delle celle",
+      "Stampare il foglio di lavoro",
+      "Inserire immagini nella griglia",
+      "Collegare tra loro gli indirizzi di celle diverse, per far dipendere un valore da un altro"
+    ],
+    "correctIndex": 3,
+    "explanation": "Una formula collega tra loro gli indirizzi di celle diverse, facendo dipendere un valore da un altro."
+  },
+  {
+    "id": 56,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi pubblicò, nel 1737, \"Essai sur le Jeu des Echecs\"?",
+    "options": [
+      "Il matematico E.H. Moore",
+      "Il dottor Buxton",
+      "L'ingegnere Kerns H. Powers",
+      "Lo scacchista Philipp Stamma"
+    ],
+    "correctIndex": 3,
+    "explanation": "Philipp Stamma pubblicò a Parigi, nel 1737, \"Essai sur le Jeu des Echecs\"."
+  },
+  {
+    "id": 57,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa introdusse in Europa il libro di Philipp Stamma?",
+    "options": [
+      "La notazione descrittiva degli scacchi",
+      "Il sistema R1C1",
+      "La carta a quadretti",
+      "La notazione algebrica degli scacchi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il libro di Stamma introdusse in Europa la notazione algebrica degli scacchi."
+  },
+  {
+    "id": 58,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella notazione algebrica degli scacchi, come sono identificate le colonne della scacchiera?",
+    "options": [
+      "Con numeri da 1 a 8",
+      "Con simboli speciali",
+      "Con colori diversi",
+      "Con lettere, dalla \"a\" alla \"h\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Le colonne della scacchiera sono identificate con lettere, dalla \"a\" alla \"h\"."
+  },
+  {
+    "id": 59,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella notazione algebrica degli scacchi, come sono identificate le righe della scacchiera?",
+    "options": [
+      "Con lettere, dalla a alla h",
+      "Con simboli speciali",
+      "Con colori diversi",
+      "Con numeri, da 1 a 8"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le righe della scacchiera sono identificate con numeri, da 1 a 8."
+  },
+  {
+    "id": 60,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi sconfisse Philipp Stamma in una celebre partita nel 1747?",
+    "options": [
+      "E.H. Moore",
+      "Il dottor Buxton",
+      "Kerns H. Powers",
+      "André Danican Philidor"
+    ],
+    "correctIndex": 3,
+    "explanation": "André Danican Philidor sconfisse Stamma in una celebre partita nel 1747."
+  },
+  {
+    "id": 61,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Grazie a cosa la notazione algebrica di Stamma si affermò come standard nel corso dell'Ottocento?",
+    "options": [
+      "Grazie a un decreto della federazione francese",
+      "Grazie alla diffusione dei personal computer",
+      "Grazie a un torneo mondiale del 1900",
+      "Grazie alla manualistica scacchistica tedesca"
+    ],
+    "correctIndex": 3,
+    "explanation": "La notazione algebrica si affermò grazie alla manualistica scacchistica tedesca dell'Ottocento."
+  },
+  {
+    "id": 62,
+    "module": "excel-e-l-ambiente-di-lavoro",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da chi è oggi riconosciuta ufficialmente la notazione algebrica degli scacchi?",
+    "options": [
+      "Solo dai giocatori tedeschi",
+      "Solo nei tornei online",
+      "Da nessun ente ufficiale",
+      "Dalla federazione internazionale degli scacchi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Oggi la notazione algebrica è l'unica riconosciuta ufficialmente dalla federazione internazionale degli scacchi."
+  }
+]

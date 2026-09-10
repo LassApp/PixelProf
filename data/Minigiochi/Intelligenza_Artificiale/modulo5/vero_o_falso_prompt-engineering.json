@@ -1,0 +1,398 @@
+[
+  {
+    "id": 1,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le istruzioni sono le indicazioni che forniamo a un sistema di AI per dirgli cosa deve fare, come farlo e quale risultato vogliamo ottenere.",
+    "answer": true,
+    "explanation": "Questa è la definizione di istruzioni fornita dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una buona istruzione deve necessariamente essere molto lunga.",
+    "answer": false,
+    "explanation": "Una buona istruzione non deve necessariamente essere lunga: deve essere soprattutto chiara."
+  },
+  {
+    "id": 3,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, aggiungere parole a caso rende automaticamente un prompt migliore.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: aggiungere parole a caso non rende automaticamente un prompt migliore."
+  },
+  {
+    "id": 4,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'obiettivo di una buona istruzione è ridurre l'ambiguità e guidare l'AI verso il risultato desiderato.",
+    "answer": true,
+    "explanation": "Questo è esattamente l'obiettivo descritto nel modulo."
+  },
+  {
+    "id": 5,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'AI generativa interpreta sempre una richiesta esattamente come farebbe una persona che conosce le nostre intenzioni.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: l'AI generativa non interpreta una richiesta come farebbe una persona che conosce già le nostre intenzioni."
+  },
+  {
+    "id": 6,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, possiamo pensare al prompt come a una consegna.",
+    "answer": true,
+    "explanation": "Il modulo suggerisce di pensare al prompt come a una consegna: più è ben formulata, più è facile ottenere un risultato coerente."
+  },
+  {
+    "id": 7,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la differenza tra una richiesta vaga e una precisa sta nella tecnologia utilizzata, non nella comunicazione.",
+    "answer": false,
+    "explanation": "La differenza non sta nella tecnologia, ma nella qualità della comunicazione tra persona e sistema."
+  },
+  {
+    "id": 8,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della tipografia, più chiaramente descriviamo ciò che vogliamo, meno spazio lasciamo all'interpretazione.",
+    "answer": true,
+    "explanation": "Questo è esattamente il senso della metafora della tipografia."
+  },
+  {
+    "id": 9,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il contesto è l'insieme delle informazioni che forniamo all'AI per comprendere meglio situazione, obiettivo e dati necessari.",
+    "answer": true,
+    "explanation": "Questa è la definizione di contesto fornita dal modulo."
+  },
+  {
+    "id": 10,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'istruzione e il contesto sono esattamente la stessa cosa.",
+    "answer": false,
+    "explanation": "L'istruzione indica cosa fare; il contesto fornisce invece gli elementi necessari per farlo in modo appropriato."
+  },
+  {
+    "id": 11,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il contesto permette all'AI di restringere lo spazio delle possibili interpretazioni.",
+    "answer": true,
+    "explanation": "Il contesto permette all'AI di restringere lo spazio delle possibili interpretazioni."
+  },
+  {
+    "id": 12,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un contesto eccessivamente lungo, confuso o contraddittorio rende sempre più facile ottenere una risposta utile.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: può rendere più difficile ottenere una risposta utile."
+  },
+  {
+    "id": 13,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, vale il principio: informazioni pertinenti, ordinate e sufficienti.",
+    "answer": true,
+    "explanation": "Questo è il principio indicato nel modulo riguardo al contesto."
+  },
+  {
+    "id": 14,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una risposta convincente è sempre anche una risposta corretta.",
+    "answer": false,
+    "explanation": "Il modulo afferma che una risposta convincente non è necessariamente una risposta corretta."
+  },
+  {
+    "id": 15,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del medico, dire soltanto 'Non sto bene' è un'informazione vera ma insufficiente.",
+    "answer": true,
+    "explanation": "Questo è esattamente il senso della metafora del medico."
+  },
+  {
+    "id": 16,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel Prompt Engineering, il ruolo è l'identità, la prospettiva o la funzione che chiediamo all'AI di assumere durante un compito.",
+    "answer": true,
+    "explanation": "Questa è la definizione di ruolo fornita dal modulo."
+  },
+  {
+    "id": 17,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, chiedere all'AI di assumere un ruolo la trasforma realmente in quella figura professionale.",
+    "answer": false,
+    "explanation": "Non stiamo trasformando realmente l'AI: stiamo fornendo una cornice operativa che orienta il tipo di risposta."
+  },
+  {
+    "id": 18,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il ruolo può essere utile per ottenere una determinata prospettiva o un certo livello di linguaggio.",
+    "answer": true,
+    "explanation": "Il ruolo può essere particolarmente utile per questi scopi, secondo il modulo."
+  },
+  {
+    "id": 19,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il ruolo assegnato all'AI è una garanzia di competenza.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: il ruolo non va confuso con una garanzia di competenza."
+  },
+  {
+    "id": 20,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il ruolo modifica il modo in cui il sistema costruisce la risposta, ma non rende automaticamente vere le informazioni prodotte.",
+    "answer": true,
+    "explanation": "Questo è esattamente quanto afferma il modulo."
+  },
+  {
+    "id": 21,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la ricerca ha mostrato che modificare il prompt elimina completamente i limiti del modello.",
+    "answer": false,
+    "explanation": "La ricerca ha mostrato che modificare il prompt NON elimina i limiti del modello."
+  },
+  {
+    "id": 22,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un buon prompt può combinare istruzioni, contesto e ruolo.",
+    "answer": true,
+    "explanation": "Il modulo afferma esattamente questo."
+  },
+  {
+    "id": 23,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli esempi, nel Prompt Engineering, sono casi dimostrativi inseriti nel prompt per mostrare all'AI come svolgere un compito.",
+    "answer": true,
+    "explanation": "Questa è la definizione di esempi fornita dal modulo."
+  },
+  {
+    "id": 24,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la tecnica che fornisce pochi esempi nel prompt si chiama zero-shot prompting.",
+    "answer": false,
+    "explanation": "Questa tecnica si chiama few-shot prompting; lo zero-shot prompting è l'opposto."
+  },
+  {
+    "id": 25,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un compito richiesto senza fornire esempi specifici si chiama zero-shot prompting.",
+    "answer": true,
+    "explanation": "Il modulo definisce così lo zero-shot prompting."
+  },
+  {
+    "id": 26,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, gli esempi possono essere utilizzati anche per controllare il formato della risposta.",
+    "answer": true,
+    "explanation": "Gli esempi possono essere utilizzati anche per controllare il formato, secondo il modulo."
+  },
+  {
+    "id": 27,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, esempi ambigui o contraddittori aiutano sempre il modello a capire meglio il compito.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: esempi ambigui o contraddittori possono confondere il modello."
+  },
+  {
+    "id": 28,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, fornire esempi nel contesto può permettere al modello di adattarsi a un compito senza dover essere nuovamente addestrato.",
+    "answer": true,
+    "explanation": "Questo è quanto mostrato dalla ricerca citata nel modulo."
+  },
+  {
+    "id": 29,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della camicia piegata, l'esempio pratico rende visibile ciò che le parole potrebbero lasciare ambiguo.",
+    "answer": true,
+    "explanation": "Questo è esattamente il senso della metafora della camicia piegata."
+  },
+  {
+    "id": 30,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le tecniche avanzate di Prompt Engineering servono a strutturare richieste complesse e guidare il modello attraverso più passaggi.",
+    "answer": true,
+    "explanation": "Questa è la definizione di tecniche avanzate fornita dal modulo."
+  },
+  {
+    "id": 31,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, quando il compito è semplice può essere sufficiente una singola istruzione.",
+    "answer": true,
+    "explanation": "Il modulo afferma esattamente questo."
+  },
+  {
+    "id": 32,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, definire il formato dell'output non fa parte delle tecniche avanzate di Prompt Engineering.",
+    "answer": false,
+    "explanation": "Definire chiaramente il formato dell'output è indicato come una delle tecniche avanzate."
+  },
+  {
+    "id": 33,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il principio secondo cui un problema complesso viene separato in parti più semplici si chiama divide et impera.",
+    "answer": true,
+    "explanation": "Questo è il principio descritto nel modulo."
+  },
+  {
+    "id": 34,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una tecnica avanzata di prompting garantisce sempre una risposta corretta.",
+    "answer": false,
+    "explanation": "Nessuna tecnica garantisce automaticamente una risposta corretta, secondo il modulo."
+  },
+  {
+    "id": 35,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il prompt può guidare il modello, ma non controllare completamente ciò che produrrà.",
+    "answer": true,
+    "explanation": "Questo è esattamente quanto afferma il modulo."
+  },
+  {
+    "id": 36,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un prompt sofisticato elimina completamente le allucinazioni del modello.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: un prompt sofisticato non elimina le allucinazioni, gli errori logici o le informazioni inventate dal modello."
+  },
+  {
+    "id": 37,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un progetto con l'AI è un'attività articolata in più fasi utilizzata come strumento di supporto per raggiungere un obiettivo preciso.",
+    "answer": true,
+    "explanation": "Questa è la definizione di progetto con l'AI fornita dal modulo."
+  },
+  {
+    "id": 38,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un progetto richiede di definire solo l'obiettivo, senza considerare fasi, materiali o vincoli.",
+    "answer": false,
+    "explanation": "Un progetto richiede di definire obiettivo, fasi di lavoro, materiali, vincoli e risultato finale."
+  },
+  {
+    "id": 39,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un prompt cerca di ottenere una risposta, mentre un progetto organizza una serie di attività per raggiungere un risultato.",
+    "answer": true,
+    "explanation": "Questa è esattamente la distinzione fatta dal modulo."
+  },
+  {
+    "id": 40,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, quando l'AI accompagna una persona in un progetto, il controllo passa completamente all'AI.",
+    "answer": false,
+    "explanation": "Il progetto rimane sotto il controllo della persona, secondo il modulo."
+  },
+  {
+    "id": 41,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, nei progetti complessi conviene procedere per passi, dividendo il lavoro in parti più piccole e verificabili.",
+    "answer": true,
+    "explanation": "Questo è quanto consigliato dal modulo."
+  },
+  {
+    "id": 42,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, più un progetto è importante, meno è necessario verificare ciò che l'AI produce.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: più il progetto è importante, più è necessario verificare ciò che l'AI produce."
+  },
+  {
+    "id": 43,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'AI può accelerare un progetto, ma non sostituisce il controllo umano sul progetto.",
+    "answer": true,
+    "explanation": "Questa è la lezione finale espressa dal modulo."
+  },
+  {
+    "id": 44,
+    "module": "prompt-engineering",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della cena per molte persone, se manca un ingrediente durante la preparazione bisogna sempre ricominciare tutto da capo.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: si può intervenire subito senza dover ricominciare tutto da capo."
+  }
+]

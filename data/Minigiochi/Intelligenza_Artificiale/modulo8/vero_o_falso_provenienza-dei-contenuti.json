@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un watermark è un'informazione inserita all'interno di un contenuto digitale per identificarlo o attribuirne l'origine.",
+    "answer": true,
+    "explanation": "È la definizione di watermark fornita dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un watermark invisibile è sempre percepibile direttamente dall'utente, come una scritta sopra l'immagine.",
+    "answer": false,
+    "explanation": "Il watermark invisibile non è percepibile direttamente: è incorporato nei dati del contenuto."
+  },
+  {
+    "id": 3,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I watermark invisibili più moderni cercano di resistere a modifiche comuni come compressione, filtri o ridimensionamento.",
+    "answer": true,
+    "explanation": "È quanto descritto nel modulo riguardo ai watermark invisibili moderni."
+  },
+  {
+    "id": 4,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un watermark tradizionale visibile, come una scritta nell'angolo, non può mai essere rimosso.",
+    "answer": false,
+    "explanation": "Il modulo afferma che un watermark tradizionale può essere facilmente ritagliato."
+  },
+  {
+    "id": 5,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Google utilizza SynthID per incorporare watermark invisibili nei contenuti generati dai propri sistemi AI.",
+    "answer": true,
+    "explanation": "È quanto descritto nel modulo riguardo a Google e SynthID."
+  },
+  {
+    "id": 6,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'assenza di un watermark dimostra sempre che un contenuto è autentico.",
+    "answer": false,
+    "explanation": "Il modulo afferma che l'assenza di un watermark non dimostra automaticamente l'autenticità."
+  },
+  {
+    "id": 7,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2023 Google DeepMind presentò SynthID inizialmente per identificare immagini generate con Imagen.",
+    "answer": true,
+    "explanation": "È il caso reale documentato nel modulo."
+  },
+  {
+    "id": 8,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il watermark è descritto nel modulo come una prova assoluta di autenticità, non come un semplice strumento di verifica.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: il watermark è uno strumento di verifica, non una prova assoluta."
+  },
+  {
+    "id": 9,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "SynthID è una tecnologia sviluppata da Google DeepMind per inserire watermark digitali invisibili nei contenuti generati dall'AI.",
+    "answer": true,
+    "explanation": "È la definizione di SynthID fornita dal modulo."
+  },
+  {
+    "id": 10,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "SynthID è stata pensata esclusivamente per le immagini e non è mai stata estesa ad altri tipi di contenuto.",
+    "answer": false,
+    "explanation": "SynthID è stata estesa anche a testo, audio e video."
+  },
+  {
+    "id": 11,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il watermark di SynthID viene integrato direttamente nei pixel di un'immagine.",
+    "answer": true,
+    "explanation": "Il modulo descrive l'integrazione del watermark nei pixel dell'immagine."
+  },
+  {
+    "id": 12,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, SynthID è un detector universale capace di riconoscere infallibilmente ogni contenuto generato dall'AI.",
+    "answer": false,
+    "explanation": "Il modulo precisa che SynthID non è un detector universale dell'AI."
+  },
+  {
+    "id": 13,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se un'immagine non contiene il watermark di SynthID, si può concludere con certezza che è stata realizzata da una persona.",
+    "answer": false,
+    "explanation": "Non si può concludere automaticamente: l'immagine potrebbe provenire da un altro sistema AI."
+  },
+  {
+    "id": 14,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'espressione «ad fontes» significa «alle fonti» e invita a verificare la provenienza di un contenuto.",
+    "answer": true,
+    "explanation": "È il significato dell'espressione citata nel modulo."
+  },
+  {
+    "id": 15,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2024 Google DeepMind ha annunciato l'estensione di SynthID a testo e musica generati dall'AI.",
+    "answer": true,
+    "explanation": "È il caso reale documentato nel modulo."
+  },
+  {
+    "id": 16,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'obiettivo dichiarato dell'estensione di SynthID era alterare significativamente la qualità percepita dei contenuti.",
+    "answer": false,
+    "explanation": "L'obiettivo era contribuire all'identificazione senza alterare significativamente la qualità percepita."
+  },
+  {
+    "id": 17,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I Content Credentials sono informazioni digitali che permettono di documentare la provenienza di un contenuto.",
+    "answer": true,
+    "explanation": "È la definizione fornita dal modulo."
+  },
+  {
+    "id": 18,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I Content Credentials sono basati sullo standard C2PA, sviluppato per fornire informazioni verificabili sulla provenienza dei contenuti digitali.",
+    "answer": true,
+    "explanation": "È quanto affermato esplicitamente dal modulo."
+  },
+  {
+    "id": 19,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il watermark e i Content Credentials sono esattamente la stessa cosa.",
+    "answer": false,
+    "explanation": "Il watermark lascia traccia dentro il contenuto, i Content Credentials lo accompagnano con informazioni strutturate."
+  },
+  {
+    "id": 20,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le firme digitali dello standard C2PA permettono di verificare che le informazioni sulla provenienza non siano state alterate dopo essere state firmate.",
+    "answer": true,
+    "explanation": "È la funzione delle firme digitali descritta nel modulo."
+  },
+  {
+    "id": 21,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, i Content Credentials possono sempre raccontare l'intera storia di un contenuto, senza alcuna eccezione.",
+    "answer": false,
+    "explanation": "Alcuni passaggi possono andare perduti se le informazioni non vengono conservate."
+  },
+  {
+    "id": 22,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Adobe ha integrato i Content Credentials nei propri strumenti creativi.",
+    "answer": true,
+    "explanation": "È il caso reale documentato nel modulo."
+  },
+  {
+    "id": 23,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, sapere che un contenuto è stato modificato con un certo strumento significa automaticamente sapere se ciò che rappresenta è vero.",
+    "answer": false,
+    "explanation": "Il modulo afferma che provenienza e verità non sono la stessa cosa."
+  },
+  {
+    "id": 24,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del pacco spedito, i Content Credentials vengono paragonati a un'etichetta digitale che documenta la provenienza del contenuto.",
+    "answer": true,
+    "explanation": "È la metafora usata nel modulo per descrivere i Content Credentials."
+  },
+  {
+    "id": 25,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La provenienza digitale riguarda soltanto chi ha creato un contenuto, e non come è stato prodotto o modificato.",
+    "answer": false,
+    "explanation": "La provenienza digitale riguarda anche come è stato prodotto, le modifiche e la diffusione."
+  },
+  {
+    "id": 26,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La sequenza descritta nel modulo per la provenienza digitale è: origine, creazione, modifica, pubblicazione, diffusione.",
+    "answer": true,
+    "explanation": "È la sequenza indicata esplicitamente nel modulo."
+  },
+  {
+    "id": 27,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, watermark, SynthID e Content Credentials possono lavorare insieme, ma non sono equivalenti.",
+    "answer": true,
+    "explanation": "È quanto affermato dal modulo su questi strumenti."
+  },
+  {
+    "id": 28,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un contenuto con provenienza documentata non può mai rappresentare una situazione falsa.",
+    "answer": false,
+    "explanation": "Un contenuto con provenienza documentata può comunque rappresentare una situazione falsa."
+  },
+  {
+    "id": 29,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio quotidiano del modulo, la persona scopre che la didascalia della fotografia era stata aggiunta molto tempo dopo la pubblicazione originale dell'immagine.",
+    "answer": true,
+    "explanation": "È quanto scoperto nell'esempio quotidiano descritto nel modulo."
+  },
+  {
+    "id": 30,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2024 l'agenzia Reuters ha annunciato l'utilizzo di Content Credentials basati sullo standard C2PA per alcune proprie immagini.",
+    "answer": true,
+    "explanation": "È il caso reale documentato nel modulo."
+  },
+  {
+    "id": 31,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, documentare la provenienza nel giornalismo equivale a garantire automaticamente che una fotografia racconti la verità.",
+    "answer": false,
+    "explanation": "Documentare la provenienza aggiunge trasparenza, ma non garantisce automaticamente la verità."
+  },
+  {
+    "id": 32,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della catena di custodia, a ogni passaggio viene registrato chi ha ricevuto l'oggetto, quando e cosa è stato fatto.",
+    "answer": true,
+    "explanation": "È la descrizione della metafora usata nel modulo."
+  },
+  {
+    "id": 33,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I limiti della provenienza digitale impediscono agli strumenti di garantire da soli che un contenuto sia autentico, completo, corretto o vero.",
+    "answer": true,
+    "explanation": "È la definizione dei limiti fornita dal modulo."
+  },
+  {
+    "id": 34,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, tutti i contenuti digitali possiedono sempre watermark o Content Credentials.",
+    "answer": false,
+    "explanation": "Non tutti i contenuti digitali possiedono watermark o Content Credentials."
+  },
+  {
+    "id": 35,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un contenuto può perdere parte delle informazioni di provenienza se viene scaricato, convertito o pubblicato attraverso servizi che non le conservano.",
+    "answer": true,
+    "explanation": "È il secondo limite descritto nel modulo."
+  },
+  {
+    "id": 36,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la provenienza dimostra sempre la verità di un contenuto, anche quando la fotografia è autentica.",
+    "answer": false,
+    "explanation": "La provenienza non dimostra necessariamente la verità di ciò che il contenuto rappresenta."
+  },
+  {
+    "id": 37,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una fotografia autentica può essere accompagnata da una didascalia falsa o mostrata fuori dal suo contesto originale.",
+    "answer": true,
+    "explanation": "È quanto affermato esplicitamente dal modulo."
+  },
+  {
+    "id": 38,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un approccio solido alla verifica dell'AI dovrebbe basarsi su un singolo indicatore, come il solo watermark.",
+    "answer": false,
+    "explanation": "Il modulo suggerisce di combinare più elementi, non affidarsi a un solo indicatore."
+  },
+  {
+    "id": 39,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, interpretare le tracce lasciate dalla tecnologia rimane un compito umano.",
+    "answer": true,
+    "explanation": "È quanto affermato nella conclusione del capitolo sui limiti."
+  },
+  {
+    "id": 40,
+    "module": "provenienza-dei-contenuti",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora dell'automobile usata, il libretto dei tagliandi garantisce da solo che l'automobile sia perfetta, senza bisogno di ulteriori controlli.",
+    "answer": false,
+    "explanation": "Il libretto non garantisce la perfezione dell'auto: serve comunque un controllo diretto."
+  }
+]

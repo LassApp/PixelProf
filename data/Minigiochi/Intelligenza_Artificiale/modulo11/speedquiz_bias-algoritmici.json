@@ -1,0 +1,737 @@
+[
+  {
+    "id": 1,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il bias algoritmico secondo il modulo?",
+    "options": [
+      "Una distorsione sistematica nel funzionamento o nei risultati di un sistema algoritmico, che può favorire o sfavorire determinati individui o gruppi",
+      "Un errore di programmazione facilmente correggibile",
+      "Un tipo di protezione dei dati personali",
+      "Una tecnica per velocizzare i calcoli di un algoritmo"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di bias algoritmico fornita esplicitamente dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Il bias algoritmico implica sempre che l'algoritmo sia stato programmato intenzionalmente per discriminare?",
+    "options": [
+      "No, il problema può nascere dai dati usati per addestrare il sistema o dalle scelte di chi lo ha progettato",
+      "Sì, è sempre una scelta intenzionale del programmatore",
+      "Sì, ma solo nei sistemi giudiziari",
+      "No, riguarda soltanto errori tecnici del codice"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo chiarisce che il bias non implica necessariamente un'intenzione discriminatoria."
+  },
+  {
+    "id": 3,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se nei dati di addestramento esiste una distorsione, secondo il modulo?",
+    "options": [
+      "Il sistema può apprenderla, riprodurla e in alcuni casi amplificarla",
+      "Il sistema la corregge automaticamente",
+      "Il sistema smette di funzionare",
+      "Il sistema la ignora sempre"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che il sistema può apprendere, riprodurre e persino amplificare la distorsione."
+  },
+  {
+    "id": 4,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa impara un sistema addestrato con curriculum storici in cui una categoria è stata assunta meno frequentemente, secondo l'esempio del modulo?",
+    "options": [
+      "Che appartenere a quella categoria è associato a una minore probabilità di successo",
+      "Che deve escludere automaticamente quella categoria per legge",
+      "Che quella categoria è sempre la più qualificata",
+      "Che i dati storici non contano nella selezione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sistema riconosce un modello nei dati e lo associa a una minore probabilità di successo."
+  },
+  {
+    "id": 5,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la lezione fondamentale del capitolo sul bias, secondo il modulo?",
+    "options": [
+      "Un risultato prodotto da un algoritmo non è automaticamente un risultato imparziale",
+      "Gli algoritmi sono sempre più imparziali delle persone",
+      "Il bias riguarda solo i sistemi giudiziari",
+      "I dati storici non influenzano mai un algoritmo"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la lezione fondamentale enunciata esplicitamente dal modulo."
+  },
+  {
+    "id": 6,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa nota la persona nell'esempio quotidiano riguardo alle offerte di lavoro mostrate dall'applicazione?",
+    "options": [
+      "Alcune posizioni simili vengono mostrate più frequentemente ad alcuni utenti e molto meno ad altri",
+      "Tutte le offerte sono identiche per ogni utente",
+      "L'applicazione non mostra mai offerte di lavoro",
+      "Le offerte cambiano casualmente ogni giorno"
+    ],
+    "correctIndex": 0,
+    "explanation": "È quanto descritto nell'esempio quotidiano del modulo."
+  },
+  {
+    "id": 7,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde con il sistema sperimentale di Amazon per la valutazione dei curriculum, secondo il caso reale del 2018?",
+    "options": [
+      "Aveva sviluppato una preferenza verso i candidati uomini per alcuni ruoli tecnici, a causa dei dati storici utilizzati per l'addestramento",
+      "Selezionava candidati in modo completamente casuale",
+      "Rifiutava sistematicamente tutti i candidati",
+      "Non veniva utilizzato per ruoli tecnici"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il caso reale documentato nel modulo."
+  },
+  {
+    "id": 8,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fece Amazon dopo aver scoperto il problema del proprio sistema di selezione dei curriculum?",
+    "options": [
+      "Abbandonò il progetto",
+      "Continuò a utilizzarlo senza modifiche",
+      "Lo vendette a un'altra azienda",
+      "Lo rese disponibile pubblicamente per altre aziende"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che Amazon abbandonò successivamente il progetto."
+  },
+  {
+    "id": 9,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostra il caso Amazon, secondo il modulo?",
+    "options": [
+      "Che anche un algoritmo progettato per rendere più efficiente una selezione può incorporare distorsioni presenti nella realtà da cui apprende",
+      "Che gli algoritmi di selezione del personale sono sempre affidabili",
+      "Che i dati storici non hanno alcuna influenza sui sistemi di AI",
+      "Che solo le piccole aziende possono avere problemi di bias"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la conclusione tratta esplicitamente dal modulo sul caso Amazon."
+  },
+  {
+    "id": 10,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonati l'algoritmo e i dati nella metafora del giudice con la vecchia mappa?",
+    "options": [
+      "L'algoritmo è il giudice, i dati sono la sua mappa",
+      "L'algoritmo è la città, i dati sono il giudice",
+      "L'algoritmo è la mappa, i dati sono la città",
+      "L'algoritmo e i dati sono entrambi il giudice"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la metafora usata esplicitamente nel modulo."
+  },
+  {
+    "id": 11,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono i dati nel contesto dell'AI, secondo il modulo?",
+    "options": [
+      "Le informazioni utilizzate da un sistema di intelligenza artificiale per apprendere, riconoscere schemi, fare previsioni o prendere decisioni",
+      "Solo i numeri utilizzati nei calcoli finanziari",
+      "Solo le informazioni raccolte tramite sondaggi",
+      "Solo il codice sorgente di un programma"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di dati fornita dal modulo."
+  },
+  {
+    "id": 12,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può accadere se in un dataset per il riconoscimento facciale sono presenti soprattutto immagini di un determinato gruppo, secondo il modulo?",
+    "options": [
+      "Il sistema potrebbe avere maggiori difficoltà a riconoscere le persone appartenenti ad altri gruppi",
+      "Il sistema riconosce automaticamente tutti i gruppi allo stesso modo",
+      "Il sistema smette di funzionare completamente",
+      "Il sistema richiede meno dati per funzionare"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo descrive proprio questo rischio legato alla rappresentatività dei dati."
+  },
+  {
+    "id": 13,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali problemi può presentare un dataset, secondo il modulo?",
+    "options": [
+      "Può essere incompleto, sbilanciato, storicamente distorto o non aggiornato",
+      "Può essere soltanto troppo grande",
+      "Può essere soltanto scritto in una lingua sbagliata",
+      "Può essere soltanto troppo recente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono i quattro problemi elencati esplicitamente dal modulo."
+  },
+  {
+    "id": 14,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'espressione «garbage in, garbage out» citata nel modulo?",
+    "options": [
+      "Se forniamo informazioni problematiche a un sistema, non possiamo aspettarci automaticamente risultati corretti",
+      "Ogni sistema di AI produce sempre risultati corretti indipendentemente dai dati",
+      "I dati vanno sempre eliminati dopo l'uso",
+      "Solo i dati numerici sono affidabili"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il significato dell'espressione citata esplicitamente nel modulo."
+  },
+  {
+    "id": 15,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la persona dell'esempio quotidiano potrebbe notare che l'app fotografica riconosce alcune persone meglio di altre?",
+    "options": [
+      "Perché il sistema potrebbe essere stato addestrato con immagini scattate in condizioni di luce diverse da quelle abituali",
+      "Perché l'app non utilizza mai l'intelligenza artificiale",
+      "Perché le fotografie non vengono mai salvate",
+      "Perché il telefono ha una memoria insufficiente"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la spiegazione fornita nell'esempio quotidiano del modulo."
+  },
+  {
+    "id": 16,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è lo studio Gender Shades, citato nel modulo come caso reale?",
+    "options": [
+      "Uno studio del 2018 che analizzò diversi sistemi commerciali di classificazione del genere attraverso immagini di persone con differenti tonalità della pelle",
+      "Un algoritmo per la selezione del personale",
+      "Una legge europea sulla protezione dei dati",
+      "Un sistema per la clonazione vocale"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la descrizione dello studio Gender Shades fornita dal modulo."
+  },
+  {
+    "id": 17,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi condusse lo studio Gender Shades, secondo il modulo?",
+    "options": [
+      "Joy Buolamwini e Timnit Gebru",
+      "ProPublica",
+      "Amazon",
+      "Il Garante per la protezione dei dati personali"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono le due ricercatrici indicate esplicitamente dal modulo."
+  },
+  {
+    "id": 18,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa evidenziò lo studio Gender Shades riguardo alle prestazioni dei sistemi analizzati?",
+    "options": [
+      "Gli errori risultavano molto più frequenti per le donne con pelle più scura rispetto agli uomini con pelle più chiara",
+      "Tutti i sistemi analizzati avevano prestazioni identiche per ogni gruppo",
+      "Gli errori riguardavano soltanto gli uomini con pelle chiara",
+      "Nessun sistema commesse errori significativi"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il risultato principale dello studio riportato dal modulo."
+  },
+  {
+    "id": 19,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa insegna il caso Gender Shades, secondo il modulo?",
+    "options": [
+      "Che valutare un sistema soltanto attraverso una percentuale generale di accuratezza può nascondere problemi importanti",
+      "Che i sistemi di riconoscimento facciale sono sempre accurati al 100%",
+      "Che la tonalità della pelle non ha alcuna influenza sui risultati",
+      "Che gli studi scientifici non sono utili per valutare l'AI"
+    ],
+    "correctIndex": 0,
+    "explanation": "È l'insegnamento tratto esplicitamente dal modulo."
+  },
+  {
+    "id": 20,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata la rappresentatività dei dati nella metafora della torta?",
+    "options": [
+      "Al fatto che per conoscere davvero la torta bisogna considerare tutti gli ingredienti e le loro proporzioni, non assaggiarne soltanto uno",
+      "Al fatto che una torta con pochi ingredienti è sempre migliore",
+      "Al fatto che gli ingredienti non influenzano il sapore finale",
+      "Al fatto che ogni torta ha lo stesso sapore indipendentemente dagli ingredienti"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la metafora usata esplicitamente nel modulo."
+  },
+  {
+    "id": 21,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando si verifica la discriminazione algoritmica, secondo il modulo?",
+    "options": [
+      "Quando un sistema automatizzato produce, direttamente o indirettamente, un trattamento ingiustamente sfavorevole nei confronti di una persona o di un gruppo",
+      "Quando un sistema commette un semplice errore tecnico occasionale",
+      "Quando un utente non è soddisfatto del risultato ottenuto",
+      "Quando un sistema richiede troppo tempo per rispondere"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di discriminazione algoritmica fornita dal modulo."
+  },
+  {
+    "id": 22,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra bias e discriminazione, secondo il modulo?",
+    "options": [
+      "Il bias è una distorsione nel modo in cui un sistema tratta le informazioni; la discriminazione riguarda le conseguenze che quella distorsione produce sulle persone",
+      "Sono esattamente la stessa cosa",
+      "Il bias riguarda solo il codice, la discriminazione riguarda solo i dati",
+      "La discriminazione è sempre intenzionale, il bias non lo è mai"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la distinzione spiegata esplicitamente dal modulo."
+  },
+  {
+    "id": 23,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la discriminazione algoritmica diretta, secondo il modulo?",
+    "options": [
+      "Quando il sistema utilizza esplicitamente una caratteristica personale per prendere una decisione",
+      "Quando il sistema utilizza soltanto dati numerici",
+      "Quando il sistema non utilizza alcun dato personale",
+      "Quando il sistema viene aggiornato regolarmente"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di discriminazione diretta fornita dal modulo."
+  },
+  {
+    "id": 24,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la discriminazione algoritmica indiretta, secondo il modulo?",
+    "options": [
+      "Quando il sistema utilizza informazioni che, pur sembrando neutrali, sono fortemente correlate con una caratteristica personale",
+      "Quando il sistema commette un errore casuale e isolato",
+      "Quando il sistema viene utilizzato senza connessione a Internet",
+      "Quando il sistema richiede l'intervento di un umano"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di discriminazione indiretta fornita dal modulo."
+  },
+  {
+    "id": 25,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa fairness nel contesto dei sistemi automatizzati, secondo il modulo?",
+    "options": [
+      "L'obiettivo di evitare trattamenti ingiustamente svantaggiosi, senza che questo implichi necessariamente risultati identici per tutti",
+      "Garantire che ogni persona riceva sempre esattamente lo stesso risultato",
+      "Un termine tecnico che riguarda solo la velocità dei calcoli",
+      "Un tipo di licenza software"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di fairness fornita dal modulo."
+  },
+  {
+    "id": 26,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede alla persona dell'esempio quotidiano che richiede un finanziamento tramite un'applicazione bancaria?",
+    "options": [
+      "La richiesta viene analizzata automaticamente e riceve una risposta di rifiuto senza parlare con un operatore",
+      "Riceve automaticamente l'approvazione del finanziamento",
+      "Deve necessariamente recarsi in banca di persona",
+      "Il sistema le chiede di fornire ulteriori garanzie economiche"
+    ],
+    "correctIndex": 0,
+    "explanation": "È quanto descritto nell'esempio quotidiano del modulo."
+  },
+  {
+    "id": 27,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve il sistema COMPAS, citato nel modulo come caso reale sulla discriminazione?",
+    "options": [
+      "A stimare il rischio di recidiva di persone coinvolte nel sistema giudiziario negli Stati Uniti",
+      "A selezionare candidati per un lavoro",
+      "A valutare richieste di finanziamento bancario",
+      "A riconoscere volti nelle fotografie"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la funzione di COMPAS descritta nel modulo."
+  },
+  {
+    "id": 28,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sostenne l'inchiesta di ProPublica del 2016 riguardo al sistema COMPAS?",
+    "options": [
+      "Che le persone nere risultavano più frequentemente classificate come ad alto rischio rispetto alle persone bianche classificate nello stesso modo",
+      "Che il sistema non veniva mai utilizzato nei tribunali",
+      "Che il sistema era completamente accurato per ogni gruppo",
+      "Che il sistema era stato eliminato immediatamente dopo la sua introduzione"
+    ],
+    "correctIndex": 0,
+    "explanation": "È quanto sostenuto dall'inchiesta di ProPublica, secondo il modulo."
+  },
+  {
+    "id": 29,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra il caso COMPAS, secondo il modulo?",
+    "options": [
+      "Che non basta chiedere a un algoritmo di essere imparziale: bisogna prima stabilire cosa si intende per imparzialità e come misurarla",
+      "Che gli algoritmi giudiziari sono sempre completamente equi",
+      "Che ricercatori e sviluppatori concordano sempre su un unico criterio di equità",
+      "Che il sistema giudiziario non dovrebbe mai utilizzare dati statistici"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la conclusione tratta esplicitamente dal modulo sul caso COMPAS."
+  },
+  {
+    "id": 30,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato l'algoritmo nella metafora della porta automatica?",
+    "options": [
+      "A una porta la cui regola può essere identica per tutti, ma il cui risultato può non esserlo",
+      "A una porta che si apre sempre allo stesso modo per ogni persona",
+      "A una porta che non si apre mai",
+      "A una porta che riconosce solo un tipo di persona"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la metafora usata esplicitamente nel modulo."
+  },
+  {
+    "id": 31,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un caso reale di bias algoritmico, secondo il modulo?",
+    "options": [
+      "Un episodio documentato nel quale un sistema automatizzato ha prodotto risultati problematici, mostrando una distorsione nei dati, nella progettazione, nell'utilizzo o nella valutazione",
+      "Una simulazione teorica mai verificatasi nella realtà",
+      "Un tipo di errore che riguarda solo i sistemi giudiziari",
+      "Un algoritmo che funziona sempre correttamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di caso reale di bias algoritmico fornita dal modulo."
+  },
+  {
+    "id": 32,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra il caso Amazon tra i casi reali analizzati nel modulo?",
+    "options": [
+      "Che il sistema penalizzò alcune candidature femminili a causa di dati storici che riflettevano una maggiore presenza maschile nei ruoli tecnici",
+      "Che il sistema favoriva sempre le candidature femminili",
+      "Che il sistema non utilizzava alcun dato storico",
+      "Che il problema riguardava soltanto la velocità di elaborazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il riepilogo del caso Amazon fornito dal modulo."
+  },
+  {
+    "id": 33,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostrò lo studio Gender Shades tra i casi reali analizzati nel modulo?",
+    "options": [
+      "Differenze molto marcate nelle prestazioni dei sistemi di classificazione del genere a seconda del genere e della tonalità della pelle",
+      "Che tutti i sistemi di riconoscimento facciale sono identici",
+      "Che il riconoscimento facciale non viene mai utilizzato commercialmente",
+      "Che la tonalità della pelle non influenza mai i risultati"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il riepilogo dello studio Gender Shades fornito dal modulo."
+  },
+  {
+    "id": 34,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa portò la vicenda di COMPAS, secondo il modulo?",
+    "options": [
+      "A un acceso dibattito sulla possibilità di definire matematicamente cosa significhi «equità» in ambito giudiziario",
+      "All'eliminazione di ogni sistema algoritmico dai tribunali statunitensi",
+      "A un accordo unanime tra ricercatori su cosa significhi equità",
+      "All'assenza di qualsiasi conseguenza pratica"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la conseguenza descritta dal modulo riguardo al caso COMPAS."
+  },
+  {
+    "id": 35,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa hanno in comune i casi di Amazon, Gender Shades e COMPAS, secondo il modulo?",
+    "options": [
+      "Mostrano che l'AI non opera nel vuoto, ma utilizza dati prodotti dalla società e viene utilizzata in contesti dove le decisioni hanno conseguenze sulle persone",
+      "Riguardano tutti esclusivamente il settore bancario",
+      "Sono tutti casi in cui l'algoritmo si è rivelato completamente neutrale",
+      "Non hanno alcun elemento in comune"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il principio comune individuato esplicitamente dal modulo."
+  },
+  {
+    "id": 36,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali domande propone il modulo per valutare un sistema, oltre a chiedersi se funziona?",
+    "options": [
+      "Funziona per chi? Con quale accuratezza? In quali condizioni? Con quali conseguenze?",
+      "Quanto costa? Quanto è veloce? Chi lo ha programmato?",
+      "È gratuito? È popolare? È recente?",
+      "Quante persone lo conoscono? È stato pubblicizzato?"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono le domande proposte esplicitamente dal modulo."
+  },
+  {
+    "id": 37,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa scopre la persona dell'esempio quotidiano analizzando centinaia di fotografie filtrate dall'app di riconoscimento?",
+    "options": [
+      "Che gli errori si concentrano sistematicamente su alcune persone o condizioni",
+      "Che l'applicazione non commette mai errori",
+      "Che l'applicazione riconosce sempre tutte le persone allo stesso modo",
+      "Che gli errori sono distribuiti in modo perfettamente casuale"
+    ],
+    "correctIndex": 0,
+    "explanation": "È quanto descritto nell'esempio quotidiano del modulo."
+  },
+  {
+    "id": 38,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno fu condotto lo studio Gender Shades, secondo il modulo?",
+    "options": [
+      "2018",
+      "2016",
+      "2023",
+      "2024"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica esplicitamente il 2018."
+  },
+  {
+    "id": 39,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa trasformò il caso Gender Shades, secondo il modulo?",
+    "options": [
+      "Una questione astratta sui dati sbilanciati in una domanda misurabile su quanto sbaglia il sistema per persone diverse",
+      "Un problema tecnico in una questione puramente legale",
+      "Un dibattito pubblico in un segreto aziendale",
+      "Un errore isolato in una regola generale valida sempre"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la trasformazione descritta esplicitamente dal modulo."
+  },
+  {
+    "id": 40,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonati gli errori nascosti dalla media generale nella metafora della scuola con cento studenti?",
+    "options": [
+      "Al fatto che i cinque studenti che hanno fallito l'esame appartengono tutti alla stessa classe, nascondendo così un problema specifico",
+      "Al fatto che tutti gli studenti hanno ottenuto lo stesso punteggio",
+      "Al fatto che l'esame era troppo facile per tutti",
+      "Al fatto che la scuola ha eliminato l'esame l'anno successivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la metafora usata esplicitamente nel modulo."
+  },
+  {
+    "id": 41,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la mitigazione del bias algoritmico, secondo il modulo?",
+    "options": [
+      "L'insieme di tecniche, controlli e decisioni progettuali utilizzati per individuare, ridurre e monitorare le distorsioni presenti nei sistemi di AI",
+      "Un algoritmo che elimina automaticamente ogni tipo di errore",
+      "Una legge che vieta l'uso dei sistemi di intelligenza artificiale",
+      "Un tipo di dataset privo di qualsiasi informazione personale"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di mitigazione fornita dal modulo."
+  },
+  {
+    "id": 42,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'obiettivo della mitigazione del bias, secondo il modulo?",
+    "options": [
+      "Costruire sistemi più equi, controllabili e trasparenti, non promettere un algoritmo perfettamente neutrale",
+      "Eliminare completamente ogni algoritmo esistente",
+      "Garantire che ogni sistema produca sempre lo stesso risultato per tutti",
+      "Ridurre al minimo il numero di dati utilizzati"
+    ],
+    "correctIndex": 0,
+    "explanation": "È l'obiettivo indicato esplicitamente dal modulo."
+  },
+  {
+    "id": 43,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In cosa consiste la prima forma di mitigazione, secondo il modulo?",
+    "options": [
+      "Nel controllare i dati, migliorando la raccolta e aumentando la rappresentazione delle categorie meno presenti",
+      "Nel disattivare completamente il sistema",
+      "Nell'aumentare la velocità di elaborazione",
+      "Nel ridurre il numero di utenti che utilizzano il sistema"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la prima forma di mitigazione descritta dal modulo."
+  },
+  {
+    "id": 44,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché non basta correggere soltanto i dati, secondo il modulo?",
+    "options": [
+      "Perché bisogna anche verificare come il modello si comporta, misurando le prestazioni separatamente per i diversi gruppi",
+      "Perché i dati non hanno alcuna influenza sui risultati",
+      "Perché correggere i dati è sempre impossibile",
+      "Perché i modelli non utilizzano mai dati reali"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la spiegazione fornita esplicitamente dal modulo."
+  },
+  {
+    "id": 45,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché sono importanti i test prima e dopo il rilascio di un sistema di AI, secondo il modulo?",
+    "options": [
+      "Perché i dati, le persone e i contesti di utilizzo cambiano nel tempo",
+      "Perché altrimenti il sistema non potrebbe mai essere venduto",
+      "Perché i test servono solo a velocizzare il sistema",
+      "Perché la legge lo richiede in ogni singolo paese del mondo"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la motivazione fornita esplicitamente dal modulo."
+  },
+  {
+    "id": 46,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che ruolo ha la supervisione umana nella mitigazione del bias, secondo il modulo?",
+    "options": [
+      "Comprendere il processo, individuare anomalie e intervenire quando necessario, senza dover necessariamente sostituire l'algoritmo",
+      "Sostituire completamente l'algoritmo in ogni fase del processo",
+      "Nessun ruolo, poiché l'AI non necessita di supervisione",
+      "Solo approvare formalmente i risultati senza controllarli"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il ruolo della supervisione umana descritto dal modulo."
+  },
+  {
+    "id": 47,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa l'azienda nell'esempio quotidiano del modulo dopo il rilascio del servizio basato su AI?",
+    "options": [
+      "Continua a monitorare i risultati e, se necessario, corregge i dati o il modello",
+      "Smette completamente di controllare il sistema",
+      "Elimina il servizio dopo il primo utilizzo",
+      "Ignora ogni segnalazione degli utenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "È quanto descritto nell'esempio quotidiano del modulo."
+  },
+  {
+    "id": 48,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostra il caso Gender Shades riguardo alla mitigazione, secondo il modulo?",
+    "options": [
+      "Che misurare un problema è il primo passo per poterlo correggere",
+      "Che i problemi di bias non possono mai essere risolti",
+      "Che la misurazione delle prestazioni è inutile",
+      "Che solo le grandi aziende possono affrontare il problema del bias"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il principio generale tratto dal caso Gender Shades, secondo il modulo."
+  },
+  {
+    "id": 49,
+    "module": "bias-algoritmici",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonati i dati, l'algoritmo e i controlli nella metafora dell'automobile?",
+    "options": [
+      "Ai dati come carburante, all'algoritmo come motore e ai controlli come sistemi di sicurezza",
+      "Ai dati come pneumatici, all'algoritmo come carrozzeria e ai controlli come clacson",
+      "Ai dati come volante, all'algoritmo come freni e ai controlli come specchietti",
+      "Ai dati come radio, all'algoritmo come sedili e ai controlli come tergicristalli"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la metafora usata esplicitamente nel modulo."
+  }
+]

@@ -1,0 +1,752 @@
+[
+  {
+    "id": 1,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un chatbot secondo il modulo?",
+    "options": [
+      "Un sistema software progettato per dialogare con una persona attraverso messaggi, voce o altri strumenti di comunicazione",
+      "Un sistema capace di decidere quali azioni compiere per raggiungere un obiettivo",
+      "Una sequenza organizzata di attività da eseguire",
+      "Un collegamento tra due sistemi software"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un chatbot è un sistema software progettato per dialogare con una persona attraverso messaggi, voce o altri strumenti di comunicazione."
+  },
+  {
+    "id": 2,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un agente AI secondo il modulo?",
+    "options": [
+      "Un sistema che si limita a rispondere alle domande",
+      "Un sistema capace non solo di comprendere una richiesta, ma anche di decidere quali azioni compiere per raggiungere un obiettivo",
+      "Un semplice motore di ricerca",
+      "Un database di informazioni"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un agente AI è un sistema basato sull'intelligenza artificiale capace non solo di comprendere una richiesta, ma anche di decidere quali azioni compiere per raggiungere un obiettivo."
+  },
+  {
+    "id": 3,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza fondamentale tra chatbot e agente, secondo il modulo?",
+    "options": [
+      "Il chatbot dialoga; l'agente può agire",
+      "Il chatbot è più veloce dell'agente",
+      "L'agente non può mai rispondere a domande semplici",
+      "Il chatbot richiede sempre un pagamento"
+    ],
+    "correctIndex": 0,
+    "explanation": "La differenza fondamentale è questa: il chatbot dialoga; l'agente può agire."
+  },
+  {
+    "id": 4,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il compito di un chatbot tradizionale davanti a una domanda come 'Qual è la capitale della Francia?', secondo il modulo?",
+    "options": [
+      "Compiere una serie di azioni per verificare la risposta",
+      "Produrre una risposta, come 'Parigi'",
+      "Consultare un calendario",
+      "Modificare un documento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il suo compito termina sostanzialmente con la risposta 'Parigi'."
+  },
+  {
+    "id": 5,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali componenti può utilizzare un agente per raggiungere un obiettivo, secondo il modulo?",
+    "options": [
+      "Solo un database di password",
+      "Un modello di AI, una memoria o contesto e degli strumenti per interagire con applicazioni esterne",
+      "Solo un abbonamento premium",
+      "Solo una connessione a Internet più veloce"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un agente può utilizzare un modello di AI per comprendere e ragionare, una memoria o un contesto e degli strumenti (tools) per interagire con applicazioni e servizi esterni."
+  },
+  {
+    "id": 6,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa dipendono le capacità di un agente, secondo il modulo?",
+    "options": [
+      "Dagli strumenti a cui ha accesso e dalle autorizzazioni che gli vengono concesse",
+      "Solo dalla velocità della connessione internet",
+      "Solo dal numero di utenti che lo utilizzano",
+      "Solo dal prezzo dell'abbonamento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le capacità di un agente dipendono dagli strumenti a cui ha accesso e dalle autorizzazioni che gli vengono concesse."
+  },
+  {
+    "id": 7,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa deve aumentare quando un sistema può agire di più?",
+    "options": [
+      "Il numero di utenti",
+      "Il controllo sulle sue azioni",
+      "Il prezzo del servizio",
+      "La velocità di risposta"
+    ],
+    "correctIndex": 1,
+    "explanation": "Più un sistema può agire, maggiore deve essere il controllo sulle sue azioni."
+  },
+  {
+    "id": 8,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio della cena con amici, cosa può fare un agente se autorizzato, a differenza di un semplice chatbot?",
+    "options": [
+      "Solo fornire una lista di ristoranti",
+      "Arrivare fino alla prenotazione del ristorante",
+      "Solo indicare il prezzo medio dei ristoranti",
+      "Solo tradurre il menu in un'altra lingua"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'agente potrebbe cercare le opzioni, confrontarle e, in base alle autorizzazioni ricevute, arrivare fino alla prenotazione."
+  },
+  {
+    "id": 9,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresenta il passaggio dal 'dimmi come fare' al 'fallo per me', secondo il modulo?",
+    "options": [
+      "Un cambiamento di paradigma che aumenta sia il valore dell'automazione sia i rischi legati a errori e autorizzazioni",
+      "Una semplice modifica estetica dell'interfaccia",
+      "Una riduzione delle capacità del sistema",
+      "Un cambiamento che riguarda solo i chatbot, non gli agenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quando un sistema passa dal 'dimmi come fare' al 'fallo per me', aumentano sia il valore dell'automazione sia i rischi legati agli errori e alle autorizzazioni."
+  },
+  {
+    "id": 10,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del segretario, cosa fa l'agente rispetto al chatbot?",
+    "options": [
+      "Si limita a rispondere a una domanda specifica",
+      "Consulta l'agenda, verifica gli impegni, prepara l'invito e svolge i passaggi necessari",
+      "Rifiuta di svolgere qualsiasi compito",
+      "Richiede sempre l'intervento di un secondo segretario"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'agente consulta l'agenda, verifica gli impegni, prepara l'invito e svolge i passaggi necessari, entro i limiti delle autorizzazioni concesse."
+  },
+  {
+    "id": 11,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un workflow secondo il modulo?",
+    "options": [
+      "Un flusso di lavoro, cioè una sequenza organizzata di attività per raggiungere un determinato risultato",
+      "Un tipo di chatbot avanzato",
+      "Un sistema che decide autonomamente i propri obiettivi",
+      "Un'interfaccia di programmazione tra applicazioni"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un workflow è un flusso di lavoro, cioè una sequenza organizzata di attività che devono essere eseguite per raggiungere un determinato risultato."
+  },
+  {
+    "id": 12,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa stabilisce un workflow in un sistema di automazione, secondo il modulo?",
+    "options": [
+      "Cosa deve accadere, in quale ordine, quali condizioni verificare e quali azioni eseguire",
+      "Solo il prezzo del servizio",
+      "Solo la lingua della risposta",
+      "Solo il numero di utenti coinvolti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il workflow stabilisce cosa deve accadere, in quale ordine, quali condizioni devono essere verificate e quali azioni devono essere eseguite."
+  },
+  {
+    "id": 13,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come può essere rappresentata la logica di un workflow, secondo il modulo?",
+    "options": [
+      "Evento, elaborazione, decisione, azione, risultato",
+      "Obiettivo, pianificazione, osservazione, decisione",
+      "Chatbot, agente, integrazione, produttività",
+      "Analisi, scelta, verifica, autorizzazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "La logica può essere rappresentata come: evento, elaborazione, decisione, azione, risultato."
+  },
+  {
+    "id": 14,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa caratterizza un workflow tradizionale (senza AI), secondo il modulo?",
+    "options": [
+      "Una regola già stabilita, come 'Se arriva un file PDF, salvalo nella cartella Documenti'",
+      "La necessità di interpretare sempre il contenuto del messaggio",
+      "L'impossibilità di eseguire azioni ripetitive",
+      "La necessità costante di un agente autonomo"
+    ],
+    "correctIndex": 0,
+    "explanation": "In un workflow tradizionale, una regola potrebbe dire: 'Se arriva un file PDF, salvalo nella cartella Documenti', senza bisogno di interpretazione."
+  },
+  {
+    "id": 15,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando diventa utile l'intelligenza artificiale in un workflow, secondo il modulo?",
+    "options": [
+      "Quando il processo deve comprendere informazioni non strutturate o adattarsi a situazioni meno prevedibili",
+      "Solo quando il workflow è molto semplice",
+      "Solo quando non ci sono regole da seguire",
+      "Mai, il workflow funziona sempre meglio senza AI"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'intelligenza artificiale diventa utile quando il processo deve comprendere informazioni non strutturate, prendere decisioni sulla base del contenuto o adattarsi a situazioni meno prevedibili."
+  },
+  {
+    "id": 16,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali vantaggi offre un workflow ben progettato, secondo il modulo?",
+    "options": [
+      "Rende i processi più ordinati, riduce le attività ripetitive e diminuisce alcuni errori manuali",
+      "Elimina completamente la necessità di controllo umano",
+      "Garantisce sempre risultati perfetti",
+      "Riduce sempre il costo del servizio a zero"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un workflow ben progettato rende i processi più ordinati, riduce le attività ripetitive, diminuisce alcuni errori manuali e permette di sapere con precisione cosa è successo."
+  },
+  {
+    "id": 17,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può accadere se una regola all'interno di un workflow è sbagliata, secondo il modulo?",
+    "options": [
+      "Il workflow si ferma automaticamente",
+      "Il workflow può ripetere lo stesso errore automaticamente",
+      "Il workflow diventa un agente autonomo",
+      "Il workflow richiede sempre l'intervento di un tecnico esterno"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se una regola è sbagliata, il workflow può ripetere lo stesso errore automaticamente."
+  },
+  {
+    "id": 18,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio della fattura ricevuta via email, cosa succede se il documento non viene riconosciuto con sufficiente sicurezza?",
+    "options": [
+      "Il documento viene eliminato automaticamente",
+      "Il processo si ferma e chiede alla persona di controllarlo",
+      "Il documento viene inviato automaticamente a un indirizzo casuale",
+      "Il workflow si blocca definitivamente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se il documento non viene riconosciuto con sufficiente sicurezza, il processo può fermarsi e chiedere di controllarlo."
+  },
+  {
+    "id": 19,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un errore nella logica di un workflow può essere particolarmente dannoso, secondo il modulo?",
+    "options": [
+      "Perché il processo può essere eseguito su larga scala e l'errore può essere ripetuto migliaia di volte",
+      "Perché i workflow non possono mai essere corretti",
+      "Perché coinvolge sempre dati finanziari",
+      "Perché richiede sempre l'intervento di più persone"
+    ],
+    "correctIndex": 0,
+    "explanation": "Poiché il processo può essere eseguito su larga scala, un errore nella logica del workflow può essere ripetuto migliaia di volte."
+  },
+  {
+    "id": 20,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della catena di montaggio, cosa succede se una stazione è progettata male?",
+    "options": [
+      "Il problema rimane isolato in quella singola stazione",
+      "Il problema può propagarsi lungo tutta la catena",
+      "La catena si ferma automaticamente in modo sicuro",
+      "Il prodotto finale non viene comunque influenzato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se una stazione è progettata male, il problema può propagarsi lungo tutta la catena."
+  },
+  {
+    "id": 21,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un agente autonomo secondo il modulo?",
+    "options": [
+      "Un sistema di AI capace di perseguire un obiettivo attraverso una sequenza di azioni, valutando i risultati e adattando il proprio comportamento",
+      "Un chatbot che risponde solo a domande semplici",
+      "Una sequenza di passaggi definiti in anticipo e mai modificabili",
+      "Un tipo di integrazione tra due applicazioni"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un agente autonomo è un sistema di intelligenza artificiale capace di perseguire un obiettivo attraverso una sequenza di azioni, valutando i risultati ottenuti e adattando il proprio comportamento quando necessario."
+  },
+  {
+    "id": 22,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra un workflow e un agente autonomo, secondo il modulo?",
+    "options": [
+      "Nel workflow i passaggi sono definiti in anticipo; l'agente può selezionare o modificare il percorso in base alla situazione",
+      "Non c'è alcuna differenza tra i due",
+      "L'agente autonomo non può mai adattarsi a nuove situazioni",
+      "Il workflow è sempre più veloce dell'agente autonomo"
+    ],
+    "correctIndex": 0,
+    "explanation": "A differenza di un workflow, nel quale i passaggi sono definiti in anticipo, un agente può selezionare o modificare il percorso operativo in base alla situazione."
+  },
+  {
+    "id": 23,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa che l'autonomia di un agente non è libertà assoluta, secondo il modulo?",
+    "options": [
+      "Che l'agente opera all'interno di istruzioni, strumenti, autorizzazioni e limiti stabiliti in fase di progettazione",
+      "Che l'agente non può mai eseguire alcuna azione",
+      "Che l'agente decide liberamente i propri obiettivi",
+      "Che l'agente richiede sempre l'approvazione di un altro agente"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'agente opera all'interno di istruzioni, strumenti, autorizzazioni e limiti stabiliti in fase di progettazione."
+  },
+  {
+    "id": 24,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come può essere rappresentato il ciclo di un agente autonomo, secondo il modulo?",
+    "options": [
+      "Obiettivo, pianificazione, azione, osservazione, nuova decisione, risultato",
+      "Evento, elaborazione, decisione, azione, risultato",
+      "Chatbot, workflow, integrazione, produttività",
+      "Regola, condizione, eccezione, correzione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il funzionamento può essere rappresentato come un ciclo: obiettivo, pianificazione, azione, osservazione, nuova decisione, risultato."
+  },
+  {
+    "id": 25,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, con quale logica opera un agente autonomo, a differenza di un workflow?",
+    "options": [
+      "'Fai A, poi B, poi C'",
+      "'Devo raggiungere X. Quale azione è più utile per avvicinarmi a X?'",
+      "'Ripeti sempre la stessa azione'",
+      "'Ignora l'obiettivo e agisci a caso'"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un agente autonomo opera secondo una logica più vicina a: 'Devo raggiungere X. Quale azione è più utile per avvicinarmi a X?'."
+  },
+  {
+    "id": 26,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, l'agente autonomo possiede una volontà propria?",
+    "options": [
+      "Sì, decide liberamente cosa desidera fare",
+      "No, l'obiettivo viene stabilito dall'esterno",
+      "Sì, ma solo in situazioni di emergenza",
+      "No, perché non può mai prendere decisioni"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'agente non possiede una volontà propria: l'obiettivo viene stabilito dall'esterno."
+  },
+  {
+    "id": 27,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali gradi di autonomia può avere un agente, secondo il modulo?",
+    "options": [
+      "Può solo eseguire azioni senza mai proporle",
+      "Può proporre la prossima azione, eseguirla dopo approvazione, o procedere autonomamente entro le regole stabilite",
+      "Può solo osservare senza mai agire",
+      "Deve sempre chiedere conferma per ogni singola operazione, senza eccezioni"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un agente può limitarsi a proporre la prossima azione, può eseguirla dopo l'approvazione dell'utente, oppure può procedere autonomamente quando l'azione rientra nelle regole stabilite."
+  },
+  {
+    "id": 28,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quali tre elementi fondamentali è composto un agente autonomo, secondo il modulo?",
+    "options": [
+      "Un obiettivo da raggiungere, la capacità di decidere i passaggi necessari e gli strumenti per eseguirli",
+      "Un prezzo, un abbonamento e un account utente",
+      "Un chatbot, un workflow e un'integrazione",
+      "Una password, un nome utente e un dispositivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un agente autonomo può essere visto come un sistema composto da tre elementi: un obiettivo da raggiungere, la capacità di decidere i passaggi necessari e gli strumenti con cui eseguire tali passaggi."
+  },
+  {
+    "id": 29,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del viaggio a Parigi con un agente autonomo, cosa ha definito la persona invece di descrivere ogni passaggio?",
+    "options": [
+      "Solo il nome dell'hotel",
+      "Il risultato che vuole ottenere",
+      "Solo l'orario del volo",
+      "Solo il numero di valigie"
+    ],
+    "correctIndex": 1,
+    "explanation": "La persona non ha descritto ogni passaggio: ha definito il risultato che vuole ottenere."
+  },
+  {
+    "id": 30,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del navigatore, cosa non decide l'agente autonomo, secondo il modulo?",
+    "options": [
+      "Il percorso da seguire",
+      "La destinazione",
+      "Come reagire al traffico",
+      "Se cercare un'alternativa"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il navigatore può scegliere il percorso e modificarlo, ma c'è un limite fondamentale: non decide la destinazione."
+  },
+  {
+    "id": 31,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un'integrazione secondo il modulo?",
+    "options": [
+      "Un collegamento tra due o più sistemi software che permette loro di scambiarsi informazioni e, quando previsto, eseguire operazioni l'uno attraverso l'altro",
+      "Un tipo di chatbot avanzato",
+      "Una sequenza di passaggi automatizzati senza AI",
+      "Un sistema che decide autonomamente i propri obiettivi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un'integrazione è un collegamento tra due o più sistemi software che permette loro di scambiarsi informazioni e, quando previsto, eseguire operazioni l'uno attraverso l'altro."
+  },
+  {
+    "id": 32,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permettono le integrazioni a un agente AI, secondo il modulo?",
+    "options": [
+      "Di utilizzare servizi e applicazioni esterne, trasformando la capacità di conversazione in capacità operativa",
+      "Di funzionare senza alcuna autorizzazione",
+      "Di eliminare la necessità di un modello di AI",
+      "Di ignorare completamente le richieste dell'utente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le integrazioni permettono all'agente di utilizzare servizi e applicazioni esterne, trasformando una semplice capacità di conversazione in una capacità operativa."
+  },
+  {
+    "id": 33,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una Application Programming Interface (API), secondo il modulo?",
+    "options": [
+      "Un'interfaccia che permette a un programma di comunicare con un altro programma secondo regole definite",
+      "Un tipo di virus informatico",
+      "Un dispositivo hardware per la connessione a Internet",
+      "Un linguaggio di programmazione specifico per gli agenti AI"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un'API è un'interfaccia che permette a un programma di comunicare con un altro programma secondo regole definite."
+  },
+  {
+    "id": 34,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come può essere rappresentato il passaggio dell'integrazione, secondo il modulo?",
+    "options": [
+      "AI, strumento, servizio, risultato, AI",
+      "Chatbot, workflow, agente, produttività",
+      "Obiettivo, pianificazione, osservazione, decisione",
+      "Evento, elaborazione, azione, risultato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Possiamo vedere l'integrazione come il passaggio che collega: AI, strumento, servizio, risultato, AI."
+  },
+  {
+    "id": 35,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può fare un agente collegato agli strumenti appropriati, a differenza di un modello che genera solo testo, secondo il modulo?",
+    "options": [
+      "Solo descrivere come fare qualcosa",
+      "Eseguire concretamente una procedura",
+      "Rifiutarsi sempre di agire",
+      "Funzionare solo offline"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un modello che può soltanto generare testo può descrivere come fare qualcosa; un agente collegato agli strumenti appropriati può invece eseguire quella procedura."
+  },
+  {
+    "id": 36,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa comporta permettere a un agente di leggere la posta elettronica, secondo il modulo?",
+    "options": [
+      "Nessun rischio particolare",
+      "Concedere accesso a informazioni personali",
+      "Rendere l'agente completamente autonomo",
+      "Eliminare la necessità di altre integrazioni"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se permettiamo a un agente di leggere la posta elettronica, gli stiamo concedendo accesso a informazioni personali."
+  },
+  {
+    "id": 37,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il principio del minimo privilegio, secondo il modulo?",
+    "options": [
+      "Concedere al sistema soltanto i permessi realmente necessari per svolgere il compito",
+      "Dare sempre il massimo livello di accesso possibile",
+      "Limitare l'uso dell'AI a una sola applicazione",
+      "Ridurre al minimo il numero di utenti autorizzati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il principio del minimo privilegio consiste nel concedere al sistema soltanto i permessi realmente necessari per svolgere il compito."
+  },
+  {
+    "id": 38,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il principio del minimo privilegio, se un agente deve leggere il calendario, cosa non è detto che debba poter fare?",
+    "options": [
+      "Visualizzare gli eventi",
+      "Cancellare gli appuntamenti",
+      "Consultare gli orari",
+      "Aprire l'applicazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se un agente deve leggere il calendario, non è detto che debba poter cancellare gli appuntamenti."
+  },
+  {
+    "id": 39,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del negozio online, cosa avviene quando viene effettuato un ordine, secondo il modulo?",
+    "options": [
+      "Le informazioni vengono trasferite automaticamente e la disponibilità del prodotto viene aggiornata",
+      "Il sistema si blocca fino a un controllo manuale",
+      "L'ordine viene sempre annullato automaticamente",
+      "Nessuna informazione viene condivisa tra i sistemi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quando viene effettuato un ordine, le informazioni possono essere trasferite automaticamente e la disponibilità del prodotto aggiornata."
+  },
+  {
+    "id": 40,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della città, cosa rappresenta l'API, secondo il modulo?",
+    "options": [
+      "Un edificio come la banca o la biblioteca",
+      "Una porta con un regolamento che stabilisce chi può entrare e quali operazioni può compiere",
+      "Una strada senza alcun controllo di accesso",
+      "Un abitante della città"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'API può essere vista come una porta con un regolamento: stabilisce chi può entrare, quali operazioni può compiere e quali informazioni può ottenere."
+  },
+  {
+    "id": 41,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la produttività secondo il modulo?",
+    "options": [
+      "La capacità di ottenere un determinato risultato utilizzando nel modo più efficace possibile le risorse disponibili",
+      "La quantità totale di lavoro svolto indipendentemente dal risultato",
+      "Il numero di strumenti digitali utilizzati contemporaneamente",
+      "La velocità massima con cui un'AI può rispondere"
+    ],
+    "correctIndex": 0,
+    "explanation": "La produttività indica la capacità di ottenere un determinato risultato utilizzando nel modo più efficace possibile le risorse disponibili, come tempo, attenzione, strumenti e lavoro umano."
+  },
+  {
+    "id": 42,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa aumentare la produttività nel contesto dell'AI e dell'automazione, secondo il modulo?",
+    "options": [
+      "Ridurre il lavoro ripetitivo e dedicare più tempo a comprensione, creatività, giudizio e responsabilità",
+      "Eliminare completamente il lavoro umano",
+      "Aumentare il numero di ore lavorate ogni giorno",
+      "Ridurre il numero di strumenti disponibili"
+    ],
+    "correctIndex": 0,
+    "explanation": "Aumentare la produttività significa soprattutto ridurre il lavoro ripetitivo e dedicare più tempo alle attività che richiedono comprensione, creatività, giudizio e responsabilità."
+  },
+  {
+    "id": 43,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, più veloce significa automaticamente più produttivo?",
+    "options": [
+      "Sì, sempre",
+      "No, non automaticamente",
+      "Solo se il lavoro riguarda documenti",
+      "Solo nei contesti aziendali di grandi dimensioni"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo avverte: più veloce non significa automaticamente più produttivo."
+  },
+  {
+    "id": 44,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può succedere se un agente genera rapidamente un documento pieno di errori, secondo il modulo?",
+    "options": [
+      "Il tempo apparentemente risparmiato potrebbe trasformarsi in ulteriore lavoro",
+      "Il documento viene automaticamente corretto dal sistema",
+      "Non ci sono conseguenze pratiche",
+      "Il documento viene eliminato automaticamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se un agente genera rapidamente un documento pieno di errori, il tempo apparentemente risparmiato potrebbe trasformarsi in ulteriore lavoro."
+  },
+  {
+    "id": 45,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando nasce la vera produttività secondo il modulo?",
+    "options": [
+      "Quando l'automazione produce un risultato utile, corretto e verificabile",
+      "Quando si automatizza ogni singola attività senza eccezioni",
+      "Quando si eliminano tutti i controlli umani",
+      "Quando il tempo di risposta è il più basso possibile"
+    ],
+    "correctIndex": 0,
+    "explanation": "La vera produttività nasce quando l'automazione produce un risultato utile, corretto e verificabile."
+  },
+  {
+    "id": 46,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale ruolo mantiene l'essere umano nella collaborazione con l'AI, secondo il modulo?",
+    "options": [
+      "Stabilire l'obiettivo, fornire il contesto, definire i limiti, controllare i risultati e intervenire quando il sistema sbaglia",
+      "Nessun ruolo, il sistema opera in totale autonomia",
+      "Solo quello di pagare il servizio",
+      "Solo quello di scegliere il colore dell'interfaccia"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'essere umano deve stabilire l'obiettivo, fornire il contesto, definire i limiti, controllare i risultati e intervenire quando il sistema sbaglia."
+  },
+  {
+    "id": 47,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quali attività la collaborazione tra persona e AI può essere particolarmente efficace, secondo il modulo?",
+    "options": [
+      "In attività che seguono schemi ricorrenti, come classificare informazioni o riassumere documenti",
+      "Solo in attività che richiedono decisioni etiche complesse",
+      "Solo in attività completamente imprevedibili",
+      "Solo in attività che riguardano la sicurezza nazionale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Questa collaborazione può essere particolarmente efficace nelle attività che seguono schemi ricorrenti: classificare informazioni, riassumere documenti, organizzare dati, preparare bozze."
+  },
+  {
+    "id": 48,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando bisogna essere più prudenti nell'affidare un'attività all'AI, secondo il modulo?",
+    "options": [
+      "Quando l'attività richiede responsabilità, valutazioni etiche o decisioni con conseguenze rilevanti",
+      "Quando l'attività è puramente ripetitiva",
+      "Quando l'attività riguarda la classificazione di semplici dati",
+      "Quando l'attività richiede solo pochi secondi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Bisogna essere più prudenti quando un'attività richiede responsabilità, valutazioni etiche, conoscenza profonda del contesto o decisioni con conseguenze rilevanti."
+  },
+  {
+    "id": 49,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la domanda cruciale che il modulo suggerisce di porsi riguardo all'automazione?",
+    "options": [
+      "'Quale parte del lavoro è opportuno automatizzare e quale parte deve rimanere sotto il controllo umano?'",
+      "'Quanto costa automatizzare tutto il lavoro possibile?'",
+      "'Quale AI è la più veloce sul mercato?'",
+      "'Quanti agenti servono per completare un progetto?'"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dovremmo chiederci: 'Quale parte del lavoro è opportuno automatizzare e quale parte deve rimanere sotto il controllo umano?'."
+  },
+  {
+    "id": 50,
+    "module": "agenti-automazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della cucina professionale, cosa può fare lo chef delegando le attività ripetitive, secondo il modulo?",
+    "options": [
+      "Concentrarsi su ciò che richiede davvero la sua esperienza, come scegliere gli ingredienti e controllare la qualità",
+      "Smettere completamente di cucinare",
+      "Delegare anche le decisioni sul risultato finale",
+      "Eliminare la necessità di collaboratori"
+    ],
+    "correctIndex": 0,
+    "explanation": "Può utilizzare strumenti e collaboratori per delegare le attività ripetitive e concentrarsi sulla parte che richiede esperienza: scegliere gli ingredienti, creare le ricette, controllare la qualità e decidere il risultato finale."
+  }
+]

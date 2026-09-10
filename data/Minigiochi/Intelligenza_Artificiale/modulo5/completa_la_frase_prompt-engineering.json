@@ -1,0 +1,812 @@
+[
+  {
+    "sentence": "Le ____ sono le indicazioni che forniamo a un sistema di AI per dirgli che cosa deve fare, come deve farlo e quale risultato vogliamo ottenere.",
+    "answer": "istruzioni",
+    "bank": [
+      "istruzioni",
+      "esempi",
+      "ruoli",
+      "contesti"
+    ]
+  },
+  {
+    "sentence": "Nel Prompt Engineering, scrivere istruzioni efficaci significa trasformare una richiesta generica in una richiesta chiara, precisa e orientata al ____.",
+    "answer": "risultato",
+    "bank": [
+      "budget",
+      "risultato",
+      "formato",
+      "tempo"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, il modo in cui formuliamo la richiesta influenza fortemente il ____.",
+    "answer": "risultato",
+    "bank": [
+      "prezzo",
+      "risultato",
+      "linguaggio",
+      "modello"
+    ]
+  },
+  {
+    "sentence": "Una buona istruzione non deve necessariamente essere lunga: deve essere soprattutto ____.",
+    "answer": "chiara",
+    "bank": [
+      "breve",
+      "chiara",
+      "formale",
+      "tecnica"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, aggiungere parole a caso non rende automaticamente un prompt ____.",
+    "answer": "migliore",
+    "bank": [
+      "più breve",
+      "migliore",
+      "più veloce",
+      "più semplice"
+    ]
+  },
+  {
+    "sentence": "L'obiettivo di una buona istruzione è ridurre l'____ e guidare l'AI verso il risultato desiderato.",
+    "answer": "ambiguità",
+    "bank": [
+      "ambiguità",
+      "lunghezza",
+      "velocità",
+      "creatività"
+    ]
+  },
+  {
+    "sentence": "Possiamo specificare, in un'istruzione, il compito da svolgere, il formato della risposta, il livello di approfondimento, lo stile linguistico oppure eventuali ____.",
+    "answer": "vincoli",
+    "bank": [
+      "vincoli",
+      "prezzi",
+      "colori",
+      "orari"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, l'AI generativa non interpreta una richiesta come farebbe una persona che conosce già le nostre ____.",
+    "answer": "intenzioni",
+    "bank": [
+      "password",
+      "intenzioni",
+      "credenziali",
+      "preferenze musicali"
+    ]
+  },
+  {
+    "sentence": "Se una parte della richiesta rimane vaga, il sistema deve elaborare una risposta sulla base delle informazioni ____.",
+    "answer": "disponibili",
+    "bank": [
+      "disponibili",
+      "corrette",
+      "segrete",
+      "definitive"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, possiamo pensare al prompt come a una ____.",
+    "answer": "consegna",
+    "bank": [
+      "consegna",
+      "licenza",
+      "garanzia",
+      "sorpresa"
+    ]
+  },
+  {
+    "sentence": "Nell'esempio della mail al professore, la versione dettagliata specifica di mantenere un tono educato e ____.",
+    "answer": "sintetico",
+    "bank": [
+      "sintetico",
+      "ironico",
+      "tecnico",
+      "anonimo"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, la differenza tra una richiesta vaga e una richiesta precisa non sta nella tecnologia utilizzata, ma nella qualità della ____ tra persona e sistema.",
+    "answer": "comunicazione",
+    "bank": [
+      "connessione",
+      "comunicazione",
+      "licenza",
+      "velocità"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, il Prompt Engineering non consiste nel trovare una formula magica, ma nell'imparare a comunicare all'AI obiettivi e ____ in modo efficace.",
+    "answer": "vincoli",
+    "bank": [
+      "vincoli",
+      "prezzi",
+      "segreti",
+      "algoritmi"
+    ]
+  },
+  {
+    "sentence": "Nella metafora della tipografia, il tipografo potrebbe chiedere: che cosa, quante copie, su quale carta e in quale ____.",
+    "answer": "formato",
+    "bank": [
+      "formato",
+      "colore",
+      "negozio",
+      "orario"
+    ]
+  },
+  {
+    "sentence": "Nella metafora della tipografia, più chiaramente descriviamo ciò che vogliamo ottenere, meno spazio lasciamo all'____.",
+    "answer": "interpretazione",
+    "bank": [
+      "interpretazione",
+      "attesa",
+      "errore",
+      "revisione"
+    ]
+  },
+  {
+    "sentence": "Il ____ è l'insieme delle informazioni che forniamo all'AI per permetterle di comprendere meglio la situazione, l'obiettivo e i dati necessari.",
+    "answer": "contesto",
+    "bank": [
+      "contesto",
+      "ruolo",
+      "esempio",
+      "formato"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, un'istruzione indica che cosa fare; il ____ fornisce invece gli elementi necessari per farlo in modo appropriato.",
+    "answer": "contesto",
+    "bank": [
+      "contesto",
+      "ruolo",
+      "esempio",
+      "vincolo"
+    ]
+  },
+  {
+    "sentence": "Nell'esempio del riassunto, l'istruzione è chiara, ma l'AI ha comunque bisogno del ____ da riassumere.",
+    "answer": "testo",
+    "bank": [
+      "testo",
+      "titolo",
+      "formato",
+      "autore"
+    ]
+  },
+  {
+    "sentence": "Il contesto può comprendere a chi è destinato il risultato, quale problema si sta cercando di risolvere e quali informazioni sono già ____.",
+    "answer": "disponibili",
+    "bank": [
+      "disponibili",
+      "segrete",
+      "obsolete",
+      "tradotte"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, il contesto permette all'AI di restringere lo spazio delle possibili ____.",
+    "answer": "interpretazioni",
+    "bank": [
+      "interpretazioni",
+      "lingue",
+      "funzioni",
+      "informazioni"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, un contesto eccessivamente lungo, confuso o contraddittorio può rendere più difficile ottenere una risposta ____.",
+    "answer": "utile",
+    "bank": [
+      "utile",
+      "lunga",
+      "formale",
+      "veloce"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, riguardo al contesto vale un principio semplice: informazioni pertinenti, ordinate e ____.",
+    "answer": "sufficienti",
+    "bank": [
+      "sufficienti",
+      "segrete",
+      "numerose",
+      "ripetute"
+    ]
+  },
+  {
+    "sentence": "Nell'esempio del piano di studio, la richiesta contestualizzata specifica che l'esame di informatica è tra ____ giorni.",
+    "answer": "dieci",
+    "bank": [
+      "dieci",
+      "cinque",
+      "venti",
+      "tre"
+    ]
+  },
+  {
+    "sentence": "Nell'esempio del piano di studio, la persona specifica di poter studiare ____ ore ogni sera.",
+    "answer": "due",
+    "bank": [
+      "due",
+      "quattro",
+      "sei",
+      "una"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, nel mondo professionale la qualità dell'output di un sistema generativo dipende anche dalla qualità delle informazioni ____ al sistema.",
+    "answer": "fornite",
+    "bank": [
+      "fornite",
+      "vendute",
+      "tradotte",
+      "archiviate"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, una risposta convincente non è necessariamente una risposta ____.",
+    "answer": "corretta",
+    "bank": [
+      "corretta",
+      "lunga",
+      "breve",
+      "gratuita"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del medico, dire soltanto Non sto bene è un'informazione vera ma ____.",
+    "answer": "insufficiente",
+    "bank": [
+      "insufficiente",
+      "falsa",
+      "esagerata",
+      "inutile"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del medico, spiegare sintomi, durata e farmaci assunti rende il quadro più ____.",
+    "answer": "comprensibile",
+    "bank": [
+      "comprensibile",
+      "breve",
+      "segreto",
+      "veloce"
+    ]
+  },
+  {
+    "sentence": "Nel Prompt Engineering, il ____ è l'identità, la prospettiva o la funzione che chiediamo all'AI di assumere durante lo svolgimento di un compito.",
+    "answer": "ruolo",
+    "bank": [
+      "ruolo",
+      "contesto",
+      "esempio",
+      "vincolo"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, chiedere un ruolo può aiutare a orientare la risposta verso un determinato punto di ____.",
+    "answer": "vista",
+    "bank": [
+      "vista",
+      "prezzo",
+      "tempo",
+      "formato"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, quando assegniamo un ruolo all'AI, non la stiamo realmente trasformando in un insegnante o in un revisore: le forniamo una cornice ____.",
+    "answer": "operativa",
+    "bank": [
+      "operativa",
+      "segreta",
+      "casuale",
+      "tecnica"
+    ]
+  },
+  {
+    "sentence": "Il ruolo può essere particolarmente utile quando vogliamo ottenere una determinata prospettiva, un certo livello di linguaggio o una specifica modalità di ____.",
+    "answer": "analisi",
+    "bank": [
+      "analisi",
+      "pagamento",
+      "traduzione",
+      "archiviazione"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, è importante non confondere il ruolo con una garanzia di ____.",
+    "answer": "competenza",
+    "bank": [
+      "competenza",
+      "velocità",
+      "gratuità",
+      "popolarità"
+    ]
+  },
+  {
+    "sentence": "Se chiediamo all'AI di comportarsi come un medico, secondo il modulo, questo non significa che abbiamo ottenuto un ____.",
+    "answer": "medico",
+    "bank": [
+      "medico",
+      "errore",
+      "prompt",
+      "ruolo"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, il ruolo modifica il modo in cui il sistema costruisce la risposta, ma non rende automaticamente ____ le informazioni prodotte.",
+    "answer": "vere",
+    "bank": [
+      "vere",
+      "brevi",
+      "pubbliche",
+      "gratuite"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, un buon prompt può combinare istruzioni, contesto e ____.",
+    "answer": "ruolo",
+    "bank": [
+      "ruolo",
+      "formato",
+      "budget",
+      "tempo"
+    ]
+  },
+  {
+    "sentence": "Nell'esempio della guida turistica, la richiesta specifica di organizzare un itinerario per una persona interessata soprattutto ad arte e ____.",
+    "answer": "architettura",
+    "bank": [
+      "architettura",
+      "gastronomia",
+      "sport",
+      "musica"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, le tecniche di prompting basate sull'assegnazione di ruoli sono state ampiamente studiate per orientare i modelli verso compiti ____.",
+    "answer": "specifici",
+    "bank": [
+      "specifici",
+      "casuali",
+      "segreti",
+      "gratuiti"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, un sistema può assumere perfettamente il tono di un esperto e produrre comunque informazioni ____.",
+    "answer": "errate",
+    "bank": [
+      "errate",
+      "gratuite",
+      "brevi",
+      "tecniche"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, il ruolo deve essere considerato uno strumento di orientamento, non una certificazione dell'____ della risposta.",
+    "answer": "affidabilità",
+    "bank": [
+      "affidabilità",
+      "lunghezza",
+      "velocità",
+      "popolarità"
+    ]
+  },
+  {
+    "sentence": "Nella metafora dell'edificio con diverse porte, l'edificio è lo stesso, ma cambia il punto di ____.",
+    "answer": "osservazione",
+    "bank": [
+      "osservazione",
+      "ingresso",
+      "costruzione",
+      "illuminazione"
+    ]
+  },
+  {
+    "sentence": "Nel Prompt Engineering, gli ____ sono uno o più casi dimostrativi inseriti nel prompt per mostrare all'AI come svolgere un compito o quale formato utilizzare.",
+    "answer": "esempi",
+    "bank": [
+      "esempi",
+      "ruoli",
+      "contesti",
+      "vincoli"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, un esempio può essere molto efficace quando il risultato desiderato è difficile da descrivere soltanto a ____.",
+    "answer": "parole",
+    "bank": [
+      "parole",
+      "immagini",
+      "numeri",
+      "colori"
+    ]
+  },
+  {
+    "sentence": "Gli esempi aiutano il modello a riconoscere il tipo di ____ che vogliamo applicare.",
+    "answer": "schema",
+    "bank": [
+      "schema",
+      "prezzo",
+      "colore",
+      "formato file"
+    ]
+  },
+  {
+    "sentence": "La tecnica che consiste nel fornire pochi esempi nel prompt viene chiamata ____.",
+    "answer": "few-shot prompting",
+    "bank": [
+      "few-shot prompting",
+      "zero-shot prompting",
+      "divide et impera",
+      "role prompting"
+    ]
+  },
+  {
+    "sentence": "Quando chiediamo un compito senza fornire esempi specifici, parliamo comunemente di ____.",
+    "answer": "zero-shot prompting",
+    "bank": [
+      "zero-shot prompting",
+      "few-shot prompting",
+      "divide et impera",
+      "prompt chaining"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, gli esempi possono essere utilizzati anche per controllare il ____ della risposta.",
+    "answer": "formato",
+    "bank": [
+      "formato",
+      "prezzo",
+      "autore",
+      "colore"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, se gli esempi sono ambigui o contraddittori, possono ____ il modello invece di aiutarlo.",
+    "answer": "confondere",
+    "bank": [
+      "confondere",
+      "velocizzare",
+      "semplificare",
+      "tradurre"
+    ]
+  },
+  {
+    "sentence": "Nell'esempio della classificazione delle email, il messaggio 'Voglio annullare l'ordine' viene classificato come ____.",
+    "answer": "Reclamo",
+    "bank": [
+      "Reclamo",
+      "Informazioni",
+      "Spedizione",
+      "Pagamento"
+    ]
+  },
+  {
+    "sentence": "Nell'esempio della classificazione delle email, il messaggio 'Quando arriverà il pacco?' viene classificato come ____.",
+    "answer": "Spedizione",
+    "bank": [
+      "Spedizione",
+      "Reclamo",
+      "Informazioni",
+      "Pagamento"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, le tecniche di few-shot learning hanno avuto un ruolo importante nello sviluppo dell'utilizzo pratico dei grandi modelli ____.",
+    "answer": "linguistici",
+    "bank": [
+      "linguistici",
+      "finanziari",
+      "statistici",
+      "grafici"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, fornire esempi direttamente nel contesto può permettere al modello di adattarsi a un compito senza dover essere nuovamente ____.",
+    "answer": "addestrato",
+    "bank": [
+      "addestrato",
+      "tradotto",
+      "venduto",
+      "copiato"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, con gli esempi non stiamo necessariamente modificando il modello: stiamo modificando ciò che gli ____ prima di chiedergli di lavorare.",
+    "answer": "mostriamo",
+    "bank": [
+      "mostriamo",
+      "vendiamo",
+      "nascondiamo",
+      "cancelliamo"
+    ]
+  },
+  {
+    "sentence": "Nella metafora della camicia piegata, l'esempio rende visibile ciò che le parole potrebbero lasciare ____.",
+    "answer": "ambiguo",
+    "bank": [
+      "ambiguo",
+      "breve",
+      "scritto",
+      "tradotto"
+    ]
+  },
+  {
+    "sentence": "Le ____ di Prompt Engineering sono strategie utilizzate per strutturare richieste complesse e guidare il modello attraverso più passaggi.",
+    "answer": "tecniche avanzate",
+    "bank": [
+      "tecniche avanzate",
+      "istruzioni semplici",
+      "esempi singoli",
+      "ruoli base"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, quando il compito è semplice può essere sufficiente una singola ____.",
+    "answer": "istruzione",
+    "bank": [
+      "istruzione",
+      "tecnica",
+      "cena",
+      "presentazione"
+    ]
+  },
+  {
+    "sentence": "Quando dobbiamo ottenere un risultato articolato, possiamo suddividere il problema in parti più ____.",
+    "answer": "piccole",
+    "bank": [
+      "piccole",
+      "costose",
+      "lunghe",
+      "segrete"
+    ]
+  },
+  {
+    "sentence": "Una tecnica fondamentale consiste nel chiedere all'AI di ____ il compito.",
+    "answer": "scomporre",
+    "bank": [
+      "scomporre",
+      "nascondere",
+      "vendere",
+      "tradurre"
+    ]
+  },
+  {
+    "sentence": "Nell'esempio della sequenza strutturata, dopo aver analizzato gli obiettivi e i punti di forza, si individuano i problemi e infine si propongono tre ____ concreti.",
+    "answer": "miglioramenti",
+    "bank": [
+      "miglioramenti",
+      "prezzi",
+      "esempi",
+      "ruoli"
+    ]
+  },
+  {
+    "sentence": "Un'altra tecnica avanzata consiste nel definire chiaramente il ____ dell'output.",
+    "answer": "formato",
+    "bank": [
+      "formato",
+      "prezzo",
+      "autore",
+      "colore"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, un prompt complesso può combinare ruolo, contesto, istruzioni ed ____.",
+    "answer": "esempi",
+    "bank": [
+      "esempi",
+      "prezzi",
+      "orari",
+      "colori"
+    ]
+  },
+  {
+    "sentence": "Il principio secondo cui un problema complesso viene separato in parti più semplici si chiama ____.",
+    "answer": "divide et impera",
+    "bank": [
+      "divide et impera",
+      "few-shot prompting",
+      "zero-shot prompting",
+      "role prompting"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, nessuna tecnica avanzata garantisce automaticamente una risposta ____.",
+    "answer": "corretta",
+    "bank": [
+      "corretta",
+      "lunga",
+      "gratuita",
+      "veloce"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, il prompt può guidare il modello, ma non ____ completamente ciò che il modello produrrà.",
+    "answer": "controllare",
+    "bank": [
+      "controllare",
+      "descrivere",
+      "nominare",
+      "vendere"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, soprattutto nelle attività importanti, il risultato ottenuto dall'AI deve essere ____.",
+    "answer": "verificato",
+    "bank": [
+      "verificato",
+      "ignorato",
+      "cancellato",
+      "venduto"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, l'esperienza pratica ha evidenziato che un prompt sofisticato non elimina le allucinazioni, gli errori logici o le informazioni ____ dal modello.",
+    "answer": "inventate",
+    "bank": [
+      "inventate",
+      "tradotte",
+      "brevi",
+      "formattate"
+    ]
+  },
+  {
+    "sentence": "Nella metafora dell'architetto, dire semplicemente Costruiscimi una bella casa lascia enorme ____.",
+    "answer": "libertà",
+    "bank": [
+      "libertà",
+      "budget",
+      "sicurezza",
+      "velocità"
+    ]
+  },
+  {
+    "sentence": "Un ____ con l'AI è un'attività articolata in più fasi nella quale l'intelligenza artificiale viene utilizzata come strumento di supporto per raggiungere un obiettivo preciso.",
+    "answer": "progetto",
+    "bank": [
+      "progetto",
+      "prompt",
+      "esempio",
+      "ruolo"
+    ]
+  },
+  {
+    "sentence": "A differenza di una semplice richiesta, un progetto richiede di definire obiettivo, fasi di lavoro, materiali, vincoli e risultato ____.",
+    "answer": "finale",
+    "bank": [
+      "finale",
+      "segreto",
+      "gratuito",
+      "provvisorio"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, quando il lavoro diventa più complesso, un solo ____ può non essere sufficiente.",
+    "answer": "prompt",
+    "bank": [
+      "prompt",
+      "ruolo",
+      "esempio",
+      "contesto"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, l'AI può accompagnare l'utente durante diverse fasi di un progetto, ma questo non significa ____ completamente il lavoro.",
+    "answer": "delegarle",
+    "bank": [
+      "delegarle",
+      "vietarle",
+      "pagarle",
+      "tradurle"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, il progetto rimane sotto il controllo della persona, che stabilisce gli obiettivi, valuta le risposte e decide cosa ____.",
+    "answer": "utilizzare",
+    "bank": [
+      "utilizzare",
+      "cancellare",
+      "vendere",
+      "tradurre"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, un prompt cerca di ottenere una risposta; un progetto organizza una serie di attività per raggiungere un ____.",
+    "answer": "risultato",
+    "bank": [
+      "risultato",
+      "prezzo",
+      "ruolo",
+      "esempio"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, nei progetti più complessi conviene procedere per ____, dividendo il lavoro in parti più piccole e verificabili.",
+    "answer": "passi",
+    "bank": [
+      "passi",
+      "prezzi",
+      "ruoli",
+      "esempi"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, questo approccio permette di correggere gli errori lungo il percorso, invece di accorgersene soltanto alla ____.",
+    "answer": "fine",
+    "bank": [
+      "fine",
+      "prima riga",
+      "metà",
+      "prima fase"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, più il progetto è importante, più è necessario ____ ciò che l'AI produce.",
+    "answer": "verificare",
+    "bank": [
+      "verificare",
+      "ignorare",
+      "cancellare",
+      "vendere"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, l'AI non diventa automaticamente responsabile della ____ del risultato.",
+    "answer": "correttezza",
+    "bank": [
+      "correttezza",
+      "lunghezza",
+      "velocità",
+      "popolarità"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, nel mondo del lavoro ottenere una buona risposta non significa automaticamente ottenere un buon risultato ____.",
+    "answer": "finale",
+    "bank": [
+      "finale",
+      "gratuito",
+      "breve",
+      "segreto"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, nei flussi di lavoro reali l'AI viene spesso inserita in un processo nel quale una persona definisce il compito, controlla gli output e ____ quando necessario.",
+    "answer": "interviene",
+    "bank": [
+      "interviene",
+      "si assenta",
+      "delega",
+      "rinuncia"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, l'AI può accelerare un progetto, ma non sostituisce il controllo ____ sul progetto.",
+    "answer": "umano",
+    "bank": [
+      "umano",
+      "automatico",
+      "digitale",
+      "remoto"
+    ]
+  },
+  {
+    "sentence": "Nella metafora della cena per molte persone, se durante la preparazione manca un ingrediente si può intervenire subito senza dover ricominciare tutto da ____.",
+    "answer": "capo",
+    "bank": [
+      "capo",
+      "zero",
+      "nuovo",
+      "principio"
+    ]
+  }
+]

@@ -1,0 +1,996 @@
+[
+  {
+    "id": 1,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "\"Inserire un dato\" in Excel significa selezionare una cella, digitarne il contenuto e ____ lo.",
+    "answer": "confermare",
+    "bank": [
+      "confermare",
+      "cancellare",
+      "copiare",
+      "nascondere"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una cella può contenere diversi tipi di dato: testo, numeri, date e ____.",
+    "answer": "percentuali",
+    "bank": [
+      "percentuali",
+      "formule",
+      "grafici",
+      "immagini"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Premendo ____ si conferma il dato e la selezione si sposta alla cella sottostante.",
+    "answer": "INVIO",
+    "bank": [
+      "INVIO",
+      "TAB",
+      "CANC",
+      "ESC"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Premendo ____ si conferma il dato e la selezione si sposta a destra.",
+    "answer": "TAB",
+    "bank": [
+      "TAB",
+      "INVIO",
+      "CANC",
+      "ESC"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per svuotare completamente una cella si preme il tasto ____.",
+    "answer": "CANC",
+    "bank": [
+      "CANC",
+      "TAB",
+      "INVIO",
+      "ESC"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Excel riconosce automaticamente se ciò che viene digitato è testo o un ____, e li allinea in modo diverso.",
+    "answer": "numero",
+    "bank": [
+      "numero",
+      "colore",
+      "font",
+      "formato"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La scorciatoia ____ riporta indietro l'ultima azione compiuta, come già visto in Word.",
+    "answer": "CTRL+Z",
+    "bank": [
+      "CTRL+Z",
+      "CTRL+F",
+      "CTRL+Home",
+      "SHIFT+F11"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'8 dicembre ____, alla Borsa di Tokyo, un operatore di Mizuho Securities commise un celebre errore di inserimento dati.",
+    "answer": "2005",
+    "bank": [
+      "2005",
+      "1843",
+      "2010",
+      "2020"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'operatore di Mizuho Securities doveva vendere una singola azione J-Com, ma digitò per errore la vendita di 610.000 azioni a ____ yen ciascuna.",
+    "answer": "1",
+    "bank": [
+      "1",
+      "610.000",
+      "100",
+      "65.536"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il sistema della Borsa di Tokyo non permetteva di ____ un ordine già inviato.",
+    "answer": "annullare",
+    "bank": [
+      "annullare",
+      "confermare",
+      "duplicare",
+      "stampare"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Mizuho Securities registrò una perdita stimata in oltre ____ milioni di dollari.",
+    "answer": "225",
+    "bank": [
+      "225",
+      "6.000",
+      "48",
+      "15.841"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'episodio dell'errore di Mizuho Securities portò le dimissioni del presidente della ____.",
+    "answer": "Borsa di Tokyo",
+    "bank": [
+      "Borsa di Tokyo",
+      "Federal Reserve",
+      "Commissione Federale delle Comunicazioni",
+      "SMPTE"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ è la funzione con cui Excel riconosce lo schema di uno o più valori già scritti e lo prosegue da solo.",
+    "answer": "riempimento automatico",
+    "bank": [
+      "riempimento automatico",
+      "ricalcolo intelligente",
+      "blocco riquadri",
+      "salvataggio automatico"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per usare il riempimento automatico si trascina la ____ di riempimento.",
+    "answer": "maniglia",
+    "bank": [
+      "maniglia",
+      "casella",
+      "barra",
+      "scheda"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La maniglia di riempimento si trova nell'angolo in basso a ____ della cella selezionata.",
+    "answer": "destra",
+    "bank": [
+      "destra",
+      "sinistra",
+      "alto",
+      "centro"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se si scrive un solo valore e si trascina la maniglia, Excel per default lo ____ identico in ogni cella.",
+    "answer": "ripete",
+    "bank": [
+      "ripete",
+      "incrementa",
+      "cancella",
+      "formatta"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Scrivendo due valori come 1 e 2, Excel capisce che tra loro c'è una differenza ____ e la applica alle celle successive.",
+    "answer": "costante",
+    "bank": [
+      "costante",
+      "casuale",
+      "decrescente",
+      "doppia"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Scrivendo 10 e 20, il riempimento prosegue con 30, 40, ____.",
+    "answer": "50",
+    "bank": [
+      "50",
+      "25",
+      "100",
+      "15"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per alcuni elenchi, come i giorni della settimana o i mesi, Excel non ha bisogno di un secondo valore perché sono sequenze già ____ dal programma.",
+    "answer": "conosciute",
+    "bank": [
+      "conosciute",
+      "inventate",
+      "nascoste",
+      "bloccate"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'agosto ____ Ada Lovelace pubblicò le proprie note sulla Macchina Analitica di Charles Babbage.",
+    "answer": "1843",
+    "bank": [
+      "1843",
+      "1794",
+      "1985",
+      "2005"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'ultima nota di Lovelace, nota come \"Nota ____\", è considerata il primo programma per computer della storia.",
+    "answer": "G",
+    "bank": [
+      "G",
+      "A",
+      "X",
+      "1"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il procedimento descritto da Lovelace nella Nota G calcolava i numeri di ____.",
+    "answer": "Bernoulli",
+    "bank": [
+      "Bernoulli",
+      "Fibonacci",
+      "Playfair",
+      "Powers"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'intuizione centrale di Lovelace fu organizzare le operazioni ripetitive in un gruppo che oggi, in informatica, chiamiamo ____.",
+    "answer": "ciclo",
+    "bank": [
+      "ciclo",
+      "database",
+      "intervallo",
+      "record"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La Macchina Analitica di Babbage, per cui Lovelace scrisse le proprie note, non fu mai ____.",
+    "answer": "costruita",
+    "bank": [
+      "costruita",
+      "brevettata",
+      "pubblicata",
+      "venduta"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "\"Muoversi in un foglio\" significa spostarsi rapidamente da una cella all'altra, senza dover scorrere l'intero contenuto a ____.",
+    "answer": "occhio",
+    "bank": [
+      "occhio",
+      "voce",
+      "memoria",
+      "turno"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La rotellina del mouse fa scorrere il foglio verticalmente; tenendo premuto ____, orizzontalmente.",
+    "answer": "SHIFT",
+    "bank": [
+      "SHIFT",
+      "CTRL",
+      "ALT",
+      "TAB"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Lo ____, in basso a destra, ingrandisce o rimpicciolisce la vista senza cambiare il contenuto reale del foglio.",
+    "answer": "zoom",
+    "bank": [
+      "zoom",
+      "riquadro",
+      "intervallo",
+      "riempimento"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La combinazione ____ riporta istantaneamente alla cella A1.",
+    "answer": "CTRL+Home",
+    "bank": [
+      "CTRL+Home",
+      "CTRL+F",
+      "CTRL+Z",
+      "SHIFT+F11"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La combinazione CTRL+frecce salta direttamente al limite di una zona di dati ____, nella direzione della freccia premuta.",
+    "answer": "compilata",
+    "bank": [
+      "compilata",
+      "vuota",
+      "protetta",
+      "nascosta"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La combinazione ____ cerca un testo o un numero specifico e porta direttamente alla prima cella che lo contiene.",
+    "answer": "CTRL+F",
+    "bank": [
+      "CTRL+F",
+      "CTRL+Home",
+      "CTRL+Z",
+      "SHIFT+F11"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "A differenza di Word, in Excel la ricerca può essere estesa a tutta la ____ invece che al solo foglio attivo.",
+    "answer": "cartella di lavoro",
+    "bank": [
+      "cartella di lavoro",
+      "casella nome",
+      "barra di stato",
+      "maniglia di riempimento"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ricerca in Excel può cercare tra i valori mostrati oppure tra le ____ che li generano.",
+    "answer": "formule",
+    "bank": [
+      "formule",
+      "immagini",
+      "schede",
+      "colonne"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Da Visualizza → Blocca riquadri → ____, si può tenere sempre visibile la prima riga di un foglio.",
+    "answer": "Blocca riga superiore",
+    "bank": [
+      "Blocca riga superiore",
+      "Blocca colonna sinistra",
+      "Nascondi righe",
+      "Dividi finestra"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se si seleziona un intervallo prima di scrivere, premere INVIO o TAB muove il cursore solo dentro quell'____.",
+    "answer": "intervallo",
+    "bank": [
+      "intervallo",
+      "foglio",
+      "cartella",
+      "database"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Dal settembre ____ esiste la Financial Modeling World Cup, un torneo internazionale giocato dentro Excel.",
+    "answer": "2020",
+    "bank": [
+      "2020",
+      "2005",
+      "1843",
+      "2010"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2022 il Microsoft Excel World Championship venne trasmesso per la prima volta sull'emittente sportiva statunitense ____.",
+    "answer": "ESPN2",
+    "bank": [
+      "ESPN2",
+      "CNN",
+      "BBC",
+      "MTV"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I concorrenti della Financial Modeling World Cup vengono valutati anche sulla velocità e la ____ con cui si muovono nel foglio.",
+    "answer": "precisione",
+    "bank": [
+      "precisione",
+      "fantasia",
+      "memoria",
+      "resistenza"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "\"Selezionare\" un gruppo di celle significa indicare a Excel quale porzione della griglia sarà interessata dal comando ____.",
+    "answer": "successivo",
+    "bank": [
+      "successivo",
+      "precedente",
+      "salvato",
+      "stampato"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un gruppo di celle selezionate insieme si chiama ____.",
+    "answer": "intervallo",
+    "bank": [
+      "intervallo",
+      "database",
+      "record",
+      "campo"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un intervallo si scrive con l'indirizzo della prima cella, i due punti, e l'indirizzo dell'____ cella.",
+    "answer": "ultima",
+    "bank": [
+      "ultima",
+      "seconda",
+      "prima",
+      "centrale"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'intervallo \"A1:C10\" indica un intero blocco ____.",
+    "answer": "rettangolare",
+    "bank": [
+      "rettangolare",
+      "circolare",
+      "triangolare",
+      "lineare"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per selezionare un intervallo con la tastiera, ci si posiziona sulla prima cella e, tenendo premuto ____, si usano le frecce direzionali.",
+    "answer": "SHIFT",
+    "bank": [
+      "SHIFT",
+      "CTRL",
+      "ALT",
+      "TAB"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per selezionare celle non adiacenti si tiene premuto ____ e si clicca su ciascuna cella desiderata.",
+    "answer": "CTRL",
+    "bank": [
+      "CTRL",
+      "SHIFT",
+      "ALT",
+      "TAB"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un intervallo si può selezionare anche digitandolo direttamente nella ____ e premendo INVIO.",
+    "answer": "casella nome",
+    "bank": [
+      "casella nome",
+      "barra di stato",
+      "barra multifunzione",
+      "scheda del foglio"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un intervallo selezionato in modo incompleto non genera un errore ____: Excel userà solo le celle indicate.",
+    "answer": "visibile",
+    "bank": [
+      "visibile",
+      "temporaneo",
+      "permanente",
+      "grave"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2010 gli economisti Carmen Reinhart e Kenneth Rogoff pubblicarono lo studio \"Growth in a Time of ____\".",
+    "answer": "Debt",
+    "bank": [
+      "Debt",
+      "Excel",
+      "Data",
+      "Risk"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2013 lo studente ____ scoprì l'errore nell'intervallo di celle usato nello studio di Reinhart e Rogoff.",
+    "answer": "Thomas Herndon",
+    "bank": [
+      "Thomas Herndon",
+      "Ada Lovelace",
+      "Kerns H. Powers",
+      "Bruno Iksil"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'errore nello studio di Reinhart e Rogoff escluse dall'analisi cinque paesi, tra cui Australia, Austria, Belgio, Canada e ____.",
+    "answer": "Danimarca",
+    "bank": [
+      "Danimarca",
+      "Germania",
+      "Francia",
+      "Spagna"
+    ]
+  },
+  {
+    "id": 49,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "\"Gestire i fogli di lavoro\" significa aggiungere, rinominare, eliminare, spostare o ____ i singoli fogli.",
+    "answer": "copiare",
+    "bank": [
+      "copiare",
+      "cifrare",
+      "nascondere",
+      "bloccare"
+    ]
+  },
+  {
+    "id": 50,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per aggiungere un nuovo foglio si può cliccare sull'icona \"+\" oppure usare la scorciatoia ____.",
+    "answer": "SHIFT+F11",
+    "bank": [
+      "SHIFT+F11",
+      "CTRL+F",
+      "CTRL+Home",
+      "CTRL+Z"
+    ]
+  },
+  {
+    "id": 51,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per rinominare un foglio si fa doppio clic sulla sua ____ e si digita il nuovo nome.",
+    "answer": "scheda",
+    "bank": [
+      "scheda",
+      "cella",
+      "formula",
+      "colonna"
+    ]
+  },
+  {
+    "id": 52,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per eliminare un foglio si fa clic destro sulla sua scheda e si sceglie \"____\".",
+    "answer": "Elimina",
+    "bank": [
+      "Elimina",
+      "Rinomina",
+      "Sposta",
+      "Copia"
+    ]
+  },
+  {
+    "id": 53,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'eliminazione di un foglio, una volta confermata, non può essere ____.",
+    "answer": "annullata",
+    "bank": [
+      "annullata",
+      "rinominata",
+      "copiata",
+      "salvata"
+    ]
+  },
+  {
+    "id": 54,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per spostare o copiare un foglio, anche in un'altra cartella di lavoro, si usa il comando \"____\" dal menu contestuale.",
+    "answer": "Sposta o copia",
+    "bank": [
+      "Sposta o copia",
+      "Elimina foglio",
+      "Nuovo foglio",
+      "Rinomina foglio"
+    ]
+  },
+  {
+    "id": 55,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Organizzare i dati in fogli separati applica, su scala più ampia, lo stesso principio dell'____ visto nella Parte 1.",
+    "answer": "archivio",
+    "bank": [
+      "archivio",
+      "indirizzo",
+      "formula",
+      "riempimento"
+    ]
+  },
+  {
+    "id": 56,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2012 la banca ____ perse oltre 6 miliardi di dollari nel caso della \"Balena di Londra\".",
+    "answer": "JPMorgan Chase",
+    "bank": [
+      "JPMorgan Chase",
+      "Mizuho Securities",
+      "Public Health England",
+      "Lotus"
+    ]
+  },
+  {
+    "id": 57,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il trader al centro del caso della \"Balena di Londra\" era soprannominato ____.",
+    "answer": "Bruno Iksil",
+    "bank": [
+      "Bruno Iksil",
+      "Thomas Herndon",
+      "Kenneth Rogoff",
+      "Kerns H. Powers"
+    ]
+  },
+  {
+    "id": 58,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso JPMorgan, il modello di rischio si basava su una catena di fogli Excel collegati, con dati copiati ____ da un foglio all'altro.",
+    "answer": "manualmente",
+    "bank": [
+      "manualmente",
+      "automaticamente",
+      "casualmente",
+      "in remoto"
+    ]
+  },
+  {
+    "id": 59,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso JPMorgan, una formula divideva per la somma di due tassi invece che per la loro ____, sottostimando il rischio.",
+    "answer": "media",
+    "bank": [
+      "media",
+      "differenza",
+      "somma totale",
+      "radice"
+    ]
+  },
+  {
+    "id": 60,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "\"Salvare\" una cartella di lavoro significa trasferirne il contenuto dalla memoria temporanea del computer a una memoria di ____.",
+    "answer": "massa",
+    "bank": [
+      "massa",
+      "testo",
+      "formule",
+      "calcolo"
+    ]
+  },
+  {
+    "id": 61,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Mentre si lavora, la cartella di lavoro esiste solo nella ____, la memoria temporanea del computer.",
+    "answer": "RAM",
+    "bank": [
+      "RAM",
+      "ROM",
+      "CPU",
+      "cache"
+    ]
+  },
+  {
+    "id": 62,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il comando \"____\" aggiorna il file esistente con le ultime modifiche.",
+    "answer": "Salva",
+    "bank": [
+      "Salva",
+      "Salva con nome",
+      "Annulla",
+      "Elimina"
+    ]
+  },
+  {
+    "id": 63,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il comando \"Salva con nome\" crea un nuovo file, lasciando intatto l'____.",
+    "answer": "originale",
+    "bank": [
+      "originale",
+      "riquadro",
+      "intervallo",
+      "database"
+    ]
+  },
+  {
+    "id": 64,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il formato standard con cui Excel salva oggi una cartella di lavoro è \"____\".",
+    "answer": ".xlsx",
+    "bank": [
+      ".xlsx",
+      ".xls",
+      ".csv",
+      ".pdf"
+    ]
+  },
+  {
+    "id": 65,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il formato \"____\" è il vecchio formato compatibile con versioni di Excel precedenti al 2007.",
+    "answer": ".xls",
+    "bank": [
+      ".xls",
+      ".xlsx",
+      ".csv",
+      ".pdf"
+    ]
+  },
+  {
+    "id": 66,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il formato \"____\" conserva solo i dati puri, separati da virgole, leggibile da qualunque programma di gestione dati.",
+    "answer": ".csv",
+    "bank": [
+      ".csv",
+      ".xlsx",
+      ".xls",
+      ".pdf"
+    ]
+  },
+  {
+    "id": 67,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il formato \"____\" è pensato per condividere un file in una forma definitiva e non modificabile.",
+    "answer": ".pdf",
+    "bank": [
+      ".pdf",
+      ".xlsx",
+      ".xls",
+      ".csv"
+    ]
+  },
+  {
+    "id": 68,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Tra il 25 settembre e il 2 ottobre ____, il servizio sanitario inglese Public Health England perse migliaia di casi Covid-19 per un limite tecnico di un file Excel.",
+    "answer": "2020",
+    "bank": [
+      "2020",
+      "2005",
+      "2010",
+      "1843"
+    ]
+  },
+  {
+    "id": 69,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il file usato da Public Health England era salvato nel vecchio formato .xls, che ha un limite fisso di ____ righe.",
+    "answer": "65.536",
+    "bank": [
+      "65.536",
+      "15.841",
+      "48.000",
+      "225"
+    ]
+  },
+  {
+    "id": 70,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "A causa del limite di righe, circa ____ persone entrate in contatto con i pazienti positivi non furono avvisate in tempo.",
+    "answer": "48.000",
+    "bank": [
+      "48.000",
+      "15.841",
+      "65.536",
+      "225"
+    ]
+  },
+  {
+    "id": 71,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Oltre il limite di righe del formato .xls, ogni nuovo risultato aggiunto in fondo al file veniva scartato in ____, senza alcun messaggio di errore.",
+    "answer": "silenzio",
+    "bank": [
+      "silenzio",
+      "automatico",
+      "formato PDF",
+      "un altro foglio"
+    ]
+  }
+]

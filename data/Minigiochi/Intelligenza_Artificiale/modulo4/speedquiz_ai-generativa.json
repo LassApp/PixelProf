@@ -1,0 +1,752 @@
+[
+  {
+    "id": 1,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la generazione di testo secondo il modulo?",
+    "options": [
+      "La capacità di un'AI di copiare testi già esistenti",
+      "La capacità di un'AI generativa di creare contenuti testuali a partire da un prompt",
+      "La capacità di un'AI di tradurre testi in altre lingue",
+      "La capacità di un'AI di correggere errori grammaticali"
+    ],
+    "correctIndex": 1,
+    "explanation": "La generazione di testo è la capacità di un sistema di AI generativa di creare contenuti testuali a partire da un'istruzione, chiamata prompt."
+  },
+  {
+    "id": 2,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene chiamata l'istruzione fornita a un sistema di AI generativa per ottenere un contenuto?",
+    "options": [
+      "Output",
+      "Prompt",
+      "Dataset",
+      "Algoritmo"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'istruzione fornita a un sistema di AI generativa viene chiamata prompt."
+  },
+  {
+    "id": 3,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, un sistema di AI generativa per il testo utilizza un modello addestrato per:",
+    "options": [
+      "Cercare un testo esistente e copiarlo",
+      "Tradurre automaticamente ogni richiesta",
+      "Imparare le relazioni tra le parole e costruire una risposta coerente",
+      "Correggere esclusivamente errori ortografici"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il modello utilizza dati di addestramento per imparare le relazioni tra le parole e costruire una risposta coerente con la richiesta."
+  },
+  {
+    "id": 4,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede generalmente se un prompt è generico, secondo il modulo?",
+    "options": [
+      "Produce sempre un errore",
+      "Produce generalmente una risposta generica",
+      "Viene rifiutato dal sistema",
+      "Produce sempre lo stesso identico risultato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un prompt generico può produrre una risposta generica."
+  },
+  {
+    "id": 5,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il testo generato dall'AI deve essere controllato da una persona, secondo il modulo?",
+    "options": [
+      "Perché l'AI scrive sempre troppo lentamente",
+      "Perché il testo generato può contenere informazioni inesatte o affermazioni presentate con sicurezza ma false",
+      "Perché l'AI non può generare testi lunghi",
+      "Perché l'AI richiede sempre un pagamento aggiuntivo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modello può produrre informazioni inesatte o formulare con sicurezza qualcosa che non è vero, per questo il contenuto va controllato da una persona."
+  },
+  {
+    "id": 6,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio della mail alla segreteria scolastica, cosa fa la persona dopo aver ricevuto la bozza dall'AI?",
+    "options": [
+      "La invia senza leggerla",
+      "La legge, corregge le informazioni e modifica alcune frasi",
+      "La cancella e ne richiede una nuova",
+      "La condivide sui social network"
+    ],
+    "correctIndex": 1,
+    "explanation": "La persona riceve la bozza, la legge, corregge le informazioni e modifica alcune frasi prima di inviarla."
+  },
+  {
+    "id": 7,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, perché aziende e istituzioni hanno introdotto regole sull'uso dell'AI per produrre testi?",
+    "options": [
+      "Perché l'AI è troppo costosa",
+      "Perché un testo apparentemente corretto può contenere errori o informazioni non verificate",
+      "Perché l'AI genera testi troppo brevi",
+      "Perché l'AI non supporta la lingua italiana"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un testo apparentemente corretto può contenere errori o informazioni non verificate, per questo sono state introdotte regole sull'uso dell'AI."
+  },
+  {
+    "id": 8,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la lezione fondamentale del modulo riguardo alla generazione di testo?",
+    "options": [
+      "Generare un testo è facile; stabilire se sia corretto è responsabilità dell'essere umano",
+      "L'AI genera sempre testi corretti",
+      "Non è mai necessario controllare un testo generato dall'AI",
+      "Solo gli esperti possono usare l'AI per scrivere testi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Generare un testo è facile; stabilire se quel testo sia corretto è ancora responsabilità dell'essere umano."
+  },
+  {
+    "id": 9,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'assistente davanti alla macchina da scrivere, a chi appartiene il giudizio finale?",
+    "options": [
+      "Alla macchina",
+      "Alla persona",
+      "A entrambi in egual misura",
+      "A nessuno dei due"
+    ],
+    "correctIndex": 1,
+    "explanation": "La velocità appartiene alla macchina; il giudizio appartiene alla persona."
+  },
+  {
+    "id": 10,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali elementi rendono un prompt più efficace, secondo il modulo?",
+    "options": [
+      "Destinatario, obiettivo, tono e vincoli",
+      "Solo la lunghezza del testo",
+      "Solo l'uso di parole complesse",
+      "La velocità con cui viene scritto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una richiesta precisa, con destinatario, obiettivo, tono e vincoli, permette generalmente di ottenere un risultato più adatto."
+  },
+  {
+    "id": 11,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la generazione di immagini secondo il modulo?",
+    "options": [
+      "La capacità di un'AI di modificare solo fotografie già scattate",
+      "La capacità di un'AI generativa di creare immagini nuove a partire da una richiesta dell'utente",
+      "La capacità di un'AI di catalogare immagini esistenti",
+      "La capacità di un'AI di stampare immagini"
+    ],
+    "correctIndex": 1,
+    "explanation": "La generazione di immagini è la capacità di un sistema di AI generativa di creare immagini nuove a partire da una richiesta dell'utente."
+  },
+  {
+    "id": 12,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può specificare un prompt per la generazione di immagini, secondo il modulo?",
+    "options": [
+      "Solo il colore predominante",
+      "Soggetto, ambiente, stile, composizione e atmosfera",
+      "Solo la risoluzione dell'immagine",
+      "Solo il formato del file"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il prompt può specificare soggetto, ambiente, stile, composizione, atmosfera e altri dettagli."
+  },
+  {
+    "id": 13,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su cosa è stato addestrato un sistema di generazione delle immagini, secondo il modulo?",
+    "options": [
+      "Solo su testi scritti",
+      "Solo su suoni e voci",
+      "Su grandi quantità di dati visivi",
+      "Solo su codice informatico"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il sistema è stato addestrato su grandi quantità di dati visivi."
+  },
+  {
+    "id": 14,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Oltre a creare immagini nuove, per cosa può essere utilizzata la generazione di immagini secondo il modulo?",
+    "options": [
+      "Solo per stampare fotografie",
+      "Per modificare immagini esistenti, ad esempio cambiando lo sfondo",
+      "Solo per comprimere i file",
+      "Solo per convertire i formati"
+    ],
+    "correctIndex": 1,
+    "explanation": "Può essere utilizzata anche per modificare immagini esistenti, ad esempio eliminando un elemento o cambiando lo sfondo."
+  },
+  {
+    "id": 15,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può accadere con un'immagine generata dall'AI, secondo il modulo?",
+    "options": [
+      "È sempre perfettamente accurata",
+      "Può contenere errori visivi o dettagli incoerenti",
+      "Non può mai essere condivisa",
+      "Richiede sempre una licenza a pagamento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un'immagine generata può contenere errori visivi, dettagli incoerenti o elementi che sembrano realistici pur non essendo reali."
+  },
+  {
+    "id": 16,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa avvenne nel 2023 riguardo a un'immagine generata dall'AI, secondo il modulo?",
+    "options": [
+      "Un'immagine di una presunta esplosione vicino al Pentagono fu diffusa sui social network come se fosse una fotografia reale",
+      "Una voce artificiale che imitava un presidente fu utilizzata in telefonate automatiche rivolte agli elettori",
+      "Un video manipolato mostrò una falsa dichiarazione di un presidente che chiedeva ai soldati di deporre le armi",
+      "Uno strumento di AI per la programmazione fu introdotto da GitHub e OpenAI"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel 2023 un'immagine generata dall'AI che mostrava una presunta esplosione vicino al Pentagono fu diffusa sui social come se fosse una fotografia reale."
+  },
+  {
+    "id": 17,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostra il caso dell'immagine del Pentagono, secondo il modulo?",
+    "options": [
+      "Che le immagini AI non possono più essere create",
+      "Che un'immagine non è più necessariamente la prova che qualcosa sia realmente accaduto",
+      "Che il Pentagono ha vietato l'uso dell'AI",
+      "Che le immagini generate sono sempre di bassa qualità"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il caso dimostra che un'immagine non è più necessariamente la prova che qualcosa sia realmente accaduto."
+  },
+  {
+    "id": 18,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa diventa sempre più importante con la diffusione degli strumenti generativi di immagini?",
+    "options": [
+      "Comprare più dispositivi",
+      "Verificare le fonti e il contesto prima di credere o condividere un'immagine",
+      "Smettere di usare i social network",
+      "Utilizzare solo immagini in bianco e nero"
+    ],
+    "correctIndex": 1,
+    "explanation": "Diventa sempre più importante verificare le fonti e il contesto prima di credere o condividere un'immagine."
+  },
+  {
+    "id": 19,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio della presentazione sulla sostenibilità, cosa specifica la persona riguardo all'immagine utilizzata?",
+    "options": [
+      "Che è stata acquistata da un archivio fotografico",
+      "Che si tratta di un'immagine generata artificialmente, non di una fotografia reale",
+      "Che è stata disegnata a mano",
+      "Che proviene da un giornale locale"
+    ],
+    "correctIndex": 1,
+    "explanation": "La persona specifica nella presentazione che si tratta di un'immagine generata artificialmente, non di una fotografia di una città realmente esistente."
+  },
+  {
+    "id": 20,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'illustratore invisibile, cosa succede se le indicazioni fornite sono più precise?",
+    "options": [
+      "Il risultato è sempre identico indipendentemente dalle indicazioni",
+      "Più chiaro è ciò che si sta chiedendo",
+      "L'illustratore impiega più tempo",
+      "Il risultato diventa sempre in bianco e nero"
+    ],
+    "correctIndex": 1,
+    "explanation": "Più precise sono le indicazioni, più chiaro è ciò che si sta chiedendo."
+  },
+  {
+    "id": 21,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la generazione audio secondo il modulo?",
+    "options": [
+      "La capacità di un'AI di ascoltare musica",
+      "La capacità di un'AI generativa di creare o trasformare contenuti sonori a partire da istruzioni o dati",
+      "La capacità di un'AI di registrare suoni ambientali",
+      "La capacità di un'AI di tradurre testi in audio senza generare nulla di nuovo"
+    ],
+    "correctIndex": 1,
+    "explanation": "La generazione audio è la capacità di un sistema di AI generativa di creare o trasformare contenuti sonori a partire da istruzioni o dati forniti dall'utente."
+  },
+  {
+    "id": 22,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la sintesi vocale, secondo il modulo?",
+    "options": [
+      "La trasformazione di un testo scritto in una voce artificiale",
+      "La registrazione di una voce umana reale",
+      "La traduzione automatica di una lingua in un'altra",
+      "La compressione di un file audio"
+    ],
+    "correctIndex": 0,
+    "explanation": "La sintesi vocale è la trasformazione di un testo scritto in una voce artificiale."
+  },
+  {
+    "id": 23,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Oltre alla sintesi vocale, cosa possono generare i sistemi di AI audio, secondo il modulo?",
+    "options": [
+      "Solo rumori casuali",
+      "Musica ed effetti sonori a partire da una descrizione",
+      "Solo suoni della natura",
+      "Solo jingle pubblicitari"
+    ],
+    "correctIndex": 1,
+    "explanation": "Esistono sistemi capaci di generare musica a partire da una descrizione, creare effetti sonori o trasformare una registrazione esistente."
+  },
+  {
+    "id": 24,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quali ambiti può essere utile la generazione audio, secondo il modulo?",
+    "options": [
+      "Solo nell'industria automobilistica",
+      "Accessibilità, istruzione, videogiochi, podcast e produzione multimediale",
+      "Solo nella medicina",
+      "Solo nella meteorologia"
+    ],
+    "correctIndex": 1,
+    "explanation": "La tecnologia può essere utile nell'accessibilità, nell'istruzione, nei videogiochi, nei podcast e nella produzione multimediale."
+  },
+  {
+    "id": 25,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene spesso chiamata la tecnica che imita una voce per creare registrazioni che sembrano provenire da una persona reale?",
+    "options": [
+      "Sintesi vocale",
+      "Deepfake vocale",
+      "Riconoscimento vocale",
+      "Trascrizione automatica"
+    ],
+    "correctIndex": 1,
+    "explanation": "Questa tecnica viene spesso associata al termine deepfake vocale."
+  },
+  {
+    "id": 26,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa avvenne nel 2024 negli Stati Uniti riguardo a una voce generata dall'AI, secondo il modulo?",
+    "options": [
+      "Una voce artificiale che imitava il presidente Joe Biden fu usata in telefonate automatiche rivolte agli elettori del New Hampshire",
+      "Un'immagine generata dall'AI di una presunta esplosione fu diffusa sui social network",
+      "Un video manipolato mostrò una falsa dichiarazione di un presidente che chiedeva ai soldati di deporre le armi",
+      "Uno strumento fu introdotto da GitHub e OpenAI per assistere gli sviluppatori nella scrittura del codice"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel 2024 una voce artificiale che imitava il presidente Joe Biden fu utilizzata in telefonate automatiche rivolte agli elettori del New Hampshire."
+  },
+  {
+    "id": 27,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostrò il caso della voce artificiale di Joe Biden, secondo il modulo?",
+    "options": [
+      "Che le telefonate automatiche non sono più possibili",
+      "Che una voce generata artificialmente può far credere alle persone di ascoltare una persona reale",
+      "Che il New Hampshire ha vietato l'AI",
+      "Che le voci generate sono sempre facilmente riconoscibili"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il caso dimostrò concretamente quanto una voce generata artificialmente possa essere utilizzata per far credere alle persone di ascoltare una persona reale."
+  },
+  {
+    "id": 28,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, dopo la diffusione dei deepfake vocali, cosa non costituisce più da sola una garanzia dell'identità di chi parla?",
+    "options": [
+      "Il numero di telefono",
+      "La voce riconoscibile",
+      "L'orario della chiamata",
+      "La durata della chiamata"
+    ],
+    "correctIndex": 1,
+    "explanation": "La voce riconoscibile non costituisce più, da sola, una garanzia dell'identità di chi parla."
+  },
+  {
+    "id": 29,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del video didattico, cosa fa la persona prima di utilizzare la voce narrante generata dall'AI?",
+    "options": [
+      "La pubblica immediatamente senza ascoltarla",
+      "Ascolta la registrazione, corregge le parole pronunciate male e verifica il contenuto",
+      "La invia a un doppiatore professionista",
+      "La traduce in un'altra lingua"
+    ],
+    "correctIndex": 1,
+    "explanation": "La persona ascolta la registrazione, corregge alcune parole pronunciate male e verifica che il contenuto sia corretto."
+  },
+  {
+    "id": 30,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'attore invisibile, cosa possiede questo attore secondo il modulo?",
+    "options": [
+      "Un solo volto e una sola voce",
+      "Nessuna voce ma migliaia di volti",
+      "Migliaia di voci ma nessun volto",
+      "Un copione già scritto da altri attori"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'attore invisibile non ha un volto, ma possiede migliaia di voci."
+  },
+  {
+    "id": 31,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la generazione di video secondo il modulo?",
+    "options": [
+      "La capacità di un'AI di riprodurre video già esistenti",
+      "La capacità di un'AI generativa di creare o modificare contenuti video a partire da istruzioni, immagini, video o altri dati",
+      "La capacità di un'AI di comprimere file video",
+      "La capacità di un'AI di sottotitolare automaticamente un video"
+    ],
+    "correctIndex": 1,
+    "explanation": "La generazione di video è la capacità di un sistema di AI generativa di creare o modificare contenuti video a partire da istruzioni, immagini, video o altri dati."
+  },
+  {
+    "id": 32,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un video è più complesso di una singola immagine, secondo il modulo?",
+    "options": [
+      "Perché richiede sempre un audio separato",
+      "Perché contiene una sequenza di fotogrammi che deve mantenere coerenza nel tempo",
+      "Perché non può essere generato dall'AI",
+      "Perché richiede sempre attori reali"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un video contiene una sequenza di fotogrammi che devono mantenere una certa coerenza nel tempo."
+  },
+  {
+    "id": 33,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permettono alcuni strumenti di generazione video, secondo il modulo?",
+    "options": [
+      "Partire da un'immagine statica e animarla",
+      "Solo cancellare video esistenti",
+      "Solo tradurre i sottotitoli",
+      "Solo aumentare la risoluzione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Altri strumenti permettono di partire da un'immagine statica e animarla, oppure di modificare un video già esistente."
+  },
+  {
+    "id": 34,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali limiti può presentare la generazione video, secondo il modulo?",
+    "options": [
+      "Il movimento può risultare incoerente e alcuni dettagli possono apparire fisicamente impossibili",
+      "Il video generato è sempre troppo corto",
+      "Il video generato non può mai superare un minuto",
+      "Il video generato è sempre in bianco e nero"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il movimento può risultare incoerente, gli oggetti possono cambiare aspetto e alcuni dettagli possono apparire fisicamente impossibili."
+  },
+  {
+    "id": 35,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il problema più delicato della generazione video, secondo il modulo?",
+    "options": [
+      "Il costo elevato degli strumenti",
+      "L'informazione: un video può mostrare una persona che dice o fa qualcosa mai realmente accaduto",
+      "La lentezza nella generazione",
+      "La mancanza di colori realistici"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il problema più delicato riguarda l'informazione: un video generato o manipolato può mostrare una persona mentre dice o fa qualcosa che non ha mai detto o fatto realmente."
+  },
+  {
+    "id": 36,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostrava il video falso diffuso online nel 2024 riguardo al presidente ucraino Volodymyr Zelenskyj, secondo il modulo?",
+    "options": [
+      "Una presunta dichiarazione in cui sembrava chiedere ai soldati di deporre le armi",
+      "Un'immagine di una presunta esplosione vicino a un edificio governativo",
+      "Una voce artificiale usata in telefonate automatiche rivolte agli elettori",
+      "Un codice generato automaticamente da uno strumento di sviluppo software"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il video mostrava una presunta dichiarazione in cui Zelenskyj sembrava chiedere ai soldati di deporre le armi, parole mai realmente pronunciate."
+  },
+  {
+    "id": 37,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostrò concretamente l'episodio del video falso di Zelenskyj, secondo il modulo?",
+    "options": [
+      "Che i video non possono più essere manipolati",
+      "Un rischio concreto dei deepfake video: usare immagini e voce di una persona reale per costruire una scena credibile ma falsa",
+      "Che Zelenskyj aveva effettivamente pronunciato quelle parole",
+      "Che i deepfake riguardano solo le immagini, non i video"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'episodio mostrò un rischio concreto dei deepfake video: utilizzare immagini e voce di una persona reale per costruire una scena credibile ma falsa."
+  },
+  {
+    "id": 38,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio della città sostenibile, cosa rappresenta il video generato dall'AI?",
+    "options": [
+      "Una città realmente esistente",
+      "Una visualizzazione generata per aiutare a immaginare uno scenario",
+      "Un documentario storico",
+      "Una mappa geografica interattiva"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il video non rappresenta una città reale: è una visualizzazione generata per aiutare gli studenti a immaginare uno scenario."
+  },
+  {
+    "id": 39,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa diventa più difficile con la diffusione dei deepfake video?",
+    "options": [
+      "Creare contenuti pubblicitari",
+      "La distinzione tra documento autentico e contenuto artificiale",
+      "Utilizzare gli smartphone",
+      "Registrare video in alta definizione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Con i deepfake video, la distinzione tra documento autentico e contenuto artificiale diventa più difficile."
+  },
+  {
+    "id": 40,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del teatro senza attori, chi o cosa costruisce la scenografia e il movimento dietro il sipario?",
+    "options": [
+      "Un regista umano",
+      "L'AI",
+      "Gli spettatori",
+      "Nessuno, la scena resta vuota"
+    ],
+    "correctIndex": 1,
+    "explanation": "Dietro il sipario, l'AI costruisce rapidamente scenografia e movimento e poi mette tutto in scena."
+  },
+  {
+    "id": 41,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la generazione di codice secondo il modulo?",
+    "options": [
+      "La capacità di un'AI di eseguire solo codice già scritto",
+      "La capacità di un'AI generativa di creare, completare, spiegare o modificare codice informatico a partire da istruzioni",
+      "La capacità di un'AI di cancellare automaticamente i bug",
+      "La capacità di un'AI di installare software"
+    ],
+    "correctIndex": 1,
+    "explanation": "La generazione di codice è la capacità di un sistema di AI generativa di creare, completare, spiegare o modificare codice informatico a partire da istruzioni."
+  },
+  {
+    "id": 42,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa era necessario tradizionalmente per creare un programma, secondo il modulo?",
+    "options": [
+      "Conoscere un linguaggio di programmazione e scrivere manualmente le istruzioni",
+      "Avere solo una connessione a Internet veloce",
+      "Possedere un computer molto potente",
+      "Avere una laurea in informatica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tradizionalmente era necessario conoscere un linguaggio di programmazione e scrivere manualmente le istruzioni che il computer avrebbe dovuto eseguire."
+  },
+  {
+    "id": 43,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con l'AI generativa, come possiamo descrivere ciò che vogliamo ottenere, secondo il modulo?",
+    "options": [
+      "Solo attraverso diagrammi di flusso",
+      "Utilizzando un linguaggio molto più vicino a quello naturale",
+      "Solo scrivendo in linguaggio binario",
+      "Solo tramite comandi vocali predefiniti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Con l'AI generativa possiamo descrivere ciò che vogliamo ottenere utilizzando un linguaggio molto più vicino a quello naturale."
+  },
+  {
+    "id": 44,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può fare l'AI oltre a generare codice, secondo il modulo?",
+    "options": [
+      "Individuare errori, suggerire miglioramenti e trasformare un programma da un linguaggio a un altro",
+      "Solo cancellare il codice esistente",
+      "Solo compilare il codice",
+      "Solo eseguire test automatici senza spiegazioni"
+    ],
+    "correctIndex": 0,
+    "explanation": "Può individuare alcuni errori nel codice, suggerire miglioramenti, trasformare un programma da un linguaggio a un altro o aiutare a comprendere codice scritto da altri."
+  },
+  {
+    "id": 45,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la generazione di codice è utile, secondo il modulo?",
+    "options": [
+      "Solo per chi già conosce perfettamente la programmazione",
+      "Per imparare a programmare, creare prototipi e velocizzare alcune attività di sviluppo",
+      "Solo per creare virus informatici",
+      "Solo per sostituire completamente i programmatori"
+    ],
+    "correctIndex": 1,
+    "explanation": "Questo rende l'AI uno strumento particolarmente interessante per imparare a programmare, creare prototipi e velocizzare alcune attività di sviluppo."
+  },
+  {
+    "id": 46,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la distinzione fondamentale sottolineata dal modulo riguardo al codice generato dall'AI?",
+    "options": [
+      "Codice generato non significa codice corretto",
+      "Codice generato è sempre più veloce di quello scritto a mano",
+      "Codice generato non può mai contenere errori",
+      "Codice generato è sempre gratuito"
+    ],
+    "correctIndex": 0,
+    "explanation": "C'è una distinzione fondamentale: codice generato non significa codice corretto."
+  },
+  {
+    "id": 47,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può contenere il codice generato dall'AI, secondo il modulo?",
+    "options": [
+      "Solo commenti superflui",
+      "Errori di sintassi, errori logici o problemi di sicurezza",
+      "Solo errori di traduzione",
+      "Solo problemi di formattazione estetica"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il codice generato può contenere errori di sintassi, errori logici o, in alcuni casi, problemi di sicurezza."
+  },
+  {
+    "id": 48,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi deve leggere, testare e verificare il codice generato dall'AI, secondo il modulo?",
+    "options": [
+      "Nessuno, l'AI si autoverifica",
+      "Una persona competente",
+      "Solo un altro sistema di AI",
+      "Solo l'utente finale del programma"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il codice deve essere letto, testato e verificato da una persona competente."
+  },
+  {
+    "id": 49,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale strumento viene citato nel modulo come esempio di AI per la programmazione utilizzato nello sviluppo software professionale?",
+    "options": [
+      "GitHub Copilot",
+      "Un sistema di sintesi vocale per creare voci narranti",
+      "Un generatore di immagini per creare illustrazioni pubblicitarie",
+      "Un generatore di video per creare scene animate"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un esempio è GitHub Copilot, introdotto da GitHub e OpenAI come strumento capace di assistere gli sviluppatori nella scrittura del codice."
+  },
+  {
+    "id": 50,
+    "module": "ai-generativa",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da chi è stato introdotto GitHub Copilot, secondo il modulo?",
+    "options": [
+      "GitHub e OpenAI",
+      "Solo da GitHub, senza altri partner",
+      "Solo da OpenAI, senza il coinvolgimento di GitHub",
+      "Da un gruppo di sviluppatori indipendenti non meglio specificato"
+    ],
+    "correctIndex": 0,
+    "explanation": "GitHub Copilot è stato introdotto da GitHub e OpenAI."
+  }
+]

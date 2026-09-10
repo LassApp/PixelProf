@@ -1,0 +1,380 @@
+[
+  {
+    "id": 1,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un chatbot è un sistema software progettato per dialogare con una persona attraverso messaggi, voce o altri strumenti di comunicazione.",
+    "answer": true,
+    "explanation": "Questa è la definizione di chatbot fornita dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il chatbot può agire mentre l'agente si limita a dialogare.",
+    "answer": false,
+    "explanation": "È vero il contrario: il chatbot dialoga; l'agente può agire."
+  },
+  {
+    "id": 3,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un agente AI è capace non solo di comprendere una richiesta, ma anche di decidere quali azioni compiere per raggiungere un obiettivo.",
+    "answer": true,
+    "explanation": "Questa è la definizione di agente AI fornita dal modulo."
+  },
+  {
+    "id": 4,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un agente senza accesso al calendario può comunque modificarlo senza problemi.",
+    "answer": false,
+    "explanation": "Un agente senza accesso al calendario non può magicamente modificarlo."
+  },
+  {
+    "id": 5,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, più un sistema può agire, maggiore deve essere il controllo sulle sue azioni.",
+    "answer": true,
+    "explanation": "Questo è il principio espresso dal modulo."
+  },
+  {
+    "id": 6,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, dare a un chatbot la possibilità di suggerire un'operazione è la stessa cosa che permettergli di eseguirla direttamente.",
+    "answer": false,
+    "explanation": "Il modulo afferma che sono cose molto diverse."
+  },
+  {
+    "id": 7,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un agente dovrebbe essere considerato semplicemente un chatbot più evoluto.",
+    "answer": false,
+    "explanation": "Un agente non dovrebbe essere considerato semplicemente un chatbot più evoluto, ma un componente software che interviene nei processi digitali."
+  },
+  {
+    "id": 8,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del segretario, l'agente consulta l'agenda, verifica gli impegni e prepara l'invito.",
+    "answer": true,
+    "explanation": "Questo è esattamente il comportamento descritto nella metafora del segretario."
+  },
+  {
+    "id": 9,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un workflow è una sequenza organizzata di attività che devono essere eseguite per raggiungere un determinato risultato.",
+    "answer": true,
+    "explanation": "Questa è la definizione di workflow fornita dal modulo."
+  },
+  {
+    "id": 10,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, automazione e AI sono sinonimi.",
+    "answer": false,
+    "explanation": "Il modulo afferma chiaramente che automazione e AI non sono sinonimi."
+  },
+  {
+    "id": 11,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un workflow può funzionare perfettamente anche senza intelligenza artificiale.",
+    "answer": true,
+    "explanation": "Il modulo afferma che un workflow può funzionare perfettamente anche senza AI."
+  },
+  {
+    "id": 12,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, se una regola di un workflow è sbagliata, l'errore non può mai ripetersi.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: il workflow può ripetere lo stesso errore automaticamente."
+  },
+  {
+    "id": 13,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un buon workflow deve prevedere controlli, condizioni e punti di intervento umano.",
+    "answer": true,
+    "explanation": "Questo è quanto raccomandato dal modulo, specialmente per azioni con conseguenze importanti."
+  },
+  {
+    "id": 14,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio della fattura, se il documento non viene riconosciuto con sufficiente sicurezza, il processo continua comunque senza fermarsi.",
+    "answer": false,
+    "explanation": "Il processo si ferma e chiede alla persona di controllarlo."
+  },
+  {
+    "id": 15,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un errore nella logica di un workflow può essere ripetuto migliaia di volte se il processo è eseguito su larga scala.",
+    "answer": true,
+    "explanation": "Questo è quanto afferma il modulo riguardo ai rischi dell'automazione su larga scala."
+  },
+  {
+    "id": 16,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della catena di montaggio, se una stazione è progettata male, il problema resta sempre isolato e non si propaga.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: il problema può propagarsi lungo tutta la catena."
+  },
+  {
+    "id": 17,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un agente autonomo è un sistema di AI capace di perseguire un obiettivo attraverso una sequenza di azioni, adattando il proprio comportamento quando necessario.",
+    "answer": true,
+    "explanation": "Questa è la definizione di agente autonomo fornita dal modulo."
+  },
+  {
+    "id": 18,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, in un workflow i passaggi sono definiti in anticipo, mentre un agente autonomo può modificare il percorso operativo.",
+    "answer": true,
+    "explanation": "Questa è esattamente la distinzione fatta dal modulo."
+  },
+  {
+    "id": 19,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'autonomia di un agente significa libertà assoluta, senza alcun limite.",
+    "answer": false,
+    "explanation": "L'autonomia non significa libertà assoluta: l'agente opera entro istruzioni, strumenti, autorizzazioni e limiti."
+  },
+  {
+    "id": 20,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'agente autonomo possiede una volontà propria e decide liberamente cosa desidera fare.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: l'obiettivo viene stabilito dall'esterno."
+  },
+  {
+    "id": 21,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un agente autonomo può limitarsi a proporre la prossima azione, senza eseguirla direttamente.",
+    "answer": true,
+    "explanation": "Questo è uno dei gradi di autonomia descritti dal modulo."
+  },
+  {
+    "id": 22,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, le sperimentazioni hanno mostrato che l'autonomia garantisce sempre risultati corretti.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: l'autonomia non garantisce automaticamente risultati corretti."
+  },
+  {
+    "id": 23,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'agente può assumersi una parte del lavoro operativo, ma non scompare la necessità di progettazione e supervisione.",
+    "answer": true,
+    "explanation": "Questo è il punto fondamentale espresso dal modulo."
+  },
+  {
+    "id": 24,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del navigatore, l'agente autonomo decide anche la destinazione finale del viaggio.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: il navigatore non decide la destinazione."
+  },
+  {
+    "id": 25,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un'integrazione è un collegamento tra due o più sistemi software che permette loro di scambiarsi informazioni.",
+    "answer": true,
+    "explanation": "Questa è la definizione di integrazione fornita dal modulo."
+  },
+  {
+    "id": 26,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un'API è un'interfaccia che permette a un programma di comunicare con un altro programma secondo regole definite.",
+    "answer": true,
+    "explanation": "Questa è la definizione di API fornita dal modulo."
+  },
+  {
+    "id": 27,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'utente deve necessariamente conoscere i dettagli tecnici di un'API per usare un agente collegato ad essa.",
+    "answer": false,
+    "explanation": "Il modulo afferma che non è necessario che l'utente conosca i dettagli tecnici dell'API."
+  },
+  {
+    "id": 28,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, permettere a un agente di inviare email non comporta alcun rischio o responsabilità aggiuntiva.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: permettere l'invio di email concede la possibilità di comunicare al nostro posto, aumentando il rischio."
+  },
+  {
+    "id": 29,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il principio del minimo privilegio consiste nel concedere al sistema soltanto i permessi realmente necessari per svolgere il compito.",
+    "answer": true,
+    "explanation": "Questa è la definizione fornita dal modulo."
+  },
+  {
+    "id": 30,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, se un agente deve leggere il calendario, questo significa automaticamente che può anche cancellare gli appuntamenti.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: non è detto che debba poter cancellare gli appuntamenti."
+  },
+  {
+    "id": 31,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, le integrazioni software esistevano già da anni prima della diffusione degli agenti AI.",
+    "answer": true,
+    "explanation": "Il modulo afferma che le integrazioni software sono utilizzate da anni, molto prima della diffusione degli agenti AI."
+  },
+  {
+    "id": 32,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della città, più porte colleghiamo all'agente, meno cose può fare.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: più porte colleghiamo all'agente, più cose può fare."
+  },
+  {
+    "id": 33,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La produttività indica la capacità di ottenere un determinato risultato utilizzando nel modo più efficace possibile le risorse disponibili.",
+    "answer": true,
+    "explanation": "Questa è la definizione di produttività fornita dal modulo."
+  },
+  {
+    "id": 34,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, più veloce significa sempre automaticamente più produttivo.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: più veloce non significa automaticamente più produttivo."
+  },
+  {
+    "id": 35,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la vera produttività nasce quando l'automazione produce un risultato utile, corretto e verificabile.",
+    "answer": true,
+    "explanation": "Questo è quanto afferma il modulo."
+  },
+  {
+    "id": 36,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'essere umano non ha più alcun ruolo quando si utilizza l'automazione.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: l'essere umano mantiene un ruolo fondamentale."
+  },
+  {
+    "id": 37,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la collaborazione tra persona e AI è particolarmente efficace nelle attività che seguono schemi ricorrenti.",
+    "answer": true,
+    "explanation": "Questo è quanto afferma il modulo."
+  },
+  {
+    "id": 38,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'obiettivo dovrebbe essere automatizzare tutto il lavoro possibile, senza eccezioni.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: l'obiettivo non dovrebbe essere 'automatizzare tutto'."
+  },
+  {
+    "id": 39,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un moltiplicatore come l'AI amplifica ciò che gli viene affidato, sia in positivo sia in negativo.",
+    "answer": true,
+    "explanation": "Il modulo afferma che un moltiplicatore amplifica ciò che gli affidiamo: aumenta l'efficienza se ben progettato, ma può aumentare anche gli errori."
+  },
+  {
+    "id": 40,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, l'aumento della produttività dipende soltanto dalla tecnologia utilizzata, non da come vengono riprogettati i processi di lavoro.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: dipende anche da come vengono riprogettati i processi di lavoro."
+  },
+  {
+    "id": 41,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della cucina professionale, l'AI e l'automazione possono liberare lo chef dalle attività che gli impediscono di cucinare.",
+    "answer": true,
+    "explanation": "Questo è esattamente il senso della metafora della cucina professionale."
+  },
+  {
+    "id": 42,
+    "module": "agenti-automazione",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la produttività consiste nel correre più velocemente possibile in ogni attività.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: la produttività consiste nel sapere dove vale la pena andare, non nel correre più velocemente."
+  }
+]

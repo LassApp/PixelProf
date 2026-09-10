@@ -1,0 +1,722 @@
+[
+  {
+    "id": 1,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è l'AI Act secondo il modulo?",
+    "options": [
+      "Il regolamento dell'Unione Europea che stabilisce un insieme di regole comuni per lo sviluppo, l'immissione sul mercato e l'utilizzo dell'intelligenza artificiale",
+      "Un'azienda che sviluppa sistemi di intelligenza artificiale",
+      "Un algoritmo per il riconoscimento facciale",
+      "Uno standard tecnico per la compressione dei dati"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di AI Act fornita esplicitamente dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale approccio adotta l'AI Act, secondo il modulo?",
+    "options": [
+      "Un approccio basato sul rischio, secondo cui più un sistema incide su sicurezza e diritti, più rigorose sono le regole",
+      "Un approccio che vieta ogni forma di intelligenza artificiale",
+      "Un approccio identico per tutti i sistemi, indipendentemente dal loro utilizzo",
+      "Un approccio basato esclusivamente sul costo del sistema"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'AI Act adotta il risk-based approach descritto nel modulo."
+  },
+  {
+    "id": 3,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, l'obiettivo dell'AI Act è vietare completamente l'intelligenza artificiale nell'Unione Europea?",
+    "options": [
+      "No, l'obiettivo è permetterne lo sviluppo rendendolo sicuro, trasparente e rispettoso dei diritti fondamentali",
+      "Sì, l'AI Act vieta ogni utilizzo dell'AI",
+      "Sì, ma solo per le aziende private",
+      "No, l'AI Act riguarda soltanto i videogiochi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo chiarisce che l'obiettivo non è il divieto totale, ma uno sviluppo sicuro e trasparente."
+  },
+  {
+    "id": 4,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi può essere coinvolto dalle regole dell'AI Act, secondo il modulo?",
+    "options": [
+      "Fornitori, sviluppatori, aziende, enti pubblici e soggetti che utilizzano sistemi di AI, a seconda del ruolo ricoperto",
+      "Soltanto i programmatori che scrivono il codice",
+      "Soltanto i governi nazionali",
+      "Soltanto le aziende con sede fuori dall'Unione Europea"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo elenca diversi soggetti coinvolti a seconda del loro ruolo."
+  },
+  {
+    "id": 5,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quando diventerà applicabile la maggior parte delle regole dell'AI Act, secondo il modulo?",
+    "options": [
+      "Dal 2 agosto 2026, con alcune eccezioni e periodi transitori",
+      "Dal 1 gennaio 2025, senza eccezioni",
+      "Dal 2030, in modo uniforme in tutto il mondo",
+      "Immediatamente dopo la sua pubblicazione, senza alcun periodo transitorio"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica esplicitamente questa data."
+  },
+  {
+    "id": 6,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza di rischio tra un'applicazione che corregge un testo e un sistema che seleziona candidati per un lavoro, secondo l'esempio quotidiano del modulo?",
+    "options": [
+      "Il rischio è relativamente contenuto nel primo caso, mentre un errore nel secondo caso potrebbe danneggiare concretamente una persona",
+      "Non esiste alcuna differenza di rischio tra i due casi",
+      "Il primo caso comporta sempre un rischio maggiore del secondo",
+      "Entrambi i casi sono considerati a rischio inaccettabile"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la distinzione fatta esplicitamente nell'esempio quotidiano del modulo."
+  },
+  {
+    "id": 7,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale problema evidenzia il caso reale dei sistemi di riconoscimento biometrico citato nel modulo?",
+    "options": [
+      "Un sistema automatico può identificare erroneamente una persona o essere utilizzato senza garanzie adeguate",
+      "I sistemi biometrici non vengono mai utilizzati dalle autorità pubbliche",
+      "I sistemi biometrici non comportano mai alcun rischio",
+      "I sistemi biometrici sono vietati in ogni caso senza eccezioni"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il problema descritto esplicitamente nel caso reale del modulo."
+  },
+  {
+    "id": 8,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato l'AI Act nella metafora del codice della strada?",
+    "options": [
+      "A un insieme di regole che non vieta le automobili, ma stabilisce limiti e obblighi diversi a seconda della situazione",
+      "A un divieto assoluto di circolazione",
+      "A un sistema che riguarda soltanto i pedoni",
+      "A un insieme di regole identiche per ogni veicolo, indipendentemente dal contesto"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la metafora usata esplicitamente nel modulo."
+  },
+  {
+    "id": 9,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quante categorie principali il modello europeo classifica i sistemi di AI, secondo il modulo?",
+    "options": [
+      "Quattro: rischio minimo o nullo, rischio limitato, alto rischio e rischio inaccettabile",
+      "Due: rischio basso e rischio alto",
+      "Tre: rischio minimo, medio e massimo",
+      "Sei, una per ogni capitolo del modulo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica esplicitamente queste quattro categorie."
+  },
+  {
+    "id": 10,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sistemi rientrano nel rischio minimo o nullo, secondo il modulo?",
+    "options": [
+      "Applicazioni comuni, come molti videogiochi basati sull'AI o sistemi che suggeriscono contenuti",
+      "Sistemi utilizzati per la selezione del personale",
+      "Sistemi di identificazione biometrica remota",
+      "Sistemi utilizzati nella giustizia penale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono gli esempi citati esplicitamente dal modulo per il rischio minimo."
+  },
+  {
+    "id": 11,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa diventa particolarmente importante per i sistemi a rischio limitato, secondo il modulo?",
+    "options": [
+      "Gli obblighi di trasparenza, in modo che una persona possa sapere se sta interagendo con una macchina",
+      "La certificazione internazionale del prodotto",
+      "L'assenza totale di qualsiasi regola",
+      "Il divieto assoluto di utilizzo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica la trasparenza come elemento chiave per il rischio limitato."
+  },
+  {
+    "id": 12,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali requisiti devono rispettare i sistemi ad alto rischio, secondo il modulo?",
+    "options": [
+      "Gestione dei rischi, qualità dei dati, documentazione, registrazione, supervisione umana e monitoraggio",
+      "Nessun requisito particolare, poiché sono equiparati ai sistemi a rischio minimo",
+      "Solo la registrazione del nome dell'azienda produttrice",
+      "Solo l'approvazione di un'agenzia pubblicitaria"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono i requisiti elencati esplicitamente dal modulo."
+  },
+  {
+    "id": 13,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede ai sistemi classificati come rischio inaccettabile, secondo il modulo?",
+    "options": [
+      "Sono considerati così pericolosi per i diritti delle persone da essere vietati",
+      "Devono semplicemente pagare una tassa aggiuntiva",
+      "Possono essere utilizzati liberamente dopo una breve registrazione",
+      "Vengono utilizzati solo dalle autorità pubbliche senza alcuna restrizione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che questi sistemi sono vietati."
+  },
+  {
+    "id": 14,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio quotidiano del modulo, quale livello di rischio riguarda un chatbot con cui si conversa senza sapere se dall'altra parte c'è una persona o un sistema automatico?",
+    "options": [
+      "Il rischio limitato, in cui entra in gioco la trasparenza",
+      "Il rischio minimo, che non richiede alcun obbligo",
+      "Il rischio inaccettabile, che comporta un divieto assoluto",
+      "Nessun livello di rischio, poiché i chatbot non sono regolamentati dall'AI Act"
+    ],
+    "correctIndex": 0,
+    "explanation": "È l'esempio descritto esplicitamente nel modulo."
+  },
+  {
+    "id": 15,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostra il caso reale dei sistemi di riconoscimento biometrico, secondo il capitolo sui livelli di rischio?",
+    "options": [
+      "Che quanto maggiore è il potenziale impatto sulla persona, tanto maggiore deve essere il livello di tutela",
+      "Che i sistemi biometrici comportano sempre un rischio minimo",
+      "Che l'AI Act non si occupa di tecnologie biometriche",
+      "Che tutte le tecnologie biometriche sono automaticamente vietate senza eccezioni"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il principio dimostrato esplicitamente dal caso reale del modulo."
+  },
+  {
+    "id": 16,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonati i livelli di rischio nella metafora dei semafori?",
+    "options": [
+      "Al verde, al giallo e al rosso, che indicano rispettivamente poche limitazioni, maggiore attenzione e l'obbligo di fermarsi",
+      "A un unico colore valido per ogni situazione",
+      "A un semaforo sempre spento",
+      "A un incrocio senza alcuna regola di precedenza"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la metafora usata esplicitamente nel modulo."
+  },
+  {
+    "id": 17,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i sistemi di AI vietati, secondo il modulo?",
+    "options": [
+      "Determinati sistemi o pratiche di intelligenza artificiale che l'AI Act considera inaccettabili perché possono compromettere gravemente sicurezza, diritti fondamentali o dignità delle persone",
+      "Tutti i sistemi di intelligenza artificiale esistenti, senza eccezioni",
+      "Solo i sistemi utilizzati per scopi militari",
+      "Solo i sistemi che costano più di una certa cifra"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di sistemi vietati fornita dal modulo."
+  },
+  {
+    "id": 18,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali tecniche vengono citate tra le pratiche vietate dall'AI Act, secondo il modulo?",
+    "options": [
+      "Tecniche subliminali, manipolative o ingannevoli capaci di alterare significativamente il comportamento di una persona e provocarle un danno significativo",
+      "Tecniche di traduzione automatica",
+      "Tecniche di compressione delle immagini",
+      "Tecniche di backup dei dati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono le tecniche citate esplicitamente dal modulo tra le pratiche vietate."
+  },
+  {
+    "id": 19,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa vieta l'AI Act riguardo allo sfruttamento delle vulnerabilità delle persone, secondo il modulo?",
+    "options": [
+      "L'utilizzo dell'AI per influenzare in modo dannoso il comportamento di persone vulnerabili, ad esempio per motivi legati all'età",
+      "L'utilizzo dell'AI da parte di persone con più di 18 anni",
+      "L'utilizzo dell'AI in qualsiasi ambito educativo",
+      "L'utilizzo dell'AI da parte delle autorità pubbliche in ogni circostanza"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il divieto descritto esplicitamente dal modulo."
+  },
+  {
+    "id": 20,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i limiti posti dall'AI Act al social scoring, secondo il modulo?",
+    "options": [
+      "Limiti molto forti alla costruzione di valutazioni delle persone sulla base del loro comportamento o di caratteristiche personali, quando usate in modi vietati",
+      "Un incentivo a diffondere il più possibile questa pratica",
+      "Un obbligo per tutte le aziende di adottare sistemi di punteggio sociale",
+      "Una regola che riguarda soltanto le scuole"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione dei limiti al social scoring fornita dal modulo."
+  },
+  {
+    "id": 21,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa vieta l'AI Act riguardo al riconoscimento delle emozioni, secondo il modulo?",
+    "options": [
+      "Determinate pratiche di riconoscimento delle emozioni sul luogo di lavoro e negli istituti di istruzione, salvo le eccezioni previste",
+      "L'uso dell'AI per riconoscere le emozioni in qualunque contesto, senza eccezioni",
+      "Solo l'uso dell'AI per riconoscere le emozioni degli animali",
+      "Nessuna pratica di riconoscimento delle emozioni, che è sempre permessa"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il divieto specifico descritto dal modulo."
+  },
+  {
+    "id": 22,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa precisa il modulo riguardo al «social credit system» cinese, citato come caso reale?",
+    "options": [
+      "Non è un unico sistema nazionale che assegna a ogni cittadino un punteggio universale, ma esistono diversi programmi e meccanismi differenti",
+      "È un sistema identico in ogni sua parte all'AI Act europeo",
+      "È stato adottato integralmente anche dall'Unione Europea",
+      "Non ha mai influenzato il dibattito pubblico europeo sull'intelligenza artificiale"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la precisazione fatta esplicitamente dal modulo su questo caso."
+  },
+  {
+    "id": 23,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la logica comune dietro i divieti dell'AI Act, secondo il modulo?",
+    "options": [
+      "Proteggere la persona quando l'AI rischia di trasformarsi da strumento in mezzo di controllo, manipolazione o discriminazione",
+      "Impedire qualunque forma di innovazione tecnologica in Europa",
+      "Favorire esclusivamente le grandi aziende tecnologiche",
+      "Vietare l'uso dei computer nelle scuole"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la logica indicata esplicitamente dal modulo."
+  },
+  {
+    "id": 24,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa illustra la metafora della scuola con il registro e il punteggio personale, secondo il modulo?",
+    "options": [
+      "Che usare informazioni per una funzione legittima non equivale ad avere il diritto di trasformare ogni comportamento umano in un punteggio di controllo",
+      "Che ogni scuola dovrebbe avere un sistema di punteggio personale per gli studenti",
+      "Che i registri scolastici sono sempre vietati dall'AI Act",
+      "Che non esiste alcuna differenza tra un registro di presenze e un punteggio di controllo"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la metafora usata esplicitamente nel modulo."
+  },
+  {
+    "id": 25,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono i sistemi di AI ad alto rischio, secondo il modulo?",
+    "options": [
+      "Sistemi che, per finalità e contesto di utilizzo, possono avere un impatto significativo sulla salute, sulla sicurezza o sui diritti fondamentali delle persone",
+      "Sistemi che non richiedono alcuna regola specifica",
+      "Sistemi utilizzati esclusivamente per l'intrattenimento",
+      "Sistemi vietati in ogni circostanza dall'AI Act"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di sistemi ad alto rischio fornita dal modulo."
+  },
+  {
+    "id": 26,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quali ambiti l'AI Act considera, tra gli altri, alcuni sistemi come potenzialmente ad alto rischio, secondo il modulo?",
+    "options": [
+      "Istruzione, occupazione, servizi essenziali, infrastrutture critiche, giustizia e processi democratici",
+      "Solo il settore dell'intrattenimento",
+      "Solo il settore della moda",
+      "Solo i giochi online"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono gli ambiti elencati esplicitamente dal modulo."
+  },
+  {
+    "id": 27,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, ogni sistema di AI utilizzato in ambiti come istruzione o occupazione è automaticamente ad alto rischio?",
+    "options": [
+      "No, la classificazione dipende dalle caratteristiche e dalla finalità del sistema secondo quanto stabilito dall'AI Act",
+      "Sì, senza alcuna eccezione",
+      "Sì, ma solo se il sistema costa più di una certa cifra",
+      "No, questi ambiti sono sempre esclusi dalla regolamentazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo precisa che non ogni sistema in questi ambiti è automaticamente ad alto rischio."
+  },
+  {
+    "id": 28,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa devono garantire i sistemi ad alto rischio in termini di accuratezza, robustezza e cybersicurezza, secondo il modulo?",
+    "options": [
+      "Livelli adeguati, così da mantenere un comportamento affidabile anche nelle condizioni previste dopo l'immissione sul mercato",
+      "Nessun requisito, poiché sono trattati come i sistemi a rischio minimo",
+      "Solo l'obbligo di avere un logo riconoscibile",
+      "Solo l'obbligo di essere sviluppati in Europa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che non basta funzionare in una dimostrazione: serve un comportamento affidabile mantenuto nel tempo."
+  },
+  {
+    "id": 29,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dovrebbe poter fare una persona incaricata della supervisione umana su un sistema ad alto rischio, secondo il modulo?",
+    "options": [
+      "Comprendere il comportamento del sistema, intervenire, ignorarne l'output o interromperne il funzionamento",
+      "Limitarsi a osservare passivamente i risultati senza poter intervenire",
+      "Fidarsi sempre e comunque del risultato prodotto dal sistema",
+      "Delegare ogni decisione al sistema stesso"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il ruolo della supervisione umana descritto dal modulo."
+  },
+  {
+    "id": 30,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'era il sistema SyRI, citato nel modulo come caso reale?",
+    "options": [
+      "Un sistema utilizzato nei Paesi Bassi per individuare possibili frodi nel welfare, combinando informazioni da diverse amministrazioni pubbliche",
+      "Un sistema di traduzione automatica sviluppato in Francia",
+      "Un chatbot utilizzato da una compagnia aerea canadese",
+      "Un algoritmo di riconoscimento facciale sviluppato negli Stati Uniti"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la descrizione di SyRI fornita dal modulo."
+  },
+  {
+    "id": 31,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa stabilì un tribunale olandese nel 2020 riguardo al sistema SyRI, secondo il modulo?",
+    "options": [
+      "Che il suo utilizzo violava il diritto alla vita privata garantito dall'articolo 8 della Convenzione europea dei diritti dell'uomo",
+      "Che il sistema doveva essere esteso a tutti i paesi dell'Unione Europea",
+      "Che il sistema non aveva alcun impatto sulla privacy dei cittadini",
+      "Che il sistema era pienamente conforme all'AI Act, già in vigore all'epoca"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la decisione del tribunale olandese riportata nel modulo."
+  },
+  {
+    "id": 32,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato un sistema di AI ad alto rischio nella metafora del medico con lo strumento diagnostico?",
+    "options": [
+      "Uno strumento che può assistere l'essere umano, ma non deve trasformarsi in un'autorità incontestabile",
+      "Uno strumento che sostituisce completamente il giudizio del medico",
+      "Uno strumento che non ha alcuna utilità pratica",
+      "Uno strumento che elimina la necessità di comprendere il contesto del paziente"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la metafora usata esplicitamente nel modulo."
+  },
+  {
+    "id": 33,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono gli obblighi dell'AI Act, secondo il modulo?",
+    "options": [
+      "L'insieme delle responsabilità e dei requisiti che devono essere rispettati dai diversi soggetti coinvolti nel ciclo di vita di un sistema di AI, in proporzione al rischio e al ruolo ricoperto",
+      "Un elenco di suggerimenti facoltativi senza alcuna conseguenza pratica",
+      "Regole identiche per ogni soggetto, indipendentemente dal ruolo",
+      "Obblighi che riguardano soltanto i governi nazionali"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di obblighi fornita dal modulo."
+  },
+  {
+    "id": 34,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa deve fare chi sviluppa un sistema ad alto rischio, secondo il modulo?",
+    "options": [
+      "Adottare procedure per identificare e ridurre i rischi, utilizzare dati e processi adeguati, predisporre documentazione tecnica e mantenere registrazioni",
+      "Limitarsi a vendere il prodotto senza ulteriori obblighi",
+      "Evitare qualsiasi forma di documentazione per motivi di riservatezza",
+      "Delegare ogni responsabilità esclusivamente all'utente finale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono gli obblighi elencati esplicitamente dal modulo."
+  },
+  {
+    "id": 35,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando diventano particolarmente importanti gli obblighi di trasparenza previsti dall'AI Act, secondo il modulo?",
+    "options": [
+      "Quando le persone devono essere informate che stanno interagendo con un sistema di AI o che un contenuto è stato generato o manipolato artificialmente, come nel caso dei deepfake",
+      "Solo quando il sistema viene utilizzato per scopi di intrattenimento",
+      "Solo quando il sistema non raccoglie alcun dato",
+      "Mai, poiché la trasparenza non è prevista dall'AI Act"
+    ],
+    "correctIndex": 0,
+    "explanation": "È quanto affermato esplicitamente dal modulo sugli obblighi di trasparenza."
+  },
+  {
+    "id": 36,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i modelli di AI per finalità generali, secondo il modulo?",
+    "options": [
+      "Modelli capaci di svolgere molteplici compiti e utilizzabili all'interno di numerose applicazioni, soggetti a requisiti specifici di documentazione e informazione",
+      "Modelli utilizzabili soltanto per un unico scopo molto specifico",
+      "Modelli non soggetti ad alcuna regola dell'AI Act",
+      "Modelli vietati in ogni caso dall'AI Act"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di questi modelli fornita dal modulo."
+  },
+  {
+    "id": 37,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'AI literacy, secondo il modulo?",
+    "options": [
+      "Le competenze e la consapevolezza sull'intelligenza artificiale che fornitori e deployer devono assicurare al personale e alle persone che utilizzano sistemi di AI per loro conto",
+      "Un certificato tecnico rilasciato solo agli sviluppatori di software",
+      "Una lingua di programmazione specifica per l'AI",
+      "Un tipo di licenza commerciale per la vendita di sistemi di AI"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di AI literacy fornita dal modulo."
+  },
+  {
+    "id": 38,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dovrebbe fare un'azienda che introduce un sistema di AI per la selezione del personale, secondo l'esempio quotidiano del modulo?",
+    "options": [
+      "Comprendere il ruolo del sistema, verificare gli obblighi applicabili, garantire un'adeguata supervisione umana e adottare le misure previste dalla normativa",
+      "Limitarsi a installare il software e lasciare che sia l'algoritmo a decidere",
+      "Evitare qualsiasi controllo sui risultati prodotti dal sistema",
+      "Affidare l'intera responsabilità al fornitore del software, senza ulteriori verifiche"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il comportamento corretto descritto dal modulo."
+  },
+  {
+    "id": 39,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'AI Pact, avviato dall'Unione Europea nel 2024, secondo il modulo?",
+    "options": [
+      "Un'iniziativa volontaria pensata per incoraggiare le organizzazioni ad anticipare alcuni comportamenti richiesti dall'AI Act prima della sua piena applicazione",
+      "Un obbligo legale immediato per tutte le aziende europee",
+      "Un accordo commerciale tra Unione Europea e Stati Uniti",
+      "Un divieto totale sull'uso dei chatbot in ambito aziendale"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la descrizione dell'AI Pact fornita dal modulo."
+  },
+  {
+    "id": 40,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonati gli obblighi dell'AI Act nella metafora dell'aereo?",
+    "options": [
+      "Al fatto che non basta che l'aereo sia costruito bene: servono controlli, procedure, manutenzione, piloti preparati e persone capaci di intervenire",
+      "Al fatto che un aereo non ha bisogno di manutenzione dopo la costruzione",
+      "Al fatto che i piloti non hanno alcuna responsabilità durante il volo",
+      "Al fatto che la sicurezza di un aereo dipende soltanto dal prezzo del biglietto"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la metafora usata esplicitamente nel modulo."
+  },
+  {
+    "id": 41,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresenta l'AI Act per cittadini e professionisti, secondo il modulo?",
+    "options": [
+      "Un quadro di tutela e di responsabilità che mira a rendere l'utilizzo dell'intelligenza artificiale più sicuro, trasparente e rispettoso dei diritti fondamentali",
+      "Un manuale tecnico riservato esclusivamente ai programmatori",
+      "Un insieme di regole che riguarda solo le grandi aziende tecnologiche",
+      "Una lista di applicazioni di AI consigliate per uso personale"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione fornita dal modulo per questo capitolo."
+  },
+  {
+    "id": 42,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Deve il cittadino diventare un esperto di programmazione per essere tutelato dall'AI Act, secondo il modulo?",
+    "options": [
+      "No, il cittadino non deve diventare un esperto di programmazione per essere tutelato",
+      "Sì, è un requisito obbligatorio previsto dalla normativa",
+      "Sì, ma solo se lavora nel settore tecnologico",
+      "No, ma deve conoscere un linguaggio di programmazione base"
+    ],
+    "correctIndex": 0,
+    "explanation": "È quanto affermato esplicitamente dal modulo."
+  },
+  {
+    "id": 43,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale nuova responsabilità assume il professionista secondo il modulo?",
+    "options": [
+      "Non utilizzare l'AI come una scatola nera alla quale affidare automaticamente ogni decisione",
+      "Programmare personalmente ogni sistema di AI che utilizza",
+      "Evitare completamente l'uso di strumenti di intelligenza artificiale",
+      "Delegare sempre le decisioni finali al sistema di AI"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la nuova responsabilità descritta esplicitamente dal modulo."
+  },
+  {
+    "id": 44,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali domande dovrebbe porsi un cittadino consapevole, secondo il modulo?",
+    "options": [
+      "Chi ha prodotto questa informazione? Sto parlando con una persona o con un sistema automatico? Quanto posso fidarmi di questo risultato? Cosa succede ai miei dati?",
+      "Quanto costa questo sistema di AI? Quanti utenti lo utilizzano?",
+      "Quale azienda ha sviluppato il sistema e quando è stata fondata?",
+      "Quale linguaggio di programmazione utilizza il sistema?"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono le domande suggerite esplicitamente dal modulo."
+  },
+  {
+    "id": 45,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la persona nell'esempio quotidiano del modulo dopo aver ricevuto una bozza generata da un sistema di AI per una relazione?",
+    "options": [
+      "Controlla le informazioni, verifica le fonti, corregge gli errori e decide quali parti utilizzare",
+      "Copia semplicemente il testo senza alcun controllo",
+      "Chiede al sistema di pubblicare direttamente la relazione",
+      "Ignora completamente il testo generato dal sistema"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il comportamento descritto nell'esempio quotidiano del modulo."
+  },
+  {
+    "id": 46,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde nel caso del chatbot di Air Canada, citato nel modulo?",
+    "options": [
+      "Il chatbot fornì informazioni errate su un rimborso e un tribunale canadese stabilì nel 2024 che l'azienda non poteva sottrarsi alla responsabilità",
+      "Il chatbot fu giudicato perfettamente affidabile in ogni circostanza",
+      "L'azienda fu esentata da ogni responsabilità perché l'errore era stato causato dal chatbot",
+      "Il caso riguardava direttamente l'applicazione dell'AI Act europeo"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il caso reale documentato nel modulo."
+  },
+  {
+    "id": 47,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la lezione principale del caso Air Canada, secondo il modulo?",
+    "options": [
+      "Un'organizzazione non può semplicemente scaricare le proprie responsabilità sulla tecnologia che utilizza",
+      "I chatbot non dovrebbero mai essere utilizzati dalle aziende",
+      "Solo le aziende europee devono rispettare regole sui chatbot",
+      "I tribunali non possono giudicare controversie legate all'intelligenza artificiale"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la lezione tratta esplicitamente dal modulo su questo caso."
+  },
+  {
+    "id": 48,
+    "module": "ai-act",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata l'intelligenza artificiale nella metafora del navigatore satellitare?",
+    "options": [
+      "A uno strumento di supporto che non elimina la responsabilità del conducente nelle proprie scelte",
+      "A un dispositivo che elimina completamente la necessità di attenzione da parte del conducente",
+      "A un dispositivo che non può mai sbagliare",
+      "A un dispositivo che sostituisce interamente il giudizio umano nella guida"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la metafora usata esplicitamente nel modulo."
+  }
+]

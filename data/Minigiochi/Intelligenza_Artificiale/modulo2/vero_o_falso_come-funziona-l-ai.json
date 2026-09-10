@@ -1,0 +1,227 @@
+[
+  {
+    "id": 1,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I dati sono informazioni raccolte e utilizzate da un sistema informatico per svolgere attività, effettuare analisi o imparare a riconoscere schemi e caratteristiche.",
+    "answer": true,
+    "explanation": "È la definizione di dati fornita dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un sistema di intelligenza artificiale impara dal nulla, senza bisogno di alcuna informazione.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: un sistema ha bisogno di informazioni da cui ricavare regolarità."
+  },
+  {
+    "id": 3,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La qualità dell'AI dipende anche dalla qualità dei dati con cui viene costruita e addestrata.",
+    "answer": true,
+    "explanation": "È un principio esplicitamente indicato nel modulo."
+  },
+  {
+    "id": 4,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, i dati di addestramento e i dati utilizzati successivamente dal sistema sono esattamente la stessa cosa.",
+    "answer": false,
+    "explanation": "Sono distinti: i primi servono per sviluppare il modello, i secondi sono gli input ricevuti quando il sistema viene utilizzato."
+  },
+  {
+    "id": 5,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "ImageNet è un enorme archivio di immagini organizzate in numerose categorie che ha contribuito allo sviluppo della computer vision.",
+    "answer": true,
+    "explanation": "È quanto descritto nel caso reale documentato del modulo."
+  },
+  {
+    "id": 6,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, avere moltissimi esempi di dati è sufficiente, da solo, per permettere a una macchina di imparare.",
+    "answer": false,
+    "explanation": "Il modulo chiarisce che bisogna anche capire come utilizzare gli esempi, tramite il Machine Learning."
+  },
+  {
+    "id": 7,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Machine Learning permette a un sistema di apprendere dai dati senza essere programmato esplicitamente con una regola per ogni situazione.",
+    "answer": true,
+    "explanation": "È la definizione di Machine Learning fornita dal modulo."
+  },
+  {
+    "id": 8,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella programmazione tradizionale, è il computer a stabilire autonomamente le regole da seguire.",
+    "answer": false,
+    "explanation": "Nella programmazione tradizionale è una persona a stabilire le regole, non il computer."
+  },
+  {
+    "id": 9,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante l'addestramento, un sistema di Machine Learning modifica progressivamente i propri parametri per ottenere risultati migliori.",
+    "answer": true,
+    "explanation": "È quanto descritto nel modulo riguardo al processo di addestramento."
+  },
+  {
+    "id": 10,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'apprendimento supervisionato, gli esempi utilizzati per l'addestramento sono associati a una risposta conosciuta.",
+    "answer": true,
+    "explanation": "È la definizione di apprendimento supervisionato fornita dal modulo."
+  },
+  {
+    "id": 11,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'apprendimento non supervisionato, il sistema riceve sempre una pagina finale con le soluzioni corrette.",
+    "answer": false,
+    "explanation": "Nell'apprendimento non supervisionato non esiste una pagina con le soluzioni: il sistema cerca autonomamente somiglianze e raggruppamenti."
+  },
+  {
+    "id": 12,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un sistema di Machine Learning può imparare anche informazioni errate, incomplete o distorte presenti nei dati.",
+    "answer": true,
+    "explanation": "È un limite esplicitamente indicato nel modulo."
+  },
+  {
+    "id": 13,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'espressione GIGO, 'Garbage in, garbage out', significa che dati di scarsa qualità in ingresso possono produrre risultati di scarsa qualità in uscita.",
+    "answer": true,
+    "explanation": "È il significato di GIGO fornito dal modulo."
+  },
+  {
+    "id": 14,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il caso reale descritto nel modulo, il rilevamento delle frodi nei pagamenti elettronici richiede che ogni possibile frode venga descritta manualmente come regola.",
+    "answer": false,
+    "explanation": "Il modulo afferma il contrario: il sistema può individuare correlazioni nei dati senza che ogni frode sia descritta manualmente."
+  },
+  {
+    "id": 15,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le reti neurali artificiali sono modelli di Machine Learning ispirati, in modo semplificato, al funzionamento delle reti di neuroni biologici.",
+    "answer": true,
+    "explanation": "È la definizione di rete neurale artificiale fornita dal modulo."
+  },
+  {
+    "id": 16,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una rete neurale è organizzata generalmente in un livello di ingresso, uno o più livelli intermedi e un livello di uscita.",
+    "answer": true,
+    "explanation": "È quanto descritto nel modulo riguardo alla struttura delle reti neurali."
+  },
+  {
+    "id": 17,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, i pesi delle connessioni interne di una rete neurale non hanno alcun ruolo nel risultato finale.",
+    "answer": false,
+    "explanation": "I pesi determinano quanto le diverse informazioni contribuiscono al risultato finale."
+  },
+  {
+    "id": 18,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Deep Learning si riferisce a una rete neurale che contiene molti livelli di elaborazione.",
+    "answer": true,
+    "explanation": "È la definizione di Deep Learning fornita dal modulo."
+  },
+  {
+    "id": 19,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una rete neurale è, a tutti gli effetti, un cervello artificiale.",
+    "answer": false,
+    "explanation": "Il riferimento ai neuroni è una metafora ispirata alla biologia; il funzionamento è basato su calcoli matematici."
+  },
+  {
+    "id": 20,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "AlexNet è una rete neurale profonda che nel 2012 ottenne risultati importanti nella competizione ImageNet.",
+    "answer": true,
+    "explanation": "È il caso reale documentato descritto nel modulo."
+  },
+  {
+    "id": 21,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un modello di intelligenza artificiale è un sistema matematico addestrato sui dati attraverso un processo di apprendimento.",
+    "answer": true,
+    "explanation": "È la definizione di modello fornita dal modulo."
+  },
+  {
+    "id": 22,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un modello di AI è semplicemente un enorme archivio di risposte già pronte.",
+    "answer": false,
+    "explanation": "Il comportamento del modello deriva dai parametri appresi durante l'addestramento, non da un archivio di risposte."
+  },
+  {
+    "id": 23,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, dati e modello rappresentano esattamente la stessa cosa.",
+    "answer": false,
+    "explanation": "I dati addestrano il modello, mentre il modello rappresenta ciò che il sistema ha appreso attraverso quel processo."
+  },
+  {
+    "id": 24,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, esiste un unico modello di intelligenza artificiale valido per ogni compito.",
+    "answer": false,
+    "explanation": "Esistono molti modelli, sviluppati con architetture, dati, obiettivi e capacità differenti."
+  },
+  {
+    "id": 25,
+    "module": "come-funziona-l-ai",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il caso reale descritto nel modulo, i modelli di riconoscimento vocale non devono aver ascoltato una specifica frase per poterla trascrivere correttamente.",
+    "answer": true,
+    "explanation": "Il modello deve aver appreso caratteristiche del linguaggio e del parlato sufficienti per elaborare anche nuovi input, senza aver ascoltato quella specifica frase."
+  }
+]

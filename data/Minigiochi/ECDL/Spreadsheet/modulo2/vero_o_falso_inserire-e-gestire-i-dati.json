@@ -1,0 +1,407 @@
+[
+  {
+    "id": 1,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "\"Inserire un dato\" in Excel significa selezionare una cella, digitarne il contenuto e confermarlo.",
+    "answer": true,
+    "explanation": "È la definizione fornita nel modulo per l'inserimento dati."
+  },
+  {
+    "id": 2,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Premendo TAB dopo aver digitato un dato, la selezione si sposta alla cella sottostante.",
+    "answer": false,
+    "explanation": "TAB sposta la selezione a destra; è INVIO a spostarla in basso."
+  },
+  {
+    "id": 3,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Excel riconosce automaticamente se un dato digitato è testo o un numero, e li allinea in modo diverso.",
+    "answer": true,
+    "explanation": "Il modulo descrive esattamente questo comportamento automatico di Excel."
+  },
+  {
+    "id": 4,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'8 dicembre 2005 un operatore di Mizuho Securities digitò per errore la vendita di 610.000 azioni J-Com a 1 yen ciascuna, invece di 1 azione a 610.000 yen.",
+    "answer": true,
+    "explanation": "Il modulo riporta questo episodio come caso reale documentato."
+  },
+  {
+    "id": 5,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il sistema della Borsa di Tokyo permise di annullare rapidamente l'ordine errato di Mizuho Securities.",
+    "answer": false,
+    "explanation": "Il sistema non permetteva di annullare un ordine già inviato, nonostante diversi tentativi di cancellazione."
+  },
+  {
+    "id": 6,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Mizuho Securities registrò una perdita stimata in oltre 225 milioni di dollari a causa di quell'errore.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa cifra come perdita stimata di Mizuho Securities."
+  },
+  {
+    "id": 7,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'episodio di Mizuho Securities non ebbe alcuna conseguenza sui vertici della Borsa di Tokyo.",
+    "answer": false,
+    "explanation": "L'episodio portò le dimissioni del presidente della Borsa di Tokyo insieme ad altri dirigenti."
+  },
+  {
+    "id": 8,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il riempimento automatico riconosce lo schema di valori già scritti e lo prosegue da solo nelle celle successive.",
+    "answer": true,
+    "explanation": "È la definizione di riempimento automatico fornita nel modulo."
+  },
+  {
+    "id": 9,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se si scrive un solo valore e si trascina la maniglia di riempimento, Excel genera sempre una sequenza crescente.",
+    "answer": false,
+    "explanation": "Con un solo valore, Excel per default lo ripete identico in ogni cella, senza generare una sequenza."
+  },
+  {
+    "id": 10,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Scrivendo 10 e 20 e trascinando la maniglia di riempimento, la sequenza prosegue con 30, 40, 50.",
+    "answer": true,
+    "explanation": "Excel riconosce la differenza costante di 10 e la applica alle celle successive."
+  },
+  {
+    "id": 11,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per i giorni della settimana e i mesi dell'anno, Excel non ha bisogno di un secondo valore per riconoscere lo schema.",
+    "answer": true,
+    "explanation": "Il modulo indica queste sequenze come già conosciute dal programma."
+  },
+  {
+    "id": 12,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ada Lovelace pubblicò, nell'agosto 1843, la \"Nota G\", considerata oggi il primo programma per computer della storia.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa data e questo riconoscimento storico."
+  },
+  {
+    "id": 13,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La Macchina Analitica di Charles Babbage, per cui Lovelace scrisse le proprie note, fu effettivamente costruita nel 1843.",
+    "answer": false,
+    "explanation": "La Macchina Analitica non fu mai realmente costruita."
+  },
+  {
+    "id": 14,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il procedimento descritto nella Nota G calcolava la media di un intervallo di celle.",
+    "answer": false,
+    "explanation": "Il procedimento calcolava i numeri di Bernoulli, non una media di celle."
+  },
+  {
+    "id": 15,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Muoversi in un foglio significa spostarsi rapidamente da una cella all'altra, senza dover scorrere tutto a occhio.",
+    "answer": true,
+    "explanation": "È la definizione fornita nel modulo per il movimento all'interno di un foglio."
+  },
+  {
+    "id": 16,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo zoom di Excel modifica il contenuto reale del foglio, oltre alla vista.",
+    "answer": false,
+    "explanation": "Lo zoom ingrandisce o rimpicciolisce solo la vista, senza cambiare il contenuto reale del foglio."
+  },
+  {
+    "id": 17,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La combinazione CTRL+Home riporta istantaneamente alla cella A1.",
+    "answer": true,
+    "explanation": "È la funzione di CTRL+Home descritta nel modulo."
+  },
+  {
+    "id": 18,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "In Excel, a differenza di Word, la ricerca con CTRL+F può essere estesa a tutta la cartella di lavoro.",
+    "answer": true,
+    "explanation": "Il modulo indica questa differenza rispetto alla ricerca in Word."
+  },
+  {
+    "id": 19,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La funzione Trova di Excel può cercare solo tra i valori mostrati, mai tra le formule.",
+    "answer": false,
+    "explanation": "La ricerca può cercare anche tra le formule che generano i valori mostrati."
+  },
+  {
+    "id": 20,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Da Visualizza → Blocca riquadri → Blocca riga superiore, si può tenere sempre visibile la prima riga di un foglio durante lo scorrimento.",
+    "answer": true,
+    "explanation": "È il percorso descritto nel modulo per bloccare la riga superiore."
+  },
+  {
+    "id": 21,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La Financial Modeling World Cup (FMWC) esiste dal settembre 2020 come torneo internazionale giocato dentro Excel.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa data per la nascita della FMWC."
+  },
+  {
+    "id": 22,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il Microsoft Excel World Championship non è mai stato trasmesso in televisione.",
+    "answer": false,
+    "explanation": "Nel 2022 fu trasmesso per la prima volta sull'emittente sportiva statunitense ESPN2."
+  },
+  {
+    "id": 23,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un gruppo di celle selezionate insieme si chiama intervallo.",
+    "answer": true,
+    "explanation": "È la definizione di intervallo fornita nel modulo."
+  },
+  {
+    "id": 24,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'intervallo \"A1:C10\" indica solo le celle A1 e C10, escludendo tutte le altre.",
+    "answer": false,
+    "explanation": "L'intervallo A1:C10 indica un intero blocco rettangolare di celle, non solo le due citate."
+  },
+  {
+    "id": 25,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per selezionare celle non adiacenti si tiene premuto CTRL e si clicca su ciascuna cella desiderata.",
+    "answer": true,
+    "explanation": "È il metodo descritto nel modulo per selezionare celle non adiacenti."
+  },
+  {
+    "id": 26,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un intervallo selezionato in modo incompleto non genera un errore visibile in Excel.",
+    "answer": true,
+    "explanation": "Il modulo sottolinea che Excel userà solo le celle indicate, senza avvisare che manca qualcosa."
+  },
+  {
+    "id": 27,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2010 Carmen Reinhart e Kenneth Rogoff pubblicarono lo studio \"Growth in a Time of Debt\".",
+    "answer": true,
+    "explanation": "Il modulo riporta questa data e questo titolo per lo studio."
+  },
+  {
+    "id": 28,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Thomas Herndon scoprì l'errore nello studio Reinhart-Rogoff già nel 2010, appena pubblicato.",
+    "answer": false,
+    "explanation": "Herndon scoprì l'errore nel 2013, tre anni dopo la pubblicazione dello studio."
+  },
+  {
+    "id": 29,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'errore nello studio Reinhart-Rogoff escluse dall'analisi Australia, Austria, Belgio, Canada e Danimarca.",
+    "answer": true,
+    "explanation": "Il modulo elenca esattamente questi cinque paesi come esclusi per errore."
+  },
+  {
+    "id": 30,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per aggiungere un nuovo foglio di lavoro si può usare la scorciatoia SHIFT+F11.",
+    "answer": true,
+    "explanation": "Il modulo indica questa scorciatoia per aggiungere un foglio."
+  },
+  {
+    "id": 31,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per rinominare un foglio di lavoro occorre eliminarlo e ricrearlo con il nuovo nome.",
+    "answer": false,
+    "explanation": "Basta un doppio clic sulla scheda del foglio e digitare il nuovo nome, senza eliminarlo."
+  },
+  {
+    "id": 32,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'eliminazione di un foglio di lavoro, una volta confermata, non può essere annullata.",
+    "answer": true,
+    "explanation": "Il modulo segnala esplicitamente questa irreversibilità."
+  },
+  {
+    "id": 33,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il comando \"Sposta o copia\" permette di spostare o copiare un foglio anche in un'altra cartella di lavoro.",
+    "answer": true,
+    "explanation": "È la funzione del comando descritta nel modulo."
+  },
+  {
+    "id": 34,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 2012 la banca JPMorgan Chase perse oltre 6 miliardi di dollari nel caso della \"Balena di Londra\".",
+    "answer": true,
+    "explanation": "Il modulo riporta questa cifra per il caso JPMorgan Chase."
+  },
+  {
+    "id": 35,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il caso della \"Balena di Londra\" riguardava un errore di digitazione in una singola cella, simile al caso di Mizuho Securities.",
+    "answer": false,
+    "explanation": "Riguardava una catena di fogli Excel collegati con dati copiati manualmente e un errore di formula, non un singolo errore di digitazione."
+  },
+  {
+    "id": 36,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel caso JPMorgan, una formula divideva per la somma di due tassi invece che per la loro media, sottostimando il rischio.",
+    "answer": true,
+    "explanation": "Il modulo descrive esattamente questo errore di formula."
+  },
+  {
+    "id": 37,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel caso JPMorgan, l'errore fu individuato immediatamente, prima che si verificassero perdite.",
+    "answer": false,
+    "explanation": "Nessuno si accorse dell'errore finché le perdite non erano già ingenti."
+  },
+  {
+    "id": 38,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Salvare una cartella di lavoro significa trasferirne il contenuto dalla memoria temporanea del computer a una memoria di massa.",
+    "answer": true,
+    "explanation": "È la definizione di salvataggio fornita nel modulo."
+  },
+  {
+    "id": 39,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Mentre si lavora, una cartella di lavoro non salvata esiste già su una memoria di massa.",
+    "answer": false,
+    "explanation": "Esiste solo nella RAM, la memoria temporanea, finché non viene salvata."
+  },
+  {
+    "id": 40,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il formato standard con cui Excel salva oggi una cartella di lavoro è .xlsx.",
+    "answer": true,
+    "explanation": "Il modulo indica .xlsx come formato standard attuale."
+  },
+  {
+    "id": 41,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il formato .csv conserva anche le formule e la formattazione del foglio originale.",
+    "answer": false,
+    "explanation": "Il .csv conserva solo i dati puri, senza formule né formattazione."
+  },
+  {
+    "id": 42,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il formato .pdf è pensato per condividere un file in una forma definitiva e non modificabile.",
+    "answer": true,
+    "explanation": "È l'uso del formato .pdf descritto nel modulo."
+  },
+  {
+    "id": 43,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Tra il 25 settembre e il 2 ottobre 2020, Public Health England non riuscì a includere migliaia di casi Covid-19 nei propri bollettini per un limite del formato .xls.",
+    "answer": true,
+    "explanation": "Il modulo riporta questo caso reale con queste date precise."
+  },
+  {
+    "id": 44,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il formato .xls, usato da Public Health England, aveva un limite fisso di 65.536 righe.",
+    "answer": true,
+    "explanation": "Il modulo riporta questo limite tecnico del formato .xls."
+  },
+  {
+    "id": 45,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Superato il limite di righe del file .xls, Excel mostrava un messaggio di errore evidente a chi gestiva il sistema.",
+    "answer": false,
+    "explanation": "I dati venivano scartati in silenzio, senza alcun messaggio di errore visibile."
+  }
+]

@@ -1,0 +1,497 @@
+[
+  {
+    "id": 1,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un Large Language Model (LLM) secondo il modulo?",
+    "options": [
+      "Un modello di intelligenza artificiale addestrato su grandi quantità di testo per elaborare e generare linguaggio naturale",
+      "Un database di frasi già scritte da esseri umani",
+      "Un dispositivo hardware specializzato nella traduzione",
+      "Un sistema che funziona solo con numeri"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un LLM è un modello di intelligenza artificiale addestrato su grandi quantità di testo per elaborare e generare linguaggio naturale."
+  },
+  {
+    "id": 2,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che modo un LLM comprende il linguaggio, secondo il modulo?",
+    "options": [
+      "Nello stesso modo esatto in cui lo comprende una persona",
+      "Analizzando le sequenze di testo e imparando le relazioni statistiche tra le parole",
+      "Consultando un dizionario ogni volta che riceve una richiesta",
+      "Non elabora mai testo, ma solo immagini"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un LLM non comprende il linguaggio come una persona: analizza le sequenze di testo e impara le relazioni statistiche tra le parole."
+  },
+  {
+    "id": 3,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per 'prompt' in relazione a un LLM?",
+    "options": [
+      "Un testo fornito al modello, che può essere una domanda, un'istruzione o una richiesta",
+      "Il nome tecnico del tokenizer",
+      "Un errore generato dal sistema",
+      "La finestra di contesto del modello"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il prompt è il testo fornito al modello, che può essere una domanda, un'istruzione o una richiesta."
+  },
+  {
+    "id": 4,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esperimento della sequenza 'Lunedì, martedì…', cosa aiuta a comprendere in modo intuitivo il modulo?",
+    "options": [
+      "Come un LLM prevede la continuazione più probabile passo dopo passo",
+      "Come funziona la tokenizzazione",
+      "Come si misura la finestra di contesto",
+      "Come vengono generate le immagini"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'esperimento aiuta a comprendere in modo intuitivo come un LLM proceda passo dopo passo, prevedendo la continuazione più probabile."
+  },
+  {
+    "id": 5,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, un LLM è semplicemente un enorme archivio di testi da cui copia e incolla le risposte?",
+    "options": [
+      "No, utilizza ciò che ha appreso durante l'addestramento per calcolare le continuazioni più appropriate",
+      "Sì, cerca sempre la frase più simile in un archivio",
+      "Sì, ma solo per le domande più comuni",
+      "No, perché non ha mai ricevuto alcun addestramento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un LLM non è un archivio di testi: utilizza ciò che ha appreso durante l'addestramento per calcolare le continuazioni più appropriate rispetto al contesto."
+  },
+  {
+    "id": 6,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un LLM può produrre informazioni errate o inventate, secondo il modulo?",
+    "options": [
+      "Perché cerca una continuazione linguisticamente plausibile, senza garantire automaticamente che ogni affermazione sia vera",
+      "Perché non è mai stato addestrato su dati testuali",
+      "Perché copia sempre testi presenti su Internet in tempo reale",
+      "Perché genera soltanto numeri casuali"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modello cerca una continuazione linguisticamente plausibile, non garantisce automaticamente che ogni affermazione sia vera."
+  },
+  {
+    "id": 7,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del musicista che ha ascoltato milioni di melodie, cosa rappresenta la composizione di una nuova musica?",
+    "options": [
+      "Come un LLM genera nuove sequenze di testo utilizzando le relazioni linguistiche apprese, senza copiare un archivio",
+      "Come un LLM memorizza ogni canzone esistente",
+      "Come un LLM traduce automaticamente un testo",
+      "Come un LLM misura la finestra di contesto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Come il musicista utilizza le relazioni tra note, ritmi e strutture apprese, l'LLM utilizza la rete di relazioni linguistiche apprese per generare nuove sequenze di testo."
+  },
+  {
+    "id": 8,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un token secondo il modulo?",
+    "options": [
+      "Un'unità di testo utilizzata da un modello linguistico per rappresentare e analizzare ciò che riceve",
+      "Un tipo di moneta digitale",
+      "Un errore di elaborazione del modello",
+      "Un sinonimo di prompt"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un token è un'unità di testo utilizzata da un modello linguistico per rappresentare e analizzare ciò che riceve."
+  },
+  {
+    "id": 9,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa dipende la suddivisione del testo in token?",
+    "options": [
+      "Dal tokenizer, il componente che trasforma il testo in una sequenza di token",
+      "Dalla lunghezza della finestra di contesto",
+      "Dal numero di utenti collegati al sistema",
+      "Dalla lingua del modello soltanto"
+    ],
+    "correctIndex": 0,
+    "explanation": "La suddivisione dipende dal tokenizer, il componente che trasforma il testo in una sequenza di token."
+  },
+  {
+    "id": 10,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può accadere a una parola più lunga o meno comune durante la tokenizzazione?",
+    "options": [
+      "Può essere suddivisa in più token",
+      "Viene sempre eliminata dal testo",
+      "Diventa automaticamente un embedding",
+      "Non può mai essere elaborata dal modello"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una parola più lunga o meno comune può essere suddivisa in più parti, ovvero più token."
+  },
+  {
+    "id": 11,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dopo la tokenizzazione, a cosa viene associato ogni token?",
+    "options": [
+      "Un numero identificativo",
+      "Un colore",
+      "Un file audio",
+      "Un indirizzo email"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dopo la tokenizzazione, ogni token viene associato a un numero identificativo."
+  },
+  {
+    "id": 12,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono gli embedding secondo il modulo?",
+    "options": [
+      "Rappresentazioni numeriche più ricche dei token, che permettono alla rete neurale di elaborare le relazioni tra gli elementi",
+      "Un sinonimo di tokenizer",
+      "Un tipo di prompt speciale",
+      "Un errore di generazione del testo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli embedding sono rappresentazioni numeriche più ricche dei numeri identificativi dei token, che permettono alla rete neurale di elaborare le relazioni tra gli elementi."
+  },
+  {
+    "id": 13,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il numero di token utilizzati è importante secondo il modulo?",
+    "options": [
+      "Perché influenza la quantità di testo che un modello può elaborare contemporaneamente",
+      "Perché determina il colore dell'interfaccia utente",
+      "Perché indica sempre il numero esatto di parole nel testo",
+      "Perché non ha alcun effetto sull'elaborazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il numero di token utilizzati influenza la quantità di testo che un modello può elaborare contemporaneamente."
+  },
+  {
+    "id": 14,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il caso reale descritto nel modulo, come misurano spesso l'utilizzo i servizi basati su LLM?",
+    "options": [
+      "Attraverso il numero di token elaborati, distinguendo tra token in ingresso e token generati in uscita",
+      "Contando esclusivamente il numero di caratteri digitati",
+      "Misurando il tempo di attesa dell'utente",
+      "Contando il numero di file caricati"
+    ],
+    "correctIndex": 0,
+    "explanation": "I servizi basati su LLM possono misurare l'utilizzo attraverso il numero di token elaborati, distinguendo tra token in ingresso e token generati in uscita."
+  },
+  {
+    "id": 15,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dei prodotti da forno, cosa rappresenta un pane di farina di segale integrale con semi rispetto a un normale pane di farina di grano?",
+    "options": [
+      "Un prodotto più specifico, composto da più caratteristiche, come una parola suddivisa in più token",
+      "Un prodotto identico in ogni aspetto",
+      "Un prodotto che non può mai essere tokenizzato",
+      "Un token singolo, indipendentemente dalla complessità"
+    ],
+    "correctIndex": 0,
+    "explanation": "Come un pane più elaborato ha più caratteristiche, una parola più complessa può essere rappresentata da più token."
+  },
+  {
+    "id": 16,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il contesto per un LLM secondo il modulo?",
+    "options": [
+      "L'insieme delle informazioni testuali disponibili al modello durante l'elaborazione di una richiesta, utilizzabili per interpretarla e generare una risposta",
+      "Il numero totale di token generabili da un modello",
+      "Un sinonimo di tokenizer",
+      "Un tipo di embedding"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il contesto è l'insieme delle informazioni testuali disponibili al modello durante l'elaborazione di una richiesta e utilizzabili per interpretarla e generare una risposta."
+  },
+  {
+    "id": 17,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la domanda 'Quanto costa?' risulta ambigua se presa isolatamente, secondo il modulo?",
+    "options": [
+      "Perché il suo significato dipende da ciò che è stato detto prima nella conversazione",
+      "Perché contiene un errore grammaticale",
+      "Perché non è mai stata utilizzata in una conversazione reale",
+      "Perché supera sempre la finestra di contesto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Da sola la domanda è ambigua: il suo significato dipende da ciò che è stato detto prima, per esempio se si parlava di un biglietto o di uno smartphone."
+  },
+  {
+    "id": 18,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può includere il contesto oltre al messaggio dell'utente, secondo il modulo?",
+    "options": [
+      "Istruzioni fornite al modello e i messaggi precedenti della conversazione",
+      "Soltanto immagini caricate dall'utente",
+      "Solo il nome del modello utilizzato",
+      "Esclusivamente dati numerici"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il contesto può comprendere il messaggio dell'utente, le istruzioni fornite al modello, i messaggi precedenti della conversazione e altri contenuti eventualmente inseriti nell'input."
+  },
+  {
+    "id": 19,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è un limite fondamentale del contesto secondo il modulo?",
+    "options": [
+      "Il modello può utilizzare soltanto le informazioni effettivamente fornite nel contesto disponibile",
+      "Il contesto può contenere informazioni infinite",
+      "Il contesto non ha alcun effetto sulla risposta generata",
+      "Il contesto viene sempre ignorato dal modello"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modello può utilizzare soltanto le informazioni che gli vengono effettivamente fornite nel contesto disponibile."
+  },
+  {
+    "id": 20,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, il contesto di un LLM è una memoria infinita?",
+    "options": [
+      "No, il contesto non è una memoria infinita",
+      "Sì, il contesto ricorda sempre tutta la conversazione, senza limiti",
+      "Sì, ma solo per le conversazioni scritte in inglese",
+      "No, perché il modello non utilizza mai informazioni precedenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo chiarisce esplicitamente che il contesto non è una memoria infinita."
+  },
+  {
+    "id": 21,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della riunione, cosa succede se una persona arriva a metà della discussione?",
+    "options": [
+      "Una frase come 'facciamo come abbiamo deciso prima' potrebbe risultare incomprensibile",
+      "La persona comprende automaticamente tutto ciò che è stato detto prima",
+      "La riunione si interrompe automaticamente",
+      "Il contesto diventa infinito"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se si è arrivati a metà riunione, una frase come 'facciamo come abbiamo deciso prima' potrebbe risultare incomprensibile."
+  },
+  {
+    "id": 22,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la finestra di contesto secondo il modulo?",
+    "options": [
+      "La quantità massima di testo, espressa generalmente in token, che un modello può prendere in considerazione contemporaneamente durante un'elaborazione",
+      "Il numero totale di utenti che possono usare il modello contemporaneamente",
+      "Un sinonimo di prompt",
+      "La velocità con cui il modello genera testo"
+    ],
+    "correctIndex": 0,
+    "explanation": "La finestra di contesto è la quantità massima di testo, espressa generalmente in token, che un modello può prendere in considerazione contemporaneamente."
+  },
+  {
+    "id": 23,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se il totale dei token in una conversazione supera la finestra disponibile, secondo il modulo?",
+    "options": [
+      "Il sistema deve gestire il contenuto, per esempio eliminando informazioni precedenti o riassumendole",
+      "Il modello si blocca definitivamente",
+      "La conversazione viene automaticamente tradotta in un'altra lingua",
+      "Il numero di token diminuisce automaticamente senza alcun effetto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se il totale supera la finestra disponibile, il sistema deve gestire il contenuto, per esempio eliminando alcune informazioni precedenti o riassumendole."
+  },
+  {
+    "id": 24,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, una finestra di contesto più grande significa automaticamente un modello più intelligente?",
+    "options": [
+      "No, significa principalmente che il modello può considerare una quantità maggiore di informazioni contemporaneamente",
+      "Sì, una finestra più grande rende sempre il modello più intelligente",
+      "Sì, ma solo per i modelli più recenti",
+      "No, perché la finestra di contesto non ha alcun effetto sul modello"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una finestra di contesto più grande non significa automaticamente un modello più intelligente, ma che può considerare più informazioni contemporaneamente."
+  },
+  {
+    "id": 25,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "La finestra di contesto equivale a una memoria permanente, secondo il modulo?",
+    "options": [
+      "No, il contesto disponibile durante un'elaborazione e la memoria gestita dall'applicazione sono concetti differenti",
+      "Sì, tutto ciò che entra nella finestra di contesto viene ricordato per sempre",
+      "Sì, ma solo se il modello viene riavviato",
+      "No, perché la finestra di contesto non esiste realmente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il contesto disponibile durante una determinata elaborazione e la memoria eventualmente gestita dall'applicazione sono concetti differenti."
+  },
+  {
+    "id": 26,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il caso reale descritto nel modulo, cosa ha reso possibile l'aumento delle finestre di contesto?",
+    "options": [
+      "L'analisi di documenti molto estesi, conversazioni più lunghe e l'elaborazione di grandi quantità di codice",
+      "L'eliminazione totale dei token dai modelli",
+      "La riduzione della qualità delle risposte generate",
+      "L'impossibilità di utilizzare i modelli con testi lunghi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le finestre di contesto progressivamente più ampie hanno reso possibili attività come l'analisi di documenti molto estesi, conversazioni più lunghe e l'elaborazione di grandi quantità di codice."
+  },
+  {
+    "id": 27,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della scrivania, a cosa corrisponde una scrivania più grande?",
+    "options": [
+      "A una finestra di contesto più ampia, che permette di tenere più documenti davanti a sé, senza rendere automaticamente più intelligente chi la utilizza",
+      "A un modello che comprende perfettamente ogni informazione",
+      "A un tokenizer più efficiente",
+      "A un embedding più preciso"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una scrivania più grande permette di tenere più documenti davanti a sé, ma non rende automaticamente la persona più intelligente; lo stesso vale per la finestra di contesto."
+  },
+  {
+    "id": 28,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la generazione della risposta secondo il modulo?",
+    "options": [
+      "Il processo attraverso cui un LLM produce testo prevedendo, passo dopo passo, quale token sia più adatto a seguire quelli già elaborati",
+      "Il processo di suddivisione del testo in token",
+      "Il processo di raccolta dei dati di addestramento",
+      "Il processo di misurazione della finestra di contesto"
+    ],
+    "correctIndex": 0,
+    "explanation": "La generazione della risposta è il processo attraverso cui un LLM produce testo prevedendo, passo dopo passo, quale token sia più adatto a seguire quelli già elaborati."
+  },
+  {
+    "id": 29,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come procede il modello durante la generazione della risposta, secondo il modulo?",
+    "options": [
+      "Attraverso il ciclo: contesto → previsione del token successivo → nuovo token → nuova previsione → nuovo token",
+      "Generando l'intera risposta in un'unica operazione istantanea",
+      "Copiando una risposta già pronta da un archivio",
+      "Ignorando completamente il contesto disponibile"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il processo si ripete: contesto → previsione del token successivo → nuovo token → nuova previsione → nuovo token."
+  },
+  {
+    "id": 30,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, la previsione del token successivo significa sempre scegliere la parola statisticamente più frequente?",
+    "options": [
+      "No, il sistema assegna probabilità alle diverse possibilità e può scegliere tra alternative differenti",
+      "Sì, il modello sceglie sempre e soltanto la parola più frequente",
+      "Sì, ma solo nelle risposte brevi",
+      "No, perché il modello non assegna mai probabilità alle parole"
+    ],
+    "correctIndex": 0,
+    "explanation": "La previsione non significa semplicemente scegliere sempre la parola statisticamente più frequente: il sistema assegna probabilità e può scegliere tra alternative differenti."
+  },
+  {
+    "id": 31,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la funzione fondamentale del modello durante la generazione, secondo il modulo?",
+    "options": [
+      "Produrre una continuazione coerente e plausibile rispetto all'input, senza verificare necessariamente la verità di ciò che scrive",
+      "Verificare sempre la veridicità di ogni affermazione prima di generarla",
+      "Tradurre automaticamente ogni richiesta in un'altra lingua",
+      "Eliminare tutti i token già generati"
+    ],
+    "correctIndex": 0,
+    "explanation": "La funzione fondamentale del modello, in questa fase, è produrre una continuazione coerente e plausibile rispetto all'input."
+  },
+  {
+    "id": 32,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il caso reale descritto nel modulo, su cosa si basano modelli come GPT per produrre testo?",
+    "options": [
+      "Sulla previsione progressiva dei token successivi sulla base del contesto disponibile",
+      "Su un archivio di risposte già scritte da esseri umani",
+      "Su regole scritte manualmente per ogni possibile domanda",
+      "Su un dizionario statico di frasi complete"
+    ],
+    "correctIndex": 0,
+    "explanation": "Modelli come GPT sono progettati per produrre testo prevedendo progressivamente i token successivi sulla base del contesto disponibile."
+  },
+  {
+    "id": 33,
+    "module": "come-funzionano-gli-llm",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del gioco del domino, cosa determina le possibilità per la tessera successiva?",
+    "options": [
+      "La situazione creata dalla tessera appena posata",
+      "Un elenco fisso di tessere stabilito all'inizio del gioco",
+      "Il numero totale di giocatori",
+      "La finestra di contesto del modello"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una volta posata una tessera, la nuova situazione determina quali possibilità ci saranno per la tessera successiva, proprio come ogni nuovo token determina le possibilità successive."
+  }
+]

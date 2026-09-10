@@ -1,0 +1,93 @@
+{
+  "module": "prompt-engineering",
+  "sets": [
+    [
+      {
+        "term": "Istruzioni",
+        "definition": "Indicazioni che forniamo a un sistema di AI per dirgli che cosa deve fare, come deve farlo e quale risultato vogliamo ottenere"
+      },
+      {
+        "term": "Contesto",
+        "definition": "Insieme delle informazioni che forniamo all'AI per permetterle di comprendere meglio la situazione, l'obiettivo e i dati necessari per rispondere alla richiesta"
+      },
+      {
+        "term": "Ruolo",
+        "definition": "Identità, prospettiva o funzione che chiediamo all'AI di assumere durante lo svolgimento di un compito"
+      },
+      {
+        "term": "Esempi (Prompt Engineering)",
+        "definition": "Uno o più casi dimostrativi inseriti nel prompt per mostrare all'AI come deve svolgere un compito o quale formato deve utilizzare"
+      },
+      {
+        "term": "Tecniche avanzate",
+        "definition": "Strategie utilizzate per strutturare richieste complesse, guidare il modello attraverso più passaggi, controllare il formato dell'output e migliorare la qualità delle risposte"
+      },
+      {
+        "term": "Progetto con l'AI",
+        "definition": "Attività articolata in più fasi nella quale l'intelligenza artificiale viene utilizzata come strumento di supporto per raggiungere un obiettivo preciso"
+      }
+    ],
+    [
+      {
+        "term": "Prompt (come consegna)",
+        "definition": "La richiesta che formuliamo all'AI: più è ben formulata, più è facile ottenere un risultato coerente con l'obiettivo"
+      },
+      {
+        "term": "Few-shot prompting",
+        "definition": "Tecnica che consiste nel fornire pochi esempi nel prompt per mostrare al modello come svolgere un compito"
+      },
+      {
+        "term": "Zero-shot prompting",
+        "definition": "Richiesta di un compito senza fornire esempi specifici"
+      },
+      {
+        "term": "Divide et impera",
+        "definition": "Principio secondo cui un problema complesso viene separato in parti più semplici"
+      }
+    ],
+    [
+      {
+        "term": "Metafora delle istruzioni",
+        "definition": "Una commissione in tipografia: più chiaramente descriviamo ciò che vogliamo, meno spazio lasciamo all'interpretazione"
+      },
+      {
+        "term": "Metafora del contesto",
+        "definition": "Un medico a cui spieghiamo sintomi, durata e situazione, invece di dire soltanto Non sto bene"
+      },
+      {
+        "term": "Metafora del ruolo",
+        "definition": "Un edificio con diverse porte: l'edificio è lo stesso, ma cambia il punto di osservazione"
+      },
+      {
+        "term": "Metafora degli esempi",
+        "definition": "Piegare una camicia davanti a qualcuno e dire Fai nello stesso modo"
+      },
+      {
+        "term": "Metafora delle tecniche avanzate",
+        "definition": "Affidare a un architetto la progettazione di una casa, specificando stanze, superficie, stile e budget"
+      },
+      {
+        "term": "Metafora dei progetti",
+        "definition": "Organizzare una cena per molte persone, controllando menu, ingredienti e portate lungo il percorso"
+      }
+    ],
+    [
+      {
+        "term": "Differenza tra prompt e progetto",
+        "definition": "Un prompt cerca di ottenere una risposta; un progetto organizza una serie di attività per raggiungere un risultato"
+      },
+      {
+        "term": "Il ruolo assegnato all'AI",
+        "definition": "Non è una garanzia di competenza: modifica il modo in cui il sistema costruisce la risposta, ma non rende automaticamente vere le informazioni prodotte"
+      },
+      {
+        "term": "Un contesto eccessivamente lungo, confuso o contraddittorio",
+        "definition": "Può rendere più difficile ottenere una risposta utile"
+      },
+      {
+        "term": "Una tecnica di prompting, per quanto sofisticata",
+        "definition": "Non elimina le allucinazioni, gli errori logici o le informazioni inventate dal modello"
+      }
+    ]
+  ]
+}

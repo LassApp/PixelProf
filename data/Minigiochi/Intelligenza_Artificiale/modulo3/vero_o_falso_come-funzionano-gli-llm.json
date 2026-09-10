@@ -1,0 +1,254 @@
+[
+  {
+    "id": 1,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un Large Language Model (LLM) è un modello di intelligenza artificiale addestrato su grandi quantità di testo per elaborare e generare linguaggio naturale.",
+    "answer": true,
+    "explanation": "È la definizione di LLM fornita dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un LLM comprende il linguaggio esattamente come lo comprende una persona.",
+    "answer": false,
+    "explanation": "Un LLM analizza sequenze di testo e impara relazioni statistiche tra le parole, non comprende il linguaggio come una persona."
+  },
+  {
+    "id": 3,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il prompt è il testo fornito al modello, che può essere una domanda, un'istruzione o una richiesta.",
+    "answer": true,
+    "explanation": "È la definizione di prompt fornita dal modulo."
+  },
+  {
+    "id": 4,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un LLM è semplicemente un enorme archivio di testi da cui copia e incolla le risposte.",
+    "answer": false,
+    "explanation": "Il modello utilizza ciò che ha appreso durante l'addestramento per calcolare le continuazioni più appropriate, non copia da un archivio."
+  },
+  {
+    "id": 5,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un LLM può generare contenuti nuovi, ma può anche produrre informazioni errate o inventate.",
+    "answer": true,
+    "explanation": "È quanto indicato esplicitamente dal modulo."
+  },
+  {
+    "id": 6,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un token può corrispondere a una parola intera, a una parte di parola o a un segno di punteggiatura.",
+    "answer": true,
+    "explanation": "È la definizione di token fornita dal modulo."
+  },
+  {
+    "id": 7,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La suddivisione del testo in token dipende dal tokenizer.",
+    "answer": true,
+    "explanation": "Il tokenizer è il componente che trasforma il testo in una sequenza di token."
+  },
+  {
+    "id": 8,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, ogni parola corrisponde sempre esattamente a un solo token, indipendentemente dalla sua lunghezza.",
+    "answer": false,
+    "explanation": "Parole più lunghe o meno comuni possono essere suddivise in più token."
+  },
+  {
+    "id": 9,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli embedding sono rappresentazioni numeriche più ricche dei token, che permettono alla rete neurale di elaborare le relazioni tra gli elementi.",
+    "answer": true,
+    "explanation": "È la definizione di embedding fornita dal modulo."
+  },
+  {
+    "id": 10,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il caso reale descritto nel modulo, i servizi basati su LLM possono misurare l'utilizzo attraverso il numero di token elaborati.",
+    "answer": true,
+    "explanation": "I servizi distinguono spesso tra token in ingresso e token generati in uscita per misurare l'utilizzo."
+  },
+  {
+    "id": 11,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il contesto, per un LLM, è l'insieme delle informazioni testuali disponibili al modello durante l'elaborazione di una richiesta.",
+    "answer": true,
+    "explanation": "È la definizione di contesto fornita dal modulo."
+  },
+  {
+    "id": 12,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una frase presa isolatamente ha sempre lo stesso significato, indipendentemente dal contesto.",
+    "answer": false,
+    "explanation": "Una frase presa isolatamente può avere significati diversi a seconda di ciò che è stato detto prima."
+  },
+  {
+    "id": 13,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il modello può utilizzare soltanto le informazioni effettivamente fornite nel contesto disponibile.",
+    "answer": true,
+    "explanation": "È un limite fondamentale esplicitamente indicato dal modulo."
+  },
+  {
+    "id": 14,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il contesto di un LLM rappresenta una memoria infinita.",
+    "answer": false,
+    "explanation": "Il modulo chiarisce che il contesto non è una memoria infinita."
+  },
+  {
+    "id": 15,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della riunione, se ascoltiamo tutta la discussione, comprendiamo a cosa si riferisce una frase come 'facciamo come abbiamo deciso prima'.",
+    "answer": true,
+    "explanation": "È quanto descritto dalla metafora della riunione nel modulo."
+  },
+  {
+    "id": 16,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La finestra di contesto è la quantità massima di testo, espressa generalmente in token, che un modello può considerare contemporaneamente durante un'elaborazione.",
+    "answer": true,
+    "explanation": "È la definizione di finestra di contesto fornita dal modulo."
+  },
+  {
+    "id": 17,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una finestra di contesto più grande rende automaticamente un modello più intelligente.",
+    "answer": false,
+    "explanation": "Una finestra più grande significa principalmente che il modello può considerare più informazioni contemporaneamente, non che sia più intelligente."
+  },
+  {
+    "id": 18,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, una finestra di contesto ampia equivale a una memoria permanente.",
+    "answer": false,
+    "explanation": "La finestra di contesto e la memoria gestita dall'applicazione sono concetti differenti."
+  },
+  {
+    "id": 19,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il caso reale descritto nel modulo, l'aumento delle finestre di contesto è stato uno degli sviluppi più importanti nell'evoluzione degli LLM.",
+    "answer": true,
+    "explanation": "È quanto indicato nel caso reale documentato del modulo."
+  },
+  {
+    "id": 20,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della scrivania, una scrivania più grande permette di tenere più documenti davanti a sé, ma non rende automaticamente più intelligente la persona che la utilizza.",
+    "answer": true,
+    "explanation": "È quanto descritto dalla metafora della scrivania nel modulo."
+  },
+  {
+    "id": 21,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La generazione della risposta è il processo attraverso cui un LLM produce testo prevedendo, passo dopo passo, quale token sia più adatto a seguire quelli già elaborati.",
+    "answer": true,
+    "explanation": "È la definizione di generazione della risposta fornita dal modulo."
+  },
+  {
+    "id": 22,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un LLM genera sempre l'intera risposta in un'unica operazione, senza passaggi successivi.",
+    "answer": false,
+    "explanation": "Il modello produce la risposta in una successione di passi, prevedendo ogni volta il token successivo."
+  },
+  {
+    "id": 23,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la previsione del token successivo significa sempre scegliere la parola statisticamente più frequente.",
+    "answer": false,
+    "explanation": "Il sistema assegna probabilità alle diverse possibilità e può scegliere tra alternative differenti."
+  },
+  {
+    "id": 24,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, la funzione fondamentale del modello durante la generazione è produrre una continuazione coerente e plausibile rispetto all'input.",
+    "answer": true,
+    "explanation": "È quanto affermato esplicitamente dal modulo."
+  },
+  {
+    "id": 25,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, un LLM verifica sempre automaticamente la verità di ciò che scrive durante la generazione.",
+    "answer": false,
+    "explanation": "Il modello non verifica necessariamente la verità di ciò che scrive: la sua funzione è produrre una continuazione plausibile."
+  },
+  {
+    "id": 26,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il caso reale descritto nel modulo, modelli come GPT sono progettati per produrre testo prevedendo progressivamente i token successivi sulla base del contesto disponibile.",
+    "answer": true,
+    "explanation": "È quanto descritto nel caso reale documentato del modulo riguardo al funzionamento autoregressivo."
+  },
+  {
+    "id": 27,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, i token in ingresso e i token generati in uscita non vengono mai distinti nei servizi commerciali basati su LLM.",
+    "answer": false,
+    "explanation": "I servizi distinguono spesso tra token in ingresso e token generati in uscita."
+  },
+  {
+    "id": 28,
+    "module": "come-funzionano-gli-llm",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, il numero di token influenza la quantità di testo che un modello può elaborare contemporaneamente.",
+    "answer": true,
+    "explanation": "È quanto indicato esplicitamente dal modulo riguardo al ruolo dei token."
+  }
+]

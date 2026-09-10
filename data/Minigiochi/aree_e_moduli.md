@@ -10,8 +10,8 @@ Questo file è l'**unica fonte ufficiale e vincolante** per identificare Aree, M
 
 Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prima di consultare il dettaglio.
 
-- **Area ECDL** → `attiva` — Computer Essentials, Online Essentials e Word Processing: JSON realizzati e caricati. Spreadsheet: moduli e chiavi definiti, JSON da realizzare.
-- **Area Cyberbullismo e Sicurezza Online** → `attiva` — contenuti presenti, JSON realizzati e caricati.
+- **Area ECDL** → `attiva` — Computer Essentials, Online Essentials, Word Processing, Spreadsheet e Presentation: JSON realizzati e caricati.
+- **Area Cyberbullismo e Sicurezza Online** → `attiva` — JSON realizzati e caricati.
 - **Area Cybersecurity — Non solo antivirus e password** → `attiva` — JSON realizzati e caricati.
 - **Area Reti e Internet** → `attiva` — JSON realizzati e caricati.
 - **Area Malware e Minacce Informatiche** → `attiva` — JSON realizzati e caricati.
@@ -24,12 +24,12 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 ### 🖥️ Area ECDL
 **Descrizione:** Acquisire le competenze fondamentali per utilizzare computer, applicazioni e servizi digitali.
 **Stato:** attiva
-**Nota:** Computer Essentials, Online Essentials, Word Processing e Presentation — JSON realizzati e caricati. Spreadsheet — JSON da realizzare.
+**Nota:** JSON realizzati e caricati.
 
 ### 🛡️ Area Cyberbullismo e Sicurezza Online
 **Descrizione:** Riconoscere i rischi nelle relazioni digitali e imparare a proteggersi e agire responsabilmente online.
 **Stato:** attiva
-**Nota:** contenuti presenti, JSON realizzati e caricati.
+**Nota:** JSON realizzati e caricati.
 
 ### 👤 Area Cybersecurity — Non solo antivirus e password
 **Descrizione:** Sviluppare consapevolezza e competenze per proteggere identità, account, dati e attività digitali.
@@ -39,17 +39,17 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 ### 🌐 Area Reti e Internet
 **Descrizione:** Comprendere come funzionano Internet, le reti e le tecnologie che permettono ai dispositivi di comunicare.
 **Stato:** attiva
-**Nota:** contenuti presenti, JSON realizzati e caricati.
+**Nota:** JSON realizzati e caricati.
 
 ### 🦠 Area Malware e Minacce Informatiche
 **Descrizione:** Conoscere le principali minacce informatiche, comprenderne il funzionamento e imparare a prevenirle.
 **Stato:** attiva
-**Nota:** contenuti presenti, JSON realizzati e caricati.
+**Nota:** JSON realizzati e caricati.
 
 ### 🤖 Area Intelligenza Artificiale
 **Descrizione:** Comprendere i concetti fondamentali dell'intelligenza artificiale, il funzionamento dei principali sistemi AI e il loro utilizzo consapevole, sicuro e responsabile.
 **Stato:** attiva
-**Nota:** contenuti presenti, JSON realizzati e caricati.
+**Nota:** JSON realizzati e caricati.
 
 ---
 
@@ -243,7 +243,7 @@ data/
 
 #### Spreadsheet
 
-> JSON da realizzare.
+> JSON realizzati e caricati.
 
 ```text
 data/
@@ -273,12 +273,19 @@ data/
         │   ├── quiz_formule-e-calcoli.json
         │   ├── speedquiz_formule-e-calcoli.json
         │   └── vero_o_falso_formule-e-calcoli.json
-        └── modulo5/
-            ├── abbina_organizzare-e-visualizzare-i-dati.json
-            ├── completa_la_frase_organizzare-e-visualizzare-i-dati.json
-            ├── quiz_organizzare-e-visualizzare-i-dati.json
-            ├── speedquiz_organizzare-e-visualizzare-i-dati.json
-            └── vero_o_falso_organizzare-e-visualizzare-i-dati.json
+        ├── modulo5/
+        │   ├── abbina_organizzare-e-visualizzare-i-dati.json
+        │   ├── completa_la_frase_organizzare-e-visualizzare-i-dati.json
+        │   ├── quiz_organizzare-e-visualizzare-i-dati.json
+        │   ├── speedquiz_organizzare-e-visualizzare-i-dati.json
+        │   └──  vero_o_falso_organizzare-e-visualizzare-i-dati.json    
+        └── modulo6/
+            ├── abbina_preparare-e-stampare-il-foglio.json
+            ├── completa_la_frase_preparare-e-stampare-il-foglio.json
+            ├── quiz_preparare-e-stampare-il-foglio.json
+            ├── speedquiz_preparare-e-stampare-il-foglio.json
+            └── vero_o_falso_preparare-e-stampare-il-foglio.json
+            
 ```
 
 - **Modulo 1 — Excel e l'ambiente di lavoro**
@@ -311,6 +318,11 @@ data/
   - Path base: `data/ECDL/Spreadsheet/modulo5/`
   - File: `abbina_organizzare-e-visualizzare-i-dati.json`, `completa_la_frase_organizzare-e-visualizzare-i-dati.json`, `quiz_organizzare-e-visualizzare-i-dati.json`, `speedquiz_organizzare-e-visualizzare-i-dati.json`, `vero_o_falso_organizzare-e-visualizzare-i-dati.json`
 
+- **Modulo 6 — Preparare e stampare il foglio**
+  - Chiave: `preparare-e-stampare-il-foglio`
+  - Stato: `attivo`
+  - Path base: `data/ECDL/Spreadsheet/modulo6/`
+  - File: `abbina_preparare-e-stampare-il-foglio.json`, `completa_la_frase_preparare-e-stampare-il-foglio.json`, `quiz_preparare-e-stampare-il-foglio.json`, `speedquiz_preparare-e-stampare-il-foglio.json`, `vero_o_falso_preparare-e-stampare-il-foglio.json`
 #### Presentation
 
 > JSON realizzati e caricati.
@@ -357,38 +369,90 @@ data/
   - Path base: `data/ECDL/Presentation/modulo3/`
   - File: `abbina_preparare-e-presentare.json`, `completa_la_frase_preparare-e-presentare.json`, `quiz_preparare-e-presentare.json`, `speedquiz_preparare-e-presentare.json`, `vero_o_falso_preparare-e-presentare.json`
 
-> Le sotto-aree ECDL attualmente definite sono cinque: **Computer Essentials**, **Online Essentials**, **Word Processing**, **Spreadsheet** e **Presentation**. Computer Essentials, Online Essentials, Word Processing e Presentation hanno JSON realizzati e caricati. Spreadsheet ha moduli e chiavi definiti ma JSON da realizzare.
+> Le sotto-aree ECDL attualmente definite sono cinque: **Computer Essentials**, **Online Essentials**, **Word Processing**, **Spreadsheet** e **Presentation**, hanno JSON realizzati e caricati.
 
 ---
 
 ### 🛡️ Area Cyberbullismo e Sicurezza Online
 
-**Stato:** attiva
-**Nota:** contenuti presenti, JSON realizzati e caricati.
+Stato: attiva
+Nota: JSON realizzati e caricati.
 
-- **Identità e reputazione digitale**
+```text
+data/
+└── Cyberbullismo_e_Sicurezza_Online/
+    ├── modulo1/
+    │   ├── abbina_identita-reputazione-digitale.json
+    │   ├── completa_la_frase_identita-reputazione-digitale.json
+    │   ├── quiz_identita-reputazione-digitale.json
+    │   ├── speedquiz_identita-reputazione-digitale.json
+    │   └── vero_o_falso_identita-reputazione-digitale.json
+    ├── modulo2/
+    │   ├── abbina_cyberbullismo.json
+    │   ├── completa_la_frase_cyberbullismo.json
+    │   ├── quiz_cyberbullismo.json
+    │   ├── speedquiz_cyberbullismo.json
+    │   └── vero_o_falso_cyberbullismo.json
+    ├── modulo3/
+    │   ├── abbina_hate-speech.json
+    │   ├── completa_la_frase_hate-speech.json
+    │   ├── quiz_hate-speech.json
+    │   ├── speedquiz_hate-speech.json
+    │   └── vero_o_falso_hate-speech.json
+    ├── modulo4/
+    │   ├── abbina_sexting-revenge-porn.json
+    │   ├── completa_la_frase_sexting-revenge-porn.json
+    │   ├── quiz_sexting-revenge-porn.json
+    │   ├── speedquiz_sexting-revenge-porn.json
+    │   └── vero_o_falso_sexting-revenge-porn.json
+    ├── modulo5/
+    │   ├── abbina_grooming.json
+    │   ├── completa_la_frase_grooming.json
+    │   ├── quiz_grooming.json
+    │   ├── speedquiz_grooming.json
+    │   └── vero_o_falso_grooming.json
+    └── modulo6/
+        ├── abbina_cittadinanza-digitale.json
+        ├── completa_la_frase_cittadinanza-digitale.json
+        ├── quiz_cittadinanza-digitale.json
+        ├── speedquiz_cittadinanza-digitale.json
+        └── vero_o_falso_cittadinanza-digitale.json
+```
+- **Modulo 1 — Identità e reputazione digitale**
   - Chiave: `identita-reputazione-digitale`
   - Stato: `attivo`
-
-- **Cyberbullismo**
+  - Path base: `data/Cyberbullismo_e_Sicurezza_Online/modulo1/`
+  - File: `abbina_identita-reputazione-digitale.json, completa_la_frase_identita-reputazione-digitale.json, quiz_identita-reputazione-digitale.json, speedquiz_identita-reputazione-digitale.json, vero_o_falso_identita-reputazione-digitale.json`
+  
+- **Modulo 2 — Cyberbullismo**
   - Chiave: `cyberbullismo`
   - Stato: `attivo`
-
-- **Hate Speech**
+  - Path base: `data/Cyberbullismo_e_Sicurezza_Online/modulo2/`
+  - File: `abbina_cyberbullismo.json, completa_la_frase_cyberbullismo.json, quiz_cyberbullismo.json, speedquiz_cyberbullismo.json, vero_o_falso_cyberbullismo.json`
+  
+- **Modulo 3 — Hate Speech**
   - Chiave: `hate-speech`
   - Stato: `attivo`
-
-- **Sexting e Revenge Porn**
+  - Path base: `data/Cyberbullismo_e_Sicurezza_Online/modulo3/`
+  - File: `abbina_hate-speech.json, completa_la_frase_hate-speech.json, quiz_hate-speech.json, speedquiz_hate-speech.json, vero_o_falso_hate-speech.json`
+  
+- **Modulo 4 — Sexting e Revenge Porn**
   - Chiave: `sexting-revenge-porn`
   - Stato: `attivo`
-
-- **Grooming**
+  - Path base: `data/Cyberbullismo_e_Sicurezza_Online/modulo4/`
+  - File: `abbina_sexting-revenge-porn.json, completa_la_frase_sexting-revenge-porn.json, quiz_sexting-revenge-porn.json, speedquiz_sexting-revenge-porn.json, vero_o_falso_sexting-revenge-porn.json`
+  
+- **Modulo 5 — Grooming**
   - Chiave: `grooming`
   - Stato: `attivo`
-
-- **Cittadinanza Digitale**
+  - Path base: `data/Cyberbullismo_e_Sicurezza_Online/modulo5/`
+  - File: `abbina_grooming.json, completa_la_frase_grooming.json, quiz_grooming.json, speedquiz_grooming.json, vero_o_falso_grooming.json`
+  
+- **Modulo 6 — Cittadinanza Digitale**
   - Chiave: `cittadinanza-digitale`
   - Stato: `attivo`
+  - Path base: `data/Cyberbullismo_e_Sicurezza_Online/modulo6/`
+  - File: `abbina_cittadinanza-digitale.json, completa_la_frase_cittadinanza-digitale.json, quiz_cittadinanza-digitale.json, speedquiz_cittadinanza-digitale.json, vero_o_falso_cittadinanza-digitale.json`
 
 ---
 
@@ -802,25 +866,25 @@ data/
 
 ## 4. Riepilogo
 
-> **Aggiornamento:** tutti i JSON sono stati realizzati e caricati, ad eccezione di **Spreadsheet**. Tutte le **6 aree** sono attive.
+> **Aggiornamento:** tutti i JSON sono stati realizzati e caricati. Tutte le **6 aree** sono attive.
 
 | Area / Sotto-area | Moduli | File attesi | Realizzati | Da realizzare | Stato area |
 |---|---|---|---|---|---|
 | ECDL — Computer Essentials | 4 | 20 | 20 | 0 | attivo |
 | ECDL — Online Essentials | 4 | 20 | 20 | 0 | attivo |
 | ECDL — Word Processing | 5 | 25 | 25 | 0 | attivo |
-| ECDL — Spreadsheet | 5 | 25 | 0 | 25 | attivo |
+| ECDL — Spreadsheet | 6 | 30 | 30 | 0 | attivo |
 | ECDL — Presentation | 3 | 15 | 15 | 0 | attivo |
 | Cyberbullismo e Sicurezza Online | 6 | 30 | 30 | 0 | attiva |
 | Cybersecurity — Non solo antivirus e password | 8 | 40 | 40 | 0 | attiva |
 | Reti e Internet | 8 | 40 | 40 | 0 | attiva |
 | Malware e Minacce Informatiche | 1 | 5 | 5 | 0 | attiva |
 | Intelligenza Artificiale | 13 | 65 | 65 | 0 | attiva |
-| **Totale** | **57** | **285** | **260** | **25** | — |
+| **Totale** | **58** | **290** | **290** | **0** | — |
 
 - **Aree:** 6
 - **Sotto-aree ECDL:** 5 (Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation)
-- **Moduli totali mappati:** 57
-- **File JSON realizzati:** 260
-- **File JSON da realizzare:** 25
-- **File JSON totali attesi:** 285
+- **Moduli totali mappati:** 58
+- **File JSON realizzati:** 290
+- **File JSON da realizzare:** 0
+- **File JSON totali attesi:** 290

@@ -1,0 +1,118 @@
+{
+  "id": 1,
+  "module": "provenienza-dei-contenuti",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Watermark (filigrana digitale)",
+        "definition": "Informazione inserita all'interno di un contenuto digitale per identificarlo, attribuirne l'origine o permetterne il riconoscimento"
+      },
+      {
+        "term": "Watermark visibile",
+        "definition": "Un logo o una scritta, come «Generato con AI», percepibile direttamente nel contenuto"
+      },
+      {
+        "term": "Watermark invisibile",
+        "definition": "Un segnale incorporato nei dati del contenuto, non percepibile direttamente dall'utente ma rilevabile con strumenti specifici"
+      },
+      {
+        "term": "Caso SynthID di Google DeepMind (2023)",
+        "definition": "Inserì un watermark invisibile direttamente nei pixel delle immagini generate con Imagen, progettato per resistere a filtri, variazioni di colore e compressione JPEG"
+      },
+      {
+        "term": "Metafora del libro in biblioteca",
+        "definition": "Rappresenta il watermark: un'etichetta visibile sulla copertina oppure un contrassegno invisibile nella carta, riconoscibile solo con uno strumento apposito"
+      }
+    ],
+    [
+      {
+        "term": "SynthID",
+        "definition": "Tecnologia sviluppata da Google DeepMind per inserire watermark digitali invisibili nei contenuti generati dall'AI e permetterne il successivo rilevamento"
+      },
+      {
+        "term": "Limite di SynthID",
+        "definition": "Non è un detector universale dell'AI: l'assenza del watermark non dimostra che un contenuto sia stato realizzato da una persona"
+      },
+      {
+        "term": "Ad fontes",
+        "definition": "Espressione latina che significa «alle fonti»: ritornare all'origine e verificare la provenienza di un contenuto"
+      },
+      {
+        "term": "Estensione di SynthID (2024)",
+        "definition": "Google DeepMind estese la tecnologia oltre le immagini, introducendo il watermarking per testo e musica generati dall'AI"
+      },
+      {
+        "term": "Metafora della banconota",
+        "definition": "Rappresenta SynthID: un oggetto che sembra normale ma contiene elementi di sicurezza verificabili con strumenti specifici"
+      }
+    ],
+    [
+      {
+        "term": "Content Credentials",
+        "definition": "Informazioni digitali associate a un contenuto che permettono di documentarne la provenienza, cioè la sua origine e la sua storia di creazione e modifica"
+      },
+      {
+        "term": "C2PA (Coalition for Content Provenance and Authenticity)",
+        "definition": "Standard su cui si basano i Content Credentials, sviluppato per fornire informazioni verificabili sulla provenienza dei contenuti digitali"
+      },
+      {
+        "term": "Funzione delle firme digitali nello standard C2PA",
+        "definition": "Permettono di verificare che le informazioni sulla provenienza non siano state alterate dopo essere state firmate"
+      },
+      {
+        "term": "Caso di Adobe",
+        "definition": "Ha integrato i Content Credentials nei propri strumenti creativi, permettendo di associare a un contenuto informazioni su identità, processo creativo e utilizzo dell'AI"
+      },
+      {
+        "term": "Metafora del pacco spedito",
+        "definition": "Rappresenta i Content Credentials: un'etichetta digitale che accompagna il contenuto e ne documenta la provenienza e i passaggi della sua storia"
+      }
+    ],
+    [
+      {
+        "term": "Provenienza digitale",
+        "definition": "Insieme delle informazioni che permettono di ricostruire, verificare e comprendere l'origine, la creazione, le modifiche e la diffusione di un contenuto digitale"
+      },
+      {
+        "term": "Sequenza della provenienza digitale",
+        "definition": "Origine, creazione, modifica, pubblicazione, diffusione"
+      },
+      {
+        "term": "Relazione tra provenienza e verità",
+        "definition": "La provenienza documentata non garantisce automaticamente che un contenuto rappresenti una situazione autentica"
+      },
+      {
+        "term": "Caso di Reuters (2024)",
+        "definition": "L'agenzia fotografica annunciò l'utilizzo di Content Credentials basati sullo standard C2PA per fornire maggiori informazioni sulla provenienza delle proprie immagini"
+      },
+      {
+        "term": "Metafora della catena di custodia",
+        "definition": "Rappresenta la provenienza digitale: a ogni passaggio viene registrato chi ha ricevuto l'oggetto, quando e cosa è stato fatto"
+      }
+    ],
+    [
+      {
+        "term": "Limiti della provenienza digitale",
+        "definition": "Vincoli che impediscono agli strumenti di provenienza, watermark e Content Credentials di garantire da soli che un contenuto sia autentico, completo, corretto o vero"
+      },
+      {
+        "term": "Limite della copertura",
+        "definition": "Non tutti i contenuti digitali possiedono watermark o Content Credentials"
+      },
+      {
+        "term": "Limite della perdita delle informazioni",
+        "definition": "Un contenuto può essere scaricato, convertito o pubblicato attraverso servizi che non conservano le informazioni di provenienza"
+      },
+      {
+        "term": "Approccio più solido per la verifica dell'AI",
+        "definition": "Combina informazioni sulla provenienza, metadati, fonte originale, contesto, confronto con altre fonti e capacità critica dell'utente"
+      },
+      {
+        "term": "Metafora del libretto dei tagliandi",
+        "definition": "Rappresenta la provenienza digitale: racconta una parte della storia del contenuto, ma non può sostituire il controllo diretto"
+      }
+    ]
+  ]
+}

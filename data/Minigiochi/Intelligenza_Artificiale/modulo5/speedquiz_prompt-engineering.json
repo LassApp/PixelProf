@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le istruzioni secondo il modulo?",
+    "options": [
+      "Le indicazioni che forniamo a un sistema di AI per dirgli cosa fare, come farlo e quale risultato vogliamo ottenere",
+      "Solo il testo da riassumere fornito all'AI",
+      "La cronologia delle richieste precedenti",
+      "Il nome del modello di AI utilizzato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le istruzioni sono le indicazioni che forniamo a un sistema di AI per dirgli che cosa deve fare, come deve farlo e quale risultato vogliamo ottenere."
+  },
+  {
+    "id": 2,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa significa scrivere istruzioni efficaci nel Prompt Engineering?",
+    "options": [
+      "Usare sempre frasi molto lunghe",
+      "Trasformare una richiesta generica in una richiesta chiara, precisa e orientata al risultato",
+      "Ripetere la stessa domanda più volte",
+      "Evitare di specificare il formato della risposta"
+    ],
+    "correctIndex": 1,
+    "explanation": "Scrivere istruzioni efficaci significa trasformare una richiesta generica in una richiesta sufficientemente chiara, precisa e orientata al risultato."
+  },
+  {
+    "id": 3,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa influenza fortemente il risultato di una richiesta all'AI, secondo il modulo?",
+    "options": [
+      "Solo la lunghezza del testo digitato",
+      "Il modo in cui formuliamo la richiesta",
+      "L'orario in cui viene inviata la richiesta",
+      "Il numero di persone che usano l'AI in quel momento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modo in cui formuliamo la richiesta influenza fortemente il risultato."
+  },
+  {
+    "id": 4,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, una buona istruzione deve essere soprattutto:",
+    "options": [
+      "Lunga e dettagliata in ogni minimo aspetto",
+      "Chiara",
+      "Scritta in un linguaggio tecnico",
+      "Ripetuta più volte nello stesso prompt"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una buona istruzione non deve necessariamente essere lunga: deve essere soprattutto chiara."
+  },
+  {
+    "id": 5,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa NON rende automaticamente un prompt migliore, secondo il modulo?",
+    "options": [
+      "Specificare il compito da svolgere",
+      "Indicare il formato della risposta",
+      "Aggiungere parole a caso",
+      "Ridurre l'ambiguità"
+    ],
+    "correctIndex": 2,
+    "explanation": "Aggiungere parole a caso non rende automaticamente un prompt migliore."
+  },
+  {
+    "id": 6,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa possiamo specificare in un'istruzione, secondo il modulo?",
+    "options": [
+      "Solo il colore dello sfondo della risposta",
+      "Il compito da svolgere, il formato, il livello di approfondimento, lo stile e i vincoli",
+      "Solo il numero di parole esatto, senza altro",
+      "Solo la lingua di risposta"
+    ],
+    "correctIndex": 1,
+    "explanation": "Possiamo specificare il compito da svolgere, il formato della risposta, il livello di approfondimento, lo stile linguistico o eventuali vincoli."
+  },
+  {
+    "id": 7,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché è importante essere precisi con l'AI generativa, secondo il modulo?",
+    "options": [
+      "Perché l'AI non interpreta una richiesta come farebbe una persona che conosce già le nostre intenzioni",
+      "Perché l'AI si offende se la richiesta è vaga",
+      "Perché l'AI risponde più lentamente alle richieste generiche",
+      "Perché l'AI richiede sempre un pagamento per le richieste dettagliate"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'AI generativa non interpreta una richiesta come farebbe una persona che conosce già le nostre intenzioni."
+  },
+  {
+    "id": 8,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio della mail al professore, cosa differenzia la versione dettagliata da quella generica?",
+    "options": [
+      "La versione dettagliata specifica tono, motivo e sinteticità della comunicazione",
+      "La versione dettagliata è scritta in un'altra lingua",
+      "La versione dettagliata include un allegato",
+      "La versione dettagliata è più breve di quella generica"
+    ],
+    "correctIndex": 0,
+    "explanation": "La versione dettagliata specifica di mantenere un tono educato e sintetico, oltre al motivo della comunicazione."
+  },
+  {
+    "id": 9,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, la differenza tra una richiesta vaga e una precisa sta principalmente:",
+    "options": [
+      "Nella tecnologia utilizzata",
+      "Nella qualità della comunicazione tra persona e sistema",
+      "Nel costo del servizio AI",
+      "Nella velocità di connessione a Internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "La differenza non sta nella tecnologia utilizzata, ma nella qualità della comunicazione tra persona e sistema."
+  },
+  {
+    "id": 10,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della tipografia, cosa rappresenta l'istruzione data all'AI?",
+    "options": [
+      "Il pagamento anticipato",
+      "La nostra commissione",
+      "Il tempo di attesa",
+      "La carta utilizzata per la stampa"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'istruzione è la nostra commissione, proprio come quando entriamo in tipografia."
+  },
+  {
+    "id": 11,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il contesto secondo il modulo?",
+    "options": [
+      "L'insieme delle informazioni che forniamo all'AI per comprendere meglio situazione, obiettivo e dati necessari",
+      "Il tono della risposta generata dall'AI",
+      "La lunghezza massima consentita per un prompt",
+      "Il numero di esempi forniti nel prompt"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il contesto è l'insieme delle informazioni che forniamo all'AI per permetterle di comprendere meglio la situazione, l'obiettivo e i dati necessari."
+  },
+  {
+    "id": 12,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra istruzione e contesto, secondo il modulo?",
+    "options": [
+      "Sono sinonimi e indicano la stessa cosa",
+      "L'istruzione indica cosa fare; il contesto fornisce gli elementi necessari per farlo in modo appropriato",
+      "Il contesto indica cosa fare; l'istruzione fornisce i dati necessari",
+      "Non esiste alcuna differenza pratica tra i due concetti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un'istruzione indica che cosa fare; il contesto fornisce invece gli elementi necessari per farlo in modo appropriato."
+  },
+  {
+    "id": 13,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del riassunto, di cosa ha bisogno l'AI oltre all'istruzione 'Riassumi questo testo in 100 parole'?",
+    "options": [
+      "Di conoscere il nome dell'autore del testo",
+      "Del testo da riassumere",
+      "Di sapere il numero di pagine del documento originale",
+      "Di una traduzione del testo in inglese"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'istruzione è chiara, ma l'AI ha bisogno del testo da riassumere."
+  },
+  {
+    "id": 14,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può comprendere il contesto secondo il modulo?",
+    "options": [
+      "Solo la lunghezza desiderata della risposta",
+      "A chi è destinato il risultato, quale problema si sta risolvendo e quali informazioni sono già disponibili",
+      "Solo il prezzo del servizio utilizzato",
+      "Solo l'orario in cui viene inviata la richiesta"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il contesto può comprendere a chi è destinato il risultato, quale problema si sta cercando di risolvere e quali informazioni sono già disponibili."
+  },
+  {
+    "id": 15,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette il contesto all'AI, secondo il modulo?",
+    "options": [
+      "Di restringere lo spazio delle possibili interpretazioni",
+      "Di ignorare completamente l'istruzione ricevuta",
+      "Di rispondere sempre nella stessa lingua",
+      "Di aumentare automaticamente la lunghezza della risposta"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il contesto permette quindi all'AI di restringere lo spazio delle possibili interpretazioni."
+  },
+  {
+    "id": 16,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può accadere con un contesto eccessivamente lungo, confuso o contraddittorio?",
+    "options": [
+      "La risposta diventa sempre più lunga",
+      "Può rendere più difficile ottenere una risposta utile",
+      "L'AI smette di funzionare",
+      "Il prompt viene tradotto automaticamente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un contesto eccessivamente lungo, confuso o contraddittorio può rendere più difficile ottenere una risposta utile."
+  },
+  {
+    "id": 17,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale principio vale per il contesto, secondo il modulo?",
+    "options": [
+      "Informazioni pertinenti, ordinate e sufficienti",
+      "Più informazioni si aggiungono, meglio è, senza limiti",
+      "Il contesto deve essere sempre il più breve possibile, anche a costo di essere incompleto",
+      "Il contesto non deve mai contenere numeri o date"
+    ],
+    "correctIndex": 0,
+    "explanation": "Vale un principio semplice: informazioni pertinenti, ordinate e sufficienti."
+  },
+  {
+    "id": 18,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del piano di studio, quali informazioni rendono la richiesta ben contestualizzata?",
+    "options": [
+      "Solo il nome della materia da studiare",
+      "L'esame tra dieci giorni, due ore di studio a sera e i capitoli già completati",
+      "Solo il voto desiderato all'esame",
+      "Solo il nome del professore"
+    ],
+    "correctIndex": 1,
+    "explanation": "La persona specifica di avere un esame tra dieci giorni, di poter studiare due ore ogni sera e di aver già completato i primi tre capitoli."
+  },
+  {
+    "id": 19,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa può produrre un'AI che riceve un documento incompleto o informazioni obsolete?",
+    "options": [
+      "Sempre un errore di sistema",
+      "Una risposta apparentemente plausibile ma non adatta alla situazione",
+      "Nessuna risposta",
+      "Una richiesta di pagamento aggiuntivo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Può produrre una risposta apparentemente plausibile ma non adatta alla situazione."
+  },
+  {
+    "id": 20,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del medico, cosa rende il quadro più comprensibile rispetto a dire solo 'Non sto bene'?",
+    "options": [
+      "Ripetere la stessa frase più volte",
+      "Spiegare sintomi, durata, situazione e farmaci assunti",
+      "Parlare più velocemente",
+      "Rivolgersi a un medico diverso"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se spieghiamo quali sintomi abbiamo, da quanto tempo, in quale situazione compaiono e quali farmaci stiamo assumendo, il quadro diventa più comprensibile."
+  },
+  {
+    "id": 21,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il ruolo nel Prompt Engineering, secondo il modulo?",
+    "options": [
+      "Il nome utente scelto per accedere al sistema di AI",
+      "L'identità, la prospettiva o la funzione che chiediamo all'AI di assumere durante un compito",
+      "Il livello di abbonamento al servizio di AI",
+      "La lingua in cui l'AI deve rispondere"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il ruolo è l'identità, la prospettiva o la funzione che chiediamo all'AI di assumere durante lo svolgimento di un compito."
+  },
+  {
+    "id": 22,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può aiutare a fare l'assegnazione di un ruolo all'AI, secondo il modulo?",
+    "options": [
+      "Orientare la risposta verso un determinato punto di vista",
+      "Aumentare automaticamente la velocità di risposta",
+      "Ridurre il costo del servizio",
+      "Cambiare la lingua predefinita del sistema"
+    ],
+    "correctIndex": 0,
+    "explanation": "Chiedere un ruolo può aiutare a orientare la risposta verso un determinato punto di vista."
+  },
+  {
+    "id": 23,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando chiediamo all'AI di 'agire come un insegnante', cosa stiamo realmente facendo secondo il modulo?",
+    "options": [
+      "Trasformando realmente l'AI in un insegnante",
+      "Fornendo una cornice operativa che orienta il tipo di risposta",
+      "Attivando una funzione a pagamento",
+      "Cambiando il modello di AI utilizzato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non stiamo trasformando realmente l'AI in un insegnante: stiamo fornendo una cornice operativa che orienta il tipo di risposta."
+  },
+  {
+    "id": 24,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Il ruolo può essere particolarmente utile per ottenere, secondo il modulo:",
+    "options": [
+      "Una determinata prospettiva, un certo livello di linguaggio o una specifica modalità di analisi",
+      "Una risposta sempre più breve possibile",
+      "Una risposta gratuita",
+      "Una risposta in una lingua straniera"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il ruolo può essere particolarmente utile quando vogliamo ottenere una determinata prospettiva, un certo livello di linguaggio o una specifica modalità di analisi."
+  },
+  {
+    "id": 25,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa NON bisogna confondere con il ruolo assegnato all'AI, secondo il modulo?",
+    "options": [
+      "Una garanzia di competenza",
+      "Un'istruzione chiara",
+      "Un esempio dimostrativo",
+      "Un contesto ricco di dettagli"
+    ],
+    "correctIndex": 0,
+    "explanation": "È importante non confondere il ruolo con una garanzia di competenza."
+  },
+  {
+    "id": 26,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Se chiediamo all'AI di 'comportarsi come un medico', cosa NON significa secondo il modulo?",
+    "options": [
+      "Che il sistema risponderà in modo più formale",
+      "Che abbiamo ottenuto un medico",
+      "Che la risposta sarà orientata a un certo punto di vista",
+      "Che il prompt include un ruolo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se chiediamo all'AI di comportarsi come un medico, non significa che abbiamo ottenuto un medico."
+  },
+  {
+    "id": 27,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa può combinare un buon prompt oltre al ruolo?",
+    "options": [
+      "Istruzioni e contesto",
+      "Solo il prezzo del servizio",
+      "Solo la lunghezza massima della risposta",
+      "Solo la lingua di risposta"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un buon prompt può quindi combinare istruzioni, contesto e ruolo."
+  },
+  {
+    "id": 28,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del viaggio, cosa cambia specificando 'Agisci come una guida turistica' invece di 'Consigliami cosa visitare'?",
+    "options": [
+      "Cambia solo la lunghezza della risposta",
+      "Viene indicata da quale prospettiva deve essere costruita la risposta",
+      "Cambia la lingua della risposta",
+      "L'AI richiede un pagamento aggiuntivo"
+    ],
+    "correctIndex": 1,
+    "explanation": "La seconda richiesta indica da quale prospettiva deve essere costruita la risposta."
+  },
+  {
+    "id": 29,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa ha mostrato la ricerca sulle tecniche di prompting basate sui ruoli, secondo il modulo?",
+    "options": [
+      "Che modificare il prompt elimina completamente gli errori del modello",
+      "Che modificare il prompt non elimina i limiti del modello",
+      "Che i ruoli non hanno alcun effetto sulla risposta",
+      "Che i ruoli funzionano solo con testi in lingua inglese"
+    ],
+    "correctIndex": 1,
+    "explanation": "La ricerca ha mostrato che modificare il prompt non elimina i limiti del modello."
+  },
+  {
+    "id": 30,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'edificio con diverse porte, cosa rimane invariato mentre cambia il punto di osservazione?",
+    "options": [
+      "Il numero di piani dell'edificio",
+      "L'edificio stesso",
+      "Il colore delle porte",
+      "Il nome dell'edificio"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'edificio è lo stesso, ma cambia il punto di osservazione."
+  },
+  {
+    "id": 31,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono gli esempi nel Prompt Engineering, secondo il modulo?",
+    "options": [
+      "Uno o più casi dimostrativi inseriti nel prompt per mostrare all'AI come svolgere un compito o quale formato utilizzare",
+      "Le domande più frequenti poste all'AI",
+      "I risultati già generati da altri utenti",
+      "Le istruzioni di installazione del sistema di AI"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli esempi sono uno o più casi dimostrativi inseriti nel prompt per mostrare all'AI come deve svolgere un determinato compito o quale formato deve utilizzare."
+  },
+  {
+    "id": 32,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando può essere molto efficace un esempio, secondo il modulo?",
+    "options": [
+      "Quando il risultato desiderato è difficile da descrivere soltanto a parole",
+      "Solo quando il compito riguarda numeri",
+      "Solo nei compiti di traduzione",
+      "Solo quando il prompt è molto breve"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un esempio può essere molto efficace quando il risultato che desideriamo è difficile da descrivere soltanto a parole."
+  },
+  {
+    "id": 33,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene chiamata la tecnica che fornisce pochi esempi nel prompt?",
+    "options": [
+      "Zero-shot prompting",
+      "Few-shot prompting",
+      "Divide et impera",
+      "Role prompting"
+    ],
+    "correctIndex": 1,
+    "explanation": "Questa tecnica viene spesso chiamata few-shot prompting, cioè prompting con pochi esempi."
+  },
+  {
+    "id": 34,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama la richiesta di un compito senza fornire esempi specifici?",
+    "options": [
+      "Few-shot prompting",
+      "Zero-shot prompting",
+      "Prompt chaining",
+      "Contesto esteso"
+    ],
+    "correctIndex": 1,
+    "explanation": "Quando chiediamo un compito senza fornire esempi specifici, parliamo comunemente di zero-shot prompting."
+  },
+  {
+    "id": 35,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per cosa possono essere utilizzati gli esempi oltre a mostrare il compito, secondo il modulo?",
+    "options": [
+      "Per controllare il formato della risposta",
+      "Per cambiare il prezzo del servizio",
+      "Per velocizzare la connessione a Internet",
+      "Per cancellare la cronologia delle richieste"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli esempi possono essere utilizzati anche per controllare il formato."
+  },
+  {
+    "id": 36,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può succedere se gli esempi forniti sono ambigui o contraddittori, secondo il modulo?",
+    "options": [
+      "Possono confondere il modello invece di aiutarlo",
+      "L'AI ignora automaticamente l'istruzione",
+      "Il prompt viene rifiutato dal sistema",
+      "La risposta diventa sempre più lunga"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se sono ambigui o contraddittori, possono confondere il modello invece di aiutarlo."
+  },
+  {
+    "id": 37,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio della classificazione delle email, come viene classificato il messaggio 'Vorrei sapere il prezzo'?",
+    "options": [
+      "Reclamo",
+      "Informazioni",
+      "Spedizione",
+      "Pagamento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il messaggio 'Vorrei sapere il prezzo' viene classificato come Informazioni."
+  },
+  {
+    "id": 38,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa ha mostrato la ricerca sui modelli GPT e altri Large Language Models, secondo il modulo?",
+    "options": [
+      "Che fornire esempi nel contesto può permettere al modello di adattarsi a un compito senza essere riaddestrato",
+      "Che gli esempi non hanno alcun effetto sul comportamento del modello",
+      "Che i modelli linguistici funzionano solo con istruzioni in inglese",
+      "Che gli esempi devono sempre essere almeno dieci"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ricerca ha mostrato che fornire esempi direttamente nel contesto può permettere al modello di adattarsi a un compito senza dover essere nuovamente addestrato."
+  },
+  {
+    "id": 39,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, quando forniamo esempi a un modello, cosa stiamo modificando?",
+    "options": [
+      "Il modello stesso, attraverso un nuovo addestramento",
+      "Ciò che mostriamo al modello prima di chiedergli di lavorare",
+      "Il prezzo del servizio di AI utilizzato",
+      "La lingua predefinita del sistema"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non stiamo necessariamente modificando il modello; stiamo modificando ciò che gli mostriamo prima di chiedergli di lavorare."
+  },
+  {
+    "id": 40,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della camicia piegata, cosa rende visibile l'esempio pratico rispetto alla sola spiegazione verbale?",
+    "options": [
+      "Ciò che le parole potrebbero lasciare ambiguo",
+      "Il prezzo del tessuto utilizzato",
+      "Il tempo necessario per completare il compito",
+      "Il nome del materiale della camicia"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'esempio rende visibile ciò che le parole potrebbero lasciare ambiguo."
+  },
+  {
+    "id": 41,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le tecniche avanzate di Prompt Engineering, secondo il modulo?",
+    "options": [
+      "Strategie per strutturare richieste complesse, guidare il modello attraverso più passaggi e migliorare la qualità delle risposte",
+      "Comandi segreti noti solo agli sviluppatori",
+      "Impostazioni tecniche del software installate una sola volta",
+      "Abbonamenti premium ai servizi di AI"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le tecniche avanzate sono strategie utilizzate per strutturare richieste complesse, guidare il modello attraverso più passaggi, controllare il formato dell'output e migliorare la qualità e l'affidabilità delle risposte."
+  },
+  {
+    "id": 42,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando può essere sufficiente una singola istruzione, secondo il modulo?",
+    "options": [
+      "Quando il compito è semplice",
+      "Solo quando il compito riguarda testi molto lunghi",
+      "Mai, servono sempre più istruzioni",
+      "Solo per i compiti di programmazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quando il compito è semplice, può essere sufficiente una singola istruzione."
+  },
+  {
+    "id": 43,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa consiste una tecnica fondamentale per i compiti complessi, secondo il modulo?",
+    "options": [
+      "Nel chiedere all'AI di scomporre il compito in passaggi più piccoli",
+      "Nel ripetere la stessa domanda più volte",
+      "Nell'utilizzare sempre la lingua inglese",
+      "Nel ridurre al minimo le parole del prompt"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una tecnica fondamentale consiste nel chiedere all'AI di scomporre il compito."
+  },
+  {
+    "id": 44,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa possiamo definire chiaramente come ulteriore tecnica avanzata, secondo il modulo?",
+    "options": [
+      "Il formato dell'output, ad esempio una tabella o un elenco",
+      "Il prezzo massimo del servizio",
+      "Il numero di utenti che possono vedere la risposta",
+      "La velocità della connessione internet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un'altra tecnica consiste nel definire chiaramente il formato dell'output."
+  },
+  {
+    "id": 45,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può combinare un prompt complesso, secondo il modulo?",
+    "options": [
+      "Ruolo, contesto, istruzioni ed esempi",
+      "Solo il formato e il prezzo",
+      "Solo la lingua e la lunghezza",
+      "Solo il colore e lo stile grafico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Possiamo inoltre combinare più elementi già studiati: ruolo, contesto, istruzioni ed esempi."
+  },
+  {
+    "id": 46,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama il principio secondo cui un problema complesso viene separato in parti più semplici?",
+    "options": [
+      "Few-shot prompting",
+      "Divide et impera",
+      "Zero-shot prompting",
+      "Role prompting"
+    ],
+    "correctIndex": 1,
+    "explanation": "Divide et impera è un principio antico che qui trova una nuova applicazione."
+  },
+  {
+    "id": 47,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa NON garantisce automaticamente nessuna tecnica avanzata di prompting?",
+    "options": [
+      "Una risposta corretta",
+      "Un formato di output",
+      "Una struttura a più passaggi",
+      "La possibilità di assegnare un ruolo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nessuna tecnica garantisce automaticamente una risposta corretta."
+  },
+  {
+    "id": 48,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, il prompt può guidare il modello, ma non può:",
+    "options": [
+      "Contenere un ruolo",
+      "Controllare completamente ciò che il modello produrrà",
+      "Specificare un formato",
+      "Includere un esempio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il prompt può guidare il modello, non controllare completamente ciò che il modello produrrà."
+  },
+  {
+    "id": 49,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa ha evidenziato l'esperienza pratica riguardo alle tecniche di prompting, secondo il modulo?",
+    "options": [
+      "Che un prompt sofisticato non elimina le allucinazioni, gli errori logici o le informazioni inventate dal modello",
+      "Che le tecniche avanzate eliminano completamente gli errori",
+      "Che le tecniche avanzate funzionano solo per compiti di programmazione",
+      "Che un prompt sofisticato richiede sempre un pagamento aggiuntivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'esperienza pratica ha evidenziato un limite fondamentale: un prompt sofisticato non elimina le allucinazioni, gli errori logici o le informazioni inventate dal modello."
+  },
+  {
+    "id": 50,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'architetto, cosa produce specificare stanze, superficie, stile e budget rispetto a un generico 'Costruiscimi una bella casa'?",
+    "options": [
+      "Un progetto molto più definito",
+      "Una casa più economica",
+      "Un tempo di costruzione più breve",
+      "Una casa più grande"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dire quante stanze servono, quale superficie abbiamo, quale stile preferiamo, quali materiali vogliamo utilizzare e quali sono i vincoli di budget produce un progetto molto più definito."
+  },
+  {
+    "id": 51,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un progetto con l'AI secondo il modulo?",
+    "options": [
+      "Un'attività articolata in più fasi in cui l'AI viene utilizzata come strumento di supporto per raggiungere un obiettivo preciso",
+      "Una singola domanda posta all'AI",
+      "Un abbonamento a pagamento per l'uso dell'AI",
+      "Un documento scritto interamente dall'AI senza controllo umano"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un progetto con l'AI è un'attività articolata in più fasi nella quale l'intelligenza artificiale viene utilizzata come strumento di supporto per raggiungere un obiettivo preciso."
+  },
+  {
+    "id": 52,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa richiede di definire un progetto, a differenza di una semplice richiesta, secondo il modulo?",
+    "options": [
+      "Obiettivo, fasi di lavoro, materiali, vincoli e risultato finale",
+      "Solo il numero di parole della risposta",
+      "Solo il prezzo del servizio",
+      "Solo la lingua della risposta"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un progetto richiede di definire obiettivo, fasi di lavoro, materiali, vincoli e risultato finale."
+  },
+  {
+    "id": 53,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa che l'AI 'accompagna' l'utente durante le fasi di un progetto, secondo il modulo?",
+    "options": [
+      "Che l'AI decide autonomamente l'obiettivo finale",
+      "Che il progetto rimane comunque sotto il controllo della persona",
+      "Che l'utente deve delegare completamente il lavoro",
+      "Che l'AI sostituisce la persona in ogni fase"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'AI può quindi accompagnarci durante diverse fasi, ma questo non significa delegarle completamente il lavoro: il progetto rimane sotto il controllo della persona."
+  },
+  {
+    "id": 54,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra prompt e progetto, secondo il modulo?",
+    "options": [
+      "Un prompt cerca di ottenere una risposta; un progetto organizza una serie di attività per raggiungere un risultato",
+      "Non c'è alcuna differenza tra i due concetti",
+      "Un progetto riguarda solo compiti di programmazione",
+      "Un prompt richiede sempre più tempo di un progetto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un prompt cerca di ottenere una risposta; un progetto organizza una serie di attività per raggiungere un risultato."
+  },
+  {
+    "id": 55,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa conviene fare nei progetti più complessi, secondo il modulo?",
+    "options": [
+      "Procedere per passi, dividendo il lavoro in parti più piccole e verificabili",
+      "Chiedere tutto contemporaneamente in un'unica richiesta",
+      "Evitare di controllare i risultati intermedi",
+      "Affidare interamente il progetto all'AI senza intervenire"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nei progetti più complessi conviene procedere per passi, dividendo il lavoro in parti più piccole e verificabili."
+  },
+  {
+    "id": 56,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette l'approccio per fasi in un progetto, secondo il modulo?",
+    "options": [
+      "Di correggere gli errori lungo il percorso invece di accorgersene solo alla fine",
+      "Di eliminare completamente la necessità di controllo",
+      "Di ottenere sempre risultati perfetti al primo tentativo",
+      "Di evitare qualsiasi intervento umano"
+    ],
+    "correctIndex": 0,
+    "explanation": "Questo approccio rende il lavoro più ordinato e permette di correggere gli errori lungo il percorso, invece di accorgersene soltanto alla fine."
+  },
+  {
+    "id": 57,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, più un progetto è importante, più è necessario:",
+    "options": [
+      "Verificare ciò che l'AI produce",
+      "Ridurre il numero di fasi",
+      "Evitare di fornire contesto",
+      "Affidarsi completamente al risultato generato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Più il progetto è importante, più è necessario verificare ciò che l'AI produce."
+  },
+  {
+    "id": 58,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio dell'organizzazione di una vacanza, cosa si definisce prima di chiedere aiuto all'AI, secondo il modulo?",
+    "options": [
+      "Destinazione, periodo, budget e preferenze",
+      "Solo il nome dell'hotel",
+      "Solo la data di partenza",
+      "Solo il mezzo di trasporto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Prima definiamo la destinazione, il periodo, il budget e le nostre preferenze."
+  },
+  {
+    "id": 59,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa hanno mostrato gli utilizzi professionali dell'AI generativa nei progetti articolati, secondo il modulo?",
+    "options": [
+      "Che ottenere una buona risposta non significa automaticamente ottenere un buon risultato finale",
+      "Che l'AI non commette mai errori nei progetti complessi",
+      "Che il controllo umano non è più necessario",
+      "Che i progetti con l'AI richiedono sempre meno tempo di quelli tradizionali"
+    ],
+    "correctIndex": 0,
+    "explanation": "Questi utilizzi hanno mostrato un punto fondamentale: ottenere una buona risposta non significa automaticamente ottenere un buon risultato finale."
+  },
+  {
+    "id": 60,
+    "module": "prompt-engineering",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della cena per molte persone, cosa si può fare se durante la preparazione manca un ingrediente?",
+    "options": [
+      "Bisogna ricominciare tutto da capo",
+      "Si può intervenire subito senza dover ricominciare tutto da capo",
+      "La cena viene annullata",
+      "Si deve aspettare il giorno successivo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se durante la preparazione ci accorgiamo che manca un ingrediente, possiamo intervenire subito senza dover ricominciare tutto da capo."
+  }
+]

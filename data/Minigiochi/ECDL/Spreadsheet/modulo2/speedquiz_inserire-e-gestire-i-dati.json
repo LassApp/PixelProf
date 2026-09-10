@@ -1,0 +1,1082 @@
+[
+  {
+    "id": 1,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"inserire un dato\" in Excel?",
+    "options": [
+      "Creare una nuova cartella di lavoro",
+      "Selezionare una cella, digitarne il contenuto e confermarlo",
+      "Applicare un tema alla cella",
+      "Disegnare una forma sulla cella"
+    ],
+    "correctIndex": 1,
+    "explanation": "Inserire un dato significa selezionare una cella, digitarne il contenuto e confermarlo."
+  },
+  {
+    "id": 2,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali tipi di dato può contenere una cella, secondo il modulo?",
+    "options": [
+      "Solo numeri interi",
+      "Solo testo",
+      "Testo, numeri, date, percentuali",
+      "Solo formule"
+    ],
+    "correctIndex": 2,
+    "explanation": "Una cella può contenere diversi tipi di dato: testo, numeri, date, percentuali."
+  },
+  {
+    "id": 3,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede premendo INVIO dopo aver digitato un dato?",
+    "options": [
+      "Il dato viene cancellato",
+      "La selezione si sposta a destra",
+      "Il foglio viene salvato automaticamente",
+      "Il dato si conferma e la selezione si sposta alla cella sottostante"
+    ],
+    "correctIndex": 3,
+    "explanation": "INVIO conferma il dato e sposta automaticamente la selezione alla cella sottostante."
+  },
+  {
+    "id": 4,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede premendo TAB dopo aver digitato un dato?",
+    "options": [
+      "Il dato viene cancellato",
+      "La selezione si sposta in basso",
+      "Si apre un nuovo foglio",
+      "Il dato si conferma e la selezione si sposta a destra"
+    ],
+    "correctIndex": 3,
+    "explanation": "TAB conferma il dato e sposta la selezione a destra."
+  },
+  {
+    "id": 5,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si svuota completamente una cella?",
+    "options": [
+      "Premendo INVIO",
+      "Premendo TAB",
+      "Premendo CTRL+F",
+      "Premendo il tasto CANC"
+    ],
+    "correctIndex": 3,
+    "explanation": "Per svuotare completamente una cella si preme il tasto CANC."
+  },
+  {
+    "id": 6,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa Excel quando si digita un contenuto in una cella?",
+    "options": [
+      "Chiede sempre di specificare il tipo di dato prima di inserirlo",
+      "Tratta ogni contenuto come testo semplice",
+      "Converte automaticamente tutto in numeri",
+      "Riconosce automaticamente se è testo o un numero, e li allinea in modo diverso"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel riconosce automaticamente se ciò che viene digitato è testo o un numero, e li allinea diversamente."
+  },
+  {
+    "id": 7,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la scorciatoia CTRL+Z?",
+    "options": [
+      "Salva il file",
+      "Cerca un valore nel foglio",
+      "Aggiunge un nuovo foglio",
+      "Riporta indietro l'ultima azione compiuta"
+    ],
+    "correctIndex": 3,
+    "explanation": "CTRL+Z (Annulla) riporta indietro l'ultima azione compiuta."
+  },
+  {
+    "id": 8,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa successe l'8 dicembre 2005 alla Borsa di Tokyo?",
+    "options": [
+      "Un blackout bloccò tutte le contrattazioni",
+      "Un hacker manipolò i prezzi delle azioni",
+      "Un errore di calcolo in una formula causò un crollo di mercato",
+      "Un operatore di Mizuho Securities digitò per errore la vendita di 610.000 azioni J-Com a 1 yen invece di 1 azione a 610.000 yen"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'operatore invertì per errore quantità e prezzo dell'ordine di vendita."
+  },
+  {
+    "id": 9,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché l'errore di Mizuho Securities non poté essere corretto in tempo?",
+    "options": [
+      "Perché l'operatore si rifiutò di segnalarlo",
+      "Perché la banca centrale bloccò ogni comunicazione",
+      "Perché il mercato era già chiuso",
+      "Perché il sistema della Borsa di Tokyo non permetteva di annullare un ordine già inviato"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il sistema della Borsa di Tokyo non permetteva di annullare un ordine già inviato."
+  },
+  {
+    "id": 10,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanto perse circa Mizuho Securities a causa di quell'errore?",
+    "options": [
+      "Oltre 6 miliardi di dollari",
+      "Circa 48.000 dollari",
+      "Circa 395 dollari",
+      "Oltre 225 milioni di dollari"
+    ],
+    "correctIndex": 3,
+    "explanation": "Mizuho Securities registrò una perdita stimata in oltre 225 milioni di dollari."
+  },
+  {
+    "id": 11,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa provocò, tra le altre conseguenze, l'episodio di Mizuho Securities?",
+    "options": [
+      "La chiusura definitiva della Borsa di Tokyo",
+      "L'introduzione di un nuovo formato di file obbligatorio",
+      "La fusione tra Mizuho e un'altra banca",
+      "Le dimissioni del presidente della Borsa di Tokyo insieme ad altri dirigenti"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'episodio portò le dimissioni del presidente della Borsa di Tokyo insieme ad altri dirigenti."
+  },
+  {
+    "id": 12,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato, nella metafora del modulo, il gesto di confermare un dato con INVIO?",
+    "options": [
+      "A spedire una lettera senza francobollo",
+      "A cancellare un file per errore",
+      "A chiudere un negozio per la notte",
+      "A firmare un contratto"
+    ],
+    "correctIndex": 3,
+    "explanation": "Confermare un dato con INVIO è paragonato a firmare un contratto."
+  },
+  {
+    "id": 13,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il riempimento automatico in Excel?",
+    "options": [
+      "Un comando per cancellare automaticamente le celle vuote",
+      "Una funzione per tradurre automaticamente i numeri in testo",
+      "Un sistema per bloccare la riga superiore del foglio",
+      "La funzione con cui Excel riconosce lo schema di valori già scritti e lo prosegue da solo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il riempimento automatico riconosce lo schema di valori già scritti e lo prosegue da solo nelle celle successive."
+  },
+  {
+    "id": 14,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si trascina per attivare il riempimento automatico?",
+    "options": [
+      "La casella nome",
+      "La barra della formula",
+      "La barra di stato",
+      "La maniglia di riempimento"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si trascina la maniglia di riempimento per attivare il riempimento automatico."
+  },
+  {
+    "id": 15,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove si trova la maniglia di riempimento?",
+    "options": [
+      "Nell'angolo in alto a sinistra",
+      "Al centro della cella",
+      "Sulla barra multifunzione",
+      "Nell'angolo in basso a destra della cella selezionata"
+    ],
+    "correctIndex": 3,
+    "explanation": "La maniglia di riempimento si trova nell'angolo in basso a destra della cella selezionata."
+  },
+  {
+    "id": 16,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se si scrive un solo valore e si trascina la maniglia di riempimento?",
+    "options": [
+      "Excel genera automaticamente una sequenza casuale",
+      "Excel restituisce un errore",
+      "Excel richiede sempre un secondo valore prima di procedere",
+      "Excel per default lo ripete identico in ogni cella"
+    ],
+    "correctIndex": 3,
+    "explanation": "Con un solo valore, Excel per default lo ripete identico in ogni cella."
+  },
+  {
+    "id": 17,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se si scrivono due valori come 1 e 2 e si trascina la maniglia?",
+    "options": [
+      "Excel ripete solo il valore 2",
+      "Excel richiede una formula per procedere",
+      "Excel inverte l'ordine dei numeri",
+      "Excel applica la differenza costante alle celle successive (3, 4, 5...)"
+    ],
+    "correctIndex": 3,
+    "explanation": "Con due valori, Excel riconosce la differenza costante e la applica alle celle successive."
+  },
+  {
+    "id": 18,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Scrivendo 10 e 20 e trascinando la maniglia, come prosegue il riempimento?",
+    "options": [
+      "20, 20, 20",
+      "15, 25, 35",
+      "5, 10, 15",
+      "30, 40, 50"
+    ],
+    "correctIndex": 3,
+    "explanation": "Con una differenza costante di 10, il riempimento prosegue con 30, 40, 50."
+  },
+  {
+    "id": 19,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sequenze può riconoscere Excel senza bisogno di un secondo valore?",
+    "options": [
+      "Qualsiasi elenco di nomi propri",
+      "Qualsiasi elenco di numeri decimali",
+      "Solo le formule già scritte",
+      "I giorni della settimana, i mesi dell'anno e le date"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel riconosce già sequenze come giorni della settimana, mesi dell'anno e date."
+  },
+  {
+    "id": 20,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi pubblicò, nell'agosto 1843, la \"Nota G\"?",
+    "options": [
+      "L'ingegnere Charles Babbage",
+      "Il matematico E.H. Moore",
+      "L'economista Kenneth Rogoff",
+      "La matematica Ada Lovelace"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ada Lovelace pubblicò la \"Nota G\" nell'agosto 1843."
+  },
+  {
+    "id": 21,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa descriveva la \"Nota G\" di Ada Lovelace?",
+    "options": [
+      "Il primo foglio di calcolo mai costruito",
+      "Il primo brevetto per la carta a quadretti",
+      "La prima notazione algebrica degli scacchi",
+      "Un procedimento oggi considerato il primo programma per computer della storia"
+    ],
+    "correctIndex": 3,
+    "explanation": "La Nota G descriveva un procedimento oggi considerato il primo programma per computer della storia."
+  },
+  {
+    "id": 22,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa calcolava il procedimento descritto nella Nota G?",
+    "options": [
+      "I numeri primi",
+      "Le medie geometriche",
+      "I tassi di cambio",
+      "I numeri di Bernoulli"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il procedimento calcolava i numeri di Bernoulli."
+  },
+  {
+    "id": 23,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa chiamiamo oggi, in informatica, l'idea di Lovelace di ripetere un gruppo di operazioni più volte?",
+    "options": [
+      "Un database",
+      "Un intervallo",
+      "Un record",
+      "Un ciclo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Questa idea corrisponde a ciò che oggi chiamiamo un ciclo."
+  },
+  {
+    "id": 24,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "La Macchina Analitica di Charles Babbage, per cui Lovelace scrisse le proprie note, fu mai costruita realmente?",
+    "options": [
+      "Sì, fu costruita nel 1843",
+      "Sì, ma solo dopo la morte di Babbage",
+      "Sì, ed è oggi esposta in un museo di Londra",
+      "No, non fu mai costruita"
+    ],
+    "correctIndex": 3,
+    "explanation": "La Macchina Analitica non fu mai realmente costruita."
+  },
+  {
+    "id": 25,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"muoversi in un foglio\" in Excel?",
+    "options": [
+      "Cambiare il tema grafico del foglio",
+      "Stampare l'intero foglio di lavoro",
+      "Aggiungere un nuovo foglio alla cartella",
+      "Spostarsi rapidamente da una cella all'altra, senza dover scorrere l'intero contenuto a occhio"
+    ],
+    "correctIndex": 3,
+    "explanation": "Muoversi in un foglio significa spostarsi rapidamente da una cella all'altra senza scorrere tutto a occhio."
+  },
+  {
+    "id": 26,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la rotellina del mouse, tenendo premuto SHIFT?",
+    "options": [
+      "Ingrandisce la vista",
+      "Sposta la selezione a destra",
+      "Annulla l'ultima azione",
+      "Fa scorrere il foglio orizzontalmente"
+    ],
+    "correctIndex": 3,
+    "explanation": "Con SHIFT premuto, la rotellina del mouse fa scorrere il foglio orizzontalmente."
+  },
+  {
+    "id": 27,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa lo zoom in Excel?",
+    "options": [
+      "Cambia il contenuto delle celle visualizzate",
+      "Converte i numeri in percentuali",
+      "Blocca la riga superiore del foglio",
+      "Ingrandisce o rimpicciolisce la vista senza cambiare il contenuto reale del foglio"
+    ],
+    "correctIndex": 3,
+    "explanation": "Lo zoom ingrandisce o rimpicciolisce la vista senza modificare il contenuto reale del foglio."
+  },
+  {
+    "id": 28,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la combinazione CTRL+Home?",
+    "options": [
+      "Salva il file corrente",
+      "Apre la finestra di ricerca",
+      "Aggiunge un nuovo foglio",
+      "Riporta istantaneamente alla cella A1"
+    ],
+    "correctIndex": 3,
+    "explanation": "CTRL+Home riporta istantaneamente alla cella A1."
+  },
+  {
+    "id": 29,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la combinazione CTRL+frecce?",
+    "options": [
+      "Seleziona l'intero foglio",
+      "Cancella tutte le celle vuote",
+      "Apre il menu Salva con nome",
+      "Salta al limite di una zona di dati compilata, nella direzione della freccia premuta"
+    ],
+    "correctIndex": 3,
+    "explanation": "CTRL+frecce salta al limite di una zona di dati compilata."
+  },
+  {
+    "id": 30,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la combinazione CTRL+F in Excel?",
+    "options": [
+      "Formatta automaticamente le celle selezionate",
+      "Blocca la riga superiore",
+      "Apre una nuova cartella di lavoro",
+      "Cerca un testo o un numero specifico e porta alla prima cella che lo contiene"
+    ],
+    "correctIndex": 3,
+    "explanation": "CTRL+F (Trova) cerca un testo o un numero specifico nel foglio."
+  },
+  {
+    "id": 31,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Rispetto a Word, come può essere estesa la ricerca in Excel?",
+    "options": [
+      "Solo a una singola colonna",
+      "Solo alle celle vuote",
+      "Non può mai essere estesa oltre il foglio attivo",
+      "A tutta la cartella di lavoro, non solo al foglio attivo"
+    ],
+    "correctIndex": 3,
+    "explanation": "In Excel la ricerca può essere estesa a tutta la cartella di lavoro."
+  },
+  {
+    "id": 32,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Oltre ai valori mostrati, cosa può cercare la funzione Trova in Excel?",
+    "options": [
+      "Solo i colori delle celle",
+      "Solo i commenti inseriti nel foglio",
+      "Solo i nomi dei fogli della cartella",
+      "Le formule che generano i valori"
+    ],
+    "correctIndex": 3,
+    "explanation": "La ricerca può cercare tra i valori mostrati oppure tra le formule che li generano."
+  },
+  {
+    "id": 33,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove si blocca la riga superiore di un foglio per tenerla sempre visibile?",
+    "options": [
+      "Home → Blocca riquadri",
+      "File → Blocca riga",
+      "Inserisci → Blocca riquadri",
+      "Visualizza → Blocca riquadri → Blocca riga superiore"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si blocca la riga superiore da Visualizza → Blocca riquadri → Blocca riga superiore."
+  },
+  {
+    "id": 34,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se si seleziona un intervallo prima di scrivere e poi si preme INVIO o TAB?",
+    "options": [
+      "Il cursore esce sempre dall'intervallo dopo ogni conferma",
+      "Excel richiede di riselezionare l'intervallo a ogni cella",
+      "Il comando viene ignorato",
+      "Il cursore si muove solo dentro quell'intervallo selezionato"
+    ],
+    "correctIndex": 3,
+    "explanation": "Selezionando prima un intervallo, INVIO o TAB muovono il cursore solo al suo interno."
+  },
+  {
+    "id": 35,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la Financial Modeling World Cup (FMWC)?",
+    "options": [
+      "Un software per la modellazione finanziaria",
+      "Un formato di file per fogli di calcolo",
+      "Una certificazione ECDL avanzata",
+      "Un torneo internazionale giocato interamente dentro Excel, dal settembre 2020"
+    ],
+    "correctIndex": 3,
+    "explanation": "La FMWC è un torneo internazionale giocato interamente dentro Excel, esistente dal settembre 2020."
+  },
+  {
+    "id": 36,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su cosa vengono valutati i concorrenti della FMWC, oltre alla correttezza dei calcoli?",
+    "options": [
+      "Solo sulla creatività grafica dei fogli",
+      "Solo sulla quantità di formule usate",
+      "Solo sulla dimensione del file prodotto",
+      "Sulla velocità e la precisione con cui si muovono all'interno del foglio"
+    ],
+    "correctIndex": 3,
+    "explanation": "I concorrenti sono valutati anche sulla velocità e precisione di movimento nel foglio."
+  },
+  {
+    "id": 37,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su quale emittente fu trasmesso per la prima volta, nel 2022, il Microsoft Excel World Championship?",
+    "options": [
+      "CNN",
+      "BBC",
+      "MTV",
+      "ESPN2"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nel 2022 fu trasmesso per la prima volta sull'emittente sportiva statunitense ESPN2."
+  },
+  {
+    "id": 38,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"selezionare\" un gruppo di celle in Excel?",
+    "options": [
+      "Eliminare definitivamente delle celle",
+      "Applicare automaticamente un tema",
+      "Salvare solo una parte del foglio",
+      "Indicare a Excel quale porzione della griglia sarà interessata dal comando successivo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Selezionare significa indicare a Excel quale porzione della griglia sarà interessata dal comando successivo."
+  },
+  {
+    "id": 39,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama un gruppo di celle selezionate insieme?",
+    "options": [
+      "Record",
+      "Database",
+      "Campo",
+      "Intervallo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un gruppo di celle selezionate insieme si chiama intervallo."
+  },
+  {
+    "id": 40,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si scrive un intervallo di celle?",
+    "options": [
+      "Solo l'indirizzo della prima cella",
+      "Un elenco di tutti gli indirizzi separati da virgole",
+      "Il nome del foglio seguito dal numero delle celle",
+      "Indirizzo della prima cella, due punti, indirizzo dell'ultima cella"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un intervallo si scrive con l'indirizzo della prima cella, i due punti, e l'indirizzo dell'ultima."
+  },
+  {
+    "id": 41,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica l'intervallo \"A1:C10\"?",
+    "options": [
+      "Solo le celle A1 e C10",
+      "Tutte le celle della colonna A",
+      "Tutte le celle della riga 10",
+      "Un intero blocco rettangolare di celle, dalla cella A1 alla cella C10"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'intervallo A1:C10 indica un intero blocco rettangolare di celle."
+  },
+  {
+    "id": 42,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si seleziona un intervallo con la tastiera?",
+    "options": [
+      "Tenendo premuto CTRL e digitando i numeri delle righe",
+      "Premendo solo TAB più volte",
+      "Scrivendo l'intervallo nella barra della formula",
+      "Posizionandosi sulla prima cella e, tenendo premuto SHIFT, usando le frecce direzionali"
+    ],
+    "correctIndex": 3,
+    "explanation": "Con la tastiera si seleziona un intervallo tenendo premuto SHIFT e usando le frecce direzionali."
+  },
+  {
+    "id": 43,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si selezionano celle non adiacenti?",
+    "options": [
+      "Tenendo premuto SHIFT e trascinando il mouse",
+      "Cliccando due volte su ogni cella",
+      "Scrivendo ogni indirizzo nella casella nome, uno alla volta",
+      "Tenendo premuto CTRL e cliccando su ciascuna cella desiderata"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le celle non adiacenti si selezionano tenendo premuto CTRL e cliccando su ciascuna cella."
+  },
+  {
+    "id": 44,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si può selezionare rapidamente un intervallo di cui si conosce già l'indirizzo preciso?",
+    "options": [
+      "Scrivendolo nella barra di stato",
+      "Usando solo il tasto CANC",
+      "Aprendo il menu Salva con nome",
+      "Digitandolo nella casella nome e premendo INVIO"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si può digitare l'intervallo nella casella nome e premere INVIO."
+  },
+  {
+    "id": 45,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se un intervallo viene selezionato in modo incompleto?",
+    "options": [
+      "Excel blocca il comando finché l'intervallo non è corretto",
+      "Excel mostra sempre un messaggio di avviso",
+      "Excel seleziona automaticamente le celle mancanti",
+      "Excel non genera un errore visibile e usa solo le celle indicate"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un intervallo incompleto non genera un errore visibile: Excel usa solo le celle indicate."
+  },
+  {
+    "id": 46,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sostenevano Carmen Reinhart e Kenneth Rogoff nel loro studio \"Growth in a Time of Debt\" del 2010?",
+    "options": [
+      "Che il debito pubblico non ha alcun effetto sulla crescita economica",
+      "Che tutti i paesi europei avevano lo stesso tasso di crescita",
+      "Che il formato .xls fosse più affidabile del .xlsx",
+      "Che i paesi con debito pubblico superiore al 90% del PIL avevano una crescita economica media negativa"
+    ],
+    "correctIndex": 3,
+    "explanation": "Lo studio sosteneva che oltre il 90% di debito pubblico sul PIL la crescita media fosse negativa."
+  },
+  {
+    "id": 47,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa scoprì lo studente Thomas Herndon nel 2013, esaminando il foglio Excel originale dello studio Reinhart-Rogoff?",
+    "options": [
+      "Che i dati erano stati copiati da un foglio sbagliato",
+      "Che il file era stato salvato in un formato incompatibile",
+      "Che mancava una formula essenziale al calcolo",
+      "Che l'intervallo di celle selezionato per il calcolo della media non era stato esteso fino all'ultima riga dei dati"
+    ],
+    "correctIndex": 3,
+    "explanation": "Herndon scoprì che l'intervallo per il calcolo della media non copriva tutti i dati."
+  },
+  {
+    "id": 48,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali paesi furono esclusi per errore dall'analisi di Reinhart e Rogoff?",
+    "options": [
+      "Italia, Francia, Germania, Spagna e Portogallo",
+      "Stati Uniti, Regno Unito, Giappone, Cina e Russia",
+      "Grecia, Irlanda, Islanda, Cipro e Portogallo",
+      "Australia, Austria, Belgio, Canada e Danimarca"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'errore escluse Australia, Austria, Belgio, Canada e Danimarca dall'analisi."
+  },
+  {
+    "id": 49,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra, secondo il modulo, il caso Reinhart-Rogoff?",
+    "options": [
+      "Che Excel segnala sempre gli errori di selezione",
+      "Che i fogli di calcolo non dovrebbero mai essere usati per analisi economiche",
+      "Che il formato .csv è più sicuro del .xlsx",
+      "Cosa può succedere quando un intervallo di celle non copre esattamente i dati che dovrebbe coprire"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il caso mostra le conseguenze di un intervallo di celle che non copre correttamente i dati."
+  },
+  {
+    "id": 50,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"gestire i fogli di lavoro\"?",
+    "options": [
+      "Creare nuove cartelle di lavoro da zero",
+      "Applicare formule a più fogli contemporaneamente",
+      "Salvare il file in formati diversi",
+      "Aggiungere, rinominare, eliminare, spostare o copiare i singoli fogli di una cartella di lavoro"
+    ],
+    "correctIndex": 3,
+    "explanation": "Gestire i fogli significa aggiungere, rinominare, eliminare, spostare o copiare i fogli di una cartella."
+  },
+  {
+    "id": 51,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si aggiunge un nuovo foglio di lavoro?",
+    "options": [
+      "Solo tramite il menu File → Nuovo",
+      "Solo riavviando Excel",
+      "Non è possibile aggiungere fogli dopo aver creato la cartella",
+      "Cliccando sull'icona \"+\" accanto alle schede, oppure con SHIFT+F11"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un nuovo foglio si aggiunge cliccando sull'icona \"+\" o con la scorciatoia SHIFT+F11."
+  },
+  {
+    "id": 52,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si rinomina un foglio di lavoro?",
+    "options": [
+      "Dal menu File → Rinomina",
+      "Scrivendo il nuovo nome nella casella nome",
+      "Non è possibile rinominare un foglio dopo averlo creato",
+      "Con un doppio clic sulla sua scheda, digitando il nuovo nome"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si rinomina un foglio con un doppio clic sulla sua scheda e digitando il nuovo nome."
+  },
+  {
+    "id": 53,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si elimina un foglio di lavoro?",
+    "options": [
+      "Selezionando tutte le celle e premendo CANC",
+      "Trascinando la scheda fuori dalla finestra",
+      "Salvando il file senza quel foglio",
+      "Con un clic destro sulla sua scheda, scegliendo \"Elimina\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Un foglio si elimina con un clic destro sulla sua scheda e scegliendo \"Elimina\"."
+  },
+  {
+    "id": 54,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede dopo aver confermato l'eliminazione di un foglio?",
+    "options": [
+      "Il foglio viene solo nascosto e può essere ripristinato in un clic",
+      "Viene spostato automaticamente in un'altra cartella",
+      "Excel chiede sempre una seconda conferma dopo 24 ore",
+      "L'operazione non può essere annullata"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'eliminazione di un foglio, una volta confermata, non può essere annullata."
+  },
+  {
+    "id": 55,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale comando si usa per spostare o copiare un foglio, anche in un'altra cartella di lavoro?",
+    "options": [
+      "\"Salva con nome\"",
+      "\"Blocca riquadri\"",
+      "\"Riempimento automatico\"",
+      "\"Sposta o copia\" dal menu contestuale"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si usa il comando \"Sposta o copia\" dal menu contestuale della scheda del foglio."
+  },
+  {
+    "id": 56,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa applica, su scala più ampia, l'organizzazione dei dati in fogli separati?",
+    "options": [
+      "Il principio del ricalcolo intelligente di Excel",
+      "Il principio della notazione algebrica degli scacchi",
+      "Il principio del riempimento automatico",
+      "Lo stesso principio dell'archivio visto nella Parte 1 del modulo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Organizzare i dati in fogli separati applica lo stesso principio dell'archivio già visto."
+  },
+  {
+    "id": 57,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanto perse circa la banca JPMorgan Chase nel caso della \"Balena di Londra\", nel 2012?",
+    "options": [
+      "Oltre 225 milioni di dollari",
+      "Circa 48.000 dollari",
+      "Circa 395 dollari",
+      "Oltre 6 miliardi di dollari"
+    ],
+    "correctIndex": 3,
+    "explanation": "JPMorgan Chase perse oltre 6 miliardi di dollari nel caso della \"Balena di Londra\"."
+  },
+  {
+    "id": 58,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiamava il trader al centro del caso della \"Balena di Londra\"?",
+    "options": [
+      "Thomas Herndon",
+      "Kenneth Rogoff",
+      "Kerns H. Powers",
+      "Bruno Iksil"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il trader era soprannominato Bruno Iksil."
+  },
+  {
+    "id": 59,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su cosa si basava il modello di calcolo del rischio nel caso JPMorgan?",
+    "options": [
+      "Un unico foglio con formule automatiche verificate quotidianamente",
+      "Un software esterno dedicato alla gestione del rischio",
+      "Un database centralizzato aggiornato in tempo reale",
+      "Una catena di fogli Excel collegati, con dati copiati manualmente da un foglio all'altro"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modello si basava su una catena di fogli Excel collegati con copie manuali dei dati."
+  },
+  {
+    "id": 60,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale errore specifico di formula contribuì a sottostimare il rischio nel caso JPMorgan?",
+    "options": [
+      "Una formula moltiplicava invece di sommare",
+      "Una formula faceva riferimento a un foglio eliminato",
+      "Una formula arrotondava sempre per difetto",
+      "Una formula divideva per la somma di due tassi invece che per la loro media"
+    ],
+    "correctIndex": 3,
+    "explanation": "La formula divideva per la somma di due tassi anziché per la loro media, sottostimando il rischio."
+  },
+  {
+    "id": 61,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"salvare\" una cartella di lavoro?",
+    "options": [
+      "Stampare il contenuto su carta",
+      "Condividere il file via email",
+      "Applicare una password al file",
+      "Trasferirne il contenuto dalla memoria temporanea del computer a una memoria di massa"
+    ],
+    "correctIndex": 3,
+    "explanation": "Salvare significa trasferire il contenuto dalla RAM a una memoria di massa."
+  },
+  {
+    "id": 62,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove esiste una cartella di lavoro mentre non è stata ancora salvata?",
+    "options": [
+      "Già su una memoria di massa",
+      "Solo su un server esterno",
+      "Non esiste da nessuna parte finché non si stampa",
+      "Nella RAM, la memoria temporanea del computer"
+    ],
+    "correctIndex": 3,
+    "explanation": "Prima di essere salvata, la cartella di lavoro esiste solo nella RAM."
+  },
+  {
+    "id": 63,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il comando \"Salva\"?",
+    "options": [
+      "Crea sempre un nuovo file separato",
+      "Elimina le versioni precedenti dal cloud",
+      "Converte automaticamente il file in PDF",
+      "Aggiorna il file esistente con le ultime modifiche"
+    ],
+    "correctIndex": 3,
+    "explanation": "\"Salva\" aggiorna il file esistente con le ultime modifiche."
+  },
+  {
+    "id": 64,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il comando \"Salva con nome\"?",
+    "options": [
+      "Sovrascrive sempre il file originale",
+      "Elimina il file corrente",
+      "Blocca il file da ulteriori modifiche",
+      "Crea un nuovo file, lasciando intatto l'originale"
+    ],
+    "correctIndex": 3,
+    "explanation": "\"Salva con nome\" crea un nuovo file, lasciando intatto l'originale."
+  },
+  {
+    "id": 65,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il formato standard con cui Excel salva oggi una cartella di lavoro?",
+    "options": [
+      ".xls",
+      ".csv",
+      ".pdf",
+      ".xlsx"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il formato standard odierno è .xlsx."
+  },
+  {
+    "id": 66,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il formato .xls?",
+    "options": [
+      "Il formato più recente introdotto dopo il .xlsx",
+      "Un formato pensato solo per la stampa",
+      "Un formato che supporta solo immagini",
+      "Il vecchio formato compatibile con versioni di Excel precedenti al 2007"
+    ],
+    "correctIndex": 3,
+    "explanation": ".xls è il vecchio formato compatibile con versioni di Excel precedenti al 2007."
+  },
+  {
+    "id": 67,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa conserva il formato .csv?",
+    "options": [
+      "Solo le formule, senza i dati calcolati",
+      "Solo la formattazione, senza i dati",
+      "Un'intera cartella di lavoro con più fogli",
+      "Solo i dati puri, separati da virgole, senza formule né formattazione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il formato .csv conserva solo i dati puri, senza formule né formattazione."
+  },
+  {
+    "id": 68,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per cosa è pensato il formato .pdf, secondo il modulo?",
+    "options": [
+      "Per continuare a modificare le formule",
+      "Per aumentare il limite di righe disponibili",
+      "Per velocizzare il ricalcolo automatico",
+      "Per condividere il file in una forma definitiva e non modificabile"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il formato .pdf è pensato per condividere il file in forma definitiva e non modificabile."
+  },
+  {
+    "id": 69,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde a Public Health England tra il 25 settembre e il 2 ottobre 2020?",
+    "options": [
+      "Perse l'intero database dei contagi per un blackout",
+      "Pubblicò per errore dati sanitari privati online",
+      "Interruppe il servizio di tracciamento per una settimana",
+      "Non riuscì a includere nei bollettini quotidiani 15.841 casi positivi di Covid-19"
+    ],
+    "correctIndex": 3,
+    "explanation": "Public Health England non riuscì a includere 15.841 casi positivi nei bollettini quotidiani."
+  },
+  {
+    "id": 70,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual era il limite fisso di righe del formato .xls usato da Public Health England?",
+    "options": [
+      "15.841 righe",
+      "48.000 righe",
+      "225 righe",
+      "65.536 righe"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il formato .xls usato aveva un limite fisso di 65.536 righe."
+  },
+  {
+    "id": 71,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succedeva ai dati aggiunti oltre il limite di righe del file .xls?",
+    "options": [
+      "Generavano un messaggio di errore bloccante",
+      "Venivano salvati automaticamente in un nuovo file",
+      "Venivano convertiti automaticamente in formato .xlsx",
+      "Venivano scartati in silenzio, senza alcun messaggio di errore"
+    ],
+    "correctIndex": 3,
+    "explanation": "I dati oltre il limite venivano scartati in silenzio, senza alcun messaggio di errore visibile."
+  },
+  {
+    "id": 72,
+    "module": "inserire-e-gestire-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quante persone circa non furono avvisate in tempo a causa di quell'errore tecnico?",
+    "options": [
+      "Circa 15.841",
+      "Circa 65.536",
+      "Circa 225",
+      "Circa 48.000"
+    ],
+    "correctIndex": 3,
+    "explanation": "Circa 48.000 persone entrate in contatto con i pazienti positivi non furono avvisate in tempo."
+  }
+]

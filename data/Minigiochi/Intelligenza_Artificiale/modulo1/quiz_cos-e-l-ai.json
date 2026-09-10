@@ -1,0 +1,422 @@
+[
+  {
+    "id": 1,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per Intelligenza Artificiale (AI) secondo il modulo?",
+    "options": [
+      "Un chatbot capace di rispondere a domande",
+      "L'insieme di tecniche e sistemi informatici che permettono alle macchine di svolgere compiti che richiedono capacità associate all'intelligenza umana",
+      "Un programma che sostituisce completamente il lavoro umano",
+      "Un tipo di software installato solo su smartphone"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'AI è definita come l'insieme di tecniche e sistemi informatici che permettono alle macchine di svolgere compiti che richiedono capacità associate all'intelligenza umana."
+  },
+  {
+    "id": 2,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali compiti svolge principalmente l'AI tradizionale?",
+    "options": [
+      "Generare testi, immagini e video",
+      "Analizzare dati, riconoscere schemi, classificare informazioni e fare previsioni",
+      "Sostituire il linguaggio naturale",
+      "Creare nuove sentenze giuridiche"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'AI tradizionale comprende sistemi progettati soprattutto per analizzare dati, riconoscere schemi, classificare informazioni, fare previsioni o prendere decisioni."
+  },
+  {
+    "id": 3,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa caratterizza l'AI generativa?",
+    "options": [
+      "La capacità di generare nuovi contenuti come testi, immagini, audio, video o codice",
+      "La capacità di riconoscere soltanto volti umani",
+      "La capacità di funzionare senza dati di addestramento",
+      "La capacità di analizzare esclusivamente numeri"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'AI generativa comprende sistemi capaci di generare nuovi contenuti sulla base delle istruzioni ricevute e di ciò che il modello ha appreso durante l'addestramento."
+  },
+  {
+    "id": 4,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su cosa si basa un sistema di AI generativa quando genera un nuovo testo?",
+    "options": [
+      "Sceglie una storia già presente in un elenco",
+      "Genera un nuovo testo sulla base della richiesta e dei modelli appresi durante l'addestramento",
+      "Copia un testo da Internet in tempo reale",
+      "Utilizza solo la memoria dell'utente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il sistema non si limita a scegliere una storia già presente in un elenco: genera un nuovo testo sulla base della richiesta e dei modelli appresi durante l'addestramento."
+  },
+  {
+    "id": 5,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la vera novità introdotta dall'AI generativa secondo il modulo?",
+    "options": [
+      "La possibilità di analizzare dati numerici",
+      "La possibilità di interagire con un sistema complesso attraverso il linguaggio naturale",
+      "La possibilità di sostituire completamente l'AI tradizionale",
+      "La possibilità di funzionare senza connessione a Internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Con l'AI generativa, l'interazione con un sistema complesso può avvenire anche attraverso il linguaggio naturale, cioè una richiesta scritta o parlata."
+  },
+  {
+    "id": 6,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresenta ChatGPT secondo il modulo?",
+    "options": [
+      "L'intelligenza artificiale nel suo complesso",
+      "Una particolare applicazione dell'AI generativa",
+      "Un esempio di AI tradizionale",
+      "Un sistema che analizza soltanto immagini"
+    ],
+    "correctIndex": 1,
+    "explanation": "ChatGPT non rappresenta 'l'intelligenza artificiale' in generale: è una particolare applicazione di una parte dell'AI, quella generativa."
+  },
+  {
+    "id": 7,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che ambito è stata utilizzata l'AI tradizionale molto prima della diffusione dei chatbot generativi?",
+    "options": [
+      "Nel riconoscimento delle immagini attraverso machine learning e reti neurali",
+      "Nella generazione di immagini artistiche",
+      "Nella scrittura di romanzi",
+      "Nella creazione di codice sorgente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tecniche di machine learning e reti neurali sono state utilizzate per classificare immagini e riconoscere oggetti, volti e altri elementi visivi molto prima della diffusione dei chatbot generativi."
+  },
+  {
+    "id": 8,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, in cosa consiste principalmente il cambiamento portato dall'AI generativa?",
+    "options": [
+      "Nella nascita dell'intelligenza artificiale",
+      "Nella progressiva evoluzione e democratizzazione di tecnologie già esistenti",
+      "Nella sostituzione totale dell'AI tradizionale",
+      "Nell'eliminazione degli errori dei sistemi informatici"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il cambiamento non consiste nella nascita dell'AI, ma nella sua progressiva evoluzione e democratizzazione."
+  },
+  {
+    "id": 9,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale funzione svolge tipicamente un'app di navigazione, secondo l'esempio del modulo?",
+    "options": [
+      "Elabora informazioni su traffico e percorsi per suggerire una strada",
+      "Genera un nuovo testo su richiesta",
+      "Crea immagini di città futuristiche",
+      "Traduce automaticamente i cartelli stradali"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'app di navigazione può tenere conto della posizione, della rete stradale e delle condizioni del traffico per suggerire una soluzione."
+  },
+  {
+    "id": 10,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per 'linguaggio naturale' nel contesto dell'interazione con l'AI generativa?",
+    "options": [
+      "Un linguaggio di programmazione specifico",
+      "Una normale richiesta scritta o parlata",
+      "Un protocollo di rete",
+      "Un tipo di connessione Internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il linguaggio naturale è definito nel modulo come una normale richiesta scritta o parlata."
+  },
+  {
+    "id": 11,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è l'AI nella vita quotidiana secondo il modulo?",
+    "options": [
+      "L'utilizzo di sistemi di intelligenza artificiale all'interno di applicazioni, dispositivi e servizi usati normalmente",
+      "L'uso esclusivo di chatbot generativi",
+      "Un tipo di AI utilizzabile solo da esperti",
+      "Un sistema che funziona solo su computer"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'AI nella vita quotidiana è l'utilizzo di sistemi di intelligenza artificiale all'interno di applicazioni, dispositivi e servizi che utilizziamo normalmente, spesso senza sapere come funzionano."
+  },
+  {
+    "id": 12,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale tecnologia entra in gioco quando uno smartphone viene sbloccato con il riconoscimento facciale?",
+    "options": [
+      "Un sistema capace di analizzare caratteristiche del volto",
+      "Un sistema che traduce testi",
+      "Un sistema che genera immagini",
+      "Un sistema che analizza il traffico stradale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quando si sblocca il dispositivo con il riconoscimento facciale, entra in gioco una tecnologia capace di analizzare caratteristiche del volto."
+  },
+  {
+    "id": 13,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa possono utilizzare le piattaforme musicali per proporre canzoni simili a quelle ascoltate abitualmente?",
+    "options": [
+      "Informazioni relative alle interazioni dell'utente",
+      "Solo l'orario della giornata",
+      "Solo la posizione geografica",
+      "Solo il nome dell'utente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sistema può utilizzare informazioni relative alle interazioni dell'utente per elaborare suggerimenti personalizzati."
+  },
+  {
+    "id": 14,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, un semplice programma basato su regole fisse...",
+    "options": [
+      "diventa automaticamente intelligenza artificiale",
+      "non diventa automaticamente intelligenza artificiale",
+      "è sempre un esempio di AI generativa",
+      "sostituisce sempre l'AI tradizionale"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il modulo chiarisce che un semplice programma basato su regole fisse non diventa automaticamente intelligenza artificiale."
+  },
+  {
+    "id": 15,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la domanda corretta da porsi secondo il modulo, invece di chiedersi semplicemente 'c'è un computer?'",
+    "options": [
+      "Quanto costa il sistema?",
+      "Quale tipo di elaborazione sta svolgendo il sistema e quale ruolo ha l'AI?",
+      "Chi ha creato il sistema?",
+      "Il sistema è connesso a Internet?"
+    ],
+    "correctIndex": 1,
+    "explanation": "La domanda corretta è: quale tipo di elaborazione sta svolgendo il sistema e quale ruolo ha l'AI?"
+  },
+  {
+    "id": 16,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa utilizzano i servizi di streaming, le piattaforme video, i social network e i negozi online per proporre contenuti o prodotti?",
+    "options": [
+      "Sistemi automatizzati basati su segnali e interazioni dell'utente",
+      "Un elenco fisso identico per tutti gli utenti",
+      "Solo la data di registrazione dell'account",
+      "Solo il numero di dispositivi collegati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Questi servizi utilizzano sistemi automatizzati per proporre contenuti o prodotti sulla base di numerosi segnali e interazioni dell'utente."
+  },
+  {
+    "id": 17,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale conseguenza concreta hanno i sistemi di raccomandazione secondo il modulo?",
+    "options": [
+      "Tutti gli utenti vedono esattamente gli stessi contenuti",
+      "Ciò che una persona vede sullo schermo non è necessariamente identico a ciò che vede un'altra persona",
+      "I contenuti mostrati non dipendono mai dall'utente",
+      "I sistemi di raccomandazione non hanno alcun effetto sull'esperienza digitale"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'esperienza digitale può diventare personalizzata attraverso sistemi automatici, per cui ciò che vede una persona non è necessariamente identico a ciò che vede un'altra."
+  },
+  {
+    "id": 18,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono le opportunità offerte dall'AI secondo il modulo?",
+    "options": [
+      "Vantaggi nell'automazione delle attività, nell'analisi delle informazioni, nella personalizzazione dei servizi, nella creatività e nel supporto allo studio e al lavoro",
+      "Solo la possibilità di generare immagini",
+      "Solo la possibilità di tradurre testi",
+      "Solo la possibilità di sostituire gli esseri umani"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le opportunità dell'AI sono i vantaggi offerti nell'automazione delle attività, nell'analisi delle informazioni, nella personalizzazione dei servizi, nella creatività e nel supporto allo studio e al lavoro."
+  },
+  {
+    "id": 19,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i limiti dell'AI secondo il modulo?",
+    "options": [
+      "Le funzionalità aggiuntive che l'AI non possiede ancora",
+      "Le condizioni che possono rendere i risultati dell'AI incompleti, errati, distorti o inadatti a una determinata situazione",
+      "I costi elevati dei sistemi di intelligenza artificiale",
+      "Le restrizioni geografiche all'utilizzo dell'AI"
+    ],
+    "correctIndex": 1,
+    "explanation": "I limiti dell'AI sono le condizioni che possono rendere i suoi risultati incompleti, errati, distorti o inadatti a una determinata situazione."
+  },
+  {
+    "id": 20,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come vengono spesso chiamati gli errori dell'AI generativa che producono informazioni false formulate in modo convincente?",
+    "options": [
+      "Bias",
+      "Allucinazioni",
+      "Anomalie",
+      "Distorsioni"
+    ],
+    "correctIndex": 1,
+    "explanation": "Questi errori vengono spesso chiamati allucinazioni."
+  },
+  {
+    "id": 21,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono i bias, secondo il modulo?",
+    "options": [
+      "Distorsioni presenti nei dati o nei processi utilizzati per sviluppare e utilizzare un sistema di AI",
+      "Errori di connessione a Internet",
+      "Problemi hardware dei dispositivi",
+      "Virus informatici"
+    ],
+    "correctIndex": 0,
+    "explanation": "I bias sono distorsioni presenti nei dati o nei processi utilizzati per sviluppare e utilizzare il sistema."
+  },
+  {
+    "id": 22,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde nel 2023 negli Stati Uniti, secondo il caso reale descritto nel modulo?",
+    "options": [
+      "Due avvocati furono sanzionati dopo aver presentato in tribunale citazioni di sentenze inesistenti generate da ChatGPT",
+      "Un'azienda fu multata per violazione della privacy",
+      "Un sistema di AI generativa fu vietato dal governo",
+      "Un tribunale approvò l'uso dell'AI per scrivere sentenze"
+    ],
+    "correctIndex": 0,
+    "explanation": "Due avvocati furono sanzionati dopo aver presentato in tribunale una memoria contenente citazioni di sentenze inesistenti generate da ChatGPT."
+  },
+  {
+    "id": 23,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale lezione si può trarre dal caso delle sentenze inesistenti descritto nel modulo?",
+    "options": [
+      "L'AI generativa non commette mai errori",
+      "L'AI può essere estremamente convincente anche quando sbaglia",
+      "I chatbot non devono mai essere utilizzati per attività legali",
+      "Le sentenze generate dall'AI sono sempre corrette"
+    ],
+    "correctIndex": 1,
+    "explanation": "La lezione è che l'AI può essere estremamente convincente anche quando sbaglia."
+  },
+  {
+    "id": 24,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, in quali situazioni le informazioni prodotte dall'AI devono essere sottoposte a verifica in modo particolare?",
+    "options": [
+      "Quando sono in gioco studio, lavoro, salute, denaro o decisioni importanti",
+      "Solo quando si utilizza un dispositivo mobile",
+      "Solo durante la notte",
+      "Solo se il risultato è breve"
+    ],
+    "correctIndex": 0,
+    "explanation": "Soprattutto quando sono in gioco studio, lavoro, salute, denaro o decisioni importanti, le informazioni prodotte dall'AI devono essere verificate."
+  },
+  {
+    "id": 25,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della biblioteca usata nel modulo, cosa rappresenta un sistema che genera una nuova pagina di testo sulla base di ciò che ha appreso?",
+    "options": [
+      "L'AI tradizionale",
+      "L'AI generativa",
+      "Il bibliotecario",
+      "Un errore del sistema"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nella metafora, il sistema che produce una nuova pagina di testo rappresenta l'AI generativa."
+  },
+  {
+    "id": 26,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della città, a cosa viene paragonata l'AI?",
+    "options": [
+      "Al grande edificio con l'insegna 'INTELLIGENZA ARTIFICIALE'",
+      "Ai sistemi che regolano il traffico, ottimizzano un servizio o suggeriscono una strada",
+      "A un singolo semaforo",
+      "A un ufficio comunale"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'AI non è necessariamente il grande edificio con l'insegna, ma può essere il sistema che regola il traffico, ottimizza un servizio o suggerisce una strada."
+  },
+  {
+    "id": 27,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della calcolatrice, cosa non può fare l'AI secondo il modulo?",
+    "options": [
+      "Aiutare a svolgere un calcolo",
+      "Decidere se i numeri inseriti o la formula utilizzata siano corretti",
+      "Essere utilizzata come assistente",
+      "Essere considerata uno strumento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una calcolatrice può aiutare a svolgere un calcolo, ma non può decidere se i numeri inseriti o la formula siano corretti; lo stesso vale per l'AI."
+  },
+  {
+    "id": 28,
+    "module": "cos-e-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può fare l'AI nel mondo del lavoro secondo il modulo?",
+    "options": [
+      "Automatizzare attività ripetitive, analizzare grandi quantità di dati e supportare alcuni processi decisionali",
+      "Sostituire completamente ogni decisione umana",
+      "Eliminare la necessità di verificare i risultati",
+      "Generare automaticamente sentenze giudiziarie valide"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel mondo del lavoro, i sistemi di AI possono aiutare ad automatizzare attività ripetitive, analizzare grandi quantità di dati e supportare alcuni processi decisionali."
+  }
+]

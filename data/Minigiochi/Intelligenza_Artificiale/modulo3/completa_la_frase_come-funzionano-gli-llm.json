@@ -1,0 +1,322 @@
+[
+  {
+    "sentence": "Un ____ (LLM) è un modello di intelligenza artificiale addestrato su grandi quantità di testo per elaborare e generare linguaggio naturale.",
+    "answer": "Large Language Model",
+    "bank": [
+      "Large Language Model",
+      "Machine Learning",
+      "Deep Learning",
+      "Tokenizer"
+    ]
+  },
+  {
+    "sentence": "Un LLM non comprende il linguaggio come una persona: analizza le sequenze di testo e impara le relazioni ____ tra le parole.",
+    "answer": "statistiche",
+    "bank": [
+      "statistiche",
+      "casuali",
+      "grammaticali",
+      "sonore"
+    ]
+  },
+  {
+    "sentence": "Il testo fornito a un LLM, che può essere una domanda, un'istruzione o una richiesta, si chiama ____.",
+    "answer": "prompt",
+    "bank": [
+      "prompt",
+      "token",
+      "embedding",
+      "contesto"
+    ]
+  },
+  {
+    "sentence": "Un LLM procede passo dopo passo: prevede un token, poi utilizza ciò che ha appena generato insieme al contesto precedente per prevedere il token ____.",
+    "answer": "successivo",
+    "bank": [
+      "successivo",
+      "precedente",
+      "casuale",
+      "finale"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, un LLM non è semplicemente un enorme archivio di testi da cui copia e ____ le risposte.",
+    "answer": "incolla",
+    "bank": [
+      "incolla",
+      "cancella",
+      "traduce",
+      "cifra"
+    ]
+  },
+  {
+    "sentence": "Il modello cerca una continuazione linguisticamente plausibile, ma non garantisce automaticamente che ogni affermazione sia ____.",
+    "answer": "vera",
+    "bank": [
+      "vera",
+      "breve",
+      "tradotta",
+      "cifrata"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del musicista, quando gli chiediamo di creare una nuova musica, non apre necessariamente un archivio e copia una canzone ____.",
+    "answer": "precisa",
+    "bank": [
+      "precisa",
+      "casuale",
+      "breve",
+      "sconosciuta"
+    ]
+  },
+  {
+    "sentence": "Un ____ è un'unità di testo utilizzata da un modello linguistico per rappresentare e analizzare ciò che riceve.",
+    "answer": "token",
+    "bank": [
+      "token",
+      "embedding",
+      "prompt",
+      "contesto"
+    ]
+  },
+  {
+    "sentence": "La suddivisione del testo in token dipende dal ____, il componente che trasforma il testo in una sequenza di token.",
+    "answer": "tokenizer",
+    "bank": [
+      "tokenizer",
+      "prompt",
+      "embedding",
+      "modello"
+    ]
+  },
+  {
+    "sentence": "Una parola più lunga o meno comune può essere suddivisa in più ____.",
+    "answer": "token",
+    "bank": [
+      "token",
+      "embedding",
+      "prompt",
+      "contesti"
+    ]
+  },
+  {
+    "sentence": "Dopo la tokenizzazione, ogni token viene associato a un numero ____.",
+    "answer": "identificativo",
+    "bank": [
+      "identificativo",
+      "casuale",
+      "temporaneo",
+      "segreto"
+    ]
+  },
+  {
+    "sentence": "I numeri identificativi dei token possono essere trasformati in rappresentazioni numeriche più ricche, chiamate ____.",
+    "answer": "embedding",
+    "bank": [
+      "embedding",
+      "token",
+      "prompt",
+      "contesto"
+    ]
+  },
+  {
+    "sentence": "Il numero di token utilizzati influenza la quantità di testo che un modello può elaborare ____.",
+    "answer": "contemporaneamente",
+    "bank": [
+      "contemporaneamente",
+      "gratuitamente",
+      "lentamente",
+      "casualmente"
+    ]
+  },
+  {
+    "sentence": "Secondo il caso reale descritto nel modulo, i servizi basati su LLM possono misurare l'utilizzo distinguendo tra token in ingresso e token generati in ____.",
+    "answer": "uscita",
+    "bank": [
+      "uscita",
+      "entrata",
+      "memoria",
+      "archivio"
+    ]
+  },
+  {
+    "sentence": "Nella metafora dei prodotti da forno, una parola molto comune e semplice può essere rappresentata dal modello con un solo ____.",
+    "answer": "token",
+    "bank": [
+      "token",
+      "embedding",
+      "prompt",
+      "contesto"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, il token non è un gettone né una moneta: è una parte del testo attraverso cui il modello organizza ed elabora il ____.",
+    "answer": "linguaggio",
+    "bank": [
+      "linguaggio",
+      "hardware",
+      "denaro",
+      "contesto"
+    ]
+  },
+  {
+    "sentence": "Il ____ è l'insieme delle informazioni testuali disponibili al modello durante l'elaborazione di una richiesta.",
+    "answer": "contesto",
+    "bank": [
+      "contesto",
+      "token",
+      "embedding",
+      "prompt"
+    ]
+  },
+  {
+    "sentence": "La domanda 'Quanto costa?', presa isolatamente, è ____ perché il suo significato dipende da ciò che è stato detto prima.",
+    "answer": "ambigua",
+    "bank": [
+      "ambigua",
+      "chiara",
+      "tradotta",
+      "vietata"
+    ]
+  },
+  {
+    "sentence": "Il contesto può comprendere il messaggio dell'utente, le istruzioni fornite al modello e i messaggi ____ della conversazione.",
+    "answer": "precedenti",
+    "bank": [
+      "precedenti",
+      "futuri",
+      "cancellati",
+      "casuali"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, il modello può utilizzare soltanto le informazioni effettivamente fornite nel contesto ____.",
+    "answer": "disponibile",
+    "bank": [
+      "disponibile",
+      "futuro",
+      "nascosto",
+      "cifrato"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, il contesto non è una memoria ____.",
+    "answer": "infinita",
+    "bank": [
+      "infinita",
+      "breve",
+      "digitale",
+      "personale"
+    ]
+  },
+  {
+    "sentence": "Nella metafora della riunione, se siamo arrivati a metà della discussione, una frase come 'facciamo come abbiamo deciso prima' potrebbe risultare ____.",
+    "answer": "incomprensibile",
+    "bank": [
+      "incomprensibile",
+      "ovvia",
+      "breve",
+      "corretta"
+    ]
+  },
+  {
+    "sentence": "La ____ è la quantità massima di testo, espressa generalmente in token, che un modello può prendere in considerazione contemporaneamente.",
+    "answer": "finestra di contesto",
+    "bank": [
+      "finestra di contesto",
+      "memoria permanente",
+      "rete neurale",
+      "tokenizzazione"
+    ]
+  },
+  {
+    "sentence": "Se il totale dei token in una conversazione supera la finestra disponibile, il sistema può eliminare alcune informazioni precedenti o ____.",
+    "answer": "riassumerle",
+    "bank": [
+      "riassumerle",
+      "duplicarle",
+      "cifrarle",
+      "tradurle"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, una finestra di contesto più grande non significa automaticamente un modello più ____.",
+    "answer": "intelligente",
+    "bank": [
+      "intelligente",
+      "veloce",
+      "costoso",
+      "semplice"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, la finestra di contesto non equivale a una memoria ____.",
+    "answer": "permanente",
+    "bank": [
+      "permanente",
+      "breve",
+      "digitale",
+      "condivisa"
+    ]
+  },
+  {
+    "sentence": "Nella metafora della scrivania, la finestra di contesto è la dimensione della scrivania ____ dell'LLM.",
+    "answer": "mentale",
+    "bank": [
+      "mentale",
+      "fisica",
+      "digitale",
+      "virtuale"
+    ]
+  },
+  {
+    "sentence": "La generazione della risposta è il processo attraverso cui un LLM produce testo prevedendo, passo dopo passo, quale token sia più adatto a seguire quelli già ____.",
+    "answer": "elaborati",
+    "bank": [
+      "elaborati",
+      "cancellati",
+      "tradotti",
+      "nascosti"
+    ]
+  },
+  {
+    "sentence": "Il processo di generazione può essere descritto come: contesto → previsione del token successivo → nuovo token → nuova ____.",
+    "answer": "previsione",
+    "bank": [
+      "previsione",
+      "cancellazione",
+      "traduzione",
+      "archiviazione"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, il sistema assegna ____ alle diverse possibilità durante la previsione del token successivo.",
+    "answer": "probabilità",
+    "bank": [
+      "probabilità",
+      "colori",
+      "prezzi",
+      "categorie"
+    ]
+  },
+  {
+    "sentence": "Secondo il modulo, la funzione fondamentale del modello durante la generazione è produrre una continuazione coerente e ____ rispetto all'input.",
+    "answer": "plausibile",
+    "bank": [
+      "plausibile",
+      "casuale",
+      "tradotta",
+      "cifrata"
+    ]
+  },
+  {
+    "sentence": "Nella metafora del gioco del domino, ogni nuovo token entra nella sequenza e contribuisce a determinare le possibilità ____.",
+    "answer": "successive",
+    "bank": [
+      "successive",
+      "precedenti",
+      "finali",
+      "casuali"
+    ]
+  }
+]

@@ -1,0 +1,118 @@
+{
+  "id": 1,
+  "module": "etica-dell-ai",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Trasparenza nell'AI",
+        "definition": "Possibilità di comprendere, per quanto possibile, come viene utilizzato un sistema di intelligenza artificiale, quali informazioni considera e quali criteri influenzano i suoi risultati"
+      },
+      {
+        "term": "Cosa non richiede necessariamente la trasparenza",
+        "definition": "Non significa rivelare ogni dettaglio tecnico dell'algoritmo, ma fornire informazioni sufficienti per valutare consapevolmente il risultato"
+      },
+      {
+        "term": "Ambiti in cui la trasparenza è particolarmente importante",
+        "definition": "Lavoro, istruzione, credito, sanità e accesso a determinati servizi"
+      },
+      {
+        "term": "Caso del sistema COMPAS e l'indagine di ProPublica (2016)",
+        "definition": "Sollevò dubbi sulla possibilità di comprendere e valutare i criteri del sistema usato per stimare il rischio di recidiva e sulle differenze nei risultati tra gruppi diversi di persone"
+      },
+      {
+        "term": "Metafora della porta chiusa in banca",
+        "definition": "Rappresenta la mancanza di trasparenza: sapere solo che «lo ha deciso la macchina» non è una spiegazione"
+      }
+    ],
+    [
+      {
+        "term": "Responsabilità nell'AI",
+        "definition": "Principio secondo cui le persone e le organizzazioni che progettano, sviluppano, utilizzano o controllano un sistema di AI devono rispondere delle sue decisioni, dei suoi errori e delle conseguenze"
+      },
+      {
+        "term": "Soggetti che possono essere coinvolti nella responsabilità",
+        "definition": "Un'azienda per la progettazione e gestione, uno sviluppatore per aspetti tecnici, un'organizzazione per la decisione di utilizzo, un operatore umano per aver accettato senza controlli un risultato errato"
+      },
+      {
+        "term": "Principio fondamentale sulla responsabilità",
+        "definition": "L'automazione non deve diventare un alibi"
+      },
+      {
+        "term": "Caso dell'AI Act (approvato nel 2024)",
+        "definition": "Il regolamento europeo sull'intelligenza artificiale introduce obblighi e responsabilità differenti in base al tipo di sistema e al livello di rischio"
+      },
+      {
+        "term": "Metafora dell'automobile con il pilota automatico",
+        "definition": "Rappresenta la responsabilità nell'AI: l'automazione cambia il modo in cui si esercita il controllo, ma non fa scomparire la responsabilità"
+      }
+    ],
+    [
+      {
+        "term": "Privacy nell'AI",
+        "definition": "Protezione delle informazioni personali delle persone e il modo in cui vengono raccolte, utilizzate, conservate e condivise dai sistemi di intelligenza artificiale"
+      },
+      {
+        "term": "Compito degli sviluppatori riguardo alla privacy",
+        "definition": "Adottare misure adeguate per proteggere i dati e utilizzare le informazioni secondo finalità definite e legittime"
+      },
+      {
+        "term": "Regola pratica per l'utente sulla privacy",
+        "definition": "Prima di consegnare un dato a un sistema di AI, chiedersi perché lo si sta condividendo, se è necessario e chi potrebbe gestirlo"
+      },
+      {
+        "term": "Caso del Garante per la protezione dei dati personali italiano e ChatGPT (2023)",
+        "definition": "Il Garante intervenne temporaneamente contestando a OpenAI diversi aspetti relativi al trattamento dei dati personali"
+      },
+      {
+        "term": "Metafora delle chiavi di casa",
+        "definition": "Rappresenta la privacy: decidere con consapevolezza a chi affidare le proprie informazioni e quali porte lasciare chiuse"
+      }
+    ],
+    [
+      {
+        "term": "Proprietà intellettuale",
+        "definition": "Insieme dei diritti che proteggono le opere e le creazioni dell'ingegno umano, come testi, immagini, fotografie, musica, video, invenzioni e software"
+      },
+      {
+        "term": "Distinzione fondamentale sui contenuti generati dall'AI",
+        "definition": "Utilizzare uno strumento AI non equivale a possedere automaticamente tutti i diritti sul risultato prodotto"
+      },
+      {
+        "term": "Domanda da porsi oltre a «l'AI me lo ha generato?»",
+        "definition": "Da dove proviene ciò che sto utilizzando e ho il diritto di utilizzarlo in questo modo?"
+      },
+      {
+        "term": "Caso di The New York Times contro OpenAI e Microsoft (2023)",
+        "definition": "Il giornale sostenne che contenuti del proprio archivio fossero stati utilizzati nell'addestramento senza autorizzazione"
+      },
+      {
+        "term": "Metafora della biblioteca",
+        "definition": "Rappresenta la proprietà intellettuale: poter leggere un libro non significa automaticamente poterlo fotocopiare, ristampare o vendere"
+      }
+    ],
+    [
+      {
+        "term": "Impatto sociale dell'AI",
+        "definition": "Insieme degli effetti che l'intelligenza artificiale può produrre sulla società, sulle persone, sul lavoro, sull'istruzione, sull'informazione e sulle relazioni umane"
+      },
+      {
+        "term": "Rischio legato alla distribuzione non uniforme dell'AI",
+        "definition": "Una tecnologia può offrire grandi vantaggi a chi possiede competenze, risorse e accesso, mentre può creare nuove difficoltà per chi ne rimane escluso"
+      },
+      {
+        "term": "Domanda centrale dell'etica dell'AI secondo il modulo",
+        "definition": "Quale tipo di società vogliamo costruire attraverso queste tecnologie"
+      },
+      {
+        "term": "Caso del Future of Jobs Report del World Economic Forum (2023)",
+        "definition": "Evidenziò come l'intelligenza artificiale possa trasformare il mercato del lavoro, creando nuovi ruoli e rendendone obsolete altre"
+      },
+      {
+        "term": "Metafora della nuova autostrada",
+        "definition": "Rappresenta l'impatto sociale dell'AI: non basta chiedersi quanto è potente, bisogna chiedersi dove porta, chi ne trae vantaggio e chi viene penalizzato"
+      }
+    ]
+  ]
+}

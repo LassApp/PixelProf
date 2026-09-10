@@ -1,0 +1,737 @@
+[
+  {
+    "id": 1,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la trasparenza nell'AI secondo il modulo?",
+    "options": [
+      "La possibilità di comprendere come viene utilizzato un sistema di AI, quali informazioni considera e quali criteri influenzano i suoi risultati",
+      "La capacità di un sistema di rispondere velocemente",
+      "Un tipo di licenza software gratuita",
+      "Un protocollo di sicurezza informatica"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di trasparenza fornita esplicitamente dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa essere trasparenti riguardo all'AI, secondo il modulo?",
+    "options": [
+      "Rendere comprensibili il funzionamento, i limiti e l'utilizzo dell'AI, soprattutto quando le sue decisioni hanno conseguenze sulle persone",
+      "Pubblicare il codice sorgente di ogni sistema di AI",
+      "Vietare l'uso dell'AI in ambiti delicati",
+      "Garantire che l'AI non commetta mai errori"
+    ],
+    "correctIndex": 0,
+    "explanation": "Essere trasparenti significa rendere comprensibili funzionamento, limiti e utilizzo dell'AI."
+  },
+  {
+    "id": 3,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la trasparenza è importante quando un'AI seleziona candidati per un lavoro, secondo il modulo?",
+    "options": [
+      "Perché il risultato prodotto dal sistema non deve essere considerato automaticamente corretto o imparziale",
+      "Perché aumenta la velocità della selezione",
+      "Perché riduce i costi aziendali",
+      "Perché elimina la necessità di colloqui"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo sottolinea che il risultato non va considerato automaticamente corretto o imparziale."
+  },
+  {
+    "id": 4,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa NON richiede necessariamente la trasparenza, secondo il modulo?",
+    "options": [
+      "Rivelare ogni dettaglio tecnico dell'algoritmo",
+      "Fornire informazioni sufficienti per valutare il risultato",
+      "Rendere comprensibile il funzionamento del sistema",
+      "Permettere di capire cosa sta accadendo"
+    ],
+    "correctIndex": 0,
+    "explanation": "La trasparenza non richiede di rivelare ogni dettaglio tecnico dell'algoritmo."
+  },
+  {
+    "id": 5,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quali ambiti la trasparenza è particolarmente importante, secondo il modulo?",
+    "options": [
+      "Lavoro, istruzione, credito, sanità e accesso a determinati servizi",
+      "Solo nei videogiochi",
+      "Solo nelle applicazioni di intrattenimento",
+      "Solo negli acquisti online"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo elenca esplicitamente questi ambiti come particolarmente delicati."
+  },
+  {
+    "id": 6,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa utilizza il sistema descritto nell'esempio quotidiano per proporre contenuti sui social network?",
+    "options": [
+      "Informazioni sulle interazioni, sulle preferenze e sul comportamento dell'utente",
+      "Solo l'orario di connessione",
+      "Solo la posizione geografica",
+      "Solo l'età dichiarata dall'utente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sistema personalizza i contenuti in base a interazioni, preferenze e comportamento."
+  },
+  {
+    "id": 7,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve il sistema COMPAS, citato nel modulo come caso reale?",
+    "options": [
+      "A stimare il rischio che una persona commetta nuovamente un reato",
+      "A selezionare candidati per un lavoro",
+      "A generare immagini per la pubblicità",
+      "A tradurre documenti legali"
+    ],
+    "correctIndex": 0,
+    "explanation": "COMPAS è utilizzato nel sistema giudiziario statunitense per stimare il rischio di recidiva."
+  },
+  {
+    "id": 8,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fece ProPublica nel 2016 riguardo al sistema COMPAS?",
+    "options": [
+      "Analizzò il funzionamento e i risultati del sistema, sollevando dubbi sui criteri utilizzati e sulle differenze tra gruppi diversi di persone",
+      "Sviluppò una versione migliorata del sistema",
+      "Vietò l'uso del sistema negli Stati Uniti",
+      "Acquisì l'azienda che aveva creato il sistema"
+    ],
+    "correctIndex": 0,
+    "explanation": "ProPublica condusse un'indagine sul funzionamento e sui risultati di COMPAS nel 2016."
+  },
+  {
+    "id": 9,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostrò il caso COMPAS, secondo il modulo?",
+    "options": [
+      "Che quando un algoritmo influenza decisioni importanti, non basta sapere quale risultato produce, ma bisogna poter comprendere e mettere in discussione come viene utilizzato",
+      "Che gli algoritmi giudiziari sono sempre accurati",
+      "Che la trasparenza non è mai necessaria in ambito legale",
+      "Che il sistema giudiziario non dovrebbe mai utilizzare l'AI"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il caso mostra l'importanza di poter comprendere e discutere il funzionamento di un algoritmo."
+  },
+  {
+    "id": 10,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata la mancanza di trasparenza nella metafora della banca?",
+    "options": [
+      "A una porta chiusa senza poter vedere la serratura",
+      "A una cassaforte senza combinazione",
+      "A un edificio senza finestre",
+      "A un labirinto senza uscita"
+    ],
+    "correctIndex": 0,
+    "explanation": "La metafora paragona la mancanza di trasparenza a una porta chiusa senza vedere la serratura."
+  },
+  {
+    "id": 11,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la responsabilità nell'AI, secondo il modulo?",
+    "options": [
+      "Il principio secondo cui le persone e le organizzazioni che progettano, sviluppano, utilizzano o controllano un sistema di AI devono rispondere delle sue decisioni, errori e conseguenze",
+      "La capacità dell'AI di correggere automaticamente i propri errori",
+      "Un tipo di certificazione tecnica per gli sviluppatori",
+      "La velocità con cui un sistema di AI risponde a una domanda"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di responsabilità fornita esplicitamente dal modulo."
+  },
+  {
+    "id": 12,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché dire semplicemente «è stato un errore dell'intelligenza artificiale» può essere fuorviante, secondo il modulo?",
+    "options": [
+      "Perché un sistema di AI non possiede una responsabilità personale paragonabile a quella di un essere umano",
+      "Perché l'AI non commette mai errori",
+      "Perché gli errori dell'AI sono sempre colpa dell'utente",
+      "Perché l'AI è sempre più affidabile di una persona"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo spiega che l'AI non ha una responsabilità personale paragonabile a quella umana."
+  },
+  {
+    "id": 13,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali soggetti possono essere coinvolti nella responsabilità legata all'AI, secondo il modulo?",
+    "options": [
+      "Un'azienda, uno sviluppatore, un'organizzazione o un operatore umano, a seconda del proprio ruolo",
+      "Solo ed esclusivamente l'utente finale",
+      "Solo ed esclusivamente lo sviluppatore del sistema",
+      "Nessuno, perché l'AI agisce in modo indipendente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo elenca diversi soggetti che possono essere coinvolti nella responsabilità."
+  },
+  {
+    "id": 14,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa richiede l'utilizzo dell'AI, secondo il modulo?",
+    "options": [
+      "Controllo umano, procedure adeguate e attribuzione chiara delle responsabilità",
+      "Nessun controllo, poiché l'AI è sempre affidabile",
+      "Solo un abbonamento a pagamento",
+      "Solo una connessione a Internet stabile"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che l'uso dell'AI richiede controllo umano e procedure adeguate."
+  },
+  {
+    "id": 15,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale principio fondamentale sottolinea il modulo riguardo alla responsabilità?",
+    "options": [
+      "L'automazione non deve diventare un alibi",
+      "L'AI è sempre responsabile dei propri errori",
+      "Gli utenti non hanno alcuna responsabilità nell'uso dell'AI",
+      "La responsabilità riguarda solo le grandi aziende tecnologiche"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il principio esplicitamente enunciato nel modulo."
+  },
+  {
+    "id": 16,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede nell'esempio quotidiano del modulo quando una persona accetta automaticamente il suggerimento dell'AI su una relazione?",
+    "options": [
+      "Si accorge in seguito che la parte eliminata conteneva un'informazione fondamentale",
+      "La relazione risulta perfetta senza alcun problema",
+      "L'AI corregge automaticamente l'errore in un secondo momento",
+      "Il problema viene segnalato immediatamente dal sistema"
+    ],
+    "correctIndex": 0,
+    "explanation": "La persona scopre solo dopo che la parte eliminata era fondamentale, per non aver riletto il testo."
+  },
+  {
+    "id": 17,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fu approvato dalla Commissione europea nel 2024, secondo il modulo?",
+    "options": [
+      "L'AI Act, il regolamento europeo sull'intelligenza artificiale",
+      "Il GDPR, il regolamento europeo sulla privacy",
+      "Il C2PA, lo standard sulla provenienza dei contenuti",
+      "Il Future of Jobs Report"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il caso reale documentato nel modulo relativo alla regolamentazione europea dell'AI."
+  },
+  {
+    "id": 18,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su quale principio si basa l'approccio dell'AI Act, secondo il modulo?",
+    "options": [
+      "Non tutti gli utilizzi dell'AI presentano lo stesso rischio, e i sistemi che incidono di più sulle persone richiedono maggiori garanzie e controlli",
+      "Ogni sistema di AI deve essere vietato indipendentemente dal rischio",
+      "Solo le grandi aziende devono rispettare regole sull'AI",
+      "Il rischio dell'AI è sempre identico in ogni contesto"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'AI Act si basa su un approccio differenziato in base al livello di rischio."
+  },
+  {
+    "id": 19,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra il caso dell'AI Act, secondo il modulo?",
+    "options": [
+      "Che la responsabilità non può essere lasciata alla semplice buona volontà di chi utilizza un sistema, ma deve essere accompagnata da regole e controlli",
+      "Che l'Unione Europea ha vietato completamente l'uso dell'AI",
+      "Che la responsabilità riguarda solo gli sviluppatori",
+      "Che non sono necessarie regole specifiche per l'AI"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il caso mostra la necessità di regole e controlli strutturati, non solo buona volontà."
+  },
+  {
+    "id": 20,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata la responsabilità nell'AI nella metafora dell'automobile con il pilota automatico?",
+    "options": [
+      "Al fatto che l'automazione cambia il modo in cui si esercita il controllo, ma non fa scomparire la responsabilità",
+      "Al fatto che il conducente non ha più alcuna responsabilità quando usa il pilota automatico",
+      "Al fatto che le automobili moderne non hanno più bisogno di conducenti",
+      "Al fatto che il pilota automatico elimina ogni rischio di incidente"
+    ],
+    "correctIndex": 0,
+    "explanation": "La metafora sottolinea che la responsabilità non scompare con l'automazione."
+  },
+  {
+    "id": 21,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa riguarda la privacy nell'AI, secondo il modulo?",
+    "options": [
+      "La protezione delle informazioni personali e il modo in cui vengono raccolte, utilizzate, conservate e condivise dai sistemi di AI",
+      "La velocità con cui un sistema elabora i dati",
+      "La quantità di memoria utilizzata da un sistema di AI",
+      "Il costo dei servizi basati sull'intelligenza artificiale"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di privacy nell'AI fornita dal modulo."
+  },
+  {
+    "id": 22,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale principio fondamentale sottolinea il modulo riguardo ai dati personali?",
+    "options": [
+      "I dati personali non devono essere utilizzati senza adeguate garanzie",
+      "I dati personali possono essere sempre utilizzati liberamente da qualunque sistema",
+      "I dati personali non hanno alcun valore per i sistemi di AI",
+      "I dati personali riguardano solo le aziende, non gli utenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo afferma che i dati personali richiedono adeguate garanzie."
+  },
+  {
+    "id": 23,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa la privacy per gli sviluppatori di sistemi di AI, secondo il modulo?",
+    "options": [
+      "Adottare misure adeguate per proteggere i dati e utilizzarli secondo finalità definite e legittime",
+      "Raccogliere quanti più dati possibile senza restrizioni",
+      "Vendere i dati degli utenti a terze parti",
+      "Ignorare completamente le richieste degli utenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Per gli sviluppatori, la privacy richiede misure adeguate e finalità legittime."
+  },
+  {
+    "id": 24,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa la privacy per l'utente, secondo il modulo?",
+    "options": [
+      "Sapere quali dati sta fornendo e chiedersi se sia davvero necessario condividerli",
+      "Non utilizzare mai sistemi di intelligenza artificiale",
+      "Fidarsi sempre di qualsiasi servizio digitale",
+      "Condividere il maggior numero possibile di informazioni personali"
+    ],
+    "correctIndex": 0,
+    "explanation": "Per l'utente, la privacy significa consapevolezza su cosa e perché condivide."
+  },
+  {
+    "id": 25,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la persona nell'esempio quotidiano del modulo prima di far correggere una lettera dall'AI?",
+    "options": [
+      "Sostituisce i dati personali con indicazioni generiche come «[nome]» o «[indirizzo]»",
+      "Invia la lettera così com'è, con tutti i dati personali",
+      "Chiede all'AI di eliminare completamente il testo",
+      "Stampa la lettera invece di usare l'AI"
+    ],
+    "correctIndex": 0,
+    "explanation": "La persona protegge i propri dati sostituendoli con indicazioni generiche."
+  },
+  {
+    "id": 26,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il principio pratico suggerito dal modulo riguardo ai dati non necessari?",
+    "options": [
+      "Quando un dato non serve per svolgere un compito, spesso è meglio non fornirlo",
+      "È sempre meglio fornire tutti i dati disponibili",
+      "I dati non necessari devono essere condivisi comunque per sicurezza",
+      "Solo le aziende devono preoccuparsi dei dati non necessari"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il principio pratico enunciato esplicitamente dal modulo."
+  },
+  {
+    "id": 27,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fece il Garante per la protezione dei dati personali italiano nel 2023?",
+    "options": [
+      "Intervenne temporaneamente nei confronti di ChatGPT, contestando a OpenAI diversi aspetti relativi al trattamento dei dati personali",
+      "Vietò definitivamente l'uso di ogni sistema di intelligenza artificiale in Italia",
+      "Approvò un nuovo regolamento europeo sull'AI",
+      "Avviò una causa legale contro il New York Times"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il caso reale documentato nel modulo relativo al Garante e ChatGPT."
+  },
+  {
+    "id": 28,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostrò il caso del Garante e ChatGPT, secondo il modulo?",
+    "options": [
+      "Che la diffusione dell'AI generativa non elimina le regole sulla protezione dei dati",
+      "Che le regole sulla privacy non si applicano ai sistemi di AI",
+      "Che ChatGPT non raccoglie mai dati personali",
+      "Che solo le aziende europee devono rispettare le regole sulla privacy"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il caso mostra che anche una tecnologia nuova deve rispettare le regole sulla privacy."
+  },
+  {
+    "id": 29,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonati i dati personali nella metafora delle chiavi di casa?",
+    "options": [
+      "A una copia delle chiavi che affidiamo a uno sconosciuto, di cui vorremmo sapere chi è e cosa ne farà",
+      "A una porta sempre aperta senza serratura",
+      "A un oggetto senza alcun valore",
+      "A un regalo che va sempre condiviso con tutti"
+    ],
+    "correctIndex": 0,
+    "explanation": "La metafora paragona i dati personali a chiavi affidate con cautela."
+  },
+  {
+    "id": 30,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa consiste la privacy secondo la metafora delle chiavi di casa?",
+    "options": [
+      "Nel decidere con consapevolezza a chi affidare le proprie informazioni e quali porte lasciare chiuse",
+      "Nel non avere mai una casa",
+      "Nel cambiare sempre la serratura",
+      "Nel condividere le chiavi con tutti i vicini"
+    ],
+    "correctIndex": 0,
+    "explanation": "La metafora sottolinea la scelta consapevole su cosa condividere e con chi."
+  },
+  {
+    "id": 31,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la proprietà intellettuale, secondo il modulo?",
+    "options": [
+      "L'insieme dei diritti che proteggono le opere e le creazioni dell'ingegno umano, come testi, immagini, musica e software",
+      "Un tipo di licenza gratuita per l'uso dei software",
+      "Un sistema di sicurezza informatica",
+      "Un protocollo per la condivisione dei dati"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di proprietà intellettuale fornita dal modulo."
+  },
+  {
+    "id": 32,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa il fatto che un sistema di AI generativa venga addestrato con contenuti da fonti differenti, secondo il modulo?",
+    "options": [
+      "Apre importanti discussioni su quali opere possano essere utilizzate per l'addestramento, in quali condizioni e quali diritti abbiano gli autori",
+      "Significa che ogni contenuto generato è automaticamente di dominio pubblico",
+      "Significa che gli autori originali perdono automaticamente ogni diritto",
+      "Non ha alcuna implicazione legale o etica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo evidenzia le discussioni aperte su addestramento e diritti d'autore."
+  },
+  {
+    "id": 33,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può accadere anche quando si utilizza legalmente un sistema di AI, secondo il modulo?",
+    "options": [
+      "Il risultato generato potrebbe assomigliare a un'opera esistente o riprodurre lo stile di un autore",
+      "Il risultato è sempre completamente originale e privo di somiglianze",
+      "Il sistema chiede sempre il permesso esplicito agli autori originali",
+      "Il contenuto generato diventa automaticamente protetto da copyright"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo segnala il rischio di somiglianza con opere esistenti anche in usi legali."
+  },
+  {
+    "id": 34,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale distinzione fondamentale sottolinea il modulo riguardo ai contenuti generati con l'AI?",
+    "options": [
+      "Utilizzare uno strumento AI non equivale a possedere automaticamente tutti i diritti sul risultato prodotto",
+      "Ogni contenuto generato dall'AI appartiene sempre a chi lo ha richiesto",
+      "I diritti d'autore non si applicano mai ai contenuti generati dall'AI",
+      "Solo le grandi aziende possono rivendicare diritti sui contenuti AI"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la distinzione fondamentale sottolineata esplicitamente dal modulo."
+  },
+  {
+    "id": 35,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa può dipendere la protezione giuridica di un contenuto generato dall'AI, secondo il modulo?",
+    "options": [
+      "Dal ruolo creativo svolto dall'essere umano e dalle leggi applicabili",
+      "Solo dalla velocità con cui è stato generato",
+      "Solo dal costo del sistema di AI utilizzato",
+      "Solo dalla popolarità del contenuto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica ruolo creativo umano e leggi applicabili come fattori determinanti."
+  },
+  {
+    "id": 36,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dovrebbe fare la persona dell'esempio quotidiano prima di usare una fotografia trovata online?",
+    "options": [
+      "Controllare la licenza dell'immagine e cercare, se necessario, una fotografia con condizioni compatibili con il proprio progetto",
+      "Utilizzarla liberamente perché è pubblicata online",
+      "Modificarla per renderla irriconoscibile",
+      "Chiedere il permesso soltanto se l'immagine è a pagamento"
+    ],
+    "correctIndex": 0,
+    "explanation": "La persona verifica la licenza prima di utilizzare l'immagine trovata online."
+  },
+  {
+    "id": 37,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sostengono diversi autori che hanno avviato cause contro aziende che sviluppano sistemi di AI generativa negli Stati Uniti, secondo il modulo?",
+    "options": [
+      "Che le loro opere siano state utilizzate per l'addestramento dei modelli senza autorizzazione",
+      "Che l'AI generativa non funzioni correttamente",
+      "Che i sistemi di AI siano troppo lenti",
+      "Che l'AI generativa costi troppo agli utenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli autori sostengono l'uso non autorizzato delle proprie opere per l'addestramento."
+  },
+  {
+    "id": 38,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi ha avviato nel 2023 una causa legale contro OpenAI e Microsoft, secondo il caso reale descritto nel modulo?",
+    "options": [
+      "The New York Times",
+      "ProPublica",
+      "Il Garante per la protezione dei dati personali italiano",
+      "Il World Economic Forum"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il caso reale documentato nel modulo relativo alla causa di The New York Times."
+  },
+  {
+    "id": 39,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sostenne The New York Times nella causa contro OpenAI e Microsoft?",
+    "options": [
+      "Che contenuti del proprio archivio fossero stati utilizzati nell'addestramento e che i sistemi potessero riprodurre informazioni provenienti dai suoi articoli",
+      "Che OpenAI avesse violato le norme sulla privacy degli utenti",
+      "Che Microsoft avesse copiato il design del proprio sito web",
+      "Che i sistemi di AI generassero informazioni sempre corrette"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il giornale sostenne l'uso non autorizzato del proprio archivio per l'addestramento."
+  },
+  {
+    "id": 40,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata la proprietà intellettuale nella metafora della biblioteca?",
+    "options": [
+      "Al fatto che poter leggere un libro non significa automaticamente poterlo fotocopiare interamente, ristamparlo e venderlo",
+      "Al fatto che tutti i libri in biblioteca sono gratuiti e senza restrizioni",
+      "Al fatto che le biblioteche non hanno più senso nell'era digitale",
+      "Al fatto che ogni libro letto diventa automaticamente di proprietà del lettore"
+    ],
+    "correctIndex": 0,
+    "explanation": "La metafora distingue tra accesso a un'opera e diritto di utilizzarla liberamente."
+  },
+  {
+    "id": 41,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è l'impatto sociale dell'AI, secondo il modulo?",
+    "options": [
+      "L'insieme degli effetti che l'intelligenza artificiale può produrre sulla società, sulle persone, sul lavoro, sull'istruzione e sulle relazioni umane",
+      "La velocità con cui un sistema di AI elabora le informazioni",
+      "Il costo economico di un sistema di AI",
+      "La quantità di utenti che utilizzano un servizio di AI"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la definizione di impatto sociale fornita dal modulo."
+  },
+  {
+    "id": 42,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa dipende l'impatto sociale dell'AI, secondo il modulo?",
+    "options": [
+      "Non soltanto da ciò che l'AI è capace di fare, ma anche da come viene progettata, utilizzata e regolamentata",
+      "Esclusivamente dalla potenza di calcolo del sistema",
+      "Esclusivamente dal numero di aziende che la sviluppano",
+      "Esclusivamente dal prezzo di vendita del servizio"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'impatto dipende anche da progettazione, utilizzo e regolamentazione."
+  },
+  {
+    "id": 43,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali possibilità positive dell'AI vengono citate nel modulo?",
+    "options": [
+      "Aiutare un medico ad analizzare immagini, assistere una persona con disabilità e supportare uno studente nell'apprendimento",
+      "Sostituire completamente il lavoro umano in ogni settore",
+      "Eliminare la necessità di formazione professionale",
+      "Garantire che ogni decisione sia sempre corretta"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono gli esempi positivi citati esplicitamente dal modulo."
+  },
+  {
+    "id": 44,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali problemi possono emergere dalla diffusione dell'AI, secondo il modulo?",
+    "options": [
+      "Un sistema progettato male può amplificare disuguaglianze già presenti nella società",
+      "L'AI elimina automaticamente ogni forma di disuguaglianza",
+      "L'AI non ha alcun effetto sul mercato del lavoro",
+      "L'AI rende superflua ogni forma di regolamentazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo segnala il rischio di amplificare disuguaglianze esistenti."
+  },
+  {
+    "id": 45,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa, secondo il modulo, che l'impatto dell'AI non è distribuito in modo uniforme?",
+    "options": [
+      "Una tecnologia può offrire grandi vantaggi a chi possiede competenze e risorse, mentre crea difficoltà per chi ne rimane escluso",
+      "Tutti i paesi del mondo traggono esattamente gli stessi benefici dall'AI",
+      "L'AI ha lo stesso costo in ogni parte del mondo",
+      "L'accesso all'AI è garantito automaticamente a tutte le persone"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo sottolinea le disparità di accesso e beneficio legate all'AI."
+  },
+  {
+    "id": 46,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa potrebbe accadere se una scuola introducesse l'AI senza considerare le differenze di accesso tra studenti, secondo l'esempio quotidiano del modulo?",
+    "options": [
+      "Uno strumento nato per ridurre le difficoltà potrebbe finire per aumentarle",
+      "Tutti gli studenti otterrebbero automaticamente lo stesso vantaggio",
+      "La scuola risparmierebbe automaticamente sui costi",
+      "Gli insegnanti diventerebbero superflui"
+    ],
+    "correctIndex": 0,
+    "explanation": "Senza considerare le differenze di accesso, lo strumento rischia di aumentare le difficoltà."
+  },
+  {
+    "id": 47,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa evidenziò il World Economic Forum nel Future of Jobs Report del 2023, secondo il modulo?",
+    "options": [
+      "Come l'intelligenza artificiale possa trasformare profondamente il mercato del lavoro, creando nuovi ruoli e rendendone obsolete altre",
+      "Che l'AI eliminerà completamente il lavoro umano entro pochi anni",
+      "Che nessun settore lavorativo sarà influenzato dall'AI",
+      "Che l'AI riguarda esclusivamente il settore tecnologico"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il caso reale documentato nel modulo relativo al Future of Jobs Report."
+  },
+  {
+    "id": 48,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa diventa essenziale di fronte alla trasformazione del mercato del lavoro causata dall'AI, secondo il modulo?",
+    "options": [
+      "La formazione e l'aggiornamento professionale",
+      "La riduzione degli orari di lavoro per tutti",
+      "L'eliminazione totale di alcuni settori lavorativi",
+      "L'aumento generalizzato dei prezzi dei servizi digitali"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica formazione e aggiornamento come elementi essenziali."
+  },
+  {
+    "id": 49,
+    "module": "etica-dell-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato l'impatto sociale dell'AI nella metafora della nuova autostrada?",
+    "options": [
+      "Al fatto che non basta chiedersi quanto è veloce l'autostrada, ma anche dove porta, chi ne trae vantaggio e chi viene penalizzato",
+      "Al fatto che le autostrade non hanno alcun effetto sul territorio circostante",
+      "Al fatto che ogni nuova infrastruttura porta solo vantaggi senza alcun costo",
+      "Al fatto che la velocità è l'unico aspetto rilevante da considerare"
+    ],
+    "correctIndex": 0,
+    "explanation": "La metafora sottolinea la necessità di guardare oltre alla sola potenza della tecnologia."
+  }
+]

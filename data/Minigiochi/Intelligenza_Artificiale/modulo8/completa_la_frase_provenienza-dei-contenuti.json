@@ -1,0 +1,898 @@
+[
+  {
+    "id": 1,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un ____, o filigrana digitale, è un'informazione inserita all'interno di un contenuto digitale per identificarlo o attribuirne l'origine.",
+    "answer": "watermark",
+    "bank": [
+      "watermark",
+      "Content Credentials",
+      "SynthID",
+      "C2PA"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso dell'intelligenza artificiale, un watermark può segnalare che un'immagine, un audio, un video o un testo è stato generato o modificato da un sistema di ____.",
+    "answer": "AI",
+    "bank": [
+      "AI",
+      "compressione",
+      "editing",
+      "streaming"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il watermark può essere visibile, come un logo o una scritta, oppure ____, cioè incorporato nel contenuto senza essere percepibile direttamente.",
+    "answer": "invisibile",
+    "bank": [
+      "invisibile",
+      "temporaneo",
+      "pubblico",
+      "duplicato"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se il watermark è invisibile, il segnale viene incorporato direttamente nei dati del contenuto, che continua ad apparire ____.",
+    "answer": "normale",
+    "bank": [
+      "normale",
+      "sfocato",
+      "incompleto",
+      "danneggiato"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un watermark tradizionale, come una scritta nell'angolo di una fotografia, può essere facilmente ____.",
+    "answer": "ritagliato",
+    "bank": [
+      "ritagliato",
+      "ingrandito",
+      "condiviso",
+      "salvato"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I watermark invisibili più moderni cercano di resistere a modifiche comuni come compressione, filtri o ____.",
+    "answer": "ridimensionamento",
+    "bank": [
+      "ridimensionamento",
+      "cancellazione",
+      "duplicazione",
+      "traduzione"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Google utilizza ____, una tecnologia che incorpora watermark invisibili direttamente nei contenuti generati dai propri sistemi AI.",
+    "answer": "SynthID",
+    "bank": [
+      "SynthID",
+      "C2PA",
+      "Content Credentials",
+      "Imagen"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, l'assenza di un watermark non dimostra che un contenuto sia ____.",
+    "answer": "autentico",
+    "bank": [
+      "autentico",
+      "digitale",
+      "recente",
+      "pubblico"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il watermark è uno strumento di verifica, non una prova ____.",
+    "answer": "assoluta",
+    "bank": [
+      "assoluta",
+      "digitale",
+      "visibile",
+      "tecnica"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio quotidiano del modulo, se una fotografia contiene un watermark invisibile, uno strumento compatibile potrebbe ____ e indicare che l'immagine è stata prodotta artificialmente.",
+    "answer": "rilevarlo",
+    "bank": [
+      "rilevarlo",
+      "cancellarlo",
+      "modificarlo",
+      "nasconderlo"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2023 Google DeepMind ha presentato SynthID, inizialmente per identificare immagini generate con ____.",
+    "answer": "Imagen",
+    "bank": [
+      "Imagen",
+      "C2PA",
+      "Adobe",
+      "Reuters"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il sistema SynthID inserisce un watermark direttamente nei ____ dell'immagine, invisibile all'occhio umano ma rilevabile con strumenti specifici.",
+    "answer": "pixel",
+    "bank": [
+      "pixel",
+      "metadati",
+      "sottotitoli",
+      "colori"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del libro in biblioteca, il piccolo contrassegno inserito nella carta, invisibile a occhio nudo, rappresenta il watermark ____.",
+    "answer": "invisibile",
+    "bank": [
+      "invisibile",
+      "visibile",
+      "digitale",
+      "pubblico"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "SynthID è una tecnologia sviluppata da ____ per inserire watermark digitali invisibili nei contenuti generati dall'intelligenza artificiale.",
+    "answer": "Google DeepMind",
+    "bank": [
+      "Google DeepMind",
+      "Adobe",
+      "Reuters",
+      "C2PA"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "SynthID è stata inizialmente introdotta per le immagini generate con AI, ma è stata successivamente estesa anche a testo, audio e ____.",
+    "answer": "video",
+    "bank": [
+      "video",
+      "musica classica",
+      "ebook",
+      "podcast"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso di un'immagine, il watermark di SynthID viene integrato nei ____.",
+    "answer": "pixel",
+    "bank": [
+      "pixel",
+      "metadati",
+      "sottotitoli",
+      "filtri"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il sistema SynthID è stato progettato per mantenere il watermark riconoscibile dopo trasformazioni comuni come compressione JPEG, filtri e variazioni di ____.",
+    "answer": "colore",
+    "bank": [
+      "colore",
+      "formato",
+      "lingua",
+      "dimensione del file"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, SynthID non è un detector universale dell'____.",
+    "answer": "AI",
+    "bank": [
+      "AI",
+      "utente",
+      "colore",
+      "watermark"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se un'immagine non contiene il watermark di SynthID, non possiamo concludere automaticamente che sia stata realizzata da una ____.",
+    "answer": "persona",
+    "bank": [
+      "persona",
+      "macchina",
+      "telecamera",
+      "rete"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "SynthID funziona meglio come meccanismo di identificazione dei contenuti provenienti da determinati sistemi, non come una macchina capace di distinguere infallibilmente tutto ciò che è umano da tutto ciò che è ____.",
+    "answer": "artificiale",
+    "bank": [
+      "artificiale",
+      "digitale",
+      "visibile",
+      "pubblico"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'espressione latina «ad fontes» significa «alle fonti», cioè non fermarsi all'apparenza del contenuto ma cercare informazioni sulla sua ____.",
+    "answer": "origine",
+    "bank": [
+      "origine",
+      "lunghezza",
+      "popolarità",
+      "velocità"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio quotidiano del modulo, se il watermark di SynthID viene rilevato in un'immagine ricevuta su WhatsApp, si ottiene l'informazione che è associata a un processo di generazione ____.",
+    "answer": "AI",
+    "bank": [
+      "AI",
+      "umano",
+      "casuale",
+      "manuale"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2024 Google DeepMind ha annunciato l'estensione di SynthID introducendo sistemi di watermarking per testo e ____ generati dall'AI.",
+    "answer": "musica",
+    "bank": [
+      "musica",
+      "video brevi",
+      "sottotitoli",
+      "emoji"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'obiettivo dichiarato dell'estensione di SynthID era contribuire all'identificazione dei contenuti generati dall'AI senza alterare significativamente la qualità ____.",
+    "answer": "percepita",
+    "bank": [
+      "percepita",
+      "tecnica",
+      "originale",
+      "visiva"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Con la crescita dei contenuti sintetici, secondo il modulo, non basta più chiedersi «è vero o falso?», ma anche «da dove ____?».",
+    "answer": "proviene",
+    "bank": [
+      "proviene",
+      "comincia",
+      "arriva il segnale",
+      "si diffonde"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della banconota, gli elementi di sicurezza non sono sempre evidenti, ma possono essere verificati attraverso strumenti e procedure ____.",
+    "answer": "specifiche",
+    "bank": [
+      "specifiche",
+      "casuali",
+      "pubbliche",
+      "gratuite"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I ____ sono informazioni digitali associate a un contenuto che permettono di documentarne la provenienza.",
+    "answer": "Content Credentials",
+    "bank": [
+      "Content Credentials",
+      "watermark",
+      "metadati EXIF",
+      "SynthID"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I Content Credentials sono basati sullo standard ____, sviluppato per fornire informazioni verificabili sulla provenienza dei contenuti digitali.",
+    "answer": "C2PA",
+    "bank": [
+      "C2PA",
+      "SynthID",
+      "Imagen",
+      "GDPR"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'acronimo C2PA sta per Coalition for Content Provenance and ____.",
+    "answer": "Authenticity",
+    "bank": [
+      "Authenticity",
+      "Accessibility",
+      "Availability",
+      "Accountability"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "A differenza del watermark, che lascia una traccia dentro il contenuto, i Content Credentials accompagnano il contenuto con informazioni ____ sulla sua provenienza.",
+    "answer": "strutturate",
+    "bank": [
+      "strutturate",
+      "invisibili",
+      "casuali",
+      "temporanee"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio del modulo, una fotografia scattata con lo smartphone può essere accompagnata da informazioni che descrivono origine, strumenti utilizzati e ____ effettuate.",
+    "answer": "modifiche",
+    "bank": [
+      "modifiche",
+      "password",
+      "licenze",
+      "autori"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il punto fondamentale dei Content Credentials non è stabilire se un'immagine «sembra vera», ma costruire una storia ____ del contenuto.",
+    "answer": "verificabile",
+    "bank": [
+      "verificabile",
+      "invisibile",
+      "segreta",
+      "casuale"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I Content Credentials possono funzionare come una sorta di ____ della provenienza.",
+    "answer": "registro",
+    "bank": [
+      "registro",
+      "filtro",
+      "algoritmo",
+      "watermark"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Lo standard C2PA utilizza firme digitali per permettere di verificare che le informazioni sulla provenienza non siano state ____ dopo essere state firmate.",
+    "answer": "alterate",
+    "bank": [
+      "alterate",
+      "condivise",
+      "tradotte",
+      "compresse"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se una fotografia nasce senza informazioni di provenienza, o passa attraverso un'applicazione che non le conserva, alcuni passaggi possono andare ____.",
+    "answer": "perduti",
+    "bank": [
+      "perduti",
+      "duplicati",
+      "cifrati",
+      "pubblicati"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, provenienza e ____ non sono la stessa cosa.",
+    "answer": "verità",
+    "bank": [
+      "verità",
+      "tecnologia",
+      "sicurezza",
+      "qualità"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio quotidiano del modulo, aprendo le informazioni di provenienza di una fotografia di una manifestazione, si può scoprire che è stata acquisita con una fotocamera, ritagliata e poi ____ con un programma di editing.",
+    "answer": "modificata",
+    "bank": [
+      "modificata",
+      "cancellata",
+      "firmata",
+      "criptata"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un esempio concreto di adozione dello standard C2PA è ____, che ha integrato i Content Credentials nei propri strumenti creativi.",
+    "answer": "Adobe",
+    "bank": [
+      "Adobe",
+      "Reuters",
+      "Google DeepMind",
+      "Meta"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del pacco spedito, i Content Credentials sono paragonati a un'etichetta digitale che documenta la provenienza e i ____ della storia del contenuto.",
+    "answer": "passaggi",
+    "bank": [
+      "passaggi",
+      "costi",
+      "colori",
+      "formati"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ è l'insieme delle informazioni che permettono di ricostruire, verificare e comprendere l'origine, la creazione, le modifiche e la diffusione di un contenuto digitale.",
+    "answer": "provenienza digitale",
+    "bank": [
+      "provenienza digitale",
+      "clonazione vocale",
+      "immagine sintetica",
+      "cifratura"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Con la diffusione dell'intelligenza artificiale generativa, la domanda «è vera o falsa?» non è più ____.",
+    "answer": "sufficiente",
+    "bank": [
+      "sufficiente",
+      "importante",
+      "comprensibile",
+      "popolare"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La sequenza della provenienza digitale descritta nel modulo è: origine, creazione, modifica, pubblicazione e ____.",
+    "answer": "diffusione",
+    "bank": [
+      "diffusione",
+      "cancellazione",
+      "compressione",
+      "traduzione"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, un watermark può lasciare una traccia all'interno del contenuto, mentre i Content Credentials possono conservare informazioni strutturate sulla provenienza e sulle ____.",
+    "answer": "modifiche",
+    "bank": [
+      "modifiche",
+      "password",
+      "licenze",
+      "emozioni"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La provenienza digitale è un concetto più ampio: non è un singolo strumento, ma un modo di documentare la ____ di un contenuto.",
+    "answer": "storia",
+    "bank": [
+      "storia",
+      "velocità",
+      "popolarità",
+      "dimensione"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, provenienza non significa automaticamente autenticità o ____.",
+    "answer": "verità",
+    "bank": [
+      "verità",
+      "qualità",
+      "durata",
+      "visibilità"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un contenuto può avere una provenienza perfettamente documentata e rappresentare comunque una situazione ____.",
+    "answer": "falsa",
+    "bank": [
+      "falsa",
+      "breve",
+      "pubblica",
+      "gratuita"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'assenza di informazioni sulla provenienza non significa necessariamente che il contenuto sia ____.",
+    "answer": "falso",
+    "bank": [
+      "falso",
+      "recente",
+      "pubblico",
+      "duplicato"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, la provenienza è un elemento di verifica, non un ____ definitivo.",
+    "answer": "verdetto",
+    "bank": [
+      "verdetto",
+      "segnale",
+      "algoritmo",
+      "watermark"
+    ]
+  },
+  {
+    "id": 49,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio quotidiano del modulo, prima di inoltrare una fotografia accompagnata dal messaggio «Questa foto dimostra quello che è successo ieri», è utile ricostruirne la ____.",
+    "answer": "provenienza",
+    "bank": [
+      "provenienza",
+      "risoluzione",
+      "dimensione",
+      "licenza"
+    ]
+  },
+  {
+    "id": 50,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso descritto, l'immagine era stata pubblicata mesi prima e la didascalia attuale era stata aggiunta molto tempo ____.",
+    "answer": "dopo",
+    "bank": [
+      "dopo",
+      "prima",
+      "insieme",
+      "durante"
+    ]
+  },
+  {
+    "id": 51,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 2024 l'agenzia fotografica ____ ha annunciato l'utilizzo di Content Credentials basati sullo standard C2PA per alcune delle proprie immagini.",
+    "answer": "Reuters",
+    "bank": [
+      "Reuters",
+      "Adobe",
+      "Google DeepMind",
+      "C2PA"
+    ]
+  },
+  {
+    "id": 52,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della catena di custodia, se alla fine qualcosa non torna, possiamo tornare indietro e ricostruire il ____.",
+    "answer": "percorso",
+    "bank": [
+      "percorso",
+      "prezzo",
+      "colore",
+      "formato"
+    ]
+  },
+  {
+    "id": 53,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I ____ della provenienza digitale sono i vincoli che impediscono agli strumenti di garantire da soli che un contenuto sia autentico, completo, corretto o vero.",
+    "answer": "limiti",
+    "bank": [
+      "limiti",
+      "vantaggi",
+      "obiettivi",
+      "requisiti"
+    ]
+  },
+  {
+    "id": 54,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il primo limite della provenienza digitale riguarda la ____: non tutti i contenuti possiedono watermark o Content Credentials.",
+    "answer": "copertura",
+    "bank": [
+      "copertura",
+      "velocità",
+      "qualità",
+      "sicurezza"
+    ]
+  },
+  {
+    "id": 55,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il secondo limite riguarda la perdita delle informazioni, che può avvenire quando un contenuto viene scaricato, convertito o pubblicato attraverso servizi che non le ____.",
+    "answer": "conservano",
+    "bank": [
+      "conservano",
+      "creano",
+      "verificano",
+      "condividono"
+    ]
+  },
+  {
+    "id": 56,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il terzo limite, il più importante secondo il modulo, è che la provenienza non dimostra necessariamente la ____.",
+    "answer": "verità",
+    "bank": [
+      "verità",
+      "qualità",
+      "origine",
+      "data"
+    ]
+  },
+  {
+    "id": 57,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, la fotografia può essere autentica, ma la ____ costruita intorno alla fotografia può essere falsa.",
+    "answer": "storia",
+    "bank": [
+      "storia",
+      "risoluzione",
+      "licenza",
+      "firma"
+    ]
+  },
+  {
+    "id": 58,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una fotografia autentica può rappresentare un evento realmente accaduto, ma in un luogo o in un momento diverso da quello ____.",
+    "answer": "dichiarato",
+    "bank": [
+      "dichiarato",
+      "fotografato",
+      "cifrato",
+      "pubblicato"
+    ]
+  },
+  {
+    "id": 59,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, la provenienza può documentare come un contenuto è stato prodotto, senza stabilire automaticamente ____ sia stato prodotto.",
+    "answer": "perché",
+    "bank": [
+      "perché",
+      "quando",
+      "dove",
+      "con cosa"
+    ]
+  },
+  {
+    "id": 60,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un approccio più solido per la verifica dell'AI combina informazioni sulla provenienza, metadati, fonte originale, contesto e capacità ____ dell'utente.",
+    "answer": "critica",
+    "bank": [
+      "critica",
+      "tecnica",
+      "visiva",
+      "economica"
+    ]
+  },
+  {
+    "id": 61,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, non dobbiamo sostituire il vecchio errore «se lo vedo, allora è vero» con il nuovo errore «se ha un certificato digitale, allora è ____».",
+    "answer": "vero",
+    "bank": [
+      "vero",
+      "falso",
+      "sicuro",
+      "pubblico"
+    ]
+  },
+  {
+    "id": 62,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, la tecnologia può lasciare tracce, ma interpretarle rimane un compito ____.",
+    "answer": "umano",
+    "bank": [
+      "umano",
+      "automatico",
+      "invisibile",
+      "digitale"
+    ]
+  },
+  {
+    "id": 63,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'esempio quotidiano del modulo, dopo aver verificato che una fotografia è autentica, si scopre cercando l'originale che era stata scattata due anni prima durante un evento completamente ____.",
+    "answer": "diverso",
+    "bank": [
+      "diverso",
+      "simile",
+      "recente",
+      "pubblico"
+    ]
+  },
+  {
+    "id": 64,
+    "module": "provenienza-dei-contenuti",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora dell'automobile usata, il libretto dei tagliandi racconta una parte della storia del veicolo, ma non può sostituire il ____.",
+    "answer": "controllo",
+    "bank": [
+      "controllo",
+      "prezzo",
+      "colore",
+      "chilometraggio"
+    ]
+  }
+]

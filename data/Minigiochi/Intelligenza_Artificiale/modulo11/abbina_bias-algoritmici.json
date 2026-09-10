@@ -1,0 +1,118 @@
+{
+  "id": 1,
+  "module": "bias-algoritmici",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Bias algoritmico",
+        "definition": "Distorsione sistematica nel funzionamento o nei risultati di un sistema algoritmico, che può portarlo a favorire o sfavorire determinati individui o gruppi"
+      },
+      {
+        "term": "Origine del bias, secondo il modulo",
+        "definition": "Può nascere dai dati usati per addestrare il sistema, dalle modalità con cui sono stati raccolti o dalle scelte di chi ha progettato l'algoritmo"
+      },
+      {
+        "term": "Lezione fondamentale sul bias",
+        "definition": "Un risultato prodotto da un algoritmo non è automaticamente un risultato imparziale"
+      },
+      {
+        "term": "Caso del sistema sperimentale di Amazon (2018)",
+        "definition": "Il sistema, addestrato con curriculum storici, sviluppò una preferenza verso i candidati uomini per alcuni ruoli tecnici; Amazon abbandonò il progetto"
+      },
+      {
+        "term": "Metafora del giudice con la vecchia mappa",
+        "definition": "Rappresenta il bias algoritmico: l'algoritmo è il giudice, i dati sono la sua mappa, e una mappa sbagliata porta a decisioni ingiuste"
+      }
+    ],
+    [
+      {
+        "term": "Dati (nel contesto dell'AI)",
+        "definition": "Le informazioni utilizzate da un sistema di intelligenza artificiale per apprendere, riconoscere schemi, fare previsioni o prendere decisioni"
+      },
+      {
+        "term": "Tipi di problemi che un dataset può presentare",
+        "definition": "Essere incompleto, sbilanciato, storicamente distorto o non aggiornato"
+      },
+      {
+        "term": "Garbage in, garbage out",
+        "definition": "Principio informatico secondo cui, se forniamo informazioni problematiche a un sistema, non possiamo aspettarci automaticamente risultati corretti"
+      },
+      {
+        "term": "Studio Gender Shades (2018)",
+        "definition": "Condotto da Joy Buolamwini e Timnit Gebru, evidenziò che alcuni sistemi commerciali di classificazione del genere commettevano molti più errori con le donne dalla pelle più scura rispetto agli uomini dalla pelle più chiara"
+      },
+      {
+        "term": "Metafora della torta assaggiata parzialmente",
+        "definition": "Rappresenta i dati incompleti: assaggiare solo un ingrediente non permette di conoscere davvero la torta nel suo insieme"
+      }
+    ],
+    [
+      {
+        "term": "Discriminazione algoritmica",
+        "definition": "Si verifica quando un sistema automatizzato produce, direttamente o indirettamente, un trattamento ingiustamente sfavorevole nei confronti di una persona o di un gruppo"
+      },
+      {
+        "term": "Differenza tra bias e discriminazione",
+        "definition": "Il bias è una distorsione nel modo in cui un sistema tratta le informazioni; la discriminazione riguarda le conseguenze che quella distorsione produce sulle persone"
+      },
+      {
+        "term": "Discriminazione indiretta",
+        "definition": "Si verifica quando il sistema utilizza informazioni che, pur sembrando neutrali, sono fortemente correlate con una caratteristica personale"
+      },
+      {
+        "term": "Fairness",
+        "definition": "Obiettivo di evitare trattamenti ingiustamente svantaggiosi nei sistemi automatizzati; non significa che tutti debbano ricevere esattamente lo stesso risultato"
+      },
+      {
+        "term": "Caso COMPAS e l'inchiesta di ProPublica (2016)",
+        "definition": "Sostenne che le persone nere risultavano più frequentemente classificate come ad alto rischio rispetto alle persone bianche classificate nello stesso modo, generando un dibattito sulla fairness degli algoritmi"
+      }
+    ],
+    [
+      {
+        "term": "Caso reale di bias algoritmico",
+        "definition": "Episodio documentato nel quale un sistema automatizzato ha prodotto risultati problematici, mostrando una distorsione nei dati, nella progettazione, nell'utilizzo o nella valutazione"
+      },
+      {
+        "term": "Domande da porsi oltre a «il sistema funziona?»",
+        "definition": "Funziona per chi? Con quale accuratezza? In quali condizioni? E con quali conseguenze?"
+      },
+      {
+        "term": "Insegnamento principale dello studio Gender Shades",
+        "definition": "Una media può nascondere una disuguaglianza"
+      },
+      {
+        "term": "Cosa dimostrano insieme i casi Amazon, Gender Shades e COMPAS",
+        "definition": "Che l'AI non opera nel vuoto: utilizza dati prodotti dalla società, incorpora scelte progettuali e viene utilizzata in contesti dove le decisioni hanno conseguenze sulle persone"
+      },
+      {
+        "term": "Metafora della scuola con cento studenti",
+        "definition": "Rappresenta il rischio delle medie generali: sapere che 95 studenti su cento hanno superato l'esame nasconde il fatto che i cinque errori appartengono tutti alla stessa classe"
+      }
+    ],
+    [
+      {
+        "term": "Mitigazione del bias algoritmico",
+        "definition": "Insieme di tecniche, controlli e decisioni progettuali utilizzati per individuare, ridurre e monitorare le distorsioni presenti nei sistemi di intelligenza artificiale"
+      },
+      {
+        "term": "Prima forma di mitigazione",
+        "definition": "Controllare i dati, migliorando la raccolta, aumentando la rappresentazione delle categorie meno presenti o eliminando informazioni errate"
+      },
+      {
+        "term": "Perché servono test prima e dopo il rilascio di un sistema",
+        "definition": "Perché i dati, le persone e i contesti di utilizzo cambiano nel tempo, quindi l'AI non deve essere considerata un prodotto che non necessita più di controlli"
+      },
+      {
+        "term": "Ruolo della supervisione umana nella mitigazione",
+        "definition": "Comprendere il processo, individuare anomalie e intervenire quando necessario, senza dover necessariamente sostituire l'algoritmo"
+      },
+      {
+        "term": "Metafora dell'automobile e della manutenzione",
+        "definition": "Rappresenta la mitigazione: i dati sono il carburante, l'algoritmo è il motore e i controlli sono i sistemi di sicurezza, da verificare prima e dopo l'uso"
+      }
+    ]
+  ]
+}

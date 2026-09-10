@@ -1,0 +1,95 @@
+{
+  "module": "come-funzionano-gli-llm",
+  "sets": [
+    [
+      {
+        "term": "Large Language Model (LLM)",
+        "definition": "Modello di intelligenza artificiale addestrato su grandi quantità di testo per elaborare e generare linguaggio naturale"
+      },
+      {
+        "term": "Prompt",
+        "definition": "Testo fornito al modello, che può essere una domanda, un'istruzione o una richiesta"
+      },
+      {
+        "term": "Relazioni statistiche tra le parole",
+        "definition": "Ciò che un LLM impara analizzando le sequenze di testo, invece di comprendere il linguaggio come una persona"
+      },
+      {
+        "term": "Metafora del musicista",
+        "definition": "Rappresenta come un LLM utilizzi relazioni apprese tra elementi linguistici per generare qualcosa di nuovo, senza copiare un archivio"
+      }
+    ],
+    [
+      {
+        "term": "Token",
+        "definition": "Unità di testo utilizzata da un modello linguistico per rappresentare e analizzare ciò che riceve"
+      },
+      {
+        "term": "Tokenizer",
+        "definition": "Componente che trasforma il testo in una sequenza di token"
+      },
+      {
+        "term": "Embedding",
+        "definition": "Rappresentazioni numeriche più ricche in cui vengono trasformati i numeri identificativi dei token, che permettono alla rete neurale di elaborare le relazioni"
+      },
+      {
+        "term": "Metafora dei prodotti da forno",
+        "definition": "Rappresenta come una parola comune possa essere un solo token, mentre una parola più lunga o rara possa essere suddivisa in più token"
+      }
+    ],
+    [
+      {
+        "term": "Contesto",
+        "definition": "Insieme delle informazioni testuali disponibili al modello durante l'elaborazione di una richiesta, utilizzabili per interpretarla e generare una risposta"
+      },
+      {
+        "term": "\"Quanto costa?\" (esempio di ambiguità)",
+        "definition": "Domanda che, presa isolatamente, può avere significati diversi a seconda di ciò che è stato detto prima"
+      },
+      {
+        "term": "Contesto come memoria",
+        "definition": "Il contesto non è una memoria infinita: il modello può utilizzare soltanto le informazioni effettivamente fornite nel contesto disponibile"
+      },
+      {
+        "term": "Metafora della riunione",
+        "definition": "Rappresenta come una frase possa risultare comprensibile o incomprensibile a seconda di quanto contesto si conosce"
+      }
+    ],
+    [
+      {
+        "term": "Finestra di contesto",
+        "definition": "Quantità massima di testo, espressa generalmente in token, che un modello può prendere in considerazione contemporaneamente durante un'elaborazione"
+      },
+      {
+        "term": "Finestra di contesto più grande",
+        "definition": "Non significa automaticamente un modello più intelligente, ma che può considerare più informazioni contemporaneamente"
+      },
+      {
+        "term": "Finestra di contesto e memoria",
+        "definition": "Concetti differenti: la finestra di contesto non equivale a una memoria permanente"
+      },
+      {
+        "term": "Metafora della scrivania",
+        "definition": "Rappresenta la finestra di contesto come lo spazio disponibile per tenere più documenti davanti a sé nello stesso momento"
+      }
+    ],
+    [
+      {
+        "term": "Generazione della risposta",
+        "definition": "Processo attraverso cui un LLM produce testo prevedendo, passo dopo passo, quale token sia più adatto a seguire quelli già elaborati"
+      },
+      {
+        "term": "Processo di generazione",
+        "definition": "Contesto → previsione del token successivo → nuovo token → nuova previsione → nuovo token"
+      },
+      {
+        "term": "Funzione fondamentale della generazione",
+        "definition": "Produrre una continuazione coerente e plausibile rispetto all'input, senza verificare necessariamente la verità di ciò che scrive"
+      },
+      {
+        "term": "Metafora del domino",
+        "definition": "Rappresenta come ogni nuovo token entri nella sequenza e contribuisca a determinare le possibilità successive"
+      }
+    ]
+  ]
+}

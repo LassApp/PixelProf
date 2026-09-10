@@ -1,0 +1,737 @@
+[
+  {
+    "id": 1,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un watermark secondo il modulo?",
+    "options": [
+      "Un'informazione inserita all'interno di un contenuto digitale per identificarlo, attribuirne l'origine o permetterne il riconoscimento",
+      "Un algoritmo che comprime i file audio",
+      "Un protocollo per la crittografia end-to-end",
+      "Un formato di file per le immagini"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo definisce il watermark come un'informazione inserita in un contenuto per identificarlo o attribuirne l'origine."
+  },
+  {
+    "id": 2,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale delle seguenti è una caratteristica di un watermark visibile?",
+    "options": [
+      "Può essere un logo o una scritta, come «Generato con AI», percepibile direttamente",
+      "È sempre incorporato nei pixel senza essere percepibile",
+      "Richiede sempre uno strumento specifico per essere notato",
+      "Non può mai essere rimosso"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il watermark visibile si presenta come un logo o una scritta direttamente percepibile nel contenuto."
+  },
+  {
+    "id": 3,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come funziona un watermark invisibile?",
+    "options": [
+      "Il segnale viene incorporato nei dati del contenuto, che continua ad apparire normale",
+      "Aggiunge sempre una scritta ben visibile sopra l'immagine",
+      "Cambia automaticamente i colori dell'immagine",
+      "Riduce la risoluzione del file"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il watermark invisibile è incorporato nei dati del contenuto senza essere percepibile direttamente."
+  },
+  {
+    "id": 4,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa cercano di fare i watermark invisibili più moderni, secondo il modulo?",
+    "options": [
+      "Resistere a modifiche comuni come compressione, filtri o ridimensionamento",
+      "Rendere l'immagine visibilmente diversa dall'originale",
+      "Eliminare automaticamente le immagini false",
+      "Rallentare la condivisione dei contenuti"
+    ],
+    "correctIndex": 0,
+    "explanation": "I watermark invisibili moderni sono progettati per resistere a modifiche comuni come compressione e filtri."
+  },
+  {
+    "id": 5,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale tecnologia usa Google per incorporare watermark invisibili nei contenuti generati dai propri sistemi AI?",
+    "options": [
+      "SynthID",
+      "C2PA",
+      "Content Credentials",
+      "Imagen Studio"
+    ],
+    "correctIndex": 0,
+    "explanation": "Google utilizza SynthID per incorporare watermark invisibili nei contenuti generati dai propri sistemi AI."
+  },
+  {
+    "id": 6,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa, secondo il modulo, l'assenza di un watermark in un contenuto?",
+    "options": [
+      "Non dimostra che il contenuto sia autentico, poiché il segnale potrebbe non essere mai stato inserito o essere stato degradato",
+      "Dimostra sempre che il contenuto è stato creato da una persona",
+      "Dimostra che il contenuto è stato manipolato",
+      "Indica che il contenuto è stato eliminato"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'assenza di watermark non dimostra automaticamente l'autenticità di un contenuto."
+  },
+  {
+    "id": 7,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viene descritto il ruolo del watermark nel modulo?",
+    "options": [
+      "Uno strumento di verifica, non una prova assoluta",
+      "Una garanzia definitiva di autenticità",
+      "Un sistema di crittografia dei dati personali",
+      "Un metodo per aumentare la qualità dell'immagine"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo descrive il watermark come uno strumento di verifica, non come una prova assoluta."
+  },
+  {
+    "id": 8,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per che cosa fu presentato inizialmente SynthID da Google DeepMind nel 2023?",
+    "options": [
+      "Per identificare immagini generate con Imagen",
+      "Per tradurre automaticamente i testi",
+      "Per comprimere i file video",
+      "Per proteggere le password degli utenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "SynthID fu presentato nel 2023 inizialmente per identificare immagini generate con Imagen."
+  },
+  {
+    "id": 9,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove viene inserito il watermark di SynthID in un'immagine?",
+    "options": [
+      "Direttamente nei pixel dell'immagine",
+      "In un file di testo separato",
+      "Nel nome del file",
+      "Nei metadati EXIF soltanto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il watermark di SynthID viene inserito direttamente nei pixel dell'immagine."
+  },
+  {
+    "id": 10,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato il watermark nella metafora del libro in biblioteca?",
+    "options": [
+      "A un'etichetta visibile o a un contrassegno invisibile nella carta, che raccontano qualcosa sull'origine del libro",
+      "Al codice a barre stampato sulla copertina",
+      "Al numero di pagina del libro",
+      "Al titolo scritto sul dorso del libro"
+    ],
+    "correctIndex": 0,
+    "explanation": "La metafora paragona il watermark a un'etichetta visibile o a un contrassegno invisibile nella carta del libro."
+  },
+  {
+    "id": 11,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è SynthID secondo il modulo?",
+    "options": [
+      "Una tecnologia di Google DeepMind per inserire watermark digitali invisibili nei contenuti generati dall'AI e permetterne il rilevamento",
+      "Un social network per la condivisione di immagini",
+      "Un formato di compressione video",
+      "Un sistema di traduzione automatica"
+    ],
+    "correctIndex": 0,
+    "explanation": "SynthID è la tecnologia di Google DeepMind descritta nel modulo per il watermarking invisibile dei contenuti AI."
+  },
+  {
+    "id": 12,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quali tipi di contenuto è stata successivamente estesa la tecnologia SynthID?",
+    "options": [
+      "Testo, audio e video",
+      "Solo documenti PDF",
+      "Solo file musicali",
+      "Solo pagine web"
+    ],
+    "correctIndex": 0,
+    "explanation": "SynthID è stata estesa da immagini a testo, audio e video."
+  },
+  {
+    "id": 13,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali trasformazioni comuni è stato progettato per resistere il watermark di SynthID nelle immagini?",
+    "options": [
+      "Compressione JPEG, filtri e variazioni di colore",
+      "Cambio di formato del file da JPG a PNG soltanto",
+      "Rotazione dell'immagine di 90 gradi soltanto",
+      "Solo la stampa su carta"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo cita compressione JPEG, filtri e variazioni di colore come trasformazioni a cui il watermark resiste."
+  },
+  {
+    "id": 14,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché SynthID non è definibile come un detector universale dell'AI, secondo il modulo?",
+    "options": [
+      "Perché l'assenza del watermark non dimostra automaticamente che un contenuto sia stato realizzato da una persona",
+      "Perché funziona solo con immagini in bianco e nero",
+      "Perché richiede una connessione a Internet costante",
+      "Perché è disponibile solo in alcuni paesi"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'assenza del watermark non dimostra automaticamente l'origine umana di un contenuto."
+  },
+  {
+    "id": 15,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'espressione latina «ad fontes» citata nel modulo?",
+    "options": [
+      "«Alle fonti»: ritornare all'origine e verificare la provenienza di un contenuto",
+      "«Verso il futuro»: anticipare le tendenze tecnologiche",
+      "«Senza fonte»: contenuto privo di autore",
+      "«Fonte sicura»: contenuto verificato al cento per cento"
+    ],
+    "correctIndex": 0,
+    "explanation": "«Ad fontes» significa «alle fonti» e invita a verificare l'origine di un contenuto."
+  },
+  {
+    "id": 16,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può fare una persona che riceve un'immagine su WhatsApp e dispone di uno strumento compatibile con SynthID?",
+    "options": [
+      "Verificare se nell'immagine è presente il watermark digitale",
+      "Modificare automaticamente l'immagine",
+      "Tradurre il testo contenuto nell'immagine",
+      "Eliminare il watermark dall'immagine"
+    ],
+    "correctIndex": 0,
+    "explanation": "Uno strumento compatibile con SynthID permette di verificare la presenza del watermark digitale."
+  },
+  {
+    "id": 17,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa annunciò Google DeepMind nel 2024 riguardo a SynthID?",
+    "options": [
+      "L'estensione del watermarking a testo e musica generati dall'AI",
+      "La chiusura definitiva del progetto SynthID",
+      "L'acquisizione di Adobe",
+      "Il lancio di un nuovo social network"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel 2024 Google DeepMind annunciò l'estensione di SynthID a testo e musica."
+  },
+  {
+    "id": 18,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual era l'obiettivo dichiarato dell'estensione di SynthID nel 2024?",
+    "options": [
+      "Contribuire all'identificazione dei contenuti generati dall'AI senza alterarne significativamente la qualità percepita",
+      "Sostituire completamente i Content Credentials",
+      "Vietare la generazione di immagini con l'AI",
+      "Aumentare la velocità di caricamento dei contenuti online"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'obiettivo era contribuire all'identificazione dei contenuti AI senza alterarne la qualità percepita."
+  },
+  {
+    "id": 19,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, con la crescita dei contenuti sintetici, quale domanda diventa altrettanto importante di «è vero o falso?»",
+    "options": [
+      "«Da dove proviene e possiamo verificarne l'origine?»",
+      "«Quanto è costato produrlo?»",
+      "«Quante persone lo hanno condiviso?»",
+      "«Quanto è lungo il contenuto?»"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica come importante anche la domanda sulla provenienza e verificabilità dell'origine."
+  },
+  {
+    "id": 20,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato SynthID nella metafora della banconota?",
+    "options": [
+      "A un oggetto che sembra semplice ma contiene elementi di sicurezza verificabili con strumenti specifici",
+      "A una moneta che perde valore nel tempo",
+      "A un documento che si autodistrugge",
+      "A un francobollo raro"
+    ],
+    "correctIndex": 0,
+    "explanation": "La banconota, come SynthID, contiene elementi di sicurezza non sempre evidenti ma verificabili."
+  },
+  {
+    "id": 21,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono i Content Credentials secondo il modulo?",
+    "options": [
+      "Informazioni digitali associate a un contenuto che ne documentano la provenienza, cioè origine e storia di creazione e modifica",
+      "Un tipo di licenza software gratuita",
+      "Un sistema di pagamento online",
+      "Un formato per comprimere i video"
+    ],
+    "correctIndex": 0,
+    "explanation": "I Content Credentials documentano la provenienza di un contenuto, cioè origine e storia di creazione e modifica."
+  },
+  {
+    "id": 22,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su quale standard si basano i Content Credentials?",
+    "options": [
+      "C2PA (Coalition for Content Provenance and Authenticity)",
+      "GDPR",
+      "HTTPS",
+      "ISO 9001"
+    ],
+    "correctIndex": 0,
+    "explanation": "I Content Credentials sono basati sullo standard C2PA."
+  },
+  {
+    "id": 23,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza principale tra watermark e Content Credentials, secondo il modulo?",
+    "options": [
+      "Il watermark lascia una traccia dentro il contenuto, i Content Credentials lo accompagnano con informazioni strutturate",
+      "Il watermark è sempre visibile, i Content Credentials sono sempre invisibili",
+      "I Content Credentials sostituiscono completamente il watermark",
+      "Non esiste alcuna differenza tra i due strumenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il watermark lascia una traccia dentro il contenuto, mentre i Content Credentials lo accompagnano con informazioni strutturate."
+  },
+  {
+    "id": 24,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa possono registrare i Content Credentials, secondo il modulo?",
+    "options": [
+      "Chi o quale strumento ha creato un contenuto, quali modifiche sono state effettuate e quali strumenti sono stati utilizzati",
+      "Solo il nome del file",
+      "Solo la data di download",
+      "Solo il numero di visualizzazioni"
+    ],
+    "correctIndex": 0,
+    "explanation": "I Content Credentials possono registrare autore/strumento, modifiche effettuate e strumenti utilizzati."
+  },
+  {
+    "id": 25,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il punto fondamentale dell'approccio dei Content Credentials, secondo il modulo?",
+    "options": [
+      "Costruire una storia verificabile del contenuto, non stabilire semplicemente se un'immagine «sembra vera»",
+      "Eliminare automaticamente i contenuti falsi",
+      "Aumentare la velocità di caricamento delle immagini",
+      "Ridurre le dimensioni dei file"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'obiettivo è costruire una storia verificabile del contenuto, non giudicare solo l'apparenza."
+  },
+  {
+    "id": 26,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa servono le firme digitali nello standard C2PA?",
+    "options": [
+      "A permettere di verificare che le informazioni sulla provenienza non siano state alterate dopo essere state firmate",
+      "A criptare il contenuto in modo che non sia più visibile",
+      "A tradurre automaticamente le informazioni in altre lingue",
+      "A comprimere il file per la condivisione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le firme digitali servono a verificare che le informazioni di provenienza non siano state alterate."
+  },
+  {
+    "id": 27,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può accadere se una fotografia passa attraverso un'applicazione che non conserva le informazioni di provenienza?",
+    "options": [
+      "Alcuni passaggi della sua storia possono andare perduti",
+      "La fotografia viene automaticamente cancellata",
+      "La fotografia diventa impossibile da condividere",
+      "La fotografia viene etichettata come falsa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se le informazioni non vengono conservate, alcuni passaggi della storia del contenuto possono andare perduti."
+  },
+  {
+    "id": 28,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale azienda viene citata dal modulo come esempio di integrazione dei Content Credentials nei propri strumenti creativi?",
+    "options": [
+      "Adobe",
+      "Reuters",
+      "Google DeepMind",
+      "Meta"
+    ],
+    "correctIndex": 0,
+    "explanation": "Adobe ha integrato i Content Credentials nei propri strumenti creativi."
+  },
+  {
+    "id": 29,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette di fare l'integrazione dei Content Credentials nel flusso di produzione, secondo il modulo?",
+    "options": [
+      "Avere maggiori informazioni sul percorso che ha portato al risultato finale, anziché vedere solo il risultato",
+      "Eliminare la necessità di pubblicare i contenuti online",
+      "Ridurre i costi di produzione dei contenuti",
+      "Aumentare automaticamente la qualità delle immagini"
+    ],
+    "correctIndex": 0,
+    "explanation": "Permette di avere più informazioni sul percorso di produzione, non solo sul risultato finale."
+  },
+  {
+    "id": 30,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonati i Content Credentials nella metafora del pacco spedito?",
+    "options": [
+      "A un'etichetta digitale che documenta la provenienza e i passaggi della storia del contenuto",
+      "Al corriere che consegna il pacco",
+      "Al prezzo del prodotto spedito",
+      "Al magazzino di partenza della spedizione"
+    ],
+    "correctIndex": 0,
+    "explanation": "I Content Credentials sono paragonati a un'etichetta digitale che documenta la provenienza del contenuto."
+  },
+  {
+    "id": 31,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la provenienza digitale secondo il modulo?",
+    "options": [
+      "L'insieme delle informazioni che permettono di ricostruire, verificare e comprendere origine, creazione, modifiche e diffusione di un contenuto digitale",
+      "Un algoritmo per generare immagini realistiche",
+      "Un sistema per bloccare la condivisione dei contenuti",
+      "Un tipo di licenza d'uso per software"
+    ],
+    "correctIndex": 0,
+    "explanation": "La provenienza digitale ricostruisce origine, creazione, modifiche e diffusione di un contenuto."
+  },
+  {
+    "id": 32,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la sequenza descritta nel modulo per rappresentare la provenienza digitale?",
+    "options": [
+      "Origine, creazione, modifica, pubblicazione, diffusione",
+      "Creazione, cancellazione, backup, ripristino",
+      "Scansione, compressione, invio, archiviazione",
+      "Ideazione, finanziamento, produzione, vendita"
+    ],
+    "correctIndex": 0,
+    "explanation": "La sequenza descritta è: origine, creazione, modifica, pubblicazione, diffusione."
+  },
+  {
+    "id": 33,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si relazionano tra loro watermark, SynthID e Content Credentials, secondo il modulo?",
+    "options": [
+      "Possono lavorare insieme, ma non sono equivalenti",
+      "Sono esattamente la stessa tecnologia con nomi diversi",
+      "Si escludono a vicenda e non possono coesistere",
+      "Sono tutti obsoleti e sostituiti da nuovi standard"
+    ],
+    "correctIndex": 0,
+    "explanation": "Questi strumenti possono lavorare insieme, ma restano concettualmente diversi."
+  },
+  {
+    "id": 34,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa, secondo il modulo, che la provenienza non equivale ad autenticità o verità?",
+    "options": [
+      "Un contenuto può avere una provenienza documentata e rappresentare comunque una situazione falsa",
+      "Un contenuto senza provenienza è sempre falso",
+      "La provenienza garantisce sempre che il contenuto sia vero",
+      "La provenienza riguarda solo i contenuti generati dall'AI"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un contenuto con provenienza documentata può comunque rappresentare una situazione falsa."
+  },
+  {
+    "id": 35,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa scopre la persona nell'esempio quotidiano del modulo ricostruendo la provenienza della fotografia?",
+    "options": [
+      "Che l'immagine era stata pubblicata mesi prima e la didascalia era stata aggiunta molto tempo dopo",
+      "Che l'immagine era stata generata interamente dall'AI",
+      "Che l'immagine non esisteva prima di quel giorno",
+      "Che l'immagine era protetta da copyright"
+    ],
+    "correctIndex": 0,
+    "explanation": "La persona scopre che l'immagine era più vecchia e la didascalia era stata aggiunta successivamente."
+  },
+  {
+    "id": 36,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale lezione trae la persona dall'esempio quotidiano del modulo?",
+    "options": [
+      "Verificare un contenuto significa verificare anche il suo contesto e la sua storia, non solo l'immagine",
+      "Le fotografie con didascalie sono sempre affidabili",
+      "Solo le immagini generate dall'AI necessitano di verifica",
+      "Le fotografie pubblicate di recente sono sempre autentiche"
+    ],
+    "correctIndex": 0,
+    "explanation": "La lezione è che la verifica deve includere contesto e storia, non solo l'immagine."
+  },
+  {
+    "id": 37,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa annunciò l'agenzia Reuters nel 2024, secondo il caso reale descritto nel modulo?",
+    "options": [
+      "L'utilizzo di Content Credentials basati sullo standard C2PA per alcune proprie immagini",
+      "L'acquisizione di Google DeepMind",
+      "Il divieto di pubblicare immagini generate dall'AI",
+      "Il lancio di una propria intelligenza artificiale generativa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Reuters annunciò l'utilizzo di Content Credentials basati su C2PA per alcune proprie immagini."
+  },
+  {
+    "id": 38,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale valore ha, secondo il modulo, documentare la provenienza nel giornalismo?",
+    "options": [
+      "Aggiunge un livello di trasparenza al percorso dell'immagine, senza dire automaticamente che racconta la verità",
+      "Garantisce che ogni fotografia pubblicata sia sempre vera",
+      "Elimina la necessità di verificare le fonti",
+      "Rende obbligatoria la pubblicazione di ogni fotografia scattata"
+    ],
+    "correctIndex": 0,
+    "explanation": "Documentare la provenienza aggiunge trasparenza, senza costituire una garanzia automatica di verità."
+  },
+  {
+    "id": 39,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata la provenienza digitale nella metafora della catena di custodia?",
+    "options": [
+      "A un percorso in cui a ogni passaggio viene registrato chi ha ricevuto l'oggetto, quando e cosa è stato fatto",
+      "A un archivio che conserva solo l'oggetto finale",
+      "A un magazzino senza registrazioni",
+      "A un sistema che elimina automaticamente le tracce di un oggetto"
+    ],
+    "correctIndex": 0,
+    "explanation": "La catena di custodia registra ogni passaggio, chi ha ricevuto l'oggetto e cosa è stato fatto."
+  },
+  {
+    "id": 40,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa rappresenta seguire la provenienza digitale di un contenuto?",
+    "options": [
+      "Seguire le impronte lasciate da un contenuto lungo la strada digitale",
+      "Cancellare ogni traccia del contenuto",
+      "Bloccare la diffusione del contenuto",
+      "Aumentare la risoluzione del contenuto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo descrive la provenienza digitale come il seguire le impronte lasciate da un contenuto."
+  },
+  {
+    "id": 41,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i limiti della provenienza digitale, secondo il modulo?",
+    "options": [
+      "I vincoli che impediscono agli strumenti di provenienza di garantire da soli che un contenuto sia autentico, completo, corretto o vero",
+      "Le restrizioni legali sull'uso dell'intelligenza artificiale",
+      "I limiti di spazio di archiviazione per i watermark",
+      "Le regole di utilizzo di SynthID"
+    ],
+    "correctIndex": 0,
+    "explanation": "I limiti sono i vincoli che impediscono agli strumenti di provenienza di garantire da soli l'autenticità."
+  },
+  {
+    "id": 42,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il primo limite della provenienza digitale descritto nel modulo?",
+    "options": [
+      "La copertura: non tutti i contenuti digitali possiedono watermark o Content Credentials",
+      "Il costo elevato delle tecnologie di provenienza",
+      "La lentezza dei sistemi di verifica",
+      "La mancanza di supporto per le immagini"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il primo limite riguarda la copertura, poiché non tutti i contenuti possiedono questi strumenti."
+  },
+  {
+    "id": 43,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In cosa consiste il secondo limite descritto nel modulo?",
+    "options": [
+      "Nella perdita delle informazioni quando un contenuto viene scaricato, convertito o pubblicato attraverso servizi che non le conservano",
+      "Nell'impossibilità di generare contenuti con l'AI",
+      "Nel costo eccessivo delle firme digitali",
+      "Nell'assenza di standard internazionali"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il secondo limite è la perdita delle informazioni di provenienza in alcuni passaggi."
+  },
+  {
+    "id": 44,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il terzo e più importante limite indicato nel modulo?",
+    "options": [
+      "La provenienza non dimostra necessariamente la verità di un contenuto",
+      "La provenienza rallenta la pubblicazione dei contenuti",
+      "La provenienza richiede sempre una connessione Internet",
+      "La provenienza è disponibile solo per i video"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il limite più importante è che la provenienza non dimostra necessariamente la verità."
+  },
+  {
+    "id": 45,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può accadere a una fotografia autentica, secondo il modulo?",
+    "options": [
+      "Può essere accompagnata da una didascalia falsa o mostrata fuori contesto",
+      "Non può mai essere modificata",
+      "Diventa automaticamente di dominio pubblico",
+      "Perde sempre la propria provenienza dopo un anno"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una fotografia autentica può comunque essere accompagnata da una didascalia falsa o fuori contesto."
+  },
+  {
+    "id": 46,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale approccio suggerisce il modulo per una verifica più solida dei contenuti AI?",
+    "options": [
+      "Combinare informazioni sulla provenienza, metadati, fonte originale, contesto, confronto con altre fonti e capacità critica dell'utente",
+      "Affidarsi esclusivamente al watermark",
+      "Considerare vero ogni contenuto con Content Credentials",
+      "Ignorare qualsiasi informazione tecnica e fidarsi solo dell'aspetto visivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo suggerisce di combinare più fonti di verifica, incluso il pensiero critico dell'utente."
+  },
+  {
+    "id": 47,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale nuovo errore mette in guardia il modulo, parallelo al vecchio «se lo vedo, allora è vero»?",
+    "options": [
+      "«Se ha un certificato digitale, allora è vero»",
+      "«Se è generato dall'AI, allora è falso»",
+      "«Se è virale, allora è vero»",
+      "«Se è vecchio, allora è falso»"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo avverte di non sostituire un errore con un altro basato sul solo certificato digitale."
+  },
+  {
+    "id": 48,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa scopre la persona nell'esempio quotidiano dopo aver verificato la provenienza e cercato la fotografia originale?",
+    "options": [
+      "Che la fotografia era stata scattata due anni prima, durante un evento completamente diverso",
+      "Che la fotografia era stata generata dall'AI",
+      "Che la fotografia non aveva alcuna provenienza documentata",
+      "Che la fotografia era stata modificata con SynthID"
+    ],
+    "correctIndex": 0,
+    "explanation": "La fotografia risultava autentica ma scattata due anni prima, in un evento diverso da quello dichiarato."
+  },
+  {
+    "id": 49,
+    "module": "provenienza-dei-contenuti",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata la provenienza digitale nella metafora dell'automobile usata?",
+    "options": [
+      "Al libretto dei tagliandi, che racconta una parte della storia del veicolo ma non sostituisce il controllo diretto",
+      "Al contachilometri, che indica sempre la verità",
+      "Al colore della carrozzeria",
+      "Al prezzo di vendita dell'automobile"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il libretto dei tagliandi racconta parte della storia del veicolo, ma non sostituisce un controllo diretto."
+  }
+]

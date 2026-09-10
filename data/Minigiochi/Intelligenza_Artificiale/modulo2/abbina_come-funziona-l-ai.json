@@ -1,0 +1,81 @@
+{
+  "module": "come-funziona-l-ai",
+  "sets": [
+    [
+      {
+        "term": "Dati",
+        "definition": "Informazioni raccolte e utilizzate da un sistema informatico per svolgere attività, effettuare analisi o imparare a riconoscere schemi e caratteristiche"
+      },
+      {
+        "term": "Dati di addestramento",
+        "definition": "Dati utilizzati nella fase in cui il modello viene sviluppato e addestrato"
+      },
+      {
+        "term": "Dati utilizzati successivamente",
+        "definition": "Gli input che il sistema riceve quando viene utilizzato, dopo la fase di addestramento"
+      },
+      {
+        "term": "ImageNet",
+        "definition": "Enorme archivio di immagini organizzate in numerose categorie, che ha contribuito in modo importante allo sviluppo della computer vision"
+      }
+    ],
+    [
+      {
+        "term": "Machine Learning (ML)",
+        "definition": "Insieme di tecniche che permette a un sistema informatico di apprendere dai dati e migliorare le proprie prestazioni in un compito senza essere programmato esplicitamente con una regola per ogni situazione"
+      },
+      {
+        "term": "Apprendimento supervisionato",
+        "definition": "Approccio in cui gli esempi utilizzati per l'addestramento sono associati a una risposta conosciuta"
+      },
+      {
+        "term": "Apprendimento non supervisionato",
+        "definition": "Approccio in cui il sistema deve cercare autonomamente somiglianze, differenze e raggruppamenti, senza risposte note in anticipo"
+      },
+      {
+        "term": "GIGO (Garbage in, garbage out)",
+        "definition": "Principio secondo cui, se i dati di partenza sono errati, incompleti o di scarsa qualità, anche il risultato prodotto dal sistema può esserlo"
+      }
+    ],
+    [
+      {
+        "term": "Rete neurale artificiale",
+        "definition": "Modello di Machine Learning ispirato, in modo semplificato, al funzionamento delle reti di neuroni biologici"
+      },
+      {
+        "term": "Livello di ingresso",
+        "definition": "Livello di una rete neurale che riceve i dati"
+      },
+      {
+        "term": "Livello di uscita",
+        "definition": "Livello di una rete neurale che produce il risultato"
+      },
+      {
+        "term": "Deep Learning",
+        "definition": "Tecnica che si applica quando una rete neurale contiene molti livelli di elaborazione; apprendimento profondo"
+      },
+      {
+        "term": "AlexNet (2012)",
+        "definition": "Rete neurale profonda che ottenne risultati particolarmente importanti nella competizione ImageNet per la classificazione delle immagini"
+      }
+    ],
+    [
+      {
+        "term": "Modello di intelligenza artificiale",
+        "definition": "Sistema matematico addestrato sui dati attraverso un processo di apprendimento, in grado di utilizzare ciò che ha appreso per elaborare nuovi dati e produrre un risultato"
+      },
+      {
+        "term": "Parametri del modello",
+        "definition": "Valori modificati durante l'addestramento che determinano il modo in cui il sistema elabora gli input"
+      },
+      {
+        "term": "Generalizzazione",
+        "definition": "Capacità di un modello di elaborare correttamente anche dati che non ha mai visto durante l'addestramento"
+      },
+      {
+        "term": "Relazione tra dati e modello",
+        "definition": "I dati vengono utilizzati per addestrare il modello, mentre il modello rappresenta ciò che il sistema ha appreso attraverso quel processo"
+      }
+    ]
+  ]
+}

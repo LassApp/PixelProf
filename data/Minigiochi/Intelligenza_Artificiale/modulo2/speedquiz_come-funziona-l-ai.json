@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i dati secondo il modulo?",
+    "options": [
+      "Informazioni raccolte e utilizzate da un sistema informatico per svolgere attività, effettuare analisi o imparare a riconoscere schemi e caratteristiche",
+      "Soltanto immagini digitali",
+      "Regole scritte manualmente da un programmatore",
+      "Un tipo di software antivirus"
+    ],
+    "correctIndex": 0,
+    "explanation": "I dati sono informazioni raccolte e utilizzate da un sistema informatico per svolgere attività, effettuare analisi o imparare a riconoscere schemi e caratteristiche."
+  },
+  {
+    "id": 2,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nel campo dell'intelligenza artificiale, cosa rappresentano i dati?",
+    "options": [
+      "Un dettaglio tecnico secondario",
+      "La materia prima attraverso cui un sistema può essere addestrato, valutato e utilizzato",
+      "Solo il risultato finale prodotto dal sistema",
+      "Un tipo di rete neurale"
+    ],
+    "correctIndex": 1,
+    "explanation": "I dati costituiscono la materia prima attraverso cui un sistema può essere addestrato, valutato e successivamente utilizzato."
+  },
+  {
+    "id": 3,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, che cosa succede se i dati utilizzati per addestrare un sistema sono insufficienti, poco rappresentativi, errati o sbilanciati?",
+    "options": [
+      "Il risultato prodotto dall'AI non cambia",
+      "Il risultato prodotto dall'AI può essere problematico",
+      "Il sistema smette automaticamente di funzionare",
+      "Il sistema richiede meno tempo per l'addestramento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se i dati sono insufficienti, poco rappresentativi, errati o fortemente sbilanciati, anche il risultato prodotto dall'AI può essere problematico."
+  },
+  {
+    "id": 4,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra dati di addestramento e dati utilizzati successivamente dal sistema?",
+    "options": [
+      "I dati di addestramento servono a sviluppare il modello, i secondi sono gli input ricevuti quando il sistema viene utilizzato",
+      "Non esiste alcuna differenza",
+      "I dati di addestramento sono sempre immagini, gli altri sempre testi",
+      "I dati utilizzati successivamente servono solo per cancellare il modello"
+    ],
+    "correctIndex": 0,
+    "explanation": "I dati di addestramento servono nella fase in cui il modello viene sviluppato e addestrato; i dati utilizzati successivamente sono gli input che il sistema riceve quando viene utilizzato."
+  },
+  {
+    "id": 5,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostra il caso di ImageNet descritto nel modulo?",
+    "options": [
+      "Che senza grandi quantità di dati organizzati molti progressi dell'AI moderna non sarebbero stati possibili",
+      "Che i dati non sono necessari per addestrare un sistema",
+      "Che le immagini non possono essere utilizzate per addestrare un'AI",
+      "Che il Machine Learning non utilizza dati visivi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il valore didattico del caso ImageNet è che, senza grandi quantità di dati organizzati e utilizzabili, molti progressi dell'AI moderna non sarebbero stati possibili."
+  },
+  {
+    "id": 6,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del bambino che impara a riconoscere gli alberi, cosa rappresentano i numerosi alberi diversi mostrati?",
+    "options": [
+      "Gli esempi attraverso cui un sistema di AI può individuare regolarità",
+      "Gli errori del sistema",
+      "I parametri di una rete neurale",
+      "Il risultato finale del modello"
+    ],
+    "correctIndex": 0,
+    "explanation": "I dati svolgono il ruolo degli esempi attraverso cui il sistema può individuare delle regolarità, come gli alberi diversi mostrati al bambino."
+  },
+  {
+    "id": 7,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il Machine Learning secondo il modulo?",
+    "options": [
+      "Un insieme di tecniche che permette a un sistema di apprendere dai dati e migliorare le proprie prestazioni senza essere programmato esplicitamente con una regola per ogni situazione",
+      "Un tipo di hardware specializzato",
+      "Un metodo per scrivere manualmente tutte le regole di un programma",
+      "Un sistema che funziona solo con immagini"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Machine Learning è un insieme di tecniche che permette a un sistema informatico di apprendere dai dati senza essere programmato esplicitamente con una regola per ogni possibile situazione."
+  },
+  {
+    "id": 8,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella programmazione tradizionale, chi stabilisce le regole che il computer esegue?",
+    "options": [
+      "Il computer stesso",
+      "Una persona",
+      "Un modello di Machine Learning",
+      "Una rete neurale"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nel modo tradizionale di programmare un computer, una persona stabilisce le regole e il computer le esegue."
+  },
+  {
+    "id": 9,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché, secondo il modulo, stabilire manualmente tutte le regole per riconoscere lo spam diventa difficile?",
+    "options": [
+      "Perché i messaggi possono essere estremamente diversi e le regole diventerebbero numerose e difficili da gestire",
+      "Perché lo spam non esiste realmente",
+      "Perché i computer non possono leggere il testo",
+      "Perché le email non contengono informazioni utili"
+    ],
+    "correctIndex": 0,
+    "explanation": "I messaggi possono essere estremamente diversi e le regole diventerebbero rapidamente numerose e difficili da gestire."
+  },
+  {
+    "id": 10,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Durante l'addestramento di un sistema di Machine Learning, cosa modifica progressivamente il sistema?",
+    "options": [
+      "I propri parametri, per ottenere risultati migliori rispetto agli esempi disponibili",
+      "Il proprio hardware",
+      "La connessione a Internet",
+      "Il linguaggio di programmazione utilizzato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Durante l'addestramento, il sistema modifica progressivamente i propri parametri per ottenere risultati migliori rispetto agli esempi disponibili."
+  },
+  {
+    "id": 11,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un sistema di Machine Learning viene sottoposto a dati che non ha utilizzato durante l'addestramento?",
+    "options": [
+      "Per verificare quanto sia realmente capace di generalizzare ciò che ha imparato",
+      "Per aumentare la velocità del sistema",
+      "Per cancellare i dati precedenti",
+      "Per ridurre il numero di parametri"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sistema viene sottoposto a nuovi dati per verificare quanto sia realmente capace di generalizzare ciò che ha imparato."
+  },
+  {
+    "id": 12,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa caratterizza l'apprendimento supervisionato?",
+    "options": [
+      "Gli esempi utilizzati per l'addestramento sono associati a una risposta conosciuta",
+      "Il sistema non riceve mai esempi",
+      "Non esiste alcuna risposta corretta da confrontare",
+      "Il sistema lavora solo con immagini"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nell'apprendimento supervisionato, gli esempi utilizzati per l'addestramento sono associati a una risposta conosciuta."
+  },
+  {
+    "id": 13,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa caratterizza l'apprendimento non supervisionato?",
+    "options": [
+      "Il sistema deve cercare autonomamente somiglianze, differenze e raggruppamenti, senza risposte note in anticipo",
+      "Gli esempi sono sempre associati a una risposta conosciuta",
+      "Il sistema non elabora alcun dato",
+      "È identico all'apprendimento supervisionato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nell'apprendimento non supervisionato, il sistema riceve gli esercizi e deve cercare autonomamente somiglianze, differenze e raggruppamenti."
+  },
+  {
+    "id": 14,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali applicazioni si basano oggi sul Machine Learning secondo il modulo?",
+    "options": [
+      "Sistemi di raccomandazione, riconoscimento delle immagini, riconoscimento vocale, rilevamento delle frodi, traduzione automatica",
+      "Solo i motori di ricerca",
+      "Solo le applicazioni di messaggistica",
+      "Solo i sistemi operativi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Machine Learning è oggi alla base di moltissime applicazioni, tra cui sistemi di raccomandazione, riconoscimento delle immagini, riconoscimento vocale, rilevamento delle frodi e traduzione automatica."
+  },
+  {
+    "id": 15,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'espressione 'Garbage in, garbage out' (GIGO) citata nel modulo?",
+    "options": [
+      "Se i dati di partenza sono errati, incompleti o di scarsa qualità, anche il risultato prodotto dal sistema può esserlo",
+      "I dati vengono sempre eliminati automaticamente dopo l'uso",
+      "Un sistema di AI non ha mai bisogno di dati",
+      "Più dati si utilizzano, peggiore sarà sempre il risultato"
+    ],
+    "correctIndex": 0,
+    "explanation": "GIGO significa che, se i dati di partenza sono errati, incompleti o di scarsa qualità, anche il risultato prodotto dal sistema può esserlo."
+  },
+  {
+    "id": 16,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra il caso reale del rilevamento delle frodi nei pagamenti elettronici descritto nel modulo?",
+    "options": [
+      "Che il sistema può individuare correlazioni nei dati senza che ogni possibile frode sia stata descritta manualmente come regola",
+      "Che le frodi non possono essere rilevate automaticamente",
+      "Che il Machine Learning non è utile nel settore finanziario",
+      "Che ogni transazione deve essere controllata manualmente da una persona"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sistema può individuare correlazioni nei dati e utilizzarle per supportare il rilevamento di situazioni anomale, senza che ogni possibile frode sia stata descritta manualmente."
+  },
+  {
+    "id": 17,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'apprendista in cucina, cosa fa il maestro invece di consegnare un libro con una regola per ogni piatto?",
+    "options": [
+      "Mostra molti esempi, fa osservare ingredienti, quantità, procedimenti ed errori da evitare",
+      "Vieta all'apprendista di cucinare",
+      "Consegna una lista di ricette da memorizzare esattamente",
+      "Non fornisce alcuna indicazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il maestro mostra molti esempi, fa osservare ingredienti, quantità, procedimenti ed errori da evitare, un po' come avviene nel Machine Learning."
+  },
+  {
+    "id": 18,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono le reti neurali artificiali secondo il modulo?",
+    "options": [
+      "Modelli di Machine Learning ispirati, in modo semplificato, al funzionamento delle reti di neuroni biologici",
+      "Dispositivi hardware collegati a Internet",
+      "Un tipo di dato non strutturato",
+      "Un sinonimo di Machine Learning senza alcuna differenza"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le reti neurali artificiali sono modelli di Machine Learning ispirati, in modo semplificato, al funzionamento delle reti di neuroni biologici."
+  },
+  {
+    "id": 19,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come sono organizzate le unità di una rete neurale?",
+    "options": [
+      "Generalmente in livelli",
+      "In un'unica struttura senza suddivisioni",
+      "Solo in coppie",
+      "In ordine alfabetico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le unità della rete sono organizzate generalmente in livelli."
+  },
+  {
+    "id": 20,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i tre tipi principali di livelli in una rete neurale, secondo il modulo?",
+    "options": [
+      "Livello di ingresso, uno o più livelli intermedi, livello di uscita",
+      "Livello hardware, livello software, livello di rete",
+      "Livello supervisionato e livello non supervisionato",
+      "Livello dati e livello modello"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una rete neurale ha normalmente un livello di ingresso, uno o più livelli intermedi e un livello di uscita."
+  },
+  {
+    "id": 21,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa determinano i pesi delle connessioni interne di una rete neurale?",
+    "options": [
+      "Quanto le diverse informazioni contribuiscono al risultato finale",
+      "La velocità di connessione a Internet",
+      "Il numero di dati disponibili",
+      "Il tipo di dispositivo utilizzato"
+    ],
+    "correctIndex": 0,
+    "explanation": "I pesi delle connessioni determinano quanto le diverse informazioni contribuiscono al risultato finale."
+  },
+  {
+    "id": 22,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si intende per Deep Learning secondo il modulo?",
+    "options": [
+      "Una rete neurale che contiene molti livelli di elaborazione",
+      "Un tipo di dato non strutturato",
+      "Un sinonimo di apprendimento supervisionato",
+      "Un metodo per raccogliere dati manualmente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quando una rete contiene molti livelli di elaborazione, si parla di Deep Learning, apprendimento profondo."
+  },
+  {
+    "id": 23,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché è importante evitare di considerare una rete neurale come un cervello artificiale, secondo il modulo?",
+    "options": [
+      "Perché il riferimento ai neuroni è una metafora ispirata alla biologia, mentre il funzionamento concreto è basato su calcoli matematici",
+      "Perché le reti neurali non elaborano alcuna informazione",
+      "Perché le reti neurali funzionano solo con il linguaggio",
+      "Perché non esistono differenze tra i due concetti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il riferimento ai neuroni è una metafora ispirata alla biologia; il funzionamento concreto è basato su calcoli matematici eseguiti da sistemi informatici."
+  },
+  {
+    "id": 24,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresenta il caso di AlexNet descritto nel modulo?",
+    "options": [
+      "Una rete neurale profonda che nel 2012 ottenne risultati importanti nella competizione ImageNet per la classificazione delle immagini",
+      "Il primo sistema di intelligenza artificiale mai creato",
+      "Un sistema che non utilizzava reti neurali",
+      "Un modello progettato esclusivamente per il riconoscimento vocale"
+    ],
+    "correctIndex": 0,
+    "explanation": "AlexNet, nel 2012, ottenne risultati particolarmente importanti nella competizione ImageNet, utilizzando una rete neurale profonda."
+  },
+  {
+    "id": 25,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del riconoscimento di un volto tra molte persone, cosa avviene per primo secondo il modulo?",
+    "options": [
+      "Si notano elementi molto semplici, come linee, contorni e forme",
+      "Si riconosce immediatamente la persona nel suo complesso",
+      "Si analizzano soltanto i colori dello sfondo",
+      "Si elabora direttamente il nome della persona"
+    ],
+    "correctIndex": 0,
+    "explanation": "All'inizio si notano elementi molto semplici, linee, contorni e forme, poi si distinguono dettagli più complessi fino al riconoscimento finale."
+  },
+  {
+    "id": 26,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un modello di intelligenza artificiale secondo il modulo?",
+    "options": [
+      "Un sistema matematico addestrato sui dati attraverso un processo di apprendimento, in grado di elaborare nuovi dati e produrre un risultato",
+      "Un elenco di tutte le fotografie utilizzate durante l'addestramento",
+      "Un tipo di dato non strutturato",
+      "Un dispositivo hardware"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un modello di intelligenza artificiale è un sistema matematico addestrato sui dati attraverso un processo di apprendimento, in grado di elaborare nuovi dati e produrre un risultato."
+  },
+  {
+    "id": 27,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa contiene un modello di intelligenza artificiale?",
+    "options": [
+      "I parametri modificati durante l'addestramento, che determinano come il sistema elabora gli input",
+      "Solo i dati grezzi non elaborati",
+      "Le regole scritte manualmente da un programmatore",
+      "Solo il codice sorgente dell'applicazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modello contiene i parametri che sono stati modificati durante l'addestramento e che determinano il modo in cui il sistema elabora gli input."
+  },
+  {
+    "id": 28,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, un modello è semplicemente un enorme archivio di risposte già pronte?",
+    "options": [
+      "No, il suo comportamento deriva dai parametri appresi durante l'addestramento",
+      "Sì, contiene tutte le risposte possibili già memorizzate",
+      "Sì, ma solo per i modelli di grandi dimensioni",
+      "No, perché i modelli non contengono alcun parametro"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un modello non è semplicemente un enorme archivio di risposte già pronte: il suo comportamento deriva dai parametri appresi durante l'addestramento."
+  },
+  {
+    "id": 29,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra dati e modello secondo il modulo?",
+    "options": [
+      "I dati vengono utilizzati per addestrare il modello, mentre il modello rappresenta ciò che il sistema ha appreso attraverso quel processo",
+      "Dati e modello sono esattamente la stessa cosa",
+      "Il modello genera sempre nuovi dati da zero",
+      "I dati vengono creati dal modello dopo l'addestramento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Modello e dati non sono la stessa cosa: i dati vengono utilizzati per addestrare il modello, mentre il modello rappresenta ciò che il sistema ha appreso."
+  },
+  {
+    "id": 30,
+    "module": "come-funziona-l-ai",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del cuoco esperto, cosa rappresenta il modello?",
+    "options": [
+      "La conoscenza operativa che gli permette di affrontare nuove situazioni",
+      "Solo la lista degli ingredienti utilizzati",
+      "Il libro di ricette mai consultato",
+      "Il tempo impiegato per cucinare"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modello è la conoscenza operativa che permette al cuoco di affrontare anche una ricetta che non ha mai preparato prima."
+  }
+]

@@ -1,0 +1,13 @@
+Eseguire il validator
+
+Apri PowerShell nella cartella del progetto (dove hai package.json - nella root) e lancia:
+
+npm install
+npm run content:check
+
+Cosa aspettarti:
+
+Un report con le 5 Aree, ogni modulo con X/6 accanto.
+ECDL: Computer Essentials 6/6 ✅, Online Essentials 6/6 ✅, Word Processing 2/6 ⚠️ con l'elenco dei 4 file mancanti (Speed Quiz, Abbina, Memory, Completa la frase).
+Le altre 4 Aree (Cyberbullismo, Cybersecurity, Reti e Internet, Malware): tutti i moduli 0/6 ⬜ con (in arrivo — contentReady:false).
+In fondo: "RIEPILOGO" con Moduli totali: 31, Completi e validi (6/6): 2, e la sezione ANOMALIE che elenca Word Processing.

@@ -25,6 +25,7 @@ async function startFill(cont,mod){
     showCompletaFraseError('Impossibile caricare il gioco Completa la frase. Riprova o cambia modulo.');
     return;
   }
+  gsSet(GS.PLAYING);
   // sN: numero frasi scelto in setup-num (0 = "Tutte") — stesso comportamento di Quiz/Vero o Falso.
   let pool=_weightedShuffleFillPool([...src]);
   if(sN>0) pool=pool.slice(0,Math.min(sN,pool.length));

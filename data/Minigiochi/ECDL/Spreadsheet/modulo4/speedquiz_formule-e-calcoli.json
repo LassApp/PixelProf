@@ -1,0 +1,1097 @@
+[
+  {
+    "id": 1,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una formula in Excel?",
+    "options": [
+      "Un tipo di grafico",
+      "Un formato di file",
+      "Una funzione di ricerca testo",
+      "Un'istruzione di calcolo scritta dentro una cella"
+    ],
+    "correctIndex": 3,
+    "explanation": "Una formula è un'istruzione di calcolo scritta dentro una cella."
+  },
+  {
+    "id": 2,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale simbolo comincia sempre una formula in Excel?",
+    "options": [
+      "+",
+      "#",
+      "$",
+      "="
+    ],
+    "correctIndex": 3,
+    "explanation": "Ogni formula in Excel comincia sempre con il segno \"=\"."
+  },
+  {
+    "id": 3,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se si digita \"3+2\" senza il segno = davanti?",
+    "options": [
+      "Excel calcola comunque il risultato",
+      "Excel restituisce un errore #NOME?",
+      "Excel chiede di confermare se si tratta di un calcolo",
+      "Excel tratta il contenuto come testo, non come calcolo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Senza il segno =, Excel tratta il contenuto digitato come semplice testo."
+  },
+  {
+    "id": 4,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanto restituisce la formula \"=10-3\"?",
+    "options": [
+      "13",
+      "30",
+      "3",
+      "7"
+    ],
+    "correctIndex": 3,
+    "explanation": "\"=10-3\" restituisce 7."
+  },
+  {
+    "id": 5,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanto restituisce la formula \"=5*4\"?",
+    "options": [
+      "9",
+      "54",
+      "1",
+      "20"
+    ],
+    "correctIndex": 3,
+    "explanation": "\"=5*4\" restituisce 20."
+  },
+  {
+    "id": 6,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si sblocca usando indirizzi di celle al posto di numeri fissi in una formula?",
+    "options": [
+      "La possibilità di scrivere testo nelle celle",
+      "La formattazione automatica del foglio",
+      "Il blocco della riga superiore",
+      "Il vero potenziale delle formule"
+    ],
+    "correctIndex": 3,
+    "explanation": "Usando indirizzi di celle si sblocca il vero potenziale delle formule."
+  },
+  {
+    "id": 7,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa segnala l'errore \"#DIV/0!\"?",
+    "options": [
+      "Che manca una parentesi nella formula",
+      "Che la colonna è troppo stretta",
+      "Che il riferimento punta a un'altra cartella di lavoro",
+      "Che la formula sta tentando una divisione per zero"
+    ],
+    "correctIndex": 3,
+    "explanation": "\"#DIV/0!\" segnala un tentativo di divisione per zero."
+  },
+  {
+    "id": 8,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa segnala l'errore \"#NOME?\"?",
+    "options": [
+      "Che la formula contiene una divisione per zero",
+      "Che la cella referenziata è stata cancellata",
+      "Che la colonna è troppo stretta per il risultato",
+      "Che Excel non riconosce un elemento scritto nella formula, spesso per un errore di battitura"
+    ],
+    "correctIndex": 3,
+    "explanation": "\"#NOME?\" segnala un elemento non riconosciuto da Excel."
+  },
+  {
+    "id": 9,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa segnala l'errore \"#RIF!\"?",
+    "options": [
+      "Che la formula contiene una divisione per zero",
+      "Che manca il segno = a inizio formula",
+      "Che la colonna è troppo stretta",
+      "Che la formula fa riferimento a una cella che non esiste più"
+    ],
+    "correctIndex": 3,
+    "explanation": "\"#RIF!\" segnala un riferimento a una cella che non esiste più."
+  },
+  {
+    "id": 10,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi introdusse per la prima volta il simbolo \"=\" nella storia della matematica a stampa?",
+    "options": [
+      "Dmitrij Mendeleev",
+      "Larry Shumway",
+      "Richard Nixon",
+      "Robert Recorde, nel 1557"
+    ],
+    "correctIndex": 3,
+    "explanation": "Robert Recorde introdusse il simbolo \"=\" nel 1557."
+  },
+  {
+    "id": 11,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quale opera Robert Recorde introdusse il simbolo \"=\"?",
+    "options": [
+      "\"Essai sur le Jeu des Echecs\"",
+      "\"Growth in a Time of Debt\"",
+      "\"Commercial and Political Atlas\"",
+      "\"The Whetstone of Witte\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Recorde introdusse il simbolo nell'opera \"The Whetstone of Witte\"."
+  },
+  {
+    "id": 12,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché Recorde scelse due segmenti paralleli e di uguale lunghezza per il simbolo \"=\"?",
+    "options": [
+      "Perché erano più semplici da stampare",
+      "Perché li aveva copiati da un altro matematico",
+      "Perché rappresentavano due numeri identici",
+      "Per il loro significato visivo, perché \"nessun'altra coppia di cose può essere più uguale\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Recorde scelse quel simbolo per il suo significato visivo di uguaglianza."
+  },
+  {
+    "id": 13,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando il segno \"=\" di Recorde divenne standard in tutta Europa?",
+    "options": [
+      "Immediatamente, nel 1557",
+      "Nel corso dell'Ottocento",
+      "Solo con l'arrivo dei computer",
+      "Solo nel corso del Settecento"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il simbolo divenne standard in Europa solo nel corso del Settecento."
+  },
+  {
+    "id": 14,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un riferimento di cella?",
+    "options": [
+      "Un errore generato da Excel",
+      "Un tipo di funzione predefinita",
+      "Un formato numerico speciale",
+      "L'uso, dentro una formula, dell'indirizzo di un'altra cella al posto di un numero scritto direttamente"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un riferimento di cella è l'uso dell'indirizzo di un'altra cella al posto di un numero fisso."
+  },
+  {
+    "id": 15,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la formula \"=B2*C2\"?",
+    "options": [
+      "Somma i valori di B2 e C2",
+      "Conta quante celle sono compilate tra B2 e C2",
+      "Arrotonda il valore di B2 al numero di decimali di C2",
+      "Moltiplica i valori contenuti nelle celle B2 e C2"
+    ],
+    "correctIndex": 3,
+    "explanation": "La formula moltiplica i valori contenuti nelle celle B2 e C2."
+  },
+  {
+    "id": 16,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se si cambia il valore di una cella referenziata da una formula?",
+    "options": [
+      "La formula smette di funzionare",
+      "Bisogna riscrivere la formula da capo",
+      "Excel segnala un errore #RIF!",
+      "Il risultato della formula si aggiorna da solo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il risultato della formula si aggiorna automaticamente quando cambia il valore referenziato."
+  },
+  {
+    "id": 17,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, qual è il vero \"cuore\" di Excel?",
+    "options": [
+      "La velocità di calcolo del programma",
+      "Il numero di funzioni disponibili",
+      "La possibilità di stampare i fogli",
+      "La relazione tra le celle, non il calcolo in sé"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il vero cuore di Excel è la relazione che collega le celle tra loro."
+  },
+  {
+    "id": 18,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si scrive un riferimento a una cella su un altro foglio della stessa cartella di lavoro?",
+    "options": [
+      "Aggiungendo il nome del foglio tra parentesi quadre",
+      "Scrivendo il nome del foglio dopo un simbolo di dollaro",
+      "Non è possibile riferirsi a un altro foglio in una formula",
+      "Aggiungendo il nome del foglio seguito da un punto esclamativo, es. =Fornitori!B2"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si aggiunge il nome del foglio seguito da un punto esclamativo."
+  },
+  {
+    "id": 19,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa scoprì lo Stato dello Utah nell'aprile 2012?",
+    "options": [
+      "Un errore di 2,6 miliardi di dollari in un fondo d'investimento",
+      "Un errore di formattazione in un foglio di stampa",
+      "Un problema di sicurezza informatica nei propri database",
+      "Un errore di 25 milioni di dollari nel proprio bilancio per l'istruzione pubblica"
+    ],
+    "correctIndex": 3,
+    "explanation": "Lo Utah scoprì un errore di 25 milioni di dollari nel bilancio per l'istruzione pubblica."
+  },
+  {
+    "id": 20,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come definì l'errore il sovrintendente statale Larry Shumway?",
+    "options": [
+      "\"Un errore di battitura\"",
+      "\"Una divisione per zero\"",
+      "\"Una colonna troppo stretta\"",
+      "\"Un riferimento errato\" (\"a faulty reference\")"
+    ],
+    "correctIndex": 3,
+    "explanation": "Shumway definì l'errore come \"un riferimento errato\"."
+  },
+  {
+    "id": 21,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Di quante unità l'errore nel bilancio dello Utah sottostimò il numero reale di studenti attesi?",
+    "options": [
+      "Circa 25.000",
+      "Circa 179",
+      "Circa 2,6 milioni",
+      "Circa 8.000"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'errore sottostimò gli studenti attesi di circa 8.000 unità."
+  },
+  {
+    "id": 22,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa provocò, tra le altre conseguenze, l'errore nel bilancio dello Utah?",
+    "options": [
+      "La chiusura di tutte le scuole pubbliche dello stato",
+      "L'introduzione di un nuovo sistema informatico obbligatorio",
+      "Una causa legale contro Microsoft",
+      "Le dimissioni di due alti funzionari dell'ufficio statale dell'istruzione"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'errore portò alle dimissioni di due alti funzionari."
+  },
+  {
+    "id": 23,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fu costretto a fare il parlamento dello Utah a seguito dell'errore?",
+    "options": [
+      "Tagliare ulteriormente il bilancio dell'istruzione",
+      "Sospendere l'uso di Excel negli uffici pubblici",
+      "Richiedere un audit di tutti i fogli Excel dello stato",
+      "Stanziare d'urgenza i 25 milioni di dollari mancanti"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il parlamento dovette stanziare d'urgenza i fondi mancanti."
+  },
+  {
+    "id": 24,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato, nella metafora del modulo, un riferimento di cella?",
+    "options": [
+      "A un semaforo che comunica un'informazione immediata",
+      "A una stella polare fissa nel cielo",
+      "A un timbro già pronto in un ufficio",
+      "A un termostato collegato a un sensore di temperatura in un'altra stanza"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un riferimento di cella è paragonato a un termostato collegato a un sensore remoto."
+  },
+  {
+    "id": 25,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succederebbe, secondo la metafora del modulo, se il sensore del termostato fosse spostato nella stanza sbagliata?",
+    "options": [
+      "Il termostato smetterebbe di funzionare del tutto",
+      "Il termostato segnalerebbe un errore evidente",
+      "Il termostato si correggerebbe automaticamente",
+      "Il termostato continuerebbe a funzionare perfettamente, ma regolerebbe la temperatura sbagliata"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il termostato funzionerebbe comunque, ma basandosi sul dato sbagliato."
+  },
+  {
+    "id": 26,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono gli operatori matematici di base in Excel?",
+    "options": [
+      "Somma, media, minimo, massimo",
+      "Unione, intersezione, differenza, prodotto",
+      "Grassetto, corsivo, sottolineato, colore",
+      "Addizione, sottrazione, moltiplicazione, divisione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Gli operatori di base sono addizione, sottrazione, moltiplicazione, divisione."
+  },
+  {
+    "id": 27,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa servono le parentesi in una formula Excel?",
+    "options": [
+      "A definire un intervallo di celle",
+      "A inserire un commento nella formula",
+      "A bloccare un riferimento di cella",
+      "A controllare l'ordine in cui vengono eseguite le operazioni"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le parentesi controllano l'ordine di esecuzione delle operazioni."
+  },
+  {
+    "id": 28,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'ordine delle operazioni seguito da Excel?",
+    "options": [
+      "Da sinistra a destra, nell'ordine in cui sono scritte",
+      "Addizioni e sottrazioni prima di moltiplicazioni e divisioni",
+      "L'ordine alfabetico degli operatori",
+      "Moltiplicazioni e divisioni prima di addizioni e sottrazioni"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel esegue moltiplicazioni e divisioni prima di addizioni e sottrazioni."
+  },
+  {
+    "id": 29,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa calcola per prima la formula \"=A1-B1*C1\"?",
+    "options": [
+      "A1-B1",
+      "A1*C1",
+      "L'intera formula da sinistra a destra",
+      "B1*C1"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel calcola prima B1*C1, poi sottrae il risultato da A1."
+  },
+  {
+    "id": 30,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si scrive la formula per ottenere \"prezzo meno sconto, il tutto moltiplicato per la quantità\"?",
+    "options": [
+      "=A1-B1*C1",
+      "=A1*B1-C1",
+      "=A1-(B1*C1)",
+      "=(A1-B1)*C1"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le parentesi rendono esplicito l'ordine desiderato: =(A1-B1)*C1."
+  },
+  {
+    "id": 31,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando vengono calcolate le parentesi in una formula?",
+    "options": [
+      "Sempre per ultime",
+      "Solo se contengono un solo numero",
+      "Nello stesso momento degli altri operatori",
+      "Sempre per prime, prima di qualunque altro operatore"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le parentesi vengono sempre calcolate per prime."
+  },
+  {
+    "id": 32,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa annunciò, alla fine del 1994, il fondo Magellan di Fidelity Investments?",
+    "options": [
+      "Un errore di 25 milioni di dollari nel proprio bilancio",
+      "La chiusura definitiva del fondo",
+      "Un nuovo record di rendimento annuale",
+      "Una distribuzione di 4,32 dollari per azione agli azionisti"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il fondo Magellan annunciò una distribuzione di 4,32 dollari per azione."
+  },
+  {
+    "id": 33,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale errore causò la ritrattazione dell'annuncio del fondo Magellan?",
+    "options": [
+      "Un riferimento di cella puntava a un foglio sbagliato",
+      "Una colonna era troppo stretta per mostrare il valore corretto",
+      "Una formula divideva per zero",
+      "Un contabile omise il segno meno davanti a una perdita in conto capitale di 1,3 miliardi di dollari"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un contabile omise il segno meno davanti a una perdita di 1,3 miliardi di dollari."
+  },
+  {
+    "id": 34,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa provocò l'errore del segno meno nel caso del fondo Magellan?",
+    "options": [
+      "Azzerò completamente il valore del fondo",
+      "Raddoppiò il valore reale della perdita",
+      "Non ebbe alcun effetto sul risultato finale",
+      "Trasformò una perdita di 1,3 miliardi di dollari in un guadagno dello stesso importo"
+    ],
+    "correctIndex": 3,
+    "explanation": "La perdita di 1,3 miliardi si trasformò in un guadagno dello stesso importo."
+  },
+  {
+    "id": 35,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Di quanto si scostò la stima complessiva rispetto al valore corretto, nel caso del fondo Magellan?",
+    "options": [
+      "Di circa 25 milioni di dollari",
+      "Di circa 1,3 milioni di dollari",
+      "Di circa 8.000 dollari",
+      "Di circa 2,6 miliardi di dollari"
+    ],
+    "correctIndex": 3,
+    "explanation": "Lo scostamento complessivo fu di circa 2,6 miliardi di dollari."
+  },
+  {
+    "id": 36,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato, nella metafora del modulo, l'ordine delle operazioni?",
+    "options": [
+      "A un termostato collegato a un sensore",
+      "A una stella polare per un marinaio",
+      "A un timbro già pronto in un ufficio",
+      "Alle indicazioni di un itinerario"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'ordine delle operazioni è paragonato alle indicazioni di un itinerario."
+  },
+  {
+    "id": 37,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dimostra, secondo la metafora del modulo, l'esempio dell'itinerario?",
+    "options": [
+      "Che ogni itinerario porta sempre alla stessa destinazione",
+      "Che l'ordine delle istruzioni non ha mai importanza",
+      "Che le parentesi sono superflue nella maggior parte dei casi",
+      "Che le stesse istruzioni, lette in un ordine diverso, non portano affatto nello stesso posto"
+    ],
+    "correctIndex": 3,
+    "explanation": "La metafora mostra che l'ordine delle operazioni cambia radicalmente il risultato."
+  },
+  {
+    "id": 38,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una funzione in Excel?",
+    "options": [
+      "Un errore generato da una formula scritta male",
+      "Un tipo di riferimento di cella",
+      "Un formato numerico speciale",
+      "Un'operazione già pronta, integrata in Excel, che riceve dati in ingresso e restituisce un risultato"
+    ],
+    "correctIndex": 3,
+    "explanation": "Una funzione è un'operazione già pronta che riceve dati e restituisce un risultato."
+  },
+  {
+    "id": 39,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa restituisce la funzione \"=SOMMA(A1:A40)\"?",
+    "options": [
+      "La media dei valori nell'intervallo",
+      "Il valore più alto nell'intervallo",
+      "Il numero di celle compilate nell'intervallo",
+      "La somma di tutti i valori nell'intervallo indicato"
+    ],
+    "correctIndex": 3,
+    "explanation": "SOMMA restituisce la somma di tutti i valori nell'intervallo."
+  },
+  {
+    "id": 40,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa restituisce la funzione \"=MEDIA(A1:A40)\"?",
+    "options": [
+      "La somma dei valori",
+      "Il valore più basso",
+      "Il valore più alto",
+      "La media aritmetica dei valori"
+    ],
+    "correctIndex": 3,
+    "explanation": "MEDIA restituisce la media aritmetica dei valori nell'intervallo."
+  },
+  {
+    "id": 41,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa restituisce la funzione \"=MIN(A1:A40)\"?",
+    "options": [
+      "Il valore più alto presente nell'intervallo",
+      "La media dei valori",
+      "La somma dei valori",
+      "Il valore più basso presente nell'intervallo"
+    ],
+    "correctIndex": 3,
+    "explanation": "MIN restituisce il valore più basso presente nell'intervallo."
+  },
+  {
+    "id": 42,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa restituisce la funzione \"=CONTA.NUMERI(A1:A40)\"?",
+    "options": [
+      "Quante celle sono completamente vuote",
+      "La somma di tutti i numeri nell'intervallo",
+      "Il valore medio arrotondato",
+      "Quante celle, nell'intervallo, contengono effettivamente un numero"
+    ],
+    "correctIndex": 3,
+    "explanation": "CONTA.NUMERI conta quante celle contengono effettivamente un numero."
+  },
+  {
+    "id": 43,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In cosa si differenzia \"CONTA.VALORI\" da \"CONTA.NUMERI\"?",
+    "options": [
+      "CONTA.VALORI conta solo il testo, CONTA.NUMERI conta solo i numeri decimali",
+      "Sono esattamente la stessa funzione con nomi diversi",
+      "CONTA.VALORI funziona solo su un'intera cartella di lavoro",
+      "CONTA.VALORI conta tutte le celle non vuote, sia numeri sia testo, mentre CONTA.NUMERI conta solo le celle con numeri"
+    ],
+    "correctIndex": 3,
+    "explanation": "CONTA.VALORI conta tutte le celle non vuote, indipendentemente dal contenuto."
+  },
+  {
+    "id": 44,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la funzione \"ARROTONDA(A1;2)\"?",
+    "options": [
+      "Restituisce il valore moltiplicato per 2",
+      "Restituisce la somma dei primi 2 valori dell'intervallo",
+      "Restituisce il valore diviso per 2",
+      "Restituisce il valore della cella indicata arrotondato a due cifre decimali"
+    ],
+    "correctIndex": 3,
+    "explanation": "ARROTONDA restituisce il valore arrotondato al numero di decimali specificato."
+  },
+  {
+    "id": 45,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa prende come argomento ciascuna di queste funzioni base?",
+    "options": [
+      "Sempre e solo una singola cella",
+      "Il nome di un altro foglio",
+      "Un valore percentuale fisso",
+      "Un intervallo di celle"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ogni funzione prende come argomento un intervallo di celle."
+  },
+  {
+    "id": 46,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno comparve per la prima volta il pulsante Somma automatica?",
+    "options": [
+      "Nel 1985, con Excel 1.0",
+      "Nel 1995, con Excel 95",
+      "Nel 2008, con una versione successiva",
+      "Nel 1990, con Excel 3.0"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il pulsante Somma automatica comparve nel 1990, con Excel 3.0."
+  },
+  {
+    "id": 47,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa introdusse Excel 3.0, oltre al pulsante Somma automatica?",
+    "options": [
+      "Il sistema di indirizzamento R1C1",
+      "Il formato .xlsx",
+      "Le schede dei fogli cliccabili in fondo alla finestra",
+      "La prima barra degli strumenti vera e propria, con icone cliccabili"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel 3.0 introdusse la prima barra degli strumenti vera e propria."
+  },
+  {
+    "id": 48,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo diverse ricostruzioni della storia del software, cosa rappresentò Excel 3.0?",
+    "options": [
+      "Il primo programma con formule automatiche",
+      "Il primo foglio di calcolo mai realizzato",
+      "Il primo software venduto a più di un milione di copie",
+      "Il primo programma in assoluto a includere una barra degli strumenti di questo tipo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel 3.0 fu, secondo diverse ricostruzioni, il primo programma con questo tipo di barra degli strumenti."
+  },
+  {
+    "id": 49,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale simbolo comparve, fin dal primo giorno, sul pulsante Somma automatica?",
+    "options": [
+      "Il simbolo Pi (π)",
+      "Il simbolo Delta (Δ)",
+      "Il simbolo Omega (Ω)",
+      "Il simbolo Sigma (Σ)"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sul pulsante comparve il simbolo Sigma (Σ)."
+  },
+  {
+    "id": 50,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresenta il simbolo Sigma in matematica?",
+    "options": [
+      "Una media",
+      "Un prodotto",
+      "Una radice quadrata",
+      "Una sommatoria"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il simbolo Sigma rappresenta una sommatoria in matematica."
+  },
+  {
+    "id": 51,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la maniglia di riempimento?",
+    "options": [
+      "Un pulsante nella barra multifunzione",
+      "Una finestra di dialogo per i formati",
+      "Un simbolo di errore nella cella",
+      "Il piccolo quadratino visibile nell'angolo in basso a destra di una cella selezionata"
+    ],
+    "correctIndex": 3,
+    "explanation": "La maniglia di riempimento è il quadratino nell'angolo in basso a destra della cella selezionata."
+  },
+  {
+    "id": 52,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette di fare la maniglia di riempimento?",
+    "options": [
+      "Cambiare il colore di sfondo di una cella",
+      "Bloccare la riga superiore del foglio",
+      "Salvare il file in un formato diverso",
+      "Estendere automaticamente una formula o un valore alle celle vicine"
+    ],
+    "correctIndex": 3,
+    "explanation": "La maniglia permette di estendere automaticamente formule o valori alle celle vicine."
+  },
+  {
+    "id": 53,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede trascinando la maniglia di riempimento su una cella con una formula?",
+    "options": [
+      "Excel copia la formula identica in ogni cella, senza modificarla",
+      "Excel restituisce un errore",
+      "Excel cancella il contenuto delle celle vicine",
+      "Excel adatta automaticamente la formula a ciascuna nuova posizione, aggiornando i riferimenti riga per riga"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel adatta automaticamente i riferimenti della formula riga per riga."
+  },
+  {
+    "id": 54,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quale funzione già vista nel Modulo 2 è paragonabile il comportamento della maniglia su una formula?",
+    "options": [
+      "Alla funzione CTRL+F",
+      "Al comando Salva con nome",
+      "Alla funzione Blocca riquadri",
+      "Al riempimento automatico di sequenze di numeri o giorni della settimana"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il comportamento richiama il riempimento automatico di sequenze visto nel Modulo 2."
+  },
+  {
+    "id": 55,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fece Dmitrij Mendeleev nel 1869?",
+    "options": [
+      "Scoprì il gallio, lo scandio e il germanio",
+      "Pubblicò il primo trattato di algebra con il simbolo \"=\"",
+      "Introdusse la notazione algebrica degli scacchi",
+      "Organizzò 63 elementi chimici allora conosciuti in una tabella a righe e colonne"
+    ],
+    "correctIndex": 3,
+    "explanation": "Mendeleev organizzò 63 elementi chimici in una tabella a righe e colonne nel 1869."
+  },
+  {
+    "id": 56,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo quale criterio Mendeleev ordinò gli elementi nella propria tabella?",
+    "options": [
+      "L'ordine alfabetico dei nomi",
+      "La data di scoperta di ciascun elemento",
+      "Il colore degli elementi",
+      "Il peso atomico, raggruppandoli per proprietà simili"
+    ],
+    "correctIndex": 3,
+    "explanation": "Mendeleev ordinò gli elementi secondo il peso atomico e le proprietà simili."
+  },
+  {
+    "id": 57,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fece Mendeleev con alcune caselle della propria tabella?",
+    "options": [
+      "Le riempì con elementi inventati senza basi scientifiche",
+      "Le eliminò completamente dalla tabella",
+      "Le colorò per indicare un errore",
+      "Le lasciò deliberatamente vuote, prevedendo le proprietà degli elementi non ancora scoperti"
+    ],
+    "correctIndex": 3,
+    "explanation": "Mendeleev lasciò deliberatamente vuote alcune caselle, prevedendone le proprietà."
+  },
+  {
+    "id": 58,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come chiamò provvisoriamente Mendeleev gli elementi non ancora scoperti?",
+    "options": [
+      "Con numeri progressivi da 1 a 10",
+      "Con lettere dell'alfabeto greco",
+      "Con i nomi dei suoi collaboratori",
+      "Con nomi come \"eka-alluminio\", \"eka-boro\" ed \"eka-silicio\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Mendeleev li chiamò provvisoriamente con il prefisso \"eka\"."
+  },
+  {
+    "id": 59,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa il prefisso \"eka\" usato da Mendeleev, secondo il modulo?",
+    "options": [
+      "\"Elemento sconosciuto\", dal latino",
+      "\"Quasi uguale\", dal greco",
+      "\"Doppio\", dal russo",
+      "\"Uno oltre\", dal sanscrito"
+    ],
+    "correctIndex": 3,
+    "explanation": "\"Eka\" significa \"uno oltre\" in sanscrito."
+  },
+  {
+    "id": 60,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali elementi furono scoperti tra il 1875 e il 1886, confermando le previsioni di Mendeleev?",
+    "options": [
+      "Idrogeno, ossigeno e azoto",
+      "Oro, argento e platino",
+      "Carbonio, ferro e rame",
+      "Gallio, scandio e germanio"
+    ],
+    "correctIndex": 3,
+    "explanation": "Gallio, scandio e germanio furono scoperti tra il 1875 e il 1886."
+  },
+  {
+    "id": 61,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra, secondo il modulo, il caso di Mendeleev?",
+    "options": [
+      "Che la chimica moderna nacque solo grazie ai computer",
+      "Che le tabelle a righe e colonne furono inventate da Mendeleev",
+      "Che gli elementi chimici non seguono uno schema prevedibile",
+      "Che riconoscere e proseguire correttamente uno schema può rivelare con precisione anche ciò che ancora non è stato scritto"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il caso mostra il potere di riconoscere e proseguire correttamente uno schema."
+  },
+  {
+    "id": 62,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un riferimento relativo in Excel?",
+    "options": [
+      "Un riferimento che resta sempre fisso sulla stessa cella",
+      "Un errore generato da una formula scritta male",
+      "Un tipo di funzione predefinita",
+      "Un riferimento che cambia automaticamente quando una formula viene copiata o trascinata"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un riferimento relativo cambia automaticamente quando la formula viene copiata o trascinata."
+  },
+  {
+    "id": 63,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un riferimento assoluto in Excel?",
+    "options": [
+      "Un riferimento che cambia automaticamente a ogni riga",
+      "Un riferimento valido solo per un singolo foglio",
+      "Un riferimento che punta sempre alla cella A1",
+      "Un riferimento che resta sempre fisso sulla stessa cella, indipendentemente da dove la formula venga copiata"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un riferimento assoluto resta sempre fisso sulla stessa cella."
+  },
+  {
+    "id": 64,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si scrive un riferimento assoluto, per esempio riferito alla cella A1?",
+    "options": [
+      "#A1#",
+      "A1$",
+      "@A1",
+      "$A$1"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un riferimento assoluto si scrive con due simboli di dollaro, come $A$1."
+  },
+  {
+    "id": 65,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella formula \"=B2*$D$1\", cosa succede a $D$1 quando la formula viene trascinata verso il basso?",
+    "options": [
+      "Si aggiorna a D2, D3, D4...",
+      "Viene convertito automaticamente in un valore fisso",
+      "Genera un errore #RIF!",
+      "Resta sempre ancorato alla stessa cella"
+    ],
+    "correctIndex": 3,
+    "explanation": "$D$1 resta sempre ancorato alla stessa cella, anche trascinando la formula."
+  },
+  {
+    "id": 66,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come sintetizza il modulo la differenza tra riferimento relativo e assoluto?",
+    "options": [
+      "\"Relativo = fisso. Assoluto = variabile.\"",
+      "\"Relativo = errore. Assoluto = corretto.\"",
+      "\"Relativo = testo. Assoluto = numero.\"",
+      "\"Relativo = si sposta. Assoluto = resta ancorato.\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo sintetizza: \"Relativo = si sposta. Assoluto = resta ancorato.\""
+  },
+  {
+    "id": 67,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno si tenne la conferenza di Bretton Woods?",
+    "options": [
+      "Nel 1971",
+      "Nel 1957",
+      "Nel 1994",
+      "Nel luglio 1944"
+    ],
+    "correctIndex": 3,
+    "explanation": "La conferenza di Bretton Woods si tenne nel luglio 1944."
+  },
+  {
+    "id": 68,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanti paesi parteciparono alla conferenza di Bretton Woods?",
+    "options": [
+      "27",
+      "63",
+      "179",
+      "44"
+    ],
+    "correctIndex": 3,
+    "explanation": "Parteciparono delegati di 44 paesi."
+  },
+  {
+    "id": 69,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quale valore fu fissato il dollaro statunitense dall'accordo di Bretton Woods?",
+    "options": [
+      "25 dollari per oncia d'oro",
+      "100 dollari per oncia d'argento",
+      "1 dollaro per oncia di platino",
+      "35 dollari per oncia d'oro"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il dollaro fu fissato a 35 dollari per oncia d'oro."
+  },
+  {
+    "id": 70,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come furono agganciate le altre valute al dollaro, secondo l'accordo di Bretton Woods?",
+    "options": [
+      "Con un valore assoluto, mai modificabile",
+      "Senza alcun collegamento al dollaro",
+      "Con un valore casuale stabilito ogni anno",
+      "Con un valore relativo, aggiustabile entro margini limitati"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le altre valute furono agganciate al dollaro con un valore relativo."
+  },
+  {
+    "id": 71,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quanti anni resse circa il sistema di Bretton Woods?",
+    "options": [
+      "Quasi dieci anni",
+      "Quasi cinquant'anni",
+      "Quasi cent'anni",
+      "Quasi trent'anni"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il sistema resse per quasi trent'anni."
+  },
+  {
+    "id": 72,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fece il presidente Richard Nixon nell'agosto 1971?",
+    "options": [
+      "Fissò un nuovo valore per il dollaro rispetto all'oro",
+      "Firmò un nuovo accordo con altri 44 paesi",
+      "Introdusse una nuova moneta internazionale",
+      "Sospese unilateralmente la convertibilità del dollaro in oro"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nixon sospese unilateralmente la convertibilità del dollaro in oro."
+  },
+  {
+    "id": 73,
+    "module": "formule-e-calcoli",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa successe al sistema di cambi dopo la decisione di Nixon del 1971?",
+    "options": [
+      "Rimase invariato per altri trent'anni",
+      "Fu sostituito immediatamente da un nuovo sistema fisso",
+      "Portò a un accordo ancora più rigido tra i paesi partecipanti",
+      "Collassò in pochi anni verso tassi di cambio liberamente variabili"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il sistema collassò in pochi anni verso tassi di cambio liberamente variabili."
+  }
+]

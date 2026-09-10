@@ -1,0 +1,407 @@
+[
+  {
+    "id": 1,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "\"Ordinare\" i dati significa disporre le righe di un elenco secondo un criterio crescente o decrescente.",
+    "answer": true,
+    "explanation": "È la definizione di ordinamento fornita nel modulo."
+  },
+  {
+    "id": 2,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "\"Filtrare\" i dati significa eliminare definitivamente le righe che non soddisfano una condizione.",
+    "answer": false,
+    "explanation": "Le righe filtrate restano nel foglio, non vengono eliminate."
+  },
+  {
+    "id": 3,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il filtro si attiva con un clic sull'intestazione di ogni colonna.",
+    "answer": true,
+    "explanation": "È il metodo descritto nel modulo per attivare un filtro."
+  },
+  {
+    "id": 4,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 1890 l'Ufficio del Censimento degli Stati Uniti doveva contare oltre 62 milioni di abitanti.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa cifra per il censimento del 1890."
+  },
+  {
+    "id": 5,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo le stime dell'epoca, contare a mano i dati del censimento del 1890 avrebbe richiesto circa sei mesi.",
+    "answer": false,
+    "explanation": "Avrebbe richiesto quasi tredici anni; furono i sei mesi il tempo effettivo grazie al sistema di Hollerith."
+  },
+  {
+    "id": 6,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Herman Hollerith risolse il problema del censimento del 1890 con un sistema di schede perforate.",
+    "answer": true,
+    "explanation": "È la soluzione tecnica descritta nel modulo."
+  },
+  {
+    "id": 7,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'azienda fondata da Herman Hollerith sarebbe diventata, decenni più tardi, IBM.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa evoluzione storica dell'azienda di Hollerith."
+  },
+  {
+    "id": 8,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con l'operatore E, tutte le condizioni indicate devono essere vere insieme.",
+    "answer": true,
+    "explanation": "È la definizione dell'operatore E fornita nel modulo."
+  },
+  {
+    "id": 9,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con l'operatore O, tutte le condizioni indicate devono essere vere insieme.",
+    "answer": false,
+    "explanation": "Con O basta che almeno una condizione sia vera; è l'operatore E a richiedere che tutte lo siano."
+  },
+  {
+    "id": 10,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Applicando due filtri su colonne diverse, Excel mostra solo le righe che soddisfano entrambe le condizioni.",
+    "answer": true,
+    "explanation": "È il comportamento dei filtri combinati descritto nel modulo."
+  },
+  {
+    "id": 11,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La funzione \"=E(condizione1;condizione2)\" restituisce VERO solo se entrambe le condizioni sono vere.",
+    "answer": true,
+    "explanation": "È la definizione della funzione E fornita nel modulo."
+  },
+  {
+    "id": 12,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo sviluppo di DIALOG iniziò nel 1966 presso i laboratori di ricerca Lockheed a Palo Alto.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa data e questo luogo per l'origine di DIALOG."
+  },
+  {
+    "id": 13,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "DIALOG fu offerto commercialmente al pubblico a partire dal 1966, lo stesso anno in cui iniziò lo sviluppo.",
+    "answer": false,
+    "explanation": "DIALOG fu offerto commercialmente dal 1972, sei anni dopo l'inizio dello sviluppo."
+  },
+  {
+    "id": 14,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il cuore del sistema DIALOG erano gli operatori booleani E, O e NON.",
+    "answer": true,
+    "explanation": "Il modulo indica questi operatori come cuore del sistema DIALOG."
+  },
+  {
+    "id": 15,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una tabella in Excel è un intervallo di celle trasformato in una struttura riconosciuta come un unico oggetto coerente.",
+    "answer": true,
+    "explanation": "È la definizione di tabella fornita nel modulo."
+  },
+  {
+    "id": 16,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "In Excel, una tabella è una struttura statica, che va aggiornata manualmente come in Word.",
+    "answer": false,
+    "explanation": "In Excel una tabella è una struttura dinamica, che cresce da sola con i dati."
+  },
+  {
+    "id": 17,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un intervallo di celle si trasforma in tabella con Inserisci → Tabella, oppure con la scorciatoia CTRL+T.",
+    "answer": true,
+    "explanation": "È il metodo descritto nel modulo per creare una tabella."
+  },
+  {
+    "id": 18,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se si aggiunge una nuova riga subito sotto l'ultima riga di una tabella, viene automaticamente inclusa, ereditando stile e formule.",
+    "answer": true,
+    "explanation": "È il comportamento dinamico delle tabelle descritto nel modulo."
+  },
+  {
+    "id": 19,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le tabelle di Excel discendono da una funzione più semplice, chiamata \"Elenchi\", introdotta nel 2003.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa origine storica delle tabelle."
+  },
+  {
+    "id": 20,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La funzione \"Elenchi\" fu rinominata \"Tabelle\" nel 1997.",
+    "answer": false,
+    "explanation": "Fu rinominata nel 2007, non nel 1997."
+  },
+  {
+    "id": 21,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il \"riferimento strutturato\", introdotto insieme alle Tabelle, permette di fare riferimento al nome della tabella e della colonna.",
+    "answer": true,
+    "explanation": "È la funzione del riferimento strutturato descritta nel modulo."
+  },
+  {
+    "id": 22,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la metafora del modulo, una tabella di Excel è come una scaffalatura fissa, montata una volta per tutte.",
+    "answer": false,
+    "explanation": "È una tabella di Word a essere paragonata a una scaffalatura fissa; quella di Excel è componibile ed elastica."
+  },
+  {
+    "id": 23,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La formattazione condizionale applica automaticamente una formattazione alle celle che soddisfano una condizione, aggiornandosi da sola quando il valore cambia.",
+    "answer": true,
+    "explanation": "È la definizione di formattazione condizionale fornita nel modulo."
+  },
+  {
+    "id": 24,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Colorare una cella a mano si aggiorna automaticamente ogni volta che il valore cambia, come la formattazione condizionale.",
+    "answer": false,
+    "explanation": "Il colore manuale resta fisso; solo la formattazione condizionale si aggiorna automaticamente."
+  },
+  {
+    "id": 25,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le regole più comuni della formattazione condizionale si trovano sotto \"Regole evidenziazione celle\".",
+    "answer": true,
+    "explanation": "È la posizione indicata nel modulo per queste regole."
+  },
+  {
+    "id": 26,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le barre di dati e le scale di colore rappresentano l'intero intervallo di valori con una gradazione continua.",
+    "answer": true,
+    "explanation": "È la descrizione di questi strumenti visivi fornita nel modulo."
+  },
+  {
+    "id": 27,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La formattazione condizionale comparve per la prima volta in Excel 97.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa versione come prima comparsa della formattazione condizionale."
+  },
+  {
+    "id": 28,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La formattazione condizionale fu rinnovata con Excel 3.0, con l'aggiunta di barre di dati e scale di colore.",
+    "answer": false,
+    "explanation": "Fu rinnovata con Excel 2007, non con Excel 3.0."
+  },
+  {
+    "id": 29,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con Excel 2007 divenne possibile applicare fino a decine di regole diverse alla stessa area di celle.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa possibilità introdotta con Excel 2007."
+  },
+  {
+    "id": 30,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La formattazione condizionale è oggi uno strumento poco usato e quasi abbandonato in Excel.",
+    "answer": false,
+    "explanation": "È diventata uno degli strumenti di visualizzazione automatica dei dati più usati in assoluto."
+  },
+  {
+    "id": 31,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La funzione SE restituisce un risultato diverso a seconda che una condizione sia vera o falsa.",
+    "answer": true,
+    "explanation": "È la definizione della funzione SE fornita nel modulo."
+  },
+  {
+    "id": 32,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La sintassi della funzione SE è =SE(risultato_se_vero; condizione; risultato_se_falso).",
+    "answer": false,
+    "explanation": "La sintassi corretta è =SE(condizione; risultato_se_vero; risultato_se_falso)."
+  },
+  {
+    "id": 33,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La funzione SE può essere trascinata con la maniglia di riempimento lungo un'intera colonna.",
+    "answer": true,
+    "explanation": "Il modulo indica che la funzione SE si comporta come le altre funzioni in questo senso."
+  },
+  {
+    "id": 34,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "George Boole pubblicò, nel 1854, \"An Investigation of the Laws of Thought\".",
+    "answer": true,
+    "explanation": "Il modulo riporta questa data e questo titolo per il trattato di Boole."
+  },
+  {
+    "id": 35,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "George Boole insegnava all'Università di Cambridge quando pubblicò il proprio trattato.",
+    "answer": false,
+    "explanation": "Insegnava al Queen's College di Cork, in Irlanda, non a Cambridge."
+  },
+  {
+    "id": 36,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Boole propose di rappresentare ogni affermazione con uno tra due soli valori: vero o falso, 1 o 0.",
+    "answer": true,
+    "explanation": "È la proposta di Boole descritta nel modulo."
+  },
+  {
+    "id": 37,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un secolo dopo Boole, la sua \"algebra della logica\" divenne il principio di funzionamento di ogni circuito elettronico e di ogni computer.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa eredità storica del lavoro di Boole."
+  },
+  {
+    "id": 38,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un grafico è la rappresentazione visiva dei dati contenuti in un intervallo del foglio.",
+    "answer": true,
+    "explanation": "È la definizione di grafico fornita nel modulo."
+  },
+  {
+    "id": 39,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il grafico a barre è il più adatto per rappresentare un andamento nel tempo.",
+    "answer": false,
+    "explanation": "È il grafico a linee a essere il più adatto per un andamento nel tempo."
+  },
+  {
+    "id": 40,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il grafico a torta mostra come un totale si divide in parti proporzionali.",
+    "answer": true,
+    "explanation": "È la funzione del grafico a torta descritta nel modulo."
+  },
+  {
+    "id": 41,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se si cambia un valore nella tabella di origine, un grafico collegato si aggiorna da solo.",
+    "answer": true,
+    "explanation": "Il modulo descrive questo comportamento dinamico del grafico."
+  },
+  {
+    "id": 42,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Florence Nightingale è nota soprattutto per il proprio lavoro come infermiera e statistica durante la guerra di Crimea.",
+    "answer": true,
+    "explanation": "Il modulo riporta questo contesto storico per Florence Nightingale."
+  },
+  {
+    "id": 43,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Florence Nightingale scoprì che la maggior parte dei soldati britannici era morta in battaglia, non per malattia.",
+    "answer": false,
+    "explanation": "Scoprì che la maggior parte era morta per malattie infettive prevenibili, non in battaglia."
+  },
+  {
+    "id": 44,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il grafico \"coxcomb\" pubblicato da Nightingale nel 1858 era un grafico circolare suddiviso in spicchi mensili.",
+    "answer": true,
+    "explanation": "È la descrizione del grafico coxcomb fornita nel modulo."
+  },
+  {
+    "id": 45,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il grafico di Nightingale contribuì in modo determinante a ottenere le riforme sanitarie dell'esercito britannico.",
+    "answer": true,
+    "explanation": "Il modulo riporta questo effetto concreto del grafico di Nightingale."
+  }
+]

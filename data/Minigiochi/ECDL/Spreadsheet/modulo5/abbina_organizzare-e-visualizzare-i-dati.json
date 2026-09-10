@@ -1,0 +1,128 @@
+{
+  "id": 1,
+  "module": "organizzare-e-visualizzare-i-dati",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Ordinare",
+        "definition": "Disporre le righe di un elenco secondo un criterio crescente o decrescente"
+      },
+      {
+        "term": "Filtrare",
+        "definition": "Mostrare temporaneamente solo le righe che soddisfano una condizione, senza cancellare le altre"
+      },
+      {
+        "term": "Herman Hollerith",
+        "definition": "Ingegnere che nel 1890 risolse il censimento USA con un sistema di schede perforate"
+      },
+      {
+        "term": "Macchina ordinatrice",
+        "definition": "Cassa di legno con 26 scomparti che smistava automaticamente le schede perforate"
+      },
+      {
+        "term": "IBM",
+        "definition": "Azienda in cui si trasformò, decenni dopo, la società fondata da Hollerith"
+      }
+    ],
+    [
+      {
+        "term": "Operatore E",
+        "definition": "Restituisce VERO solo se tutte le condizioni indicate sono vere insieme"
+      },
+      {
+        "term": "Operatore O",
+        "definition": "Restituisce VERO se almeno una delle condizioni indicate è vera"
+      },
+      {
+        "term": "=E(condizione1;condizione2)",
+        "definition": "Funzione che restituisce VERO solo se entrambe le condizioni sono vere"
+      },
+      {
+        "term": "Roger K. Summit",
+        "definition": "Ingegnere che guidò lo sviluppo di DIALOG, sistema di interrogazione di database bibliografici"
+      },
+      {
+        "term": "DIALOG",
+        "definition": "Sistema offerto commercialmente dal 1972, basato sugli operatori booleani E, O e NON"
+      }
+    ],
+    [
+      {
+        "term": "Tabella (Excel)",
+        "definition": "Intervallo di celle trasformato in una struttura dinamica, con intestazioni, stile e filtri automatici"
+      },
+      {
+        "term": "CTRL+T",
+        "definition": "Scorciatoia per trasformare un intervallo di celle in una tabella"
+      },
+      {
+        "term": "Riferimento strutturato",
+        "definition": "Modo di scrivere le formule facendo riferimento al nome della tabella e della colonna"
+      },
+      {
+        "term": "Excel 2007",
+        "definition": "Versione che rinominò la funzione \"Elenchi\" in \"Tabelle\", introducendo i riferimenti strutturati"
+      }
+    ],
+    [
+      {
+        "term": "Formattazione condizionale",
+        "definition": "Regole che applicano automaticamente una formattazione alle celle in base al loro valore"
+      },
+      {
+        "term": "Regole evidenziazione celle",
+        "definition": "Condizioni immediate come \"minore di\", \"maggiore di\", \"tra\", \"uguale a\""
+      },
+      {
+        "term": "Barre di dati",
+        "definition": "Rappresentano l'intero intervallo di valori con una gradazione continua"
+      },
+      {
+        "term": "Excel 97",
+        "definition": "Versione in cui comparve per la prima volta la formattazione condizionale"
+      }
+    ],
+    [
+      {
+        "term": "Funzione SE",
+        "definition": "Restituisce un risultato diverso a seconda che una condizione sia vera o falsa"
+      },
+      {
+        "term": "=SE(condizione; risultato_se_vero; risultato_se_falso)",
+        "definition": "Sintassi della funzione SE"
+      },
+      {
+        "term": "George Boole",
+        "definition": "Matematico britannico che nel 1854 applicò per la prima volta l'algebra al ragionamento logico"
+      },
+      {
+        "term": "An Investigation of the Laws of Thought",
+        "definition": "Trattato del 1854 in cui Boole propose di rappresentare ogni affermazione come vera o falsa"
+      }
+    ],
+    [
+      {
+        "term": "Grafico a colonne",
+        "definition": "Confronta valori diversi lungo un asse verticale"
+      },
+      {
+        "term": "Grafico a linee",
+        "definition": "Collega i valori con una linea continua, adatto per un andamento nel tempo"
+      },
+      {
+        "term": "Grafico a torta",
+        "definition": "Mostra come un totale si divide in parti proporzionali"
+      },
+      {
+        "term": "Florence Nightingale",
+        "definition": "Infermiera e statistica britannica che nel 1858 pubblicò il grafico \"coxcomb\" sulle cause di morte dei soldati"
+      },
+      {
+        "term": "Coxcomb (diagramma a rosa)",
+        "definition": "Grafico circolare a spicchi mensili colorati secondo la causa di morte"
+      }
+    ]
+  ]
+}

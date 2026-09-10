@@ -1,0 +1,124 @@
+{
+  "id": 1,
+  "module": "formule-e-calcoli",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Formula",
+        "definition": "Istruzione di calcolo scritta dentro una cella, che comincia sempre con il segno \"=\""
+      },
+      {
+        "term": "\"#DIV/0!\"",
+        "definition": "Errore che segnala un tentativo di divisione per zero"
+      },
+      {
+        "term": "\"#NOME?\"",
+        "definition": "Errore che segnala un elemento non riconosciuto da Excel, spesso per un errore di battitura"
+      },
+      {
+        "term": "\"#RIF!\"",
+        "definition": "Errore che segnala un riferimento a una cella che non esiste più"
+      },
+      {
+        "term": "Robert Recorde",
+        "definition": "Matematico gallese che nel 1557 introdusse per primo il simbolo \"=\""
+      }
+    ],
+    [
+      {
+        "term": "Riferimento di cella",
+        "definition": "Uso, dentro una formula, dell'indirizzo di un'altra cella al posto di un numero fisso"
+      },
+      {
+        "term": "=A2*B2",
+        "definition": "Esempio di formula che moltiplica il contenuto di due celle"
+      },
+      {
+        "term": "=Fornitori!B2",
+        "definition": "Esempio di riferimento a una cella su un altro foglio della stessa cartella di lavoro"
+      },
+      {
+        "term": "Larry Shumway",
+        "definition": "Sovrintendente statale che nel 2012 spiegò pubblicamente l'errore di 25 milioni di dollari nel bilancio dello Utah"
+      }
+    ],
+    [
+      {
+        "term": "+  -  *  /",
+        "definition": "I quattro operatori matematici di base in Excel"
+      },
+      {
+        "term": "Parentesi",
+        "definition": "Permettono di controllare l'ordine in cui vengono eseguite le operazioni"
+      },
+      {
+        "term": "Ordine delle operazioni",
+        "definition": "Moltiplicazioni e divisioni eseguite prima di addizioni e sottrazioni"
+      },
+      {
+        "term": "Fondo Magellan di Fidelity Investments",
+        "definition": "Fondo coinvolto, nel 1994, in un errore di 2,6 miliardi di dollari per un segno meno omesso"
+      }
+    ],
+    [
+      {
+        "term": "=SOMMA()",
+        "definition": "Restituisce la somma di tutti i valori in un intervallo"
+      },
+      {
+        "term": "=MEDIA()",
+        "definition": "Restituisce la media aritmetica dei valori in un intervallo"
+      },
+      {
+        "term": "=CONTA.VALORI()",
+        "definition": "Restituisce quante celle in un intervallo non sono vuote"
+      },
+      {
+        "term": "=ARROTONDA()",
+        "definition": "Restituisce un valore arrotondato al numero di cifre decimali specificato"
+      },
+      {
+        "term": "Simbolo Sigma (Σ)",
+        "definition": "Simbolo che identifica il pulsante Somma automatica, introdotto con Excel 3.0 nel 1990"
+      }
+    ],
+    [
+      {
+        "term": "Maniglia di riempimento",
+        "definition": "Piccolo quadratino nell'angolo in basso a destra di una cella selezionata"
+      },
+      {
+        "term": "Dmitrij Mendeleev",
+        "definition": "Chimico russo che nel 1869 lasciò caselle vuote nella tavola periodica, prevedendone le proprietà"
+      },
+      {
+        "term": "Gallio, scandio e germanio",
+        "definition": "Elementi scoperti tra il 1875 e il 1886, con proprietà vicine a quelle previste da Mendeleev"
+      },
+      {
+        "term": "\"Eka\"",
+        "definition": "Prefisso dal sanscrito per \"uno oltre\", usato da Mendeleev per nominare provvisoriamente gli elementi non ancora scoperti"
+      }
+    ],
+    [
+      {
+        "term": "Riferimento relativo",
+        "definition": "Cambia automaticamente quando una formula viene copiata o trascinata"
+      },
+      {
+        "term": "Riferimento assoluto",
+        "definition": "Resta sempre fisso sulla stessa cella, indipendentemente da dove la formula venga copiata"
+      },
+      {
+        "term": "$A$1",
+        "definition": "Esempio di riferimento assoluto, bloccato con i simboli di dollaro"
+      },
+      {
+        "term": "Accordi di Bretton Woods",
+        "definition": "Sistema monetario del 1944 che fissò il dollaro a un valore assoluto di 35 dollari per oncia d'oro"
+      }
+    ]
+  ]
+}

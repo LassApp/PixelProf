@@ -1,0 +1,407 @@
+[
+  {
+    "id": 1,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una formula in Excel è un'istruzione di calcolo scritta dentro una cella.",
+    "answer": true,
+    "explanation": "È la definizione di formula fornita nel modulo."
+  },
+  {
+    "id": 2,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Digitando \"3+2\" senza il segno = davanti, Excel calcola comunque il risultato.",
+    "answer": false,
+    "explanation": "Senza il segno =, Excel tratta il contenuto digitato come semplice testo, non come calcolo."
+  },
+  {
+    "id": 3,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'errore \"#DIV/0!\" segnala che la formula sta tentando una divisione per zero.",
+    "answer": true,
+    "explanation": "È il significato di \"#DIV/0!\" descritto nel modulo."
+  },
+  {
+    "id": 4,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'errore \"#RIF!\" segnala una divisione per zero.",
+    "answer": false,
+    "explanation": "\"#RIF!\" segnala un riferimento a una cella che non esiste più; è \"#DIV/0!\" a segnalare la divisione per zero."
+  },
+  {
+    "id": 5,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Robert Recorde introdusse per la prima volta il simbolo \"=\" nel 1557, con l'opera \"The Whetstone of Witte\".",
+    "answer": true,
+    "explanation": "Il modulo riporta questa data e questa opera come origine storica del simbolo \"=\"."
+  },
+  {
+    "id": 6,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il simbolo \"=\" di Recorde divenne subito standard in tutta Europa, già nel Cinquecento.",
+    "answer": false,
+    "explanation": "Il simbolo divenne standard solo nel corso del Settecento, non subito nel Cinquecento."
+  },
+  {
+    "id": 7,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Recorde scelse due segmenti paralleli di uguale lunghezza per il loro significato visivo di uguaglianza.",
+    "answer": true,
+    "explanation": "Il modulo riporta esattamente questa motivazione, citata dalle parole originali di Recorde."
+  },
+  {
+    "id": 8,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un riferimento di cella è l'uso, dentro una formula, dell'indirizzo di un'altra cella al posto di un numero fisso.",
+    "answer": true,
+    "explanation": "È la definizione di riferimento di cella fornita nel modulo."
+  },
+  {
+    "id": 9,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se si cambia il valore di una cella referenziata da una formula, bisogna riscrivere la formula perché il risultato si aggiorni.",
+    "answer": false,
+    "explanation": "Il risultato della formula si aggiorna da solo, senza bisogno di riscriverla."
+  },
+  {
+    "id": 10,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un riferimento può puntare a una cella su un altro foglio, aggiungendo il nome del foglio seguito da un punto esclamativo.",
+    "answer": true,
+    "explanation": "È la sintassi descritta nel modulo per i riferimenti tra fogli diversi."
+  },
+  {
+    "id": 11,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'aprile 2012 lo Stato dello Utah scoprì un errore di 25 milioni di dollari nel proprio bilancio per l'istruzione pubblica.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa data e questa cifra per il caso reale citato."
+  },
+  {
+    "id": 12,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il sovrintendente Larry Shumway attribuì l'errore a una divisione per zero in una formula.",
+    "answer": false,
+    "explanation": "Shumway attribuì l'errore a \"un riferimento errato\", non a una divisione per zero."
+  },
+  {
+    "id": 13,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'errore nel bilancio dello Utah sottostimò il numero reale di studenti attesi di circa 8.000 unità.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa cifra come conseguenza dell'errore."
+  },
+  {
+    "id": 14,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'errore nel bilancio dello Utah portò alle dimissioni di due alti funzionari dell'ufficio statale dell'istruzione.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa conseguenza diretta dell'errore."
+  },
+  {
+    "id": 15,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli operatori matematici di base in Excel sono addizione, sottrazione, moltiplicazione e divisione.",
+    "answer": true,
+    "explanation": "Sono gli operatori di base indicati nel modulo."
+  },
+  {
+    "id": 16,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "In Excel, addizioni e sottrazioni vengono sempre eseguite prima di moltiplicazioni e divisioni.",
+    "answer": false,
+    "explanation": "È il contrario: moltiplicazioni e divisioni vengono eseguite prima di addizioni e sottrazioni."
+  },
+  {
+    "id": 17,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La formula \"=A1-B1*C1\" calcola prima B1*C1, e solo dopo sottrae il risultato da A1.",
+    "answer": true,
+    "explanation": "È l'esempio fornito nel modulo sull'ordine delle operazioni."
+  },
+  {
+    "id": 18,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le parentesi in una formula vengono sempre calcolate per prime, prima di qualunque altro operatore.",
+    "answer": true,
+    "explanation": "Il modulo indica esplicitamente questa priorità delle parentesi."
+  },
+  {
+    "id": 19,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Alla fine del 1994, il fondo Magellan di Fidelity Investments dovette ritrattare pubblicamente un annuncio di distribuzione agli azionisti.",
+    "answer": true,
+    "explanation": "Il modulo riporta questo caso reale con questa data."
+  },
+  {
+    "id": 20,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'errore nel caso del fondo Magellan fu causato da un riferimento di cella che puntava al foglio sbagliato.",
+    "answer": false,
+    "explanation": "Fu causato da un contabile che omise il segno meno davanti a una perdita, non da un riferimento sbagliato."
+  },
+  {
+    "id": 21,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'errore del segno meno nel caso Magellan trasformò una perdita di 1,3 miliardi di dollari in un guadagno dello stesso importo.",
+    "answer": true,
+    "explanation": "Il modulo descrive esattamente questo effetto dell'errore."
+  },
+  {
+    "id": 22,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'errore nel caso Magellan fece scostare la stima complessiva di circa 25 milioni di dollari.",
+    "answer": false,
+    "explanation": "Lo scostamento fu di circa 2,6 miliardi di dollari, non 25 milioni."
+  },
+  {
+    "id": 23,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una funzione in Excel è un'operazione già pronta che riceve dati in ingresso e restituisce un risultato.",
+    "answer": true,
+    "explanation": "È la definizione di funzione fornita nel modulo."
+  },
+  {
+    "id": 24,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La funzione \"=MEDIA(A1:A40)\" restituisce la somma di tutti i valori nell'intervallo.",
+    "answer": false,
+    "explanation": "MEDIA restituisce la media aritmetica dei valori, non la somma."
+  },
+  {
+    "id": 25,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La funzione \"CONTA.VALORI\" conta tutte le celle non vuote di un intervallo, sia che contengano numeri sia testo.",
+    "answer": true,
+    "explanation": "È la definizione di CONTA.VALORI fornita nel modulo."
+  },
+  {
+    "id": 26,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La funzione \"ARROTONDA(A1;2)\" restituisce il valore della cella arrotondato a due cifre decimali.",
+    "answer": true,
+    "explanation": "È la funzione di ARROTONDA descritta nel modulo."
+  },
+  {
+    "id": 27,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il pulsante Somma automatica comparve per la prima volta nel 1990, con il lancio di Excel 3.0.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa data per l'introduzione del pulsante."
+  },
+  {
+    "id": 28,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Excel 3.0 fu il primo programma a introdurre il formato .xlsx.",
+    "answer": false,
+    "explanation": "Excel 3.0 introdusse la prima barra degli strumenti vera e propria, non il formato .xlsx."
+  },
+  {
+    "id": 29,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sul pulsante Somma automatica comparve, fin dal primo giorno, il simbolo Sigma (Σ).",
+    "answer": true,
+    "explanation": "Il modulo riporta questo dettaglio storico sul pulsante Somma automatica."
+  },
+  {
+    "id": 30,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il simbolo Sigma identifica ancora oggi, oltre trentacinque anni dopo, il pulsante Somma automatica in ogni versione di Excel.",
+    "answer": true,
+    "explanation": "Il modulo conferma questa continuità storica del simbolo Sigma."
+  },
+  {
+    "id": 31,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La maniglia di riempimento è il piccolo quadratino visibile nell'angolo in basso a destra di una cella selezionata.",
+    "answer": true,
+    "explanation": "È la definizione di maniglia di riempimento fornita nel modulo."
+  },
+  {
+    "id": 32,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Trascinando la maniglia di riempimento su una formula, Excel copia sempre la stessa formula identica, senza modificarla.",
+    "answer": false,
+    "explanation": "Excel adatta automaticamente i riferimenti di cella riga per riga, non copia la formula identica."
+  },
+  {
+    "id": 33,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel 1869 Dmitrij Mendeleev organizzò 63 elementi chimici in una tabella a righe e colonne.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa data e questo numero di elementi."
+  },
+  {
+    "id": 34,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Mendeleev lasciò deliberatamente alcune caselle vuote nella propria tabella, prevedendo le proprietà di elementi non ancora scoperti.",
+    "answer": true,
+    "explanation": "È il comportamento descritto nel modulo per Mendeleev."
+  },
+  {
+    "id": 35,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli elementi non ancora scoperti furono chiamati da Mendeleev con nomi presi dal greco antico.",
+    "answer": false,
+    "explanation": "Furono chiamati con il prefisso \"eka\", che deriva dal sanscrito, non dal greco."
+  },
+  {
+    "id": 36,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Tra il 1875 e il 1886 furono scoperti tre elementi reali (gallio, scandio, germanio) con proprietà vicine a quelle previste da Mendeleev.",
+    "answer": true,
+    "explanation": "Il modulo riporta questi tre elementi e questo intervallo di anni."
+  },
+  {
+    "id": 37,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le proprietà degli elementi scoperti risultarono molto diverse da quelle previste da Mendeleev.",
+    "answer": false,
+    "explanation": "Le proprietà risultarono sorprendentemente vicine a quelle previste, non diverse."
+  },
+  {
+    "id": 38,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un riferimento relativo cambia automaticamente quando una formula viene copiata o trascinata.",
+    "answer": true,
+    "explanation": "È la definizione di riferimento relativo fornita nel modulo."
+  },
+  {
+    "id": 39,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un riferimento assoluto, come $A$1, cambia automaticamente quando una formula viene trascinata.",
+    "answer": false,
+    "explanation": "Un riferimento assoluto resta sempre fisso, non cambia quando la formula viene trascinata."
+  },
+  {
+    "id": 40,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per bloccare un riferimento si aggiungono due simboli di dollaro, uno prima della lettera di colonna e uno prima del numero di riga.",
+    "answer": true,
+    "explanation": "È la sintassi descritta nel modulo per i riferimenti assoluti."
+  },
+  {
+    "id": 41,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel luglio 1944, delegati di 44 paesi si riunirono a Bretton Woods per costruire un nuovo sistema monetario internazionale.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa data e questo numero di paesi partecipanti."
+  },
+  {
+    "id": 42,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'accordo di Bretton Woods fissò il dollaro statunitense a un valore assoluto di 35 dollari per oncia d'oro.",
+    "answer": true,
+    "explanation": "È il valore riportato nel modulo per l'accordo di Bretton Woods."
+  },
+  {
+    "id": 43,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel sistema di Bretton Woods, anche l'oro era agganciato al dollaro con un valore relativo.",
+    "answer": false,
+    "explanation": "Era il dollaro a essere fissato all'oro; le altre valute erano agganciate al dollaro con valore relativo."
+  },
+  {
+    "id": 44,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'agosto 1971 il presidente Richard Nixon sospese unilateralmente la convertibilità del dollaro in oro.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa data e questo evento storico."
+  },
+  {
+    "id": 45,
+    "module": "formule-e-calcoli",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Dopo la decisione di Nixon del 1971, il sistema di cambi fissi restò invariato per altri trent'anni.",
+    "answer": false,
+    "explanation": "Il sistema collassò in pochi anni verso tassi di cambio liberamente variabili, non restò invariato."
+  }
+]

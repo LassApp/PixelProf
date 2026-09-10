@@ -1,0 +1,245 @@
+[
+  {
+    "id": 1,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "\"Ridimensionare\" righe e colonne significa modificarne rispettivamente l'altezza e la larghezza, per adattarle al contenuto.",
+    "answer": true,
+    "explanation": "È la definizione di ridimensionamento fornita nel modulo."
+  },
+  {
+    "id": 2,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il ridimensionamento automatico si ottiene trascinando manualmente il bordo di una colonna fino alla larghezza desiderata.",
+    "answer": false,
+    "explanation": "Il ridimensionamento automatico si ottiene con un doppio clic sul bordo, non trascinando manualmente."
+  },
+  {
+    "id": 3,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La fila di simboli \"######\" indica che una colonna è troppo stretta per mostrare per intero un valore numerico.",
+    "answer": true,
+    "explanation": "È il significato di \"######\" descritto nel modulo."
+  },
+  {
+    "id": 4,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un testo troppo lungo per una colonna viene segnalato con la fila di simboli \"######\", esattamente come un numero.",
+    "answer": false,
+    "explanation": "Il testo viene tagliato silenziosamente, senza alcun avviso; solo i numeri vengono segnalati con \"######\"."
+  },
+  {
+    "id": 5,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la regola pratica del modulo, la struttura del foglio deve adattarsi ai dati, non il contrario.",
+    "answer": true,
+    "explanation": "È la regola pratica indicata esplicitamente nel modulo."
+  },
+  {
+    "id": 6,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Portare la larghezza di una colonna a zero equivale a nasconderla, senza eliminarne il contenuto.",
+    "answer": true,
+    "explanation": "Il modulo descrive esattamente questo effetto del ridimensionamento a zero."
+  },
+  {
+    "id": 7,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel settembre 2008, durante il fallimento di Lehman Brothers, Barclays Capital stava per acquistarne parte degli attivi.",
+    "answer": true,
+    "explanation": "Il modulo riporta questo contesto storico per il caso reale citato."
+  },
+  {
+    "id": 8,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I 179 contratti indesiderati nel caso Lehman Brothers/Barclays erano stati cancellati definitivamente dal foglio Excel.",
+    "answer": false,
+    "explanation": "Erano stati nascosti riducendo a zero l'altezza delle righe, non cancellati."
+  },
+  {
+    "id": 9,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il documento con i contratti indesiderati fu approvato dal tribunale fallimentare prima che l'errore fosse scoperto.",
+    "answer": true,
+    "explanation": "Il modulo riporta esattamente questa sequenza di eventi nel caso Lehman Brothers/Barclays."
+  },
+  {
+    "id": 10,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La formattazione del carattere riguarda font, dimensione, grassetto, corsivo e colore del testo.",
+    "answer": true,
+    "explanation": "È la definizione di formattazione del carattere fornita nel modulo."
+  },
+  {
+    "id": 11,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il colore di riempimento riguarda il colore del testo, non lo sfondo della cella.",
+    "answer": false,
+    "explanation": "Il colore di riempimento è lo sfondo della cella, non il colore del testo."
+  },
+  {
+    "id": 12,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il \"testo a capo\" permette a un contenuto lungo di andare su più righe dentro la stessa cella.",
+    "answer": true,
+    "explanation": "È la funzione del testo a capo descritta nel modulo."
+  },
+  {
+    "id": 13,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il comando \"Unisci e centra\" trasforma più celle adiacenti in un'unica cella più grande, con il contenuto centrato.",
+    "answer": true,
+    "explanation": "È la definizione del comando fornita nel modulo."
+  },
+  {
+    "id": 14,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se si uniscono celle che contenevano ciascuna un proprio dato, Excel conserva tutti i dati disponendoli su più righe.",
+    "answer": false,
+    "explanation": "Excel conserva solo il contenuto della cella in alto a sinistra e scarta gli altri dati."
+  },
+  {
+    "id": 15,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per convenzione diffusa e non scritta, il rosso viene associato quasi ovunque a un valore critico o negativo.",
+    "answer": true,
+    "explanation": "È la convenzione descritta nel modulo."
+  },
+  {
+    "id": 16,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La convenzione di usare il rosso per le voci negative nasce con la contabilità su carta dei primi decenni del Novecento.",
+    "answer": true,
+    "explanation": "Il modulo attribuisce questa origine storica alla convenzione del rosso."
+  },
+  {
+    "id": 17,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'espressione \"essere in rosso\" indica, nel suo significato contabile originale, un bilancio in attivo.",
+    "answer": false,
+    "explanation": "\"Essere in rosso\" indica una perdita o un debito; è \"essere in nero\" a indicare un bilancio in attivo."
+  },
+  {
+    "id": 18,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "In italiano, l'espressione \"essere in nero\" ha assunto anche un secondo significato legato al lavoro irregolare.",
+    "answer": true,
+    "explanation": "Il modulo segnala questo secondo significato assunto in italiano."
+  },
+  {
+    "id": 19,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il formato numerico di una cella determina come un valore viene mostrato a schermo, senza modificare il valore effettivamente memorizzato.",
+    "answer": true,
+    "explanation": "È la definizione di formato numerico fornita nel modulo."
+  },
+  {
+    "id": 20,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le categorie principali di formato numerico indicate nel modulo sono grassetto, corsivo, sottolineato e colore.",
+    "answer": false,
+    "explanation": "Le categorie principali sono numero, valuta, percentuale e data, non attributi del carattere."
+  },
+  {
+    "id": 21,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il numero 0,25 può essere visualizzato come \"0,25\", \"25%\" oppure \"€ 0,25\", restando sempre lo stesso valore.",
+    "answer": true,
+    "explanation": "È l'esempio fornito nel modulo sul principio valore fisso/visualizzazione variabile."
+  },
+  {
+    "id": 22,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "In alcune circostanze è Excel, e non l'utente, a decidere il formato di una cella, interpretando automaticamente ciò che viene digitato.",
+    "answer": true,
+    "explanation": "Il modulo descrive esplicitamente questo comportamento automatico di Excel."
+  },
+  {
+    "id": 23,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Scrivendo \"1/2\" in una cella, Excel lo interpreta sempre come una frazione matematica, mai come una data.",
+    "answer": false,
+    "explanation": "Excel potrebbe riconoscerlo come una data e trasformarlo in \"1° febbraio\"."
+  },
+  {
+    "id": 24,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La reinterpretazione automatica di Excel può cambiare silenziosamente il valore stesso memorizzato in una cella, non solo il suo aspetto.",
+    "answer": true,
+    "explanation": "Il modulo sottolinea questo rischio concreto della reinterpretazione automatica."
+  },
+  {
+    "id": 25,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sigle genetiche come \"MARCH1\" o \"SEPT2\", se digitate in Excel, vengono spesso riconosciute automaticamente come date.",
+    "answer": true,
+    "explanation": "È il fenomeno descritto nel caso reale del modulo."
+  },
+  {
+    "id": 26,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Uno studio del 2016 stimò che nessun articolo scientifico con dati genetici conteneva errori di conversione automatica.",
+    "answer": false,
+    "explanation": "Lo studio stimò che circa un quinto degli articoli esaminati conteneva errori di questo tipo."
+  },
+  {
+    "id": 27,
+    "module": "formattare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Tra il 2017 e il 2020, il comitato HGNC rinominò permanentemente 27 geni umani per evitare la conversione automatica in date.",
+    "answer": true,
+    "explanation": "Il modulo riporta questa decisione del comitato HGNC."
+  }
+]

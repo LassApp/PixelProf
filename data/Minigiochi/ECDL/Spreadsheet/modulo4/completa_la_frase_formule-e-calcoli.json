@@ -1,0 +1,1024 @@
+[
+  {
+    "id": 1,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una \"____\" è un'istruzione di calcolo scritta dentro una cella.",
+    "answer": "formula",
+    "bank": [
+      "formula",
+      "funzione",
+      "riferimento",
+      "intervallo"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "In Excel, ogni formula comincia sempre con il segno \"____\".",
+    "answer": "=",
+    "bank": [
+      "=",
+      "+",
+      "#",
+      "$"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Senza il segno =, Excel tratta il contenuto digitato come ____, non come calcolo.",
+    "answer": "testo",
+    "bank": [
+      "testo",
+      "formula",
+      "funzione",
+      "errore"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La formula \"=2+2\" restituisce come risultato ____.",
+    "answer": "4",
+    "bank": [
+      "4",
+      "2",
+      "22",
+      "0"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La formula \"=5*4\" restituisce come risultato ____.",
+    "answer": "20",
+    "bank": [
+      "20",
+      "9",
+      "54",
+      "1"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il vero potenziale delle formule si sblocca quando, al posto di numeri fissi, si usano ____ di celle.",
+    "answer": "indirizzi",
+    "bank": [
+      "indirizzi",
+      "colori",
+      "bordi",
+      "temi"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'errore \"____\" segnala che la formula sta tentando una divisione per zero.",
+    "answer": "#DIV/0!",
+    "bank": [
+      "#DIV/0!",
+      "#NOME?",
+      "#RIF!",
+      "######"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'errore \"____\" segnala che Excel non riconosce un elemento scritto nella formula, spesso per un errore di battitura.",
+    "answer": "#NOME?",
+    "bank": [
+      "#NOME?",
+      "#DIV/0!",
+      "#RIF!",
+      "######"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'errore \"____\" segnala che la formula fa riferimento a una cella che non esiste più.",
+    "answer": "#RIF!",
+    "bank": [
+      "#RIF!",
+      "#DIV/0!",
+      "#NOME?",
+      "######"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 1557 il matematico e medico gallese ____ pubblicò \"The Whetstone of Witte\".",
+    "answer": "Robert Recorde",
+    "bank": [
+      "Robert Recorde",
+      "Dmitrij Mendeleev",
+      "Larry Shumway",
+      "Richard Nixon"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Recorde introdusse per la prima volta nella storia della matematica a stampa il simbolo \"____\" per indicare un'uguaglianza.",
+    "answer": "=",
+    "bank": [
+      "=",
+      "+",
+      "-",
+      "*"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Recorde scelse due segmenti paralleli e di uguale lunghezza per il loro significato ____.",
+    "answer": "visivo",
+    "bank": [
+      "visivo",
+      "sonoro",
+      "religioso",
+      "numerico"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Fu solo nel corso del ____ che il segno \"=\" di Recorde divenne lo standard in tutta Europa.",
+    "answer": "Settecento",
+    "bank": [
+      "Settecento",
+      "Cinquecento",
+      "Ottocento",
+      "Novecento"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un \"____ di cella\" è l'uso, dentro una formula, dell'indirizzo di un'altra cella al posto di un numero fisso.",
+    "answer": "riferimento",
+    "bank": [
+      "riferimento",
+      "intervallo",
+      "operatore",
+      "argomento"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La formula \"=A2*____\" moltiplica il contenuto di due celle diverse.",
+    "answer": "B2",
+    "bank": [
+      "B2",
+      "A2",
+      "C2",
+      "D2"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se si cambia il valore in una cella referenziata da una formula, il risultato si ____ da solo.",
+    "answer": "aggiorna",
+    "bank": [
+      "aggiorna",
+      "cancella",
+      "duplica",
+      "blocca"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il modulo, il cuore di Excel non è il calcolo in sé, ma la ____ tra le celle.",
+    "answer": "relazione",
+    "bank": [
+      "relazione",
+      "formattazione",
+      "larghezza",
+      "stampa"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un riferimento può puntare a una cella su un altro foglio, aggiungendo il nome del foglio seguito da un punto ____.",
+    "answer": "esclamativo",
+    "bank": [
+      "esclamativo",
+      "interrogativo",
+      "e virgola",
+      "e due punti"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La sintassi \"=Fornitori!B2\" richiama il prezzo registrato su un ____ diverso da quello attivo.",
+    "answer": "foglio",
+    "bank": [
+      "foglio",
+      "colore",
+      "formato",
+      "bordo"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'aprile ____ lo Stato dello Utah scoprì un errore di 25 milioni di dollari nel proprio bilancio per l'istruzione pubblica.",
+    "answer": "2012",
+    "bank": [
+      "2012",
+      "2008",
+      "1994",
+      "1944"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il sovrintendente statale ____ spiegò l'errore come \"un riferimento errato\".",
+    "answer": "Larry Shumway",
+    "bank": [
+      "Larry Shumway",
+      "Richard Nixon",
+      "Robert Recorde",
+      "Dmitrij Mendeleev"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'errore nel bilancio dello Utah sottostimò il numero reale di studenti attesi di circa ____ unità.",
+    "answer": "8.000",
+    "bank": [
+      "8.000",
+      "25.000.000",
+      "2.600.000.000",
+      "179"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'errore nel bilancio dello Utah portò alle dimissioni di ____ alti funzionari dell'ufficio statale dell'istruzione.",
+    "answer": "due",
+    "bank": [
+      "due",
+      "cinque",
+      "dieci",
+      "nessun"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il parlamento dello Utah dovette stanziare d'urgenza i ____ milioni di dollari mancanti per evitare tagli alle scuole.",
+    "answer": "25",
+    "bank": [
+      "25",
+      "8",
+      "4",
+      "35"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, un riferimento di cella è come un ____ collegato a un sensore di temperatura in un'altra stanza.",
+    "answer": "termostato",
+    "bank": [
+      "termostato",
+      "semaforo",
+      "contachilometri",
+      "leggio"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Gli operatori matematici di base in Excel sono addizione, sottrazione, moltiplicazione e ____.",
+    "answer": "divisione",
+    "bank": [
+      "divisione",
+      "percentuale",
+      "radice",
+      "potenza"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le ____ permettono di controllare l'ordine in cui vengono eseguite le operazioni in una formula.",
+    "answer": "parentesi",
+    "bank": [
+      "parentesi",
+      "virgole",
+      "funzioni",
+      "celle"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "In Excel, moltiplicazioni e divisioni vengono eseguite ____ di addizioni e sottrazioni.",
+    "answer": "prima",
+    "bank": [
+      "prima",
+      "dopo",
+      "contemporaneamente",
+      "mai"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La formula \"=A1-B1*C1\" calcola prima ____, e solo dopo sottrae il risultato da A1.",
+    "answer": "B1*C1",
+    "bank": [
+      "B1*C1",
+      "A1-B1",
+      "A1*C1",
+      "B1-C1"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per ottenere \"prezzo meno sconto, il tutto moltiplicato per la quantità\" si scrive =____*C1.",
+    "answer": "(A1-B1)",
+    "bank": [
+      "(A1-B1)",
+      "A1-B1",
+      "(A1*B1)",
+      "A1+B1"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le parentesi, in una formula, vengono sempre calcolate per ____.",
+    "answer": "prime",
+    "bank": [
+      "prime",
+      "ultime",
+      "seconde",
+      "metà"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Alla fine del ____ il fondo Magellan di Fidelity Investments annunciò una distribuzione di 4,32 dollari per azione.",
+    "answer": "1994",
+    "bank": [
+      "1994",
+      "1990",
+      "1944",
+      "2012"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'errore nel caso Magellan fu commesso da un ____ interno durante il trasferimento di un dato tra fogli.",
+    "answer": "contabile",
+    "bank": [
+      "contabile",
+      "avvocato",
+      "sovrintendente",
+      "ingegnere"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il contabile omise il segno ____ davanti a una perdita in conto capitale di 1,3 miliardi di dollari.",
+    "answer": "meno",
+    "bank": [
+      "meno",
+      "più",
+      "uguale",
+      "percentuale"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "A causa dell'errore, la perdita di 1,3 miliardi di dollari si trasformò in un ____ dello stesso importo.",
+    "answer": "guadagno",
+    "bank": [
+      "guadagno",
+      "pareggio",
+      "debito",
+      "azzeramento"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'errore nel caso Magellan fece scostare la stima complessiva di ____ miliardi di dollari rispetto al valore corretto.",
+    "answer": "2,6",
+    "bank": [
+      "2,6",
+      "1,3",
+      "4,32",
+      "25"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, l'ordine delle operazioni è paragonato alle indicazioni di un ____.",
+    "answer": "itinerario",
+    "bank": [
+      "itinerario",
+      "contratto",
+      "semaforo",
+      "timbro"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una \"____\" è un'operazione già pronta, integrata in Excel, che riceve dati in ingresso e restituisce un risultato.",
+    "answer": "funzione",
+    "bank": [
+      "funzione",
+      "formula",
+      "riferimento",
+      "operatore"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La funzione \"=SOMMA(A1:A40)\" restituisce la ____ di tutti i valori nell'intervallo indicato.",
+    "answer": "somma",
+    "bank": [
+      "somma",
+      "media",
+      "il valore più basso",
+      "il valore più alto"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La funzione \"=MEDIA(A1:A40)\" restituisce la ____ aritmetica dei valori.",
+    "answer": "media",
+    "bank": [
+      "media",
+      "somma",
+      "differenza",
+      "moltiplicazione"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La funzione \"=MIN(A1:A40)\" restituisce il valore più ____ presente nell'intervallo.",
+    "answer": "basso",
+    "bank": [
+      "basso",
+      "alto",
+      "centrale",
+      "recente"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La funzione \"____\" restituisce quante celle, nell'intervallo, contengono effettivamente un numero.",
+    "answer": "CONTA.NUMERI",
+    "bank": [
+      "CONTA.NUMERI",
+      "CONTA.VALORI",
+      "SOMMA",
+      "MEDIA"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La funzione \"CONTA.VALORI\" restituisce quante celle, nell'intervallo, non sono ____.",
+    "answer": "vuote",
+    "bank": [
+      "vuote",
+      "numeriche",
+      "negative",
+      "arrotondate"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La funzione \"ARROTONDA(A1;2)\" restituisce il valore della cella indicata arrotondato a ____ cifre decimali.",
+    "answer": "due",
+    "bank": [
+      "due",
+      "quattro",
+      "zero",
+      "dieci"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Ogni funzione prende come argomento un ____, esattamente come quelli imparati a selezionare in precedenza.",
+    "answer": "intervallo",
+    "bank": [
+      "intervallo",
+      "operatore",
+      "riferimento assoluto",
+      "foglio"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il pulsante Somma automatica comparve per la prima volta nel ____, con il lancio di Excel 3.0.",
+    "answer": "1990",
+    "bank": [
+      "1990",
+      "1985",
+      "1995",
+      "2005"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Excel 3.0 introdusse la prima ____ vera e propria, con icone cliccabili al posto dei soli comandi da menu testuale.",
+    "answer": "barra degli strumenti",
+    "bank": [
+      "barra degli strumenti",
+      "barra della formula",
+      "barra di stato",
+      "casella nome"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo diverse ricostruzioni della storia del software, Excel 3.0 fu il primo programma in assoluto a includere una ____ di questo tipo.",
+    "answer": "barra degli strumenti",
+    "bank": [
+      "barra degli strumenti",
+      "barra multifunzione",
+      "casella nome",
+      "barra di stato"
+    ]
+  },
+  {
+    "id": 49,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Sul pulsante Somma automatica comparve, fin dal primo giorno, il simbolo ____, la lettera greca usata per indicare una sommatoria.",
+    "answer": "Sigma (Σ)",
+    "bank": [
+      "Sigma (Σ)",
+      "Pi (π)",
+      "Delta (Δ)",
+      "Omega (Ω)"
+    ]
+  },
+  {
+    "id": 50,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il simbolo Sigma identifica ancora oggi, oltre trentacinque anni dopo, il pulsante Somma ____ in ogni versione di Excel.",
+    "answer": "automatica",
+    "bank": [
+      "automatica",
+      "manuale",
+      "condizionale",
+      "relativa"
+    ]
+  },
+  {
+    "id": 51,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La \"____ di riempimento\" è il piccolo quadratino visibile nell'angolo in basso a destra di una cella selezionata.",
+    "answer": "maniglia",
+    "bank": [
+      "maniglia",
+      "casella",
+      "barra",
+      "scheda"
+    ]
+  },
+  {
+    "id": 52,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Trascinando la maniglia di riempimento su una formula, Excel non la copia identica, ma la ____ automaticamente a ciascuna nuova posizione.",
+    "answer": "adatta",
+    "bank": [
+      "adatta",
+      "cancella",
+      "blocca",
+      "nasconde"
+    ]
+  },
+  {
+    "id": 53,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Trascinando la maniglia su una formula, Excel aggiorna i riferimenti di cella ____ per riga.",
+    "answer": "riga",
+    "bank": [
+      "riga",
+      "colonna",
+      "foglio",
+      "cartella"
+    ]
+  },
+  {
+    "id": 54,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il comportamento della maniglia di riempimento su una formula applica lo stesso principio già visto nel Modulo 2 per il riempimento automatico di ____.",
+    "answer": "sequenze",
+    "bank": [
+      "sequenze",
+      "formule",
+      "funzioni",
+      "operatori"
+    ]
+  },
+  {
+    "id": 55,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel 1869 il chimico russo ____ organizzò 63 elementi chimici in una tabella a righe e colonne.",
+    "answer": "Dmitrij Mendeleev",
+    "bank": [
+      "Dmitrij Mendeleev",
+      "Robert Recorde",
+      "Larry Shumway",
+      "Richard Nixon"
+    ]
+  },
+  {
+    "id": 56,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Mendeleev ordinò gli elementi secondo il peso ____, raggruppandoli per proprietà simili.",
+    "answer": "atomico",
+    "bank": [
+      "atomico",
+      "specifico",
+      "molecolare",
+      "relativo"
+    ]
+  },
+  {
+    "id": 57,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Mendeleev lasciò deliberatamente alcune caselle ____ nella propria tabella.",
+    "answer": "vuote",
+    "bank": [
+      "vuote",
+      "colorate",
+      "doppie",
+      "nascoste"
+    ]
+  },
+  {
+    "id": 58,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per gli elementi non ancora scoperti, Mendeleev previde le proprietà esatte, chiamandoli provvisoriamente con il prefisso \"____\".",
+    "answer": "eka",
+    "bank": [
+      "eka",
+      "meta",
+      "iso",
+      "proto"
+    ]
+  },
+  {
+    "id": 59,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il prefisso usato da Mendeleev deriva dal sanscrito e significa \"uno ____\".",
+    "answer": "oltre",
+    "bank": [
+      "oltre",
+      "dentro",
+      "sopra",
+      "mancante"
+    ]
+  },
+  {
+    "id": 60,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Tra il 1875 e il 1886 vennero scoperti tre elementi reali: gallio, scandio e ____.",
+    "answer": "germanio",
+    "bank": [
+      "germanio",
+      "silicio",
+      "alluminio",
+      "boro"
+    ]
+  },
+  {
+    "id": 61,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le proprietà degli elementi scoperti risultarono sorprendentemente vicine a quelle ____ da Mendeleev.",
+    "answer": "previste",
+    "bank": [
+      "previste",
+      "inventate",
+      "corrette",
+      "ignorate"
+    ]
+  },
+  {
+    "id": 62,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un \"riferimento ____\" (per esempio A1) cambia automaticamente quando una formula viene copiata o trascinata.",
+    "answer": "relativo",
+    "bank": [
+      "relativo",
+      "assoluto",
+      "fisso",
+      "esterno"
+    ]
+  },
+  {
+    "id": 63,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un \"riferimento ____\" (per esempio $A$1) resta sempre fisso sulla stessa cella.",
+    "answer": "assoluto",
+    "bank": [
+      "assoluto",
+      "relativo",
+      "mobile",
+      "condizionale"
+    ]
+  },
+  {
+    "id": 64,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per bloccare un riferimento si aggiungono due simboli di ____, uno prima della lettera di colonna e uno prima del numero di riga.",
+    "answer": "dollaro",
+    "bank": [
+      "dollaro",
+      "percentuale",
+      "cancelletto",
+      "chiocciola"
+    ]
+  },
+  {
+    "id": 65,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella formula \"=B2*$D$1\", trascinandola verso il basso, B2 si aggiorna correttamente mentre $D$1 resta ____ alla stessa cella.",
+    "answer": "ancorato",
+    "bank": [
+      "ancorato",
+      "cancellato",
+      "duplicato",
+      "nascosto"
+    ]
+  },
+  {
+    "id": 66,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo la sintesi del modulo: \"Relativo = si sposta. Assoluto = resta ____.\"",
+    "answer": "ancorato",
+    "bank": [
+      "ancorato",
+      "invisibile",
+      "calcolato",
+      "nascosto"
+    ]
+  },
+  {
+    "id": 67,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel luglio ____, delegati di 44 paesi si riunirono a Bretton Woods per costruire un nuovo sistema monetario internazionale.",
+    "answer": "1944",
+    "bank": [
+      "1944",
+      "1957",
+      "1971",
+      "1994"
+    ]
+  },
+  {
+    "id": 68,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'accordo di Bretton Woods fissò il dollaro statunitense a un valore assoluto di 35 dollari per oncia d'____.",
+    "answer": "oro",
+    "bank": [
+      "oro",
+      "argento",
+      "platino",
+      "petrolio"
+    ]
+  },
+  {
+    "id": 69,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel sistema di Bretton Woods, le altre valute furono agganciate al dollaro con un valore ____, aggiustabile entro margini limitati.",
+    "answer": "relativo",
+    "bank": [
+      "relativo",
+      "assoluto",
+      "fisso",
+      "nullo"
+    ]
+  },
+  {
+    "id": 70,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel sistema di Bretton Woods, l'oro rappresentava l'unico \"riferimento ____\" dell'intero sistema.",
+    "answer": "assoluto",
+    "bank": [
+      "assoluto",
+      "relativo",
+      "temporaneo",
+      "esterno"
+    ]
+  },
+  {
+    "id": 71,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il sistema di Bretton Woods resse per quasi ____ anni.",
+    "answer": "trenta",
+    "bank": [
+      "trenta",
+      "dieci",
+      "cinquanta",
+      "cento"
+    ]
+  },
+  {
+    "id": 72,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nell'agosto ____ il presidente statunitense Richard Nixon sospese la convertibilità del dollaro in oro.",
+    "answer": "1971",
+    "bank": [
+      "1971",
+      "1944",
+      "1994",
+      "2012"
+    ]
+  },
+  {
+    "id": 73,
+    "module": "formule-e-calcoli",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Dopo la sospensione della convertibilità, il sistema di cambi collassò verso tassi ____ variabili.",
+    "answer": "liberamente",
+    "bank": [
+      "liberamente",
+      "parzialmente",
+      "mai",
+      "temporaneamente"
+    ]
+  }
+]

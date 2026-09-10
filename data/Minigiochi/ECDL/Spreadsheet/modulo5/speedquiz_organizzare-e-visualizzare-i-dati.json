@@ -1,0 +1,1112 @@
+[
+  {
+    "id": 1,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"ordinare\" i dati in Excel?",
+    "options": [
+      "Nascondere temporaneamente alcune righe",
+      "Applicare un colore automatico alle celle",
+      "Trasformare un intervallo in una tabella",
+      "Disporre le righe di un elenco secondo un criterio crescente o decrescente"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ordinare significa disporre le righe di un elenco secondo un criterio crescente o decrescente."
+  },
+  {
+    "id": 2,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"filtrare\" i dati in Excel?",
+    "options": [
+      "Riordinare fisicamente le righe secondo un criterio",
+      "Eliminare definitivamente le righe non necessarie",
+      "Unire più colonne in una sola",
+      "Mostrare temporaneamente solo le righe che soddisfano una condizione, nascondendo le altre senza cancellarle"
+    ],
+    "correctIndex": 3,
+    "explanation": "Filtrare significa mostrare solo le righe che soddisfano una condizione, senza eliminare le altre."
+  },
+  {
+    "id": 3,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove si trovano gli strumenti di ordinamento e filtro?",
+    "options": [
+      "Solo nella scheda Inserisci",
+      "Solo nella scheda Visualizza",
+      "Solo nel menu File",
+      "Nella scheda Home (gruppo Modifica → Ordina e filtra) o nella scheda Dati"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si trovano nella scheda Home o nella scheda Dati."
+  },
+  {
+    "id": 4,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si attiva un filtro su una colonna?",
+    "options": [
+      "Premendo CTRL+F",
+      "Trascinando la maniglia di riempimento",
+      "Da Formato celle",
+      "Con un clic sull'intestazione della colonna"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il filtro si attiva con un clic sull'intestazione della colonna."
+  },
+  {
+    "id": 5,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede alle righe nascoste da un filtro?",
+    "options": [
+      "Vengono eliminate definitivamente",
+      "Vengono spostate in un altro foglio",
+      "Vengono convertite in commenti",
+      "Restano nel foglio, pronte a riapparire quando il filtro viene rimosso"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le righe filtrate restano nel foglio, senza essere eliminate."
+  },
+  {
+    "id": 6,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa afferma il modulo riguardo ai dati che aumentano?",
+    "options": [
+      "Che vanno sempre stampati per essere compresi",
+      "Che devono essere convertiti in grafici",
+      "Che vanno necessariamente divisi su più fogli",
+      "Che leggerli non basta più: bisogna poterli interrogare"
+    ],
+    "correctIndex": 3,
+    "explanation": "Quando i dati aumentano, serve poterli interrogare, non solo leggerli."
+  },
+  {
+    "id": 7,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanti abitanti doveva contare circa l'Ufficio del Censimento degli Stati Uniti nel 1890?",
+    "options": [
+      "Oltre 6 milioni",
+      "Oltre 26 milioni",
+      "Oltre 620 milioni",
+      "Oltre 62 milioni"
+    ],
+    "correctIndex": 3,
+    "explanation": "Doveva contare oltre 62 milioni di abitanti."
+  },
+  {
+    "id": 8,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanto tempo avrebbe richiesto, secondo le stime dell'epoca, contare a mano i dati del censimento del 1890?",
+    "options": [
+      "Circa sei mesi",
+      "Circa due anni",
+      "Circa ventisei anni",
+      "Quasi tredici anni"
+    ],
+    "correctIndex": 3,
+    "explanation": "Contare a mano avrebbe richiesto quasi tredici anni di lavoro."
+  },
+  {
+    "id": 9,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come risolse il problema del censimento del 1890 l'ingegnere Herman Hollerith?",
+    "options": [
+      "Con un sistema di grafici a torta",
+      "Con una prima versione di un foglio di calcolo",
+      "Con un sistema di filtri booleani",
+      "Con un sistema di schede perforate"
+    ],
+    "correctIndex": 3,
+    "explanation": "Hollerith risolse il problema con un sistema di schede perforate."
+  },
+  {
+    "id": 10,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa faceva la \"macchina ordinatrice\" ideata da Hollerith?",
+    "options": [
+      "Stampava automaticamente i risultati del censimento",
+      "Contava le schede senza smistarle",
+      "Convertiva i fori in numeri decimali",
+      "Smistava automaticamente le schede perforate in ventisei scomparti, in base ai fori letti"
+    ],
+    "correctIndex": 3,
+    "explanation": "La macchina smistava automaticamente le schede in ventisei scomparti."
+  },
+  {
+    "id": 11,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quanto tempo fu completato il censimento del 1890 grazie al sistema di Hollerith?",
+    "options": [
+      "In circa tredici anni",
+      "In circa due anni",
+      "In circa un mese",
+      "In circa sei mesi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il censimento fu completato in circa sei mesi grazie al sistema di Hollerith."
+  },
+  {
+    "id": 12,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In cosa si trasformò, decenni più tardi, l'azienda fondata da Hollerith?",
+    "options": [
+      "In Microsoft",
+      "In Lockheed",
+      "In Fidelity Investments",
+      "In IBM"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'azienda di Hollerith divenne, decenni dopo, IBM."
+  },
+  {
+    "id": 13,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonati, nella metafora del modulo, ordinare e filtrare un elenco?",
+    "options": [
+      "A un termostato collegato a un sensore",
+      "A una stella polare per un marinaio",
+      "A un semaforo che comunica un'informazione immediata",
+      "A un ufficio postale di smistamento"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ordinare e filtrare sono paragonati a un ufficio postale di smistamento."
+  },
+  {
+    "id": 14,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permettono di fare gli operatori logici E e O?",
+    "options": [
+      "Ordinare automaticamente le righe di un elenco",
+      "Trasformare un intervallo in una tabella",
+      "Applicare una formattazione condizionale",
+      "Combinare più condizioni in un'unica richiesta"
+    ],
+    "correctIndex": 3,
+    "explanation": "Gli operatori E e O permettono di combinare più condizioni in un'unica richiesta."
+  },
+  {
+    "id": 15,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa richiede l'operatore E per restituire un risultato vero?",
+    "options": [
+      "Che almeno una condizione sia vera",
+      "Che nessuna condizione sia vera",
+      "Che le condizioni siano numeriche",
+      "Che tutte le condizioni indicate siano vere insieme"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'operatore E richiede che tutte le condizioni siano vere insieme."
+  },
+  {
+    "id": 16,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa richiede l'operatore O per restituire un risultato vero?",
+    "options": [
+      "Che tutte le condizioni siano vere insieme",
+      "Che tutte le condizioni siano false",
+      "Che ci sia un solo criterio possibile",
+      "Che almeno una delle condizioni indicate sia vera"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'operatore O richiede che almeno una condizione sia vera."
+  },
+  {
+    "id": 17,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede applicando due filtri su colonne diverse, uno dopo l'altro?",
+    "options": [
+      "Il secondo filtro sostituisce completamente il primo",
+      "Excel richiede di scegliere quale filtro mantenere",
+      "I due filtri si annullano a vicenda",
+      "I filtri si sommano, mostrando solo le righe che soddisfano entrambe le condizioni"
+    ],
+    "correctIndex": 3,
+    "explanation": "I filtri si sommano, come l'operatore E."
+  },
+  {
+    "id": 18,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove si impostano due condizioni sulla stessa colonna con E oppure O?",
+    "options": [
+      "Da Home → Formattazione condizionale",
+      "Da Inserisci → Tabella",
+      "Da File → Stampa",
+      "Da \"Filtri numero\" → \"Personalizza filtro\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Si impostano da \"Filtri numero\" → \"Personalizza filtro\"."
+  },
+  {
+    "id": 19,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa restituisce la funzione \"=E(condizione1;condizione2)\"?",
+    "options": [
+      "VERO se almeno una condizione è vera",
+      "Sempre VERO, indipendentemente dalle condizioni",
+      "Un valore numerico invece che VERO o FALSO",
+      "VERO solo se entrambe le condizioni sono vere"
+    ],
+    "correctIndex": 3,
+    "explanation": "La funzione E restituisce VERO solo se entrambe le condizioni sono vere."
+  },
+  {
+    "id": 20,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa restituisce la funzione \"=O(condizione1;condizione2)\"?",
+    "options": [
+      "VERO solo se entrambe le condizioni sono vere",
+      "Sempre FALSO, a meno che non vengano modificate manualmente",
+      "Un errore se una condizione è falsa",
+      "VERO se almeno una delle due condizioni è vera"
+    ],
+    "correctIndex": 3,
+    "explanation": "La funzione O restituisce VERO se almeno una condizione è vera."
+  },
+  {
+    "id": 21,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove e quando iniziò lo sviluppo di DIALOG?",
+    "options": [
+      "Nel 1972, presso IBM a New York",
+      "Nel 1990, presso Microsoft a Redmond",
+      "Nel 1854, presso il Queen's College di Cork",
+      "Nel 1966, presso i laboratori Lockheed a Palo Alto"
+    ],
+    "correctIndex": 3,
+    "explanation": "Lo sviluppo di DIALOG iniziò nel 1966, presso i laboratori Lockheed a Palo Alto."
+  },
+  {
+    "id": 22,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi guidò il gruppo che sviluppò DIALOG?",
+    "options": [
+      "L'ingegnere Herman Hollerith",
+      "Il matematico George Boole",
+      "Il sovrintendente Larry Shumway",
+      "L'ingegnere Roger K. Summit"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il gruppo fu guidato dall'ingegnere Roger K. Summit."
+  },
+  {
+    "id": 23,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale anno DIALOG fu offerto commercialmente al pubblico?",
+    "options": [
+      "Dal 1966",
+      "Dal 1990",
+      "Dal 2007",
+      "Dal 1972"
+    ],
+    "correctIndex": 3,
+    "explanation": "DIALOG fu offerto commercialmente al pubblico a partire dal 1972."
+  },
+  {
+    "id": 24,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su quali operatori si basava il cuore del sistema DIALOG?",
+    "options": [
+      "Solo l'operatore E",
+      "Solo le funzioni matematiche di base",
+      "Gli operatori di formattazione condizionale",
+      "Gli operatori booleani E, O e NON"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il cuore del sistema erano gli operatori booleani E, O e NON."
+  },
+  {
+    "id": 25,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato, nella metafora del modulo, l'operatore E?",
+    "options": [
+      "A uno sconto riservato a studenti o over 65",
+      "A una spia della benzina sul cruscotto",
+      "A un bivio con un cartello stradale",
+      "Al controllo all'ingresso di un locale, dove servono sia documento sia biglietto"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'operatore E è paragonato al controllo d'ingresso in cui servono entrambi i requisiti."
+  },
+  {
+    "id": 26,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una tabella in Excel?",
+    "options": [
+      "Un semplice elenco di celle colorate manualmente",
+      "Un grafico generato automaticamente dai dati",
+      "Una funzione che conta le celle non vuote",
+      "Un intervallo di celle trasformato in una struttura riconosciuta dal programma come un unico oggetto coerente"
+    ],
+    "correctIndex": 3,
+    "explanation": "Una tabella è un intervallo trasformato in una struttura coerente e riconosciuta."
+  },
+  {
+    "id": 27,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza principale tra una tabella di Word e una di Excel, secondo il modulo?",
+    "options": [
+      "Sono identiche in entrambi i programmi",
+      "Quella di Excel non può contenere testo",
+      "Quella di Word si aggiorna automaticamente, quella di Excel no",
+      "Quella di Word è statica, quella di Excel è una struttura dinamica che cresce con i dati"
+    ],
+    "correctIndex": 3,
+    "explanation": "La tabella di Word è statica, quella di Excel è dinamica."
+  },
+  {
+    "id": 28,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si trasforma un intervallo di celle in una tabella?",
+    "options": [
+      "Con Home → Formattazione condizionale",
+      "Con File → Salva con nome",
+      "Con Visualizza → Blocca riquadri",
+      "Con Inserisci → Tabella, oppure con la scorciatoia CTRL+T"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si trasforma con Inserisci → Tabella o con CTRL+T."
+  },
+  {
+    "id": 29,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa riceve automaticamente ogni intestazione di colonna in una tabella?",
+    "options": [
+      "Un colore casuale",
+      "Un commento automatico",
+      "Un riferimento assoluto",
+      "Un pulsante per ordinare e filtrare"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ogni intestazione riceve un pulsante per ordinare e filtrare."
+  },
+  {
+    "id": 30,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa viene applicato automaticamente a una tabella appena creata?",
+    "options": [
+      "Un grafico a torta automatico",
+      "Una formattazione condizionale predefinita",
+      "Un filtro già attivo su tutte le colonne",
+      "Uno stile grafico coerente, come righe alternate colorate e intestazioni in evidenza"
+    ],
+    "correctIndex": 3,
+    "explanation": "Viene applicato uno stile grafico coerente."
+  },
+  {
+    "id": 31,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se si aggiunge una nuova riga subito sotto l'ultima riga di una tabella?",
+    "options": [
+      "Resta fuori dalla tabella finché non viene aggiunta manualmente",
+      "Genera un errore #RIF!",
+      "Viene inclusa solo se si preme CTRL+T di nuovo",
+      "Viene automaticamente inclusa nella tabella, ereditando stile e formule"
+    ],
+    "correctIndex": 3,
+    "explanation": "La nuova riga viene automaticamente inclusa, ereditando stile e formule."
+  },
+  {
+    "id": 32,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale funzione più semplice discendono le tabelle di Excel, introdotta nel 2003?",
+    "options": [
+      "\"Matrici\"",
+      "\"Database\"",
+      "\"Archivi\"",
+      "\"Elenchi\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Le tabelle discendono dalla funzione \"Elenchi\", introdotta nel 2003."
+  },
+  {
+    "id": 33,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno Microsoft rinominò la funzione \"Elenchi\" in \"Tabelle\"?",
+    "options": [
+      "Nel 2003",
+      "Nel 1997",
+      "Nel 1990",
+      "Nel 2007"
+    ],
+    "correctIndex": 3,
+    "explanation": "La funzione fu rinominata \"Tabelle\" nel 2007."
+  },
+  {
+    "id": 34,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fu introdotto insieme alla nuova funzione \"Tabelle\" nel 2007?",
+    "options": [
+      "La formattazione condizionale",
+      "La funzione SE",
+      "Gli operatori booleani E e O",
+      "Il \"riferimento strutturato\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Fu introdotto il \"riferimento strutturato\"."
+  },
+  {
+    "id": 35,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette di fare il riferimento strutturato?",
+    "options": [
+      "Bloccare permanentemente un riferimento di cella",
+      "Nascondere automaticamente le righe vuote",
+      "Ordinare i dati senza usare filtri",
+      "Fare riferimento direttamente al nome della tabella e della colonna, invece di scrivere un intervallo come =B2:B4"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il riferimento strutturato permette di usare i nomi di tabella e colonna."
+  },
+  {
+    "id": 36,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata, nella metafora del modulo, una tabella di Word?",
+    "options": [
+      "A una scaffalatura componibile ed elastica",
+      "A un raccoglitore ad anelli",
+      "A uno schedario con cassetti etichettati",
+      "A una scaffalatura fissa, montata una volta per tutte"
+    ],
+    "correctIndex": 3,
+    "explanation": "Una tabella di Word è paragonata a una scaffalatura fissa."
+  },
+  {
+    "id": 37,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata, nella metafora del modulo, una tabella di Excel?",
+    "options": [
+      "A una scaffalatura fissa, montata una volta per tutte",
+      "A un semaforo che comunica un'informazione",
+      "A una stella polare fissa nel cielo",
+      "A una scaffalatura componibile ed elastica, che si allunga da sola"
+    ],
+    "correctIndex": 3,
+    "explanation": "Una tabella di Excel è paragonata a una scaffalatura componibile ed elastica."
+  },
+  {
+    "id": 38,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la formattazione condizionale?",
+    "options": [
+      "Una formattazione applicata una sola volta manualmente",
+      "Un tipo di grafico che cambia colore nel tempo",
+      "Una funzione che conta le celle colorate",
+      "Un insieme di regole che applicano automaticamente una formattazione alle celle che soddisfano una condizione, aggiornandosi da sole"
+    ],
+    "correctIndex": 3,
+    "explanation": "La formattazione condizionale applica automaticamente regole basate sul valore delle celle."
+  },
+  {
+    "id": 39,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove si raggiunge la formattazione condizionale?",
+    "options": [
+      "Inserisci → Tabella",
+      "File → Stampa",
+      "Visualizza → Blocca riquadri",
+      "Home → Formattazione condizionale"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si raggiunge da Home → Formattazione condizionale."
+  },
+  {
+    "id": 40,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra colorare una cella a mano e usare la formattazione condizionale?",
+    "options": [
+      "Sono esattamente la stessa cosa",
+      "La formattazione condizionale richiede sempre una formula scritta manualmente",
+      "Colorare a mano è più veloce e sempre aggiornato",
+      "La formattazione condizionale si aggiorna automaticamente quando il valore cambia, il colore manuale resta fisso"
+    ],
+    "correctIndex": 3,
+    "explanation": "La formattazione condizionale si aggiorna da sola, il colore manuale no."
+  },
+  {
+    "id": 41,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove si trovano le regole più comuni della formattazione condizionale, come \"minore di\" o \"maggiore di\"?",
+    "options": [
+      "Sotto \"Filtri numero\"",
+      "Sotto \"Riferimento strutturato\"",
+      "Sotto \"Ordina e filtra\"",
+      "Sotto \"Regole evidenziazione celle\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Si trovano sotto \"Regole evidenziazione celle\"."
+  },
+  {
+    "id": 42,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rappresentano le barre di dati o le scale di colore?",
+    "options": [
+      "Solo i valori superiori a una soglia fissa",
+      "Solo gli errori presenti nel foglio",
+      "Solo le celle vuote di un intervallo",
+      "L'intero intervallo di valori con una gradazione continua, invece di una singola soglia"
+    ],
+    "correctIndex": 3,
+    "explanation": "Rappresentano l'intero intervallo di valori con una gradazione continua."
+  },
+  {
+    "id": 43,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quale versione di Excel comparve per la prima volta la formattazione condizionale?",
+    "options": [
+      "Excel 3.0",
+      "Excel 2007",
+      "Excel 95",
+      "Excel 97"
+    ],
+    "correctIndex": 3,
+    "explanation": "Comparve per la prima volta in Excel 97."
+  },
+  {
+    "id": 44,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quanto tempo la formattazione condizionale restò uno strumento semplice, gestito da un'unica finestra di dialogo?",
+    "options": [
+      "Per pochi mesi",
+      "Per oltre trent'anni",
+      "Per un solo anno",
+      "Per circa un decennio"
+    ],
+    "correctIndex": 3,
+    "explanation": "Restò semplice per circa un decennio, fino al 2007."
+  },
+  {
+    "id": 45,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa avvenne alla formattazione condizionale con Excel 2007?",
+    "options": [
+      "Fu eliminata e sostituita da un'altra funzione",
+      "Rimase identica alla versione del 1997",
+      "Fu resa disponibile solo su abbonamento",
+      "Fu completamente rinnovata, con barre di dati, scale di colore e set di icone"
+    ],
+    "correctIndex": 3,
+    "explanation": "Fu completamente rinnovata con Excel 2007."
+  },
+  {
+    "id": 46,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quante regole diverse è possibile applicare, con Excel 2007, alla stessa area di celle?",
+    "options": [
+      "Una sola regola alla volta",
+      "Al massimo due regole",
+      "Nessun limite pratico indicato nel modulo",
+      "Fino a decine di regole diverse"
+    ],
+    "correctIndex": 3,
+    "explanation": "È possibile applicare fino a decine di regole diverse."
+  },
+  {
+    "id": 47,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa è diventata, nel giro di un decennio, la formattazione condizionale?",
+    "options": [
+      "Una funzione ormai obsoleta e poco usata",
+      "Uno strumento disponibile solo per utenti avanzati",
+      "Una funzione sostituita interamente dai grafici",
+      "Uno degli strumenti di visualizzazione automatica dei dati più usati in assoluto in Excel"
+    ],
+    "correctIndex": 3,
+    "explanation": "È diventata uno degli strumenti di visualizzazione più usati in Excel."
+  },
+  {
+    "id": 48,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata, nella metafora del modulo, la formattazione condizionale?",
+    "options": [
+      "A un ufficio postale di smistamento",
+      "A una scaffalatura componibile",
+      "A un bivio con un cartello stradale",
+      "Alla spia della benzina sul cruscotto di un'automobile"
+    ],
+    "correctIndex": 3,
+    "explanation": "È paragonata alla spia della benzina sul cruscotto."
+  },
+  {
+    "id": 49,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la spia della benzina è una buona metafora per la formattazione condizionale, secondo il modulo?",
+    "options": [
+      "Perché entrambe richiedono un controllo manuale quotidiano",
+      "Perché entrambe si spengono automaticamente dopo un'ora",
+      "Perché entrambe sono opzionali e raramente utili",
+      "Perché si accende automaticamente quando il livello scende sotto una soglia, senza bisogno che qualcuno se ne ricordi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Entrambe si attivano automaticamente al superamento di una soglia."
+  },
+  {
+    "id": 50,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la funzione SE?",
+    "options": [
+      "Restituisce sempre lo stesso risultato, indipendentemente dalla condizione",
+      "Conta quante celle soddisfano una condizione",
+      "Applica automaticamente un colore alla cella",
+      "Restituisce un risultato diverso a seconda che una condizione sia vera o falsa"
+    ],
+    "correctIndex": 3,
+    "explanation": "La funzione SE restituisce un risultato diverso in base a una condizione."
+  },
+  {
+    "id": 51,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la sintassi della funzione SE?",
+    "options": [
+      "=SE(risultato; condizione1; condizione2)",
+      "=SE(intervallo; condizione; formula)",
+      "=SE(vero; falso; intervallo)",
+      "=SE(condizione; risultato_se_vero; risultato_se_falso)"
+    ],
+    "correctIndex": 3,
+    "explanation": "La sintassi corretta è =SE(condizione; risultato_se_vero; risultato_se_falso)."
+  },
+  {
+    "id": 52,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella formula \"=SE(B2<3;\"Da riordinare\";\"Scorta sufficiente\")\", cosa scrive Excel se B2 è maggiore o uguale a 3?",
+    "options": [
+      "\"Da riordinare\"",
+      "Un errore #RIF!",
+      "Nulla",
+      "\"Scorta sufficiente\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Se la condizione è falsa, Excel scrive \"Scorta sufficiente\"."
+  },
+  {
+    "id": 53,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si riassume la struttura della funzione SE, secondo il modulo?",
+    "options": [
+      "Intervallo → formula → grafico",
+      "Riferimento → formula → tabella",
+      "Filtro → ordinamento → risultato",
+      "Condizione → decisione → risultato"
+    ],
+    "correctIndex": 3,
+    "explanation": "La struttura si riassume in condizione → decisione → risultato."
+  },
+  {
+    "id": 54,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si può fare con la funzione SE, come con le altre funzioni?",
+    "options": [
+      "Applicarla solo a una singola cella isolata",
+      "Usarla solo insieme a un grafico",
+      "Usarla solo su un intero foglio, mai su una colonna",
+      "Trascinarla con la maniglia di riempimento lungo un'intera colonna"
+    ],
+    "correctIndex": 3,
+    "explanation": "Come le altre funzioni, si può trascinare con la maniglia di riempimento."
+  },
+  {
+    "id": 55,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come possono essere usate insieme la funzione SE e la formattazione condizionale?",
+    "options": [
+      "Sono due strumenti incompatibili tra loro",
+      "La formattazione condizionale sostituisce sempre la funzione SE",
+      "La funzione SE cambia automaticamente il colore delle celle",
+      "La funzione SE decide cosa scrivere, la formattazione condizionale decide come farlo apparire"
+    ],
+    "correctIndex": 3,
+    "explanation": "SE decide il contenuto, la formattazione condizionale decide l'aspetto."
+  },
+  {
+    "id": 56,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi pubblicò, nel 1854, \"An Investigation of the Laws of Thought\"?",
+    "options": [
+      "L'ingegnere Herman Hollerith",
+      "L'ingegnere Roger K. Summit",
+      "Il matematico Robert Recorde",
+      "Il matematico britannico George Boole"
+    ],
+    "correctIndex": 3,
+    "explanation": "George Boole pubblicò questo trattato nel 1854."
+  },
+  {
+    "id": 57,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove insegnava George Boole quando pubblicò il proprio trattato?",
+    "options": [
+      "All'Università di Chicago",
+      "All'Università di Cambridge",
+      "Al MIT, negli Stati Uniti",
+      "Al Queen's College di Cork, in Irlanda"
+    ],
+    "correctIndex": 3,
+    "explanation": "Boole insegnava al Queen's College di Cork, in Irlanda."
+  },
+  {
+    "id": 58,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quali due soli valori propose Boole di rappresentare ogni affermazione?",
+    "options": [
+      "Alto o basso, caldo o freddo",
+      "Positivo o negativo, A o B",
+      "Sì, no o forse",
+      "Vero o falso, 1 o 0"
+    ],
+    "correctIndex": 3,
+    "explanation": "Boole propose di usare vero/falso, ovvero 1 o 0."
+  },
+  {
+    "id": 59,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quali operatori Boole propose di combinare le affermazioni logiche?",
+    "options": [
+      "SOMMA, MEDIA e CONTA",
+      "SE, ALLORA e QUINDI",
+      "MASSIMO, MINIMO e MEDIA",
+      "E, O e NON"
+    ],
+    "correctIndex": 3,
+    "explanation": "Boole propose di combinare le affermazioni con E, O e NON."
+  },
+  {
+    "id": 60,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che anno morì George Boole?",
+    "options": [
+      "Nel 1854",
+      "Nel 1890",
+      "Nel 1966",
+      "Nel 1864"
+    ],
+    "correctIndex": 3,
+    "explanation": "Boole morì nel 1864."
+  },
+  {
+    "id": 61,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa divenne, un secolo dopo Boole, la sua \"algebra della logica\"?",
+    "options": [
+      "Una teoria abbandonata e mai più utilizzata",
+      "La base della sola statistica accademica",
+      "Un metodo usato solo in ambito scacchistico",
+      "Il principio di funzionamento di ogni circuito elettronico e di ogni computer"
+    ],
+    "correctIndex": 3,
+    "explanation": "Divenne il principio di funzionamento di circuiti elettronici e computer."
+  },
+  {
+    "id": 62,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un grafico, secondo il modulo?",
+    "options": [
+      "Un elenco di formule collegate tra loro",
+      "Una tabella con stile grafico automatico",
+      "Un insieme di regole di formattazione condizionale",
+      "La rappresentazione visiva dei dati contenuti in un intervallo del foglio"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un grafico è la rappresentazione visiva dei dati di un intervallo."
+  },
+  {
+    "id": 63,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i tipi principali di grafico indicati nel modulo?",
+    "options": [
+      "A punti, a matrice, a database, a intervallo",
+      "A SE, a E, a O, a NON",
+      "A riga, a colonna, a cella, a foglio",
+      "A colonne, a barre, a linee, a torta"
+    ],
+    "correctIndex": 3,
+    "explanation": "I tipi principali sono a colonne, a barre, a linee, a torta."
+  },
+  {
+    "id": 64,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove si crea un grafico in Excel?",
+    "options": [
+      "Da Home → Formattazione condizionale",
+      "Da File → Stampa",
+      "Da Dati → Ordina e filtra",
+      "Selezionando l'intervallo di dati e scegliendo il tipo da Inserisci → Grafici consigliati"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si crea selezionando l'intervallo e scegliendo il tipo da Inserisci → Grafici consigliati."
+  },
+  {
+    "id": 65,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve in particolare il grafico a colonne?",
+    "options": [
+      "A mostrare come un totale si divide in parti proporzionali",
+      "A collegare i valori con una linea continua",
+      "A rappresentare solo dati temporali",
+      "A confrontare valori diversi lungo un asse verticale"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il grafico a colonne confronta valori diversi lungo un asse verticale."
+  },
+  {
+    "id": 66,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve in particolare il grafico a barre?",
+    "options": [
+      "A mostrare un andamento nel tempo",
+      "A mostrare come un totale si divide in parti proporzionali",
+      "A rappresentare solo valori percentuali",
+      "A fare lo stesso confronto del grafico a colonne, ma in orizzontale, spesso più leggibile con etichette lunghe"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il grafico a barre confronta in orizzontale, utile con etichette lunghe."
+  },
+  {
+    "id": 67,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando è particolarmente adatto il grafico a linee?",
+    "options": [
+      "Quando i dati riguardano proporzioni di un totale",
+      "Quando le etichette sono molto lunghe",
+      "Quando i dati sono tutti uguali tra loro",
+      "Quando i dati riguardano un andamento nel tempo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il grafico a linee è adatto per un andamento nel tempo."
+  },
+  {
+    "id": 68,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve il grafico a torta?",
+    "options": [
+      "A mostrare un andamento nel tempo",
+      "A confrontare valori diversi lungo un asse verticale",
+      "A rappresentare solo valori negativi",
+      "A mostrare come un totale si divide in parti proporzionali"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il grafico a torta mostra come un totale si divide in parti proporzionali."
+  },
+  {
+    "id": 69,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede a un grafico se si cambia un valore nella tabella di origine?",
+    "options": [
+      "Il grafico resta invariato finché non viene ricreato manualmente",
+      "Il grafico genera un errore",
+      "Bisogna eliminarlo e ricrearlo da capo",
+      "Il grafico si aggiorna da solo, senza bisogno di essere ricostruito"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un grafico collegato si aggiorna automaticamente quando cambiano i dati di origine."
+  },
+  {
+    "id": 70,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come sintetizza il modulo la differenza tra tabella e grafico?",
+    "options": [
+      "\"Una tabella è statica, un grafico è dinamico solo su richiesta\"",
+      "\"Un grafico sostituisce sempre la tabella\"",
+      "\"Una tabella e un grafico contengono sempre gli stessi dati in formati diversi\"",
+      "\"Una tabella mostra i dati. Un grafico rende visibili le relazioni\" tra quei dati"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modulo sintetizza questa differenza tra funzione della tabella e del grafico."
+  },
+  {
+    "id": 71,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per cosa è nota soprattutto Florence Nightingale?",
+    "options": [
+      "Per aver inventato il grafico a torta nel Settecento",
+      "Per aver sviluppato il primo sistema di schede perforate",
+      "Per aver introdotto la notazione algebrica degli scacchi",
+      "Per il proprio lavoro come infermiera e statistica durante la guerra di Crimea (1853-1856)"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nightingale è nota per il proprio lavoro durante la guerra di Crimea."
+  },
+  {
+    "id": 72,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa scoprì Florence Nightingale analizzando i dati sui soldati britannici morti durante la guerra di Crimea?",
+    "options": [
+      "Che la maggior parte era morta per ferite di guerra",
+      "Che il numero di morti era stato sottostimato dai rapporti ufficiali",
+      "Che le malattie infettive erano meno diffuse del previsto",
+      "Che la maggior parte non era caduta in battaglia, ma per malattie infettive prevenibili"
+    ],
+    "correctIndex": 3,
+    "explanation": "Scoprì che la maggior parte dei soldati morì per malattie prevenibili, non in battaglia."
+  },
+  {
+    "id": 73,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama il grafico pubblicato da Nightingale nel 1858?",
+    "options": [
+      "\"Growth in a Time of Debt\"",
+      "\"Commercial and Political Atlas\"",
+      "\"Statistical Breviary\"",
+      "\"Coxcomb\" (o diagramma a rosa)"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il grafico si chiama \"coxcomb\" o diagramma a rosa."
+  },
+  {
+    "id": 74,
+    "module": "organizzare-e-visualizzare-i-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa contribuì a ottenere il grafico di Nightingale, distribuito tra governo e famiglia reale?",
+    "options": [
+      "L'abolizione della guerra di Crimea",
+      "La creazione di un nuovo sistema di censimento",
+      "L'introduzione di nuove tasse per la sanità pubblica",
+      "Le riforme sanitarie dell'esercito"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il grafico contribuì a ottenere le riforme sanitarie dell'esercito."
+  }
+]

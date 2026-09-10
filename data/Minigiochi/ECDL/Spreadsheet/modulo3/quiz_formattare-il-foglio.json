@@ -1,0 +1,632 @@
+[
+  {
+    "id": 1,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"ridimensionare\" righe e colonne?",
+    "options": [
+      "Cambiare il colore di sfondo delle celle",
+      "Applicare un bordo alle celle",
+      "Unire più celle in una sola",
+      "Modificarne rispettivamente l'altezza e la larghezza, per adattarle al contenuto"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ridimensionare significa modificare altezza e larghezza di righe e colonne per adattarle al contenuto."
+  },
+  {
+    "id": 2,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si ottiene un ridimensionamento manuale?",
+    "options": [
+      "Facendo doppio clic sul bordo",
+      "Digitando un valore in Formato celle",
+      "Usando la scorciatoia CTRL+Home",
+      "Trascinando con il mouse il bordo tra due intestazioni di colonna o riga"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il ridimensionamento manuale si ottiene trascinando con il mouse il bordo tra due intestazioni."
+  },
+  {
+    "id": 3,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si ottiene un ridimensionamento automatico?",
+    "options": [
+      "Trascinando il mouse fino alla dimensione desiderata",
+      "Scrivendo un valore numerico esatto",
+      "Premendo CTRL+Z",
+      "Facendo doppio clic esattamente sul bordo tra due intestazioni"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il ridimensionamento automatico si ottiene con un doppio clic sul bordo dell'intestazione."
+  },
+  {
+    "id": 4,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove si imposta una larghezza di colonna esatta e identica su più colonne?",
+    "options": [
+      "Home → Allineamento → Unisci e centra",
+      "Visualizza → Blocca riquadri",
+      "File → Stampa",
+      "Home → Celle → Formato → Larghezza colonna"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si imposta una larghezza esatta da Home → Celle → Formato → Larghezza colonna."
+  },
+  {
+    "id": 5,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica la fila di simboli \"######\" in una cella?",
+    "options": [
+      "Un errore di formula",
+      "Un valore negativo",
+      "Un dato non ancora salvato",
+      "Che la colonna è troppo stretta per mostrare per intero un valore numerico"
+    ],
+    "correctIndex": 3,
+    "explanation": "\"######\" segnala che la colonna è troppo stretta per mostrare per intero un valore numerico."
+  },
+  {
+    "id": 6,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede invece a un testo troppo lungo per una colonna, a differenza di un numero?",
+    "options": [
+      "Viene segnalato con dei simboli",
+      "Viene automaticamente spostato su un'altra riga",
+      "Genera un messaggio di errore",
+      "Viene tagliato silenziosamente, senza alcun avviso"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il testo troppo lungo viene tagliato silenziosamente, senza alcun avviso, a differenza dei numeri."
+  },
+  {
+    "id": 7,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la regola pratica indicata nel modulo per la struttura del foglio?",
+    "options": [
+      "Le colonne devono essere sempre della stessa larghezza",
+      "I dati devono adattarsi allo spazio disponibile",
+      "Ogni colonna deve contenere un solo tipo di dato",
+      "La struttura del foglio deve adattarsi ai dati, non il contrario"
+    ],
+    "correctIndex": 3,
+    "explanation": "La regola pratica indicata è che la struttura del foglio deve adattarsi ai dati, non il contrario."
+  },
+  {
+    "id": 8,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa equivale a portare la larghezza di una colonna (o l'altezza di una riga) a zero?",
+    "options": [
+      "Eliminarla definitivamente dal foglio",
+      "Convertirla automaticamente in testo",
+      "Bloccarla in modo permanente",
+      "Nasconderla, senza eliminarne il contenuto"
+    ],
+    "correctIndex": 3,
+    "explanation": "Portare la larghezza o l'altezza a zero equivale a nascondere la colonna o la riga, senza eliminarne il contenuto."
+  },
+  {
+    "id": 9,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa successe nel settembre 2008 legato a Lehman Brothers?",
+    "options": [
+      "Lehman Brothers perse tutti i propri dati per un guasto informatico",
+      "Un trader digitò per errore un ordine di vendita sbagliato",
+      "Un file Excel superò il limite di righe consentito",
+      "Barclays Capital stava per acquistarne parte degli attivi, e un errore di ridimensionamento su un foglio Excel rese visibili contratti che dovevano essere esclusi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Durante il fallimento di Lehman Brothers, un errore di ridimensionamento in Excel rese visibili contratti da escludere dall'acquisizione di Barclays."
+  },
+  {
+    "id": 10,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come erano stati esclusi, inizialmente, i 179 contratti indesiderati nel caso Lehman Brothers/Barclays?",
+    "options": [
+      "Cancellandoli definitivamente dal foglio",
+      "Spostandoli in un foglio separato",
+      "Proteggendoli con una password",
+      "Riducendo a zero l'altezza delle rispettive righe, senza cancellarle"
+    ],
+    "correctIndex": 3,
+    "explanation": "I 179 contratti erano stati nascosti riducendo a zero l'altezza delle rispettive righe."
+  },
+  {
+    "id": 11,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fece, la sera del 18 settembre 2008, il collaboratore dello studio legale incaricato della pratica?",
+    "options": [
+      "Eliminò per errore l'intero foglio Excel",
+      "Corresse manualmente ogni riga nascosta",
+      "Inviò il file al tribunale senza convertirlo",
+      "Convertì il foglio Excel in PDF, ridimensionando globalmente le righe e rendendo visibili quelle nascoste"
+    ],
+    "correctIndex": 3,
+    "explanation": "Convertendo il foglio in PDF, ridimensionò globalmente le righe, rendendo visibili quelle nascoste."
+  },
+  {
+    "id": 12,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa accadde dopo che il documento comprensivo dei contratti indesiderati fu depositato in tribunale?",
+    "options": [
+      "Fu respinto immediatamente dal tribunale",
+      "L'errore fu corretto in tempo, senza conseguenze",
+      "Il caso fu archiviato senza ulteriori sviluppi",
+      "Fu approvato prima che l'errore fosse scoperto, dando origine a una lunga battaglia legale"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il documento fu approvato dal tribunale fallimentare prima che l'errore fosse scoperto."
+  },
+  {
+    "id": 13,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra, secondo il modulo, il caso Lehman Brothers/Barclays?",
+    "options": [
+      "Che Excel non dovrebbe mai essere usato per documenti legali",
+      "Che i file PDF sono meno affidabili dei file Excel",
+      "Che le righe nascoste vengono sempre cancellate automaticamente",
+      "Che ridimensionare righe o colonne non è mai un'operazione puramente estetica"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il caso mostra che ridimensionare righe o colonne può rendere visibile o invisibile un contenuto importante."
+  },
+  {
+    "id": 14,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato, nella metafora del modulo, il ridimensionamento di una colonna?",
+    "options": [
+      "A chiudere una valigia troppo piena",
+      "A spegnere una luce in una stanza vuota",
+      "A piegare un foglio di carta a metà",
+      "A regolare la profondità di un ripiano dell'armadio"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ridimensionare una colonna è paragonato a regolare la profondità di un ripiano dell'armadio."
+  },
+  {
+    "id": 15,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa riguarda la formattazione del carattere in Excel?",
+    "options": [
+      "Solo il colore di sfondo della cella",
+      "Solo l'allineamento del contenuto",
+      "Solo i bordi della cella",
+      "Font, dimensione, grassetto, corsivo, colore del testo"
+    ],
+    "correctIndex": 3,
+    "explanation": "La formattazione del carattere riguarda font, dimensione, grassetto, corsivo e colore del testo."
+  },
+  {
+    "id": 16,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il colore di riempimento di una cella?",
+    "options": [
+      "Il colore del testo contenuto",
+      "Il colore dei bordi",
+      "Il colore della barra della formula",
+      "Lo sfondo della cella"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il colore di riempimento è lo sfondo della cella."
+  },
+  {
+    "id": 17,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i bordi di una cella?",
+    "options": [
+      "Il colore di sfondo della cella",
+      "L'allineamento orizzontale del testo",
+      "La dimensione del font",
+      "Linee che separano visivamente una cella o un gruppo di celle dalle altre"
+    ],
+    "correctIndex": 3,
+    "explanation": "I bordi sono linee che separano visivamente una cella o un gruppo di celle dalle altre."
+  },
+  {
+    "id": 18,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve il \"testo a capo\"?",
+    "options": [
+      "A colorare automaticamente il testo",
+      "A unire più celle in una sola",
+      "A nascondere il contenuto di una cella",
+      "A far andare un contenuto lungo su più righe dentro la stessa cella"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il testo a capo permette a un contenuto lungo di andare su più righe dentro la stessa cella."
+  },
+  {
+    "id": 19,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa il comando \"Unisci e centra\"?",
+    "options": [
+      "Separa una cella unita in celle singole",
+      "Applica un bordo a tutte le celle selezionate",
+      "Nasconde le celle selezionate",
+      "Trasforma più celle adiacenti in un'unica cella più grande, con il contenuto centrato"
+    ],
+    "correctIndex": 3,
+    "explanation": "\"Unisci e centra\" trasforma più celle adiacenti in un'unica cella più grande con il contenuto centrato."
+  },
+  {
+    "id": 20,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se si uniscono celle che contenevano ciascuna un proprio dato?",
+    "options": [
+      "Excel unisce tutti i contenuti in un unico testo",
+      "Excel restituisce un messaggio di errore e blocca l'unione",
+      "Excel conserva tutti i dati, disponendoli su più righe",
+      "Excel conserva solo il contenuto della cella in alto a sinistra e scarta gli altri"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel conserva solo il contenuto della cella in alto a sinistra, scartando gli altri."
+  },
+  {
+    "id": 21,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per convenzione diffusa, a quale tipo di valore viene associato il colore rosso in un foglio di calcolo?",
+    "options": [
+      "A un valore positivo o in crescita",
+      "A un valore ancora da verificare",
+      "A un valore duplicato per errore",
+      "A un valore critico o negativo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Per convenzione, il rosso viene associato a un valore critico o negativo."
+  },
+  {
+    "id": 22,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quando risale la convenzione di usare il rosso per le voci negative?",
+    "options": [
+      "Dagli anni Ottanta, con la diffusione dei personal computer",
+      "Dagli anni Duemila, con la diffusione di Excel",
+      "Dal Settecento, con la nascita della contabilità moderna",
+      "Dai primi decenni del Novecento, nella contabilità su carta"
+    ],
+    "correctIndex": 3,
+    "explanation": "La convenzione nasce nei primi decenni del Novecento, nella contabilità tenuta su carta."
+  },
+  {
+    "id": 23,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale colore usavano i ragionieri del Novecento per le voci positive nei registri contabili?",
+    "options": [
+      "Il rosso",
+      "Il blu",
+      "Il verde",
+      "Il nero"
+    ],
+    "correctIndex": 3,
+    "explanation": "I ragionieri usavano il nero per le voci positive."
+  },
+  {
+    "id": 24,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale espressione deriva dalla pratica contabile per indicare una perdita o un debito?",
+    "options": [
+      "\"Essere in nero\"",
+      "\"Essere in blu\"",
+      "\"Essere in verde\"",
+      "\"Essere in rosso\""
+    ],
+    "correctIndex": 3,
+    "explanation": "L'espressione \"essere in rosso\" deriva dalla pratica contabile per indicare una perdita o un debito."
+  },
+  {
+    "id": 25,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica l'espressione \"essere in nero\" nel suo significato contabile originale?",
+    "options": [
+      "Un bilancio in perdita",
+      "Un pagamento in contanti",
+      "Un conto bloccato",
+      "Un bilancio in attivo"
+    ],
+    "correctIndex": 3,
+    "explanation": "\"Essere in nero\" indica, nel significato contabile originale, un bilancio in attivo."
+  },
+  {
+    "id": 26,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale secondo significato ha assunto in italiano l'espressione \"essere in nero\"?",
+    "options": [
+      "Quello legato a un investimento rischioso",
+      "Quello legato a una truffa finanziaria",
+      "Quello legato a un debito estero",
+      "Quello legato al lavoro irregolare"
+    ],
+    "correctIndex": 3,
+    "explanation": "In italiano, \"essere in nero\" ha assunto anche il significato legato al lavoro irregolare."
+  },
+  {
+    "id": 27,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché, secondo il modulo, colorare una cella non è mai solo una scelta estetica?",
+    "options": [
+      "Perché rallenta il caricamento del foglio",
+      "Perché modifica il valore memorizzato nella cella",
+      "Perché impedisce di stampare correttamente il foglio",
+      "Perché il colore diventa un segnale immediato, capace di comunicare qualcosa prima ancora che il numero venga letto per intero"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il colore comunica un'informazione immediata, prima ancora che il contenuto venga letto per intero."
+  },
+  {
+    "id": 28,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato, nella metafora del modulo, il colore in un foglio di calcolo?",
+    "options": [
+      "A un termometro",
+      "A una bussola",
+      "A un orologio",
+      "A un semaforo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il colore in un foglio di calcolo è paragonato a un semaforo."
+  },
+  {
+    "id": 29,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa determina il formato numerico di una cella?",
+    "options": [
+      "Il colore di sfondo della cella",
+      "La larghezza della colonna",
+      "Il tipo di font utilizzato",
+      "Come un valore viene mostrato a schermo, senza modificare il valore effettivamente memorizzato"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il formato numerico determina come un valore viene mostrato, senza modificare il valore memorizzato."
+  },
+  {
+    "id": 30,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono le categorie principali di formato numerico indicate nel modulo?",
+    "options": [
+      "Testo, immagine, grafico, forma",
+      "Grassetto, corsivo, sottolineato, colore",
+      "Riga, colonna, cella, foglio",
+      "Numero, valuta, percentuale, data"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le categorie principali sono numero, valuta, percentuale, data."
+  },
+  {
+    "id": 31,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è, secondo il modulo, il concetto più importante di questa parte?",
+    "options": [
+      "Che ogni cella può contenere un solo tipo di dato",
+      "Che i formati numerici non si possono mai cambiare",
+      "Che Excel arrotonda sempre i numeri decimali",
+      "Che il valore contenuto in una cella e il modo in cui viene mostrato non sono la stessa cosa"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il concetto centrale è che valore memorizzato e visualizzazione sono due cose distinte."
+  },
+  {
+    "id": 32,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quanti modi diversi può essere mostrato il numero 0,25, secondo l'esempio del modulo?",
+    "options": [
+      "Solo come numero intero",
+      "Solo in formato data",
+      "Solo come testo semplice",
+      "Come \"0,25\", come \"25%\" oppure come \"€ 0,25\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Il numero 0,25 può essere mostrato come \"0,25\", \"25%\" oppure \"€ 0,25\", restando lo stesso valore."
+  },
+  {
+    "id": 33,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove si sceglie il formato di una cella?",
+    "options": [
+      "Dalla scheda Visualizza",
+      "Dal menu File → Stampa",
+      "Dalla barra della formula",
+      "Dalla finestra \"Formato celle\", raggiungibile con il tasto destro o dal gruppo Numeri nella scheda Home"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il formato si sceglie dalla finestra \"Formato celle\"."
+  },
+  {
+    "id": 34,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può succedere se si scrive \"1/2\" pensando a un semplice riferimento?",
+    "options": [
+      "Excel lo interpreta sempre come una frazione matematica",
+      "Excel lo blocca segnalando un errore",
+      "Excel lo converte automaticamente in percentuale",
+      "Excel potrebbe riconoscerlo come una data e trasformarlo in \"1° febbraio\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel potrebbe riconoscere \"1/2\" come una data e trasformarla in \"1° febbraio\"."
+  },
+  {
+    "id": 35,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede al valore memorizzato in una cella quando Excel reinterpreta automaticamente un dato come data?",
+    "options": [
+      "Il valore memorizzato resta sempre invariato, cambia solo l'aspetto",
+      "Excel richiede sempre una conferma esplicita prima di cambiare il valore",
+      "Il cambiamento riguarda solo la formattazione della cella, mai il contenuto",
+      "Il valore stesso memorizzato nella cella può cambiare silenziosamente, non solo il suo aspetto"
+    ],
+    "correctIndex": 3,
+    "explanation": "La reinterpretazione automatica può cambiare silenziosamente anche il valore memorizzato, non solo l'aspetto."
+  },
+  {
+    "id": 36,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quali sigle vengono spesso identificati i geni umani, secondo il modulo?",
+    "options": [
+      "Codici numerici a dieci cifre",
+      "Simboli chimici",
+      "Abbreviazioni in latino",
+      "Sigle brevi come \"MARCH1\" o \"SEPT2\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Molti geni umani sono identificati da sigle brevi come \"MARCH1\" o \"SEPT2\"."
+  },
+  {
+    "id": 37,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede spesso quando sigle come \"MARCH1\" vengono digitate o importate in Excel?",
+    "options": [
+      "Vengono convertite automaticamente in percentuali",
+      "Generano sempre un messaggio di errore",
+      "Vengono trattate come testo puro, senza alcuna conversione",
+      "Vengono riconosciute automaticamente come date"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sigle come \"MARCH1\" vengono spesso riconosciute automaticamente come date."
+  },
+  {
+    "id": 38,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa stimò uno studio del 2016 sugli articoli scientifici con dati genetici?",
+    "options": [
+      "Che nessun articolo conteneva errori di questo tipo",
+      "Che tutti gli articoli erano stati corretti manualmente",
+      "Che il problema riguardava solo un singolo laboratorio",
+      "Che circa un quinto conteneva errori di conversione automatica in Excel"
+    ],
+    "correctIndex": 3,
+    "explanation": "Lo studio del 2016 stimò che circa un quinto degli articoli conteneva errori di questo tipo."
+  },
+  {
+    "id": 39,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su quante pubblicazioni scientifiche fu condotto circa lo studio del 2016 citato nel modulo?",
+    "options": [
+      "Oltre sei miliardi",
+      "Circa 179",
+      "Circa 65.536",
+      "Oltre tremilacinquecento"
+    ],
+    "correctIndex": 3,
+    "explanation": "Lo studio esaminò un campione di oltre tremilacinquecento pubblicazioni."
+  },
+  {
+    "id": 40,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale comitato internazionale decise, tra il 2017 e il 2020, di rinominare 27 geni umani?",
+    "options": [
+      "La SMPTE",
+      "La Commissione Federale delle Comunicazioni",
+      "La Financial Modeling World Cup",
+      "L'HGNC, comitato responsabile della nomenclatura genetica"
+    ],
+    "correctIndex": 3,
+    "explanation": "Fu l'HGNC, il comitato internazionale per la nomenclatura genetica, a decidere la rinomina."
+  },
+  {
+    "id": 41,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In cosa fu rinominato il gene \"MARCH1\", per evitare la conversione automatica in data?",
+    "options": [
+      "In \"MARCH-ONE\"",
+      "In \"M1ARCH\"",
+      "In \"1MARCH\"",
+      "In \"MARCHF1\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Il gene \"MARCH1\" fu rinominato in \"MARCHF1\"."
+  },
+  {
+    "id": 42,
+    "module": "formattare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra, secondo il modulo, il caso della rinomina dei geni umani?",
+    "options": [
+      "Che Excel non dovrebbe mai essere usato in ambito scientifico",
+      "Che i formati data sono ormai obsoleti",
+      "Che i nomi dei geni erano originariamente scelti in modo casuale",
+      "Quanto possa essere concreto il confine tra ciò che si scrive e ciò che un foglio di calcolo decide che quel testo debba diventare"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il caso mostra su scala enorme quanto sia concreto il rischio della reinterpretazione automatica."
+  }
+]

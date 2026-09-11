@@ -1,8 +1,71 @@
 /* ==================================================
-   flip-card.js — PixelProf v8.23.2 (Didattica · Flip Card)
+   flip-card.js — PixelProf v8.28.0 (Didattica · Flip Card)
    Prima "attività didattica" di PixelProf, accanto ai
    Minigiochi: mazzo di carte domanda/risposta con flip 3D,
    caricato da CSV dedicati per modulo + livello.
+
+   v8.28.0: richiesta esplicita utente — autovalutazione ✕/✓ +
+   ordine casuale del mazzo. Approvato su mockup-flipcard-v2.html.
+     - Il mazzo ora viene mescolato (_fcShuffle(), Fisher-Yates) una
+       volta per sessione in startFlipCard(), su una COPIA dei dati
+       restituiti da FlipCardLoader.load() — la cache del loader
+       resta nell'ordine originale del CSV, solo fcState.cards è
+       mescolato. Il contatore (idx+1)+'/'+cards.length era già
+       "posizione nell'array visualizzato": mescolando l'array a
+       monte, il contatore mostrato risulta automaticamente
+       progressivo (1,2,3…) e SVINCOLATO dalla riga reale nel CSV,
+       senza dover tracciare separatamente un "indice originale".
+     - fcState esteso con marks[] (null|'wrong'|'correct', un valore
+       per card, indicizzato come cards[]) e wrongCount/correctCount
+       (contatori aggregati di sessione — MAI persistiti: azzerati a
+       ogni nuova chiamata di startFlipCard(), coerente con la
+       richiesta "nessun dato viene salvato, non è un minigioco").
+     - _renderFlipCard(): il vecchio <span class="fc-counter-nav">
+       centrale tra i pulsanti è STATO RIMOSSO — il contatore
+       progressivo si è spostato in un badge #fc-progress-badge in
+       alto a sinistra sulla card (sibling di .fc-card-inner, non
+       dentro: resta fisso e leggibile anche a card girata, non
+       flippa con rotateY). Nuovo #fc-mark-badge in alto a destra
+       sulla card, stesso trattamento, mostra ✕/✓ colorato quando la
+       card corrente ha già una valutazione salvata in marks[].
+       Tra i due pulsanti di navigazione, due nuovi pulsanti pillola
+       .fc-mark-wrong/.fc-mark-correct (icone ti-x/ti-check + il
+       contatore aggregato) — ordine richiesto: ← Prev, ✕, ✓, Next →.
+     - Nuove fcMark(type)/_fcPlayMarkFeedback(type): fcMark salva la
+       valutazione per la card corrente (se cambia rispetto alla
+       precedente, decrementa il contatore vecchio e incrementa
+       quello nuovo — ri-cliccare la STESSA valutazione non altera i
+       contatori, comportamento confermato con Erasmo sul mockup),
+       poi richiama _fcUpdateFaces() e _fcPlayMarkFeedback(). Questa
+       riproduce il suono (AudioManager.play, stesso nome gia' usato
+       da tutti gli altri minigiochi: 'wrong'/'correct'), applica la
+       classe di animazione (.fc-shake per ✕, .fc-pulse-correct per
+       ✓ — vedi css/flip-card.css) e, dopo 550ms (stesso timing per
+       entrambe, confermato con Erasmo: le due animazioni durano
+       .5s in CSS, il piccolo margine extra evita di tagliare
+       l'ultimo frame), avanza da sola alla card successiva se non
+       è l'ultima — stesso identico ritardo per ✕ e ✓, nessuna
+       asimmetria voluta né percepita dovrebbe esserci: se in prova
+       reale sembrasse ancora diversa è un effetto ottico delle due
+       animazioni (shake è a scatti multipli, pulse è un unico
+       bagliore in espansione), non un timing diverso nel codice.
+     - _fcAdvanceTimer (nuova variabile di modulo) traccia il
+       setTimeout dell'avanzamento automatico: fcNav() lo cancella
+       sempre a inizio funzione (l'utente che naviga manualmente
+       durante la finestra di 550ms non deve ritrovarsi con un
+       avanzamento automatico "fantasma" in coda), così come
+       exitFlipCard()/confirmExitFlipCard() per sicurezza in uscita.
+     - _fcUpdateFaces(): oltre a quanto già faceva, ora aggiorna il
+       badge progresso, il badge valutazione (in base a marks[idx])
+       e i due contatori aggregati nei pulsanti; rimuove sempre le
+       classi di animazione a inizio funzione (sia quando richiamata
+       da fcMark() prima di far ripartire l'animazione, sia quando
+       richiamata da fcNav() su una card diversa — mai lasciare
+       un'animazione "appesa" su una card che non è più quella
+       appena valutata).
+     - Nessuna riga toccata in game-engine-state.js/app.js: stesso
+       isolamento del resto del file, solo nuove funzioni/variabili
+       locali a flip-card.js.
 
    v8.23.2: FIX parsing CSV con delimitatore ";" — i CSV reali
    (CE/OE/Reti e Internet, 22 file) sono tutti esportati con ";"
@@ -341,6 +404,25 @@ function _fcRowsToCards(rows){
   return cards;
 }
 
+/* -- Ordine casuale del mazzo -------------------------------
+   v8.28.0: richiesta esplicita utente — le domande devono apparire
+   in ordine casuale (non 1,2,3… come nel CSV), ma il contatore
+   mostrato in card deve restare progressivo (1,2,3…) a prescindere
+   da quale riga del CSV capita in quella posizione. Fisher-Yates
+   standard, su una COPIA dell'array (mai muta l'originale): usata
+   da startFlipCard() sulla copia già restituita da
+   FlipCardLoader.load() (che a sua volta è già una copia della
+   cache — vedi sotto), quindi la cache interna del loader resta
+   sempre nell'ordine originale del CSV tra una sessione e l'altra. */
+function _fcShuffle(arr){
+  const a = arr.slice();
+  for(let i = a.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
 /* -- Loader CSV dedicato -----------------------------------
    Stessa FORMA di _createLoader() in game-engine-state.js
    (cache, moduleMap, stesso _resolveJsonPath per il path) ma
@@ -385,7 +467,16 @@ const FlipCardLoader = (function(){
 })();
 
 /* -- Stato mazzo corrente ---------------------------------- */
-let fcState = null; // { cards, idx, flipped, mod, liv }
+let fcState = null; // { cards, idx, flipped, mod, liv, marks, wrongCount, correctCount }
+
+/* v8.28.0: handle del setTimeout di avanzamento automatico dopo un
+   click ✕/✓ (vedi _fcPlayMarkFeedback più sotto) — variabile di
+   modulo separata da fcState perché deve sopravvivere anche se
+   fcState viene azzerato nel frattempo (uscita durante la finestra
+   di 550ms): fcNav()/exitFlipCard()/confirmExitFlipCard() la
+   cancellano sempre per evitare un avanzamento "fantasma" dopo che
+   l'utente ha già navigato manualmente o è uscito. */
+let _fcAdvanceTimer = null;
 
 /* Card di stato (nessun mazzo / vuoto / errore) — riusa le
    stesse classi CSS di _showGameError (.result-wrap, ecc.,
@@ -427,6 +518,7 @@ function _fcHeader(){
    (nulla da abbandonare, chiedere conferma sarebbe solo attrito)
    e internamente da exitFlipCardConfirm() una volta confermato. */
 function exitFlipCard(){
+  clearTimeout(_fcAdvanceTimer); // v8.28.0: niente avanzamento "fantasma" dopo l'uscita
   fcState = null;
   setTb(null);
   showScreen('tab-home');
@@ -477,6 +569,7 @@ async function confirmExitFlipCard(continueFn){
     noLabel: 'Annulla',
   });
   if(ok){
+    clearTimeout(_fcAdvanceTimer); // v8.28.0: niente avanzamento "fantasma" dopo l'uscita
     fcState = null;
     continueFn();
   }
@@ -703,7 +796,15 @@ async function startFlipCard(cont, mod, liv){
       });
       return;
     }
-    fcState = { cards, idx: 0, flipped: false, mod, liv };
+    // v8.28.0: mescola una volta per sessione — vedi _fcShuffle() più
+    // sopra per il perché questo basta a rendere il contatore mostrato
+    // progressivo e svincolato dalla riga reale nel CSV.
+    cards = _fcShuffle(cards);
+    fcState = {
+      cards, idx: 0, flipped: false, mod, liv,
+      marks: new Array(cards.length).fill(null), // null | 'wrong' | 'correct', per card
+      wrongCount: 0, correctCount: 0,
+    };
     _renderFlipCard(cont);
   } finally {
     // v8.19.2 — scongela SEMPRE (successo, errore o mazzo vuoto): la
@@ -734,6 +835,8 @@ function _renderFlipCard(cont){
         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();fcFlip();}
                    if(event.key==='ArrowLeft'){event.preventDefault();fcNav(-1);}
                    if(event.key==='ArrowRight'){event.preventDefault();fcNav(1);}">
+        <div class="fc-progress-badge" id="fc-progress-badge"></div>
+        <div class="fc-mark-badge" id="fc-mark-badge"><i class="ti ti-x"></i></div>
         <div class="fc-card-inner">
           <div class="fc-face fc-front">
             <div class="fc-eyebrow">// Domanda</div>
@@ -750,7 +853,12 @@ function _renderFlipCard(cont){
     </div>
     <div class="fc-nav">
       <button class="fc-nav-btn" id="fc-prev" onclick="fcNav(-1)" aria-label="Card precedente"><i class="ti ti-chevron-left"></i></button>
-      <span class="fc-counter-nav" id="fc-counter-nav"></span>
+      <button class="fc-mark-btn fc-mark-wrong" onclick="fcMark('wrong')" aria-label="Segna come sbagliata">
+        <i class="ti ti-x"></i><span id="fc-wrong-count">0</span>
+      </button>
+      <button class="fc-mark-btn fc-mark-correct" onclick="fcMark('correct')" aria-label="Segna come esatta">
+        <i class="ti ti-check"></i><span id="fc-correct-count">0</span>
+      </button>
       <button class="fc-nav-btn" id="fc-next" onclick="fcNav(1)" aria-label="Card successiva"><i class="ti ti-chevron-right"></i></button>
     </div>`;
   _fcUpdateFaces();
@@ -766,12 +874,27 @@ function _fcUpdateFaces(){
   const qEl = shq('fc-q'), aEl = shq('fc-a');
   if(qEl) qEl.textContent = card.q;
   if(aEl) aEl.textContent = card.a;
-  const label = (s.idx + 1) + '/' + s.cards.length;
-  const counterEl = shq('fc-counter-nav'); if(counterEl) counterEl.textContent = label;
+
+  // v8.28.0: contatore progressivo spostato dal centro dei pulsanti
+  // a un badge in alto a sinistra sulla card (vedi _renderFlipCard).
+  const progressEl = shq('fc-progress-badge');
+  if(progressEl) progressEl.textContent = (s.idx + 1) + '/' + s.cards.length;
+
   const prevBtn = shq('fc-prev'); if(prevBtn) prevBtn.disabled = s.idx === 0;
   const nextBtn = shq('fc-next'); if(nextBtn) nextBtn.disabled = s.idx === s.cards.length - 1;
+
+  // v8.28.0: contatori aggregati di sessione nei due pulsanti pillola.
+  const wrongCountEl = shq('fc-wrong-count'); if(wrongCountEl) wrongCountEl.textContent = s.wrongCount;
+  const correctCountEl = shq('fc-correct-count'); if(correctCountEl) correctCountEl.textContent = s.correctCount;
+
   const cardEl = shq('fc-card');
   if(cardEl){
+    // v8.28.0: rimuove sempre le classi di animazione feedback qui —
+    // sia quando richiamata da fcMark() (che le farà ripartire subito
+    // dopo, in _fcPlayMarkFeedback), sia quando richiamata da fcNav()
+    // su una card diversa (mai lasciarle "appese" su una card che non
+    // è più quella appena valutata).
+    cardEl.classList.remove('fc-shake', 'fc-pulse-correct');
     cardEl.classList.toggle('flipped', s.flipped);
     const front = cardEl.querySelector('.fc-front');
     const back = cardEl.querySelector('.fc-back');
@@ -779,6 +902,22 @@ function _fcUpdateFaces(){
     // le due facce sovrapposte: solo quella visibile resta esposta.
     if(front) front.setAttribute('aria-hidden', s.flipped ? 'true' : 'false');
     if(back) back.setAttribute('aria-hidden', s.flipped ? 'false' : 'true');
+  }
+
+  // v8.28.0: badge valutazione in alto a destra — mostra ✕/✓ colorato
+  // solo se questa card ha già una valutazione salvata in marks[].
+  const markBadge = shq('fc-mark-badge');
+  if(markBadge){
+    markBadge.classList.remove('show', 'wrong', 'correct');
+    const icon = markBadge.querySelector('i');
+    const mark = s.marks[s.idx];
+    if(mark === 'wrong'){
+      markBadge.classList.add('show', 'wrong');
+      if(icon) icon.className = 'ti ti-x';
+    } else if(mark === 'correct'){
+      markBadge.classList.add('show', 'correct');
+      if(icon) icon.className = 'ti ti-check';
+    }
   }
 }
 
@@ -791,9 +930,77 @@ function fcFlip(){
 function fcNav(dir){
   const s = fcState;
   if(!s) return;
+  // v8.28.0: annulla un eventuale avanzamento automatico già in coda
+  // (l'utente sta navigando lui stesso durante la finestra di 550ms
+  // dopo un click ✕/✓) — senza questo, fcNav(1) potrebbe scattare due
+  // volte: una manuale e una "fantasma" dal timer precedente.
+  clearTimeout(_fcAdvanceTimer);
   const n = s.idx + dir;
   if(n < 0 || n >= s.cards.length) return; // niente loop ai bordi
   s.idx = n;
   s.flipped = false;
   _fcUpdateFaces();
+}
+
+/* v8.28.0: click su ✕ o ✓ — richiesta esplicita utente, approvata su
+   mockup-flipcard-v2.html. Salva la valutazione della card corrente
+   in fcState.marks (indicizzato come cards[], null finché non
+   valutata), aggiorna i due contatori aggregati SOLO se la
+   valutazione cambia rispetto a quella precedente (ri-cliccare la
+   stessa valutazione non altera i contatori, comportamento
+   confermato con Erasmo), poi richiama _fcUpdateFaces() per
+   riflettere subito badge/contatori e _fcPlayMarkFeedback() per
+   suono+animazione+avanzamento automatico.
+   type: 'wrong' | 'correct'. */
+function fcMark(type){
+  const s = fcState;
+  if(!s) return;
+  const i = s.idx;
+  const prevMark = s.marks[i];
+  if(prevMark !== type){
+    if(prevMark === 'wrong') s.wrongCount--;
+    if(prevMark === 'correct') s.correctCount--;
+    if(type === 'wrong') s.wrongCount++;
+    if(type === 'correct') s.correctCount++;
+    s.marks[i] = type;
+  }
+  _fcUpdateFaces();
+  _fcPlayMarkFeedback(type);
+}
+
+/* v8.28.0: suono (AudioManager, stesso nome già usato da tutti gli
+   altri minigiochi: 'wrong'/'correct' — silenzioso se disattivato o
+   se il file manca, nessuna gestione aggiuntiva necessaria qui) +
+   animazione sulla card (.fc-shake per ✕, .fc-pulse-correct per ✓ —
+   vedi css/flip-card.css, ENTRAMBE .5s) + avanzamento automatico dopo
+   550ms se non è l'ultima card. Stesso identico ritardo per ✕ e ✓:
+   nessuna asimmetria nel codice, confermato con Erasmo dopo il
+   mockup — un'eventuale differenza percepita è un effetto ottico
+   delle due animazioni (shake è a scatti multipli, pulse è un unico
+   bagliore in espansione), non un timing diverso.
+   Legge fcState "fresco" dentro il setTimeout (non una variabile
+   catturata) apposta: se nel frattempo l'utente esce da Flip Card
+   (fcState azzerato da exitFlipCard()), l'avanzamento si annulla da
+   solo invece di operare su uno stato ormai inesistente. */
+function _fcPlayMarkFeedback(type){
+  if(typeof AudioManager !== 'undefined') AudioManager.play(type === 'wrong' ? 'wrong' : 'correct');
+
+  const cardEl = shq('fc-card');
+  if(cardEl){
+    const cls = type === 'wrong' ? 'fc-shake' : 'fc-pulse-correct';
+    // Rimuovi+forza un reflow prima di riaggiungere: permette
+    // all'animazione di ripartire da capo anche se il click precedente
+    // l'aveva già innescata pochi istanti prima sulla stessa card.
+    cardEl.classList.remove('fc-shake', 'fc-pulse-correct');
+    void cardEl.offsetWidth;
+    cardEl.classList.add(cls);
+  }
+
+  clearTimeout(_fcAdvanceTimer);
+  _fcAdvanceTimer = setTimeout(() => {
+    const c = shq('fc-card');
+    if(c) c.classList.remove('fc-shake', 'fc-pulse-correct');
+    const s = fcState;
+    if(s && s.idx < s.cards.length - 1) fcNav(1);
+  }, 550);
 }

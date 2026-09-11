@@ -103,18 +103,28 @@
     font-size: 10px; color: rgba(255,255,255,.35); letter-spacing: .5px;
   }
 
-  /* -- Badge sulla card (v8.28.0) --------------------------
-     Sibling di .fc-card-inner (non figli): restano fissi e
-     leggibili anche a card girata, non ruotano con rotateY.
-     #fc-progress-badge (alto sx): contatore progressivo,
+  /* -- Badge sulla card (v8.28.0, FIX post-test) ------------
+     Figli di .fc-face (uno per faccia, .fc-front E .fc-back,
+     stesso contenuto) — NON sibling fissi di .fc-card-inner come
+     nella prima versione: quella versione li teneva "fermi"
+     fuori dal flip, ma il risultato era badge visibilmente
+     statici mentre la card ruotava sotto — comportamento non
+     voluto, segnalato da Erasmo. Essendo ora dentro ciascuna
+     faccia, .fc-face{position:absolute;inset:0} li ancora
+     correttamente ai 4 angoli della faccia stessa, e ruotano
+     insieme al testo con lo stesso rotateY di .fc-card-inner —
+     leggibili (non specchiati) su entrambi i lati grazie alla
+     contro-rotazione che .fc-back già si applica da sé.
+     .fc-progress-badge (alto sx): contatore progressivo,
      sostituisce il vecchio .fc-counter-nav centrale tra i
      pulsanti — SVINCOLATO dalla riga reale nel CSV (il mazzo è
      mescolato una volta per sessione in js/flip-card.js,
-     _fcShuffle()). #fc-mark-badge (alto dx): ✕/✓ colorato,
+     _fcShuffle()). .fc-mark-badge (alto dx): ✕/✓ colorato,
      visibile solo se la card corrente ha già una valutazione
-     salvata (classe .show, aggiunta via JS). Stessi due colori
-     già usati altrove nell'app per esatto/sbagliato (.opt.correct/
-     .opt.wrong in pixelprof.css): nessun nuovo colore introdotto. */
+     salvata (classe .show, aggiunta via JS su entrambe le
+     istanze). Stessi due colori già usati altrove nell'app per
+     esatto/sbagliato (.opt.correct/.opt.wrong in pixelprof.css):
+     nessun nuovo colore introdotto. */
   .fc-progress-badge{
     position: absolute; top: 10px; left: 10px; z-index: 5;
     font-family: 'Share Tech Mono', monospace;

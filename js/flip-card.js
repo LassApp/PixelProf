@@ -22,15 +22,26 @@
        richiesta "nessun dato viene salvato, non è un minigioco").
      - _renderFlipCard(): il vecchio <span class="fc-counter-nav">
        centrale tra i pulsanti è STATO RIMOSSO — il contatore
-       progressivo si è spostato in un badge #fc-progress-badge in
-       alto a sinistra sulla card (sibling di .fc-card-inner, non
-       dentro: resta fisso e leggibile anche a card girata, non
-       flippa con rotateY). Nuovo #fc-mark-badge in alto a destra
-       sulla card, stesso trattamento, mostra ✕/✓ colorato quando la
-       card corrente ha già una valutazione salvata in marks[].
-       Tra i due pulsanti di navigazione, due nuovi pulsanti pillola
-       .fc-mark-wrong/.fc-mark-correct (icone ti-x/ti-check + il
-       contatore aggregato) — ordine richiesto: ← Prev, ✕, ✓, Next →.
+       progressivo si è spostato in un badge .fc-progress-badge in
+       alto a sinistra sulla card, e un nuovo badge .fc-mark-badge in
+       alto a destra mostra ✕/✓ colorato quando la card corrente ha
+       già una valutazione salvata in marks[]. FIX post-test (stesso
+       giro di feedback di Erasmo): la prima versione li metteva come
+       sibling fissi di .fc-card-inner, fuori da esso, per restare
+       "fermi" durante il flip — risultato: badge visibilmente statici
+       mentre la card ruotava sotto di loro. Ora sono DUPLICATI dentro
+       ciascuna .fc-face (front e back, stesso contenuto), quindi
+       ruotano insieme al testo con lo stesso rotateY, e sono corretti
+       (non specchiati) su entrambi i lati grazie alla contro-rotazione
+       che .fc-back già applica a sé stessa. Essendo dentro le facce,
+       ereditano automaticamente l'aria-hidden alternato che
+       _fcUpdateFaces() già imposta su .fc-front/.fc-back — nessuna
+       lettura doppia per chi usa uno screen reader. Aggiornati via
+       querySelectorAll('.fc-progress-badge'/'.fc-mark-badge') sulla
+       classe (stesso valore su entrambe le facce), non più per id
+       univoco. Tra i due pulsanti di navigazione, due nuovi pulsanti
+       pillola .fc-mark-wrong/.fc-mark-correct (icone ti-x/ti-check +
+       il contatore aggregato) — ordine richiesto: ← Prev, ✕, ✓, Next →.
      - Nuove fcMark(type)/_fcPlayMarkFeedback(type): fcMark salva la
        valutazione per la card corrente (se cambia rispetto alla
        precedente, decrementa il contatore vecchio e incrementa
@@ -835,15 +846,17 @@ function _renderFlipCard(cont){
         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();fcFlip();}
                    if(event.key==='ArrowLeft'){event.preventDefault();fcNav(-1);}
                    if(event.key==='ArrowRight'){event.preventDefault();fcNav(1);}">
-        <div class="fc-progress-badge" id="fc-progress-badge"></div>
-        <div class="fc-mark-badge" id="fc-mark-badge"><i class="ti ti-x"></i></div>
         <div class="fc-card-inner">
           <div class="fc-face fc-front">
+            <div class="fc-progress-badge"></div>
+            <div class="fc-mark-badge"><i class="ti ti-x"></i></div>
             <div class="fc-eyebrow">// Domanda</div>
             <div class="fc-text" id="fc-q"></div>
             <div class="fc-hint">↻ tocca per la risposta</div>
           </div>
           <div class="fc-face fc-back">
+            <div class="fc-progress-badge"></div>
+            <div class="fc-mark-badge"><i class="ti ti-x"></i></div>
             <div class="fc-eyebrow">// Risposta</div>
             <div class="fc-text" id="fc-a"></div>
             <div class="fc-hint">↻ tocca per tornare alla domanda</div>
@@ -875,11 +888,6 @@ function _fcUpdateFaces(){
   if(qEl) qEl.textContent = card.q;
   if(aEl) aEl.textContent = card.a;
 
-  // v8.28.0: contatore progressivo spostato dal centro dei pulsanti
-  // a un badge in alto a sinistra sulla card (vedi _renderFlipCard).
-  const progressEl = shq('fc-progress-badge');
-  if(progressEl) progressEl.textContent = (s.idx + 1) + '/' + s.cards.length;
-
   const prevBtn = shq('fc-prev'); if(prevBtn) prevBtn.disabled = s.idx === 0;
   const nextBtn = shq('fc-next'); if(nextBtn) nextBtn.disabled = s.idx === s.cards.length - 1;
 
@@ -902,22 +910,32 @@ function _fcUpdateFaces(){
     // le due facce sovrapposte: solo quella visibile resta esposta.
     if(front) front.setAttribute('aria-hidden', s.flipped ? 'true' : 'false');
     if(back) back.setAttribute('aria-hidden', s.flipped ? 'false' : 'true');
-  }
 
-  // v8.28.0: badge valutazione in alto a destra — mostra ✕/✓ colorato
-  // solo se questa card ha già una valutazione salvata in marks[].
-  const markBadge = shq('fc-mark-badge');
-  if(markBadge){
-    markBadge.classList.remove('show', 'wrong', 'correct');
-    const icon = markBadge.querySelector('i');
+    // v8.28.0 (fix): il contatore progresso e il badge valutazione
+    // vivono ORA dentro ciascuna faccia (front e back), non più come
+    // overlay fissi fuori da .fc-card-inner — così ruotano insieme al
+    // testo durante il flip invece di restare fermi sopra la card che
+    // gira sotto di loro (segnalato da Erasmo dopo il primo giro di
+    // test). Essendo dentro .fc-front/.fc-back, ereditano automatica-
+    // mente l'aria-hidden impostato qui sopra: nessun lavoro extra per
+    // evitare che un lettore di schermo annunci il badge due volte.
+    // Contenuto identico su entrambe le facce → si aggiornano insieme
+    // con querySelectorAll, non serve più un id univoco per elemento.
+    const label = (s.idx + 1) + '/' + s.cards.length;
+    cardEl.querySelectorAll('.fc-progress-badge').forEach(el => { el.textContent = label; });
+
     const mark = s.marks[s.idx];
-    if(mark === 'wrong'){
-      markBadge.classList.add('show', 'wrong');
-      if(icon) icon.className = 'ti ti-x';
-    } else if(mark === 'correct'){
-      markBadge.classList.add('show', 'correct');
-      if(icon) icon.className = 'ti ti-check';
-    }
+    cardEl.querySelectorAll('.fc-mark-badge').forEach(el => {
+      el.classList.remove('show', 'wrong', 'correct');
+      const icon = el.querySelector('i');
+      if(mark === 'wrong'){
+        el.classList.add('show', 'wrong');
+        if(icon) icon.className = 'ti ti-x';
+      } else if(mark === 'correct'){
+        el.classList.add('show', 'correct');
+        if(icon) icon.className = 'ti ti-check';
+      }
+    });
   }
 }
 

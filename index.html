@@ -1504,6 +1504,33 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         </svg>
         <div class="dm-content"><span class="dm-icon"><i class="ti ti-link" style="color:#9d8fff"></i></span><h3>Abbina</h3><p>Termine → definizione</p></div>
       </div>
+      <div class="act-card act-tf dm-card" id="ac-truefalse" role="button" tabindex="0" aria-label="Attività Vero o Falso" onclick="selAct('truefalse')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('truefalse');}" style="--dm-accent-rgb:255,209,102;--dm-accent-text-rgb:255,209,102">
+        <span class="dm-badge">Minigioco</span>
+        <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="grid-tf" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#ffd166" stroke-width=".4" opacity=".18"/></pattern></defs>
+          <rect width="660" height="180" fill="url(#grid-tf)"/>
+          <line x1="558" y1="48" x2="558" y2="120" stroke="#ffd166" stroke-width="2" opacity=".4"/>
+          <line x1="510" y1="66" x2="606" y2="66" stroke="#ffd166" stroke-width="2" opacity=".4" stroke-linecap="round"/>
+          <path d="M510 66 a24 20 0 0 0 -24 30 h48 a24 20 0 0 0 -24 -30 Z" fill="rgba(255,209,102,.06)" stroke="#ffe4a3" stroke-width="1.2" opacity=".5"/>
+          <path d="M606 66 a24 20 0 0 0 -24 30 h48 a24 20 0 0 0 -24 -30 Z" fill="rgba(255,209,102,.06)" stroke="#ffe4a3" stroke-width="1.2" opacity=".5"/>
+          <rect x="546" y="120" width="24" height="8" rx="2" fill="rgba(255,209,102,.1)" stroke="#ffd166" stroke-width="1" opacity=".4"/>
+          <ellipse cx="558" cy="88" rx="90" ry="58" fill="rgba(255,209,102,.04)"/>
+        </svg>
+        <div class="dm-content"><span class="dm-icon"><i class="ti ti-scale" style="color:#ffd166"></i></span><h3>Vero o Falso</h3><p>Vero o falso?</p></div>
+      </div>
+      <div class="act-card act-fill dm-card" id="ac-fill" role="button" tabindex="0" aria-label="Attività Completa la frase" onclick="selAct('fill')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('fill');}" style="--dm-accent-rgb:0,207,255;--dm-accent-text-rgb:0,207,255">
+        <span class="dm-badge">Minigioco</span>
+        <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs><pattern id="grid-fill" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#00cfff" stroke-width=".4" opacity=".18"/></pattern></defs>
+          <rect width="660" height="180" fill="url(#grid-fill)"/>
+          <line x1="484" y1="100" x2="530" y2="100" stroke="#00cfff" stroke-width="2" opacity=".4" stroke-linecap="round"/>
+          <line x1="546" y1="100" x2="600" y2="100" stroke="#00cfff" stroke-width="2" opacity=".4" stroke-linecap="round" stroke-dasharray="1 7"/>
+          <line x1="484" y1="118" x2="560" y2="118" stroke="#00cfff" stroke-width="2" opacity=".25" stroke-linecap="round"/>
+          <path d="M596 62 l14 14 -34 34 -18 4 4 -18 Z" fill="rgba(0,207,255,.08)" stroke="#5ce3ff" stroke-width="1.2" opacity=".55" stroke-linejoin="round"/>
+          <ellipse cx="558" cy="90" rx="90" ry="58" fill="rgba(0,207,255,.04)"/>
+        </svg>
+        <div class="dm-content"><span class="dm-icon"><i class="ti ti-pencil" style="color:#00cfff"></i></span><h3>Completa la frase</h3><p>Inserisci il termine mancante</p></div>
+      </div>
       <!-- Memory in pausa (v8.9.2, badge corretto in v8.9.3): tasto
            disattivato per TUTTI i moduli di TUTTE le aree, dato che
            questa griglia attività è markup statico condiviso e non
@@ -1533,33 +1560,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <ellipse cx="558" cy="90" rx="90" ry="58" fill="rgba(255,77,109,.04)"/>
         </svg>
         <div class="dm-content"><span class="dm-icon"><i class="ti ti-cards" style="color:#ff6b85"></i></span><h3>Memory</h3><p>Trova le coppie</p></div>
-      </div>
-      <div class="act-card act-fill dm-card" id="ac-fill" role="button" tabindex="0" aria-label="Attività Completa la frase" onclick="selAct('fill')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('fill');}" style="--dm-accent-rgb:0,207,255;--dm-accent-text-rgb:0,207,255">
-        <span class="dm-badge">Minigioco</span>
-        <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <defs><pattern id="grid-fill" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#00cfff" stroke-width=".4" opacity=".18"/></pattern></defs>
-          <rect width="660" height="180" fill="url(#grid-fill)"/>
-          <line x1="484" y1="100" x2="530" y2="100" stroke="#00cfff" stroke-width="2" opacity=".4" stroke-linecap="round"/>
-          <line x1="546" y1="100" x2="600" y2="100" stroke="#00cfff" stroke-width="2" opacity=".4" stroke-linecap="round" stroke-dasharray="1 7"/>
-          <line x1="484" y1="118" x2="560" y2="118" stroke="#00cfff" stroke-width="2" opacity=".25" stroke-linecap="round"/>
-          <path d="M596 62 l14 14 -34 34 -18 4 4 -18 Z" fill="rgba(0,207,255,.08)" stroke="#5ce3ff" stroke-width="1.2" opacity=".55" stroke-linejoin="round"/>
-          <ellipse cx="558" cy="90" rx="90" ry="58" fill="rgba(0,207,255,.04)"/>
-        </svg>
-        <div class="dm-content"><span class="dm-icon"><i class="ti ti-pencil" style="color:#00cfff"></i></span><h3>Completa la frase</h3><p>Inserisci il termine mancante</p></div>
-      </div>
-      <div class="act-card act-tf dm-card" id="ac-truefalse" role="button" tabindex="0" aria-label="Attività Vero o Falso" onclick="selAct('truefalse')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('truefalse');}" style="--dm-accent-rgb:255,209,102;--dm-accent-text-rgb:255,209,102">
-        <span class="dm-badge">Minigioco</span>
-        <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <defs><pattern id="grid-tf" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#ffd166" stroke-width=".4" opacity=".18"/></pattern></defs>
-          <rect width="660" height="180" fill="url(#grid-tf)"/>
-          <line x1="558" y1="48" x2="558" y2="120" stroke="#ffd166" stroke-width="2" opacity=".4"/>
-          <line x1="510" y1="66" x2="606" y2="66" stroke="#ffd166" stroke-width="2" opacity=".4" stroke-linecap="round"/>
-          <path d="M510 66 a24 20 0 0 0 -24 30 h48 a24 20 0 0 0 -24 -30 Z" fill="rgba(255,209,102,.06)" stroke="#ffe4a3" stroke-width="1.2" opacity=".5"/>
-          <path d="M606 66 a24 20 0 0 0 -24 30 h48 a24 20 0 0 0 -24 -30 Z" fill="rgba(255,209,102,.06)" stroke="#ffe4a3" stroke-width="1.2" opacity=".5"/>
-          <rect x="546" y="120" width="24" height="8" rx="2" fill="rgba(255,209,102,.1)" stroke="#ffd166" stroke-width="1" opacity=".4"/>
-          <ellipse cx="558" cy="88" rx="90" ry="58" fill="rgba(255,209,102,.04)"/>
-        </svg>
-        <div class="dm-content"><span class="dm-icon"><i class="ti ti-scale" style="color:#ffd166"></i></span><h3>Vero o Falso</h3><p>Vero o falso?</p></div>
       </div>
     </div>
     <!-- v8.20.0: pannello impostazioni portato da inline a overlay

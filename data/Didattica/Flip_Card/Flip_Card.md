@@ -4,7 +4,7 @@ Questo file è la **fonte ufficiale e vincolante** per Flip Card: Aree e Moduli 
 
 > **Nota:** Flip Card non è un mini-gioco, ma un **metodo di apprendimento** che fa parte della didattica di PixelProf, distinto dai mini-giochi (quiz, speedquiz, abbina, completa la frase, vero o falso).
 
-> **Nota:** questo file è distinto da `aree_e_moduli.md`. `aree_e_moduli.md` resta l'unica fonte ufficiale per la definizione di Aree, Moduli e Chiavi tecniche del progetto; `Flip_Card.md` riutilizza quelle stesse Chiavi ma definisce path, naming e stato specifici del mini-gioco Flip Card, che possono differire (es. stato di attivazione) da quelli degli altri mini-giochi.
+> **Nota:** questo file è distinto da `aree_e_moduli.md`. `aree_e_moduli.md` resta l'unica fonte ufficiale per la definizione di Aree, Moduli e Chiavi tecniche del progetto; `Flip_Card.md` riutilizza quelle stesse Chiavi ma definisce path, naming e stato specifici delle Flip Card, che possono differire (es. stato di attivazione) da quelli degli altri mini-giochi.
 
 > **Nota generale:** `Path base` indica la cartella comune ai file del modulo. Ogni file deve essere caricato direttamente in questa cartella; il nome del file costituisce l'ultima parte del relativo path.
 
@@ -223,15 +223,59 @@ data/
     - `Flip_Card_Facile_Modulo_3.csv` *(csv creato)*
     - `Flip_Card_Medio_Modulo_3.csv` *(csv creato)*
 
+#### IT Security
+
+> Sotto-area attiva. File CSV da creare.
+
+- **Modulo 1 — Fondamenti della sicurezza**
+  - Chiave: `fondamenti-della-sicurezza`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo1/`
+  - File:
+    - `Flip_Card_Facile_Modulo_1.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(da creare)*
+
+- **Modulo 2 — Il malware**
+  - Chiave: `il-malware`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo2/`
+  - File:
+    - `Flip_Card_Facile_Modulo_2.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(da creare)*
+
+- **Modulo 3 — Reti e accessi**
+  - Chiave: `reti-e-accessi`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo3/`
+  - File:
+    - `Flip_Card_Facile_Modulo_3.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(da creare)*
+
+- **Modulo 4 — Navigazione e comunicazione sicura**
+  - Chiave: `navigazione-e-comunicazione-sicura`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo4/`
+  - File:
+    - `Flip_Card_Facile_Modulo_4.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_4.csv` *(da creare)*
+
+- **Modulo 5 — Protezione e conservazione dei dati**
+  - Chiave: `protezione-e-conservazione-dei-dati`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo5/`
+  - File:
+    - `Flip_Card_Facile_Modulo_5.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_5.csv` *(da creare)*
+
 ---
 
 ### 🛡️ Area Cyberbullismo e Sicurezza Online
 
-**Stato:** disattivato
+**Stato:** attivo
 
 - **Identità e reputazione digitale**
   - Chiave: `identita-reputazione-digitale`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato — 31 Flip Card)*
@@ -239,7 +283,7 @@ data/
 
 - **Cyberbullismo**
   - Chiave: `cyberbullismo`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(creato — 33 Flip Card)*
@@ -247,7 +291,7 @@ data/
 
 - **Hate Speech**
   - Chiave: `hate-speech`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(creato — 29 Flip Card)*
@@ -255,7 +299,7 @@ data/
 
 - **Sexting e Revenge Porn**
   - Chiave: `sexting-revenge-porn`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(creato — 28 Flip Card)*
@@ -263,7 +307,7 @@ data/
 
 - **Grooming**
   - Chiave: `grooming`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo5/`
   - File:
     - `Flip_Card_Facile_Modulo_5.csv` *(creato — 9 Flip Card)*
@@ -271,7 +315,7 @@ data/
 
 - **Cittadinanza Digitale**
   - Chiave: `cittadinanza-digitale`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo6/`
   - File:
     - `Flip_Card_Facile_Modulo_6.csv` *(creato — 9 Flip Card)*
@@ -281,11 +325,11 @@ data/
 
 ### 👤 Area Cybersecurity — Non solo antivirus e password
 
-**Stato:** disattivato
+**Stato:** attivo
 
 - **Fondamenti di Cybersecurity**
   - Chiave: `fondamenti-cybersecurity`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato — 48 Flip Card)*
@@ -293,7 +337,7 @@ data/
 
 - **Sicurezza degli Account**
   - Chiave: `sicurezza-account`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(creato — conteggio da confermare)*
@@ -301,7 +345,7 @@ data/
 
 - **Protezione dei Dati**
   - Chiave: `protezione-dati`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(creato — conteggio da confermare)*
@@ -309,7 +353,7 @@ data/
 
 - **Sicurezza Quotidiana**
   - Chiave: `sicurezza-quotidiana`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(creato — conteggio da confermare)*
@@ -317,7 +361,7 @@ data/
 
 - **Sicurezza dei Pagamenti**
   - Chiave: `sicurezza-pagamenti`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo5/`
   - File:
     - `Flip_Card_Facile_Modulo_5.csv` *(creato — conteggio da confermare)*
@@ -325,7 +369,7 @@ data/
 
 - **Privacy e Normative**
   - Chiave: `privacy-normative`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo6/`
   - File:
     - `Flip_Card_Facile_Modulo_6.csv` *(creato — 28 Flip Card)*
@@ -333,7 +377,7 @@ data/
 
 - **Sicurezza Online e Social Network**
   - Chiave: `sicurezza-online-social-network`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo7/`
   - File:
     - `Flip_Card_Facile_Modulo_7.csv` *(creato — 15 Flip Card)*
@@ -341,7 +385,7 @@ data/
 
 - **Nuove Minacce Digitali**
   - Chiave: `nuove-minacce-digitali`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo8/`
   - File:
     - `Flip_Card_Facile_Modulo_8.csv` *(creato — 17 Flip Card)*
@@ -351,11 +395,11 @@ data/
 
 ### 🌐 Area Reti e Internet
 
-**Stato:** disattivato
+**Stato:** attivo
 
 - **Le fondamenta delle reti**
   - Chiave: `fondamenta-reti`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato — 32 Flip Card)*
@@ -363,7 +407,7 @@ data/
 
 - **Il protocollo TCP/IP**
   - Chiave: `tcp-ip`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(creato — 46 Flip Card)*
@@ -371,7 +415,7 @@ data/
 
 - **DNS: la rubrica di Internet**
   - Chiave: `dns`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(creato — 40 Flip Card)*
@@ -379,7 +423,7 @@ data/
 
 - **Router, Switch e dispositivi di rete**
   - Chiave: `router-switch-dispositivi`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(creato — 37 Flip Card)*
@@ -387,7 +431,7 @@ data/
 
 - **Wi-Fi e reti wireless**
   - Chiave: `wifi-reti-wireless`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo5/`
   - File:
     - `Flip_Card_Facile_Modulo_5.csv` *(creato — 51 Flip Card)*
@@ -395,7 +439,7 @@ data/
 
 - **Cloud Networking**
   - Chiave: `cloud-networking`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo6/`
   - File:
     - `Flip_Card_Facile_Modulo_6.csv` *(creato — 42 Flip Card)*
@@ -403,7 +447,7 @@ data/
 
 - **VPN e comunicazioni sicure**
   - Chiave: `vpn`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo7/`
   - File:
     - `Flip_Card_Facile_Modulo_7.csv` *(creato — 39 Flip Card)*
@@ -411,7 +455,7 @@ data/
 
 - **Troubleshooting delle reti**
   - Chiave: `troubleshooting-reti`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo8/`
   - File:
     - `Flip_Card_Facile_Modulo_8.csv` *(creato)*
@@ -421,11 +465,11 @@ data/
 
 ### 🦠 Area Malware e Minacce Informatiche
 
-**Stato:** disattivato
+**Stato:** attivo
 
 - **Malware e Minacce Informatiche**
   - Chiave: `malware-e-minacce-informatiche`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Malware_e_Minacce_Informatiche/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato — 33 Flip Card)*
@@ -435,11 +479,11 @@ data/
 
 ### 🤖 Area Intelligenza Artificiale
 
-**Stato:** disattivato
+**Stato:** attivo
 
 - **Cos'è l'AI**
   - Chiave: `cos-e-l-ai`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato)*
@@ -447,7 +491,7 @@ data/
 
 - **Come funziona l'AI**
   - Chiave: `come-funziona-l-ai`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(creato)*
@@ -455,7 +499,7 @@ data/
 
 - **Come funzionano gli LLM**
   - Chiave: `come-funzionano-gli-llm`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(creato)*
@@ -463,7 +507,7 @@ data/
 
 - **AI Generativa**
   - Chiave: `ai-generativa`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(creato)*
@@ -471,7 +515,7 @@ data/
 
 - **Prompt Engineering**
   - Chiave: `prompt-engineering`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo5/`
   - File:
     - `Flip_Card_Facile_Modulo_5.csv` *(creato)*
@@ -479,7 +523,7 @@ data/
 
 - **Agenti e Automazione**
   - Chiave: `agenti-automazione`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo6/`
   - File:
     - `Flip_Card_Facile_Modulo_6.csv` *(creato — 42 Flip Card)*
@@ -487,7 +531,7 @@ data/
 
 - **Deepfake e Contenuti Sintetici**
   - Chiave: `deepfake-contenuti-sintetici`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo7/`
   - File:
     - `Flip_Card_Facile_Modulo_7.csv` *(creato — 32 Flip Card)*
@@ -495,7 +539,7 @@ data/
 
 - **Provenienza dei Contenuti**
   - Chiave: `provenienza-dei-contenuti`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo8/`
   - File:
     - `Flip_Card_Facile_Modulo_8.csv` *(creato — 29 Flip Card)*
@@ -503,7 +547,7 @@ data/
 
 - **Verificare l'AI**
   - Chiave: `verificare-l-ai`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo9/`
   - File:
     - `Flip_Card_Facile_Modulo_9.csv` *(creato — 26 Flip Card)*
@@ -511,7 +555,7 @@ data/
 
 - **Etica dell'AI**
   - Chiave: `etica-dell-ai`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo10/`
   - File:
     - `Flip_Card_Facile_Modulo_10.csv` *(creato)*
@@ -519,7 +563,7 @@ data/
 
 - **Bias Algoritmici**
   - Chiave: `bias-algoritmici`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo11/`
   - File:
     - `Flip_Card_Facile_Modulo_11.csv` *(creato)*
@@ -527,7 +571,7 @@ data/
 
 - **AI Act**
   - Chiave: `ai-act`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo12/`
   - File:
     - `Flip_Card_Facile_Modulo_12.csv` *(creato)*
@@ -535,7 +579,7 @@ data/
 
 - **Il Futuro dell'AI**
   - Chiave: `futuro-dell-ai`
-  - Stato: `disattivato`
+  - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo13/`
   - File:
     - `Flip_Card_Facile_Modulo_13.csv` *(creato)*
@@ -576,6 +620,13 @@ data/
 - Modulo 1 — Creare una presentazione
 - Modulo 2 — Oggetti grafici
 - Modulo 3 — Preparare e presentare
+
+### 🔒 ECDL — IT Security — DA CREARE
+- Modulo 1 — Fondamenti della sicurezza
+- Modulo 2 — Il malware
+- Modulo 3 — Reti e accessi
+- Modulo 4 — Navigazione e comunicazione sicura
+- Modulo 5 — Protezione e conservazione dei dati
 
 ### 🛡️ Cyberbullismo e Sicurezza Online — COMPLETO
 - Modulo 1 — Identità e reputazione digitale
@@ -627,8 +678,8 @@ data/
 
 **Riepilogo:**
 - **Moduli completi:** 58
-- **Moduli da creare:** 0
-- **Moduli totali:** 58
+- **Moduli da creare:** 5 (ECDL — IT Security)
+- **Moduli totali:** 63
 
 *Per i moduli indicati come "DA CREARE", entrambi i file — Facile e Medio — sono ancora da creare.*
 
@@ -641,16 +692,17 @@ data/
 | ECDL — Word | 5 | 10 | 10 | 0 | attivo |
 | ECDL — Spreadsheet | 6 | 12 | 12 | 0 | attivo |
 | ECDL — Presentation | 3 | 6 | 6 | 0 | attivo |
+| ECDL — IT Security | 5 | 10 | 0 | 10 | attivo (da creare) |
 | Cyberbullismo e Sicurezza Online | 6 | 12 | 12 | 0 | attivo |
 | Cybersecurity — Non solo antivirus e password | 8 | 16 | 16 | 0 | attivo |
 | Reti e Internet | 8 | 16 | 16 | 0 | attivo |
 | Malware e Minacce Informatiche | 1 | 2 | 2 | 0 | attivo |
 | Intelligenza Artificiale | 13 | 26 | 26 | 0 | attivo |
-| **Totale** | **58** | **116** | **116** | **0** | — |
+| **Totale** | **63** | **126** | **116** | **10** | — |
 
-- **Moduli totali mappati:** 58
+- **Moduli totali mappati:** 63
 - **Moduli completi:** 58
-- **Moduli da creare:** 0
+- **Moduli da creare:** 5 (ECDL — IT Security)
 - **File CSV creati:** 116
-- **File CSV da creare:** 0
-- **File CSV totali attesi:** 116
+- **File CSV da creare:** 10 (ECDL — IT Security)
+- **File CSV totali attesi:** 126

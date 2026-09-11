@@ -1,0 +1,398 @@
+[
+  {
+    "id": 1,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I margini sono lo spazio bianco ai bordi della pagina.",
+    "answer": true,
+    "explanation": "I margini sono definiti nel modulo come lo spazio bianco ai bordi della pagina."
+  },
+  {
+    "id": 2,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'orientamento stabilisce il formato di carta su cui stampare.",
+    "answer": false,
+    "explanation": "L'orientamento stabilisce se la pagina è verticale o orizzontale; è la dimensione a definire il formato di carta."
+  },
+  {
+    "id": 3,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un foglio di calcolo tende naturalmente ad allargarsi in orizzontale.",
+    "answer": true,
+    "explanation": "Il modulo spiega che un foglio di calcolo tende naturalmente ad allargarsi in orizzontale, colonna dopo colonna."
+  },
+  {
+    "id": 4,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un documento di testo è quasi sempre orizzontale.",
+    "answer": false,
+    "explanation": "Secondo il modulo, un documento di testo è quasi sempre verticale."
+  },
+  {
+    "id": 5,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La funzione \"Adatta alla pagina\" modifica il contenuto delle celle.",
+    "answer": false,
+    "explanation": "Adatta alla pagina modifica solo la scala di stampa, non il contenuto delle celle."
+  },
+  {
+    "id": 6,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La funzione \"Adatta alla pagina\" si trova in Layout di pagina.",
+    "answer": true,
+    "explanation": "Si trova nel percorso Layout di pagina → Adatta alla pagina."
+  },
+  {
+    "id": 7,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il termine \"ritratto\" (portrait) deriva da dipinti realizzati su una tela più alta che larga.",
+    "answer": true,
+    "explanation": "Il ritratto era realizzato su una tela più alta che larga, per contenere per intero la figura."
+  },
+  {
+    "id": 8,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il termine \"paesaggio\" (landscape) deriva da dipinti più alti che larghi.",
+    "answer": false,
+    "explanation": "Il paesaggio deriva da dipinti che si sviluppavano più in larghezza che in altezza."
+  },
+  {
+    "id": 9,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo gli storici dell'arte, il termine \"landscape\" entrò nell'uso pittorico europeo nel Seicento.",
+    "answer": false,
+    "explanation": "Secondo il modulo, entrò nell'uso pittorico europeo agli inizi del Cinquecento."
+  },
+  {
+    "id": 10,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il termine \"landscape\" si diffuse in particolare nei Paesi Bassi.",
+    "answer": true,
+    "explanation": "Il modulo indica proprio i Paesi Bassi come area di diffusione del termine."
+  },
+  {
+    "id": 11,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Intestazione e piè di pagina compaiono automaticamente su ogni foglio stampato.",
+    "answer": true,
+    "explanation": "Sono aree che compaiono automaticamente su ogni foglio stampato."
+  },
+  {
+    "id": 12,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Intestazione e piè di pagina si inseriscono da Layout di pagina → Area di stampa.",
+    "answer": false,
+    "explanation": "Si inseriscono da Inserisci → Testo → Intestazione e piè di pagina."
+  },
+  {
+    "id": 13,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Intestazione e piè di pagina offrono quattro campi di testo.",
+    "answer": false,
+    "explanation": "Offrono tre campi: sinistra, centro, destra."
+  },
+  {
+    "id": 14,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il campo \"Numero di pagina\" può restituire un'indicazione come \"Pagina 3 di 10\".",
+    "answer": true,
+    "explanation": "Combinato con \"Numero di pagine\", restituisce indicazioni come \"Pagina 3 di 10\"."
+  },
+  {
+    "id": 15,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il campo \"Data corrente\" resta fisso alla data di creazione del file.",
+    "answer": false,
+    "explanation": "Il campo Data corrente si aggiorna ogni volta che il foglio viene stampato di nuovo."
+  },
+  {
+    "id": 16,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il campo \"Nome file\" indica da quale cartella di lavoro proviene una pagina stampata.",
+    "answer": true,
+    "explanation": "Il campo Nome file indica proprio da quale cartella di lavoro proviene la pagina."
+  },
+  {
+    "id": 17,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I campi di intestazione e piè di pagina sono testo scritto manualmente una volta per tutte.",
+    "answer": false,
+    "explanation": "Sono segnaposto che Excel ricalcola ogni volta, non testo fisso."
+  },
+  {
+    "id": 18,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La filigrana fu messa a punto verso il 1282 dai mastri cartai di Fabriano.",
+    "answer": true,
+    "explanation": "Il modulo colloca la filigrana verso il 1282, a opera dei mastri cartai di Fabriano."
+  },
+  {
+    "id": 19,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La filigrana è un disegno impresso nella pasta di carta ancora umida.",
+    "answer": true,
+    "explanation": "È definita come un disegno impresso nella pasta di carta ancora umida."
+  },
+  {
+    "id": 20,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La filigrana era visibile solo se osservata controluce.",
+    "answer": true,
+    "explanation": "Il modulo specifica che era visibile solo controluce."
+  },
+  {
+    "id": 21,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La filigrana iniziò a essere usata per autenticare documenti ufficiali già nel Duecento.",
+    "answer": false,
+    "explanation": "Iniziò a essere usata per autenticare documenti ufficiali nel Quattrocento, con la diffusione della stampa."
+  },
+  {
+    "id": 22,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La filigrana è stata usata anche per le banconote.",
+    "answer": true,
+    "explanation": "Secoli più tardi la filigrana venne usata anche per le banconote."
+  },
+  {
+    "id": 23,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'area di stampa è la porzione del foglio che Excel stamperà effettivamente.",
+    "answer": true,
+    "explanation": "È definita esattamente come la porzione del foglio che Excel stamperà effettivamente."
+  },
+  {
+    "id": 24,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per impostazione predefinita, Excel stampa sempre e solo la prima pagina del foglio.",
+    "answer": false,
+    "explanation": "Per impostazione predefinita, Excel prova a stampare l'intero foglio, dividendolo in più pagine."
+  },
+  {
+    "id": 25,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'area di stampa si imposta da Layout di pagina → Area di stampa → Imposta area di stampa.",
+    "answer": true,
+    "explanation": "È proprio questo il percorso indicato dal modulo."
+  },
+  {
+    "id": 26,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La visualizzazione \"Anteprima interruzioni di pagina\" mostra linee tratteggiate rosse.",
+    "answer": false,
+    "explanation": "Mostra linee tratteggiate blu, non rosse."
+  },
+  {
+    "id": 27,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le linee tratteggiate dell'anteprima interruzioni di pagina possono essere trascinate con il mouse.",
+    "answer": true,
+    "explanation": "Possono essere trascinate con il mouse per spostare manualmente un'interruzione."
+  },
+  {
+    "id": 28,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'anteprima di stampa mostra margini, intestazione e piè di pagina insieme alle interruzioni.",
+    "answer": true,
+    "explanation": "L'anteprima include interruzioni, margini, intestazione e piè di pagina."
+  },
+  {
+    "id": 29,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La carta a barre verdi era usata dalle stampanti a modulo continuo dei centri di calcolo dagli anni Sessanta.",
+    "answer": true,
+    "explanation": "Il modulo colloca l'uso della carta a barre verdi a partire dagli anni Sessanta."
+  },
+  {
+    "id": 30,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le righe della carta a barre verdi erano larghe circa dieci centimetri.",
+    "answer": false,
+    "explanation": "Le righe erano larghe circa un centimetro, non dieci."
+  },
+  {
+    "id": 31,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le pagine della carta a barre verdi potevano essere larghe fino a 132 colonne di caratteri.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente 132 colonne di caratteri."
+  },
+  {
+    "id": 32,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le righe colorate della carta a barre verdi avevano una funzione puramente decorativa.",
+    "answer": false,
+    "explanation": "Servivano a guidare l'occhio nella lettura, non erano decorative."
+  },
+  {
+    "id": 33,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Da File → Stampa è possibile scegliere l'ampiezza della stampa.",
+    "answer": true,
+    "explanation": "Da File → Stampa si sceglie tra selezione, foglio, cartella di lavoro o grafico."
+  },
+  {
+    "id": 34,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "\"Stampa selezione\" stampa sempre l'intera cartella di lavoro.",
+    "answer": false,
+    "explanation": "Stampa solo l'intervallo di celle scelto prima di aprire la finestra di stampa."
+  },
+  {
+    "id": 35,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "\"Stampa foglio attivo\" ignora gli altri fogli della cartella di lavoro.",
+    "answer": true,
+    "explanation": "Stampa solo l'intero foglio attivo, ignorando gli altri fogli."
+  },
+  {
+    "id": 36,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "\"Stampa intera cartella di lavoro\" stampa ogni foglio in un solo comando.",
+    "answer": true,
+    "explanation": "Stampa ogni foglio, uno dopo l'altro, in un solo comando."
+  },
+  {
+    "id": 37,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se un grafico è stato selezionato, può essere stampato da solo, ingrandito sull'intera pagina.",
+    "answer": true,
+    "explanation": "Il grafico selezionato può essere stampato da solo, ingrandito, senza le celle circostanti."
+  },
+  {
+    "id": 38,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La Xerox 914 fu presentata il 16 settembre 1959 a New York.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data e questo luogo."
+  },
+  {
+    "id": 39,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La Xerox 914 fu la prima fotocopiatrice a carta comune per uso domestico.",
+    "answer": false,
+    "explanation": "Era pensata per funzionare in un ufficio qualunque, non specificamente per uso domestico."
+  },
+  {
+    "id": 40,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Prima della Xerox 914, riprodurre un documento significava spesso ricopiarlo a mano o usare la carta carbone.",
+    "answer": true,
+    "explanation": "Il modulo descrive proprio questi metodi come alternativa precedente alla Xerox 914."
+  },
+  {
+    "id": 41,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, l'area di stampa è paragonata alla cornice di una fotografia.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  },
+  {
+    "id": 42,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, scegliere cosa stampare è paragonato a organizzare una libreria.",
+    "answer": false,
+    "explanation": "È paragonato a decidere cosa mettere in valigia per un viaggio."
+  },
+  {
+    "id": 43,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della valigia, \"la cartella di lavoro\" corrisponde a portare solo l'essenziale per un weekend.",
+    "answer": false,
+    "explanation": "Nella metafora, la cartella di lavoro corrisponde a portare tutto l'armadio; l'essenziale per un weekend è la selezione."
+  },
+  {
+    "id": 44,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il modulo 6 chiude il percorso del corso Spreadsheet.",
+    "answer": true,
+    "explanation": "Il modulo stesso indica che con questo capitolo si conclude il percorso del corso Spreadsheet."
+  }
+]

@@ -1,0 +1,112 @@
+{
+  "id": 1,
+  "module": "preparare-e-stampare-il-foglio",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Margini",
+        "definition": "Lo spazio bianco ai bordi della pagina, che tiene il contenuto lontano dal bordo fisico stampabile"
+      },
+      {
+        "term": "Orientamento",
+        "definition": "Stabilisce se la pagina è verticale (ritratto) o orizzontale (paesaggio)"
+      },
+      {
+        "term": "Dimensioni",
+        "definition": "Definiscono il formato di carta su cui il foglio verrà stampato"
+      },
+      {
+        "term": "Adatta alla pagina",
+        "definition": "Riduce automaticamente le proporzioni dell'intero foglio, non il contenuto delle celle, per farlo rientrare in un numero di pagine scelto"
+      },
+      {
+        "term": "Orientamento Verticale (Ritratto)",
+        "definition": "L'orientamento tipico di un documento di testo"
+      },
+      {
+        "term": "Orientamento Orizzontale (Paesaggio)",
+        "definition": "L'orientamento che spesso serve a un foglio di calcolo che si allarga colonna dopo colonna"
+      }
+    ],
+    [
+      {
+        "term": "Intestazione (Header)",
+        "definition": "Area in alto della pagina che compare automaticamente su ogni foglio stampato"
+      },
+      {
+        "term": "Piè di pagina (Footer)",
+        "definition": "Area in basso della pagina che compare automaticamente su ogni foglio stampato"
+      },
+      {
+        "term": "Numero di pagina / Numero di pagine",
+        "definition": "Campo dinamico che restituisce un'indicazione come \"Pagina 3 di 10\", aggiornandosi da solo se il foglio cambia lunghezza"
+      },
+      {
+        "term": "Data corrente / Ora corrente",
+        "definition": "Campi che si aggiornano ogni volta che il foglio viene stampato di nuovo"
+      },
+      {
+        "term": "Nome file / Nome foglio",
+        "definition": "Campi che indicano da quale cartella di lavoro e da quale foglio proviene la pagina stampata"
+      },
+      {
+        "term": "Filigrana",
+        "definition": "Disegno impresso nella pasta di carta ancora umida, visibile solo controluce, che indicava quale bottega avesse prodotto un foglio"
+      }
+    ],
+    [
+      {
+        "term": "Area di stampa",
+        "definition": "La porzione del foglio che Excel stamperà effettivamente, selezionabile in anticipo"
+      },
+      {
+        "term": "Anteprima di stampa",
+        "definition": "Mostra, prima di stampare, come ogni pagina apparirà davvero su carta"
+      },
+      {
+        "term": "Anteprima interruzioni di pagina",
+        "definition": "Visualizzazione che mostra con linee tratteggiate blu dove finisce una pagina e comincia la successiva"
+      },
+      {
+        "term": "Linee tratteggiate blu",
+        "definition": "Il confine reale tra ciò che finirà stampato su una pagina e ciò che passerà alla successiva; possono essere trascinate con il mouse"
+      },
+      {
+        "term": "Carta a barre verdi (green bar paper)",
+        "definition": "Carta continua con righe alternate verdi e bianche, usata dalle stampanti a modulo continuo dei centri di calcolo dagli anni Sessanta"
+      },
+      {
+        "term": "Layout di pagina → Area di stampa",
+        "definition": "Il percorso da cui si imposta l'area di stampa selezionando un intervallo di celle"
+      }
+    ],
+    [
+      {
+        "term": "Stampa selezione",
+        "definition": "Stampa solo l'intervallo di celle scelto prima di aprire la finestra di stampa"
+      },
+      {
+        "term": "Stampa foglio attivo",
+        "definition": "Stampa l'intero foglio su cui ci si trova, ignorando gli altri fogli della cartella di lavoro"
+      },
+      {
+        "term": "Stampa intera cartella di lavoro",
+        "definition": "Stampa ogni foglio, uno dopo l'altro, in un solo comando"
+      },
+      {
+        "term": "Stampa grafico",
+        "definition": "Se un grafico è stato selezionato in precedenza, lo stampa da solo, ingrandito, senza le celle circostanti"
+      },
+      {
+        "term": "Xerox 914",
+        "definition": "Prima fotocopiatrice a carta comune capace di funzionare in un ufficio qualunque, presentata a New York nel 1959"
+      },
+      {
+        "term": "Chester Carlson",
+        "definition": "Inventore del processo della xerografia alla base della Xerox 914"
+      }
+    ]
+  ]
+}

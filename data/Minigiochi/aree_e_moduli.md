@@ -10,7 +10,7 @@ Questo file è l'**unica fonte ufficiale e vincolante** per identificare Aree, M
 
 Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prima di consultare il dettaglio.
 
-- **Area ECDL** → `attiva` — Computer Essentials, Online Essentials, Word Processing, Spreadsheet e Presentation: JSON realizzati e caricati.
+- **Area ECDL** → `attiva` — Computer Essentials, Online Essentials, Word Processing, Spreadsheet e Presentation: JSON realizzati e caricati. IT Security: sotto-area attiva, JSON da realizzare.
 - **Area Cyberbullismo e Sicurezza Online** → `attiva` — JSON realizzati e caricati.
 - **Area Cybersecurity — Non solo antivirus e password** → `attiva` — JSON realizzati e caricati.
 - **Area Reti e Internet** → `attiva` — JSON realizzati e caricati.
@@ -24,7 +24,7 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 ### 🖥️ Area ECDL
 **Descrizione:** Acquisire le competenze fondamentali per utilizzare computer, applicazioni e servizi digitali.
 **Stato:** attiva
-**Nota:** JSON realizzati e caricati.
+**Nota:** Computer Essentials, Online Essentials, Word Processing, Spreadsheet e Presentation: JSON realizzati e caricati. IT Security: sotto-area attiva, JSON da realizzare.
 
 ### 🛡️ Area Cyberbullismo e Sicurezza Online
 **Descrizione:** Riconoscere i rischi nelle relazioni digitali e imparare a proteggersi e agire responsabilmente online.
@@ -60,6 +60,8 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 **Stato:** attiva
 
 #### Computer Essentials
+
+> JSON realizzati e caricati.
 
 ```text
 data/
@@ -116,6 +118,8 @@ data/
   - File: `abbina_software.json`, `completa_la_frase_software.json`, `quiz_software.json`, `speedquiz_software.json`, `vero_o_falso_software.json`
 
 #### Online Essentials
+
+> JSON realizzati e caricati.
 
 ```text
 data/
@@ -369,14 +373,84 @@ data/
   - Path base: `data/ECDL/Presentation/modulo3/`
   - File: `abbina_preparare-e-presentare.json`, `completa_la_frase_preparare-e-presentare.json`, `quiz_preparare-e-presentare.json`, `speedquiz_preparare-e-presentare.json`, `vero_o_falso_preparare-e-presentare.json`
 
-> Le sotto-aree ECDL attualmente definite sono cinque: **Computer Essentials**, **Online Essentials**, **Word Processing**, **Spreadsheet** e **Presentation**, hanno JSON realizzati e caricati.
+#### IT Security
+
+> Sotto-area attiva. JSON da realizzare.
+
+```text
+data/
+└── ECDL/
+    └── IT_Security/
+        ├── modulo1/
+        │   ├── abbina_fondamenti-della-sicurezza.json
+        │   ├── completa_la_frase_fondamenti-della-sicurezza.json
+        │   ├── quiz_fondamenti-della-sicurezza.json
+        │   ├── speedquiz_fondamenti-della-sicurezza.json
+        │   └── vero_o_falso_fondamenti-della-sicurezza.json
+        ├── modulo2/
+        │   ├── abbina_il-malware.json
+        │   ├── completa_la_frase_il-malware.json
+        │   ├── quiz_il-malware.json
+        │   ├── speedquiz_il-malware.json
+        │   └── vero_o_falso_il-malware.json
+        ├── modulo3/
+        │   ├── abbina_reti-e-accessi.json
+        │   ├── completa_la_frase_reti-e-accessi.json
+        │   ├── quiz_reti-e-accessi.json
+        │   ├── speedquiz_reti-e-accessi.json
+        │   └── vero_o_falso_reti-e-accessi.json
+        ├── modulo4/
+        │   ├── abbina_navigazione-e-comunicazione-sicura.json
+        │   ├── completa_la_frase_navigazione-e-comunicazione-sicura.json
+        │   ├── quiz_navigazione-e-comunicazione-sicura.json
+        │   ├── speedquiz_navigazione-e-comunicazione-sicura.json
+        │   └── vero_o_falso_navigazione-e-comunicazione-sicura.json
+        └── modulo5/
+            ├── abbina_protezione-e-conservazione-dei-dati.json
+            ├── completa_la_frase_protezione-e-conservazione-dei-dati.json
+            ├── quiz_protezione-e-conservazione-dei-dati.json
+            ├── speedquiz_protezione-e-conservazione-dei-dati.json
+            └── vero_o_falso_protezione-e-conservazione-dei-dati.json
+```
+
+- **Modulo 1 — Fondamenti della sicurezza**
+  - Chiave: `fondamenti-della-sicurezza`
+  - Stato: `attivo`
+  - Path base: `data/ECDL/IT_Security/modulo1/`
+  - File (da realizzare): `abbina_fondamenti-della-sicurezza.json`, `completa_la_frase_fondamenti-della-sicurezza.json`, `quiz_fondamenti-della-sicurezza.json`, `speedquiz_fondamenti-della-sicurezza.json`, `vero_o_falso_fondamenti-della-sicurezza.json`
+
+- **Modulo 2 — Il malware**
+  - Chiave: `il-malware`
+  - Stato: `attivo`
+  - Path base: `data/ECDL/IT_Security/modulo2/`
+  - File (da realizzare): `abbina_il-malware.json`, `completa_la_frase_il-malware.json`, `quiz_il-malware.json`, `speedquiz_il-malware.json`, `vero_o_falso_il-malware.json`
+
+- **Modulo 3 — Reti e accessi**
+  - Chiave: `reti-e-accessi`
+  - Stato: `attivo`
+  - Path base: `data/ECDL/IT_Security/modulo3/`
+  - File (da realizzare): `abbina_reti-e-accessi.json`, `completa_la_frase_reti-e-accessi.json`, `quiz_reti-e-accessi.json`, `speedquiz_reti-e-accessi.json`, `vero_o_falso_reti-e-accessi.json`
+
+- **Modulo 4 — Navigazione e comunicazione sicura**
+  - Chiave: `navigazione-e-comunicazione-sicura`
+  - Stato: `attivo`
+  - Path base: `data/ECDL/IT_Security/modulo4/`
+  - File (da realizzare): `abbina_navigazione-e-comunicazione-sicura.json`, `completa_la_frase_navigazione-e-comunicazione-sicura.json`, `quiz_navigazione-e-comunicazione-sicura.json`, `speedquiz_navigazione-e-comunicazione-sicura.json`, `vero_o_falso_navigazione-e-comunicazione-sicura.json`
+
+- **Modulo 5 — Protezione e conservazione dei dati**
+  - Chiave: `protezione-e-conservazione-dei-dati`
+  - Stato: `attivo`
+  - Path base: `data/ECDL/IT_Security/modulo5/`
+  - File (da realizzare): `abbina_protezione-e-conservazione-dei-dati.json`, `completa_la_frase_protezione-e-conservazione-dei-dati.json`, `quiz_protezione-e-conservazione-dei-dati.json`, `speedquiz_protezione-e-conservazione-dei-dati.json`, `vero_o_falso_protezione-e-conservazione-dei-dati.json`
+
+> Le sotto-aree ECDL attualmente definite sono sei: **Computer Essentials**, **Online Essentials**, **Word Processing**, **Spreadsheet**, **Presentation** e **IT Security**. Le prime cinque hanno JSON realizzati e caricati; **IT Security** è attiva ma i relativi JSON sono ancora da realizzare.
 
 ---
 
 ### 🛡️ Area Cyberbullismo e Sicurezza Online
 
 Stato: attiva
-Nota: JSON realizzati e caricati.
+> JSON realizzati e caricati.
 
 ```text
 data/
@@ -459,7 +533,7 @@ data/
 ### 👤 Area Cybersecurity — Non solo antivirus e password
 
 **Stato:** attiva
-**Nota:** JSON realizzati e caricati.
+> JSON realizzati e caricati.
 
 ```text
 data/
@@ -567,7 +641,7 @@ data/
 ### 🌐 Area Reti e Internet
 
 **Stato:** attiva
-**Nota:** contenuti presenti, JSON realizzati e caricati.
+> JSON realizzati e caricati.
 
 ```text
 data/
@@ -675,7 +749,7 @@ data/
 ### 🦠 Area Malware e Minacce Informatiche
 
 **Stato:** attiva
-**Nota:** contenuti presenti, JSON realizzati e caricati.
+> JSON realizzati e caricati.
 
 ```text
 data/
@@ -699,7 +773,7 @@ data/
 ### 🤖 Area Intelligenza Artificiale
 
 **Stato:** attiva
-**Nota:** contenuti presenti, JSON realizzati e caricati.
+> JSON realizzati e caricati.
 
 ```text
 data/
@@ -866,7 +940,7 @@ data/
 
 ## 4. Riepilogo
 
-> **Aggiornamento:** tutti i JSON sono stati realizzati e caricati. Tutte le **6 aree** sono attive.
+> **Aggiornamento:** tutti i JSON delle sotto-aree ECDL storiche e delle altre 5 Aree sono stati realizzati e caricati. La nuova sotto-area ECDL **IT Security** è attiva ma i relativi JSON sono ancora da realizzare. Tutte le **6 aree** sono attive.
 
 | Area / Sotto-area | Moduli | File attesi | Realizzati | Da realizzare | Stato area |
 |---|---|---|---|---|---|
@@ -875,16 +949,17 @@ data/
 | ECDL — Word Processing | 5 | 25 | 25 | 0 | attivo |
 | ECDL — Spreadsheet | 6 | 30 | 30 | 0 | attivo |
 | ECDL — Presentation | 3 | 15 | 15 | 0 | attivo |
+| ECDL — IT Security | 5 | 25 | 0 | 25 | attivo (JSON da realizzare) |
 | Cyberbullismo e Sicurezza Online | 6 | 30 | 30 | 0 | attiva |
 | Cybersecurity — Non solo antivirus e password | 8 | 40 | 40 | 0 | attiva |
 | Reti e Internet | 8 | 40 | 40 | 0 | attiva |
 | Malware e Minacce Informatiche | 1 | 5 | 5 | 0 | attiva |
 | Intelligenza Artificiale | 13 | 65 | 65 | 0 | attiva |
-| **Totale** | **58** | **290** | **290** | **0** | — |
+| **Totale** | **63** | **315** | **290** | **25** | — |
 
 - **Aree:** 6
-- **Sotto-aree ECDL:** 5 (Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation)
-- **Moduli totali mappati:** 58
+- **Sotto-aree ECDL:** 6 (Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation, IT Security)
+- **Moduli totali mappati:** 63
 - **File JSON realizzati:** 290
-- **File JSON da realizzare:** 0
-- **File JSON totali attesi:** 290
+- **File JSON da realizzare:** 25 (Area ECDL — IT Security)
+- **File JSON totali attesi:** 315

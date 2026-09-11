@@ -1,0 +1,786 @@
+[
+  {
+    "id": 1,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I ____ sono lo spazio bianco ai bordi della pagina.",
+    "answer": "margini",
+    "bank": [
+      "margini",
+      "orientamento",
+      "dimensioni",
+      "interruzioni"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____ stabilisce se la pagina è verticale (ritratto) o orizzontale (paesaggio).",
+    "answer": "orientamento",
+    "bank": [
+      "orientamento",
+      "margine",
+      "layout",
+      "formato"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le ____ definiscono il formato di carta su cui il foglio verrà stampato.",
+    "answer": "dimensioni",
+    "bank": [
+      "dimensioni",
+      "interruzioni",
+      "intestazioni",
+      "aree di stampa"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per regolare margini, orientamento e dimensioni si utilizza il percorso Layout di pagina → ____.",
+    "answer": "Imposta pagina",
+    "bank": [
+      "Imposta pagina",
+      "Area di stampa",
+      "Stampa",
+      "Intestazione e piè di pagina"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un documento di testo è quasi sempre ____.",
+    "answer": "verticale",
+    "bank": [
+      "verticale",
+      "orizzontale",
+      "quadrato",
+      "panoramico"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un foglio di calcolo tende naturalmente ad allargarsi in ____.",
+    "answer": "orizzontale",
+    "bank": [
+      "orizzontale",
+      "verticale",
+      "diagonale",
+      "profondità"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per cambiare l'orientamento della pagina si utilizza il percorso Layout di pagina → ____.",
+    "answer": "Orientamento",
+    "bank": [
+      "Orientamento",
+      "Area di stampa",
+      "Margini automatici",
+      "Stampa unione"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La funzione \"____\" permette di ridurre automaticamente le proporzioni dell'intero foglio per farlo rientrare in un numero scelto di pagine.",
+    "answer": "Adatta alla pagina",
+    "bank": [
+      "Adatta alla pagina",
+      "Adatta alle celle",
+      "Compatta colonne",
+      "Riduci margini"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La funzione Adatta alla pagina modifica solo la scala di stampa, non il ____ delle celle.",
+    "answer": "contenuto",
+    "bank": [
+      "contenuto",
+      "colore",
+      "bordo",
+      "formato numerico"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il termine \"ritratto\" (portrait) deriva da dipinti realizzati su una tela più alta che ____.",
+    "answer": "larga",
+    "bank": [
+      "larga",
+      "lunga",
+      "spessa",
+      "piccola"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il termine \"paesaggio\" (landscape) deriva da dipinti che si sviluppavano più in larghezza che in ____.",
+    "answer": "altezza",
+    "bank": [
+      "altezza",
+      "profondità",
+      "colore",
+      "dettaglio"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo gli storici dell'arte, il termine \"landscape\" entrò nell'uso pittorico europeo agli inizi del ____.",
+    "answer": "Cinquecento",
+    "bank": [
+      "Cinquecento",
+      "Duecento",
+      "Settecento",
+      "Novecento"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il termine \"landscape\" si diffuse in particolare nei ____.",
+    "answer": "Paesi Bassi",
+    "bank": [
+      "Paesi Bassi",
+      "Balcani",
+      "Paesi baltici",
+      "territori scandinavi"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, cambiare l'orientamento di una pagina è come girare di lato un ____ troppo largo per passare da una porta stretta.",
+    "answer": "vassoio",
+    "bank": [
+      "vassoio",
+      "armadio",
+      "quadro",
+      "tavolo"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____ (header) e il piè di pagina (footer) sono aree della pagina che compaiono automaticamente su ogni foglio stampato.",
+    "answer": "intestazione",
+    "bank": [
+      "intestazione",
+      "area di stampa",
+      "filigrana",
+      "cornice"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Intestazione e piè di pagina sono spesso usate per numerazione, titolo, data o ____ del file.",
+    "answer": "nome",
+    "bank": [
+      "nome",
+      "colore",
+      "formato",
+      "peso"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per inserire intestazione e piè di pagina si utilizza il percorso Inserisci → Testo → ____.",
+    "answer": "Intestazione e piè di pagina",
+    "bank": [
+      "Intestazione e piè di pagina",
+      "Imposta pagina",
+      "Area di stampa",
+      "Anteprima interruzioni di pagina"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Intestazione e piè di pagina offrono tre campi: sinistra, centro e ____.",
+    "answer": "destra",
+    "bank": [
+      "destra",
+      "alto",
+      "basso",
+      "centro-alto"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il campo \"Numero di pagina\" e \"____\" restituiscono un'indicazione come \"Pagina 3 di 10\".",
+    "answer": "Numero di pagine",
+    "bank": [
+      "Numero di pagine",
+      "Data corrente",
+      "Nome foglio",
+      "Ora corrente"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il campo Numero di pagina si aggiorna da solo se il foglio cambia ____.",
+    "answer": "lunghezza",
+    "bank": [
+      "lunghezza",
+      "colore",
+      "nome",
+      "formato"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I campi \"Data corrente\" e \"____\" si aggiornano ogni volta che il foglio viene stampato di nuovo.",
+    "answer": "Ora corrente",
+    "bank": [
+      "Ora corrente",
+      "Nome file",
+      "Numero di pagina",
+      "Nome foglio"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I campi \"Nome file\" e \"____\" indicano da quale cartella di lavoro e da quale foglio proviene la pagina.",
+    "answer": "Nome foglio",
+    "bank": [
+      "Nome foglio",
+      "Data corrente",
+      "Numero di pagine",
+      "Ora corrente"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I campi di intestazione e piè di pagina sono segnaposto che Excel ____ ogni volta.",
+    "answer": "ricalcola",
+    "bank": [
+      "ricalcola",
+      "cancella",
+      "nasconde",
+      "blocca"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Verso il 1282, i mastri cartai di ____ misero a punto la filigrana.",
+    "answer": "Fabriano",
+    "bank": [
+      "Fabriano",
+      "Venezia",
+      "Amalfi",
+      "Bologna"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La filigrana è un disegno impresso nella pasta di carta ancora ____, visibile solo controluce.",
+    "answer": "umida",
+    "bank": [
+      "umida",
+      "secca",
+      "colorata",
+      "piegata"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La filigrana indicava quale ____ avesse prodotto quel foglio.",
+    "answer": "bottega",
+    "bank": [
+      "bottega",
+      "città",
+      "famiglia",
+      "regione"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Con la diffusione della stampa, nel ____, la filigrana cominciò a essere usata per autenticare documenti ufficiali.",
+    "answer": "Quattrocento",
+    "bank": [
+      "Quattrocento",
+      "Duecento",
+      "Cinquecento",
+      "Ottocento"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secoli più tardi la filigrana venne usata anche per autenticare le ____.",
+    "answer": "banconote",
+    "bank": [
+      "banconote",
+      "monete",
+      "cartoline",
+      "pergamene"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, intestazione e piè di pagina sono come l'____ cucita dentro un capo di vestiario.",
+    "answer": "etichetta",
+    "bank": [
+      "etichetta",
+      "tasca",
+      "cerniera",
+      "fodera"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____ è la porzione del foglio che Excel stamperà effettivamente, selezionabile in anticipo.",
+    "answer": "area di stampa",
+    "bank": [
+      "area di stampa",
+      "anteprima",
+      "intestazione",
+      "cartella di lavoro"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____ di stampa mostra, prima di stampare, come apparirà davvero ogni pagina su carta.",
+    "answer": "anteprima",
+    "bank": [
+      "anteprima",
+      "area",
+      "cornice",
+      "griglia"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per impostazione predefinita, Excel prova a stampare l'intero ____, dividendolo in tante pagine quante servono.",
+    "answer": "foglio",
+    "bank": [
+      "foglio",
+      "grafico",
+      "file",
+      "archivio"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per impostare un'area di stampa si utilizza il percorso Layout di pagina → Area di stampa → ____.",
+    "answer": "Imposta area di stampa",
+    "bank": [
+      "Imposta area di stampa",
+      "Imposta pagina",
+      "Anteprima interruzioni di pagina",
+      "Stampa selezione"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La visualizzazione \"____\" mostra con linee tratteggiate blu dove finisce una pagina e comincia la successiva.",
+    "answer": "Anteprima interruzioni di pagina",
+    "bank": [
+      "Anteprima interruzioni di pagina",
+      "Imposta area di stampa",
+      "Anteprima di stampa",
+      "Layout di pagina"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le linee tratteggiate blu possono essere trascinate con il ____ per spostare manualmente un'interruzione.",
+    "answer": "mouse",
+    "bank": [
+      "mouse",
+      "tastierino numerico",
+      "righello",
+      "touchpad a doppio clic"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Da File → Stampa, Excel mostra sempre un'____ prima di stampare per davvero.",
+    "answer": "anteprima",
+    "bank": [
+      "anteprima",
+      "conferma via email",
+      "fattura",
+      "copia di backup"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'anteprima di stampa mostra anche le interruzioni, i margini, l'intestazione e il ____.",
+    "answer": "piè di pagina",
+    "bank": [
+      "piè di pagina",
+      "nome utente",
+      "grafico",
+      "foglio nascosto"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Dagli anni Sessanta, le stampanti a modulo continuo dei centri di calcolo utilizzavano la cosiddetta \"carta a barre ____\".",
+    "answer": "verdi",
+    "bank": [
+      "verdi",
+      "blu",
+      "gialle",
+      "grigie"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La carta a barre verdi aveva righe alternate verdi e bianche larghe circa un ____.",
+    "answer": "centimetro",
+    "bank": [
+      "centimetro",
+      "millimetro",
+      "decimetro",
+      "metro"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le pagine della carta a barre verdi erano larghe fino a ____ colonne di caratteri.",
+    "answer": "132",
+    "bank": [
+      "132",
+      "80",
+      "256",
+      "64"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le righe colorate della carta a barre verdi servivano a guidare l'occhio di chi doveva leggere una riga senza ____ per errore su quella sopra o sotto.",
+    "answer": "saltare",
+    "bank": [
+      "saltare",
+      "fermarsi",
+      "tornare",
+      "sostare"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, l'area di stampa è come la ____ di una fotografia.",
+    "answer": "cornice",
+    "bank": [
+      "cornice",
+      "pellicola",
+      "lente",
+      "didascalia"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Da File → Stampa, Excel permette di scegliere l'____ della stampa.",
+    "answer": "ampiezza",
+    "bank": [
+      "ampiezza",
+      "velocità",
+      "qualità",
+      "risoluzione"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Tra le opzioni di stampa figurano selezione, foglio, cartella di lavoro e, se selezionato, un singolo ____.",
+    "answer": "grafico",
+    "bank": [
+      "grafico",
+      "commento",
+      "filtro",
+      "collegamento"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "\"Stampa selezione\" stampa solo l'intervallo di celle scelto prima di aprire la finestra di ____.",
+    "answer": "stampa",
+    "bank": [
+      "stampa",
+      "ricerca",
+      "esportazione",
+      "condivisione"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "\"Stampa foglio attivo\" stampa l'intero foglio su cui ci si trova, ignorando gli altri fogli della stessa ____.",
+    "answer": "cartella di lavoro",
+    "bank": [
+      "cartella di lavoro",
+      "area di stampa",
+      "intestazione",
+      "anteprima"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "\"Stampa intera cartella di lavoro\" stampa ogni foglio, uno dopo l'altro, in un solo ____.",
+    "answer": "comando",
+    "bank": [
+      "comando",
+      "file",
+      "grafico",
+      "margine"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se prima di aprire la finestra di stampa è stato selezionato un grafico, questo può essere stampato da solo, ingrandito sull'intera pagina, senza le ____ che lo circondano.",
+    "answer": "celle",
+    "bank": [
+      "celle",
+      "righe di intestazione",
+      "colonne nascoste",
+      "note"
+    ]
+  },
+  {
+    "id": 49,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il 16 settembre 1959, l'azienda ____ presentò a New York la \"Xerox 914\".",
+    "answer": "Haloid Xerox",
+    "bank": [
+      "Haloid Xerox",
+      "IBM",
+      "Kodak",
+      "Bell Labs"
+    ]
+  },
+  {
+    "id": 50,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La Xerox 914 fu la prima fotocopiatrice a carta comune capace di funzionare in un ____ qualunque.",
+    "answer": "ufficio",
+    "bank": [
+      "ufficio",
+      "laboratorio",
+      "museo",
+      "tribunale"
+    ]
+  },
+  {
+    "id": 51,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La Xerox 914 fu frutto del lavoro dell'inventore ____ sul processo della xerografia.",
+    "answer": "Chester Carlson",
+    "bank": [
+      "Chester Carlson",
+      "Thomas Edison",
+      "Alan Turing",
+      "Chester Fabriano"
+    ]
+  },
+  {
+    "id": 52,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Prima della Xerox 914, riprodurre anche solo una parte di un documento significava ricopiarlo a mano o affidarsi alla carta ____.",
+    "answer": "carbone",
+    "bank": [
+      "carbone",
+      "vetrata",
+      "filigranata",
+      "assorbente"
+    ]
+  },
+  {
+    "id": 53,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, scegliere cosa stampare è come decidere cosa mettere in ____ per un viaggio.",
+    "answer": "valigia",
+    "bank": [
+      "valigia",
+      "borsa da lavoro",
+      "scatola",
+      "zaino"
+    ]
+  },
+  {
+    "id": 54,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della valigia, \"il foglio\" corrisponde a portare l'intero guardaroba della ____.",
+    "answer": "stagione",
+    "bank": [
+      "stagione",
+      "settimana",
+      "vacanza",
+      "città"
+    ]
+  },
+  {
+    "id": 55,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora della valigia, \"la cartella di lavoro\" corrisponde a portare letteralmente tutto l'____.",
+    "answer": "armadio",
+    "bank": [
+      "armadio",
+      "bagaglio a mano",
+      "comodino",
+      "scaffale"
+    ]
+  },
+  {
+    "id": 56,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Con il capitolo sulla stampa si conclude l'intero percorso del corso ____.",
+    "answer": "Spreadsheet",
+    "bank": [
+      "Spreadsheet",
+      "Word Processing",
+      "Presentation",
+      "Computer Essentials"
+    ]
+  }
+]

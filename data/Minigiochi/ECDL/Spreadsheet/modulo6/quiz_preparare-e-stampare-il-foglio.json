@@ -1,0 +1,737 @@
+[
+  {
+    "id": 1,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono i margini di una pagina?",
+    "options": [
+      "Lo spazio bianco ai bordi della pagina",
+      "L'area dove si scrive il testo",
+      "Il formato di carta scelto",
+      "Le linee di interruzione di pagina"
+    ],
+    "correctIndex": 0,
+    "explanation": "I margini sono lo spazio bianco ai bordi della pagina."
+  },
+  {
+    "id": 2,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa stabilisce l'orientamento di una pagina?",
+    "options": [
+      "Il formato di carta",
+      "Se la pagina è verticale (ritratto) o orizzontale (paesaggio)",
+      "Lo spazio bianco ai bordi",
+      "Il numero di pagine da stampare"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'orientamento stabilisce se la pagina è verticale (ritratto) o orizzontale (paesaggio)."
+  },
+  {
+    "id": 3,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove si regolano margini, orientamento e dimensioni in Excel?",
+    "options": [
+      "Layout di pagina → Imposta pagina",
+      "Inserisci → Testo",
+      "File → Stampa",
+      "Visualizza → Anteprima interruzioni di pagina"
+    ],
+    "correctIndex": 0,
+    "explanation": "Margini, orientamento e dimensioni si regolano da Layout di pagina → Imposta pagina."
+  },
+  {
+    "id": 4,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un foglio di calcolo spesso richiede l'orientamento orizzontale?",
+    "options": [
+      "Perché il testo è sempre più lungo delle righe",
+      "Perché i margini sono più larghi",
+      "Perché tende naturalmente ad allargarsi in orizzontale, colonna dopo colonna",
+      "Perché le celle sono quadrate"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un foglio di calcolo tende naturalmente ad allargarsi in orizzontale, colonna dopo colonna."
+  },
+  {
+    "id": 5,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la funzione \"Adatta alla pagina\"?",
+    "options": [
+      "Modifica il contenuto delle celle",
+      "Riduce automaticamente le proporzioni dell'intero foglio per farlo rientrare in un numero di pagine scelto",
+      "Aggiunge automaticamente margini",
+      "Cancella le colonne in eccesso"
+    ],
+    "correctIndex": 1,
+    "explanation": "Adatta alla pagina riduce le proporzioni con cui il foglio viene stampato, senza modificare le colonne."
+  },
+  {
+    "id": 6,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa modifica \"Adatta alla pagina\"?",
+    "options": [
+      "Il contenuto delle celle",
+      "Il formato dei dati",
+      "Solo la scala con cui il foglio viene stampato, non il contenuto delle celle",
+      "I nomi dei fogli"
+    ],
+    "correctIndex": 2,
+    "explanation": "Adatta alla pagina agisce solo sulla scala di stampa, non sul contenuto delle celle."
+  },
+  {
+    "id": 7,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove derivano i termini \"ritratto\" e \"paesaggio\" per l'orientamento della pagina?",
+    "options": [
+      "Dalla fotografia",
+      "Dall'informatica",
+      "Dalla cartografia",
+      "Dalla pittura"
+    ],
+    "correctIndex": 3,
+    "explanation": "I termini derivano dalla pittura, dove indicavano il formato della tela."
+  },
+  {
+    "id": 8,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un dipinto dedicato a una persona veniva chiamato \"ritratto\" (portrait)?",
+    "options": [
+      "Perché ritraeva un orizzonte",
+      "Perché era realizzato su una tela più alta che larga, per contenere per intero la figura",
+      "Perché era sempre quadrato",
+      "Perché veniva dipinto sempre all'aperto"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il ritratto era realizzato su una tela più alta che larga, per contenere per intero la figura."
+  },
+  {
+    "id": 9,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando entrò nell'uso pittorico europeo il termine \"landscape\", secondo gli storici dell'arte?",
+    "options": [
+      "Nel Medioevo",
+      "Nell'Ottocento",
+      "Agli inizi del Cinquecento",
+      "Nel Seicento"
+    ],
+    "correctIndex": 2,
+    "explanation": "Secondo gli storici dell'arte, il termine landscape entrò nell'uso pittorico europeo agli inizi del Cinquecento."
+  },
+  {
+    "id": 10,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quale area si diffuse particolarmente il termine \"landscape\"?",
+    "options": [
+      "In Italia",
+      "Nei Paesi Bassi",
+      "In Francia",
+      "In Inghilterra"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il termine landscape si diffuse in particolare nei Paesi Bassi."
+  },
+  {
+    "id": 11,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonato, nella metafora del modulo, il cambio di orientamento di una pagina?",
+    "options": [
+      "A piegare un foglio di carta",
+      "A ritagliare un'immagine",
+      "A girare di lato un vassoio troppo largo per passare da una porta stretta",
+      "A cambiare formato a un documento"
+    ],
+    "correctIndex": 2,
+    "explanation": "Cambiare l'orientamento è come girare di lato un vassoio troppo largo per passare da una porta stretta."
+  },
+  {
+    "id": 12,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono intestazione e piè di pagina?",
+    "options": [
+      "Le colonne più larghe del foglio",
+      "Aree della pagina, in alto e in basso, che compaiono automaticamente su ogni foglio stampato",
+      "Le celle bloccate durante lo scorrimento",
+      "I margini della pagina"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sono aree della pagina, in alto e in basso, che compaiono automaticamente su ogni foglio stampato."
+  },
+  {
+    "id": 13,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove si inseriscono intestazione e piè di pagina in Excel?",
+    "options": [
+      "Layout di pagina → Imposta pagina",
+      "File → Stampa",
+      "Inserisci → Testo → Intestazione e piè di pagina",
+      "Layout di pagina → Area di stampa"
+    ],
+    "correctIndex": 2,
+    "explanation": "Si inseriscono da Inserisci → Testo → Intestazione e piè di pagina."
+  },
+  {
+    "id": 14,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanti campi di testo offrono intestazione e piè di pagina?",
+    "options": [
+      "Due: sinistra e destra",
+      "Quattro: alto, basso, sinistra, destra",
+      "Tre: sinistra, centro, destra",
+      "Uno solo, centrale"
+    ],
+    "correctIndex": 2,
+    "explanation": "Offrono tre campi: sinistra, centro, destra."
+  },
+  {
+    "id": 15,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa restituisce il campo dinamico \"Numero di pagina\" combinato con \"Numero di pagine\"?",
+    "options": [
+      "Il nome del file",
+      "Un'indicazione come \"Pagina 3 di 10\"",
+      "La data di stampa",
+      "Il nome del foglio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Restituisce un'indicazione come \"Pagina 3 di 10\"."
+  },
+  {
+    "id": 16,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fanno i campi \"Data corrente\" e \"Ora corrente\"?",
+    "options": [
+      "Restano fissi alla data di creazione del file",
+      "Mostrano solo l'anno",
+      "Si aggiornano ogni volta che il foglio viene stampato di nuovo",
+      "Vengono inseriti manualmente ogni volta"
+    ],
+    "correctIndex": 2,
+    "explanation": "Si aggiornano ogni volta che il foglio viene stampato di nuovo."
+  },
+  {
+    "id": 17,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa servono i campi \"Nome file\" e \"Nome foglio\"?",
+    "options": [
+      "A cambiare automaticamente il nome del file",
+      "A sapere sempre da quale cartella di lavoro e da quale foglio proviene la pagina stampata",
+      "A proteggere il foglio da modifiche",
+      "A contare il numero di celle compilate"
+    ],
+    "correctIndex": 1,
+    "explanation": "Servono a sapere sempre da quale cartella di lavoro e da quale foglio proviene la pagina stampata."
+  },
+  {
+    "id": 18,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono campi come \"Numero di pagina\" o \"Data corrente\"?",
+    "options": [
+      "Testo fisso inserito manualmente",
+      "Formule che l'utente deve scrivere",
+      "Segnaposto che Excel ricalcola ogni volta",
+      "Valori copiati dalle celle del foglio"
+    ],
+    "correctIndex": 2,
+    "explanation": "Sono segnaposto che Excel ricalcola ogni volta."
+  },
+  {
+    "id": 19,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la filigrana, secondo il caso reale descritto nel modulo?",
+    "options": [
+      "Un timbro applicato con inchiostro colorato",
+      "Un'etichetta adesiva applicata sulla carta",
+      "Un disegno impresso nella pasta di carta ancora umida, visibile solo controluce",
+      "Un marchio inciso a stampo sulla carta secca"
+    ],
+    "correctIndex": 2,
+    "explanation": "La filigrana è un disegno impresso nella pasta di carta ancora umida, visibile solo controluce."
+  },
+  {
+    "id": 20,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi mise a punto la filigrana verso il 1282?",
+    "options": [
+      "I tipografi di Venezia",
+      "I mastri cartai di Fabriano",
+      "I monaci amanuensi",
+      "I cartografi olandesi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Verso il 1282 i mastri cartai di Fabriano misero a punto la filigrana."
+  },
+  {
+    "id": 21,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serviva inizialmente la filigrana?",
+    "options": [
+      "A decorare la carta",
+      "A indicare il prezzo del foglio",
+      "A indicare quale bottega avesse prodotto quel foglio",
+      "A proteggere la carta dall'umidità"
+    ],
+    "correctIndex": 2,
+    "explanation": "Inizialmente serviva a indicare quale bottega avesse prodotto quel foglio."
+  },
+  {
+    "id": 22,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con la diffusione della stampa, in quale secolo la filigrana iniziò a essere usata per autenticare documenti ufficiali?",
+    "options": [
+      "Nel Duecento",
+      "Nel Quattrocento",
+      "Nel Cinquecento",
+      "Nel Settecento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Con la diffusione della stampa, nel Quattrocento la filigrana iniziò a essere usata per autenticare documenti ufficiali."
+  },
+  {
+    "id": 23,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Oltre ai documenti ufficiali, per cosa venne usata la filigrana secoli più tardi?",
+    "options": [
+      "Per i francobolli",
+      "Per i passaporti",
+      "Per le banconote",
+      "Per le monete"
+    ],
+    "correctIndex": 2,
+    "explanation": "Secoli più tardi la filigrana venne usata anche per le banconote."
+  },
+  {
+    "id": 24,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa vengono paragonati intestazione e piè di pagina nella metafora del modulo?",
+    "options": [
+      "Alla copertina di un libro",
+      "Al timbro su un pacco",
+      "Alla firma in fondo a una lettera",
+      "All'etichetta cucita dentro un capo di vestiario"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sono paragonati all'etichetta cucita dentro un capo di vestiario."
+  },
+  {
+    "id": 25,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'area di stampa?",
+    "options": [
+      "L'intera cartella di lavoro",
+      "La porzione del foglio che Excel stamperà effettivamente, selezionabile in anticipo",
+      "Lo spazio bianco ai bordi della pagina",
+      "L'anteprima di stampa"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'area di stampa è la porzione del foglio che Excel stamperà effettivamente, selezionabile in anticipo."
+  },
+  {
+    "id": 26,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa Excel per impostazione predefinita quando si stampa un foglio?",
+    "options": [
+      "Stampa solo la prima pagina",
+      "Chiede sempre di selezionare un'area",
+      "Prova a stampare l'intero foglio, dividendolo in tante pagine quante servono",
+      "Ridimensiona automaticamente tutte le colonne"
+    ],
+    "correctIndex": 2,
+    "explanation": "Per impostazione predefinita, Excel prova a stampare l'intero foglio, dividendolo in tante pagine quante servono."
+  },
+  {
+    "id": 27,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove si imposta un'area di stampa?",
+    "options": [
+      "Inserisci → Testo → Intestazione e piè di pagina",
+      "File → Stampa",
+      "Layout di pagina → Orientamento",
+      "Layout di pagina → Area di stampa → Imposta area di stampa"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si imposta da Layout di pagina → Area di stampa → Imposta area di stampa."
+  },
+  {
+    "id": 28,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra la visualizzazione \"Anteprima interruzioni di pagina\"?",
+    "options": [
+      "I margini in rosso",
+      "Le celle vuote in giallo",
+      "Linee tratteggiate blu che segnano dove finisce una pagina e comincia la successiva",
+      "Le formule errate in verde"
+    ],
+    "correctIndex": 2,
+    "explanation": "Mostra linee tratteggiate blu che segnano dove finisce una pagina e comincia la successiva."
+  },
+  {
+    "id": 29,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si può fare con le linee tratteggiate blu dell'anteprima interruzioni di pagina?",
+    "options": [
+      "Cancellarle definitivamente",
+      "Colorarle a piacimento",
+      "Convertirle in bordi di cella",
+      "Trascinarle con il mouse per spostare manualmente un'interruzione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Possono essere trascinate con il mouse per spostare manualmente un'interruzione."
+  },
+  {
+    "id": 30,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra sempre Excel prima di stampare per davvero, da File → Stampa?",
+    "options": [
+      "Solo il numero di pagine totali",
+      "Un'anteprima con l'aspetto esatto di ogni pagina",
+      "Il costo stimato della stampa",
+      "L'elenco delle stampanti disponibili"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mostra sempre un'anteprima con l'aspetto esatto di ogni pagina."
+  },
+  {
+    "id": 31,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa include l'anteprima di stampa oltre alle interruzioni di pagina?",
+    "options": [
+      "Solo il testo delle celle",
+      "Le formule utilizzate",
+      "Margini, intestazione e piè di pagina",
+      "I nomi dei fogli nascosti"
+    ],
+    "correctIndex": 2,
+    "explanation": "Include anche margini, intestazione e piè di pagina."
+  },
+  {
+    "id": 32,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'era la \"carta a barre verdi\" (green bar paper)?",
+    "options": [
+      "Un tipo di carta fotografica a colori",
+      "Una carta speciale per filigrane",
+      "Una carta continua con righe alternate verdi e bianche, usata dalle stampanti a modulo continuo dei centri di calcolo",
+      "Un rotolo di carta per fax"
+    ],
+    "correctIndex": 2,
+    "explanation": "Era una carta continua con righe alternate verdi e bianche, usata dalle stampanti a modulo continuo dei centri di calcolo."
+  },
+  {
+    "id": 33,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quando è usata la carta a barre verdi, secondo il modulo?",
+    "options": [
+      "Dagli anni Trenta",
+      "Dagli anni Sessanta",
+      "Dagli anni Ottanta",
+      "Dagli anni Duemila"
+    ],
+    "correctIndex": 1,
+    "explanation": "È usata dagli anni Sessanta."
+  },
+  {
+    "id": 34,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanto erano larghe le righe colorate della carta a barre verdi?",
+    "options": [
+      "Circa cinque centimetri",
+      "Circa mezzo millimetro",
+      "Circa un centimetro",
+      "Circa dieci centimetri"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le righe erano larghe circa un centimetro."
+  },
+  {
+    "id": 35,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Fino a quante colonne di caratteri potevano essere larghe le pagine della carta a barre verdi?",
+    "options": [
+      "80",
+      "132",
+      "256",
+      "44"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le pagine erano larghe fino a 132 colonne di caratteri."
+  },
+  {
+    "id": 36,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa servivano le righe colorate della carta a barre verdi?",
+    "options": [
+      "A indicare le celle con errori",
+      "A separare i diversi fogli di lavoro",
+      "A guidare l'occhio di chi doveva leggere una riga senza saltare per errore su quella sopra o sotto",
+      "A decorare il documento stampato"
+    ],
+    "correctIndex": 2,
+    "explanation": "Servivano a guidare l'occhio di chi doveva leggere una riga senza saltare per errore su quella sopra o sotto."
+  },
+  {
+    "id": 37,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata l'area di stampa nella metafora del modulo?",
+    "options": [
+      "Alla cornice di un quadro appeso",
+      "Al bordo di un foglio A4",
+      "Al mirino di una macchina fotografica",
+      "Alla cornice di una fotografia"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'area di stampa è paragonata alla cornice di una fotografia."
+  },
+  {
+    "id": 38,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da dove si sceglie l'ampiezza della stampa in Excel?",
+    "options": [
+      "Layout di pagina → Imposta pagina",
+      "Inserisci → Testo",
+      "File → Stampa",
+      "Visualizza → Anteprima interruzioni di pagina"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'ampiezza della stampa si sceglie da File → Stampa."
+  },
+  {
+    "id": 39,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali opzioni di ampiezza della stampa offre Excel?",
+    "options": [
+      "Solo foglio e cartella di lavoro",
+      "Solo selezione e grafico",
+      "Pagina singola e documento intero",
+      "Selezione, foglio, cartella di lavoro e, se selezionato, un grafico"
+    ],
+    "correctIndex": 3,
+    "explanation": "Excel offre selezione, foglio, cartella di lavoro e, se selezionato, un grafico."
+  },
+  {
+    "id": 40,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa stampa l'opzione \"Stampa selezione\"?",
+    "options": [
+      "L'intero foglio attivo",
+      "Solo l'intervallo di celle scelto prima di aprire la finestra di stampa",
+      "Tutti i fogli della cartella di lavoro",
+      "Solo i grafici presenti nel foglio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Stampa solo l'intervallo di celle scelto prima di aprire la finestra di stampa."
+  },
+  {
+    "id": 41,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa stampa l'opzione \"Stampa foglio attivo\"?",
+    "options": [
+      "Solo le celle selezionate",
+      "Tutti i fogli della cartella di lavoro",
+      "L'intero foglio su cui ci si trova, ignorando gli altri fogli della cartella di lavoro",
+      "Solo l'intestazione e il piè di pagina"
+    ],
+    "correctIndex": 2,
+    "explanation": "Stampa l'intero foglio su cui ci si trova, ignorando gli altri fogli della cartella di lavoro."
+  },
+  {
+    "id": 42,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa stampa l'opzione \"Stampa intera cartella di lavoro\"?",
+    "options": [
+      "Solo il foglio attivo",
+      "Solo la selezione corrente",
+      "Solo i grafici della cartella di lavoro",
+      "Ogni foglio, uno dopo l'altro, in un solo comando"
+    ],
+    "correctIndex": 3,
+    "explanation": "Stampa ogni foglio, uno dopo l'altro, in un solo comando."
+  },
+  {
+    "id": 43,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede se si stampa un grafico selezionato in precedenza?",
+    "options": [
+      "Viene stampato insieme a tutte le celle del foglio",
+      "Viene ridotto a icona",
+      "Viene stampato da solo, ingrandito sull'intera pagina, senza le celle che lo circondano",
+      "Non può essere stampato separatamente"
+    ],
+    "correctIndex": 2,
+    "explanation": "Viene stampato da solo, ingrandito sull'intera pagina, senza le celle che lo circondano."
+  },
+  {
+    "id": 44,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando fu presentata la Xerox 914?",
+    "options": [
+      "Il 16 settembre 1949",
+      "Il 3 gennaio 1959",
+      "Il 16 settembre 1959",
+      "Il 16 settembre 1975"
+    ],
+    "correctIndex": 2,
+    "explanation": "La Xerox 914 fu presentata il 16 settembre 1959."
+  },
+  {
+    "id": 45,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi presentò la Xerox 914 a New York?",
+    "options": [
+      "IBM",
+      "L'azienda Haloid Xerox",
+      "L'azienda Kodak",
+      "Bell Labs"
+    ],
+    "correctIndex": 1,
+    "explanation": "La Xerox 914 fu presentata dall'azienda Haloid Xerox."
+  },
+  {
+    "id": 46,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fu la Xerox 914?",
+    "options": [
+      "La prima stampante laser da ufficio",
+      "Il primo fax portatile",
+      "La prima fotocopiatrice a carta comune capace di funzionare in un ufficio qualunque",
+      "Il primo scanner digitale"
+    ],
+    "correctIndex": 2,
+    "explanation": "Fu la prima fotocopiatrice a carta comune capace di funzionare in un ufficio qualunque."
+  },
+  {
+    "id": 47,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi inventò il processo della xerografia alla base della Xerox 914?",
+    "options": [
+      "Chester Fabriano",
+      "Thomas Edison",
+      "Alan Turing",
+      "Chester Carlson"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il processo della xerografia fu inventato da Chester Carlson."
+  },
+  {
+    "id": 48,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si riproduceva un documento, anche solo in parte, prima della Xerox 914?",
+    "options": [
+      "Con la stampa a caratteri mobili",
+      "Ricopiandolo a mano o affidandosi alla carta carbone",
+      "Con la fotografia analogica",
+      "Con il telegrafo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Prima della Xerox 914 si ricopiava a mano o ci si affidava alla carta carbone."
+  },
+  {
+    "id": 49,
+    "module": "preparare-e-stampare-il-foglio",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa viene paragonata, nella metafora del modulo, la scelta di cosa stampare?",
+    "options": [
+      "A scegliere cosa cucinare per una cena",
+      "A organizzare un armadio",
+      "A decidere cosa mettere in valigia per un viaggio",
+      "A pianificare un budget"
+    ],
+    "correctIndex": 2,
+    "explanation": "Scegliere cosa stampare è come decidere cosa mettere in valigia per un viaggio."
+  }
+]

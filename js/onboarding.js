@@ -1,6 +1,23 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.9.0
+   onboarding.js — PixelProf v2.9.1
    Tour guidato al primo accesso docente ("dove clicco?").
+
+   v2.9.1 — Bugfix segnalato su v2.9.0 (tour a sezioni):
+     1) le 4 sezioni "sul posto" (minigiochi/didattica/hub/profilo) non
+        partivano affatto se il pannello profilo veniva aperto da una
+        schermata diversa da quella con le card categoria (es. da
+        dentro l'Hub o un minigioco): startSection() cercava il target
+        subito, lo trovava non visibile e falliva in silenzio. Fix in
+        js/profile-panel.js: naviga sempre a tab-home/step-cat prima.
+     2) "Gestione Aule e Docenti" (Direttore) si comportava come il
+        tour intero (47 passaggi invece di 11): _advance() non aveva
+        mai avuto il concetto di "fine sezione", quindi continuava
+        senza fermarsi. Aggiunta _activeSection (sostituisce un primo
+        tentativo con un indice-limite fisso, insufficiente perché
+        'profilo' non è contigua nell'array — ha il blocco 'hub' da 12
+        passi frapposto a metà): _advance() ora avanza al PROSSIMO
+        passo della STESSA sezione saltando eventuali buchi, fermandosi
+        quando non ce ne sono più.
 
    v2.9.0 — Tour "a sezioni" (richiesta esplicita utente): dal
      pannello profilo, "Rivedi il tour guidato" ora apre una lista di
@@ -603,6 +620,16 @@ const OnboardingTour = (function () {
   let _isDirector = false;
   let _state = { done: false, idx: 0 };
   let _renderedIdx = -1; // idx attualmente mostrato — evita re-render/flicker
+  // v8.29.1 — sezione attiva per il tour "a sezioni" (vedi
+  // startSection()/_advance() più sotto). null = nessuna, il tour
+  // completo procede fino in fondo come sempre. Stringa (es. 'profilo')
+  // quando startSection() è stato usato: _advance() allora salta
+  // eventuali passi di ALTRE sezioni frapposti in mezzo — necessario
+  // perché 'profilo' non è contiguo nell'array (ha il blocco 'hub', 12
+  // passi, frapposto a metà) — e si ferma quando non ce ne sono più.
+  // Non persistito (solo in memoria): un reload a metà di una sezione la
+  // fa scadere, stesso comportamento già implicito per il tour completo.
+  let _activeSection = null;
 
   // Nodi DOM del passo attivo (velo, anelli, tooltip) — un solo passo alla volta.
   let _domNodes = [];
@@ -677,6 +704,7 @@ const OnboardingTour = (function () {
   function reset() {
     _state = { done: false, idx: 0 };
     _renderedIdx = -1;
+    _activeSection = null;
     _save();
   }
 
@@ -703,6 +731,7 @@ const OnboardingTour = (function () {
     const list = _stepList();
     const idx = list.findIndex(s => s.section === name);
     if (idx === -1) return false;
+    _activeSection = name;
     _state.done = false;
     _state.idx = idx;
     _renderedIdx = -1;
@@ -1434,6 +1463,39 @@ const OnboardingTour = (function () {
     // lasciare davvero il passo, per il percorso "Avanti"/"Fatto".
     if (prevDef && typeof prevDef.onLeave === 'function') {
       try { prevDef.onLeave(); } catch (e) {}
+    }
+    // v8.29.1 — tour "a sezioni": se una sezione è attiva (avviata da
+    // startSection(), es. dalla lista del pannello profilo — bug
+    // segnalato: "Gestione Aule e Docenti" proseguiva come il tour
+    // intero, 47 passaggi invece di 11) si avanza al PROSSIMO passo
+    // della STESSA sezione, saltando eventuali passi di altre sezioni
+    // frapposti in mezzo (es. 'profilo' ha il blocco 'hub', 12 passi,
+    // a metà) — non semplicemente idx+1 come nel tour completo. Quando
+    // non ce ne sono più, il tour finisce lì (stessa pulizia di
+    // _markDone() ma senza richiamare onLeave una seconda volta sullo
+    // stesso passo, già fatto due righe sopra).
+    if (_activeSection) {
+      let next = _state.idx + 1;
+      while (next < list.length && list[next].section !== _activeSection) next++;
+      if (next >= list.length) {
+        _activeSection = null;
+        _state.done = true;
+        _save();
+        _teardown();
+        return;
+      }
+      _state.idx = next;
+      _save();
+      _renderedIdx = -1;
+      _teardown();
+      const nextDef = list[_state.idx];
+      const sameScreen = prevDef && nextDef.screen === prevDef.screen;
+      const hubTarget  = nextDef.target === '#tb-hub-btn';
+      const afterHub   = prevDef && prevDef.target === '#tb-hub-btn';
+      if (sameScreen || hubTarget || afterHub) {
+        setTimeout(_tryRenderCurrentStep, 0);
+      }
+      return;
     }
     _state.idx++;
     _save();

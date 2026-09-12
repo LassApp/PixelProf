@@ -1,9 +1,15 @@
 /* ==================================================
-   PROFILE PANEL — v8.29.0
+   PROFILE PANEL — v8.29.1
    File dedicato (separato da app.js) per il tasto profilo unico in
    topbar (icona + anello colorato per ruolo/genere) e il pannello
    laterale che apre: nome, ruolo, Ultimo accesso, Ultima aula
    collegata, poi Esci e "Rivedi il tour guidato".
+
+   v8.29.1 — Bugfix: le sezioni "sul posto" non partivano se il
+     pannello profilo veniva aperto da una schermata diversa da quella
+     con le card categoria (Hub, un minigioco...) — vedi doc completa
+     in js/onboarding.js. Aggiunta navigazione esplicita a tab-home/
+     step-cat prima di startSection() in _handleTourSectionClick().
 
    v8.29.0 — "Rivedi il tour guidato" ora apre una lista di sezioni
      (Tour completo, Gestione Aule e Docenti [solo Direttore],
@@ -254,6 +260,20 @@ const ProfilePanel = (function () {
 
     close();
     if (typeof OnboardingTour !== 'undefined') OnboardingTour.startSection(it.key);
+    // v8.29.1 — bug segnalato: le sezioni "sul posto" non partivano se il
+    // pannello profilo veniva aperto da una schermata diversa da quella
+    // con le card categoria (es. da dentro l'Hub o un minigioco) — il
+    // target del primo passo non era ancora visibile, startSection()
+    // falliva in silenzio. Fix: ci si assicura sempre di essere su
+    // tab-home/step-cat prima di avviare — goStep('cat') richiama GIÀ da
+    // solo OnboardingTour.showHomeCategoryStep() dopo 300ms (vedi
+    // game-engine-state.js), che ritenta il render con l'idx nel
+    // frattempo già impostato da startSection() qui sopra. Nessun nuovo
+    // hook: stesso identico meccanismo già usato da ogni altro passo.
+    if (typeof showScreen === 'function' && typeof goStep === 'function') {
+      showScreen('tab-home');
+      goStep('cat');
+    }
   }
 
   /** "Rivedi il tour guidato" — riazzera lo stato del tour e riporta

@@ -1,9 +1,23 @@
 /* ==================================================
-   PROFILE PANEL — v8.25.0
+   PROFILE PANEL — v8.29.0
    File dedicato (separato da app.js) per il tasto profilo unico in
    topbar (icona + anello colorato per ruolo/genere) e il pannello
    laterale che apre: nome, ruolo, Ultimo accesso, Ultima aula
    collegata, poi Esci e "Rivedi il tour guidato".
+
+   v8.29.0 — "Rivedi il tour guidato" ora apre una lista di sezioni
+     (Tour completo, Gestione Aule e Docenti [solo Direttore],
+     Minigiochi, Didattica, Hub, Profilo & Impostazioni) invece di
+     ripartire subito col tour intero — richiesta esplicita utente.
+     "Tour completo" richiama restartTour() INVARIATA (stesso
+     comportamento di sempre). Le altre voci chiamano
+     OnboardingTour.startSection(key): quelle che vivono nella screen
+     'homeCategory' (dove vive già questo pannello) partono sul posto,
+     senza conferma; "Gestione Aule e Docenti" (screen 'dashboard')
+     esce dal contesto corrente come "Tour completo", quindi ha lo
+     stesso tipo di conferma. Markup lista generato qui via JS dentro
+     #pp-tour-sections (index.html) — stile in css/tour-sections.css
+     (nuovo file, stesso layer @layer topbarprofile).
 
    SOSTITUISCE il vecchio #tb-user-badge (ruolo-pill + nome + pulsante
    esci sempre visibili in topbar) — vedi index.html.
@@ -32,7 +46,27 @@ const ProfilePanel = (function () {
     default:   { ring: '#00cfff', text: '#00cfff', bg: 'rgba(0,207,255,.1)',   icon: 'ti-user'          }
   };
 
+  /** v8.29.0 — Config dichiarativa per la lista sotto "Rivedi il tour
+   *  guidato". `key` deve combaciare col campo `section` sui passi in
+   *  js/onboarding.js. `exits:true` → la sezione parte da una screen
+   *  diversa da 'homeCategory' (dove vive questo pannello): richiede
+   *  conferma + navigazione, come "Tour completo". Le voci con
+   *  OnboardingTour.sectionCount(key) === 0 per il ruolo corrente (es.
+   *  'aule' per il Docente) vengono escluse automaticamente in
+   *  _tourSectionsFor() — nessun controllo isDir hardcoded qui. */
+  const TOUR_SECTION_DEFS = [
+    { key: 'aule', icon: 'ti-school', label: 'Gestione Aule e Docenti', exits: true,
+      exitIcon: '🏫', exitTitle: 'Rivedere questa sezione?',
+      exitMsg: 'Uscirai dall\u2019aula corrente e tornerai alla Dashboard Direttore per rivedere questa sezione.' },
+    { key: 'minigiochi', icon: 'ti-device-gamepad-2', label: 'Minigiochi' },
+    { key: 'didattica',  icon: 'ti-book-2',           label: 'Didattica' },
+    { key: 'hub',        icon: 'ti-layout-grid',      label: 'Hub' },
+    { key: 'profilo',    icon: 'ti-user',             label: 'Profilo & Impostazioni' }
+  ];
+
   let _isDir = false;
+  let _tourSectionsOpen = false;
+  let _tourItemsCache = [];
 
   function _styleFor(isDir, genere) {
     if (isDir) return ROLE_STYLE.direttore;
@@ -126,6 +160,100 @@ const ProfilePanel = (function () {
     if (panel) panel.classList.remove('open');
     if (backdrop) backdrop.classList.remove('open');
     _setTopbarShift(false);
+    _collapseTourSections();
+  }
+
+  /** v8.29.0 — costruisce la lista di voci da mostrare, nell'ordine:
+   *  Tour completo (sempre) → sezioni di TOUR_SECTION_DEFS con almeno
+   *  1 passo per il ruolo corrente. Conteggi presi dal vivo da
+   *  OnboardingTour (mai hardcoded): restano corretti anche se in
+   *  futuro cambia il numero di passi di una sezione. */
+  function _tourSectionsFor() {
+    const hasOT = (typeof OnboardingTour !== 'undefined');
+    const total = hasOT ? OnboardingTour.sectionTotal() : 0;
+    const list = [{
+      key: 'tutto', icon: 'ti-map-2', label: 'Tour completo', primary: true, exits: true,
+      count: total,
+      exitIcon: '🧭', exitTitle: 'Rivedere il tour guidato?',
+      exitMsg: _isDir
+        ? 'Il tour guidato ripartirà dall\u2019inizio e tornerai alla Dashboard Direttore.'
+        : 'Il tour guidato ripartirà dall\u2019inizio e uscirai da questa aula per tornare alla scelta delle aule.'
+    }];
+    TOUR_SECTION_DEFS.forEach(def => {
+      const n = hasOT ? OnboardingTour.sectionCount(def.key) : 0;
+      if (n > 0) list.push(Object.assign({}, def, { count: n }));
+    });
+    return list;
+  }
+
+  function _renderTourSections() {
+    const box = sh('pp-tour-sections');
+    if (!box) return;
+    const items = _tourSectionsFor();
+    _tourItemsCache = items;
+    box.innerHTML = items.map((it, i) => {
+      const sep = (i > 0 && items[i - 1].exits && !it.exits) ? '<div class="pp-tour-sep"></div>' : '';
+      const countTxt = it.key === 'tutto' ? (it.count + ' passaggi · da capo') : (it.count + ' passaggi');
+      return sep +
+        '<button type="button" class="pp-tour-item' + (it.primary ? ' pp-tour-primary' : '') + '" data-idx="' + i + '">' +
+          '<i class="ti ' + it.icon + ' pp-tour-icon"></i>' +
+          '<span class="pp-tour-label">' + it.label + '<span class="pp-tour-count">' + countTxt + '</span></span>' +
+        '</button>';
+    }).join('');
+    box.querySelectorAll('.pp-tour-item').forEach(btn => {
+      btn.addEventListener('click', () => _handleTourSectionClick(_tourItemsCache[+btn.dataset.idx]));
+    });
+  }
+
+  /** Chiude (senza riaprirla) la lista sezioni — chiamata da close()
+   *  cosicché il pannello si presenti sempre collassato alla riapertura. */
+  function _collapseTourSections() {
+    _tourSectionsOpen = false;
+    const btn = sh('pp-tour-toggle-btn');
+    const box = sh('pp-tour-sections');
+    if (box) box.classList.remove('open');
+    if (btn) { btn.classList.remove('expanded'); btn.setAttribute('aria-expanded', 'false'); }
+  }
+
+  /** Tasto "Rivedi il tour guidato": apre/chiude la lista invece di
+   *  avviare subito il tour intero (v8.29.0). I conteggi sono ricalcolati
+   *  a ogni apertura: costo trascurabile, sempre aggiornati. */
+  function toggleTourSections() {
+    const btn = sh('pp-tour-toggle-btn');
+    const box = sh('pp-tour-sections');
+    if (!btn || !box) return;
+    if (!_tourSectionsOpen) _renderTourSections();
+    _tourSectionsOpen = !_tourSectionsOpen;
+    box.classList.toggle('open', _tourSectionsOpen);
+    btn.classList.toggle('expanded', _tourSectionsOpen);
+    btn.setAttribute('aria-expanded', _tourSectionsOpen ? 'true' : 'false');
+  }
+
+  /** v8.29.0 — 'tutto' richiama restartTour() invariata. Le sezioni con
+   *  exits:true (solo 'aule', Direttore) chiedono la stessa conferma e
+   *  poi navigano come restartTour(); le altre (minigiochi/didattica/
+   *  hub/profilo) partono sul posto: OnboardingTour.startSection() basta
+   *  da solo perché la screen di partenza di quei passi è già
+   *  'homeCategory', la stessa da cui si apre questo pannello. */
+  async function _handleTourSectionClick(it) {
+    if (!it) return;
+    if (it.key === 'tutto') { await restartTour(); return; }
+
+    if (it.exits) {
+      close();
+      const ok = await ppConfirmBox(it.exitMsg, {
+        title: it.exitTitle, icon: it.exitIcon,
+        yesLabel: 'Sì, rivedi il tour', noLabel: 'Annulla'
+      });
+      if (!ok) return;
+      if (typeof resetSessionState === 'function') resetSessionState();
+      if (typeof OnboardingTour !== 'undefined') OnboardingTour.startSection(it.key);
+      if (typeof openDirectorDashboard === 'function') openDirectorDashboard();
+      return;
+    }
+
+    close();
+    if (typeof OnboardingTour !== 'undefined') OnboardingTour.startSection(it.key);
   }
 
   /** "Rivedi il tour guidato" — riazzera lo stato del tour e riporta
@@ -170,6 +298,6 @@ const ProfilePanel = (function () {
     }
   }
 
-  return { render, toggle, close, restartTour };
+  return { render, toggle, close, restartTour, toggleTourSections };
 })();
 window.ProfilePanel = ProfilePanel;

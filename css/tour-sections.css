@@ -1,0 +1,98 @@
+/* ==================================================
+   tour-sections.css — PixelProf v8.29.0
+   Lista "a sezioni" che si apre sotto il tasto "Rivedi il tour
+   guidato" nel pannello profilo (vedi css/topbar-profile.css per il
+   pannello stesso, js/profile-panel.js per la logica).
+
+   File separato su richiesta esplicita utente ("css separato"), per
+   tenere pixelprof.css/topbar-profile.css invariati. Stesso layer
+   @layer topbarprofile: stesso componente, non uno nuovo — il nome è
+   già registrato nell'ordine master in pixelprof.css, nessuna modifica
+   necessaria lì. Stessa tecnica "dark qui sopra, light in @layer theme
+   più sotto" già usata da css/act-select.css e da questo stesso
+   topbar-profile.css.
+
+   Colori: nessuno nuovo. Riusa var(--accent) — già la stessa variabile
+   con cui .pp-panel-action.pp-tour-action:hover colora bordo/testo in
+   topbar-profile.css — invece di --profile-ring: il tour resta sempre
+   colorato in accent/teal, indipendentemente dal ruolo (stesso
+   comportamento già esistente del tasto stesso). var(--accent) si
+   adatta già da sola al tema chiaro (ridefinita in pixelprof.css),
+   quindi non serve un override light per le regole che la usano.
+
+   Pattern visivo della singola voce ripreso 1:1 da .tb-hub-item (già
+   in produzione, vedi pixelprof.css @layer topbar-fix): barra colorata
+   a sinistra che cresce sull'hover, radius 8px.
+================================================== */
+@layer topbarprofile {
+
+/* Freccia sul tasto "Rivedi il tour guidato": ruota quando la lista è
+   aperta. Il tasto stesso (.pp-panel-action.pp-tour-action) resta
+   invariato in css/topbar-profile.css — qui solo lo stato aggiuntivo
+   .expanded e la freccia. */
+.pp-tour-action .pp-tour-chev{
+  margin-left:auto; font-size:14px;
+  transition:transform .22s cubic-bezier(.22,1,.36,1);
+}
+.pp-tour-action.expanded .pp-tour-chev{ transform:rotate(180deg); }
+.pp-tour-action.expanded{
+  background:rgba(0,255,200,.06); border-color:rgba(0,255,200,.3); color:var(--accent);
+}
+
+/* Contenitore che si espande sotto il tasto. */
+.pp-tour-sections{
+  max-height:0; opacity:0; overflow:hidden;
+  display:flex; flex-direction:column; gap:2px;
+  transition:max-height .32s cubic-bezier(.22,1,.36,1), opacity .22s ease;
+}
+.pp-tour-sections.open{ max-height:420px; opacity:1; margin-bottom:10px; }
+
+.pp-tour-sep{ height:1px; background:rgba(255,255,255,.07); margin:4px 10px; }
+
+.pp-tour-item{
+  display:flex; align-items:center; gap:10px; width:100%;
+  padding:9px 10px 9px 14px; border-radius:8px; border:none; background:none;
+  color:rgba(255,255,255,.62);
+  font-family:'Space Grotesk',sans-serif; font-size:12.5px; font-weight:600;
+  cursor:pointer; text-align:left; position:relative; overflow:hidden;
+  transition:background .15s, color .15s;
+}
+.pp-tour-item::before{
+  content:''; position:absolute; left:0; top:0; bottom:0; width:2px;
+  background:var(--accent); transform:scaleY(0); transition:transform .15s;
+  border-radius:0 2px 2px 0;
+}
+.pp-tour-item:hover{ background:rgba(255,255,255,.05); color:#fff; }
+.pp-tour-item:hover::before{ transform:scaleY(1); }
+.pp-tour-item:focus-visible{ outline:2px solid var(--accent); outline-offset:-2px; }
+
+.pp-tour-icon{
+  font-size:15px; width:18px; flex-shrink:0; color:rgba(255,255,255,.4);
+  transition:color .15s;
+}
+.pp-tour-item:hover .pp-tour-icon{ color:var(--accent); }
+
+.pp-tour-label{ display:flex; flex-direction:column; gap:1px; }
+.pp-tour-count{
+  font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:.3px;
+  color:rgba(255,255,255,.28); font-weight:400;
+}
+
+/* Voce "Tour completo": prima della lista, leggermente in evidenza. */
+.pp-tour-primary{ color:#fff; }
+.pp-tour-primary .pp-tour-icon{ color:var(--accent); }
+.pp-tour-primary .pp-tour-count{ color:var(--accent); opacity:.65; }
+
+} /* @layer topbarprofile */
+
+/* ── Tema chiaro — solo le regole con colori fissi (rgba bianco): le
+   regole che usano già var(--accent) si adattano da sole, nessun
+   override necessario lì (stessa tecnica di topbar-profile.css). ── */
+@layer theme {
+  html[data-theme="light"] .pp-tour-item{ color:rgba(16,24,42,.65); }
+  html[data-theme="light"] .pp-tour-item:hover{ background:rgba(20,30,60,.06); color:#10182a; }
+  html[data-theme="light"] .pp-tour-icon{ color:rgba(16,24,42,.35); }
+  html[data-theme="light"] .pp-tour-count{ color:rgba(16,24,42,.35); }
+  html[data-theme="light"] .pp-tour-sep{ background:rgba(20,30,60,.1); }
+  html[data-theme="light"] .pp-tour-primary{ color:#10182a; }
+}

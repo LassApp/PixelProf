@@ -1,6 +1,21 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.8.2
+   onboarding.js — PixelProf v2.9.0
    Tour guidato al primo accesso docente ("dove clicco?").
+
+   v2.9.0 — Tour "a sezioni" (richiesta esplicita utente): dal
+     pannello profilo, "Rivedi il tour guidato" ora apre una lista di
+     sezioni invece di ripartire subito dall'intero tour. Aggiunto
+     campo dichiarativo `section` sui singoli passi di DIRECTOR_STEPS/
+     TEACHER_STEPS (aule/minigiochi/didattica/hub/profilo — 'aule'
+     presente solo lato Direttore) e 3 nuove funzioni pubbliche:
+     startSection(name), sectionCount(name), sectionTotal(). "Tour
+     completo" NON tocca questo meccanismo: resta reset()+navigazione
+     come prima (vedi ProfilePanel.restartTour(), invariata) — le
+     sezioni singole partono invece SUL POSTO (senza uscire dal
+     contesto corrente) quando la loro screen coincide con quella da
+     cui si apre il pannello profilo ('homeCategory'), che è il caso
+     di tutte tranne 'aule'. Nessuna modifica ai passi esistenti oltre
+     al nuovo campo: target/type/title/body/hook invariati.
 
    v2.8.2 — Su richiesta esplicita utente (opzione 3 tra quelle
      proposte per il bug del menu Hub): invece di lasciare il tour
@@ -665,6 +680,52 @@ const OnboardingTour = (function () {
     _save();
   }
 
+  /** v2.9.0 — Tour "a sezioni" (richiesta esplicita utente): porta
+   *  _state.idx al PRIMO passo con `section === name` (campo dichiarato
+   *  sui singoli passi, vedi doc sotto), invece che sempre da idx 0.
+   *  Usato da js/profile-panel.js per la lista che si apre sotto
+   *  "Rivedi il tour guidato". "Tour completo" continua a passare da
+   *  reset() + navigazione (invariato, vedi ProfilePanel.restartTour):
+   *  startSection() serve SOLO alle sezioni singole.
+   *  Ritenta subito _tryRenderCurrentStep(): se la screen del primo
+   *  passo della sezione è già quella corrente (vero per minigiochi/
+   *  didattica/hub/profilo, che vivono tutte in 'homeCategory' — la
+   *  stessa screen del pannello profilo da cui si parte) il passo
+   *  compare immediatamente. Se invece la sezione richiede di uscire
+   *  dal contesto corrente (es. 'aule', solo Direttore, screen
+   *  'dashboard') non fa nulla qui: la chiamata già esistente a
+   *  show*Step() dentro la funzione di navigazione (es.
+   *  openDirectorDashboard()) lo riprenderà da sola non appena la
+   *  schermata sarà visibile — stesso meccanismo già in uso per ogni
+   *  altro passo 'action' del tour, nessun nuovo hook necessario.
+   *  Ritorna true se la sezione esiste per il ruolo corrente. */
+  function startSection(name) {
+    const list = _stepList();
+    const idx = list.findIndex(s => s.section === name);
+    if (idx === -1) return false;
+    _state.done = false;
+    _state.idx = idx;
+    _renderedIdx = -1;
+    _save();
+    _teardown();
+    _tryRenderCurrentStep();
+    return true;
+  }
+
+  /** v2.9.0 — quanti passi ha `name` per il ruolo corrente (0 se la
+   *  sezione non esiste per questo ruolo, es. 'aule' per il Docente).
+   *  Calcolato dal vivo sull'array passi: nessun conteggio duplicato
+   *  da tenere sincronizzato a mano altrove. */
+  function sectionCount(name) {
+    return _stepList().filter(s => s.section === name).length;
+  }
+
+  /** v2.9.0 — totale passi del tour completo per il ruolo corrente
+   *  (usato per la voce "Tour completo" nella lista a sezioni). */
+  function sectionTotal() {
+    return _stepList().length;
+  }
+
   /* ================================================
      SEQUENZE — un array dichiarativo per ruolo.
      Ogni passo: { screen, target, type, title, body }
@@ -730,39 +791,47 @@ const OnboardingTour = (function () {
                dove il target torna visibile (es. riaprire il menu
                Hub), invece di lasciare il tour semplicemente in
                silenzio in attesa che sia l'utente a capire cosa fare.
+       section (opzionale, v2.9.0) → chiave del gruppo a cui appartiene
+               questo passo per il tour "a sezioni" avviato da
+               js/profile-panel.js: 'aule' (solo Direttore),
+               'minigiochi', 'didattica', 'hub', 'profilo'. Assente sui
+               passi di apertura/chiusura (benvenuto, scelta aula/
+               modulo, "tour completato") — questi restano visibili
+               solo dentro "Tour completo", mai come sezione a sé.
+               Vedi startSection()/sectionCount() più sotto.
   ================================================ */
   const DIRECTOR_STEPS = [
-    { screen:'dashboard', target:'.dd-aule', type:'action',
+    { screen:'dashboard', target:'.dd-aule', type:'action', section:'aule',
       title:'Benvenuto in PixelProf! 👋',
       body:'Inizia da qui: premi su "Gestisci Aule" per creare la tua prima aula e scegliere quali moduli rendere disponibili ai docenti.' },
-    { screen:'wizard', target:'#cs-add-form-wrap', type:'info', revealTarget:true,
+    { screen:'wizard', target:'#cs-add-form-wrap', type:'info', section:'aule', revealTarget:true,
       title:'Crea la tua prima aula 🏫',
       body:'Da qui avvii la creazione guidata in quattro passi: nome, area didattica, moduli abilitati e docenti da assegnare. L\'area scelta determina quali moduli saranno disponibili.' },
-    { screen:'wizard', target:'#cs-back-dashboard-btn', type:'action',
+    { screen:'wizard', target:'#cs-back-dashboard-btn', type:'action', section:'aule',
       title:'Tutto pronto ✅',
       body:'Premi qui per tornare al pannello di controllo.' },
-    { screen:'dashboard', target:'.dd-docenti', type:'action',
+    { screen:'dashboard', target:'.dd-docenti', type:'action', section:'aule',
       title:'Gestisci i docenti 👩\u200d🏫',
       body:'Da qui puoi creare nuovi account e gestire quelli esistenti. Premi per continuare.' },
-    { screen:'teacherMgmt', target:'.dd-new-teacher', type:'action',
+    { screen:'teacherMgmt', target:'.dd-new-teacher', type:'action', section:'aule',
       title:'Crea un nuovo account 🆕',
       body:'Qui puoi inserire un nuovo docente: bastano nome, cognome ed email — riceverà un invito automatico per impostare la password.' },
-    { screen:'teacherCreate', target:'#screen-teacher-create .back-link', type:'action',
+    { screen:'teacherCreate', target:'#screen-teacher-create .back-link', type:'action', section:'aule',
       title:'Puoi tornare indietro quando vuoi ↩️',
       body:'Se cambi idea, questo pulsante ti riporta alla gestione docenti senza creare nulla.' },
-    { screen:'teacherMgmt', target:'.dd-teacher-list', type:'action',
+    { screen:'teacherMgmt', target:'.dd-teacher-list', type:'action', section:'aule',
       title:'Docenti già creati 👥',
       body:'Qui trovi i docenti già registrati: da ogni scheda puoi assegnarli alle aule già create (raggruppate per area didattica), modificarne i dati o disattivarli.' },
-    { screen:'teacherList', target:'#screen-teacher-list .back-link', type:'action',
+    { screen:'teacherList', target:'#screen-teacher-list .back-link', type:'action', section:'aule',
       title:'Torna alla gestione docenti ↩️',
       body:'Questo pulsante ti riporta al pannello principale della gestione docenti.' },
-    { screen:'teacherMgmt', target:'#screen-teacher-mgmt .back-link', type:'action',
+    { screen:'teacherMgmt', target:'#screen-teacher-mgmt .back-link', type:'action', section:'aule',
       title:'Torniamo alla dashboard ✅',
       body:'Premi qui per tornare al pannello di controllo.' },
-    { screen:'dashboard', target:'.dd-direttore', type:'action',
+    { screen:'dashboard', target:'.dd-direttore', type:'action', section:'aule',
       title:'Il tuo profilo 👑',
       body:'Da qui puoi modificare i tuoi dati personali: nome, cognome, genere ed email. Le tue aule restano sempre tutte accessibili.' },
-    { screen:'directorProfile', target:'#screen-director-profile .back-link', type:'action',
+    { screen:'directorProfile', target:'#screen-director-profile .back-link', type:'action', section:'aule',
       title:'Torna alla dashboard ↩️',
       body:'Premi qui per tornare al pannello di controllo.' },
     { screen:'dashboard', target:'.dd-enter-banner', type:'action',
@@ -779,10 +848,10 @@ const OnboardingTour = (function () {
     // TEACHER_STEPS: stessa schermata, stesso flusso, indipendente dal
     // ruolo. (Il passo Hub che era qui è stato spostato più sotto, subito
     // prima di "Torna ai moduli" — v2.6.0, vedi commento là.)
-    { screen:'homeCategory', target:'.cat-games', type:'action',
+    { screen:'homeCategory', target:'.cat-games', type:'action', section:'minigiochi',
       title:'Minigiochi 🎮',
       body:'Premi qui per scegliere tra le modalità di gioco: Quiz, Speed Quiz, Abbina, Completa la frase e Vero o Falso.' },
-    { screen:'act', target:'#step-act .act-grid', type:'action',
+    { screen:'act', target:'#step-act .act-grid', type:'action', section:'minigiochi',
       title:'Le modalità di gioco 🕹️',
       body:'Scegli quella più adatta alla lezione: dopo deciderai il numero di domande e se far giocare la classe in Individuale o a Squadre.' },
     // v8.20.4: la v8.20.3 aveva reso questo passo 'info' (si avanzava
@@ -796,20 +865,20 @@ const OnboardingTour = (function () {
     // la × (passo qui sotto), poi "← Modalità" torna visibile e
     // cliccabile per davvero (passo successivo, di nuovo 'action') —
     // niente più salti "a sorpresa" nell'interfaccia.
-    { screen:'act', target:'.setup-close-btn', type:'action',
+    { screen:'act', target:'.setup-close-btn', type:'action', section:'minigiochi',
       title:'Chiudi le impostazioni ✖️',
       body:'Il pannello si è aperto cliccando sulla card. Chiudilo con questa ×: tornerai alla scelta dei minigiochi.' },
     // La variante gemella di questo passo dentro Flip Card (poco più
     // sotto, target '#step-didattica .act-back-btn') resta invariata,
     // 'action': quel pulsante non è mai coperto da nessun overlay,
     // nessun problema lì.
-    { screen:'act', target:'#step-act .act-back-btn', type:'action',
+    { screen:'act', target:'#step-act .act-back-btn', type:'action', section:'minigiochi',
       title:'Torna alla modalità ↩️',
       body:'Questo pulsante ti riporta alla scelta tra Minigiochi e Didattica.' },
-    { screen:'homeCategory', target:'.cat-didattica', type:'action',
+    { screen:'homeCategory', target:'.cat-didattica', type:'action', section:'didattica',
       title:'Didattica 📖',
       body:'L\'alternativa ai minigiochi: qui la classe ripassa con le Flip Card, domanda su un lato e risposta sull\'altro.' },
-    { screen:'didattica', target:'#step-didattica .act-card', type:'action',
+    { screen:'didattica', target:'#step-didattica .act-card', type:'action', section:'didattica',
       title:'Flip Card 🃏',
       body:'Per ora è l\'unico metodo disponibile: scegli il livello e la classe potrà ripassare voltando le carte.' },
     // v2.4.0 — 3 nuovi passi (richiesta esplicita utente): coprono il
@@ -820,16 +889,16 @@ const OnboardingTour = (function () {
     // relativa conferma). Hook dedicati in js/flip-card.js (file isolato,
     // nessuna modifica ai file core): vedi showFlipCardLevelStep/
     // showFlipCardExitStep/showFlipCardConfirmStep più sotto.
-    { screen:'flipcardLevel', target:'#g-area .act-grid', type:'action',
+    { screen:'flipcardLevel', target:'#g-area .act-grid', type:'action', section:'didattica',
       title:'Scegli il livello 🎚️',
       body:'Facile o Medio: la classe può scegliere il livello di approfondimento prima di iniziare.' },
-    { screen:'flipcardExit', target:'.fc-exit-btn', type:'action',
+    { screen:'flipcardExit', target:'.fc-exit-btn', type:'action', section:'didattica',
       title:'Uscire in ogni momento ✖️',
       body:'Da qui la classe può interrompere la sessione e tornare alla scelta del metodo di studio quando vuole.' },
-    { screen:'flipcardConfirm', target:'#pp-generic-yes', type:'action',
+    { screen:'flipcardConfirm', target:'#pp-generic-yes', type:'action', section:'didattica',
       title:'Conferma richiesta ✅',
       body:'Per evitare uscite accidentali viene sempre chiesta una conferma prima di abbandonare la sessione.' },
-    { screen:'didattica', target:'#step-didattica .act-back-btn', type:'action',
+    { screen:'didattica', target:'#step-didattica .act-back-btn', type:'action', section:'didattica',
       title:'Torna alla modalità ↩️',
       body:'Anche da qui puoi tornare alla scelta tra Minigiochi e Didattica.' },
     // v2.5.0 — 6 nuovi passi finali (richiesta esplicita utente): vedi
@@ -843,23 +912,23 @@ const OnboardingTour = (function () {
     // reveal del contenuto). Il passo D chiude il pannello in onLeave
     // prima di proseguire con tema/audio -- stesso pattern di chiusura
     // gia' usato per hubBadges piu' sotto.
-    { screen:'homeCategory', target:'#tb-profile-btn', type:'action',
+    { screen:'homeCategory', target:'#tb-profile-btn', type:'action', section:'profilo',
       title:'Il tuo profilo 👤',
       body:'In alto a destra trovi il tuo profilo — il colore dell\'anello indica il ruolo. Premilo per aprirlo.' },
-    { screen:'homeCategory', target:'.pp-panel-header, .pp-panel-info', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'homeCategory', target:'.pp-panel-header, .pp-panel-info', type:'info', section:'profilo', revealTarget:true, blockClicks:true,
       title:'Le tue informazioni 🪪',
       body:'Qui trovi il tuo nome, il ruolo, l\'ultimo accesso e l\'ultima aula collegata.' },
-    { screen:'homeCategory', target:'.pp-tour-action', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'homeCategory', target:'.pp-tour-action', type:'info', section:'profilo', revealTarget:true, blockClicks:true,
       title:'Rivedi il tour quando vuoi 🧭',
       body:'Hai dimenticato qualche passaggio? Da qui puoi far ripartire questo tour guidato in qualsiasi momento.' },
-    { screen:'homeCategory', target:'.pp-logout-action', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'homeCategory', target:'.pp-logout-action', type:'info', section:'profilo', revealTarget:true, blockClicks:true,
       title:'Esci dall\'account 🚪',
       body:'Il pulsante per uscire dal tuo account, sempre disponibile da qui. Per ora premi "Avanti" per continuare il tour.',
       onLeave:function(){ if(typeof ProfilePanel!=='undefined') ProfilePanel.close(); } },
-    { screen:'homeCategory', target:'.theme-toggle-btn', type:'info', revealTarget:true,
+    { screen:'homeCategory', target:'.theme-toggle-btn', type:'info', section:'profilo', revealTarget:true,
       title:'Tema chiaro o scuro 🌗',
       body:'Passa dal tema scuro a quello chiaro, e viceversa, in qualsiasi momento con un tocco.' },
-    { screen:'homeCategory', target:'.audio-toggle-btn:not(.theme-toggle-btn)', type:'info', revealTarget:true,
+    { screen:'homeCategory', target:'.audio-toggle-btn:not(.theme-toggle-btn)', type:'info', section:'profilo', revealTarget:true,
       title:'Audio on/off 🔊',
       body:'Attiva o disattiva gli effetti sonori del gioco quando vuoi.' },
     // v2.6.0 — richiesta esplicita utente: il passo Hub (era qui) è stato
@@ -872,7 +941,7 @@ const OnboardingTour = (function () {
     // avanzamento rimandato di un tick in _advance()): quando il passo
     // "Il pannello si apre" viene renderizzato, l'onclick nativo
     // toggleHubMenu() ha già rimosso la classe "hidden" dal menu.
-    { screen:'homeCategory', target:'#tb-hub-btn', type:'action',
+    { screen:'homeCategory', target:'#tb-hub-btn', type:'action', section:'hub',
       title:'Il tuo Hub 🎯',
       body:'Raggruppa Classifica, Progressi, Storico, Panoramica Classe e Traguardi. Premilo per scoprire cosa contiene.' },
     // v2.6.0 — richiesta esplicita utente: 10 nuovi passi esplorano il
@@ -901,7 +970,7 @@ const OnboardingTour = (function () {
     // rimozione sarebbe un no-op e app.js lo ri-registrerebbe comunque poco
     // dopo. Da qui in poi il menu resta aperto "per davvero" fino
     // all'onLeave del passo Traguardi, che lo richiude esplicitamente.
-    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', section:'hub', revealTarget:true, blockClicks:true,
       title:'Il pannello si apre 📂',
       body:'Ecco le cinque scorciatoie dell\'Hub. Iniziamo dalla prima.',
       onEnter: function () {
@@ -911,39 +980,39 @@ const OnboardingTour = (function () {
           }
         }, 50);
       } },
-    { screen:'homeCategory', target:'#tb-lb', type:'action',
+    { screen:'homeCategory', target:'#tb-lb', type:'action', section:'hub',
       title:'Classifica 🏆',
       body:'Premi qui per entrare davvero nella Classifica.',
       onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
-    { screen:'hubLeaderboard', target:'#tb-hub-btn', type:'action',
+    { screen:'hubLeaderboard', target:'#tb-hub-btn', type:'action', section:'hub',
       title:'Nella Classifica 🏆',
       body:'Il podio della classe per ogni minigioco, sia in modalità Individuale che a Squadre. Premi di nuovo l\'Hub per tornare al pannello.' },
-    { screen:'homeCategory', target:'#tb-st', type:'action',
+    { screen:'homeCategory', target:'#tb-st', type:'action', section:'hub',
       title:'Progressi 📊',
       body:'Premi qui per entrare nei Progressi.',
       onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
-    { screen:'hubStats', target:'#tb-hub-btn', type:'action',
+    { screen:'hubStats', target:'#tb-hub-btn', type:'action', section:'hub',
       title:'Nei Progressi 📊',
       body:'Le tue statistiche personali: domande totali, risposte corrette e andamento per modulo. Premi di nuovo l\'Hub per continuare.' },
-    { screen:'homeCategory', target:'#tb-hist', type:'action',
+    { screen:'homeCategory', target:'#tb-hist', type:'action', section:'hub',
       title:'Storico 🕐',
       body:'Premi qui per entrare nello Storico.',
       onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
-    { screen:'hubHistory', target:'#tb-hub-btn', type:'action',
+    { screen:'hubHistory', target:'#tb-hub-btn', type:'action', section:'hub',
       title:'Nello Storico 🕐',
       body:'L\'elenco delle sessioni giocate, filtrabile per attività e modalità. Premi di nuovo l\'Hub per continuare.' },
-    { screen:'homeCategory', target:'#tb-dash', type:'action',
+    { screen:'homeCategory', target:'#tb-dash', type:'action', section:'hub',
       title:'Panoramica Classe 📈',
       body:'Premi qui per entrare nella Panoramica Classe.',
       onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
-    { screen:'hubDashboard', target:'#tb-hub-btn', type:'action',
+    { screen:'hubDashboard', target:'#tb-hub-btn', type:'action', section:'hub',
       title:'Nella Panoramica Classe 📈',
       body:'La vista d\'insieme della classe: risultati, partecipazione e le domande più difficili. Premi di nuovo l\'Hub per continuare.' },
-    { screen:'homeCategory', target:'#tb-badges', type:'action',
+    { screen:'homeCategory', target:'#tb-badges', type:'action', section:'hub',
       title:'Traguardi 🏅',
       body:'Premi qui per entrare nei Traguardi.',
       onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
-    { screen:'hubBadges', target:'#tb-hub-btn', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'hubBadges', target:'#tb-hub-btn', type:'info', section:'hub', revealTarget:true, blockClicks:true,
       title:'Nei Traguardi 🏅',
       body:'I badge sbloccati dalla classe e il progresso verso i prossimi. Hai esplorato tutte le sezioni dell\'Hub!',
       // v2.7.0 — richiesta esplicita utente: i 5 passi precedenti ora
@@ -973,13 +1042,13 @@ const OnboardingTour = (function () {
           goStep('cat');
         }
       } },
-    { screen:'homeCategory', target:'#tb-course-badge', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'homeCategory', target:'#tb-course-badge', type:'info', section:'profilo', revealTarget:true, blockClicks:true,
       title:'Torna ai moduli 🏫',
       body:'Il nome dell\'aula in alto: da qui puoi sempre tornare alla scelta dei moduli. Per ora premi "Avanti" per continuare il tour.' },
-    { screen:'homeCategory', target:'.logo-wrap', type:'action',
+    { screen:'homeCategory', target:'.logo-wrap', type:'action', section:'profilo',
       title:'Il logo PixelProf 🔄',
       body:'Premilo in alto a sinistra per uscire da questa aula e sceglierne un\'altra.' },
-    { screen:'homeCategory', target:'#pp-dialog-no, #pp-dialog-yes', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'homeCategory', target:'#pp-dialog-no, #pp-dialog-yes', type:'info', section:'profilo', revealTarget:true, blockClicks:true,
       title:'Scegli cosa fare ✅',
       body:'"No, continua" annulla e resta qui; "Sì, cambia aula" ti porta alla schermata di selezione aule.',
       // v2.5.1 — richiesta esplicita utente: il dialogo è vero (aperto dal
@@ -1008,7 +1077,7 @@ const OnboardingTour = (function () {
     // OnboardingTour.showDashboardStep() → _tryRenderCurrentStep(): non
     // serve nessun hook nuovo, il passo successivo (screen:'dashboard')
     // si renderizza da solo non appena la Dashboard è visibile.
-    { screen:'homeCategory', target:'#tb-dashboard-btn', type:'action',
+    { screen:'homeCategory', target:'#tb-dashboard-btn', type:'action', section:'profilo',
       title:'Torna alla Dashboard, in ogni momento 🏠',
       body:'Questo pulsante è sempre presente, anche dentro un\'aula o un minigioco: ti riporta subito al pannello di controllo. Premilo per concludere il tour.' },
     // v8.25.0 — rimosso: il tasto Esci non è più sempre visibile in
@@ -1042,10 +1111,10 @@ const OnboardingTour = (function () {
     // il suo passo dedicato più sotto. (Il passo Hub che era qui è stato
     // spostato più sotto, subito prima di "Torna ai moduli" — v2.6.0,
     // vedi commento là.)
-    { screen:'homeCategory', target:'.cat-games', type:'action',
+    { screen:'homeCategory', target:'.cat-games', type:'action', section:'minigiochi',
       title:'Minigiochi 🎮',
       body:'Premi qui per scegliere tra le modalità di gioco: Quiz, Speed Quiz, Abbina, Completa la frase e Vero o Falso.' },
-    { screen:'act', target:'#step-act .act-grid', type:'action',
+    { screen:'act', target:'#step-act .act-grid', type:'action', section:'minigiochi',
       title:'Le modalità di gioco 🕹️',
       body:'Scegli quella più adatta alla lezione: dopo deciderai il numero di domande e se far giocare la classe in Individuale o a Squadre.' },
     // v8.20.4: la v8.20.3 aveva reso questo passo 'info' (si avanzava
@@ -1059,20 +1128,20 @@ const OnboardingTour = (function () {
     // la × (passo qui sotto), poi "← Modalità" torna visibile e
     // cliccabile per davvero (passo successivo, di nuovo 'action') —
     // niente più salti "a sorpresa" nell'interfaccia.
-    { screen:'act', target:'.setup-close-btn', type:'action',
+    { screen:'act', target:'.setup-close-btn', type:'action', section:'minigiochi',
       title:'Chiudi le impostazioni ✖️',
       body:'Il pannello si è aperto cliccando sulla card. Chiudilo con questa ×: tornerai alla scelta dei minigiochi.' },
     // La variante gemella di questo passo dentro Flip Card (poco più
     // sotto, target '#step-didattica .act-back-btn') resta invariata,
     // 'action': quel pulsante non è mai coperto da nessun overlay,
     // nessun problema lì.
-    { screen:'act', target:'#step-act .act-back-btn', type:'action',
+    { screen:'act', target:'#step-act .act-back-btn', type:'action', section:'minigiochi',
       title:'Torna alla modalità ↩️',
       body:'Questo pulsante ti riporta alla scelta tra Minigiochi e Didattica.' },
-    { screen:'homeCategory', target:'.cat-didattica', type:'action',
+    { screen:'homeCategory', target:'.cat-didattica', type:'action', section:'didattica',
       title:'Didattica 📖',
       body:'L\'alternativa ai minigiochi: qui la classe ripassa con le Flip Card, domanda su un lato e risposta sull\'altro.' },
-    { screen:'didattica', target:'#step-didattica .act-card', type:'action',
+    { screen:'didattica', target:'#step-didattica .act-card', type:'action', section:'didattica',
       title:'Flip Card 🃏',
       body:'Per ora è l\'unico metodo disponibile: scegli il livello e la classe potrà ripassare voltando le carte.' },
     // v2.4.0 — 3 nuovi passi (richiesta esplicita utente): coprono il
@@ -1083,16 +1152,16 @@ const OnboardingTour = (function () {
     // relativa conferma). Hook dedicati in js/flip-card.js (file isolato,
     // nessuna modifica ai file core): vedi showFlipCardLevelStep/
     // showFlipCardExitStep/showFlipCardConfirmStep più sotto.
-    { screen:'flipcardLevel', target:'#g-area .act-grid', type:'action',
+    { screen:'flipcardLevel', target:'#g-area .act-grid', type:'action', section:'didattica',
       title:'Scegli il livello 🎚️',
       body:'Facile o Medio: la classe può scegliere il livello di approfondimento prima di iniziare.' },
-    { screen:'flipcardExit', target:'.fc-exit-btn', type:'action',
+    { screen:'flipcardExit', target:'.fc-exit-btn', type:'action', section:'didattica',
       title:'Uscire in ogni momento ✖️',
       body:'Da qui la classe può interrompere la sessione e tornare alla scelta del metodo di studio quando vuole.' },
-    { screen:'flipcardConfirm', target:'#pp-generic-yes', type:'action',
+    { screen:'flipcardConfirm', target:'#pp-generic-yes', type:'action', section:'didattica',
       title:'Conferma richiesta ✅',
       body:'Per evitare uscite accidentali viene sempre chiesta una conferma prima di abbandonare la sessione.' },
-    { screen:'didattica', target:'#step-didattica .act-back-btn', type:'action',
+    { screen:'didattica', target:'#step-didattica .act-back-btn', type:'action', section:'didattica',
       title:'Torna alla modalità ↩️',
       body:'Anche da qui puoi tornare alla scelta tra Minigiochi e Didattica.' },
     // v2.5.0 — 6 nuovi passi finali (richiesta esplicita utente): vedi
@@ -1106,23 +1175,23 @@ const OnboardingTour = (function () {
     // reveal del contenuto). Il passo D chiude il pannello in onLeave
     // prima di proseguire con tema/audio -- stesso pattern di chiusura
     // gia' usato per hubBadges piu' sotto.
-    { screen:'homeCategory', target:'#tb-profile-btn', type:'action',
+    { screen:'homeCategory', target:'#tb-profile-btn', type:'action', section:'profilo',
       title:'Il tuo profilo 👤',
       body:'In alto a destra trovi il tuo profilo — il colore dell\'anello indica il ruolo. Premilo per aprirlo.' },
-    { screen:'homeCategory', target:'.pp-panel-header, .pp-panel-info', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'homeCategory', target:'.pp-panel-header, .pp-panel-info', type:'info', section:'profilo', revealTarget:true, blockClicks:true,
       title:'Le tue informazioni 🪪',
       body:'Qui trovi il tuo nome, il ruolo, l\'ultimo accesso e l\'ultima aula collegata.' },
-    { screen:'homeCategory', target:'.pp-tour-action', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'homeCategory', target:'.pp-tour-action', type:'info', section:'profilo', revealTarget:true, blockClicks:true,
       title:'Rivedi il tour quando vuoi 🧭',
       body:'Hai dimenticato qualche passaggio? Da qui puoi far ripartire questo tour guidato in qualsiasi momento.' },
-    { screen:'homeCategory', target:'.pp-logout-action', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'homeCategory', target:'.pp-logout-action', type:'info', section:'profilo', revealTarget:true, blockClicks:true,
       title:'Esci dall\'account 🚪',
       body:'Il pulsante per uscire dal tuo account, sempre disponibile da qui. Per ora premi "Avanti" per continuare il tour.',
       onLeave:function(){ if(typeof ProfilePanel!=='undefined') ProfilePanel.close(); } },
-    { screen:'homeCategory', target:'.theme-toggle-btn', type:'info', revealTarget:true,
+    { screen:'homeCategory', target:'.theme-toggle-btn', type:'info', section:'profilo', revealTarget:true,
       title:'Tema chiaro o scuro 🌗',
       body:'Passa dal tema scuro a quello chiaro, e viceversa, in qualsiasi momento con un tocco.' },
-    { screen:'homeCategory', target:'.audio-toggle-btn:not(.theme-toggle-btn)', type:'info', revealTarget:true,
+    { screen:'homeCategory', target:'.audio-toggle-btn:not(.theme-toggle-btn)', type:'info', section:'profilo', revealTarget:true,
       title:'Audio on/off 🔊',
       body:'Attiva o disattiva gli effetti sonori del gioco quando vuoi.' },
     // v2.6.0 — richiesta esplicita utente: il passo Hub (era qui) è stato
@@ -1135,7 +1204,7 @@ const OnboardingTour = (function () {
     // avanzamento rimandato di un tick in _advance()): quando il passo
     // "Il pannello si apre" viene renderizzato, l'onclick nativo
     // toggleHubMenu() ha già rimosso la classe "hidden" dal menu.
-    { screen:'homeCategory', target:'#tb-hub-btn', type:'action',
+    { screen:'homeCategory', target:'#tb-hub-btn', type:'action', section:'hub',
       title:'Il tuo Hub 🎯',
       body:'Raggruppa Classifica, Progressi, Storico, Panoramica Classe e Traguardi. Premilo per scoprire cosa contiene.' },
     // v2.6.0 — richiesta esplicita utente: 10 nuovi passi esplorano il
@@ -1164,7 +1233,7 @@ const OnboardingTour = (function () {
     // rimozione sarebbe un no-op e app.js lo ri-registrerebbe comunque poco
     // dopo. Da qui in poi il menu resta aperto "per davvero" fino
     // all'onLeave del passo Traguardi, che lo richiude esplicitamente.
-    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'homeCategory', target:'#tb-hub-menu', type:'info', section:'hub', revealTarget:true, blockClicks:true,
       title:'Il pannello si apre 📂',
       body:'Ecco le cinque scorciatoie dell\'Hub. Iniziamo dalla prima.',
       onEnter: function () {
@@ -1174,39 +1243,39 @@ const OnboardingTour = (function () {
           }
         }, 50);
       } },
-    { screen:'homeCategory', target:'#tb-lb', type:'action',
+    { screen:'homeCategory', target:'#tb-lb', type:'action', section:'hub',
       title:'Classifica 🏆',
       body:'Premi qui per entrare davvero nella Classifica.',
       onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
-    { screen:'hubLeaderboard', target:'#tb-hub-btn', type:'action',
+    { screen:'hubLeaderboard', target:'#tb-hub-btn', type:'action', section:'hub',
       title:'Nella Classifica 🏆',
       body:'Il podio della classe per ogni minigioco, sia in modalità Individuale che a Squadre. Premi di nuovo l\'Hub per tornare al pannello.' },
-    { screen:'homeCategory', target:'#tb-st', type:'action',
+    { screen:'homeCategory', target:'#tb-st', type:'action', section:'hub',
       title:'Progressi 📊',
       body:'Premi qui per entrare nei Progressi.',
       onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
-    { screen:'hubStats', target:'#tb-hub-btn', type:'action',
+    { screen:'hubStats', target:'#tb-hub-btn', type:'action', section:'hub',
       title:'Nei Progressi 📊',
       body:'Le tue statistiche personali: domande totali, risposte corrette e andamento per modulo. Premi di nuovo l\'Hub per continuare.' },
-    { screen:'homeCategory', target:'#tb-hist', type:'action',
+    { screen:'homeCategory', target:'#tb-hist', type:'action', section:'hub',
       title:'Storico 🕐',
       body:'Premi qui per entrare nello Storico.',
       onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
-    { screen:'hubHistory', target:'#tb-hub-btn', type:'action',
+    { screen:'hubHistory', target:'#tb-hub-btn', type:'action', section:'hub',
       title:'Nello Storico 🕐',
       body:'L\'elenco delle sessioni giocate, filtrabile per attività e modalità. Premi di nuovo l\'Hub per continuare.' },
-    { screen:'homeCategory', target:'#tb-dash', type:'action',
+    { screen:'homeCategory', target:'#tb-dash', type:'action', section:'hub',
       title:'Panoramica Classe 📈',
       body:'Premi qui per entrare nella Panoramica Classe.',
       onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
-    { screen:'hubDashboard', target:'#tb-hub-btn', type:'action',
+    { screen:'hubDashboard', target:'#tb-hub-btn', type:'action', section:'hub',
       title:'Nella Panoramica Classe 📈',
       body:'La vista d\'insieme della classe: risultati, partecipazione e le domande più difficili. Premi di nuovo l\'Hub per continuare.' },
-    { screen:'homeCategory', target:'#tb-badges', type:'action',
+    { screen:'homeCategory', target:'#tb-badges', type:'action', section:'hub',
       title:'Traguardi 🏅',
       body:'Premi qui per entrare nei Traguardi.',
       onRecover: function () { if (typeof toggleHubMenu === 'function') toggleHubMenu(); } },
-    { screen:'hubBadges', target:'#tb-hub-btn', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'hubBadges', target:'#tb-hub-btn', type:'info', section:'hub', revealTarget:true, blockClicks:true,
       title:'Nei Traguardi 🏅',
       body:'I badge sbloccati dalla classe e il progresso verso i prossimi. Hai esplorato tutte le sezioni dell\'Hub!',
       // v2.7.0 — richiesta esplicita utente: i 5 passi precedenti ora
@@ -1236,10 +1305,10 @@ const OnboardingTour = (function () {
           goStep('cat');
         }
       } },
-    { screen:'homeCategory', target:'#tb-course-badge', type:'info', revealTarget:true, blockClicks:true,
+    { screen:'homeCategory', target:'#tb-course-badge', type:'info', section:'profilo', revealTarget:true, blockClicks:true,
       title:'Torna ai moduli 🏫',
       body:'Il nome dell\'aula in alto: da qui puoi sempre tornare alla scelta dei moduli. Per ora premi "Avanti" per continuare il tour.' },
-    { screen:'homeCategory', target:'.logo-wrap', type:'action',
+    { screen:'homeCategory', target:'.logo-wrap', type:'action', section:'profilo',
       title:'Il logo PixelProf 🔄',
       body:'Premilo in alto a sinistra per uscire da questa aula e sceglierne un\'altra.' },
     // v8.27.1 — richiesta esplicita utente: a differenza del gemello in
@@ -1252,7 +1321,7 @@ const OnboardingTour = (function () {
     // "No, continua" resta coperto e non cliccabile — stesso principio
     // dei passi blockClicks ma ottenuto qui semplicemente NON includendo
     // quel bottone tra i target (nessun nuovo meccanismo).
-    { screen:'homeCategory', target:'#pp-dialog-yes', type:'action',
+    { screen:'homeCategory', target:'#pp-dialog-yes', type:'action', section:'profilo',
       title:'Conferma il cambio aula ✅',
       body:'Premi "Sì, cambia aula" per continuare: tornerai alla schermata di selezione aule e il tour si concluderà lì.' },
     // v8.25.0 — rimosso: vedi commento gemello in DIRECTOR_STEPS più sopra.
@@ -1714,6 +1783,7 @@ const OnboardingTour = (function () {
     showFlipCardLevelStep, showFlipCardExitStep, showFlipCardConfirmStep,
     isCurrentStep, isActive,
     recheck, invalidateAndRecheck, skip, reset,
+    startSection, sectionCount, sectionTotal,
   };
 })();
 window.OnboardingTour = OnboardingTour;

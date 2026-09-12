@@ -42,8 +42,8 @@
   /* -- 2) Memory — badge "Coming Soon" al posto di "Minigioco",
      stesso slot in alto a destra (niente doppio badge). Colori
      ambra riusati 1:1 da .act-soon-badge (pixelprof.css) per
-     coerenza con lo stesso stato altrove nell'app (es. .cs-label
-     "Coming Soon" di Spreadsheets in .mod-grid-soon). -- */
+     coerenza con lo stesso stato altrove nell'app. (v8.29.0: rimosso
+     qui il riferimento a .mod-grid-soon, eliminata da pixelprof.css). -- */
   .dm-card .dm-badge.soon{
     background: rgba(255,180,0,.16);
     border-color: rgba(255,180,0,.45);

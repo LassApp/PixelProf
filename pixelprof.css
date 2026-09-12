@@ -1830,10 +1830,10 @@ body{
 .login-error.visible{display:block;}
 /* Badge docente nella cs-topbar */
 .cs-teacher-badge{margin-left:auto;display:flex;align-items:center;gap:8px;}
-.cs-teacher-name{
-  font-family:'Share Tech Mono',monospace;font-size:10px;
-  color:rgba(0,255,200,.6);letter-spacing:.5px;
-}
+/* v8.29.0: RIMOSSO codice morto — .cs-teacher-name (il commento v8.25.1
+   qui sotto in js/app.js._afterLogin() dichiara già che l'elemento non
+   esiste più in HTML, sostituito dal pannello Profilo unico; il CSS
+   era rimasto). */
 .cs-logout-btn{
   display:inline-flex;align-items:center;gap:5px;
   padding:5px 11px;border-radius:20px;
@@ -1842,13 +1842,8 @@ body{
   transition:all var(--transition-fast);font-weight:500;
 }
 .cs-logout-btn:hover{border-color:rgba(255,80,80,.4);color:#ff6b6b;background:rgba(255,80,80,.1);}
-.cs-director-badge{
-  display:inline-flex;align-items:center;gap:5px;
-  padding:3px 10px;border-radius:20px;
-  background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.25);
-  color:#ffd700;font-size:10px;font-weight:700;
-  font-family:'Share Tech Mono',monospace;letter-spacing:.5px;
-}
+/* v8.29.0: RIMOSSO codice morto — .cs-director-badge (stessa
+   dichiarazione v8.25.1 in js/app.js: elemento non più in HTML). */
 /* Director panel overlay */
 .dp-overlay{
   position:fixed;inset:0;z-index:9600;
@@ -1959,7 +1954,8 @@ body{
   display:none;align-items:center;justify-content:center;
 }
 .cw-mod-btn.active .cm-check{display:flex;}
-.cw-full-btn{grid-column:1/-1;}
+/* v8.29.0: RIMOSSO codice morto — .cw-full-btn (bottone "tutti i
+   moduli" nel wizard, mai generato da js/app.js, verificato zero uso). */
 .cw-btns{display:flex;gap:8px;margin-top:1rem;}
 .cw-btn-back{
   padding:10px 18px;border-radius:var(--radius-sm);
@@ -2254,7 +2250,7 @@ body{
 /* Usiamo il selector :has() per il "focus cinematico" tra siblings */
 /* Fallback per browser senza :has(): hover normale */
 
-.mod-grid:has(.mod-card:hover) .mod-card:not(:hover):not(.full-card) {
+.mod-grid:has(.mod-card:hover) .mod-card:not(:hover) {
   transform: scale(.96) ;
   filter: brightness(.65) saturate(.7) ;
   transition:
@@ -2471,35 +2467,18 @@ body{
 .mod-card.wp-card:hover h3 { color: #5ad47a ; }
 
 /* v5.0.8: rimosso blocco .full-card e override mix-card::after — modulo MIX eliminato dalla UI */
+/* v8.29.0: rimossa anche l'ultima traccia di .full-card, referenziata
+   solo dentro ":not(.full-card)" in 3 selettori composti (fallback
+   :has(), variante mobile, prefers-reduced-motion) — semplificati in
+   ":not(:hover)", nessun cambio di comportamento (la classe non
+   esisteva più su alcun elemento). */
 
-/* ─────────────────────────────────────────────────────────────────
-   COMING SOON SECTION — label row stile "Coming Soon" streaming
-   ───────────────────────────────────────────────────────────────── */
-.soon-section-label {
-  margin: 1.5rem 0 .6rem ;
-  gap: 10px ;
-}
-.soon-section-label span {
-  font-size: 9px ;
-  color: rgba(255,255,255,.18) ;
-  letter-spacing: 3px ;
-  font-weight: 700 ;
-}
-.soon-section-label::before,
-.soon-section-label::after {
-  background: rgba(255,255,255,.05) ;
-}
-
-.mod-card.soon-card {
-  opacity: .38 ;
-  filter: saturate(.2) brightness(.7) ;
-  min-height: 120px ;
-}
-.mod-card.soon-card:hover {
-  transform: none ;
-  opacity: .42 ;
-  filter: saturate(.25) brightness(.75) ;
-}
+/* v8.29.0 — RIMOSSO codice morto residuo: .soon-section-label/
+   .mod-card.soon-card (skin "coming soon" della vecchia card
+   Spreadsheets). Il commento v8.21.0 qui sopra ne dichiarava già la
+   rimozione ma il blocco CSS era rimasto per intero — verificato zero
+   uso in tutti i .js/.html sorgente (mai il bundle), rimosso ora
+   davvero insieme al relativo override light-theme più sotto. */
 
 /* ─────────────────────────────────────────────────────────────────
    STEP-ACT — Activity selection "choose your experience"
@@ -2744,7 +2723,7 @@ body{
   .act-grid { grid-template-columns: 1fr 1fr ; }
 
   /* Su mobile disabilita l'effetto sibling shrink (performance) */
-  .mod-grid:has(.mod-card:hover) .mod-card:not(:hover):not(.full-card) {
+  .mod-grid:has(.mod-card:hover) .mod-card:not(:hover) {
     transform: none ;
     filter: none ;
   }
@@ -2768,7 +2747,7 @@ body{
     transition: none ;
     animation: none ;
   }
-  .mod-grid:has(.mod-card:hover) .mod-card:not(:hover):not(.full-card) {
+  .mod-grid:has(.mod-card:hover) .mod-card:not(:hover) {
     transform: none ;
     filter: brightness(.7) ;
     transition: none ;
@@ -2906,30 +2885,10 @@ body{
   margin: 0 ;
 }
 
-/* CTA "Inizia subito" — appare come il play button Netflix */
-.home-hero-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 1.25rem;
-  padding: 10px 22px;
-  border-radius: 8px;
-  background: rgba(0,255,200,.12);
-  border: 1px solid rgba(0,255,200,.35);
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: .5px;
-  cursor: pointer;
-  transition: all .2s var(--ease-soft);
-  font-family: inherit;
-  text-transform: uppercase;
-}
-.home-hero-cta:hover {
-  background: rgba(0,255,200,.22);
-  box-shadow: 0 0 24px rgba(0,255,200,.15);
-  transform: translateY(-1px);
-}
+/* v8.29.0: RIMOSSO codice morto — .home-hero-cta e :hover (bottone
+   "Inizia subito" mai aggiunto al markup .home-hero in index.html,
+   verificato zero uso in tutti i .js/.html sorgente). Il resto del
+   componente .home-hero-* (eyebrow/title/sub) resta, è vivo. */
 
 /* ─────────────────────────────────────────────────────────────────
    ROW LABELS — "Netflix content row" con freccia Browse
@@ -3089,18 +3048,9 @@ body{
   display: none ;
 }
 
-/* Score/progress overlay — numero partite giocate */
-.course-card-score-overlay {
-  position: absolute;
-  top: 10px; left: 12px;
-  font-family: 'Share Tech Mono', monospace;
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  color: rgba(255,255,255,.25);
-  text-transform: uppercase;
-  z-index: 3;
-}
+/* v8.29.0: RIMOSSO codice morto — .course-card-score-overlay (overlay
+   "partite giocate" mai collegato al rendering reale delle course-card,
+   verificato zero uso in tutti i .js/.html sorgente). */
 
 /* ─────────────────────────────────────────────────────────────────
    ACTIVITY CARDS — "Episode selector" Netflix style
@@ -3409,25 +3359,11 @@ body{
   outline-offset: 2px ;
 }
 
-/* ─────────────────────────────────────────────────────────────────
-   SKELETON LOADING — shimmer per stati di caricamento
-   ───────────────────────────────────────────────────────────────── */
-@keyframes shimmer {
-  0%   { background-position: -200% 0; }
-  100% { background-position:  200% 0; }
-}
-
-.skeleton {
-  background: linear-gradient(
-    90deg,
-    rgba(255,255,255,.04) 25%,
-    rgba(255,255,255,.08) 50%,
-    rgba(255,255,255,.04) 75%
-  );
-  background-size: 200% 100%;
-  animation: shimmer 1.6s infinite;
-  border-radius: 6px;
-}
+/* v8.29.0: RIMOSSO codice morto — intero blocco "SKELETON LOADING"
+   (@keyframes shimmer + .skeleton): superseduto dal sistema .skel-*/
+   @keyframes skelShimmer introdotto in v6.6.0 (vedi js/game-engine-
+   state.js, _skelQuizHTML() e affini) e tutt'ora in uso — .skeleton
+   verificato a zero riferimenti in tutti i .js/.html sorgente. */
 
 /* ─────────────────────────────────────────────────────────────────
    RESPONSIVE v6.1 — mobile refinements
@@ -3493,7 +3429,7 @@ body{
   .prog-fill::after {
     display: none;
   }
-  @keyframes shimmer { to { background-position: 0; } }
+  /* v8.29.0: rimosso qui il fallback di @keyframes shimmer (rimosso sopra) */
 }
 
 /* ─────────────────────────────────────────────────────────────────
@@ -3735,12 +3671,9 @@ body{
    rimossa in v8.19.2, era la card "coming soon" di Didattica prima che
    diventasse categoria a sé in v8.16.0 — zero riferimenti rimasti in
    index.html/js/*.js sorgente) ── */
-.mod-grid-soon {
-  grid-template-columns: 1fr 1fr ;
-}
-@media (max-width: 440px) {
-  .mod-grid-soon { grid-template-columns: 1fr ; }
-}
+/* v8.29.0: la nota sopra dichiarava già "zero riferimenti rimasti" —
+   RIMOSSA ora davvero anche .mod-grid-soon (era rimasta solo la
+   regola, mai eliminata). */
 
 /* ── Duplicato #tb-course-badge: ID selector, vince su .tb-aula-badge
    per specificità + ordine layer. v8.15.0: sincronizzato con la
@@ -4954,18 +4887,17 @@ html[data-theme="light"] .tb-hub-item:hover{ background: rgba(0,150,120,.07); co
 html[data-theme="light"] .tb-aula-badge{ background: rgba(0,150,120,.07); border-color: rgba(0,150,120,.22); }
 html[data-theme="light"] .tb-aula-name{ color: #006d58; }
 html[data-theme="light"] #tb-course-badge:hover{ background: rgba(0,150,120,.13); }
-html[data-theme="light"] #cs-teacher-role-badge{ color:#0d6fbf !important; }
-html[data-theme="light"] .cs-director-badge{ color:#a66d00; }
+/* v8.29.0: RIMOSSI qui #cs-teacher-role-badge e .cs-director-badge —
+   stessi elementi dichiarati non più esistenti in js/app.js v8.25.1. */
 
 /* .cs-hero-eyebrow — riusata da 5 hero (Gestione Aule / Pannello di
    controllo / Direttore · Account+Nuovo account+Scheda docente):
    nessun override esisteva, restava verde neon quasi invisibile su
-   sfondo bianco. .cs-teacher-name (nome docente in topbar, riusato
-   anche nella Dashboard Direttore) e .slbl (etichetta di sezione
-   riusata ovunque nell'app, es. "Aule salvate") avevano lo stesso
-   problema: colore neon fisso, mai adattato al tema chiaro. */
+   sfondo bianco. .slbl (etichetta di sezione riusata ovunque
+   nell'app, es. "Aule salvate") aveva lo stesso problema: colore neon
+   fisso, mai adattato al tema chiaro. (v8.29.0: rimossa da qui la
+   terza voce, .cs-teacher-name — elemento non più in HTML, v8.25.1.) */
 html[data-theme="light"] .cs-hero-eyebrow{ color:#10182a; }
-html[data-theme="light"] .cs-teacher-name{ color:#10182a; }
 html[data-theme="light"] .slbl{ color: rgba(16,24,42,.75); }
 html[data-theme="light"] .slbl::after{ background: linear-gradient(90deg, rgba(0,150,120,.35), transparent); }
 /* .back-link ("← Dashboard" / "← Docenti" / "← Lista"): colore fisso
@@ -4988,7 +4920,6 @@ html[data-theme="light"] .home-hero-eyebrow{ color: rgba(0,150,120,.7); }
 html[data-theme="light"] .home-hero-sub{ color: rgba(16,24,42,.5); }
 html[data-theme="light"] .home-divider span{ color: rgba(16,24,42,.68); }
 html[data-theme="light"] .home-divider span::after{ color: rgba(0,150,120,.6); }
-html[data-theme="light"] .soon-section-label span{ color: rgba(16,24,42,.28); }
 
 /* ── 5. CAT-CARD (Minigiochi/Didattica) ──────────────────────── */
 /* v8.20.0: esclusione ":not(.dm-card)" aggiunta — le card modalità

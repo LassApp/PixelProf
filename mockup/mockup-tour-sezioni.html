@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup — Tour guidato a sezioni (Pannello Profilo)</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;600;700&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --accent:#00ffc8;
+  --purple:#7c6aff;
+  --surface-0:#080c18;
+  --text-primary:#e2e8f0;
+  --text-muted:rgba(255,255,255,.45);
+  --transition-fast:.18s cubic-bezier(.4,0,.2,1);
+  --role-color:#1e90ff;
+  --role-glow:rgba(30,144,255,.35);
+  --role-dim:rgba(30,144,255,.1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+*:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+body{
+  font-family:'Space Grotesk',system-ui,sans-serif;
+  background:var(--surface-0);color:var(--text-primary);min-height:100vh;
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 0%,rgba(0,255,200,.03) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 100%,rgba(124,106,255,.03) 0%,transparent 60%);
+  padding:1.25rem 1rem 3rem;
+}
+.wrap{max-width:660px;margin:0 auto}
+
+.designer-note{
+  background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;padding:1rem 1.1rem;margin-bottom:1.5rem;
+}
+.designer-note h2{font-size:13px;color:var(--accent);margin-bottom:8px;letter-spacing:.3px}
+.designer-note ul{margin:0 0 0 1.1rem;padding:0}
+.designer-note li{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.6;margin-bottom:4px}
+.designer-note li b{color:#fff}
+.designer-note .keep{
+  margin-top:10px;padding:9px 12px;border-radius:10px;
+  background:rgba(0,255,200,.06);border:1px solid rgba(0,255,200,.18);
+  font-size:12px;color:rgba(255,255,255,.75);line-height:1.55;
+}
+.designer-note .keep b{color:var(--accent)}
+
+.section-lbl{
+  font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  color:rgba(255,255,255,.35);margin:1.75rem 0 .7rem;display:flex;align-items:center;gap:10px;
+}
+.section-lbl::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.15),transparent)}
+
+.role-switch{display:flex;gap:8px;flex-wrap:wrap}
+.role-btn{
+  font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:600;
+  padding:8px 14px;border-radius:20px;cursor:pointer;
+  background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);
+  color:rgba(255,255,255,.6);transition:all var(--transition-fast);
+}
+.role-btn:hover{background:rgba(255,255,255,.08);color:#fff}
+.role-btn.active{background:var(--role-dim);border-color:var(--role-color);color:var(--role-color)}
+
+.topbar-mock{
+  display:flex;align-items:center;gap:10px;
+  background:rgba(8,12,24,.9);border:1px solid rgba(255,255,255,.07);
+  border-radius:14px;padding:.65rem 1rem;
+}
+.logo-wrap-mock{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.logo-svg-mock{width:26px;height:26px}
+.logo-main-mock{font-family:'Orbitron',monospace;font-size:13px;font-weight:900;color:var(--accent)}
+.logo-main-mock em{color:var(--purple);font-style:normal}
+.tb-spacer{flex:1}
+.tb-icon-btn-mock{
+  display:flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  color:rgba(255,255,255,.6);font-size:16px;cursor:pointer;transition:all var(--transition-fast);
+}
+.tb-icon-btn-mock:hover{background:rgba(255,255,255,.09);color:#fff}
+
+.profile-btn{
+  display:flex;align-items:center;justify-content:center;
+  width:34px;height:34px;border-radius:50%;flex-shrink:0;cursor:pointer;
+  background:rgba(255,255,255,.04);
+  border:2px solid var(--role-color);
+  color:var(--role-color);font-size:16px;
+  transition:box-shadow var(--transition-fast),transform var(--transition-fast),background var(--transition-fast);
+}
+.profile-btn:hover{background:var(--role-dim);box-shadow:0 0 14px var(--role-glow);transform:translateY(-1px)}
+.profile-btn:active{transform:translateY(0)}
+
+.note-text{font-size:12.5px;color:rgba(255,255,255,.6);line-height:1.65;margin-bottom:.6rem}
+.note-text b{color:#fff}
+
+/* ══════ PANNELLO LATERALE — invariato dalla produzione ══════ */
+.panel-backdrop{
+  position:fixed;inset:0;background:rgba(4,6,15,.55);backdrop-filter:blur(2px);
+  z-index:9550;opacity:0;pointer-events:none;transition:opacity .22s ease;
+}
+.panel-backdrop.open{opacity:1;pointer-events:auto}
+
+.side-panel{
+  position:fixed;top:0;right:0;bottom:0;width:min(320px,86vw);
+  background:rgba(10,14,28,.98);backdrop-filter:blur(24px);
+  border-left:1px solid rgba(255,255,255,.08);
+  box-shadow:-12px 0 40px rgba(0,0,0,.5);
+  z-index:9560;padding:1.4rem 1.2rem;
+  transform:translateX(100%);transition:transform .3s cubic-bezier(.22,1,.36,1);
+  display:flex;flex-direction:column;overflow-y:auto;
+}
+.side-panel.open{transform:translateX(0)}
+
+.panel-close{
+  position:absolute;top:1rem;right:1rem;
+  width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04);color:rgba(255,255,255,.5);
+  font-size:16px;line-height:1;cursor:pointer;transition:all var(--transition-fast);
+}
+.panel-close:hover{color:#fff;background:rgba(255,255,255,.1)}
+
+.panel-header{display:flex;align-items:center;gap:12px;margin:.2rem 0 1.4rem}
+.panel-avatar{
+  width:52px;height:52px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:24px;
+  background:rgba(255,255,255,.04);border:2px solid var(--role-color);
+  color:var(--role-color);box-shadow:0 0 16px var(--role-glow);
+}
+.panel-name{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:4px}
+.panel-role-pill{
+  display:inline-flex;align-items:center;gap:4px;
+  font-family:'Share Tech Mono',monospace;font-size:9px;font-weight:700;letter-spacing:1px;
+  text-transform:uppercase;padding:2px 9px;border-radius:20px;
+  background:var(--role-dim);border:1px solid var(--role-color);color:var(--role-color);
+}
+
+.panel-info{display:flex;flex-direction:column;gap:14px;margin-bottom:1.3rem}
+.info-row{display:flex;align-items:flex-start;gap:10px}
+.info-row i{font-size:16px;color:rgba(255,255,255,.35);margin-top:2px;flex-shrink:0}
+.info-label{font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:2px}
+.info-value{font-size:13px;color:rgba(255,255,255,.85);font-weight:500}
+
+.panel-divider{height:1px;background:rgba(255,255,255,.08);margin:.4rem 0 1rem}
+
+.panel-action{
+  display:flex;align-items:center;gap:9px;width:100%;
+  padding:11px 14px;border-radius:12px;margin-bottom:10px;
+  font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:600;
+  border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);
+  color:rgba(255,255,255,.75);cursor:pointer;transition:all var(--transition-fast);
+}
+.panel-action i:first-child{font-size:16px}
+.panel-action:hover{background:rgba(255,255,255,.07);color:#fff;border-color:rgba(255,255,255,.2)}
+.panel-action.logout-action{border-color:rgba(255,80,80,.2);background:rgba(255,80,80,.05);color:rgba(255,100,100,.75)}
+.panel-action.logout-action:hover{border-color:rgba(255,80,80,.4);color:#ff6b6b;background:rgba(255,80,80,.1)}
+
+/* ── NUOVO: toggle "Rivedi il tour guidato" ── */
+.panel-action.tour-action{margin-bottom:6px}
+.panel-action.tour-action:hover{border-color:rgba(0,255,200,.4);color:var(--accent)}
+.panel-action.tour-action.expanded{background:rgba(0,255,200,.06);border-color:rgba(0,255,200,.3);color:var(--accent)}
+.tour-chev{margin-left:auto!important;font-size:14px!important;transition:transform .22s cubic-bezier(.22,1,.36,1)}
+.panel-action.tour-action.expanded .tour-chev{transform:rotate(180deg)}
+
+/* ── NUOVO: lista sezioni, si espande sotto il toggle ── */
+.tour-sections{
+  max-height:0;opacity:0;overflow:hidden;
+  transition:max-height .32s cubic-bezier(.22,1,.36,1),opacity .22s ease;
+  display:flex;flex-direction:column;gap:2px;margin-bottom:0;
+}
+.tour-sections.open{max-height:420px;opacity:1;margin-bottom:10px}
+
+.tour-sep{height:1px;background:rgba(255,255,255,.07);margin:4px 10px}
+
+/* stesso linguaggio visivo di .tb-hub-item (già in produzione):
+   barra colorata a sinistra che cresce sull'hover, radius 8px */
+.tour-item{
+  display:flex;align-items:center;gap:10px;width:100%;
+  padding:9px 10px 9px 14px;border-radius:8px;border:none;background:none;
+  color:rgba(255,255,255,.62);font-family:'Space Grotesk',sans-serif;
+  font-size:12.5px;font-weight:600;cursor:pointer;text-align:left;
+  position:relative;overflow:hidden;transition:background .15s,color .15s;
+}
+.tour-item::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:var(--accent);transform:scaleY(0);transition:transform .15s;border-radius:0 2px 2px 0;
+}
+.tour-item:hover{background:rgba(255,255,255,.05);color:#fff}
+.tour-item:hover::before{transform:scaleY(1)}
+.tour-item .ti-icon{font-size:15px;width:18px;flex-shrink:0;color:rgba(255,255,255,.4);transition:color .15s}
+.tour-item:hover .ti-icon{color:var(--accent)}
+.tour-item .t-label{display:flex;flex-direction:column;gap:1px}
+.tour-item .t-count{
+  font-family:'Share Tech Mono',monospace;font-size:9px;letter-spacing:.3px;
+  color:rgba(255,255,255,.28);font-weight:400;
+}
+.tour-item.t-primary{color:#fff}
+.tour-item.t-primary .ti-icon{color:var(--accent)}
+.tour-item.t-primary .t-count{color:var(--accent);opacity:.65}
+
+.panel-footnote{margin-top:auto;padding-top:10px;font-family:'Share Tech Mono',monospace;font-size:9.5px;color:rgba(255,255,255,.25);line-height:1.6}
+
+/* ── NUOVO: dialogo di conferma (replica di ppConfirmBox) ── */
+.tconfirm-overlay{
+  position:fixed;inset:0;background:rgba(4,6,15,.7);backdrop-filter:blur(3px);
+  z-index:9700;display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity .18s ease;padding:1.5rem;
+}
+.tconfirm-overlay.open{opacity:1;pointer-events:auto}
+.tconfirm-box{
+  background:rgba(14,18,32,.98);border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;padding:1.4rem;max-width:320px;width:100%;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);transform:translateY(8px);
+  transition:transform .22s cubic-bezier(.22,1,.36,1);
+}
+.tconfirm-overlay.open .tconfirm-box{transform:translateY(0)}
+.tconfirm-icon{font-size:26px;margin-bottom:.6rem}
+.tconfirm-title{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:15px;color:#fff;margin-bottom:.5rem}
+.tconfirm-msg{font-size:12.5px;color:rgba(255,255,255,.65);line-height:1.55;margin-bottom:1.1rem}
+.tconfirm-actions{display:flex;gap:8px}
+.tconfirm-btn{
+  flex:1;padding:9px;border-radius:10px;font-family:'Space Grotesk',sans-serif;
+  font-size:12.5px;font-weight:700;cursor:pointer;border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04);color:rgba(255,255,255,.7);transition:all .15s;
+}
+.tconfirm-btn:hover{background:rgba(255,255,255,.08);color:#fff}
+.tconfirm-btn.primary{background:var(--accent);border-color:var(--accent);color:#04150f}
+.tconfirm-btn.primary:hover{filter:brightness(1.08)}
+
+/* ── NUOVO: toast di simulazione avvio tour ── */
+.toast{
+  position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(16px);
+  background:rgba(14,18,32,.98);border:1px solid rgba(0,255,200,.25);
+  border-radius:12px;padding:10px 16px;font-family:'Space Grotesk',sans-serif;
+  font-size:12.5px;font-weight:600;color:#fff;display:flex;align-items:center;gap:8px;
+  box-shadow:0 10px 30px rgba(0,0,0,.4);z-index:9800;opacity:0;pointer-events:none;
+  transition:all .25s cubic-bezier(.22,1,.36,1);max-width:90vw;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+.toast i{color:var(--accent);font-size:15px;flex-shrink:0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="designer-note">
+    <h2>Note di design — non fa parte del prodotto finale</h2>
+    <ul>
+      <li><b>"Rivedi il tour guidato" diventa un toggle</b>: invece di partire subito, apre una lista di sezioni sotto di sé (freccia che ruota, stessa easing del pannello).</li>
+      <li><b>Lista</b>: stesso linguaggio visivo del menu Hub già esistente (<code>.tb-hub-item</code>) — barra colorata a sinistra sull'hover, radius 8px. Nessun componente nuovo inventato, nessun colore nuovo.</li>
+      <li><b>"Tour completo"</b> è sempre la prima voce, evidenziata, e si comporta <b>esattamente come oggi</b>: esce dall'aula/torna alla Dashboard, con lo stesso dialogo di conferma.</li>
+      <li><b>Minigiochi · Didattica · Hub · Profilo</b> partono tutte da <code>homeCategory</code> — cioè da dove vive già il pannello profilo — quindi si avviano <b>sul posto</b>, senza uscire da nulla e senza chiedere conferma.</li>
+      <li><b>Il Direttore</b> vede una voce in più, <b>"Gestione Aule e Docenti"</b> (esclusiva del ruolo): come "Tour completo", esce dal contesto corrente (torna alla Dashboard), quindi ha la stessa conferma.</li>
+    </ul>
+    <div class="keep"><b>Cosa NON cambia:</b> il tour completo resta l'avvio automatico al primo accesso, e "Tour completo" nella lista fa la stessa identica cosa di oggi. Questa è un'aggiunta, non una sostituzione.</div>
+  </div>
+
+  <div class="section-lbl">Anteprima ruolo (solo controllo del mockup)</div>
+  <div class="role-switch">
+    <button class="role-btn active" data-role="uomo" onclick="setRole('uomo')"><i class="ti ti-gender-male"></i> Docente uomo</button>
+    <button class="role-btn" data-role="donna" onclick="setRole('donna')"><i class="ti ti-gender-female"></i> Docente donna</button>
+    <button class="role-btn" data-role="direttore" onclick="setRole('direttore')"><i class="ti ti-crown"></i> Direttore</button>
+  </div>
+
+  <div class="section-lbl">Topbar — clicca il tasto profilo a destra</div>
+  <div class="topbar-mock">
+    <div class="logo-wrap-mock">
+      <svg class="logo-svg-mock" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="17,2 30,9.5 30,24.5 17,32 4,24.5 4,9.5" fill="none" stroke="#00ffc8" stroke-width="1.2" stroke-opacity=".6"/>
+        <polygon points="17,7 26,12 26,22 17,27 8,22 8,12" fill="rgba(0,255,200,.06)" stroke="#00ffc8" stroke-width=".8" stroke-opacity=".4"/>
+        <rect x="12" y="11" width="2" height="12" rx="1" fill="#00ffc8"/>
+        <path d="M14 11 Q21 11 21 15.5 Q21 20 14 20" stroke="#00ffc8" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-main-mock">Pixel<em>Prof</em></span>
+    </div>
+    <div class="tb-spacer"></div>
+    <button class="tb-icon-btn-mock" title="Audio"><i class="ti ti-volume-2"></i></button>
+    <button class="tb-icon-btn-mock" title="Tema"><i class="ti ti-moon"></i></button>
+    <button class="tb-icon-btn-mock" title="Hub"><i class="ti ti-layout-grid"></i></button>
+    <button class="profile-btn" id="profileBtn" onclick="togglePanel()" title="Profilo">
+      <i class="ti ti-user" id="profileIcon"></i>
+    </button>
+  </div>
+
+  <p class="note-text" style="margin-top:1.2rem">Apri il pannello profilo, poi clicca <b>"Rivedi il tour guidato"</b>: si espande la lista. Prova sia una voce "sul posto" (es. Minigiochi) sia "Tour completo" per vedere la differenza di comportamento (conferma sì/no).</p>
+
+</div>
+
+<div class="panel-backdrop" id="backdrop" onclick="closePanel()"></div>
+<aside class="side-panel" id="sidePanel" role="dialog" aria-label="Profilo">
+  <button class="panel-close" onclick="closePanel()" aria-label="Chiudi">×</button>
+
+  <div class="panel-header">
+    <span class="panel-avatar" id="panelAvatar"><i class="ti ti-user"></i></span>
+    <div>
+      <div class="panel-name" id="panelName">Marco Bianchi</div>
+      <span class="panel-role-pill" id="panelRolePill">📖 Docente</span>
+    </div>
+  </div>
+
+  <div class="panel-info">
+    <div class="info-row">
+      <i class="ti ti-clock"></i>
+      <div>
+        <div class="info-label">Ultimo accesso</div>
+        <div class="info-value">Oggi · 09:42</div>
+      </div>
+    </div>
+    <div class="info-row">
+      <i class="ti ti-door"></i>
+      <div>
+        <div class="info-label">Ultima aula collegata</div>
+        <div class="info-value">3ª B — Informatica</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel-divider"></div>
+
+  <button class="panel-action logout-action" onclick="alert('In produzione: doLogout() esistente, invariata')">
+    <i class="ti ti-logout"></i> Esci
+  </button>
+
+  <button class="panel-action tour-action" id="tourToggleBtn" onclick="toggleTourSections()" aria-expanded="false">
+    <i class="ti ti-map-2"></i> Rivedi il tour guidato
+    <i class="ti ti-chevron-down tour-chev"></i>
+  </button>
+  <div class="tour-sections" id="tourSections"></div>
+
+  <div class="panel-footnote">Il colore del bordo profilo segue il ruolo: blu / rosa / oro.</div>
+</aside>
+
+<div class="tconfirm-overlay" id="tconfirmOverlay">
+  <div class="tconfirm-box">
+    <div class="tconfirm-icon" id="tconfirmIcon">🧭</div>
+    <div class="tconfirm-title" id="tconfirmTitle">Rivedere il tour guidato?</div>
+    <div class="tconfirm-msg" id="tconfirmMsg"></div>
+    <div class="tconfirm-actions">
+      <button class="tconfirm-btn" onclick="closeTourConfirm()">Annulla</button>
+      <button class="tconfirm-btn primary" id="tconfirmYes">Sì, rivedi il tour</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"><i class="ti ti-player-play-filled"></i><span id="toastText"></span></div>
+
+<script>
+const ROLE_DATA = {
+  uomo:      { color:'#1e90ff', glow:'rgba(30,144,255,.35)', dim:'rgba(30,144,255,.1)',  name:'Marco Bianchi', pill:'📖 Docente',   icon:'ti-user'  },
+  donna:     { color:'#ff64b4', glow:'rgba(255,100,180,.35)',dim:'rgba(255,100,180,.1)', name:'Maria Rossi',   pill:'📖 Docente',   icon:'ti-user'  },
+  direttore: { color:'#ffd700', glow:'rgba(255,215,0,.35)',  dim:'rgba(255,215,0,.1)',   name:'Anna Verdi',    pill:'👑 Direttore', icon:'ti-crown' }
+};
+
+/* Conteggi passaggi presi 1:1 da js/onboarding.js (DIRECTOR_STEPS/TEACHER_STEPS) */
+const COMMON_SECTIONS = [
+  { key:'minigiochi', icon:'ti-device-gamepad-2', label:'Minigiochi',              count:'4 passaggi'  },
+  { key:'didattica',  icon:'ti-book-2',            label:'Didattica',               count:'6 passaggi'  },
+  { key:'hub',        icon:'ti-layout-grid',       label:'Hub',                     count:'12 passaggi' },
+  { key:'profilo',    icon:'ti-user',              label:'Profilo & Impostazioni',  count:'10 passaggi' }
+];
+const DIRECTOR_EXTRA = { key:'aule', icon:'ti-school', label:'Gestione Aule e Docenti', count:'11 passaggi', exits:true, exitIcon:'🏫',
+  exitTitle:'Rivedere questa sezione?',
+  exitMsg:'Uscirai dall\u2019aula corrente e tornerai alla Dashboard Direttore per rivedere "Gestione Aule e Docenti".' };
+
+function isDirectorRole(role){ return role === 'direttore'; }
+
+function tourSectionsFor(role){
+  const list = [{
+    key:'tutto', icon:'ti-map-2', label:'Tour completo',
+    count: isDirectorRole(role) ? '47 passaggi · da capo' : '34 passaggi · da capo',
+    primary:true, exits:true, exitIcon:'🧭', exitTitle:'Rivedere il tour guidato?',
+    exitMsg: isDirectorRole(role)
+      ? 'Il tour ripartirà dall\u2019inizio e tornerai alla Dashboard Direttore.'
+      : 'Il tour ripartirà dall\u2019inizio e uscirai da questa aula per tornare alla scelta delle aule.'
+  }];
+  if (isDirectorRole(role)) list.push(DIRECTOR_EXTRA);
+  return list.concat(COMMON_SECTIONS);
+}
+
+let _sectionsCache = [];
+
+function renderTourSections(role){
+  const box = document.getElementById('tourSections');
+  const items = tourSectionsFor(role);
+  _sectionsCache = items;
+  box.innerHTML = items.map((it, i) => {
+    const sep = (i > 0 && items[i - 1].exits && !it.exits) ? '<div class="tour-sep"></div>' : '';
+    return sep + '<button class="tour-item' + (it.primary ? ' t-primary' : '') + '" onclick="handleSectionClick(' + i + ')">'
+      + '<i class="ti ' + it.icon + ' ti-icon"></i>'
+      + '<span class="t-label">' + it.label + '<span class="t-count">' + it.count + '</span></span>'
+      + '</button>';
+  }).join('');
+}
+
+function toggleTourSections(){
+  const btn = document.getElementById('tourToggleBtn');
+  const box = document.getElementById('tourSections');
+  const open = box.classList.toggle('open');
+  btn.classList.toggle('expanded', open);
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+
+let _pendingIdx = null;
+
+function handleSectionClick(idx){
+  const it = _sectionsCache[idx];
+  if (!it) return;
+  if (it.exits){
+    _pendingIdx = idx;
+    document.getElementById('tconfirmIcon').textContent = it.exitIcon;
+    document.getElementById('tconfirmTitle').textContent = it.exitTitle;
+    document.getElementById('tconfirmMsg').textContent = it.exitMsg;
+    document.getElementById('tconfirmOverlay').classList.add('open');
+    return;
+  }
+  // Sezioni "sul posto": nessuna uscita dal contesto, nessuna conferma.
+  closePanel();
+  showToast('Tour avviato — ' + it.label + ' (' + it.count + ')');
+}
+
+function closeTourConfirm(){
+  document.getElementById('tconfirmOverlay').classList.remove('open');
+  _pendingIdx = null;
+}
+
+document.getElementById('tconfirmYes').addEventListener('click', () => {
+  if (_pendingIdx === null) return;
+  const it = _sectionsCache[_pendingIdx];
+  closeTourConfirm();
+  closePanel();
+  showToast('Tour avviato — ' + it.label);
+});
+
+let _toastTimer = null;
+function showToast(text){
+  const t = document.getElementById('toast');
+  document.getElementById('toastText').textContent = text;
+  t.classList.add('show');
+  clearTimeout(_toastTimer);
+  _toastTimer = setTimeout(() => t.classList.remove('show'), 2800);
+}
+
+let currentRole = 'uomo';
+function setRole(role){
+  currentRole = role;
+  const d = ROLE_DATA[role];
+  document.documentElement.style.setProperty('--role-color', d.color);
+  document.documentElement.style.setProperty('--role-glow', d.glow);
+  document.documentElement.style.setProperty('--role-dim', d.dim);
+  document.querySelectorAll('.role-btn').forEach(b => b.classList.toggle('active', b.dataset.role === role));
+  document.getElementById('panelName').textContent = d.name;
+  document.getElementById('panelRolePill').textContent = d.pill;
+  document.getElementById('profileIcon').className = 'ti ' + d.icon;
+  document.getElementById('panelAvatar').innerHTML = '<i class="ti ' + d.icon + '"></i>';
+
+  renderTourSections(role);
+  // Richiude la lista/conferma quando si cambia ruolo, per un'anteprima pulita.
+  document.getElementById('tourSections').classList.remove('open');
+  document.getElementById('tourToggleBtn').classList.remove('expanded');
+  document.getElementById('tourToggleBtn').setAttribute('aria-expanded', 'false');
+  closeTourConfirm();
+}
+
+function togglePanel(){
+  document.getElementById('sidePanel').classList.toggle('open');
+  document.getElementById('backdrop').classList.toggle('open');
+}
+function closePanel(){
+  document.getElementById('sidePanel').classList.remove('open');
+  document.getElementById('backdrop').classList.remove('open');
+}
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape'){ closeTourConfirm(); closePanel(); }
+});
+
+setRole('uomo');
+</script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 /* ==================================================
-   tour-sections.css — PixelProf v8.29.0
+   tour-sections.css — PixelProf v8.29.2
    Lista "a sezioni" che si apre sotto il tasto "Rivedi il tour
    guidato" nel pannello profilo (vedi css/topbar-profile.css per il
    pannello stesso, js/profile-panel.js per la logica).
@@ -37,6 +37,15 @@
 .pp-tour-action.expanded .pp-tour-chev{ transform:rotate(180deg); }
 .pp-tour-action.expanded{
   background:rgba(0,255,200,.06); border-color:rgba(0,255,200,.3); color:var(--accent);
+}
+
+/* v8.29.2 — bug segnalato: durante un minigioco o Flip Card attivi il
+   tasto non deve essere cliccabile (avviare una sezione da lì
+   uscirebbe dalla partita senza la conferma già esistente altrove).
+   pointer-events:none qui + guardia gemella in toggleTourSections()
+   (js/profile-panel.js) — difesa in profondità, non uno solo dei due. */
+.pp-tour-action.pp-tour-locked{
+  opacity:.4; cursor:not-allowed; pointer-events:none;
 }
 
 /* Contenitore che si espande sotto il tasto. */

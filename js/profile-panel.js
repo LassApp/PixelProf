@@ -1,9 +1,19 @@
 /* ==================================================
-   PROFILE PANEL — v8.29.1
+   PROFILE PANEL — v8.29.2
    File dedicato (separato da app.js) per il tasto profilo unico in
    topbar (icona + anello colorato per ruolo/genere) e il pannello
    laterale che apre: nome, ruolo, Ultimo accesso, Ultima aula
    collegata, poi Esci e "Rivedi il tour guidato".
+
+   v8.29.2 — Bugfix segnalato: "Rivedi il tour guidato" restava
+     cliccabile durante un minigioco o una sessione Flip Card attiva —
+     avviare una sezione da lì usciva dalla partita senza la conferma
+     "Uscire dalla partita?" già esistente altrove. Nuove
+     _isSessionActive()/_updateTourLockState(), che riusano
+     isGameActive() (game-engine-state.js) e isFlipCardActive()
+     (flip-card.js), entrambe già esistenti — nessuna nuova
+     rilevazione di stato. Ricalcolato a ogni apertura del pannello
+     (toggle()). Stile in css/tour-sections.css (.pp-tour-locked).
 
    v8.29.1 — Bugfix: le sezioni "sul posto" non partivano se il
      pannello profilo veniva aperto da una schermata diversa da quella
@@ -158,6 +168,7 @@ const ProfilePanel = (function () {
     backdrop.classList.toggle('open', open);
     _setTopbarShift(open);
     if (typeof closeHubMenu === 'function') closeHubMenu();
+    if (open) _updateTourLockState();
   }
 
   function close() {
@@ -221,10 +232,36 @@ const ProfilePanel = (function () {
     if (btn) { btn.classList.remove('expanded'); btn.setAttribute('aria-expanded', 'false'); }
   }
 
+  /** v8.29.2 — bug segnalato: durante un minigioco o una sessione Flip
+   *  Card attiva, "Rivedi il tour guidato" restava cliccabile: avviare
+   *  una sezione da lì naviga via (showScreen/goStep, o uscita
+   *  dall'aula) SENZA passare dalla conferma "Uscire dalla partita?"
+   *  già esistente per ogni altra uscita da un gioco attivo — si
+   *  perdeva la sessione in corso senza preavviso. Riusa isGameActive()
+   *  (minigiochi, già in game-engine-state.js) e isFlipCardActive()
+   *  (Flip Card, già in flip-card.js) — nessuna nuova rilevazione di
+   *  stato, solo il gate qui. */
+  function _isSessionActive() {
+    return (typeof isGameActive === 'function' && isGameActive())
+        || (typeof isFlipCardActive === 'function' && isFlipCardActive());
+  }
+
+  /** Ricalcolato a ogni apertura del pannello (vedi toggle()): lo stato
+   *  del gioco può cambiare tra un'apertura e l'altra. */
+  function _updateTourLockState() {
+    const btn = sh('pp-tour-toggle-btn');
+    if (!btn) return;
+    const locked = _isSessionActive();
+    btn.classList.toggle('pp-tour-locked', locked);
+    btn.setAttribute('aria-disabled', locked ? 'true' : 'false');
+    btn.title = locked ? 'Non disponibile durante una sessione di gioco o Flip Card attiva' : '';
+  }
+
   /** Tasto "Rivedi il tour guidato": apre/chiude la lista invece di
    *  avviare subito il tour intero (v8.29.0). I conteggi sono ricalcolati
    *  a ogni apertura: costo trascurabile, sempre aggiornati. */
   function toggleTourSections() {
+    if (_isSessionActive()) return; // difesa in profondità, oltre a pointer-events:none in CSS
     const btn = sh('pp-tour-toggle-btn');
     const box = sh('pp-tour-sections');
     if (!btn || !box) return;

@@ -1,6 +1,14 @@
 /* ==================================================
-   onboarding.js — PixelProf v2.9.1
+   onboarding.js — PixelProf v2.9.2
    Tour guidato al primo accesso docente ("dove clicco?").
+
+   v2.9.2 — Bugfix segnalato su v2.9.1: il contatore/percentuale in
+     _renderStep() mostravano sempre il totale del tour intero (es. "1
+     di 47") anche durante una sezione avviata da startSection() (es.
+     Gestione Aule, 11 passi) — in contraddizione col conteggio già
+     mostrato nella lista del pannello profilo (js/profile-panel.js).
+     isLast/pct/stepLabel ora calcolati sui soli passi con lo stesso
+     `section` attivo quando _activeSection è impostato.
 
    v2.9.1 — Bugfix segnalato su v2.9.0 (tour a sezioni):
      1) le 4 sezioni "sul posto" (minigiochi/didattica/hub/profilo) non
@@ -1620,9 +1628,26 @@ const OnboardingTour = (function () {
 
     const list = _stepList();
     const idx = _state.idx;
-    const isLast = idx === list.length - 1;
-    const pct = Math.round(((idx + 1) / list.length) * 100);
-    const stepLabel = (idx + 1) + ' di ' + list.length;
+    // v8.29.2 — bug segnalato: contatore e percentuale mostravano sempre
+    // il totale del tour intero (es. "1 di 47") anche durante una
+    // sezione avviata da startSection() (es. Gestione Aule, 11 passi) —
+    // in contraddizione col conteggio mostrato nella lista del pannello
+    // profilo. Quando una sezione è attiva, posizione/totale/"Fatto" si
+    // calcolano SOLO sui passi della sezione (stesso campo `section`
+    // usato da startSection()/sectionCount()), non sull'intero array.
+    let isLast, pct, stepLabel;
+    if (_activeSection) {
+      const sectionSteps = list.filter(s => s.section === _activeSection);
+      const posInSection = sectionSteps.indexOf(def) + 1; // 1-indexed
+      const totalInSection = sectionSteps.length;
+      isLast = posInSection === totalInSection;
+      pct = Math.round((posInSection / totalInSection) * 100);
+      stepLabel = posInSection + ' di ' + totalInSection;
+    } else {
+      isLast = idx === list.length - 1;
+      pct = Math.round(((idx + 1) / list.length) * 100);
+      stepLabel = (idx + 1) + ' di ' + list.length;
+    }
     const isAction = def.type === 'action';
     // Passi 'info' con revealTarget:true ottengono comunque il buco reale
     // (target visibile/interagibile) ma NON il pulsante Avanti nascosto né

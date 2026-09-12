@@ -1,9 +1,19 @@
 /* ==================================================
-   PROFILE PANEL — v8.29.2
+   PROFILE PANEL — v8.29.3
    File dedicato (separato da app.js) per il tasto profilo unico in
    topbar (icona + anello colorato per ruolo/genere) e il pannello
    laterale che apre: nome, ruolo, Ultimo accesso, Ultima aula
    collegata, poi Esci e "Rivedi il tour guidato".
+
+   v8.29.3 — Bugfix segnalato: le 4 sezioni "sul posto" (minigiochi/
+     didattica/hub/profilo) non facevano nulla se cliccate PRIMA di
+     essere entrati in un'aula in questa sessione (es. Direttore dalla
+     Dashboard) — stessa confusione già vista nel bug v8.29.1. Ora, se
+     activeCourseId (game-engine-state.js) è vuoto, un dialog
+     informativo (ppConfirmBox forceConfirm) spiega di entrare prima in
+     un'aula, invece di tentare una navigazione a vuoto. "Tour
+     completo" e "Gestione Aule e Docenti" invariati: portano entrambi
+     a scelta-aula/Dashboard, funzionano comunque aula attiva o no.
 
    v8.29.2 — Bugfix segnalato: "Rivedi il tour guidato" restava
      cliccabile durante un minigioco o una sessione Flip Card attiva —
@@ -292,6 +302,27 @@ const ProfilePanel = (function () {
       if (typeof resetSessionState === 'function') resetSessionState();
       if (typeof OnboardingTour !== 'undefined') OnboardingTour.startSection(it.key);
       if (typeof openDirectorDashboard === 'function') openDirectorDashboard();
+      return;
+    }
+
+    // v8.29.3 — bug segnalato: le 4 sezioni "sul posto" presuppongono di
+    // essere già dentro un'aula/modulo (vivono tutte in 'homeCategory').
+    // Se il pannello profilo è raggiungibile anche PRIMA di essere
+    // entrati in un'aula in questa sessione (es. Direttore dalla
+    // Dashboard, Docente da scelta-aula/scelta-modulo), il click non
+    // faceva nulla — startSection() falliva in silenzio, la stessa
+    // confusione già vista nel bug precedente. activeCourseId (già
+    // esistente in game-engine-state.js, null = nessuna aula
+    // selezionata) distingue questo caso: qui si avvisa esplicitamente
+    // invece di tentare una navigazione che non porterebbe da nessuna
+    // parte. "Tour completo" e "Gestione Aule e Docenti" NON hanno
+    // questo controllo: portano entrambi a scelta-aula/Dashboard, dove
+    // funzionano comunque, aula attiva o no.
+    if (typeof activeCourseId === 'undefined' || !activeCourseId) {
+      await ppConfirmBox('Devi prima entrare in un\u2019aula per avviare questa sezione del tour.', {
+        title: 'Entra prima in un\u2019aula', icon: '🏫',
+        yesLabel: 'Ho capito', forceConfirm: true
+      });
       return;
     }
 

@@ -1,9 +1,18 @@
 /* ==================================================
-   PROFILE PANEL — v8.29.3
+   PROFILE PANEL — v8.29.4
    File dedicato (separato da app.js) per il tasto profilo unico in
    topbar (icona + anello colorato per ruolo/genere) e il pannello
    laterale che apre: nome, ruolo, Ultimo accesso, Ultima aula
    collegata, poi Esci e "Rivedi il tour guidato".
+
+   v8.29.4 — Bugfix segnalato: il dialog "entra prima in un'aula"
+     (v8.29.3) smetteva di comparire dopo la prima uscita da un'aula
+     nella stessa sessione — activeCourseId (game-engine-state.js) non
+     viene mai azzerato da "cambia aula"/"← Dashboard", solo dal logout
+     completo. Sostituito con un controllo sulla visibilità di .app
+     (nascosta da OGNI funzione di uscita, mostrata solo entrando
+     davvero in un'aula in courses.js) — segnale affidabile, verificato
+     in tutti i punti di ingresso/uscita del codice sorgente.
 
    v8.29.3 — Bugfix segnalato: le 4 sezioni "sul posto" (minigiochi/
      didattica/hub/profilo) non facevano nulla se cliccate PRIMA di
@@ -305,20 +314,19 @@ const ProfilePanel = (function () {
       return;
     }
 
-    // v8.29.3 — bug segnalato: le 4 sezioni "sul posto" presuppongono di
-    // essere già dentro un'aula/modulo (vivono tutte in 'homeCategory').
-    // Se il pannello profilo è raggiungibile anche PRIMA di essere
-    // entrati in un'aula in questa sessione (es. Direttore dalla
-    // Dashboard, Docente da scelta-aula/scelta-modulo), il click non
-    // faceva nulla — startSection() falliva in silenzio, la stessa
-    // confusione già vista nel bug precedente. activeCourseId (già
-    // esistente in game-engine-state.js, null = nessuna aula
-    // selezionata) distingue questo caso: qui si avvisa esplicitamente
-    // invece di tentare una navigazione che non porterebbe da nessuna
-    // parte. "Tour completo" e "Gestione Aule e Docenti" NON hanno
-    // questo controllo: portano entrambi a scelta-aula/Dashboard, dove
-    // funzionano comunque, aula attiva o no.
-    if (typeof activeCourseId === 'undefined' || !activeCourseId) {
+    // v8.29.4 — bug segnalato: activeCourseId (game-engine-state.js) NON
+    // viene mai azzerato quando si esce da un'aula con "cambia aula" o
+    // "← Dashboard" (solo al logout completo, _performLogout in app.js)
+    // — restava vero anche fuori da qualunque aula, il dialog "entra
+    // prima" smetteva di comparire dopo la prima uscita. Il segnale
+    // affidabile è la visibilità di .app: nascosta (display:none) da
+    // OGNI funzione di uscita (goCoursesFromApp, backToDashboardFromApp,
+    // performLogout — verificato in game-engine-state.js/app.js) e
+    // mostrata SOLO entrando davvero in un'aula (courses.js, unico punto
+    // che la rimette a display:'').
+    const _appEl = document.querySelector('.app');
+    const _insideClassroom = !!_appEl && _appEl.style.display !== 'none';
+    if (!_insideClassroom) {
       await ppConfirmBox('Devi prima entrare in un\u2019aula per avviare questa sezione del tour.', {
         title: 'Entra prima in un\u2019aula', icon: '🏫',
         yesLabel: 'Ho capito', forceConfirm: true

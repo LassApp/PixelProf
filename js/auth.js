@@ -718,6 +718,21 @@ async function updateOwnEmail(newEmail) {
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!newEmail || !emailRe.test(newEmail)) return { ok: false, error: 'Indirizzo email non valido' };
   try {
+    // v8.29.5 — FIX finestra di corsa: il marker va scritto PRIMA della
+    // chiamata a updateUser(), non dopo. Nei log di test si è osservato
+    // che il primo evento USER_UPDATED/SIGNED_IN può scattare (a volte
+    // quasi in sincrono) prima che la riga successiva a updateUser()
+    // venga eseguita — in quella finestra pendingMatchesOurMarker
+    // risultava false perché il marker non esisteva ancora. Scrivendolo
+    // subito, prima della richiesta di rete, è già disponibile per
+    // qualunque evento scateni Supabase in risposta.
+    try {
+      localStorage.setItem('pp_pending_email_change', JSON.stringify({
+        newEmail: newEmail,
+        requestedAt: Date.now()
+      }));
+    } catch (e) { /* no-op: storage non disponibile */ }
+
     // v8.26.4: emailRedirectTo esplicito. Senza questa opzione Supabase usa
     // il "Site URL" configurato nel Dashboard come default: se quel valore
     // non include il path della GitHub Pages project site (/PixelProf/),
@@ -734,21 +749,11 @@ async function updateOwnEmail(newEmail) {
     );
     if (error) throw error;
 
-    // v8.26.7: marker in localStorage con l'email target, per riconoscere
-    // la conferma in QUALSIASI tab (anche una nuova, senza sessione
-    // precedente con cui confrontare) senza dipendere dal formato esatto
-    // dell'URL di redirect. Vedi PROBLEMA 6 più sopra per il contesto
-    // completo: il rilevamento basato solo su "type" nell'URL si è
-    // rivelato inaffidabile in questo progetto.
-    try {
-      localStorage.setItem('pp_pending_email_change', JSON.stringify({
-        newEmail: newEmail,
-        requestedAt: Date.now()
-      }));
-    } catch (e) { /* no-op: storage non disponibile */ }
-
     return { ok: true };
   } catch (err) {
+    // Se la richiesta a Supabase è fallita, il marker scritto sopra non
+    // corrisponde più a nulla di reale in corso: lo rimuoviamo.
+    try { localStorage.removeItem('pp_pending_email_change'); } catch (e2) { /* no-op */ }
     return { ok: false, error: err.message };
   }
 }

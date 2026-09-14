@@ -1,0 +1,493 @@
+[
+  {
+    "id": 1,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "La chiave pubblica di una passkey viene registrata dal servizio online e utilizzata per verificare l'identità dell'utente.",
+    "source_id": 1
+  },
+  {
+    "id": 2,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Una buona password dovrebbe essere composta da almeno 14-16 caratteri.",
+    "source_id": 2
+  },
+  {
+    "id": 3,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Le passkey offrono una forte protezione dal phishing perché sono legate esclusivamente al servizio legittimo per cui sono state create.",
+    "source_id": 3
+  },
+  {
+    "id": 4,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Le passkey sono considerate una delle evoluzioni più importanti nella sicurezza degli account, destinata a diffondersi sempre di più.",
+    "source_id": 4
+  },
+  {
+    "id": 5,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Uno smartphone può essere sostituito facilmente, ma la propria identità digitale no.",
+    "source_id": 5
+  },
+  {
+    "id": 6,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Un Password Manager può generare automaticamente password lunghe, casuali e uniche per ogni servizio.",
+    "source_id": 6
+  },
+  {
+    "id": 7,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "È consigliabile evitare parole comuni o nomi propri nelle password, perché le rendono facili da indovinare per un attaccante.",
+    "source_id": 7
+  },
+  {
+    "id": 8,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "I codici inviati tramite SMS non sono il metodo MFA più sicuro in assoluto: possono essere vulnerabili alla clonazione della SIM o all'intercettazione dei messaggi.",
+    "source_id": 8
+  },
+  {
+    "id": 9,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Nessun password manager rende un account completamente invulnerabile.",
+    "source_id": 9
+  },
+  {
+    "id": 10,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Se un utente visita un sito contraffatto, il dispositivo riconosce che non corrisponde al servizio autorizzato e non utilizza la passkey.",
+    "source_id": 10
+  },
+  {
+    "id": 11,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "La sicurezza degli account crolla soprattutto per la ripetizione delle password e le cattive abitudini di gestione, non per la loro complessità.",
+    "source_id": 11
+  },
+  {
+    "id": 12,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Conservare le password su fogli accanto al computer è un esempio di conservazione poco sicura delle credenziali.",
+    "source_id": 12
+  },
+  {
+    "id": 13,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Due password diverse non costituiscono un sistema MFA valido, perché appartengono entrambe alla stessa categoria di fattore: qualcosa che si conosce.",
+    "source_id": 13
+  },
+  {
+    "id": 14,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Molti password manager avvisano quando una credenziale è stata coinvolta in un Data Breach.",
+    "source_id": 14
+  },
+  {
+    "id": 15,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Gli attaccanti tendono a provare prima le password che milioni di persone scelgono davvero.",
+    "source_id": 15
+  },
+  {
+    "id": 16,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Il Credential Stuffing consiste nel riutilizzo automatico di credenziali rubate su più siti, non nella creazione di password casuali.",
+    "source_id": 16
+  },
+  {
+    "id": 17,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Se vengono richiesti esattamente due fattori di autenticazione si parla di Autenticazione a Due Fattori (2FA).",
+    "source_id": 17
+  },
+  {
+    "id": 18,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "La chiave privata di una passkey non viene mai condivisa con il servizio online durante l'accesso: resta sempre sul dispositivo dell'utente.",
+    "source_id": 18
+  },
+  {
+    "id": 19,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Anche un account ben protetto può essere messo a rischio se il dispositivo utilizzato per accedervi non è adeguatamente protetto.",
+    "source_id": 19
+  },
+  {
+    "id": 20,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Sequenze come 123456 o nomi propri sono tra le password più prevedibili e rischiose che si possano scegliere.",
+    "source_id": 20
+  },
+  {
+    "id": 21,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Una password insieme al codice generato da un'app di autenticazione rappresentano due fattori di categorie diverse: qualcosa che si conosce e qualcosa che si possiede.",
+    "source_id": 21
+  },
+  {
+    "id": 22,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "La sicurezza di un account dipende dalla combinazione di più strumenti e buone pratiche insieme, non da un solo elemento.",
+    "source_id": 22
+  },
+  {
+    "id": 23,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Una password è debole perché è facile da indovinare, non perché è facile da ricordare.",
+    "source_id": 23
+  },
+  {
+    "id": 24,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "La sicurezza degli account non dipende soltanto dalla qualità della password, ma anche dalle abitudini quotidiane con cui viene gestita.",
+    "source_id": 24
+  },
+  {
+    "id": 25,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "La lunghezza di una password è uno dei fattori più importanti per la sua sicurezza: non basta che sia breve e ricca di simboli complessi.",
+    "source_id": 25
+  },
+  {
+    "id": 26,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "I password manager eliminano il compromesso tra sicurezza e praticità nella gestione delle password, invece di aumentarlo.",
+    "source_id": 26
+  },
+  {
+    "id": 27,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Un criminale che ha già ottenuto l'accesso a un account potrebbe tentare di aggiungere un nuovo metodo di autenticazione, come una passkey.",
+    "source_id": 27
+  },
+  {
+    "id": 28,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Una passkey non rende un account automaticamente invincibile a qualsiasi tipo di attacco.",
+    "source_id": 28
+  },
+  {
+    "id": 29,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Un Password Manager è un'applicazione progettata per generare, memorizzare e compilare automaticamente le password in modo sicuro.",
+    "source_id": 29
+  },
+  {
+    "id": 30,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "In un sistema di autenticazione con passkey, paragonabile a una cassaforte con lucchetto, il servizio online non riceve mai la chiave vera dell'utente: conserva solo il meccanismo per verificarla.",
+    "source_id": 30
+  },
+  {
+    "id": 31,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Condividere le proprie password con amici o familiari rappresenta un rischio per la sicurezza dell'account.",
+    "source_id": 31
+  },
+  {
+    "id": 32,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Con le passkey, l'accesso quotidiano avviene solitamente confermando l'identità tramite impronta digitale, riconoscimento del volto o PIN.",
+    "source_id": 32
+  },
+  {
+    "id": 33,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Il Credential Stuffing è il riutilizzo automatico di credenziali rubate su più siti.",
+    "source_id": 33
+  },
+  {
+    "id": 34,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Quando si crea una passkey, il dispositivo genera automaticamente una coppia di chiavi crittografiche collegate tra loro.",
+    "source_id": 34
+  },
+  {
+    "id": 35,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Oggi, per un attaccante, il vero valore si trova più negli account online che nel dispositivo fisico in sé.",
+    "source_id": 35
+  },
+  {
+    "id": 36,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Una password è una sequenza di caratteri utilizzata per verificare l'identità di un utente.",
+    "source_id": 36
+  },
+  {
+    "id": 37,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Con un Password Manager, l'utente deve ricordare soltanto la Master Password, non tutte le singole password dei propri account.",
+    "source_id": 37
+  },
+  {
+    "id": 38,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Una password efficace è lunga, unica e difficile da prevedere, non breve, condivisa e facile da indovinare.",
+    "source_id": 38
+  },
+  {
+    "id": 39,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "L'Autenticazione Multifattore (MFA) richiede due o più prove di identità prima di concedere l'accesso a un account.",
+    "source_id": 39
+  },
+  {
+    "id": 40,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Aggiornamenti, antivirus e backup sono temi centrali della sicurezza dei dispositivi.",
+    "needs_review": true,
+    "source_id": 40
+  },
+  {
+    "id": 41,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Con una passkey non esiste alcuna parola segreta che l'utente debba inventare, ricordare o digitare.",
+    "source_id": 41
+  },
+  {
+    "id": 42,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Nella maggior parte dei casi, la prima barriera che protegge un account è una password, non un antivirus.",
+    "source_id": 42
+  },
+  {
+    "id": 43,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Se un utente comunica le proprie credenziali a un truffatore, il rischio rimane anche utilizzando un password manager.",
+    "source_id": 43
+  },
+  {
+    "id": 44,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Le Passkey sostituiscono le password tradizionali con una coppia di chiavi crittografiche.",
+    "source_id": 44
+  },
+  {
+    "id": 45,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Usare la stessa combinazione per aprire più casseforti comporta un rischio: basterebbe scoprirne una per aprirle tutte quante.",
+    "source_id": 45
+  },
+  {
+    "id": 46,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Le credenziali gestite da un password manager vengono archiviate in forma cifrata, non in un semplice file di testo non protetto.",
+    "source_id": 46
+  },
+  {
+    "id": 47,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "L'utente di un Password Manager deve ricordare una sola password principale, chiamata Master Password.",
+    "source_id": 47
+  },
+  {
+    "id": 48,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "La Risk-Based Authentication valuta il livello di rischio di un accesso, mentre l'Adaptive Authentication adatta di conseguenza i controlli richiesti.",
+    "source_id": 48
+  },
+  {
+    "id": 49,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "L'aspetto fondamentale dell'MFA è che i fattori appartengano a categorie diverse.",
+    "source_id": 49
+  },
+  {
+    "id": 50,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "La sicurezza offerta da un password manager dipende sempre anche dai comportamenti di chi lo utilizza.",
+    "source_id": 50
+  },
+  {
+    "id": 51,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Anche trovando soltanto il biglietto d'imbarco di un passeggero, non basterebbe per salire sull'aereo al posto suo: servono più elementi insieme per essere autorizzati all'accesso.",
+    "source_id": 51
+  },
+  {
+    "id": 52,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Se un criminale ottiene la password di un account protetto da MFA, nella maggior parte dei casi non potrebbe comunque accedere senza superare gli altri controlli richiesti.",
+    "source_id": 52
+  },
+  {
+    "id": 53,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Riutilizzare la stessa password su più servizi è uno degli errori più gravi nella gestione delle password.",
+    "source_id": 53
+  },
+  {
+    "id": 54,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Una password efficace può essere costruita come una frase lunga, facile da ricordare per chi la usa ma difficile da prevedere per chiunque altro.",
+    "source_id": 54
+  },
+  {
+    "id": 55,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "La Risk-Based Authentication valuta il livello di rischio di un accesso in base a dispositivo, posizione e orario.",
+    "source_id": 55
+  },
+  {
+    "id": 56,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Un attacco a forza bruta consiste nel provare automaticamente moltissime password fino a trovare quella corretta.",
+    "source_id": 56
+  },
+  {
+    "id": 57,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Con la sola password si utilizza un solo fattore di autenticazione: qualcosa che si conosce.",
+    "source_id": 57
+  },
+  {
+    "id": 58,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Una passkey è una chiave che rimane sempre con l'utente, a differenza di una password, che va invece consegnata al servizio ogni volta che si effettua l'accesso.",
+    "source_id": 58
+  },
+  {
+    "id": 59,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Dopo un Data Breach è fondamentale modificare immediatamente la password coinvolta.",
+    "source_id": 59
+  },
+  {
+    "id": 60,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "La lunghezza di una password è oggi uno dei fattori più importanti per la sua sicurezza, non un aspetto trascurabile.",
+    "source_id": 60
+  },
+  {
+    "id": 61,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "La credenziale segreta di una passkey non viaggia mai su Internet durante l'accesso: resta sempre sul dispositivo dell'utente.",
+    "source_id": 61
+  },
+  {
+    "id": 62,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Oggi sono generalmente preferite le app di autenticazione o le chiavi di sicurezza fisiche rispetto agli SMS.",
+    "source_id": 62
+  },
+  {
+    "id": 63,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Usare la stessa chiave per casa, auto, ufficio e cassaforte comporta un rischio importante: se quella chiave viene persa o rubata, tutti questi accessi sono compromessi insieme.",
+    "source_id": 63
+  },
+  {
+    "id": 64,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Gli attaccanti cercano sempre meno di rubare fisicamente un dispositivo e sempre più di impossessarsi degli account online delle vittime.",
+    "source_id": 64
+  },
+  {
+    "id": 65,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Custodire con attenzione un'unica chiave principale, come quella di una cassaforte che le contiene tutte, permette di mantenere protette anche tutte le altre.",
+    "source_id": 65
+  },
+  {
+    "id": 66,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "L'MFA è consigliato, e spesso obbligatorio, per proteggere account come email e servizi bancari.",
+    "source_id": 66
+  },
+  {
+    "id": 67,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Ogni account importante dovrebbe avere una password diversa: usare la stessa password per più account è sconsigliato.",
+    "source_id": 67
+  },
+  {
+    "id": 68,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Una copia della porta o della serratura non permetterebbe alla chiave di una passkey di funzionare altrove: la chiave funziona soltanto con la serratura originale.",
+    "source_id": 68
+  },
+  {
+    "id": 69,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "Non si parla formalmente di \"4FA\" come standard tecnico riconosciuto nell'autenticazione.",
+    "source_id": 69
+  },
+  {
+    "id": 70,
+    "module": "account_security",
+    "type": "curiosity",
+    "fact": "È la 2FA a essere un caso particolare dell'MFA, e non il contrario.",
+    "source_id": 70
+  }
+]

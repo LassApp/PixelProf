@@ -1,0 +1,709 @@
+[
+  {
+    "id": 1,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La cybersecurity non consiste nell'eliminare tutte le minacce, ma nel ridurre le vulnerabilità a cui un sistema è esposto.",
+    "source_id": 1
+  },
+  {
+    "id": 2,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Lo spyware ha come obiettivo principale raccogliere informazioni sull'utente, non distruggere fisicamente l'hardware del dispositivo.",
+    "source_id": 2
+  },
+  {
+    "id": 3,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Anche un buon sistema di sicurezza, una volta installato, va controllato e aggiornato regolarmente: la sicurezza richiede manutenzione costante nel tempo.",
+    "source_id": 3
+  },
+  {
+    "id": 4,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Tra i dispositivi che fanno parte della superficie d'attacco troviamo computer, smartphone, tablet, server e dispositivi IoT.",
+    "source_id": 4
+  },
+  {
+    "id": 5,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Un castello con molte porte, finestre e passaggi offre più punti di accesso a un potenziale intruso: allo stesso modo, più aumentano i sistemi e i dispositivi connessi, più si allarga la superficie esposta agli attacchi.",
+    "source_id": 5
+  },
+  {
+    "id": 6,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Lo Spear Phishing è una forma di phishing costruita su misura per la singola vittima, non un messaggio generico uguale per tutti.",
+    "source_id": 6
+  },
+  {
+    "id": 7,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Se un hacker legge e pubblica online i dati di una cartella clinica senza modificarli, a essere violata è la riservatezza (Confidentiality) dei dati, non la loro integrità: le informazioni restano corrette ma vengono diffuse senza autorizzazione.",
+    "source_id": 7
+  },
+  {
+    "id": 8,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La mancanza di formazione è una delle cause principali per cui le persone non riescono a riconoscere un tentativo di truffa online.",
+    "source_id": 8
+  },
+  {
+    "id": 9,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Lo smishing è una forma di phishing che utilizza SMS o messaggi di testo, mentre è il vishing a utilizzare le chiamate telefoniche.",
+    "source_id": 9
+  },
+  {
+    "id": 10,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Pagare il riscatto richiesto da un ransomware non garantisce che i dati vengano effettivamente restituiti.",
+    "source_id": 10
+  },
+  {
+    "id": 11,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il Social Engineering è l'insieme delle tecniche utilizzate per manipolare una persona e convincerla a compiere spontaneamente un'azione favorevole al criminale.",
+    "source_id": 11
+  },
+  {
+    "id": 12,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il furto di identità digitale si verifica quando un criminale ottiene informazioni sufficienti per impersonare un'altra persona online.",
+    "source_id": 12
+  },
+  {
+    "id": 13,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "L'attacco a Target coinvolse le informazioni personali di circa 70 milioni di clienti.",
+    "source_id": 13
+  },
+  {
+    "id": 14,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Una minaccia è qualsiasi elemento capace di causare un danno.",
+    "source_id": 14
+  },
+  {
+    "id": 15,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Aggirare una persona è generalmente più semplice che aggirare una tecnologia progettata correttamente.",
+    "source_id": 15
+  },
+  {
+    "id": 16,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La Reconnaissance comprende anche il fingerprinting, un'attività di raccolta di informazioni per pianificare l'attacco.",
+    "source_id": 16
+  },
+  {
+    "id": 17,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Molti malware preferiscono rimanere invisibili il più a lungo possibile, per continuare a raccogliere informazioni senza essere scoperti.",
+    "source_id": 17
+  },
+  {
+    "id": 18,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La Cybersecurity è l'insieme di tecnologie, procedure, strategie e comportamenti utilizzati per proteggere sistemi informatici.",
+    "source_id": 18
+  },
+  {
+    "id": 19,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Account Takeover significa presa di controllo completa di un account da parte di un criminale.",
+    "source_id": 19
+  },
+  {
+    "id": 20,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il virus è un malware che ha bisogno di un'azione da parte dell'utente per diffondersi; è il worm, invece, a diffondersi automaticamente in rete senza alcun intervento umano.",
+    "source_id": 20
+  },
+  {
+    "id": 21,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il keylogger registra tutto ciò che viene digitato sulla tastiera, comprese password ed email.",
+    "source_id": 21
+  },
+  {
+    "id": 22,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il termine spyware deriva dalla parola inglese spy, che significa spia.",
+    "source_id": 22
+  },
+  {
+    "id": 23,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il termine malware deriva dall'unione di malicious e software.",
+    "source_id": 23
+  },
+  {
+    "id": 24,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La CIA Triad è composta da Confidentiality, Integrity e Availability.",
+    "source_id": 24
+  },
+  {
+    "id": 25,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il principio di Integrity indica che le informazioni sono corrette e non alterate da soggetti non autorizzati.",
+    "source_id": 25
+  },
+  {
+    "id": 26,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "In un caso di Spear Phishing, un Trojan infetta il computer del direttore acquisti di un'azienda e raccoglie informazioni in silenzio, senza farsi notare.",
+    "source_id": 26
+  },
+  {
+    "id": 27,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Un criminale che ottiene l'accesso alla casella email di una vittima può usarlo come punto di partenza per accedere anche ai suoi account sui social network.",
+    "source_id": 27
+  },
+  {
+    "id": 28,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Se un ransomware blocca l'accesso ai computer di un ospedale, a essere compromessa è la disponibilità (Availability) dei dati, perché le informazioni non sono raggiungibili quando servono.",
+    "source_id": 28
+  },
+  {
+    "id": 29,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Una vulnerabilità è una debolezza che può essere sfruttata da una minaccia.",
+    "source_id": 29
+  },
+  {
+    "id": 30,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Anche con il miglior antivirus installato, se un utente consegna volontariamente la propria password a un truffatore, la sicurezza del sistema viene comunque compromessa.",
+    "source_id": 30
+  },
+  {
+    "id": 31,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Quando un account con molti follower viene compromesso, il vero obiettivo del criminale è sfruttare la fiducia delle persone che lo seguono, non semplicemente il nome utente dell'account.",
+    "source_id": 31
+  },
+  {
+    "id": 32,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Senza vulnerabilità da sfruttare, molte minacce informatiche diventano inefficaci.",
+    "source_id": 32
+  },
+  {
+    "id": 33,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il Social Engineering sfrutta soprattutto leve emotive come fiducia, paura, urgenza, curiosità, autorità e distrazione, più che vulnerabilità tecniche dei sistemi operativi.",
+    "source_id": 33
+  },
+  {
+    "id": 34,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il furto di identità digitale può avvenire anche tramite account compromessi e credenziali sottratte online, non soltanto attraverso il furto fisico di documenti cartacei.",
+    "source_id": 34
+  },
+  {
+    "id": 35,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Molti malware, una volta infettato un computer, preferiscono restare invisibili il più a lungo possibile piuttosto che danneggiarlo subito.",
+    "source_id": 35
+  },
+  {
+    "id": 36,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "È soprattutto il software non aggiornato a poter contenere vulnerabilità sfruttabili dagli attaccanti; mantenere i programmi aggiornati riduce questo rischio.",
+    "source_id": 36
+  },
+  {
+    "id": 37,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Nel 2011 il servizio PlayStation Network subì un attacco che compromise circa 77 milioni di account.",
+    "source_id": 37
+  },
+  {
+    "id": 38,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Minaccia, vulnerabilità e rischio sono tre concetti distinti in cybersecurity, non termini intercambiabili.",
+    "source_id": 38
+  },
+  {
+    "id": 39,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Le persone possono rappresentare sia la prima linea di difesa sia il punto più vulnerabile di un sistema informatico.",
+    "source_id": 39
+  },
+  {
+    "id": 40,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Anche le persone, non solo i dispositivi, fanno parte della superficie d'attacco di un'organizzazione.",
+    "source_id": 40
+  },
+  {
+    "id": 41,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Anche un castello con mura altissime può essere violato se una piccola porta di servizio viene lasciata aperta: basta un singolo punto debole trascurato per permettere l'accesso a un intruso.",
+    "source_id": 41
+  },
+  {
+    "id": 42,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Più sistemi, applicazioni e utenti si utilizzano, più si amplia la superficie d'attacco esposta a possibili attacchi.",
+    "source_id": 42
+  },
+  {
+    "id": 43,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La superficie d'attacco è l'insieme di tutti i punti attraverso cui un attaccante può tentare di accedere a un sistema.",
+    "source_id": 43
+  },
+  {
+    "id": 44,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "In un attacco DDoS, migliaia o milioni di dispositivi inviano contemporaneamente richieste allo stesso servizio, sovraccaricandolo.",
+    "source_id": 44
+  },
+  {
+    "id": 45,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il primo accesso ottenuto da un attaccante raramente coincide con il suo vero obiettivo finale: spesso rappresenta solo un punto di partenza per raggiungere il bersaglio reale.",
+    "source_id": 45
+  },
+  {
+    "id": 46,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "L'obiettivo di un attacco DDoS non è rubare dati, ma rendere un servizio online temporaneamente indisponibile sovraccaricandolo di richieste.",
+    "source_id": 46
+  },
+  {
+    "id": 47,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il phishing sfrutta raramente una debolezza tecnica del computer: fa leva soprattutto sulle emozioni umane, come paura, fiducia o urgenza.",
+    "source_id": 47
+  },
+  {
+    "id": 48,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Un Account Takeover può avvenire in diversi modi, ad esempio tramite password rubate, phishing, malware o Data Breach, non soltanto con l'accesso fisico diretto al dispositivo della vittima.",
+    "source_id": 48
+  },
+  {
+    "id": 49,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Se un'auto è chiusa a chiave e dotata di antifurto, il rischio di furto si riduce drasticamente, anche se un potenziale ladro resta nei paraggi: la minaccia rimane presente, ma la vulnerabilità è ridotta.",
+    "source_id": 49
+  },
+  {
+    "id": 50,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Le truffe online nascono spesso dalla combinazione di più tecniche insieme, come phishing, smishing e vishing.",
+    "source_id": 50
+  },
+  {
+    "id": 51,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Un'auto lasciata aperta con le chiavi nel cruscotto è un buon esempio di vulnerabilità: una debolezza che rende più facile per un malintenzionato approfittarne.",
+    "source_id": 51
+  },
+  {
+    "id": 52,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La cybersecurity non riguarda solo la tecnologia: comprende anche le persone, i loro comportamenti, le procedure e il livello di consapevolezza.",
+    "source_id": 52
+  },
+  {
+    "id": 53,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il quishing nasce dall'unione delle parole QR Code e phishing.",
+    "source_id": 53
+  },
+  {
+    "id": 54,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "In un caso di vishing avvenuto in aeroporto, il codice MFA ricevuto dalla vittima era autentico: a essere falsa era la persona al telefono, che si spacciava per un addetto della compagnia aerea.",
+    "source_id": 54
+  },
+  {
+    "id": 55,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il Movimento Laterale è la tecnica con cui un attaccante si sposta da un dispositivo all'altro dopo essere entrato in una rete.",
+    "source_id": 55
+  },
+  {
+    "id": 56,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Aprire allegati sconosciuti o cliccare link sospetti può esporre dispositivi e dati a minacce informatiche.",
+    "source_id": 56
+  },
+  {
+    "id": 57,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Una delle difese più efficaci contro le truffe online consiste nel fermarsi, verificare le informazioni e ragionare con calma, invece di rispondere il più rapidamente possibile.",
+    "source_id": 57
+  },
+  {
+    "id": 58,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "In un caso reale, un attacco a un'azienda è partito da una semplice lampadina intelligente collegata alla rete, la cui password predefinita non era mai stata modificata.",
+    "source_id": 58
+  },
+  {
+    "id": 59,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Un utente adeguatamente formato riconosce un link di phishing e non ci clicca sopra: è proprio questo comportamento consapevole ad annullare il rischio, anche in presenza della minaccia.",
+    "source_id": 59
+  },
+  {
+    "id": 60,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Un segnale tipico di Account Takeover è quando la password smette improvvisamente di funzionare e anche l'indirizzo email di recupero risulta modificato senza il proprio intervento.",
+    "source_id": 60
+  },
+  {
+    "id": 61,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il quishing è una forma di phishing che utilizza un codice QR.",
+    "source_id": 61
+  },
+  {
+    "id": 62,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il Data Breach si verifica quando informazioni riservate vengono esposte, sottratte o divulgate senza autorizzazione.",
+    "source_id": 62
+  },
+  {
+    "id": 63,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il ransomware ha l'obiettivo di bloccare o cifrare i file della vittima chiedendo poi un riscatto per sbloccarli; raccogliere informazioni di nascosto è invece l'obiettivo tipico dello spyware.",
+    "source_id": 63
+  },
+  {
+    "id": 64,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il worm si replica e si diffonde automaticamente attraverso le reti.",
+    "source_id": 64
+  },
+  {
+    "id": 65,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Lo Spear Phishing è una forma di phishing personalizzata, costruita su misura per la vittima.",
+    "source_id": 65
+  },
+  {
+    "id": 66,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Ogni account compromesso può diventare una porta d'ingresso per l'attaccante.",
+    "source_id": 66
+  },
+  {
+    "id": 67,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il termine vishing nasce dall'unione delle parole inglesi voice (voce) e phishing, non da video.",
+    "source_id": 67
+  },
+  {
+    "id": 68,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Nel Data Breach di PlayStation Network, molti degli utenti coinvolti avevano scelto password robuste e utilizzato il servizio in modo corretto: il problema non era quindi legato al loro comportamento.",
+    "source_id": 68
+  },
+  {
+    "id": 69,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il rischio è la possibilità che una minaccia sfrutti una vulnerabilità causando un danno: non è un elemento che agisce direttamente e in autonomia.",
+    "source_id": 69
+  },
+  {
+    "id": 70,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La tecnologia protegge i sistemi informatici, ma sono le persone a determinare quanto quella protezione sarà realmente efficace nella pratica.",
+    "source_id": 70
+  },
+  {
+    "id": 71,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il meccanismo delle truffe online prevede prima di conquistare la fiducia della vittima, poi generare urgenza e infine ridurre il tempo per riflettere.",
+    "source_id": 71
+  },
+  {
+    "id": 72,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il termine phishing deriva dalla parola inglese fishing, che significa pescare.",
+    "source_id": 72
+  },
+  {
+    "id": 73,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il Trojan si finge un programma legittimo e, una volta installato, svolge attività nascoste.",
+    "source_id": 73
+  },
+  {
+    "id": 74,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Riutilizzare la stessa password su più servizi aumenta notevolmente il rischio di compromissione dei propri account.",
+    "source_id": 74
+  },
+  {
+    "id": 75,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "I criminali possono utilizzare i dati ottenuti da un Data Breach per provare ad accedere ad altri servizi con la stessa email e password.",
+    "source_id": 75
+  },
+  {
+    "id": 76,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La sicurezza informatica, anche una volta raggiunta, non resta valida per sempre: richiede manutenzione costante nel tempo.",
+    "source_id": 76
+  },
+  {
+    "id": 77,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "DDoS è l'acronimo di Distributed Denial of Service.",
+    "source_id": 77
+  },
+  {
+    "id": 78,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Chi mette in atto un attacco di Social Engineering può fingersi un collega, una banca, un corriere, un tecnico informatico o persino un ente pubblico.",
+    "source_id": 78
+  },
+  {
+    "id": 79,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il vishing è una forma di phishing che utilizza le telefonate.",
+    "source_id": 79
+  },
+  {
+    "id": 80,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il termine Cyber, all'interno della parola Cybersecurity, si riferisce al mondo digitale e alle reti informatiche, non alla sicurezza fisica degli edifici.",
+    "source_id": 80
+  },
+  {
+    "id": 81,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La superficie d'attacco comprende anche reti, account e software, oltre ai dispositivi elettronici e alle persone.",
+    "source_id": 81
+  },
+  {
+    "id": 82,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il fattore umano è l'insieme dei comportamenti, delle decisioni e delle azioni delle persone che possono influenzare la sicurezza di un sistema.",
+    "source_id": 82
+  },
+  {
+    "id": 83,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La sicurezza dei propri dati dipende sia dai comportamenti individuali sia dal livello di sicurezza delle organizzazioni a cui quei dati vengono affidati.",
+    "source_id": 83
+  },
+  {
+    "id": 84,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il principio di Availability indica che le informazioni sono accessibili quando servono, non che sono riservate solo a persone autorizzate: quest'ultima è invece la definizione di Confidentiality.",
+    "source_id": 84
+  },
+  {
+    "id": 85,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La cybersecurity non si installa una volta per tutte: è un processo che va mantenuto nel tempo.",
+    "source_id": 85
+  },
+  {
+    "id": 86,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "È il worm, non il virus, a propagarsi autonomamente attraverso la rete senza alcuna azione da parte dell'utente; il virus ha invece bisogno di un'azione umana per diffondersi.",
+    "source_id": 86
+  },
+  {
+    "id": 87,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La minaccia è il pericolo, la vulnerabilità è la debolezza, e il rischio è la possibilità che dal loro incontro nasca un danno.",
+    "source_id": 87
+  },
+  {
+    "id": 88,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La cybersecurity protegge l'intero ambiente digitale in cui le persone operano, non soltanto le macchine e i dispositivi.",
+    "source_id": 88
+  },
+  {
+    "id": 89,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il termine worm significa letteralmente verme, non ragno.",
+    "source_id": 89
+  },
+  {
+    "id": 90,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La cybersecurity è un processo continuo di protezione, verifica e aggiornamento.",
+    "source_id": 90
+  },
+  {
+    "id": 91,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Nel caso reale di Target del 2013, l'attacco partì dall'account compromesso di un'azienda esterna incaricata della manutenzione degli impianti di climatizzazione.",
+    "source_id": 91
+  },
+  {
+    "id": 92,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il malware è una famiglia di programmi progettati per svolgere attività dannose.",
+    "source_id": 92
+  },
+  {
+    "id": 93,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il nome Trojan deriva dal racconto del Cavallo di Troia.",
+    "source_id": 93
+  },
+  {
+    "id": 94,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il caso Target dimostra che il punto di ingresso di un attacco raramente coincide con il vero obiettivo finale dei criminali.",
+    "source_id": 94
+  },
+  {
+    "id": 95,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il termine keylogger deriva dalle parole inglesi key (tasto) e logger (registratore), non da key (chiave) e log (diario).",
+    "source_id": 95
+  },
+  {
+    "id": 96,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "L'attacco a Target del 2013 causò il furto dei dati di circa 40 milioni di carte di pagamento.",
+    "source_id": 96
+  },
+  {
+    "id": 97,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il termine ransomware deriva dalla parola inglese ransom, che significa riscatto.",
+    "source_id": 97
+  },
+  {
+    "id": 98,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Una casa sicura non si limita ad avere una porta blindata: servono anche il controllo regolare delle serrature e la sostituzione delle chiavi smarrite.",
+    "source_id": 98
+  },
+  {
+    "id": 99,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "La Reconnaissance è la fase iniziale di un attacco informatico, in cui il criminale raccoglie informazioni prima di colpire, non la fase finale.",
+    "source_id": 99
+  },
+  {
+    "id": 100,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Lo smishing è una forma di phishing che utilizza SMS o messaggi di testo.",
+    "source_id": 100
+  },
+  {
+    "id": 101,
+    "module": "fondamenti-cybersecurity",
+    "type": "curiosity",
+    "fact": "Il phishing può arrivare tramite email, SMS, WhatsApp, social network, telefonate e QR Code.",
+    "source_id": 101
+  }
+]

@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mockup v2 — Lo Sapevi? — PixelProf</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+  :root{
+    --purple:#7c6aff;
+    --accent:#00ffc8;
+    --surface-0:#080c18; --surface-1:rgba(255,255,255,.04); --surface-2:rgba(255,255,255,.07);
+    --border-subtle:rgba(255,255,255,.07); --border-mid:rgba(255,255,255,.12);
+    --radius-sm:8px; --radius-md:12px; --radius-lg:16px; --radius-xl:20px;
+    --transition-fast:.18s cubic-bezier(.4,0,.2,1); --transition-bounce:.3s cubic-bezier(.34,1.56,.64,1);
+    --shadow-card:0 4px 24px rgba(0,0,0,.35),0 1px 0 rgba(255,255,255,.04) inset;
+    --ls-rgb: 255,204,51;       /* #ffcc33 — nuovo accento Lo Sapevi */
+    --ls-text-rgb: 255,224,138; /* #ffe08a */
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#0a0c14;color:#dfe3ee;font-family:'Space Grotesk',sans-serif;padding:32px 20px 80px}
+  h1{font-size:20px;margin:0 0 8px;color:#fff}
+  .annot{max-width:1052px;margin:0 auto 28px}
+  .annot .sub{font-size:13.5px;line-height:1.6;color:rgba(255,255,255,.62);margin-bottom:18px}
+  code{font-family:'Share Tech Mono',monospace;background:rgba(255,255,255,.06);padding:1px 5px;border-radius:4px;font-size:12px}
+  .changelog{background:rgba(255,255,255,.04);border:1px solid var(--border-subtle);border-radius:14px;padding:14px 18px;margin-bottom:16px;font-size:13px;line-height:1.7}
+  .changelog h3{margin:0 0 8px;color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:.8px}
+  .qa-box, .open-box, .assume-box{border-radius:14px;padding:16px 18px;margin-bottom:16px;font-size:13px;line-height:1.65}
+  .qa-box{background:rgba(124,106,255,.06);border:1px solid rgba(124,106,255,.25)}
+  .qa-box h3{margin:0 0 10px;color:#b4a0ff;font-size:13px;text-transform:uppercase;letter-spacing:.8px}
+  .open-box{background:rgba(var(--ls-rgb),.06);border:1px solid rgba(var(--ls-rgb),.3)}
+  .open-box h3{margin:0 0 10px;color:#ffe08a;font-size:13px;text-transform:uppercase;letter-spacing:.8px}
+  .assume-box{background:rgba(255,120,40,.06);border:1px solid rgba(255,120,40,.3)}
+  .assume-box h3{margin:0 0 10px;color:#ffab7a;font-size:13px;text-transform:uppercase;letter-spacing:.8px}
+  .qa-box ol,.open-box ol,.assume-box ol{margin:0;padding-left:18px}
+  .qa-box li,.open-box li,.assume-box li{margin-bottom:8px}
+  .qa-box b,.open-box b,.assume-box b{color:#fff}
+
+  .section-title{max-width:1052px;margin:36px auto 16px;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.4);display:flex;align-items:center;gap:10px}
+  .section-title::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,rgba(255,255,255,.14),transparent)}
+  .section-title.new{color:#ffe08a}
+  .section-title.new::after{background:linear-gradient(90deg,rgba(255,204,51,.35),transparent)}
+
+  .compare-wrap{max-width:1052px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:28px}
+  .compare-col-label{font-size:11px;font-family:'Share Tech Mono',monospace;letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:7px;color:rgba(255,255,255,.5)}
+  .dot{width:8px;height:8px;border-radius:50%;display:inline-block}
+  .dot.old{background:#8a8fa3}
+  .dot.now{background:#ffcc33;box-shadow:0 0 8px rgba(255,204,51,.6)}
+  .hint-tap{font-size:11px;color:rgba(255,255,255,.32);margin-top:8px;font-family:'Share Tech Mono',monospace;text-align:center}
+
+  .phone-frame{width:360px;max-width:100%;margin:0 auto;background:var(--surface-0);border:1px solid rgba(255,255,255,.09);border-radius:26px;padding:18px 14px;box-shadow:0 20px 50px rgba(0,0,0,.5)}
+  .phone-frame.xl{width:430px}
+
+  .act-back-row{display:flex;align-items:center;gap:10px;margin-bottom:20px}
+  .act-back-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:var(--radius-sm);border:1px solid var(--border-mid);background:var(--surface-1);color:rgba(255,255,255,.58);font-size:12px;font-weight:500;cursor:pointer;font-family:inherit}
+  .act-back-btn i{font-size:14px}
+  .act-context-label{font-size:11px;color:rgba(255,255,255,.58);letter-spacing:.8px;text-transform:uppercase;font-family:'Share Tech Mono',monospace}
+  .act-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:4px}
+  .act-card{background:var(--surface-1);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:.875rem 1rem;cursor:pointer;transition:all var(--transition-fast);position:relative;overflow:hidden}
+  .full-act{grid-column:1/-1}
+
+  .dm-card{
+    --dma-rgb: var(--dm-accent-rgb, 124,106,255);
+    --dma-text-rgb: var(--dm-accent-text-rgb, 180,160,255);
+    position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;
+    padding:1.15rem 1.25rem;min-height:172px;border-radius:var(--radius-xl);
+    border:1px solid rgba(var(--dma-rgb),.2);
+    background:linear-gradient(160deg,#0c0820 0%,#150d30 55%,#0c0820 100%);
+    box-shadow:0 4px 24px rgba(var(--dma-rgb),.07);cursor:pointer;
+    transition:transform var(--transition-bounce),box-shadow var(--transition-fast),border-color var(--transition-fast);
+  }
+  .dm-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,rgb(var(--dma-rgb)),transparent);transform:scaleX(0);transition:transform var(--transition-fast);z-index:4}
+  .dm-card:hover{transform:translateY(-5px) scale(1.01);border-color:rgba(var(--dma-rgb),.35);box-shadow:0 12px 40px rgba(var(--dma-rgb),.2),0 0 0 1px rgba(var(--dma-rgb),.15),inset 0 1px 0 rgba(var(--dma-rgb),.1)}
+  .dm-card:hover::after{transform:scaleX(1)}
+  .dm-card:hover h3{color:rgb(var(--dma-text-rgb))}
+  .dm-card svg.bg{position:absolute;inset:0;width:100%;height:100%}
+  .dm-card .dm-badge{position:absolute;top:12px;right:12px;z-index:3;font-family:'Share Tech Mono',monospace;font-size:8px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 8px;border-radius:20px;background:rgba(var(--dma-rgb),.12);border:1px solid rgba(var(--dma-rgb),.35);color:rgb(var(--dma-text-rgb))}
+  .dm-card .dm-content{position:relative;z-index:3}
+  .dm-card .dm-icon{font-size:28px;margin-bottom:8px;display:block;filter:drop-shadow(0 0 8px rgba(var(--dma-rgb),.35));transition:transform var(--transition-bounce)}
+  .dm-card:hover .dm-icon{transform:scale(1.12)}
+  .dm-card h3{font-size:15px;font-weight:700;color:#fff;margin-bottom:4px;letter-spacing:-.2px}
+  .dm-card p{font-size:12px;color:rgba(255,255,255,.45);line-height:1.4;margin:0}
+  .dm-card .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:9px}
+  .dm-card .tag{font-size:9px;padding:2px 7px;border-radius:20px;font-weight:600;letter-spacing:.2px;background:rgba(var(--dma-rgb),.1);color:rgba(var(--dma-text-rgb),.8);border:1px solid rgba(var(--dma-rgb),.2)}
+
+  .game-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}
+  .ls-exit-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;border:1px solid rgba(var(--ls-rgb),.35);background:rgba(var(--ls-rgb),.1);color:#ffe08a;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+  .ls-exit-btn:hover{background:rgba(var(--ls-rgb),.18);border-color:rgba(var(--ls-rgb),.55)}
+
+  /* ===== Carosello 3 card — sostituisce il flip ===== */
+  .ls-counter{text-align:center;font-family:'Share Tech Mono',monospace;font-size:11px;letter-spacing:1.2px;text-transform:uppercase;color:#ffe08a;margin-bottom:14px}
+  .ls-carousel{position:relative;height:270px;margin-bottom:16px;overflow:hidden}
+  .ls-slide{
+    position:absolute;top:10px;left:50%;width:250px;height:250px;margin-left:-125px;
+    border-radius:var(--radius-lg);border:1px solid rgba(var(--ls-rgb),.3);
+    background:linear-gradient(160deg,#241c08 0%,#332708 55%,#241c08 100%);
+    box-shadow:var(--shadow-card);display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:1.3rem 1.2rem;
+    transition:transform .5s cubic-bezier(.4,.1,.2,1), opacity .5s ease, filter .5s ease;
+    will-change:transform;
+  }
+  .ls-veil{position:absolute;inset:0;border-radius:inherit;background:rgba(6,8,16,.6);opacity:0;transition:opacity .5s;pointer-events:none;z-index:2}
+  .ls-slide.side .ls-veil{opacity:1}
+  .ls-slide.side .ls-reveal-btn,.ls-slide.side .ls-detail-panel{display:none}
+  .ls-eyebrow{font-family:'Share Tech Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:#ffe08a;margin-bottom:12px;position:relative;z-index:1}
+  .ls-fact-text{font-size:14.5px;line-height:1.48;color:#f1ede0;font-weight:500;position:relative;z-index:1}
+  .ls-reveal-btn{margin-top:14px;display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:999px;border:1px solid rgba(var(--ls-rgb),.4);background:rgba(var(--ls-rgb),.1);color:#ffe08a;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit;position:relative;z-index:3}
+  .ls-reveal-btn:hover{background:rgba(var(--ls-rgb),.18)}
+  .ls-detail-panel{max-height:0;overflow:hidden;transition:max-height .4s ease;width:100%;position:relative;z-index:1}
+  .ls-detail-panel.open{max-height:100px;margin-top:10px;overflow-y:auto}
+  .ls-detail-inner{border-top:1px dashed rgba(var(--ls-rgb),.3);padding-top:9px;font-size:12.5px;line-height:1.48;color:rgba(255,255,255,.75)}
+
+  .ls-nav-row{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px}
+  .fc-nav-btn{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:var(--radius-sm);border:1px solid var(--border-mid);background:var(--surface-1);color:rgba(255,255,255,.7);cursor:pointer;font-size:16px}
+  .fc-nav-btn:hover:not(:disabled){border-color:rgba(var(--ls-rgb),.4);color:#ffe08a;background:rgba(var(--ls-rgb),.1)}
+  .fc-nav-btn:disabled{opacity:.3;cursor:not-allowed}
+  .ls-dots{display:flex;justify-content:center;gap:6px}
+  .ls-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.18);transition:all .3s;cursor:pointer}
+  .ls-dot.active{background:#ffcc33;width:18px;border-radius:4px}
+</style>
+</head>
+<body>
+
+  <div class="annot">
+    <h1>Mockup v2 — "Lo Sapevi?" — dopo il tuo feedback</h1>
+
+    <div class="changelog">
+      <h3>Cosa è cambiato rispetto alla v1</h3>
+      1) Motivo decorativo delle card corretto e arricchito (vedi assunzione sotto). &nbsp;
+      2) Onboarding tour: confermato in pausa, nessuna modifica in questo giro. &nbsp;
+      3) Sostituito il flip 3D con un'<b>espansione in-card</b> per l'approfondimento, per non confondere Lo Sapevi con Flip Card. &nbsp;
+      4) Schermata di lettura rifatta come <b>carosello a 3 card</b> (precedente/attuale/successiva) con velo e zoom, come richiesto.
+    </div>
+
+    <div class="assume-box">
+      <h3>Un'assunzione su cui vorrei conferma</h3>
+      <ol>
+        <li>Ho interpretato "nuova veste nessun dettaglio, ripristina dettagli" così: il motivo decorativo di Flip Card (le 2 card sovrapposte) nella v1, passando da card intera a metà larghezza, veniva <b>tagliato/schiacciato</b> dal ridimensionamento dell'SVG (il <code>preserveAspectRatio="slice"</code> zooma sull'immagine quando cambiano le proporzioni del contenitore, e il disegno era spostato verso destra). L'ho <b>ricentrato</b> nel disegno cosi da restare leggibile sia a larghezza piena che a metà, invece di spostare/duplicare elementi. Se intendevi altro (es. un dettaglio testuale mancante nella card, non decorativo), dimmelo meglio.</li>
+      </ol>
+    </div>
+
+    <div class="qa-box">
+      <h3>Decisioni prese in questo giro — da confermare</h3>
+      <ol>
+        <li><b>Niente più flip 3D per l'approfondimento.</b> Al suo posto: un pulsante <code>❓ Scopri di più</code> sotto il fatto, che apre in-card (verso il basso, dentro la stessa card) il testo di <code>detail</code>, con un divisore tratteggiato. La card non ruota mai: interazione visivamente e concettualmente diversa dal flip di Flip Card.</li>
+        <li><b>Carosello a 3 card</b>: precedente (sinistra, piccola, velata) — attuale (centro, grande, senza velo) — successiva (destra, piccola, velata). Le card laterali non sono cliccabili (solo anteprima) e non mostrano il pulsante di approfondimento, per non distrarre.</li>
+        <li><b>Casi limite</b>: sulla prima scheda non c'è la card "precedente" (resta solo attuale+successiva); sull'ultima non c'è la "successiva" — gestito automaticamente dalla posizione calcolata, non serve logica speciale.</li>
+        <li><b>Transizione</b>: spostamento orizzontale + zoom-in sulla card che diventa centrale e zoom-out su quella che si allontana, simultanei, stessa durata (0.5s).</li>
+        <li><b>Motivo "mistero"</b> aggiunto sulla card d'ingresso di Lo Sapevi: punti interrogativi decorativi accanto alla lampadina, oltre all'icona ❓ sul pulsante di approfondimento in lettura — per rinforzare "c'è altro da scoprire" senza somigliare a Flip Card.</li>
+        <li>Contatore in alto ("Curiosità 2 di 4") + pallini di paginazione sotto il carosello, al posto del badge d'angolo — più leggibile con 3 card visibili contemporaneamente e rinforza che è un carosello, non una singola card che gira.</li>
+      </ol>
+    </div>
+
+    <div class="open-box">
+      <h3>Domande aperte (invariate dalla v1)</h3>
+      <ol>
+        <li><b>Ordine delle schede</b>: ancora propongo l'ordine originale del JSON (niente shuffle) — confermi?</li>
+        <li><b>Sottotitolo card d'ingresso</b>: "Una curiosità alla volta" va bene o preferisci altro testo?</li>
+      </ol>
+    </div>
+
+    <p class="sub">
+      Interattivo: usa le frecce (o i pallini) sotto il carosello per scorrere; clicca <code>❓ Scopri di più</code> sulla card centrale per aprire l'approfondimento.
+      Vai alla prima o all'ultima scheda per vedere il comportamento ai bordi. La 3ª scheda non ha <code>detail</code>: niente pulsante, per verificare quel caso.
+      Contenuti di esempio inventati, tema "Identità e reputazione digitale".
+    </p>
+  </div>
+
+  <div class="section-title">Confronto — card d'ingresso corrette (motivo ricentrato + mistero aggiunto)</div>
+  <div class="compare-wrap">
+
+    <div>
+      <div class="compare-col-label"><span class="dot old"></span>Solo Flip Card (oggi)</div>
+      <div class="phone-frame">
+        <div class="act-back-row">
+          <button class="act-back-btn"><i class="ti ti-arrow-left"></i> Modalità</button>
+          <span class="act-context-label">Cyberbullismo — Modulo 1</span>
+        </div>
+        <div class="act-grid">
+          <div class="act-card dm-card full-act" role="button" tabindex="0" aria-label="Flip Card">
+            <span class="dm-badge">Didattica</span>
+            <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs><pattern id="grid-old" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#7c6aff" stroke-width=".4" opacity=".22"/></pattern></defs>
+              <rect width="660" height="180" fill="url(#grid-old)"/>
+              <rect x="270" y="44" width="118" height="86" rx="10" transform="rotate(-8 329 87)" fill="rgba(124,106,255,.05)" stroke="#7c6aff" stroke-width="1" opacity=".35"/>
+              <rect x="302" y="36" width="118" height="86" rx="10" fill="rgba(124,106,255,.07)" stroke="#a996ff" stroke-width="1.2" opacity=".55"/>
+              <ellipse cx="360" cy="88" rx="90" ry="58" fill="rgba(124,106,255,.05)"/>
+            </svg>
+            <div class="dm-content">
+              <span class="dm-icon">📇</span>
+              <h3>Flip Card</h3>
+              <p>Ripassa domanda → risposta</p>
+              <div class="tags"><span class="tag">Facile · Medio</span><span class="tag">Nessun punteggio</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hint-tap">motivo ricentrato: resta leggibile anche qui, a larghezza piena</div>
+    </div>
+
+    <div>
+      <div class="compare-col-label"><span class="dot now"></span>Flip Card + Lo Sapevi</div>
+      <div class="phone-frame">
+        <div class="act-back-row">
+          <button class="act-back-btn"><i class="ti ti-arrow-left"></i> Modalità</button>
+          <span class="act-context-label">Cyberbullismo — Modulo 1</span>
+        </div>
+        <div class="act-grid">
+          <div class="act-card dm-card" role="button" tabindex="0" aria-label="Flip Card">
+            <span class="dm-badge">Didattica</span>
+            <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs><pattern id="grid-fc2" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#7c6aff" stroke-width=".4" opacity=".22"/></pattern></defs>
+              <rect width="660" height="180" fill="url(#grid-fc2)"/>
+              <rect x="270" y="44" width="118" height="86" rx="10" transform="rotate(-8 329 87)" fill="rgba(124,106,255,.05)" stroke="#7c6aff" stroke-width="1" opacity=".35"/>
+              <rect x="302" y="36" width="118" height="86" rx="10" fill="rgba(124,106,255,.07)" stroke="#a996ff" stroke-width="1.2" opacity=".55"/>
+              <ellipse cx="360" cy="88" rx="90" ry="58" fill="rgba(124,106,255,.05)"/>
+            </svg>
+            <div class="dm-content">
+              <span class="dm-icon">📇</span>
+              <h3>Flip Card</h3>
+              <p>Ripassa domanda → risposta</p>
+              <div class="tags"><span class="tag">Facile · Medio</span><span class="tag">Nessun punteggio</span></div>
+            </div>
+          </div>
+          <div class="act-card dm-card" role="button" tabindex="0" aria-label="Lo Sapevi?"
+            style="--dm-accent-rgb: var(--ls-rgb); --dm-accent-text-rgb: var(--ls-text-rgb)">
+            <span class="dm-badge">Didattica</span>
+            <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+              <defs><pattern id="grid-ls" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#ffcc33" stroke-width=".4" opacity=".2"/></pattern></defs>
+              <rect width="660" height="180" fill="url(#grid-ls)"/>
+              <circle cx="330" cy="80" r="34" fill="rgba(255,204,51,.06)" stroke="#ffcc33" stroke-width="1.2" opacity=".5"/>
+              <path d="M316 92 q14 -22 28 0" fill="none" stroke="#ffe08a" stroke-width="1.4" opacity=".5"/>
+              <rect x="320" y="112" width="20" height="8" rx="2" fill="rgba(255,204,51,.1)" stroke="#ffcc33" stroke-width="1" opacity=".45"/>
+              <line x1="322" y1="120" x2="322" y2="124" stroke="#ffcc33" stroke-width="1" opacity=".4"/>
+              <line x1="330" y1="120" x2="330" y2="126" stroke="#ffcc33" stroke-width="1" opacity=".4"/>
+              <line x1="338" y1="120" x2="338" y2="124" stroke="#ffcc33" stroke-width="1" opacity=".4"/>
+              <line x1="330" y1="34" x2="330" y2="24" stroke="#ffcc33" stroke-width="1.5" opacity=".4" stroke-linecap="round"/>
+              <line x1="362" y1="46" x2="370" y2="38" stroke="#ffcc33" stroke-width="1.5" opacity=".35" stroke-linecap="round"/>
+              <line x1="298" y1="46" x2="290" y2="38" stroke="#ffcc33" stroke-width="1.5" opacity=".35" stroke-linecap="round"/>
+              <text x="252" y="52" font-size="22" fill="#ffcc33" opacity=".35" font-family="Georgia,serif">?</text>
+              <text x="404" y="64" font-size="16" fill="#ffe08a" opacity=".3" font-family="Georgia,serif">?</text>
+              <text x="392" y="132" font-size="28" fill="#ffcc33" opacity=".25" font-family="Georgia,serif">?</text>
+              <ellipse cx="330" cy="88" rx="90" ry="58" fill="rgba(255,204,51,.05)"/>
+            </svg>
+            <div class="dm-content">
+              <span class="dm-icon">💡</span>
+              <h3>Lo Sapevi?</h3>
+              <p>Una curiosità alla volta</p>
+              <div class="tags"><span class="tag">Fatti e curiosità</span><span class="tag">Nessun punteggio</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hint-tap">stesso motivo di Flip Card + lampadina e "?" per Lo Sapevi</div>
+    </div>
+
+  </div>
+
+  <div class="section-title new">Schermata di lettura — carosello a 3 card (interattivo)</div>
+
+  <div class="phone-frame xl">
+    <div class="game-header">
+      <button class="ls-exit-btn" onclick="lsExit()"><i class="ti ti-x"></i> Esci</button>
+    </div>
+    <div class="ls-counter" id="ls-counter"></div>
+    <div class="ls-carousel">
+      <div class="ls-carousel-track" id="ls-track"></div>
+    </div>
+    <div class="ls-nav-row">
+      <button class="fc-nav-btn" id="ls-prev" onclick="lsNav(-1)"><i class="ti ti-chevron-left"></i></button>
+      <div class="ls-dots" id="ls-dots"></div>
+      <button class="fc-nav-btn" id="ls-next" onclick="lsNav(1)"><i class="ti ti-chevron-right"></i></button>
+    </div>
+  </div>
+
+  <div class="qa-box" style="max-width:1052px;margin:36px auto 0">
+    <h3>Nota tecnica — cosa cambia in produzione (quando approvi)</h3>
+    <ol>
+      <li>Card "Lo Sapevi?" nuova dentro <code>#step-didattica</code> in <code>index.html</code>, subito dopo Flip Card; <code>full-act</code> rimosso dalla card Flip Card esistente. SVG decorativa di entrambe ricentrata come in questo mockup, per reggere sia piena larghezza che metà.</li>
+      <li>Nuovo file <code>js/lo-sapevi.js</code> (isolato, come <code>js/flip-card.js</code>): niente più macchina di flip 3D (<code>backface-visibility</code>, <code>rotateY</code>) — al suo posto, stato minimo <code>{items, index}</code> e una funzione che riposiziona con <code>transform: translateX() scale()</code> tutte le card ad ogni navigazione. Interazione di apertura/chiusura dettaglio isolata per card (max-height).</li>
+      <li>Nuovo file <code>css/lo-sapevi.css</code>: riuso più limitato di <code>flip-card.css</code> rispetto alla stima iniziale, perché il modello di interazione ora è diverso (carosello + espansione, non flip) — stimo comunque riusabili i pattern di header/nav/badge.</li>
+      <li>Nessuna modifica a <code>game-engine-state.js</code> per lo stato di sessione: niente punteggio, niente timer.</li>
+      <li><code>OnboardingTour</code>: confermato in pausa, se ne parla dopo la messa in produzione.</li>
+      <li>Bump di versione nelle 6 posizioni standard (<code>package.json</code> + 5 in <code>index.html</code>).</li>
+    </ol>
+  </div>
+
+<script>
+  const LS_DATA = [
+    { fact: "Ogni like, commento o ricerca online contribuisce a costruire un'impronta digitale che ti rappresenta anche quando non sei connesso.",
+      detail: "Le aziende usano questi dati per creare profili pubblicitari sempre più precisi, spesso senza che tu te ne accorga." },
+    { fact: "Cancellare un post non significa farlo sparire per sempre.",
+      detail: "Prima della cancellazione, altri utenti potrebbero averlo salvato, condiviso o fotografato con uno screenshot." },
+    { fact: "Il \"diritto all'oblio\" ti permette di chiedere la rimozione di informazioni obsolete su di te dai motori di ricerca." },
+    { fact: "La tua reputazione digitale può influenzare selezioni scolastiche, borse di studio e persino colloqui di lavoro futuri.",
+      detail: "Molti selezionatori cercano il nome dei candidati sui social prima ancora del primo colloquio." }
+  ];
+  let lsIndex = 1;
+  const STEP = 155;
+
+  function lsBuild(){
+    const track = document.getElementById('ls-track');
+    track.innerHTML = LS_DATA.map((item,i) => `
+      <div class="ls-slide" data-idx="${i}">
+        <div class="ls-veil"></div>
+        <div class="ls-eyebrow">// Lo sapevi?</div>
+        <div class="ls-fact-text">${item.fact}</div>
+        ${item.detail ? `
+          <button class="ls-reveal-btn" onclick="lsToggleDetail(event)">❓ <span>Scopri di più</span></button>
+          <div class="ls-detail-panel"><div class="ls-detail-inner">${item.detail}</div></div>
+        ` : ''}
+      </div>`).join('');
+    document.getElementById('ls-dots').innerHTML = LS_DATA.map((_,i) => `<span class="ls-dot" onclick="lsGoTo(${i})"></span>`).join('');
+    lsRender();
+  }
+
+  function lsRender(){
+    document.querySelectorAll('.ls-slide').forEach(el => {
+      const i = parseInt(el.dataset.idx, 10);
+      const offset = i - lsIndex;
+      const abs = Math.abs(offset);
+      let scale, opacity, blur, z, pe;
+      if(offset === 0){ scale=1; opacity=1; blur=0; z=5; pe='auto'; el.classList.remove('side'); }
+      else if(abs === 1){ scale=.72; opacity=.55; blur=.6; z=3; pe='none'; el.classList.add('side'); }
+      else { scale=.58; opacity=0; blur=1; z=1; pe='none'; el.classList.add('side'); }
+      el.style.transform = `translateX(${offset*STEP}px) scale(${scale})`;
+      el.style.opacity = opacity;
+      el.style.filter = `blur(${blur}px)`;
+      el.style.zIndex = z;
+      el.style.pointerEvents = pe;
+    });
+    document.getElementById('ls-counter').textContent = 'Curiosità ' + (lsIndex+1) + ' di ' + LS_DATA.length;
+    document.getElementById('ls-prev').disabled = lsIndex === 0;
+    document.getElementById('ls-next').disabled = lsIndex === LS_DATA.length - 1;
+    document.querySelectorAll('.ls-dot').forEach((d,i) => d.classList.toggle('active', i===lsIndex));
+  }
+
+  function lsCloseAllDetails(){
+    document.querySelectorAll('.ls-detail-panel.open').forEach(p => p.classList.remove('open'));
+    document.querySelectorAll('.ls-reveal-btn span').forEach(s => s.textContent = 'Scopri di più');
+  }
+  function lsNav(dir){
+    const n = lsIndex + dir;
+    if(n < 0 || n >= LS_DATA.length) return;
+    lsIndex = n; lsCloseAllDetails(); lsRender();
+  }
+  function lsGoTo(i){ lsIndex = i; lsCloseAllDetails(); lsRender(); }
+  function lsToggleDetail(evt){
+    const btn = evt.currentTarget;
+    const panel = btn.nextElementSibling;
+    const span = btn.querySelector('span');
+    const opening = !panel.classList.contains('open');
+    panel.classList.toggle('open');
+    span.textContent = opening ? 'Nascondi' : 'Scopri di più';
+  }
+  function lsExit(){
+    if(confirm('Uscire da Lo Sapevi?\n\n(in produzione: stessa conferma di Flip Card — "Uscendo tornerai alla scelta del metodo di studio in Didattica.")')){
+      window.scrollTo({top:0, behavior:'smooth'});
+    }
+  }
+  lsBuild();
+</script>
+
+</body>
+</html>

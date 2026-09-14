@@ -1,0 +1,310 @@
+[
+  {
+    "id": 1,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Le istruzioni sono le indicazioni che forniamo a un sistema di AI per dirgli cosa deve fare, come farlo e quale risultato vogliamo ottenere.",
+    "source_id": 1
+  },
+  {
+    "id": 2,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Una buona istruzione non deve essere necessariamente lunga: ciò che conta davvero è la chiarezza.",
+    "source_id": 2
+  },
+  {
+    "id": 3,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Aggiungere parole a caso non rende automaticamente un prompt migliore.",
+    "source_id": 3
+  },
+  {
+    "id": 4,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "L'obiettivo di una buona istruzione è ridurre l'ambiguità e guidare l'AI verso il risultato desiderato.",
+    "source_id": 4
+  },
+  {
+    "id": 5,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "L'AI generativa non interpreta una richiesta come farebbe una persona che conosce già le nostre intenzioni.",
+    "source_id": 5
+  },
+  {
+    "id": 6,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Il prompt può essere pensato come una consegna di lavoro: più è formulata con chiarezza, più è facile ottenere un risultato coerente.",
+    "source_id": 6
+  },
+  {
+    "id": 7,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "La differenza tra una richiesta vaga e una precisa non sta nella tecnologia utilizzata, ma nella qualità della comunicazione tra la persona e il sistema.",
+    "source_id": 7
+  },
+  {
+    "id": 8,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Più chiaramente descriviamo ciò che vogliamo ottenere, meno spazio lasciamo all'interpretazione del sistema.",
+    "source_id": 8
+  },
+  {
+    "id": 9,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Il contesto è l'insieme delle informazioni che forniamo all'AI per comprendere meglio situazione, obiettivo e dati necessari.",
+    "source_id": 9
+  },
+  {
+    "id": 10,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "L'istruzione e il contesto non sono la stessa cosa: l'istruzione indica cosa fare, mentre il contesto fornisce gli elementi necessari per farlo in modo appropriato.",
+    "source_id": 10
+  },
+  {
+    "id": 11,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Il contesto permette all'AI di restringere lo spazio delle possibili interpretazioni di una richiesta.",
+    "source_id": 11
+  },
+  {
+    "id": 12,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Un contesto eccessivamente lungo, confuso o contraddittorio può rendere più difficile, non più facile, ottenere una risposta utile.",
+    "source_id": 12
+  },
+  {
+    "id": 13,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Nella costruzione di un prompt efficace vale il principio delle informazioni pertinenti, ordinate e sufficienti.",
+    "source_id": 13
+  },
+  {
+    "id": 14,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Una risposta convincente non è necessariamente anche una risposta corretta.",
+    "source_id": 14
+  },
+  {
+    "id": 15,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Dire soltanto «Non sto bene» è un'informazione vera, ma da sola non basta a inquadrare una situazione: servono dettagli più precisi per essere davvero utili.",
+    "source_id": 15
+  },
+  {
+    "id": 16,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Nel Prompt Engineering, il ruolo è l'identità, la prospettiva o la funzione che chiediamo a un'AI di assumere durante lo svolgimento di un compito.",
+    "source_id": 16
+  },
+  {
+    "id": 17,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Chiedere a un'AI di assumere un ruolo non la trasforma realmente in quella figura professionale: si tratta di fornire una cornice operativa che orienta il tipo di risposta prodotta.",
+    "source_id": 17
+  },
+  {
+    "id": 18,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Assegnare un ruolo all'AI può essere utile per ottenere una determinata prospettiva o un certo livello di linguaggio nella risposta.",
+    "source_id": 18
+  },
+  {
+    "id": 19,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Il ruolo assegnato a un'AI non è una garanzia di competenza.",
+    "source_id": 19
+  },
+  {
+    "id": 20,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Assegnare un ruolo modifica il modo in cui il sistema costruisce la risposta, ma non rende automaticamente vere le informazioni prodotte.",
+    "source_id": 20
+  },
+  {
+    "id": 21,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "La ricerca ha mostrato che modificare il prompt non elimina completamente i limiti di un modello di AI.",
+    "source_id": 21
+  },
+  {
+    "id": 22,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Un buon prompt può combinare istruzioni, contesto e ruolo.",
+    "source_id": 22
+  },
+  {
+    "id": 23,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Gli esempi, nel Prompt Engineering, sono casi dimostrativi inseriti nel prompt per mostrare all'AI come svolgere un compito.",
+    "source_id": 23
+  },
+  {
+    "id": 24,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "La tecnica che fornisce pochi esempi nel prompt si chiama few-shot prompting; lo zero-shot prompting è invece l'opposto, cioè un compito richiesto senza esempi.",
+    "source_id": 24
+  },
+  {
+    "id": 25,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Un compito richiesto a un'AI senza fornire esempi specifici si chiama zero-shot prompting.",
+    "source_id": 25
+  },
+  {
+    "id": 26,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Gli esempi inseriti in un prompt possono essere utilizzati anche per controllare il formato della risposta.",
+    "source_id": 26
+  },
+  {
+    "id": 27,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Esempi ambigui o contraddittori possono confondere un modello di AI invece di aiutarlo a capire meglio il compito.",
+    "source_id": 27
+  },
+  {
+    "id": 28,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Fornire esempi nel contesto di un prompt può permettere a un modello di adattarsi a un compito senza dover essere nuovamente addestrato.",
+    "source_id": 28
+  },
+  {
+    "id": 29,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Un esempio pratico può rendere visibile ciò che le parole da sole potrebbero lasciare ambiguo, come mostrare come piegare una camicia invece di descriverlo soltanto a parole.",
+    "source_id": 29
+  },
+  {
+    "id": 30,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Le tecniche avanzate di Prompt Engineering servono a strutturare richieste complesse e guidare il modello attraverso più passaggi.",
+    "source_id": 30
+  },
+  {
+    "id": 31,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Quando un compito è semplice, può essere sufficiente una singola istruzione ben formulata.",
+    "source_id": 31
+  },
+  {
+    "id": 32,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Definire chiaramente il formato dell'output è una delle tecniche avanzate di Prompt Engineering.",
+    "source_id": 32
+  },
+  {
+    "id": 33,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Il principio secondo cui un problema complesso viene separato in parti più semplici si chiama divide et impera.",
+    "source_id": 33
+  },
+  {
+    "id": 34,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Nessuna tecnica di prompting, per quanto avanzata, garantisce automaticamente una risposta corretta.",
+    "source_id": 34
+  },
+  {
+    "id": 35,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Un prompt può guidare un modello di AI, ma non ne controlla completamente il risultato prodotto.",
+    "source_id": 35
+  },
+  {
+    "id": 36,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Un prompt sofisticato non elimina le allucinazioni, gli errori logici o le informazioni inventate da un modello di AI.",
+    "source_id": 36
+  },
+  {
+    "id": 37,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Un progetto con l'AI è un'attività articolata in più fasi utilizzata come strumento di supporto per raggiungere un obiettivo preciso.",
+    "source_id": 37
+  },
+  {
+    "id": 38,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Un progetto svolto con l'aiuto dell'AI richiede di definire obiettivo, fasi di lavoro, materiali, vincoli e risultato finale, non soltanto l'obiettivo.",
+    "source_id": 38
+  },
+  {
+    "id": 39,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Un prompt cerca di ottenere una risposta, mentre un progetto organizza una serie di attività per raggiungere un risultato.",
+    "source_id": 39
+  },
+  {
+    "id": 40,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Quando un'AI accompagna una persona in un progetto, il controllo resta comunque alla persona, non passa all'AI.",
+    "source_id": 40
+  },
+  {
+    "id": 41,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Nei progetti complessi svolti con l'AI conviene procedere per passi, dividendo il lavoro in parti più piccole e verificabili.",
+    "source_id": 41
+  },
+  {
+    "id": 42,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Più un progetto è importante, più è necessario verificare ciò che l'AI produce, non meno.",
+    "source_id": 42
+  },
+  {
+    "id": 43,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "L'AI può accelerare un progetto, ma non sostituisce il controllo umano su di esso.",
+    "source_id": 43
+  },
+  {
+    "id": 44,
+    "module": "prompt-engineering",
+    "type": "curiosity",
+    "fact": "Se durante un progetto articolato in più fasi manca un elemento o emerge un problema, spesso si può intervenire subito senza dover ricominciare tutto da capo, un po' come aggiustare una ricetta a metà preparazione invece di rifare l'intera cena.",
+    "source_id": 44
+  }
+]

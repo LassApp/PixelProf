@@ -1,0 +1,282 @@
+[
+  {
+    "id": 1,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Un watermark è un'informazione inserita all'interno di un contenuto digitale per identificarlo o attribuirne l'origine.",
+    "source_id": 1
+  },
+  {
+    "id": 2,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Un watermark invisibile non è percepibile direttamente dall'utente, a differenza di una scritta sopra l'immagine: è incorporato nei dati del contenuto stesso.",
+    "source_id": 2
+  },
+  {
+    "id": 3,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "I watermark invisibili più moderni cercano di resistere a modifiche comuni come compressione, filtri o ridimensionamento.",
+    "source_id": 3
+  },
+  {
+    "id": 4,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Un watermark tradizionale visibile, come una scritta nell'angolo di un'immagine, può essere facilmente rimosso, per esempio ritagliando l'immagine.",
+    "source_id": 4
+  },
+  {
+    "id": 5,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Google utilizza SynthID per incorporare watermark invisibili nei contenuti generati dai propri sistemi AI.",
+    "source_id": 5
+  },
+  {
+    "id": 6,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "L'assenza di un watermark non dimostra automaticamente che un contenuto sia autentico.",
+    "source_id": 6
+  },
+  {
+    "id": 7,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Nel 2023 Google DeepMind presentò SynthID inizialmente per identificare immagini generate con Imagen.",
+    "source_id": 7
+  },
+  {
+    "id": 8,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Il watermark è uno strumento di verifica, non una prova assoluta di autenticità di un contenuto.",
+    "source_id": 8
+  },
+  {
+    "id": 9,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "SynthID è una tecnologia sviluppata da Google DeepMind per inserire watermark digitali invisibili nei contenuti generati dall'AI.",
+    "source_id": 9
+  },
+  {
+    "id": 10,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "SynthID non è stata pensata esclusivamente per le immagini: è stata estesa anche a testo, audio e video.",
+    "source_id": 10
+  },
+  {
+    "id": 11,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Il watermark di SynthID viene integrato direttamente nei pixel di un'immagine.",
+    "source_id": 11
+  },
+  {
+    "id": 12,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "SynthID non è un detector universale capace di riconoscere infallibilmente ogni contenuto generato dall'AI: funziona soltanto sui contenuti che portano il proprio watermark.",
+    "source_id": 12
+  },
+  {
+    "id": 13,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Se un'immagine non contiene il watermark di SynthID, non si può concludere con certezza che sia stata realizzata da una persona: potrebbe provenire da un altro sistema di AI.",
+    "source_id": 13
+  },
+  {
+    "id": 14,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "L'espressione «ad fontes» significa «alle fonti» e invita a verificare la provenienza di un contenuto.",
+    "source_id": 14
+  },
+  {
+    "id": 15,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Nel 2024 Google DeepMind ha annunciato l'estensione di SynthID a testo e musica generati dall'AI.",
+    "source_id": 15
+  },
+  {
+    "id": 16,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "L'obiettivo dichiarato dell'estensione di SynthID era contribuire all'identificazione dei contenuti generati dall'AI senza alterarne significativamente la qualità percepita.",
+    "source_id": 16
+  },
+  {
+    "id": 17,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "I Content Credentials sono informazioni digitali che permettono di documentare la provenienza di un contenuto.",
+    "source_id": 17
+  },
+  {
+    "id": 18,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "I Content Credentials sono basati sullo standard C2PA, sviluppato per fornire informazioni verificabili sulla provenienza dei contenuti digitali.",
+    "source_id": 18
+  },
+  {
+    "id": 19,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Il watermark e i Content Credentials non sono esattamente la stessa cosa: il watermark lascia una traccia dentro il contenuto, mentre i Content Credentials lo accompagnano con informazioni strutturate.",
+    "source_id": 19
+  },
+  {
+    "id": 20,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Le firme digitali dello standard C2PA permettono di verificare che le informazioni sulla provenienza non siano state alterate dopo essere state firmate.",
+    "source_id": 20
+  },
+  {
+    "id": 21,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "I Content Credentials non possono sempre raccontare l'intera storia di un contenuto: alcuni passaggi possono andare perduti se le informazioni non vengono conservate lungo il percorso.",
+    "source_id": 21
+  },
+  {
+    "id": 22,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Adobe ha integrato i Content Credentials nei propri strumenti creativi.",
+    "source_id": 22
+  },
+  {
+    "id": 23,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Sapere che un contenuto è stato modificato con un certo strumento non significa automaticamente sapere se ciò che rappresenta è vero: provenienza e verità sono concetti distinti.",
+    "source_id": 23
+  },
+  {
+    "id": 24,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "I Content Credentials possono essere paragonati all'etichetta di un pacco spedito, che documenta la provenienza di un contenuto digitale.",
+    "source_id": 24
+  },
+  {
+    "id": 25,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "La provenienza digitale non riguarda soltanto chi ha creato un contenuto, ma anche come è stato prodotto, quali modifiche ha subito e come è stato diffuso.",
+    "source_id": 25
+  },
+  {
+    "id": 26,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "La sequenza tipica della provenienza digitale di un contenuto è: origine, creazione, modifica, pubblicazione, diffusione.",
+    "source_id": 26
+  },
+  {
+    "id": 27,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Watermark, SynthID e Content Credentials possono lavorare insieme, ma non sono strumenti equivalenti tra loro.",
+    "source_id": 27
+  },
+  {
+    "id": 28,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Un contenuto con provenienza documentata può comunque rappresentare una situazione falsa: documentare la provenienza non garantisce la veridicità di ciò che il contenuto mostra.",
+    "source_id": 28
+  },
+  {
+    "id": 29,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Una didascalia di una fotografia può essere stata aggiunta molto tempo dopo la pubblicazione originale dell'immagine, cambiandone il significato senza modificare l'immagine stessa.",
+    "source_id": 29
+  },
+  {
+    "id": 30,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Nel 2024 l'agenzia Reuters ha annunciato l'utilizzo di Content Credentials basati sullo standard C2PA per alcune proprie immagini.",
+    "source_id": 30
+  },
+  {
+    "id": 31,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Documentare la provenienza nel giornalismo aggiunge trasparenza, ma non garantisce automaticamente che una fotografia racconti la verità.",
+    "source_id": 31
+  },
+  {
+    "id": 32,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Come in una catena di custodia, a ogni passaggio della provenienza digitale viene registrato chi ha ricevuto il contenuto, quando e cosa è stato fatto su di esso.",
+    "source_id": 32
+  },
+  {
+    "id": 33,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "I limiti della provenienza digitale impediscono agli strumenti di garantire da soli che un contenuto sia autentico, completo, corretto o vero.",
+    "source_id": 33
+  },
+  {
+    "id": 34,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Non tutti i contenuti digitali possiedono un watermark o dei Content Credentials.",
+    "source_id": 34
+  },
+  {
+    "id": 35,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Un contenuto può perdere parte delle informazioni di provenienza se viene scaricato, convertito o pubblicato attraverso servizi che non le conservano.",
+    "source_id": 35
+  },
+  {
+    "id": 36,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "La provenienza documentata non dimostra sempre la verità di un contenuto: anche una fotografia autentica può essere usata per raccontare qualcosa di falso.",
+    "source_id": 36
+  },
+  {
+    "id": 37,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Una fotografia autentica può essere accompagnata da una didascalia falsa o mostrata fuori dal suo contesto originale.",
+    "source_id": 37
+  },
+  {
+    "id": 38,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Un approccio solido alla verifica dei contenuti generati dall'AI dovrebbe combinare più elementi, non affidarsi a un singolo indicatore come il solo watermark.",
+    "source_id": 38
+  },
+  {
+    "id": 39,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Interpretare le tracce lasciate dalla tecnologia, come watermark e Content Credentials, rimane comunque un compito umano.",
+    "source_id": 39
+  },
+  {
+    "id": 40,
+    "module": "provenienza-dei-contenuti",
+    "type": "curiosity",
+    "fact": "Come il libretto dei tagliandi di un'automobile usata, la provenienza documentata di un contenuto non garantisce da sola la sua perfezione o autenticità: serve comunque una verifica diretta.",
+    "source_id": 40
+  }
+]

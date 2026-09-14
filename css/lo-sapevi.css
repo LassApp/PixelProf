@@ -1,8 +1,15 @@
 /* ==================================================
-   lo-sapevi.css — PixelProf v8.30.0 (Didattica · Lo Sapevi?)
+   lo-sapevi.css — PixelProf v8.31.0 (Didattica · Lo Sapevi?)
    Seconda modalità didattica, complementare a Flip Card
    (css/flip-card.css): stesso principio di card di studio,
    formato e provenienza dei dati diversi — vedi Lo_Sapevi.md.
+
+   v8.31.0: paginazione a pallini (.ls-dots) RIMOSSA e sostituita da
+   una barra di avanzamento a larghezza fissa (.ls-progress-track/
+   .ls-progress-fill) — con moduli da centinaia di schede i pallini
+   traboccavano ed erano comunque poco leggibili in dark (dettagli
+   nel changelog di js/lo-sapevi.js). Aggiunto anche .ls-breadcrumb
+   nell'header.
 
    Variabili riusate da :root (pixelprof.css): --border-subtle,
    --border-mid, --surface-1, --radius-sm/lg, --transition-fast,
@@ -54,6 +61,21 @@
   }
   .ls-exit-btn::after{ background: #ffcc33; }
 
+  /* -- Breadcrumb "Area — Modulo — Sotto-modulo" nell'header, accanto
+     a Esci (right-aligned via .game-header{justify-content:space-between}
+     già in pixelprof.css). Terzo livello presente solo per i moduli
+     ECDL — vedi _lsBreadcrumb() in js/lo-sapevi.js. -- */
+  .ls-breadcrumb{
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,.58);
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    text-align: right;
+    max-width: 60%;
+    line-height: 1.4;
+  }
+
   /* -- Contatore testuale sopra il carosello ("Curiosità 2 di 4") -- */
   .ls-counter{
     text-align: center;
@@ -62,7 +84,27 @@
     letter-spacing: 1.2px;
     text-transform: uppercase;
     color: #ffe08a;
-    margin-bottom: 14px;
+    margin-bottom: 8px;
+  }
+
+  /* -- Barra di avanzamento — sostituisce la paginazione a pallini
+     (v8.31.0): larghezza FISSA indipendentemente dal numero di
+     schede, quindi non trabocca mai né spinge le frecce prec/succ
+     fuori dalla riga di navigazione, a differenza di un pallino per
+     scheda su moduli con centinaia di curiosità. -- */
+  .ls-progress-track{
+    width: min(220px, 70%);
+    height: 4px;
+    margin: 0 auto 16px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.16);
+    overflow: hidden;
+  }
+  .ls-progress-fill{
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg, #ffcc33, #ffe08a);
+    transition: width .4s ease;
   }
 
   /* -- Carosello — viewport che ritaglia le card laterali -- */
@@ -198,16 +240,6 @@
   }
   .ls-nav-btn:disabled{ opacity: .3; cursor: not-allowed; }
 
-  .ls-dots{ display: flex; justify-content: center; gap: 6px; }
-  .ls-dot{
-    width: 6px; height: 6px; border-radius: 50%;
-    background: rgba(255,255,255,.18);
-    transition: all .3s;
-    cursor: pointer;
-    border: none; padding: 0;
-  }
-  .ls-dot.active{ background: #ffcc33; width: 18px; border-radius: 4px; }
-
   @media (prefers-reduced-motion: reduce){
     .ls-slide{ transition: none; }
     .ls-detail-panel{ transition: none; }
@@ -231,6 +263,8 @@
     color: #6b5500;
   }
   html[data-theme="light"] .ls-counter{ color: #a37d00; }
+  html[data-theme="light"] .ls-breadcrumb{ color: rgba(16,24,42,.55); }
+  html[data-theme="light"] .ls-progress-track{ background: rgba(20,30,60,.14); }
   html[data-theme="light"] .ls-nav-btn{
     background: rgba(20,30,60,.04);
     border-color: rgba(20,30,60,.14);
@@ -241,6 +275,4 @@
     border-color: rgba(255,180,0,.4);
     color: #8a6d00;
   }
-  html[data-theme="light"] .ls-dot{ background: rgba(20,30,60,.14); }
-  html[data-theme="light"] .ls-dot.active{ background: #cc9900; }
 }

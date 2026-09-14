@@ -1,8 +1,31 @@
 /* ==================================================
-   flip-card.js — PixelProf v8.28.0 (Didattica · Flip Card)
+   flip-card.js — PixelProf v8.32.0 (Didattica · Flip Card)
    Prima "attività didattica" di PixelProf, accanto ai
    Minigiochi: mazzo di carte domanda/risposta con flip 3D,
    caricato da CSV dedicati per modulo + livello.
+
+   v8.32.0: terzo livello del breadcrumb (sotto-modulo ECDL) reso
+   dinamico, come richiesto da Erasmo dopo la v8.31.0. FLIPCARD_MODULE_MAP
+   porta ora anche "subs: [...]" per le 5 chiavi ECDL (stesse etichette
+   già usate in js/lo-sapevi.js), _fcRowsToCards(rows, sub) tagga ogni
+   carta con la sua provenienza, _fcUpdateFaces() ricalcola il
+   breadcrumb ad ogni carta mostrata (necessario perché _fcShuffle
+   mescola le sotto-schede ECDL nella stessa sessione).
+
+   v8.31.0: breadcrumb "Area — Modulo" nell'header (_fcBreadcrumb(),
+   vicino a "Esci"), su richiesta di Erasmo — stessa aggiunta gemella
+   in js/lo-sapevi.js. Qui è STATICO per tutta la sessione (Area —
+   Modulo soltanto, niente terzo livello "sotto-modulo" ECDL): Flip
+   Card mescola il mazzo (_fcShuffle) fra tutte le sotto-schede ECDL,
+   e le righe CSV non portano oggi un tag di provenienza per singola
+   carta — aggiungerlo sarebbe un cambio più invasivo, rimandato in
+   attesa di conferma di Erasmo (vedi commento esteso su _fcBreadcrumb()
+   più sotto).
+
+   v8.30.0: aggiunto il ramo 'losapevi' in selDidattica() (12 righe),
+   unico punto di aggancio con la seconda modalità didattica — vedi
+   js/lo-sapevi.js per l'implementazione completa. Comportamento del
+   ramo 'flipcard' invariato byte per byte.
 
    v8.28.0: richiesta esplicita utente — autovalutazione ✕/✓ +
    ordine casuale del mazzo. Approvato su mockup-flipcard-v2.html.
@@ -251,6 +274,7 @@ const FLIPCARD_MODULE_MAP = {
       'data/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo3/Flip_Card_Medio_Modulo_3.csv',
       'data/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo4/Flip_Card_Medio_Modulo_4.csv',
     ],
+    subs: ['Fondamenti digitali', 'CPU e architettura', 'Memorie', 'Software'],
   },
   OE: {
     facile: [
@@ -265,6 +289,7 @@ const FLIPCARD_MODULE_MAP = {
       'data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo3/Flip_Card_Medio_Modulo_3.csv',
       'data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo4/Flip_Card_Medio_Modulo_4.csv',
     ],
+    subs: ['Rete e dati', 'Identità e comunicazione', 'Navigazione e tracciamento', 'Sicurezza e comportamento online'],
   },
   WP: {
     facile: [
@@ -281,6 +306,7 @@ const FLIPCARD_MODULE_MAP = {
       'data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo4/Flip_Card_Medio_Modulo_4.csv',
       'data/Didattica/Flip_Card/ECDL/Word_Processing/Modulo5/Flip_Card_Medio_Modulo_5.csv',
     ],
+    subs: ['Word e ambiente', 'Scrivere e salvare', 'Formattare il testo', 'Elementi grafici', 'Strutturare il documento'],
   },
   SS: {
     facile: [
@@ -297,6 +323,7 @@ const FLIPCARD_MODULE_MAP = {
       'data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo4/Flip_Card_Medio_Modulo_4.csv',
       'data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo5/Flip_Card_Medio_Modulo_5.csv',
     ],
+    subs: ['Excel e l\'ambiente di lavoro', 'Inserire e gestire i dati', 'Formattare il foglio', 'Formule e calcoli', 'Organizzare e visualizzare i dati'],
   },
   PP: {
     facile: [
@@ -309,6 +336,7 @@ const FLIPCARD_MODULE_MAP = {
       'data/Didattica/Flip_Card/ECDL/Presentation/Modulo2/Flip_Card_Medio_Modulo_2.csv',
       'data/Didattica/Flip_Card/ECDL/Presentation/Modulo3/Flip_Card_Medio_Modulo_3.csv',
     ],
+    subs: ['Creare una presentazione', 'Oggetti grafici', 'Preparare e presentare'],
   },
   'fondamenti-cybersecurity': { facile: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo1/Flip_Card_Facile_Modulo_1.csv'], medio: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo1/Flip_Card_Medio_Modulo_1.csv'] },
   'sicurezza-account': { facile: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo2/Flip_Card_Facile_Modulo_2.csv'], medio: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo2/Flip_Card_Medio_Modulo_2.csv'] },
@@ -402,7 +430,11 @@ function _fcParseCsv(text){
 
 /* Righe grezze -> [{q,a}]. Scarta un'eventuale riga di
    intestazione (domanda,risposta) e le righe senza risposta. */
-function _fcRowsToCards(rows){
+/* v8.32.0: "sub" opzionale — etichetta del sotto-modulo ECDL di
+   provenienza di queste righe (es. "CPU e architettura"), null per i
+   moduli non-ECDL (un solo file, nessun sotto-modulo). Serve al
+   terzo livello dinamico del breadcrumb in _fcUpdateFaces(). */
+function _fcRowsToCards(rows, sub){
   if(!rows.length) return [];
   let start = 0;
   const head = (rows[0][0] || '').toLowerCase();
@@ -410,7 +442,7 @@ function _fcRowsToCards(rows){
   const cards = [];
   for(let i = start; i < rows.length; i++){
     const q = rows[i][0], a = rows[i][1];
-    if(q && a) cards.push({ q, a });
+    if(q && a) cards.push({ q, a, sub: sub || null });
   }
   return cards;
 }
@@ -452,13 +484,19 @@ const FlipCardLoader = (function(){
     if(cache[k]) return cache[k];
     const rels = (_entry(mod) || {})[liv];
     if(!rels || !rels.length) throw new Error('[FlipCard] Livello non registrato: "' + mod + '/' + liv + '".');
+    // v8.32.0: subs[i] è l'etichetta del sotto-modulo per rels[i] —
+    // stesso indice, presente solo per le chiavi ECDL (vedi
+    // FLIPCARD_MODULE_MAP). undefined per le altre chiavi: _fcRowsToCards
+    // normalizza già a null in quel caso.
+    const subs = (_entry(mod) || {}).subs;
     const cards = [];
-    for(const rel of rels){
+    for(let i = 0; i < rels.length; i++){
+      const rel = rels[i];
       const url = _resolveJsonPath(rel);
       const res = await fetch(url);
       if(!res.ok) throw new Error(`[FlipCard] HTTP ${res.status} — ${url}`);
       const text = await res.text();
-      cards.push(..._fcRowsToCards(_fcParseCsv(text)));
+      cards.push(..._fcRowsToCards(_fcParseCsv(text), subs && subs[i]));
     }
     return cache[k] = cards;
   }
@@ -517,11 +555,28 @@ function _fcStateHTML({ icon, title, msg, color }){
    game-restart-btn (più colorato, fa risaltare l'accoppiata);
    qui è da sola ed era poco visibile in dark — fc-exit-btn le
    dà un contrasto proprio, tema viola coerente con Didattica. */
+/* v8.31.0: breadcrumb "Area — Modulo" (v8.32.0: + "— Sotto-modulo"
+   dinamico per ECDL) aggiunto su richiesta di Erasmo (stessa modifica
+   gemella in lo-sapevi.js/_lsBreadcrumb). A differenza della prima
+   versione (v8.31.0, statica), ora è AGGIORNATO scheda per scheda da
+   _fcUpdateFaces(): Flip Card mescola il mazzo (_fcShuffle) fra tutte
+   le sotto-schede ECDL nella stessa sessione, quindi il terzo livello
+   deve seguire la carta effettivamente mostrata, non restare fisso
+   sul primo sotto-modulo pescato. Per i moduli non-ECDL "sub" è
+   sempre null (un solo file, nessun sotto-modulo): il breadcrumb
+   resta a due livelli per tutta la sessione, come già in v8.31.0. */
+function _fcBreadcrumb(sub){
+  const info = window.AreasConfig && window.AreasConfig.getModuleInfo(sMod);
+  if(!info) return '';
+  return info.areaLabel + ' — ' + info.label + (sub ? ' — ' + sub : '');
+}
+
 function _fcHeader(){
   return `<div class="game-header">
     <div class="game-header-left">
       <button class="game-exit-btn fc-exit-btn" onclick="exitFlipCardConfirm()"><i class="ti ti-x"></i> Esci</button>
     </div>
+    <span class="fc-breadcrumb" id="fc-breadcrumb"></span>
   </div>`;
 }
 
@@ -899,6 +954,11 @@ function _fcUpdateFaces(){
   const qEl = shq('fc-q'), aEl = shq('fc-a');
   if(qEl) qEl.textContent = card.q;
   if(aEl) aEl.textContent = card.a;
+
+  // v8.32.0: terzo livello del breadcrumb, ricalcolato sulla carta
+  // corrente ad ogni chiamata (vedi commento esteso su _fcBreadcrumb()).
+  const crumbEl = shq('fc-breadcrumb');
+  if(crumbEl) crumbEl.textContent = _fcBreadcrumb(card.sub);
 
   const prevBtn = shq('fc-prev'); if(prevBtn) prevBtn.disabled = s.idx === 0;
   const nextBtn = shq('fc-next'); if(nextBtn) nextBtn.disabled = s.idx === s.cards.length - 1;

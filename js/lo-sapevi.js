@@ -1,10 +1,31 @@
 /* ==================================================
-   lo-sapevi.js — PixelProf v8.30.0 (Didattica · Lo Sapevi?)
+   lo-sapevi.js — PixelProf v8.31.0 (Didattica · Lo Sapevi?)
    Seconda "attività didattica" di PixelProf, accanto a Flip Card
    (js/flip-card.js): carosello di curiosità, un solo file JSON per
    modulo (nessun livello Facile/Medio), nessun punteggio — vedi
    Lo_Sapevi.md per lo schema dati completo e la mappa Aree/Moduli/
    Chiavi.
+
+   v8.31.0 — fix e aggiunte dopo il primo test reale di Erasmo (modulo
+   con 101 curiosità):
+     - RIMOSSA la paginazione a pallini (.ls-dots, un pallino per
+       scheda): con moduli grandi diventavano centinaia di elementi,
+       overflow della riga di navigazione e frecce prec/succ non più
+       raggiungibili — oltre a essere praticamente invisibili in dark
+       (rgba(255,255,255,.18) su sfondo scuro, contrasto insufficiente).
+       Sostituita con una barra di progresso a larghezza fissa
+       (.ls-progress-track/.ls-progress-fill): stesso ingombro
+       visivo indipendentemente dal numero di schede (1 o 1000), le
+       frecce restano sempre nella loro riga dedicata.
+     - AGGIUNTO breadcrumb "Area — Modulo — Sotto-modulo" nell'header
+       (vicino a "Esci"), richiesto esplicitamente da Erasmo — anche
+       per Flip Card (vedi commento in flip-card.js). Il terzo livello
+       (sotto-modulo) è valorizzato SOLO per le chiavi ECDL, dove la
+       module map ora porta anche l'etichetta del sotto-modulo di
+       provenienza di ciascuna scheda (vedi LOSAPEVI_MODULE_MAP più
+       sotto) — dinamico: cambia scheda per scheda scorrendo il
+       carosello, perché un modulo ECDL come "CE" concatena le
+       curiosità di tutti i suoi sotto-moduli in un unico mazzo.
 
    v8.30.0: prima implementazione. Isolato in questo file, stessa
    filosofia dichiarata in testa a flip-card.js: fcState/lsState
@@ -59,36 +80,42 @@
    ================================================== */
 
 const LOSAPEVI_MODULE_MAP = {
+  // v8.31.0: le chiavi ECDL usano {path,sub} invece di semplici stringhe
+  // — "sub" è l'etichetta del sotto-modulo (es. "Fondamenti digitali"),
+  // usata per il terzo livello del breadcrumb "Area — Modulo — Sotto-
+  // modulo" nell'header di lettura. Le altre chiavi (un solo file, senza
+  // sotto-modulo) restano semplici stringhe: il loader normalizza
+  // entrambe le forme (vedi _lsNormalizeEntry).
   CE: [
-    'data/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo1/lo_sapevi_fondamenti-digitali.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo2/lo_sapevi_cpu-architettura.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo3/lo_sapevi_memorie.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo4/lo_sapevi_software.json',
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo1/lo_sapevi_fondamenti-digitali.json', sub: 'Fondamenti digitali' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo2/lo_sapevi_cpu-architettura.json', sub: 'CPU e architettura' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo3/lo_sapevi_memorie.json', sub: 'Memorie' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo4/lo_sapevi_software.json', sub: 'Software' },
   ],
   OE: [
-    'data/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo1/lo_sapevi_rete-e-dati.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo2/lo_sapevi_identita-e-comunicazione.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo3/lo_sapevi_navigazione-e-tracciamento.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo4/lo_sapevi_sicurezza-e-comportamento-online.json',
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo1/lo_sapevi_rete-e-dati.json', sub: 'Rete e dati' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo2/lo_sapevi_identita-e-comunicazione.json', sub: 'Identità e comunicazione' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo3/lo_sapevi_navigazione-e-tracciamento.json', sub: 'Navigazione e tracciamento' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo4/lo_sapevi_sicurezza-e-comportamento-online.json', sub: 'Sicurezza e comportamento online' },
   ],
   WP: [
-    'data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo1/lo_sapevi_word-e-ambiente.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo2/lo_sapevi_scrivere-e-salvare.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo3/lo_sapevi_formattare-il-testo.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo4/lo_sapevi_elementi-grafici.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo5/lo_sapevi_strutturare-il-documento.json',
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo1/lo_sapevi_word-e-ambiente.json', sub: 'Word e ambiente' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo2/lo_sapevi_scrivere-e-salvare.json', sub: 'Scrivere e salvare' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo3/lo_sapevi_formattare-il-testo.json', sub: 'Formattare il testo' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo4/lo_sapevi_elementi-grafici.json', sub: 'Elementi grafici' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo5/lo_sapevi_strutturare-il-documento.json', sub: 'Strutturare il documento' },
   ],
   SS: [
-    'data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo1/lo_sapevi_excel-e-l-ambiente-di-lavoro.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo2/lo_sapevi_inserire-e-gestire-i-dati.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo3/lo_sapevi_formattare-il-foglio.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo4/lo_sapevi_formule-e-calcoli.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo5/lo_sapevi_organizzare-e-visualizzare-i-dati.json',
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo1/lo_sapevi_excel-e-l-ambiente-di-lavoro.json', sub: "Excel e l'ambiente di lavoro" },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo2/lo_sapevi_inserire-e-gestire-i-dati.json', sub: 'Inserire e gestire i dati' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo3/lo_sapevi_formattare-il-foglio.json', sub: 'Formattare il foglio' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo4/lo_sapevi_formule-e-calcoli.json', sub: 'Formule e calcoli' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo5/lo_sapevi_organizzare-e-visualizzare-i-dati.json', sub: 'Organizzare e visualizzare i dati' },
   ],
   PP: [
-    'data/Didattica/Lo_Sapevi/ECDL/Presentation/Modulo1/lo_sapevi_creare-una-presentazione.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Presentation/Modulo2/lo_sapevi_oggetti-grafici.json',
-    'data/Didattica/Lo_Sapevi/ECDL/Presentation/Modulo3/lo_sapevi_preparare-e-presentare.json',
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Presentation/Modulo1/lo_sapevi_creare-una-presentazione.json', sub: 'Creare una presentazione' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Presentation/Modulo2/lo_sapevi_oggetti-grafici.json', sub: 'Oggetti grafici' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Presentation/Modulo3/lo_sapevi_preparare-e-presentare.json', sub: 'Preparare e presentare' },
   ],
   'identita-reputazione-digitale': ['data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo1/lo_sapevi_identita-reputazione-digitale.json'],
   'cyberbullismo': ['data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo2/lo_sapevi_cyberbullismo.json'],
@@ -137,15 +164,21 @@ const LOSAPEVI_MODULE_MAP = {
    startLoSapevi() lo gestisce mostrando la card "non disponibile",
    mai un errore JS — stesso identico pattern di FlipCardLoader. */
 const LoSapeviLoader = (function(){
-  const cache = {}; // mod -> [{fact, detail}]
+  const cache = {}; // mod -> [{fact, detail, sub}]
   function _entry(mod){ return LOSAPEVI_MODULE_MAP[mod]; }
+  // Normalizza una entry della module map: stringa (un file, nessun
+  // sotto-modulo) oppure {path,sub} (moduli ECDL, vedi commento sopra
+  // la module map). Isolato qui: il resto del loader non deve sapere
+  // quale delle due forme è stata usata per una data chiave.
+  function _lsNormalizeEntry(e){ return typeof e === 'string' ? { path: e, sub: null } : e; }
   async function _load(mod){
     if(cache[mod]) return cache[mod];
     const rels = _entry(mod);
     if(!rels || !rels.length) throw new Error('[LoSapevi] Modulo non registrato: "' + mod + '".');
     const items = [];
     for(const rel of rels){
-      const url = _resolveJsonPath(rel);
+      const { path, sub } = _lsNormalizeEntry(rel);
+      const url = _resolveJsonPath(path);
       const res = await fetch(url);
       if(!res.ok) throw new Error(`[LoSapevi] HTTP ${res.status} — ${url}`);
       let data;
@@ -153,7 +186,7 @@ const LoSapeviLoader = (function(){
       catch(e){ throw new Error(`[LoSapevi] JSON non valido in ${url}: ${e.message}`); }
       if(!Array.isArray(data) || !data.length) throw new Error(`[LoSapevi] Dati non validi o vuoti in ${url}`);
       data.forEach(entry => {
-        if(entry && entry.fact) items.push({ fact: entry.fact, detail: entry.detail || null });
+        if(entry && entry.fact) items.push({ fact: entry.fact, detail: entry.detail || null, sub });
       });
     }
     return cache[mod] = items;
@@ -187,11 +220,22 @@ function _lsStateHTML({ icon, title, msg, color }){
   </div>`;
 }
 
+/* Breadcrumb "Area — Modulo — Sotto-modulo" (il terzo livello solo
+   per i moduli ECDL, dove "sub" è valorizzato — vedi LOSAPEVI_MODULE_MAP
+   e _lsNormalizeEntry). Usa AreasConfig.getModuleInfo(), già globale
+   e popolato da js/areas-config.js: nessun dato duplicato qui. */
+function _lsBreadcrumb(mod, sub){
+  const info = window.AreasConfig && window.AreasConfig.getModuleInfo(mod);
+  if(!info) return '';
+  return info.areaLabel + ' — ' + info.label + (sub ? ' — ' + sub : '');
+}
+
 function _lsHeader(){
   return `<div class="game-header">
     <div class="game-header-left">
       <button class="game-exit-btn ls-exit-btn" onclick="exitLoSapeviConfirm()"><i class="ti ti-x"></i> Esci</button>
     </div>
+    <span class="ls-breadcrumb" id="ls-breadcrumb"></span>
   </div>`;
 }
 
@@ -295,10 +339,10 @@ function _renderLoSapevi(cont){
   const s = lsState;
   cont.innerHTML = `${_lsHeader()}
     <div class="ls-counter" id="ls-counter"></div>
+    <div class="ls-progress-track"><div class="ls-progress-fill" id="ls-progress-fill"></div></div>
     <div class="ls-carousel"><div class="ls-carousel-track" id="ls-track"></div></div>
     <div class="ls-nav-row">
       <button class="ls-nav-btn" id="ls-prev" onclick="lsNav(-1)" aria-label="Curiosità precedente"><i class="ti ti-chevron-left"></i></button>
-      <div class="ls-dots" id="ls-dots"></div>
       <button class="ls-nav-btn" id="ls-next" onclick="lsNav(1)" aria-label="Curiosità successiva"><i class="ti ti-chevron-right"></i></button>
     </div>`;
   const track = document.getElementById('ls-track');
@@ -312,9 +356,6 @@ function _renderLoSapevi(cont){
         <div class="ls-detail-panel"><div class="ls-detail-inner">${escHtml(item.detail)}</div></div>
       ` : ''}
     </div>`).join('');
-  document.getElementById('ls-dots').innerHTML = s.items.map((_, i) =>
-    `<button class="ls-dot" onclick="lsGoTo(${i})" aria-label="Vai alla curiosità ${i + 1}"></button>`
-  ).join('');
   _lsRenderPositions();
 }
 
@@ -345,10 +386,13 @@ function _lsRenderPositions(){
   });
   const counter = document.getElementById('ls-counter');
   if(counter) counter.textContent = 'Curiosità ' + (s.idx + 1) + ' di ' + s.items.length;
+  const fill = document.getElementById('ls-progress-fill');
+  if(fill) fill.style.width = ((s.idx + 1) / s.items.length * 100) + '%';
+  const crumb = document.getElementById('ls-breadcrumb');
+  if(crumb) crumb.textContent = _lsBreadcrumb(s.mod, s.items[s.idx].sub);
   const prev = document.getElementById('ls-prev'), next = document.getElementById('ls-next');
   if(prev) prev.disabled = s.idx === 0;
   if(next) next.disabled = s.idx === s.items.length - 1;
-  document.querySelectorAll('.ls-dot').forEach((d, i) => d.classList.toggle('active', i === s.idx));
 }
 
 function _lsCloseAllDetails(){
@@ -361,13 +405,6 @@ function lsNav(dir){
   const n = lsState.idx + dir;
   if(n < 0 || n >= lsState.items.length) return;
   lsState.idx = n;
-  _lsCloseAllDetails();
-  _lsRenderPositions();
-}
-
-function lsGoTo(i){
-  if(!lsState || i < 0 || i >= lsState.items.length) return;
-  lsState.idx = i;
   _lsCloseAllDetails();
   _lsRenderPositions();
 }

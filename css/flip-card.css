@@ -241,6 +241,21 @@
   }
   .fc-exit-btn::after{ background: var(--purple); }
 
+  /* v8.31.0: breadcrumb "Area — Modulo" nell'header, accanto a Esci
+     (right-aligned via .game-header{justify-content:space-between}).
+     Stesso stile neutro di .act-context-label: è un'informazione di
+     contesto, non un elemento tematico viola. */
+  .fc-breadcrumb{
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,.58);
+    letter-spacing: .8px;
+    text-transform: uppercase;
+    text-align: right;
+    max-width: 60%;
+    line-height: 1.4;
+  }
+
   @media (max-width: 480px){
     .fc-card{ height: 220px; }
   }
@@ -295,6 +310,7 @@
     border-color: #6a4fd6;
     color: #4a2fb8;
   }
+  html[data-theme="light"] .fc-breadcrumb{ color: rgba(16,24,42,.55); }
 
   /* ================================================================
      STEP DIDATTICA — card "Flip Card" in stile modulo (v8.19.2)

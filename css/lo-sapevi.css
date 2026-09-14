@@ -1,0 +1,246 @@
+/* ==================================================
+   lo-sapevi.css — PixelProf v8.30.0 (Didattica · Lo Sapevi?)
+   Seconda modalità didattica, complementare a Flip Card
+   (css/flip-card.css): stesso principio di card di studio,
+   formato e provenienza dei dati diversi — vedi Lo_Sapevi.md.
+
+   Variabili riusate da :root (pixelprof.css): --border-subtle,
+   --border-mid, --surface-1, --radius-sm/lg, --transition-fast,
+   --shadow-card. Nessun nuovo colore aggiunto a :root: l'accento
+   "oro" di Lo Sapevi (#ffcc33 / #ffe08a) resta locale a questo file,
+   hardcoded dove serve — stesso trattamento di --purple in
+   flip-card.css ma senza bisogno di una variabile globale, perché
+   qui non serve la parametrizzazione generica di .dm-card (usata
+   SOLO per la card d'ingresso in step-didattica, che eredita già
+   il meccanismo --dm-accent-rgb inline esistente).
+
+   v8.30.0: prima implementazione — mockup approvato con Erasmo
+   (mockup-lo-sapevi-v2.html) dopo il giro di feedback su:
+     - niente flip 3D per l'approfondimento (.ls-reveal-btn apre
+       .ls-detail-panel IN-CARD, verso il basso) — deliberatamente
+       diverso dal flip di Flip Card per non confondere le due
+       modalità, molto simili a prima vista;
+     - carosello a 3 card (precedente/attuale/successiva), non una
+       singola card con frecce. Le card laterali (.ls-slide.side)
+       sono velate (.ls-veil) e più piccole, la centrale a scala
+       piena. Le posizioni sono calcolate in js/lo-sapevi.js con
+       transform: translateX(-50%) translateX(offset*105%) scale(S) —
+       tutto in PERCENTUALE self-relative, quindi resta responsive a
+       qualsiasi larghezza senza bisogno di un resize listener in JS
+       (il browser ricalcola le % ad ogni reflow).
+     - .ls-slide/.ls-eyebrow/.ls-fact-text/.ls-detail-inner restano
+       SEMPRE scuri in entrambi i temi (stessa scelta voluta di
+       .fc-front/.fc-back in flip-card.css: la card resta "un
+       oggetto a sé", scura di proposito in entrambi i temi). Solo
+       .ls-exit-btn e .ls-nav-btn (sull'header/riga nav normali, non
+       sulla card) seguono il tema — vedi @layer theme in fondo.
+   ================================================== */
+
+@layer losapevi {
+
+  /* -- Header sessione — stesso pattern di buildGameHeader()/
+     _fcHeader(): .game-exit-btn è la base generica (pixelprof.css),
+     .ls-exit-btn la ricolora in oro invece del rosso di default
+     (identico approccio di .fc-exit-btn con --purple). -- */
+  .ls-exit-btn{
+    border-color: rgba(255,204,51,.35);
+    background: rgba(255,204,51,.1);
+    color: #ffe08a;
+  }
+  .ls-exit-btn:hover{
+    border-color: #ffcc33;
+    background: rgba(255,204,51,.18);
+    color: #fff;
+  }
+  .ls-exit-btn::after{ background: #ffcc33; }
+
+  /* -- Contatore testuale sopra il carosello ("Curiosità 2 di 4") -- */
+  .ls-counter{
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #ffe08a;
+    margin-bottom: 14px;
+  }
+
+  /* -- Carosello — viewport che ritaglia le card laterali -- */
+  .ls-carousel{
+    position: relative;
+    height: 250px;
+    margin-bottom: 16px;
+    overflow: hidden;
+  }
+
+  /* Card: larghezza responsive (min(300px, 76% del contenitore)),
+     centrata via left:50% + transform (mai margin negativo: i
+     transform in % sono self-relative e restano corretti a ogni
+     resize, a differenza di un margin-left fisso in px). Altezza
+     fissa 230px, stessa di .fc-card, per coerenza visiva tra le
+     due modalità didattiche. */
+  .ls-slide{
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    width: min(300px, 76%);
+    height: 230px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255,204,51,.3);
+    background: linear-gradient(160deg,#241c08 0%,#332708 55%,#241c08 100%);
+    box-shadow: var(--shadow-card);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.3rem 1.2rem;
+    transition: transform .5s cubic-bezier(.4,.1,.2,1), opacity .5s ease, filter .5s ease;
+    will-change: transform;
+  }
+  /* Velo di attenuazione sulle card laterali — "si devono intravedere
+     ma non distrarre" (richiesta esplicita di Erasmo): opacità/scala/
+     blur sono impostati inline da JS in base alla distanza dalla card
+     attuale, il velo scurente resta qui come layer separato per non
+     interferire con l'opacità del testo sottostante. */
+  .ls-veil{
+    position: absolute; inset: 0;
+    border-radius: inherit;
+    background: rgba(6,8,16,.6);
+    opacity: 0;
+    transition: opacity .5s;
+    pointer-events: none;
+    z-index: 2;
+  }
+  .ls-slide.side .ls-veil{ opacity: 1; }
+  /* Le card laterali sono anteprima, non interattive: niente
+     pulsante/pannello di approfondimento visibile (oltre a
+     pointer-events:none impostato inline da JS). */
+  .ls-slide.side .ls-reveal-btn,
+  .ls-slide.side .ls-detail-panel{ display: none; }
+
+  .ls-eyebrow{
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+    color: #ffe08a; margin-bottom: 12px;
+    position: relative; z-index: 1;
+  }
+  .ls-fact-text{
+    font-size: clamp(14px,2.2vw,16px);
+    line-height: 1.48;
+    color: #f1ede0;
+    font-weight: 500;
+    position: relative; z-index: 1;
+    max-height: 100px;
+    overflow-y: auto;
+  }
+
+  /* -- Pulsante "Scopri di più" + pannello approfondimento in-card --
+     Niente rotazione: il pannello si espande verso il basso dentro
+     la stessa card (max-height, non height:auto, per una transizione
+     fluida in CSS puro). Card senza campo "detail": il pulsante non
+     viene proprio generato in HTML (vedi js/lo-sapevi.js), non solo
+     nascosto — coerente con "un solo lato, nessun invito al tocco". */
+  .ls-reveal-btn{
+    margin-top: 14px;
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,204,51,.4);
+    background: rgba(255,204,51,.1);
+    color: #ffe08a;
+    font-size: 11px; font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    position: relative; z-index: 3;
+  }
+  .ls-reveal-btn:hover{ background: rgba(255,204,51,.18); }
+  .ls-detail-panel{
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease;
+    width: 100%;
+    position: relative; z-index: 1;
+  }
+  .ls-detail-panel.open{
+    max-height: 100px;
+    margin-top: 10px;
+    overflow-y: auto;
+  }
+  .ls-detail-inner{
+    border-top: 1px dashed rgba(255,204,51,.3);
+    padding-top: 9px;
+    font-size: 12.5px;
+    line-height: 1.48;
+    color: rgba(255,255,255,.75);
+  }
+
+  /* -- Riga navigazione: frecce prec/succ + pallini di paginazione -- */
+  .ls-nav-row{
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+  }
+  .ls-nav-btn{
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 38px; height: 38px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-mid);
+    background: var(--surface-1);
+    color: rgba(255,255,255,.7);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+  .ls-nav-btn:hover:not(:disabled){
+    border-color: rgba(255,204,51,.4);
+    color: #ffe08a;
+    background: rgba(255,204,51,.1);
+  }
+  .ls-nav-btn:disabled{ opacity: .3; cursor: not-allowed; }
+
+  .ls-dots{ display: flex; justify-content: center; gap: 6px; }
+  .ls-dot{
+    width: 6px; height: 6px; border-radius: 50%;
+    background: rgba(255,255,255,.18);
+    transition: all .3s;
+    cursor: pointer;
+    border: none; padding: 0;
+  }
+  .ls-dot.active{ background: #ffcc33; width: 18px; border-radius: 4px; }
+
+  @media (prefers-reduced-motion: reduce){
+    .ls-slide{ transition: none; }
+    .ls-detail-panel{ transition: none; }
+  }
+}
+
+@layer theme {
+  /* .ls-slide/.ls-eyebrow/.ls-fact-text/.ls-detail-inner NON hanno
+     override qui, di proposito: restano scuri in entrambi i temi,
+     stessa scelta di .fc-front/.fc-back/.fc-text in flip-card.css
+     (la card è "un oggetto a sé"). Solo gli elementi sull'header/
+     riga nav "normali" seguono il tema, come .fc-exit-btn/.fc-nav-btn. */
+  html[data-theme="light"] .ls-exit-btn{
+    background: rgba(255,180,0,.08);
+    border-color: rgba(255,180,0,.3);
+    color: #8a6d00;
+  }
+  html[data-theme="light"] .ls-exit-btn:hover{
+    background: rgba(255,180,0,.16);
+    border-color: #cc9900;
+    color: #6b5500;
+  }
+  html[data-theme="light"] .ls-counter{ color: #a37d00; }
+  html[data-theme="light"] .ls-nav-btn{
+    background: rgba(20,30,60,.04);
+    border-color: rgba(20,30,60,.14);
+    color: rgba(16,24,42,.6);
+  }
+  html[data-theme="light"] .ls-nav-btn:hover:not(:disabled){
+    background: rgba(255,180,0,.08);
+    border-color: rgba(255,180,0,.4);
+    color: #8a6d00;
+  }
+  html[data-theme="light"] .ls-dot{ background: rgba(20,30,60,.14); }
+  html[data-theme="light"] .ls-dot.active{ background: #cc9900; }
+}

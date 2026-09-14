@@ -621,10 +621,22 @@ async function exitFlipCardConfirm(){
    Non carica più il mazzo direttamente: da v8.17.0 mostra
    prima lo step "scegli livello" (Facile/Medio). */
 async function selDidattica(type){
-  if(type !== 'flipcard') return;
-  setTb(null);
-  showScreen('tab-games');
-  _renderFlipCardLevelSelect(sh('g-area'), sMod);
+  if(type === 'flipcard'){
+    setTb(null);
+    showScreen('tab-games');
+    _renderFlipCardLevelSelect(sh('g-area'), sMod);
+    return;
+  }
+  // v8.30.0 — seconda modalità didattica (js/lo-sapevi.js, isolato,
+  // stesso principio di card di studio, formato dati diverso: vedi
+  // Lo_Sapevi.md). Nessuno step "scegli livello": un solo file per
+  // modulo, si entra direttamente in startLoSapevi().
+  if(type === 'losapevi'){
+    setTb(null);
+    showScreen('tab-games');
+    startLoSapevi(sh('g-area'), sMod);
+    return;
+  }
 }
 
 /* Definizione presentazionale dei 2 livelli — riusa i due

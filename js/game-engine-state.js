@@ -1677,6 +1677,13 @@ function goHome(){
     confirmExitFlipCard(()=>{resetSessionState();setTb('tb-home');showScreen('tab-home');goStep('mod');});
     return;
   }
+  // v8.30.0 (lo-sapevi.js) — stesso identico aggancio della coppia
+  // isFlipCardActive/confirmExitFlipCard qui sopra, per la seconda
+  // modalità didattica. Vedi commento esteso in lo-sapevi.js.
+  if(typeof isLoSapeviActive === 'function' && isLoSapeviActive()){
+    confirmExitLoSapevi(()=>{resetSessionState();setTb('tb-home');showScreen('tab-home');goStep('mod');});
+    return;
+  }
   resetSessionState();setTb('tb-home');showScreen('tab-home');goStep('mod');
 }
 
@@ -1762,6 +1769,11 @@ function backToDashboardFromApp(){
     confirmExitFlipCard(_execBack);
     return;
   }
+  // v8.30.0 (lo-sapevi.js) — vedi commento gemello in goHome() più sopra.
+  if(typeof isLoSapeviActive === 'function' && isLoSapeviActive()){
+    confirmExitLoSapevi(_execBack);
+    return;
+  }
   _execBack();
 }
 
@@ -1773,6 +1785,11 @@ function goTab(t){
   // v8.20.0 (flip-card.js) — vedi commento gemello in goHome() più sopra.
   if(typeof isFlipCardActive === 'function' && isFlipCardActive()){
     confirmExitFlipCard(()=>{_doGoTab(t);});
+    return;
+  }
+  // v8.30.0 (lo-sapevi.js) — vedi commento gemello in goHome() più sopra.
+  if(typeof isLoSapeviActive === 'function' && isLoSapeviActive()){
+    confirmExitLoSapevi(()=>{_doGoTab(t);});
     return;
   }
   _doGoTab(t);

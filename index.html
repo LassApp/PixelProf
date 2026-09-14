@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v8.29.5</title>
+<title>PixelProf — ICDL Lab interattivo v8.30.0</title>
 <link rel="icon" href="public/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
@@ -43,6 +43,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 
 <link rel="stylesheet" href="pixelprof.css">
 <link rel="stylesheet" href="css/flip-card.css">
+<link rel="stylesheet" href="css/lo-sapevi.css">
 <link rel="stylesheet" href="css/act-select.css">
 <link rel="stylesheet" href="css/topbar-profile.css">
 <link rel="stylesheet" href="css/tour-sections.css">
@@ -98,7 +99,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v8.29.5</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v8.30.0</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -672,7 +673,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v8.29.5</span>
+        <span class="cs-logo-sub">ICDL Lab · v8.30.0</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v8.26.3: sostituito da tasto Profilo unico -->
@@ -990,7 +991,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v8.29.5</span>
+      <span class="logo-sub">ICDL Lab · v8.30.0</span>
       <span class="logo-hint">cambia aula</span>
     </div>
   </div>
@@ -1407,13 +1408,18 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <span class="act-context-label" id="didattica-mod-label"></span>
     </div>
     <div class="act-grid">
-      <!-- v8.19.2: card in stile modulo (mockup-flipcard-entry-card),
-           al posto del vecchio .act-card orizzontale. full-act finché
-           esiste una sola modalità didattica: quando se ne aggiunge
-           una seconda, togliere full-act per tornare ad affiancarle
-           nella griglia a 2 colonne. onclick/aria/tabindex invariati:
-           il tour onboarding continua a targettare "#step-didattica .act-card". -->
-      <div class="act-card dm-card full-act" role="button" tabindex="0" aria-label="Flip Card"
+      <!-- v8.30.0: full-act RIMOSSO (Lo Sapevi? è la seconda modalità
+           didattica) — la card torna ad affiancarsi nella griglia a 2
+           colonne, esattamente come previsto dal commento v8.19.2 che
+           c'era qui. SVG interna RICENTRATA sul centro del viewBox
+           (era spostata a destra, pensata per la card a piena
+           larghezza: con preserveAspectRatio="slice" e la card ora a
+           metà larghezza, il motivo veniva tagliato quasi per intero
+           dal ritaglio — bug scoperto passando al layout a 2 colonne,
+           corretto qui). onclick/aria/tabindex invariati: il tour
+           onboarding continua a targettare "#step-didattica .act-card"
+           (prima card nell'ordine del DOM, ancora Flip Card). -->
+      <div class="act-card dm-card" role="button" tabindex="0" aria-label="Flip Card"
         onclick="selDidattica('flipcard')"
         onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selDidattica('flipcard');}">
         <span class="dm-badge">Didattica</span>
@@ -1424,14 +1430,14 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
             </pattern>
           </defs>
           <rect width="660" height="180" fill="url(#grid-dm)"/>
-          <rect x="468" y="44" width="118" height="86" rx="10" transform="rotate(-8 527 87)"
+          <rect x="240" y="44" width="118" height="86" rx="10" transform="rotate(-8 299 87)"
                 fill="rgba(124,106,255,.05)" stroke="#7c6aff" stroke-width="1" opacity=".35"/>
-          <rect x="500" y="36" width="118" height="86" rx="10"
+          <rect x="272" y="36" width="118" height="86" rx="10"
                 fill="rgba(124,106,255,.07)" stroke="#a996ff" stroke-width="1.2" opacity=".55"/>
-          <text x="559" y="90" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="32" fill="#a996ff" opacity=".4" font-weight="bold">?</text>
-          <path d="M468 88 a58 58 0 1 1 12 35" fill="none" stroke="#7c6aff" stroke-width="1.4" opacity=".4" stroke-linecap="round"/>
-          <polygon points="480,123 468,117 474,105" fill="#7c6aff" opacity=".4"/>
-          <ellipse cx="558" cy="88" rx="90" ry="58" fill="rgba(124,106,255,.05)"/>
+          <text x="331" y="90" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="32" fill="#a996ff" opacity=".4" font-weight="bold">?</text>
+          <path d="M240 88 a58 58 0 1 1 12 35" fill="none" stroke="#7c6aff" stroke-width="1.4" opacity=".4" stroke-linecap="round"/>
+          <polygon points="252,123 240,117 246,105" fill="#7c6aff" opacity=".4"/>
+          <ellipse cx="330" cy="88" rx="90" ry="58" fill="rgba(124,106,255,.05)"/>
         </svg>
         <div class="dm-content">
           <span class="dm-icon">📇</span>
@@ -1439,6 +1445,50 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <p>Ripassa domanda → risposta</p>
           <div class="tags">
             <span class="tag">Facile · Medio</span>
+            <span class="tag">Nessun punteggio</span>
+          </div>
+        </div>
+      </div>
+      <!-- v8.30.0: seconda modalità didattica — motore in js/lo-sapevi.js
+           (isolato). Accento oro inline via --dm-accent-rgb/--dm-accent-text-rgb
+           (stesso meccanismo generico di .dm-card già pronto in
+           css/flip-card.css, zero CSS nuovo richiesto per la card
+           d'ingresso). SVG con lampadina + "!" (invece di "?": quel
+           simbolo è già il motivo distintivo di Flip Card sopra — usarlo
+           anche qui avrebbe reso le due card facili da confondere,
+           esattamente ciò che questa seconda modalità deve evitare). -->
+      <div class="act-card dm-card" role="button" tabindex="0" aria-label="Lo Sapevi?"
+        onclick="selDidattica('losapevi')"
+        onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selDidattica('losapevi');}"
+        style="--dm-accent-rgb:255,204,51;--dm-accent-text-rgb:255,224,138">
+        <span class="dm-badge">Didattica</span>
+        <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-ls" width="24" height="24" patternUnits="userSpaceOnUse">
+              <path d="M24 0L0 0 0 24" fill="none" stroke="#ffcc33" stroke-width=".4" opacity=".2"/>
+            </pattern>
+          </defs>
+          <rect width="660" height="180" fill="url(#grid-ls)"/>
+          <circle cx="330" cy="80" r="34" fill="rgba(255,204,51,.06)" stroke="#ffcc33" stroke-width="1.2" opacity=".5"/>
+          <path d="M316 92 q14 -22 28 0" fill="none" stroke="#ffe08a" stroke-width="1.4" opacity=".5"/>
+          <rect x="320" y="112" width="20" height="8" rx="2" fill="rgba(255,204,51,.1)" stroke="#ffcc33" stroke-width="1" opacity=".45"/>
+          <line x1="322" y1="120" x2="322" y2="124" stroke="#ffcc33" stroke-width="1" opacity=".4"/>
+          <line x1="330" y1="120" x2="330" y2="126" stroke="#ffcc33" stroke-width="1" opacity=".4"/>
+          <line x1="338" y1="120" x2="338" y2="124" stroke="#ffcc33" stroke-width="1" opacity=".4"/>
+          <line x1="330" y1="34" x2="330" y2="24" stroke="#ffcc33" stroke-width="1.5" opacity=".4" stroke-linecap="round"/>
+          <line x1="362" y1="46" x2="370" y2="38" stroke="#ffcc33" stroke-width="1.5" opacity=".35" stroke-linecap="round"/>
+          <line x1="298" y1="46" x2="290" y2="38" stroke="#ffcc33" stroke-width="1.5" opacity=".35" stroke-linecap="round"/>
+          <text x="252" y="58" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="26" fill="#ffcc33" opacity=".32" font-weight="bold">!</text>
+          <text x="404" y="66" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="18" fill="#ffe08a" opacity=".28" font-weight="bold">!</text>
+          <text x="392" y="132" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="30" fill="#ffcc33" opacity=".22" font-weight="bold">!</text>
+          <ellipse cx="330" cy="88" rx="90" ry="58" fill="rgba(255,204,51,.05)"/>
+        </svg>
+        <div class="dm-content">
+          <span class="dm-icon">💡</span>
+          <h3>Lo Sapevi?</h3>
+          <p>Una curiosità alla volta</p>
+          <div class="tags">
+            <span class="tag">Fatti e curiosità</span>
             <span class="tag">Nessun punteggio</span>
           </div>
         </div>
@@ -1841,7 +1891,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div><!-- /app -->
 
 
-<script src="js/app.bundle.min.js?v=8.29.5"></script>
+<script src="js/app.bundle.min.js?v=8.30.0"></script>
 <!-- Pannello Profilo (v8.25.0) — nome, ruolo, ultimo accesso, ultima
      aula collegata, poi Esci e Rivedi il tour guidato. Markup e stili
      in css/topbar-profile.css, logica in js/profile-panel.js.

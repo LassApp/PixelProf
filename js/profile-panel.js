@@ -262,7 +262,9 @@ const ProfilePanel = (function () {
    *  stato, solo il gate qui. */
   function _isSessionActive() {
     return (typeof isGameActive === 'function' && isGameActive())
-        || (typeof isFlipCardActive === 'function' && isFlipCardActive());
+        || (typeof isFlipCardActive === 'function' && isFlipCardActive())
+        // v8.30.0 (lo-sapevi.js) — stesso motivo del check gemello sopra.
+        || (typeof isLoSapeviActive === 'function' && isLoSapeviActive());
   }
 
   /** Ricalcolato a ogni apertura del pannello (vedi toggle()): lo stato

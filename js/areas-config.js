@@ -62,7 +62,34 @@
      con NOTA 3. I path "pronti" per queste 19 chiavi esistono già
      nei 5 moduleMap di game-engine-state.js (v5.1.0): quando i JSON
      arriveranno basterà creare i file e flippare contentReady:true,
-     nessuna altra modifica al motore.
+     nessuna altra modifica al motore. [SUPERATO — vedi v8.33.0]
+
+   v8.33.0 — ATTIVAZIONE Cyberbullismo e Intelligenza Artificiale
+   (19 moduli, JSON committati da Erasmo in data/Minigiochi/):
+   - contentReady: true per tutti i 19 moduli (6 Cyberbullismo_e_
+     Sicurezza_Online + 13 Intelligenza_Artificiale).
+   - dataPaths aggiunto per tutti i 19 (stesso pattern Cybersecurity:
+     quiz/speed/abbina/completaFrase/veroFalso, memory omesso — nessun
+     JSON memory ancora prodotto, Memory resta comunque in pausa
+     app-wide).
+   - FIX 8 slug modulo↔file disallineati (7 su 13 moduli AI + 1 su 6
+     Cyberbullismo — vedi anche fix gemello in game-engine-state.js):
+     la key resta quella storica (usata da stats/badge/DOM id), ma il
+     nome file su disco differiva per apostrofo/preposizione italiana:
+       difendersi-online   → file "..._cittadinanza-digitale.json"
+       cos-e-ai             → file "..._cos-e-l-ai.json"
+       come-funziona-ai      → file "..._come-funziona-l-ai.json"
+       llm-fondamenti        → file "..._come-funzionano-gli-llm.json"
+       provenienza-contenuti → file "..._provenienza-dei-contenuti.json"
+       verificare-ai          → file "..._verificare-l-ai.json"
+       etica-ai                → file "..._etica-dell-ai.json"
+       futuro-ai                → file "..._futuro-dell-ai.json"
+   - Verificati tutti i 95 file (19 moduli × 5 tipi): JSON valido e
+     schema conforme ai validatori di tools/content-check.js. NB:
+     tools/content-check.js oggi va in crash su questo repo (bug
+     preesistente, non introdotto qui — slugFor() in quel tool assume
+     dataPaths.quiz stringa, ma da v8.22.0 per CE/OE/WP/SS/PP è un
+     array) — fix fuori scope, segnalato a parte.
    ================================================== */
 
 const AREAS = [
@@ -292,9 +319,16 @@ const AREAS = [
        dettagliato. */
     modules: [
       {
-        key: 'identita-reputazione-digitale', label: 'Identità e reputazione digitale', icon: '🪪', contentReady: false,
+        key: 'identita-reputazione-digitale', label: 'Identità e reputazione digitale', icon: '🪪', contentReady: true,
         desc: 'Come si costruisce l\'identità digitale e perché lascia sempre una traccia',
         tags: ['Tracce digitali', 'Reputazione online', 'Privacy online', 'Diritto all\'oblio'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/quiz_identita-reputazione-digitale.json',
+          speed: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/speedquiz_identita-reputazione-digitale.json',
+          abbina: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/abbina_identita-reputazione-digitale.json',
+          completaFrase: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/completa_la_frase_identita-reputazione-digitale.json',
+          veroFalso: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/vero_o_falso_identita-reputazione-digitale.json',
+        },
       cardArt: `
 <!-- id card -->
 <rect x="28" y="46" width="94" height="62" rx="7" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
@@ -317,9 +351,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'cyberbullismo', label: 'Cyberbullismo', icon: '🛑', contentReady: false,
+        key: 'cyberbullismo', label: 'Cyberbullismo', icon: '🛑', contentReady: true,
         desc: 'Riconoscere il cyberbullismo, le sue forme e le conseguenze per chi lo subisce',
         tags: ['Forme di cyberbullismo', 'Vittime e spettatori', 'Le conseguenze', 'Prevenzione e normativa'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/quiz_cyberbullismo.json',
+          speed: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/speedquiz_cyberbullismo.json',
+          abbina: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/abbina_cyberbullismo.json',
+          completaFrase: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/completa_la_frase_cyberbullismo.json',
+          veroFalso: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/vero_o_falso_cyberbullismo.json',
+        },
       cardArt: `
 <!-- speech bubble under attack -->
 <path d="M170,40 h70 a9,9 0 0 1 9,9 v40 a9,9 0 0 1 -9,9 h-30 l-14,14 v-14 h-26 a9,9 0 0 1 -9,-9 v-40 a9,9 0 0 1 9,-9 z"
@@ -342,9 +383,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'hate-speech', label: 'Hate Speech', icon: '🗯️', contentReady: false,
+        key: 'hate-speech', label: 'Hate Speech', icon: '🗯️', contentReady: true,
         desc: 'Tra libertà di parola e linguaggio d\'odio: dove sta il confine online',
         tags: ['Libertà di espressione', 'Linguaggio d\'odio', 'Echo chamber', 'Riconoscerlo'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/quiz_hate-speech.json',
+          speed: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/speedquiz_hate-speech.json',
+          abbina: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/abbina_hate-speech.json',
+          completaFrase: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/completa_la_frase_hate-speech.json',
+          veroFalso: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/vero_o_falso_hate-speech.json',
+        },
       cardArt: `
 <!-- two opposing bubbles -->
 <path d="M160,44 h60 a8,8 0 0 1 8,8 v30 a8,8 0 0 1 -8,8 h-8 v12 l-14,-12 h-38 a8,8 0 0 1 -8,-8 v-30 a8,8 0 0 1 8,-8 z"
@@ -363,9 +411,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'sexting-revenge-porn', label: 'Sexting e Revenge Porn', icon: '🔞', contentReady: false,
+        key: 'sexting-revenge-porn', label: 'Sexting e Revenge Porn', icon: '🔞', contentReady: true,
         desc: 'Consenso, rischi e conseguenze nella condivisione di contenuti intimi',
         tags: ['Il consenso', 'I rischi', 'Revenge porn', 'Chiedere aiuto'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/quiz_sexting-revenge-porn.json',
+          speed: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/speedquiz_sexting-revenge-porn.json',
+          abbina: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/abbina_sexting-revenge-porn.json',
+          completaFrase: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/completa_la_frase_sexting-revenge-porn.json',
+          veroFalso: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/vero_o_falso_sexting-revenge-porn.json',
+        },
       cardArt: `
 <!-- photo frame -->
 <rect x="150" y="42" width="86" height="62" rx="6" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
@@ -382,9 +437,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'grooming', label: 'Grooming', icon: '🎣', contentReady: false,
+        key: 'grooming', label: 'Grooming', icon: '🎣', contentReady: true,
         desc: 'Riconoscere le tecniche di adescamento online e sapersi difendere',
         tags: ['Le tecniche', 'Le fasi', 'I segnali', 'Difendersi'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/quiz_grooming.json',
+          speed: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/speedquiz_grooming.json',
+          abbina: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/abbina_grooming.json',
+          completaFrase: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/completa_la_frase_grooming.json',
+          veroFalso: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/vero_o_falso_grooming.json',
+        },
       cardArt: `
 <!-- chat bubble -->
 <path d="M170,40 h70 a8,8 0 0 1 8,8 v36 a8,8 0 0 1 -8,8 h-44 l-14,14 v-14 h-12 a8,8 0 0 1 -8,-8 v-36 a8,8 0 0 1 8,-8 z"
@@ -404,9 +466,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'difendersi-online', label: 'Cittadinanza Digitale', icon: '🧭', contentReady: false,
+        key: 'difendersi-online', label: 'Cittadinanza Digitale', icon: '🧭', contentReady: true,
         desc: 'Diventare cittadini digitali responsabili: proteggersi e proteggere gli altri',
         tags: ['Cittadinanza digitale', 'Proteggere sé e gli altri', 'Gestire i rischi online', 'Uso responsabile della rete'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/quiz_cittadinanza-digitale.json',
+          speed: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/speedquiz_cittadinanza-digitale.json',
+          abbina: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/abbina_cittadinanza-digitale.json',
+          completaFrase: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/completa_la_frase_cittadinanza-digitale.json',
+          veroFalso: 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/vero_o_falso_cittadinanza-digitale.json',
+        },
       cardArt: `
 <!-- globe -->
 <circle cx="200" cy="80" r="34" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".45"/>
@@ -997,9 +1066,16 @@ const AREAS = [
     description: 'Comprendere come funziona l\'intelligenza artificiale, i suoi rischi, le opportunità e come usarla in modo consapevole e responsabile.',
     modules: [
       {
-        key: 'cos-e-ai', label: "Cos'è l'AI", icon: '✨', contentReady: false,
+        key: 'cos-e-ai', label: "Cos'è l'AI", icon: '✨', contentReady: true,
         desc: "Cos'è davvero l'intelligenza artificiale, tra mito e realtà",
         tags: ['AI tradizionale e generativa', 'AI nella vita quotidiana', 'Opportunità e limiti'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Intelligenza_Artificiale/modulo1/quiz_cos-e-l-ai.json',
+          speed: 'data/Minigiochi/Intelligenza_Artificiale/modulo1/speedquiz_cos-e-l-ai.json',
+          abbina: 'data/Minigiochi/Intelligenza_Artificiale/modulo1/abbina_cos-e-l-ai.json',
+          completaFrase: 'data/Minigiochi/Intelligenza_Artificiale/modulo1/completa_la_frase_cos-e-l-ai.json',
+          veroFalso: 'data/Minigiochi/Intelligenza_Artificiale/modulo1/vero_o_falso_cos-e-l-ai.json',
+        },
       cardArt: `
 <circle cx="220" cy="80" r="34" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
 <circle cx="220" cy="60" r="3" fill="currentColor" opacity=".5"/>
@@ -1018,9 +1094,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'come-funziona-ai', label: "Come funziona l'AI", icon: '⚙️', contentReady: false,
+        key: 'come-funziona-ai', label: "Come funziona l'AI", icon: '⚙️', contentReady: true,
         desc: 'Dati, machine learning e reti neurali in breve',
         tags: ['Dati', 'Machine Learning', 'Reti neurali', 'Modelli'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Intelligenza_Artificiale/modulo2/quiz_come-funziona-l-ai.json',
+          speed: 'data/Minigiochi/Intelligenza_Artificiale/modulo2/speedquiz_come-funziona-l-ai.json',
+          abbina: 'data/Minigiochi/Intelligenza_Artificiale/modulo2/abbina_come-funziona-l-ai.json',
+          completaFrase: 'data/Minigiochi/Intelligenza_Artificiale/modulo2/completa_la_frase_come-funziona-l-ai.json',
+          veroFalso: 'data/Minigiochi/Intelligenza_Artificiale/modulo2/vero_o_falso_come-funziona-l-ai.json',
+        },
       cardArt: `
 <circle cx="60" cy="70" r="20" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".45"/>
 <circle cx="60" cy="70" r="6" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
@@ -1047,9 +1130,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'llm-fondamenti', label: 'Come funzionano gli LLM', icon: '🔤', contentReady: false,
+        key: 'llm-fondamenti', label: 'Come funzionano gli LLM', icon: '🔤', contentReady: true,
         desc: 'Token, contesto e generazione del testo',
         tags: ['LLM', 'Token', 'Contesto e finestra di contesto', 'Generazione della risposta'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Intelligenza_Artificiale/modulo3/quiz_come-funzionano-gli-llm.json',
+          speed: 'data/Minigiochi/Intelligenza_Artificiale/modulo3/speedquiz_come-funzionano-gli-llm.json',
+          abbina: 'data/Minigiochi/Intelligenza_Artificiale/modulo3/abbina_come-funzionano-gli-llm.json',
+          completaFrase: 'data/Minigiochi/Intelligenza_Artificiale/modulo3/completa_la_frase_come-funzionano-gli-llm.json',
+          veroFalso: 'data/Minigiochi/Intelligenza_Artificiale/modulo3/vero_o_falso_come-funzionano-gli-llm.json',
+        },
       cardArt: `
 <rect x="176" y="58" width="80" height="52" rx="6" fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
 <text x="216" y="90" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".6" font-weight="bold">LLM</text>
@@ -1066,9 +1156,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'ai-generativa', label: 'AI Generativa', icon: '🎨', contentReady: false,
+        key: 'ai-generativa', label: 'AI Generativa', icon: '🎨', contentReady: true,
         desc: 'Testo, immagini, audio, video e codice generati dall\'AI',
         tags: ['Testo', 'Immagini', 'Audio e Video', 'Codice'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Intelligenza_Artificiale/modulo4/quiz_ai-generativa.json',
+          speed: 'data/Minigiochi/Intelligenza_Artificiale/modulo4/speedquiz_ai-generativa.json',
+          abbina: 'data/Minigiochi/Intelligenza_Artificiale/modulo4/abbina_ai-generativa.json',
+          completaFrase: 'data/Minigiochi/Intelligenza_Artificiale/modulo4/completa_la_frase_ai-generativa.json',
+          veroFalso: 'data/Minigiochi/Intelligenza_Artificiale/modulo4/vero_o_falso_ai-generativa.json',
+        },
       cardArt: `
 <circle cx="70" cy="80" r="34" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
 <circle cx="58" cy="66" r="4" fill="currentColor" opacity=".5"/>
@@ -1086,9 +1183,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'prompt-engineering', label: 'Prompt Engineering', icon: '⌨️', contentReady: false,
+        key: 'prompt-engineering', label: 'Prompt Engineering', icon: '⌨️', contentReady: true,
         desc: 'Scrivere istruzioni efficaci per ottenere risposte migliori',
         tags: ['Istruzioni e contesto', 'Ruolo ed esempi', 'Tecniche avanzate', 'Prompt injection e sicurezza'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Intelligenza_Artificiale/modulo5/quiz_prompt-engineering.json',
+          speed: 'data/Minigiochi/Intelligenza_Artificiale/modulo5/speedquiz_prompt-engineering.json',
+          abbina: 'data/Minigiochi/Intelligenza_Artificiale/modulo5/abbina_prompt-engineering.json',
+          completaFrase: 'data/Minigiochi/Intelligenza_Artificiale/modulo5/completa_la_frase_prompt-engineering.json',
+          veroFalso: 'data/Minigiochi/Intelligenza_Artificiale/modulo5/vero_o_falso_prompt-engineering.json',
+        },
       cardArt: `
 <rect x="170" y="40" width="96" height="70" rx="8" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
 <line x1="182" y1="56" x2="240" y2="56" stroke="currentColor" stroke-width=".8" opacity=".45"/>
@@ -1103,9 +1207,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'agenti-automazione', label: 'Agenti e Automazione', icon: '🔁', contentReady: false,
+        key: 'agenti-automazione', label: 'Agenti e Automazione', icon: '🔁', contentReady: true,
         desc: 'Chatbot, agenti autonomi e workflow automatizzati',
         tags: ['Chatbot e agenti', 'Agenti autonomi', 'Workflow e integrazioni', 'Produttività'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Intelligenza_Artificiale/modulo6/quiz_agenti-automazione.json',
+          speed: 'data/Minigiochi/Intelligenza_Artificiale/modulo6/speedquiz_agenti-automazione.json',
+          abbina: 'data/Minigiochi/Intelligenza_Artificiale/modulo6/abbina_agenti-automazione.json',
+          completaFrase: 'data/Minigiochi/Intelligenza_Artificiale/modulo6/completa_la_frase_agenti-automazione.json',
+          veroFalso: 'data/Minigiochi/Intelligenza_Artificiale/modulo6/vero_o_falso_agenti-automazione.json',
+        },
       cardArt: `
 <circle cx="60" cy="70" r="14" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
 <rect x="52" y="80" width="16" height="10" rx="2" fill="none" stroke="currentColor" stroke-width=".8" opacity=".4"/>
@@ -1123,9 +1234,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'deepfake-contenuti-sintetici', label: 'Deepfake e Contenuti Sintetici', icon: '🎭', contentReady: false,
+        key: 'deepfake-contenuti-sintetici', label: 'Deepfake e Contenuti Sintetici', icon: '🎭', contentReady: true,
         desc: 'Riconoscere immagini, video e voci sintetiche',
         tags: ['Deepfake', 'Immagini e video sintetici', 'Clonazione vocale', 'Rischi e opportunità'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Intelligenza_Artificiale/modulo7/quiz_deepfake-contenuti-sintetici.json',
+          speed: 'data/Minigiochi/Intelligenza_Artificiale/modulo7/speedquiz_deepfake-contenuti-sintetici.json',
+          abbina: 'data/Minigiochi/Intelligenza_Artificiale/modulo7/abbina_deepfake-contenuti-sintetici.json',
+          completaFrase: 'data/Minigiochi/Intelligenza_Artificiale/modulo7/completa_la_frase_deepfake-contenuti-sintetici.json',
+          veroFalso: 'data/Minigiochi/Intelligenza_Artificiale/modulo7/vero_o_falso_deepfake-contenuti-sintetici.json',
+        },
       cardArt: `
 <circle cx="220" cy="76" r="30" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".45"/>
 <path d="M195,112 a25,20 0 0 1 50,0" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
@@ -1139,9 +1257,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'provenienza-contenuti', label: 'Provenienza dei Contenuti', icon: '🏷️', contentReady: false,
+        key: 'provenienza-contenuti', label: 'Provenienza dei Contenuti', icon: '🏷️', contentReady: true,
         desc: 'Watermark e strumenti per tracciare l\'origine dei contenuti',
         tags: ['Watermark e SynthID', 'Content Credentials', 'Provenienza digitale', 'Limiti'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Intelligenza_Artificiale/modulo8/quiz_provenienza-dei-contenuti.json',
+          speed: 'data/Minigiochi/Intelligenza_Artificiale/modulo8/speedquiz_provenienza-dei-contenuti.json',
+          abbina: 'data/Minigiochi/Intelligenza_Artificiale/modulo8/abbina_provenienza-dei-contenuti.json',
+          completaFrase: 'data/Minigiochi/Intelligenza_Artificiale/modulo8/completa_la_frase_provenienza-dei-contenuti.json',
+          veroFalso: 'data/Minigiochi/Intelligenza_Artificiale/modulo8/vero_o_falso_provenienza-dei-contenuti.json',
+        },
       cardArt: `
 <rect x="176" y="46" width="80" height="60" rx="6" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
 <circle cx="196" cy="64" r="5" fill="none" stroke="currentColor" stroke-width=".8" opacity=".4"/>
@@ -1155,9 +1280,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'verificare-ai', label: "Verificare l'AI", icon: '🔍', contentReady: false,
+        key: 'verificare-ai', label: "Verificare l'AI", icon: '🔍', contentReady: true,
         desc: 'Allucinazioni, fonti e fact-checking dei contenuti AI',
         tags: ['Allucinazioni', 'Fonti', 'Verifica e fact-checking', 'Affidabilità'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Intelligenza_Artificiale/modulo9/quiz_verificare-l-ai.json',
+          speed: 'data/Minigiochi/Intelligenza_Artificiale/modulo9/speedquiz_verificare-l-ai.json',
+          abbina: 'data/Minigiochi/Intelligenza_Artificiale/modulo9/abbina_verificare-l-ai.json',
+          completaFrase: 'data/Minigiochi/Intelligenza_Artificiale/modulo9/completa_la_frase_verificare-l-ai.json',
+          veroFalso: 'data/Minigiochi/Intelligenza_Artificiale/modulo9/vero_o_falso_verificare-l-ai.json',
+        },
       cardArt: `
 <circle cx="212" cy="72" r="26" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".5"/>
 <line x1="230" y1="90" x2="252" y2="112" stroke="currentColor" stroke-width="3" opacity=".5" stroke-linecap="round"/>
@@ -1172,9 +1304,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'etica-ai', label: "Etica dell'AI", icon: '🧭', contentReady: false,
+        key: 'etica-ai', label: "Etica dell'AI", icon: '🧭', contentReady: true,
         desc: 'Trasparenza, responsabilità e impatto sociale dell\'AI',
         tags: ['Trasparenza e responsabilità', 'Privacy', 'Proprietà intellettuale', 'Impatto sociale'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Intelligenza_Artificiale/modulo10/quiz_etica-dell-ai.json',
+          speed: 'data/Minigiochi/Intelligenza_Artificiale/modulo10/speedquiz_etica-dell-ai.json',
+          abbina: 'data/Minigiochi/Intelligenza_Artificiale/modulo10/abbina_etica-dell-ai.json',
+          completaFrase: 'data/Minigiochi/Intelligenza_Artificiale/modulo10/completa_la_frase_etica-dell-ai.json',
+          veroFalso: 'data/Minigiochi/Intelligenza_Artificiale/modulo10/vero_o_falso_etica-dell-ai.json',
+        },
       cardArt: `
 <circle cx="220" cy="76" r="34" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
 <circle cx="220" cy="76" r="3" fill="currentColor" opacity=".5"/>
@@ -1187,9 +1326,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'bias-algoritmici', label: 'Bias Algoritmici', icon: '📊', contentReady: false,
+        key: 'bias-algoritmici', label: 'Bias Algoritmici', icon: '📊', contentReady: true,
         desc: 'Come nascono i pregiudizi negli algoritmi e come limitarli',
         tags: ['Bias nei dati', 'Discriminazione', 'Casi reali', 'Mitigazione'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Intelligenza_Artificiale/modulo11/quiz_bias-algoritmici.json',
+          speed: 'data/Minigiochi/Intelligenza_Artificiale/modulo11/speedquiz_bias-algoritmici.json',
+          abbina: 'data/Minigiochi/Intelligenza_Artificiale/modulo11/abbina_bias-algoritmici.json',
+          completaFrase: 'data/Minigiochi/Intelligenza_Artificiale/modulo11/completa_la_frase_bias-algoritmici.json',
+          veroFalso: 'data/Minigiochi/Intelligenza_Artificiale/modulo11/vero_o_falso_bias-algoritmici.json',
+        },
       cardArt: `
 <line x1="40" y1="120" x2="270" y2="120" stroke="currentColor" stroke-width="1" opacity=".35"/>
 <rect x="55" y="90" width="20" height="30" fill="currentColor" fill-opacity=".08" stroke="currentColor" stroke-width="1" opacity=".5"/>
@@ -1204,9 +1350,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'ai-act', label: 'AI Act', icon: '📜', contentReady: false,
+        key: 'ai-act', label: 'AI Act', icon: '📜', contentReady: true,
         desc: "Il regolamento europeo che disciplina l'uso dell'AI",
         tags: ['Livelli di rischio', 'Sistemi vietati e ad alto rischio', 'Obblighi', 'Cittadini e professionisti'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Intelligenza_Artificiale/modulo12/quiz_ai-act.json',
+          speed: 'data/Minigiochi/Intelligenza_Artificiale/modulo12/speedquiz_ai-act.json',
+          abbina: 'data/Minigiochi/Intelligenza_Artificiale/modulo12/abbina_ai-act.json',
+          completaFrase: 'data/Minigiochi/Intelligenza_Artificiale/modulo12/completa_la_frase_ai-act.json',
+          veroFalso: 'data/Minigiochi/Intelligenza_Artificiale/modulo12/vero_o_falso_ai-act.json',
+        },
       cardArt: `
 <circle cx="220" cy="70" r="30" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
 <circle cx="220" cy="46" r="2" fill="currentColor" opacity=".5"/>
@@ -1224,9 +1377,16 @@ const AREAS = [
       `,
       },
       {
-        key: 'futuro-ai', label: "Il Futuro dell'AI", icon: '🚀', contentReady: false,
+        key: 'futuro-ai', label: "Il Futuro dell'AI", icon: '🚀', contentReady: true,
         desc: 'Multimodalità, agenti, robotica e nuove competenze',
         tags: ['Multimodalità e agenti', 'Robotica', 'AI personale e assistenti', 'Lavoro e competenze future'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Intelligenza_Artificiale/modulo13/quiz_futuro-dell-ai.json',
+          speed: 'data/Minigiochi/Intelligenza_Artificiale/modulo13/speedquiz_futuro-dell-ai.json',
+          abbina: 'data/Minigiochi/Intelligenza_Artificiale/modulo13/abbina_futuro-dell-ai.json',
+          completaFrase: 'data/Minigiochi/Intelligenza_Artificiale/modulo13/completa_la_frase_futuro-dell-ai.json',
+          veroFalso: 'data/Minigiochi/Intelligenza_Artificiale/modulo13/vero_o_falso_futuro-dell-ai.json',
+        },
       cardArt: `
 <path d="M220,40 q14,20 14,46 q0,10 -14,18 q-14,-8 -14,-18 q0,-26 14,-46 z"
       fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-width="1.1" opacity=".5"/>

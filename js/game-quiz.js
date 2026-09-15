@@ -7,6 +7,17 @@
    no override chain from app.js.
    Fase 8: PauseUIRegistry handler registrato (M2).
    Depends on: game-engine-state.js, scoring.js, renderer.js
+
+   v8.33.1 — FIX header "qz-cat" (Quiz + Speed Quiz, stessa
+   renderQ()): mostrava un ternario legacy CE/OE ("qualsiasi
+   modulo diverso da CE" → sempre "// Online Essentials"),
+   residuo di quando l'app aveva solo 2 moduli. Sostituito con
+   modLabel() — stesso helper già usato correttamente in
+   game-truefalse.js — che risolve QUALSIASI modulo (via
+   window.AreasConfig.getModuleInfo) mostrando il nome del
+   modulo, non dell'Area. Verificati anche game-fill.js e
+   game-match.js (Completa la frase / Abbina): nessun header
+   "// ..." presente in quei due — nulla da correggere lì.
 ================================================== */
 
 function resetSpeedUI(){
@@ -55,7 +66,7 @@ function renderQ(){
   const q=qPool[qIdx];const tot=qPool.length;
   sh('qz-counter').textContent=(qIdx+1)+'/'+tot;
   sh('qz-prog').style.width=(qIdx/tot*100)+'%';
-  sh('qz-cat').textContent=getQuestionModule(q)==='CE'?'// Computer Essentials':'// Online Essentials';
+  sh('qz-cat').textContent='// '+modLabel(getQuestionModule(q));
   sh('qz-q').textContent=q.q;
   sh('qz-fb').innerHTML='';sh('next-btn').classList.add('hidden');qAnswered=false;renderLiveBar();
   // v2.1.7: marca timestamp inizio domanda per speed bonus

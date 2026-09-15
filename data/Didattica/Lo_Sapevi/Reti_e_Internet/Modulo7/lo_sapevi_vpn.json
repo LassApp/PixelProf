@@ -1,0 +1,307 @@
+[
+  {
+    "id": 1,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Una VPN crea una connessione protetta e cifrata tra un dispositivo e un server remoto attraverso Internet.",
+    "source_id": 1
+  },
+  {
+    "id": 2,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Una VPN non rende completamente invisibili su Internet e non elimina tutti i malware.",
+    "source_id": 2
+  },
+  {
+    "id": 3,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Grazie alla cifratura, i dati diventano illeggibili per chi non possiede la chiave corretta.",
+    "source_id": 3
+  },
+  {
+    "id": 4,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Quando si utilizza una VPN, il sito visitato vede l'indirizzo IP del server VPN, non quello reale assegnato dal provider Internet dell'utente.",
+    "source_id": 4
+  },
+  {
+    "id": 5,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Le VPN vengono utilizzate per ridurre i rischi quando si utilizzano reti Wi-Fi pubbliche.",
+    "source_id": 5
+  },
+  {
+    "id": 6,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Una VPN non sostituisce antivirus, firewall o le buone pratiche di sicurezza.",
+    "source_id": 6
+  },
+  {
+    "id": 7,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Prima di lasciare il dispositivo, i dati vengono cifrati per proteggerli durante la trasmissione.",
+    "source_id": 7
+  },
+  {
+    "id": 8,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Il tunnel VPN è il canale di comunicazione sicuro creato tra il dispositivo dell'utente e il server VPN.",
+    "source_id": 8
+  },
+  {
+    "id": 9,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Nel contesto delle VPN, il termine \"tunnel\" non indica un collegamento fisico dedicato tra due edifici, ma un canale logico protetto creato sopra l'infrastruttura di Internet.",
+    "source_id": 9
+  },
+  {
+    "id": 10,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Router e provider Internet possono vedere che esiste una comunicazione verso il server VPN, ma non il contenuto dei dati.",
+    "detail": "Durante il tragitto nel tunnel, il contenuto dei dati rimane illeggibile senza le chiavi di cifratura.",
+    "source_id": 10
+  },
+  {
+    "id": 11,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Se un sito utilizza ancora HTTP oltre il server VPN, il traffico che prosegue da quel punto non è protetto.",
+    "source_id": 11
+  },
+  {
+    "id": 12,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "VPN e HTTPS sono tecnologie complementari, non alternative.",
+    "source_id": 12
+  },
+  {
+    "id": 13,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Chi è collegato alla stessa rete Wi-Fi di un utente con VPN attiva può vedere solo che esiste una comunicazione con un server VPN, non le sue credenziali di accesso.",
+    "source_id": 13
+  },
+  {
+    "id": 14,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Le risposte inviate dal server VPN al dispositivo dell'utente vengono cifrate dal server, attraversano il tunnel protetto e vengono decifrate solo sul dispositivo di destinazione.",
+    "source_id": 14
+  },
+  {
+    "id": 15,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Le VPN si classificano in base al loro scopo.",
+    "source_id": 15
+  },
+  {
+    "id": 16,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "La VPN Remote Access permette a un singolo utente di collegarsi in modo sicuro alla rete di un'organizzazione.",
+    "source_id": 16
+  },
+  {
+    "id": 17,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "La VPN Site-to-Site collega due o più reti geograficamente separate, non un singolo utente a un server pubblico.",
+    "source_id": 17
+  },
+  {
+    "id": 18,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Il collegamento di una VPN Site-to-Site è generalmente permanente e gestito da router o firewall aziendali.",
+    "detail": "Questo tipo di collegamento non richiede generalmente alcun intervento da parte degli utenti.",
+    "source_id": 18
+  },
+  {
+    "id": 19,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Le VPN commerciali sono servizi offerti da aziende specializzate agli utenti, e non collegamenti interni gestiti dalle aziende per le proprie sedi.",
+    "source_id": 19
+  },
+  {
+    "id": 20,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Utilizzando una VPN commerciale, una parte della fiducia viene trasferita al gestore della VPN.",
+    "detail": "Questo accade perché il traffico dell'utente passa attraverso i server del gestore della VPN commerciale.",
+    "source_id": 20
+  },
+  {
+    "id": 21,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "In tutte le tipologie di VPN, i dati vengono cifrati, attraversano un tunnel protetto e vengono decifrati solo nel punto previsto.",
+    "detail": "Questo meccanismo resta identico in ogni tipologia di VPN: a cambiare è soltanto lo scopo della connessione.",
+    "source_id": 21
+  },
+  {
+    "id": 22,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Le reti Wi-Fi pubbliche sono infrastrutture condivise su cui non abbiamo alcun controllo.",
+    "source_id": 22
+  },
+  {
+    "id": 23,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Una VPN non è una tecnologia da lasciare sempre attiva per principio, ma uno strumento da usare quando offre un reale beneficio.",
+    "source_id": 23
+  },
+  {
+    "id": 24,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Molte aziende permettono l'accesso ai server interni esclusivamente tramite VPN durante il lavoro da remoto.",
+    "detail": "Questo consente ai dipendenti di lavorare da casa mantenendo una connessione cifrata con la rete aziendale.",
+    "source_id": 24
+  },
+  {
+    "id": 25,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Se un sito utilizza HTTPS, la comunicazione è già cifrata: la VPN può offrire vantaggi aggiuntivi, ma non è sempre strettamente indispensabile.",
+    "source_id": 25
+  },
+  {
+    "id": 26,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Durante grandi eventi internazionali, gli esperti consigliano di usare una VPN sui Wi-Fi pubblici degli ospiti.",
+    "detail": "Le reti Wi-Fi pubbliche degli eventi possono infatti diventare bersaglio di attacchi o tentativi di intercettazione.",
+    "source_id": 26
+  },
+  {
+    "id": 27,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Nella normale navigazione domestica su un sito HTTPS, la comunicazione è già cifrata tra il browser e il sito web, indipendentemente dall'uso di una VPN.",
+    "source_id": 27
+  },
+  {
+    "id": 28,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "La privacy è il diritto di controllare le informazioni che ci riguardano e decidere come vengono raccolte, utilizzate e condivise.",
+    "source_id": 28
+  },
+  {
+    "id": 29,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Una VPN migliora la privacy, ma non garantisce l'anonimato assoluto su Internet.",
+    "source_id": 29
+  },
+  {
+    "id": 30,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "I siti web vedono l'indirizzo IP del server VPN e non quello assegnato dal provider Internet dell'utente.",
+    "detail": "Questo rende più difficile associare immediatamente una connessione a una specifica rete domestica o aziendale.",
+    "source_id": 30
+  },
+  {
+    "id": 31,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Accedendo al proprio account di posta elettronica mentre si usa una VPN, il servizio continua comunque a riconoscere l'utente attraverso le credenziali di accesso.",
+    "source_id": 31
+  },
+  {
+    "id": 32,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "I browser fingerprint sono tecniche che identificano un dispositivo in base alle sue caratteristiche.",
+    "detail": "Queste tecniche possono raccogliere informazioni sull'utente anche quando la VPN è attiva.",
+    "source_id": 32
+  },
+  {
+    "id": 33,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Alcuni provider VPN dichiarano politiche \"no-log\" per non conservare registri delle attività degli utenti.",
+    "detail": "Alcune aziende hanno anche accettato verifiche indipendenti (audit) per dimostrare il rispetto di queste politiche.",
+    "source_id": 33
+  },
+  {
+    "id": 34,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Quando si utilizza una VPN, parte della fiducia si sposta dal provider Internet al fornitore della VPN, e non rimane interamente presso il provider originale.",
+    "source_id": 34
+  },
+  {
+    "id": 35,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Una VPN protegge la connessione tra il dispositivo e il server VPN, ma non elimina tutte le minacce informatiche.",
+    "source_id": 35
+  },
+  {
+    "id": 36,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Una VPN non sostituisce l'autenticazione a più fattori, l'antivirus, il firewall o gli aggiornamenti di sicurezza.",
+    "source_id": 36
+  },
+  {
+    "id": 37,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Se un utente inserisce le proprie credenziali in un sito fraudolento, la VPN cifra comunque l'invio dei dati al sito malevolo.",
+    "detail": "La VPN protegge infatti il trasporto dei dati, ma non impedisce che vengano consegnati a un destinatario sbagliato.",
+    "source_id": 37
+  },
+  {
+    "id": 38,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Le prestazioni di una connessione VPN possono risultare più lente, soprattutto se il server VPN è distante o congestionato.",
+    "source_id": 38
+  },
+  {
+    "id": 39,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Alcuni servizi online possono rilevare l'uso di una VPN e limitarne o impedirne l'accesso.",
+    "detail": "Questo può avvenire per motivi di sicurezza o di licenza dei contenuti.",
+    "source_id": 39
+  },
+  {
+    "id": 40,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Numerose campagne di phishing hanno colpito utenti indipendentemente dall'utilizzo di una VPN.",
+    "source_id": 40
+  },
+  {
+    "id": 41,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "Molti attacchi informatici sfruttano il fattore umano più che le debolezze tecniche della connessione: gli attaccanti spesso convincono le vittime a inserire spontaneamente le proprie credenziali in siti falsi.",
+    "source_id": 41
+  },
+  {
+    "id": 42,
+    "module": "vpn",
+    "type": "curiosity",
+    "fact": "La VPN è soltanto uno degli strumenti della sicurezza informatica, non la sicurezza nel suo insieme: una protezione efficace nasce dalla combinazione di più misure che lavorano insieme.",
+    "source_id": 42
+  }
+]

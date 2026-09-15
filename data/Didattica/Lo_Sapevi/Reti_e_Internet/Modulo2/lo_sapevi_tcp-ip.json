@@ -1,0 +1,472 @@
+[
+  {
+    "id": 1,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Il TCP/IP è l'insieme di protocolli che permette ai dispositivi di comunicare attraverso le reti e su Internet.",
+    "detail": "Si tratta, in pratica, di un insieme di regole condivise che rendono possibile la comunicazione.",
+    "source_id": 1
+  },
+  {
+    "id": 2,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "È l'IP, non il TCP, a occuparsi di identificare la destinazione dei dati e di permetterne l'instradamento nella rete; il TCP garantisce invece che lo scambio di informazioni avvenga in modo affidabile.",
+    "source_id": 2
+  },
+  {
+    "id": 3,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "La vera forza di TCP/IP è la sua universalità: qualsiasi dispositivo che lo utilizzi può comunicare con altri, indipendentemente dal produttore.",
+    "source_id": 3
+  },
+  {
+    "id": 4,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Il 1° gennaio 1983, durante il Flag Day, ARPANET adottò TCP/IP come protocollo standard di comunicazione.",
+    "source_id": 4
+  },
+  {
+    "id": 5,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "ARPANET è considerata l'antenata di Internet.",
+    "detail": "ARPANET era una rete sperimentale nata durante la Guerra Fredda per collegare università e centri di ricerca.",
+    "source_id": 5
+  },
+  {
+    "id": 6,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Il TCP/IP non decide cosa devono dire le persone che comunicano su Internet, ma stabilisce le regole affinché i loro dispositivi possano comprendersi.",
+    "source_id": 6
+  },
+  {
+    "id": 7,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Insieme, TCP e IP rappresentano la base del funzionamento di Internet.",
+    "source_id": 7
+  },
+  {
+    "id": 8,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Il modello TCP/IP organizza la comunicazione di rete in quattro livelli.",
+    "detail": "Ogni livello è specializzato in un compito preciso.",
+    "source_id": 8
+  },
+  {
+    "id": 9,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "È il Livello Accesso alla Rete, non il Livello Applicazione, a essere il più vicino all'hardware; il Livello Applicazione è invece quello più vicino all'utente.",
+    "source_id": 9
+  },
+  {
+    "id": 10,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Il Livello Trasporto decide se utilizzare un protocollo affidabile come TCP oppure uno più veloce come UDP.",
+    "source_id": 10
+  },
+  {
+    "id": 11,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Il Livello Internet si occupa dell'indirizzamento tramite gli indirizzi IP.",
+    "source_id": 11
+  },
+  {
+    "id": 12,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Il Livello Accesso alla Rete trasforma le informazioni in segnali elettrici, luminosi o radio.",
+    "source_id": 12
+  },
+  {
+    "id": 13,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Ogni livello del modello TCP/IP può concentrarsi esclusivamente sulla propria funzione, senza dover conoscere tutti i dettagli di funzionamento degli altri livelli.",
+    "source_id": 13
+  },
+  {
+    "id": 14,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "L'incapsulamento dei dati avviene durante l'invio, mentre il decapsulamento avviene durante la ricezione.",
+    "source_id": 14
+  },
+  {
+    "id": 15,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Passando dal Wi-Fi alla rete cellulare, cambia generalmente solo il Livello Accesso alla Rete, mentre gli altri livelli continuano a operare nello stesso modo.",
+    "source_id": 15
+  },
+  {
+    "id": 16,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Il TCP/IP è considerato uno dei progetti ingegneristici più riusciti della storia dell'informatica.",
+    "source_id": 16
+  },
+  {
+    "id": 17,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "TCP è un protocollo del Livello Trasporto progettato per garantire una comunicazione affidabile, ordinata e senza errori.",
+    "source_id": 17
+  },
+  {
+    "id": 18,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Prima di iniziare la trasmissione dei dati, il TCP crea una connessione tra mittente e destinatario.",
+    "source_id": 18
+  },
+  {
+    "id": 19,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "In TCP, ogni segmento del messaggio viene numerato.",
+    "source_id": 19
+  },
+  {
+    "id": 20,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Gli ACK sono segnali che comunicano al mittente che alcuni segmenti sono arrivati correttamente.",
+    "detail": "ACK è l'abbreviazione di Acknowledgment.",
+    "source_id": 20
+  },
+  {
+    "id": 21,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Se un segmento TCP non arriva o viene danneggiato, il protocollo rileva il problema e ne richiede nuovamente l'invio, senza ignorarlo.",
+    "source_id": 21
+  },
+  {
+    "id": 22,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "La priorità principale di TCP è l'affidabilità, non la velocità: il suo obiettivo è garantire che il destinatario riceva esattamente ciò che è stato inviato.",
+    "source_id": 22
+  },
+  {
+    "id": 23,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "La navigazione web, la posta elettronica e i servizi cloud utilizzano tipicamente TCP.",
+    "detail": "Anche il trasferimento di file utilizza tipicamente questo protocollo.",
+    "source_id": 23
+  },
+  {
+    "id": 24,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Una perdita o una modifica dei dati durante un bonifico bancario online potrebbe compromettere l'intera transazione.",
+    "source_id": 24
+  },
+  {
+    "id": 25,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "UDP privilegia la velocità e la semplicità della comunicazione rispetto all'affidabilità.",
+    "source_id": 25
+  },
+  {
+    "id": 26,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "A differenza di TCP, l'UDP non stabilisce una connessione preventiva prima di inviare i dati.",
+    "source_id": 26
+  },
+  {
+    "id": 27,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "L'UDP non tenta di recuperare i dati eventualmente persi durante il percorso, a differenza del TCP.",
+    "source_id": 27
+  },
+  {
+    "id": 28,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "La latenza rappresenta il tempo necessario affinché un'informazione raggiunga il destinatario.",
+    "source_id": 28
+  },
+  {
+    "id": 29,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Nei giochi online e nelle videochiamate, ridurre la latenza è spesso più importante che garantire la ricezione perfetta di ogni pacchetto.",
+    "detail": "Lo stesso vale per lo streaming in tempo reale.",
+    "source_id": 29
+  },
+  {
+    "id": 30,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "L'UDP non garantisce che i dati arrivino tutti, né che vengano ricevuti nell'ordine corretto.",
+    "source_id": 30
+  },
+  {
+    "id": 31,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Durante la pandemia di COVID-19, piattaforme come Zoom, Teams e Google Meet utilizzarono ampiamente protocolli basati su UDP per audio e video in tempo reale.",
+    "source_id": 31
+  },
+  {
+    "id": 32,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "È l'UDP, non il TCP, a essere paragonato a una lettera ordinaria priva di conferma di ricezione: il TCP viene invece paragonato a una raccomandata con ricevuta di ritorno.",
+    "source_id": 32
+  },
+  {
+    "id": 33,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Le porte sono identificatori numerici utilizzati da TCP e UDP per indirizzare i dati verso l'applicazione corretta.",
+    "source_id": 33
+  },
+  {
+    "id": 34,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "È il contrario: l'indirizzo IP identifica il dispositivo, mentre la porta identifica il programma con cui si desidera comunicare.",
+    "source_id": 34
+  },
+  {
+    "id": 35,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Ogni porta è rappresentata da un numero compreso tra 0 e 65535.",
+    "source_id": 35
+  },
+  {
+    "id": 36,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "La porta 443 è storicamente utilizzata dal protocollo HTTPS.",
+    "detail": "La porta 80 è invece storicamente utilizzata dal protocollo HTTP.",
+    "source_id": 36
+  },
+  {
+    "id": 37,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Una porta effimera è una porta temporanea, liberata al termine della comunicazione e riutilizzabile per connessioni successive, non una porta fissa assegnata sempre allo stesso programma.",
+    "source_id": 37
+  },
+  {
+    "id": 38,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "I firewall controllano spesso quali porte possono essere utilizzate, bloccando quelle non autorizzate.",
+    "detail": "In questo modo riducono la superficie d'attacco esposta a possibili minacce.",
+    "source_id": 38
+  },
+  {
+    "id": 39,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Una porta di rete non è un dispositivo fisico e non corrisponde a una porta USB o Ethernet: è semplicemente un numero utilizzato dal sistema operativo per organizzare le comunicazioni.",
+    "source_id": 39
+  },
+  {
+    "id": 40,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Il port scanning è una tecnica con cui gli aggressori verificano quali porte di un dispositivo risultano aperte.",
+    "source_id": 40
+  },
+  {
+    "id": 41,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "HTTP è il protocollo del Livello Applicazione utilizzato per richiedere e trasferire pagine Web tra browser e server.",
+    "source_id": 41
+  },
+  {
+    "id": 42,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Con HTTP i dati vengono trasmessi senza essere cifrati: è HTTPS a proteggere la comunicazione tramite crittografia.",
+    "source_id": 42
+  },
+  {
+    "id": 43,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "HTTPS è il risultato dell'unione tra il protocollo applicativo HTTP e il protocollo di sicurezza TLS.",
+    "source_id": 43
+  },
+  {
+    "id": 44,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Le tre garanzie offerte da HTTPS sono riservatezza, integrità e autenticità.",
+    "source_id": 44
+  },
+  {
+    "id": 45,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Un sito che utilizza HTTPS può comunque essere fraudolento: anche un sito malevolo può avere un certificato valido.",
+    "source_id": 45
+  },
+  {
+    "id": 46,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Grazie al certificato digitale, il browser può verificare l'identità del server.",
+    "source_id": 46
+  },
+  {
+    "id": 47,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Firesheep, presentato nel 2010, dimostrò quanto fosse semplice sottrarre sessioni di accesso su reti Wi-Fi pubbliche quando i siti non proteggevano completamente le comunicazioni.",
+    "source_id": 47
+  },
+  {
+    "id": 48,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "L'episodio legato a Firesheep contribuì ad accelerare, non a rallentare, l'adozione di HTTPS su larga scala.",
+    "source_id": 48
+  },
+  {
+    "id": 49,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "HTTP può essere paragonato a una cartolina spedita per posta: durante il tragitto, chiunque la maneggi può leggere ciò che è scritto.",
+    "source_id": 49
+  },
+  {
+    "id": 50,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Gli esseri umani utilizzano i nomi dei siti Web perché sono più facili da ricordare rispetto agli indirizzi IP.",
+    "source_id": 50
+  },
+  {
+    "id": 51,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Il browser chiede a un server DNS quale indirizzo IP corrisponde al nome del sito digitato.",
+    "source_id": 51
+  },
+  {
+    "id": 52,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Trasformare i dati in segnali elettrici o radio è compito del Livello Accesso alla Rete, non del Livello Applicazione, che si occupa invece di preparare il messaggio HTTP.",
+    "source_id": 52
+  },
+  {
+    "id": 53,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Nessun router lungo il percorso conosce necessariamente l'intero tragitto di un pacchetto: ciascuno prende una decisione locale basandosi sulla propria tabella di instradamento.",
+    "source_id": 53
+  },
+  {
+    "id": 54,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Il decapsulamento avviene quando i pacchetti raggiungono il server e ogni livello elabora le informazioni fino a ricostruire il messaggio originale.",
+    "source_id": 54
+  },
+  {
+    "id": 55,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Il 15 marzo 2019 un'interruzione dei servizi di un importante provider DNS rese temporaneamente irraggiungibili numerosi siti Web.",
+    "source_id": 55
+  },
+  {
+    "id": 56,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Durante l'interruzione del 15 marzo 2019, molti server ospitanti i siti funzionavano perfettamente: il problema riguardava la traduzione dei nomi di dominio in indirizzi IP, non i server stessi.",
+    "source_id": 56
+  },
+  {
+    "id": 57,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Nessun protocollo da solo sarebbe sufficiente a far funzionare una richiesta Web: ciascuno svolge il proprio compito e, insieme, rendono possibile la comunicazione su Internet.",
+    "source_id": 57
+  },
+  {
+    "id": 58,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "In un confronto con una libreria che gestisce ordini, il corriere che prende in carico l'ordine rappresenta il protocollo TCP, mentre HTTP rappresenta le istruzioni su quale libro richiedere.",
+    "source_id": 58
+  },
+  {
+    "id": 59,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Un motore di ricerca interroga un proprio indice, già costruito in precedenza, e non visita tutti i siti del mondo in tempo reale nel momento in cui un utente effettua una ricerca.",
+    "source_id": 59
+  },
+  {
+    "id": 60,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "I crawler sono programmi automatici che esplorano continuamente Internet seguendo i collegamenti tra le pagine.",
+    "source_id": 60
+  },
+  {
+    "id": 61,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Le pagine analizzate dai crawler vengono inserite in un grande indice (Index).",
+    "source_id": 61
+  },
+  {
+    "id": 62,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Gli algoritmi di ranking valutano centinaia di fattori per stimare quali pagine siano più utili rispetto alla ricerca effettuata.",
+    "source_id": 62
+  },
+  {
+    "id": 63,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "I risultati sponsorizzati sono annunci pubblicitari acquistati dagli inserzionisti, distinti dai risultati organici, che vengono invece ordinati in base alla rilevanza calcolata dall'algoritmo.",
+    "source_id": 63
+  },
+  {
+    "id": 64,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Un sito appena pubblicato deve prima essere visitato da un crawler ed essere inserito nell'indice, prima di poter comparire nei risultati di ricerca.",
+    "source_id": 64
+  },
+  {
+    "id": 65,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "Il browser e il motore di ricerca non sono la stessa cosa: il browser permette di navigare sul Web, mentre il motore di ricerca è il servizio che aiuta a trovare le informazioni.",
+    "source_id": 65
+  },
+  {
+    "id": 66,
+    "module": "tcp-ip",
+    "type": "curiosity",
+    "fact": "PageRank, introdotto nel 1998, valutava anche i collegamenti tra le pagine Web, considerando un link come un \"voto\" di fiducia.",
+    "source_id": 66
+  }
+]

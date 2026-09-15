@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Il Cloud Networking permette di utilizzare servizi, applicazioni e risorse informatiche attraverso Internet, invece di mantenerle solo sui dispositivi locali.",
+    "source_id": 1
+  },
+  {
+    "id": 2,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Il termine \"cloud\" indica un ambiente digitale remoto composto da server collegati in rete, non un dispositivo fisico installato dentro lo smartphone.",
+    "source_id": 2
+  },
+  {
+    "id": 3,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Un file salvato su un servizio cloud come Google Drive rimane custodito nel cloud e viene sincronizzato automaticamente tra i dispositivi attraverso la rete, senza bisogno di una chiavetta USB.",
+    "source_id": 3
+  },
+  {
+    "id": 4,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Tra i vantaggi del Cloud Networking ci sono accessibilità, collaborazione, riduzione dei costi e continuità del servizio.",
+    "source_id": 4
+  },
+  {
+    "id": 5,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Senza una connessione Internet stabile, molti servizi di Cloud Networking diventano difficili da utilizzare.",
+    "source_id": 5
+  },
+  {
+    "id": 6,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Durante la pandemia di COVID-19 piattaforme come Microsoft Teams hanno dovuto gestire milioni di utenti collegati contemporaneamente.",
+    "detail": "Il passaggio di molte aziende e scuole al lavoro e alla didattica a distanza fece aumentare enormemente il traffico su queste piattaforme.",
+    "source_id": 6
+  },
+  {
+    "id": 7,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Un Data Center è una struttura fisica che ospita migliaia di server, dispositivi di rete e sistemi di archiviazione.",
+    "source_id": 7
+  },
+  {
+    "id": 8,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "All'interno di un Data Center i server sono organizzati in armadi metallici chiamati rack.",
+    "source_id": 8
+  },
+  {
+    "id": 9,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Un Data Center necessita di impianti di raffreddamento che mantengono costante la temperatura per evitare il surriscaldamento dei server.",
+    "source_id": 9
+  },
+  {
+    "id": 10,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "La sicurezza fisica di un Data Center comprende badge, sistemi biometrici e videosorveglianza.",
+    "detail": "L'accesso è controllato anche dalla presenza di personale autorizzato.",
+    "source_id": 10
+  },
+  {
+    "id": 11,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Ridondanza e backup non sono la stessa cosa: la ridondanza protegge dai guasti dell'infrastruttura, mentre il backup protegge dagli errori umani o dalla perdita di dati.",
+    "source_id": 11
+  },
+  {
+    "id": 12,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Nel marzo 2021 un incendio colpì un Data Center di OVHcloud a Strasburgo, in Francia.",
+    "source_id": 12
+  },
+  {
+    "id": 13,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Dopo l'incendio del Data Center OVHcloud di Strasburgo, alcuni clienti che non avevano predisposto copie di sicurezza in altri Data Center persero definitivamente parte dei propri dati.",
+    "source_id": 13
+  },
+  {
+    "id": 14,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Prima di essere inviati in rete, i dati vengono suddivisi dal sistema operativo in piccoli pacchetti.",
+    "source_id": 14
+  },
+  {
+    "id": 15,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Il router di casa rappresenta il punto di accesso attraverso cui il traffico locale entra in Internet verso il cloud.",
+    "source_id": 15
+  },
+  {
+    "id": 16,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "La sincronizzazione consiste nell'aggiornamento automatico di tutte le copie di un documento collegate allo stesso account.",
+    "source_id": 16
+  },
+  {
+    "id": 17,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Se manca la connessione Internet, molti servizi cloud salvano temporaneamente le modifiche sul dispositivo e le inviano automaticamente appena la connessione torna disponibile, senza eliminarle.",
+    "source_id": 17
+  },
+  {
+    "id": 18,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Nel giugno 2022 un'interruzione della rete di Google Cloud provocò disservizi temporanei per numerose applicazioni.",
+    "detail": "L'interruzione interessò in particolare una regione degli Stati Uniti.",
+    "source_id": 18
+  },
+  {
+    "id": 19,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Una CDN (Content Delivery Network) conserva copie dei contenuti più richiesti su server distribuiti nel mondo.",
+    "source_id": 19
+  },
+  {
+    "id": 20,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Il Load Balancing distribuisce automaticamente le richieste tra più server per evitare che uno solo venga sovraccaricato.",
+    "source_id": 20
+  },
+  {
+    "id": 21,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Aggiungere nuovi server che lavorano insieme è la scalabilità orizzontale; la scalabilità verticale, invece, potenzia un singolo server.",
+    "source_id": 21
+  },
+  {
+    "id": 22,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "La scalabilità orizzontale è il modello più utilizzato nel Cloud Networking.",
+    "source_id": 22
+  },
+  {
+    "id": 23,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "La scalabilità verticale presenta un limite fisico: oltre una certa capacità, un singolo server non può più essere potenziato.",
+    "source_id": 23
+  },
+  {
+    "id": 24,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Nel maggio 2021 un malfunzionamento della CDN di Fastly causò l'interruzione temporanea di migliaia di siti web.",
+    "source_id": 24
+  },
+  {
+    "id": 25,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Google Drive è un servizio di cloud storage per l'archiviazione e la sincronizzazione dei file nel cloud.",
+    "source_id": 25
+  },
+  {
+    "id": 26,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Netflix distribuisce contenuti audio e video attraverso Internet utilizzando anche le CDN.",
+    "source_id": 26
+  },
+  {
+    "id": 27,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Netflix e Google Drive si basano su infrastrutture di Cloud Networking simili, entrambe fondate su Data Center, CDN, Load Balancing e sistemi di scalabilità, non su infrastrutture incompatibili tra loro.",
+    "source_id": 27
+  },
+  {
+    "id": 28,
+    "module": "cloud-networking",
+    "type": "curiosity",
+    "fact": "Nel marzo 2020 Netflix diminuì temporaneamente il bitrate dei video per ridurre il carico sulle reti Internet europee.",
+    "detail": "La misura fu adottata durante i primi mesi della pandemia di COVID-19.",
+    "source_id": 28
+  }
+]

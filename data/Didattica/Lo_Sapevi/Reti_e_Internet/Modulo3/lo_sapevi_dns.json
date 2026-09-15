@@ -1,0 +1,416 @@
+[
+  {
+    "id": 1,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Il DNS traduce i nomi di dominio, facili da ricordare per le persone, nei corrispondenti indirizzi IP.",
+    "source_id": 1
+  },
+  {
+    "id": 2,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Il DNS può essere descritto come una gigantesca rubrica distribuita su Internet, che associa un nome leggibile al suo indirizzo IP.",
+    "source_id": 2
+  },
+  {
+    "id": 3,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Gli esseri umani ricordano più facilmente le parole rispetto alle lunghe sequenze di numeri.",
+    "source_id": 3
+  },
+  {
+    "id": 4,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Il DNS non scarica né conserva le pagine Web dei siti visitati: non trasporta i dati del sito, ma soltanto l'indirizzo IP corrispondente al nome di dominio.",
+    "source_id": 4
+  },
+  {
+    "id": 5,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "L'operazione di traduzione svolta dal DNS avviene tipicamente in pochi millisecondi.",
+    "detail": "Questa operazione è completamente trasparente per l'utente.",
+    "source_id": 5
+  },
+  {
+    "id": 6,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Senza il DNS, Internet continuerebbe a funzionare, ma diventerebbe estremamente difficile da utilizzare, perché bisognerebbe ricordare gli indirizzi IP a memoria.",
+    "source_id": 6
+  },
+  {
+    "id": 7,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "L'attacco del 21 ottobre 2016 contro Dyn sfruttò una rete di dispositivi IoT compromessi.",
+    "source_id": 7
+  },
+  {
+    "id": 8,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Durante l'attacco del 21 ottobre 2016 contro Dyn, i server di Twitter, Spotify e Netflix continuavano a funzionare regolarmente: il problema era che il DNS non riusciva più a indicare dove trovarli.",
+    "source_id": 8
+  },
+  {
+    "id": 9,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Un nome di dominio è un nome leggibile dalle persone che identifica un servizio o un sito Internet.",
+    "source_id": 9
+  },
+  {
+    "id": 10,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Il TLD, come .it, si trova nella parte più a destra di un indirizzo come www.uniba.it, non nella parte più a sinistra.",
+    "source_id": 10
+  },
+  {
+    "id": 11,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": ".com, .org e .net sono esempi di TLD di carattere internazionale.",
+    "source_id": 11
+  },
+  {
+    "id": 12,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "\"www\" rappresenta un sottodominio, non il Top-Level Domain di un sito.",
+    "source_id": 12
+  },
+  {
+    "id": 13,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "mail.google.com, maps.google.com e drive.google.com appartengono tutti allo stesso dominio principale, ma identificano servizi diversi.",
+    "source_id": 13
+  },
+  {
+    "id": 14,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Un grande servizio come Google può restituire indirizzi IP diversi a seconda della posizione dell'utente o del carico della rete, non sempre lo stesso indirizzo a tutti.",
+    "source_id": 14
+  },
+  {
+    "id": 15,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Più domini possono condividere lo stesso indirizzo IP se ospitati sul medesimo server.",
+    "source_id": 15
+  },
+  {
+    "id": 16,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Nel 2015 Google registrò il dominio abc.xyz per rappresentare la nuova società Alphabet.",
+    "detail": "Il dominio utilizza il TLD .xyz, all'epoca una novità tra le estensioni disponibili.",
+    "source_id": 16
+  },
+  {
+    "id": 17,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "La risoluzione DNS è il processo attraverso il quale un nome di dominio viene tradotto nel corrispondente indirizzo IP.",
+    "source_id": 17
+  },
+  {
+    "id": 18,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "La prima verifica nella risoluzione DNS avviene controllando la cache DNS del dispositivo stesso, non direttamente il server autorevole del dominio.",
+    "source_id": 18
+  },
+  {
+    "id": 19,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Se l'indirizzo è presente nella cache e ancora valido, il browser può usarlo senza effettuare una nuova ricerca.",
+    "source_id": 19
+  },
+  {
+    "id": 20,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Se il server DNS configurato non conosce la risposta, avvia una ricerca attraverso il sistema DNS mondiale, invece di arrendersi immediatamente.",
+    "source_id": 20
+  },
+  {
+    "id": 21,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Il server DNS, una volta ottenuto l'indirizzo IP corretto, lo memorizza temporaneamente nella propria cache.",
+    "source_id": 21
+  },
+  {
+    "id": 22,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "L'intera sequenza della risoluzione DNS richiede normalmente pochi millisecondi, non diverse ore.",
+    "source_id": 22
+  },
+  {
+    "id": 23,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Durante grandi eventi come i Mondiali di calcio o il Black Friday, i fornitori utilizzano infrastrutture DNS distribuite per gestire le richieste.",
+    "source_id": 23
+  },
+  {
+    "id": 24,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Il compito del DNS termina nel momento in cui comunica al dispositivo l'indirizzo IP corretto: non scarica direttamente il sito Web richiesto.",
+    "source_id": 24
+  },
+  {
+    "id": 25,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "La cache DNS conserva le associazioni tra nomi di dominio e indirizzi IP già risolte.",
+    "source_id": 25
+  },
+  {
+    "id": 26,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Lo scopo della cache DNS è evitare di ripetere continuamente la stessa ricerca.",
+    "detail": "In questo modo la navigazione risulta più veloce.",
+    "source_id": 26
+  },
+  {
+    "id": 27,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Non solo il computer o lo smartphone dell'utente conservano una cache DNS: anche browser, sistema operativo, router, provider Internet e server DNS ne mantengono una propria.",
+    "source_id": 27
+  },
+  {
+    "id": 28,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Il TTL indica il tempo di validità di un record DNS, espresso in secondi.",
+    "source_id": 28
+  },
+  {
+    "id": 29,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Quando il TTL di un record DNS scade, la voce viene considerata non più valida e viene avviata una nuova risoluzione DNS, invece di rimanere valida indefinitamente.",
+    "source_id": 29
+  },
+  {
+    "id": 30,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Una cache DNS può contenere un indirizzo IP non più aggiornato se un sito cambia server prima della scadenza del TTL.",
+    "source_id": 30
+  },
+  {
+    "id": 31,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Prima di una migrazione pianificata, i gestori di un sito spesso riducono temporaneamente il TTL, così che le cache si aggiornino più rapidamente, invece di aumentarlo.",
+    "source_id": 31
+  },
+  {
+    "id": 32,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Durante una migrazione, il vecchio server viene generalmente mantenuto ancora operativo per un certo periodo.",
+    "source_id": 32
+  },
+  {
+    "id": 33,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "In alcuni casi è possibile svuotare manualmente la cache DNS per forzare una nuova risoluzione.",
+    "source_id": 33
+  },
+  {
+    "id": 34,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Un DNS pubblico è accessibile a tutti gli utenti di Internet ed è gestito da organizzazioni specializzate.",
+    "source_id": 34
+  },
+  {
+    "id": 35,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Un DNS privato viene utilizzato all'interno di una rete specifica, come quella di un'azienda o di una scuola.",
+    "source_id": 35
+  },
+  {
+    "id": 36,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Il protocollo DHCP fornisce automaticamente al dispositivo, tra le altre informazioni, l'indirizzo del server DNS da utilizzare.",
+    "source_id": 36
+  },
+  {
+    "id": 37,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Nella maggior parte dei casi, il server DNS utilizzato appartiene agli ISP, i fornitori di servizi Internet, non a un motore di ricerca.",
+    "source_id": 37
+  },
+  {
+    "id": 38,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Google, Cloudflare e Cisco OpenDNS sono tra le aziende che mettono gratuitamente a disposizione DNS pubblici.",
+    "source_id": 38
+  },
+  {
+    "id": 39,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "I DNS pubblici non sono necessariamente più veloci di quelli forniti dal provider Internet.",
+    "source_id": 39
+  },
+  {
+    "id": 40,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Un ospedale può utilizzare un DNS privato per gestire nomi di dispositivi come le cartelle cliniche, non accessibili da Internet.",
+    "detail": "Un DNS privato di questo tipo conosce esclusivamente i nomi dei dispositivi presenti nella rete interna.",
+    "source_id": 40
+  },
+  {
+    "id": 41,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Nel 2018 Cloudflare lanciò il servizio DNS pubblico 1.1.1.1, con attenzione particolare alla privacy.",
+    "source_id": 41
+  },
+  {
+    "id": 42,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Un errore DNS si verifica quando il dispositivo non riesce a tradurre un nome di dominio nel corrispondente indirizzo IP.",
+    "source_id": 42
+  },
+  {
+    "id": 43,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Un errore di digitazione nel nome del dominio è una delle cause più comuni di errore DNS.",
+    "source_id": 43
+  },
+  {
+    "id": 44,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Una cache DNS non aggiornata può causare problemi di connessione a un sito: se contiene un vecchio indirizzo IP non più valido, il dispositivo continuerà a tentare di raggiungere il server sbagliato.",
+    "source_id": 44
+  },
+  {
+    "id": 45,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Quando compare un errore DNS, non bisogna concludere immediatamente che il sito sia offline: spesso il problema riguarda soltanto la risoluzione DNS.",
+    "source_id": 45
+  },
+  {
+    "id": 46,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Il codice NXDOMAIN indica che il nome di dominio richiesto non è stato trovato.",
+    "source_id": 46
+  },
+  {
+    "id": 47,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "L'errore DNS_PROBE_FINISHED_NXDOMAIN indica che la ricerca DNS è stata completata ma il dominio non esiste.",
+    "detail": "Nel nome dell'errore, DNS_PROBE indica che è stata eseguita una ricerca, FINISHED che è terminata e NXDOMAIN che il dominio non è stato trovato.",
+    "source_id": 47
+  },
+  {
+    "id": 48,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "L'irraggiungibilità di Facebook, Instagram e WhatsApp il 4 ottobre 2021 fu causata da un errore nella configurazione della rete, non da un attacco hacker.",
+    "source_id": 48
+  },
+  {
+    "id": 49,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Durante l'incidente del 4 ottobre 2021, molti server di Meta erano ancora operativi, ma non raggiungibili a causa di problemi di instradamento e risoluzione dei nomi.",
+    "source_id": 49
+  },
+  {
+    "id": 50,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "La sicurezza DNS comprende tutte le tecnologie e le pratiche utilizzate per proteggere il sistema DNS da manipolazioni e utilizzi fraudolenti.",
+    "detail": "Comprende anche la protezione da tentativi di intercettazione.",
+    "source_id": 50
+  },
+  {
+    "id": 51,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Il DNS Spoofing consiste nella falsificazione delle risposte DNS.",
+    "source_id": 51
+  },
+  {
+    "id": 52,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Il DNS Cache Poisoning consiste nell'inserimento di informazioni false, non corrette e verificate, all'interno della cache DNS.",
+    "source_id": 52
+  },
+  {
+    "id": 53,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Se un dispositivo viene compromesso, un criminale può modificare le impostazioni DNS del router, deviando le richieste dell'utente.",
+    "detail": "In questo modo può sostituire i server DNS legittimi con server controllati da lui.",
+    "source_id": 53
+  },
+  {
+    "id": 54,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Il DNSSEC utilizza firme digitali per verificare che le informazioni DNS provengano dalla fonte corretta.",
+    "source_id": 54
+  },
+  {
+    "id": 55,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "Il DNS over HTTPS (DoH) protegge le richieste DNS utilizzando una connessione HTTPS cifrata.",
+    "detail": "In questo modo rende più difficile intercettare le richieste.",
+    "source_id": 55
+  },
+  {
+    "id": 56,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "La sicurezza DNS non dipende esclusivamente dalla tecnologia: anche le abitudini degli utenti sono importanti, come mantenere aggiornati i dispositivi, evitare link sospetti e verificare l'autenticità dei siti.",
+    "source_id": 56
+  },
+  {
+    "id": 57,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "La campagna di attacchi DNSpionage, avvenuta nel 2019, coinvolse organizzazioni governative e aziende in vari Paesi.",
+    "source_id": 57
+  },
+  {
+    "id": 58,
+    "module": "dns",
+    "type": "curiosity",
+    "fact": "La sicurezza DNS può essere paragonata a dei cartelli stradali: serve a garantire che le indicazioni non vengano modificate da chi vuole portare gli utenti nella direzione sbagliata.",
+    "source_id": 58
+  }
+]

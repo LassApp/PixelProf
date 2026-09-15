@@ -1034,26 +1034,23 @@ const AREAS = [
           veroFalso: 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/vero_o_falso_malware-e-minacce-informatiche.json',
         },
       cardArt: `
-<!-- virus/bug body -->
-<ellipse cx="216" cy="80" rx="26" ry="20" fill="currentColor" fill-opacity=".06" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
-<line x1="196" y1="64" x2="184" y2="52" stroke="currentColor" stroke-width="1" opacity=".45"/>
-<line x1="236" y1="64" x2="248" y2="52" stroke="currentColor" stroke-width="1" opacity=".45"/>
-<line x1="192" y1="80" x2="176" y2="80" stroke="currentColor" stroke-width="1" opacity=".4"/>
-<line x1="240" y1="80" x2="256" y2="80" stroke="currentColor" stroke-width="1" opacity=".4"/>
-<line x1="196" y1="96" x2="184" y2="108" stroke="currentColor" stroke-width="1" opacity=".4"/>
-<line x1="236" y1="96" x2="248" y2="108" stroke="currentColor" stroke-width="1" opacity=".4"/>
-<circle cx="208" cy="76" r="2" fill="currentColor" opacity=".5"/>
-<circle cx="224" cy="76" r="2" fill="currentColor" opacity=".5"/>
-<!-- spreading dots (infection) -->
-<circle cx="60" cy="54" r="5" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
-<circle cx="42" cy="90" r="4" fill="none" stroke="currentColor" stroke-width=".9" opacity=".35"/>
-<circle cx="72" cy="120" r="4.5" fill="none" stroke="currentColor" stroke-width=".9" opacity=".35"/>
-<line x1="64" y1="58" x2="192" y2="72" stroke="currentColor" stroke-width=".6" opacity=".25" stroke-dasharray="2,3"/>
-<line x1="46" y1="90" x2="192" y2="82" stroke="currentColor" stroke-width=".6" opacity=".25" stroke-dasharray="2,3"/>
-<line x1="76" y1="118" x2="196" y2="92" stroke="currentColor" stroke-width=".6" opacity=".25" stroke-dasharray="2,3"/>
-<!-- shield hint (mitigation) -->
-<path d="M50,110 L64,116 L64,128 Q64,138 50,144 Q36,138 36,128 L36,116 Z" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>
-<text x="216" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">MALWARE</text>
+<!-- v8.33.2 — nuovo cardArt "Allerta minaccia" (Erasmo, sostituisce
+     l'insetto letterale): triangolo di allerta + flusso di codice
+     corrotto + lucchetto spezzato, orientato al concetto di
+     rischio/violazione. Icona invariata (🦠, preferita così com'era). -->
+<path d="M210,44 L240,96 L180,96 Z" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="210" y1="60" x2="210" y2="80" stroke="currentColor" stroke-width="1.4" opacity=".5" stroke-linecap="round"/>
+<circle cx="210" cy="88" r="1.3" fill="currentColor" opacity=".5"/>
+<line x1="150" y1="56" x2="164" y2="56" stroke="currentColor" stroke-width=".8" opacity=".3"/>
+<line x1="150" y1="64" x2="172" y2="64" stroke="currentColor" stroke-width=".8" opacity=".3"/>
+<line x1="150" y1="72" x2="158" y2="72" stroke="currentColor" stroke-width=".8" opacity=".25"/>
+<line x1="150" y1="80" x2="168" y2="80" stroke="currentColor" stroke-width=".8" opacity=".25"/>
+<path d="M46,88 h28 a4,4 0 0 1 4,4 v22 a4,4 0 0 1 -4,4 h-28 a4,4 0 0 1 -4,-4 v-22 a4,4 0 0 1 4,-4 z"
+      fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<path d="M52,88 v-10 a8,8 0 0 1 16,-1" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".45"/>
+<line x1="60" y1="100" x2="60" y2="108" stroke="currentColor" stroke-width="1.2" opacity=".45"/>
+<line x1="82" y1="100" x2="178" y2="80" stroke="currentColor" stroke-width=".6" opacity=".22" stroke-dasharray="2,3"/>
+<text x="204" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">ALERT</text>
       `,
       },
 

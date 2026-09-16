@@ -1,0 +1,186 @@
+/* ═══════════════════════════════════════════════════════════════════
+   css/minigiochi/quiz.css — v8.34.0
+   Redesign visivo di Quiz + Speed Quiz (schermata #qz-game).
+
+   Perché un file a parte: .opt/.opts/.fb sono usati SOLO da #qz-game,
+   ma .q-card/.q-cat/.q-text/.game-header/.prog-bar/.game-counter-pill/
+   .game-exit-btn/.game-restart-btn sono condivisi con Completa la
+   Frase, Vero o Falso, Abbina, Flip Card e Lo Sapevi. Ogni regola qui
+   è quindi scoped sotto #qz-game, così Quiz e Speed Quiz cambiano
+   aspetto e tutto il resto dell'app resta identico.
+
+   Registrato in pixelprof.css: @layer ..., dirprofilo, quiz, theme;
+   (subito prima di theme, così l'override chiaro qui sotto in
+   @layer theme vince comunque per ultimo).
+   ═══════════════════════════════════════════════════════════════════ */
+
+@layer quiz {
+
+  /* ── control bar: Esci / Ricomincia + avanzamento, un unico blocco ── */
+  #qz-game .qz-controlbar{
+    display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+    background:rgba(4,6,15,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border:1px solid var(--border-subtle);border-radius:var(--radius-lg);
+    padding:9px 10px;margin-bottom:12px;
+  }
+  #qz-game .qz-controlbar .game-exit-btn{
+    display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:9px;
+    border:1px solid var(--border-subtle);background:var(--surface-1);color:var(--text-muted);
+    font-size:12px;font-weight:600;cursor:pointer;transition:all var(--transition-fast);white-space:nowrap;
+  }
+  #qz-game .qz-controlbar .game-exit-btn:hover{
+    border-color:rgba(255,80,80,.35);color:#ff6b6b;background:rgba(255,80,80,.08);
+  }
+  #qz-game .qz-controlbar .game-restart-btn{
+    display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;padding:0;border-radius:9px;
+    border:1px solid var(--border-subtle);background:var(--surface-1);color:var(--text-muted);
+    cursor:pointer;transition:all var(--transition-fast);flex-shrink:0;
+  }
+  #qz-game .qz-controlbar .game-restart-btn:hover{
+    border-color:var(--accent-border);color:var(--accent);background:var(--accent-dim);
+  }
+  #qz-game .qz-controlbar .prog-bar{
+    flex:1;min-width:60px;height:6px;margin:0;border-radius:4px;background:rgba(255,255,255,.08);
+  }
+  #qz-game .qz-controlbar .prog-fill{ border-radius:4px; }
+  #qz-game .qz-controlbar .prog-fill::after{ top:50%;transform:translateY(-50%); }
+  #qz-game .qz-controlbar .game-counter-pill{
+    font-family:'Share Tech Mono',monospace;font-size:12px;color:var(--text-muted);
+    min-width:30px;text-align:right;flex-shrink:0;
+  }
+
+  /* ── riga attività: pill "Quiz / Speed Quiz" + punteggio/timer/pausa ── */
+  #qz-game .qz-actrow{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:14px;
+  }
+  #qz-game .qz-act-pill{
+    display:inline-flex;align-items:center;gap:9px;padding:5px 14px 5px 6px;border-radius:24px;
+    border:1px solid var(--purple-border);background:var(--purple-dim);
+  }
+  #qz-game .qz-act-icon{
+    width:24px;height:24px;border-radius:50%;background:rgba(124,106,255,.18);
+    display:grid;place-items:center;color:var(--purple);flex-shrink:0;font-size:13px;
+  }
+  #qz-game .qz-act-pill #qz-act-label{ font-size:13px;font-weight:700;color:var(--purple); }
+  #qz-game .qz-act-sub{ font-size:11px;color:var(--text-muted);font-weight:500;margin-left:2px; }
+  #qz-game .qz-actrow .score-pill{
+    display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:20px;
+    border:1px solid rgba(255,215,0,.35);background:rgba(255,215,0,.08);color:#ffd700;
+    font-weight:700;font-family:'Share Tech Mono',monospace;font-size:13px;
+  }
+  #qz-game .qz-actrow .timer-pill.red{ color:#ff3c50; }
+
+  /* ── card domanda + gemma decorativa colorata per modulo ── */
+  #qz-game .q-card{
+    padding:22px 84px 20px 22px;
+    --qz-mod:var(--purple);--qz-mod-glow:rgba(124,106,255,.45);
+  }
+  #qz-game .q-cat{ color:var(--qz-mod); }
+  #qz-game .qz-gem{
+    position:absolute;top:16px;right:16px;width:56px;height:56px;
+    color:var(--qz-mod);opacity:.9;filter:drop-shadow(0 0 8px var(--qz-mod-glow));pointer-events:none;
+  }
+
+  /* ── opzioni: badge lettera cerchiato + testo + segno esito ── */
+  #qz-game .opts{ display:flex;flex-direction:column;gap:9px;margin-bottom:4px; }
+  #qz-game .opt{
+    display:flex;align-items:center;gap:13px;width:100%;text-align:left;
+    padding:13px 15px;border-radius:var(--radius-md);
+    border:1px solid var(--border-subtle);background:var(--surface-1);
+    cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:500;color:rgba(255,255,255,.82);
+    line-height:1.4;transition:all var(--transition-fast);
+  }
+  #qz-game .opt:hover:not(:disabled){
+    border-color:rgba(0,255,200,.32);background:rgba(0,255,200,.055);transform:translateX(3px);
+  }
+  #qz-game .opt:hover:not(:disabled) .opt-badge{ border-color:var(--accent);color:var(--accent); }
+  #qz-game .opt-badge{
+    width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border-mid);
+    display:grid;place-items:center;flex-shrink:0;font-family:'Share Tech Mono',monospace;
+    font-weight:700;font-size:12px;color:var(--text-muted);transition:all var(--transition-fast);
+  }
+  #qz-game .opt-text{ flex:1; }
+  #qz-game .opt-mark{
+    width:24px;height:24px;border-radius:50%;display:grid;place-items:center;flex-shrink:0;
+    opacity:0;transform:scale(.6);transition:all .2s var(--transition-bounce);
+  }
+  #qz-game .opt.correct{ border-color:#00ff96;background:rgba(0,255,150,.13); }
+  #qz-game .opt.correct .opt-badge{ background:#00ff96;border-color:#00ff96;color:#04140c; }
+  #qz-game .opt.correct .opt-text{ color:#eafff5; }
+  #qz-game .opt.correct .opt-mark{
+    opacity:1;transform:scale(1);background:rgba(0,255,150,.16);border:1.5px solid #00ff96;color:#00ff96;
+  }
+  #qz-game .opt.wrong{ border-color:#ff3c50;background:rgba(255,60,80,.11); }
+  #qz-game .opt.wrong .opt-badge{ background:#ff3c50;border-color:#ff3c50;color:#2a0508; }
+  #qz-game .opt.wrong .opt-mark{
+    opacity:1;transform:scale(1);background:rgba(255,60,80,.16);border:1.5px solid #ff3c50;color:#ff3c50;
+  }
+
+  /* ── feedback: icona cerchiata + titolo + testo + eventuali bonus ── */
+  #qz-game .fb{
+    display:flex;gap:13px;align-items:flex-start;padding:15px 17px;border-radius:var(--radius-md);
+    margin-top:10px;animation:qzFbIn .28s var(--transition-bounce);
+  }
+  #qz-game .fb.ok{ background:rgba(0,255,150,.08);border:1px solid rgba(0,255,150,.3); }
+  #qz-game .fb.ko{ background:rgba(255,60,80,.08);border:1px solid rgba(255,60,80,.3); }
+  #qz-game .fb-icon{
+    width:32px;height:32px;border-radius:50%;flex-shrink:0;display:grid;place-items:center;border:2px solid currentColor;
+  }
+  #qz-game .fb.ok .fb-icon{ color:#00ff96; }
+  #qz-game .fb.ko .fb-icon{ color:#ff3c50; }
+  #qz-game .fb-title{ font-weight:700;font-size:13.5px;margin-bottom:3px; }
+  #qz-game .fb.ok .fb-title{ color:#00ff96; }
+  #qz-game .fb.ko .fb-title{ color:#ff3c50; }
+  #qz-game .fb-text{ font-size:12.5px;color:rgba(255,255,255,.72);line-height:1.5; }
+  #qz-game .fb-pts{ margin-top:6px;font-size:12px;font-family:'Share Tech Mono',monospace;color:#00ff96;font-weight:700; }
+  @keyframes qzFbIn{ from{opacity:0;transform:translateY(-4px);} to{opacity:1;transform:translateY(0);} }
+
+  /* ── CTA "Prossima" — piena/gradiente, più marcata dell'outline .btn-neon ── */
+  #qz-game #next-btn.btn-neon{
+    display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:var(--radius-md);
+    background:linear-gradient(135deg,var(--accent),#00dcb0);color:#04140c;font-weight:700;font-size:13.5px;
+    border:none;box-shadow:0 4px 22px rgba(0,255,200,.32);transition:transform .15s,box-shadow .15s;
+  }
+  #qz-game #next-btn.btn-neon:hover{
+    background:linear-gradient(135deg,var(--accent),#00dcb0);transform:translateY(-2px);
+    box-shadow:0 8px 28px rgba(0,255,200,.42);
+  }
+
+  /* ── accessibilità: rispetta prefers-reduced-motion anche per i nuovi elementi ── */
+  @media (prefers-reduced-motion: reduce){
+    #qz-game .opt,#qz-game .opt-badge,#qz-game .opt-mark,#qz-game .fb,
+    #qz-game #next-btn.btn-neon,#qz-game .qz-controlbar .game-restart-btn{
+      transition:none;animation:none;
+    }
+  }
+
+  @media (max-width:480px){
+    #qz-game .q-card{ padding:20px 70px 18px 18px; }
+    #qz-game .qz-gem{ width:46px;height:46px;top:14px;right:14px; }
+    #qz-game .qz-act-sub{ display:none; }
+  }
+}
+
+@layer theme {
+  /* ── override chiaro — stessa struttura, superfici/testo invertiti ── */
+  html[data-theme="light"] #qz-game .qz-controlbar{
+    background:rgba(255,255,255,.75);border-color:rgba(20,30,60,.1);
+  }
+  html[data-theme="light"] #qz-game .qz-controlbar .game-exit-btn,
+  html[data-theme="light"] #qz-game .qz-controlbar .game-restart-btn{
+    background:rgba(20,30,60,.04);border-color:rgba(20,30,60,.1);color:rgba(16,24,42,.6);
+  }
+  html[data-theme="light"] #qz-game .qz-controlbar .game-counter-pill{ color:rgba(16,24,42,.55); }
+  html[data-theme="light"] #qz-game .qz-act-pill{ background:rgba(124,106,255,.08); }
+  html[data-theme="light"] #qz-game .opt{
+    background:rgba(20,30,60,.03);border-color:rgba(20,30,60,.08);color:rgba(16,24,42,.78);
+  }
+  html[data-theme="light"] #qz-game .opt:hover:not(:disabled){
+    background:rgba(0,150,120,.06);border-color:rgba(0,150,120,.3);
+  }
+  html[data-theme="light"] #qz-game .opt-badge{ border-color:rgba(20,30,60,.18);color:rgba(16,24,42,.55); }
+  html[data-theme="light"] #qz-game .opt.correct .opt-text{ color:#0a3d26; }
+  html[data-theme="light"] #qz-game .fb-text{ color:rgba(16,24,42,.72); }
+  html[data-theme="light"] #qz-game .fb.ok{ background:rgba(0,180,120,.07); }
+  html[data-theme="light"] #qz-game .fb.ko{ background:rgba(255,60,80,.06); }
+}

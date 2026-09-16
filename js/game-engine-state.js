@@ -2384,10 +2384,13 @@ async function launch(){
     stopTimer();
     setTb(null);showScreen('tab-quiz');
     sh('qz-game').classList.remove('hidden');sh('qz-result').classList.add('hidden');
+    // v8.34.0: il punteggio live ora si vede anche nel Quiz normale,
+    // non solo in Speed Quiz — solo timer/pausa restano esclusivi Speed.
+    sh('qz-score-pill').classList.remove('hidden');sh('qz-score-val').textContent='0';
+    if(typeof _qzSetActivityUI==='function')_qzSetActivityUI(act);
     if(act==='speed'){
       qSpeedLeft=60;
       sh('qz-timer').classList.remove('hidden');sh('qz-timer').textContent='60s';
-      sh('qz-score-pill').classList.remove('hidden');sh('qz-score-val').textContent='0';
       sh('qz-pause-btn').classList.remove('hidden');sh('qz-pause-icon').className='ti ti-player-pause';
       qTimerInt=setInterval(()=>{
         if(!gsIs(GS.PLAYING))return;
@@ -2397,7 +2400,7 @@ async function launch(){
         if(qSpeedLeft<=0){clearInterval(qTimerInt);forceEnd();}
       },1000);
     }else{
-      sh('qz-timer').classList.add('hidden');sh('qz-score-pill').classList.add('hidden');sh('qz-pause-btn').classList.add('hidden');
+      sh('qz-timer').classList.add('hidden');sh('qz-pause-btn').classList.add('hidden');
     }
     renderQ();
   }else{
@@ -2485,10 +2488,12 @@ function _startTeamTurn(){
     // Dopo il countdown, avvia il quiz engine
     setTb(null);showScreen('tab-quiz');
     sh('qz-game').classList.remove('hidden');sh('qz-result').classList.add('hidden');
+    // v8.34.0: punteggio live anche nel Quiz normale a squadre.
+    sh('qz-score-pill').classList.remove('hidden');sh('qz-score-val').textContent='0';
+    if(typeof _qzSetActivityUI==='function')_qzSetActivityUI(sAct);
     if(sAct==='speed'){
       qSpeedLeft=60;
       sh('qz-timer').classList.remove('hidden');sh('qz-timer').textContent='60s';
-      sh('qz-score-pill').classList.remove('hidden');sh('qz-score-val').textContent='0';
       sh('qz-pause-btn').classList.remove('hidden');sh('qz-pause-icon').className='ti ti-player-pause';
       qTimerInt=setInterval(()=>{
         if(!gsIs(GS.PLAYING))return;
@@ -2498,7 +2503,7 @@ function _startTeamTurn(){
         if(qSpeedLeft<=0){clearInterval(qTimerInt);forceEnd();}
       },1000);
     }else{
-      sh('qz-timer').classList.add('hidden');sh('qz-score-pill').classList.add('hidden');sh('qz-pause-btn').classList.add('hidden');
+      sh('qz-timer').classList.add('hidden');sh('qz-pause-btn').classList.add('hidden');
     }
     if(qPool.length===0){
       // Nessuna domanda disponibile  mostra messaggio e passa al team successivo

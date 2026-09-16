@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v8.33.2</title>
+<title>PixelProf — ICDL Lab interattivo v8.34.0</title>
 <link rel="icon" href="public/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
@@ -48,6 +48,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 <link rel="stylesheet" href="css/topbar-profile.css">
 <link rel="stylesheet" href="css/tour-sections.css">
 <link rel="stylesheet" href="css/director-profile.css">
+<link rel="stylesheet" href="css/minigiochi/quiz.css">
 </head>
 <body>
 
@@ -99,7 +100,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v8.33.2</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v8.34.0</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -673,7 +674,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v8.33.2</span>
+        <span class="cs-logo-sub">ICDL Lab · v8.34.0</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v8.26.3: sostituito da tasto Profilo unico -->
@@ -991,7 +992,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v8.33.2</span>
+      <span class="logo-sub">ICDL Lab · v8.34.0</span>
       <span class="logo-hint">cambia aula</span>
     </div>
   </div>
@@ -1697,23 +1698,38 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 ====================================== -->
 <div id="tab-quiz" class="screen">
   <div id="qz-game" class="hidden">
-    <div class="game-header">
-      <div class="game-header-left">
-        <button class="game-exit-btn" onclick="qzAbort()"><i class="ti ti-x"></i> Esci</button>
-        <button class="game-restart-btn" onclick="restartActivity()"><i class="ti ti-refresh"></i> Ricomincia</button>
-      </div>
+    <!-- v8.34.0: redesign — control bar unificata (esci/ricomincia +
+         progresso), riga attività/punteggio, gemma decorativa colorata
+         per modulo. Stile in css/minigiochi/quiz.css (@layer quiz). -->
+    <div class="qz-controlbar">
+      <button class="game-exit-btn" onclick="qzAbort()"><i class="ti ti-x"></i> Esci</button>
+      <button class="game-restart-btn" onclick="restartActivity()" title="Ricomincia"><i class="ti ti-refresh"></i></button>
+      <div class="prog-bar"><div class="prog-fill" id="qz-prog" style="width:0%"></div></div>
+      <span class="game-counter-pill" id="qz-counter"></span>
+    </div>
+    <div class="qz-actrow">
+      <span class="qz-act-pill"><span class="qz-act-icon"><i class="ti ti-brain" id="qz-act-icon"></i></span><span id="qz-act-label">Quiz</span><span class="qz-act-sub" id="qz-act-sub">+100 punti</span></span>
       <div style="display:flex;gap:8px;align-items:center">
         <span class="timer-pill hidden" id="qz-timer"></span>
         <span class="mem-stat-pill score-pill hidden" id="qz-score-pill"><i class="ti ti-star"></i><span id="qz-score-val">0</span></span>
         <button class="mem-pause-btn hidden" id="qz-pause-btn" onclick="speedTogglePause()" title="Pausa"><i class="ti ti-player-pause" id="qz-pause-icon"></i></button>
-        <span class="game-counter-pill" id="qz-counter"></span>
       </div>
     </div>
     <div class="live-bar" id="live-bar"></div>
     <div class="turn-lbl" id="turn-lbl"></div>
-    <div class="prog-bar"><div class="prog-fill" id="qz-prog" style="width:0%"></div></div>
     <div style="position:relative">
-      <div class="q-card"><div class="q-cat" id="qz-cat"></div><div class="q-text" id="qz-q"></div></div>
+      <div class="q-card" id="qz-qcard">
+        <div class="q-cat" id="qz-cat"></div>
+        <div class="q-text" id="qz-q"></div>
+        <svg class="qz-gem" id="qz-gem" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <rect x="18" y="4" width="28" height="28" rx="4" transform="rotate(45 32 18)" fill="currentColor" fill-opacity=".07" stroke="currentColor" stroke-width="1.4"/>
+          <rect x="24" y="10" width="16" height="16" rx="3" transform="rotate(45 32 18)" fill="none" stroke="currentColor" stroke-width="1"/>
+          <line x1="32" y1="32" x2="32" y2="46" stroke="currentColor" stroke-width="1.2" opacity=".5"/>
+          <circle cx="32" cy="52" r="2.4" fill="currentColor" opacity=".7"/>
+          <circle cx="10" cy="18" r="1.6" fill="currentColor" opacity=".55"/>
+          <circle cx="54" cy="18" r="1.6" fill="currentColor" opacity=".55"/>
+        </svg>
+      </div>
       <div class="opts" id="qz-opts"></div>
       <div id="qz-fb"></div>
       <!-- Speed Quiz pause overlay -->
@@ -1891,7 +1907,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div><!-- /app -->
 
 
-<script src="js/app.bundle.min.js?v=8.33.2"></script>
+<script src="js/app.bundle.min.js?v=8.34.0"></script>
 <!-- Pannello Profilo (v8.25.0) — nome, ruolo, ultimo accesso, ultima
      aula collegata, poi Esci e Rivedi il tour guidato. Markup e stili
      in css/topbar-profile.css, logica in js/profile-panel.js.

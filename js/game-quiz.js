@@ -8,6 +8,18 @@
    Fase 8: PauseUIRegistry handler registrato (M2).
    Depends on: game-engine-state.js, scoring.js, renderer.js
 
+   v8.34.0 — Redesign visivo Quiz/Speed Quiz (stile in
+   css/minigiochi/quiz.css, @layer quiz, scoped a #qz-game):
+   renderQ() ora costruisce ogni .opt con badge lettera/testo/segno
+   separati (invece del solo textContent "A. ..."), imposta il colore
+   del modulo su #qz-qcard/#qz-gem (gemma decorativa) via modColor().
+   ansQ() marca risposta corretta/sbagliata con icone SVG nel segno,
+   costruisce il feedback con icona+titolo+testo, e nel ramo Quiz
+   normale aggiorna anche qz-score-val/qz-score-pill (prima lo faceva
+   solo lo Speed Quiz — punteggio live richiesto da Erasmo). Aggiunta
+   _qzSetActivityUI(), chiamata da launch()/_startTeamTurn() in
+   game-engine-state.js per etichetta/icona della pillola attività.
+
    v8.33.1 — FIX header "qz-cat" (Quiz + Speed Quiz, stessa
    renderQ()): mostrava un ternario legacy CE/OE ("qualsiasi
    modulo diverso da CE" → sempre "// Online Essentials"),
@@ -19,6 +31,17 @@
    game-match.js (Completa la frase / Abbina): nessun header
    "// ..." presente in quei due — nulla da correggere lì.
 ================================================== */
+
+/* v8.34.0 — etichetta/icona/sottotitolo della pillola attività nella
+   qz-actrow. Chiamata una volta all'avvio sessione (launch()/
+   _startTeamTurn() in game-engine-state.js), non ad ogni domanda:
+   sAct non cambia durante la sessione. */
+function _qzSetActivityUI(act){
+  const isSpeed=act==='speed';
+  const lbl=shq('qz-act-label');if(lbl)lbl.textContent=isSpeed?'Speed Quiz':'Quiz';
+  const ic=shq('qz-act-icon');if(ic)ic.className='ti '+(isSpeed?'ti-bolt':'ti-brain');
+  const sub=shq('qz-act-sub');if(sub)sub.textContent=isSpeed?'a tempo — 60s':'+100 punti a domanda';
+}
 
 function resetSpeedUI(){
   const overlay=shq('qz-pause-overlay');
@@ -66,13 +89,29 @@ function renderQ(){
   const q=qPool[qIdx];const tot=qPool.length;
   sh('qz-counter').textContent=(qIdx+1)+'/'+tot;
   sh('qz-prog').style.width=(qIdx/tot*100)+'%';
-  sh('qz-cat').textContent='// '+modLabel(getQuestionModule(q));
+  const mod=getQuestionModule(q);
+  sh('qz-cat').textContent='// '+modLabel(mod);
   sh('qz-q').textContent=q.q;
+  // v8.34.0: colore del modulo sulla card/gemma decorativa — stesso
+  // helper modColor() già usato da mod-badge/cardArt altrove nell'app.
+  const qcard=shq('qz-qcard');
+  if(qcard&&typeof modColor==='function'){
+    const c=modColor(mod);
+    qcard.style.setProperty('--qz-mod',c);
+    if(typeof _hexToRgb==='function')qcard.style.setProperty('--qz-mod-glow','rgba('+_hexToRgb(c)+',.45)');
+  }
   sh('qz-fb').innerHTML='';sh('next-btn').classList.add('hidden');qAnswered=false;renderLiveBar();
   // v2.1.7: marca timestamp inizio domanda per speed bonus
   qQStart=Date.now();
   const cont=sh('qz-opts');cont.innerHTML='';
-  q.opts.forEach((o,i)=>{const b=document.createElement('button');b.className='opt';b.textContent=['A','B','C','D'][i]+'. '+o;b.onclick=()=>ansQ(i);cont.appendChild(b);});
+  const letters=['A','B','C','D'];
+  q.opts.forEach((o,i)=>{
+    const b=document.createElement('button');
+    b.className='opt';
+    b.innerHTML='<span class="opt-badge">'+letters[i]+'</span><span class="opt-text">'+escHtml(o)+'</span><span class="opt-mark"></span>';
+    b.onclick=()=>ansQ(i);
+    cont.appendChild(b);
+  });
 }
 
 function ansQ(idx){
@@ -83,7 +122,17 @@ function ansQ(idx){
   const responseTimeMs=Date.now()-qQStart;
   const q=qPool[qIdx];const ok=idx===q.a;
   if(typeof AudioManager!=='undefined')AudioManager.play(ok?'correct':'wrong');
-  document.querySelectorAll('.opt').forEach((b,i)=>{b.disabled=true;if(i===q.a)b.classList.add('correct');else if(i===idx)b.classList.add('wrong');});
+  document.querySelectorAll('.opt').forEach((b,i)=>{
+    b.disabled=true;
+    const mark=b.querySelector('.opt-mark');
+    if(i===q.a){
+      b.classList.add('correct');
+      if(mark)mark.innerHTML='<svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    }else if(i===idx){
+      b.classList.add('wrong');
+      if(mark)mark.innerHTML='<svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>';
+    }
+  });
   const ap=players[0]; // sempre il giocatore/squadra del turno corrente
 
   if(sAct==='speed'){
@@ -131,20 +180,33 @@ function ansQ(idx){
     qTotalStreakBonus+=streakBonus;
     qAnswerLog.push({questionId:'q'+qIdx,correct:true,responseTimeMs,streak:qStreak,speedBonus,streakBonus,scoreEarned});
     checkOvertake();
+    // v8.34.0: punteggio live anche nel Quiz normale — prima lo
+    // aggiornava solo lo Speed Quiz, stessa animazione "bump".
+    const sv=sh('qz-score-val');
+    if(sv){
+      sv.textContent=qScores[ap.name];
+      const pill=sh('qz-score-pill');
+      if(pill){
+        pill.classList.remove('score-bump');
+        void pill.offsetWidth;
+        pill.classList.add('score-bump');
+        pill.addEventListener('animationend',()=>pill.classList.remove('score-bump'),{once:true});
+      }
+    }
     _trackRightQ(q.q, q.opts[q.a]);
     // Feedback inline con dettaglio bonus
     const bonusBits=[];
     if(speedBonus>0)  bonusBits.push(`⚡ +${speedBonus} velocità`);
     if(streakBonus>0) bonusBits.push(`🔥 +${streakBonus} streak ×${qStreak}`);
     const bonusLine=bonusBits.length
-      ?`<div style="font-size:11px;color:rgba(0,255,200,.75);margin-top:3px">${bonusBits.join(' · ')} &nbsp;<strong>+${scoreEarned} pt totali</strong></div>`
-      :`<div style="font-size:11px;color:rgba(0,255,200,.55);margin-top:3px">+${scoreEarned} pt</div>`;
-    sh('qz-fb').innerHTML=`<div class="fb ok">✓ Corretto! ${q.exp}${bonusLine}</div>`;
+      ?`<div class="fb-pts">${bonusBits.join(' · ')} &nbsp;<strong>+${scoreEarned} pt totali</strong></div>`
+      :`<div class="fb-pts">+${scoreEarned} pt</div>`;
+    sh('qz-fb').innerHTML=`<div class="fb ok"><span class="fb-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><div class="fb-title">Corretto!</div><div class="fb-text">${escHtml(q.exp)}</div>${bonusLine}</div></div>`;
   }else{
     qStreak=0;
     qAnswerLog.push({questionId:'q'+qIdx,correct:false,responseTimeMs,streak:0,speedBonus:0,streakBonus:0,scoreEarned:0});
     _trackWrongQ(q.q, q.opts[q.a], getQuestionModule(q), 'quiz');
-    sh('qz-fb').innerHTML=`<div class="fb ko">✗ Sbagliato. ${q.exp}</div>`;
+    sh('qz-fb').innerHTML=`<div class="fb ko"><span class="fb-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span><div><div class="fb-title">Sbagliato.</div><div class="fb-text">${escHtml(q.exp)}</div></div></div>`;
   }
 
   const mod=getQuestionModule(q);

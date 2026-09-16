@@ -45,7 +45,7 @@
        (mostra/nascondi, lock di pausa, ecc.) → dentro @layer stato,
        con !important (qui è l'unico posto dove serve ancora).
    ═══════════════════════════════════════════════════════════════════ */
-@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport, audio, achievements, histcards, loaders, onboarding, areas, flipcard, losapevi, actselect, topbarprofile, dirprofilo, theme;
+@layer stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport, audio, achievements, histcards, loaders, onboarding, areas, flipcard, losapevi, actselect, topbarprofile, dirprofilo, quiz, theme;
 
 @layer base {
 /* ===============================================
@@ -684,30 +684,11 @@ body{
 }
 .q-cat{font-size:10px;color:rgba(0,255,200,.6);text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px;font-family:'Share Tech Mono',monospace}
 .q-text{font-size:15px;font-weight:500;color:#fff;line-height:1.55}
-.opts{display:flex;flex-direction:column;gap:7px}
-.opt{
-  text-align:left;padding:10px 14px;border-radius:var(--radius-sm);
-  border:1px solid var(--border-subtle);background:var(--surface-1);
-  cursor:pointer;font-size:13px;color:rgba(255,255,255,.8);
-  transition:all var(--transition-fast);line-height:1.4;font-family:inherit;font-weight:500;
-  position:relative;overflow:hidden;
-}
-.opt::after{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
-  background:var(--accent);transform:scaleY(0);transition:transform var(--transition-fast);
-  border-radius:0 2px 2px 0;
-}
-.opt:hover:not(:disabled){
-  border-color:rgba(0,255,200,.35);background:rgba(0,255,200,.06);color:#fff;
-}
-.opt:hover:not(:disabled)::after{transform:scaleY(1);}
-.opt.correct{background:rgba(0,255,150,.15);border-color:#00ff96;color:#00ff96}
-.opt.correct::after{background:#00ff96;transform:scaleY(1);}
-.opt.wrong{background:rgba(255,60,80,.12);border-color:#ff3c50;color:#ff3c50}
-.opt.wrong::after{background:#ff3c50;transform:scaleY(1);}
-.fb{margin-top:8px;padding:10px 14px;border-radius:var(--radius-sm);font-size:12px;line-height:1.5}
-.fb.ok{background:rgba(0,255,150,.1);color:#00ff96;border:1px solid rgba(0,255,150,.3)}
-.fb.ko{background:rgba(255,60,80,.1);color:#ff3c50;border:1px solid rgba(255,60,80,.3)}
+/* .opts/.opt/.fb (risposte e feedback del Quiz) — v8.34.0: rimossi da
+   qui. Erano usati SOLO da #qz-game (Quiz/Speed Quiz — mai da Completa
+   la frase, Vero o Falso o Abbina), quindi il vecchio stile qui sotto
+   non era più raggiungibile una volta introdotto il redesign in
+   css/minigiochi/quiz.css (@layer quiz, scoped a #qz-game). */
 .live-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
 .live-chip{
   display:flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;
@@ -2677,23 +2658,8 @@ body{
 .q-card::before {
   background: linear-gradient(90deg, transparent, rgba(0,255,200,.14), transparent) ;
 }
-.opt {
-  border-radius: 10px ;
-  border-color: rgba(255,255,255,.07) ;
-  background: rgba(255,255,255,.03) ;
-  transition:
-    background var(--t-hover) var(--ease-soft),
-    border-color var(--t-hover) var(--ease-soft),
-    transform var(--t-hover) var(--ease-spring) ;
-}
-.opt:hover:not(:disabled) {
-  transform: translateX(3px) ;
-  background: rgba(0,255,200,.06) ;
-}
-.opt::after {
-  width: 3px ;
-  border-radius: 0 2px 2px 0 ;
-}
+/* .opt — v8.34.0: rimosso, era usato solo da #qz-game. Nuovo stile in
+   css/minigiochi/quiz.css (@layer quiz). */
 
 /* ─────────────────────────────────────────────────────────────────
    LEADERBOARD — "Rankings" stile platform
@@ -3120,24 +3086,9 @@ body{
   box-shadow: 0 8px 32px rgba(0,0,0,.4) ;
 }
 
-/* Opzioni risposta — "choice cards" */
-.opt {
-  border-radius: 10px ;
-  padding: 11px 14px ;
-  background: rgba(255,255,255,.03) ;
-  border-color: rgba(255,255,255,.07) ;
-  font-size: 13px ;
-  letter-spacing: .1px ;
-}
-.opt::after {
-  width: 3px ;
-  border-radius: 0 2px 2px 0 ;
-}
-.opt:hover:not(:disabled) {
-  background: rgba(255,255,255,.07) ;
-  border-color: rgba(255,255,255,.15) ;
-  transform: translateX(4px) ;
-}
+/* Opzioni risposta — v8.34.0: rimosse, erano usate solo da #qz-game
+   (Quiz/Speed Quiz). Nuovo stile in css/minigiochi/quiz.css (@layer
+   quiz). */
 
 /* ─────────────────────────────────────────────────────────────────
    RISULTATI — "Content completed" screen
@@ -5028,12 +4979,8 @@ html[data-theme="light"] .q-cat{ color: var(--accent); }
 html[data-theme="light"] .game-counter-pill{ color: rgba(16,24,42,.45); }
 html[data-theme="light"] .q-card{ background:#ffffff; border-color: rgba(20,30,60,.08); }
 html[data-theme="light"] .q-text{ color:#10182a; }
-html[data-theme="light"] .opt{ background: rgba(20,30,60,.03); border-color: rgba(20,30,60,.08); color: rgba(16,24,42,.75); }
-html[data-theme="light"] .opt:hover:not(:disabled){ background: rgba(0,150,120,.06); color:#10182a; }
-html[data-theme="light"] .opt.correct{ color:#12805a; }
-html[data-theme="light"] .opt.wrong{ color:#c22a3e; }
-html[data-theme="light"] .fb.ok{ color:#12805a; }
-html[data-theme="light"] .fb.ko{ color:#c22a3e; }
+/* .opt/.fb light-mode — v8.34.0: rimossi, erano usati solo da #qz-game.
+   Nuovo stile chiaro in css/minigiochi/quiz.css (@layer theme). */
 html[data-theme="light"] .tf-btn{ background: rgba(20,30,60,.03); border-color: rgba(20,30,60,.09); color: rgba(16,24,42,.72); }
 html[data-theme="light"] .tf-true:hover:not(:disabled){ color:#0a8f5a; }
 html[data-theme="light"] .tf-false:hover:not(:disabled){ color:#c22a3e; }

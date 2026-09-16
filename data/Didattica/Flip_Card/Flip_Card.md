@@ -267,6 +267,66 @@ data/
     - `Flip_Card_Facile_Modulo_5.csv` *(da creare)*
     - `Flip_Card_Medio_Modulo_5.csv` *(da creare)*
 
+#### Online Collaboration
+
+> Sotto-area attiva. File CSV da creare.
+
+- **Modulo 1 — Collaborazione online**
+  - Chiave: `collaborazione-online`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo1/`
+  - File:
+    - `Flip_Card_Facile_Modulo_1.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(da creare)*
+
+- **Modulo 2 — Cloud e preparazione**
+  - Chiave: `cloud-e-preparazione`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo2/`
+  - File:
+    - `Flip_Card_Facile_Modulo_2.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(da creare)*
+
+- **Modulo 3 — Storage e produttività online**
+  - Chiave: `storage-e-produttivita-online`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo3/`
+  - File:
+    - `Flip_Card_Facile_Modulo_3.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(da creare)*
+
+- **Modulo 4 — Calendari e riunioni online**
+  - Chiave: `calendari-e-riunioni-online`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo4/`
+  - File:
+    - `Flip_Card_Facile_Modulo_4.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_4.csv` *(da creare)*
+
+- **Modulo 5 — Social e apprendimento online**
+  - Chiave: `social-e-apprendimento-online`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo5/`
+  - File:
+    - `Flip_Card_Facile_Modulo_5.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_5.csv` *(da creare)*
+
+- **Modulo 6 — Dispositivi mobili e connessioni**
+  - Chiave: `dispositivi-mobili-e-connessioni`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo6/`
+  - File:
+    - `Flip_Card_Facile_Modulo_6.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_6.csv` *(da creare)*
+
+- **Modulo 7 — App e sincronizzazione**
+  - Chiave: `app-e-sincronizzazione`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo7/`
+  - File:
+    - `Flip_Card_Facile_Modulo_7.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_7.csv` *(da creare)*
+
 ---
 
 ### 🛡️ Area Cyberbullismo e Sicurezza Online
@@ -628,6 +688,15 @@ data/
 - Modulo 4 — Navigazione e comunicazione sicura
 - Modulo 5 — Protezione e conservazione dei dati
 
+### 🤝 ECDL — Online Collaboration — DA CREARE
+- Modulo 1 — Collaborazione online
+- Modulo 2 — Cloud e preparazione
+- Modulo 3 — Storage e produttività online
+- Modulo 4 — Calendari e riunioni online
+- Modulo 5 — Social e apprendimento online
+- Modulo 6 — Dispositivi mobili e connessioni
+- Modulo 7 — App e sincronizzazione
+
 ### 🛡️ Cyberbullismo e Sicurezza Online — COMPLETO
 - Modulo 1 — Identità e reputazione digitale
 - Modulo 2 — Cyberbullismo
@@ -678,8 +747,8 @@ data/
 
 **Riepilogo:**
 - **Moduli completi:** 58
-- **Moduli da creare:** 5 (ECDL — IT Security)
-- **Moduli totali:** 63
+- **Moduli da creare:** 12 (ECDL — IT Security: 5; ECDL — Online Collaboration: 7)
+- **Moduli totali:** 70
 
 *Per i moduli indicati come "DA CREARE", entrambi i file — Facile e Medio — sono ancora da creare.*
 
@@ -693,16 +762,17 @@ data/
 | ECDL — Spreadsheet | 6 | 12 | 12 | 0 | attivo |
 | ECDL — Presentation | 3 | 6 | 6 | 0 | attivo |
 | ECDL — IT Security | 5 | 10 | 0 | 10 | attivo (da creare) |
+| ECDL — Online Collaboration | 7 | 14 | 0 | 14 | attivo (da creare) |
 | Cyberbullismo e Sicurezza Online | 6 | 12 | 12 | 0 | attivo |
 | Cybersecurity — Non solo antivirus e password | 8 | 16 | 16 | 0 | attivo |
 | Reti e Internet | 8 | 16 | 16 | 0 | attivo |
 | Malware e Minacce Informatiche | 1 | 2 | 2 | 0 | attivo |
 | Intelligenza Artificiale | 13 | 26 | 26 | 0 | attivo |
-| **Totale** | **63** | **126** | **116** | **10** | — |
+| **Totale** | **70** | **140** | **116** | **24** | — |
 
-- **Moduli totali mappati:** 63
+- **Moduli totali mappati:** 70
 - **Moduli completi:** 58
-- **Moduli da creare:** 5 (ECDL — IT Security)
+- **Moduli da creare:** 12 (ECDL — IT Security: 5; ECDL — Online Collaboration: 7)
 - **File CSV creati:** 116
-- **File CSV da creare:** 10 (ECDL — IT Security)
-- **File CSV totali attesi:** 126
+- **File CSV da creare:** 24 (ECDL — IT Security: 10; ECDL — Online Collaboration: 14)
+- **File CSV totali attesi:** 140

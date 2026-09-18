@@ -30,7 +30,7 @@
     "id": 4,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "L'8 dicembre 2005 un operatore di Mizuho Securities digitò per errore la vendita di 610.000 azioni J-Com a 1 yen ciascuna, invece di 1 azione a 610.000 yen.",
     "answer": true,
     "explanation": "Il modulo riporta questo episodio come caso reale documentato."
@@ -39,7 +39,7 @@
     "id": 5,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Il sistema della Borsa di Tokyo permise di annullare rapidamente l'ordine errato di Mizuho Securities.",
     "answer": false,
     "explanation": "Il sistema non permetteva di annullare un ordine già inviato, nonostante diversi tentativi di cancellazione."
@@ -48,7 +48,7 @@
     "id": 6,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Mizuho Securities registrò una perdita stimata in oltre 225 milioni di dollari a causa di quell'errore.",
     "answer": true,
     "explanation": "Il modulo riporta questa cifra come perdita stimata di Mizuho Securities."
@@ -57,7 +57,7 @@
     "id": 7,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "L'episodio di Mizuho Securities non ebbe alcuna conseguenza sui vertici della Borsa di Tokyo.",
     "answer": false,
     "explanation": "L'episodio portò le dimissioni del presidente della Borsa di Tokyo insieme ad altri dirigenti."
@@ -102,7 +102,7 @@
     "id": 12,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Ada Lovelace pubblicò, nell'agosto 1843, la \"Nota G\", considerata oggi il primo programma per computer della storia.",
     "answer": true,
     "explanation": "Il modulo riporta questa data e questo riconoscimento storico."
@@ -111,7 +111,7 @@
     "id": 13,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "La Macchina Analitica di Charles Babbage, per cui Lovelace scrisse le proprie note, fu effettivamente costruita nel 1843.",
     "answer": false,
     "explanation": "La Macchina Analitica non fu mai realmente costruita."
@@ -120,7 +120,7 @@
     "id": 14,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Il procedimento descritto nella Nota G calcolava la media di un intervallo di celle.",
     "answer": false,
     "explanation": "Il procedimento calcolava i numeri di Bernoulli, non una media di celle."
@@ -237,7 +237,7 @@
     "id": 27,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Nel 2010 Carmen Reinhart e Kenneth Rogoff pubblicarono lo studio \"Growth in a Time of Debt\".",
     "answer": true,
     "explanation": "Il modulo riporta questa data e questo titolo per lo studio."
@@ -246,7 +246,7 @@
     "id": 28,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Thomas Herndon scoprì l'errore nello studio Reinhart-Rogoff già nel 2010, appena pubblicato.",
     "answer": false,
     "explanation": "Herndon scoprì l'errore nel 2013, tre anni dopo la pubblicazione dello studio."
@@ -255,7 +255,7 @@
     "id": 29,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "L'errore nello studio Reinhart-Rogoff escluse dall'analisi Australia, Austria, Belgio, Canada e Danimarca.",
     "answer": true,
     "explanation": "Il modulo elenca esattamente questi cinque paesi come esclusi per errore."
@@ -300,7 +300,7 @@
     "id": 34,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Nel 2012 la banca JPMorgan Chase perse oltre 6 miliardi di dollari nel caso della \"Balena di Londra\".",
     "answer": true,
     "explanation": "Il modulo riporta questa cifra per il caso JPMorgan Chase."
@@ -309,7 +309,7 @@
     "id": 35,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Il caso della \"Balena di Londra\" riguardava un errore di digitazione in una singola cella, simile al caso di Mizuho Securities.",
     "answer": false,
     "explanation": "Riguardava una catena di fogli Excel collegati con dati copiati manualmente e un errore di formula, non un singolo errore di digitazione."
@@ -318,7 +318,7 @@
     "id": 36,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Nel caso JPMorgan, una formula divideva per la somma di due tassi invece che per la loro media, sottostimando il rischio.",
     "answer": true,
     "explanation": "Il modulo descrive esattamente questo errore di formula."
@@ -327,7 +327,7 @@
     "id": 37,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Nel caso JPMorgan, l'errore fu individuato immediatamente, prima che si verificassero perdite.",
     "answer": false,
     "explanation": "Nessuno si accorse dell'errore finché le perdite non erano già ingenti."
@@ -381,7 +381,7 @@
     "id": 43,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Tra il 25 settembre e il 2 ottobre 2020, Public Health England non riuscì a includere migliaia di casi Covid-19 nei propri bollettini per un limite del formato .xls.",
     "answer": true,
     "explanation": "Il modulo riporta questo caso reale con queste date precise."
@@ -390,7 +390,7 @@
     "id": 44,
     "module": "inserire-e-gestire-i-dati",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Il formato .xls, usato da Public Health England, aveva un limite fisso di 65.536 righe.",
     "answer": true,
     "explanation": "Il modulo riporta questo limite tecnico del formato .xls."

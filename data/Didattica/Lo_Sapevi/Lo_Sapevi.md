@@ -14,7 +14,7 @@ Questo file è la **fonte ufficiale e vincolante** per Lo Sapevi?: Aree e Moduli
 
 ## 1. Struttura Lo Sapevi
 
-Sezione dedicata ai file JSON del metodo di apprendimento Lo Sapevi?, un solo file per modulo (a differenza di Flip Card, che ne prevede due per livello di difficoltà). La struttura di Aree, Moduli e Chiavi tecniche è la stessa definita in `aree_e_moduli.md`; cambiano solo il path base (`data/Didattica/Lo_Sapevi/...`) e il naming del file.
+Sezione dedicata ai file JSON del metodo di apprendimento Lo Sapevi?, un solo file per modulo (a differenza di Flip Card, che ne prevede due per livello di difficoltà). La struttura di Aree, Moduli e Chiavi tecniche è la stessa definita in `aree_e_moduli.md`; cambiano solo il path base (`data/Minigiochi/Didattica/Lo_Sapevi/...`) e il naming del file.
 
 **Stato Aree:**
 - Tutte le aree: `attivate`
@@ -24,11 +24,12 @@ Sezione dedicata ai file JSON del metodo di apprendimento Lo Sapevi?, un solo fi
 
 ```text
 data/
-└── Didattica/
-    └── Lo_Sapevi/
-        └── Cyberbullismo_e_Sicurezza_Online/
-             └── Modulo1/
-                          lo_sapevi_identita-reputazione-digitale.json
+└── Minigiochi/
+    └── Didattica/
+        └── Lo_Sapevi/
+            └── Cyberbullismo_e_Sicurezza_Online/
+                 └── Modulo1/
+                              lo_sapevi_identita-reputazione-digitale.json
 ```
 
 ---
@@ -42,25 +43,25 @@ data/
 - **Fondamenti digitali**
   - Chiave: `fondamenti-digitali`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo1/`
   - File: `lo_sapevi_fondamenti-digitali.json` *(creato)*
 
 - **CPU e architettura**
   - Chiave: `cpu-architettura`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo2/`
   - File: `lo_sapevi_cpu-architettura.json` *(creato)*
 
 - **Memorie**
   - Chiave: `memorie`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo3/`
   - File: `lo_sapevi_memorie.json` *(creato)*
 
 - **Software**
   - Chiave: `software`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Computer_Essentials/Modulo4/`
   - File: `lo_sapevi_software.json` *(creato)*
 
 #### Online Essentials
@@ -68,25 +69,25 @@ data/
 - **La rete e i dati**
   - Chiave: `rete-e-dati`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo1/`
   - File: `lo_sapevi_rete-e-dati.json` *(creato)*
 
 - **Identità e comunicazione**
   - Chiave: `identita-e-comunicazione`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo2/`
   - File: `lo_sapevi_identita-e-comunicazione.json` *(creato)*
 
 - **Navigazione e tracciamento**
   - Chiave: `navigazione-e-tracciamento`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo3/`
   - File: `lo_sapevi_navigazione-e-tracciamento.json` *(creato)*
 
 - **Sicurezza e comportamento online**
   - Chiave: `sicurezza-e-comportamento-online`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Online_Essentials/Modulo4/`
   - File: `lo_sapevi_sicurezza-e-comportamento-online.json` *(creato)*
 
 #### Word Processing
@@ -94,31 +95,31 @@ data/
 - **Word e ambiente**
   - Chiave: `word-e-ambiente`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo1/`
   - File: `lo_sapevi_word-e-ambiente.json` *(creato)*
 
 - **Scrivere e salvare**
   - Chiave: `scrivere-e-salvare`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo2/`
   - File: `lo_sapevi_scrivere-e-salvare.json` *(creato)*
 
 - **Formattare il testo**
   - Chiave: `formattare-il-testo`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo3/`
   - File: `lo_sapevi_formattare-il-testo.json` *(creato)*
 
 - **Elementi grafici**
   - Chiave: `elementi-grafici`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo4/`
   - File: `lo_sapevi_elementi-grafici.json` *(creato)*
 
 - **Strutturare il documento**
   - Chiave: `strutturare-il-documento`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Word_Processing/Modulo5/`
   - File: `lo_sapevi_strutturare-il-documento.json` *(creato)*
 
 #### Spreadsheet
@@ -126,37 +127,37 @@ data/
 - **Excel e l'ambiente di lavoro**
   - Chiave: `excel-e-l-ambiente-di-lavoro`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo1/`
   - File: `lo_sapevi_excel-e-l-ambiente-di-lavoro.json` *(creato)*
 
 - **Inserire e gestire i dati**
   - Chiave: `inserire-e-gestire-i-dati`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo2/`
   - File: `lo_sapevi_inserire-e-gestire-i-dati.json` *(creato)*
 
 - **Formattare il foglio**
   - Chiave: `formattare-il-foglio`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo3/`
   - File: `lo_sapevi_formattare-il-foglio.json` *(creato)*
 
 - **Formule e calcoli**
   - Chiave: `formule-e-calcoli`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo4/`
   - File: `lo_sapevi_formule-e-calcoli.json` *(creato)*
 
 - **Organizzare e visualizzare i dati**
   - Chiave: `organizzare-e-visualizzare-i-dati`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo5/`
   - File: `lo_sapevi_organizzare-e-visualizzare-i-dati.json` *(creato)*
 
 - **Preparare e stampare il foglio**
   - Chiave: `preparare-e-stampare-il-foglio`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo6/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Spreadsheet/Modulo6/`
   - File: `lo_sapevi_preparare-e-stampare-il-foglio.json` *(creato)*
 
 #### Presentation
@@ -164,19 +165,19 @@ data/
 - **Creare una presentazione**
   - Chiave: `creare-una-presentazione`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Presentation/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Presentation/Modulo1/`
   - File: `lo_sapevi_creare-una-presentazione.json` *(creato)*
 
 - **Oggetti grafici**
   - Chiave: `oggetti-grafici`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Presentation/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Presentation/Modulo2/`
   - File: `lo_sapevi_oggetti-grafici.json` *(creato)*
 
 - **Preparare e presentare**
   - Chiave: `preparare-e-presentare`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Presentation/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Presentation/Modulo3/`
   - File: `lo_sapevi_preparare-e-presentare.json` *(creato)*
 
 #### IT Security
@@ -184,31 +185,31 @@ data/
 - **Fondamenti della sicurezza**
   - Chiave: `fondamenti-sicurezza`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo1/`
   - File: `lo_sapevi_fondamenti-sicurezza.json` *(da creare)*
 
 - **Il malware**
   - Chiave: `malware`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo2/`
   - File: `lo_sapevi_malware.json` *(da creare)*
 
 - **Reti e accessi**
   - Chiave: `reti-e-accessi`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo3/`
   - File: `lo_sapevi_reti-e-accessi.json` *(da creare)*
 
 - **Navigazione e comunicazione sicura**
   - Chiave: `navigazione-e-comunicazione-sicura`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo4/`
   - File: `lo_sapevi_navigazione-e-comunicazione-sicura.json` *(da creare)*
 
 - **Protezione e conservazione dei dati**
   - Chiave: `protezione-e-conservazione-dati`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo5/`
   - File: `lo_sapevi_protezione-e-conservazione-dati.json` *(da creare)*
 
 #### Online Collaboration
@@ -216,43 +217,43 @@ data/
 - **Collaborazione online**
   - Chiave: `collaborazione-online`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo1/`
   - File: `lo_sapevi_collaborazione-online.json` *(da creare)*
 
 - **Cloud e preparazione**
   - Chiave: `cloud-e-preparazione`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo2/`
   - File: `lo_sapevi_cloud-e-preparazione.json` *(da creare)*
 
 - **Storage e produttività online**
   - Chiave: `storage-e-produttivita-online`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo3/`
   - File: `lo_sapevi_storage-e-produttivita-online.json` *(da creare)*
 
 - **Calendari e riunioni online**
   - Chiave: `calendari-e-riunioni-online`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo4/`
   - File: `lo_sapevi_calendari-e-riunioni-online.json` *(da creare)*
 
 - **Social e apprendimento online**
   - Chiave: `social-e-apprendimento-online`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo5/`
   - File: `lo_sapevi_social-e-apprendimento-online.json` *(da creare)*
 
 - **Dispositivi mobili e connessioni**
   - Chiave: `dispositivi-mobili-e-connessioni`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo6/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo6/`
   - File: `lo_sapevi_dispositivi-mobili-e-connessioni.json` *(da creare)*
 
 - **App e sincronizzazione**
   - Chiave: `app-e-sincronizzazione`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo7/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo7/`
   - File: `lo_sapevi_app-e-sincronizzazione.json` *(da creare)*
 
 ---
@@ -264,37 +265,37 @@ data/
 - **Identità e reputazione digitale**
   - Chiave: `identita-reputazione-digitale`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo1/`
   - File: `lo_sapevi_identita-reputazione-digitale.json` *(creato — 38 schede)*
 
 - **Cyberbullismo**
   - Chiave: `cyberbullismo`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo2/`
   - File: `lo_sapevi_cyberbullismo.json` *(creato)*
 
 - **Hate Speech**
   - Chiave: `hate-speech`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo3/`
   - File: `lo_sapevi_hate-speech.json` *(creato)*
 
 - **Sexting e Revenge Porn**
   - Chiave: `sexting-revenge-porn`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo4/`
   - File: `lo_sapevi_sexting-revenge-porn.json` *(creato)*
 
 - **Grooming**
   - Chiave: `grooming`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo5/`
   - File: `lo_sapevi_grooming.json` *(creato)*
 
 - **Cittadinanza Digitale**
   - Chiave: `cittadinanza-digitale`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo6/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo6/`
   - File: `lo_sapevi_cittadinanza-digitale.json` *(creato)*
 
 ---
@@ -306,49 +307,49 @@ data/
 - **Fondamenti di Cybersecurity**
   - Chiave: `fondamenti-cybersecurity`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo1/`
   - File: `lo_sapevi_fondamenti-cybersecurity.json` *(creato)*
 
 - **Sicurezza degli Account**
   - Chiave: `sicurezza-account`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo2/`
   - File: `lo_sapevi_sicurezza-account.json` *(creato)*
 
 - **Protezione dei Dati**
   - Chiave: `protezione-dati`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo3/`
   - File: `lo_sapevi_protezione-dati.json` *(creato)*
 
 - **Sicurezza Quotidiana**
   - Chiave: `sicurezza-quotidiana`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo4/`
   - File: `lo_sapevi_sicurezza-quotidiana.json` *(creato)*
 
 - **Sicurezza dei Pagamenti**
   - Chiave: `sicurezza-pagamenti`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo5/`
   - File: `lo_sapevi_sicurezza-pagamenti.json` *(creato)*
 
 - **Privacy e Normative**
   - Chiave: `privacy-normative`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo6/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo6/`
   - File: `lo_sapevi_privacy-normative.json` *(creato)*
 
 - **Sicurezza Online e Social Network**
   - Chiave: `sicurezza-online-social-network`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo7/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo7/`
   - File: `lo_sapevi_sicurezza-online-social-network.json` *(creato)*
 
 - **Nuove Minacce Digitali**
   - Chiave: `nuove-minacce-digitali`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo8/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo8/`
   - File: `lo_sapevi_nuove-minacce-digitali.json` *(creato)*
 
 ---
@@ -360,49 +361,49 @@ data/
 - **Le fondamenta delle reti**
   - Chiave: `fondamenta-reti`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo1/`
   - File: `lo_sapevi_fondamenta-reti.json` *(creato)*
 
 - **Il protocollo TCP/IP**
   - Chiave: `tcp-ip`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo2/`
   - File: `lo_sapevi_tcp-ip.json` *(creato)*
 
 - **DNS: la rubrica di Internet**
   - Chiave: `dns`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo3/`
   - File: `lo_sapevi_dns.json` *(creato)*
 
 - **Router, Switch e dispositivi di rete**
   - Chiave: `router-switch-dispositivi`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo4/`
   - File: `lo_sapevi_router-switch-dispositivi.json` *(creato)*
 
 - **Wi-Fi e reti wireless**
   - Chiave: `wifi-reti-wireless`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo5/`
   - File: `lo_sapevi_wifi-reti-wireless.json` *(creato)*
 
 - **Cloud Networking**
   - Chiave: `cloud-networking`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo6/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo6/`
   - File: `lo_sapevi_cloud-networking.json` *(creato)*
 
 - **VPN e comunicazioni sicure**
   - Chiave: `vpn`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo7/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo7/`
   - File: `lo_sapevi_vpn.json` *(creato)*
 
 - **Troubleshooting delle reti**
   - Chiave: `troubleshooting-reti`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo8/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo8/`
   - File: `lo_sapevi_troubleshooting-reti.json` *(creato)*
 
 ---
@@ -414,7 +415,7 @@ data/
 - **Malware e Minacce Informatiche**
   - Chiave: `malware-e-minacce-informatiche`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Malware_e_Minacce_Informatiche/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Malware_e_Minacce_Informatiche/Modulo1/`
   - File: `lo_sapevi_malware-e-minacce-informatiche.json` *(creato)*
 
 ---
@@ -426,79 +427,79 @@ data/
 - **Cos'è l'AI**
   - Chiave: `cos-e-l-ai`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo1/`
   - File: `lo_sapevi_cos-e-l-ai.json` *(creato)*
 
 - **Come funziona l'AI**
   - Chiave: `come-funziona-l-ai`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo2/`
   - File: `lo_sapevi_come-funziona-l-ai.json` *(creato)*
 
 - **Come funzionano gli LLM**
   - Chiave: `come-funzionano-gli-llm`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo3/`
   - File: `lo_sapevi_come-funzionano-gli-llm.json` *(creato)*
 
 - **AI Generativa**
   - Chiave: `ai-generativa`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo4/`
   - File: `lo_sapevi_ai-generativa.json` *(creato)*
 
 - **Prompt Engineering**
   - Chiave: `prompt-engineering`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo5/`
   - File: `lo_sapevi_prompt-engineering.json` *(creato)*
 
 - **Agenti e Automazione**
   - Chiave: `agenti-automazione`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo6/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo6/`
   - File: `lo_sapevi_agenti-automazione.json` *(creato)*
 
 - **Deepfake e Contenuti Sintetici**
   - Chiave: `deepfake-contenuti-sintetici`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo7/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo7/`
   - File: `lo_sapevi_deepfake-contenuti-sintetici.json` *(creato)*
 
 - **Provenienza dei Contenuti**
   - Chiave: `provenienza-dei-contenuti`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo8/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo8/`
   - File: `lo_sapevi_provenienza-dei-contenuti.json` *(creato)*
 
 - **Verificare l'AI**
   - Chiave: `verificare-l-ai`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo9/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo9/`
   - File: `lo_sapevi_verificare-l-ai.json` *(creato)*
 
 - **Etica dell'AI**
   - Chiave: `etica-dell-ai`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo10/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo10/`
   - File: `lo_sapevi_etica-dell-ai.json` *(creato)*
 
 - **Bias Algoritmici**
   - Chiave: `bias-algoritmici`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo11/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo11/`
   - File: `lo_sapevi_bias-algoritmici.json` *(creato)*
 
 - **AI Act**
   - Chiave: `ai-act`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo12/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo12/`
   - File: `lo_sapevi_ai-act.json` *(creato)*
 
 - **Il Futuro dell'AI**
   - Chiave: `futuro-dell-ai`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo13/`
+  - Path base: `data/Minigiochi/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo13/`
   - File: `lo_sapevi_futuro-dell-ai.json` *(creato)*
 
 ---

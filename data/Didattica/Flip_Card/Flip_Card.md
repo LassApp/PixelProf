@@ -225,47 +225,45 @@ data/
 
 #### IT Security
 
-> Sotto-area attiva. File CSV da creare.
-
 - **Modulo 1 — Fondamenti della sicurezza**
   - Chiave: `fondamenti-della-sicurezza`
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo1/`
   - File:
-    - `Flip_Card_Facile_Modulo_1.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_1.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_1.csv` *(creato — 34 Flip Card)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(creato — 18 Flip Card)*
 
 - **Modulo 2 — Il malware**
   - Chiave: `il-malware`
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo2/`
   - File:
-    - `Flip_Card_Facile_Modulo_2.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_2.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_2.csv` *(creato — 22 Flip Card)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(creato — 15 Flip Card)*
 
 - **Modulo 3 — Reti e accessi**
   - Chiave: `reti-e-accessi`
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo3/`
   - File:
-    - `Flip_Card_Facile_Modulo_3.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_3.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_3.csv` *(creato — 30 Flip Card)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(creato — 13 Flip Card)*
 
 - **Modulo 4 — Navigazione e comunicazione sicura**
   - Chiave: `navigazione-e-comunicazione-sicura`
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo4/`
   - File:
-    - `Flip_Card_Facile_Modulo_4.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_4.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_4.csv` *(creato — 24 Flip Card)*
+    - `Flip_Card_Medio_Modulo_4.csv` *(creato — 12 Flip Card)*
 
 - **Modulo 5 — Protezione e conservazione dei dati**
   - Chiave: `protezione-e-conservazione-dei-dati`
   - Stato: `attivo`
   - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo5/`
   - File:
-    - `Flip_Card_Facile_Modulo_5.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_5.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_5.csv` *(creato — 17 Flip Card)*
+    - `Flip_Card_Medio_Modulo_5.csv` *(creato — 13 Flip Card)*
 
 #### Online Collaboration
 
@@ -681,7 +679,7 @@ data/
 - Modulo 2 — Oggetti grafici
 - Modulo 3 — Preparare e presentare
 
-### 🔒 ECDL — IT Security — DA CREARE
+### 🔒 ECDL — IT Security — COMPLETO
 - Modulo 1 — Fondamenti della sicurezza
 - Modulo 2 — Il malware
 - Modulo 3 — Reti e accessi
@@ -746,8 +744,8 @@ data/
 ---
 
 **Riepilogo:**
-- **Moduli completi:** 58
-- **Moduli da creare:** 12 (ECDL — IT Security: 5; ECDL — Online Collaboration: 7)
+- **Moduli completi:** 63
+- **Moduli da creare:** 7 (ECDL — Online Collaboration: 7)
 - **Moduli totali:** 70
 
 *Per i moduli indicati come "DA CREARE", entrambi i file — Facile e Medio — sono ancora da creare.*
@@ -761,18 +759,18 @@ data/
 | ECDL — Word | 5 | 10 | 10 | 0 | attivo |
 | ECDL — Spreadsheet | 6 | 12 | 12 | 0 | attivo |
 | ECDL — Presentation | 3 | 6 | 6 | 0 | attivo |
-| ECDL — IT Security | 5 | 10 | 0 | 10 | attivo (da creare) |
+| ECDL — IT Security | 5 | 10 | 10 | 0 | attivo |
 | ECDL — Online Collaboration | 7 | 14 | 0 | 14 | attivo (da creare) |
 | Cyberbullismo e Sicurezza Online | 6 | 12 | 12 | 0 | attivo |
 | Cybersecurity — Non solo antivirus e password | 8 | 16 | 16 | 0 | attivo |
 | Reti e Internet | 8 | 16 | 16 | 0 | attivo |
 | Malware e Minacce Informatiche | 1 | 2 | 2 | 0 | attivo |
 | Intelligenza Artificiale | 13 | 26 | 26 | 0 | attivo |
-| **Totale** | **70** | **140** | **116** | **24** | — |
+| **Totale** | **70** | **140** | **126** | **14** | — |
 
 - **Moduli totali mappati:** 70
-- **Moduli completi:** 58
-- **Moduli da creare:** 12 (ECDL — IT Security: 5; ECDL — Online Collaboration: 7)
-- **File CSV creati:** 116
-- **File CSV da creare:** 24 (ECDL — IT Security: 10; ECDL — Online Collaboration: 14)
+- **Moduli completi:** 63
+- **Moduli da creare:** 7 (ECDL — Online Collaboration: 7)
+- **File CSV creati:** 126
+- **File CSV da creare:** 14 (ECDL — Online Collaboration: 14)
 - **File CSV totali attesi:** 140

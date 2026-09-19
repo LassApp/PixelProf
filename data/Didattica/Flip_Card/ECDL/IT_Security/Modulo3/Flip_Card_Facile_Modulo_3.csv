@@ -1,0 +1,30 @@
+Cosa diventa ogni dispositivo collegato a una rete?;Un potenziale punto di accesso a tutto ciò che quella rete raggiunge
+Chi è l'amministratore di rete?;La persona responsabile di decidere chi può collegarsi a una rete quali permessi ricevere e di monitorare che tutto avvenga in modo regolare
+Perché non tutti i dispositivi collegati alla stessa rete dovrebbero avere accesso alle stesse risorse?;Perché un dispositivo esterno come quello di un fornitore o tecnico non ha bisogno di raggiungere le risorse più sensibili della rete
+Che cos'è un firewall?;Un sistema di sicurezza hardware o software che controlla il traffico dei dati in entrata e in uscita da un dispositivo o una rete
+Qual è la differenza tra firewall e antivirus?;Il firewall decide se una connessione ha il permesso di avvenire mentre l'antivirus analizza il contenuto dei dati alla ricerca di codice dannoso
+Cosa rischia un firewall configurato male?;Di offrire una falsa sensazione di sicurezza pur lasciando aperti varchi che nessuno controlla più attivamente
+Quali sono i principali protocolli di cifratura Wi-Fi in ordine cronologico?;WEP WPA WPA2 e WPA3
+Perché il protocollo WEP è considerato inadeguato oggi?;Perché si è rivelato relativamente debole ed esistono strumenti capaci di violarlo in tempi molto brevi
+Che cos'è il filtraggio MAC?;Una misura che permette di autorizzare solo dispositivi specifici identificati da un codice univoco assegnato a ogni scheda di rete
+Cosa significa l'acronimo SSID?;Service Set Identifier
+Che cos'è l'eavesdropping?;L'ascolto passivo del traffico che passa su una rete non adeguatamente protetta
+Che cos'è un attacco man in the middle?;Un attacco in cui un aggressore si inserisce attivamente nella comunicazione tra due dispositivi potendo leggerla o modificarla
+Che cos'è un hotspot personale?;La possibilità di trasformare il proprio smartphone in un punto di accesso a Internet per altri dispositivi
+A cosa serve il nome utente in un sistema di accesso?;A identificare chi sta cercando di accedere al sistema
+A cosa serve una password o un PIN?;A verificare l'identità di chi accede dimostrando che è davvero chi dice di essere
+Che cos'è un account di rete?;L'insieme delle credenziali associato a permessi specifici su cosa una persona può vedere modificare o eseguire
+Che cos'è il login?;L'accesso a un account
+Che cos'è il logout?;La chiusura di una sessione di accesso a un account
+Perché è importante fare sempre il logout su un dispositivo condiviso?;Perché impedisce che chi si siede dopo di noi possa continuare ad agire con la nostra identità
+Cosa significa l'acronimo MFA?;Multi-Factor Authentication
+Quali sono i tre principali fattori di autenticazione?;Qualcosa che si conosce qualcosa che si possiede e qualcosa che si è
+Cosa significa l'acronimo 2FA?;Two-Factor Authentication
+Che relazione c'è tra 2FA e MFA?;La 2FA è un caso particolare dell'MFA che richiede esattamente due fattori mentre l'MFA può richiederne anche tre o più
+Cosa significa l'acronimo OTP?;One-Time Password
+Che cos'è la Risk-Based Authentication?;Un sistema che valuta il contesto di un accesso come dispositivo Paese e orario per considerarlo rischioso e richiedere ulteriore verifica
+Qual è il vantaggio principale della biometria come fattore di autenticazione?;Non richiede di ricordare nulla e non può essere dimenticata
+Qual è il limite principale della biometria come fattore di autenticazione?;Se un dato biometrico viene compromesso non può essere cambiato come una password
+Che cos'è un password manager?;Un programma che genera conserva e compila automaticamente password uniche e complesse per ogni account
+Che cos'è la master password in un password manager?;L'unica password che protegge l'archivio cifrato in cui sono conservate tutte le altre password
+Qual è il rischio principale di un password manager?;Se la master password è debole o il servizio subisce una violazione il rischio riguarda potenzialmente tutti gli account conservati

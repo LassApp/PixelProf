@@ -12,7 +12,7 @@ Questo file è la **fonte ufficiale e vincolante** per Flip Card: Aree e Moduli 
 
 ## 1. Struttura Flip Card
 
-Sezione dedicata ai file CSV del metodo di apprendimento Flip Card, in due livelli di difficoltà (Facile / Medio). La struttura di Aree, Moduli e Chiavi tecniche è la stessa definita in `aree_e_moduli.md`; cambiano solo il path base (`data/Didattica/Flip_Card/...`) e il naming dei file.
+Sezione dedicata ai file CSV del metodo di apprendimento Flip Card, in due livelli di difficoltà (Facile / Medio). La struttura di Aree, Moduli e Chiavi tecniche è la stessa definita in `aree_e_moduli.md`; cambiano solo il path base (`data/Minigiochi/Didattica/Flip_Card/...`) e il naming dei file.
 
 **Stato Aree:**
 - Tutte le aree: `attivate`
@@ -22,13 +22,14 @@ Sezione dedicata ai file CSV del metodo di apprendimento Flip Card, in due livel
 
 ```text
 data/
-└── Didattica/
-    └── Flip_Card/
-        └── ECDL/
-             └── Computer_Essentials/
-                    └── Modulo1/
-                                 Flip_Card_Facile_Modulo_1.csv
-                                 Flip_Card_Medio_Modulo_1.csv
+└── Minigiochi/
+    └── Didattica/
+        └── Flip_Card/
+            └── ECDL/
+                 └── Computer_Essentials/
+                        └── Modulo1/
+                                     Flip_Card_Facile_Modulo_1.csv
+                                     Flip_Card_Medio_Modulo_1.csv
 ```
 
 ---
@@ -42,7 +43,7 @@ data/
 - **Fondamenti digitali**
   - Chiave: `fondamenti-digitali`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato — 29 Flip Card)*
     - `Flip_Card_Medio_Modulo_1.csv` *(creato — 47 Flip Card)*
@@ -50,7 +51,7 @@ data/
 - **CPU e architettura**
   - Chiave: `cpu-architettura`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(creato — 30 Flip Card)*
     - `Flip_Card_Medio_Modulo_2.csv` *(creato — 42 Flip Card)*
@@ -58,7 +59,7 @@ data/
 - **Memorie**
   - Chiave: `memorie`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(creato — 26 Flip Card)*
     - `Flip_Card_Medio_Modulo_3.csv` *(creato — 35 Flip Card)*
@@ -66,7 +67,7 @@ data/
 - **Software**
   - Chiave: `software`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Computer_Essentials/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(creato — 21 Flip Card)*
     - `Flip_Card_Medio_Modulo_4.csv` *(creato — 30 Flip Card)*
@@ -76,7 +77,7 @@ data/
 - **La rete e i dati**
   - Chiave: `rete-e-dati`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato — 23 Flip Card)*
     - `Flip_Card_Medio_Modulo_1.csv` *(creato — 28 Flip Card)*
@@ -84,7 +85,7 @@ data/
 - **Identità e comunicazione**
   - Chiave: `identita-e-comunicazione`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_2.csv` *(creato)*
@@ -92,7 +93,7 @@ data/
 - **Navigazione e tracciamento**
   - Chiave: `navigazione-e-tracciamento`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_3.csv` *(creato)*
@@ -100,7 +101,7 @@ data/
 - **Sicurezza e comportamento online**
   - Chiave: `sicurezza-e-comportamento-online`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Online_Essentials/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_4.csv` *(creato)*
@@ -110,7 +111,7 @@ data/
 - **Modulo 1 — Word e ambiente**
   - Chiave: `word-e-ambiente`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Word/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_1.csv` *(creato)*
@@ -118,7 +119,7 @@ data/
 - **Modulo 2 — Scrivere e salvare**
   - Chiave: `scrivere-e-salvare`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Word/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_2.csv` *(creato)*
@@ -126,7 +127,7 @@ data/
 - **Modulo 3 — Formattare il testo**
   - Chiave: `formattare-il-testo`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Word/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_3.csv` *(creato)*
@@ -134,7 +135,7 @@ data/
 - **Modulo 4 — Elementi grafici**
   - Chiave: `elementi-grafici`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Word/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_4.csv` *(creato)*
@@ -142,7 +143,7 @@ data/
 - **Modulo 5 — Strutturare il documento**
   - Chiave: `strutturare-il-documento`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Word/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Word/Modulo5/`
   - File:
     - `Flip_Card_Facile_Modulo_5.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_5.csv` *(creato)*
@@ -152,7 +153,7 @@ data/
 - **Modulo 1 — Excel e l'ambiente di lavoro**
   - Chiave: `excel-e-l-ambiente-di-lavoro`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato — 31 Flip Card)*
     - `Flip_Card_Medio_Modulo_1.csv` *(creato — 31 Flip Card)*
@@ -160,7 +161,7 @@ data/
 - **Modulo 2 — Inserire e gestire i dati**
   - Chiave: `inserire-e-gestire-i-dati`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(creato — 41 Flip Card)*
     - `Flip_Card_Medio_Modulo_2.csv` *(creato — 27 Flip Card)*
@@ -168,7 +169,7 @@ data/
 - **Modulo 3 — Formattare il foglio**
   - Chiave: `formattare-il-foglio`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(creato — 22 Flip Card)*
     - `Flip_Card_Medio_Modulo_3.csv` *(creato — 14 Flip Card)*
@@ -176,7 +177,7 @@ data/
 - **Modulo 4 — Formule e calcoli**
   - Chiave: `formule-e-calcoli`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(creato — 33 Flip Card)*
     - `Flip_Card_Medio_Modulo_4.csv` *(creato — 27 Flip Card)*
@@ -184,7 +185,7 @@ data/
 - **Modulo 5 — Organizzare e visualizzare i dati**
   - Chiave: `organizzare-e-visualizzare-i-dati`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo5/`
   - File:
     - `Flip_Card_Facile_Modulo_5.csv` *(csv creato)*
     - `Flip_Card_Medio_Modulo_5.csv` *(csv creato)*
@@ -192,7 +193,7 @@ data/
 - **Modulo 6 — Preparare e stampare il foglio**
   - Chiave: `preparare-e-stampare-il-foglio`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo6/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Spreadsheet/Modulo6/`
   - File:
     - `Flip_Card_Facile_Modulo_6.csv` *(csv creato)*
     - `Flip_Card_Medio_Modulo_6.csv` *(csv creato)*
@@ -202,7 +203,7 @@ data/
 - **Modulo 1 — Creare una presentazione**
   - Chiave: `creare-una-presentazione`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Presentation/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Presentation/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(csv creato)*
     - `Flip_Card_Medio_Modulo_1.csv` *(csv creato)*
@@ -210,7 +211,7 @@ data/
 - **Modulo 2 — Oggetti grafici**
   - Chiave: `oggetti-grafici`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Presentation/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Presentation/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(csv creato)*
     - `Flip_Card_Medio_Modulo_2.csv` *(csv creato)*
@@ -218,7 +219,7 @@ data/
 - **Modulo 3 — Preparare e presentare**
   - Chiave: `preparare-e-presentare`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Presentation/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Presentation/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(csv creato)*
     - `Flip_Card_Medio_Modulo_3.csv` *(csv creato)*
@@ -228,7 +229,7 @@ data/
 - **Modulo 1 — Fondamenti della sicurezza**
   - Chiave: `fondamenti-della-sicurezza`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/IT_Security/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato — 34 Flip Card)*
     - `Flip_Card_Medio_Modulo_1.csv` *(creato — 18 Flip Card)*
@@ -236,7 +237,7 @@ data/
 - **Modulo 2 — Il malware**
   - Chiave: `il-malware`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/IT_Security/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(creato — 22 Flip Card)*
     - `Flip_Card_Medio_Modulo_2.csv` *(creato — 15 Flip Card)*
@@ -244,7 +245,7 @@ data/
 - **Modulo 3 — Reti e accessi**
   - Chiave: `reti-e-accessi`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/IT_Security/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(creato — 30 Flip Card)*
     - `Flip_Card_Medio_Modulo_3.csv` *(creato — 13 Flip Card)*
@@ -252,7 +253,7 @@ data/
 - **Modulo 4 — Navigazione e comunicazione sicura**
   - Chiave: `navigazione-e-comunicazione-sicura`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/IT_Security/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(creato — 24 Flip Card)*
     - `Flip_Card_Medio_Modulo_4.csv` *(creato — 12 Flip Card)*
@@ -260,70 +261,68 @@ data/
 - **Modulo 5 — Protezione e conservazione dei dati**
   - Chiave: `protezione-e-conservazione-dei-dati`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/IT_Security/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/IT_Security/Modulo5/`
   - File:
     - `Flip_Card_Facile_Modulo_5.csv` *(creato — 17 Flip Card)*
     - `Flip_Card_Medio_Modulo_5.csv` *(creato — 13 Flip Card)*
 
 #### Online Collaboration
 
-> Sotto-area attiva. File CSV da creare.
-
 - **Modulo 1 — Collaborazione online**
   - Chiave: `collaborazione-online`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo1/`
   - File:
-    - `Flip_Card_Facile_Modulo_1.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_1.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_1.csv` *(creato — 13 Flip Card)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(creato — 12 Flip Card)*
 
 - **Modulo 2 — Cloud e preparazione**
   - Chiave: `cloud-e-preparazione`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo2/`
   - File:
-    - `Flip_Card_Facile_Modulo_2.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_2.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_2.csv` *(creato — 13 Flip Card)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(creato — 13 Flip Card)*
 
 - **Modulo 3 — Storage e produttività online**
   - Chiave: `storage-e-produttivita-online`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo3/`
   - File:
-    - `Flip_Card_Facile_Modulo_3.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_3.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_3.csv` *(creato — 18 Flip Card)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(creato — 13 Flip Card)*
 
 - **Modulo 4 — Calendari e riunioni online**
   - Chiave: `calendari-e-riunioni-online`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo4/`
   - File:
-    - `Flip_Card_Facile_Modulo_4.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_4.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_4.csv` *(creato — 13 Flip Card)*
+    - `Flip_Card_Medio_Modulo_4.csv` *(creato — 12 Flip Card)*
 
 - **Modulo 5 — Social e apprendimento online**
   - Chiave: `social-e-apprendimento-online`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo5/`
   - File:
-    - `Flip_Card_Facile_Modulo_5.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_5.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_5.csv` *(creato — 14 Flip Card)*
+    - `Flip_Card_Medio_Modulo_5.csv` *(creato — 12 Flip Card)*
 
 - **Modulo 6 — Dispositivi mobili e connessioni**
   - Chiave: `dispositivi-mobili-e-connessioni`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo6/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo6/`
   - File:
-    - `Flip_Card_Facile_Modulo_6.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_6.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_6.csv` *(creato — 11 Flip Card)*
+    - `Flip_Card_Medio_Modulo_6.csv` *(creato — 10 Flip Card)*
 
 - **Modulo 7 — App e sincronizzazione**
   - Chiave: `app-e-sincronizzazione`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo7/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo7/`
   - File:
-    - `Flip_Card_Facile_Modulo_7.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_7.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_7.csv` *(creato — 13 Flip Card)*
+    - `Flip_Card_Medio_Modulo_7.csv` *(creato — 10 Flip Card)*
 
 ---
 
@@ -334,7 +333,7 @@ data/
 - **Identità e reputazione digitale**
   - Chiave: `identita-reputazione-digitale`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato — 31 Flip Card)*
     - `Flip_Card_Medio_Modulo_1.csv` *(creato — 31 Flip Card)*
@@ -342,7 +341,7 @@ data/
 - **Cyberbullismo**
   - Chiave: `cyberbullismo`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(creato — 33 Flip Card)*
     - `Flip_Card_Medio_Modulo_2.csv` *(creato — 33 Flip Card)*
@@ -350,7 +349,7 @@ data/
 - **Hate Speech**
   - Chiave: `hate-speech`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(creato — 29 Flip Card)*
     - `Flip_Card_Medio_Modulo_3.csv` *(creato — 28 Flip Card)*
@@ -358,7 +357,7 @@ data/
 - **Sexting e Revenge Porn**
   - Chiave: `sexting-revenge-porn`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(creato — 28 Flip Card)*
     - `Flip_Card_Medio_Modulo_4.csv` *(creato — 25 Flip Card)*
@@ -366,7 +365,7 @@ data/
 - **Grooming**
   - Chiave: `grooming`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo5/`
   - File:
     - `Flip_Card_Facile_Modulo_5.csv` *(creato — 9 Flip Card)*
     - `Flip_Card_Medio_Modulo_5.csv` *(creato — 12 Flip Card)*
@@ -374,7 +373,7 @@ data/
 - **Cittadinanza Digitale**
   - Chiave: `cittadinanza-digitale`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo6/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Cyberbullismo_e_Sicurezza_Online/Modulo6/`
   - File:
     - `Flip_Card_Facile_Modulo_6.csv` *(creato — 9 Flip Card)*
     - `Flip_Card_Medio_Modulo_6.csv` *(creato — 8 Flip Card)*
@@ -388,7 +387,7 @@ data/
 - **Fondamenti di Cybersecurity**
   - Chiave: `fondamenti-cybersecurity`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato — 48 Flip Card)*
     - `Flip_Card_Medio_Modulo_1.csv` *(creato — 44 Flip Card)*
@@ -396,7 +395,7 @@ data/
 - **Sicurezza degli Account**
   - Chiave: `sicurezza-account`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(creato — conteggio da confermare)*
     - `Flip_Card_Medio_Modulo_2.csv` *(creato — conteggio da confermare)*
@@ -404,7 +403,7 @@ data/
 - **Protezione dei Dati**
   - Chiave: `protezione-dati`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(creato — conteggio da confermare)*
     - `Flip_Card_Medio_Modulo_3.csv` *(creato — conteggio da confermare)*
@@ -412,7 +411,7 @@ data/
 - **Sicurezza Quotidiana**
   - Chiave: `sicurezza-quotidiana`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(creato — conteggio da confermare)*
     - `Flip_Card_Medio_Modulo_4.csv` *(creato — conteggio da confermare)*
@@ -420,7 +419,7 @@ data/
 - **Sicurezza dei Pagamenti**
   - Chiave: `sicurezza-pagamenti`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo5/`
   - File:
     - `Flip_Card_Facile_Modulo_5.csv` *(creato — conteggio da confermare)*
     - `Flip_Card_Medio_Modulo_5.csv` *(creato — conteggio da confermare)*
@@ -428,7 +427,7 @@ data/
 - **Privacy e Normative**
   - Chiave: `privacy-normative`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo6/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo6/`
   - File:
     - `Flip_Card_Facile_Modulo_6.csv` *(creato — 28 Flip Card)*
     - `Flip_Card_Medio_Modulo_6.csv` *(creato — 28 Flip Card)*
@@ -436,7 +435,7 @@ data/
 - **Sicurezza Online e Social Network**
   - Chiave: `sicurezza-online-social-network`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo7/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo7/`
   - File:
     - `Flip_Card_Facile_Modulo_7.csv` *(creato — 15 Flip Card)*
     - `Flip_Card_Medio_Modulo_7.csv` *(creato — 18 Flip Card)*
@@ -444,7 +443,7 @@ data/
 - **Nuove Minacce Digitali**
   - Chiave: `nuove-minacce-digitali`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo8/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo8/`
   - File:
     - `Flip_Card_Facile_Modulo_8.csv` *(creato — 17 Flip Card)*
     - `Flip_Card_Medio_Modulo_8.csv` *(creato — 15 Flip Card)*
@@ -458,7 +457,7 @@ data/
 - **Le fondamenta delle reti**
   - Chiave: `fondamenta-reti`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Reti_e_Internet/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato — 32 Flip Card)*
     - `Flip_Card_Medio_Modulo_1.csv` *(creato — 21 Flip Card)*
@@ -466,7 +465,7 @@ data/
 - **Il protocollo TCP/IP**
   - Chiave: `tcp-ip`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Reti_e_Internet/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(creato — 46 Flip Card)*
     - `Flip_Card_Medio_Modulo_2.csv` *(creato — 26 Flip Card)*
@@ -474,7 +473,7 @@ data/
 - **DNS: la rubrica di Internet**
   - Chiave: `dns`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Reti_e_Internet/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(creato — 40 Flip Card)*
     - `Flip_Card_Medio_Modulo_3.csv` *(creato — 20 Flip Card)*
@@ -482,7 +481,7 @@ data/
 - **Router, Switch e dispositivi di rete**
   - Chiave: `router-switch-dispositivi`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Reti_e_Internet/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(creato — 37 Flip Card)*
     - `Flip_Card_Medio_Modulo_4.csv` *(creato — 21 Flip Card)*
@@ -490,7 +489,7 @@ data/
 - **Wi-Fi e reti wireless**
   - Chiave: `wifi-reti-wireless`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Reti_e_Internet/Modulo5/`
   - File:
     - `Flip_Card_Facile_Modulo_5.csv` *(creato — 51 Flip Card)*
     - `Flip_Card_Medio_Modulo_5.csv` *(creato — 28 Flip Card)*
@@ -498,7 +497,7 @@ data/
 - **Cloud Networking**
   - Chiave: `cloud-networking`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo6/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Reti_e_Internet/Modulo6/`
   - File:
     - `Flip_Card_Facile_Modulo_6.csv` *(creato — 42 Flip Card)*
     - `Flip_Card_Medio_Modulo_6.csv` *(creato — 25 Flip Card)*
@@ -506,7 +505,7 @@ data/
 - **VPN e comunicazioni sicure**
   - Chiave: `vpn`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo7/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Reti_e_Internet/Modulo7/`
   - File:
     - `Flip_Card_Facile_Modulo_7.csv` *(creato — 39 Flip Card)*
     - `Flip_Card_Medio_Modulo_7.csv` *(creato — 18 Flip Card)*
@@ -514,7 +513,7 @@ data/
 - **Troubleshooting delle reti**
   - Chiave: `troubleshooting-reti`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Reti_e_Internet/Modulo8/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Reti_e_Internet/Modulo8/`
   - File:
     - `Flip_Card_Facile_Modulo_8.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_8.csv` *(creato)*
@@ -528,7 +527,7 @@ data/
 - **Malware e Minacce Informatiche**
   - Chiave: `malware-e-minacce-informatiche`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Malware_e_Minacce_Informatiche/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Malware_e_Minacce_Informatiche/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato — 33 Flip Card)*
     - `Flip_Card_Medio_Modulo_1.csv` *(creato — 25 Flip Card)*
@@ -542,7 +541,7 @@ data/
 - **Cos'è l'AI**
   - Chiave: `cos-e-l-ai`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo1/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo1/`
   - File:
     - `Flip_Card_Facile_Modulo_1.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_1.csv` *(creato)*
@@ -550,7 +549,7 @@ data/
 - **Come funziona l'AI**
   - Chiave: `come-funziona-l-ai`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo2/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo2/`
   - File:
     - `Flip_Card_Facile_Modulo_2.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_2.csv` *(creato)*
@@ -558,7 +557,7 @@ data/
 - **Come funzionano gli LLM**
   - Chiave: `come-funzionano-gli-llm`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo3/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo3/`
   - File:
     - `Flip_Card_Facile_Modulo_3.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_3.csv` *(creato)*
@@ -566,7 +565,7 @@ data/
 - **AI Generativa**
   - Chiave: `ai-generativa`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo4/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo4/`
   - File:
     - `Flip_Card_Facile_Modulo_4.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_4.csv` *(creato)*
@@ -574,7 +573,7 @@ data/
 - **Prompt Engineering**
   - Chiave: `prompt-engineering`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo5/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo5/`
   - File:
     - `Flip_Card_Facile_Modulo_5.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_5.csv` *(creato)*
@@ -582,7 +581,7 @@ data/
 - **Agenti e Automazione**
   - Chiave: `agenti-automazione`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo6/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo6/`
   - File:
     - `Flip_Card_Facile_Modulo_6.csv` *(creato — 42 Flip Card)*
     - `Flip_Card_Medio_Modulo_6.csv` *(creato — 28 Flip Card)*
@@ -590,7 +589,7 @@ data/
 - **Deepfake e Contenuti Sintetici**
   - Chiave: `deepfake-contenuti-sintetici`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo7/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo7/`
   - File:
     - `Flip_Card_Facile_Modulo_7.csv` *(creato — 32 Flip Card)*
     - `Flip_Card_Medio_Modulo_7.csv` *(creato — 21 Flip Card)*
@@ -598,7 +597,7 @@ data/
 - **Provenienza dei Contenuti**
   - Chiave: `provenienza-dei-contenuti`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo8/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo8/`
   - File:
     - `Flip_Card_Facile_Modulo_8.csv` *(creato — 29 Flip Card)*
     - `Flip_Card_Medio_Modulo_8.csv` *(creato — 18 Flip Card)*
@@ -606,7 +605,7 @@ data/
 - **Verificare l'AI**
   - Chiave: `verificare-l-ai`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo9/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo9/`
   - File:
     - `Flip_Card_Facile_Modulo_9.csv` *(creato — 26 Flip Card)*
     - `Flip_Card_Medio_Modulo_9.csv` *(creato — 17 Flip Card)*
@@ -614,7 +613,7 @@ data/
 - **Etica dell'AI**
   - Chiave: `etica-dell-ai`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo10/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo10/`
   - File:
     - `Flip_Card_Facile_Modulo_10.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_10.csv` *(creato)*
@@ -622,7 +621,7 @@ data/
 - **Bias Algoritmici**
   - Chiave: `bias-algoritmici`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo11/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo11/`
   - File:
     - `Flip_Card_Facile_Modulo_11.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_11.csv` *(creato)*
@@ -630,7 +629,7 @@ data/
 - **AI Act**
   - Chiave: `ai-act`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo12/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo12/`
   - File:
     - `Flip_Card_Facile_Modulo_12.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_12.csv` *(creato)*
@@ -638,7 +637,7 @@ data/
 - **Il Futuro dell'AI**
   - Chiave: `futuro-dell-ai`
   - Stato: `attivo`
-  - Path base: `data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo13/`
+  - Path base: `data/Minigiochi/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo13/`
   - File:
     - `Flip_Card_Facile_Modulo_13.csv` *(creato)*
     - `Flip_Card_Medio_Modulo_13.csv` *(creato)*
@@ -686,7 +685,7 @@ data/
 - Modulo 4 — Navigazione e comunicazione sicura
 - Modulo 5 — Protezione e conservazione dei dati
 
-### 🤝 ECDL — Online Collaboration — DA CREARE
+### 🤝 ECDL — Online Collaboration — COMPLETO
 - Modulo 1 — Collaborazione online
 - Modulo 2 — Cloud e preparazione
 - Modulo 3 — Storage e produttività online
@@ -744,8 +743,8 @@ data/
 ---
 
 **Riepilogo:**
-- **Moduli completi:** 63
-- **Moduli da creare:** 7 (ECDL — Online Collaboration: 7)
+- **Moduli completi:** 70
+- **Moduli da creare:** 0
 - **Moduli totali:** 70
 
 *Per i moduli indicati come "DA CREARE", entrambi i file — Facile e Medio — sono ancora da creare.*
@@ -760,17 +759,17 @@ data/
 | ECDL — Spreadsheet | 6 | 12 | 12 | 0 | attivo |
 | ECDL — Presentation | 3 | 6 | 6 | 0 | attivo |
 | ECDL — IT Security | 5 | 10 | 10 | 0 | attivo |
-| ECDL — Online Collaboration | 7 | 14 | 0 | 14 | attivo (da creare) |
+| ECDL — Online Collaboration | 7 | 14 | 14 | 0 | attivo |
 | Cyberbullismo e Sicurezza Online | 6 | 12 | 12 | 0 | attivo |
 | Cybersecurity — Non solo antivirus e password | 8 | 16 | 16 | 0 | attivo |
 | Reti e Internet | 8 | 16 | 16 | 0 | attivo |
 | Malware e Minacce Informatiche | 1 | 2 | 2 | 0 | attivo |
 | Intelligenza Artificiale | 13 | 26 | 26 | 0 | attivo |
-| **Totale** | **70** | **140** | **126** | **14** | — |
+| **Totale** | **70** | **140** | **140** | **0** | — |
 
 - **Moduli totali mappati:** 70
-- **Moduli completi:** 63
-- **Moduli da creare:** 7 (ECDL — Online Collaboration: 7)
-- **File CSV creati:** 126
-- **File CSV da creare:** 14 (ECDL — Online Collaboration: 14)
+- **Moduli completi:** 70
+- **Moduli da creare:** 0
+- **File CSV creati:** 140
+- **File CSV da creare:** 0
 - **File CSV totali attesi:** 140

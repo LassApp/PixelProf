@@ -1,7 +1,10 @@
-{
-  "module": "wifi-reti-wireless",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "wifi-reti-wireless",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Wi-Fi",
         "definition": "Tecnologia di comunicazione wireless che permette ai dispositivi di collegarsi a una rete locale e a Internet senza usare cavi"
@@ -26,8 +29,14 @@
         "term": "Sicurezza Wi-Fi",
         "definition": "Insieme delle tecnologie e configurazioni utilizzate per proteggere una rete wireless da accessi non autorizzati"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "wifi-reti-wireless",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Wi-Fi 4",
         "definition": "Standard che ha aumentato sensibilmente la velocità introducendo l'uso delle bande 2,4 GHz e 5 GHz"
@@ -48,8 +57,14 @@
         "term": "Retrocompatibilità",
         "definition": "Capacità di un router più recente di collegarsi anche a dispositivi con standard Wi-Fi meno recenti"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "wifi-reti-wireless",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Banda 2,4 GHz",
         "definition": "Maggiore copertura ma velocità inferiore; storicamente la più diffusa"
@@ -62,8 +77,14 @@
         "term": "Banda 6 GHz",
         "definition": "Disponibile con le tecnologie più recenti, offre prestazioni superiori e meno interferenze"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "wifi-reti-wireless",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "SSID nascosto",
         "definition": "Funzione che evita che il nome della rete compaia nell'elenco delle reti disponibili, ma non è una vera misura di sicurezza"
@@ -88,8 +109,14 @@
         "term": "WPA3",
         "definition": "Versione più recente dei protocolli di sicurezza Wi-Fi, con maggiore protezione"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 5,
+    "module": "wifi-reti-wireless",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Interferenze",
         "definition": "Disturbi causati da altri segnali radio o ostacoli fisici che riducono la qualità della connessione Wi-Fi"
@@ -106,8 +133,14 @@
         "term": "Wi-Fi Mesh",
         "definition": "Sistema formato da più nodi che collaborano per creare un'unica rete Wi-Fi distribuita nell'ambiente"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 6,
+    "module": "wifi-reti-wireless",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Diffusione del Wi-Fi durante il COVID-19",
         "definition": "Il Wi-Fi domestico divenne un'infrastruttura essenziale per videoconferenze, lezioni online e streaming"
@@ -125,5 +158,5 @@
         "definition": "I sistemi Mesh si sono diffusi rapidamente per garantire connessioni stabili a molti dispositivi distribuiti in ambienti diversi"
       }
     ]
-  ]
-}
+  }
+]

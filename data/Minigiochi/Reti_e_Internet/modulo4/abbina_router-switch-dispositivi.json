@@ -1,7 +1,10 @@
-{
-  "module": "router-switch-dispositivi",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "router-switch-dispositivi",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Router",
         "definition": "Dispositivo di rete che collega due o più reti differenti e decide il percorso che i dati devono seguire"
@@ -26,8 +29,14 @@
         "term": "DHCP",
         "definition": "Protocollo che assegna automaticamente ai dispositivi le impostazioni necessarie per comunicare in rete"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "router-switch-dispositivi",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "MAC Address",
         "definition": "Indirizzo fisico univoco della scheda di rete"
@@ -52,8 +61,14 @@
         "term": "Rogue DHCP server",
         "definition": "Server DHCP non autorizzato collegato erroneamente a una rete"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "router-switch-dispositivi",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Indirizzo IP privato",
         "definition": "Indirizzo utilizzato all'interno della rete domestica, non raggiungibile direttamente da Internet"
@@ -74,8 +89,14 @@
         "term": "Modem-router",
         "definition": "Apparecchio che integra le funzioni di modem e router in un unico dispositivo"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "router-switch-dispositivi",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Malware Mirai (2016)",
         "definition": "Infettò centinaia di migliaia di router domestici e dispositivi IoT trasformandoli in una botnet per un attacco DDoS"
@@ -92,8 +113,14 @@
         "term": "Vulnerabilità nei modem-router (2021)",
         "definition": "Falle nel software di gestione remoto scoperte in milioni di dispositivi"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 5,
+    "module": "router-switch-dispositivi",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Router (metafora)",
         "definition": "L'incrocio principale dotato di semafori intelligenti che indirizza ogni automobile verso la strada corretta"
@@ -119,5 +146,5 @@
         "definition": "Il receptionist dell'albergo che assegna la camera e le informazioni necessarie a ogni nuovo ospite"
       }
     ]
-  ]
-}
+  }
+]

@@ -1,7 +1,10 @@
-{
-  "module": "troubleshooting-reti",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "troubleshooting-reti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Troubleshooting",
         "definition": "Processo di individuazione, analisi e risoluzione di un problema tecnico"
@@ -22,8 +25,14 @@
         "term": "Metafora dell'automobile che non si avvia",
         "definition": "Il meccanico controlla prima carburante, batteria e motorino d'avviamento, solo dopo verifiche più complesse"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "troubleshooting-reti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Individuare il problema",
         "definition": "Raccogliere informazioni per stabilire con precisione quale componente della rete causa il malfunzionamento"
@@ -40,8 +49,14 @@
         "term": "Metafora della telefonata senza risposta",
         "definition": "Si controlla il campo, si prova a chiamare un'altra persona o si chiede a qualcuno vicino di fare la stessa chiamata"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "troubleshooting-reti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Controlli iniziali",
         "definition": "Verifiche di base per individuare rapidamente le cause più comuni di un malfunzionamento"
@@ -58,8 +73,14 @@
         "term": "Metafora della lampada che non si accende",
         "definition": "Si controlla la spina, l'interruttore e se manca corrente in tutta la casa prima di chiamare un elettricista"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "troubleshooting-reti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Ping",
         "definition": "Strumento di diagnostica che verifica se un dispositivo è raggiungibile, misurando il tempo di andata e ritorno di un messaggio"
@@ -80,8 +101,14 @@
         "term": "Metafora del campanello",
         "definition": "Se qualcuno risponde, la casa è raggiungibile; se no, potrebbe non esserci nessuno o il campanello essere rotto"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 5,
+    "module": "troubleshooting-reti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Traceroute",
         "definition": "Strumento che mostra il percorso seguito dai pacchetti di dati per raggiungere una destinazione"
@@ -102,8 +129,14 @@
         "term": "Metafora del pacco spedito",
         "definition": "Traceroute è come consultare il registro delle spedizioni per vedere in quale centro di smistamento si è fermato il viaggio"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 6,
+    "module": "troubleshooting-reti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Ipconfig",
         "definition": "Comando Windows che visualizza la configurazione di rete del computer, come indirizzo IP, subnet mask, gateway e server DNS"
@@ -128,8 +161,14 @@
         "term": "Metafora del ristorante senza indirizzo",
         "definition": "Conoscere il nome ma non l'indirizzo di un ristorante non significa che le strade siano chiuse"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 7,
+    "module": "troubleshooting-reti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Metodo di diagnosi",
         "definition": "Procedura logica e ordinata che analizza una possibile causa alla volta fino a identificare quella reale"
@@ -147,5 +186,5 @@
         "definition": "Raccoglie i sintomi, misura i parametri vitali e visita il paziente prima di richiedere esami più approfonditi"
       }
     ]
-  ]
-}
+  }
+]

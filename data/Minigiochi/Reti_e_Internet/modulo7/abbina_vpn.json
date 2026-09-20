@@ -1,7 +1,10 @@
-{
-  "module": "vpn",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "vpn",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "VPN",
         "definition": "Tecnologia che crea una connessione protetta e cifrata tra un dispositivo e un server remoto attraverso Internet"
@@ -22,8 +25,14 @@
         "term": "IP pubblico con VPN attiva",
         "definition": "Può risultare diverso da quello realmente assegnato dal provider Internet, poiché la connessione sembra provenire dal server VPN"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "vpn",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Funzionamento del tunnel VPN",
         "definition": "I dati vengono cifrati, trasmessi attraverso Internet e decifrati solo una volta raggiunto il server VPN"
@@ -40,8 +49,14 @@
         "term": "VPN e HTTPS",
         "definition": "Tecnologie complementari, non alternative, che lavorano insieme per aumentare la sicurezza delle comunicazioni"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "vpn",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "VPN Remote Access",
         "definition": "Permette a un singolo utente di collegarsi in modo sicuro alla rete di un'organizzazione attraverso Internet"
@@ -54,8 +69,14 @@
         "term": "VPN Commerciali",
         "definition": "Servizi offerti da aziende specializzate per proteggere la navigazione dell'utente, soprattutto su Wi-Fi pubbliche, e aumentare la privacy online"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "vpn",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Wi-Fi pubblica",
         "definition": "Rete condivisa da numerosi utenti sulla quale non abbiamo alcun controllo"
@@ -76,8 +97,14 @@
         "term": "Accesso a contenuti online con VPN",
         "definition": "Alcuni servizi possono rilevare l'utilizzo di server VPN e limitarne o impedirne l'accesso"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 5,
+    "module": "vpn",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Privacy",
         "definition": "Diritto di controllare le informazioni che ci riguardano e decidere come vengono raccolte, utilizzate e condivise"
@@ -94,8 +121,14 @@
         "term": "Fiducia nel fornitore VPN",
         "definition": "Parte della fiducia si sposta dal provider Internet al fornitore della VPN quando si utilizza il servizio"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 6,
+    "module": "vpn",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Metafora del tunnel sotto la città",
         "definition": "Nessuno dall'esterno può osservare ciò che viene trasportato durante il tratto protetto"
@@ -117,5 +150,5 @@
         "definition": "Protegge i passeggeri durante il viaggio, ma non può impedire una decisione sbagliata presa dal conducente"
       }
     ]
-  ]
-}
+  }
+]

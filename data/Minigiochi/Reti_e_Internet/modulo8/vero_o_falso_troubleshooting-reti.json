@@ -39,7 +39,7 @@
     "id": 5,
     "module": "troubleshooting-reti",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "L'interruzione globale di Facebook, Instagram e WhatsApp del 2021 fu causata da un guasto fisico ai cavi di rete.",
     "answer": false,
     "explanation": "Fu causata da una configurazione errata dei sistemi che gestivano il traffico Internet, non da un guasto fisico."
@@ -84,7 +84,7 @@
     "id": 10,
     "module": "troubleshooting-reti",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Nel 2022 il guasto ai servizi di Cloudflare dimostrò che il problema può trovarsi in un'infrastruttura remota condivisa da molti siti.",
     "answer": true,
     "explanation": "Il problema era concentrato nei server di Cloudflare, non nei dispositivi o router degli utenti."
@@ -93,7 +93,7 @@
     "id": 11,
     "module": "troubleshooting-reti",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Durante il guasto Cloudflare del 2022, nessun sito web era raggiungibile in tutto il mondo.",
     "answer": false,
     "explanation": "Chi visitava siti non collegati al servizio Cloudflare riusciva a navigare normalmente."
@@ -201,7 +201,7 @@
     "id": 23,
     "module": "troubleshooting-reti",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Durante il guasto globale di Facebook, Instagram e WhatsApp del 2021, i test con Ping mostrarono sistemi irraggiungibili.",
     "answer": true,
     "explanation": "I test mostrarono che numerosi sistemi dell'azienda risultavano irraggiungibili dalla rete Internet."
@@ -255,7 +255,7 @@
     "id": 29,
     "module": "troubleshooting-reti",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Nel 2008 un errore di instradamento causato da un provider in Pakistan rese temporaneamente irraggiungibile YouTube.",
     "answer": true,
     "explanation": "Un annuncio di rete errato deviò il traffico verso una destinazione sbagliata."
@@ -363,7 +363,7 @@
     "id": 41,
     "module": "troubleshooting-reti",
     "type": "truefalse",
-    "difficulty": "easy",
+    "difficulty": "hard",
     "statement": "Nel 2021 il malfunzionamento dei servizi DNS di Akamai fu causato da un guasto della connessione domestica degli utenti.",
     "answer": false,
     "explanation": "La rete degli utenti funzionava correttamente; era il sistema di risoluzione dei nomi a non funzionare."

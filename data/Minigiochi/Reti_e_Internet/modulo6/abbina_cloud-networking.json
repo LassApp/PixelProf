@@ -1,7 +1,10 @@
-{
-  "module": "cloud-networking",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "cloud-networking",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Cloud Networking",
         "definition": "Insieme di tecnologie e infrastrutture di rete che permettono di utilizzare servizi, applicazioni e risorse informatiche attraverso Internet, invece di mantenerle solo sui dispositivi locali"
@@ -26,8 +29,14 @@
         "term": "Rack",
         "definition": "Armadio metallico in cui sono organizzati i server all'interno di un Data Center"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "cloud-networking",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Ridondanza",
         "definition": "Replica automatica dei dati su più dispositivi o Data Center per mantenere il servizio sempre disponibile in caso di guasto"
@@ -48,8 +57,14 @@
         "term": "Gruppi di continuità e generatori",
         "definition": "Sistemi che garantiscono l'alimentazione elettrica del Data Center anche in caso di guasto"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "cloud-networking",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Sincronizzazione",
         "definition": "Processo con cui il servizio cloud aggiorna automaticamente tutte le copie di un documento collegate allo stesso account"
@@ -62,8 +77,14 @@
         "term": "Router di casa",
         "definition": "Il punto di accesso attraverso cui il traffico locale entra in Internet verso il cloud"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "cloud-networking",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "CDN (Content Delivery Network)",
         "definition": "Rete di server distribuiti nel mondo che conserva copie dei contenuti più richiesti e li invia dal nodo più vicino all'utente"
@@ -84,8 +105,14 @@
         "term": "Scalabilità orizzontale (Horizontal Scaling)",
         "definition": "Aggiunta di nuovi server che lavorano insieme; è il modello più utilizzato nel Cloud Networking"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 5,
+    "module": "cloud-networking",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Google Drive",
         "definition": "Servizio di cloud storage per l'archiviazione e la sincronizzazione dei file nel cloud"
@@ -111,5 +138,5 @@
         "definition": "Diminuzione temporanea della qualità video per ridurre il carico sulle reti Internet europee durante la pandemia"
       }
     ]
-  ]
-}
+  }
+]

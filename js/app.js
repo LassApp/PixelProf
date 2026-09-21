@@ -941,7 +941,7 @@ async function _applyModuleFilter(classroomId){
  */
 function _renderModuleFilter(){
   const keys = window._activeModuleKeys || null;
-  const ALL = ['CE','OE','WP','SS','PP'];
+  const ALL = ['CE','OE','WP','SS','PP','IT','OC'];
 
   const course  = activeCourseId ? loadCourses().find(c=>c.id===activeCourseId) : null;
   const areaKey = course?.areaKey || 'ecdl';
@@ -958,6 +958,19 @@ function _renderModuleFilter(){
     // nuove regole !important durante il redesign.
     card.classList.toggle('is-hidden-by-filter', !show);
   });
+
+  // v8.35.1 — quale card debba occupare 2 colonne (l'ultima, se il numero
+  // di moduli VISIBILI è dispari) non è calcolabile in puro CSS qui: i
+  // moduli disabilitati per aula restano nel DOM (solo .is-hidden-by-filter,
+  // vedi sopra), quindi :nth-child/:last-child conterebbero anche loro e
+  // sballerebbero la parità. Calcolato sui soli mc-* effettivamente
+  // visibili; vedi css/mod-cards.css per la regola .auto-span.
+  if(isEcdl){
+    const cards   = ALL.map(k=>shq('mc-'+k)).filter(Boolean);
+    const visible = cards.filter(card=>!card.classList.contains('is-hidden-by-filter'));
+    const last    = (visible.length % 2 === 1) ? visible[visible.length-1] : null;
+    cards.forEach(card=>card.classList.toggle('auto-span', card===last));
+  }
 
   const catalog = shq('mod-ecdl-catalog');
   if(catalog) catalog.classList.toggle('hidden', !isEcdl);

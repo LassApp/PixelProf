@@ -24,14 +24,27 @@
   align-items: start; /* evita che le card si stirino in altezza per via del grid */
 }
 
-/* v8.35.0 — sostituisce il vecchio .isolated scritto a mano solo su
-   Power Point (grid-column:1/-1 fisso, si rompeva aggiungendo un 6°
-   modulo). Si ricalcola da solo in base al conteggio card: se il
-   totale è dispari, l'ultima resta sola sull'ultima riga e si allarga;
-   se è pari, nessuna card viene toccata. Vale per QUALSIASI griglia
-   .mod-grid — sia quella statica ECDL sia #mod-area-catalog-grid delle
-   altre Aree (stessa classe, stesso comportamento ovunque). */
-.mod-grid > .mod-card:last-child:nth-child(odd) {
+/* v8.35.1 — CORRETTO: la versione precedente usava :last-child:nth-child(odd)
+   su QUALSIASI .mod-grid, ECDL statica inclusa. Ma l'ECDL statica può avere
+   moduli nascosti per aula (classe .is-hidden-by-filter, vedi
+   _renderModuleFilter in app.js) che restano comunque nel DOM — :nth-child
+   li conta comunque, sballando la parità pari/dispari appena un modulo è
+   disabilitato per quella classe (es. solo 3 moduli attivi su 7: Word,
+   Excel, Online Essentials → serviva Online Essentials larga x2, ma la
+   card "fisicamente" :last-child nel DOM restava sempre l'ultima delle 7,
+   non l'ultima VISIBILE). La regola nth-child resta valida SOLO per la
+   griglia dinamica delle altre Aree: #mod-area-catalog-grid viene
+   ricostruita da zero via innerHTML ad ogni filtro (app.js, _renderModuleFilter)
+   con solo i moduli davvero attivi — mai elementi nascosti nel mezzo. */
+#mod-area-catalog-grid > .mod-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+/* Per l'ECDL statica: la card da allargare è calcolata in JS sui soli
+   moduli effettivamente visibili (_renderModuleFilter, app.js) e marcata
+   con questa classe — l'unico modo corretto di gestire moduli nascosti
+   nel mezzo del DOM. */
+#mod-ecdl-catalog .mod-grid > .mod-card.auto-span {
   grid-column: 1 / -1;
 }
 
@@ -475,11 +488,16 @@
       Ora tutte e 7 le card ECDL condividono lo stesso trattamento.
    5. NUOVO — card IT Security (crimson) e Online Collaboration
       (magenta), stesso pattern delle altre 5.
-   6. NUOVO — .mod-grid > .mod-card:last-child:nth-child(odd) sostituisce
-      il vecchio .isolated hardcoded su Power Point: ora qualsiasi
-      griglia .mod-grid (ECDL statica o generic-card dinamica di
-      un'altra Area) isola automaticamente l'ultima card se il totale
-      è dispari, si ricalcola da solo ad ogni aggiunta/rimozione modulo.
+   6. NUOVO (v8.35.0), CORRETTO (v8.35.1) — sostituisce il vecchio
+      .isolated hardcoded su Power Point. Prima versione: un'unica
+      regola CSS :last-child:nth-child(odd) su qualsiasi .mod-grid.
+      Bug: sui moduli ECDL nascosti per aula (.is-hidden-by-filter,
+      restano nel DOM) sballava la parità pari/dispari. Ora: regola
+      CSS pura solo su #mod-area-catalog-grid (dinamica, ricostruita
+      da zero via innerHTML, mai elementi nascosti nel mezzo); per
+      #mod-ecdl-catalog la card da allargare è calcolata in JS sui
+      soli moduli davvero visibili (_renderModuleFilter, app.js) e
+      marcata con la classe .auto-span.
    7. ESTESO — lo stagger delay dell'animazione d'ingresso copriva solo
       nth-child(1..5); esteso a 13 per coprire anche le Aree con più
       moduli (Intelligenza Artificiale ne ha 13).

@@ -292,6 +292,105 @@ const AREAS = [
           memory: 'data/memory/powerpoint_memory.json', // invariato — Memory in pausa, nessun nuovo JSON per-modulo
         },
       },
+      {
+        // v8.35.0 — nuovo modulo IT Security. Stesso trattamento di SS/PP:
+        // contentReady:true, JSON minigiochi da realizzare (404 gestito →
+        // card "Errore caricamento"). Flip Card già pronta e funzionante
+        // (data/Didattica/Flip_Card/ECDL/IT_Security/), Lo Sapevi in attesa
+        // dei JSON sorgente (vero_o_falso) prima di poter essere convertita.
+        key: 'IT', label: 'IT Security', contentReady: true,
+        dataPaths: {
+          quiz: [
+            'data/Minigiochi/ECDL/IT_Security/modulo1/quiz_fondamenti-della-sicurezza.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo2/quiz_il-malware.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo3/quiz_reti-e-accessi.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo4/quiz_navigazione-e-comunicazione-sicura.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo5/quiz_protezione-e-conservazione-dei-dati.json',
+          ],
+          speed: [
+            'data/Minigiochi/ECDL/IT_Security/modulo1/speedquiz_fondamenti-della-sicurezza.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo2/speedquiz_il-malware.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo3/speedquiz_reti-e-accessi.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo4/speedquiz_navigazione-e-comunicazione-sicura.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo5/speedquiz_protezione-e-conservazione-dei-dati.json',
+          ],
+          abbina: [
+            'data/Minigiochi/ECDL/IT_Security/modulo1/abbina_fondamenti-della-sicurezza.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo2/abbina_il-malware.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo3/abbina_reti-e-accessi.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo4/abbina_navigazione-e-comunicazione-sicura.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo5/abbina_protezione-e-conservazione-dei-dati.json',
+          ],
+          completaFrase: [
+            'data/Minigiochi/ECDL/IT_Security/modulo1/completa_la_frase_fondamenti-della-sicurezza.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo2/completa_la_frase_il-malware.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo3/completa_la_frase_reti-e-accessi.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo4/completa_la_frase_navigazione-e-comunicazione-sicura.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo5/completa_la_frase_protezione-e-conservazione-dei-dati.json',
+          ],
+          veroFalso: [
+            'data/Minigiochi/ECDL/IT_Security/modulo1/vero_o_falso_fondamenti-della-sicurezza.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo2/vero_o_falso_il-malware.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo3/vero_o_falso_reti-e-accessi.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo4/vero_o_falso_navigazione-e-comunicazione-sicura.json',
+            'data/Minigiochi/ECDL/IT_Security/modulo5/vero_o_falso_protezione-e-conservazione-dei-dati.json',
+          ],
+          // memory omesso — Memory in pausa app-wide, nessun JSON per questo modulo (stesso criterio v8.33.0)
+        },
+      },
+      {
+        // v8.35.0 — nuovo modulo Online Collaboration (7 sotto-moduli).
+        // Stesso trattamento di IT Security qui sopra.
+        key: 'OC', label: 'Online Collaboration', contentReady: true,
+        dataPaths: {
+          quiz: [
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo1/quiz_collaborazione-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo2/quiz_cloud-e-preparazione.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo3/quiz_storage-e-produttivita-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo4/quiz_calendari-e-riunioni-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo5/quiz_social-e-apprendimento-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo6/quiz_dispositivi-mobili-e-connessioni.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo7/quiz_app-e-sincronizzazione.json',
+          ],
+          speed: [
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo1/speedquiz_collaborazione-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo2/speedquiz_cloud-e-preparazione.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo3/speedquiz_storage-e-produttivita-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo4/speedquiz_calendari-e-riunioni-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo5/speedquiz_social-e-apprendimento-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo6/speedquiz_dispositivi-mobili-e-connessioni.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo7/speedquiz_app-e-sincronizzazione.json',
+          ],
+          abbina: [
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo1/abbina_collaborazione-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo2/abbina_cloud-e-preparazione.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo3/abbina_storage-e-produttivita-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo4/abbina_calendari-e-riunioni-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo5/abbina_social-e-apprendimento-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo6/abbina_dispositivi-mobili-e-connessioni.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo7/abbina_app-e-sincronizzazione.json',
+          ],
+          completaFrase: [
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo1/completa_la_frase_collaborazione-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo2/completa_la_frase_cloud-e-preparazione.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo3/completa_la_frase_storage-e-produttivita-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo4/completa_la_frase_calendari-e-riunioni-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo5/completa_la_frase_social-e-apprendimento-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo6/completa_la_frase_dispositivi-mobili-e-connessioni.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo7/completa_la_frase_app-e-sincronizzazione.json',
+          ],
+          veroFalso: [
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo1/vero_o_falso_collaborazione-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo2/vero_o_falso_cloud-e-preparazione.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo3/vero_o_falso_storage-e-produttivita-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo4/vero_o_falso_calendari-e-riunioni-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo5/vero_o_falso_social-e-apprendimento-online.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo6/vero_o_falso_dispositivi-mobili-e-connessioni.json',
+            'data/Minigiochi/ECDL/Online_Collaboration/modulo7/vero_o_falso_app-e-sincronizzazione.json',
+          ],
+          // memory omesso — Memory in pausa app-wide, nessun JSON per questo modulo (stesso criterio v8.33.0)
+        },
+      },
     ],
   },
   {

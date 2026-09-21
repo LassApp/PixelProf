@@ -1,0 +1,497 @@
+/* ═══════════════════════════════════════════════════════════════════
+   MOD-CARDS — v8.35.0
+   Consolidamento del sistema "Module Card" (griglia ECDL statica +
+   generic-card dinamica di tutte le altre Aree), prima sparso su 3
+   layer di pixelprof.css (base v7, streaming v6, netflix) che si
+   sovrascrivevano parzialmente l'un l'altro. Vedi CHANGELOG in fondo
+   al file per il dettaglio di cosa è stato unito/corretto/rimosso.
+
+   Segue lo stesso pattern degli altri componenti dedicati (flip-card.css,
+   lo-sapevi.css, act-select.css...): un file, un layer, aggiunto in coda
+   all'elenco @layer di pixelprof.css (prima di "theme").
+   ═══════════════════════════════════════════════════════════════════ */
+@layer modcards {
+
+/* ─────────────────────────────────────────────────────────────────
+   GRIGLIA — 2 colonne, isolamento automatico dell'ultima card dispari
+   ───────────────────────────────────────────────────────────────── */
+.mod-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+  overflow: visible; /* le card possono "uscire" leggermente dai bordi su hover */
+  align-items: start; /* evita che le card si stirino in altezza per via del grid */
+}
+
+/* v8.35.0 — sostituisce il vecchio .isolated scritto a mano solo su
+   Power Point (grid-column:1/-1 fisso, si rompeva aggiungendo un 6°
+   modulo). Si ricalcola da solo in base al conteggio card: se il
+   totale è dispari, l'ultima resta sola sull'ultima riga e si allarga;
+   se è pari, nessuna card viene toccata. Vale per QUALSIASI griglia
+   .mod-grid — sia quella statica ECDL sia #mod-area-catalog-grid delle
+   altre Aree (stessa classe, stesso comportamento ovunque). */
+.mod-grid > .mod-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
+/* Focus cinematico tra sibling — card in hover risalta, le altre si abbassano */
+.mod-grid:has(.mod-card:hover) .mod-card:not(:hover) {
+  transform: scale(.96);
+  filter: brightness(.65) saturate(.7);
+  transition:
+    transform var(--t-shrink) var(--ease-cinema),
+    filter var(--t-shrink) var(--ease-cinema);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   MOD-CARD — struttura base ("poster cinematico")
+   ───────────────────────────────────────────────────────────────── */
+.mod-card {
+  position: relative;
+  border-radius: 14px;
+  min-height: var(--tile-h);
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform var(--t-hover) var(--ease-cinema),
+    box-shadow var(--t-hover) var(--ease-cinema),
+    filter var(--t-hover) var(--ease-cinema),
+    border-color var(--t-hover) var(--ease-soft);
+  border: 1px solid rgba(255,255,255,.07);
+  box-shadow: 0 2px 8px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.03) inset;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
+}
+
+.mod-card svg.bg { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* Overlay gradiente — coprente in basso, trasparente in alto */
+.mod-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  background: linear-gradient(180deg, transparent 25%, rgba(4,6,15,.3) 50%, rgba(4,6,15,.82) 75%, rgba(4,6,15,.95) 100%);
+  opacity: 1;
+  transition: opacity var(--t-hover) var(--ease-soft);
+  z-index: 2;
+}
+
+/* Barra accento inferiore */
+.mod-card::before {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0; top: auto;
+  height: 2px;
+  border-radius: 0;
+  z-index: 4;
+  transform: scaleX(0);
+  transition: transform var(--t-focus) var(--ease-soft);
+}
+
+.mod-card:hover {
+  transform: translateY(-6px) scale(1.04);
+  z-index: 10;
+}
+.mod-card:hover::before { transform: scaleX(1); }
+.mod-card:hover::after {
+  background: linear-gradient(180deg, transparent 15%, rgba(4,6,15,.2) 45%, rgba(4,6,15,.78) 72%, rgba(4,6,15,.96) 100%);
+}
+.mod-card.active { transform: translateY(-3px) scale(1.015); }
+.mod-card.active::before { transform: scaleX(1); }
+
+.mod-card .mc-content {
+  position: relative;
+  z-index: 3;
+  padding: 0 1.1rem 1.1rem;
+}
+
+.mod-card .mc-badge {
+  position: absolute;
+  top: 14px; right: 14px;
+  z-index: 3;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 7px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 4px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.mod-card .mc-icon {
+  font-size: 36px;
+  margin-bottom: 8px;
+  display: block;
+  filter: drop-shadow(0 0 10px rgba(255,255,255,.15));
+  transition:
+    transform var(--t-focus) var(--ease-spring),
+    filter var(--t-hover) var(--ease-soft);
+}
+.mod-card:hover .mc-icon {
+  transform: scale(1.18) translateY(-3px);
+  filter: drop-shadow(0 0 18px rgba(255,255,255,.4));
+}
+
+.mod-card h3 {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -.3px;
+  margin-bottom: 4px;
+  line-height: 1.2;
+  color: #fff;
+  transition: color var(--t-hover) var(--ease-soft);
+}
+.mod-card p {
+  font-size: 11px;
+  color: rgba(255,255,255,.45);
+  line-height: 1.45;
+}
+
+/* ── Tags — layout/colore di base SEMPRE visibile (usato anche da
+   .act-card nella schermata di selezione attività, non solo da
+   .mod-card: prima era globale con opacity:0 di default, che
+   rendeva invisibili i tag delle activity card ovunque nel sito,
+   mai rivelati da nessun hover — vedi CHANGELOG). Il reveal-on-hover
+   "cinematico" è ora un'AGGIUNTA scoped solo a .mod-card, sotto. */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 8px;
+}
+.tag {
+  font-size: 9px;
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-weight: 600;
+  letter-spacing: .3px;
+  background: rgba(255,255,255,.06);
+  color: rgba(255,255,255,.45);
+  border: 1px solid rgba(255,255,255,.09);
+  backdrop-filter: blur(4px);
+  transition: all var(--t-hover) var(--ease-soft);
+}
+
+/* Reveal-on-hover cinematico — solo dentro le module card */
+.mod-card .tags {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity var(--t-hover) var(--ease-soft), transform var(--t-hover) var(--ease-soft);
+}
+.mod-card:hover .tags,
+.mod-card.active .tags {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   GENERIC-CARD — Aree extra-ECDL (Cybersecurity, Cyberbullismo, Reti,
+   Malware, Intelligenza Artificiale...), generata dinamicamente in JS
+   (_buildGenericModCard, app.js). Riusa --area-rgb assegnata su
+   #mod-area-catalog[data-area-key] (vedi @layer areas in pixelprof.css).
+   ───────────────────────────────────────────────────────────────── */
+.mod-card.generic-card {
+  background: linear-gradient(145deg,#0c1420 0%,#131f36 55%,#0c1420 100%);
+  border-color: rgba(var(--area-rgb,0,255,200),.28);
+  box-shadow: 0 4px 24px rgba(var(--area-rgb,0,255,200),.08);
+}
+.mod-card.generic-card::before { background: linear-gradient(90deg,transparent,rgb(var(--area-rgb,0,255,200)),transparent); }
+.mod-card.generic-card:hover {
+  border-color: rgba(var(--area-rgb,0,255,200),.6);
+  box-shadow: 0 12px 40px rgba(var(--area-rgb,0,255,200),.22),0 0 0 1px rgba(var(--area-rgb,0,255,200),.16),inset 0 1px 0 rgba(var(--area-rgb,0,255,200),.12);
+}
+.mod-card.generic-card:hover h3 { color: rgb(var(--area-rgb,0,255,200)); }
+.mod-card.generic-card.active {
+  border-color: rgba(var(--area-rgb,0,255,200),.85);
+  box-shadow: 0 0 30px rgba(var(--area-rgb,0,255,200),.32),0 8px 32px rgba(var(--area-rgb,0,255,200),.2);
+}
+.mod-card.generic-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(var(--area-rgb,0,255,200),.18),transparent 60%); }
+.mod-card.generic-card .mc-badge {
+  background: rgba(var(--area-rgb,0,255,200),.16); color: rgb(var(--area-rgb,0,255,200));
+  border: 1px solid rgba(var(--area-rgb,0,255,200),.35);
+}
+.mod-card.generic-card .mc-icon { filter: drop-shadow(0 0 8px rgba(var(--area-rgb,0,255,200),.4)); }
+
+/* ─────────────────────────────────────────────────────────────────
+   CARD ECDL — colore per modulo (mappa corrente, v8.35.0):
+   CE amber · OE violet · WP blue · SS green · PP orange ·
+   IT Security crimson · Online Collaboration magenta.
+   v8.35.0 — CORRETTO: CE e WP erano in conflitto tra layer (il vecchio
+   layer streaming assegnava ancora blu a CE e verde a WP, mappatura
+   pre-v8.21.0 mai aggiornata dopo lo swap colori — vedi CHANGELOG).
+   ───────────────────────────────────────────────────────────────── */
+
+/* CE — Amber */
+.mod-card.ce-card {
+  background: linear-gradient(160deg,#1a1204 0%,#2c2208 50%,#1a1204 100%);
+  border-color: rgba(255,180,0,.12);
+}
+.mod-card.ce-card:hover {
+  border-color: rgba(255,180,0,.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(255,180,0,.2),0 0 40px rgba(255,180,0,.12);
+}
+.mod-card.ce-card::before { background: linear-gradient(90deg,transparent,#ffb400,#ffd76a,transparent); }
+.mod-card.ce-card:hover h3 { color: #ffcf5c; }
+.mod-card.ce-card.active {
+  border-color: rgba(255,207,92,.8);
+  box-shadow: 0 0 30px rgba(255,180,0,.3),0 8px 32px rgba(255,180,0,.2);
+}
+.mod-card.ce-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(255,180,0,.14),transparent 60%); }
+.mod-card.ce-card .mc-badge { background: rgba(255,180,0,.16); border: 1px solid rgba(255,180,0,.35); color: #ffcf5c; }
+.mod-card.ce-card .tag { background: rgba(255,180,0,.1); border-color: rgba(255,180,0,.22); color: rgba(255,207,92,.85); }
+.mod-card.ce-card:hover .tag { background: rgba(255,180,0,.16); border-color: rgba(255,180,0,.4); }
+.mod-card.ce-card.active .tag { background: rgba(255,207,92,.18); border-color: rgba(255,207,92,.45); color: #ffd76a; }
+
+/* OE — Violet */
+.mod-card.oe-card {
+  background: linear-gradient(160deg,#0a0618 0%,#140928 50%,#090518 100%);
+  border-color: rgba(124,106,255,.12);
+}
+.mod-card.oe-card:hover {
+  border-color: rgba(124,106,255,.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(124,106,255,.2),0 0 40px rgba(124,106,255,.14);
+}
+.mod-card.oe-card::before { background: linear-gradient(90deg,transparent,#7c6aff,#b090ff,transparent); }
+.mod-card.oe-card:hover h3 { color: #c4b0ff; }
+.mod-card.oe-card.active {
+  border-color: rgba(168,130,255,.8);
+  box-shadow: 0 0 30px rgba(124,106,255,.3),0 8px 32px rgba(124,106,255,.2);
+}
+.mod-card.oe-card::after { background: radial-gradient(ellipse at 70% 110%,rgba(140,100,255,.14),transparent 60%); }
+.mod-card.oe-card .mc-badge { background: rgba(124,106,255,.15); border: 1px solid rgba(124,106,255,.3); color: #b4a0ff; }
+.mod-card.oe-card .tag { background: rgba(124,106,255,.1); border-color: rgba(124,106,255,.2); color: rgba(180,160,255,.8); }
+.mod-card.oe-card:hover .tag { background: rgba(124,106,255,.15); border-color: rgba(124,106,255,.35); }
+.mod-card.oe-card.active .tag { background: rgba(168,130,255,.15); border-color: rgba(168,130,255,.4); color: #c4b0ff; }
+
+/* WP — Blue */
+.mod-card.wp-card {
+  background: linear-gradient(160deg,#060e1c 0%,#0a1a30 50%,#06101e 100%);
+  border-color: rgba(30,144,255,.12);
+}
+.mod-card.wp-card:hover {
+  border-color: rgba(30,144,255,.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(30,144,255,.2),0 0 40px rgba(30,144,255,.12);
+}
+.mod-card.wp-card::before { background: linear-gradient(90deg,transparent,#1e90ff,#00cfff,transparent); }
+.mod-card.wp-card:hover h3 { color: #5eb8ff; }
+.mod-card.wp-card.active {
+  border-color: rgba(0,207,255,.8);
+  box-shadow: 0 0 30px rgba(0,207,255,.3),0 8px 32px rgba(30,144,255,.2);
+}
+.mod-card.wp-card::after { background: radial-gradient(ellipse at 50% 110%,rgba(0,180,255,.14),transparent 60%); }
+.mod-card.wp-card .mc-badge { background: rgba(30,144,255,.15); border: 1px solid rgba(30,144,255,.3); color: #5eb8ff; }
+.mod-card.wp-card .tag { background: rgba(30,144,255,.1); border-color: rgba(30,144,255,.2); color: rgba(94,184,255,.8); }
+.mod-card.wp-card:hover .tag { background: rgba(30,144,255,.15); border-color: rgba(30,144,255,.35); }
+.mod-card.wp-card.active .tag { background: rgba(0,207,255,.15); border-color: rgba(0,207,255,.4); color: #00cfff; }
+
+/* SS — Green (v8.35.0: promossa al trattamento cinematico, prima ferma al vecchio stile base) */
+.mod-card.ss-card {
+  background: linear-gradient(160deg,#050e08 0%,#091610 50%,#050e08 100%);
+  border-color: rgba(40,160,80,.12);
+}
+.mod-card.ss-card:hover {
+  border-color: rgba(40,160,80,.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(40,160,80,.18),0 0 40px rgba(40,160,80,.1);
+}
+.mod-card.ss-card::before { background: linear-gradient(90deg,transparent,#28a050,#32dc64,transparent); }
+.mod-card.ss-card:hover h3 { color: #5ad47a; }
+.mod-card.ss-card.active {
+  border-color: rgba(50,220,100,.8);
+  box-shadow: 0 0 30px rgba(40,160,80,.3),0 8px 32px rgba(40,160,80,.2);
+}
+.mod-card.ss-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(40,160,80,.14),transparent 60%); }
+.mod-card.ss-card .mc-badge { background: rgba(40,160,80,.15); border: 1px solid rgba(40,160,80,.3); color: #44c76a; }
+.mod-card.ss-card .tag { background: rgba(40,160,80,.1); border-color: rgba(40,160,80,.2); color: rgba(68,199,106,.8); }
+.mod-card.ss-card:hover .tag { background: rgba(40,160,80,.15); border-color: rgba(40,160,80,.35); }
+.mod-card.ss-card.active .tag { background: rgba(50,220,100,.15); border-color: rgba(50,220,100,.4); color: #32dc64; }
+
+/* PP — Orange (v8.35.0: promossa al trattamento cinematico, prima ferma al vecchio stile base) */
+.mod-card.pp-card {
+  background: linear-gradient(160deg,#1c0904 0%,#2e1006 50%,#1c0904 100%);
+  border-color: rgba(255,120,40,.12);
+}
+.mod-card.pp-card:hover {
+  border-color: rgba(255,120,40,.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(255,120,40,.2),0 0 40px rgba(255,120,40,.12);
+}
+.mod-card.pp-card::before { background: linear-gradient(90deg,transparent,#ff7828,#ffab6e,transparent); }
+.mod-card.pp-card:hover h3 { color: #ffb37a; }
+.mod-card.pp-card.active {
+  border-color: rgba(255,165,100,.8);
+  box-shadow: 0 0 30px rgba(255,120,40,.3),0 8px 32px rgba(255,120,40,.2);
+}
+.mod-card.pp-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(255,120,40,.14),transparent 60%); }
+.mod-card.pp-card .mc-badge { background: rgba(255,120,40,.16); border: 1px solid rgba(255,120,40,.35); color: #ffa564; }
+.mod-card.pp-card .tag { background: rgba(255,120,40,.1); border-color: rgba(255,120,40,.22); color: rgba(255,165,100,.85); }
+.mod-card.pp-card:hover .tag { background: rgba(255,120,40,.16); border-color: rgba(255,120,40,.4); }
+.mod-card.pp-card.active .tag { background: rgba(255,165,100,.18); border-color: rgba(255,165,100,.45); color: #ffb37a; }
+
+/* IT Security — Crimson (v8.35.0: nuovo modulo) */
+.mod-card.its-card {
+  background: linear-gradient(160deg,#210408 0%,#3a0810 50%,#210408 100%);
+  border-color: rgba(255,59,92,.14);
+}
+.mod-card.its-card:hover {
+  border-color: rgba(255,59,92,.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(255,59,92,.2),0 0 40px rgba(255,59,92,.12);
+}
+.mod-card.its-card::before { background: linear-gradient(90deg,transparent,#ff3b5c,#ff7a92,transparent); }
+.mod-card.its-card:hover h3 { color: #ff9caa; }
+.mod-card.its-card.active {
+  border-color: rgba(255,122,146,.8);
+  box-shadow: 0 0 30px rgba(255,59,92,.3),0 8px 32px rgba(255,59,92,.2);
+}
+.mod-card.its-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(255,59,92,.14),transparent 60%); }
+.mod-card.its-card .mc-badge { background: rgba(255,59,92,.16); border: 1px solid rgba(255,59,92,.35); color: #ff7a92; }
+.mod-card.its-card .tag { background: rgba(255,59,92,.1); border-color: rgba(255,59,92,.22); color: rgba(255,150,170,.85); }
+.mod-card.its-card:hover .tag { background: rgba(255,59,92,.16); border-color: rgba(255,59,92,.4); }
+.mod-card.its-card.active .tag { background: rgba(255,150,170,.18); border-color: rgba(255,150,170,.45); color: #ff9caa; }
+
+/* Online Collaboration — Magenta (v8.35.0: nuovo modulo) */
+.mod-card.oc-card {
+  background: linear-gradient(160deg,#1c0414 0%,#300a26 50%,#1c0414 100%);
+  border-color: rgba(255,100,180,.14);
+}
+.mod-card.oc-card:hover {
+  border-color: rgba(255,100,180,.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(255,100,180,.2),0 0 40px rgba(255,100,180,.12);
+}
+.mod-card.oc-card::before { background: linear-gradient(90deg,transparent,#ff64b4,#ff9ed0,transparent); }
+.mod-card.oc-card:hover h3 { color: #ff9ed0; }
+.mod-card.oc-card.active {
+  border-color: rgba(255,158,208,.8);
+  box-shadow: 0 0 30px rgba(255,100,180,.3),0 8px 32px rgba(255,100,180,.2);
+}
+.mod-card.oc-card::after { background: radial-gradient(ellipse at 70% 110%,rgba(255,100,180,.14),transparent 60%); }
+.mod-card.oc-card .mc-badge { background: rgba(255,100,180,.16); border: 1px solid rgba(255,100,180,.35); color: #ff9ed0; }
+.mod-card.oc-card .tag { background: rgba(255,100,180,.1); border-color: rgba(255,100,180,.22); color: rgba(255,180,215,.85); }
+.mod-card.oc-card:hover .tag { background: rgba(255,100,180,.16); border-color: rgba(255,100,180,.4); }
+.mod-card.oc-card.active .tag { background: rgba(255,180,215,.18); border-color: rgba(255,180,215,.45); color: #ffc2e0; }
+
+/* ─────────────────────────────────────────────────────────────────
+   FOCUS RING — accessibilità tastiera (spostata qui da @layer netflix,
+   vedi CHANGELOG punto 8)
+   ───────────────────────────────────────────────────────────────── */
+.mod-card:focus-visible {
+  outline: 2px solid rgba(0,255,200,.6);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px rgba(0,255,200,.12), var(--shadow-card);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   RESPONSIVE — mobile
+   ───────────────────────────────────────────────────────────────── */
+@media (max-width: 520px) {
+  :root { --tile-h: 190px; }
+  .mod-grid { gap: 8px; }
+  .mod-card h3 { font-size: 14px; }
+  .mod-grid:has(.mod-card:hover) .mod-card:not(:hover) {
+    transform: none;
+    filter: none;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   REDUCED MOTION — accessibilità
+   ───────────────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  .mod-card,
+  .mod-card .mc-icon,
+  .mod-card .tags {
+    transition: none;
+    animation: none;
+  }
+  .mod-grid:has(.mod-card:hover) .mod-card:not(:hover) {
+    transform: none;
+    filter: brightness(.7);
+    transition: none;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   REVEAL ALL'INGRESSO — shimmer una tantum, con stagger per card.
+   v8.35.0 — esteso da 5 a 13 nth-child (prima copriva solo i 5 moduli
+   ECDL storici; qualunque Area con più di 5 moduli — Cybersecurity 8,
+   Reti e Internet 8, Intelligenza Artificiale 13 — aveva le card oltre
+   la 5ª senza stagger, comparivano tutte insieme invece che in sequenza).
+   ───────────────────────────────────────────────────────────────── */
+@keyframes tileReveal {
+  from { opacity: 0; transform: translateY(14px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0)   scale(1);    }
+}
+#step-mod .mod-card { animation: tileReveal .42s var(--ease-cinema) both; }
+#step-mod .mod-card:nth-child(1)  { animation-delay: .04s; }
+#step-mod .mod-card:nth-child(2)  { animation-delay: .08s; }
+#step-mod .mod-card:nth-child(3)  { animation-delay: .12s; }
+#step-mod .mod-card:nth-child(4)  { animation-delay: .16s; }
+#step-mod .mod-card:nth-child(5)  { animation-delay: .20s; }
+#step-mod .mod-card:nth-child(6)  { animation-delay: .24s; }
+#step-mod .mod-card:nth-child(7)  { animation-delay: .28s; }
+#step-mod .mod-card:nth-child(8)  { animation-delay: .32s; }
+#step-mod .mod-card:nth-child(9)  { animation-delay: .35s; }
+#step-mod .mod-card:nth-child(10) { animation-delay: .38s; }
+#step-mod .mod-card:nth-child(11) { animation-delay: .41s; }
+#step-mod .mod-card:nth-child(12) { animation-delay: .44s; }
+#step-mod .mod-card:nth-child(13) { animation-delay: .47s; }
+
+}
+/* ═══════════════════════════════════════════════════════════════════
+   CHANGELOG v8.35.0 — cosa è cambiato consolidando qui il sistema
+   Module Card, prima sparso su @layer base/streaming/netflix di
+   pixelprof.css:
+
+   1. BUG CORRETTO — CE e WP avevano sfondo/bordo/glow in conflitto
+      tra layer: il layer streaming (aggiunto DOPO lo swap colori
+      v8.21.0) non era mai stato aggiornato e assegnava ancora blu a
+      CE e verde a WP (mappatura pre-v8.21.0). Badge e tag mostravano
+      il colore giusto (ambra/blu, da base), ma sfondo/bordo/hover
+      mostravano quello sbagliato (blu/verde, da streaming, che vince
+      per priorità di layer) — le due card avevano due colori diversi
+      cuciti insieme. Ora un solo colore per card, ovunque.
+   2. BUG CORRETTO — .tags/.tag era dichiarato globale con opacity:0
+      di default in streaming (pensato per il reveal-on-hover delle
+      module card), ma .act-card nella schermata di selezione attività
+      usa la STESSA classe .tags senza mai essere dentro un .mod-card
+      in hover/active: i suoi tag ("6 attività", "Flip Card · Facile",
+      ecc.) restavano invisibili in ogni condizione. Ora la base è
+      sempre visibile, il reveal-on-hover è un'aggiunta scoped a
+      .mod-card .tags.
+   3. RIMOSSO codice morto — il blocco "MOD-CARD Hover Expansion
+      Netflix" (layer netflix) prometteva in un commento un'espansione
+      verso il basso al hover (descrizione estesa, badge metadati, CTA)
+      mai implementata: nessun elemento HTML corrispondente, nessuna
+      regola :hover che spostasse effettivamente qualcosa. Ne restava
+      overflow:visible sul .mod-card (leftover senza scopo, ora
+      ripristinato a overflow:hidden) più un paio di regole vuote.
+   4. UNIFORMATO — SS e PP non avevano mai ricevuto il trattamento
+      "cinematico" (ombra 16px/48px nera + alone colore) applicato a
+      CE/OE/WP nel redesign streaming, restavano al vecchio stile v7.
+      Ora tutte e 7 le card ECDL condividono lo stesso trattamento.
+   5. NUOVO — card IT Security (crimson) e Online Collaboration
+      (magenta), stesso pattern delle altre 5.
+   6. NUOVO — .mod-grid > .mod-card:last-child:nth-child(odd) sostituisce
+      il vecchio .isolated hardcoded su Power Point: ora qualsiasi
+      griglia .mod-grid (ECDL statica o generic-card dinamica di
+      un'altra Area) isola automaticamente l'ultima card se il totale
+      è dispari, si ricalcola da solo ad ogni aggiunta/rimozione modulo.
+   7. ESTESO — lo stagger delay dell'animazione d'ingresso copriva solo
+      nth-child(1..5); esteso a 13 per coprire anche le Aree con più
+      moduli (Intelligenza Artificiale ne ha 13).
+   8. SPOSTATA — .mod-card:focus-visible viveva in @layer netflix; ora
+      che modcards vince su netflix, lasciarla lì ne avrebbe azzerato
+      il box-shadow (coperta dalla box-shadow base di .mod-card qui
+      sopra). .act-card:focus-visible/.course-card:focus-visible
+      restano invariate in pixelprof.css, non toccate da questo lavoro.
+
+   Rimosso da pixelprof.css: l'intero blocco "MODULE CARDS — unified
+   hover system v7" (@layer base), il blocco "MODULE GRID — Streaming
+   row layout" + "MOD-CARD — Streaming content tile" + le relative
+   media query responsive/reduced-motion/keyframe (@layer streaming),
+   il blocco "MOD-CARD — Hover Expansion Netflix" (@layer netflix).
+   ═══════════════════════════════════════════════════════════════════ */

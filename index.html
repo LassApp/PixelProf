@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v8.34.0</title>
+<title>PixelProf — ICDL Lab interattivo v8.35.0</title>
 <link rel="icon" href="public/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
@@ -49,6 +49,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 <link rel="stylesheet" href="css/tour-sections.css">
 <link rel="stylesheet" href="css/director-profile.css">
 <link rel="stylesheet" href="css/minigiochi/quiz.css">
+<link rel="stylesheet" href="css/mod-cards.css">
 </head>
 <body>
 
@@ -100,7 +101,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <circle cx="8" cy="26" r="1.5" fill="#00ffc8" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v8.34.0</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v8.35.0</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -674,7 +675,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v8.34.0</span>
+        <span class="cs-logo-sub">ICDL Lab · v8.35.0</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v8.26.3: sostituito da tasto Profilo unico -->
@@ -992,7 +993,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v8.34.0</span>
+      <span class="logo-sub">ICDL Lab · v8.35.0</span>
       <span class="logo-hint">cambia aula</span>
     </div>
   </div>
@@ -1282,7 +1283,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </div>
 
       <!-- Power Point — v8.21.0: nuovo modulo, arancio -->
-      <div class="mod-card pp-card isolated" id="mc-PP" role="button" tabindex="0" aria-label="Seleziona modulo Power Point" onclick="selMod('PP')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selMod('PP');}">
+      <div class="mod-card pp-card" id="mc-PP" role="button" tabindex="0" aria-label="Seleziona modulo Power Point" onclick="selMod('PP')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selMod('PP');}">
         <span class="mc-badge">ICDL</span>
         <svg class="bg" viewBox="0 0 300 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -1317,6 +1318,87 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
             <span class="tag">Slide · Layout</span>
             <span class="tag">Transizioni</span>
             <span class="tag">Elementi multimediali</span>
+          </div>
+        </div>
+      </div>
+      <div class="mod-card its-card" id="mc-IT" role="button" tabindex="0" aria-label="Seleziona modulo IT Security" onclick="selMod('IT')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selMod('IT');}">
+        <span class="mc-badge">ICDL</span>
+        <svg class="bg" viewBox="0 0 300 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-its" width="20" height="18" patternUnits="userSpaceOnUse">
+              <path d="M20 0L0 0 0 18" fill="none" stroke="#ff3b5c" stroke-width=".4" opacity=".2"/>
+            </pattern>
+            <radialGradient id="glow-its" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ff3b5c" stop-opacity=".35"/>
+              <stop offset="100%" stop-color="#ff3b5c" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="300" height="130" fill="url(#grid-its)"/>
+          <ellipse cx="220" cy="55" rx="70" ry="45" fill="rgba(255,59,92,.045)"/>
+          <circle cx="60" cy="66" r="30" fill="url(#glow-its)"/>
+          <!-- scudo -->
+          <path d="M224 8 L256 18 L256 55 Q256 88 224 104 Q192 88 192 55 L192 18 Z" fill="rgba(255,59,92,.08)" stroke="#ff3b5c" stroke-width="1.2" opacity=".55"/>
+          <path d="M224 20 L246 27 L246 54 Q246 76 224 88 Q202 76 202 54 L202 27 Z" fill="rgba(255,59,92,.05)" stroke="#ff7a92" stroke-width=".8" opacity=".4"/>
+          <!-- lucchetto -->
+          <rect x="213" y="50" width="22" height="18" rx="3" fill="rgba(255,122,146,.22)" stroke="#ffa8b8" stroke-width="1" opacity=".7"/>
+          <path d="M217 50 v-8 a7 7 0 0 1 14 0 v8" fill="none" stroke="#ffa8b8" stroke-width="1.4" opacity=".6"/>
+          <circle cx="224" cy="58" r="2.4" fill="#fff" opacity=".55"/>
+          <!-- linee circuito decorative -->
+          <line x1="40" y1="30" x2="80" y2="30" stroke="#ff7a92" stroke-width="1" opacity=".35"/>
+          <line x1="40" y1="30" x2="40" y2="50" stroke="#ff7a92" stroke-width="1" opacity=".35"/>
+          <circle cx="40" cy="50" r="2" fill="#ff7a92" opacity=".5"/>
+          <line x1="55" y1="95" x2="95" y2="95" stroke="#ff7a92" stroke-width="1" opacity=".3"/>
+          <circle cx="95" cy="95" r="2" fill="#ff7a92" opacity=".45"/>
+        </svg>
+        <div class="mc-content">
+          <span class="mc-icon">🛡️</span>
+          <h3>IT Security</h3>
+          <p>Sicurezza informatica, malware e protezione dei dati</p>
+          <div class="tags">
+            <span class="tag">Malware · Minacce</span>
+            <span class="tag">Reti e accessi</span>
+            <span class="tag">Protezione dati</span>
+          </div>
+        </div>
+      </div>
+      <div class="mod-card oc-card" id="mc-OC" role="button" tabindex="0" aria-label="Seleziona modulo Online Collaboration" onclick="selMod('OC')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selMod('OC');}">
+        <span class="mc-badge">ICDL</span>
+        <svg class="bg" viewBox="0 0 300 130" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <pattern id="grid-oc" width="20" height="18" patternUnits="userSpaceOnUse">
+              <path d="M20 0L0 0 0 18" fill="none" stroke="#ff64b4" stroke-width=".4" opacity=".2"/>
+            </pattern>
+            <radialGradient id="glow-oc" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ff64b4" stop-opacity=".35"/>
+              <stop offset="100%" stop-color="#ff64b4" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+          <rect width="300" height="130" fill="url(#grid-oc)"/>
+          <ellipse cx="220" cy="55" rx="70" ry="45" fill="rgba(255,100,180,.045)"/>
+          <circle cx="60" cy="66" r="30" fill="url(#glow-oc)"/>
+          <!-- nuvola -->
+          <g opacity=".55">
+            <circle cx="204" cy="58" r="16" fill="rgba(255,100,180,.08)" stroke="#ff64b4" stroke-width="1.1"/>
+            <circle cx="226" cy="48" r="20" fill="rgba(255,100,180,.08)" stroke="#ff64b4" stroke-width="1.1"/>
+            <circle cx="250" cy="58" r="15" fill="rgba(255,100,180,.08)" stroke="#ff64b4" stroke-width="1.1"/>
+            <rect x="202" y="58" width="52" height="20" rx="10" fill="rgba(255,100,180,.08)" stroke="#ff64b4" stroke-width="1.1"/>
+          </g>
+          <!-- dispositivi sincronizzati -->
+          <circle cx="190" cy="98" r="3.2" fill="#ff9ed0" opacity=".7"/>
+          <circle cx="226" cy="104" r="3.2" fill="#ff9ed0" opacity=".7"/>
+          <circle cx="262" cy="96" r="3.2" fill="#ff9ed0" opacity=".7"/>
+          <line x1="190" y1="98" x2="226" y2="70" stroke="#ff9ed0" stroke-width=".8" opacity=".4"/>
+          <line x1="226" y1="104" x2="226" y2="70" stroke="#ff9ed0" stroke-width=".8" opacity=".4"/>
+          <line x1="262" y1="96" x2="226" y2="70" stroke="#ff9ed0" stroke-width=".8" opacity=".4"/>
+        </svg>
+        <div class="mc-content">
+          <span class="mc-icon">🤝</span>
+          <h3>Online Collaboration</h3>
+          <p>Cloud, condivisione e strumenti di collaborazione online</p>
+          <div class="tags">
+            <span class="tag">Cloud · Storage</span>
+            <span class="tag">Calendari e riunioni</span>
+            <span class="tag">App e sync</span>
           </div>
         </div>
       </div>
@@ -1907,7 +1989,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div><!-- /app -->
 
 
-<script src="js/app.bundle.min.js?v=8.34.0"></script>
+<script src="js/app.bundle.min.js?v=8.35.0"></script>
 <!-- Pannello Profilo (v8.25.0) — nome, ruolo, ultimo accesso, ultima
      aula collegata, poi Esci e Rivedi il tour guidato. Markup e stili
      in css/topbar-profile.css, logica in js/profile-panel.js.

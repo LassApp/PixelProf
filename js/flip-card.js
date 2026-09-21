@@ -338,6 +338,46 @@ const FLIPCARD_MODULE_MAP = {
     ],
     subs: ['Creare una presentazione', 'Oggetti grafici', 'Preparare e presentare'],
   },
+  // v8.35.0 — IT Security: CSV già presenti in data/Didattica/Flip_Card/ECDL/IT_Security/
+  IT: {
+    facile: [
+      'data/Didattica/Flip_Card/ECDL/IT_Security/Modulo1/Flip_Card_Facile_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/IT_Security/Modulo2/Flip_Card_Facile_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/IT_Security/Modulo3/Flip_Card_Facile_Modulo_3.csv',
+      'data/Didattica/Flip_Card/ECDL/IT_Security/Modulo4/Flip_Card_Facile_Modulo_4.csv',
+      'data/Didattica/Flip_Card/ECDL/IT_Security/Modulo5/Flip_Card_Facile_Modulo_5.csv',
+    ],
+    medio: [
+      'data/Didattica/Flip_Card/ECDL/IT_Security/Modulo1/Flip_Card_Medio_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/IT_Security/Modulo2/Flip_Card_Medio_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/IT_Security/Modulo3/Flip_Card_Medio_Modulo_3.csv',
+      'data/Didattica/Flip_Card/ECDL/IT_Security/Modulo4/Flip_Card_Medio_Modulo_4.csv',
+      'data/Didattica/Flip_Card/ECDL/IT_Security/Modulo5/Flip_Card_Medio_Modulo_5.csv',
+    ],
+    subs: ['Fondamenti della sicurezza', 'Il malware', 'Reti e accessi', 'Navigazione e comunicazione sicura', 'Protezione e conservazione dei dati'],
+  },
+  // v8.35.0 — Online Collaboration: CSV già presenti in data/Didattica/Flip_Card/ECDL/Online_Collaboration/
+  OC: {
+    facile: [
+      'data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo1/Flip_Card_Facile_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo2/Flip_Card_Facile_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo3/Flip_Card_Facile_Modulo_3.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo4/Flip_Card_Facile_Modulo_4.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo5/Flip_Card_Facile_Modulo_5.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo6/Flip_Card_Facile_Modulo_6.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo7/Flip_Card_Facile_Modulo_7.csv',
+    ],
+    medio: [
+      'data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo1/Flip_Card_Medio_Modulo_1.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo2/Flip_Card_Medio_Modulo_2.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo3/Flip_Card_Medio_Modulo_3.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo4/Flip_Card_Medio_Modulo_4.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo5/Flip_Card_Medio_Modulo_5.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo6/Flip_Card_Medio_Modulo_6.csv',
+      'data/Didattica/Flip_Card/ECDL/Online_Collaboration/Modulo7/Flip_Card_Medio_Modulo_7.csv',
+    ],
+    subs: ['Collaborazione online', 'Cloud e preparazione', 'Storage e produttività online', 'Calendari e riunioni online', 'Social e apprendimento online', 'Dispositivi mobili e connessioni', 'App e sincronizzazione'],
+  },
   'fondamenti-cybersecurity': { facile: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo1/Flip_Card_Facile_Modulo_1.csv'], medio: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo1/Flip_Card_Medio_Modulo_1.csv'] },
   'sicurezza-account': { facile: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo2/Flip_Card_Facile_Modulo_2.csv'], medio: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo2/Flip_Card_Medio_Modulo_2.csv'] },
   'protezione-dati': { facile: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo3/Flip_Card_Facile_Modulo_3.csv'], medio: ['data/Didattica/Flip_Card/Cybersecurity_Non_solo_antivirus_e_password/Modulo3/Flip_Card_Medio_Modulo_3.csv'] },

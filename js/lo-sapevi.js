@@ -117,6 +117,24 @@ const LOSAPEVI_MODULE_MAP = {
     { path: 'data/Didattica/Lo_Sapevi/ECDL/Presentation/Modulo2/lo_sapevi_oggetti-grafici.json', sub: 'Oggetti grafici' },
     { path: 'data/Didattica/Lo_Sapevi/ECDL/Presentation/Modulo3/lo_sapevi_preparare-e-presentare.json', sub: 'Preparare e presentare' },
   ],
+  // v8.35.0 — IT Security: JSON non ancora esistenti (in attesa dei vero_o_falso sorgente), 404 gestito
+  IT: [
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo1/lo_sapevi_fondamenti-della-sicurezza.json', sub: 'Fondamenti della sicurezza' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo2/lo_sapevi_il-malware.json', sub: 'Il malware' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo3/lo_sapevi_reti-e-accessi.json', sub: 'Reti e accessi' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo4/lo_sapevi_navigazione-e-comunicazione-sicura.json', sub: 'Navigazione e comunicazione sicura' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/IT_Security/Modulo5/lo_sapevi_protezione-e-conservazione-dei-dati.json', sub: 'Protezione e conservazione dei dati' },
+  ],
+  // v8.35.0 — Online Collaboration: JSON non ancora esistenti, 404 gestito
+  OC: [
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo1/lo_sapevi_collaborazione-online.json', sub: 'Collaborazione online' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo2/lo_sapevi_cloud-e-preparazione.json', sub: 'Cloud e preparazione' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo3/lo_sapevi_storage-e-produttivita-online.json', sub: 'Storage e produttività online' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo4/lo_sapevi_calendari-e-riunioni-online.json', sub: 'Calendari e riunioni online' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo5/lo_sapevi_social-e-apprendimento-online.json', sub: 'Social e apprendimento online' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo6/lo_sapevi_dispositivi-mobili-e-connessioni.json', sub: 'Dispositivi mobili e connessioni' },
+    { path: 'data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo7/lo_sapevi_app-e-sincronizzazione.json', sub: 'App e sincronizzazione' },
+  ],
   'identita-reputazione-digitale': ['data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo1/lo_sapevi_identita-reputazione-digitale.json'],
   'cyberbullismo': ['data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo2/lo_sapevi_cyberbullismo.json'],
   'hate-speech': ['data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo3/lo_sapevi_hate-speech.json'],

@@ -1,0 +1,497 @@
+[
+  {
+    "id": 1,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un dato è un elemento grezzo, privo di significato se preso da solo.",
+    "answer": true,
+    "explanation": "Il dato è definito come un elemento grezzo — un numero, un nome, una data — privo di significato se preso da solo."
+  },
+  {
+    "id": 2,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un'informazione è la stessa cosa di un dato isolato.",
+    "answer": false,
+    "explanation": "Un'informazione nasce quando più dati vengono organizzati e messi in relazione tra loro, acquisendo un senso."
+  },
+  {
+    "id": 3,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La sicurezza informatica protegge solo i dispositivi, non le informazioni.",
+    "answer": false,
+    "explanation": "Protegge dati, informazioni, dispositivi e reti da minacce di ogni tipo."
+  },
+  {
+    "id": 4,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il termine \"hacker\" significa necessariamente criminale informatico.",
+    "answer": false,
+    "explanation": "Indica in origine una persona con competenze tecniche che esplora e comprende i sistemi informatici."
+  },
+  {
+    "id": 5,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un cracker viola le protezioni di un sistema senza autorizzazione.",
+    "answer": true,
+    "explanation": "Il cracker utilizza le proprie competenze per violare o aggirare le protezioni senza autorizzazione."
+  },
+  {
+    "id": 6,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un hacker etico agisce senza autorizzazione, per motivi di studio personale.",
+    "answer": false,
+    "explanation": "L'hacker etico agisce con autorizzazione e finalità di sicurezza."
+  },
+  {
+    "id": 7,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La differenza tra hacker, cracker e hacker etico sta soprattutto nell'autorizzazione e nello scopo.",
+    "answer": true,
+    "explanation": "Il modulo specifica che la differenza non sta nella capacità tecnica, ma nell'autorizzazione e nello scopo."
+  },
+  {
+    "id": 8,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Kevin Mitnick fu arrestato il 15 febbraio 1995.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data per l'arresto di Mitnick."
+  },
+  {
+    "id": 9,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Mitnick fu arrestato grazie al contributo dell'esperto di sicurezza Tsutomu Shimomura.",
+    "answer": true,
+    "explanation": "Il contributo di Shimomura fu determinante nella cattura di Mitnick."
+  },
+  {
+    "id": 10,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Mitnick trascorse dieci anni in carcere.",
+    "answer": false,
+    "explanation": "Trascorse cinque anni in carcere, uscendo nel gennaio del 2000."
+  },
+  {
+    "id": 11,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Dopo il carcere, Mitnick divenne un ricercato esperto di hacking etico.",
+    "answer": true,
+    "explanation": "Fondò una società di consulenza sulla sicurezza informatica e divenne consulente per grandi aziende."
+  },
+  {
+    "id": 12,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le minacce dolose sono causate da errori umani involontari.",
+    "answer": false,
+    "explanation": "Le minacce dolose sono causate intenzionalmente da qualcuno che vuole danneggiare o sottrarre dati."
+  },
+  {
+    "id": 13,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le minacce accidentali presuppongono sempre un responsabile con uno scopo preciso.",
+    "answer": false,
+    "explanation": "Le minacce accidentali nascono senza cattive intenzioni, da errori o eventi imprevisti."
+  },
+  {
+    "id": 14,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le circostanze straordinarie comprendono eventi come incendi o calamità naturali.",
+    "answer": true,
+    "explanation": "Il modulo elenca incendi, allagamenti, guasti elettrici estesi e calamità naturali come circostanze straordinarie."
+  },
+  {
+    "id": 15,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il cloud computing elimina completamente ogni dipendenza da fornitori esterni.",
+    "answer": false,
+    "explanation": "Il cloud introduce anzi una dipendenza dall'infrastruttura e dalle scelte di sicurezza di un fornitore esterno."
+  },
+  {
+    "id": 16,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'incendio nel data center di OVHcloud avvenne il 10 marzo 2021.",
+    "answer": true,
+    "explanation": "Il modulo colloca l'incendio esattamente in questa data."
+  },
+  {
+    "id": 17,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'incendio OVHcloud avvenne a Strasburgo, in Francia.",
+    "answer": true,
+    "explanation": "Il data center colpito si trovava a Strasburgo."
+  },
+  {
+    "id": 18,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'incendio OVHcloud causò diversi feriti tra il personale.",
+    "answer": false,
+    "explanation": "Il modulo specifica che non ci furono feriti."
+  },
+  {
+    "id": 19,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'incendio OVHcloud lasciò offline oltre 12.000 clienti in tutto il mondo.",
+    "answer": true,
+    "explanation": "L'incendio lasciò offline tra i 12.000 e i 16.000 clienti."
+  },
+  {
+    "id": 20,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La riservatezza riguarda chi può vedere un'informazione.",
+    "answer": true,
+    "explanation": "La riservatezza indica che solo chi è autorizzato può vedere un'informazione."
+  },
+  {
+    "id": 21,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'integrità riguarda l'accesso a un'informazione quando serve.",
+    "answer": false,
+    "explanation": "L'integrità riguarda l'accuratezza dell'informazione, non modificata senza autorizzazione; l'accesso riguarda la disponibilità."
+  },
+  {
+    "id": 22,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La disponibilità riguarda il fatto che un'informazione resti accessibile quando serve.",
+    "answer": true,
+    "explanation": "La disponibilità indica che chi ne ha diritto può accedere all'informazione ogni volta che serve."
+  },
+  {
+    "id": 23,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un listino prezzi alterato senza che nessuno se ne accorga è un problema di riservatezza.",
+    "answer": false,
+    "explanation": "È un problema di integrità, non di riservatezza."
+  },
+  {
+    "id": 24,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un backup cifrato con password persa è un problema di disponibilità.",
+    "answer": true,
+    "explanation": "Protegge la riservatezza ma tradisce completamente la disponibilità."
+  },
+  {
+    "id": 25,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nell'esempio della cartella clinica, la lettura non autorizzata senza modifiche viola l'integrità.",
+    "answer": false,
+    "explanation": "Viola la riservatezza, non l'integrità, poiché i dati non vengono modificati."
+  },
+  {
+    "id": 26,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La violazione Equifax avvenne tra maggio e luglio del 2017.",
+    "answer": true,
+    "explanation": "Il modulo colloca la violazione esattamente in questo periodo."
+  },
+  {
+    "id": 27,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Gli aggressori di Equifax rimasero nei sistemi per circa 76 giorni prima di essere scoperti.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente 76 giorni."
+  },
+  {
+    "id": 28,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Equifax rese pubblica la violazione immediatamente, lo stesso giorno della scoperta.",
+    "answer": false,
+    "explanation": "La rese pubblica solo a settembre, generando polemiche sui tempi di comunicazione."
+  },
+  {
+    "id": 29,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 2020 il Dipartimento di Giustizia statunitense attribuì l'attacco Equifax a quattro militari cinesi.",
+    "answer": true,
+    "explanation": "Il modulo riporta esattamente questa attribuzione."
+  },
+  {
+    "id": 30,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il GDPR è in vigore dal 25 maggio 2018.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data di entrata in vigore."
+  },
+  {
+    "id": 31,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il principio di trasparenza del GDPR richiede di informare chiaramente le persone su cosa viene raccolto e perché.",
+    "answer": true,
+    "explanation": "È proprio la definizione del principio di trasparenza data dal modulo."
+  },
+  {
+    "id": 32,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il principio di proporzionalità permette di raccogliere quanti più dati possibile, per ogni evenienza.",
+    "answer": false,
+    "explanation": "Il principio di proporzionalità richiede di raccogliere solo i dati realmente necessari."
+  },
+  {
+    "id": 33,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'interessato, secondo il GDPR, è chi decide come vengono raccolti i dati.",
+    "answer": false,
+    "explanation": "L'interessato è la persona a cui i dati si riferiscono; chi decide è il titolare del trattamento."
+  },
+  {
+    "id": 34,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il titolare del trattamento è chi decide come e perché i dati vengono raccolti e utilizzati.",
+    "answer": true,
+    "explanation": "È esattamente la definizione data dal modulo."
+  },
+  {
+    "id": 35,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La CNIL sanzionò Google con una multa di 50 milioni di euro nel gennaio 2019.",
+    "answer": true,
+    "explanation": "Il modulo indica il 21 gennaio 2019 come data della sanzione."
+  },
+  {
+    "id": 36,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Google fece ricorso sostenendo che la competenza spettasse all'autorità irlandese.",
+    "answer": true,
+    "explanation": "Google sostenne che la competenza spettasse all'autorità irlandese, dove ha sede europea."
+  },
+  {
+    "id": 37,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il Consiglio di Stato francese annullò completamente la sanzione a Google nel 2020.",
+    "answer": false,
+    "explanation": "Il Consiglio di Stato confermò integralmente sia la sanzione sia la competenza dell'autorità francese."
+  },
+  {
+    "id": 38,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'ingegneria sociale è una manipolazione psicologica che induce una persona a rivelare informazioni riservate.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 39,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo shoulder surfing richiede competenze tecniche avanzate.",
+    "answer": false,
+    "explanation": "Non richiede alcuna competenza tecnica: basta trovarsi nel posto giusto al momento giusto."
+  },
+  {
+    "id": 40,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'information diving consiste nel rovistare tra i rifiuti alla ricerca di informazioni sensibili.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 41,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo skimming copia i dati di una carta tramite un dispositivo nascosto applicato a un lettore o a uno sportello bancomat.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 42,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il pretexting consiste nel costruire un pretesto credibile per ottenere fiducia e informazioni.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 43,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'attacco a Twitter del 15 luglio 2020 sfruttò una falla tecnica nei sistemi della piattaforma.",
+    "answer": false,
+    "explanation": "Gli aggressori non sfruttarono alcuna falla tecnica, ma si spacciarono per personale informatico interno."
+  },
+  {
+    "id": 44,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Tra gli account compromessi nell'attacco a Twitter del 2020 c'erano quelli di Barack Obama ed Elon Musk.",
+    "answer": true,
+    "explanation": "Il modulo cita esplicitamente questi account tra quelli compromessi."
+  },
+  {
+    "id": 45,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Dagli account Twitter compromessi fu diffuso un messaggio che chiedeva l'invio di bitcoin.",
+    "answer": true,
+    "explanation": "Il messaggio invitava a inviare bitcoin, promettendo di restituire il doppio della cifra."
+  },
+  {
+    "id": 46,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nell'attacco a Twitter furono raccolti oltre 100.000 dollari in poche ore.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa cifra."
+  },
+  {
+    "id": 47,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una macro è una sequenza di istruzioni automatizzate incorporata in un documento.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 48,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La cifratura rende un file più veloce da aprire.",
+    "answer": false,
+    "explanation": "La cifratura rende il file illeggibile a chi non possiede la chiave corretta, non lo velocizza."
+  },
+  {
+    "id": 49,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una password sul documento limita solo la modifica del file, non la sua apertura.",
+    "answer": false,
+    "explanation": "Limita anche l'apertura del file, non solo la modifica."
+  },
+  {
+    "id": 50,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Emotet fu individuato per la prima volta nel 2014 come trojan bancario.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente il 2014 come anno di prima individuazione."
+  },
+  {
+    "id": 51,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Emotet si diffonde principalmente tramite email che sembrano legittime, con un documento contenente una macro dannosa.",
+    "answer": true,
+    "explanation": "È proprio il metodo di diffusione descritto nel modulo."
+  },
+  {
+    "id": 52,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "In Italia, l'agenzia nazionale per la cybersicurezza ha invitato ad abilitare sempre le macro nei documenti ricevuti via email.",
+    "answer": false,
+    "explanation": "Ha invitato a non abilitare mai le macro su documenti ricevuti via email."
+  },
+  {
+    "id": 53,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, un dato è paragonato a un mattone lasciato in un cortile.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  },
+  {
+    "id": 54,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, un'informazione è paragonata al muro costruito con quei mattoni secondo un progetto.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  },
+  {
+    "id": 55,
+    "module": "fondamenti-della-sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, il pretexting è paragonato a qualcuno vestito da ispettore comunale che chiede di controllare il registro delle vendite.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  }
+]

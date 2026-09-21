@@ -1,0 +1,140 @@
+{
+  "id": 1,
+  "module": "reti-e-accessi",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Amministratore di rete",
+        "definition": "Persona responsabile di decidere chi può collegarsi a una rete, quali permessi ricevere, e di monitorare che tutto avvenga in modo regolare"
+      },
+      {
+        "term": "Target (violazione 2013)",
+        "definition": "Catena statunitense colpita da una violazione che sottrasse circa 40 milioni di numeri di carte di pagamento e i dati di altri 70 milioni di clienti"
+      },
+      {
+        "term": "Fazio Mechanical Services",
+        "definition": "Piccola azienda esterna di manutenzione impianti le cui credenziali di rete furono il punto di ingresso dell'attacco a Target"
+      },
+      {
+        "term": "Movimento laterale",
+        "definition": "Tecnica con cui gli aggressori di Target si spostarono dalla rete del fornitore fino ai terminali di pagamento"
+      },
+      {
+        "term": "Segmentazione di rete (principio)",
+        "definition": "Non tutti i dispositivi collegati alla stessa rete dovrebbero avere automaticamente accesso alle stesse risorse"
+      }
+    ],
+    [
+      {
+        "term": "Firewall",
+        "definition": "Sistema di sicurezza, hardware o software, che controlla il traffico dei dati in entrata e in uscita, permettendo o bloccando le connessioni in base a regole prestabilite"
+      },
+      {
+        "term": "Differenza firewall/antivirus",
+        "definition": "Il firewall decide se una connessione ha il permesso di avvenire, l'antivirus analizza il contenuto dei dati alla ricerca di codice dannoso"
+      },
+      {
+        "term": "Web Application Firewall",
+        "definition": "Firewall pensato specificamente per proteggere le applicazioni online di un'azienda, ospitate sul cloud"
+      },
+      {
+        "term": "Server-Side Request Forgery",
+        "definition": "Tecnica sfruttata nell'attacco a Capital One per indurre il sistema a rivelare credenziali temporanee riservate"
+      },
+      {
+        "term": "Capital One (violazione 2019)",
+        "definition": "Banca statunitense i cui dati di oltre 100 milioni di clienti furono sottratti sfruttando una configurazione errata di un Web Application Firewall"
+      }
+    ],
+    [
+      {
+        "term": "WEP (Wired Equivalent Privacy)",
+        "definition": "Primo standard di cifratura Wi-Fi diffuso, oggi considerato debole e facilmente violabile"
+      },
+      {
+        "term": "WPA2 (Wi-Fi Protected Access 2)",
+        "definition": "Standard di cifratura Wi-Fi rimasto per anni il punto di riferimento, più robusto del WEP"
+      },
+      {
+        "term": "Eavesdropping",
+        "definition": "Tecnica di intercettazione passiva in cui qualcuno ascolta il traffico che passa su una rete mal protetta"
+      },
+      {
+        "term": "Man in the middle",
+        "definition": "Tecnica in cui un aggressore si inserisce attivamente nella comunicazione tra due dispositivi, potendo leggerla o modificarla"
+      },
+      {
+        "term": "TJX Companies (violazione 2005-2006)",
+        "definition": "Catena proprietaria di T.J.Maxx e Marshalls violata tramite una rete Wi-Fi protetta con il protocollo WEP, con sottrazione di oltre 45 milioni di carte di pagamento"
+      }
+    ],
+    [
+      {
+        "term": "Nome utente",
+        "definition": "Identifica chi sta cercando di accedere a un sistema, senza da solo proteggere nulla"
+      },
+      {
+        "term": "Account di rete",
+        "definition": "Insieme di credenziali (nome utente e password) associato a permessi specifici"
+      },
+      {
+        "term": "Logout",
+        "definition": "Chiusura di una sessione di accesso, importante quanto il login stesso"
+      },
+      {
+        "term": "LinkedIn (violazione 2012)",
+        "definition": "Social network professionale la cui violazione, riemersa in tutta la sua estensione solo nel 2016, coinvolse oltre 100 milioni di account"
+      },
+      {
+        "term": "SHA-1 (senza sale crittografico)",
+        "definition": "Algoritmo con cui LinkedIn aveva cifrato le password violate, ormai considerato debole"
+      }
+    ],
+    [
+      {
+        "term": "MFA (Multi-Factor Authentication)",
+        "definition": "Autenticazione che richiede di combinare almeno due elementi di natura diversa: qualcosa che si conosce, si possiede o si è"
+      },
+      {
+        "term": "2FA (Two-Factor Authentication)",
+        "definition": "Caso particolare di MFA in cui vengono richiesti esattamente due fattori diversi"
+      },
+      {
+        "term": "Risk-Based / Adaptive Authentication",
+        "definition": "Sistemi che valutano il contesto dell'accesso (dispositivo, Paese, orario) per decidere se richiedere ulteriori verifiche"
+      },
+      {
+        "term": "Chiavi di sicurezza fisiche Titan",
+        "definition": "Chiavi di sicurezza rese disponibili al pubblico da Google nel 2018, dopo l'adozione interna obbligatoria per i propri dipendenti"
+      },
+      {
+        "term": "Biometria",
+        "definition": "Fattore di autenticazione legato alla persona (impronte digitali, volto, iride) che non può essere cambiato se compromesso"
+      }
+    ],
+    [
+      {
+        "term": "Password manager",
+        "definition": "Programma che genera, conserva e compila automaticamente password uniche e complesse per ogni account, protette da un'unica master password"
+      },
+      {
+        "term": "Master password",
+        "definition": "L'unica password che l'utente deve ricordare per accedere all'intero archivio di credenziali di un password manager"
+      },
+      {
+        "term": "LastPass (violazione 2022)",
+        "definition": "Password manager che subì una violazione in due fasi, con sottrazione delle copie cifrate degli archivi di milioni di utenti"
+      },
+      {
+        "term": "Rischio concentrato dei password manager",
+        "definition": "Se la master password è debole o il servizio subisce una violazione, il rischio riguarda potenzialmente tutti gli account conservati"
+      },
+      {
+        "term": "Keylogger (nel caso LastPass)",
+        "definition": "Minaccia usata per intercettare le credenziali di un dipendente con privilegi elevati, permettendo l'accesso alle chiavi di decifratura dei backup"
+      }
+    ]
+  ]
+}

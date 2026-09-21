@@ -1,0 +1,140 @@
+{
+  "id": 1,
+  "module": "fondamenti-della-sicurezza",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Dato",
+        "definition": "Un elemento grezzo — un numero, un nome, una data — privo di significato se preso da solo"
+      },
+      {
+        "term": "Informazione",
+        "definition": "Nasce quando più dati vengono organizzati e messi in relazione tra loro, acquisendo un senso"
+      },
+      {
+        "term": "Sicurezza informatica (IT Security)",
+        "definition": "L'insieme delle pratiche e delle tecnologie che proteggono dati, informazioni, dispositivi e reti da minacce di ogni tipo"
+      },
+      {
+        "term": "Crimine informatico",
+        "definition": "Un reato compiuto attraverso strumenti informatici"
+      },
+      {
+        "term": "Hacker",
+        "definition": "Persona con competenze tecniche che esplora e comprende in profondità i sistemi informatici, spesso cercando soluzioni creative"
+      },
+      {
+        "term": "Cracker",
+        "definition": "Chi utilizza competenze tecniche per violare o aggirare le protezioni di un sistema senza autorizzazione, con finalità illecite"
+      },
+      {
+        "term": "Hacker etico",
+        "definition": "Chi verifica la sicurezza di un sistema con autorizzazione, per individuare e correggere le vulnerabilità"
+      }
+    ],
+    [
+      {
+        "term": "Minaccia dolosa",
+        "definition": "Causata intenzionalmente da qualcuno che vuole danneggiare o sottrarre dati"
+      },
+      {
+        "term": "Minaccia accidentale",
+        "definition": "Causata da errori umani involontari o da eventi imprevisti, senza alcuna intenzione malevola"
+      },
+      {
+        "term": "Circostanze straordinarie",
+        "definition": "Eventi come incendi, allagamenti o calamità naturali che possono distruggere dati indipendentemente da errori umani o attacchi deliberati"
+      },
+      {
+        "term": "Cloud computing",
+        "definition": "L'uso di server remoti, gestiti da altre aziende, per conservare ed elaborare dati che non risiedono più fisicamente presso di noi"
+      }
+    ],
+    [
+      {
+        "term": "Riservatezza (Confidentiality)",
+        "definition": "Solo chi è autorizzato può vedere un'informazione"
+      },
+      {
+        "term": "Integrità (Integrity)",
+        "definition": "L'informazione è esattamente quella che dovrebbe essere, senza alterazioni non autorizzate"
+      },
+      {
+        "term": "Disponibilità (Availability)",
+        "definition": "Chi ne ha diritto può accedere a un'informazione ogni volta che serve"
+      },
+      {
+        "term": "Triade CIA",
+        "definition": "Il modello di riferimento per proteggere le informazioni, formato da riservatezza, integrità e disponibilità"
+      }
+    ],
+    [
+      {
+        "term": "GDPR",
+        "definition": "Il Regolamento Generale sulla Protezione dei Dati, normativa dell'Unione Europea in vigore dal 25 maggio 2018"
+      },
+      {
+        "term": "Trasparenza",
+        "definition": "Chi raccoglie dati personali deve informare chiaramente le persone su cosa raccoglie e per quale motivo"
+      },
+      {
+        "term": "Finalità legittima",
+        "definition": "I dati raccolti per uno scopo dichiarato non possono essere riutilizzati liberamente per uno scopo diverso senza consenso specifico"
+      },
+      {
+        "term": "Proporzionalità",
+        "definition": "Si devono raccogliere solo i dati realmente necessari per lo scopo dichiarato"
+      },
+      {
+        "term": "Interessato",
+        "definition": "La persona a cui i dati personali si riferiscono"
+      },
+      {
+        "term": "Titolare del trattamento",
+        "definition": "Chi decide come e perché i dati personali vengono raccolti e utilizzati"
+      }
+    ],
+    [
+      {
+        "term": "Ingegneria sociale",
+        "definition": "La manipolazione psicologica con cui un malintenzionato induce una persona a rivelare informazioni riservate o a compiere un'azione che non dovrebbe"
+      },
+      {
+        "term": "Shoulder surfing",
+        "definition": "Osservare fisicamente qualcuno mentre digita un codice, un PIN o una password, per poi riutilizzarlo"
+      },
+      {
+        "term": "Information diving",
+        "definition": "Rovistare tra i rifiuti alla ricerca di informazioni sensibili apparentemente inutili"
+      },
+      {
+        "term": "Skimming",
+        "definition": "Un dispositivo nascosto che copia i dati della banda magnetica o del chip di una carta al momento del passaggio"
+      },
+      {
+        "term": "Pretexting",
+        "definition": "Costruire un pretesto credibile per guadagnarsi la fiducia della vittima e ottenere l'informazione desiderata"
+      }
+    ],
+    [
+      {
+        "term": "Macro",
+        "definition": "Una piccola sequenza di istruzioni automatizzate, incorporata in un documento, per eseguire in un solo passaggio operazioni che richiederebbero più passaggi manuali"
+      },
+      {
+        "term": "Cifratura",
+        "definition": "Rende un file illeggibile a chiunque non possieda la chiave corretta per decodificarlo"
+      },
+      {
+        "term": "Password sul documento",
+        "definition": "Limita l'apertura del file a chi conosce il codice di accesso"
+      },
+      {
+        "term": "Emotet",
+        "definition": "Malware individuato nel 2014 come trojan bancario, evoluto in uno strumento capace di scaricare altri malware tramite documenti con macro dannose"
+      }
+    ]
+  ]
+}

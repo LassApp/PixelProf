@@ -1,0 +1,1192 @@
+[
+  {
+    "id": 1,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ è la funzione con cui il browser suggerisce e inserisce dati già digitati in passato, per velocizzare la compilazione di moduli e accessi.",
+    "answer": "completamento automatico",
+    "bank": [
+      "completamento automatico",
+      "certificato di sicurezza",
+      "firewall",
+      "hotspot"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La possibilità di \"cancellare i dati privati\" permette di eliminare cronologia, cookie e informazioni salvate quando un dispositivo viene ____ con altre persone.",
+    "answer": "condiviso",
+    "bank": [
+      "condiviso",
+      "aggiornato",
+      "cifrato",
+      "acceso"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il completamento automatico nasce per ____: risparmia il tempo di riscrivere ogni volta le stesse informazioni.",
+    "answer": "comodità",
+    "bank": [
+      "comodità",
+      "sicurezza",
+      "obbligo",
+      "casualità"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Su un dispositivo condiviso, il completamento automatico può mostrare suggerimenti con nomi, indirizzi o persino ____ salvate da chi ha usato il computer prima.",
+    "answer": "credenziali",
+    "bank": [
+      "credenziali",
+      "fatture",
+      "fotografie",
+      "email inviate"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Sui dispositivi condivisi è buona norma cancellare periodicamente la cronologia di navigazione, i cookie accumulati e le ____ eventualmente salvate.",
+    "answer": "password",
+    "bank": [
+      "password",
+      "email",
+      "foto",
+      "fatture"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel 2017, lo sviluppatore finlandese ____ dimostrò pubblicamente una debolezza nel completamento automatico avanzato di alcuni browser.",
+    "answer": "Viljami Kuosmanen",
+    "bank": [
+      "Viljami Kuosmanen",
+      "Brian Krebs",
+      "Robert Tappan Morris",
+      "Bob Thomas"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "La dimostrazione di Kuosmanen mostrava come una pagina web potesse contenere campi aggiuntivi resi ____ tramite il codice della pagina.",
+    "answer": "invisibili",
+    "bank": [
+      "invisibili",
+      "obbligatori",
+      "cifrati",
+      "duplicati"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nella dimostrazione di Kuosmanen, il browser compilava anche i campi nascosti con dati personali salvati in precedenza, come numero di telefono o ____.",
+    "answer": "indirizzo",
+    "bank": [
+      "indirizzo",
+      "impronta digitale",
+      "certificato",
+      "SSID"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il browser ____ risultò immune alla tecnica dimostrata da Kuosmanen, perché compila i moduli un campo alla volta.",
+    "answer": "Firefox",
+    "bank": [
+      "Firefox",
+      "Chrome",
+      "Safari",
+      "Opera"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "I browser coinvolti nella dimostrazione di Kuosmanen, oltre a Chrome e Safari, furono ____.",
+    "answer": "Opera",
+    "bank": [
+      "Opera",
+      "Firefox",
+      "Internet Explorer",
+      "Edge"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Firefox compila i moduli un campo alla volta, invece che con un intero ____ precompilato.",
+    "answer": "profilo",
+    "bank": [
+      "profilo",
+      "certificato",
+      "account",
+      "database"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Ogni browser mette a disposizione la funzione di cancellazione dei dati privati nelle proprie ____.",
+    "answer": "impostazioni",
+    "bank": [
+      "impostazioni",
+      "estensioni",
+      "notifiche",
+      "cronologie"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La funzione di cancellazione dei dati privati permette spesso di scegliere l'____ di tempo da cancellare, dall'ultima ora fino all'intera cronologia.",
+    "answer": "intervallo",
+    "bank": [
+      "intervallo",
+      "orario",
+      "formato",
+      "dispositivo"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, il completamento automatico è come un assistente che sussurra le vostre informazioni a chiunque compili un ____ al posto vostro.",
+    "answer": "modulo",
+    "bank": [
+      "modulo",
+      "certificato",
+      "account",
+      "profilo"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una transazione sicura richiede una connessione cifrata, l'____ (HyperText Transfer Protocol Secure), e un sito la cui identità sia verificabile.",
+    "answer": "HTTPS",
+    "bank": [
+      "HTTPS",
+      "DNS",
+      "VoIP",
+      "SSID"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'identità di un sito è verificabile tramite un ____ di sicurezza, rilasciato da un'autorità di certificazione riconosciuta.",
+    "answer": "certificato",
+    "bank": [
+      "certificato",
+      "cookie",
+      "account",
+      "hotspot"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il termine \"____\" richiama phishing e farming (coltivazione, raccogliere).",
+    "answer": "pharming",
+    "bank": [
+      "pharming",
+      "spoofing",
+      "skimming",
+      "spamming"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il pharming reindirizza l'utente verso un sito falso anche quando digita correttamente l'____ del sito reale.",
+    "answer": "indirizzo",
+    "bank": [
+      "indirizzo",
+      "certificato",
+      "nome utente",
+      "DNS locale"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il lucchetto HTTPS garantisce che i dati viaggino cifrati, ma non garantisce che il sito sia davvero chi dice di ____.",
+    "answer": "essere",
+    "bank": [
+      "essere",
+      "cifrare",
+      "vendere",
+      "proteggere"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per verificare l'identità reale di un sito, si può cliccare sul lucchetto nella barra degli indirizzi per consultare il ____ stesso.",
+    "answer": "certificato",
+    "bank": [
+      "certificato",
+      "cookie",
+      "DNS",
+      "SSID"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "A differenza del phishing, il pharming non ha bisogno di alcun ____ ingannevole su cui cliccare.",
+    "answer": "link",
+    "bank": [
+      "link",
+      "certificato",
+      "allegato",
+      "QR code"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel pharming, la richiesta può essere dirottata se il sistema che traduce il nome del sito in un indirizzo, il ____, è stato compromesso.",
+    "answer": "DNS",
+    "bank": [
+      "DNS",
+      "HTTPS",
+      "SSID",
+      "MAC"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Proprio perché non richiede alcuna azione sospetta da parte della vittima, il pharming è considerato ancora più ____ del phishing.",
+    "answer": "insidioso",
+    "bank": [
+      "insidioso",
+      "raro",
+      "lento",
+      "costoso"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Gli strumenti di controllo dei contenuti sono spesso usati in ambito familiare o ____.",
+    "answer": "scolastico",
+    "bank": [
+      "scolastico",
+      "bancario",
+      "militare",
+      "giudiziario"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel febbraio ____, un attacco di pharming particolarmente elaborato colpì oltre cinquanta istituti finanziari.",
+    "answer": "2007",
+    "bank": [
+      "2007",
+      "2011",
+      "2013",
+      "2019"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "L'attacco di pharming del 2007 colpì istituti finanziari in Stati Uniti, Europa e ____.",
+    "answer": "Asia",
+    "bank": [
+      "Asia",
+      "Oceania",
+      "Africa",
+      "Sud America"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Gli aggressori del 2007 sfruttarono una falla di sicurezza nota nei sistemi ____, non ancora corretta su molti computer.",
+    "answer": "Windows",
+    "bank": [
+      "Windows",
+      "iOS",
+      "Android",
+      "Linux"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nell'attacco del 2007, il file dannoso era mascherato con un nome simile a quello di un noto ____ dell'epoca.",
+    "answer": "browser",
+    "bank": [
+      "browser",
+      "antivirus",
+      "password manager",
+      "firewall"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "I server fraudolenti usati nell'attacco del 2007 erano ospitati in Germania, Estonia e ____.",
+    "answer": "Regno Unito",
+    "bank": [
+      "Regno Unito",
+      "Francia",
+      "Spagna",
+      "Irlanda"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nell'attacco del 2007, la vittima veniva poi automaticamente reindirizzata al sito reale, già ____, come se nulla fosse accaduto.",
+    "answer": "autenticata",
+    "bank": [
+      "autenticata",
+      "disconnessa",
+      "bloccata",
+      "avvisata"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ della posta elettronica rende leggibile il contenuto di un messaggio solo a chi possiede la chiave corretta per decodificarlo.",
+    "answer": "cifratura",
+    "bank": [
+      "cifratura",
+      "firma",
+      "quarantena",
+      "scansione"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La ____ digitale garantisce l'identità del mittente di un messaggio, con lo stesso valore di una firma autografa.",
+    "answer": "firma",
+    "bank": [
+      "firma",
+      "cifratura",
+      "password",
+      "cronologia"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Lo \"____\" è l'invio massivo e non richiesto di messaggi, spesso a scopo pubblicitario o fraudolento.",
+    "answer": "spam",
+    "bank": [
+      "spam",
+      "pharming",
+      "phishing",
+      "skimming"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella maggior parte dei casi, le email viaggiano \"in ____\", leggibili da chiunque le intercetti lungo il percorso.",
+    "answer": "chiaro",
+    "bank": [
+      "chiaro",
+      "codice",
+      "quarantena",
+      "differita"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La firma digitale si basa su un sistema di due chiavi crittografiche: una privata, nota solo a chi firma, e una ____, usata da chiunque voglia verificare la firma.",
+    "answer": "pubblica",
+    "bank": [
+      "pubblica",
+      "temporanea",
+      "condivisa",
+      "segreta"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se un messaggio firmato digitalmente venisse alterato anche di poco lungo il percorso, la firma non risulterebbe più ____.",
+    "answer": "valida",
+    "bank": [
+      "valida",
+      "visibile",
+      "cifrata",
+      "necessaria"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Oggi lo spam è diffuso raramente per mano di singole persone: nella maggior parte dei casi a inviarlo sono le stesse ____ incontrate nel modulo sul malware.",
+    "answer": "botnet",
+    "bank": [
+      "botnet",
+      "backdoor",
+      "rootkit",
+      "firme"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "La parola \"spam\" nasce da uno sketch del gruppo comico britannico ____, ambientato in un ristorante.",
+    "answer": "Monty Python",
+    "bank": [
+      "Monty Python",
+      "Goldenshores Technologies",
+      "Bling Ring",
+      "Digital Crimes Unit"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nello sketch dei Monty Python, la parola SPAM era il nome commerciale di un prodotto alimentare a base di ____ in scatola.",
+    "answer": "carne",
+    "bank": [
+      "carne",
+      "pesce",
+      "verdura",
+      "frutta"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "La botnet ____ è stata per anni responsabile di una parte enorme dello spam mondiale.",
+    "answer": "Rustock",
+    "bank": [
+      "Rustock",
+      "Emotet",
+      "SUNBURST",
+      "Pegasus"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Al proprio apice, la botnet Rustock controllava circa ____ di computer infettati in tutto il mondo.",
+    "answer": "un milione",
+    "bank": [
+      "un milione",
+      "diecimila",
+      "cento milioni",
+      "mille"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "La botnet Rustock era capace di inviare fino a ____ miliardi di email indesiderate al giorno.",
+    "answer": "13,8",
+    "bank": [
+      "13,8",
+      "1,3",
+      "138",
+      "0,8"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il 16 marzo ____, l'unità Digital Crimes di Microsoft ottenne l'autorizzazione a sequestrare i server usati per controllare la botnet Rustock.",
+    "answer": "2011",
+    "bank": [
+      "2011",
+      "2007",
+      "2013",
+      "2019"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nell'operazione contro Rustock, Microsoft collaborò con le forze dell'ordine statunitensi e gli ____.",
+    "answer": "U.S. Marshals",
+    "bank": [
+      "U.S. Marshals",
+      "FBI soltanto",
+      "Interpol",
+      "NSA"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel giro di poche ore dal sequestro dei server di Rustock, il volume globale di spam nel mondo crollò di circa un ____.",
+    "answer": "terzo",
+    "bank": [
+      "terzo",
+      "decimo",
+      "quinto",
+      "centesimo"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, un'email non cifrata è come una ____, leggibile da chiunque la maneggi lungo il tragitto.",
+    "answer": "cartolina",
+    "bank": [
+      "cartolina",
+      "busta sigillata",
+      "cassaforte",
+      "valigia chiusa"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La sicurezza sulle reti sociali riguarda cosa si sceglie di condividere pubblicamente e la consapevolezza dei rischi di una condivisione eccessiva, detta ____.",
+    "answer": "oversharing",
+    "bank": [
+      "oversharing",
+      "pharming",
+      "spamming",
+      "phishing"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un'informazione pubblicata su un social network resta visibile, spesso pubblicamente, molto più a lungo e a più persone di quanto si ____ nel momento in cui la si pubblica.",
+    "answer": "immagini",
+    "bank": [
+      "immagini",
+      "desideri",
+      "programmi",
+      "conosca"
+    ]
+  },
+  {
+    "id": 49,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un rischio spesso sottovalutato riguarda la ____: comunicare in tempo reale dove ci si trova comunica implicitamente anche dove non ci si trova.",
+    "answer": "geolocalizzazione",
+    "bank": [
+      "geolocalizzazione",
+      "cifratura",
+      "autenticazione",
+      "quarantena"
+    ]
+  },
+  {
+    "id": 50,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ è la persecuzione sistematica di qualcuno attraverso mezzi digitali.",
+    "answer": "cyberbullismo",
+    "bank": [
+      "cyberbullismo",
+      "pharming",
+      "oversharing",
+      "phishing"
+    ]
+  },
+  {
+    "id": 51,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I tentativi di \"adescamento\" o di falsa identità avvengono quando qualcuno finge di essere chi non è per guadagnarsi la ____ con intenti scorretti.",
+    "answer": "fiducia",
+    "bank": [
+      "fiducia",
+      "password",
+      "posizione",
+      "connessione"
+    ]
+  },
+  {
+    "id": 52,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La maggior parte delle piattaforme social mette a disposizione strumenti per segnalare e ____ comportamenti scorretti.",
+    "answer": "denunciare",
+    "bank": [
+      "denunciare",
+      "ignorare",
+      "premiare",
+      "nascondere"
+    ]
+  },
+  {
+    "id": 53,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel febbraio ____, tre sviluppatori olandesi crearono il sito provocatorio Please Rob Me.",
+    "answer": "2010",
+    "bank": [
+      "2010",
+      "2007",
+      "2013",
+      "2019"
+    ]
+  },
+  {
+    "id": 54,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Gli sviluppatori del sito Please Rob Me erano Frank Groeneveld, Boy Van Amstel e ____.",
+    "answer": "Barry Borsboom",
+    "bank": [
+      "Barry Borsboom",
+      "Brian Krebs",
+      "Viljami Kuosmanen",
+      "Bob Thomas"
+    ]
+  },
+  {
+    "id": 55,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il sito Please Rob Me raccoglieva pubblicamente gli aggiornamenti di posizione condivisi su un servizio chiamato ____.",
+    "answer": "Foursquare",
+    "bank": [
+      "Foursquare",
+      "LinkedIn",
+      "Zoom",
+      "Rustock"
+    ]
+  },
+  {
+    "id": 56,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il sito Please Rob Me mostrava un elenco di \"case attualmente ____\".",
+    "answer": "vuote",
+    "bank": [
+      "vuote",
+      "protette",
+      "sorvegliate",
+      "in vendita"
+    ]
+  },
+  {
+    "id": 57,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Poco prima della creazione di Please Rob Me, un gruppo di giovani noto come \"____\" fu arrestato a Los Angeles per una serie di furti nelle case di celebrità.",
+    "answer": "Bling Ring",
+    "bank": [
+      "Bling Ring",
+      "DarkSide",
+      "Rustock",
+      "NSO Group"
+    ]
+  },
+  {
+    "id": 58,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il gruppo Bling Ring individuava i momenti di assenza delle vittime attraverso informazioni condivise sui ____ e su siti dedicati allo spettacolo.",
+    "answer": "social",
+    "bank": [
+      "social",
+      "forum tecnici",
+      "giornali locali",
+      "cataloghi immobiliari"
+    ]
+  },
+  {
+    "id": 59,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, condividere in tempo reale dove ci si trova è come appendere un cartello \"____\" sulla porta d'ingresso ogni volta che si esce.",
+    "answer": "non c'è nessuno in casa",
+    "bank": [
+      "non c'è nessuno in casa",
+      "vietato l'ingresso",
+      "in vendita",
+      "lavori in corso"
+    ]
+  },
+  {
+    "id": 60,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le applicazioni ____ (Voice over IP) permettono di effettuare chiamate vocali e videochiamate attraverso Internet.",
+    "answer": "VoIP",
+    "bank": [
+      "VoIP",
+      "HTTPS",
+      "DNS",
+      "MFA"
+    ]
+  },
+  {
+    "id": 61,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I servizi di \"messaggistica istantanea\" permettono di scambiare messaggi in ____ reale.",
+    "answer": "tempo",
+    "bank": [
+      "tempo",
+      "differita",
+      "codice",
+      "chiaro"
+    ]
+  },
+  {
+    "id": 62,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una delle vulnerabilità più concrete di VoIP e messaggistica riguarda la gestione degli ____.",
+    "answer": "accessi",
+    "bank": [
+      "accessi",
+      "aggiornamenti",
+      "backup",
+      "hotspot"
+    ]
+  },
+  {
+    "id": 63,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Molti servizi di messaggistica usano la crittografia ____, in cui il messaggio è cifrato sul dispositivo del mittente e decifrato solo su quello del destinatario.",
+    "answer": "end-to-end",
+    "bank": [
+      "end-to-end",
+      "a chiave singola",
+      "simmetrica locale",
+      "temporanea"
+    ]
+  },
+  {
+    "id": 64,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Con la crittografia end-to-end, nemmeno l'azienda che gestisce il servizio può leggere il ____ del messaggio lungo il percorso.",
+    "answer": "contenuto",
+    "bank": [
+      "contenuto",
+      "mittente",
+      "orario",
+      "formato"
+    ]
+  },
+  {
+    "id": 65,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una \"sala d'attesa\" richiede l'approvazione dell'organizzatore prima di far entrare ogni ____.",
+    "answer": "partecipante",
+    "bank": [
+      "partecipante",
+      "messaggio",
+      "file",
+      "notifica"
+    ]
+  },
+  {
+    "id": 66,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nella primavera del 2020, con l'inizio della pandemia da Covid-19, l'app di videoconferenza ____ vide un aumento vertiginoso degli utenti.",
+    "answer": "Zoom",
+    "bank": [
+      "Zoom",
+      "Foursquare",
+      "LinkedIn",
+      "Rustock"
+    ]
+  },
+  {
+    "id": 67,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Zoom passò da circa 10 milioni di partecipanti giornalieri a dicembre 2019 a oltre ____ milioni a marzo 2020.",
+    "answer": "200",
+    "bank": [
+      "200",
+      "20",
+      "2.000",
+      "50"
+    ]
+  },
+  {
+    "id": 68,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il fenomeno delle persone non invitate che si univano a videoconferenze altrui per interromperle divenne noto come \"____\".",
+    "answer": "zoombombing",
+    "bank": [
+      "zoombombing",
+      "pharming",
+      "oversharing",
+      "spamming"
+    ]
+  },
+  {
+    "id": 69,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Negli Stati Uniti, l'____ ricevette un numero di segnalazioni tale da pubblicare un avviso pubblico sul fenomeno dello zoombombing.",
+    "answer": "FBI",
+    "bank": [
+      "FBI",
+      "FTC",
+      "CNIL",
+      "NASA"
+    ]
+  },
+  {
+    "id": 70,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "In risposta al fenomeno dello zoombombing, Zoom introdusse password automatiche e la ____ come misure predefinite.",
+    "answer": "sala d'attesa",
+    "bank": [
+      "sala d'attesa",
+      "crittografia end-to-end",
+      "verifica biometrica",
+      "quarantena"
+    ]
+  },
+  {
+    "id": 71,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, condividere pubblicamente il link di una videochiamata è come lasciare le chiavi di casa sotto lo ____.",
+    "answer": "zerbino",
+    "bank": [
+      "zerbino",
+      "vaso",
+      "tappeto",
+      "cancello"
+    ]
+  },
+  {
+    "id": 72,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le ____ di un'app sono i permessi che l'utente concede per farla funzionare correttamente.",
+    "answer": "autorizzazioni",
+    "bank": [
+      "autorizzazioni",
+      "firme",
+      "credenziali",
+      "notifiche"
+    ]
+  },
+  {
+    "id": 73,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Scaricare app da store non ufficiali aumenta significativamente il rischio di installare software ____.",
+    "answer": "dannoso",
+    "bank": [
+      "dannoso",
+      "gratuito",
+      "aggiornato",
+      "leggero"
+    ]
+  },
+  {
+    "id": 74,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il principio da tenere sempre a mente è la ____ tra funzione dichiarata e permesso richiesto da un'app.",
+    "answer": "coerenza",
+    "bank": [
+      "coerenza",
+      "velocità",
+      "gratuità",
+      "popolarità"
+    ]
+  },
+  {
+    "id": 75,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Gli store ufficiali sottopongono le app a ____ prima di renderle disponibili.",
+    "answer": "controlli",
+    "bank": [
+      "controlli",
+      "sconti",
+      "recensioni obbligatorie",
+      "aste"
+    ]
+  },
+  {
+    "id": 76,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Scaricare app da fonti esterne non ufficiali elimina il primo filtro di ____.",
+    "answer": "controllo",
+    "bank": [
+      "controllo",
+      "pagamento",
+      "traduzione",
+      "aggiornamento"
+    ]
+  },
+  {
+    "id": 77,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La maggior parte degli smartphone offre strumenti per localizzare da remoto un dispositivo smarrito, bloccarlo o cancellarne completamente i ____.",
+    "answer": "dati",
+    "bank": [
+      "dati",
+      "aggiornamenti",
+      "contatti recenti",
+      "abbonamenti"
+    ]
+  },
+  {
+    "id": 78,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo l'esempio del modulo, un'app rifiutata da uno store ufficiale riceve spesso indicazioni utili per ____ il problema individuato.",
+    "answer": "correggere",
+    "bank": [
+      "correggere",
+      "ignorare",
+      "nascondere",
+      "duplicare"
+    ]
+  },
+  {
+    "id": 79,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La sicurezza, in ultima istanza, non dipende mai da un solo controllo: è una catena di cui anche l'____ rappresenta un anello.",
+    "answer": "utente",
+    "bank": [
+      "utente",
+      "produttore",
+      "store",
+      "governo"
+    ]
+  },
+  {
+    "id": 80,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il 5 dicembre ____, la Federal Trade Commission statunitense raggiunse un accordo con Goldenshores Technologies.",
+    "answer": "2013",
+    "bank": [
+      "2013",
+      "2007",
+      "2011",
+      "2019"
+    ]
+  },
+  {
+    "id": 81,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Goldenshores Technologies era l'azienda dietro l'app gratuita \"____\" per Android.",
+    "answer": "Brightest Flashlight Free",
+    "bank": [
+      "Brightest Flashlight Free",
+      "Please Rob Me",
+      "Titan",
+      "Rustock"
+    ]
+  },
+  {
+    "id": 82,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "L'app \"Brightest Flashlight Free\" trasmetteva a società pubblicitarie terze la posizione geografica precisa dell'utente insieme a un ____ univoco del dispositivo.",
+    "answer": "identificatore",
+    "bank": [
+      "identificatore",
+      "certificato",
+      "SSID",
+      "hash"
+    ]
+  },
+  {
+    "id": 83,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "L'opzione per rifiutare la condivisione della posizione nell'app \"Brightest Flashlight Free\" era puramente ____: non impediva realmente l'invio dei dati.",
+    "answer": "illusoria",
+    "bank": [
+      "illusoria",
+      "efficace",
+      "obbligatoria",
+      "gratuita"
+    ]
+  },
+  {
+    "id": 84,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il caso \"Brightest Flashlight Free\" emerse dalla curiosità di alcuni ____ esperti, non da un'indagine ufficiale avviata dall'alto.",
+    "answer": "utenti",
+    "bank": [
+      "utenti",
+      "avvocati",
+      "giudici",
+      "concorrenti"
+    ]
+  },
+  {
+    "id": 85,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "L'accordo con la Federal Trade Commission impose a Goldenshores Technologies di ottenere un ____ esplicito prima di raccogliere dati di localizzazione.",
+    "answer": "consenso",
+    "bank": [
+      "consenso",
+      "pagamento",
+      "brevetto",
+      "certificato"
+    ]
+  }
+]

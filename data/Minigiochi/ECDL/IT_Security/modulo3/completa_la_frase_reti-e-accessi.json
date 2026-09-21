@@ -1,0 +1,1220 @@
+[
+  {
+    "id": 1,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Ogni dispositivo collegato a una rete diventa un potenziale punto di ____ a tutto ciò che quella rete raggiunge.",
+    "answer": "accesso",
+    "bank": [
+      "accesso",
+      "backup",
+      "cifratura",
+      "aggiornamento"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le implicazioni di sicurezza di una connessione riguardano chi può collegarsi, con quali permessi, e cosa può ____ una volta dentro.",
+    "answer": "raggiungere",
+    "bank": [
+      "raggiungere",
+      "pagare",
+      "cifrare",
+      "vendere"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nelle reti più grandi, il compito di decidere chi può collegarsi e con quali permessi ricade sull'____ di rete.",
+    "answer": "amministratore",
+    "bank": [
+      "amministratore",
+      "proprietario",
+      "cliente",
+      "fornitore"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un principio pratico spesso trascurato è che non tutti i dispositivi collegati alla stessa rete dovrebbero avere automaticamente accesso alle stesse ____.",
+    "answer": "risorse",
+    "bank": [
+      "risorse",
+      "password",
+      "reti wireless",
+      "firme"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un fornitore occasionale o un tecnico esterno non ha bisogno di raggiungere lo stesso segmento di rete in cui si trova il computer con i dati dei ____.",
+    "answer": "clienti",
+    "bank": [
+      "clienti",
+      "fornitori",
+      "amministratori",
+      "tecnici"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel novembre e dicembre del 2013, alcuni aggressori riuscirono a violare i sistemi della catena statunitense ____.",
+    "answer": "Target",
+    "bank": [
+      "Target",
+      "TJX Companies",
+      "Capital One",
+      "LinkedIn"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nella violazione Target furono sottratti circa ____ milioni di numeri di carte di pagamento.",
+    "answer": "40",
+    "bank": [
+      "40",
+      "4",
+      "70",
+      "100"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nella violazione Target furono sottratti anche i dati personali di altri ____ milioni di clienti.",
+    "answer": "70",
+    "bank": [
+      "70",
+      "40",
+      "45",
+      "100"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il punto di ingresso dell'attacco a Target furono le credenziali di rete di ____, una piccola azienda esterna di manutenzione.",
+    "answer": "Fazio Mechanical Services",
+    "bank": [
+      "Fazio Mechanical Services",
+      "LastPass",
+      "Yubico",
+      "NXP"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Fazio Mechanical Services si occupava di manutenzione degli impianti di riscaldamento e ____ nei punti vendita Target.",
+    "answer": "refrigerazione",
+    "bank": [
+      "refrigerazione",
+      "illuminazione",
+      "sicurezza",
+      "pagamento"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Gli aggressori rubarono le credenziali di Fazio Mechanical Services con un attacco di ____ mirato ai dipendenti del fornitore.",
+    "answer": "phishing",
+    "bank": [
+      "phishing",
+      "skimming",
+      "pretexting",
+      "keylogging"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel caso Target, la rete del fornitore non era adeguatamente ____ dai sistemi più sensibili dell'azienda.",
+    "answer": "separata",
+    "bank": [
+      "separata",
+      "cifrata",
+      "monitorata",
+      "aggiornata"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel caso Target, gli aggressori installarono nei terminali di pagamento un malware capace di intercettare i dati delle carte durante ogni ____.",
+    "answer": "transazione",
+    "bank": [
+      "transazione",
+      "scansione",
+      "sincronizzazione",
+      "connessione"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, dare a un fornitore occasionale lo stesso accesso riservato ai sistemi più delicati è come consegnare al tecnico della caldaia una copia di tutte le ____ del negozio.",
+    "answer": "chiavi",
+    "bank": [
+      "chiavi",
+      "password",
+      "firme",
+      "carte"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un ____, letteralmente \"muro tagliafuoco\", è un sistema di sicurezza che controlla il traffico dei dati in entrata e in uscita da un dispositivo o da una rete.",
+    "answer": "firewall",
+    "bank": [
+      "firewall",
+      "antivirus",
+      "router",
+      "modem"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il firewall permette o blocca le connessioni in base a ____ prestabilite.",
+    "answer": "regole",
+    "bank": [
+      "regole",
+      "firme",
+      "password",
+      "backup"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il compito di un firewall è simile a quello di un ufficio ____, che verifica se un pacco ha il diritto di entrare o uscire secondo le regole stabilite.",
+    "answer": "doganale",
+    "bank": [
+      "doganale",
+      "postale",
+      "legale",
+      "commerciale"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un firewall non analizza il contenuto dei dati alla ricerca di codice dannoso: quello è compito dell'____.",
+    "answer": "antivirus",
+    "bank": [
+      "antivirus",
+      "router",
+      "password manager",
+      "SSID"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Firewall e antivirus svolgono compiti complementari, non ____.",
+    "answer": "intercambiabili",
+    "bank": [
+      "intercambiabili",
+      "gratuiti",
+      "obbligatori",
+      "visibili"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un firewall configurato male può risultare peggiore che se non esistesse affatto, perché offre una falsa sensazione di ____.",
+    "answer": "sicurezza",
+    "bank": [
+      "sicurezza",
+      "velocità",
+      "libertà",
+      "privacy"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel luglio 2019, un'ex dipendente di ____ riuscì a sottrarre i dati personali di oltre 100 milioni di clienti della banca Capital One.",
+    "answer": "Amazon Web Services",
+    "bank": [
+      "Amazon Web Services",
+      "Google",
+      "LastPass",
+      "TJX Companies"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "L'attacco a Capital One sfruttò una configurazione errata di un ____ Firewall, pensato per proteggere le applicazioni online dell'azienda sul cloud.",
+    "answer": "Web Application",
+    "bank": [
+      "Web Application",
+      "Personal",
+      "Network Perimeter",
+      "Cloud Access"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "La tecnica usata nell'attacco a Capital One è nota come Server-Side Request ____.",
+    "answer": "Forgery",
+    "bank": [
+      "Forgery",
+      "Injection",
+      "Overflow",
+      "Bypass"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Con l'attacco, l'aggressrice ottenne credenziali temporanee che le permisero di accedere a centinaia di archivi contenenti dati sensibili, tra cui numeri di previdenza sociale e informazioni sulle domande di carta di ____.",
+    "answer": "credito",
+    "bank": [
+      "credito",
+      "identità",
+      "debito",
+      "fedeltà"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "L'autrice dell'attacco a Capital One fu identificata e arrestata dopo aver pubblicato i dettagli dell'attacco su una piattaforma ____.",
+    "answer": "pubblica",
+    "bank": [
+      "pubblica",
+      "aziendale",
+      "governativa",
+      "cifrata"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, un firewall ben configurato è come un doganiere ____, che controlla ogni documento prima di far passare qualcuno.",
+    "answer": "attento",
+    "bank": [
+      "attento",
+      "distratto",
+      "assente",
+      "confuso"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La sicurezza di una rete wireless dipende soprattutto dal protocollo di ____ che utilizza per proteggere i dati trasmessi via radio.",
+    "answer": "cifratura",
+    "bank": [
+      "cifratura",
+      "backup",
+      "scansione",
+      "amministrazione"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nel tempo si sono succeduti gli standard WEP, WPA, WPA2 e, più di recente, ____.",
+    "answer": "WPA3",
+    "bank": [
+      "WPA3",
+      "WPA4",
+      "WEP2",
+      "SSID2"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ (Wired Equivalent Privacy) è stato il primo standard diffuso, rivelatosi relativamente debole già a pochi anni dalla sua adozione.",
+    "answer": "WEP",
+    "bank": [
+      "WEP",
+      "WPA",
+      "WPA2",
+      "WPA3"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ (Media Access Control) permette di autorizzare solo dispositivi specifici, identificati da un codice univoco assegnato a ogni scheda di rete.",
+    "answer": "filtraggio MAC",
+    "bank": [
+      "filtraggio MAC",
+      "protocollo WEP",
+      "SSID nascosto",
+      "hotspot personale"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nascondere il nome della rete, o ____ (Service Set Identifier), la rende meno immediatamente visibile, ma non impedisce a un aggressore determinato di scoprirla comunque.",
+    "answer": "SSID",
+    "bank": [
+      "SSID",
+      "MAC",
+      "OTP",
+      "VPN"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'____, letteralmente \"origliare\", consiste nell'ascoltare passivamente il traffico che passa su una rete mal protetta.",
+    "answer": "eavesdropping",
+    "bank": [
+      "eavesdropping",
+      "man in the middle",
+      "phishing",
+      "skimming"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella tecnica man in the middle, un aggressore si inserisce attivamente nella comunicazione tra due dispositivi, potendo leggerla o persino ____.",
+    "answer": "modificarla",
+    "bank": [
+      "modificarla",
+      "cifrarla",
+      "cancellarla",
+      "duplicarla"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un ____ personale permette di trasformare il proprio smartphone in un punto di accesso a Internet per altri dispositivi.",
+    "answer": "hotspot",
+    "bank": [
+      "hotspot",
+      "firewall",
+      "router",
+      "SSID"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Tra la metà del 2005 e la fine del 2006, alcuni aggressori riuscirono a violare i sistemi della catena statunitense ____.",
+    "answer": "TJX Companies",
+    "bank": [
+      "TJX Companies",
+      "Target",
+      "Capital One",
+      "LinkedIn"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "TJX Companies è proprietaria di marchi come T.J.Maxx e ____.",
+    "answer": "Marshalls",
+    "bank": [
+      "Marshalls",
+      "Sheraton",
+      "Westin",
+      "Orion"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nella violazione TJX furono sottratti i dati di oltre ____ milioni di carte di pagamento.",
+    "answer": "45",
+    "bank": [
+      "45",
+      "40",
+      "70",
+      "100"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il punto di accesso iniziale nel caso TJX fu la rete Wi-Fi di un punto vendita Marshalls, protetta con il protocollo ____.",
+    "answer": "WEP",
+    "bank": [
+      "WEP",
+      "WPA",
+      "WPA2",
+      "WPA3"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il protocollo WEP era già noto per essere facilmente violabile fin dal ____.",
+    "answer": "2001",
+    "bank": [
+      "2001",
+      "2005",
+      "2013",
+      "2019"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Gli aggressori del caso TJX usarono un'antenna ____ dall'esterno del negozio per violare la rete Wi-Fi.",
+    "answer": "direzionale",
+    "bank": [
+      "direzionale",
+      "satellitare",
+      "portatile",
+      "domestica"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel caso TJX, gli aggressori non furono scoperti per oltre un ____.",
+    "answer": "anno",
+    "bank": [
+      "anno",
+      "mese",
+      "giorno",
+      "decennio"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Un'indagine delle autorità canadesi confermò che TJX era già stata avvisata della debolezza del protocollo WEP rispetto al più recente ____, prima della violazione.",
+    "answer": "WPA",
+    "bank": [
+      "WPA",
+      "WPA2",
+      "WPA3",
+      "SSID"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, una rete protetta con WEP è come una porta chiusa con un lucchetto il cui meccanismo è ormai di dominio ____.",
+    "answer": "pubblico",
+    "bank": [
+      "pubblico",
+      "segreto",
+      "aziendale",
+      "digitale"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ identifica chi sta cercando di accedere a un sistema.",
+    "answer": "nome utente",
+    "bank": [
+      "nome utente",
+      "firewall",
+      "SSID",
+      "backup"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La password o il PIN ne verificano l'____, dimostrando che chi sta accedendo è davvero chi dice di essere.",
+    "answer": "identità",
+    "bank": [
+      "identità",
+      "connessione",
+      "posizione",
+      "reputazione"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'insieme delle credenziali costituisce un ____ di rete, associato a permessi specifici.",
+    "answer": "account",
+    "bank": [
+      "account",
+      "firewall",
+      "hotspot",
+      "backup"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'accesso a un account si chiama ____, la sua chiusura logout.",
+    "answer": "login",
+    "bank": [
+      "login",
+      "logout",
+      "backup",
+      "aggiornamento"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il nome utente, da solo, non protegge nulla: corrisponde spesso semplicemente al proprio nome o al proprio indirizzo ____.",
+    "answer": "email",
+    "bank": [
+      "email",
+      "IP",
+      "MAC",
+      "fisico"
+    ]
+  },
+  {
+    "id": 49,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Su molti dispositivi mobili, il ____ è una sequenza numerica più breve pensata per un accesso rapido.",
+    "answer": "PIN",
+    "bank": [
+      "PIN",
+      "SSID",
+      "MAC",
+      "OTP"
+    ]
+  },
+  {
+    "id": 50,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "In un contesto professionale, ogni persona dovrebbe avere un proprio account ____, invece di condividerne uno unico tra più persone.",
+    "answer": "distinto",
+    "bank": [
+      "distinto",
+      "condiviso",
+      "temporaneo",
+      "pubblico"
+    ]
+  },
+  {
+    "id": 51,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____, spesso trascurato, è importante quanto il login stesso.",
+    "answer": "logout",
+    "bank": [
+      "logout",
+      "backup",
+      "firewall",
+      "SSID"
+    ]
+  },
+  {
+    "id": 52,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel giugno 2012, il social network professionale ____ subì una violazione che sembrava aver esposto circa 6,5 milioni di password.",
+    "answer": "LinkedIn",
+    "bank": [
+      "LinkedIn",
+      "Target",
+      "Capital One",
+      "LastPass"
+    ]
+  },
+  {
+    "id": 53,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Molte delle password violate di LinkedIn contenevano la parola \"____\" al loro interno.",
+    "answer": "linkedin",
+    "bank": [
+      "linkedin",
+      "password",
+      "sicurezza",
+      "account"
+    ]
+  },
+  {
+    "id": 54,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Solo nel maggio ____ emerse la reale estensione del danno della violazione LinkedIn.",
+    "answer": "2016",
+    "bank": [
+      "2016",
+      "2012",
+      "2019",
+      "2013"
+    ]
+  },
+  {
+    "id": 55,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel 2016 si scoprì che erano stati coinvolti dati relativi a oltre ____ milioni di account LinkedIn.",
+    "answer": "100",
+    "bank": [
+      "100",
+      "6,5",
+      "40",
+      "45"
+    ]
+  },
+  {
+    "id": 56,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Le password di LinkedIn erano state cifrate con un algoritmo, l'____, ormai considerato debole.",
+    "answer": "SHA-1",
+    "bank": [
+      "SHA-1",
+      "WEP",
+      "WPA2",
+      "MFA"
+    ]
+  },
+  {
+    "id": 57,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Le password di LinkedIn non erano protette da un ulteriore livello di sicurezza noto come \"____ crittografico\".",
+    "answer": "sale",
+    "bank": [
+      "sale",
+      "hash",
+      "token",
+      "certificato"
+    ]
+  },
+  {
+    "id": 58,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, un nome utente è come il nome scritto sul ____ di un condominio: chiunque può leggerlo.",
+    "answer": "citofono",
+    "bank": [
+      "citofono",
+      "cancello",
+      "cassetta della posta",
+      "campanello"
+    ]
+  },
+  {
+    "id": 59,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'autenticazione a più fattori (____ — Multi-Factor Authentication) richiede di dimostrare la propria identità combinando almeno due elementi di natura diversa.",
+    "answer": "MFA",
+    "bank": [
+      "MFA",
+      "SSID",
+      "WEP",
+      "OTP"
+    ]
+  },
+  {
+    "id": 60,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Tra i fattori di autenticazione c'è \"qualcosa che si conosce\", come una ____.",
+    "answer": "password",
+    "bank": [
+      "password",
+      "impronta",
+      "chiave fisica",
+      "rete"
+    ]
+  },
+  {
+    "id": 61,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Tra i fattori di autenticazione c'è \"qualcosa che si possiede\", come uno smartphone o una chiave ____.",
+    "answer": "fisica",
+    "bank": [
+      "fisica",
+      "digitale",
+      "segreta",
+      "temporanea"
+    ]
+  },
+  {
+    "id": 62,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Tra i fattori di autenticazione c'è \"qualcosa che si è\", come un dato ____.",
+    "answer": "biometrico",
+    "bank": [
+      "biometrico",
+      "numerico",
+      "crittografico",
+      "anagrafico"
+    ]
+  },
+  {
+    "id": 63,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Quando vengono richiesti esattamente due fattori diversi, si parla di ____ (Two-Factor Authentication).",
+    "answer": "2FA",
+    "bank": [
+      "2FA",
+      "MFA",
+      "OTP",
+      "SSID"
+    ]
+  },
+  {
+    "id": 64,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La 2FA è un caso particolare dell'____.",
+    "answer": "MFA",
+    "bank": [
+      "MFA",
+      "SSID",
+      "WEP",
+      "VPN"
+    ]
+  },
+  {
+    "id": 65,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Utilizzare due password diverse non significa utilizzare due fattori, perché entrambe appartengono alla categoria \"qualcosa che ____\".",
+    "answer": "conosci",
+    "bank": [
+      "conosci",
+      "possiedi",
+      "sei",
+      "ricordi"
+    ]
+  },
+  {
+    "id": 66,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un codice ____ (One-Time Password) ricevuto tramite SMS può essere esposto ad attacchi come la clonazione della SIM.",
+    "answer": "OTP",
+    "bank": [
+      "OTP",
+      "SSID",
+      "MAC",
+      "PIN"
+    ]
+  },
+  {
+    "id": 67,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I sistemi che valutano il contesto dell'accesso, come dispositivo, Paese e orario, sono chiamati Risk-Based Authentication e ____ Authentication.",
+    "answer": "Adaptive",
+    "bank": [
+      "Adaptive",
+      "Passive",
+      "Dynamic",
+      "Remote"
+    ]
+  },
+  {
+    "id": 68,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il giudizio dinamico del rischio basato sul contesto non rappresenta un vero e proprio \"____ fattore\".",
+    "answer": "quarto",
+    "bank": [
+      "quarto",
+      "terzo",
+      "secondo",
+      "primo"
+    ]
+  },
+  {
+    "id": 69,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La biometria non richiede di ricordare nulla, ma se un dato biometrico viene compromesso, non può essere ____ come una password.",
+    "answer": "cambiato",
+    "bank": [
+      "cambiato",
+      "condiviso",
+      "cifrato",
+      "copiato"
+    ]
+  },
+  {
+    "id": 70,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel 2017, l'azienda ____ decise di richiedere a tutti i propri dipendenti di abbandonare i codici di verifica a due fattori tradizionali in favore di chiavi di sicurezza fisiche.",
+    "answer": "Google",
+    "bank": [
+      "Google",
+      "Amazon Web Services",
+      "LastPass",
+      "TJX Companies"
+    ]
+  },
+  {
+    "id": 71,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Google richiese il passaggio alle chiavi di sicurezza fisiche a oltre ____ dipendenti in tutto il mondo.",
+    "answer": "85.000",
+    "bank": [
+      "85.000",
+      "8.500",
+      "850.000",
+      "45.000"
+    ]
+  },
+  {
+    "id": 72,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Le chiavi di sicurezza fisiche adottate da Google erano basate su uno standard aperto sviluppato insieme alle aziende Yubico e ____.",
+    "answer": "NXP",
+    "bank": [
+      "NXP",
+      "Fazio Mechanical Services",
+      "FireEye",
+      "NSO Group"
+    ]
+  },
+  {
+    "id": 73,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Secondo il giornalista di sicurezza informatica ____, dopo l'adozione delle chiavi fisiche nessun account dei dipendenti Google risulta compromesso da phishing.",
+    "answer": "Brian Krebs",
+    "bank": [
+      "Brian Krebs",
+      "Bob Thomas",
+      "Robert Tappan Morris",
+      "Kevin Mitnick"
+    ]
+  },
+  {
+    "id": 74,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel 2018, Google rese disponibili al pubblico le proprie chiavi di sicurezza fisiche con il nome commerciale ____.",
+    "answer": "Titan",
+    "bank": [
+      "Titan",
+      "Orion",
+      "SUNBURST",
+      "Reaper"
+    ]
+  },
+  {
+    "id": 75,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, l'autenticazione a più fattori funziona come l'imbarco su un volo aereo, dove serve la combinazione di biglietto e ____.",
+    "answer": "documento d'identità",
+    "bank": [
+      "documento d'identità",
+      "passaporto biometrico",
+      "carta di credito",
+      "prenotazione online"
+    ]
+  },
+  {
+    "id": 76,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un ____ è un programma che genera, conserva e compila automaticamente password uniche e complesse per ogni account.",
+    "answer": "password manager",
+    "bank": [
+      "password manager",
+      "firewall",
+      "antivirus",
+      "hotspot"
+    ]
+  },
+  {
+    "id": 77,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un password manager protegge tutte le password dietro un'unica \"____ password\" che solo l'utente conosce.",
+    "answer": "master",
+    "bank": [
+      "master",
+      "prima",
+      "singola",
+      "unica"
+    ]
+  },
+  {
+    "id": 78,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Grazie a un password manager, l'utente deve ricordare una sola password invece di ____ diverse.",
+    "answer": "decine",
+    "bank": [
+      "decine",
+      "due",
+      "cinque",
+      "cento"
+    ]
+  },
+  {
+    "id": 79,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Se la master password è debole, o se il servizio subisce una violazione, il rischio non riguarda più un singolo account, ma potenzialmente ____ quelli conservati.",
+    "answer": "tutti",
+    "bank": [
+      "tutti",
+      "pochi",
+      "nessuno",
+      "alcuni"
+    ]
+  },
+  {
+    "id": 80,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La master password dovrebbe essere lunga, imprevedibile e mai ____ altrove.",
+    "answer": "riutilizzata",
+    "bank": [
+      "riutilizzata",
+      "condivisa",
+      "scritta",
+      "dimenticata"
+    ]
+  },
+  {
+    "id": 81,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nell'agosto ____, il password manager LastPass subì una violazione in due fasi.",
+    "answer": "2022",
+    "bank": [
+      "2022",
+      "2019",
+      "2012",
+      "2016"
+    ]
+  },
+  {
+    "id": 82,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nella prima fase della violazione LastPass, un aggressore accedette all'ambiente di ____ dell'azienda, sottraendo parte del codice sorgente.",
+    "answer": "sviluppo",
+    "bank": [
+      "sviluppo",
+      "produzione",
+      "vendita",
+      "assistenza"
+    ]
+  },
+  {
+    "id": 83,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nella seconda fase della violazione LastPass, un dipendente con privilegi elevati fu colpito da un attacco con un ____ sul proprio computer personale.",
+    "answer": "keylogger",
+    "bank": [
+      "keylogger",
+      "ransomware",
+      "rootkit",
+      "worm"
+    ]
+  },
+  {
+    "id": 84,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nella violazione LastPass, gli aggressori accedettero a un archivio contenente le chiavi necessarie per decifrare i backup ____ dei clienti.",
+    "answer": "cloud",
+    "bank": [
+      "cloud",
+      "locali",
+      "cartacei",
+      "aziendali"
+    ]
+  },
+  {
+    "id": 85,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Per chi aveva scelto una master password debole, la violazione LastPass espose al rischio di tentativi di violazione condotti ____, senza alcun limite di tentativi.",
+    "answer": "offline",
+    "bank": [
+      "offline",
+      "online",
+      "telefonici",
+      "manuali"
+    ]
+  },
+  {
+    "id": 86,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Alcuni utenti coinvolti nella violazione LastPass collegarono in seguito furti di ____ proprio a quella violazione.",
+    "answer": "criptovalute",
+    "bank": [
+      "criptovalute",
+      "identità",
+      "veicoli",
+      "immobili"
+    ]
+  },
+  {
+    "id": 87,
+    "module": "reti-e-accessi",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, un password manager è come un portachiavi con un ____ proprio.",
+    "answer": "lucchetto",
+    "bank": [
+      "lucchetto",
+      "coperchio",
+      "etichetta",
+      "nastro"
+    ]
+  }
+]

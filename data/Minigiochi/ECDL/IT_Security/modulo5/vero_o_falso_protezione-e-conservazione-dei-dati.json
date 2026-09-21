@@ -1,0 +1,452 @@
+[
+  {
+    "id": 1,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La sicurezza fisica dei dispositivi riguarda le misure che impediscono un accesso fisico non autorizzato.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se i dati di un computer rubato sono cifrati, restano protetti anche dopo il furto fisico.",
+    "answer": true,
+    "explanation": "La cifratura protegge i dati anche in caso di furto fisico del dispositivo."
+  },
+  {
+    "id": 3,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il 3 maggio 2006 un analista del Dipartimento per gli Affari dei Veterani USA portò a casa dispositivi non autorizzati.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data."
+  },
+  {
+    "id": 4,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "I dispositivi rubati nel 2006 contenevano dati di circa 26,5 milioni di persone.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo numero."
+  },
+  {
+    "id": 5,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il portatile e il disco rigido rubati nel 2006 erano protetti da cifratura.",
+    "answer": false,
+    "explanation": "Nessuno dei due dispositivi era cifrato, in violazione delle policy interne."
+  },
+  {
+    "id": 6,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "I dispositivi rubati nel 2006 furono ritrovati intatti il 29 giugno.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data."
+  },
+  {
+    "id": 7,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'analisi dell'FBI trovò prove certe che i dati rubati nel 2006 fossero stati consultati dai ladri.",
+    "answer": false,
+    "explanation": "Non trovò prove che i dati fossero stati effettivamente consultati."
+  },
+  {
+    "id": 8,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un backup è una copia dei dati conservata separatamente dall'originale.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 9,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La regola del 3-2-1 suggerisce di mantenere una sola copia dei dati, sempre nello stesso luogo.",
+    "answer": false,
+    "explanation": "Suggerisce almeno tre copie, su due supporti diversi, con una copia altrove."
+  },
+  {
+    "id": 10,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La sincronizzazione di un file tra più dispositivi equivale sempre a un backup.",
+    "answer": false,
+    "explanation": "Non equivale: le modifiche dannose si propagano anche alle copie sincronizzate."
+  },
+  {
+    "id": 11,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un vero backup deve restare una copia indipendente, isolata dalle modifiche successive sull'originale.",
+    "answer": true,
+    "explanation": "È proprio quanto sottolineato dal modulo."
+  },
+  {
+    "id": 12,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un backup può diventare difficile da usare nel tempo se il formato non è più supportato.",
+    "answer": true,
+    "explanation": "È il rischio dell'affidabilità nel tempo descritto dal modulo."
+  },
+  {
+    "id": 13,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'incidente di cancellazione dati in GitLab avvenne il 31 gennaio 2017.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data."
+  },
+  {
+    "id": 14,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nell'incidente GitLab furono cancellati circa 30 gigabyte di dati.",
+    "answer": false,
+    "explanation": "Furono cancellati circa 300 gigabyte di dati."
+  },
+  {
+    "id": 15,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "GitLab scoprì che tutti e cinque i propri sistemi di backup funzionavano perfettamente.",
+    "answer": false,
+    "explanation": "Scoprì che nessuno dei cinque funzionava in modo affidabile."
+  },
+  {
+    "id": 16,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'unico snapshot recuperabile di GitLab era stato creato automaticamente pochi minuti prima dell'incidente.",
+    "answer": false,
+    "explanation": "Era stato creato manualmente circa sei ore prima dell'incidente."
+  },
+  {
+    "id": 17,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Eseguire un backup significa copiare i dati secondo la pianificazione stabilita.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 18,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ripristinare un backup significa recuperare i dati e riportarli a una condizione utilizzabile.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 19,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un backup mai testato resta, di fatto, una promessa non verificata.",
+    "answer": true,
+    "explanation": "È proprio quanto sottolineato dal modulo."
+  },
+  {
+    "id": 20,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'attacco ransomware a Norsk Hydro avvenne nella notte tra il 18 e il 19 marzo 2019.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data."
+  },
+  {
+    "id": 21,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'attacco a Norsk Hydro fu condotto con il malware LockerGoga.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo malware."
+  },
+  {
+    "id": 22,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Norsk Hydro decise di pagare immediatamente il riscatto richiesto dagli aggressori.",
+    "answer": false,
+    "explanation": "Decise di non pagare alcun riscatto e di ripristinare dai backup esistenti."
+  },
+  {
+    "id": 23,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il processo di recupero di Norsk Hydro costò circa 75 milioni di dollari.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa cifra."
+  },
+  {
+    "id": 24,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La sicurezza nel cloud dipende solo dal fornitore del servizio, mai dall'utente.",
+    "answer": false,
+    "explanation": "Dipende da entrambi, secondo il principio della responsabilità condivisa."
+  },
+  {
+    "id": 25,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il principio della responsabilità condivisa, l'utente resta responsabile di come configura e protegge il proprio accesso al cloud.",
+    "answer": true,
+    "explanation": "È proprio quanto stabilito dal principio."
+  },
+  {
+    "id": 26,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nell'ottobre 2016, alcuni aggressori trovarono credenziali cloud di Uber scritte nel codice su un repository GitHub.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data e questa modalità."
+  },
+  {
+    "id": 27,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La violazione Uber del 2016 coinvolse circa 5,7 milioni di utenti e autisti.",
+    "answer": false,
+    "explanation": "Ne coinvolse circa 57 milioni, dieci volte tanto."
+  },
+  {
+    "id": 28,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "I dirigenti Uber scelsero di segnalare immediatamente e pubblicamente la violazione alle autorità.",
+    "answer": false,
+    "explanation": "La tennero nascosta per oltre un anno, pagando gli aggressori."
+  },
+  {
+    "id": 29,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Uber concordò con le autorità statunitensi una sanzione di 148 milioni di dollari per il ritardo nella comunicazione della violazione.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa cifra."
+  },
+  {
+    "id": 30,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Cancellare un file, anche svuotando il Cestino, lo elimina sempre immediatamente e in modo irrecuperabile.",
+    "answer": false,
+    "explanation": "Il sistema si limita a segnare lo spazio come riutilizzabile; i dati restano spesso recuperabili."
+  },
+  {
+    "id": 31,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I dati di un file cancellato normalmente restano recuperabili finché nulla li sovrascrive.",
+    "answer": true,
+    "explanation": "È proprio quanto spiegato dal modulo."
+  },
+  {
+    "id": 32,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La distruzione fisica di un supporto può avvenire tramite smagnetizzazione o frantumazione meccanica.",
+    "answer": true,
+    "explanation": "Sono proprio i due metodi citati dal modulo."
+  },
+  {
+    "id": 33,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Solo i computer e gli smartphone conservano dati sensibili, mai le stampanti o le fotocopiatrici.",
+    "answer": false,
+    "explanation": "Anche stampanti multifunzione e fotocopiatrici moderne possono conservare dati, tramite un disco rigido interno."
+  },
+  {
+    "id": 34,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nell'aprile 2010, una troupe di CBS News condusse un'inchiesta sulla sicurezza delle fotocopiatrici digitali.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data."
+  },
+  {
+    "id": 35,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Sulla fotocopiatrice testata da CBS News non fu trovato alcun documento sensibile.",
+    "answer": false,
+    "explanation": "Furono trovate circa 300 pagine di documenti medici reali."
+  },
+  {
+    "id": 36,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La fotocopiatrice testata da CBS News era stata usata in precedenza da Affinity Health Plan.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa azienda."
+  },
+  {
+    "id": 37,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 2013, le autorità sanitarie statunitensi imposero ad Affinity Health Plan una sanzione di oltre 1,2 milioni di dollari.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa cifra e questa data."
+  },
+  {
+    "id": 38,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La sicurezza comportamentale riguarda un prodotto tecnico da installare una volta per tutte.",
+    "answer": false,
+    "explanation": "È un comportamento da mantenere nel tempo, non un prodotto da installare."
+  },
+  {
+    "id": 39,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il modulo, sono spesso le azioni delle persone, più delle debolezze tecnologiche, a compromettere la sicurezza.",
+    "answer": true,
+    "explanation": "È proprio quanto sottolineato dal modulo."
+  },
+  {
+    "id": 40,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1986, Clifford Stoll accettò un incarico come amministratore dei sistemi informatici presso il Lawrence Berkeley National Laboratory.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data e questo laboratorio."
+  },
+  {
+    "id": 41,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il primo compito di Stoll fu risolvere una discrepanza contabile di 75.000 dollari.",
+    "answer": false,
+    "explanation": "Era una discrepanza di appena 75 centesimi di dollaro, non 75.000."
+  },
+  {
+    "id": 42,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Stoll decise di archiviare la discrepanza come un banale errore informatico, senza indagare oltre.",
+    "answer": false,
+    "explanation": "Decise al contrario di indagare fino in fondo."
+  },
+  {
+    "id": 43,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'indagine di Stoll portò alla scoperta di una rete di spionaggio internazionale.",
+    "answer": true,
+    "explanation": "Il modulo lo riporta esplicitamente."
+  },
+  {
+    "id": 44,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Stoll raccontò la propria indagine nel libro \"L'uovo del cuculo\".",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo titolo."
+  },
+  {
+    "id": 45,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, proteggere un dispositivo solo con una password senza sicurezza fisica è come blindare la porta di casa e lasciarla sempre aperta.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  },
+  {
+    "id": 46,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, un backup mai verificato è paragonato a un estintore mai controllato.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  },
+  {
+    "id": 47,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, un backup mai ripristinato è paragonato a un paracadute mai controllato.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  },
+  {
+    "id": 48,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, affidare i dati al cloud è paragonato a una cassetta di sicurezza in banca la cui chiave viene lasciata fuori dalla porta.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  },
+  {
+    "id": 49,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, cancellare un file senza eliminarlo davvero è paragonato a bruciare immediatamente un documento.",
+    "answer": false,
+    "explanation": "È paragonato a strappare una pagina e gettarla nel cestino della carta, ancora recuperabile."
+  },
+  {
+    "id": 50,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, la sicurezza informatica è paragonata alla cintura di sicurezza in automobile.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  }
+]

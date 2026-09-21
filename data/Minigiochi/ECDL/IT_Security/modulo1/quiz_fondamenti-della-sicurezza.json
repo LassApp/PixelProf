@@ -1,0 +1,962 @@
+[
+  {
+    "id": 1,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un \"dato\"?",
+    "options": [
+      "Un elemento grezzo, privo di significato se preso da solo",
+      "Un'informazione già organizzata e con un senso",
+      "Una minaccia informatica",
+      "Una regola del GDPR"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un dato è un elemento grezzo — un numero, un nome, una data — privo di significato se preso da solo."
+  },
+  {
+    "id": 2,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un'\"informazione\"?",
+    "options": [
+      "Un singolo dato isolato",
+      "Nasce quando più dati vengono organizzati e messi in relazione tra loro, acquisendo un senso",
+      "Un tipo di malware",
+      "Una tecnica di ingegneria sociale"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un'informazione nasce quando più dati vengono organizzati e messi in relazione tra loro."
+  },
+  {
+    "id": 3,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la sicurezza informatica (IT Security)?",
+    "options": [
+      "Solo l'uso di un antivirus",
+      "Una normativa europea sui dati personali",
+      "L'insieme delle pratiche e delle tecnologie che proteggono dati, informazioni, dispositivi e reti da minacce di ogni tipo",
+      "Un tipo di attacco informatico"
+    ],
+    "correctIndex": 2,
+    "explanation": "È l'insieme delle pratiche e delle tecnologie che proteggono dati, informazioni, dispositivi e reti."
+  },
+  {
+    "id": 4,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa insegue tipicamente chi commette un crimine informatico?",
+    "options": [
+      "Solo dati grezzi senza alcun valore",
+      "Solo dispositivi fisici",
+      "Informazioni, non dati isolati e privi di senso",
+      "Solo documenti cartacei"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chi commette un crimine informatico insegue informazioni: elenchi di clienti, credenziali, dati bancari."
+  },
+  {
+    "id": 5,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica in origine il termine \"hacker\"?",
+    "options": [
+      "Un criminale informatico per definizione",
+      "Una persona con competenze tecniche che esplora e comprende in profondità i sistemi informatici",
+      "Una persona senza competenze tecniche",
+      "Un dipendente di un'azienda di sicurezza"
+    ],
+    "correctIndex": 1,
+    "explanation": "Indica una persona con competenze tecniche che esplora e comprende in profondità i sistemi informatici."
+  },
+  {
+    "id": 6,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa un \"cracker\"?",
+    "options": [
+      "Verifica la sicurezza di un sistema con autorizzazione",
+      "Ripara dispositivi danneggiati",
+      "Utilizza competenze tecniche per violare o aggirare le protezioni di un sistema senza autorizzazione",
+      "Scrive normative sulla protezione dei dati"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il cracker viola o aggira le protezioni di un sistema senza autorizzazione, con finalità illecite."
+  },
+  {
+    "id": 7,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa un \"hacker etico\"?",
+    "options": [
+      "Viola le protezioni di un sistema senza autorizzazione",
+      "Diffonde malware per motivi di studio",
+      "Vende dati rubati sul mercato nero",
+      "Cerca vulnerabilità nei sistemi, con autorizzazione, per segnalarle e farle correggere"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'hacker etico verifica la sicurezza con autorizzazione, per individuare e correggere le vulnerabilità."
+  },
+  {
+    "id": 8,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, cosa determina davvero la differenza tra hacker, cracker e hacker etico?",
+    "options": [
+      "Il livello di capacità tecnica",
+      "Il tipo di computer utilizzato",
+      "L'autorizzazione e lo scopo con cui vengono usate le competenze",
+      "La nazionalità della persona"
+    ],
+    "correctIndex": 2,
+    "explanation": "La differenza non sta nella capacità tecnica, ma nell'autorizzazione e nello scopo."
+  },
+  {
+    "id": 9,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi è considerato probabilmente il nome più noto nella storia dell'hacking?",
+    "options": [
+      "Tsutomu Shimomura",
+      "Chester Carlson",
+      "Kevin Mitnick",
+      "Alan Turing"
+    ],
+    "correctIndex": 2,
+    "explanation": "Kevin Mitnick è probabilmente il nome più noto nella storia dell'hacking."
+  },
+  {
+    "id": 10,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quali aziende americane Mitnick compì le sue intrusioni?",
+    "options": [
+      "Apple, Microsoft e Google",
+      "Digital Equipment Corporation, Motorola e Sun Microsystems",
+      "IBM, Intel e Oracle",
+      "Facebook, Twitter e Uber"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mitnick compì intrusioni in Digital Equipment Corporation, Motorola e Sun Microsystems."
+  },
+  {
+    "id": 11,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu arrestato Kevin Mitnick?",
+    "options": [
+      "Il 15 febbraio 1985",
+      "Il 25 maggio 2018",
+      "Il 15 febbraio 1995",
+      "Il 21 gennaio 1999"
+    ],
+    "correctIndex": 2,
+    "explanation": "Mitnick fu arrestato il 15 febbraio 1995."
+  },
+  {
+    "id": 12,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Grazie al contributo di chi fu arrestato Mitnick?",
+    "options": [
+      "Del giornalista Mat Honan",
+      "Del fondatore di OVHcloud",
+      "Dell'autorità francese CNIL",
+      "Dell'esperto di sicurezza Tsutomu Shimomura"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'arresto avvenne anche grazie al contributo dell'esperto di sicurezza Tsutomu Shimomura."
+  },
+  {
+    "id": 13,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti anni trascorse Mitnick in carcere?",
+    "options": [
+      "Dieci",
+      "Cinque",
+      "Due",
+      "Venti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mitnick trascorse cinque anni in carcere."
+  },
+  {
+    "id": 14,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fece Mitnick dopo essere uscito di prigione nel gennaio 2000?",
+    "options": [
+      "Tornò a commettere crimini informatici",
+      "Si ritirò definitivamente dall'informatica",
+      "Fondò una società di consulenza sulla sicurezza informatica e divenne un ricercato esperto di hacking etico",
+      "Divenne dipendente di Equifax"
+    ],
+    "correctIndex": 2,
+    "explanation": "Fondò una società di consulenza sulla sicurezza informatica, diventando esperto di hacking etico."
+  },
+  {
+    "id": 15,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come si intitola uno dei libri scritti da Mitnick sull'ingegneria sociale?",
+    "options": [
+      "\"L'arte della guerra\"",
+      "\"Il codice invisibile\"",
+      "\"La rete oscura\"",
+      "\"L'arte dell'inganno\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Uno dei suoi libri sull'ingegneria sociale si intitola \"L'arte dell'inganno\"."
+  },
+  {
+    "id": 16,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le \"minacce dolose\"?",
+    "options": [
+      "Minacce causate da errori umani involontari",
+      "Eventi naturali imprevedibili",
+      "Normative sulla protezione dei dati",
+      "Minacce causate intenzionalmente da qualcuno che vuole danneggiare o sottrarre dati"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le minacce dolose sono causate intenzionalmente da qualcuno che vuole danneggiare o sottrarre dati."
+  },
+  {
+    "id": 17,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le \"minacce accidentali\"?",
+    "options": [
+      "Minacce causate intenzionalmente da un attaccante",
+      "Attacchi pianificati da un cracker",
+      "Minacce causate da errori umani involontari o eventi imprevisti, senza intenzione malevola",
+      "Violazioni del GDPR"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le minacce accidentali nascono senza cattive intenzioni: un errore umano o un evento imprevisto."
+  },
+  {
+    "id": 18,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa comprendono le \"circostanze straordinarie\" come minaccia ai dati?",
+    "options": [
+      "Solo errori di battitura",
+      "Eventi come incendi, allagamenti o calamità naturali",
+      "Solo attacchi informatici pianificati",
+      "Solo violazioni della privacy"
+    ],
+    "correctIndex": 1,
+    "explanation": "Comprendono eventi come incendi, allagamenti, guasti elettrici estesi o calamità naturali."
+  },
+  {
+    "id": 19,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il \"cloud computing\"?",
+    "options": [
+      "Un tipo di minaccia dolosa",
+      "Una tecnica di ingegneria sociale",
+      "L'uso di server remoti, gestiti da altre aziende, per conservare ed elaborare dati che non risiedono più fisicamente presso di noi",
+      "Un principio del GDPR"
+    ],
+    "correctIndex": 2,
+    "explanation": "È l'uso di server remoti, gestiti da altre aziende, per conservare ed elaborare i propri dati."
+  },
+  {
+    "id": 20,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che dipendenza introduce il cloud computing?",
+    "options": [
+      "Nessuna, il cloud elimina ogni dipendenza",
+      "Solo una dipendenza economica",
+      "I dati non sono più sotto il controllo diretto di chi li possiede, ma affidati a un fornitore esterno",
+      "Solo una dipendenza da una singola password"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il cloud introduce una dipendenza dall'infrastruttura e dalle scelte di sicurezza di un fornitore esterno."
+  },
+  {
+    "id": 21,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando scoppiò l'incendio nel data center di OVHcloud a Strasburgo?",
+    "options": [
+      "Il 10 marzo 2011",
+      "Il 15 luglio 2020",
+      "Il 21 gennaio 2019",
+      "Il 10 marzo 2021"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'incendio scoppiò il 10 marzo 2021, poco prima dell'una di notte."
+  },
+  {
+    "id": 22,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale edificio fu completamente distrutto dall'incendio OVHcloud?",
+    "options": [
+      "SBG1",
+      "SBG2",
+      "SBG3",
+      "SBG4"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'incendio distrusse completamente l'edificio SBG2."
+  },
+  {
+    "id": 23,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti clienti rimasero offline in tutto il mondo dopo l'incendio OVHcloud?",
+    "options": [
+      "Tra i 100 e i 200",
+      "Tra i 76 e i 147",
+      "Tra i 12.000 e i 16.000",
+      "Oltre un milione"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'incendio lasciò offline tra i 12.000 e i 16.000 clienti in tutto il mondo."
+  },
+  {
+    "id": 24,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa invitò a fare pubblicamente il fondatore di OVHcloud dopo l'incendio?",
+    "options": [
+      "A cambiare immediatamente fornitore",
+      "Ad attivare i propri piani di ripristino d'emergenza",
+      "A smettere di usare il cloud",
+      "A denunciare l'azienda"
+    ],
+    "correctIndex": 1,
+    "explanation": "Invitò i clienti ad attivare i propri piani di ripristino d'emergenza, se ne avevano uno."
+  },
+  {
+    "id": 25,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica la \"riservatezza\" di un'informazione?",
+    "options": [
+      "Che è sempre accessibile a chiunque",
+      "Che non può mai essere modificata",
+      "Che solo chi è autorizzato può vederla",
+      "Che è conservata nel cloud"
+    ],
+    "correctIndex": 2,
+    "explanation": "La riservatezza indica che solo chi è autorizzato può vedere un'informazione."
+  },
+  {
+    "id": 26,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica l'\"integrità\" di un'informazione?",
+    "options": [
+      "Che è visibile solo a persone autorizzate",
+      "Che è sempre disponibile quando serve",
+      "Che è stata cifrata",
+      "Che è esattamente quella che dovrebbe essere, senza alterazioni non autorizzate"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'integrità indica che l'informazione resta esattamente come dovrebbe essere."
+  },
+  {
+    "id": 27,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa indica la \"disponibilità\" di un'informazione?",
+    "options": [
+      "Che nessuno può leggerla senza autorizzazione",
+      "Che chi ne ha diritto può accedervi ogni volta che serve",
+      "Che non può essere modificata",
+      "Che è protetta da una password"
+    ],
+    "correctIndex": 1,
+    "explanation": "La disponibilità indica che chi ne ha diritto può accedere all'informazione ogni volta che serve."
+  },
+  {
+    "id": 28,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa è formata la Triade CIA?",
+    "options": [
+      "Riservatezza, cifratura e autenticazione",
+      "Integrità, disponibilità e proporzionalità",
+      "Riservatezza, integrità e disponibilità",
+      "Trasparenza, finalità e proporzionalità"
+    ],
+    "correctIndex": 2,
+    "explanation": "La Triade CIA è formata da Confidentiality, Integrity e Availability."
+  },
+  {
+    "id": 29,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Un listino prezzi alterato senza che nessuno se ne accorga è un problema di cosa?",
+    "options": [
+      "Riservatezza",
+      "Disponibilità",
+      "Proporzionalità",
+      "Integrità"
+    ],
+    "correctIndex": 3,
+    "explanation": "È un problema di integrità: l'informazione non è più affidabile, anche se nulla è stato rubato."
+  },
+  {
+    "id": 30,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Un backup cifrato ma di cui si è persa la password è un problema di cosa?",
+    "options": [
+      "Riservatezza",
+      "Integrità",
+      "Disponibilità",
+      "Trasparenza"
+    ],
+    "correctIndex": 2,
+    "explanation": "Protegge la riservatezza ma tradisce completamente la disponibilità."
+  },
+  {
+    "id": 31,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio della cartella clinica, cosa viene violato se una persona non autorizzata la legge senza modificarla?",
+    "options": [
+      "L'integrità",
+      "La disponibilità",
+      "La riservatezza",
+      "La proporzionalità"
+    ],
+    "correctIndex": 2,
+    "explanation": "Viene violata la riservatezza, anche se i dati non vengono modificati."
+  },
+  {
+    "id": 32,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio della cartella clinica, cosa viene compromesso se qualcuno modifica il gruppo sanguigno del paziente?",
+    "options": [
+      "La riservatezza",
+      "La disponibilità",
+      "La trasparenza",
+      "L'integrità"
+    ],
+    "correctIndex": 3,
+    "explanation": "Viene compromessa l'integrità: la cartella resta accessibile e privata, ma contiene un dato falso."
+  },
+  {
+    "id": 33,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando subì la violazione Equifax?",
+    "options": [
+      "Tra maggio e luglio del 2007",
+      "Il 10 marzo 2021",
+      "Il 15 luglio 2020",
+      "Tra maggio e luglio del 2017"
+    ],
+    "correctIndex": 3,
+    "explanation": "Equifax subì la violazione tra maggio e luglio del 2017."
+  },
+  {
+    "id": 34,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Per quanti giorni gli aggressori rimasero nei sistemi di Equifax prima di essere scoperti?",
+    "options": [
+      "Circa 7 giorni",
+      "Circa 76 giorni",
+      "Circa 760 giorni",
+      "Circa 27 giorni"
+    ],
+    "correctIndex": 1,
+    "explanation": "Gli aggressori rimasero nei sistemi per circa 76 giorni prima di essere scoperti."
+  },
+  {
+    "id": 35,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti cittadini statunitensi furono coinvolti nella violazione Equifax?",
+    "options": [
+      "Circa 14,7 milioni",
+      "Circa 700.000",
+      "Circa 147,9 milioni",
+      "Circa 1,5 milioni"
+    ],
+    "correctIndex": 2,
+    "explanation": "Furono sottratti dati di circa 147,9 milioni di cittadini statunitensi."
+  },
+  {
+    "id": 36,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A chi attribuì l'attacco Equifax il Dipartimento di Giustizia statunitense nel 2020?",
+    "options": [
+      "A un gruppo di cracker russi",
+      "A un dipendente interno di Equifax",
+      "A quattro militari cinesi",
+      "A un'organizzazione nordcoreana"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nel 2020 il Dipartimento di Giustizia statunitense attribuì l'attacco a quattro militari cinesi."
+  },
+  {
+    "id": 37,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'acronimo GDPR?",
+    "options": [
+      "Global Data Privacy Regulation",
+      "General Digital Protection Rules",
+      "Global Digital Privacy Regulation",
+      "General Data Protection Regulation"
+    ],
+    "correctIndex": 3,
+    "explanation": "GDPR sta per General Data Protection Regulation."
+  },
+  {
+    "id": 38,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da quando è in vigore il GDPR?",
+    "options": [
+      "Dal 15 febbraio 1995",
+      "Dal 21 gennaio 2019",
+      "Dal 25 maggio 2018",
+      "Dal 10 marzo 2021"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il GDPR è in vigore dal 25 maggio 2018."
+  },
+  {
+    "id": 39,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa richiede il principio di \"trasparenza\" del GDPR?",
+    "options": [
+      "Che tutti i dati siano pubblici",
+      "Che i dati vengano sempre cifrati",
+      "Che nessun dato venga mai raccolto",
+      "Che chi raccoglie dati personali informi chiaramente le persone su cosa raccoglie e per quale motivo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il principio di trasparenza richiede di informare chiaramente le persone su cosa viene raccolto e perché."
+  },
+  {
+    "id": 40,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa stabilisce il principio di \"finalità legittima\" del GDPR?",
+    "options": [
+      "Che i dati vanno sempre condivisi con terzi",
+      "Che i dati raccolti per uno scopo dichiarato non possono essere riutilizzati liberamente per uno scopo diverso senza consenso specifico",
+      "Che i dati non vanno mai raccolti",
+      "Che i dati vanno conservati solo su server europei"
+    ],
+    "correctIndex": 1,
+    "explanation": "I dati raccolti per uno scopo dichiarato non possono essere riutilizzati per uno scopo diverso senza consenso."
+  },
+  {
+    "id": 41,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa stabilisce il principio di \"proporzionalità\" del GDPR?",
+    "options": [
+      "Che si devono raccogliere quanti più dati possibile",
+      "Che i dati vanno sempre cifrati",
+      "Che i dati vanno condivisi con le autorità",
+      "Che si devono raccogliere solo i dati realmente necessari per lo scopo dichiarato"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si devono raccogliere solo i dati realmente necessari per lo scopo dichiarato."
+  },
+  {
+    "id": 42,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi è l'\"interessato\" secondo il GDPR?",
+    "options": [
+      "Chi decide come vengono raccolti i dati",
+      "L'autorità che sanziona le violazioni",
+      "Il fornitore del servizio cloud",
+      "La persona a cui i dati personali si riferiscono"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'interessato è la persona a cui i dati personali si riferiscono."
+  },
+  {
+    "id": 43,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi è il \"titolare del trattamento\" secondo il GDPR?",
+    "options": [
+      "La persona a cui i dati si riferiscono",
+      "Un hacker etico",
+      "Un cracker",
+      "Chi decide come e perché i dati vengono raccolti e utilizzati"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il titolare del trattamento decide come e perché i dati vengono raccolti e utilizzati."
+  },
+  {
+    "id": 44,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale autorità sanzionò Google con una multa di 50 milioni di euro nel 2019?",
+    "options": [
+      "Il Garante Privacy italiano",
+      "La Corte di Giustizia Europea",
+      "La CNIL, autorità francese per la protezione dei dati",
+      "Il Dipartimento di Giustizia statunitense"
+    ],
+    "correctIndex": 2,
+    "explanation": "La CNIL sanzionò Google con una multa di 50 milioni di euro."
+  },
+  {
+    "id": 45,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Perché la CNIL sanzionò Google?",
+    "options": [
+      "Perché vendeva dati a terzi senza consenso",
+      "Perché non cifrava i dati degli utenti",
+      "Perché non aveva un titolare del trattamento",
+      "Perché non forniva informazioni sufficientemente chiare sull'uso dei dati per la pubblicità personalizzata"
+    ],
+    "correctIndex": 3,
+    "explanation": "Google non forniva informazioni sufficientemente chiare e accessibili su come i dati venissero usati per la pubblicità."
+  },
+  {
+    "id": 46,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come venivano raccolti i consensi alla personalizzazione degli annunci da parte di Google, secondo la CNIL?",
+    "options": [
+      "Tramite un modulo separato e chiaro",
+      "Tramite verifica telefonica",
+      "Tramite firma cartacea",
+      "Tramite caselle preselezionate di default"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il consenso veniva raccolto tramite caselle preselezionate di default, non conformi al regolamento."
+  },
+  {
+    "id": 47,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa confermò il Consiglio di Stato francese nel giugno 2020 riguardo al caso Google?",
+    "options": [
+      "Solo la competenza dell'autorità irlandese",
+      "L'annullamento totale della sanzione",
+      "La competenza della Corte di Giustizia Europea",
+      "Sia la sanzione sia la competenza dell'autorità francese"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il Consiglio di Stato francese confermò integralmente sia la sanzione sia la competenza dell'autorità francese."
+  },
+  {
+    "id": 48,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'\"ingegneria sociale\"?",
+    "options": [
+      "Una tecnica per cifrare i dati",
+      "Una normativa sulla protezione dei dati",
+      "Un tipo di malware",
+      "La manipolazione psicologica con cui un malintenzionato induce una persona a rivelare informazioni riservate o a compiere un'azione che non dovrebbe"
+    ],
+    "correctIndex": 3,
+    "explanation": "È la manipolazione psicologica che induce una persona a rivelare informazioni riservate o compiere un'azione indebita."
+  },
+  {
+    "id": 49,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è lo \"shoulder surfing\"?",
+    "options": [
+      "Rovistare tra i rifiuti alla ricerca di informazioni sensibili",
+      "Copiare i dati di una carta con un dispositivo nascosto",
+      "Costruire un pretesto credibile per ottenere fiducia",
+      "Osservare fisicamente qualcuno mentre digita un codice, un PIN o una password, per poi riutilizzarlo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Consiste nell'osservare fisicamente qualcuno mentre digita un codice, un PIN o una password."
+  },
+  {
+    "id": 50,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'\"information diving\"?",
+    "options": [
+      "Osservare qualcuno mentre digita una password",
+      "Copiare i dati di una carta di credito",
+      "Rovistare tra i rifiuti alla ricerca di informazioni sensibili apparentemente inutili",
+      "Inviare email con macro dannose"
+    ],
+    "correctIndex": 2,
+    "explanation": "Consiste nel rovistare tra i rifiuti alla ricerca di informazioni sensibili apparentemente inutili."
+  },
+  {
+    "id": 51,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è lo \"skimming\"?",
+    "options": [
+      "Una tecnica per osservare qualcuno da vicino",
+      "Una tecnica per rovistare tra i rifiuti",
+      "Una normativa europea",
+      "Un dispositivo nascosto che copia i dati della banda magnetica o del chip di una carta al momento del passaggio"
+    ],
+    "correctIndex": 3,
+    "explanation": "È un dispositivo nascosto che copia i dati di una carta nel momento in cui viene passata."
+  },
+  {
+    "id": 52,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il \"pretexting\"?",
+    "options": [
+      "Osservare qualcuno mentre digita un codice",
+      "Copiare i dati di una carta bancaria",
+      "Cifrare un documento",
+      "Costruire un pretesto credibile per guadagnarsi la fiducia della vittima e ottenere l'informazione desiderata"
+    ],
+    "correctIndex": 3,
+    "explanation": "Consiste nel costruire un pretesto credibile per guadagnarsi la fiducia della vittima."
+  },
+  {
+    "id": 53,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando avvenne la violazione degli account Twitter di persone famose?",
+    "options": [
+      "Il 15 luglio 2010",
+      "Il 21 gennaio 2019",
+      "Il 10 marzo 2021",
+      "Il 15 luglio 2020"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'attacco a Twitter avvenne il 15 luglio 2020."
+  },
+  {
+    "id": 54,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quali persone famose ebbero l'account compromesso nell'attacco a Twitter del 2020?",
+    "options": [
+      "Solo dipendenti interni di Twitter",
+      "Solo account aziendali sconosciuti",
+      "Kevin Mitnick e Tsutomu Shimomura",
+      "Barack Obama, Elon Musk, Bill Gates e Jeff Bezos"
+    ],
+    "correctIndex": 3,
+    "explanation": "Tra gli account compromessi figuravano quelli di Barack Obama, Elon Musk, Bill Gates e Jeff Bezos."
+  },
+  {
+    "id": 55,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come ottennero l'accesso gli aggressori nell'attacco a Twitter del 2020?",
+    "options": [
+      "Sfruttarono una falla tecnica nei sistemi della piattaforma",
+      "Rubarono fisicamente i dispositivi dei dipendenti",
+      "Intercettarono le comunicazioni via cloud",
+      "Si spacciarono telefonicamente per personale del reparto informatico interno, convincendo i dipendenti a fornire le credenziali"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si spacciarono per personale informatico interno, convincendo alcuni dipendenti a fornire le credenziali."
+  },
+  {
+    "id": 56,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa fu pubblicato dagli account Twitter compromessi nel 2020?",
+    "options": [
+      "Un annuncio di dimissioni dei dirigenti",
+      "Una richiesta di riscatto in cambio dei dati rubati",
+      "Un avviso di manutenzione della piattaforma",
+      "Un messaggio che invitava a inviare bitcoin, promettendo di restituire il doppio della cifra"
+    ],
+    "correctIndex": 3,
+    "explanation": "Fu pubblicato un messaggio che invitava a inviare bitcoin, promettendo di restituirne il doppio."
+  },
+  {
+    "id": 57,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanto denaro fu raccolto in poche ore nell'attacco a Twitter del 2020?",
+    "options": [
+      "Oltre 700 milioni di dollari",
+      "Circa 50 milioni di euro",
+      "Circa 16.000 dollari",
+      "Oltre 100.000 dollari"
+    ],
+    "correctIndex": 3,
+    "explanation": "Vennero raccolti oltre 100.000 dollari in poche ore."
+  },
+  {
+    "id": 58,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è una \"macro\" in un documento?",
+    "options": [
+      "Un tipo di cifratura avanzata",
+      "Una password particolarmente complessa",
+      "Un dispositivo per lo skimming",
+      "Una piccola sequenza di istruzioni automatizzate, incorporata in un documento, per eseguire in un solo passaggio operazioni che richiederebbero più passaggi manuali"
+    ],
+    "correctIndex": 3,
+    "explanation": "È una piccola sequenza di istruzioni automatizzate incorporata in un documento."
+  },
+  {
+    "id": 59,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la \"cifratura\" di un file?",
+    "options": [
+      "Lo elimina automaticamente dopo un certo tempo",
+      "Lo rende visibile solo agli amministratori",
+      "Ne impedisce solo la modifica, non la lettura",
+      "Lo rende illeggibile a chiunque non possieda la chiave corretta per decodificarlo"
+    ],
+    "correctIndex": 3,
+    "explanation": "La cifratura rende il file illeggibile a chi non possiede la chiave corretta."
+  },
+  {
+    "id": 60,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa una \"password sul documento\"?",
+    "options": [
+      "Cifra automaticamente il contenuto del file",
+      "Elimina ogni macro presente nel documento",
+      "Rende il file illeggibile per sempre",
+      "Limita l'apertura del file a chi conosce il codice di accesso"
+    ],
+    "correctIndex": 3,
+    "explanation": "Limita chi può anche solo aprire il file, non solo chi può modificarlo."
+  },
+  {
+    "id": 61,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché una macro può essere pericolosa?",
+    "options": [
+      "Perché rallenta sempre il computer",
+      "Perché cifra automaticamente i dati",
+      "Perché richiede sempre una password",
+      "Perché può essere scritta per scaricare in modo invisibile altro software indesiderato quando viene abilitata"
+    ],
+    "correctIndex": 3,
+    "explanation": "Una macro è a tutti gli effetti un piccolo programma e può essere scritta per scopi dannosi."
+  },
+  {
+    "id": 62,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cos'è Emotet?",
+    "options": [
+      "Una normativa europea sulla protezione dei dati",
+      "Un'autorità francese per la protezione dei dati",
+      "Una tecnica di ingegneria sociale",
+      "Uno dei malware più diffusi e duraturi della storia recente, individuato nel 2014 come trojan bancario"
+    ],
+    "correctIndex": 3,
+    "explanation": "Emotet fu individuato per la prima volta nel 2014 come trojan bancario."
+  },
+  {
+    "id": 63,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si diffonde principalmente Emotet?",
+    "options": [
+      "Tramite dispositivi USB infetti lasciati in luoghi pubblici",
+      "Tramite chiamate telefoniche fraudolente",
+      "Tramite siti web contraffatti",
+      "Tramite email che sembrano legittime, spesso inviate come risposta a conversazioni reali già in corso, con un documento contenente una macro dannosa"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si diffonde tramite email legittime in apparenza, con un allegato contenente una macro dannosa."
+  },
+  {
+    "id": 64,
+    "module": "fondamenti-della-sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede quando il destinatario di un'email con Emotet apre l'allegato e abilita il contenuto?",
+    "options": [
+      "Il file viene automaticamente cifrato",
+      "Il documento si autodistrugge",
+      "Il computer si spegne automaticamente",
+      "La macro avvia il download del vero codice dannoso"
+    ],
+    "correctIndex": 3,
+    "explanation": "La macro avvia il download del vero codice dannoso sul dispositivo."
+  }
+]

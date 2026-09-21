@@ -1,0 +1,977 @@
+[
+  {
+    "id": 1,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa diventa ogni dispositivo collegato a una rete?",
+    "options": [
+      "Un dispositivo automaticamente protetto da ogni minaccia",
+      "Un potenziale punto di accesso a tutto ciò che quella rete raggiunge",
+      "Un amministratore di rete a tutti gli effetti",
+      "Un firewall aggiuntivo per la rete"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ogni dispositivo collegato diventa un potenziale punto di accesso a tutto ciò che la rete raggiunge."
+  },
+  {
+    "id": 2,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa riguardano le implicazioni di sicurezza di una connessione?",
+    "options": [
+      "Solo il prezzo dell'abbonamento a Internet",
+      "Chi può collegarsi, con quali permessi, e cosa può raggiungere una volta dentro",
+      "Solo la velocità della connessione",
+      "Solo il numero di dispositivi collegabili"
+    ],
+    "correctIndex": 1,
+    "explanation": "Riguardano chi può collegarsi, con quali permessi, e cosa può raggiungere."
+  },
+  {
+    "id": 3,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi decide tipicamente chi può collegarsi a una rete più grande e con quali permessi?",
+    "options": [
+      "Ogni singolo utente per il proprio dispositivo",
+      "L'amministratore di rete",
+      "Il produttore del router",
+      "Il fornitore di connettività Internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nelle reti più grandi questo compito ricade sull'amministratore di rete."
+  },
+  {
+    "id": 4,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa suggerisce il modulo riguardo all'accesso alle risorse di una rete?",
+    "options": [
+      "Che tutti i dispositivi dovrebbero avere sempre accesso a tutto",
+      "Che non tutti i dispositivi collegati dovrebbero avere automaticamente accesso alle stesse risorse",
+      "Che le risorse di rete non vanno mai protette",
+      "Che solo i dispositivi più recenti vanno protetti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non tutti i dispositivi dovrebbero avere automaticamente accesso alle stesse risorse."
+  },
+  {
+    "id": 5,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un fornitore occasionale non dovrebbe avere accesso allo stesso segmento di rete dei dati sensibili?",
+    "options": [
+      "Perché rallenterebbe la connessione",
+      "Perché non ne ha bisogno per svolgere il proprio compito",
+      "Perché costerebbe di più all'azienda",
+      "Perché è vietato dalla legge in ogni caso"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un fornitore occasionale non ha bisogno di raggiungere il segmento con i dati sensibili."
+  },
+  {
+    "id": 6,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando avvenne la violazione dei sistemi di Target?",
+    "options": [
+      "Nel novembre e dicembre del 2013",
+      "Nel luglio del 2019",
+      "Nel giugno del 2012",
+      "Nell'agosto del 2022"
+    ],
+    "correctIndex": 0,
+    "explanation": "La violazione avvenne nel novembre e dicembre del 2013."
+  },
+  {
+    "id": 7,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti numeri di carte di pagamento furono sottratti nella violazione Target?",
+    "options": [
+      "Circa 4 milioni",
+      "Circa 40 milioni",
+      "Circa 70 milioni",
+      "Circa 100 milioni"
+    ],
+    "correctIndex": 1,
+    "explanation": "Furono sottratti circa 40 milioni di numeri di carte di pagamento."
+  },
+  {
+    "id": 8,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale fu il punto di ingresso dell'attacco a Target?",
+    "options": [
+      "Un attacco diretto ai sistemi centrali di Target",
+      "Le credenziali di rete di un fornitore esterno di manutenzione",
+      "Una rete Wi-Fi lasciata senza password",
+      "Un dipendente interno corrotto"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il punto di ingresso furono le credenziali di rete di Fazio Mechanical Services, fornitore esterno."
+  },
+  {
+    "id": 9,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Di cosa si occupava Fazio Mechanical Services, il fornitore coinvolto nella violazione Target?",
+    "options": [
+      "Sicurezza informatica",
+      "Manutenzione degli impianti di riscaldamento e refrigerazione",
+      "Gestione dei pagamenti online",
+      "Fornitura di connettività Internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Si occupava di manutenzione degli impianti di riscaldamento e refrigerazione nei punti vendita."
+  },
+  {
+    "id": 10,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come ottennero le credenziali del fornitore gli aggressori nel caso Target?",
+    "options": [
+      "Con un attacco di phishing mirato ai dipendenti del fornitore",
+      "Sfruttando una falla del firewall di Target",
+      "Intercettando fisicamente i documenti aziendali",
+      "Comprando le credenziali sul mercato nero"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le credenziali furono rubate con un attacco di phishing mirato ai dipendenti del fornitore."
+  },
+  {
+    "id": 11,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa mostra concretamente il caso Target riguardo alla sicurezza di una rete?",
+    "options": [
+      "Che solo i sistemi più protetti contano davvero",
+      "Che la vulnerabilità di un'intera rete può dipendere dall'accesso concesso a un fornitore apparentemente meno rilevante",
+      "Che i firewall sono sempre inutili",
+      "Che le password non contano nulla"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il caso mostra che la vulnerabilità può dipendere dall'accesso concesso a un fornitore meno rilevante."
+  },
+  {
+    "id": 12,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un firewall?",
+    "options": [
+      "Un programma che elimina fisicamente i virus da un dispositivo",
+      "Un sistema di sicurezza, hardware o software, che controlla il traffico dei dati in entrata e in uscita, permettendo o bloccando le connessioni in base a regole prestabilite",
+      "Un dispositivo che genera password casuali",
+      "Un protocollo di cifratura per reti wireless"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il firewall controlla il traffico in entrata e uscita in base a regole prestabilite."
+  },
+  {
+    "id": 13,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa è paragonato il compito di un firewall?",
+    "options": [
+      "A un ufficio doganale, che verifica se un pacco ha il diritto di entrare o uscire secondo le regole stabilite",
+      "A un magazzino che conserva tutti i dati",
+      "A un traduttore che decodifica ogni messaggio",
+      "A un notaio che certifica ogni documento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il compito è simile a quello di un ufficio doganale."
+  },
+  {
+    "id": 14,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la differenza tra firewall e antivirus?",
+    "options": [
+      "Non c'è alcuna differenza, svolgono la stessa funzione",
+      "Il firewall decide se una connessione ha il permesso di avvenire, l'antivirus analizza il contenuto dei dati alla ricerca di codice dannoso",
+      "Il firewall è sempre più lento dell'antivirus",
+      "L'antivirus protegge solo le reti wireless"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il firewall regola le connessioni, l'antivirus analizza il contenuto alla ricerca di malware."
+  },
+  {
+    "id": 15,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può succedere con un firewall configurato male?",
+    "options": [
+      "Diventa automaticamente più sicuro",
+      "Può risultare peggiore che se non esistesse affatto, offrendo una falsa sensazione di sicurezza",
+      "Blocca sempre tutte le connessioni, anche quelle legittime",
+      "Si disattiva automaticamente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un firewall mal configurato può dare una falsa sensazione di sicurezza."
+  },
+  {
+    "id": 16,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando avvenne l'attacco a Capital One tramite un Web Application Firewall configurato male?",
+    "options": [
+      "Nel luglio 2019",
+      "Nel novembre 2013",
+      "Nel giugno 2012",
+      "Nell'agosto 2022"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'attacco avvenne nel luglio 2019."
+  },
+  {
+    "id": 17,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi condusse l'attacco a Capital One?",
+    "options": [
+      "Un gruppo criminale organizzato",
+      "Un'ex dipendente di Amazon Web Services",
+      "Un dipendente interno di Capital One",
+      "Un consorzio di giornalisti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fu un'ex dipendente di Amazon Web Services a condurre l'attacco."
+  },
+  {
+    "id": 18,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale tecnica fu usata nell'attacco a Capital One?",
+    "options": [
+      "Server-Side Request Forgery",
+      "Eavesdropping",
+      "Skimming",
+      "Pretexting"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu usata la tecnica nota come Server-Side Request Forgery."
+  },
+  {
+    "id": 19,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa ottenne l'aggressrice sfruttando la configurazione errata del Web Application Firewall di Capital One?",
+    "options": [
+      "L'accesso fisico alle sedi della banca",
+      "Credenziali temporanee di accesso riservate",
+      "Il controllo dei terminali di pagamento nei negozi",
+      "Le password master di tutti i clienti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ottenne credenziali temporanee di accesso riservate."
+  },
+  {
+    "id": 20,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come fu scoperta e arrestata l'autrice dell'attacco a Capital One?",
+    "options": [
+      "Fu tradita da un complice",
+      "Pubblicò i dettagli dell'attacco su una piattaforma pubblica",
+      "Fu scoperta da un controllo casuale della polizia",
+      "Si autodenunciò spontaneamente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Pubblicò i dettagli dell'attacco su una piattaforma pubblica, permettendo la sua identificazione."
+  },
+  {
+    "id": 21,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa dipende soprattutto la sicurezza di una rete wireless?",
+    "options": [
+      "Dal numero di dispositivi collegati",
+      "Dal protocollo di cifratura che utilizza per proteggere i dati trasmessi via radio",
+      "Dal prezzo del router",
+      "Dalla marca del produttore del router"
+    ],
+    "correctIndex": 1,
+    "explanation": "Dipende soprattutto dal protocollo di cifratura utilizzato."
+  },
+  {
+    "id": 22,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali standard di cifratura Wi-Fi si sono succeduti nel tempo, secondo il modulo?",
+    "options": [
+      "Solo WEP e WPA",
+      "WEP, WPA, WPA2 e WPA3",
+      "Solo SSID e MAC",
+      "Solo 2FA e MFA"
+    ],
+    "correctIndex": 1,
+    "explanation": "Si sono succeduti WEP, WPA, WPA2 e, più di recente, WPA3."
+  },
+  {
+    "id": 23,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il WEP è oggi considerato inadeguato?",
+    "options": [
+      "Perché è troppo lento per l'uso quotidiano",
+      "Perché esistono strumenti capaci di violarlo in tempi molto brevi",
+      "Perché richiede un abbonamento a pagamento",
+      "Perché non è compatibile con gli smartphone moderni"
+    ],
+    "correctIndex": 1,
+    "explanation": "Esistono strumenti capaci di violare il WEP in tempi molto brevi."
+  },
+  {
+    "id": 24,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il filtraggio MAC?",
+    "options": [
+      "Un modo per nascondere il nome della rete",
+      "Un sistema che permette di autorizzare solo dispositivi specifici, identificati da un codice univoco",
+      "Un tipo di attacco informatico",
+      "Un protocollo di cifratura più recente del WPA3"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il filtraggio MAC autorizza solo dispositivi specifici identificati da un codice univoco."
+  },
+  {
+    "id": 25,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'SSID e cosa succede se lo si nasconde?",
+    "options": [
+      "È il nome della rete; nasconderlo la rende meno visibile ma non impedisce a un aggressore determinato di scoprirla",
+      "È una password; nasconderla rende la rete inviolabile",
+      "È un tipo di firewall; nasconderlo disattiva ogni protezione",
+      "È un protocollo di cifratura; nasconderlo lo rende più debole"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'SSID è il nome della rete; nasconderlo riduce la visibilità ma non garantisce protezione totale."
+  },
+  {
+    "id": 26,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'eavesdropping?",
+    "options": [
+      "Un attacco che modifica attivamente i dati in transito",
+      "L'ascolto passivo del traffico che passa su una rete mal protetta",
+      "Un tipo di firewall mal configurato",
+      "Un protocollo di autenticazione biometrica"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'eavesdropping consiste nell'ascoltare passivamente il traffico su una rete mal protetta."
+  },
+  {
+    "id": 27,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un attacco man in the middle?",
+    "options": [
+      "Un attacco in cui l'aggressore si inserisce attivamente nella comunicazione tra due dispositivi, potendo leggerla o modificarla",
+      "Un tipo di malware che cifra i file",
+      "Un metodo per generare password sicure",
+      "Un protocollo di cifratura Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'aggressore si inserisce attivamente nella comunicazione, potendo leggerla o modificarla."
+  },
+  {
+    "id": 28,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un hotspot personale?",
+    "options": [
+      "Un punto vendita compromesso da un attacco informatico",
+      "La possibilità di trasformare il proprio smartphone in un punto di accesso a Internet per altri dispositivi",
+      "Un tipo di firewall per reti aziendali",
+      "Un dispositivo per generare codici OTP"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la possibilità di trasformare il proprio smartphone in un punto di accesso a Internet."
+  },
+  {
+    "id": 29,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando avvenne la violazione della catena TJX Companies?",
+    "options": [
+      "Tra la metà del 2005 e la fine del 2006",
+      "Nel novembre e dicembre del 2013",
+      "Nel luglio del 2019",
+      "Nel giugno del 2012"
+    ],
+    "correctIndex": 0,
+    "explanation": "La violazione avvenne tra la metà del 2005 e la fine del 2006."
+  },
+  {
+    "id": 30,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Di quali marchi è proprietaria TJX Companies?",
+    "options": [
+      "Sheraton e Westin",
+      "T.J.Maxx e Marshalls",
+      "Hilton e Marriott",
+      "Target e Capital One"
+    ],
+    "correctIndex": 1,
+    "explanation": "TJX Companies è proprietaria di marchi come T.J.Maxx e Marshalls."
+  },
+  {
+    "id": 31,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale protocollo proteggeva la rete Wi-Fi violata nel caso TJX?",
+    "options": [
+      "WPA3",
+      "WPA2",
+      "WEP",
+      "MFA"
+    ],
+    "correctIndex": 2,
+    "explanation": "La rete era protetta con il protocollo WEP, già noto per essere debole."
+  },
+  {
+    "id": 32,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Per quanto tempo gli aggressori del caso TJX rimasero non scoperti?",
+    "options": [
+      "Per pochi giorni",
+      "Per oltre un anno",
+      "Per una settimana",
+      "Per un decennio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non furono scoperti per oltre un anno."
+  },
+  {
+    "id": 33,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa identifica il nome utente?",
+    "options": [
+      "Chi sta cercando di accedere a un sistema",
+      "Il livello di sicurezza di una rete",
+      "Il protocollo di cifratura usato",
+      "Il produttore del dispositivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il nome utente identifica chi sta cercando di accedere a un sistema."
+  },
+  {
+    "id": 34,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa verificano password e PIN?",
+    "options": [
+      "La velocità della connessione",
+      "L'identità di chi sta accedendo",
+      "Il tipo di dispositivo utilizzato",
+      "La posizione geografica dell'utente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Password e PIN verificano che chi accede sia davvero chi dice di essere."
+  },
+  {
+    "id": 35,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un account di rete?",
+    "options": [
+      "Un tipo di firewall aziendale",
+      "L'insieme delle credenziali associato a permessi specifici",
+      "Un protocollo di cifratura Wi-Fi",
+      "Un dispositivo fisico di autenticazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "È l'insieme delle credenziali (nome utente e password) associato a permessi specifici."
+  },
+  {
+    "id": 36,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il nome utente da solo non protegge nulla?",
+    "options": [
+      "Perché cambia ogni giorno automaticamente",
+      "Perché corrisponde spesso semplicemente al proprio nome o indirizzo email, informazioni non segrete",
+      "Perché è sempre visibile solo all'amministratore",
+      "Perché viene generato casualmente dal sistema"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il nome utente spesso corrisponde al proprio nome o email, informazioni non segrete."
+  },
+  {
+    "id": 37,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il logout è importante quanto il login?",
+    "options": [
+      "Perché consuma meno energia",
+      "Perché chiudere correttamente una sessione impedisce che altri possano continuare ad agire con la nostra identità",
+      "Perché è richiesto per legge in ogni Paese",
+      "Perché aggiorna automaticamente la password"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il logout impedisce che altri agiscano con la nostra identità su un dispositivo condiviso."
+  },
+  {
+    "id": 38,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In che anno divenne inizialmente nota al pubblico la violazione di LinkedIn?",
+    "options": [
+      "Nel 2012",
+      "Nel 2016",
+      "Nel 2019",
+      "Nel 2005"
+    ],
+    "correctIndex": 0,
+    "explanation": "La violazione divenne nota nel giugno 2012, anche se la sua reale estensione emerse solo più tardi."
+  },
+  {
+    "id": 39,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa fecero gli aggressori con le password violate di LinkedIn?",
+    "options": [
+      "Le cancellarono immediatamente",
+      "Le pubblicarono cifrate su un forum, dove altri utenti iniziarono a decifrarle",
+      "Le restituirono a LinkedIn in cambio di un riscatto",
+      "Le usarono solo per scopi di ricerca accademica"
+    ],
+    "correctIndex": 1,
+    "explanation": "Pubblicarono un elenco di password cifrate su un forum, dove altri iniziarono a decifrarle."
+  },
+  {
+    "id": 40,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando emerse la reale estensione della violazione LinkedIn?",
+    "options": [
+      "Nel maggio 2016",
+      "Nel giugno 2012",
+      "Nel luglio 2019",
+      "Nel novembre 2013"
+    ],
+    "correctIndex": 0,
+    "explanation": "La reale estensione emerse solo nel maggio 2016."
+  },
+  {
+    "id": 41,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Con quale algoritmo erano cifrate le password di LinkedIn violate?",
+    "options": [
+      "SHA-1",
+      "WEP",
+      "WPA2",
+      "AES-256"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le password erano cifrate con l'algoritmo SHA-1, ormai considerato debole."
+  },
+  {
+    "id": 42,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa mancava alla protezione delle password di LinkedIn, oltre alla cifratura debole?",
+    "options": [
+      "Un secondo fattore di autenticazione",
+      "Un sale crittografico",
+      "Un firewall dedicato",
+      "Un protocollo WPA3"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mancava un sale crittografico, che avrebbe reso più difficile decifrare le password in massa."
+  },
+  {
+    "id": 43,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa fu costretta a fare LinkedIn dopo la scoperta della reale estensione della violazione?",
+    "options": [
+      "Chiudere definitivamente il servizio",
+      "Invalidare milioni di password, obbligando gli utenti a sceglierne di nuove",
+      "Pagare un riscatto agli aggressori",
+      "Cambiare nome all'azienda"
+    ],
+    "correctIndex": 1,
+    "explanation": "LinkedIn fu costretta a invalidare milioni di password."
+  },
+  {
+    "id": 44,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'MFA (Multi-Factor Authentication)?",
+    "options": [
+      "Un tipo di firewall avanzato",
+      "Un'autenticazione che richiede di combinare almeno due elementi di natura diversa tra loro",
+      "Un protocollo di cifratura per reti wireless",
+      "Un programma che genera password casuali"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'MFA richiede di combinare almeno due elementi di natura diversa."
+  },
+  {
+    "id": 45,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i tre principali fattori di autenticazione secondo il modulo?",
+    "options": [
+      "Qualcosa che conosci, qualcosa che possiedi, qualcosa che sei",
+      "Nome utente, password, indirizzo email",
+      "Firewall, antivirus, password manager",
+      "SSID, MAC, WEP"
+    ],
+    "correctIndex": 0,
+    "explanation": "I tre fattori sono: qualcosa che conosci, qualcosa che possiedi, qualcosa che sei."
+  },
+  {
+    "id": 46,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la 2FA?",
+    "options": [
+      "Un tipo di firewall a due livelli",
+      "Un'autenticazione in cui vengono richiesti esattamente due fattori diversi",
+      "Una password composta da due parti",
+      "Un protocollo di cifratura Wi-Fi a doppio livello"
+    ],
+    "correctIndex": 1,
+    "explanation": "La 2FA richiede esattamente due fattori diversi, ed è un caso particolare dell'MFA."
+  },
+  {
+    "id": 47,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché due password diverse non costituiscono un esempio valido di autenticazione a due fattori?",
+    "options": [
+      "Perché sono troppo facili da ricordare",
+      "Perché appartengono entrambe alla stessa categoria \"qualcosa che conosci\"",
+      "Perché richiedono troppo tempo per essere digitate",
+      "Perché non sono mai abbastanza lunghe"
+    ],
+    "correctIndex": 1,
+    "explanation": "Entrambe appartengono alla categoria \"qualcosa che conosci\", quindi non sono due fattori diversi."
+  },
+  {
+    "id": 48,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali rischi presenta un codice OTP ricevuto via SMS?",
+    "options": [
+      "Nessun rischio, è il metodo più sicuro in assoluto",
+      "Può essere esposto alla clonazione della SIM o all'intercettazione dei messaggi",
+      "Funziona solo su computer, mai su smartphone",
+      "Richiede sempre una connessione Wi-Fi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un codice OTP via SMS può essere esposto a clonazione della SIM o intercettazione."
+  },
+  {
+    "id": 49,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa valutano i sistemi di Risk-Based Authentication e Adaptive Authentication?",
+    "options": [
+      "Solo la lunghezza della password",
+      "Il contesto dell'accesso, come dispositivo, Paese e orario",
+      "Solo il tipo di dispositivo usato",
+      "Solo la velocità della connessione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Valutano il contesto dell'accesso: dispositivo, Paese, orario."
+  },
+  {
+    "id": 50,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il limite principale della biometria come fattore di autenticazione?",
+    "options": [
+      "Richiede sempre una connessione a Internet",
+      "Se un dato biometrico viene compromesso, non può essere cambiato come una password",
+      "È sempre più lenta di una password",
+      "Non funziona su dispositivi mobili"
+    ],
+    "correctIndex": 1,
+    "explanation": "Se compromesso, un dato biometrico non può essere cambiato come una password."
+  },
+  {
+    "id": 51,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa decise di fare Google nel 2017 riguardo all'autenticazione dei dipendenti?",
+    "options": [
+      "Eliminare ogni forma di autenticazione a più fattori",
+      "Richiedere a tutti i dipendenti di abbandonare i codici di verifica a due fattori tradizionali in favore di chiavi di sicurezza fisiche",
+      "Introdurre solo l'autenticazione biometrica",
+      "Vietare l'uso di password"
+    ],
+    "correctIndex": 1,
+    "explanation": "Google richiese il passaggio a chiavi di sicurezza fisiche al posto dei codici 2FA tradizionali."
+  },
+  {
+    "id": 52,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A quanti dipendenti Google richiese il passaggio alle chiavi di sicurezza fisiche nel 2017?",
+    "options": [
+      "Oltre 85.000",
+      "Circa 8.500",
+      "Oltre 850.000",
+      "Circa 45.000"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il passaggio riguardò oltre 85.000 dipendenti in tutto il mondo."
+  },
+  {
+    "id": 53,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Con quali aziende furono sviluppate le chiavi di sicurezza fisiche adottate da Google?",
+    "options": [
+      "Yubico e NXP",
+      "Amazon Web Services e LastPass",
+      "TJX Companies e Target",
+      "FireEye e NSO Group"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le chiavi erano basate su uno standard aperto sviluppato con Yubico e NXP."
+  },
+  {
+    "id": 54,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Secondo il giornalista Brian Krebs, cosa risultò dopo l'adozione delle chiavi fisiche in Google?",
+    "options": [
+      "Nessun account dei dipendenti risulta compromesso da phishing",
+      "Un aumento degli attacchi di phishing riusciti",
+      "Un calo della produttività aziendale",
+      "Un aumento dei costi operativi senza benefici"
+    ],
+    "correctIndex": 0,
+    "explanation": "Non risulta essere stato compromesso, tramite phishing, nemmeno un singolo account."
+  },
+  {
+    "id": 55,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come si chiamano le chiavi di sicurezza fisiche rese pubbliche da Google nel 2018?",
+    "options": [
+      "Titan",
+      "Orion",
+      "SUNBURST",
+      "Reaper"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le chiavi furono rese pubbliche con il nome commerciale Titan."
+  },
+  {
+    "id": 56,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa è paragonata l'autenticazione a più fattori nella metafora del modulo?",
+    "options": [
+      "A una cassaforte con due serrature identiche",
+      "All'imbarco su un volo aereo, dove serve la combinazione di biglietto e documento d'identità",
+      "A un lucchetto a combinazione numerica",
+      "A una porta con due chiavi uguali"
+    ],
+    "correctIndex": 1,
+    "explanation": "È paragonata all'imbarco su un volo, dove serve la combinazione di biglietto e documento."
+  },
+  {
+    "id": 57,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un password manager?",
+    "options": [
+      "Un programma che genera, conserva e compila automaticamente password uniche e complesse per ogni account",
+      "Un tipo di firewall avanzato",
+      "Un dispositivo fisico per l'autenticazione biometrica",
+      "Un protocollo di cifratura per reti Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il password manager genera, conserva e compila automaticamente le password."
+  },
+  {
+    "id": 58,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa deve ricordare l'utente grazie a un password manager?",
+    "options": [
+      "Nessuna password, sono tutte automatiche",
+      "Una sola master password",
+      "Una password diversa per ogni categoria di account",
+      "Solo il PIN dello smartphone"
+    ],
+    "correctIndex": 1,
+    "explanation": "Basta ricordare un'unica master password."
+  },
+  {
+    "id": 59,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che rischio comporta un password manager se la master password è debole?",
+    "options": [
+      "Nessun rischio aggiuntivo rispetto a una password normale",
+      "Il rischio riguarda potenzialmente tutti gli account conservati, non solo uno",
+      "Il rischio riguarda solo l'account del password manager stesso",
+      "Il rischio si annulla grazie alla cifratura automatica"
+    ],
+    "correctIndex": 1,
+    "explanation": "Con una master password debole, il rischio riguarda potenzialmente tutti gli account conservati."
+  },
+  {
+    "id": 60,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali caratteristiche dovrebbe avere una master password secondo il modulo?",
+    "options": [
+      "Corta e facile da digitare",
+      "Lunga, imprevedibile e mai riutilizzata altrove",
+      "Identica alla password dell'email, per comodità",
+      "Composta solo da numeri"
+    ],
+    "correctIndex": 1,
+    "explanation": "Dovrebbe essere lunga, imprevedibile e mai riutilizzata altrove."
+  },
+  {
+    "id": 61,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando avvenne la violazione del password manager LastPass?",
+    "options": [
+      "Nell'agosto 2022",
+      "Nel luglio 2019",
+      "Nel giugno 2012",
+      "Nel novembre 2013"
+    ],
+    "correctIndex": 0,
+    "explanation": "La violazione avvenne nell'agosto 2022."
+  },
+  {
+    "id": 62,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa accadde nella prima fase della violazione LastPass?",
+    "options": [
+      "Un aggressore accedette all'ambiente di sviluppo dell'azienda, sottraendo parte del codice sorgente",
+      "Furono rubate tutte le master password degli utenti",
+      "L'azienda fu costretta a chiudere il servizio",
+      "Un dipendente rivelò volontariamente le proprie credenziali"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un aggressore accedette all'ambiente di sviluppo, sottraendo codice sorgente e documentazione."
+  },
+  {
+    "id": 63,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa accadde nella seconda fase della violazione LastPass?",
+    "options": [
+      "Un dipendente con privilegi elevati fu colpito da un attacco con un keylogger sul proprio computer personale",
+      "L'azienda subì un attacco DDoS su larga scala",
+      "Gli utenti ricevettero email di phishing dirette",
+      "Il codice sorgente fu reso pubblico online"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un dipendente con privilegi elevati fu colpito da un keylogger sul proprio computer personale."
+  },
+  {
+    "id": 64,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A cosa ebbero accesso gli aggressori grazie al keylogger nel caso LastPass?",
+    "options": [
+      "A un archivio contenente le chiavi necessarie per decifrare i backup cloud dei clienti",
+      "Solo alla posta elettronica aziendale",
+      "Solo al sito web pubblico dell'azienda",
+      "A nessun dato sensibile, l'attacco fallì"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ebbero accesso alle chiavi per decifrare i backup cloud dei clienti."
+  },
+  {
+    "id": 65,
+    "module": "reti-e-accessi",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa successe a chi aveva scelto una master password debole nel caso LastPass?",
+    "options": [
+      "Non subì alcuna conseguenza pratica",
+      "Si espose a tentativi di violazione condotti offline, senza alcun limite di tentativi",
+      "Ricevette automaticamente una nuova master password gratuita",
+      "Fu escluso dal servizio in via precauzionale"
+    ],
+    "correctIndex": 1,
+    "explanation": "Si espose a tentativi di violazione offline senza limite di tentativi, con conseguenze concrete per alcuni."
+  }
+]

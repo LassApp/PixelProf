@@ -1,0 +1,1007 @@
+[
+  {
+    "id": 1,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il completamento automatico?",
+    "options": [
+      "Un certificato di sicurezza rilasciato dai browser",
+      "La funzione con cui il browser suggerisce e inserisce dati già digitati in passato",
+      "Un protocollo di cifratura per la posta elettronica",
+      "Uno strumento per bloccare siti inappropriati"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il completamento automatico suggerisce e inserisce dati già digitati in passato, come nomi e password."
+  },
+  {
+    "id": 2,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve la funzione \"cancella dati privati\" di un browser?",
+    "options": [
+      "A eliminare cronologia, cookie e informazioni salvate",
+      "A bloccare automaticamente ogni sito web",
+      "A cifrare tutte le email inviate",
+      "A generare nuove password casuali"
+    ],
+    "correctIndex": 0,
+    "explanation": "Permette di eliminare cronologia, cookie e informazioni salvate quando non servono più."
+  },
+  {
+    "id": 3,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché nasce il completamento automatico?",
+    "options": [
+      "Per motivi di sicurezza avanzata",
+      "Per comodità, risparmiando il tempo di riscrivere le stesse informazioni",
+      "Per obbligo legale",
+      "Per ridurre il consumo di dati Internet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nasce per comodità, per risparmiare il tempo di riscrivere le stesse informazioni."
+  },
+  {
+    "id": 4,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il completamento automatico è più rischioso su un dispositivo condiviso?",
+    "options": [
+      "Perché rallenta la connessione Internet",
+      "Perché chiunque usi il dispositivo dopo di noi può trovare suggerimenti con i nostri dati salvati",
+      "Perché consuma più batteria",
+      "Perché richiede sempre una password aggiuntiva"
+    ],
+    "correctIndex": 1,
+    "explanation": "Su un dispositivo condiviso, altri possono trovare suggerimenti con dati salvati da chi ha usato il computer prima."
+  },
+  {
+    "id": 5,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa suggerisce il modulo di fare su un dispositivo condiviso?",
+    "options": [
+      "Disattivare completamente Internet",
+      "Cancellare periodicamente cronologia, cookie e password salvate",
+      "Usare sempre lo stesso account per tutti",
+      "Evitare qualsiasi sito che richieda un login"
+    ],
+    "correctIndex": 1,
+    "explanation": "È buona norma cancellare periodicamente i dati privati sui dispositivi condivisi."
+  },
+  {
+    "id": 6,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi dimostrò pubblicamente nel 2017 una debolezza nel completamento automatico avanzato di alcuni browser?",
+    "options": [
+      "Brian Krebs",
+      "Bob Thomas",
+      "Viljami Kuosmanen",
+      "Robert Tappan Morris"
+    ],
+    "correctIndex": 2,
+    "explanation": "Fu lo sviluppatore finlandese Viljami Kuosmanen."
+  },
+  {
+    "id": 7,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa conteneva la pagina web usata nella dimostrazione di Kuosmanen?",
+    "options": [
+      "Solo campi visibili come nome ed email",
+      "Anche campi aggiuntivi resi invisibili tramite il codice della pagina",
+      "Un virus che infettava il dispositivo",
+      "Un link di phishing verso un sito bancario"
+    ],
+    "correctIndex": 1,
+    "explanation": "Conteneva anche campi nascosti, invisibili tramite il codice della pagina."
+  },
+  {
+    "id": 8,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa succedeva se l'utente aveva attivato il completamento automatico avanzato, secondo la dimostrazione di Kuosmanen?",
+    "options": [
+      "Il browser si bloccava immediatamente",
+      "Il browser compilava anche i campi nascosti con dati personali salvati, inviandoli al sito",
+      "Il sito richiedeva automaticamente una nuova password",
+      "Nulla, la tecnica non aveva alcun effetto"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il browser compilava anche i campi nascosti, inviando dati personali salvati senza che l'utente se ne accorgesse."
+  },
+  {
+    "id": 9,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale browser risultò immune alla tecnica dimostrata da Kuosmanen?",
+    "options": [
+      "Chrome",
+      "Safari",
+      "Opera",
+      "Firefox"
+    ],
+    "correctIndex": 3,
+    "explanation": "Firefox risultò immune a questa specifica tecnica."
+  },
+  {
+    "id": 10,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Perché Firefox risultò immune alla tecnica dimostrata da Kuosmanen?",
+    "options": [
+      "Perché non supporta il completamento automatico",
+      "Perché compila i moduli un campo alla volta, invece che con un intero profilo precompilato",
+      "Perché richiede sempre l'autenticazione a due fattori",
+      "Perché blocca automaticamente ogni pagina con campi nascosti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Firefox compila i moduli un campo alla volta, invece che con un intero profilo precompilato."
+  },
+  {
+    "id": 11,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa è paragonato il completamento automatico nella metafora del modulo?",
+    "options": [
+      "A un assistente che sussurra le vostre informazioni a chiunque compili un modulo al posto vostro",
+      "A una cassaforte con combinazione segreta",
+      "A un portiere che controlla ogni visitatore",
+      "A un archivio chiuso a chiave"
+    ],
+    "correctIndex": 0,
+    "explanation": "È paragonato a un assistente che sussurra le informazioni a chiunque compili un modulo."
+  },
+  {
+    "id": 12,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa richiede una transazione sicura secondo il modulo?",
+    "options": [
+      "Solo una password complessa",
+      "Una connessione cifrata (HTTPS) e un sito la cui identità sia verificabile tramite certificato",
+      "Solo la presenza di un antivirus aggiornato",
+      "Solo una connessione Wi-Fi privata"
+    ],
+    "correctIndex": 1,
+    "explanation": "Richiede una connessione cifrata (HTTPS) e un certificato di sicurezza verificabile."
+  },
+  {
+    "id": 13,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'acronimo HTTPS?",
+    "options": [
+      "HyperText Transfer Protocol Secure",
+      "High Trust Transfer Protocol System",
+      "HyperText Transport Privacy Standard",
+      "Home Text Transfer Protocol Secure"
+    ],
+    "correctIndex": 0,
+    "explanation": "HTTPS sta per HyperText Transfer Protocol Secure."
+  },
+  {
+    "id": 14,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il pharming?",
+    "options": [
+      "Una tecnica che reindirizza l'utente verso un sito falso anche quando digita correttamente l'indirizzo del sito reale",
+      "Un tipo di malware che cifra i file di un dispositivo",
+      "Una tecnica per intercettare password digitate su una tastiera",
+      "Un protocollo di cifratura per reti wireless"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il pharming reindirizza verso un sito falso anche digitando correttamente l'indirizzo reale."
+  },
+  {
+    "id": 15,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa garantisce, e cosa non garantisce, il lucchetto HTTPS?",
+    "options": [
+      "Garantisce dati cifrati, ma non garantisce che il sito sia davvero chi dice di essere",
+      "Garantisce che il sito sia autentico al 100%",
+      "Non garantisce nulla, è solo un elemento grafico",
+      "Garantisce che il sito non contenga mai pubblicità"
+    ],
+    "correctIndex": 0,
+    "explanation": "Garantisce dati cifrati lungo il percorso, ma non garantisce l'identità reale del sito."
+  },
+  {
+    "id": 16,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si può verificare l'identità reale di un sito?",
+    "options": [
+      "Guardando solo il colore della barra degli indirizzi",
+      "Cliccando sul lucchetto nella barra degli indirizzi per consultare il certificato",
+      "Contattando telefonicamente il sito",
+      "Non è mai possibile verificarla"
+    ],
+    "correctIndex": 1,
+    "explanation": "Si può cliccare sul lucchetto per consultare il certificato e vedere chi lo ha rilasciato."
+  },
+  {
+    "id": 17,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che differenza c'è tra pharming e phishing quanto ad azione richiesta dalla vittima?",
+    "options": [
+      "Sono identici, richiedono sempre un click su un link",
+      "Il pharming non richiede alcun link ingannevole su cui cliccare, a differenza del phishing",
+      "Il phishing non richiede mai alcuna azione",
+      "Il pharming richiede sempre una telefonata della vittima"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il pharming non ha bisogno di un link ingannevole, a differenza del phishing."
+  },
+  {
+    "id": 18,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può causare un dirottamento nel pharming?",
+    "options": [
+      "Un DNS compromesso o un dispositivo alterato",
+      "Solo una password debole",
+      "Solo un firewall disattivato",
+      "Solo l'uso di una rete pubblica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un DNS compromesso o un dispositivo alterato possono dirottare la richiesta verso un sito falso."
+  },
+  {
+    "id": 19,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il pharming è considerato più insidioso del phishing?",
+    "options": [
+      "Perché è più costoso da realizzare",
+      "Perché non richiede alcuna azione sospetta da parte della vittima",
+      "Perché colpisce solo le grandi aziende",
+      "Perché richiede sempre l'installazione di un'app"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non richiede alcuna azione sospetta, quindi è più difficile da riconoscere."
+  },
+  {
+    "id": 20,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando avvenne l'attacco di pharming che colpì oltre cinquanta istituti finanziari?",
+    "options": [
+      "Nel febbraio 2007",
+      "Nel marzo 2011",
+      "Nel dicembre 2013",
+      "Nel febbraio 2010"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'attacco avvenne nel febbraio 2007."
+  },
+  {
+    "id": 21,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale sistema operativo presentava la falla sfruttata nell'attacco di pharming del 2007?",
+    "options": [
+      "Windows",
+      "macOS",
+      "Android",
+      "Linux"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu sfruttata una falla nota nei sistemi Windows."
+  },
+  {
+    "id": 22,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Dove erano ospitati i server fraudolenti dell'attacco di pharming del 2007?",
+    "options": [
+      "Solo negli Stati Uniti",
+      "In Germania, Estonia e Regno Unito",
+      "Solo in Asia",
+      "Solo in Italia"
+    ],
+    "correctIndex": 1,
+    "explanation": "I server erano ospitati in Germania, Estonia e Regno Unito."
+  },
+  {
+    "id": 23,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa accadeva alla vittima dopo l'inserimento delle credenziali, nell'attacco del 2007?",
+    "options": [
+      "Veniva bloccata permanentemente fuori dal proprio conto",
+      "Veniva reindirizzata automaticamente al sito reale, già autenticata",
+      "Riceveva un messaggio di errore evidente",
+      "Il computer si spegneva automaticamente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Veniva reindirizzata al sito reale, già autenticata, per non destare sospetti."
+  },
+  {
+    "id": 24,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Fu mai determinato con precisione il numero di persone coinvolte nell'attacco di pharming del 2007?",
+    "options": [
+      "Sì, con esattezza",
+      "No, il numero esatto non fu mai determinato con precisione",
+      "Sì, ma solo dopo dieci anni",
+      "No, perché l'attacco fu smentito"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il numero esatto non fu mai determinato, segno di quanto il pharming possa passare inosservato."
+  },
+  {
+    "id": 25,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fa la cifratura della posta elettronica?",
+    "options": [
+      "Rende leggibile il contenuto di un messaggio solo a chi possiede la chiave corretta",
+      "Cancella automaticamente i messaggi dopo un giorno",
+      "Blocca l'invio di allegati",
+      "Rende impossibile rispondere a un messaggio"
+    ],
+    "correctIndex": 0,
+    "explanation": "Rende leggibile il contenuto solo a chi possiede la chiave corretta per decodificarlo."
+  },
+  {
+    "id": 26,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa garantisce la firma digitale?",
+    "options": [
+      "La velocità di invio di un messaggio",
+      "L'identità del mittente e l'integrità del messaggio",
+      "Che il messaggio non venga mai letto da nessuno",
+      "Che il messaggio venga cancellato dopo la lettura"
+    ],
+    "correctIndex": 1,
+    "explanation": "Garantisce l'identità del mittente e che il messaggio non sia stato alterato."
+  },
+  {
+    "id": 27,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è lo spam?",
+    "options": [
+      "L'invio massivo e non richiesto di messaggi, spesso a scopo pubblicitario o fraudolento",
+      "Un tipo di firma digitale",
+      "Un protocollo di cifratura per email",
+      "Un certificato di sicurezza per siti web"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo spam è l'invio massivo e non richiesto di messaggi."
+  },
+  {
+    "id": 28,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come viaggiano le email nella maggior parte dei casi?",
+    "options": [
+      "Sempre cifrate per impostazione predefinita",
+      "\"In chiaro\", leggibili da chiunque le intercetti lungo il percorso",
+      "Solo tramite reti private",
+      "Sempre firmate digitalmente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nella maggior parte dei casi viaggiano \"in chiaro\", leggibili da chi le intercetta."
+  },
+  {
+    "id": 29,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su cosa si basa la firma digitale?",
+    "options": [
+      "Su una singola password condivisa",
+      "Su un sistema di due chiavi crittografiche, una privata e una pubblica",
+      "Su un numero di telefono verificato",
+      "Su un indirizzo IP fisso"
+    ],
+    "correctIndex": 1,
+    "explanation": "Si basa su una chiave privata, nota solo a chi firma, e una pubblica, per la verifica."
+  },
+  {
+    "id": 30,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede alla firma digitale se un messaggio viene alterato lungo il percorso?",
+    "options": [
+      "Non risulta più valida",
+      "Diventa automaticamente più sicura",
+      "Nulla, resta sempre valida",
+      "Il messaggio viene cancellato automaticamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Se il messaggio viene alterato, la firma non risulta più valida."
+  },
+  {
+    "id": 31,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Chi invia oggi la maggior parte dello spam, secondo il modulo?",
+    "options": [
+      "Singole persone manualmente",
+      "Le stesse botnet incontrate nel modulo sul malware",
+      "Solo aziende pubblicitarie autorizzate",
+      "Solo hacker etici per scopo di ricerca"
+    ],
+    "correctIndex": 1,
+    "explanation": "Oggi lo spam è inviato principalmente da botnet, reti di dispositivi infettati."
+  },
+  {
+    "id": 32,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da dove nasce la parola \"spam\"?",
+    "options": [
+      "Da un acronimo tecnico informatico",
+      "Da uno sketch del gruppo comico britannico Monty Python",
+      "Dal nome di un'azienda di sicurezza informatica",
+      "Da un termine latino"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nasce da uno sketch dei Monty Python ambientato in un ristorante."
+  },
+  {
+    "id": 33,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa rappresentava la parola SPAM nello sketch dei Monty Python?",
+    "options": [
+      "Un tipo di virus informatico",
+      "Il nome commerciale di un prodotto alimentare a base di carne in scatola",
+      "Un personaggio dello sketch",
+      "Un ristorante immaginario"
+    ],
+    "correctIndex": 1,
+    "explanation": "Era il nome commerciale di un prodotto alimentare a base di carne in scatola."
+  },
+  {
+    "id": 34,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale botnet è stata per anni responsabile di una parte enorme dello spam mondiale?",
+    "options": [
+      "Rustock",
+      "Emotet",
+      "SUNBURST",
+      "Mirai"
+    ],
+    "correctIndex": 0,
+    "explanation": "La botnet Rustock è stata responsabile di una parte enorme dello spam mondiale."
+  },
+  {
+    "id": 35,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quante email al giorno poteva inviare la botnet Rustock al proprio apice?",
+    "options": [
+      "Fino a 13,8 milioni",
+      "Fino a 13,8 miliardi",
+      "Fino a 138mila",
+      "Fino a 1,3 miliardi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Poteva inviare fino a 13,8 miliardi di email indesiderate al giorno."
+  },
+  {
+    "id": 36,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi intervenne per sequestrare i server della botnet Rustock nel marzo 2011?",
+    "options": [
+      "L'unità Digital Crimes di Microsoft, con le forze dell'ordine statunitensi",
+      "Solo un tribunale civile europeo",
+      "Solo un consorzio di giornalisti",
+      "Solo l'azienda produttrice degli antivirus"
+    ],
+    "correctIndex": 0,
+    "explanation": "Intervenne l'unità Digital Crimes di Microsoft, con le forze dell'ordine statunitensi e gli U.S. Marshals."
+  },
+  {
+    "id": 37,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa successe al volume globale di spam dopo il sequestro dei server di Rustock?",
+    "options": [
+      "Rimase invariato",
+      "Crollò di circa un terzo nel giro di poche ore",
+      "Aumentò temporaneamente",
+      "Sparì completamente per sempre"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il volume globale di spam crollò di circa un terzo nel giro di poche ore."
+  },
+  {
+    "id": 38,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa riguarda la sicurezza sulle reti sociali secondo il modulo?",
+    "options": [
+      "Solo le impostazioni tecniche del router",
+      "Cosa si sceglie di condividere, le impostazioni privacy e i rischi dell'oversharing",
+      "Solo la scelta della password dell'account",
+      "Solo il numero di follower di un profilo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Riguarda cosa si condivide, le impostazioni privacy e la consapevolezza dei rischi."
+  },
+  {
+    "id": 39,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è l'oversharing?",
+    "options": [
+      "La condivisione eccessiva di informazioni personali su un social network",
+      "Un tipo di attacco informatico ai social network",
+      "La cancellazione automatica dei post vecchi",
+      "Un protocollo di sicurezza per social network"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la condivisione eccessiva di informazioni personali."
+  },
+  {
+    "id": 40,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che rischio comporta la geolocalizzazione sui social, secondo il modulo?",
+    "options": [
+      "Nessun rischio concreto",
+      "Comunicare dove ci si trova comunica implicitamente anche dove non ci si trova, come la propria casa vuota",
+      "Rallenta la pubblicazione dei post",
+      "Consuma più batteria dello smartphone"
+    ],
+    "correctIndex": 1,
+    "explanation": "Comunicare la propria posizione rivela implicitamente anche dove non ci si trova."
+  },
+  {
+    "id": 41,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il cyberbullismo?",
+    "options": [
+      "Un tipo di virus informatico",
+      "La persecuzione sistematica di qualcuno attraverso mezzi digitali",
+      "Un protocollo di cifratura per i social network",
+      "Un'impostazione di privacy dei profili"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la persecuzione sistematica di qualcuno attraverso mezzi digitali."
+  },
+  {
+    "id": 42,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa possono fare le piattaforme social di fronte a comportamenti scorretti, secondo il modulo?",
+    "options": [
+      "Nulla, non esistono strumenti dedicati",
+      "Mettono a disposizione strumenti per segnalare e denunciare tali comportamenti",
+      "Bloccano automaticamente ogni utente coinvolto",
+      "Richiedono sempre l'intervento della polizia"
+    ],
+    "correctIndex": 1,
+    "explanation": "La maggior parte delle piattaforme offre strumenti per segnalare e denunciare."
+  },
+  {
+    "id": 43,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu creato il sito Please Rob Me?",
+    "options": [
+      "Nel febbraio 2010",
+      "Nel febbraio 2007",
+      "Nel marzo 2011",
+      "Nel dicembre 2013"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu creato nel febbraio 2010."
+  },
+  {
+    "id": 44,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual era lo scopo del sito Please Rob Me?",
+    "options": [
+      "Compiere furti reali nelle case indicate",
+      "Dimostrare in modo diretto un rischio concreto della geolocalizzazione sui social",
+      "Vendere dati di localizzazione a terzi",
+      "Promuovere il servizio Foursquare"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il sito voleva dimostrare in modo diretto il rischio della geolocalizzazione sui social."
+  },
+  {
+    "id": 45,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da quale servizio il sito Please Rob Me raccoglieva gli aggiornamenti di posizione?",
+    "options": [
+      "Foursquare",
+      "LinkedIn",
+      "Zoom",
+      "Rustock"
+    ],
+    "correctIndex": 0,
+    "explanation": "Raccoglieva gli aggiornamenti condivisi su Foursquare."
+  },
+  {
+    "id": 46,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa mostrava il sito Please Rob Me?",
+    "options": [
+      "Un elenco di \"case attualmente vuote\"",
+      "Una mappa del traffico cittadino",
+      "Le recensioni dei ristoranti locali",
+      "Le previsioni del tempo in tempo reale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Mostrava un elenco di case attualmente vuote, basato sulle posizioni condivise dagli utenti."
+  },
+  {
+    "id": 47,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa fece il gruppo \"Bling Ring\"?",
+    "options": [
+      "Sviluppò un'app di sicurezza per smartphone",
+      "Compì una serie di furti nelle case di celebrità a Los Angeles",
+      "Creò il sito Please Rob Me",
+      "Sequestrò i server di una botnet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il gruppo Bling Ring compì furti nelle case di celebrità a Los Angeles."
+  },
+  {
+    "id": 48,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come individuava le vittime il gruppo Bling Ring?",
+    "options": [
+      "Seguendo fisicamente le celebrità per settimane",
+      "Attraverso informazioni condivise sui social e su siti dedicati allo spettacolo",
+      "Tramite un attacco di pharming",
+      "Comprando informazioni da una botnet"
+    ],
+    "correctIndex": 1,
+    "explanation": "Individuava i momenti di assenza attraverso informazioni condivise sui social."
+  },
+  {
+    "id": 49,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le applicazioni VoIP?",
+    "options": [
+      "Applicazioni che permettono di effettuare chiamate vocali e videochiamate attraverso Internet",
+      "Applicazioni per la gestione delle password",
+      "Applicazioni per il controllo genitoriale",
+      "Applicazioni per la cifratura dei file"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le applicazioni VoIP permettono chiamate vocali e videochiamate tramite Internet."
+  },
+  {
+    "id": 50,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale vulnerabilità concreta riguarda VoIP e messaggistica, secondo il modulo?",
+    "options": [
+      "La gestione degli accessi, quando i link vengono condivisi troppo ampiamente",
+      "Solo la qualità video delle chiamate",
+      "Solo il costo dell'abbonamento",
+      "Solo la compatibilità con dispositivi datati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Riguarda la gestione degli accessi, quando i collegamenti sono condivisi troppo ampiamente."
+  },
+  {
+    "id": 51,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la crittografia end-to-end?",
+    "options": [
+      "Un sistema in cui il messaggio è cifrato sul dispositivo del mittente e decifrato solo su quello del destinatario",
+      "Un sistema che cifra solo gli allegati dei messaggi",
+      "Un protocollo per la videoconferenza ad alta risoluzione",
+      "Un sistema che elimina automaticamente i messaggi dopo la lettura"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il messaggio è cifrato sul dispositivo del mittente e decifrato solo su quello del destinatario."
+  },
+  {
+    "id": 52,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali accorgimenti pratici riducono il rischio di intrusioni in una videochiamata, secondo il modulo?",
+    "options": [
+      "Password specifica per ogni riunione e sala d'attesa",
+      "Condividere sempre lo stesso link fisso per comodità",
+      "Pubblicare il link su un social per raggiungere più partecipanti",
+      "Disattivare ogni forma di autenticazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una password specifica per riunione e una sala d'attesa riducono il rischio di intrusioni."
+  },
+  {
+    "id": 53,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Zoom vide un aumento vertiginoso di utenti?",
+    "options": [
+      "Nella primavera del 2020, con l'inizio della pandemia da Covid-19",
+      "Nel 2007, con la diffusione della banda larga",
+      "Nel 2013, con la diffusione degli smartphone",
+      "Nel 2011, dopo il sequestro della botnet Rustock"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'aumento avvenne nella primavera 2020, con l'inizio della pandemia."
+  },
+  {
+    "id": 54,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Di quanto crebbero gli utenti giornalieri di Zoom tra dicembre 2019 e marzo 2020?",
+    "options": [
+      "Da circa 10 milioni a oltre 200 milioni",
+      "Da circa 200 milioni a oltre 10 milioni",
+      "Da circa 1 milione a circa 10 milioni",
+      "Da circa 50 milioni a circa 100 milioni"
+    ],
+    "correctIndex": 0,
+    "explanation": "Passarono da circa 10 milioni a oltre 200 milioni di partecipanti giornalieri."
+  },
+  {
+    "id": 55,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cos'è lo \"zoombombing\"?",
+    "options": [
+      "Un aggiornamento software di Zoom",
+      "Il fenomeno per cui persone non invitate si univano a videoconferenze altrui per interromperle",
+      "Un tipo di attacco ransomware contro Zoom",
+      "Una funzione di sicurezza introdotta da Zoom"
+    ],
+    "correctIndex": 1,
+    "explanation": "È il fenomeno di intrusioni non invitate nelle videoconferenze altrui."
+  },
+  {
+    "id": 56,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come reagì l'FBI al fenomeno dello zoombombing?",
+    "options": [
+      "Lo ignorò completamente",
+      "Pubblicò un avviso pubblico sul fenomeno, dopo un alto numero di segnalazioni",
+      "Vietò l'uso di Zoom negli Stati Uniti",
+      "Arrestò l'amministratore delegato di Zoom"
+    ],
+    "correctIndex": 1,
+    "explanation": "Pubblicò un avviso pubblico, dopo aver ricevuto un alto numero di segnalazioni."
+  },
+  {
+    "id": 57,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quali misure di sicurezza predefinite introdusse Zoom in risposta al fenomeno dello zoombombing?",
+    "options": [
+      "Password automatiche per ogni riunione e sala d'attesa",
+      "L'eliminazione totale delle videochiamate di gruppo",
+      "Un limite massimo di due partecipanti per riunione",
+      "La chiusura temporanea del servizio"
+    ],
+    "correctIndex": 0,
+    "explanation": "Introdusse password automatiche per ogni riunione e la sala d'attesa."
+  },
+  {
+    "id": 58,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sono le autorizzazioni di un'app?",
+    "options": [
+      "I permessi che l'utente concede per farla funzionare correttamente",
+      "Le recensioni lasciate dagli altri utenti",
+      "Il prezzo di acquisto dell'app",
+      "La lingua in cui è disponibile l'app"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono i permessi concessi dall'utente perché l'app funzioni correttamente."
+  },
+  {
+    "id": 59,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa aumenta il rischio di scaricare app da store non ufficiali?",
+    "options": [
+      "Il rischio di installare software dannoso",
+      "Il rischio di pagare un prezzo più alto",
+      "Il rischio di ricevere troppi aggiornamenti",
+      "Nessun rischio particolare"
+    ],
+    "correctIndex": 0,
+    "explanation": "Scaricare da store non ufficiali aumenta il rischio di installare software dannoso."
+  },
+  {
+    "id": 60,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il principio da tenere a mente riguardo alle autorizzazioni richieste da un'app?",
+    "options": [
+      "La coerenza tra funzione dichiarata e permesso richiesto",
+      "Concedere sempre tutte le autorizzazioni per comodità",
+      "Rifiutare sempre ogni autorizzazione, anche quelle necessarie",
+      "Ignorare completamente le richieste di autorizzazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Bisogna valutare se il permesso richiesto è coerente con la funzione dichiarata dall'app."
+  },
+  {
+    "id": 61,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fanno gli store ufficiali prima di rendere disponibile un'app?",
+    "options": [
+      "La sottopongono a controlli",
+      "La pubblicano immediatamente senza verifiche",
+      "Ne aumentano automaticamente il prezzo",
+      "La traducono in tutte le lingue"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli store ufficiali sottopongono le app a controlli prima della pubblicazione."
+  },
+  {
+    "id": 62,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa si può fare in caso di smarrimento o furto di uno smartphone, se le funzioni sono state attivate in anticipo?",
+    "options": [
+      "Localizzarlo da remoto, bloccarlo o cancellarne i dati",
+      "Nulla, i dati sono sempre persi",
+      "Solo cambiare la password dell'email",
+      "Solo contattare il produttore"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si può localizzare, bloccare o cancellare i dati del dispositivo da remoto."
+  },
+  {
+    "id": 63,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando la Federal Trade Commission raggiunse un accordo con Goldenshores Technologies?",
+    "options": [
+      "Il 5 dicembre 2013",
+      "Il 16 marzo 2011",
+      "Nel febbraio 2007",
+      "Nel febbraio 2010"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'accordo fu raggiunto il 5 dicembre 2013."
+  },
+  {
+    "id": 64,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale app era al centro dell'accordo tra FTC e Goldenshores Technologies?",
+    "options": [
+      "\"Brightest Flashlight Free\"",
+      "\"Please Rob Me\"",
+      "\"Zoom\"",
+      "\"Foursquare\""
+    ],
+    "correctIndex": 0,
+    "explanation": "L'app al centro dell'accordo era \"Brightest Flashlight Free\"."
+  },
+  {
+    "id": 65,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa trasmetteva l'app \"Brightest Flashlight Free\" a società pubblicitarie terze?",
+    "options": [
+      "La posizione geografica precisa e un identificatore univoco del dispositivo",
+      "Solo il nome dell'utente",
+      "Solo la marca dello smartphone",
+      "Nessun dato, l'accusa fu ritirata"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trasmetteva la posizione precisa e un identificatore univoco del dispositivo."
+  },
+  {
+    "id": 66,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "L'opzione per rifiutare la condivisione della posizione nell'app era realmente efficace?",
+    "options": [
+      "Sì, funzionava perfettamente",
+      "No, era puramente illusoria e non impediva l'invio dei dati",
+      "Sì, ma solo su alcuni dispositivi",
+      "L'app non offriva alcuna opzione di questo tipo"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'opzione era illusoria: non impediva realmente l'invio dei dati."
+  },
+  {
+    "id": 67,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come emerse il caso \"Brightest Flashlight Free\"?",
+    "options": [
+      "Da un'indagine ufficiale avviata dall'alto",
+      "Dalla curiosità di alcuni utenti esperti",
+      "Da una denuncia dell'azienda stessa",
+      "Da un attacco informatico ai server dell'azienda"
+    ],
+    "correctIndex": 1,
+    "explanation": "Emerse dalla curiosità di alcuni utenti esperti che si interrogarono sul motivo di quella richiesta."
+  }
+]

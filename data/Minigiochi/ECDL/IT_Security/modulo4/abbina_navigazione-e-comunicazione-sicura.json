@@ -1,0 +1,140 @@
+{
+  "id": 1,
+  "module": "navigazione-e-comunicazione-sicura",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Completamento automatico",
+        "definition": "Funzione con cui il browser suggerisce e inserisce dati già digitati in passato, come nomi, indirizzi e password"
+      },
+      {
+        "term": "Cancellare i dati privati",
+        "definition": "Permette di eliminare cronologia, cookie e informazioni salvate quando un dispositivo viene condiviso con altre persone"
+      },
+      {
+        "term": "Viljami Kuosmanen",
+        "definition": "Sviluppatore finlandese che nel 2017 dimostrò pubblicamente una debolezza nel completamento automatico avanzato di alcuni browser"
+      },
+      {
+        "term": "Campi nascosti (tecnica dimostrata da Kuosmanen)",
+        "definition": "Campi invisibili inseriti nel codice di una pagina web, compilati automaticamente dal browser con dati salvati all'insaputa dell'utente"
+      },
+      {
+        "term": "Firefox (nel caso Kuosmanen)",
+        "definition": "Browser risultato immune alla tecnica, perché compila i moduli un campo alla volta invece che con un intero profilo precompilato"
+      }
+    ],
+    [
+      {
+        "term": "HTTPS",
+        "definition": "Connessione cifrata che garantisce che i dati scambiati con un sito viaggino cifrati lungo il percorso"
+      },
+      {
+        "term": "Certificato di sicurezza",
+        "definition": "Documento che permette di verificare l'identità reale di un sito, rilasciato da un'autorità di certificazione riconosciuta"
+      },
+      {
+        "term": "Pharming",
+        "definition": "Tecnica che reindirizza l'utente verso un sito falso anche quando digita correttamente l'indirizzo del sito reale"
+      },
+      {
+        "term": "Attacco di pharming del febbraio 2007",
+        "definition": "Colpì oltre cinquanta istituti finanziari in Stati Uniti, Europa e Asia, sfruttando una falla nota nei sistemi Windows"
+      },
+      {
+        "term": "Strumenti di controllo dei contenuti",
+        "definition": "Filtrano automaticamente l'accesso a siti considerati inappropriati o pericolosi, spesso usati in ambito familiare o scolastico"
+      }
+    ],
+    [
+      {
+        "term": "Cifratura della posta elettronica",
+        "definition": "Rende leggibile il contenuto di un messaggio solo a chi possiede la chiave corretta per decodificarlo"
+      },
+      {
+        "term": "Firma digitale",
+        "definition": "Garantisce l'identità del mittente di un messaggio, con lo stesso valore di una firma autografa"
+      },
+      {
+        "term": "Spam",
+        "definition": "Invio massivo e non richiesto di messaggi, spesso a scopo pubblicitario o fraudolento"
+      },
+      {
+        "term": "Botnet Rustock",
+        "definition": "Rete di circa un milione di computer infettati, capace di inviare fino a 13,8 miliardi di email indesiderate al giorno"
+      },
+      {
+        "term": "Digital Crimes Unit (Microsoft)",
+        "definition": "Unità che nel marzo 2011 ottenne l'autorizzazione a sequestrare i server usati per controllare la botnet Rustock"
+      }
+    ],
+    [
+      {
+        "term": "Oversharing",
+        "definition": "Condivisione eccessiva di informazioni personali su un social network"
+      },
+      {
+        "term": "Cyberbullismo",
+        "definition": "Persecuzione sistematica di qualcuno attraverso mezzi digitali"
+      },
+      {
+        "term": "Geolocalizzazione (rischio)",
+        "definition": "Comunicare in tempo reale dove ci si trova comunica implicitamente anche dove non ci si trova, come la propria abitazione vuota"
+      },
+      {
+        "term": "Please Rob Me",
+        "definition": "Sito creato nel 2010 da tre sviluppatori olandesi per mostrare il rischio di condividere pubblicamente la propria posizione sui social"
+      },
+      {
+        "term": "Bling Ring",
+        "definition": "Gruppo di giovani arrestato a Los Angeles per furti compiuti individuando l'assenza delle vittime attraverso informazioni condivise sui social"
+      }
+    ],
+    [
+      {
+        "term": "VoIP (Voice over IP)",
+        "definition": "Applicazioni che permettono di effettuare chiamate vocali e videochiamate attraverso Internet"
+      },
+      {
+        "term": "Crittografia end-to-end",
+        "definition": "Sistema in cui il messaggio viene cifrato sul dispositivo del mittente e decifrato solo su quello del destinatario, senza che l'azienda del servizio possa leggerlo"
+      },
+      {
+        "term": "Sala d'attesa",
+        "definition": "Funzione che richiede l'approvazione dell'organizzatore prima di far entrare ogni partecipante a una riunione"
+      },
+      {
+        "term": "Zoombombing",
+        "definition": "Fenomeno per cui persone non invitate, entrate in possesso di link condivisi pubblicamente, si univano a videoconferenze altrui per interromperle"
+      },
+      {
+        "term": "Crescita di Zoom nella primavera 2020",
+        "definition": "Da circa 10 milioni di partecipanti giornalieri a dicembre 2019 a oltre 200 milioni a marzo 2020"
+      }
+    ],
+    [
+      {
+        "term": "Autorizzazioni di un'app",
+        "definition": "Permessi che l'utente concede per farla funzionare correttamente, determinando a quali funzioni e dati del dispositivo può accedere"
+      },
+      {
+        "term": "Store ufficiali",
+        "definition": "Canali che sottopongono le app a controlli prima di renderle disponibili, riducendo il rischio di software dannoso"
+      },
+      {
+        "term": "\"Brightest Flashlight Free\"",
+        "definition": "App gratuita per Android al centro di un accordo con la Federal Trade Commission per aver trasmesso la posizione degli utenti a società pubblicitarie"
+      },
+      {
+        "term": "Goldenshores Technologies",
+        "definition": "Azienda dietro l'app \"Brightest Flashlight Free\", raggiunta da un accordo con la Federal Trade Commission nel dicembre 2013"
+      },
+      {
+        "term": "Coerenza tra funzione e permesso (principio)",
+        "definition": "Un'app che chiede accesso a contatti, microfono o posizione senza un motivo evidente legato al proprio scopo merita attenzione"
+      }
+    ]
+  ]
+}

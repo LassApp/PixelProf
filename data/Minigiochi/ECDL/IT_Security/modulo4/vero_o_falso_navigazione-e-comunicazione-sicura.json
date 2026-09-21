@@ -1,0 +1,470 @@
+[
+  {
+    "id": 1,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il completamento automatico suggerisce e inserisce dati già digitati in passato.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Su un dispositivo personale usato da una sola persona, il rischio del completamento automatico è più alto che su un dispositivo condiviso.",
+    "answer": false,
+    "explanation": "È il contrario: il rischio è maggiore sui dispositivi condivisi."
+  },
+  {
+    "id": 3,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Cancellare periodicamente i dati privati è consigliato sui dispositivi condivisi.",
+    "answer": true,
+    "explanation": "È proprio quanto raccomandato dal modulo."
+  },
+  {
+    "id": 4,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 2017, Viljami Kuosmanen dimostrò una debolezza nel completamento automatico avanzato di alcuni browser.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo anno e questo autore."
+  },
+  {
+    "id": 5,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Firefox risultò vulnerabile alla tecnica dimostrata da Kuosmanen.",
+    "answer": false,
+    "explanation": "Firefox risultò immune, perché compila i moduli un campo alla volta."
+  },
+  {
+    "id": 6,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La dimostrazione di Kuosmanen riguardava, tra gli altri, i browser Chrome, Safari e Opera.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questi browser."
+  },
+  {
+    "id": 7,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il lucchetto HTTPS garantisce sempre che un sito sia autentico e non fraudolento.",
+    "answer": false,
+    "explanation": "Garantisce solo che i dati viaggino cifrati, non l'autenticità del sito."
+  },
+  {
+    "id": 8,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il pharming richiede sempre che la vittima clicchi su un link ingannevole.",
+    "answer": false,
+    "explanation": "A differenza del phishing, il pharming non richiede alcun link ingannevole."
+  },
+  {
+    "id": 9,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il pharming può sfruttare una compromissione del DNS per reindirizzare l'utente.",
+    "answer": true,
+    "explanation": "È uno dei meccanismi descritti dal modulo."
+  },
+  {
+    "id": 10,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il pharming è considerato meno insidioso del phishing.",
+    "answer": false,
+    "explanation": "È considerato più insidioso, proprio perché non richiede azioni sospette della vittima."
+  },
+  {
+    "id": 11,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'attacco di pharming del febbraio 2007 colpì oltre cinquanta istituti finanziari.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo numero."
+  },
+  {
+    "id": 12,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'attacco di pharming del 2007 sfruttava una falla nota nei sistemi Windows.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo sistema operativo."
+  },
+  {
+    "id": 13,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "I server fraudolenti dell'attacco del 2007 erano ospitati solo negli Stati Uniti.",
+    "answer": false,
+    "explanation": "Erano ospitati in Germania, Estonia e Regno Unito."
+  },
+  {
+    "id": 14,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il numero esatto di persone coinvolte nell'attacco di pharming del 2007 fu determinato con precisione.",
+    "answer": false,
+    "explanation": "Non fu mai determinato con precisione."
+  },
+  {
+    "id": 15,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La cifratura della posta elettronica rende il contenuto leggibile solo a chi possiede la chiave corretta.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 16,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La firma digitale garantisce la riservatezza del contenuto di un messaggio, non l'identità del mittente.",
+    "answer": false,
+    "explanation": "È il contrario: garantisce l'identità del mittente e l'integrità, non la riservatezza."
+  },
+  {
+    "id": 17,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le email viaggiano quasi sempre già cifrate per impostazione predefinita.",
+    "answer": false,
+    "explanation": "Nella maggior parte dei casi viaggiano \"in chiaro\"."
+  },
+  {
+    "id": 18,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La firma digitale si basa su una chiave privata e una chiave pubblica.",
+    "answer": true,
+    "explanation": "È proprio il sistema descritto dal modulo."
+  },
+  {
+    "id": 19,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Oggi lo spam è diffuso principalmente da singole persone che inviano email manualmente.",
+    "answer": false,
+    "explanation": "È diffuso principalmente da botnet."
+  },
+  {
+    "id": 20,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La parola \"spam\" deriva da uno sketch del gruppo comico britannico Monty Python.",
+    "answer": true,
+    "explanation": "Il modulo lo riporta come curiosità."
+  },
+  {
+    "id": 21,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La botnet Rustock, al proprio apice, controllava circa un milione di computer infettati.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo numero."
+  },
+  {
+    "id": 22,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La botnet Rustock poteva inviare fino a 13,8 miliardi di email indesiderate al giorno.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa cifra."
+  },
+  {
+    "id": 23,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "I server della botnet Rustock furono sequestrati nel marzo 2011 da un'unità di Microsoft in collaborazione con le forze dell'ordine.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data e questi soggetti."
+  },
+  {
+    "id": 24,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Dopo il sequestro dei server di Rustock, il volume globale di spam rimase invariato.",
+    "answer": false,
+    "explanation": "Crollò di circa un terzo nel giro di poche ore."
+  },
+  {
+    "id": 25,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La sicurezza sulle reti sociali riguarda solo le impostazioni tecniche del profilo, non cosa si sceglie di condividere.",
+    "answer": false,
+    "explanation": "Riguarda anche, e soprattutto, cosa si sceglie di condividere pubblicamente."
+  },
+  {
+    "id": 26,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Comunicare in tempo reale la propria posizione può implicitamente rivelare che la propria abitazione è vuota.",
+    "answer": true,
+    "explanation": "È proprio il rischio descritto dal modulo a proposito della geolocalizzazione."
+  },
+  {
+    "id": 27,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il cyberbullismo è la persecuzione sistematica di qualcuno attraverso mezzi digitali.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 28,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il sito Please Rob Me fu creato nel febbraio 2010 da tre sviluppatori olandesi.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data e questi autori."
+  },
+  {
+    "id": 29,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il sito Please Rob Me rubava effettivamente nelle case delle persone che comparivano nell'elenco.",
+    "answer": false,
+    "explanation": "Non compiva alcun furto: si limitava a mostrare informazioni già pubbliche."
+  },
+  {
+    "id": 30,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il sito Please Rob Me raccoglieva dati dal servizio Foursquare.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo servizio."
+  },
+  {
+    "id": 31,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il gruppo Bling Ring fu arrestato a Los Angeles per furti nelle case di celebrità.",
+    "answer": true,
+    "explanation": "Il modulo lo riporta esplicitamente."
+  },
+  {
+    "id": 32,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le applicazioni VoIP permettono di effettuare chiamate vocali e videochiamate attraverso Internet.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 33,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con la crittografia end-to-end, anche l'azienda che gestisce il servizio può leggere il contenuto dei messaggi.",
+    "answer": false,
+    "explanation": "Nemmeno l'azienda può leggerlo: è proprio il punto della crittografia end-to-end."
+  },
+  {
+    "id": 34,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una \"sala d'attesa\" richiede l'approvazione dell'organizzatore prima di far entrare ogni partecipante.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 35,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Zoom vide un aumento vertiginoso di utenti nella primavera del 2020, con l'inizio della pandemia da Covid-19.",
+    "answer": true,
+    "explanation": "Il modulo lo riporta esplicitamente."
+  },
+  {
+    "id": 36,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Zoom passò da circa 200 milioni di partecipanti giornalieri a dicembre 2019 a soli 10 milioni a marzo 2020.",
+    "answer": false,
+    "explanation": "Fu il contrario: da circa 10 milioni a oltre 200 milioni."
+  },
+  {
+    "id": 37,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il fenomeno \"zoombombing\" riguarda persone invitate che abbandonano una riunione prima del previsto.",
+    "answer": false,
+    "explanation": "Riguarda persone non invitate che si uniscono a una riunione per interromperla."
+  },
+  {
+    "id": 38,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'FBI pubblicò un avviso pubblico sul fenomeno dello zoombombing.",
+    "answer": true,
+    "explanation": "Il modulo lo riporta esplicitamente."
+  },
+  {
+    "id": 39,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le autorizzazioni di un'app sono i permessi che l'utente concede per farla funzionare correttamente.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 40,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Scaricare app da store non ufficiali riduce il rischio di installare software dannoso.",
+    "answer": false,
+    "explanation": "Lo aumenta significativamente, perché elimina il primo filtro di controllo."
+  },
+  {
+    "id": 41,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli store ufficiali sottopongono le app a controlli prima di renderle disponibili.",
+    "answer": true,
+    "explanation": "È proprio quanto descritto dal modulo."
+  },
+  {
+    "id": 42,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La maggior parte degli smartphone offre strumenti per localizzare, bloccare o cancellare i dati da remoto in caso di smarrimento.",
+    "answer": true,
+    "explanation": "È proprio quanto descritto dal modulo."
+  },
+  {
+    "id": 43,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il 5 dicembre 2013, la Federal Trade Commission raggiunse un accordo con Goldenshores Technologies.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data."
+  },
+  {
+    "id": 44,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'app \"Brightest Flashlight Free\" era un'app a pagamento scaricata poche migliaia di volte.",
+    "answer": false,
+    "explanation": "Era gratuita e scaricata decine di milioni di volte."
+  },
+  {
+    "id": 45,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'app \"Brightest Flashlight Free\" trasmetteva la posizione precisa dell'utente a società pubblicitarie terze.",
+    "answer": true,
+    "explanation": "Il modulo lo riporta esplicitamente."
+  },
+  {
+    "id": 46,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'opzione per rifiutare la condivisione della posizione nell'app era pienamente efficace.",
+    "answer": false,
+    "explanation": "Era illusoria: non impediva realmente l'invio dei dati."
+  },
+  {
+    "id": 47,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il caso \"Brightest Flashlight Free\" emerse da un'indagine ufficiale avviata dall'alto.",
+    "answer": false,
+    "explanation": "Emerse dalla curiosità di alcuni utenti esperti."
+  },
+  {
+    "id": 48,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, il completamento automatico è paragonato a un assistente che sussurra le vostre informazioni a chiunque compili un modulo al posto vostro.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  },
+  {
+    "id": 49,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, il pharming è paragonato a qualcuno che sposta silenziosamente il cartello del numero civico.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  },
+  {
+    "id": 50,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, un'email cifrata è paragonata a una cartolina leggibile da chiunque.",
+    "answer": false,
+    "explanation": "È l'email non cifrata a essere paragonata a una cartolina; quella cifrata è una lettera sigillata."
+  },
+  {
+    "id": 51,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, condividere la propria posizione in tempo reale è paragonato ad appendere un cartello \"non c'è nessuno in casa\".",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  },
+  {
+    "id": 52,
+    "module": "navigazione-e-comunicazione-sicura",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, concedere autorizzazioni sproporzionate a un'app è paragonato ad assumere un tuttofare per un rubinetto e consegnargli anche le chiavi della cassaforte.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  }
+]

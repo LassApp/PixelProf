@@ -10,7 +10,7 @@ Questo file è l'**unica fonte ufficiale e vincolante** per identificare Aree, M
 
 Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prima di consultare il dettaglio.
 
-- **Area ECDL** → `attiva` — Computer Essentials, Online Essentials, Word Processing, Spreadsheet e Presentation: JSON realizzati e caricati. IT Security: sotto-area attiva, JSON da realizzare.
+- **Area ECDL** → `attiva` — Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation e IT Security: JSON realizzati e caricati. Online Collaboration: sotto-area attiva, JSON da realizzare.
 - **Area Cyberbullismo e Sicurezza Online** → `attiva` — JSON realizzati e caricati.
 - **Area Cybersecurity — Non solo antivirus e password** → `attiva` — JSON realizzati e caricati.
 - **Area Reti e Internet** → `attiva` — JSON realizzati e caricati.
@@ -24,7 +24,7 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 ### 🖥️ Area ECDL
 **Descrizione:** Acquisire le competenze fondamentali per utilizzare computer, applicazioni e servizi digitali.
 **Stato:** attiva
-**Nota:** Computer Essentials, Online Essentials, Word Processing, Spreadsheet e Presentation: JSON realizzati e caricati. IT Security: sotto-area attiva, JSON da realizzare.
+**Nota:** Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation e IT Security: JSON realizzati e caricati. Online Collaboration: sotto-area attiva, JSON da realizzare.
 
 ### 🛡️ Area Cyberbullismo e Sicurezza Online
 **Descrizione:** Riconoscere i rischi nelle relazioni digitali e imparare a proteggersi e agire responsabilmente online.
@@ -61,118 +61,116 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 
 #### Computer Essentials
 
-> JSON realizzati e caricati.
-
 ```text
 data/
-└── ECDL/
-    └── Computer_Essentials/
-        ├── modulo1/
-        │   ├── abbina_fondamenti-digitali.json
-        │   ├── completa_la_frase_fondamenti-digitali.json
-        │   ├── quiz_fondamenti-digitali.json
-        │   ├── speedquiz_fondamenti-digitali.json
-        │   └── vero_o_falso_fondamenti-digitali.json
-        ├── modulo2/
-        │   ├── abbina_cpu-architettura.json
-        │   ├── completa_la_frase_cpu-architettura.json
-        │   ├── quiz_cpu-architettura.json
-        │   ├── speedquiz_cpu-architettura.json
-        │   └── vero_o_falso_cpu-architettura.json
-        ├── modulo3/
-        │   ├── abbina_memorie.json
-        │   ├── completa_la_frase_memorie.json
-        │   ├── quiz_memorie.json
-        │   ├── speedquiz_memorie.json
-        │   └── vero_o_falso_memorie.json
-        └── modulo4/
-            ├── abbina_software.json
-            ├── completa_la_frase_software.json
-            ├── quiz_software.json
-            ├── speedquiz_software.json
-            └── vero_o_falso_software.json
+└── Minigiochi/
+    └── ECDL/
+        └── Computer_Essentials/
+            ├── modulo1/
+            │   ├── abbina_fondamenti-digitali.json
+            │   ├── completa_la_frase_fondamenti-digitali.json
+            │   ├── quiz_fondamenti-digitali.json
+            │   ├── speedquiz_fondamenti-digitali.json
+            │   └── vero_o_falso_fondamenti-digitali.json
+            ├── modulo2/
+            │   ├── abbina_cpu-architettura.json
+            │   ├── completa_la_frase_cpu-architettura.json
+            │   ├── quiz_cpu-architettura.json
+            │   ├── speedquiz_cpu-architettura.json
+            │   └── vero_o_falso_cpu-architettura.json
+            ├── modulo3/
+            │   ├── abbina_memorie.json
+            │   ├── completa_la_frase_memorie.json
+            │   ├── quiz_memorie.json
+            │   ├── speedquiz_memorie.json
+            │   └── vero_o_falso_memorie.json
+            └── modulo4/
+                ├── abbina_software.json
+                ├── completa_la_frase_software.json
+                ├── quiz_software.json
+                ├── speedquiz_software.json
+                └── vero_o_falso_software.json
 ```
 
 - **Fondamenti digitali**
   - Chiave: `fondamenti-digitali`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Computer_Essentials/modulo1/`
+  - Path base: `data/Minigiochi/ECDL/Computer_Essentials/modulo1/`
   - File: `abbina_fondamenti-digitali.json`, `completa_la_frase_fondamenti-digitali.json`, `quiz_fondamenti-digitali.json`, `speedquiz_fondamenti-digitali.json`, `vero_o_falso_fondamenti-digitali.json`
 
 - **CPU e architettura**
   - Chiave: `cpu-architettura`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Computer_Essentials/modulo2/`
+  - Path base: `data/Minigiochi/ECDL/Computer_Essentials/modulo2/`
   - File: `abbina_cpu-architettura.json`, `completa_la_frase_cpu-architettura.json`, `quiz_cpu-architettura.json`, `speedquiz_cpu-architettura.json`, `vero_o_falso_cpu-architettura.json`
 
 - **Memorie**
   - Chiave: `memorie`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Computer_Essentials/modulo3/`
+  - Path base: `data/Minigiochi/ECDL/Computer_Essentials/modulo3/`
   - File: `abbina_memorie.json`, `completa_la_frase_memorie.json`, `quiz_memorie.json`, `speedquiz_memorie.json`, `vero_o_falso_memorie.json`
 
 - **Software**
   - Chiave: `software`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Computer_Essentials/modulo4/`
+  - Path base: `data/Minigiochi/ECDL/Computer_Essentials/modulo4/`
   - File: `abbina_software.json`, `completa_la_frase_software.json`, `quiz_software.json`, `speedquiz_software.json`, `vero_o_falso_software.json`
 
 #### Online Essentials
 
-> JSON realizzati e caricati.
-
 ```text
 data/
-└── ECDL/
-    └── Online_Essentials/
-        ├── modulo1/
-        │   ├── abbina_rete-e-dati.json
-        │   ├── completa_la_frase_rete-e-dati.json
-        │   ├── quiz_rete-e-dati.json
-        │   ├── speedquiz_rete-e-dati.json
-        │   └── vero_o_falso_rete-e-dati.json
-        ├── modulo2/
-        │   ├── abbina_identita-e-comunicazione.json
-        │   ├── completa_la_frase_identita-e-comunicazione.json
-        │   ├── quiz_identita-e-comunicazione.json
-        │   ├── speedquiz_identita-e-comunicazione.json
-        │   └── vero_o_falso_identita-e-comunicazione.json
-        ├── modulo3/
-        │   ├── abbina_navigazione-e-tracciamento.json
-        │   ├── completa_la_frase_navigazione-e-tracciamento.json
-        │   ├── quiz_navigazione-e-tracciamento.json
-        │   ├── speedquiz_navigazione-e-tracciamento.json
-        │   └── vero_o_falso_navigazione-e-tracciamento.json
-        └── modulo4/
-            ├── abbina_sicurezza-e-comportamento-online.json
-            ├── completa_la_frase_sicurezza-e-comportamento-online.json
-            ├── quiz_sicurezza-e-comportamento-online.json
-            ├── speedquiz_sicurezza-e-comportamento-online.json
-            └── vero_o_falso_sicurezza-e-comportamento-online.json
+└── Minigiochi/
+    └── ECDL/
+        └── Online_Essentials/
+            ├── modulo1/
+            │   ├── abbina_rete-e-dati.json
+            │   ├── completa_la_frase_rete-e-dati.json
+            │   ├── quiz_rete-e-dati.json
+            │   ├── speedquiz_rete-e-dati.json
+            │   └── vero_o_falso_rete-e-dati.json
+            ├── modulo2/
+            │   ├── abbina_identita-e-comunicazione.json
+            │   ├── completa_la_frase_identita-e-comunicazione.json
+            │   ├── quiz_identita-e-comunicazione.json
+            │   ├── speedquiz_identita-e-comunicazione.json
+            │   └── vero_o_falso_identita-e-comunicazione.json
+            ├── modulo3/
+            │   ├── abbina_navigazione-e-tracciamento.json
+            │   ├── completa_la_frase_navigazione-e-tracciamento.json
+            │   ├── quiz_navigazione-e-tracciamento.json
+            │   ├── speedquiz_navigazione-e-tracciamento.json
+            │   └── vero_o_falso_navigazione-e-tracciamento.json
+            └── modulo4/
+                ├── abbina_sicurezza-e-comportamento-online.json
+                ├── completa_la_frase_sicurezza-e-comportamento-online.json
+                ├── quiz_sicurezza-e-comportamento-online.json
+                ├── speedquiz_sicurezza-e-comportamento-online.json
+                └── vero_o_falso_sicurezza-e-comportamento-online.json
 ```
 
 - **Online Essentials — Modulo 1: La rete e i dati**
   - Chiave: `rete-e-dati`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Online_Essentials/modulo1/`
+  - Path base: `data/Minigiochi/ECDL/Online_Essentials/modulo1/`
   - File: `abbina_rete-e-dati.json`, `completa_la_frase_rete-e-dati.json`, `quiz_rete-e-dati.json`, `speedquiz_rete-e-dati.json`, `vero_o_falso_rete-e-dati.json`
 
 - **Online Essentials — Modulo 2: Identità e comunicazione**
   - Chiave: `identita-e-comunicazione`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Online_Essentials/modulo2/`
+  - Path base: `data/Minigiochi/ECDL/Online_Essentials/modulo2/`
   - File: `abbina_identita-e-comunicazione.json`, `completa_la_frase_identita-e-comunicazione.json`, `quiz_identita-e-comunicazione.json`, `speedquiz_identita-e-comunicazione.json`, `vero_o_falso_identita-e-comunicazione.json`
 
 - **Online Essentials — Modulo 3: Navigazione e tracciamento**
   - Chiave: `navigazione-e-tracciamento`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Online_Essentials/modulo3/`
+  - Path base: `data/Minigiochi/ECDL/Online_Essentials/modulo3/`
   - File: `abbina_navigazione-e-tracciamento.json`, `completa_la_frase_navigazione-e-tracciamento.json`, `quiz_navigazione-e-tracciamento.json`, `speedquiz_navigazione-e-tracciamento.json`, `vero_o_falso_navigazione-e-tracciamento.json`
 
 - **Online Essentials — Modulo 4: Sicurezza e comportamento online**
   - Chiave: `sicurezza-e-comportamento-online`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Online_Essentials/modulo4/`
+  - Path base: `data/Minigiochi/ECDL/Online_Essentials/modulo4/`
   - File: `abbina_sicurezza-e-comportamento-online.json`, `completa_la_frase_sicurezza-e-comportamento-online.json`, `quiz_sicurezza-e-comportamento-online.json`, `speedquiz_sicurezza-e-comportamento-online.json`, `vero_o_falso_sicurezza-e-comportamento-online.json`
 
 #### Word Processing
@@ -181,68 +179,69 @@ data/
 
 ```text
 data/
-└── ECDL/
-    └── Word_Processing/
-        ├── modulo1/
-        │   ├── abbina_word-e-ambiente.json
-        │   ├── completa_la_frase_word-e-ambiente.json
-        │   ├── quiz_word-e-ambiente.json
-        │   ├── speedquiz_word-e-ambiente.json
-        │   └── vero_o_falso_word-e-ambiente.json
-        ├── modulo2/
-        │   ├── abbina_scrivere-e-salvare.json
-        │   ├── completa_la_frase_scrivere-e-salvare.json
-        │   ├── quiz_scrivere-e-salvare.json
-        │   ├── speedquiz_scrivere-e-salvare.json
-        │   └── vero_o_falso_scrivere-e-salvare.json
-        ├── modulo3/
-        │   ├── abbina_formattare-il-testo.json
-        │   ├── completa_la_frase_formattare-il-testo.json
-        │   ├── quiz_formattare-il-testo.json
-        │   ├── speedquiz_formattare-il-testo.json
-        │   └── vero_o_falso_formattare-il-testo.json
-        ├── modulo4/
-        │   ├── abbina_elementi-grafici.json
-        │   ├── completa_la_frase_elementi-grafici.json
-        │   ├── quiz_elementi-grafici.json
-        │   ├── speedquiz_elementi-grafici.json
-        │   └── vero_o_falso_elementi-grafici.json
-        └── modulo5/
-            ├── abbina_strutturare-il-documento.json
-            ├── completa_la_frase_strutturare-il-documento.json
-            ├── quiz_strutturare-il-documento.json
-            ├── speedquiz_strutturare-il-documento.json
-            └── vero_o_falso_strutturare-il-documento.json
+└── Minigiochi/
+    └── ECDL/
+        └── Word_Processing/
+            ├── modulo1/
+            │   ├── abbina_word-e-ambiente.json
+            │   ├── completa_la_frase_word-e-ambiente.json
+            │   ├── quiz_word-e-ambiente.json
+            │   ├── speedquiz_word-e-ambiente.json
+            │   └── vero_o_falso_word-e-ambiente.json
+            ├── modulo2/
+            │   ├── abbina_scrivere-e-salvare.json
+            │   ├── completa_la_frase_scrivere-e-salvare.json
+            │   ├── quiz_scrivere-e-salvare.json
+            │   ├── speedquiz_scrivere-e-salvare.json
+            │   └── vero_o_falso_scrivere-e-salvare.json
+            ├── modulo3/
+            │   ├── abbina_formattare-il-testo.json
+            │   ├── completa_la_frase_formattare-il-testo.json
+            │   ├── quiz_formattare-il-testo.json
+            │   ├── speedquiz_formattare-il-testo.json
+            │   └── vero_o_falso_formattare-il-testo.json
+            ├── modulo4/
+            │   ├── abbina_elementi-grafici.json
+            │   ├── completa_la_frase_elementi-grafici.json
+            │   ├── quiz_elementi-grafici.json
+            │   ├── speedquiz_elementi-grafici.json
+            │   └── vero_o_falso_elementi-grafici.json
+            └── modulo5/
+                ├── abbina_strutturare-il-documento.json
+                ├── completa_la_frase_strutturare-il-documento.json
+                ├── quiz_strutturare-il-documento.json
+                ├── speedquiz_strutturare-il-documento.json
+                └── vero_o_falso_strutturare-il-documento.json
 ```
 
 - **Modulo 1 — Word e ambiente**
   - Chiave: `word-e-ambiente`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Word_Processing/modulo1/`
+  - Path base: `data/Minigiochi/ECDL/Word_Processing/modulo1/`
   - File: `abbina_word-e-ambiente.json`, `completa_la_frase_word-e-ambiente.json`, `quiz_word-e-ambiente.json`, `speedquiz_word-e-ambiente.json`, `vero_o_falso_word-e-ambiente.json`
 
 - **Modulo 2 — Scrivere e salvare**
   - Chiave: `scrivere-e-salvare`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Word_Processing/modulo2/`
+  - Path base: `data/Minigiochi/ECDL/Word_Processing/modulo2/`
   - File: `abbina_scrivere-e-salvare.json`, `completa_la_frase_scrivere-e-salvare.json`, `quiz_scrivere-e-salvare.json`, `speedquiz_scrivere-e-salvare.json`, `vero_o_falso_scrivere-e-salvare.json`
 
 - **Modulo 3 — Formattare il testo**
   - Chiave: `formattare-il-testo`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Word_Processing/modulo3/`
+  - Path base: `data/Minigiochi/ECDL/Word_Processing/modulo3/`
   - File: `abbina_formattare-il-testo.json`, `completa_la_frase_formattare-il-testo.json`, `quiz_formattare-il-testo.json`, `speedquiz_formattare-il-testo.json`, `vero_o_falso_formattare-il-testo.json`
 
 - **Modulo 4 — Elementi grafici**
   - Chiave: `elementi-grafici`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Word_Processing/modulo4/`
+  - Path base: `data/Minigiochi/ECDL/Word_Processing/modulo4/`
   - File: `abbina_elementi-grafici.json`, `completa_la_frase_elementi-grafici.json`, `quiz_elementi-grafici.json`, `speedquiz_elementi-grafici.json`, `vero_o_falso_elementi-grafici.json`
 
 - **Modulo 5 — Strutturare il documento**
   - Chiave: `strutturare-il-documento`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Word_Processing/modulo5/`
+  - Path base: `data/Minigiochi/ECDL/Word_Processing/modulo5/`
   - File: `abbina_strutturare-il-documento.json`, `completa_la_frase_strutturare-il-documento.json`, `quiz_strutturare-il-documento.json`, `speedquiz_strutturare-il-documento.json`, `vero_o_falso_strutturare-il-documento.json`
 
 #### Spreadsheet
@@ -251,81 +250,82 @@ data/
 
 ```text
 data/
-└── ECDL/
-    └── Spreadsheet/
-        ├── modulo1/
-        │   ├── abbina_excel-e-l-ambiente-di-lavoro.json
-        │   ├── completa_la_frase_excel-e-l-ambiente-di-lavoro.json
-        │   ├── quiz_excel-e-l-ambiente-di-lavoro.json
-        │   ├── speedquiz_excel-e-l-ambiente-di-lavoro.json
-        │   └── vero_o_falso_excel-e-l-ambiente-di-lavoro.json
-        ├── modulo2/
-        │   ├── abbina_inserire-e-gestire-i-dati.json
-        │   ├── completa_la_frase_inserire-e-gestire-i-dati.json
-        │   ├── quiz_inserire-e-gestire-i-dati.json
-        │   ├── speedquiz_inserire-e-gestire-i-dati.json
-        │   └── vero_o_falso_inserire-e-gestire-i-dati.json
-        ├── modulo3/
-        │   ├── abbina_formattare-il-foglio.json
-        │   ├── completa_la_frase_formattare-il-foglio.json
-        │   ├── quiz_formattare-il-foglio.json
-        │   ├── speedquiz_formattare-il-foglio.json
-        │   └── vero_o_falso_formattare-il-foglio.json
-        ├── modulo4/
-        │   ├── abbina_formule-e-calcoli.json
-        │   ├── completa_la_frase_formule-e-calcoli.json
-        │   ├── quiz_formule-e-calcoli.json
-        │   ├── speedquiz_formule-e-calcoli.json
-        │   └── vero_o_falso_formule-e-calcoli.json
-        ├── modulo5/
-        │   ├── abbina_organizzare-e-visualizzare-i-dati.json
-        │   ├── completa_la_frase_organizzare-e-visualizzare-i-dati.json
-        │   ├── quiz_organizzare-e-visualizzare-i-dati.json
-        │   ├── speedquiz_organizzare-e-visualizzare-i-dati.json
-        │   └──  vero_o_falso_organizzare-e-visualizzare-i-dati.json    
-        └── modulo6/
-            ├── abbina_preparare-e-stampare-il-foglio.json
-            ├── completa_la_frase_preparare-e-stampare-il-foglio.json
-            ├── quiz_preparare-e-stampare-il-foglio.json
-            ├── speedquiz_preparare-e-stampare-il-foglio.json
-            └── vero_o_falso_preparare-e-stampare-il-foglio.json
-            
+└── Minigiochi/
+    └── ECDL/
+        └── Spreadsheet/
+            ├── modulo1/
+            │   ├── abbina_excel-e-l-ambiente-di-lavoro.json
+            │   ├── completa_la_frase_excel-e-l-ambiente-di-lavoro.json
+            │   ├── quiz_excel-e-l-ambiente-di-lavoro.json
+            │   ├── speedquiz_excel-e-l-ambiente-di-lavoro.json
+            │   └── vero_o_falso_excel-e-l-ambiente-di-lavoro.json
+            ├── modulo2/
+            │   ├── abbina_inserire-e-gestire-i-dati.json
+            │   ├── completa_la_frase_inserire-e-gestire-i-dati.json
+            │   ├── quiz_inserire-e-gestire-i-dati.json
+            │   ├── speedquiz_inserire-e-gestire-i-dati.json
+            │   └── vero_o_falso_inserire-e-gestire-i-dati.json
+            ├── modulo3/
+            │   ├── abbina_formattare-il-foglio.json
+            │   ├── completa_la_frase_formattare-il-foglio.json
+            │   ├── quiz_formattare-il-foglio.json
+            │   ├── speedquiz_formattare-il-foglio.json
+            │   └── vero_o_falso_formattare-il-foglio.json
+            ├── modulo4/
+            │   ├── abbina_formule-e-calcoli.json
+            │   ├── completa_la_frase_formule-e-calcoli.json
+            │   ├── quiz_formule-e-calcoli.json
+            │   ├── speedquiz_formule-e-calcoli.json
+            │   └── vero_o_falso_formule-e-calcoli.json
+            ├── modulo5/
+            │   ├── abbina_organizzare-e-visualizzare-i-dati.json
+            │   ├── completa_la_frase_organizzare-e-visualizzare-i-dati.json
+            │   ├── quiz_organizzare-e-visualizzare-i-dati.json
+            │   ├── speedquiz_organizzare-e-visualizzare-i-dati.json
+            │   └──  vero_o_falso_organizzare-e-visualizzare-i-dati.json    
+            └── modulo6/
+                ├── abbina_preparare-e-stampare-il-foglio.json
+                ├── completa_la_frase_preparare-e-stampare-il-foglio.json
+                ├── quiz_preparare-e-stampare-il-foglio.json
+                ├── speedquiz_preparare-e-stampare-il-foglio.json
+                └── vero_o_falso_preparare-e-stampare-il-foglio.json
+                
 ```
 
 - **Modulo 1 — Excel e l'ambiente di lavoro**
   - Chiave: `excel-e-l-ambiente-di-lavoro`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Spreadsheet/modulo1/`
+  - Path base: `data/Minigiochi/ECDL/Spreadsheet/modulo1/`
   - File: `abbina_excel-e-l-ambiente-di-lavoro.json`, `completa_la_frase_excel-e-l-ambiente-di-lavoro.json`, `quiz_excel-e-l-ambiente-di-lavoro.json`, `speedquiz_excel-e-l-ambiente-di-lavoro.json`, `vero_o_falso_excel-e-l-ambiente-di-lavoro.json`
 
 - **Modulo 2 — Inserire e gestire i dati**
   - Chiave: `inserire-e-gestire-i-dati`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Spreadsheet/modulo2/`
+  - Path base: `data/Minigiochi/ECDL/Spreadsheet/modulo2/`
   - File: `abbina_inserire-e-gestire-i-dati.json`, `completa_la_frase_inserire-e-gestire-i-dati.json`, `quiz_inserire-e-gestire-i-dati.json`, `speedquiz_inserire-e-gestire-i-dati.json`, `vero_o_falso_inserire-e-gestire-i-dati.json`
 
 - **Modulo 3 — Formattare il foglio**
   - Chiave: `formattare-il-foglio`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Spreadsheet/modulo3/`
+  - Path base: `data/Minigiochi/ECDL/Spreadsheet/modulo3/`
   - File: `abbina_formattare-il-foglio.json`, `completa_la_frase_formattare-il-foglio.json`, `quiz_formattare-il-foglio.json`, `speedquiz_formattare-il-foglio.json`, `vero_o_falso_formattare-il-foglio.json`
 
 - **Modulo 4 — Formule e calcoli**
   - Chiave: `formule-e-calcoli`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Spreadsheet/modulo4/`
+  - Path base: `data/Minigiochi/ECDL/Spreadsheet/modulo4/`
   - File: `abbina_formule-e-calcoli.json`, `completa_la_frase_formule-e-calcoli.json`, `quiz_formule-e-calcoli.json`, `speedquiz_formule-e-calcoli.json`, `vero_o_falso_formule-e-calcoli.json`
 
 - **Modulo 5 — Organizzare e visualizzare i dati**
   - Chiave: `organizzare-e-visualizzare-i-dati`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Spreadsheet/modulo5/`
+  - Path base: `data/Minigiochi/ECDL/Spreadsheet/modulo5/`
   - File: `abbina_organizzare-e-visualizzare-i-dati.json`, `completa_la_frase_organizzare-e-visualizzare-i-dati.json`, `quiz_organizzare-e-visualizzare-i-dati.json`, `speedquiz_organizzare-e-visualizzare-i-dati.json`, `vero_o_falso_organizzare-e-visualizzare-i-dati.json`
 
 - **Modulo 6 — Preparare e stampare il foglio**
   - Chiave: `preparare-e-stampare-il-foglio`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Spreadsheet/modulo6/`
+  - Path base: `data/Minigiochi/ECDL/Spreadsheet/modulo6/`
   - File: `abbina_preparare-e-stampare-il-foglio.json`, `completa_la_frase_preparare-e-stampare-il-foglio.json`, `quiz_preparare-e-stampare-il-foglio.json`, `speedquiz_preparare-e-stampare-il-foglio.json`, `vero_o_falso_preparare-e-stampare-il-foglio.json`
 #### Presentation
 
@@ -333,199 +333,297 @@ data/
 
 ```text
 data/
-└── ECDL/
-    └── Presentation/
-        ├── modulo1/
-        │   ├── abbina_creare-una-presentazione.json
-        │   ├── completa_la_frase_creare-una-presentazione.json
-        │   ├── quiz_creare-una-presentazione.json
-        │   ├── speedquiz_creare-una-presentazione.json
-        │   └── vero_o_falso_creare-una-presentazione.json
-        ├── modulo2/
-        │   ├── abbina_oggetti-grafici.json
-        │   ├── completa_la_frase_oggetti-grafici.json
-        │   ├── quiz_oggetti-grafici.json
-        │   ├── speedquiz_oggetti-grafici.json
-        │   └── vero_o_falso_oggetti-grafici.json
-        └── modulo3/
-            ├── abbina_preparare-e-presentare.json
-            ├── completa_la_frase_preparare-e-presentare.json
-            ├── quiz_preparare-e-presentare.json
-            ├── speedquiz_preparare-e-presentare.json
-            └── vero_o_falso_preparare-e-presentare.json
+└── Minigiochi/
+    └── ECDL/
+        └── Presentation/
+            ├── modulo1/
+            │   ├── abbina_creare-una-presentazione.json
+            │   ├── completa_la_frase_creare-una-presentazione.json
+            │   ├── quiz_creare-una-presentazione.json
+            │   ├── speedquiz_creare-una-presentazione.json
+            │   └── vero_o_falso_creare-una-presentazione.json
+            ├── modulo2/
+            │   ├── abbina_oggetti-grafici.json
+            │   ├── completa_la_frase_oggetti-grafici.json
+            │   ├── quiz_oggetti-grafici.json
+            │   ├── speedquiz_oggetti-grafici.json
+            │   └── vero_o_falso_oggetti-grafici.json
+            └── modulo3/
+                ├── abbina_preparare-e-presentare.json
+                ├── completa_la_frase_preparare-e-presentare.json
+                ├── quiz_preparare-e-presentare.json
+                ├── speedquiz_preparare-e-presentare.json
+                └── vero_o_falso_preparare-e-presentare.json
 ```
 
 - **Modulo 1 — Creare una presentazione**
   - Chiave: `creare-una-presentazione`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Presentation/modulo1/`
+  - Path base: `data/Minigiochi/ECDL/Presentation/modulo1/`
   - File: `abbina_creare-una-presentazione.json`, `completa_la_frase_creare-una-presentazione.json`, `quiz_creare-una-presentazione.json`, `speedquiz_creare-una-presentazione.json`, `vero_o_falso_creare-una-presentazione.json`
 
 - **Modulo 2 — Oggetti grafici**
   - Chiave: `oggetti-grafici`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Presentation/modulo2/`
+  - Path base: `data/Minigiochi/ECDL/Presentation/modulo2/`
   - File: `abbina_oggetti-grafici.json`, `completa_la_frase_oggetti-grafici.json`, `quiz_oggetti-grafici.json`, `speedquiz_oggetti-grafici.json`, `vero_o_falso_oggetti-grafici.json`
 
 - **Modulo 3 — Preparare e presentare**
   - Chiave: `preparare-e-presentare`
   - Stato: `attivo`
-  - Path base: `data/ECDL/Presentation/modulo3/`
+  - Path base: `data/Minigiochi/ECDL/Presentation/modulo3/`
   - File: `abbina_preparare-e-presentare.json`, `completa_la_frase_preparare-e-presentare.json`, `quiz_preparare-e-presentare.json`, `speedquiz_preparare-e-presentare.json`, `vero_o_falso_preparare-e-presentare.json`
 
 #### IT Security
 
-> Sotto-area attiva. JSON da realizzare.
+> JSON realizzati e caricati.
 
 ```text
 data/
-└── ECDL/
-    └── IT_Security/
-        ├── modulo1/
-        │   ├── abbina_fondamenti-della-sicurezza.json
-        │   ├── completa_la_frase_fondamenti-della-sicurezza.json
-        │   ├── quiz_fondamenti-della-sicurezza.json
-        │   ├── speedquiz_fondamenti-della-sicurezza.json
-        │   └── vero_o_falso_fondamenti-della-sicurezza.json
-        ├── modulo2/
-        │   ├── abbina_il-malware.json
-        │   ├── completa_la_frase_il-malware.json
-        │   ├── quiz_il-malware.json
-        │   ├── speedquiz_il-malware.json
-        │   └── vero_o_falso_il-malware.json
-        ├── modulo3/
-        │   ├── abbina_reti-e-accessi.json
-        │   ├── completa_la_frase_reti-e-accessi.json
-        │   ├── quiz_reti-e-accessi.json
-        │   ├── speedquiz_reti-e-accessi.json
-        │   └── vero_o_falso_reti-e-accessi.json
-        ├── modulo4/
-        │   ├── abbina_navigazione-e-comunicazione-sicura.json
-        │   ├── completa_la_frase_navigazione-e-comunicazione-sicura.json
-        │   ├── quiz_navigazione-e-comunicazione-sicura.json
-        │   ├── speedquiz_navigazione-e-comunicazione-sicura.json
-        │   └── vero_o_falso_navigazione-e-comunicazione-sicura.json
-        └── modulo5/
-            ├── abbina_protezione-e-conservazione-dei-dati.json
-            ├── completa_la_frase_protezione-e-conservazione-dei-dati.json
-            ├── quiz_protezione-e-conservazione-dei-dati.json
-            ├── speedquiz_protezione-e-conservazione-dei-dati.json
-            └── vero_o_falso_protezione-e-conservazione-dei-dati.json
+└── Minigiochi/
+    └── ECDL/
+        └── IT_Security/
+            ├── modulo1/
+            │   ├── abbina_fondamenti-della-sicurezza.json
+            │   ├── completa_la_frase_fondamenti-della-sicurezza.json
+            │   ├── quiz_fondamenti-della-sicurezza.json
+            │   ├── speedquiz_fondamenti-della-sicurezza.json
+            │   └── vero_o_falso_fondamenti-della-sicurezza.json
+            ├── modulo2/
+            │   ├── abbina_il-malware.json
+            │   ├── completa_la_frase_il-malware.json
+            │   ├── quiz_il-malware.json
+            │   ├── speedquiz_il-malware.json
+            │   └── vero_o_falso_il-malware.json
+            ├── modulo3/
+            │   ├── abbina_reti-e-accessi.json
+            │   ├── completa_la_frase_reti-e-accessi.json
+            │   ├── quiz_reti-e-accessi.json
+            │   ├── speedquiz_reti-e-accessi.json
+            │   └── vero_o_falso_reti-e-accessi.json
+            ├── modulo4/
+            │   ├── abbina_navigazione-e-comunicazione-sicura.json
+            │   ├── completa_la_frase_navigazione-e-comunicazione-sicura.json
+            │   ├── quiz_navigazione-e-comunicazione-sicura.json
+            │   ├── speedquiz_navigazione-e-comunicazione-sicura.json
+            │   └── vero_o_falso_navigazione-e-comunicazione-sicura.json
+            └── modulo5/
+                ├── abbina_protezione-e-conservazione-dei-dati.json
+                ├── completa_la_frase_protezione-e-conservazione-dei-dati.json
+                ├── quiz_protezione-e-conservazione-dei-dati.json
+                ├── speedquiz_protezione-e-conservazione-dei-dati.json
+                └── vero_o_falso_protezione-e-conservazione-dei-dati.json
 ```
 
 - **Modulo 1 — Fondamenti della sicurezza**
   - Chiave: `fondamenti-della-sicurezza`
   - Stato: `attivo`
-  - Path base: `data/ECDL/IT_Security/modulo1/`
-  - File (da realizzare): `abbina_fondamenti-della-sicurezza.json`, `completa_la_frase_fondamenti-della-sicurezza.json`, `quiz_fondamenti-della-sicurezza.json`, `speedquiz_fondamenti-della-sicurezza.json`, `vero_o_falso_fondamenti-della-sicurezza.json`
+  - Path base: `data/Minigiochi/ECDL/IT_Security/modulo1/`
+  - File: `abbina_fondamenti-della-sicurezza.json`, `completa_la_frase_fondamenti-della-sicurezza.json`, `quiz_fondamenti-della-sicurezza.json`, `speedquiz_fondamenti-della-sicurezza.json`, `vero_o_falso_fondamenti-della-sicurezza.json`
 
 - **Modulo 2 — Il malware**
   - Chiave: `il-malware`
   - Stato: `attivo`
-  - Path base: `data/ECDL/IT_Security/modulo2/`
-  - File (da realizzare): `abbina_il-malware.json`, `completa_la_frase_il-malware.json`, `quiz_il-malware.json`, `speedquiz_il-malware.json`, `vero_o_falso_il-malware.json`
+  - Path base: `data/Minigiochi/ECDL/IT_Security/modulo2/`
+  - File: `abbina_il-malware.json`, `completa_la_frase_il-malware.json`, `quiz_il-malware.json`, `speedquiz_il-malware.json`, `vero_o_falso_il-malware.json`
 
 - **Modulo 3 — Reti e accessi**
   - Chiave: `reti-e-accessi`
   - Stato: `attivo`
-  - Path base: `data/ECDL/IT_Security/modulo3/`
-  - File (da realizzare): `abbina_reti-e-accessi.json`, `completa_la_frase_reti-e-accessi.json`, `quiz_reti-e-accessi.json`, `speedquiz_reti-e-accessi.json`, `vero_o_falso_reti-e-accessi.json`
+  - Path base: `data/Minigiochi/ECDL/IT_Security/modulo3/`
+  - File: `abbina_reti-e-accessi.json`, `completa_la_frase_reti-e-accessi.json`, `quiz_reti-e-accessi.json`, `speedquiz_reti-e-accessi.json`, `vero_o_falso_reti-e-accessi.json`
 
 - **Modulo 4 — Navigazione e comunicazione sicura**
   - Chiave: `navigazione-e-comunicazione-sicura`
   - Stato: `attivo`
-  - Path base: `data/ECDL/IT_Security/modulo4/`
-  - File (da realizzare): `abbina_navigazione-e-comunicazione-sicura.json`, `completa_la_frase_navigazione-e-comunicazione-sicura.json`, `quiz_navigazione-e-comunicazione-sicura.json`, `speedquiz_navigazione-e-comunicazione-sicura.json`, `vero_o_falso_navigazione-e-comunicazione-sicura.json`
+  - Path base: `data/Minigiochi/ECDL/IT_Security/modulo4/`
+  - File: `abbina_navigazione-e-comunicazione-sicura.json`, `completa_la_frase_navigazione-e-comunicazione-sicura.json`, `quiz_navigazione-e-comunicazione-sicura.json`, `speedquiz_navigazione-e-comunicazione-sicura.json`, `vero_o_falso_navigazione-e-comunicazione-sicura.json`
 
 - **Modulo 5 — Protezione e conservazione dei dati**
   - Chiave: `protezione-e-conservazione-dei-dati`
   - Stato: `attivo`
-  - Path base: `data/ECDL/IT_Security/modulo5/`
-  - File (da realizzare): `abbina_protezione-e-conservazione-dei-dati.json`, `completa_la_frase_protezione-e-conservazione-dei-dati.json`, `quiz_protezione-e-conservazione-dei-dati.json`, `speedquiz_protezione-e-conservazione-dei-dati.json`, `vero_o_falso_protezione-e-conservazione-dei-dati.json`
+  - Path base: `data/Minigiochi/ECDL/IT_Security/modulo5/`
+  - File: `abbina_protezione-e-conservazione-dei-dati.json`, `completa_la_frase_protezione-e-conservazione-dei-dati.json`, `quiz_protezione-e-conservazione-dei-dati.json`, `speedquiz_protezione-e-conservazione-dei-dati.json`, `vero_o_falso_protezione-e-conservazione-dei-dati.json`
 
-> Le sotto-aree ECDL attualmente definite sono sei: **Computer Essentials**, **Online Essentials**, **Word Processing**, **Spreadsheet**, **Presentation** e **IT Security**. Le prime cinque hanno JSON realizzati e caricati; **IT Security** è attiva ma i relativi JSON sono ancora da realizzare.
+#### Online Collaboration
+
+> Sotto-area attiva. JSON da realizzare.
+
+```text
+data/
+└── Minigiochi/
+    └── ECDL/
+        └── Online_Collaboration/
+            ├── modulo1/
+            │   ├── abbina_collaborazione-online.json
+            │   ├── completa_la_frase_collaborazione-online.json
+            │   ├── quiz_collaborazione-online.json
+            │   ├── speedquiz_collaborazione-online.json
+            │   └── vero_o_falso_collaborazione-online.json
+            ├── modulo2/
+            │   ├── abbina_cloud-e-preparazione.json
+            │   ├── completa_la_frase_cloud-e-preparazione.json
+            │   ├── quiz_cloud-e-preparazione.json
+            │   ├── speedquiz_cloud-e-preparazione.json
+            │   └── vero_o_falso_cloud-e-preparazione.json
+            ├── modulo3/
+            │   ├── abbina_storage-e-produttivita-online.json
+            │   ├── completa_la_frase_storage-e-produttivita-online.json
+            │   ├── quiz_storage-e-produttivita-online.json
+            │   ├── speedquiz_storage-e-produttivita-online.json
+            │   └── vero_o_falso_storage-e-produttivita-online.json
+            ├── modulo4/
+            │   ├── abbina_calendari-e-riunioni-online.json
+            │   ├── completa_la_frase_calendari-e-riunioni-online.json
+            │   ├── quiz_calendari-e-riunioni-online.json
+            │   ├── speedquiz_calendari-e-riunioni-online.json
+            │   └── vero_o_falso_calendari-e-riunioni-online.json
+            ├── modulo5/
+            │   ├── abbina_social-e-apprendimento-online.json
+            │   ├── completa_la_frase_social-e-apprendimento-online.json
+            │   ├── quiz_social-e-apprendimento-online.json
+            │   ├── speedquiz_social-e-apprendimento-online.json
+            │   └── vero_o_falso_social-e-apprendimento-online.json
+            ├── modulo6/
+            │   ├── abbina_dispositivi-mobili-e-connessioni.json
+            │   ├── completa_la_frase_dispositivi-mobili-e-connessioni.json
+            │   ├── quiz_dispositivi-mobili-e-connessioni.json
+            │   ├── speedquiz_dispositivi-mobili-e-connessioni.json
+            │   └── vero_o_falso_dispositivi-mobili-e-connessioni.json
+            └── modulo7/
+                ├── abbina_app-e-sincronizzazione.json
+                ├── completa_la_frase_app-e-sincronizzazione.json
+                ├── quiz_app-e-sincronizzazione.json
+                ├── speedquiz_app-e-sincronizzazione.json
+                └── vero_o_falso_app-e-sincronizzazione.json
+```
+
+- **Modulo 1 — Collaborazione online**
+  - Chiave: `collaborazione-online`
+  - Stato: `attivo`
+  - Path base: `data/Minigiochi/ECDL/Online_Collaboration/modulo1/`
+  - File (da realizzare): `abbina_collaborazione-online.json`, `completa_la_frase_collaborazione-online.json`, `quiz_collaborazione-online.json`, `speedquiz_collaborazione-online.json`, `vero_o_falso_collaborazione-online.json`
+
+- **Modulo 2 — Cloud e preparazione**
+  - Chiave: `cloud-e-preparazione`
+  - Stato: `attivo`
+  - Path base: `data/Minigiochi/ECDL/Online_Collaboration/modulo2/`
+  - File (da realizzare): `abbina_cloud-e-preparazione.json`, `completa_la_frase_cloud-e-preparazione.json`, `quiz_cloud-e-preparazione.json`, `speedquiz_cloud-e-preparazione.json`, `vero_o_falso_cloud-e-preparazione.json`
+
+- **Modulo 3 — Storage e produttività online**
+  - Chiave: `storage-e-produttivita-online`
+  - Stato: `attivo`
+  - Path base: `data/Minigiochi/ECDL/Online_Collaboration/modulo3/`
+  - File (da realizzare): `abbina_storage-e-produttivita-online.json`, `completa_la_frase_storage-e-produttivita-online.json`, `quiz_storage-e-produttivita-online.json`, `speedquiz_storage-e-produttivita-online.json`, `vero_o_falso_storage-e-produttivita-online.json`
+
+- **Modulo 4 — Calendari e riunioni online**
+  - Chiave: `calendari-e-riunioni-online`
+  - Stato: `attivo`
+  - Path base: `data/Minigiochi/ECDL/Online_Collaboration/modulo4/`
+  - File (da realizzare): `abbina_calendari-e-riunioni-online.json`, `completa_la_frase_calendari-e-riunioni-online.json`, `quiz_calendari-e-riunioni-online.json`, `speedquiz_calendari-e-riunioni-online.json`, `vero_o_falso_calendari-e-riunioni-online.json`
+
+- **Modulo 5 — Social e apprendimento online**
+  - Chiave: `social-e-apprendimento-online`
+  - Stato: `attivo`
+  - Path base: `data/Minigiochi/ECDL/Online_Collaboration/modulo5/`
+  - File (da realizzare): `abbina_social-e-apprendimento-online.json`, `completa_la_frase_social-e-apprendimento-online.json`, `quiz_social-e-apprendimento-online.json`, `speedquiz_social-e-apprendimento-online.json`, `vero_o_falso_social-e-apprendimento-online.json`
+
+- **Modulo 6 — Dispositivi mobili e connessioni**
+  - Chiave: `dispositivi-mobili-e-connessioni`
+  - Stato: `attivo`
+  - Path base: `data/Minigiochi/ECDL/Online_Collaboration/modulo6/`
+  - File (da realizzare): `abbina_dispositivi-mobili-e-connessioni.json`, `completa_la_frase_dispositivi-mobili-e-connessioni.json`, `quiz_dispositivi-mobili-e-connessioni.json`, `speedquiz_dispositivi-mobili-e-connessioni.json`, `vero_o_falso_dispositivi-mobili-e-connessioni.json`
+
+- **Modulo 7 — App e sincronizzazione**
+  - Chiave: `app-e-sincronizzazione`
+  - Stato: `attivo`
+  - Path base: `data/Minigiochi/ECDL/Online_Collaboration/modulo7/`
+  - File (da realizzare): `abbina_app-e-sincronizzazione.json`, `completa_la_frase_app-e-sincronizzazione.json`, `quiz_app-e-sincronizzazione.json`, `speedquiz_app-e-sincronizzazione.json`, `vero_o_falso_app-e-sincronizzazione.json`
+
+> Le sotto-aree ECDL attualmente definite sono sette: **Computer Essentials**, **Online Essentials**, **Word Processing**, **Spreadsheet**, **Presentation**, **IT Security** e **Online Collaboration**. Le prime sei hanno JSON realizzati e caricati; **Online Collaboration** è attiva ma i relativi JSON sono ancora da realizzare.
 
 ---
 
 ### 🛡️ Area Cyberbullismo e Sicurezza Online
 
 Stato: attiva
-> JSON realizzati e caricati.
+Nota: JSON realizzati e caricati.
 
 ```text
 data/
-└── Cyberbullismo_e_Sicurezza_Online/
-    ├── modulo1/
-    │   ├── abbina_identita-reputazione-digitale.json
-    │   ├── completa_la_frase_identita-reputazione-digitale.json
-    │   ├── quiz_identita-reputazione-digitale.json
-    │   ├── speedquiz_identita-reputazione-digitale.json
-    │   └── vero_o_falso_identita-reputazione-digitale.json
-    ├── modulo2/
-    │   ├── abbina_cyberbullismo.json
-    │   ├── completa_la_frase_cyberbullismo.json
-    │   ├── quiz_cyberbullismo.json
-    │   ├── speedquiz_cyberbullismo.json
-    │   └── vero_o_falso_cyberbullismo.json
-    ├── modulo3/
-    │   ├── abbina_hate-speech.json
-    │   ├── completa_la_frase_hate-speech.json
-    │   ├── quiz_hate-speech.json
-    │   ├── speedquiz_hate-speech.json
-    │   └── vero_o_falso_hate-speech.json
-    ├── modulo4/
-    │   ├── abbina_sexting-revenge-porn.json
-    │   ├── completa_la_frase_sexting-revenge-porn.json
-    │   ├── quiz_sexting-revenge-porn.json
-    │   ├── speedquiz_sexting-revenge-porn.json
-    │   └── vero_o_falso_sexting-revenge-porn.json
-    ├── modulo5/
-    │   ├── abbina_grooming.json
-    │   ├── completa_la_frase_grooming.json
-    │   ├── quiz_grooming.json
-    │   ├── speedquiz_grooming.json
-    │   └── vero_o_falso_grooming.json
-    └── modulo6/
-        ├── abbina_cittadinanza-digitale.json
-        ├── completa_la_frase_cittadinanza-digitale.json
-        ├── quiz_cittadinanza-digitale.json
-        ├── speedquiz_cittadinanza-digitale.json
-        └── vero_o_falso_cittadinanza-digitale.json
+└── Minigiochi/
+    └── Cyberbullismo_e_Sicurezza_Online/
+        ├── modulo1/
+        │   ├── abbina_identita-reputazione-digitale.json
+        │   ├── completa_la_frase_identita-reputazione-digitale.json
+        │   ├── quiz_identita-reputazione-digitale.json
+        │   ├── speedquiz_identita-reputazione-digitale.json
+        │   └── vero_o_falso_identita-reputazione-digitale.json
+        ├── modulo2/
+        │   ├── abbina_cyberbullismo.json
+        │   ├── completa_la_frase_cyberbullismo.json
+        │   ├── quiz_cyberbullismo.json
+        │   ├── speedquiz_cyberbullismo.json
+        │   └── vero_o_falso_cyberbullismo.json
+        ├── modulo3/
+        │   ├── abbina_hate-speech.json
+        │   ├── completa_la_frase_hate-speech.json
+        │   ├── quiz_hate-speech.json
+        │   ├── speedquiz_hate-speech.json
+        │   └── vero_o_falso_hate-speech.json
+        ├── modulo4/
+        │   ├── abbina_sexting-revenge-porn.json
+        │   ├── completa_la_frase_sexting-revenge-porn.json
+        │   ├── quiz_sexting-revenge-porn.json
+        │   ├── speedquiz_sexting-revenge-porn.json
+        │   └── vero_o_falso_sexting-revenge-porn.json
+        ├── modulo5/
+        │   ├── abbina_grooming.json
+        │   ├── completa_la_frase_grooming.json
+        │   ├── quiz_grooming.json
+        │   ├── speedquiz_grooming.json
+        │   └── vero_o_falso_grooming.json
+        └── modulo6/
+            ├── abbina_cittadinanza-digitale.json
+            ├── completa_la_frase_cittadinanza-digitale.json
+            ├── quiz_cittadinanza-digitale.json
+            ├── speedquiz_cittadinanza-digitale.json
+            └── vero_o_falso_cittadinanza-digitale.json
 ```
 - **Modulo 1 — Identità e reputazione digitale**
   - Chiave: `identita-reputazione-digitale`
   - Stato: `attivo`
-  - Path base: `data/Cyberbullismo_e_Sicurezza_Online/modulo1/`
+  - Path base: `data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/`
   - File: `abbina_identita-reputazione-digitale.json, completa_la_frase_identita-reputazione-digitale.json, quiz_identita-reputazione-digitale.json, speedquiz_identita-reputazione-digitale.json, vero_o_falso_identita-reputazione-digitale.json`
   
 - **Modulo 2 — Cyberbullismo**
   - Chiave: `cyberbullismo`
   - Stato: `attivo`
-  - Path base: `data/Cyberbullismo_e_Sicurezza_Online/modulo2/`
+  - Path base: `data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/`
   - File: `abbina_cyberbullismo.json, completa_la_frase_cyberbullismo.json, quiz_cyberbullismo.json, speedquiz_cyberbullismo.json, vero_o_falso_cyberbullismo.json`
   
 - **Modulo 3 — Hate Speech**
   - Chiave: `hate-speech`
   - Stato: `attivo`
-  - Path base: `data/Cyberbullismo_e_Sicurezza_Online/modulo3/`
+  - Path base: `data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/`
   - File: `abbina_hate-speech.json, completa_la_frase_hate-speech.json, quiz_hate-speech.json, speedquiz_hate-speech.json, vero_o_falso_hate-speech.json`
   
 - **Modulo 4 — Sexting e Revenge Porn**
   - Chiave: `sexting-revenge-porn`
   - Stato: `attivo`
-  - Path base: `data/Cyberbullismo_e_Sicurezza_Online/modulo4/`
+  - Path base: `data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/`
   - File: `abbina_sexting-revenge-porn.json, completa_la_frase_sexting-revenge-porn.json, quiz_sexting-revenge-porn.json, speedquiz_sexting-revenge-porn.json, vero_o_falso_sexting-revenge-porn.json`
   
 - **Modulo 5 — Grooming**
   - Chiave: `grooming`
   - Stato: `attivo`
-  - Path base: `data/Cyberbullismo_e_Sicurezza_Online/modulo5/`
+  - Path base: `data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/`
   - File: `abbina_grooming.json, completa_la_frase_grooming.json, quiz_grooming.json, speedquiz_grooming.json, vero_o_falso_grooming.json`
   
 - **Modulo 6 — Cittadinanza Digitale**
   - Chiave: `cittadinanza-digitale`
   - Stato: `attivo`
-  - Path base: `data/Cyberbullismo_e_Sicurezza_Online/modulo6/`
+  - Path base: `data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/`
   - File: `abbina_cittadinanza-digitale.json, completa_la_frase_cittadinanza-digitale.json, quiz_cittadinanza-digitale.json, speedquiz_cittadinanza-digitale.json, vero_o_falso_cittadinanza-digitale.json`
 
 ---
@@ -533,107 +631,108 @@ data/
 ### 👤 Area Cybersecurity — Non solo antivirus e password
 
 **Stato:** attiva
-> JSON realizzati e caricati.
+**Nota:** JSON realizzati e caricati.
 
 ```text
 data/
-└── Cybersecurity_Non_solo_antivirus_e_password/
-    ├── modulo1/
-    │   ├── abbina_fondamenti-cybersecurity.json
-    │   ├── completa_la_frase_fondamenti-cybersecurity.json
-    │   ├── quiz_fondamenti-cybersecurity.json
-    │   ├── speedquiz_fondamenti-cybersecurity.json
-    │   └── vero_o_falso_fondamenti-cybersecurity.json
-    ├── modulo2/
-    │   ├── abbina_sicurezza-account.json
-    │   ├── completa_la_frase_sicurezza-account.json
-    │   ├── quiz_sicurezza-account.json
-    │   ├── speedquiz_sicurezza-account.json
-    │   └── vero_o_falso_sicurezza-account.json
-    ├── modulo3/
-    │   ├── abbina_protezione-dati.json
-    │   ├── completa_la_frase_protezione-dati.json
-    │   ├── quiz_protezione-dati.json
-    │   ├── speedquiz_protezione-dati.json
-    │   └── vero_o_falso_protezione-dati.json
-    ├── modulo4/
-    │   ├── abbina_sicurezza-quotidiana.json
-    │   ├── completa_la_frase_sicurezza-quotidiana.json
-    │   ├── quiz_sicurezza-quotidiana.json
-    │   ├── speedquiz_sicurezza-quotidiana.json
-    │   └── vero_o_falso_sicurezza-quotidiana.json
-    ├── modulo5/
-    │   ├── abbina_sicurezza-pagamenti.json
-    │   ├── completa_la_frase_sicurezza-pagamenti.json
-    │   ├── quiz_sicurezza-pagamenti.json
-    │   ├── speedquiz_sicurezza-pagamenti.json
-    │   └── vero_o_falso_sicurezza-pagamenti.json
-    ├── modulo6/
-    │   ├── abbina_privacy-normative.json
-    │   ├── completa_la_frase_privacy-normative.json
-    │   ├── quiz_privacy-normative.json
-    │   ├── speedquiz_privacy-normative.json
-    │   └── vero_o_falso_privacy-normative.json
-    ├── modulo7/
-    │   ├── abbina_sicurezza-online-social-network.json
-    │   ├── completa_la_frase_sicurezza-online-social-network.json
-    │   ├── quiz_sicurezza-online-social-network.json
-    │   ├── speedquiz_sicurezza-online-social-network.json
-    │   └── vero_o_falso_sicurezza-online-social-network.json
-    └── modulo8/
-        ├── abbina_nuove-minacce-digitali.json
-        ├── completa_la_frase_nuove-minacce-digitali.json
-        ├── quiz_nuove-minacce-digitali.json
-        ├── speedquiz_nuove-minacce-digitali.json
-        └── vero_o_falso_nuove-minacce-digitali.json
+└── Minigiochi/
+    └── Cybersecurity_Non_solo_antivirus_e_password/
+        ├── modulo1/
+        │   ├── abbina_fondamenti-cybersecurity.json
+        │   ├── completa_la_frase_fondamenti-cybersecurity.json
+        │   ├── quiz_fondamenti-cybersecurity.json
+        │   ├── speedquiz_fondamenti-cybersecurity.json
+        │   └── vero_o_falso_fondamenti-cybersecurity.json
+        ├── modulo2/
+        │   ├── abbina_sicurezza-account.json
+        │   ├── completa_la_frase_sicurezza-account.json
+        │   ├── quiz_sicurezza-account.json
+        │   ├── speedquiz_sicurezza-account.json
+        │   └── vero_o_falso_sicurezza-account.json
+        ├── modulo3/
+        │   ├── abbina_protezione-dati.json
+        │   ├── completa_la_frase_protezione-dati.json
+        │   ├── quiz_protezione-dati.json
+        │   ├── speedquiz_protezione-dati.json
+        │   └── vero_o_falso_protezione-dati.json
+        ├── modulo4/
+        │   ├── abbina_sicurezza-quotidiana.json
+        │   ├── completa_la_frase_sicurezza-quotidiana.json
+        │   ├── quiz_sicurezza-quotidiana.json
+        │   ├── speedquiz_sicurezza-quotidiana.json
+        │   └── vero_o_falso_sicurezza-quotidiana.json
+        ├── modulo5/
+        │   ├── abbina_sicurezza-pagamenti.json
+        │   ├── completa_la_frase_sicurezza-pagamenti.json
+        │   ├── quiz_sicurezza-pagamenti.json
+        │   ├── speedquiz_sicurezza-pagamenti.json
+        │   └── vero_o_falso_sicurezza-pagamenti.json
+        ├── modulo6/
+        │   ├── abbina_privacy-normative.json
+        │   ├── completa_la_frase_privacy-normative.json
+        │   ├── quiz_privacy-normative.json
+        │   ├── speedquiz_privacy-normative.json
+        │   └── vero_o_falso_privacy-normative.json
+        ├── modulo7/
+        │   ├── abbina_sicurezza-online-social-network.json
+        │   ├── completa_la_frase_sicurezza-online-social-network.json
+        │   ├── quiz_sicurezza-online-social-network.json
+        │   ├── speedquiz_sicurezza-online-social-network.json
+        │   └── vero_o_falso_sicurezza-online-social-network.json
+        └── modulo8/
+            ├── abbina_nuove-minacce-digitali.json
+            ├── completa_la_frase_nuove-minacce-digitali.json
+            ├── quiz_nuove-minacce-digitali.json
+            ├── speedquiz_nuove-minacce-digitali.json
+            └── vero_o_falso_nuove-minacce-digitali.json
 ```
 
 - **Fondamenti di Cybersecurity**
   - Chiave: `fondamenti-cybersecurity`
   - Stato: `attivo`
-  - Path base: `data/Cybersecurity_Non_solo_antivirus_e_password/modulo1/`
+  - Path base: `data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/`
   - File: `abbina_fondamenti-cybersecurity.json`, `completa_la_frase_fondamenti-cybersecurity.json`, `quiz_fondamenti-cybersecurity.json`, `speedquiz_fondamenti-cybersecurity.json`, `vero_o_falso_fondamenti-cybersecurity.json`
 
 - **Sicurezza degli Account**
   - Chiave: `sicurezza-account`
   - Stato: `attivo`
-  - Path base: `data/Cybersecurity_Non_solo_antivirus_e_password/modulo2/`
+  - Path base: `data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/`
   - File: `abbina_sicurezza-account.json`, `completa_la_frase_sicurezza-account.json`, `quiz_sicurezza-account.json`, `speedquiz_sicurezza-account.json`, `vero_o_falso_sicurezza-account.json`
 
 - **Protezione dei Dati**
   - Chiave: `protezione-dati`
   - Stato: `attivo`
-  - Path base: `data/Cybersecurity_Non_solo_antivirus_e_password/modulo3/`
+  - Path base: `data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/`
   - File: `abbina_protezione-dati.json`, `completa_la_frase_protezione-dati.json`, `quiz_protezione-dati.json`, `speedquiz_protezione-dati.json`, `vero_o_falso_protezione-dati.json`
 
 - **Sicurezza Quotidiana**
   - Chiave: `sicurezza-quotidiana`
   - Stato: `attivo`
-  - Path base: `data/Cybersecurity_Non_solo_antivirus_e_password/modulo4/`
+  - Path base: `data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/`
   - File: `abbina_sicurezza-quotidiana.json`, `completa_la_frase_sicurezza-quotidiana.json`, `quiz_sicurezza-quotidiana.json`, `speedquiz_sicurezza-quotidiana.json`, `vero_o_falso_sicurezza-quotidiana.json`
 
 - **Sicurezza dei Pagamenti**
   - Chiave: `sicurezza-pagamenti`
   - Stato: `attivo`
-  - Path base: `data/Cybersecurity_Non_solo_antivirus_e_password/modulo5/`
+  - Path base: `data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/`
   - File: `abbina_sicurezza-pagamenti.json`, `completa_la_frase_sicurezza-pagamenti.json`, `quiz_sicurezza-pagamenti.json`, `speedquiz_sicurezza-pagamenti.json`, `vero_o_falso_sicurezza-pagamenti.json`
 
 - **Privacy e Normative**
   - Chiave: `privacy-normative`
   - Stato: `attivo`
-  - Path base: `data/Cybersecurity_Non_solo_antivirus_e_password/modulo6/`
+  - Path base: `data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/`
   - File: `abbina_privacy-normative.json`, `completa_la_frase_privacy-normative.json`, `quiz_privacy-normative.json`, `speedquiz_privacy-normative.json`, `vero_o_falso_privacy-normative.json`
 
 - **Sicurezza Online e Social Network**
   - Chiave: `sicurezza-online-social-network`
   - Stato: `attivo`
-  - Path base: `data/Cybersecurity_Non_solo_antivirus_e_password/modulo7/`
+  - Path base: `data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/`
   - File: `abbina_sicurezza-online-social-network.json`, `completa_la_frase_sicurezza-online-social-network.json`, `quiz_sicurezza-online-social-network.json`, `speedquiz_sicurezza-online-social-network.json`, `vero_o_falso_sicurezza-online-social-network.json`
 
 - **Nuove Minacce Digitali**
   - Chiave: `nuove-minacce-digitali`
   - Stato: `attivo`
-  - Path base: `data/Cybersecurity_Non_solo_antivirus_e_password/modulo8/`
+  - Path base: `data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/`
   - File: `abbina_nuove-minacce-digitali.json`, `completa_la_frase_nuove-minacce-digitali.json`, `quiz_nuove-minacce-digitali.json`, `speedquiz_nuove-minacce-digitali.json`, `vero_o_falso_nuove-minacce-digitali.json`
 
 ---
@@ -641,107 +740,108 @@ data/
 ### 🌐 Area Reti e Internet
 
 **Stato:** attiva
-> JSON realizzati e caricati.
+**Nota:** contenuti presenti, JSON realizzati e caricati.
 
 ```text
 data/
-└── Reti_e_Internet/
-    ├── modulo1/
-    │   ├── abbina_fondamenta-reti.json
-    │   ├── completa_la_frase_fondamenta-reti.json
-    │   ├── quiz_fondamenta-reti.json
-    │   ├── speedquiz_fondamenta-reti.json
-    │   └── vero_o_falso_fondamenta-reti.json
-    ├── modulo2/
-    │   ├── abbina_tcp-ip.json
-    │   ├── completa_la_frase_tcp-ip.json
-    │   ├── quiz_tcp-ip.json
-    │   ├── speedquiz_tcp-ip.json
-    │   └── vero_o_falso_tcp-ip.json
-    ├── modulo3/
-    │   ├── abbina_dns.json
-    │   ├── completa_la_frase_dns.json
-    │   ├── quiz_dns.json
-    │   ├── speedquiz_dns.json
-    │   └── vero_o_falso_dns.json
-    ├── modulo4/
-    │   ├── abbina_router-switch-dispositivi.json
-    │   ├── completa_la_frase_router-switch-dispositivi.json
-    │   ├── quiz_router-switch-dispositivi.json
-    │   ├── speedquiz_router-switch-dispositivi.json
-    │   └── vero_o_falso_router-switch-dispositivi.json
-    ├── modulo5/
-    │   ├── abbina_wifi-reti-wireless.json
-    │   ├── completa_la_frase_wifi-reti-wireless.json
-    │   ├── quiz_wifi-reti-wireless.json
-    │   ├── speedquiz_wifi-reti-wireless.json
-    │   └── vero_o_falso_wifi-reti-wireless.json
-    ├── modulo6/
-    │   ├── abbina_cloud-networking.json
-    │   ├── completa_la_frase_cloud-networking.json
-    │   ├── quiz_cloud-networking.json
-    │   ├── speedquiz_cloud-networking.json
-    │   └── vero_o_falso_cloud-networking.json
-    ├── modulo7/
-    │   ├── abbina_vpn.json
-    │   ├── completa_la_frase_vpn.json
-    │   ├── quiz_vpn.json
-    │   ├── speedquiz_vpn.json
-    │   └── vero_o_falso_vpn.json
-    └── modulo8/
-        ├── abbina_troubleshooting-reti.json
-        ├── completa_la_frase_troubleshooting-reti.json
-        ├── quiz_troubleshooting-reti.json
-        ├── speedquiz_troubleshooting-reti.json
-        └── vero_o_falso_troubleshooting-reti.json
+└── Minigiochi/
+    └── Reti_e_Internet/
+        ├── modulo1/
+        │   ├── abbina_fondamenta-reti.json
+        │   ├── completa_la_frase_fondamenta-reti.json
+        │   ├── quiz_fondamenta-reti.json
+        │   ├── speedquiz_fondamenta-reti.json
+        │   └── vero_o_falso_fondamenta-reti.json
+        ├── modulo2/
+        │   ├── abbina_tcp-ip.json
+        │   ├── completa_la_frase_tcp-ip.json
+        │   ├── quiz_tcp-ip.json
+        │   ├── speedquiz_tcp-ip.json
+        │   └── vero_o_falso_tcp-ip.json
+        ├── modulo3/
+        │   ├── abbina_dns.json
+        │   ├── completa_la_frase_dns.json
+        │   ├── quiz_dns.json
+        │   ├── speedquiz_dns.json
+        │   └── vero_o_falso_dns.json
+        ├── modulo4/
+        │   ├── abbina_router-switch-dispositivi.json
+        │   ├── completa_la_frase_router-switch-dispositivi.json
+        │   ├── quiz_router-switch-dispositivi.json
+        │   ├── speedquiz_router-switch-dispositivi.json
+        │   └── vero_o_falso_router-switch-dispositivi.json
+        ├── modulo5/
+        │   ├── abbina_wifi-reti-wireless.json
+        │   ├── completa_la_frase_wifi-reti-wireless.json
+        │   ├── quiz_wifi-reti-wireless.json
+        │   ├── speedquiz_wifi-reti-wireless.json
+        │   └── vero_o_falso_wifi-reti-wireless.json
+        ├── modulo6/
+        │   ├── abbina_cloud-networking.json
+        │   ├── completa_la_frase_cloud-networking.json
+        │   ├── quiz_cloud-networking.json
+        │   ├── speedquiz_cloud-networking.json
+        │   └── vero_o_falso_cloud-networking.json
+        ├── modulo7/
+        │   ├── abbina_vpn.json
+        │   ├── completa_la_frase_vpn.json
+        │   ├── quiz_vpn.json
+        │   ├── speedquiz_vpn.json
+        │   └── vero_o_falso_vpn.json
+        └── modulo8/
+            ├── abbina_troubleshooting-reti.json
+            ├── completa_la_frase_troubleshooting-reti.json
+            ├── quiz_troubleshooting-reti.json
+            ├── speedquiz_troubleshooting-reti.json
+            └── vero_o_falso_troubleshooting-reti.json
 ```
 
 - **Le fondamenta delle reti**
   - Chiave: `fondamenta-reti`
   - Stato: `attivo`
-  - Path base: `data/Reti_e_Internet/modulo1/`
+  - Path base: `data/Minigiochi/Reti_e_Internet/modulo1/`
   - File: `abbina_fondamenta-reti.json`, `completa_la_frase_fondamenta-reti.json`, `quiz_fondamenta-reti.json`, `speedquiz_fondamenta-reti.json`, `vero_o_falso_fondamenta-reti.json`
 
 - **Il protocollo TCP/IP**
   - Chiave: `tcp-ip`
   - Stato: `attivo`
-  - Path base: `data/Reti_e_Internet/modulo2/`
+  - Path base: `data/Minigiochi/Reti_e_Internet/modulo2/`
   - File: `abbina_tcp-ip.json`, `completa_la_frase_tcp-ip.json`, `quiz_tcp-ip.json`, `speedquiz_tcp-ip.json`, `vero_o_falso_tcp-ip.json`
 
 - **DNS: la rubrica di Internet**
   - Chiave: `dns`
   - Stato: `attivo`
-  - Path base: `data/Reti_e_Internet/modulo3/`
+  - Path base: `data/Minigiochi/Reti_e_Internet/modulo3/`
   - File: `abbina_dns.json`, `completa_la_frase_dns.json`, `quiz_dns.json`, `speedquiz_dns.json`, `vero_o_falso_dns.json`
 
 - **Router, Switch e dispositivi di rete**
   - Chiave: `router-switch-dispositivi`
   - Stato: `attivo`
-  - Path base: `data/Reti_e_Internet/modulo4/`
+  - Path base: `data/Minigiochi/Reti_e_Internet/modulo4/`
   - File: `abbina_router-switch-dispositivi.json`, `completa_la_frase_router-switch-dispositivi.json`, `quiz_router-switch-dispositivi.json`, `speedquiz_router-switch-dispositivi.json`, `vero_o_falso_router-switch-dispositivi.json`
 
 - **Wi-Fi e reti wireless**
   - Chiave: `wifi-reti-wireless`
   - Stato: `attivo`
-  - Path base: `data/Reti_e_Internet/modulo5/`
+  - Path base: `data/Minigiochi/Reti_e_Internet/modulo5/`
   - File: `abbina_wifi-reti-wireless.json`, `completa_la_frase_wifi-reti-wireless.json`, `quiz_wifi-reti-wireless.json`, `speedquiz_wifi-reti-wireless.json`, `vero_o_falso_wifi-reti-wireless.json`
 
 - **Cloud Networking**
   - Chiave: `cloud-networking`
   - Stato: `attivo`
-  - Path base: `data/Reti_e_Internet/modulo6/`
+  - Path base: `data/Minigiochi/Reti_e_Internet/modulo6/`
   - File: `abbina_cloud-networking.json`, `completa_la_frase_cloud-networking.json`, `quiz_cloud-networking.json`, `speedquiz_cloud-networking.json`, `vero_o_falso_cloud-networking.json`
 
 - **VPN e comunicazioni sicure**
   - Chiave: `vpn`
   - Stato: `attivo`
-  - Path base: `data/Reti_e_Internet/modulo7/`
+  - Path base: `data/Minigiochi/Reti_e_Internet/modulo7/`
   - File: `abbina_vpn.json`, `completa_la_frase_vpn.json`, `quiz_vpn.json`, `speedquiz_vpn.json`, `vero_o_falso_vpn.json`
 
 - **Troubleshooting delle reti**
   - Chiave: `troubleshooting-reti`
   - Stato: `attivo`
-  - Path base: `data/Reti_e_Internet/modulo8/`
+  - Path base: `data/Minigiochi/Reti_e_Internet/modulo8/`
   - File: `abbina_troubleshooting-reti.json`, `completa_la_frase_troubleshooting-reti.json`, `quiz_troubleshooting-reti.json`, `speedquiz_troubleshooting-reti.json`, `vero_o_falso_troubleshooting-reti.json`
 
 ---
@@ -749,23 +849,24 @@ data/
 ### 🦠 Area Malware e Minacce Informatiche
 
 **Stato:** attiva
-> JSON realizzati e caricati.
+**Nota:** contenuti presenti, JSON realizzati e caricati.
 
 ```text
 data/
-└── Malware_e_Minacce_Informatiche/
-    └── modulo1/
-        ├── abbina_malware-e-minacce-informatiche.json
-        ├── completa_la_frase_malware-e-minacce-informatiche.json
-        ├── quiz_malware-e-minacce-informatiche.json
-        ├── speedquiz_malware-e-minacce-informatiche.json
-        └── vero_o_falso_malware-e-minacce-informatiche.json
+└── Minigiochi/
+    └── Malware_e_Minacce_Informatiche/
+        └── modulo1/
+            ├── abbina_malware-e-minacce-informatiche.json
+            ├── completa_la_frase_malware-e-minacce-informatiche.json
+            ├── quiz_malware-e-minacce-informatiche.json
+            ├── speedquiz_malware-e-minacce-informatiche.json
+            └── vero_o_falso_malware-e-minacce-informatiche.json
 ```
 
 - **Malware e Minacce Informatiche**
   - Chiave: `malware-e-minacce-informatiche`
   - Stato: `attivo`
-  - Path base: `data/Malware_e_Minacce_Informatiche/modulo1/`
+  - Path base: `data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/`
   - File: `abbina_malware-e-minacce-informatiche.json`, `completa_la_frase_malware-e-minacce-informatiche.json`, `quiz_malware-e-minacce-informatiche.json`, `speedquiz_malware-e-minacce-informatiche.json`, `vero_o_falso_malware-e-minacce-informatiche.json`
 
 ---
@@ -773,174 +874,175 @@ data/
 ### 🤖 Area Intelligenza Artificiale
 
 **Stato:** attiva
-> JSON realizzati e caricati.
+**Nota:** contenuti presenti, JSON realizzati e caricati.
 
 ```text
 data/
-└── Intelligenza_Artificiale/
-    ├── modulo1/
-    │   ├── abbina_cos-e-l-ai.json
-    │   ├── completa_la_frase_cos-e-l-ai.json
-    │   ├── quiz_cos-e-l-ai.json
-    │   ├── speedquiz_cos-e-l-ai.json
-    │   └── vero_o_falso_cos-e-l-ai.json
-    ├── modulo2/
-    │   ├── abbina_come-funziona-l-ai.json
-    │   ├── completa_la_frase_come-funziona-l-ai.json
-    │   ├── quiz_come-funziona-l-ai.json
-    │   ├── speedquiz_come-funziona-l-ai.json
-    │   └── vero_o_falso_come-funziona-l-ai.json
-    ├── modulo3/
-    │   ├── abbina_come-funzionano-gli-llm.json
-    │   ├── completa_la_frase_come-funzionano-gli-llm.json
-    │   ├── quiz_come-funzionano-gli-llm.json
-    │   ├── speedquiz_come-funzionano-gli-llm.json
-    │   └── vero_o_falso_come-funzionano-gli-llm.json
-    ├── modulo4/
-    │   ├── abbina_ai-generativa.json
-    │   ├── completa_la_frase_ai-generativa.json
-    │   ├── quiz_ai-generativa.json
-    │   ├── speedquiz_ai-generativa.json
-    │   └── vero_o_falso_ai-generativa.json
-    ├── modulo5/
-    │   ├── abbina_prompt-engineering.json
-    │   ├── completa_la_frase_prompt-engineering.json
-    │   ├── quiz_prompt-engineering.json
-    │   ├── speedquiz_prompt-engineering.json
-    │   └── vero_o_falso_prompt-engineering.json
-    ├── modulo6/
-    │   ├── abbina_agenti-automazione.json
-    │   ├── completa_la_frase_agenti-automazione.json
-    │   ├── quiz_agenti-automazione.json
-    │   ├── speedquiz_agenti-automazione.json
-    │   └── vero_o_falso_agenti-automazione.json
-    ├── modulo7/
-    │   ├── abbina_deepfake-contenuti-sintetici.json
-    │   ├── completa_la_frase_deepfake-contenuti-sintetici.json
-    │   ├── quiz_deepfake-contenuti-sintetici.json
-    │   ├── speedquiz_deepfake-contenuti-sintetici.json
-    │   └── vero_o_falso_deepfake-contenuti-sintetici.json
-    ├── modulo8/
-    │   ├── abbina_provenienza-dei-contenuti.json
-    │   ├── completa_la_frase_provenienza-dei-contenuti.json
-    │   ├── quiz_provenienza-dei-contenuti.json
-    │   ├── speedquiz_provenienza-dei-contenuti.json
-    │   └── vero_o_falso_provenienza-dei-contenuti.json
-    ├── modulo9/
-    │   ├── abbina_verificare-l-ai.json
-    │   ├── completa_la_frase_verificare-l-ai.json
-    │   ├── quiz_verificare-l-ai.json
-    │   ├── speedquiz_verificare-l-ai.json
-    │   └── vero_o_falso_verificare-l-ai.json
-    ├── modulo10/
-    │   ├── abbina_etica-dell-ai.json
-    │   ├── completa_la_frase_etica-dell-ai.json
-    │   ├── quiz_etica-dell-ai.json
-    │   ├── speedquiz_etica-dell-ai.json
-    │   └── vero_o_falso_etica-dell-ai.json
-    ├── modulo11/
-    │   ├── abbina_bias-algoritmici.json
-    │   ├── completa_la_frase_bias-algoritmici.json
-    │   ├── quiz_bias-algoritmici.json
-    │   ├── speedquiz_bias-algoritmici.json
-    │   └── vero_o_falso_bias-algoritmici.json
-    ├── modulo12/
-    │   ├── abbina_ai-act.json
-    │   ├── completa_la_frase_ai-act.json
-    │   ├── quiz_ai-act.json
-    │   ├── speedquiz_ai-act.json
-    │   └── vero_o_falso_ai-act.json
-    └── modulo13/
-        ├── abbina_futuro-dell-ai.json
-        ├── completa_la_frase_futuro-dell-ai.json
-        ├── quiz_futuro-dell-ai.json
-        ├── speedquiz_futuro-dell-ai.json
-        └── vero_o_falso_futuro-dell-ai.json
+└── Minigiochi/
+    └── Intelligenza_Artificiale/
+        ├── modulo1/
+        │   ├── abbina_cos-e-l-ai.json
+        │   ├── completa_la_frase_cos-e-l-ai.json
+        │   ├── quiz_cos-e-l-ai.json
+        │   ├── speedquiz_cos-e-l-ai.json
+        │   └── vero_o_falso_cos-e-l-ai.json
+        ├── modulo2/
+        │   ├── abbina_come-funziona-l-ai.json
+        │   ├── completa_la_frase_come-funziona-l-ai.json
+        │   ├── quiz_come-funziona-l-ai.json
+        │   ├── speedquiz_come-funziona-l-ai.json
+        │   └── vero_o_falso_come-funziona-l-ai.json
+        ├── modulo3/
+        │   ├── abbina_come-funzionano-gli-llm.json
+        │   ├── completa_la_frase_come-funzionano-gli-llm.json
+        │   ├── quiz_come-funzionano-gli-llm.json
+        │   ├── speedquiz_come-funzionano-gli-llm.json
+        │   └── vero_o_falso_come-funzionano-gli-llm.json
+        ├── modulo4/
+        │   ├── abbina_ai-generativa.json
+        │   ├── completa_la_frase_ai-generativa.json
+        │   ├── quiz_ai-generativa.json
+        │   ├── speedquiz_ai-generativa.json
+        │   └── vero_o_falso_ai-generativa.json
+        ├── modulo5/
+        │   ├── abbina_prompt-engineering.json
+        │   ├── completa_la_frase_prompt-engineering.json
+        │   ├── quiz_prompt-engineering.json
+        │   ├── speedquiz_prompt-engineering.json
+        │   └── vero_o_falso_prompt-engineering.json
+        ├── modulo6/
+        │   ├── abbina_agenti-automazione.json
+        │   ├── completa_la_frase_agenti-automazione.json
+        │   ├── quiz_agenti-automazione.json
+        │   ├── speedquiz_agenti-automazione.json
+        │   └── vero_o_falso_agenti-automazione.json
+        ├── modulo7/
+        │   ├── abbina_deepfake-contenuti-sintetici.json
+        │   ├── completa_la_frase_deepfake-contenuti-sintetici.json
+        │   ├── quiz_deepfake-contenuti-sintetici.json
+        │   ├── speedquiz_deepfake-contenuti-sintetici.json
+        │   └── vero_o_falso_deepfake-contenuti-sintetici.json
+        ├── modulo8/
+        │   ├── abbina_provenienza-dei-contenuti.json
+        │   ├── completa_la_frase_provenienza-dei-contenuti.json
+        │   ├── quiz_provenienza-dei-contenuti.json
+        │   ├── speedquiz_provenienza-dei-contenuti.json
+        │   └── vero_o_falso_provenienza-dei-contenuti.json
+        ├── modulo9/
+        │   ├── abbina_verificare-l-ai.json
+        │   ├── completa_la_frase_verificare-l-ai.json
+        │   ├── quiz_verificare-l-ai.json
+        │   ├── speedquiz_verificare-l-ai.json
+        │   └── vero_o_falso_verificare-l-ai.json
+        ├── modulo10/
+        │   ├── abbina_etica-dell-ai.json
+        │   ├── completa_la_frase_etica-dell-ai.json
+        │   ├── quiz_etica-dell-ai.json
+        │   ├── speedquiz_etica-dell-ai.json
+        │   └── vero_o_falso_etica-dell-ai.json
+        ├── modulo11/
+        │   ├── abbina_bias-algoritmici.json
+        │   ├── completa_la_frase_bias-algoritmici.json
+        │   ├── quiz_bias-algoritmici.json
+        │   ├── speedquiz_bias-algoritmici.json
+        │   └── vero_o_falso_bias-algoritmici.json
+        ├── modulo12/
+        │   ├── abbina_ai-act.json
+        │   ├── completa_la_frase_ai-act.json
+        │   ├── quiz_ai-act.json
+        │   ├── speedquiz_ai-act.json
+        │   └── vero_o_falso_ai-act.json
+        └── modulo13/
+            ├── abbina_futuro-dell-ai.json
+            ├── completa_la_frase_futuro-dell-ai.json
+            ├── quiz_futuro-dell-ai.json
+            ├── speedquiz_futuro-dell-ai.json
+            └── vero_o_falso_futuro-dell-ai.json
 ```
 
 - **Cos'è l'AI**
   - Chiave: `cos-e-l-ai`
   - Stato: `attivo`
-  - Path base: `data/Intelligenza_Artificiale/modulo1/`
+  - Path base: `data/Minigiochi/Intelligenza_Artificiale/modulo1/`
   - File: `abbina_cos-e-l-ai.json`, `completa_la_frase_cos-e-l-ai.json`, `quiz_cos-e-l-ai.json`, `speedquiz_cos-e-l-ai.json`, `vero_o_falso_cos-e-l-ai.json`
 
 - **Come funziona l'AI**
   - Chiave: `come-funziona-l-ai`
   - Stato: `attivo`
-  - Path base: `data/Intelligenza_Artificiale/modulo2/`
+  - Path base: `data/Minigiochi/Intelligenza_Artificiale/modulo2/`
   - File: `abbina_come-funziona-l-ai.json`, `completa_la_frase_come-funziona-l-ai.json`, `quiz_come-funziona-l-ai.json`, `speedquiz_come-funziona-l-ai.json`, `vero_o_falso_come-funziona-l-ai.json`
 
 - **Come funzionano gli LLM**
   - Chiave: `come-funzionano-gli-llm`
   - Stato: `attivo`
-  - Path base: `data/Intelligenza_Artificiale/modulo3/`
+  - Path base: `data/Minigiochi/Intelligenza_Artificiale/modulo3/`
   - File: `abbina_come-funzionano-gli-llm.json`, `completa_la_frase_come-funzionano-gli-llm.json`, `quiz_come-funzionano-gli-llm.json`, `speedquiz_come-funzionano-gli-llm.json`, `vero_o_falso_come-funzionano-gli-llm.json`
 
 - **AI Generativa**
   - Chiave: `ai-generativa`
   - Stato: `attivo`
-  - Path base: `data/Intelligenza_Artificiale/modulo4/`
+  - Path base: `data/Minigiochi/Intelligenza_Artificiale/modulo4/`
   - File: `abbina_ai-generativa.json`, `completa_la_frase_ai-generativa.json`, `quiz_ai-generativa.json`, `speedquiz_ai-generativa.json`, `vero_o_falso_ai-generativa.json`
 
 - **Prompt Engineering**
   - Chiave: `prompt-engineering`
   - Stato: `attivo`
-  - Path base: `data/Intelligenza_Artificiale/modulo5/`
+  - Path base: `data/Minigiochi/Intelligenza_Artificiale/modulo5/`
   - File: `abbina_prompt-engineering.json`, `completa_la_frase_prompt-engineering.json`, `quiz_prompt-engineering.json`, `speedquiz_prompt-engineering.json`, `vero_o_falso_prompt-engineering.json`
 
 - **Agenti e Automazione**
   - Chiave: `agenti-automazione`
   - Stato: `attivo`
-  - Path base: `data/Intelligenza_Artificiale/modulo6/`
+  - Path base: `data/Minigiochi/Intelligenza_Artificiale/modulo6/`
   - File: `abbina_agenti-automazione.json`, `completa_la_frase_agenti-automazione.json`, `quiz_agenti-automazione.json`, `speedquiz_agenti-automazione.json`, `vero_o_falso_agenti-automazione.json`
 
 - **Deepfake e Contenuti Sintetici**
   - Chiave: `deepfake-contenuti-sintetici`
   - Stato: `attivo`
-  - Path base: `data/Intelligenza_Artificiale/modulo7/`
+  - Path base: `data/Minigiochi/Intelligenza_Artificiale/modulo7/`
   - File: `abbina_deepfake-contenuti-sintetici.json`, `completa_la_frase_deepfake-contenuti-sintetici.json`, `quiz_deepfake-contenuti-sintetici.json`, `speedquiz_deepfake-contenuti-sintetici.json`, `vero_o_falso_deepfake-contenuti-sintetici.json`
 
 - **Provenienza dei Contenuti**
   - Chiave: `provenienza-dei-contenuti`
   - Stato: `attivo`
-  - Path base: `data/Intelligenza_Artificiale/modulo8/`
+  - Path base: `data/Minigiochi/Intelligenza_Artificiale/modulo8/`
   - File: `abbina_provenienza-dei-contenuti.json`, `completa_la_frase_provenienza-dei-contenuti.json`, `quiz_provenienza-dei-contenuti.json`, `speedquiz_provenienza-dei-contenuti.json`, `vero_o_falso_provenienza-dei-contenuti.json`
 
 - **Verificare l'AI**
   - Chiave: `verificare-l-ai`
   - Stato: `attivo`
-  - Path base: `data/Intelligenza_Artificiale/modulo9/`
+  - Path base: `data/Minigiochi/Intelligenza_Artificiale/modulo9/`
   - File: `abbina_verificare-l-ai.json`, `completa_la_frase_verificare-l-ai.json`, `quiz_verificare-l-ai.json`, `speedquiz_verificare-l-ai.json`, `vero_o_falso_verificare-l-ai.json`
 
 - **Etica dell'AI**
   - Chiave: `etica-dell-ai`
   - Stato: `attivo`
-  - Path base: `data/Intelligenza_Artificiale/modulo10/`
+  - Path base: `data/Minigiochi/Intelligenza_Artificiale/modulo10/`
   - File: `abbina_etica-dell-ai.json`, `completa_la_frase_etica-dell-ai.json`, `quiz_etica-dell-ai.json`, `speedquiz_etica-dell-ai.json`, `vero_o_falso_etica-dell-ai.json`
 
 - **Bias Algoritmici**
   - Chiave: `bias-algoritmici`
   - Stato: `attivo`
-  - Path base: `data/Intelligenza_Artificiale/modulo11/`
+  - Path base: `data/Minigiochi/Intelligenza_Artificiale/modulo11/`
   - File: `abbina_bias-algoritmici.json`, `completa_la_frase_bias-algoritmici.json`, `quiz_bias-algoritmici.json`, `speedquiz_bias-algoritmici.json`, `vero_o_falso_bias-algoritmici.json`
 
 - **AI Act**
   - Chiave: `ai-act`
   - Stato: `attivo`
-  - Path base: `data/Intelligenza_Artificiale/modulo12/`
+  - Path base: `data/Minigiochi/Intelligenza_Artificiale/modulo12/`
   - File: `abbina_ai-act.json`, `completa_la_frase_ai-act.json`, `quiz_ai-act.json`, `speedquiz_ai-act.json`, `vero_o_falso_ai-act.json`
 
 - **Il Futuro dell'AI**
   - Chiave: `futuro-dell-ai`
   - Stato: `attivo`
-  - Path base: `data/Intelligenza_Artificiale/modulo13/`
+  - Path base: `data/Minigiochi/Intelligenza_Artificiale/modulo13/`
   - File: `abbina_futuro-dell-ai.json`, `completa_la_frase_futuro-dell-ai.json`, `quiz_futuro-dell-ai.json`, `speedquiz_futuro-dell-ai.json`, `vero_o_falso_futuro-dell-ai.json`
 
 ---
 
 ## 4. Riepilogo
 
-> **Aggiornamento:** tutti i JSON delle sotto-aree ECDL storiche e delle altre 5 Aree sono stati realizzati e caricati. La nuova sotto-area ECDL **IT Security** è attiva ma i relativi JSON sono ancora da realizzare. Tutte le **6 aree** sono attive.
+> **Aggiornamento:** tutti i JSON delle sotto-aree ECDL storiche, della nuova sotto-area **IT Security** e delle altre 5 Aree sono stati realizzati e caricati. La sotto-area ECDL **Online Collaboration** è attiva ma i relativi JSON sono tutti ancora da realizzare. Tutte le **6 aree** sono attive.
 
 | Area / Sotto-area | Moduli | File attesi | Realizzati | Da realizzare | Stato area |
 |---|---|---|---|---|---|
@@ -949,17 +1051,18 @@ data/
 | ECDL — Word Processing | 5 | 25 | 25 | 0 | attivo |
 | ECDL — Spreadsheet | 6 | 30 | 30 | 0 | attivo |
 | ECDL — Presentation | 3 | 15 | 15 | 0 | attivo |
-| ECDL — IT Security | 5 | 25 | 0 | 25 | attivo (JSON da realizzare) |
+| ECDL — IT Security | 5 | 25 | 25 | 0 | attivo |
+| ECDL — Online Collaboration | 7 | 35 | 0 | 35 | attivo (JSON da realizzare) |
 | Cyberbullismo e Sicurezza Online | 6 | 30 | 30 | 0 | attiva |
 | Cybersecurity — Non solo antivirus e password | 8 | 40 | 40 | 0 | attiva |
 | Reti e Internet | 8 | 40 | 40 | 0 | attiva |
 | Malware e Minacce Informatiche | 1 | 5 | 5 | 0 | attiva |
 | Intelligenza Artificiale | 13 | 65 | 65 | 0 | attiva |
-| **Totale** | **63** | **315** | **290** | **25** | — |
+| **Totale** | **70** | **350** | **315** | **35** | — |
 
 - **Aree:** 6
-- **Sotto-aree ECDL:** 6 (Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation, IT Security)
-- **Moduli totali mappati:** 63
-- **File JSON realizzati:** 290
-- **File JSON da realizzare:** 25 (Area ECDL — IT Security)
-- **File JSON totali attesi:** 315
+- **Sotto-aree ECDL:** 7 (Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation, IT Security, Online Collaboration)
+- **Moduli totali mappati:** 70
+- **File JSON realizzati:** 315
+- **File JSON da realizzare:** 35 (Area ECDL — Online Collaboration)
+- **File JSON totali attesi:** 350

@@ -1,0 +1,140 @@
+{
+  "id": 1,
+  "module": "protezione-e-conservazione-dei-dati",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Sicurezza fisica dei dispositivi",
+        "definition": "Misure che impediscono un accesso fisico non autorizzato a computer, dispositivi mobili e supporti di memoria"
+      },
+      {
+        "term": "Cavo antifurto",
+        "definition": "Strumento per ancorare fisicamente i dispositivi più esposti, come quelli su un bancone accessibile ai clienti"
+      },
+      {
+        "term": "Inventario dei dispositivi",
+        "definition": "Elenco aggiornato che permette di accorgersi rapidamente se un dispositivo aziendale manca"
+      },
+      {
+        "term": "Violazione del Dipartimento per gli Affari dei Veterani (2006)",
+        "definition": "Furto di un portatile e un disco rigido non cifrati, contenenti i dati di circa 26,5 milioni di persone"
+      },
+      {
+        "term": "Blocco schermo (Windows + L)",
+        "definition": "Gesto rapido che rende inutile un tentativo di accesso fisico durante una breve assenza"
+      }
+    ],
+    [
+      {
+        "term": "Backup",
+        "definition": "Copia dei propri dati, conservata separatamente dall'originale, pensata per essere recuperata in caso di perdita, danneggiamento o attacco"
+      },
+      {
+        "term": "Regola del 3-2-1",
+        "definition": "Almeno tre copie dei dati, su due tipi diversi di supporto, con almeno una copia conservata in un luogo fisicamente separato"
+      },
+      {
+        "term": "Differenza tra sincronizzazione e backup",
+        "definition": "Un file sincronizzato propaga automaticamente le modifiche, incluse cancellazioni o cifrature da ransomware, a differenza di un vero backup indipendente"
+      },
+      {
+        "term": "Affidabilità nel tempo (di un backup)",
+        "definition": "Un backup può restare integro ma diventare difficile da utilizzare se il formato non è più supportato dai dispositivi moderni"
+      },
+      {
+        "term": "Incidente GitLab (2017)",
+        "definition": "Cancellazione accidentale di circa 300 gigabyte di dati di produzione, con recupero possibile solo grazie a un unico snapshot manuale risalente a sei ore prima"
+      }
+    ],
+    [
+      {
+        "term": "Eseguire un backup",
+        "definition": "Copiare i dati secondo la pianificazione stabilita, su un supporto locale, esterno o su un servizio cloud"
+      },
+      {
+        "term": "Ripristinare un backup",
+        "definition": "Recuperare i dati e riportarli a una condizione utilizzabile, sostituendo o integrando quanto è andato perso"
+      },
+      {
+        "term": "LockerGoga",
+        "definition": "Malware ransomware con cui fu condotto l'attacco contro Norsk Hydro nel marzo 2019"
+      },
+      {
+        "term": "Norsk Hydro (risposta all'attacco del 2019)",
+        "definition": "Azienda che rifiutò di pagare il riscatto e ripristinò i propri sistemi dai backup esistenti, in un processo durato diverse settimane"
+      },
+      {
+        "term": "Piano di ripristino",
+        "definition": "Parte di un buon piano di backup, da provare in anticipo e non improvvisare nel momento dell'emergenza"
+      }
+    ],
+    [
+      {
+        "term": "Sicurezza nel cloud",
+        "definition": "Protezione dei dati conservati su server remoti, gestiti da un fornitore esterno"
+      },
+      {
+        "term": "Responsabilità condivisa (principio)",
+        "definition": "La sicurezza dei dati nel cloud dipende sia dal fornitore del servizio sia da come l'utente configura e protegge il proprio accesso"
+      },
+      {
+        "term": "Violazione Uber (2016)",
+        "definition": "Sottrazione dei dati di circa 57 milioni tra utenti e autisti, dopo che alcuni aggressori trovarono credenziali cloud scritte nel codice su un repository GitHub"
+      },
+      {
+        "term": "Occultamento della violazione Uber",
+        "definition": "L'azienda pagò 100.000 dollari agli aggressori camuffandoli da ricompensa, tenendo nascosto l'episodio per oltre un anno"
+      },
+      {
+        "term": "Sanzione Uber (2017-2022)",
+        "definition": "148 milioni di dollari concordati con le autorità statunitensi, seguiti nel 2022 dalla condanna penale del responsabile della sicurezza dell'epoca"
+      }
+    ],
+    [
+      {
+        "term": "Cancellazione normale di un file",
+        "definition": "Non elimina immediatamente i dati, ma segna semplicemente lo spazio come riutilizzabile, lasciandoli recuperabili finché nulla li sovrascrive"
+      },
+      {
+        "term": "Eliminazione permanente",
+        "definition": "Richiede procedure specifiche, come la sovrascrittura ripetuta con dati casuali o la distruzione fisica del supporto"
+      },
+      {
+        "term": "Smagnetizzazione / frantumazione",
+        "definition": "Metodi di distruzione fisica di un supporto di memoria, usati quando un dispositivo non serve più in alcun modo"
+      },
+      {
+        "term": "Caso Affinity Health Plan (2010)",
+        "definition": "Dischi rigidi di fotocopiatrici restituite al fornitore di leasing senza essere cancellati, con documenti medici reali ancora recuperabili"
+      },
+      {
+        "term": "Sanzione Affinity Health Plan (2013)",
+        "definition": "Oltre 1,2 milioni di dollari, primo caso sanzionato di questo tipo relativo specificamente a fotocopiatrici"
+      }
+    ],
+    [
+      {
+        "term": "Sicurezza comportamentale",
+        "definition": "Insieme delle abitudini quotidiane che determinano quanto siano davvero efficaci gli strumenti tecnici di protezione"
+      },
+      {
+        "term": "Clifford Stoll",
+        "definition": "Astronomo che nel 1986, indagando su una discrepanza contabile di 75 centesimi di dollaro, scoprì una rete di spionaggio internazionale"
+      },
+      {
+        "term": "\"L'uovo del cuculo\"",
+        "definition": "Libro in cui Clifford Stoll raccontò la propria indagine, oggi considerato un testo fondativo della cultura della sicurezza informatica"
+      },
+      {
+        "term": "Lawrence Berkeley National Laboratory",
+        "definition": "Laboratorio californiano presso cui Clifford Stoll lavorava come amministratore di sistema nel 1986"
+      },
+      {
+        "term": "Principio del fattore umano",
+        "definition": "Sono spesso le azioni delle persone, più di qualunque debolezza tecnologica, a compromettere la sicurezza"
+      }
+    ]
+  ]
+}

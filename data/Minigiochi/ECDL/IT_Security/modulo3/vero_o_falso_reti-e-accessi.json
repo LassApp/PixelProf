@@ -1,0 +1,479 @@
+[
+  {
+    "id": 1,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ogni dispositivo collegato a una rete diventa un potenziale punto di accesso a tutto ciò che quella rete raggiunge.",
+    "answer": true,
+    "explanation": "È proprio il principio descritto dal modulo."
+  },
+  {
+    "id": 2,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un fornitore occasionale dovrebbe sempre avere accesso allo stesso segmento di rete dei dati sensibili.",
+    "answer": false,
+    "explanation": "Non dovrebbe: un fornitore occasionale non ha bisogno di raggiungere quel segmento."
+  },
+  {
+    "id": 3,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'amministratore di rete è responsabile di decidere chi può collegarsi e con quali permessi.",
+    "answer": true,
+    "explanation": "È proprio il ruolo descritto dal modulo."
+  },
+  {
+    "id": 4,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La violazione dei sistemi Target avvenne nel novembre-dicembre 2013.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo periodo."
+  },
+  {
+    "id": 5,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nella violazione Target furono sottratti circa 4 milioni di numeri di carte di pagamento.",
+    "answer": false,
+    "explanation": "Furono sottratti circa 40 milioni di numeri di carte di pagamento."
+  },
+  {
+    "id": 6,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il punto di ingresso dell'attacco a Target fu un attacco diretto ai sistemi centrali dell'azienda.",
+    "answer": false,
+    "explanation": "Il punto di ingresso furono le credenziali di rete di un piccolo fornitore esterno."
+  },
+  {
+    "id": 7,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Fazio Mechanical Services si occupava di manutenzione di impianti di riscaldamento e refrigerazione.",
+    "answer": true,
+    "explanation": "Il modulo lo indica esattamente."
+  },
+  {
+    "id": 8,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un firewall analizza il contenuto dei dati alla ricerca di codice dannoso.",
+    "answer": false,
+    "explanation": "Questo è compito dell'antivirus, non del firewall."
+  },
+  {
+    "id": 9,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un firewall configurato male può essere peggiore che se non esistesse affatto.",
+    "answer": true,
+    "explanation": "Può dare una falsa sensazione di sicurezza lasciando varchi aperti."
+  },
+  {
+    "id": 10,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Firewall e antivirus svolgono esattamente la stessa funzione.",
+    "answer": false,
+    "explanation": "Svolgono compiti complementari, non intercambiabili."
+  },
+  {
+    "id": 11,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'attacco a Capital One avvenne nel luglio 2019.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data."
+  },
+  {
+    "id": 12,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'attacco a Capital One sfruttò una configurazione corretta del firewall, senza alcun errore.",
+    "answer": false,
+    "explanation": "Sfruttò una configurazione errata di un Web Application Firewall."
+  },
+  {
+    "id": 13,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nell'attacco a Capital One furono sottratti dati di oltre 100 milioni di clienti.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo numero."
+  },
+  {
+    "id": 14,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'autrice dell'attacco a Capital One non fu mai identificata.",
+    "answer": false,
+    "explanation": "Fu identificata e arrestata nel giro di pochi giorni."
+  },
+  {
+    "id": 15,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La sicurezza di una rete wireless dipende soprattutto dal protocollo di cifratura utilizzato.",
+    "answer": true,
+    "explanation": "È proprio quanto affermato dal modulo."
+  },
+  {
+    "id": 16,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il WPA3 è il protocollo Wi-Fi più vecchio e meno sicuro tra quelli citati nel modulo.",
+    "answer": false,
+    "explanation": "È il più recente e il più sicuro tra quelli citati."
+  },
+  {
+    "id": 17,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il filtraggio MAC permette di autorizzare solo dispositivi specifici.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 18,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nascondere l'SSID di una rete impedisce sempre a un aggressore determinato di scoprirla.",
+    "answer": false,
+    "explanation": "Non lo impedisce sempre: la rende solo meno immediatamente visibile."
+  },
+  {
+    "id": 19,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'eavesdropping consiste nell'ascoltare passivamente il traffico di una rete.",
+    "answer": true,
+    "explanation": "È proprio la definizione data dal modulo."
+  },
+  {
+    "id": 20,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un attacco man in the middle è sempre passivo e non può mai modificare la comunicazione.",
+    "answer": false,
+    "explanation": "L'aggressore può leggerla o persino modificarla attivamente."
+  },
+  {
+    "id": 21,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La violazione TJX Companies avvenne tra la metà del 2005 e la fine del 2006.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo periodo."
+  },
+  {
+    "id": 22,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "TJX Companies è proprietaria di marchi come T.J.Maxx e Marshalls.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questi marchi."
+  },
+  {
+    "id": 23,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il punto di accesso iniziale nel caso TJX fu protetto dal protocollo WPA3.",
+    "answer": false,
+    "explanation": "Era protetto dal protocollo WEP, già noto per essere debole."
+  },
+  {
+    "id": 24,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Gli aggressori del caso TJX non furono scoperti per oltre un anno.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo periodo."
+  },
+  {
+    "id": 25,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il nome utente da solo costituisce già una barriera di sicurezza sufficiente.",
+    "answer": false,
+    "explanation": "È la password, non il nome utente, a costituire la vera barriera di sicurezza."
+  },
+  {
+    "id": 26,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il logout è importante quanto il login.",
+    "answer": true,
+    "explanation": "È proprio quanto sottolineato dal modulo."
+  },
+  {
+    "id": 27,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "In un contesto professionale, più persone dovrebbero sempre condividere lo stesso account.",
+    "answer": false,
+    "explanation": "Ogni persona dovrebbe avere un proprio account distinto."
+  },
+  {
+    "id": 28,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La reale estensione della violazione LinkedIn fu resa nota già nel giugno 2012.",
+    "answer": false,
+    "explanation": "Emerse solo nel maggio 2016, quattro anni dopo."
+  },
+  {
+    "id": 29,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Le password violate di LinkedIn erano cifrate con l'algoritmo SHA-1.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo algoritmo."
+  },
+  {
+    "id": 30,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Le password di LinkedIn erano protette anche da un sale crittografico.",
+    "answer": false,
+    "explanation": "Ne erano prive: questo aggravò la violazione."
+  },
+  {
+    "id": 31,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "LinkedIn fu costretta a invalidare milioni di password dopo la scoperta dell'estensione della violazione.",
+    "answer": true,
+    "explanation": "Il modulo lo riporta esplicitamente."
+  },
+  {
+    "id": 32,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'MFA richiede di combinare almeno due elementi della stessa categoria.",
+    "answer": false,
+    "explanation": "Richiede elementi di natura diversa tra loro, non della stessa categoria."
+  },
+  {
+    "id": 33,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La 2FA è un caso particolare dell'MFA.",
+    "answer": true,
+    "explanation": "È proprio quanto spiegato dal modulo."
+  },
+  {
+    "id": 34,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Due password diverse costituiscono un valido esempio di autenticazione a due fattori.",
+    "answer": false,
+    "explanation": "Appartengono entrambe alla stessa categoria \"qualcosa che conosci\", quindi non sono due fattori diversi."
+  },
+  {
+    "id": 35,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un codice OTP ricevuto via SMS può essere esposto alla clonazione della SIM.",
+    "answer": true,
+    "explanation": "È uno dei rischi indicati esplicitamente dal modulo."
+  },
+  {
+    "id": 36,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La biometria può essere cambiata facilmente come una password, se compromessa.",
+    "answer": false,
+    "explanation": "Non può essere cambiata come una password: è questo il suo limite principale."
+  },
+  {
+    "id": 37,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 2017 Google richiese ai propri dipendenti di abbandonare le chiavi di sicurezza fisiche in favore dei codici SMS.",
+    "answer": false,
+    "explanation": "Fu il contrario: richiese di abbandonare i codici tradizionali in favore delle chiavi fisiche."
+  },
+  {
+    "id": 38,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Google richiese il passaggio alle chiavi di sicurezza fisiche a oltre 85.000 dipendenti.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo numero."
+  },
+  {
+    "id": 39,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Le chiavi di sicurezza fisiche di Google furono sviluppate insieme a Yubico e NXP.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente queste due aziende."
+  },
+  {
+    "id": 40,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 2018 Google rese pubbliche le proprie chiavi di sicurezza fisiche con il nome Titan.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questo nome commerciale."
+  },
+  {
+    "id": 41,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un password manager richiede di ricordare una sola master password.",
+    "answer": true,
+    "explanation": "È proprio il principio alla base del password manager."
+  },
+  {
+    "id": 42,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se la master password di un password manager è debole, il rischio riguarda comunque un solo account.",
+    "answer": false,
+    "explanation": "Il rischio riguarda potenzialmente tutti gli account conservati."
+  },
+  {
+    "id": 43,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La violazione di LastPass avvenne nell'agosto 2022.",
+    "answer": true,
+    "explanation": "Il modulo indica esattamente questa data."
+  },
+  {
+    "id": 44,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La violazione di LastPass avvenne in un'unica fase, senza alcuna sequenza temporale.",
+    "answer": false,
+    "explanation": "Avvenne in due fasi distinte, a distanza di alcuni mesi."
+  },
+  {
+    "id": 45,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nella violazione LastPass, un dipendente con privilegi elevati fu colpito da un attacco con un keylogger.",
+    "answer": true,
+    "explanation": "Il modulo lo descrive esplicitamente nella seconda fase."
+  },
+  {
+    "id": 46,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nella violazione LastPass, gli aggressori sottrassero le copie cifrate degli archivi di milioni di utenti.",
+    "answer": true,
+    "explanation": "Il modulo lo riporta esplicitamente."
+  },
+  {
+    "id": 47,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Chi aveva scelto una master password debole nel caso LastPass fu esposto a tentativi di violazione offline senza limite di tentativi.",
+    "answer": true,
+    "explanation": "Il modulo lo riporta esplicitamente, con conseguenze concrete per alcuni utenti."
+  },
+  {
+    "id": 48,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, un fornitore con accesso completo alla rete è come consegnare al tecnico della caldaia la sola chiave della stanza caldaia.",
+    "answer": false,
+    "explanation": "È il contrario: è come consegnargli una copia di tutte le chiavi del negozio."
+  },
+  {
+    "id": 49,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, un firewall ben configurato è paragonato a un doganiere attento.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  },
+  {
+    "id": 50,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, una rete protetta con WEP è paragonata a un lucchetto moderno difficile da forzare.",
+    "answer": false,
+    "explanation": "È paragonata a un lucchetto il cui meccanismo è ormai di dominio pubblico."
+  },
+  {
+    "id": 51,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, un nome utente è paragonato al nome scritto sul citofono di un condominio.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  },
+  {
+    "id": 52,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, l'MFA è paragonata all'imbarco su un volo aereo.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  },
+  {
+    "id": 53,
+    "module": "reti-e-accessi",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del modulo, un password manager è paragonato a un portachiavi con un lucchetto proprio.",
+    "answer": true,
+    "explanation": "Il modulo usa esattamente questa metafora."
+  }
+]

@@ -1,0 +1,917 @@
+[
+  {
+    "id": 1,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa riguarda la sicurezza fisica dei dispositivi?",
+    "options": [
+      "Solo la protezione delle password",
+      "Le misure che impediscono un accesso fisico non autorizzato a computer, dispositivi mobili e supporti di memoria",
+      "Solo la cifratura dei file cloud",
+      "Solo la configurazione del firewall"
+    ],
+    "correctIndex": 1,
+    "explanation": "Riguarda tutte le misure che impediscono un accesso fisico non autorizzato ai dispositivi."
+  },
+  {
+    "id": 2,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può succedere a un computer rubato, anche se protetto da password, se i dati non sono cifrati?",
+    "options": [
+      "Nulla, la password è sempre sufficiente",
+      "Il disco può essere estratto e collegato a un altro sistema per leggerne il contenuto",
+      "Si autodistrugge automaticamente",
+      "Si blocca in modo permanente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un disco non cifrato può essere estratto e letto da un altro sistema, anche con password sul login."
+  },
+  {
+    "id": 3,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali misure pratiche riducono il rischio di un accesso fisico non autorizzato, secondo il modulo?",
+    "options": [
+      "Cavi antifurto, inventario dei dispositivi e controllo degli accessi fisici",
+      "Solo l'uso di un antivirus aggiornato",
+      "Solo la scelta di una password complessa",
+      "Solo l'uso di una rete Wi-Fi privata"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tra le misure ci sono cavi antifurto, inventario dei dispositivi e controllo degli accessi fisici."
+  },
+  {
+    "id": 4,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si blocca rapidamente lo schermo su Windows, secondo il modulo?",
+    "options": [
+      "Con la combinazione WINDOWS + L",
+      "Spegnendo il computer",
+      "Chiudendo il browser",
+      "Disconnettendo il cavo di rete"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si blocca con la combinazione di tasti WINDOWS + L."
+  },
+  {
+    "id": 5,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando un analista del Dipartimento per gli Affari dei Veterani USA portò a casa dispositivi non autorizzati?",
+    "options": [
+      "Il 3 maggio 2006",
+      "Il 31 gennaio 2017",
+      "Nell'ottobre 2016",
+      "Nell'aprile 2010"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'episodio avvenne il 3 maggio 2006."
+  },
+  {
+    "id": 6,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti milioni di persone furono coinvolte nella violazione del 2006 del Dipartimento per gli Affari dei Veterani?",
+    "options": [
+      "Circa 2,6 milioni",
+      "Circa 26,5 milioni",
+      "Circa 57 milioni",
+      "Circa 76 milioni"
+    ],
+    "correctIndex": 1,
+    "explanation": "Furono coinvolti circa 26,5 milioni tra veterani, militari e coniugi."
+  },
+  {
+    "id": 7,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "I dispositivi rubati nel 2006 erano protetti da cifratura?",
+    "options": [
+      "Sì, entrambi erano cifrati",
+      "No, né il portatile né il disco rigido erano cifrati",
+      "Solo il portatile era cifrato",
+      "Solo il disco rigido era cifrato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nessuno dei due dispositivi era protetto da cifratura, in violazione delle policy interne."
+  },
+  {
+    "id": 8,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu resa pubblica la notizia del furto del 2006?",
+    "options": [
+      "Il 22 maggio",
+      "Il 3 maggio, lo stesso giorno del furto",
+      "Il 29 giugno",
+      "Il 16 maggio"
+    ],
+    "correctIndex": 0,
+    "explanation": "La notizia fu resa pubblica il 22 maggio."
+  },
+  {
+    "id": 9,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa scoprì l'analisi dell'FBI sui dispositivi rubati nel 2006?",
+    "options": [
+      "Che i dati erano stati sicuramente consultati e diffusi",
+      "Che non c'erano prove che i dati fossero mai stati effettivamente consultati dai ladri",
+      "Che i dispositivi non furono mai ritrovati",
+      "Che i dati erano stati venduti sul mercato nero"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'analisi dell'FBI non trovò prove che i dati fossero stati consultati."
+  },
+  {
+    "id": 10,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanto versò il Dipartimento in accordo con i veterani coinvolti nella violazione del 2006?",
+    "options": [
+      "20 milioni di dollari",
+      "2 milioni di dollari",
+      "75 milioni di dollari",
+      "148 milioni di dollari"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il Dipartimento versò 20 milioni di dollari in un accordo con i veterani."
+  },
+  {
+    "id": 11,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un backup?",
+    "options": [
+      "Una copia dei propri dati, conservata separatamente dall'originale, per essere recuperata in caso di perdita o danno",
+      "Un tipo di certificato di sicurezza",
+      "Un programma che blocca automaticamente lo schermo",
+      "Un protocollo di cifratura per reti wireless"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il backup è una copia dei dati, conservata separatamente, recuperabile in caso di necessità."
+  },
+  {
+    "id": 12,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa suggerisce la regola del 3-2-1 sui backup?",
+    "options": [
+      "Di mantenere una sola copia, sempre nello stesso luogo",
+      "Di mantenere almeno tre copie, su due supporti diversi, con almeno una copia altrove",
+      "Di eseguire il backup solo una volta l'anno",
+      "Di usare sempre e solo il cloud per ogni copia"
+    ],
+    "correctIndex": 1,
+    "explanation": "Suggerisce tre copie, su due supporti diversi, con una copia in un luogo separato."
+  },
+  {
+    "id": 13,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un backup non dovrebbe essere un'operazione fatta una volta per tutte?",
+    "options": [
+      "Perché più tempo passa tra un backup e l'altro, più dati si rischia di perdere",
+      "Perché i backup si cancellano automaticamente dopo un mese",
+      "Perché la legge lo vieta",
+      "Perché occupa troppo spazio se fatto una sola volta"
+    ],
+    "correctIndex": 0,
+    "explanation": "Più tempo passa tra un backup e l'altro, più dati si rischiano di perdere."
+  },
+  {
+    "id": 14,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un backup conservato nella stessa stanza dell'originale è rischioso?",
+    "options": [
+      "Perché non protegge da eventi come un furto, un incendio o un guasto elettrico che colpiscono l'intero ambiente",
+      "Perché occupa troppo spazio fisico",
+      "Perché rallenta il computer",
+      "Perché è vietato dalla legge"
+    ],
+    "correctIndex": 0,
+    "explanation": "Non protegge da eventi che colpiscono l'intero ambiente, come un incendio."
+  },
+  {
+    "id": 15,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la sincronizzazione di un file tra più dispositivi non equivale a un backup?",
+    "options": [
+      "Perché è sempre più lenta di un vero backup",
+      "Perché se un file sincronizzato viene cancellato o cifrato da un ransomware, la modifica si propaga anche alle copie sincronizzate",
+      "Perché la sincronizzazione richiede sempre una connessione a pagamento",
+      "Perché non esiste alcuna differenza pratica"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le modifiche, incluse cancellazioni o cifrature dannose, si propagano automaticamente alle copie sincronizzate."
+  },
+  {
+    "id": 16,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa può compromettere l'affidabilità di un backup nel tempo, oltre alla sua integrità?",
+    "options": [
+      "Il fatto che il formato in cui è stato salvato non sia più supportato dai dispositivi moderni",
+      "Il colore della cartella in cui è salvato",
+      "Il nome assegnato al file di backup",
+      "La marca del disco esterno utilizzato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un backup può restare integro ma diventare difficile da usare se il formato non è più supportato."
+  },
+  {
+    "id": 17,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando avvenne l'incidente di cancellazione dati in GitLab?",
+    "options": [
+      "Il 31 gennaio 2017",
+      "Il 18 marzo 2019",
+      "Il 3 maggio 2006",
+      "Nell'ottobre 2016"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'incidente avvenne il 31 gennaio 2017."
+  },
+  {
+    "id": 18,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa causò l'incidente GitLab del 2017?",
+    "options": [
+      "Un attacco ransomware esterno",
+      "Un amministratore di sistema eseguì per errore un comando di eliminazione sulla cartella sbagliata",
+      "Un furto fisico dei server",
+      "Una violazione tramite credenziali cloud esposte"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'amministratore eseguì per errore il comando sulla cartella sbagliata, cancellando dati di produzione."
+  },
+  {
+    "id": 19,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti gigabyte di dati furono cancellati per errore nell'incidente GitLab?",
+    "options": [
+      "Circa 300",
+      "Circa 30",
+      "Circa 3.000",
+      "Circa 4,5"
+    ],
+    "correctIndex": 0,
+    "explanation": "Furono cancellati circa 300 gigabyte di dati di produzione."
+  },
+  {
+    "id": 20,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa scoprì GitLab riguardo ai propri cinque sistemi di backup?",
+    "options": [
+      "Che funzionavano tutti perfettamente",
+      "Che nessuno di essi funzionava in modo affidabile",
+      "Che solo uno era configurato correttamente",
+      "Che erano stati tutti cancellati insieme ai dati"
+    ],
+    "correctIndex": 1,
+    "explanation": "Scoprì che nessuno dei cinque sistemi di backup funzionava in modo affidabile."
+  },
+  {
+    "id": 21,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da dove riuscì infine a ripristinare i dati GitLab?",
+    "options": [
+      "Da un unico snapshot manuale risalente a circa sei ore prima dell'incidente",
+      "Da un backup automatico eseguito pochi minuti prima",
+      "Da una copia cartacea dei dati",
+      "Non riuscì a ripristinare alcun dato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ripristinò i dati da un unico snapshot manuale, risalente a circa sei ore prima."
+  },
+  {
+    "id": 22,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come gestì pubblicamente GitLab l'incidente del 2017?",
+    "options": [
+      "Lo tenne segreto per anni",
+      "Raccontò pubblicamente il disastro, trasmettendo persino in diretta streaming il tentativo di recupero",
+      "Negò che l'incidente fosse mai avvenuto",
+      "Licenziò immediatamente tutto il team tecnico senza comunicazioni pubbliche"
+    ],
+    "correctIndex": 1,
+    "explanation": "Raccontò pubblicamente l'accaduto, trasmettendo in diretta streaming il recupero."
+  },
+  {
+    "id": 23,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"eseguire\" un backup?",
+    "options": [
+      "Copiare i dati secondo la pianificazione stabilita, su un supporto locale, esterno o cloud",
+      "Cancellare permanentemente i dati vecchi",
+      "Cifrare tutti i file del dispositivo",
+      "Configurare un nuovo account utente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Eseguire un backup significa copiare i dati secondo la pianificazione stabilita."
+  },
+  {
+    "id": 24,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"ripristinare\" un backup?",
+    "options": [
+      "Recuperare i dati e riportarli a una condizione utilizzabile",
+      "Eliminare definitivamente il backup",
+      "Sincronizzare i dati tra più dispositivi",
+      "Aggiornare il sistema operativo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ripristinare significa recuperare i dati e riportarli a una condizione utilizzabile."
+  },
+  {
+    "id": 25,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché è importante testare in anticipo il ripristino di un backup?",
+    "options": [
+      "Perché un backup mai testato resta, di fatto, una promessa non verificata",
+      "Perché la legge lo richiede in ogni caso",
+      "Perché altrimenti il backup si cancella automaticamente",
+      "Perché rallenta il sistema se non testato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un backup non testato è solo una promessa non verificata: bisogna provarlo davvero."
+  },
+  {
+    "id": 26,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa dovrebbe includere fin dall'inizio un buon piano di backup, secondo il modulo?",
+    "options": [
+      "Anche un piano di ripristino provato in anticipo, non improvvisato in emergenza",
+      "Solo la scelta del disco più economico disponibile",
+      "Solo l'uso esclusivo del cloud",
+      "Solo backup eseguiti manualmente una volta l'anno"
+    ],
+    "correctIndex": 0,
+    "explanation": "Deve includere un piano di ripristino provato in anticipo."
+  },
+  {
+    "id": 27,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando avvenne l'attacco ransomware contro Norsk Hydro?",
+    "options": [
+      "Nella notte tra il 18 e il 19 marzo 2019",
+      "Il 31 gennaio 2017",
+      "Il 3 maggio 2006",
+      "Nell'ottobre 2016"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'attacco avvenne nella notte tra il 18 e il 19 marzo 2019."
+  },
+  {
+    "id": 28,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Con quale malware fu condotto l'attacco ransomware contro Norsk Hydro?",
+    "options": [
+      "LockerGoga",
+      "SUNBURST",
+      "Emotet",
+      "WannaCry"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'attacco fu condotto con il malware LockerGoga."
+  },
+  {
+    "id": 29,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti server e computer furono cifrati nell'attacco a Norsk Hydro?",
+    "options": [
+      "Circa 500 server e 2.700 computer",
+      "Circa 50 server e 270 computer",
+      "Circa 5 server e 27 computer",
+      "Circa 5.000 server e 27.000 computer"
+    ],
+    "correctIndex": 0,
+    "explanation": "Circa 500 server e 2.700 computer furono cifrati nel giro di poche ore."
+  },
+  {
+    "id": 30,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa decise di fare Norsk Hydro dopo l'attacco ransomware?",
+    "options": [
+      "Pagare immediatamente il riscatto richiesto",
+      "Non pagare alcun riscatto e ripristinare i sistemi dai backup esistenti",
+      "Chiudere definitivamente l'azienda",
+      "Ignorare l'attacco e continuare come se nulla fosse"
+    ],
+    "correctIndex": 1,
+    "explanation": "Decise di non pagare e di ripristinare i propri sistemi a partire dai backup esistenti."
+  },
+  {
+    "id": 31,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanto costò circa il processo di recupero di Norsk Hydro?",
+    "options": [
+      "Circa 75 milioni di dollari",
+      "Circa 7,5 milioni di dollari",
+      "Circa 750.000 dollari",
+      "Circa 20 milioni di dollari"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il processo di recupero costò circa 75 milioni di dollari."
+  },
+  {
+    "id": 32,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come fu definita la risposta di Norsk Hydro secondo quanto riportato dalla BBC?",
+    "options": [
+      "Lo \"standard aureo\" a cui ogni organizzazione dovrebbe aspirare",
+      "Un fallimento totale della gestione della crisi",
+      "Un caso isolato senza alcun valore didattico",
+      "Una risposta lenta e inefficace"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu definita lo \"standard aureo\" a cui ogni organizzazione dovrebbe aspirare."
+  },
+  {
+    "id": 33,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa fece l'agenzia Europol nel 2021 riguardo all'attacco a Norsk Hydro?",
+    "options": [
+      "Identificò e perquisì alcuni sospetti collegati all'attacco",
+      "Pagò il riscatto per conto dell'azienda",
+      "Chiuse definitivamente il caso senza indagini",
+      "Sanzionò Norsk Hydro per negligenza"
+    ],
+    "correctIndex": 0,
+    "explanation": "Identificò e perquisì alcuni sospetti collegati all'attacco, in un'indagine più ampia."
+  },
+  {
+    "id": 34,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa riguarda la sicurezza nel cloud?",
+    "options": [
+      "Solo la velocità di connessione ai server remoti",
+      "La protezione dei dati conservati su server remoti, gestiti da un fornitore esterno",
+      "Solo il costo dell'abbonamento al servizio",
+      "Solo la scelta del fornitore più economico"
+    ],
+    "correctIndex": 1,
+    "explanation": "Riguarda la protezione dei dati conservati su server remoti gestiti da terzi."
+  },
+  {
+    "id": 35,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa stabilisce il principio della responsabilità condivisa nel cloud?",
+    "options": [
+      "Che la sicurezza dipende solo dal fornitore del servizio",
+      "Che la sicurezza dipende sia dal fornitore sia da come l'utente configura e protegge il proprio accesso",
+      "Che la sicurezza dipende solo dall'utente",
+      "Che nessuno è responsabile della sicurezza nel cloud"
+    ],
+    "correctIndex": 1,
+    "explanation": "La sicurezza dipende sia dal fornitore sia da come l'utente configura il proprio accesso."
+  },
+  {
+    "id": 36,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Di cosa è responsabile il fornitore di un servizio cloud, secondo il principio della responsabilità condivisa?",
+    "options": [
+      "Della sicurezza dell'infrastruttura: server, data center, reti",
+      "Della scelta delle password degli utenti",
+      "Dei permessi assegnati da ogni singolo utente",
+      "Di come ogni cliente configura il proprio accesso"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il fornitore è responsabile della sicurezza dell'infrastruttura stessa."
+  },
+  {
+    "id": 37,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Di cosa resta responsabile l'utente di un servizio cloud?",
+    "options": [
+      "Della sicurezza fisica dei data center del fornitore",
+      "Di come accede e configura il proprio accesso: password, permessi, credenziali",
+      "Della manutenzione dei server del fornitore",
+      "Della velocità della rete del fornitore"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'utente resta responsabile di come accede e configura il proprio accesso al servizio."
+  },
+  {
+    "id": 38,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è un errore comune che espone i dati cloud anche quando il fornitore ha fatto tutto correttamente?",
+    "options": [
+      "Lasciare credenziali scritte in chiaro nel codice condiviso o configurare permessi troppo ampi",
+      "Usare un fornitore troppo economico",
+      "Cambiare troppo spesso la password",
+      "Usare l'autenticazione a più fattori"
+    ],
+    "correctIndex": 0,
+    "explanation": "Credenziali scritte in chiaro nel codice o permessi troppo ampi espongono i dati anche con un fornitore sicuro."
+  },
+  {
+    "id": 39,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Dove trovarono gli aggressori le credenziali di accesso al cloud di Uber nel 2016?",
+    "options": [
+      "In un repository privato su GitHub, scritte per errore nel codice",
+      "In una email di phishing inviata ai dipendenti",
+      "Su un forum pubblico di hacker",
+      "In un documento cartaceo rubato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le trovarono in un repository privato su GitHub, dove erano scritte per errore nel codice."
+  },
+  {
+    "id": 40,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti utenti e autisti furono coinvolti nella violazione dei dati Uber del 2016?",
+    "options": [
+      "Circa 57 milioni",
+      "Circa 5,7 milioni",
+      "Circa 570.000",
+      "Circa 26,5 milioni"
+    ],
+    "correctIndex": 0,
+    "explanation": "Furono coinvolti circa 57 milioni tra utenti e autisti."
+  },
+  {
+    "id": 41,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa scelsero di fare i dirigenti Uber invece di segnalare pubblicamente la violazione del 2016?",
+    "options": [
+      "Pagare 100.000 dollari agli aggressori, camuffando il pagamento come una ricompensa per la segnalazione di una vulnerabilità",
+      "Denunciare immediatamente l'accaduto alle autorità",
+      "Chiudere temporaneamente il servizio",
+      "Informare subito tutti gli utenti coinvolti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pagarono 100.000 dollari agli aggressori, camuffando il pagamento come una ricompensa."
+  },
+  {
+    "id": 42,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu reso pubblico l'episodio della violazione Uber del 2016?",
+    "options": [
+      "Nel novembre 2017, da un nuovo amministratore delegato",
+      "Immediatamente, nell'ottobre 2016",
+      "Nel 2013, dalla Federal Trade Commission",
+      "Mai, rimase sempre segreto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu reso pubblico solo nel novembre 2017, da un nuovo amministratore delegato."
+  },
+  {
+    "id": 43,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quali conseguenze legali affrontò Uber per il ritardo nella comunicazione della violazione?",
+    "options": [
+      "Una sanzione di 148 milioni di dollari concordata con le autorità statunitensi",
+      "Nessuna conseguenza legale",
+      "La chiusura definitiva dell'azienda",
+      "Una sanzione di soli 1.000 dollari"
+    ],
+    "correctIndex": 0,
+    "explanation": "Concordò una sanzione di 148 milioni di dollari con le autorità statunitensi."
+  },
+  {
+    "id": 44,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa accadde nel 2022 al responsabile della sicurezza di Uber dell'epoca dei fatti?",
+    "options": [
+      "Fu condannato penalmente per aver occultato l'accaduto",
+      "Fu promosso a amministratore delegato",
+      "Fu assolto da ogni accusa",
+      "Ricevette un premio per la gestione della crisi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu condannato penalmente per aver deliberatamente occultato l'accaduto."
+  },
+  {
+    "id": 45,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede quando un file viene cancellato normalmente, anche svuotando il Cestino?",
+    "options": [
+      "Viene eliminato immediatamente e per sempre",
+      "Il sistema operativo segna semplicemente quello spazio come disponibile, ma i dati restano presenti",
+      "Viene automaticamente cifrato",
+      "Viene spostato su un server cloud"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il sistema si limita a segnare lo spazio come disponibile; i dati restano tecnicamente presenti."
+  },
+  {
+    "id": 46,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Fino a quando restano recuperabili i dati di un file cancellato normalmente?",
+    "options": [
+      "Finché nulla sovrascrive fisicamente quello spazio",
+      "Solo per 24 ore, poi spariscono automaticamente",
+      "Non sono mai recuperabili, nemmeno subito dopo la cancellazione",
+      "Solo se il file era stato cifrato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Restano recuperabili finché nulla sovrascrive fisicamente quello spazio."
+  },
+  {
+    "id": 47,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali metodi garantiscono un'eliminazione davvero permanente dei dati?",
+    "options": [
+      "Software che sovrascrivono più volte lo spazio con dati casuali, o la distruzione fisica del supporto",
+      "Semplicemente rinominare il file",
+      "Spostare il file in un'altra cartella",
+      "Comprimere il file in un archivio zip"
+    ],
+    "correctIndex": 0,
+    "explanation": "La sovrascrittura ripetuta con dati casuali o la distruzione fisica garantiscono l'eliminazione permanente."
+  },
+  {
+    "id": 48,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali dispositivi meno ovvi possono conservare dati sensibili, oltre a computer e smartphone?",
+    "options": [
+      "Stampanti multifunzione e fotocopiatrici, che spesso hanno un proprio disco rigido interno",
+      "Solo i router Wi-Fi",
+      "Solo le tastiere wireless",
+      "Solo i monitor esterni"
+    ],
+    "correctIndex": 0,
+    "explanation": "Anche stampanti multifunzione e fotocopiatrici moderne includono spesso un proprio disco rigido interno."
+  },
+  {
+    "id": 49,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando la troupe di CBS News condusse l'inchiesta sulla sicurezza delle fotocopiatrici digitali?",
+    "options": [
+      "Nell'aprile 2010",
+      "Nel 2006",
+      "Nel 2013",
+      "Nel 2017"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'inchiesta fu condotta nell'aprile 2010."
+  },
+  {
+    "id": 50,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A quale azienda apparteneva la fotocopiatrice su cui furono trovati documenti medici, nell'inchiesta CBS?",
+    "options": [
+      "Affinity Health Plan",
+      "Goldenshores Technologies",
+      "Norsk Hydro",
+      "GitLab"
+    ],
+    "correctIndex": 0,
+    "explanation": "La fotocopiatrice era stata usata in precedenza da Affinity Health Plan."
+  },
+  {
+    "id": 51,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa trovò la troupe CBS sul disco rigido della fotocopiatrice testata?",
+    "options": [
+      "Circa 300 pagine di documenti medici reali, incluse prescrizioni e una diagnosi di tumore",
+      "Nessun dato, il disco era vuoto",
+      "Solo file di sistema senza alcun valore",
+      "Fotografie personali dei tecnici di manutenzione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trovarono circa 300 pagine di documenti medici reali, incluse prescrizioni e una diagnosi di tumore."
+  },
+  {
+    "id": 52,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Perché Affinity Health Plan non aveva cancellato i dischi rigidi delle fotocopiatrici restituite?",
+    "options": [
+      "Perché non aveva incluso quei dischi nella propria valutazione dei rischi per la sicurezza dei dati",
+      "Perché la legge lo vietava esplicitamente",
+      "Perché i dischi erano già cifrati di default",
+      "Perché le fotocopiatrici non avevano dischi rigidi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Non aveva incluso i dischi delle fotocopiatrici nella propria valutazione dei rischi."
+  },
+  {
+    "id": 53,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale sanzione fu imposta ad Affinity Health Plan nel 2013?",
+    "options": [
+      "Oltre 1,2 milioni di dollari",
+      "Oltre 148 milioni di dollari",
+      "Oltre 20 milioni di dollari",
+      "Oltre 75 milioni di dollari"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu imposta una sanzione di oltre 1,2 milioni di dollari."
+  },
+  {
+    "id": 54,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la sicurezza comportamentale?",
+    "options": [
+      "Un antivirus particolarmente avanzato",
+      "L'insieme delle abitudini quotidiane che determinano quanto siano davvero efficaci gli strumenti tecnici di protezione",
+      "Un tipo di firewall per reti aziendali",
+      "Un protocollo di cifratura per i backup"
+    ],
+    "correctIndex": 1,
+    "explanation": "È l'insieme delle abitudini quotidiane che rendono efficaci gli strumenti tecnici."
+  },
+  {
+    "id": 55,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sottolinea il modulo riguardo al ruolo della tecnologia nella sicurezza informatica?",
+    "options": [
+      "Che la tecnologia conta molto, ma da sola non basta mai",
+      "Che la tecnologia è sempre sufficiente da sola",
+      "Che la tecnologia non ha alcuna importanza",
+      "Che solo il fattore umano conta, la tecnologia è inutile"
+    ],
+    "correctIndex": 0,
+    "explanation": "La tecnologia conta moltissimo, ma da sola non basta mai: serve anche il comportamento delle persone."
+  },
+  {
+    "id": 56,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In che anno Clifford Stoll accettò l'incarico presso il Lawrence Berkeley National Laboratory?",
+    "options": [
+      "Nel 1986",
+      "Nel 1996",
+      "Nel 1971",
+      "Nel 2006"
+    ],
+    "correctIndex": 0,
+    "explanation": "Accettò l'incarico nel 1986."
+  },
+  {
+    "id": 57,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Qual era il primo compito di Stoll nel suo nuovo incarico?",
+    "options": [
+      "Risolvere una discrepanza contabile di appena 75 centesimi di dollaro",
+      "Installare un nuovo sistema antivirus",
+      "Sostituire tutti i backup del laboratorio",
+      "Formare il personale sulla sicurezza informatica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il suo primo compito fu risolvere una discrepanza contabile di 75 centesimi di dollaro."
+  },
+  {
+    "id": 58,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa decise di fare Stoll invece di archiviare la discrepanza come un banale errore informatico?",
+    "options": [
+      "Decise di indagare fino in fondo",
+      "Decise di ignorarla completamente",
+      "Decise di licenziarsi",
+      "Decise di delegarla a un collega"
+    ],
+    "correctIndex": 0,
+    "explanation": "Decise di indagare fino in fondo, nonostante l'apparente piccolezza del problema."
+  },
+  {
+    "id": 59,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A cosa portò l'indagine di Clifford Stoll?",
+    "options": [
+      "Alla scoperta di una rete di spionaggio internazionale",
+      "Alla scoperta di un semplice errore di fatturazione",
+      "Alla chiusura del laboratorio per motivi di sicurezza",
+      "A nessun risultato concreto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Portò alla scoperta di una rete di spionaggio internazionale."
+  },
+  {
+    "id": 60,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale libro Clifford Stoll raccontò la propria indagine?",
+    "options": [
+      "\"L'uovo del cuculo\"",
+      "\"L'arte dell'inganno\"",
+      "\"Il codice invisibile\"",
+      "\"La rete oscura\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Raccontò l'indagine nel libro \"L'uovo del cuculo\"."
+  },
+  {
+    "id": 61,
+    "module": "protezione-e-conservazione-dei-dati",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa è paragonata la sicurezza informatica nella metafora finale del modulo?",
+    "options": [
+      "Alla cintura di sicurezza in automobile",
+      "A un lucchetto arrugginito",
+      "A un'assicurazione mai utilizzata",
+      "A un manuale mai letto"
+    ],
+    "correctIndex": 0,
+    "explanation": "È paragonata alla cintura di sicurezza in automobile, un gesto automatico ripetuto ogni volta."
+  }
+]

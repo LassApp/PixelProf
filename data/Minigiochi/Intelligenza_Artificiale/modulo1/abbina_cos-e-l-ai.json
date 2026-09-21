@@ -1,7 +1,10 @@
-{
-  "module": "cos-e-l-ai",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "cos-e-l-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Intelligenza Artificiale (AI)",
         "definition": "Insieme di tecniche e sistemi informatici che permettono alle macchine di svolgere compiti che richiedono capacità associate all'intelligenza umana, come riconoscere informazioni, individuare schemi, fare previsioni, prendere decisioni o generare contenuti"
@@ -18,8 +21,14 @@
         "term": "Linguaggio naturale",
         "definition": "Modalità di interazione con un sistema di AI generativa attraverso una normale richiesta scritta o parlata"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "cos-e-l-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "AI nella vita quotidiana",
         "definition": "Utilizzo di sistemi di intelligenza artificiale all'interno di applicazioni, dispositivi e servizi che utilizziamo normalmente, spesso senza che l'utente debba sapere come funzionano"
@@ -36,8 +45,14 @@
         "term": "Personalizzazione dell'esperienza digitale",
         "definition": "Conseguenza dei sistemi di raccomandazione per cui ciò che una persona vede sullo schermo non è necessariamente identico a ciò che vede un'altra persona"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "cos-e-l-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Opportunità dell'AI",
         "definition": "Vantaggi che i sistemi di intelligenza artificiale possono offrire, per esempio nell'automazione delle attività, nell'analisi delle informazioni, nella personalizzazione dei servizi, nella creatività e nel supporto allo studio e al lavoro"
@@ -54,8 +69,14 @@
         "term": "Bias",
         "definition": "Distorsioni presenti nei dati o nei processi utilizzati per sviluppare e utilizzare un sistema di AI"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "cos-e-l-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Metafora della biblioteca",
         "definition": "Rappresenta la differenza tra un sistema che analizza libri per trovare quello più adatto e un sistema che genera una nuova pagina di testo"
@@ -73,5 +94,5 @@
         "definition": "Due avvocati furono sanzionati dopo aver presentato in tribunale una memoria contenente citazioni di sentenze inesistenti generate da ChatGPT"
       }
     ]
-  ]
-}
+  }
+]

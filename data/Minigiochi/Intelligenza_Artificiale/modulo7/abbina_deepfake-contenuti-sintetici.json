@@ -1,10 +1,10 @@
-{
-  "id": 1,
-  "module": "deepfake-contenuti-sintetici",
-  "type": "matching",
-  "difficulty": "easy",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "deepfake-contenuti-sintetici",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Deepfake",
         "definition": "Contenuto digitale, come immagine, video o audio, generato o manipolato con tecniche di intelligenza artificiale per far apparire una persona diversa da ciò che è realmente accaduto"
@@ -25,8 +25,14 @@
         "term": "Metafora del documento d'identità falsificato",
         "definition": "Rappresenta il deepfake: può costruire un'apparenza convincente senza rappresentare necessariamente la realtà"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "deepfake-contenuti-sintetici",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Immagine sintetica",
         "definition": "Immagine creata o modificata artificialmente da un sistema informatico, spesso tramite intelligenza artificiale, senza essere necessariamente una fotografia di una scena realmente esistita"
@@ -47,8 +53,14 @@
         "term": "Metafora dello studio cinematografico",
         "definition": "Rappresenta le immagini sintetiche: tutto sembra reale, ma è stato costruito appositamente"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "deepfake-contenuti-sintetici",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Video sintetico",
         "definition": "Contenuto audiovisivo generato o modificato artificialmente attraverso sistemi informatici, spesso basati sull'intelligenza artificiale"
@@ -69,8 +81,14 @@
         "term": "Metafora del teatro",
         "definition": "Rappresenta i video sintetici: il palco è lo schermo e la scenografia viene costruita dall'AI"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "deepfake-contenuti-sintetici",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Clonazione vocale",
         "definition": "Tecnologia che utilizza l'intelligenza artificiale per generare una voce artificiale molto simile a quella di una persona reale, partendo da registrazioni della sua voce"
@@ -91,8 +109,14 @@
         "term": "Applicazioni utili della clonazione vocale",
         "definition": "Produzione cinematografica, localizzazione di contenuti, assistenti vocali, accessibilità e strumenti educativi"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 5,
+    "module": "deepfake-contenuti-sintetici",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Contenuti sintetici",
         "definition": "Contenuti digitali generati o modificati artificialmente attraverso sistemi informatici, spesso basati sull'intelligenza artificiale"
@@ -114,5 +138,5 @@
         "definition": "Credere a tutto e non credere a nulla; la strada più solida è la verifica"
       }
     ]
-  ]
-}
+  }
+]

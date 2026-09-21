@@ -1,10 +1,10 @@
-{
-  "id": 1,
-  "module": "provenienza-dei-contenuti",
-  "type": "matching",
-  "difficulty": "easy",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "provenienza-dei-contenuti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Watermark (filigrana digitale)",
         "definition": "Informazione inserita all'interno di un contenuto digitale per identificarlo, attribuirne l'origine o permetterne il riconoscimento"
@@ -25,8 +25,14 @@
         "term": "Metafora del libro in biblioteca",
         "definition": "Rappresenta il watermark: un'etichetta visibile sulla copertina oppure un contrassegno invisibile nella carta, riconoscibile solo con uno strumento apposito"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "provenienza-dei-contenuti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "SynthID",
         "definition": "Tecnologia sviluppata da Google DeepMind per inserire watermark digitali invisibili nei contenuti generati dall'AI e permetterne il successivo rilevamento"
@@ -47,8 +53,14 @@
         "term": "Metafora della banconota",
         "definition": "Rappresenta SynthID: un oggetto che sembra normale ma contiene elementi di sicurezza verificabili con strumenti specifici"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "provenienza-dei-contenuti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Content Credentials",
         "definition": "Informazioni digitali associate a un contenuto che permettono di documentarne la provenienza, cioè la sua origine e la sua storia di creazione e modifica"
@@ -69,8 +81,14 @@
         "term": "Metafora del pacco spedito",
         "definition": "Rappresenta i Content Credentials: un'etichetta digitale che accompagna il contenuto e ne documenta la provenienza e i passaggi della sua storia"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "provenienza-dei-contenuti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Provenienza digitale",
         "definition": "Insieme delle informazioni che permettono di ricostruire, verificare e comprendere l'origine, la creazione, le modifiche e la diffusione di un contenuto digitale"
@@ -91,8 +109,14 @@
         "term": "Metafora della catena di custodia",
         "definition": "Rappresenta la provenienza digitale: a ogni passaggio viene registrato chi ha ricevuto l'oggetto, quando e cosa è stato fatto"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 5,
+    "module": "provenienza-dei-contenuti",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Limiti della provenienza digitale",
         "definition": "Vincoli che impediscono agli strumenti di provenienza, watermark e Content Credentials di garantire da soli che un contenuto sia autentico, completo, corretto o vero"
@@ -114,5 +138,5 @@
         "definition": "Rappresenta la provenienza digitale: racconta una parte della storia del contenuto, ma non può sostituire il controllo diretto"
       }
     ]
-  ]
-}
+  }
+]

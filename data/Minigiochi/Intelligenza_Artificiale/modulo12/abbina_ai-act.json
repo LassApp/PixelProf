@@ -1,10 +1,10 @@
-{
-  "id": 1,
-  "module": "ai-act",
-  "type": "matching",
-  "difficulty": "easy",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "ai-act",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "AI Act",
         "definition": "Regolamento dell'Unione Europea che stabilisce un insieme di regole comuni per lo sviluppo, l'immissione sul mercato e l'utilizzo dell'intelligenza artificiale"
@@ -21,8 +21,14 @@
         "term": "Metafora del codice della strada",
         "definition": "Rappresenta l'AI Act: non vieta le automobili, ma stabilisce regole diverse a seconda della situazione, proporzionate al rischio"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "ai-act",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Livelli di rischio dell'AI Act",
         "definition": "Classificano i sistemi di intelligenza artificiale in base al potenziale impatto sulla salute, sulla sicurezza e sui diritti fondamentali delle persone"
@@ -39,8 +45,14 @@
         "term": "Metafora dei semafori",
         "definition": "Rappresenta i livelli di rischio: il verde permette di procedere con poche limitazioni, il giallo impone attenzione, il rosso impone di fermarsi"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "ai-act",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Sistemi di AI vietati",
         "definition": "Determinati sistemi o pratiche di intelligenza artificiale che l'AI Act considera inaccettabili perché possono compromettere gravemente sicurezza, diritti fondamentali o dignità delle persone"
@@ -57,8 +69,14 @@
         "term": "Metafora della scuola con il registro e il punteggio",
         "definition": "Rappresenta il social scoring: usare informazioni per una funzione legittima non equivale ad avere il diritto di trasformare ogni comportamento umano in un punteggio di controllo"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "ai-act",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Sistemi di AI ad alto rischio",
         "definition": "Sistemi che, per finalità e contesto di utilizzo, possono avere un impatto significativo sulla salute, sulla sicurezza o sui diritti fondamentali delle persone"
@@ -75,8 +93,14 @@
         "term": "Metafora del medico e dello strumento diagnostico",
         "definition": "Rappresenta i sistemi ad alto rischio: la macchina può assistere l'essere umano, ma non deve trasformarsi in un'autorità incontestabile"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 5,
+    "module": "ai-act",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Obblighi dell'AI Act",
         "definition": "Insieme delle responsabilità e dei requisiti che devono essere rispettati dai diversi soggetti coinvolti nel ciclo di vita di un sistema di AI, in proporzione al rischio e al ruolo ricoperto"
@@ -93,8 +117,14 @@
         "term": "Metafora dell'aereo",
         "definition": "Rappresenta gli obblighi dell'AI Act: non basta che il sistema sia costruito bene, servono controlli, documentazione, supervisione e competenze umane"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 6,
+    "module": "ai-act",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "AI Act per cittadini e professionisti",
         "definition": "Un quadro di tutela e di responsabilità che mira a rendere l'utilizzo dell'intelligenza artificiale più sicuro, trasparente e rispettoso dei diritti fondamentali"
@@ -112,5 +142,5 @@
         "definition": "Rappresenta l'AI: può essere un valido strumento di supporto, ma il conducente resta responsabile della scelta finale, senza poter usare la macchina come alibi"
       }
     ]
-  ]
-}
+  }
+]

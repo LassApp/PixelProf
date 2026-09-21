@@ -1,7 +1,10 @@
-{
-  "module": "prompt-engineering",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "prompt-engineering",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Istruzioni",
         "definition": "Indicazioni che forniamo a un sistema di AI per dirgli che cosa deve fare, come deve farlo e quale risultato vogliamo ottenere"
@@ -26,8 +29,14 @@
         "term": "Progetto con l'AI",
         "definition": "Attività articolata in più fasi nella quale l'intelligenza artificiale viene utilizzata come strumento di supporto per raggiungere un obiettivo preciso"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "prompt-engineering",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Prompt (come consegna)",
         "definition": "La richiesta che formuliamo all'AI: più è ben formulata, più è facile ottenere un risultato coerente con l'obiettivo"
@@ -44,8 +53,14 @@
         "term": "Divide et impera",
         "definition": "Principio secondo cui un problema complesso viene separato in parti più semplici"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "prompt-engineering",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Metafora delle istruzioni",
         "definition": "Una commissione in tipografia: più chiaramente descriviamo ciò che vogliamo, meno spazio lasciamo all'interpretazione"
@@ -70,8 +85,14 @@
         "term": "Metafora dei progetti",
         "definition": "Organizzare una cena per molte persone, controllando menu, ingredienti e portate lungo il percorso"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "prompt-engineering",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Differenza tra prompt e progetto",
         "definition": "Un prompt cerca di ottenere una risposta; un progetto organizza una serie di attività per raggiungere un risultato"
@@ -89,5 +110,5 @@
         "definition": "Non elimina le allucinazioni, gli errori logici o le informazioni inventate dal modello"
       }
     ]
-  ]
-}
+  }
+]

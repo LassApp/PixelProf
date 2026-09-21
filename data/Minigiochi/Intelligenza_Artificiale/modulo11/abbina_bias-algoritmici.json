@@ -1,10 +1,10 @@
-{
-  "id": 1,
-  "module": "bias-algoritmici",
-  "type": "matching",
-  "difficulty": "easy",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "bias-algoritmici",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Bias algoritmico",
         "definition": "Distorsione sistematica nel funzionamento o nei risultati di un sistema algoritmico, che può portarlo a favorire o sfavorire determinati individui o gruppi"
@@ -25,8 +25,14 @@
         "term": "Metafora del giudice con la vecchia mappa",
         "definition": "Rappresenta il bias algoritmico: l'algoritmo è il giudice, i dati sono la sua mappa, e una mappa sbagliata porta a decisioni ingiuste"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "bias-algoritmici",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Dati (nel contesto dell'AI)",
         "definition": "Le informazioni utilizzate da un sistema di intelligenza artificiale per apprendere, riconoscere schemi, fare previsioni o prendere decisioni"
@@ -47,8 +53,14 @@
         "term": "Metafora della torta assaggiata parzialmente",
         "definition": "Rappresenta i dati incompleti: assaggiare solo un ingrediente non permette di conoscere davvero la torta nel suo insieme"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "bias-algoritmici",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Discriminazione algoritmica",
         "definition": "Si verifica quando un sistema automatizzato produce, direttamente o indirettamente, un trattamento ingiustamente sfavorevole nei confronti di una persona o di un gruppo"
@@ -69,8 +81,14 @@
         "term": "Caso COMPAS e l'inchiesta di ProPublica (2016)",
         "definition": "Sostenne che le persone nere risultavano più frequentemente classificate come ad alto rischio rispetto alle persone bianche classificate nello stesso modo, generando un dibattito sulla fairness degli algoritmi"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "bias-algoritmici",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Caso reale di bias algoritmico",
         "definition": "Episodio documentato nel quale un sistema automatizzato ha prodotto risultati problematici, mostrando una distorsione nei dati, nella progettazione, nell'utilizzo o nella valutazione"
@@ -91,8 +109,14 @@
         "term": "Metafora della scuola con cento studenti",
         "definition": "Rappresenta il rischio delle medie generali: sapere che 95 studenti su cento hanno superato l'esame nasconde il fatto che i cinque errori appartengono tutti alla stessa classe"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 5,
+    "module": "bias-algoritmici",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Mitigazione del bias algoritmico",
         "definition": "Insieme di tecniche, controlli e decisioni progettuali utilizzati per individuare, ridurre e monitorare le distorsioni presenti nei sistemi di intelligenza artificiale"
@@ -114,5 +138,5 @@
         "definition": "Rappresenta la mitigazione: i dati sono il carburante, l'algoritmo è il motore e i controlli sono i sistemi di sicurezza, da verificare prima e dopo l'uso"
       }
     ]
-  ]
-}
+  }
+]

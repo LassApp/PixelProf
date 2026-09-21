@@ -1,10 +1,10 @@
-{
-  "id": 1,
-  "module": "futuro-dell-ai",
-  "type": "matching",
-  "difficulty": "easy",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "futuro-dell-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Multimodalità",
         "definition": "Capacità di un sistema di intelligenza artificiale di comprendere, elaborare e combinare informazioni provenienti da modalità diverse, come testo, immagini, audio, video e, in alcuni sistemi, dati da sensori"
@@ -21,8 +21,14 @@
         "term": "Metafora della stanza",
         "definition": "Rappresenta la multimodalità: guardare, ascoltare e leggere un cartello sono indizi che, messi insieme, permettono di comprendere meglio una situazione"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "futuro-dell-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Agente AI",
         "definition": "Sistema di intelligenza artificiale capace di ricevere un obiettivo, pianificare una sequenza di azioni, utilizzare strumenti e adattare il proprio comportamento in base ai risultati ottenuti"
@@ -39,8 +45,14 @@
         "term": "Metafora dell'agenzia di viaggi",
         "definition": "Rappresenta l'agente AI: come un assistente a cui affidiamo un compito, ma a cui non consegneremmo carta di credito e passaporto senza stabilire prima cosa può fare"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "futuro-dell-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Robotica",
         "definition": "Campo che si occupa della progettazione e dello sviluppo di robot, sistemi capaci di percepire l'ambiente, elaborare informazioni e compiere azioni fisiche"
@@ -57,8 +69,14 @@
         "term": "Caso dei robot nei centri di distribuzione di Amazon",
         "definition": "Aziende come Amazon utilizzano flotte di robot per trasportare scaffali e materiali nei propri centri di distribuzione, supportando il lavoro umano"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "futuro-dell-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "AI personale",
         "definition": "Sistema di intelligenza artificiale progettato per assistere una persona nelle proprie attività, adattando risposte e comportamenti alle sue esigenze, preferenze e contesto"
@@ -75,8 +93,14 @@
         "term": "Metafora del segretario personale",
         "definition": "Rappresenta l'assistente AI: può occuparsi di un compito più ampio di una semplice domanda, ma delegare non significa smettere di controllare"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 5,
+    "module": "futuro-dell-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Impatto dell'AI sul lavoro",
         "definition": "Trasformazione delle attività, delle professioni, delle competenze e dell'organizzazione del lavoro attraverso sistemi capaci di automatizzare o assistere alcune attività cognitive e operative"
@@ -93,8 +117,14 @@
         "term": "Metafora della calcolatrice",
         "definition": "Rappresenta l'effetto dell'AI sul lavoro cognitivo: ha reso inutile il calcolo manuale, ma non ha reso inutile la matematica, spostando l'attenzione verso la comprensione del problema"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 6,
+    "module": "futuro-dell-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Competenze future",
         "definition": "Insieme di conoscenze, capacità tecniche, cognitive, creative e relazionali necessarie per affrontare un mondo del lavoro e una società sempre più influenzati dall'AI"
@@ -112,5 +142,5 @@
         "definition": "Rappresenta le competenze future: se conosciamo solo un percorso rischiamo di perderci, ma se sappiamo leggere una mappa possiamo continuare ad arrivare a destinazione"
       }
     ]
-  ]
-}
+  }
+]

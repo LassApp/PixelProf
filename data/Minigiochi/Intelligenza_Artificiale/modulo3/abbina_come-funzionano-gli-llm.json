@@ -1,7 +1,10 @@
-{
-  "module": "come-funzionano-gli-llm",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "come-funzionano-gli-llm",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Large Language Model (LLM)",
         "definition": "Modello di intelligenza artificiale addestrato su grandi quantità di testo per elaborare e generare linguaggio naturale"
@@ -18,8 +21,14 @@
         "term": "Metafora del musicista",
         "definition": "Rappresenta come un LLM utilizzi relazioni apprese tra elementi linguistici per generare qualcosa di nuovo, senza copiare un archivio"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "come-funzionano-gli-llm",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Token",
         "definition": "Unità di testo utilizzata da un modello linguistico per rappresentare e analizzare ciò che riceve"
@@ -36,8 +45,14 @@
         "term": "Metafora dei prodotti da forno",
         "definition": "Rappresenta come una parola comune possa essere un solo token, mentre una parola più lunga o rara possa essere suddivisa in più token"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "come-funzionano-gli-llm",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Contesto",
         "definition": "Insieme delle informazioni testuali disponibili al modello durante l'elaborazione di una richiesta, utilizzabili per interpretarla e generare una risposta"
@@ -54,8 +69,14 @@
         "term": "Metafora della riunione",
         "definition": "Rappresenta come una frase possa risultare comprensibile o incomprensibile a seconda di quanto contesto si conosce"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "come-funzionano-gli-llm",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Finestra di contesto",
         "definition": "Quantità massima di testo, espressa generalmente in token, che un modello può prendere in considerazione contemporaneamente durante un'elaborazione"
@@ -72,8 +93,14 @@
         "term": "Metafora della scrivania",
         "definition": "Rappresenta la finestra di contesto come lo spazio disponibile per tenere più documenti davanti a sé nello stesso momento"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 5,
+    "module": "come-funzionano-gli-llm",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Generazione della risposta",
         "definition": "Processo attraverso cui un LLM produce testo prevedendo, passo dopo passo, quale token sia più adatto a seguire quelli già elaborati"
@@ -91,5 +118,5 @@
         "definition": "Rappresenta come ogni nuovo token entri nella sequenza e contribuisca a determinare le possibilità successive"
       }
     ]
-  ]
-}
+  }
+]

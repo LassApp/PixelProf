@@ -1,7 +1,10 @@
-{
-  "module": "come-funziona-l-ai",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "come-funziona-l-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Dati",
         "definition": "Informazioni raccolte e utilizzate da un sistema informatico per svolgere attività, effettuare analisi o imparare a riconoscere schemi e caratteristiche"
@@ -18,8 +21,14 @@
         "term": "ImageNet",
         "definition": "Enorme archivio di immagini organizzate in numerose categorie, che ha contribuito in modo importante allo sviluppo della computer vision"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "come-funziona-l-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Machine Learning (ML)",
         "definition": "Insieme di tecniche che permette a un sistema informatico di apprendere dai dati e migliorare le proprie prestazioni in un compito senza essere programmato esplicitamente con una regola per ogni situazione"
@@ -36,8 +45,14 @@
         "term": "GIGO (Garbage in, garbage out)",
         "definition": "Principio secondo cui, se i dati di partenza sono errati, incompleti o di scarsa qualità, anche il risultato prodotto dal sistema può esserlo"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "come-funziona-l-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Rete neurale artificiale",
         "definition": "Modello di Machine Learning ispirato, in modo semplificato, al funzionamento delle reti di neuroni biologici"
@@ -58,8 +73,14 @@
         "term": "AlexNet (2012)",
         "definition": "Rete neurale profonda che ottenne risultati particolarmente importanti nella competizione ImageNet per la classificazione delle immagini"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "come-funziona-l-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Modello di intelligenza artificiale",
         "definition": "Sistema matematico addestrato sui dati attraverso un processo di apprendimento, in grado di utilizzare ciò che ha appreso per elaborare nuovi dati e produrre un risultato"
@@ -77,5 +98,5 @@
         "definition": "I dati vengono utilizzati per addestrare il modello, mentre il modello rappresenta ciò che il sistema ha appreso attraverso quel processo"
       }
     ]
-  ]
-}
+  }
+]

@@ -1,10 +1,10 @@
-{
-  "id": 1,
-  "module": "verificare-l-ai",
-  "type": "matching",
-  "difficulty": "easy",
-  "sets": [
-    [
+[
+  {
+    "id": 1,
+    "module": "verificare-l-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Allucinazione (hallucination)",
         "definition": "Risposta generata dall'AI che contiene informazioni false, inventate o non supportate dai fatti, presentata però in modo plausibile e convincente"
@@ -25,8 +25,14 @@
         "term": "Metafora del bibliotecario",
         "definition": "Rappresenta l'allucinazione: descrive con sicurezza il contenuto di un libro che in realtà non esiste nello scaffale"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 2,
+    "module": "verificare-l-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Fonte",
         "definition": "Documento, persona, organizzazione o risorsa da cui proviene un'informazione e che può essere utilizzata per controllarne l'origine e l'attendibilità"
@@ -47,8 +53,14 @@
         "term": "Metafora del cartello stradale",
         "definition": "Rappresenta la fonte: un'indicazione che possiamo andare a controllare direttamente"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 3,
+    "module": "verificare-l-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Verifica",
         "definition": "Processo attraverso il quale controlliamo se un'informazione è corretta, confrontandola con fonti, dati o evidenze attendibili"
@@ -69,8 +81,14 @@
         "term": "Metafora dello spioncino",
         "definition": "Rappresenta la verifica: non aprire la porta solo perché qualcuno ha detto che fuori c'è il postino, ma guardare prima"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 4,
+    "module": "verificare-l-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Fact-checking",
         "definition": "Attività sistematica di controllo della veridicità di affermazioni, notizie e contenuti, attraverso il confronto con fonti ed evidenze verificabili"
@@ -91,8 +109,14 @@
         "term": "Metafora dell'investigatore",
         "definition": "Rappresenta il fact-checking: non cerca la storia più convincente, ma le prove che permettono di ricostruire ciò che è realmente accaduto"
       }
-    ],
-    [
+    ]
+  },
+  {
+    "id": 5,
+    "module": "verificare-l-ai",
+    "type": "matching",
+    "difficulty": "easy",
+    "pairs": [
       {
         "term": "Affidabilità",
         "definition": "Capacità di un sistema di produrre risultati corretti e coerenti nelle condizioni e per gli scopi per i quali viene utilizzato"
@@ -114,5 +138,5 @@
         "definition": "Rappresenta l'AI: uno strumento utile per orientarsi, che richiede di imparare quando fidarsi e quando controllare la direzione in altro modo"
       }
     ]
-  ]
-}
+  }
+]

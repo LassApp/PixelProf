@@ -1,5 +1,9 @@
 [
   {
+    "id": 1,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Le ____ sono le indicazioni che forniamo a un sistema di AI per dirgli che cosa deve fare, come deve farlo e quale risultato vogliamo ottenere.",
     "answer": "istruzioni",
     "bank": [
@@ -10,6 +14,10 @@
     ]
   },
   {
+    "id": 2,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nel Prompt Engineering, scrivere istruzioni efficaci significa trasformare una richiesta generica in una richiesta chiara, precisa e orientata al ____.",
     "answer": "risultato",
     "bank": [
@@ -20,6 +28,10 @@
     ]
   },
   {
+    "id": 3,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, il modo in cui formuliamo la richiesta influenza fortemente il ____.",
     "answer": "risultato",
     "bank": [
@@ -30,6 +42,10 @@
     ]
   },
   {
+    "id": 4,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Una buona istruzione non deve necessariamente essere lunga: deve essere soprattutto ____.",
     "answer": "chiara",
     "bank": [
@@ -40,6 +56,10 @@
     ]
   },
   {
+    "id": 5,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, aggiungere parole a caso non rende automaticamente un prompt ____.",
     "answer": "migliore",
     "bank": [
@@ -50,6 +70,10 @@
     ]
   },
   {
+    "id": 6,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "L'obiettivo di una buona istruzione è ridurre l'____ e guidare l'AI verso il risultato desiderato.",
     "answer": "ambiguità",
     "bank": [
@@ -60,6 +84,10 @@
     ]
   },
   {
+    "id": 7,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Possiamo specificare, in un'istruzione, il compito da svolgere, il formato della risposta, il livello di approfondimento, lo stile linguistico oppure eventuali ____.",
     "answer": "vincoli",
     "bank": [
@@ -70,6 +98,10 @@
     ]
   },
   {
+    "id": 8,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, l'AI generativa non interpreta una richiesta come farebbe una persona che conosce già le nostre ____.",
     "answer": "intenzioni",
     "bank": [
@@ -80,6 +112,10 @@
     ]
   },
   {
+    "id": 9,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Se una parte della richiesta rimane vaga, il sistema deve elaborare una risposta sulla base delle informazioni ____.",
     "answer": "disponibili",
     "bank": [
@@ -90,6 +126,10 @@
     ]
   },
   {
+    "id": 10,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, possiamo pensare al prompt come a una ____.",
     "answer": "consegna",
     "bank": [
@@ -100,6 +140,10 @@
     ]
   },
   {
+    "id": 11,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nell'esempio della mail al professore, la versione dettagliata specifica di mantenere un tono educato e ____.",
     "answer": "sintetico",
     "bank": [
@@ -110,6 +154,10 @@
     ]
   },
   {
+    "id": 12,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, la differenza tra una richiesta vaga e una richiesta precisa non sta nella tecnologia utilizzata, ma nella qualità della ____ tra persona e sistema.",
     "answer": "comunicazione",
     "bank": [
@@ -120,6 +168,10 @@
     ]
   },
   {
+    "id": 13,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, il Prompt Engineering non consiste nel trovare una formula magica, ma nell'imparare a comunicare all'AI obiettivi e ____ in modo efficace.",
     "answer": "vincoli",
     "bank": [
@@ -130,6 +182,10 @@
     ]
   },
   {
+    "id": 14,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nella metafora della tipografia, il tipografo potrebbe chiedere: che cosa, quante copie, su quale carta e in quale ____.",
     "answer": "formato",
     "bank": [
@@ -140,6 +196,10 @@
     ]
   },
   {
+    "id": 15,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nella metafora della tipografia, più chiaramente descriviamo ciò che vogliamo ottenere, meno spazio lasciamo all'____.",
     "answer": "interpretazione",
     "bank": [
@@ -150,6 +210,10 @@
     ]
   },
   {
+    "id": 16,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ____ è l'insieme delle informazioni che forniamo all'AI per permetterle di comprendere meglio la situazione, l'obiettivo e i dati necessari.",
     "answer": "contesto",
     "bank": [
@@ -160,6 +224,10 @@
     ]
   },
   {
+    "id": 17,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, un'istruzione indica che cosa fare; il ____ fornisce invece gli elementi necessari per farlo in modo appropriato.",
     "answer": "contesto",
     "bank": [
@@ -170,6 +238,10 @@
     ]
   },
   {
+    "id": 18,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nell'esempio del riassunto, l'istruzione è chiara, ma l'AI ha comunque bisogno del ____ da riassumere.",
     "answer": "testo",
     "bank": [
@@ -180,6 +252,10 @@
     ]
   },
   {
+    "id": 19,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il contesto può comprendere a chi è destinato il risultato, quale problema si sta cercando di risolvere e quali informazioni sono già ____.",
     "answer": "disponibili",
     "bank": [
@@ -190,6 +266,10 @@
     ]
   },
   {
+    "id": 20,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, il contesto permette all'AI di restringere lo spazio delle possibili ____.",
     "answer": "interpretazioni",
     "bank": [
@@ -200,6 +280,10 @@
     ]
   },
   {
+    "id": 21,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, un contesto eccessivamente lungo, confuso o contraddittorio può rendere più difficile ottenere una risposta ____.",
     "answer": "utile",
     "bank": [
@@ -210,6 +294,10 @@
     ]
   },
   {
+    "id": 22,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, riguardo al contesto vale un principio semplice: informazioni pertinenti, ordinate e ____.",
     "answer": "sufficienti",
     "bank": [
@@ -220,6 +308,10 @@
     ]
   },
   {
+    "id": 23,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nell'esempio del piano di studio, la richiesta contestualizzata specifica che l'esame di informatica è tra ____ giorni.",
     "answer": "dieci",
     "bank": [
@@ -230,6 +322,10 @@
     ]
   },
   {
+    "id": 24,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nell'esempio del piano di studio, la persona specifica di poter studiare ____ ore ogni sera.",
     "answer": "due",
     "bank": [
@@ -240,6 +336,10 @@
     ]
   },
   {
+    "id": 25,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, nel mondo professionale la qualità dell'output di un sistema generativo dipende anche dalla qualità delle informazioni ____ al sistema.",
     "answer": "fornite",
     "bank": [
@@ -250,6 +350,10 @@
     ]
   },
   {
+    "id": 26,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, una risposta convincente non è necessariamente una risposta ____.",
     "answer": "corretta",
     "bank": [
@@ -260,6 +364,10 @@
     ]
   },
   {
+    "id": 27,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nella metafora del medico, dire soltanto Non sto bene è un'informazione vera ma ____.",
     "answer": "insufficiente",
     "bank": [
@@ -270,6 +378,10 @@
     ]
   },
   {
+    "id": 28,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nella metafora del medico, spiegare sintomi, durata e farmaci assunti rende il quadro più ____.",
     "answer": "comprensibile",
     "bank": [
@@ -280,6 +392,10 @@
     ]
   },
   {
+    "id": 29,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nel Prompt Engineering, il ____ è l'identità, la prospettiva o la funzione che chiediamo all'AI di assumere durante lo svolgimento di un compito.",
     "answer": "ruolo",
     "bank": [
@@ -290,6 +406,10 @@
     ]
   },
   {
+    "id": 30,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, chiedere un ruolo può aiutare a orientare la risposta verso un determinato punto di ____.",
     "answer": "vista",
     "bank": [
@@ -300,6 +420,10 @@
     ]
   },
   {
+    "id": 31,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, quando assegniamo un ruolo all'AI, non la stiamo realmente trasformando in un insegnante o in un revisore: le forniamo una cornice ____.",
     "answer": "operativa",
     "bank": [
@@ -310,6 +434,10 @@
     ]
   },
   {
+    "id": 32,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il ruolo può essere particolarmente utile quando vogliamo ottenere una determinata prospettiva, un certo livello di linguaggio o una specifica modalità di ____.",
     "answer": "analisi",
     "bank": [
@@ -320,6 +448,10 @@
     ]
   },
   {
+    "id": 33,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, è importante non confondere il ruolo con una garanzia di ____.",
     "answer": "competenza",
     "bank": [
@@ -330,6 +462,10 @@
     ]
   },
   {
+    "id": 34,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Se chiediamo all'AI di comportarsi come un medico, secondo il modulo, questo non significa che abbiamo ottenuto un ____.",
     "answer": "medico",
     "bank": [
@@ -340,6 +476,10 @@
     ]
   },
   {
+    "id": 35,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, il ruolo modifica il modo in cui il sistema costruisce la risposta, ma non rende automaticamente ____ le informazioni prodotte.",
     "answer": "vere",
     "bank": [
@@ -350,6 +490,10 @@
     ]
   },
   {
+    "id": 36,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, un buon prompt può combinare istruzioni, contesto e ____.",
     "answer": "ruolo",
     "bank": [
@@ -360,6 +504,10 @@
     ]
   },
   {
+    "id": 37,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nell'esempio della guida turistica, la richiesta specifica di organizzare un itinerario per una persona interessata soprattutto ad arte e ____.",
     "answer": "architettura",
     "bank": [
@@ -370,6 +518,10 @@
     ]
   },
   {
+    "id": 38,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, le tecniche di prompting basate sull'assegnazione di ruoli sono state ampiamente studiate per orientare i modelli verso compiti ____.",
     "answer": "specifici",
     "bank": [
@@ -380,6 +532,10 @@
     ]
   },
   {
+    "id": 39,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, un sistema può assumere perfettamente il tono di un esperto e produrre comunque informazioni ____.",
     "answer": "errate",
     "bank": [
@@ -390,6 +546,10 @@
     ]
   },
   {
+    "id": 40,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, il ruolo deve essere considerato uno strumento di orientamento, non una certificazione dell'____ della risposta.",
     "answer": "affidabilità",
     "bank": [
@@ -400,6 +560,10 @@
     ]
   },
   {
+    "id": 41,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nella metafora dell'edificio con diverse porte, l'edificio è lo stesso, ma cambia il punto di ____.",
     "answer": "osservazione",
     "bank": [
@@ -410,6 +574,10 @@
     ]
   },
   {
+    "id": 42,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nel Prompt Engineering, gli ____ sono uno o più casi dimostrativi inseriti nel prompt per mostrare all'AI come svolgere un compito o quale formato utilizzare.",
     "answer": "esempi",
     "bank": [
@@ -420,6 +588,10 @@
     ]
   },
   {
+    "id": 43,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, un esempio può essere molto efficace quando il risultato desiderato è difficile da descrivere soltanto a ____.",
     "answer": "parole",
     "bank": [
@@ -430,6 +602,10 @@
     ]
   },
   {
+    "id": 44,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Gli esempi aiutano il modello a riconoscere il tipo di ____ che vogliamo applicare.",
     "answer": "schema",
     "bank": [
@@ -440,6 +616,10 @@
     ]
   },
   {
+    "id": 45,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "La tecnica che consiste nel fornire pochi esempi nel prompt viene chiamata ____.",
     "answer": "few-shot prompting",
     "bank": [
@@ -450,6 +630,10 @@
     ]
   },
   {
+    "id": 46,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Quando chiediamo un compito senza fornire esempi specifici, parliamo comunemente di ____.",
     "answer": "zero-shot prompting",
     "bank": [
@@ -460,6 +644,10 @@
     ]
   },
   {
+    "id": 47,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, gli esempi possono essere utilizzati anche per controllare il ____ della risposta.",
     "answer": "formato",
     "bank": [
@@ -470,6 +658,10 @@
     ]
   },
   {
+    "id": 48,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, se gli esempi sono ambigui o contraddittori, possono ____ il modello invece di aiutarlo.",
     "answer": "confondere",
     "bank": [
@@ -480,6 +672,10 @@
     ]
   },
   {
+    "id": 49,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nell'esempio della classificazione delle email, il messaggio 'Voglio annullare l'ordine' viene classificato come ____.",
     "answer": "Reclamo",
     "bank": [
@@ -490,6 +686,10 @@
     ]
   },
   {
+    "id": 50,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nell'esempio della classificazione delle email, il messaggio 'Quando arriverà il pacco?' viene classificato come ____.",
     "answer": "Spedizione",
     "bank": [
@@ -500,6 +700,10 @@
     ]
   },
   {
+    "id": 51,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, le tecniche di few-shot learning hanno avuto un ruolo importante nello sviluppo dell'utilizzo pratico dei grandi modelli ____.",
     "answer": "linguistici",
     "bank": [
@@ -510,6 +714,10 @@
     ]
   },
   {
+    "id": 52,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, fornire esempi direttamente nel contesto può permettere al modello di adattarsi a un compito senza dover essere nuovamente ____.",
     "answer": "addestrato",
     "bank": [
@@ -520,6 +728,10 @@
     ]
   },
   {
+    "id": 53,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, con gli esempi non stiamo necessariamente modificando il modello: stiamo modificando ciò che gli ____ prima di chiedergli di lavorare.",
     "answer": "mostriamo",
     "bank": [
@@ -530,6 +742,10 @@
     ]
   },
   {
+    "id": 54,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nella metafora della camicia piegata, l'esempio rende visibile ciò che le parole potrebbero lasciare ____.",
     "answer": "ambiguo",
     "bank": [
@@ -540,6 +756,10 @@
     ]
   },
   {
+    "id": 55,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Le ____ di Prompt Engineering sono strategie utilizzate per strutturare richieste complesse e guidare il modello attraverso più passaggi.",
     "answer": "tecniche avanzate",
     "bank": [
@@ -550,6 +770,10 @@
     ]
   },
   {
+    "id": 56,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, quando il compito è semplice può essere sufficiente una singola ____.",
     "answer": "istruzione",
     "bank": [
@@ -560,6 +784,10 @@
     ]
   },
   {
+    "id": 57,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Quando dobbiamo ottenere un risultato articolato, possiamo suddividere il problema in parti più ____.",
     "answer": "piccole",
     "bank": [
@@ -570,6 +798,10 @@
     ]
   },
   {
+    "id": 58,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Una tecnica fondamentale consiste nel chiedere all'AI di ____ il compito.",
     "answer": "scomporre",
     "bank": [
@@ -580,6 +812,10 @@
     ]
   },
   {
+    "id": 59,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nell'esempio della sequenza strutturata, dopo aver analizzato gli obiettivi e i punti di forza, si individuano i problemi e infine si propongono tre ____ concreti.",
     "answer": "miglioramenti",
     "bank": [
@@ -590,6 +826,10 @@
     ]
   },
   {
+    "id": 60,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Un'altra tecnica avanzata consiste nel definire chiaramente il ____ dell'output.",
     "answer": "formato",
     "bank": [
@@ -600,6 +840,10 @@
     ]
   },
   {
+    "id": 61,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, un prompt complesso può combinare ruolo, contesto, istruzioni ed ____.",
     "answer": "esempi",
     "bank": [
@@ -610,6 +854,10 @@
     ]
   },
   {
+    "id": 62,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Il principio secondo cui un problema complesso viene separato in parti più semplici si chiama ____.",
     "answer": "divide et impera",
     "bank": [
@@ -620,6 +868,10 @@
     ]
   },
   {
+    "id": 63,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, nessuna tecnica avanzata garantisce automaticamente una risposta ____.",
     "answer": "corretta",
     "bank": [
@@ -630,6 +882,10 @@
     ]
   },
   {
+    "id": 64,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, il prompt può guidare il modello, ma non ____ completamente ciò che il modello produrrà.",
     "answer": "controllare",
     "bank": [
@@ -640,6 +896,10 @@
     ]
   },
   {
+    "id": 65,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, soprattutto nelle attività importanti, il risultato ottenuto dall'AI deve essere ____.",
     "answer": "verificato",
     "bank": [
@@ -650,6 +910,10 @@
     ]
   },
   {
+    "id": 66,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, l'esperienza pratica ha evidenziato che un prompt sofisticato non elimina le allucinazioni, gli errori logici o le informazioni ____ dal modello.",
     "answer": "inventate",
     "bank": [
@@ -660,6 +924,10 @@
     ]
   },
   {
+    "id": 67,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nella metafora dell'architetto, dire semplicemente Costruiscimi una bella casa lascia enorme ____.",
     "answer": "libertà",
     "bank": [
@@ -670,6 +938,10 @@
     ]
   },
   {
+    "id": 68,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Un ____ con l'AI è un'attività articolata in più fasi nella quale l'intelligenza artificiale viene utilizzata come strumento di supporto per raggiungere un obiettivo preciso.",
     "answer": "progetto",
     "bank": [
@@ -680,6 +952,10 @@
     ]
   },
   {
+    "id": 69,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "A differenza di una semplice richiesta, un progetto richiede di definire obiettivo, fasi di lavoro, materiali, vincoli e risultato ____.",
     "answer": "finale",
     "bank": [
@@ -690,6 +966,10 @@
     ]
   },
   {
+    "id": 70,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, quando il lavoro diventa più complesso, un solo ____ può non essere sufficiente.",
     "answer": "prompt",
     "bank": [
@@ -700,6 +980,10 @@
     ]
   },
   {
+    "id": 71,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, l'AI può accompagnare l'utente durante diverse fasi di un progetto, ma questo non significa ____ completamente il lavoro.",
     "answer": "delegarle",
     "bank": [
@@ -710,6 +994,10 @@
     ]
   },
   {
+    "id": 72,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, il progetto rimane sotto il controllo della persona, che stabilisce gli obiettivi, valuta le risposte e decide cosa ____.",
     "answer": "utilizzare",
     "bank": [
@@ -720,6 +1008,10 @@
     ]
   },
   {
+    "id": 73,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, un prompt cerca di ottenere una risposta; un progetto organizza una serie di attività per raggiungere un ____.",
     "answer": "risultato",
     "bank": [
@@ -730,6 +1022,10 @@
     ]
   },
   {
+    "id": 74,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, nei progetti più complessi conviene procedere per ____, dividendo il lavoro in parti più piccole e verificabili.",
     "answer": "passi",
     "bank": [
@@ -740,6 +1036,10 @@
     ]
   },
   {
+    "id": 75,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, questo approccio permette di correggere gli errori lungo il percorso, invece di accorgersene soltanto alla ____.",
     "answer": "fine",
     "bank": [
@@ -750,6 +1050,10 @@
     ]
   },
   {
+    "id": 76,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, più il progetto è importante, più è necessario ____ ciò che l'AI produce.",
     "answer": "verificare",
     "bank": [
@@ -760,6 +1064,10 @@
     ]
   },
   {
+    "id": 77,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, l'AI non diventa automaticamente responsabile della ____ del risultato.",
     "answer": "correttezza",
     "bank": [
@@ -770,6 +1078,10 @@
     ]
   },
   {
+    "id": 78,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, nel mondo del lavoro ottenere una buona risposta non significa automaticamente ottenere un buon risultato ____.",
     "answer": "finale",
     "bank": [
@@ -780,6 +1092,10 @@
     ]
   },
   {
+    "id": 79,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, nei flussi di lavoro reali l'AI viene spesso inserita in un processo nel quale una persona definisce il compito, controlla gli output e ____ quando necessario.",
     "answer": "interviene",
     "bank": [
@@ -790,6 +1106,10 @@
     ]
   },
   {
+    "id": 80,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Secondo il modulo, l'AI può accelerare un progetto, ma non sostituisce il controllo ____ sul progetto.",
     "answer": "umano",
     "bank": [
@@ -800,6 +1120,10 @@
     ]
   },
   {
+    "id": 81,
+    "module": "prompt-engineering",
+    "type": "fillblank",
+    "difficulty": "easy",
     "sentence": "Nella metafora della cena per molte persone, se durante la preparazione manca un ingrediente si può intervenire subito senza dover ricominciare tutto da ____.",
     "answer": "capo",
     "bank": [

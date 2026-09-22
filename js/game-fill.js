@@ -8,6 +8,9 @@
    d'ora la partita usava sempre l'intero pool JSON del
    modulo, ignorando la selezione (mai richiesta perché
    'fill' non era incluso in needsNum — vedi game-engine-state.js).
+   v4.1.0 (app v8.36.0): applicato _filterHard() (game-engine-state.js)
+   al pool prima dello shuffle — rispetta il toggle "includi domande
+   difficili" del setup-panel, salvato per aula in db.diffPrefs.fill.
 ================================================== */
 
 /* ==================================================
@@ -25,6 +28,7 @@ async function startFill(cont,mod){
     showCompletaFraseError('Impossibile caricare il gioco Completa la frase. Riprova o cambia modulo.');
     return;
   }
+  src=_filterHard(src,'fill'); // v8.36.0
   gsSet(GS.PLAYING);
   // sN: numero frasi scelto in setup-num (0 = "Tutte") — stesso comportamento di Quiz/Vero o Falso.
   let pool=_weightedShuffleFillPool([...src]);

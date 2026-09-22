@@ -58,6 +58,20 @@
        "terreno pronto", contentReady resta false finché
        Erasmo non conferma lo sblocco.
      Vedi anche areas-config.js (dataPaths, stessa fase).
+   v5.2.0 (app v8.36.0): toggle "includi domande difficili" nel
+     setup-panel (nuovo, vale per tutti i minigiochi condivisi
+     dallo stesso pannello — vedi index.html). Preferenza salvata
+     per aula E per minigioco in db.diffPrefs[act] (nuovo campo,
+     vedi makeEmptyDb()/migrateDb()), default assente = solo easy.
+     I 5 normalize() dei loader ora portano "difficulty" nel pool
+     (prima veniva scartato — dato morto). Nuovo helper
+     _filterHard(pool,act), applicato in launch() (individuale e
+     squadre) e richiamato anche da game-fill.js/game-truefalse.js;
+     l'Abbina ha logica propria in getMatchSet() (game-match.js)
+     perché la difficoltà è per round da 5 coppie, non per domanda.
+     selAct() sincronizza il checkbox #diff-toggle sulla preferenza
+     salvata; toggleHard() la scrive e salva subito (stesso pattern
+     di addInd()/pickInd()).
    This is the central module — loaded before all games.
 ================================================== */
 
@@ -238,6 +252,7 @@ const QuizLoader = _createLoader({
   validate: raw => Array.isArray(raw) && raw.length > 0,
   normalize: (raw, mod) => raw.map(r => ({
     q: r.question, opts: r.options, a: r.correctIndex, exp: r.explanation, _src: mod,
+    difficulty: r.difficulty || 'easy', // v8.36.0: portato nel pool per il filtro "includi difficili"
   })),
 });
 
@@ -332,6 +347,7 @@ const SpeedQuizLoader = _createLoader({
   validate: raw => Array.isArray(raw) && raw.length > 0,
   normalize: (raw, mod) => raw.map(r => ({
     q: r.question, opts: r.options, a: r.correctIndex, exp: r.explanation, _src: mod,
+    difficulty: r.difficulty || 'easy', // v8.36.0: portato nel pool per il filtro "includi difficili"
   })),
 });
 
@@ -432,9 +448,23 @@ const AbbinLoader = _createLoader({
     if (Array.isArray(raw) && raw.length > 0 && raw.every(r => r && Array.isArray(r.pairs) && r.pairs.length > 0)) return true;
     return false;
   },
+  // v8.36.0: ogni "set" (round da 5 coppie) porta ora con sé la propria
+  // difficulty — formato B (array di round) ce l'ha per round; formato A
+  // (dict con "sets") ne ha una sola a livello di file, applicata a tutti
+  // i suoi sets. Consumato da getMatchSet() in game-match.js per il filtro
+  // "includi difficili" — struttura dei pair {t,d} invariata.
   normalize: (raw) => {
-    const sets = Array.isArray(raw) ? raw.map(r => r.pairs) : raw.sets;
-    return sets.map(set => set.map(pair => ({ t: pair.term, d: pair.definition })));
+    if (Array.isArray(raw)) {
+      return raw.map(r => ({
+        difficulty: r.difficulty || 'easy',
+        pairs: r.pairs.map(pair => ({ t: pair.term, d: pair.definition })),
+      }));
+    }
+    const fileDiff = raw.difficulty || 'easy';
+    return raw.sets.map(set => ({
+      difficulty: fileDiff,
+      pairs: set.map(pair => ({ t: pair.term, d: pair.definition })),
+    }));
   },
 });
 
@@ -541,7 +571,10 @@ const CompletaFraseLoader = _createLoader({
   },
   tag: 'CompletaFrase',
   validate: raw => Array.isArray(raw) && raw.length > 0,
-  normalize: (raw) => raw.map(r => ({ t: r.sentence, b: r.answer, bank: r.bank })),
+  normalize: (raw) => raw.map(r => ({
+    t: r.sentence, b: r.answer, bank: r.bank,
+    difficulty: r.difficulty || 'easy', // v8.36.0: portato nel pool per il filtro "includi difficili"
+  })),
 });
 
 /* -- Vero o Falso -- */
@@ -635,6 +668,7 @@ const TrueFalseLoader = _createLoader({
   validate: raw => Array.isArray(raw) && raw.length > 0,
   normalize: (raw, mod) => raw.map(r => ({
     q: r.statement, a: r.answer, exp: r.explanation, _src: mod,
+    difficulty: r.difficulty || 'easy', // v8.36.0: portato nel pool per il filtro "includi difficili"
   })),
 });
 
@@ -814,7 +848,7 @@ function deleteCourseData(id){
 }
 
 function makeEmptyDb(){
-  return{players:[],teams:[],lb2:makeEmptyLb2(),sessions:[],stats:{tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}}},wrongQ:{},badges:{unlocked:{}}};
+  return{players:[],teams:[],lb2:makeEmptyLb2(),sessions:[],stats:{tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}}},wrongQ:{},badges:{unlocked:{}},diffPrefs:{}};
 }
 
 
@@ -864,6 +898,11 @@ function migrateDb(p){
   if(!p.wrongQ)p.wrongQ={};
   if(!p.badges)p.badges={unlocked:{}};
   if(!p.badges.unlocked)p.badges.unlocked={};
+  // v8.36.0: diffPrefs — preferenza "includi domande difficili" per aula,
+  // salvata per singolo minigioco (chiave = sAct: 'quiz'|'speed'|'match'|'fill'|'truefalse').
+  // Assente/false = solo facili (default). Aule salvate prima di questa
+  // versione non hanno il campo: lo aggiungiamo vuoto, equivale a "tutto off".
+  if(!p.diffPrefs)p.diffPrefs={};
   return p;
 }
 
@@ -1025,6 +1064,34 @@ function _weightedShuffleQuizPool(pool) {
  *  (voci { t, b, bank }). */
 function _weightedShuffleFillPool(pool) {
   return _weightedShuffle(pool, q => _srWeight(q.t, q.b));
+}
+
+/* ==================================================
+   FILTRO DIFFICOLTÀ — v8.36.0
+   Preferenza "includi anche le domande difficili" salvata
+   per aula (db.diffPrefs, dentro il corso attivo — vedi
+   COURSES STORAGE più sotto) e per singolo minigioco
+   (chiave = act: 'quiz'|'speed'|'match'|'fill'|'truefalse').
+   Assente/false → solo easy (default scelto da Erasmo).
+   Rete di sicurezza: se il filtro svuota il pool (modulo
+   interamente hard, caso non presente oggi nel corpus ma
+   non escludibile in futuro) si ripiega sul pool intero
+   invece di lasciare la partita senza domande.
+================================================== */
+function _filterHard(pool, act) {
+  const includeHard = !!(db.diffPrefs && db.diffPrefs[act]);
+  if (includeHard) return pool;
+  const filtered = pool.filter(q => q.difficulty !== 'hard');
+  return filtered.length ? filtered : pool;
+}
+
+/* Cambia la preferenza difficoltà per il minigioco correntemente
+   selezionato (sAct) e la salva subito sull'aula attiva — stesso
+   pattern di addInd()/pickInd() che chiamano save() ad ogni scelta. */
+function toggleHard(v) {
+  if (!sAct) return;
+  db.diffPrefs[sAct] = !!v;
+  save();
 }
 
 /* ==================================================
@@ -1968,6 +2035,10 @@ function selAct(a){
   ['quiz','speed','match','memory','fill','truefalse'].forEach(x=>sh('ac-'+x).classList.remove('active'));
   sh('ac-'+a).classList.add('active');
   updateHero(a);
+  // v8.36.0: riflette la preferenza difficoltà salvata per QUESTA aula e
+  // QUESTO minigioco — il valore in sé (db.diffPrefs) non viene toccato qui.
+  const diffToggle=sh('diff-toggle');
+  if(diffToggle)diffToggle.checked=!!(db.diffPrefs&&db.diffPrefs[a]);
   const needsNum=(a==='quiz'||a==='speed'||a==='truefalse'||a==='fill');
   sh('setup-num').classList.toggle('hidden',!needsNum);
   sh('setup-divider').classList.toggle('hidden',!needsNum);
@@ -2400,14 +2471,18 @@ async function launch(){
         if(!isCached)showSpeedQuizLoading(sMod);
         try{rawPool=await loadSpeedPool(sMod);}
         catch(err){console.error('[PixelProf] SpeedQuiz load error:',err);showSpeedQuizError('Impossibile caricare lo speed quiz.');matchReset();return;}
+        rawPool=_filterHard(rawPool,act); // v8.36.0
       }else if(act==='quiz'){
         const isCached=QuizLoader.isCached(sMod);
         if(!isCached)showQuizLoading(sMod);
         try{rawPool=await loadPool(sMod);}
         catch(err){console.error('[PixelProf] Quiz load error:',err);showQuizLoadError(err.message||'Impossibile caricare il quiz.');matchReset();return;}
+        rawPool=_filterHard(rawPool,act); // v8.36.0
       }else{
         // match/memory/fill in modalit squadre: ogni squadra gioca in autonomia
         // non c' un pool domande condiviso  rawPool rimane null
+        // (il filtro difficoltà per questi 3 è applicato dentro le rispettive
+        // start*() — getMatchSet()/startFill()/startTrueFalse() — invariate qui)
         rawPool=null;
       }
 
@@ -2455,6 +2530,7 @@ async function launch(){
       try{rawPool=await loadPool(sMod);}
       catch(err){console.error('[PixelProf] Quiz load error:',err);showQuizLoadError(err.message||'Impossibile caricare il quiz. Riprova o contatta il sistema.');return;}
     }
+    rawPool=_filterHard(rawPool,act); // v8.36.0
     gsSet(GS.PLAYING);
     gameType=act;
     let pool=_weightedShuffleQuizPool(rawPool);

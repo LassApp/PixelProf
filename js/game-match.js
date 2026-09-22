@@ -3,6 +3,12 @@
    Abbina (match) game: timer, combo scoring, pair logic.
    Fase 8: PauseUIRegistry handler registrato (M2).
    Depends on: game-engine-state.js, scoring.js
+   v5.1.0 (app v8.36.0): getMatchSet() rispetta ora il toggle
+   "includi domande difficili" del setup-panel (db.diffPrefs.match).
+   A differenza degli altri minigiochi la difficoltà qui è per
+   ROUND (5 coppie), non per singola voce — vedi AbbinLoader.normalize
+   in game-engine-state.js, che ora restituisce {difficulty,pairs}
+   per ogni set invece del semplice array di pair.
 ================================================== */
 
 /* -- Per-pair color palette -- */
@@ -21,8 +27,12 @@ function buildGameHeader(rightContent){
 }
 
 async function getMatchSet(mod){
-  const sets = await loadAbbinSets(mod);
-  return shuffle(sets[Math.floor(Math.random()*sets.length)]).slice(0,5);
+  const sets = await loadAbbinSets(mod); // [{difficulty,pairs:[{t,d},...]}, ...]
+  const includeHard = !!(db.diffPrefs && db.diffPrefs['match']);
+  let pool = includeHard ? sets : sets.filter(s=>s.difficulty!=='hard');
+  if(!pool.length) pool = sets; // rete di sicurezza: mai restare senza round disponibili
+  const chosen = pool[Math.floor(Math.random()*pool.length)];
+  return shuffle(chosen.pairs).slice(0,5);
 }
 
 /* ==================================================

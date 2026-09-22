@@ -25,6 +25,11 @@
       .pp-generic-box di pixelprof.css, @layer dialogs) — box più
       largo (più contenuto: chip giocatori, import CSV) con scroll
       interno, chiusura × in stile .dp-close-btn (sobrio)
+   4) toggle "includi domande difficili" (v8.36.0) — nuovo
+      componente switch, non esisteva ancora in app. Colore "hard"
+      (arancio) hardcoded per riga, stesso pattern già usato qui
+      sopra per il badge "Coming Soon" — non è un token :root
+      nuovo, solo un valore locale a questo componente.
 ================================================== */
 @layer actselect {
 
@@ -155,6 +160,38 @@
     #setup-overlay-backdrop:has(#setup-panel:not(.hidden)),
     #setup-panel{ animation: none; }
   }
+
+  /* -- 4) toggle "includi domande difficili" --
+     Riga cliccabile intera (label) + pillola switch. Stato ON
+     colora anche la riga (bordo/sfondo arancio tenue) così la
+     scelta resta leggibile anche a switch piccolo su mobile. */
+  .diff-toggle-row{
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    padding: 10px 12px; border-radius: var(--radius-sm);
+    background: var(--surface-1); border: 1px solid var(--border-mid);
+    cursor: pointer; transition: border-color var(--transition-fast), background var(--transition-fast);
+  }
+  .diff-toggle-row:has(input:checked){
+    border-color: rgba(255,138,61,.4);
+    background: rgba(255,138,61,.1);
+  }
+  .diff-toggle-txt{ font-size: 12.5px; font-weight: 500; color: var(--text-primary); }
+
+  .diff-switch{ position: relative; flex-shrink: 0; width: 40px; height: 23px; }
+  .diff-switch input{ position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; z-index: 1; }
+  .diff-switch-track{
+    position: absolute; inset: 0; border-radius: 20px;
+    background: rgba(255,255,255,.14); border: 1px solid var(--border-mid);
+    transition: background var(--transition-fast), border-color var(--transition-fast);
+  }
+  .diff-switch-track::after{
+    content: ''; position: absolute; top: 2px; left: 2px; width: 17px; height: 17px; border-radius: 50%;
+    background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.4);
+    transition: transform var(--transition-fast);
+  }
+  .diff-switch input:checked ~ .diff-switch-track{ background: #ff8a3d; border-color: #ff8a3d; }
+  .diff-switch input:checked ~ .diff-switch-track::after{ transform: translateX(17px); }
+  .diff-switch input:focus-visible ~ .diff-switch-track{ outline: 2px solid var(--accent); outline-offset: 2px; }
 }
 
 @layer theme {

@@ -5,6 +5,9 @@
    fine sessione — stesso pattern di game-fill.js.
    Depends on: game-engine-state.js, scoring.js,
    game-match.js (buildGameHeader)
+   v1.1.0 (app v8.36.0): applicato _filterHard() (game-engine-state.js)
+   al pool prima dello shuffle — rispetta il toggle "includi domande
+   difficili" del setup-panel, salvato per aula in db.diffPrefs.truefalse.
 ================================================== */
 
 async function startTrueFalse(cont, mod){
@@ -19,6 +22,7 @@ async function startTrueFalse(cont, mod){
     showTrueFalseError(cont, 'Impossibile caricare Vero o Falso. Riprova o cambia modulo.');
     return;
   }
+  src = _filterHard(src, 'truefalse'); // v8.36.0
   gsSet(GS.PLAYING);
   gameType = 'truefalse';
   tfStreak = 0; tfBestStreak = 0; tfTotalScore = 0; tfAnswerLog = [];

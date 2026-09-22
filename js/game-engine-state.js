@@ -1094,6 +1094,39 @@ function toggleHard(v) {
   save();
 }
 
+/* v8.36.0b: contatore "N facili + N difficili disponibili" sotto il
+   toggle, per il minigioco+modulo correntemente selezionati in selAct().
+   Fire-and-forget (non awaited da selAct): usa i loader/cache già
+   esistenti, quindi non fa un fetch in più rispetto a prima — se il
+   pool non è ancora in cache lo scarica una volta sola, e launch()
+   userà la stessa cache. Guardia anti-race: se nel frattempo l'utente
+   ha cambiato minigioco o modulo, il risultato in ritardo viene scartato
+   invece di sovrascrivere un conteggio più recente.
+   Abbina: la difficoltà è per round da 5 coppie (non per domanda), quindi
+   qui conta i round, non le singole coppie — coerente con getMatchSet(). */
+async function _updateDiffCount(a, mod) {
+  const el = sh('diff-count');
+  if (!el) return;
+  if (a === 'memory') { el.textContent = ''; return; } // minigioco in pausa, nessun dato difficulty
+  el.textContent = 'Conteggio…';
+  let pool;
+  try {
+    if (a === 'quiz') pool = await loadPool(mod);
+    else if (a === 'speed') pool = await loadSpeedPool(mod);
+    else if (a === 'fill') pool = await loadCompletaFrasePool(mod);
+    else if (a === 'truefalse') pool = await loadTrueFalsePool(mod);
+    else if (a === 'match') pool = await loadAbbinSets(mod);
+    else { el.textContent = ''; return; }
+  } catch (err) {
+    if (sAct === a && sMod === mod) el.textContent = ''; // errore silenzioso qui: lo stesso fetch fallirà di nuovo (e verrà segnalato) al click su "Inizia sessione"
+    return;
+  }
+  if (sAct !== a || sMod !== mod) return; // scelta cambiata nel frattempo: scarta
+  const hard = pool.filter(q => q.difficulty === 'hard').length;
+  const easy = pool.length - hard;
+  el.textContent = `${easy} facili + ${hard} difficili disponibili`;
+}
+
 /* ==================================================
    GAME LIFECYCLE  v10 centralized state machine
    States: IDLE | PLAYING | PAUSED | FINISHED
@@ -2039,6 +2072,7 @@ function selAct(a){
   // QUESTO minigioco — il valore in sé (db.diffPrefs) non viene toccato qui.
   const diffToggle=sh('diff-toggle');
   if(diffToggle)diffToggle.checked=!!(db.diffPrefs&&db.diffPrefs[a]);
+  _updateDiffCount(a,sMod); // v8.36.0b: fire-and-forget, aggiorna #diff-count quando il pool è pronto
   const needsNum=(a==='quiz'||a==='speed'||a==='truefalse'||a==='fill');
   sh('setup-num').classList.toggle('hidden',!needsNum);
   sh('setup-divider').classList.toggle('hidden',!needsNum);

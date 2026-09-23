@@ -1,5 +1,15 @@
 /**
- * db_adapter.js — PixelProf v5.1.0
+ * db_adapter.js — PixelProf v8.37.0
+ *
+ * v8.37.0 — Storico "domande sbagliate" cross-device (vedi
+ *   sql/v8.37.0_wrong_questions_sync.sql). Nuove: recordWrongAnswer,
+ *   recordRightAnswer, getClassroomWrongQuestions,
+ *   resetClassroomWrongQuestions — usate da js/game_hooks.js (hook 6)
+ *   e js/dashboard.js (sezione "Domande difficili"). db.wrongQ locale
+ *   resta invariato (continua a guidare la ripetizione spaziata in
+ *   game-engine-state.js, che è sincrona e non può attendere una
+ *   chiamata di rete) — solo la VISTA nella Panoramica Classe passa
+ *   ora ai dati aggregati cloud quando disponibili.
  *
  * v5.1.0 — ROADMAP_AREE.md Fase 1 (Fondamenta dati):
  *   - loadCourses: mappa area_key dalla RPC get_teacher_classrooms.
@@ -898,6 +908,86 @@ async function _syncOfflineQueue() {
 window.addEventListener('online', () => setTimeout(_syncOfflineQueue, 1000));
 
 // ════════════════════════════════════════════════════════════════════
+// WRONG QUESTIONS API — storico domande sbagliate, cross-device (v8.37.0)
+// ════════════════════════════════════════════════════════════════════
+//
+// Prima di questa versione db.wrongQ viveva solo in localStorage, per
+// dispositivo/browser (vedi decisions-and-learnings.md, sezione Supabase
+// learnings). Su un'aula giocata da più PC la sezione "Domande difficili"
+// della Panoramica Classe vedeva solo gli errori fatti su QUEL dispositivo.
+// Queste 4 funzioni replicano lo storico su Supabase, per aula — stesso
+// pattern SECURITY DEFINER già in uso per delete_player/delete_team/
+// getClassroomOverview (RLS attiva senza policy dirette: tutto passa da qui).
+//
+// ── SQL DA ESEGUIRE NEL SUPABASE SQL EDITOR ──
+// Vedi file consegnato a parte: sql/v8.37.0_wrong_questions_sync.sql
+
+/**
+ * Registra/incrementa una domanda sbagliata sul cloud. Fire-and-forget
+ * (chiamata da js/game_hooks.js, mai await-ata dal motore di gioco).
+ * Fail-soft: se la RPC non esiste ancora (script SQL non eseguito),
+ * _sbCall logga un warning e torna null — nessun crash, db.wrongQ
+ * locale continua a funzionare come prima.
+ */
+export async function recordWrongAnswer(classId, questionKey, questionText, answerText, module, activity) {
+  if (!_online || !classId) return;
+  await _sbCall(
+    () => supabase.rpc('record_wrong_answer', {
+      p_classroom_id:  classId,
+      p_question_key:  questionKey,
+      p_question_text: (questionText || '').slice(0, 500),
+      p_answer_text:   (answerText   || '').slice(0, 200),
+      p_module:        module   || null,
+      p_activity:      activity || null,
+    }),
+    'recordWrongAnswer'
+  );
+}
+
+/**
+ * Incrementa right_count SOLO se la domanda risulta già sbagliata per
+ * QUESTA aula sul cloud (deciso lato server sui dati aggregati — vedi
+ * RPC — non sul solo db.wrongQ del dispositivo corrente). Fire-and-forget.
+ */
+export async function recordRightAnswer(classId, questionKey) {
+  if (!_online || !classId) return;
+  await _sbCall(
+    () => supabase.rpc('record_right_answer', { p_classroom_id: classId, p_question_key: questionKey }),
+    'recordRightAnswer'
+  );
+}
+
+/**
+ * Legge lo storico aggregato (cross-device) per l'aula — usato da
+ * dashboard.js al posto del solo db.wrongQ locale. Fail-soft: torna
+ * null se offline/RPC non ancora creata — dashboard.js in quel caso
+ * ripiega sul solo db.wrongQ locale (comportamento invariato).
+ */
+export async function getClassroomWrongQuestions(classId) {
+  if (!_online || !classId) return null;
+  return _sbCall(
+    () => supabase.rpc('get_classroom_wrong_questions', { p_classroom_id: classId }),
+    'getClassroomWrongQuestions'
+  );
+}
+
+/** Azzera lo storico cloud (pulsante "Azzera" della Panoramica Classe). */
+export async function resetClassroomWrongQuestions(classId) {
+  if (!_online || !classId) return { ok: false, error: 'Offline' };
+  try {
+    const { data, error } = await supabase.rpc('reset_classroom_wrong_questions', { p_classroom_id: classId });
+    if (error) {
+      console.error('[PixelProf] resetClassroomWrongQuestions RPC error:', error.code, error.message);
+      return { ok: false, error: error.message };
+    }
+    return { ok: true, deleted: data ?? 0 };
+  } catch (err) {
+    console.warn('[PixelProf] resetClassroomWrongQuestions eccezione:', err.message);
+    return { ok: false, error: err.message };
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════
 // HELPERS PRIVATI RIMANENTI
 // ════════════════════════════════════════════════════════════════════
 
@@ -961,6 +1051,10 @@ window.DB = {
   saveMatch,
   saveLbEntryCloud,
   loadLeaderboard,
+  recordWrongAnswer,
+  recordRightAnswer,
+  getClassroomWrongQuestions,
+  resetClassroomWrongQuestions,
   trackAnswer: (() => {
     // Debounce integrato per trackAnswer (chiamato da game_hooks)
     const buf = {};

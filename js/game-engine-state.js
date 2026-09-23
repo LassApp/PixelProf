@@ -58,6 +58,13 @@
        "terreno pronto", contentReady resta false finché
        Erasmo non conferma lo sblocco.
      Vedi anche areas-config.js (dataPaths, stessa fase).
+   v5.3.0 (app v8.37.0): _trackWrongQ()/_trackRightQ() replicano ora
+     su Supabase (window.hook_trackWrongAnswer/hook_trackRightAnswer,
+     game_hooks.js) — storico domande sbagliate cross-device, per aula.
+     db.wrongQ locale invariato: resta la fonte per la ripetizione
+     spaziata qui sotto (sincrona, non può attendere la rete). Solo la
+     sezione "Domande difficili" di dashboard.js legge ora i dati cloud
+     aggregati quando disponibili — vedi sql/v8.37.0_wrong_questions_sync.sql.
    v5.2.0 (app v8.36.0): toggle "includi domande difficili" nel
      setup-panel (nuovo, vale per tutti i minigiochi condivisi
      dallo stesso pannello — vedi index.html). Preferenza salvata
@@ -957,6 +964,10 @@ function _trackWrongQ(qText, answer, mod, act) {
     const sorted = keys.sort((a, b) => (db.wrongQ[a].lastTs || '') < (db.wrongQ[b].lastTs || '') ? -1 : 1);
     for (let i = 0; i < keys.length - 200; i++) delete db.wrongQ[sorted[i]];
   }
+  // v8.37.0: replica su Supabase, per aula (fire-and-forget) — vedi
+  // game_hooks.js hook 6. db.wrongQ locale resta invariato: guida ancora
+  // la ripetizione spaziata sotto, che è sincrona.
+  if (typeof window.hook_trackWrongAnswer === 'function') window.hook_trackWrongAnswer(qText, answer, mod, act);
 }
 
 /**
@@ -967,7 +978,16 @@ function _trackWrongQ(qText, answer, mod, act) {
 function _trackRightQ(qText, answer) {
   if (!db.wrongQ) return;
   const key = _wrongQKey(qText, answer);
-  if (db.wrongQ[key]) db.wrongQ[key].right++;
+  if (db.wrongQ[key]) {
+    db.wrongQ[key].right++;
+    // v8.37.0: replica su Supabase SOLO se la domanda risultava già
+    // sbagliata su QUESTO dispositivo (stesso criterio della riga
+    // locale sopra) — evita una chiamata di rete ad ogni risposta
+    // corretta dell'app, che sono molte di più di quelle sbagliate.
+    // Lato server la RPC decide comunque sui dati dell'intera aula,
+    // non sul solo db.wrongQ locale — vedi game_hooks.js hook 6.
+    if (typeof window.hook_trackRightAnswer === 'function') window.hook_trackRightAnswer(qText, answer);
+  }
 }
 
 /* ==================================================

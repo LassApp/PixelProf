@@ -1,5 +1,10 @@
 /**
- * game_hooks.js — PixelProf v5.0.1
+ * game_hooks.js — PixelProf v8.37.0
+ *
+ * v8.37.0 — HOOK 6 (nuovo): hook_trackWrongAnswer/hook_trackRightAnswer,
+ *   replica cloud di db.wrongQ per aula (vedi db_adapter.js e
+ *   sql/v8.37.0_wrong_questions_sync.sql). Stessa regola fire-and-forget
+ *   di tutti gli altri hook — vedi REGOLA FONDAMENTALE sotto.
  *
  * FIX v3.1.1 — mismatch firme tra HTML e JS (4 hook su 4 erano sbagliati):
  *
@@ -40,6 +45,8 @@ import {
   saveLbEntryCloud,
   ensurePlayer,
   ensureTeam,
+  recordWrongAnswer,
+  recordRightAnswer,
 } from './db_adapter.js';
 
 // ── Legge il classId dal contesto globale ────────────────────────
@@ -207,6 +214,27 @@ async function ensureParticipants(participants) {
 }
 
 // ════════════════════════════════════════════════════════════════════
+// HOOK 6 — hook_trackWrongAnswer / hook_trackRightAnswer
+// v8.37.0: replica su Supabase di db.wrongQ (storico domande sbagliate),
+// per aula — vedi sql/v8.37.0_wrong_questions_sync.sql. Chiamate da
+// _trackWrongQ()/_trackRightQ() in game-engine-state.js, sugli stessi
+// argomenti che scrivono la riga locale — fire-and-forget, non blocca
+// mai il gioco (stessa regola di tutti gli altri hook di questo file).
+// ════════════════════════════════════════════════════════════════════
+function trackWrongAnswerAndCloud(qText, answer, mod, act) {
+  const classId = _classId();
+  if (!classId) return; // offline o nessuna aula attiva
+  recordWrongAnswer(classId, qText, answer, mod, act)
+    .catch(err => console.warn('[PixelProf] recordWrongAnswer async err:', err));
+}
+function trackRightAnswerAndCloud(qText, answer) {
+  const classId = _classId();
+  if (!classId) return;
+  recordRightAnswer(classId, qText, answer)
+    .catch(err => console.warn('[PixelProf] recordRightAnswer async err:', err));
+}
+
+// ════════════════════════════════════════════════════════════════════
 // ESPOSIZIONE su window.hook_*
 // ════════════════════════════════════════════════════════════════════
 window.hook_saveLbEntry        = saveLbEntryAndCloud;
@@ -214,6 +242,8 @@ window.hook_saveSession        = saveSessionAndCloud;
 window.hook_trackAnswer        = trackAnswerAndCloud;
 window.hook_loadLeaderboard    = loadLeaderboardForRender;
 window.hook_ensureParticipants = ensureParticipants;
+window.hook_trackWrongAnswer   = trackWrongAnswerAndCloud;
+window.hook_trackRightAnswer   = trackRightAnswerAndCloud;
 
 // Bootstrap gate — segnala che gli hook sono pronti
 if (typeof window.__resolveHooks === 'function') window.__resolveHooks();

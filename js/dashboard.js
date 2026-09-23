@@ -1,5 +1,5 @@
 /* ==================================================
-   dashboard.js — PixelProf v2.0.0 commento
+   dashboard.js — PixelProf v8.37.0
    "Panoramica Classe" — vista aggregata per il docente.
 
    Risponde a 3 domande che oggi richiedono di incrociare
@@ -32,6 +32,14 @@
 
    Depends on: game-engine-state.js (db, activeCourseId, sh, shq,
    escHtml, escAttr), window.DB (db_adapter.js, opzionale)
+
+   v8.37.0 — "Domande difficili" ora cross-device: se
+   window.DB.getClassroomWrongQuestions è disponibile (RPC creata,
+   online), la sezione legge lo storico aggregato dell'intera aula
+   invece del solo db.wrongQ locale — vedi _chdCloudWq/
+   _cloudWqToLocalShape()/sql/v8.37.0_wrong_questions_sync.sql.
+   Fail-soft: RPC assente/offline → ripiega su db.wrongQ locale,
+   comportamento identico a prima.
 ================================================== */
 
 const _CHD_MOD_LABEL = { CE: 'Computer Essentials', OE: 'Online Essentials', WP: 'Word Processor', SS: 'Spreadsheets', PP: 'Power Point' };
@@ -126,9 +134,17 @@ async function renderDashboard() {
   </div>`;
 
   let cloud = null;
-  if (window.DB?.getClassroomOverview && activeCourseId) {
-    cloud = await window.DB.getClassroomOverview(activeCourseId).catch(() => null);
-  }
+  _chdCloudWq = null; // reset ad ogni ingresso — evita che un'aula precedente "sanguini" nella prossima
+  const [cloudOverview, cloudWq] = await Promise.all([
+    (window.DB?.getClassroomOverview && activeCourseId)
+      ? window.DB.getClassroomOverview(activeCourseId).catch(() => null)
+      : Promise.resolve(null),
+    (window.DB?.getClassroomWrongQuestions && activeCourseId)
+      ? window.DB.getClassroomWrongQuestions(activeCourseId).catch(() => null)
+      : Promise.resolve(null),
+  ]);
+  cloud = cloudOverview;
+  _chdCloudWq = cloudWq; // v8.37.0 — letto da _chdBuildWrongQ(), null = ripiega su db.wrongQ locale
 
   if (cloud) {
     _renderDashboardFromCloud(cloud);
@@ -407,9 +423,11 @@ function _chdBuildActivityBreakdown(actRows, maxCount) {
 }
 
 /* ==================================================
-   DOMANDE DIFFICILI — v6.3.0
-   Legge db.wrongQ (campo locale per-aula) e costruisce
-   la sezione "Domande difficili" nella dashboard con:
+   DOMANDE DIFFICILI — v8.37.0
+   Legge lo storico cloud aggregato per l'aula quando disponibile
+   (_chdCloudWq), altrimenti db.wrongQ locale (fail-soft, v6.3.0) —
+   vedi nota v8.37.0 in testa al file. Costruisce la sezione
+   "Domande difficili" nella dashboard con:
      - 2 tab: Problematiche (right===0) / Recuperate (right>0)
      - sotto-filtro per modulo (Tutti + CE/OE/WP con nomi estesi,
        per non dare per scontato che il docente conosca le sigle)
@@ -428,6 +446,25 @@ const _CHD_WQ_PAGE_SIZE = 10;
 let _chdWqTab       = 'problem'; // 'problem' | 'recovered'
 let _chdWqModFilter = 'all';     // 'all' | 'CE' | 'OE' | 'WP'
 let _chdWqExpanded  = false;
+let _chdCloudWq     = null;      // v8.37.0 — righe da getClassroomWrongQuestions(), null = non disponibile
+
+/**
+ * v8.37.0 — converte le righe della RPC get_classroom_wrong_questions
+ * nella STESSA forma di db.wrongQ (oggetto chiave→{q,answer,mod,act,
+ * wrong,right}), così tutta la logica di _chdBuildWrongQ() sotto resta
+ * identica sia che la fonte sia il cloud sia il locale — zero
+ * duplicazione, stesso approccio già usato per _renderDashboardFromCloud.
+ */
+function _cloudWqToLocalShape(rows) {
+  const wq = {};
+  (rows || []).forEach(r => {
+    wq[r.question_key] = {
+      q: r.question_text, answer: r.answer_text, mod: r.module, act: r.activity,
+      wrong: r.wrong_count, right: r.right_count, lastTs: r.last_wrong_at,
+    };
+  });
+  return wq;
+}
 
 /** Ricostruisce e sostituisce SOLO #chd-wq-section — nessun re-fetch cloud. */
 function _chdWqRefresh() {
@@ -506,7 +543,7 @@ function _chdWqEmptyHtml(tab, modFilter) {
  * sia dal render completo della dashboard sia da _chdWqRefresh().
  */
 function _chdBuildWrongQ() {
-  const wq = db.wrongQ || {};
+  const wq = _chdCloudWq ? _cloudWqToLocalShape(_chdCloudWq) : (db.wrongQ || {});
   const allEntries = Object.values(wq);
   if (!allEntries.length) return '';
 
@@ -587,6 +624,9 @@ function _chdBuildWrongQ() {
  * pattern di resetLb()/resetStats()/resetHistory(), vedi renderer.js
  * e stats.js) al posto del confirm() nativo, poi ri-renderizza la
  * dashboard. Esposta globalmente (chiamata da onclick inline).
+ * v8.37.0: azzera anche lo storico cloud (window.DB.resetClassroomWrongQuestions),
+ * atteso prima del re-render — altrimenti il fetch cloud dentro
+ * renderDashboard() rischia di rileggere righe non ancora cancellate.
  */
 async function resetWrongQ() {
   const ok = await ppConfirmBox(
@@ -596,6 +636,12 @@ async function resetWrongQ() {
   if (!ok) return;
   db.wrongQ = {};
   save();
+  // v8.37.0: azzera anche lo storico cloud — atteso PRIMA di ri-renderizzare
+  // per evitare che renderDashboard() rilegga dati cloud non ancora cancellati.
+  if (window.DB?.resetClassroomWrongQuestions && activeCourseId) {
+    await window.DB.resetClassroomWrongQuestions(activeCourseId).catch(() => null);
+  }
+  _chdCloudWq = null;
   _chdWqTab = 'problem'; _chdWqModFilter = 'all'; _chdWqExpanded = false;
   renderDashboard();
 }

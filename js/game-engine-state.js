@@ -58,6 +58,14 @@
        "terreno pronto", contentReady resta false finché
        Erasmo non conferma lo sblocco.
      Vedi anche areas-config.js (dataPaths, stessa fase).
+   v5.3.1 (app v8.37.1): FIX — _trackWrongQ()/_trackRightQ() ora
+     passano a window.hook_trackWrongAnswer/RightAnswer la chiave già
+     calcolata da _wrongQKey() (key), non solo qText/answer. La v5.3.0
+     non la passava: in game_hooks.js gli argomenti finivano tutti
+     shiftati di una posizione verso la RPC (question_key riceveva
+     l'intero testo della domanda al posto della chiave, activity
+     restava undefined) — sintomo osservato: tabella wrong_questions
+     creata ma zero righe popolate dopo ~20 risposte sbagliate.
    v5.3.0 (app v8.37.0): _trackWrongQ()/_trackRightQ() replicano ora
      su Supabase (window.hook_trackWrongAnswer/hook_trackRightAnswer,
      game_hooks.js) — storico domande sbagliate cross-device, per aula.
@@ -967,7 +975,7 @@ function _trackWrongQ(qText, answer, mod, act) {
   // v8.37.0: replica su Supabase, per aula (fire-and-forget) — vedi
   // game_hooks.js hook 6. db.wrongQ locale resta invariato: guida ancora
   // la ripetizione spaziata sotto, che è sincrona.
-  if (typeof window.hook_trackWrongAnswer === 'function') window.hook_trackWrongAnswer(qText, answer, mod, act);
+  if (typeof window.hook_trackWrongAnswer === 'function') window.hook_trackWrongAnswer(key, qText, answer, mod, act);
 }
 
 /**
@@ -986,7 +994,7 @@ function _trackRightQ(qText, answer) {
     // corretta dell'app, che sono molte di più di quelle sbagliate.
     // Lato server la RPC decide comunque sui dati dell'intera aula,
     // non sul solo db.wrongQ locale — vedi game_hooks.js hook 6.
-    if (typeof window.hook_trackRightAnswer === 'function') window.hook_trackRightAnswer(qText, answer);
+    if (typeof window.hook_trackRightAnswer === 'function') window.hook_trackRightAnswer(key);
   }
 }
 

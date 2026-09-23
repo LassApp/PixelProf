@@ -217,20 +217,27 @@ async function ensureParticipants(participants) {
 // HOOK 6 — hook_trackWrongAnswer / hook_trackRightAnswer
 // v8.37.0: replica su Supabase di db.wrongQ (storico domande sbagliate),
 // per aula — vedi sql/v8.37.0_wrong_questions_sync.sql. Chiamate da
-// _trackWrongQ()/_trackRightQ() in game-engine-state.js, sugli stessi
-// argomenti che scrivono la riga locale — fire-and-forget, non blocca
-// mai il gioco (stessa regola di tutti gli altri hook di questo file).
+// _trackWrongQ()/_trackRightQ() in game-engine-state.js con la STESSA
+// chiave già calcolata da _wrongQKey() lì (key) — nessuna riproduzione
+// dell'hash qui, per evitare che le due parti possano disallinearsi.
+// Fire-and-forget, non blocca mai il gioco (stessa regola degli altri
+// hook di questo file).
+//
+// FIX v8.37.1: la prima versione chiamava recordWrongAnswer/
+// recordRightAnswer SENZA la chiave (5 argomenti invece di 6, "qText"
+// scambiato per la chiave) — ogni parametro finiva shiftato di una
+// posizione lato RPC. Corretto passando "key" esplicitamente.
 // ════════════════════════════════════════════════════════════════════
-function trackWrongAnswerAndCloud(qText, answer, mod, act) {
+function trackWrongAnswerAndCloud(key, qText, answer, mod, act) {
   const classId = _classId();
-  if (!classId) return; // offline o nessuna aula attiva
-  recordWrongAnswer(classId, qText, answer, mod, act)
+  if (!classId) { console.warn('[PixelProf] hook_trackWrongAnswer: nessun activeCourseId, salto sync cloud'); return; }
+  recordWrongAnswer(classId, key, qText, answer, mod, act)
     .catch(err => console.warn('[PixelProf] recordWrongAnswer async err:', err));
 }
-function trackRightAnswerAndCloud(qText, answer) {
+function trackRightAnswerAndCloud(key) {
   const classId = _classId();
-  if (!classId) return;
-  recordRightAnswer(classId, qText, answer)
+  if (!classId) { console.warn('[PixelProf] hook_trackRightAnswer: nessun activeCourseId, salto sync cloud'); return; }
+  recordRightAnswer(classId, key)
     .catch(err => console.warn('[PixelProf] recordRightAnswer async err:', err));
 }
 

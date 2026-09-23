@@ -58,6 +58,13 @@
        "terreno pronto", contentReady resta false finché
        Erasmo non conferma lo sblocco.
      Vedi anche areas-config.js (dataPaths, stessa fase).
+   v5.3.2 (app v8.37.3): FIX — lbSelectAct() ora chiama anche
+     _mergeCloudLb(type,act): window.hook_loadLeaderboard esisteva già
+     ma non era mai stato collegato alla UI, quindi la classifica
+     mostrava solo db.lb2 locale (mai i punteggi fatti su altri
+     dispositivi). Fire-and-forget, ri-renderizza solo se cambia
+     qualcosa. Gap gemello per players/teams risolto in courses.js
+     (_mergeCloudRoster, chiamata da _enterCourseDirect).
    v5.3.1 (app v8.37.1): FIX — _trackWrongQ()/_trackRightQ() ora
      passano a window.hook_trackWrongAnswer/RightAnswer la chiave già
      calcolata da _wrongQKey() (key), non solo qText/answer. La v5.3.0
@@ -3112,4 +3119,45 @@ function lbSelectAct(act){
     <span class="lb-nav-sep">/</span>
     <span class="lb-nav-crumb current">${actLabel}</span>`;
   renderLbResults(lbType,act);
+  _mergeCloudLb(lbType,act); // v8.37.3 — fire-and-forget, vedi sotto
+}
+
+/**
+ * v8.37.3 — completa un secondo gap trovato da Erasmo: window.hook_
+ * loadLeaderboard esisteva già (game_hooks.js, HOOK 4) ma non era mai
+ * stato chiamato dalla UI — renderLbResults() leggeva SOLO db.lb2
+ * locale, quindi la classifica non mostrava mai i punteggi fatti su
+ * altri dispositivi. renderLbResults() ha già disegnato la vista con
+ * i dati locali (istantaneo); qui arricchiamo db.lb2 con l'aggregato
+ * cloud e ridisegniamo SOLO se qualcosa è cambiato e l'utente sta
+ * ancora guardando questa stessa vista (type+act) — altrimenti ha già
+ * navigato altrove nel frattempo.
+ */
+async function _mergeCloudLb(type,act){
+  if(typeof window.hook_loadLeaderboard!=='function') return;
+  let rows;
+  try{ rows=await window.hook_loadLeaderboard(activeCourseId,type,act); }
+  catch(err){ console.warn('[PixelProf] _mergeCloudLb errore:',err); return; }
+  if(!Array.isArray(rows)||!rows.length) return;
+  if(!db.lb2[type])db.lb2[type]={};
+  if(!db.lb2[type][act])db.lb2[type][act]={};
+  const bucket=db.lb2[type][act];
+  let changed=false;
+  rows.forEach(r=>{
+    if(!r.name)return;
+    if(!bucket[r.name]){bucket[r.name]={color:r.color||null,entries:[]};changed=true;}
+    if(r.color && !bucket[r.name].color){bucket[r.name].color=r.color;changed=true;}
+    const existing=bucket[r.name].entries.find(e=>e.mod===r.mod);
+    if(existing){
+      if(r.pts>existing.pts){existing.pts=r.pts;changed=true;}
+      if((r.games||0)>(existing.games||0)){existing.games=r.games;changed=true;}
+    }else{
+      bucket[r.name].entries.push({pts:r.pts,mod:r.mod,games:r.games});
+      changed=true;
+    }
+  });
+  if(changed){
+    save();
+    if(lbType===type && lbAct===act) renderLbResults(type,act);
+  }
 }

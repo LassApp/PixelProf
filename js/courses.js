@@ -407,6 +407,7 @@ function _enterCourseDirect(id){
   // tutti gli hook cloud (leaderboard, sessioni, statistiche, domande sbagliate) restavano
   // sempre "offline" silenziosamente — bug segnalato da Erasmo su wrong_questions vuota.
   db=loadCourseData(id);
+  _mergeCloudRoster(id); // v8.37.3 — fire-and-forget, vedi sotto
   // v8.25.0: registra questa come ultima aula collegata per il
   // pannello Profilo (fire-and-forget, vedi js/profile-panel.js).
   if(window.Auth && window.Auth.touchLoginMeta) window.Auth.touchLoginMeta(id);
@@ -441,6 +442,43 @@ function _enterCourseDirect(id){
   });
   closeCourseMenu();
   goHome();
+}
+
+/**
+ * v8.37.3 — completa il gap trovato da Erasmo: window.DB.loadPlayers/
+ * loadTeams esistevano già in db_adapter.js (usate solo internamente da
+ * getClassroomOverview per le statistiche) ma non erano mai collegate
+ * all'ingresso in aula — db.players/db.teams restavano quindi solo
+ * quelli salvati in locale su QUESTO dispositivo, anche se altri
+ * giocatori/squadre esistevano già su Supabase (aggiunti da un altro
+ * PC). Fire-and-forget, non blocca l'ingresso in aula: unisce (non
+ * sostituisce) i nomi dal cloud a quelli già locali, poi salva e
+ * ri-renderizza i chip SOLO se il pannello è già visibile.
+ */
+async function _mergeCloudRoster(id){
+  if(!window.DB?.loadPlayers || !window.DB?.loadTeams) return;
+  let cloudPlayers, cloudTeams;
+  try{
+    [cloudPlayers, cloudTeams] = await Promise.all([
+      window.DB.loadPlayers(id),
+      window.DB.loadTeams(id),
+    ]);
+  }catch(err){
+    console.warn('[PixelProf] _mergeCloudRoster errore:', err);
+    return;
+  }
+  if(activeCourseId!==id) return; // l'utente ha già cambiato aula nel frattempo
+  let changed=false;
+  (cloudPlayers||[]).forEach(name=>{
+    if(name && !db.players.includes(name)){ db.players.push(name); changed=true; }
+  });
+  (cloudTeams||[]).forEach(t=>{
+    if(t?.name && !db.teams.find(x=>x.name===t.name)){ db.teams.push({name:t.name,color:t.color}); changed=true; }
+  });
+  if(changed){
+    save();
+    if(sh('ind-chips')) renderIndChips();
+  }
 }
 
 /* -- Course dropdown menu -- */

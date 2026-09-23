@@ -871,6 +871,7 @@ async function _performLogout(){
   appState.teacher   = null;
   appState.classroom = null;
   activeCourseId     = null;
+  window.activeCourseId = null; // v8.37.2 — vedi fix gemello in courses.js (_enterCourseDirect)
   db                 = makeEmptyDb();
   window._activeModuleKeys = null; // reset filtro moduli aula
   if(typeof setCoursesScreenMode==='function') setCoursesScreenMode('select'); // v6.0.1: igiene stato — evita leak 'manage' tra sessioni diverse nella stessa tab

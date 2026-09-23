@@ -401,6 +401,11 @@ function _enterCourseDirect(id){
   const course=courses.find(c=>c.id===id);
   if(!course)return;
   activeCourseId=id;
+  window.activeCourseId=id; // v8.37.2 — FIX: window.activeCourseId non veniva MAI impostato,
+  // solo la variabile locale activeCourseId (let, visibile agli script classici ma non ai
+  // moduli ES). _classId() in game_hooks.js legge window.activeCourseId: senza questa riga
+  // tutti gli hook cloud (leaderboard, sessioni, statistiche, domande sbagliate) restavano
+  // sempre "offline" silenziosamente — bug segnalato da Erasmo su wrong_questions vuota.
   db=loadCourseData(id);
   // v8.25.0: registra questa come ultima aula collegata per il
   // pannello Profilo (fire-and-forget, vedi js/profile-panel.js).
@@ -510,6 +515,7 @@ async function cdAction(action){
       }
       if(activeCourseId===id){
         activeCourseId=null;
+        window.activeCourseId=null; // v8.37.2 — vedi fix gemello sopra in _enterCourseDirect
         if(window.appState) window.appState.classroom=null;
         db=makeEmptyDb();
         goCoursesFromApp();

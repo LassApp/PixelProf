@@ -111,6 +111,12 @@ function checkTF(choice){
   db.stats.byMod[mod] = db.stats.byMod[mod] || { c: 0, w: 0 };
   db.stats.tot++; if(ok){ db.stats.cor++; db.stats.byMod[mod].c++; } else db.stats.byMod[mod].w++;
   save();
+  // v8.38.0 — FIX: mancava la replica cloud che Quiz/Speed Quiz hanno già
+  // (window.hook_trackAnswer, vedi game-quiz.js). Senza questa riga Vero o
+  // Falso aggiornava db.stats in locale ma non arrivava mai a
+  // stats_aggregate/module_stats — "Progressi" sottostimava sempre questa
+  // attività su un secondo dispositivo.
+  if(typeof window.hook_trackAnswer==='function') window.hook_trackAnswer(mod, ok);
 
   // Niente auto-avanzamento: il docente decide quando proseguire (tempo per
   // leggere la spiegazione / commentarla in classe) — stesso principio del

@@ -1,7 +1,12 @@
 /* ==================================================
-   courses.js — PixelProf v5.0.7
+   courses.js — PixelProf v5.1.0
    Course/classroom system: grid, CRUD, icon picker,
    background/color picker, course menu.
+   v5.1.0 (app v8.38.0): _enterCourseDirect() ora chiama anche
+     _mergeCloudSessions/_mergeCloudModuleStats/_mergeCloudBadges
+     (definite in stats.js/badges.js) accanto a _mergeCloudRoster —
+     completano la sync cross-device di Progressi/Storico
+     sessioni/Traguardi. Vedi sql/v8.38.0_progress_sessions_badges_sync.sql.
    Cloud sync (DB.updateClassroom, _deleteClassroomRest,
    _reloadCourses, _applyModuleFilter) now embedded
    directly — no override chains from app.js.
@@ -408,6 +413,9 @@ function _enterCourseDirect(id){
   // sempre "offline" silenziosamente — bug segnalato da Erasmo su wrong_questions vuota.
   db=loadCourseData(id);
   _mergeCloudRoster(id); // v8.37.3 — fire-and-forget, vedi sotto
+  _mergeCloudSessions(id); // v8.38.0 — idem, definita in stats.js (serve presto per i traguardi)
+  _mergeCloudModuleStats(id); // v8.38.0 — idem, definita in stats.js
+  _mergeCloudBadges(id); // v8.38.0 — idem, definita in badges.js (prima del 1° checkAndShowNewBadges)
   // v8.25.0: registra questa come ultima aula collegata per il
   // pannello Profilo (fire-and-forget, vedi js/profile-panel.js).
   if(window.Auth && window.Auth.touchLoginMeta) window.Auth.touchLoginMeta(id);

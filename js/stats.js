@@ -1,8 +1,15 @@
 /* ==================================================
-   stats.js — PixelProf v5.0.2
+   stats.js — PixelProf v8.38.0
    Stats screen: renderStats, resetStats.
    Storico sessioni: renderHistory, resetHistory, exportHistoryCSV.
    v5.0.2: resetStats include WP; exportHistoryCSV aggiunto.
+   v8.38.0: _mergeCloudModuleStats/_mergeCloudSessions — "Progressi" e
+     "Storico sessioni" leggono ora anche l'aggregato cross-device
+     (module_stats, matches+scores), non solo db.stats/db.sessions
+     locali. reset* azzerano anche il lato cloud. Chiamate da
+     courses.js (_enterCourseDirect) e da _doGoTab (game-engine-
+     state.js) quando si apre la relativa scheda — vedi
+     sql/v8.38.0_progress_sessions_badges_sync.sql.
    Depends on: game-engine-state.js (db global)
 ================================================== */
 
@@ -37,7 +44,50 @@ async function resetStats(){
   if(!ok) return;
   db.stats={tot:0,cor:0,byMod:{}};
   save();
+  // v8.38.0: azzera anche module_stats sul cloud — atteso prima del
+  // re-render, altrimenti il prossimo _mergeCloudModuleStats potrebbe
+  // rileggere numeri non ancora cancellati.
+  if(window.DB?.resetClassroomModuleStats && activeCourseId){
+    await window.DB.resetClassroomModuleStats(activeCourseId).catch(()=>null);
+  }
   renderStats();
+}
+
+/**
+ * v8.38.0 — arricchisce db.stats con l'aggregato cross-device da
+ * module_stats (per-modulo, copre anche le aree non-ECDL — a
+ * differenza di stats_aggregate che ha colonne fisse CE/OE/WP — vedi
+ * sql/v8.38.0_progress_sessions_badges_sync.sql). Fire-and-forget:
+ * renderStats() ha già disegnato con i dati locali; qui aggiorniamo
+ * SOLO se il cloud porta numeri più alti (l'aggregato cross-device è
+ * sempre ≥ al locale, mai inferiore).
+ */
+async function _mergeCloudModuleStats(id){
+  if(typeof window.DB?.getClassroomModuleStats!=='function') return;
+  let rows;
+  try{ rows=await window.DB.getClassroomModuleStats(id); }
+  catch(err){ console.warn('[PixelProf] _mergeCloudModuleStats errore:',err); return; }
+  if(!Array.isArray(rows)||!rows.length) return;
+  if(typeof activeCourseId!=='undefined' && activeCourseId!==id) return;
+  let changed=false;
+  rows.forEach(r=>{
+    if(!r.module) return;
+    const local=db.stats.byMod[r.module]||{c:0,w:0};
+    const c=Math.max(local.c, r.correct||0);
+    const w=Math.max(local.w, r.wrong||0);
+    if(c!==local.c||w!==local.w){ db.stats.byMod[r.module]={c,w}; changed=true; }
+  });
+  if(changed){
+    // Ricalcola i totali dalla somma di TUTTI i moduli noti (locali +
+    // cloud), non solo quelli tornati da module_stats — così non si
+    // perdono moduli giocati offline e mai sincronizzati.
+    let tot=0,cor=0;
+    Object.values(db.stats.byMod).forEach(m=>{ tot+=(m.c+m.w); cor+=m.c; });
+    db.stats.tot=Math.max(db.stats.tot,tot);
+    db.stats.cor=Math.max(db.stats.cor,cor);
+    save();
+    if(shq('st-tot')) renderStats();
+  }
 }
 
 /* ==================================================
@@ -168,7 +218,56 @@ async function resetHistory(){
   if(!ok) return;
   db.sessions=[];
   save();
+  // v8.38.0: azzera anche matches/scores sul cloud — ATTENZIONE: sono le
+  // stesse tabelle lette dalle KPI di partecipazione della Panoramica
+  // Classe, quindi azzerare lo storico riduce anche quei conteggi.
+  if(window.DB?.resetClassroomSessions && activeCourseId){
+    await window.DB.resetClassroomSessions(activeCourseId).catch(()=>null);
+  }
   renderHistory();
+}
+
+/**
+ * v8.38.0 — arricchisce db.sessions con le sessioni giocate su ALTRI
+ * dispositivi (matches+scores già su Supabase via saveMatch, mai
+ * riletti finora — vedi sql/v8.38.0_progress_sessions_badges_sync.sql).
+ * Raggruppa le righe flat per match_id nella stessa forma già usata
+ * localmente ({game,mod,mode,teams,timestamp}), poi unisce evitando
+ * duplicati (stesso timestamp+game+mod = sessione già nota — stesso
+ * criterio "abbastanza buono" già visto altrove in questo progetto).
+ * Rispetta il cap locale di 100 voci (le più recenti, come
+ * saveSessionResult). LIMITE NOTO: le sessioni ricostruite dal cloud
+ * non portano bestStreak/maxCombo/perfectRun (mai salvati su
+ * matches/scores) — i badge legati a streak/combo restano quindi
+ * basati solo sui dati del dispositivo che li ha effettivamente
+ * raggiunti, non su un ipotetico record cross-device.
+ */
+async function _mergeCloudSessions(id){
+  if(typeof window.DB?.getClassroomSessions!=='function') return;
+  let rows;
+  try{ rows=await window.DB.getClassroomSessions(id); }
+  catch(err){ console.warn('[PixelProf] _mergeCloudSessions errore:',err); return; }
+  if(!Array.isArray(rows)||!rows.length) return;
+  if(typeof activeCourseId!=='undefined' && activeCourseId!==id) return;
+  const byMatch={};
+  rows.forEach(r=>{
+    if(!byMatch[r.match_id]) byMatch[r.match_id]={course:id,game:r.activity,mod:r.module,mode:r.mode,timestamp:r.created_at,teams:[]};
+    byMatch[r.match_id].teams.push({name:r.participant_name,color:r.participant_color,score:r.points});
+  });
+  if(!db.sessions)db.sessions=[];
+  const known=new Set(db.sessions.map(s=>`${s.timestamp}|${s.game}|${s.mod}`));
+  let changed=false;
+  Object.values(byMatch).forEach(cs=>{
+    const k=`${cs.timestamp}|${cs.game}|${cs.mod}`;
+    if(!known.has(k)){ db.sessions.push(cs); known.add(k); changed=true; }
+  });
+  if(changed){
+    db.sessions.sort((a,b)=>new Date(a.timestamp)-new Date(b.timestamp));
+    if(db.sessions.length>100) db.sessions=db.sessions.slice(-100);
+    save();
+    if(shq('hist-body')) renderHistory();
+    if(typeof checkAndShowNewBadges==='function') checkAndShowNewBadges();
+  }
 }
 
 /* ==================================================

@@ -1,5 +1,10 @@
 /**
- * game_hooks.js — PixelProf v8.37.0
+ * game_hooks.js — PixelProf v8.38.0
+ *
+ * v8.38.0 — HOOK 7 (nuovo): hook_unlockBadge, replica cloud di quale
+ *   badge è sbloccato e quando (classroom_badges). _flushStatsBuffer
+ *   ora chiama anche incrementModuleStat, per-modulo (module_stats) —
+ *   vedi sql/v8.38.0_progress_sessions_badges_sync.sql e db_adapter.js.
  *
  * v8.37.0 — HOOK 6 (nuovo): hook_trackWrongAnswer/hook_trackRightAnswer,
  *   replica cloud di db.wrongQ per aula (vedi db_adapter.js e
@@ -47,6 +52,8 @@ import {
   ensureTeam,
   recordWrongAnswer,
   recordRightAnswer,
+  incrementModuleStat,
+  unlockClassroomBadge,
 } from './db_adapter.js';
 
 // ── Legge il classId dal contesto globale ────────────────────────
@@ -167,6 +174,12 @@ function _flushStatsBuffer() {
     _statsBuffer[mod] = { c: 0, w: 0 };
     incrementStats(classId, mod, c, w)
       .catch(err => console.warn('[PixelProf] incrementStats async err:', err));
+    // v8.38.0: stessa coda di debounce, replica anche su module_stats
+    // (per-modulo — vedi sql/v8.38.0_progress_sessions_badges_sync.sql).
+    // incrementStats/stats_aggregate resta invariata (usata da
+    // getClassroomOverview) — questa è additiva, non la sostituisce.
+    incrementModuleStat(classId, mod, c, w)
+      .catch(err => console.warn('[PixelProf] incrementModuleStat async err:', err));
   });
   _statsBuffer.classId = null;
   _statsBuffer.count   = 0;
@@ -242,6 +255,21 @@ function trackRightAnswerAndCloud(key) {
 }
 
 // ════════════════════════════════════════════════════════════════════
+// HOOK 7 — hook_unlockBadge
+// v8.38.0: replica su Supabase quale badge è stato sbloccato e quando
+// — vedi sql/v8.38.0_progress_sessions_badges_sync.sql. Chiamata da
+// checkAndShowNewBadges() (badges.js) SOLO per i badge appena
+// sbloccati su QUESTO dispositivo (i già-noti dal cloud sono filtrati
+// prima, lato badges.js, da _mergeCloudBadges). Fire-and-forget.
+// ════════════════════════════════════════════════════════════════════
+function unlockBadgeAndCloud(badgeId) {
+  const classId = _classId();
+  if (!classId) return;
+  unlockClassroomBadge(classId, badgeId)
+    .catch(err => console.warn('[PixelProf] unlockClassroomBadge async err:', err));
+}
+
+// ════════════════════════════════════════════════════════════════════
 // ESPOSIZIONE su window.hook_*
 // ════════════════════════════════════════════════════════════════════
 window.hook_saveLbEntry        = saveLbEntryAndCloud;
@@ -251,6 +279,7 @@ window.hook_loadLeaderboard    = loadLeaderboardForRender;
 window.hook_ensureParticipants = ensureParticipants;
 window.hook_trackWrongAnswer   = trackWrongAnswerAndCloud;
 window.hook_trackRightAnswer   = trackRightAnswerAndCloud;
+window.hook_unlockBadge        = unlockBadgeAndCloud;
 
 // Bootstrap gate — segnala che gli hook sono pronti
 if (typeof window.__resolveHooks === 'function') window.__resolveHooks();

@@ -1,5 +1,13 @@
 /**
- * db_adapter.js — PixelProf v8.37.0
+ * db_adapter.js — PixelProf v8.38.0
+ *
+ * v8.38.0 — Progressi/Storico sessioni/Traguardi cross-device (vedi
+ *   sql/v8.38.0_progress_sessions_badges_sync.sql): module_stats
+ *   (per-modulo, sostituisce stats_aggregate per la UI "Progressi"),
+ *   lettura aggregata di matches+scores per "Storico sessioni",
+ *   classroom_badges per ricordare quali traguardi sono già sbloccati.
+ *   Usate da js/game_hooks.js, js/courses.js (_mergeCloud*),
+ *   js/stats.js, js/badges.js.
  *
  * v8.37.0 — Storico "domande sbagliate" cross-device (vedi
  *   sql/v8.37.0_wrong_questions_sync.sql). Nuove: recordWrongAnswer,
@@ -988,6 +996,109 @@ export async function resetClassroomWrongQuestions(classId) {
 }
 
 // ════════════════════════════════════════════════════════════════════
+// MODULE STATS API — "Progressi" per-modulo, cross-device (v8.38.0)
+// ════════════════════════════════════════════════════════════════════
+// stats_aggregate (sopra) ha colonne fisse per i 5 moduli ECDL classici
+// e resta in uso per le KPI della Panoramica Classe. module_stats è
+// per-modulo (come wrong_questions) e copre qualunque area/modulo —
+// usata dalla schermata "Progressi" (stats.js). Vedi
+// sql/v8.38.0_progress_sessions_badges_sync.sql.
+
+export async function incrementModuleStat(classId, module, correct, wrong) {
+  if (!_online || !classId) return;
+  await _sbCall(
+    () => supabase.rpc('increment_module_stat', {
+      p_classroom_id: classId, p_module: module, p_correct: correct, p_wrong: wrong,
+    }),
+    'incrementModuleStat'
+  );
+}
+
+export async function getClassroomModuleStats(classId) {
+  if (!_online || !classId) return null;
+  return _sbCall(
+    () => supabase.rpc('get_classroom_module_stats', { p_classroom_id: classId }),
+    'getClassroomModuleStats'
+  );
+}
+
+export async function resetClassroomModuleStats(classId) {
+  if (!_online || !classId) return { ok: false, error: 'Offline' };
+  try {
+    const { data, error } = await supabase.rpc('reset_classroom_module_stats', { p_classroom_id: classId });
+    if (error) { console.error('[PixelProf] resetClassroomModuleStats RPC error:', error.code, error.message); return { ok: false, error: error.message }; }
+    return { ok: true, deleted: data ?? 0 };
+  } catch (err) {
+    console.warn('[PixelProf] resetClassroomModuleStats eccezione:', err.message);
+    return { ok: false, error: err.message };
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════
+// SESSIONS API — "Storico sessioni" cross-device (v8.38.0)
+// ════════════════════════════════════════════════════════════════════
+// Nessuna tabella nuova: legge matches+scores (già scritte da
+// saveMatch) in forma flat — il raggruppamento per sessione avviene
+// lato client, vedi _mergeCloudSessions in courses.js.
+
+export async function getClassroomSessions(classId) {
+  if (!_online || !classId) return null;
+  return _sbCall(
+    () => supabase.rpc('get_classroom_sessions', { p_classroom_id: classId }),
+    'getClassroomSessions'
+  );
+}
+
+export async function resetClassroomSessions(classId) {
+  if (!_online || !classId) return { ok: false, error: 'Offline' };
+  try {
+    const { data, error } = await supabase.rpc('reset_classroom_sessions', { p_classroom_id: classId });
+    if (error) { console.error('[PixelProf] resetClassroomSessions RPC error:', error.code, error.message); return { ok: false, error: error.message }; }
+    return { ok: true, deleted: data ?? 0 };
+  } catch (err) {
+    console.warn('[PixelProf] resetClassroomSessions eccezione:', err.message);
+    return { ok: false, error: err.message };
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════
+// BADGES API — "Traguardi" cross-device (v8.38.0)
+// ════════════════════════════════════════════════════════════════════
+// I traguardi sono calcolati localmente da sessions/stats/wrongQ
+// (badges.js, _bdgBuildContext) — migliorano già sincronizzando quei
+// due sopra. Questa tabella ricorda solo QUALI badge sono già stati
+// sbloccati e quando, per evitare popup duplicati su un secondo
+// dispositivo e mantenere la data di sblocco coerente ovunque.
+
+export async function unlockClassroomBadge(classId, badgeId) {
+  if (!_online || !classId) return;
+  await _sbCall(
+    () => supabase.rpc('unlock_classroom_badge', { p_classroom_id: classId, p_badge_id: badgeId }),
+    'unlockClassroomBadge'
+  );
+}
+
+export async function getClassroomBadges(classId) {
+  if (!_online || !classId) return null;
+  return _sbCall(
+    () => supabase.rpc('get_classroom_badges', { p_classroom_id: classId }),
+    'getClassroomBadges'
+  );
+}
+
+export async function resetClassroomBadges(classId) {
+  if (!_online || !classId) return { ok: false, error: 'Offline' };
+  try {
+    const { data, error } = await supabase.rpc('reset_classroom_badges', { p_classroom_id: classId });
+    if (error) { console.error('[PixelProf] resetClassroomBadges RPC error:', error.code, error.message); return { ok: false, error: error.message }; }
+    return { ok: true, deleted: data ?? 0 };
+  } catch (err) {
+    console.warn('[PixelProf] resetClassroomBadges eccezione:', err.message);
+    return { ok: false, error: err.message };
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════
 // HELPERS PRIVATI RIMANENTI
 // ════════════════════════════════════════════════════════════════════
 
@@ -1055,6 +1166,14 @@ window.DB = {
   recordRightAnswer,
   getClassroomWrongQuestions,
   resetClassroomWrongQuestions,
+  incrementModuleStat,
+  getClassroomModuleStats,
+  resetClassroomModuleStats,
+  getClassroomSessions,
+  resetClassroomSessions,
+  unlockClassroomBadge,
+  getClassroomBadges,
+  resetClassroomBadges,
   trackAnswer: (() => {
     // Debounce integrato per trackAnswer (chiamato da game_hooks)
     const buf = {};

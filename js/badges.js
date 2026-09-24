@@ -1,6 +1,17 @@
 /* ==================================================
-   badges.js — PixelProf v1.0.0
+   badges.js — PixelProf v1.1.0
    Sistema Traguardi (badge/achievement) per aula.
+
+   v8.38.0: checkAndShowNewBadges() replica ora ogni sblocco su
+     Supabase (window.hook_unlockBadge, game_hooks.js hook 7) e
+     _mergeCloudBadges(id) — chiamata da courses.js all'ingresso in
+     aula, PRIMA che possa scattare il primo checkAndShowNewBadges —
+     porta i traguardi già sbloccati su altri dispositivi, evitando
+     popup duplicati. I traguardi migliorano anche indirettamente
+     grazie alla sync cross-device di db.sessions/db.stats (vedi
+     stats.js, _mergeCloudSessions/_mergeCloudModuleStats) da cui
+     _bdgBuildContext() legge. Vedi
+     sql/v8.38.0_progress_sessions_badges_sync.sql.
 
    Fonte dati: db.sessions (storico partite), db.stats
    (accuratezza aggregata), db.wrongQ (domande difficili/
@@ -11,6 +22,11 @@
    game-fill.js, game-match.js) — additivi e retrocompatibili:
    le sessioni salvate prima di questa versione semplicemente
    non hanno questi campi e vengono trattate come "nessun dato".
+   LIMITE NOTO (v8.38.0): questi 3 campi non sono mai stati inviati
+   a Supabase (matches/scores non li contengono), quindi le sessioni
+   ricostruite dal cloud su un altro dispositivo non li portano — i
+   badge legati a streak/combo restano basati sul solo dispositivo
+   che li ha effettivamente raggiunti.
 
    Persistenza sblocchi: db.badges.unlocked = { badgeId: isoTs }
    (schema inizializzato in makeEmptyDb()/migrateDb()).
@@ -186,11 +202,49 @@ function checkAndShowNewBadges() {
     if (r.unlocked) {
       db.badges.unlocked[def.id] = new Date().toISOString();
       newly.push(def);
+      // v8.38.0: replica su Supabase, per aula (fire-and-forget) — vedi
+      // game_hooks.js hook 7. Se un altro dispositivo l'ha già sbloccato
+      // prima, la RPC (ON CONFLICT DO NOTHING) mantiene la SUA data, non
+      // questa — vedi _mergeCloudBadges qui sotto, che gira prima ad ogni
+      // ingresso in aula e normalmente intercetta il badge prima di qui.
+      if (typeof window.hook_unlockBadge === 'function') window.hook_unlockBadge(def.id);
     }
   });
   if (newly.length) {
     save();
     _bdgQueueToasts(newly);
+  }
+}
+
+/**
+ * v8.38.0 — arricchisce db.badges.unlocked con i traguardi già
+ * sbloccati su ALTRI dispositivi per questa aula (classroom_badges —
+ * vedi sql/v8.38.0_progress_sessions_badges_sync.sql). Chiamata da
+ * courses.js (_enterCourseDirect) PRIMA che possa scattare il primo
+ * checkAndShowNewBadges() di questa sessione: così un badge già
+ * sbloccato altrove non viene ri-mostrato come "nuovo" qui, e la data
+ * di sblocco visualizzata resta quella originale (la più vecchia tra
+ * i dispositivi, mai sovrascritta).
+ */
+async function _mergeCloudBadges(id){
+  if(typeof window.DB?.getClassroomBadges!=='function') return;
+  let rows;
+  try{ rows=await window.DB.getClassroomBadges(id); }
+  catch(err){ console.warn('[PixelProf] _mergeCloudBadges errore:',err); return; }
+  if(!Array.isArray(rows)||!rows.length) return;
+  if(typeof activeCourseId!=='undefined' && activeCourseId!==id) return;
+  if(!db.badges) db.badges={unlocked:{}};
+  if(!db.badges.unlocked) db.badges.unlocked={};
+  let changed=false;
+  rows.forEach(r=>{
+    if(r.badge_id && !db.badges.unlocked[r.badge_id]){
+      db.badges.unlocked[r.badge_id]=r.unlocked_at;
+      changed=true;
+    }
+  });
+  if(changed){
+    save();
+    if(shq('badges-body')) renderBadges();
   }
 }
 
@@ -310,5 +364,10 @@ async function resetBadges() {
   if (!ok) return;
   db.badges = { unlocked: {} };
   save();
+  // v8.38.0: azzera anche il cloud — atteso prima del re-render, altrimenti
+  // il prossimo _mergeCloudBadges potrebbe rileggere quelli appena cancellati.
+  if (window.DB?.resetClassroomBadges && activeCourseId) {
+    await window.DB.resetClassroomBadges(activeCourseId).catch(() => null);
+  }
   renderBadges();
 }

@@ -58,6 +58,12 @@
        "terreno pronto", contentReady resta false finché
        Erasmo non conferma lo sblocco.
      Vedi anche areas-config.js (dataPaths, stessa fase).
+   v5.3.3 (app v8.38.0): _doGoTab() ora richiama anche
+     _mergeCloudModuleStats(activeCourseId)/_mergeCloudSessions(activeCourseId)
+     quando si aprono le schede Progressi/Storico (definite in
+     stats.js) — completa, insieme a courses.js/badges.js, la sync
+     cross-device di Progressi/Storico sessioni/Traguardi. Vedi
+     sql/v8.38.0_progress_sessions_badges_sync.sql.
    v5.3.2 (app v8.37.3): FIX — lbSelectAct() ora chiama anche
      _mergeCloudLb(type,act): window.hook_loadLeaderboard esisteva già
      ma non era mai stato collegato alla UI, quindi la classifica
@@ -2024,8 +2030,8 @@ function _doGoTab(t){
   setTb(tbMap[t]||null);
   showScreen('tab-'+t);
   if(t==='lb'){lbType=null;lbAct=null;lbShowStep('type');}
-  if(t==='stats')renderStats();
-  if(t==='hist')renderHistory();
+  if(t==='stats'){renderStats();if(typeof _mergeCloudModuleStats==='function')_mergeCloudModuleStats(activeCourseId);}
+  if(t==='hist'){renderHistory();if(typeof _mergeCloudSessions==='function')_mergeCloudSessions(activeCourseId);}
   if(t==='dashboard')renderDashboard();
   if(t==='badges')renderBadges();
 }

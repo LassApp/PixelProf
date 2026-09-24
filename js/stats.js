@@ -1,8 +1,16 @@
 /* ==================================================
-   stats.js — PixelProf v8.38.0
+   stats.js — PixelProf v8.38.2
    Stats screen: renderStats, resetStats.
    Storico sessioni: renderHistory, resetHistory, exportHistoryCSV.
    v5.0.2: resetStats include WP; exportHistoryCSV aggiunto.
+   v8.38.2: "Progressi" per modulo ora mostra COMPLETAMENTO (domande
+     risposte / domande disponibili), non più accuratezza — vedi nota
+     nel corpo di renderStats(). Nuova _getModuleTotalQuestions(modKey):
+     somma Quiz+Completa la frase+Vero o Falso leggendo live dai loader
+     esistenti (nessun manifest statico — un modulo senza JSON conta 0
+     e si aggiorna da solo quando i file arrivano, incluse aree/moduli
+     futuri). Scope deciso da Erasmo: Speed Quiz/Abbina/Memory/Flipcard/
+     Lo Sapevi esclusi dal conteggio.
    v8.38.1: FIX — _mergeCloudModuleStats/_mergeCloudSessions
      trattavano un array cloud vuoto come "fetch fallito" invece che
      come segnale valido di azzeramento avvenuto altrove: un reset da
@@ -21,6 +29,60 @@
 /* ==================================================
    STATS
 ================================================== */
+
+/* v8.38.2 — cache dei totali "domande disponibili" per modulo, per la
+   sessione corrente (evita di rifare le stesse fetch ad ogni apertura
+   di "Progressi" — i loader Quiz/Completa/VeroFalso hanno comunque
+   già una cache propria, questa è solo per non richiamarli inutilmente). */
+let _modTotalsCache = {};
+
+/**
+ * v8.38.2 — conta le domande DISPONIBILI per un modulo, sommando
+ * Quiz + Completa la frase + Vero o Falso (scope deciso da Erasmo:
+ * Speed Quiz escluso perché duplica le stesse domande di Quiz, Abbina
+ * perché è abbinamento non domanda, Memory perché in pausa, Flipcard/
+ * Lo Sapevi perché didattica pura senza corretto/sbagliato).
+ * NESSUN manifest statico: legge live dagli stessi loader già usati
+ * in partita (loadPool/loadCompletaFrasePool/loadTrueFalsePool) — un
+ * modulo che oggi non ha ancora tutti i JSON (es. Online Collaboration,
+ * in preparazione) conta semplicemente quello che trova, e il totale
+ * si aggiorna da solo non appena i file mancanti vengono caricati,
+ * senza bisogno di toccare questa funzione. Vale allo stesso modo per
+ * futuri nuovi moduli in aree esistenti o nuove aree.
+ * Ogni minigioco fallisce in modo indipendente (Promise.allSettled):
+ * un modulo con solo Quiz e senza Completa la frase conta comunque
+ * il Quiz, non va a zero per un file mancante.
+ */
+async function _getModuleTotalQuestions(modKey){
+  const results = await Promise.allSettled([
+    loadPool(modKey),
+    loadCompletaFrasePool(modKey),
+    loadTrueFalsePool(modKey),
+  ]);
+  return results.reduce((sum,r)=> sum + (r.status==='fulfilled' && Array.isArray(r.value) ? r.value.length : 0), 0);
+}
+
+/**
+ * v8.38.2 — carica (o legge dalla cache di sessione) il totale
+ * domande disponibili per ciascun modulo in mods[], poi ri-renderizza
+ * "Progressi" quando tutti i totali sono pronti. Fire-and-forget,
+ * chiamata da renderStats() ad ogni apertura della scheda.
+ */
+async function _loadModuleTotals(mods,areaKeyAtCall){
+  const missing = mods.filter(m=>!(m.key in _modTotalsCache));
+  if(!missing.length) return;
+  await Promise.all(missing.map(async m=>{
+    _modTotalsCache[m.key] = await _getModuleTotalQuestions(m.key);
+  }));
+  // L'utente potrebbe aver cambiato aula/area nel frattempo — non
+  // ridisegnare una vista che non è più quella corrente.
+  if(shq('st-mods') && typeof _statsCurrentAreaKey!=='undefined' && _statsCurrentAreaKey===areaKeyAtCall){
+    renderStats();
+  }
+}
+
+let _statsCurrentAreaKey=null;
+
 function renderStats(){
   sh('st-tot').textContent=db.stats.tot;sh('st-cor').textContent=db.stats.cor;
   sh('st-pct').textContent=db.stats.tot>0?Math.round(db.stats.cor/db.stats.tot*100)+'%':'0%';
@@ -30,15 +92,36 @@ function renderStats(){
   // mostrava sempre "Word/Computer/Online Essentials" con dati a zero).
   const course   = (typeof activeCourseId!=='undefined' && activeCourseId) ? loadCourses().find(c=>c.id===activeCourseId) : null;
   const areaKey  = course?.areaKey || 'ecdl';
+  _statsCurrentAreaKey = areaKey;
   const areaInfo = window.AreasConfig?.getAreaByKey(areaKey);
   const mods = areaInfo
     ? areaInfo.modules.filter(m=>m.contentReady===true).map(m=>({key:m.key,label:m.label}))
     : [{key:'CE',label:'Computer Essentials'},{key:'OE',label:'Online Essentials'},{key:'WP',label:'Word Processor'},{key:'SS',label:'Spreadsheets'},{key:'PP',label:'Power Point'}];
 
+  // v8.38.2 — "Progressi" per modulo ora mostra COMPLETAMENTO (domande
+  // risposte / domande disponibili in Quiz+Completa+VeroFalso), non più
+  // accuratezza — era la stessa etichetta "n/tot·pct%" ma pct era in
+  // realtà "corrette/risposte date", leggibile per errore come
+  // "% del modulo completato". L'accuratezza resta visibile come
+  // sottoriga separata, non è stata tolta.
+  // LIMITE NOTO: "risposte date" conta ogni tentativo, non le domande
+  // DISTINTE viste — rigiocare più volte lo stesso modulo può quindi
+  // avvicinare/raggiungere il 100% anche senza aver visto ogni singola
+  // domanda del pool (percentuale comunque limitata a 100%, mai oltre).
   sh('st-mods').innerHTML=mods.map(({key:k,label:n})=>{
-    const m=db.stats.byMod[k]||{c:0,w:0};const tot=m.c+m.w;const pct=tot>0?Math.round(m.c/tot*100):0;
-    return`<div class="mod-stat"><div class="mod-stat-row"><span>${escHtml(n)}</span><span style="font-family:'Share Tech Mono',monospace;color:var(--accent)">${m.c}/${tot} · ${pct}%</span></div><div class="prog-bar" style="margin:0"><div class="prog-fill" style="width:${pct}%"></div></div></div>`;
+    const m=db.stats.byMod[k]||{c:0,w:0};const answered=m.c+m.w;
+    const accPct=answered>0?Math.round(m.c/answered*100):0;
+    const avail=_modTotalsCache[k];
+    const knownAvail = typeof avail==='number';
+    const complPct = knownAvail && avail>0 ? Math.min(100,Math.round(answered/avail*100)) : null;
+    const rightLabel = !knownAvail
+      ? '<span style="opacity:.5">conteggio…</span>'
+      : (avail>0 ? `${answered}/${avail} · ${complPct}%` : `${answered} risposte`);
+    const barPct = complPct!=null ? complPct : 0;
+    return`<div class="mod-stat"><div class="mod-stat-row"><span>${escHtml(n)}</span><span style="font-family:'Share Tech Mono',monospace;color:var(--accent)">${rightLabel}</span></div><div class="prog-bar" style="margin:0"><div class="prog-fill" style="width:${barPct}%"></div></div>${answered>0?`<div style="font-size:10px;color:var(--text-muted);margin-top:3px">Precisione su queste: ${accPct}%</div>`:''}</div>`;
   }).join('');
+
+  _loadModuleTotals(mods, areaKey);
 }
 
 async function resetStats(){

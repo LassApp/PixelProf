@@ -3,6 +3,11 @@
    Stats screen: renderStats, resetStats.
    Storico sessioni: renderHistory, resetHistory, exportHistoryCSV.
    v5.0.2: resetStats include WP; exportHistoryCSV aggiunto.
+   v8.38.1: FIX — _mergeCloudModuleStats/_mergeCloudSessions
+     trattavano un array cloud vuoto come "fetch fallito" invece che
+     come segnale valido di azzeramento avvenuto altrove: un reset da
+     un altro dispositivo non si propagava mai qui. Stesso bug corretto
+     in badges.js (_mergeCloudBadges) — vedi lì per i dettagli.
    v8.38.0: _mergeCloudModuleStats/_mergeCloudSessions — "Progressi" e
      "Storico sessioni" leggono ora anche l'aggregato cross-device
      (module_stats, matches+scores), non solo db.stats/db.sessions
@@ -67,24 +72,35 @@ async function _mergeCloudModuleStats(id){
   let rows;
   try{ rows=await window.DB.getClassroomModuleStats(id); }
   catch(err){ console.warn('[PixelProf] _mergeCloudModuleStats errore:',err); return; }
-  if(!Array.isArray(rows)||!rows.length) return;
+  // v8.38.1 — FIX: stesso bug di _mergeCloudBadges (vedi badges.js) —
+  // array vuoto = azzerato altrove, non fallimento.
+  if(!Array.isArray(rows)) return;
   if(typeof activeCourseId!=='undefined' && activeCourseId!==id) return;
   let changed=false;
-  rows.forEach(r=>{
-    if(!r.module) return;
-    const local=db.stats.byMod[r.module]||{c:0,w:0};
-    const c=Math.max(local.c, r.correct||0);
-    const w=Math.max(local.w, r.wrong||0);
-    if(c!==local.c||w!==local.w){ db.stats.byMod[r.module]={c,w}; changed=true; }
-  });
+  if(!rows.length){
+    if(Object.keys(db.stats.byMod).length || db.stats.tot || db.stats.cor){
+      db.stats={tot:0,cor:0,byMod:{}};
+      changed=true;
+    }
+  }else{
+    rows.forEach(r=>{
+      if(!r.module) return;
+      const local=db.stats.byMod[r.module]||{c:0,w:0};
+      const c=Math.max(local.c, r.correct||0);
+      const w=Math.max(local.w, r.wrong||0);
+      if(c!==local.c||w!==local.w){ db.stats.byMod[r.module]={c,w}; changed=true; }
+    });
+    if(changed){
+      // Ricalcola i totali dalla somma di TUTTI i moduli noti (locali +
+      // cloud), non solo quelli tornati da module_stats — così non si
+      // perdono moduli giocati offline e mai sincronizzati.
+      let tot=0,cor=0;
+      Object.values(db.stats.byMod).forEach(m=>{ tot+=(m.c+m.w); cor+=m.c; });
+      db.stats.tot=Math.max(db.stats.tot,tot);
+      db.stats.cor=Math.max(db.stats.cor,cor);
+    }
+  }
   if(changed){
-    // Ricalcola i totali dalla somma di TUTTI i moduli noti (locali +
-    // cloud), non solo quelli tornati da module_stats — così non si
-    // perdono moduli giocati offline e mai sincronizzati.
-    let tot=0,cor=0;
-    Object.values(db.stats.byMod).forEach(m=>{ tot+=(m.c+m.w); cor+=m.c; });
-    db.stats.tot=Math.max(db.stats.tot,tot);
-    db.stats.cor=Math.max(db.stats.cor,cor);
     save();
     if(shq('st-tot')) renderStats();
   }
@@ -247,23 +263,31 @@ async function _mergeCloudSessions(id){
   let rows;
   try{ rows=await window.DB.getClassroomSessions(id); }
   catch(err){ console.warn('[PixelProf] _mergeCloudSessions errore:',err); return; }
-  if(!Array.isArray(rows)||!rows.length) return;
+  // v8.38.1 — FIX: stesso bug di _mergeCloudBadges (vedi badges.js) —
+  // array vuoto = azzerato altrove, non fallimento.
+  if(!Array.isArray(rows)) return;
   if(typeof activeCourseId!=='undefined' && activeCourseId!==id) return;
-  const byMatch={};
-  rows.forEach(r=>{
-    if(!byMatch[r.match_id]) byMatch[r.match_id]={course:id,game:r.activity,mod:r.module,mode:r.mode,timestamp:r.created_at,teams:[]};
-    byMatch[r.match_id].teams.push({name:r.participant_name,color:r.participant_color,score:r.points});
-  });
   if(!db.sessions)db.sessions=[];
-  const known=new Set(db.sessions.map(s=>`${s.timestamp}|${s.game}|${s.mod}`));
   let changed=false;
-  Object.values(byMatch).forEach(cs=>{
-    const k=`${cs.timestamp}|${cs.game}|${cs.mod}`;
-    if(!known.has(k)){ db.sessions.push(cs); known.add(k); changed=true; }
-  });
+  if(!rows.length){
+    if(db.sessions.length){ db.sessions=[]; changed=true; }
+  }else{
+    const byMatch={};
+    rows.forEach(r=>{
+      if(!byMatch[r.match_id]) byMatch[r.match_id]={course:id,game:r.activity,mod:r.module,mode:r.mode,timestamp:r.created_at,teams:[]};
+      byMatch[r.match_id].teams.push({name:r.participant_name,color:r.participant_color,score:r.points});
+    });
+    const known=new Set(db.sessions.map(s=>`${s.timestamp}|${s.game}|${s.mod}`));
+    Object.values(byMatch).forEach(cs=>{
+      const k=`${cs.timestamp}|${cs.game}|${cs.mod}`;
+      if(!known.has(k)){ db.sessions.push(cs); known.add(k); changed=true; }
+    });
+    if(changed){
+      db.sessions.sort((a,b)=>new Date(a.timestamp)-new Date(b.timestamp));
+      if(db.sessions.length>100) db.sessions=db.sessions.slice(-100);
+    }
+  }
   if(changed){
-    db.sessions.sort((a,b)=>new Date(a.timestamp)-new Date(b.timestamp));
-    if(db.sessions.length>100) db.sessions=db.sessions.slice(-100);
     save();
     if(shq('hist-body')) renderHistory();
     if(typeof checkAndShowNewBadges==='function') checkAndShowNewBadges();

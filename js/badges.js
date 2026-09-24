@@ -1,6 +1,13 @@
 /* ==================================================
-   badges.js — PixelProf v1.1.0
+   badges.js — PixelProf v1.1.1
    Sistema Traguardi (badge/achievement) per aula.
+
+   v8.38.1: FIX — _mergeCloudBadges trattava un array cloud vuoto come
+     "fetch fallito" invece che segnale valido di azzeramento avvenuto
+     altrove (es. "Azzera" da un altro dispositivo): il locale non si
+     svuotava mai di conseguenza. Bug segnalato da Erasmo (reset da
+     iPad non visibile su PC dopo refresh). Stesso bug corretto anche
+     in stats.js (_mergeCloudModuleStats/_mergeCloudSessions).
 
    v8.38.0: checkAndShowNewBadges() replica ora ogni sblocco su
      Supabase (window.hook_unlockBadge, game_hooks.js hook 7) e
@@ -231,17 +238,27 @@ async function _mergeCloudBadges(id){
   let rows;
   try{ rows=await window.DB.getClassroomBadges(id); }
   catch(err){ console.warn('[PixelProf] _mergeCloudBadges errore:',err); return; }
-  if(!Array.isArray(rows)||!rows.length) return;
+  // v8.38.1 — FIX: un array vuoto è una risposta VALIDA (l'aula non ha
+  // traguardi sul cloud — es. appena azzerati da un altro dispositivo),
+  // non un fallimento. Prima di questa correzione veniva trattato come
+  // "fetch fallito" e il locale non si azzerava mai — bug segnalato da
+  // Erasmo (reset da iPad non visibile su PC dopo refresh). Solo `null`
+  // (fetch davvero fallito/offline/RPC assente) lascia il locale intatto.
+  if(!Array.isArray(rows)) return;
   if(typeof activeCourseId!=='undefined' && activeCourseId!==id) return;
   if(!db.badges) db.badges={unlocked:{}};
   if(!db.badges.unlocked) db.badges.unlocked={};
   let changed=false;
-  rows.forEach(r=>{
-    if(r.badge_id && !db.badges.unlocked[r.badge_id]){
-      db.badges.unlocked[r.badge_id]=r.unlocked_at;
-      changed=true;
-    }
-  });
+  if(!rows.length){
+    if(Object.keys(db.badges.unlocked).length){ db.badges.unlocked={}; changed=true; }
+  }else{
+    rows.forEach(r=>{
+      if(r.badge_id && db.badges.unlocked[r.badge_id]!==r.unlocked_at){
+        db.badges.unlocked[r.badge_id]=r.unlocked_at;
+        changed=true;
+      }
+    });
+  }
   if(changed){
     save();
     if(shq('badges-body')) renderBadges();

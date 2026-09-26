@@ -11,6 +11,8 @@
    v4.1.0 (app v8.36.0): applicato _filterHard() (game-engine-state.js)
    al pool prima dello shuffle — rispetta il toggle "includi domande
    difficili" del setup-panel, salvato per aula in db.diffPrefs.fill.
+   v4.1.1 (app v8.39.0): _trackRightQ() ora chiamata con mod+act (era
+     solo q.t,q.b) — serve al completamento preciso di "Progressi".
 ================================================== */
 
 /* ==================================================
@@ -71,7 +73,7 @@ function checkFill(){
     fillTotalScore+=scoreEarned;
     fillAnswerLog.push({questionId:'f'+s.idx,correct:true,streak:fillStreak,streakBonus,scoreEarned});
     s.score++;
-    _trackRightQ(q.t, q.b);
+    _trackRightQ(q.t, q.b, sMod, 'fill');
     const bonusLine=streakBonus>0
       ?`<div style="font-size:11px;color:rgba(0,255,200,.75);margin-top:3px">🔥 +${streakBonus} streak ×${fillStreak} &nbsp;<strong>+${scoreEarned} pt totali</strong></div>`
       :`<div style="font-size:11px;color:rgba(0,255,200,.55);margin-top:3px">+${scoreEarned} pt</div>`;

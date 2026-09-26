@@ -1,5 +1,10 @@
 /**
- * game_hooks.js — PixelProf v8.38.0
+ * game_hooks.js — PixelProf v8.39.0
+ *
+ * v8.39.0 — HOOK 8 (nuovo): hook_markQuestionSeen, per il
+ *   completamento preciso di "Progressi" (domande distinte viste,
+ *   non tentativi) — vedi db_adapter.js e
+ *   sql/v8.39.0_seen_questions_sync.sql.
  *
  * v8.38.0 — HOOK 7 (nuovo): hook_unlockBadge, replica cloud di quale
  *   badge è sbloccato e quando (classroom_badges). _flushStatsBuffer
@@ -54,6 +59,7 @@ import {
   recordRightAnswer,
   incrementModuleStat,
   unlockClassroomBadge,
+  markQuestionSeen,
 } from './db_adapter.js';
 
 // ── Legge il classId dal contesto globale ────────────────────────
@@ -270,6 +276,21 @@ function unlockBadgeAndCloud(badgeId) {
 }
 
 // ════════════════════════════════════════════════════════════════════
+// HOOK 8 — hook_markQuestionSeen
+// v8.39.0: replica su Supabase che una domanda è stata vista almeno
+// una volta — vedi sql/v8.39.0_seen_questions_sync.sql. Chiamata da
+// _trackWrongQ()/_trackRightQ() (game-engine-state.js) SOLO per
+// quiz/fill/truefalse (Speed Quiz escluso — filtro già applicato lì,
+// non qui). Fire-and-forget.
+// ════════════════════════════════════════════════════════════════════
+function markQuestionSeenAndCloud(key, mod) {
+  const classId = _classId();
+  if (!classId) return;
+  markQuestionSeen(classId, mod, key)
+    .catch(err => console.warn('[PixelProf] markQuestionSeen async err:', err));
+}
+
+// ════════════════════════════════════════════════════════════════════
 // ESPOSIZIONE su window.hook_*
 // ════════════════════════════════════════════════════════════════════
 window.hook_saveLbEntry        = saveLbEntryAndCloud;
@@ -280,6 +301,7 @@ window.hook_ensureParticipants = ensureParticipants;
 window.hook_trackWrongAnswer   = trackWrongAnswerAndCloud;
 window.hook_trackRightAnswer   = trackRightAnswerAndCloud;
 window.hook_unlockBadge        = unlockBadgeAndCloud;
+window.hook_markQuestionSeen   = markQuestionSeenAndCloud;
 
 // Bootstrap gate — segnala che gli hook sono pronti
 if (typeof window.__resolveHooks === 'function') window.__resolveHooks();

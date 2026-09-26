@@ -1,10 +1,14 @@
 /* ==================================================
-   game-quiz.js — PixelProf v4.0.9
+   game-quiz.js — PixelProf v4.1.0
    Quiz engine: renderQ, ansQ, nextQ, forceEnd, endQuiz.
    Speed Quiz: pause/resume, timer management.
    Also: resetSpeedUI, restartActivity, qzAbort.
    hook_trackAnswer now embedded in ansQ —
    no override chain from app.js.
+   v4.1.0 (app v8.39.0): _trackRightQ() ora chiamata con mod+act
+     (era solo qText,answer) — serve a _markSeenForProgress()
+     (game-engine-state.js) per il completamento preciso di
+     "Progressi". Vedi sql/v8.39.0_seen_questions_sync.sql.
    Fase 8: PauseUIRegistry handler registrato (M2).
    Depends on: game-engine-state.js, scoring.js, renderer.js
 
@@ -153,7 +157,7 @@ function ansQ(idx){
           pill.addEventListener('animationend',()=>pill.classList.remove('score-bump'),{once:true});
         }
       }
-      _trackRightQ(q.q, q.opts[q.a]);
+      _trackRightQ(q.q, q.opts[q.a], getQuestionModule(q), 'speed');
     }else{
       qAnswerLog.push({questionId:'q'+qIdx,correct:false,responseTimeMs,streak:0,speedBonus:0,streakBonus:0,scoreEarned:0});
       _trackWrongQ(q.q, q.opts[q.a], getQuestionModule(q), 'speed');
@@ -193,7 +197,7 @@ function ansQ(idx){
         pill.addEventListener('animationend',()=>pill.classList.remove('score-bump'),{once:true});
       }
     }
-    _trackRightQ(q.q, q.opts[q.a]);
+    _trackRightQ(q.q, q.opts[q.a], getQuestionModule(q), 'quiz');
     // Feedback inline con dettaglio bonus
     const bonusBits=[];
     if(speedBonus>0)  bonusBits.push(`⚡ +${speedBonus} velocità`);

@@ -1,8 +1,15 @@
 /* ==================================================
-   stats.js — PixelProf v8.38.2
+   stats.js — PixelProf v8.39.0
    Stats screen: renderStats, resetStats.
    Storico sessioni: renderHistory, resetHistory, exportHistoryCSV.
    v5.0.2: resetStats include WP; exportHistoryCSV aggiunto.
+   v8.39.0: completamento "Progressi" ora PRECISO quando disponibile —
+     _loadModuleSeenCounts()/seen_questions (domande DISTINTE viste,
+     non tentativi) sostituisce la stima di v8.38.2 come numeratore;
+     se il dato preciso non è ancora arrivato (RPC non eseguita,
+     offline) ripiega sulla stima, marcata "(stima)". resetStats()
+     azzera anche seen_questions. Vedi sql/v8.39.0_seen_questions_sync.sql
+     e game-engine-state.js (_markSeenForProgress).
    v8.38.2: "Progressi" per modulo ora mostra COMPLETAMENTO (domande
      risposte / domande disponibili), non più accuratezza — vedi nota
      nel corpo di renderStats(). Nuova _getModuleTotalQuestions(modKey):
@@ -82,6 +89,32 @@ async function _loadModuleTotals(mods,areaKeyAtCall){
 }
 
 let _statsCurrentAreaKey=null;
+let _modSeenCache=null;          // v8.39.0 — null = non ancora caricato per l'aula corrente
+let _modSeenCacheCourseId=null;
+
+/**
+ * v8.39.0 — carica (una volta per aula) il conteggio preciso di
+ * domande DISTINTE viste per modulo (seen_questions — vedi
+ * sql/v8.39.0_seen_questions_sync.sql), usato come numeratore
+ * accurato al posto della stima per tentativi, quando disponibile.
+ * Fire-and-forget, chiamata da courses.js all'ingresso in aula e da
+ * _doGoTab quando si apre la scheda Progressi (freschezza).
+ */
+async function _loadModuleSeenCounts(id){
+  if(typeof window.DB?.getClassroomSeenCounts!=='function') return;
+  let rows;
+  try{ rows=await window.DB.getClassroomSeenCounts(id); }
+  catch(err){ console.warn('[PixelProf] _loadModuleSeenCounts errore:',err); return; }
+  // null = fetch fallito/offline/RPC assente: la cache resta "sconosciuta"
+  // e renderStats() ripiega sulla stima per tentativi — non un azzeramento.
+  if(!Array.isArray(rows)) return;
+  if(typeof activeCourseId!=='undefined' && activeCourseId!==id) return;
+  const map={};
+  rows.forEach(r=>{ if(r.module) map[r.module]=r.seen_count; });
+  _modSeenCache=map;
+  _modSeenCacheCourseId=id;
+  if(shq('st-mods')) renderStats();
+}
 
 function renderStats(){
   sh('st-tot').textContent=db.stats.tot;sh('st-cor').textContent=db.stats.cor;
@@ -108,15 +141,23 @@ function renderStats(){
   // DISTINTE viste — rigiocare più volte lo stesso modulo può quindi
   // avvicinare/raggiungere il 100% anche senza aver visto ogni singola
   // domanda del pool (percentuale comunque limitata a 100%, mai oltre).
+  // v8.39.0 — il numeratore usa il conteggio PRECISO di domande distinte
+  // viste (seen_questions) quando disponibile; altrimenti ripiega sulla
+  // stima per tentativi di v8.38.2, marcata "(stima)" per non confonderla
+  // con il dato preciso — importante perché questo numero serve anche
+  // per verifica/rendicontazione, non solo per farsi un'idea di massima.
+  const preciseKnown = !!(_modSeenCache && _modSeenCacheCourseId===activeCourseId);
   sh('st-mods').innerHTML=mods.map(({key:k,label:n})=>{
     const m=db.stats.byMod[k]||{c:0,w:0};const answered=m.c+m.w;
     const accPct=answered>0?Math.round(m.c/answered*100):0;
     const avail=_modTotalsCache[k];
     const knownAvail = typeof avail==='number';
-    const complPct = knownAvail && avail>0 ? Math.min(100,Math.round(answered/avail*100)) : null;
+    const numerator = preciseKnown ? (_modSeenCache[k]||0) : answered;
+    const complPct = knownAvail && avail>0 ? Math.min(100,Math.round(numerator/avail*100)) : null;
+    const estimateTag = preciseKnown ? '' : ' <span style="opacity:.55;font-size:9px">(stima)</span>';
     const rightLabel = !knownAvail
       ? '<span style="opacity:.5">conteggio…</span>'
-      : (avail>0 ? `${answered}/${avail} · ${complPct}%` : `${answered} risposte`);
+      : (avail>0 ? `${numerator}/${avail} · ${complPct}%${estimateTag}` : `${numerator} risposte`);
     const barPct = complPct!=null ? complPct : 0;
     return`<div class="mod-stat"><div class="mod-stat-row"><span>${escHtml(n)}</span><span style="font-family:'Share Tech Mono',monospace;color:var(--accent)">${rightLabel}</span></div><div class="prog-bar" style="margin:0"><div class="prog-fill" style="width:${barPct}%"></div></div>${answered>0?`<div style="font-size:10px;color:var(--text-muted);margin-top:3px">Precisione su queste: ${accPct}%</div>`:''}</div>`;
   }).join('');
@@ -138,6 +179,14 @@ async function resetStats(){
   if(window.DB?.resetClassroomModuleStats && activeCourseId){
     await window.DB.resetClassroomModuleStats(activeCourseId).catch(()=>null);
   }
+  // v8.39.0: azzera anche il conteggio preciso (seen_questions) e la
+  // cache locale, altrimenti la barra mostrerebbe ancora il vecchio
+  // completamento preciso finché non si rientra nell'aula.
+  if(window.DB?.resetClassroomSeenQuestions && activeCourseId){
+    await window.DB.resetClassroomSeenQuestions(activeCourseId).catch(()=>null);
+  }
+  _modSeenCache={};
+  _modSeenCacheCourseId=activeCourseId;
   renderStats();
 }
 

@@ -1,5 +1,12 @@
 /**
- * db_adapter.js — PixelProf v8.38.0
+ * db_adapter.js — PixelProf v8.39.0
+ *
+ * v8.39.0 — Completamento preciso per "Progressi" (vedi
+ *   sql/v8.39.0_seen_questions_sync.sql): markQuestionSeen/
+ *   getClassroomSeenCounts/resetClassroomSeenQuestions — domande
+ *   DISTINTE viste per modulo, non i tentativi (module_stats, sopra).
+ *   Usate da js/game-engine-state.js (_trackWrongQ/_trackRightQ) e
+ *   js/stats.js.
  *
  * v8.38.0 — Progressi/Storico sessioni/Traguardi cross-device (vedi
  *   sql/v8.38.0_progress_sessions_badges_sync.sql): module_stats
@@ -1099,6 +1106,46 @@ export async function resetClassroomBadges(classId) {
 }
 
 // ════════════════════════════════════════════════════════════════════
+// SEEN QUESTIONS API — completamento preciso per "Progressi" (v8.39.0)
+// ════════════════════════════════════════════════════════════════════
+// A differenza di module_stats (conta i TENTATIVI), questa tabella
+// conta le domande DISTINTE viste almeno una volta — serve per un
+// completamento accurato utilizzabile per rendicontazione. Chiamata
+// solo da Quiz/Completa la frase/Vero o Falso (Speed Quiz escluso,
+// stesso pool di Quiz — vedi game-engine-state.js _trackWrongQ/
+// _trackRightQ). Vedi sql/v8.39.0_seen_questions_sync.sql.
+
+export async function markQuestionSeen(classId, module, questionKey) {
+  if (!_online || !classId) return;
+  await _sbCall(
+    () => supabase.rpc('mark_question_seen', {
+      p_classroom_id: classId, p_module: module, p_question_key: questionKey,
+    }),
+    'markQuestionSeen'
+  );
+}
+
+export async function getClassroomSeenCounts(classId) {
+  if (!_online || !classId) return null;
+  return _sbCall(
+    () => supabase.rpc('get_classroom_seen_counts', { p_classroom_id: classId }),
+    'getClassroomSeenCounts'
+  );
+}
+
+export async function resetClassroomSeenQuestions(classId) {
+  if (!_online || !classId) return { ok: false, error: 'Offline' };
+  try {
+    const { data, error } = await supabase.rpc('reset_classroom_seen_questions', { p_classroom_id: classId });
+    if (error) { console.error('[PixelProf] resetClassroomSeenQuestions RPC error:', error.code, error.message); return { ok: false, error: error.message }; }
+    return { ok: true, deleted: data ?? 0 };
+  } catch (err) {
+    console.warn('[PixelProf] resetClassroomSeenQuestions eccezione:', err.message);
+    return { ok: false, error: err.message };
+  }
+}
+
+// ════════════════════════════════════════════════════════════════════
 // HELPERS PRIVATI RIMANENTI
 // ════════════════════════════════════════════════════════════════════
 
@@ -1174,6 +1221,9 @@ window.DB = {
   unlockClassroomBadge,
   getClassroomBadges,
   resetClassroomBadges,
+  markQuestionSeen,
+  getClassroomSeenCounts,
+  resetClassroomSeenQuestions,
   trackAnswer: (() => {
     // Debounce integrato per trackAnswer (chiamato da game_hooks)
     const buf = {};

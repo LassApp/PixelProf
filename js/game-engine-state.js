@@ -57,7 +57,14 @@
        aggiunte le 19 chiavi (path futuri, stesso pattern) —
        "terreno pronto", contentReady resta false finché
        Erasmo non conferma lo sblocco.
-     Vedi anche areas-config.js (dataPaths, stessa fase).
+   v5.3.4 (app v8.39.0): _trackWrongQ()/_trackRightQ() ora chiamano
+     anche _markSeenForProgress(key,mod,act) — completamento preciso
+     di "Progressi" (domande DISTINTE viste, non tentativi). Firma di
+     _trackRightQ() estesa con mod/act (era solo qText,answer) —
+     aggiornati i 4 punti chiamanti in game-quiz.js/game-fill.js/
+     game-truefalse.js. Solo quiz/fill/truefalse (Speed Quiz escluso
+     su richiesta di Erasmo). Vedi sql/v8.39.0_seen_questions_sync.sql
+     e stats.js (_loadModuleSeenCounts).
    v5.3.3 (app v8.38.0): _doGoTab() ora richiama anche
      _mergeCloudModuleStats(activeCourseId)/_mergeCloudSessions(activeCourseId)
      quando si aprono le schede Progressi/Storico (definite in
@@ -989,6 +996,21 @@ function _trackWrongQ(qText, answer, mod, act) {
   // game_hooks.js hook 6. db.wrongQ locale resta invariato: guida ancora
   // la ripetizione spaziata sotto, che è sincrona.
   if (typeof window.hook_trackWrongAnswer === 'function') window.hook_trackWrongAnswer(key, qText, answer, mod, act);
+  _markSeenForProgress(key, mod, act); // v8.39.0
+}
+
+/**
+ * v8.39.0 — segna la domanda come "vista" per il completamento preciso
+ * di "Progressi" (domande DISTINTE viste, non tentativi — vedi
+ * sql/v8.39.0_seen_questions_sync.sql). Scope deciso da Erasmo: solo
+ * quiz/fill/truefalse — Speed Quiz escluso (stesso pool di Quiz, non
+ * va contato due volte), Abbina/Memory/Flipcard/Lo Sapevi non passano
+ * comunque da _trackWrongQ/_trackRightQ. Chiamata da entrambe, per
+ * risposte giuste E sbagliate (contano entrambe come "vista").
+ */
+function _markSeenForProgress(key, mod, act) {
+  if (act!=='quiz' && act!=='fill' && act!=='truefalse') return;
+  if (typeof window.hook_markQuestionSeen === 'function') window.hook_markQuestionSeen(key, mod);
 }
 
 /**
@@ -996,10 +1018,9 @@ function _trackWrongQ(qText, answer, mod, act) {
  * era già stata sbagliata in precedenza). Incrementa il
  * contatore "right" come indicatore di recupero.
  */
-function _trackRightQ(qText, answer) {
-  if (!db.wrongQ) return;
+function _trackRightQ(qText, answer, mod, act) {
   const key = _wrongQKey(qText, answer);
-  if (db.wrongQ[key]) {
+  if (db.wrongQ && db.wrongQ[key]) {
     db.wrongQ[key].right++;
     // v8.37.0: replica su Supabase SOLO se la domanda risultava già
     // sbagliata su QUESTO dispositivo (stesso criterio della riga
@@ -1009,6 +1030,7 @@ function _trackRightQ(qText, answer) {
     // non sul solo db.wrongQ locale — vedi game_hooks.js hook 6.
     if (typeof window.hook_trackRightAnswer === 'function') window.hook_trackRightAnswer(key);
   }
+  _markSeenForProgress(key, mod, act); // v8.39.0 — indipendente da db.wrongQ: anche una domanda mai sbagliata va segnata come vista
 }
 
 /* ==================================================
@@ -2030,7 +2052,7 @@ function _doGoTab(t){
   setTb(tbMap[t]||null);
   showScreen('tab-'+t);
   if(t==='lb'){lbType=null;lbAct=null;lbShowStep('type');}
-  if(t==='stats'){renderStats();if(typeof _mergeCloudModuleStats==='function')_mergeCloudModuleStats(activeCourseId);}
+  if(t==='stats'){renderStats();if(typeof _mergeCloudModuleStats==='function')_mergeCloudModuleStats(activeCourseId);if(typeof _loadModuleSeenCounts==='function')_loadModuleSeenCounts(activeCourseId);}
   if(t==='hist'){renderHistory();if(typeof _mergeCloudSessions==='function')_mergeCloudSessions(activeCourseId);}
   if(t==='dashboard')renderDashboard();
   if(t==='badges')renderBadges();

@@ -8,6 +8,8 @@
    v1.1.0 (app v8.36.0): applicato _filterHard() (game-engine-state.js)
    al pool prima dello shuffle — rispetta il toggle "includi domande
    difficili" del setup-panel, salvato per aula in db.diffPrefs.truefalse.
+   v1.1.1 (app v8.39.0): _trackRightQ() ora chiamata con sMod+'truefalse'
+     (era solo q.q,risposta) — serve al completamento preciso di "Progressi".
 ================================================== */
 
 async function startTrueFalse(cont, mod){
@@ -93,7 +95,7 @@ function checkTF(choice){
     tfTotalScore += scoreEarned;
     tfAnswerLog.push({ questionId: 'tf'+s.idx, correct: true, streak: tfStreak, streakBonus, scoreEarned });
     s.score++;
-    if(typeof _trackRightQ === 'function') _trackRightQ(q.q, q.a ? 'Vero' : 'Falso');
+    if(typeof _trackRightQ === 'function') _trackRightQ(q.q, q.a ? 'Vero' : 'Falso', sMod, 'truefalse');
     const bonusLine = streakBonus > 0
       ? `<div style="font-size:11px;color:rgba(0,255,200,.75);margin-top:3px">🔥 +${streakBonus} streak ×${tfStreak} &nbsp;<strong>+${scoreEarned} pt totali</strong></div>`
       : `<div style="font-size:11px;color:rgba(0,255,200,.55);margin-top:3px">+${scoreEarned} pt</div>`;

@@ -1,0 +1,872 @@
+[
+  {
+    "id": 1,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il cloud computing?",
+    "options": [
+      "Un protocollo di cifratura per email",
+      "L'uso di risorse informatiche che non si trovano sul dispositivo dell'utente, ma su server remoti raggiungibili attraverso Internet",
+      "Un tipo di licenza software",
+      "Un sistema per bloccare siti inappropriati"
+    ],
+    "correctIndex": 1,
+    "explanation": "È l'uso di risorse informatiche su server remoti raggiungibili via Internet."
+  },
+  {
+    "id": 2,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove vive normalmente un file, prima di essere spostato nel cloud?",
+    "options": [
+      "Su una memoria di massa fisicamente dentro il proprio computer",
+      "Sempre su un server remoto",
+      "Solo su uno smartphone",
+      "Non esiste in alcun formato fisico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Normalmente vive su una memoria di massa dentro il computer."
+  },
+  {
+    "id": 3,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rende possibile lo spostamento dei file nel cloud, secondo il modulo?",
+    "options": [
+      "La collaborazione online vista nella parte precedente del corso",
+      "L'eliminazione totale di Internet",
+      "L'uso esclusivo di dischi esterni",
+      "La cancellazione di ogni account personale"
+    ],
+    "correctIndex": 0,
+    "explanation": "È proprio questo spostamento a rendere possibile la collaborazione online."
+  },
+  {
+    "id": 4,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi fondò Salesforce nel 1999?",
+    "options": [
+      "Marc Benioff",
+      "Niklas Zennström",
+      "Bill Cheswick",
+      "Ray Ozzie"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu Marc Benioff a fondare Salesforce."
+  },
+  {
+    "id": 5,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da quale azienda proveniva Marc Benioff prima di fondare Salesforce?",
+    "options": [
+      "Oracle",
+      "IBM",
+      "Microsoft",
+      "Amazon"
+    ],
+    "correctIndex": 0,
+    "explanation": "Proveniva da Oracle, azienda che lasciò nel 1999."
+  },
+  {
+    "id": 6,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale slogan scelse Salesforce per il proprio lancio?",
+    "options": [
+      "\"No Software\"",
+      "\"Solo Cloud\"",
+      "\"Software Libero\"",
+      "\"Zero Licenze\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo slogan era \"No Software\", con un logo che mostrava la parola barrata."
+  },
+  {
+    "id": 7,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando avvenne il lancio ufficiale di Salesforce?",
+    "options": [
+      "Nel febbraio 2000",
+      "Nell'agosto 1999",
+      "Nel dicembre 2000",
+      "Nel maggio 2001"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il lancio ufficiale avvenne nel febbraio 2000."
+  },
+  {
+    "id": 8,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come si svolse l'evento di lancio di Salesforce?",
+    "options": [
+      "Un evento teatrale con un piano \"inferno\" dedicato al software tradizionale e un piano superiore ai nuovi programmi via Internet",
+      "Una semplice conferenza stampa online",
+      "Un lancio silenzioso senza alcun evento pubblico",
+      "Una fiera tecnologica itinerante in più città"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu un evento teatrale con un piano \"inferno\" e un piano dedicato ai nuovi programmi."
+  },
+  {
+    "id": 9,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale modello di pagamento proponeva Salesforce, invece della licenza tradizionale?",
+    "options": [
+      "Un modello in abbonamento",
+      "Un modello a baratto",
+      "Un pagamento in azioni societarie",
+      "Nessun pagamento, il servizio era gratuito"
+    ],
+    "correctIndex": 0,
+    "explanation": "Proponeva un modello di pagamento in abbonamento, invece della licenza una tantum."
+  },
+  {
+    "id": 10,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa è paragonato il cloud computing nella metafora del modulo?",
+    "options": [
+      "Ad affittare una stanza in un grande magazzino condiviso, invece di costruirsi un capannone privato",
+      "A costruire una casa da zero",
+      "A comprare un'auto invece di noleggiarla",
+      "A scrivere una lettera invece di un'email"
+    ],
+    "correctIndex": 0,
+    "explanation": "È paragonato ad affittare una stanza in un magazzino condiviso."
+  },
+  {
+    "id": 11,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i quattro principali vantaggi del cloud computing elencati dal modulo?",
+    "options": [
+      "Costi ridotti, maggiore mobilità, scalabilità, aggiornamenti automatici",
+      "Velocità, gratuità, sicurezza assoluta, semplicità",
+      "Solo la riduzione dei costi",
+      "Solo la possibilità di lavorare offline"
+    ],
+    "correctIndex": 0,
+    "explanation": "I quattro vantaggi sono costi ridotti, mobilità, scalabilità e aggiornamenti automatici."
+  },
+  {
+    "id": 12,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa comporta il vantaggio dei \"costi ridotti\" del cloud?",
+    "options": [
+      "Non serve comprare e mantenere propri server",
+      "Il servizio diventa sempre completamente gratuito",
+      "Non serve più pagare alcun abbonamento",
+      "I dati diventano automaticamente pubblici"
+    ],
+    "correctIndex": 0,
+    "explanation": "Non serve comprare e mantenere propri server: si paga solo lo spazio usato."
+  },
+  {
+    "id": 13,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa comporta il vantaggio della \"scalabilità\" del cloud?",
+    "options": [
+      "Lo spazio o la potenza disponibile si adattano al bisogno reale, in aumento o in diminuzione",
+      "Il prezzo del servizio resta sempre fisso",
+      "Il numero di utenti è sempre limitato a uno",
+      "Il servizio funziona solo su un singolo dispositivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo spazio o la potenza si adattano al bisogno reale, aumentando o diminuendo."
+  },
+  {
+    "id": 14,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa comporta il vantaggio degli \"aggiornamenti automatici\" del cloud?",
+    "options": [
+      "È il fornitore, non l'utente, a mantenere sempre aggiornato il servizio",
+      "L'utente deve installare ogni aggiornamento manualmente",
+      "Gli aggiornamenti avvengono solo una volta l'anno",
+      "Non sono mai previsti aggiornamenti nel cloud"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il fornitore a occuparsi degli aggiornamenti, non l'utente."
+  },
+  {
+    "id": 15,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa accadde a Netflix nell'agosto 2008?",
+    "options": [
+      "Subì un grave danneggiamento al proprio database interno, che le impedì di spedire DVD per tre giorni",
+      "Lanciò per la prima volta il proprio servizio di streaming",
+      "Fu acquistata da Amazon",
+      "Annunciò l'espansione a 130 nuovi paesi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Subì un danneggiamento del database che bloccò le spedizioni di DVD per tre giorni."
+  },
+  {
+    "id": 16,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale fornitore cloud scelse Netflix dopo l'incidente del 2008?",
+    "options": [
+      "Amazon Web Services",
+      "Salesforce",
+      "Microsoft Azure",
+      "Google Cloud"
+    ],
+    "correctIndex": 0,
+    "explanation": "Scelse Amazon Web Services per la sua capacità di scalare rapidamente."
+  },
+  {
+    "id": 17,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Netflix completò la migrazione al cloud, spegnendo l'ultimo data center proprietario?",
+    "options": [
+      "Nel gennaio 2016",
+      "Nell'agosto 2008",
+      "Nel febbraio 2017",
+      "Nel 1999"
+    ],
+    "correctIndex": 0,
+    "explanation": "Completò la migrazione nel gennaio 2016, dopo sette anni."
+  },
+  {
+    "id": 18,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa annunciò Netflix nello stesso mese del completamento della migrazione al cloud?",
+    "options": [
+      "L'espansione del servizio a oltre 130 nuovi paesi",
+      "La chiusura del servizio DVD per posta",
+      "L'acquisizione di Amazon Web Services",
+      "Il ritorno ai propri data center proprietari"
+    ],
+    "correctIndex": 0,
+    "explanation": "Annunciò l'espansione a oltre 130 nuovi paesi, resa possibile dall'elasticità del cloud."
+  },
+  {
+    "id": 19,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rende possibile l'elasticità del cloud, secondo il modulo?",
+    "options": [
+      "Aggiungere migliaia di server virtuali e petabyte di spazio nel giro di pochi minuti",
+      "Costruire un nuovo data center fisico in poche ore",
+      "Eliminare completamente la necessità di server",
+      "Ridurre a zero i costi di gestione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Permette di aggiungere migliaia di server virtuali e petabyte di spazio in pochi minuti."
+  },
+  {
+    "id": 20,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa sono paragonati i vantaggi del cloud nella metafora del modulo?",
+    "options": [
+      "A un magazzino in affitto rispetto a uno di proprietà",
+      "A una casa costruita da zero",
+      "A un'automobile noleggiata per un solo giorno",
+      "A un abbonamento a una rivista cartacea"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono paragonati ai vantaggi di un magazzino in affitto rispetto a uno di proprietà."
+  },
+  {
+    "id": 21,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i tre principali rischi del cloud computing elencati dal modulo?",
+    "options": [
+      "Dipendenza dal fornitore, protezione e controllo dei dati, perdita di privacy",
+      "Solo il costo elevato del servizio",
+      "Solo la lentezza della connessione",
+      "Solo la difficoltà di apprendimento"
+    ],
+    "correctIndex": 0,
+    "explanation": "I tre rischi sono dipendenza dal fornitore, controllo dei dati e perdita di privacy."
+  },
+  {
+    "id": 22,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa la \"dipendenza dal fornitore\" come rischio del cloud?",
+    "options": [
+      "Se il servizio scelto ha un problema o cambia condizioni, l'utente ne subisce le conseguenze anche senza colpa",
+      "Che l'utente deve pagare sempre di più ogni anno",
+      "Che il fornitore non ha mai alcuna responsabilità",
+      "Che il servizio cloud è sempre più lento di uno locale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un problema del fornitore ricade anche sull'utente, anche se non ha fatto nulla di sbagliato."
+  },
+  {
+    "id": 23,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa ricorda il principio della responsabilità condivisa nel cloud?",
+    "options": [
+      "Che il fornitore protegge l'infrastruttura, ma l'utente resta responsabile di proteggere il proprio accesso",
+      "Che solo il fornitore è responsabile della sicurezza",
+      "Che solo l'utente è responsabile della sicurezza",
+      "Che nessuno è responsabile della sicurezza nel cloud"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il fornitore protegge l'infrastruttura, l'utente il proprio accesso: password, permessi."
+  },
+  {
+    "id": 24,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando avvenne il blocco del servizio Amazon S3 causato da un errore umano?",
+    "options": [
+      "Il 28 febbraio 2017",
+      "Nell'agosto 2008",
+      "Nel gennaio 2016",
+      "Nel 1999"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il blocco avvenne il 28 febbraio 2017."
+  },
+  {
+    "id": 25,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quali siti furono coinvolti dal blocco di Amazon S3 del 2017?",
+    "options": [
+      "Migliaia di siti, tra cui Slack, Docker, Quora, Medium ed Expedia",
+      "Solo il sito di Amazon stesso",
+      "Solo siti governativi statunitensi",
+      "Nessun sito importante fu coinvolto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Furono coinvolti migliaia di siti, tra cui Slack, Docker, Quora, Medium ed Expedia."
+  },
+  {
+    "id": 26,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa causò il blocco di Amazon S3 del 2017?",
+    "options": [
+      "Un errore di digitazione nei parametri di un comando eseguito da un tecnico autorizzato",
+      "Un attacco informatico esterno pianificato",
+      "Un guasto hardware imprevisto",
+      "Un attacco ransomware"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu causato da un errore di digitazione in un comando che rimosse troppi server."
+  },
+  {
+    "id": 27,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanto durò il blocco di Amazon S3 del 2017?",
+    "options": [
+      "Circa quattro ore",
+      "Circa quaranta minuti",
+      "Circa due giorni",
+      "Circa quattordici ore"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il blocco durò circa quattro ore."
+  },
+  {
+    "id": 28,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Perché anche la pagina di stato di Amazon non riusciva a segnalare correttamente il problema durante il blocco del 2017?",
+    "options": [
+      "Perché si appoggiava anch'essa al servizio Amazon S3 colpito dal blocco",
+      "Perché era stata disattivata volontariamente",
+      "Perché non esisteva ancora una pagina di stato",
+      "Perché era gestita da un'altra azienda"
+    ],
+    "correctIndex": 0,
+    "explanation": "La pagina di stato si appoggiava a S3, quindi fu colpita anch'essa dal blocco."
+  },
+  {
+    "id": 29,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanto stimò la società Cyence fosse costato il blocco di Amazon S3 alle aziende dell'indice S&P 500?",
+    "options": [
+      "Circa 150 milioni di dollari",
+      "Circa 15 milioni di dollari",
+      "Circa 1,5 miliardi di dollari",
+      "Circa 50 milioni di dollari"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cyence stimò un costo di circa 150 milioni di dollari."
+  },
+  {
+    "id": 30,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"prepararsi alla collaborazione online\", secondo il modulo?",
+    "options": [
+      "Installare le applicazioni e i plug-in necessari, e disporre di webcam, microfono e altoparlanti",
+      "Acquistare sempre il computer più costoso disponibile",
+      "Disattivare ogni forma di firewall",
+      "Creare più account con la stessa password"
+    ],
+    "correctIndex": 0,
+    "explanation": "Significa installare app/plug-in necessari e disporre di webcam, microfono e altoparlanti."
+  },
+  {
+    "id": 31,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa serve, secondo il modulo, per essere visti durante una videochiamata?",
+    "options": [
+      "Una webcam funzionante",
+      "Solo una connessione a banda larga",
+      "Solo un microfono",
+      "Solo degli altoparlanti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Serve una webcam funzionante per essere visti dagli altri partecipanti."
+  },
+  {
+    "id": 32,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi collegò una videocamera a una caffettiera nel 1991?",
+    "options": [
+      "Quentin Stafford-Fraser e Paul Jardetzky",
+      "Bill Cheswick e Steven Bellovin",
+      "Niklas Zennström e Janus Friis",
+      "Marc Benioff"
+    ],
+    "correctIndex": 0,
+    "explanation": "Furono i ricercatori Quentin Stafford-Fraser e Paul Jardetzky."
+  },
+  {
+    "id": 33,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Dove lavoravano i ricercatori che inventarono la prima webcam della storia?",
+    "options": [
+      "All'Università di Cambridge",
+      "Ai Bell Labs",
+      "Alla Digital Equipment Corporation",
+      "A Salesforce"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lavoravano al laboratorio di informatica dell'Università di Cambridge."
+  },
+  {
+    "id": 34,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché i due ricercatori di Cambridge collegarono una videocamera alla caffettiera?",
+    "options": [
+      "Per evitare di scendere le scale inutilmente quando la caffettiera era vuota",
+      "Per sorvegliare l'ingresso del laboratorio",
+      "Per un progetto di ricerca sulla sicurezza informatica",
+      "Per testare la prima connessione a Internet del laboratorio"
+    ],
+    "correctIndex": 0,
+    "explanation": "Per evitare di scendere inutilmente le scale quando la caffettiera era vuota."
+  },
+  {
+    "id": 35,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Con quale frequenza si aggiornava l'immagine della caffettiera di Cambridge?",
+    "options": [
+      "Circa tre volte al minuto",
+      "Circa una volta all'ora",
+      "In tempo reale continuo",
+      "Una volta al giorno"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'immagine si aggiornava circa tre volte al minuto."
+  },
+  {
+    "id": 36,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale risoluzione aveva l'immagine della prima webcam della storia?",
+    "options": [
+      "128 per 128 pixel",
+      "1920 per 1080 pixel",
+      "640 per 480 pixel",
+      "256 per 256 pixel"
+    ],
+    "correctIndex": 0,
+    "explanation": "Aveva una risoluzione di appena 128 per 128 pixel."
+  },
+  {
+    "id": 37,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando l'immagine della caffettiera di Cambridge fu collegata anche a Internet?",
+    "options": [
+      "Nel novembre 1993",
+      "Nel 1991",
+      "Nel 2001",
+      "Nel 1987"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu collegata a Internet nel novembre 1993."
+  },
+  {
+    "id": 38,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu spenta definitivamente la prima webcam della storia?",
+    "options": [
+      "Nel 2001",
+      "Nel 1993",
+      "Nel 1991",
+      "Nel 2008"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu spenta definitivamente nel 2001."
+  },
+  {
+    "id": 39,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un firewall, secondo il modulo?",
+    "options": [
+      "Un sistema di sicurezza che controlla il traffico dati in entrata e in uscita, lasciando passare solo le comunicazioni autorizzate",
+      "Un programma che genera password casuali",
+      "Un dispositivo hardware per le videochiamate",
+      "Un tipo di licenza software"
+    ],
+    "correctIndex": 0,
+    "explanation": "È un sistema di sicurezza che controlla il traffico, lasciando passare solo comunicazioni autorizzate."
+  },
+  {
+    "id": 40,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un firewall può bloccare per errore uno strumento di collaborazione legittimo?",
+    "options": [
+      "Perché uno strumento nuovo può non essere inizialmente riconosciuto come comunicazione autorizzata",
+      "Perché i firewall sono sempre difettosi",
+      "Perché gli strumenti di collaborazione sono sempre pericolosi",
+      "Perché il firewall si disattiva automaticamente con app nuove"
+    ],
+    "correctIndex": 0,
+    "explanation": "Uno strumento nuovo può non essere riconosciuto come comunicazione autorizzata e venire bloccato."
+  },
+  {
+    "id": 41,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si può risolvere un blocco del firewall su un'app legittima, secondo il modulo?",
+    "options": [
+      "Autorizzando esplicitamente l'app nelle impostazioni di sicurezza, o segnalando il problema all'amministratore di rete",
+      "Disinstallando permanentemente il firewall",
+      "Cambiando computer",
+      "Aspettando che il problema si risolva da solo senza intervenire"
+    ],
+    "correctIndex": 0,
+    "explanation": "Basta autorizzare l'app nelle impostazioni di sicurezza o segnalare il problema all'amministratore."
+  },
+  {
+    "id": 42,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Bill Cheswick si unì ai Bell Labs?",
+    "options": [
+      "Nel dicembre 1987",
+      "Nel 1991",
+      "Nel 1994",
+      "Nel 1999"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si unì ai Bell Labs nel dicembre 1987."
+  },
+  {
+    "id": 43,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa gli mostrò un collega nei suoi primi giorni ai Bell Labs?",
+    "options": [
+      "Un sistema costruito per proteggere la rete interna dell'azienda dalle comunicazioni con Internet",
+      "Un nuovo sistema di videoconferenza",
+      "Un prototipo di webcam",
+      "Un programma di messaggistica istantanea"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli mostrò un sistema per proteggere la rete interna, antenato del firewall moderno."
+  },
+  {
+    "id": 44,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Con chi Cheswick perfezionò il sistema di protezione della rete?",
+    "options": [
+      "Con il collega Steven Bellovin",
+      "Con Marc Benioff",
+      "Con Paul Jardetzky",
+      "Con Niklas Zennström"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo perfezionò insieme al collega Steven Bellovin."
+  },
+  {
+    "id": 45,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Cheswick e Bellovin pubblicarono il primo libro interamente dedicato all'argomento?",
+    "options": [
+      "Nel 1994",
+      "Nel 1987",
+      "Nel 1988",
+      "Nel 1999"
+    ],
+    "correctIndex": 0,
+    "explanation": "Pubblicarono il libro nel 1994."
+  },
+  {
+    "id": 46,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa riconobbero sempre Cheswick e Bellovin riguardo alla paternità dell'invenzione del firewall?",
+    "options": [
+      "Che l'idea era nell'aria tra diversi gruppi di ricerca dello stesso periodo",
+      "Di essere gli unici e indiscussi inventori",
+      "Di aver copiato l'idea da un'azienda concorrente",
+      "Di non sapere chi avesse avuto l'idea per primo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Riconobbero che l'idea era nell'aria tra diversi gruppi di ricerca contemporanei."
+  },
+  {
+    "id": 47,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale azienda sviluppò in modo indipendente un sistema simile al firewall dei Bell Labs nel 1988?",
+    "options": [
+      "Digital Equipment Corporation",
+      "Salesforce",
+      "Amazon",
+      "Oracle"
+    ],
+    "correctIndex": 0,
+    "explanation": "Alcuni ingegneri della Digital Equipment Corporation svilupparono un sistema simile."
+  },
+  {
+    "id": 48,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa comprende il software di supporto per la collaborazione online, secondo il modulo?",
+    "options": [
+      "Programmi per VoIP, messaggistica istantanea e condivisione di documenti",
+      "Solo programmi per la posta elettronica",
+      "Solo browser web",
+      "Solo programmi antivirus"
+    ],
+    "correctIndex": 0,
+    "explanation": "Comprende VoIP, messaggistica istantanea e condivisione di documenti."
+  },
+  {
+    "id": 49,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa serve di norma per registrare un account, secondo il modulo?",
+    "options": [
+      "Nome, indirizzo email e password",
+      "Solo un numero di telefono",
+      "Solo un documento d'identità",
+      "Solo un indirizzo fisico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Servono di norma nome, indirizzo email e password."
+  },
+  {
+    "id": 50,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che differenza c'è tra disattivare ed eliminare un account?",
+    "options": [
+      "Disattivare lo rende temporaneo e recuperabile, eliminare lo cancella in modo permanente",
+      "Sono esattamente la stessa cosa",
+      "Disattivare cancella tutto per sempre, eliminare lo sospende soltanto",
+      "Non esiste alcuna differenza pratica riconosciuta"
+    ],
+    "correctIndex": 0,
+    "explanation": "Disattivare è temporaneo e recuperabile, eliminare è permanente."
+  },
+  {
+    "id": 51,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi lanciò Skype il 29 agosto 2003?",
+    "options": [
+      "Niklas Zennström e Janus Friis",
+      "Marc Benioff",
+      "Bill Cheswick e Steven Bellovin",
+      "Jimmy Wales e Larry Sanger"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu lanciato da Niklas Zennström e Janus Friis."
+  },
+  {
+    "id": 52,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Per cosa erano già noti Zennström e Friis prima di lanciare Skype?",
+    "options": [
+      "Per aver creato la piattaforma di condivisione file KaZaA",
+      "Per aver fondato Salesforce",
+      "Per aver inventato il firewall",
+      "Per aver creato Wikipedia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Erano già noti per la piattaforma di condivisione file KaZaA."
+  },
+  {
+    "id": 53,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa univa Skype in un solo strumento?",
+    "options": [
+      "Chiamate vocali via Internet e messaggistica istantanea",
+      "Solo email e calendario",
+      "Solo videochiamate senza audio",
+      "Solo condivisione di documenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Univa chiamate vocali via Internet (VoIP) e messaggistica istantanea."
+  },
+  {
+    "id": 54,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da cosa derivava il nome \"Skype\"?",
+    "options": [
+      "Da \"Sky Peer-to-Peer\"",
+      "Dal cognome di uno dei fondatori",
+      "Da un acronimo tecnico governativo",
+      "Dal nome della società madre KaZaA"
+    ],
+    "correctIndex": 0,
+    "explanation": "Derivava dall'espressione \"Sky Peer-to-Peer\"."
+  },
+  {
+    "id": 55,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale successo immediato ebbe Skype al lancio?",
+    "options": [
+      "Oltre diecimila download nel solo primo giorno",
+      "Meno di cento download nel primo mese",
+      "Nessun utente nel primo anno",
+      "Solo mille utenti dopo cinque anni"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ebbe oltre diecimila download nel solo primo giorno."
+  },
+  {
+    "id": 56,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A chi fu venduto Skype nel 2005, e per quanto?",
+    "options": [
+      "A eBay, per circa 2,6 miliardi di dollari",
+      "A Microsoft, per 8,5 miliardi di dollari",
+      "A Google, per 1 miliardo di dollari",
+      "Non fu mai venduto nel 2005"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu venduto a eBay per circa 2,6 miliardi di dollari."
+  },
+  {
+    "id": 57,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A chi fu venduto Skype nel 2011, e per quanto?",
+    "options": [
+      "A Microsoft, per 8,5 miliardi di dollari",
+      "A eBay, per 2,6 miliardi di dollari",
+      "A Amazon, per 5 miliardi di dollari",
+      "Non fu mai rivenduto dopo il 2005"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu venduto a Microsoft per 8,5 miliardi di dollari."
+  },
+  {
+    "id": 58,
+    "module": "cloud-e-preparazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa annunciò Microsoft riguardo a Skype nel maggio 2025?",
+    "options": [
+      "La chiusura definitiva del servizio dopo oltre vent'anni di attività",
+      "Un nuovo importante investimento nel servizio",
+      "La vendita di Skype a un'altra azienda",
+      "Il rilancio di Skype con nuove funzionalità"
+    ],
+    "correctIndex": 0,
+    "explanation": "Annunciò la chiusura definitiva del servizio dopo oltre vent'anni."
+  }
+]

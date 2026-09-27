@@ -1,0 +1,932 @@
+[
+  {
+    "id": 1,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è la collaborazione online?",
+    "options": [
+      "Un servizio per cifrare i file condivisi",
+      "La possibilità che più persone lavorino insieme sulla stessa risorsa digitale attraverso Internet",
+      "Un tipo di licenza software",
+      "Un protocollo di sicurezza per email"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la possibilità che più persone lavorino insieme sulla stessa risorsa attraverso Internet."
+  },
+  {
+    "id": 2,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Su quale logica si basava il vecchio modo di lavorare descritto nel modulo?",
+    "options": [
+      "Un file, una persona, una copia alla volta",
+      "Tutti i file sempre condivisi in tempo reale",
+      "Nessun file mai salvato localmente",
+      "Un solo account per tutta l'azienda"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si basava sulla logica: un file, una persona, una copia alla volta."
+  },
+  {
+    "id": 3,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Fino a quando funziona il sistema di condivisione per email, secondo il modulo?",
+    "options": [
+      "Finché le modifiche sono rare",
+      "Solo se il file è molto piccolo",
+      "Solo se si usa una password",
+      "Non funziona mai"
+    ],
+    "correctIndex": 0,
+    "explanation": "Funziona finché le modifiche sono rare; si rompe quando più persone lavorano insieme."
+  },
+  {
+    "id": 4,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa cambia davvero la collaborazione online rispetto allo scambiarsi copie?",
+    "options": [
+      "Cambia cosa viene condiviso: non più una copia, ma il file stesso",
+      "Rende i file più piccoli da inviare",
+      "Elimina la necessità di un account personale",
+      "Richiede sempre una connessione telefonica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cambia cosa viene condiviso: non più una copia, ma il file stesso."
+  },
+  {
+    "id": 5,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il passaggio concettuale descritto dal modulo riguardo alla collaborazione online?",
+    "options": [
+      "Da \"ciascuno ha la propria copia\" a \"esiste una sola versione, e tutti guardano quella\"",
+      "Da file digitali a documenti cartacei",
+      "Da account condivisi ad account individuali obbligatori",
+      "Da Internet a reti locali private"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il passaggio da copie separate a un'unica versione condivisa."
+  },
+  {
+    "id": 6,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi lanciò il servizio Writely nel 2005?",
+    "options": [
+      "Jimmy Wales e Larry Sanger",
+      "Ray Ozzie",
+      "Sam Schillace, Steve Newman e Claudia Carpenter",
+      "Lawrence Lessig"
+    ],
+    "correctIndex": 2,
+    "explanation": "Writely fu lanciato da Sam Schillace, Steve Newman e Claudia Carpenter."
+  },
+  {
+    "id": 7,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Attraverso quale società fu lanciato Writely?",
+    "options": [
+      "Upstartle",
+      "Lotus",
+      "Iris Associates",
+      "Creative Commons"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu lanciato attraverso la società Upstartle."
+  },
+  {
+    "id": 8,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rendeva sorprendente Writely per l'epoca?",
+    "options": [
+      "La possibilità di far scrivere più persone sullo stesso documento",
+      "Il fatto di essere completamente gratuito",
+      "Il fatto di funzionare senza Internet",
+      "La possibilità di stampare direttamente dal browser"
+    ],
+    "correctIndex": 0,
+    "explanation": "La caratteristica sorprendente era la scrittura collaborativa sullo stesso documento."
+  },
+  {
+    "id": 9,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Google annunciò di aver acquisito Upstartle?",
+    "options": [
+      "Il 9 marzo 2006",
+      "Il 7 dicembre 1989",
+      "Il 15 gennaio 2001",
+      "Il 12 gennaio 2010"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'acquisizione fu annunciata il 9 marzo 2006."
+  },
+  {
+    "id": 10,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti dipendenti aveva Upstartle al momento dell'acquisizione da parte di Google?",
+    "options": [
+      "Appena quattro",
+      "Oltre quaranta",
+      "Circa quattrocento",
+      "Nessuno, era ancora in fase di progetto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Upstartle contava appena quattro dipendenti al momento dell'acquisizione."
+  },
+  {
+    "id": 11,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Con quale nuovo nome Google lanciò il servizio ereditato da Writely nell'ottobre 2006?",
+    "options": [
+      "Google Documenti",
+      "Google Drive",
+      "Google Classroom",
+      "Google Sheets"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu lanciato con il nome Google Documenti."
+  },
+  {
+    "id": 12,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quali due livelli si dividono gli strumenti della collaborazione online, secondo il modulo?",
+    "options": [
+      "Servizi \"sotto il cofano\" e strumenti veri e propri usati ogni giorno",
+      "Strumenti gratuiti e strumenti a pagamento",
+      "Strumenti per computer e strumenti per smartphone",
+      "Strumenti aziendali e strumenti personali"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si dividono in servizi sotto il cofano (cloud, mobile) e strumenti veri e propri."
+  },
+  {
+    "id": 13,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette il cloud computing, secondo il modulo?",
+    "options": [
+      "A un file di esistere in un solo posto raggiungibile da tutti, invece che su un singolo disco",
+      "Di stampare documenti più velocemente",
+      "Di eliminare la necessità di un account personale",
+      "Di usare Internet senza connessione Wi-Fi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Permette a un file di esistere in un solo posto raggiungibile da tutti."
+  },
+  {
+    "id": 14,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa fanno le tecnologie mobili nel contesto della collaborazione online?",
+    "options": [
+      "Estendono la possibilità di collaborare dallo smartphone, ovunque ci si trovi",
+      "Sostituiscono completamente il cloud computing",
+      "Funzionano solo con connessioni via cavo",
+      "Servono solo per le videochiamate"
+    ],
+    "correctIndex": 0,
+    "explanation": "Estendono la stessa possibilità di collaborazione dallo smartphone."
+  },
+  {
+    "id": 15,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa servono le app di produttività online?",
+    "options": [
+      "A lavorare insieme su un contenuto, come documenti, fogli di calcolo e presentazioni",
+      "A organizzare solo il calendario personale",
+      "A proteggere i dispositivi da malware",
+      "A gestire esclusivamente le email"
+    ],
+    "correctIndex": 0,
+    "explanation": "Servono a lavorare insieme su un contenuto condiviso."
+  },
+  {
+    "id": 16,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa comprendono i media sociali, secondo la mappa del modulo?",
+    "options": [
+      "Reti sociali, wiki, forum e blog",
+      "Solo le reti sociali come Facebook",
+      "Solo le app di videoconferenza",
+      "Solo i calendari condivisi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Comprendono reti sociali, wiki, forum e blog."
+  },
+  {
+    "id": 17,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Lotus lanciò sul mercato Lotus Notes?",
+    "options": [
+      "Il 7 dicembre 1989",
+      "Il 9 marzo 2006",
+      "Il 15 gennaio 2001",
+      "Il 12 gennaio 2010"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lotus Notes fu lanciato il 7 dicembre 1989."
+  },
+  {
+    "id": 18,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa metteva insieme per la prima volta Lotus Notes?",
+    "options": [
+      "Posta elettronica, database di documenti condivisi, discussioni organizzate e automazione dei flussi di lavoro",
+      "Solo posta elettronica e calendario",
+      "Solo videochiamate e chat",
+      "Solo fogli di calcolo condivisi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Metteva insieme email, database condivisi, discussioni organizzate e automazione dei flussi di lavoro."
+  },
+  {
+    "id": 19,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi fu l'ideatore di Lotus Notes?",
+    "options": [
+      "Ray Ozzie",
+      "Mitch Kapor",
+      "Lawrence Lessig",
+      "Jimmy Wales"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'ideatore fu l'ingegnere Ray Ozzie."
+  },
+  {
+    "id": 20,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A cosa si era ispirato Ray Ozzie per creare Lotus Notes?",
+    "options": [
+      "A un sistema usato da studente all'Università dell'Illinois",
+      "A un prodotto già esistente di IBM",
+      "A un'idea nata durante un viaggio in Europa",
+      "A un progetto universitario di Stanford"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si era ispirato a un sistema usato da studente all'Università dell'Illinois."
+  },
+  {
+    "id": 21,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi convinse Ray Ozzie a finanziare la società Iris Associates nel 1984?",
+    "options": [
+      "Mitch Kapor, fondatore di Lotus",
+      "Lawrence Lessig",
+      "Jimmy Wales",
+      "Sam Schillace"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu Mitch Kapor, fondatore di Lotus, a essere convinto da Ozzie a finanziare il progetto."
+  },
+  {
+    "id": 22,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quante copie vendette Lotus Notes nel primo anno sul mercato?",
+    "options": [
+      "Oltre 35.000",
+      "Circa 3.500",
+      "Oltre 350.000",
+      "Circa 350"
+    ],
+    "correctIndex": 0,
+    "explanation": "Vendette oltre 35.000 copie nel primo anno."
+  },
+  {
+    "id": 23,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A quale categoria di software diede il nome Lotus Notes?",
+    "options": [
+      "Groupware",
+      "Malware",
+      "Shareware",
+      "Middleware"
+    ],
+    "correctIndex": 0,
+    "explanation": "Diede il nome alla categoria \"groupware\"."
+  },
+  {
+    "id": 24,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono le quattro caratteristiche condivise dagli strumenti di collaborazione online, secondo il modulo?",
+    "options": [
+      "Multi-utente, tempo reale, scala globale, accesso concorrente",
+      "Gratuità, velocità, sicurezza, semplicità",
+      "Cloud, mobile, social, email",
+      "Prezzo, qualità, supporto, licenza"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le quattro caratteristiche sono multi-utente, tempo reale, scala globale e accesso concorrente."
+  },
+  {
+    "id": 25,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa la caratteristica \"multi-utente\"?",
+    "options": [
+      "Che una risorsa non appartiene più a chi l'ha aperta per primo: più persone possono lavorarci insieme",
+      "Che solo un utente alla volta può accedere a un file",
+      "Che serve un account diverso per ogni file",
+      "Che il file deve essere scaricato da ogni utente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Significa che più persone possono lavorare insieme sulla stessa risorsa."
+  },
+  {
+    "id": 26,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa la caratteristica del \"tempo reale\"?",
+    "options": [
+      "Che le modifiche appaiono agli altri nell'istante stesso in cui vengono scritte",
+      "Che i file si aggiornano solo una volta al giorno",
+      "Che serve sempre salvare manualmente ogni modifica",
+      "Che le modifiche vengono inviate via email automaticamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le modifiche appaiono immediatamente agli altri utenti."
+  },
+  {
+    "id": 27,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa la caratteristica della \"scala globale\"?",
+    "options": [
+      "Che la distanza non cambia nulla: si può lavorare sullo stesso documento da qualsiasi luogo",
+      "Che il file può essere aperto solo da un unico Paese",
+      "Che serve una connessione satellitare dedicata",
+      "Che il documento cambia lingua automaticamente"
+    ],
+    "correctIndex": 0,
+    "explanation": "La distanza non cambia nulla: si lavora sullo stesso documento da ovunque."
+  },
+  {
+    "id": 28,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa l'\"accesso concorrente (simultaneo)\"?",
+    "options": [
+      "Che due persone possono scrivere nello stesso paragrafo nello stesso momento, senza perdere modifiche",
+      "Che solo una persona alla volta può modificare un documento",
+      "Che il documento si blocca se più persone lo aprono insieme",
+      "Che ogni modifica richiede l'approvazione di un amministratore"
+    ],
+    "correctIndex": 0,
+    "explanation": "Due persone possono scrivere contemporaneamente senza che le modifiche vadano perse."
+  },
+  {
+    "id": 29,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu lanciata Wikipedia, e da chi?",
+    "options": [
+      "Il 15 gennaio 2001, da Jimmy Wales e Larry Sanger",
+      "Il 7 dicembre 1989, da Ray Ozzie",
+      "Il 9 marzo 2006, da Google",
+      "Nel 2001, da Lawrence Lessig"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu lanciata il 15 gennaio 2001 da Jimmy Wales e Larry Sanger."
+  },
+  {
+    "id": 30,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da quale progetto precedente nacque Wikipedia?",
+    "options": [
+      "Nupedia",
+      "Writely",
+      "Lotus Notes",
+      "OpenStreetMap"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nacque come costola del progetto precedente Nupedia."
+  },
+  {
+    "id": 31,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quante voci aveva pubblicato Nupedia nel suo primo anno di vita?",
+    "options": [
+      "Appena 21",
+      "Circa 200",
+      "Circa 18.000",
+      "Oltre 100.000"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nupedia aveva pubblicato appena 21 voci nel primo anno."
+  },
+  {
+    "id": 32,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa cambiò Wikipedia rispetto a Nupedia?",
+    "options": [
+      "Permise a chiunque di scrivere o modificare una voce senza attendere approvazione",
+      "Richiese un processo di revisione ancora più lento",
+      "Limitò la scrittura ai soli esperti universitari",
+      "Eliminò completamente la possibilità di modificare le voci"
+    ],
+    "correctIndex": 0,
+    "explanation": "Wikipedia permise a chiunque di scrivere o modificare senza attendere approvazione."
+  },
+  {
+    "id": 33,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quante voci raggiunse Wikipedia entro la fine del primo anno?",
+    "options": [
+      "18.000",
+      "200",
+      "21",
+      "1.800"
+    ],
+    "correctIndex": 0,
+    "explanation": "Raggiunse 18.000 voci entro la fine del primo anno."
+  },
+  {
+    "id": 34,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono alcuni dei principali vantaggi della collaborazione online elencati dal modulo?",
+    "options": [
+      "Condividere file e calendari, ridurre le spese di viaggio, comunicare più semplicemente",
+      "Solo la riduzione dei costi di stampa",
+      "Solo la possibilità di lavorare offline",
+      "Solo l'eliminazione delle email"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tra i vantaggi ci sono la condivisione di file e calendari e la riduzione delle spese di viaggio."
+  },
+  {
+    "id": 35,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come cambia una riunione con un fornitore lontano grazie alla collaborazione online?",
+    "options": [
+      "Può durare venti minuti in videochiamata invece di un'intera giornata di trasferta",
+      "Deve comunque avvenire sempre di persona",
+      "Richiede sempre un interprete",
+      "Diventa più costosa rispetto a un incontro fisico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Può svolgersi in videochiamata invece di richiedere una giornata di trasferta."
+  },
+  {
+    "id": 36,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il lavoro di squadra migliora con la collaborazione online, secondo il modulo?",
+    "options": [
+      "Perché tutti vedono lo stesso stato aggiornato delle cose, non versioni diverse raccontate a parole",
+      "Perché elimina completamente la necessità di comunicare",
+      "Perché riduce il numero di persone coinvolte in un progetto",
+      "Perché richiede sempre la presenza fisica di tutti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tutti vedono lo stesso stato aggiornato, invece di versioni raccontate a parole."
+  },
+  {
+    "id": 37,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rende possibile l'accesso realmente globale, secondo il modulo?",
+    "options": [
+      "Lavorare con un fornitore, un consulente o un cliente ovunque si trovino",
+      "Solo la presenza di uffici in ogni continente",
+      "Solo l'uso esclusivo dell'inglese come lingua di lavoro",
+      "Solo la disponibilità di voli diretti verso ogni destinazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Permette di lavorare con persone ovunque si trovino, non solo chi è raggiungibile fisicamente."
+  },
+  {
+    "id": 38,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando avvenne il terremoto che colpì Port-au-Prince?",
+    "options": [
+      "Il 12 gennaio 2010",
+      "Il 15 gennaio 2001",
+      "Il 7 dicembre 1989",
+      "Il 9 marzo 2006"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il terremoto avvenne il 12 gennaio 2010."
+  },
+  {
+    "id": 39,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale ostacolo trovarono le organizzazioni umanitarie dopo il terremoto di Haiti?",
+    "options": [
+      "Non esistevano mappe aggiornate della città",
+      "Mancavano fondi per gli aiuti",
+      "Non c'era alcun accesso a Internet nella zona",
+      "Le strade erano già state mappate ma erano segrete"
+    ],
+    "correctIndex": 0,
+    "explanation": "Non esistevano mappe aggiornate della città, rendendo difficile coordinare i soccorsi."
+  },
+  {
+    "id": 40,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti volontari si organizzarono online per mappare Port-au-Prince?",
+    "options": [
+      "Più di 600",
+      "Circa 60",
+      "Circa 6.000",
+      "Circa 16"
+    ],
+    "correctIndex": 0,
+    "explanation": "Più di 600 volontari da tutto il mondo si organizzarono online."
+  },
+  {
+    "id": 41,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Attraverso quale progetto i volontari tracciarono le mappe di Haiti?",
+    "options": [
+      "OpenStreetMap",
+      "Google Documenti",
+      "Wikipedia",
+      "Lotus Notes"
+    ],
+    "correctIndex": 0,
+    "explanation": "Tracciarono le mappe attraverso il progetto collaborativo OpenStreetMap."
+  },
+  {
+    "id": 42,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa nacque dall'esperienza della mappatura di Haiti?",
+    "options": [
+      "L'Humanitarian OpenStreetMap Team",
+      "Creative Commons",
+      "Google Documenti",
+      "Wikipedia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nacque l'Humanitarian OpenStreetMap Team, ancora oggi attivo dopo grandi emergenze."
+  },
+  {
+    "id": 43,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i principali rischi della collaborazione online elencati dal modulo?",
+    "options": [
+      "Accesso non autorizzato, controllo versioni poco chiaro, minacce malware, interruzioni di servizio",
+      "Solo il costo elevato degli strumenti",
+      "Solo la lentezza della connessione Internet",
+      "Solo la difficoltà di apprendimento degli strumenti"
+    ],
+    "correctIndex": 0,
+    "explanation": "I rischi includono accesso non autorizzato, controllo versioni confuso, malware e interruzioni di servizio."
+  },
+  {
+    "id": 44,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da cosa dipende spesso l'accesso non autorizzato a una risorsa condivisa?",
+    "options": [
+      "Da un link condiviso con troppa leggerezza",
+      "Da un firewall troppo restrittivo",
+      "Da una connessione troppo lenta",
+      "Da un abbonamento scaduto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dipende spesso da un link condiviso con troppa leggerezza."
+  },
+  {
+    "id": 45,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando diventa confuso il controllo delle versioni, secondo il modulo?",
+    "options": [
+      "Quando più persone modificano la stessa risorsa senza una chiara tracciabilità di chi ha fatto cosa",
+      "Quando un solo utente lavora sul file",
+      "Quando il file viene salvato in locale",
+      "Quando si usa sempre lo stesso account"
+    ],
+    "correctIndex": 0,
+    "explanation": "Diventa confuso quando manca una chiara tracciabilità delle modifiche."
+  },
+  {
+    "id": 46,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si collocano le minacce da malware e furto di identità nel contesto della collaborazione online?",
+    "options": [
+      "Sono gli stessi rischi già noti, semplicemente moltiplicati per il numero di persone coinvolte",
+      "Non esistono nel contesto della collaborazione online",
+      "Riguardano solo i grandi fornitori di servizi cloud",
+      "Sono rischi completamente nuovi e mai visti prima"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono gli stessi rischi noti, moltiplicati per il numero di persone in uno spazio condiviso."
+  },
+  {
+    "id": 47,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa ricordano le interruzioni di servizio a chi usa uno strumento di collaborazione?",
+    "options": [
+      "Che lo strumento non è mai interamente nelle proprie mani: dipende anche da chi lo fornisce",
+      "Che serve sempre un backup cartaceo",
+      "Che i servizi cloud non si interrompono mai",
+      "Che le interruzioni non hanno alcun impatto pratico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ricordano che lo strumento dipende anche dal fornitore del servizio."
+  },
+  {
+    "id": 48,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come crebbero i download di Zoom tra febbraio e marzo 2020?",
+    "options": [
+      "Da 6,2 milioni a 76 milioni, una crescita di oltre il mille per cento",
+      "Rimasero praticamente invariati",
+      "Diminuirono drasticamente",
+      "Crebbero solo del dieci per cento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Crebbero da 6,2 milioni a 76 milioni, oltre il mille per cento in più."
+  },
+  {
+    "id": 49,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cos'è lo \"Zoombombing\"?",
+    "options": [
+      "Persone non invitate che si intrufolano in riunioni online altrui",
+      "Un aggiornamento di sicurezza rilasciato da Zoom",
+      "Un tipo di malware che infetta solo Zoom",
+      "Un fenomeno di sovraccarico dei server di Zoom"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il fenomeno di persone non invitate che si uniscono a riunioni altrui per interromperle."
+  },
+  {
+    "id": 50,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale caso specifico citò l'FBI a proposito dello zoombombing?",
+    "options": [
+      "Una scuola superiore del Massachusetts, dove una persona sconosciuta urlò parolacce e un indirizzo di casa",
+      "Un'azienda della Silicon Valley colpita da un attacco ransomware",
+      "Un ospedale che dovette chiudere temporaneamente",
+      "Una banca che sospese i pagamenti online"
+    ],
+    "correctIndex": 0,
+    "explanation": "Citò il caso di una scuola superiore del Massachusetts."
+  },
+  {
+    "id": 51,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali contromisure consigliò l'FBI contro lo zoombombing?",
+    "options": [
+      "Riunioni private, password di accesso, sala d'attesa per i partecipanti",
+      "Disattivare completamente le videochiamate",
+      "Usare sempre un indirizzo email temporaneo",
+      "Limitare le riunioni a un solo partecipante"
+    ],
+    "correctIndex": 0,
+    "explanation": "Consigliò riunioni private, password e una sala d'attesa per approvare i partecipanti."
+  },
+  {
+    "id": 52,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa protegge il diritto d'autore (copyright)?",
+    "options": [
+      "I contenuti creati da qualcun altro, anche quando sono facilmente reperibili online",
+      "Solo i programmi software con licenza a pagamento",
+      "Solo i contenuti pubblicati su siti governativi",
+      "Solo i contenuti privi di licenza esplicita"
+    ],
+    "correctIndex": 0,
+    "explanation": "Protegge i contenuti creati da altri, anche se facilmente reperibili online."
+  },
+  {
+    "id": 53,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Un contenuto facilmente scaricabile da Internet è automaticamente libero da diritti?",
+    "options": [
+      "No, non lo diventa automaticamente solo perché è visibile e scaricabile",
+      "Sì, sempre e comunque",
+      "Sì, ma solo se ha più di un anno",
+      "Sì, ma solo per uso commerciale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Non diventa automaticamente libero solo perché è facile da scaricare."
+  },
+  {
+    "id": 54,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa richiede, in linea generale, pubblicare foto con persone riconoscibili?",
+    "options": [
+      "Il consenso delle persone riconoscibili, non solo di chi ha scattato la foto",
+      "Nessun consenso, basta quello del fotografo",
+      "Il pagamento di una licenza governativa",
+      "L'approvazione di un'autorità di certificazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Richiede il consenso delle persone riconoscibili, oltre a quello del fotografo."
+  },
+  {
+    "id": 55,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è il modello \"alcuni diritti riservati\"?",
+    "options": [
+      "Un modello che concede permessi d'uso a certe condizioni, oggi noto come Creative Commons",
+      "Un modello che vieta ogni riutilizzo dei contenuti",
+      "Un modello valido solo per i software, non per i contenuti",
+      "Un modello che richiede sempre un pagamento"
+    ],
+    "correctIndex": 0,
+    "explanation": "È il modello, oggi chiamato Creative Commons, che concede permessi a certe condizioni."
+  },
+  {
+    "id": 56,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi fondò Creative Commons nel 2001?",
+    "options": [
+      "Lawrence Lessig",
+      "Ray Ozzie",
+      "Jimmy Wales",
+      "Mitch Kapor"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu fondata dal giurista Lawrence Lessig."
+  },
+  {
+    "id": 57,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Con chi fondò Lawrence Lessig l'organizzazione Creative Commons?",
+    "options": [
+      "Hal Abelson del MIT ed Eric Eldred",
+      "Larry Sanger e Jimmy Wales",
+      "Sam Schillace e Steve Newman",
+      "Ray Ozzie e Mitch Kapor"
+    ],
+    "correctIndex": 0,
+    "explanation": "La fondò insieme a Hal Abelson del MIT e al programmatore Eric Eldred."
+  },
+  {
+    "id": 58,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Presso quale università era docente Lawrence Lessig quando fondò Creative Commons?",
+    "options": [
+      "Stanford",
+      "MIT",
+      "Harvard",
+      "Illinois"
+    ],
+    "correctIndex": 0,
+    "explanation": "Era docente all'Università di Stanford."
+  },
+  {
+    "id": 59,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando furono presentate ufficialmente le licenze Creative Commons?",
+    "options": [
+      "Nel maggio 2002",
+      "Nel dicembre 2002",
+      "Nel 2001",
+      "Nel 2007"
+    ],
+    "correctIndex": 0,
+    "explanation": "Furono presentate ufficialmente nel maggio 2002."
+  },
+  {
+    "id": 60,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu rilasciata la prima versione delle licenze Creative Commons?",
+    "options": [
+      "Nel dicembre 2002",
+      "Nel maggio 2002",
+      "Nel 2001",
+      "Nel 2007"
+    ],
+    "correctIndex": 0,
+    "explanation": "La prima versione fu rilasciata nel dicembre 2002."
+  },
+  {
+    "id": 61,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti contenuti erano distribuiti con licenza Creative Commons entro due anni dal lancio?",
+    "options": [
+      "Quasi 4,7 milioni",
+      "Circa 100 milioni",
+      "Circa 470.000",
+      "Circa 47.000"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quasi 4,7 milioni di contenuti erano già distribuiti entro due anni."
+  },
+  {
+    "id": 62,
+    "module": "collaborazione-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti contenuti con licenza Creative Commons erano stati raggiunti entro il 2007?",
+    "options": [
+      "Oltre 100 milioni",
+      "Circa 4,7 milioni",
+      "Circa 10 milioni",
+      "Circa 1 milione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Entro il 2007 il numero aveva superato i 100 milioni."
+  }
+]

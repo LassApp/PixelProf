@@ -1,0 +1,772 @@
+[
+  {
+    "id": 1,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Gli smartphone e i tablet sono dispositivi mobili che funzionano grazie a un proprio ____.",
+    "answer": "sistema operativo",
+    "bank": [
+      "sistema operativo",
+      "modem",
+      "router",
+      "cavo"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I sistemi operativi più diffusi per dispositivi mobili sono Android e ____.",
+    "answer": "iOS",
+    "bank": [
+      "iOS",
+      "Windows",
+      "Linux",
+      "MacOS"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Uno smartphone è, a tutti gli effetti, un piccolo ____ pensato per stare in una tasca.",
+    "answer": "computer",
+    "bank": [
+      "computer",
+      "router",
+      "modem",
+      "server"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Ciò che rende lo smartphone utile per la collaborazione online non è una tecnologia diversa da quella del computer, ma la stessa tecnologia resa ____.",
+    "answer": "portatile",
+    "bank": [
+      "portatile",
+      "gratuita",
+      "invisibile",
+      "obbligatoria"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "L'IBM Simon fu presentato al pubblico nel novembre ____ alla fiera COMDEX di Las Vegas.",
+    "answer": "1992",
+    "bank": [
+      "1992",
+      "1994",
+      "1997",
+      "1999"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "L'IBM Simon fu messo in commercio il 16 agosto ____ dall'operatore BellSouth.",
+    "answer": "1994",
+    "bank": [
+      "1994",
+      "1992",
+      "1996",
+      "1999"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "L'IBM Simon fu ideato dall'ingegnere IBM ____.",
+    "answer": "Frank Canova",
+    "bank": [
+      "Frank Canova",
+      "Jim Kardach",
+      "John Shepherd-Barron",
+      "Mike Lazaridis"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Lo schermo dell'IBM Simon era di tipo ____, allora una rarità assoluta.",
+    "answer": "touchscreen",
+    "bank": [
+      "touchscreen",
+      "monocromatico",
+      "a colori",
+      "pieghevole"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "L'IBM Simon pesava circa ____ grammi.",
+    "answer": "510",
+    "bank": [
+      "510",
+      "250",
+      "750",
+      "1000"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "La batteria dell'IBM Simon durava poco più di ____.",
+    "answer": "un'ora",
+    "bank": [
+      "un'ora",
+      "un giorno",
+      "una settimana",
+      "dieci minuti"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "L'IBM Simon fu venduto in circa ____ esemplari nel primo anno.",
+    "answer": "50.000",
+    "bank": [
+      "50.000",
+      "5.000",
+      "500.000",
+      "5.000.000"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "L'IBM Simon fu ritirato dal mercato dopo appena ____.",
+    "answer": "sei mesi",
+    "bank": [
+      "sei mesi",
+      "un mese",
+      "due anni",
+      "dieci anni"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il Bluetooth è una tecnologia di comunicazione wireless a corto raggio pensata per collegare tra loro due dispositivi ____.",
+    "answer": "vicini",
+    "bank": [
+      "vicini",
+      "lontani",
+      "identici",
+      "cablati"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "A differenza del Wi-Fi, il Bluetooth collega direttamente due dispositivi vicini tra loro, senza passare da alcuna ____.",
+    "answer": "rete",
+    "bank": [
+      "rete",
+      "batteria",
+      "app",
+      "memoria"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel 1994 due ingegneri dell'azienda svedese ____ misero a punto la tecnologia radio a corto raggio alla base del Bluetooth.",
+    "answer": "Ericsson",
+    "bank": [
+      "Ericsson",
+      "Nokia",
+      "Intel",
+      "IBM"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "I due ingegneri Ericsson che misero a punto la tecnologia furono Jaap Haartsen e ____.",
+    "answer": "Sven Mattisson",
+    "bank": [
+      "Sven Mattisson",
+      "Jim Kardach",
+      "Frank Canova",
+      "Doug Fregin"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Due anni dopo, Ericsson, Intel e ____ si accordarono per trasformare quella tecnologia in uno standard comune.",
+    "answer": "Nokia",
+    "bank": [
+      "Nokia",
+      "Apple",
+      "IBM",
+      "BellSouth"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "A proporre il nome Bluetooth fu l'ingegnere Intel ____.",
+    "answer": "Jim Kardach",
+    "bank": [
+      "Jim Kardach",
+      "Frank Canova",
+      "Mike Lazaridis",
+      "John Shepherd-Barron"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il nome Bluetooth si ispira a Harald \"Dente Blu\" ____, re danese del decimo secolo.",
+    "answer": "Gormsson",
+    "bank": [
+      "Gormsson",
+      "Canova",
+      "Kardach",
+      "Haartsen"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Harald era ricordato per aver unito sotto un'unica corona popoli e territori fino ad allora ____.",
+    "answer": "divisi",
+    "bank": [
+      "divisi",
+      "alleati",
+      "nemici",
+      "sconosciuti"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il nome Bluetooth doveva essere solo ____, in attesa di un'idea migliore, ma rimase quello definitivo.",
+    "answer": "temporaneo",
+    "bank": [
+      "temporaneo",
+      "segreto",
+      "tecnico",
+      "internazionale"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il logo Bluetooth nasce dalla fusione di due antiche rune nordiche, corrispondenti alle iniziali di Harald e ____.",
+    "answer": "Bluetooth",
+    "bank": [
+      "Bluetooth",
+      "Ericsson",
+      "Nokia",
+      "Intel"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora usata nel modulo, il Bluetooth è paragonato a una stretta di ____ tra due persone nella stessa stanza.",
+    "answer": "mano",
+    "bank": [
+      "mano",
+      "spalla",
+      "gomito",
+      "testa"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il Wi-Fi collega un dispositivo a Internet tramite un ____ nelle vicinanze.",
+    "answer": "router",
+    "bank": [
+      "router",
+      "operatore telefonico",
+      "modem satellitare",
+      "cavo Bluetooth"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La rete mobile è offerta dal proprio ____ e collega ovunque ci sia copertura.",
+    "answer": "operatore telefonico",
+    "bank": [
+      "operatore telefonico",
+      "router domestico",
+      "fornitore Wi-Fi",
+      "provider cloud"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il Wi-Fi è generalmente più veloce e non consuma il ____ incluso nel proprio piano telefonico.",
+    "answer": "traffico dati",
+    "bank": [
+      "traffico dati",
+      "backup",
+      "Bluetooth",
+      "PIN"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La rete mobile segue l'utente ovunque vada, ma consuma dati a ____.",
+    "answer": "pagamento",
+    "bank": [
+      "pagamento",
+      "costo zero",
+      "velocità doppia",
+      "intermittenza"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Wi-Fi e rete mobile sono due strade diverse verso la stessa destinazione: ____.",
+    "answer": "Internet",
+    "bank": [
+      "Internet",
+      "il Bluetooth",
+      "il cloud aziendale",
+      "l'email"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel 1997 fu pubblicata la prima versione dello standard tecnico noto come ____.",
+    "answer": "802.11",
+    "bank": [
+      "802.11",
+      "850",
+      "510",
+      "1994"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel 1999 un gruppo di aziende fondò un'alleanza per certificare la compatibilità tra dispositivi di produttori diversi, sotto il marchio ____.",
+    "answer": "Wi-Fi",
+    "bank": [
+      "Wi-Fi",
+      "Bluetooth",
+      "AirPort",
+      "BlackBerry"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Apple battezzò questa tecnologia ____ nei propri prodotti.",
+    "answer": "AirPort",
+    "bank": [
+      "AirPort",
+      "Wi-Fi Zone",
+      "NetConnect",
+      "SkyLink"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Apple integrò il Wi-Fi nei portatili della linea ____.",
+    "answer": "iBook",
+    "bank": [
+      "iBook",
+      "MacBook",
+      "iPhone",
+      "iPad"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Gli iBook con Wi-Fi furono il primo prodotto di massa a offrire una connessione wireless a Internet senza bisogno di alcun ____.",
+    "answer": "cavo di rete",
+    "bank": [
+      "cavo di rete",
+      "sistema operativo",
+      "abbonamento",
+      "schermo touch"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, il Wi-Fi è paragonato all'impianto idrico di un edificio, mentre la rete mobile è paragonata a una ____ che si porta sempre con sé.",
+    "answer": "borraccia",
+    "bank": [
+      "borraccia",
+      "valigia",
+      "chiave",
+      "lampada"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La sicurezza dei dispositivi mobili si basa su un PIN o un altro sistema di ____ per impedire accessi non autorizzati.",
+    "answer": "sblocco",
+    "bank": [
+      "sblocco",
+      "backup",
+      "aggiornamento",
+      "ricarica"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un backup regolare garantisce che smarrire o danneggiare il dispositivo non significhi perdere per sempre i propri ____.",
+    "answer": "dati",
+    "bank": [
+      "dati",
+      "contatti bancari",
+      "account social",
+      "applicazioni"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Disattivare Wi-Fi e Bluetooth quando non servono riduce le occasioni in cui il dispositivo potrebbe connettersi automaticamente a reti o apparecchi non ____.",
+    "answer": "affidabili",
+    "bank": [
+      "affidabili",
+      "aggiornati",
+      "gratuiti",
+      "veloci"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il 27 giugno 1967 l'inventore scozzese ____ installò il primo sportello bancomat della storia.",
+    "answer": "John Shepherd-Barron",
+    "bank": [
+      "John Shepherd-Barron",
+      "Frank Canova",
+      "Jim Kardach",
+      "Mike Lazaridis"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il primo sportello bancomat fu installato fuori da una filiale della Barclays Bank a ____, nel nord di Londra.",
+    "answer": "Enfield",
+    "bank": [
+      "Enfield",
+      "Waterloo",
+      "Las Vegas",
+      "Stoccolma"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Per prelevare al primo bancomat, il cliente doveva inserire un assegno speciale e digitare un ____ numerico segreto.",
+    "answer": "codice",
+    "bank": [
+      "codice",
+      "nome",
+      "indirizzo",
+      "numero seriale"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Shepherd-Barron aveva pensato inizialmente a un codice di ____ cifre, come il proprio numero di matricola militare.",
+    "answer": "sei",
+    "bank": [
+      "sei",
+      "quattro",
+      "otto",
+      "due"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Fu sua moglie ____ a fargli notare che sei cifre sarebbero state troppo difficili da ricordare.",
+    "answer": "Caroline",
+    "bank": [
+      "Caroline",
+      "Nadia",
+      "Sven",
+      "Doug"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Grazie al consiglio della moglie, il codice fu ridotto a ____ cifre.",
+    "answer": "quattro",
+    "bank": [
+      "quattro",
+      "sei",
+      "otto",
+      "due"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Quella scelta pratica diede origine al PIN a quattro cifre, diventato decenni dopo lo standard per sbloccare smartphone, carte di pagamento e ____.",
+    "answer": "innumerevoli altri dispositivi",
+    "bank": [
+      "innumerevoli altri dispositivi",
+      "soli sportelli bancomat",
+      "router domestici",
+      "auricolari Bluetooth"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Nella metafora del modulo, un PIN è paragonato alla serratura della ____ del negozio.",
+    "answer": "saracinesca",
+    "bank": [
+      "saracinesca",
+      "cassaforte",
+      "vetrina",
+      "porta sul retro"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Collegarsi in mobilità significa usare una connessione wireless sicura, effettuare ricerche sul Web e inviare e ricevere ____ direttamente dal proprio dispositivo mobile.",
+    "answer": "posta elettronica",
+    "bank": [
+      "posta elettronica",
+      "backup",
+      "Bluetooth",
+      "PIN"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Da smartphone è possibile compiere le stesse attività del computer del negozio, con l'accortezza in più di verificare che la rete a cui ci si collega sia effettivamente ____.",
+    "answer": "sicura",
+    "bank": [
+      "sicura",
+      "gratuita",
+      "veloce",
+      "nuova"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel 1999 l'azienda canadese ____ lanciò il BlackBerry 850.",
+    "answer": "Research In Motion",
+    "bank": [
+      "Research In Motion",
+      "BellSouth",
+      "Ericsson",
+      "Apple"
+    ]
+  },
+  {
+    "id": 49,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Research In Motion fu fondata quindici anni prima a Waterloo, in ____, da due amici d'infanzia.",
+    "answer": "Ontario",
+    "bank": [
+      "Ontario",
+      "Texas",
+      "California",
+      "Las Vegas"
+    ]
+  },
+  {
+    "id": 50,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "I fondatori di Research In Motion, amici d'infanzia, erano Mike Lazaridis e ____.",
+    "answer": "Doug Fregin",
+    "bank": [
+      "Doug Fregin",
+      "Jim Kardach",
+      "Frank Canova",
+      "Sven Mattisson"
+    ]
+  },
+  {
+    "id": 51,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il BlackBerry 850 non era ancora un telefono vero e proprio, ma un piccolo ____ bidirezionale.",
+    "answer": "cercapersone",
+    "bank": [
+      "cercapersone",
+      "tablet",
+      "computer palmare",
+      "router"
+    ]
+  },
+  {
+    "id": 52,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il BlackBerry 850 fu il primo dispositivo capace di inviare e ricevere email direttamente in ____.",
+    "answer": "tasca",
+    "bank": [
+      "tasca",
+      "ufficio",
+      "cloud",
+      "rete"
+    ]
+  },
+  {
+    "id": 53,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Lazaridis raccontò di essersi ispirato a un consiglio ricevuto da un insegnante delle scuole ____.",
+    "answer": "superiori",
+    "bank": [
+      "superiori",
+      "elementari",
+      "medie",
+      "serali"
+    ]
+  },
+  {
+    "id": 54,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il BlackBerry fu perfezionato negli anni successivi con l'aggiunta di un browser e infine di funzioni ____.",
+    "answer": "telefoniche",
+    "bank": [
+      "telefoniche",
+      "fotografiche",
+      "bancarie",
+      "di backup"
+    ]
+  },
+  {
+    "id": 55,
+    "module": "dispositivi-mobili-e-connessioni",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il BlackBerry diventò per un decennio lo strumento più diffuso per leggere e scrivere email fuori dall'____.",
+    "answer": "ufficio",
+    "bank": [
+      "ufficio",
+      "Internet",
+      "rete mobile",
+      "negozio"
+    ]
+  }
+]

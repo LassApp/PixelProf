@@ -1,0 +1,902 @@
+[
+  {
+    "id": 1,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa condividere un calendario online?",
+    "options": [
+      "Renderlo visibile, e se lo si desidera modificabile, anche ad altre persone",
+      "Cancellarlo definitivamente dopo un mese",
+      "Trasformarlo in un documento di testo",
+      "Venderlo a un fornitore esterno"
+    ],
+    "correctIndex": 0,
+    "explanation": "Significa renderlo visibile, e se lo si desidera modificabile, ad altre persone."
+  },
+  {
+    "id": 2,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali permessi si possono assegnare condividendo un calendario?",
+    "options": [
+      "Sola visualizzazione oppure anche modifica",
+      "Solo la cancellazione totale",
+      "Solo la duplicazione",
+      "Nessun permesso è mai necessario"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si può assegnare sola visualizzazione oppure anche modifica."
+  },
+  {
+    "id": 3,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa sostituisce un calendario condiviso rispetto a due agende separate?",
+    "options": [
+      "Un solo calendario che tutti vedono aggiornato in tempo reale",
+      "Un'agenda cartacea più grande",
+      "Un sistema di email incrociate",
+      "Nessuna delle precedenti: restano comunque due copie"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sostituisce due agende separate con un solo calendario aggiornato in tempo reale."
+  },
+  {
+    "id": 4,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu presentata la proposta CalDAV?",
+    "options": [
+      "Nel 2003",
+      "Nel 1998",
+      "Nel 2007",
+      "Nel 1964"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu presentata nel 2003."
+  },
+  {
+    "id": 5,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A quale organizzazione fu presentata la proposta CalDAV?",
+    "options": [
+      "All'Internet Engineering Task Force",
+      "Alla Federal Trade Commission",
+      "Al World Wide Web Consortium",
+      "Alla Digital Equipment Corporation"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu presentata all'Internet Engineering Task Force."
+  },
+  {
+    "id": 6,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per cosa fu pensata CalDAV?",
+    "options": [
+      "Per far sincronizzare automaticamente calendari creati con programmi diversi",
+      "Per creare un nuovo formato di posta elettronica",
+      "Per cifrare i calendari aziendali",
+      "Per vietare la condivisione dei calendari"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu pensata per sincronizzare automaticamente calendari di programmi diversi."
+  },
+  {
+    "id": 7,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando CalDAV divenne standard ufficiale?",
+    "options": [
+      "Nel 2007",
+      "Nel 2003",
+      "Nel 1998",
+      "Nel 2013"
+    ],
+    "correctIndex": 0,
+    "explanation": "Divenne standard ufficiale nel 2007."
+  },
+  {
+    "id": 8,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Con quale documento tecnico CalDAV divenne standard ufficiale?",
+    "options": [
+      "RFC 4791",
+      "RFC 2445",
+      "RFC 114",
+      "RFC 1"
+    ],
+    "correctIndex": 0,
+    "explanation": "Divenne standard con la pubblicazione di RFC 4791."
+  },
+  {
+    "id": 9,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rende possibile oggi lo standard CalDAV, secondo il modulo?",
+    "options": [
+      "Che un calendario condiviso si aggiorni automaticamente anche su un telefono di marca diversa",
+      "Che i calendari siano sempre gratuiti",
+      "Che i calendari possano contenere solo testo semplice",
+      "Che i calendari non possano mai essere condivisi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Rende possibile l'aggiornamento automatico tra dispositivi di marche diverse."
+  },
+  {
+    "id": 10,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa è paragonato un calendario condiviso nella metafora del modulo?",
+    "options": [
+      "A un'unica lavagna degli appuntamenti appesa nel corridoio",
+      "A una cassaforte con combinazione segreta",
+      "A un archivio cartaceo chiuso a chiave",
+      "A una libreria pubblica"
+    ],
+    "correctIndex": 0,
+    "explanation": "È paragonato a un'unica lavagna degli appuntamenti appesa nel corridoio."
+  },
+  {
+    "id": 11,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa creare un evento nel calendario?",
+    "options": [
+      "Aggiungere un appuntamento con data, orario e descrizione",
+      "Cancellare un appuntamento esistente",
+      "Condividere l'intero calendario con tutti",
+      "Disattivare le notifiche del calendario"
+    ],
+    "correctIndex": 0,
+    "explanation": "Significa aggiungere un appuntamento con data, orario e descrizione."
+  },
+  {
+    "id": 12,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cos'è un promemoria?",
+    "options": [
+      "Un avviso automatico che il calendario invia prima dell'evento",
+      "Un evento che si ripete ogni giorno",
+      "Un permesso di modifica del calendario",
+      "Un collegamento per una videochiamata"
+    ],
+    "correctIndex": 0,
+    "explanation": "È un avviso automatico inviato prima dell'evento."
+  },
+  {
+    "id": 13,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che differenza c'è tra un evento singolo e uno ricorrente?",
+    "options": [
+      "L'evento ricorrente si ripete con una cadenza regolare, quello singolo no",
+      "Non c'è alcuna differenza pratica",
+      "L'evento singolo dura sempre tutto il giorno",
+      "L'evento ricorrente non può avere un promemoria"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'evento ricorrente si ripete con una cadenza regolare nel tempo."
+  },
+  {
+    "id": 14,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu pubblicato il documento RFC 2445?",
+    "options": [
+      "Nel novembre 1998",
+      "Nel 2003",
+      "Nel 2007",
+      "Nel 1964"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu pubblicato nel novembre 1998."
+  },
+  {
+    "id": 15,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Per quali aziende lavoravano Frank Dawson e Derik Stenerson?",
+    "options": [
+      "Lotus e Microsoft",
+      "Cisco e AT&T",
+      "Google e Apple",
+      "IBM e Oracle"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dawson lavorava per Lotus, Stenerson per Microsoft."
+  },
+  {
+    "id": 16,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa definiva il documento RFC 2445?",
+    "options": [
+      "Il formato comune iCalendar per eventi, appuntamenti e promemoria",
+      "Il protocollo CalDAV",
+      "Il File Transfer Protocol",
+      "Un nuovo standard di cifratura email"
+    ],
+    "correctIndex": 0,
+    "explanation": "Definiva il formato comune iCalendar."
+  },
+  {
+    "id": 17,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché è significativo che RFC 2445 sia nato dalla collaborazione tra Lotus e Microsoft?",
+    "options": [
+      "Perché erano due aziende concorrenti che capirono di avere più da guadagnare cooperando",
+      "Perché erano la stessa azienda con due nomi diversi",
+      "Perché nessuna delle due aveva mai lavorato sui calendari prima",
+      "Perché il documento fu redatto da un'autorità governativa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Erano concorrenti dirette, ma scelsero di cooperare su uno standard comune."
+  },
+  {
+    "id": 18,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da quanti anni, circa, il principio tecnico di RFC 2445 è ancora in uso, secondo il modulo?",
+    "options": [
+      "Più di venticinque",
+      "Più di cinque",
+      "Più di cinquanta",
+      "Più di dieci"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il modulo indica più di venticinque anni."
+  },
+  {
+    "id": 19,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa è paragonato un promemoria nella metafora del modulo?",
+    "options": [
+      "A un secondo sveglia, impostato per dare tempo di prepararsi",
+      "A un contratto firmato in anticipo",
+      "A un messaggio vocale automatico",
+      "A una notifica pubblicitaria"
+    ],
+    "correctIndex": 0,
+    "explanation": "È paragonato a un secondo sveglia impostato per dare tempo di prepararsi."
+  },
+  {
+    "id": 20,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette di fare, in più rispetto a un semplice orario, il \"secondo sveglia\" della metafora?",
+    "options": [
+      "Regolare l'avviso anche su un momento scelto prima dell'appuntamento, non solo sull'ora esatta",
+      "Cancellare automaticamente l'evento",
+      "Invitare automaticamente altre persone",
+      "Nascondere l'evento agli altri partecipanti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Permette di regolare l'avviso su un momento scelto prima dell'appuntamento."
+  },
+  {
+    "id": 21,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa invitare qualcuno a un evento condiviso?",
+    "options": [
+      "Aggiungerlo come partecipante, permettendogli di accettare o rifiutare",
+      "Renderlo automaticamente proprietario del calendario",
+      "Cancellare il suo calendario personale",
+      "Obbligarlo a partecipare senza possibilità di rifiuto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Significa aggiungerlo come partecipante che può accettare o rifiutare."
+  },
+  {
+    "id": 22,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come può rispondere una persona invitata a un evento?",
+    "options": [
+      "Accetta, rifiuta, oppure segnala forse",
+      "Solo accettando, senza altre opzioni",
+      "Solo ignorando l'invito",
+      "Solo modificando l'intero evento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Può accettare, rifiutare, oppure segnalare forse."
+  },
+  {
+    "id": 23,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa succede quando l'organizzatore modifica un evento già condiviso?",
+    "options": [
+      "L'aggiornamento raggiunge automaticamente tutti gli invitati",
+      "Deve riscrivere separatamente a ciascun invitato",
+      "L'evento viene cancellato per tutti automaticamente",
+      "Solo l'organizzatore vede la modifica"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'aggiornamento raggiunge automaticamente tutti gli invitati."
+  },
+  {
+    "id": 24,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale problema affrontarono Michael Näf e Paul Sevinç nel 2007?",
+    "options": [
+      "Organizzare una cena con un gruppo di amici, evitando decine di email incrociate",
+      "Sviluppare un nuovo protocollo di sicurezza",
+      "Creare un servizio di videoconferenza",
+      "Digitalizzare vecchi calendari cartacei"
+    ],
+    "correctIndex": 0,
+    "explanation": "Affrontarono il problema di organizzare una cena senza email incrociate."
+  },
+  {
+    "id": 25,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Dove lavoravano Näf e Sevinç?",
+    "options": [
+      "All'ETH di Zurigo",
+      "Ai Bell Labs",
+      "Al MIT",
+      "Alla Cisco"
+    ],
+    "correctIndex": 0,
+    "explanation": "Erano ricercatori dell'ETH di Zurigo."
+  },
+  {
+    "id": 26,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come funzionava il programma ideato da Näf per risolvere il problema delle email incrociate?",
+    "options": [
+      "Ogni invitato segnalava la propria disponibilità su una pagina condivisa",
+      "Inviava automaticamente un'email a ciascun invitato ogni ora",
+      "Richiedeva una telefonata a ogni singolo invitato",
+      "Bloccava il calendario finché tutti non rispondevano"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ogni invitato segnalava la propria disponibilità su una pagina condivisa."
+  },
+  {
+    "id": 27,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come si chiama il programma creato da Näf e Sevinç?",
+    "options": [
+      "Doodle",
+      "CalDAV",
+      "iCalendar",
+      "Zoom"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il programma si chiama Doodle."
+  },
+  {
+    "id": 28,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti utenti superò Doodle nel giro di pochi anni?",
+    "options": [
+      "Dieci milioni",
+      "Un milione",
+      "Cento milioni",
+      "Mille"
+    ],
+    "correctIndex": 0,
+    "explanation": "Superò i dieci milioni di utenti."
+  },
+  {
+    "id": 29,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quante persone usano oggi Doodle ogni mese, secondo il modulo?",
+    "options": [
+      "Decine di milioni",
+      "Poche migliaia",
+      "Circa un milione",
+      "Solo alcune aziende europee"
+    ],
+    "correctIndex": 0,
+    "explanation": "Oggi è usato ogni mese da decine di milioni di persone."
+  },
+  {
+    "id": 30,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa è paragonato l'uso di un evento condiviso nella metafora del modulo?",
+    "options": [
+      "A un foglio affisso in bacheca su cui ciascuno segna la propria disponibilità con una crocetta",
+      "A dieci telefonate separate per organizzare una gita",
+      "A una lettera raccomandata inviata a ciascun partecipante",
+      "A un contratto legale da firmare"
+    ],
+    "correctIndex": 0,
+    "explanation": "È paragonato a un foglio in bacheca con crocette, invece di dieci telefonate."
+  },
+  {
+    "id": 31,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa creare una riunione online?",
+    "options": [
+      "Impostare data, ora e argomento di un incontro a distanza, generando un collegamento",
+      "Prenotare una sala conferenze fisica",
+      "Inviare un fax a tutti i partecipanti",
+      "Registrare un nuovo account email"
+    ],
+    "correctIndex": 0,
+    "explanation": "Significa impostare data, ora e argomento, generando un collegamento."
+  },
+  {
+    "id": 32,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando può essere annullata una riunione online?",
+    "options": [
+      "In qualunque momento prima del suo inizio",
+      "Solo il giorno prima",
+      "Mai, una volta creata",
+      "Solo dopo che è già iniziata"
+    ],
+    "correctIndex": 0,
+    "explanation": "Può essere annullata in qualunque momento prima dell'inizio."
+  },
+  {
+    "id": 33,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno Bell Labs presentò il Picturephone?",
+    "options": [
+      "Nel 1964",
+      "Nel 1970",
+      "Nel 1989",
+      "Nel 1998"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo presentò nel 1964, alla fiera mondiale di New York."
+  },
+  {
+    "id": 34,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa rendeva speciale il Picturephone rispetto a un telefono normale?",
+    "options": [
+      "Trasmetteva anche l'immagine di chi parlava, non solo la voce",
+      "Funzionava senza alcun cavo",
+      "Permetteva di chiamare gratuitamente ovunque nel mondo",
+      "Registrava automaticamente ogni conversazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Trasmetteva anche l'immagine, non solo la voce."
+  },
+  {
+    "id": 35,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Dove avvenne la dimostrazione transcontinentale del Picturephone nel 1964?",
+    "options": [
+      "Tra una postazione a Disneyland, in California, e la fiera di New York",
+      "Tra Chicago e Pittsburgh",
+      "Tra Washington e New York",
+      "Tra Los Angeles e Londra"
+    ],
+    "correctIndex": 0,
+    "explanation": "Avvenne tra Disneyland e la fiera di New York."
+  },
+  {
+    "id": 36,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quali città AT&T lanciò commercialmente il Picturephone nel 1970?",
+    "options": [
+      "Chicago e Pittsburgh",
+      "New York e Boston",
+      "Los Angeles e San Francisco",
+      "Washington e Filadelfia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu lanciato commercialmente a Chicago e Pittsburgh."
+  },
+  {
+    "id": 37,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi partecipò alla chiamata inaugurale del servizio Picturephone nel 1970?",
+    "options": [
+      "Un dirigente AT&T e la First Lady Lady Bird Johnson",
+      "Il presidente degli Stati Uniti in persona",
+      "Due semplici cittadini scelti a caso",
+      "Due ingegneri dei Bell Labs"
+    ],
+    "correctIndex": 0,
+    "explanation": "Vi parteciparono un dirigente AT&T e la First Lady Lady Bird Johnson."
+  },
+  {
+    "id": 38,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il Picturephone fu un fallimento commerciale?",
+    "options": [
+      "Era costoso, con immagine in bianco e nero di bassa qualità e spesso disallineata rispetto all'audio",
+      "Perché nessuno sapeva cosa fosse un telefono",
+      "Perché era troppo semplice da usare",
+      "Perché fu vietato dal governo statunitense"
+    ],
+    "correctIndex": 0,
+    "explanation": "Era costoso e offriva un'immagine di bassa qualità, spesso disallineata con l'audio."
+  },
+  {
+    "id": 39,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale perdita subì AT&T con il Picturephone?",
+    "options": [
+      "Circa 500 milioni di dollari",
+      "Circa 50 milioni di dollari",
+      "Circa 5 milioni di dollari",
+      "Nessuna perdita significativa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Subì una perdita stimata attorno ai 500 milioni di dollari."
+  },
+  {
+    "id": 40,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa è paragonato il Picturephone nella metafora del modulo?",
+    "options": [
+      "A un'automobile elettrica costruita cinquant'anni troppo presto",
+      "A un'invenzione mai più ripresa da nessuno",
+      "A un giocattolo per bambini",
+      "A un'opera d'arte da museo"
+    ],
+    "correctIndex": 0,
+    "explanation": "È paragonato a un'automobile elettrica costruita troppo presto."
+  },
+  {
+    "id": 41,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"avviare\" una riunione online?",
+    "options": [
+      "Renderla attiva e raggiungibile dai partecipanti",
+      "Cancellarla definitivamente",
+      "Renderla invisibile a tutti",
+      "Trasformarla in un evento del calendario"
+    ],
+    "correctIndex": 0,
+    "explanation": "Significa renderla attiva e raggiungibile."
+  },
+  {
+    "id": 42,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa significa \"concludere\" una riunione online?",
+    "options": [
+      "Chiuderla per tutti i partecipanti contemporaneamente",
+      "Metterla in pausa per un partecipante alla volta",
+      "Renderla permanente",
+      "Condividerla con nuovi invitati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Significa chiuderla per tutti i partecipanti contemporaneamente."
+  },
+  {
+    "id": 43,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale scelta può fare l'organizzatore riguardo all'ingresso dei partecipanti a una riunione online?",
+    "options": [
+      "Permettere l'accesso libero a chi ha il collegamento, oppure richiedere l'ammissione singola",
+      "Vietare l'accesso a tutti tranne se stesso",
+      "Obbligare ogni partecipante a pagare per entrare",
+      "Nessuna scelta è possibile, l'accesso è sempre libero"
+    ],
+    "correctIndex": 0,
+    "explanation": "Può scegliere tra accesso libero o ammissione singola dei partecipanti."
+  },
+  {
+    "id": 44,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Eric Yuan si trasferì negli Stati Uniti?",
+    "options": [
+      "Nel 1997",
+      "Nel 2007",
+      "Nel 2011",
+      "Nel 2013"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si trasferì nel 1997, dopo che il visto gli era stato rifiutato più volte."
+  },
+  {
+    "id": 45,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa motivò personalmente Eric Yuan a lavorare sulle videochiamate?",
+    "options": [
+      "Il desiderio di vedere la propria fidanzata senza dover affrontare un lungo viaggio in treno",
+      "Un progetto universitario obbligatorio",
+      "Una richiesta diretta di Cisco",
+      "Un concorso internazionale di ingegneria"
+    ],
+    "correctIndex": 0,
+    "explanation": "Da giovane doveva affrontare un lungo viaggio in treno per vedere la fidanzata."
+  },
+  {
+    "id": 46,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale azienda lavorò Eric Yuan prima di fondare Zoom?",
+    "options": [
+      "WebEx",
+      "Cisco direttamente fin dall'inizio",
+      "AT&T",
+      "Google"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lavorò per WebEx, poi acquisita da Cisco."
+  },
+  {
+    "id": 47,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da chi fu acquisita WebEx nel 2007?",
+    "options": [
+      "Da Cisco",
+      "Da Microsoft",
+      "Da Google",
+      "Da AT&T"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu acquisita da Cisco nel 2007."
+  },
+  {
+    "id": 48,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché Eric Yuan lasciò Cisco nel 2011?",
+    "options": [
+      "Si convinse che il prodotto di Cisco non fosse più all'altezza delle esigenze degli utenti",
+      "Fu licenziato per motivi disciplinari",
+      "L'azienda chiuse definitivamente",
+      "Voleva tornare a vivere in Cina"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si convinse che il prodotto Cisco non fosse più all'altezza."
+  },
+  {
+    "id": 49,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu lanciato ufficialmente il servizio Zoom?",
+    "options": [
+      "Nel gennaio 2013",
+      "Nel 2011",
+      "Nel 2007",
+      "Nel 1997"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu lanciato ufficialmente nel gennaio 2013."
+  },
+  {
+    "id": 50,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti utenti raggiunse Zoom nei primi quattro mesi dal lancio?",
+    "options": [
+      "Oltre un milione",
+      "Poche migliaia",
+      "Cento milioni",
+      "Diecimila"
+    ],
+    "correctIndex": 0,
+    "explanation": "In soli quattro mesi superò il milione di utenti."
+  },
+  {
+    "id": 51,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Cosa permette di fare la condivisione dello schermo durante una riunione online?",
+    "options": [
+      "Mostrare in tempo reale ciò che si vede sul proprio computer, senza inviare file",
+      "Registrare automaticamente la riunione",
+      "Tradurre automaticamente la conversazione",
+      "Bloccare l'accesso agli altri partecipanti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Permette di mostrare in tempo reale ciò che si vede sul proprio computer."
+  },
+  {
+    "id": 52,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa serve la chat durante una riunione online?",
+    "options": [
+      "A scrivere messaggi paralleli alla conversazione vocale, senza interrompere chi parla",
+      "A registrare automaticamente l'audio della riunione",
+      "A invitare automaticamente nuovi partecipanti",
+      "A disattivare il microfono di tutti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Serve a scrivere messaggi paralleli senza interrompere la conversazione vocale."
+  },
+  {
+    "id": 53,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché conviene disattivare il microfono quando non si parla, secondo il modulo?",
+    "options": [
+      "Perché riduce i rumori di fondo per tutti gli altri partecipanti",
+      "Perché altrimenti la riunione si chiude automaticamente",
+      "Perché è un obbligo di legge",
+      "Perché consuma meno dati Internet"
+    ],
+    "correctIndex": 0,
+    "explanation": "Riduce i rumori di fondo per gli altri partecipanti."
+  },
+  {
+    "id": 54,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando avvenne l'episodio del professor Robert Kelly con la BBC?",
+    "options": [
+      "Il 10 marzo 2017",
+      "Il 10 marzo 2007",
+      "Nel gennaio 2013",
+      "Nel 1998"
+    ],
+    "correctIndex": 0,
+    "explanation": "Avvenne il 10 marzo 2017."
+  },
+  {
+    "id": 55,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Dove si trovava Robert Kelly durante l'intervista interrotta?",
+    "options": [
+      "A Busan, in Corea del Sud",
+      "A Seul, in Corea del Sud",
+      "Negli Stati Uniti",
+      "A Londra, nel Regno Unito"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si trovava a Busan, in Corea del Sud."
+  },
+  {
+    "id": 56,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Cosa stava commentando Robert Kelly durante l'intervista con la BBC?",
+    "options": [
+      "L'impeachment della presidente sudcoreana Park Geun-hye",
+      "Le elezioni presidenziali statunitensi",
+      "Un evento sportivo internazionale",
+      "Un accordo commerciale asiatico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Stava commentando l'impeachment della presidente sudcoreana."
+  },
+  {
+    "id": 57,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi entrò nello studio di Kelly durante l'intervista?",
+    "options": [
+      "La figlia di quattro anni, seguita dal fratellino di nove mesi e dalla madre",
+      "Un collega dell'università",
+      "Un tecnico della BBC",
+      "Nessuno, l'intervista non fu mai interrotta"
+    ],
+    "correctIndex": 0,
+    "explanation": "Entrarono la figlia di quattro anni, il fratellino di nove mesi e la madre."
+  },
+  {
+    "id": 58,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quante volte fu visto il video dell'intervista di Kelly in pochi giorni?",
+    "options": [
+      "Oltre 21 milioni di volte",
+      "Circa 21.000 volte",
+      "Circa 2,1 milioni di volte",
+      "Solo poche migliaia di volte"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu visto oltre 21 milioni di volte in pochi giorni."
+  },
+  {
+    "id": 59,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come reagì Robert Kelly, secondo il modulo, quando gli fu chiesto dell'episodio?",
+    "options": [
+      "Raccontò di aver riso quanto tutti gli altri guardando il video",
+      "Si rifiutò di commentare l'accaduto",
+      "Fece causa alla BBC",
+      "Smise di dare interviste per sempre"
+    ],
+    "correctIndex": 0,
+    "explanation": "Raccontò di aver riso guardando il video, come tutti gli altri."
+  },
+  {
+    "id": 60,
+    "module": "calendari-e-riunioni-online",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A cosa è paragonata la condivisione dello schermo nella metafora del modulo?",
+    "options": [
+      "Ad aprire una finestra sulla propria scrivania perché tutti possano guardarci dentro",
+      "A chiudere una porta blindata",
+      "A nascondere un documento in una cassaforte",
+      "A spedire una lettera raccomandata"
+    ],
+    "correctIndex": 0,
+    "explanation": "È paragonata ad aprire una finestra sulla propria scrivania."
+  }
+]

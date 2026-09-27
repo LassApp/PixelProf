@@ -111,11 +111,11 @@
   #setup-panel{
     position: relative;
     background: #0a1022;
-    border: 1px solid rgba(0,255,200,.18);
+    border: 1px solid rgba(var(--accent-rgb),.18);
     border-radius: var(--radius-lg);
     padding: 1.4rem 1.4rem 1.25rem;
     width: 100%; max-width: 440px; max-height: 90vh; overflow-y: auto;
-    box-shadow: 0 20px 70px rgba(0,0,0,.75), 0 0 0 1px rgba(0,255,200,.06);
+    box-shadow: 0 20px 70px rgba(0,0,0,.75), 0 0 0 1px rgba(var(--accent-rgb),.06);
     animation: asDropIn .2s cubic-bezier(.22,1,.36,1) both;
   }
   @keyframes asDropIn{ from{ opacity: 0; transform: translateY(10px) scale(.97); } to{ opacity: 1; transform: translateY(0) scale(1); } }

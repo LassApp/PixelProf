@@ -58,7 +58,7 @@
     border:1px solid var(--purple-border);background:var(--purple-dim);
   }
   #qz-game .qz-act-icon{
-    width:24px;height:24px;border-radius:50%;background:rgba(124,106,255,.18);
+    width:24px;height:24px;border-radius:50%;background:rgba(var(--purple-rgb),.18);
     display:grid;place-items:center;color:var(--purple);flex-shrink:0;font-size:13px;
   }
   #qz-game .qz-act-pill #qz-act-label{ font-size:13px;font-weight:700;color:var(--purple); }
@@ -73,7 +73,7 @@
   /* ── card domanda + gemma decorativa colorata per modulo ── */
   #qz-game .q-card{
     padding:22px 84px 20px 22px;
-    --qz-mod:var(--purple);--qz-mod-glow:rgba(124,106,255,.45);
+    --qz-mod:var(--purple);--qz-mod-glow:rgba(var(--purple-rgb),.45);
   }
   #qz-game .q-cat{ color:var(--qz-mod); }
   #qz-game .qz-gem{
@@ -91,7 +91,7 @@
     line-height:1.4;transition:all var(--transition-fast);
   }
   #qz-game .opt:hover:not(:disabled){
-    border-color:rgba(0,255,200,.32);background:rgba(0,255,200,.055);transform:translateX(3px);
+    border-color:rgba(var(--accent-rgb),.32);background:rgba(var(--accent-rgb),.055);transform:translateX(3px);
   }
   #qz-game .opt:hover:not(:disabled) .opt-badge{ border-color:var(--accent);color:var(--accent); }
   #qz-game .opt-badge{
@@ -139,11 +139,11 @@
   #qz-game #next-btn.btn-neon{
     display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:var(--radius-md);
     background:linear-gradient(135deg,var(--accent),#00dcb0);color:#04140c;font-weight:700;font-size:13.5px;
-    border:none;box-shadow:0 4px 22px rgba(0,255,200,.32);transition:transform .15s,box-shadow .15s;
+    border:none;box-shadow:0 4px 22px rgba(var(--accent-rgb),.32);transition:transform .15s,box-shadow .15s;
   }
   #qz-game #next-btn.btn-neon:hover{
     background:linear-gradient(135deg,var(--accent),#00dcb0);transform:translateY(-2px);
-    box-shadow:0 8px 28px rgba(0,255,200,.42);
+    box-shadow:0 8px 28px rgba(var(--accent-rgb),.42);
   }
 
   /* ── accessibilità: rispetta prefers-reduced-motion anche per i nuovi elementi ── */
@@ -171,7 +171,7 @@
     background:rgba(20,30,60,.04);border-color:rgba(20,30,60,.1);color:rgba(16,24,42,.6);
   }
   html[data-theme="light"] #qz-game .qz-controlbar .game-counter-pill{ color:rgba(16,24,42,.55); }
-  html[data-theme="light"] #qz-game .qz-act-pill{ background:rgba(124,106,255,.08); }
+  html[data-theme="light"] #qz-game .qz-act-pill{ background:rgba(var(--purple-rgb),.08); }
   html[data-theme="light"] #qz-game .opt{
     background:rgba(20,30,60,.03);border-color:rgba(20,30,60,.08);color:rgba(16,24,42,.78);
   }

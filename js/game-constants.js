@@ -19,12 +19,18 @@ function modLabel(key){
 // per l'uso lato JS (style inline, non può leggere le CSS custom
 // properties di un elemento non ancora nel DOM).
 const MOD_COLOR_HEX  = { CE:'#ffb400', OE:'#7c6aff', WP:'#1e90ff', SS:'#28a050', PP:'#ff7828', IT:'#ff3b5c', OC:'#ff64b4' };
+// Colori d'area "intonati" alla palette navy/crema/oliva/fango (prima erano
+// neon puri, mirror esadecimale della tripletta --area-rgb "dark" in
+// pixelprof.css — vedi anche l'override chiaro per la versione più scura).
+// v9: aggiunta 'intelligenza-artificiale', assente qui ma già presente in
+// AreasConfig e in --area-rgb (CSS) — gap pre-esistente, colmato qui.
 const AREA_COLOR_HEX = {
-  'ecdl': '#00ffc8',
-  'cyberbullismo-sicurezza-online': '#ffb400',
-  'cybersecurity': '#1e90ff',
-  'reti-internet': '#7c6aff',
-  'malware-minacce': '#ff4d6d',
+  'ecdl': '#4e7464',
+  'cyberbullismo-sicurezza-online': '#88673a',
+  'cybersecurity': '#54708c',
+  'reti-internet': '#746996',
+  'malware-minacce': '#ab5649',
+  'intelligenza-artificiale': '#9d5875',
 };
 function modColor(key){
   if(MOD_COLOR_HEX[key]) return MOD_COLOR_HEX[key];

@@ -236,7 +236,7 @@
   }
   .fc-exit-btn:hover{
     border-color: var(--purple);
-    background: rgba(124,106,255,.18);
+    background: rgba(var(--purple-rgb),.18);
     color: #fff;
   }
   .fc-exit-btn::after{ background: var(--purple); }
@@ -281,8 +281,8 @@
     color: rgba(16,24,42,.6);
   }
   html[data-theme="light"] .fc-nav-btn:hover:not(:disabled){
-    background: rgba(124,106,255,.08);
-    border-color: rgba(124,106,255,.4);
+    background: rgba(var(--purple-rgb),.08);
+    border-color: rgba(var(--purple-rgb),.4);
     color: #5b3fd6;
   }
   html[data-theme="light"] .fc-loading{ color: rgba(16,24,42,.5); }
@@ -301,12 +301,12 @@
      quindi qui SEGUE il tema come .fc-nav-btn — a differenza di
      fc-text/fc-hint/fc-eyebrow sopra. */
   html[data-theme="light"] .fc-exit-btn{
-    background: rgba(124,106,255,.07);
-    border-color: rgba(124,106,255,.3);
+    background: rgba(var(--purple-rgb),.07);
+    border-color: rgba(var(--purple-rgb),.3);
     color: #5b3fd6;
   }
   html[data-theme="light"] .fc-exit-btn:hover{
-    background: rgba(124,106,255,.14);
+    background: rgba(var(--purple-rgb),.14);
     border-color: #6a4fd6;
     color: #4a2fb8;
   }
@@ -373,7 +373,7 @@
      va bene così, se invece la sinistra-allineata di Flip Card/
      Livello risultasse diversa da prima, segnalalo. */
   .dm-card{
-    --dma-rgb: var(--dm-accent-rgb, 124,106,255);
+    --dma-rgb: var(--dm-accent-rgb, 110,122,80);
     --dma-text-rgb: var(--dm-accent-text-rgb, 180,160,255);
     position:relative; overflow:hidden;
     display:flex; flex-direction:column; justify-content:flex-end;

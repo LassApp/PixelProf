@@ -211,25 +211,25 @@
    ───────────────────────────────────────────────────────────────── */
 .mod-card.generic-card {
   background: linear-gradient(145deg,#0c1420 0%,#131f36 55%,#0c1420 100%);
-  border-color: rgba(var(--area-rgb,0,255,200),.28);
-  box-shadow: 0 4px 24px rgba(var(--area-rgb,0,255,200),.08);
+  border-color: rgba(var(--area-rgb,110,122,80),.28);
+  box-shadow: 0 4px 24px rgba(var(--area-rgb,110,122,80),.08);
 }
-.mod-card.generic-card::before { background: linear-gradient(90deg,transparent,rgb(var(--area-rgb,0,255,200)),transparent); }
+.mod-card.generic-card::before { background: linear-gradient(90deg,transparent,rgb(var(--area-rgb,110,122,80)),transparent); }
 .mod-card.generic-card:hover {
-  border-color: rgba(var(--area-rgb,0,255,200),.6);
-  box-shadow: 0 12px 40px rgba(var(--area-rgb,0,255,200),.22),0 0 0 1px rgba(var(--area-rgb,0,255,200),.16),inset 0 1px 0 rgba(var(--area-rgb,0,255,200),.12);
+  border-color: rgba(var(--area-rgb,110,122,80),.6);
+  box-shadow: 0 12px 40px rgba(var(--area-rgb,110,122,80),.22),0 0 0 1px rgba(var(--area-rgb,110,122,80),.16),inset 0 1px 0 rgba(var(--area-rgb,110,122,80),.12);
 }
-.mod-card.generic-card:hover h3 { color: rgb(var(--area-rgb,0,255,200)); }
+.mod-card.generic-card:hover h3 { color: rgb(var(--area-rgb,110,122,80)); }
 .mod-card.generic-card.active {
-  border-color: rgba(var(--area-rgb,0,255,200),.85);
-  box-shadow: 0 0 30px rgba(var(--area-rgb,0,255,200),.32),0 8px 32px rgba(var(--area-rgb,0,255,200),.2);
+  border-color: rgba(var(--area-rgb,110,122,80),.85);
+  box-shadow: 0 0 30px rgba(var(--area-rgb,110,122,80),.32),0 8px 32px rgba(var(--area-rgb,110,122,80),.2);
 }
-.mod-card.generic-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(var(--area-rgb,0,255,200),.18),transparent 60%); }
+.mod-card.generic-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(var(--area-rgb,110,122,80),.18),transparent 60%); }
 .mod-card.generic-card .mc-badge {
-  background: rgba(var(--area-rgb,0,255,200),.16); color: rgb(var(--area-rgb,0,255,200));
-  border: 1px solid rgba(var(--area-rgb,0,255,200),.35);
+  background: rgba(var(--area-rgb,110,122,80),.16); color: rgb(var(--area-rgb,110,122,80));
+  border: 1px solid rgba(var(--area-rgb,110,122,80),.35);
 }
-.mod-card.generic-card .mc-icon { filter: drop-shadow(0 0 8px rgba(var(--area-rgb,0,255,200),.4)); }
+.mod-card.generic-card .mc-icon { filter: drop-shadow(0 0 8px rgba(var(--area-rgb,110,122,80),.4)); }
 
 /* ─────────────────────────────────────────────────────────────────
    CARD ECDL — colore per modulo (mappa corrente, v8.35.0):
@@ -264,22 +264,22 @@
 /* OE — Violet */
 .mod-card.oe-card {
   background: linear-gradient(160deg,#0a0618 0%,#140928 50%,#090518 100%);
-  border-color: rgba(124,106,255,.12);
+  border-color: rgba(var(--purple-rgb),.12);
 }
 .mod-card.oe-card:hover {
-  border-color: rgba(124,106,255,.45);
-  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(124,106,255,.2),0 0 40px rgba(124,106,255,.14);
+  border-color: rgba(var(--purple-rgb),.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(var(--purple-rgb),.2),0 0 40px rgba(var(--purple-rgb),.14);
 }
-.mod-card.oe-card::before { background: linear-gradient(90deg,transparent,#7c6aff,#b090ff,transparent); }
+.mod-card.oe-card::before { background: linear-gradient(90deg,transparent,var(--purple),#b090ff,transparent); }
 .mod-card.oe-card:hover h3 { color: #c4b0ff; }
 .mod-card.oe-card.active {
   border-color: rgba(168,130,255,.8);
-  box-shadow: 0 0 30px rgba(124,106,255,.3),0 8px 32px rgba(124,106,255,.2);
+  box-shadow: 0 0 30px rgba(var(--purple-rgb),.3),0 8px 32px rgba(var(--purple-rgb),.2);
 }
 .mod-card.oe-card::after { background: radial-gradient(ellipse at 70% 110%,rgba(140,100,255,.14),transparent 60%); }
-.mod-card.oe-card .mc-badge { background: rgba(124,106,255,.15); border: 1px solid rgba(124,106,255,.3); color: #b4a0ff; }
-.mod-card.oe-card .tag { background: rgba(124,106,255,.1); border-color: rgba(124,106,255,.2); color: rgba(180,160,255,.8); }
-.mod-card.oe-card:hover .tag { background: rgba(124,106,255,.15); border-color: rgba(124,106,255,.35); }
+.mod-card.oe-card .mc-badge { background: rgba(var(--purple-rgb),.15); border: 1px solid rgba(var(--purple-rgb),.3); color: #b4a0ff; }
+.mod-card.oe-card .tag { background: rgba(var(--purple-rgb),.1); border-color: rgba(var(--purple-rgb),.2); color: rgba(180,160,255,.8); }
+.mod-card.oe-card:hover .tag { background: rgba(var(--purple-rgb),.15); border-color: rgba(var(--purple-rgb),.35); }
 .mod-card.oe-card.active .tag { background: rgba(168,130,255,.15); border-color: rgba(168,130,255,.4); color: #c4b0ff; }
 
 /* WP — Blue */
@@ -392,9 +392,9 @@
    vedi CHANGELOG punto 8)
    ───────────────────────────────────────────────────────────────── */
 .mod-card:focus-visible {
-  outline: 2px solid rgba(0,255,200,.6);
+  outline: 2px solid rgba(var(--accent-rgb),.6);
   outline-offset: 3px;
-  box-shadow: 0 0 0 4px rgba(0,255,200,.12), var(--shadow-card);
+  box-shadow: 0 0 0 4px rgba(var(--accent-rgb),.12), var(--shadow-card);
 }
 
 /* ─────────────────────────────────────────────────────────────────

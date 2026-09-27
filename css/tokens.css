@@ -1,0 +1,67 @@
+/* ===============================================
+   TOKEN CENTRALIZZATI — Redesign palette (navy/crema/oliva/fango)
+   Unica fonte per i colori "di marchio"/chrome (sfondi, superfici,
+   testo, accento). I colori funzionali (aree, Abbina, moduli,
+   attività — vedi js/game-constants.js e js/game-match.js) NON
+   sono qui e non vengono toccati da questo file.
+   Caricato per primo (prima di pixelprof.css): definisce sia il
+   default scuro sia l'override html[data-theme="light"], quindi
+   sostituisce i due blocchi equivalenti che prima vivevano dentro
+   pixelprof.css (@layer base e @layer theme).
+   Rapporti di contrasto verificati con la stessa soglia AA già
+   in uso nel progetto (vedi commenti "vX.Y FIX" in pixelprof.css).
+=============================================== */
+@layer tokens {
+  :root{
+    /* ancore di palette */
+    --navy:#17232D;
+    --crema:#F2E8D5;
+    --oliva:#6E7A50;
+    --fango:#7A5A38;
+
+    /* token di marchio — default scuro */
+    --accent: var(--crema);
+    --accent-rgb: 242,232,213;
+    --accent-dim: rgba(242,232,213,.12);
+    --accent-glow: rgba(242,232,213,.25);
+    --accent-border: rgba(242,232,213,.35);
+    --surface-0: var(--navy);
+    --surface-1: rgba(110,122,80,.08);
+    --surface-2: rgba(110,122,80,.14);
+    --surface-hover: rgba(110,122,80,.18);
+    --border-subtle: rgba(110,122,80,.15);
+    --border-mid: rgba(110,122,80,.25);
+    --text-primary: var(--crema);
+    --text-muted: rgba(242,232,213,.58); /* 5.33:1 su navy — AA testo normale */
+    --text-dim: rgba(242,232,213,.37);   /* 3.0:1 su navy — soglia UI/testo grande */
+    /* secondo colore del wordmark logo ("Prof" in .logo-main em, splash,
+       login) — prima viola neon, ora oliva della palette; dim/border
+       restano invariati tra i due temi (sfondi/bordi a bassa opacità) */
+    --purple: var(--oliva);
+    --purple-rgb: 110,122,80;
+    --purple-dim: rgba(110,122,80,.12);
+    --purple-border: rgba(110,122,80,.35);
+
+    --shadow-accent: 0 0 0 1px var(--accent-border), 0 0 20px var(--accent-glow);
+    --shadow-card: 0 4px 24px rgba(0,0,0,.35), 0 1px 0 rgba(242,232,213,.05) inset;
+  }
+  html[data-theme="light"]{
+    --surface-0: var(--crema);
+    --surface-1: rgba(23,35,45,.045);
+    --surface-2: rgba(23,35,45,.08);
+    --surface-hover: rgba(23,35,45,.1);
+    --border-subtle: rgba(23,35,45,.1);
+    --border-mid: rgba(23,35,45,.16);
+    --text-primary: var(--navy);
+    --text-muted: rgba(23,35,45,.65); /* 4.65:1 su crema — AA testo normale */
+    --text-dim: rgba(23,35,45,.5);    /* 3.04:1 su crema — soglia UI/testo grande */
+    --shadow-card: 0 2px 14px rgba(23,35,45,.08), 0 1px 0 rgba(255,255,255,.6) inset;
+    --accent: var(--fango);               /* 5.16:1 su crema — sicuro anche come testo diretto */
+    --accent-rgb: 122,90,56;
+    --accent-dim: rgba(122,90,56,.12);
+    --accent-glow: rgba(122,90,56,.25);
+    --accent-border: rgba(122,90,56,.35);
+    --purple: #5C6644; /* oliva scurito, 5.02:1 su crema — stesso pattern "ink" già usato dal progetto */
+    --purple-rgb: 92,102,68;
+  }
+}

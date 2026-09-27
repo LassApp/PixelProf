@@ -36,7 +36,7 @@
 }
 .pp-tour-action.expanded .pp-tour-chev{ transform:rotate(180deg); }
 .pp-tour-action.expanded{
-  background:rgba(0,255,200,.06); border-color:rgba(0,255,200,.3); color:var(--accent);
+  background:rgba(var(--accent-rgb),.06); border-color:rgba(var(--accent-rgb),.3); color:var(--accent);
 }
 
 /* v8.29.2 — bug segnalato: durante un minigioco o Flip Card attivi il

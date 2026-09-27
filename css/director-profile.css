@@ -38,26 +38,26 @@
    laterale aggiuntivo). ── */
 .dd-enter-banner{
   position:relative; margin-top:14px; border-radius:18px; overflow:hidden; cursor:pointer;
-  border:1px dashed rgba(0,255,200,.35);
-  background:linear-gradient(120deg, rgba(0,255,200,.07), rgba(124,106,255,.04) 60%, rgba(0,255,200,.07));
+  border:1px dashed rgba(var(--accent-rgb),.35);
+  background:linear-gradient(120deg, rgba(var(--accent-rgb),.07), rgba(var(--purple-rgb),.04) 60%, rgba(var(--accent-rgb),.07));
   box-shadow:0 4px 20px rgba(0,0,0,.28);
   transition:transform .2s cubic-bezier(.34,1.56,.64,1), border-color .2s ease, box-shadow .2s ease;
 }
 .dd-enter-banner:hover{
   transform:translateY(-2px);
-  border-color:rgba(0,255,200,.7);
-  box-shadow:0 10px 30px rgba(0,255,200,.14);
+  border-color:rgba(var(--accent-rgb),.7);
+  box-shadow:0 10px 30px rgba(var(--accent-rgb),.14);
 }
 .dd-enter-inner{ display:flex; align-items:center; gap:14px; padding:1rem 1.25rem; }
 .dd-enter-icon{
   flex-shrink:0; width:44px; height:44px; border-radius:50%;
   display:flex; align-items:center; justify-content:center; font-size:20px;
-  background:rgba(0,255,200,.1); border:1px solid rgba(0,255,200,.28);
+  background:rgba(var(--accent-rgb),.1); border:1px solid rgba(var(--accent-rgb),.28);
 }
 .dd-enter-text{ flex:1; min-width:0; }
 .dd-enter-eyebrow{
   font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:2px; text-transform:uppercase;
-  color:rgba(0,255,200,.6); display:block; margin-bottom:2px;
+  color:rgba(var(--accent-rgb),.6); display:block; margin-bottom:2px;
 }
 .dd-enter-title{ font-size:14px; font-weight:700; color:#fff; }
 .dd-enter-sub{ font-size:11px; color:rgba(255,255,255,.42); line-height:1.4; }
@@ -108,7 +108,7 @@
    css/topbar-profile.css) ── */
 @layer theme {
   html[data-theme="light"] .dd-enter-banner{
-    background:linear-gradient(120deg, rgba(0,255,200,.09), rgba(124,106,255,.05) 60%, rgba(0,255,200,.09));
+    background:linear-gradient(120deg, rgba(var(--accent-rgb),.09), rgba(var(--purple-rgb),.05) 60%, rgba(var(--accent-rgb),.09));
     border-color:rgba(0,170,140,.4);
     box-shadow:0 4px 18px rgba(20,30,60,.08);
   }

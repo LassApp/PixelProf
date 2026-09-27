@@ -1,9 +1,9 @@
 diff --git a/css/achievements.css b/css/achievements.css
 new file mode 100644
-index 0000000..a9713fa
+index 0000000..92b8a38
 --- /dev/null
 +++ b/css/achievements.css
-@@ -0,0 +1,119 @@
+@@ -0,0 +1,136 @@
 +/* ===============================================
 +   TRAGUARDI (badge)
 +   Estratto dal monolite pixelprof.css (redesign palette v9).
@@ -123,6 +123,23 @@ index 0000000..a9713fa
 +  .bup-desc{display:none}
 +}
 +}
++
++@layer theme {
++/* ── 15. TRAGUARDI (badges) ───────────────────────────────────── */
++html[data-theme="light"] .bdg-summary{ background: rgba(180,130,0,.05); border-color: rgba(180,130,0,.18); }
++html[data-theme="light"] .bdg-summary-count{ color:var(--navy); }
++html[data-theme="light"] .bdg-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
++html[data-theme="light"] .bdg-card.unlocked{ border-color: rgba(180,130,0,.28); }
++html[data-theme="light"] .bdg-title{ color:var(--navy); }
++html[data-theme="light"] .bdg-desc{ color: rgba(var(--navy-rgb),.78); } /* v8.13.1 FIX: era .45, compensata per l'opacità composta con .bdg-card.locked{opacity:.6} */
++html[data-theme="light"] .bdg-icon{ background: rgba(180,130,0,.08); border-color: rgba(180,130,0,.22); }
++html[data-theme="light"] .bdg-unlock-date{ color:#a66d00; }
++html[data-theme="light"] .bdg-progress-label{ color: rgba(var(--navy-rgb),.45); }
++html[data-theme="light"] #badge-unlock-popup{ background:#ffffff; border-color: rgba(180,130,0,.35); box-shadow: 0 8px 32px rgba(var(--navy-rgb),.16); }
++html[data-theme="light"] .bup-title{ color:var(--navy); }
++html[data-theme="light"] .bup-desc{ color: rgba(var(--navy-rgb),.5); }
++
++}
 diff --git a/css/act-select.css b/css/act-select.css
 index 05f46db..10d21dc 100644
 --- a/css/act-select.css
@@ -164,10 +181,10 @@ index 05f46db..10d21dc 100644
       restano volutamente scure in entrambi i temi ("poster look",
 diff --git a/css/audio.css b/css/audio.css
 new file mode 100644
-index 0000000..2f57c65
+index 0000000..10db918
 --- /dev/null
 +++ b/css/audio.css
-@@ -0,0 +1,46 @@
+@@ -0,0 +1,54 @@
 +/* ===============================================
 +   TOGGLE AUDIO/TEMA
 +   Estratto dal monolite pixelprof.css (redesign palette v9).
@@ -213,6 +230,14 @@ index 0000000..2f57c65
 +  background:rgba(255,80,80,.1);
 +  color:#ff6b6b;
 +}
++}
++
++@layer theme {
++/* ── 20. TOGGLE AUDIO/TEMA ────────────────────────────────────── */
++html[data-theme="light"] .audio-toggle-btn{ border-color: rgba(var(--navy-rgb),.14); background: rgba(var(--navy-rgb),.04); color: rgba(var(--navy-rgb),.55); }
++html[data-theme="light"] .audio-toggle-btn:hover{ border-color: rgba(var(--accent-rgb),.35); background: rgba(var(--accent-rgb),.08); color: var(--accent); }
++html[data-theme="light"] .theme-toggle-btn.is-light{ color:#a66d00; border-color: rgba(180,130,0,.3); background: rgba(255,180,0,.08); }
++
 +}
 diff --git a/css/classhealth.css b/css/classhealth.css
 new file mode 100644
@@ -472,10 +497,10 @@ index 0000000..7d05f3e
 +}
 diff --git a/css/csvimport.css b/css/csvimport.css
 new file mode 100644
-index 0000000..df8761f
+index 0000000..e81603a
 --- /dev/null
 +++ b/css/csvimport.css
-@@ -0,0 +1,80 @@
+@@ -0,0 +1,99 @@
 +/* ===============================================
 +   IMPORT CSV
 +   Estratto dal monolite pixelprof.css (redesign palette v9).
@@ -556,12 +581,31 @@ index 0000000..df8761f
 +   nessun rischio di conflitto con ppAlert/ppConfirmBox/ppPromptBox). */
 +.pp-generic-btn:disabled{opacity:.35;cursor:default;pointer-events:none;}
 +}
++
++@layer theme {
++/* ── 19. IMPORT CSV ───────────────────────────────────────────── */
++html[data-theme="light"] .csv-import-trigger-btn{
++  border-color: rgba(var(--accent-rgb),.35);
++  background: rgba(var(--accent-rgb),.05);
++  color: #00786a;
++}
++html[data-theme="light"] .csv-import-trigger-btn:hover{
++  background: rgba(var(--accent-rgb),.1);
++  border-color: rgba(var(--accent-rgb),.55);
++  color: var(--accent);
++}
++html[data-theme="light"] .csv-import-list{ background: rgba(var(--navy-rgb),.02); border-color: rgba(var(--navy-rgb),.09); }
++html[data-theme="light"] .csv-import-row{ color: rgba(var(--navy-rgb),.8); border-bottom-color: rgba(var(--navy-rgb),.06); }
++html[data-theme="light"] .csv-import-row-del{ color: rgba(var(--navy-rgb),.35); }
++html[data-theme="light"] .csv-import-empty-list{ color: rgba(var(--navy-rgb),.3); }
++
++}
 diff --git a/css/dashboard.css b/css/dashboard.css
 new file mode 100644
-index 0000000..984d292
+index 0000000..c75ed4c
 --- /dev/null
 +++ b/css/dashboard.css
-@@ -0,0 +1,108 @@
+@@ -0,0 +1,165 @@
 +/* ===============================================
 +   DASHBOARD — panoramica classe/docente
 +   Estratto dal monolite pixelprof.css (redesign palette v9).
@@ -670,12 +714,69 @@ index 0000000..984d292
 +
 +/* ═══════════════════════════════════════════════════════════════════
 +}
++
++@layer theme {
++/* ── 14. PANORAMICA CLASSE (dashboard) ───────────────────────── */
++html[data-theme="light"] .chd-kpi-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
++html[data-theme="light"] .chd-kpi-lbl{ color: rgba(var(--navy-rgb),.45); }
++html[data-theme="light"] .chd-section-title{ color:var(--navy); }
++html[data-theme="light"] .chd-weak-card,html[data-theme="light"] .chd-part-table{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
++html[data-theme="light"] .chd-weak-headline{ color: rgba(var(--navy-rgb),.75); }
++html[data-theme="light"] .chd-mod-name{ color: rgba(var(--navy-rgb),.65); }
++/* .chd-mod-pct: colore impostato inline da dashboard.js in base al
++   modulo. Le classi gemelle chd-ink-* (aggiunte lì accanto allo style
++   inline esistente, una per ogni modulo — non solo CE/OE/WP) permettono
++   di sovrascrivere SOLO il testo — stessa identica logica del ruolo in
++   topbar (§3). */
++html[data-theme="light"] .chd-ink-ce{ color:#a66a00 !important; }
++html[data-theme="light"] .chd-ink-oe{ color:#6a4fd6 !important; }
++html[data-theme="light"] .chd-ink-wp{ color:#0d6fbf !important; }
++html[data-theme="light"] .chd-ink-ss{ color:#1f7a42 !important; }
++html[data-theme="light"] .chd-ink-pp{ color:#b8501f !important; }
++html[data-theme="light"] .chd-part-header{ color: rgba(var(--navy-rgb),.3); background: rgba(var(--navy-rgb),.02); }
++html[data-theme="light"] .chd-part-row{ color: rgba(var(--navy-rgb),.75); border-bottom-color: rgba(var(--navy-rgb),.06); }
++html[data-theme="light"] .chd-part-last{ color: rgba(var(--navy-rgb),.4); }
++html[data-theme="light"] .chd-act-name{ color: rgba(var(--navy-rgb),.65); }
++html[data-theme="light"] .chd-act-bar-wrap{ background: rgba(var(--navy-rgb),.07); }
++/* v8.13.1: override chd-footnote rimosso (era 2.03:1 anche in chiaro) — ora var(--text-dim) */
++/* v8.15.1: override chd-empty-title/chd-empty-sub rimossi (erano rgba(var(--navy-rgb),.4)
++   ~2.9:1 e rgba(var(--navy-rgb),.28) ~2.1:1, entrambi sotto AA anche in chiaro) — ora
++   var(--text-muted)/var(--text-dim), già tematizzati, stesso pattern di .chd-wq-tab
++   in v8.14.0. */
++/* v8.14.0: .chd-wq-tab non ha più un override qui — la regola base
++   (@layer classhealth) usa ora var(--text-muted), che cambia già
++   valore da sola in chiaro. Il vecchio override hardcoded rgba(var(--navy-rgb),.45)
++   (2.88:1) ignorava silenziosamente il token, stesso pattern già visto
++   per .logo-sub in Fase 2. */
++html[data-theme="light"] .chd-wq-tab-count{ background: rgba(var(--navy-rgb),.08); color: var(--text-muted); } /* v8.14.0 FIX: nessun override esisteva -> 1.04:1, quasi invisibile */
++html[data-theme="light"] .chd-wq-tab.active .chd-wq-tab-count{ color:inherit; }
++html[data-theme="light"] .chd-wq-tab-problem.active{ color:#c22a3e; } /* v8.14.0 FIX: #ff6b85 su chiaro = 2.50:1 */
++html[data-theme="light"] .chd-wq-tab-recovered.active{ color:#12805a; } /* v8.14.0 FIX: #00ff96 su chiaro = 1.22:1 */
++html[data-theme="light"] .chd-wq-modfilter-btn{ background:#ffffff; border-color: rgba(var(--navy-rgb),.1); color: var(--text-muted); } /* v8.14.0 FIX: era rgba(var(--navy-rgb),.5) = 3.32:1 */
++html[data-theme="light"] .chd-wq-modfilter-btn.active{ color: var(--text-primary); }
++html[data-theme="light"] .chd-wq-modfilter-count{ background: rgba(var(--navy-rgb),.08); }
++html[data-theme="light"] .chd-wq-row{ background:#ffffff; }
++html[data-theme="light"] .chd-wq-question{ color: rgba(var(--navy-rgb),.82); }
++html[data-theme="light"] .chd-wq-answer{ color: rgba(var(--navy-rgb),.45); }
++html[data-theme="light"] .chd-wq-answer strong{ color:#12805a; } /* v8.14.0 FIX: rgba(var(--accent-rgb),.75) su chiaro = 1.27:1 */
++html[data-theme="light"] .chd-wq-errs{ color:#c22a3e; } /* v8.14.0 FIX: rgba(255,80,80,.9) su chiaro = 2.64:1 */
++html[data-theme="light"] .chd-wq-list-recovered .chd-wq-errs{ color:#12805a; } /* v8.14.0 FIX: rgba(0,255,150,.8) su chiaro = 1.31:1 */
++html[data-theme="light"] .chd-wq-reset-btn{ background: rgba(194,42,62,.06); border-color: rgba(194,42,62,.25); color:#c22a3e; } /* v8.14.0 FIX: nessun override -> 1.77:1 */
++html[data-theme="light"] .chd-wq-empty{ border-color: rgba(var(--navy-rgb),.1); }
++html[data-theme="light"] .chd-wq-empty-title{ color: var(--text-muted); } /* v8.14.0 FIX: era rgba(var(--navy-rgb),.5) = 3.32:1 */
++html[data-theme="light"] .chd-wq-empty-sub{ color: var(--text-dim); } /* v8.14.0 FIX: era rgba(var(--navy-rgb),.3) = 1.93:1 */
++html[data-theme="light"] .tm-badge-inactive{ background: rgba(194,42,62,.08); border-color: rgba(194,42,62,.3); color:#c22a3e; } /* v8.14.0 FIX: #ff6b6b su chiaro = 2.55-2.78:1 */
++/* .chd-never-played: banner ambra "non ha ancora mai giocato" —
++   stesso #ffb400 su sfondo chiaro, stessa ink di riserva. */
++html[data-theme="light"] .chd-never-played{ color:#a66d00; }
++
++}
 diff --git a/css/dialogs.css b/css/dialogs.css
 new file mode 100644
-index 0000000..a68282c
+index 0000000..76070e1
 --- /dev/null
 +++ b/css/dialogs.css
-@@ -0,0 +1,79 @@
+@@ -0,0 +1,120 @@
 +/* ===============================================
 +   DIALOG di conferma + generici, wizard, pannelli
 +   Estratto dal monolite pixelprof.css (redesign palette v9).
@@ -755,6 +856,47 @@ index 0000000..a68282c
 +.pp-generic-btn.confirm.danger::after{background:#ff4d6d;}
 +.pp-generic-btn.confirm.danger:hover{background:rgba(255,60,80,.2);}
 +}
++
++@layer theme {
++/* ── 17. DIALOG (conferma + generici) + WIZARD + PANNELLI ────── */
++html[data-theme="light"] .pp-dialog-overlay,html[data-theme="light"] .pp-generic-overlay{ background: rgba(var(--navy-rgb),.35); }
++html[data-theme="light"] .pp-dialog,html[data-theme="light"] .pp-generic-box{ background:#ffffff; border-color: rgba(var(--navy-rgb),.1); }
++html[data-theme="light"] .pp-dialog-title,html[data-theme="light"] .pp-generic-title{ color:var(--navy); }
++html[data-theme="light"] .pp-dialog-sub,html[data-theme="light"] .pp-generic-msg{ color: rgba(var(--navy-rgb),.5); }
++html[data-theme="light"] .pp-dialog-btn.cancel,html[data-theme="light"] .pp-generic-btn.cancel{ background: rgba(var(--navy-rgb),.05); color: rgba(var(--navy-rgb),.6); }
++html[data-theme="light"] .cw-box,html[data-theme="light"] .dp-box,html[data-theme="light"] .icon-picker-box{ background:#ffffff; border-color: rgba(var(--navy-rgb),.12); }
++html[data-theme="light"] .cw-title,html[data-theme="light"] .dp-title,html[data-theme="light"] .icp-title{ color:var(--navy); }
++html[data-theme="light"] .cw-subtitle{ color: rgba(var(--navy-rgb),.45); }
++html[data-theme="light"] .cw-mod-btn,html[data-theme="light"] .cw-teacher-row,html[data-theme="light"] .dp-teacher-row{ background: rgba(var(--navy-rgb),.03); border-color: rgba(var(--navy-rgb),.09); }
++html[data-theme="light"] .cw-mod-btn .cm-name{ color:var(--navy); }
++html[data-theme="light"] .cw-mod-btn .cm-desc{ color: rgba(var(--navy-rgb),.4); }
++html[data-theme="light"] .cw-teacher-row .ct-name{ color: rgba(var(--navy-rgb),.75); }
++html[data-theme="light"] .cw-teacher-row .ct-email{ color: rgba(var(--navy-rgb),.35); }
++/* .cw-warn-banner: stessa ink ambra di riserva usata per timer-pill/chd-never-played */
++html[data-theme="light"] .cw-warn-banner{ color:#a66d00; }
++/* .dp-teacher-row: bg/border-color erano già coperti sopra (riga
++   raggruppata con .cw-mod-btn/.cw-teacher-row), ma non il colore
++   testo — restava rgba(255,255,255,.7), quasi invisibile sul
++   fondo ormai chiaro di .dp-box. */
++html[data-theme="light"] .dp-teacher-row{ color: rgba(var(--navy-rgb),.75); }
++/* .dp-close-btn: "×" del pannello "⚙️ Gestione aula" — invisibile sia
++   a riposo (rgba(255,255,255,.35)) sia in hover (#fff), stesso tipo
++   di difetto segnalato per la scheda docente. */
++html[data-theme="light"] .dp-close-btn{ color: rgba(var(--navy-rgb),.4); }
++html[data-theme="light"] .dp-close-btn:hover{ color:var(--navy); }
++html[data-theme="light"] .icp-close{ color: rgba(var(--navy-rgb),.55); }
++html[data-theme="light"] .icp-close:hover{ border-color: rgba(var(--navy-rgb),.2); color:var(--navy); }
++html[data-theme="light"] .icp-x-close{ color: rgba(var(--navy-rgb),.35); }
++html[data-theme="light"] .icp-x-close:hover{ color:var(--navy); }
++/* .mod-toggle-btn (moduli abilitati, pannello Gestione aula): stato
++   attivo/hover già usano var(--accent) e si adattano da soli; solo lo
++   stato di riposo era hardcoded rgba(255,255,255,.5). */
++html[data-theme="light"] .mod-toggle-btn{ color: rgba(var(--navy-rgb),.55); }
++html[data-theme="light"] .course-dropdown{ background:#ffffff; border-color: rgba(var(--navy-rgb),.1); }
++html[data-theme="light"] .cd-item{ color: rgba(var(--navy-rgb),.7); }
++html[data-theme="light"] .cd-item:hover{ background: rgba(var(--navy-rgb),.06); color:var(--navy); }
++
++}
 diff --git a/css/director-profile.css b/css/director-profile.css
 index b49341e..232a254 100644
 --- a/css/director-profile.css
@@ -817,10 +959,10 @@ index b49341e..232a254 100644
  }
 diff --git a/css/docenti.css b/css/docenti.css
 new file mode 100644
-index 0000000..17fc16d
+index 0000000..8109b03
 --- /dev/null
 +++ b/css/docenti.css
-@@ -0,0 +1,150 @@
+@@ -0,0 +1,191 @@
 +/* ===============================================
 +   GESTIONE DOCENTI / DASHBOARD DIRETTORE
 +   Estratto dal monolite pixelprof.css (redesign palette v9).
@@ -971,6 +1113,47 @@ index 0000000..17fc16d
 +   illeggibili quando il contenitore diventa chiaro nel tema light). */
 +.dp-hint-text{ font-size:11px;color:rgba(255,255,255,.3); }
 +}
++
++@layer theme {
++/* ── 18. GESTIONE DOCENTI / DASHBOARD DIRETTORE ──────────────── */
++html[data-theme="light"] #screen-director-dashboard,html[data-theme="light"] #screen-teacher-mgmt,
++html[data-theme="light"] #screen-teacher-create,html[data-theme="light"] #screen-teacher-list,
++html[data-theme="light"] #screen-teacher-detail{ background: var(--surface-0); }
++html[data-theme="light"] .dd-card,html[data-theme="light"] .tdc-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
++html[data-theme="light"] .dd-title,html[data-theme="light"] .tdc-name{ color:var(--navy); }
++html[data-theme="light"] .dd-sub{ color: rgba(var(--navy-rgb),.42); }
++/* v8.15.2: .tdc-email non ha più bisogno di override qui — ora usa
++   var(--text-muted), già tematizzato (era condiviso con .dd-sub, separato
++   per non alterare .dd-sub che non ha alcun problema di leggibilità). */
++html[data-theme="light"] .tm-tab{ color: rgba(var(--navy-rgb),.42); }
++html[data-theme="light"] .tm-tab:hover{ color: rgba(var(--navy-rgb),.75); }
++html[data-theme="light"] .tm-tabs{ border-bottom-color: rgba(var(--navy-rgb),.1); }
++/* .dd-arrow: freccia "›" sulle card Dashboard Direttore/Gestione
++   Docenti — rgba(255,255,255,.2) è quasi invisibile su sfondo bianco. */
++html[data-theme="light"] .dd-arrow{ color: rgba(var(--navy-rgb),.25); }
++/* .tdc-aula-toggle-btn — BUG ESPLICITO SEGNALATO: le aule NON
++   selezionate nella scheda docente usavano testo bianco translucido,
++   praticamente invisibile sul fondo ormai chiaro di .tdc-card /
++   .setup-card. Lo stato .active usa già var(--accent) e si adatta da
++   solo, qui serviva solo il default + hover. */
++html[data-theme="light"] .tdc-aula-toggle-btn{ color: rgba(var(--navy-rgb),.55); }
++html[data-theme="light"] .tdc-aula-toggle-btn:hover{ color: rgba(var(--navy-rgb),.85); }
++/* Chip "aule assegnate" nella card della lista docenti (screen-teacher-list) */
++/* v8.15.2: .tdc-aula-chip/.tdc-aule-empty non hanno più bisogno di override
++   qui — ora usano var(--text-muted)/var(--text-dim), già tematizzati. */
++html[data-theme="light"] .tdc-aula-chip + .tdc-aula-chip::before{ color: rgba(var(--navy-rgb),.22); }
++/* v8.15.2: compensazione opacità composta per .tdc-card.tdc-inactive{opacity:.55}
++   in tema chiaro — stesso problema e stessa soluzione scoped del tema scuro
++   (vedi @layer classhealth ~riga 4066). */
++html[data-theme="light"] .tdc-card.tdc-inactive .tdc-email,
++html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aula-chip,
++html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aule-empty{ color: rgba(var(--navy-rgb),.85); } /* effettivo ×.55 ≈ .4675, ≈ soglia --text-dim (.47) */
++/* Icona genere di default (nessun genere impostato, fallback ti-user) */
++html[data-theme="light"] .tdc-gender-icon{ background: rgba(var(--navy-rgb),.05); border-color: rgba(var(--navy-rgb),.12); color: rgba(var(--navy-rgb),.4); }
++html[data-theme="light"] .tmd-email-hint{ color: rgba(var(--navy-rgb),.4); }
++html[data-theme="light"] .dp-hint-text{ color: rgba(var(--navy-rgb),.35); }
++
++}
 diff --git a/css/flip-card.css b/css/flip-card.css
 index d5941d8..6e8e7e4 100644
 --- a/css/flip-card.css
@@ -1039,10 +1222,10 @@ index d5941d8..6e8e7e4 100644
      display:flex; flex-direction:column; justify-content:flex-end;
 diff --git a/css/histcards.css b/css/histcards.css
 new file mode 100644
-index 0000000..548d968
+index 0000000..2e85461
 --- /dev/null
 +++ b/css/histcards.css
-@@ -0,0 +1,73 @@
+@@ -0,0 +1,101 @@
 +/* ===============================================
 +   STORICO / PROGRESSI (card storico)
 +   Estratto dal monolite pixelprof.css (redesign palette v9).
@@ -1115,6 +1298,34 @@ index 0000000..548d968
 +  font-family:'Share Tech Mono',monospace;font-size:11px;font-weight:700;
 +  color:var(--accent);flex-shrink:0;margin-left:8px;
 +}
++}
++
++@layer theme {
++/* ── 13. PROGRESSI (stats) + STORICO (history) ───────────────── */
++html[data-theme="light"] .stat-c{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
++html[data-theme="light"] .stat-c .sl{ color: rgba(var(--navy-rgb),.45); }
++html[data-theme="light"] .mod-stat-row{ color: rgba(var(--navy-rgb),.6); }
++/* Select filtro Storico: prima il testo era quasi-bianco (illeggibile
++   su sfondo chiaro) E color-scheme:dark forzava il popup nativo delle
++   opzioni a restare scuro sempre — invisibile finché non a fuoco.
++   color-scheme:light qui allinea il rendering nativo del browser al
++   tema corrente, stesso trattamento già riservato a input date/time. */
++html[data-theme="light"] .hist-filter-select{
++  background: rgba(var(--navy-rgb),.035); border-color: rgba(var(--navy-rgb),.14);
++  color:var(--navy); color-scheme: light;
++}
++html[data-theme="light"] .hist-filter-select option{ color:var(--navy); background:#ffffff; }
++html[data-theme="light"] .csv-export-btn-sm{ color: var(--accent); }
++/* v8.13.1: override hist-count-label rimosso (era 2.19:1 anche in chiaro) — ora var(--text-muted) */
++html[data-theme="light"] .hist-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.09); }
++html[data-theme="light"] .hist-card:hover{ border-color: rgba(var(--accent-rgb),.3); background: rgba(var(--accent-rgb),.03); }
++html[data-theme="light"] .hist-card-title{ color:var(--navy); }
++html[data-theme="light"] .hist-card-modetag{ background: rgba(var(--navy-rgb),.04); border-color: rgba(var(--navy-rgb),.1); } /* v8.13.1: color rimosso, ora var(--text-muted) */
++html[data-theme="light"] .hist-card-empty{ color: rgba(var(--navy-rgb),.3); }
++html[data-theme="light"] .hist-team-row{ border-bottom-color: rgba(var(--navy-rgb),.06); }
++html[data-theme="light"] .hist-team-name{ color: rgba(var(--navy-rgb),.75); }
++html[data-theme="light"] .hist-team-pts{ color: var(--accent); }
++
 +}
 diff --git a/css/lo-sapevi.css b/css/lo-sapevi.css
 index c42189a..6513f15 100644
@@ -1394,10 +1605,10 @@ index c6d8ba6..36c5bf5 100644
  /* ─────────────────────────────────────────────────────────────────
 diff --git a/css/onboarding.css b/css/onboarding.css
 new file mode 100644
-index 0000000..97cf5c9
+index 0000000..acd28f7
 --- /dev/null
 +++ b/css/onboarding.css
-@@ -0,0 +1,143 @@
+@@ -0,0 +1,161 @@
 +/* ===============================================
 +   ONBOARDING
 +   Estratto dal monolite pixelprof.css (redesign palette v9).
@@ -1540,6 +1751,24 @@ index 0000000..97cf5c9
 +  .onb-overlay,.onb-tooltip{ animation:none; }
 +  .onb-ring,.onb-ring-pulse{ animation:none;transition:none; }
 +}
++}
++
++@layer theme {
++/* ── 22. ONBOARDING TOUR ──────────────────────────────────────── */
++/* --accent/--purple sono già ridefiniti nel §1 (token globali) —
++   ring, barra di avanzamento e pulsante "Avanti" ereditano il
++   colore corretto senza bisogno di override qui. Serve solo
++   ripatinare le superfici a sfondo pieno (overlay, tooltip) e i
++   testi a colore fisso, stesso identico pattern del resto del file. */
++html[data-theme="light"] .onb-overlay{ background: rgba(var(--navy-rgb),.5); }
++html[data-theme="light"] .onb-tooltip{ background:#ffffff; border-color: rgba(var(--accent-rgb),.25); box-shadow: 0 20px 50px rgba(var(--navy-rgb),.22), 0 0 0 1px rgba(var(--accent-rgb),.08); }
++html[data-theme="light"] .onb-tooltip::before{ background:#ffffff; border-color: rgba(var(--accent-rgb),.25); }
++html[data-theme="light"] .onb-title{ color:var(--navy); }
++html[data-theme="light"] .onb-body{ color: rgba(var(--navy-rgb),.55); }
++html[data-theme="light"] .onb-step-label{ color: rgba(var(--accent-rgb),.75); }
++html[data-theme="light"] .onb-progress{ background: rgba(var(--navy-rgb),.08); }
++html[data-theme="light"] .onb-skip{ color: rgba(var(--navy-rgb),.6); } /* v8.15.6: stesso fix anche in chiaro per coerenza — era .4 (~3:1) vs :hover .7, ora uguali, .6 = stesso valore di --text-muted (4.52:1 AA) */
++
 +}
 diff --git a/css/tokens.css b/css/tokens.css
 new file mode 100644
@@ -1747,7 +1976,7 @@ index cc572c8..f8ee73b 100644
  function modColor(key){
    if(MOD_COLOR_HEX[key]) return MOD_COLOR_HEX[key];
 diff --git a/pixelprof.css b/pixelprof.css
-index ff701f5..00eaa31 100644
+index ff701f5..3a2789b 100644
 --- a/pixelprof.css
 +++ b/pixelprof.css
 @@ -45,7 +45,7 @@
@@ -3427,7 +3656,7 @@ index ff701f5..00eaa31 100644
  
  /* ── Domande difficili — v6.3.0: tab Problematiche/Recuperate +
     sotto-filtro modulo (nomi estesi) + mostra-tutte.
-@@ -3576,630 +3137,15 @@ body{
+@@ -3576,630 +3137,17 @@ body{
     che portavano (quante recuperate, quale modulo) è ora sui tab-count
     e sulla chip .mod-badge riusata da renderer.js (stessa classe già
     usata in Classifica — zero nuovo CSS per il badge modulo). ── */
@@ -3482,7 +3711,7 @@ index ff701f5..00eaa31 100644
 -  background:rgba(255,255,255,.1);font-family:'Share Tech Mono',monospace;
 -}
 -.chd-wq-modfilter-btn.active .chd-wq-modfilter-count{background:color-mix(in srgb, var(--chd-wq-mf-color) 25%, transparent);}
- 
+-
 -.chd-wq-list{display:flex;flex-direction:column;gap:8px;}
 -.chd-wq-row{
 -  background:rgba(255,255,255,.03);
@@ -3561,7 +3790,7 @@ index ff701f5..00eaa31 100644
 -  .chd-wq-modfilter-btn{padding:5px 9px;font-size:10px;}
 -}
 -}
--
+ 
 -@layer csvimport {
 -/* ═══════════════════════════════════════════════════════════════════
 -   PixelProf — IMPORT GIOCATORI DA CSV (csv-import.js)
@@ -4055,16 +4284,18 @@ index ff701f5..00eaa31 100644
 -}
  
  @layer theme {
-+/* NOTA REDESIGN v9: il default scuro delle sezioni 13 (Storico),
-+   14 (Dashboard), 15 (Traguardi), 17 (Dialog), 18 (Docenti), 19 (CSV),
-+   20 (Audio/tema) è stato estratto in css/histcards.css, dashboard.css,
-+   achievements.css, dialogs.css, docenti.css, csvimport.css, audio.css.
-+   L'override chiaro qui sotto NON è stato ancora spostato: resta da
-+   fare come passo successivo, sezione per sezione. */
++/* NOTA REDESIGN v9: le sezioni 13 (Storico), 14 (Dashboard),
++   15 (Traguardi), 17 (Dialog), 18 (Docenti), 19 (CSV), 20 (Audio/tema)
++   e 22 (Onboarding) sono state estratte per intero (scuro + override
++   chiaro) in css/histcards.css, dashboard.css, achievements.css,
++   dialogs.css, docenti.css, csvimport.css, audio.css, onboarding.css.
++   Restano qui solo le sezioni 12 (Classifica), 16 (Aule/Login),
++   21 (Footer), 23 (Wizard step area) — non associate a nessuno dei
++   file già estratti. */
  /* ═══════════════════════════════════════════════════════════════════
     PixelProf — TEMA CHIARO (toggle opzionale, non un redesign) — v1.0.0
     ─────────────────────────────────────────────────────────────────
-@@ -4224,7 +3170,7 @@ body{
+@@ -4224,7 +3172,7 @@ body{
       scuro dedicato (override di .result-wrap qui sotto): stesso
       effetto scenico di sempre, ed evita di dover riscrivere decine
       di colori inline sparsi in quelle funzioni.
@@ -4073,7 +4304,7 @@ index ff701f5..00eaa31 100644
       contrasto ~1.3:1 su bianco — illeggibile) vengono "scuriti" solo
       dove servono come testo; dove sono sfondo/bordo a bassa opacità
       restano invariati, perché lì il contrasto non è un problema.
-@@ -4232,23 +3178,8 @@ body{
+@@ -4232,23 +3180,8 @@ body{
  
  /* ── 1. TOKEN GLOBALI ─────────────────────────────────────────── */
  html[data-theme="light"]{
@@ -4099,7 +4330,7 @@ index ff701f5..00eaa31 100644
    --blue: #0d6fbf;
    color-scheme: light;
  }
-@@ -4258,12 +3189,12 @@ html[data-theme="light"]{
+@@ -4258,12 +3191,12 @@ html[data-theme="light"]{
  html[data-theme="light"] body{
    background: var(--surface-0);
    background-image:
@@ -4116,7 +4347,7 @@ index ff701f5..00eaa31 100644
  html[data-theme="light"] input[type="date"],
  html[data-theme="light"] input[type="time"]{ color-scheme: light !important; }
  /* #app-theme-bg: tinta di sfondo dell'aula, impostata inline da JS
-@@ -4279,22 +3210,22 @@ html[data-theme="light"] #app-theme-bg{ opacity:0 !important; }
+@@ -4279,22 +3212,22 @@ html[data-theme="light"] #app-theme-bg{ opacity:0 !important; }
  /* ── 3. TOPBAR + LOGO + HUB + BADGE AULA/UTENTE ──────────────── */
  html[data-theme="light"] .topbar{
    background: linear-gradient(180deg, rgba(255,255,255,.98) 0%, rgba(248,250,255,.96) 70%, rgba(243,246,255,.92) 100%);
@@ -4152,7 +4383,7 @@ index ff701f5..00eaa31 100644
  /* v8.29.0: RIMOSSI qui #cs-teacher-role-badge e .cs-director-badge —
     stessi elementi dichiarati non più esistenti in js/app.js v8.25.1. */
  
-@@ -4305,29 +3236,29 @@ html[data-theme="light"] #tb-course-badge:hover{ background: rgba(0,150,120,.13)
+@@ -4305,29 +3238,29 @@ html[data-theme="light"] #tb-course-badge:hover{ background: rgba(0,150,120,.13)
     nell'app, es. "Aule salvate") aveva lo stesso problema: colore neon
     fisso, mai adattato al tema chiaro. (v8.29.0: rimossa da qui la
     terza voce, .cs-teacher-name — elemento non più in HTML, v8.25.1.) */
@@ -4193,7 +4424,7 @@ index ff701f5..00eaa31 100644
  
  /* ── 5. CAT-CARD (Minigiochi/Didattica) ──────────────────────── */
  /* v8.20.0: esclusione ":not(.dm-card)" aggiunta — le card modalità
-@@ -4337,26 +3268,26 @@ html[data-theme="light"] .home-divider span::after{ color: rgba(0,150,120,.6); }
+@@ -4337,26 +3270,26 @@ html[data-theme="light"] .home-divider span::after{ color: rgba(0,150,120,.6); }
     questa esclusione il bianco qui vincerebbe comunque sul gradiente
     scuro di .dm-card, essendo nel layer "theme" (ultimo, vince
     sempre) — stesso pattern già usato sotto per .act-card:not(.dm-card). */
@@ -4231,7 +4462,7 @@ index ff701f5..00eaa31 100644
  
  /* ── 6bis. STEP-ATT: hero "Scegli attività" (stato inattivo) + card minigioco ──
     L'hero con attività selezionata (.hero-quiz/.hero-speed/...) resta il
-@@ -4365,97 +3296,97 @@ html[data-theme="light"] .gender-btn{ color: rgba(16,24,42,.55); }
+@@ -4365,97 +3298,97 @@ html[data-theme="light"] .gender-btn{ color: rgba(16,24,42,.55); }
     "ereditato" dall'overlay) e le card, il cui testo era fisso chiaro. */
  html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse){
    background:#ffffff;
@@ -4365,7 +4596,7 @@ index ff701f5..00eaa31 100644
  html[data-theme="light"] .match-combo-pill.x2{ color:#0d6fbf; }
  html[data-theme="light"] .match-combo-pill.x3{ color:#6a4fd6; }
  html[data-theme="light"] .match-combo-pill.x4{ color:#c02350; }
-@@ -4468,25 +3399,25 @@ html[data-theme="light"] .timer-pill{ color:#a66d00; }
+@@ -4468,25 +3401,25 @@ html[data-theme="light"] .timer-pill{ color:#a66d00; }
  html[data-theme="light"] .timer-pill.red{ color:#c22a3e; }
  
  /* ── 9. MATCH (Abbina) + MEMORY — testo neutro, bordo/sfondo hue-coded intatti ── */
@@ -4397,7 +4628,7 @@ index ff701f5..00eaa31 100644
  }
  html[data-theme="light"] .result-wrap .btn{
    background: rgba(255,255,255,.08);
-@@ -4498,32 +3429,32 @@ html[data-theme="light"] .result-wrap .btn:hover{
+@@ -4498,32 +3431,32 @@ html[data-theme="light"] .result-wrap .btn:hover{
    border-color: rgba(255,255,255,.32);
  }
  html[data-theme="light"] .result-wrap .btn-neon{
@@ -4446,7 +4677,7 @@ index ff701f5..00eaa31 100644
  /* v8.13.1: override .lb-th rimosso — la regola base ora usa var(--text-muted), già tematizzato */
  html[data-theme="light"] .mod-badge.ce{ color:#a66a00; }
  html[data-theme="light"] .mod-badge.oe{ color:#6a4fd6; }
-@@ -4532,44 +3463,44 @@ html[data-theme="light"] .mod-badge.wp{ color:#0d6fbf; }
+@@ -4532,119 +3465,26 @@ html[data-theme="light"] .mod-badge.wp{ color:#0d6fbf; }
  /* .csv-export-btn: usato da Classifica e Storico. .lb-reset-btn: usato
     da "Azzera tutto" (Classifica) e "Azzera" (Traguardi) — stesso identico
     pulsante, un solo override copre entrambe le schermate. */
@@ -4458,28 +4689,22 @@ index ff701f5..00eaa31 100644
  html[data-theme="light"] .lb-reset-btn:hover{ background: rgba(194,42,62,.12); border-color: rgba(194,42,62,.5); color:#a3182c; }
  html[data-theme="light"] .lb-reset-btn::after{ background:#c22a3e; }
  
- /* ── 13. PROGRESSI (stats) + STORICO (history) ───────────────── */
+-/* ── 13. PROGRESSI (stats) + STORICO (history) ───────────────── */
 -html[data-theme="light"] .stat-c{ background:#ffffff; border-color: rgba(20,30,60,.08); }
 -html[data-theme="light"] .stat-c .sl{ color: rgba(16,24,42,.45); }
 -html[data-theme="light"] .mod-stat-row{ color: rgba(16,24,42,.6); }
-+html[data-theme="light"] .stat-c{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
-+html[data-theme="light"] .stat-c .sl{ color: rgba(var(--navy-rgb),.45); }
-+html[data-theme="light"] .mod-stat-row{ color: rgba(var(--navy-rgb),.6); }
- /* Select filtro Storico: prima il testo era quasi-bianco (illeggibile
-    su sfondo chiaro) E color-scheme:dark forzava il popup nativo delle
-    opzioni a restare scuro sempre — invisibile finché non a fuoco.
-    color-scheme:light qui allinea il rendering nativo del browser al
-    tema corrente, stesso trattamento già riservato a input date/time. */
- html[data-theme="light"] .hist-filter-select{
+-/* Select filtro Storico: prima il testo era quasi-bianco (illeggibile
+-   su sfondo chiaro) E color-scheme:dark forzava il popup nativo delle
+-   opzioni a restare scuro sempre — invisibile finché non a fuoco.
+-   color-scheme:light qui allinea il rendering nativo del browser al
+-   tema corrente, stesso trattamento già riservato a input date/time. */
+-html[data-theme="light"] .hist-filter-select{
 -  background: rgba(20,30,60,.035); border-color: rgba(20,30,60,.14);
 -  color:#10182a; color-scheme: light;
-+  background: rgba(var(--navy-rgb),.035); border-color: rgba(var(--navy-rgb),.14);
-+  color:var(--navy); color-scheme: light;
- }
+-}
 -html[data-theme="light"] .hist-filter-select option{ color:#10182a; background:#ffffff; }
-+html[data-theme="light"] .hist-filter-select option{ color:var(--navy); background:#ffffff; }
- html[data-theme="light"] .csv-export-btn-sm{ color: var(--accent); }
- /* v8.13.1: override hist-count-label rimosso (era 2.19:1 anche in chiaro) — ora var(--text-muted) */
+-html[data-theme="light"] .csv-export-btn-sm{ color: var(--accent); }
+-/* v8.13.1: override hist-count-label rimosso (era 2.19:1 anche in chiaro) — ora var(--text-muted) */
 -html[data-theme="light"] .hist-card{ background:#ffffff; border-color: rgba(20,30,60,.09); }
 -html[data-theme="light"] .hist-card:hover{ border-color: rgba(0,150,120,.3); background: rgba(0,150,120,.03); }
 -html[data-theme="light"] .hist-card-title{ color:#10182a; }
@@ -4487,111 +4712,76 @@ index ff701f5..00eaa31 100644
 -html[data-theme="light"] .hist-card-empty{ color: rgba(16,24,42,.3); }
 -html[data-theme="light"] .hist-team-row{ border-bottom-color: rgba(20,30,60,.06); }
 -html[data-theme="light"] .hist-team-name{ color: rgba(16,24,42,.75); }
-+html[data-theme="light"] .hist-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.09); }
-+html[data-theme="light"] .hist-card:hover{ border-color: rgba(var(--accent-rgb),.3); background: rgba(var(--accent-rgb),.03); }
-+html[data-theme="light"] .hist-card-title{ color:var(--navy); }
-+html[data-theme="light"] .hist-card-modetag{ background: rgba(var(--navy-rgb),.04); border-color: rgba(var(--navy-rgb),.1); } /* v8.13.1: color rimosso, ora var(--text-muted) */
-+html[data-theme="light"] .hist-card-empty{ color: rgba(var(--navy-rgb),.3); }
-+html[data-theme="light"] .hist-team-row{ border-bottom-color: rgba(var(--navy-rgb),.06); }
-+html[data-theme="light"] .hist-team-name{ color: rgba(var(--navy-rgb),.75); }
- html[data-theme="light"] .hist-team-pts{ color: var(--accent); }
- 
- /* ── 14. PANORAMICA CLASSE (dashboard) ───────────────────────── */
+-html[data-theme="light"] .hist-team-pts{ color: var(--accent); }
+-
+-/* ── 14. PANORAMICA CLASSE (dashboard) ───────────────────────── */
 -html[data-theme="light"] .chd-kpi-card{ background:#ffffff; border-color: rgba(20,30,60,.08); }
 -html[data-theme="light"] .chd-kpi-lbl{ color: rgba(16,24,42,.45); }
 -html[data-theme="light"] .chd-section-title{ color:#10182a; }
 -html[data-theme="light"] .chd-weak-card,html[data-theme="light"] .chd-part-table{ background:#ffffff; border-color: rgba(20,30,60,.08); }
 -html[data-theme="light"] .chd-weak-headline{ color: rgba(16,24,42,.75); }
 -html[data-theme="light"] .chd-mod-name{ color: rgba(16,24,42,.65); }
-+html[data-theme="light"] .chd-kpi-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
-+html[data-theme="light"] .chd-kpi-lbl{ color: rgba(var(--navy-rgb),.45); }
-+html[data-theme="light"] .chd-section-title{ color:var(--navy); }
-+html[data-theme="light"] .chd-weak-card,html[data-theme="light"] .chd-part-table{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
-+html[data-theme="light"] .chd-weak-headline{ color: rgba(var(--navy-rgb),.75); }
-+html[data-theme="light"] .chd-mod-name{ color: rgba(var(--navy-rgb),.65); }
- /* .chd-mod-pct: colore impostato inline da dashboard.js in base al
-    modulo. Le classi gemelle chd-ink-* (aggiunte lì accanto allo style
-    inline esistente, una per ogni modulo — non solo CE/OE/WP) permettono
-@@ -4580,38 +3511,38 @@ html[data-theme="light"] .chd-ink-oe{ color:#6a4fd6 !important; }
- html[data-theme="light"] .chd-ink-wp{ color:#0d6fbf !important; }
- html[data-theme="light"] .chd-ink-ss{ color:#1f7a42 !important; }
- html[data-theme="light"] .chd-ink-pp{ color:#b8501f !important; }
+-/* .chd-mod-pct: colore impostato inline da dashboard.js in base al
+-   modulo. Le classi gemelle chd-ink-* (aggiunte lì accanto allo style
+-   inline esistente, una per ogni modulo — non solo CE/OE/WP) permettono
+-   di sovrascrivere SOLO il testo — stessa identica logica del ruolo in
+-   topbar (§3). */
+-html[data-theme="light"] .chd-ink-ce{ color:#a66a00 !important; }
+-html[data-theme="light"] .chd-ink-oe{ color:#6a4fd6 !important; }
+-html[data-theme="light"] .chd-ink-wp{ color:#0d6fbf !important; }
+-html[data-theme="light"] .chd-ink-ss{ color:#1f7a42 !important; }
+-html[data-theme="light"] .chd-ink-pp{ color:#b8501f !important; }
 -html[data-theme="light"] .chd-part-header{ color: rgba(16,24,42,.3); background: rgba(20,30,60,.02); }
 -html[data-theme="light"] .chd-part-row{ color: rgba(16,24,42,.75); border-bottom-color: rgba(20,30,60,.06); }
 -html[data-theme="light"] .chd-part-last{ color: rgba(16,24,42,.4); }
 -html[data-theme="light"] .chd-act-name{ color: rgba(16,24,42,.65); }
 -html[data-theme="light"] .chd-act-bar-wrap{ background: rgba(20,30,60,.07); }
-+html[data-theme="light"] .chd-part-header{ color: rgba(var(--navy-rgb),.3); background: rgba(var(--navy-rgb),.02); }
-+html[data-theme="light"] .chd-part-row{ color: rgba(var(--navy-rgb),.75); border-bottom-color: rgba(var(--navy-rgb),.06); }
-+html[data-theme="light"] .chd-part-last{ color: rgba(var(--navy-rgb),.4); }
-+html[data-theme="light"] .chd-act-name{ color: rgba(var(--navy-rgb),.65); }
-+html[data-theme="light"] .chd-act-bar-wrap{ background: rgba(var(--navy-rgb),.07); }
- /* v8.13.1: override chd-footnote rimosso (era 2.03:1 anche in chiaro) — ora var(--text-dim) */
+-/* v8.13.1: override chd-footnote rimosso (era 2.03:1 anche in chiaro) — ora var(--text-dim) */
 -/* v8.15.1: override chd-empty-title/chd-empty-sub rimossi (erano rgba(16,24,42,.4)
 -   ~2.9:1 e rgba(16,24,42,.28) ~2.1:1, entrambi sotto AA anche in chiaro) — ora
-+/* v8.15.1: override chd-empty-title/chd-empty-sub rimossi (erano rgba(var(--navy-rgb),.4)
-+   ~2.9:1 e rgba(var(--navy-rgb),.28) ~2.1:1, entrambi sotto AA anche in chiaro) — ora
-    var(--text-muted)/var(--text-dim), già tematizzati, stesso pattern di .chd-wq-tab
-    in v8.14.0. */
- /* v8.14.0: .chd-wq-tab non ha più un override qui — la regola base
-    (@layer classhealth) usa ora var(--text-muted), che cambia già
+-   var(--text-muted)/var(--text-dim), già tematizzati, stesso pattern di .chd-wq-tab
+-   in v8.14.0. */
+-/* v8.14.0: .chd-wq-tab non ha più un override qui — la regola base
+-   (@layer classhealth) usa ora var(--text-muted), che cambia già
 -   valore da sola in chiaro. Il vecchio override hardcoded rgba(16,24,42,.45)
-+   valore da sola in chiaro. Il vecchio override hardcoded rgba(var(--navy-rgb),.45)
-    (2.88:1) ignorava silenziosamente il token, stesso pattern già visto
-    per .logo-sub in Fase 2. */
+-   (2.88:1) ignorava silenziosamente il token, stesso pattern già visto
+-   per .logo-sub in Fase 2. */
 -html[data-theme="light"] .chd-wq-tab-count{ background: rgba(20,30,60,.08); color: var(--text-muted); } /* v8.14.0 FIX: nessun override esisteva -> 1.04:1, quasi invisibile */
-+html[data-theme="light"] .chd-wq-tab-count{ background: rgba(var(--navy-rgb),.08); color: var(--text-muted); } /* v8.14.0 FIX: nessun override esisteva -> 1.04:1, quasi invisibile */
- html[data-theme="light"] .chd-wq-tab.active .chd-wq-tab-count{ color:inherit; }
- html[data-theme="light"] .chd-wq-tab-problem.active{ color:#c22a3e; } /* v8.14.0 FIX: #ff6b85 su chiaro = 2.50:1 */
- html[data-theme="light"] .chd-wq-tab-recovered.active{ color:#12805a; } /* v8.14.0 FIX: #00ff96 su chiaro = 1.22:1 */
+-html[data-theme="light"] .chd-wq-tab.active .chd-wq-tab-count{ color:inherit; }
+-html[data-theme="light"] .chd-wq-tab-problem.active{ color:#c22a3e; } /* v8.14.0 FIX: #ff6b85 su chiaro = 2.50:1 */
+-html[data-theme="light"] .chd-wq-tab-recovered.active{ color:#12805a; } /* v8.14.0 FIX: #00ff96 su chiaro = 1.22:1 */
 -html[data-theme="light"] .chd-wq-modfilter-btn{ background:#ffffff; border-color: rgba(20,30,60,.1); color: var(--text-muted); } /* v8.14.0 FIX: era rgba(16,24,42,.5) = 3.32:1 */
-+html[data-theme="light"] .chd-wq-modfilter-btn{ background:#ffffff; border-color: rgba(var(--navy-rgb),.1); color: var(--text-muted); } /* v8.14.0 FIX: era rgba(var(--navy-rgb),.5) = 3.32:1 */
- html[data-theme="light"] .chd-wq-modfilter-btn.active{ color: var(--text-primary); }
+-html[data-theme="light"] .chd-wq-modfilter-btn.active{ color: var(--text-primary); }
 -html[data-theme="light"] .chd-wq-modfilter-count{ background: rgba(20,30,60,.08); }
-+html[data-theme="light"] .chd-wq-modfilter-count{ background: rgba(var(--navy-rgb),.08); }
- html[data-theme="light"] .chd-wq-row{ background:#ffffff; }
+-html[data-theme="light"] .chd-wq-row{ background:#ffffff; }
 -html[data-theme="light"] .chd-wq-question{ color: rgba(16,24,42,.82); }
 -html[data-theme="light"] .chd-wq-answer{ color: rgba(16,24,42,.45); }
 -html[data-theme="light"] .chd-wq-answer strong{ color:#12805a; } /* v8.14.0 FIX: rgba(0,255,200,.75) su chiaro = 1.27:1 */
-+html[data-theme="light"] .chd-wq-question{ color: rgba(var(--navy-rgb),.82); }
-+html[data-theme="light"] .chd-wq-answer{ color: rgba(var(--navy-rgb),.45); }
-+html[data-theme="light"] .chd-wq-answer strong{ color:#12805a; } /* v8.14.0 FIX: rgba(var(--accent-rgb),.75) su chiaro = 1.27:1 */
- html[data-theme="light"] .chd-wq-errs{ color:#c22a3e; } /* v8.14.0 FIX: rgba(255,80,80,.9) su chiaro = 2.64:1 */
- html[data-theme="light"] .chd-wq-list-recovered .chd-wq-errs{ color:#12805a; } /* v8.14.0 FIX: rgba(0,255,150,.8) su chiaro = 1.31:1 */
- html[data-theme="light"] .chd-wq-reset-btn{ background: rgba(194,42,62,.06); border-color: rgba(194,42,62,.25); color:#c22a3e; } /* v8.14.0 FIX: nessun override -> 1.77:1 */
+-html[data-theme="light"] .chd-wq-errs{ color:#c22a3e; } /* v8.14.0 FIX: rgba(255,80,80,.9) su chiaro = 2.64:1 */
+-html[data-theme="light"] .chd-wq-list-recovered .chd-wq-errs{ color:#12805a; } /* v8.14.0 FIX: rgba(0,255,150,.8) su chiaro = 1.31:1 */
+-html[data-theme="light"] .chd-wq-reset-btn{ background: rgba(194,42,62,.06); border-color: rgba(194,42,62,.25); color:#c22a3e; } /* v8.14.0 FIX: nessun override -> 1.77:1 */
 -html[data-theme="light"] .chd-wq-empty{ border-color: rgba(20,30,60,.1); }
 -html[data-theme="light"] .chd-wq-empty-title{ color: var(--text-muted); } /* v8.14.0 FIX: era rgba(16,24,42,.5) = 3.32:1 */
 -html[data-theme="light"] .chd-wq-empty-sub{ color: var(--text-dim); } /* v8.14.0 FIX: era rgba(16,24,42,.3) = 1.93:1 */
-+html[data-theme="light"] .chd-wq-empty{ border-color: rgba(var(--navy-rgb),.1); }
-+html[data-theme="light"] .chd-wq-empty-title{ color: var(--text-muted); } /* v8.14.0 FIX: era rgba(var(--navy-rgb),.5) = 3.32:1 */
-+html[data-theme="light"] .chd-wq-empty-sub{ color: var(--text-dim); } /* v8.14.0 FIX: era rgba(var(--navy-rgb),.3) = 1.93:1 */
- html[data-theme="light"] .tm-badge-inactive{ background: rgba(194,42,62,.08); border-color: rgba(194,42,62,.3); color:#c22a3e; } /* v8.14.0 FIX: #ff6b6b su chiaro = 2.55-2.78:1 */
- /* .chd-never-played: banner ambra "non ha ancora mai giocato" —
-    stesso #ffb400 su sfondo chiaro, stessa ink di riserva. */
-@@ -4619,32 +3550,32 @@ html[data-theme="light"] .chd-never-played{ color:#a66d00; }
- 
- /* ── 15. TRAGUARDI (badges) ───────────────────────────────────── */
- html[data-theme="light"] .bdg-summary{ background: rgba(180,130,0,.05); border-color: rgba(180,130,0,.18); }
+-html[data-theme="light"] .tm-badge-inactive{ background: rgba(194,42,62,.08); border-color: rgba(194,42,62,.3); color:#c22a3e; } /* v8.14.0 FIX: #ff6b6b su chiaro = 2.55-2.78:1 */
+-/* .chd-never-played: banner ambra "non ha ancora mai giocato" —
+-   stesso #ffb400 su sfondo chiaro, stessa ink di riserva. */
+-html[data-theme="light"] .chd-never-played{ color:#a66d00; }
+-
+-/* ── 15. TRAGUARDI (badges) ───────────────────────────────────── */
+-html[data-theme="light"] .bdg-summary{ background: rgba(180,130,0,.05); border-color: rgba(180,130,0,.18); }
 -html[data-theme="light"] .bdg-summary-count{ color:#10182a; }
 -html[data-theme="light"] .bdg-card{ background:#ffffff; border-color: rgba(20,30,60,.08); }
-+html[data-theme="light"] .bdg-summary-count{ color:var(--navy); }
-+html[data-theme="light"] .bdg-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
- html[data-theme="light"] .bdg-card.unlocked{ border-color: rgba(180,130,0,.28); }
+-html[data-theme="light"] .bdg-card.unlocked{ border-color: rgba(180,130,0,.28); }
 -html[data-theme="light"] .bdg-title{ color:#10182a; }
 -html[data-theme="light"] .bdg-desc{ color: rgba(16,24,42,.78); } /* v8.13.1 FIX: era .45, compensata per l'opacità composta con .bdg-card.locked{opacity:.6} */
-+html[data-theme="light"] .bdg-title{ color:var(--navy); }
-+html[data-theme="light"] .bdg-desc{ color: rgba(var(--navy-rgb),.78); } /* v8.13.1 FIX: era .45, compensata per l'opacità composta con .bdg-card.locked{opacity:.6} */
- html[data-theme="light"] .bdg-icon{ background: rgba(180,130,0,.08); border-color: rgba(180,130,0,.22); }
- html[data-theme="light"] .bdg-unlock-date{ color:#a66d00; }
+-html[data-theme="light"] .bdg-icon{ background: rgba(180,130,0,.08); border-color: rgba(180,130,0,.22); }
+-html[data-theme="light"] .bdg-unlock-date{ color:#a66d00; }
 -html[data-theme="light"] .bdg-progress-label{ color: rgba(16,24,42,.45); }
 -html[data-theme="light"] #badge-unlock-popup{ background:#ffffff; border-color: rgba(180,130,0,.35); box-shadow: 0 8px 32px rgba(20,30,60,.16); }
 -html[data-theme="light"] .bup-title{ color:#10182a; }
 -html[data-theme="light"] .bup-desc{ color: rgba(16,24,42,.5); }
-+html[data-theme="light"] .bdg-progress-label{ color: rgba(var(--navy-rgb),.45); }
-+html[data-theme="light"] #badge-unlock-popup{ background:#ffffff; border-color: rgba(180,130,0,.35); box-shadow: 0 8px 32px rgba(var(--navy-rgb),.16); }
-+html[data-theme="light"] .bup-title{ color:var(--navy); }
-+html[data-theme="light"] .bup-desc{ color: rgba(var(--navy-rgb),.5); }
- 
+-
  /* ── 16. AULE (courses screen) + LOGIN/SETPWD ────────────────── */
  html[data-theme="light"] #screen-courses{
    background: var(--surface-0);
@@ -4615,7 +4805,7 @@ index ff701f5..00eaa31 100644
  /* v6.6 FIX: le Card Aula devono restare IDENTICHE al tema Dark in
     entrambi i temi — sfondo e border-color arrivano già inline da JS
     (courses.js renderCoursesGrid) con i gradienti scuri di
-@@ -4664,10 +3595,10 @@ html[data-theme="light"] .cs-empty-text{ color: rgba(16,24,42,.35); }
+@@ -4664,10 +3504,10 @@ html[data-theme="light"] .cs-empty-text{ color: rgba(16,24,42,.35); }
     splash inizi il proprio timer, quindi basta la sola regola CSS. */
  html[data-theme="light"] #screen-splash{
    background:
@@ -4628,7 +4818,7 @@ index ff701f5..00eaa31 100644
  html[data-theme="light"] .splash-wordmark{
    background: none; -webkit-text-fill-color: var(--accent); color: var(--accent);
    text-shadow: none; filter: none;
-@@ -4675,120 +3606,120 @@ html[data-theme="light"] .splash-wordmark{
+@@ -4675,146 +3515,34 @@ html[data-theme="light"] .splash-wordmark{
  html[data-theme="light"] .splash-wordmark em{
    background: none; -webkit-text-fill-color: var(--purple); color: var(--purple);
  }
@@ -4647,10 +4837,8 @@ index ff701f5..00eaa31 100644
  html[data-theme="light"] .login-title{ text-shadow:none; }
 -html[data-theme="light"] .login-subtitle{ color: rgba(16,24,42,.3); }
 -html[data-theme="light"] .login-label{ color: rgba(0,150,120,.75); }
-+html[data-theme="light"] .login-subtitle{ color: rgba(var(--navy-rgb),.3); }
-+html[data-theme="light"] .login-label{ color: rgba(var(--accent-rgb),.75); }
- 
- /* ── 17. DIALOG (conferma + generici) + WIZARD + PANNELLI ────── */
+-
+-/* ── 17. DIALOG (conferma + generici) + WIZARD + PANNELLI ────── */
 -html[data-theme="light"] .pp-dialog-overlay,html[data-theme="light"] .pp-generic-overlay{ background: rgba(20,30,60,.35); }
 -html[data-theme="light"] .pp-dialog,html[data-theme="light"] .pp-generic-box{ background:#ffffff; border-color: rgba(20,30,60,.1); }
 -html[data-theme="light"] .pp-dialog-title,html[data-theme="light"] .pp-generic-title{ color:#10182a; }
@@ -4664,150 +4852,102 @@ index ff701f5..00eaa31 100644
 -html[data-theme="light"] .cw-mod-btn .cm-desc{ color: rgba(16,24,42,.4); }
 -html[data-theme="light"] .cw-teacher-row .ct-name{ color: rgba(16,24,42,.75); }
 -html[data-theme="light"] .cw-teacher-row .ct-email{ color: rgba(16,24,42,.35); }
-+html[data-theme="light"] .pp-dialog-overlay,html[data-theme="light"] .pp-generic-overlay{ background: rgba(var(--navy-rgb),.35); }
-+html[data-theme="light"] .pp-dialog,html[data-theme="light"] .pp-generic-box{ background:#ffffff; border-color: rgba(var(--navy-rgb),.1); }
-+html[data-theme="light"] .pp-dialog-title,html[data-theme="light"] .pp-generic-title{ color:var(--navy); }
-+html[data-theme="light"] .pp-dialog-sub,html[data-theme="light"] .pp-generic-msg{ color: rgba(var(--navy-rgb),.5); }
-+html[data-theme="light"] .pp-dialog-btn.cancel,html[data-theme="light"] .pp-generic-btn.cancel{ background: rgba(var(--navy-rgb),.05); color: rgba(var(--navy-rgb),.6); }
-+html[data-theme="light"] .cw-box,html[data-theme="light"] .dp-box,html[data-theme="light"] .icon-picker-box{ background:#ffffff; border-color: rgba(var(--navy-rgb),.12); }
-+html[data-theme="light"] .cw-title,html[data-theme="light"] .dp-title,html[data-theme="light"] .icp-title{ color:var(--navy); }
-+html[data-theme="light"] .cw-subtitle{ color: rgba(var(--navy-rgb),.45); }
-+html[data-theme="light"] .cw-mod-btn,html[data-theme="light"] .cw-teacher-row,html[data-theme="light"] .dp-teacher-row{ background: rgba(var(--navy-rgb),.03); border-color: rgba(var(--navy-rgb),.09); }
-+html[data-theme="light"] .cw-mod-btn .cm-name{ color:var(--navy); }
-+html[data-theme="light"] .cw-mod-btn .cm-desc{ color: rgba(var(--navy-rgb),.4); }
-+html[data-theme="light"] .cw-teacher-row .ct-name{ color: rgba(var(--navy-rgb),.75); }
-+html[data-theme="light"] .cw-teacher-row .ct-email{ color: rgba(var(--navy-rgb),.35); }
- /* .cw-warn-banner: stessa ink ambra di riserva usata per timer-pill/chd-never-played */
- html[data-theme="light"] .cw-warn-banner{ color:#a66d00; }
- /* .dp-teacher-row: bg/border-color erano già coperti sopra (riga
-    raggruppata con .cw-mod-btn/.cw-teacher-row), ma non il colore
-    testo — restava rgba(255,255,255,.7), quasi invisibile sul
-    fondo ormai chiaro di .dp-box. */
+-/* .cw-warn-banner: stessa ink ambra di riserva usata per timer-pill/chd-never-played */
+-html[data-theme="light"] .cw-warn-banner{ color:#a66d00; }
+-/* .dp-teacher-row: bg/border-color erano già coperti sopra (riga
+-   raggruppata con .cw-mod-btn/.cw-teacher-row), ma non il colore
+-   testo — restava rgba(255,255,255,.7), quasi invisibile sul
+-   fondo ormai chiaro di .dp-box. */
 -html[data-theme="light"] .dp-teacher-row{ color: rgba(16,24,42,.75); }
-+html[data-theme="light"] .dp-teacher-row{ color: rgba(var(--navy-rgb),.75); }
- /* .dp-close-btn: "×" del pannello "⚙️ Gestione aula" — invisibile sia
-    a riposo (rgba(255,255,255,.35)) sia in hover (#fff), stesso tipo
-    di difetto segnalato per la scheda docente. */
+-/* .dp-close-btn: "×" del pannello "⚙️ Gestione aula" — invisibile sia
+-   a riposo (rgba(255,255,255,.35)) sia in hover (#fff), stesso tipo
+-   di difetto segnalato per la scheda docente. */
 -html[data-theme="light"] .dp-close-btn{ color: rgba(16,24,42,.4); }
 -html[data-theme="light"] .dp-close-btn:hover{ color:#10182a; }
 -html[data-theme="light"] .icp-close{ color: rgba(16,24,42,.55); }
 -html[data-theme="light"] .icp-close:hover{ border-color: rgba(20,30,60,.2); color:#10182a; }
 -html[data-theme="light"] .icp-x-close{ color: rgba(16,24,42,.35); }
 -html[data-theme="light"] .icp-x-close:hover{ color:#10182a; }
-+html[data-theme="light"] .dp-close-btn{ color: rgba(var(--navy-rgb),.4); }
-+html[data-theme="light"] .dp-close-btn:hover{ color:var(--navy); }
-+html[data-theme="light"] .icp-close{ color: rgba(var(--navy-rgb),.55); }
-+html[data-theme="light"] .icp-close:hover{ border-color: rgba(var(--navy-rgb),.2); color:var(--navy); }
-+html[data-theme="light"] .icp-x-close{ color: rgba(var(--navy-rgb),.35); }
-+html[data-theme="light"] .icp-x-close:hover{ color:var(--navy); }
- /* .mod-toggle-btn (moduli abilitati, pannello Gestione aula): stato
-    attivo/hover già usano var(--accent) e si adattano da soli; solo lo
-    stato di riposo era hardcoded rgba(255,255,255,.5). */
+-/* .mod-toggle-btn (moduli abilitati, pannello Gestione aula): stato
+-   attivo/hover già usano var(--accent) e si adattano da soli; solo lo
+-   stato di riposo era hardcoded rgba(255,255,255,.5). */
 -html[data-theme="light"] .mod-toggle-btn{ color: rgba(16,24,42,.55); }
 -html[data-theme="light"] .course-dropdown{ background:#ffffff; border-color: rgba(20,30,60,.1); }
 -html[data-theme="light"] .cd-item{ color: rgba(16,24,42,.7); }
 -html[data-theme="light"] .cd-item:hover{ background: rgba(20,30,60,.06); color:#10182a; }
-+html[data-theme="light"] .mod-toggle-btn{ color: rgba(var(--navy-rgb),.55); }
-+html[data-theme="light"] .course-dropdown{ background:#ffffff; border-color: rgba(var(--navy-rgb),.1); }
-+html[data-theme="light"] .cd-item{ color: rgba(var(--navy-rgb),.7); }
-+html[data-theme="light"] .cd-item:hover{ background: rgba(var(--navy-rgb),.06); color:var(--navy); }
- 
- /* ── 18. GESTIONE DOCENTI / DASHBOARD DIRETTORE ──────────────── */
- html[data-theme="light"] #screen-director-dashboard,html[data-theme="light"] #screen-teacher-mgmt,
- html[data-theme="light"] #screen-teacher-create,html[data-theme="light"] #screen-teacher-list,
- html[data-theme="light"] #screen-teacher-detail{ background: var(--surface-0); }
+-
+-/* ── 18. GESTIONE DOCENTI / DASHBOARD DIRETTORE ──────────────── */
+-html[data-theme="light"] #screen-director-dashboard,html[data-theme="light"] #screen-teacher-mgmt,
+-html[data-theme="light"] #screen-teacher-create,html[data-theme="light"] #screen-teacher-list,
+-html[data-theme="light"] #screen-teacher-detail{ background: var(--surface-0); }
 -html[data-theme="light"] .dd-card,html[data-theme="light"] .tdc-card{ background:#ffffff; border-color: rgba(20,30,60,.08); }
 -html[data-theme="light"] .dd-title,html[data-theme="light"] .tdc-name{ color:#10182a; }
 -html[data-theme="light"] .dd-sub{ color: rgba(16,24,42,.42); }
-+html[data-theme="light"] .dd-card,html[data-theme="light"] .tdc-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
-+html[data-theme="light"] .dd-title,html[data-theme="light"] .tdc-name{ color:var(--navy); }
-+html[data-theme="light"] .dd-sub{ color: rgba(var(--navy-rgb),.42); }
- /* v8.15.2: .tdc-email non ha più bisogno di override qui — ora usa
-    var(--text-muted), già tematizzato (era condiviso con .dd-sub, separato
-    per non alterare .dd-sub che non ha alcun problema di leggibilità). */
+-/* v8.15.2: .tdc-email non ha più bisogno di override qui — ora usa
+-   var(--text-muted), già tematizzato (era condiviso con .dd-sub, separato
+-   per non alterare .dd-sub che non ha alcun problema di leggibilità). */
 -html[data-theme="light"] .tm-tab{ color: rgba(16,24,42,.42); }
 -html[data-theme="light"] .tm-tab:hover{ color: rgba(16,24,42,.75); }
 -html[data-theme="light"] .tm-tabs{ border-bottom-color: rgba(20,30,60,.1); }
-+html[data-theme="light"] .tm-tab{ color: rgba(var(--navy-rgb),.42); }
-+html[data-theme="light"] .tm-tab:hover{ color: rgba(var(--navy-rgb),.75); }
-+html[data-theme="light"] .tm-tabs{ border-bottom-color: rgba(var(--navy-rgb),.1); }
- /* .dd-arrow: freccia "›" sulle card Dashboard Direttore/Gestione
-    Docenti — rgba(255,255,255,.2) è quasi invisibile su sfondo bianco. */
+-/* .dd-arrow: freccia "›" sulle card Dashboard Direttore/Gestione
+-   Docenti — rgba(255,255,255,.2) è quasi invisibile su sfondo bianco. */
 -html[data-theme="light"] .dd-arrow{ color: rgba(16,24,42,.25); }
-+html[data-theme="light"] .dd-arrow{ color: rgba(var(--navy-rgb),.25); }
- /* .tdc-aula-toggle-btn — BUG ESPLICITO SEGNALATO: le aule NON
-    selezionate nella scheda docente usavano testo bianco translucido,
-    praticamente invisibile sul fondo ormai chiaro di .tdc-card /
-    .setup-card. Lo stato .active usa già var(--accent) e si adatta da
-    solo, qui serviva solo il default + hover. */
+-/* .tdc-aula-toggle-btn — BUG ESPLICITO SEGNALATO: le aule NON
+-   selezionate nella scheda docente usavano testo bianco translucido,
+-   praticamente invisibile sul fondo ormai chiaro di .tdc-card /
+-   .setup-card. Lo stato .active usa già var(--accent) e si adatta da
+-   solo, qui serviva solo il default + hover. */
 -html[data-theme="light"] .tdc-aula-toggle-btn{ color: rgba(16,24,42,.55); }
 -html[data-theme="light"] .tdc-aula-toggle-btn:hover{ color: rgba(16,24,42,.85); }
-+html[data-theme="light"] .tdc-aula-toggle-btn{ color: rgba(var(--navy-rgb),.55); }
-+html[data-theme="light"] .tdc-aula-toggle-btn:hover{ color: rgba(var(--navy-rgb),.85); }
- /* Chip "aule assegnate" nella card della lista docenti (screen-teacher-list) */
- /* v8.15.2: .tdc-aula-chip/.tdc-aule-empty non hanno più bisogno di override
-    qui — ora usano var(--text-muted)/var(--text-dim), già tematizzati. */
+-/* Chip "aule assegnate" nella card della lista docenti (screen-teacher-list) */
+-/* v8.15.2: .tdc-aula-chip/.tdc-aule-empty non hanno più bisogno di override
+-   qui — ora usano var(--text-muted)/var(--text-dim), già tematizzati. */
 -html[data-theme="light"] .tdc-aula-chip + .tdc-aula-chip::before{ color: rgba(16,24,42,.22); }
-+html[data-theme="light"] .tdc-aula-chip + .tdc-aula-chip::before{ color: rgba(var(--navy-rgb),.22); }
- /* v8.15.2: compensazione opacità composta per .tdc-card.tdc-inactive{opacity:.55}
-    in tema chiaro — stesso problema e stessa soluzione scoped del tema scuro
-    (vedi @layer classhealth ~riga 4066). */
- html[data-theme="light"] .tdc-card.tdc-inactive .tdc-email,
- html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aula-chip,
+-/* v8.15.2: compensazione opacità composta per .tdc-card.tdc-inactive{opacity:.55}
+-   in tema chiaro — stesso problema e stessa soluzione scoped del tema scuro
+-   (vedi @layer classhealth ~riga 4066). */
+-html[data-theme="light"] .tdc-card.tdc-inactive .tdc-email,
+-html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aula-chip,
 -html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aule-empty{ color: rgba(16,24,42,.85); } /* effettivo ×.55 ≈ .4675, ≈ soglia --text-dim (.47) */
-+html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aule-empty{ color: rgba(var(--navy-rgb),.85); } /* effettivo ×.55 ≈ .4675, ≈ soglia --text-dim (.47) */
- /* Icona genere di default (nessun genere impostato, fallback ti-user) */
+-/* Icona genere di default (nessun genere impostato, fallback ti-user) */
 -html[data-theme="light"] .tdc-gender-icon{ background: rgba(20,30,60,.05); border-color: rgba(20,30,60,.12); color: rgba(16,24,42,.4); }
 -html[data-theme="light"] .tmd-email-hint{ color: rgba(16,24,42,.4); }
 -html[data-theme="light"] .dp-hint-text{ color: rgba(16,24,42,.35); }
-+html[data-theme="light"] .tdc-gender-icon{ background: rgba(var(--navy-rgb),.05); border-color: rgba(var(--navy-rgb),.12); color: rgba(var(--navy-rgb),.4); }
-+html[data-theme="light"] .tmd-email-hint{ color: rgba(var(--navy-rgb),.4); }
-+html[data-theme="light"] .dp-hint-text{ color: rgba(var(--navy-rgb),.35); }
- 
- /* ── 19. IMPORT CSV ───────────────────────────────────────────── */
- html[data-theme="light"] .csv-import-trigger-btn{
+-
+-/* ── 19. IMPORT CSV ───────────────────────────────────────────── */
+-html[data-theme="light"] .csv-import-trigger-btn{
 -  border-color: rgba(0,150,120,.35);
 -  background: rgba(0,150,120,.05);
-+  border-color: rgba(var(--accent-rgb),.35);
-+  background: rgba(var(--accent-rgb),.05);
-   color: #00786a;
- }
- html[data-theme="light"] .csv-import-trigger-btn:hover{
+-  color: #00786a;
+-}
+-html[data-theme="light"] .csv-import-trigger-btn:hover{
 -  background: rgba(0,150,120,.1);
 -  border-color: rgba(0,150,120,.55);
-+  background: rgba(var(--accent-rgb),.1);
-+  border-color: rgba(var(--accent-rgb),.55);
-   color: var(--accent);
- }
+-  color: var(--accent);
+-}
 -html[data-theme="light"] .csv-import-list{ background: rgba(20,30,60,.02); border-color: rgba(20,30,60,.09); }
 -html[data-theme="light"] .csv-import-row{ color: rgba(16,24,42,.8); border-bottom-color: rgba(20,30,60,.06); }
 -html[data-theme="light"] .csv-import-row-del{ color: rgba(16,24,42,.35); }
 -html[data-theme="light"] .csv-import-empty-list{ color: rgba(16,24,42,.3); }
-+html[data-theme="light"] .csv-import-list{ background: rgba(var(--navy-rgb),.02); border-color: rgba(var(--navy-rgb),.09); }
-+html[data-theme="light"] .csv-import-row{ color: rgba(var(--navy-rgb),.8); border-bottom-color: rgba(var(--navy-rgb),.06); }
-+html[data-theme="light"] .csv-import-row-del{ color: rgba(var(--navy-rgb),.35); }
-+html[data-theme="light"] .csv-import-empty-list{ color: rgba(var(--navy-rgb),.3); }
- 
- /* ── 20. TOGGLE AUDIO/TEMA ────────────────────────────────────── */
+-
+-/* ── 20. TOGGLE AUDIO/TEMA ────────────────────────────────────── */
 -html[data-theme="light"] .audio-toggle-btn{ border-color: rgba(20,30,60,.14); background: rgba(20,30,60,.04); color: rgba(16,24,42,.55); }
 -html[data-theme="light"] .audio-toggle-btn:hover{ border-color: rgba(0,150,120,.35); background: rgba(0,150,120,.08); color: var(--accent); }
-+html[data-theme="light"] .audio-toggle-btn{ border-color: rgba(var(--navy-rgb),.14); background: rgba(var(--navy-rgb),.04); color: rgba(var(--navy-rgb),.55); }
-+html[data-theme="light"] .audio-toggle-btn:hover{ border-color: rgba(var(--accent-rgb),.35); background: rgba(var(--accent-rgb),.08); color: var(--accent); }
- html[data-theme="light"] .theme-toggle-btn.is-light{ color:#a66d00; border-color: rgba(180,130,0,.3); background: rgba(255,180,0,.08); }
+-html[data-theme="light"] .theme-toggle-btn.is-light{ color:#a66d00; border-color: rgba(180,130,0,.3); background: rgba(255,180,0,.08); }
++html[data-theme="light"] .login-subtitle{ color: rgba(var(--navy-rgb),.3); }
++html[data-theme="light"] .login-label{ color: rgba(var(--accent-rgb),.75); }
  
  /* ── 21. FOOTER ───────────────────────────────────────────────── */
  /* v8.13.1: override .pp-footer rimosso (era 2.03:1 anche in chiaro) — ora var(--text-dim) */
 -html[data-theme="light"] .pp-footer a{ color:#00967a; border-color: rgba(0,150,120,.3); }
 -html[data-theme="light"] .pp-footer a:hover{ color:#00786a; border-color:#00967a; }
-+html[data-theme="light"] .pp-footer a{ color:var(--accent); border-color: rgba(var(--accent-rgb),.3); }
-+html[data-theme="light"] .pp-footer a:hover{ color:#00786a; border-color:var(--accent); }
- 
- /* ── 22. ONBOARDING TOUR ──────────────────────────────────────── */
- /* --accent/--purple sono già ridefiniti nel §1 (token globali) —
-@@ -4796,25 +3727,25 @@ html[data-theme="light"] .pp-footer a:hover{ color:#00786a; border-color:#00967a
-    colore corretto senza bisogno di override qui. Serve solo
-    ripatinare le superfici a sfondo pieno (overlay, tooltip) e i
-    testi a colore fisso, stesso identico pattern del resto del file. */
+-
+-/* ── 22. ONBOARDING TOUR ──────────────────────────────────────── */
+-/* --accent/--purple sono già ridefiniti nel §1 (token globali) —
+-   ring, barra di avanzamento e pulsante "Avanti" ereditano il
+-   colore corretto senza bisogno di override qui. Serve solo
+-   ripatinare le superfici a sfondo pieno (overlay, tooltip) e i
+-   testi a colore fisso, stesso identico pattern del resto del file. */
 -html[data-theme="light"] .onb-overlay{ background: rgba(20,30,60,.5); }
 -html[data-theme="light"] .onb-tooltip{ background:#ffffff; border-color: rgba(0,150,120,.25); box-shadow: 0 20px 50px rgba(20,30,60,.22), 0 0 0 1px rgba(0,150,120,.08); }
 -html[data-theme="light"] .onb-tooltip::before{ background:#ffffff; border-color: rgba(0,150,120,.25); }
@@ -4816,14 +4956,8 @@ index ff701f5..00eaa31 100644
 -html[data-theme="light"] .onb-step-label{ color: rgba(0,150,120,.75); }
 -html[data-theme="light"] .onb-progress{ background: rgba(20,30,60,.08); }
 -html[data-theme="light"] .onb-skip{ color: rgba(16,24,42,.6); } /* v8.15.6: stesso fix anche in chiaro per coerenza — era .4 (~3:1) vs :hover .7, ora uguali, .6 = stesso valore di --text-muted (4.52:1 AA) */
-+html[data-theme="light"] .onb-overlay{ background: rgba(var(--navy-rgb),.5); }
-+html[data-theme="light"] .onb-tooltip{ background:#ffffff; border-color: rgba(var(--accent-rgb),.25); box-shadow: 0 20px 50px rgba(var(--navy-rgb),.22), 0 0 0 1px rgba(var(--accent-rgb),.08); }
-+html[data-theme="light"] .onb-tooltip::before{ background:#ffffff; border-color: rgba(var(--accent-rgb),.25); }
-+html[data-theme="light"] .onb-title{ color:var(--navy); }
-+html[data-theme="light"] .onb-body{ color: rgba(var(--navy-rgb),.55); }
-+html[data-theme="light"] .onb-step-label{ color: rgba(var(--accent-rgb),.75); }
-+html[data-theme="light"] .onb-progress{ background: rgba(var(--navy-rgb),.08); }
-+html[data-theme="light"] .onb-skip{ color: rgba(var(--navy-rgb),.6); } /* v8.15.6: stesso fix anche in chiaro per coerenza — era .4 (~3:1) vs :hover .7, ora uguali, .6 = stesso valore di --text-muted (4.52:1 AA) */
++html[data-theme="light"] .pp-footer a{ color:var(--accent); border-color: rgba(var(--accent-rgb),.3); }
++html[data-theme="light"] .pp-footer a:hover{ color:#00786a; border-color:var(--accent); }
  
  /* ── 23. WIZARD — STEP AREA (Fase 2 Sistema Aree, v8.1.0) ─────── */
 -html[data-theme="light"] .cw-area-btn{ background: rgba(20,30,60,.03); border-color: rgba(20,30,60,.09); }
@@ -4844,7 +4978,7 @@ index ff701f5..00eaa31 100644
  }
  
  /* ═══════════════════════════════════════════════════════════════════
-@@ -4840,8 +3771,8 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -4840,8 +3568,8 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
      cursor:pointer;transition:all var(--transition-fast);
      font-family:inherit;display:flex;align-items:flex-start;gap:12px;
    }
@@ -4855,7 +4989,7 @@ index ff701f5..00eaa31 100644
    .cw-area-btn .cm-check{
      position:absolute;top:10px;right:10px;width:18px;height:18px;border-radius:50%;
      background:var(--accent);color:#000;font-size:11px;font-weight:700;
-@@ -4858,7 +3789,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -4858,7 +3586,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
      padding:2px 8px;border-radius:20px;letter-spacing:.4px;
      font-family:'Share Tech Mono',monospace;text-transform:uppercase;
    }
@@ -4864,7 +4998,7 @@ index ff701f5..00eaa31 100644
    .cw-area-chip.soon{ background:rgba(255,180,0,.08);border:1px solid rgba(255,180,0,.2);color:#ffb400; }
  
    /* ── Step Moduli — stato "in arrivo" (contentReady:false) ──────
-@@ -4909,10 +3840,10 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -4909,10 +3637,10 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
  
  @layer theme {
    /* ── Fix Sistema Aree — tema chiaro ─────────────────────────────── */
@@ -4879,7 +5013,7 @@ index ff701f5..00eaa31 100644
    html[data-theme="light"] .dp-soon-tag{ color:#a66d00; }
  }
  
-@@ -4948,21 +3879,21 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -4948,21 +3676,21 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
       vince senza toccare le regole "consumer" qui sotto). Palette
       allineata agli hex già usati in COLOR_PALETTE (courses.js, color
       picker aula) per coerenza visiva: Teal/Amber/Blue/Violet/Pink. */
@@ -4912,7 +5046,7 @@ index ff701f5..00eaa31 100644
  
    /* Fase 7.7 (v8.9.0) → corretta in v8.9.3: Erasmo intendeva "al passaggio
       del mouse" quando ha detto "on focus" — cioè lo STESSO comportamento
-@@ -4975,7 +3906,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -4975,7 +3703,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
  
    .cs-area-section-icon{
      font-size:20px;line-height:1;flex-shrink:0;
@@ -4921,7 +5055,7 @@ index ff701f5..00eaa31 100644
    }
    .cs-area-section-label{
      font-size:15px;font-weight:800;color:#fff;
-@@ -4991,7 +3922,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -4991,7 +3719,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
    /* linea a sfumatura finale — stesso pattern di .slbl::after */
    .cs-area-section-header::after{
      content:'';flex:1;height:1px;min-width:24px;
@@ -4930,7 +5064,7 @@ index ff701f5..00eaa31 100644
    }
  
    /* Aule legacy/orfane raggruppate sotto una chiave non presente in
-@@ -5005,18 +3936,18 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -5005,18 +3733,18 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
  
  @layer theme {
    /* ── Scegli Aula — raggruppamento per Area, tema chiaro ─────────── */
@@ -4956,7 +5090,7 @@ index ff701f5..00eaa31 100644
  
    /* v8.33.2 — FIX contrasto badge/bordo/glow illeggibili in tema chiaro
       su Cyberbullismo, Intelligenza Artificiale e Malware (Erasmo,
-@@ -5036,7 +3967,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -5036,7 +3764,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
       resta invariata qui sopra, quella sì cambia sfondo con il tema. */
    /* Aule legacy/orfane — fallback neutro (255,255,255) del badge è
       illeggibile su sfondo chiaro: qui ridefinito su un grigio scuro
@@ -4965,7 +5099,7 @@ index ff701f5..00eaa31 100644
    html[data-theme="light"] .cs-area-section:not([data-area-key="ecdl"]):not([data-area-key="cyberbullismo-sicurezza-online"]):not([data-area-key="cybersecurity"]):not([data-area-key="reti-internet"]):not([data-area-key="malware-minacce"]):not([data-area-key="intelligenza-artificiale"]){
      --area-rgb:16,24,42;
    }
-@@ -5080,9 +4011,9 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -5080,9 +3808,9 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
  
  @layer theme {
    /* ── Scheda docente — raggruppamento per Area, tema chiaro ──────── */
@@ -4977,7 +5111,7 @@ index ff701f5..00eaa31 100644
    }
  }
  
-@@ -5120,7 +4051,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -5120,7 +3848,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
      outline:none;transition:border var(--transition-fast),background var(--transition-fast);
    }
    .cs-area-filter-search input:focus{
@@ -4986,7 +5120,7 @@ index ff701f5..00eaa31 100644
    }
    .cs-area-filter-search input::placeholder{ color:rgba(255,255,255,.42); } /* v8.13.1 FIX: era .25 = 2.16:1 */
    .cs-area-filter-clear{
-@@ -5134,12 +4065,12 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -5134,12 +3862,12 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
    .cs-area-filter-chips{ display:flex;flex-wrap:wrap;gap:6px; }
  
    /* Palette per-chip — stessa tripletta di .cs-area-section (Fase 7.1) */
@@ -5005,7 +5139,7 @@ index ff701f5..00eaa31 100644
  
    .cs-area-filter-chip{
      display:inline-flex;align-items:center;gap:6px;
-@@ -5174,14 +4105,14 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -5174,14 +3902,14 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
  
  @layer theme {
    /* ── Filtro Area — tema chiaro (stesse varianti scure di Fase 7.1) ── */

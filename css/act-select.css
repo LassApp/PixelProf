@@ -205,15 +205,15 @@
 
 @layer theme {
   html[data-theme="light"] #setup-overlay-backdrop:has(#setup-panel:not(.hidden)){
-    background: rgba(20,30,60,.35);
+    background: rgba(var(--navy-rgb),.35);
   }
   html[data-theme="light"] #setup-panel{
     background: #ffffff;
-    border-color: rgba(20,30,60,.1);
+    border-color: rgba(var(--navy-rgb),.1);
   }
-  html[data-theme="light"] .setup-overlay-title{ color: #10182a; }
-  html[data-theme="light"] .setup-close-btn{ color: rgba(16,24,42,.4); }
-  html[data-theme="light"] .setup-close-btn:hover{ color: #10182a; }
+  html[data-theme="light"] .setup-overlay-title{ color: var(--navy); }
+  html[data-theme="light"] .setup-close-btn{ color: rgba(var(--navy-rgb),.4); }
+  html[data-theme="light"] .setup-close-btn:hover{ color: var(--navy); }
 
   /* Le 2 card modalità e le 6 card minigioco diventano .dm-card:
      restano volutamente scure in entrambi i temi ("poster look",

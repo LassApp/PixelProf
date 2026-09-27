@@ -263,12 +263,12 @@
     color: #6b5500;
   }
   html[data-theme="light"] .ls-counter{ color: #a37d00; }
-  html[data-theme="light"] .ls-breadcrumb{ color: rgba(16,24,42,.55); }
-  html[data-theme="light"] .ls-progress-track{ background: rgba(20,30,60,.14); }
+  html[data-theme="light"] .ls-breadcrumb{ color: rgba(var(--navy-rgb),.55); }
+  html[data-theme="light"] .ls-progress-track{ background: rgba(var(--navy-rgb),.14); }
   html[data-theme="light"] .ls-nav-btn{
-    background: rgba(20,30,60,.04);
-    border-color: rgba(20,30,60,.14);
-    color: rgba(16,24,42,.6);
+    background: rgba(var(--navy-rgb),.04);
+    border-color: rgba(var(--navy-rgb),.14);
+    color: rgba(var(--navy-rgb),.6);
   }
   html[data-theme="light"] .ls-nav-btn:hover:not(:disabled){
     background: rgba(255,180,0,.08);

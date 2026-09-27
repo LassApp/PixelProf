@@ -1,0 +1,101 @@
+/* ===============================================
+   STORICO / PROGRESSI (card storico)
+   Estratto dal monolite pixelprof.css (redesign palette v9).
+   NOTA: l'override tema chiaro per questa sezione resta per ora
+   nel grande blocco @layer theme condiviso in pixelprof.css
+   (sezione numerata corrispondente — vedi commento lì) e non è
+   stato ancora spostato qui: la separazione dell'override chiaro
+   sezione-per-sezione è un passo successivo, non incluso in questa
+   estrazione.
+=============================================== */
+@layer histcards {
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf — STORICO SESSIONI: card a classi CSS (v1.0.0)
+   Refactor di _histBuildCard() (stats.js): stesso aspetto identico
+   in tema scuro, ma ora la card è costruita con classi invece che
+   con uno style inline monolitico — necessario per essere themeable
+   dal layer "theme" più sotto (dichiarato dopo, vince sempre). Il
+   colore dinamico per modulo (CE/OE/WP) resta inline sull'accent bar
+   perché è genuinamente dato-dipendente, non skin fissa. L'hover era
+   gestito via onmouseenter/onmouseleave inline in JS, ora è puro
+   :hover CSS — stesso identico effetto, meno codice.
+   ═══════════════════════════════════════════════════════════════════ */
+.hist-card{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:12px;
+  padding:14px 16px;
+  margin-bottom:10px;
+  transition:border-color .18s,background .18s;
+  position:relative;overflow:hidden;
+}
+.hist-card:hover{
+  border-color:rgba(var(--accent-rgb),.2);
+  background:rgba(var(--accent-rgb),.03);
+}
+.hist-card-accent{
+  position:absolute;top:0;left:0;right:0;height:2px;
+  opacity:.5;border-radius:12px 12px 0 0;
+}
+.hist-card-header{ display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap; }
+.hist-card-icon{ font-size:20px;line-height:1; }
+.hist-card-title{ font-size:13px;font-weight:700;color:#fff; }
+.hist-card-modtag{
+  font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+  padding:2px 7px;border-radius:20px;font-family:'Share Tech Mono',monospace;
+}
+.hist-card-modetag{
+  font-size:9px;color:var(--text-muted);font-family:'Share Tech Mono',monospace; /* v8.13.1 FIX: era .3 = 2.62:1 */
+  padding:2px 7px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+}
+.hist-card-date{
+  margin-left:auto;font-size:10px;color:var(--text-muted); /* v8.13.1 FIX: era .3 = 2.62:1 */
+  font-family:'Share Tech Mono',monospace;white-space:nowrap;
+}
+.hist-card-body{ padding:0 2px; }
+.hist-card-empty{ font-size:11px;color:rgba(255,255,255,.25); }
+.hist-team-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:4px 0;border-bottom:1px solid rgba(255,255,255,.04);
+}
+.hist-team-row:last-child{ border-bottom:none; }
+.hist-team-left{ display:flex;align-items:center;gap:2px;min-width:0; }
+.hist-team-medal{ font-size:12px;width:18px;flex-shrink:0; }
+.hist-color-dot{ display:inline-block;width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-right:5px; }
+.hist-team-name{
+  font-size:12px;color:rgba(255,255,255,.8);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.hist-team-pts{
+  font-family:'Share Tech Mono',monospace;font-size:11px;font-weight:700;
+  color:var(--accent);flex-shrink:0;margin-left:8px;
+}
+}
+
+@layer theme {
+/* ── 13. PROGRESSI (stats) + STORICO (history) ───────────────── */
+html[data-theme="light"] .stat-c{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
+html[data-theme="light"] .stat-c .sl{ color: rgba(var(--navy-rgb),.45); }
+html[data-theme="light"] .mod-stat-row{ color: rgba(var(--navy-rgb),.6); }
+/* Select filtro Storico: prima il testo era quasi-bianco (illeggibile
+   su sfondo chiaro) E color-scheme:dark forzava il popup nativo delle
+   opzioni a restare scuro sempre — invisibile finché non a fuoco.
+   color-scheme:light qui allinea il rendering nativo del browser al
+   tema corrente, stesso trattamento già riservato a input date/time. */
+html[data-theme="light"] .hist-filter-select{
+  background: rgba(var(--navy-rgb),.035); border-color: rgba(var(--navy-rgb),.14);
+  color:var(--navy); color-scheme: light;
+}
+html[data-theme="light"] .hist-filter-select option{ color:var(--navy); background:#ffffff; }
+html[data-theme="light"] .csv-export-btn-sm{ color: var(--accent); }
+/* v8.13.1: override hist-count-label rimosso (era 2.19:1 anche in chiaro) — ora var(--text-muted) */
+html[data-theme="light"] .hist-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.09); }
+html[data-theme="light"] .hist-card:hover{ border-color: rgba(var(--accent-rgb),.3); background: rgba(var(--accent-rgb),.03); }
+html[data-theme="light"] .hist-card-title{ color:var(--navy); }
+html[data-theme="light"] .hist-card-modetag{ background: rgba(var(--navy-rgb),.04); border-color: rgba(var(--navy-rgb),.1); } /* v8.13.1: color rimosso, ora var(--text-muted) */
+html[data-theme="light"] .hist-card-empty{ color: rgba(var(--navy-rgb),.3); }
+html[data-theme="light"] .hist-team-row{ border-bottom-color: rgba(var(--navy-rgb),.06); }
+html[data-theme="light"] .hist-team-name{ color: rgba(var(--navy-rgb),.75); }
+html[data-theme="light"] .hist-team-pts{ color: var(--accent); }
+
+}

@@ -1,0 +1,161 @@
+/* ===============================================
+   ONBOARDING
+   Estratto dal monolite pixelprof.css (redesign palette v9).
+   NOTA: l'override tema chiaro per questa sezione resta per ora
+   nel grande blocco @layer theme condiviso in pixelprof.css
+   (sezione numerata corrispondente — vedi commento lì) e non è
+   stato ancora spostato qui: la separazione dell'override chiaro
+   sezione-per-sezione è un passo successivo, non incluso in questa
+   estrazione.
+=============================================== */
+@layer onboarding {
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf — ONBOARDING TOUR (js/onboarding.js) — v1.0.0
+   Tour "a spotlight" mostrato al primo accesso di ogni docente:
+   overlay scuro a tutto schermo + riquadro pulsante evidenziato
+   (tecnica box-shadow, nessuna maschera SVG) + tooltip con freccia
+   che punta verso l'elemento. Markup creato interamente da JS
+   (stesso approccio di ppAlert/ppConfirmBox in game-engine-state.js
+   e del modal di anteprima import CSV) — nessun markup statico
+   aggiunto a index.html, solo classi qui.
+   Nuove classi (prefisso onb-), nessuna collisione con layer
+   esistenti — dichiarato per ultimo prima di "theme" per coerenza
+   con la regola "nuova feature → nuovo layer in fondo" (vedi
+   intestazione file), lasciando comunque a "theme" l'ultima parola
+   sui colori in tema chiaro.
+
+   v2.4.1 (bugfix): z-index dell'intero stack (velo/anello/tooltip)
+   alzato da 9750/9760/9770 a 9850/9860/9870. Causa: il passo del tour
+   guidato "Conferma richiesta" (Flip Card, v2.4.0) evidenzia un
+   pulsante DENTRO il dialogo generico ppConfirmBox() — che usa
+   .pp-generic-overlay a z-index:9800 (vedi @layer dialogs). Con lo
+   stack onboarding sotto quota 9800, l'intero tooltip (testo, barra di
+   avanzamento, pulsanti) spariva dietro il dialogo — segnalato da test
+   live come "tour impossibile da completare". 9850/60/70 restano sotto
+   #confetti-canvas (9998) e #overtake-popup (9999): coincidenza
+   estremamente improbabile con un passo del tour, invarianza non
+   toccata di proposito.
+   ═══════════════════════════════════════════════════════════════════ */
+
+.onb-overlay{
+  position:fixed;inset:0;z-index:9850;
+  background:rgba(4,6,15,.5); /* v8.24.0 — richiesta esplicita utente: era
+    .68 + blur 3px, troppo scuro in tema scuro (default), mascherava
+    troppo la schermata sotto il velo fuori dal "buco" ritagliato dal
+    passo corrente. Portato a .5 (stesso livello del tema chiaro sotto,
+    v. html[data-theme="light"] .onb-overlay in @layer theme) e blur
+    ridotto a 2px: resta leggibile ma il resto della UI dietro il velo
+    si intravede meglio. */
+  backdrop-filter:blur(2px);
+  -webkit-backdrop-filter:blur(2px);
+  animation:onbFadeIn .25s ease both;
+  touch-action:pan-y; /* v8.15.6: garantisce lo scroll verticale touch anche
+    toccando il velo (non solo sui "buchi" ritagliati) — possibile causa
+    concorrente del bug "scelta aula, scroll bloccato" su mobile */
+}
+@keyframes onbFadeIn{from{opacity:0}to{opacity:1}}
+
+.onb-ring{
+  position:fixed;
+  border-radius:14px;
+  border:3px solid var(--accent);
+  box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 6px rgba(var(--accent-rgb),.35),0 0 34px rgba(var(--accent-rgb),.45);
+  /* v8.24.1 — richiesta esplicita utente: dopo aver schiarito .onb-overlay
+     (v8.24.0), l'anello (bordo 2px + glow debole, alpha .15/.25) risultava
+     poco visibile: con più UI reale visibile dietro al velo, l'anello
+     aveva meno contrasto per "staccare" dal resto. Bordo portato a 3px,
+     aggiunto un sottile anello scuro (0 0 0 1px nero .55) appena fuori dal
+     bordo per garantire un distacco netto qualunque sia lo sfondo dietro
+     (chiaro, scuro o già tendente al teal come le card), poi il consueto
+     alone ciano ma con alpha quasi raddoppiata (.35/.45 invece di .15/.25). */
+  pointer-events:none;
+  z-index:9860;
+  transition:top .35s cubic-bezier(.22,1,.36,1),left .35s cubic-bezier(.22,1,.36,1),
+             width .35s cubic-bezier(.22,1,.36,1),height .35s cubic-bezier(.22,1,.36,1);
+}
+/* Pulsazione riservata ai passi 'action' (target realmente cliccabile) —
+   i passi 'info' mostrano un anello statico, coerente col fatto che il
+   target è solo evidenziato ma non cliccabile in quel momento. */
+.onb-ring-pulse{
+  animation:onbPulse 1.8s ease-in-out infinite;
+}
+@keyframes onbPulse{
+  0%,100%{box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 6px rgba(var(--accent-rgb),.35),0 0 34px rgba(var(--accent-rgb),.45);}
+  50%{box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 9px rgba(var(--accent-rgb),.45),0 0 46px rgba(var(--accent-rgb),.6);}
+}
+
+.onb-tooltip{
+  position:fixed;z-index:9870;
+  width:290px;max-width:calc(100vw - 24px);
+  background:rgba(10,15,30,.98);
+  border:1px solid rgba(var(--accent-rgb),.25);
+  border-radius:16px;
+  padding:16px 18px;
+  box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 0 1px rgba(var(--accent-rgb),.06);
+  animation:onbTtIn .3s cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes onbTtIn{from{opacity:0;transform:translateY(6px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+/* Freccia — piccolo quadrato ruotato 45°, stesso sfondo/bordo del tooltip.
+   onb-arrow-top: il tooltip è SOTTO il target → freccia in alto, punta in su.
+   onb-arrow-bottom: il tooltip è SOPRA il target → freccia in basso, punta in giù. */
+.onb-tooltip::before{
+  content:'';position:absolute;width:14px;height:14px;
+  background:rgba(10,15,30,.98);
+  border:1px solid rgba(var(--accent-rgb),.25);
+  transform:rotate(45deg);
+}
+.onb-tooltip.onb-arrow-top::before{ top:-8px;left:50%;margin-left:-7px;border-right:none;border-bottom:none; }
+.onb-tooltip.onb-arrow-bottom::before{ bottom:-8px;left:50%;margin-left:-7px;border-left:none;border-top:none; }
+
+.onb-progress{ height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;margin-bottom:12px; }
+.onb-progress-fill{ height:100%;background:linear-gradient(90deg,var(--accent),var(--purple));border-radius:2px;transition:width .3s; }
+
+.onb-step-label{
+  font-family:'Share Tech Mono',monospace;font-size:9px;font-weight:700;
+  color:rgba(var(--accent-rgb),.65);letter-spacing:1.5px;text-transform:uppercase;
+  margin-bottom:6px;
+}
+.onb-title{ font-size:14px;font-weight:700;color:#fff;margin-bottom:5px;line-height:1.3; }
+.onb-body{ font-size:12px;color:rgba(255,255,255,.55);line-height:1.55;margin-bottom:14px; }
+
+.onb-actions{ display:flex;align-items:center;justify-content:space-between;gap:10px; }
+.onb-skip{
+  background:none;border:none;cursor:pointer;padding:2px 0;
+  font-family:inherit;font-size:11px;color:rgba(255,255,255,.6);
+  transition:color .18s;
+} /* v8.15.6 FIX: default era .35 (~2.9:1, quasi illeggibile), :hover era già .6 (leggibile) — richiesta esplicita utente: stesso valore .6 sempre, non solo on-hover */
+.onb-next{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:8px 16px;border-radius:20px;
+  border:1px solid var(--accent);background:rgba(var(--accent-rgb),.12);
+  color:var(--accent);font-size:12px;font-weight:700;font-family:inherit;
+  cursor:pointer;transition:all .18s;white-space:nowrap;
+}
+.onb-next:hover{ background:rgba(var(--accent-rgb),.22);box-shadow:0 0 14px rgba(var(--accent-rgb),.15); }
+.onb-next:focus-visible{ outline:2px solid var(--accent);outline-offset:2px; }
+.onb-next i{ font-size:13px; }
+
+@media(prefers-reduced-motion: reduce){
+  .onb-overlay,.onb-tooltip{ animation:none; }
+  .onb-ring,.onb-ring-pulse{ animation:none;transition:none; }
+}
+}
+
+@layer theme {
+/* ── 22. ONBOARDING TOUR ──────────────────────────────────────── */
+/* --accent/--purple sono già ridefiniti nel §1 (token globali) —
+   ring, barra di avanzamento e pulsante "Avanti" ereditano il
+   colore corretto senza bisogno di override qui. Serve solo
+   ripatinare le superfici a sfondo pieno (overlay, tooltip) e i
+   testi a colore fisso, stesso identico pattern del resto del file. */
+html[data-theme="light"] .onb-overlay{ background: rgba(var(--navy-rgb),.5); }
+html[data-theme="light"] .onb-tooltip{ background:#ffffff; border-color: rgba(var(--accent-rgb),.25); box-shadow: 0 20px 50px rgba(var(--navy-rgb),.22), 0 0 0 1px rgba(var(--accent-rgb),.08); }
+html[data-theme="light"] .onb-tooltip::before{ background:#ffffff; border-color: rgba(var(--accent-rgb),.25); }
+html[data-theme="light"] .onb-title{ color:var(--navy); }
+html[data-theme="light"] .onb-body{ color: rgba(var(--navy-rgb),.55); }
+html[data-theme="light"] .onb-step-label{ color: rgba(var(--accent-rgb),.75); }
+html[data-theme="light"] .onb-progress{ background: rgba(var(--navy-rgb),.08); }
+html[data-theme="light"] .onb-skip{ color: rgba(var(--navy-rgb),.6); } /* v8.15.6: stesso fix anche in chiaro per coerenza — era .4 (~3:1) vs :hover .7, ora uguali, .6 = stesso valore di --text-muted (4.52:1 AA) */
+
+}

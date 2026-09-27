@@ -1,0 +1,165 @@
+/* ===============================================
+   DASHBOARD — panoramica classe/docente
+   Estratto dal monolite pixelprof.css (redesign palette v9).
+   NOTA: l'override tema chiaro per questa sezione resta per ora
+   nel grande blocco @layer theme condiviso in pixelprof.css
+   (sezione numerata corrispondente — vedi commento lì) e non è
+   stato ancora spostato qui: la separazione dell'override chiaro
+   sezione-per-sezione è un passo successivo, non incluso in questa
+   estrazione.
+=============================================== */
+@layer dashboard {
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v6.0.0 — DASHBOARD DIRETTORE + GESTIONE DOCENTI
+   Stile coerente con .course-card/.cat-card già presenti:
+   cinematic lift on hover, bottom accent bar, glow per categoria.
+   ═══════════════════════════════════════════════════════════════════ */
+
+#screen-director-dashboard,
+#screen-teacher-mgmt,
+#screen-teacher-create,
+#screen-teacher-list,
+#screen-teacher-detail{
+  position:fixed;inset:0;z-index:8000;
+  background:var(--surface-0);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 20% 0%,rgba(var(--accent-rgb),.03) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 100%,rgba(var(--purple-rgb),.03) 0%,transparent 60%);
+  overflow-y:auto;display:flex;flex-direction:column;
+}
+#screen-director-dashboard.hidden,
+#screen-teacher-mgmt.hidden,
+#screen-teacher-create.hidden,
+#screen-teacher-list.hidden,
+#screen-director-dashboard.entering,
+#screen-teacher-mgmt.entering,
+#screen-teacher-create.entering,
+#screen-teacher-list.entering,
+#screen-teacher-detail.entering{ animation:screenFadeIn .35s ease both; }
+
+/* ── Griglia 3 card Dashboard Direttore ── */
+.dd-grid{
+  display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px;
+}
+@media(min-width:560px){ .dd-grid{ grid-template-columns:1fr 1fr 1fr; } }
+
+.dd-card{
+  position:relative;border-radius:16px;
+  border:1px solid rgba(255,255,255,.09);
+  background:rgba(255,255,255,.04);
+  cursor:pointer;overflow:hidden;
+  box-shadow:0 4px 20px rgba(0,0,0,.35);
+  transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .2s ease,border-color .2s ease,background .2s ease;
+}
+.dd-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  transform:scaleX(0);transition:transform .22s ease;
+}
+.dd-card:hover{ transform:translateY(-4px) scale(1.02); }
+.dd-card:hover::after{ transform:scaleX(1); }
+.dd-card:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+
+.dd-card-inner{
+  display:flex;flex-direction:column;align-items:flex-start;gap:8px;
+  padding:1.5rem 1.25rem;min-height:140px;position:relative;
+}
+.dd-icon{
+  font-size:32px;line-height:1;
+  filter:drop-shadow(0 0 8px rgba(255,255,255,.15));
+  transition:transform .22s cubic-bezier(.34,1.56,.64,1);
+}
+.dd-card:hover .dd-icon{ transform:scale(1.14); }
+.dd-title{ font-size:16px;font-weight:700;color:#fff;transition:color .18s; }
+.dd-sub{ font-size:11px;color:rgba(255,255,255,.4);line-height:1.5;padding-right:24px; }
+.dd-arrow{
+  position:absolute;bottom:1.25rem;right:1.25rem;font-size:16px;
+  color:rgba(255,255,255,.2);transition:color .18s,transform .18s;
+}
+.dd-card:hover .dd-arrow{ transform:translateX(3px); }
+
+.dd-aule{ border-color:rgba(30,144,255,.15); }
+.dd-aule::after{ background:linear-gradient(90deg,transparent,#1e90ff,transparent); }
+.dd-aule:hover{ border-color:rgba(30,144,255,.5); box-shadow:0 12px 36px rgba(30,144,255,.14); }
+.dd-aule:hover .dd-title,.dd-aule:hover .dd-arrow{ color:#5eb8ff; }
+
+.dd-docenti{ border-color:rgba(var(--purple-rgb),.15); }
+.dd-docenti::after{ background:linear-gradient(90deg,transparent,var(--purple),transparent); }
+.dd-docenti:hover{ border-color:rgba(var(--purple-rgb),.5); box-shadow:0 12px 36px rgba(var(--purple-rgb),.14); }
+.dd-docenti:hover .dd-title,.dd-docenti:hover .dd-arrow{ color:#b4a0ff; }
+
+/* v8.26.0: rimosse le regole .dd-scegli (dead code) — la card "Scegli
+   Aula" è stata sostituita dalla fascia .dd-enter-banner, sempre
+   distinta dalle card di gestione, stile in css/director-profile.css.
+   Nuova card .dd-direttore (accento oro) anch'essa nel file dedicato. */
+
+/* ── Gestione Docenti — badge "Disattivato" (scheda docente) ──
+   v8.14.0: rimossa la famiglia .tm-list/.tm-row/.tm-row-name (vecchio
+   design a lista, mai più referenziata da JS/HTML — vedi
+   UX_AUDIT_grafica_dark_light.md §6). .tm-badge-inactive invece è
+   attivamente usata in js/app.js (tmOpenDetail, tmDetailSaveProfile,
+   tmDetailToggleActive) quindi resta e viene tematizzata sotto. */
+.tm-badge-inactive{
+  font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
+  padding:2px 8px;border-radius:20px;flex-shrink:0;
+  background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.3);color:#ff6b6b;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+}
+
+@layer theme {
+/* ── 14. PANORAMICA CLASSE (dashboard) ───────────────────────── */
+html[data-theme="light"] .chd-kpi-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
+html[data-theme="light"] .chd-kpi-lbl{ color: rgba(var(--navy-rgb),.45); }
+html[data-theme="light"] .chd-section-title{ color:var(--navy); }
+html[data-theme="light"] .chd-weak-card,html[data-theme="light"] .chd-part-table{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
+html[data-theme="light"] .chd-weak-headline{ color: rgba(var(--navy-rgb),.75); }
+html[data-theme="light"] .chd-mod-name{ color: rgba(var(--navy-rgb),.65); }
+/* .chd-mod-pct: colore impostato inline da dashboard.js in base al
+   modulo. Le classi gemelle chd-ink-* (aggiunte lì accanto allo style
+   inline esistente, una per ogni modulo — non solo CE/OE/WP) permettono
+   di sovrascrivere SOLO il testo — stessa identica logica del ruolo in
+   topbar (§3). */
+html[data-theme="light"] .chd-ink-ce{ color:#a66a00 !important; }
+html[data-theme="light"] .chd-ink-oe{ color:#6a4fd6 !important; }
+html[data-theme="light"] .chd-ink-wp{ color:#0d6fbf !important; }
+html[data-theme="light"] .chd-ink-ss{ color:#1f7a42 !important; }
+html[data-theme="light"] .chd-ink-pp{ color:#b8501f !important; }
+html[data-theme="light"] .chd-part-header{ color: rgba(var(--navy-rgb),.3); background: rgba(var(--navy-rgb),.02); }
+html[data-theme="light"] .chd-part-row{ color: rgba(var(--navy-rgb),.75); border-bottom-color: rgba(var(--navy-rgb),.06); }
+html[data-theme="light"] .chd-part-last{ color: rgba(var(--navy-rgb),.4); }
+html[data-theme="light"] .chd-act-name{ color: rgba(var(--navy-rgb),.65); }
+html[data-theme="light"] .chd-act-bar-wrap{ background: rgba(var(--navy-rgb),.07); }
+/* v8.13.1: override chd-footnote rimosso (era 2.03:1 anche in chiaro) — ora var(--text-dim) */
+/* v8.15.1: override chd-empty-title/chd-empty-sub rimossi (erano rgba(var(--navy-rgb),.4)
+   ~2.9:1 e rgba(var(--navy-rgb),.28) ~2.1:1, entrambi sotto AA anche in chiaro) — ora
+   var(--text-muted)/var(--text-dim), già tematizzati, stesso pattern di .chd-wq-tab
+   in v8.14.0. */
+/* v8.14.0: .chd-wq-tab non ha più un override qui — la regola base
+   (@layer classhealth) usa ora var(--text-muted), che cambia già
+   valore da sola in chiaro. Il vecchio override hardcoded rgba(var(--navy-rgb),.45)
+   (2.88:1) ignorava silenziosamente il token, stesso pattern già visto
+   per .logo-sub in Fase 2. */
+html[data-theme="light"] .chd-wq-tab-count{ background: rgba(var(--navy-rgb),.08); color: var(--text-muted); } /* v8.14.0 FIX: nessun override esisteva -> 1.04:1, quasi invisibile */
+html[data-theme="light"] .chd-wq-tab.active .chd-wq-tab-count{ color:inherit; }
+html[data-theme="light"] .chd-wq-tab-problem.active{ color:#c22a3e; } /* v8.14.0 FIX: #ff6b85 su chiaro = 2.50:1 */
+html[data-theme="light"] .chd-wq-tab-recovered.active{ color:#12805a; } /* v8.14.0 FIX: #00ff96 su chiaro = 1.22:1 */
+html[data-theme="light"] .chd-wq-modfilter-btn{ background:#ffffff; border-color: rgba(var(--navy-rgb),.1); color: var(--text-muted); } /* v8.14.0 FIX: era rgba(var(--navy-rgb),.5) = 3.32:1 */
+html[data-theme="light"] .chd-wq-modfilter-btn.active{ color: var(--text-primary); }
+html[data-theme="light"] .chd-wq-modfilter-count{ background: rgba(var(--navy-rgb),.08); }
+html[data-theme="light"] .chd-wq-row{ background:#ffffff; }
+html[data-theme="light"] .chd-wq-question{ color: rgba(var(--navy-rgb),.82); }
+html[data-theme="light"] .chd-wq-answer{ color: rgba(var(--navy-rgb),.45); }
+html[data-theme="light"] .chd-wq-answer strong{ color:#12805a; } /* v8.14.0 FIX: rgba(var(--accent-rgb),.75) su chiaro = 1.27:1 */
+html[data-theme="light"] .chd-wq-errs{ color:#c22a3e; } /* v8.14.0 FIX: rgba(255,80,80,.9) su chiaro = 2.64:1 */
+html[data-theme="light"] .chd-wq-list-recovered .chd-wq-errs{ color:#12805a; } /* v8.14.0 FIX: rgba(0,255,150,.8) su chiaro = 1.31:1 */
+html[data-theme="light"] .chd-wq-reset-btn{ background: rgba(194,42,62,.06); border-color: rgba(194,42,62,.25); color:#c22a3e; } /* v8.14.0 FIX: nessun override -> 1.77:1 */
+html[data-theme="light"] .chd-wq-empty{ border-color: rgba(var(--navy-rgb),.1); }
+html[data-theme="light"] .chd-wq-empty-title{ color: var(--text-muted); } /* v8.14.0 FIX: era rgba(var(--navy-rgb),.5) = 3.32:1 */
+html[data-theme="light"] .chd-wq-empty-sub{ color: var(--text-dim); } /* v8.14.0 FIX: era rgba(var(--navy-rgb),.3) = 1.93:1 */
+html[data-theme="light"] .tm-badge-inactive{ background: rgba(194,42,62,.08); border-color: rgba(194,42,62,.3); color:#c22a3e; } /* v8.14.0 FIX: #ff6b6b su chiaro = 2.55-2.78:1 */
+/* .chd-never-played: banner ambra "non ha ancora mai giocato" —
+   stesso #ffb400 su sfondo chiaro, stessa ink di riserva. */
+html[data-theme="light"] .chd-never-played{ color:#a66d00; }
+
+}

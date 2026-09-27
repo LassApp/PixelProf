@@ -110,14 +110,14 @@
   html[data-theme="light"] .dd-enter-banner{
     background:linear-gradient(120deg, rgba(var(--accent-rgb),.09), rgba(var(--purple-rgb),.05) 60%, rgba(var(--accent-rgb),.09));
     border-color:rgba(0,170,140,.4);
-    box-shadow:0 4px 18px rgba(20,30,60,.08);
+    box-shadow:0 4px 18px rgba(var(--navy-rgb),.08);
   }
-  html[data-theme="light"] .dd-enter-title{ color:#10182a; }
-  html[data-theme="light"] .dd-enter-sub{ color:rgba(16,24,42,.5); }
+  html[data-theme="light"] .dd-enter-title{ color:var(--navy); }
+  html[data-theme="light"] .dd-enter-sub{ color:rgba(var(--navy-rgb),.5); }
   html[data-theme="light"] .dd-enter-eyebrow{ color:rgba(0,140,110,.8); }
 
-  html[data-theme="light"] .dp-feedback{ color:rgba(16,24,42,.45); }
+  html[data-theme="light"] .dp-feedback{ color:rgba(var(--navy-rgb),.45); }
   html[data-theme="light"] .dp-locked-note{
-    background:#ffffff; border-color:rgba(20,30,60,.09); color:rgba(16,24,42,.55);
+    background:#ffffff; border-color:rgba(var(--navy-rgb),.09); color:rgba(var(--navy-rgb),.55);
   }
 }

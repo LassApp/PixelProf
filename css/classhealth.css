@@ -1,0 +1,250 @@
+/* ===============================================
+   PANORAMICA SALUTE CLASSE (classhealth)
+   Estratto dal monolite pixelprof.css (redesign palette v9).
+   NOTA: l'override tema chiaro per questa sezione resta per ora
+   nel grande blocco @layer theme condiviso in pixelprof.css
+   (sezione numerata corrispondente — vedi commento lì) e non è
+   stato ancora spostato qui: la separazione dell'override chiaro
+   sezione-per-sezione è un passo successivo, non incluso in questa
+   estrazione.
+=============================================== */
+@layer classhealth {
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf — PANORAMICA CLASSE (dashboard.js)
+   Dashboard aggregata per il docente: accuratezza, modulo più debole,
+   partecipazione, attività più giocate. Nuove classi (prefisso chd-,
+   storico per "class health" — mantenuto invariato per non rompere
+   selettori esistenti), nessuna collisione con layer esistenti —
+   dichiarato per ultimo per coerenza con la regola "nuova feature →
+   nuovo layer in fondo".
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── KPI hero row ── */
+.chd-kpi-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.1rem;
+}
+.chd-kpi-card{
+  background:var(--surface-1);border:1px solid var(--border-subtle);
+  border-radius:var(--radius-md);padding:14px 10px;text-align:center;
+  transition:all var(--transition-fast);position:relative;overflow:hidden;
+  box-shadow:var(--shadow-card);
+}
+.chd-kpi-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:var(--accent);transform:scaleX(0);transition:transform var(--transition-fast);
+}
+.chd-kpi-card:hover{background:var(--surface-2);border-color:rgba(var(--accent-rgb),.2);}
+.chd-kpi-card:hover::after{transform:scaleX(1);}
+.chd-kpi-icon{font-size:20px;margin-bottom:4px;line-height:1}
+.chd-kpi-val{font-size:21px;font-weight:700;color:var(--accent);font-family:'Share Tech Mono',monospace;line-height:1.15}
+.chd-kpi-lbl{font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;line-height:1.3}
+
+/* ── Sezione generica ── */
+.chd-section{margin-bottom:1.25rem}
+.chd-section-title{
+  font-size:13px;font-weight:700;color:#fff;margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+
+/* ── Card "modulo più debole" ── */
+.chd-weak-card{
+  background:rgba(255,255,255,.03);border:1px solid var(--border-subtle);
+  border-radius:var(--radius-md);padding:14px 16px;
+}
+.chd-weak-headline{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:14px;line-height:1.5;font-weight:500}
+.chd-mod-row{margin-bottom:10px}
+.chd-mod-row:last-child{margin-bottom:0}
+.chd-mod-row-top{display:flex;align-items:center;gap:7px;margin-bottom:5px;font-size:12px}
+.chd-mod-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;box-shadow:0 0 5px currentColor}
+.chd-mod-name{flex:1;color:rgba(255,255,255,.65);font-weight:500}
+.chd-mod-pct{font-family:'Share Tech Mono',monospace;font-weight:700;font-size:12px}
+.chd-mod-nodata{opacity:.4}
+
+/* ── Tabella partecipazione ── */
+.chd-part-table{
+  background:rgba(255,255,255,.03);border:1px solid var(--border-subtle);
+  border-radius:var(--radius-md);overflow:hidden;
+}
+.chd-part-row{
+  display:grid;grid-template-columns:1fr 72px 64px 84px;align-items:center;gap:6px;
+  padding:9px 14px;font-size:12px;color:rgba(255,255,255,.75);
+  border-bottom:1px solid rgba(255,255,255,.05);
+}
+.chd-part-row:last-child{border-bottom:none}
+.chd-part-header{
+  font-size:9px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;
+  letter-spacing:.6px;background:rgba(255,255,255,.02);
+}
+.chd-part-name{display:flex;align-items:center;gap:6px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chd-type-icon{font-size:11px;flex-shrink:0}
+.chd-color-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.chd-part-sessions,.chd-part-avg{text-align:center;font-family:'Share Tech Mono',monospace}
+.chd-part-last{text-align:right;color:rgba(255,255,255,.4);font-size:10px;white-space:nowrap}
+
+/* ── Banner "non ha mai giocato" ── */
+.chd-never-played{
+  display:flex;align-items:flex-start;gap:8px;margin-top:10px;
+  padding:10px 14px;border-radius:10px;
+  background:rgba(255,180,0,.08);border:1px solid rgba(255,180,0,.22);
+  color:#ffb400;font-size:11px;line-height:1.5;
+}
+.chd-never-played i{font-size:14px;flex-shrink:0;margin-top:1px}
+
+/* ── Attività più giocate ── */
+.chd-act-list{display:flex;flex-direction:column;gap:8px}
+.chd-act-row{display:flex;align-items:center;gap:10px;font-size:12px}
+.chd-act-icon{font-size:16px;flex-shrink:0;width:20px;text-align:center}
+.chd-act-name{width:108px;flex-shrink:0;color:rgba(255,255,255,.65);font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.chd-act-bar-wrap{flex:1;height:6px;border-radius:3px;background:rgba(255,255,255,.06);overflow:hidden}
+.chd-act-bar{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--purple))}
+.chd-act-count{width:24px;flex-shrink:0;text-align:right;font-family:'Share Tech Mono',monospace;font-weight:700;color:var(--accent)}
+
+/* ── Empty state ── */
+.chd-empty{text-align:center;padding:3rem 1rem}
+.chd-empty-icon{font-size:40px;margin-bottom:14px;opacity:.4}
+.chd-empty-title{font-size:14px;font-weight:600;color:var(--text-muted);margin-bottom:6px} /* v8.15.1 FIX: era rgba(255,255,255,.35) ~3.1:1 in scuro -> ora var(--text-muted), stesso pattern di .lb-empty .le-title (v8.13.1) */
+.chd-empty-sub{font-size:12px;color:var(--text-dim);max-width:280px;margin:0 auto;line-height:1.5} /* v8.15.1 FIX: era rgba(255,255,255,.2) ~1.8:1, quasi invisibile -> ora var(--text-dim), stesso pattern di .lb-empty .le-sub (v8.13.1) */
+
+/* ── Footnote ── */
+.chd-footnote{
+  display:flex;align-items:flex-start;gap:6px;margin-top:.5rem;
+  font-size:10px;color:var(--text-dim);line-height:1.5; /* v8.13.1 FIX: era .25 = 2.16:1 */
+}
+.chd-footnote i{flex-shrink:0;margin-top:1px;font-size:12px}
+
+/* ── Responsive ── */
+@media(max-width:420px){
+  .chd-kpi-grid{grid-template-columns:1fr;}
+  .chd-part-row{grid-template-columns:1fr 56px 50px;}
+  .chd-part-last{display:none;}
+  .chd-act-name{width:84px;}
+}
+
+/* Tabs Problematiche / Recuperate — stesso pattern di .tm-tabs/.tm-tab
+   (Gestione Docenti), qui con accento cromatico rosso/verde coerente
+   col resto della sezione. */
+.chd-wq-tabs{
+  display:flex;gap:4px;margin-bottom:12px;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.chd-wq-tab{
+  display:flex;align-items:center;gap:6px;
+  padding:8px 14px;border:none;background:none;cursor:pointer;
+  font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.2px;
+  color:var(--text-muted);border-bottom:2px solid transparent; /* v8.14.0 FIX: era rgba(255,255,255,.4) hardcoded = 3.78:1 scuro, 2.88:1 chiaro (duplicato sotto ignorava il token) */
+  transition:color .18s,border-color .18s;
+}
+.chd-wq-tab:hover{color:rgba(255,255,255,.75);}
+.chd-wq-tab-problem.active{color:#ff6b85;border-bottom-color:#ff4d6d;}
+.chd-wq-tab-recovered.active{color:#00ff96;border-bottom-color:#00ff96;}
+.chd-wq-tab-count{
+  font-size:9px;font-weight:700;padding:1px 6px;border-radius:20px;
+  background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);
+  font-family:'Share Tech Mono',monospace;transition:all .18s;
+}
+.chd-wq-tab.active .chd-wq-tab-count{background:rgba(255,255,255,.14);color:inherit;}
+
+/* Sotto-filtro modulo — chip colorate, nomi estesi (un docente non
+   deve sapere a memoria cosa significano le sigle CE/OE/WP). Colore
+   per modulo allineato a _CHD_MOD_COLOR, la stessa palette già usata
+   sopra in questa dashboard per "Modulo più debole". */
+.chd-wq-modfilter{
+  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;
+}
+.chd-wq-modfilter-btn{
+  --chd-wq-mf-color:var(--accent);
+  display:inline-flex;align-items:center;gap:5px;
+  padding:5px 12px;border-radius:20px;
+  border:1px solid var(--border-mid);background:var(--surface-1);
+  color:rgba(255,255,255,.5);font-size:11px;font-weight:600;
+  cursor:pointer;font-family:inherit;transition:all var(--transition-fast);
+}
+.chd-wq-modfilter-btn:hover{border-color:var(--chd-wq-mf-color);color:var(--chd-wq-mf-color);}
+.chd-wq-modfilter-btn.active{
+  background:color-mix(in srgb, var(--chd-wq-mf-color) 14%, transparent);
+  border-color:var(--chd-wq-mf-color);color:var(--chd-wq-mf-color);
+}
+.chd-wq-modfilter-count{
+  font-size:9px;font-weight:700;padding:0 5px;border-radius:20px;
+  background:rgba(255,255,255,.1);font-family:'Share Tech Mono',monospace;
+}
+.chd-wq-modfilter-btn.active .chd-wq-modfilter-count{background:color-mix(in srgb, var(--chd-wq-mf-color) 25%, transparent);}
+
+.chd-wq-list{display:flex;flex-direction:column;gap:8px;}
+.chd-wq-row{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,60,80,.18);
+  border-radius:var(--radius-md);
+  padding:12px 14px;
+  transition:border-color var(--transition-fast),background var(--transition-fast);
+  position:relative;overflow:hidden;
+}
+.chd-wq-row::before{
+  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
+  background:#ff4d6d;border-radius:2px 0 0 2px;
+}
+.chd-wq-row:hover{background:rgba(255,60,80,.04);border-color:rgba(255,60,80,.32);}
+/* Modifier a livello di lista (non più per-riga): tutte le righe della
+   tab "Recuperate" condividono l'accento verde — un'unica sostituzione
+   di outerHTML su #chd-wq-section aggiorna tab+filtro+lista insieme. */
+.chd-wq-list-recovered .chd-wq-row{border-color:rgba(0,255,150,.2);}
+.chd-wq-list-recovered .chd-wq-row::before{background:#00ff96;}
+.chd-wq-list-recovered .chd-wq-row:hover{background:rgba(0,255,150,.03);border-color:rgba(0,255,150,.35);}
+.chd-wq-list-recovered .chd-wq-bar{background:linear-gradient(90deg,#00ff96,#00cfff);}
+.chd-wq-header{
+  display:flex;align-items:center;gap:7px;margin-bottom:6px;flex-wrap:wrap;
+}
+.chd-wq-act-icon{font-size:13px;flex-shrink:0;}
+.chd-wq-errs{
+  margin-left:auto;font-size:10px;font-weight:700;
+  color:rgba(255,80,80,.9);font-family:'Share Tech Mono',monospace; /* v8.14.0 FIX: era .8 = 4.02:1 -> ora 4.82:1 */
+  flex-shrink:0;
+}
+.chd-wq-list-recovered .chd-wq-errs{color:rgba(0,255,150,.8);}
+.chd-wq-question{
+  font-size:13px;font-weight:500;color:rgba(255,255,255,.8);
+  line-height:1.45;margin-bottom:4px;
+}
+.chd-wq-answer{
+  font-size:11px;color:rgba(255,255,255,.4);margin-bottom:8px;
+}
+.chd-wq-answer strong{color:rgba(var(--accent-rgb),.75);}
+.chd-wq-bar-wrap{height:3px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden;}
+.chd-wq-bar{height:100%;border-radius:2px;background:linear-gradient(90deg,#ff4d6d,#ff8080);}
+
+/* Stato vuoto per tab/filtro — stesso linguaggio visivo di .lb-empty/.chd-empty */
+.chd-wq-empty{
+  text-align:center;padding:2rem 1rem;
+  border:1px dashed rgba(255,255,255,.08);border-radius:var(--radius-md);
+}
+.chd-wq-empty-icon{font-size:30px;margin-bottom:10px;opacity:.6;}
+.chd-wq-empty-title{font-size:13px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:4px;}
+.chd-wq-empty-sub{font-size:11px;color:var(--text-dim);line-height:1.5;max-width:320px;margin:0 auto;} /* v8.14.0 FIX: era rgba(255,255,255,.25) = 2.16:1, sfuggito al giro Fase 2 */
+
+.chd-wq-reset-btn{
+  display:inline-flex;align-items:center;gap:4px;
+  padding:4px 10px;border-radius:7px;
+  background:rgba(255,80,80,.06);border:1px solid rgba(255,80,80,.2);
+  color:rgba(255,100,100,.85);font-size:10px;cursor:pointer;font-family:inherit; /* v8.14.0 FIX: era .6 = 3.03:1 -> ora 4.94:1 */
+  transition:all var(--transition-fast);font-weight:600;
+}
+.chd-wq-reset-btn:hover{background:rgba(255,80,80,.14);color:#ff6b6b;border-color:rgba(255,80,80,.4);}
+
+/* Mostra tutte / mostra solo le prime N — sostituisce la vecchia
+   .chd-wq-more statica con un vero toggle cliccabile. */
+.chd-wq-showall-btn{
+  display:flex;align-items:center;justify-content:center;gap:5px;
+  width:100%;margin-top:10px;padding:8px;border-radius:8px;
+  background:var(--surface-1);border:1px solid var(--border-subtle);
+  color:var(--text-muted);font-size:11px;font-weight:600;cursor:pointer; /* v8.13.1 FIX: era hardcoded bianco, illeggibile in chiaro */
+  font-family:inherit;transition:all var(--transition-fast);
+}
+.chd-wq-showall-btn:hover{background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent);}
+.chd-wq-showall-btn i{font-size:13px;}
+
+@media(max-width:420px){
+  .chd-wq-question{font-size:12px;}
+  .chd-wq-errs{margin-left:0;}
+  .chd-wq-modfilter-btn{padding:5px 9px;font-size:10px;}
+}
+}

@@ -1,0 +1,136 @@
+/* ===============================================
+   TRAGUARDI (badge)
+   Estratto dal monolite pixelprof.css (redesign palette v9).
+   NOTA: l'override tema chiaro per questa sezione resta per ora
+   nel grande blocco @layer theme condiviso in pixelprof.css
+   (sezione numerata corrispondente — vedi commento lì) e non è
+   stato ancora spostato qui: la separazione dell'override chiaro
+   sezione-per-sezione è un passo successivo, non incluso in questa
+   estrazione.
+=============================================== */
+@layer achievements {
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v6.5.0 — TRAGUARDI (badge/achievement system)
+   Stile coerente con .tdc-card/.dd-card/.chd-kpi-card già presenti:
+   cinematic lift on hover, bottom accent bar dorata, glow allo
+   sblocco. Nuove classi (prefisso bdg-), nessuna collisione con
+   layer esistenti — dichiarato per ultimo per coerenza con la
+   regola "nuova feature → nuovo layer in fondo" (vedi intestazione
+   file).
+   ═══════════════════════════════════════════════════════════════════ */
+
+.bdg-summary{
+  display:flex;align-items:center;gap:12px;margin-bottom:1.1rem;
+  background:rgba(255,215,0,.04);border:1px solid rgba(255,215,0,.15);
+  border-radius:var(--radius-md);padding:12px 16px;
+}
+.bdg-summary-icon{font-size:24px;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(255,215,0,.3))}
+.bdg-summary-text{flex:1;min-width:0}
+.bdg-summary-count{font-size:14px;font-weight:600;color:#fff;margin-bottom:6px}
+.bdg-summary-count strong{color:#ffd700;font-size:16px}
+.bdg-summary .prog-bar{margin:0}
+
+.bdg-grid{
+  display:grid;grid-template-columns:1fr;gap:10px;
+}
+@media(min-width:520px){ .bdg-grid{grid-template-columns:1fr 1fr;} }
+@media(min-width:820px){ .bdg-grid{grid-template-columns:1fr 1fr 1fr;} }
+
+.bdg-card{
+  position:relative;border-radius:14px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);
+  padding:16px;transition:all var(--transition-fast);
+  box-shadow:0 4px 16px rgba(0,0,0,.3);
+}
+.bdg-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,#ffd700,transparent);
+  transform:scaleX(0);transform-origin:center;
+  transition:transform var(--transition-fast);
+}
+.bdg-card.unlocked{
+  border-color:rgba(255,215,0,.22);
+  box-shadow:0 4px 20px rgba(255,215,0,.08);
+}
+.bdg-card.unlocked::after{transform:scaleX(1);}
+.bdg-card:hover{transform:translateY(-3px);border-color:rgba(255,215,0,.4);box-shadow:0 10px 28px rgba(0,0,0,.4);}
+.bdg-card.locked{opacity:.6}
+.bdg-card.locked:hover{opacity:.85}
+
+.bdg-card-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px}
+.bdg-icon{
+  font-size:24px;line-height:1;flex-shrink:0;
+  width:44px;height:44px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);
+}
+.bdg-card.locked .bdg-icon{
+  filter:grayscale(1) brightness(.7);
+  background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08);
+}
+.bdg-title-wrap{flex:1;min-width:0}
+.bdg-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px}
+.bdg-desc{font-size:11px;color:rgba(255,255,255,.58);line-height:1.45} /* v8.13.1 FIX: era .4, ma .bdg-card.locked{opacity:.6} la dimezza ulteriormente (.4×.6=.24 effettivo) — alzata per restare leggibile anche da bloccata */
+
+.bdg-unlock-date{
+  display:inline-flex;align-items:center;gap:5px;margin-top:10px;
+  font-size:10px;color:#ffd700;font-family:'Share Tech Mono',monospace;
+  letter-spacing:.3px;
+}
+.bdg-unlock-date i{font-size:12px}
+.bdg-progress-wrap{margin-top:10px}
+.bdg-progress-label{
+  font-size:10px;color:rgba(255,255,255,.4);margin-bottom:5px;
+  font-family:'Share Tech Mono',monospace;
+}
+
+/* ── Popup "Nuovo traguardo!" — banner centrato che scende dall'alto,
+   stesso linguaggio visivo di #overtake-popup ma più prominente,
+   con glow dorato. ── */
+#badge-unlock-popup{
+  position:fixed;top:14px;left:50%;
+  transform:translate(-50%,-130%);
+  z-index:9999;
+  display:flex;align-items:center;gap:12px;
+  background:rgba(10,16,28,.97);
+  border:1px solid rgba(255,215,0,.4);
+  border-radius:var(--radius-lg);
+  padding:12px 18px 12px 14px;
+  box-shadow:0 0 30px rgba(255,215,0,.18),0 12px 40px rgba(0,0,0,.6);
+  max-width:min(360px,calc(100vw - 24px));
+  pointer-events:none;
+  transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s ease;
+  opacity:0;
+}
+#badge-unlock-popup.bup-show{
+  transform:translate(-50%,0);
+  opacity:1;
+}
+.bup-icon{font-size:32px;flex-shrink:0;filter:drop-shadow(0 0 10px rgba(255,215,0,.5));}
+.bup-body{min-width:0}
+.bup-eyebrow{font-size:9px;font-weight:700;color:#ffd700;text-transform:uppercase;letter-spacing:1.5px;font-family:'Share Tech Mono',monospace;margin-bottom:2px}
+.bup-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bup-desc{font-size:11px;color:rgba(255,255,255,.5);line-height:1.4}
+
+@media(max-width:420px){
+  .bdg-summary{flex-direction:row;padding:10px 12px}
+  .bup-desc{display:none}
+}
+}
+
+@layer theme {
+/* ── 15. TRAGUARDI (badges) ───────────────────────────────────── */
+html[data-theme="light"] .bdg-summary{ background: rgba(180,130,0,.05); border-color: rgba(180,130,0,.18); }
+html[data-theme="light"] .bdg-summary-count{ color:var(--navy); }
+html[data-theme="light"] .bdg-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
+html[data-theme="light"] .bdg-card.unlocked{ border-color: rgba(180,130,0,.28); }
+html[data-theme="light"] .bdg-title{ color:var(--navy); }
+html[data-theme="light"] .bdg-desc{ color: rgba(var(--navy-rgb),.78); } /* v8.13.1 FIX: era .45, compensata per l'opacità composta con .bdg-card.locked{opacity:.6} */
+html[data-theme="light"] .bdg-icon{ background: rgba(180,130,0,.08); border-color: rgba(180,130,0,.22); }
+html[data-theme="light"] .bdg-unlock-date{ color:#a66d00; }
+html[data-theme="light"] .bdg-progress-label{ color: rgba(var(--navy-rgb),.45); }
+html[data-theme="light"] #badge-unlock-popup{ background:#ffffff; border-color: rgba(180,130,0,.35); box-shadow: 0 8px 32px rgba(var(--navy-rgb),.16); }
+html[data-theme="light"] .bup-title{ color:var(--navy); }
+html[data-theme="light"] .bup-desc{ color: rgba(var(--navy-rgb),.5); }
+
+}

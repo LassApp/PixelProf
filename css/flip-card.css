@@ -276,16 +276,16 @@
      un colore pensato per sfondo bianco a un elemento che sta
      sempre su sfondo scuro. Fix v8.16.1. */
   html[data-theme="light"] .fc-nav-btn{
-    background: rgba(20,30,60,.04);
-    border-color: rgba(20,30,60,.14);
-    color: rgba(16,24,42,.6);
+    background: rgba(var(--navy-rgb),.04);
+    border-color: rgba(var(--navy-rgb),.14);
+    color: rgba(var(--navy-rgb),.6);
   }
   html[data-theme="light"] .fc-nav-btn:hover:not(:disabled){
     background: rgba(var(--purple-rgb),.08);
     border-color: rgba(var(--purple-rgb),.4);
     color: #5b3fd6;
   }
-  html[data-theme="light"] .fc-loading{ color: rgba(16,24,42,.5); }
+  html[data-theme="light"] .fc-loading{ color: rgba(var(--navy-rgb),.5); }
   /* v8.28.0 — .fc-progress-badge/.fc-mark-badge NON hanno override qui
      di proposito: vivono sopra la card, che resta scura "apposta" in
      entrambi i temi (stesso motivo di .fc-hint/.fc-text sopra) — solo
@@ -310,7 +310,7 @@
     border-color: #6a4fd6;
     color: #4a2fb8;
   }
-  html[data-theme="light"] .fc-breadcrumb{ color: rgba(16,24,42,.55); }
+  html[data-theme="light"] .fc-breadcrumb{ color: rgba(var(--navy-rgb),.55); }
 
   /* ================================================================
      STEP DIDATTICA — card "Flip Card" in stile modulo (v8.19.2)

@@ -1,0 +1,191 @@
+/* ===============================================
+   GESTIONE DOCENTI / DASHBOARD DIRETTORE
+   Estratto dal monolite pixelprof.css (redesign palette v9).
+   NOTA: l'override tema chiaro per questa sezione resta per ora
+   nel grande blocco @layer theme condiviso in pixelprof.css
+   (sezione numerata corrispondente — vedi commento lì) e non è
+   stato ancora spostato qui: la separazione dell'override chiaro
+   sezione-per-sezione è un passo successivo, non incluso in questa
+   estrazione.
+=============================================== */
+@layer docenti {
+   PixelProf v6.1.0 — REDESIGN GESTIONE DOCENTI
+   Hub a 2 card (riusa .dd-grid/.dd-card già esistenti) + schermata
+   creazione + lista a card con tab + dettaglio con gestione aule.
+   .tm-list/.tm-row* sopra restano definiti ma non più referenziati
+   (vecchio design) — lasciati per zero rischio, nessun conflitto.
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ── Hub: variante a 2 card di .dd-grid ── */
+.dd-grid-2{ grid-template-columns:1fr; }
+@media(min-width:480px){ .dd-grid-2{ grid-template-columns:1fr 1fr; } }
+.dd-new-teacher{ border-color:rgba(var(--accent-rgb),.15); }
+.dd-new-teacher::after{ background:linear-gradient(90deg,transparent,var(--accent),transparent); }
+.dd-new-teacher:hover{ border-color:rgba(var(--accent-rgb),.5); box-shadow:0 12px 36px rgba(var(--accent-rgb),.14); }
+.dd-new-teacher:hover .dd-title,.dd-new-teacher:hover .dd-arrow{ color:var(--accent); }
+
+/* v6.1.1 FIX: .dd-teacher-list non aveva alcuna regola di accento —
+   il bordo/bottom-bar restava trasparente (nessun background sul
+   ::after ereditato da .dd-card), quindi la card "Docenti" non si
+   illuminava al hover come "Nuovo Docente". Stessa palette violetta
+   già usata per .dd-docenti nella Dashboard Direttore. */
+.dd-teacher-list{ border-color:rgba(var(--purple-rgb),.15); }
+.dd-teacher-list::after{ background:linear-gradient(90deg,transparent,var(--purple),transparent); }
+.dd-teacher-list:hover{ border-color:rgba(var(--purple-rgb),.5); box-shadow:0 12px 36px rgba(var(--purple-rgb),.14); }
+.dd-teacher-list:hover .dd-title,.dd-teacher-list:hover .dd-arrow{ color:#b4a0ff; }
+
+/* ── Toggle Genere (creazione + dettaglio) ── */
+.gender-toggle{ display:flex; gap:8px; }
+.gender-btn{
+  flex:1;padding:10px;border-radius:var(--radius-sm);border:1px solid var(--border-mid);
+  background:var(--surface-1);cursor:pointer;font-size:13px;font-weight:600;
+  color:rgba(255,255,255,.55);display:flex;align-items:center;justify-content:center;gap:6px;
+  font-family:inherit;transition:all var(--transition-fast);
+}
+.gender-btn i{ font-size:16px; }
+.gender-btn:hover{ border-color:var(--accent-border); color:var(--accent); background:var(--accent-dim); }
+.gender-btn.active{ border:1.5px solid var(--accent); background:rgba(var(--accent-rgb),.14); color:var(--accent); font-weight:700; }
+
+/* ── Tabs Attivi / Disattivati (lista docenti) ── */
+.tm-tabs{ display:flex; gap:4px; margin-bottom:18px; border-bottom:1px solid rgba(255,255,255,.08); }
+.tm-tab{
+  padding:9px 16px;border:none;background:none;cursor:pointer;
+  font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.3px;
+  color:rgba(255,255,255,.4);border-bottom:2px solid transparent;
+  transition:color .18s,border-color .18s;
+}
+.tm-tab:hover{ color:rgba(255,255,255,.75); }
+.tm-tab.active{ color:var(--accent); border-bottom-color:var(--accent); }
+
+/* ── Griglia card docente (lista) ── */
+.tdc-grid{ display:grid;grid-template-columns:1fr;gap:10px; }
+@media(min-width:600px){ .tdc-grid{ grid-template-columns:1fr 1fr; } }
+
+.tdc-card{
+  position:relative;border-radius:14px;overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);
+  padding:14px 16px;cursor:pointer;
+  transition:transform .2s cubic-bezier(.34,1.56,.64,1),border-color .2s,background .2s,box-shadow .2s;
+  box-shadow:0 4px 16px rgba(0,0,0,.3);
+}
+/* v6.1.1 FIX: mancava la bottom accent bar presente su tutte le altre
+   card dell'app (.dd-card, .course-card, .cat-card) — la card docente
+   non si "illuminava" al hover come le altre. Colore semantico: verde
+   per i docenti attivi, rosso per i disattivati (stessa palette di
+   .tdc-status-dot). */
+.tdc-card::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:#00ff96;transform:scaleX(0);transform-origin:left;
+  transition:transform .2s cubic-bezier(.34,1.56,.64,1);
+}
+.tdc-card:hover::after{ transform:scaleX(1); }
+.tdc-card.tdc-inactive::after{ background:#ff4d6d; }
+.tdc-card:hover{ transform:translateY(-3px); border-color:rgba(var(--accent-rgb),.3); background:rgba(var(--accent-rgb),.04); box-shadow:0 10px 28px rgba(0,0,0,.4); }
+.tdc-card:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+.tdc-card.tdc-inactive{ opacity:.55; }
+.tdc-card.tdc-inactive:hover{ opacity:.75; }
+/* v8.15.2: .tdc-card.tdc-inactive{opacity:.55} moltiplica il colore di TUTTI i
+   figli (stesso pattern già risolto per .bdg-card.locked/.bdg-desc in v8.13.1).
+   var(--text-muted) 4.51:1 × .55 = ~2.48:1, var(--text-dim) 3.04:1 × .55 = ~1.67:1
+   — entrambi sotto ogni soglia AA. Override scoped solo al contesto disattivato,
+   per non alterare (né oscurare eccessivamente) lo stato attivo. */
+.tdc-card.tdc-inactive .tdc-email,
+.tdc-card.tdc-inactive .tdc-aula-chip,
+.tdc-card.tdc-inactive .tdc-aule-empty{ color: rgba(255,255,255,.72); } /* effettivo ×.55 ≈ .396, sopra soglia --text-dim (.34) */
+
+.tdc-header{ display:flex;align-items:center;gap:10px;margin-bottom:10px; }
+.tdc-gender-icon{
+  width:32px;height:32px;border-radius:50%;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;font-size:15px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.45);
+}
+.tdc-gender-icon.g-uomo{ background:rgba(30,144,255,.12);border-color:rgba(30,144,255,.3);color:#5eb0ff; }
+.tdc-gender-icon.g-donna{ background:rgba(255,77,109,.12);border-color:rgba(255,77,109,.3);color:#ff8fa3; }
+.tdc-name{ flex:1;font-size:14px;font-weight:700;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+.tdc-status-dot{ width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 6px currentColor; }
+.tdc-status-dot.active{ background:#00ff96;color:#00ff96; }
+.tdc-status-dot.inactive{ background:#ff4d6d;color:#ff4d6d; }
+
+.tdc-email{ font-size:11px;color:var(--text-muted);margin-bottom:10px;font-family:'Share Tech Mono',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; } /* v8.15.2 FIX: era rgba(255,255,255,.4) ~3.78:1 in scuro -> ora var(--text-muted), AA piena e già tematizzato */
+
+.tdc-aule-row{ border-top:1px solid rgba(255,255,255,.06);padding-top:9px;display:flex;flex-wrap:wrap;line-height:1.6; }
+.tdc-aula-chip{ font-size:10px;font-weight:500;color:var(--text-muted);font-family:'Share Tech Mono',monospace;white-space:nowrap; } /* v8.15.2 FIX: era rgba(255,255,255,.45) */
+.tdc-aula-chip + .tdc-aula-chip::before{ content:' | ';color:rgba(255,255,255,.18);white-space:pre; } /* separatore puramente decorativo, non testo informativo — non soggetto a soglie AA */
+.tdc-aule-empty{ font-size:10px;color:var(--text-dim);font-style:italic; } /* v8.15.2 FIX: era rgba(255,255,255,.2) ~1.5:1 */
+
+/* ── Toggle aule (scheda dettaglio docente) ── */
+.tdc-aule-toggle-grid{ display:flex;flex-wrap:wrap;gap:7px; }
+.tdc-aula-toggle-btn{
+  padding:6px 14px;border-radius:20px;border:1px solid var(--border-mid);
+  background:var(--surface-1);font-size:12px;cursor:pointer;
+  color:rgba(255,255,255,.5);font-family:inherit;font-weight:600;
+  transition:all var(--transition-fast);display:inline-flex;align-items:center;gap:5px;
+}
+.tdc-aula-toggle-btn:hover{ border-color:rgba(var(--accent-rgb),.3);color:rgba(255,255,255,.8); }
+.tdc-aula-toggle-btn.active{ background:rgba(var(--accent-rgb),.12);border-color:var(--accent);color:var(--accent); }
+.tdc-aula-toggle-btn:disabled{ opacity:.4;cursor:default; }
+
+/* .tmd-email-hint — riga "Email attuale: ..." nella scheda docente
+   (screen-teacher-detail). v6.6: estratta dallo stile inline in
+   index.html per poterla tematizzare correttamente. */
+.tmd-email-hint{ font-size:11px;color:rgba(255,255,255,.35);font-family:'Share Tech Mono',monospace; }
+
+/* .tmd-close-btn — "X" rossa di chiusura rapida per la scheda docente,
+   accanto alla sezione "Dati personali" (v6.6: nuovo elemento). */
+.tmd-close-btn{
+  flex-shrink:0;width:26px;height:26px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,60,80,.1);border:1px solid rgba(255,60,80,.35);
+  color:#ff4d6d;cursor:pointer;font-size:14px;line-height:1;
+  transition:background .15s,border-color .15s,color .15s;
+  font-family:inherit;
+}
+.tmd-close-btn:hover{ background:rgba(255,60,80,.22);border-color:rgba(255,60,80,.6);color:#ff6b6b; }
+
+/* .dp-hint-text — didascalie informative statiche/dinamiche nel
+   pannello "⚙️ Gestione aula" e nella scheda docente (v6.6: sostituisce
+   diversi style inline con colore fisso rgba(255,255,255,.3),
+   illeggibili quando il contenitore diventa chiaro nel tema light). */
+.dp-hint-text{ font-size:11px;color:rgba(255,255,255,.3); }
+}
+
+@layer theme {
+/* ── 18. GESTIONE DOCENTI / DASHBOARD DIRETTORE ──────────────── */
+html[data-theme="light"] #screen-director-dashboard,html[data-theme="light"] #screen-teacher-mgmt,
+html[data-theme="light"] #screen-teacher-create,html[data-theme="light"] #screen-teacher-list,
+html[data-theme="light"] #screen-teacher-detail{ background: var(--surface-0); }
+html[data-theme="light"] .dd-card,html[data-theme="light"] .tdc-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
+html[data-theme="light"] .dd-title,html[data-theme="light"] .tdc-name{ color:var(--navy); }
+html[data-theme="light"] .dd-sub{ color: rgba(var(--navy-rgb),.42); }
+/* v8.15.2: .tdc-email non ha più bisogno di override qui — ora usa
+   var(--text-muted), già tematizzato (era condiviso con .dd-sub, separato
+   per non alterare .dd-sub che non ha alcun problema di leggibilità). */
+html[data-theme="light"] .tm-tab{ color: rgba(var(--navy-rgb),.42); }
+html[data-theme="light"] .tm-tab:hover{ color: rgba(var(--navy-rgb),.75); }
+html[data-theme="light"] .tm-tabs{ border-bottom-color: rgba(var(--navy-rgb),.1); }
+/* .dd-arrow: freccia "›" sulle card Dashboard Direttore/Gestione
+   Docenti — rgba(255,255,255,.2) è quasi invisibile su sfondo bianco. */
+html[data-theme="light"] .dd-arrow{ color: rgba(var(--navy-rgb),.25); }
+/* .tdc-aula-toggle-btn — BUG ESPLICITO SEGNALATO: le aule NON
+   selezionate nella scheda docente usavano testo bianco translucido,
+   praticamente invisibile sul fondo ormai chiaro di .tdc-card /
+   .setup-card. Lo stato .active usa già var(--accent) e si adatta da
+   solo, qui serviva solo il default + hover. */
+html[data-theme="light"] .tdc-aula-toggle-btn{ color: rgba(var(--navy-rgb),.55); }
+html[data-theme="light"] .tdc-aula-toggle-btn:hover{ color: rgba(var(--navy-rgb),.85); }
+/* Chip "aule assegnate" nella card della lista docenti (screen-teacher-list) */
+/* v8.15.2: .tdc-aula-chip/.tdc-aule-empty non hanno più bisogno di override
+   qui — ora usano var(--text-muted)/var(--text-dim), già tematizzati. */
+html[data-theme="light"] .tdc-aula-chip + .tdc-aula-chip::before{ color: rgba(var(--navy-rgb),.22); }
+/* v8.15.2: compensazione opacità composta per .tdc-card.tdc-inactive{opacity:.55}
+   in tema chiaro — stesso problema e stessa soluzione scoped del tema scuro
+   (vedi @layer classhealth ~riga 4066). */
+html[data-theme="light"] .tdc-card.tdc-inactive .tdc-email,
+html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aula-chip,
+html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aule-empty{ color: rgba(var(--navy-rgb),.85); } /* effettivo ×.55 ≈ .4675, ≈ soglia --text-dim (.47) */
+/* Icona genere di default (nessun genere impostato, fallback ti-user) */
+html[data-theme="light"] .tdc-gender-icon{ background: rgba(var(--navy-rgb),.05); border-color: rgba(var(--navy-rgb),.12); color: rgba(var(--navy-rgb),.4); }
+html[data-theme="light"] .tmd-email-hint{ color: rgba(var(--navy-rgb),.4); }
+html[data-theme="light"] .dp-hint-text{ color: rgba(var(--navy-rgb),.35); }
+
+}

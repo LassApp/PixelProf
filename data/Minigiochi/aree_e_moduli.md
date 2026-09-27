@@ -10,7 +10,7 @@ Questo file è l'**unica fonte ufficiale e vincolante** per identificare Aree, M
 
 Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prima di consultare il dettaglio.
 
-- **Area ECDL** → `attiva` — Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation e IT Security: JSON realizzati e caricati. Online Collaboration: sotto-area attiva, JSON da realizzare.
+- **Area ECDL** → `attiva` — Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation, IT Security e Online Collaboration: JSON realizzati e caricati.
 - **Area Cyberbullismo e Sicurezza Online** → `attiva` — JSON realizzati e caricati.
 - **Area Cybersecurity — Non solo antivirus e password** → `attiva` — JSON realizzati e caricati.
 - **Area Reti e Internet** → `attiva` — JSON realizzati e caricati.
@@ -24,7 +24,7 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 ### 🖥️ Area ECDL
 **Descrizione:** Acquisire le competenze fondamentali per utilizzare computer, applicazioni e servizi digitali.
 **Stato:** attiva
-**Nota:** Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation e IT Security: JSON realizzati e caricati. Online Collaboration: sotto-area attiva, JSON da realizzare.
+**Nota:** Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation, IT Security e Online Collaboration: JSON realizzati e caricati.
 
 ### 🛡️ Area Cyberbullismo e Sicurezza Online
 **Descrizione:** Riconoscere i rischi nelle relazioni digitali e imparare a proteggersi e agire responsabilmente online.
@@ -447,7 +447,7 @@ data/
 
 #### Online Collaboration
 
-> Sotto-area attiva. JSON da realizzare.
+> Sotto-area attiva. JSON realizzati e caricati.
 
 ```text
 data/
@@ -502,45 +502,45 @@ data/
   - Chiave: `collaborazione-online`
   - Stato: `attivo`
   - Path base: `data/Minigiochi/ECDL/Online_Collaboration/modulo1/`
-  - File (da realizzare): `abbina_collaborazione-online.json`, `completa_la_frase_collaborazione-online.json`, `quiz_collaborazione-online.json`, `speedquiz_collaborazione-online.json`, `vero_o_falso_collaborazione-online.json`
+  - File: `abbina_collaborazione-online.json`, `completa_la_frase_collaborazione-online.json`, `quiz_collaborazione-online.json`, `speedquiz_collaborazione-online.json`, `vero_o_falso_collaborazione-online.json`
 
 - **Modulo 2 — Cloud e preparazione**
   - Chiave: `cloud-e-preparazione`
   - Stato: `attivo`
   - Path base: `data/Minigiochi/ECDL/Online_Collaboration/modulo2/`
-  - File (da realizzare): `abbina_cloud-e-preparazione.json`, `completa_la_frase_cloud-e-preparazione.json`, `quiz_cloud-e-preparazione.json`, `speedquiz_cloud-e-preparazione.json`, `vero_o_falso_cloud-e-preparazione.json`
+  - File: `abbina_cloud-e-preparazione.json`, `completa_la_frase_cloud-e-preparazione.json`, `quiz_cloud-e-preparazione.json`, `speedquiz_cloud-e-preparazione.json`, `vero_o_falso_cloud-e-preparazione.json`
 
 - **Modulo 3 — Storage e produttività online**
   - Chiave: `storage-e-produttivita-online`
   - Stato: `attivo`
   - Path base: `data/Minigiochi/ECDL/Online_Collaboration/modulo3/`
-  - File (da realizzare): `abbina_storage-e-produttivita-online.json`, `completa_la_frase_storage-e-produttivita-online.json`, `quiz_storage-e-produttivita-online.json`, `speedquiz_storage-e-produttivita-online.json`, `vero_o_falso_storage-e-produttivita-online.json`
+  - File: `abbina_storage-e-produttivita-online.json`, `completa_la_frase_storage-e-produttivita-online.json`, `quiz_storage-e-produttivita-online.json`, `speedquiz_storage-e-produttivita-online.json`, `vero_o_falso_storage-e-produttivita-online.json`
 
 - **Modulo 4 — Calendari e riunioni online**
   - Chiave: `calendari-e-riunioni-online`
   - Stato: `attivo`
   - Path base: `data/Minigiochi/ECDL/Online_Collaboration/modulo4/`
-  - File (da realizzare): `abbina_calendari-e-riunioni-online.json`, `completa_la_frase_calendari-e-riunioni-online.json`, `quiz_calendari-e-riunioni-online.json`, `speedquiz_calendari-e-riunioni-online.json`, `vero_o_falso_calendari-e-riunioni-online.json`
+  - File: `abbina_calendari-e-riunioni-online.json`, `completa_la_frase_calendari-e-riunioni-online.json`, `quiz_calendari-e-riunioni-online.json`, `speedquiz_calendari-e-riunioni-online.json`, `vero_o_falso_calendari-e-riunioni-online.json`
 
 - **Modulo 5 — Social e apprendimento online**
   - Chiave: `social-e-apprendimento-online`
   - Stato: `attivo`
   - Path base: `data/Minigiochi/ECDL/Online_Collaboration/modulo5/`
-  - File (da realizzare): `abbina_social-e-apprendimento-online.json`, `completa_la_frase_social-e-apprendimento-online.json`, `quiz_social-e-apprendimento-online.json`, `speedquiz_social-e-apprendimento-online.json`, `vero_o_falso_social-e-apprendimento-online.json`
+  - File: `abbina_social-e-apprendimento-online.json`, `completa_la_frase_social-e-apprendimento-online.json`, `quiz_social-e-apprendimento-online.json`, `speedquiz_social-e-apprendimento-online.json`, `vero_o_falso_social-e-apprendimento-online.json`
 
 - **Modulo 6 — Dispositivi mobili e connessioni**
   - Chiave: `dispositivi-mobili-e-connessioni`
   - Stato: `attivo`
   - Path base: `data/Minigiochi/ECDL/Online_Collaboration/modulo6/`
-  - File (da realizzare): `abbina_dispositivi-mobili-e-connessioni.json`, `completa_la_frase_dispositivi-mobili-e-connessioni.json`, `quiz_dispositivi-mobili-e-connessioni.json`, `speedquiz_dispositivi-mobili-e-connessioni.json`, `vero_o_falso_dispositivi-mobili-e-connessioni.json`
+  - File: `abbina_dispositivi-mobili-e-connessioni.json`, `completa_la_frase_dispositivi-mobili-e-connessioni.json`, `quiz_dispositivi-mobili-e-connessioni.json`, `speedquiz_dispositivi-mobili-e-connessioni.json`, `vero_o_falso_dispositivi-mobili-e-connessioni.json`
 
 - **Modulo 7 — App e sincronizzazione**
   - Chiave: `app-e-sincronizzazione`
   - Stato: `attivo`
   - Path base: `data/Minigiochi/ECDL/Online_Collaboration/modulo7/`
-  - File (da realizzare): `abbina_app-e-sincronizzazione.json`, `completa_la_frase_app-e-sincronizzazione.json`, `quiz_app-e-sincronizzazione.json`, `speedquiz_app-e-sincronizzazione.json`, `vero_o_falso_app-e-sincronizzazione.json`
+  - File: `abbina_app-e-sincronizzazione.json`, `completa_la_frase_app-e-sincronizzazione.json`, `quiz_app-e-sincronizzazione.json`, `speedquiz_app-e-sincronizzazione.json`, `vero_o_falso_app-e-sincronizzazione.json`
 
-> Le sotto-aree ECDL attualmente definite sono sette: **Computer Essentials**, **Online Essentials**, **Word Processing**, **Spreadsheet**, **Presentation**, **IT Security** e **Online Collaboration**. Le prime sei hanno JSON realizzati e caricati; **Online Collaboration** è attiva ma i relativi JSON sono ancora da realizzare.
+> Le sotto-aree ECDL attualmente definite sono sette: **Computer Essentials**, **Online Essentials**, **Word Processing**, **Spreadsheet**, **Presentation**, **IT Security** e **Online Collaboration**. Tutte e sette hanno JSON realizzati e caricati.
 
 ---
 
@@ -1042,7 +1042,7 @@ data/
 
 ## 4. Riepilogo
 
-> **Aggiornamento:** tutti i JSON delle sotto-aree ECDL storiche, della nuova sotto-area **IT Security** e delle altre 5 Aree sono stati realizzati e caricati. La sotto-area ECDL **Online Collaboration** è attiva ma i relativi JSON sono tutti ancora da realizzare. Tutte le **6 aree** sono attive.
+> **Aggiornamento:** tutti i JSON di tutte le sotto-aree ECDL (incluse **IT Security** e **Online Collaboration**) e delle altre 5 Aree sono stati realizzati e caricati. Tutte le **6 aree** sono attive.
 
 | Area / Sotto-area | Moduli | File attesi | Realizzati | Da realizzare | Stato area |
 |---|---|---|---|---|---|
@@ -1052,17 +1052,17 @@ data/
 | ECDL — Spreadsheet | 6 | 30 | 30 | 0 | attivo |
 | ECDL — Presentation | 3 | 15 | 15 | 0 | attivo |
 | ECDL — IT Security | 5 | 25 | 25 | 0 | attivo |
-| ECDL — Online Collaboration | 7 | 35 | 0 | 35 | attivo (JSON da realizzare) |
+| ECDL — Online Collaboration | 7 | 35 | 35 | 0 | attivo |
 | Cyberbullismo e Sicurezza Online | 6 | 30 | 30 | 0 | attiva |
 | Cybersecurity — Non solo antivirus e password | 8 | 40 | 40 | 0 | attiva |
 | Reti e Internet | 8 | 40 | 40 | 0 | attiva |
 | Malware e Minacce Informatiche | 1 | 5 | 5 | 0 | attiva |
 | Intelligenza Artificiale | 13 | 65 | 65 | 0 | attiva |
-| **Totale** | **70** | **350** | **315** | **35** | — |
+| **Totale** | **70** | **350** | **350** | **0** | — |
 
 - **Aree:** 6
 - **Sotto-aree ECDL:** 7 (Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation, IT Security, Online Collaboration)
 - **Moduli totali mappati:** 70
-- **File JSON realizzati:** 315
-- **File JSON da realizzare:** 35 (Area ECDL — Online Collaboration)
+- **File JSON realizzati:** 350
+- **File JSON da realizzare:** 0
 - **File JSON totali attesi:** 350

@@ -1,0 +1,54 @@
+/* ===============================================
+   TOGGLE AUDIO/TEMA
+   Estratto dal monolite pixelprof.css (redesign palette v9).
+   NOTA: l'override tema chiaro per questa sezione resta per ora
+   nel grande blocco @layer theme condiviso in pixelprof.css
+   (sezione numerata corrispondente — vedi commento lì) e non è
+   stato ancora spostato qui: la separazione dell'override chiaro
+   sezione-per-sezione è un passo successivo, non incluso in questa
+   estrazione.
+=============================================== */
+@layer audio {
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v6.5.0 — FEEDBACK SONORO + TOGGLE AUDIO
+   Pulsante toggle (icona altoparlante) — visibile SOLO nella
+   schermata "Seleziona aula" (screen-courses) e nello step
+   "Seleziona modulo" (step-mod) della home, come richiesto: lo
+   stato impostato da qui vale per l'intera webapp (gestito da
+   js/audio-manager.js, persistito in localStorage).
+   ═══════════════════════════════════════════════════════════════════ */
+
+.audio-toggle-btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:30px;height:30px;border-radius:50%;flex-shrink:0;
+  border:1px solid rgba(255,255,255,.14);
+  background:rgba(255,255,255,.05);
+  color:rgba(255,255,255,.55);
+  cursor:pointer;font-family:inherit;font-size:14px;
+  transition:all var(--transition-fast);
+}
+.audio-toggle-btn:hover{
+  border-color:rgba(var(--accent-rgb),.35);
+  background:rgba(var(--accent-rgb),.08);
+  color:var(--accent);
+}
+.audio-toggle-btn .audio-toggle-icon{font-size:15px;line-height:1}
+.audio-toggle-btn.muted{
+  color:rgba(255,120,120,.65);
+  border-color:rgba(255,80,80,.22);
+  background:rgba(255,80,80,.05);
+}
+.audio-toggle-btn.muted:hover{
+  border-color:rgba(255,80,80,.4);
+  background:rgba(255,80,80,.1);
+  color:#ff6b6b;
+}
+}
+
+@layer theme {
+/* ── 20. TOGGLE AUDIO/TEMA ────────────────────────────────────── */
+html[data-theme="light"] .audio-toggle-btn{ border-color: rgba(var(--navy-rgb),.14); background: rgba(var(--navy-rgb),.04); color: rgba(var(--navy-rgb),.55); }
+html[data-theme="light"] .audio-toggle-btn:hover{ border-color: rgba(var(--accent-rgb),.35); background: rgba(var(--accent-rgb),.08); color: var(--accent); }
+html[data-theme="light"] .theme-toggle-btn.is-light{ color:#a66d00; border-color: rgba(180,130,0,.3); background: rgba(255,180,0,.08); }
+
+}

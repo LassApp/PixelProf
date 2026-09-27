@@ -98,10 +98,10 @@
    regole che usano già var(--accent) si adattano da sole, nessun
    override necessario lì (stessa tecnica di topbar-profile.css). ── */
 @layer theme {
-  html[data-theme="light"] .pp-tour-item{ color:rgba(16,24,42,.65); }
-  html[data-theme="light"] .pp-tour-item:hover{ background:rgba(20,30,60,.06); color:#10182a; }
-  html[data-theme="light"] .pp-tour-icon{ color:rgba(16,24,42,.35); }
-  html[data-theme="light"] .pp-tour-count{ color:rgba(16,24,42,.35); }
-  html[data-theme="light"] .pp-tour-sep{ background:rgba(20,30,60,.1); }
-  html[data-theme="light"] .pp-tour-primary{ color:#10182a; }
+  html[data-theme="light"] .pp-tour-item{ color:rgba(var(--navy-rgb),.65); }
+  html[data-theme="light"] .pp-tour-item:hover{ background:rgba(var(--navy-rgb),.06); color:var(--navy); }
+  html[data-theme="light"] .pp-tour-icon{ color:rgba(var(--navy-rgb),.35); }
+  html[data-theme="light"] .pp-tour-count{ color:rgba(var(--navy-rgb),.35); }
+  html[data-theme="light"] .pp-tour-sep{ background:rgba(var(--navy-rgb),.1); }
+  html[data-theme="light"] .pp-tour-primary{ color:var(--navy); }
 }

@@ -210,7 +210,7 @@
    #mod-area-catalog[data-area-key] (vedi @layer areas in pixelprof.css).
    ───────────────────────────────────────────────────────────────── */
 .mod-card.generic-card {
-  background: linear-gradient(145deg,#0c1420 0%,#131f36 55%,#0c1420 100%);
+  background: linear-gradient(145deg,var(--navy) 0%,#1F2E3A 55%,var(--navy) 100%);
   border-color: rgba(var(--area-rgb,110,122,80),.28);
   box-shadow: 0 4px 24px rgba(var(--area-rgb,110,122,80),.08);
 }

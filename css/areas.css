@@ -1,0 +1,379 @@
+/* ===============================================
+   SISTEMA AREE — catalogo/sezioni per area, filtro area,
+   raggruppamento per area (scheda docente), step "Area" nel wizard
+   creazione aula, stato "in arrivo" per moduli senza contenuti pronti.
+   Estratto dal monolite pixelprof.css (redesign palette v9).
+   Contiene sia gli scuri sia gli override chiari (già presenti
+   intercalati nel monolite originale, mantenuti nello stesso ordine).
+   I colori --area-rgb qui dentro sono funzionali (identità delle 5+1
+   aree di contenuto, vedi js/game-constants.js AREA_COLOR_HEX) e
+   NON vanno confusi con i token di marchio in css/tokens.css.
+=============================================== */
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v8.1.0 — WIZARD: STEP AREA (Sistema Aree, Fase 2)
+   ROADMAP_AREE.md Fase 2 — nuovo step "Area" nel wizard creazione
+   aula (tra Nome e Moduli) + stato "in arrivo" per i moduli con
+   contentReady:false nello step Moduli (ora dinamico su AREAS).
+   Layer dedicato, aggiunto in coda all'elenco (vedi intestazione file,
+   sez. "REGOLE") — vince su @layer base senza toccarne le regole
+   esistenti (.cw-mod-btn resta invariata, qui solo integrazioni).
+   ═══════════════════════════════════════════════════════════════════ */
+@layer areas {
+
+  /* ── Step Area — card selezione, stile affine a .cw-mod-btn ───── */
+  .cw-area-grid{
+    display:flex;flex-direction:column;gap:8px;
+    margin-bottom:16px;max-height:360px;overflow-y:auto;padding-right:2px;
+  }
+  .cw-area-btn{
+    position:relative;width:100%;text-align:left;
+    border-radius:var(--radius-md);border:1px solid var(--border-mid);
+    background:var(--surface-1);padding:.875rem 1rem;
+    cursor:pointer;transition:all var(--transition-fast);
+    font-family:inherit;display:flex;align-items:flex-start;gap:12px;
+  }
+  .cw-area-btn:hover{ border-color:rgba(var(--accent-rgb),.3); background:var(--surface-2); }
+  .cw-area-btn.active{ border-color:var(--accent); background:rgba(var(--accent-rgb),.08); }
+  .cw-area-btn .cm-check{
+    position:absolute;top:10px;right:10px;width:18px;height:18px;border-radius:50%;
+    background:var(--accent);color:#000;font-size:11px;font-weight:700;
+    display:none;align-items:center;justify-content:center;flex-shrink:0;
+  }
+  .cw-area-btn.active .cm-check{ display:flex; }
+  .cw-area-icon{ font-size:24px;line-height:1;flex-shrink:0;margin-top:1px; }
+  .cw-area-body{ flex:1;min-width:0; }
+  .cw-area-name{ font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;padding-right:20px;transition:color var(--transition-fast); }
+  .cw-area-btn.active .cw-area-name{ color:var(--accent); }
+  .cw-area-desc{ font-size:11px;color:rgba(255,255,255,.4);line-height:1.4;margin-bottom:7px; }
+  .cw-area-chip{
+    display:inline-flex;align-items:center;font-size:9px;font-weight:700;
+    padding:2px 8px;border-radius:20px;letter-spacing:.4px;
+    font-family:'Share Tech Mono',monospace;text-transform:uppercase;
+  }
+  .cw-area-chip.ready{ background:rgba(var(--accent-rgb),.1);border:1px solid rgba(var(--accent-rgb),.25);color:var(--accent); }
+  .cw-area-chip.soon{ background:rgba(255,180,0,.08);border:1px solid rgba(255,180,0,.2);color:#ffb400; }
+
+  /* ── Step Moduli — stato "in arrivo" (contentReady:false) ──────
+     Integrazione su .cw-mod-btn esistente (@layer base): qui solo
+     lo stato disabilitato + badge, la card base resta invariata. */
+  .cw-mod-btn.not-ready{ cursor:not-allowed;opacity:.5;filter:saturate(.4); }
+  .cw-mod-btn.not-ready:hover{ border-color:var(--border-mid);background:var(--surface-1); }
+  .cw-mod-btn:disabled{ pointer-events:none; }
+  .cm-soon-badge{
+    position:absolute;top:8px;right:8px;
+    font-family:'Share Tech Mono',monospace;font-size:7px;font-weight:700;
+    letter-spacing:1px;text-transform:uppercase;
+    padding:2px 7px;border-radius:20px;
+    background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+    color:rgba(255,255,255,.35);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v8.1.1 — FIX Sistema Aree (bug segnalato dopo Fase 2)
+   A) Pannello "Gestisci aula": stato "in arrivo" per moduli non pronti
+      dell'Area (mod-toggle-btn.not-ready, dp-soon-tag).
+   B) Home "Scegli modulo": stato vuoto per aule di Aree non-ECDL
+      senza moduli pronti (mod-area-empty).
+   ═══════════════════════════════════════════════════════════════════ */
+@layer areas {
+
+  /* ── B — Home: stato vuoto aule non-ECDL ───────────────────────── */
+  .mod-area-empty{
+    text-align:center;padding:3rem 1.5rem;
+    border:1px dashed rgba(255,255,255,.1);
+    border-radius:var(--radius-lg);
+    margin:.5rem 0 1rem;
+  }
+  .mod-area-empty .mae-icon{ font-size:40px;margin-bottom:14px;opacity:.55; }
+  .mod-area-empty .mae-title{ font-size:15px;font-weight:700;color:rgba(255,255,255,.6);margin-bottom:6px; }
+  .mod-area-empty .mae-sub{ font-size:12px;color:rgba(255,255,255,.32);line-height:1.6;max-width:320px;margin:0 auto; }
+
+  /* ── A — Pannello direttore: moduli "in arrivo" ────────────────── */
+  .mod-toggle-btn.not-ready{ cursor:not-allowed;opacity:.45;filter:saturate(.4); }
+  .mod-toggle-btn.not-ready:hover{ border-color:var(--border-mid);color:rgba(255,255,255,.5); }
+  .dp-soon-tag{
+    font-family:'Share Tech Mono',monospace;font-size:8px;font-weight:700;
+    letter-spacing:.5px;text-transform:uppercase;
+    color:rgba(255,180,0,.7);margin-left:2px;
+  }
+}
+
+@layer theme {
+  /* ── Fix Sistema Aree — tema chiaro ─────────────────────────────── */
+  html[data-theme="light"] .mod-area-empty{ border-color: rgba(var(--navy-rgb),.14); }
+  html[data-theme="light"] .mod-area-empty .mae-title{ color:var(--navy); }
+  html[data-theme="light"] .mod-area-empty .mae-sub{ color: rgba(var(--navy-rgb),.45); }
+  html[data-theme="light"] .mod-toggle-btn.not-ready{ color: rgba(var(--navy-rgb),.35); }
+  html[data-theme="light"] .dp-soon-tag{ color:#a66d00; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v8.2.0 — SCEGLI AULA: RAGGRUPPAMENTO PER AREA (Sistema
+   Aree, ROADMAP_AREE.md Fase 3).
+   #cs-grid non è più una griglia piatta di .course-card: è un
+   contenitore (.cs-catalog) di sezioni .cs-area-section, una per
+   Area con almeno un'aula. Ogni sezione ha un header (icona+nome+
+   contatore, stile "eyebrow" coerente con .slbl) e la propria
+   .cs-grid interna — la classe .cs-grid esistente (colonne, gap,
+   hover Netflix :has()) è riusata invariata, ora scoped per sezione:
+   l'effetto dimming al hover si applica correttamente per Area
+   invece che sull'intera pagina.
+   ═══════════════════════════════════════════════════════════════════ */
+@layer areas {
+
+  .cs-catalog{
+    display:flex;flex-direction:column;gap:2.25rem;
+  }
+
+  .cs-area-section-header{
+    display:flex;align-items:center;gap:10px;
+    margin-bottom:14px;
+  }
+
+  /* ── Colore per Area — v8.4.0 (ROADMAP_AREE.md Fase 7.1) ─────────
+     Un'unica custom property --area-rgb (tripletta R,G,B) assegnata
+     via [data-area-key] — attributo già presente su .cs-area-section
+     da _csBuildAreaSection (Fase 3), nessuna modifica a courses.js
+     necessaria. Icona/badge/linea sotto la leggono con rgba(var(...)),
+     tema chiaro la ridefinisce in @layer theme (dichiarato dopo areas,
+     vince senza toccare le regole "consumer" qui sotto). Palette
+     allineata agli hex già usati in COLOR_PALETTE (courses.js, color
+     picker aula) per coerenza visiva: Teal/Amber/Blue/Violet/Pink. */
+  .cs-area-section[data-area-key="ecdl"]{ --area-rgb:78,116,100; }
+  .cs-area-section[data-area-key="cyberbullismo-sicurezza-online"]{ --area-rgb:136,103,58; }
+  .cs-area-section[data-area-key="cybersecurity"]{ --area-rgb:84,112,140; }
+  .cs-area-section[data-area-key="reti-internet"]{ --area-rgb:116,105,150; }
+  .cs-area-section[data-area-key="malware-minacce"]{ --area-rgb:171,86,73; }
+  .cs-area-section[data-area-key="intelligenza-artificiale"]{ --area-rgb:157,88,117; }
+
+  /* Fase 7.5 — stessa tripletta --area-rgb, applicata al contenitore delle
+     card modulo dinamiche nella schermata "Scegli modulo" (#mod-area-catalog,
+     vedi _renderModuleFilter in app.js) per le Aree extra-ECDL. */
+  #mod-area-catalog[data-area-key="cyberbullismo-sicurezza-online"]{ --area-rgb:136,103,58; }
+  #mod-area-catalog[data-area-key="cybersecurity"]{ --area-rgb:84,112,140; }
+  #mod-area-catalog[data-area-key="reti-internet"]{ --area-rgb:116,105,150; }
+  #mod-area-catalog[data-area-key="malware-minacce"]{ --area-rgb:171,86,73; }
+  #mod-area-catalog[data-area-key="intelligenza-artificiale"]{ --area-rgb:157,88,117; }
+
+  /* Fase 7.7 (v8.9.0) → corretta in v8.9.3: Erasmo intendeva "al passaggio
+     del mouse" quando ha detto "on focus" — cioè lo STESSO comportamento
+     hover già usato dalle card ECDL storiche (ce-card/oe-card/wp-card).
+     L'override :focus-only introdotto in v8.9.0 è stato quindi rimosso:
+     .generic-card ora eredita semplicemente la regola hover condivisa
+     .mod-card:hover .tags{opacity:1} già definita in css/mod-cards.css,
+     identica per ECDL e per le Aree extra-ECDL. Nessuna regola extra
+     necessaria qui. */
+
+  .cs-area-section-icon{
+    font-size:20px;line-height:1;flex-shrink:0;
+    filter:drop-shadow(0 0 8px rgba(var(--area-rgb,110,122,80),.15));
+  }
+  .cs-area-section-label{
+    font-size:15px;font-weight:800;color:#fff;
+    letter-spacing:-.2px;white-space:nowrap;
+  }
+  .cs-area-section-count{
+    font-family:'Share Tech Mono',monospace;font-size:10px;font-weight:700;
+    color:rgba(var(--area-rgb,255,255,255),.85);
+    background:rgba(var(--area-rgb,255,255,255),.08);border:1px solid rgba(var(--area-rgb,255,255,255),.22);
+    padding:2px 9px;border-radius:20px;
+    flex-shrink:0;letter-spacing:.3px;
+  }
+  /* linea a sfumatura finale — stesso pattern di .slbl::after */
+  .cs-area-section-header::after{
+    content:'';flex:1;height:1px;min-width:24px;
+    background:linear-gradient(90deg,rgba(var(--area-rgb,110,122,80),.2),transparent);
+  }
+
+  /* Aule legacy/orfane raggruppate sotto una chiave non presente in
+     AREAS (vedi _csBuildAreaSection in courses.js) — nessuna regola
+     --area-rgb assegnata per queste chiavi: icona/linea ricadono sul
+     fallback teal (invariato rispetto a prima di v8.4.0), il badge
+     numerico ricade sul fallback neutro (255,255,255) dichiarato sopra
+     — stesso colore neutro già usato prima di v8.4.0, per non
+     implicare che sia un'Area "ufficiale" della config. */
+}
+
+@layer theme {
+  /* ── Scegli Aula — raggruppamento per Area, tema chiaro ─────────── */
+  html[data-theme="light"] .cs-area-section-label{ color:var(--navy); }
+
+  /* Colore per Area — varianti scure (leggibili su sfondo chiaro).
+     Stessa tecnica --area-rgb: ridefinita qui per data-theme="light",
+     vince nel layer theme (dichiarato dopo areas) senza duplicare le
+     regole "consumer" (icona/badge/linea) sopra. */
+  html[data-theme="light"] .cs-area-section[data-area-key="ecdl"]{ --area-rgb:73,110,95; }
+  html[data-theme="light"] .cs-area-section[data-area-key="cyberbullismo-sicurezza-online"]{ --area-rgb:129,98,55; }
+  html[data-theme="light"] .cs-area-section[data-area-key="cybersecurity"]{ --area-rgb:80,107,134; }
+  html[data-theme="light"] .cs-area-section[data-area-key="reti-internet"]{ --area-rgb:107,96,138; }
+  html[data-theme="light"] .cs-area-section[data-area-key="malware-minacce"]{ --area-rgb:157,79,67; }
+  html[data-theme="light"] .cs-area-section[data-area-key="intelligenza-artificiale"]{ --area-rgb:150,84,112; }
+
+  /* v8.33.2 — FIX contrasto badge/bordo/glow illeggibili in tema chiaro
+     su Cyberbullismo, Intelligenza Artificiale e Malware (Erasmo,
+     screenshot dark vs light): qui SOTTO fino a v8.33.1 c'era un
+     "equivalente light per #mod-area-catalog" che ridefiniva
+     --area-rgb con le stesse varianti scure usate da .cs-area-section
+     (pensate per un TESTO su sfondo CHIARO). Ma .mod-card.generic-card
+     è un poster scuro fisso per design (background/testo NON cambiano
+     con il tema, vedi il blocco GENERIC-CARD in css/mod-cards.css,
+     spostato lì nel consolidamento v8.35.0) — quindi badge/bordo/glow, sempre compositati su sfondo
+     scuro, ricevevano in chiaro una tripletta desaturata pensata per
+     l'esatto contesto opposto: risultato, contrasto quasi azzerato
+     (peggio per Cyberbullismo: l'ambra 255,180,0 diventa 146,64,14,
+     il calo di luminanza percepita è il più drastico dei 5). Rimossa:
+     #mod-area-catalog[data-area-key] ora eredita sempre la tripletta
+     vivida di @layer areas, in entrambi i temi — .cs-area-section
+     resta invariata qui sopra, quella sì cambia sfondo con il tema. */
+  /* Aule legacy/orfane — fallback neutro (255,255,255) del badge è
+     illeggibile su sfondo chiaro: qui ridefinito su un grigio scuro
+     coerente con .cs-area-section-label chiaro (var(--navy)). */
+  html[data-theme="light"] .cs-area-section:not([data-area-key="ecdl"]):not([data-area-key="cyberbullismo-sicurezza-online"]):not([data-area-key="cybersecurity"]):not([data-area-key="reti-internet"]):not([data-area-key="malware-minacce"]):not([data-area-key="intelligenza-artificiale"]){
+    --area-rgb:16,24,42;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v8.3.0 — SCHEDA DOCENTE: RAGGRUPPAMENTO PER AREA (Sistema
+   Aree, ROADMAP_AREE.md Fase 4).
+   #tmd-aule-grid non è più un'unica griglia piatta di toggle: è un
+   contenitore (.tdc-aule-blocks) di blocchi .tdc-area-block, uno per
+   Area con almeno un'aula. Ogni blocco ha un'intestazione leggera
+   (icona+nome, family tipografica "eyebrow" come .cs-area-section-*
+   di Fase 3, ma più compatta per stare dentro la .setup-card) e la
+   propria .tdc-aule-toggle-grid interna — la classe esistente (flex-
+   wrap, gap) è riusata invariata, ora scoped per blocco invece che
+   sull'intero contenitore.
+   ═══════════════════════════════════════════════════════════════════ */
+@layer areas {
+
+  .tdc-aule-blocks{
+    display:flex;flex-direction:column;gap:16px;
+  }
+
+  .tdc-area-block-header{
+    display:flex;align-items:center;gap:7px;
+    margin-bottom:8px;
+  }
+  .tdc-area-block-icon{
+    font-size:13px;line-height:1;flex-shrink:0;
+  }
+  .tdc-area-block-label{
+    font-size:10px;font-weight:700;color:rgba(255,255,255,.45);
+    text-transform:uppercase;letter-spacing:1px;white-space:nowrap;
+  }
+  /* linea a sfumatura finale — stesso pattern di .slbl::after / .cs-area-section-header::after */
+  .tdc-area-block-header::after{
+    content:'';flex:1;height:1px;min-width:16px;
+    background:linear-gradient(90deg,rgba(255,255,255,.12),transparent);
+  }
+}
+
+@layer theme {
+  /* ── Scheda docente — raggruppamento per Area, tema chiaro ──────── */
+  html[data-theme="light"] .tdc-area-block-label{ color: rgba(var(--navy-rgb),.5); }
+  html[data-theme="light"] .tdc-area-block-header::after{
+    background:linear-gradient(90deg,rgba(var(--navy-rgb),.16),transparent);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   PixelProf v8.5.0 — GESTISCI/SCEGLI AULA: FILTRO E RICERCA PER AREA
+   (Sistema Aree, ROADMAP_AREE.md Fase 7.4).
+   Barra sopra #cs-grid, visibile solo al Direttore (courses.js,
+   _csRenderAreaFilterBar): input ricerca per nome aula + chip Area a
+   selezione singola. Pattern chip/interazione ripreso da
+   .chd-wq-modfilter-btn (@layer classhealth, dashboard.js — "Domande
+   difficili"). Colori per-Area riusano --area-rgb già introdotto in
+   Fase 7.1: ridefinita qui sulle chip (elemento diverso da
+   .cs-area-section, la custom property non eredita tra fratelli),
+   stessa palette, stesso fallback neutro (255,255,255) per la chip
+   "Tutte" — nessun nuovo colore introdotto nel sistema.
+   ═══════════════════════════════════════════════════════════════════ */
+@layer areas {
+
+  .cs-area-filterbar{
+    display:flex;flex-direction:column;gap:10px;
+    margin:0 0 1.75rem;
+  }
+
+  .cs-area-filter-search{
+    position:relative;display:flex;align-items:center;
+  }
+  .cs-area-filter-search i{
+    position:absolute;left:12px;font-size:14px;
+    color:rgba(255,255,255,.3);pointer-events:none;
+  }
+  .cs-area-filter-search input{
+    width:100%;padding:9px 34px;border-radius:20px;
+    border:1px solid var(--border-mid);background:var(--surface-1);
+    color:var(--text-primary);font-family:inherit;font-size:12.5px;
+    outline:none;transition:border var(--transition-fast),background var(--transition-fast);
+  }
+  .cs-area-filter-search input:focus{
+    border-color:var(--accent);box-shadow:0 0 0 3px rgba(var(--accent-rgb),.08);
+  }
+  .cs-area-filter-search input::placeholder{ color:rgba(255,255,255,.42); } /* v8.13.1 FIX: era .25 = 2.16:1 */
+  .cs-area-filter-clear{
+    position:absolute;right:8px;width:20px;height:20px;border-radius:50%;
+    border:none;background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);
+    display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:11px;
+    transition:background var(--transition-fast),color var(--transition-fast);
+  }
+  .cs-area-filter-clear:hover{ background:rgba(255,255,255,.14);color:#fff; }
+
+  .cs-area-filter-chips{ display:flex;flex-wrap:wrap;gap:6px; }
+
+  /* Palette per-chip — stessa tripletta di .cs-area-section (Fase 7.1) */
+  .cs-area-filter-chip[data-area-key="ecdl"]{ --area-rgb:78,116,100; }
+  .cs-area-filter-chip[data-area-key="cyberbullismo-sicurezza-online"]{ --area-rgb:136,103,58; }
+  .cs-area-filter-chip[data-area-key="cybersecurity"]{ --area-rgb:84,112,140; }
+  .cs-area-filter-chip[data-area-key="reti-internet"]{ --area-rgb:116,105,150; }
+  .cs-area-filter-chip[data-area-key="malware-minacce"]{ --area-rgb:171,86,73; }
+  .cs-area-filter-chip[data-area-key="intelligenza-artificiale"]{ --area-rgb:157,88,117; }
+
+  .cs-area-filter-chip{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:6px 12px;border-radius:20px;
+    border:1px solid var(--border-mid);background:var(--surface-1);
+    color:rgba(255,255,255,.55);font-size:11.5px;font-weight:600;
+    cursor:pointer;font-family:inherit;transition:all var(--transition-fast);
+  }
+  .cs-area-filter-chip:hover{
+    border-color:rgba(var(--area-rgb,255,255,255),.4);
+    color:rgba(var(--area-rgb,255,255,255),.9);
+  }
+  .cs-area-filter-chip.active{
+    background:rgba(var(--area-rgb,255,255,255),.14);
+    border-color:rgba(var(--area-rgb,255,255,255),.5);
+    color:rgba(var(--area-rgb,255,255,255),1);
+  }
+  .cs-area-filter-chip-count{
+    font-size:9px;font-weight:700;padding:0 5px;border-radius:20px;
+    background:rgba(255,255,255,.1);font-family:'Share Tech Mono',monospace;
+    color:inherit;
+  }
+  .cs-area-filter-chip.active .cs-area-filter-chip-count{
+    background:rgba(var(--area-rgb,255,255,255),.25);
+  }
+
+  /* Card/sezioni nascoste dal filtro Area — classe dedicata, non
+     interferisce con .hidden (stato UI applicativo, vedi header file). */
+  .cs-area-section.caf-hidden,
+  .course-card.caf-hidden{ display:none; }
+}
+
+@layer theme {
+  /* ── Filtro Area — tema chiaro (stesse varianti scure di Fase 7.1) ── */
+  html[data-theme="light"] .cs-area-filter-search input{ color:var(--navy); }
+  html[data-theme="light"] .cs-area-filter-search input::placeholder{ color:rgba(var(--navy-rgb),.5); } /* v8.13.1 FIX: era .35 = 2.19:1 */
+  html[data-theme="light"] .cs-area-filter-chip{ color:rgba(var(--navy-rgb),.55); }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="all"]{ --area-rgb:23,35,45; }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="ecdl"]{ --area-rgb:73,110,95; }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="cyberbullismo-sicurezza-online"]{ --area-rgb:129,98,55; }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="cybersecurity"]{ --area-rgb:80,107,134; }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="reti-internet"]{ --area-rgb:107,96,138; }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="malware-minacce"]{ --area-rgb:157,79,67; }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="intelligenza-artificiale"]{ --area-rgb:150,84,112; }
+}

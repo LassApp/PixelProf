@@ -1,3 +1,128 @@
+diff --git a/css/achievements.css b/css/achievements.css
+new file mode 100644
+index 0000000..a9713fa
+--- /dev/null
++++ b/css/achievements.css
+@@ -0,0 +1,119 @@
++/* ===============================================
++   TRAGUARDI (badge)
++   Estratto dal monolite pixelprof.css (redesign palette v9).
++   NOTA: l'override tema chiaro per questa sezione resta per ora
++   nel grande blocco @layer theme condiviso in pixelprof.css
++   (sezione numerata corrispondente — vedi commento lì) e non è
++   stato ancora spostato qui: la separazione dell'override chiaro
++   sezione-per-sezione è un passo successivo, non incluso in questa
++   estrazione.
++=============================================== */
++@layer achievements {
++/* ═══════════════════════════════════════════════════════════════════
++   PixelProf v6.5.0 — TRAGUARDI (badge/achievement system)
++   Stile coerente con .tdc-card/.dd-card/.chd-kpi-card già presenti:
++   cinematic lift on hover, bottom accent bar dorata, glow allo
++   sblocco. Nuove classi (prefisso bdg-), nessuna collisione con
++   layer esistenti — dichiarato per ultimo per coerenza con la
++   regola "nuova feature → nuovo layer in fondo" (vedi intestazione
++   file).
++   ═══════════════════════════════════════════════════════════════════ */
++
++.bdg-summary{
++  display:flex;align-items:center;gap:12px;margin-bottom:1.1rem;
++  background:rgba(255,215,0,.04);border:1px solid rgba(255,215,0,.15);
++  border-radius:var(--radius-md);padding:12px 16px;
++}
++.bdg-summary-icon{font-size:24px;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(255,215,0,.3))}
++.bdg-summary-text{flex:1;min-width:0}
++.bdg-summary-count{font-size:14px;font-weight:600;color:#fff;margin-bottom:6px}
++.bdg-summary-count strong{color:#ffd700;font-size:16px}
++.bdg-summary .prog-bar{margin:0}
++
++.bdg-grid{
++  display:grid;grid-template-columns:1fr;gap:10px;
++}
++@media(min-width:520px){ .bdg-grid{grid-template-columns:1fr 1fr;} }
++@media(min-width:820px){ .bdg-grid{grid-template-columns:1fr 1fr 1fr;} }
++
++.bdg-card{
++  position:relative;border-radius:14px;overflow:hidden;
++  border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);
++  padding:16px;transition:all var(--transition-fast);
++  box-shadow:0 4px 16px rgba(0,0,0,.3);
++}
++.bdg-card::after{
++  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
++  background:linear-gradient(90deg,transparent,#ffd700,transparent);
++  transform:scaleX(0);transform-origin:center;
++  transition:transform var(--transition-fast);
++}
++.bdg-card.unlocked{
++  border-color:rgba(255,215,0,.22);
++  box-shadow:0 4px 20px rgba(255,215,0,.08);
++}
++.bdg-card.unlocked::after{transform:scaleX(1);}
++.bdg-card:hover{transform:translateY(-3px);border-color:rgba(255,215,0,.4);box-shadow:0 10px 28px rgba(0,0,0,.4);}
++.bdg-card.locked{opacity:.6}
++.bdg-card.locked:hover{opacity:.85}
++
++.bdg-card-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px}
++.bdg-icon{
++  font-size:24px;line-height:1;flex-shrink:0;
++  width:44px;height:44px;border-radius:12px;
++  display:flex;align-items:center;justify-content:center;
++  background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);
++}
++.bdg-card.locked .bdg-icon{
++  filter:grayscale(1) brightness(.7);
++  background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08);
++}
++.bdg-title-wrap{flex:1;min-width:0}
++.bdg-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px}
++.bdg-desc{font-size:11px;color:rgba(255,255,255,.58);line-height:1.45} /* v8.13.1 FIX: era .4, ma .bdg-card.locked{opacity:.6} la dimezza ulteriormente (.4×.6=.24 effettivo) — alzata per restare leggibile anche da bloccata */
++
++.bdg-unlock-date{
++  display:inline-flex;align-items:center;gap:5px;margin-top:10px;
++  font-size:10px;color:#ffd700;font-family:'Share Tech Mono',monospace;
++  letter-spacing:.3px;
++}
++.bdg-unlock-date i{font-size:12px}
++.bdg-progress-wrap{margin-top:10px}
++.bdg-progress-label{
++  font-size:10px;color:rgba(255,255,255,.4);margin-bottom:5px;
++  font-family:'Share Tech Mono',monospace;
++}
++
++/* ── Popup "Nuovo traguardo!" — banner centrato che scende dall'alto,
++   stesso linguaggio visivo di #overtake-popup ma più prominente,
++   con glow dorato. ── */
++#badge-unlock-popup{
++  position:fixed;top:14px;left:50%;
++  transform:translate(-50%,-130%);
++  z-index:9999;
++  display:flex;align-items:center;gap:12px;
++  background:rgba(10,16,28,.97);
++  border:1px solid rgba(255,215,0,.4);
++  border-radius:var(--radius-lg);
++  padding:12px 18px 12px 14px;
++  box-shadow:0 0 30px rgba(255,215,0,.18),0 12px 40px rgba(0,0,0,.6);
++  max-width:min(360px,calc(100vw - 24px));
++  pointer-events:none;
++  transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s ease;
++  opacity:0;
++}
++#badge-unlock-popup.bup-show{
++  transform:translate(-50%,0);
++  opacity:1;
++}
++.bup-icon{font-size:32px;flex-shrink:0;filter:drop-shadow(0 0 10px rgba(255,215,0,.5));}
++.bup-body{min-width:0}
++.bup-eyebrow{font-size:9px;font-weight:700;color:#ffd700;text-transform:uppercase;letter-spacing:1.5px;font-family:'Share Tech Mono',monospace;margin-bottom:2px}
++.bup-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
++.bup-desc{font-size:11px;color:rgba(255,255,255,.5);line-height:1.4}
++
++@media(max-width:420px){
++  .bdg-summary{flex-direction:row;padding:10px 12px}
++  .bup-desc{display:none}
++}
++}
 diff --git a/css/act-select.css b/css/act-select.css
 index 05f46db..33a4c58 100644
 --- a/css/act-select.css
@@ -16,6 +141,599 @@ index 05f46db..33a4c58 100644
      animation: asDropIn .2s cubic-bezier(.22,1,.36,1) both;
    }
    @keyframes asDropIn{ from{ opacity: 0; transform: translateY(10px) scale(.97); } to{ opacity: 1; transform: translateY(0) scale(1); } }
+diff --git a/css/audio.css b/css/audio.css
+new file mode 100644
+index 0000000..2f57c65
+--- /dev/null
++++ b/css/audio.css
+@@ -0,0 +1,46 @@
++/* ===============================================
++   TOGGLE AUDIO/TEMA
++   Estratto dal monolite pixelprof.css (redesign palette v9).
++   NOTA: l'override tema chiaro per questa sezione resta per ora
++   nel grande blocco @layer theme condiviso in pixelprof.css
++   (sezione numerata corrispondente — vedi commento lì) e non è
++   stato ancora spostato qui: la separazione dell'override chiaro
++   sezione-per-sezione è un passo successivo, non incluso in questa
++   estrazione.
++=============================================== */
++@layer audio {
++/* ═══════════════════════════════════════════════════════════════════
++   PixelProf v6.5.0 — FEEDBACK SONORO + TOGGLE AUDIO
++   Pulsante toggle (icona altoparlante) — visibile SOLO nella
++   schermata "Seleziona aula" (screen-courses) e nello step
++   "Seleziona modulo" (step-mod) della home, come richiesto: lo
++   stato impostato da qui vale per l'intera webapp (gestito da
++   js/audio-manager.js, persistito in localStorage).
++   ═══════════════════════════════════════════════════════════════════ */
++
++.audio-toggle-btn{
++  display:inline-flex;align-items:center;justify-content:center;
++  width:30px;height:30px;border-radius:50%;flex-shrink:0;
++  border:1px solid rgba(255,255,255,.14);
++  background:rgba(255,255,255,.05);
++  color:rgba(255,255,255,.55);
++  cursor:pointer;font-family:inherit;font-size:14px;
++  transition:all var(--transition-fast);
++}
++.audio-toggle-btn:hover{
++  border-color:rgba(var(--accent-rgb),.35);
++  background:rgba(var(--accent-rgb),.08);
++  color:var(--accent);
++}
++.audio-toggle-btn .audio-toggle-icon{font-size:15px;line-height:1}
++.audio-toggle-btn.muted{
++  color:rgba(255,120,120,.65);
++  border-color:rgba(255,80,80,.22);
++  background:rgba(255,80,80,.05);
++}
++.audio-toggle-btn.muted:hover{
++  border-color:rgba(255,80,80,.4);
++  background:rgba(255,80,80,.1);
++  color:#ff6b6b;
++}
++}
+diff --git a/css/classhealth.css b/css/classhealth.css
+new file mode 100644
+index 0000000..7d05f3e
+--- /dev/null
++++ b/css/classhealth.css
+@@ -0,0 +1,250 @@
++/* ===============================================
++   PANORAMICA SALUTE CLASSE (classhealth)
++   Estratto dal monolite pixelprof.css (redesign palette v9).
++   NOTA: l'override tema chiaro per questa sezione resta per ora
++   nel grande blocco @layer theme condiviso in pixelprof.css
++   (sezione numerata corrispondente — vedi commento lì) e non è
++   stato ancora spostato qui: la separazione dell'override chiaro
++   sezione-per-sezione è un passo successivo, non incluso in questa
++   estrazione.
++=============================================== */
++@layer classhealth {
++/* ═══════════════════════════════════════════════════════════════════
++   PixelProf — PANORAMICA CLASSE (dashboard.js)
++   Dashboard aggregata per il docente: accuratezza, modulo più debole,
++   partecipazione, attività più giocate. Nuove classi (prefisso chd-,
++   storico per "class health" — mantenuto invariato per non rompere
++   selettori esistenti), nessuna collisione con layer esistenti —
++   dichiarato per ultimo per coerenza con la regola "nuova feature →
++   nuovo layer in fondo".
++   ═══════════════════════════════════════════════════════════════════ */
++
++/* ── KPI hero row ── */
++.chd-kpi-grid{
++  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.1rem;
++}
++.chd-kpi-card{
++  background:var(--surface-1);border:1px solid var(--border-subtle);
++  border-radius:var(--radius-md);padding:14px 10px;text-align:center;
++  transition:all var(--transition-fast);position:relative;overflow:hidden;
++  box-shadow:var(--shadow-card);
++}
++.chd-kpi-card::after{
++  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
++  background:var(--accent);transform:scaleX(0);transition:transform var(--transition-fast);
++}
++.chd-kpi-card:hover{background:var(--surface-2);border-color:rgba(var(--accent-rgb),.2);}
++.chd-kpi-card:hover::after{transform:scaleX(1);}
++.chd-kpi-icon{font-size:20px;margin-bottom:4px;line-height:1}
++.chd-kpi-val{font-size:21px;font-weight:700;color:var(--accent);font-family:'Share Tech Mono',monospace;line-height:1.15}
++.chd-kpi-lbl{font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;line-height:1.3}
++
++/* ── Sezione generica ── */
++.chd-section{margin-bottom:1.25rem}
++.chd-section-title{
++  font-size:13px;font-weight:700;color:#fff;margin-bottom:10px;
++  display:flex;align-items:center;gap:8px;
++}
++
++/* ── Card "modulo più debole" ── */
++.chd-weak-card{
++  background:rgba(255,255,255,.03);border:1px solid var(--border-subtle);
++  border-radius:var(--radius-md);padding:14px 16px;
++}
++.chd-weak-headline{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:14px;line-height:1.5;font-weight:500}
++.chd-mod-row{margin-bottom:10px}
++.chd-mod-row:last-child{margin-bottom:0}
++.chd-mod-row-top{display:flex;align-items:center;gap:7px;margin-bottom:5px;font-size:12px}
++.chd-mod-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;box-shadow:0 0 5px currentColor}
++.chd-mod-name{flex:1;color:rgba(255,255,255,.65);font-weight:500}
++.chd-mod-pct{font-family:'Share Tech Mono',monospace;font-weight:700;font-size:12px}
++.chd-mod-nodata{opacity:.4}
++
++/* ── Tabella partecipazione ── */
++.chd-part-table{
++  background:rgba(255,255,255,.03);border:1px solid var(--border-subtle);
++  border-radius:var(--radius-md);overflow:hidden;
++}
++.chd-part-row{
++  display:grid;grid-template-columns:1fr 72px 64px 84px;align-items:center;gap:6px;
++  padding:9px 14px;font-size:12px;color:rgba(255,255,255,.75);
++  border-bottom:1px solid rgba(255,255,255,.05);
++}
++.chd-part-row:last-child{border-bottom:none}
++.chd-part-header{
++  font-size:9px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;
++  letter-spacing:.6px;background:rgba(255,255,255,.02);
++}
++.chd-part-name{display:flex;align-items:center;gap:6px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
++.chd-type-icon{font-size:11px;flex-shrink:0}
++.chd-color-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
++.chd-part-sessions,.chd-part-avg{text-align:center;font-family:'Share Tech Mono',monospace}
++.chd-part-last{text-align:right;color:rgba(255,255,255,.4);font-size:10px;white-space:nowrap}
++
++/* ── Banner "non ha mai giocato" ── */
++.chd-never-played{
++  display:flex;align-items:flex-start;gap:8px;margin-top:10px;
++  padding:10px 14px;border-radius:10px;
++  background:rgba(255,180,0,.08);border:1px solid rgba(255,180,0,.22);
++  color:#ffb400;font-size:11px;line-height:1.5;
++}
++.chd-never-played i{font-size:14px;flex-shrink:0;margin-top:1px}
++
++/* ── Attività più giocate ── */
++.chd-act-list{display:flex;flex-direction:column;gap:8px}
++.chd-act-row{display:flex;align-items:center;gap:10px;font-size:12px}
++.chd-act-icon{font-size:16px;flex-shrink:0;width:20px;text-align:center}
++.chd-act-name{width:108px;flex-shrink:0;color:rgba(255,255,255,.65);font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
++.chd-act-bar-wrap{flex:1;height:6px;border-radius:3px;background:rgba(255,255,255,.06);overflow:hidden}
++.chd-act-bar{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--purple))}
++.chd-act-count{width:24px;flex-shrink:0;text-align:right;font-family:'Share Tech Mono',monospace;font-weight:700;color:var(--accent)}
++
++/* ── Empty state ── */
++.chd-empty{text-align:center;padding:3rem 1rem}
++.chd-empty-icon{font-size:40px;margin-bottom:14px;opacity:.4}
++.chd-empty-title{font-size:14px;font-weight:600;color:var(--text-muted);margin-bottom:6px} /* v8.15.1 FIX: era rgba(255,255,255,.35) ~3.1:1 in scuro -> ora var(--text-muted), stesso pattern di .lb-empty .le-title (v8.13.1) */
++.chd-empty-sub{font-size:12px;color:var(--text-dim);max-width:280px;margin:0 auto;line-height:1.5} /* v8.15.1 FIX: era rgba(255,255,255,.2) ~1.8:1, quasi invisibile -> ora var(--text-dim), stesso pattern di .lb-empty .le-sub (v8.13.1) */
++
++/* ── Footnote ── */
++.chd-footnote{
++  display:flex;align-items:flex-start;gap:6px;margin-top:.5rem;
++  font-size:10px;color:var(--text-dim);line-height:1.5; /* v8.13.1 FIX: era .25 = 2.16:1 */
++}
++.chd-footnote i{flex-shrink:0;margin-top:1px;font-size:12px}
++
++/* ── Responsive ── */
++@media(max-width:420px){
++  .chd-kpi-grid{grid-template-columns:1fr;}
++  .chd-part-row{grid-template-columns:1fr 56px 50px;}
++  .chd-part-last{display:none;}
++  .chd-act-name{width:84px;}
++}
++
++/* Tabs Problematiche / Recuperate — stesso pattern di .tm-tabs/.tm-tab
++   (Gestione Docenti), qui con accento cromatico rosso/verde coerente
++   col resto della sezione. */
++.chd-wq-tabs{
++  display:flex;gap:4px;margin-bottom:12px;
++  border-bottom:1px solid rgba(255,255,255,.08);
++}
++.chd-wq-tab{
++  display:flex;align-items:center;gap:6px;
++  padding:8px 14px;border:none;background:none;cursor:pointer;
++  font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.2px;
++  color:var(--text-muted);border-bottom:2px solid transparent; /* v8.14.0 FIX: era rgba(255,255,255,.4) hardcoded = 3.78:1 scuro, 2.88:1 chiaro (duplicato sotto ignorava il token) */
++  transition:color .18s,border-color .18s;
++}
++.chd-wq-tab:hover{color:rgba(255,255,255,.75);}
++.chd-wq-tab-problem.active{color:#ff6b85;border-bottom-color:#ff4d6d;}
++.chd-wq-tab-recovered.active{color:#00ff96;border-bottom-color:#00ff96;}
++.chd-wq-tab-count{
++  font-size:9px;font-weight:700;padding:1px 6px;border-radius:20px;
++  background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);
++  font-family:'Share Tech Mono',monospace;transition:all .18s;
++}
++.chd-wq-tab.active .chd-wq-tab-count{background:rgba(255,255,255,.14);color:inherit;}
++
++/* Sotto-filtro modulo — chip colorate, nomi estesi (un docente non
++   deve sapere a memoria cosa significano le sigle CE/OE/WP). Colore
++   per modulo allineato a _CHD_MOD_COLOR, la stessa palette già usata
++   sopra in questa dashboard per "Modulo più debole". */
++.chd-wq-modfilter{
++  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;
++}
++.chd-wq-modfilter-btn{
++  --chd-wq-mf-color:var(--accent);
++  display:inline-flex;align-items:center;gap:5px;
++  padding:5px 12px;border-radius:20px;
++  border:1px solid var(--border-mid);background:var(--surface-1);
++  color:rgba(255,255,255,.5);font-size:11px;font-weight:600;
++  cursor:pointer;font-family:inherit;transition:all var(--transition-fast);
++}
++.chd-wq-modfilter-btn:hover{border-color:var(--chd-wq-mf-color);color:var(--chd-wq-mf-color);}
++.chd-wq-modfilter-btn.active{
++  background:color-mix(in srgb, var(--chd-wq-mf-color) 14%, transparent);
++  border-color:var(--chd-wq-mf-color);color:var(--chd-wq-mf-color);
++}
++.chd-wq-modfilter-count{
++  font-size:9px;font-weight:700;padding:0 5px;border-radius:20px;
++  background:rgba(255,255,255,.1);font-family:'Share Tech Mono',monospace;
++}
++.chd-wq-modfilter-btn.active .chd-wq-modfilter-count{background:color-mix(in srgb, var(--chd-wq-mf-color) 25%, transparent);}
++
++.chd-wq-list{display:flex;flex-direction:column;gap:8px;}
++.chd-wq-row{
++  background:rgba(255,255,255,.03);
++  border:1px solid rgba(255,60,80,.18);
++  border-radius:var(--radius-md);
++  padding:12px 14px;
++  transition:border-color var(--transition-fast),background var(--transition-fast);
++  position:relative;overflow:hidden;
++}
++.chd-wq-row::before{
++  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
++  background:#ff4d6d;border-radius:2px 0 0 2px;
++}
++.chd-wq-row:hover{background:rgba(255,60,80,.04);border-color:rgba(255,60,80,.32);}
++/* Modifier a livello di lista (non più per-riga): tutte le righe della
++   tab "Recuperate" condividono l'accento verde — un'unica sostituzione
++   di outerHTML su #chd-wq-section aggiorna tab+filtro+lista insieme. */
++.chd-wq-list-recovered .chd-wq-row{border-color:rgba(0,255,150,.2);}
++.chd-wq-list-recovered .chd-wq-row::before{background:#00ff96;}
++.chd-wq-list-recovered .chd-wq-row:hover{background:rgba(0,255,150,.03);border-color:rgba(0,255,150,.35);}
++.chd-wq-list-recovered .chd-wq-bar{background:linear-gradient(90deg,#00ff96,#00cfff);}
++.chd-wq-header{
++  display:flex;align-items:center;gap:7px;margin-bottom:6px;flex-wrap:wrap;
++}
++.chd-wq-act-icon{font-size:13px;flex-shrink:0;}
++.chd-wq-errs{
++  margin-left:auto;font-size:10px;font-weight:700;
++  color:rgba(255,80,80,.9);font-family:'Share Tech Mono',monospace; /* v8.14.0 FIX: era .8 = 4.02:1 -> ora 4.82:1 */
++  flex-shrink:0;
++}
++.chd-wq-list-recovered .chd-wq-errs{color:rgba(0,255,150,.8);}
++.chd-wq-question{
++  font-size:13px;font-weight:500;color:rgba(255,255,255,.8);
++  line-height:1.45;margin-bottom:4px;
++}
++.chd-wq-answer{
++  font-size:11px;color:rgba(255,255,255,.4);margin-bottom:8px;
++}
++.chd-wq-answer strong{color:rgba(var(--accent-rgb),.75);}
++.chd-wq-bar-wrap{height:3px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden;}
++.chd-wq-bar{height:100%;border-radius:2px;background:linear-gradient(90deg,#ff4d6d,#ff8080);}
++
++/* Stato vuoto per tab/filtro — stesso linguaggio visivo di .lb-empty/.chd-empty */
++.chd-wq-empty{
++  text-align:center;padding:2rem 1rem;
++  border:1px dashed rgba(255,255,255,.08);border-radius:var(--radius-md);
++}
++.chd-wq-empty-icon{font-size:30px;margin-bottom:10px;opacity:.6;}
++.chd-wq-empty-title{font-size:13px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:4px;}
++.chd-wq-empty-sub{font-size:11px;color:var(--text-dim);line-height:1.5;max-width:320px;margin:0 auto;} /* v8.14.0 FIX: era rgba(255,255,255,.25) = 2.16:1, sfuggito al giro Fase 2 */
++
++.chd-wq-reset-btn{
++  display:inline-flex;align-items:center;gap:4px;
++  padding:4px 10px;border-radius:7px;
++  background:rgba(255,80,80,.06);border:1px solid rgba(255,80,80,.2);
++  color:rgba(255,100,100,.85);font-size:10px;cursor:pointer;font-family:inherit; /* v8.14.0 FIX: era .6 = 3.03:1 -> ora 4.94:1 */
++  transition:all var(--transition-fast);font-weight:600;
++}
++.chd-wq-reset-btn:hover{background:rgba(255,80,80,.14);color:#ff6b6b;border-color:rgba(255,80,80,.4);}
++
++/* Mostra tutte / mostra solo le prime N — sostituisce la vecchia
++   .chd-wq-more statica con un vero toggle cliccabile. */
++.chd-wq-showall-btn{
++  display:flex;align-items:center;justify-content:center;gap:5px;
++  width:100%;margin-top:10px;padding:8px;border-radius:8px;
++  background:var(--surface-1);border:1px solid var(--border-subtle);
++  color:var(--text-muted);font-size:11px;font-weight:600;cursor:pointer; /* v8.13.1 FIX: era hardcoded bianco, illeggibile in chiaro */
++  font-family:inherit;transition:all var(--transition-fast);
++}
++.chd-wq-showall-btn:hover{background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent);}
++.chd-wq-showall-btn i{font-size:13px;}
++
++@media(max-width:420px){
++  .chd-wq-question{font-size:12px;}
++  .chd-wq-errs{margin-left:0;}
++  .chd-wq-modfilter-btn{padding:5px 9px;font-size:10px;}
++}
++}
+diff --git a/css/csvimport.css b/css/csvimport.css
+new file mode 100644
+index 0000000..df8761f
+--- /dev/null
++++ b/css/csvimport.css
+@@ -0,0 +1,80 @@
++/* ===============================================
++   IMPORT CSV
++   Estratto dal monolite pixelprof.css (redesign palette v9).
++   NOTA: l'override tema chiaro per questa sezione resta per ora
++   nel grande blocco @layer theme condiviso in pixelprof.css
++   (sezione numerata corrispondente — vedi commento lì) e non è
++   stato ancora spostato qui: la separazione dell'override chiaro
++   sezione-per-sezione è un passo successivo, non incluso in questa
++   estrazione.
++=============================================== */
++@layer csvimport {
++/* ═══════════════════════════════════════════════════════════════════
++   PixelProf — IMPORT GIOCATORI DA CSV (csv-import.js)
++   Pulsante trigger in #ps-ind + modal di anteprima pre-conferma.
++   Il modal riusa la struttura .pp-generic-overlay/.pp-generic-box
++   (game-engine-state.js — stesso sistema di ppAlert/ppConfirmBox):
++   nessun nuovo overlay/animazione da mantenere, solo classi per il
++   contenuto interno. Nuove classi, nessuna collisione con layer
++   esistenti — dichiarato per ultimo per coerenza con la regola
++   "nuova feature → nuovo layer in fondo" (vedi intestazione file).
++   ═══════════════════════════════════════════════════════════════════ */
++
++/* Pulsante trigger — stile "dropzone" tratteggiato, secondario
++   rispetto al pulsante neon pieno di aggiunta manuale sopra. */
++.csv-import-trigger-btn{
++  display:flex;align-items:center;justify-content:center;gap:7px;
++  width:100%;padding:9px;
++  border-radius:var(--radius-sm);
++  border:1px dashed rgba(var(--accent-rgb),.28);
++  background:rgba(var(--accent-rgb),.04);
++  color:rgba(var(--accent-rgb),.75);
++  font-size:12px;font-weight:600;font-family:inherit;
++  cursor:pointer;transition:all var(--transition-fast);
++}
++.csv-import-trigger-btn:hover{
++  background:rgba(var(--accent-rgb),.09);
++  border-color:rgba(var(--accent-rgb),.5);
++  color:var(--accent);
++}
++.csv-import-trigger-btn i{font-size:15px}
++
++/* Nota duplicati esclusi automaticamente — dentro il modal anteprima */
++.csv-import-dupnote{
++  display:flex;align-items:flex-start;gap:6px;
++  font-size:11px;color:rgba(255,180,0,.85);line-height:1.5;
++  background:rgba(255,180,0,.07);border:1px solid rgba(255,180,0,.2);
++  border-radius:8px;padding:8px 10px;margin-bottom:12px;text-align:left;
++}
++.csv-import-dupnote i{font-size:13px;flex-shrink:0;margin-top:1px}
++
++/* Elenco scrollabile dei nominativi da importare — righe rimovibili */
++.csv-import-list{
++  max-height:220px;overflow-y:auto;
++  border:1px solid var(--border-subtle);border-radius:var(--radius-sm);
++  margin-bottom:1.1rem;text-align:left;
++  background:rgba(255,255,255,.02);
++}
++.csv-import-row{
++  display:flex;align-items:center;justify-content:space-between;gap:8px;
++  padding:7px 10px;font-size:12px;color:rgba(255,255,255,.8);
++  border-bottom:1px solid rgba(255,255,255,.05);
++}
++.csv-import-row:last-child{border-bottom:none}
++.csv-import-row-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
++.csv-import-row-del{
++  flex-shrink:0;background:none;border:none;cursor:pointer;
++  color:rgba(255,255,255,.25);font-size:13px;padding:2px 4px;line-height:1;
++  transition:color var(--transition-fast);
++}
++.csv-import-row-del:hover{color:#ff6b6b}
++.csv-import-empty-list{
++  padding:1.5rem 1rem;text-align:center;
++  font-size:11px;color:rgba(255,255,255,.25);
++}
++
++/* Stato disabilitato per i pulsanti del modal generico — non esisteva
++   ancora nessuna regola per .pp-generic-btn:disabled (puro additivo,
++   nessun rischio di conflitto con ppAlert/ppConfirmBox/ppPromptBox). */
++.pp-generic-btn:disabled{opacity:.35;cursor:default;pointer-events:none;}
++}
+diff --git a/css/dashboard.css b/css/dashboard.css
+new file mode 100644
+index 0000000..984d292
+--- /dev/null
++++ b/css/dashboard.css
+@@ -0,0 +1,108 @@
++/* ===============================================
++   DASHBOARD — panoramica classe/docente
++   Estratto dal monolite pixelprof.css (redesign palette v9).
++   NOTA: l'override tema chiaro per questa sezione resta per ora
++   nel grande blocco @layer theme condiviso in pixelprof.css
++   (sezione numerata corrispondente — vedi commento lì) e non è
++   stato ancora spostato qui: la separazione dell'override chiaro
++   sezione-per-sezione è un passo successivo, non incluso in questa
++   estrazione.
++=============================================== */
++@layer dashboard {
++/* ═══════════════════════════════════════════════════════════════════
++   PixelProf v6.0.0 — DASHBOARD DIRETTORE + GESTIONE DOCENTI
++   Stile coerente con .course-card/.cat-card già presenti:
++   cinematic lift on hover, bottom accent bar, glow per categoria.
++   ═══════════════════════════════════════════════════════════════════ */
++
++#screen-director-dashboard,
++#screen-teacher-mgmt,
++#screen-teacher-create,
++#screen-teacher-list,
++#screen-teacher-detail{
++  position:fixed;inset:0;z-index:8000;
++  background:var(--surface-0);
++  background-image:
++    radial-gradient(ellipse 80% 50% at 20% 0%,rgba(var(--accent-rgb),.03) 0%,transparent 60%),
++    radial-gradient(ellipse 60% 40% at 80% 100%,rgba(var(--purple-rgb),.03) 0%,transparent 60%);
++  overflow-y:auto;display:flex;flex-direction:column;
++}
++#screen-director-dashboard.hidden,
++#screen-teacher-mgmt.hidden,
++#screen-teacher-create.hidden,
++#screen-teacher-list.hidden,
++#screen-director-dashboard.entering,
++#screen-teacher-mgmt.entering,
++#screen-teacher-create.entering,
++#screen-teacher-list.entering,
++#screen-teacher-detail.entering{ animation:screenFadeIn .35s ease both; }
++
++/* ── Griglia 3 card Dashboard Direttore ── */
++.dd-grid{
++  display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px;
++}
++@media(min-width:560px){ .dd-grid{ grid-template-columns:1fr 1fr 1fr; } }
++
++.dd-card{
++  position:relative;border-radius:16px;
++  border:1px solid rgba(255,255,255,.09);
++  background:rgba(255,255,255,.04);
++  cursor:pointer;overflow:hidden;
++  box-shadow:0 4px 20px rgba(0,0,0,.35);
++  transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .2s ease,border-color .2s ease,background .2s ease;
++}
++.dd-card::after{
++  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
++  transform:scaleX(0);transition:transform .22s ease;
++}
++.dd-card:hover{ transform:translateY(-4px) scale(1.02); }
++.dd-card:hover::after{ transform:scaleX(1); }
++.dd-card:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
++
++.dd-card-inner{
++  display:flex;flex-direction:column;align-items:flex-start;gap:8px;
++  padding:1.5rem 1.25rem;min-height:140px;position:relative;
++}
++.dd-icon{
++  font-size:32px;line-height:1;
++  filter:drop-shadow(0 0 8px rgba(255,255,255,.15));
++  transition:transform .22s cubic-bezier(.34,1.56,.64,1);
++}
++.dd-card:hover .dd-icon{ transform:scale(1.14); }
++.dd-title{ font-size:16px;font-weight:700;color:#fff;transition:color .18s; }
++.dd-sub{ font-size:11px;color:rgba(255,255,255,.4);line-height:1.5;padding-right:24px; }
++.dd-arrow{
++  position:absolute;bottom:1.25rem;right:1.25rem;font-size:16px;
++  color:rgba(255,255,255,.2);transition:color .18s,transform .18s;
++}
++.dd-card:hover .dd-arrow{ transform:translateX(3px); }
++
++.dd-aule{ border-color:rgba(30,144,255,.15); }
++.dd-aule::after{ background:linear-gradient(90deg,transparent,#1e90ff,transparent); }
++.dd-aule:hover{ border-color:rgba(30,144,255,.5); box-shadow:0 12px 36px rgba(30,144,255,.14); }
++.dd-aule:hover .dd-title,.dd-aule:hover .dd-arrow{ color:#5eb8ff; }
++
++.dd-docenti{ border-color:rgba(var(--purple-rgb),.15); }
++.dd-docenti::after{ background:linear-gradient(90deg,transparent,var(--purple),transparent); }
++.dd-docenti:hover{ border-color:rgba(var(--purple-rgb),.5); box-shadow:0 12px 36px rgba(var(--purple-rgb),.14); }
++.dd-docenti:hover .dd-title,.dd-docenti:hover .dd-arrow{ color:#b4a0ff; }
++
++/* v8.26.0: rimosse le regole .dd-scegli (dead code) — la card "Scegli
++   Aula" è stata sostituita dalla fascia .dd-enter-banner, sempre
++   distinta dalle card di gestione, stile in css/director-profile.css.
++   Nuova card .dd-direttore (accento oro) anch'essa nel file dedicato. */
++
++/* ── Gestione Docenti — badge "Disattivato" (scheda docente) ──
++   v8.14.0: rimossa la famiglia .tm-list/.tm-row/.tm-row-name (vecchio
++   design a lista, mai più referenziata da JS/HTML — vedi
++   UX_AUDIT_grafica_dark_light.md §6). .tm-badge-inactive invece è
++   attivamente usata in js/app.js (tmOpenDetail, tmDetailSaveProfile,
++   tmDetailToggleActive) quindi resta e viene tematizzata sotto. */
++.tm-badge-inactive{
++  font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
++  padding:2px 8px;border-radius:20px;flex-shrink:0;
++  background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.3);color:#ff6b6b;
++}
++
++/* ═══════════════════════════════════════════════════════════════════
++}
+diff --git a/css/dialogs.css b/css/dialogs.css
+new file mode 100644
+index 0000000..a68282c
+--- /dev/null
++++ b/css/dialogs.css
+@@ -0,0 +1,79 @@
++/* ===============================================
++   DIALOG di conferma + generici, wizard, pannelli
++   Estratto dal monolite pixelprof.css (redesign palette v9).
++   NOTA: l'override tema chiaro per questa sezione resta per ora
++   nel grande blocco @layer theme condiviso in pixelprof.css
++   (sezione numerata corrispondente — vedi commento lì) e non è
++   stato ancora spostato qui: la separazione dell'override chiaro
++   sezione-per-sezione è un passo successivo, non incluso in questa
++   estrazione.
++=============================================== */
++@layer dialogs {
++/* ═══════════════════════════════════════════════════════════════════
++   PixelProf v6.2.0 — GENERIC THEMED DIALOGS
++   Stile per ppAlert() / ppConfirmBox() / ppPromptBox() definite in
++   game-engine-state.js. Markup creato dinamicamente da JS — questa
++   sezione è puro CSS, nessun markup statico aggiunto a index.html.
++   Sostituiscono alert()/confirm()/prompt() nativi in tutta l'app.
++   ═══════════════════════════════════════════════════════════════════ */
++.pp-generic-overlay{
++  position:fixed;inset:0;z-index:9800;
++  background:rgba(0,0,0,.72);
++  backdrop-filter:blur(10px) saturate(140%);
++  -webkit-backdrop-filter:blur(10px) saturate(140%);
++  display:flex;align-items:center;justify-content:center;
++  padding:1rem;
++  animation:ppGenericFadeIn .18s ease both;
++}
++@keyframes ppGenericFadeIn{from{opacity:0;}to{opacity:1;}}
++.pp-generic-box{
++  background:#0a1022;
++  border:1px solid rgba(var(--accent-rgb),.18);
++  border-radius:var(--radius-lg);
++  padding:1.5rem;
++  width:100%;max-width:340px;
++  box-shadow:0 20px 70px rgba(0,0,0,.75),0 0 0 1px rgba(var(--accent-rgb),.06);
++  animation:dropIn .2s cubic-bezier(.22,1,.36,1) both;
++  text-align:center;
++}
++.pp-generic-icon{font-size:30px;margin-bottom:10px;line-height:1}
++.pp-generic-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
++.pp-generic-msg{font-size:12px;color:rgba(255,255,255,.45);line-height:1.55;margin-bottom:1.1rem}
++.pp-generic-input{
++  width:100%;padding:9px 12px;margin-bottom:1.1rem;
++  border-radius:var(--radius-sm);border:1px solid var(--border-mid);
++  background:rgba(255,255,255,.05);color:var(--text-primary);
++  font-size:13px;font-family:inherit;outline:none;text-align:left;
++  transition:border var(--transition-fast),box-shadow var(--transition-fast);
++}
++.pp-generic-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(var(--accent-rgb),.08);}
++.pp-generic-btns{display:flex;gap:8px}
++.pp-generic-btn{
++  flex:1;padding:10px;border-radius:var(--radius-sm);border:1px solid;
++  font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;
++  transition:all var(--transition-fast);position:relative;overflow:hidden;
++}
++.pp-generic-btn::after{
++  content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;
++  transform:scaleX(0);transition:transform var(--transition-fast);
++}
++.pp-generic-btn:hover::after{transform:scaleX(1);}
++.pp-generic-btn.cancel{
++  background:var(--surface-1);border-color:var(--border-mid);color:rgba(255,255,255,.6);
++}
++.pp-generic-btn.cancel::after{background:rgba(255,255,255,.3);}
++.pp-generic-btn.cancel:hover{background:var(--surface-2);color:#fff;}
++.pp-generic-btn.ok,
++.pp-generic-btn.confirm{
++  background:var(--accent-dim);border-color:var(--accent);color:var(--accent);
++}
++.pp-generic-btn.ok::after,
++.pp-generic-btn.confirm::after{background:var(--accent);}
++.pp-generic-btn.ok:hover,
++.pp-generic-btn.confirm:hover{background:rgba(var(--accent-rgb),.22);}
++.pp-generic-btn.confirm.danger{
++  background:rgba(255,60,80,.12);border-color:rgba(255,60,80,.4);color:#ff4d6d;
++}
++.pp-generic-btn.confirm.danger::after{background:#ff4d6d;}
++.pp-generic-btn.confirm.danger:hover{background:rgba(255,60,80,.2);}
++}
 diff --git a/css/director-profile.css b/css/director-profile.css
 index b49341e..36fca9c 100644
 --- a/css/director-profile.css
@@ -62,6 +780,162 @@ index b49341e..36fca9c 100644
      border-color:rgba(0,170,140,.4);
      box-shadow:0 4px 18px rgba(20,30,60,.08);
    }
+diff --git a/css/docenti.css b/css/docenti.css
+new file mode 100644
+index 0000000..17fc16d
+--- /dev/null
++++ b/css/docenti.css
+@@ -0,0 +1,150 @@
++/* ===============================================
++   GESTIONE DOCENTI / DASHBOARD DIRETTORE
++   Estratto dal monolite pixelprof.css (redesign palette v9).
++   NOTA: l'override tema chiaro per questa sezione resta per ora
++   nel grande blocco @layer theme condiviso in pixelprof.css
++   (sezione numerata corrispondente — vedi commento lì) e non è
++   stato ancora spostato qui: la separazione dell'override chiaro
++   sezione-per-sezione è un passo successivo, non incluso in questa
++   estrazione.
++=============================================== */
++@layer docenti {
++   PixelProf v6.1.0 — REDESIGN GESTIONE DOCENTI
++   Hub a 2 card (riusa .dd-grid/.dd-card già esistenti) + schermata
++   creazione + lista a card con tab + dettaglio con gestione aule.
++   .tm-list/.tm-row* sopra restano definiti ma non più referenziati
++   (vecchio design) — lasciati per zero rischio, nessun conflitto.
++   ═══════════════════════════════════════════════════════════════════ */
++
++/* ── Hub: variante a 2 card di .dd-grid ── */
++.dd-grid-2{ grid-template-columns:1fr; }
++@media(min-width:480px){ .dd-grid-2{ grid-template-columns:1fr 1fr; } }
++.dd-new-teacher{ border-color:rgba(var(--accent-rgb),.15); }
++.dd-new-teacher::after{ background:linear-gradient(90deg,transparent,var(--accent),transparent); }
++.dd-new-teacher:hover{ border-color:rgba(var(--accent-rgb),.5); box-shadow:0 12px 36px rgba(var(--accent-rgb),.14); }
++.dd-new-teacher:hover .dd-title,.dd-new-teacher:hover .dd-arrow{ color:var(--accent); }
++
++/* v6.1.1 FIX: .dd-teacher-list non aveva alcuna regola di accento —
++   il bordo/bottom-bar restava trasparente (nessun background sul
++   ::after ereditato da .dd-card), quindi la card "Docenti" non si
++   illuminava al hover come "Nuovo Docente". Stessa palette violetta
++   già usata per .dd-docenti nella Dashboard Direttore. */
++.dd-teacher-list{ border-color:rgba(var(--purple-rgb),.15); }
++.dd-teacher-list::after{ background:linear-gradient(90deg,transparent,var(--purple),transparent); }
++.dd-teacher-list:hover{ border-color:rgba(var(--purple-rgb),.5); box-shadow:0 12px 36px rgba(var(--purple-rgb),.14); }
++.dd-teacher-list:hover .dd-title,.dd-teacher-list:hover .dd-arrow{ color:#b4a0ff; }
++
++/* ── Toggle Genere (creazione + dettaglio) ── */
++.gender-toggle{ display:flex; gap:8px; }
++.gender-btn{
++  flex:1;padding:10px;border-radius:var(--radius-sm);border:1px solid var(--border-mid);
++  background:var(--surface-1);cursor:pointer;font-size:13px;font-weight:600;
++  color:rgba(255,255,255,.55);display:flex;align-items:center;justify-content:center;gap:6px;
++  font-family:inherit;transition:all var(--transition-fast);
++}
++.gender-btn i{ font-size:16px; }
++.gender-btn:hover{ border-color:var(--accent-border); color:var(--accent); background:var(--accent-dim); }
++.gender-btn.active{ border:1.5px solid var(--accent); background:rgba(var(--accent-rgb),.14); color:var(--accent); font-weight:700; }
++
++/* ── Tabs Attivi / Disattivati (lista docenti) ── */
++.tm-tabs{ display:flex; gap:4px; margin-bottom:18px; border-bottom:1px solid rgba(255,255,255,.08); }
++.tm-tab{
++  padding:9px 16px;border:none;background:none;cursor:pointer;
++  font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.3px;
++  color:rgba(255,255,255,.4);border-bottom:2px solid transparent;
++  transition:color .18s,border-color .18s;
++}
++.tm-tab:hover{ color:rgba(255,255,255,.75); }
++.tm-tab.active{ color:var(--accent); border-bottom-color:var(--accent); }
++
++/* ── Griglia card docente (lista) ── */
++.tdc-grid{ display:grid;grid-template-columns:1fr;gap:10px; }
++@media(min-width:600px){ .tdc-grid{ grid-template-columns:1fr 1fr; } }
++
++.tdc-card{
++  position:relative;border-radius:14px;overflow:hidden;
++  border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);
++  padding:14px 16px;cursor:pointer;
++  transition:transform .2s cubic-bezier(.34,1.56,.64,1),border-color .2s,background .2s,box-shadow .2s;
++  box-shadow:0 4px 16px rgba(0,0,0,.3);
++}
++/* v6.1.1 FIX: mancava la bottom accent bar presente su tutte le altre
++   card dell'app (.dd-card, .course-card, .cat-card) — la card docente
++   non si "illuminava" al hover come le altre. Colore semantico: verde
++   per i docenti attivi, rosso per i disattivati (stessa palette di
++   .tdc-status-dot). */
++.tdc-card::after{
++  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
++  background:#00ff96;transform:scaleX(0);transform-origin:left;
++  transition:transform .2s cubic-bezier(.34,1.56,.64,1);
++}
++.tdc-card:hover::after{ transform:scaleX(1); }
++.tdc-card.tdc-inactive::after{ background:#ff4d6d; }
++.tdc-card:hover{ transform:translateY(-3px); border-color:rgba(var(--accent-rgb),.3); background:rgba(var(--accent-rgb),.04); box-shadow:0 10px 28px rgba(0,0,0,.4); }
++.tdc-card:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
++.tdc-card.tdc-inactive{ opacity:.55; }
++.tdc-card.tdc-inactive:hover{ opacity:.75; }
++/* v8.15.2: .tdc-card.tdc-inactive{opacity:.55} moltiplica il colore di TUTTI i
++   figli (stesso pattern già risolto per .bdg-card.locked/.bdg-desc in v8.13.1).
++   var(--text-muted) 4.51:1 × .55 = ~2.48:1, var(--text-dim) 3.04:1 × .55 = ~1.67:1
++   — entrambi sotto ogni soglia AA. Override scoped solo al contesto disattivato,
++   per non alterare (né oscurare eccessivamente) lo stato attivo. */
++.tdc-card.tdc-inactive .tdc-email,
++.tdc-card.tdc-inactive .tdc-aula-chip,
++.tdc-card.tdc-inactive .tdc-aule-empty{ color: rgba(255,255,255,.72); } /* effettivo ×.55 ≈ .396, sopra soglia --text-dim (.34) */
++
++.tdc-header{ display:flex;align-items:center;gap:10px;margin-bottom:10px; }
++.tdc-gender-icon{
++  width:32px;height:32px;border-radius:50%;flex-shrink:0;
++  display:flex;align-items:center;justify-content:center;font-size:15px;
++  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.45);
++}
++.tdc-gender-icon.g-uomo{ background:rgba(30,144,255,.12);border-color:rgba(30,144,255,.3);color:#5eb0ff; }
++.tdc-gender-icon.g-donna{ background:rgba(255,77,109,.12);border-color:rgba(255,77,109,.3);color:#ff8fa3; }
++.tdc-name{ flex:1;font-size:14px;font-weight:700;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
++.tdc-status-dot{ width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 6px currentColor; }
++.tdc-status-dot.active{ background:#00ff96;color:#00ff96; }
++.tdc-status-dot.inactive{ background:#ff4d6d;color:#ff4d6d; }
++
++.tdc-email{ font-size:11px;color:var(--text-muted);margin-bottom:10px;font-family:'Share Tech Mono',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; } /* v8.15.2 FIX: era rgba(255,255,255,.4) ~3.78:1 in scuro -> ora var(--text-muted), AA piena e già tematizzato */
++
++.tdc-aule-row{ border-top:1px solid rgba(255,255,255,.06);padding-top:9px;display:flex;flex-wrap:wrap;line-height:1.6; }
++.tdc-aula-chip{ font-size:10px;font-weight:500;color:var(--text-muted);font-family:'Share Tech Mono',monospace;white-space:nowrap; } /* v8.15.2 FIX: era rgba(255,255,255,.45) */
++.tdc-aula-chip + .tdc-aula-chip::before{ content:' | ';color:rgba(255,255,255,.18);white-space:pre; } /* separatore puramente decorativo, non testo informativo — non soggetto a soglie AA */
++.tdc-aule-empty{ font-size:10px;color:var(--text-dim);font-style:italic; } /* v8.15.2 FIX: era rgba(255,255,255,.2) ~1.5:1 */
++
++/* ── Toggle aule (scheda dettaglio docente) ── */
++.tdc-aule-toggle-grid{ display:flex;flex-wrap:wrap;gap:7px; }
++.tdc-aula-toggle-btn{
++  padding:6px 14px;border-radius:20px;border:1px solid var(--border-mid);
++  background:var(--surface-1);font-size:12px;cursor:pointer;
++  color:rgba(255,255,255,.5);font-family:inherit;font-weight:600;
++  transition:all var(--transition-fast);display:inline-flex;align-items:center;gap:5px;
++}
++.tdc-aula-toggle-btn:hover{ border-color:rgba(var(--accent-rgb),.3);color:rgba(255,255,255,.8); }
++.tdc-aula-toggle-btn.active{ background:rgba(var(--accent-rgb),.12);border-color:var(--accent);color:var(--accent); }
++.tdc-aula-toggle-btn:disabled{ opacity:.4;cursor:default; }
++
++/* .tmd-email-hint — riga "Email attuale: ..." nella scheda docente
++   (screen-teacher-detail). v6.6: estratta dallo stile inline in
++   index.html per poterla tematizzare correttamente. */
++.tmd-email-hint{ font-size:11px;color:rgba(255,255,255,.35);font-family:'Share Tech Mono',monospace; }
++
++/* .tmd-close-btn — "X" rossa di chiusura rapida per la scheda docente,
++   accanto alla sezione "Dati personali" (v6.6: nuovo elemento). */
++.tmd-close-btn{
++  flex-shrink:0;width:26px;height:26px;border-radius:50%;
++  display:flex;align-items:center;justify-content:center;
++  background:rgba(255,60,80,.1);border:1px solid rgba(255,60,80,.35);
++  color:#ff4d6d;cursor:pointer;font-size:14px;line-height:1;
++  transition:background .15s,border-color .15s,color .15s;
++  font-family:inherit;
++}
++.tmd-close-btn:hover{ background:rgba(255,60,80,.22);border-color:rgba(255,60,80,.6);color:#ff6b6b; }
++
++/* .dp-hint-text — didascalie informative statiche/dinamiche nel
++   pannello "⚙️ Gestione aula" e nella scheda docente (v6.6: sostituisce
++   diversi style inline con colore fisso rgba(255,255,255,.3),
++   illeggibili quando il contenitore diventa chiaro nel tema light). */
++.dp-hint-text{ font-size:11px;color:rgba(255,255,255,.3); }
++}
 diff --git a/css/flip-card.css b/css/flip-card.css
 index d5941d8..d84354f 100644
 --- a/css/flip-card.css
@@ -111,6 +985,175 @@ index d5941d8..d84354f 100644
      --dma-text-rgb: var(--dm-accent-text-rgb, 180,160,255);
      position:relative; overflow:hidden;
      display:flex; flex-direction:column; justify-content:flex-end;
+diff --git a/css/histcards.css b/css/histcards.css
+new file mode 100644
+index 0000000..548d968
+--- /dev/null
++++ b/css/histcards.css
+@@ -0,0 +1,73 @@
++/* ===============================================
++   STORICO / PROGRESSI (card storico)
++   Estratto dal monolite pixelprof.css (redesign palette v9).
++   NOTA: l'override tema chiaro per questa sezione resta per ora
++   nel grande blocco @layer theme condiviso in pixelprof.css
++   (sezione numerata corrispondente — vedi commento lì) e non è
++   stato ancora spostato qui: la separazione dell'override chiaro
++   sezione-per-sezione è un passo successivo, non incluso in questa
++   estrazione.
++=============================================== */
++@layer histcards {
++/* ═══════════════════════════════════════════════════════════════════
++   PixelProf — STORICO SESSIONI: card a classi CSS (v1.0.0)
++   Refactor di _histBuildCard() (stats.js): stesso aspetto identico
++   in tema scuro, ma ora la card è costruita con classi invece che
++   con uno style inline monolitico — necessario per essere themeable
++   dal layer "theme" più sotto (dichiarato dopo, vince sempre). Il
++   colore dinamico per modulo (CE/OE/WP) resta inline sull'accent bar
++   perché è genuinamente dato-dipendente, non skin fissa. L'hover era
++   gestito via onmouseenter/onmouseleave inline in JS, ora è puro
++   :hover CSS — stesso identico effetto, meno codice.
++   ═══════════════════════════════════════════════════════════════════ */
++.hist-card{
++  background:rgba(255,255,255,.03);
++  border:1px solid rgba(255,255,255,.08);
++  border-radius:12px;
++  padding:14px 16px;
++  margin-bottom:10px;
++  transition:border-color .18s,background .18s;
++  position:relative;overflow:hidden;
++}
++.hist-card:hover{
++  border-color:rgba(var(--accent-rgb),.2);
++  background:rgba(var(--accent-rgb),.03);
++}
++.hist-card-accent{
++  position:absolute;top:0;left:0;right:0;height:2px;
++  opacity:.5;border-radius:12px 12px 0 0;
++}
++.hist-card-header{ display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap; }
++.hist-card-icon{ font-size:20px;line-height:1; }
++.hist-card-title{ font-size:13px;font-weight:700;color:#fff; }
++.hist-card-modtag{
++  font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
++  padding:2px 7px;border-radius:20px;font-family:'Share Tech Mono',monospace;
++}
++.hist-card-modetag{
++  font-size:9px;color:var(--text-muted);font-family:'Share Tech Mono',monospace; /* v8.13.1 FIX: era .3 = 2.62:1 */
++  padding:2px 7px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
++}
++.hist-card-date{
++  margin-left:auto;font-size:10px;color:var(--text-muted); /* v8.13.1 FIX: era .3 = 2.62:1 */
++  font-family:'Share Tech Mono',monospace;white-space:nowrap;
++}
++.hist-card-body{ padding:0 2px; }
++.hist-card-empty{ font-size:11px;color:rgba(255,255,255,.25); }
++.hist-team-row{
++  display:flex;align-items:center;justify-content:space-between;
++  padding:4px 0;border-bottom:1px solid rgba(255,255,255,.04);
++}
++.hist-team-row:last-child{ border-bottom:none; }
++.hist-team-left{ display:flex;align-items:center;gap:2px;min-width:0; }
++.hist-team-medal{ font-size:12px;width:18px;flex-shrink:0; }
++.hist-color-dot{ display:inline-block;width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-right:5px; }
++.hist-team-name{
++  font-size:12px;color:rgba(255,255,255,.8);
++  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
++}
++.hist-team-pts{
++  font-family:'Share Tech Mono',monospace;font-size:11px;font-weight:700;
++  color:var(--accent);flex-shrink:0;margin-left:8px;
++}
++}
+diff --git a/css/loaders.css b/css/loaders.css
+new file mode 100644
+index 0000000..4cb24c7
+--- /dev/null
++++ b/css/loaders.css
+@@ -0,0 +1,84 @@
++/* ===============================================
++   LOADER / SKELETON
++   Estratto dal monolite pixelprof.css (redesign palette v9).
++   NOTA: l'override tema chiaro per questa sezione resta per ora
++   nel grande blocco @layer theme condiviso in pixelprof.css
++   (sezione numerata corrispondente — vedi commento lì) e non è
++   stato ancora spostato qui: la separazione dell'override chiaro
++   sezione-per-sezione è un passo successivo, non incluso in questa
++   estrazione.
++=============================================== */
++@layer loaders {
++/* ═══════════════════════════════════════════════════════════════════
++   PixelProf — SKELETON LOADING (5 minigiochi) — v1.0.0
++   Sostituisce lo spinner pulsante generico (icona+testo+path, vedi
++   game-engine-state.js) con scheletri che ricalcano la geometria
++   reale di ciascun minigioco: percezione di velocità migliore,
++   soprattutto su PC di laboratorio non recentissimi, e nessun salto
++   di layout quando il contenuto vero arriva. Usa i token esistenti
++   (--surface-1, --border-subtle, --radius-*) quindi è già coerente
++   con entrambi i temi chiaro/scuro senza bisogno di override
++   dedicati nel layer "theme" — solo lo shimmer stesso usa 2 nuovi
++   token (--skel-c1/--skel-c2) per restare leggibile su sfondo chiaro.
++   ═══════════════════════════════════════════════════════════════════ */
++:root{
++  --skel-c1: rgba(255,255,255,.05);
++  --skel-c2: rgba(255,255,255,.12);
++}
++@keyframes skelShimmer{
++  0%   { background-position:-150% 0; }
++  100% { background-position: 150% 0; }
++}
++@keyframes skelFadeIn{ from{opacity:0} to{opacity:1} }
++
++.skel-wrap{ animation:skelFadeIn .25s ease both; }
++
++.skel-base{
++  background:linear-gradient(90deg,var(--skel-c1) 25%,var(--skel-c2) 50%,var(--skel-c1) 75%);
++  background-size:200% 100%;
++  animation:skelShimmer 1.5s ease-in-out infinite;
++  border-radius:8px;
++}
++/* stagger ciclico ogni 6 elementi — copre sia le liste corte (4 opzioni,
++   4 chip) sia quelle lunghe (12 carte Memory) con un solo set di regole */
++.skel-base:nth-child(6n+1){ animation-delay:0s; }
++.skel-base:nth-child(6n+2){ animation-delay:.08s; }
++.skel-base:nth-child(6n+3){ animation-delay:.16s; }
++.skel-base:nth-child(6n+4){ animation-delay:.24s; }
++.skel-base:nth-child(6n+5){ animation-delay:.32s; }
++.skel-base:nth-child(6n)  { animation-delay:.4s; }
++
++.skel-row{ display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap; }
++.skel-pill{ height:26px;width:64px;border-radius:20px; }
++
++.skel-bar{ height:8px;border-radius:4px;margin-bottom:14px; }
++.skel-progress{ height:3px; }
++
++.skel-card{
++  background:var(--surface-1);
++  border:1px solid var(--border-subtle);
++  border-radius:var(--radius-md);
++  padding:1.25rem;
++  margin-bottom:10px;
++}
++.skel-line{ height:14px;border-radius:6px;margin-bottom:10px; }
++.skel-line:last-child{ margin-bottom:0; }
++.skel-line-cat{ width:38%;height:9px; }
++.skel-line-q1{ width:92%; }
++.skel-line-q2{ width:64%; }
++.skel-line-sentence{ width:100%;height:22px;margin-bottom:0; }
++
++.skel-opts{ display:flex;flex-direction:column;gap:7px; }
++.skel-opt{ height:42px;border-radius:var(--radius-sm); }
++
++.skel-match-cols{ display:grid;grid-template-columns:1fr 1fr;gap:10px; }
++.skel-item{ height:34px;border-radius:var(--radius-sm);margin-bottom:5px; }
++
++.skel-mem-board{ display:grid;grid-template-columns:repeat(4,1fr);gap:8px; }
++.skel-mem-card{ aspect-ratio:1;border-radius:var(--radius-md); }
++
++.skel-chips{ display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px; }
++.skel-chip{ height:28px;width:74px;border-radius:20px; }
++
++.skel-btn{ height:40px;width:160px;border-radius:var(--radius-sm); }
++}
 diff --git a/css/minigiochi/quiz.css b/css/minigiochi/quiz.css
 index da16cfc..477a236 100644
 --- a/css/minigiochi/quiz.css
@@ -166,15 +1209,17 @@ index da16cfc..477a236 100644
      background:rgba(20,30,60,.03);border-color:rgba(20,30,60,.08);color:rgba(16,24,42,.78);
    }
 diff --git a/css/mod-cards.css b/css/mod-cards.css
-index c6d8ba6..ef6a433 100644
+index c6d8ba6..36c5bf5 100644
 --- a/css/mod-cards.css
 +++ b/css/mod-cards.css
-@@ -211,25 +211,25 @@
+@@ -210,26 +210,26 @@
+    #mod-area-catalog[data-area-key] (vedi @layer areas in pixelprof.css).
     ───────────────────────────────────────────────────────────────── */
  .mod-card.generic-card {
-   background: linear-gradient(145deg,#0c1420 0%,#131f36 55%,#0c1420 100%);
+-  background: linear-gradient(145deg,#0c1420 0%,#131f36 55%,#0c1420 100%);
 -  border-color: rgba(var(--area-rgb,0,255,200),.28);
 -  box-shadow: 0 4px 24px rgba(var(--area-rgb,0,255,200),.08);
++  background: linear-gradient(145deg,var(--navy) 0%,#1F2E3A 55%,var(--navy) 100%);
 +  border-color: rgba(var(--area-rgb,110,122,80),.28);
 +  box-shadow: 0 4px 24px rgba(var(--area-rgb,110,122,80),.08);
  }
@@ -250,12 +1295,161 @@ index c6d8ba6..ef6a433 100644
  }
  
  /* ─────────────────────────────────────────────────────────────────
+diff --git a/css/onboarding.css b/css/onboarding.css
+new file mode 100644
+index 0000000..97cf5c9
+--- /dev/null
++++ b/css/onboarding.css
+@@ -0,0 +1,143 @@
++/* ===============================================
++   ONBOARDING
++   Estratto dal monolite pixelprof.css (redesign palette v9).
++   NOTA: l'override tema chiaro per questa sezione resta per ora
++   nel grande blocco @layer theme condiviso in pixelprof.css
++   (sezione numerata corrispondente — vedi commento lì) e non è
++   stato ancora spostato qui: la separazione dell'override chiaro
++   sezione-per-sezione è un passo successivo, non incluso in questa
++   estrazione.
++=============================================== */
++@layer onboarding {
++/* ═══════════════════════════════════════════════════════════════════
++   PixelProf — ONBOARDING TOUR (js/onboarding.js) — v1.0.0
++   Tour "a spotlight" mostrato al primo accesso di ogni docente:
++   overlay scuro a tutto schermo + riquadro pulsante evidenziato
++   (tecnica box-shadow, nessuna maschera SVG) + tooltip con freccia
++   che punta verso l'elemento. Markup creato interamente da JS
++   (stesso approccio di ppAlert/ppConfirmBox in game-engine-state.js
++   e del modal di anteprima import CSV) — nessun markup statico
++   aggiunto a index.html, solo classi qui.
++   Nuove classi (prefisso onb-), nessuna collisione con layer
++   esistenti — dichiarato per ultimo prima di "theme" per coerenza
++   con la regola "nuova feature → nuovo layer in fondo" (vedi
++   intestazione file), lasciando comunque a "theme" l'ultima parola
++   sui colori in tema chiaro.
++
++   v2.4.1 (bugfix): z-index dell'intero stack (velo/anello/tooltip)
++   alzato da 9750/9760/9770 a 9850/9860/9870. Causa: il passo del tour
++   guidato "Conferma richiesta" (Flip Card, v2.4.0) evidenzia un
++   pulsante DENTRO il dialogo generico ppConfirmBox() — che usa
++   .pp-generic-overlay a z-index:9800 (vedi @layer dialogs). Con lo
++   stack onboarding sotto quota 9800, l'intero tooltip (testo, barra di
++   avanzamento, pulsanti) spariva dietro il dialogo — segnalato da test
++   live come "tour impossibile da completare". 9850/60/70 restano sotto
++   #confetti-canvas (9998) e #overtake-popup (9999): coincidenza
++   estremamente improbabile con un passo del tour, invarianza non
++   toccata di proposito.
++   ═══════════════════════════════════════════════════════════════════ */
++
++.onb-overlay{
++  position:fixed;inset:0;z-index:9850;
++  background:rgba(4,6,15,.5); /* v8.24.0 — richiesta esplicita utente: era
++    .68 + blur 3px, troppo scuro in tema scuro (default), mascherava
++    troppo la schermata sotto il velo fuori dal "buco" ritagliato dal
++    passo corrente. Portato a .5 (stesso livello del tema chiaro sotto,
++    v. html[data-theme="light"] .onb-overlay in @layer theme) e blur
++    ridotto a 2px: resta leggibile ma il resto della UI dietro il velo
++    si intravede meglio. */
++  backdrop-filter:blur(2px);
++  -webkit-backdrop-filter:blur(2px);
++  animation:onbFadeIn .25s ease both;
++  touch-action:pan-y; /* v8.15.6: garantisce lo scroll verticale touch anche
++    toccando il velo (non solo sui "buchi" ritagliati) — possibile causa
++    concorrente del bug "scelta aula, scroll bloccato" su mobile */
++}
++@keyframes onbFadeIn{from{opacity:0}to{opacity:1}}
++
++.onb-ring{
++  position:fixed;
++  border-radius:14px;
++  border:3px solid var(--accent);
++  box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 6px rgba(var(--accent-rgb),.35),0 0 34px rgba(var(--accent-rgb),.45);
++  /* v8.24.1 — richiesta esplicita utente: dopo aver schiarito .onb-overlay
++     (v8.24.0), l'anello (bordo 2px + glow debole, alpha .15/.25) risultava
++     poco visibile: con più UI reale visibile dietro al velo, l'anello
++     aveva meno contrasto per "staccare" dal resto. Bordo portato a 3px,
++     aggiunto un sottile anello scuro (0 0 0 1px nero .55) appena fuori dal
++     bordo per garantire un distacco netto qualunque sia lo sfondo dietro
++     (chiaro, scuro o già tendente al teal come le card), poi il consueto
++     alone ciano ma con alpha quasi raddoppiata (.35/.45 invece di .15/.25). */
++  pointer-events:none;
++  z-index:9860;
++  transition:top .35s cubic-bezier(.22,1,.36,1),left .35s cubic-bezier(.22,1,.36,1),
++             width .35s cubic-bezier(.22,1,.36,1),height .35s cubic-bezier(.22,1,.36,1);
++}
++/* Pulsazione riservata ai passi 'action' (target realmente cliccabile) —
++   i passi 'info' mostrano un anello statico, coerente col fatto che il
++   target è solo evidenziato ma non cliccabile in quel momento. */
++.onb-ring-pulse{
++  animation:onbPulse 1.8s ease-in-out infinite;
++}
++@keyframes onbPulse{
++  0%,100%{box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 6px rgba(var(--accent-rgb),.35),0 0 34px rgba(var(--accent-rgb),.45);}
++  50%{box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 9px rgba(var(--accent-rgb),.45),0 0 46px rgba(var(--accent-rgb),.6);}
++}
++
++.onb-tooltip{
++  position:fixed;z-index:9870;
++  width:290px;max-width:calc(100vw - 24px);
++  background:rgba(10,15,30,.98);
++  border:1px solid rgba(var(--accent-rgb),.25);
++  border-radius:16px;
++  padding:16px 18px;
++  box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 0 1px rgba(var(--accent-rgb),.06);
++  animation:onbTtIn .3s cubic-bezier(.22,1,.36,1) both;
++}
++@keyframes onbTtIn{from{opacity:0;transform:translateY(6px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
++
++/* Freccia — piccolo quadrato ruotato 45°, stesso sfondo/bordo del tooltip.
++   onb-arrow-top: il tooltip è SOTTO il target → freccia in alto, punta in su.
++   onb-arrow-bottom: il tooltip è SOPRA il target → freccia in basso, punta in giù. */
++.onb-tooltip::before{
++  content:'';position:absolute;width:14px;height:14px;
++  background:rgba(10,15,30,.98);
++  border:1px solid rgba(var(--accent-rgb),.25);
++  transform:rotate(45deg);
++}
++.onb-tooltip.onb-arrow-top::before{ top:-8px;left:50%;margin-left:-7px;border-right:none;border-bottom:none; }
++.onb-tooltip.onb-arrow-bottom::before{ bottom:-8px;left:50%;margin-left:-7px;border-left:none;border-top:none; }
++
++.onb-progress{ height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;margin-bottom:12px; }
++.onb-progress-fill{ height:100%;background:linear-gradient(90deg,var(--accent),var(--purple));border-radius:2px;transition:width .3s; }
++
++.onb-step-label{
++  font-family:'Share Tech Mono',monospace;font-size:9px;font-weight:700;
++  color:rgba(var(--accent-rgb),.65);letter-spacing:1.5px;text-transform:uppercase;
++  margin-bottom:6px;
++}
++.onb-title{ font-size:14px;font-weight:700;color:#fff;margin-bottom:5px;line-height:1.3; }
++.onb-body{ font-size:12px;color:rgba(255,255,255,.55);line-height:1.55;margin-bottom:14px; }
++
++.onb-actions{ display:flex;align-items:center;justify-content:space-between;gap:10px; }
++.onb-skip{
++  background:none;border:none;cursor:pointer;padding:2px 0;
++  font-family:inherit;font-size:11px;color:rgba(255,255,255,.6);
++  transition:color .18s;
++} /* v8.15.6 FIX: default era .35 (~2.9:1, quasi illeggibile), :hover era già .6 (leggibile) — richiesta esplicita utente: stesso valore .6 sempre, non solo on-hover */
++.onb-next{
++  display:inline-flex;align-items:center;gap:6px;
++  padding:8px 16px;border-radius:20px;
++  border:1px solid var(--accent);background:rgba(var(--accent-rgb),.12);
++  color:var(--accent);font-size:12px;font-weight:700;font-family:inherit;
++  cursor:pointer;transition:all .18s;white-space:nowrap;
++}
++.onb-next:hover{ background:rgba(var(--accent-rgb),.22);box-shadow:0 0 14px rgba(var(--accent-rgb),.15); }
++.onb-next:focus-visible{ outline:2px solid var(--accent);outline-offset:2px; }
++.onb-next i{ font-size:13px; }
++
++@media(prefers-reduced-motion: reduce){
++  .onb-overlay,.onb-tooltip{ animation:none; }
++  .onb-ring,.onb-ring-pulse{ animation:none;transition:none; }
++}
++}
 diff --git a/css/tokens.css b/css/tokens.css
 new file mode 100644
-index 0000000..acf92fb
+index 0000000..92c6906
 --- /dev/null
 +++ b/css/tokens.css
-@@ -0,0 +1,67 @@
+@@ -0,0 +1,68 @@
 +/* ===============================================
 +   TOKEN CENTRALIZZATI — Redesign palette (navy/crema/oliva/fango)
 +   Unica fonte per i colori "di marchio"/chrome (sfondi, superfici,
@@ -273,6 +1467,7 @@ index 0000000..acf92fb
 +  :root{
 +    /* ancore di palette */
 +    --navy:#17232D;
++    --navy-rgb:23,35,45;
 +    --crema:#F2E8D5;
 +    --oliva:#6E7A50;
 +    --fango:#7A5A38;
@@ -350,17 +1545,28 @@ index b242452..13ebd0e 100644
  
  /* v8.29.2 — bug segnalato: durante un minigioco o Flip Card attivi il
 diff --git a/index.html b/index.html
-index 8b8c77d..14958ee 100644
+index 8b8c77d..d34be29 100644
 --- a/index.html
 +++ b/index.html
-@@ -41,6 +41,7 @@ setTimeout(() => {
+@@ -41,7 +41,18 @@ setTimeout(() => {
  window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
  </script>
  
 +<link rel="stylesheet" href="css/tokens.css">
  <link rel="stylesheet" href="pixelprof.css">
++<link rel="stylesheet" href="css/dashboard.css">
++<link rel="stylesheet" href="css/docenti.css">
++<link rel="stylesheet" href="css/dialogs.css">
++<link rel="stylesheet" href="css/classhealth.css">
++<link rel="stylesheet" href="css/csvimport.css">
++<link rel="stylesheet" href="css/audio.css">
++<link rel="stylesheet" href="css/achievements.css">
++<link rel="stylesheet" href="css/histcards.css">
++<link rel="stylesheet" href="css/loaders.css">
++<link rel="stylesheet" href="css/onboarding.css">
  <link rel="stylesheet" href="css/flip-card.css">
  <link rel="stylesheet" href="css/lo-sapevi.css">
+ <link rel="stylesheet" href="css/act-select.css">
 diff --git a/js/game-constants.js b/js/game-constants.js
 index cc572c8..f8ee73b 100644
 --- a/js/game-constants.js
@@ -390,7 +1596,7 @@ index cc572c8..f8ee73b 100644
  function modColor(key){
    if(MOD_COLOR_HEX[key]) return MOD_COLOR_HEX[key];
 diff --git a/pixelprof.css b/pixelprof.css
-index ff701f5..48c1486 100644
+index ff701f5..73354e0 100644
 --- a/pixelprof.css
 +++ b/pixelprof.css
 @@ -45,7 +45,7 @@
@@ -446,8 +1652,12 @@ index ff701f5..48c1486 100644
    /* v6.6: overflow-x:hidden è la controparte di sicurezza del fix
       full-bleed su .topbar (vedi @layer topbar-fix) — la tecnica
       100vw/-50vw può eccedere di qualche px su browser che riservano
-@@ -150,12 +132,12 @@ body{
-   background:rgba(8,12,24,.96);
+@@ -147,15 +129,15 @@ body{
+ .topbar{
+   display:flex;gap:8px;margin-bottom:0;align-items:center;
+   padding:.75rem 1rem;
+-  background:rgba(8,12,24,.96);
++  background:rgba(var(--navy-rgb),.96);
    backdrop-filter:blur(24px);
    -webkit-backdrop-filter:blur(24px);
 -  border-bottom:1px solid rgba(0,255,200,.12);
@@ -557,6 +1767,15 @@ index ff701f5..48c1486 100644
    white-space:nowrap;
  }
  
+@@ -298,7 +280,7 @@ body{
+ .act-context-label{font-size:11px;color:rgba(255,255,255,.58);letter-spacing:.8px;text-transform:uppercase;font-family:'Share Tech Mono',monospace}
+ .act-hero{position:relative;border-radius:var(--radius-lg);overflow:hidden;margin-bottom:16px;min-height:160px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem 1.5rem;transition:all .4s;box-shadow:var(--shadow-card);}
+ .act-hero-bg{position:absolute;inset:0;width:100%;height:100%}
+-.act-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,12,24,.3) 0%,rgba(8,12,24,.75) 100%)}
++.act-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--navy-rgb),.3) 0%,rgba(var(--navy-rgb),.75) 100%)}
+ .act-hero-content{position:relative;z-index:2;text-align:center}
+ .act-hero-icon{font-size:42px;display:block;margin-bottom:10px;filter:drop-shadow(0 0 12px rgba(255,255,255,.3));transition:transform var(--transition-bounce);}
+ .act-hero:hover .act-hero-icon{transform:scale(1.1);}
 @@ -362,7 +344,7 @@ body{
  }
  .num-btn:hover{border-color:var(--accent-border);background:var(--accent-dim);color:var(--accent);}
@@ -695,6 +1914,15 @@ index ff701f5..48c1486 100644
  .match-combo-pill.x4{border-color:rgba(255,77,109,.5);background:rgba(255,77,109,.12);color:#ff6b85;}
  .match-combo-pill.xmax{
    border-color:rgba(255,215,0,.6);background:rgba(255,215,0,.12);color:#ffd700;
+@@ -613,7 +595,7 @@ body{
+ @keyframes comboBump{0%{transform:scale(1);}40%{transform:scale(1.2);}100%{transform:scale(1);}}
+ .match-paused-overlay{
+   position:absolute;inset:0;border-radius:var(--radius-md);
+-  background:rgba(8,12,24,.92);
++  background:rgba(var(--navy-rgb),.92);
+   display:flex;flex-direction:column;align-items:center;justify-content:center;
+   gap:8px;z-index:10;
+   backdrop-filter:blur(4px);
 @@ -636,21 +618,21 @@ body{
  .mem-stat-pill i{font-size:14px}
  .mem-stat-pill.timer-running{border-color:rgba(0,207,255,.35);color:#00cfff;background:rgba(0,207,255,.08);}
@@ -807,6 +2035,15 @@ index ff701f5..48c1486 100644
  }
  
  /* Immagine dentro carta Memory */
+@@ -770,7 +752,7 @@ body{
+ /* Paused overlay */
+ .mem-paused-overlay{
+   position:absolute;inset:0;border-radius:var(--radius-md);
+-  background:rgba(8,12,24,.92);
++  background:rgba(var(--navy-rgb),.92);
+   display:flex;flex-direction:column;align-items:center;justify-content:center;
+   gap:8px;z-index:10;
+   backdrop-filter:blur(4px);
 @@ -828,7 +810,7 @@ body{
  .pp-dialog-btn.confirm:hover{background:rgba(255,60,80,.2);}
  
@@ -866,6 +2103,15 @@ index ff701f5..48c1486 100644
  #confetti-canvas{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:9998;display:none}
  
  /* ===============================================
+@@ -944,7 +926,7 @@ body{
+ #screen-splash{
+   position:fixed;inset:0;z-index:9000;
+   display:flex;align-items:center;justify-content:center;
+-  background:#080c18;
++  background:var(--navy);
+   pointer-events:none;
+ }
+ 
 @@ -959,12 +941,12 @@ body{
  
  .splash-logo-svg{
@@ -970,9 +2216,12 @@ index ff701f5..48c1486 100644
    overflow-y:auto;
    display:flex;flex-direction:column;
  }
-@@ -1205,7 +1187,7 @@ body{
+@@ -1203,9 +1185,9 @@ body{
+ .cs-topbar{
+   display:flex;align-items:center;gap:12px;
    padding:1rem 1.25rem;
-   background:rgba(8,12,24,.96);
+-  background:rgba(8,12,24,.96);
++  background:rgba(var(--navy-rgb),.96);
    backdrop-filter:blur(24px);
 -  border-bottom:1px solid rgba(0,255,200,.08);
 +  border-bottom:1px solid rgba(var(--accent-rgb),.08);
@@ -1197,7 +2446,23 @@ index ff701f5..48c1486 100644
    transition:color var(--transition-fast),border-color var(--transition-fast);
  }
  .pp-footer a:hover{
-@@ -1832,8 +1814,8 @@ body{
+@@ -1807,7 +1789,6 @@ body{
+ @keyframes spin{to{transform:rotate(360deg);}}
+ 
+ 
+-
+ }
+ @layer streaming {
+ /* ═══════════════════════════════════════════════════════════════════
+@@ -1825,15 +1806,15 @@ body{
+ :root {
+   /* Profondità cinematica */
+   --film-dark:         #04060f;
+-  --film-surface:      #080c18;
++  --film-surface:      var(--navy);
+   --film-raised:       #0d1224;
+   --film-glass:        rgba(12,16,32,.82);
+   --film-glass-border: rgba(255,255,255,.08);
  
    /* Glow per categoria */
    --glow-ce:   rgba(30,144,255,.4);
@@ -1208,7 +2473,7 @@ index ff701f5..48c1486 100644
    --glow-wp:   rgba(40,160,80,.38);
  
    /* Transizioni premium */
-@@ -1885,16 +1867,16 @@ body{
+@@ -1885,16 +1866,16 @@ body{
      box-shadow var(--t-hover) var(--ease-soft) ;
  }
  .logo-wrap:hover {
@@ -1230,7 +2495,7 @@ index ff701f5..48c1486 100644
  }
  .logo-sub {
    font-size: 7px ;
-@@ -1946,7 +1928,7 @@ body{
+@@ -1946,7 +1927,7 @@ body{
    /* Dramatic spotlight radial — spostato in alto a sinistra */
    background: radial-gradient(
      ellipse 60% 40% at 0% 50%,
@@ -1239,7 +2504,7 @@ index ff701f5..48c1486 100644
      transparent 70%
    ) ;
    animation: none ;
-@@ -1957,7 +1939,7 @@ body{
+@@ -1957,7 +1938,7 @@ body{
  }
  .home-hero-eyebrow {
    font-size: 9px ;
@@ -1248,7 +2513,7 @@ index ff701f5..48c1486 100644
    letter-spacing: 4px ;
    margin-bottom: 8px ;
    text-align: left ;
-@@ -1966,7 +1948,7 @@ body{
+@@ -1966,7 +1947,7 @@ body{
    font-size: 28px ;
    text-align: left ;
    margin-bottom: 6px ;
@@ -1257,7 +2522,16 @@ index ff701f5..48c1486 100644
  }
  .home-hero-sub {
    font-size: 12px ;
-@@ -2096,8 +2078,8 @@ body{
+@@ -2081,7 +2062,7 @@ body{
+    SETUP CARD — "Platform setup panel"
+    ───────────────────────────────────────────────────────────────── */
+ .setup-card {
+-  background: rgba(8,12,24,.92) ;
++  background: rgba(var(--navy-rgb),.92) ;
+   border: 1px solid rgba(255,255,255,.08) ;
+   border-radius: 16px ;
+   backdrop-filter: blur(20px) ;
+@@ -2096,8 +2077,8 @@ body{
  #screen-courses {
    background: var(--film-dark) ;
    background-image:
@@ -1268,7 +2542,7 @@ index ff701f5..48c1486 100644
  }
  
  .cs-topbar {
-@@ -2162,7 +2144,7 @@ body{
+@@ -2162,10 +2143,10 @@ body{
  
  /* Add course form — "New content" button stile streaming */
  .cs-add-form {
@@ -1276,8 +2550,12 @@ index ff701f5..48c1486 100644
 +  border-color: rgba(var(--accent-rgb),.1) ;
    border-radius: 14px ;
    backdrop-filter: blur(16px) ;
-   background: rgba(8,12,24,.7) ;
-@@ -2191,7 +2173,7 @@ body{
+-  background: rgba(8,12,24,.7) ;
++  background: rgba(var(--navy-rgb),.7) ;
+ }
+ 
+ /* ─────────────────────────────────────────────────────────────────
+@@ -2191,7 +2172,7 @@ body{
    border-radius: 14px ;
  }
  .q-card::before {
@@ -1286,7 +2564,7 @@ index ff701f5..48c1486 100644
  }
  /* .opt — v8.34.0: rimosso, era usato solo da #qz-game. Nuovo stile in
     css/minigiochi/quiz.css (@layer quiz). */
-@@ -2277,9 +2259,9 @@ body{
+@@ -2277,9 +2258,9 @@ body{
    inset: 0;
    background:
      radial-gradient(ellipse 55% 80% at -5% 50%,
@@ -1298,7 +2576,7 @@ index ff701f5..48c1486 100644
    pointer-events: none;
    animation: none ;
  }
-@@ -2292,8 +2274,8 @@ body{
+@@ -2292,8 +2273,8 @@ body{
    height: 1px;
    background: linear-gradient(90deg,
      transparent,
@@ -1309,7 +2587,7 @@ index ff701f5..48c1486 100644
      transparent);
  }
  
-@@ -2301,7 +2283,7 @@ body{
+@@ -2301,7 +2282,7 @@ body{
    font-size: 9px ;
    font-weight: 700 ;
    letter-spacing: 4px ;
@@ -1318,7 +2596,7 @@ index ff701f5..48c1486 100644
    margin-bottom: 10px ;
    display: flex ;
    align-items: center ;
-@@ -2316,8 +2298,8 @@ body{
+@@ -2316,8 +2297,8 @@ body{
    justify-content: center;
    padding: 1px 7px;
    border-radius: 3px;
@@ -1329,7 +2607,7 @@ index ff701f5..48c1486 100644
    font-size: 8px;
    font-weight: 900;
    letter-spacing: 1.5px;
-@@ -2339,12 +2321,12 @@ body{
+@@ -2339,12 +2320,12 @@ body{
  
  /* hl mantiene il suo colore verde */
  .home-hero-title .hl {
@@ -1344,7 +2622,7 @@ index ff701f5..48c1486 100644
  }
  
  .home-hero-sub {
-@@ -2390,7 +2372,7 @@ body{
+@@ -2390,7 +2371,7 @@ body{
    display: block;
    font-size: 9px;
    font-weight: 600;
@@ -1353,7 +2631,7 @@ index ff701f5..48c1486 100644
    letter-spacing: 1.5px;
    text-transform: uppercase;
    margin-top: 2px;
-@@ -2416,12 +2398,12 @@ body{
+@@ -2416,12 +2397,12 @@ body{
  
  /* Wordmark "Orbitron" con gradiente testo */
  .logo-main {
@@ -1368,7 +2646,7 @@ index ff701f5..48c1486 100644
    font-size: 15px ;
    letter-spacing: 2px ;
  }
-@@ -2534,7 +2516,7 @@ body{
+@@ -2534,12 +2515,12 @@ body{
    width: 6px; height: 6px;
    border-radius: 50%;
    background: var(--accent);
@@ -1377,7 +2655,13 @@ index ff701f5..48c1486 100644
  }
  
  /* Q-card "Scene card" */
-@@ -2570,18 +2552,18 @@ body{
+ .q-card {
+-  background: rgba(8,12,24,.7) ;
++  background: rgba(var(--navy-rgb),.7) ;
+   backdrop-filter: blur(8px) ;
+   border: 1px solid rgba(255,255,255,.06) ;
+   border-radius: 14px ;
+@@ -2570,18 +2551,18 @@ body{
    top: -20px; left: 50%; transform: translateX(-50%);
    width: 160px; height: 160px;
    border-radius: 50%;
@@ -1399,7 +2683,7 @@ index ff701f5..48c1486 100644
  }
  
  /* ─────────────────────────────────────────────────────────────────
-@@ -2638,17 +2620,17 @@ body{
+@@ -2638,17 +2619,17 @@ body{
  #screen-splash {
    background:
      radial-gradient(ellipse 60% 50% at 50% 40%,
@@ -1420,7 +2704,7 @@ index ff701f5..48c1486 100644
  }
  .splash-wordmark em {
    /* Già incluso nel gradiente */
-@@ -2684,7 +2666,7 @@ body{
+@@ -2684,7 +2665,7 @@ body{
    position: absolute;
    inset: 0;
    background: linear-gradient(135deg,
@@ -1429,7 +2713,7 @@ index ff701f5..48c1486 100644
      rgba(0,207,255,.08) 100%);
    opacity: 0;
    transition: opacity .22s var(--ease-soft);
-@@ -2693,7 +2675,7 @@ body{
+@@ -2693,7 +2674,7 @@ body{
    opacity: 1;
  }
  #start-btn:not(:disabled):hover {
@@ -1438,7 +2722,7 @@ index ff701f5..48c1486 100644
    transform: translateY(-1px);
  }
  
-@@ -2718,11 +2700,11 @@ body{
+@@ -2718,11 +2699,11 @@ body{
     MEMORY BOARD — "Card reveal" cinematico
     ───────────────────────────────────────────────────────────────── */
  .mem-c.hide:hover {
@@ -1453,7 +2737,7 @@ index ff701f5..48c1486 100644
  }
  
  /* ─────────────────────────────────────────────────────────────────
-@@ -2749,7 +2731,7 @@ body{
+@@ -2749,7 +2730,7 @@ body{
    border-radius: 2px;
  }
  ::-webkit-scrollbar-thumb:hover {
@@ -1462,7 +2746,7 @@ index ff701f5..48c1486 100644
  }
  
  /* ─────────────────────────────────────────────────────────────────
-@@ -2759,11 +2741,11 @@ body{
+@@ -2759,11 +2740,11 @@ body{
     che ora vince su questo layer: lasciata qui il suo box-shadow verrebbe
     coperta dalla box-shadow base di .mod-card definita in modcards). */
  .act-card:focus-visible {
@@ -1476,7 +2760,7 @@ index ff701f5..48c1486 100644
    outline-offset: 2px ;
  }
  
-@@ -2891,17 +2873,17 @@ body{
+@@ -2891,17 +2872,17 @@ body{
    gap: 1px;
    padding: 4px 10px 4px 8px;
    border-radius: 14px;
@@ -1499,7 +2783,7 @@ index ff701f5..48c1486 100644
  }
  .tb-aula-row {
    display: flex;
-@@ -2966,10 +2948,10 @@ body{
+@@ -2966,10 +2947,10 @@ body{
    transform: translateX(-50%);  /* ← nuovo: centra sul bottone */
    min-width: 160px;
    background: rgba(10,14,28,.97);
@@ -1512,7 +2796,7 @@ index ff701f5..48c1486 100644
    z-index: 200;
    animation: hubMenuIn .18s cubic-bezier(.22,1,.36,1) both;
  }
-@@ -3009,12 +2991,12 @@ body{
+@@ -3009,12 +2990,12 @@ body{
    border-radius: 0 2px 2px 0;
  }
  .tb-hub-item:hover {
@@ -1527,7 +2811,7 @@ index ff701f5..48c1486 100644
    color: var(--accent);
  }
  .tb-hub-item.active::before { transform: scaleY(1); }
-@@ -3060,9 +3042,9 @@ body{
+@@ -3060,9 +3041,9 @@ body{
  }
  .cat-card:hover {
    transform: translateY(-4px) scale(1.02);
@@ -1540,7 +2824,7 @@ index ff701f5..48c1486 100644
  }
  .cat-card:hover::after { transform: scaleX(1); }
  .cat-card:focus-visible {
-@@ -3094,17 +3076,17 @@ body{
+@@ -3094,17 +3075,17 @@ body{
    gap: 1px;
    padding: 4px 10px 4px 8px;
    border-radius: 14px;
@@ -1563,251 +2847,1072 @@ index ff701f5..48c1486 100644
  }
  #tb-course-badge:hover #tb-course-name {
    color: var(--accent);
-@@ -3163,8 +3145,8 @@ body{
-   position:fixed;inset:0;z-index:8000;
-   background:var(--surface-0);
-   background-image:
+@@ -3148,427 +3129,7 @@ body{
+ @layer topbar-fix {
+ 
+ }
+-@layer dashboard {
+-/* ═══════════════════════════════════════════════════════════════════
+-   PixelProf v6.0.0 — DASHBOARD DIRETTORE + GESTIONE DOCENTI
+-   Stile coerente con .course-card/.cat-card già presenti:
+-   cinematic lift on hover, bottom accent bar, glow per categoria.
+-   ═══════════════════════════════════════════════════════════════════ */
+ 
+-#screen-director-dashboard,
+-#screen-teacher-mgmt,
+-#screen-teacher-create,
+-#screen-teacher-list,
+-#screen-teacher-detail{
+-  position:fixed;inset:0;z-index:8000;
+-  background:var(--surface-0);
+-  background-image:
 -    radial-gradient(ellipse 80% 50% at 20% 0%,rgba(0,255,200,.03) 0%,transparent 60%),
 -    radial-gradient(ellipse 60% 40% at 80% 100%,rgba(124,106,255,.03) 0%,transparent 60%);
-+    radial-gradient(ellipse 80% 50% at 20% 0%,rgba(var(--accent-rgb),.03) 0%,transparent 60%),
-+    radial-gradient(ellipse 60% 40% at 80% 100%,rgba(var(--purple-rgb),.03) 0%,transparent 60%);
-   overflow-y:auto;display:flex;flex-direction:column;
- }
- #screen-director-dashboard.hidden,
-@@ -3222,9 +3204,9 @@ body{
- .dd-aule:hover{ border-color:rgba(30,144,255,.5); box-shadow:0 12px 36px rgba(30,144,255,.14); }
- .dd-aule:hover .dd-title,.dd-aule:hover .dd-arrow{ color:#5eb8ff; }
- 
+-  overflow-y:auto;display:flex;flex-direction:column;
+-}
+-#screen-director-dashboard.hidden,
+-#screen-teacher-mgmt.hidden,
+-#screen-teacher-create.hidden,
+-#screen-teacher-list.hidden,
+-#screen-director-dashboard.entering,
+-#screen-teacher-mgmt.entering,
+-#screen-teacher-create.entering,
+-#screen-teacher-list.entering,
+-#screen-teacher-detail.entering{ animation:screenFadeIn .35s ease both; }
+-
+-/* ── Griglia 3 card Dashboard Direttore ── */
+-.dd-grid{
+-  display:grid;grid-template-columns:1fr;gap:14px;margin-top:8px;
+-}
+-@media(min-width:560px){ .dd-grid{ grid-template-columns:1fr 1fr 1fr; } }
+-
+-.dd-card{
+-  position:relative;border-radius:16px;
+-  border:1px solid rgba(255,255,255,.09);
+-  background:rgba(255,255,255,.04);
+-  cursor:pointer;overflow:hidden;
+-  box-shadow:0 4px 20px rgba(0,0,0,.35);
+-  transition:transform .22s cubic-bezier(.34,1.56,.64,1),box-shadow .2s ease,border-color .2s ease,background .2s ease;
+-}
+-.dd-card::after{
+-  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+-  transform:scaleX(0);transition:transform .22s ease;
+-}
+-.dd-card:hover{ transform:translateY(-4px) scale(1.02); }
+-.dd-card:hover::after{ transform:scaleX(1); }
+-.dd-card:focus-visible{ outline:2px solid var(--accent); outline-offset:3px; }
+-
+-.dd-card-inner{
+-  display:flex;flex-direction:column;align-items:flex-start;gap:8px;
+-  padding:1.5rem 1.25rem;min-height:140px;position:relative;
+-}
+-.dd-icon{
+-  font-size:32px;line-height:1;
+-  filter:drop-shadow(0 0 8px rgba(255,255,255,.15));
+-  transition:transform .22s cubic-bezier(.34,1.56,.64,1);
+-}
+-.dd-card:hover .dd-icon{ transform:scale(1.14); }
+-.dd-title{ font-size:16px;font-weight:700;color:#fff;transition:color .18s; }
+-.dd-sub{ font-size:11px;color:rgba(255,255,255,.4);line-height:1.5;padding-right:24px; }
+-.dd-arrow{
+-  position:absolute;bottom:1.25rem;right:1.25rem;font-size:16px;
+-  color:rgba(255,255,255,.2);transition:color .18s,transform .18s;
+-}
+-.dd-card:hover .dd-arrow{ transform:translateX(3px); }
+-
+-.dd-aule{ border-color:rgba(30,144,255,.15); }
+-.dd-aule::after{ background:linear-gradient(90deg,transparent,#1e90ff,transparent); }
+-.dd-aule:hover{ border-color:rgba(30,144,255,.5); box-shadow:0 12px 36px rgba(30,144,255,.14); }
+-.dd-aule:hover .dd-title,.dd-aule:hover .dd-arrow{ color:#5eb8ff; }
+-
 -.dd-docenti{ border-color:rgba(124,106,255,.15); }
 -.dd-docenti::after{ background:linear-gradient(90deg,transparent,#7c6aff,transparent); }
 -.dd-docenti:hover{ border-color:rgba(124,106,255,.5); box-shadow:0 12px 36px rgba(124,106,255,.14); }
-+.dd-docenti{ border-color:rgba(var(--purple-rgb),.15); }
-+.dd-docenti::after{ background:linear-gradient(90deg,transparent,var(--purple),transparent); }
-+.dd-docenti:hover{ border-color:rgba(var(--purple-rgb),.5); box-shadow:0 12px 36px rgba(var(--purple-rgb),.14); }
- .dd-docenti:hover .dd-title,.dd-docenti:hover .dd-arrow{ color:#b4a0ff; }
- 
- /* v8.26.0: rimosse le regole .dd-scegli (dead code) — la card "Scegli
-@@ -3257,9 +3239,9 @@ body{
- /* ── Hub: variante a 2 card di .dd-grid ── */
- .dd-grid-2{ grid-template-columns:1fr; }
- @media(min-width:480px){ .dd-grid-2{ grid-template-columns:1fr 1fr; } }
+-.dd-docenti:hover .dd-title,.dd-docenti:hover .dd-arrow{ color:#b4a0ff; }
+-
+-/* v8.26.0: rimosse le regole .dd-scegli (dead code) — la card "Scegli
+-   Aula" è stata sostituita dalla fascia .dd-enter-banner, sempre
+-   distinta dalle card di gestione, stile in css/director-profile.css.
+-   Nuova card .dd-direttore (accento oro) anch'essa nel file dedicato. */
+-
+-/* ── Gestione Docenti — badge "Disattivato" (scheda docente) ──
+-   v8.14.0: rimossa la famiglia .tm-list/.tm-row/.tm-row-name (vecchio
+-   design a lista, mai più referenziata da JS/HTML — vedi
+-   UX_AUDIT_grafica_dark_light.md §6). .tm-badge-inactive invece è
+-   attivamente usata in js/app.js (tmOpenDetail, tmDetailSaveProfile,
+-   tmDetailToggleActive) quindi resta e viene tematizzata sotto. */
+-.tm-badge-inactive{
+-  font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
+-  padding:2px 8px;border-radius:20px;flex-shrink:0;
+-  background:rgba(255,80,80,.1);border:1px solid rgba(255,80,80,.3);color:#ff6b6b;
+-}
+-
+-/* ═══════════════════════════════════════════════════════════════════
+-}
+-@layer docenti {
+-   PixelProf v6.1.0 — REDESIGN GESTIONE DOCENTI
+-   Hub a 2 card (riusa .dd-grid/.dd-card già esistenti) + schermata
+-   creazione + lista a card con tab + dettaglio con gestione aule.
+-   .tm-list/.tm-row* sopra restano definiti ma non più referenziati
+-   (vecchio design) — lasciati per zero rischio, nessun conflitto.
+-   ═══════════════════════════════════════════════════════════════════ */
+-
+-/* ── Hub: variante a 2 card di .dd-grid ── */
+-.dd-grid-2{ grid-template-columns:1fr; }
+-@media(min-width:480px){ .dd-grid-2{ grid-template-columns:1fr 1fr; } }
 -.dd-new-teacher{ border-color:rgba(0,255,200,.15); }
-+.dd-new-teacher{ border-color:rgba(var(--accent-rgb),.15); }
- .dd-new-teacher::after{ background:linear-gradient(90deg,transparent,var(--accent),transparent); }
+-.dd-new-teacher::after{ background:linear-gradient(90deg,transparent,var(--accent),transparent); }
 -.dd-new-teacher:hover{ border-color:rgba(0,255,200,.5); box-shadow:0 12px 36px rgba(0,255,200,.14); }
-+.dd-new-teacher:hover{ border-color:rgba(var(--accent-rgb),.5); box-shadow:0 12px 36px rgba(var(--accent-rgb),.14); }
- .dd-new-teacher:hover .dd-title,.dd-new-teacher:hover .dd-arrow{ color:var(--accent); }
- 
- /* v6.1.1 FIX: .dd-teacher-list non aveva alcuna regola di accento —
-@@ -3267,9 +3249,9 @@ body{
-    ::after ereditato da .dd-card), quindi la card "Docenti" non si
-    illuminava al hover come "Nuovo Docente". Stessa palette violetta
-    già usata per .dd-docenti nella Dashboard Direttore. */
+-.dd-new-teacher:hover .dd-title,.dd-new-teacher:hover .dd-arrow{ color:var(--accent); }
+-
+-/* v6.1.1 FIX: .dd-teacher-list non aveva alcuna regola di accento —
+-   il bordo/bottom-bar restava trasparente (nessun background sul
+-   ::after ereditato da .dd-card), quindi la card "Docenti" non si
+-   illuminava al hover come "Nuovo Docente". Stessa palette violetta
+-   già usata per .dd-docenti nella Dashboard Direttore. */
 -.dd-teacher-list{ border-color:rgba(124,106,255,.15); }
 -.dd-teacher-list::after{ background:linear-gradient(90deg,transparent,#7c6aff,transparent); }
 -.dd-teacher-list:hover{ border-color:rgba(124,106,255,.5); box-shadow:0 12px 36px rgba(124,106,255,.14); }
-+.dd-teacher-list{ border-color:rgba(var(--purple-rgb),.15); }
-+.dd-teacher-list::after{ background:linear-gradient(90deg,transparent,var(--purple),transparent); }
-+.dd-teacher-list:hover{ border-color:rgba(var(--purple-rgb),.5); box-shadow:0 12px 36px rgba(var(--purple-rgb),.14); }
- .dd-teacher-list:hover .dd-title,.dd-teacher-list:hover .dd-arrow{ color:#b4a0ff; }
- 
- /* ── Toggle Genere (creazione + dettaglio) ── */
-@@ -3282,7 +3264,7 @@ body{
- }
- .gender-btn i{ font-size:16px; }
- .gender-btn:hover{ border-color:var(--accent-border); color:var(--accent); background:var(--accent-dim); }
+-.dd-teacher-list:hover .dd-title,.dd-teacher-list:hover .dd-arrow{ color:#b4a0ff; }
+-
+-/* ── Toggle Genere (creazione + dettaglio) ── */
+-.gender-toggle{ display:flex; gap:8px; }
+-.gender-btn{
+-  flex:1;padding:10px;border-radius:var(--radius-sm);border:1px solid var(--border-mid);
+-  background:var(--surface-1);cursor:pointer;font-size:13px;font-weight:600;
+-  color:rgba(255,255,255,.55);display:flex;align-items:center;justify-content:center;gap:6px;
+-  font-family:inherit;transition:all var(--transition-fast);
+-}
+-.gender-btn i{ font-size:16px; }
+-.gender-btn:hover{ border-color:var(--accent-border); color:var(--accent); background:var(--accent-dim); }
 -.gender-btn.active{ border:1.5px solid var(--accent); background:rgba(0,255,200,.14); color:var(--accent); font-weight:700; }
-+.gender-btn.active{ border:1.5px solid var(--accent); background:rgba(var(--accent-rgb),.14); color:var(--accent); font-weight:700; }
- 
- /* ── Tabs Attivi / Disattivati (lista docenti) ── */
- .tm-tabs{ display:flex; gap:4px; margin-bottom:18px; border-bottom:1px solid rgba(255,255,255,.08); }
-@@ -3318,7 +3300,7 @@ body{
- }
- .tdc-card:hover::after{ transform:scaleX(1); }
- .tdc-card.tdc-inactive::after{ background:#ff4d6d; }
+-
+-/* ── Tabs Attivi / Disattivati (lista docenti) ── */
+-.tm-tabs{ display:flex; gap:4px; margin-bottom:18px; border-bottom:1px solid rgba(255,255,255,.08); }
+-.tm-tab{
+-  padding:9px 16px;border:none;background:none;cursor:pointer;
+-  font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.3px;
+-  color:rgba(255,255,255,.4);border-bottom:2px solid transparent;
+-  transition:color .18s,border-color .18s;
+-}
+-.tm-tab:hover{ color:rgba(255,255,255,.75); }
+-.tm-tab.active{ color:var(--accent); border-bottom-color:var(--accent); }
+-
+-/* ── Griglia card docente (lista) ── */
+-.tdc-grid{ display:grid;grid-template-columns:1fr;gap:10px; }
+-@media(min-width:600px){ .tdc-grid{ grid-template-columns:1fr 1fr; } }
+-
+-.tdc-card{
+-  position:relative;border-radius:14px;overflow:hidden;
+-  border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);
+-  padding:14px 16px;cursor:pointer;
+-  transition:transform .2s cubic-bezier(.34,1.56,.64,1),border-color .2s,background .2s,box-shadow .2s;
+-  box-shadow:0 4px 16px rgba(0,0,0,.3);
+-}
+-/* v6.1.1 FIX: mancava la bottom accent bar presente su tutte le altre
+-   card dell'app (.dd-card, .course-card, .cat-card) — la card docente
+-   non si "illuminava" al hover come le altre. Colore semantico: verde
+-   per i docenti attivi, rosso per i disattivati (stessa palette di
+-   .tdc-status-dot). */
+-.tdc-card::after{
+-  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+-  background:#00ff96;transform:scaleX(0);transform-origin:left;
+-  transition:transform .2s cubic-bezier(.34,1.56,.64,1);
+-}
+-.tdc-card:hover::after{ transform:scaleX(1); }
+-.tdc-card.tdc-inactive::after{ background:#ff4d6d; }
 -.tdc-card:hover{ transform:translateY(-3px); border-color:rgba(0,255,200,.3); background:rgba(0,255,200,.04); box-shadow:0 10px 28px rgba(0,0,0,.4); }
-+.tdc-card:hover{ transform:translateY(-3px); border-color:rgba(var(--accent-rgb),.3); background:rgba(var(--accent-rgb),.04); box-shadow:0 10px 28px rgba(0,0,0,.4); }
- .tdc-card:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
- .tdc-card.tdc-inactive{ opacity:.55; }
- .tdc-card.tdc-inactive:hover{ opacity:.75; }
-@@ -3359,8 +3341,8 @@ body{
-   color:rgba(255,255,255,.5);font-family:inherit;font-weight:600;
-   transition:all var(--transition-fast);display:inline-flex;align-items:center;gap:5px;
- }
+-.tdc-card:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
+-.tdc-card.tdc-inactive{ opacity:.55; }
+-.tdc-card.tdc-inactive:hover{ opacity:.75; }
+-/* v8.15.2: .tdc-card.tdc-inactive{opacity:.55} moltiplica il colore di TUTTI i
+-   figli (stesso pattern già risolto per .bdg-card.locked/.bdg-desc in v8.13.1).
+-   var(--text-muted) 4.51:1 × .55 = ~2.48:1, var(--text-dim) 3.04:1 × .55 = ~1.67:1
+-   — entrambi sotto ogni soglia AA. Override scoped solo al contesto disattivato,
+-   per non alterare (né oscurare eccessivamente) lo stato attivo. */
+-.tdc-card.tdc-inactive .tdc-email,
+-.tdc-card.tdc-inactive .tdc-aula-chip,
+-.tdc-card.tdc-inactive .tdc-aule-empty{ color: rgba(255,255,255,.72); } /* effettivo ×.55 ≈ .396, sopra soglia --text-dim (.34) */
+-
+-.tdc-header{ display:flex;align-items:center;gap:10px;margin-bottom:10px; }
+-.tdc-gender-icon{
+-  width:32px;height:32px;border-radius:50%;flex-shrink:0;
+-  display:flex;align-items:center;justify-content:center;font-size:15px;
+-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.45);
+-}
+-.tdc-gender-icon.g-uomo{ background:rgba(30,144,255,.12);border-color:rgba(30,144,255,.3);color:#5eb0ff; }
+-.tdc-gender-icon.g-donna{ background:rgba(255,77,109,.12);border-color:rgba(255,77,109,.3);color:#ff8fa3; }
+-.tdc-name{ flex:1;font-size:14px;font-weight:700;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
+-.tdc-status-dot{ width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 6px currentColor; }
+-.tdc-status-dot.active{ background:#00ff96;color:#00ff96; }
+-.tdc-status-dot.inactive{ background:#ff4d6d;color:#ff4d6d; }
+-
+-.tdc-email{ font-size:11px;color:var(--text-muted);margin-bottom:10px;font-family:'Share Tech Mono',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; } /* v8.15.2 FIX: era rgba(255,255,255,.4) ~3.78:1 in scuro -> ora var(--text-muted), AA piena e già tematizzato */
+-
+-.tdc-aule-row{ border-top:1px solid rgba(255,255,255,.06);padding-top:9px;display:flex;flex-wrap:wrap;line-height:1.6; }
+-.tdc-aula-chip{ font-size:10px;font-weight:500;color:var(--text-muted);font-family:'Share Tech Mono',monospace;white-space:nowrap; } /* v8.15.2 FIX: era rgba(255,255,255,.45) */
+-.tdc-aula-chip + .tdc-aula-chip::before{ content:' | ';color:rgba(255,255,255,.18);white-space:pre; } /* separatore puramente decorativo, non testo informativo — non soggetto a soglie AA */
+-.tdc-aule-empty{ font-size:10px;color:var(--text-dim);font-style:italic; } /* v8.15.2 FIX: era rgba(255,255,255,.2) ~1.5:1 */
+-
+-/* ── Toggle aule (scheda dettaglio docente) ── */
+-.tdc-aule-toggle-grid{ display:flex;flex-wrap:wrap;gap:7px; }
+-.tdc-aula-toggle-btn{
+-  padding:6px 14px;border-radius:20px;border:1px solid var(--border-mid);
+-  background:var(--surface-1);font-size:12px;cursor:pointer;
+-  color:rgba(255,255,255,.5);font-family:inherit;font-weight:600;
+-  transition:all var(--transition-fast);display:inline-flex;align-items:center;gap:5px;
+-}
 -.tdc-aula-toggle-btn:hover{ border-color:rgba(0,255,200,.3);color:rgba(255,255,255,.8); }
 -.tdc-aula-toggle-btn.active{ background:rgba(0,255,200,.12);border-color:var(--accent);color:var(--accent); }
-+.tdc-aula-toggle-btn:hover{ border-color:rgba(var(--accent-rgb),.3);color:rgba(255,255,255,.8); }
-+.tdc-aula-toggle-btn.active{ background:rgba(var(--accent-rgb),.12);border-color:var(--accent);color:var(--accent); }
- .tdc-aula-toggle-btn:disabled{ opacity:.4;cursor:default; }
- 
- /* .tmd-email-hint — riga "Email attuale: ..." nella scheda docente
-@@ -3407,11 +3389,11 @@ body{
- @keyframes ppGenericFadeIn{from{opacity:0;}to{opacity:1;}}
- .pp-generic-box{
-   background:#0a1022;
+-.tdc-aula-toggle-btn:disabled{ opacity:.4;cursor:default; }
+-
+-/* .tmd-email-hint — riga "Email attuale: ..." nella scheda docente
+-   (screen-teacher-detail). v6.6: estratta dallo stile inline in
+-   index.html per poterla tematizzare correttamente. */
+-.tmd-email-hint{ font-size:11px;color:rgba(255,255,255,.35);font-family:'Share Tech Mono',monospace; }
+-
+-/* .tmd-close-btn — "X" rossa di chiusura rapida per la scheda docente,
+-   accanto alla sezione "Dati personali" (v6.6: nuovo elemento). */
+-.tmd-close-btn{
+-  flex-shrink:0;width:26px;height:26px;border-radius:50%;
+-  display:flex;align-items:center;justify-content:center;
+-  background:rgba(255,60,80,.1);border:1px solid rgba(255,60,80,.35);
+-  color:#ff4d6d;cursor:pointer;font-size:14px;line-height:1;
+-  transition:background .15s,border-color .15s,color .15s;
+-  font-family:inherit;
+-}
+-.tmd-close-btn:hover{ background:rgba(255,60,80,.22);border-color:rgba(255,60,80,.6);color:#ff6b6b; }
+-
+-/* .dp-hint-text — didascalie informative statiche/dinamiche nel
+-   pannello "⚙️ Gestione aula" e nella scheda docente (v6.6: sostituisce
+-   diversi style inline con colore fisso rgba(255,255,255,.3),
+-   illeggibili quando il contenitore diventa chiaro nel tema light). */
+-.dp-hint-text{ font-size:11px;color:rgba(255,255,255,.3); }
+-
+-}
+-@layer dialogs {
+-/* ═══════════════════════════════════════════════════════════════════
+-   PixelProf v6.2.0 — GENERIC THEMED DIALOGS
+-   Stile per ppAlert() / ppConfirmBox() / ppPromptBox() definite in
+-   game-engine-state.js. Markup creato dinamicamente da JS — questa
+-   sezione è puro CSS, nessun markup statico aggiunto a index.html.
+-   Sostituiscono alert()/confirm()/prompt() nativi in tutta l'app.
+-   ═══════════════════════════════════════════════════════════════════ */
+-.pp-generic-overlay{
+-  position:fixed;inset:0;z-index:9800;
+-  background:rgba(0,0,0,.72);
+-  backdrop-filter:blur(10px) saturate(140%);
+-  -webkit-backdrop-filter:blur(10px) saturate(140%);
+-  display:flex;align-items:center;justify-content:center;
+-  padding:1rem;
+-  animation:ppGenericFadeIn .18s ease both;
+-}
+-@keyframes ppGenericFadeIn{from{opacity:0;}to{opacity:1;}}
+-.pp-generic-box{
+-  background:#0a1022;
 -  border:1px solid rgba(0,255,200,.18);
-+  border:1px solid rgba(var(--accent-rgb),.18);
-   border-radius:var(--radius-lg);
-   padding:1.5rem;
-   width:100%;max-width:340px;
+-  border-radius:var(--radius-lg);
+-  padding:1.5rem;
+-  width:100%;max-width:340px;
 -  box-shadow:0 20px 70px rgba(0,0,0,.75),0 0 0 1px rgba(0,255,200,.06);
-+  box-shadow:0 20px 70px rgba(0,0,0,.75),0 0 0 1px rgba(var(--accent-rgb),.06);
-   animation:dropIn .2s cubic-bezier(.22,1,.36,1) both;
-   text-align:center;
- }
-@@ -3425,7 +3407,7 @@ body{
-   font-size:13px;font-family:inherit;outline:none;text-align:left;
-   transition:border var(--transition-fast),box-shadow var(--transition-fast);
- }
+-  animation:dropIn .2s cubic-bezier(.22,1,.36,1) both;
+-  text-align:center;
+-}
+-.pp-generic-icon{font-size:30px;margin-bottom:10px;line-height:1}
+-.pp-generic-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+-.pp-generic-msg{font-size:12px;color:rgba(255,255,255,.45);line-height:1.55;margin-bottom:1.1rem}
+-.pp-generic-input{
+-  width:100%;padding:9px 12px;margin-bottom:1.1rem;
+-  border-radius:var(--radius-sm);border:1px solid var(--border-mid);
+-  background:rgba(255,255,255,.05);color:var(--text-primary);
+-  font-size:13px;font-family:inherit;outline:none;text-align:left;
+-  transition:border var(--transition-fast),box-shadow var(--transition-fast);
+-}
 -.pp-generic-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(0,255,200,.08);}
-+.pp-generic-input:focus{border-color:var(--accent);box-shadow:0 0 0 3px rgba(var(--accent-rgb),.08);}
- .pp-generic-btns{display:flex;gap:8px}
- .pp-generic-btn{
-   flex:1;padding:10px;border-radius:var(--radius-sm);border:1px solid;
-@@ -3449,7 +3431,7 @@ body{
- .pp-generic-btn.ok::after,
- .pp-generic-btn.confirm::after{background:var(--accent);}
- .pp-generic-btn.ok:hover,
+-.pp-generic-btns{display:flex;gap:8px}
+-.pp-generic-btn{
+-  flex:1;padding:10px;border-radius:var(--radius-sm);border:1px solid;
+-  font-size:13px;font-weight:600;cursor:pointer;font-family:inherit;
+-  transition:all var(--transition-fast);position:relative;overflow:hidden;
+-}
+-.pp-generic-btn::after{
+-  content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;
+-  transform:scaleX(0);transition:transform var(--transition-fast);
+-}
+-.pp-generic-btn:hover::after{transform:scaleX(1);}
+-.pp-generic-btn.cancel{
+-  background:var(--surface-1);border-color:var(--border-mid);color:rgba(255,255,255,.6);
+-}
+-.pp-generic-btn.cancel::after{background:rgba(255,255,255,.3);}
+-.pp-generic-btn.cancel:hover{background:var(--surface-2);color:#fff;}
+-.pp-generic-btn.ok,
+-.pp-generic-btn.confirm{
+-  background:var(--accent-dim);border-color:var(--accent);color:var(--accent);
+-}
+-.pp-generic-btn.ok::after,
+-.pp-generic-btn.confirm::after{background:var(--accent);}
+-.pp-generic-btn.ok:hover,
 -.pp-generic-btn.confirm:hover{background:rgba(0,255,200,.22);}
-+.pp-generic-btn.confirm:hover{background:rgba(var(--accent-rgb),.22);}
- .pp-generic-btn.confirm.danger{
-   background:rgba(255,60,80,.12);border-color:rgba(255,60,80,.4);color:#ff4d6d;
- }
-@@ -3482,7 +3464,7 @@ body{
-   content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
-   background:var(--accent);transform:scaleX(0);transition:transform var(--transition-fast);
- }
+-.pp-generic-btn.confirm.danger{
+-  background:rgba(255,60,80,.12);border-color:rgba(255,60,80,.4);color:#ff4d6d;
+-}
+-.pp-generic-btn.confirm.danger::after{background:#ff4d6d;}
+-.pp-generic-btn.confirm.danger:hover{background:rgba(255,60,80,.2);}
+-}
+-
+-@layer classhealth {
+-/* ═══════════════════════════════════════════════════════════════════
+-   PixelProf — PANORAMICA CLASSE (dashboard.js)
+-   Dashboard aggregata per il docente: accuratezza, modulo più debole,
+-   partecipazione, attività più giocate. Nuove classi (prefisso chd-,
+-   storico per "class health" — mantenuto invariato per non rompere
+-   selettori esistenti), nessuna collisione con layer esistenti —
+-   dichiarato per ultimo per coerenza con la regola "nuova feature →
+-   nuovo layer in fondo".
+-   ═══════════════════════════════════════════════════════════════════ */
+-
+-/* ── KPI hero row ── */
+-.chd-kpi-grid{
+-  display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.1rem;
+-}
+-.chd-kpi-card{
+-  background:var(--surface-1);border:1px solid var(--border-subtle);
+-  border-radius:var(--radius-md);padding:14px 10px;text-align:center;
+-  transition:all var(--transition-fast);position:relative;overflow:hidden;
+-  box-shadow:var(--shadow-card);
+-}
+-.chd-kpi-card::after{
+-  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+-  background:var(--accent);transform:scaleX(0);transition:transform var(--transition-fast);
+-}
 -.chd-kpi-card:hover{background:var(--surface-2);border-color:rgba(0,255,200,.2);}
-+.chd-kpi-card:hover{background:var(--surface-2);border-color:rgba(var(--accent-rgb),.2);}
- .chd-kpi-card:hover::after{transform:scaleX(1);}
- .chd-kpi-icon{font-size:20px;margin-bottom:4px;line-height:1}
- .chd-kpi-val{font-size:21px;font-weight:700;color:var(--accent);font-family:'Share Tech Mono',monospace;line-height:1.15}
-@@ -3666,7 +3648,7 @@ body{
- .chd-wq-answer{
-   font-size:11px;color:rgba(255,255,255,.4);margin-bottom:8px;
- }
--.chd-wq-answer strong{color:rgba(0,255,200,.75);}
-+.chd-wq-answer strong{color:rgba(var(--accent-rgb),.75);}
- .chd-wq-bar-wrap{height:3px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden;}
- .chd-wq-bar{height:100%;border-radius:2px;background:linear-gradient(90deg,#ff4d6d,#ff8080);}
+-.chd-kpi-card:hover::after{transform:scaleX(1);}
+-.chd-kpi-icon{font-size:20px;margin-bottom:4px;line-height:1}
+-.chd-kpi-val{font-size:21px;font-weight:700;color:var(--accent);font-family:'Share Tech Mono',monospace;line-height:1.15}
+-.chd-kpi-lbl{font-size:10px;color:rgba(255,255,255,.4);margin-top:4px;line-height:1.3}
+-
+-/* ── Sezione generica ── */
+-.chd-section{margin-bottom:1.25rem}
+-.chd-section-title{
+-  font-size:13px;font-weight:700;color:#fff;margin-bottom:10px;
+-  display:flex;align-items:center;gap:8px;
+-}
+-
+-/* ── Card "modulo più debole" ── */
+-.chd-weak-card{
+-  background:rgba(255,255,255,.03);border:1px solid var(--border-subtle);
+-  border-radius:var(--radius-md);padding:14px 16px;
+-}
+-.chd-weak-headline{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:14px;line-height:1.5;font-weight:500}
+-.chd-mod-row{margin-bottom:10px}
+-.chd-mod-row:last-child{margin-bottom:0}
+-.chd-mod-row-top{display:flex;align-items:center;gap:7px;margin-bottom:5px;font-size:12px}
+-.chd-mod-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;box-shadow:0 0 5px currentColor}
+-.chd-mod-name{flex:1;color:rgba(255,255,255,.65);font-weight:500}
+-.chd-mod-pct{font-family:'Share Tech Mono',monospace;font-weight:700;font-size:12px}
+-.chd-mod-nodata{opacity:.4}
+-
+-/* ── Tabella partecipazione ── */
+-.chd-part-table{
+-  background:rgba(255,255,255,.03);border:1px solid var(--border-subtle);
+-  border-radius:var(--radius-md);overflow:hidden;
+-}
+-.chd-part-row{
+-  display:grid;grid-template-columns:1fr 72px 64px 84px;align-items:center;gap:6px;
+-  padding:9px 14px;font-size:12px;color:rgba(255,255,255,.75);
+-  border-bottom:1px solid rgba(255,255,255,.05);
+-}
+-.chd-part-row:last-child{border-bottom:none}
+-.chd-part-header{
+-  font-size:9px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;
+-  letter-spacing:.6px;background:rgba(255,255,255,.02);
+-}
+-.chd-part-name{display:flex;align-items:center;gap:6px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+-.chd-type-icon{font-size:11px;flex-shrink:0}
+-.chd-color-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+-.chd-part-sessions,.chd-part-avg{text-align:center;font-family:'Share Tech Mono',monospace}
+-.chd-part-last{text-align:right;color:rgba(255,255,255,.4);font-size:10px;white-space:nowrap}
+-
+-/* ── Banner "non ha mai giocato" ── */
+-.chd-never-played{
+-  display:flex;align-items:flex-start;gap:8px;margin-top:10px;
+-  padding:10px 14px;border-radius:10px;
+-  background:rgba(255,180,0,.08);border:1px solid rgba(255,180,0,.22);
+-  color:#ffb400;font-size:11px;line-height:1.5;
+-}
+-.chd-never-played i{font-size:14px;flex-shrink:0;margin-top:1px}
+-
+-/* ── Attività più giocate ── */
+-.chd-act-list{display:flex;flex-direction:column;gap:8px}
+-.chd-act-row{display:flex;align-items:center;gap:10px;font-size:12px}
+-.chd-act-icon{font-size:16px;flex-shrink:0;width:20px;text-align:center}
+-.chd-act-name{width:108px;flex-shrink:0;color:rgba(255,255,255,.65);font-weight:500;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+-.chd-act-bar-wrap{flex:1;height:6px;border-radius:3px;background:rgba(255,255,255,.06);overflow:hidden}
+-.chd-act-bar{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--purple))}
+-.chd-act-count{width:24px;flex-shrink:0;text-align:right;font-family:'Share Tech Mono',monospace;font-weight:700;color:var(--accent)}
+-
+-/* ── Empty state ── */
+-.chd-empty{text-align:center;padding:3rem 1rem}
+-.chd-empty-icon{font-size:40px;margin-bottom:14px;opacity:.4}
+-.chd-empty-title{font-size:14px;font-weight:600;color:var(--text-muted);margin-bottom:6px} /* v8.15.1 FIX: era rgba(255,255,255,.35) ~3.1:1 in scuro -> ora var(--text-muted), stesso pattern di .lb-empty .le-title (v8.13.1) */
+-.chd-empty-sub{font-size:12px;color:var(--text-dim);max-width:280px;margin:0 auto;line-height:1.5} /* v8.15.1 FIX: era rgba(255,255,255,.2) ~1.8:1, quasi invisibile -> ora var(--text-dim), stesso pattern di .lb-empty .le-sub (v8.13.1) */
+-
+-/* ── Footnote ── */
+-.chd-footnote{
+-  display:flex;align-items:flex-start;gap:6px;margin-top:.5rem;
+-  font-size:10px;color:var(--text-dim);line-height:1.5; /* v8.13.1 FIX: era .25 = 2.16:1 */
+-}
+-.chd-footnote i{flex-shrink:0;margin-top:1px;font-size:12px}
+-
+-/* ── Responsive ── */
+-@media(max-width:420px){
+-  .chd-kpi-grid{grid-template-columns:1fr;}
+-  .chd-part-row{grid-template-columns:1fr 56px 50px;}
+-  .chd-part-last{display:none;}
+-  .chd-act-name{width:84px;}
+-}
+-}
  
-@@ -3725,15 +3707,15 @@ body{
-   display:flex;align-items:center;justify-content:center;gap:7px;
-   width:100%;padding:9px;
-   border-radius:var(--radius-sm);
+ /* ── Domande difficili — v6.3.0: tab Problematiche/Recuperate +
+    sotto-filtro modulo (nomi estesi) + mostra-tutte.
+@@ -3576,630 +3137,15 @@ body{
+    che portavano (quante recuperate, quale modulo) è ora sui tab-count
+    e sulla chip .mod-badge riusata da renderer.js (stessa classe già
+    usata in Classifica — zero nuovo CSS per il badge modulo). ── */
+-@layer classhealth {
+-
+-/* Tabs Problematiche / Recuperate — stesso pattern di .tm-tabs/.tm-tab
+-   (Gestione Docenti), qui con accento cromatico rosso/verde coerente
+-   col resto della sezione. */
+-.chd-wq-tabs{
+-  display:flex;gap:4px;margin-bottom:12px;
+-  border-bottom:1px solid rgba(255,255,255,.08);
+-}
+-.chd-wq-tab{
+-  display:flex;align-items:center;gap:6px;
+-  padding:8px 14px;border:none;background:none;cursor:pointer;
+-  font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.2px;
+-  color:var(--text-muted);border-bottom:2px solid transparent; /* v8.14.0 FIX: era rgba(255,255,255,.4) hardcoded = 3.78:1 scuro, 2.88:1 chiaro (duplicato sotto ignorava il token) */
+-  transition:color .18s,border-color .18s;
+-}
+-.chd-wq-tab:hover{color:rgba(255,255,255,.75);}
+-.chd-wq-tab-problem.active{color:#ff6b85;border-bottom-color:#ff4d6d;}
+-.chd-wq-tab-recovered.active{color:#00ff96;border-bottom-color:#00ff96;}
+-.chd-wq-tab-count{
+-  font-size:9px;font-weight:700;padding:1px 6px;border-radius:20px;
+-  background:rgba(255,255,255,.08);color:rgba(255,255,255,.5);
+-  font-family:'Share Tech Mono',monospace;transition:all .18s;
+-}
+-.chd-wq-tab.active .chd-wq-tab-count{background:rgba(255,255,255,.14);color:inherit;}
+-
+-/* Sotto-filtro modulo — chip colorate, nomi estesi (un docente non
+-   deve sapere a memoria cosa significano le sigle CE/OE/WP). Colore
+-   per modulo allineato a _CHD_MOD_COLOR, la stessa palette già usata
+-   sopra in questa dashboard per "Modulo più debole". */
+-.chd-wq-modfilter{
+-  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;
+-}
+-.chd-wq-modfilter-btn{
+-  --chd-wq-mf-color:var(--accent);
+-  display:inline-flex;align-items:center;gap:5px;
+-  padding:5px 12px;border-radius:20px;
+-  border:1px solid var(--border-mid);background:var(--surface-1);
+-  color:rgba(255,255,255,.5);font-size:11px;font-weight:600;
+-  cursor:pointer;font-family:inherit;transition:all var(--transition-fast);
+-}
+-.chd-wq-modfilter-btn:hover{border-color:var(--chd-wq-mf-color);color:var(--chd-wq-mf-color);}
+-.chd-wq-modfilter-btn.active{
+-  background:color-mix(in srgb, var(--chd-wq-mf-color) 14%, transparent);
+-  border-color:var(--chd-wq-mf-color);color:var(--chd-wq-mf-color);
+-}
+-.chd-wq-modfilter-count{
+-  font-size:9px;font-weight:700;padding:0 5px;border-radius:20px;
+-  background:rgba(255,255,255,.1);font-family:'Share Tech Mono',monospace;
+-}
+-.chd-wq-modfilter-btn.active .chd-wq-modfilter-count{background:color-mix(in srgb, var(--chd-wq-mf-color) 25%, transparent);}
+ 
+-.chd-wq-list{display:flex;flex-direction:column;gap:8px;}
+-.chd-wq-row{
+-  background:rgba(255,255,255,.03);
+-  border:1px solid rgba(255,60,80,.18);
+-  border-radius:var(--radius-md);
+-  padding:12px 14px;
+-  transition:border-color var(--transition-fast),background var(--transition-fast);
+-  position:relative;overflow:hidden;
+-}
+-.chd-wq-row::before{
+-  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
+-  background:#ff4d6d;border-radius:2px 0 0 2px;
+-}
+-.chd-wq-row:hover{background:rgba(255,60,80,.04);border-color:rgba(255,60,80,.32);}
+-/* Modifier a livello di lista (non più per-riga): tutte le righe della
+-   tab "Recuperate" condividono l'accento verde — un'unica sostituzione
+-   di outerHTML su #chd-wq-section aggiorna tab+filtro+lista insieme. */
+-.chd-wq-list-recovered .chd-wq-row{border-color:rgba(0,255,150,.2);}
+-.chd-wq-list-recovered .chd-wq-row::before{background:#00ff96;}
+-.chd-wq-list-recovered .chd-wq-row:hover{background:rgba(0,255,150,.03);border-color:rgba(0,255,150,.35);}
+-.chd-wq-list-recovered .chd-wq-bar{background:linear-gradient(90deg,#00ff96,#00cfff);}
+-.chd-wq-header{
+-  display:flex;align-items:center;gap:7px;margin-bottom:6px;flex-wrap:wrap;
+-}
+-.chd-wq-act-icon{font-size:13px;flex-shrink:0;}
+-.chd-wq-errs{
+-  margin-left:auto;font-size:10px;font-weight:700;
+-  color:rgba(255,80,80,.9);font-family:'Share Tech Mono',monospace; /* v8.14.0 FIX: era .8 = 4.02:1 -> ora 4.82:1 */
+-  flex-shrink:0;
+-}
+-.chd-wq-list-recovered .chd-wq-errs{color:rgba(0,255,150,.8);}
+-.chd-wq-question{
+-  font-size:13px;font-weight:500;color:rgba(255,255,255,.8);
+-  line-height:1.45;margin-bottom:4px;
+-}
+-.chd-wq-answer{
+-  font-size:11px;color:rgba(255,255,255,.4);margin-bottom:8px;
+-}
+-.chd-wq-answer strong{color:rgba(0,255,200,.75);}
+-.chd-wq-bar-wrap{height:3px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden;}
+-.chd-wq-bar{height:100%;border-radius:2px;background:linear-gradient(90deg,#ff4d6d,#ff8080);}
+-
+-/* Stato vuoto per tab/filtro — stesso linguaggio visivo di .lb-empty/.chd-empty */
+-.chd-wq-empty{
+-  text-align:center;padding:2rem 1rem;
+-  border:1px dashed rgba(255,255,255,.08);border-radius:var(--radius-md);
+-}
+-.chd-wq-empty-icon{font-size:30px;margin-bottom:10px;opacity:.6;}
+-.chd-wq-empty-title{font-size:13px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:4px;}
+-.chd-wq-empty-sub{font-size:11px;color:var(--text-dim);line-height:1.5;max-width:320px;margin:0 auto;} /* v8.14.0 FIX: era rgba(255,255,255,.25) = 2.16:1, sfuggito al giro Fase 2 */
+-
+-.chd-wq-reset-btn{
+-  display:inline-flex;align-items:center;gap:4px;
+-  padding:4px 10px;border-radius:7px;
+-  background:rgba(255,80,80,.06);border:1px solid rgba(255,80,80,.2);
+-  color:rgba(255,100,100,.85);font-size:10px;cursor:pointer;font-family:inherit; /* v8.14.0 FIX: era .6 = 3.03:1 -> ora 4.94:1 */
+-  transition:all var(--transition-fast);font-weight:600;
+-}
+-.chd-wq-reset-btn:hover{background:rgba(255,80,80,.14);color:#ff6b6b;border-color:rgba(255,80,80,.4);}
+-
+-/* Mostra tutte / mostra solo le prime N — sostituisce la vecchia
+-   .chd-wq-more statica con un vero toggle cliccabile. */
+-.chd-wq-showall-btn{
+-  display:flex;align-items:center;justify-content:center;gap:5px;
+-  width:100%;margin-top:10px;padding:8px;border-radius:8px;
+-  background:var(--surface-1);border:1px solid var(--border-subtle);
+-  color:var(--text-muted);font-size:11px;font-weight:600;cursor:pointer; /* v8.13.1 FIX: era hardcoded bianco, illeggibile in chiaro */
+-  font-family:inherit;transition:all var(--transition-fast);
+-}
+-.chd-wq-showall-btn:hover{background:var(--accent-dim);border-color:var(--accent-border);color:var(--accent);}
+-.chd-wq-showall-btn i{font-size:13px;}
+-
+-@media(max-width:420px){
+-  .chd-wq-question{font-size:12px;}
+-  .chd-wq-errs{margin-left:0;}
+-  .chd-wq-modfilter-btn{padding:5px 9px;font-size:10px;}
+-}
+-}
+-
+-@layer csvimport {
+-/* ═══════════════════════════════════════════════════════════════════
+-   PixelProf — IMPORT GIOCATORI DA CSV (csv-import.js)
+-   Pulsante trigger in #ps-ind + modal di anteprima pre-conferma.
+-   Il modal riusa la struttura .pp-generic-overlay/.pp-generic-box
+-   (game-engine-state.js — stesso sistema di ppAlert/ppConfirmBox):
+-   nessun nuovo overlay/animazione da mantenere, solo classi per il
+-   contenuto interno. Nuove classi, nessuna collisione con layer
+-   esistenti — dichiarato per ultimo per coerenza con la regola
+-   "nuova feature → nuovo layer in fondo" (vedi intestazione file).
+-   ═══════════════════════════════════════════════════════════════════ */
+-
+-/* Pulsante trigger — stile "dropzone" tratteggiato, secondario
+-   rispetto al pulsante neon pieno di aggiunta manuale sopra. */
+-.csv-import-trigger-btn{
+-  display:flex;align-items:center;justify-content:center;gap:7px;
+-  width:100%;padding:9px;
+-  border-radius:var(--radius-sm);
 -  border:1px dashed rgba(0,255,200,.28);
 -  background:rgba(0,255,200,.04);
 -  color:rgba(0,255,200,.75);
-+  border:1px dashed rgba(var(--accent-rgb),.28);
-+  background:rgba(var(--accent-rgb),.04);
-+  color:rgba(var(--accent-rgb),.75);
-   font-size:12px;font-weight:600;font-family:inherit;
-   cursor:pointer;transition:all var(--transition-fast);
- }
- .csv-import-trigger-btn:hover{
+-  font-size:12px;font-weight:600;font-family:inherit;
+-  cursor:pointer;transition:all var(--transition-fast);
+-}
+-.csv-import-trigger-btn:hover{
 -  background:rgba(0,255,200,.09);
 -  border-color:rgba(0,255,200,.5);
-+  background:rgba(var(--accent-rgb),.09);
-+  border-color:rgba(var(--accent-rgb),.5);
-   color:var(--accent);
- }
- .csv-import-trigger-btn i{font-size:15px}
-@@ -3798,8 +3780,8 @@ body{
-   transition:all var(--transition-fast);
- }
- .audio-toggle-btn:hover{
+-  color:var(--accent);
+-}
+-.csv-import-trigger-btn i{font-size:15px}
+-
+-/* Nota duplicati esclusi automaticamente — dentro il modal anteprima */
+-.csv-import-dupnote{
+-  display:flex;align-items:flex-start;gap:6px;
+-  font-size:11px;color:rgba(255,180,0,.85);line-height:1.5;
+-  background:rgba(255,180,0,.07);border:1px solid rgba(255,180,0,.2);
+-  border-radius:8px;padding:8px 10px;margin-bottom:12px;text-align:left;
+-}
+-.csv-import-dupnote i{font-size:13px;flex-shrink:0;margin-top:1px}
+-
+-/* Elenco scrollabile dei nominativi da importare — righe rimovibili */
+-.csv-import-list{
+-  max-height:220px;overflow-y:auto;
+-  border:1px solid var(--border-subtle);border-radius:var(--radius-sm);
+-  margin-bottom:1.1rem;text-align:left;
+-  background:rgba(255,255,255,.02);
+-}
+-.csv-import-row{
+-  display:flex;align-items:center;justify-content:space-between;gap:8px;
+-  padding:7px 10px;font-size:12px;color:rgba(255,255,255,.8);
+-  border-bottom:1px solid rgba(255,255,255,.05);
+-}
+-.csv-import-row:last-child{border-bottom:none}
+-.csv-import-row-name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+-.csv-import-row-del{
+-  flex-shrink:0;background:none;border:none;cursor:pointer;
+-  color:rgba(255,255,255,.25);font-size:13px;padding:2px 4px;line-height:1;
+-  transition:color var(--transition-fast);
+-}
+-.csv-import-row-del:hover{color:#ff6b6b}
+-.csv-import-empty-list{
+-  padding:1.5rem 1rem;text-align:center;
+-  font-size:11px;color:rgba(255,255,255,.25);
+-}
+-
+-/* Stato disabilitato per i pulsanti del modal generico — non esisteva
+-   ancora nessuna regola per .pp-generic-btn:disabled (puro additivo,
+-   nessun rischio di conflitto con ppAlert/ppConfirmBox/ppPromptBox). */
+-.pp-generic-btn:disabled{opacity:.35;cursor:default;pointer-events:none;}
+-}
+-
+-@layer audio {
+-/* ═══════════════════════════════════════════════════════════════════
+-   PixelProf v6.5.0 — FEEDBACK SONORO + TOGGLE AUDIO
+-   Pulsante toggle (icona altoparlante) — visibile SOLO nella
+-   schermata "Seleziona aula" (screen-courses) e nello step
+-   "Seleziona modulo" (step-mod) della home, come richiesto: lo
+-   stato impostato da qui vale per l'intera webapp (gestito da
+-   js/audio-manager.js, persistito in localStorage).
+-   ═══════════════════════════════════════════════════════════════════ */
+-
+-.audio-toggle-btn{
+-  display:inline-flex;align-items:center;justify-content:center;
+-  width:30px;height:30px;border-radius:50%;flex-shrink:0;
+-  border:1px solid rgba(255,255,255,.14);
+-  background:rgba(255,255,255,.05);
+-  color:rgba(255,255,255,.55);
+-  cursor:pointer;font-family:inherit;font-size:14px;
+-  transition:all var(--transition-fast);
+-}
+-.audio-toggle-btn:hover{
 -  border-color:rgba(0,255,200,.35);
 -  background:rgba(0,255,200,.08);
-+  border-color:rgba(var(--accent-rgb),.35);
-+  background:rgba(var(--accent-rgb),.08);
-   color:var(--accent);
- }
- .audio-toggle-btn .audio-toggle-icon{font-size:15px;line-height:1}
-@@ -3948,8 +3930,8 @@ body{
-   position:relative;overflow:hidden;
- }
- .hist-card:hover{
+-  color:var(--accent);
+-}
+-.audio-toggle-btn .audio-toggle-icon{font-size:15px;line-height:1}
+-.audio-toggle-btn.muted{
+-  color:rgba(255,120,120,.65);
+-  border-color:rgba(255,80,80,.22);
+-  background:rgba(255,80,80,.05);
+-}
+-.audio-toggle-btn.muted:hover{
+-  border-color:rgba(255,80,80,.4);
+-  background:rgba(255,80,80,.1);
+-  color:#ff6b6b;
+-}
+-
+-}
+-
+-@layer achievements {
+-/* ═══════════════════════════════════════════════════════════════════
+-   PixelProf v6.5.0 — TRAGUARDI (badge/achievement system)
+-   Stile coerente con .tdc-card/.dd-card/.chd-kpi-card già presenti:
+-   cinematic lift on hover, bottom accent bar dorata, glow allo
+-   sblocco. Nuove classi (prefisso bdg-), nessuna collisione con
+-   layer esistenti — dichiarato per ultimo per coerenza con la
+-   regola "nuova feature → nuovo layer in fondo" (vedi intestazione
+-   file).
+-   ═══════════════════════════════════════════════════════════════════ */
+-
+-.bdg-summary{
+-  display:flex;align-items:center;gap:12px;margin-bottom:1.1rem;
+-  background:rgba(255,215,0,.04);border:1px solid rgba(255,215,0,.15);
+-  border-radius:var(--radius-md);padding:12px 16px;
+-}
+-.bdg-summary-icon{font-size:24px;flex-shrink:0;filter:drop-shadow(0 0 6px rgba(255,215,0,.3))}
+-.bdg-summary-text{flex:1;min-width:0}
+-.bdg-summary-count{font-size:14px;font-weight:600;color:#fff;margin-bottom:6px}
+-.bdg-summary-count strong{color:#ffd700;font-size:16px}
+-.bdg-summary .prog-bar{margin:0}
+-
+-.bdg-grid{
+-  display:grid;grid-template-columns:1fr;gap:10px;
+-}
+-@media(min-width:520px){ .bdg-grid{grid-template-columns:1fr 1fr;} }
+-@media(min-width:820px){ .bdg-grid{grid-template-columns:1fr 1fr 1fr;} }
+-
+-.bdg-card{
+-  position:relative;border-radius:14px;overflow:hidden;
+-  border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.035);
+-  padding:16px;transition:all var(--transition-fast);
+-  box-shadow:0 4px 16px rgba(0,0,0,.3);
+-}
+-.bdg-card::after{
+-  content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
+-  background:linear-gradient(90deg,transparent,#ffd700,transparent);
+-  transform:scaleX(0);transform-origin:center;
+-  transition:transform var(--transition-fast);
+-}
+-.bdg-card.unlocked{
+-  border-color:rgba(255,215,0,.22);
+-  box-shadow:0 4px 20px rgba(255,215,0,.08);
+-}
+-.bdg-card.unlocked::after{transform:scaleX(1);}
+-.bdg-card:hover{transform:translateY(-3px);border-color:rgba(255,215,0,.4);box-shadow:0 10px 28px rgba(0,0,0,.4);}
+-.bdg-card.locked{opacity:.6}
+-.bdg-card.locked:hover{opacity:.85}
+-
+-.bdg-card-top{display:flex;align-items:flex-start;gap:12px;margin-bottom:10px}
+-.bdg-icon{
+-  font-size:24px;line-height:1;flex-shrink:0;
+-  width:44px;height:44px;border-radius:12px;
+-  display:flex;align-items:center;justify-content:center;
+-  background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);
+-}
+-.bdg-card.locked .bdg-icon{
+-  filter:grayscale(1) brightness(.7);
+-  background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.08);
+-}
+-.bdg-title-wrap{flex:1;min-width:0}
+-.bdg-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px}
+-.bdg-desc{font-size:11px;color:rgba(255,255,255,.58);line-height:1.45} /* v8.13.1 FIX: era .4, ma .bdg-card.locked{opacity:.6} la dimezza ulteriormente (.4×.6=.24 effettivo) — alzata per restare leggibile anche da bloccata */
+-
+-.bdg-unlock-date{
+-  display:inline-flex;align-items:center;gap:5px;margin-top:10px;
+-  font-size:10px;color:#ffd700;font-family:'Share Tech Mono',monospace;
+-  letter-spacing:.3px;
+-}
+-.bdg-unlock-date i{font-size:12px}
+-.bdg-progress-wrap{margin-top:10px}
+-.bdg-progress-label{
+-  font-size:10px;color:rgba(255,255,255,.4);margin-bottom:5px;
+-  font-family:'Share Tech Mono',monospace;
+-}
+-
+-/* ── Popup "Nuovo traguardo!" — banner centrato che scende dall'alto,
+-   stesso linguaggio visivo di #overtake-popup ma più prominente,
+-   con glow dorato. ── */
+-#badge-unlock-popup{
+-  position:fixed;top:14px;left:50%;
+-  transform:translate(-50%,-130%);
+-  z-index:9999;
+-  display:flex;align-items:center;gap:12px;
+-  background:rgba(10,16,28,.97);
+-  border:1px solid rgba(255,215,0,.4);
+-  border-radius:var(--radius-lg);
+-  padding:12px 18px 12px 14px;
+-  box-shadow:0 0 30px rgba(255,215,0,.18),0 12px 40px rgba(0,0,0,.6);
+-  max-width:min(360px,calc(100vw - 24px));
+-  pointer-events:none;
+-  transition:transform .4s cubic-bezier(.22,1,.36,1),opacity .4s ease;
+-  opacity:0;
+-}
+-#badge-unlock-popup.bup-show{
+-  transform:translate(-50%,0);
+-  opacity:1;
+-}
+-.bup-icon{font-size:32px;flex-shrink:0;filter:drop-shadow(0 0 10px rgba(255,215,0,.5));}
+-.bup-body{min-width:0}
+-.bup-eyebrow{font-size:9px;font-weight:700;color:#ffd700;text-transform:uppercase;letter-spacing:1.5px;font-family:'Share Tech Mono',monospace;margin-bottom:2px}
+-.bup-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+-.bup-desc{font-size:11px;color:rgba(255,255,255,.5);line-height:1.4}
+-
+-@media(max-width:420px){
+-  .bdg-summary{flex-direction:row;padding:10px 12px}
+-  .bup-desc{display:none}
+-}
+-}
+-
+-@layer histcards {
+-/* ═══════════════════════════════════════════════════════════════════
+-   PixelProf — STORICO SESSIONI: card a classi CSS (v1.0.0)
+-   Refactor di _histBuildCard() (stats.js): stesso aspetto identico
+-   in tema scuro, ma ora la card è costruita con classi invece che
+-   con uno style inline monolitico — necessario per essere themeable
+-   dal layer "theme" più sotto (dichiarato dopo, vince sempre). Il
+-   colore dinamico per modulo (CE/OE/WP) resta inline sull'accent bar
+-   perché è genuinamente dato-dipendente, non skin fissa. L'hover era
+-   gestito via onmouseenter/onmouseleave inline in JS, ora è puro
+-   :hover CSS — stesso identico effetto, meno codice.
+-   ═══════════════════════════════════════════════════════════════════ */
+-.hist-card{
+-  background:rgba(255,255,255,.03);
+-  border:1px solid rgba(255,255,255,.08);
+-  border-radius:12px;
+-  padding:14px 16px;
+-  margin-bottom:10px;
+-  transition:border-color .18s,background .18s;
+-  position:relative;overflow:hidden;
+-}
+-.hist-card:hover{
 -  border-color:rgba(0,255,200,.2);
 -  background:rgba(0,255,200,.03);
-+  border-color:rgba(var(--accent-rgb),.2);
-+  background:rgba(var(--accent-rgb),.03);
- }
- .hist-card-accent{
-   position:absolute;top:0;left:0;right:0;height:2px;
-@@ -3986,7 +3968,7 @@ body{
- }
- .hist-team-pts{
-   font-family:'Share Tech Mono',monospace;font-size:11px;font-weight:700;
+-}
+-.hist-card-accent{
+-  position:absolute;top:0;left:0;right:0;height:2px;
+-  opacity:.5;border-radius:12px 12px 0 0;
+-}
+-.hist-card-header{ display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap; }
+-.hist-card-icon{ font-size:20px;line-height:1; }
+-.hist-card-title{ font-size:13px;font-weight:700;color:#fff; }
+-.hist-card-modtag{
+-  font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;
+-  padding:2px 7px;border-radius:20px;font-family:'Share Tech Mono',monospace;
+-}
+-.hist-card-modetag{
+-  font-size:9px;color:var(--text-muted);font-family:'Share Tech Mono',monospace; /* v8.13.1 FIX: era .3 = 2.62:1 */
+-  padding:2px 7px;border-radius:20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);
+-}
+-.hist-card-date{
+-  margin-left:auto;font-size:10px;color:var(--text-muted); /* v8.13.1 FIX: era .3 = 2.62:1 */
+-  font-family:'Share Tech Mono',monospace;white-space:nowrap;
+-}
+-.hist-card-body{ padding:0 2px; }
+-.hist-card-empty{ font-size:11px;color:rgba(255,255,255,.25); }
+-.hist-team-row{
+-  display:flex;align-items:center;justify-content:space-between;
+-  padding:4px 0;border-bottom:1px solid rgba(255,255,255,.04);
+-}
+-.hist-team-row:last-child{ border-bottom:none; }
+-.hist-team-left{ display:flex;align-items:center;gap:2px;min-width:0; }
+-.hist-team-medal{ font-size:12px;width:18px;flex-shrink:0; }
+-.hist-color-dot{ display:inline-block;width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-right:5px; }
+-.hist-team-name{
+-  font-size:12px;color:rgba(255,255,255,.8);
+-  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+-}
+-.hist-team-pts{
+-  font-family:'Share Tech Mono',monospace;font-size:11px;font-weight:700;
 -  color:#00ffc8;flex-shrink:0;margin-left:8px;
-+  color:var(--accent);flex-shrink:0;margin-left:8px;
- }
- }
- 
-@@ -4116,7 +4098,7 @@ body{
-   position:fixed;
-   border-radius:14px;
-   border:3px solid var(--accent);
+-}
+-}
+-
+-@layer loaders {
+-/* ═══════════════════════════════════════════════════════════════════
+-   PixelProf — SKELETON LOADING (5 minigiochi) — v1.0.0
+-   Sostituisce lo spinner pulsante generico (icona+testo+path, vedi
+-   game-engine-state.js) con scheletri che ricalcano la geometria
+-   reale di ciascun minigioco: percezione di velocità migliore,
+-   soprattutto su PC di laboratorio non recentissimi, e nessun salto
+-   di layout quando il contenuto vero arriva. Usa i token esistenti
+-   (--surface-1, --border-subtle, --radius-*) quindi è già coerente
+-   con entrambi i temi chiaro/scuro senza bisogno di override
+-   dedicati nel layer "theme" — solo lo shimmer stesso usa 2 nuovi
+-   token (--skel-c1/--skel-c2) per restare leggibile su sfondo chiaro.
+-   ═══════════════════════════════════════════════════════════════════ */
+-:root{
+-  --skel-c1: rgba(255,255,255,.05);
+-  --skel-c2: rgba(255,255,255,.12);
+-}
+-@keyframes skelShimmer{
+-  0%   { background-position:-150% 0; }
+-  100% { background-position: 150% 0; }
+-}
+-@keyframes skelFadeIn{ from{opacity:0} to{opacity:1} }
+-
+-.skel-wrap{ animation:skelFadeIn .25s ease both; }
+-
+-.skel-base{
+-  background:linear-gradient(90deg,var(--skel-c1) 25%,var(--skel-c2) 50%,var(--skel-c1) 75%);
+-  background-size:200% 100%;
+-  animation:skelShimmer 1.5s ease-in-out infinite;
+-  border-radius:8px;
+-}
+-/* stagger ciclico ogni 6 elementi — copre sia le liste corte (4 opzioni,
+-   4 chip) sia quelle lunghe (12 carte Memory) con un solo set di regole */
+-.skel-base:nth-child(6n+1){ animation-delay:0s; }
+-.skel-base:nth-child(6n+2){ animation-delay:.08s; }
+-.skel-base:nth-child(6n+3){ animation-delay:.16s; }
+-.skel-base:nth-child(6n+4){ animation-delay:.24s; }
+-.skel-base:nth-child(6n+5){ animation-delay:.32s; }
+-.skel-base:nth-child(6n)  { animation-delay:.4s; }
+-
+-.skel-row{ display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap; }
+-.skel-pill{ height:26px;width:64px;border-radius:20px; }
+-
+-.skel-bar{ height:8px;border-radius:4px;margin-bottom:14px; }
+-.skel-progress{ height:3px; }
+-
+-.skel-card{
+-  background:var(--surface-1);
+-  border:1px solid var(--border-subtle);
+-  border-radius:var(--radius-md);
+-  padding:1.25rem;
+-  margin-bottom:10px;
+-}
+-.skel-line{ height:14px;border-radius:6px;margin-bottom:10px; }
+-.skel-line:last-child{ margin-bottom:0; }
+-.skel-line-cat{ width:38%;height:9px; }
+-.skel-line-q1{ width:92%; }
+-.skel-line-q2{ width:64%; }
+-.skel-line-sentence{ width:100%;height:22px;margin-bottom:0; }
+-
+-.skel-opts{ display:flex;flex-direction:column;gap:7px; }
+-.skel-opt{ height:42px;border-radius:var(--radius-sm); }
+-
+-.skel-match-cols{ display:grid;grid-template-columns:1fr 1fr;gap:10px; }
+-.skel-item{ height:34px;border-radius:var(--radius-sm);margin-bottom:5px; }
+-
+-.skel-mem-board{ display:grid;grid-template-columns:repeat(4,1fr);gap:8px; }
+-.skel-mem-card{ aspect-ratio:1;border-radius:var(--radius-md); }
+-
+-.skel-chips{ display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px; }
+-.skel-chip{ height:28px;width:74px;border-radius:20px; }
+-
+-.skel-btn{ height:40px;width:160px;border-radius:var(--radius-sm); }
+-}
+-
+-@layer onboarding {
+-/* ═══════════════════════════════════════════════════════════════════
+-   PixelProf — ONBOARDING TOUR (js/onboarding.js) — v1.0.0
+-   Tour "a spotlight" mostrato al primo accesso di ogni docente:
+-   overlay scuro a tutto schermo + riquadro pulsante evidenziato
+-   (tecnica box-shadow, nessuna maschera SVG) + tooltip con freccia
+-   che punta verso l'elemento. Markup creato interamente da JS
+-   (stesso approccio di ppAlert/ppConfirmBox in game-engine-state.js
+-   e del modal di anteprima import CSV) — nessun markup statico
+-   aggiunto a index.html, solo classi qui.
+-   Nuove classi (prefisso onb-), nessuna collisione con layer
+-   esistenti — dichiarato per ultimo prima di "theme" per coerenza
+-   con la regola "nuova feature → nuovo layer in fondo" (vedi
+-   intestazione file), lasciando comunque a "theme" l'ultima parola
+-   sui colori in tema chiaro.
+-
+-   v2.4.1 (bugfix): z-index dell'intero stack (velo/anello/tooltip)
+-   alzato da 9750/9760/9770 a 9850/9860/9870. Causa: il passo del tour
+-   guidato "Conferma richiesta" (Flip Card, v2.4.0) evidenzia un
+-   pulsante DENTRO il dialogo generico ppConfirmBox() — che usa
+-   .pp-generic-overlay a z-index:9800 (vedi @layer dialogs). Con lo
+-   stack onboarding sotto quota 9800, l'intero tooltip (testo, barra di
+-   avanzamento, pulsanti) spariva dietro il dialogo — segnalato da test
+-   live come "tour impossibile da completare". 9850/60/70 restano sotto
+-   #confetti-canvas (9998) e #overtake-popup (9999): coincidenza
+-   estremamente improbabile con un passo del tour, invarianza non
+-   toccata di proposito.
+-   ═══════════════════════════════════════════════════════════════════ */
+-
+-.onb-overlay{
+-  position:fixed;inset:0;z-index:9850;
+-  background:rgba(4,6,15,.5); /* v8.24.0 — richiesta esplicita utente: era
+-    .68 + blur 3px, troppo scuro in tema scuro (default), mascherava
+-    troppo la schermata sotto il velo fuori dal "buco" ritagliato dal
+-    passo corrente. Portato a .5 (stesso livello del tema chiaro sotto,
+-    v. html[data-theme="light"] .onb-overlay in @layer theme) e blur
+-    ridotto a 2px: resta leggibile ma il resto della UI dietro il velo
+-    si intravede meglio. */
+-  backdrop-filter:blur(2px);
+-  -webkit-backdrop-filter:blur(2px);
+-  animation:onbFadeIn .25s ease both;
+-  touch-action:pan-y; /* v8.15.6: garantisce lo scroll verticale touch anche
+-    toccando il velo (non solo sui "buchi" ritagliati) — possibile causa
+-    concorrente del bug "scelta aula, scroll bloccato" su mobile */
+-}
+-@keyframes onbFadeIn{from{opacity:0}to{opacity:1}}
+-
+-.onb-ring{
+-  position:fixed;
+-  border-radius:14px;
+-  border:3px solid var(--accent);
 -  box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 6px rgba(0,255,200,.35),0 0 34px rgba(0,255,200,.45);
-+  box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 6px rgba(var(--accent-rgb),.35),0 0 34px rgba(var(--accent-rgb),.45);
-   /* v8.24.1 — richiesta esplicita utente: dopo aver schiarito .onb-overlay
-      (v8.24.0), l'anello (bordo 2px + glow debole, alpha .15/.25) risultava
-      poco visibile: con più UI reale visibile dietro al velo, l'anello
-@@ -4137,18 +4119,18 @@ body{
-   animation:onbPulse 1.8s ease-in-out infinite;
- }
- @keyframes onbPulse{
+-  /* v8.24.1 — richiesta esplicita utente: dopo aver schiarito .onb-overlay
+-     (v8.24.0), l'anello (bordo 2px + glow debole, alpha .15/.25) risultava
+-     poco visibile: con più UI reale visibile dietro al velo, l'anello
+-     aveva meno contrasto per "staccare" dal resto. Bordo portato a 3px,
+-     aggiunto un sottile anello scuro (0 0 0 1px nero .55) appena fuori dal
+-     bordo per garantire un distacco netto qualunque sia lo sfondo dietro
+-     (chiaro, scuro o già tendente al teal come le card), poi il consueto
+-     alone ciano ma con alpha quasi raddoppiata (.35/.45 invece di .15/.25). */
+-  pointer-events:none;
+-  z-index:9860;
+-  transition:top .35s cubic-bezier(.22,1,.36,1),left .35s cubic-bezier(.22,1,.36,1),
+-             width .35s cubic-bezier(.22,1,.36,1),height .35s cubic-bezier(.22,1,.36,1);
+-}
+-/* Pulsazione riservata ai passi 'action' (target realmente cliccabile) —
+-   i passi 'info' mostrano un anello statico, coerente col fatto che il
+-   target è solo evidenziato ma non cliccabile in quel momento. */
+-.onb-ring-pulse{
+-  animation:onbPulse 1.8s ease-in-out infinite;
+-}
+-@keyframes onbPulse{
 -  0%,100%{box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 6px rgba(0,255,200,.35),0 0 34px rgba(0,255,200,.45);}
 -  50%{box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 9px rgba(0,255,200,.45),0 0 46px rgba(0,255,200,.6);}
-+  0%,100%{box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 6px rgba(var(--accent-rgb),.35),0 0 34px rgba(var(--accent-rgb),.45);}
-+  50%{box-shadow:0 0 0 1px rgba(0,0,0,.55),0 0 0 9px rgba(var(--accent-rgb),.45),0 0 46px rgba(var(--accent-rgb),.6);}
- }
- 
- .onb-tooltip{
-   position:fixed;z-index:9870;
-   width:290px;max-width:calc(100vw - 24px);
-   background:rgba(10,15,30,.98);
+-}
+-
+-.onb-tooltip{
+-  position:fixed;z-index:9870;
+-  width:290px;max-width:calc(100vw - 24px);
+-  background:rgba(10,15,30,.98);
 -  border:1px solid rgba(0,255,200,.25);
-+  border:1px solid rgba(var(--accent-rgb),.25);
-   border-radius:16px;
-   padding:16px 18px;
+-  border-radius:16px;
+-  padding:16px 18px;
 -  box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 0 1px rgba(0,255,200,.06);
-+  box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 0 1px rgba(var(--accent-rgb),.06);
-   animation:onbTtIn .3s cubic-bezier(.22,1,.36,1) both;
- }
- @keyframes onbTtIn{from{opacity:0;transform:translateY(6px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
-@@ -4159,7 +4141,7 @@ body{
- .onb-tooltip::before{
-   content:'';position:absolute;width:14px;height:14px;
-   background:rgba(10,15,30,.98);
+-  animation:onbTtIn .3s cubic-bezier(.22,1,.36,1) both;
+-}
+-@keyframes onbTtIn{from{opacity:0;transform:translateY(6px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+-
+-/* Freccia — piccolo quadrato ruotato 45°, stesso sfondo/bordo del tooltip.
+-   onb-arrow-top: il tooltip è SOTTO il target → freccia in alto, punta in su.
+-   onb-arrow-bottom: il tooltip è SOPRA il target → freccia in basso, punta in giù. */
+-.onb-tooltip::before{
+-  content:'';position:absolute;width:14px;height:14px;
+-  background:rgba(10,15,30,.98);
 -  border:1px solid rgba(0,255,200,.25);
-+  border:1px solid rgba(var(--accent-rgb),.25);
-   transform:rotate(45deg);
- }
- .onb-tooltip.onb-arrow-top::before{ top:-8px;left:50%;margin-left:-7px;border-right:none;border-bottom:none; }
-@@ -4170,7 +4152,7 @@ body{
- 
- .onb-step-label{
-   font-family:'Share Tech Mono',monospace;font-size:9px;font-weight:700;
+-  transform:rotate(45deg);
+-}
+-.onb-tooltip.onb-arrow-top::before{ top:-8px;left:50%;margin-left:-7px;border-right:none;border-bottom:none; }
+-.onb-tooltip.onb-arrow-bottom::before{ bottom:-8px;left:50%;margin-left:-7px;border-left:none;border-top:none; }
+-
+-.onb-progress{ height:3px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden;margin-bottom:12px; }
+-.onb-progress-fill{ height:100%;background:linear-gradient(90deg,var(--accent),var(--purple));border-radius:2px;transition:width .3s; }
+-
+-.onb-step-label{
+-  font-family:'Share Tech Mono',monospace;font-size:9px;font-weight:700;
 -  color:rgba(0,255,200,.65);letter-spacing:1.5px;text-transform:uppercase;
-+  color:rgba(var(--accent-rgb),.65);letter-spacing:1.5px;text-transform:uppercase;
-   margin-bottom:6px;
- }
- .onb-title{ font-size:14px;font-weight:700;color:#fff;margin-bottom:5px;line-height:1.3; }
-@@ -4185,11 +4167,11 @@ body{
- .onb-next{
-   display:inline-flex;align-items:center;gap:6px;
-   padding:8px 16px;border-radius:20px;
+-  margin-bottom:6px;
+-}
+-.onb-title{ font-size:14px;font-weight:700;color:#fff;margin-bottom:5px;line-height:1.3; }
+-.onb-body{ font-size:12px;color:rgba(255,255,255,.55);line-height:1.55;margin-bottom:14px; }
+-
+-.onb-actions{ display:flex;align-items:center;justify-content:space-between;gap:10px; }
+-.onb-skip{
+-  background:none;border:none;cursor:pointer;padding:2px 0;
+-  font-family:inherit;font-size:11px;color:rgba(255,255,255,.6);
+-  transition:color .18s;
+-} /* v8.15.6 FIX: default era .35 (~2.9:1, quasi illeggibile), :hover era già .6 (leggibile) — richiesta esplicita utente: stesso valore .6 sempre, non solo on-hover */
+-.onb-next{
+-  display:inline-flex;align-items:center;gap:6px;
+-  padding:8px 16px;border-radius:20px;
 -  border:1px solid var(--accent);background:rgba(0,255,200,.12);
-+  border:1px solid var(--accent);background:rgba(var(--accent-rgb),.12);
-   color:var(--accent);font-size:12px;font-weight:700;font-family:inherit;
-   cursor:pointer;transition:all .18s;white-space:nowrap;
- }
+-  color:var(--accent);font-size:12px;font-weight:700;font-family:inherit;
+-  cursor:pointer;transition:all .18s;white-space:nowrap;
+-}
 -.onb-next:hover{ background:rgba(0,255,200,.22);box-shadow:0 0 14px rgba(0,255,200,.15); }
-+.onb-next:hover{ background:rgba(var(--accent-rgb),.22);box-shadow:0 0 14px rgba(var(--accent-rgb),.15); }
- .onb-next:focus-visible{ outline:2px solid var(--accent);outline-offset:2px; }
- .onb-next i{ font-size:13px; }
+-.onb-next:focus-visible{ outline:2px solid var(--accent);outline-offset:2px; }
+-.onb-next i{ font-size:13px; }
+-
+-@media(prefers-reduced-motion: reduce){
+-  .onb-overlay,.onb-tooltip{ animation:none; }
+-  .onb-ring,.onb-ring-pulse{ animation:none;transition:none; }
+-}
+-}
  
-@@ -4224,7 +4206,7 @@ body{
+ @layer theme {
++/* NOTA REDESIGN v9: il default scuro delle sezioni 13 (Storico),
++   14 (Dashboard), 15 (Traguardi), 17 (Dialog), 18 (Docenti), 19 (CSV),
++   20 (Audio/tema) è stato estratto in css/histcards.css, dashboard.css,
++   achievements.css, dialogs.css, docenti.css, csvimport.css, audio.css.
++   L'override chiaro qui sotto NON è stato ancora spostato: resta da
++   fare come passo successivo, sezione per sezione. */
+ /* ═══════════════════════════════════════════════════════════════════
+    PixelProf — TEMA CHIARO (toggle opzionale, non un redesign) — v1.0.0
+    ─────────────────────────────────────────────────────────────────
+@@ -4224,7 +3170,7 @@ body{
       scuro dedicato (override di .result-wrap qui sotto): stesso
       effetto scenico di sempre, ed evita di dover riscrivere decine
       di colori inline sparsi in quelle funzioni.
@@ -1816,7 +3921,7 @@ index ff701f5..48c1486 100644
       contrasto ~1.3:1 su bianco — illeggibile) vengono "scuriti" solo
       dove servono come testo; dove sono sfondo/bordo a bassa opacità
       restano invariati, perché lì il contrasto non è un problema.
-@@ -4232,23 +4214,8 @@ body{
+@@ -4232,23 +3178,8 @@ body{
  
  /* ── 1. TOKEN GLOBALI ─────────────────────────────────────────── */
  html[data-theme="light"]{
@@ -1840,7 +3945,7 @@ index ff701f5..48c1486 100644
    --blue: #0d6fbf;
    color-scheme: light;
  }
-@@ -4498,12 +4465,12 @@ html[data-theme="light"] .result-wrap .btn:hover{
+@@ -4498,12 +3429,12 @@ html[data-theme="light"] .result-wrap .btn:hover{
    border-color: rgba(255,255,255,.32);
  }
  html[data-theme="light"] .result-wrap .btn-neon{
@@ -1857,7 +3962,7 @@ index ff701f5..48c1486 100644
  }
  
  /* ── 12. CLASSIFICA ───────────────────────────────────────────── */
-@@ -4605,7 +4572,7 @@ html[data-theme="light"] .chd-wq-modfilter-count{ background: rgba(20,30,60,.08)
+@@ -4605,7 +3536,7 @@ html[data-theme="light"] .chd-wq-modfilter-count{ background: rgba(20,30,60,.08)
  html[data-theme="light"] .chd-wq-row{ background:#ffffff; }
  html[data-theme="light"] .chd-wq-question{ color: rgba(16,24,42,.82); }
  html[data-theme="light"] .chd-wq-answer{ color: rgba(16,24,42,.45); }
@@ -1866,7 +3971,7 @@ index ff701f5..48c1486 100644
  html[data-theme="light"] .chd-wq-errs{ color:#c22a3e; } /* v8.14.0 FIX: rgba(255,80,80,.9) su chiaro = 2.64:1 */
  html[data-theme="light"] .chd-wq-list-recovered .chd-wq-errs{ color:#12805a; } /* v8.14.0 FIX: rgba(0,255,150,.8) su chiaro = 1.31:1 */
  html[data-theme="light"] .chd-wq-reset-btn{ background: rgba(194,42,62,.06); border-color: rgba(194,42,62,.25); color:#c22a3e; } /* v8.14.0 FIX: nessun override -> 1.77:1 */
-@@ -4840,8 +4807,8 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -4840,8 +3771,8 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
      cursor:pointer;transition:all var(--transition-fast);
      font-family:inherit;display:flex;align-items:flex-start;gap:12px;
    }
@@ -1877,7 +3982,7 @@ index ff701f5..48c1486 100644
    .cw-area-btn .cm-check{
      position:absolute;top:10px;right:10px;width:18px;height:18px;border-radius:50%;
      background:var(--accent);color:#000;font-size:11px;font-weight:700;
-@@ -4858,7 +4825,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -4858,7 +3789,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
      padding:2px 8px;border-radius:20px;letter-spacing:.4px;
      font-family:'Share Tech Mono',monospace;text-transform:uppercase;
    }
@@ -1886,7 +3991,7 @@ index ff701f5..48c1486 100644
    .cw-area-chip.soon{ background:rgba(255,180,0,.08);border:1px solid rgba(255,180,0,.2);color:#ffb400; }
  
    /* ── Step Moduli — stato "in arrivo" (contentReady:false) ──────
-@@ -4948,21 +4915,21 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -4948,21 +3879,21 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
       vince senza toccare le regole "consumer" qui sotto). Palette
       allineata agli hex già usati in COLOR_PALETTE (courses.js, color
       picker aula) per coerenza visiva: Teal/Amber/Blue/Violet/Pink. */
@@ -1919,7 +4024,7 @@ index ff701f5..48c1486 100644
  
    /* Fase 7.7 (v8.9.0) → corretta in v8.9.3: Erasmo intendeva "al passaggio
       del mouse" quando ha detto "on focus" — cioè lo STESSO comportamento
-@@ -4975,7 +4942,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -4975,7 +3906,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
  
    .cs-area-section-icon{
      font-size:20px;line-height:1;flex-shrink:0;
@@ -1928,7 +4033,7 @@ index ff701f5..48c1486 100644
    }
    .cs-area-section-label{
      font-size:15px;font-weight:800;color:#fff;
-@@ -4991,7 +4958,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -4991,7 +3922,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
    /* linea a sfumatura finale — stesso pattern di .slbl::after */
    .cs-area-section-header::after{
      content:'';flex:1;height:1px;min-width:24px;
@@ -1937,7 +4042,7 @@ index ff701f5..48c1486 100644
    }
  
    /* Aule legacy/orfane raggruppate sotto una chiave non presente in
-@@ -5011,12 +4978,12 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -5011,12 +3942,12 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
       Stessa tecnica --area-rgb: ridefinita qui per data-theme="light",
       vince nel layer theme (dichiarato dopo areas) senza duplicare le
       regole "consumer" (icona/badge/linea) sopra. */
@@ -1956,7 +4061,7 @@ index ff701f5..48c1486 100644
  
    /* v8.33.2 — FIX contrasto badge/bordo/glow illeggibili in tema chiaro
       su Cyberbullismo, Intelligenza Artificiale e Malware (Erasmo,
-@@ -5120,7 +5087,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -5120,7 +4051,7 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
      outline:none;transition:border var(--transition-fast),background var(--transition-fast);
    }
    .cs-area-filter-search input:focus{
@@ -1965,7 +4070,7 @@ index ff701f5..48c1486 100644
    }
    .cs-area-filter-search input::placeholder{ color:rgba(255,255,255,.42); } /* v8.13.1 FIX: era .25 = 2.16:1 */
    .cs-area-filter-clear{
-@@ -5134,12 +5101,12 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -5134,12 +4065,12 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
    .cs-area-filter-chips{ display:flex;flex-wrap:wrap;gap:6px; }
  
    /* Palette per-chip — stessa tripletta di .cs-area-section (Fase 7.1) */
@@ -1984,7 +4089,7 @@ index ff701f5..48c1486 100644
  
    .cs-area-filter-chip{
      display:inline-flex;align-items:center;gap:6px;
-@@ -5177,11 +5144,11 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
+@@ -5177,11 +4108,11 @@ html[data-theme="light"] .cm-soon-badge{ background: rgba(20,30,60,.05); border-
    html[data-theme="light"] .cs-area-filter-search input{ color:#10182a; }
    html[data-theme="light"] .cs-area-filter-search input::placeholder{ color:rgba(16,24,42,.5); } /* v8.13.1 FIX: era .35 = 2.19:1 */
    html[data-theme="light"] .cs-area-filter-chip{ color:rgba(16,24,42,.55); }

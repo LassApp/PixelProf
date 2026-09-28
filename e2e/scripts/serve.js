@@ -27,7 +27,7 @@ const PORT = Number(process.env.PIXELPROF_E2E_PORT) || 4174;
 
 console.log(`[e2e] Radice servita: ${REPO_ROOT}`);
 
-const filesToCheck = ['index.html', 'pixelprof.css', 'js/app.js', 'data/quiz/computer_essentials.json'];
+const filesToCheck = ['index.html', 'pixelprof.css', 'js/app.js', 'data/Minigiochi/ECDL/Computer_Essentials/modulo1/quiz_fondamenti-digitali.json'];
 let anyMissing = false;
 for (const rel of filesToCheck) {
   const full = path.join(REPO_ROOT, rel);

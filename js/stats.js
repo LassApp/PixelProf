@@ -251,7 +251,7 @@ async function _mergeCloudModuleStats(id){
 const _HIST_ACT_ICON ={quiz:'🧠',speed:'⚡',match:'🔗',memory:'🃏',fill:'✏️',truefalse:'⚖️'};
 const _HIST_ACT_LABEL={quiz:'Quiz',speed:'Speed Quiz',match:'Abbina',memory:'Memory',fill:'Completa',truefalse:'Vero o Falso'};
 const _HIST_MOD_LABEL={CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processor',SS:'Spreadsheets',PP:'Power Point'};
-const _HIST_MOD_COLOR={CE:'#ffcf5c',OE:'#7c6aff',WP:'#00cfff',SS:'#44c76a',PP:'#ffa564'};
+const _HIST_MOD_COLOR={CE:'#B8935A',OE:'#6E7A50',WP:'#54708C',SS:'#4A6B52',PP:'#9C6B3E'};
 
 function _histFormatDate(iso){
   if(!iso)return'—';

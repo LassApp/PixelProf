@@ -311,7 +311,7 @@ async function startLoSapevi(cont, mod){
     cont.innerHTML = _lsStateHTML({
       icon: '💡', title: 'Lo Sapevi? non disponibile',
       msg: 'Questo modulo non ha ancora curiosità caricate per Lo Sapevi.',
-      color: '#ffcc33',
+      color: '#B8935A',
     });
     return;
   }
@@ -319,7 +319,7 @@ async function startLoSapevi(cont, mod){
     cont.innerHTML = _lsStateHTML({
       icon: '💡', title: 'Caricamento…',
       msg: 'Sto preparando le curiosità di questo modulo.',
-      color: '#ffcc33',
+      color: '#B8935A',
     });
   }
   let items;
@@ -330,7 +330,7 @@ async function startLoSapevi(cont, mod){
     cont.innerHTML = _lsStateHTML({
       icon: '⚠️', title: 'Errore caricamento',
       msg: 'Verifica che i file siano presenti in data/Didattica/Lo_Sapevi/ e ricarica la pagina.',
-      color: '#ff6b6b',
+      color: '#AB5649',
     });
     return;
   }
@@ -338,7 +338,7 @@ async function startLoSapevi(cont, mod){
     cont.innerHTML = _lsStateHTML({
       icon: '💡', title: 'Nessuna curiosità trovata',
       msg: 'Il file di questo modulo esiste ma è vuoto.',
-      color: '#ffcc33',
+      color: '#B8935A',
     });
     return;
   }

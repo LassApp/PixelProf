@@ -755,22 +755,22 @@ const FC_LEVELS = [
 const FC_LEVEL_BG = {
   facile: `<svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
     <defs><pattern id="grid-fac" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M24 0L0 0 0 24" fill="none" stroke="#00ff96" stroke-width=".4" opacity=".18"/>
+      <path d="M24 0L0 0 0 24" fill="none" stroke="#4A6B52" stroke-width=".4" opacity=".18"/>
     </pattern></defs>
     <rect width="660" height="180" fill="url(#grid-fac)"/>
-    <rect x="500" y="34" width="120" height="112" rx="12" fill="rgba(0,255,150,.06)" stroke="#00ff96" stroke-width="1.2" opacity=".5"/>
-    <path d="M528 92l16 16 32-36" fill="none" stroke="#00ff96" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
-    <ellipse cx="560" cy="90" rx="90" ry="58" fill="rgba(0,255,150,.05)"/>
+    <rect x="500" y="34" width="120" height="112" rx="12" fill="rgba(74,107,82,.06)" stroke="#4A6B52" stroke-width="1.2" opacity=".5"/>
+    <path d="M528 92l16 16 32-36" fill="none" stroke="#4A6B52" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/>
+    <ellipse cx="560" cy="90" rx="90" ry="58" fill="rgba(74,107,82,.05)"/>
   </svg>`,
   medio: `<svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
     <defs><pattern id="grid-med" width="24" height="24" patternUnits="userSpaceOnUse">
-      <path d="M24 0L0 0 0 24" fill="none" stroke="#7c6aff" stroke-width=".4" opacity=".22"/>
+      <path d="M24 0L0 0 0 24" fill="none" stroke="#6E7A50" stroke-width=".4" opacity=".22"/>
     </pattern></defs>
     <rect width="660" height="180" fill="url(#grid-med)"/>
-    <rect x="486" y="50" width="108" height="80" rx="10" transform="rotate(-11 540 90)" fill="rgba(124,106,255,.04)" stroke="#7c6aff" stroke-width="1" opacity=".28"/>
-    <rect x="498" y="42" width="108" height="80" rx="10" transform="rotate(-4 552 82)" fill="rgba(124,106,255,.05)" stroke="#7c6aff" stroke-width="1" opacity=".4"/>
-    <rect x="512" y="36" width="108" height="80" rx="10" fill="rgba(124,106,255,.07)" stroke="#a996ff" stroke-width="1.2" opacity=".55"/>
-    <ellipse cx="560" cy="88" rx="90" ry="58" fill="rgba(124,106,255,.05)"/>
+    <rect x="486" y="50" width="108" height="80" rx="10" transform="rotate(-11 540 90)" fill="rgba(110,122,80,.04)" stroke="#6E7A50" stroke-width="1" opacity=".28"/>
+    <rect x="498" y="42" width="108" height="80" rx="10" transform="rotate(-4 552 82)" fill="rgba(110,122,80,.05)" stroke="#6E7A50" stroke-width="1" opacity=".4"/>
+    <rect x="512" y="36" width="108" height="80" rx="10" fill="rgba(110,122,80,.07)" stroke="#8B9968" stroke-width="1.2" opacity=".55"/>
+    <ellipse cx="560" cy="88" rx="90" ry="58" fill="rgba(110,122,80,.05)"/>
   </svg>`,
 };
 
@@ -785,7 +785,7 @@ const FC_LEVEL_BG = {
 function _renderFlipCardLevelSelect(cont, mod){
   if(!FlipCardLoader.hasModule(mod)){
     cont.innerHTML = _fcHeader() + _fcStateHTML({
-      icon: '🗂️', color: '#a996ff', title: 'Nessun mazzo disponibile',
+      icon: '🗂️', color: '#8B9968', title: 'Nessun mazzo disponibile',
       msg: `Il modulo "${modLabel(mod)}" non ha ancora un set di carte Flip Card associato.`,
     });
     return;
@@ -793,7 +793,7 @@ function _renderFlipCardLevelSelect(cont, mod){
   const available = FlipCardLoader.levelsFor(mod);
   const cardsHtml = FC_LEVELS.map(l => {
     const ok = available.includes(l.key);
-    const badge = `<span class="dm-badge" style="background:rgba(${l.rgb},.12);border-color:rgba(${l.rgb},.35);color:${l.key==='facile'?'#00ff96':'#b4a0ff'}">Livello</span>`;
+    const badge = `<span class="dm-badge" style="background:rgba(${l.rgb},.12);border-color:rgba(${l.rgb},.35);color:${l.key==='facile'?'#4A6B52':'#8B9968'}">Livello</span>`;
     const body = `<div class="dm-content">
         <span class="dm-icon" style="filter:drop-shadow(0 0 8px rgba(${l.rgb},.35))">${l.emoji}</span>
         <h3>${l.label}</h3>
@@ -878,7 +878,7 @@ function _fcUnfreezeNavForTour(){
 async function startFlipCard(cont, mod, liv){
   if(!FlipCardLoader.hasModule(mod) || !FlipCardLoader.levelsFor(mod).includes(liv)){
     cont.innerHTML = _fcHeader() + _fcStateHTML({
-      icon: '🗂️', color: '#a996ff', title: 'Nessun mazzo disponibile',
+      icon: '🗂️', color: '#8B9968', title: 'Nessun mazzo disponibile',
       msg: `Il modulo "${modLabel(mod)}" non ha ancora un set di carte Flip Card associato per questo livello.`,
     });
     return;
@@ -902,14 +902,14 @@ async function startFlipCard(cont, mod, liv){
     }catch(err){
       console.error('[PixelProf] FlipCard load error:', err);
       cont.innerHTML = _fcHeader() + _fcStateHTML({
-        icon: '⚠️', color: '#a996ff', title: 'Flip Card non disponibile',
+        icon: '⚠️', color: '#8B9968', title: 'Flip Card non disponibile',
         msg: 'Impossibile caricare il mazzo. Riprova o cambia modulo.',
       });
       return;
     }
     if(!cards.length){
       cont.innerHTML = _fcHeader() + _fcStateHTML({
-        icon: '📭', color: '#a996ff', title: 'Mazzo vuoto',
+        icon: '📭', color: '#8B9968', title: 'Mazzo vuoto',
         msg: 'I file CSV sono stati trovati ma non contengono righe valide (colonne domanda,risposta).',
       });
       return;

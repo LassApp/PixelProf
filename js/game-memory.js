@@ -106,7 +106,7 @@ async function startMemory(cont,mod){
         <div class="po-text">Pausa</div>
       </div>
     </div>
-    <div style="margin-top:8px;font-size:12px;text-align:center;color:rgba(0,255,200,.6)" id="mem-msg"></div>`;
+    <div style="margin-top:8px;font-size:12px;text-align:center;color:rgba(78,116,100,.6)" id="mem-msg"></div>`;
 
   // Start timer
   _startMemInterval();

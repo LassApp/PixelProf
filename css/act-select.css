@@ -50,8 +50,8 @@
      coerenza con lo stesso stato altrove nell'app. (v8.29.0: rimosso
      qui il riferimento a .mod-grid-soon, eliminata da pixelprof.css). -- */
   .dm-card .dm-badge.soon{
-    background: rgba(255,180,0,.16);
-    border-color: rgba(255,180,0,.45);
+    background: rgba(122,90,56,.16);
+    border-color: rgba(122,90,56,.45);
     color: #ffcf5c;
   }
   /* Card visibile ma non cliccabile — tabindex="-1"/pointer-events:none

@@ -35,13 +35,13 @@
 .audio-toggle-btn .audio-toggle-icon{font-size:15px;line-height:1}
 .audio-toggle-btn.muted{
   color:rgba(255,120,120,.65);
-  border-color:rgba(255,80,80,.22);
-  background:rgba(255,80,80,.05);
+  border-color:rgba(171,86,73,.22);
+  background:rgba(171,86,73,.05);
 }
 .audio-toggle-btn.muted:hover{
-  border-color:rgba(255,80,80,.4);
-  background:rgba(255,80,80,.1);
-  color:#ff6b6b;
+  border-color:rgba(171,86,73,.4);
+  background:rgba(171,86,73,.1);
+  color:#AB5649;
 }
 }
 
@@ -49,6 +49,6 @@
 /* ── 20. TOGGLE AUDIO/TEMA ────────────────────────────────────── */
 html[data-theme="light"] .audio-toggle-btn{ border-color: rgba(var(--navy-rgb),.14); background: rgba(var(--navy-rgb),.04); color: rgba(var(--navy-rgb),.55); }
 html[data-theme="light"] .audio-toggle-btn:hover{ border-color: rgba(var(--accent-rgb),.35); background: rgba(var(--accent-rgb),.08); color: var(--accent); }
-html[data-theme="light"] .theme-toggle-btn.is-light{ color:#a66d00; border-color: rgba(180,130,0,.3); background: rgba(255,180,0,.08); }
+html[data-theme="light"] .theme-toggle-btn.is-light{ color:#a66d00; border-color: rgba(180,130,0,.3); background: rgba(122,90,56,.08); }
 
 }

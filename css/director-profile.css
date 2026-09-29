@@ -25,10 +25,10 @@
 /* ── Card "Gestisci Direttore" — accento ORO, lo stesso già usato
    dall'anello del pannello Profilo per il ruolo Direttore (sempre oro,
    a prescindere dal genere) — nessun nuovo colore introdotto. ── */
-.dd-direttore{ border-color:rgba(255,215,0,.18); }
-.dd-direttore::after{ background:linear-gradient(90deg,transparent,#ffd700,transparent); }
-.dd-direttore:hover{ border-color:rgba(255,215,0,.55); box-shadow:0 12px 36px rgba(255,215,0,.16); }
-.dd-direttore:hover .dd-title,.dd-direttore:hover .dd-arrow{ color:#ffd700; }
+.dd-direttore{ border-color:rgba(var(--accent-rgb),.18); }
+.dd-direttore::after{ background:linear-gradient(90deg,transparent,var(--accent),transparent); }
+.dd-direttore:hover{ border-color:rgba(var(--accent-rgb),.55); box-shadow:0 12px 36px rgba(var(--accent-rgb),.16); }
+.dd-direttore:hover .dd-title,.dd-direttore:hover .dd-arrow{ color:var(--accent); }
 
 /* ── Fascia "Entra in un'aula" — DELIBERATAMENTE diversa dalle 3 card
    di gestione sopra: forma orizzontale (non verticale), bordo
@@ -99,7 +99,7 @@
   background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08);
   font-size:11.5px; color:rgba(255,255,255,.5); line-height:1.55;
 }
-.dp-locked-note i{ color:rgba(255,215,0,.8); font-size:16px; flex-shrink:0; margin-top:1px; }
+.dp-locked-note i{ color:rgba(var(--accent-rgb),.8); font-size:16px; flex-shrink:0; margin-top:1px; }
 
 } /* @layer dirprofilo */
 

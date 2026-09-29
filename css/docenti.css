@@ -32,7 +32,7 @@
 .dd-teacher-list{ border-color:rgba(var(--purple-rgb),.15); }
 .dd-teacher-list::after{ background:linear-gradient(90deg,transparent,var(--purple),transparent); }
 .dd-teacher-list:hover{ border-color:rgba(var(--purple-rgb),.5); box-shadow:0 12px 36px rgba(var(--purple-rgb),.14); }
-.dd-teacher-list:hover .dd-title,.dd-teacher-list:hover .dd-arrow{ color:#b4a0ff; }
+.dd-teacher-list:hover .dd-title,.dd-teacher-list:hover .dd-arrow{ color:#8B9968; }
 
 /* ── Toggle Genere (creazione + dettaglio) ── */
 .gender-toggle{ display:flex; gap:8px; }
@@ -75,11 +75,11 @@
    .tdc-status-dot). */
 .tdc-card::after{
   content:'';position:absolute;bottom:0;left:0;right:0;height:2px;
-  background:#00ff96;transform:scaleX(0);transform-origin:left;
+  background:#4A6B52;transform:scaleX(0);transform-origin:left;
   transition:transform .2s cubic-bezier(.34,1.56,.64,1);
 }
 .tdc-card:hover::after{ transform:scaleX(1); }
-.tdc-card.tdc-inactive::after{ background:#ff4d6d; }
+.tdc-card.tdc-inactive::after{ background:#AB5649; }
 .tdc-card:hover{ transform:translateY(-3px); border-color:rgba(var(--accent-rgb),.3); background:rgba(var(--accent-rgb),.04); box-shadow:0 10px 28px rgba(0,0,0,.4); }
 .tdc-card:focus-visible{ outline:2px solid var(--accent); outline-offset:2px; }
 .tdc-card.tdc-inactive{ opacity:.55; }
@@ -99,12 +99,12 @@
   display:flex;align-items:center;justify-content:center;font-size:15px;
   background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.45);
 }
-.tdc-gender-icon.g-uomo{ background:rgba(30,144,255,.12);border-color:rgba(30,144,255,.3);color:#5eb0ff; }
-.tdc-gender-icon.g-donna{ background:rgba(255,77,109,.12);border-color:rgba(255,77,109,.3);color:#ff8fa3; }
+.tdc-gender-icon.g-uomo{ background:rgba(84,112,140,.12);border-color:rgba(84,112,140,.3);color:#7D99B3; }
+.tdc-gender-icon.g-donna{ background:rgba(171,86,73,.12);border-color:rgba(171,86,73,.3);color:#C17A70; }
 .tdc-name{ flex:1;font-size:14px;font-weight:700;color:#fff;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; }
 .tdc-status-dot{ width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 6px currentColor; }
-.tdc-status-dot.active{ background:#00ff96;color:#00ff96; }
-.tdc-status-dot.inactive{ background:#ff4d6d;color:#ff4d6d; }
+.tdc-status-dot.active{ background:#4A6B52;color:#4A6B52; }
+.tdc-status-dot.inactive{ background:#AB5649;color:#AB5649; }
 
 .tdc-email{ font-size:11px;color:var(--text-muted);margin-bottom:10px;font-family:'Share Tech Mono',monospace;overflow:hidden;text-overflow:ellipsis;white-space:nowrap; } /* v8.15.2 FIX: era rgba(255,255,255,.4) ~3.78:1 in scuro -> ora var(--text-muted), AA piena e già tematizzato */
 
@@ -135,12 +135,12 @@
 .tmd-close-btn{
   flex-shrink:0;width:26px;height:26px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  background:rgba(255,60,80,.1);border:1px solid rgba(255,60,80,.35);
-  color:#ff4d6d;cursor:pointer;font-size:14px;line-height:1;
+  background:rgba(171,86,73,.1);border:1px solid rgba(171,86,73,.35);
+  color:#AB5649;cursor:pointer;font-size:14px;line-height:1;
   transition:background .15s,border-color .15s,color .15s;
   font-family:inherit;
 }
-.tmd-close-btn:hover{ background:rgba(255,60,80,.22);border-color:rgba(255,60,80,.6);color:#ff6b6b; }
+.tmd-close-btn:hover{ background:rgba(171,86,73,.22);border-color:rgba(171,86,73,.6);color:#AB5649; }
 
 /* .dp-hint-text — didascalie informative statiche/dinamiche nel
    pannello "⚙️ Gestione aula" e nella scheda docente (v6.6: sostituisce

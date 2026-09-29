@@ -97,8 +97,8 @@ function checkTF(choice){
     s.score++;
     if(typeof _trackRightQ === 'function') _trackRightQ(q.q, q.a ? 'Vero' : 'Falso', sMod, 'truefalse');
     const bonusLine = streakBonus > 0
-      ? `<div style="font-size:11px;color:rgba(0,255,200,.75);margin-top:3px">🔥 +${streakBonus} streak ×${tfStreak} &nbsp;<strong>+${scoreEarned} pt totali</strong></div>`
-      : `<div style="font-size:11px;color:rgba(0,255,200,.55);margin-top:3px">+${scoreEarned} pt</div>`;
+      ? `<div style="font-size:11px;color:rgba(78,116,100,.75);margin-top:3px">🔥 +${streakBonus} streak ×${tfStreak} &nbsp;<strong>+${scoreEarned} pt totali</strong></div>`
+      : `<div style="font-size:11px;color:rgba(78,116,100,.55);margin-top:3px">+${scoreEarned} pt</div>`;
     sh('tffb').innerHTML = `<div class="fb ok">✓ Corretto! ${escHtml(q.exp||'')}${bonusLine}</div>`;
   }else{
     tfStreak = 0;

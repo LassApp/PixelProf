@@ -72,10 +72,10 @@
 .pp-generic-btn.ok:hover,
 .pp-generic-btn.confirm:hover{background:rgba(var(--accent-rgb),.22);}
 .pp-generic-btn.confirm.danger{
-  background:rgba(255,60,80,.12);border-color:rgba(255,60,80,.4);color:#ff4d6d;
+  background:rgba(171,86,73,.12);border-color:rgba(171,86,73,.4);color:#AB5649;
 }
-.pp-generic-btn.confirm.danger::after{background:#ff4d6d;}
-.pp-generic-btn.confirm.danger:hover{background:rgba(255,60,80,.2);}
+.pp-generic-btn.confirm.danger::after{background:#AB5649;}
+.pp-generic-btn.confirm.danger:hover{background:rgba(171,86,73,.2);}
 }
 
 @layer theme {

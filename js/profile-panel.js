@@ -59,10 +59,10 @@
 
    Colori riusati 1:1 dalla scheda docente esistente (pixelprof.css
    .tdc-gender-icon.g-uomo/.g-donna), nessun nuovo colore introdotto:
-     uomo      → ring #1e90ff / testo #5eb0ff
-     donna     → ring #ff4d6d / testo #ff8fa3
-     direttore → #ffd700 (invariato, stesso oro del badge "👑 Dir")
-     default   → #00cfff (nessun genere impostato — stesso ciano già
+     uomo      → ring #54708C / testo #7D99B3
+     donna     → ring #AB5649 / testo #C17A70
+     direttore → #B8935A (invariato, stesso oro del badge "👑 Dir")
+     default   → #54708C (nessun genere impostato — stesso ciano già
                  usato per il ruolo "📖 Doc" prima di questa modifica)
 
    Dipendenze globali attese (definite altrove nel bundle — vedi
@@ -75,10 +75,10 @@
 const ProfilePanel = (function () {
 
   const ROLE_STYLE = {
-    direttore: { ring: '#ffd700', text: '#ffd700', bg: 'rgba(255,215,0,.12)',  icon: 'ti-crown'         },
-    uomo:      { ring: '#1e90ff', text: '#5eb0ff', bg: 'rgba(30,144,255,.12)', icon: 'ti-gender-male'   },
-    donna:     { ring: '#ff4d6d', text: '#ff8fa3', bg: 'rgba(255,77,109,.12)', icon: 'ti-gender-female' },
-    default:   { ring: '#00cfff', text: '#00cfff', bg: 'rgba(0,207,255,.1)',   icon: 'ti-user'          }
+    direttore: { ring: '#B8935A', text: '#B8935A', bg: 'rgba(184,147,90,.12)',  icon: 'ti-crown'         },
+    uomo:      { ring: '#54708C', text: '#7D99B3', bg: 'rgba(84,112,140,.12)', icon: 'ti-gender-male'   },
+    donna:     { ring: '#AB5649', text: '#C17A70', bg: 'rgba(171,86,73,.12)', icon: 'ti-gender-female' },
+    default:   { ring: '#54708C', text: '#54708C', bg: 'rgba(84,112,140,.1)',   icon: 'ti-user'          }
   };
 
   /** v8.29.0 — Config dichiarativa per la lista sotto "Rivedi il tour

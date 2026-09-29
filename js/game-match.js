@@ -12,9 +12,12 @@
 ================================================== */
 
 /* -- Per-pair color palette -- */
+// v9: intonati alla palette (prima neon puri) — stesso ruolo (una
+// tinta per coppia nel minigioco Abbina), stessa famiglia già usata
+// altrove nel redesign.
 const PAIR_COLORS=[
-  '#00ffc8','#ffb400','#7c6aff','#ff4d6d',
-  '#00cfff','#32dc64','#ff64b4','#ffd700'
+  '#4E7464','#7A5A38','#6E7A50','#AB5649',
+  '#54708C','#4A6B52','#9D5875','#B8935A'
 ];
 
 /* ==================================================
@@ -266,7 +269,7 @@ async function startMatch(cont,mod){
     `<div class="match-hdr">
       <div class="mem-stat-pill timer-running"><i class="ti ti-clock"></i><span id="match-timer-val">60s</span></div>
       <div class="mem-stat-pill score-pill"><i class="ti ti-star"></i><span id="match-score-val">0</span></div>
-      <div class="mem-stat-pill" style="border-color:rgba(255,60,80,.25);color:rgba(255,100,100,.7);background:rgba(255,60,80,.06)"><i class="ti ti-x"></i><span id="match-err-val">0</span></div>
+      <div class="mem-stat-pill" style="border-color:rgba(171,86,73,.25);color:rgba(255,100,100,.7);background:rgba(171,86,73,.06)"><i class="ti ti-x"></i><span id="match-err-val">0</span></div>
       <div class="match-combo-pill x1" id="match-combo-pill">×1</div>
       <button class="mem-pause-btn" id="match-pause-btn" onclick="matchTogglePause()"><i class="ti ti-player-pause" id="match-pause-icon"></i></button>
     </div>`
@@ -291,14 +294,14 @@ async function startMatch(cont,mod){
       <div class="match-paused-overlay hidden" id="match-paused-overlay" onclick="matchTogglePause()" style="cursor:pointer">
         <div style="
           width:52px;height:52px;border-radius:50%;
-          border:2px solid rgba(0,255,200,.5);
-          background:rgba(0,255,200,.08);
+          border:2px solid rgba(78,116,100,.5);
+          background:rgba(78,116,100,.08);
           display:flex;align-items:center;justify-content:center;
           font-size:22px;
-          box-shadow:0 0 20px rgba(0,255,200,.15);
+          box-shadow:0 0 20px rgba(78,116,100,.15);
           animation:playPulse 1.4s ease-in-out infinite;
         ">▶</div>
-        <div style="font-size:11px;color:rgba(0,255,200,.7);font-family:'Share Tech Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;margin-top:6px">Premi per continuare</div>
+        <div style="font-size:11px;color:rgba(78,116,100,.7);font-family:'Share Tech Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;margin-top:6px">Premi per continuare</div>
       </div>
     </div>
     <div style="margin-top:8px;font-size:12px;color:rgba(255,255,255,.4);min-height:20px" id="mfb"></div>`;
@@ -413,8 +416,8 @@ function mSel(type,val){
     // UI feedback
     const comboLabel=s.combo>1?` [×${s.combo} COMBO +${pts}]`:`[+${pts}]`;
     const allDone=s.matched.size===s.pairs.length;
-    if(fb)fb.innerHTML=`<span style="color:#00ff96">✓ Corretto! ${comboLabel}</span>`
-      +(allDone?' <span style="color:#ffd700">🎉 Tutti abbinati!</span>':'');
+    if(fb)fb.innerHTML=`<span style="color:#4A6B52">✓ Corretto! ${comboLabel}</span>`
+      +(allDone?' <span style="color:#B8935A">🎉 Tutti abbinati!</span>':'');
 
     _updateMatchScoreUI();
     _updateMatchComboUI();
@@ -435,7 +438,7 @@ function mSel(type,val){
       el.classList.add('flash');
       setTimeout(()=>{ el.classList.remove('flash','sel'); _clearSelColor(el); },600);
     });
-    if(fb)fb.innerHTML=`<span style="color:#ff3c50">✗ Non corrisponde — −${penalty} pt</span>`;
+    if(fb)fb.innerHTML=`<span style="color:#AB5649">✗ Non corrisponde — −${penalty} pt</span>`;
     _updateMatchScoreUI();
     _updateMatchComboUI();
 

@@ -121,7 +121,7 @@ function addCourse(){
   renderCoursesGrid();
   setTimeout(()=>{
     const card=document.querySelector('[data-course-id="'+course.id+'"]');
-    if(card)card.style.boxShadow='0 0 0 2px #00ffc8';
+    if(card)card.style.boxShadow='0 0 0 2px #4E7464';
     setTimeout(()=>{if(card)card.style.boxShadow='';},1200);
   },80);
 }
@@ -613,18 +613,18 @@ function closeIconPicker(){sh('icon-picker-overlay').classList.add('hidden');_ip
 /* -- Bg + Color picker v7 con anteprima live -- */
 
 const COLOR_PALETTE=[
-  {label:'Teal',    border:'rgba(0,255,200,.45)',  glow:'rgba(0,255,200,.2)',    bar:'#00ffc8',  dot:'#00ffc8'},
-  {label:'Violet',  border:'rgba(124,106,255,.45)',glow:'rgba(124,106,255,.2)',  bar:'#7c6aff',  dot:'#7c6aff'},
-  {label:'Blue',    border:'rgba(30,144,255,.45)', glow:'rgba(30,144,255,.2)',   bar:'#1e90ff',  dot:'#1e90ff'},
-  {label:'Pink',    border:'rgba(255,77,109,.45)', glow:'rgba(255,77,109,.2)',   bar:'#ff4d6d',  dot:'#ff4d6d'},
-  {label:'Amber',   border:'rgba(255,180,0,.45)',  glow:'rgba(255,180,0,.2)',    bar:'#ffb400',  dot:'#ffb400'},
-  {label:'Cyan',    border:'rgba(0,207,255,.45)',  glow:'rgba(0,207,255,.2)',    bar:'#00cfff',  dot:'#00cfff'},
-  {label:'Green',   border:'rgba(50,220,100,.45)', glow:'rgba(50,220,100,.2)',   bar:'#32dc64',  dot:'#32dc64'},
-  {label:'Rose',    border:'rgba(255,100,180,.45)',glow:'rgba(255,100,180,.2)',  bar:'#ff64b4',  dot:'#ff64b4'},
-  {label:'Orange',  border:'rgba(255,120,40,.45)', glow:'rgba(255,120,40,.2)',   bar:'#ff7828',  dot:'#ff7828'},
+  {label:'Teal',    border:'rgba(78,116,100,.45)',  glow:'rgba(78,116,100,.2)',    bar:'#4E7464',  dot:'#4E7464'},
+  {label:'Violet',  border:'rgba(110,122,80,.45)',glow:'rgba(110,122,80,.2)',  bar:'#6E7A50',  dot:'#6E7A50'},
+  {label:'Blue',    border:'rgba(84,112,140,.45)', glow:'rgba(84,112,140,.2)',   bar:'#54708C',  dot:'#54708C'},
+  {label:'Pink',    border:'rgba(171,86,73,.45)', glow:'rgba(171,86,73,.2)',   bar:'#AB5649',  dot:'#AB5649'},
+  {label:'Amber',   border:'rgba(122,90,56,.45)',  glow:'rgba(122,90,56,.2)',    bar:'#7A5A38',  dot:'#7A5A38'},
+  {label:'Cyan',    border:'rgba(84,112,140,.45)',  glow:'rgba(84,112,140,.2)',    bar:'#54708C',  dot:'#54708C'},
+  {label:'Green',   border:'rgba(74,107,82,.45)', glow:'rgba(74,107,82,.2)',   bar:'#4A6B52',  dot:'#4A6B52'},
+  {label:'Rose',    border:'rgba(157,88,117,.45)',glow:'rgba(157,88,117,.2)',  bar:'#9D5875',  dot:'#9D5875'},
+  {label:'Orange',  border:'rgba(156,107,62,.45)', glow:'rgba(156,107,62,.2)',   bar:'#9C6B3E',  dot:'#9C6B3E'},
   {label:'White',   border:'rgba(220,230,255,.35)',glow:'rgba(220,230,255,.15)', bar:'#dce6ff',  dot:'#dce6ff'},
-  {label:'Gold',    border:'rgba(255,215,0,.45)',  glow:'rgba(255,215,0,.2)',    bar:'#ffd700',  dot:'#ffd700'},
-  {label:'Indigo',  border:'rgba(99,102,241,.45)', glow:'rgba(99,102,241,.2)',   bar:'#6366f1',  dot:'#6366f1'},
+  {label:'Gold',    border:'rgba(184,147,90,.45)',  glow:'rgba(184,147,90,.2)',    bar:'#B8935A',  dot:'#B8935A'},
+  {label:'Indigo',  border:'rgba(110,122,80,.45)', glow:'rgba(110,122,80,.2)',   bar:'#6E7A50',  dot:'#6E7A50'},
 ];
 
 let _bpCourseId=null;

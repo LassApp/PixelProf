@@ -335,7 +335,7 @@ function renderBadges() {
     <div class="bdg-summary-icon">🏆</div>
     <div class="bdg-summary-text">
       <div class="bdg-summary-count"><strong>${unlockedCount}</strong> / ${totalCount} traguardi sbloccati</div>
-      <div class="prog-bar"><div class="prog-fill" style="width:${summaryPct}%;background:linear-gradient(90deg,#ffd700,#ffb400)"></div></div>
+      <div class="prog-bar"><div class="prog-fill" style="width:${summaryPct}%;background:linear-gradient(90deg,#B8935A,#7A5A38)"></div></div>
     </div>
   </div>`;
 

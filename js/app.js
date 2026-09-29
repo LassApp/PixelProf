@@ -367,7 +367,7 @@ async function tmSubmitCreate(){
   const email   = (sh('tmc-email')?.value||'').trim();
   const fb = sh('tmc-fb');
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const showErr = (msg)=>{ if(fb){ fb.style.color='#ff6b6b'; fb.textContent=msg; } };
+  const showErr = (msg)=>{ if(fb){ fb.style.color='#AB5649'; fb.textContent=msg; } };
 
   if(!nome)    return showErr('Inserisci il nome.');
   if(!cognome) return showErr('Inserisci il cognome.');
@@ -385,12 +385,12 @@ async function tmSubmitCreate(){
     if(newId){
       const gRes = await window.Auth.updateTeacherProfile(newId, { name: fullName, genere: _tmcGenere });
       if(!gRes.ok){
-        if(fb){ fb.style.color='#ffb400'; fb.textContent='✓ Docente creato, ma il genere non è stato salvato ('+(gRes.error||'errore')+'). Potrai impostarlo dalla scheda docente.'; }
+        if(fb){ fb.style.color='#7A5A38'; fb.textContent='✓ Docente creato, ma il genere non è stato salvato ('+(gRes.error||'errore')+'). Potrai impostarlo dalla scheda docente.'; }
         setTimeout(()=>tmGoList(), 1400);
         return;
       }
     }
-    if(fb){ fb.style.color='#00ff96'; fb.textContent='✓ Docente creato — invito inviato a '+email; }
+    if(fb){ fb.style.color='#4A6B52'; fb.textContent='✓ Docente creato — invito inviato a '+email; }
     setTimeout(()=>tmGoList(), 900);
   }catch(e){
     showErr('✗ Errore di rete. Riprova.');
@@ -581,18 +581,18 @@ async function tmDetailSaveEmail(){
   const fb = sh('tmd-email-fb');
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if(!newEmail || !emailRe.test(newEmail)){
-    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='Inserisci un indirizzo email valido.'; }
+    if(fb){ fb.style.color='#AB5649'; fb.textContent='Inserisci un indirizzo email valido.'; }
     return;
   }
   if(fb){ fb.style.color='rgba(255,255,255,.4)'; fb.textContent='⏳ Aggiornamento in corso...'; }
   const res = await window.Auth.updateTeacherEmail(_tmdId, newEmail);
   if(res.ok){
-    if(fb){ fb.style.color='#00ff96'; fb.textContent='✓ Email aggiornata a '+newEmail; }
+    if(fb){ fb.style.color='#4A6B52'; fb.textContent='✓ Email aggiornata a '+newEmail; }
     if(sh('tmd-email')) sh('tmd-email').value='';
     const hint = sh('tmd-current-email');
     if(hint) hint.textContent = 'Email attuale: '+newEmail;
   } else {
-    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore: '+(res.error||'sconosciuto'); }
+    if(fb){ fb.style.color='#AB5649'; fb.textContent='✗ Errore: '+(res.error||'sconosciuto'); }
   }
 }
 
@@ -773,21 +773,21 @@ async function dpSaveProfile(){
   const cognome = (sh('dp-cognome')?.value||'').trim();
   const fb = sh('dp-profile-fb');
   if(!nome || !cognome){
-    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='Nome e cognome sono entrambi obbligatori.'; }
+    if(fb){ fb.style.color='#AB5649'; fb.textContent='Nome e cognome sono entrambi obbligatori.'; }
     return;
   }
   const fullName = _tmJoinName(nome, cognome);
   if(fb){ fb.style.color='rgba(255,255,255,.4)'; fb.textContent='⏳ Salvataggio in corso...'; }
   const res = await window.Auth.updateOwnProfile({ name: fullName, genere: _dpGenere });
   if(res && res.ok){
-    if(fb){ fb.style.color='#00ff96'; fb.textContent='✓ Dati aggiornati.'; }
+    if(fb){ fb.style.color='#4A6B52'; fb.textContent='✓ Dati aggiornati.'; }
     // Aggiorna il pannello Profilo in topbar (nome mostrato lì);
     // l'anello resta oro — invariato, il Direttore è sempre oro a
     // prescindere dal genere (vedi profile-panel.js).
     appState.teacher = window.Auth.getProfile();
     if(typeof ProfilePanel!=='undefined') ProfilePanel.render(appState.teacher, true);
   } else {
-    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore: '+(res?.error||'sconosciuto'); }
+    if(fb){ fb.style.color='#AB5649'; fb.textContent='✗ Errore: '+(res?.error||'sconosciuto'); }
   }
 }
 
@@ -796,16 +796,16 @@ async function dpSaveEmail(){
   const fb = sh('dp-email-fb');
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if(!newEmail || !emailRe.test(newEmail)){
-    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='Inserisci un indirizzo email valido.'; }
+    if(fb){ fb.style.color='#AB5649'; fb.textContent='Inserisci un indirizzo email valido.'; }
     return;
   }
   if(fb){ fb.style.color='rgba(255,255,255,.4)'; fb.textContent='⏳ Invio richiesta in corso...'; }
   const res = await window.Auth.updateOwnEmail(newEmail);
   if(res && res.ok){
-    if(fb){ fb.style.color='#00ff96'; fb.textContent='✓ Richiesta inviata — controlla '+newEmail+' per confermare il cambio email.'; }
+    if(fb){ fb.style.color='#4A6B52'; fb.textContent='✓ Richiesta inviata — controlla '+newEmail+' per confermare il cambio email.'; }
     if(sh('dp-email')) sh('dp-email').value = '';
   } else {
-    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore: '+(res?.error||'sconosciuto'); }
+    if(fb){ fb.style.color='#AB5649'; fb.textContent='✗ Errore: '+(res?.error||'sconosciuto'); }
   }
 }
 
@@ -1151,7 +1151,7 @@ function _cwGoStep(n){
 }
 
 function _cwShowFieldError(inpEl, msg, errContainerId){
-  if(inpEl){ inpEl.style.borderColor='#ff6b6b'; inpEl.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)'; }
+  if(inpEl){ inpEl.style.borderColor='#AB5649'; inpEl.style.boxShadow='0 0 0 3px rgba(171,86,73,.15)'; }
   const cont=document.getElementById(errContainerId);
   if(cont){ cont.textContent='✗ '+msg; cont.style.display='block'; }
   setTimeout(()=>{
@@ -1167,9 +1167,9 @@ function cwStep(n){
     const existing=loadCourses().find(c=>c.name.trim().toLowerCase()===name.toLowerCase());
     if(existing){
       const inp=sh('cw-name-inp');
-      if(inp){ inp.classList.add('error'); inp.style.borderColor='#ff6b6b'; }
+      if(inp){ inp.classList.add('error'); inp.style.borderColor='#AB5649'; }
       let errEl=document.getElementById('cw-name-err');
-      if(!errEl){ errEl=document.createElement('div'); errEl.id='cw-name-err'; errEl.style.cssText='font-size:11px;color:#ff6b6b;margin-top:4px;font-family:Share Tech Mono,monospace'; inp?.parentNode?.appendChild(errEl); }
+      if(!errEl){ errEl=document.createElement('div'); errEl.id='cw-name-err'; errEl.style.cssText='font-size:11px;color:#AB5649;margin-top:4px;font-family:Share Tech Mono,monospace'; inp?.parentNode?.appendChild(errEl); }
       errEl.textContent='✗ Impossibile creare l\'aula: esiste già un\'aula con questo nome.';
       setTimeout(()=>{ if(errEl)errEl.textContent=''; if(inp){inp.classList.remove('error');inp.style.borderColor='';} },3500);
       return;
@@ -1187,19 +1187,19 @@ function cwStep(n){
     };
     if(!startVal){
       const el=sh('cw-start-date');
-      if(el){el.style.borderColor='#ff6b6b';el.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)';el.focus();}
+      if(el){el.style.borderColor='#AB5649';el.style.boxShadow='0 0 0 3px rgba(171,86,73,.15)';el.focus();}
       if(errWrap){errWrap.textContent='✗ La data di inizio è obbligatoria.';errWrap.style.display='block';}
       setTimeout(_clearDateErr,3500); return;
     }
     if(!endVal){
       const el=sh('cw-end-date');
-      if(el){el.style.borderColor='#ff6b6b';el.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)';el.focus();}
+      if(el){el.style.borderColor='#AB5649';el.style.boxShadow='0 0 0 3px rgba(171,86,73,.15)';el.focus();}
       if(errWrap){errWrap.textContent='✗ La data di fine è obbligatoria.';errWrap.style.display='block';}
       setTimeout(_clearDateErr,3500); return;
     }
     if(endVal < startVal){
       const el=sh('cw-end-date');
-      if(el){el.style.borderColor='#ff6b6b';el.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)';el.focus();}
+      if(el){el.style.borderColor='#AB5649';el.style.boxShadow='0 0 0 3px rgba(171,86,73,.15)';el.focus();}
       if(errWrap){errWrap.textContent='✗ La data di fine non può essere precedente alla data di inizio.';errWrap.style.display='block';}
       setTimeout(_clearDateErr,3500); return;
     }
@@ -1216,19 +1216,19 @@ function cwStep(n){
     };
     if(!tStart){
       const el=sh('cw-time-start');
-      if(el){el.style.borderColor='#ff6b6b';el.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)';el.focus();}
+      if(el){el.style.borderColor='#AB5649';el.style.boxShadow='0 0 0 3px rgba(171,86,73,.15)';el.focus();}
       if(tErr){tErr.textContent='✗ Inserisci l\'orario di inizio.';tErr.style.display='block';}
       setTimeout(_clearTimeErr,3500); return;
     }
     if(!tEnd){
       const el=sh('cw-time-end');
-      if(el){el.style.borderColor='#ff6b6b';el.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)';el.focus();}
+      if(el){el.style.borderColor='#AB5649';el.style.boxShadow='0 0 0 3px rgba(171,86,73,.15)';el.focus();}
       if(tErr){tErr.textContent='✗ Inserisci l\'orario di fine.';tErr.style.display='block';}
       setTimeout(_clearTimeErr,3500); return;
     }
     if(tEnd <= tStart){
       const el=sh('cw-time-end');
-      if(el){el.style.borderColor='#ff6b6b';el.style.boxShadow='0 0 0 3px rgba(255,60,80,.15)';el.focus();}
+      if(el){el.style.borderColor='#AB5649';el.style.boxShadow='0 0 0 3px rgba(171,86,73,.15)';el.focus();}
       if(tErr){tErr.textContent='✗ L\'orario di fine deve essere successivo all\'inizio.';tErr.style.display='block';}
       setTimeout(_clearTimeErr,3500); return;
     }
@@ -1429,7 +1429,7 @@ async function cwInviteTeacher(){
   const fb    = sh('cw-invite-fb');
   const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if(!email || !emailRe.test(email)){
-    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='Inserisci un indirizzo email valido (es. docente@scuola.it)'; }
+    if(fb){ fb.style.color='#AB5649'; fb.textContent='Inserisci un indirizzo email valido (es. docente@scuola.it)'; }
     emailInp?.focus();
     return;
   }
@@ -1437,7 +1437,7 @@ async function cwInviteTeacher(){
   try{
     const res = await window.Auth.inviteTeacher(email, name||email);
     if(res.ok){
-      if(fb){ fb.style.color='#00ff96'; fb.textContent='✓ Invito inviato a ' + email; }
+      if(fb){ fb.style.color='#4A6B52'; fb.textContent='✓ Invito inviato a ' + email; }
       const newTeacher = { id: res.user_id || res.userId || email, name: name||email };
       if(!_cw.teachers.find(t=>t.id===newTeacher.id)){
         _cw.teachers.push(newTeacher);
@@ -1455,10 +1455,10 @@ async function cwInviteTeacher(){
         sel.value = res.user_id;
       }
     } else {
-      if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore: '+(res.error||'sconosciuto'); }
+      if(fb){ fb.style.color='#AB5649'; fb.textContent='✗ Errore: '+(res.error||'sconosciuto'); }
     }
   }catch(e){
-    if(fb){ fb.style.color='#ff6b6b'; fb.textContent='✗ Errore di rete. Riprova.'; }
+    if(fb){ fb.style.color='#AB5649'; fb.textContent='✗ Errore di rete. Riprova.'; }
   }
 }
 
@@ -1518,7 +1518,7 @@ async function cwCreateClassroom(){
   await _reloadCourses();
   setTimeout(()=>{
     const card=document.querySelector('[data-course-id="'+classroomId+'"]');
-    if(card){ card.style.boxShadow='0 0 0 2px #00ffc8'; setTimeout(()=>card.style.boxShadow='',1400); }
+    if(card){ card.style.boxShadow='0 0 0 2px #4E7464'; setTimeout(()=>card.style.boxShadow='',1400); }
   }, 120);
 }
 
@@ -1744,20 +1744,20 @@ async function dpInviteTeacher(){
   const email = sh('dp-invite-email')?.value.trim();
   const name  = sh('dp-invite-name')?.value.trim();
   const fb    = sh('dp-invite-fb');
-  if(!email){ if(fb){fb.style.color='#ff6b6b';fb.textContent='Inserisci email valida.';} return; }
+  if(!email){ if(fb){fb.style.color='#AB5649';fb.textContent='Inserisci email valida.';} return; }
   if(fb){fb.style.color='rgba(255,255,255,.4)';fb.textContent='Invio...';}
   try{
     const res = await window.Auth.inviteTeacher(email, name||email);
     if(res.ok){
-      if(fb){fb.style.color='#00ff96';fb.textContent='Invito inviato a '+email;}
+      if(fb){fb.style.color='#4A6B52';fb.textContent='Invito inviato a '+email;}
       if(sh('dp-invite-email')) sh('dp-invite-email').value='';
       if(sh('dp-invite-name'))  sh('dp-invite-name').value='';
       await _dpLoadTeacherSelect();
     } else {
-      if(fb){fb.style.color='#ff6b6b';fb.textContent='Errore: '+(res.error||'sconosciuto');}
+      if(fb){fb.style.color='#AB5649';fb.textContent='Errore: '+(res.error||'sconosciuto');}
     }
   }catch(e){
-    if(fb){fb.style.color='#ff6b6b';fb.textContent='Errore di rete.';}
+    if(fb){fb.style.color='#AB5649';fb.textContent='Errore di rete.';}
   }
 }
 
@@ -1863,11 +1863,11 @@ function _updatePwdStrength(pwd) {
   if (/[^A-Za-z0-9]/.test(pwd)) score++;
   const levels = [
     { pct: '0%',   color: 'transparent', text: '' },
-    { pct: '25%',  color: '#ff4d6d',     text: '⚠ Troppo corta' },
-    { pct: '50%',  color: '#ffb400',     text: '▲ Debole' },
-    { pct: '70%',  color: '#00cfff',     text: '◆ Discreta' },
-    { pct: '88%',  color: '#7c6aff',     text: '● Buona' },
-    { pct: '100%', color: '#00ffc8',     text: '✓ Ottima' },
+    { pct: '25%',  color: '#AB5649',     text: '⚠ Troppo corta' },
+    { pct: '50%',  color: '#7A5A38',     text: '▲ Debole' },
+    { pct: '70%',  color: '#54708C',     text: '◆ Discreta' },
+    { pct: '88%',  color: '#6E7A50',     text: '● Buona' },
+    { pct: '100%', color: '#4E7464',     text: '✓ Ottima' },
   ];
   const lvl = levels[Math.min(score, 5)];
   fill.style.width      = lvl.pct;

@@ -43,7 +43,11 @@
 ================================================== */
 
 const _CHD_MOD_LABEL = { CE: 'Computer Essentials', OE: 'Online Essentials', WP: 'Word Processor', SS: 'Spreadsheets', PP: 'Power Point' };
-const _CHD_MOD_COLOR = { CE: '#ffcf5c', OE: '#7c6aff', WP: '#00cfff', SS: '#44c76a', PP: '#ffa564' };
+// v9: intonati alla palette (prima neon puri) — stessa famiglia già
+// usata per MOD_COLOR_HEX/PAIR_COLORS, restano diversi da quei valori
+// per coerenza con l'inconsistenza preesistente segnalata (due palette
+// modulo separate), qui semplicemente non più neon.
+const _CHD_MOD_COLOR = { CE: '#B8935A', OE: '#6E7A50', WP: '#54708C', SS: '#4A6B52', PP: '#9C6B3E' };
 const _CHD_MOD_FILTER_ICON = { CE: '💻', OE: '🌐', WP: '📝', SS: '📊', PP: '📽️' };
 const _CHD_ACT_LABEL = { quiz: 'Quiz', speed: 'Speed Quiz', match: 'Abbina', memory: 'Memory', fill: 'Completa la frase', truefalse: 'Vero o Falso' };
 const _CHD_ACT_ICON  = { quiz: '🧠', speed: '⚡', match: '🔗', memory: '🃏', fill: '✏️', truefalse: '⚖️' };

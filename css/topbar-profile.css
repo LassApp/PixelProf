@@ -34,8 +34,8 @@
   align-items:center;justify-content:center;
   width:34px;height:34px;border-radius:50%;flex-shrink:0;cursor:pointer;
   background:rgba(255,255,255,.04);
-  border:2px solid var(--profile-ring, #00cfff);
-  color:var(--profile-ring, #00cfff);
+  border:2px solid var(--profile-ring, #54708C);
+  color:var(--profile-ring, #54708C);
   font-size:16px;
   transition:box-shadow .18s cubic-bezier(.4,0,.2,1),
              transform .18s cubic-bezier(.4,0,.2,1),
@@ -43,8 +43,8 @@
 }
 .tb-profile-btn.visible{ display:flex; }
 .tb-profile-btn:hover{
-  background:var(--profile-bg, rgba(0,207,255,.1));
-  box-shadow:0 0 14px var(--profile-bg, rgba(0,207,255,.3));
+  background:var(--profile-bg, rgba(84,112,140,.1));
+  box-shadow:0 0 14px var(--profile-bg, rgba(84,112,140,.3));
   transform:translateY(-1px);
 }
 .tb-profile-btn:active{ transform:translateY(0); }
@@ -105,9 +105,9 @@
   width:52px; height:52px; border-radius:50%; flex-shrink:0;
   display:flex; align-items:center; justify-content:center; font-size:24px;
   background:rgba(255,255,255,.04);
-  border:2px solid var(--profile-ring, #00cfff);
-  color:var(--profile-ring, #00cfff);
-  box-shadow:0 0 16px var(--profile-bg, rgba(0,207,255,.3));
+  border:2px solid var(--profile-ring, #54708C);
+  color:var(--profile-ring, #54708C);
+  box-shadow:0 0 16px var(--profile-bg, rgba(84,112,140,.3));
 }
 .pp-profile-name{
   font-family:'Space Grotesk',sans-serif; font-size:15px; font-weight:700;
@@ -117,9 +117,9 @@
   display:inline-flex; align-items:center; gap:4px;
   font-family:'Share Tech Mono',monospace; font-size:9px; font-weight:700;
   letter-spacing:1px; text-transform:uppercase; padding:2px 9px; border-radius:20px;
-  background:var(--profile-bg, rgba(0,207,255,.1));
-  border:1px solid var(--profile-ring, #00cfff);
-  color:var(--profile-ring, #00cfff);
+  background:var(--profile-bg, rgba(84,112,140,.1));
+  border:1px solid var(--profile-ring, #54708C);
+  color:var(--profile-ring, #54708C);
 }
 
 /* ── Info: ultimo accesso / ultima aula ── */
@@ -149,10 +149,10 @@
 .pp-panel-action.pp-tour-action:hover{ border-color:rgba(var(--accent-rgb),.4); color:var(--accent); }
 
 .pp-panel-action.pp-logout-action{
-  border-color:rgba(255,80,80,.2); background:rgba(255,80,80,.05); color:rgba(255,100,100,.75);
+  border-color:rgba(171,86,73,.2); background:rgba(171,86,73,.05); color:rgba(255,100,100,.75);
 }
 .pp-panel-action.pp-logout-action:hover{
-  border-color:rgba(255,80,80,.4); color:#ff6b6b; background:rgba(255,80,80,.1);
+  border-color:rgba(171,86,73,.4); color:#AB5649; background:rgba(171,86,73,.1);
 }
 
 /* ── Quando il pannello è aperto, la topbar "fa spazio" spostando i
@@ -197,9 +197,9 @@
     background:rgba(0,0,0,.05); color:var(--navy); border-color:rgba(var(--navy-rgb),.2);
   }
   html[data-theme="light"] .pp-panel-action.pp-logout-action{
-    border-color:rgba(255,60,80,.25); background:rgba(255,60,80,.04); color:#c93a4f;
+    border-color:rgba(171,86,73,.25); background:rgba(171,86,73,.04); color:#c93a4f;
   }
   html[data-theme="light"] .pp-panel-action.pp-logout-action:hover{
-    border-color:rgba(255,60,80,.5); background:rgba(255,60,80,.08); color:#a8283c;
+    border-color:rgba(171,86,73,.5); background:rgba(171,86,73,.08); color:#a8283c;
   }
 }

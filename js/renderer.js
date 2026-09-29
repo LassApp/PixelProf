@@ -19,25 +19,25 @@ function buildResultHTML(winner,top,tot,pct,elapsed,msg,rank,isSpeed,metrics){
         background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
         border-radius:12px;padding:14px 16px;margin-bottom:16px;
       ">
-        <div style="font-size:10px;font-weight:700;color:rgba(0,255,200,.6);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;display:flex;align-items:center;gap:8px">
+        <div style="font-size:10px;font-weight:700;color:rgba(78,116,100,.6);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;display:flex;align-items:center;gap:8px">
           Analisi sessione
-          <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(0,255,200,.2),transparent)"></span>
+          <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(78,116,100,.2),transparent)"></span>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-          <div style="background:rgba(0,255,200,.05);border:1px solid rgba(0,255,200,.12);border-radius:9px;padding:10px;text-align:center">
+          <div style="background:rgba(78,116,100,.05);border:1px solid rgba(78,116,100,.12);border-radius:9px;padding:10px;text-align:center">
             <div style="font-size:18px;font-weight:700;color:var(--accent);font-family:'Share Tech Mono',monospace">${(Math.round(metrics.avgMs/100)/10).toFixed(1)}s</div>
             <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:2px">Tempo medio</div>
           </div>
-          <div style="background:rgba(255,180,0,.05);border:1px solid rgba(255,180,0,.12);border-radius:9px;padding:10px;text-align:center">
-            <div style="font-size:18px;font-weight:700;color:#ffb400;font-family:'Share Tech Mono',monospace">${metrics.bestStreak}</div>
+          <div style="background:rgba(122,90,56,.05);border:1px solid rgba(122,90,56,.12);border-radius:9px;padding:10px;text-align:center">
+            <div style="font-size:18px;font-weight:700;color:#7A5A38;font-family:'Share Tech Mono',monospace">${metrics.bestStreak}</div>
             <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:2px">Miglior streak</div>
           </div>
-          <div style="background:rgba(0,207,255,.05);border:1px solid rgba(0,207,255,.12);border-radius:9px;padding:10px;text-align:center">
-            <div style="font-size:18px;font-weight:700;color:#00cfff;font-family:'Share Tech Mono',monospace">+${metrics.totalSpeedBonus}</div>
+          <div style="background:rgba(84,112,140,.05);border:1px solid rgba(84,112,140,.12);border-radius:9px;padding:10px;text-align:center">
+            <div style="font-size:18px;font-weight:700;color:#54708C;font-family:'Share Tech Mono',monospace">+${metrics.totalSpeedBonus}</div>
             <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:2px">Bonus velocità</div>
           </div>
-          <div style="background:rgba(255,77,109,.05);border:1px solid rgba(255,77,109,.12);border-radius:9px;padding:10px;text-align:center">
-            <div style="font-size:18px;font-weight:700;color:#ff6b85;font-family:'Share Tech Mono',monospace">+${metrics.totalStreakBonus}</div>
+          <div style="background:rgba(171,86,73,.05);border:1px solid rgba(171,86,73,.12);border-radius:9px;padding:10px;text-align:center">
+            <div style="font-size:18px;font-weight:700;color:#AB5649;font-family:'Share Tech Mono',monospace">+${metrics.totalStreakBonus}</div>
             <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:2px">Bonus streak</div>
           </div>
         </div>

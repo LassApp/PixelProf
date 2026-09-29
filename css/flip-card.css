@@ -85,9 +85,9 @@
   .fc-eyebrow{
     font-family: 'Share Tech Mono', monospace;
     font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
-    color: #a996ff; margin-bottom: 14px; opacity: .9;
+    color: #8B9968; margin-bottom: 14px; opacity: .9;
   }
-  .fc-back .fc-eyebrow{ color: #00ff96; }
+  .fc-back .fc-eyebrow{ color: #4A6B52; }
   .fc-text{
     font-size: clamp(15px, 2.4vw, 20px);
     line-height: 1.5;
@@ -146,12 +146,12 @@
   }
   .fc-mark-badge.show{ opacity: 1; transform: scale(1); }
   .fc-mark-badge.wrong{
-    background: rgba(255,60,80,.16); border: 1.5px solid #ff3c50; color: #ff3c50;
-    box-shadow: 0 0 14px rgba(255,60,80,.35);
+    background: rgba(171,86,73,.16); border: 1.5px solid #AB5649; color: #AB5649;
+    box-shadow: 0 0 14px rgba(171,86,73,.35);
   }
   .fc-mark-badge.correct{
-    background: rgba(0,255,150,.16); border: 1.5px solid #00ff96; color: #00ff96;
-    box-shadow: 0 0 14px rgba(0,255,150,.35);
+    background: rgba(74,107,82,.16); border: 1.5px solid #4A6B52; color: #4A6B52;
+    box-shadow: 0 0 14px rgba(74,107,82,.35);
   }
 
   /* -- Feedback ✕/✓ sulla card (v8.28.0) --------------------
@@ -170,9 +170,9 @@
   .fc-card.fc-shake{ animation: fc-shake .5s cubic-bezier(.36,.07,.19,.97) both; }
 
   @keyframes fc-pulse-correct{
-    0% { box-shadow: 0 0 0 0 rgba(0,255,150,.5); }
-    60% { box-shadow: 0 0 0 16px rgba(0,255,150,0); }
-    100% { box-shadow: 0 0 0 0 rgba(0,255,150,0); }
+    0% { box-shadow: 0 0 0 0 rgba(74,107,82,.5); }
+    60% { box-shadow: 0 0 0 16px rgba(74,107,82,0); }
+    100% { box-shadow: 0 0 0 0 rgba(74,107,82,0); }
   }
   .fc-card.fc-pulse-correct{ animation: fc-pulse-correct .5s ease-out; border-radius: var(--radius-lg); }
 
@@ -216,11 +216,11 @@
     background: none;
   }
   .fc-mark-btn i{ font-size: 15px; }
-  .fc-mark-wrong{ border-color: #ff3c50; background: rgba(255,60,80,.1); color: #ff3c50; }
-  .fc-mark-wrong:hover{ background: rgba(255,60,80,.2); box-shadow: 0 0 0 1px rgba(255,60,80,.25); }
+  .fc-mark-wrong{ border-color: #AB5649; background: rgba(171,86,73,.1); color: #AB5649; }
+  .fc-mark-wrong:hover{ background: rgba(171,86,73,.2); box-shadow: 0 0 0 1px rgba(171,86,73,.25); }
   .fc-mark-wrong:active{ transform: scale(.96); }
-  .fc-mark-correct{ border-color: #00ff96; background: rgba(0,255,150,.1); color: #00ff96; }
-  .fc-mark-correct:hover{ background: rgba(0,255,150,.2); box-shadow: 0 0 0 1px rgba(0,255,150,.25); }
+  .fc-mark-correct{ border-color: #4A6B52; background: rgba(74,107,82,.1); color: #4A6B52; }
+  .fc-mark-correct:hover{ background: rgba(74,107,82,.2); box-shadow: 0 0 0 1px rgba(74,107,82,.25); }
   .fc-mark-correct:active{ transform: scale(.96); }
 
   /* Bug: .game-exit-btn da sola (senza game-restart-btn accanto,
@@ -293,7 +293,7 @@
      .fc-nav-btn/.fc-exit-btn. Stesso identico aggiustamento di
      contrasto già usato per .opt.correct/.opt.wrong in pixelprof.css
      (bordo/sfondo restano invariati, solo il testo si scurisce). */
-  html[data-theme="light"] .fc-mark-wrong{ color: #c22a3e; }
+  html[data-theme="light"] .fc-mark-wrong{ color: #8A4038; }
   html[data-theme="light"] .fc-mark-correct{ color: #12805a; }
   /* v8.20.0 — RIMOSSO codice morto: vedi nota sopra al blocco dark
      equivalente. */
@@ -307,7 +307,7 @@
   }
   html[data-theme="light"] .fc-exit-btn:hover{
     background: rgba(var(--purple-rgb),.14);
-    border-color: #6a4fd6;
+    border-color: #6E7A50;
     color: #4a2fb8;
   }
   html[data-theme="light"] .fc-breadcrumb{ color: rgba(var(--navy-rgb),.55); }
@@ -349,7 +349,7 @@
      css/act-select.css) e colore accento reso parametrico con due
      custom property a TRIPLETTA RGB (non hex/rgba dirette): --dma-rgb
      (fallback 124,106,255 = var(--purple) in cifre) per bordo/barra/
-     badge/ombre, --dma-text-rgb (fallback 180,160,255 = #b4a0ff in
+     badge/ombre, --dma-text-rgb (fallback 180,160,255 = #8B9968 in
      cifre) per il testo più chiaro di badge/hover-titolo/tag — sono
      DUE toni distinti già nell'originale (non un solo colore), da
      qui la tripletta separata invece di un unico --dm-accent. Ogni

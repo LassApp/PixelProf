@@ -225,7 +225,7 @@ async function ensureParticipants(participants) {
         .then(() => console.log('[PixelProf] ensureTeam OK:', p.name))
         .catch(err => console.error('[PixelProf] ensureTeam FAIL:', p.name, err));
     } else {
-      ensurePlayer(classId, p.name.trim(), p.color || '#00ffc8')
+      ensurePlayer(classId, p.name.trim(), p.color || '#4E7464')
         .then(() => console.log('[PixelProf] ensurePlayer OK:', p.name))
         .catch(err => console.error('[PixelProf] ensurePlayer FAIL:', p.name, err));
     }

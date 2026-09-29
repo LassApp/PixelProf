@@ -87,9 +87,9 @@
   position: absolute;
   inset: 0;
   border-radius: 14px;
-  background: linear-gradient(180deg, transparent 25%, rgba(4,6,15,.3) 50%, rgba(4,6,15,.82) 75%, rgba(4,6,15,.95) 100%);
+  background: linear-gradient(180deg, transparent 25%, rgba(110,122,80,.4) 50%, rgba(110,122,80,.86) 75%, rgba(110,122,80,.97) 100%);
   opacity: 1;
-  transition: opacity var(--t-hover) var(--ease-soft);
+  transition: opacity var(--t-hover) var(--ease-soft), background var(--t-hover) var(--ease-soft);
   z-index: 2;
 }
 
@@ -111,7 +111,7 @@
 }
 .mod-card:hover::before { transform: scaleX(1); }
 .mod-card:hover::after {
-  background: linear-gradient(180deg, transparent 15%, rgba(4,6,15,.2) 45%, rgba(4,6,15,.78) 72%, rgba(4,6,15,.96) 100%);
+  background: linear-gradient(180deg, transparent 15%, rgba(110,122,80,.28) 45%, rgba(110,122,80,.82) 72%, rgba(110,122,80,.98) 100%);
 }
 .mod-card.active { transform: translateY(-3px) scale(1.015); }
 .mod-card.active::before { transform: scaleX(1); }
@@ -157,12 +157,12 @@
   letter-spacing: -.3px;
   margin-bottom: 4px;
   line-height: 1.2;
-  color: #fff;
+  color: #F2E8D5;
   transition: color var(--t-hover) var(--ease-soft);
 }
 .mod-card p {
   font-size: 11px;
-  color: rgba(255,255,255,.45);
+  color: rgba(242,232,213,.75);
   line-height: 1.45;
 }
 
@@ -243,22 +243,22 @@
 /* CE — Amber */
 .mod-card.ce-card {
   background: linear-gradient(160deg,#1a1204 0%,#2c2208 50%,#1a1204 100%);
-  border-color: rgba(255,180,0,.12);
+  border-color: rgba(122,90,56,.12);
 }
 .mod-card.ce-card:hover {
-  border-color: rgba(255,180,0,.45);
-  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(255,180,0,.2),0 0 40px rgba(255,180,0,.12);
+  border-color: rgba(122,90,56,.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(122,90,56,.2),0 0 40px rgba(122,90,56,.12);
 }
-.mod-card.ce-card::before { background: linear-gradient(90deg,transparent,#ffb400,#ffd76a,transparent); }
+.mod-card.ce-card::before { background: linear-gradient(90deg,transparent,#7A5A38,#ffd76a,transparent); }
 .mod-card.ce-card:hover h3 { color: #ffcf5c; }
 .mod-card.ce-card.active {
   border-color: rgba(255,207,92,.8);
-  box-shadow: 0 0 30px rgba(255,180,0,.3),0 8px 32px rgba(255,180,0,.2);
+  box-shadow: 0 0 30px rgba(122,90,56,.3),0 8px 32px rgba(122,90,56,.2);
 }
-.mod-card.ce-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(255,180,0,.14),transparent 60%); }
-.mod-card.ce-card .mc-badge { background: rgba(255,180,0,.16); border: 1px solid rgba(255,180,0,.35); color: #ffcf5c; }
-.mod-card.ce-card .tag { background: rgba(255,180,0,.1); border-color: rgba(255,180,0,.22); color: rgba(255,207,92,.85); }
-.mod-card.ce-card:hover .tag { background: rgba(255,180,0,.16); border-color: rgba(255,180,0,.4); }
+.mod-card.ce-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(122,90,56,.14),transparent 60%); }
+.mod-card.ce-card .mc-badge { background: rgba(122,90,56,.16); border: 1px solid rgba(122,90,56,.35); color: #ffcf5c; }
+.mod-card.ce-card .tag { background: rgba(122,90,56,.1); border-color: rgba(122,90,56,.22); color: rgba(255,207,92,.85); }
+.mod-card.ce-card:hover .tag { background: rgba(122,90,56,.16); border-color: rgba(122,90,56,.4); }
 .mod-card.ce-card.active .tag { background: rgba(255,207,92,.18); border-color: rgba(255,207,92,.45); color: #ffd76a; }
 
 /* OE — Violet */
@@ -277,7 +277,7 @@
   box-shadow: 0 0 30px rgba(var(--purple-rgb),.3),0 8px 32px rgba(var(--purple-rgb),.2);
 }
 .mod-card.oe-card::after { background: radial-gradient(ellipse at 70% 110%,rgba(140,100,255,.14),transparent 60%); }
-.mod-card.oe-card .mc-badge { background: rgba(var(--purple-rgb),.15); border: 1px solid rgba(var(--purple-rgb),.3); color: #b4a0ff; }
+.mod-card.oe-card .mc-badge { background: rgba(var(--purple-rgb),.15); border: 1px solid rgba(var(--purple-rgb),.3); color: #8B9968; }
 .mod-card.oe-card .tag { background: rgba(var(--purple-rgb),.1); border-color: rgba(var(--purple-rgb),.2); color: rgba(180,160,255,.8); }
 .mod-card.oe-card:hover .tag { background: rgba(var(--purple-rgb),.15); border-color: rgba(var(--purple-rgb),.35); }
 .mod-card.oe-card.active .tag { background: rgba(168,130,255,.15); border-color: rgba(168,130,255,.4); color: #c4b0ff; }
@@ -285,23 +285,23 @@
 /* WP — Blue */
 .mod-card.wp-card {
   background: linear-gradient(160deg,#060e1c 0%,#0a1a30 50%,#06101e 100%);
-  border-color: rgba(30,144,255,.12);
+  border-color: rgba(84,112,140,.12);
 }
 .mod-card.wp-card:hover {
-  border-color: rgba(30,144,255,.45);
-  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(30,144,255,.2),0 0 40px rgba(30,144,255,.12);
+  border-color: rgba(84,112,140,.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(84,112,140,.2),0 0 40px rgba(84,112,140,.12);
 }
-.mod-card.wp-card::before { background: linear-gradient(90deg,transparent,#1e90ff,#00cfff,transparent); }
+.mod-card.wp-card::before { background: linear-gradient(90deg,transparent,#54708C,#54708C,transparent); }
 .mod-card.wp-card:hover h3 { color: #5eb8ff; }
 .mod-card.wp-card.active {
-  border-color: rgba(0,207,255,.8);
-  box-shadow: 0 0 30px rgba(0,207,255,.3),0 8px 32px rgba(30,144,255,.2);
+  border-color: rgba(84,112,140,.8);
+  box-shadow: 0 0 30px rgba(84,112,140,.3),0 8px 32px rgba(84,112,140,.2);
 }
 .mod-card.wp-card::after { background: radial-gradient(ellipse at 50% 110%,rgba(0,180,255,.14),transparent 60%); }
-.mod-card.wp-card .mc-badge { background: rgba(30,144,255,.15); border: 1px solid rgba(30,144,255,.3); color: #5eb8ff; }
-.mod-card.wp-card .tag { background: rgba(30,144,255,.1); border-color: rgba(30,144,255,.2); color: rgba(94,184,255,.8); }
-.mod-card.wp-card:hover .tag { background: rgba(30,144,255,.15); border-color: rgba(30,144,255,.35); }
-.mod-card.wp-card.active .tag { background: rgba(0,207,255,.15); border-color: rgba(0,207,255,.4); color: #00cfff; }
+.mod-card.wp-card .mc-badge { background: rgba(84,112,140,.15); border: 1px solid rgba(84,112,140,.3); color: #5eb8ff; }
+.mod-card.wp-card .tag { background: rgba(84,112,140,.1); border-color: rgba(84,112,140,.2); color: rgba(94,184,255,.8); }
+.mod-card.wp-card:hover .tag { background: rgba(84,112,140,.15); border-color: rgba(84,112,140,.35); }
+.mod-card.wp-card.active .tag { background: rgba(84,112,140,.15); border-color: rgba(84,112,140,.4); color: #54708C; }
 
 /* SS — Green (v8.35.0: promossa al trattamento cinematico, prima ferma al vecchio stile base) */
 .mod-card.ss-card {
@@ -312,37 +312,37 @@
   border-color: rgba(40,160,80,.45);
   box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(40,160,80,.18),0 0 40px rgba(40,160,80,.1);
 }
-.mod-card.ss-card::before { background: linear-gradient(90deg,transparent,#28a050,#32dc64,transparent); }
+.mod-card.ss-card::before { background: linear-gradient(90deg,transparent,#28a050,#4A6B52,transparent); }
 .mod-card.ss-card:hover h3 { color: #5ad47a; }
 .mod-card.ss-card.active {
-  border-color: rgba(50,220,100,.8);
+  border-color: rgba(74,107,82,.8);
   box-shadow: 0 0 30px rgba(40,160,80,.3),0 8px 32px rgba(40,160,80,.2);
 }
 .mod-card.ss-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(40,160,80,.14),transparent 60%); }
 .mod-card.ss-card .mc-badge { background: rgba(40,160,80,.15); border: 1px solid rgba(40,160,80,.3); color: #44c76a; }
 .mod-card.ss-card .tag { background: rgba(40,160,80,.1); border-color: rgba(40,160,80,.2); color: rgba(68,199,106,.8); }
 .mod-card.ss-card:hover .tag { background: rgba(40,160,80,.15); border-color: rgba(40,160,80,.35); }
-.mod-card.ss-card.active .tag { background: rgba(50,220,100,.15); border-color: rgba(50,220,100,.4); color: #32dc64; }
+.mod-card.ss-card.active .tag { background: rgba(74,107,82,.15); border-color: rgba(74,107,82,.4); color: #4A6B52; }
 
 /* PP — Orange (v8.35.0: promossa al trattamento cinematico, prima ferma al vecchio stile base) */
 .mod-card.pp-card {
   background: linear-gradient(160deg,#1c0904 0%,#2e1006 50%,#1c0904 100%);
-  border-color: rgba(255,120,40,.12);
+  border-color: rgba(156,107,62,.12);
 }
 .mod-card.pp-card:hover {
-  border-color: rgba(255,120,40,.45);
-  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(255,120,40,.2),0 0 40px rgba(255,120,40,.12);
+  border-color: rgba(156,107,62,.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(156,107,62,.2),0 0 40px rgba(156,107,62,.12);
 }
-.mod-card.pp-card::before { background: linear-gradient(90deg,transparent,#ff7828,#ffab6e,transparent); }
+.mod-card.pp-card::before { background: linear-gradient(90deg,transparent,#9C6B3E,#ffab6e,transparent); }
 .mod-card.pp-card:hover h3 { color: #ffb37a; }
 .mod-card.pp-card.active {
   border-color: rgba(255,165,100,.8);
-  box-shadow: 0 0 30px rgba(255,120,40,.3),0 8px 32px rgba(255,120,40,.2);
+  box-shadow: 0 0 30px rgba(156,107,62,.3),0 8px 32px rgba(156,107,62,.2);
 }
-.mod-card.pp-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(255,120,40,.14),transparent 60%); }
-.mod-card.pp-card .mc-badge { background: rgba(255,120,40,.16); border: 1px solid rgba(255,120,40,.35); color: #ffa564; }
-.mod-card.pp-card .tag { background: rgba(255,120,40,.1); border-color: rgba(255,120,40,.22); color: rgba(255,165,100,.85); }
-.mod-card.pp-card:hover .tag { background: rgba(255,120,40,.16); border-color: rgba(255,120,40,.4); }
+.mod-card.pp-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(156,107,62,.14),transparent 60%); }
+.mod-card.pp-card .mc-badge { background: rgba(156,107,62,.16); border: 1px solid rgba(156,107,62,.35); color: #ffa564; }
+.mod-card.pp-card .tag { background: rgba(156,107,62,.1); border-color: rgba(156,107,62,.22); color: rgba(255,165,100,.85); }
+.mod-card.pp-card:hover .tag { background: rgba(156,107,62,.16); border-color: rgba(156,107,62,.4); }
 .mod-card.pp-card.active .tag { background: rgba(255,165,100,.18); border-color: rgba(255,165,100,.45); color: #ffb37a; }
 
 /* IT Security — Crimson (v8.35.0: nuovo modulo) */
@@ -369,22 +369,22 @@
 /* Online Collaboration — Magenta (v8.35.0: nuovo modulo) */
 .mod-card.oc-card {
   background: linear-gradient(160deg,#1c0414 0%,#300a26 50%,#1c0414 100%);
-  border-color: rgba(255,100,180,.14);
+  border-color: rgba(157,88,117,.14);
 }
 .mod-card.oc-card:hover {
-  border-color: rgba(255,100,180,.45);
-  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(255,100,180,.2),0 0 40px rgba(255,100,180,.12);
+  border-color: rgba(157,88,117,.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(157,88,117,.2),0 0 40px rgba(157,88,117,.12);
 }
-.mod-card.oc-card::before { background: linear-gradient(90deg,transparent,#ff64b4,#ff9ed0,transparent); }
+.mod-card.oc-card::before { background: linear-gradient(90deg,transparent,#9D5875,#ff9ed0,transparent); }
 .mod-card.oc-card:hover h3 { color: #ff9ed0; }
 .mod-card.oc-card.active {
   border-color: rgba(255,158,208,.8);
-  box-shadow: 0 0 30px rgba(255,100,180,.3),0 8px 32px rgba(255,100,180,.2);
+  box-shadow: 0 0 30px rgba(157,88,117,.3),0 8px 32px rgba(157,88,117,.2);
 }
-.mod-card.oc-card::after { background: radial-gradient(ellipse at 70% 110%,rgba(255,100,180,.14),transparent 60%); }
-.mod-card.oc-card .mc-badge { background: rgba(255,100,180,.16); border: 1px solid rgba(255,100,180,.35); color: #ff9ed0; }
-.mod-card.oc-card .tag { background: rgba(255,100,180,.1); border-color: rgba(255,100,180,.22); color: rgba(255,180,215,.85); }
-.mod-card.oc-card:hover .tag { background: rgba(255,100,180,.16); border-color: rgba(255,100,180,.4); }
+.mod-card.oc-card::after { background: radial-gradient(ellipse at 70% 110%,rgba(157,88,117,.14),transparent 60%); }
+.mod-card.oc-card .mc-badge { background: rgba(157,88,117,.16); border: 1px solid rgba(157,88,117,.35); color: #ff9ed0; }
+.mod-card.oc-card .tag { background: rgba(157,88,117,.1); border-color: rgba(157,88,117,.22); color: rgba(255,180,215,.85); }
+.mod-card.oc-card:hover .tag { background: rgba(157,88,117,.16); border-color: rgba(157,88,117,.4); }
 .mod-card.oc-card.active .tag { background: rgba(255,180,215,.18); border-color: rgba(255,180,215,.45); color: #ffc2e0; }
 
 /* ─────────────────────────────────────────────────────────────────
@@ -513,3 +513,23 @@
    media query responsive/reduced-motion/keyframe (@layer streaming),
    il blocco "MOD-CARD — Hover Expansion Netflix" (@layer netflix).
    ═══════════════════════════════════════════════════════════════════ */
+
+/* ===============================================
+   TEMA CHIARO — card poster (v9 redesign)
+   Prima restavano scure sempre in entrambi i temi ("poster"
+   auto-contenuto). Su richiesta di Erasmo ora hanno un'identità
+   anche in chiaro: sfondo fango, testo crema — non "oliva scurito"
+   come da indicazione iniziale, perché il contrasto oliva scurito
+   su fango è ~1:1 (illeggibile); crema su fango è 5.16:1 (AA),
+   usando l'alternativa "un colore in cui ci sia contrasto" indicata.
+=============================================== */
+@layer theme {
+  html[data-theme="light"] .mod-card::after {
+    background: linear-gradient(180deg, transparent 25%, rgba(122,90,56,.4) 50%, rgba(122,90,56,.86) 75%, rgba(122,90,56,.97) 100%);
+  }
+  html[data-theme="light"] .mod-card:hover::after {
+    background: linear-gradient(180deg, transparent 15%, rgba(122,90,56,.28) 45%, rgba(122,90,56,.82) 72%, rgba(122,90,56,.98) 100%);
+  }
+  html[data-theme="light"] .mod-card h3 { color: #F2E8D5; }
+  html[data-theme="light"] .mod-card p { color: rgba(242,232,213,.8); }
+}

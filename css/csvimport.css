@@ -42,8 +42,8 @@
 /* Nota duplicati esclusi automaticamente — dentro il modal anteprima */
 .csv-import-dupnote{
   display:flex;align-items:flex-start;gap:6px;
-  font-size:11px;color:rgba(255,180,0,.85);line-height:1.5;
-  background:rgba(255,180,0,.07);border:1px solid rgba(255,180,0,.2);
+  font-size:11px;color:rgba(122,90,56,.85);line-height:1.5;
+  background:rgba(122,90,56,.07);border:1px solid rgba(122,90,56,.2);
   border-radius:8px;padding:8px 10px;margin-bottom:12px;text-align:left;
 }
 .csv-import-dupnote i{font-size:13px;flex-shrink:0;margin-top:1px}
@@ -67,7 +67,7 @@
   color:rgba(255,255,255,.25);font-size:13px;padding:2px 4px;line-height:1;
   transition:color var(--transition-fast);
 }
-.csv-import-row-del:hover{color:#ff6b6b}
+.csv-import-row-del:hover{color:#AB5649}
 .csv-import-empty-list{
   padding:1.5rem 1rem;text-align:center;
   font-size:11px;color:rgba(255,255,255,.25);

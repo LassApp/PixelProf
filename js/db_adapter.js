@@ -517,7 +517,7 @@ export async function loadPlayers(classId) {
   return rows.map(r => r.name);
 }
 
-export async function ensurePlayer(classId, playerName, color = '#00ffc8') {
+export async function ensurePlayer(classId, playerName, color = '#4E7464') {
   if (!_online) return;
   await _sbCall(
     () => supabase.from('players').upsert(
@@ -612,7 +612,7 @@ export async function loadTeams(classId) {
   return rows.map(r => ({ name: r.name, color: r.color }));
 }
 
-export async function ensureTeam(classId, teamName, color = '#7c6aff') {
+export async function ensureTeam(classId, teamName, color = '#6E7A50') {
   if (!_online) return;
   await _sbCall(
     () => supabase.from('teams').upsert(
@@ -719,7 +719,7 @@ export async function saveLbEntryCloud(p) {
         p_classroom_id:      p.classId,
         p_participant_type:  participantType,
         p_participant_name:  p.name,
-        p_participant_color: p.color || '#00ffc8',
+        p_participant_color: p.color || '#4E7464',
         p_activity:          p.activity,
         p_module:            p.module,
         p_new_score:         p.score,

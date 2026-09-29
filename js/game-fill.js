@@ -59,7 +59,7 @@ function renderFill(cont){
   }
   const q=s.qs[s.idx];const pts=q.t.split('____');
   const hdr=buildGameHeader(`<span class="game-counter-pill">${s.idx+1}/${s.qs.length} · ✓ ${s.score}</span>`,"startFill(sh('g-area'),sMod)");
-  cont.innerHTML=`${hdr}<div class="q-card"><div class="fill-sent">${escHtml(pts[0])}<input class="blank-in" id="fi" placeholder="..."/>${escHtml(pts[1]||'')}</div></div><div style="font-size:10px;color:rgba(0,255,200,.5);margin-bottom:6px;text-transform:uppercase;letter-spacing:.6px">Scegli dalla banca:</div><div class="word-bank">${shuffle([...q.bank]).map(w=>`<button class="chip" onclick="document.getElementById('fi').value='${escAttr(w)}'">${escHtml(w)}</button>`).join('')}</div><div id="ffb"></div><div style="margin-top:10px"><button class="btn btn-neon" onclick="checkFill()">Verifica <i class="ti ti-arrow-right"></i></button></div>`;
+  cont.innerHTML=`${hdr}<div class="q-card"><div class="fill-sent">${escHtml(pts[0])}<input class="blank-in" id="fi" placeholder="..."/>${escHtml(pts[1]||'')}</div></div><div style="font-size:10px;color:rgba(78,116,100,.5);margin-bottom:6px;text-transform:uppercase;letter-spacing:.6px">Scegli dalla banca:</div><div class="word-bank">${shuffle([...q.bank]).map(w=>`<button class="chip" onclick="document.getElementById('fi').value='${escAttr(w)}'">${escHtml(w)}</button>`).join('')}</div><div id="ffb"></div><div style="margin-top:10px"><button class="btn btn-neon" onclick="checkFill()">Verifica <i class="ti ti-arrow-right"></i></button></div>`;
 }
 
 function checkFill(){
@@ -75,8 +75,8 @@ function checkFill(){
     s.score++;
     _trackRightQ(q.t, q.b, sMod, 'fill');
     const bonusLine=streakBonus>0
-      ?`<div style="font-size:11px;color:rgba(0,255,200,.75);margin-top:3px">🔥 +${streakBonus} streak ×${fillStreak} &nbsp;<strong>+${scoreEarned} pt totali</strong></div>`
-      :`<div style="font-size:11px;color:rgba(0,255,200,.55);margin-top:3px">+${scoreEarned} pt</div>`;
+      ?`<div style="font-size:11px;color:rgba(78,116,100,.75);margin-top:3px">🔥 +${streakBonus} streak ×${fillStreak} &nbsp;<strong>+${scoreEarned} pt totali</strong></div>`
+      :`<div style="font-size:11px;color:rgba(78,116,100,.55);margin-top:3px">+${scoreEarned} pt</div>`;
     sh('ffb').innerHTML=`<div class="fb ok" style="margin-top:6px">✓ Corretto!${bonusLine}</div>`;
   }else{
     fillStreak=0;

@@ -816,12 +816,12 @@ function _showGameError(cont, icon, title, color, path, msg) {
     sh('qz-result').innerHTML=html;
   }
 }
-function showQuizLoadError(msg)        { _showGameError(null,  '⚠️','Errore caricamento quiz',          '#ff6b6b','data/quiz/',            msg); }
-function showSpeedQuizError(msg)       { _showGameError(null,  '⚡','Speed Quiz non disponibile',        '#ffb400','data/speed_quiz/',      msg); }
-function showAbbinError(msg)           { _showGameError(sh('g-area'),'🔗','Abbina non disponibile',      '#9d8fff','data/abbina/',          msg); }
-function showMemoryError(cont,msg)     { _showGameError(cont,  '🃏','Memory non disponibile',            '#ff6b85','data/memory/',          msg); }
-function showCompletaFraseError(msg)   { _showGameError(sh('g-area'),'✏️','Completa la frase non disponibile','#00cfff','data/completa_frase/', msg); }
-function showTrueFalseError(cont,msg)  { _showGameError(cont,  '⚖️','Vero o Falso non disponibile',       '#ffd166','data/vero_falso/',      msg); }
+function showQuizLoadError(msg)        { _showGameError(null,  '⚠️','Errore caricamento quiz',          '#AB5649','data/quiz/',            msg); }
+function showSpeedQuizError(msg)       { _showGameError(null,  '⚡','Speed Quiz non disponibile',        '#7A5A38','data/speed_quiz/',      msg); }
+function showAbbinError(msg)           { _showGameError(sh('g-area'),'🔗','Abbina non disponibile',      '#8B9968','data/abbina/',          msg); }
+function showMemoryError(cont,msg)     { _showGameError(cont,  '🃏','Memory non disponibile',            '#AB5649','data/memory/',          msg); }
+function showCompletaFraseError(msg)   { _showGameError(sh('g-area'),'✏️','Completa la frase non disponibile','#54708C','data/completa_frase/', msg); }
+function showTrueFalseError(cont,msg)  { _showGameError(cont,  '⚖️','Vero o Falso non disponibile',       '#7A5A38','data/vero_falso/',      msg); }
 
 /* Base URL calcolato una volta all'avvio  compatibile GitHub Pages.
    window.location.href non cambia durante la sessione. */
@@ -2241,17 +2241,17 @@ function _showDeleteConfirm(triggerEl, label, tipo, onConfirm){
     position:'fixed',
     zIndex:'9999',
     background:'rgba(12,16,28,.97)',
-    border:'1px solid rgba(255,60,80,.35)',
+    border:'1px solid rgba(171,86,73,.35)',
     borderRadius:'12px',
     padding:'12px 14px',
-    boxShadow:'0 8px 32px rgba(0,0,0,.6), 0 0 0 1px rgba(255,60,80,.15)',
+    boxShadow:'0 8px 32px rgba(0,0,0,.6), 0 0 0 1px rgba(171,86,73,.15)',
     minWidth:'200px',
     maxWidth:'260px',
     backdropFilter:'blur(8px)',
   });
 
   pop.innerHTML=`
-    <div style="font-size:11px;font-weight:700;color:rgba(255,60,80,.9);
+    <div style="font-size:11px;font-weight:700;color:rgba(171,86,73,.9);
       text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;
       font-family:'Share Tech Mono',monospace">
       <i class="ti ti-alert-triangle" style="font-size:12px"></i> Elimina ${escHtml(tipo)}
@@ -2275,13 +2275,13 @@ function _showDeleteConfirm(triggerEl, label, tipo, onConfirm){
       >Annulla</button>
       <button id="pp-del-confirm-btn" style="
         flex:1;padding:6px 10px;border-radius:8px;
-        background:rgba(255,60,80,.15);border:1px solid rgba(255,60,80,.4);
-        color:#ff4d6d;font-size:11px;cursor:pointer;
+        background:rgba(171,86,73,.15);border:1px solid rgba(171,86,73,.4);
+        color:#AB5649;font-size:11px;cursor:pointer;
         font-family:'Space Grotesk',sans-serif;font-weight:700;
         transition:background .15s,border-color .15s;
       "
-        onmouseover="this.style.background='rgba(255,60,80,.28)';this.style.borderColor='rgba(255,60,80,.7)'"
-        onmouseout="this.style.background='rgba(255,60,80,.15)';this.style.borderColor='rgba(255,60,80,.4)'"
+        onmouseover="this.style.background='rgba(171,86,73,.28)';this.style.borderColor='rgba(171,86,73,.7)'"
+        onmouseout="this.style.background='rgba(171,86,73,.15)';this.style.borderColor='rgba(171,86,73,.4)'"
       ><i class="ti ti-trash" style="font-size:11px"></i> Elimina</button>
     </div>`;
 
@@ -2460,12 +2460,12 @@ function confirmRenameSavedTeam(idx, oldName){
   if(newName===oldName){renderSqUI();return;}
   // Controlla duplicati in db.teams
   if(db.teams.find((t,i)=>i!==idx && t.name.trim().toLowerCase()===newName.toLowerCase())){
-    inp.style.borderBottom='1px solid #ff4d6d';
-    inp.style.color='#ff4d6d';
+    inp.style.borderBottom='1px solid #AB5649';
+    inp.style.color='#AB5649';
     inp.title='Nome già usato';
     inp.value='';
     inp.placeholder='Nome già usato!';
-    inp.style.setProperty('--placeholder-color','#ff4d6d');
+    inp.style.setProperty('--placeholder-color','#AB5649');
     setTimeout(()=>renderSqUI(),1600);
     return;
   }
@@ -2779,7 +2779,7 @@ function _showTeamTurnSplash(team,cb){
   const totalTeams=ms.isTiebreak?ms.tbTeams.length:ms.teams.length;
   const teamNum=ms.currentIdx+1;
   const isTb=ms.isTiebreak;
-  const tbLabel=isTb?`<div style="font-size:10px;font-weight:700;color:#ffb400;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;font-family:'Share Tech Mono',monospace">⚡ Spareggio — Round ${ms.tbRound}</div>`:'';
+  const tbLabel=isTb?`<div style="font-size:10px;font-weight:700;color:#7A5A38;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;font-family:'Share Tech Mono',monospace">⚡ Spareggio — Round ${ms.tbRound}</div>`:'';
   const progLabel=`Squadra ${teamNum} di ${totalTeams}`;
   // Scoreboard delle squadre che hanno gi giocato
   const doneTeams=(ms.isTiebreak?ms.tbTeams:ms.teams).slice(0,ms.currentIdx);
@@ -2899,11 +2899,11 @@ function _showTiebreakerIntro(tied,cb){
   const names=tied.map(t=>`<span style="color:${escAttr(t.color)};font-weight:700">${escHtml(t.name)}</span>`).join(' <span style="color:rgba(255,255,255,.3)">vs</span> ');
   sh('qz-result').innerHTML=`<div class="result-wrap" style="text-align:center;padding:2rem 1rem">
     <div style="font-size:40px;margin-bottom:14px">⚡</div>
-    <div style="font-family:'Orbitron',monospace;font-size:18px;font-weight:900;color:#ffb400;text-shadow:0 0 20px #ffb40060;margin-bottom:6px">PAREGGIO!</div>
+    <div style="font-family:'Orbitron',monospace;font-size:18px;font-weight:900;color:#7A5A38;text-shadow:0 0 20px #7A5A3860;margin-bottom:6px">PAREGGIO!</div>
     <div style="font-size:13px;color:rgba(255,255,255,.4);margin-bottom:14px">Stessi punti — parte lo spareggio</div>
     <div style="font-size:14px;line-height:2">${names}</div>
     <div style="margin-top:20px;font-size:11px;color:rgba(255,255,255,.3);font-family:'Share Tech Mono',monospace">Round ${ms.tbRound} · 1 domanda per squadra</div>
-    <div style="margin-top:20px;font-size:28px;font-weight:700;font-family:'Orbitron',monospace;color:#ffb400" id="tb-countdown">3</div>
+    <div style="margin-top:20px;font-size:28px;font-weight:700;font-family:'Orbitron',monospace;color:#7A5A38" id="tb-countdown">3</div>
   </div>`;
   let n=3;
   // FIX C1: usa lo stesso slot _splashInterval di _showTeamTurnSplash.
@@ -2941,14 +2941,14 @@ function _showMatchFinalResult(){
   const rankRows=sorted.map((t,i)=>{
     const pts=ms.scores[t.name]||0;
     const medal=i<3?medals[i]:''+(i+1)+'.';
-    return`<div style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:${i===0?'rgba(255,215,0,.07)':'rgba(255,255,255,.03)'};border:1px solid ${i===0?'rgba(255,215,0,.2)':'rgba(255,255,255,.07)'};margin-bottom:6px">
+    return`<div style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:${i===0?'rgba(184,147,90,.07)':'rgba(255,255,255,.03)'};border:1px solid ${i===0?'rgba(184,147,90,.2)':'rgba(255,255,255,.07)'};margin-bottom:6px">
       <span style="font-size:20px;width:28px;text-align:center">${medal}</span>
       <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${escAttr(t.color)};box-shadow:0 0 6px ${escAttr(t.color)};flex-shrink:0"></span>
       <span style="flex:1;font-weight:600;color:#fff">${escHtml(t.name)}</span>
-      <span style="font-family:'Share Tech Mono',monospace;font-weight:700;font-size:15px;color:${i===0?'#ffd700':'var(--accent)'}">${pts} pt</span>
+      <span style="font-family:'Share Tech Mono',monospace;font-weight:700;font-size:15px;color:${i===0?'#B8935A':'var(--accent)'}">${pts} pt</span>
     </div>`;
   }).join('');
-  const tbNote=ms.isTiebreak?`<div style="margin-bottom:12px;padding:6px 12px;border-radius:20px;background:rgba(255,180,0,.1);border:1px solid rgba(255,180,0,.2);font-size:11px;color:#ffb400;text-align:center;font-family:'Share Tech Mono',monospace">⚡ Deciso ai supplementari — Round ${ms.tbRound}</div>`:'';
+  const tbNote=ms.isTiebreak?`<div style="margin-bottom:12px;padding:6px 12px;border-radius:20px;background:rgba(122,90,56,.1);border:1px solid rgba(122,90,56,.2);font-size:11px;color:#7A5A38;text-align:center;font-family:'Share Tech Mono',monospace">⚡ Deciso ai supplementari — Round ${ms.tbRound}</div>`:'';
   setTb(null);showScreen('tab-quiz');
   sh('qz-game').classList.add('hidden');
   sh('qz-result').classList.remove('hidden');
@@ -2959,9 +2959,9 @@ function _showMatchFinalResult(){
       <span class="result-label">vince la partita con ${ms.scores[winner.name]} pt</span>
     </div>
     ${tbNote}
-    <div style="font-size:10px;font-weight:700;color:rgba(0,255,200,.6);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;display:flex;align-items:center;gap:8px">
+    <div style="font-size:10px;font-weight:700;color:rgba(78,116,100,.6);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;display:flex;align-items:center;gap:8px">
       Classifica partita corrente
-      <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(0,255,200,.2),transparent)"></span>
+      <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(78,116,100,.2),transparent)"></span>
     </div>
     ${rankRows}
     <div class="btn-row" style="margin-top:20px">

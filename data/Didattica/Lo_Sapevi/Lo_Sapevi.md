@@ -18,7 +18,7 @@ Sezione dedicata ai file JSON del metodo di apprendimento Lo Sapevi?, un solo fi
 
 **Stato Aree:**
 - Tutte le aree: `attivate`
-- Contenuto: 63 moduli su 70 realizzati
+- Contenuto: 70 moduli su 70 realizzati
 
 **Esempio di struttura path:**
 
@@ -217,43 +217,43 @@ data/
   - Chiave: `collaborazione-online`
   - Stato: `attivo`
   - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo1/`
-  - File: `lo_sapevi_collaborazione-online.json` *(da creare)*
+  - File: `lo_sapevi_collaborazione-online.json` *(creato — 50 schede)*
 
 - **Cloud e preparazione**
   - Chiave: `cloud-e-preparazione`
   - Stato: `attivo`
   - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo2/`
-  - File: `lo_sapevi_cloud-e-preparazione.json` *(da creare)*
+  - File: `lo_sapevi_cloud-e-preparazione.json` *(creato — 50 schede)*
 
 - **Storage e produttività online**
   - Chiave: `storage-e-produttivita-online`
   - Stato: `attivo`
   - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo3/`
-  - File: `lo_sapevi_storage-e-produttivita-online.json` *(da creare)*
+  - File: `lo_sapevi_storage-e-produttivita-online.json` *(creato — 50 schede)*
 
 - **Calendari e riunioni online**
   - Chiave: `calendari-e-riunioni-online`
   - Stato: `attivo`
   - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo4/`
-  - File: `lo_sapevi_calendari-e-riunioni-online.json` *(da creare)*
+  - File: `lo_sapevi_calendari-e-riunioni-online.json` *(creato — 50 schede)*
 
 - **Social e apprendimento online**
   - Chiave: `social-e-apprendimento-online`
   - Stato: `attivo`
   - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo5/`
-  - File: `lo_sapevi_social-e-apprendimento-online.json` *(da creare)*
+  - File: `lo_sapevi_social-e-apprendimento-online.json` *(creato — 54 schede)*
 
 - **Dispositivi mobili e connessioni**
   - Chiave: `dispositivi-mobili-e-connessioni`
   - Stato: `attivo`
   - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo6/`
-  - File: `lo_sapevi_dispositivi-mobili-e-connessioni.json` *(da creare)*
+  - File: `lo_sapevi_dispositivi-mobili-e-connessioni.json` *(creato — 49 schede)*
 
 - **App e sincronizzazione**
   - Chiave: `app-e-sincronizzazione`
   - Stato: `attivo`
   - Path base: `data/Didattica/Lo_Sapevi/ECDL/Online_Collaboration/Modulo7/`
-  - File: `lo_sapevi_app-e-sincronizzazione.json` *(da creare)*
+  - File: `lo_sapevi_app-e-sincronizzazione.json` *(creato — 46 schede)*
 
 ---
 
@@ -544,14 +544,14 @@ data/
 - Modulo 4 — Navigazione e comunicazione sicura ✅
 - Modulo 5 — Protezione e conservazione dei dati ✅
 
-### ☁️ ECDL — Online Collaboration — DA CREARE (0/7)
-- Modulo 1 — Collaborazione online
-- Modulo 2 — Cloud e preparazione
-- Modulo 3 — Storage e produttività online
-- Modulo 4 — Calendari e riunioni online
-- Modulo 5 — Social e apprendimento online
-- Modulo 6 — Dispositivi mobili e connessioni
-- Modulo 7 — App e sincronizzazione
+### ☁️ ECDL — Online Collaboration — COMPLETO (7/7)
+- Modulo 1 — Collaborazione online ✅
+- Modulo 2 — Cloud e preparazione ✅
+- Modulo 3 — Storage e produttività online ✅
+- Modulo 4 — Calendari e riunioni online ✅
+- Modulo 5 — Social e apprendimento online ✅
+- Modulo 6 — Dispositivi mobili e connessioni ✅
+- Modulo 7 — App e sincronizzazione ✅
 
 ### 🛡️ Cyberbullismo e Sicurezza Online — COMPLETO (6/6)
 - Modulo 1 — Identità e reputazione digitale ✅
@@ -611,17 +611,17 @@ data/
 | ECDL — Spreadsheet | 6 | 6 | 6 | 0 | completo |
 | ECDL — Presentation | 3 | 3 | 3 | 0 | completo |
 | ECDL — IT Security | 5 | 5 | 5 | 0 | completo |
-| ECDL — Online Collaboration | 7 | 7 | 0 | 7 | attivo (da creare) |
+| ECDL — Online Collaboration | 7 | 7 | 7 | 0 | completo |
 | Cyberbullismo e Sicurezza Online | 6 | 6 | 6 | 0 | completo |
 | Cybersecurity — Non solo antivirus e password | 8 | 8 | 8 | 0 | completo |
 | Reti e Internet | 8 | 8 | 8 | 0 | completo |
 | Malware e Minacce Informatiche | 1 | 1 | 1 | 0 | completo |
 | Intelligenza Artificiale | 13 | 13 | 13 | 0 | completo |
-| **Totale** | **70** | **70** | **63** | **7** | — |
+| **Totale** | **70** | **70** | **70** | **0** | — |
 
 - **Moduli totali mappati (scope Lo Sapevi):** 70
-- **Moduli completi:** 63
-- **Moduli da creare:** 7
-- **File JSON creati:** 63
-- **File JSON da creare:** 7
+- **Moduli completi:** 70
+- **Moduli da creare:** 0
+- **File JSON creati:** 70
+- **File JSON da creare:** 0
 - **File JSON totali attesi:** 70

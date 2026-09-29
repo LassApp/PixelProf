@@ -643,6 +643,104 @@ data/
 
 ---
 
+### 🧭 Area DigComp
+
+**Stato:** attivo
+
+> **Nota:** l'area DigComp è organizzata in 10 Fasi (Fase N = `ModuloN` nel path). Le Fasi 1–5 appartengono alla formazione del cittadino; le Fasi 6–10 appartengono alla formazione del docente (Edu).
+
+- **Fase 1 — Alfabetizzazione digitale**
+  - Chiave: `alfabetizzazione-digitale`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Didattica/Flip_Card/DigComp/Modulo1/`
+  - File:
+    - `Flip_Card_Facile_Modulo_1.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(da creare)*
+
+- **Fase 2 — Comunicazione e collaborazione**
+  - Chiave: `comunicazione-e-collaborazione`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Didattica/Flip_Card/DigComp/Modulo2/`
+  - File:
+    - `Flip_Card_Facile_Modulo_2.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(da creare)*
+
+- **Fase 3 — Creazione di contenuti digitali**
+  - Chiave: `creazione-di-contenuti-digitali`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Didattica/Flip_Card/DigComp/Modulo3/`
+  - File:
+    - `Flip_Card_Facile_Modulo_3.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(da creare)*
+
+- **Fase 4 — Sicurezza**
+  - Chiave: `sicurezza`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Didattica/Flip_Card/DigComp/Modulo4/`
+  - File:
+    - `Flip_Card_Facile_Modulo_4.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_4.csv` *(da creare)*
+
+- **Fase 5 — Problem solving digitale**
+  - Chiave: `problem-solving-digitale`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Didattica/Flip_Card/DigComp/Modulo5/`
+  - File:
+    - `Flip_Card_Facile_Modulo_5.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_5.csv` *(da creare)*
+
+- **Fase 6 — Coinvolgimento Professionale**
+  - Chiave: `coinvolgimento-professionale`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Didattica/Flip_Card/DigComp/Modulo6/`
+  - File:
+    - `Flip_Card_Facile_Modulo_6.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_6.csv` *(da creare)*
+
+- **Fase 7 — Risorse Digitali**
+  - Chiave: `risorse-digitali`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Didattica/Flip_Card/DigComp/Modulo7/`
+  - File:
+    - `Flip_Card_Facile_Modulo_7.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_7.csv` *(da creare)*
+
+- **Fase 8 — Pratiche di insegnamento e apprendimento**
+  - Chiave: `pratiche-di-insegnamento-e-apprendimento`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Didattica/Flip_Card/DigComp/Modulo8/`
+  - File:
+    - `Flip_Card_Facile_Modulo_8.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_8.csv` *(da creare)*
+
+- **Fase 9 — Valutazione dell'apprendimento**
+  - Chiave: `valutazione-dell-apprendimento`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Didattica/Flip_Card/DigComp/Modulo9/`
+  - File:
+    - `Flip_Card_Facile_Modulo_9.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_9.csv` *(da creare)*
+
+- **Fase 10 — Valorizzare le potenzialità degli studenti**
+  - Chiave: `valorizzare-le-potenzialita-degli-studenti`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Didattica/Flip_Card/DigComp/Modulo10/`
+  - File:
+    - `Flip_Card_Facile_Modulo_10.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_10.csv` *(da creare)*
+
+---
+
 ## 2. Moduli completi e da creare
 
 ### 🖥️ ECDL — Computer Essentials — COMPLETO
@@ -739,12 +837,27 @@ data/
 - Modulo 12 — AI Act
 - Modulo 13 — Il Futuro dell'AI
 
+### 🧭 DigComp — DA CREARE
+*Formazione del cittadino (Fasi 1–5)*
+- Fase 1 — Alfabetizzazione digitale
+- Fase 2 — Comunicazione e collaborazione
+- Fase 3 — Creazione di contenuti digitali
+- Fase 4 — Sicurezza
+- Fase 5 — Problem solving digitale
+
+*Formazione del docente — Edu (Fasi 6–10)*
+- Fase 6 — Coinvolgimento Professionale
+- Fase 7 — Risorse Digitali
+- Fase 8 — Pratiche di insegnamento e apprendimento
+- Fase 9 — Valutazione dell'apprendimento
+- Fase 10 — Valorizzare le potenzialità degli studenti
+
 ---
 
 **Riepilogo:**
 - **Moduli completi:** 70
-- **Moduli da creare:** 0
-- **Moduli totali:** 70
+- **Moduli da creare:** 10
+- **Moduli totali:** 80
 
 *Per i moduli indicati come "DA CREARE", entrambi i file — Facile e Medio — sono ancora da creare.*
 
@@ -764,11 +877,12 @@ data/
 | Reti e Internet | 8 | 16 | 16 | 0 | attivo |
 | Malware e Minacce Informatiche | 1 | 2 | 2 | 0 | attivo |
 | Intelligenza Artificiale | 13 | 26 | 26 | 0 | attivo |
-| **Totale** | **70** | **140** | **140** | **0** | — |
+| DigComp | 10 | 20 | 0 | 20 | attivo |
+| **Totale** | **80** | **160** | **140** | **20** | — |
 
-- **Moduli totali mappati:** 70
+- **Moduli totali mappati:** 80
 - **Moduli completi:** 70
-- **Moduli da creare:** 0
+- **Moduli da creare:** 10
 - **File CSV creati:** 140
-- **File CSV da creare:** 0
-- **File CSV totali attesi:** 140
+- **File CSV da creare:** 20
+- **File CSV totali attesi:** 160

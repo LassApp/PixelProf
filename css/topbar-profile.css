@@ -178,28 +178,28 @@
   html[data-theme="light"] .tb-profile-btn{ background:rgba(0,0,0,.03); }
   html[data-theme="light"] .profile-panel-backdrop{ background:rgba(var(--navy-rgb),.25); }
   html[data-theme="light"] .profile-panel{
-    background:rgba(255,255,255,.97);
-    border-left-color:rgba(var(--navy-rgb),.08);
-    box-shadow:-12px 0 40px rgba(var(--navy-rgb),.12);
+    background:#7A5A38;
+    border-left-color:rgba(0,0,0,.15);
+    box-shadow:-12px 0 40px rgba(0,0,0,.25);
   }
   html[data-theme="light"] .pp-panel-close{
-    background:rgba(0,0,0,.04); border-color:rgba(var(--navy-rgb),.12); color:rgba(var(--navy-rgb),.5);
+    background:rgba(242,232,213,.1); border-color:rgba(242,232,213,.2); color:rgba(242,232,213,.7);
   }
-  html[data-theme="light"] .pp-panel-close:hover{ color:var(--navy); background:rgba(0,0,0,.08); }
-  html[data-theme="light"] .pp-profile-name{ color:var(--navy); }
-  html[data-theme="light"] .pp-info-label{ color:rgba(var(--navy-rgb),.45); }
-  html[data-theme="light"] .pp-info-value{ color:rgba(var(--navy-rgb),.85); }
-  html[data-theme="light"] .pp-panel-divider{ background:rgba(var(--navy-rgb),.1); }
+  html[data-theme="light"] .pp-panel-close:hover{ color:#F2E8D5; background:rgba(242,232,213,.18); }
+  html[data-theme="light"] .pp-profile-name{ color:#F2E8D5; }
+  html[data-theme="light"] .pp-info-label{ color:rgba(242,232,213,.6); }
+  html[data-theme="light"] .pp-info-value{ color:rgba(242,232,213,.92); }
+  html[data-theme="light"] .pp-panel-divider{ background:rgba(242,232,213,.15); }
   html[data-theme="light"] .pp-panel-action{
-    background:rgba(0,0,0,.02); border-color:rgba(var(--navy-rgb),.1); color:rgba(var(--navy-rgb),.65);
+    background:rgba(242,232,213,.08); border-color:rgba(242,232,213,.18); color:rgba(242,232,213,.8);
   }
   html[data-theme="light"] .pp-panel-action:hover{
-    background:rgba(0,0,0,.05); color:var(--navy); border-color:rgba(var(--navy-rgb),.2);
+    background:rgba(242,232,213,.15); color:#F2E8D5; border-color:rgba(242,232,213,.3);
   }
   html[data-theme="light"] .pp-panel-action.pp-logout-action{
-    border-color:rgba(171,86,73,.25); background:rgba(171,86,73,.04); color:#c93a4f;
+    border-color:rgba(255,150,140,.3); background:rgba(255,150,140,.08); color:#ffb3a8;
   }
   html[data-theme="light"] .pp-panel-action.pp-logout-action:hover{
-    border-color:rgba(171,86,73,.5); background:rgba(171,86,73,.08); color:#a8283c;
+    border-color:rgba(255,150,140,.55); background:rgba(255,150,140,.14); color:#ffcfc8;
   }
 }

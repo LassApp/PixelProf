@@ -374,7 +374,7 @@
      Livello risultasse diversa da prima, segnalalo. */
   .dm-card{
     --dma-rgb: var(--dm-accent-rgb, 110,122,80);
-    --dma-text-rgb: var(--dm-accent-text-rgb, 180,160,255);
+    --dma-text-rgb: var(--dm-accent-text-rgb, 196,203,168);
     position:relative; overflow:hidden;
     display:flex; flex-direction:column; justify-content:flex-end;
     align-items:normal; gap:0;
@@ -382,7 +382,7 @@
     min-height:172px;
     border-radius:var(--radius-xl);
     border:1px solid rgba(var(--dma-rgb),.2);
-    background:linear-gradient(160deg,#0c0820 0%,#150d30 55%,#0c0820 100%);
+    background:linear-gradient(160deg,#6E7A50 0%,#5C6644 55%,#6E7A50 100%);
     box-shadow:0 4px 24px rgba(var(--dma-rgb),.07);
     cursor:pointer;
     transition:transform var(--transition-bounce), box-shadow var(--transition-fast), border-color var(--transition-fast);
@@ -417,8 +417,8 @@
     transition:transform var(--transition-bounce);
   }
   .dm-card:hover .dm-icon{ transform:scale(1.12); }
-  .dm-card h3{ font-size:15px; font-weight:700; color:#fff; margin-bottom:4px; letter-spacing:-.2px; transition:color var(--transition-fast); }
-  .dm-card p{ font-size:12px; color:rgba(255,255,255,.45); line-height:1.4; margin:0; }
+  .dm-card h3{ font-size:15px; font-weight:700; color:#F2E8D5; margin-bottom:4px; letter-spacing:-.2px; transition:color var(--transition-fast); }
+  .dm-card p{ font-size:12px; color:rgba(242,232,213,.75); line-height:1.4; margin:0; }
   .dm-card .tags{ display:flex; flex-wrap:wrap; gap:4px; margin-top:9px; }
   .dm-card .tag{
     font-size:9px; padding:2px 7px; border-radius:20px; font-weight:600; letter-spacing:.2px;
@@ -430,5 +430,19 @@
   @media (prefers-reduced-motion: reduce){
     .dm-card{ transition:none; }
     .dm-card .dm-icon{ transition:none; }
+  }
+}
+
+/* ===============================================
+   TEMA CHIARO — .dm-card (v9 redesign)
+   Prima restava viola-nero fisso in entrambi i temi ("poster").
+   Su richiesta di Erasmo ora ha un'identità anche in chiaro: sfondo
+   fango, testo crema — stesso schema già applicato a .mod-card.
+   L'accento per-card (--dma-rgb, badge/bordo/tag/glow) resta invariato:
+   sono i "dettagli interni" da mantenere, non toccati qui.
+=============================================== */
+@layer theme {
+  html[data-theme="light"] .dm-card{
+    background:linear-gradient(160deg,#7A5A38 0%,#6B4E30 55%,#7A5A38 100%);
   }
 }

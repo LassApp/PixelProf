@@ -272,9 +272,9 @@
 
 @layer theme {
   /* ── Scheda docente — raggruppamento per Area, tema chiaro ──────── */
-  html[data-theme="light"] .tdc-area-block-label{ color: rgba(var(--navy-rgb),.5); }
+  html[data-theme="light"] .tdc-area-block-label{ color: rgba(242,232,213,.65); }
   html[data-theme="light"] .tdc-area-block-header::after{
-    background:linear-gradient(90deg,rgba(var(--navy-rgb),.16),transparent);
+    background:linear-gradient(90deg,rgba(242,232,213,.22),transparent);
   }
 }
 

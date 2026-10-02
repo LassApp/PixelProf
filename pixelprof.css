@@ -3235,15 +3235,15 @@ html[data-theme="light"] .logo-sub,
 html[data-theme="light"] .cs-logo-sub{ color: rgba(242,232,213,.7); }
 html[data-theme="light"] .logo-hint{ color: rgba(242,232,213,.55); }
 html[data-theme="light"] .logo-wrap:hover{ background: rgba(var(--accent-rgb),.06); border-color: rgba(var(--accent-rgb),.18); }
-html[data-theme="light"] .tb-btn{ color: rgba(var(--navy-rgb),.55); }
-html[data-theme="light"] .tb-btn:hover{ background: rgba(var(--navy-rgb),.06); color: var(--navy); }
-html[data-theme="light"] .tb-btn.active{ background: rgba(var(--accent-rgb),.1); color: var(--accent); }
-html[data-theme="light"] .tb-hub-menu{ background:#ffffff; border-color: rgba(var(--navy-rgb),.1); box-shadow: 0 8px 32px rgba(var(--navy-rgb),.14), 0 0 0 1px rgba(var(--navy-rgb),.04); }
-html[data-theme="light"] .tb-hub-item{ color: rgba(var(--navy-rgb),.65); }
-html[data-theme="light"] .tb-hub-item:hover{ background: rgba(var(--accent-rgb),.07); color: var(--navy); }
-html[data-theme="light"] .tb-aula-badge{ background: rgba(var(--accent-rgb),.07); border-color: rgba(var(--accent-rgb),.22); }
-html[data-theme="light"] .tb-aula-name{ color: #006d58; }
-html[data-theme="light"] #tb-course-badge:hover{ background: rgba(var(--accent-rgb),.13); }
+html[data-theme="light"] .tb-btn{ color: rgba(242,232,213,.75); }
+html[data-theme="light"] .tb-btn:hover{ background: rgba(242,232,213,.14); color: #F2E8D5; }
+html[data-theme="light"] .tb-btn.active{ background: rgba(242,232,213,.18); color: #F2E8D5; }
+html[data-theme="light"] .tb-hub-menu{ background:#7A5A38; border-color: rgba(0,0,0,.18); box-shadow: 0 8px 32px rgba(0,0,0,.3), 0 0 0 1px rgba(0,0,0,.1); }
+html[data-theme="light"] .tb-hub-item{ color: rgba(242,232,213,.8); }
+html[data-theme="light"] .tb-hub-item:hover{ background: rgba(242,232,213,.12); color: #F2E8D5; }
+html[data-theme="light"] .tb-aula-badge{ background: rgba(242,232,213,.1); border-color: rgba(242,232,213,.28); }
+html[data-theme="light"] .tb-aula-name{ color: #F2E8D5; }
+html[data-theme="light"] #tb-course-badge:hover{ background: rgba(242,232,213,.16); }
 /* v8.29.0: RIMOSSI qui #cs-teacher-role-badge e .cs-director-badge —
    stessi elementi dichiarati non più esistenti in js/app.js v8.25.1. */
 
@@ -3261,8 +3261,8 @@ html[data-theme="light"] .slbl::after{ background: linear-gradient(90deg, rgba(v
    rgba(255,255,255,.55) — praticamente invisibile su sfondo bianco a
    riposo, visibile solo in hover (che già usa var(--accent), quindi
    sembrava "funzionare solo al passaggio del mouse"). */
-html[data-theme="light"] .back-link{ color: rgba(var(--navy-rgb),.55); }
-html[data-theme="light"] .back-link:hover{ color: var(--accent); background: rgba(var(--accent-rgb),.08); }
+html[data-theme="light"] .back-link{ color: rgba(242,232,213,.75); }
+html[data-theme="light"] .back-link:hover{ color: #F2E8D5; background: rgba(242,232,213,.14); }
 
 /* ── 4. HOME HERO (selezione modulo) ─────────────────────────── */
 html[data-theme="light"] .home-hero-title{
@@ -3286,8 +3286,8 @@ html[data-theme="light"] .home-divider span::after{ color: rgba(var(--accent-rgb
    questa esclusione il bianco qui vincerebbe comunque sul gradiente
    scuro di .dm-card, essendo nel layer "theme" (ultimo, vince
    sempre) — stesso pattern già usato sotto per .act-card:not(.dm-card). */
-html[data-theme="light"] .cat-card:not(.dm-card){ background:#ffffff; border-color: rgba(var(--navy-rgb),.09); box-shadow: 0 2px 12px rgba(var(--navy-rgb),.06); }
-html[data-theme="light"] .cat-card:not(.dm-card):hover{ border-color: rgba(var(--accent-rgb),.35); background: rgba(var(--accent-rgb),.04); }
+html[data-theme="light"] .cat-card:not(.dm-card){ background:#7A5A38; border-color: rgba(0,0,0,.15); box-shadow: 0 2px 12px rgba(0,0,0,.2); }
+html[data-theme="light"] .cat-card:not(.dm-card):hover{ border-color: rgba(242,232,213,.35); background: #6B4E30; }
 /* v8.20.0 — RIMOSSO codice morto: .cat-title/.cat-sub/.cat-arrow (vedi
    nota sopra al blocco dark equivalente, ~riga 3762). */
 
@@ -3326,11 +3326,11 @@ html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-ma
 html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse) .act-hero-sub{
   color: rgba(var(--navy-rgb),.5);
 }
-html[data-theme="light"] .act-card:not(.dm-card){ background:#ffffff; border-color: rgba(var(--navy-rgb),.09); }
-html[data-theme="light"] .act-card:not(.dm-card):hover{ border-color: rgba(var(--navy-rgb),.18); background: rgba(var(--navy-rgb),.04); }
-html[data-theme="light"] .act-card:not(.dm-card):not(.active) h3{ color:var(--navy); }
-html[data-theme="light"] .act-card.active:not(.dm-card) h3{ color:var(--navy); }
-html[data-theme="light"] .act-card:not(.dm-card) p{ color: rgba(var(--navy-rgb),.42); }
+html[data-theme="light"] .act-card:not(.dm-card){ background:#7A5A38; border-color: rgba(0,0,0,.15); }
+html[data-theme="light"] .act-card:not(.dm-card):hover{ border-color: rgba(242,232,213,.3); background: #6B4E30; }
+html[data-theme="light"] .act-card:not(.dm-card):not(.active) h3{ color:#F2E8D5; }
+html[data-theme="light"] .act-card.active:not(.dm-card) h3{ color:#F2E8D5; }
+html[data-theme="light"] .act-card:not(.dm-card) p{ color: rgba(242,232,213,.72); }
 /* v8.20.0: esclusione ":not(.dm-card)" aggiunta — #ac-memory diventa
    .dm-card (sfondo scuro fisso in entrambi i temi), il testo chiaro
    di .dm-card p resta quindi corretto; questa riga era pensata per
@@ -3456,21 +3456,21 @@ html[data-theme="light"] .result-wrap .btn-neon:hover{
 }
 
 /* ── 12. CLASSIFICA ───────────────────────────────────────────── */
-html[data-theme="light"] .lb-type-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.09); }
-html[data-theme="light"] .lb-type-card .ltc-title{ color:var(--navy); }
-html[data-theme="light"] .lb-type-card .ltc-sub{ color: rgba(var(--navy-rgb),.45); }
-html[data-theme="light"] .lb-act-btn{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
-html[data-theme="light"] .lb-act-btn .lab-label{ color: rgba(var(--navy-rgb),.55); }
-html[data-theme="light"] .lb-act-btn.active .lab-label{ color:var(--navy); }
+html[data-theme="light"] .lb-type-card{ background:#7A5A38; border-color: rgba(0,0,0,.15); }
+html[data-theme="light"] .lb-type-card .ltc-title{ color:#F2E8D5; }
+html[data-theme="light"] .lb-type-card .ltc-sub{ color: rgba(242,232,213,.7); }
+html[data-theme="light"] .lb-act-btn{ background:#7A5A38; border-color: rgba(0,0,0,.15); }
+html[data-theme="light"] .lb-act-btn .lab-label{ color: rgba(242,232,213,.85); }
+html[data-theme="light"] .lb-act-btn.active .lab-label{ color:#F2E8D5; }
 html[data-theme="light"] .lb-act-btn.a-speed.active .lab-label,html[data-theme="light"] .lb-act-btn.a-speed:hover .lab-label{ color:#a66d00; }
 html[data-theme="light"] .lb-act-btn.a-match.active .lab-label,html[data-theme="light"] .lb-act-btn.a-match:hover .lab-label{ color:#6E7A50; }
 html[data-theme="light"] .lb-act-btn.a-memory.active .lab-label,html[data-theme="light"] .lb-act-btn.a-memory:hover .lab-label{ color:#c02350; }
 html[data-theme="light"] .lb-act-btn.a-fill.active .lab-label,html[data-theme="light"] .lb-act-btn.a-fill:hover .lab-label{ color:#54708C; }
 html[data-theme="light"] .lb-act-btn.a-truefalse.active .lab-label,html[data-theme="light"] .lb-act-btn.a-truefalse:hover .lab-label{ color:#a67c00; }
-html[data-theme="light"] .lb-nav-crumb{ color: rgba(var(--accent-rgb),.7); }
-html[data-theme="light"] .lb-nav-crumb.current{ color: rgba(var(--navy-rgb),.55); }
-html[data-theme="light"] .lb-nav-sep{ color: rgba(var(--navy-rgb),.2); }
-html[data-theme="light"] .lb-entry{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
+html[data-theme="light"] .lb-nav-crumb{ color: rgba(242,232,213,.85); }
+html[data-theme="light"] .lb-nav-crumb.current{ color: rgba(242,232,213,.55); }
+html[data-theme="light"] .lb-nav-sep{ color: rgba(242,232,213,.3); }
+html[data-theme="light"] .lb-entry{ background:#7A5A38; border-color: rgba(0,0,0,.15); }
 html[data-theme="light"] .lb-td{ color:var(--navy); }
 html[data-theme="light"] .lb-td.name .player-sub{ color: rgba(var(--navy-rgb),.35); }
 /* v8.13.1: override .lb-th rimosso — la regola base ora usa var(--text-muted), già tematizzato */

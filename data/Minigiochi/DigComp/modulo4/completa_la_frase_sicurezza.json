@@ -1,0 +1,1458 @@
+[
+  {
+    "id": 1,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un password ____ genera, conserva e inserisce automaticamente password uniche e complesse.",
+    "answer": "manager",
+    "bank": [
+      "manager",
+      "archivio",
+      "browser",
+      "filtro"
+    ]
+  },
+  {
+    "id": 2,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Provare automaticamente una password rubata su altri account si chiama credential ____.",
+    "answer": "stuffing",
+    "bank": [
+      "cracking",
+      "stuffing",
+      "phishing",
+      "sniffing"
+    ]
+  },
+  {
+    "id": 3,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Con un password manager basta ricordare una sola password, quella che protegge il manager ____.",
+    "answer": "stesso",
+    "bank": [
+      "nuovo",
+      "stesso",
+      "locale",
+      "esterno"
+    ]
+  },
+  {
+    "id": 4,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel dicembre ____ un aggressore noto come \"igigi\" violò il sito RockYou.com.",
+    "answer": "2009",
+    "bank": [
+      "2016",
+      "2012",
+      "2006",
+      "2009"
+    ]
+  },
+  {
+    "id": 5,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nella violazione di RockYou furono sottratte le credenziali di oltre ____ milioni di account.",
+    "answer": "32",
+    "bank": [
+      "32",
+      "57",
+      "3",
+      "560"
+    ]
+  },
+  {
+    "id": 6,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Le password di RockYou erano conservate in ____, leggibili come erano state digitate.",
+    "answer": "chiaro",
+    "bank": [
+      "codice",
+      "chiaro",
+      "cloud",
+      "copia"
+    ]
+  },
+  {
+    "id": 7,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "La password più diffusa nell'elenco rockyou.txt era ____.",
+    "answer": "123456",
+    "bank": [
+      "password",
+      "abc123",
+      "12345",
+      "123456"
+    ]
+  },
+  {
+    "id": 8,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Usare la stessa password ovunque è come farsi tagliare un'unica ____ universale per casa, ufficio e auto.",
+    "answer": "chiave",
+    "bank": [
+      "tessera",
+      "chiave",
+      "porta",
+      "serratura"
+    ]
+  },
+  {
+    "id": 9,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Con l'autenticazione a più fattori serve, oltre alla password, una seconda prova d'____.",
+    "answer": "identità",
+    "bank": [
+      "origine",
+      "identità",
+      "uso",
+      "accesso"
+    ]
+  },
+  {
+    "id": 10,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Una password è \"qualcosa che ____\"; il secondo fattore può essere \"qualcosa che hai\" o \"qualcosa che sei\".",
+    "answer": "sai",
+    "bank": [
+      "hai",
+      "sai",
+      "sei",
+      "scrivi"
+    ]
+  },
+  {
+    "id": 11,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Tra l'aprile e il giugno 2024 furono sottratti dati da circa ____ aziende clienti di Snowflake.",
+    "answer": "165",
+    "bank": [
+      "165",
+      "57",
+      "560",
+      "16"
+    ]
+  },
+  {
+    "id": 12,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Gli aggressori entrarono nei clienti di Snowflake con credenziali rubate da un ____ specializzato nel furto di password.",
+    "answer": "malware",
+    "bank": [
+      "virus",
+      "browser",
+      "malware",
+      "sito"
+    ]
+  },
+  {
+    "id": 13,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nessuno degli account violati di Snowflake aveva l'autenticazione a più ____ attivata.",
+    "answer": "fattori",
+    "bank": [
+      "passaggi",
+      "utenti",
+      "livelli",
+      "fattori"
+    ]
+  },
+  {
+    "id": 14,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Per Ticketmaster furono esposti i dati di circa ____ milioni di clienti.",
+    "answer": "560",
+    "bank": [
+      "57",
+      "32",
+      "560",
+      "165"
+    ]
+  },
+  {
+    "id": 15,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'MFA è come il controllo all'imbarco in aeroporto: oltre al biglietto serve un documento d'____.",
+    "answer": "identità",
+    "bank": [
+      "viaggio",
+      "volo",
+      "identità",
+      "imbarco"
+    ]
+  },
+  {
+    "id": 16,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ è una tecnica di inganno in cui ci si finge un mittente affidabile per ottenere dati riservati.",
+    "answer": "phishing",
+    "bank": [
+      "malware",
+      "backup",
+      "ransomware",
+      "phishing"
+    ]
+  },
+  {
+    "id": 17,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il phishing condotto con una telefonata si chiama ____.",
+    "answer": "vishing",
+    "bank": [
+      "ransomware",
+      "vishing",
+      "malware",
+      "trojan"
+    ]
+  },
+  {
+    "id": 18,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un messaggio di phishing crea un senso di ____ per spingere la vittima a cliccare prima di riflettere.",
+    "answer": "urgenza",
+    "bank": [
+      "curiosità",
+      "calma",
+      "fiducia",
+      "urgenza"
+    ]
+  },
+  {
+    "id": 19,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il 19 marzo ____ John Podesta ricevette un'email che sembrava un avviso di sicurezza di Google.",
+    "answer": "2016",
+    "bank": [
+      "2019",
+      "2016",
+      "2017",
+      "2009"
+    ]
+  },
+  {
+    "id": 20,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "La pagina contraffatta dell'attacco a Podesta fu creata dal gruppo \"Fancy ____\".",
+    "answer": "Bear",
+    "bank": [
+      "Wolf",
+      "Fox",
+      "Bear",
+      "Eagle"
+    ]
+  },
+  {
+    "id": 21,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Gli aggressori ottennero l'accesso a decine di migliaia di ____ della casella personale di Podesta.",
+    "answer": "email",
+    "bank": [
+      "password",
+      "account",
+      "email",
+      "file"
+    ]
+  },
+  {
+    "id": 22,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il phishing è come qualcuno che si presenta alla porta vestito da ____ di una ditta mai contattata.",
+    "answer": "tecnico",
+    "bank": [
+      "tecnico",
+      "vicino",
+      "corriere",
+      "venditore"
+    ]
+  },
+  {
+    "id": 23,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il termine malware è la crasi dell'inglese malicious ____.",
+    "answer": "software",
+    "bank": [
+      "firmware",
+      "network",
+      "software",
+      "hardware"
+    ]
+  },
+  {
+    "id": 24,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ si attacca ad altri file o programmi e si diffonde copiandosi da un dispositivo all'altro.",
+    "answer": "virus",
+    "bank": [
+      "backup",
+      "virus",
+      "trojan",
+      "ransomware"
+    ]
+  },
+  {
+    "id": 25,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ si presenta come qualcosa di utile, ma nasconde al proprio interno una funzione dannosa.",
+    "answer": "trojan",
+    "bank": [
+      "backup",
+      "phishing",
+      "trojan",
+      "virus"
+    ]
+  },
+  {
+    "id": 26,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il 12 maggio ____ iniziò a diffondersi in tutto il mondo il ransomware WannaCry.",
+    "answer": "2017",
+    "bank": [
+      "2017",
+      "2019",
+      "2016",
+      "2009"
+    ]
+  },
+  {
+    "id": 27,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "WannaCry sfruttava la falla ____ dei sistemi Windows.",
+    "answer": "EternalBlue",
+    "bank": [
+      "EternalBlue",
+      "LockerGoga",
+      "Snowflake",
+      "RockYou"
+    ]
+  },
+  {
+    "id": 28,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "EternalBlue fu sviluppata in origine dalla ____ e resa pubblica dagli Shadow Brokers.",
+    "answer": "NSA",
+    "bank": [
+      "AOL",
+      "ITU",
+      "NHS",
+      "NSA"
+    ]
+  },
+  {
+    "id": 29,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "WannaCry infettò oltre ____ computer in più di 150 paesi.",
+    "answer": "200.000",
+    "bank": [
+      "2 milioni",
+      "20.000",
+      "650.000",
+      "200.000"
+    ]
+  },
+  {
+    "id": 30,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Tra le vittime più colpite di WannaCry ci fu il Servizio Sanitario Nazionale britannico, in sigla ____.",
+    "answer": "NHS",
+    "bank": [
+      "AOL",
+      "ITU",
+      "NHS",
+      "NSA"
+    ]
+  },
+  {
+    "id": 31,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il malware è come un ospite che si presenta a una festa con un ____ incartato con cura.",
+    "answer": "regalo",
+    "bank": [
+      "piatto",
+      "ombrello",
+      "regalo",
+      "invito"
+    ]
+  },
+  {
+    "id": 32,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ cifra i file del dispositivo colpito e chiede un pagamento, quasi sempre in criptovaluta.",
+    "answer": "ransomware",
+    "bank": [
+      "phishing",
+      "ransomware",
+      "trojan",
+      "virus"
+    ]
+  },
+  {
+    "id": 33,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Pagare il riscatto non offre alcuna ____ reale di riavere i file.",
+    "answer": "garanzia",
+    "bank": [
+      "garanzia",
+      "ricevuta",
+      "scadenza",
+      "possibilità"
+    ]
+  },
+  {
+    "id": 34,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "L'unica vera protezione in caso di ransomware è aver già conservato una copia separata e recente dei dati: un ____.",
+    "answer": "backup",
+    "bank": [
+      "backup",
+      "firewall",
+      "archivio",
+      "antivirus"
+    ]
+  },
+  {
+    "id": 35,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nella notte tra il 18 e il 19 marzo ____ l'azienda Norsk Hydro fu colpita dal ransomware LockerGoga.",
+    "answer": "2019",
+    "bank": [
+      "2009",
+      "2016",
+      "2019",
+      "2017"
+    ]
+  },
+  {
+    "id": 36,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Norsk Hydro è un'azienda ____ e uno dei maggiori produttori di alluminio al mondo.",
+    "answer": "norvegese",
+    "bank": [
+      "svedese",
+      "norvegese",
+      "tedesca",
+      "canadese"
+    ]
+  },
+  {
+    "id": 37,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nell'attacco a Norsk Hydro furono cifrati circa 500 server e 2.700 ____.",
+    "answer": "computer",
+    "bank": [
+      "backup",
+      "account",
+      "stabilimenti",
+      "computer"
+    ]
+  },
+  {
+    "id": 38,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il recupero di Norsk Hydro richiese diverse settimane e un costo stimato di circa ____ milioni di dollari.",
+    "answer": "75",
+    "bank": [
+      "7",
+      "75",
+      "100",
+      "148"
+    ]
+  },
+  {
+    "id": 39,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un ransomware senza backup è come una casa senza copia delle ____.",
+    "answer": "chiavi",
+    "bank": [
+      "porte",
+      "serrature",
+      "finestre",
+      "chiavi"
+    ]
+  },
+  {
+    "id": 40,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un ____ è una copia dei propri dati, conservata separatamente dall'originale.",
+    "answer": "backup",
+    "bank": [
+      "dispositivo",
+      "permesso",
+      "account",
+      "backup"
+    ]
+  },
+  {
+    "id": 41,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La regola del ____ prevede tre copie dei dati, su due supporti diversi, con una copia in un luogo separato.",
+    "answer": "3-2-1",
+    "bank": [
+      "1-2-3",
+      "3-1-2",
+      "2-1-3",
+      "3-2-1"
+    ]
+  },
+  {
+    "id": 42,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Più tempo passa tra un backup e l'altro, più ____ si rischia di perdere.",
+    "answer": "dati",
+    "bank": [
+      "copie",
+      "tempo",
+      "spazio",
+      "dati"
+    ]
+  },
+  {
+    "id": 43,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La sincronizzazione non è un backup: una modifica o una cifratura si ____ anche alle copie sincronizzate.",
+    "answer": "propaga",
+    "bank": [
+      "blocca",
+      "rallenta",
+      "propaga",
+      "annulla"
+    ]
+  },
+  {
+    "id": 44,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il 31 gennaio ____ un amministratore di GitLab cancellò per errore dati dal database di produzione.",
+    "answer": "2017",
+    "bank": [
+      "2017",
+      "2023",
+      "2019",
+      "2016"
+    ]
+  },
+  {
+    "id": 45,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nell'errore di GitLab furono cancellati circa 300 gigabyte di dati, ne rimasero appena 4,5 ____.",
+    "answer": "gigabyte",
+    "bank": [
+      "kilobyte",
+      "terabyte",
+      "gigabyte",
+      "megabyte"
+    ]
+  },
+  {
+    "id": 46,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "GitLab credeva di avere ____ diversi sistemi di backup attivi, ma nessuno funzionava in modo affidabile.",
+    "answer": "cinque",
+    "bank": [
+      "cinque",
+      "due",
+      "tre",
+      "dieci"
+    ]
+  },
+  {
+    "id": 47,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "GitLab recuperò i dati dall'unico snapshot valido, perdendo circa ____ ore di attività degli utenti.",
+    "answer": "sei",
+    "bank": [
+      "ventiquattro",
+      "dodici",
+      "due",
+      "sei"
+    ]
+  },
+  {
+    "id": 48,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un backup mai verificato è come un ____ comprato anni fa e mai controllato.",
+    "answer": "estintore",
+    "bank": [
+      "estintore",
+      "allarme",
+      "ombrello",
+      "salvagente"
+    ]
+  },
+  {
+    "id": 49,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il principio della responsabilità ____ stabilisce che la sicurezza nel cloud dipende sia dal fornitore sia dall'utente.",
+    "answer": "condivisa",
+    "bank": [
+      "limitata",
+      "esclusiva",
+      "condivisa",
+      "delegata"
+    ]
+  },
+  {
+    "id": 50,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il fornitore cloud è responsabile della sicurezza dell'____ (server, data center, reti).",
+    "answer": "infrastruttura",
+    "bank": [
+      "account",
+      "infrastruttura",
+      "password",
+      "utente"
+    ]
+  },
+  {
+    "id": 51,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un errore frequente è lasciare le credenziali di accesso scritte in ____ dentro codice condiviso.",
+    "answer": "chiaro",
+    "bank": [
+      "backup",
+      "cloud",
+      "chiaro",
+      "rete"
+    ]
+  },
+  {
+    "id": 52,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nell'ottobre ____ alcuni aggressori trovarono su GitHub le credenziali di accesso allo spazio cloud di Uber.",
+    "answer": "2016",
+    "bank": [
+      "2022",
+      "2016",
+      "2017",
+      "2009"
+    ]
+  },
+  {
+    "id": 53,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nella violazione di Uber furono scaricati i dati di circa ____ milioni tra utenti e autisti.",
+    "answer": "57",
+    "bank": [
+      "5,7",
+      "560",
+      "32",
+      "57"
+    ]
+  },
+  {
+    "id": 54,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nella violazione furono compresi i numeri di patente di ____ conducenti.",
+    "answer": "600.000",
+    "bank": [
+      "57 milioni",
+      "600.000",
+      "6.000",
+      "200.000"
+    ]
+  },
+  {
+    "id": 55,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Alcuni dirigenti di Uber pagarono agli aggressori ____ dollari, camuffando il pagamento come ricompensa per una segnalazione.",
+    "answer": "100.000",
+    "bank": [
+      "100.000",
+      "500.000",
+      "10.000",
+      "148 milioni"
+    ]
+  },
+  {
+    "id": 56,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "La sanzione concordata con le autorità statunitensi per il ritardo nella comunicazione fu di ____ milioni di dollari.",
+    "answer": "148",
+    "bank": [
+      "100",
+      "148",
+      "75",
+      "500"
+    ]
+  },
+  {
+    "id": 57,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Affidare i dati al cloud è come affittare una cassetta di sicurezza in banca: se si lascia la ____ fuori dalla porta, chiunque può aprirla.",
+    "answer": "chiave",
+    "bank": [
+      "ricevuta",
+      "chiave",
+      "tessera",
+      "serratura"
+    ]
+  },
+  {
+    "id": 58,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un dato personale permette di identificare una persona specifica, da solo o ____ con altri.",
+    "answer": "combinato",
+    "bank": [
+      "separato",
+      "confrontato",
+      "cifrato",
+      "combinato"
+    ]
+  },
+  {
+    "id": 59,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Anche informazioni \"anonimizzate\", private del nome, possono in pratica non essere affatto ____.",
+    "answer": "anonime",
+    "bank": [
+      "anonime",
+      "pubbliche",
+      "utili",
+      "complete"
+    ]
+  },
+  {
+    "id": 60,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nell'agosto del ____ AOL pubblicò online circa 20 milioni di ricerche di oltre 650.000 utenti.",
+    "answer": "2006",
+    "bank": [
+      "2016",
+      "2006",
+      "2009",
+      "2013"
+    ]
+  },
+  {
+    "id": 61,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "AOL sostituì il nome di ciascun utente con un semplice numero ____.",
+    "answer": "identificativo",
+    "bank": [
+      "telefonico",
+      "identificativo",
+      "progressivo",
+      "casuale"
+    ]
+  },
+  {
+    "id": 62,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "I giornalisti del ____ risalirono a una vedova di 62 anni residente a Lilburn, in Georgia.",
+    "answer": "New York Times",
+    "bank": [
+      "Time",
+      "New York Times",
+      "Guardian",
+      "Washington Post"
+    ]
+  },
+  {
+    "id": 63,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Rimuovere solo il nome da dati personali è come strappare la copertina da un ____ intimo.",
+    "answer": "diario",
+    "bank": [
+      "libro",
+      "quaderno",
+      "diario",
+      "album"
+    ]
+  },
+  {
+    "id": 64,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il GDPR è il Regolamento Generale sulla ____ dei Dati.",
+    "answer": "Protezione",
+    "bank": [
+      "Protezione",
+      "Raccolta",
+      "Conservazione",
+      "Gestione"
+    ]
+  },
+  {
+    "id": 65,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il GDPR è in vigore dal 25 maggio ____.",
+    "answer": "2018",
+    "bank": [
+      "2021",
+      "2023",
+      "2016",
+      "2018"
+    ]
+  },
+  {
+    "id": 66,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Secondo il GDPR i dati vanno raccolti solo per uno scopo dichiarato e ____.",
+    "answer": "specifico",
+    "bank": [
+      "esteso",
+      "generico",
+      "specifico",
+      "futuro"
+    ]
+  },
+  {
+    "id": 67,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il cosiddetto diritto all'____ è il diritto di chiedere la cancellazione dei propri dati.",
+    "answer": "oblio",
+    "bank": [
+      "accesso",
+      "oblio",
+      "oggetto",
+      "ascolto"
+    ]
+  },
+  {
+    "id": 68,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il 22 maggio 2023 la Data Protection Commission irlandese inflisse a Meta una sanzione da 1,2 ____ di euro.",
+    "answer": "miliardi",
+    "bank": [
+      "migliaia",
+      "miliardi",
+      "milioni",
+      "centinaia"
+    ]
+  },
+  {
+    "id": 69,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il precedente record era di 746 milioni di euro, inflitti ad ____ nel 2021.",
+    "answer": "Amazon",
+    "bank": [
+      "Uber",
+      "Apple",
+      "Google",
+      "Amazon"
+    ]
+  },
+  {
+    "id": 70,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "La sanzione a Meta riguardava il trasferimento dei dati degli utenti europei di Facebook verso gli ____.",
+    "answer": "Stati Uniti",
+    "bank": [
+      "server europei",
+      "Stati membri",
+      "Stati Uniti",
+      "Paesi asiatici"
+    ]
+  },
+  {
+    "id": 71,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il GDPR è come le istruzioni di sicurezza di un ____: non impedisce di lavorare, ma stabilisce regole precise.",
+    "answer": "cantiere",
+    "bank": [
+      "ufficio",
+      "cantiere",
+      "negozio",
+      "cinema"
+    ]
+  },
+  {
+    "id": 72,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il benessere ____ è l'equilibrio tra l'uso delle tecnologie e la salute fisica, mentale e sociale.",
+    "answer": "digitale",
+    "bank": [
+      "sociale",
+      "fisico",
+      "emotivo",
+      "digitale"
+    ]
+  },
+  {
+    "id": 73,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il ____ è un titolo costruito per spingere a cliccare.",
+    "answer": "clickbait",
+    "bank": [
+      "nudging",
+      "gamification",
+      "clickbait",
+      "badge"
+    ]
+  },
+  {
+    "id": 74,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Le piccole spinte a non interrompere ciò che si sta facendo si chiamano ____.",
+    "answer": "nudging",
+    "bank": [
+      "gamification",
+      "nudging",
+      "clickbait",
+      "backup"
+    ]
+  },
+  {
+    "id": 75,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I segnali di una possibile dipendenza digitale includono la perdita di ____ sul tempo che si passa online.",
+    "answer": "controllo",
+    "bank": [
+      "fiducia",
+      "controllo",
+      "memoria",
+      "interesse"
+    ]
+  },
+  {
+    "id": 76,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel ____ Tristan Harris lasciò Google e avviò l'iniziativa Time Well Spent.",
+    "answer": "2016",
+    "bank": [
+      "2018",
+      "2023",
+      "2016",
+      "2012"
+    ]
+  },
+  {
+    "id": 77,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il 4 giugno 2018, al WWDC, Apple presentò ____ per iOS 12.",
+    "answer": "Screen Time",
+    "bank": [
+      "Digital Wellbeing",
+      "Time Well Spent",
+      "Nudging",
+      "Screen Time"
+    ]
+  },
+  {
+    "id": 78,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel maggio 2018 Google presentò una serie di funzioni di Digital ____ per Android.",
+    "answer": "Wellbeing",
+    "bank": [
+      "Balance",
+      "Control",
+      "Health",
+      "Wellbeing"
+    ]
+  },
+  {
+    "id": 79,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il benessere digitale è come il ____ di una bicicletta: serve a saper cambiare rapporto quando la salita è troppa.",
+    "answer": "cambio",
+    "bank": [
+      "campanello",
+      "cambio",
+      "manubrio",
+      "freno"
+    ]
+  },
+  {
+    "id": 80,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il cyberbullismo è il bullismo praticato attraverso le tecnologie ____.",
+    "answer": "digitali",
+    "bank": [
+      "digitali",
+      "tradizionali",
+      "scolastiche",
+      "pubbliche"
+    ]
+  },
+  {
+    "id": 81,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Davanti a un episodio di cyberbullismo la prima mossa è non ____ e non rispondere.",
+    "answer": "reagire",
+    "bank": [
+      "bloccare",
+      "segnalare",
+      "ascoltare",
+      "reagire"
+    ]
+  },
+  {
+    "id": 82,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Prima di cancellare qualunque cosa si devono conservare le ____: messaggi, immagini e schermate.",
+    "answer": "prove",
+    "bank": [
+      "tracce",
+      "password",
+      "copie",
+      "prove"
+    ]
+  },
+  {
+    "id": 83,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Per i minori esistono anche linee di ascolto dedicate ai ragazzi, come Telefono ____.",
+    "answer": "Azzurro",
+    "bank": [
+      "Azzurro",
+      "Rosa",
+      "Giallo",
+      "Verde"
+    ]
+  },
+  {
+    "id": 84,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "La Legge 29 maggio 2017, n. ____ è stata la prima legge italiana a definire il cyberbullismo.",
+    "answer": "71",
+    "bank": [
+      "34",
+      "25",
+      "71",
+      "12"
+    ]
+  },
+  {
+    "id": 85,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "La legge sul cyberbullismo è in vigore dal 18 ____ 2017.",
+    "answer": "giugno",
+    "bank": [
+      "maggio",
+      "giugno",
+      "luglio",
+      "marzo"
+    ]
+  },
+  {
+    "id": 86,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Un minore che abbia compiuto ____ anni può chiedere al gestore di rimuovere i contenuti che lo riguardano.",
+    "answer": "quattordici",
+    "bank": [
+      "dodici",
+      "sedici",
+      "quattordici",
+      "diciotto"
+    ]
+  },
+  {
+    "id": 87,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il gestore ha ventiquattro ore per dichiarare di aver preso in carico la richiesta e ____ ore per provvedere.",
+    "answer": "quarantotto",
+    "bank": [
+      "settantadue",
+      "dodici",
+      "sei",
+      "quarantotto"
+    ]
+  },
+  {
+    "id": 88,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Se il gestore non risponde ci si può rivolgere al Garante per la protezione dei dati ____.",
+    "answer": "personali",
+    "bank": [
+      "sensibili",
+      "pubblici",
+      "digitali",
+      "personali"
+    ]
+  },
+  {
+    "id": 89,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Un messaggio offensivo online è come un graffito su un muro di una ____ molto frequentata.",
+    "answer": "piazza",
+    "bank": [
+      "strada",
+      "scuola",
+      "stazione",
+      "piazza"
+    ]
+  },
+  {
+    "id": 90,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I rifiuti elettronici in Italia si chiamano ____.",
+    "answer": "RAEE",
+    "bank": [
+      "RAIE",
+      "RAEI",
+      "REAE",
+      "RAEE"
+    ]
+  },
+  {
+    "id": 91,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I ____ sono i grandi centri di elaborazione dei dati dove vivono i servizi online.",
+    "answer": "data center",
+    "bank": [
+      "data center",
+      "server",
+      "router",
+      "browser"
+    ]
+  },
+  {
+    "id": 92,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "Il fenomeno per cui alcuni apparecchi sono progettati per durare poco si chiama obsolescenza ____.",
+    "answer": "programmata",
+    "bank": [
+      "automatica",
+      "programmata",
+      "naturale",
+      "prevista"
+    ]
+  },
+  {
+    "id": 93,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "I rifiuti elettronici non vanno nell'____: si portano ai centri di raccolta.",
+    "answer": "indifferenziata",
+    "bank": [
+      "indifferenziata",
+      "carta",
+      "organico",
+      "plastica"
+    ]
+  },
+  {
+    "id": 94,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel marzo ____ UNITAR e ITU hanno pubblicato la quarta edizione del Global E-waste Monitor.",
+    "answer": "2024",
+    "bank": [
+      "2018",
+      "2024",
+      "2010",
+      "2022"
+    ]
+  },
+  {
+    "id": 95,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel 2022 sono stati prodotti ____ milioni di tonnellate di rifiuti elettronici.",
+    "answer": "62",
+    "bank": [
+      "7,8",
+      "22",
+      "82",
+      "62"
+    ]
+  },
+  {
+    "id": 96,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Solo il ____% dei rifiuti elettronici del 2022 è stato documentato come raccolto e riciclato correttamente.",
+    "answer": "22,3",
+    "bank": [
+      "62",
+      "22,3",
+      "82",
+      "42,8"
+    ]
+  },
+  {
+    "id": 97,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "L'Europa è la regione con il tasso di riciclo più alto: il ____%.",
+    "answer": "42,8",
+    "bank": [
+      "22,3",
+      "62",
+      "42,8",
+      "20"
+    ]
+  },
+  {
+    "id": 98,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La vita di un dispositivo è come quella di una bicicletta: il costo ambientale sta quasi tutto nel ____, molto meno nel riparare.",
+    "answer": "cambiare",
+    "bank": [
+      "cambiare",
+      "comprare",
+      "pulire",
+      "usare"
+    ]
+  },
+  {
+    "id": 99,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La sicurezza ____ è l'insieme delle abitudini quotidiane che determinano l'efficacia degli strumenti tecnici di protezione.",
+    "answer": "comportamentale",
+    "bank": [
+      "digitale",
+      "informatica",
+      "sociale",
+      "comportamentale"
+    ]
+  },
+  {
+    "id": 100,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La sicurezza informatica non è un traguardo raggiunto una volta per tutte: è una ____ quotidiana.",
+    "answer": "pratica",
+    "bank": [
+      "tecnica",
+      "pratica",
+      "regola",
+      "difesa"
+    ]
+  },
+  {
+    "id": 101,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Nel ____ l'astronomo Clifford Stoll accettò l'incarico di amministratore dei sistemi del Lawrence Berkeley National Laboratory.",
+    "answer": "1986",
+    "bank": [
+      "2006",
+      "1969",
+      "1986",
+      "1947"
+    ]
+  },
+  {
+    "id": 102,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "La discrepanza contabile scoperta da Stoll era di appena ____ centesimi di dollaro.",
+    "answer": "75",
+    "bank": [
+      "75",
+      "57",
+      "7",
+      "100"
+    ]
+  },
+  {
+    "id": 103,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "hard",
+    "sentence": "Il libro con cui Stoll raccontò la sua indagine si intitola \"L'uovo del ____\".",
+    "answer": "cuculo",
+    "bank": [
+      "falco",
+      "pettirosso",
+      "cuculo",
+      "gufo"
+    ]
+  },
+  {
+    "id": 104,
+    "module": "sicurezza",
+    "type": "fillblank",
+    "difficulty": "easy",
+    "sentence": "La sicurezza informatica è come la cintura di sicurezza in automobile: diventa un gesto ____, ripetuto ogni volta.",
+    "answer": "automatico",
+    "bank": [
+      "costoso",
+      "occasionale",
+      "automatico",
+      "facoltativo"
+    ]
+  }
+]

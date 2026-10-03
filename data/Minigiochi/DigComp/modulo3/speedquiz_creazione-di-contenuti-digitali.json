@@ -1,0 +1,767 @@
+[
+  {
+    "id": 1,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un documento digitale, secondo il modulo?",
+    "options": [
+      "Un contenuto testuale organizzato anche nella sua struttura logica: titoli, paragrafi, elenchi, sezioni",
+      "Un contenuto testuale organizzato solo nell'aspetto grafico",
+      "Un file di testo salvato in un formato qualsiasi",
+      "Un insieme di pagine stampate e poi scansionate"
+    ],
+    "correctIndex": 0,
+    "explanation": "È una gerarchia che un programma può riconoscere, non solo mostrare."
+  },
+  {
+    "id": 2,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che vantaggio hanno gli stili predefiniti rispetto alla formattazione a occhio?",
+    "options": [
+      "Rendono il testo più colorato senza alcun intervento manuale",
+      "Impediscono a chiunque di modificare il documento",
+      "Riducono automaticamente la lunghezza del testo",
+      "Cambiando la definizione dello stile si aggiornano tutti i titoli e il programma può costruire sommario e indice"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un documento strutturato non \"sembra\" soltanto organizzato: lo è davvero."
+  },
+  {
+    "id": 3,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa sviluppò Charles Goldfarb nel 1969 con Edward Mosher e Raymond Lorie per IBM?",
+    "options": [
+      "Un programma di videoscrittura per stampanti",
+      "Il linguaggio HTML con cui è costruito il Web",
+      "Il sistema GML, per descrivere la struttura logica di un documento separandola dall'aspetto",
+      "Lo standard SGML, poi divenuto standard ISO"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le iniziali GML derivano dai cognomi dei tre autori."
+  },
+  {
+    "id": 4,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno lo SGML diventò standard internazionale ISO?",
+    "options": [
+      "Nel 1974",
+      "Nel 1986",
+      "Nel 1999",
+      "Nel 1969"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lo SGML pose le basi, alla fine degli anni Ottanta, anche dell'HTML."
+  },
+  {
+    "id": 5,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale principio è alla base dell'intuizione di Goldfarb?",
+    "options": [
+      "Rendere il documento leggibile solo da un programma",
+      "Formattare a mano ogni elemento per ottenere il risultato voluto",
+      "Separare il testo dalle immagini nello stesso documento",
+      "Descrivere prima cos'è un contenuto e lasciare a una regola centrale la decisione su come apparirà"
+    ],
+    "correctIndex": 3,
+    "explanation": "È ciò che permette di correggere un titolo in tutto il documento con un solo clic."
+  },
+  {
+    "id": 6,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una presentazione efficace?",
+    "options": [
+      "Una sequenza di slide piena di dati e di grafici",
+      "Una sequenza di slide pensata per sostenere chi parla, non per sostituirlo, che comunica un'idea alla volta",
+      "Una sequenza di slide che sostituisce il discorso di chi presenta",
+      "Una sequenza di slide che contiene tutte le informazioni da leggere"
+    ],
+    "correctIndex": 1,
+    "explanation": "A fare il lavoro principale deve essere la voce di chi presenta."
+  },
+  {
+    "id": 7,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché una slide piena di testo funziona male?",
+    "options": [
+      "Perché rallenta il computer durante la presentazione",
+      "Perché il testo è sempre troppo piccolo per essere letto",
+      "Perché il pubblico non ama i testi scritti",
+      "Costringe il pubblico a scegliere tra leggere e ascoltare, due cose che non possono avvenire bene insieme"
+    ],
+    "correctIndex": 3,
+    "explanation": "Una buona presentazione usa poche parole chiave, un'immagine forte o un numero isolato."
+  },
+  {
+    "id": 8,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale spot pubblicò Amazon nel Regno Unito nel novembre 2020?",
+    "options": [
+      "\"The Show Must Go On\"",
+      "\"The Dance Must Go On\"",
+      "\"Holiday at Home\"",
+      "\"The Lockdown Show\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu diretto da Melina Matsoukas."
+  },
+  {
+    "id": 9,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi interpretava la protagonista dello spot \"The Show Must Go On\"?",
+    "options": [
+      "La regista Melina Matsoukas",
+      "La ballerina francese Taïs Vinolo",
+      "Una ballerina statunitense",
+      "Una cantante britannica"
+    ],
+    "correctIndex": 1,
+    "explanation": "La storia raccontava una ragazza che si esibiva sul terrazzo del palazzo dopo l'annullamento del suo spettacolo."
+  },
+  {
+    "id": 10,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa mostra il caso dello spot di Amazon?",
+    "options": [
+      "Che raccontare una storia emotiva, senza elencare i prodotti, lascia allo spettatore il compito di collegare il marchio a un sentimento",
+      "Che uno spot deve elencare tutte le funzionalità dei prodotti",
+      "Che il pubblico preferisce contenuti lunghi e dettagliati",
+      "Che una storia emotiva non è adatta a un messaggio pubblicitario"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo spot mostrava, non spiegava."
+  },
+  {
+    "id": 11,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un foglio di calcolo?",
+    "options": [
+      "Uno strumento che trasforma ogni dato in un grafico senza calcoli",
+      "Uno strumento che archivia solo testi in colonne",
+      "Uno strumento che sostituisce la contabilità tradizionale",
+      "Uno strumento che organizza numeri e dati in righe e colonne, con calcoli automatici e andamenti individuabili rapidamente"
+    ],
+    "correctIndex": 3,
+    "explanation": "La sua forza è far dialogare i numeri tra loro."
+  },
+  {
+    "id": 12,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A che cosa serve una tabella pivot?",
+    "options": [
+      "A riorganizzare rapidamente gli stessi dati secondo prospettive diverse, per mese, prodotto o cliente",
+      "A proteggere i dati da modifiche non autorizzate",
+      "A eseguire in automatico la somma di una colonna",
+      "A trasformare un grafico in una tabella"
+    ],
+    "correctIndex": 0,
+    "explanation": "Non occorre ricostruire nulla da zero quando cambia la domanda."
+  },
+  {
+    "id": 13,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu messo in vendita VisiCalc, il primo foglio di calcolo elettronico?",
+    "options": [
+      "Nell'ottobre 1979",
+      "Nel settembre 2011",
+      "Nel dicembre 1991",
+      "Nell'ottobre 1969"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu realizzato da Dan Bricklin e Bob Frankston."
+  },
+  {
+    "id": 14,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Per quale computer fu pensato VisiCalc?",
+    "options": [
+      "Macintosh",
+      "Commodore 64",
+      "IBM PC",
+      "Apple II"
+    ],
+    "correctIndex": 3,
+    "explanation": "Molte persone acquistavano un intero Apple II soltanto per usare VisiCalc."
+  },
+  {
+    "id": 15,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa permise VisiCalc a contabili e piccoli imprenditori?",
+    "options": [
+      "Archiviare i registri cartacei senza modificarli",
+      "Sostituire i registri cartacei con un foglio digitale che ricalcolava automaticamente ogni valore collegato",
+      "Condividere i registri con altri utenti in rete",
+      "Stampare i registri in formato più leggibile"
+    ],
+    "correctIndex": 1,
+    "explanation": "Cambiare un solo numero aggiornava all'istante ogni totale che ne dipendeva."
+  },
+  {
+    "id": 16,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un contenuto multimediale?",
+    "options": [
+      "Un contenuto che combina più forme di comunicazione (testo, immagine, audio, video) in un unico contenuto coerente",
+      "Un contenuto salvato in più formati di file",
+      "Un contenuto condiviso su più piattaforme",
+      "Un contenuto che contiene solo immagini e video"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sfrutta i punti di forza di ciascuna forma."
+  },
+  {
+    "id": 17,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i limiti delle diverse forme di comunicazione?",
+    "options": [
+      "Il testo è statico, l'immagine è lenta, l'audio è preciso, il video è astratto",
+      "Il testo è astratto, l'immagine è statica, l'audio non mostra nulla, il video richiede più tempo per essere fruito",
+      "Il testo non ha limiti, mentre le altre forme richiedono tutte lo stesso tempo",
+      "Il testo è immediato, l'immagine è astratta, l'audio è statico, il video è impreciso"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un contenuto multimediale li fa lavorare insieme, ciascuno per ciò che sa fare meglio."
+  },
+  {
+    "id": 18,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Apple rilasciò la prima versione pubblica di QuickTime?",
+    "options": [
+      "Il 2 dicembre 1984",
+      "Il 2 dicembre 1991",
+      "Il 2 dicembre 1998",
+      "Il 2 maggio 1991"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nacque dal lavoro di Bruce Leak, con Steve Perlman autore di un primo prototipo."
+  },
+  {
+    "id": 19,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale fu la vera innovazione tecnica di QuickTime?",
+    "options": [
+      "Un formato che riduceva il peso del video eliminando l'audio",
+      "Un'architettura a tracce indipendenti (video, audio, testo, effetti), sincronizzate in un unico contenitore",
+      "Un sistema che univa tutti i file in un'unica traccia",
+      "Un lettore che funzionava senza bisogno di hardware"
+    ],
+    "correctIndex": 1,
+    "explanation": "Prima di QuickTime riprodurre un video sincronizzato con l'audio era un'impresa quasi impossibile."
+  },
+  {
+    "id": 20,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Di quale standard internazionale diventò la base, nel 1998, l'architettura di QuickTime?",
+    "options": [
+      "WCAG",
+      "MPEG-4",
+      "SGML",
+      "JPEG"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il primo video mostrato con quella tecnologia fu lo spot \"1984\" di Apple."
+  },
+  {
+    "id": 21,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è uno strumento di creazione assistita dall'AI?",
+    "options": [
+      "Uno strumento che archivia contenuti già esistenti",
+      "Uno strumento che corregge automaticamente gli errori in un documento",
+      "Uno strumento che sostituisce chi crea il contenuto",
+      "Uno strumento che genera testo, immagini o altri contenuti a partire da una descrizione in linguaggio naturale (un prompt)"
+    ],
+    "correctIndex": 3,
+    "explanation": "Permette a chi non ha competenze tecniche specifiche di produrre contenuti altrimenti fuori portata."
+  },
+  {
+    "id": 22,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da che cosa dipende molto la qualità del risultato di un'AI generativa di immagini?",
+    "options": [
+      "Dalla lunghezza del tempo di attesa dopo l'invio",
+      "Da come si formula la richiesta: un prompt specifico produce un risultato più vicino all'idea",
+      "Dal numero di tentativi fatti con lo stesso prompt",
+      "Dal dispositivo da cui si invia la richiesta"
+    ],
+    "correctIndex": 1,
+    "explanation": "Contano soggetto, stile, atmosfera e dettagli."
+  },
+  {
+    "id": 23,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che ruolo ha l'AI nella creazione di contenuti?",
+    "options": [
+      "Autore unico: chi scrive il prompt non interviene più",
+      "Sostituto: il risultato è già pronto per l'uso",
+      "Controllore: verifica i contenuti creati da una persona",
+      "Collaboratore, non sostituto: il risultato va sempre rivisto, corretto e adattato a un uso reale"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'AI non sostituisce l'idea: serve comunicarla con precisione."
+  },
+  {
+    "id": 24,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando David Holz riunì dieci ingegneri per fondare Midjourney?",
+    "options": [
+      "Nell'agosto 2021",
+      "Nel luglio 2022",
+      "Nell'agosto 2022",
+      "Nel luglio 2021"
+    ],
+    "correctIndex": 0,
+    "explanation": "Holz aveva in precedenza cofondato l'azienda di sensori Leap Motion."
+  },
+  {
+    "id": 25,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Attraverso quale piattaforma fu inizialmente raggiungibile la beta pubblica di Midjourney del luglio 2022?",
+    "options": [
+      "WhatsApp",
+      "Leap Motion",
+      "San Francisco",
+      "Discord"
+    ],
+    "correctIndex": 3,
+    "explanation": "Bastava scrivere una descrizione testuale perché il sistema restituisse le immagini."
+  },
+  {
+    "id": 26,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un contenuto accessibile?",
+    "options": [
+      "Un contenuto disponibile in una versione semplificata per chi ha disabilità",
+      "Un contenuto scaricabile gratuitamente da chiunque",
+      "Un contenuto progettato per essere fruito da chiunque, nella versione stessa che tutti utilizzano, non in una parallela semplificata",
+      "Un contenuto disponibile in più lingue"
+    ],
+    "correctIndex": 2,
+    "explanation": "Riguarda disabilità visive, uditive, motorie o cognitive."
+  },
+  {
+    "id": 27,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali interventi concreti rendono accessibile un contenuto?",
+    "options": [
+      "Testo alternativo alle immagini, sottotitoli ai video e colori con un contrasto sufficiente tra testo e sfondo",
+      "Descrizioni solo vocali, video senza audio e testi in maiuscolo",
+      "Una versione separata del sito per ogni tipo di disabilità",
+      "Immagini a colori più vivaci, video più lunghi e testi più brevi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nessuna di queste scelte penalizza chi non ne ha bisogno."
+  },
+  {
+    "id": 28,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno il W3C lanciò la Web Accessibility Initiative (WAI)?",
+    "options": [
+      "Nel 1994",
+      "Nel 1997",
+      "Nel 1999",
+      "Nel 2023"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il W3C è il consorzio fondato da Tim Berners-Lee."
+  },
+  {
+    "id": 29,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando furono pubblicate le WCAG 1.0 e quante linee guida contenevano?",
+    "options": [
+      "Nel maggio 1999, quaranta linee guida",
+      "Nel maggio 2023, quattordici linee guida",
+      "Nel maggio 1999, quattordici linee guida",
+      "Nel maggio 1994, quattordici linee guida"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ogni linea guida aveva una serie di criteri verificabili."
+  },
+  {
+    "id": 30,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché l'accessibilità è \"una qualità del contenuto stesso\"?",
+    "options": [
+      "Perché non è un'aggiunta per pochi: un sottotitolo o un buon contrasto giovano a chiunque",
+      "Perché riguarda solo chi ha una disabilità",
+      "Perché si ottiene soltanto con strumenti specifici a pagamento",
+      "Perché va applicata solo ai contenuti pubblicati sul Web"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un buon contrasto è più leggibile anche sotto la luce diretta del sole."
+  },
+  {
+    "id": 31,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa protegge il diritto d'autore (copyright)?",
+    "options": [
+      "Solo i contenuti non reperibili online",
+      "I contenuti soltanto fino alla loro pubblicazione",
+      "I contenuti creati da altri e ne regola l'utilizzo, anche quando sono facili da scaricare",
+      "Solo i contenuti creati da un'intelligenza artificiale"
+    ],
+    "correctIndex": 2,
+    "explanation": "Una foto non diventa libera solo perché è visibile e scaricabile."
+  },
+  {
+    "id": 32,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il modello \"alcuni diritti riservati\"?",
+    "options": [
+      "Un modello in cui l'autore rinuncia a ogni diritto",
+      "Un modello in cui solo l'uso commerciale è consentito",
+      "Un modello in cui il contenuto è riutilizzabile senza alcuna condizione",
+      "Un modello in cui l'autore concede permessi in anticipo, a una condizione come la citazione della fonte: Creative Commons"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il modello classico è invece \"tutti i diritti riservati\"."
+  },
+  {
+    "id": 33,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi fondò nel 2001 l'organizzazione no profit Creative Commons?",
+    "options": [
+      "Sam Schillace, Steve Newman e Claudia Carpenter",
+      "Lawrence Lessig, Hal Abelson ed Eric Eldred",
+      "Charles Goldfarb, Edward Mosher e Raymond Lorie",
+      "Dan Bricklin, Bob Frankston e Ivan Zhao"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lessig era docente a Stanford e Abelson informatico del MIT."
+  },
+  {
+    "id": 34,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando furono presentate ufficialmente le licenze Creative Commons e quando fu rilasciata la prima versione?",
+    "options": [
+      "Presentate nel dicembre 2002; prima versione nel maggio 2002",
+      "Presentate nel maggio 2001; prima versione nel dicembre 2001",
+      "Presentate nel maggio 2002; prima versione nel dicembre 2002",
+      "Presentate nel maggio 2007; prima versione nel dicembre 2007"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'organizzazione era stata fondata nel 2001."
+  },
+  {
+    "id": 35,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti contenuti digitali erano distribuiti con licenza Creative Commons entro il 2007?",
+    "options": [
+      "Quasi 4,7 milioni",
+      "Oltre 470 milioni",
+      "Oltre 10 milioni",
+      "Oltre 100 milioni"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nel giro di due anni erano già quasi 4,7 milioni."
+  },
+  {
+    "id": 36,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un'automazione?",
+    "options": [
+      "Una sequenza di comandi da inserire ogni volta a mano",
+      "Un programma che esegue ogni compito al posto di chi lo usa",
+      "Un insieme di dati ordinati secondo un criterio fisso",
+      "Una regola del tipo \"se accade A, allora fai B\", impostata una volta perché un sistema la esegua da solo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il sistema la esegue ogni volta che si ripresenta la stessa situazione."
+  },
+  {
+    "id": 37,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono il trigger e l'azione di un'automazione?",
+    "options": [
+      "Il trigger è il risultato finale; l'azione è l'evento iniziale",
+      "Il trigger è il programma usato; l'azione è il dispositivo",
+      "Il trigger è l'evento che fa scattare la regola; l'azione è ciò che deve seguirne",
+      "Il trigger è l'errore da evitare; l'azione è la correzione"
+    ],
+    "correctIndex": 2,
+    "explanation": "Molte piattaforme permettono di costruire automazioni senza scrivere codice."
+  },
+  {
+    "id": 38,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché una regola automatica evita errori rispetto al lavoro a mano?",
+    "options": [
+      "Perché richiede un controllo manuale a ogni esecuzione",
+      "Perché esegue passaggi diversi a ogni ripetizione",
+      "Perché esegue sempre la stessa sequenza, senza stancarsi e senza saltare un passaggio",
+      "Perché evita di dover descrivere il compito in anticipo"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un'operazione ripetuta a mano introduce prima o poi un errore di distrazione."
+  },
+  {
+    "id": 39,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa significa l'acronimo IFTTT?",
+    "options": [
+      "\"If This, Then That\"",
+      "\"Internet For Tools, Tech and Tasks\"",
+      "\"Input For The Task, Then Terminate\"",
+      "\"If Task Then Transfer\""
+    ],
+    "correctIndex": 0,
+    "explanation": "È la struttura logica \"if-then\" alla base di ogni linguaggio di programmazione."
+  },
+  {
+    "id": 40,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu lanciato al pubblico il servizio IFTTT?",
+    "options": [
+      "Nel dicembre 2010",
+      "Nel settembre 2010",
+      "Nel settembre 2011",
+      "Nel dicembre 2011"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il 14 dicembre 2010 Linden Tibbets aveva annunciato il progetto."
+  },
+  {
+    "id": 41,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quante connessioni erano disponibili all'inizio su IFTTT?",
+    "options": [
+      "22, tra cui email, Twitter e meteo",
+      "222, tra cui email, Twitter e meteo",
+      "12, tra cui email e Twitter",
+      "Più di mille, tra cui email e meteo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Oggi la piattaforma collega più di mille servizi."
+  },
+  {
+    "id": 42,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa punta a fare la produttività digitale moderna?",
+    "options": [
+      "Archiviare ogni informazione in un solo documento di testo",
+      "Aggiungere un nuovo strumento per ogni funzione",
+      "Riunire in un unico spazio di lavoro funzioni che un tempo richiedevano strumenti separati, come note, documenti, attività e calendari",
+      "Eliminare tutti gli strumenti digitali dal lavoro"
+    ],
+    "correctIndex": 2,
+    "explanation": "Riduce il tempo perso passando da un programma all'altro."
+  },
+  {
+    "id": 43,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il costo reale di informazioni sparse tra troppi strumenti scollegati?",
+    "options": [
+      "Il costo dell'abbonamento a ciascuno strumento",
+      "Il tempo necessario per aprire ciascun programma",
+      "Il tempo speso a ricordare dove si trova ciascuna informazione e a tenerle aggiornate in più posti",
+      "Il numero di errori nel testo"
+    ],
+    "correctIndex": 2,
+    "explanation": "Non è solo il tempo di apertura di ciascuno strumento."
+  },
+  {
+    "id": 44,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi fondò Notion a San Francisco nel 2013?",
+    "options": [
+      "Linden Tibbets e Jesse Tane",
+      "David Holz e dieci ingegneri",
+      "Ivan Zhao e Simon Last",
+      "Dan Bricklin e Bob Frankston"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'obiettivo iniziale era far costruire strumenti digitali su misura senza saper programmare."
+  },
+  {
+    "id": 45,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Dove si trasferì temporaneamente il team di Notion, quasi sul punto di chiudere, per ricostruire il prodotto?",
+    "options": [
+      "A Boston, negli Stati Uniti",
+      "A Oslo, in Norvegia",
+      "A Kyoto, in Giappone",
+      "A Chicago, negli Stati Uniti"
+    ],
+    "correctIndex": 2,
+    "explanation": "Zhao e Last capirono che servivano spazi unici per note, documenti e attività, non strumenti da programmare."
+  },
+  {
+    "id": 46,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno fu lanciata la versione di Notion che conosciamo oggi?",
+    "options": [
+      "Nel 2013",
+      "Nel 2021",
+      "Nel 2011",
+      "Nel 2018"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il primo progetto del 2013 non aveva incontrato il successo sperato."
+  },
+  {
+    "id": 47,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il professionista digitale secondo il modulo?",
+    "options": [
+      "Chi ha sviluppato l'abitudine di aggiornare le proprie competenze man mano che gli strumenti cambiano",
+      "Chi conosce perfettamente gli strumenti di oggi",
+      "Chi usa sempre gli strumenti più recenti",
+      "Chi lavora solo nel settore tecnologico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il cambiamento, nel digitale, non è un'eccezione: è la regola."
+  },
+  {
+    "id": 48,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la competenza più importante, secondo il modulo?",
+    "options": [
+      "Saper usare un singolo programma alla perfezione",
+      "Saper riconoscere quando un nuovo strumento risolve un problema reale e impararlo rapidamente",
+      "Saper rifiutare ogni nuovo strumento per abitudine",
+      "Saper adottare subito ogni novità disponibile"
+    ],
+    "correctIndex": 1,
+    "explanation": "Riguarda chiunque usi il digitale per il proprio lavoro."
+  },
+  {
+    "id": 49,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando il World Economic Forum pubblicò l'edizione 2025 del Future of Jobs Report?",
+    "options": [
+      "L'8 gennaio 2030, a Ginevra",
+      "L'8 gennaio 2025, a Ginevra",
+      "L'8 gennaio 2025, a New York",
+      "L'8 giugno 2025, a Ginevra"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il rapporto si basa su un'indagine su oltre mille aziende."
+  },
+  {
+    "id": 50,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale percentuale delle competenze fondamentali, secondo il rapporto, sarà cambiata entro il 2030?",
+    "options": [
+      "59%",
+      "55%",
+      "39%",
+      "14%"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il rapporto riguarda più di 14 milioni di lavoratori in 55 economie."
+  },
+  {
+    "id": 51,
+    "module": "creazione-di-contenuti-digitali",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Su cento lavoratori nel mondo, quanti avranno bisogno di formazione entro il 2030, secondo il rapporto?",
+    "options": [
+      "Cinquantanove",
+      "Cinquantacinque",
+      "Trentanove",
+      "Quattordici"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il pensiero analitico è la competenza più richiesta."
+  }
+]

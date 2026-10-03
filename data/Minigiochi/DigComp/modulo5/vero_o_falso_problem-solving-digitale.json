@@ -1,0 +1,407 @@
+[
+  {
+    "id": 1,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il troubleshooting non è un tentativo casuale: è una sequenza di domande che restringe le cause possibili.",
+    "answer": true,
+    "explanation": "Ogni risposta elimina intere categorie di cause."
+  },
+  {
+    "id": 2,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una domanda utile del troubleshooting è se il problema riguarda un solo dispositivo o anche altri della stessa rete.",
+    "answer": true,
+    "explanation": "Aiuta a restringere il campo."
+  },
+  {
+    "id": 3,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Negli anni Trenta Sakichi Toyoda mise a punto il metodo dei \"cinque perché\".",
+    "answer": true,
+    "explanation": "Chiedeva \"perché?\" circa cinque volte per arrivare alla causa reale."
+  },
+  {
+    "id": 4,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il metodo dei \"cinque perché\" fu diffuso da Taiichi Ohno nel Toyota Production System.",
+    "answer": true,
+    "explanation": "Avvenne nel secondo dopoguerra."
+  },
+  {
+    "id": 5,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La diagnosi degli errori isola con certezza l'elemento preciso che causa il malfunzionamento.",
+    "answer": true,
+    "explanation": "È il passaggio successivo al troubleshooting."
+  },
+  {
+    "id": 6,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Isolare le variabili una alla volta è il modo più affidabile per scoprire la causa di un errore.",
+    "answer": true,
+    "explanation": "Cambiare più cose insieme può risolvere per caso ma non insegna nulla."
+  },
+  {
+    "id": 7,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il 9 settembre 1947 i tecnici del Mark II di Harvard trovarono una falena incastrata in un relè.",
+    "answer": true,
+    "explanation": "L'insetto fu incollato sul registro tecnico."
+  },
+  {
+    "id": 8,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il termine \"bug\" era già usato nel gergo ingegneristico, anche da Thomas Edison negli anni Settanta dell'Ottocento.",
+    "answer": true,
+    "explanation": "L'episodio del 1947 lo rese memorabile in senso letterale."
+  },
+  {
+    "id": 9,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con l'operatore E entrambe le condizioni devono essere vere insieme.",
+    "answer": true,
+    "explanation": "Con O basta che una sola lo sia."
+  },
+  {
+    "id": 10,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'operatore NON inverte una condizione, da vera a falsa o viceversa.",
+    "answer": true,
+    "explanation": "Cercare \"bicicletta NON elettrica\" esclude i risultati elettrici."
+  },
+  {
+    "id": 11,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1854 George Boole pubblicò \"An Investigation of the Laws of Thought\".",
+    "answer": true,
+    "explanation": "Trattò la logica come un sistema algebrico."
+  },
+  {
+    "id": 12,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1937 Claude Shannon dimostrò che l'algebra booleana serviva a progettare circuiti con interruttori acceso/spento.",
+    "answer": true,
+    "explanation": "Lo fece nella sua tesi di laurea."
+  },
+  {
+    "id": 13,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un diagramma di flusso costringe a esplicitare ogni bivio di un procedimento.",
+    "answer": true,
+    "explanation": "Aiuta a scoprire i casi eccezionali risolti \"a intuito\"."
+  },
+  {
+    "id": 14,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1947 l'ASME adottò simboli standard per i diagrammi di flusso: rettangoli per le azioni, rombi per le decisioni, frecce per il percorso.",
+    "answer": true,
+    "explanation": "Nel 1921 i Gilbreth avevano presentato uno dei primi tentativi."
+  },
+  {
+    "id": 15,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una checklist protegge dall'errore di dimenticare un passaggio per distrazione.",
+    "answer": true,
+    "explanation": "Non sostituisce la competenza."
+  },
+  {
+    "id": 16,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il 30 ottobre 1935 il prototipo Boeing Modello 299 precipitò a Wright Field.",
+    "answer": true,
+    "explanation": "Morirono il maggiore Ployer Hill e un osservatore Boeing."
+  },
+  {
+    "id": 17,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'incidente del Modello 299 fu causato da un dispositivo di sicurezza dei timoni di coda che l'equipaggio dimenticò di sbloccare.",
+    "answer": true,
+    "explanation": "Non fu un guasto tecnico."
+  },
+  {
+    "id": 18,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per scegliere uno strumento contano diffusione, compatibilità e probabilità di supporto nel tempo.",
+    "answer": true,
+    "explanation": "Non solo le specifiche tecniche."
+  },
+  {
+    "id": 19,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il Betamax di Sony fu lanciato nel 1975 e il VHS di JVC nel 1976.",
+    "answer": true,
+    "explanation": "Molti esperti consideravano il Betamax leggermente superiore."
+  },
+  {
+    "id": 20,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "JVC offrì il VHS a numerosi produttori, mentre Sony tenne il Betamax proprietario.",
+    "answer": true,
+    "explanation": "Questo favorì il VHS."
+  },
+  {
+    "id": 21,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La resistenza al cambiamento è un meccanismo naturale, non pigrizia.",
+    "answer": true,
+    "explanation": "Un'abitudine consolidata richiede pochissimo sforzo mentale."
+  },
+  {
+    "id": 22,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Chi si adatta rapidamente non è necessariamente più intelligente, ma tollera meglio la scomodità iniziale.",
+    "answer": true,
+    "explanation": "Sapendo che è temporanea."
+  },
+  {
+    "id": 23,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1936 August Dvorak brevettò una disposizione alternativa dei tasti della tastiera.",
+    "answer": true,
+    "explanation": "Mise le lettere più usate sulla riga centrale."
+  },
+  {
+    "id": 24,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La QWERTY non fu mai sostituita su scala di massa perché il costo collettivo del cambiamento superava il beneficio individuale.",
+    "answer": true,
+    "explanation": "Milioni di persone avevano già investito anni nell'imparare quella disposizione."
+  },
+  {
+    "id": 25,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Chi crede che le proprie capacità possano crescere interpreta una difficoltà come \"non ancora\".",
+    "answer": true,
+    "explanation": "Chi ha una mentalità fissa tende invece a evitare le sfide."
+  },
+  {
+    "id": 26,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Carol Dweck pubblicò \"Mindset: The New Psychology of Success\" nel 2006.",
+    "answer": true,
+    "explanation": "La ricerca era iniziata con un primo studio del 1988."
+  },
+  {
+    "id": 27,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Dweck distinse la mentalità fissa (fixed mindset) dalla mentalità di crescita (growth mindset).",
+    "answer": true,
+    "explanation": "Chi ha una mentalità fissa pensa che talento e intelligenza siano innati."
+  },
+  {
+    "id": 28,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il troubleshooting consiste nel riprovare più volte lo stesso tentativo finché funziona.",
+    "answer": false,
+    "explanation": "È un approccio sistematico, non un tentativo casuale."
+  },
+  {
+    "id": 29,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il metodo dei \"cinque perché\" fu messo a punto da George Boole.",
+    "answer": false,
+    "explanation": "Fu messo a punto da Sakichi Toyoda."
+  },
+  {
+    "id": 30,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il metodo dei \"cinque perché\" fu messo a punto negli anni Cinquanta da Taiichi Ohno.",
+    "answer": false,
+    "explanation": "Toyoda lo mise a punto negli anni Trenta; Ohno lo diffuse nel dopoguerra."
+  },
+  {
+    "id": 31,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Cambiare più cose insieme è il modo migliore per capire la causa di un errore.",
+    "answer": false,
+    "explanation": "Può risolvere per caso, ma non insegna nulla sulla causa."
+  },
+  {
+    "id": 32,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La falena fu trovata nel Mark II di Harvard nel 1969.",
+    "answer": false,
+    "explanation": "Fu trovata il 9 settembre 1947."
+  },
+  {
+    "id": 33,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il termine \"bug\" fu inventato nel 1947 dai tecnici del Mark II.",
+    "answer": false,
+    "explanation": "Era già usato da decenni nel gergo ingegneristico."
+  },
+  {
+    "id": 34,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con l'operatore O entrambe le condizioni devono essere vere insieme.",
+    "answer": false,
+    "explanation": "Con O basta che una delle due sia vera; è l'operatore E a richiedere entrambe."
+  },
+  {
+    "id": 35,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "George Boole pubblicò la sua opera sulle leggi del pensiero nel 1937.",
+    "answer": false,
+    "explanation": "La pubblicò nel 1854; il 1937 è l'anno della tesi di Shannon."
+  },
+  {
+    "id": 36,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un diagramma di flusso serve solo a chi lo legge, non a chi lo disegna.",
+    "answer": false,
+    "explanation": "Aiuta anche chi lo disegna a scoprire i casi eccezionali."
+  },
+  {
+    "id": 37,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "I simboli standard dei diagrammi di flusso furono adottati dall'ASME nel 1921.",
+    "answer": false,
+    "explanation": "Furono adottati nel 1947; nel 1921 i Gilbreth presentarono un primo tentativo."
+  },
+  {
+    "id": 38,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una checklist sostituisce la competenza di chi la usa.",
+    "answer": false,
+    "explanation": "Chi la usa deve comunque sapere cosa significa ogni voce."
+  },
+  {
+    "id": 39,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'incidente del Modello 299 fu causato da un guasto tecnico a un motore.",
+    "answer": false,
+    "explanation": "L'equipaggio aveva dimenticato di sbloccare un dispositivo di sicurezza dei timoni di coda."
+  },
+  {
+    "id": 40,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo strumento tecnicamente più avanzato è sempre quello giusto da scegliere.",
+    "answer": false,
+    "explanation": "Contano anche diffusione, compatibilità e supporto nel tempo."
+  },
+  {
+    "id": 41,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Sony offrì il Betamax in licenza a molti produttori, mentre JVC tenne il VHS proprietario.",
+    "answer": false,
+    "explanation": "È l'opposto: JVC aprì il VHS, Sony tenne il Betamax proprietario."
+  },
+  {
+    "id": 42,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La resistenza al cambiamento dipende dalla pigrizia di chi la prova.",
+    "answer": false,
+    "explanation": "È un meccanismo naturale, legato allo sforzo di reimparare."
+  },
+  {
+    "id": 43,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La disposizione di Dvorak si impose su scala di massa sostituendo la QWERTY.",
+    "answer": false,
+    "explanation": "La QWERTY non fu mai sostituita."
+  },
+  {
+    "id": 44,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Chi crede che le proprie capacità siano un dato fisso continua più facilmente a provare cose nuove.",
+    "answer": false,
+    "explanation": "Tende a evitare le situazioni in cui potrebbe fallire."
+  },
+  {
+    "id": 45,
+    "module": "problem-solving-digitale",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Carol Dweck pubblicò \"Mindset\" nel 1988.",
+    "answer": false,
+    "explanation": "Lo pubblicò nel 2006; il 1988 è l'anno del primo studio."
+  }
+]

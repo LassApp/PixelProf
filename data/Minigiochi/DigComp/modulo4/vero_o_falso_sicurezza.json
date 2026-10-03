@@ -1,0 +1,605 @@
+[
+  {
+    "id": 1,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un password manager genera, conserva e inserisce automaticamente password uniche e complesse.",
+    "answer": true,
+    "explanation": "Chi lo usa deve ricordare una sola password."
+  },
+  {
+    "id": 2,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con il credential stuffing una password rubata viene provata su altri account che usano la stessa combinazione.",
+    "answer": true,
+    "explanation": "Per questo conviene una password diversa per ogni account."
+  },
+  {
+    "id": 3,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nella violazione di RockYou.com del dicembre 2009 furono sottratte le credenziali di oltre 32 milioni di account.",
+    "answer": true,
+    "explanation": "Le password erano conservate in chiaro."
+  },
+  {
+    "id": 4,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La password più diffusa nell'elenco rockyou.txt era \"123456\", usata da oltre 290.000 persone.",
+    "answer": true,
+    "explanation": "L'elenco è oggi usato dai ricercatori per testare i sistemi."
+  },
+  {
+    "id": 5,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'MFA aggiunge alla password un secondo elemento, come un codice temporaneo, un'app o un'impronta digitale.",
+    "answer": true,
+    "explanation": "Conoscere la sola password non basta più."
+  },
+  {
+    "id": 6,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Tra l'aprile e il giugno 2024 furono sottratti dati da circa 165 aziende clienti di Snowflake.",
+    "answer": true,
+    "explanation": "Gli aggressori usarono credenziali rubate da un malware."
+  },
+  {
+    "id": 7,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nessuno degli account violati di Snowflake aveva l'MFA attiva: il servizio la offriva ma non la imponeva.",
+    "answer": true,
+    "explanation": "L'infrastruttura di Snowflake era rimasta sicura."
+  },
+  {
+    "id": 8,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il phishing non \"sfonda\" una protezione tecnica: è la vittima a consegnare volontariamente l'informazione, ingannata.",
+    "answer": true,
+    "explanation": "Il messaggio crea spesso un senso di urgenza."
+  },
+  {
+    "id": 9,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il phishing condotto per telefono si chiama vishing.",
+    "answer": true,
+    "explanation": "Può avvenire anche via email o SMS."
+  },
+  {
+    "id": 10,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il 19 marzo 2016 John Podesta ricevette un'email di phishing che sembrava un avviso di sicurezza di Google.",
+    "answer": true,
+    "explanation": "La pagina contraffatta era opera del gruppo \"Fancy Bear\"."
+  },
+  {
+    "id": 11,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il malware arriva spesso camuffato da qualcosa che l'utente stesso decide di aprire, installare o eseguire.",
+    "answer": true,
+    "explanation": "Raramente sfonda un sistema con la forza bruta."
+  },
+  {
+    "id": 12,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un trojan si presenta come qualcosa di utile ma nasconde una funzione dannosa.",
+    "answer": true,
+    "explanation": "Il nome deriva dal cavallo di Troia."
+  },
+  {
+    "id": 13,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "WannaCry iniziò a diffondersi il 12 maggio 2017 sfruttando la falla EternalBlue dei sistemi Windows.",
+    "answer": true,
+    "explanation": "Microsoft aveva pubblicato la correzione circa due mesi prima."
+  },
+  {
+    "id": 14,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "WannaCry infettò oltre 200.000 computer in più di 150 paesi, colpendo anche il Servizio Sanitario Nazionale britannico.",
+    "answer": true,
+    "explanation": "Chiedeva un riscatto in bitcoin."
+  },
+  {
+    "id": 15,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il ransomware cifra i file di un dispositivo e chiede un pagamento, quasi sempre in criptovaluta.",
+    "answer": true,
+    "explanation": "Pagare non offre alcuna garanzia."
+  },
+  {
+    "id": 16,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'unica vera protezione in caso di ransomware è aver già fatto un backup.",
+    "answer": true,
+    "explanation": "Permette di ripristinare tutto senza trattare con l'aggressore."
+  },
+  {
+    "id": 17,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Norsk Hydro fu colpita nella notte tra il 18 e il 19 marzo 2019 dal ransomware LockerGoga.",
+    "answer": true,
+    "explanation": "Non pagò alcun riscatto e ripristinò i sistemi dai backup."
+  },
+  {
+    "id": 18,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il recupero di Norsk Hydro costò circa 75 milioni di dollari.",
+    "answer": true,
+    "explanation": "Richiese diverse settimane."
+  },
+  {
+    "id": 19,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La regola del 3-2-1 prevede tre copie dei dati, su due tipi di supporto, con una in un luogo fisicamente separato.",
+    "answer": true,
+    "explanation": "Riduce la possibilità che un solo evento distrugga tutto."
+  },
+  {
+    "id": 20,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La sincronizzazione di un file tra più dispositivi non equivale a un backup.",
+    "answer": true,
+    "explanation": "Una cancellazione o una cifratura si propaga alle copie."
+  },
+  {
+    "id": 21,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il 31 gennaio 2017 un amministratore di GitLab cancellò per errore circa 300 gigabyte dal database di produzione.",
+    "answer": true,
+    "explanation": "Dei cinque sistemi di backup nessuno funzionava in modo affidabile."
+  },
+  {
+    "id": 22,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo la responsabilità condivisa, anche l'utente è responsabile di come configura e protegge il proprio accesso al cloud.",
+    "answer": true,
+    "explanation": "Il fornitore risponde invece dell'infrastruttura."
+  },
+  {
+    "id": 23,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nell'ottobre 2016 le credenziali del cloud di Uber furono trovate in un repository privato su GitHub.",
+    "answer": true,
+    "explanation": "Erano scritte per errore direttamente nel codice."
+  },
+  {
+    "id": 24,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nella violazione di Uber furono scaricati i dati di circa 57 milioni tra utenti e autisti.",
+    "answer": true,
+    "explanation": "Uber pagò 100.000 dollari agli aggressori, camuffati da ricompensa."
+  },
+  {
+    "id": 25,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un dato personale può identificare una persona anche quando ogni singolo dato sembra innocuo.",
+    "answer": true,
+    "explanation": "Contano le combinazioni di dati."
+  },
+  {
+    "id": 26,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nell'agosto 2006 AOL pubblicò circa 20 milioni di ricerche di oltre 650.000 utenti, sostituendo il nome con un numero.",
+    "answer": true,
+    "explanation": "I giornalisti del New York Times riuscirono comunque a risalire a un'utente."
+  },
+  {
+    "id": 27,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il GDPR riconosce a ogni persona il diritto di sapere quali dati sono conservati su di lei e di chiederne la cancellazione.",
+    "answer": true,
+    "explanation": "È il cosiddetto diritto all'oblio."
+  },
+  {
+    "id": 28,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il GDPR è in vigore dal 25 maggio 2018.",
+    "answer": true,
+    "explanation": "È la normativa europea sulla protezione dei dati personali."
+  },
+  {
+    "id": 29,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il 22 maggio 2023 la Data Protection Commission irlandese inflisse a Meta una sanzione da 1,2 miliardi di euro.",
+    "answer": true,
+    "explanation": "Superò il precedente record di 746 milioni di euro inflitto ad Amazon nel 2021."
+  },
+  {
+    "id": 30,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per il benessere digitale equilibrio non significa rinuncia, ma può includere anche la scelta di non usare la tecnologia.",
+    "answer": true,
+    "explanation": "Si tratta di decidere con calma quanto tempo dedicare."
+  },
+  {
+    "id": 31,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Clickbait, gamification, nudging e notifiche continue sono tecniche per prolungare l'uso delle app.",
+    "answer": true,
+    "explanation": "Indeboliscono la capacità di decidere con calma."
+  },
+  {
+    "id": 32,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il 4 giugno 2018, al WWDC, Apple presentò Screen Time per iOS 12.",
+    "answer": true,
+    "explanation": "Google aveva presentato Digital Wellbeing per Android nel maggio 2018."
+  },
+  {
+    "id": 33,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il cyberbullismo è un comportamento ripetuto, praticato attraverso le tecnologie digitali, per spaventare, irritare o mettere in ridicolo.",
+    "answer": true,
+    "explanation": "La Legge 71 del 2017 lo definisce per i minorenni."
+  },
+  {
+    "id": 34,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Davanti al cyberbullismo si conservano le prove prima di cancellare qualunque cosa e si blocca il mittente.",
+    "answer": true,
+    "explanation": "Poi si segnala alla piattaforma e si parla con un adulto di fiducia."
+  },
+  {
+    "id": 35,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La Legge 29 maggio 2017, n. 71 è stata la prima legge italiana a definire il cyberbullismo.",
+    "answer": true,
+    "explanation": "È in vigore dal 18 giugno 2017."
+  },
+  {
+    "id": 36,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il gestore ha ventiquattro ore per prendere in carico una richiesta di rimozione e quarantotto ore per provvedere.",
+    "answer": true,
+    "explanation": "Altrimenti ci si può rivolgere al Garante per la protezione dei dati personali."
+  },
+  {
+    "id": 37,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I rifiuti elettronici non vanno nell'indifferenziata: si portano ai centri di raccolta o al rivenditore.",
+    "answer": true,
+    "explanation": "Prima si copiano i dati utili e si cancellano quelli personali."
+  },
+  {
+    "id": 38,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 2022 sono stati prodotti 62 milioni di tonnellate di rifiuti elettronici, l'82% in più rispetto al 2010.",
+    "answer": true,
+    "explanation": "Solo il 22,3% è stato documentato come raccolto e riciclato correttamente."
+  },
+  {
+    "id": 39,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La sicurezza comportamentale riguarda le abitudini quotidiane che rendono davvero efficaci gli strumenti tecnici.",
+    "answer": true,
+    "explanation": "Nessuno strumento funziona da solo."
+  },
+  {
+    "id": 40,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1986 Clifford Stoll partì da una discrepanza di 75 centesimi di dollaro per scoprire una rete di spionaggio.",
+    "answer": true,
+    "explanation": "Raccontò la vicenda nel libro \"L'uovo del cuculo\"."
+  },
+  {
+    "id": 41,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un password manager obbliga a ricordare a memoria una password diversa per ogni account.",
+    "answer": false,
+    "explanation": "Ne basta una sola: quella che protegge il manager."
+  },
+  {
+    "id": 42,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il credential stuffing consiste nell'indovinare una password provando tutte le combinazioni possibili.",
+    "answer": false,
+    "explanation": "Consiste nel provare su altri account una password già rubata."
+  },
+  {
+    "id": 43,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Le password di RockYou.com erano protette da una cifratura molto robusta.",
+    "answer": false,
+    "explanation": "Erano conservate in chiaro, senza alcuna cifratura."
+  },
+  {
+    "id": 44,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Gli aggressori di Snowflake violarono l'infrastruttura del servizio.",
+    "answer": false,
+    "explanation": "Usarono credenziali rubate, provate sugli account dei singoli clienti."
+  },
+  {
+    "id": 45,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per l'MFA basta una seconda password diversa dalla prima.",
+    "answer": false,
+    "explanation": "Serve un secondo fattore di natura diversa: qualcosa che si ha o che si è."
+  },
+  {
+    "id": 46,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il phishing sfonda le protezioni tecniche di un sistema con la forza.",
+    "answer": false,
+    "explanation": "Si limita a chiedere, con inganno, che sia la vittima a fornire l'informazione."
+  },
+  {
+    "id": 47,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'attacco a Podesta fu opera del gruppo \"Shadow Brokers\".",
+    "answer": false,
+    "explanation": "Fu opera di \"Fancy Bear\"; gli Shadow Brokers resero pubblica EternalBlue."
+  },
+  {
+    "id": 48,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un virus si presenta come qualcosa di utile ma nasconde una funzione dannosa.",
+    "answer": false,
+    "explanation": "Questa è la descrizione del trojan; il virus si attacca ad altri file."
+  },
+  {
+    "id": 49,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "WannaCry iniziò a diffondersi il 19 marzo 2016.",
+    "answer": false,
+    "explanation": "Iniziò il 12 maggio 2017."
+  },
+  {
+    "id": 50,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Pagare il riscatto di un ransomware garantisce di riavere i file.",
+    "answer": false,
+    "explanation": "Non offre alcuna garanzia reale."
+  },
+  {
+    "id": 51,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Norsk Hydro decise di pagare il riscatto per tornare operativa più in fretta.",
+    "answer": false,
+    "explanation": "Decise di non pagare e di ripristinare i sistemi dai backup."
+  },
+  {
+    "id": 52,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un backup conservato sullo stesso dispositivo dei dati originali protegge da furto o incendio.",
+    "answer": false,
+    "explanation": "Non protegge da eventi che colpiscono l'intero ambiente."
+  },
+  {
+    "id": 53,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "GitLab non aveva alcun sistema di backup al momento dell'incidente del 2017.",
+    "answer": false,
+    "explanation": "Credeva di averne cinque, ma nessuno funzionava in modo affidabile."
+  },
+  {
+    "id": 54,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel cloud la sicurezza dei dati dipende solo dal fornitore del servizio.",
+    "answer": false,
+    "explanation": "Dipende anche da come l'utente configura e protegge il proprio accesso."
+  },
+  {
+    "id": 55,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Le credenziali di Uber furono rubate con un'email di phishing.",
+    "answer": false,
+    "explanation": "Furono trovate per errore nel codice di un repository privato su GitHub."
+  },
+  {
+    "id": 56,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Rimuovere il nome da un insieme di dati rende sempre anonimo il dato.",
+    "answer": false,
+    "explanation": "Pochi dati banali messi insieme possono restringere il campo a una sola persona."
+  },
+  {
+    "id": 57,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "AOL pubblicò le ricerche degli utenti nell'agosto 2013.",
+    "answer": false,
+    "explanation": "Le pubblicò nell'agosto 2006; il 2013 è l'anno in cui si concluse la causa legale."
+  },
+  {
+    "id": 58,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il GDPR consente di raccogliere dati genericamente, per ogni evenienza.",
+    "answer": false,
+    "explanation": "I dati vanno raccolti solo per uno scopo dichiarato e specifico."
+  },
+  {
+    "id": 59,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La sanzione a Meta del 2023 riguardava password conservate in chiaro.",
+    "answer": false,
+    "explanation": "Riguardava il trasferimento dei dati degli utenti europei verso gli Stati Uniti."
+  },
+  {
+    "id": 60,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le tecniche per prolungare l'uso delle app sono sempre illegali.",
+    "answer": false,
+    "explanation": "Non sono in sé illegali né sempre dannose."
+  },
+  {
+    "id": 61,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Tristan Harris avviò Time Well Spent nel 2018.",
+    "answer": false,
+    "explanation": "Lo avviò nel 2016, dopo aver lasciato Google."
+  },
+  {
+    "id": 62,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il cyberbullismo è meno grave del bullismo perché è virtuale.",
+    "answer": false,
+    "explanation": "Lo schermo ne cambia le regole in peggio."
+  },
+  {
+    "id": 63,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La Legge 71 del 2017 ha introdotto nuovi reati specifici per il cyberbullismo.",
+    "answer": false,
+    "explanation": "Non ha introdotto nuovi reati: ha puntato soprattutto sulla prevenzione."
+  },
+  {
+    "id": 64,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sostituire un oggetto fisico con uno digitale è sempre più sostenibile.",
+    "answer": false,
+    "explanation": "Non è automaticamente più sostenibile: il dispositivo ha materiali tossici e richiede energia."
+  },
+  {
+    "id": 65,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 2022 oltre il 70% dei rifiuti elettronici è stato riciclato correttamente.",
+    "answer": false,
+    "explanation": "Solo il 22,3% è stato documentato come raccolto e riciclato."
+  },
+  {
+    "id": 66,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La sicurezza informatica è un traguardo che si raggiunge una volta per tutte.",
+    "answer": false,
+    "explanation": "È una pratica quotidiana, fatta di piccole scelte ripetute."
+  },
+  {
+    "id": 67,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Clifford Stoll partì da una discrepanza contabile di 75 milioni di dollari.",
+    "answer": false,
+    "explanation": "La discrepanza era di appena 75 centesimi di dollaro."
+  }
+]

@@ -16,6 +16,7 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 - **Area Reti e Internet** → `attiva` — JSON realizzati e caricati.
 - **Area Malware e Minacce Informatiche** → `attiva` — JSON realizzati e caricati.
 - **Area Intelligenza Artificiale** → `attiva` — contenuti presenti, JSON realizzati e caricati.
+- **Area DigComp** → `attiva` — 10 Fasi (Fasi 1–5 formazione del cittadino, Fasi 6–10 formazione del docente — Edu): moduli definiti, JSON realizzati per tutte le 10 Fasi.
 
 ---
 
@@ -50,6 +51,11 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 **Descrizione:** Comprendere i concetti fondamentali dell'intelligenza artificiale, il funzionamento dei principali sistemi AI e il loro utilizzo consapevole, sicuro e responsabile.
 **Stato:** attiva
 **Nota:** JSON realizzati e caricati.
+
+### 🧭 Area DigComp
+**Descrizione:** Sviluppare le competenze digitali secondo il quadro DigComp, articolate in 10 Fasi: le Fasi 1–5 riguardano la formazione del cittadino, le Fasi 6–10 la formazione del docente (Edu).
+**Stato:** attiva
+**Nota:** moduli definiti, JSON realizzati per tutte le 10 Fasi (Fasi 1–5 formazione del cittadino, Fasi 6–10 formazione del docente — Edu).
 
 ---
 
@@ -1038,11 +1044,154 @@ data/
   - Path base: `data/Minigiochi/Intelligenza_Artificiale/modulo13/`
   - File: `abbina_futuro-dell-ai.json`, `completa_la_frase_futuro-dell-ai.json`, `quiz_futuro-dell-ai.json`, `speedquiz_futuro-dell-ai.json`, `vero_o_falso_futuro-dell-ai.json`
 
+### 🧭 Area DigComp
+
+**Stato:** attiva
+**Nota:** moduli definiti, JSON realizzati per tutte le 10 Fasi (Fasi 1–5 formazione del cittadino, Fasi 6–10 formazione del docente — Edu).
+
+> **Nota:** l'area DigComp è organizzata in 10 Fasi (Fase N = `moduloN` nel path). Le Fasi 1–5 appartengono alla formazione del cittadino; le Fasi 6–10 appartengono alla formazione del docente (Edu).
+
+```text
+data/
+└── Minigiochi/
+    └── DigComp/
+        ├── modulo1/
+        │   ├── abbina_alfabetizzazione-digitale.json
+        │   ├── completa_la_frase_alfabetizzazione-digitale.json
+        │   ├── quiz_alfabetizzazione-digitale.json
+        │   ├── speedquiz_alfabetizzazione-digitale.json
+        │   └── vero_o_falso_alfabetizzazione-digitale.json
+        ├── modulo2/
+        │   ├── abbina_comunicazione-e-collaborazione.json
+        │   ├── completa_la_frase_comunicazione-e-collaborazione.json
+        │   ├── quiz_comunicazione-e-collaborazione.json
+        │   ├── speedquiz_comunicazione-e-collaborazione.json
+        │   └── vero_o_falso_comunicazione-e-collaborazione.json
+        ├── modulo3/
+        │   ├── abbina_creazione-di-contenuti-digitali.json
+        │   ├── completa_la_frase_creazione-di-contenuti-digitali.json
+        │   ├── quiz_creazione-di-contenuti-digitali.json
+        │   ├── speedquiz_creazione-di-contenuti-digitali.json
+        │   └── vero_o_falso_creazione-di-contenuti-digitali.json
+        ├── modulo4/
+        │   ├── abbina_sicurezza.json
+        │   ├── completa_la_frase_sicurezza.json
+        │   ├── quiz_sicurezza.json
+        │   ├── speedquiz_sicurezza.json
+        │   └── vero_o_falso_sicurezza.json
+        ├── modulo5/
+        │   ├── abbina_problem-solving-digitale.json
+        │   ├── completa_la_frase_problem-solving-digitale.json
+        │   ├── quiz_problem-solving-digitale.json
+        │   ├── speedquiz_problem-solving-digitale.json
+        │   └── vero_o_falso_problem-solving-digitale.json
+        ├── modulo6/
+        │   ├── abbina_coinvolgimento-professionale.json
+        │   ├── completa_la_frase_coinvolgimento-professionale.json
+        │   ├── quiz_coinvolgimento-professionale.json
+        │   ├── speedquiz_coinvolgimento-professionale.json
+        │   └── vero_o_falso_coinvolgimento-professionale.json
+        ├── modulo7/
+        │   ├── abbina_risorse-digitali.json
+        │   ├── completa_la_frase_risorse-digitali.json
+        │   ├── quiz_risorse-digitali.json
+        │   ├── speedquiz_risorse-digitali.json
+        │   └── vero_o_falso_risorse-digitali.json
+        ├── modulo8/
+        │   ├── abbina_pratiche-di-insegnamento-e-apprendimento.json
+        │   ├── completa_la_frase_pratiche-di-insegnamento-e-apprendimento.json
+        │   ├── quiz_pratiche-di-insegnamento-e-apprendimento.json
+        │   ├── speedquiz_pratiche-di-insegnamento-e-apprendimento.json
+        │   └── vero_o_falso_pratiche-di-insegnamento-e-apprendimento.json
+        ├── modulo9/
+        │   ├── abbina_valutazione-dell-apprendimento.json
+        │   ├── completa_la_frase_valutazione-dell-apprendimento.json
+        │   ├── quiz_valutazione-dell-apprendimento.json
+        │   ├── speedquiz_valutazione-dell-apprendimento.json
+        │   └── vero_o_falso_valutazione-dell-apprendimento.json
+        └── modulo10/
+            ├── abbina_valorizzare-le-potenzialita-degli-studenti.json
+            ├── completa_la_frase_valorizzare-le-potenzialita-degli-studenti.json
+            ├── quiz_valorizzare-le-potenzialita-degli-studenti.json
+            ├── speedquiz_valorizzare-le-potenzialita-degli-studenti.json
+            └── vero_o_falso_valorizzare-le-potenzialita-degli-studenti.json
+```
+
+- **Fase 1 — Alfabetizzazione digitale**
+  - Chiave: `alfabetizzazione-digitale`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Minigiochi/DigComp/modulo1/`
+  - File: `abbina_alfabetizzazione-digitale.json`, `completa_la_frase_alfabetizzazione-digitale.json`, `quiz_alfabetizzazione-digitale.json`, `speedquiz_alfabetizzazione-digitale.json`, `vero_o_falso_alfabetizzazione-digitale.json`
+
+- **Fase 2 — Comunicazione e collaborazione**
+  - Chiave: `comunicazione-e-collaborazione`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Minigiochi/DigComp/modulo2/`
+  - File: `abbina_comunicazione-e-collaborazione.json`, `completa_la_frase_comunicazione-e-collaborazione.json`, `quiz_comunicazione-e-collaborazione.json`, `speedquiz_comunicazione-e-collaborazione.json`, `vero_o_falso_comunicazione-e-collaborazione.json`
+
+- **Fase 3 — Creazione di contenuti digitali**
+  - Chiave: `creazione-di-contenuti-digitali`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Minigiochi/DigComp/modulo3/`
+  - File: `abbina_creazione-di-contenuti-digitali.json`, `completa_la_frase_creazione-di-contenuti-digitali.json`, `quiz_creazione-di-contenuti-digitali.json`, `speedquiz_creazione-di-contenuti-digitali.json`, `vero_o_falso_creazione-di-contenuti-digitali.json`
+
+- **Fase 4 — Sicurezza**
+  - Chiave: `sicurezza`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Minigiochi/DigComp/modulo4/`
+  - File: `abbina_sicurezza.json`, `completa_la_frase_sicurezza.json`, `quiz_sicurezza.json`, `speedquiz_sicurezza.json`, `vero_o_falso_sicurezza.json`
+
+- **Fase 5 — Problem solving digitale**
+  - Chiave: `problem-solving-digitale`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Minigiochi/DigComp/modulo5/`
+  - File: `abbina_problem-solving-digitale.json`, `completa_la_frase_problem-solving-digitale.json`, `quiz_problem-solving-digitale.json`, `speedquiz_problem-solving-digitale.json`, `vero_o_falso_problem-solving-digitale.json`
+
+- **Fase 6 — Coinvolgimento Professionale**
+  - Chiave: `coinvolgimento-professionale`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Minigiochi/DigComp/modulo6/`
+  - File: `abbina_coinvolgimento-professionale.json`, `completa_la_frase_coinvolgimento-professionale.json`, `quiz_coinvolgimento-professionale.json`, `speedquiz_coinvolgimento-professionale.json`, `vero_o_falso_coinvolgimento-professionale.json`
+
+- **Fase 7 — Risorse Digitali**
+  - Chiave: `risorse-digitali`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Minigiochi/DigComp/modulo7/`
+  - File: `abbina_risorse-digitali.json`, `completa_la_frase_risorse-digitali.json`, `quiz_risorse-digitali.json`, `speedquiz_risorse-digitali.json`, `vero_o_falso_risorse-digitali.json`
+
+- **Fase 8 — Pratiche di insegnamento e apprendimento**
+  - Chiave: `pratiche-di-insegnamento-e-apprendimento`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Minigiochi/DigComp/modulo8/`
+  - File: `abbina_pratiche-di-insegnamento-e-apprendimento.json`, `completa_la_frase_pratiche-di-insegnamento-e-apprendimento.json`, `quiz_pratiche-di-insegnamento-e-apprendimento.json`, `speedquiz_pratiche-di-insegnamento-e-apprendimento.json`, `vero_o_falso_pratiche-di-insegnamento-e-apprendimento.json`
+
+- **Fase 9 — Valutazione dell'apprendimento**
+  - Chiave: `valutazione-dell-apprendimento`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Minigiochi/DigComp/modulo9/`
+  - File: `abbina_valutazione-dell-apprendimento.json`, `completa_la_frase_valutazione-dell-apprendimento.json`, `quiz_valutazione-dell-apprendimento.json`, `speedquiz_valutazione-dell-apprendimento.json`, `vero_o_falso_valutazione-dell-apprendimento.json`
+
+- **Fase 10 — Valorizzare le potenzialità degli studenti**
+  - Chiave: `valorizzare-le-potenzialita-degli-studenti`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Minigiochi/DigComp/modulo10/`
+  - File: `abbina_valorizzare-le-potenzialita-degli-studenti.json`, `completa_la_frase_valorizzare-le-potenzialita-degli-studenti.json`, `quiz_valorizzare-le-potenzialita-degli-studenti.json`, `speedquiz_valorizzare-le-potenzialita-degli-studenti.json`, `vero_o_falso_valorizzare-le-potenzialita-degli-studenti.json`
+
 ---
 
 ## 4. Riepilogo
 
-> **Aggiornamento:** tutti i JSON di tutte le sotto-aree ECDL (incluse **IT Security** e **Online Collaboration**) e delle altre 5 Aree sono stati realizzati e caricati. Tutte le **6 aree** sono attive.
+> **Aggiornamento:** tutti i JSON di tutte le sotto-aree ECDL (incluse **IT Security** e **Online Collaboration**) e delle altre 5 Aree sono stati realizzati e caricati. È stata aggiunta l'Area **DigComp** (10 Fasi), i cui JSON sono stati realizzati per tutte le Fasi (1–5 formazione del cittadino, 6–10 formazione del docente — Edu). Tutte le **7 aree** sono attive e complete.
 
 | Area / Sotto-area | Moduli | File attesi | Realizzati | Da realizzare | Stato area |
 |---|---|---|---|---|---|
@@ -1058,11 +1207,12 @@ data/
 | Reti e Internet | 8 | 40 | 40 | 0 | attiva |
 | Malware e Minacce Informatiche | 1 | 5 | 5 | 0 | attiva |
 | Intelligenza Artificiale | 13 | 65 | 65 | 0 | attiva |
-| **Totale** | **70** | **350** | **350** | **0** | — |
+| DigComp | 10 | 50 | 50 | 0 | attiva |
+| **Totale** | **80** | **400** | **400** | **0** | — |
 
-- **Aree:** 6
+- **Aree:** 7
 - **Sotto-aree ECDL:** 7 (Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation, IT Security, Online Collaboration)
-- **Moduli totali mappati:** 70
-- **File JSON realizzati:** 350
+- **Moduli totali mappati:** 80
+- **File JSON realizzati:** 400
 - **File JSON da realizzare:** 0
-- **File JSON totali attesi:** 350
+- **File JSON totali attesi:** 400

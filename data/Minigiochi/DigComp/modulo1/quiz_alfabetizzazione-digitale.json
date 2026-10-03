@@ -1,0 +1,1157 @@
+[
+  {
+    "id": 1,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa significa \"digitale\"?",
+    "options": [
+      "Conservare le informazioni su supporti fisici tangibili",
+      "Rappresentare le informazioni solo attraverso immagini e suoni",
+      "Rappresentare le informazioni attraverso valori numerici",
+      "Trasmettere le informazioni solo attraverso la rete Internet"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un'immagine, un suono o un testo vengono tradotti in numeri prima di poter essere gestiti da un computer."
+  },
+  {
+    "id": 2,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come registra una fotografia il sensore di una fotocamera digitale?",
+    "options": [
+      "Fissa la luce direttamente su una superficie sensibile come immagine",
+      "Misura la luce punto per punto e la trasforma in valori numerici",
+      "Salva il colore di ogni punto sotto forma di parola scritta",
+      "Archivia l'immagine esattamente come la vede l'occhio umano"
+    ],
+    "correctIndex": 1,
+    "explanation": "La fotografia è ricostruita come una griglia di numeri, i pixel."
+  },
+  {
+    "id": 3,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un bit?",
+    "options": [
+      "Un programma che interpreta i dati digitali",
+      "Una griglia di numeri che ricostruisce un'immagine",
+      "Un'unità minima che può assumere dieci valori diversi",
+      "L'unità minima di informazione, che può valere solo 0 oppure 1"
+    ],
+    "correctIndex": 3,
+    "explanation": "Bit deriva da binary digit: è come un interruttore acceso o spento."
+  },
+  {
+    "id": 4,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché da sola una sequenza di bit non significa nulla?",
+    "options": [
+      "Perché i bit vanno sempre accompagnati da un testo",
+      "Perché i bit sono troppo piccoli per essere letti",
+      "Perché i bit funzionano solo se salvati nel Cloud",
+      "Perché serve una regola che dica come interpretarla"
+    ],
+    "correctIndex": 3,
+    "explanation": "Senza una regola di interpretazione il digitale è solo rumore."
+  },
+  {
+    "id": 5,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno Claude Shannon pubblicò \"A Mathematical Theory of Communication\"?",
+    "options": [
+      "Nel 1986",
+      "Nel 1948",
+      "Nel 1992",
+      "Nel 1969"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lavorava ai Bell Labs nel New Jersey quando pubblicò il saggio, in due parti, nel 1948."
+  },
+  {
+    "id": 6,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come definì l'informazione Claude Shannon?",
+    "options": [
+      "Come la quantità di segnali contenuti in un messaggio",
+      "Come l'importanza che un messaggio ha per chi lo riceve",
+      "Come incertezza ridotta, non come significato o importanza",
+      "Come il significato che un messaggio trasmette"
+    ],
+    "correctIndex": 2,
+    "explanation": "Così rese l'informazione, per la prima volta, misurabile."
+  },
+  {
+    "id": 7,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è l'hardware?",
+    "options": [
+      "L'account che custodisce i dati personali",
+      "L'insieme delle istruzioni che dicono al dispositivo cosa fare",
+      "La rete che collega i dispositivi tra loro",
+      "Tutto ciò che in un dispositivo digitale è fisico e tangibile"
+    ],
+    "correctIndex": 3,
+    "explanation": "Schermo, batteria e circuiti sono hardware."
+  },
+  {
+    "id": 8,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il software?",
+    "options": [
+      "Un componente fisico che esegue i calcoli del dispositivo",
+      "L'insieme delle istruzioni, cioè i programmi, che dicono all'hardware cosa fare",
+      "Tutto ciò che in un dispositivo digitale si può toccare",
+      "L'etichetta che indica il formato di un file"
+    ],
+    "correctIndex": 1,
+    "explanation": "App e sistema che le fa funzionare sono software."
+  },
+  {
+    "id": 9,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Un'app si blocca di continuo mentre lo schermo è perfettamente integro. Di che tipo di problema si tratta quasi sempre?",
+    "options": [
+      "Di un problema di compressione",
+      "Di un problema di hardware",
+      "Di un problema di software",
+      "Di un problema di indirizzo IP"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un guasto fisico è hardware; un errore in un programma è logico, cioè software."
+  },
+  {
+    "id": 10,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale periodo il Therac-25 fu coinvolto in almeno sei incidenti gravi?",
+    "options": [
+      "Tra il 1969 e il 1971",
+      "Tra il 1985 e il 1987",
+      "Tra il 1998 e il 2000",
+      "Tra il 1992 e il 1994"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il Therac-25 era un macchinario per la radioterapia prodotto dall'azienda canadese AECL."
+  },
+  {
+    "id": 11,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da che cosa nasceva il problema del Therac-25?",
+    "options": [
+      "Da un errore nel software di controllo, quando l'operatore modificava rapidamente i parametri",
+      "Da un'interruzione del collegamento di rete",
+      "Da un difetto dello schermo dell'operatore",
+      "Da un guasto ai circuiti meccanici di sicurezza"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'hardware funzionava correttamente: l'errore era nel software."
+  },
+  {
+    "id": 12,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa mostra il caso del Therac-25?",
+    "options": [
+      "Il software non può mai provocare danni fisici",
+      "I sistemi di sicurezza meccanici sono sempre inutili",
+      "Un hardware funzionante può produrre conseguenze gravissime se il software che lo controlla contiene un errore",
+      "Un software corretto può compensare ogni guasto dell'hardware"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il caso è studiato nei corsi di ingegneria del software."
+  },
+  {
+    "id": 13,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un ecosistema digitale?",
+    "options": [
+      "Un solo dispositivo che custodisce tutti i dati dell'utente",
+      "Un insieme di app che non condividono alcun dato",
+      "L'insieme coordinato di dispositivi, applicazioni e servizi che condividono gli stessi dati attraverso un account personale",
+      "Un servizio a pagamento che archivia le fotografie"
+    ],
+    "correctIndex": 2,
+    "explanation": "I dati non restano chiusi dentro un solo apparecchio."
+  },
+  {
+    "id": 14,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa è diventato oggi il centro della vita digitale di una persona?",
+    "options": [
+      "L'account, non il singolo dispositivo",
+      "Il browser installato sul computer",
+      "Il singolo dispositivo, non l'account",
+      "Il router di casa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il dispositivo è sostituibile; l'identità digitale, legata all'account, resta."
+  },
+  {
+    "id": 15,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Steve Jobs annunciò iCloud al Worldwide Developers Conference di Apple?",
+    "options": [
+      "Il 6 giugno 2010",
+      "Il 6 giugno 2011",
+      "Il 12 ottobre 2011",
+      "Il 29 ottobre 1969"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fu la sua ultima presentazione da un palco pubblico prima della morte."
+  },
+  {
+    "id": 16,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale servizio sostituì iCloud?",
+    "options": [
+      "iOS 5, che costava fino ad allora 99 dollari l'anno",
+      "MobileMe, che costava fino ad allora 99 dollari l'anno",
+      "MobileMe, che era gratuito",
+      "Mosaic, che costava fino ad allora 9 dollari l'anno"
+    ],
+    "correctIndex": 1,
+    "explanation": "iCloud fu lanciato gratuitamente il 12 ottobre 2011 insieme a iOS 5."
+  },
+  {
+    "id": 17,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale strategia segnò la fine di iCloud, secondo il caso?",
+    "options": [
+      "L'\"hub digitale\": un unico computer come centro a cui collegare ogni dispositivo",
+      "L'obbligo di sincronizzare tutto tramite cavo",
+      "La vendita di dispositivi separati senza servizi",
+      "L'\"hub digitale\": un unico account come centro di tutti i dispositivi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Con iCloud un Mac o un iPhone diventano terminali collegati all'account."
+  },
+  {
+    "id": 18,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il formato (o estensione) di un file?",
+    "options": [
+      "Il contenitore che custodisce i dati digitali",
+      "Il programma che modifica il contenuto del file",
+      "L'etichetta che dice al dispositivo con quali regole interpretare i dati",
+      "Il numero di bit che compongono il file"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un file .jpg va interpretato come immagine, non come testo."
+  },
+  {
+    "id": 19,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come funziona la compressione loss (con perdita)?",
+    "options": [
+      "Elimina informazioni difficili da percepire, riducendo il peso in modo permanente ma quasi invisibile",
+      "Aumenta il peso del file per conservarne la qualità",
+      "Non elimina nulla e scrive le informazioni in modo più compatto",
+      "Elimina le informazioni solo temporaneamente, per poi ripristinarle"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'occhio o l'orecchio umano fatica comunque a percepire ciò che viene eliminato."
+  },
+  {
+    "id": 20,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come funziona la compressione lossless (senza perdita)?",
+    "options": [
+      "Non elimina nulla: trova un modo più compatto di scrivere le stesse informazioni",
+      "Riduce il peso eliminando una parte dei colori",
+      "Elimina le informazioni che l'occhio fatica a percepire",
+      "Rende il file leggibile solo da certi programmi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il file, una volta riaperto, torna identico all'originale."
+  },
+  {
+    "id": 21,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando nacque il comitato Joint Photographic Experts Group?",
+    "options": [
+      "Nel 1948",
+      "Nel 1992",
+      "Nel 1986",
+      "Nel 1993"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il suo compito era sviluppare un metodo efficiente per comprimere le fotografie digitali."
+  },
+  {
+    "id": 22,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu pubblicato lo standard JPEG?",
+    "options": [
+      "Nel 1993",
+      "Nel 1992",
+      "Nel 1998",
+      "Nel 1986"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lo standard prende il nome del comitato che lo pubblicò."
+  },
+  {
+    "id": 23,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è Internet?",
+    "options": [
+      "Un servizio fatto di pagine e collegamenti",
+      "L'infrastruttura globale che collega tra loro dispositivi, server e reti",
+      "Il programma che permette di navigare le pagine",
+      "L'uso di risorse informatiche su server remoti"
+    ],
+    "correctIndex": 1,
+    "explanation": "È l'autostrada su cui viaggiano Web, email e altri servizi."
+  },
+  {
+    "id": 24,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il Web?",
+    "options": [
+      "Uno dei tanti servizi che viaggiano su Internet, fatto di pagine e collegamenti",
+      "Un magazzino remoto dove restano disponibili i file",
+      "L'infrastruttura globale che collega dispositivi, server e reti",
+      "Il codice con cui un sito viene scritto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si raggiunge tramite un browser."
+  },
+  {
+    "id": 25,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il Cloud?",
+    "options": [
+      "L'uso di risorse informatiche, come spazio e calcolo, su server remoti raggiunti tramite Internet",
+      "L'uso di risorse informatiche che si trovano sul dispositivo dell'utente",
+      "L'insieme delle pagine raggiungibili con un browser",
+      "La rete che collega tra loro dispositivi e server"
+    ],
+    "correctIndex": 0,
+    "explanation": "È un grande magazzino remoto dove i file restano disponibili da qualunque dispositivo."
+  },
+  {
+    "id": 26,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale esempio usa Internet senza passare dal Web?",
+    "options": [
+      "Un'email, una videochiamata o un aggiornamento software",
+      "La lettura di un articolo in un browser",
+      "La ricerca di un prezzo su una pagina",
+      "La consultazione del catalogo di un sito"
+    ],
+    "correctIndex": 0,
+    "explanation": "Questi servizi viaggiano su Internet ma non passano da un sito."
+  },
+  {
+    "id": 27,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu inviato il primo messaggio tra due computer collegati in rete?",
+    "options": [
+      "Il 6 ottobre 2010",
+      "Il 4 ottobre 2021",
+      "Il 23 gennaio 1993",
+      "Il 29 ottobre 1969"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il messaggio partì da UCLA verso lo Stanford Research Institute."
+  },
+  {
+    "id": 28,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale fu il primo messaggio trasmesso?",
+    "options": [
+      "\"hello\", scritto da due studenti",
+      "\"login\", trasmesso per intero",
+      "\"web\", scritto da un ricercatore",
+      "\"lo\", perché il sistema si bloccò dopo le prime due lettere di \"login\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Il messaggio doveva essere la parola \"login\"."
+  },
+  {
+    "id": 29,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti nodi collegava ARPANET all'epoca del primo messaggio?",
+    "options": [
+      "Dieci",
+      "Due",
+      "Cento",
+      "Quattro"
+    ],
+    "correctIndex": 3,
+    "explanation": "ARPANET fu finanziata dal Dipartimento della Difesa statunitense."
+  },
+  {
+    "id": 30,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il browser?",
+    "options": [
+      "Il programma che cataloga le pagine del Web in anticipo",
+      "Il programma che permette di accedere e navigare le risorse del Web, interpretando il codice ricevuto dai server",
+      "Il codice con cui è scritta una pagina web",
+      "Il servizio che invia le pagine ai dispositivi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mostra il codice a schermo in una forma leggibile."
+  },
+  {
+    "id": 31,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa invia il server di un sito al browser?",
+    "options": [
+      "Una pagina già pronta, come la vede l'utente",
+      "Un'immagine dell'intera pagina",
+      "Codice, soprattutto HTML, insieme a CSS e JavaScript",
+      "Un file compresso senza perdita"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il browser lo trasforma in testo, immagini e pulsanti."
+  },
+  {
+    "id": 32,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu rilasciata la prima versione di Mosaic?",
+    "options": [
+      "Il 12 ottobre 2011",
+      "Il 23 gennaio 1993",
+      "Il 20 marzo 2023",
+      "Il 29 ottobre 1969"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fu sviluppata da Marc Andreessen ed Eric Bina all'NCSA dell'Università dell'Illinois."
+  },
+  {
+    "id": 33,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa mostrava insieme Mosaic, a differenza dei browser precedenti?",
+    "options": [
+      "Testo e audio nella stessa pagina",
+      "Testo e immagini nella stessa pagina",
+      "Pagine web e posta elettronica",
+      "Immagini e video nella stessa pagina"
+    ],
+    "correctIndex": 1,
+    "explanation": "I browser precedenti mostravano testo e immagini in finestre separate."
+  },
+  {
+    "id": 34,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa interroga davvero chi digita una ricerca?",
+    "options": [
+      "L'elenco delle pagine visitate dall'utente",
+      "Il Web in tempo reale, pagina per pagina",
+      "Una mappa del Web già costruita in anticipo, non il Web in tempo reale",
+      "I server di ogni sito, uno alla volta"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il lavoro di esplorazione e indicizzazione è svolto in anticipo dai crawler."
+  },
+  {
+    "id": 35,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il primo risultato non è automaticamente il più affidabile?",
+    "options": [
+      "Perché l'ordine dipende solo dalla data di pubblicazione",
+      "Perché l'ordine è deciso a caso a ogni ricerca",
+      "Perché i primi risultati sono sempre pagine a pagamento",
+      "Perché l'ordine può dipendere da pubblicità, popolarità, posizione geografica e tecniche per scalare la classifica"
+    ],
+    "correctIndex": 3,
+    "explanation": "Digitare una domanda efficace e valutare la risposta sono competenze distinte."
+  },
+  {
+    "id": 36,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come si chiamava il progetto di ricerca di Larry Page e Sergey Brin da cui nacque Google?",
+    "options": [
+      "BackRub",
+      "Burbn",
+      "Imagen",
+      "Mosaic"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel 1998 i due dottorandi di Stanford fondarono l'azienda che sarebbe diventata Google."
+  },
+  {
+    "id": 37,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Su quale principio si basa l'algoritmo PageRank?",
+    "options": [
+      "Valuta l'importanza di una pagina anche in base a quante altre pagine rimandano a essa",
+      "Valuta una pagina solo in base alle parole contenute nel testo",
+      "Valuta una pagina in base alla velocità con cui viene aggiornata",
+      "Valuta una pagina in base ai soldi spesi per pubblicizzarla"
+    ],
+    "correctIndex": 0,
+    "explanation": "È come un articolo scientifico citato spesso, che risulta più autorevole."
+  },
+  {
+    "id": 38,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quante ricerche al giorno elaborava circa Google entro il 1999?",
+    "options": [
+      "Circa 500.000",
+      "Circa 87 milioni",
+      "Circa 5 milioni",
+      "Circa 50.000"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'approccio di PageRank restituiva risultati sensibilmente più pertinenti."
+  },
+  {
+    "id": 39,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che modo viaggiano i dati in rete?",
+    "options": [
+      "Come un file compresso che viaggia solo tra due dispositivi",
+      "Come una sequenza di pixel, riga dopo riga",
+      "Come un unico blocco, lungo un percorso sempre uguale",
+      "Suddivisi in piccoli pacchetti, instradati attraverso una serie di nodi"
+    ],
+    "correctIndex": 3,
+    "explanation": "I pacchetti possono percorrere strade diverse e vengono ricomposti nell'ordine corretto."
+  },
+  {
+    "id": 40,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A che cosa serve l'indirizzo IP?",
+    "options": [
+      "A cifrare i dati che viaggiano in rete",
+      "A scegliere il browser da usare per aprire una pagina",
+      "A ridurre il peso dei file prima dell'invio",
+      "A dire ai pacchetti dove fermarsi: è un indirizzo univoco di ogni dispositivo collegato"
+    ],
+    "correctIndex": 3,
+    "explanation": "È come un indirizzo postale fatto di via, numero civico e città."
+  },
+  {
+    "id": 41,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Facebook, Instagram e WhatsApp smisero di funzionare in tutto il mondo per circa sei ore?",
+    "options": [
+      "Il 4 ottobre 2021",
+      "Il 6 giugno 2011",
+      "Il 4 ottobre 2011",
+      "Il 20 marzo 2023"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il malfunzionamento durò circa sei ore."
+  },
+  {
+    "id": 42,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa causò il blackout di Facebook, Instagram e WhatsApp?",
+    "options": [
+      "Un attacco esterno ai server dell'azienda",
+      "Un guasto fisico ai server dei data center",
+      "Un errore umano durante una manutenzione: un comando disconnesse i data center dal resto di Internet",
+      "Un errore nel software di controllo di un macchinario"
+    ],
+    "correctIndex": 2,
+    "explanation": "I server funzionavano, ma nessun dispositivo riusciva più a trovare la strada per raggiungerli."
+  },
+  {
+    "id": 43,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa mostra il caso del blackout del 2021?",
+    "options": [
+      "Un'interruzione del servizio dipende sempre da un attacco esterno",
+      "Su Internet basta che un server sia acceso per essere raggiungibile",
+      "I pacchetti seguono sempre lo stesso percorso fino alla destinazione",
+      "Su Internet non basta che una destinazione esista: deve restare raggiungibile attraverso un percorso instradabile"
+    ],
+    "correctIndex": 3,
+    "explanation": "Anche un errore umano può rendere una destinazione irraggiungibile."
+  },
+  {
+    "id": 44,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che differenza c'è tra dato e informazione?",
+    "options": [
+      "Il dato è un insieme organizzato; l'informazione è un elemento grezzo",
+      "Il dato è sempre un numero; l'informazione è sempre un testo",
+      "Il dato è un elemento grezzo privo di contesto; l'informazione nasce quando i dati sono organizzati e messi in relazione",
+      "Non c'è alcuna differenza: sono sinonimi"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il dato è un mattone, ma da solo non è una casa."
+  },
+  {
+    "id": 45,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come sfruttano il dato molte notizie false?",
+    "options": [
+      "Citano sempre la fonte originale del dato",
+      "Presentano molti dati collegati tra loro in modo accurato",
+      "Eliminano ogni numero dal testo",
+      "Mostrano un dato isolato, come una percentuale, nascondendo il contesto che lo renderebbe comprensibile"
+    ],
+    "correctIndex": 3,
+    "explanation": "Lasciano che sia chi legge a completare, spesso male, ciò che manca."
+  },
+  {
+    "id": 46,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Dove lavorò Florence Nightingale durante la guerra di Crimea?",
+    "options": [
+      "Nei laboratori dei Bell Labs",
+      "Negli ospedali da campo di Scutari",
+      "Nella Casa della Sapienza di Baghdad",
+      "Negli ospedali di Londra"
+    ],
+    "correctIndex": 1,
+    "explanation": "Contava ogni giorno quanti soldati morivano e per quale causa."
+  },
+  {
+    "id": 47,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Con quale statistico Florence Nightingale trasformò i dati grezzi in un grafico?",
+    "options": [
+      "Claude Shannon",
+      "Eli Pariser",
+      "David Mikkelson",
+      "William Farr"
+    ],
+    "correctIndex": 3,
+    "explanation": "Realizzarono il cosiddetto \"diagramma a rosa\"."
+  },
+  {
+    "id": 48,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come cambiò la mortalità a Scutari dopo la riorganizzazione degli ospedali militari britannici?",
+    "options": [
+      "Scese dal 42% al 2%",
+      "Scese dal 42% al 22%",
+      "Salì dal 2% al 42%",
+      "Scese dal 12% al 2%"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il grafico mostrò che per ogni soldato morto per le ferite altri dieci morivano di tifo, colera o dissenteria."
+  },
+  {
+    "id": 49,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un algoritmo?",
+    "options": [
+      "Una sequenza ordinata di istruzioni precise per portare a termine un compito, passo dopo passo",
+      "Un insieme di dati grezzi privi di contesto",
+      "Un programma che mostra le pagine web a schermo",
+      "Un sistema che registra tutto ciò che viene digitato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una ricetta, le istruzioni di un mobile e un semaforo sono algoritmi."
+  },
+  {
+    "id": 50,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un algoritmo non deve dare per scontato alcun passaggio?",
+    "options": [
+      "Perché un computer non intuisce nulla: esegue esattamente ciò che gli viene detto",
+      "Perché un computer corregge da solo gli errori nelle istruzioni",
+      "Perché gli algoritmi funzionano solo con istruzioni molto brevi",
+      "Perché un computer intuisce i passaggi mancanti in autonomia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Non esegue un'operazione di più né di meno."
+  },
+  {
+    "id": 51,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi era Muhammad ibn Musa al-Khwarizmi?",
+    "options": [
+      "Un astronomo greco che lavorava ad Alessandria d'Egitto",
+      "Un ingegnere statunitense che lavorava ai Bell Labs",
+      "Un matematico persiano che lavorava alla Casa della Sapienza di Baghdad",
+      "Un matematico indiano che lavorava a Stanford"
+    ],
+    "correctIndex": 2,
+    "explanation": "Visse intorno all'800, nel periodo del califfo al-Ma'mun."
+  },
+  {
+    "id": 52,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da che cosa nasce la parola \"algoritmo\"?",
+    "options": [
+      "Dal nome di un matematico indiano trascritto in latino",
+      "Dal nome di al-Khwarizmi, latinizzato in \"Algoritmi\" per un errore di trascrizione dall'arabo",
+      "Dal titolo di un trattato greco tradotto in persiano",
+      "Dalla parola araba che indica le equazioni"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il suo scritto sul sistema di numerazione indiano fu tradotto in latino come \"Algoritmi de numero Indorum\"."
+  },
+  {
+    "id": 53,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una piattaforma digitale?",
+    "options": [
+      "Un servizio che archivia file su server remoti",
+      "Un ambiente che permette a utenti, contenuti e servizi di interagire, senza produrre direttamente i contenuti",
+      "Un programma che interpreta il codice delle pagine web",
+      "Un ambiente che produce direttamente tutti i contenuti che ospita"
+    ],
+    "correctIndex": 1,
+    "explanation": "Mette a disposizione lo spazio in cui le cose accadono."
+  },
+  {
+    "id": 54,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è spesso il vero valore di una piattaforma per chi la gestisce?",
+    "options": [
+      "L'attenzione complessiva che riesce a trattenere",
+      "Il singolo contenuto pubblicato da ciascun utente",
+      "La qualità grafica delle pagine",
+      "Il numero di dispositivi compatibili"
+    ],
+    "correctIndex": 0,
+    "explanation": "Più tempo si trascorre sulla piattaforma, più dati si generano e più è preziosa per chi fa pubblicità."
+  },
+  {
+    "id": 55,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu lanciato Instagram?",
+    "options": [
+      "Il 12 ottobre 2011",
+      "Il 4 ottobre 2021",
+      "Il 6 ottobre 2010",
+      "Il 6 giugno 2011"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nasce dall'app Burbn, ideata da Kevin Systrom e Mike Krieger."
+  },
+  {
+    "id": 56,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che lezione emerge dal caso di Instagram?",
+    "options": [
+      "Una piattaforma resta sempre fedele alla funzione per cui è nata",
+      "Una piattaforma può trasformarsi in qualcosa di diverso, se gli utenti ne usano con entusiasmo una sola funzione",
+      "Gli utenti non influenzano mai lo sviluppo di una piattaforma",
+      "Una piattaforma non può eliminare funzioni già esistenti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Systrom eliminò quasi tutto e si concentrò sul caricamento delle fotografie."
+  },
+  {
+    "id": 57,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la SEO?",
+    "options": [
+      "Il programma che esplora le pagine del Web in anticipo",
+      "L'insieme di tecniche che permettono di verificare un'informazione",
+      "L'algoritmo con cui Google valuta le pagine web",
+      "L'insieme di tecniche che permettono a un sito di comparire più in alto nell'indice di un motore di ricerca"
+    ],
+    "correctIndex": 3,
+    "explanation": "SEO sta per Search Engine Optimization."
+  },
+  {
+    "id": 58,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali segnali osserva un motore di ricerca oltre ai collegamenti ricevuti?",
+    "options": [
+      "Il numero di fotografie e il formato dei file",
+      "Il dispositivo usato e il prezzo dei prodotti",
+      "Le parole presenti nel testo, la velocità di caricamento e la frequenza di aggiornamento",
+      "Il nome dell'autore e la lingua del browser"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un motore di ricerca non \"legge\" un sito come una persona: ha bisogno di segnali espliciti."
+  },
+  {
+    "id": 59,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi creò nel 1994 la guida che sarebbe diventata Yahoo!?",
+    "options": [
+      "Jerry Yang e David Filo, dottorandi a Stanford",
+      "Kevin Systrom e Mike Krieger, laureati a Stanford",
+      "Larry Page e Sergey Brin, dottorandi a Stanford",
+      "David Mikkelson e Barbara, utenti di Usenet"
+    ],
+    "correctIndex": 0,
+    "explanation": "La guida si chiamava \"Jerry and David's Guide to the World Wide Web\"."
+  },
+  {
+    "id": 60,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa significa valutare l'affidabilità di una fonte?",
+    "options": [
+      "Chiedersi chi l'ha scritta, quando, con quale scopo e se altre fonti indipendenti confermano",
+      "Accertarsi che l'articolo abbia molte condivisioni",
+      "Verificare soltanto che il contenuto sia ben scritto",
+      "Controllare solo se il sito ha un aspetto professionale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nessun criterio, da solo, basta a garantire l'affidabilità."
+  },
+  {
+    "id": 61,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da dove deriva lo pseudonimo \"Snopes\" usato da David Mikkelson?",
+    "options": [
+      "Da una canzone dei Beatles",
+      "Dal nome di un gruppo di discussione di Usenet",
+      "Da un personaggio di un romanzo di Claude Shannon",
+      "Da una famiglia di personaggi controversi nei romanzi di William Faulkner"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nel 1994 Mikkelson, con la moglie Barbara, cominciò a raccogliere leggende urbane su una pagina web."
+  },
+  {
+    "id": 62,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Su quale gruppo di discussione circolavano le storie raccolte da Mikkelson?",
+    "options": [
+      "Snopes.com",
+      "Usenet alt.folklore.urban",
+      "ARPANET",
+      "Bellingcat"
+    ],
+    "correctIndex": 1,
+    "explanation": "Da quella raccolta nacque Snopes.com, uno dei primissimi siti di fact-checking."
+  },
+  {
+    "id": 63,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il fact checking?",
+    "options": [
+      "L'analisi della sola grafica di un contenuto",
+      "La raccolta di opinioni su una notizia",
+      "Il processo attivo di verifica di un'affermazione prima di considerarla vera o diffonderla",
+      "La condivisione rapida di notizie già circolate"
+    ],
+    "correctIndex": 2,
+    "explanation": "Non basta credere a ciò che sembra plausibile."
+  },
+  {
+    "id": 64,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i passaggi concreti per verificare un fatto?",
+    "options": [
+      "Cercare una sola conferma, verificare la grafica e inoltrare il messaggio",
+      "Risalire alla fonte originale, confrontare più fonti indipendenti e diffidare di contenuti generati o alterati dall'IA",
+      "Leggere solo il titolo, controllare la data e chiedere a un amico",
+      "Ripetere la notizia, controllare il numero di condivisioni e fidarsi del tono"
+    ],
+    "correctIndex": 1,
+    "explanation": "La \"plausibilità visiva\" è un indicatore sempre meno affidabile."
+  },
+  {
+    "id": 65,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Google DeepMind lanciò SynthID?",
+    "options": [
+      "Nel giugno 2017",
+      "Nel marzo 2018",
+      "Nell'agosto 2023",
+      "Nel marzo 2023"
+    ],
+    "correctIndex": 2,
+    "explanation": "SynthID inserisce un segnale invisibile all'occhio umano ma rilevabile da un apposito strumento."
+  },
+  {
+    "id": 66,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un LLM (Large Language Model)?",
+    "options": [
+      "Un sistema che ragiona da zero a ogni nuova richiesta",
+      "Un sistema che cerca la risposta oggettivamente corretta in un archivio",
+      "Un sistema addestrato su enormi quantità di testo che genera, parola dopo parola, la continuazione più probabile",
+      "Un sistema che consulta il Web in tempo reale per ogni parola"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un LLM non \"capisce\" nel senso in cui capirebbe una persona."
+  },
+  {
+    "id": 67,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale articolo introdusse l'architettura Transformer?",
+    "options": [
+      "\"Attention Is All You Need\", pubblicato nel giugno 2017",
+      "\"Algoritmi de numero Indorum\", pubblicato nell'800 circa",
+      "\"The Filter Bubble\", pubblicato nel 2011",
+      "\"A Mathematical Theory of Communication\", pubblicato nel 1948"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'articolo era di otto ricercatori di Google e di appena otto pagine."
+  },
+  {
+    "id": 68,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale problema risolveva il Transformer?",
+    "options": [
+      "I sistemi precedenti non riuscivano a leggere testi in altre lingue",
+      "I sistemi precedenti leggevano un testo una parola alla volta, in sequenza, ed erano lenti da addestrare",
+      "I sistemi precedenti consideravano tutte le parole insieme, con troppa memoria",
+      "I sistemi precedenti producevano immagini poco realistiche"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il Transformer considera tutte le parole di una frase contemporaneamente, valutandone la rilevanza reciproca."
+  },
+  {
+    "id": 69,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una bolla di filtraggio?",
+    "options": [
+      "Un errore che nasconde ogni contenuto a certi utenti",
+      "La tendenza di un algoritmo a mostrare contenuti sempre diversi da quelli già visti",
+      "Una tecnica che permette a un sito di salire nei risultati",
+      "La tendenza di un algoritmo di personalizzazione a mostrare contenuti sempre più simili a quelli già visti, restringendo la varietà di punti di vista"
+    ],
+    "correctIndex": 3,
+    "explanation": "È un ciclo che si autoalimenta."
+  },
+  {
+    "id": 70,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale esperimento raccontò Eli Pariser nel libro \"The Filter Bubble\"?",
+    "options": [
+      "Due studenti cercarono la parola \"login\" su due browser diversi",
+      "Due amici cercarono la parola \"Egitto\" e ottennero risultati identici",
+      "Due utenti inviarono lo stesso messaggio su due piattaforme diverse",
+      "Due amiche cercarono la parola \"BP\" su Google e ottennero risultati molto diversi"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'esperimento risale alla primavera del 2010, durante il disastro di Deepwater Horizon."
+  },
+  {
+    "id": 71,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che differenza c'è tra disinformazione e misinformazione?",
+    "options": [
+      "La disinformazione è sempre vera; la misinformazione è sempre falsa",
+      "La disinformazione riguarda solo i testi; la misinformazione solo le immagini",
+      "La disinformazione è un contenuto falso creato e diffuso intenzionalmente; la misinformazione è un errore diffuso senza cattive intenzioni",
+      "La disinformazione è un errore diffuso senza intenzione; la misinformazione è un inganno voluto"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ciò che le distingue è la volontarietà dell'inganno."
+  },
+  {
+    "id": 72,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa rivelò nel marzo 2018 l'inchiesta del Guardian e del New York Times?",
+    "options": [
+      "Cambridge Analytica aveva raccolto, tramite un'app su Facebook, dati relativi fino a 87 milioni di profili",
+      "Google aveva marcato miliardi di contenuti generati dall'IA",
+      "Un'app aveva diffuso immagini false di un arresto",
+      "Facebook era rimasto irraggiungibile per circa sei ore"
+    ],
+    "correctIndex": 0,
+    "explanation": "I dati furono usati per costruire profili psicologici dettagliati."
+  },
+  {
+    "id": 73,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale sanzione inflisse la Federal Trade Commission nel caso Cambridge Analytica?",
+    "options": [
+      "5 milioni di dollari",
+      "87 miliardi di dollari",
+      "5 miliardi di dollari",
+      "50 miliardi di dollari"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il caso portò anche a un'audizione del fondatore di Facebook davanti al Congresso."
+  },
+  {
+    "id": 74,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un contenuto sintetico?",
+    "options": [
+      "Un'immagine che è stata compressa con perdita",
+      "Un'immagine, un audio o un video creato o modificato da un'intelligenza artificiale, spesso indistinguibile da uno reale",
+      "Una fotografia scattata con un sensore digitale",
+      "Un video scaricato da un server remoto"
+    ],
+    "correctIndex": 1,
+    "explanation": "La tracciabilità è invece la possibilità di verificare tecnicamente come e da cosa è stato generato."
+  },
+  {
+    "id": 75,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Eliot Higgins creò con Midjourney le immagini di un fittizio arresto?",
+    "options": [
+      "Il 20 marzo 2018",
+      "Il 6 ottobre 2010",
+      "Il 4 ottobre 2021",
+      "Il 20 marzo 2023"
+    ],
+    "correctIndex": 3,
+    "explanation": "Higgins è il fondatore di Bellingcat."
+  },
+  {
+    "id": 76,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa fece Midjourney dopo la diffusione delle immagini di Higgins?",
+    "options": [
+      "Cancellò tutte le immagini già generate dagli utenti",
+      "Rese pubblico un elenco di tutti gli utenti della piattaforma",
+      "Introdusse una filigrana visibile su ogni immagine",
+      "Gli vietò l'uso della piattaforma e bloccò la parola \"arrested\" tra i comandi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le immagini furono viste quasi cinque milioni di volte in pochi giorni."
+  },
+  {
+    "id": 77,
+    "module": "alfabetizzazione-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa mostra il caso delle immagini di Higgins?",
+    "options": [
+      "Le immagini generate dall'IA sono sempre riconoscibili a occhio nudo",
+      "Se l'origine artificiale è dichiarata, nessuno può scambiare il contenuto per autentico",
+      "Gli avvisi sui contenuti sintetici vengono sempre letti",
+      "Anche se l'origine artificiale è dichiarata, non è garantito che chi vede il contenuto fuori contesto se ne accorga"
+    ],
+    "correctIndex": 3,
+    "explanation": "Alcuni siti di informazione le presentarono come autentiche senza controllare l'avviso."
+  }
+]

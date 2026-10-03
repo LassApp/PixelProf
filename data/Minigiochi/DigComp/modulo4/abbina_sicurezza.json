@@ -1,0 +1,214 @@
+{
+  "id": 1,
+  "module": "sicurezza",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Password manager",
+        "definition": "Strumento che genera, conserva e inserisce automaticamente password uniche e complesse per ciascun account"
+      },
+      {
+        "term": "Credential stuffing",
+        "definition": "Prova automatica di una password rubata su altri account che usano la stessa combinazione"
+      },
+      {
+        "term": "MFA (autenticazione a più fattori)",
+        "definition": "Seconda prova d'identità richiesta oltre alla password: codice temporaneo, app o impronta digitale"
+      },
+      {
+        "term": "Phishing",
+        "definition": "Inganno in cui ci si finge un mittente affidabile per convincere la vittima a fornire dati riservati"
+      },
+      {
+        "term": "Vishing",
+        "definition": "Phishing condotto tramite telefonata"
+      }
+    ],
+    [
+      {
+        "term": "Malware",
+        "definition": "Programma progettato per danneggiare, spiare o prendere il controllo di un dispositivo; crasi di malicious software"
+      },
+      {
+        "term": "Virus",
+        "definition": "Malware che si attacca ad altri file o programmi e si diffonde copiandosi da un dispositivo all'altro"
+      },
+      {
+        "term": "Trojan",
+        "definition": "Malware che si presenta come qualcosa di utile ma nasconde una funzione dannosa"
+      },
+      {
+        "term": "Ransomware",
+        "definition": "Malware che cifra i file del dispositivo e chiede un pagamento, quasi sempre in criptovaluta"
+      },
+      {
+        "term": "Backup",
+        "definition": "Copia dei dati conservata separatamente dall'originale, da recuperare in caso di perdita, danneggiamento o attacco"
+      },
+      {
+        "term": "Regola 3-2-1",
+        "definition": "Almeno tre copie dei dati, su due tipi di supporto, con almeno una in un luogo fisicamente separato"
+      }
+    ],
+    [
+      {
+        "term": "Responsabilità condivisa",
+        "definition": "Principio per cui la sicurezza nel cloud dipende sia dal fornitore sia da come l'utente protegge il proprio accesso"
+      },
+      {
+        "term": "Dato personale",
+        "definition": "Informazione che, da sola o combinata con altre, permette di identificare una persona specifica"
+      },
+      {
+        "term": "GDPR",
+        "definition": "Normativa europea, in vigore dal 25 maggio 2018, sulla raccolta, conservazione e uso dei dati personali"
+      },
+      {
+        "term": "Diritto all'oblio",
+        "definition": "Diritto di chiedere la cancellazione dei dati conservati su di sé"
+      },
+      {
+        "term": "Benessere digitale",
+        "definition": "Equilibrio tra l'uso delle tecnologie e la salute fisica, mentale e sociale di chi le usa"
+      }
+    ],
+    [
+      {
+        "term": "Clickbait",
+        "definition": "Titoli costruiti per spingere a cliccare"
+      },
+      {
+        "term": "Gamification",
+        "definition": "Meccaniche da gioco, come punti e sfide, usate per prolungare l'uso di un'app"
+      },
+      {
+        "term": "Nudging",
+        "definition": "Piccole spinte a non interrompere ciò che si sta facendo"
+      },
+      {
+        "term": "Cyberbullismo",
+        "definition": "Bullismo praticato attraverso le tecnologie digitali: comportamento ripetuto per spaventare, irritare o mettere in ridicolo"
+      },
+      {
+        "term": "RAEE",
+        "definition": "Rifiuti da Apparecchiature Elettriche ed Elettroniche, in inglese e-waste"
+      },
+      {
+        "term": "Sicurezza comportamentale",
+        "definition": "Insieme delle abitudini quotidiane che determinano l'efficacia degli strumenti tecnici di protezione"
+      }
+    ],
+    [
+      {
+        "term": "RockYou.com (2009)",
+        "definition": "Violazione che sottrasse le credenziali di oltre 32 milioni di account, con password conservate in chiaro"
+      },
+      {
+        "term": "Snowflake (2024)",
+        "definition": "Furti di dati da circa 165 aziende clienti con credenziali rubate, in account senza MFA"
+      },
+      {
+        "term": "Podesta (2016)",
+        "definition": "Vittima di un'email di phishing che imitava un avviso di Google, opera del gruppo Fancy Bear"
+      },
+      {
+        "term": "WannaCry (2017)",
+        "definition": "Ransomware che sfruttava la falla EternalBlue e infettò oltre 200.000 computer in più di 150 paesi"
+      },
+      {
+        "term": "Norsk Hydro (2019)",
+        "definition": "Colpita dal ransomware LockerGoga, non pagò il riscatto e ripristinò i sistemi dai backup, con un costo di circa 75 milioni di dollari"
+      }
+    ],
+    [
+      {
+        "term": "GitLab (2017)",
+        "definition": "Perse dati per errore e scoprì che nessuno dei cinque sistemi di backup funzionava in modo affidabile"
+      },
+      {
+        "term": "Uber (2016)",
+        "definition": "Violazione di circa 57 milioni di utenti e autisti partita da credenziali lasciate nel codice su GitHub"
+      },
+      {
+        "term": "AOL (2006)",
+        "definition": "Pubblicò circa 20 milioni di ricerche di oltre 650.000 utenti, sostituendo il nome con un numero"
+      },
+      {
+        "term": "Meta (2023)",
+        "definition": "Sanzionata con 1,2 miliardi di euro per il trasferimento dei dati degli utenti europei verso gli Stati Uniti"
+      },
+      {
+        "term": "Clifford Stoll (1986)",
+        "definition": "Partì da una discrepanza di 75 centesimi per scoprire un hacker che vendeva informazioni militari a servizi segreti stranieri"
+      }
+    ],
+    [
+      {
+        "term": "Legge 29 maggio 2017, n. 71",
+        "definition": "Prima legge italiana a definire il cyberbullismo, con procedura di rimozione dei contenuti e ammonimento del Questore"
+      },
+      {
+        "term": "Time Well Spent",
+        "definition": "Iniziativa avviata da Tristan Harris nel 2016 dopo aver lasciato Google"
+      },
+      {
+        "term": "Screen Time",
+        "definition": "Funzione di Apple presentata il 4 giugno 2018 per iOS 12, con resoconti d'uso, limiti e pause dallo schermo"
+      },
+      {
+        "term": "Global E-waste Monitor 2024",
+        "definition": "Rapporto di UNITAR e ITU: 62 milioni di tonnellate di rifiuti elettronici nel 2022, di cui il 22,3% riciclato correttamente"
+      },
+      {
+        "term": "Obsolescenza programmata",
+        "definition": "Fenomeno per cui alcuni apparecchi sono progettati per durare poco"
+      }
+    ],
+    [
+      {
+        "term": "Password riutilizzata (metafora)",
+        "definition": "Come un'unica chiave universale per casa, ufficio e auto: con una copia rubata si accede a tutto"
+      },
+      {
+        "term": "MFA (metafora)",
+        "definition": "Come il controllo all'imbarco in aeroporto: oltre al biglietto serve un documento d'identità"
+      },
+      {
+        "term": "Phishing (metafora)",
+        "definition": "Come un finto tecnico alla porta che convince ad aprire da soli"
+      },
+      {
+        "term": "Malware (metafora)",
+        "definition": "Come un regalo incartato con cura che dentro non contiene ciò che promette"
+      },
+      {
+        "term": "Ransomware senza backup (metafora)",
+        "definition": "Come una casa senza copia delle chiavi, con la serratura cambiata da altri"
+      }
+    ],
+    [
+      {
+        "term": "Backup mai verificato (metafora)",
+        "definition": "Come un estintore comprato anni fa e mai controllato"
+      },
+      {
+        "term": "Cloud (metafora)",
+        "definition": "Come una cassetta di sicurezza in una banca solidissima con la chiave lasciata fuori dalla porta"
+      },
+      {
+        "term": "Dati senza nome (metafora)",
+        "definition": "Come un diario a cui è stata strappata solo la copertina"
+      },
+      {
+        "term": "GDPR (metafora)",
+        "definition": "Come le istruzioni di sicurezza di un cantiere"
+      },
+      {
+        "term": "Sicurezza informatica (metafora)",
+        "definition": "Come la cintura di sicurezza in automobile: un gesto automatico, ripetuto ogni volta"
+      }
+    ]
+  ]
+}

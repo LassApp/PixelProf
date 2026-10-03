@@ -1,0 +1,887 @@
+[
+  {
+    "id": 1,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando un canale di comunicazione si definisce sincrono?",
+    "options": [
+      "Quando il messaggio viene letto in un momento diverso da quando è stato scritto",
+      "Quando la comunicazione avviene solo per iscritto",
+      "Quando le due parti sono presenti nello stesso momento",
+      "Quando la comunicazione lascia sempre una traccia verificabile"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un canale è sincrono quando le due parti sono presenti nello stesso momento: telefonata, colloquio, videochiamata."
+  },
+  {
+    "id": 2,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando un canale di comunicazione si definisce asincrono?",
+    "options": [
+      "Quando le due parti sono presenti nello stesso momento",
+      "Quando il messaggio viene letto in un momento diverso da quando è stato scritto",
+      "Quando richiede sempre una risposta immediata",
+      "Quando la comunicazione avviene solo a voce"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un canale è asincrono quando il messaggio viene letto in un momento diverso da quello in cui è stato scritto: email, messaggio sul registro elettronico."
+  },
+  {
+    "id": 3,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale coppia comprende solo canali sincroni?",
+    "options": [
+      "Videochiamata e messaggio sul registro elettronico",
+      "Email e telefonata",
+      "Telefonata e colloquio",
+      "Colloquio ed email"
+    ],
+    "correctIndex": 2,
+    "explanation": "Telefonata, colloquio e videochiamata sono canali sincroni."
+  },
+  {
+    "id": 4,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale coppia comprende solo canali asincroni?",
+    "options": [
+      "Telefonata ed email",
+      "Colloquio e videochiamata",
+      "Email e messaggio sul registro elettronico",
+      "Videochiamata e messaggio sul registro elettronico"
+    ],
+    "correctIndex": 2,
+    "explanation": "Email e messaggio sul registro elettronico vengono letti in un momento diverso da quando sono scritti."
+  },
+  {
+    "id": 5,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Secondo il modulo, quale tipo di canale è migliore in assoluto?",
+    "options": [
+      "Il canale asincrono, perché non richiede disponibilità immediata",
+      "Dipende solo dallo strumento usato, non dallo scopo",
+      "Il canale sincrono, perché lascia meno spazio a fraintendimenti",
+      "Nessuno dei due: sono adatti a scopi diversi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nessuno dei due canali è migliore in assoluto: sono adatti a scopi diversi."
+  },
+  {
+    "id": 6,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale vantaggio offre un canale sincrono?",
+    "options": [
+      "Permette di rispondere solo quando si è disponibili",
+      "Permette di chiarire un dubbio articolato, leggere il tono di chi parla e rispondere subito a una domanda inattesa",
+      "Permette di prendersi il tempo di formulare bene un pensiero",
+      "Non richiede che le parti siano presenti nello stesso istante"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il canale sincrono permette chiarimenti articolati, lettura del tono e risposte immediate."
+  },
+  {
+    "id": 7,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale limite ha un canale sincrono?",
+    "options": [
+      "Lascia più spazio a fraintendimenti di tono",
+      "Richiede che entrambe le parti siano disponibili nello stesso istante",
+      "Non permette di leggere il tono di chi parla",
+      "Introduce sempre un ritardo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il canale sincrono richiede la disponibilità simultanea di entrambe le parti."
+  },
+  {
+    "id": 8,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale vantaggio offre un canale asincrono?",
+    "options": [
+      "Permette di rispondere subito a una domanda inattesa",
+      "Elimina ogni ritardo nella risposta",
+      "Permette di leggere il tono di chi parla",
+      "Chi scrive può formulare bene un pensiero e chi riceve può rispondere quando può"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il canale asincrono lascia il tempo di formulare il messaggio e di rispondere quando si può."
+  },
+  {
+    "id": 9,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i limiti di un canale asincrono?",
+    "options": [
+      "Non permette a chi scrive di formulare bene un pensiero",
+      "Impedisce a chi riceve di rispondere quando può",
+      "Richiede che entrambe le parti siano disponibili nello stesso istante",
+      "Introduce sempre un ritardo e lascia più spazio a fraintendimenti di tono"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il canale asincrono introduce sempre un ritardo e può favorire fraintendimenti di tono."
+  },
+  {
+    "id": 10,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché è nato il registro elettronico?",
+    "options": [
+      "Per rendere tracciabile e verificabile una comunicazione che un tempo avveniva solo a voce o su un diario cartaceo",
+      "Per sostituire tutti i colloqui in presenza",
+      "Per rendere obbligatoria la videochiamata con le famiglie",
+      "Per eliminare ogni comunicazione scritta tra scuola e famiglia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il registro elettronico rende tracciabile e verificabile una comunicazione un tempo affidata a voce o a un diario facile da perdere."
+  },
+  {
+    "id": 11,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa è già, di per sé, una competenza digitale nella comunicazione scuola-famiglia?",
+    "options": [
+      "Rimandare ogni chiarimento al colloquio successivo",
+      "Usare un solo canale per ogni comunicazione",
+      "Scegliere il canale giusto per il messaggio giusto",
+      "Rispondere sempre con una telefonata"
+    ],
+    "correctIndex": 2,
+    "explanation": "Non tutto merita una telefonata e non tutto si risolve con un messaggio scritto: scegliere il canale giusto è una competenza digitale."
+  },
+  {
+    "id": 12,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nell'esempio del genitore preoccupato per un voto, che funzione svolge il messaggio breve sul registro?",
+    "options": [
+      "Certifica la valutazione finale",
+      "Sostituisce il colloquio",
+      "Gestisce l'urgenza emotiva rassicurando subito il genitore",
+      "Spiega nel dettaglio il criterio del voto"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il messaggio asincrono gestisce l'urgenza emotiva; la spiegazione vera e propria è affidata alla videochiamata."
+  },
+  {
+    "id": 13,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nello stesso esempio, a che cosa serve la videochiamata di dieci minuti proposta per il giorno dopo?",
+    "options": [
+      "A sostituire il messaggio sul registro",
+      "A gestire la spiegazione vera e propria",
+      "A rendere tracciabile la comunicazione",
+      "A gestire l'urgenza emotiva"
+    ],
+    "correctIndex": 1,
+    "explanation": "La videochiamata sincrona gestisce la spiegazione vera e propria."
+  },
+  {
+    "id": 14,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando il Governo Monti introdusse il Decreto Legge n. 95?",
+    "options": [
+      "Il 6 luglio 2013",
+      "Il 6 luglio 2021",
+      "Il 6 luglio 2011",
+      "Il 6 luglio 2012"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il Decreto Legge n. 95 fu introdotto il 6 luglio 2012."
+  },
+  {
+    "id": 15,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale legge fu convertito il Decreto Legge n. 95 del 2012?",
+    "options": [
+      "Legge n. 45/2012",
+      "Legge n. 135/2012",
+      "Legge n. 7/2012",
+      "Legge n. 95/2012"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il decreto fu convertito il mese successivo nella Legge n. 135/2012."
+  },
+  {
+    "id": 16,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A partire da quale anno scolastico l'articolo 7 prevedeva registri online e comunicazioni elettroniche?",
+    "options": [
+      "2025-2026",
+      "2011-2012",
+      "2013-2014",
+      "2012-2013"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'articolo 7 fissava l'adozione dei registri online a partire dall'anno scolastico 2012-2013."
+  },
+  {
+    "id": 17,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A che cosa la norma del 2012 subordinava l'obbligo pieno del registro online?",
+    "options": [
+      "All'approvazione del collegio docenti di ogni scuola",
+      "A un \"piano di dematerializzazione\" del Ministero mai completamente attuato",
+      "All'adesione volontaria delle famiglie",
+      "A una sentenza della Cassazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'obbligo pieno dipendeva da un piano di dematerializzazione del Ministero che non venne mai completamente attuato."
+  },
+  {
+    "id": 18,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Su quale questione hanno discusso per anni tribunali e sentenze della Cassazione?",
+    "options": [
+      "Se il registro elettronico fosse davvero obbligatorio o solo una possibilità che ogni collegio docenti poteva scegliere",
+      "Se le famiglie potessero rifiutare le comunicazioni elettroniche",
+      "Se la videochiamata potesse sostituire il colloquio",
+      "Se il diario cartaceo dovesse tornare obbligatorio"
+    ],
+    "correctIndex": 0,
+    "explanation": "A causa dell'ambiguità normativa si è discusso se il registro elettronico fosse un obbligo o una scelta del collegio docenti."
+  },
+  {
+    "id": 19,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa ha stabilito nel 2025 il Decreto Legge n. 45?",
+    "options": [
+      "Ha approvato il piano di dematerializzazione del Ministero",
+      "Ha abolito l'obbligo introdotto nel 2012",
+      "Ha reso facoltativo il registro elettronico per tutte le scuole",
+      "Ha esteso in modo esplicito l'obbligo del registro elettronico alle scuole paritarie, dall'a.s. 2025/2026"
+    ],
+    "correctIndex": 3,
+    "explanation": "Solo nel 2025 il Decreto Legge n. 45 ha esteso l'obbligo alle scuole paritarie."
+  },
+  {
+    "id": 20,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale lezione emerge dal caso del registro elettronico in Italia?",
+    "options": [
+      "Il registro elettronico si è diffuso solo dopo l'obbligo del 2025",
+      "Un cambiamento nella scuola si afferma solo dopo una norma chiara",
+      "Un cambiamento nella comunicazione scuola-famiglia può affermarsi nella pratica anche prima, e indipendentemente, da una norma pienamente chiara",
+      "Una norma ambigua impedisce qualsiasi diffusione di uno strumento"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nonostante l'ambiguità normativa il registro elettronico si è diffuso nella quasi totalità delle scuole."
+  },
+  {
+    "id": 21,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quale immagine è paragonato un canale sincrono?",
+    "options": [
+      "A un diario cartaceo",
+      "A una cassetta della posta",
+      "A una porta aperta",
+      "A una mappa"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un canale sincrono è come una porta aperta: la conversazione finisce quando entrambi escono dalla stanza."
+  },
+  {
+    "id": 22,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quale immagine è paragonato un canale asincrono?",
+    "options": [
+      "A una cassetta della posta",
+      "A una porta aperta",
+      "A un muscolo da allenare",
+      "A una mappa"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un canale asincrono è come una cassetta della posta: chi la apre trova il messaggio quando può, non prima."
+  },
+  {
+    "id": 23,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la collaborazione professionale digitale?",
+    "options": [
+      "L'insieme dei corsi seguiti per aggiornare le proprie competenze",
+      "L'uso del registro elettronico per comunicare con le famiglie",
+      "L'insieme degli strumenti e delle pratiche che permettono a più docenti di lavorare insieme sullo stesso materiale o di confrontarsi anche fuori dalla propria scuola",
+      "Il momento in cui ci si ferma a osservare il proprio modo di lavorare"
+    ],
+    "correctIndex": 2,
+    "explanation": "La collaborazione professionale digitale riguarda strumenti e pratiche per lavorare insieme o confrontarsi con colleghi anche di altre scuole."
+  },
+  {
+    "id": 24,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale problema risolve un documento condiviso online?",
+    "options": [
+      "Sostituisce le comunità online tra insegnanti",
+      "Evita più copie diverse da confrontare e unire a mano: esiste una sola versione modificabile da tutti",
+      "Impedisce che due docenti modifichino lo stesso file",
+      "Rende superflua qualsiasi discussione tra colleghi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Invece di tre copie da unire a mano c'è una sola versione, con il lavoro altrui visibile in tempo reale."
+  },
+  {
+    "id": 25,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono le comunità online per docenti?",
+    "options": [
+      "Archivi di documenti condivisi tra classi della stessa scuola",
+      "Forum, gruppi e reti di discussione dove insegnanti di scuole e città diverse si scambiano materiali, idee e soluzioni",
+      "Questionari di autovalutazione delle competenze digitali",
+      "Registri online usati per comunicare con le famiglie"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sono forum, gruppi e reti di discussione tra insegnanti di scuole e città diverse."
+  },
+  {
+    "id": 26,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché le comunità online tra docenti sono utili?",
+    "options": [
+      "Perché i problemi didattici si presentano quasi identici ovunque si insegni e le soluzioni possono essere scambiate",
+      "Perché evitano di dover preparare materiali didattici",
+      "Perché sono obbligatorie per ogni docente",
+      "Perché sostituiscono il confronto con i colleghi della propria scuola"
+    ],
+    "correctIndex": 0,
+    "explanation": "Insegnanti di scuole diverse si scambiano materiali e soluzioni a problemi quasi identici."
+  },
+  {
+    "id": 27,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che vantaggio ha scrivere insieme una scaletta su un unico documento condiviso?",
+    "options": [
+      "Ogni docente lavora su una propria copia da unire poi a mano",
+      "Ognuno può aggiungere, commentare e correggere nello stesso documento senza scambiare più email con allegati diversi",
+      "Le modifiche degli altri si vedono solo il giorno dopo",
+      "Solo una persona alla volta può modificare il testo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nell'esempio, attività, commenti e correzioni finiscono tutti nello stesso documento."
+  },
+  {
+    "id": 28,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno tre insegnanti statunitensi cominciarono a usare l'etichetta #Edchat su Twitter?",
+    "options": [
+      "Nel 2009",
+      "Nel 2020",
+      "Nel 2008",
+      "Nel 2012"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel 2009 tre insegnanti statunitensi avviarono #Edchat per una discussione settimanale."
+  },
+  {
+    "id": 29,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cos'è #Edchat?",
+    "options": [
+      "Un questionario europeo di autovalutazione per docenti",
+      "Un ente di ricerca educativa del Ministero dell'Istruzione",
+      "Un'etichetta usata su Twitter per una discussione settimanale aperta a qualsiasi docente",
+      "Un registro elettronico per le scuole paritarie"
+    ],
+    "correctIndex": 2,
+    "explanation": "#Edchat organizzava una discussione settimanale aperta a qualsiasi docente su insegnamento e tecnologia in classe."
+  },
+  {
+    "id": 30,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti messaggi pubblicati con l'etichetta #Edchat tra il 2008 e il 2023 ha analizzato lo studio citato nel caso?",
+    "options": [
+      "Oltre 15 milioni",
+      "Oltre 15.000",
+      "Oltre 150 milioni",
+      "Oltre 230.000"
+    ],
+    "correctIndex": 0,
+    "explanation": "Lo studio ha analizzato oltre 15 milioni di messaggi pubblicati tra il 2008 e il 2023."
+  },
+  {
+    "id": 31,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa ha mostrato lo studio su #Edchat?",
+    "options": [
+      "Che ha funzionato come una vera comunità di pratica, con costruzione condivisa di idee didattiche in tempo reale",
+      "Che serviva solo allo scambio di semplici informazioni",
+      "Che è stata usata soprattutto da chi non insegna",
+      "Che ha smesso di funzionare durante la didattica a distanza"
+    ],
+    "correctIndex": 0,
+    "explanation": "Non semplice scambio di informazioni, ma costruzione condivisa di idee didattiche: una comunità di pratica."
+  },
+  {
+    "id": 32,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale occasione #Edchat ha offerto sostegno professionale \"just in time\" nei momenti di maggiore difficoltà?",
+    "options": [
+      "Durante l'introduzione dei registri online nel 2012",
+      "Durante la transizione forzata alla didattica a distanza nel 2020",
+      "Al momento della sua nascita nel 2009",
+      "Durante il lancio dello strumento europeo di autovalutazione nel 2021"
+    ],
+    "correctIndex": 1,
+    "explanation": "Lo studio cita la transizione forzata alla didattica a distanza del 2020."
+  },
+  {
+    "id": 33,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che lezione mostra il caso #Edchat sulla collaborazione tra docenti?",
+    "options": [
+      "Sostituisce la formazione professionale",
+      "Serve solo nei momenti di emergenza",
+      "Oggi non deve fermarsi ai confini della sala insegnanti",
+      "Deve restare limitata ai colleghi della propria scuola"
+    ],
+    "correctIndex": 2,
+    "explanation": "La collaborazione tra docenti, oggi, non deve fermarsi ai confini della sala insegnanti."
+  },
+  {
+    "id": 34,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A che cosa è paragonato collaborare con i colleghi online?",
+    "options": [
+      "A una porta aperta",
+      "A un muscolo da tenere in allenamento",
+      "A una mappa da studiare prima di partire",
+      "A un allargamento della sala insegnanti oltre le mura della scuola"
+    ],
+    "correctIndex": 3,
+    "explanation": "Collaborare online è come allargare la sala insegnanti oltre le mura della scuola."
+  },
+  {
+    "id": 35,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una pratica riflessiva?",
+    "options": [
+      "Un colloquio in videochiamata con le famiglie",
+      "Un documento condiviso tra colleghi",
+      "Il momento in cui ci si ferma a osservare consapevolmente il proprio modo di lavorare per riconoscere cosa si sa fare bene e cosa richiede attenzione",
+      "Un corso di formazione tenuto da un ente di ricerca"
+    ],
+    "correctIndex": 2,
+    "explanation": "La pratica riflessiva consiste nell'osservare consapevolmente il proprio modo di lavorare."
+  },
+  {
+    "id": 36,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché riflettere sulle proprie competenze digitali prima di formarsi non è un passaggio burocratico?",
+    "options": [
+      "Perché sostituisce ogni forma di formazione",
+      "Perché serve a ottenere un voto finale",
+      "Perché è richiesto dalla legge",
+      "Perché permette di costruire un percorso su misura invece di un programma identico per tutti"
+    ],
+    "correctIndex": 3,
+    "explanation": "La riflessione permette un percorso di apprendimento su misura, senza ignorare il punto di partenza."
+  },
+  {
+    "id": 37,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa restituiscono gli strumenti di autovalutazione pensati per i docenti?",
+    "options": [
+      "Un quadro personale di punti di forza e aree da sviluppare, spesso con un piano di apprendimento",
+      "Una graduatoria tra colleghi",
+      "Un elenco di corsi obbligatori uguale per tutti",
+      "Un voto finale sulle competenze"
+    ],
+    "correctIndex": 0,
+    "explanation": "Restituiscono punti di forza e aree da sviluppare, spesso accompagnati da un piano di apprendimento."
+  },
+  {
+    "id": 38,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale vantaggio ricava un docente che scopre di essere sicuro nel comunicare con famiglie e studenti ma incerto nella valutazione digitale?",
+    "options": [
+      "Un punto di partenza concreto, per concentrare l'attenzione dove serve invece di sentirsi genericamente \"indietro con tutto\"",
+      "La certezza di non dover più formarsi",
+      "L'obbligo di seguire tutti i corsi disponibili",
+      "Un voto che certifica le sue competenze"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il questionario offre un quadro concreto da cui partire."
+  },
+  {
+    "id": 39,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando la Commissione Europea ha lanciato SELFIEforTEACHERS?",
+    "options": [
+      "Nell'ottobre 2012",
+      "Nell'ottobre 2021",
+      "Nell'ottobre 2019",
+      "Nell'ottobre 2027"
+    ],
+    "correctIndex": 1,
+    "explanation": "SELFIEforTEACHERS è stato lanciato nell'ottobre 2021."
+  },
+  {
+    "id": 40,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In occasione di quale ricorrenza è stato lanciato SELFIEforTEACHERS?",
+    "options": [
+      "La Giornata Mondiale degli Insegnanti",
+      "La Giornata Mondiale degli Studenti",
+      "La Giornata Mondiale dell'Istruzione Digitale",
+      "La Giornata Europea dei Genitori"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il lancio avvenne in occasione della Giornata Mondiale degli Insegnanti."
+  },
+  {
+    "id": 41,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da quale organismo è stato sviluppato SELFIEforTEACHERS, su incarico della Direzione Generale Istruzione della Commissione?",
+    "options": [
+      "Dal collegio docenti",
+      "Dal Ministero dell'Istruzione italiano",
+      "Dall'INDIRE",
+      "Dal Centro Comune di Ricerca (Joint Research Centre)"
+    ],
+    "correctIndex": 3,
+    "explanation": "Fu sviluppato dal Joint Research Centre su incarico della Direzione Generale Istruzione."
+  },
+  {
+    "id": 42,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Su quale framework è basato SELFIEforTEACHERS?",
+    "options": [
+      "Edchat",
+      "DigCompEdu",
+      "Legge n. 135/2012",
+      "Piano d'azione per l'istruzione digitale 2021-2027"
+    ],
+    "correctIndex": 1,
+    "explanation": "SELFIEforTEACHERS è basato esplicitamente sul framework DigCompEdu."
+  },
+  {
+    "id": 43,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da quante domande è composto il questionario di SELFIEforTEACHERS?",
+    "options": [
+      "32",
+      "50",
+      "23",
+      "29"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il questionario propone 32 domande."
+  },
+  {
+    "id": 44,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti utenti registrati e in quante lingue ha raggiunto SELFIEforTEACHERS?",
+    "options": [
+      "Oltre 29.000 utenti in 230 lingue",
+      "Oltre 230.000 utenti in 32 lingue",
+      "Oltre 230.000 utenti in 29 lingue",
+      "Oltre 32.000 utenti in 29 lingue"
+    ],
+    "correctIndex": 2,
+    "explanation": "Ha raggiunto oltre 230.000 utenti registrati in 29 lingue diverse."
+  },
+  {
+    "id": 45,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come è pensato SELFIEforTEACHERS secondo la documentazione ufficiale?",
+    "options": [
+      "Come un archivio di risorse didattiche",
+      "Come un test con un voto finale",
+      "Come un percorso di apprendimento più che uno strumento di valutazione",
+      "Come un esame di certificazione obbligatorio"
+    ],
+    "correctIndex": 2,
+    "explanation": "Non è un test con un voto finale: è un percorso di apprendimento più che uno strumento di valutazione."
+  },
+  {
+    "id": 46,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A che cosa è paragonato riflettere sulle proprie competenze prima di formarsi?",
+    "options": [
+      "A una porta aperta",
+      "A studiare una mappa prima di partire per un viaggio",
+      "A tenere in allenamento un muscolo",
+      "A una cassetta della posta"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non serve a giudicare se si è bravi o scarsi, ma a sapere da dove si parte."
+  },
+  {
+    "id": 47,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la crescita professionale continua?",
+    "options": [
+      "Un questionario di autovalutazione con voto finale",
+      "L'insieme delle attività con cui un docente aggiorna nel tempo le proprie competenze, comprese quelle digitali",
+      "Un canale di comunicazione con le famiglie",
+      "L'obbligo di frequentare un solo corso all'anno"
+    ],
+    "correctIndex": 1,
+    "explanation": "Comprende corsi, letture e confronto con altri professionisti."
+  },
+  {
+    "id": 48,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono considerate fonti di aggiornamento più affidabili di un video trovato per caso?",
+    "options": [
+      "Qualsiasi corso online gratuito",
+      "I contenuti più visualizzati",
+      "I primi risultati di una ricerca generica",
+      "Enti di ricerca pubblici, riviste di settore sottoposte a revisione e comunità professionali riconosciute"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sono fonti il cui scopo dichiarato è offrire formazione verificata."
+  },
+  {
+    "id": 49,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché enti di ricerca pubblici e riviste con revisione sono fonti più affidabili?",
+    "options": [
+      "Perché sono sempre gratuiti",
+      "Perché sono i primi a comparire nei motori di ricerca",
+      "Perché producono più materiale degli altri",
+      "Perché il loro scopo dichiarato è offrire formazione verificata, non semplice contenuto"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il loro scopo dichiarato è la formazione verificata."
+  },
+  {
+    "id": 50,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Riconoscere le fonti di aggiornamento affidabili fa parte di quale competenza?",
+    "options": [
+      "Della stessa competenza digitale che si esercita nel valutare l'affidabilità di qualunque fonte online",
+      "Della competenza di usare la videochiamata",
+      "Della competenza di scrivere su un registro elettronico",
+      "Della competenza di lavorare su documenti condivisi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Valutare fonti di aggiornamento e fonti online richiede la stessa competenza."
+  },
+  {
+    "id": 51,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa significa la sigla INDIRE?",
+    "options": [
+      "Istituto Nazionale di Digitalizzazione e Ricerca Europea",
+      "Istituto Nazionale per la Didattica e le Reti Educative",
+      "Istituto Nazionale di Documentazione e Insegnamento Regionale",
+      "Istituto Nazionale di Documentazione, Innovazione e Ricerca Educativa"
+    ],
+    "correctIndex": 3,
+    "explanation": "INDIRE è l'Istituto Nazionale di Documentazione, Innovazione e Ricerca Educativa."
+  },
+  {
+    "id": 52,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Dove e quando nacque l'ente oggi noto come INDIRE?",
+    "options": [
+      "A Torino nel 1929, come museo didattico",
+      "A Firenze nel 1954, come centro di formazione a distanza",
+      "A Roma nel 1925, come biblioteca pedagogica",
+      "A Firenze nel 1925, come mostra didattica nazionale sui lavori delle \"scuole nuove\""
+    ],
+    "correctIndex": 3,
+    "explanation": "Nacque a Firenze nel 1925 come mostra didattica nazionale."
+  },
+  {
+    "id": 53,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale nome assunse l'ente nel 1929?",
+    "options": [
+      "Biblioteca di Documentazione Pedagogica",
+      "Museo Didattico Nazionale",
+      "Centro Didattico di Studi e Documentazione",
+      "Istituto Nazionale di Documentazione, Innovazione e Ricerca Educativa"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nel 1929 divenne Museo Didattico Nazionale."
+  },
+  {
+    "id": 54,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno l'ente divenne Biblioteca di Documentazione Pedagogica?",
+    "options": [
+      "Nel 1974",
+      "Nel 1929",
+      "Nel 1954",
+      "Nel 2001"
+    ],
+    "correctIndex": 0,
+    "explanation": "Nel 1974 assunse il nome di Biblioteca di Documentazione Pedagogica."
+  },
+  {
+    "id": 55,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Dal 1995 in quale modo l'ente iniziò a utilizzare Internet?",
+    "options": [
+      "Per comunicare con le famiglie",
+      "Per gestire i registri elettronici",
+      "Per la formazione a distanza degli insegnanti",
+      "Per organizzare discussioni settimanali su Twitter"
+    ],
+    "correctIndex": 2,
+    "explanation": "Dal 1995 iniziò a usare Internet per la formazione a distanza degli insegnanti."
+  },
+  {
+    "id": 56,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quali sono le sedi dell'INDIRE?",
+    "options": [
+      "Firenze, Torino, Roma e Napoli",
+      "Firenze, Milano, Roma e Napoli",
+      "Firenze, Torino, Bologna e Napoli",
+      "Firenze, Torino, Roma e Palermo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Dal 2012 opera con sedi a Firenze, Torino, Roma e Napoli."
+  },
+  {
+    "id": 57,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa mostra la storia dell'INDIRE sulla crescita professionale?",
+    "options": [
+      "Che restare al passo con gli strumenti a disposizione della scuola richiede di cambiare più volte, e di rivolgersi a fonti istituzionali affidabili",
+      "Che la formazione a distanza è nata solo dopo il 2001",
+      "Che un ente non dovrebbe mai cambiare nome",
+      "Che conviene scegliere il primo risultato di una ricerca online"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un ente quasi centenario ha cambiato pelle più volte per restare al passo."
+  },
+  {
+    "id": 58,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A che cosa è paragonata la crescita professionale continua?",
+    "options": [
+      "A studiare una mappa prima di un viaggio",
+      "A una cassetta della posta",
+      "A una porta aperta",
+      "A tenere in allenamento un muscolo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Anche il docente più esperto, se smette di esercitarsi, perde smalto."
+  },
+  {
+    "id": 59,
+    "module": "coinvolgimento-professionale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il docente più esperto perde smalto se smette di aggiornarsi?",
+    "options": [
+      "Perché gli strumenti digitali sostituiscono il docente",
+      "Perché dimentica ciò che sapeva",
+      "Non perché abbia dimenticato ciò che sapeva, ma perché il contesto intorno a lui continua a cambiare",
+      "Perché gli studenti cambiano ogni anno"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il contesto cambia continuamente, per questo occorre continuare ad allenarsi."
+  }
+]

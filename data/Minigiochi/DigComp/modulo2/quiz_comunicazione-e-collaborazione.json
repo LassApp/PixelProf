@@ -1,0 +1,527 @@
+[
+  {
+    "id": 1,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la netiquette?",
+    "options": [
+      "L'insieme delle regole di sicurezza per proteggere gli account",
+      "L'insieme delle regole di comportamento che favoriscono una comunicazione rispettosa negli ambienti digitali",
+      "L'insieme delle regole tecniche che permettono ai messaggi di viaggiare in rete",
+      "L'insieme delle regole legali sulla pubblicazione dei contenuti"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la crasi di network + etiquette, cioè \"buona educazione\" in rete."
+  },
+  {
+    "id": 2,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché online un messaggio può sembrare più freddo di quanto sia?",
+    "options": [
+      "Perché mancano volto, tono e gesti, e il cervello riempie il vuoto da solo",
+      "Perché la rete elimina automaticamente le espressioni di cortesia",
+      "Perché i messaggi scritti vengono sempre consegnati con un ritardo",
+      "Perché chi scrive usa quasi sempre un tono ostile"
+    ],
+    "correctIndex": 0,
+    "explanation": "Online si comunica con molte meno informazioni che di persona."
+  },
+  {
+    "id": 3,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il bias dell'intento negativo?",
+    "options": [
+      "La tendenza a immaginare un messaggio ambiguo più ostile o freddo di quanto probabilmente sia",
+      "La tendenza a rispondere sempre troppo in fretta",
+      "La tendenza a interpretare ogni messaggio in modo positivo",
+      "La tendenza a scrivere messaggi più ostili di quanto si voglia"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un semplice \"Va bene.\" può essere letto come assenso o come segnale di un problema."
+  },
+  {
+    "id": 4,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è l'effetto disinibizione?",
+    "options": [
+      "Lo schermo riduce la percezione immediata delle conseguenze di ciò che si scrive",
+      "Lo schermo fa percepire gli altri come più numerosi",
+      "Lo schermo impedisce di rileggere ciò che si è scritto",
+      "Lo schermo aumenta la timidezza di chi scrive"
+    ],
+    "correctIndex": 0,
+    "explanation": "Da qui il soprannome informale di \"leoni da tastiera\"."
+  },
+  {
+    "id": 5,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un flame?",
+    "options": [
+      "Un messaggio pubblicitario inviato a molti destinatari senza che sia richiesto",
+      "Un segnale che indica un contenuto offensivo",
+      "Una discussione che degenera: una provocazione genera una risposta e il conflitto si autoalimenta",
+      "Un messaggio scritto in maiuscolo per attirare l'attenzione"
+    ],
+    "correctIndex": 2,
+    "explanation": "Flame deriva dall'inglese \"fiamma\"."
+  },
+  {
+    "id": 6,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando andò in onda lo sketch dei Monty Python da cui nasce il termine spam?",
+    "options": [
+      "Il 1º maggio 1978",
+      "Il 1º maggio 1970",
+      "Il 15 dicembre 1978",
+      "Il 15 dicembre 1970"
+    ],
+    "correctIndex": 3,
+    "explanation": "Lo sketch era ambientato in una tavola calda in cui quasi ogni piatto conteneva Spam."
+  },
+  {
+    "id": 7,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa avvenne il 1º maggio 1978 su ARPANET?",
+    "options": [
+      "Fu trasmesso il primo messaggio tra due computer in rete",
+      "L'azienda DEC inviò un messaggio pubblicitario a circa 400 destinatari, senza che nessuno lo avesse richiesto",
+      "I forum online adottarono le prime regole di netiquette",
+      "Uno sketch comico introdusse la parola spam"
+    ],
+    "correctIndex": 1,
+    "explanation": "È considerato il primo vero episodio di posta elettronica indesiderata su larga scala."
+  },
+  {
+    "id": 8,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa permettono gli strumenti collaborativi?",
+    "options": [
+      "A più persone di lavorare solo in momenti diversi",
+      "A più persone di lavorare in modo coordinato sullo stesso contenuto, invece di scambiarsi copie da unire a mano",
+      "A una persona di proteggere un file dalle modifiche altrui",
+      "A una persona di inviare molte copie dello stesso file"
+    ],
+    "correctIndex": 1,
+    "explanation": "Evitano di dover confrontare più file a fine giornata."
+  },
+  {
+    "id": 9,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando la collaborazione è sincrona?",
+    "options": [
+      "Quando le persone lavorano su copie separate da unire a mano",
+      "Quando le persone lavorano nello stesso luogo fisico",
+      "Quando le persone lavorano in momenti diversi, per esempio con email o commenti",
+      "Quando le persone lavorano nello stesso momento, per esempio su un documento aperto insieme in tempo reale"
+    ],
+    "correctIndex": 3,
+    "explanation": "In quella asincrona si lavora in momenti diversi, senza essere collegati insieme."
+  },
+  {
+    "id": 10,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa permette la cronologia delle modifiche?",
+    "options": [
+      "Vedere chi ha cambiato cosa e quando, e tornare a una versione precedente",
+      "Impedire che più persone aprino lo stesso file",
+      "Scrivere nello stesso momento di altre persone",
+      "Aggiungere annotazioni a margine senza toccare il testo"
+    ],
+    "correctIndex": 0,
+    "explanation": "È una sorta di macchina del tempo del documento."
+  },
+  {
+    "id": 11,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno e con quale nome fu lanciato il servizio da cui nacque Google Documenti?",
+    "options": [
+      "Nel marzo 2006, con il nome Google Documenti",
+      "Nell'agosto 2005, con il nome Upstartle",
+      "Nell'agosto 2005, con il nome Writely",
+      "Nell'ottobre 2006, con il nome Writely"
+    ],
+    "correctIndex": 2,
+    "explanation": "Writely era un elaboratore di testi che funzionava interamente dentro il browser."
+  },
+  {
+    "id": 12,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la cloud collaboration?",
+    "options": [
+      "La pratica di conservare un documento sul dispositivo di una sola persona",
+      "La pratica di conservare un documento condiviso su server remoti raggiungibili da chiunque sia autorizzato, così che tutti lavorino sulla stessa risorsa",
+      "La pratica di inviare copie dello stesso file a più persone",
+      "La pratica di bloccare un documento per impedire le modifiche"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non si lavora sul proprio file, ma su una risorsa condivisa."
+  },
+  {
+    "id": 13,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un link non è un semplice indirizzo?",
+    "options": [
+      "Perché è una porta: con \"chiunque abbia il link\" può far circolare contenuti riservati se inoltrato",
+      "Perché identifica sempre chi lo apre",
+      "Perché funziona solo su un dispositivo alla volta",
+      "Perché scade automaticamente dopo un certo numero di accessi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Con \"solo persone autorizzate\" si controlla chi può davvero raggiungere il documento."
+  },
+  {
+    "id": 14,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi scoprì nel maggio 2018 che molte bacheche Trello erano state rese pubbliche?",
+    "options": [
+      "Il giornalista Mat Honan",
+      "Il co-fondatore di Trello Michael Pryor",
+      "Il ricercatore di sicurezza Kushagra Pathak",
+      "L'ingegnere Eric Yuan"
+    ],
+    "correctIndex": 2,
+    "explanation": "Erano visibili con una semplice ricerca su Google."
+  },
+  {
+    "id": 15,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa precisò il co-fondatore di Trello Michael Pryor?",
+    "options": [
+      "Che non era una falla: le bacheche sono private per impostazione predefinita",
+      "Che le bacheche erano pubbliche per impostazione predefinita",
+      "Che il servizio non offriva alcun controllo di visibilità",
+      "Che era una falla già corretta da tempo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Serve un'azione volontaria dell'utente per renderle pubbliche."
+  },
+  {
+    "id": 16,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è l'identità online?",
+    "options": [
+      "L'insieme delle password usate per accedere ai servizi",
+      "L'elenco dei dispositivi collegati a un account",
+      "La rappresentazione di una persona così come emerge da account, attività e tracce lasciate sulle piattaforme",
+      "La copia dei documenti di identità caricata online"
+    ],
+    "correctIndex": 2,
+    "explanation": "Può cambiare a seconda del contesto: professionista, amico, cliente."
+  },
+  {
+    "id": 17,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che differenza c'è tra identità dichiarata e identità osservata?",
+    "options": [
+      "La dichiarata riguarda gli account; l'osservata riguarda i dispositivi",
+      "La dichiarata è privata; l'osservata è sempre pubblica",
+      "La dichiarata emerge dai comportamenti; l'osservata è ciò che si scrive nella biografia",
+      "La dichiarata è ciò che si afferma di sé a parole; l'osservata emerge dai comportamenti reali"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le parole costruiscono un'immagine; i dati la confermano o la smentiscono."
+  },
+  {
+    "id": 18,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Mat Honan raccontò come la sua vita digitale fosse stata cancellata in un pomeriggio?",
+    "options": [
+      "Nel febbraio 2010",
+      "Nel maggio 2018",
+      "Nell'agosto 2012",
+      "Nell'agosto 2005"
+    ],
+    "correctIndex": 2,
+    "explanation": "Un malintenzionato telefonò al servizio clienti di Amazon fingendosi Honan."
+  },
+  {
+    "id": 19,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa usò l'aggressore per convincere Apple a reimpostare la password iCloud?",
+    "options": [
+      "La data di nascita di Honan",
+      "Le ultime cifre della carta di credito aggiunta all'account Amazon",
+      "Il nome dell'account social di Honan",
+      "Il numero di telefono di Honan"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nessuna password era stata indovinata: bastò convincere due persone al telefono."
+  },
+  {
+    "id": 20,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la reputazione digitale?",
+    "options": [
+      "L'insieme delle credenziali usate per accedere ai servizi",
+      "L'insieme dei dati che una persona dichiara di sé nei propri account",
+      "L'insieme degli account posseduti su diverse piattaforme",
+      "L'insieme delle impressioni che le tracce online (post, recensioni, commenti altrui) costruiscono nel tempo attorno a una persona o attività"
+    ],
+    "correctIndex": 3,
+    "explanation": "Non dipende solo da ciò che pubblichiamo noi stessi."
+  },
+  {
+    "id": 21,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che differenza c'è tra identità e reputazione?",
+    "options": [
+      "L'identità è ciò che gli altri pensano; la reputazione è ciò che si mostra",
+      "L'identità dipende dagli altri; la reputazione solo da noi",
+      "L'identità è ciò che una persona mostra di sé; la reputazione è ciò che gli altri ne pensano",
+      "Non c'è differenza: i due termini coincidono"
+    ],
+    "correctIndex": 2,
+    "explanation": "Una recensione, un tag o un commento altrui concorrono alla reputazione."
+  },
+  {
+    "id": 22,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che percentuale di datori di lavoro controlla i profili social dei candidati, secondo la ricerca di Indeed?",
+    "options": [
+      "73%",
+      "70%",
+      "27%",
+      "37%"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ricerca ha coinvolto 500 candidati e 500 aziende."
+  },
+  {
+    "id": 23,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Per quale percentuale di selezionatori i contenuti trovati hanno pesato sulla valutazione?",
+    "options": [
+      "7%",
+      "40%",
+      "73%",
+      "70%"
+    ],
+    "correctIndex": 3,
+    "explanation": "In alcuni casi hanno portato a interrompere la selezione."
+  },
+  {
+    "id": 24,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la cittadinanza digitale?",
+    "options": [
+      "La possibilità di avere un account su ogni piattaforma",
+      "La possibilità di pagare online qualsiasi servizio privato",
+      "La possibilità di evitare ogni contatto con gli uffici pubblici",
+      "La possibilità di esercitare diritti e doveri di cittadino attraverso strumenti digitali, oltre che negli uffici fisici"
+    ],
+    "correctIndex": 3,
+    "explanation": "Comprende anche informarsi e partecipare, non solo evitare una fila."
+  },
+  {
+    "id": 25,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando i primi tre gestori resero disponibile ai cittadini italiani il sistema SPID?",
+    "options": [
+      "Il 15 marzo 2020",
+      "Il 15 marzo 2013",
+      "Il 15 giugno 2016",
+      "Il 15 marzo 2016"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il progetto era stato proposto in Parlamento già nel 2013."
+  },
+  {
+    "id": 26,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quali furono i primi tre gestori di identità digitale accreditati dall'AgID?",
+    "options": [
+      "InfoCert, TIM e AgID",
+      "InfoCert, Poste Italiane e TIM",
+      "Poste Italiane, TIM e INPS",
+      "InfoCert, Poste Italiane e Agenzia delle Entrate"
+    ],
+    "correctIndex": 1,
+    "explanation": "SPID è un'unica coppia di credenziali per accedere ai servizi online della Pubblica Amministrazione."
+  },
+  {
+    "id": 27,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa stabilì dal 2020 il decreto sulla semplificazione digitale?",
+    "options": [
+      "Introdusse SPID solo per le imprese private",
+      "Rese SPID obbligatorio per l'accesso ai servizi digitali di gran parte della Pubblica Amministrazione",
+      "Sostituì SPID con un altro sistema di identità",
+      "Rese SPID facoltativo per tutti i servizi pubblici"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nel 2025 le identità digitali attive avevano superato i 40 milioni."
+  },
+  {
+    "id": 28,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la privacy sociale?",
+    "options": [
+      "La scelta di non condividere mai alcuna informazione online",
+      "La gestione consapevole di quali informazioni personali condividere pubblicamente online e con chi",
+      "La protezione degli account tramite password complesse",
+      "La rimozione dei commenti negativi dai propri profili"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non serve smettere di condividere: basta scegliere cosa, quando e con quale dettaglio."
+  },
+  {
+    "id": 29,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la geolocalizzazione in tempo reale è rischiosa?",
+    "options": [
+      "Perché rivela indirettamente anche dove non si è, per esempio che casa o negozio sono vuoti",
+      "Perché impedisce di condividere altre informazioni",
+      "Perché blocca l'accesso agli account dopo la pubblicazione",
+      "Perché consuma molta batteria del dispositivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Online esiste spesso un pubblico invisibile."
+  },
+  {
+    "id": 30,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu lanciato il sito Please Rob Me?",
+    "options": [
+      "Il 17 maggio 2018",
+      "Il 17 dicembre 2010",
+      "Il 17 febbraio 2010",
+      "Il 17 febbraio 2012"
+    ],
+    "correctIndex": 2,
+    "explanation": "Fu lanciato da due sviluppatori olandesi, Boy van Amstel e Frank Groeneveld."
+  },
+  {
+    "id": 31,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Qual era l'obiettivo dichiarato dei creatori di Please Rob Me?",
+    "options": [
+      "Dimostrare che Foursquare era un servizio insicuro",
+      "Choccare le persone abbastanza da farle riflettere su quanto condividevano senza accorgersene",
+      "Vendere un servizio di sorveglianza",
+      "Aiutare i ladri a individuare le case vuote"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il sito aggregava i messaggi pubblici degli utenti di Foursquare pubblicati su Twitter."
+  },
+  {
+    "id": 32,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa significa collaborare a distanza?",
+    "options": [
+      "Rinviare ogni decisione al momento dell'incontro di persona",
+      "Lavorare ciascuno a un obiettivo diverso, senza coordinarsi",
+      "Scambiarsi file via email senza mai parlarsi",
+      "Lavorare insieme a un obiettivo comune senza trovarsi nello stesso luogo, con strumenti per vedersi, parlarsi e condividere contenuti in tempo reale"
+    ],
+    "correctIndex": 3,
+    "explanation": "Non è un ripiego rispetto all'incontro di persona."
+  },
+  {
+    "id": 33,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa serve per una videochiamata ben organizzata?",
+    "options": [
+      "Un'agenda chiara, la definizione di chi parla quando e, se utile, la condivisione dello schermo",
+      "Un collegamento veloce e nient'altro",
+      "Una registrazione di ogni intervento",
+      "Il maggior numero possibile di partecipanti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Serve più di un buon collegamento a Internet."
+  },
+  {
+    "id": 34,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quante volte era stato rifiutato il visto a Eric Yuan prima del suo trasferimento negli Stati Uniti nel 1997?",
+    "options": [
+      "Due volte",
+      "Cinque volte",
+      "Otto volte",
+      "Dieci volte"
+    ],
+    "correctIndex": 2,
+    "explanation": "Yuan sognava un modo per vedersi in faccia senza viaggiare per dieci ore in treno."
+  },
+  {
+    "id": 35,
+    "module": "comunicazione-e-collaborazione",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quanto tempo Zoom superò il milione di utenti dopo il lancio ufficiale del gennaio 2013?",
+    "options": [
+      "In un anno",
+      "In due anni",
+      "In quattro mesi",
+      "In un mese"
+    ],
+    "correctIndex": 2,
+    "explanation": "Yuan aveva lasciato Cisco nel 2011 per fondare Zoom."
+  }
+]

@@ -1,0 +1,542 @@
+[
+  {
+    "id": 1,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il troubleshooting?",
+    "options": [
+      "La sostituzione immediata del componente sospettato di guasto",
+      "L'installazione di un aggiornamento per risolvere ogni problema",
+      "Il tentativo di risolvere un problema riprovando più volte la stessa azione",
+      "L'approccio sistematico alla risoluzione di un problema tecnico, con domande che restringono le cause possibili"
+    ],
+    "correctIndex": 3,
+    "explanation": "Non è un tentativo casuale: ogni risposta elimina intere categorie di cause."
+  },
+  {
+    "id": 2,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali domande fanno parte di un approccio sistematico a un problema tecnico?",
+    "options": [
+      "Cosa non funziona, da quando, cosa è cambiato nel frattempo e se riguarda un solo dispositivo o anche altri della stessa rete",
+      "Quale marca è il dispositivo, dove è stato acquistato e se è in garanzia",
+      "Quanto costa la riparazione, chi può farla e quanto tempo richiede",
+      "Chi ha usato il dispositivo per ultimo e in quale stanza si trova"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ogni risposta restringe il campo verso la causa più probabile."
+  },
+  {
+    "id": 3,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi mise a punto negli anni Trenta il metodo dei \"cinque perché\"?",
+    "options": [
+      "Taiichi Ohno, ingegnere del Toyota Production System",
+      "George Boole, matematico britannico",
+      "August Dvorak, educatore statunitense",
+      "Sakichi Toyoda, fondatore di quella che sarebbe diventata Toyota"
+    ],
+    "correctIndex": 3,
+    "explanation": "Allora Toyota era ancora un'azienda di telai tessili."
+  },
+  {
+    "id": 4,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In che cosa consiste la tecnica dei \"cinque perché\"?",
+    "options": [
+      "Verificare cinque componenti uno dopo l'altro",
+      "Chiedersi \"perché?\" e poi di nuovo \"perché?\" a partire da ogni risposta, circa cinque volte, fino alla causa reale",
+      "Porre cinque domande diverse allo stesso tecnico",
+      "Provare cinque soluzioni diverse in sequenza"
+    ],
+    "correctIndex": 1,
+    "explanation": "Evita di fermarsi al primo sintomo visibile."
+  },
+  {
+    "id": 5,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi riprese e diffuse la tecnica dei \"cinque perché\" nel secondo dopoguerra?",
+    "options": [
+      "Frank e Lillian Gilbreth, all'ASME",
+      "Grace Hopper, nel gruppo di ricerca di Harvard",
+      "Sakichi Toyoda, nei suoi telai tessili",
+      "L'ingegnere Taiichi Ohno, all'interno del Toyota Production System"
+    ],
+    "correctIndex": 3,
+    "explanation": "Divenne uno dei pilastri del modo di lavorare dell'azienda."
+  },
+  {
+    "id": 6,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la diagnosi degli errori rispetto al troubleshooting?",
+    "options": [
+      "Il passaggio finale: verificare che il problema non si ripresenti",
+      "Il passaggio precedente: elencare tutte le cause possibili",
+      "Il passaggio successivo: isolare con certezza quale elemento preciso è la causa del malfunzionamento",
+      "Lo stesso passaggio, con un nome diverso"
+    ],
+    "correctIndex": 2,
+    "explanation": "Non basta restringere il campo dei sospetti."
+  },
+  {
+    "id": 7,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il modo più affidabile per scoprire la causa di un errore?",
+    "options": [
+      "Isolare le variabili una alla volta, aggiungendo gli elementi uno per volta",
+      "Riavviare ripetutamente il dispositivo",
+      "Cambiare più cose insieme per vedere se il problema sparisce",
+      "Reinstallare tutto subito, per partire da zero"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cambiare più cose insieme può risolvere per caso ma non insegna nulla sulla causa."
+  },
+  {
+    "id": 8,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando i tecnici del Mark II di Harvard trovarono una falena incastrata in un relè?",
+    "options": [
+      "Il 29 ottobre 1969",
+      "Il 9 settembre 1937",
+      "Il 9 settembre 1957",
+      "Il 9 settembre 1947"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il pannello aperto era il pannello F."
+  },
+  {
+    "id": 9,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa fecero i tecnici con l'insetto trovato nel relè?",
+    "options": [
+      "Lo buttarono senza annotare nulla",
+      "Lo fotografarono e inviarono la foto a Thomas Edison",
+      "Lo incollarono con nastro adesivo sul registro tecnico, accanto all'annotazione \"First actual case of bug being found\"",
+      "Lo conservarono in una teca nel laboratorio"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il termine \"bug\" era già in uso da decenni nel gergo ingegneristico."
+  },
+  {
+    "id": 10,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale celebre personaggio usava già il termine \"bug\" negli anni Settanta dell'Ottocento?",
+    "options": [
+      "Claude Shannon",
+      "Thomas Edison",
+      "George Boole",
+      "Grace Hopper"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'episodio del 1947 rese l'espressione memorabile in modo letterale."
+  },
+  {
+    "id": 11,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la logica digitale?",
+    "options": [
+      "Il ragionamento con cui una persona sceglie uno strumento",
+      "L'insieme delle regole con cui un computer valuta condizioni vere o false per decidere cosa fare",
+      "L'elenco dei comandi disponibili in un programma",
+      "L'insieme dei programmi che un computer esegue all'avvio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ogni decisione di un computer si riconduce a combinazioni elementari di vero e falso."
+  },
+  {
+    "id": 12,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa significa l'operatore E?",
+    "options": [
+      "Nessuna delle due condizioni deve essere vera",
+      "Si inverte una condizione, da vera a falsa",
+      "Entrambe le condizioni devono essere vere insieme",
+      "Basta che una delle due condizioni sia vera"
+    ],
+    "correctIndex": 2,
+    "explanation": "Con O, invece, basta che una delle due sia vera."
+  },
+  {
+    "id": 13,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa l'operatore NON?",
+    "options": [
+      "Inverte una condizione, da vera a falsa o viceversa",
+      "Richiede che entrambe le condizioni siano vere",
+      "Rende vera ogni condizione",
+      "Richiede che almeno una condizione sia vera"
+    ],
+    "correctIndex": 0,
+    "explanation": "Esempio: cercare \"bicicletta NON elettrica\" esclude i risultati che violano la condizione."
+  },
+  {
+    "id": 14,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno George Boole pubblicò \"An Investigation of the Laws of Thought\"?",
+    "options": [
+      "Nel 1854",
+      "Nel 1947",
+      "Nel 1921",
+      "Nel 1937"
+    ],
+    "correctIndex": 0,
+    "explanation": "Propose di trattare la logica come un sistema algebrico."
+  },
+  {
+    "id": 15,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa dimostrò Claude Shannon nel 1937, nella propria tesi di laurea?",
+    "options": [
+      "Che il bit è l'unità minima di informazione",
+      "Che ogni problema logico si può risolvere con un diagramma di flusso",
+      "Che l'algebra booleana poteva servire a progettare circuiti elettrici basati su interruttori acceso/spento",
+      "Che i computer possono eseguire operazioni solo su numeri"
+    ],
+    "correctIndex": 2,
+    "explanation": "Da quell'incontro nacque la logica su cui si basa ogni computer."
+  },
+  {
+    "id": 16,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un flusso (diagramma di flusso)?",
+    "options": [
+      "Un elenco scritto di passaggi da spuntare a ogni esecuzione",
+      "Una tabella che confronta più strumenti",
+      "Un grafico che mostra l'andamento dei dati nel tempo",
+      "La rappresentazione visiva di un procedimento, con passaggi ordinati e decisioni sì/no collegati da frecce"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le frecce indicano la direzione da seguire in ogni caso."
+  },
+  {
+    "id": 17,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché costruire un diagramma di flusso è utile, oltre che per la chiarezza?",
+    "options": [
+      "Perché obbliga a scoprire i casi eccezionali che si risolvevano \"a intuito\"",
+      "Perché riduce il numero di passaggi del procedimento",
+      "Perché elimina la necessità di una checklist",
+      "Perché trasforma il procedimento in un'automazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "A parole si nascondono spesso passaggi impliciti."
+  },
+  {
+    "id": 18,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Frank e Lillian Gilbreth presentarono all'ASME uno dei primi tentativi di rappresentare graficamente un processo produttivo?",
+    "options": [
+      "Nel 1947",
+      "Nel 1921",
+      "Nel 1854",
+      "Nel 1936"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'obiettivo era individuare inefficienze nelle fabbriche."
+  },
+  {
+    "id": 19,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quali simboli standard adottò l'ASME nel 1947?",
+    "options": [
+      "Rettangoli per le decisioni, cerchi per le azioni, frecce per le eccezioni",
+      "Cerchi per le azioni, triangoli per le decisioni, linee per il percorso",
+      "Rettangoli per le azioni, rombi per le decisioni, frecce per il percorso",
+      "Rombi per le azioni, rettangoli per le decisioni, frecce per il percorso"
+    ],
+    "correctIndex": 2,
+    "explanation": "Servivano a rendere ogni diagramma leggibile allo stesso modo da chiunque."
+  },
+  {
+    "id": 20,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è l'automazione mentale?",
+    "options": [
+      "Trasformare i passaggi critici di un procedimento in una lista di controllo scritta, invece di affidarsi solo alla memoria",
+      "Memorizzare un procedimento così bene da non dover più pensare",
+      "Disegnare il procedimento come un diagramma di flusso",
+      "Impostare una regola che un sistema digitale esegue da solo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una checklist non sostituisce la competenza."
+  },
+  {
+    "id": 21,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale tipo di errore protegge una checklist?",
+    "options": [
+      "Eseguire un passaggio nell'ordine sbagliato per scelta",
+      "Scegliere uno strumento inadatto al compito",
+      "Non conoscere un passaggio del procedimento",
+      "Dimenticare un passaggio non perché non lo si sappia fare, ma perché in quel momento la mente era altrove"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sotto pressione, fretta o stanchezza anche un passaggio ripetuto centinaia di volte può sfuggire."
+  },
+  {
+    "id": 22,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando precipitò il prototipo Boeing Modello 299, poi B-17, a Wright Field?",
+    "options": [
+      "Il 30 ottobre 1935",
+      "Il 30 ottobre 1925",
+      "Il 30 ottobre 1945",
+      "Il 9 settembre 1947"
+    ],
+    "correctIndex": 0,
+    "explanation": "Morirono il pilota collaudatore maggiore Ployer Hill e un osservatore Boeing."
+  },
+  {
+    "id": 23,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Qual fu la causa dell'incidente del Modello 299?",
+    "options": [
+      "Un errore del software di controllo di volo",
+      "Un difetto di costruzione del carrello",
+      "Un guasto tecnico a uno dei motori",
+      "L'equipaggio aveva dimenticato di sbloccare un dispositivo di sicurezza che teneva bloccati i timoni di coda"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'equipaggio era estremamente esperto."
+  },
+  {
+    "id": 24,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale soluzione ebbero i piloti collaudatori Boeing dopo l'incidente?",
+    "options": [
+      "Una lista scritta, breve e precisa, da seguire prima di decollo, atterraggio e fasi critiche del volo",
+      "Ridurre la complessità del velivolo",
+      "Affidare il pilotaggio a un solo pilota esperto",
+      "Sostituire i timoni di coda con un sistema automatico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quella checklist divenne lo standard dell'intera aviazione mondiale."
+  },
+  {
+    "id": 25,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la scelta degli strumenti digitali?",
+    "options": [
+      "La capacità di conoscere a memoria tutte le funzioni di uno strumento",
+      "La capacità di valutare consapevolmente quando adottare una nuova tecnologia e quando restare con quella che già funziona",
+      "La capacità di adottare sempre la tecnologia più avanzata",
+      "La capacità di rifiutare ogni nuova tecnologia per abitudine"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non bisogna lasciarsi guidare solo dalla novità."
+  },
+  {
+    "id": 26,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali fattori contano, oltre alle specifiche tecniche, nella scelta di uno strumento?",
+    "options": [
+      "La data di uscita, il nome del produttore e il peso",
+      "Il prezzo, il colore dell'interfaccia e la marca",
+      "La diffusione, la compatibilità con ciò che si usa già e la probabilità che continui a essere sviluppato nel tempo",
+      "Il numero di funzioni, la velocità e le dimensioni"
+    ],
+    "correctIndex": 2,
+    "explanation": "Uno strumento perfetto ma isolato può essere meno utile di uno più semplice e diffuso."
+  },
+  {
+    "id": 27,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando furono lanciati il Betamax di Sony e il VHS di JVC?",
+    "options": [
+      "Il Betamax nel 1985 e il VHS nel 1986",
+      "Entrambi nel 1975",
+      "Il Betamax nel 1975 e il VHS nel 1976",
+      "Il VHS nel 1975 e il Betamax nel 1976"
+    ],
+    "correctIndex": 2,
+    "explanation": "Si contesero il mercato mondiale degli anni Settanta."
+  },
+  {
+    "id": 28,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Perché il VHS prevalse sul Betamax, secondo il caso?",
+    "options": [
+      "Il VHS era l'unico formato compatibile con i videoregistratori",
+      "Il VHS offriva una qualità dell'immagine nettamente superiore",
+      "Sony rese la propria tecnologia disponibile a tutti, JVC no",
+      "JVC offrì la tecnologia a molti produttori, con prezzi competitivi e cassette capaci di registrare più a lungo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sony mantenne la tecnologia rigorosamente proprietaria."
+  },
+  {
+    "id": 29,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è l'adattamento tecnologico?",
+    "options": [
+      "La capacità di scegliere subito la tecnologia più recente",
+      "La capacità di riorganizzare le proprie abitudini quando uno strumento familiare cambia, invece di resistere o rifiutarlo",
+      "La capacità di tornare sempre alla versione precedente di uno strumento",
+      "La capacità di ignorare i cambiamenti di uno strumento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Richiede disponibilità a tollerare un breve periodo di scomodità."
+  },
+  {
+    "id": 30,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la resistenza al cambiamento è un meccanismo naturale?",
+    "options": [
+      "Perché un'abitudine consolidata richiede pochissimo sforzo mentale, mentre reimparare ne richiede molto all'inizio",
+      "Perché chi resiste ha meno competenze tecniche",
+      "Perché ogni cambiamento è una perdita di tempo",
+      "Perché i nuovi strumenti sono quasi sempre peggiori dei vecchi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Non dipende da pigrizia né da intelligenza."
+  },
+  {
+    "id": 31,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno August Dvorak brevettò una disposizione alternativa dei tasti della tastiera?",
+    "options": [
+      "Nel 1876",
+      "Nel 1976",
+      "Nel 1936",
+      "Nel 1921"
+    ],
+    "correctIndex": 2,
+    "explanation": "Posizionò le lettere più usate nella lingua inglese sulla riga centrale."
+  },
+  {
+    "id": 32,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Perché la disposizione QWERTY non fu mai sostituita su scala di massa?",
+    "options": [
+      "Perché la disposizione di Dvorak risultò più lenta e meno precisa",
+      "Perché il costo collettivo di cambiare tutti insieme superava il beneficio individuale di ciascuno",
+      "Perché la disposizione di Dvorak non fu mai brevettata",
+      "Perché nessuno studio ne aveva dimostrato i vantaggi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Milioni di persone avevano già investito anni nell'imparare la QWERTY."
+  },
+  {
+    "id": 33,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è l'apprendimento continuo?",
+    "options": [
+      "La ripetizione periodica degli stessi esercizi",
+      "L'abitudine di aggiornare nel tempo le proprie competenze digitali, come pratica costante integrata nel modo di lavorare",
+      "Un corso di formazione da seguire una volta ogni tanto",
+      "L'acquisizione di tutte le competenze entro un certo momento"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non è un'eccezione da affrontare di rado."
+  },
+  {
+    "id": 34,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa distingue più di ogni altro chi continua a imparare da chi si blocca?",
+    "options": [
+      "L'età e il tempo disponibile",
+      "Il livello di intelligenza e di talento",
+      "Il numero di strumenti digitali conosciuti",
+      "Il modo in cui si interpreta un errore o una difficoltà iniziale, non l'intelligenza"
+    ],
+    "correctIndex": 3,
+    "explanation": "Dire \"non ancora\" invece di \"mai\" fa la differenza."
+  },
+  {
+    "id": 35,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno Carol Dweck pubblicò il libro \"Mindset: The New Psychology of Success\"?",
+    "options": [
+      "Nel 1988",
+      "Nel 2006",
+      "Nel 1998",
+      "Nel 2016"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sintetizzava una ricerca iniziata quasi vent'anni prima."
+  },
+  {
+    "id": 36,
+    "module": "problem-solving-digitale",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quali due modi di interpretare le proprie capacità descrisse Dweck?",
+    "options": [
+      "La mentalità analitica e la mentalità creativa",
+      "La mentalità aperta e la mentalità chiusa",
+      "La mentalità fissa (fixed mindset) e la mentalità di crescita (growth mindset)",
+      "La mentalità individuale e la mentalità collettiva"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nella mentalità di crescita le capacità si sviluppano con impegno, pratica ed errori."
+  }
+]

@@ -105,13 +105,13 @@
     opacity:0;transform:scale(.6);transition:all .2s var(--transition-bounce);
   }
   #qz-game .opt.correct{ border-color:#4A6B52;background:rgba(74,107,82,.13); }
-  #qz-game .opt.correct .opt-badge{ background:#4A6B52;border-color:#4A6B52;color:#04140c; }
-  #qz-game .opt.correct .opt-text{ color:#eafff5; }
+  #qz-game .opt.correct .opt-badge{ background:#4A6B52;border-color:#4A6B52;color:#233A2E; }
+  #qz-game .opt.correct .opt-text{ color:#C4CBA8; }
   #qz-game .opt.correct .opt-mark{
     opacity:1;transform:scale(1);background:rgba(74,107,82,.16);border:1.5px solid #4A6B52;color:#4A6B52;
   }
   #qz-game .opt.wrong{ border-color:#AB5649;background:rgba(171,86,73,.11); }
-  #qz-game .opt.wrong .opt-badge{ background:#AB5649;border-color:#AB5649;color:#2a0508; }
+  #qz-game .opt.wrong .opt-badge{ background:#AB5649;border-color:#AB5649;color:#3A2A24; }
   #qz-game .opt.wrong .opt-mark{
     opacity:1;transform:scale(1);background:rgba(171,86,73,.16);border:1.5px solid #AB5649;color:#AB5649;
   }
@@ -138,11 +138,11 @@
   /* ── CTA "Prossima" — piena/gradiente, più marcata dell'outline .btn-neon ── */
   #qz-game #next-btn.btn-neon{
     display:inline-flex;align-items:center;gap:8px;padding:11px 22px;border-radius:var(--radius-md);
-    background:linear-gradient(135deg,var(--accent),#00dcb0);color:#04140c;font-weight:700;font-size:13.5px;
+    background:linear-gradient(135deg,var(--accent),#4E7464);color:#233A2E;font-weight:700;font-size:13.5px;
     border:none;box-shadow:0 4px 22px rgba(var(--accent-rgb),.32);transition:transform .15s,box-shadow .15s;
   }
   #qz-game #next-btn.btn-neon:hover{
-    background:linear-gradient(135deg,var(--accent),#00dcb0);transform:translateY(-2px);
+    background:linear-gradient(135deg,var(--accent),#4E7464);transform:translateY(-2px);
     box-shadow:0 8px 28px rgba(var(--accent-rgb),.42);
   }
 

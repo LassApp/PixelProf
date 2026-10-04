@@ -68,11 +68,11 @@
     border: 1px solid var(--purple-border);
   }
   .fc-front{
-    background: linear-gradient(160deg,#0c0820 0%,#150d30 55%,#0c0820 100%);
+    background: linear-gradient(160deg,#3A3024 0%,#332B3D 55%,#3A3024 100%);
   }
   .fc-back{
     transform: rotateY(180deg);
-    background: linear-gradient(160deg,#081a16 0%,#0d2a22 55%,#081a16 100%);
+    background: linear-gradient(160deg,#233A2E 0%,#233A2E 55%,#233A2E 100%);
   }
   /* Colori fissi (non var(--purple)/var(--text-*)): le facce
      restano scure "apposta" in entrambi i temi (poster look,
@@ -232,7 +232,7 @@
   .fc-exit-btn{
     border-color: var(--purple-border);
     background: var(--purple-dim);
-    color: #c9befa;
+    color: #8B9968;
   }
   .fc-exit-btn:hover{
     border-color: var(--purple);

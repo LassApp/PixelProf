@@ -526,7 +526,7 @@ const AREAS = [
 <circle cx="168" cy="60" r="6" fill="none" stroke="currentColor" stroke-width=".9" opacity=".4"/>
 <path d="M156,96 l20,-20 14,14 20,-24 20,30" fill="none" stroke="currentColor" stroke-width=".9" opacity=".35"/>
 <!-- padlock overlay -->
-<rect x="176" y="76" width="30" height="22" rx="4" fill="#0c1420" stroke="currentColor" stroke-width="1.1" opacity=".7"/>
+<rect x="176" y="76" width="30" height="22" rx="4" fill="#2C3A33" stroke="currentColor" stroke-width="1.1" opacity=".7"/>
 <path d="M182,76 v-8 a9,9 0 0 1 18,0 v8" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".6"/>
 <circle cx="191" cy="87" r="2.2" fill="currentColor" opacity=".55"/>
 <!-- consent checkmark badge -->
@@ -701,7 +701,7 @@ const AREAS = [
 <path d="M174,84 a42,12 0 0 0 84,0" fill="none" stroke="currentColor" stroke-width=".8" opacity=".35"/>
 <ellipse cx="216" cy="122" rx="42" ry="12" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
 <!-- lock overlay (cifratura) -->
-<rect x="200" y="104" width="24" height="18" rx="3" fill="#0c1420" stroke="currentColor" stroke-width="1" opacity=".7"/>
+<rect x="200" y="104" width="24" height="18" rx="3" fill="#2C3A33" stroke="currentColor" stroke-width="1" opacity=".7"/>
 <path d="M204,104 v-6 a8,8 0 0 1 16,0 v6" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
 <!-- backup refresh arrow -->
 <path d="M48,90 a20,20 0 1 1 -4,12" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".45"/>
@@ -801,7 +801,7 @@ const AREAS = [
 <line x1="46" y1="60" x2="82" y2="60" stroke="currentColor" stroke-width=".7" opacity=".35"/>
 <line x1="46" y1="70" x2="82" y2="70" stroke="currentColor" stroke-width=".7" opacity=".3"/>
 <line x1="46" y1="80" x2="70" y2="80" stroke="currentColor" stroke-width=".7" opacity=".3"/>
-<rect x="55" y="92" width="18" height="14" rx="2" fill="#0c1420" stroke="currentColor" stroke-width=".9" opacity=".6"/>
+<rect x="55" y="92" width="18" height="14" rx="2" fill="#2C3A33" stroke="currentColor" stroke-width=".9" opacity=".6"/>
 <path d="M58,92 v-5 a6,6 0 0 1 12,0 v5" fill="none" stroke="currentColor" stroke-width=".9" opacity=".55"/>
 <text x="216" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">GDPR</text>
       `,
@@ -858,7 +858,7 @@ const AREAS = [
 <path d="M54,120 a26,20 0 0 1 52,0" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
 <line x1="52" y1="66" x2="108" y2="70" stroke="currentColor" stroke-width="1" opacity=".4" stroke-dasharray="6,3"/>
 <line x1="48" y1="86" x2="112" y2="82" stroke="currentColor" stroke-width="1" opacity=".35" stroke-dasharray="4,4"/>
-<rect x="88" y="60" width="14" height="8" fill="#0c1420" opacity=".85"/>
+<rect x="88" y="60" width="14" height="8" fill="#2C3A33" opacity=".85"/>
 <!-- circuit brain -->
 <path d="M160,120 q-10,-14 4,-20 q4,-8 14,-4 q10,-6 16,4 q12,2 8,14 q6,10 -6,14 q-2,8 -12,4 q-10,6 -16,-4 q-12,0 -8,-8 z"
       fill="none" stroke="currentColor" stroke-width=".9" opacity=".4"/>
@@ -1081,7 +1081,7 @@ const AREAS = [
 <circle cx="50" cy="90" r="12" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
 <circle cx="230" cy="80" r="12" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
 <!-- lock in middle of tunnel -->
-<rect x="126" y="70" width="22" height="17" rx="3" fill="#0c1420" stroke="currentColor" stroke-width="1" opacity=".6"/>
+<rect x="126" y="70" width="22" height="17" rx="3" fill="#2C3A33" stroke="currentColor" stroke-width="1" opacity=".6"/>
 <path d="M130,70 v-6 a7,7 0 0 1 14,0 v6" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"/>
 <text x="140" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">VPN</text>
       `,
@@ -1345,7 +1345,7 @@ const AREAS = [
 <path d="M195,112 a25,20 0 0 1 50,0" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
 <line x1="196" y1="64" x2="244" y2="68" stroke="currentColor" stroke-width="1" opacity=".4" stroke-dasharray="5,3"/>
 <line x1="192" y1="84" x2="248" y2="80" stroke="currentColor" stroke-width="1" opacity=".35" stroke-dasharray="4,4"/>
-<rect x="228" y="58" width="16" height="8" fill="#0c1420" opacity=".8"/>
+<rect x="228" y="58" width="16" height="8" fill="#2C3A33" opacity=".8"/>
 <path d="M255,60 L275,50 L275,90 L255,100 Z" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1" opacity=".4"/>
 <circle cx="60" cy="70" r="5" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
 <path d="M50,110 q10,-12 20,0" fill="none" stroke="currentColor" stroke-width="1" opacity=".35"/>

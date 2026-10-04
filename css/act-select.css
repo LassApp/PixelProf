@@ -52,7 +52,7 @@
   .dm-card .dm-badge.soon{
     background: rgba(122,90,56,.16);
     border-color: rgba(122,90,56,.45);
-    color: #ffcf5c;
+    color: #B8935A;
   }
   /* Card visibile ma non cliccabile — tabindex="-1"/pointer-events:none
      restano inline in index.html (invariato), qui solo l'aspetto
@@ -110,7 +110,7 @@
      solo QUESTA istanza per evitare un doppio box visivo. */
   #setup-panel{
     position: relative;
-    background: #0a1022;
+    background: #3A3024;
     border: 1px solid rgba(var(--accent-rgb),.18);
     border-radius: var(--radius-lg);
     padding: 1.4rem 1.4rem 1.25rem;
@@ -189,7 +189,7 @@
     background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.4);
     transition: transform var(--transition-fast);
   }
-  .diff-switch input:checked ~ .diff-switch-track{ background: #ff8a3d; border-color: #ff8a3d; }
+  .diff-switch input:checked ~ .diff-switch-track{ background: #7A5A38; border-color: #7A5A38; }
   .diff-switch input:checked ~ .diff-switch-track::after{ transform: translateX(17px); }
   .diff-switch input:focus-visible ~ .diff-switch-track{ outline: 2px solid var(--accent); outline-offset: 2px; }
 

@@ -30,10 +30,10 @@
 
 const COURSE_ICONS=['🏫','📚','🎓','💡','🧠','⚡','🌐','💻','🔬','📡','🎯','🚀','🧩','📊','🏆','⭐','🔐','🛡️','📋','🧮'];
 const COURSE_BG_PRESETS=[
-  {label:'Neon Teal',css:'linear-gradient(145deg,#071a18 0%,#0d2a24 55%,#071a18 100%)'},
-  {label:'Deep Violet',css:'linear-gradient(145deg,#0e0820 0%,#180d38 55%,#0c0820 100%)'},
-  {label:'Electric Blue',css:'linear-gradient(145deg,#081828 0%,#0d2040 55%,#0a1830 100%)'},
-  {label:'Crimson',css:'linear-gradient(145deg,#1a0810 0%,#2a0d18 55%,#180610 100%)'},
+  {label:'Neon Teal',css:'linear-gradient(145deg,#233A2E 0%,#233A2E 55%,#233A2E 100%)'},
+  {label:'Deep Violet',css:'linear-gradient(145deg,#332B3D 0%,#332B3D 55%,#3A3024 100%)'},
+  {label:'Electric Blue',css:'linear-gradient(145deg,#233024 0%,#233024 55%,#233024 100%)'},
+  {label:'Crimson',css:'linear-gradient(145deg,#3A2A24 0%,#2a0d18 55%,#180610 100%)'},
   {label:'Amber',css:'linear-gradient(145deg,#1a1000 0%,#261800 55%,#181000 100%)'},
   {label:'Ocean',css:'linear-gradient(145deg,#001a22 0%,#002030 55%,#001520 100%)'},
   {label:'Forest',css:'linear-gradient(145deg,#0a1a0c 0%,#102016 55%,#081408 100%)'},
@@ -622,7 +622,7 @@ const COLOR_PALETTE=[
   {label:'Green',   border:'rgba(74,107,82,.45)', glow:'rgba(74,107,82,.2)',   bar:'#4A6B52',  dot:'#4A6B52'},
   {label:'Rose',    border:'rgba(157,88,117,.45)',glow:'rgba(157,88,117,.2)',  bar:'#9D5875',  dot:'#9D5875'},
   {label:'Orange',  border:'rgba(156,107,62,.45)', glow:'rgba(156,107,62,.2)',   bar:'#9C6B3E',  dot:'#9C6B3E'},
-  {label:'White',   border:'rgba(220,230,255,.35)',glow:'rgba(220,230,255,.15)', bar:'#dce6ff',  dot:'#dce6ff'},
+  {label:'White',   border:'rgba(220,230,255,.35)',glow:'rgba(220,230,255,.15)', bar:'#C4CBA8',  dot:'#C4CBA8'},
   {label:'Gold',    border:'rgba(184,147,90,.45)',  glow:'rgba(184,147,90,.2)',    bar:'#B8935A',  dot:'#B8935A'},
   {label:'Indigo',  border:'rgba(110,122,80,.45)', glow:'rgba(110,122,80,.2)',   bar:'#6E7A50',  dot:'#6E7A50'},
 ];

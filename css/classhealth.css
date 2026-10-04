@@ -210,7 +210,7 @@
 }
 .chd-wq-answer strong{color:rgba(var(--accent-rgb),.75);}
 .chd-wq-bar-wrap{height:3px;border-radius:2px;background:rgba(255,255,255,.06);overflow:hidden;}
-.chd-wq-bar{height:100%;border-radius:2px;background:linear-gradient(90deg,#AB5649,#ff8080);}
+.chd-wq-bar{height:100%;border-radius:2px;background:linear-gradient(90deg,#AB5649,#AB5649);}
 
 /* Stato vuoto per tab/filtro — stesso linguaggio visivo di .lb-empty/.chd-empty */
 .chd-wq-empty{

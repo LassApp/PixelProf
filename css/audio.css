@@ -47,8 +47,8 @@
 
 @layer theme {
 /* ── 20. TOGGLE AUDIO/TEMA ────────────────────────────────────── */
-html[data-theme="light"] .audio-toggle-btn{ border-color: rgba(var(--navy-rgb),.14); background: rgba(var(--navy-rgb),.04); color: rgba(var(--navy-rgb),.55); }
-html[data-theme="light"] .audio-toggle-btn:hover{ border-color: rgba(var(--accent-rgb),.35); background: rgba(var(--accent-rgb),.08); color: var(--accent); }
-html[data-theme="light"] .theme-toggle-btn.is-light{ color:#a66d00; border-color: rgba(180,130,0,.3); background: rgba(122,90,56,.08); }
+html[data-theme="light"] .audio-toggle-btn{ border-color: rgba(242,232,213,.22); background: rgba(242,232,213,.1); color: rgba(242,232,213,.8); }
+html[data-theme="light"] .audio-toggle-btn:hover{ border-color: rgba(242,232,213,.4); background: rgba(242,232,213,.18); color: #F2E8D5; }
+html[data-theme="light"] .theme-toggle-btn.is-light{ color:#F2E8D5; border-color: rgba(242,232,213,.3); background: rgba(242,232,213,.12); }
 
 }

@@ -3229,8 +3229,8 @@ html[data-theme="light"] .topbar{
 }
 html[data-theme="light"] .topbar,
 html[data-theme="light"] .cs-topbar{ color: var(--crema); }
-html[data-theme="light"] .logo-main{ background: linear-gradient(135deg, var(--crema), #FBF6EC); -webkit-background-clip:text; background-clip:text; }
-html[data-theme="light"] .logo-main em{ background: linear-gradient(135deg, #C4CBA8, #A8B588); -webkit-background-clip:text; background-clip:text; }
+html[data-theme="light"] .logo-main{ background: linear-gradient(135deg, var(--crema), #FBF6EC); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
+html[data-theme="light"] .logo-main em{ background: linear-gradient(135deg, #C4CBA8, #A8B588); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
 html[data-theme="light"] .logo-sub,
 html[data-theme="light"] .cs-logo-sub{ color: rgba(242,232,213,.7); }
 html[data-theme="light"] .logo-hint{ color: rgba(242,232,213,.55); }
@@ -3313,18 +3313,18 @@ html[data-theme="light"] .gender-btn{ color: rgba(var(--navy-rgb),.55); }
    corregge SOLO lo stato inattivo (nessuna selezione, sfondo scuro
    "ereditato" dall'overlay) e le card, il cui testo era fisso chiaro. */
 html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse){
-  background:#ffffff;
-  border:1px solid rgba(var(--navy-rgb),.09);
+  background:#7A5A38;
+  border:1px solid rgba(0,0,0,.15);
 }
 html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse) .act-hero-overlay{
   background:none;
 }
 html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse) .act-hero-title{
-  color:var(--navy);
+  color:#F2E8D5;
   text-shadow:none;
 }
 html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse) .act-hero-sub{
-  color: rgba(var(--navy-rgb),.5);
+  color: rgba(242,232,213,.75);
 }
 html[data-theme="light"] .act-card:not(.dm-card){ background:#7A5A38; border-color: rgba(0,0,0,.15); }
 html[data-theme="light"] .act-card:not(.dm-card):hover{ border-color: rgba(242,232,213,.3); background: #6B4E30; }
@@ -3402,7 +3402,7 @@ html[data-theme="light"] .mem-stat-pill.timer-running{ color:#54708C; }
 html[data-theme="light"] .mem-stat-pill.timer-warning{ color:#a66d00; }
 html[data-theme="light"] .mem-stat-pill.moves-pill{ color:#6E7A50; }
 html[data-theme="light"] .mem-pause-btn{ background: rgba(var(--navy-rgb),.04); border-color: rgba(var(--navy-rgb),.12); color: rgba(var(--navy-rgb),.55); }
-html[data-theme="light"] .audio-toggle-btn.muted{ color:#8A4038; border-color: rgba(138,64,56,.3); background: rgba(138,64,56,.06); }
+html[data-theme="light"] .audio-toggle-btn.muted{ color:#e8a89a; border-color: rgba(232,168,154,.4); background: rgba(232,168,154,.1); }
 html[data-theme="light"] .match-combo-pill{ color:#a66d00; }
 html[data-theme="light"] .match-combo-pill.x1{ color: rgba(var(--navy-rgb),.4); }
 html[data-theme="light"] .match-combo-pill.x2{ color:#54708C; }
@@ -3471,8 +3471,8 @@ html[data-theme="light"] .lb-nav-crumb{ color: rgba(242,232,213,.85); }
 html[data-theme="light"] .lb-nav-crumb.current{ color: rgba(242,232,213,.55); }
 html[data-theme="light"] .lb-nav-sep{ color: rgba(242,232,213,.3); }
 html[data-theme="light"] .lb-entry{ background:#7A5A38; border-color: rgba(0,0,0,.15); }
-html[data-theme="light"] .lb-td{ color:var(--navy); }
-html[data-theme="light"] .lb-td.name .player-sub{ color: rgba(var(--navy-rgb),.35); }
+html[data-theme="light"] .lb-td{ color:#F2E8D5; }
+html[data-theme="light"] .lb-td.name .player-sub{ color: rgba(242,232,213,.6); }
 /* v8.13.1: override .lb-th rimosso — la regola base ora usa var(--text-muted), già tematizzato */
 html[data-theme="light"] .mod-badge.ce{ color:#a66a00; }
 html[data-theme="light"] .mod-badge.oe{ color:#6E7A50; }

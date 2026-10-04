@@ -18,7 +18,7 @@ Sezione dedicata ai file JSON del metodo di apprendimento Lo Sapevi?, un solo fi
 
 **Stato Aree:**
 - Tutte le aree: `attivate`
-- Contenuto: 70 moduli su 70 realizzati
+- Contenuto: 80 moduli su 80 realizzati (tutte le aree complete)
 
 **Esempio di struttura path:**
 
@@ -503,6 +503,84 @@ data/
 
 ---
 
+### 🧭 Area DigComp
+
+**Stato:** attivo
+
+> **Nota:** l'area DigComp è organizzata in 10 Fasi (Fase N = `ModuloN` nel path). Le Fasi 1–5 appartengono alla formazione del cittadino; le Fasi 6–10 appartengono alla formazione del docente (Edu).
+
+- **Fase 1 — Alfabetizzazione digitale**
+  - Chiave: `alfabetizzazione-digitale`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo1/`
+  - File: `lo_sapevi_alfabetizzazione-digitale.json` *(creato — 75 schede)*
+
+- **Fase 2 — Comunicazione e collaborazione**
+  - Chiave: `comunicazione-e-collaborazione`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo2/`
+  - File: `lo_sapevi_comunicazione-e-collaborazione.json` *(creato — 48 schede)*
+
+- **Fase 3 — Creazione di contenuti digitali**
+  - Chiave: `creazione-di-contenuti-digitali`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo3/`
+  - File: `lo_sapevi_creazione-di-contenuti-digitali.json` *(creato — 56 schede)*
+
+- **Fase 4 — Sicurezza**
+  - Chiave: `sicurezza`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo4/`
+  - File: `lo_sapevi_sicurezza.json` *(creato — 67 schede)*
+
+- **Fase 5 — Problem solving digitale**
+  - Chiave: `problem-solving-digitale`
+  - Stato: `attivo`
+  - Commento: Formazione del cittadino
+  - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo5/`
+  - File: `lo_sapevi_problem-solving-digitale.json` *(creato — 45 schede)*
+
+- **Fase 6 — Coinvolgimento Professionale**
+  - Chiave: `coinvolgimento-professionale`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo6/`
+  - File: `lo_sapevi_coinvolgimento-professionale.json` *(creato — 47 schede)*
+
+- **Fase 7 — Risorse Digitali**
+  - Chiave: `risorse-digitali`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo7/`
+  - File: `lo_sapevi_risorse-digitali.json` *(creato — 42 schede)*
+
+- **Fase 8 — Pratiche di insegnamento e apprendimento**
+  - Chiave: `pratiche-di-insegnamento-e-apprendimento`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo8/`
+  - File: `lo_sapevi_pratiche-di-insegnamento-e-apprendimento.json` *(creato — 46 schede)*
+
+- **Fase 9 — Valutazione dell'apprendimento**
+  - Chiave: `valutazione-dell-apprendimento`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo9/`
+  - File: `lo_sapevi_valutazione-dell-apprendimento.json` *(creato — 45 schede)*
+
+- **Fase 10 — Valorizzare le potenzialità degli studenti**
+  - Chiave: `valorizzare-le-potenzialita-degli-studenti`
+  - Stato: `attivo`
+  - Commento: Formazione del docente (Edu)
+  - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo10/`
+  - File: `lo_sapevi_valorizzare-le-potenzialita-degli-studenti.json` *(creato — 46 schede)*
+
+---
+
 ## 2. Moduli completi e da creare
 
 ### 🖥️ ECDL — Computer Essentials — COMPLETO (4/4)
@@ -599,6 +677,21 @@ data/
 - Modulo 12 — AI Act ✅
 - Modulo 13 — Il Futuro dell'AI ✅
 
+### 🧭 DigComp — COMPLETO (10/10)
+*Formazione del cittadino (Fasi 1–5)*
+- Fase 1 — Alfabetizzazione digitale ✅
+- Fase 2 — Comunicazione e collaborazione ✅
+- Fase 3 — Creazione di contenuti digitali ✅
+- Fase 4 — Sicurezza ✅
+- Fase 5 — Problem solving digitale ✅
+
+*Formazione del docente — Edu (Fasi 6–10)*
+- Fase 6 — Coinvolgimento Professionale ✅
+- Fase 7 — Risorse Digitali ✅
+- Fase 8 — Pratiche di insegnamento e apprendimento ✅
+- Fase 9 — Valutazione dell'apprendimento ✅
+- Fase 10 — Valorizzare le potenzialità degli studenti ✅
+
 ---
 
 ## 3. Resoconto
@@ -617,11 +710,12 @@ data/
 | Reti e Internet | 8 | 8 | 8 | 0 | completo |
 | Malware e Minacce Informatiche | 1 | 1 | 1 | 0 | completo |
 | Intelligenza Artificiale | 13 | 13 | 13 | 0 | completo |
-| **Totale** | **70** | **70** | **70** | **0** | — |
+| DigComp | 10 | 10 | 10 | 0 | completo |
+| **Totale** | **80** | **80** | **80** | **0** | — |
 
-- **Moduli totali mappati (scope Lo Sapevi):** 70
-- **Moduli completi:** 70
+- **Moduli totali mappati (scope Lo Sapevi):** 80
+- **Moduli completi:** 80
 - **Moduli da creare:** 0
-- **File JSON creati:** 70
+- **File JSON creati:** 80
 - **File JSON da creare:** 0
-- **File JSON totali attesi:** 70
+- **File JSON totali attesi:** 80

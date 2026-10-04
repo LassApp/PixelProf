@@ -3229,11 +3229,15 @@ html[data-theme="light"] .topbar{
 }
 html[data-theme="light"] .topbar,
 html[data-theme="light"] .cs-topbar{ color: var(--crema); }
-html[data-theme="light"] .logo-main{ background: linear-gradient(135deg, var(--crema), #FBF6EC); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
-html[data-theme="light"] .logo-main em{ background: linear-gradient(135deg, #C4CBA8, #A8B588); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; color:transparent; }
+/* Giro colori 04/10 — logo topbar: il gradiente-clip (crema→oliva chiaro) lasciava "Prof" verde
+   pallido su fango (≈2.6:1, "logo non visibile"). Ora colore PIENO beige per entrambe le
+   parole (Pixel = crema, Prof = crema chiaro): niente background-clip:text, quindi anche
+   niente rischio -webkit-text-fill-color. Crema su fango 5.16:1. */
+html[data-theme="light"] .logo-main{ background:none; -webkit-background-clip:border-box; background-clip:border-box; -webkit-text-fill-color:currentColor; color:var(--crema); }
+html[data-theme="light"] .logo-main em{ background:none; -webkit-background-clip:border-box; background-clip:border-box; -webkit-text-fill-color:currentColor; color:#FBF6EC; }
 html[data-theme="light"] .logo-sub,
-html[data-theme="light"] .cs-logo-sub{ color: rgba(242,232,213,.7); }
-html[data-theme="light"] .logo-hint{ color: rgba(242,232,213,.55); }
+html[data-theme="light"] .cs-logo-sub{ color: #F2E8D5; } /* giro colori 04/10: era .7 = 3.2:1 su fango */
+html[data-theme="light"] .logo-hint{ color: #F2E8D5; } /* giro colori 04/10: era .55 = 2.6:1 su fango */
 html[data-theme="light"] .logo-wrap:hover{ background: rgba(var(--accent-rgb),.06); border-color: rgba(var(--accent-rgb),.18); }
 html[data-theme="light"] .tb-btn{ color: rgba(242,232,213,.75); }
 html[data-theme="light"] .tb-btn:hover{ background: rgba(242,232,213,.14); color: #F2E8D5; }
@@ -3241,9 +3245,14 @@ html[data-theme="light"] .tb-btn.active{ background: rgba(242,232,213,.18); colo
 html[data-theme="light"] .tb-hub-menu{ background:#7A5A38; border-color: rgba(0,0,0,.18); box-shadow: 0 8px 32px rgba(0,0,0,.3), 0 0 0 1px rgba(0,0,0,.1); }
 html[data-theme="light"] .tb-hub-item{ color: rgba(242,232,213,.8); }
 html[data-theme="light"] .tb-hub-item:hover{ background: rgba(242,232,213,.12); color: #F2E8D5; }
-html[data-theme="light"] .tb-aula-badge{ background: rgba(242,232,213,.1); border-color: rgba(242,232,213,.28); }
+/* Giro colori 04/10 — badge aula: lo sfondo beige-tinted (.1) schiariva il fondo e portava il testo crema a 3.9:1,
+   mentre "torna ai moduli" (.tb-aula-hint = var(--text-muted), navy in chiaro) era navy-su-fango 2.1:1.
+   Ora fondo leggermente SCURITO (navy .16) + testi crema pieni: 5.6–6:1. */
+html[data-theme="light"] .tb-aula-badge{ background: rgba(23,35,45,.16); border-color: rgba(242,232,213,.4); }
 html[data-theme="light"] .tb-aula-name{ color: #F2E8D5; }
-html[data-theme="light"] #tb-course-badge:hover{ background: rgba(242,232,213,.16); }
+html[data-theme="light"] .tb-aula-hint{ color: rgba(242,232,213,.96); }
+html[data-theme="light"] #tb-course-badge:hover{ background: rgba(23,35,45,.28); border-color: rgba(242,232,213,.7); }
+html[data-theme="light"] #tb-course-badge:hover #tb-course-name{ color:#fff; }
 /* v8.29.0: RIMOSSI qui #cs-teacher-role-badge e .cs-director-badge —
    stessi elementi dichiarati non più esistenti in js/app.js v8.25.1. */
 
@@ -3261,7 +3270,7 @@ html[data-theme="light"] .slbl::after{ background: linear-gradient(90deg, rgba(v
    rgba(255,255,255,.55) — praticamente invisibile su sfondo bianco a
    riposo, visibile solo in hover (che già usa var(--accent), quindi
    sembrava "funzionare solo al passaggio del mouse"). */
-html[data-theme="light"] .back-link{ color: rgba(242,232,213,.75); }
+html[data-theme="light"] .back-link{ color: #F2E8D5; } /* giro colori 04/10: era .75 = 3.4:1 su fango; tutti i .back-link vivono dentro la topbar */
 html[data-theme="light"] .back-link:hover{ color: #F2E8D5; background: rgba(242,232,213,.14); }
 
 /* ── 4. HOME HERO (selezione modulo) ─────────────────────────── */

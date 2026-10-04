@@ -65,4 +65,31 @@
     --purple: #5C6644; /* oliva scurito, 5.02:1 su crema — stesso pattern "ink" già usato dal progetto */
     --purple-rgb: 92,102,68;
   }
+
+  /* ISOLE SCURE nel tema chiaro (giro colori 04/10)
+     Topbar (.topbar in-app, .cs-topbar nelle schermate Direttore/aule) e
+     pannello profilo sono superfici SCURE (fango/oliva) dentro un tema
+     chiaro: i token "di tema" (accent = fango, purple = oliva scurito,
+     text-* = navy) darebbero fango-su-fango, oliva-su-fango, navy-su-fango
+     — il pattern di bug ricorrente (logo invisibile, "torna ai moduli"
+     illeggibile, voci del tour nere su fango). Qui li si ridichiara come
+     nel tema scuro SOLO dentro queste superfici: tutto ciò che usa
+     var(--accent)/var(--purple)/var(--text-*) al loro interno (testo,
+     hover, e anche gli SVG del logo con style="stroke:var(--accent)"
+     inline) diventa crema/beige senza dover inseguire ogni selettore.
+     Rapporti verificati: crema su fango 5.16:1, @.94 → 4.78:1. */
+  html[data-theme="light"] .topbar,
+  html[data-theme="light"] .cs-topbar,
+  html[data-theme="light"] .profile-panel{
+    --accent: var(--crema);
+    --accent-rgb: 242,232,213;
+    --accent-dim: rgba(242,232,213,.14);
+    --accent-glow: rgba(242,232,213,.25);
+    --accent-border: rgba(242,232,213,.4);
+    --purple: #FBF6EC;
+    --purple-rgb: 251,246,236;
+    --text-primary: var(--crema);
+    --text-muted: rgba(242,232,213,.96);
+    --text-dim: rgba(242,232,213,.94);
+  }
 }

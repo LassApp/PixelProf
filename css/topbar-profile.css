@@ -177,29 +177,66 @@
 @layer theme {
   html[data-theme="light"] .tb-profile-btn{ background:rgba(0,0,0,.03); }
   html[data-theme="light"] .profile-panel-backdrop{ background:rgba(var(--navy-rgb),.25); }
+
+  /* Giro colori 04/10 — distribuzione cromatica del pannello in chiaro: prima era
+     TUTTO fango (#7A5A38) e il testo del tour navy-su-fango (1.9:1).
+     Ora: base VERDE oliva (gradiente #5C6644→#515B3C, crema su oliva
+     5.0–5.9:1), card informazioni BEIGE (navy su crema 13:1), un solo
+     dettaglio FANGO (il pulsante "Rivedi il tour", crema su fango 5.16:1).
+     I token --accent/--purple/--text-* dentro .profile-panel sono già
+     ridichiarati chiari in css/tokens.css (isola scura). */
   html[data-theme="light"] .profile-panel{
-    background:#7A5A38;
-    border-left-color:rgba(0,0,0,.15);
-    box-shadow:-12px 0 40px rgba(0,0,0,.25);
+    background:linear-gradient(180deg,#5C6644 0%,#515B3C 100%);
+    border-left-color:rgba(23,35,45,.25);
+    box-shadow:-12px 0 40px rgba(23,35,45,.28);
   }
   html[data-theme="light"] .pp-panel-close{
-    background:rgba(242,232,213,.1); border-color:rgba(242,232,213,.2); color:rgba(242,232,213,.7);
+    background:rgba(23,35,45,.22); border-color:rgba(242,232,213,.45); color:#F2E8D5;
   }
-  html[data-theme="light"] .pp-panel-close:hover{ color:#F2E8D5; background:rgba(242,232,213,.18); }
+  html[data-theme="light"] .pp-panel-close:hover{ color:#fff; background:rgba(23,35,45,.4); }
+
+  /* avatar: disco beige, anello = colore del ruolo (invariato) */
+  html[data-theme="light"] .pp-profile-avatar{
+    background:#F2E8D5; color:#7A5A38;
+    box-shadow:0 0 0 4px rgba(242,232,213,.16);
+  }
   html[data-theme="light"] .pp-profile-name{ color:#F2E8D5; }
-  html[data-theme="light"] .pp-info-label{ color:rgba(242,232,213,.6); }
-  html[data-theme="light"] .pp-info-value{ color:rgba(242,232,213,.92); }
-  html[data-theme="light"] .pp-panel-divider{ background:rgba(242,232,213,.15); }
+  /* pillola ruolo: beige con testo navy (il colore-ruolo oro/blu/rosso
+     resta solo nel bordo: come testo su oliva non arriverebbe a 3:1) */
+  html[data-theme="light"] .pp-profile-role{ background:#F2E8D5; color:#17232D; }
+
+  /* card BEIGE con ultimo accesso / ultima aula */
+  html[data-theme="light"] .pp-panel-info{
+    background:#F2E8D5; border-radius:12px; padding:12px 14px;
+  }
+  html[data-theme="light"] .pp-info-row i{ color:#7A5A38; }
+  html[data-theme="light"] .pp-info-label{ color:rgba(23,35,45,.72); }
+  html[data-theme="light"] .pp-info-value{ color:#17232D; }
+
+  html[data-theme="light"] .pp-panel-divider{ background:rgba(242,232,213,.22); }
+
   html[data-theme="light"] .pp-panel-action{
-    background:rgba(242,232,213,.08); border-color:rgba(242,232,213,.18); color:rgba(242,232,213,.8);
+    background:rgba(242,232,213,.08); border-color:rgba(242,232,213,.4); color:#F2E8D5;
   }
   html[data-theme="light"] .pp-panel-action:hover{
-    background:rgba(242,232,213,.15); color:#F2E8D5; border-color:rgba(242,232,213,.3);
+    background:rgba(242,232,213,.18); color:#fff; border-color:rgba(242,232,213,.65);
   }
   html[data-theme="light"] .pp-panel-action.pp-logout-action{
-    border-color:rgba(255,150,140,.3); background:rgba(255,150,140,.08); color:#ffb3a8;
+    border-color:rgba(255,227,220,.5); background:rgba(171,86,73,.18); color:#FFE3DC;
   }
   html[data-theme="light"] .pp-panel-action.pp-logout-action:hover{
-    border-color:rgba(255,150,140,.55); background:rgba(255,150,140,.14); color:#ffcfc8;
+    border-color:rgba(255,227,220,.8); background:rgba(171,86,73,.6); color:#fff;
+  }
+  /* "Rivedi il tour guidato": unico dettaglio FANGO del pannello (anche
+     da espanso: in tour-sections.css lo stato .expanded usa var(--accent)
+     per colore e bordo, qui lo si tiene esplicito per non dipendere dal
+     token). */
+  html[data-theme="light"] .pp-panel-action.pp-tour-action,
+  html[data-theme="light"] .pp-panel-action.pp-tour-action.expanded{
+    background:#7A5A38; border-color:#7A5A38; color:#F2E8D5;
+  }
+  html[data-theme="light"] .pp-panel-action.pp-tour-action:hover,
+  html[data-theme="light"] .pp-panel-action.pp-tour-action.expanded:hover{
+    background:#6B4E30; border-color:rgba(242,232,213,.55); color:#fff;
   }
 }

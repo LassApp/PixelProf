@@ -104,30 +104,48 @@
   background:rgba(171,86,73,.1);border:1px solid rgba(171,86,73,.3);color:#AB5649;
 }
 
-/* ═══════════════════════════════════════════════════════════════════
-}
+} /* @layer dashboard */
 
+/* ═══════════════════════════════════════════════════════════════════
+   TEMA CHIARO — override di questo file (stesso layer "theme" di
+   pixelprof.css). FIX giro colori 04/10: qui c'era un commento aperto e mai
+   chiuso che inghiottiva la "}" di chiusura di @layer dashboard e
+   l'apertura di @layer theme: tutte le regole sotto finivano dentro
+   @layer dashboard (che perde contro classhealth/docenti/dialogs),
+   quindi in tema chiaro Panoramica classe restava bianco su crema.
+   ═══════════════════════════════════════════════════════════════════ */
 @layer theme {
 /* ── 14. PANORAMICA CLASSE (dashboard) ───────────────────────── */
-html[data-theme="light"] .chd-kpi-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
-html[data-theme="light"] .chd-kpi-lbl{ color: rgba(var(--navy-rgb),.45); }
+/* Giro colori 04/10: superfici #ffffff → #FBF6EC (crema chiaro): queste regole erano rimaste
+   inattive per il bug del commento aperto e riattivandole sarebbero comparse card bianche pure. */
+html[data-theme="light"] .chd-kpi-card{ background:#FBF6EC; border-color: rgba(var(--navy-rgb),.1); }
+html[data-theme="light"] .chd-kpi-lbl{ color: rgba(var(--navy-rgb),.7); } /* era .45 = 2.8:1 */
 html[data-theme="light"] .chd-section-title{ color:var(--navy); }
-html[data-theme="light"] .chd-weak-card,html[data-theme="light"] .chd-part-table{ background:#ffffff; border-color: rgba(var(--navy-rgb),.08); }
+html[data-theme="light"] .chd-weak-card,html[data-theme="light"] .chd-part-table{ background:#FBF6EC; border-color: rgba(var(--navy-rgb),.1); }
 html[data-theme="light"] .chd-weak-headline{ color: rgba(var(--navy-rgb),.75); }
-html[data-theme="light"] .chd-mod-name{ color: rgba(var(--navy-rgb),.65); }
+html[data-theme="light"] .chd-mod-name{ color: rgba(var(--navy-rgb),.7); }
+/* moduli SENZA dati: la regola base .chd-mod-nodata{opacity:.4} dimezzava anche il testo (1.7:1).
+   In chiaro si attenuano solo pallino e barra; il testo resta leggibile (navy .68 ≈ 5.3:1). */
+html[data-theme="light"] .chd-mod-nodata{ opacity:1; }
+html[data-theme="light"] .chd-mod-nodata .chd-mod-name{ color: rgba(var(--navy-rgb),.68); }
+html[data-theme="light"] .chd-mod-nodata .chd-mod-pct[class*="chd-ink-"]{ color: rgba(var(--navy-rgb),.68) !important; }
+html[data-theme="light"] .chd-mod-nodata .chd-mod-dot,
+html[data-theme="light"] .chd-mod-nodata .prog-bar{ opacity:.45; }
 /* .chd-mod-pct: colore impostato inline da dashboard.js in base al
    modulo. Le classi gemelle chd-ink-* (aggiunte lì accanto allo style
    inline esistente, una per ogni modulo — non solo CE/OE/WP) permettono
    di sovrascrivere SOLO il testo — stessa identica logica del ruolo in
    topbar (§3). */
-html[data-theme="light"] .chd-ink-ce{ color:#a66a00 !important; }
-html[data-theme="light"] .chd-ink-oe{ color:#6E7A50 !important; }
+html[data-theme="light"] .chd-ink-ce{ color:#7A5A38 !important; }
+html[data-theme="light"] .chd-ink-oe{ color:#5C6644 !important; }
 html[data-theme="light"] .chd-ink-wp{ color:#54708C !important; }
-html[data-theme="light"] .chd-ink-ss{ color:#1f7a42 !important; }
-html[data-theme="light"] .chd-ink-pp{ color:#b8501f !important; }
-html[data-theme="light"] .chd-part-header{ color: rgba(var(--navy-rgb),.3); background: rgba(var(--navy-rgb),.02); }
+html[data-theme="light"] .chd-ink-ss{ color:#4A6B52 !important; }
+html[data-theme="light"] .chd-ink-pp{ color:#8A5C31 !important; }
+html[data-theme="light"] .chd-part-header{ color: rgba(var(--navy-rgb),.66); background: rgba(var(--navy-rgb),.03); } /* era .3 = 1.9:1 */
 html[data-theme="light"] .chd-part-row{ color: rgba(var(--navy-rgb),.75); border-bottom-color: rgba(var(--navy-rgb),.06); }
-html[data-theme="light"] .chd-part-last{ color: rgba(var(--navy-rgb),.4); }
+html[data-theme="light"] .chd-part-last{ color: rgba(var(--navy-rgb),.66); } /* era .4 = 2.4:1 */
+/* nota "Modalità offline": var(--text-dim) in chiaro = navy .5 → 3:1; override locale, il token globale non si tocca */
+html[data-theme="light"] .chd-footnote{ color: rgba(var(--navy-rgb),.68); }
 html[data-theme="light"] .chd-act-name{ color: rgba(var(--navy-rgb),.65); }
 html[data-theme="light"] .chd-act-bar-wrap{ background: rgba(var(--navy-rgb),.07); }
 /* v8.13.1: override chd-footnote rimosso (era 2.03:1 anche in chiaro) — ora var(--text-dim) */
@@ -143,16 +161,16 @@ html[data-theme="light"] .chd-act-bar-wrap{ background: rgba(var(--navy-rgb),.07
 html[data-theme="light"] .chd-wq-tab-count{ background: rgba(var(--navy-rgb),.08); color: var(--text-muted); } /* v8.14.0 FIX: nessun override esisteva -> 1.04:1, quasi invisibile */
 html[data-theme="light"] .chd-wq-tab.active .chd-wq-tab-count{ color:inherit; }
 html[data-theme="light"] .chd-wq-tab-problem.active{ color:#8A4038; } /* v8.14.0 FIX: #AB5649 su chiaro = 2.50:1 */
-html[data-theme="light"] .chd-wq-tab-recovered.active{ color:#12805a; } /* v8.14.0 FIX: #4A6B52 su chiaro = 1.22:1 */
-html[data-theme="light"] .chd-wq-modfilter-btn{ background:#ffffff; border-color: rgba(var(--navy-rgb),.1); color: var(--text-muted); } /* v8.14.0 FIX: era rgba(var(--navy-rgb),.5) = 3.32:1 */
+html[data-theme="light"] .chd-wq-tab-recovered.active{ color:#4A6B52; } /* v8.14.0 FIX: #4A6B52 su chiaro = 1.22:1 */
+html[data-theme="light"] .chd-wq-modfilter-btn{ background:#FBF6EC; border-color: rgba(var(--navy-rgb),.1); color: var(--text-muted); } /* v8.14.0 FIX: era rgba(var(--navy-rgb),.5) = 3.32:1 */
 html[data-theme="light"] .chd-wq-modfilter-btn.active{ color: var(--text-primary); }
 html[data-theme="light"] .chd-wq-modfilter-count{ background: rgba(var(--navy-rgb),.08); }
-html[data-theme="light"] .chd-wq-row{ background:#ffffff; }
+html[data-theme="light"] .chd-wq-row{ background:#FBF6EC; }
 html[data-theme="light"] .chd-wq-question{ color: rgba(var(--navy-rgb),.82); }
 html[data-theme="light"] .chd-wq-answer{ color: rgba(var(--navy-rgb),.45); }
-html[data-theme="light"] .chd-wq-answer strong{ color:#12805a; } /* v8.14.0 FIX: rgba(var(--accent-rgb),.75) su chiaro = 1.27:1 */
+html[data-theme="light"] .chd-wq-answer strong{ color:#4A6B52; } /* v8.14.0 FIX: rgba(var(--accent-rgb),.75) su chiaro = 1.27:1 */
 html[data-theme="light"] .chd-wq-errs{ color:#8A4038; } /* v8.14.0 FIX: rgba(171,86,73,.9) su chiaro = 2.64:1 */
-html[data-theme="light"] .chd-wq-list-recovered .chd-wq-errs{ color:#12805a; } /* v8.14.0 FIX: rgba(74,107,82,.8) su chiaro = 1.31:1 */
+html[data-theme="light"] .chd-wq-list-recovered .chd-wq-errs{ color:#4A6B52; } /* v8.14.0 FIX: rgba(74,107,82,.8) su chiaro = 1.31:1 */
 html[data-theme="light"] .chd-wq-reset-btn{ background: rgba(138,64,56,.06); border-color: rgba(138,64,56,.25); color:#8A4038; } /* v8.14.0 FIX: nessun override -> 1.77:1 */
 html[data-theme="light"] .chd-wq-empty{ border-color: rgba(var(--navy-rgb),.1); }
 html[data-theme="light"] .chd-wq-empty-title{ color: var(--text-muted); } /* v8.14.0 FIX: era rgba(var(--navy-rgb),.5) = 3.32:1 */
@@ -160,6 +178,6 @@ html[data-theme="light"] .chd-wq-empty-sub{ color: var(--text-dim); } /* v8.14.0
 html[data-theme="light"] .tm-badge-inactive{ background: rgba(138,64,56,.08); border-color: rgba(138,64,56,.3); color:#8A4038; } /* v8.14.0 FIX: #AB5649 su chiaro = 2.55-2.78:1 */
 /* .chd-never-played: banner ambra "non ha ancora mai giocato" —
    stesso #7A5A38 su sfondo chiaro, stessa ink di riserva. */
-html[data-theme="light"] .chd-never-played{ color:#a66d00; }
+html[data-theme="light"] .chd-never-played{ color:#6B4E30; }
 
 }

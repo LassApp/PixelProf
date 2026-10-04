@@ -26,10 +26,10 @@
       largo (più contenuto: chip giocatori, import CSV) con scroll
       interno, chiusura × in stile .dp-close-btn (sobrio)
    4) toggle "includi domande difficili" (v8.36.0) — nuovo
-      componente switch, non esisteva ancora in app. Colore "hard"
-      (arancio) hardcoded per riga, stesso pattern già usato qui
-      sopra per il badge "Coming Soon" — non è un token :root
-      nuovo, solo un valore locale a questo componente.
+      componente switch, non esisteva ancora in app. (giro colori 04/10: la riga
+      non cambia più colore da attiva — solo lo switch.)
+   5) hero dell'attività selezionata (giro colori 04/10) — verde oliva in entrambi
+      i temi (prima navy quasi nero, senza contrasto con la pagina).
 ================================================== */
 @layer actselect {
 
@@ -108,13 +108,25 @@
      director panel, ecc. — vedi index.html righe 379/496/523/536/541)
      quindi la sua regola CSS globale non va toccata, si neutralizza
      solo QUESTA istanza per evitare un doppio box visivo. */
+  /* Giro colori 04/10 — "Inizia sessione" restava sotto la piega: il pannello ha
+     max-height + overflow-y:auto (è lui il contenitore che scorre) ma
+     header e pulsante finale scorrevano col contenuto, quindi su schermi
+     bassi (laptop a scala 150% ≈ 550px di viewport) bisognava scorrere
+     fino in fondo per avviare. Ora: padding VERTICALE tolto dal pannello
+     e dato a header e footer, entrambi position:sticky (× sempre
+     raggiungibile in alto, "Inizia sessione" sempre visibile in basso),
+     scorre solo il contenuto in mezzo. --setup-bg serve a header/footer
+     per coprire il contenuto che passa sotto (background non si eredita
+     dal genitore, qui .setup-card ha background:none inline). */
   #setup-panel{
+    --setup-bg: #3A3024;
     position: relative;
-    background: #3A3024;
+    background: var(--setup-bg);
     border: 1px solid rgba(var(--accent-rgb),.18);
     border-radius: var(--radius-lg);
-    padding: 1.4rem 1.4rem 1.25rem;
-    width: 100%; max-width: 440px; max-height: 90vh; overflow-y: auto;
+    padding: 0 1.4rem;
+    width: 100%; max-width: 440px; max-height: 90vh; max-height: min(90vh, calc(100dvh - 2rem)); overflow-y: auto;
+    overscroll-behavior: contain;
     box-shadow: 0 20px 70px rgba(0,0,0,.75), 0 0 0 1px rgba(var(--accent-rgb),.06);
     animation: asDropIn .2s cubic-bezier(.22,1,.36,1) both;
   }
@@ -122,7 +134,32 @@
 
   .setup-overlay-head{
     display: flex; align-items: center; justify-content: space-between;
-    gap: 10px; margin-bottom: 14px;
+    gap: 10px;
+    position: sticky; top: 0; z-index: 3;
+    background: var(--setup-bg);
+    margin: 0 -1.4rem; padding: 1.4rem 1.4rem .85rem;
+  }
+  /* footer con "Inizia sessione": è il <div style="padding-top:4px"> ultimo
+     figlio di .setup-card (nessuna classe/id in index.html — lo si aggancia
+     da #start-btn con :has(), già usato in questo file). padding-top inline
+     → serve !important per vincere sull'inline style. */
+  #setup-panel .setup-card > div:has(> #start-btn){
+    position: sticky; bottom: 0; z-index: 3;
+    background: var(--setup-bg);
+    margin: 0 -1.4rem; padding: .85rem 1.4rem 1.25rem !important;
+    border-top: 1px solid var(--border-subtle);
+  }
+  #setup-panel .setup-card > .setup-section:first-child{ margin-top: .4rem; }
+  /* viewport bassi (laptop 125–150%): spaziature più compatte, così resta
+     più contenuto visibile tra header e footer fissi */
+  @media (max-height: 720px){
+    .setup-overlay-head{ padding-top: 1rem; padding-bottom: .6rem; }
+    #setup-panel .setup-section{ margin-bottom: 12px; }
+    #setup-panel .num-btn{ padding: 5px 14px; }
+    #setup-panel .mode-btn{ padding: 7px; }
+    #setup-panel .pchip{ padding: 3px 11px; }
+    #setup-panel .pchip-action-btn{ height: 26px; }
+    #setup-panel .setup-card > div:has(> #start-btn){ padding: .6rem 1.4rem .95rem !important; }
   }
   .setup-overlay-title{
     display: flex; align-items: center; gap: 10px;
@@ -171,10 +208,9 @@
     background: var(--surface-1); border: 1px solid var(--border-mid);
     cursor: pointer; transition: border-color var(--transition-fast), background var(--transition-fast);
   }
-  .diff-toggle-row:has(input:checked){
-    border-color: rgba(255,138,61,.4);
-    background: rgba(255,138,61,.1);
-  }
+  /* Giro colori 04/10 — rimosso .diff-toggle-row:has(input:checked) (bordo e fondo
+     arancio da attivo): cambia colore SOLO lo switch (.diff-switch-track
+     qui sotto), la riga resta identica acceso/spento. */
   .diff-toggle-txt{ font-size: 12.5px; font-weight: 500; color: var(--text-primary); }
 
   .diff-switch{ position: relative; flex-shrink: 0; width: 40px; height: 23px; }
@@ -193,6 +229,29 @@
   .diff-switch input:checked ~ .diff-switch-track::after{ transform: translateX(17px); }
   .diff-switch input:focus-visible ~ .diff-switch-track{ outline: 2px solid var(--accent); outline-offset: 2px; }
 
+  /* -- 5) hero attività selezionata --
+     Le 6 varianti .hero-quiz/-speed/-match/-memory/-fill/-truefalse
+     (pixelprof.css, @layer base) erano gradienti navy/nero a tinta
+     d'attività: nero-su-crema in chiaro, nero-su-navy in scuro. Ora un
+     unico verde oliva (#55603F→#5C6644, crema 5.0–5.5:1, bianco 6.1+:1)
+     con testo crema; l'identità dell'attività resta nell'icona, nel
+     titolo e nella decorazione SVG (colori d'area invariati). Stato
+     "nessuna attività" (senza .hero-*) invariato: fango in chiaro. */
+  .act-hero:is(.hero-quiz,.hero-speed,.hero-match,.hero-memory,.hero-fill,.hero-truefalse){
+    background: linear-gradient(135deg,#55603F 0%,#5C6644 55%,#55603F 100%);
+    border-color: rgba(242,232,213,.2);
+    box-shadow: 0 8px 32px rgba(23,35,45,.28), 0 0 0 1px rgba(242,232,213,.06) inset;
+  }
+  .act-hero:is(.hero-quiz,.hero-speed,.hero-match,.hero-memory,.hero-fill,.hero-truefalse) .act-hero-overlay{
+    background: linear-gradient(180deg, rgba(23,35,45,0) 0%, rgba(23,35,45,.2) 100%);
+  }
+  .act-hero:is(.hero-quiz,.hero-speed,.hero-match,.hero-memory,.hero-fill,.hero-truefalse) .act-hero-title{
+    color: #F2E8D5; text-shadow: 0 2px 14px rgba(23,35,45,.35);
+  }
+  .act-hero:is(.hero-quiz,.hero-speed,.hero-match,.hero-memory,.hero-fill,.hero-truefalse) .act-hero-sub{
+    color: rgba(242,232,213,.94);
+  }
+
   /* v8.36.0b: contatore "N facili + N difficili disponibili" sotto il
      toggle — stesso font monospace già usato per le altre etichette
      numeriche piccole dell'app (Share Tech Mono, vedi index.html head). */
@@ -208,7 +267,7 @@
     background: rgba(var(--navy-rgb),.35);
   }
   html[data-theme="light"] #setup-panel{
-    background: #ffffff;
+    --setup-bg: #ffffff;
     border-color: rgba(var(--navy-rgb),.1);
   }
   html[data-theme="light"] .setup-overlay-title{ color: var(--navy); }

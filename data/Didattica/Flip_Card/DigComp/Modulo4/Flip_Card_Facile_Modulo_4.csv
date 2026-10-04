@@ -1,0 +1,74 @@
+Che cos'è un password manager?;Uno strumento che genera / conserva e inserisce automaticamente password uniche e complesse per ciascun account
+Perché non bisogna riutilizzare la stessa password?;Se un servizio viene violato la password rubata può essere provata su ogni altro account
+Che cos'è il credential stuffing?;La tecnica di provare automaticamente credenziali rubate su altri account che usano la stessa combinazione
+Che cosa deve memorizzare l'utente con un password manager?;Una sola password forte: quella che protegge il password manager
+Che cos'è l'autenticazione a più fattori (MFA)?;Un sistema che richiede oltre alla password una seconda prova d'identità prima dell'accesso
+Che cosa significa MFA?;Multi-Factor Authentication (autenticazione a più fattori)
+Quali sono esempi di secondo fattore di autenticazione?;Un codice temporaneo / un'app e un'impronta digitale
+Che cos'è qualcosa che sai nell'autenticazione?;La password
+Che cos'è qualcosa che hai nell'autenticazione?;Ad esempio uno smartphone che riceve un codice
+Che cos'è qualcosa che sei nell'autenticazione?;Ad esempio un'impronta digitale
+Perché la MFA protegge anche se la password viene rubata?;L'aggressore resta bloccato senza il secondo elemento che è in mano al legittimo proprietario
+Che cos'è il phishing?;Una tecnica di inganno online in cui un malintenzionato si finge un mittente affidabile per far fornire spontaneamente dati riservati
+Che cos'è il vishing?;Il phishing condotto tramite telefonata
+Quale schema segue un messaggio di phishing?;Si finge un mittente affidabile / crea urgenza e spinge a cliccare un link o comunicare dati prima di riflettere
+Il phishing sfonda una protezione tecnica?;No: chiede con inganno che sia la vittima stessa a consegnare l'informazione
+Quali esempi di urgenza usa il phishing?;Account bloccato / consegna in sospeso e pagamento da confermare
+Che cos'è il malware?;Qualunque programma progettato per danneggiare / spiare o prendere il controllo di un dispositivo installato senza un consenso consapevole
+Da che cosa deriva il termine malware?;Dalla crasi di malicious software (software dannoso)
+Che cos'è un virus informatico?;Un malware che si attacca ad altri file o programmi e si diffonde copiandosi da un dispositivo all'altro
+Che cos'è un trojan?;Un malware che si presenta come qualcosa di utile ma nasconde una funzione dannosa
+Come arriva quasi sempre il malware?;Camuffato da qualcosa che l'utente stesso decide di aprire / installare o eseguire
+Che cos'è il ransomware?;Un malware che cifra i file del dispositivo rendendoli inaccessibili e chiede un pagamento (quasi sempre in criptovaluta)
+Perché pagare il riscatto non dà garanzie?;Gli aggressori potrebbero non inviare la chiave o aver già copiato i dati altrove
+Qual è l'unica vera protezione dal ransomware?;Avere già una copia separata e recente dei dati (backup)
+Quando si neutralizza il ransomware?;Prima dell'attacco facendo la cosa giusta e non quando arriva
+Che cos'è un backup?;Una copia dei dati conservata separatamente dall'originale per recuperarli in caso di perdita / danneggiamento o attacco
+Che cos'è la regola del 3-2-1?;Almeno tre copie dei dati su due tipi di supporto diversi con una copia in un luogo fisicamente separato
+Perché un backup deve essere un'abitudine regolare?;Più tempo passa tra un backup e l'altro più dati si rischia di perdere
+Perché un backup sullo stesso dispositivo dei dati non basta?;Non protegge da eventi come furto o incendio che colpiscono l'intero ambiente
+La sincronizzazione di un file equivale a un backup?;No: una cancellazione o cifratura si propaga alle copie sincronizzate mentre un backup deve restare una copia indipendente
+Che cos'è la sicurezza cloud?;La protezione dei dati conservati su server remoti gestiti da un fornitore esterno
+Che cos'è la responsabilità condivisa nel cloud?;La sicurezza dei dati dipende sia dal fornitore sia da come l'utente configura e protegge il proprio accesso
+Di che cosa è responsabile il fornitore cloud?;Dell'infrastruttura: server / data center e reti
+Di che cosa è responsabile l'utente di un servizio cloud?;Di come accede e configura il servizio: password / permessi e credenziali custodite
+Quale errore comune espone i dati nel cloud?;Lasciare credenziali di accesso scritte in chiaro dentro codice condiviso con altre persone
+Che cos'è un dato personale?;Qualsiasi informazione che da sola o combinata con altre permette di identificare una persona specifica
+Bastano dati sensibili per identificare qualcuno?;No: bastano più dati apparentemente banali messi insieme come città / età approssimativa e ricerche
+Perché i dati anonimizzati possono non essere anonimi?;Anche privi del nome possono essere ricondotti a una persona incrociando altre informazioni
+Che cos'è il GDPR?;La normativa europea in vigore dal 25 maggio 2018 sulla raccolta / conservazione e uso dei dati personali dei cittadini
+Che cosa significa GDPR?;General Data Protection Regulation (Regolamento Generale sulla Protezione dei Dati)
+Quali principi stabilisce il GDPR per i dati?;Raccolti per uno scopo dichiarato e specifico e conservati solo per il tempo realmente necessario
+Quali diritti ha una persona sui propri dati?;Sapere quali dati sono conservati e chiederne la cancellazione (diritto all'oblio)
+Come sono le sanzioni del GDPR?;Molto severe e proporzionate al fatturato dell'organizzazione
+Che cos'è il benessere digitale?;L'equilibrio tra l'uso delle tecnologie e la salute fisica / mentale e sociale di chi le usa
+Equilibrio digitale significa rinuncia alla tecnologia?;No: a volte può anche voler dire scegliere di non usarla
+Perché molte app cercano di prolungare l'uso?;Perché i servizi gratuiti vivono di pubblicità: più tempo si passa più la piattaforma vale
+Che cos'è il clickbait?;Un titolo costruito per spingere a cliccare
+Che cos'è la gamification nelle app?;L'uso di meccaniche da gioco come punti e sfide per prolungare l'uso
+Che cos'è il nudging?;Una piccola spinta a non interrompere ciò che si sta facendo
+Quali sono segnali di una possibile dipendenza digitale?;Perdita di controllo sul tempo online / disagio senza il dispositivo e umore che dipende da ciò che accade sullo schermo
+Che cosa fare davanti ai segnali di dipendenza digitale?;Parlarne con un professionista della salute e non cercare di risolvere tutto da soli
+Quali strumenti aiutano il benessere digitale?;Monitorare il tempo d'uso / impostare limiti e fasce senza schermo / ridurre le notifiche e usare filtri se il dispositivo è condiviso con minori
+Quali altri aspetti incidono sul benessere digitale?;Modelli di corpo idealizzati che generano ansia / app di salute non autorizzate / informazioni sanitarie false e la dimensione fisica (posizione / luce e pause)
+Che cos'è il cyberbullismo?;Il bullismo praticato attraverso le tecnologie digitali: un comportamento ripetuto per spaventare / irritare o mettere in ridicolo
+Perché il cyberbullismo non è meno grave del bullismo?;Perché lo schermo peggiora le regole: effetto disinibizione / pubblico invisibile e anonimato a ogni ora
+Chi è più esposto al cyberbullismo?;Bambini e ragazzi / chi ha meno abilità sociali e chi non ha un sostegno sociale in presenza
+Il cyberbullismo riguarda solo i minori?;No: anche un adulto o un professionista può essere bersaglio di persecuzioni online
+Quali mosse concrete fare davanti al cyberbullismo?;Non reagire / conservare le prove / bloccare il mittente / segnalare alla piattaforma / parlarne con un adulto e nei casi gravi rivolgersi alle forze dell'ordine
+Perché conservare le prove prima di cancellare?;Salvare messaggi e schermate con data e nome del mittente serve a documentare l'aggressione
+Quale linea di ascolto esiste per i ragazzi?;Telefono Azzurro
+Quali segnali indicano che qualcuno subisce cyberbullismo?;Cambiamenti nell'uso del telefono / tentativo di evitarlo e un umore diverso dal solito
+Che cos'è l'impatto ambientale del digitale?;Le conseguenze sull'ambiente di produrre / usare e smaltire dispositivi / reti e servizi digitali
+Che cosa sono i RAEE?;Rifiuti da Apparecchiature Elettriche ed Elettroniche (in inglese e-waste)
+In quali tre momenti si presenta l'impatto ambientale del digitale?;Uso quotidiano / produzione e fine vita
+Che cosa sono i data center?;I grandi centri di elaborazione dei dati dove vivono i servizi online
+Quali attività consumano molta energia?;L'addestramento dell'intelligenza artificiale e la produzione di criptovalute
+Che cos'è l'obsolescenza programmata?;La progettazione di apparecchi per durare poco
+Sostituire un oggetto fisico con uno digitale è sempre più sostenibile?;No: un libro online non richiede carta ma il dispositivo contiene materiali tossici e richiede energia
+Quali azioni concrete riducono l'impatto ambientale del digitale?;Spegnere dispositivi e Wi-Fi / stampare meno / riparare il componente guasto / preferire il Wi-Fi ai dati mobili e alleggerire video e allegati
+Dove vanno portati i rifiuti elettronici?;Ai centri di raccolta o al rivenditore e non nell'indifferenziata
+Che cosa fare prima di smaltire un dispositivo?;Copiare i dati che servono e cancellare quelli personali
+Che cos'è la sicurezza comportamentale?;L'insieme delle abitudini quotidiane che determinano quanto siano efficaci gli strumenti tecnici di protezione
+Perché nessuno strumento di sicurezza è efficace da solo?;Se chi lo usa non lo mantiene attivo / aggiornato e usato correttamente giorno dopo giorno
+Perché la sicurezza informatica non è un traguardo raggiunto una volta per tutte?;È una pratica quotidiana fatta di piccole scelte ripetute nel tempo

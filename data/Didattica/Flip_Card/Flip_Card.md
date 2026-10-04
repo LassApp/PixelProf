@@ -655,8 +655,8 @@ data/
   - Commento: Formazione del cittadino
   - Path base: `data/Didattica/Flip_Card/DigComp/Modulo1/`
   - File:
-    - `Flip_Card_Facile_Modulo_1.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_1.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_1.csv` *(creato — 73 Flip Card)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(creato — 120 Flip Card)*
 
 - **Fase 2 — Comunicazione e collaborazione**
   - Chiave: `comunicazione-e-collaborazione`
@@ -664,8 +664,8 @@ data/
   - Commento: Formazione del cittadino
   - Path base: `data/Didattica/Flip_Card/DigComp/Modulo2/`
   - File:
-    - `Flip_Card_Facile_Modulo_2.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_2.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_2.csv` *(creato — 44 Flip Card)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(creato — 59 Flip Card)*
 
 - **Fase 3 — Creazione di contenuti digitali**
   - Chiave: `creazione-di-contenuti-digitali`
@@ -673,8 +673,8 @@ data/
   - Commento: Formazione del cittadino
   - Path base: `data/Didattica/Flip_Card/DigComp/Modulo3/`
   - File:
-    - `Flip_Card_Facile_Modulo_3.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_3.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_3.csv` *(creato — 46 Flip Card)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(creato — 66 Flip Card)*
 
 - **Fase 4 — Sicurezza**
   - Chiave: `sicurezza`
@@ -682,8 +682,8 @@ data/
   - Commento: Formazione del cittadino
   - Path base: `data/Didattica/Flip_Card/DigComp/Modulo4/`
   - File:
-    - `Flip_Card_Facile_Modulo_4.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_4.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_4.csv` *(creato — 74 Flip Card)*
+    - `Flip_Card_Medio_Modulo_4.csv` *(creato — 99 Flip Card)*
 
 - **Fase 5 — Problem solving digitale**
   - Chiave: `problem-solving-digitale`
@@ -691,8 +691,8 @@ data/
   - Commento: Formazione del cittadino
   - Path base: `data/Didattica/Flip_Card/DigComp/Modulo5/`
   - File:
-    - `Flip_Card_Facile_Modulo_5.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_5.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_5.csv` *(creato — 28 Flip Card)*
+    - `Flip_Card_Medio_Modulo_5.csv` *(creato — 51 Flip Card)*
 
 - **Fase 6 — Coinvolgimento Professionale**
   - Chiave: `coinvolgimento-professionale`
@@ -700,8 +700,8 @@ data/
   - Commento: Formazione del docente (Edu)
   - Path base: `data/Didattica/Flip_Card/DigComp/Modulo6/`
   - File:
-    - `Flip_Card_Facile_Modulo_6.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_6.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_6.csv` *(creato — 24 Flip Card)*
+    - `Flip_Card_Medio_Modulo_6.csv` *(creato — 36 Flip Card)*
 
 - **Fase 7 — Risorse Digitali**
   - Chiave: `risorse-digitali`
@@ -709,8 +709,8 @@ data/
   - Commento: Formazione del docente (Edu)
   - Path base: `data/Didattica/Flip_Card/DigComp/Modulo7/`
   - File:
-    - `Flip_Card_Facile_Modulo_7.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_7.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_7.csv` *(creato — 18 Flip Card)*
+    - `Flip_Card_Medio_Modulo_7.csv` *(creato — 28 Flip Card)*
 
 - **Fase 8 — Pratiche di insegnamento e apprendimento**
   - Chiave: `pratiche-di-insegnamento-e-apprendimento`
@@ -718,8 +718,8 @@ data/
   - Commento: Formazione del docente (Edu)
   - Path base: `data/Didattica/Flip_Card/DigComp/Modulo8/`
   - File:
-    - `Flip_Card_Facile_Modulo_8.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_8.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_8.csv` *(creato — 21 Flip Card)*
+    - `Flip_Card_Medio_Modulo_8.csv` *(creato — 33 Flip Card)*
 
 - **Fase 9 — Valutazione dell'apprendimento**
   - Chiave: `valutazione-dell-apprendimento`
@@ -727,8 +727,8 @@ data/
   - Commento: Formazione del docente (Edu)
   - Path base: `data/Didattica/Flip_Card/DigComp/Modulo9/`
   - File:
-    - `Flip_Card_Facile_Modulo_9.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_9.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_9.csv` *(creato — 24 Flip Card)*
+    - `Flip_Card_Medio_Modulo_9.csv` *(creato — 29 Flip Card)*
 
 - **Fase 10 — Valorizzare le potenzialità degli studenti**
   - Chiave: `valorizzare-le-potenzialita-degli-studenti`
@@ -736,8 +736,8 @@ data/
   - Commento: Formazione del docente (Edu)
   - Path base: `data/Didattica/Flip_Card/DigComp/Modulo10/`
   - File:
-    - `Flip_Card_Facile_Modulo_10.csv` *(da creare)*
-    - `Flip_Card_Medio_Modulo_10.csv` *(da creare)*
+    - `Flip_Card_Facile_Modulo_10.csv` *(creato — 20 Flip Card)*
+    - `Flip_Card_Medio_Modulo_10.csv` *(creato — 32 Flip Card)*
 
 ---
 
@@ -837,15 +837,15 @@ data/
 - Modulo 12 — AI Act
 - Modulo 13 — Il Futuro dell'AI
 
-### 🧭 DigComp — DA CREARE
-*Formazione del cittadino (Fasi 1–5)*
+### 🧭 DigComp — COMPLETO
+*Formazione del cittadino (Fasi 1–5) — COMPLETO*
 - Fase 1 — Alfabetizzazione digitale
 - Fase 2 — Comunicazione e collaborazione
 - Fase 3 — Creazione di contenuti digitali
 - Fase 4 — Sicurezza
 - Fase 5 — Problem solving digitale
 
-*Formazione del docente — Edu (Fasi 6–10)*
+*Formazione del docente — Edu (Fasi 6–10) — COMPLETO*
 - Fase 6 — Coinvolgimento Professionale
 - Fase 7 — Risorse Digitali
 - Fase 8 — Pratiche di insegnamento e apprendimento
@@ -855,8 +855,8 @@ data/
 ---
 
 **Riepilogo:**
-- **Moduli completi:** 70
-- **Moduli da creare:** 10
+- **Moduli completi:** 80
+- **Moduli da creare:** 0
 - **Moduli totali:** 80
 
 *Per i moduli indicati come "DA CREARE", entrambi i file — Facile e Medio — sono ancora da creare.*
@@ -877,12 +877,12 @@ data/
 | Reti e Internet | 8 | 16 | 16 | 0 | attivo |
 | Malware e Minacce Informatiche | 1 | 2 | 2 | 0 | attivo |
 | Intelligenza Artificiale | 13 | 26 | 26 | 0 | attivo |
-| DigComp | 10 | 20 | 0 | 20 | attivo |
-| **Totale** | **80** | **160** | **140** | **20** | — |
+| DigComp | 10 | 20 | 20 | 0 | attivo |
+| **Totale** | **80** | **160** | **160** | **0** | — |
 
 - **Moduli totali mappati:** 80
-- **Moduli completi:** 70
-- **Moduli da creare:** 10
-- **File CSV creati:** 140
-- **File CSV da creare:** 20
+- **Moduli completi:** 80
+- **Moduli da creare:** 0
+- **File CSV creati:** 160
+- **File CSV da creare:** 0
 - **File CSV totali attesi:** 160

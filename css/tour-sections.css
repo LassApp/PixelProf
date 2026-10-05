@@ -115,3 +115,20 @@
      qui lo porterebbe a ~2.6:1) */
   html[data-theme="light"] .pp-tour-primary .pp-tour-count{ color:rgba(242,232,213,.92); opacity:1; }
 }
+
+/* ── Tema scuro — il pannello profilo è ora beige (css/topbar-profile.css):
+   voci del tour navy su beige (base: crema/bianco al 35–85% = invisibili
+   su fondo chiaro). Speculare al blocco chiaro sopra. ── */
+@layer theme {
+  html:not([data-theme="light"]) .pp-tour-sections.open{ background:rgba(23,35,45,.07); border-radius:12px; padding:4px; }
+  html:not([data-theme="light"]) .pp-tour-item{ color:rgba(23,35,45,.92); }
+  html:not([data-theme="light"]) .pp-tour-item:hover{ background:rgba(23,35,45,.08); color:#17232D; }
+  html:not([data-theme="light"]) .pp-tour-icon{ color:#7A5A38; }
+  html:not([data-theme="light"]) .pp-tour-item:hover .pp-tour-icon{ color:#6B4E30; }
+  html:not([data-theme="light"]) .pp-tour-count{ color:rgba(23,35,45,.74); }
+  html:not([data-theme="light"]) .pp-tour-sep{ background:rgba(23,35,45,.16); }
+  html:not([data-theme="light"]) .pp-tour-primary{ color:#17232D; }
+  html:not([data-theme="light"]) .pp-tour-primary .pp-tour-icon{ color:#7A5A38; }
+  /* la regola base abbassa il conteggio a opacity:.65 */
+  html:not([data-theme="light"]) .pp-tour-primary .pp-tour-count{ color:rgba(23,35,45,.74); opacity:1; }
+}

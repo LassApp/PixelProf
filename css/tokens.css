@@ -92,4 +92,31 @@
     --text-muted: rgba(242,232,213,.96);
     --text-dim: rgba(242,232,213,.94);
   }
+
+  /* ISOLE CHIARE nel tema scuro (speculare al blocco sopra)
+     Per coerenza col tema chiaro il rapporto si inverte: pagina NAVY e
+     topbar/pannello profilo BEIGE (in chiaro: pagina beige, topbar fango
+     e pannello oliva). Dentro queste superfici chiare i token "di tema"
+     scuro (accent = crema, text-* = crema) darebbero crema-su-beige:
+     si ridichiarano come nel tema chiaro (accent = fango, purple = oliva
+     scurito, text-* = navy) SOLO qui. Selettore html:not([data-theme=
+     "light"]) e non [data-theme="dark"]: l'attributo lo imposta
+     js/theme-manager.js a runtime, mentre il dark è lo stile di base —
+     così non c'è il lampo del vecchio dark prima che il JS giri.
+     Rapporti verificati: navy su crema 13.3:1, fango su crema 5.16:1,
+     oliva scurito su crema 5.02:1. */
+  html:not([data-theme="light"]) .topbar,
+  html:not([data-theme="light"]) .cs-topbar,
+  html:not([data-theme="light"]) .profile-panel{
+    --accent: var(--fango);
+    --accent-rgb: 122,90,56;
+    --accent-dim: rgba(122,90,56,.12);
+    --accent-glow: rgba(122,90,56,.25);
+    --accent-border: rgba(122,90,56,.35);
+    --purple: #5C6644;
+    --purple-rgb: 92,102,68;
+    --text-primary: var(--navy);
+    --text-muted: rgba(23,35,45,.8);
+    --text-dim: rgba(23,35,45,.72);
+  }
 }

@@ -240,3 +240,95 @@
     background:#6B4E30; border-color:rgba(242,232,213,.55); color:#fff;
   }
 }
+
+/* ── Tema scuro — topbar BEIGE + pannello profilo BEIGE (speculare al
+   blocco chiaro sopra: là pagina beige / topbar fango / pannello oliva,
+   qui pagina navy / topbar beige / pannello beige con card oliva).
+   Selettore html:not([data-theme="light"]): vedi nota in css/tokens.css.
+   I token accent/purple/text-* di queste superfici sono ridichiarati
+   nelle "isole chiare" di css/tokens.css; qui restano esplicite solo le
+   parti con colori letterali (rgba(255,255,255,x), #c8ffe8, ecc.) che i
+   token non raggiungono. Navy su crema 13.3:1, fango su crema 5.16:1. ── */
+@layer theme {
+  /* TOPBAR (in-app .topbar e schermate Direttore/aule .cs-topbar) */
+  html:not([data-theme="light"]) .topbar{
+    background:linear-gradient(180deg, rgba(242,232,213,.98) 0%, rgba(242,232,213,.97) 70%, rgba(233,222,199,.96) 100%);
+    border-bottom-color:rgba(var(--navy-rgb),.14);
+    box-shadow:0 1px 0 rgba(255,255,255,.05), 0 4px 24px rgba(0,0,0,.35);
+  }
+  html:not([data-theme="light"]) .cs-topbar{
+    background:rgba(242,232,213,.98);
+    border-bottom-color:rgba(var(--navy-rgb),.14);
+    box-shadow:0 4px 20px rgba(0,0,0,.3);
+  }
+  html:not([data-theme="light"]) .topbar,
+  html:not([data-theme="light"]) .cs-topbar{ color:var(--navy); }
+
+  /* logo: Pixel navy + Prof oliva scuro #55603F (secondo colore del marchio, 4.7:1 sul fondo del gradiente);
+     niente gradiente-clip né glow (pattern n.4) */
+  html:not([data-theme="light"]) .logo-main{ background:none; -webkit-background-clip:border-box; background-clip:border-box; -webkit-text-fill-color:currentColor; color:var(--navy); filter:none; text-shadow:none; }
+  html:not([data-theme="light"]) .logo-main em{ background:none; -webkit-background-clip:border-box; background-clip:border-box; -webkit-text-fill-color:currentColor; color:#55603F; }
+  html:not([data-theme="light"]) .cs-logo-text{ color:var(--navy); }
+  html:not([data-theme="light"]) .cs-logo-text em{ color:#55603F; }
+  html:not([data-theme="light"]) .logo-sub,
+  html:not([data-theme="light"]) .cs-logo-sub,
+  html:not([data-theme="light"]) .logo-hint{ color:rgba(var(--navy-rgb),.8); }
+
+  /* pulsanti topbar (.tb-btn e la classe parallela .audio-toggle-btn,
+     che copre anche .theme-toggle-btn) */
+  html:not([data-theme="light"]) .tb-btn{ color:rgba(var(--navy-rgb),.8); }
+  html:not([data-theme="light"]) .tb-btn:hover{ background:rgba(var(--navy-rgb),.08); color:var(--navy); border-color:rgba(var(--navy-rgb),.2); }
+  html:not([data-theme="light"]) .tb-btn.active{ background:rgba(var(--navy-rgb),.1); color:var(--navy); border-color:rgba(var(--navy-rgb),.25); box-shadow:none; }
+  html:not([data-theme="light"]) .audio-toggle-btn{ border-color:rgba(var(--navy-rgb),.25); background:rgba(var(--navy-rgb),.06); color:rgba(var(--navy-rgb),.85); }
+  html:not([data-theme="light"]) .audio-toggle-btn:hover{ border-color:rgba(var(--navy-rgb),.45); background:rgba(var(--navy-rgb),.12); color:var(--navy); }
+  html:not([data-theme="light"]) .audio-toggle-btn.muted{ color:#8A4038; border-color:rgba(138,64,56,.5); background:rgba(138,64,56,.09); }
+  html:not([data-theme="light"]) .audio-toggle-btn.muted:hover{ color:#8A4038; border-color:rgba(138,64,56,.7); background:rgba(138,64,56,.16); }
+
+  /* menu hub: beige come la topbar */
+  html:not([data-theme="light"]) .tb-hub-menu{ background:#F2E8D5; border-color:rgba(var(--navy-rgb),.2); box-shadow:0 8px 32px rgba(0,0,0,.4), 0 0 0 1px rgba(var(--navy-rgb),.08); }
+  html:not([data-theme="light"]) .tb-hub-item{ color:rgba(var(--navy-rgb),.85); }
+  html:not([data-theme="light"]) .tb-hub-item:hover{ background:rgba(var(--navy-rgb),.07); color:var(--navy); }
+  html:not([data-theme="light"]) .tb-hub-item.active{ background:rgba(122,90,56,.14); color:#7A5A38; }
+
+  /* badge aula ("torna ai moduli") */
+  html:not([data-theme="light"]) .tb-aula-badge{ background:rgba(var(--navy-rgb),.06); border-color:rgba(var(--navy-rgb),.28); }
+  html:not([data-theme="light"]) #tb-course-badge:hover{ background:rgba(var(--navy-rgb),.11); border-color:rgba(var(--navy-rgb),.5); box-shadow:none; }
+  html:not([data-theme="light"]) .tb-aula-name{ color:var(--navy); }
+  html:not([data-theme="light"]) .tb-aula-hint{ color:rgba(var(--navy-rgb),.8); }
+
+  /* link "Dashboard" / frecce indietro (tutti dentro una topbar) */
+  html:not([data-theme="light"]) .back-link{ color:rgba(var(--navy-rgb),.85); }
+  html:not([data-theme="light"]) .back-link:hover{ color:var(--navy); background:rgba(var(--navy-rgb),.08); }
+
+  /* pulsante profilo: disco navy sul beige, così anello e icona del
+     ruolo (oro/blu/rosso, impostati inline via JS) restano quelli
+     originali e ben visibili */
+  html:not([data-theme="light"]) .tb-profile-btn{ background:var(--navy); }
+  html:not([data-theme="light"]) .tb-profile-btn:hover{ background:var(--navy); box-shadow:0 0 0 3px var(--profile-bg, rgba(84,112,140,.3)); }
+
+  /* PANNELLO PROFILO: base beige, card info oliva, pulsante tour fango */
+  html:not([data-theme="light"]) .profile-panel-backdrop{ background:rgba(var(--navy-rgb),.6); }
+  html:not([data-theme="light"]) .profile-panel{
+    background:linear-gradient(180deg,#F2E8D5 0%,#E9DEC5 100%);
+    border-left-color:rgba(var(--navy-rgb),.18);
+    box-shadow:-12px 0 40px rgba(0,0,0,.45);
+  }
+  html:not([data-theme="light"]) .pp-panel-close{ background:rgba(var(--navy-rgb),.07); border-color:rgba(var(--navy-rgb),.3); color:var(--navy); }
+  html:not([data-theme="light"]) .pp-panel-close:hover{ color:var(--navy); background:rgba(var(--navy-rgb),.16); }
+  html:not([data-theme="light"]) .pp-profile-avatar{ background:var(--navy); box-shadow:0 0 0 4px rgba(var(--navy-rgb),.1); }
+  html:not([data-theme="light"]) .pp-profile-name{ color:var(--navy); }
+  html:not([data-theme="light"]) .pp-profile-role{ background:var(--navy); color:#F2E8D5; }
+  html:not([data-theme="light"]) .pp-panel-info{ background:#55603F; border-radius:12px; padding:12px 14px; }
+  html:not([data-theme="light"]) .pp-info-row i{ color:#F2E8D5; }
+  html:not([data-theme="light"]) .pp-info-label{ color:rgba(242,232,213,.94); }
+  html:not([data-theme="light"]) .pp-info-value{ color:#F2E8D5; }
+  html:not([data-theme="light"]) .pp-panel-divider{ background:rgba(var(--navy-rgb),.18); }
+  html:not([data-theme="light"]) .pp-panel-action{ background:rgba(var(--navy-rgb),.05); border-color:rgba(var(--navy-rgb),.3); color:var(--navy); }
+  html:not([data-theme="light"]) .pp-panel-action:hover{ background:rgba(var(--navy-rgb),.1); color:var(--navy); border-color:rgba(var(--navy-rgb),.5); }
+  html:not([data-theme="light"]) .pp-panel-action.pp-logout-action{ border-color:rgba(138,64,56,.5); background:rgba(138,64,56,.08); color:#8A4038; }
+  html:not([data-theme="light"]) .pp-panel-action.pp-logout-action:hover{ border-color:#8A4038; background:#8A4038; color:#F2E8D5; }
+  html:not([data-theme="light"]) .pp-panel-action.pp-tour-action,
+  html:not([data-theme="light"]) .pp-panel-action.pp-tour-action.expanded{ background:#7A5A38; border-color:#7A5A38; color:#F2E8D5; }
+  html:not([data-theme="light"]) .pp-panel-action.pp-tour-action:hover,
+  html:not([data-theme="light"]) .pp-panel-action.pp-tour-action.expanded:hover{ background:#6B4E30; border-color:#6B4E30; color:#fff; }
+}

@@ -1,0 +1,3191 @@
+/* ==================================================
+   game-engine-state.js — PixelProf v5.0.6
+   Core engine: loader factory, course storage, database,
+   session state (QuizSession/FillSession/PlayerSession),
+   matchState, TimerManager, PauseUIRegistry, helpers,
+   navigation core, dialog system, module/activity selection,
+   launch, team turn engine, score saving, ranking, leaderboard.
+   Cloud hooks (hook_saveLbEntry, hook_saveSession,
+   hook_ensureParticipants) now embedded directly —
+   no override chains from app.js.
+   Fase 8: PauseUIRegistry (M2), shq() (L1), _pauseForDialog
+   refactored — zero hardcoding per gameType.
+   Fase 9 / v5.0.0: P1 (add-sq-btn rimosso), P2 (mc-SS id),
+   N1 (WP nel wizard). _updateAddSqBtn mantenuta come no-op.
+   v5.0.1: N2 (rinomina squadra salvata — inline chip editor).
+   v5.0.2: Delete giocatori/squadre salvati (inline × chip).
+   v5.0.6: FIX allineamento con HTML/app.js v5.0.6 —
+     - goStep(): aggiunto 'step-cat' all'array step da
+       nascondere/mostrare; ramo s==='cat' popola
+       cat-mod-label; ramo s==='mod' richiama
+       window._renderModuleFilter() (sync, definita in
+       app.js) per applicare il filtro moduli aula ad
+       ogni ritorno in home — niente fetch di rete extra.
+     - selMod(): inclusa 'WP' nel reset visivo delle card
+       modulo attive (mancava); goStep('act') → goStep('cat')
+       per passare dalla nuova schermata categoria
+       (Minigiochi/Didattica) prima dell'attività.
+     - goCoursesFromApp(): _execBack ora resetta
+       window._activeModuleKeys = null prima di mostrare
+       la grid aule, evitando che il filtro moduli
+       dell'aula precedente "sanguini" su quella successiva.
+   v5.0.7: FIX — 'fill' (Completa la frase) aggiunto a
+     needsNum in selAct()/checkCanStart(): mancava tra
+     quiz/speed/truefalse, per cui il selettore "Quante
+     domande?" (5/10/15/20/Tutte) non veniva mai mostrato
+     e la partita usava sempre l'intero pool JSON del
+     modulo (vedi anche game-fill.js v4.0.9).
+   v5.1.0 (app v8.22.0): FIX path di caricamento minigiochi.
+     - _loadOne(): ora accetta moduleMap[mod] come array di
+       path oltre che stringa singola — fetch in parallelo +
+       merge dei risultati normalizzati. Retrocompatibile al
+       100% con i path singoli esistenti.
+     - CE/OE: passati da 1 file flat a 4 file (uno per
+       sotto-modulo, in data/Minigiochi/ECDL/<Area>/moduloN/)
+       fusi in un unico pool — contenuto reale caricato da
+       Erasmo, sostituisce il vecchio data/quiz|abbina|... .
+     - WP/SS/PP: path "pronti" verso data/Minigiochi/ECDL/
+       <Area>/moduloN/ (5/5/3 sotto-moduli) — JSON non ancora
+       caricati, mostreranno "Errore caricamento" finché non
+       arrivano (atteso, vedi Aree_e_Moduli.md).
+     - Cybersecurity/Reti_e_Internet/Malware: FIX bug — nei 5
+       moduleMap mancava il segmento "Minigiochi/" nel path
+       (root reale è data/Minigiochi/<Area>/..., non
+       data/<Area>/...) — causava "Errore caricamento" su
+       moduli già caricati da Erasmo.
+     - Cyberbullismo (6) e Intelligenza Artificiale (13):
+       aggiunte le 19 chiavi (path futuri, stesso pattern) —
+       "terreno pronto", contentReady resta false finché
+       Erasmo non conferma lo sblocco.
+   v5.3.4 (app v8.39.0): _trackWrongQ()/_trackRightQ() ora chiamano
+     anche _markSeenForProgress(key,mod,act) — completamento preciso
+     di "Progressi" (domande DISTINTE viste, non tentativi). Firma di
+     _trackRightQ() estesa con mod/act (era solo qText,answer) —
+     aggiornati i 4 punti chiamanti in game-quiz.js/game-fill.js/
+     game-truefalse.js. Solo quiz/fill/truefalse (Speed Quiz escluso
+     su richiesta di Erasmo). Vedi sql/v8.39.0_seen_questions_sync.sql
+     e stats.js (_loadModuleSeenCounts).
+   v5.3.3 (app v8.38.0): _doGoTab() ora richiama anche
+     _mergeCloudModuleStats(activeCourseId)/_mergeCloudSessions(activeCourseId)
+     quando si aprono le schede Progressi/Storico (definite in
+     stats.js) — completa, insieme a courses.js/badges.js, la sync
+     cross-device di Progressi/Storico sessioni/Traguardi. Vedi
+     sql/v8.38.0_progress_sessions_badges_sync.sql.
+   v5.3.2 (app v8.37.3): FIX — lbSelectAct() ora chiama anche
+     _mergeCloudLb(type,act): window.hook_loadLeaderboard esisteva già
+     ma non era mai stato collegato alla UI, quindi la classifica
+     mostrava solo db.lb2 locale (mai i punteggi fatti su altri
+     dispositivi). Fire-and-forget, ri-renderizza solo se cambia
+     qualcosa. Gap gemello per players/teams risolto in courses.js
+     (_mergeCloudRoster, chiamata da _enterCourseDirect).
+   v5.3.1 (app v8.37.1): FIX — _trackWrongQ()/_trackRightQ() ora
+     passano a window.hook_trackWrongAnswer/RightAnswer la chiave già
+     calcolata da _wrongQKey() (key), non solo qText/answer. La v5.3.0
+     non la passava: in game_hooks.js gli argomenti finivano tutti
+     shiftati di una posizione verso la RPC (question_key riceveva
+     l'intero testo della domanda al posto della chiave, activity
+     restava undefined) — sintomo osservato: tabella wrong_questions
+     creata ma zero righe popolate dopo ~20 risposte sbagliate.
+   v5.3.0 (app v8.37.0): _trackWrongQ()/_trackRightQ() replicano ora
+     su Supabase (window.hook_trackWrongAnswer/hook_trackRightAnswer,
+     game_hooks.js) — storico domande sbagliate cross-device, per aula.
+     db.wrongQ locale invariato: resta la fonte per la ripetizione
+     spaziata qui sotto (sincrona, non può attendere la rete). Solo la
+     sezione "Domande difficili" di dashboard.js legge ora i dati cloud
+     aggregati quando disponibili — vedi sql/v8.37.0_wrong_questions_sync.sql.
+   v5.2.0 (app v8.36.0): toggle "includi domande difficili" nel
+     setup-panel (nuovo, vale per tutti i minigiochi condivisi
+     dallo stesso pannello — vedi index.html). Preferenza salvata
+     per aula E per minigioco in db.diffPrefs[act] (nuovo campo,
+     vedi makeEmptyDb()/migrateDb()), default assente = solo easy.
+     I 5 normalize() dei loader ora portano "difficulty" nel pool
+     (prima veniva scartato — dato morto). Nuovo helper
+     _filterHard(pool,act), applicato in launch() (individuale e
+     squadre) e richiamato anche da game-fill.js/game-truefalse.js;
+     l'Abbina ha logica propria in getMatchSet() (game-match.js)
+     perché la difficoltà è per round da 5 coppie, non per domanda.
+     selAct() sincronizza il checkbox #diff-toggle sulla preferenza
+     salvata; toggleHard() la scrive e salva subito (stesso pattern
+     di addInd()/pickInd()).
+   This is the central module — loaded before all games.
+================================================== */
+
+/* ==================================================
+   LOADER FACTORY  v2.1.4
+   Unica implementazione fetch+cache+error condivisa
+   da tutti e 5 i minigiochi. Ogni gioco configura
+   solo le proprie differenze (map, tag, validate,
+   normalize). Zero duplicazione di boilerplate.
+================================================== */
+
+/**
+ * Crea un loader autonomo per un minigioco.
+ *
+ * @param {object} cfg
+ *   .moduleMap   {CE:path, OE:path, ...}
+ *   .tag         stringa usata nei log  (es. 'Quiz')
+ *   .validate    fn(raw)  true se il JSON  valido
+ *   .normalize   fn(raw, mod)  array nel formato interno
+ */
+function _createLoader(cfg) {
+  const cache = {};   // cache dedicata, isolata per ogni loader
+
+  async function _loadOne(mod) {
+    if (cache[mod]) return cache[mod];
+
+    const rel = cfg.moduleMap[mod];
+    if (!rel) throw new Error(`[${cfg.tag}] Modulo non registrato: "${mod}".`);
+
+    // v5.1.0 — moduleMap[mod] può essere un singolo path (string, comportamento
+    // storico) oppure un array di path: in tal caso i file vengono scaricati in
+    // parallelo e i risultati normalizzati concatenati in un unico pool. Serve
+    // per i moduli ECDL (CE/OE/WP/SS/PP) il cui contenuto è ora organizzato in
+    // più file per sotto-modulo (vedi data/Minigiochi/ECDL/<Area>/moduloN/).
+    const relList = Array.isArray(rel) ? rel : [rel];
+
+    const parts = await Promise.all(relList.map(async (relPath) => {
+      const url = _resolveJsonPath(relPath);
+      const resp = await fetch(url);
+      if (!resp.ok) throw new Error(`[${cfg.tag}] HTTP ${resp.status} — ${url}`);
+
+      let raw;
+      try { raw = await resp.json(); }
+      catch(e) { throw new Error(`[${cfg.tag}] JSON non valido in ${url}: ${e.message}`); }
+
+      if (!cfg.validate(raw)) throw new Error(`[${cfg.tag}] Dati non validi o vuoti in ${url}`);
+
+      return cfg.normalize(raw, mod);
+    }));
+
+    cache[mod] = parts.flat();
+    return cache[mod];
+  }
+
+async function load(mod) {
+  return [...await _loadOne(mod)];
+}
+
+function isCached(mod) {
+  return !!cache[mod];
+}
+
+  function isCached(mod) {
+    return mod === 'MIX'
+      ? !!(cache['CE'] && cache['OE'])
+      : !!cache[mod];
+  }
+
+  // Espone il cache per logiche che devono ispezionarlo (es. getMatchSet MIX)
+  function getCache() { return cache; }
+
+  return { load, isCached, getCache, moduleMap: cfg.moduleMap };
+}
+
+/* ── LOADER REGISTRY v4.0.3 ────────────────────────────────────────
+   5 loader unificati: CE / OE / WP nello stesso moduleMap.
+   WP è ora un modulo standard — nessuna biforcazione speciale.
+   Per aggiungere un nuovo modulo (es. SS): aggiungere riga qui + file JSON.
+
+   v8.33.0 — ATTIVAZIONE Cyberbullismo e Intelligenza Artificiale:
+   FIX di 8 path (× 5 loader = 40 righe) che puntavano a file JSON mai
+   esistiti — la key restava quella corretta ma il path deriva dalla
+   key invece che dal nome file reale, e per 8 moduli i due differivano
+   (apostrofo/preposizione italiana nel titolo, es. "cos-e-ai" →
+   file "quiz_cos-e-l-ai.json"). Dettaglio completo delle 8 coppie
+   key→slug-file nel changelog v8.33.0 di areas-config.js. Nessun'altra
+   modifica al motore, come già anticipato in NOTA 3 di areas-config.js.
+   ──────────────────────────────────────────────────────────────── */
+
+/* -- Quiz -- */
+const QuizLoader = _createLoader({
+  moduleMap: {
+    CE: [
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo1/quiz_fondamenti-digitali.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo2/quiz_cpu-architettura.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo3/quiz_memorie.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo4/quiz_software.json',
+    ],
+    OE: [
+      'data/Minigiochi/ECDL/Online_Essentials/modulo1/quiz_rete-e-dati.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo2/quiz_identita-e-comunicazione.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo3/quiz_navigazione-e-tracciamento.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo4/quiz_sicurezza-e-comportamento-online.json',
+    ],
+    WP: [
+      'data/Minigiochi/ECDL/Word_Processing/modulo1/quiz_word-e-ambiente.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo2/quiz_scrivere-e-salvare.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo3/quiz_formattare-il-testo.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo4/quiz_elementi-grafici.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo5/quiz_strutturare-il-documento.json',
+    ],
+    SS: [
+      'data/Minigiochi/ECDL/Spreadsheet/modulo1/quiz_excel-e-l-ambiente-di-lavoro.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo2/quiz_inserire-e-gestire-i-dati.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo3/quiz_formattare-il-foglio.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo4/quiz_formule-e-calcoli.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo5/quiz_organizzare-e-visualizzare-i-dati.json',
+    ],
+    PP: [
+      'data/Minigiochi/ECDL/Presentation/modulo1/quiz_creare-una-presentazione.json',
+      'data/Minigiochi/ECDL/Presentation/modulo2/quiz_oggetti-grafici.json',
+      'data/Minigiochi/ECDL/Presentation/modulo3/quiz_preparare-e-presentare.json',
+    ],
+    IT: [
+      'data/Minigiochi/ECDL/IT_Security/modulo1/quiz_fondamenti-della-sicurezza.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo2/quiz_il-malware.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo3/quiz_reti-e-accessi.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo4/quiz_navigazione-e-comunicazione-sicura.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo5/quiz_protezione-e-conservazione-dei-dati.json',
+    ],
+    OC: [
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo1/quiz_collaborazione-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo2/quiz_cloud-e-preparazione.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo3/quiz_storage-e-produttivita-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo4/quiz_calendari-e-riunioni-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo5/quiz_social-e-apprendimento-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo6/quiz_dispositivi-mobili-e-connessioni.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo7/quiz_app-e-sincronizzazione.json',
+    ],
+    'fondamenti-cybersecurity': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/quiz_fondamenti-cybersecurity.json',
+    'sicurezza-account': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/quiz_sicurezza-account.json',
+    'protezione-dati': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/quiz_protezione-dati.json',
+    'sicurezza-quotidiana': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/quiz_sicurezza_quotidiana.json',
+    'sicurezza-pagamenti': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/quiz_sicurezza-pagamenti.json',
+    'privacy-normative': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/quiz_privacy-normative.json',
+    'sicurezza-online-social-network': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/quiz_sicurezza-online-social-network.json',
+    'nuove-minacce-digitali': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/quiz_nuove-minacce-digitali.json',
+    'fondamenta-reti': 'data/Minigiochi/Reti_e_Internet/modulo1/quiz_fondamenta-reti.json',
+    'tcp-ip': 'data/Minigiochi/Reti_e_Internet/modulo2/quiz_tcp-ip.json',
+    'dns': 'data/Minigiochi/Reti_e_Internet/modulo3/quiz_dns.json',
+    'router-switch-dispositivi': 'data/Minigiochi/Reti_e_Internet/modulo4/quiz_router-switch-dispositivi.json',
+    'wifi-reti-wireless': 'data/Minigiochi/Reti_e_Internet/modulo5/quiz_wifi-reti-wireless.json',
+    'cloud-networking': 'data/Minigiochi/Reti_e_Internet/modulo6/quiz_cloud-networking.json',
+    'vpn': 'data/Minigiochi/Reti_e_Internet/modulo7/quiz_vpn.json',
+    'troubleshooting-reti': 'data/Minigiochi/Reti_e_Internet/modulo8/quiz_troubleshooting-reti.json',
+    'malware-e-minacce-informatiche': 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/quiz_malware-e-minacce-informatiche.json',
+    'identita-reputazione-digitale': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/quiz_identita-reputazione-digitale.json',
+    'cyberbullismo': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/quiz_cyberbullismo.json',
+    'hate-speech': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/quiz_hate-speech.json',
+    'sexting-revenge-porn': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/quiz_sexting-revenge-porn.json',
+    'grooming': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/quiz_grooming.json',
+    'difendersi-online': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/quiz_cittadinanza-digitale.json',
+    'cos-e-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo1/quiz_cos-e-l-ai.json',
+    'come-funziona-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo2/quiz_come-funziona-l-ai.json',
+    'llm-fondamenti': 'data/Minigiochi/Intelligenza_Artificiale/modulo3/quiz_come-funzionano-gli-llm.json',
+    'ai-generativa': 'data/Minigiochi/Intelligenza_Artificiale/modulo4/quiz_ai-generativa.json',
+    'prompt-engineering': 'data/Minigiochi/Intelligenza_Artificiale/modulo5/quiz_prompt-engineering.json',
+    'agenti-automazione': 'data/Minigiochi/Intelligenza_Artificiale/modulo6/quiz_agenti-automazione.json',
+    'deepfake-contenuti-sintetici': 'data/Minigiochi/Intelligenza_Artificiale/modulo7/quiz_deepfake-contenuti-sintetici.json',
+    'provenienza-contenuti': 'data/Minigiochi/Intelligenza_Artificiale/modulo8/quiz_provenienza-dei-contenuti.json',
+    'verificare-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo9/quiz_verificare-l-ai.json',
+    'etica-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo10/quiz_etica-dell-ai.json',
+    'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/quiz_bias-algoritmici.json',
+    'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/quiz_ai-act.json',
+    'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/quiz_futuro-dell-ai.json',
+  },
+  tag: 'Quiz',
+  validate: raw => Array.isArray(raw) && raw.length > 0,
+  normalize: (raw, mod) => raw.map(r => ({
+    q: r.question, opts: r.options, a: r.correctIndex, exp: r.explanation, _src: mod,
+    difficulty: r.difficulty || 'easy', // v8.36.0: portato nel pool per il filtro "includi difficili"
+  })),
+});
+
+/* -- Speed Quiz -- */
+const SpeedQuizLoader = _createLoader({
+  moduleMap: {
+    CE: [
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo1/speedquiz_fondamenti-digitali.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo2/speedquiz_cpu-architettura.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo3/speedquiz_memorie.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo4/speedquiz_software.json',
+    ],
+    OE: [
+      'data/Minigiochi/ECDL/Online_Essentials/modulo1/speedquiz_rete-e-dati.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo2/speedquiz_identita-e-comunicazione.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo3/speedquiz_navigazione-e-tracciamento.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo4/speedquiz_sicurezza-e-comportamento-online.json',
+    ],
+    WP: [
+      'data/Minigiochi/ECDL/Word_Processing/modulo1/speedquiz_word-e-ambiente.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo2/speedquiz_scrivere-e-salvare.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo3/speedquiz_formattare-il-testo.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo4/speedquiz_elementi-grafici.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo5/speedquiz_strutturare-il-documento.json',
+    ],
+    SS: [
+      'data/Minigiochi/ECDL/Spreadsheet/modulo1/speedquiz_excel-e-l-ambiente-di-lavoro.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo2/speedquiz_inserire-e-gestire-i-dati.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo3/speedquiz_formattare-il-foglio.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo4/speedquiz_formule-e-calcoli.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo5/speedquiz_organizzare-e-visualizzare-i-dati.json',
+    ],
+    PP: [
+      'data/Minigiochi/ECDL/Presentation/modulo1/speedquiz_creare-una-presentazione.json',
+      'data/Minigiochi/ECDL/Presentation/modulo2/speedquiz_oggetti-grafici.json',
+      'data/Minigiochi/ECDL/Presentation/modulo3/speedquiz_preparare-e-presentare.json',
+    ],
+    IT: [
+      'data/Minigiochi/ECDL/IT_Security/modulo1/speedquiz_fondamenti-della-sicurezza.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo2/speedquiz_il-malware.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo3/speedquiz_reti-e-accessi.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo4/speedquiz_navigazione-e-comunicazione-sicura.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo5/speedquiz_protezione-e-conservazione-dei-dati.json',
+    ],
+    OC: [
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo1/speedquiz_collaborazione-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo2/speedquiz_cloud-e-preparazione.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo3/speedquiz_storage-e-produttivita-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo4/speedquiz_calendari-e-riunioni-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo5/speedquiz_social-e-apprendimento-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo6/speedquiz_dispositivi-mobili-e-connessioni.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo7/speedquiz_app-e-sincronizzazione.json',
+    ],
+    'fondamenti-cybersecurity': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/speedquiz_fondamenti-cybersecurity.json',
+    'sicurezza-account': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/speedquiz_sicurezza-account.json',
+    'protezione-dati': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/speedquiz_protezione-dati.json',
+    'sicurezza-quotidiana': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/speedquiz_sicurezza_quotidiana.json',
+    'sicurezza-pagamenti': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/speedquiz_sicurezza-pagamenti.json',
+    'privacy-normative': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/speedquiz_privacy-normative.json',
+    'sicurezza-online-social-network': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/speedquiz_sicurezza-online-social-network.json',
+    'nuove-minacce-digitali': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/speedquiz_nuove-minacce-digitali.json',
+    'fondamenta-reti': 'data/Minigiochi/Reti_e_Internet/modulo1/speedquiz_fondamenta-reti.json',
+    'tcp-ip': 'data/Minigiochi/Reti_e_Internet/modulo2/speedquiz_tcp-ip.json',
+    'dns': 'data/Minigiochi/Reti_e_Internet/modulo3/speedquiz_dns.json',
+    'router-switch-dispositivi': 'data/Minigiochi/Reti_e_Internet/modulo4/speedquiz_router-switch-dispositivi.json',
+    'wifi-reti-wireless': 'data/Minigiochi/Reti_e_Internet/modulo5/speedquiz_wifi-reti-wireless.json',
+    'cloud-networking': 'data/Minigiochi/Reti_e_Internet/modulo6/speedquiz_cloud-networking.json',
+    'vpn': 'data/Minigiochi/Reti_e_Internet/modulo7/speedquiz_vpn.json',
+    'troubleshooting-reti': 'data/Minigiochi/Reti_e_Internet/modulo8/speedquiz_troubleshooting-reti.json',
+    'malware-e-minacce-informatiche': 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/speedquiz_malware-e-minacce-informatiche.json',
+    'identita-reputazione-digitale': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/speedquiz_identita-reputazione-digitale.json',
+    'cyberbullismo': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/speedquiz_cyberbullismo.json',
+    'hate-speech': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/speedquiz_hate-speech.json',
+    'sexting-revenge-porn': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/speedquiz_sexting-revenge-porn.json',
+    'grooming': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/speedquiz_grooming.json',
+    'difendersi-online': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/speedquiz_cittadinanza-digitale.json',
+    'cos-e-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo1/speedquiz_cos-e-l-ai.json',
+    'come-funziona-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo2/speedquiz_come-funziona-l-ai.json',
+    'llm-fondamenti': 'data/Minigiochi/Intelligenza_Artificiale/modulo3/speedquiz_come-funzionano-gli-llm.json',
+    'ai-generativa': 'data/Minigiochi/Intelligenza_Artificiale/modulo4/speedquiz_ai-generativa.json',
+    'prompt-engineering': 'data/Minigiochi/Intelligenza_Artificiale/modulo5/speedquiz_prompt-engineering.json',
+    'agenti-automazione': 'data/Minigiochi/Intelligenza_Artificiale/modulo6/speedquiz_agenti-automazione.json',
+    'deepfake-contenuti-sintetici': 'data/Minigiochi/Intelligenza_Artificiale/modulo7/speedquiz_deepfake-contenuti-sintetici.json',
+    'provenienza-contenuti': 'data/Minigiochi/Intelligenza_Artificiale/modulo8/speedquiz_provenienza-dei-contenuti.json',
+    'verificare-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo9/speedquiz_verificare-l-ai.json',
+    'etica-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo10/speedquiz_etica-dell-ai.json',
+    'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/speedquiz_bias-algoritmici.json',
+    'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/speedquiz_ai-act.json',
+    'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/speedquiz_futuro-dell-ai.json',
+  },
+  tag: 'SpeedQuiz',
+  validate: raw => Array.isArray(raw) && raw.length > 0,
+  normalize: (raw, mod) => raw.map(r => ({
+    q: r.question, opts: r.options, a: r.correctIndex, exp: r.explanation, _src: mod,
+    difficulty: r.difficulty || 'easy', // v8.36.0: portato nel pool per il filtro "includi difficili"
+  })),
+});
+
+/* -- Abbina -- */
+// Due formati contenuto supportati:
+//  A) "sets"  — { sets: [ [ {term,definition}, ... ], ... ] }   (formato storico CE/OE/WP)
+//  B) "pairs" — [ { id, difficulty, pairs: [ {term,definition}, ... ] }, ... ]  (formato adottato da Erasmo per i round con difficulty propria)
+// normalize converte entrambi nella stessa forma interna [[{t,d},...],...].
+const AbbinLoader = _createLoader({
+  moduleMap: {
+    CE: [
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo1/abbina_fondamenti-digitali.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo2/abbina_cpu-architettura.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo3/abbina_memorie.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo4/abbina_software.json',
+    ],
+    OE: [
+      'data/Minigiochi/ECDL/Online_Essentials/modulo1/abbina_rete-e-dati.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo2/abbina_identita-e-comunicazione.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo3/abbina_navigazione-e-tracciamento.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo4/abbina_sicurezza-e-comportamento-online.json',
+    ],
+    WP: [
+      'data/Minigiochi/ECDL/Word_Processing/modulo1/abbina_word-e-ambiente.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo2/abbina_scrivere-e-salvare.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo3/abbina_formattare-il-testo.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo4/abbina_elementi-grafici.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo5/abbina_strutturare-il-documento.json',
+    ],
+    SS: [
+      'data/Minigiochi/ECDL/Spreadsheet/modulo1/abbina_excel-e-l-ambiente-di-lavoro.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo2/abbina_inserire-e-gestire-i-dati.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo3/abbina_formattare-il-foglio.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo4/abbina_formule-e-calcoli.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo5/abbina_organizzare-e-visualizzare-i-dati.json',
+    ],
+    PP: [
+      'data/Minigiochi/ECDL/Presentation/modulo1/abbina_creare-una-presentazione.json',
+      'data/Minigiochi/ECDL/Presentation/modulo2/abbina_oggetti-grafici.json',
+      'data/Minigiochi/ECDL/Presentation/modulo3/abbina_preparare-e-presentare.json',
+    ],
+    IT: [
+      'data/Minigiochi/ECDL/IT_Security/modulo1/abbina_fondamenti-della-sicurezza.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo2/abbina_il-malware.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo3/abbina_reti-e-accessi.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo4/abbina_navigazione-e-comunicazione-sicura.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo5/abbina_protezione-e-conservazione-dei-dati.json',
+    ],
+    OC: [
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo1/abbina_collaborazione-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo2/abbina_cloud-e-preparazione.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo3/abbina_storage-e-produttivita-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo4/abbina_calendari-e-riunioni-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo5/abbina_social-e-apprendimento-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo6/abbina_dispositivi-mobili-e-connessioni.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo7/abbina_app-e-sincronizzazione.json',
+    ],
+    'fondamenti-cybersecurity': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/abbina_fondamenti-cybersecurity.json',
+    'sicurezza-account': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/abbina_sicurezza-account.json',
+    'protezione-dati': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/abbina_protezione-dati.json',
+    'sicurezza-quotidiana': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/abbina_sicurezza_quotidiana.json',
+    'sicurezza-pagamenti': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/abbina_sicurezza-pagamenti.json',
+    'privacy-normative': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/abbina_privacy-normative.json',
+    'sicurezza-online-social-network': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/abbina_sicurezza-online-social-network.json',
+    'nuove-minacce-digitali': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/abbina_nuove-minacce-digitali.json',
+    'fondamenta-reti': 'data/Minigiochi/Reti_e_Internet/modulo1/abbina_fondamenta-reti.json',
+    'tcp-ip': 'data/Minigiochi/Reti_e_Internet/modulo2/abbina_tcp-ip.json',
+    'dns': 'data/Minigiochi/Reti_e_Internet/modulo3/abbina_dns.json',
+    'router-switch-dispositivi': 'data/Minigiochi/Reti_e_Internet/modulo4/abbina_router-switch-dispositivi.json',
+    'wifi-reti-wireless': 'data/Minigiochi/Reti_e_Internet/modulo5/abbina_wifi-reti-wireless.json',
+    'cloud-networking': 'data/Minigiochi/Reti_e_Internet/modulo6/abbina_cloud-networking.json',
+    'vpn': 'data/Minigiochi/Reti_e_Internet/modulo7/abbina_vpn.json',
+    'troubleshooting-reti': 'data/Minigiochi/Reti_e_Internet/modulo8/abbina_troubleshooting-reti.json',
+    'malware-e-minacce-informatiche': 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/abbina_malware-e-minacce-informatiche.json',
+    'identita-reputazione-digitale': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/abbina_identita-reputazione-digitale.json',
+    'cyberbullismo': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/abbina_cyberbullismo.json',
+    'hate-speech': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/abbina_hate-speech.json',
+    'sexting-revenge-porn': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/abbina_sexting-revenge-porn.json',
+    'grooming': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/abbina_grooming.json',
+    'difendersi-online': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/abbina_cittadinanza-digitale.json',
+    'cos-e-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo1/abbina_cos-e-l-ai.json',
+    'come-funziona-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo2/abbina_come-funziona-l-ai.json',
+    'llm-fondamenti': 'data/Minigiochi/Intelligenza_Artificiale/modulo3/abbina_come-funzionano-gli-llm.json',
+    'ai-generativa': 'data/Minigiochi/Intelligenza_Artificiale/modulo4/abbina_ai-generativa.json',
+    'prompt-engineering': 'data/Minigiochi/Intelligenza_Artificiale/modulo5/abbina_prompt-engineering.json',
+    'agenti-automazione': 'data/Minigiochi/Intelligenza_Artificiale/modulo6/abbina_agenti-automazione.json',
+    'deepfake-contenuti-sintetici': 'data/Minigiochi/Intelligenza_Artificiale/modulo7/abbina_deepfake-contenuti-sintetici.json',
+    'provenienza-contenuti': 'data/Minigiochi/Intelligenza_Artificiale/modulo8/abbina_provenienza-dei-contenuti.json',
+    'verificare-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo9/abbina_verificare-l-ai.json',
+    'etica-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo10/abbina_etica-dell-ai.json',
+    'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/abbina_bias-algoritmici.json',
+    'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/abbina_ai-act.json',
+    'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/abbina_futuro-dell-ai.json',
+  },
+  tag: 'Abbina',
+  validate: raw => {
+    if (raw && Array.isArray(raw.sets) && raw.sets.length > 0) return true;
+    if (Array.isArray(raw) && raw.length > 0 && raw.every(r => r && Array.isArray(r.pairs) && r.pairs.length > 0)) return true;
+    return false;
+  },
+  // v8.36.0: ogni "set" (round da 5 coppie) porta ora con sé la propria
+  // difficulty — formato B (array di round) ce l'ha per round; formato A
+  // (dict con "sets") ne ha una sola a livello di file, applicata a tutti
+  // i suoi sets. Consumato da getMatchSet() in game-match.js per il filtro
+  // "includi difficili" — struttura dei pair {t,d} invariata.
+  normalize: (raw) => {
+    if (Array.isArray(raw)) {
+      return raw.map(r => ({
+        difficulty: r.difficulty || 'easy',
+        pairs: r.pairs.map(pair => ({ t: pair.term, d: pair.definition })),
+      }));
+    }
+    const fileDiff = raw.difficulty || 'easy';
+    return raw.sets.map(set => ({
+      difficulty: fileDiff,
+      pairs: set.map(pair => ({ t: pair.term, d: pair.definition })),
+    }));
+  },
+});
+
+/* -- Memory -- */
+const MemoryLoader = _createLoader({
+  moduleMap: {
+    CE: 'data/memory/computer_essentials_memory.json',
+    OE: 'data/memory/online_essentials_memory.json',
+    WP: 'data/memory/word_processing_memory.json',
+    SS: 'data/memory/spreadsheets_memory.json',
+    PP: 'data/memory/powerpoint_memory.json',
+  },
+  tag: 'Memory',
+  validate: raw => Array.isArray(raw) && raw.length > 0,
+  normalize: (raw) => raw.map(r => [r.term, r.definition]),
+});
+
+/* -- Completa la frase -- */
+const CompletaFraseLoader = _createLoader({
+  moduleMap: {
+    CE: [
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo1/completa_la_frase_fondamenti-digitali.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo2/completa_la_frase_cpu-architettura.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo3/completa_la_frase_memorie.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo4/completa_la_frase_software.json',
+    ],
+    OE: [
+      'data/Minigiochi/ECDL/Online_Essentials/modulo1/completa_la_frase_rete-e-dati.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo2/completa_la_frase_identita-e-comunicazione.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo3/completa_la_frase_navigazione-e-tracciamento.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo4/completa_la_frase_sicurezza-e-comportamento-online.json',
+    ],
+    WP: [
+      'data/Minigiochi/ECDL/Word_Processing/modulo1/completa_la_frase_word-e-ambiente.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo2/completa_la_frase_scrivere-e-salvare.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo3/completa_la_frase_formattare-il-testo.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo4/completa_la_frase_elementi-grafici.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo5/completa_la_frase_strutturare-il-documento.json',
+    ],
+    SS: [
+      'data/Minigiochi/ECDL/Spreadsheet/modulo1/completa_la_frase_excel-e-l-ambiente-di-lavoro.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo2/completa_la_frase_inserire-e-gestire-i-dati.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo3/completa_la_frase_formattare-il-foglio.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo4/completa_la_frase_formule-e-calcoli.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo5/completa_la_frase_organizzare-e-visualizzare-i-dati.json',
+    ],
+    PP: [
+      'data/Minigiochi/ECDL/Presentation/modulo1/completa_la_frase_creare-una-presentazione.json',
+      'data/Minigiochi/ECDL/Presentation/modulo2/completa_la_frase_oggetti-grafici.json',
+      'data/Minigiochi/ECDL/Presentation/modulo3/completa_la_frase_preparare-e-presentare.json',
+    ],
+    IT: [
+      'data/Minigiochi/ECDL/IT_Security/modulo1/completa_la_frase_fondamenti-della-sicurezza.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo2/completa_la_frase_il-malware.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo3/completa_la_frase_reti-e-accessi.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo4/completa_la_frase_navigazione-e-comunicazione-sicura.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo5/completa_la_frase_protezione-e-conservazione-dei-dati.json',
+    ],
+    OC: [
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo1/completa_la_frase_collaborazione-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo2/completa_la_frase_cloud-e-preparazione.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo3/completa_la_frase_storage-e-produttivita-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo4/completa_la_frase_calendari-e-riunioni-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo5/completa_la_frase_social-e-apprendimento-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo6/completa_la_frase_dispositivi-mobili-e-connessioni.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo7/completa_la_frase_app-e-sincronizzazione.json',
+    ],
+    'fondamenti-cybersecurity': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/completa_la_frase_fondamenti-cybersecurity.json',
+    'sicurezza-account': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/completa_la_frase_sicurezza-account.json',
+    'protezione-dati': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/completa_la_frase_protezione-dati.json',
+    'sicurezza-quotidiana': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/completa_la_frase_sicurezza_quotidiana.json',
+    'sicurezza-pagamenti': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/completa_la_frase_sicurezza-pagamenti.json',
+    'privacy-normative': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/completa_la_frase_privacy-normative.json',
+    'sicurezza-online-social-network': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/completa_la_frase_sicurezza-online-social-network.json',
+    'nuove-minacce-digitali': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/completa_la_frase_nuove-minacce-digitali.json',
+    'fondamenta-reti': 'data/Minigiochi/Reti_e_Internet/modulo1/completa_la_frase_fondamenta-reti.json',
+    'tcp-ip': 'data/Minigiochi/Reti_e_Internet/modulo2/completa_la_frase_tcp-ip.json',
+    'dns': 'data/Minigiochi/Reti_e_Internet/modulo3/completa_la_frase_dns.json',
+    'router-switch-dispositivi': 'data/Minigiochi/Reti_e_Internet/modulo4/completa_la_frase_router-switch-dispositivi.json',
+    'wifi-reti-wireless': 'data/Minigiochi/Reti_e_Internet/modulo5/completa_la_frase_wifi-reti-wireless.json',
+    'cloud-networking': 'data/Minigiochi/Reti_e_Internet/modulo6/completa_la_frase_cloud-networking.json',
+    'vpn': 'data/Minigiochi/Reti_e_Internet/modulo7/completa_la_frase_vpn.json',
+    'troubleshooting-reti': 'data/Minigiochi/Reti_e_Internet/modulo8/completa_la_frase_troubleshooting-reti.json',
+    'malware-e-minacce-informatiche': 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/completa_la_frase_malware-e-minacce-informatiche.json',
+    'identita-reputazione-digitale': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/completa_la_frase_identita-reputazione-digitale.json',
+    'cyberbullismo': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/completa_la_frase_cyberbullismo.json',
+    'hate-speech': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/completa_la_frase_hate-speech.json',
+    'sexting-revenge-porn': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/completa_la_frase_sexting-revenge-porn.json',
+    'grooming': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/completa_la_frase_grooming.json',
+    'difendersi-online': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/completa_la_frase_cittadinanza-digitale.json',
+    'cos-e-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo1/completa_la_frase_cos-e-l-ai.json',
+    'come-funziona-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo2/completa_la_frase_come-funziona-l-ai.json',
+    'llm-fondamenti': 'data/Minigiochi/Intelligenza_Artificiale/modulo3/completa_la_frase_come-funzionano-gli-llm.json',
+    'ai-generativa': 'data/Minigiochi/Intelligenza_Artificiale/modulo4/completa_la_frase_ai-generativa.json',
+    'prompt-engineering': 'data/Minigiochi/Intelligenza_Artificiale/modulo5/completa_la_frase_prompt-engineering.json',
+    'agenti-automazione': 'data/Minigiochi/Intelligenza_Artificiale/modulo6/completa_la_frase_agenti-automazione.json',
+    'deepfake-contenuti-sintetici': 'data/Minigiochi/Intelligenza_Artificiale/modulo7/completa_la_frase_deepfake-contenuti-sintetici.json',
+    'provenienza-contenuti': 'data/Minigiochi/Intelligenza_Artificiale/modulo8/completa_la_frase_provenienza-dei-contenuti.json',
+    'verificare-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo9/completa_la_frase_verificare-l-ai.json',
+    'etica-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo10/completa_la_frase_etica-dell-ai.json',
+    'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/completa_la_frase_bias-algoritmici.json',
+    'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/completa_la_frase_ai-act.json',
+    'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/completa_la_frase_futuro-dell-ai.json',
+  },
+  tag: 'CompletaFrase',
+  validate: raw => Array.isArray(raw) && raw.length > 0,
+  normalize: (raw) => raw.map(r => ({
+    t: r.sentence, b: r.answer, bank: r.bank,
+    difficulty: r.difficulty || 'easy', // v8.36.0: portato nel pool per il filtro "includi difficili"
+  })),
+});
+
+/* -- Vero o Falso -- */
+const TrueFalseLoader = _createLoader({
+  moduleMap: {
+    CE: [
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo1/vero_o_falso_fondamenti-digitali.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo2/vero_o_falso_cpu-architettura.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo3/vero_o_falso_memorie.json',
+      'data/Minigiochi/ECDL/Computer_Essentials/modulo4/vero_o_falso_software.json',
+    ],
+    OE: [
+      'data/Minigiochi/ECDL/Online_Essentials/modulo1/vero_o_falso_rete-e-dati.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo2/vero_o_falso_identita-e-comunicazione.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo3/vero_o_falso_navigazione-e-tracciamento.json',
+      'data/Minigiochi/ECDL/Online_Essentials/modulo4/vero_o_falso_sicurezza-e-comportamento-online.json',
+    ],
+    WP: [
+      'data/Minigiochi/ECDL/Word_Processing/modulo1/vero_o_falso_word-e-ambiente.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo2/vero_o_falso_scrivere-e-salvare.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo3/vero_o_falso_formattare-il-testo.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo4/vero_o_falso_elementi-grafici.json',
+      'data/Minigiochi/ECDL/Word_Processing/modulo5/vero_o_falso_strutturare-il-documento.json',
+    ],
+    SS: [
+      'data/Minigiochi/ECDL/Spreadsheet/modulo1/vero_o_falso_excel-e-l-ambiente-di-lavoro.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo2/vero_o_falso_inserire-e-gestire-i-dati.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo3/vero_o_falso_formattare-il-foglio.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo4/vero_o_falso_formule-e-calcoli.json',
+      'data/Minigiochi/ECDL/Spreadsheet/modulo5/vero_o_falso_organizzare-e-visualizzare-i-dati.json',
+    ],
+    PP: [
+      'data/Minigiochi/ECDL/Presentation/modulo1/vero_o_falso_creare-una-presentazione.json',
+      'data/Minigiochi/ECDL/Presentation/modulo2/vero_o_falso_oggetti-grafici.json',
+      'data/Minigiochi/ECDL/Presentation/modulo3/vero_o_falso_preparare-e-presentare.json',
+    ],
+    IT: [
+      'data/Minigiochi/ECDL/IT_Security/modulo1/vero_o_falso_fondamenti-della-sicurezza.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo2/vero_o_falso_il-malware.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo3/vero_o_falso_reti-e-accessi.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo4/vero_o_falso_navigazione-e-comunicazione-sicura.json',
+      'data/Minigiochi/ECDL/IT_Security/modulo5/vero_o_falso_protezione-e-conservazione-dei-dati.json',
+    ],
+    OC: [
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo1/vero_o_falso_collaborazione-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo2/vero_o_falso_cloud-e-preparazione.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo3/vero_o_falso_storage-e-produttivita-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo4/vero_o_falso_calendari-e-riunioni-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo5/vero_o_falso_social-e-apprendimento-online.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo6/vero_o_falso_dispositivi-mobili-e-connessioni.json',
+      'data/Minigiochi/ECDL/Online_Collaboration/modulo7/vero_o_falso_app-e-sincronizzazione.json',
+    ],
+    'fondamenti-cybersecurity': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo1/vero_o_falso_fondamenti-cybersecurity.json',
+    'sicurezza-account': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo2/vero_o_falso_sicurezza-account.json',
+    'protezione-dati': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo3/vero_o_falso_protezione-dati.json',
+    'sicurezza-quotidiana': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo4/vero_o_falso_sicurezza_quotidiana.json',
+    'sicurezza-pagamenti': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo5/vero_o_falso_sicurezza-pagamenti.json',
+    'privacy-normative': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo6/vero_o_falso_privacy-normative.json',
+    'sicurezza-online-social-network': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo7/vero_o_falso_sicurezza-online-social-network.json',
+    'nuove-minacce-digitali': 'data/Minigiochi/Cybersecurity_Non_solo_antivirus_e_password/modulo8/vero_o_falso_nuove-minacce-digitali.json',
+    'fondamenta-reti': 'data/Minigiochi/Reti_e_Internet/modulo1/vero_o_falso_fondamenta-reti.json',
+    'tcp-ip': 'data/Minigiochi/Reti_e_Internet/modulo2/vero_o_falso_tcp-ip.json',
+    'dns': 'data/Minigiochi/Reti_e_Internet/modulo3/vero_o_falso_dns.json',
+    'router-switch-dispositivi': 'data/Minigiochi/Reti_e_Internet/modulo4/vero_o_falso_router-switch-dispositivi.json',
+    'wifi-reti-wireless': 'data/Minigiochi/Reti_e_Internet/modulo5/vero_o_falso_wifi-reti-wireless.json',
+    'cloud-networking': 'data/Minigiochi/Reti_e_Internet/modulo6/vero_o_falso_cloud-networking.json',
+    'vpn': 'data/Minigiochi/Reti_e_Internet/modulo7/vero_o_falso_vpn.json',
+    'troubleshooting-reti': 'data/Minigiochi/Reti_e_Internet/modulo8/vero_o_falso_troubleshooting-reti.json',
+    'malware-e-minacce-informatiche': 'data/Minigiochi/Malware_e_Minacce_Informatiche/modulo1/vero_o_falso_malware-e-minacce-informatiche.json',
+    'identita-reputazione-digitale': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo1/vero_o_falso_identita-reputazione-digitale.json',
+    'cyberbullismo': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo2/vero_o_falso_cyberbullismo.json',
+    'hate-speech': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo3/vero_o_falso_hate-speech.json',
+    'sexting-revenge-porn': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo4/vero_o_falso_sexting-revenge-porn.json',
+    'grooming': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo5/vero_o_falso_grooming.json',
+    'difendersi-online': 'data/Minigiochi/Cyberbullismo_e_Sicurezza_Online/modulo6/vero_o_falso_cittadinanza-digitale.json',
+    'cos-e-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo1/vero_o_falso_cos-e-l-ai.json',
+    'come-funziona-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo2/vero_o_falso_come-funziona-l-ai.json',
+    'llm-fondamenti': 'data/Minigiochi/Intelligenza_Artificiale/modulo3/vero_o_falso_come-funzionano-gli-llm.json',
+    'ai-generativa': 'data/Minigiochi/Intelligenza_Artificiale/modulo4/vero_o_falso_ai-generativa.json',
+    'prompt-engineering': 'data/Minigiochi/Intelligenza_Artificiale/modulo5/vero_o_falso_prompt-engineering.json',
+    'agenti-automazione': 'data/Minigiochi/Intelligenza_Artificiale/modulo6/vero_o_falso_agenti-automazione.json',
+    'deepfake-contenuti-sintetici': 'data/Minigiochi/Intelligenza_Artificiale/modulo7/vero_o_falso_deepfake-contenuti-sintetici.json',
+    'provenienza-contenuti': 'data/Minigiochi/Intelligenza_Artificiale/modulo8/vero_o_falso_provenienza-dei-contenuti.json',
+    'verificare-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo9/vero_o_falso_verificare-l-ai.json',
+    'etica-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo10/vero_o_falso_etica-dell-ai.json',
+    'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/vero_o_falso_bias-algoritmici.json',
+    'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/vero_o_falso_ai-act.json',
+    'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/vero_o_falso_futuro-dell-ai.json',
+  },
+  tag: 'VeroFalso',
+  validate: raw => Array.isArray(raw) && raw.length > 0,
+  normalize: (raw, mod) => raw.map(r => ({
+    q: r.statement, a: r.answer, exp: r.explanation, _src: mod,
+    difficulty: r.difficulty || 'easy', // v8.36.0: portato nel pool per il filtro "includi difficili"
+  })),
+});
+
+/* -- Alias pubblici — API invariata, WP ora gestito dal pipeline standard --
+   WP viene caricato dai 5 loader unificati senza biforcazione speciale.    */
+const loadPool             = mod => QuizLoader.load(mod);
+const loadSpeedPool        = mod => SpeedQuizLoader.load(mod);
+const loadAbbinSets        = mod => AbbinLoader.load(mod);
+const loadMemoryPairs      = mod => MemoryLoader.load(mod);
+const loadCompletaFrasePool= mod => CompletaFraseLoader.load(mod);
+const loadTrueFalsePool    = mod => TrueFalseLoader.load(mod);
+
+/* Helper sincrono  restituisce il modulo di una domanda */
+function getQuestionModule(q) { return q._src || 'CE'; }
+
+/* -- UI: skeleton loaders — v6.6.0
+   Sostituisce lo spinner pulsante generico (icona+testo+path) con
+   uno scheletro che ricalca la geometria reale del minigioco in
+   arrivo (pillole header, card domanda, colonne Abbina, griglia
+   Memory, frase Completa) — percezione di velocità migliore,
+   soprattutto su PC di laboratorio non recentissimi, e nessun
+   "salto" di layout quando il contenuto vero sostituisce lo
+   scheletro. CSS in pixelprof.css, layer "loaders" (classi .skel-*),
+   già allineato al tema chiaro/scuro tramite i token esistenti. */
+function _skelPills(n){
+  return `<div class="skel-row">${Array.from({length:n}).map(()=>'<div class="skel-pill skel-base"></div>').join('')}</div>`;
+}
+function _skelQuizHTML(){
+  return `<div class="skel-wrap">
+    ${_skelPills(2)}
+    <div class="skel-bar skel-progress skel-base"></div>
+    <div class="skel-card">
+      <div class="skel-line skel-line-cat skel-base"></div>
+      <div class="skel-line skel-line-q1 skel-base"></div>
+      <div class="skel-line skel-line-q2 skel-base"></div>
+    </div>
+    <div class="skel-opts">
+      <div class="skel-opt skel-base"></div>
+      <div class="skel-opt skel-base"></div>
+      <div class="skel-opt skel-base"></div>
+      <div class="skel-opt skel-base"></div>
+    </div>
+  </div>`;
+}
+function _skelAbbinaHTML(){
+  const col=()=>Array.from({length:5}).map(()=>'<div class="skel-item skel-base"></div>').join('');
+  return `<div class="skel-wrap">
+    ${_skelPills(4)}
+    <div class="skel-match-cols"><div>${col()}</div><div>${col()}</div></div>
+  </div>`;
+}
+function _skelMemoryHTML(){
+  return `<div class="skel-wrap">
+    ${_skelPills(3)}
+    <div class="skel-mem-board">${Array.from({length:12}).map(()=>'<div class="skel-mem-card skel-base"></div>').join('')}</div>
+  </div>`;
+}
+function _skelFillHTML(){
+  return `<div class="skel-wrap">
+    ${_skelPills(1)}
+    <div class="skel-card"><div class="skel-line skel-line-sentence skel-base"></div></div>
+    <div class="skel-chips">
+      <div class="skel-chip skel-base"></div>
+      <div class="skel-chip skel-base"></div>
+      <div class="skel-chip skel-base"></div>
+      <div class="skel-chip skel-base"></div>
+    </div>
+    <div class="skel-btn skel-base"></div>
+  </div>`;
+}
+function _showSkeleton(cont, html) {
+  if(cont) cont.innerHTML = html;
+  else {
+    setTb(null); showScreen('tab-quiz');
+    sh('qz-game').classList.add('hidden');
+    sh('qz-result').classList.remove('hidden');
+    sh('qz-result').innerHTML = html;
+  }
+}
+function showQuizLoading(mod)      { _showSkeleton(null, _skelQuizHTML()); }
+function showSpeedQuizLoading(mod) { _showSkeleton(null, _skelQuizHTML()); }
+function showAbbinLoading(cont,mod){ _showSkeleton(cont, _skelAbbinaHTML()); }
+function showMemoryLoading(cont,mod){ _showSkeleton(cont, _skelMemoryHTML()); }
+function showCompletaFraseLoading(cont,mod){ _showSkeleton(cont, _skelFillHTML()); }
+function showTrueFalseLoading(cont,mod){ _showSkeleton(cont, _skelQuizHTML()); }
+
+/* -- UI: error screens -- */
+function _showGameError(cont, icon, title, color, path, msg) {
+  const html = `
+    <div class="result-wrap">
+      <div class="result-hero">
+        <span class="result-stars" style="font-size:36px">${icon}</span>
+        <span class="result-score" style="font-size:20px;color:${color};line-height:1.3">${title}</span>
+        <span class="result-label" style="color:${color}99;margin-top:8px;line-height:1.5">${escHtml(msg)}</span>
+      </div>
+      <p class="result-msg" style="margin-top:0">
+        Verifica che i file siano presenti in
+        <code style="color:${color};font-size:11px">${path}</code>
+        e ricarica la pagina.
+      </p>
+      <div class="btn-row">
+        <button class="btn btn-neon" onclick="goHome()"><i class="ti ti-home"></i> Torna alla home</button>
+      </div>
+    </div>`;
+  if(cont){ gsSet(GS.IDLE); gameType=null; cont.innerHTML=html; }
+  else {
+    gsSet(GS.IDLE); gameType=null; setTb(null); showScreen('tab-quiz');
+    sh('qz-game').classList.add('hidden');
+    sh('qz-result').classList.remove('hidden');
+    sh('qz-result').innerHTML=html;
+  }
+}
+function showQuizLoadError(msg)        { _showGameError(null,  '⚠️','Errore caricamento quiz',          '#AB5649','data/quiz/',            msg); }
+function showSpeedQuizError(msg)       { _showGameError(null,  '⚡','Speed Quiz non disponibile',        '#7A5A38','data/speed_quiz/',      msg); }
+function showAbbinError(msg)           { _showGameError(sh('g-area'),'🔗','Abbina non disponibile',      '#8B9968','data/abbina/',          msg); }
+function showMemoryError(cont,msg)     { _showGameError(cont,  '🃏','Memory non disponibile',            '#AB5649','data/memory/',          msg); }
+function showCompletaFraseError(msg)   { _showGameError(sh('g-area'),'✏️','Completa la frase non disponibile','#54708C','data/completa_frase/', msg); }
+function showTrueFalseError(cont,msg)  { _showGameError(cont,  '⚖️','Vero o Falso non disponibile',       '#7A5A38','data/vero_falso/',      msg); }
+
+/* Base URL calcolato una volta all'avvio  compatibile GitHub Pages.
+   window.location.href non cambia durante la sessione. */
+const _BASE_URL = (function() {
+  return window.location.href
+    .split('?')[0]
+    .split('#')[0]
+    .replace(/\/[^/]*$/, '/');
+})();
+
+function _resolveJsonPath(relativePath) {
+  return _BASE_URL + relativePath;
+}
+
+
+/* ==================================================
+   COURSES STORAGE  schema isolato per aula
+   pp5_courses = [ { id, name, icon, color, bg, createdAt } ]
+   pp5_cdata_{id} = { players, teams, lb2, stats }
+================================================== */
+const COURSES_KEY='pp5_courses';
+
+let activeCourseId=null; // null = nessun corso selezionato
+
+/* _coursesCache — v4.0.9 M4:
+   Cache in memoria di loadCourses(). Evita 12+ JSON.parse(localStorage)
+   ad ogni render/action in courses.js. Invalidata esplicitamente da
+   saveCourses() ogni volta che la lista cambia. */
+let _coursesCache = null;
+
+function loadCourses(){
+  if(_coursesCache) return _coursesCache;
+  try{
+    const s=localStorage.getItem(COURSES_KEY);
+    _coursesCache = s ? JSON.parse(s) : [];
+  }catch(e){ _coursesCache = []; }
+  return _coursesCache;
+}
+function saveCourses(list){
+  _coursesCache = list; // aggiorna cache — invalida il vecchio valore
+  try{localStorage.setItem(COURSES_KEY,JSON.stringify(list));}catch(e){}
+}
+/** invalidateCoursesCache() — da chiamare quando il cloud sovrascrive
+ *  localStorage (es. _reloadCourses in app.js). */
+function invalidateCoursesCache(){ _coursesCache = null; }
+function courseDataKey(id){return'pp5_cdata_'+id;}
+function loadCourseData(id){
+  try{
+    const s=localStorage.getItem(courseDataKey(id));
+    if(s){const p=JSON.parse(s);return migrateDb(p);}
+  }catch(e){}
+  return makeEmptyDb();
+}
+function saveCourseData(id,data){
+  try{localStorage.setItem(courseDataKey(id),JSON.stringify(data));}catch(e){}
+}
+function deleteCourseData(id){
+  try{localStorage.removeItem(courseDataKey(id));}catch(e){}
+}
+
+function makeEmptyDb(){
+  return{players:[],teams:[],lb2:makeEmptyLb2(),sessions:[],stats:{tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}}},wrongQ:{},badges:{unlocked:{}},diffPrefs:{}};
+}
+
+
+/* ==================================================
+   DATABASE  caricato per corso attivo
+================================================== */
+const ACTIVITIES=['quiz','speed','match','memory','fill','truefalse'];
+const TYPES=['ind','sq'];
+
+function makeEmptyLb2(){
+  const lb2={};
+  TYPES.forEach(t=>{lb2[t]={};ACTIVITIES.forEach(a=>{lb2[t][a]={};});});
+  return lb2;
+}
+
+let db=makeEmptyDb();
+
+/* save()  scrive sul corso attivo; no-op se nessun corso selezionato */
+function save(){
+  if(!activeCourseId)return;
+  saveCourseData(activeCourseId,db);
+}
+
+function migrateDb(p){
+  if(!p.lb2)p.lb2=makeEmptyLb2();
+  TYPES.forEach(t=>{
+    if(!p.lb2[t])p.lb2[t]={};
+    ACTIVITIES.forEach(a=>{
+      if(!p.lb2[t][a])p.lb2[t][a]={};
+      Object.keys(p.lb2[t][a]).forEach(name=>{
+        const entry=p.lb2[t][a][name];
+        if(!entry.entries){
+          p.lb2[t][a][name]={
+            entries:[{pts:entry.pts||0,mod:entry.mod||'?',games:entry.games||1}],
+            color:entry.color||null
+          };
+        }
+      });
+    });
+  });
+  if(!p.stats)p.stats={tot:0,cor:0,byMod:{CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}}};
+  if(!p.stats.byMod)p.stats.byMod={CE:{c:0,w:0},OE:{c:0,w:0},WP:{c:0,w:0}};
+  if(!p.stats.byMod.WP)p.stats.byMod.WP={c:0,w:0};
+  if(!p.players)p.players=[];
+  if(!p.teams)p.teams=[];
+  if(!p.sessions)p.sessions=[];
+  if(!p.wrongQ)p.wrongQ={};
+  if(!p.badges)p.badges={unlocked:{}};
+  if(!p.badges.unlocked)p.badges.unlocked={};
+  // v8.36.0: diffPrefs — preferenza "includi domande difficili" per aula,
+  // salvata per singolo minigioco (chiave = sAct: 'quiz'|'speed'|'match'|'fill'|'truefalse').
+  // Assente/false = solo facili (default). Aule salvate prima di questa
+  // versione non hanno il campo: lo aggiungiamo vuoto, equivale a "tutto off".
+  if(!p.diffPrefs)p.diffPrefs={};
+  return p;
+}
+
+/* ==================================================
+   WRONG-Q TRACKER — v6.2.0
+   Memorizza per ogni domanda sbagliata: quante volte è
+   stata sbagliata, quante volte è stata risposta
+   correttamente dopo, il testo della domanda, la
+   risposta corretta e il modulo. Struttura:
+     db.wrongQ[questionKey] = {
+       q:      testo domanda,
+       answer: risposta corretta,
+       mod:    'CE'|'OE'|'WP',
+       act:    'quiz'|'speed'|'fill',
+       wrong:  N (contatore errori),
+       right:  N (contatore risposte giuste successive),
+       lastTs: ISO timestamp ultimo sbaglio
+     }
+   questionKey: deterministic string basata su q+answer
+   per essere stabile anche se l'indice cambia.
+   Cap: max 200 voci (le più recenti per lastTs).
+================================================== */
+
+/**
+ * Calcola una chiave stabile per una domanda.
+ * Usa i primi 60 char del testo + answer, normalizzati.
+ */
+function _wrongQKey(qText, answer) {
+  const t = String(qText || '').trim().toLowerCase().slice(0, 60);
+  const a = String(answer || '').trim().toLowerCase().slice(0, 30);
+  return (t + '||' + a).replace(/\s+/g, ' ');
+}
+
+/**
+ * Registra una risposta SBAGLIATA su db.wrongQ.
+ * @param {string} qText     Testo della domanda
+ * @param {string} answer    Risposta corretta
+ * @param {string} mod       Modulo ('CE'|'OE'|'WP')
+ * @param {string} act       Attività ('quiz'|'speed'|'fill')
+ */
+function _trackWrongQ(qText, answer, mod, act) {
+  if (!db.wrongQ) db.wrongQ = {};
+  const key = _wrongQKey(qText, answer);
+  if (!db.wrongQ[key]) {
+    db.wrongQ[key] = { q: qText, answer, mod, act, wrong: 0, right: 0, lastTs: null };
+  }
+  db.wrongQ[key].wrong++;
+  db.wrongQ[key].lastTs = new Date().toISOString();
+  // Cap a 200 voci — elimina quelle con lastTs più vecchio
+  const keys = Object.keys(db.wrongQ);
+  if (keys.length > 200) {
+    const sorted = keys.sort((a, b) => (db.wrongQ[a].lastTs || '') < (db.wrongQ[b].lastTs || '') ? -1 : 1);
+    for (let i = 0; i < keys.length - 200; i++) delete db.wrongQ[sorted[i]];
+  }
+  // v8.37.0: replica su Supabase, per aula (fire-and-forget) — vedi
+  // game_hooks.js hook 6. db.wrongQ locale resta invariato: guida ancora
+  // la ripetizione spaziata sotto, che è sincrona.
+  if (typeof window.hook_trackWrongAnswer === 'function') window.hook_trackWrongAnswer(key, qText, answer, mod, act);
+  _markSeenForProgress(key, mod, act); // v8.39.0
+}
+
+/**
+ * v8.39.0 — segna la domanda come "vista" per il completamento preciso
+ * di "Progressi" (domande DISTINTE viste, non tentativi — vedi
+ * sql/v8.39.0_seen_questions_sync.sql). Scope deciso da Erasmo: solo
+ * quiz/fill/truefalse — Speed Quiz escluso (stesso pool di Quiz, non
+ * va contato due volte), Abbina/Memory/Flipcard/Lo Sapevi non passano
+ * comunque da _trackWrongQ/_trackRightQ. Chiamata da entrambe, per
+ * risposte giuste E sbagliate (contano entrambe come "vista").
+ */
+function _markSeenForProgress(key, mod, act) {
+  if (act!=='quiz' && act!=='fill' && act!=='truefalse') return;
+  if (typeof window.hook_markQuestionSeen === 'function') window.hook_markQuestionSeen(key, mod);
+}
+
+/**
+ * Registra una risposta CORRETTA su db.wrongQ (se la domanda
+ * era già stata sbagliata in precedenza). Incrementa il
+ * contatore "right" come indicatore di recupero.
+ */
+function _trackRightQ(qText, answer, mod, act) {
+  const key = _wrongQKey(qText, answer);
+  if (db.wrongQ && db.wrongQ[key]) {
+    db.wrongQ[key].right++;
+    // v8.37.0: replica su Supabase SOLO se la domanda risultava già
+    // sbagliata su QUESTO dispositivo (stesso criterio della riga
+    // locale sopra) — evita una chiamata di rete ad ogni risposta
+    // corretta dell'app, che sono molte di più di quelle sbagliate.
+    // Lato server la RPC decide comunque sui dati dell'intera aula,
+    // non sul solo db.wrongQ locale — vedi game_hooks.js hook 6.
+    if (typeof window.hook_trackRightAnswer === 'function') window.hook_trackRightAnswer(key);
+  }
+  _markSeenForProgress(key, mod, act); // v8.39.0 — indipendente da db.wrongQ: anche una domanda mai sbagliata va segnata come vista
+}
+
+/* ==================================================
+   SPACED REPETITION LEGGERA — v6.4.0
+   Sostituisce il puro shuffle() con uno shuffle PESATO nei
+   punti in cui viene costruito il pool di domande per Quiz,
+   Speed Quiz e Completa la frase — le 3 attività che già
+   alimentano db.wrongQ (vedi tracker sopra). Le domande
+   sbagliate di recente e non ancora "recuperate" hanno una
+   probabilità più alta di comparire prima / di essere incluse
+   quando il pool viene troncato a N domande — MAI la certezza,
+   e le altre domande non vengono mai escluse.
+
+   Nessuna nuova dipendenza cloud: legge lo stesso db.wrongQ
+   già popolato localmente da _trackWrongQ/_trackRightQ — lo
+   stesso dataset già mostrato in "Domande difficili" nella
+   Panoramica Classe.
+
+   Se db.wrongQ è vuoto (aula mai giocata) il peso di ogni
+   domanda è 1 per tutte → weightedShuffle degenera matematicamente
+   in uno shuffle uniforme puro, identico al comportamento
+   precedente: zero rischio finché non esiste storico.
+
+   NON applicato a: Abbina/Memory (nessun concetto di "risposta
+   sbagliata" tracciato), banca parole di Completa la frase
+   (solo l'ordine delle opzioni mostrate, non la domanda), e allo
+   spareggio a squadre (mantenuto pure-random per non introdurre
+   la percezione di uno svantaggio in un momento decisivo).
+================================================== */
+
+/** Boost massimo di peso per una domanda sbagliata di recente e
+ *  mai recuperata, rispetto al peso baseline 1. Tenuto "leggero"
+ *  per design (roadmap: "senza stravolgere nulla"). Con boost=2 il
+ *  peso massimo è 3 — una domanda così è ~3× più probabile di una
+ *  mai sbagliata, ma non garantita. Regolabile in futuro. */
+const _SR_MAX_BOOST = 2;
+/** Emivita in giorni: dopo questo tempo dall'ultimo errore il
+ *  boost residuo è dimezzato (cadenza tipica di un'aula scolastica). */
+const _SR_HALFLIFE_DAYS = 14;
+
+/**
+ * Calcola il peso "spaced repetition" di una domanda in base allo
+ * storico db.wrongQ dell'aula attiva.
+ * @param {string} qText   Testo domanda/frase
+ * @param {string} answer  Risposta corretta
+ * @returns {number} peso >= 1 (1 = nessun boost, mai sbagliata o già recuperata da tempo)
+ */
+function _srWeight(qText, answer) {
+  const wq = db && db.wrongQ;
+  if (!wq) return 1;
+  const entry = wq[_wrongQKey(qText, answer)];
+  if (!entry || !entry.wrong) return 1;
+
+  // Quanto è ancora "irrisolta": 1 = mai risposta bene dopo l'errore,
+  // scende verso 0 man mano che right cresce rispetto a wrong.
+  const unresolved = entry.right > 0
+    ? entry.wrong / (entry.wrong + entry.right)
+    : 1;
+
+  // Decadimento esponenziale sui giorni dall'ultimo errore.
+  let recency = 1;
+  if (entry.lastTs) {
+    const days = (Date.now() - new Date(entry.lastTs).getTime()) / 86400000;
+    recency = Math.pow(0.5, Math.max(days, 0) / _SR_HALFLIFE_DAYS);
+  }
+
+  return 1 + _SR_MAX_BOOST * unresolved * recency;
+}
+
+/**
+ * Shuffle pesato — weighted random permutation (algoritmo A-Res,
+ * Efraimidis & Spirakis): stessa imprevedibilità di shuffle(), ma
+ * gli elementi con peso più alto hanno più probabilità (mai
+ * certezza) di finire in cima. Se keyFn restituisce sempre 1,
+ * degenera matematicamente in uno shuffle uniforme puro.
+ * @param {Array}    arr
+ * @param {function} weightFn  arr[i] → peso numerico >= 0
+ */
+function _weightedShuffle(arr, weightFn) {
+  return arr
+    .map(item => ({ item, k: Math.pow(Math.random(), 1 / Math.max(weightFn(item), 1e-4)) }))
+    .sort((a, b) => b.k - a.k)
+    .map(o => o.item);
+}
+
+/** Weighted shuffle specializzato per il pool Quiz/Speed Quiz
+ *  (voci { q, opts, a, ... }) — usa lo stesso testo+risposta con
+ *  cui _trackWrongQ/_trackRightQ scrivono in db.wrongQ. */
+function _weightedShuffleQuizPool(pool) {
+  return _weightedShuffle(pool, q => _srWeight(q.q, q.opts && q.opts[q.a]));
+}
+
+/** Weighted shuffle specializzato per il pool Completa la frase
+ *  (voci { t, b, bank }). */
+function _weightedShuffleFillPool(pool) {
+  return _weightedShuffle(pool, q => _srWeight(q.t, q.b));
+}
+
+/* ==================================================
+   FILTRO DIFFICOLTÀ — v8.36.0
+   Preferenza "includi anche le domande difficili" salvata
+   per aula (db.diffPrefs, dentro il corso attivo — vedi
+   COURSES STORAGE più sotto) e per singolo minigioco
+   (chiave = act: 'quiz'|'speed'|'match'|'fill'|'truefalse').
+   Assente/false → solo easy (default scelto da Erasmo).
+   Rete di sicurezza: se il filtro svuota il pool (modulo
+   interamente hard, caso non presente oggi nel corpus ma
+   non escludibile in futuro) si ripiega sul pool intero
+   invece di lasciare la partita senza domande.
+================================================== */
+function _filterHard(pool, act) {
+  const includeHard = !!(db.diffPrefs && db.diffPrefs[act]);
+  if (includeHard) return pool;
+  const filtered = pool.filter(q => q.difficulty !== 'hard');
+  return filtered.length ? filtered : pool;
+}
+
+/* Cambia la preferenza difficoltà per il minigioco correntemente
+   selezionato (sAct) e la salva subito sull'aula attiva — stesso
+   pattern di addInd()/pickInd() che chiamano save() ad ogni scelta. */
+function toggleHard(v) {
+  if (!sAct) return;
+  db.diffPrefs[sAct] = !!v;
+  save();
+}
+
+/* v8.36.0b: contatore "N facili + N difficili disponibili" sotto il
+   toggle, per il minigioco+modulo correntemente selezionati in selAct().
+   Fire-and-forget (non awaited da selAct): usa i loader/cache già
+   esistenti, quindi non fa un fetch in più rispetto a prima — se il
+   pool non è ancora in cache lo scarica una volta sola, e launch()
+   userà la stessa cache. Guardia anti-race: se nel frattempo l'utente
+   ha cambiato minigioco o modulo, il risultato in ritardo viene scartato
+   invece di sovrascrivere un conteggio più recente.
+   Abbina: la difficoltà è per round da 5 coppie (non per domanda), quindi
+   qui conta i round, non le singole coppie — coerente con getMatchSet(). */
+async function _updateDiffCount(a, mod) {
+  const el = sh('diff-count');
+  if (!el) return;
+  if (a === 'memory') { el.textContent = ''; return; } // minigioco in pausa, nessun dato difficulty
+  el.textContent = 'Conteggio…';
+  let pool;
+  try {
+    if (a === 'quiz') pool = await loadPool(mod);
+    else if (a === 'speed') pool = await loadSpeedPool(mod);
+    else if (a === 'fill') pool = await loadCompletaFrasePool(mod);
+    else if (a === 'truefalse') pool = await loadTrueFalsePool(mod);
+    else if (a === 'match') pool = await loadAbbinSets(mod);
+    else { el.textContent = ''; return; }
+  } catch (err) {
+    if (sAct === a && sMod === mod) el.textContent = ''; // errore silenzioso qui: lo stesso fetch fallirà di nuovo (e verrà segnalato) al click su "Inizia sessione"
+    return;
+  }
+  if (sAct !== a || sMod !== mod) return; // scelta cambiata nel frattempo: scarta
+  const hard = pool.filter(q => q.difficulty === 'hard').length;
+  const easy = pool.length - hard;
+  el.textContent = `${easy} facili + ${hard} difficili disponibili`;
+}
+
+/* ==================================================
+   GAME LIFECYCLE  v10 centralized state machine
+   States: IDLE | PLAYING | PAUSED | FINISHED
+================================================== */
+const GS = {
+  IDLE: 'IDLE',
+  PLAYING: 'PLAYING',
+  PAUSED: 'PAUSED',
+  FINISHED: 'FINISHED'
+};
+let gameState = GS.IDLE;
+let gameType = null; // 'quiz' | 'memory' | 'match' | 'fill'
+
+function gsSet(state){ gameState = state; }
+function gsIs(state){ return gameState === state; }
+function gsIsActive(){ return gameState === GS.PLAYING || gameState === GS.PAUSED; }
+
+
+/* ==================================================
+   SESSION STATE  v4.0.5 — oggetti strutturati
+   Pattern ispirato a matchState (già consolidato).
+   Le variabili globali flat restano accessibili via
+   alias window.* (defineProperties) — ZERO modifiche
+   al resto del codice.
+================================================== */
+
+/* -- Setup selettore sessione (invariato) -- */
+let sMod=null,sAct=null,sN=0,sMode=null,sIndPlayer=null,sTeams=[],sNumSelected=false;
+
+/* -- Timer globale (deve restare let per stopTimer/clearInterval) -- */
+let qTimerInt=null;
+
+/* ── QuizSession — tutto lo stato del quiz corrente ── */
+const QuizSession = {
+  _defaults: {
+    pool:[], idx:0, scores:{}, start:0, answered:false, speedLeft:0,
+    streak:0, bestStreak:0, qStart:0,
+    totalSpeedBonus:0, totalStreakBonus:0,
+    answerLog:[]
+    // [{questionId,correct,responseTimeMs,streak,speedBonus,streakBonus,scoreEarned}]
+  },
+  pool:[], idx:0, scores:{}, start:0, answered:false, speedLeft:0,
+  streak:0, bestStreak:0, qStart:0,
+  totalSpeedBonus:0, totalStreakBonus:0,
+  answerLog:[],
+  reset(){
+    this.pool=[];this.idx=0;this.scores={};this.start=0;
+    this.answered=false;this.speedLeft=0;
+    this.streak=0;this.bestStreak=0;this.qStart=0;
+    this.totalSpeedBonus=0;this.totalStreakBonus=0;
+    this.answerLog=[];
+  }
+};
+
+/* ── FillSession — stato Completa la frase ── */
+const FillSession = {
+  streak:0, bestStreak:0, totalScore:0, answerLog:[],
+  reset(){
+    this.streak=0;this.bestStreak=0;this.totalScore=0;this.answerLog=[];
+  }
+};
+
+/* ── TrueFalseSession — stato Vero o Falso ── */
+const TrueFalseSession = {
+  streak:0, bestStreak:0, totalScore:0, answerLog:[],
+  reset(){
+    this.streak=0;this.bestStreak=0;this.totalScore=0;this.answerLog=[];
+  }
+};
+
+/* ── PlayerSession — giocatori attivi nel turno ── */
+const PlayerSession = {
+  list:[], prevRank:[],
+  reset(){ this.list=[];this.prevRank=[]; }
+};
+
+/* ── Alias window.* — retrocompatibilità totale ──
+   Tutto il codice esistente che scrive/legge qPool,
+   players, fillStreak, ecc. funziona invariato. */
+Object.defineProperties(window, {
+  qPool:            { get(){ return QuizSession.pool;             }, set(v){ QuizSession.pool=v;             }, configurable:true, enumerable:true },
+  qIdx:             { get(){ return QuizSession.idx;              }, set(v){ QuizSession.idx=v;              }, configurable:true, enumerable:true },
+  qScores:          { get(){ return QuizSession.scores;           }, set(v){ QuizSession.scores=v;           }, configurable:true, enumerable:true },
+  qStart:           { get(){ return QuizSession.start;            }, set(v){ QuizSession.start=v;            }, configurable:true, enumerable:true },
+  qAnswered:        { get(){ return QuizSession.answered;         }, set(v){ QuizSession.answered=v;         }, configurable:true, enumerable:true },
+  qSpeedLeft:       { get(){ return QuizSession.speedLeft;        }, set(v){ QuizSession.speedLeft=v;        }, configurable:true, enumerable:true },
+  qStreak:          { get(){ return QuizSession.streak;           }, set(v){ QuizSession.streak=v;           }, configurable:true, enumerable:true },
+  qBestStreak:      { get(){ return QuizSession.bestStreak;       }, set(v){ QuizSession.bestStreak=v;       }, configurable:true, enumerable:true },
+  qQStart:          { get(){ return QuizSession.qStart;           }, set(v){ QuizSession.qStart=v;           }, configurable:true, enumerable:true },
+  qTotalSpeedBonus: { get(){ return QuizSession.totalSpeedBonus;  }, set(v){ QuizSession.totalSpeedBonus=v;  }, configurable:true, enumerable:true },
+  qTotalStreakBonus: { get(){ return QuizSession.totalStreakBonus; }, set(v){ QuizSession.totalStreakBonus=v; }, configurable:true, enumerable:true },
+  qAnswerLog:       { get(){ return QuizSession.answerLog;        }, set(v){ QuizSession.answerLog=v;        }, configurable:true, enumerable:true },
+  fillStreak:       { get(){ return FillSession.streak;           }, set(v){ FillSession.streak=v;           }, configurable:true, enumerable:true },
+  fillBestStreak:   { get(){ return FillSession.bestStreak;       }, set(v){ FillSession.bestStreak=v;       }, configurable:true, enumerable:true },
+  fillTotalScore:   { get(){ return FillSession.totalScore;       }, set(v){ FillSession.totalScore=v;       }, configurable:true, enumerable:true },
+  fillAnswerLog:    { get(){ return FillSession.answerLog;        }, set(v){ FillSession.answerLog=v;        }, configurable:true, enumerable:true },
+  tfStreak:         { get(){ return TrueFalseSession.streak;      }, set(v){ TrueFalseSession.streak=v;      }, configurable:true, enumerable:true },
+  tfBestStreak:     { get(){ return TrueFalseSession.bestStreak;  }, set(v){ TrueFalseSession.bestStreak=v;  }, configurable:true, enumerable:true },
+  tfTotalScore:     { get(){ return TrueFalseSession.totalScore;  }, set(v){ TrueFalseSession.totalScore=v;  }, configurable:true, enumerable:true },
+  tfAnswerLog:      { get(){ return TrueFalseSession.answerLog;   }, set(v){ TrueFalseSession.answerLog=v;   }, configurable:true, enumerable:true },
+  players:          { get(){ return PlayerSession.list;           }, set(v){ PlayerSession.list=v;           }, configurable:true, enumerable:true },
+  prevRank:         { get(){ return PlayerSession.prevRank;       }, set(v){ PlayerSession.prevRank=v;       }, configurable:true, enumerable:true },
+});
+
+/* ==================================================
+   MATCH STATE  sequential team-turn engine v2.1.4
+   Separato da SESSION STATE: sopravvive tra un turno
+   e il successivo, azzerato solo a inizio partita.
+================================================== */
+let matchState = {
+  active:        false,   // true mentre si gioca a turni
+  teams:         [],      // [{name, color, type}] — ordine fisso per tutta la partita
+  scores:        {},      // { teamName: totalScore }
+  currentIdx:    0,       // indice della squadra che sta giocando ora
+  frozenPool:    null,    // pool di domande CONSUMABILE — le domande escono in ordine e non tornano
+  usedQIds:      new Set(), // indici (nell'array originale) già mostrati durante la partita
+  isTiebreak:    false,   // siamo in spareggio?
+  tbTeams:       [],      // solo le squadre in pareggio
+  tbRound:       0,       // numero round spareggio
+  _splashInterval: null,  // FIX C1: reference al countdown setInterval — cleanup garantito da matchReset()
+};
+
+function matchReset(){
+  // FIX C1: distrugge il countdown in corso (se presente) prima di azzerare matchState.
+  // Previene callback zombie che reinizializzerebbero il gioco su schermata errata.
+  if(matchState._splashInterval){
+    clearInterval(matchState._splashInterval);
+    matchState._splashInterval=null;
+  }
+  matchState={
+    active:false,teams:[],scores:{},currentIdx:0,
+    frozenPool:null,usedQIds:new Set(),
+    isTiebreak:false,tbTeams:[],tbRound:0,
+    _splashInterval:null,  // FIX C1: incluso nel reset per coerenza strutturale
+  };
+}
+let mState={},memState={},fillState={},tfState={};
+
+/* Memory timer state  v10 */
+let memTimerInt=null;
+let memElapsed=0;
+let memPaused=false;
+
+/* Leaderboard navigation state */
+let lbType=null,lbAct=null;
+
+
+/* ==================================================
+   TIMER MANAGER — v4.0.3
+   Registro centralizzato di tutti i timer di gioco.
+   Ogni timer espone: start, pause, resume, stop.
+   TimerManager.pauseAll() / resumeAll() / stopAll()
+   eliminano la necessità di hardcoding per gameType
+   in _pauseForDialog / _resumeAfterDialog /
+   resetSessionState.
+
+   ARCHITETTURA:
+   - I timer si auto-registrano alla prima chiamata
+     di start(). Non richiedono register() esplicito.
+   - Le variabili globali di stato (qTimerInt, ecc.)
+     restano invariate: i wrapper legacy le aggiornano.
+   - paused = "messo in pausa dall'utente prima del
+     dialog" — preserved across dialog open/close.
+   - pausedByDialog = flag temporaneo: true se il timer
+     era attivo quando il dialog si è aperto (non già
+     paused dall'utente).
+================================================== */
+const TimerManager = (function(){
+  const _timers = {}; // { name: { paused, pausedByDialog, ... } }
+
+  /**
+   * Registra un timer con le sue callback.
+   * Chiamato automaticamente da start() se non già registrato.
+   * @param {string}   name
+   * @param {function} fnPause    - sospende il timer (aggiorna var globali)
+   * @param {function} fnResume   - riprende il timer (aggiorna var globali)
+   * @param {function} fnStop     - ferma e resetta il timer
+   * @param {function} [fnIsRunning] - true se il timer è attivo
+   */
+  function register(name, fnPause, fnResume, fnStop, fnIsRunning){
+    if(_timers[name]) return; // idempotente
+    _timers[name] = { fnPause, fnResume, fnStop, fnIsRunning: fnIsRunning||null };
+    console.log('[TimerManager] registered:', name);
+  }
+
+  /**
+   * Pausa tutti i timer registrati.
+   * Salva lo stato pre-dialog in pausedByDialog per
+   * poterlo ripristinare correttamente in resumeAll().
+   */
+  function pauseAll(){
+    Object.entries(_timers).forEach(([name, t])=>{
+      const running = t.fnIsRunning ? t.fnIsRunning() : true;
+      t.pausedByDialog = running;
+      if(running){
+        try{ t.fnPause(); } catch(e){ console.warn('[TimerManager] pauseAll error:', name, e); }
+      }
+    });
+  }
+
+  /**
+   * Riprende i timer che erano attivi prima del dialog.
+   * Non riprende i timer che l'utente aveva già messo in pausa.
+   */
+  function resumeAll(){
+    Object.entries(_timers).forEach(([name, t])=>{
+      if(t.pausedByDialog){
+        t.pausedByDialog = false;
+        try{ t.fnResume(); } catch(e){ console.warn('[TimerManager] resumeAll error:', name, e); }
+      }
+    });
+  }
+
+  /**
+   * Ferma e resetta tutti i timer registrati.
+   * Chiamato da resetSessionState().
+   */
+  function stopAll(){
+    Object.entries(_timers).forEach(([name, t])=>{
+      t.pausedByDialog = false;
+      try{ t.fnStop(); } catch(e){ console.warn('[TimerManager] stopAll error:', name, e); }
+    });
+  }
+
+  /**
+   * Rimuove la registrazione di un timer.
+   * Utile per cleanup (es. fine partita).
+   * In pratica non necessario finché i timer sono singleton.
+   */
+  function unregister(name){
+    delete _timers[name];
+  }
+
+  /**
+   * Espone lo stato interno solo per debug.
+   */
+  function debug(){ return JSON.parse(JSON.stringify(_timers, (k,v)=>typeof v==='function'?'[fn]':v)); }
+
+  return { register, pauseAll, resumeAll, stopAll, unregister, debug };
+})();
+
+/* ==================================================
+   PAUSE UI REGISTRY — v4.0.9 (Fase 8 M2)
+   Registro degli handler UI di pausa per ogni minigioco.
+   Sostituisce i blocchi if(gameType==='speed'|'memory'|'match')
+   in _pauseForDialog/_resumeAfterDialog — ora 4 righe ciascuno.
+   Ogni minigioco chiama PauseUIRegistry.register() al caricamento.
+
+   onPause(wasManuallyPaused):
+     - wasManuallyPaused è sempre false qui (viene da dialog,
+       non da pulsante pausa manuale)
+     - Deve: mostrare overlay, bloccare input, cambiare icona btn
+   onResume(wasManuallyPaused):
+     - wasManuallyPaused: true se il gioco era già in pausa
+       manuale PRIMA che si aprisse il dialog
+     - Se true: NON togliere overlay/lock (l'utente aveva paused)
+     - Se false: ripristina UI normalmente
+================================================== */
+const PauseUIRegistry = (function(){
+  const _handlers = {};
+
+  /**
+   * Registra gli handler UI pausa/ripresa per un minigioco.
+   * @param {string}   name       'speed' | 'memory' | 'match'
+   * @param {object}   handlers   { onPause, onResume }
+   */
+  function register(name, handlers){
+    _handlers[name] = handlers;
+  }
+
+  /**
+   * Chiama onPause per il gameType attivo.
+   * @param {boolean} wasManuallyPaused  sempre false da _pauseForDialog
+   */
+  function pauseActive(wasManuallyPaused){
+    const h = _handlers[gameType];
+    if(h && typeof h.onPause === 'function') h.onPause(wasManuallyPaused);
+  }
+
+  /**
+   * Chiama onResume per il gameType attivo.
+   * @param {boolean} wasManuallyPaused  true se gioco era già in pausa manuale
+   */
+  function resumeActive(wasManuallyPaused){
+    const h = _handlers[gameType];
+    if(h && typeof h.onResume === 'function') h.onResume(wasManuallyPaused);
+  }
+
+  return { register, pauseActive, resumeActive };
+})();
+
+/* Reset all transient game state between sessions */
+function resetSessionState(){
+  TimerManager.stopAll();   // v4.0.5: centralizzato — handles all registered timers
+  stopTimer();              // legacy speed-quiz timer wrapper
+  // Guard calls: these live in game-match/game-quiz/game-memory which load after this file.
+  // TimerManager.stopAll() already covers them; these are safety no-ops.
+  if(typeof stopMemTimer   === 'function') stopMemTimer();
+  if(typeof stopMatchTimer === 'function') stopMatchTimer();
+  gsSet(GS.IDLE);
+  gameType=null;
+  /* v4.0.5: FASE 4 — reset centralizzato via oggetti sessione */
+  QuizSession.reset();
+  FillSession.reset();
+  TrueFalseSession.reset();
+  PlayerSession.reset();
+  mState={};memState={};fillState={};tfState={};
+  sNumSelected=false;
+  matchReset(); // v2.1.4: reset team-turn engine
+  // Unlock any paused UI (speed quiz OR memory)
+  if(typeof _setGamePauseLock === 'function') _setGamePauseLock(false);
+  // Reset speed quiz UI elements
+  if(typeof resetSpeedUI === 'function') resetSpeedUI();
+  const sp=shq('qz-score-pill');if(sp)sp.classList.add('hidden');
+  const pb=shq('qz-pause-btn');if(pb)pb.classList.add('hidden');
+}
+
+
+/* ==================================================
+   HELPERS
+================================================== */
+function sh(id){const el=document.getElementById(id);if(!el&&typeof console!=='undefined')console.warn('[PixelProf] elemento non trovato: #'+id);return el;}
+/** shq — quiet lookup: elemento opzionale, nessun warning se assente. Usare per
+ *  elementi che esistono solo in certi stati UI (es. mem-pause-btn fuori dal Memory). */
+function shq(id){return document.getElementById(id);}
+function escHtml(s){const d=document.createElement('div');d.appendChild(document.createTextNode(String(s)));return d.innerHTML;}
+function escAttr(s){return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function shuffle(a){const b=[...a];for(let i=b.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[b[i],b[j]]=[b[j],b[i]];}return b;}
+function setTb(active){['tb-home','tb-lb','tb-st','tb-hist','tb-dash','tb-badges'].forEach(id=>sh(id).classList.remove('active'));if(active)sh(active).classList.add('active');}
+function showScreen(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  sh(id).classList.add('active');
+  // v8.20.2: passando a un tab diverso da tab-home (es. launch() verso
+  // tab-quiz/tab-games), richiude anche #setup-panel — altrimenti
+  // resta con la propria classe "hidden" NON impostata per l'intera
+  // sessione di gioco: invisibile solo perché #tab-home (suo antenato)
+  // è inattivo, non perché davvero chiuso. goStep() (v8.20.1) copre i
+  // passaggi tra step-mod/cat/act/ecc., questo copre l'altro percorso
+  // di cambio schermata dell'app (i tab di gioco).
+  if(id!=='tab-home'){ const sp=shq('setup-panel'); if(sp) sp.classList.add('hidden'); }
+}
+
+
+
+/* ==================================================
+   NAVIGATION  v10 with real pause interception
+================================================== */
+
+/* -- v11: Custom confirm dialog  dual mode (exit | restart) -- */
+let _dialogCallback=null;
+let _dialogMode='exit'; // 'exit' | 'restart'
+let _dialogWasPaused=false;
+let _dialogMatchWasPaused=false;
+
+const DIALOG_COPY={
+  exit:{
+    title:'Uscire dalla partita?',
+    sub:'La partita corrente verrà interrotta e il punteggio non verrà salvato.',
+    confirm:'Sì, esci'
+  },
+  restart:{
+    title:'Riavviare la partita?',
+    sub:'La partita corrente verrà azzerata e si ricomincia dall\'inizio.',
+    confirm:'Sì, riavvia'
+  }
+};
+
+function _setDialogCopy(mode){
+  const c=DIALOG_COPY[mode]||DIALOG_COPY.exit;
+  const t=sh('pp-dialog-title'),s=sh('pp-dialog-sub'),y=sh('pp-dialog-yes');
+  if(t)t.textContent=c.title;
+  if(s)s.textContent=c.sub;
+  if(y)y.textContent=c.confirm;
+}
+
+function ppConfirm(onYes){
+  _dialogMode='exit';
+  _dialogCallback=onYes;
+  _setDialogCopy('exit');
+  _pauseForDialog();
+  sh('pp-dialog-overlay').classList.remove('hidden');
+}
+
+function ppConfirmRestart(onYes){
+  _dialogMode='restart';
+  _dialogCallback=onYes;
+  _setDialogCopy('restart');
+  _pauseForDialog();
+  sh('pp-dialog-overlay').classList.remove('hidden');
+}
+
+/* ==================================================
+   GENERIC THEMED DIALOGS — v6.2.0
+   ppAlert() / ppConfirmBox() / ppPromptBox()
+
+   Sostituiscono alert()/confirm()/prompt() nativi in tutta
+   l'app con popup coerenti con l'estetica neon scura.
+   Markup creato dinamicamente da JS — zero modifiche a
+   index.html — stesso pattern già usato da _showDeleteConfirm()
+   per i chip ×. Indipendenti dal singleton #pp-dialog-overlay
+   (riservato a exit/restart partita): nessuna interferenza con
+   quel sistema, nessuna gestione manuale di onclick condivisi.
+
+   API (tutte Promise-based, usabili con await):
+     await ppAlert(message, {title, icon})              → undefined
+     await ppConfirmBox(message, {title, icon, yesLabel,
+                                   noLabel, danger})      → true|false
+     await ppPromptBox(message, defaultValue, {title,
+                                   icon, okLabel, maxlength}) → string|null
+
+   Un solo popup alla volta: l'apertura di uno nuovo chiude
+   immediatamente quello precedente (nessuna sovrapposizione).
+================================================== */
+let _ppActiveModal = null;
+
+function _ppCloseActiveModal(){
+  if(_ppActiveModal){
+    document.removeEventListener('keydown', _ppActiveModal._onKey);
+    _ppActiveModal.remove();
+    _ppActiveModal = null;
+  }
+}
+
+function _ppBuildModal(innerHTML){
+  _ppCloseActiveModal();
+  const overlay = document.createElement('div');
+  overlay.className = 'pp-generic-overlay';
+  overlay.innerHTML = `<div class="pp-generic-box" role="dialog" aria-modal="true">${innerHTML}</div>`;
+  document.body.appendChild(overlay);
+  _ppActiveModal = overlay;
+  return overlay;
+}
+
+function ppAlert(message, opts={}){
+  return new Promise(resolve=>{
+    const title = opts.title || 'Attenzione';
+    const icon  = opts.icon  || '⚠️';
+    const okLabel = opts.okLabel || 'Ho capito';
+    const overlay = _ppBuildModal(`
+      <div class="pp-generic-icon">${icon}</div>
+      <div class="pp-generic-title">${escHtml(title)}</div>
+      <div class="pp-generic-msg">${escHtml(message).replace(/\n/g,'<br>')}</div>
+      <div class="pp-generic-btns">
+        <button class="pp-generic-btn ok" id="pp-generic-ok">${escHtml(okLabel)}</button>
+      </div>`);
+    const okBtn = overlay.querySelector('#pp-generic-ok');
+    const _close = () => { _ppCloseActiveModal(); resolve(); };
+    okBtn.addEventListener('click', _close);
+    overlay.addEventListener('mousedown', e => { if(e.target===overlay) _close(); });
+    overlay._onKey = e => { if(e.key==='Escape'){ e.preventDefault(); _close(); } };
+    document.addEventListener('keydown', overlay._onKey);
+    setTimeout(()=>okBtn.focus(), 30);
+  });
+}
+
+function ppConfirmBox(message, opts={}){
+  return new Promise(resolve=>{
+    const title    = opts.title    || 'Confermi?';
+    const icon     = opts.icon     || '❓';
+    const yesLabel = opts.yesLabel || 'Sì, conferma';
+    const noLabel  = opts.noLabel  || 'Annulla';
+    const dangerCls= opts.danger   ? ' danger' : '';
+    // v8.19.1: forceConfirm (opt-in, default false) — nasconde il
+    // pulsante Annulla e disattiva click-fuori/Esc, lasciando "Sì" come
+    // unica via d'uscita dal dialogo. Generico e retrocompatibile: tutte
+    // le chiamate esistenti restano invariate (forceConfirm non passato
+    // = comportamento identico a prima). Introdotto per il passo del
+    // tour guidato su Flip Card (vedi js/flip-card.js), ma riusabile da
+    // qualsiasi altra chiamata futura che abbia lo stesso bisogno.
+    const forceConfirm = !!opts.forceConfirm;
+    const overlay = _ppBuildModal(`
+      <div class="pp-generic-icon">${icon}</div>
+      <div class="pp-generic-title">${escHtml(title)}</div>
+      <div class="pp-generic-msg">${escHtml(message).replace(/\n/g,'<br>')}</div>
+      <div class="pp-generic-btns">
+        ${forceConfirm ? '' : `<button class="pp-generic-btn cancel" id="pp-generic-no">${escHtml(noLabel)}</button>`}
+        <button class="pp-generic-btn confirm${dangerCls}" id="pp-generic-yes">${escHtml(yesLabel)}</button>
+      </div>`);
+    const yesBtn = overlay.querySelector('#pp-generic-yes');
+    const noBtn  = overlay.querySelector('#pp-generic-no');
+    const _resolve = (v) => { _ppCloseActiveModal(); resolve(v); };
+    yesBtn.addEventListener('click', ()=>_resolve(true));
+    if (noBtn) noBtn.addEventListener('click', ()=>_resolve(false));
+    if (!forceConfirm) {
+      overlay.addEventListener('mousedown', e => { if(e.target===overlay) _resolve(false); });
+    }
+    overlay._onKey = e => { if(e.key==='Escape' && !forceConfirm){ e.preventDefault(); _resolve(false); } };
+    document.addEventListener('keydown', overlay._onKey);
+    setTimeout(()=>(noBtn||yesBtn).focus(), 30);
+  });
+}
+
+function ppPromptBox(message, defaultValue='', opts={}){
+  return new Promise(resolve=>{
+    const title   = opts.title   || 'Inserisci un valore';
+    const icon    = opts.icon    || '✏️';
+    const okLabel = opts.okLabel || 'Conferma';
+    const maxlen  = opts.maxlength || 60;
+    const overlay = _ppBuildModal(`
+      <div class="pp-generic-icon">${icon}</div>
+      <div class="pp-generic-title">${escHtml(title)}</div>
+      <div class="pp-generic-msg">${escHtml(message)}</div>
+      <input type="text" class="pp-generic-input" id="pp-generic-inp" maxlength="${maxlen}" value="${escAttr(defaultValue)}"/>
+      <div class="pp-generic-btns">
+        <button class="pp-generic-btn cancel" id="pp-generic-pcancel">Annulla</button>
+        <button class="pp-generic-btn confirm" id="pp-generic-pok">${escHtml(okLabel)}</button>
+      </div>`);
+    const inp   = overlay.querySelector('#pp-generic-inp');
+    const okBtn = overlay.querySelector('#pp-generic-pok');
+    const noBtn = overlay.querySelector('#pp-generic-pcancel');
+    const _resolve = (v) => { _ppCloseActiveModal(); resolve(v); };
+    okBtn.addEventListener('click', ()=>_resolve(inp.value.trim() || null));
+    noBtn.addEventListener('click', ()=>_resolve(null));
+    overlay.addEventListener('mousedown', e => { if(e.target===overlay) _resolve(null); });
+    inp.addEventListener('keydown', e => {
+      if(e.key==='Enter'){ e.preventDefault(); _resolve(inp.value.trim() || null); }
+      if(e.key==='Escape'){ e.preventDefault(); _resolve(null); }
+    });
+    overlay._onKey = e => { if(e.key==='Escape'){ e.preventDefault(); _resolve(null); } };
+    document.addEventListener('keydown', overlay._onKey);
+    setTimeout(()=>{ inp.focus(); inp.select(); }, 30);
+  });
+}
+
+/* ==================================================
+   _pauseForDialog / _resumeAfterDialog — v4.0.8
+   Timer: TimerManager.pauseAll() / resumeAll().
+   UI (overlay, icone, lock): invariata per gameType.
+
+   FIX I1 (v4.0.8): _dialogWasPaused derivato da timer state.
+   FIX bug 1.2/2.2 (v4.0.8):
+     Quando il dialog si apre e il gioco è già GS.PAUSED
+     (pausa manuale attiva), _pauseForDialog saltava tutto
+     il blocco if(gsIs(GS.PLAYING)) e TimerManager.pauseAll()
+     non veniva mai chiamato → pausedByDialog=false per tutti
+     i timer → _resumeAfterDialog non riavviava nessun timer
+     → gsState=PLAYING ma timer fermo → gioco bloccato.
+
+     SOLUZIONE: _dialogGameWasPaused cattura se il gioco era
+     già in GS.PAUSED prima dell'apertura del dialog.
+     _resumeAfterDialog ripristina GS.PAUSED invece di
+     GS.PLAYING in quel caso, mantenendo tutto in pausa.
+================================================== */
+
+// true se il gioco era già in GS.PAUSED quando il dialog si è aperto
+let _dialogGameWasPaused = false;
+
+function _pauseForDialog(){
+  // Cattura se siamo già in pausa manuale PRIMA di cambiare stato
+  _dialogGameWasPaused = gsIs(GS.PAUSED);
+
+  if(gsIs(GS.PLAYING)){
+    gsSet(GS.PAUSED);
+
+    // ── FIX I1: snapshot da timer state (fonte di verità) non da flag ──
+    _dialogWasPaused      = (memTimerInt === null && memElapsed > 0);
+    _dialogMatchWasPaused = (mTimerInt   === null && mTimeLeft  > 0 && mTimeLeft < 60);
+
+    // ── Pausa tutti i timer via manager ──
+    TimerManager.pauseAll();
+
+    // ── UI pausa delegata al minigioco attivo via PauseUIRegistry ──
+    // Ogni gioco registra il proprio handler — zero if(gameType) qui.
+    PauseUIRegistry.pauseActive(false);
+  }
+  // Se il gioco era già GS.PAUSED: non cambiamo nulla.
+  // _dialogGameWasPaused=true segnala a _resumeAfterDialog di
+  // non riprendere il gioco quando l'utente preme "No, continua".
+}
+
+function _resumeAfterDialog(){
+  if(!gsIs(GS.PAUSED)) return;
+
+  // ── FIX bug 1.2/2.2: se il gioco era già in pausa quando il dialog
+  //    si è aperto, NON riprendere — lascia tutto in GS.PAUSED. ──
+  if(_dialogGameWasPaused){
+    _dialogGameWasPaused = false;
+    return; // il gioco resta in pausa, nessuna UI da cambiare
+  }
+  _dialogGameWasPaused = false;
+
+  gsSet(GS.PLAYING);
+
+  // ── UI ripresa delegata al minigioco attivo via PauseUIRegistry ──
+  // Ogni gioco conosce il proprio stato interno (_dialogWasPaused,
+  // _dialogMatchWasPaused) e decide autonomamente se ripristinare l'overlay.
+  PauseUIRegistry.resumeActive(false);
+
+  // ── Riprende i timer (DOPO aggiornamento UI) ──
+  TimerManager.resumeAll();
+}
+
+function _syncMemPauseOverlay(show){
+  const overlay=shq('mem-paused-overlay');
+  if(!overlay)return;
+  overlay.classList.toggle('hidden',!show);
+  // Usa classe CSS invece di style inline — più robusto e manutenibile
+  document.querySelectorAll('.mem-c.flip').forEach(el=>el.classList.toggle('paused-hidden',show));
+}
+
+sh('pp-dialog-yes').onclick=function(){
+  sh('pp-dialog-overlay').classList.add('hidden');
+  // Confirm: destroy game state cleanly — v4.0.3: TimerManager.stopAll() centralizzato
+  TimerManager.stopAll();
+  gsSet(GS.IDLE);
+  gameType=null;
+  if(_dialogCallback){_dialogCallback();_dialogCallback=null;}
+};
+sh('pp-dialog-no').onclick=function(){
+  sh('pp-dialog-overlay').classList.add('hidden');
+  _dialogCallback=null;
+  // Resume game from where it was
+  _resumeAfterDialog();
+};
+
+/* Is a game currently active (playing OR paused)? */
+function isGameActive(){
+  return gsIsActive() && (
+    (document.getElementById('tab-quiz')?.classList.contains('active') && !sh('qz-game')?.classList.contains('hidden')) ||
+    (document.getElementById('tab-games')?.classList.contains('active') && sh('g-area')?.children.length > 0 && !sh('g-area')?.querySelector('.result-wrap'))
+  );
+}
+
+function stopTimer(){if(qTimerInt){clearInterval(qTimerInt);qTimerInt=null;}}
+
+
+/* ==================================================
+   TIMER REGISTRATIONS — v4.0.3
+   I 3 timer (speed, memory, match) si registrano nel
+   TimerManager. Le funzioni pubbliche legacy restano
+   come wrapper per retrocompatibilità: il resto del
+   codice (speedTogglePause, memTogglePause, ecc.) le
+   chiama ancora direttamente senza modifiche.
+================================================== */
+
+/* ── Speed Quiz timer ─────────────────────────────
+   fnPause:     stopTimer() (clearInterval qTimerInt)
+   fnResume:    _restartSpeedTimer() solo se in gioco
+   fnStop:      stopTimer()
+   fnIsRunning: qTimerInt != null
+─────────────────────────────────────────────────── */
+TimerManager.register(
+  'speed',
+  /* pause  */ () => { stopTimer(); },
+  /* resume */ () => { if(sAct==='speed' && qSpeedLeft>0 && !qAnswered && !sh('qz-game')?.classList.contains('hidden')) _restartSpeedTimer(); },
+  /* stop   */ () => { stopTimer(); },
+  /* isRunning */ () => qTimerInt !== null
+);
+
+/* v10: memory timer helpers — v4.0.8 I1 fix
+   memPaused è mantenuto in sincronia con gsState nei toggle.
+   Fonte di verità per "è in pausa?" = memTimerInt === null (timer fermo).
+   memPaused serve solo come guard per evitare doppi clearInterval/start. */
+function stopMemTimer(){
+  if(memTimerInt){clearInterval(memTimerInt);memTimerInt=null;}
+  memElapsed=0;memPaused=false;
+}
+function pauseMemTimer(){
+  // Guard: non tentare di fermare un timer già fermo
+  if(memTimerInt){clearInterval(memTimerInt);memTimerInt=null;}
+  memPaused=true; // sempre sincronizzato: se pauseMemTimer() è chiamato, siamo in pausa
+}
+function resumeMemTimer(){
+  memPaused=false; // sempre sincronizzato: se resumeMemTimer() è chiamato, usciamo da pausa
+  _startMemInterval();
+}
+function _startMemInterval(){
+  // Guard: non avviare se già un intervallo attivo
+  if(memTimerInt) return;
+  memTimerInt=setInterval(()=>{
+    // Double-check: blocca tick se gsState è PAUSED o non PLAYING
+    if(!gsIs(GS.PLAYING))return;
+    memElapsed++;
+    _updateMemTimerUI();
+  },1000);
+}
+
+/* ── Memory timer ─────────────────────────────────
+   v4.0.8 I1 fix: fnIsRunning usa solo memTimerInt (non !memPaused ridondante).
+   TimerManager.pauseAll() chiama fnPause() solo se fnIsRunning() è true,
+   quindi pauseMemTimer() viene chiamato solo quando il timer sta girando.
+   Questo garantisce che _dialogWasPaused (snapshot pre-dialog) rifletta
+   correttamente se il timer era attivo al momento del dialog.
+─────────────────────────────────────────────────── */
+TimerManager.register(
+  'memory',
+  /* pause  */ () => { pauseMemTimer(); },
+  /* resume */ () => { resumeMemTimer(); },
+  /* stop   */ () => { stopMemTimer(); },
+  /* isRunning */ () => memTimerInt !== null   // timer attivo = non in pausa
+);
+function _updateMemTimerUI(){
+  const el=document.getElementById('mem-timer-pill');
+  if(!el)return;
+  const m=Math.floor(memElapsed/60);
+  const s=memElapsed%60;
+  el.textContent=(m>0?(m+':'):'')+(s<10?'0':'')+s;
+  const warn=memElapsed>=90;
+  el.parentElement.classList.toggle('timer-warning',warn);
+  el.parentElement.classList.toggle('timer-running',!warn);
+  // also refresh score every second (time affects score)
+  _updateMemScoreUI(false);
+}
+
+function _updateMemScoreUI(bump){
+  const el=document.getElementById('mem-score-pill');
+  if(!el)return;
+  const s=memState;
+  if(!s||!s.pairs)return;
+  const live=calcMemScore(s.pairs,s.moves,memElapsed);
+  el.textContent=live;
+  if(bump){
+    const pill=el.closest('.mem-stat-pill');
+    if(pill){
+      pill.classList.remove('score-bump');
+      // force reflow so animation restarts
+      void pill.offsetWidth;
+      pill.classList.add('score-bump');
+      pill.addEventListener('animationend',()=>pill.classList.remove('score-bump'),{once:true});
+    }
+  }
+}
+
+function goHome(){
+  if(isGameActive()){
+    ppConfirm(()=>{resetSessionState();setTb('tb-home');showScreen('tab-home');goStep('mod');});
+    return;
+  }
+  // v8.20.0 (flip-card.js) — richiesta esplicita utente, indipendente dal
+  // tour: stessa conferma dei minigiochi, ora anche per una sessione Flip
+  // Card attiva. isFlipCardActive()/confirmExitFlipCard() vivono in
+  // flip-card.js (unico file che conosce fcState) — qui solo l'aggancio,
+  // guardia typeof per restare sicuro anche se quel file non fosse
+  // caricato. Vedi commento esteso in flip-card.js per il perché tocca
+  // questo file "core".
+  if(typeof isFlipCardActive === 'function' && isFlipCardActive()){
+    confirmExitFlipCard(()=>{resetSessionState();setTb('tb-home');showScreen('tab-home');goStep('mod');});
+    return;
+  }
+  // v8.30.0 (lo-sapevi.js) — stesso identico aggancio della coppia
+  // isFlipCardActive/confirmExitFlipCard qui sopra, per la seconda
+  // modalità didattica. Vedi commento esteso in lo-sapevi.js.
+  if(typeof isLoSapeviActive === 'function' && isLoSapeviActive()){
+    confirmExitLoSapevi(()=>{resetSessionState();setTb('tb-home');showScreen('tab-home');goStep('mod');});
+    return;
+  }
+  resetSessionState();setTb('tb-home');showScreen('tab-home');goStep('mod');
+}
+
+function goCoursesFromApp(){
+  const _execBack = () => {
+    resetSessionState();
+    window._activeModuleKeys = null; // v5.0.6: reset filtro moduli — evita bleed tra aule
+    sh('screen-courses').classList.remove('hidden');
+    document.querySelector('.app').style.display='none';
+    renderCoursesGrid();
+    // v8.27.1: analogo a _afterLogin()/ddGoSceltaAula() (app.js) — notifica
+    // il tour, se attivo, che screen-courses è ora visibile. Serve al passo
+    // finale del tour Docente ("Tour completato", .course-card): a
+    // differenza del Direttore (dove lo stesso dialog "cambia aula" viene
+    // sempre auto-annullato in onLeave), qui l'utente clicca per davvero
+    // "Sì, cambia aula" e questo è il punto in cui la navigazione avviene
+    // sul serio. Idempotente/no-op se il tour non è attivo o non si
+    // aspetta questa schermata (vedi showCoursesSelectStep in onboarding.js).
+    if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showCoursesSelectStep(), 500);
+  };
+  if(isGameActive()){
+    ppConfirm(_execBack);
+    return;
+  }
+  // Anche fuori dal gioco: conferma uscita dall'aula se un'aula è attiva
+  if(activeCourseId){
+    const courses=loadCourses();
+    const course=courses.find(c=>c.id===activeCourseId);
+    const aulaNome=course?course.name:'questa aula';
+    const t=sh('pp-dialog-title'), s=sh('pp-dialog-sub'), y=sh('pp-dialog-yes');
+    const _prevT=t?.textContent, _prevS=s?.textContent, _prevY=y?.textContent;
+    const _prevYes=sh('pp-dialog-yes')?.onclick, _prevNo=sh('pp-dialog-no')?.onclick;
+    if(t) t.textContent='Esci da "'+aulaNome+'"?';
+    if(s) s.textContent='Tornerai alla schermata di selezione aule.';
+    if(y) y.textContent='Sì, cambia aula';
+    sh('pp-dialog-yes').onclick = function(){
+      sh('pp-dialog-overlay').classList.add('hidden');
+      sh('pp-dialog-yes').onclick=_prevYes; sh('pp-dialog-no').onclick=_prevNo;
+      if(t)t.textContent=_prevT; if(s)s.textContent=_prevS; if(y)y.textContent=_prevY;
+      _setDialogCopy('exit');
+      _execBack();
+    };
+    sh('pp-dialog-no').onclick = function(){
+      sh('pp-dialog-overlay').classList.add('hidden');
+      sh('pp-dialog-yes').onclick=_prevYes; sh('pp-dialog-no').onclick=_prevNo;
+      if(t)t.textContent=_prevT; if(s)s.textContent=_prevS; if(y)y.textContent=_prevY;
+      _setDialogCopy('exit');
+    };
+    sh('pp-dialog-overlay').classList.remove('hidden');
+    return;
+  }
+  _execBack();
+}
+
+/* v8.26.8: pulsante "← Dashboard" SEMPRE presente nella topbar dell'app
+   (solo Direttore — bottone #tb-dashboard-btn, toggle in _afterLogin()/
+   app.js). A differenza del logo (goCoursesFromApp, sopra: cambia aula,
+   torna a screen-courses) questo riporta DIRETTAMENTE alla Dashboard
+   Direttore, da qualunque schermata dentro un'aula: selezione modulo/
+   modalità, Hub (Classifica/Progressi/Storico/Panoramica Classe/
+   Traguardi), un minigioco o una sessione Flip Card in corso.
+   Se un minigioco è attivo, interrompe la partita chiedendo prima
+   conferma — stesso identico ppConfirm() già usato da goHome()/
+   goCoursesFromApp()/goTab() più sopra (nessun nuovo dialogo). Stessa
+   cosa per Flip Card via confirmExitFlipCard() (js/flip-card.js) — vedi
+   commento gemello in goHome(). Nessuna conferma "Esci da quest'aula?"
+   fuori da un minigioco/Flip Card (a differenza del logo): è un tasto
+   di navigazione rapida, non un cambio aula. */
+function backToDashboardFromApp(){
+  if(!window.Auth?.isDirector()) return; // guard lato client — la UI nasconde già il tasto ai Docenti
+  const _execBack = () => {
+    resetSessionState();
+    window._activeModuleKeys = null; // v5.0.6: reset filtro moduli — evita bleed tra aule
+    document.querySelector('.app').style.display = 'none';
+    if(typeof setCoursesScreenMode === 'function') setCoursesScreenMode('select');
+    openDirectorDashboard();
+  };
+  if(isGameActive()){
+    ppConfirm(_execBack);
+    return;
+  }
+  if(typeof isFlipCardActive === 'function' && isFlipCardActive()){
+    confirmExitFlipCard(_execBack);
+    return;
+  }
+  // v8.30.0 (lo-sapevi.js) — vedi commento gemello in goHome() più sopra.
+  if(typeof isLoSapeviActive === 'function' && isLoSapeviActive()){
+    confirmExitLoSapevi(_execBack);
+    return;
+  }
+  _execBack();
+}
+
+function goTab(t){
+  if(isGameActive()){
+    ppConfirm(()=>{_doGoTab(t);});
+    return;
+  }
+  // v8.20.0 (flip-card.js) — vedi commento gemello in goHome() più sopra.
+  if(typeof isFlipCardActive === 'function' && isFlipCardActive()){
+    confirmExitFlipCard(()=>{_doGoTab(t);});
+    return;
+  }
+  // v8.30.0 (lo-sapevi.js) — vedi commento gemello in goHome() più sopra.
+  if(typeof isLoSapeviActive === 'function' && isLoSapeviActive()){
+    confirmExitLoSapevi(()=>{_doGoTab(t);});
+    return;
+  }
+  _doGoTab(t);
+}
+function _doGoTab(t){
+  resetSessionState();
+  const tbMap={lb:'tb-lb',stats:'tb-st',hist:'tb-hist',dashboard:'tb-dash',badges:'tb-badges'};
+  setTb(tbMap[t]||null);
+  showScreen('tab-'+t);
+  if(t==='lb'){lbType=null;lbAct=null;lbShowStep('type');}
+  if(t==='stats'){renderStats();if(typeof _mergeCloudModuleStats==='function')_mergeCloudModuleStats(activeCourseId);if(typeof _loadModuleSeenCounts==='function')_loadModuleSeenCounts(activeCourseId);}
+  if(t==='hist'){renderHistory();if(typeof _mergeCloudSessions==='function')_mergeCloudSessions(activeCourseId);}
+  if(t==='dashboard')renderDashboard();
+  if(t==='badges')renderBadges();
+}
+
+function goStep(s){
+  // v8.20.1: "setup-panel" aggiunto all'elenco — prima non serviva
+  // (pannello inline, invisibile perché dentro #step-act quando questo
+  // veniva nascosto); ora è un overlay fisso (#setup-overlay-backdrop,
+  // css/act-select.css) che altrimenti resta aperto tra una sessione e
+  // l'altra e ricompare con i dati dell'attività precedente al primo
+  // rientro su #step-act — bug segnalato (pannello della sessione
+  // precedente visibile tornando alla selezione minigiochi) + causa del
+  // fallimento e2e "Speed Quiz" (click su #ac-speed intercettato dal
+  // backdrop rimasto aperto dopo Quiz). selAct() (invariata) lo riapre
+  // comunque al click su una card.
+  ['step-mod','step-cat','step-act','step-didattica','step-num','step-players','setup-panel'].forEach(id=>{const el=shq(id);if(el)el.classList.add('hidden');});
+  const target=shq('step-'+s);if(target)target.classList.remove('hidden');
+  if(s==='mod'){
+    // v5.0.6: riapplica il filtro moduli ad ogni accesso a step-mod.
+    // _renderModuleFilter è sincrona e legge window._activeModuleKeys
+    // (impostato da _applyModuleFilter al momento dell'ingresso nell'aula).
+    if(typeof window._renderModuleFilter === 'function'){
+      window._renderModuleFilter();
+    }
+    // v9.0.0: passo "scegli modulo" del tour guidato (Direttore e Docente) —
+    // idempotente, si autolimita tramite lo stato in OnboardingTour (vedi
+    // js/onboarding.js); nei render successivi di step-mod è un no-op.
+    if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showHomeModuleStep(), 500);
+  }
+  if(s==='cat'){
+    const catLabel=shq('cat-mod-label');
+    if(catLabel) catLabel.textContent=modLabel(sMod);
+    // v9.0.0: passo "scegli modalità" del tour guidato Docente.
+    if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showHomeCategoryStep(), 300);
+  }
+  if(s==='didattica'){
+    const didLabel=shq('didattica-mod-label');
+    if(didLabel) didLabel.textContent=modLabel(sMod);
+    // v8.18.0: passo "tipo di didattica" del tour guidato (Direttore e
+    // Docente) — stesso aggancio del ramo 'cat' sopra, prima assente
+    // perché Flip Card non aveva ancora un passo dedicato nel tour
+    // (vedi js/onboarding.js v2.3.0).
+    if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showDidatticaStep(), 300);
+  }
+  if(s==='act'){
+    sh('act-mod-label').textContent=modLabel(sMod);
+    if(!sAct)updateHero(null);
+    // v9.0.0: rete di sicurezza per il passo Hub del tour guidato — di
+    // norma già mostrato in modo opportunistico da _advance() non appena
+    // lo step precedente si conclude (il bottone Hub in topbar è sempre
+    // presente indipendentemente da quale step-* sia attivo).
+    if(typeof OnboardingTour!=='undefined') OnboardingTour.recheck();
+  }
+}
+
+
+/* ==================================================
+   MODULE & ACTIVITY SELECTION
+================================================== */
+function selMod(m){
+  sMod=m;
+  document.querySelectorAll('.mod-card').forEach(el=>el.classList.remove('active'));
+  sh('mc-'+m).classList.add('active');
+  setTimeout(()=>goStep('cat'),180);
+}
+
+function updateHero(act){
+  const hero=sh('act-hero'),bgEl=sh('act-hero-bg'),iconEl=sh('act-hero-icon'),titleEl=sh('act-hero-title'),subEl=sh('act-hero-sub');
+  if(!act){hero.className='act-hero';bgEl.innerHTML='';iconEl.textContent='🎯';titleEl.textContent="Scegli un'attività";subEl.textContent='Seleziona il tipo di esercizio';return;}
+  const m=ACT_META[act];hero.className='act-hero '+m.heroClass;bgEl.innerHTML=m.bg;iconEl.textContent=m.icon;titleEl.textContent=m.title;subEl.textContent=m.sub;
+}
+
+function selAct(a){
+  sAct=a;
+  ['quiz','speed','match','memory','fill','truefalse'].forEach(x=>sh('ac-'+x).classList.remove('active'));
+  sh('ac-'+a).classList.add('active');
+  updateHero(a);
+  // v8.36.0: riflette la preferenza difficoltà salvata per QUESTA aula e
+  // QUESTO minigioco — il valore in sé (db.diffPrefs) non viene toccato qui.
+  const diffToggle=sh('diff-toggle');
+  if(diffToggle)diffToggle.checked=!!(db.diffPrefs&&db.diffPrefs[a]);
+  _updateDiffCount(a,sMod); // v8.36.0b: fire-and-forget, aggiorna #diff-count quando il pool è pronto
+  const needsNum=(a==='quiz'||a==='speed'||a==='truefalse'||a==='fill');
+  sh('setup-num').classList.toggle('hidden',!needsNum);
+  sh('setup-divider').classList.toggle('hidden',!needsNum);
+  // Speed Quiz: hide "Tutte"  no meaning with fixed 60s timer
+  const allBtn=sh('nb-all');
+  if(allBtn)allBtn.style.display=(a==='speed')?'none':'';
+  if(!needsNum){sN=0;sNumSelected=true;}else{sNumSelected=false;}
+  sMode=null;sIndPlayer=null;sTeams=[];
+  document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('active'));
+  sh('ps-ind').classList.add('hidden');sh('ps-sq').classList.add('hidden');
+  sh('start-btn').disabled=true;
+  sh('setup-panel').classList.remove('hidden');
+  document.querySelectorAll('.num-btn').forEach(b=>b.classList.remove('active'));
+}
+
+function selNum(btn,n){
+  document.querySelectorAll('.num-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');sN=n;sNumSelected=true;checkCanStart();
+}
+
+function checkCanStart(){
+  const needsNum=(sAct==='quiz'||sAct==='speed'||sAct==='truefalse'||sAct==='fill');
+  const numOk=!needsNum||sNumSelected;
+  let playerOk=false;
+  if(sMode==='ind'){
+    playerOk=!!sIndPlayer;
+  } else if(sMode==='sq'){
+    const named=sTeams.filter(t=>t.name.trim());
+    // almeno 2 squadre con nome non vuoto e nomi non duplicati
+    const unique=new Set(named.map(t=>t.name.trim().toLowerCase()));
+    playerOk=named.length>=2 && unique.size===named.length;
+  }
+  const btn=sh('start-btn');
+  if(btn)btn.disabled=!(numOk&&playerOk);
+}
+
+function selMode(m){
+  sMode=m;
+  document.querySelectorAll('.mode-btn').forEach(b=>b.classList.remove('active'));
+  sh('mb-'+m).classList.add('active');
+  sh('ps-ind').classList.toggle('hidden',m!=='ind');
+  sh('ps-sq').classList.toggle('hidden',m!=='sq');
+  if(m==='ind') renderIndChips();
+  else renderSqUI();
+  // Aggiorna visibilità tasto + DOPO che ps-sq è visibile nel DOM
+  if(m==='sq') _updateAddSqBtn();
+  checkCanStart();
+}
+
+function _updateAddSqBtn(){
+  // requestAnimationFrame garantisce che il display venga applicato
+  // DOPO che il browser ha calcolato il layout del parent (#ps-sq appena mostrato)
+  requestAnimationFrame(()=>{
+    const btn=document.getElementById('add-sq-btn');
+    if(!btn) return;
+    btn.style.display = sTeams.length >= 4 ? 'none' : 'inline-flex';
+  });
+}
+
+function renderIndChips(){
+  const c=sh('ind-chips');
+  if(!db.players.length){
+    c.innerHTML='<span style="font-size:12px;color:rgba(255,255,255,.3)">Nessun giocatore salvato</span>';
+    return;
+  }
+  c.innerHTML=db.players.map((p,i)=>`
+    <div class="pchip-row">
+      <button class="pchip pchip-left${sIndPlayer===p?' active':''}"
+        onclick="pickInd('${escAttr(p)}')">${escHtml(p)}</button>
+      <button
+        class="pchip-action-btn pchip-del-btn"
+        title="Elimina giocatore"
+        onclick="deletePlayer(${i},event)"
+      ><i class="ti ti-x"></i></button>
+    </div>`).join('');
+}
+function pickInd(n){sIndPlayer=n;renderIndChips();checkCanStart();}
+function addInd(){const inp=sh('ind-inp');const n=inp.value.trim();if(!n)return;if(!db.players.includes(n))db.players.push(n);save();sIndPlayer=n;inp.value='';renderIndChips();checkCanStart();}
+
+/* ==================================================
+   _showDeleteConfirm — v5.0.3
+   Mini-popover di conferma inline sopra il chip ×.
+   Appare posizionato sopra il trigger, scompare
+   su Escape / click fuori / conferma / annulla.
+   Usato da deletePlayer() e deleteSavedTeam().
+
+   @param {HTMLElement} triggerEl  — il bottone × cliccato
+   @param {string}      label      — nome elemento (es. Rossi)
+   @param {string}      tipo       — giocatore | squadra
+   @param {function}    onConfirm  — callback eseguita dopo conferma
+================================================== */
+function _showDeleteConfirm(triggerEl, label, tipo, onConfirm){
+  // Rimuove eventuali popover già aperti
+  document.querySelectorAll('.pp-del-confirm').forEach(el=>el.remove());
+
+  const pop=document.createElement('div');
+  pop.className='pp-del-confirm';
+  pop.setAttribute('role','dialog');
+  pop.setAttribute('aria-modal','true');
+
+  // Stile del popover
+  Object.assign(pop.style,{
+    position:'fixed',
+    zIndex:'9999',
+    background:'rgba(12,16,28,.97)',
+    border:'1px solid rgba(171,86,73,.35)',
+    borderRadius:'12px',
+    padding:'12px 14px',
+    boxShadow:'0 8px 32px rgba(0,0,0,.6), 0 0 0 1px rgba(171,86,73,.15)',
+    minWidth:'200px',
+    maxWidth:'260px',
+    backdropFilter:'blur(8px)',
+  });
+
+  pop.innerHTML=`
+    <div style="font-size:11px;font-weight:700;color:rgba(171,86,73,.9);
+      text-transform:uppercase;letter-spacing:1.2px;margin-bottom:6px;
+      font-family:'Share Tech Mono',monospace">
+      <i class="ti ti-alert-triangle" style="font-size:12px"></i> Elimina ${escHtml(tipo)}
+    </div>
+    <div style="font-size:12px;color:rgba(255,255,255,.65);margin-bottom:12px;line-height:1.45">
+      Eliminare <strong style="color:#fff">${escHtml(label)}</strong>?<br>
+      <span style="font-size:10px;color:rgba(255,255,255,.35);font-family:'Share Tech Mono',monospace">
+        L'azione rimuoverà il ${escHtml(tipo)} dall'aula.
+      </span>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button id="pp-del-cancel" style="
+        flex:1;padding:6px 10px;border-radius:8px;
+        background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+        color:rgba(255,255,255,.6);font-size:11px;cursor:pointer;
+        font-family:'Space Grotesk',sans-serif;font-weight:600;
+        transition:background .15s,color .15s;
+      "
+        onmouseover="this.style.background='rgba(255,255,255,.12)';this.style.color='#fff'"
+        onmouseout="this.style.background='rgba(255,255,255,.06)';this.style.color='rgba(255,255,255,.6)'"
+      >Annulla</button>
+      <button id="pp-del-confirm-btn" style="
+        flex:1;padding:6px 10px;border-radius:8px;
+        background:rgba(171,86,73,.15);border:1px solid rgba(171,86,73,.4);
+        color:#AB5649;font-size:11px;cursor:pointer;
+        font-family:'Space Grotesk',sans-serif;font-weight:700;
+        transition:background .15s,border-color .15s;
+      "
+        onmouseover="this.style.background='rgba(171,86,73,.28)';this.style.borderColor='rgba(171,86,73,.7)'"
+        onmouseout="this.style.background='rgba(171,86,73,.15)';this.style.borderColor='rgba(171,86,73,.4)'"
+      ><i class="ti ti-trash" style="font-size:11px"></i> Elimina</button>
+    </div>`;
+
+  document.body.appendChild(pop);
+
+  // Posizionamento: sopra il trigger, centrato orizzontalmente
+  const rect=triggerEl.getBoundingClientRect();
+  const pw=pop.offsetWidth||220;
+  let left=rect.left+rect.width/2-pw/2;
+  left=Math.max(8,Math.min(left,window.innerWidth-pw-8));
+  const top=rect.top-pop.offsetHeight-8;
+  pop.style.left=left+'px';
+  pop.style.top=(top<8?rect.bottom+8:top)+'px';
+
+  // Handlers
+  const _close=()=>{
+    pop.remove();
+    document.removeEventListener('keydown',_onKey);
+    document.removeEventListener('mousedown',_onOutside);
+  };
+  const _onKey=(e)=>{ if(e.key==='Escape'){ e.preventDefault(); _close(); } };
+  const _onOutside=(e)=>{ if(!pop.contains(e.target)&&e.target!==triggerEl) _close(); };
+
+  pop.querySelector('#pp-del-cancel').addEventListener('click',()=>_close());
+  pop.querySelector('#pp-del-confirm-btn').addEventListener('click',()=>{
+    _close();
+    onConfirm();
+  });
+
+  // Chiusura automatica su Escape o click fuori
+  setTimeout(()=>{
+    document.addEventListener('keydown',_onKey);
+    document.addEventListener('mousedown',_onOutside);
+  },10);
+
+  // Focus sul bottone Annulla per accessibilità
+  setTimeout(()=>pop.querySelector('#pp-del-cancel')?.focus(),30);
+}
+
+/* ==================================================
+   DELETE PLAYER — v5.0.3
+   Rimuove un giocatore salvato da db.players.
+   Mostra un mini-popover di conferma inline sopra il chip.
+   Dopo conferma: splice locale + save + cloud fire-and-forget.
+================================================== */
+function deletePlayer(idx, evt){
+  evt.stopPropagation();
+  const name=db.players[idx];
+  if(!name) return;
+  _showDeleteConfirm(evt.currentTarget, name, 'giocatore', ()=>{
+    db.players.splice(idx,1);
+    save();
+    if(sIndPlayer===name){ sIndPlayer=null; }
+    // Cloud: fire-and-forget, ma ora con verifica esplicita dell'esito.
+    // FIX RLS silenzioso (v5.0.4): deletePlayer ritorna {ok,error} —
+    // se ok===false la riga è ancora viva sul cloud e ricomparirà al
+    // prossimo caricamento. Avvisiamo il docente invece di ignorarlo.
+    if(window.DB && activeCourseId){
+      window.DB.deletePlayer(activeCourseId, name).then(res=>{
+        if(res && res.ok===false){
+          console.error('[PixelProf] deletePlayer cloud FAIL:', res.error);
+          ppAlert('"'+name+'" è stato rimosso solo in locale: la cancellazione sul cloud è fallita ('+res.error+'). Potrebbe ricomparire al prossimo accesso a questa aula.', {title:'Cancellazione cloud non riuscita', icon:'⚠️'});
+        }
+      }).catch(e=>console.warn('[PixelProf] deletePlayer cloud err:', e));
+    }
+    renderIndChips();
+    checkCanStart();
+  });
+}
+function renderSqUI(){
+  const s=sh('sq-saved');
+  if(!db.teams.length){
+    s.innerHTML='<span style="font-size:12px;color:rgba(255,255,255,.3)">Nessuna squadra salvata</span>';
+  } else {
+    s.innerHTML=db.teams.map((t,i)=>`
+      <div class="pchip-row">
+        <button class="pchip pchip-left" id="sqchip-${i}"
+          style="border-left:3px solid ${escAttr(softColor(t.color))}"
+          onclick="addSavedTeam('${escAttr(t.name)}','${escAttr(t.color)}')">${escHtml(t.name)}</button>
+        <button
+          class="pchip-action-btn pchip-rename-btn"
+          title="Rinomina squadra"
+          onclick="startRenameSavedTeam(${i},event)"
+        ><i class="ti ti-pencil"></i></button>
+        <button
+          class="pchip-action-btn pchip-del-btn"
+          title="Elimina squadra"
+          onclick="deleteSavedTeam(${i},event)"
+        ><i class="ti ti-x"></i></button>
+      </div>`).join('');
+  }
+  sTeams=[{name:'',color:COLORS[0]},{name:'',color:COLORS[1]}];
+  renderSqRows();
+  checkCanStart();
+}
+function addSavedTeam(name,color){
+  if(!sTeams.find(t=>t.name===name)) sTeams.push({name,color});
+  renderSqRows();
+  _updateAddSqBtn();
+  checkSqValid();
+}
+
+/* ==================================================
+   DELETE SAVED TEAM — v5.0.3
+   Rimuove una squadra salvata da db.teams.
+   Mostra un mini-popover di conferma inline sopra il chip.
+   Dopo conferma: splice locale + save + cloud fire-and-forget.
+================================================== */
+function deleteSavedTeam(idx, evt){
+  evt.stopPropagation();
+  const team=db.teams[idx];
+  if(!team) return;
+  const name=team.name;
+  _showDeleteConfirm(evt.currentTarget, name, 'squadra', ()=>{
+    db.teams.splice(idx,1);
+    save();
+    // Cloud: fire-and-forget, ma ora con verifica esplicita dell'esito.
+    // FIX RLS silenzioso (v5.0.4) — stesso pattern di deletePlayer.
+    if(window.DB && activeCourseId){
+      window.DB.deleteTeam(activeCourseId, name).then(res=>{
+        if(res && res.ok===false){
+          console.error('[PixelProf] deleteTeam cloud FAIL:', res.error);
+          ppAlert('"'+name+'" è stata rimossa solo in locale: la cancellazione sul cloud è fallita ('+res.error+'). Potrebbe ricomparire al prossimo accesso a questa aula.', {title:'Cancellazione cloud non riuscita', icon:'⚠️'});
+        }
+      }).catch(e=>console.warn('[PixelProf] deleteTeam cloud err:', e));
+    }
+    // Rimuove anche da sTeams se presente nella sessione corrente
+    const si=sTeams.findIndex(t=>t.name===name);
+    if(si>=0) sTeams.splice(si,1);
+    // Re-render chip + righe
+    renderSqUI();
+    checkCanStart();
+  });
+}
+
+/* ==================================================
+   RENAME SAVED TEAM — N2
+   Inline edit direttamente nel chip: nessun prompt(),
+   nessun modal. Input sostituisce il chip; ✓ salva,
+   ✗ annulla. Aggiorna db.teams + sTeams se la squadra
+   è già nella sessione corrente.
+================================================== */
+function startRenameSavedTeam(idx, evt){
+  evt.stopPropagation();
+  const team=db.teams[idx];
+  if(!team) return;
+  const wrap=document.querySelector(`#sqchip-${idx}`)?.parentElement;
+  if(!wrap) return;
+  const oldName=team.name;
+  const col=team.color;
+
+  wrap.innerHTML=`
+    <div class="pchip-rename-input-wrap">
+      <div class="pchip-rename-dot" style="background:${escAttr(col)};box-shadow:0 0 5px ${escAttr(col)}"></div>
+      <input id="sq-rename-inp-${idx}"
+        class="pchip-rename-input"
+        value="${escAttr(oldName)}"
+        onkeydown="if(event.key==='Enter'){event.preventDefault();confirmRenameSavedTeam(${idx},'${escAttr(oldName)}');}
+                   if(event.key==='Escape'){event.preventDefault();renderSqUI();}"
+        onfocus="this.select()"
+      />
+      <button class="pchip-rename-save-btn" onclick="confirmRenameSavedTeam(${idx},'${escAttr(oldName)}')" title="Salva"
+      ><i class="ti ti-check"></i></button>
+      <button class="pchip-rename-cancel-btn" onclick="renderSqUI()" title="Annulla"
+      ><i class="ti ti-x"></i></button>
+    </div>`;
+  // Focus con delay per lasciar il DOM aggiornare
+  setTimeout(()=>document.getElementById(`sq-rename-inp-${idx}`)?.focus(), 30);
+}
+
+function confirmRenameSavedTeam(idx, oldName){
+  const inp=document.getElementById(`sq-rename-inp-${idx}`);
+  if(!inp) return;
+  const newName=inp.value.trim();
+  if(!newName){renderSqUI();return;}
+  if(newName===oldName){renderSqUI();return;}
+  // Controlla duplicati in db.teams
+  if(db.teams.find((t,i)=>i!==idx && t.name.trim().toLowerCase()===newName.toLowerCase())){
+    inp.style.borderBottom='1px solid #AB5649';
+    inp.style.color='#AB5649';
+    inp.title='Nome già usato';
+    inp.value='';
+    inp.placeholder='Nome già usato!';
+    inp.style.setProperty('--placeholder-color','#AB5649');
+    setTimeout(()=>renderSqUI(),1600);
+    return;
+  }
+  // Aggiorna db.teams
+  const col=db.teams[idx].color;
+  db.teams[idx].name=newName;
+  save();
+  // Aggiorna sTeams se la squadra è già presente nella sessione corrente
+  const inSession=sTeams.findIndex(t=>t.name===oldName);
+  if(inSession>=0){
+    sTeams[inSession].name=newName;
+    renderSqRows();
+  }
+  // Re-render chip
+  renderSqUI();
+}
+
+/* renderSqRows — v4.0.9 I3 fix / v5.0.0 P1:
+   oninput aggiorna SOLO sTeams[i].name + checkSqValid senza re-render DOM.
+   Il re-render (innerHTML completo) avviene solo su operazioni strutturali:
+   addSqRow() e splice (rimozione riga). Elimina il reflow ad ogni tasto.
+   Il tasto + inline sull'ultima riga gestisce l'aggiunta — nessun pulsante
+   testuale esterno. _updateAddSqBtn() è mantenuta come no-op sicuro. */
+let _sqValidDebounceTimer = null;
+function _sqOnInput(i, val){
+  sTeams[i].name = val;
+  clearTimeout(_sqValidDebounceTimer);
+  _sqValidDebounceTimer = setTimeout(checkSqValid, 150);
+}
+
+function renderSqRows(){
+  const cont = shq('sq-rows');
+  if(!cont) return;
+  const isLast = i => i === sTeams.length - 1;
+  const canAdd  = sTeams.length < 4;
+  cont.innerHTML = sTeams.map((t,i) => {
+    const dot    = `<div class="team-dot" style="background:${escAttr(softColor(t.color))}"></div>`;
+    const input  = `<input value="${escAttr(t.name)}" placeholder="Nome squadra ${i+1}..." oninput="_sqOnInput(${i},this.value)" onkeydown="if(event.key==='Enter'&&${canAdd&&isLast(i)}){event.preventDefault();addSqRow();}"/>`;
+    // Tasto + sull'ultima riga se si possono aggiungere ancora squadre
+    const addBtn = (canAdd && isLast(i))
+      ? `<button class="btn btn-neon" onclick="addSqRow()" title="Aggiungi squadra" style="padding:6px 10px;font-size:13px;flex-shrink:0"><i class="ti ti-plus"></i></button>`
+      : '';
+    // Tasto × dalla terza riga in poi
+    const removeBtn = i >= 2
+      ? `<button class="icon-btn" onclick="sTeams.splice(${i},1);renderSqRows();_updateAddSqBtn();checkSqValid()" title="Rimuovi">×</button>`
+      : '';
+    return `<div class="team-row">${dot}${input}${addBtn}${removeBtn}</div>`;
+  }).join('');
+}
+function addSqRow(){
+  if(sTeams.length>=4) return;
+  sTeams.push({name:'',color:COLORS[sTeams.length%COLORS.length]});
+  renderSqRows();
+  _updateAddSqBtn();
+  checkSqValid();
+}
+function checkSqValid(){checkCanStart();}
+
+
+/* ==================================================
+   LAUNCH
+================================================== */
+
+/* Points per correct answer in Speed Quiz  scales with question count */
+/* speedPtsPerQ — defined in scoring.js */
+
+async function launch(){
+  // Guard: stato minimo necessario
+  if(!sAct||!sMod||!sMode){console.warn('[PixelProf] launch() chiamato con stato invalido',{sAct,sMod,sMode});goHome();return;}
+
+  // Cloud hook: assicura il giocatore individuale nel DB prima di avviare
+  // Per le squadre, la chiamata avviene nel blocco matchState dopo validazione nomi
+  if(typeof window.hook_ensureParticipants==='function'){
+    if(sMode==='ind'&&sIndPlayer){
+      window.hook_ensureParticipants([{name:sIndPlayer,color:COLORS[0],type:'ind'}]);
+    }
+  }
+
+  // -- MODALIT SQUADRE  team-turn engine v2.1.6 --
+  if(sMode==='sq'){
+    // Prima chiamata a launch(): inizializza MATCH STATE
+    if(!matchState.active){
+      const v=sTeams.filter(t=>t.name.trim());
+      if(v.length<2){goHome();return;}
+      // Salva squadre nel db se nuove
+      v.forEach(t=>{if(!db.teams.find(x=>x.name===t.name))db.teams.push({name:t.name.trim(),color:t.color});});
+      save();
+      // Cloud hook: assicura i team su Supabase ORA che i nomi sono validati
+      // (la chiamata all'inizio di launch() avviene prima della validazione nomi)
+      if(typeof window.hook_ensureParticipants==='function'){
+        window.hook_ensureParticipants(
+          v.map((t,i)=>({name:t.name.trim(),color:t.color||COLORS[i],type:'sq'}))
+        );
+      }
+      // Carica il pool UNA volta e lo condivide fra tutte le squadre
+      let rawPool;
+      const act=sAct;
+      if(act==='speed'){
+        const isCached=SpeedQuizLoader.isCached(sMod);
+        if(!isCached)showSpeedQuizLoading(sMod);
+        try{rawPool=await loadSpeedPool(sMod);}
+        catch(err){console.error('[PixelProf] SpeedQuiz load error:',err);showSpeedQuizError('Impossibile caricare lo speed quiz.');matchReset();return;}
+        rawPool=_filterHard(rawPool,act); // v8.36.0
+      }else if(act==='quiz'){
+        const isCached=QuizLoader.isCached(sMod);
+        if(!isCached)showQuizLoading(sMod);
+        try{rawPool=await loadPool(sMod);}
+        catch(err){console.error('[PixelProf] Quiz load error:',err);showQuizLoadError(err.message||'Impossibile caricare il quiz.');matchReset();return;}
+        rawPool=_filterHard(rawPool,act); // v8.36.0
+      }else{
+        // match/memory/fill in modalit squadre: ogni squadra gioca in autonomia
+        // non c' un pool domande condiviso  rawPool rimane null
+        // (il filtro difficoltà per questi 3 è applicato dentro le rispettive
+        // start*() — getMatchSet()/startFill()/startTrueFalse() — invariate qui)
+        rawPool=null;
+      }
+
+      // Per quiz/speed: shuffle + slicing + ogni domanda marcata con un indice univoco
+      // per il tracking anti-duplicati tra turni squadra
+      if(rawPool!==null){
+        let frozenPool=_weightedShuffleQuizPool(rawPool.map((q,i)=>({...q,_uid:i})));
+        if(act==='speed'){const n=sN>0?sN:10;frozenPool=frozenPool.slice(0,Math.min(n,frozenPool.length));}
+        else if(sN>0){frozenPool=frozenPool.slice(0,Math.min(sN,frozenPool.length));}
+        matchState.frozenPool=frozenPool;
+      }else{
+        matchState.frozenPool=null;
+      }
+
+      matchState.active=true;
+      matchState.teams=v.map((t,i)=>({name:t.name.trim(),color:t.color||COLORS[i],type:'sq'}));
+      matchState.scores={};
+      matchState.teams.forEach(t=>{matchState.scores[t.name]=0;});
+      matchState.currentIdx=0;
+      matchState.usedQIds=new Set(); // reset tracking domande
+      matchState.isTiebreak=false;
+      matchState.tbTeams=[];
+      matchState.tbRound=0;
+    }
+    // Avvia il turno della squadra corrente
+    _startTeamTurn();
+    return;
+  }
+
+  // -- MODALIT INDIVIDUALE (invariata) --
+  if(!sIndPlayer){goHome();return;}
+  players=[{name:sIndPlayer,color:COLORS[0],type:'ind'}];
+  qScores={};players.forEach(p=>qScores[p.name]=0);prevRank=getRank();
+  const act=sAct;
+  if(act==='quiz'||act==='speed'){
+    let rawPool;
+    if(act==='speed'){
+      const isCached=SpeedQuizLoader.isCached(sMod);
+      if(!isCached)showSpeedQuizLoading(sMod);
+      try{rawPool=await loadSpeedPool(sMod);}
+      catch(err){console.error('[PixelProf] SpeedQuiz load error:',err);showSpeedQuizError('Impossibile caricare lo speed quiz. Riprova o cambia modulo.');return;}
+    }else{
+      const isCached=QuizLoader.isCached(sMod);
+      if(!isCached)showQuizLoading(sMod);
+      try{rawPool=await loadPool(sMod);}
+      catch(err){console.error('[PixelProf] Quiz load error:',err);showQuizLoadError(err.message||'Impossibile caricare il quiz. Riprova o contatta il sistema.');return;}
+    }
+    rawPool=_filterHard(rawPool,act); // v8.36.0
+    gsSet(GS.PLAYING);
+    gameType=act;
+    let pool=_weightedShuffleQuizPool(rawPool);
+    if(act==='speed'){const n=sN>0?sN:10;pool=pool.slice(0,Math.min(n,pool.length));}
+    else if(sN>0){pool=pool.slice(0,Math.min(sN,pool.length));}
+    qPool=pool;qIdx=0;qAnswered=false;qStart=Date.now();
+    stopTimer();
+    setTb(null);showScreen('tab-quiz');
+    sh('qz-game').classList.remove('hidden');sh('qz-result').classList.add('hidden');
+    // v8.34.0: il punteggio live ora si vede anche nel Quiz normale,
+    // non solo in Speed Quiz — solo timer/pausa restano esclusivi Speed.
+    sh('qz-score-pill').classList.remove('hidden');sh('qz-score-val').textContent='0';
+    if(typeof _qzSetActivityUI==='function')_qzSetActivityUI(act);
+    if(act==='speed'){
+      qSpeedLeft=60;
+      sh('qz-timer').classList.remove('hidden');sh('qz-timer').textContent='60s';
+      sh('qz-pause-btn').classList.remove('hidden');sh('qz-pause-icon').className='ti ti-player-pause';
+      qTimerInt=setInterval(()=>{
+        if(!gsIs(GS.PLAYING))return;
+        qSpeedLeft--;
+        const el=sh('qz-timer');
+        if(el){el.textContent=qSpeedLeft+'s';el.classList.toggle('red',qSpeedLeft<=10);}
+        if(qSpeedLeft<=0){clearInterval(qTimerInt);forceEnd();}
+      },1000);
+    }else{
+      sh('qz-timer').classList.add('hidden');sh('qz-pause-btn').classList.add('hidden');
+    }
+    renderQ();
+  }else{
+    gameType=act;
+    setTb(null);showScreen('tab-games');
+    if(act==='match')await startMatch(sh('g-area'),sMod);
+    else if(act==='memory')await startMemory(sh('g-area'),sMod);
+    else if(act==='fill')await startFill(sh('g-area'),sMod);
+    else if(act==='truefalse')await startTrueFalse(sh('g-area'),sMod);
+  }
+}
+
+/* ==================================================
+   TEAM TURN ENGINE  v2.1.6
+   Avvia la sessione per la squadra corrente.
+
+   FIX ROUTING: per match/memory/fill avvia il gioco
+   corretto invece di sempre renderQ().
+
+   FIX DUPLICATI: per quiz/speed la squadra riceve
+   solo domande non ancora usate nella partita,
+   consumando il frozenPool in modo globale.
+================================================== */
+function _startTeamTurn(){
+  const ms=matchState;
+  const team=ms.isTiebreak?ms.tbTeams[ms.currentIdx]:ms.teams[ms.currentIdx];
+  if(!team){console.error('[PixelProf] _startTeamTurn: team non trovato idx=',ms.currentIdx);matchReset();goHome();return;}
+
+  // SESSION STATE per questo turno  isolato
+  players=[{name:team.name,color:team.color,type:'sq'}];
+  qScores={};qScores[team.name]=0;
+  prevRank=getRank();
+  gsSet(GS.PLAYING);
+  gameType=sAct;
+
+  // -- GIOCHI NON-QUIZ (match / memory / fill / truefalse) --
+  // Ognuno gioca la propria istanza indipendente  nessun pool condiviso,
+  // nessun problema di duplicati.
+  if(sAct==='match'||sAct==='memory'||sAct==='fill'||sAct==='truefalse'){
+    _showTeamTurnSplash(team,async()=>{
+      setTb(null);showScreen('tab-games');
+      const cont=sh('g-area');
+      if(sAct==='match')  await startMatch(cont,sMod);
+      else if(sAct==='memory') await startMemory(cont,sMod);
+      else if(sAct==='fill')   await startFill(cont,sMod);
+      else if(sAct==='truefalse') await startTrueFalse(cont,sMod);
+    });
+    return;
+  }
+
+  // -- GIOCHI QUIZ / SPEED QUIZ --
+  // Consuma le domande non ancora usate dal frozenPool globale.
+  // Se il pool  esaurito o insufficiente, gestisce il caso dedicato.
+
+  // Quante domande servono a questa squadra?
+  const qNeeded = sAct==='speed'
+    ? (sN>0 ? sN : 10)                          // speed: usa tutte quelle allocate
+    : (sN>0 ? sN : (ms.frozenPool||[]).length);  // quiz: usa sN o tutto il pool
+
+  // Filtra le domande non ancora usate
+  const available=(ms.frozenPool||[]).filter(q=>!ms.usedQIds.has(q._uid));
+
+  if(available.length===0){
+    // Pool completamente esaurito  reshuffle controllato e reset tracking
+    console.warn('[PixelProf] Pool esaurito — reshuffle controllato per nuova squadra');
+    ms.usedQIds=new Set();
+    const reshuffled=_weightedShuffleQuizPool([...(ms.frozenPool||[])]);
+    ms.frozenPool=reshuffled;
+  }
+
+  // Ri-filtra dopo eventuale reshuffle
+  const freshAvailable=(ms.frozenPool||[]).filter(q=>!ms.usedQIds.has(q._uid));
+  // Prende le prime qNeeded domande disponibili
+  const teamPool=freshAvailable.slice(0,Math.min(qNeeded,freshAvailable.length));
+
+  // Marca le domande di questo turno come usate
+  teamPool.forEach(q=>ms.usedQIds.add(q._uid));
+
+  qPool=teamPool;
+  qIdx=0;qAnswered=false;qStart=Date.now();
+  stopTimer();resetSpeedUI();
+
+  // Mostra schermata transizione "Turno di X"
+  _showTeamTurnSplash(team,()=>{
+    // Dopo il countdown, avvia il quiz engine
+    setTb(null);showScreen('tab-quiz');
+    sh('qz-game').classList.remove('hidden');sh('qz-result').classList.add('hidden');
+    // v8.34.0: punteggio live anche nel Quiz normale a squadre.
+    sh('qz-score-pill').classList.remove('hidden');sh('qz-score-val').textContent='0';
+    if(typeof _qzSetActivityUI==='function')_qzSetActivityUI(sAct);
+    if(sAct==='speed'){
+      qSpeedLeft=60;
+      sh('qz-timer').classList.remove('hidden');sh('qz-timer').textContent='60s';
+      sh('qz-pause-btn').classList.remove('hidden');sh('qz-pause-icon').className='ti ti-player-pause';
+      qTimerInt=setInterval(()=>{
+        if(!gsIs(GS.PLAYING))return;
+        qSpeedLeft--;
+        const el=sh('qz-timer');
+        if(el){el.textContent=qSpeedLeft+'s';el.classList.toggle('red',qSpeedLeft<=10);}
+        if(qSpeedLeft<=0){clearInterval(qTimerInt);forceEnd();}
+      },1000);
+    }else{
+      sh('qz-timer').classList.add('hidden');sh('qz-pause-btn').classList.add('hidden');
+    }
+    if(qPool.length===0){
+      // Nessuna domanda disponibile  mostra messaggio e passa al team successivo
+      sh('qz-q').textContent='Domande esaurite per questa sessione.';
+      sh('qz-opts').innerHTML='';
+      setTimeout(()=>endQuiz(),1500);
+      return;
+    }
+    renderQ();
+  });
+}
+
+/* Schermata di transizione tra un turno e il successivo.
+   Mostra "Tocca a: [squadra]" con countdown 3-2-1 poi chiama cb(). */
+function _showTeamTurnSplash(team,cb){
+  setTb(null);showScreen('tab-quiz');
+  sh('qz-game').classList.add('hidden');
+  sh('qz-result').classList.remove('hidden');
+  const ms=matchState;
+  const totalTeams=ms.isTiebreak?ms.tbTeams.length:ms.teams.length;
+  const teamNum=ms.currentIdx+1;
+  const isTb=ms.isTiebreak;
+  const tbLabel=isTb?`<div style="font-size:10px;font-weight:700;color:#7A5A38;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;font-family:'Share Tech Mono',monospace">⚡ Spareggio — Round ${ms.tbRound}</div>`:'';
+  const progLabel=`Squadra ${teamNum} di ${totalTeams}`;
+  // Scoreboard delle squadre che hanno gi giocato
+  const doneTeams=(ms.isTiebreak?ms.tbTeams:ms.teams).slice(0,ms.currentIdx);
+  const scoreboard=doneTeams.length?`<div style="margin-top:14px;padding:10px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;font-size:12px;font-family:'Share Tech Mono',monospace">
+    ${doneTeams.map(t=>`<div style="display:flex;justify-content:space-between;color:rgba(255,255,255,.5);margin-bottom:4px"><span style="color:${escAttr(t.color)}">${escHtml(t.name)}</span><span>${ms.scores[t.name]} pt</span></div>`).join('')}
+  </div>`:'';
+  sh('qz-result').innerHTML=`<div class="result-wrap" style="text-align:center;padding:2rem 1rem">
+    ${tbLabel}
+    <div style="font-size:10px;color:rgba(255,255,255,.3);font-family:'Share Tech Mono',monospace;letter-spacing:2px;margin-bottom:16px;text-transform:uppercase">${progLabel}</div>
+    <div style="font-size:48px;margin-bottom:10px">${team.color?'🎮':'🎮'}</div>
+    <div style="font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-family:'Share Tech Mono',monospace">Tocca a</div>
+    <div style="font-size:26px;font-weight:700;color:${escAttr(team.color)};text-shadow:0 0 20px ${escAttr(team.color)}40;margin-bottom:4px">${escHtml(team.name)}</div>
+    ${scoreboard}
+    <div style="margin-top:24px;font-size:36px;font-weight:700;font-family:'Orbitron',monospace;color:var(--accent)" id="tb-countdown">3</div>
+    <div style="font-size:11px;color:rgba(255,255,255,.3);margin-top:6px;font-family:'Share Tech Mono',monospace">Il gioco inizia tra poco…</div>
+  </div>`;
+  // FIX C1: se un countdown precedente è ancora vivo (es. splash multipli rapidi),
+  // lo distrugge prima di crearne uno nuovo. Previene race condition e doppio avvio.
+  if(matchState._splashInterval){
+    clearInterval(matchState._splashInterval);
+    matchState._splashInterval=null;
+  }
+  let n=3;
+  matchState._splashInterval=setInterval(()=>{
+    n--;
+    const el=document.getElementById('tb-countdown');
+    if(el)el.textContent=n>0?n:'Vai!';
+    if(n<=0){
+      // FIX C1: cleanup al termine naturale prima di invocare cb()
+      clearInterval(matchState._splashInterval);
+      matchState._splashInterval=null;
+      setTimeout(cb,400);
+    }
+  },1000);
+}
+
+/* Chiamata da endQuiz() o showGameResult() quando sMode==='sq'.
+   Accumula il punteggio, poi decide se passare al team successivo
+   oppure se avviare lo spareggio o mostrare il risultato finale.
+
+   v2.1.6: gestisce correttamente la fine turno per TUTTI i minigiochi
+   (quiz, speed, match, memory, fill). */
+function _onTeamTurnEnd(){
+  const ms=matchState;
+  const activeList=ms.isTiebreak?ms.tbTeams:ms.teams;
+  const team=activeList[ms.currentIdx];
+
+  // Accumula punteggio sessione nel MATCH STATE
+  const sessionPts=qScores[team.name]||0;
+  ms.scores[team.name]=(ms.scores[team.name]||0)+sessionPts;
+
+  // Salva in lb (best score)  per match/memory/fill lo facciamo qui;
+  // per quiz/speed endQuiz() non chiama questo path diretto
+  saveLbEntry(team,ms.scores[team.name],sAct,sMod);
+
+  ms.currentIdx++;
+
+  if(ms.currentIdx<activeList.length){
+    // Ci sono ancora squadre da giocare in questo round
+    gsSet(GS.IDLE);
+    setTimeout(()=>_startTeamTurn(),300);
+  }else{
+    // Tutti hanno giocato  controlla pareggio
+    // Per match/memory/fill/truefalse salva sessione ora (per quiz lo fa endQuiz)
+    if(sAct==='match'||sAct==='memory'||sAct==='fill'||sAct==='truefalse'){
+      saveSessionResult(sAct,sMod);
+      save();
+    }
+    _checkMatchEnd();
+  }
+}
+
+/* Dopo che tutte le squadre hanno completato il loro turno:
+   se c' un pareggio al primo posto  spareggio,
+   altrimenti → schermata finale. */
+function _checkMatchEnd(){
+  const ms=matchState;
+  const allTeams=ms.isTiebreak?ms.tbTeams:ms.teams;
+  // Ordina per score desc
+  const sorted=[...allTeams].sort((a,b)=>(ms.scores[b.name]||0)-(ms.scores[a.name]||0));
+  const topScore=ms.scores[sorted[0].name]||0;
+  const tied=sorted.filter(t=>(ms.scores[t.name]||0)===topScore);
+
+  if(tied.length>1&&!ms.isTiebreak){
+    //  SPAREGGIO: prepara un round con solo le squadre pari
+    ms.isTiebreak=true;
+    ms.tbTeams=tied;
+    ms.currentIdx=0;
+    ms.tbRound=1;
+    // Pool spareggio: 1 domanda per squadra, nuova casualit
+    const tbPool=shuffle([...(ms.frozenPool||[])]).slice(0,1);
+    ms.frozenPool=tbPool.length>0?tbPool:null;
+    _showTiebreakerIntro(tied,()=>_startTeamTurn());
+  }else if(tied.length>1&&ms.isTiebreak){
+    // Ancora pareggio  un altro round di spareggio
+    ms.currentIdx=0;
+    ms.tbRound++;
+    const tbPool=shuffle([...(matchState._originalPool||ms.frozenPool||[])]).slice(0,1);
+    ms.frozenPool=tbPool.length>0?tbPool:null;
+    _showTiebreakerIntro(tied,()=>_startTeamTurn());
+  }else{
+    // Vincitore determinato
+    saveSessionResult(sAct,sMod);
+    save();
+    _showMatchFinalResult();
+  }
+}
+
+/* Banner "Pareggio  Spareggio!" prima di ogni round extra */
+function _showTiebreakerIntro(tied,cb){
+  const ms=matchState;
+  // Preserva il pool originale per generare domande nuove a ogni round
+  if(!ms._originalPool&&ms.frozenPool)ms._originalPool=[...ms.frozenPool];
+  setTb(null);showScreen('tab-quiz');
+  sh('qz-game').classList.add('hidden');
+  sh('qz-result').classList.remove('hidden');
+  const names=tied.map(t=>`<span style="color:${escAttr(t.color)};font-weight:700">${escHtml(t.name)}</span>`).join(' <span style="color:rgba(255,255,255,.3)">vs</span> ');
+  sh('qz-result').innerHTML=`<div class="result-wrap" style="text-align:center;padding:2rem 1rem">
+    <div style="font-size:40px;margin-bottom:14px">⚡</div>
+    <div style="font-family:'Orbitron',monospace;font-size:18px;font-weight:900;color:#7A5A38;text-shadow:0 0 20px #7A5A3860;margin-bottom:6px">PAREGGIO!</div>
+    <div style="font-size:13px;color:rgba(255,255,255,.4);margin-bottom:14px">Stessi punti — parte lo spareggio</div>
+    <div style="font-size:14px;line-height:2">${names}</div>
+    <div style="margin-top:20px;font-size:11px;color:rgba(255,255,255,.3);font-family:'Share Tech Mono',monospace">Round ${ms.tbRound} · 1 domanda per squadra</div>
+    <div style="margin-top:20px;font-size:28px;font-weight:700;font-family:'Orbitron',monospace;color:#7A5A38" id="tb-countdown">3</div>
+  </div>`;
+  let n=3;
+  // FIX C1: usa lo stesso slot _splashInterval di _showTeamTurnSplash.
+  // Cleanup anti-istanza multipla + tracking per matchReset().
+  if(matchState._splashInterval){
+    clearInterval(matchState._splashInterval);
+    matchState._splashInterval=null;
+  }
+  matchState._splashInterval=setInterval(()=>{
+    n--;
+    const el=document.getElementById('tb-countdown');
+    if(el)el.textContent=n>0?n:'Via!';
+    if(n<=0){
+      // FIX C1: cleanup al termine naturale
+      clearInterval(matchState._splashInterval);
+      matchState._splashInterval=null;
+      setTimeout(cb,400);
+    }
+  },1000);
+}
+
+/* Schermata finale della partita a squadre 
+   mostra SOLO i risultati della partita corrente, nessuna classifica storica. */
+function _showMatchFinalResult(){
+  const ms=matchState;
+  gsSet(GS.FINISHED);
+  stopTimer();stopMemTimer();
+  // Ordina squadre per punteggio desc
+  const sorted=[...ms.teams].sort((a,b)=>(ms.scores[b.name]||0)-(ms.scores[a.name]||0));
+  const rank=sorted.map(t=>t.name);
+  const scoreMap=Object.assign({},ms.scores);
+  const winner=sorted[0];
+  const medals=['🥇','🥈','🥉'];
+  // Build classifica corrente (non storica)
+  const rankRows=sorted.map((t,i)=>{
+    const pts=ms.scores[t.name]||0;
+    const medal=i<3?medals[i]:''+(i+1)+'.';
+    return`<div style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:${i===0?'rgba(184,147,90,.07)':'rgba(255,255,255,.03)'};border:1px solid ${i===0?'rgba(184,147,90,.2)':'rgba(255,255,255,.07)'};margin-bottom:6px">
+      <span style="font-size:20px;width:28px;text-align:center">${medal}</span>
+      <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${escAttr(t.color)};box-shadow:0 0 6px ${escAttr(t.color)};flex-shrink:0"></span>
+      <span style="flex:1;font-weight:600;color:#fff">${escHtml(t.name)}</span>
+      <span style="font-family:'Share Tech Mono',monospace;font-weight:700;font-size:15px;color:${i===0?'#B8935A':'var(--accent)'}">${pts} pt</span>
+    </div>`;
+  }).join('');
+  const tbNote=ms.isTiebreak?`<div style="margin-bottom:12px;padding:6px 12px;border-radius:20px;background:rgba(122,90,56,.1);border:1px solid rgba(122,90,56,.2);font-size:11px;color:#7A5A38;text-align:center;font-family:'Share Tech Mono',monospace">⚡ Deciso ai supplementari — Round ${ms.tbRound}</div>`:'';
+  setTb(null);showScreen('tab-quiz');
+  sh('qz-game').classList.add('hidden');
+  sh('qz-result').classList.remove('hidden');
+  sh('qz-result').innerHTML=`<div class="result-wrap">
+    <div class="result-hero">
+      <span class="result-stars">🏆</span>
+      <span class="result-score" style="font-size:22px;line-height:1.3;margin-bottom:4px">${escHtml(winner.name)}</span>
+      <span class="result-label">vince la partita con ${ms.scores[winner.name]} pt</span>
+    </div>
+    ${tbNote}
+    <div style="font-size:10px;font-weight:700;color:rgba(78,116,100,.6);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;display:flex;align-items:center;gap:8px">
+      Classifica partita corrente
+      <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(78,116,100,.2),transparent)"></span>
+    </div>
+    ${rankRows}
+    <div class="btn-row" style="margin-top:20px">
+      <button class="btn" onclick="matchReset();goHome()"><i class="ti ti-home"></i> Home</button>
+      <button class="btn" onclick="_restartWholeMatch()"><i class="ti ti-refresh"></i> Rivincita</button>
+      <button class="btn btn-neon" onclick="goTab('lb')"><i class="ti ti-trophy"></i> Classifica</button>
+    </div>
+  </div>`;
+  launchConfetti();
+  matchReset();
+}
+
+/* Rivincita: stesse squadre, nuova partita */
+function _restartWholeMatch(){
+  // sTeams  ancora valido dalla sessione corrente
+  matchReset();
+  launch();
+}
+
+/* Full Speed Quiz UI reset  called before every launch/restart */
+
+/* ==================================================
+   SAVE SCORE TO LB2  extended schema
+================================================== */
+/* ==================================================
+   saveLbEntry — v4.0.6
+   Incorpora hook_saveLbEntry cloud (ex override in app.js).
+================================================== */
+function saveLbEntry(player, pts, act, mod){
+  const type=player.type; // 'ind' | 'sq'
+  if(!db.lb2[type])db.lb2[type]={};
+  if(!db.lb2[type][act])db.lb2[type][act]={};
+  const bucket=db.lb2[type][act];
+  const key=player.name;
+  const existing=bucket[key];
+  // Keep best score per (player, activity, mod) combination
+  // We store an array of entries so we can show per-module breakdown
+  if(!existing){
+    bucket[key]={entries:[{pts,mod,games:1}],color:player.color||null};
+  }else{
+    // find entry for same mod
+    const idx=existing.entries.findIndex(e=>e.mod===mod);
+    if(idx>=0){
+      existing.entries[idx].games++;
+      if(pts>existing.entries[idx].pts)existing.entries[idx].pts=pts;
+    }else{
+      existing.entries.push({pts,mod,games:1});
+    }
+    if(player.color)existing.color=player.color;
+  }
+  // Cloud hook — fire-and-forget
+  if(typeof window.hook_saveLbEntry==='function') window.hook_saveLbEntry(player,pts,act,mod);
+}
+
+/* Persiste la sessione completa  usata alla fine di ogni partita.
+   Struttura: { course, game, mode, teams[], timestamp, ...extra }
+   Salvata in db.sessions (array append-only, max 100 voci).
+   v4.0.6: incorpora hook_saveSession cloud (ex override in app.js).
+   v6.5.0: parametro opzionale `extra` — oggetto con campi aggiuntivi
+   (bestStreak, maxCombo, perfectRun) usati dal sistema Traguardi per
+   sbloccare badge legati a streak/combo/sessioni perfette senza dover
+   ricostruirli a posteriori dal solo punteggio finale. Retrocompatibile:
+   tutte le chiamate esistenti con 2 argomenti continuano a funzionare
+   invariate (extra=={} → nessun campo aggiuntivo scritto). */
+function saveSessionResult(act, mod, extra){
+  if(!db.sessions)db.sessions=[];
+  // In modalit squadre usa il quadro completo del matchState
+  const teamsSnapshot=sMode==='sq'&&matchState.teams.length
+    ?matchState.teams.map(t=>({name:t.name,color:t.color,score:matchState.scores[t.name]||0}))
+    :players.map(p=>({name:p.name,color:p.color,score:qScores[p.name]||0}));
+  const entry=Object.assign({
+    course: activeCourseId||null,
+    game:   act,
+    mod:    mod,
+    mode:   sMode,
+    teams:  teamsSnapshot,
+    timestamp: new Date().toISOString(),
+  }, extra||{});
+  db.sessions.push(entry);
+  if(db.sessions.length>100)db.sessions=db.sessions.slice(-100);
+  // Cloud hook — fire-and-forget
+  if(typeof window.hook_saveSession==='function'){
+    const participants=sMode==='sq'&&matchState.teams.length
+      ?matchState.teams.map(t=>({name:t.name,color:t.color,score:matchState.scores[t.name]||0,type:'sq'}))
+      :players.map(p=>({name:p.name,color:p.color,score:qScores[p.name]||0,type:'ind'}));
+    window.hook_saveSession(act,mod,sMode,participants,activeCourseId,qPool.length||null);
+  }
+  // Traguardi — v6.5.0: verifica se questa sessione sblocca nuovi badge.
+  // Guard difensivo: badges.js potrebbe non essere ancora caricato.
+  if(typeof checkAndShowNewBadges==='function') checkAndShowNewBadges();
+}
+
+/* ==================================================
+   RANKING
+================================================== */
+function getRank(){return[...players].sort((a,b)=>(qScores[b.name]||0)-(qScores[a.name]||0)).map(p=>p.name);}
+
+function renderLiveBar(){
+  const bar=sh('live-bar');if(!bar)return;
+  // In modalit squadre mostra solo la squadra che sta giocando ora
+  // (players ha sempre un solo elemento durante un turno squadra)
+  const sorted=[...players].sort((a,b)=>(qScores[b.name]||0)-(qScores[a.name]||0));
+  const next=sorted.map(p=>`<div class="live-chip"><div class="dot" style="background:${escAttr(p.color)};box-shadow:0 0 6px ${escAttr(p.color)}"></div>${escHtml(p.name)}<span class="pts">${qScores[p.name]||0}</span></div>`).join('');
+  if(bar.innerHTML!==next)bar.innerHTML=next;
+  // Etichetta turno: in individuale mai mostrata; in sq mostra avanzamento partita
+  const tl=sh('turn-lbl');
+  if(tl){
+    if(sMode==='sq'&&matchState.active){
+      const ms=matchState;
+      const activeList=ms.isTiebreak?ms.tbTeams:ms.teams;
+      const label=ms.isTiebreak
+        ?`⚡ Spareggio R${ms.tbRound} — ${activeList[ms.currentIdx]?.name||''}`
+        :`Squadra ${ms.currentIdx+1}/${activeList.length}`;
+      tl.textContent=label;
+      tl.style.color=players[0]?.color||'rgba(255,255,255,.4)';
+    }else{
+      tl.textContent='';
+    }
+  }
+}
+
+function checkOvertake(){const nr=getRank();if(nr.length<2)return;for(let i=0;i<nr.length-1;i++){if(prevRank.indexOf(nr[i])>i){doOvertake(nr[i],nr[i+1]||'');break;}}prevRank=nr;}
+function doOvertake(w,l){sh('ot-text').textContent=w+(l?' sorpassa '+l:'')+' !';sh('overtake-popup').style.display='block';launchConfetti();setTimeout(()=>sh('overtake-popup').style.display='none',3000);}
+function launchConfetti(){const cv=sh('confetti-canvas');cv.style.display='block';cv.width=window.innerWidth;cv.height=window.innerHeight;const ctx=cv.getContext('2d');const pp=Array.from({length:70},()=>({x:Math.random()*cv.width,y:-20,r:Math.random()*5+3,d:Math.random()*6+2,c:COLORS[Math.floor(Math.random()*COLORS.length)],ta:0,ts:Math.random()*.1+.05,t:0}));let f=0;function draw(){ctx.clearRect(0,0,cv.width,cv.height);pp.forEach(p=>{ctx.beginPath();ctx.lineWidth=p.r/2;ctx.strokeStyle=p.c;ctx.moveTo(p.x+p.t+p.r/3,p.y);ctx.lineTo(p.x+p.t,p.y+p.t+p.r/3);ctx.stroke();p.ta+=p.ts;p.y+=Math.cos(p.d)+1.5;p.x+=Math.sin(p.d*.3);p.t=Math.sin(p.ta)*12;});f++;if(f<100)requestAnimationFrame(draw);else cv.style.display='none';}requestAnimationFrame(draw);}
+
+/* ==================================================
+   GAME RESULT (non-quiz: match, memory, fill)
+   v2.1.6: in modalit squadre delega a _onTeamTurnEnd()
+   invece di mostrare il risultato finale individuale.
+================================================== */
+function showGameResult(name,detail,scoreMap){
+  gsSet(GS.FINISHED);
+  stopMemTimer();
+  stopMatchTimer();
+
+  // -- MODALIT SQUADRE: accumula punteggio e passa al turno successivo --
+  if(sMode==='sq'&&matchState.active){
+    // Il punteggio del giocatore corrente  gi in qScores (impostato da
+    // mSel/memFlip/renderFill prima di chiamare showGameResult)
+    save();
+    _onTeamTurnEnd();
+    return;
+  }
+
+  // -- MODALIT INDIVIDUALE: comportamento originale --
+  const rank=getRank();
+  sh('g-area').innerHTML=`<div class="result-wrap"><div class="result-hero"><span class="result-stars">⭐⭐⭐</span><span class="result-score" style="font-size:30px;margin-bottom:6px">${name}</span><span class="result-label">${detail}</span></div>${buildPodiumHTML(rank,scoreMap)}<div class="btn-row"><button class="btn" onclick="goHome()"><i class="ti ti-home"></i> Home</button><button class="btn" onclick="launch()"><i class="ti ti-refresh"></i> Ricomincia</button><button class="btn btn-neon" onclick="goTab('lb')"><i class="ti ti-trophy"></i> Classifica</button></div></div>`;
+}
+
+/* ==================================================
+   LEADERBOARD  3-STEP NAVIGATION
+================================================== */
+function lbShowStep(step){
+  ['type','act','results'].forEach(s=>sh('lb-step-'+s).classList.toggle('hidden',s!==step));
+}
+
+function lbSelectType(type){
+  lbType=type;lbAct=null;
+  lbShowStep('act');
+  // Update nav breadcrumb
+  const typeLabel=type==='ind'?'🧑‍💻 Individuale':'🏆 Squadre';
+  sh('lb-nav-act').innerHTML=`
+    <span class="lb-nav-crumb" onclick="lbShowStep('type');lbType=null"><i class="ti ti-trophy"></i> Classifica</span>
+    <span class="lb-nav-sep">/</span>
+    <span class="lb-nav-crumb current">${typeLabel}</span>`;
+  // Highlight active type in activity buttons
+  document.querySelectorAll('.lb-act-btn').forEach(b=>b.classList.remove('active'));
+}
+
+function lbSelectAct(act){
+  lbAct=act;
+  lbShowStep('results');
+  // Highlight button
+  document.querySelectorAll('.lb-act-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector('.lb-act-btn.a-'+act)?.classList.add('active');
+  // Nav
+  const typeLabel=lbType==='ind'?'🧑‍💻 Individuale':'🏆 Squadre';
+  const actLabel=ACT_ICON[act]+' '+ACT_LABEL[act];
+  sh('lb-nav-results').innerHTML=`
+    <span class="lb-nav-crumb" onclick="lbShowStep('type');lbType=null"><i class="ti ti-trophy"></i> Classifica</span>
+    <span class="lb-nav-sep">/</span>
+    <span class="lb-nav-crumb" onclick="lbSelectType('${lbType}')">${typeLabel}</span>
+    <span class="lb-nav-sep">/</span>
+    <span class="lb-nav-crumb current">${actLabel}</span>`;
+  renderLbResults(lbType,act);
+  _mergeCloudLb(lbType,act); // v8.37.3 — fire-and-forget, vedi sotto
+}
+
+/**
+ * v8.37.3 — completa un secondo gap trovato da Erasmo: window.hook_
+ * loadLeaderboard esisteva già (game_hooks.js, HOOK 4) ma non era mai
+ * stato chiamato dalla UI — renderLbResults() leggeva SOLO db.lb2
+ * locale, quindi la classifica non mostrava mai i punteggi fatti su
+ * altri dispositivi. renderLbResults() ha già disegnato la vista con
+ * i dati locali (istantaneo); qui arricchiamo db.lb2 con l'aggregato
+ * cloud e ridisegniamo SOLO se qualcosa è cambiato e l'utente sta
+ * ancora guardando questa stessa vista (type+act) — altrimenti ha già
+ * navigato altrove nel frattempo.
+ */
+async function _mergeCloudLb(type,act){
+  if(typeof window.hook_loadLeaderboard!=='function') return;
+  let rows;
+  try{ rows=await window.hook_loadLeaderboard(activeCourseId,type,act); }
+  catch(err){ console.warn('[PixelProf] _mergeCloudLb errore:',err); return; }
+  if(!Array.isArray(rows)||!rows.length) return;
+  if(!db.lb2[type])db.lb2[type]={};
+  if(!db.lb2[type][act])db.lb2[type][act]={};
+  const bucket=db.lb2[type][act];
+  let changed=false;
+  rows.forEach(r=>{
+    if(!r.name)return;
+    if(!bucket[r.name]){bucket[r.name]={color:r.color||null,entries:[]};changed=true;}
+    if(r.color && !bucket[r.name].color){bucket[r.name].color=r.color;changed=true;}
+    const existing=bucket[r.name].entries.find(e=>e.mod===r.mod);
+    if(existing){
+      if(r.pts>existing.pts){existing.pts=r.pts;changed=true;}
+      if((r.games||0)>(existing.games||0)){existing.games=r.games;changed=true;}
+    }else{
+      bucket[r.name].entries.push({pts:r.pts,mod:r.mod,games:r.games});
+      changed=true;
+    }
+  });
+  if(changed){
+    save();
+    if(lbType===type && lbAct===act) renderLbResults(type,act);
+  }
+}

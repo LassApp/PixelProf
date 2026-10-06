@@ -441,7 +441,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <div class="dd-card dd-new-teacher" role="button" tabindex="0" aria-label="Nuovo Docente"
         onclick="tmGoCreate()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tmGoCreate();}">
         <div class="dd-card-inner">
-          <span class="dd-icon">🆕</span>
+          <span class="dd-icon dd-icon-line"><i class="ti ti-user-plus"></i></span>
           <div class="dd-title">Nuovo Docente</div>
           <div class="dd-sub">Crea e invita un nuovo docente.</div>
           <i class="ti ti-arrow-right dd-arrow"></i>
@@ -450,7 +450,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <div class="dd-card dd-teacher-list" role="button" tabindex="0" aria-label="Docenti"
         onclick="tmGoList()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();tmGoList();}">
         <div class="dd-card-inner">
-          <span class="dd-icon">👥</span>
+          <span class="dd-icon dd-icon-line"><i class="ti ti-users"></i></span>
           <div class="dd-title">Docenti</div>
           <div class="dd-sub">Visualizza e gestisci i docenti registrati.</div>
           <i class="ti ti-arrow-right dd-arrow"></i>

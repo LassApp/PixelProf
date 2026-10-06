@@ -64,7 +64,6 @@
    CSS CUSTOM PROPERTIES — Design System v7
 =============================================== */
 :root{
-  --course-theme-bg:transparent;
   --blue:#54708C;
   --blue-dim:rgba(84,112,140,.12);
   --radius-sm:8px;
@@ -75,17 +74,7 @@
   --transition-bounce:.3s cubic-bezier(.34,1.56,.64,1);
 }
 
-/* ===============================================
-   COURSE THEME — dynamic background overlay
-=============================================== */
-#app-theme-bg{
-  position:fixed;inset:0;z-index:0;
-  pointer-events:none;
-  background:var(--course-theme-bg);
-  opacity:.4;
-  transition:background 0.6s cubic-bezier(.4,0,.2,1), opacity 0.6s ease;
-}
-/* Ensure all content sits above the theme overlay */
+/* Contenuto sempre sopra gli sfondi decorativi (#app-theme-bg, la tinta per-aula, è stato rimosso: giro colori 05/10) */
 .app, .topbar, #screen-courses, #screen-splash,
 .pp-dialog-overlay, #overtake-popup, #confetti-canvas {
   position:relative;z-index:1;
@@ -1074,8 +1063,8 @@ body{
 .lb-act-btn.a-fill.active .lab-label,.lb-act-btn.a-fill:hover .lab-label{color:#54708C;}
 
 .lb-act-btn.a-truefalse::after{background:#7A5A38;}
-.lb-act-btn.a-truefalse.active{border-color:rgba(255,209,102,.5);background:rgba(255,209,102,.08);box-shadow:0 0 14px rgba(255,209,102,.08);}
-.lb-act-btn.a-truefalse:hover{border-color:rgba(255,209,102,.25);}
+.lb-act-btn.a-truefalse.active{border-color:rgba(212,180,131,.5);background:rgba(212,180,131,.08);box-shadow:0 0 14px rgba(212,180,131,.08);}
+.lb-act-btn.a-truefalse:hover{border-color:rgba(212,180,131,.25);}
 .lb-act-btn.a-truefalse.active .lab-label,.lb-act-btn.a-truefalse:hover .lab-label{color:#7A5A38;}
 
 /* Breadcrumb nav */
@@ -1111,7 +1100,7 @@ body{
 .lb-entry.rank-2{border-color:rgba(192,192,192,.2);background:rgba(192,192,192,.04)}
 .lb-entry.rank-2::after{background:#c0c0c0;}
 .lb-entry.rank-3{border-color:rgba(140,90,58,.2);background:rgba(140,90,58,.04)}
-.lb-entry.rank-3::after{background:#cd7f32;}
+.lb-entry.rank-3::after{background:#9C6B3E;}
 
 .lb-td{font-size:13px;color:#e2e8f0}
 .lb-td.pos{width:40px;flex-shrink:0;font-size:20px;text-align:center}
@@ -1123,13 +1112,13 @@ body{
 .lb-td.pts{width:60px;flex-shrink:0;text-align:right;font-family:'Share Tech Mono',monospace;font-weight:700;font-size:14px}
 .lb-entry.rank-1 .lb-td.pts{color:#B8935A}
 .lb-entry.rank-2 .lb-td.pts{color:#c0c0c0}
-.lb-entry.rank-3 .lb-td.pts{color:#cd7f32}
+.lb-entry.rank-3 .lb-td.pts{color:#9C6B3E}
 .lb-entry:not(.rank-1):not(.rank-2):not(.rank-3) .lb-td.pts{color:var(--accent)}
 
 /* Module badge */
 .mod-badge{display:inline-flex;align-items:center;gap:4px;padding:2px 8px;border-radius:20px;font-size:9px;font-weight:600;letter-spacing:.3px;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.mod-badge.ce{background:rgba(122,90,56,.14);border:1px solid rgba(122,90,56,.3);color:#ffcf5c}
-.mod-badge.oe{background:rgba(var(--purple-rgb),.12);border:1px solid rgba(var(--purple-rgb),.25);color:#a894ff}
+.mod-badge.ce{background:rgba(122,90,56,.14);border:1px solid rgba(122,90,56,.3);color:#D4B483}
+.mod-badge.oe{background:rgba(var(--purple-rgb),.12);border:1px solid rgba(var(--purple-rgb),.25);color:#8B9968}
 .mod-badge.mix{background:rgba(var(--accent-rgb),.08);border:1px solid rgba(var(--accent-rgb),.2);color:var(--accent)}
 .mod-badge.wp{background:rgba(84,112,140,.12);border:1px solid rgba(84,112,140,.28);color:#7D99B3}
 
@@ -1142,7 +1131,7 @@ body{
 .lb-reset-btn{
   display:inline-flex;align-items:center;gap:5px;padding:5px 12px;border-radius:7px;
   border:1px solid rgba(171,86,73,.2);background:rgba(171,86,73,.05);
-  color:rgba(255,100,100,.6);font-size:11px;cursor:pointer;font-family:inherit;
+  color:rgba(196,120,105,.9);font-size:11px;cursor:pointer;font-family:inherit;
   transition:all var(--transition-fast);font-weight:500;position:relative;overflow:hidden;
 }
 .lb-reset-btn::after{
@@ -1413,38 +1402,6 @@ body{
 }
 .icp-close:hover{border-color:rgba(255,255,255,.2);color:#fff;}
 .icp-close:hover::after{transform:scaleX(1);}
-/* .icp-x-close — pulsante × in alto a destra del color/bg picker.
-   v6.6: estratto dallo stile inline + onmouseover/onmouseout in
-   index.html per poterlo tematizzare correttamente (era invisibile
-   sia a riposo che in hover nel tema chiaro). */
-.icp-x-close{
-  background:none;border:none;color:rgba(255,255,255,.35);
-  font-size:18px;cursor:pointer;padding:0;line-height:1;
-  transition:color .18s;font-family:inherit;
-}
-.icp-x-close:hover{color:#fff;}
-
-/* Bg picker */
-.bg-picker-box .icp-grid{grid-template-columns:repeat(4,1fr);}
-.bg-swatch{
-  aspect-ratio:1;border-radius:10px;cursor:pointer;border:2px solid transparent;
-  transition:all var(--transition-fast);position:relative;overflow:hidden;
-}
-.bg-swatch:hover{transform:scale(1.06);border-color:rgba(255,255,255,.35);}
-.bg-swatch.selected{border-color:var(--accent);box-shadow:0 0 12px rgba(var(--accent-rgb),.35);}
-
-/* ── Color picker v7 — bg swatch checkmark ── */
-.bg-swatch{position:relative;}
-.bg-swatch.selected{border-color:var(--accent);box-shadow:0 0 12px var(--accent-glow);}
-.bg-swatch.selected::after{
-  content:'✓';
-  position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:center;
-  font-size:16px;color:#fff;
-  text-shadow:0 1px 4px rgba(0,0,0,.6);
-  pointer-events:none;
-}
-
 /* Course entry animation */
 #screen-courses.entering{animation:screenFadeIn .35s ease both;}
 @keyframes screenFadeIn{from{opacity:0;}to{opacity:1;}}
@@ -1600,7 +1557,7 @@ body{
   display:inline-flex;align-items:center;gap:5px;
   padding:5px 11px;border-radius:20px;
   border:1px solid rgba(171,86,73,.2);background:rgba(171,86,73,.05);
-  color:rgba(255,100,100,.6);font-size:11px;cursor:pointer;font-family:inherit;
+  color:rgba(196,120,105,.9);font-size:11px;cursor:pointer;font-family:inherit;
   transition:all var(--transition-fast);font-weight:500;
 }
 .cs-logout-btn:hover{border-color:rgba(171,86,73,.4);color:#AB5649;background:rgba(171,86,73,.1);}
@@ -1631,7 +1588,7 @@ body{
   border:1px solid var(--border-subtle);background:var(--surface-1);
   margin-bottom:5px;font-size:12px;color:rgba(255,255,255,.7);
 }
-.dp-teacher-row button{background:none;border:none;color:rgba(255,100,100,.5);
+.dp-teacher-row button{background:none;border:none;color:rgba(196,120,105,.9);
   cursor:pointer;font-size:14px;transition:color .18s;line-height:1;}
 .dp-teacher-row button:hover{color:#AB5649;}
 .dp-add-row{display:flex;gap:8px;margin-top:6px;}
@@ -1744,7 +1701,7 @@ body{
 .cw-teacher-row .ct-email{font-size:10px;color:rgba(255,255,255,.35);}
 .cw-teacher-row button{
   background:rgba(171,86,73,.08);border:1px solid rgba(171,86,73,.2);
-  color:rgba(255,100,100,.6);border-radius:6px;padding:3px 8px;
+  color:rgba(196,120,105,.9);border-radius:6px;padding:3px 8px;
   cursor:pointer;font-size:11px;transition:all .18s;font-family:inherit;
 }
 .cw-teacher-row button:hover{background:rgba(171,86,73,.16);color:#AB5649;}
@@ -1827,7 +1784,7 @@ body{
   --glow-ce:   rgba(84,112,140,.4);
   --glow-oe:   rgba(var(--purple-rgb),.4);
   --glow-mix:  rgba(var(--accent-rgb),.35);
-  --glow-wp:   rgba(40,160,80,.38);
+  --glow-wp:   rgba(78,116,100,.38);
 
   /* Transizioni premium */
   --ease-cinema: cubic-bezier(.25,.46,.45,.94);
@@ -3211,16 +3168,6 @@ html[data-theme="light"] ::-webkit-scrollbar-thumb{ background: rgba(var(--navy-
 html[data-theme="light"] ::-webkit-scrollbar-thumb:hover{ background: rgba(var(--accent-rgb),.35); }
 html[data-theme="light"] input[type="date"],
 html[data-theme="light"] input[type="time"]{ color-scheme: light !important; }
-/* #app-theme-bg: tinta di sfondo dell'aula, impostata inline da JS
-   (courses.js _enterCourseDirect) con uno dei gradienti scuri di
-   COURSE_BG_PRESETS a opacity .4 — pensata come atmosfera per il tema
-   Dark. Nel tema chiaro si sovrappone al fondo chiaro del body
-   creando un effetto "grigio sporco" invece del bianco pulito di
-   Seleziona Aula. JS re-imposta style.opacity ad ogni ingresso aula,
-   quindi qui serve !important per vincere sull'inline (stessa
-   eccezione documentata già in uso altrove in questo file). */
-html[data-theme="light"] #app-theme-bg{ opacity:0 !important; }
-
 /* ── 3. TOPBAR + LOGO + HUB + BADGE AULA/UTENTE ──────────────── */
 html[data-theme="light"] .topbar{
   background: linear-gradient(180deg, rgba(122,90,56,.98) 0%, rgba(122,90,56,.96) 70%, rgba(110,80,48,.94) 100%);
@@ -3316,25 +3263,10 @@ html[data-theme="light"] .inp-row input::placeholder,html[data-theme="light"] .c
 html[data-theme="light"] .login-inp::placeholder,html[data-theme="light"] .cw-invite-inp::placeholder{ color: rgba(var(--navy-rgb),.5); }
 html[data-theme="light"] .gender-btn{ color: rgba(var(--navy-rgb),.55); }
 
-/* ── 6bis. STEP-ATT: hero "Scegli attività" (stato inattivo) + card minigioco ──
-   L'hero con attività selezionata (.hero-quiz/.hero-speed/...) resta il
-   "poster" scuro voluto (testo bianco già a contrasto garantito) — qui si
-   corregge SOLO lo stato inattivo (nessuna selezione, sfondo scuro
-   "ereditato" dall'overlay) e le card, il cui testo era fisso chiaro. */
-html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse){
-  background:#7A5A38;
-  border:1px solid rgba(0,0,0,.15);
-}
-html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse) .act-hero-overlay{
-  background:none;
-}
-html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse) .act-hero-title{
-  color:#F2E8D5;
-  text-shadow:none;
-}
-html[data-theme="light"] .act-hero:not(.hero-quiz):not(.hero-speed):not(.hero-match):not(.hero-memory):not(.hero-fill):not(.hero-truefalse) .act-hero-sub{
-  color: rgba(242,232,213,.75);
-}
+/* ── 6bis. STEP-ATT: card minigioco ──
+   Giro colori 05/10: l'hero "Scegli attività" NON è più qui. Prima lo stato inattivo era fango e
+   quello con attività selezionata verde (hero-*): salto di colore alla prima selezione. Ora
+   light = sempre verde, dark = sempre beige, definito in un unico posto (css/act-select.css §5). */
 html[data-theme="light"] .act-card:not(.dm-card){ background:#7A5A38; border-color: rgba(0,0,0,.15); }
 html[data-theme="light"] .act-card:not(.dm-card):hover{ border-color: rgba(242,232,213,.3); background: #6B4E30; }
 html[data-theme="light"] .act-card:not(.dm-card):not(.active) h3{ color:#F2E8D5; }
@@ -3408,21 +3340,21 @@ html[data-theme="light"] .prog-bar{ background: rgba(var(--navy-rgb),.08); }
 /* ── 8. PILLOLE STATO (timer/score/moves/combo) ──────────────── */
 html[data-theme="light"] .mem-stat-pill{ background: rgba(var(--navy-rgb),.04); border-color: rgba(var(--navy-rgb),.12); color: rgba(var(--navy-rgb),.6); }
 html[data-theme="light"] .mem-stat-pill.timer-running{ color:#54708C; }
-html[data-theme="light"] .mem-stat-pill.timer-warning{ color:#a66d00; }
+html[data-theme="light"] .mem-stat-pill.timer-warning{ color:#7A5A38; }
 html[data-theme="light"] .mem-stat-pill.moves-pill{ color:#6E7A50; }
 html[data-theme="light"] .mem-pause-btn{ background: rgba(var(--navy-rgb),.04); border-color: rgba(var(--navy-rgb),.12); color: rgba(var(--navy-rgb),.55); }
 html[data-theme="light"] .audio-toggle-btn.muted{ color:#e8a89a; border-color: rgba(232,168,154,.4); background: rgba(232,168,154,.1); }
-html[data-theme="light"] .match-combo-pill{ color:#a66d00; }
+html[data-theme="light"] .match-combo-pill{ color:#7A5A38; }
 html[data-theme="light"] .match-combo-pill.x1{ color: rgba(var(--navy-rgb),.4); }
 html[data-theme="light"] .match-combo-pill.x2{ color:#54708C; }
 html[data-theme="light"] .match-combo-pill.x3{ color:#6E7A50; }
-html[data-theme="light"] .match-combo-pill.x4{ color:#c02350; }
-html[data-theme="light"] .match-combo-pill.xmax{ color:#a66d00; }
+html[data-theme="light"] .match-combo-pill.x4{ color:#8A4038; }
+html[data-theme="light"] .match-combo-pill.xmax{ color:#7A5A38; }
 /* .timer-pill: countdown Speed Quiz (#qz-timer) — l'ambra piena
    #7A5A38 su sfondo (quasi) bianco scende a un contrasto ~1.8:1,
    ben sotto la soglia leggibile. Stessa "ink" ambra/rossa già usata
    altrove in questo file per badge/pillole analoghe. */
-html[data-theme="light"] .timer-pill{ color:#a66d00; }
+html[data-theme="light"] .timer-pill{ color:#7A5A38; }
 html[data-theme="light"] .timer-pill.red{ color:#8A4038; }
 
 /* ── 9. MATCH (Abbina) + MEMORY — testo neutro, bordo/sfondo hue-coded intatti ── */
@@ -3467,25 +3399,33 @@ html[data-theme="light"] .result-wrap .btn-neon:hover{
 /* ── 12. CLASSIFICA ───────────────────────────────────────────── */
 html[data-theme="light"] .lb-type-card{ background:#7A5A38; border-color: rgba(0,0,0,.15); }
 html[data-theme="light"] .lb-type-card .ltc-title{ color:#F2E8D5; }
-html[data-theme="light"] .lb-type-card .ltc-sub{ color: rgba(242,232,213,.7); }
+html[data-theme="light"] .lb-type-card .ltc-sub{ color: rgba(242,232,213,.94); } /* era .7 = 3.4:1 su fango */
 html[data-theme="light"] .lb-act-btn{ background:#7A5A38; border-color: rgba(0,0,0,.15); }
 html[data-theme="light"] .lb-act-btn .lab-label{ color: rgba(242,232,213,.85); }
 html[data-theme="light"] .lb-act-btn.active .lab-label{ color:#F2E8D5; }
-html[data-theme="light"] .lb-act-btn.a-speed.active .lab-label,html[data-theme="light"] .lb-act-btn.a-speed:hover .lab-label{ color:#a66d00; }
+html[data-theme="light"] .lb-act-btn.a-speed.active .lab-label,html[data-theme="light"] .lb-act-btn.a-speed:hover .lab-label{ color:#7A5A38; }
 html[data-theme="light"] .lb-act-btn.a-match.active .lab-label,html[data-theme="light"] .lb-act-btn.a-match:hover .lab-label{ color:#6E7A50; }
-html[data-theme="light"] .lb-act-btn.a-memory.active .lab-label,html[data-theme="light"] .lb-act-btn.a-memory:hover .lab-label{ color:#c02350; }
+html[data-theme="light"] .lb-act-btn.a-memory.active .lab-label,html[data-theme="light"] .lb-act-btn.a-memory:hover .lab-label{ color:#8A4038; }
 html[data-theme="light"] .lb-act-btn.a-fill.active .lab-label,html[data-theme="light"] .lb-act-btn.a-fill:hover .lab-label{ color:#54708C; }
-html[data-theme="light"] .lb-act-btn.a-truefalse.active .lab-label,html[data-theme="light"] .lb-act-btn.a-truefalse:hover .lab-label{ color:#a67c00; }
-html[data-theme="light"] .lb-nav-crumb{ color: rgba(242,232,213,.85); }
-html[data-theme="light"] .lb-nav-crumb.current{ color: rgba(242,232,213,.55); }
-html[data-theme="light"] .lb-nav-sep{ color: rgba(242,232,213,.3); }
+html[data-theme="light"] .lb-act-btn.a-truefalse.active .lab-label,html[data-theme="light"] .lb-act-btn.a-truefalse:hover .lab-label{ color:#7A5A38; }
+/* Giro colori 06/10 — breadcrumb della Classifica: .lb-nav sta sul CREMA della pagina, non sulle
+   righe fango, ma i colori erano crema (.85/.55/.3) → quasi invisibili. Ora navy. */
+html[data-theme="light"] .lb-nav-crumb{ color: rgba(var(--navy-rgb),.72); }
+html[data-theme="light"] .lb-nav-crumb:hover{ color: var(--navy); }
+html[data-theme="light"] .lb-nav-crumb.current{ color: var(--navy); }
+html[data-theme="light"] .lb-nav-sep{ color: rgba(var(--navy-rgb),.6); }
 html[data-theme="light"] .lb-entry{ background:#7A5A38; border-color: rgba(0,0,0,.15); }
 html[data-theme="light"] .lb-td{ color:#F2E8D5; }
-html[data-theme="light"] .lb-td.name .player-sub{ color: rgba(242,232,213,.6); }
+html[data-theme="light"] .lb-td.name .player-sub{ color: rgba(242,232,213,.94); } /* era .6 = 2.6:1 su fango */
 /* v8.13.1: override .lb-th rimosso — la regola base ora usa var(--text-muted), già tematizzato */
-html[data-theme="light"] .mod-badge.ce{ color:#a66a00; }
-html[data-theme="light"] .mod-badge.oe{ color:#6E7A50; }
-html[data-theme="light"] .mod-badge.wp{ color:#54708C; }
+/* pillola modulo: stava su righe FANGO con testo nel colore del modulo (#7A5A38, #6E7A50, #54708C,
+   o il colore inline di modColor()) → invisibile. Ora chip scuro con testo crema; il colore del
+   modulo resta nel bordo (border-color inline / di classe, non toccato). !important: bg e colore
+   delle pillole extra-ECDL sono inline. */
+html[data-theme="light"] .mod-badge{ background:rgba(23,35,45,.34) !important; color:#F2E8D5 !important; }
+/* pallini giocatore: il glow inline (neon) è stato tolto dal JS; anello crema per renderli
+   visibili su qualunque fondo (fango, oliva, crema, navy) */
+.lb-td.name .color-dot, .hist-color-dot, .chd-color-dot, .team-dot{ box-shadow:0 0 0 2px rgba(242,232,213,.5) !important; }
 /* v8.13.1: override le-title/le-sub rimossi — ora usano var(--text-muted)/var(--text-dim), già tematizzati */
 /* .csv-export-btn: usato da Classifica e Storico. .lb-reset-btn: usato
    da "Azzera tutto" (Classifica) e "Azzera" (Traguardi) — stesso identico
@@ -3493,7 +3433,7 @@ html[data-theme="light"] .mod-badge.wp{ color:#54708C; }
 html[data-theme="light"] .csv-export-btn{ background: rgba(var(--accent-rgb),.08); border-color: rgba(var(--accent-rgb),.25); color: var(--accent); }
 html[data-theme="light"] .csv-export-btn:hover{ background: rgba(var(--accent-rgb),.14); border-color: rgba(var(--accent-rgb),.45); }
 html[data-theme="light"] .lb-reset-btn{ background: rgba(138,64,56,.06); border-color: rgba(138,64,56,.28); color:#8A4038; }
-html[data-theme="light"] .lb-reset-btn:hover{ background: rgba(138,64,56,.12); border-color: rgba(138,64,56,.5); color:#a3182c; }
+html[data-theme="light"] .lb-reset-btn:hover{ background: rgba(138,64,56,.12); border-color: rgba(138,64,56,.5); color:#8A4038; }
 html[data-theme="light"] .lb-reset-btn::after{ background:#8A4038; }
 
 /* ── 16. AULE (courses screen) + LOGIN/SETPWD ────────────────── */
@@ -3503,25 +3443,67 @@ html[data-theme="light"] #screen-courses{
     radial-gradient(ellipse 90% 60% at 15% 0%, rgba(var(--accent-rgb),.04) 0%, transparent 55%),
     radial-gradient(ellipse 70% 50% at 85% 100%, rgba(106,79,214,.04) 0%, transparent 55%);
 }
+/* Giro colori 04/10 — dark: la schermata "Seleziona aula" usava --film-dark (#04060f,
+   quasi nero) invece del navy di palette (#17232D) usato da tutte le altre schermate.
+   Speculare al blocco chiaro qui sopra; selettore :not([data-theme="light"]) perché il
+   dark è lo stile di base e l'attributo arriva dal JS (vedi css/tokens.css). */
+html:not([data-theme="light"]) #screen-courses{
+  background: var(--surface-0);
+  background-image:
+    radial-gradient(ellipse 90% 60% at 15% 0%, rgba(var(--accent-rgb),.03) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 85% 100%, rgba(var(--purple-rgb),.03) 0%, transparent 55%);
+}
 html[data-theme="light"] .cs-topbar{ background: rgba(122,90,56,.97); border-bottom-color: rgba(0,0,0,.1); }
 html[data-theme="light"] .cs-hero-title{ color:var(--navy); text-shadow:none; }
 /* v8.13.1: override cs-hero-sub rimosso (era 2.87:1 anche in chiaro) — ora var(--text-muted) */
-html[data-theme="light"] .cs-add-form{ background:#7A5A38; border-color: rgba(0,0,0,.12); }
-html[data-theme="light"] .cs-add-form input{ background: rgba(242,232,213,.12); border-color: rgba(242,232,213,.25); color: #F2E8D5; }
-html[data-theme="light"] .cs-add-form input::placeholder{ color: rgba(242,232,213,.55); }
-html[data-theme="light"] .course-card{ background:#7A5A38; border-color: rgba(0,0,0,.15); }
+/* ── Giro colori 05/10 — FORM "Nuova aula" + CARD AULA ───────────────────────
+   Regola di coerenza: blocco "in evidenza" VERDE in chiaro / BEIGE in scuro (come l'hero
+   attività); card aula FANGO in chiaro / OLIVA SCURO in scuro (come le card "poster").
+   Prima il form era fango su fango (pulsante "Crea" invisibile: accent = fango) e le card
+   prendevano colori arbitrari dall'inline style del JS (personalizzazione ora rimossa). */
+html[data-theme="light"] .cs-add-form{ background:linear-gradient(135deg,#5C6644 0%,#55603F 100%); border-color:rgba(23,35,45,.2); }
+html[data-theme="light"] .cs-add-form .slbl{ color:rgba(242,232,213,.94); }
+/* input più SCURO del form (tinta navy): con tinta crema schiariva il fondo e il testo scendeva a 3.96:1 */
+html[data-theme="light"] .cs-add-form input{ background:rgba(23,35,45,.22); border-color:rgba(242,232,213,.35); color:#F2E8D5; }
+html[data-theme="light"] .cs-add-form input::placeholder{ color:rgba(242,232,213,.8); }
+html[data-theme="light"] .cs-add-form input:focus{ border-color:#F2E8D5; box-shadow:0 0 0 3px rgba(242,232,213,.18); }
+html[data-theme="light"] .cs-add-btn{ background:#F2E8D5; border-color:#F2E8D5; color:#17232D; }
+html[data-theme="light"] .cs-add-btn:hover{ background:#FBF6EC; border-color:#FBF6EC; box-shadow:0 0 16px rgba(242,232,213,.25); }
+
+html:not([data-theme="light"]) .cs-add-form{ background:#F2E8D5; border-color:rgba(var(--navy-rgb),.15); backdrop-filter:none; box-shadow:0 8px 28px rgba(0,0,0,.35); }
+html:not([data-theme="light"]) .cs-add-form .slbl{ color:rgba(var(--navy-rgb),.78); }
+html:not([data-theme="light"]) .cs-add-form input{ background:rgba(var(--navy-rgb),.06); border-color:rgba(var(--navy-rgb),.28); color:var(--navy); }
+html:not([data-theme="light"]) .cs-add-form input::placeholder{ color:rgba(var(--navy-rgb),.7); }
+html:not([data-theme="light"]) .cs-add-form input:focus{ border-color:#55603F; box-shadow:0 0 0 3px rgba(85,96,63,.2); }
+html:not([data-theme="light"]) .cs-add-btn{ background:#55603F; border-color:#55603F; color:#F2E8D5; }
+html:not([data-theme="light"]) .cs-add-btn:hover{ background:#4A5436; border-color:#4A5436; box-shadow:0 0 16px rgba(85,96,63,.35); }
+html:not([data-theme="light"]) .cs-add-btn::after{ background:#F2E8D5; }
+
+/* card aula: uguali per tutte (nessun colore per-aula). --card-accent/--card-glow non arrivano più
+   dall'inline: definiti qui, crema (su fango/oliva scuro il fango di --accent sparirebbe in hover). */
+.course-card{
+  --card-accent:#F2E8D5; --card-glow:rgba(242,232,213,.14);
+  /* dettaglio: trama puntinata + ombreggiatura in basso a destra. Tinte NAVY (scure) e non crema:
+     il crema su fango ha solo 5.16:1 di margine, una decorazione che schiarisce il fondo sotto il
+     testo lo porta sotto 4.5:1 (verificato: crema al 9% → 4.3:1). */
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(23,35,45,.14) 1px, transparent 0),
+    linear-gradient(160deg, transparent 50%, rgba(23,35,45,.16) 100%);
+  background-size:14px 14px, 100% 100%;
+}
+html[data-theme="light"] .course-card{ background-color:#7A5A38; border-color:rgba(23,35,45,.2); box-shadow:0 6px 18px rgba(var(--navy-rgb),.2); }
+html:not([data-theme="light"]) .course-card{ background-color:#5C6644; border-color:rgba(242,232,213,.14); box-shadow:0 6px 24px rgba(0,0,0,.45); }
+/* testi secondari: le alpha base (.2–.6) erano calibrate su altri fondi, qui 4.5–4.8:1 */
+.course-card-dates,
+.course-card-time,
+.course-card-meta{ color:rgba(242,232,213,.94); }
+.course-card-teachers{ border-top-color:rgba(242,232,213,.2); }
+.course-card-teacher-chip{ color:rgba(242,232,213,.94); }
+.course-card-teacher-chip + .course-card-teacher-chip::before{ color:rgba(242,232,213,.55); }
+.course-card-menu{ background:rgba(23,35,45,.28); border-color:rgba(242,232,213,.3); color:#F2E8D5; }
+.course-card-menu:hover{ background:rgba(23,35,45,.5); border-color:rgba(242,232,213,.55); color:#fff; }
 html[data-theme="light"] .cs-empty{ border-color: rgba(var(--navy-rgb),.14); }
 html[data-theme="light"] .cs-empty-text{ color: rgba(var(--navy-rgb),.35); }
-/* v6.6 FIX: le Card Aula devono restare IDENTICHE al tema Dark in
-   entrambi i temi — sfondo e border-color arrivano già inline da JS
-   (courses.js renderCoursesGrid) con i gradienti scuri di
-   COURSE_BG_PRESETS, quindi qui sotto non serviva forzare anche lo
-   sfondo via classe (mai vinto contro l'inline, righe morte). Il vero
-   bug era che nome/date/orario/docenti/menu venivano ricolorati di
-   scuro da queste righe, finendo scuro-su-scuro (quasi illeggibile)
-   sopra lo sfondo a gradiente scuro invariato. Nessun override qui:
-   restano le regole base (testo chiaro), corrette in entrambi i temi. */
-
 /* Splash screen — v6.6 FIX: nessun override esisteva, restava sempre
    nero indipendentemente dal tema attivo. Ricompare ad ogni cambio
    aula diversa da quella attiva (courses.js enterCourse() fa
@@ -3532,6 +3514,12 @@ html[data-theme="light"] .cs-empty-text{ color: rgba(var(--navy-rgb),.35); }
 html[data-theme="light"] #screen-splash{
   background:
     radial-gradient(ellipse 60% 50% at 50% 40%, rgba(var(--accent-rgb),.05) 0%, transparent 65%),
+    var(--surface-0);
+}
+/* dark: anche lo splash era #04060f letterale → navy di palette */
+html:not([data-theme="light"]) #screen-splash{
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 40%, rgba(var(--accent-rgb),.04) 0%, transparent 65%),
     var(--surface-0);
 }
 html[data-theme="light"] .splash-logo-svg{ filter: drop-shadow(0 2px 10px rgba(var(--navy-rgb),.15)); }
@@ -3566,7 +3554,7 @@ html[data-theme="light"] .cw-area-btn:hover{ background: rgba(var(--navy-rgb),.0
 html[data-theme="light"] .cw-area-btn.active{ background: rgba(var(--accent-rgb),.08); border-color: var(--accent); }
 html[data-theme="light"] .cw-area-name{ color:var(--navy); }
 html[data-theme="light"] .cw-area-desc{ color: rgba(var(--navy-rgb),.45); }
-html[data-theme="light"] .cw-area-chip.soon{ color:#a66d00; }
+html[data-theme="light"] .cw-area-chip.soon{ color:#7A5A38; }
 /* Moduli "in arrivo" (contentReady:false) — stesso trattamento del
    badge Coming Soon già usato per le card modulo in home. */
 html[data-theme="light"] .cm-soon-badge{ background: rgba(var(--navy-rgb),.05); border-color: rgba(var(--navy-rgb),.14); color: rgba(var(--navy-rgb),.35); }

@@ -156,11 +156,11 @@ html[data-theme="light"] #screen-teacher-create,html[data-theme="light"] #screen
 html[data-theme="light"] #screen-teacher-detail{ background: var(--surface-0); }
 html[data-theme="light"] .dd-card,html[data-theme="light"] .tdc-card{ background:#7A5A38; border-color: rgba(0,0,0,.15); }
 html[data-theme="light"] .dd-title,html[data-theme="light"] .tdc-name{ color:#F2E8D5; }
-html[data-theme="light"] .dd-sub{ color: rgba(242,232,213,.75); }
-/* v8.15.2: .tdc-email non ha più bisogno di override qui — ora usa
-   var(--text-muted), già tematizzato (era condiviso con .dd-sub, separato
-   per non alterare .dd-sub che non ha alcun problema di leggibilità). */
-html[data-theme="light"] .tm-tab{ color: rgba(var(--navy-rgb),.42); }
+html[data-theme="light"] .dd-sub{ color: rgba(242,232,213,.94); } /* era .75 = 3.3:1 su fango */
+/* Giro colori 06/10: il commento v8.15.2 qui sopra (".tdc-email usa var(--text-muted), già
+   tematizzato") non era più vero dopo il passaggio delle card a fango/oliva: in light
+   --text-muted è NAVY → email e aule navy su fango. Override esplicito in fondo al blocco. */
+html[data-theme="light"] .tm-tab{ color: rgba(var(--navy-rgb),.68); } /* era .42 = 2.9:1 */
 html[data-theme="light"] .tm-tab:hover{ color: rgba(var(--navy-rgb),.75); }
 html[data-theme="light"] .tm-tabs{ border-bottom-color: rgba(var(--navy-rgb),.1); }
 /* .dd-arrow: freccia "›" sulle card Dashboard Direttore/Gestione
@@ -180,8 +180,66 @@ html[data-theme="light"] .tdc-card.tdc-inactive .tdc-email,
 html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aula-chip,
 html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aule-empty{ color: rgba(242,232,213,.85); } /* effettivo ×.55 ≈ .47 */
 /* Icona genere di default (nessun genere impostato, fallback ti-user) */
-html[data-theme="light"] .tdc-gender-icon{ background: rgba(242,232,213,.1); border-color: rgba(242,232,213,.22); color: rgba(242,232,213,.6); }
+html[data-theme="light"] .tdc-gender-icon{ background: rgba(23,35,45,.28); border-color: rgba(242,232,213,.3); color: #F2E8D5; }
 html[data-theme="light"] .tmd-email-hint{ color: rgba(var(--navy-rgb),.4); }
 html[data-theme="light"] .dp-hint-text{ color: rgba(var(--navy-rgb),.35); }
+
+/* ── Giro colori 06/10 — card docente + card Dashboard/Gestione docenti ─────────────────────
+   Regola di coerenza per le card di contenuto: FANGO in chiaro / OLIVA SCURO (#5C6644) in
+   scuro, testo crema. Prima in scuro le card docente erano navy translucido su pagina navy
+   (nessuna separazione) e in chiaro email/aule erano navy su fango (var(--text-muted)). */
+html[data-theme="light"] .tdc-email,
+html[data-theme="light"] .tdc-aula-chip,
+html[data-theme="light"] .tdc-aule-empty{ color:rgba(242,232,213,.94); }
+html[data-theme="light"] .tdc-aule-row{ border-top-color:rgba(242,232,213,.22); }
+html[data-theme="light"] .tdc-aula-chip + .tdc-aula-chip::before{ color:rgba(242,232,213,.6); }
+
+html:not([data-theme="light"]) .tdc-card{ background:#5C6644; border-color:rgba(242,232,213,.14); box-shadow:0 6px 22px rgba(0,0,0,.4); }
+html:not([data-theme="light"]) .tdc-card:hover{ background:#5C6644; border-color:rgba(242,232,213,.4); }
+html:not([data-theme="light"]) .tdc-name{ color:#F2E8D5; }
+html:not([data-theme="light"]) .tdc-email,
+html:not([data-theme="light"]) .tdc-aula-chip,
+html:not([data-theme="light"]) .tdc-aule-empty{ color:rgba(242,232,213,.94); }
+html:not([data-theme="light"]) .tdc-aule-row{ border-top-color:rgba(242,232,213,.22); }
+html:not([data-theme="light"]) .tdc-aula-chip + .tdc-aula-chip::before{ color:rgba(242,232,213,.6); }
+html:not([data-theme="light"]) .tdc-gender-icon{ background:rgba(23,35,45,.28); border-color:rgba(242,232,213,.3); color:#F2E8D5; }
+/* disattivati: la card è a opacity .55, il testo resta crema pieno per compensare (vedi sopra) */
+html[data-theme="light"] .tdc-card.tdc-inactive .tdc-email,
+html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aula-chip,
+html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aule-empty,
+html:not([data-theme="light"]) .tdc-card.tdc-inactive .tdc-email,
+html:not([data-theme="light"]) .tdc-card.tdc-inactive .tdc-aula-chip,
+html:not([data-theme="light"]) .tdc-card.tdc-inactive .tdc-aule-empty{ color:#F2E8D5; }
+/* card disattivata: la regola base la porta a opacity .55, che dimezza anche il contrasto del
+   testo (2.7:1). Si segnala lo stato con meno saturazione e opacità .9 e brightness .92 (≈4.5:1), non con lo sbiadimento. */
+html .tdc-card.tdc-inactive{ opacity:.9; filter:saturate(.4) brightness(.92); }
+html .tdc-card.tdc-inactive:hover{ opacity:.95; }
+html:not([data-theme="light"]) .tm-tab{ color:rgba(242,232,213,.72); }   /* tab "Disattivati": 3.6:1 → ≈7:1 */
+html:not([data-theme="light"]) .tm-tab:hover{ color:rgba(242,232,213,.95); }
+html:not([data-theme="light"]) .tm-tab.active{ color:#F2E8D5; }
+/* pallino stato: il #4A6B52/#AB5649 pieni sparivano su fango e oliva */
+html .tdc-status-dot.active{ background:#8FB09F; color:#8FB09F; }
+html .tdc-status-dot.inactive{ background:#D49A8C; color:#D49A8C; }
+html .tdc-gender-icon.g-uomo{ border-color:#7D99B3; }
+html .tdc-gender-icon.g-donna{ border-color:#D49A8C; }
+
+/* card Dashboard Direttore / Gestione docenti: stessa regola (oliva scuro in dark: il #6E7A50 base
+   dava crema 3.8:1 sul titolo e 2.8:1 sul sottotitolo), sottotitolo crema pieno, hover leggibile
+   (i colori di hover per-card erano fango/oliva chiaro su sfondo fango/oliva) */
+html:not([data-theme="light"]) .dd-card{ background:#5C6644; }
+html:not([data-theme="light"]) .dd-sub{ color:rgba(242,232,213,.94); }
+html .dd-card:hover .dd-title,
+html .dd-card:hover .dd-arrow{ color:#fff; }
+
+/* icone "line" al posto delle emoji colorate (🆕 blu saturo, 👥 viola): tessera scura con
+   glifo crema, tinta d'accento scurita per card (sage = nuovo docente, slate = lista) */
+.dd-icon.dd-icon-line{
+  width:46px; height:46px; display:flex; align-items:center; justify-content:center;
+  font-size:24px; color:#F2E8D5; filter:none; border-radius:12px;
+  background:color-mix(in srgb, #4E7464 55%, #17232D);
+  border:1px solid rgba(242,232,213,.3);
+  box-shadow:inset 0 1px 0 rgba(242,232,213,.14), 0 4px 12px rgba(23,35,45,.28);
+}
+.dd-teacher-list .dd-icon.dd-icon-line{ background:color-mix(in srgb, #54708C 55%, #17232D); }
 
 }

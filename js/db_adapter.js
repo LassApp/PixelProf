@@ -153,8 +153,6 @@ export async function loadCourses(teacherId) {
     id:        r.id,
     name:      r.name,
     icon:      r.icon       ?? '🏫',
-    colorIdx:  r.color_idx  ?? 0,
-    bgIdx:     r.bg_idx     ?? 0,
     createdAt: r.created_at ? new Date(r.created_at).getTime() : Date.now(),
     // v3.2.1: questi campi sono ora restituiti dalla RPC aggiornata
     startDate: r.start_date ?? null,
@@ -172,7 +170,7 @@ export async function loadCourses(teacherId) {
  * Crea nuova aula e registra il docente come membro.
  *
  * @param {string} teacherId
- * @param {object} course — { name, icon, colorIdx, bgIdx }
+ * @param {object} course — { name, icon, areaKey, startDate, endDate, timeSlot }
  * @returns {Promise<object>} L'aula creata (formato interno)
  */
 export async function createCourse(teacherId, course) {
@@ -197,8 +195,11 @@ export async function createCourse(teacherId, course) {
       .insert({
         name:       course.name,
         icon:       course.icon      || '🏫',
-        color_idx:  course.colorIdx  ?? 0,
-        bg_idx:     course.bgIdx     ?? 0,
+        // Giro colori 05/10: personalizzazione colore/sfondo rimossa dall'app. Le colonne legacy
+        // restano nello schema (non è nel repo: non si può verificare se abbiano un DEFAULT),
+        // quindi in INSERT si scrive una costante neutra invece di ometterle.
+        color_idx:  0,
+        bg_idx:     0,
         created_by: teacherId,
         start_date: course.startDate || null,
         end_date:   course.endDate   || null,
@@ -224,8 +225,6 @@ export async function createCourse(teacherId, course) {
     id:        cls.id,
     name:      cls.name,
     icon:      cls.icon,
-    colorIdx:  cls.color_idx,
-    bgIdx:     cls.bg_idx,
     createdAt: new Date(cls.created_at).getTime(),
     startDate: cls.start_date || null,
     endDate:   cls.end_date   || null,
@@ -242,17 +241,15 @@ export async function createCourse(teacherId, course) {
 }
 
 /**
- * Aggiorna nome / icona / colori di un'aula.
+ * Aggiorna nome / icona / area di un'aula.
  *
  * @param {string} id
- * @param {object} updates — { name?, icon?, colorIdx?, bgIdx? }
+ * @param {object} updates — { name?, icon?, areaKey? }
  */
 export async function updateCourse(id, updates) {
   const payload = {};
   if (updates.name      !== undefined) payload.name      = updates.name;
   if (updates.icon      !== undefined) payload.icon      = updates.icon;
-  if (updates.colorIdx  !== undefined) payload.color_idx = updates.colorIdx;
-  if (updates.bgIdx     !== undefined) payload.bg_idx    = updates.bgIdx;
   if (updates.areaKey   !== undefined) payload.area_key  = updates.areaKey;  // ← AGGIUNTO v5.1.0 — Sistema Aree Fase 1
 
   if (_online) {
@@ -262,7 +259,7 @@ export async function updateCourse(id, updates) {
       .from('classrooms')
       .update(payload)
       .eq('id', id)
-      .select('id, name, icon, color_idx, bg_idx, area_key');
+      .select('id, name, icon, area_key');
 
     if (error) {
       console.error('[PixelProf] updateCourse error:', error.code, error.message, '| payload:', JSON.stringify(payload));

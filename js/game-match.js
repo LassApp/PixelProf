@@ -269,7 +269,7 @@ async function startMatch(cont,mod){
     `<div class="match-hdr">
       <div class="mem-stat-pill timer-running"><i class="ti ti-clock"></i><span id="match-timer-val">60s</span></div>
       <div class="mem-stat-pill score-pill"><i class="ti ti-star"></i><span id="match-score-val">0</span></div>
-      <div class="mem-stat-pill" style="border-color:rgba(171,86,73,.25);color:rgba(255,100,100,.7);background:rgba(171,86,73,.06)"><i class="ti ti-x"></i><span id="match-err-val">0</span></div>
+      <div class="mem-stat-pill" style="border-color:rgba(171,86,73,.25);color:rgba(196,120,105,.9);background:rgba(171,86,73,.06)"><i class="ti ti-x"></i><span id="match-err-val">0</span></div>
       <div class="match-combo-pill x1" id="match-combo-pill">×1</div>
       <button class="mem-pause-btn" id="match-pause-btn" onclick="matchTogglePause()"><i class="ti ti-player-pause" id="match-pause-icon"></i></button>
     </div>`

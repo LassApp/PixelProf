@@ -105,7 +105,7 @@
   html[data-theme="light"] .mod-area-empty .mae-title{ color:var(--navy); }
   html[data-theme="light"] .mod-area-empty .mae-sub{ color: rgba(var(--navy-rgb),.45); }
   html[data-theme="light"] .mod-toggle-btn.not-ready{ color: rgba(var(--navy-rgb),.35); }
-  html[data-theme="light"] .dp-soon-tag{ color:#a66d00; }
+  html[data-theme="light"] .dp-soon-tag{ color:#7A5A38; }
 }
 
 /* ═══════════════════════════════════════════════════════════════════
@@ -198,6 +198,11 @@
 @layer theme {
   /* ── Scegli Aula — raggruppamento per Area, tema chiaro ─────────── */
   html[data-theme="light"] .cs-area-section-label{ color:var(--navy); }
+  /* Giro colori 05/10 — contatore dell'area: il testo nel colore d'area (sage, slate…) a 10px
+     faceva 3.1:1 in chiaro e 2.3:1 in scuro. Il colore d'area resta su fondo e bordo (distinzione
+     di categoria), il numero diventa navy / crema. */
+  html[data-theme="light"] .cs-area-section-count{ color:rgba(var(--navy-rgb),.85); background:rgba(var(--area-rgb,110,122,80),.16); border-color:rgba(var(--area-rgb,110,122,80),.4); }
+  html:not([data-theme="light"]) .cs-area-section-count{ color:#F2E8D5; background:rgba(var(--area-rgb,110,122,80),.28); border-color:rgba(var(--area-rgb,110,122,80),.55); }
 
   /* Colore per Area — varianti scure (leggibili su sfondo chiaro).
      Stessa tecnica --area-rgb: ridefinita qui per data-theme="light",

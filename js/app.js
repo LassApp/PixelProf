@@ -1479,8 +1479,6 @@ async function cwCreateClassroom(){
     return;
   }
 
-  const courses  = loadCourses();
-  const colorIdx = courses.length % COLOR_PALETTE.length;
   const startDate = sh('cw-start-date')?.value || null;
   const endDate   = sh('cw-end-date')?.value   || null;
   // Compone timeSlot dai 2 picker HH:MM – HH:MM
@@ -1492,8 +1490,6 @@ async function cwCreateClassroom(){
     name:     _cw.name,
     icon:     _cw.icon,
     areaKey:  _cw.area || null,  // ← AGGIUNTO Fase 2 Sistema Aree
-    colorIdx,
-    bgIdx:    colorIdx,
     startDate,
     endDate,
     timeSlot,

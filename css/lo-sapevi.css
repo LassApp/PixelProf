@@ -50,13 +50,13 @@
      .ls-exit-btn la ricolora in oro invece del rosso di default
      (identico approccio di .fc-exit-btn con --purple). -- */
   .ls-exit-btn{
-    border-color: rgba(255,204,51,.35);
-    background: rgba(255,204,51,.1);
+    border-color: rgba(184,147,90,.35);
+    background: rgba(184,147,90,.1);
     color: #D4B483;
   }
   .ls-exit-btn:hover{
     border-color: #B8935A;
-    background: rgba(255,204,51,.18);
+    background: rgba(184,147,90,.18);
     color: #fff;
   }
   .ls-exit-btn::after{ background: #B8935A; }
@@ -128,7 +128,7 @@
     width: min(300px, 76%);
     height: 230px;
     border-radius: var(--radius-lg);
-    border: 1px solid rgba(255,204,51,.3);
+    border: 1px solid rgba(184,147,90,.3);
     background: linear-gradient(160deg,#332B20 0%,#3A3024 55%,#332B20 100%);
     box-shadow: var(--shadow-card);
     display: flex;
@@ -188,15 +188,15 @@
     display: inline-flex; align-items: center; gap: 6px;
     padding: 6px 14px;
     border-radius: 999px;
-    border: 1px solid rgba(255,204,51,.4);
-    background: rgba(255,204,51,.1);
+    border: 1px solid rgba(184,147,90,.4);
+    background: rgba(184,147,90,.1);
     color: #D4B483;
     font-size: 11px; font-weight: 600;
     cursor: pointer;
     font-family: inherit;
     position: relative; z-index: 3;
   }
-  .ls-reveal-btn:hover{ background: rgba(255,204,51,.18); }
+  .ls-reveal-btn:hover{ background: rgba(184,147,90,.18); }
   .ls-detail-panel{
     max-height: 0;
     overflow: hidden;
@@ -210,7 +210,7 @@
     overflow-y: auto;
   }
   .ls-detail-inner{
-    border-top: 1px dashed rgba(255,204,51,.3);
+    border-top: 1px dashed rgba(184,147,90,.3);
     padding-top: 9px;
     font-size: 12.5px;
     line-height: 1.48;
@@ -234,9 +234,9 @@
     flex-shrink: 0;
   }
   .ls-nav-btn:hover:not(:disabled){
-    border-color: rgba(255,204,51,.4);
+    border-color: rgba(184,147,90,.4);
     color: #D4B483;
-    background: rgba(255,204,51,.1);
+    background: rgba(184,147,90,.1);
   }
   .ls-nav-btn:disabled{ opacity: .3; cursor: not-allowed; }
 

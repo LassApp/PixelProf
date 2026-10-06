@@ -94,7 +94,7 @@ html[data-theme="light"] .cw-mod-btn .cm-desc{ color: rgba(var(--navy-rgb),.4); 
 html[data-theme="light"] .cw-teacher-row .ct-name{ color: rgba(var(--navy-rgb),.75); }
 html[data-theme="light"] .cw-teacher-row .ct-email{ color: rgba(var(--navy-rgb),.35); }
 /* .cw-warn-banner: stessa ink ambra di riserva usata per timer-pill/chd-never-played */
-html[data-theme="light"] .cw-warn-banner{ color:#a66d00; }
+html[data-theme="light"] .cw-warn-banner{ color:#7A5A38; }
 /* .dp-teacher-row: bg/border-color erano già coperti sopra (riga
    raggruppata con .cw-mod-btn/.cw-teacher-row), ma non il colore
    testo — restava rgba(255,255,255,.7), quasi invisibile sul
@@ -107,8 +107,6 @@ html[data-theme="light"] .dp-close-btn{ color: rgba(var(--navy-rgb),.4); }
 html[data-theme="light"] .dp-close-btn:hover{ color:var(--navy); }
 html[data-theme="light"] .icp-close{ color: rgba(var(--navy-rgb),.55); }
 html[data-theme="light"] .icp-close:hover{ border-color: rgba(var(--navy-rgb),.2); color:var(--navy); }
-html[data-theme="light"] .icp-x-close{ color: rgba(var(--navy-rgb),.35); }
-html[data-theme="light"] .icp-x-close:hover{ color:var(--navy); }
 /* .mod-toggle-btn (moduli abilitati, pannello Gestione aula): stato
    attivo/hover già usano var(--accent) e si adattano da soli; solo lo
    stato di riposo era hardcoded rgba(255,255,255,.5). */

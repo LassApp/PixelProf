@@ -8,11 +8,6 @@
    d'ora la partita usava sempre l'intero pool JSON del
    modulo, ignorando la selezione (mai richiesta perché
    'fill' non era incluso in needsNum — vedi game-engine-state.js).
-   v4.1.0 (app v8.36.0): applicato _filterHard() (game-engine-state.js)
-   al pool prima dello shuffle — rispetta il toggle "includi domande
-   difficili" del setup-panel, salvato per aula in db.diffPrefs.fill.
-   v4.1.1 (app v8.39.0): _trackRightQ() ora chiamata con mod+act (era
-     solo q.t,q.b) — serve al completamento preciso di "Progressi".
 ================================================== */
 
 /* ==================================================
@@ -30,7 +25,6 @@ async function startFill(cont,mod){
     showCompletaFraseError('Impossibile caricare il gioco Completa la frase. Riprova o cambia modulo.');
     return;
   }
-  src=_filterHard(src,'fill'); // v8.36.0
   gsSet(GS.PLAYING);
   // sN: numero frasi scelto in setup-num (0 = "Tutte") — stesso comportamento di Quiz/Vero o Falso.
   let pool=_weightedShuffleFillPool([...src]);
@@ -59,7 +53,7 @@ function renderFill(cont){
   }
   const q=s.qs[s.idx];const pts=q.t.split('____');
   const hdr=buildGameHeader(`<span class="game-counter-pill">${s.idx+1}/${s.qs.length} · ✓ ${s.score}</span>`,"startFill(sh('g-area'),sMod)");
-  cont.innerHTML=`${hdr}<div class="q-card"><div class="fill-sent">${escHtml(pts[0])}<input class="blank-in" id="fi" placeholder="..."/>${escHtml(pts[1]||'')}</div></div><div style="font-size:10px;color:rgba(78,116,100,.5);margin-bottom:6px;text-transform:uppercase;letter-spacing:.6px">Scegli dalla banca:</div><div class="word-bank">${shuffle([...q.bank]).map(w=>`<button class="chip" onclick="document.getElementById('fi').value='${escAttr(w)}'">${escHtml(w)}</button>`).join('')}</div><div id="ffb"></div><div style="margin-top:10px"><button class="btn btn-neon" onclick="checkFill()">Verifica <i class="ti ti-arrow-right"></i></button></div>`;
+  cont.innerHTML=`${hdr}<div class="q-card"><div class="fill-sent">${escHtml(pts[0])}<input class="blank-in" id="fi" placeholder="..."/>${escHtml(pts[1]||'')}</div></div><div style="font-size:10px;color:rgba(143,176,159,.9);margin-bottom:6px;text-transform:uppercase;letter-spacing:.6px">Scegli dalla banca:</div><div class="word-bank">${shuffle([...q.bank]).map(w=>`<button class="chip" onclick="document.getElementById('fi').value='${escAttr(w)}'">${escHtml(w)}</button>`).join('')}</div><div id="ffb"></div><div style="margin-top:10px"><button class="btn btn-neon" onclick="checkFill()">Verifica <i class="ti ti-arrow-right"></i></button></div>`;
 }
 
 function checkFill(){
@@ -73,10 +67,10 @@ function checkFill(){
     fillTotalScore+=scoreEarned;
     fillAnswerLog.push({questionId:'f'+s.idx,correct:true,streak:fillStreak,streakBonus,scoreEarned});
     s.score++;
-    _trackRightQ(q.t, q.b, sMod, 'fill');
+    _trackRightQ(q.t, q.b);
     const bonusLine=streakBonus>0
-      ?`<div style="font-size:11px;color:rgba(78,116,100,.75);margin-top:3px">🔥 +${streakBonus} streak ×${fillStreak} &nbsp;<strong>+${scoreEarned} pt totali</strong></div>`
-      :`<div style="font-size:11px;color:rgba(78,116,100,.55);margin-top:3px">+${scoreEarned} pt</div>`;
+      ?`<div style="font-size:11px;color:rgba(143,176,159,.9);margin-top:3px">🔥 +${streakBonus} streak ×${fillStreak} &nbsp;<strong>+${scoreEarned} pt totali</strong></div>`
+      :`<div style="font-size:11px;color:rgba(143,176,159,.9);margin-top:3px">+${scoreEarned} pt</div>`;
     sh('ffb').innerHTML=`<div class="fb ok" style="margin-top:6px">✓ Corretto!${bonusLine}</div>`;
   }else{
     fillStreak=0;

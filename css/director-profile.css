@@ -86,7 +86,7 @@
 
 .dp-email-note{
   display:flex; gap:6px; margin-top:10px; font-size:10.5px; line-height:1.5;
-  color:rgba(255,200,0,.75);
+  color:rgba(212,180,131,.9);
 }
 .dp-email-note i{ flex-shrink:0; margin-top:1px; }
 
@@ -109,7 +109,7 @@
 @layer theme {
   html[data-theme="light"] .dd-enter-banner{
     background:linear-gradient(120deg, rgba(var(--accent-rgb),.09), rgba(var(--purple-rgb),.05) 60%, rgba(var(--accent-rgb),.09));
-    border-color:rgba(0,170,140,.4);
+    border-color:rgba(78,116,100,.4);
     box-shadow:0 4px 18px rgba(var(--navy-rgb),.08);
   }
   html[data-theme="light"] .dd-enter-title{ color:var(--navy); }

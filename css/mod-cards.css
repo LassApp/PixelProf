@@ -252,14 +252,14 @@
 .mod-card.ce-card::before { background: linear-gradient(90deg,transparent,#7A5A38,#B8935A,transparent); }
 .mod-card.ce-card:hover h3 { color: #B8935A; }
 .mod-card.ce-card.active {
-  border-color: rgba(255,207,92,.8);
+  border-color: rgba(184,147,90,.8);
   box-shadow: 0 0 30px rgba(122,90,56,.3),0 8px 32px rgba(122,90,56,.2);
 }
 .mod-card.ce-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(122,90,56,.14),transparent 60%); }
 .mod-card.ce-card .mc-badge { background: rgba(122,90,56,.16); border: 1px solid rgba(122,90,56,.35); color: #B8935A; }
-.mod-card.ce-card .tag { background: rgba(122,90,56,.1); border-color: rgba(122,90,56,.22); color: rgba(255,207,92,.85); }
+.mod-card.ce-card .tag { background: rgba(122,90,56,.1); border-color: rgba(122,90,56,.22); color: rgba(212,180,131,.85); }
 .mod-card.ce-card:hover .tag { background: rgba(122,90,56,.16); border-color: rgba(122,90,56,.4); }
-.mod-card.ce-card.active .tag { background: rgba(255,207,92,.18); border-color: rgba(255,207,92,.45); color: #B8935A; }
+.mod-card.ce-card.active .tag { background: rgba(184,147,90,.18); border-color: rgba(184,147,90,.45); color: #B8935A; }
 
 /* OE — Violet */
 .mod-card.oe-card {
@@ -270,17 +270,17 @@
   border-color: rgba(var(--purple-rgb),.45);
   box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(var(--purple-rgb),.2),0 0 40px rgba(var(--purple-rgb),.14);
 }
-.mod-card.oe-card::before { background: linear-gradient(90deg,transparent,var(--purple),#b090ff,transparent); }
+.mod-card.oe-card::before { background: linear-gradient(90deg,transparent,var(--purple),#8B9968,transparent); }
 .mod-card.oe-card:hover h3 { color: #8B9968; }
 .mod-card.oe-card.active {
-  border-color: rgba(168,130,255,.8);
+  border-color: rgba(139,153,104,.8);
   box-shadow: 0 0 30px rgba(var(--purple-rgb),.3),0 8px 32px rgba(var(--purple-rgb),.2);
 }
-.mod-card.oe-card::after { background: radial-gradient(ellipse at 70% 110%,rgba(140,100,255,.14),transparent 60%); }
+.mod-card.oe-card::after { background: radial-gradient(ellipse at 70% 110%,rgba(139,153,104,.14),transparent 60%); }
 .mod-card.oe-card .mc-badge { background: rgba(var(--purple-rgb),.15); border: 1px solid rgba(var(--purple-rgb),.3); color: #8B9968; }
-.mod-card.oe-card .tag { background: rgba(var(--purple-rgb),.1); border-color: rgba(var(--purple-rgb),.2); color: rgba(180,160,255,.8); }
+.mod-card.oe-card .tag { background: rgba(var(--purple-rgb),.1); border-color: rgba(var(--purple-rgb),.2); color: rgba(139,153,104,.9); }
 .mod-card.oe-card:hover .tag { background: rgba(var(--purple-rgb),.15); border-color: rgba(var(--purple-rgb),.35); }
-.mod-card.oe-card.active .tag { background: rgba(168,130,255,.15); border-color: rgba(168,130,255,.4); color: #8B9968; }
+.mod-card.oe-card.active .tag { background: rgba(139,153,104,.15); border-color: rgba(139,153,104,.4); color: #8B9968; }
 
 /* WP — Blue */
 .mod-card.wp-card {
@@ -297,31 +297,31 @@
   border-color: rgba(84,112,140,.8);
   box-shadow: 0 0 30px rgba(84,112,140,.3),0 8px 32px rgba(84,112,140,.2);
 }
-.mod-card.wp-card::after { background: radial-gradient(ellipse at 50% 110%,rgba(0,180,255,.14),transparent 60%); }
+.mod-card.wp-card::after { background: radial-gradient(ellipse at 50% 110%,rgba(84,112,140,.14),transparent 60%); }
 .mod-card.wp-card .mc-badge { background: rgba(84,112,140,.15); border: 1px solid rgba(84,112,140,.3); color: #7D99B3; }
-.mod-card.wp-card .tag { background: rgba(84,112,140,.1); border-color: rgba(84,112,140,.2); color: rgba(94,184,255,.8); }
+.mod-card.wp-card .tag { background: rgba(84,112,140,.1); border-color: rgba(84,112,140,.2); color: rgba(125,153,179,.9); }
 .mod-card.wp-card:hover .tag { background: rgba(84,112,140,.15); border-color: rgba(84,112,140,.35); }
 .mod-card.wp-card.active .tag { background: rgba(84,112,140,.15); border-color: rgba(84,112,140,.4); color: #54708C; }
 
 /* SS — Green (v8.35.0: promossa al trattamento cinematico, prima ferma al vecchio stile base) */
 .mod-card.ss-card {
   background: linear-gradient(160deg,#1E2B1F 0%,#091610 50%,#1E2B1F 100%);
-  border-color: rgba(40,160,80,.12);
+  border-color: rgba(78,116,100,.12);
 }
 .mod-card.ss-card:hover {
-  border-color: rgba(40,160,80,.45);
-  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(40,160,80,.18),0 0 40px rgba(40,160,80,.1);
+  border-color: rgba(78,116,100,.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(78,116,100,.18),0 0 40px rgba(78,116,100,.1);
 }
-.mod-card.ss-card::before { background: linear-gradient(90deg,transparent,#28a050,#4A6B52,transparent); }
+.mod-card.ss-card::before { background: linear-gradient(90deg,transparent,#4E7464,#4A6B52,transparent); }
 .mod-card.ss-card:hover h3 { color: #5ad47a; }
 .mod-card.ss-card.active {
   border-color: rgba(74,107,82,.8);
-  box-shadow: 0 0 30px rgba(40,160,80,.3),0 8px 32px rgba(40,160,80,.2);
+  box-shadow: 0 0 30px rgba(78,116,100,.3),0 8px 32px rgba(78,116,100,.2);
 }
-.mod-card.ss-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(40,160,80,.14),transparent 60%); }
-.mod-card.ss-card .mc-badge { background: rgba(40,160,80,.15); border: 1px solid rgba(40,160,80,.3); color: #44c76a; }
-.mod-card.ss-card .tag { background: rgba(40,160,80,.1); border-color: rgba(40,160,80,.2); color: rgba(68,199,106,.8); }
-.mod-card.ss-card:hover .tag { background: rgba(40,160,80,.15); border-color: rgba(40,160,80,.35); }
+.mod-card.ss-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(78,116,100,.14),transparent 60%); }
+.mod-card.ss-card .mc-badge { background: rgba(78,116,100,.15); border: 1px solid rgba(78,116,100,.3); color: #44c76a; }
+.mod-card.ss-card .tag { background: rgba(78,116,100,.1); border-color: rgba(78,116,100,.2); color: rgba(68,199,106,.8); }
+.mod-card.ss-card:hover .tag { background: rgba(78,116,100,.15); border-color: rgba(78,116,100,.35); }
 .mod-card.ss-card.active .tag { background: rgba(74,107,82,.15); border-color: rgba(74,107,82,.4); color: #4A6B52; }
 
 /* PP — Orange (v8.35.0: promossa al trattamento cinematico, prima ferma al vecchio stile base) */
@@ -333,38 +333,38 @@
   border-color: rgba(156,107,62,.45);
   box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(156,107,62,.2),0 0 40px rgba(156,107,62,.12);
 }
-.mod-card.pp-card::before { background: linear-gradient(90deg,transparent,#9C6B3E,#ffab6e,transparent); }
+.mod-card.pp-card::before { background: linear-gradient(90deg,transparent,#9C6B3E,#C9976A,transparent); }
 .mod-card.pp-card:hover h3 { color: #9C6B3E; }
 .mod-card.pp-card.active {
-  border-color: rgba(255,165,100,.8);
+  border-color: rgba(201,151,106,.8);
   box-shadow: 0 0 30px rgba(156,107,62,.3),0 8px 32px rgba(156,107,62,.2);
 }
 .mod-card.pp-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(156,107,62,.14),transparent 60%); }
-.mod-card.pp-card .mc-badge { background: rgba(156,107,62,.16); border: 1px solid rgba(156,107,62,.35); color: #ffa564; }
-.mod-card.pp-card .tag { background: rgba(156,107,62,.1); border-color: rgba(156,107,62,.22); color: rgba(255,165,100,.85); }
+.mod-card.pp-card .mc-badge { background: rgba(156,107,62,.16); border: 1px solid rgba(156,107,62,.35); color: #C9976A; }
+.mod-card.pp-card .tag { background: rgba(156,107,62,.1); border-color: rgba(156,107,62,.22); color: rgba(201,151,106,.85); }
 .mod-card.pp-card:hover .tag { background: rgba(156,107,62,.16); border-color: rgba(156,107,62,.4); }
-.mod-card.pp-card.active .tag { background: rgba(255,165,100,.18); border-color: rgba(255,165,100,.45); color: #9C6B3E; }
+.mod-card.pp-card.active .tag { background: rgba(201,151,106,.18); border-color: rgba(201,151,106,.45); color: #9C6B3E; }
 
 /* IT Security — Crimson (v8.35.0: nuovo modulo) */
 .mod-card.its-card {
   background: linear-gradient(160deg,#3A2A24 0%,#3a0810 50%,#3A2A24 100%);
-  border-color: rgba(255,59,92,.14);
+  border-color: rgba(171,86,73,.14);
 }
 .mod-card.its-card:hover {
-  border-color: rgba(255,59,92,.45);
-  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(255,59,92,.2),0 0 40px rgba(255,59,92,.12);
+  border-color: rgba(171,86,73,.45);
+  box-shadow: 0 16px 48px rgba(0,0,0,.6),0 0 0 1px rgba(171,86,73,.2),0 0 40px rgba(171,86,73,.12);
 }
-.mod-card.its-card::before { background: linear-gradient(90deg,transparent,#ff3b5c,#ff7a92,transparent); }
-.mod-card.its-card:hover h3 { color: #ff9caa; }
+.mod-card.its-card::before { background: linear-gradient(90deg,transparent,#AB5649,#C47869,transparent); }
+.mod-card.its-card:hover h3 { color: #C47869; }
 .mod-card.its-card.active {
-  border-color: rgba(255,122,146,.8);
-  box-shadow: 0 0 30px rgba(255,59,92,.3),0 8px 32px rgba(255,59,92,.2);
+  border-color: rgba(196,120,105,.8);
+  box-shadow: 0 0 30px rgba(171,86,73,.3),0 8px 32px rgba(171,86,73,.2);
 }
-.mod-card.its-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(255,59,92,.14),transparent 60%); }
-.mod-card.its-card .mc-badge { background: rgba(255,59,92,.16); border: 1px solid rgba(255,59,92,.35); color: #ff7a92; }
-.mod-card.its-card .tag { background: rgba(255,59,92,.1); border-color: rgba(255,59,92,.22); color: rgba(255,150,170,.85); }
-.mod-card.its-card:hover .tag { background: rgba(255,59,92,.16); border-color: rgba(255,59,92,.4); }
-.mod-card.its-card.active .tag { background: rgba(255,150,170,.18); border-color: rgba(255,150,170,.45); color: #ff9caa; }
+.mod-card.its-card::after { background: radial-gradient(ellipse at 30% 110%,rgba(171,86,73,.14),transparent 60%); }
+.mod-card.its-card .mc-badge { background: rgba(171,86,73,.16); border: 1px solid rgba(171,86,73,.35); color: #C47869; }
+.mod-card.its-card .tag { background: rgba(171,86,73,.1); border-color: rgba(171,86,73,.22); color: rgba(196,120,105,.85); }
+.mod-card.its-card:hover .tag { background: rgba(171,86,73,.16); border-color: rgba(171,86,73,.4); }
+.mod-card.its-card.active .tag { background: rgba(196,120,105,.18); border-color: rgba(196,120,105,.45); color: #C47869; }
 
 /* Online Collaboration — Magenta (v8.35.0: nuovo modulo) */
 .mod-card.oc-card {
@@ -378,7 +378,7 @@
 .mod-card.oc-card::before { background: linear-gradient(90deg,transparent,#9D5875,#B07C96,transparent); }
 .mod-card.oc-card:hover h3 { color: #B07C96; }
 .mod-card.oc-card.active {
-  border-color: rgba(255,158,208,.8);
+  border-color: rgba(190,130,155,.8);
   box-shadow: 0 0 30px rgba(157,88,117,.3),0 8px 32px rgba(157,88,117,.2);
 }
 .mod-card.oc-card::after { background: radial-gradient(ellipse at 70% 110%,rgba(157,88,117,.14),transparent 60%); }

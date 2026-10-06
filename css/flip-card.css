@@ -283,7 +283,7 @@
   html[data-theme="light"] .fc-nav-btn:hover:not(:disabled){
     background: rgba(var(--purple-rgb),.08);
     border-color: rgba(var(--purple-rgb),.4);
-    color: #5b3fd6;
+    color: #5E5380;
   }
   html[data-theme="light"] .fc-loading{ color: rgba(242,232,213,.65); }
   /* v8.28.0 — .fc-progress-badge/.fc-mark-badge NON hanno override qui
@@ -445,4 +445,69 @@
   html[data-theme="light"] .dm-card{
     background:linear-gradient(160deg,#7A5A38 0%,#6B4E30 55%,#7A5A38 100%);
   }
+
+  /* ── Giro colori 05/10 — card "poster" (.dm-card): leggibilità + dettagli ───────────────
+     Problemi: .tag e .dm-badge usavano --dma-text-rgb (tono chiaro dell'accento) → verde su
+     fango/oliva, illeggibile; .dm-icon con colori inline (#7A5A38 su fango) quasi invisibile;
+     decorazione SVG in tinte arbitrarie a bassa opacità, praticamente non visibile; in dark
+     l'oliva #6E7A50 dava crema 3.8:1. Ora: chip/badge scuri con testo crema, icona in tessera
+     (tinta d'accento scurita: l'identità per-card resta), arte SVG ricolorata crema, trama
+     puntinata, CTA in basso. Le decorazioni sono SCURE (navy) sotto al testo: schiarire il
+     fondo farebbe scendere il crema sotto 4.5:1 (margine su fango: 5.16:1). */
+  html:not([data-theme="light"]) .dm-card{
+    background:linear-gradient(160deg,#5C6644 0%,#55603F 55%,#5C6644 100%);
+  }
+  .dm-card{
+    border-color:rgba(242,232,213,.16);
+    box-shadow:0 6px 22px rgba(23,35,45,.35);
+  }
+  .dm-card::before{
+    content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background-image:
+      radial-gradient(circle at 1px 1px, rgba(23,35,45,.16) 1px, transparent 0),
+      linear-gradient(160deg, transparent 55%, rgba(23,35,45,.18) 100%);
+    background-size:14px 14px, 100% 100%;
+  }
+  .dm-card svg.bg{ filter:grayscale(1) brightness(2.6) sepia(.2); }
+
+  .dm-card .dm-badge{ font-size:9px; background:rgba(23,35,45,.34); border-color:rgba(242,232,213,.3); color:#F2E8D5; }
+  .dm-card .tag{ font-size:10px; padding:3px 9px; background:rgba(23,35,45,.3); border-color:rgba(242,232,213,.28); color:#F2E8D5; }
+  .dm-card:hover .tag{ background:rgba(23,35,45,.44); border-color:rgba(242,232,213,.45); }
+  .dm-card p{ color:rgba(242,232,213,.94); }
+
+  .dm-card .dm-icon{
+    width:44px; height:44px; display:flex; align-items:center; justify-content:center;
+    font-size:22px; margin-bottom:10px; border-radius:12px; filter:none;
+    background:color-mix(in srgb, rgb(var(--dma-rgb)) 55%, #17232D);
+    border:1px solid rgba(242,232,213,.3);
+    box-shadow:inset 0 1px 0 rgba(242,232,213,.14), 0 4px 12px rgba(23,35,45,.28);
+  }
+  .dm-card .dm-icon i{ color:#F2E8D5 !important; }   /* inline style="color:…" sui singoli <i> */
+
+  /* anteprima nelle card modalità: le 6 attività / una flip card in miniatura */
+  .dm-card .dm-preview{ display:flex; align-items:center; gap:6px; margin-top:10px; min-height:38px; }  /* altezza fissa: le due card modalità allineano il contenuto */
+  .dm-card .dm-preview:not(.dm-preview-flip) span{
+    width:28px; height:28px; border-radius:50%; display:inline-flex; align-items:center; justify-content:center;
+    font-size:14px; background:rgba(23,35,45,.3); border:1px solid rgba(242,232,213,.25);
+  }
+  .dm-card .dm-minicard{
+    width:30px; height:38px; border-radius:7px; display:inline-flex; align-items:center; justify-content:center;
+    font-size:15px; font-weight:700; background:#F2E8D5; color:#17232D; transform:rotate(-6deg);
+    box-shadow:0 3px 8px rgba(23,35,45,.35);
+  }
+  .dm-card .dm-minicard-b{ background:rgba(23,35,45,.4); color:#F2E8D5; border:1px solid rgba(242,232,213,.4); transform:rotate(6deg); box-shadow:none; }
+  .dm-card .dm-minicard-arrow{ color:#F2E8D5; font-size:16px; }
+
+  /* CTA in coda al contenuto (solo schermate modalità e attività) */
+  #step-cat .cat-card.dm-card .dm-content::after,
+  #step-act .act-card.dm-card .dm-content::after{
+    display:block; margin-top:10px; text-align:right;
+    font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:1.4px; text-transform:uppercase;
+    color:#F2E8D5; opacity:.9; transition:transform var(--transition-fast);
+  }
+  #step-cat .cat-card.dm-card .dm-content::after{ content:'Apri  →'; }
+  #step-act .act-card.dm-card .dm-content::after{ content:'Gioca  →'; }
+  #step-act .act-card.dm-card.dm-disabled .dm-content::after{ content:'Presto disponibile'; }
+  #step-cat .cat-card.dm-card:hover .dm-content::after,
+  #step-act .act-card.dm-card:not(.dm-disabled):hover .dm-content::after{ transform:translateX(4px); opacity:1; }
 }

@@ -225,7 +225,7 @@
   display:inline-flex;align-items:center;gap:4px;
   padding:4px 10px;border-radius:7px;
   background:rgba(171,86,73,.06);border:1px solid rgba(171,86,73,.2);
-  color:rgba(255,100,100,.85);font-size:10px;cursor:pointer;font-family:inherit; /* v8.14.0 FIX: era .6 = 3.03:1 -> ora 4.94:1 */
+  color:rgba(196,120,105,.85);font-size:10px;cursor:pointer;font-family:inherit; /* v8.14.0 FIX: era .6 = 3.03:1 -> ora 4.94:1 */
   transition:all var(--transition-fast);font-weight:600;
 }
 .chd-wq-reset-btn:hover{background:rgba(171,86,73,.14);color:#AB5649;border-color:rgba(171,86,73,.4);}

@@ -1,7 +1,11 @@
 /* ==================================================
    courses.js — PixelProf v5.1.1
-   Course/classroom system: grid, CRUD, icon picker,
-   background/color picker, course menu.
+   Course/classroom system: grid, CRUD, icon picker, course menu.
+   v5.2.0 (giro colori 05/10): RIMOSSA la personalizzazione colore/sfondo
+     dell'aula (voce menu "Personalizza colore", modale "Personalizza
+     aula", COURSE_BG_PRESETS, COLOR_PALETTE, colorIdx/bgIdx, tinta
+     #app-theme-bg): le card aula ora sono tutte uguali e prendono il
+     colore dal tema (vedi pixelprof.css). Restano rinomina/icona/elimina.
    v5.1.0 (app v8.38.0): _enterCourseDirect() ora chiama anche
      _mergeCloudSessions/_mergeCloudModuleStats/_mergeCloudBadges
      (definite in stats.js/badges.js) accanto a _mergeCloudRoster —
@@ -29,16 +33,6 @@
 ================================================== */
 
 const COURSE_ICONS=['🏫','📚','🎓','💡','🧠','⚡','🌐','💻','🔬','📡','🎯','🚀','🧩','📊','🏆','⭐','🔐','🛡️','📋','🧮'];
-const COURSE_BG_PRESETS=[
-  {label:'Neon Teal',css:'linear-gradient(145deg,#233A2E 0%,#233A2E 55%,#233A2E 100%)'},
-  {label:'Deep Violet',css:'linear-gradient(145deg,#332B3D 0%,#332B3D 55%,#3A3024 100%)'},
-  {label:'Electric Blue',css:'linear-gradient(145deg,#233024 0%,#233024 55%,#233024 100%)'},
-  {label:'Crimson',css:'linear-gradient(145deg,#3A2A24 0%,#2a0d18 55%,#180610 100%)'},
-  {label:'Amber',css:'linear-gradient(145deg,#1a1000 0%,#261800 55%,#181000 100%)'},
-  {label:'Ocean',css:'linear-gradient(145deg,#001a22 0%,#002030 55%,#001520 100%)'},
-  {label:'Forest',css:'linear-gradient(145deg,#0a1a0c 0%,#102016 55%,#081408 100%)'},
-  {label:'Slate',css:'linear-gradient(145deg,#101820 0%,#182030 55%,#101828 100%)'},
-];
 
 let _ddCourseId=null; // id del corso a cui appartiene il dropdown aperto
 
@@ -49,7 +43,7 @@ let _ddCourseId=null; // id del corso a cui appartiene il dropdown aperto
      pannello direttore (docenti+moduli) della stessa aula, riusando al
      100% dp-overlay/_dpLoadTeachers/_dpLoadTeacherSelect/_dpLoadModules
      già definiti in app.js. Zero duplicazione di logica.
-   Il menu "..." (rinomina/icona/colore/elimina) resta invariato e
+   Il menu "..." (rinomina/icona/elimina) resta invariato e
    funzionante in ENTRAMBE le modalità.
    v6.1.1 FIX: rimosso il badge "🛠️ Gestione" (ridondante, il contesto
      è già chiaro dal titolo/back-link della schermata). Aggiunto il
@@ -105,14 +99,11 @@ function addCourse(){
   const name=inp.value.trim();
   if(!name)return;
   const courses=loadCourses();
-  const colorIdx=courses.length%COLOR_PALETTE.length;
   const iconIdx=courses.length%COURSE_ICONS.length;
   const course={
     id:genCourseId(),
     name,
     icon:COURSE_ICONS[iconIdx],
-    colorIdx,
-    bgIdx:colorIdx,
     createdAt:Date.now()
   };
   courses.push(course);
@@ -159,7 +150,7 @@ function renderCoursesGrid(){
     (byArea[key]=byArea[key]||[]).push(c);
   });
 
-  let gi=0; // indice globale — solo per fallback colore/bg e stagger animazione, invariato rispetto a prima
+  let gi=0; // indice globale — solo per lo stagger dell'animazione
   let html='';
   (window.AREAS||[]).forEach(area=>{
     const list=byArea[area.key];
@@ -174,14 +165,6 @@ function renderCoursesGrid(){
   });
 
   grid.innerHTML=html;
-  grid.querySelectorAll('.course-card').forEach(card=>{
-    const ci=parseInt(card.dataset.colidx)||0;
-    const col=COLOR_PALETTE[ci%COLOR_PALETTE.length];
-    const glowBase ='0 4px 20px '+col.glow;
-    const glowHover='0 8px 36px '+col.glow+', 0 0 0 1px '+col.border;
-    card.addEventListener('mouseenter',()=>{ card.style.boxShadow=glowHover; });
-    card.addEventListener('mouseleave',()=>{ card.style.boxShadow=glowBase;  });
-  });
 
   _csRenderAreaFilterBar(); // v8.5.0 — ricostruisce chip/contatori sul DOM appena renderizzato
   _csApplyAreaFilter();
@@ -313,10 +296,6 @@ function _csBuildAreaSection(areaKey,areaLabel,areaIcon,list,nextIdx){
 
 /** Costruisce l'HTML di una singola course-card. Logica invariata rispetto a prima di v8.2.0 — solo estratta in funzione per essere riusabile per-sezione. */
 function _csBuildCourseCard(c,i){
-  const colIdx=(c.colorIdx??i)%COLOR_PALETTE.length;
-  const bgIdx =(c.bgIdx   ??i)%COURSE_BG_PRESETS.length;
-  const col=COLOR_PALETTE[colIdx];
-  const bg =COURSE_BG_PRESETS[bgIdx];
   const fmtDate=d=>{
     if(!d) return null;
     try{
@@ -340,15 +319,7 @@ function _csBuildCourseCard(c,i){
   const teachersRow=teacherChips
     ?`<div class="course-card-teachers">${teacherChips}</div>`:'';
   return`<div class="course-card" data-course-id="${escAttr(c.id)}"
-    data-colidx="${colIdx}" data-bgidx="${bgIdx}"
-    style="
-      background:${bg.css};
-      border-color:${col.border};
-      box-shadow:0 4px 20px ${col.glow};
-      animation-delay:${i*0.04}s;
-      --card-accent:${col.bar};
-      --card-glow:${col.glow};
-    "
+    style="animation-delay:${i*0.04}s"
     onclick="_csCardClick('${escAttr(c.id)}')"
   >
     <div class="course-card-top">
@@ -424,14 +395,6 @@ function _enterCourseDirect(id){
   // v8.25.0: registra questa come ultima aula collegata per il
   // pannello Profilo (fire-and-forget, vedi js/profile-panel.js).
   if(window.Auth && window.Auth.touchLoginMeta) window.Auth.touchLoginMeta(id);
-
-  const bgIdx=(course.bgIdx??0)%COURSE_BG_PRESETS.length;
-  const bg=COURSE_BG_PRESETS[bgIdx];
-  const themeEl=document.getElementById('app-theme-bg');
-  if(themeEl){
-    themeEl.style.opacity='0';
-    setTimeout(()=>{ themeEl.style.background=bg.css; themeEl.style.opacity='0.4'; },200);
-  }
 
   const badge=sh('tb-course-badge');
   const badgeIcon=sh('tb-course-icon');
@@ -550,8 +513,6 @@ async function cdAction(action){
     }
   } else if(action==='icon'){
     openIconPicker(id);
-  } else if(action==='bg'){
-    openBgPicker(id);
   } else if(action==='delete'){
     _showDeleteClassroomConfirm(id, courses[idx].name, async ()=>{
       const delRes=await _deleteClassroomRest(id);
@@ -609,174 +570,3 @@ async function pickIcon(icon){
   }
 }
 function closeIconPicker(){sh('icon-picker-overlay').classList.add('hidden');_ipCourseId=null;}
-
-/* -- Bg + Color picker v7 con anteprima live -- */
-
-const COLOR_PALETTE=[
-  {label:'Teal',    border:'rgba(78,116,100,.45)',  glow:'rgba(78,116,100,.2)',    bar:'#4E7464',  dot:'#4E7464'},
-  {label:'Violet',  border:'rgba(110,122,80,.45)',glow:'rgba(110,122,80,.2)',  bar:'#6E7A50',  dot:'#6E7A50'},
-  {label:'Blue',    border:'rgba(84,112,140,.45)', glow:'rgba(84,112,140,.2)',   bar:'#54708C',  dot:'#54708C'},
-  {label:'Pink',    border:'rgba(171,86,73,.45)', glow:'rgba(171,86,73,.2)',   bar:'#AB5649',  dot:'#AB5649'},
-  {label:'Amber',   border:'rgba(122,90,56,.45)',  glow:'rgba(122,90,56,.2)',    bar:'#7A5A38',  dot:'#7A5A38'},
-  {label:'Cyan',    border:'rgba(84,112,140,.45)',  glow:'rgba(84,112,140,.2)',    bar:'#54708C',  dot:'#54708C'},
-  {label:'Green',   border:'rgba(74,107,82,.45)', glow:'rgba(74,107,82,.2)',   bar:'#4A6B52',  dot:'#4A6B52'},
-  {label:'Rose',    border:'rgba(157,88,117,.45)',glow:'rgba(157,88,117,.2)',  bar:'#9D5875',  dot:'#9D5875'},
-  {label:'Orange',  border:'rgba(156,107,62,.45)', glow:'rgba(156,107,62,.2)',   bar:'#9C6B3E',  dot:'#9C6B3E'},
-  {label:'White',   border:'rgba(220,230,255,.35)',glow:'rgba(220,230,255,.15)', bar:'#C4CBA8',  dot:'#C4CBA8'},
-  {label:'Gold',    border:'rgba(184,147,90,.45)',  glow:'rgba(184,147,90,.2)',    bar:'#B8935A',  dot:'#B8935A'},
-  {label:'Indigo',  border:'rgba(110,122,80,.45)', glow:'rgba(110,122,80,.2)',   bar:'#6E7A50',  dot:'#6E7A50'},
-];
-
-let _bpCourseId=null;
-let _cpBgIdx=0;
-let _cpColorIdx=0;
-
-function openBgPicker(id){
-  _bpCourseId=id;
-  const courses=loadCourses();
-  const course=courses.find(c=>c.id===id);
-  if(!course)return;
-  _cpBgIdx   = course.bgIdx    ?? 0;
-  _cpColorIdx= course.colorIdx ?? 0;
-  _updateColorPickerPreview(course);
-
-  const bgGrid=sh('bgp-grid');
-  bgGrid.innerHTML=COURSE_BG_PRESETS.map((bg,i)=>`
-    <div class="bg-swatch${_cpBgIdx===i?' selected':''}"
-      style="background:${bg.css};position:relative;overflow:hidden"
-      title="${bg.label}"
-      onclick="cpPickBg(${i})"
-    >
-      ${_cpBgIdx===i?'<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px">✓</div>':''}
-    </div>`).join('');
-
-  const colGrid=sh('cp-color-grid');
-  colGrid.innerHTML=COLOR_PALETTE.map((c,i)=>{
-    const isActive=(_cpColorIdx===i);
-    const borderCol=isActive?c.dot:'rgba(255,255,255,.08)';
-    const shadowVal=isActive?('0 0 12px '+c.glow):'none';
-    const scaleVal =isActive?'scale(1.1)':'scale(1)';
-    return`<div
-      data-ci="${i}"
-      title="${c.label}"
-      onclick="cpPickColor(${i})"
-      class="cp-col-swatch"
-      style="aspect-ratio:1;border-radius:9px;cursor:pointer;background:${c.dot}22;border:2px solid ${borderCol};display:flex;align-items:center;justify-content:center;transition:border-color .18s,box-shadow .18s,transform .18s;box-shadow:${shadowVal};transform:${scaleVal};position:relative"
-    ><div style="width:16px;height:16px;border-radius:50%;background:${c.dot};box-shadow:0 0 8px ${c.glow}"></div>${isActive?'<div style="position:absolute;font-size:10px;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.8);pointer-events:none">✓</div>':''}</div>`;
-  }).join('');
-  colGrid.querySelectorAll('.cp-col-swatch').forEach(el=>{
-    const i=parseInt(el.dataset.ci);
-    const c=COLOR_PALETTE[i];
-    el.addEventListener('mouseenter',()=>{
-      if(i!==_cpColorIdx){el.style.borderColor=c.dot;el.style.boxShadow='0 0 8px '+c.glow;el.style.transform='scale(1.05)';}
-    });
-    el.addEventListener('mouseleave',()=>{
-      if(i!==_cpColorIdx){el.style.borderColor='rgba(255,255,255,.08)';el.style.boxShadow='none';el.style.transform='scale(1)';}
-    });
-  });
-
-  sh('bg-picker-overlay').classList.remove('hidden');
-}
-
-function _updateColorPickerPreview(courseOrNull){
-  const bg   = COURSE_BG_PRESETS[_cpBgIdx   % COURSE_BG_PRESETS.length];
-  const col  = COLOR_PALETTE    [_cpColorIdx % COLOR_PALETTE.length];
-  const preview  = sh('cp-preview');
-  const bar      = sh('cp-preview-bar');
-  if(!preview||!bar)return;
-  preview.style.background  = bg.css;
-  preview.style.borderColor = col.border;
-  preview.style.boxShadow   = '0 4px 20px '+col.glow;
-  bar.style.background      = col.bar;
-  if(courseOrNull){
-    const icon=sh('cp-preview-icon');
-    const name=sh('cp-preview-name');
-    const lbl =sh('cp-preview-label');
-    if(icon)icon.textContent=courseOrNull.icon||'🏫';
-    if(name)name.textContent=courseOrNull.name||'Nome aula';
-    if(lbl) lbl.textContent =bg.label+' · '+col.label;
-  }else{
-    const lbl=sh('cp-preview-label');
-    if(lbl)lbl.textContent=bg.label+' · '+col.label;
-  }
-}
-
-function cpPickBg(i){
-  _cpBgIdx=i;
-  document.querySelectorAll('#bgp-grid .bg-swatch').forEach((el,idx)=>{
-    el.classList.toggle('selected',idx===i);
-    el.innerHTML=idx===i?'<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:14px">✓</div>':'';
-  });
-  _updateColorPickerPreview(null);
-  _cpSaveAndUpdateCard();
-}
-
-function cpPickColor(i){
-  _cpColorIdx=i;
-  const col=COLOR_PALETTE[i];
-  document.querySelectorAll('#cp-color-grid > div').forEach((el,idx)=>{
-    const c=COLOR_PALETTE[idx];
-    el.style.borderColor=idx===i?c.dot:'rgba(255,255,255,.08)';
-    el.style.boxShadow  =idx===i?'0 0 10px '+c.glow:'none';
-    el.onmouseout=function(){
-      this.style.borderColor=idx===_cpColorIdx?COLOR_PALETTE[idx].dot:'rgba(255,255,255,.08)';
-      this.style.boxShadow  =idx===_cpColorIdx?'0 0 10px '+COLOR_PALETTE[idx].glow:'none';
-    };
-  });
-  _updateColorPickerPreview(null);
-  _cpSaveAndUpdateCard();
-}
-
-/* ==================================================
-   _cpSaveAndUpdateCard — v4.0.6
-   Incorpora DB.updateClassroom di app.js.
-================================================== */
-function _cpSaveAndUpdateCard(){
-  const courses=loadCourses();
-  const idx=courses.findIndex(c=>c.id===_bpCourseId);
-  if(idx<0)return;
-  courses[idx].bgIdx   =_cpBgIdx;
-  courses[idx].colorIdx=_cpColorIdx;
-  saveCourses(courses);
-
-  // Propaga al cloud (fire-and-forget)
-  if(window.DB && _bpCourseId){
-    window.DB.updateClassroom(_bpCourseId, { colorIdx:_cpColorIdx, bgIdx:_cpBgIdx }).catch(()=>{});
-  }
-
-  if(_bpCourseId===activeCourseId){
-    const bg=COURSE_BG_PRESETS[_cpBgIdx%COURSE_BG_PRESETS.length];
-    const themeEl=document.getElementById('app-theme-bg');
-    if(themeEl){themeEl.style.background=bg.css;themeEl.style.opacity='0.4';}
-  }
-
-  const card=document.querySelector('[data-course-id="'+_bpCourseId+'"]');
-  if(!card)return;
-
-  const col=COLOR_PALETTE[_cpColorIdx%COLOR_PALETTE.length];
-  const bg =COURSE_BG_PRESETS[_cpBgIdx%COURSE_BG_PRESETS.length];
-  const glowBase ='0 4px 20px '+col.glow;
-  const glowHover='0 8px 36px '+col.glow+', 0 0 0 1px '+col.border;
-
-  card.style.background =bg.css;
-  card.style.borderColor=col.border;
-  card.style.boxShadow  =glowBase;
-  card.dataset.colidx   =String(_cpColorIdx);
-  card.style.setProperty('--card-accent', col.bar);
-  card.style.setProperty('--card-glow',   col.glow);
-
-  const fresh=card.cloneNode(true);
-  card.parentNode.replaceChild(fresh,card);
-  fresh.style.background =bg.css;
-  fresh.style.borderColor=col.border;
-  fresh.style.boxShadow  =glowBase;
-  fresh.style.setProperty('--card-accent', col.bar);
-  fresh.style.setProperty('--card-glow',   col.glow);
-  fresh.addEventListener('mouseenter',()=>{ fresh.style.boxShadow=glowHover; });
-  fresh.addEventListener('mouseleave',()=>{ fresh.style.boxShadow=glowBase;  });
-}
-
-function closeBgPicker(){
-  sh('bg-picker-overlay').classList.add('hidden');
-  _bpCourseId=null;
-}

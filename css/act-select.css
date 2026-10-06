@@ -28,8 +28,8 @@
    4) toggle "includi domande difficili" (v8.36.0) — nuovo
       componente switch, non esisteva ancora in app. (giro colori 04/10: la riga
       non cambia più colore da attiva — solo lo switch.)
-   5) hero dell'attività selezionata (giro colori 04/10) — verde oliva in entrambi
-      i temi (prima navy quasi nero, senza contrasto con la pagina).
+   5) hero attività (giro colori 05/10) — light sempre verde oliva, dark sempre
+      beige, in ogni stato (inattivo e attività selezionata).
 ================================================== */
 @layer actselect {
 
@@ -58,9 +58,9 @@
      restano inline in index.html (invariato), qui solo l'aspetto
      sbiadito/disattivato richiesto. */
   .dm-card.dm-disabled{
-    opacity: .5;
+    opacity: .72;   /* era .5: testo sotto 2.5:1 su fango/oliva; resta chiaramente "spenta" grazie a saturate */
     cursor: not-allowed;
-    filter: saturate(.4);
+    filter: saturate(.35);
   }
   .dm-card.dm-disabled:hover{ transform: none; box-shadow: 0 4px 24px rgba(0,0,0,.2); }
   .dm-card.dm-disabled:hover::after{ transform: scaleX(0); }
@@ -229,28 +229,33 @@
   .diff-switch input:checked ~ .diff-switch-track::after{ transform: translateX(17px); }
   .diff-switch input:focus-visible ~ .diff-switch-track{ outline: 2px solid var(--accent); outline-offset: 2px; }
 
-  /* -- 5) hero attività selezionata --
-     Le 6 varianti .hero-quiz/-speed/-match/-memory/-fill/-truefalse
-     (pixelprof.css, @layer base) erano gradienti navy/nero a tinta
-     d'attività: nero-su-crema in chiaro, nero-su-navy in scuro. Ora un
-     unico verde oliva (#55603F→#5C6644, crema 5.0–5.5:1, bianco 6.1+:1)
-     con testo crema; l'identità dell'attività resta nell'icona, nel
-     titolo e nella decorazione SVG (colori d'area invariati). Stato
-     "nessuna attività" (senza .hero-*) invariato: fango in chiaro. */
-  .act-hero:is(.hero-quiz,.hero-speed,.hero-match,.hero-memory,.hero-fill,.hero-truefalse){
+  /* -- 5) hero "Scegli un'attività" — UN solo colore per tema, in tutti gli stati --
+     Light: sempre VERDE oliva (#55603F→#5C6644, crema 5.0–5.5:1). Dark: sempre BEIGE (#F2E8D5,
+     navy 13:1), speculare alla topbar. Prima: stato inattivo fango (light) e, alla selezione,
+     le varianti .hero-quiz/-speed/… (gradienti navy/nero a tinta d'attività, in base) → il
+     colore cambiava dopo il primo click. Le regole non dipendono più da .hero-*: valgono per
+     lo stato inattivo e per tutte le attività. L'identità dell'attività resta nell'icona, nel
+     titolo e nella decorazione SVG (colori d'area invariati, ricolorata per tema). */
+  html[data-theme="light"] .act-hero{
     background: linear-gradient(135deg,#55603F 0%,#5C6644 55%,#55603F 100%);
     border-color: rgba(242,232,213,.2);
     box-shadow: 0 8px 32px rgba(23,35,45,.28), 0 0 0 1px rgba(242,232,213,.06) inset;
   }
-  .act-hero:is(.hero-quiz,.hero-speed,.hero-match,.hero-memory,.hero-fill,.hero-truefalse) .act-hero-overlay{
-    background: linear-gradient(180deg, rgba(23,35,45,0) 0%, rgba(23,35,45,.2) 100%);
+  html[data-theme="light"] .act-hero .act-hero-overlay{ background: linear-gradient(180deg, rgba(23,35,45,0) 0%, rgba(23,35,45,.2) 100%); }
+  html[data-theme="light"] .act-hero .act-hero-title{ color:#F2E8D5; text-shadow:0 2px 14px rgba(23,35,45,.35); }
+  html[data-theme="light"] .act-hero .act-hero-sub{ color:rgba(242,232,213,.94); }
+  html[data-theme="light"] .act-hero .act-hero-bg svg{ filter:grayscale(1) brightness(2.6) sepia(.2); }
+
+  html:not([data-theme="light"]) .act-hero{
+    background: linear-gradient(135deg,#F2E8D5 0%,#EADFC6 55%,#F2E8D5 100%);
+    border-color: rgba(var(--navy-rgb),.15);
+    box-shadow: 0 8px 32px rgba(0,0,0,.4), 0 0 0 1px rgba(255,255,255,.35) inset;
   }
-  .act-hero:is(.hero-quiz,.hero-speed,.hero-match,.hero-memory,.hero-fill,.hero-truefalse) .act-hero-title{
-    color: #F2E8D5; text-shadow: 0 2px 14px rgba(23,35,45,.35);
-  }
-  .act-hero:is(.hero-quiz,.hero-speed,.hero-match,.hero-memory,.hero-fill,.hero-truefalse) .act-hero-sub{
-    color: rgba(242,232,213,.94);
-  }
+  html:not([data-theme="light"]) .act-hero .act-hero-overlay{ background:none; }
+  html:not([data-theme="light"]) .act-hero .act-hero-icon{ filter:drop-shadow(0 2px 8px rgba(var(--navy-rgb),.25)); }
+  html:not([data-theme="light"]) .act-hero .act-hero-title{ color:var(--navy); text-shadow:none; }
+  html:not([data-theme="light"]) .act-hero .act-hero-sub{ color:rgba(var(--navy-rgb),.8); }
+  html:not([data-theme="light"]) .act-hero .act-hero-bg svg{ filter:grayscale(1) brightness(.25); opacity:.9; }
 
   /* v8.36.0b: contatore "N facili + N difficili disponibili" sotto il
      toggle — stesso font monospace già usato per le altre etichette

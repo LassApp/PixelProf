@@ -65,7 +65,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </head>
 <body>
 
-<div id="app-theme-bg"></div>
 
 <div id="overtake-popup"><div class="ot-lbl">⚡ Sorpasso!</div><div id="ot-text"></div></div>
 <canvas id="confetti-canvas"></canvas>
@@ -870,7 +869,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
   <button class="cd-item" id="cd-manage" onclick="_cdManage()" style="display:none"><i class="ti ti-settings"></i> Gestisci aula</button>
   <button class="cd-item" onclick="cdAction('rename')"><i class="ti ti-pencil"></i> Rinomina</button>
   <button class="cd-item" onclick="cdAction('icon')"><i class="ti ti-mood-smile"></i> Cambia icona</button>
-  <button class="cd-item" onclick="cdAction('bg')"><i class="ti ti-palette"></i> Personalizza colore</button>
   <button class="cd-item danger" onclick="cdAction('delete')"><i class="ti ti-trash"></i> Elimina aula</button>
 </div>
 
@@ -880,49 +878,6 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     <div class="icp-title">Scegli un'icona</div>
     <div class="icp-grid" id="icp-grid"></div>
     <button class="icp-close" onclick="closeIconPicker()">Chiudi</button>
-  </div>
-</div>
-
-<!-- Color picker modal — v7 con anteprima live -->
-<div id="bg-picker-overlay" class="icon-picker-overlay hidden" onclick="if(event.target===this)closeBgPicker()">
-  <div class="icon-picker-box bg-picker-box" style="max-width:400px">
-    <div class="icp-title" style="display:flex;align-items:center;justify-content:space-between">
-      <span>Personalizza aula</span>
-      <button class="icp-x-close" onclick="closeBgPicker()">×</button>
-    </div>
-
-    <!-- LIVE PREVIEW -->
-    <div id="cp-preview" style="
-      border-radius:12px;padding:1rem 1rem .875rem;margin-bottom:14px;
-      border:1px solid rgba(255,255,255,.1);
-      transition:background .35s ease,border-color .35s ease,box-shadow .35s ease;
-      position:relative;overflow:hidden;min-height:90px;
-      display:flex;align-items:flex-end;
-    ">
-      <!-- top accent bar preview -->
-      <div id="cp-preview-bar" style="position:absolute;top:0;left:0;right:0;height:2px;transition:background .35s ease;border-radius:0"></div>
-      <div style="position:relative;z-index:2;width:100%">
-        <div id="cp-preview-icon" style="font-size:28px;margin-bottom:6px;line-height:1;filter:drop-shadow(0 0 8px rgba(255,255,255,.2))">🏫</div>
-        <div id="cp-preview-name" style="font-size:14px;font-weight:700;color:#fff;margin-bottom:3px;line-height:1.2">Nome aula</div>
-        <div style="font-size:9px;font-family:'Share Tech Mono',monospace;color:rgba(255,255,255,.3);letter-spacing:.5px" id="cp-preview-label">Anteprima</div>
-      </div>
-    </div>
-
-    <!-- SFONDO -->
-    <div style="font-size:10px;font-weight:700;color:rgba(78,116,100,.6);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px;display:flex;align-items:center;gap:8px">
-      Sfondo
-      <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(78,116,100,.2),transparent)"></span>
-    </div>
-    <div id="bgp-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:14px"></div>
-
-    <!-- COLORE BORDO / ACCENTO -->
-    <div style="font-size:10px;font-weight:700;color:rgba(78,116,100,.6);text-transform:uppercase;letter-spacing:1.2px;margin-bottom:8px;display:flex;align-items:center;gap:8px">
-      Colore accento
-      <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(78,116,100,.2),transparent)"></span>
-    </div>
-    <div id="cp-color-grid" style="display:grid;grid-template-columns:repeat(6,1fr);gap:7px;margin-bottom:14px"></div>
-
-    <button class="icp-close" onclick="closeBgPicker()">Chiudi</button>
   </div>
 </div>
 
@@ -1258,8 +1213,8 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           </defs>
           <rect width="300" height="180" fill="url(#grid-ss)"/>
           <!-- foglio celle -->
-          <rect x="150" y="26" width="130" height="108" rx="5" fill="rgba(40,160,80,.06)" stroke="#4A6B52" stroke-width="1" opacity=".45"/>
-          <rect x="150" y="26" width="130" height="18" fill="rgba(40,160,80,.14)"/>
+          <rect x="150" y="26" width="130" height="108" rx="5" fill="rgba(78,116,100,.06)" stroke="#4A6B52" stroke-width="1" opacity=".45"/>
+          <rect x="150" y="26" width="130" height="18" fill="rgba(78,116,100,.14)"/>
           <text x="167" y="39" text-anchor="middle" font-family="monospace" font-size="8" fill="#4A6B52" opacity=".7">A</text>
           <text x="214" y="39" text-anchor="middle" font-family="monospace" font-size="8" fill="#4A6B52" opacity=".7">B</text>
           <text x="257" y="39" text-anchor="middle" font-family="monospace" font-size="8" fill="#4A6B52" opacity=".7">C</text>
@@ -1280,7 +1235,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <rect x="60" y="120" width="12" height="22" rx="2" fill="#4A6B52" opacity=".18"/>
           <rect x="78" y="104" width="12" height="38" rx="2" fill="#4A6B52" opacity=".26"/>
           <line x1="20" y1="142" x2="94" y2="142" stroke="#4A6B52" stroke-width=".6" opacity=".35"/>
-          <ellipse cx="215" cy="90" rx="60" ry="42" fill="rgba(40,160,80,.05)"/>
+          <ellipse cx="215" cy="90" rx="60" ry="42" fill="rgba(78,116,100,.05)"/>
         </svg>
         <div class="mc-content">
           <span class="mc-icon">📊</span>
@@ -1346,13 +1301,13 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
             </radialGradient>
           </defs>
           <rect width="300" height="130" fill="url(#grid-its)"/>
-          <ellipse cx="220" cy="55" rx="70" ry="45" fill="rgba(255,59,92,.045)"/>
+          <ellipse cx="220" cy="55" rx="70" ry="45" fill="rgba(171,86,73,.045)"/>
           <circle cx="60" cy="66" r="30" fill="url(#glow-its)"/>
           <!-- scudo -->
-          <path d="M224 8 L256 18 L256 55 Q256 88 224 104 Q192 88 192 55 L192 18 Z" fill="rgba(255,59,92,.08)" stroke="#AB5649" stroke-width="1.2" opacity=".55"/>
-          <path d="M224 20 L246 27 L246 54 Q246 76 224 88 Q202 76 202 54 L202 27 Z" fill="rgba(255,59,92,.05)" stroke="#9D5875" stroke-width=".8" opacity=".4"/>
+          <path d="M224 8 L256 18 L256 55 Q256 88 224 104 Q192 88 192 55 L192 18 Z" fill="rgba(171,86,73,.08)" stroke="#AB5649" stroke-width="1.2" opacity=".55"/>
+          <path d="M224 20 L246 27 L246 54 Q246 76 224 88 Q202 76 202 54 L202 27 Z" fill="rgba(171,86,73,.05)" stroke="#9D5875" stroke-width=".8" opacity=".4"/>
           <!-- lucchetto -->
-          <rect x="213" y="50" width="22" height="18" rx="3" fill="rgba(255,122,146,.22)" stroke="#B07C96" stroke-width="1" opacity=".7"/>
+          <rect x="213" y="50" width="22" height="18" rx="3" fill="rgba(196,120,105,.22)" stroke="#B07C96" stroke-width="1" opacity=".7"/>
           <path d="M217 50 v-8 a7 7 0 0 1 14 0 v8" fill="none" stroke="#B07C96" stroke-width="1.4" opacity=".6"/>
           <circle cx="224" cy="58" r="2.4" fill="#fff" opacity=".55"/>
           <!-- linee circuito decorative -->
@@ -1461,6 +1416,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <span class="dm-icon">🎮</span>
           <h3>Minigiochi</h3>
           <p>Quiz, Memory, Abbina e altro</p>
+          <div class="dm-preview" aria-hidden="true"><span>🧠</span><span>⚡</span><span>🔗</span><span>🃏</span><span>✏️</span><span>⚖️</span></div>
           <div class="tags"><span class="tag">6 attività</span><span class="tag">Individuale o squadre</span></div>
         </div>
       </div>
@@ -1487,6 +1443,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <span class="dm-icon">📖</span>
           <h3>Didattica</h3>
           <p>Flip Card e altri metodi</p>
+          <div class="dm-preview dm-preview-flip" aria-hidden="true"><span class="dm-minicard">?</span><span class="dm-minicard-arrow">⇄</span><span class="dm-minicard dm-minicard-b">✓</span></div>
           <div class="tags"><span class="tag">Flip Card</span><span class="tag">Facile · Medio</span></div>
         </div>
       </div>
@@ -1564,9 +1521,9 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
             </pattern>
           </defs>
           <rect width="660" height="180" fill="url(#grid-ls)"/>
-          <circle cx="330" cy="80" r="34" fill="rgba(255,204,51,.06)" stroke="#B8935A" stroke-width="1.2" opacity=".5"/>
+          <circle cx="330" cy="80" r="34" fill="rgba(184,147,90,.06)" stroke="#B8935A" stroke-width="1.2" opacity=".5"/>
           <path d="M316 92 q14 -22 28 0" fill="none" stroke="#D4B483" stroke-width="1.4" opacity=".5"/>
-          <rect x="320" y="112" width="20" height="8" rx="2" fill="rgba(255,204,51,.1)" stroke="#B8935A" stroke-width="1" opacity=".45"/>
+          <rect x="320" y="112" width="20" height="8" rx="2" fill="rgba(184,147,90,.1)" stroke="#B8935A" stroke-width="1" opacity=".45"/>
           <line x1="322" y1="120" x2="322" y2="124" stroke="#B8935A" stroke-width="1" opacity=".4"/>
           <line x1="330" y1="120" x2="330" y2="126" stroke="#B8935A" stroke-width="1" opacity=".4"/>
           <line x1="338" y1="120" x2="338" y2="124" stroke="#B8935A" stroke-width="1" opacity=".4"/>
@@ -1576,7 +1533,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <text x="252" y="58" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="26" fill="#B8935A" opacity=".32" font-weight="bold">!</text>
           <text x="404" y="66" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="18" fill="#D4B483" opacity=".28" font-weight="bold">!</text>
           <text x="392" y="132" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="30" fill="#B8935A" opacity=".22" font-weight="bold">!</text>
-          <ellipse cx="330" cy="88" rx="90" ry="58" fill="rgba(255,204,51,.05)"/>
+          <ellipse cx="330" cy="88" rx="90" ry="58" fill="rgba(184,147,90,.05)"/>
         </svg>
         <div class="dm-content">
           <span class="dm-icon">💡</span>
@@ -1622,7 +1579,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <text x="545" y="92" text-anchor="middle" font-family="'Share Tech Mono',monospace" font-size="34" fill="#4E7464" opacity=".55" font-weight="bold">?</text>
           <ellipse cx="558" cy="90" rx="90" ry="58" style="fill:rgba(var(--accent-rgb),.05)"/>
         </svg>
-        <div class="dm-content"><span class="dm-icon"><i class="ti ti-help-circle" style="color:var(--accent)"></i></span><h3>Quiz</h3><p>Risposta multipla</p></div>
+        <div class="dm-content"><span class="dm-icon"><i class="ti ti-help-circle" style="color:var(--accent)"></i></span><h3>Quiz</h3><p>Risposta multipla</p><div class="tags"><span class="tag">5–20 domande</span><span class="tag">Individuale o squadre</span></div></div>
       </div>
       <div class="act-card act-speed dm-card" id="ac-speed" role="button" tabindex="0" aria-label="Attività Speed Quiz" onclick="selAct('speed')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('speed');}" style="--dm-accent-rgb:122,90,56;--dm-accent-text-rgb:122,90,56">
         <span class="dm-badge">Minigioco</span>
@@ -1635,20 +1592,20 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <path d="M566 55 l-24 34 h16 l-8 30 26 -36 h-16 Z" fill="#7A5A38" opacity=".55"/>
           <ellipse cx="558" cy="90" rx="90" ry="58" fill="rgba(122,90,56,.04)"/>
         </svg>
-        <div class="dm-content"><span class="dm-icon"><i class="ti ti-bolt" style="color:#7A5A38"></i></span><h3>Speed Quiz</h3><p>60 secondi</p></div>
+        <div class="dm-content"><span class="dm-icon"><i class="ti ti-bolt" style="color:#7A5A38"></i></span><h3>Speed Quiz</h3><p>60 secondi</p><div class="tags"><span class="tag">5–20 domande</span><span class="tag">Individuale o squadre</span></div></div>
       </div>
       <div class="act-card act-match dm-card" id="ac-match" role="button" tabindex="0" aria-label="Attività Abbina" onclick="selAct('match')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('match');}" style="--dm-accent-rgb:110,122,80;--dm-accent-text-rgb:155,163,128">
         <span class="dm-badge">Minigioco</span>
         <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
           <defs><pattern id="grid-match" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#8B9968" stroke-width=".4" opacity=".18"/></pattern></defs>
           <rect width="660" height="180" fill="url(#grid-match)"/>
-          <rect x="480" y="66" width="60" height="28" rx="8" fill="rgba(157,143,255,.07)" stroke="#8B9968" stroke-width="1.2" opacity=".5"/>
-          <rect x="580" y="86" width="60" height="28" rx="8" fill="rgba(157,143,255,.07)" stroke="#8B9968" stroke-width="1.2" opacity=".5"/>
+          <rect x="480" y="66" width="60" height="28" rx="8" fill="rgba(160,150,190,.07)" stroke="#8B9968" stroke-width="1.2" opacity=".5"/>
+          <rect x="580" y="86" width="60" height="28" rx="8" fill="rgba(160,150,190,.07)" stroke="#8B9968" stroke-width="1.2" opacity=".5"/>
           <path d="M540 80 Q565 80 580 100" fill="none" stroke="#8B9968" stroke-width="1.6" opacity=".55" stroke-dasharray="3 4"/>
           <circle cx="540" cy="80" r="4" fill="#8B9968" opacity=".6"/><circle cx="580" cy="100" r="4" fill="#8B9968" opacity=".6"/>
           <ellipse cx="558" cy="90" rx="90" ry="58" style="fill:rgba(var(--purple-rgb),.05)"/>
         </svg>
-        <div class="dm-content"><span class="dm-icon"><i class="ti ti-link" style="color:#8B9968"></i></span><h3>Abbina</h3><p>Termine → definizione</p></div>
+        <div class="dm-content"><span class="dm-icon"><i class="ti ti-link" style="color:#8B9968"></i></span><h3>Abbina</h3><p>Termine → definizione</p><div class="tags"><span class="tag">Collega le coppie</span><span class="tag">Individuale o squadre</span></div></div>
       </div>
       <div class="act-card act-tf dm-card" id="ac-truefalse" role="button" tabindex="0" aria-label="Attività Vero o Falso" onclick="selAct('truefalse')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('truefalse');}" style="--dm-accent-rgb:122,90,56;--dm-accent-text-rgb:122,90,56">
         <span class="dm-badge">Minigioco</span>
@@ -1657,12 +1614,12 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <rect width="660" height="180" fill="url(#grid-tf)"/>
           <line x1="558" y1="48" x2="558" y2="120" stroke="#7A5A38" stroke-width="2" opacity=".4"/>
           <line x1="510" y1="66" x2="606" y2="66" stroke="#7A5A38" stroke-width="2" opacity=".4" stroke-linecap="round"/>
-          <path d="M510 66 a24 20 0 0 0 -24 30 h48 a24 20 0 0 0 -24 -30 Z" fill="rgba(255,209,102,.06)" stroke="#D4B483" stroke-width="1.2" opacity=".5"/>
-          <path d="M606 66 a24 20 0 0 0 -24 30 h48 a24 20 0 0 0 -24 -30 Z" fill="rgba(255,209,102,.06)" stroke="#D4B483" stroke-width="1.2" opacity=".5"/>
-          <rect x="546" y="120" width="24" height="8" rx="2" fill="rgba(255,209,102,.1)" stroke="#7A5A38" stroke-width="1" opacity=".4"/>
-          <ellipse cx="558" cy="88" rx="90" ry="58" fill="rgba(255,209,102,.04)"/>
+          <path d="M510 66 a24 20 0 0 0 -24 30 h48 a24 20 0 0 0 -24 -30 Z" fill="rgba(212,180,131,.06)" stroke="#D4B483" stroke-width="1.2" opacity=".5"/>
+          <path d="M606 66 a24 20 0 0 0 -24 30 h48 a24 20 0 0 0 -24 -30 Z" fill="rgba(212,180,131,.06)" stroke="#D4B483" stroke-width="1.2" opacity=".5"/>
+          <rect x="546" y="120" width="24" height="8" rx="2" fill="rgba(212,180,131,.1)" stroke="#7A5A38" stroke-width="1" opacity=".4"/>
+          <ellipse cx="558" cy="88" rx="90" ry="58" fill="rgba(212,180,131,.04)"/>
         </svg>
-        <div class="dm-content"><span class="dm-icon"><i class="ti ti-scale" style="color:#7A5A38"></i></span><h3>Vero o Falso</h3><p>Vero o falso?</p></div>
+        <div class="dm-content"><span class="dm-icon"><i class="ti ti-scale" style="color:#7A5A38"></i></span><h3>Vero o Falso</h3><p>Vero o falso?</p><div class="tags"><span class="tag">5–20 domande</span><span class="tag">Individuale o squadre</span></div></div>
       </div>
       <div class="act-card act-fill dm-card" id="ac-fill" role="button" tabindex="0" aria-label="Attività Completa la frase" onclick="selAct('fill')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selAct('fill');}" style="--dm-accent-rgb:84,112,140;--dm-accent-text-rgb:84,112,140">
         <span class="dm-badge">Minigioco</span>
@@ -1675,7 +1632,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <path d="M596 62 l14 14 -34 34 -18 4 4 -18 Z" fill="rgba(84,112,140,.08)" stroke="#4E7464" stroke-width="1.2" opacity=".55" stroke-linejoin="round"/>
           <ellipse cx="558" cy="90" rx="90" ry="58" fill="rgba(84,112,140,.04)"/>
         </svg>
-        <div class="dm-content"><span class="dm-icon"><i class="ti ti-pencil" style="color:#54708C"></i></span><h3>Completa la frase</h3><p>Inserisci il termine mancante</p></div>
+        <div class="dm-content"><span class="dm-icon"><i class="ti ti-pencil" style="color:#54708C"></i></span><h3>Completa la frase</h3><p>Inserisci il termine mancante</p><div class="tags"><span class="tag">5–20 domande</span><span class="tag">Individuale o squadre</span></div></div>
       </div>
       <!-- Memory in pausa (v8.9.2, badge corretto in v8.9.3): tasto
            disattivato per TUTTI i moduli di TUTTE le aree, dato che
@@ -1699,8 +1656,8 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <svg class="bg" viewBox="0 0 660 180" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
           <defs><pattern id="grid-mem" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0L0 0 0 24" fill="none" stroke="#AB5649" stroke-width=".4" opacity=".16"/></pattern></defs>
           <rect width="660" height="180" fill="url(#grid-mem)"/>
-          <rect x="486" y="48" width="60" height="84" rx="8" fill="rgba(255,107,133,.05)" stroke="#AB5649" stroke-width="1" opacity=".4"/>
-          <rect x="556" y="48" width="60" height="84" rx="8" fill="rgba(255,107,133,.05)" stroke="#AB5649" stroke-width="1" opacity=".4"/>
+          <rect x="486" y="48" width="60" height="84" rx="8" fill="rgba(196,120,105,.05)" stroke="#AB5649" stroke-width="1" opacity=".4"/>
+          <rect x="556" y="48" width="60" height="84" rx="8" fill="rgba(196,120,105,.05)" stroke="#AB5649" stroke-width="1" opacity=".4"/>
           <path d="M508 78l8 8 12 -16" fill="none" stroke="#9D5875" stroke-width="2" opacity=".4" stroke-linecap="round" stroke-linejoin="round"/>
           <path d="M578 78l8 8 12 -16" fill="none" stroke="#9D5875" stroke-width="2" opacity=".4" stroke-linecap="round" stroke-linejoin="round"/>
           <ellipse cx="558" cy="90" rx="90" ry="58" fill="rgba(171,86,73,.04)"/>
@@ -1730,7 +1687,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
             <div class="ov-title-variant for-speed"><span class="ai" style="background:rgba(122,90,56,.1)"><i class="ti ti-bolt" style="color:#7A5A38"></i></span><span>Impostazioni · Speed Quiz</span></div>
             <div class="ov-title-variant for-match"><span class="ai" style="background:rgba(var(--purple-rgb),.1)"><i class="ti ti-link" style="color:#8B9968"></i></span><span>Impostazioni · Abbina</span></div>
             <div class="ov-title-variant for-fill"><span class="ai" style="background:rgba(84,112,140,.1)"><i class="ti ti-pencil" style="color:#54708C"></i></span><span>Impostazioni · Completa la frase</span></div>
-            <div class="ov-title-variant for-truefalse"><span class="ai" style="background:rgba(255,209,102,.12)"><i class="ti ti-scale" style="color:#7A5A38"></i></span><span>Impostazioni · Vero o Falso</span></div>
+            <div class="ov-title-variant for-truefalse"><span class="ai" style="background:rgba(212,180,131,.12)"><i class="ti ti-scale" style="color:#7A5A38"></i></span><span>Impostazioni · Vero o Falso</span></div>
           </div>
           <button class="setup-close-btn" onclick="closeSetupOverlay()" aria-label="Chiudi impostazioni">×</button>
         </div>

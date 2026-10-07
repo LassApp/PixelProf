@@ -375,7 +375,7 @@ function _chdBuildParticipationSection(rows, neverPlayed) {
   const rowsHtml = rows.map(r => {
     const typeIcon = r.type === 'sq' ? '👥' : '👤';
     const colorDot = r.color
-      ? `<span class="chd-color-dot" style="background:${escAttr(r.color)};box-shadow:0 0 5px ${escAttr(r.color)}"></span>`
+      ? `<span class="chd-color-dot" style="background:${escAttr(softColor(r.color))}"></span>`
       : '';
     const avg = r.sessions > 0 ? Math.round(r.totalScore / r.sessions) : 0;
     return `<div class="chd-part-row">

@@ -116,7 +116,7 @@ function renderLbResults(type,act){
     const pos=i<3?medals[i]:String(i+1);
     const rCls=i<3?rankClass[i]:'';
     const modBadge=modBadgeHTML(r.mod);
-    const colorDot=r.color?`<span class="color-dot" style="background:${escAttr(r.color)};box-shadow:0 0 5px ${escAttr(r.color)}"></span>`:'';
+    const colorDot=r.color?`<span class="color-dot" style="background:${escAttr(softColor(r.color))}"></span>`:'';
     const sub=`${r.games} ${r.games===1?'partita':'partite'}`;
     return`<div class="lb-entry ${rCls}">
       <div class="lb-td pos">${pos}</div>

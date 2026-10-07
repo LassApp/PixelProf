@@ -2359,7 +2359,7 @@ function renderSqUI(){
     s.innerHTML=db.teams.map((t,i)=>`
       <div class="pchip-row">
         <button class="pchip pchip-left" id="sqchip-${i}"
-          style="border-left:3px solid ${escAttr(t.color)}"
+          style="border-left:3px solid ${escAttr(softColor(t.color))}"
           onclick="addSavedTeam('${escAttr(t.name)}','${escAttr(t.color)}')">${escHtml(t.name)}</button>
         <button
           class="pchip-action-btn pchip-rename-btn"
@@ -2502,7 +2502,7 @@ function renderSqRows(){
   const isLast = i => i === sTeams.length - 1;
   const canAdd  = sTeams.length < 4;
   cont.innerHTML = sTeams.map((t,i) => {
-    const dot    = `<div class="team-dot" style="background:${escAttr(t.color)};box-shadow:0 0 6px ${escAttr(t.color)}"></div>`;
+    const dot    = `<div class="team-dot" style="background:${escAttr(softColor(t.color))}"></div>`;
     const input  = `<input value="${escAttr(t.name)}" placeholder="Nome squadra ${i+1}..." oninput="_sqOnInput(${i},this.value)" onkeydown="if(event.key==='Enter'&&${canAdd&&isLast(i)}){event.preventDefault();addSqRow();}"/>`;
     // Tasto + sull'ultima riga se si possono aggiungere ancora squadre
     const addBtn = (canAdd && isLast(i))

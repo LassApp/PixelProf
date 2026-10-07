@@ -282,7 +282,7 @@ function _histBuildCard(s,idx){
   const teamsHTML=sorted.map((t,i)=>{
     const medal=i<3?medals[i]:'';
     const colorDot=t.color
-      ?`<span class="hist-color-dot" style="background:${escAttr(t.color)};box-shadow:0 0 5px ${escAttr(t.color)}"></span>`
+      ?`<span class="hist-color-dot" style="background:${escAttr(softColor(t.color))}"></span>`
       :'';
     return`<div class="hist-team-row">
       <div class="hist-team-left">

@@ -5,6 +5,28 @@
 // giocatore/squadra/coriandoli), stessa famiglia già usata altrove.
 const COLORS=['#4E7464','#6E7A50','#AB5649','#7A5A38','#54708C'];
 
+/* softColor(c) — SOLO per la visualizzazione (pallini giocatore/squadra in Classifica, Storico,
+   Panoramica, setup squadre). Le sessioni già salvate portano i colori della vecchia palette neon
+   (es. un verde acqua saturo): il dato salvato NON viene modificato, ma al momento di mostrarlo un colore neon
+   viene riportato sulla famiglia earthy equivalente (stesso criterio usato per i CSS). I colori
+   già in palette (COLORS) passano invariati. */
+function softColor(c){
+  if(typeof c!=='string') return c;
+  const m=/^#([0-9a-f]{6})$/i.exec(c.trim()); if(!m) return c;
+  const n=parseInt(m[1],16), r=(n>>16)&255, g=(n>>8)&255, b=n&255;
+  const mx=Math.max(r,g,b), mn=Math.min(r,g,b), d=mx-mn, v=mx/255, s=mx?d/mx:0;
+  if(!((v>=.88&&s>=.38)||(v>=.95&&s>=.3)||(s>=.7&&v>=.6))) return c;
+  let h=0;
+  if(d){ if(mx===r)h=((g-b)/d)%6; else if(mx===g)h=(b-r)/d+2; else h=(r-g)/d+4; h*=60; if(h<0)h+=360; }
+  if(h<20||h>=345) return '#AB5649';   // rosso/rosa → terracotta
+  if(h<38)  return '#9C6B3E';          // arancio   → rame
+  if(h<70)  return '#B8935A';          // giallo    → miele
+  if(h<190) return '#4E7464';          // verde/teal→ sage
+  if(h<245) return '#54708C';          // blu       → slate
+  if(h<290) return '#746996';          // viola     → viola spento
+  return '#9D5875';                    // magenta   → dusty-rose
+}
+
 const MOD_LABEL={CE:'Computer Essentials',OE:'Online Essentials',WP:'Word Processor',SS:'Spreadsheets',PP:'Power Point',IT:'IT Security',OC:'Online Collaboration'};
 // Etichetta modulo con fallback ad AreasConfig — MOD_LABEL resta la scorciatoia
 // rapida per i 3 moduli ECDL storici; per qualsiasi altro modulo (Cybersecurity,

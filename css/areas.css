@@ -277,10 +277,12 @@
 
 @layer theme {
   /* ── Scheda docente — raggruppamento per Area, tema chiaro ──────── */
-  html[data-theme="light"] .tdc-area-block-label{ color: rgba(242,232,213,.65); }
+  /* Giro colori 06/10 (sera): crema su .setup-card BIANCA (1.1:1) → navy */
+  html[data-theme="light"] .tdc-area-block-label{ color: rgba(var(--navy-rgb),.78); }
   html[data-theme="light"] .tdc-area-block-header::after{
-    background:linear-gradient(90deg,rgba(242,232,213,.22),transparent);
+    background:linear-gradient(90deg,rgba(var(--navy-rgb),.18),transparent);
   }
+  html:not([data-theme="light"]) .tdc-area-block-label{ color: rgba(242,232,213,.78); }   /* dark: .45 = 4.3:1 */
 }
 
 /* ═══════════════════════════════════════════════════════════════════

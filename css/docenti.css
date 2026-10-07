@@ -129,6 +129,12 @@
    (screen-teacher-detail). v6.6: estratta dallo stile inline in
    index.html per poterla tematizzare correttamente. */
 .tmd-email-hint{ font-size:11px;color:rgba(255,255,255,.35);font-family:'Share Tech Mono',monospace; }
+/* nota sotto "Cambia email": era uno style inline rgba(255,255,255,.3) → invisibile su card bianca in light */
+.tmd-note{ color:var(--text-muted); }
+html:not([data-theme="light"]) .tmd-email-hint{ color:rgba(242,232,213,.75); }   /* dark: .35 = 3.2:1 */
+/* bottoni Disattiva/Riattiva: colori inline (#AB5649 / #4A6B52) pensati per fondo chiaro → in dark toni chiari */
+html:not([data-theme="light"]) #tmd-btn-deactivate{ color:#D49A8C !important; }
+html:not([data-theme="light"]) #tmd-btn-activate{ color:#8FB09F !important; }
 
 /* .tmd-close-btn — "X" rossa di chiusura rapida per la scheda docente,
    accanto alla sezione "Dati personali" (v6.6: nuovo elemento). */
@@ -167,8 +173,10 @@ html[data-theme="light"] .tm-tabs{ border-bottom-color: rgba(var(--navy-rgb),.1)
    Docenti — ora le card sono fango/oliva piene, serve una freccia chiara. */
 html[data-theme="light"] .dd-arrow{ color: rgba(242,232,213,.5); }
 /* .tdc-aula-toggle-btn — le card sono ora fango: testo chiaro, non navy. */
-html[data-theme="light"] .tdc-aula-toggle-btn{ color: rgba(242,232,213,.6); }
-html[data-theme="light"] .tdc-aula-toggle-btn:hover{ color: rgba(242,232,213,.9); }
+/* Giro colori 06/10 (sera): questi due erano crema (.6/.9) pensati per card fango, ma la .setup-card della
+   Scheda Docente è BIANCA in light → 1.07:1. Ora navy. */
+html[data-theme="light"] .tdc-aula-toggle-btn{ color: rgba(var(--navy-rgb),.8); }
+html[data-theme="light"] .tdc-aula-toggle-btn:hover{ color: var(--navy); }
 /* Chip "aule assegnate" nella card della lista docenti (screen-teacher-list) */
 /* v8.15.2: .tdc-aula-chip/.tdc-aule-empty non hanno più bisogno di override
    qui — ora usano var(--text-muted)/var(--text-dim), già tematizzati. */
@@ -181,7 +189,7 @@ html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aula-chip,
 html[data-theme="light"] .tdc-card.tdc-inactive .tdc-aule-empty{ color: rgba(242,232,213,.85); } /* effettivo ×.55 ≈ .47 */
 /* Icona genere di default (nessun genere impostato, fallback ti-user) */
 html[data-theme="light"] .tdc-gender-icon{ background: rgba(23,35,45,.28); border-color: rgba(242,232,213,.3); color: #F2E8D5; }
-html[data-theme="light"] .tmd-email-hint{ color: rgba(var(--navy-rgb),.4); }
+html[data-theme="light"] .tmd-email-hint{ color: rgba(var(--navy-rgb),.75); } /* era .4 = 2.4:1 */
 html[data-theme="light"] .dp-hint-text{ color: rgba(var(--navy-rgb),.35); }
 
 /* ── Giro colori 06/10 — card docente + card Dashboard/Gestione docenti ─────────────────────

@@ -3261,7 +3261,7 @@ html[data-theme="light"] .pp-generic-input{ background: rgba(var(--navy-rgb),.03
 html[data-theme="light"] .dp-add-select option{ background:#ffffff; color:var(--navy); }
 html[data-theme="light"] .inp-row input::placeholder,html[data-theme="light"] .cs-add-inp::placeholder,
 html[data-theme="light"] .login-inp::placeholder,html[data-theme="light"] .cw-invite-inp::placeholder{ color: rgba(var(--navy-rgb),.5); }
-html[data-theme="light"] .gender-btn{ color: rgba(var(--navy-rgb),.55); }
+html[data-theme="light"] .gender-btn{ color: rgba(var(--navy-rgb),.8); } /* era .55 = 3.6:1 */
 
 /* ── 6bis. STEP-ATT: card minigioco ──
    Giro colori 05/10: l'hero "Scegli attività" NON è più qui. Prima lo stato inattivo era fango e
@@ -3541,7 +3541,7 @@ html[data-theme="light"] #screen-login,html[data-theme="light"] #screen-setpwd{
 html[data-theme="light"] .login-box{ background:#ffffff; border-color: rgba(var(--navy-rgb),.09); }
 html[data-theme="light"] .login-title{ text-shadow:none; }
 html[data-theme="light"] .login-subtitle{ color: rgba(var(--navy-rgb),.3); }
-html[data-theme="light"] .login-label{ color: rgba(var(--accent-rgb),.75); }
+html[data-theme="light"] .login-label{ color: var(--accent); } /* fango pieno: era .75 = 3.6:1 su bianco */
 
 /* ── 21. FOOTER ───────────────────────────────────────────────── */
 /* v8.13.1: override .pp-footer rimosso (era 2.03:1 anche in chiaro) — ora var(--text-dim) */

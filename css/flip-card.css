@@ -461,14 +461,27 @@
     border-color:rgba(242,232,213,.16);
     box-shadow:0 6px 22px rgba(23,35,45,.35);
   }
+  /* Giro colori 06/10 (sera) — niente griglia: l'SVG decorativo (reticolo <pattern> + forme tagliate sul bordo) e la
+     trama a puntini sono sostituiti da poche forme geometriche astratte TONO-SU-TONO: due cerchi, un anello e una
+     fascia diagonale, in navy a bassa opacità (più scure del fondo: non riducono il contrasto del testo). Le card
+     pari ribaltano la composizione per non risultare tutte uguali. */
+  .dm-card svg.bg{ display:none; }
   .dm-card::before{
     content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background-repeat:no-repeat;
     background-image:
-      radial-gradient(circle at 1px 1px, rgba(23,35,45,.16) 1px, transparent 0),
-      linear-gradient(160deg, transparent 55%, rgba(23,35,45,.18) 100%);
-    background-size:14px 14px, 100% 100%;
+      radial-gradient(circle at 100% 0%, rgba(23,35,45,.16) 0 74px, transparent 75px),
+      radial-gradient(circle at 100% 0%, transparent 0 94px, rgba(23,35,45,.22) 94px 95.5px, transparent 96px),
+      radial-gradient(circle at 0% 100%, rgba(23,35,45,.13) 0 56px, transparent 57px),
+      linear-gradient(135deg, transparent 0 62%, rgba(23,35,45,.06) 62% 66%, transparent 66%);
   }
-  .dm-card svg.bg{ filter:grayscale(1) brightness(2.6) sepia(.2); }
+  .dm-card:nth-child(even)::before{
+    background-image:
+      radial-gradient(circle at 0% 0%, rgba(23,35,45,.15) 0 62px, transparent 63px),
+      radial-gradient(circle at 100% 100%, rgba(23,35,45,.16) 0 78px, transparent 79px),
+      radial-gradient(circle at 100% 100%, transparent 0 98px, rgba(23,35,45,.22) 98px 99.5px, transparent 100px),
+      linear-gradient(45deg, transparent 0 60%, rgba(23,35,45,.06) 60% 64%, transparent 64%);
+  }
 
   .dm-card .dm-badge{ font-size:9px; background:rgba(23,35,45,.34); border-color:rgba(242,232,213,.3); color:#F2E8D5; }
   .dm-card .tag{ font-size:10px; padding:3px 9px; background:rgba(23,35,45,.3); border-color:rgba(242,232,213,.28); color:#F2E8D5; }

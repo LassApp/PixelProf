@@ -650,7 +650,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <button class="btn btn-neon" onclick="tmDetailSaveEmail()"><i class="ti ti-mail"></i> Cambia email</button>
       </div>
       <div id="tmd-email-fb" style="font-size:11px;min-height:16px"></div>
-      <div style="font-size:10px;color:rgba(255,255,255,.3);margin-top:4px;line-height:1.5">
+      <div class="tmd-note" style="font-size:10px;margin-top:4px;line-height:1.5">
         Richiede la Edge Function "update_teacher_email" (Admin API) — se non è stata deployata su Supabase, l'operazione mostrerà un errore esplicito qui sopra.
       </div>
     </div>

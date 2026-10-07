@@ -245,6 +245,8 @@
   html[data-theme="light"] .act-hero .act-hero-title{ color:#F2E8D5; text-shadow:0 2px 14px rgba(23,35,45,.35); }
   html[data-theme="light"] .act-hero .act-hero-sub{ color:rgba(242,232,213,.94); }
   html[data-theme="light"] .act-hero .act-hero-bg svg{ filter:grayscale(1) brightness(2.6) sepia(.2); }
+  /* niente reticolo nemmeno nell'hero: si nasconde solo il rettangolo riempito col <pattern> (fill="url(#…)"); le forme dell'attività restano */
+  .act-hero .act-hero-bg svg rect[fill^="url"]{ display:none; }
 
   html:not([data-theme="light"]) .act-hero{
     background: linear-gradient(135deg,#F2E8D5 0%,#EADFC6 55%,#F2E8D5 100%);

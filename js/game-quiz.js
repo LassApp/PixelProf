@@ -297,6 +297,10 @@ function _setGamePauseLock(locked){
     // games screen (memory / match / fill)
     sh('g-area')?.querySelector('.game-exit-btn'),
     sh('g-area')?.querySelector('.game-restart-btn'),
+    // giro 07/10: Esci/Ricomincia di Abbina (.game-header) sono ora spostati nello slot della topbar
+    // (app.js, TOPBAR CONTEXT): non sono più discendenti di #g-area
+    sh('tb-context')?.querySelector('.game-exit-btn'),
+    sh('tb-context')?.querySelector('.game-restart-btn'),
   ];
   lockTargets.forEach(el=>{
     if(!el)return;

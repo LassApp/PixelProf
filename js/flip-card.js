@@ -742,8 +742,8 @@ async function selDidattica(type){
    ora sono .dm-card come quella di step-didattica, che usa
    icone emoji (.dm-icon) invece del box .ai. */
 const FC_LEVELS = [
-  { key: 'facile', label: 'Facile', desc: 'Concetti base, ripasso rapido', emoji: '🙂', rgb: '0,255,150' },
-  { key: 'medio', label: 'Medio', desc: 'Approfondimento, dettagli tecnici', emoji: '🧠', rgb: '124,106,255' },
+  { key: 'facile', label: 'Facile', desc: 'Concetti base, ripasso rapido', emoji: '🙂', rgb: '143,176,159' },
+  { key: 'medio', label: 'Medio', desc: 'Approfondimento, dettagli tecnici', emoji: '🧠', rgb: '160,150,190' },
 ];
 
 /* Sfondo decorativo SVG per le due card livello — stessa
@@ -793,9 +793,13 @@ function _renderFlipCardLevelSelect(cont, mod){
   const available = FlipCardLoader.levelsFor(mod);
   const cardsHtml = FC_LEVELS.map(l => {
     const ok = available.includes(l.key);
-    const badge = `<span class="dm-badge" style="background:rgba(${l.rgb},.12);border-color:rgba(${l.rgb},.35);color:${l.key==='facile'?'#4A6B52':'#8B9968'}">Livello</span>`;
+    // Giro 07/10: tolti gli stili inline di colore su badge e icona. Il badge usava #4A6B52/#8B9968 come
+    // testo (illeggibile su fango/oliva; l'inline batteva il CSS di .dm-badge) e l'icona un drop-shadow
+    // verde = l'"alone neon" dell'emoji Facile. Ora li stila solo css/flip-card.css (chip scuro + testo
+    // crema, tessera icona); resta solo il bordo del badge nel colore del livello.
+    const badge = `<span class="dm-badge" style="border-color:rgba(${l.rgb},.55)">Livello</span>`;
     const body = `<div class="dm-content">
-        <span class="dm-icon" style="filter:drop-shadow(0 0 8px rgba(${l.rgb},.35))">${l.emoji}</span>
+        <span class="dm-icon">${l.emoji}</span>
         <h3>${l.label}</h3>
         <p>${escHtml(ok ? l.desc : 'Non ancora disponibile')}</p>
       </div>`;

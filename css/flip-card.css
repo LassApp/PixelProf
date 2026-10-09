@@ -523,4 +523,10 @@
   #step-act .act-card.dm-card.dm-disabled .dm-content::after{ content:'Presto disponibile'; }
   #step-cat .cat-card.dm-card:hover .dm-content::after,
   #step-act .act-card.dm-card:not(.dm-disabled):hover .dm-content::after{ transform:translateX(4px); opacity:1; }
+
+  /* Giro 07/10: in hover il titolo prendeva la tinta d'accento della card (verde scuro su fango, blu su
+     oliva…) con contrasto basso. Ora crema leggermente più scuro del titolo a riposo (#F2E8D5): si capisce
+     che la card è in focus senza perdere leggibilità (≈4.7:1 su fango, ≈4.6:1 su oliva scuro). */
+  .dm-card:hover .dm-content h3,
+  .dm-card:focus-visible .dm-content h3{ color:#EADFC6; }
 }

@@ -906,10 +906,10 @@ const OnboardingTour = (function () {
       title:'Chiudi le impostazioni ✖️',
       body:'Il pannello si è aperto cliccando sulla card. Chiudilo con questa ×: tornerai alla scelta dei minigiochi.' },
     // La variante gemella di questo passo dentro Flip Card (poco più
-    // sotto, target '#step-didattica .act-back-btn') resta invariata,
+    // sotto, target '#tb-context .act-back-btn') resta invariata,
     // 'action': quel pulsante non è mai coperto da nessun overlay,
     // nessun problema lì.
-    { screen:'act', target:'#step-act .act-back-btn', type:'action', section:'minigiochi',
+    { screen:'act', target:'#tb-context .act-back-btn', type:'action', section:'minigiochi',
       title:'Torna alla modalità ↩️',
       body:'Questo pulsante ti riporta alla scelta tra Minigiochi e Didattica.' },
     { screen:'homeCategory', target:'.cat-didattica', type:'action', section:'didattica',
@@ -935,7 +935,7 @@ const OnboardingTour = (function () {
     { screen:'flipcardConfirm', target:'#pp-generic-yes', type:'action', section:'didattica',
       title:'Conferma richiesta ✅',
       body:'Per evitare uscite accidentali viene sempre chiesta una conferma prima di abbandonare la sessione.' },
-    { screen:'didattica', target:'#step-didattica .act-back-btn', type:'action', section:'didattica',
+    { screen:'didattica', target:'#tb-context .act-back-btn', type:'action', section:'didattica',
       title:'Torna alla modalità ↩️',
       body:'Anche da qui puoi tornare alla scelta tra Minigiochi e Didattica.' },
     // v2.5.0 — 6 nuovi passi finali (richiesta esplicita utente): vedi
@@ -1169,10 +1169,10 @@ const OnboardingTour = (function () {
       title:'Chiudi le impostazioni ✖️',
       body:'Il pannello si è aperto cliccando sulla card. Chiudilo con questa ×: tornerai alla scelta dei minigiochi.' },
     // La variante gemella di questo passo dentro Flip Card (poco più
-    // sotto, target '#step-didattica .act-back-btn') resta invariata,
+    // sotto, target '#tb-context .act-back-btn') resta invariata,
     // 'action': quel pulsante non è mai coperto da nessun overlay,
     // nessun problema lì.
-    { screen:'act', target:'#step-act .act-back-btn', type:'action', section:'minigiochi',
+    { screen:'act', target:'#tb-context .act-back-btn', type:'action', section:'minigiochi',
       title:'Torna alla modalità ↩️',
       body:'Questo pulsante ti riporta alla scelta tra Minigiochi e Didattica.' },
     { screen:'homeCategory', target:'.cat-didattica', type:'action', section:'didattica',
@@ -1198,7 +1198,7 @@ const OnboardingTour = (function () {
     { screen:'flipcardConfirm', target:'#pp-generic-yes', type:'action', section:'didattica',
       title:'Conferma richiesta ✅',
       body:'Per evitare uscite accidentali viene sempre chiesta una conferma prima di abbandonare la sessione.' },
-    { screen:'didattica', target:'#step-didattica .act-back-btn', type:'action', section:'didattica',
+    { screen:'didattica', target:'#tb-context .act-back-btn', type:'action', section:'didattica',
       title:'Torna alla modalità ↩️',
       body:'Anche da qui puoi tornare alla scelta tra Minigiochi e Didattica.' },
     // v2.5.0 — 6 nuovi passi finali (richiesta esplicita utente): vedi
@@ -1403,6 +1403,10 @@ const OnboardingTour = (function () {
    *  ancora nascosto. */
   function _resolveVisibleTargets(sel) {
     try {
+      // giro 07/10: il tasto indietro/Esci vive in #tb-context (spostato da app.js, TOPBAR CONTEXT):
+      // si sincronizza lo spostamento PRIMA di cercare, così il target esiste già anche se la
+      // schermata è cambiata un istante fa.
+      if (typeof window.syncTopbarContext === 'function') window.syncTopbarContext();
       return Array.from(document.querySelectorAll(sel)).filter(el => el.offsetParent !== null);
     } catch (e) { return []; }
   }

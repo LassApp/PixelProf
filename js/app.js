@@ -2060,3 +2060,73 @@ function closeHubMenu(){
     }, 500);
   }, 1800);
 })();
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   TOPBAR CONTEXT — giro 07/10
+   Sposta nella topbar (slot #tb-context, centrato tra logo e pulsanti) i blocchi di navigazione
+   che prima stavano in cima alla pagina:
+     · .act-back-row  — tasto indietro + etichetta (Modulo / Modalità / Didattica / livello Flip Card)
+     · .game-header   — Esci (+ Ricomincia) + breadcrumb di Flip Card, Lo Sapevi? e Abbina
+   Il nodo viene SPOSTATO (non clonato: id, onclick inline e contenuto aggiornato dal JS restano
+   quelli veri) e al suo posto resta un commento-segnaposto: quando lo step originale torna
+   nascosto (.hidden) o il contenitore viene riscritto con innerHTML (Flip Card ricostruisce la
+   scelta livello a ogni render) il nodo viene riportato a casa / eliminato.
+   Sotto i 1000px di larghezza non si sposta nulla: la topbar non ha spazio al centro.
+   Chi cercava questi nodi con selettori legati allo step ha bisogno di #tb-context:
+   vedi onboarding.js (target del tour) e _setGamePauseLock() in game-quiz.js.
+   ══════════════════════════════════════════════════════════════════════════════ */
+(function(){
+  const SRC = '.act-back-row, .game-header';
+  const MQ  = window.matchMedia ? window.matchMedia('(min-width: 1000px)') : { matches:true };
+  const moved = new Map();   // nodo spostato -> commento segnaposto
+  let slot = null, running = false;
+
+  const shown = el => !!el && el.getClientRects().length > 0;
+
+  function giveBack(node, ph){
+    if(ph.isConnected){ ph.parentNode.insertBefore(node, ph); ph.remove(); }
+    else node.remove();                       // casa distrutta (innerHTML): il nodo è orfano
+    moved.delete(node);
+  }
+
+  function sync(){
+    if(running) return;
+    running = true;
+    try{
+      slot = slot || document.getElementById('tb-context');
+      if(!slot) return;
+      const wide = MQ.matches;
+      // 1) riporta a casa ciò che non deve più stare in topbar
+      Array.from(moved.entries()).forEach(([node, ph])=>{
+        const homeVisible = ph.isConnected && shown(ph.parentElement);
+        if(!wide || !homeVisible) giveBack(node, ph);
+      });
+      // 2) sposta i blocchi visibili che sono ancora in pagina
+      if(wide){
+        document.querySelectorAll(SRC).forEach(node=>{
+          if(slot.contains(node) || moved.has(node) || !shown(node)) return;
+          const ph = document.createComment('tb-context');
+          node.parentNode.insertBefore(ph, node);
+          slot.appendChild(node);
+          moved.set(node, ph);
+        });
+      }
+      slot.classList.toggle('has-ctx', slot.children.length > 0);
+    } finally { running = false; }
+  }
+
+  function init(){
+    sync();
+    // Il callback del MutationObserver è un microtask: gira PRIMA del paint successivo, quindi quando un
+    // gioco ricostruisce la sua barra (buildGameHeader a ogni domanda) non si vede mai la barra "vecchia"
+    // nel posto originale. sync() è idempotente: a stato invariato non tocca il DOM.
+    new MutationObserver(()=>sync()).observe(document.body, {
+      childList:true, subtree:true, attributes:true, attributeFilter:['class','style']
+    });
+    if(MQ.addEventListener) MQ.addEventListener('change', sync);
+    else if(MQ.addListener) MQ.addListener(sync);
+  }
+  window.syncTopbarContext = sync;   // usata dal tour guidato prima di risolvere i target
+  if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();

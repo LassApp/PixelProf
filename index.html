@@ -385,7 +385,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <div id="dp-current-email" class="tmd-email-hint">Email attuale: —</div>
       <div class="inp-row">
         <input type="email" id="dp-email" placeholder="nuova@scuola.it" maxlength="120">
-        <button type="button" onclick="dpSaveEmail()"><i class="ti ti-mail"></i> Aggiorna email</button>
+        <button type="button" class="btn btn-neon" onclick="dpSaveEmail()"><i class="ti ti-mail"></i> Aggiorna email</button>
       </div>
       <div id="dp-email-fb" class="dp-feedback"></div>
       <div class="dp-email-note"><i class="ti ti-info-circle"></i> Riceverai un'email di conferma al nuovo indirizzo: il cambio sarà effettivo solo dopo aver confermato.</div>
@@ -965,7 +965,10 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </div>
   </div>
 
-  <div style="flex:1"></div>
+  <!-- Giro 07/10: slot centrale della topbar (era un semplice distanziatore flex:1). Ospita, spostati
+       da js/app.js (TOPBAR CONTEXT), il tasto indietro/Esci e l'etichetta di contesto dei passaggi
+       Modulo/Modalità/Attività/Didattica, della scelta livello Flip Card e dei giochi con .game-header. -->
+  <div id="tb-context" class="tb-context"></div>
 
   <!-- v8.26.9: "← Dashboard" SEMPRE presente qui (solo Direttore, toggle in
        _afterLogin/app.js) — a differenza del logo (che cambia aula) e del

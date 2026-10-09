@@ -67,21 +67,12 @@
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
-    "statement": "Il phishing non \"sfonda\" una protezione tecnica: è la vittima a consegnare volontariamente l'informazione, ingannata.",
-    "answer": true,
-    "explanation": "Il messaggio crea spesso un senso di urgenza."
-  },
-  {
-    "id": 9,
-    "module": "sicurezza",
-    "type": "truefalse",
-    "difficulty": "easy",
     "statement": "Il phishing condotto per telefono si chiama vishing.",
     "answer": true,
     "explanation": "Può avvenire anche via email o SMS."
   },
   {
-    "id": 10,
+    "id": 9,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -90,16 +81,7 @@
     "explanation": "La pagina contraffatta era opera del gruppo \"Fancy Bear\"."
   },
   {
-    "id": 11,
-    "module": "sicurezza",
-    "type": "truefalse",
-    "difficulty": "easy",
-    "statement": "Il malware arriva spesso camuffato da qualcosa che l'utente stesso decide di aprire, installare o eseguire.",
-    "answer": true,
-    "explanation": "Raramente sfonda un sistema con la forza bruta."
-  },
-  {
-    "id": 12,
+    "id": 10,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -108,7 +90,7 @@
     "explanation": "Il nome deriva dal cavallo di Troia."
   },
   {
-    "id": 13,
+    "id": 11,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -117,7 +99,7 @@
     "explanation": "Microsoft aveva pubblicato la correzione circa due mesi prima."
   },
   {
-    "id": 14,
+    "id": 12,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -126,16 +108,7 @@
     "explanation": "Chiedeva un riscatto in bitcoin."
   },
   {
-    "id": 15,
-    "module": "sicurezza",
-    "type": "truefalse",
-    "difficulty": "easy",
-    "statement": "Il ransomware cifra i file di un dispositivo e chiede un pagamento, quasi sempre in criptovaluta.",
-    "answer": true,
-    "explanation": "Pagare non offre alcuna garanzia."
-  },
-  {
-    "id": 16,
+    "id": 13,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -144,25 +117,7 @@
     "explanation": "Permette di ripristinare tutto senza trattare con l'aggressore."
   },
   {
-    "id": 17,
-    "module": "sicurezza",
-    "type": "truefalse",
-    "difficulty": "hard",
-    "statement": "Norsk Hydro fu colpita nella notte tra il 18 e il 19 marzo 2019 dal ransomware LockerGoga.",
-    "answer": true,
-    "explanation": "Non pagò alcun riscatto e ripristinò i sistemi dai backup."
-  },
-  {
-    "id": 18,
-    "module": "sicurezza",
-    "type": "truefalse",
-    "difficulty": "hard",
-    "statement": "Il recupero di Norsk Hydro costò circa 75 milioni di dollari.",
-    "answer": true,
-    "explanation": "Richiese diverse settimane."
-  },
-  {
-    "id": 19,
+    "id": 14,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -171,7 +126,7 @@
     "explanation": "Riduce la possibilità che un solo evento distrugga tutto."
   },
   {
-    "id": 20,
+    "id": 15,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -180,7 +135,7 @@
     "explanation": "Una cancellazione o una cifratura si propaga alle copie."
   },
   {
-    "id": 21,
+    "id": 16,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -189,7 +144,7 @@
     "explanation": "Dei cinque sistemi di backup nessuno funzionava in modo affidabile."
   },
   {
-    "id": 22,
+    "id": 17,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -198,7 +153,7 @@
     "explanation": "Il fornitore risponde invece dell'infrastruttura."
   },
   {
-    "id": 23,
+    "id": 18,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -207,7 +162,7 @@
     "explanation": "Erano scritte per errore direttamente nel codice."
   },
   {
-    "id": 24,
+    "id": 19,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -216,7 +171,7 @@
     "explanation": "Uber pagò 100.000 dollari agli aggressori, camuffati da ricompensa."
   },
   {
-    "id": 25,
+    "id": 20,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -225,7 +180,7 @@
     "explanation": "Contano le combinazioni di dati."
   },
   {
-    "id": 26,
+    "id": 21,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -234,7 +189,7 @@
     "explanation": "I giornalisti del New York Times riuscirono comunque a risalire a un'utente."
   },
   {
-    "id": 27,
+    "id": 22,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -243,7 +198,7 @@
     "explanation": "È il cosiddetto diritto all'oblio."
   },
   {
-    "id": 28,
+    "id": 23,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -252,7 +207,7 @@
     "explanation": "È la normativa europea sulla protezione dei dati personali."
   },
   {
-    "id": 29,
+    "id": 24,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -261,7 +216,7 @@
     "explanation": "Superò il precedente record di 746 milioni di euro inflitto ad Amazon nel 2021."
   },
   {
-    "id": 30,
+    "id": 25,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -270,7 +225,7 @@
     "explanation": "Si tratta di decidere con calma quanto tempo dedicare."
   },
   {
-    "id": 31,
+    "id": 26,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -279,7 +234,7 @@
     "explanation": "Indeboliscono la capacità di decidere con calma."
   },
   {
-    "id": 32,
+    "id": 27,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -288,25 +243,7 @@
     "explanation": "Google aveva presentato Digital Wellbeing per Android nel maggio 2018."
   },
   {
-    "id": 33,
-    "module": "sicurezza",
-    "type": "truefalse",
-    "difficulty": "easy",
-    "statement": "Il cyberbullismo è un comportamento ripetuto, praticato attraverso le tecnologie digitali, per spaventare, irritare o mettere in ridicolo.",
-    "answer": true,
-    "explanation": "La Legge 71 del 2017 lo definisce per i minorenni."
-  },
-  {
-    "id": 34,
-    "module": "sicurezza",
-    "type": "truefalse",
-    "difficulty": "easy",
-    "statement": "Davanti al cyberbullismo si conservano le prove prima di cancellare qualunque cosa e si blocca il mittente.",
-    "answer": true,
-    "explanation": "Poi si segnala alla piattaforma e si parla con un adulto di fiducia."
-  },
-  {
-    "id": 35,
+    "id": 28,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -315,7 +252,7 @@
     "explanation": "È in vigore dal 18 giugno 2017."
   },
   {
-    "id": 36,
+    "id": 29,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -324,7 +261,7 @@
     "explanation": "Altrimenti ci si può rivolgere al Garante per la protezione dei dati personali."
   },
   {
-    "id": 37,
+    "id": 30,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -333,7 +270,7 @@
     "explanation": "Prima si copiano i dati utili e si cancellano quelli personali."
   },
   {
-    "id": 38,
+    "id": 31,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -342,7 +279,7 @@
     "explanation": "Solo il 22,3% è stato documentato come raccolto e riciclato correttamente."
   },
   {
-    "id": 39,
+    "id": 32,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -351,7 +288,7 @@
     "explanation": "Nessuno strumento funziona da solo."
   },
   {
-    "id": 40,
+    "id": 33,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -360,7 +297,7 @@
     "explanation": "Raccontò la vicenda nel libro \"L'uovo del cuculo\"."
   },
   {
-    "id": 41,
+    "id": 34,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -369,7 +306,7 @@
     "explanation": "Ne basta una sola: quella che protegge il manager."
   },
   {
-    "id": 42,
+    "id": 35,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -378,7 +315,7 @@
     "explanation": "Consiste nel provare su altri account una password già rubata."
   },
   {
-    "id": 43,
+    "id": 36,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -387,7 +324,7 @@
     "explanation": "Erano conservate in chiaro, senza alcuna cifratura."
   },
   {
-    "id": 44,
+    "id": 37,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -396,7 +333,7 @@
     "explanation": "Usarono credenziali rubate, provate sugli account dei singoli clienti."
   },
   {
-    "id": 45,
+    "id": 38,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -405,16 +342,7 @@
     "explanation": "Serve un secondo fattore di natura diversa: qualcosa che si ha o che si è."
   },
   {
-    "id": 46,
-    "module": "sicurezza",
-    "type": "truefalse",
-    "difficulty": "easy",
-    "statement": "Il phishing sfonda le protezioni tecniche di un sistema con la forza.",
-    "answer": false,
-    "explanation": "Si limita a chiedere, con inganno, che sia la vittima a fornire l'informazione."
-  },
-  {
-    "id": 47,
+    "id": 39,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -423,7 +351,7 @@
     "explanation": "Fu opera di \"Fancy Bear\"; gli Shadow Brokers resero pubblica EternalBlue."
   },
   {
-    "id": 48,
+    "id": 40,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -432,7 +360,7 @@
     "explanation": "Questa è la descrizione del trojan; il virus si attacca ad altri file."
   },
   {
-    "id": 49,
+    "id": 41,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -441,7 +369,7 @@
     "explanation": "Iniziò il 12 maggio 2017."
   },
   {
-    "id": 50,
+    "id": 42,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -450,16 +378,7 @@
     "explanation": "Non offre alcuna garanzia reale."
   },
   {
-    "id": 51,
-    "module": "sicurezza",
-    "type": "truefalse",
-    "difficulty": "hard",
-    "statement": "Norsk Hydro decise di pagare il riscatto per tornare operativa più in fretta.",
-    "answer": false,
-    "explanation": "Decise di non pagare e di ripristinare i sistemi dai backup."
-  },
-  {
-    "id": 52,
+    "id": 43,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -468,7 +387,7 @@
     "explanation": "Non protegge da eventi che colpiscono l'intero ambiente."
   },
   {
-    "id": 53,
+    "id": 44,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -477,7 +396,7 @@
     "explanation": "Credeva di averne cinque, ma nessuno funzionava in modo affidabile."
   },
   {
-    "id": 54,
+    "id": 45,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -486,7 +405,7 @@
     "explanation": "Dipende anche da come l'utente configura e protegge il proprio accesso."
   },
   {
-    "id": 55,
+    "id": 46,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -495,7 +414,7 @@
     "explanation": "Furono trovate per errore nel codice di un repository privato su GitHub."
   },
   {
-    "id": 56,
+    "id": 47,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -504,7 +423,7 @@
     "explanation": "Pochi dati banali messi insieme possono restringere il campo a una sola persona."
   },
   {
-    "id": 57,
+    "id": 48,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -513,16 +432,7 @@
     "explanation": "Le pubblicò nell'agosto 2006; il 2013 è l'anno in cui si concluse la causa legale."
   },
   {
-    "id": 58,
-    "module": "sicurezza",
-    "type": "truefalse",
-    "difficulty": "easy",
-    "statement": "Il GDPR consente di raccogliere dati genericamente, per ogni evenienza.",
-    "answer": false,
-    "explanation": "I dati vanno raccolti solo per uno scopo dichiarato e specifico."
-  },
-  {
-    "id": 59,
+    "id": 49,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -531,7 +441,7 @@
     "explanation": "Riguardava il trasferimento dei dati degli utenti europei verso gli Stati Uniti."
   },
   {
-    "id": 60,
+    "id": 50,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -540,7 +450,7 @@
     "explanation": "Non sono in sé illegali né sempre dannose."
   },
   {
-    "id": 61,
+    "id": 51,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -549,7 +459,7 @@
     "explanation": "Lo avviò nel 2016, dopo aver lasciato Google."
   },
   {
-    "id": 62,
+    "id": 52,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -558,7 +468,7 @@
     "explanation": "Lo schermo ne cambia le regole in peggio."
   },
   {
-    "id": 63,
+    "id": 53,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -567,7 +477,7 @@
     "explanation": "Non ha introdotto nuovi reati: ha puntato soprattutto sulla prevenzione."
   },
   {
-    "id": 64,
+    "id": 54,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -576,7 +486,7 @@
     "explanation": "Non è automaticamente più sostenibile: il dispositivo ha materiali tossici e richiede energia."
   },
   {
-    "id": 65,
+    "id": 55,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
@@ -585,7 +495,7 @@
     "explanation": "Solo il 22,3% è stato documentato come raccolto e riciclato."
   },
   {
-    "id": 66,
+    "id": 56,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "easy",
@@ -594,12 +504,525 @@
     "explanation": "È una pratica quotidiana, fatta di piccole scelte ripetute."
   },
   {
-    "id": 67,
+    "id": 57,
     "module": "sicurezza",
     "type": "truefalse",
     "difficulty": "hard",
     "statement": "Clifford Stoll partì da una discrepanza contabile di 75 milioni di dollari.",
     "answer": false,
     "explanation": "La discrepanza era di appena 75 centesimi di dollaro."
+  },
+  {
+    "id": 58,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'utente di un password manager deve ricordare una sola password, la Master Password, che non va mai usata per altri account.",
+    "answer": true,
+    "explanation": "Deve essere lunga, imprevedibile e mai riutilizzata."
+  },
+  {
+    "id": 59,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un Data Breach è una fuga o esposizione di dati.",
+    "answer": true,
+    "explanation": "Molti password manager avvisano quando una credenziale potrebbe esserne stata coinvolta."
+  },
+  {
+    "id": 60,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Anche con un password manager, una Master Password debole può compromettere la sicurezza.",
+    "answer": true,
+    "explanation": "La tecnologia riduce il rischio, ma non sostituisce l'attenzione dell'utente."
+  },
+  {
+    "id": 61,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La 2FA è una forma di autenticazione a più fattori che usa esattamente due fattori diversi.",
+    "answer": true,
+    "explanation": "Two-Factor Authentication."
+  },
+  {
+    "id": 62,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Chi usa password, codice dell'app di autenticazione e impronta digitale utilizza tre fattori.",
+    "answer": true,
+    "explanation": "Qualcosa che conosce, che possiede e che è."
+  },
+  {
+    "id": 63,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un codice temporaneo ricevuto via SMS è generalmente più sicuro della sola password, ma vulnerabile al SIM swapping.",
+    "answer": true,
+    "explanation": "Le chiavi di sicurezza fisiche possono offrire una protezione maggiore."
+  },
+  {
+    "id": 64,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una password si può cambiare se compromessa, mentre un'impronta digitale o il volto non possono essere semplicemente sostituiti.",
+    "answer": true,
+    "explanation": "È una particolarità importante della biometria."
+  },
+  {
+    "id": 65,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il controllo del contesto dell'accesso non è un \"quarto fattore\": è un giudizio dinamico del rischio.",
+    "answer": true,
+    "explanation": "Si parla di Risk-Based e Adaptive Authentication."
+  },
+  {
+    "id": 66,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il phishing non \"sfonda\" necessariamente una protezione tecnica: spesso convince la persona a compiere l'azione voluta.",
+    "answer": true,
+    "explanation": "Sfrutta paura, urgenza, curiosità, fiducia o autorità."
+  },
+  {
+    "id": 67,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo smishing è il phishing condotto con SMS o messaggi di testo.",
+    "answer": true,
+    "explanation": "Per esempio un falso corriere che invita a cliccare."
+  },
+  {
+    "id": 68,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il quishing usa un codice QR per indirizzare la vittima verso un sito fraudolento.",
+    "answer": true,
+    "explanation": "QR phishing."
+  },
+  {
+    "id": 69,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo spear phishing è costruito su misura della vittima, con informazioni reali su di lei.",
+    "answer": true,
+    "explanation": "Per questo può essere più difficile da riconoscere."
+  },
+  {
+    "id": 70,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il worm si replica e si diffonde automaticamente attraverso le reti, senza richiedere necessariamente che l'utente apra un file infetto.",
+    "answer": true,
+    "explanation": "Il virus, invece, si diffonde quando l'utente apre un file infetto."
+  },
+  {
+    "id": 71,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il keylogger registra ciò che viene digitato sulla tastiera, comprese potenzialmente le password.",
+    "answer": true,
+    "explanation": "Key significa tasto, logger registratore."
+  },
+  {
+    "id": 72,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo scopo del malware è quasi sempre riconducibile a guadagno, controllo del sistema o raccolta e sorveglianza delle informazioni.",
+    "answer": true,
+    "explanation": "Gli obiettivi possono anche combinarsi."
+  },
+  {
+    "id": 73,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il malware arriva spesso camuffato da qualcosa che l'utente stesso decide di aprire, installare o eseguire.",
+    "answer": true,
+    "explanation": "Per questo conta la provenienza di programmi e file."
+  },
+  {
+    "id": 74,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le minacce informatiche possono combinarsi in uno stesso attacco: un phishing può servire a installare un malware che ruba credenziali.",
+    "answer": true,
+    "explanation": "Sono come anelli di una stessa catena."
+  },
+  {
+    "id": 75,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Emotet era un Trojan frequentemente distribuito attraverso email di phishing con collegamenti o allegati dannosi.",
+    "answer": true,
+    "explanation": "È una minaccia analizzata dalla CISA."
+  },
+  {
+    "id": 76,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La CISA ha documentato che Emotet poteva distribuire altro malware, compreso quello usato per distribuire ransomware.",
+    "answer": true,
+    "explanation": "Esemplifica la logica di una catena di attacco."
+  },
+  {
+    "id": 77,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il backup può essere locale, su hard disk o SSD esterno, oppure remoto, tramite un servizio cloud; le due soluzioni si possono combinare.",
+    "answer": true,
+    "explanation": "Il remoto conserva i dati su server accessibili via Internet."
+  },
+  {
+    "id": 78,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un buon sistema di backup deve essere regolare, affidabile e verificato.",
+    "answer": true,
+    "explanation": "Conviene controllare periodicamente di poter ripristinare i dati."
+  },
+  {
+    "id": 79,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Formati, dispositivi e software possono cambiare e rendere difficile aprire dati molto vecchi.",
+    "answer": true,
+    "explanation": "La conservazione riguarda anche la possibilità di usare la copia in futuro."
+  },
+  {
+    "id": 80,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il backup è paragonato al negativo delle vecchie fotografie, da cui si può stampare una nuova copia.",
+    "answer": true,
+    "explanation": "Il suo valore sta nel riportare in vita ciò che sembrava perduto."
+  },
+  {
+    "id": 81,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel novembre 2017 un nuovo amministratore delegato di Uber decise di rendere pubblica la violazione.",
+    "answer": true,
+    "explanation": "L'episodio era stato tenuto nascosto per oltre un anno."
+  },
+  {
+    "id": 82,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 2022 il responsabile della sicurezza di Uber dell'epoca fu condannato penalmente per aver deliberatamente occultato l'accaduto.",
+    "answer": true,
+    "explanation": "Fu una conseguenza legale del caso."
+  },
+  {
+    "id": 83,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il caso AOL costò all'azienda le dimissioni della direttrice tecnica e una causa legale conclusa nel 2013.",
+    "answer": true,
+    "explanation": "I giornalisti del New York Times avevano risalito a un'utente partendo da un numero."
+  },
+  {
+    "id": 84,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Trasparenza, limitazione della finalità, minimizzazione dei dati e limitazione della conservazione sono principi del GDPR.",
+    "answer": true,
+    "explanation": "Si aggiunge un principio di responsabilità."
+  },
+  {
+    "id": 85,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'interessato è la persona alla quale i dati personali si riferiscono.",
+    "answer": true,
+    "explanation": "Il titolare del trattamento è chi determina finalità e mezzi."
+  },
+  {
+    "id": 86,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il diritto alla cancellazione non significa ottenere sempre la cancellazione immediata di qualsiasi dato.",
+    "answer": true,
+    "explanation": "Il titolare può dover conservare informazioni per un obbligo di legge."
+  },
+  {
+    "id": 87,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Le violazioni del GDPR possono comportare sanzioni fino a 20 milioni di euro o al 4% del fatturato mondiale annuo.",
+    "answer": true,
+    "explanation": "Secondo i limiti previsti dal GDPR."
+  },
+  {
+    "id": 88,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Anche un piccolo negozio, un'associazione o un professionista che tratta dati personali deve rispettare il GDPR.",
+    "answer": true,
+    "explanation": "Il GDPR non riguarda solo le grandi aziende tecnologiche."
+  },
+  {
+    "id": 89,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il cyberbullismo è un comportamento aggressivo e intenzionale realizzato con strumenti digitali, che può danneggiare, umiliare, minacciare o isolare un'altra persona.",
+    "answer": true,
+    "explanation": "Può essere grave soprattutto se ripetuto, condiviso o amplificato."
+  },
+  {
+    "id": 90,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Non tutto ciò che è offensivo online è automaticamente cyberbullismo.",
+    "answer": true,
+    "explanation": "Contano azione, intenzione, persona coinvolta, frequenza e conseguenze."
+  },
+  {
+    "id": 91,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un bystander attivo interviene in modo sicuro a sostegno della vittima, segnala il contenuto o chiede aiuto.",
+    "answer": true,
+    "explanation": "Anche una risata o un \"mi piace\" possono invece aumentare la visibilità dell'aggressione."
+  },
+  {
+    "id": 92,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel cyberbullismo la vittima può essere raggiunta praticamente ovunque abbia accesso a un dispositivo o a Internet.",
+    "answer": true,
+    "explanation": "Un contenuto può essere salvato e ripubblicato anche dopo la cancellazione."
+  },
+  {
+    "id": 93,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Davanti al cyberbullismo conviene conservare le prove, come messaggi e schermate con data e nome del mittente.",
+    "answer": true,
+    "explanation": "Si può poi bloccare il mittente, segnalare alla piattaforma e parlarne con un adulto di fiducia."
+  },
+  {
+    "id": 94,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La Legge 17 maggio 2024, n. 70 ha ampliato l'intervento al bullismo e al cyberbullismo.",
+    "answer": true,
+    "explanation": "La Legge n. 71 del 2017 resta il principale riferimento."
+  },
+  {
+    "id": 95,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Non esiste un unico \"reato di cyberbullismo\".",
+    "answer": true,
+    "explanation": "A seconda dei comportamenti entrano in gioco norme su minacce, molestie, diffamazione o dati personali."
+  },
+  {
+    "id": 96,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con un password manager una Master Password debole non rappresenta alcun rischio.",
+    "answer": false,
+    "explanation": "Una Master Password debole può comunque compromettere la sicurezza."
+  },
+  {
+    "id": 97,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La 2FA è un'autenticazione che usa un solo fattore.",
+    "answer": false,
+    "explanation": "Usa esattamente due fattori di categorie diverse."
+  },
+  {
+    "id": 98,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Usare due password diverse equivale a usare due fattori di autenticazione.",
+    "answer": false,
+    "explanation": "Entrambe appartengono alla categoria \"qualcosa che conosci\"."
+  },
+  {
+    "id": 99,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I codici ricevuti via SMS sono immuni al SIM swapping.",
+    "answer": false,
+    "explanation": "Il SIM swapping è una vulnerabilità proprio di questo metodo."
+  },
+  {
+    "id": 100,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un'impronta digitale compromessa si può cambiare facilmente, come una password.",
+    "answer": false,
+    "explanation": "Impronta digitale e volto non possono essere semplicemente sostituiti."
+  },
+  {
+    "id": 101,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il controllo del contesto dell'accesso è un vero e proprio quarto fattore di autenticazione.",
+    "answer": false,
+    "explanation": "È un giudizio dinamico del rischio, non un quarto fattore."
+  },
+  {
+    "id": 102,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il phishing può arrivare soltanto per email.",
+    "answer": false,
+    "explanation": "Può usare anche telefono (vishing), SMS (smishing) e codici QR (quishing)."
+  },
+  {
+    "id": 103,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il worm richiede sempre che l'utente apra un file infetto per diffondersi.",
+    "answer": false,
+    "explanation": "Si diffonde automaticamente attraverso le reti."
+  },
+  {
+    "id": 104,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le minacce informatiche agiscono sempre in modo separato, una alla volta.",
+    "answer": false,
+    "explanation": "Possono combinarsi e susseguirsi nello stesso attacco."
+  },
+  {
+    "id": 105,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Emotet era un ransomware che si propagava da solo sfruttando la falla EternalBlue.",
+    "answer": false,
+    "explanation": "Era un Trojan; il ransomware che sfruttava EternalBlue era WannaCry."
+  },
+  {
+    "id": 106,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un backup locale è conservato su server accessibili via Internet.",
+    "answer": false,
+    "explanation": "Quello è il backup remoto; il locale è su un hard disk o SSD esterno."
+  },
+  {
+    "id": 107,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un backup di cui si sa che esiste non ha bisogno di essere verificato.",
+    "answer": false,
+    "explanation": "Conviene controllare periodicamente di poter ripristinare i dati."
+  },
+  {
+    "id": 108,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Secondo il principio di minimizzazione bisogna raccogliere più dati possibile, nel caso servano.",
+    "answer": false,
+    "explanation": "Vanno raccolte soltanto le informazioni realmente necessarie."
+  },
+  {
+    "id": 109,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il titolare del trattamento è la persona alla quale i dati personali si riferiscono.",
+    "answer": false,
+    "explanation": "Quella persona è l'interessato; il titolare determina finalità e mezzi."
+  },
+  {
+    "id": 110,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Le sanzioni previste dal GDPR non possono superare 1 milione di euro.",
+    "answer": false,
+    "explanation": "Possono arrivare fino a 20 milioni di euro o al 4% del fatturato mondiale annuo."
+  },
+  {
+    "id": 111,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il diritto all'oblio permette sempre di ottenere la cancellazione immediata di qualsiasi dato.",
+    "answer": false,
+    "explanation": "Esistono situazioni in cui il titolare deve conservare certe informazioni."
+  },
+  {
+    "id": 112,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ogni commento offensivo online è automaticamente cyberbullismo.",
+    "answer": false,
+    "explanation": "Occorre considerare azione, intenzione, persona coinvolta, frequenza e conseguenze."
+  },
+  {
+    "id": 113,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Chi assiste a un episodio di cyberbullismo può soltanto sostenere l'aggressore.",
+    "answer": false,
+    "explanation": "Può anche restare passivo o diventare un bystander attivo."
+  },
+  {
+    "id": 114,
+    "module": "sicurezza",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La Legge 17 maggio 2024, n. 70 ha introdotto un unico reato di cyberbullismo.",
+    "answer": false,
+    "explanation": "Non esiste un unico reato di cyberbullismo."
   }
 ]

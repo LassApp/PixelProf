@@ -10,20 +10,46 @@
         "definition": "Strumento che genera, conserva e inserisce automaticamente password uniche e complesse per ciascun account"
       },
       {
+        "term": "Master Password",
+        "definition": "Unica password da ricordare, che protegge l'accesso al password manager e non va mai riutilizzata"
+      },
+      {
         "term": "Credential stuffing",
-        "definition": "Prova automatica di una password rubata su altri account che usano la stessa combinazione"
+        "definition": "Riutilizzo automatico di credenziali rubate, provate su altri account che usano la stessa combinazione"
+      },
+      {
+        "term": "Data Breach",
+        "definition": "Fuga o esposizione di dati"
       },
       {
         "term": "MFA (autenticazione a più fattori)",
-        "definition": "Seconda prova d'identità richiesta oltre alla password: codice temporaneo, app o impronta digitale"
+        "definition": "Richiede, oltre alla password, una o più prove d'identità di categorie diverse"
       },
       {
+        "term": "2FA",
+        "definition": "Autenticazione a due fattori: esattamente due fattori diversi, una forma di MFA"
+      }
+    ],
+    [
+      {
         "term": "Phishing",
-        "definition": "Inganno in cui ci si finge un mittente affidabile per convincere la vittima a fornire dati riservati"
+        "definition": "Inganno in cui ci si finge un mittente affidabile per convincere la vittima a fornire dati, pagare o autorizzare un'operazione"
       },
       {
         "term": "Vishing",
-        "definition": "Phishing condotto tramite telefonata"
+        "definition": "Phishing condotto tramite telefonata (voice phishing)"
+      },
+      {
+        "term": "Smishing",
+        "definition": "Phishing condotto tramite SMS o messaggi di testo"
+      },
+      {
+        "term": "Quishing",
+        "definition": "Phishing che usa un codice QR per indirizzare la vittima verso un sito fraudolento"
+      },
+      {
+        "term": "Spear phishing",
+        "definition": "Phishing costruito su misura della vittima usando informazioni reali"
       }
     ],
     [
@@ -33,15 +59,41 @@
       },
       {
         "term": "Virus",
-        "definition": "Malware che si attacca ad altri file o programmi e si diffonde copiandosi da un dispositivo all'altro"
+        "definition": "Malware che si attacca ad altri file o programmi e può diffondersi quando l'utente apre un file infetto"
+      },
+      {
+        "term": "Worm",
+        "definition": "Malware che si replica e si diffonde automaticamente attraverso le reti"
       },
       {
         "term": "Trojan",
-        "definition": "Malware che si presenta come qualcosa di utile ma nasconde una funzione dannosa"
+        "definition": "Malware che si presenta come qualcosa di legittimo ma nasconde una funzione dannosa"
       },
       {
+        "term": "Spyware",
+        "definition": "Malware che raccoglie informazioni sulle attività della persona, come siti visitati o ricerche"
+      },
+      {
+        "term": "Keylogger",
+        "definition": "Malware che registra ciò che viene digitato sulla tastiera"
+      }
+    ],
+    [
+      {
         "term": "Ransomware",
-        "definition": "Malware che cifra i file del dispositivo e chiede un pagamento, quasi sempre in criptovaluta"
+        "definition": "Malware che può bloccare o cifrare i file e chiedere un pagamento per tentare di ripristinare l'accesso"
+      },
+      {
+        "term": "SIM swapping",
+        "definition": "Sostituzione fraudolenta della SIM associata al numero della vittima"
+      },
+      {
+        "term": "OTP (One-Time Password)",
+        "definition": "Codice temporaneo usato come secondo fattore, per esempio ricevuto via SMS"
+      },
+      {
+        "term": "Risk-Based Authentication",
+        "definition": "Autenticazione basata sul rischio: valuta il contesto dell'accesso e può richiedere ulteriori verifiche"
       },
       {
         "term": "Backup",
@@ -54,27 +106,61 @@
     ],
     [
       {
+        "term": "Catena di attacco",
+        "definition": "Più tecniche che si susseguono nello stesso attacco, ciascuna creando le condizioni per la successiva"
+      },
+      {
+        "term": "Emotet",
+        "definition": "Trojan analizzato dalla CISA, distribuito con phishing e usato per diffondere altro malware"
+      },
+      {
+        "term": "Backup locale",
+        "definition": "Copia conservata su un hard disk o un SSD esterno"
+      },
+      {
+        "term": "Backup remoto",
+        "definition": "Copia conservata tramite un servizio cloud su server accessibili via Internet"
+      },
+      {
+        "term": "Sincronizzazione",
+        "definition": "Mantiene gli stessi file aggiornati su più dispositivi, replicando anche cancellazioni e cifrature"
+      },
+      {
         "term": "Responsabilità condivisa",
         "definition": "Principio per cui la sicurezza nel cloud dipende sia dal fornitore sia da come l'utente protegge il proprio accesso"
-      },
+      }
+    ],
+    [
       {
         "term": "Dato personale",
         "definition": "Informazione che, da sola o combinata con altre, permette di identificare una persona specifica"
       },
       {
         "term": "GDPR",
-        "definition": "Normativa europea, in vigore dal 25 maggio 2018, sulla raccolta, conservazione e uso dei dati personali"
+        "definition": "Normativa dell'Unione Europea, in vigore dal 25 maggio 2018, sul trattamento dei dati personali"
+      },
+      {
+        "term": "Interessato",
+        "definition": "Persona alla quale i dati personali si riferiscono"
+      },
+      {
+        "term": "Titolare del trattamento",
+        "definition": "Soggetto che determina le finalità e i mezzi del trattamento dei dati"
+      },
+      {
+        "term": "Minimizzazione dei dati",
+        "definition": "Raccogliere soltanto le informazioni realmente necessarie per lo scopo"
       },
       {
         "term": "Diritto all'oblio",
-        "definition": "Diritto di chiedere la cancellazione dei dati conservati su di sé"
-      },
-      {
-        "term": "Benessere digitale",
-        "definition": "Equilibrio tra l'uso delle tecnologie e la salute fisica, mentale e sociale di chi le usa"
+        "definition": "Diritto di chiedere la cancellazione dei dati, che non significa sempre cancellazione immediata"
       }
     ],
     [
+      {
+        "term": "Benessere digitale",
+        "definition": "Equilibrio tra l'uso delle tecnologie e la salute fisica, mentale e sociale di chi le usa"
+      },
       {
         "term": "Clickbait",
         "definition": "Titoli costruiti per spingere a cliccare"
@@ -89,11 +175,25 @@
       },
       {
         "term": "Cyberbullismo",
-        "definition": "Bullismo praticato attraverso le tecnologie digitali: comportamento ripetuto per spaventare, irritare o mettere in ridicolo"
+        "definition": "Comportamento aggressivo e intenzionale realizzato con strumenti digitali per danneggiare, umiliare, minacciare o isolare"
       },
+      {
+        "term": "Bystander attivo",
+        "definition": "Chi assiste a un episodio e interviene in modo sicuro a sostegno della vittima"
+      }
+    ],
+    [
       {
         "term": "RAEE",
         "definition": "Rifiuti da Apparecchiature Elettriche ed Elettroniche, in inglese e-waste"
+      },
+      {
+        "term": "Obsolescenza programmata",
+        "definition": "Fenomeno per cui alcuni apparecchi sono progettati per durare poco"
+      },
+      {
+        "term": "Data center",
+        "definition": "Grandi centri di elaborazione dei dati dove vivono i servizi online"
       },
       {
         "term": "Sicurezza comportamentale",
@@ -118,19 +218,15 @@
         "definition": "Ransomware che sfruttava la falla EternalBlue e infettò oltre 200.000 computer in più di 150 paesi"
       },
       {
-        "term": "Norsk Hydro (2019)",
-        "definition": "Colpita dal ransomware LockerGoga, non pagò il riscatto e ripristinò i sistemi dai backup, con un costo di circa 75 milioni di dollari"
-      }
-    ],
-    [
-      {
         "term": "GitLab (2017)",
         "definition": "Perse dati per errore e scoprì che nessuno dei cinque sistemi di backup funzionava in modo affidabile"
       },
       {
         "term": "Uber (2016)",
         "definition": "Violazione di circa 57 milioni di utenti e autisti partita da credenziali lasciate nel codice su GitHub"
-      },
+      }
+    ],
+    [
       {
         "term": "AOL (2006)",
         "definition": "Pubblicò circa 20 milioni di ricerche di oltre 650.000 utenti, sostituendo il nome con un numero"
@@ -142,28 +238,18 @@
       {
         "term": "Clifford Stoll (1986)",
         "definition": "Partì da una discrepanza di 75 centesimi per scoprire un hacker che vendeva informazioni militari a servizi segreti stranieri"
-      }
-    ],
-    [
+      },
       {
         "term": "Legge 29 maggio 2017, n. 71",
         "definition": "Prima legge italiana a definire il cyberbullismo, con procedura di rimozione dei contenuti e ammonimento del Questore"
       },
       {
+        "term": "Legge 17 maggio 2024, n. 70",
+        "definition": "Ha ampliato l'intervento al bullismo e al cyberbullismo"
+      },
+      {
         "term": "Time Well Spent",
         "definition": "Iniziativa avviata da Tristan Harris nel 2016 dopo aver lasciato Google"
-      },
-      {
-        "term": "Screen Time",
-        "definition": "Funzione di Apple presentata il 4 giugno 2018 per iOS 12, con resoconti d'uso, limiti e pause dallo schermo"
-      },
-      {
-        "term": "Global E-waste Monitor 2024",
-        "definition": "Rapporto di UNITAR e ITU: 62 milioni di tonnellate di rifiuti elettronici nel 2022, di cui il 22,3% riciclato correttamente"
-      },
-      {
-        "term": "Obsolescenza programmata",
-        "definition": "Fenomeno per cui alcuni apparecchi sono progettati per durare poco"
       }
     ],
     [
@@ -184,14 +270,18 @@
         "definition": "Come un regalo incartato con cura che dentro non contiene ciò che promette"
       },
       {
-        "term": "Ransomware senza backup (metafora)",
-        "definition": "Come una casa senza copia delle chiavi, con la serratura cambiata da altri"
+        "term": "Minacce combinate (metafora)",
+        "definition": "Come una rapina organizzata in cui ogni persona ha una funzione diversa ma tutte seguono lo stesso piano"
+      },
+      {
+        "term": "Sincronizzazione (metafora)",
+        "definition": "Come due fogli collegati da un filo invisibile"
       }
     ],
     [
       {
-        "term": "Backup mai verificato (metafora)",
-        "definition": "Come un estintore comprato anni fa e mai controllato"
+        "term": "Backup (metafora)",
+        "definition": "Come il negativo delle vecchie fotografie, da cui si può stampare una nuova copia"
       },
       {
         "term": "Cloud (metafora)",
@@ -203,11 +293,15 @@
       },
       {
         "term": "GDPR (metafora)",
-        "definition": "Come le istruzioni di sicurezza di un cantiere"
+        "definition": "Come le regole di una palestra seria: servono informazioni per uno scopo dichiarato e non per altri"
       },
       {
         "term": "Sicurezza informatica (metafora)",
         "definition": "Come la cintura di sicurezza in automobile: un gesto automatico, ripetuto ogni volta"
+      },
+      {
+        "term": "Benessere digitale (metafora)",
+        "definition": "Come il cambio di una bicicletta: accorgersi di quando la salita è troppa e saper cambiare rapporto"
       }
     ]
   ]

@@ -6,9 +6,9 @@
     "difficulty": "easy",
     "question": "Che cos'è un password manager?",
     "options": [
-      "Uno strumento che sceglie una sola password valida per tutti gli account",
       "Uno strumento che controlla se gli account sono stati violati",
       "Uno strumento che cambia la password dopo ogni singolo accesso",
+      "Uno strumento che sceglie una sola password valida per tutti gli account",
       "Uno strumento che genera, conserva e inserisce automaticamente password uniche e complesse per ciascun account"
     ],
     "correctIndex": 3,
@@ -21,12 +21,12 @@
     "difficulty": "easy",
     "question": "Che cos'è il credential stuffing?",
     "options": [
-      "Provare automaticamente su altri account una password rubata, sfruttando chi usa la stessa combinazione",
       "Cifrare le password conservate da un servizio online",
       "Provare tutte le combinazioni possibili finché non si trova la password",
+      "Provare automaticamente su altri account una password rubata, sfruttando chi usa la stessa combinazione",
       "Convincere un utente a consegnare spontaneamente la password"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Una violazione su un solo servizio può mettere a rischio tutti gli altri account."
   },
   {
@@ -37,9 +37,9 @@
     "question": "Quante password deve memorizzare chi usa un password manager?",
     "options": [
       "Una sola: quella che protegge il password manager stesso",
-      "Una per ogni account, ma più semplici",
       "Nessuna, perché le conosce già il manager",
-      "Tre: una per email, una per i social e una per il lavoro"
+      "Tre: una per email, una per i social e una per il lavoro",
+      "Una per ogni account, ma più semplici"
     ],
     "correctIndex": 0,
     "explanation": "La sicurezza si sposta da \"tante password deboli\" a \"una password forte più uno strumento\"."
@@ -51,12 +51,12 @@
     "difficulty": "hard",
     "question": "Quando avvenne la violazione del sito RockYou.com?",
     "options": [
-      "Nel giugno 2009",
       "Nel marzo 2016",
-      "Nel dicembre 2012",
-      "Nel dicembre 2009"
+      "Nel dicembre 2009",
+      "Nel giugno 2009",
+      "Nel dicembre 2012"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "L'aggressore era noto con lo pseudonimo \"igigi\"."
   },
   {
@@ -66,10 +66,10 @@
     "difficulty": "hard",
     "question": "Quante credenziali furono sottratte nella violazione di RockYou.com?",
     "options": [
-      "Oltre 3 milioni di account",
+      "Oltre 290.000 account",
       "Oltre 32 milioni di account",
       "Oltre 560 milioni di account",
-      "Oltre 290.000 account"
+      "Oltre 3 milioni di account"
     ],
     "correctIndex": 1,
     "explanation": "RockYou produceva applicazioni per social network come MySpace e Facebook."
@@ -81,12 +81,12 @@
     "difficulty": "hard",
     "question": "Quale errore aggravò il danno della violazione di RockYou?",
     "options": [
-      "Le password erano sincronizzate con altri servizi",
-      "Le password erano salvate solo sui dispositivi degli utenti",
       "Le password erano conservate in chiaro, senza alcuna cifratura",
-      "Le password erano cifrate con una chiave molto debole"
+      "Le password erano cifrate con una chiave molto debole",
+      "Le password erano sincronizzate con altri servizi",
+      "Le password erano salvate solo sui dispositivi degli utenti"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "Erano leggibili così come erano state digitate."
   },
   {
@@ -96,12 +96,12 @@
     "difficulty": "hard",
     "question": "Qual era la password più diffusa tra quelle dell'elenco rockyou.txt?",
     "options": [
-      "\"abc123\", usata da oltre 290.000 persone",
-      "\"123456\", usata da oltre 290.000 persone",
       "\"12345\", usata da oltre 290.000 persone",
-      "\"password\", usata da oltre 290.000 persone"
+      "\"password\", usata da oltre 290.000 persone",
+      "\"abc123\", usata da oltre 290.000 persone",
+      "\"123456\", usata da oltre 290.000 persone"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Seguivano \"12345\" e la parola \"password\"."
   },
   {
@@ -111,12 +111,12 @@
     "difficulty": "easy",
     "question": "Che cos'è l'autenticazione a più fattori (MFA)?",
     "options": [
-      "Una seconda prova d'identità richiesta oltre alla password, come un codice temporaneo, un'app o un'impronta",
+      "Un controllo dell'indirizzo email al momento della registrazione",
       "Una domanda segreta da ricordare a memoria",
-      "Una seconda password più lunga della prima",
-      "Un controllo dell'indirizzo email al momento della registrazione"
+      "Una seconda prova d'identità richiesta oltre alla password, come un codice temporaneo, un'app o un'impronta",
+      "Una seconda password più lunga della prima"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Conoscere la sola password non basta più per entrare."
   },
   {
@@ -156,12 +156,12 @@
     "difficulty": "hard",
     "question": "Come entrarono gli aggressori negli account dei clienti di Snowflake?",
     "options": [
-      "Con credenziali rubate in precedenza da un malware, perché gli account non avevano l'MFA attiva",
-      "Convincendo i dipendenti di Snowflake a consegnare i dati",
       "Violando l'infrastruttura di Snowflake",
-      "Sfruttando una vulnerabilità del sistema di cifratura"
+      "Sfruttando una vulnerabilità del sistema di cifratura",
+      "Convincendo i dipendenti di Snowflake a consegnare i dati",
+      "Con credenziali rubate in precedenza da un malware, perché gli account non avevano l'MFA attiva"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "L'infrastruttura di Snowflake era rimasta perfettamente sicura."
   },
   {
@@ -171,12 +171,12 @@
     "difficulty": "hard",
     "question": "I dati di quanti clienti di Ticketmaster furono esposti e per quale prezzo furono messi in vendita?",
     "options": [
-      "Circa 165 milioni di clienti, in vendita a 500.000 dollari",
       "Circa 57 milioni di clienti, in vendita a 148 milioni di dollari",
-      "Circa 560 milioni di clienti, in vendita a 500.000 dollari",
-      "Circa 560 milioni di clienti, in vendita a 100.000 dollari"
+      "Circa 165 milioni di clienti, in vendita a 500.000 dollari",
+      "Circa 560 milioni di clienti, in vendita a 100.000 dollari",
+      "Circa 560 milioni di clienti, in vendita a 500.000 dollari"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "Snowflake offriva l'MFA ma non la imponeva."
   },
   {
@@ -184,168 +184,123 @@
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
-    "question": "Che cos'è il phishing?",
+    "question": "Come si chiama il phishing condotto tramite telefonata?",
     "options": [
-      "Un tentativo di indovinare una password con molti tentativi",
-      "Un programma che si installa di nascosto su un dispositivo",
-      "Una tecnica di inganno in cui ci si finge un mittente affidabile per ottenere spontaneamente dati riservati",
-      "Un attacco che forza le protezioni tecniche di un sistema"
+      "Vishing",
+      "Credential stuffing",
+      "Ransomware",
+      "Malware"
     ],
-    "correctIndex": 2,
-    "explanation": "Non \"sfonda\" nessuna protezione: è la vittima a consegnare l'informazione."
+    "correctIndex": 0,
+    "explanation": "Il messaggio può arrivare anche via email o SMS."
   },
   {
     "id": 14,
     "module": "sicurezza",
     "type": "quiz",
-    "difficulty": "easy",
-    "question": "Come si chiama il phishing condotto tramite telefonata?",
+    "difficulty": "hard",
+    "question": "Quando John Podesta ricevette l'email che sembrava un avviso di sicurezza di Google?",
     "options": [
-      "Credential stuffing",
-      "Vishing",
-      "Malware",
-      "Ransomware"
+      "Il 19 marzo 2019",
+      "Il 12 maggio 2017",
+      "Il 19 marzo 2016",
+      "Il 31 gennaio 2017"
     ],
-    "correctIndex": 1,
-    "explanation": "Il messaggio può arrivare anche via email o SMS."
+    "correctIndex": 2,
+    "explanation": "Il messaggio parlava di un tentativo di accesso da un indirizzo in Ucraina."
   },
   {
     "id": 15,
     "module": "sicurezza",
     "type": "quiz",
-    "difficulty": "easy",
-    "question": "Quale schema tende a seguire un messaggio di phishing?",
+    "difficulty": "hard",
+    "question": "Quale gruppo era dietro la pagina contraffatta dell'attacco a Podesta?",
     "options": [
-      "Invia un programma da installare e attende l'esecuzione",
-      "Si finge un mittente affidabile, crea urgenza e spinge a cliccare un link o a comunicare dati prima di riflettere",
-      "Si diffonde da solo copiandosi su altri dispositivi",
-      "Chiede in modo trasparente le credenziali e ne spiega l'uso"
+      "L'agenzia NSA",
+      "Il gruppo \"Shadow Brokers\"",
+      "L'aggressore noto come \"igigi\"",
+      "Il gruppo \"Fancy Bear\", legato ai servizi di intelligence russi"
     ],
-    "correctIndex": 1,
-    "explanation": "Un account bloccato o un pagamento da confermare sono pretesti tipici."
+    "correctIndex": 3,
+    "explanation": "Gli aggressori ottennero l'accesso a decine di migliaia di email."
   },
   {
     "id": 16,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
-    "question": "Quando John Podesta ricevette l'email che sembrava un avviso di sicurezza di Google?",
-    "options": [
-      "Il 19 marzo 2016",
-      "Il 31 gennaio 2017",
-      "Il 19 marzo 2019",
-      "Il 12 maggio 2017"
-    ],
-    "correctIndex": 0,
-    "explanation": "Il messaggio parlava di un tentativo di accesso da un indirizzo in Ucraina."
-  },
-  {
-    "id": 17,
-    "module": "sicurezza",
-    "type": "quiz",
-    "difficulty": "hard",
-    "question": "Quale gruppo era dietro la pagina contraffatta dell'attacco a Podesta?",
-    "options": [
-      "L'aggressore noto come \"igigi\"",
-      "Il gruppo \"Fancy Bear\", legato ai servizi di intelligence russi",
-      "L'agenzia NSA",
-      "Il gruppo \"Shadow Brokers\""
-    ],
-    "correctIndex": 1,
-    "explanation": "Gli aggressori ottennero l'accesso a decine di migliaia di email."
-  },
-  {
-    "id": 18,
-    "module": "sicurezza",
-    "type": "quiz",
-    "difficulty": "hard",
     "question": "Quale errore commise il collaboratore del supporto informatico?",
     "options": [
-      "Inoltrò l'email a tutti i membri della campagna",
-      "Ignorò completamente il messaggio ricevuto",
       "Cambiò la password al posto di Podesta",
+      "Ignorò completamente il messaggio ricevuto",
+      "Inoltrò l'email a tutti i membri della campagna",
       "Rispose per errore che l'email era \"legittima\", invitando a cambiare la password dal link"
     ],
     "correctIndex": 3,
     "explanation": "Probabilmente intendeva scrivere l'esatto contrario."
   },
   {
-    "id": 19,
+    "id": 17,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Che cos'è il malware?",
     "options": [
       "Un messaggio che inganna la vittima per ottenere i suoi dati",
-      "Un programma che cifra i file solo in cambio di un riscatto",
+      "Un errore di configurazione che espone i dati nel cloud",
       "Qualunque programma progettato per danneggiare, spiare o prendere il controllo di un dispositivo, installato senza un consenso consapevole",
-      "Un errore di configurazione che espone i dati nel cloud"
+      "Un programma che cifra i file solo in cambio di un riscatto"
     ],
     "correctIndex": 2,
     "explanation": "Malware è la crasi di malicious software."
   },
   {
-    "id": 20,
-    "module": "sicurezza",
-    "type": "quiz",
-    "difficulty": "easy",
-    "question": "Come si diffonde un virus?",
-    "options": [
-      "Cifra i file e chiede un pagamento per restituirne l'accesso",
-      "Convince la vittima a consegnare le proprie credenziali",
-      "Si presenta come qualcosa di utile ma nasconde una funzione dannosa",
-      "Si attacca ad altri file o programmi e si copia da un dispositivo all'altro"
-    ],
-    "correctIndex": 3,
-    "explanation": "La seconda descrizione è quella del trojan."
-  },
-  {
-    "id": 21,
+    "id": 18,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Che cosa caratterizza un trojan?",
     "options": [
-      "Si presenta come qualcosa di utile o desiderabile, ma nasconde al proprio interno una funzione dannosa",
-      "Chiede un riscatto in criptovaluta",
       "Si installa solo con la forza bruta",
-      "Si attacca ad altri file e si copia da solo"
+      "Chiede un pagamento per restituire l'accesso ai file",
+      "Si attacca ad altri file e si copia da solo",
+      "Si presenta come qualcosa di utile o desiderabile, ma nasconde al proprio interno una funzione dannosa"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Il nome deriva dal cavallo di Troia."
   },
   {
-    "id": 22,
+    "id": 19,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Quando iniziò a diffondersi WannaCry?",
     "options": [
-      "Il 31 gennaio 2017",
-      "Il 12 maggio 2017",
       "Il 12 maggio 2019",
+      "Il 12 maggio 2017",
+      "Il 31 gennaio 2017",
       "Il 19 marzo 2016"
     ],
     "correctIndex": 1,
     "explanation": "WannaCry è un ransomware capace di propagarsi autonomamente."
   },
   {
-    "id": 23,
+    "id": 20,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Quale falla sfruttava WannaCry per propagarsi?",
     "options": [
       "EternalBlue, una falla dei sistemi Windows sviluppata in origine dalla NSA e resa pubblica dagli Shadow Brokers",
-      "RockYou, una falla di un sito di applicazioni per social network",
+      "Fancy Bear, una falla dei servizi di posta di Google",
       "LockerGoga, una falla dei sistemi usati dai produttori di alluminio",
-      "Fancy Bear, una falla dei servizi di posta di Google"
+      "RockYou, una falla di un sito di applicazioni per social network"
     ],
     "correctIndex": 0,
     "explanation": "Microsoft aveva pubblicato la correzione circa due mesi prima."
   },
   {
-    "id": 24,
+    "id": 21,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
@@ -360,389 +315,314 @@
     "explanation": "Tra le vittime più colpite ci fu il Servizio Sanitario Nazionale britannico (NHS)."
   },
   {
-    "id": 25,
-    "module": "sicurezza",
-    "type": "quiz",
-    "difficulty": "easy",
-    "question": "Che cos'è il ransomware?",
-    "options": [
-      "Un messaggio che finge di provenire dalla banca",
-      "Un malware che si attacca ad altri file senza chiedere nulla",
-      "Un malware che registra tutto ciò che si digita sulla tastiera",
-      "Un malware che cifra i file del dispositivo colpito e chiede un pagamento, quasi sempre in criptovaluta, per restituirne l'accesso"
-    ],
-    "correctIndex": 3,
-    "explanation": "Rende inaccessibili i file."
-  },
-  {
-    "id": 26,
-    "module": "sicurezza",
-    "type": "quiz",
-    "difficulty": "easy",
-    "question": "Perché pagare il riscatto non offre alcuna garanzia?",
-    "options": [
-      "Perché i dati vengono cancellati subito dopo il pagamento",
-      "Perché chi ha cifrato i file potrebbe non inviare la chiave o aver già copiato i dati altrove",
-      "Perché la chiave di sblocco è sempre troppo lunga da inserire",
-      "Perché il pagamento in criptovaluta non è mai accettato"
-    ],
-    "correctIndex": 1,
-    "explanation": "Il riscatto può essere inutile anche a fini di riservatezza."
-  },
-  {
-    "id": 27,
+    "id": 22,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Qual è l'unica vera protezione in caso di attacco ransomware?",
     "options": [
-      "Cambiare tutte le password dopo l'attacco",
       "Pagare subito per evitare di perdere i dati",
       "Aver già conservato una copia separata e recente dei dati: un backup",
-      "Spegnere il dispositivo e non riaccenderlo più"
+      "Spegnere il dispositivo e non riaccenderlo più",
+      "Cambiare tutte le password dopo l'attacco"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "Il ransomware si neutralizza avendo fatto prima la cosa giusta."
   },
   {
-    "id": 28,
-    "module": "sicurezza",
-    "type": "quiz",
-    "difficulty": "hard",
-    "question": "Quando Norsk Hydro fu colpita dal ransomware LockerGoga?",
-    "options": [
-      "Nella notte tra il 18 e il 19 marzo 2019",
-      "Nella notte tra il 12 e il 13 maggio 2017",
-      "Nella notte tra il 18 e il 19 ottobre 2016",
-      "Nella notte tra il 18 e il 19 marzo 2016"
-    ],
-    "correctIndex": 0,
-    "explanation": "Norsk Hydro è uno dei maggiori produttori di alluminio al mondo."
-  },
-  {
-    "id": 29,
-    "module": "sicurezza",
-    "type": "quiz",
-    "difficulty": "hard",
-    "question": "Quanti sistemi furono cifrati nell'attacco a Norsk Hydro?",
-    "options": [
-      "Circa 500 server e 2.700 computer",
-      "Circa 50 server e 270 computer",
-      "Circa 500 server e 200.000 computer",
-      "Circa 5.000 server e 27.000 computer"
-    ],
-    "correctIndex": 0,
-    "explanation": "Diversi stabilimenti dovettero passare a un funzionamento manuale."
-  },
-  {
-    "id": 30,
-    "module": "sicurezza",
-    "type": "quiz",
-    "difficulty": "hard",
-    "question": "Che cosa decise Norsk Hydro fin dalle prime ore?",
-    "options": [
-      "Di rendere pubblici i dati sottratti",
-      "Di sospendere tutte le attività per un anno",
-      "Di non pagare alcun riscatto e di ripristinare i sistemi dai backup",
-      "Di pagare il riscatto per recuperare i dati più in fretta"
-    ],
-    "correctIndex": 2,
-    "explanation": "Il recupero richiese diverse settimane e circa 75 milioni di dollari."
-  },
-  {
-    "id": 31,
+    "id": 23,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Che cos'è un backup?",
     "options": [
       "Uno spazio cloud in cui lavorare insieme ad altri",
-      "Un programma che cifra i dati più importanti",
       "Una copia dei propri dati, conservata separatamente dall'originale, da recuperare in caso di perdita, danneggiamento o attacco",
+      "Un programma che cifra i dati più importanti",
       "Una copia dei dati sincronizzata automaticamente tra più dispositivi"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "Non è un'operazione fatta una volta per tutte, ma un'abitudine regolare."
   },
   {
-    "id": 32,
+    "id": 24,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Che cosa suggerisce la regola del 3-2-1?",
     "options": [
-      "Una copia locale, due copie nel cloud e tre supporti",
-      "Tre dispositivi, due backup al giorno e un solo supporto",
       "Tre password, due fattori di autenticazione e un account",
-      "Almeno tre copie dei dati, su due tipi diversi di supporto, con almeno una in un luogo fisicamente separato"
+      "Almeno tre copie dei dati, su due tipi diversi di supporto, con almeno una in un luogo fisicamente separato",
+      "Tre dispositivi, due backup al giorno e un solo supporto",
+      "Una copia locale, due copie nel cloud e tre supporti"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "Riduce la possibilità che un singolo evento distrugga originale e copie insieme."
   },
   {
-    "id": 33,
+    "id": 25,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Perché la sincronizzazione di un file tra più dispositivi non equivale a un backup?",
     "options": [
+      "Perché la sincronizzazione crea sempre una copia meno recente",
       "Perché la sincronizzazione non conserva le versioni più vecchie dei file",
       "Perché una cancellazione o una cifratura su un dispositivo si propaga alle copie sincronizzate",
-      "Perché la sincronizzazione funziona solo con i dischi esterni",
-      "Perché la sincronizzazione crea sempre una copia meno recente"
+      "Perché la sincronizzazione funziona solo con i dischi esterni"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "Un vero backup deve restare una copia indipendente."
   },
   {
-    "id": 34,
+    "id": 26,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Perché un backup salvato sullo stesso dispositivo dei dati originali non basta?",
     "options": [
+      "Perché rallenta il dispositivo ogni volta che viene aggiornato",
       "Perché occupa troppo spazio sul dispositivo",
       "Perché i dati sullo stesso dispositivo non possono essere copiati",
-      "Perché rallenta il dispositivo ogni volta che viene aggiornato",
       "Perché non protegge da eventi come furto o incendio che colpiscono l'intero ambiente"
     ],
     "correctIndex": 3,
     "explanation": "La copia va conservata anche in un luogo diverso."
   },
   {
-    "id": 35,
+    "id": 27,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Quando un amministratore di sistema di GitLab cancellò per errore dati dal database di produzione?",
     "options": [
-      "Il 31 gennaio 2019",
       "Il 18 marzo 2019",
       "Il 31 gennaio 2017",
-      "Il 12 maggio 2017"
+      "Il 12 maggio 2017",
+      "Il 31 gennaio 2019"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "Cancellò circa 300 gigabyte, lasciandone 4,5."
   },
   {
-    "id": 36,
+    "id": 28,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Quanti sistemi di backup credeva di avere GitLab e quanti funzionavano in modo affidabile?",
     "options": [
-      "Cinque, e almeno tre funzionavano correttamente",
-      "Cinque, ma nessuno funzionava in modo affidabile",
       "Tre, ma nessuno funzionava in modo affidabile",
+      "Cinque, ma nessuno funzionava in modo affidabile",
+      "Cinque, e almeno tre funzionavano correttamente",
       "Uno, e funzionava correttamente"
     ],
     "correctIndex": 1,
     "explanation": "L'unico snapshot recuperabile risaliva a circa sei ore prima."
   },
   {
-    "id": 37,
+    "id": 29,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Che cosa decise di fare pubblicamente GitLab durante il recupero?",
     "options": [
-      "Raccontò il disastro in tempo reale, trasmettendo anche in diretta streaming il tentativo di recupero",
-      "Pagò gli aggressori per ottenere la chiave di sblocco",
       "Sospese il servizio senza comunicare nulla agli utenti",
-      "Nascose l'incidente per oltre un anno"
+      "Nascose l'incidente per oltre un anno",
+      "Raccontò il disastro in tempo reale, trasmettendo anche in diretta streaming il tentativo di recupero",
+      "Pagò gli aggressori per ottenere la chiave di sblocco"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Alla fine perse comunque circa sei ore di attività degli utenti."
   },
   {
-    "id": 38,
+    "id": 30,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Che cosa stabilisce il principio della responsabilità condivisa nel cloud?",
     "options": [
       "Che la sicurezza dei dati è garantita dai grandi servizi internazionali",
+      "Che la sicurezza dei dati dipende dal fornitore ma anche da come l'utente configura e protegge il proprio accesso",
       "Che la sicurezza dei dati dipende solo dal fornitore del servizio",
-      "Che la sicurezza dei dati dipende solo dall'utente",
-      "Che la sicurezza dei dati dipende dal fornitore ma anche da come l'utente configura e protegge il proprio accesso"
+      "Che la sicurezza dei dati dipende solo dall'utente"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "Un grande servizio non è automaticamente sicuro per ogni configurazione."
   },
   {
-    "id": 39,
+    "id": 31,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Di che cosa è responsabile il fornitore cloud e di che cosa l'utente?",
     "options": [
-      "Il fornitore dell'infrastruttura (server, data center, reti); l'utente di accesso e configurazione (password, permessi, credenziali)",
+      "Il fornitore dei permessi; l'utente dei data center",
       "Il fornitore dei backup; l'utente delle reti",
-      "Il fornitore delle password; l'utente dell'infrastruttura",
-      "Il fornitore dei permessi; l'utente dei data center"
+      "Il fornitore dell'infrastruttura (server, data center, reti); l'utente di accesso e configurazione (password, permessi, credenziali)",
+      "Il fornitore delle password; l'utente dell'infrastruttura"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Sono due pilastri distinti."
   },
   {
-    "id": 40,
+    "id": 32,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Quale errore comune può esporre i dati anche se il fornitore cloud fa tutto bene?",
     "options": [
+      "Conservare le credenziali in un password manager",
       "Scegliere un fornitore con molti data center",
       "Usare l'autenticazione a più fattori",
-      "Lasciare credenziali di accesso scritte in chiaro dentro codice condiviso con altre persone",
-      "Conservare le credenziali in un password manager"
+      "Lasciare credenziali di accesso scritte in chiaro dentro codice condiviso con altre persone"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "È un errore frequente anche tra aziende esperte."
   },
   {
-    "id": 41,
+    "id": 33,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Quando avvenne la violazione dei dati di Uber descritta nel caso?",
     "options": [
       "Nel maggio 2018",
-      "Nell'ottobre 2016",
       "Nell'ottobre 2022",
-      "Nel novembre 2017"
+      "Nel novembre 2017",
+      "Nell'ottobre 2016"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Fu resa pubblica solo nel novembre 2017."
   },
   {
-    "id": 42,
+    "id": 34,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Dove trovarono gli aggressori le credenziali dello spazio cloud di Uber?",
     "options": [
+      "In un repository privato su GitHub, scritte per errore nel codice",
       "In un backup non cifrato conservato in azienda",
       "In un'email di phishing inviata ai dirigenti",
-      "In un elenco di password rubate da un altro servizio",
-      "In un repository privato su GitHub, scritte per errore nel codice"
+      "In un elenco di password rubate da un altro servizio"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "Le credenziali erano lasciate direttamente nel codice."
   },
   {
-    "id": 43,
+    "id": 35,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Quanti dati personali furono scaricati nella violazione di Uber?",
     "options": [
-      "Quelli di circa 57 milioni di utenti, senza numeri di patente",
-      "Quelli di circa 5,7 milioni di autisti",
       "Quelli di circa 57 milioni di utenti e autisti, inclusi 600.000 numeri di patente",
-      "Quelli di circa 560 milioni di utenti, inclusi 600.000 numeri di patente"
+      "Quelli di circa 560 milioni di utenti, inclusi 600.000 numeri di patente",
+      "Quelli di circa 5,7 milioni di autisti",
+      "Quelli di circa 57 milioni di utenti, senza numeri di patente"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "I numeri di patente erano di 600.000 conducenti."
   },
   {
-    "id": 44,
+    "id": 36,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Che cosa fecero alcuni dirigenti di Uber dopo la violazione?",
     "options": [
-      "Pagarono 148 milioni di dollari come sanzione concordata",
+      "Segnalarono subito l'episodio alle autorità e agli utenti",
       "Rifiutarono ogni pagamento e ripristinarono i dati dai backup",
       "Pagarono 100.000 dollari agli aggressori, camuffandoli da ricompensa per la segnalazione di una vulnerabilità, e tennero nascosto l'episodio",
-      "Segnalarono subito l'episodio alle autorità e agli utenti"
+      "Pagarono 148 milioni di dollari come sanzione concordata"
     ],
     "correctIndex": 2,
     "explanation": "La sanzione concordata con le autorità statunitensi fu di 148 milioni di dollari."
   },
   {
-    "id": 45,
+    "id": 37,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Che cos'è un dato personale?",
     "options": [
-      "Un dato che appare sempre in un documento ufficiale",
-      "Solo un dato come il nome e il cognome di una persona",
+      "Qualsiasi informazione che, da sola o combinata con altre, permette di identificare una persona specifica",
       "Solo un dato considerato sensibile, come la salute",
-      "Qualsiasi informazione che, da sola o combinata con altre, permette di identificare una persona specifica"
+      "Solo un dato come il nome e il cognome di una persona",
+      "Un dato che appare sempre in un documento ufficiale"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "Anche dati apparentemente innocui possono identificare qualcuno se messi insieme."
   },
   {
-    "id": 46,
+    "id": 38,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Perché dati \"anonimizzati\" possono non essere anonimi?",
     "options": [
+      "Perché pochi dati apparentemente banali, messi insieme, possono restringere il campo fino a una sola persona",
       "Perché ogni dato contiene sempre il nome dell'utente",
       "Perché togliere il nome non è mai consentito dalla legge",
-      "Perché i dati anonimizzati sono sempre conservati in chiaro",
-      "Perché pochi dati apparentemente banali, messi insieme, possono restringere il campo fino a una sola persona"
+      "Perché i dati anonimizzati sono sempre conservati in chiaro"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "Basta una città, un'età approssimativa, qualche ricerca online."
   },
   {
-    "id": 47,
+    "id": 39,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Quando AOL pubblicò online le ricerche di oltre 650.000 utenti?",
     "options": [
-      "Nell'agosto 2009",
+      "Nell'agosto 2006",
       "Nell'ottobre 2016",
       "Nel marzo 2013",
-      "Nell'agosto 2006"
+      "Nell'agosto 2009"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "Erano circa 20 milioni di ricerche raccolte in tre mesi."
   },
   {
-    "id": 48,
+    "id": 40,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Con che cosa AOL sostituì il nome di ciascun utente?",
     "options": [
-      "Con un nome di fantasia",
-      "Con le sole iniziali",
       "Con un indirizzo email anonimo",
-      "Con un semplice numero identificativo"
+      "Con le sole iniziali",
+      "Con un semplice numero identificativo",
+      "Con un nome di fantasia"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "AOL era convinta che bastasse a garantire l'anonimato."
   },
   {
-    "id": 49,
+    "id": 41,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Chi dimostrò che i dati di AOL non erano davvero anonimi?",
     "options": [
-      "I giornalisti del New York Times, che risalirono a una vedova di 62 anni residente a Lilburn, in Georgia",
-      "Il Garante irlandese, che risalì a più utenti nello stesso quartiere",
+      "Un gruppo di hacker, che risalì a un'azienda cliente",
       "I ricercatori di AOL, che risalirono a un dirigente dell'azienda",
-      "Un gruppo di hacker, che risalì a un'azienda cliente"
+      "Il Garante irlandese, che risalì a più utenti nello stesso quartiere",
+      "I giornalisti del New York Times, che risalirono a una vedova di 62 anni residente a Lilburn, in Georgia"
     ],
-    "correctIndex": 0,
+    "correctIndex": 3,
     "explanation": "Bastarono pochi giorni analizzando le ricerche associate al numero \"4417749\"."
   },
   {
-    "id": 50,
+    "id": 42,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Che cos'è il GDPR?",
     "options": [
-      "Una procedura per cancellare le password rubate",
       "Una legge italiana contro il cyberbullismo dei minori",
+      "Una procedura per cancellare le password rubate",
       "La normativa europea, in vigore dal 25 maggio 2018, che stabilisce come raccogliere, conservare e usare i dati personali dei cittadini",
       "Un accordo tra aziende tecnologiche sulla pubblicità online"
     ],
@@ -750,127 +630,97 @@
     "explanation": "GDPR sta per General Data Protection Regulation."
   },
   {
-    "id": 51,
-    "module": "sicurezza",
-    "type": "quiz",
-    "difficulty": "easy",
-    "question": "Quali principi concreti stabilisce il GDPR?",
-    "options": [
-      "Dati raccolti per uno scopo dichiarato e specifico, conservati solo per il tempo necessario, con diritti per le persone",
-      "Dati raccolti solo da aziende con un fatturato elevato",
-      "Dati cancellati automaticamente dopo ogni utilizzo",
-      "Dati raccolti genericamente per ogni evenienza e conservati a tempo indeterminato"
-    ],
-    "correctIndex": 0,
-    "explanation": "Le sanzioni sono proporzionate al fatturato dell'organizzazione coinvolta."
-  },
-  {
-    "id": 52,
-    "module": "sicurezza",
-    "type": "quiz",
-    "difficulty": "easy",
-    "question": "Che cos'è il \"diritto all'oblio\"?",
-    "options": [
-      "Il diritto di modificare le regole del GDPR",
-      "Il diritto di conservare i propri dati per sempre",
-      "Il diritto di chiedere la cancellazione dei dati conservati su di sé",
-      "Il diritto di non essere mai contattati da un'azienda"
-    ],
-    "correctIndex": 2,
-    "explanation": "Accanto c'è il diritto di sapere quali dati sono conservati."
-  },
-  {
-    "id": 53,
+    "id": 43,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Quando la Data Protection Commission irlandese inflisse a Meta una sanzione da 1,2 miliardi di euro?",
     "options": [
       "Il 4 giugno 2018",
-      "Il 25 maggio 2018",
+      "Il 22 maggio 2023",
       "Il 22 maggio 2021",
-      "Il 22 maggio 2023"
+      "Il 25 maggio 2018"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "Fu la multa più alta mai comminata sulla base del GDPR."
   },
   {
-    "id": 54,
+    "id": 44,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Quale record precedente superò la sanzione a Meta?",
     "options": [
-      "I 746 milioni di euro inflitti ad Amazon nel 2021",
+      "I 20 milioni di euro previsti come tetto fisso del GDPR",
       "I 148 milioni di dollari inflitti a Uber",
-      "I 75 milioni di dollari spesi da Norsk Hydro",
-      "I 5 miliardi di dollari inflitti nel caso di Cambridge Analytica"
+      "I 746 milioni di euro inflitti ad Amazon nel 2021",
+      "I 100.000 dollari pagati dai dirigenti di Uber agli aggressori"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "L'indagine era iniziata nel 2020."
   },
   {
-    "id": 55,
+    "id": 45,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Per quale ragione fu sanzionata Meta?",
     "options": [
-      "Per aver pubblicato le ricerche degli utenti senza consenso",
+      "Per il trasferimento sistematico dei dati degli utenti europei di Facebook verso i server negli Stati Uniti, senza garanzie sufficienti",
       "Per aver nascosto una violazione dei dati per oltre un anno",
       "Per aver conservato le password degli utenti in chiaro",
-      "Per il trasferimento sistematico dei dati degli utenti europei di Facebook verso i server negli Stati Uniti, senza garanzie sufficienti"
+      "Per aver pubblicato le ricerche degli utenti senza consenso"
     ],
-    "correctIndex": 3,
+    "correctIndex": 0,
     "explanation": "Meta fece ricorso, sostenendo che la pratica fosse comune a migliaia di aziende."
   },
   {
-    "id": 56,
+    "id": 46,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Che cos'è il benessere digitale?",
     "options": [
-      "L'uso del maggior numero possibile di app per la salute",
-      "La rinuncia totale all'uso degli strumenti digitali",
       "La misurazione del tempo trascorso sui social network",
-      "L'equilibrio tra l'uso delle tecnologie e la salute fisica, mentale e sociale di chi le usa"
+      "La rinuncia totale all'uso degli strumenti digitali",
+      "L'equilibrio tra l'uso delle tecnologie e la salute fisica, mentale e sociale di chi le usa",
+      "L'uso del maggior numero possibile di app per la salute"
     ],
-    "correctIndex": 3,
+    "correctIndex": 2,
     "explanation": "Equilibrio non significa rinuncia, anche se talvolta può voler dire non usare la tecnologia."
   },
   {
-    "id": 57,
+    "id": 47,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Quali tecniche usano molte app per prolungare l'uso?",
     "options": [
       "Solo l'obbligo di creare un account per ogni funzione",
-      "Titoli costruiti per spingere a cliccare (clickbait), meccaniche da gioco (gamification), spinte a non interrompere (nudging) e notifiche continue",
+      "Solo la riduzione della qualità dei contenuti",
       "Solo la pubblicità visibile e i messaggi a pagamento",
-      "Solo la riduzione della qualità dei contenuti"
+      "Titoli costruiti per spingere a cliccare (clickbait), meccaniche da gioco (gamification), spinte a non interrompere (nudging) e notifiche continue"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Non sono in sé illegali, ma indeboliscono la capacità di decidere con calma."
   },
   {
-    "id": 58,
+    "id": 48,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Quali sono segnali riconoscibili di una possibile dipendenza digitale?",
     "options": [
-      "Uso frequente di strumenti di backup e di password manager",
+      "Uso del dispositivo solo per lavoro e per le email",
       "Uso occasionale del telefono, assenza di notifiche, buon umore",
-      "Perdita di controllo sul tempo online, disagio quando non si può usare il dispositivo, umore che dipende da ciò che accade sullo schermo",
-      "Uso del dispositivo solo per lavoro e per le email"
+      "Uso frequente di strumenti di backup e di password manager",
+      "Perdita di controllo sul tempo online, disagio quando non si può usare il dispositivo, umore che dipende da ciò che accade sullo schermo"
     ],
-    "correctIndex": 2,
+    "correctIndex": 3,
     "explanation": "Il consiglio è parlarne con un professionista della salute."
   },
   {
-    "id": 59,
+    "id": 49,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
@@ -885,22 +735,22 @@
     "explanation": "Per i dispositivi condivisi con minori si usano anche filtri."
   },
   {
-    "id": 60,
+    "id": 50,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Che cosa avviò Tristan Harris nel 2016 dopo aver lasciato Google?",
     "options": [
-      "Un'iniziativa chiamata Time Well Spent (\"tempo ben speso\")",
       "Una funzione chiamata Screen Time per iOS 12",
-      "Un servizio di Digital Wellbeing per Android",
-      "Una campagna contro il clickbait"
+      "Una campagna contro il clickbait",
+      "Un'iniziativa chiamata Time Well Spent (\"tempo ben speso\")",
+      "Un servizio di Digital Wellbeing per Android"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Paragonava alcuni meccanismi dei prodotti digitali a quelli delle slot machine."
   },
   {
-    "id": 61,
+    "id": 51,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
@@ -915,67 +765,7 @@
     "explanation": "Nel maggio 2018 Google aveva presentato le funzioni di Digital Wellbeing per Android."
   },
   {
-    "id": 62,
-    "module": "sicurezza",
-    "type": "quiz",
-    "difficulty": "easy",
-    "question": "Che cos'è il cyberbullismo?",
-    "options": [
-      "Un attacco informatico a un sistema aziendale",
-      "Un contenuto falso diffuso per ingannare molte persone",
-      "Il bullismo praticato attraverso le tecnologie digitali: un comportamento ripetuto per spaventare, irritare o mettere in ridicolo",
-      "Un singolo messaggio offensivo scritto in un momento di rabbia"
-    ],
-    "correctIndex": 2,
-    "explanation": "In Italia la Legge 71 del 2017 lo definisce per i minorenni."
-  },
-  {
-    "id": 63,
-    "module": "sicurezza",
-    "type": "quiz",
-    "difficulty": "easy",
-    "question": "Perché il cyberbullismo non è \"meno grave perché virtuale\"?",
-    "options": [
-      "Perché chi aggredisce è sempre ben noto alla vittima",
-      "Perché lo schermo peggiora la situazione: disinibizione, pubblico invisibile, anonimato e possibilità di agire a qualunque ora",
-      "Perché la vittima può sempre ignorare i messaggi senza conseguenze",
-      "Perché i contenuti online durano pochi minuti"
-    ],
-    "correctIndex": 1,
-    "explanation": "Può seguire la vittima anche a casa."
-  },
-  {
-    "id": 64,
-    "module": "sicurezza",
-    "type": "quiz",
-    "difficulty": "easy",
-    "question": "Qual è la prima mossa davanti a un episodio di cyberbullismo?",
-    "options": [
-      "Cancellare subito tutti i messaggi ricevuti",
-      "Pubblicare gli insulti sui propri profili",
-      "Non reagire e non rispondere, perché la risposta alimenta di solito l'aggressione",
-      "Rispondere subito per difendersi"
-    ],
-    "correctIndex": 2,
-    "explanation": "Poi si conservano le prove e si blocca il mittente."
-  },
-  {
-    "id": 65,
-    "module": "sicurezza",
-    "type": "quiz",
-    "difficulty": "easy",
-    "question": "Perché conservare le prove prima di cancellare qualunque cosa?",
-    "options": [
-      "Per poterli inoltrare ad altri contatti",
-      "Perché serve a rispondere con le stesse parole",
-      "Perché i messaggi si cancellano da soli dopo poco tempo",
-      "Per avere messaggi, immagini e schermate, con data e nome del mittente, da portare a chi può intervenire"
-    ],
-    "correctIndex": 3,
-    "explanation": "Nei casi più gravi ci si rivolge alle forze dell'ordine, anche alla Polizia postale."
-  },
-  {
-    "id": 66,
+    "id": 52,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
@@ -990,67 +780,67 @@
     "explanation": "Fu pubblicata in Gazzetta Ufficiale il 3 giugno 2017 e in vigore dal 18 giugno 2017."
   },
   {
-    "id": 67,
+    "id": 53,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Da quale età un minore può chiedere direttamente la rimozione di contenuti che lo riguardano?",
     "options": [
-      "Da diciotto anni",
-      "Da sedici anni",
       "Da quattordici anni",
-      "Da dodici anni"
+      "Da dodici anni",
+      "Da diciotto anni",
+      "Da sedici anni"
     ],
-    "correctIndex": 2,
+    "correctIndex": 0,
     "explanation": "Può farlo anche un genitore."
   },
   {
-    "id": 68,
+    "id": 54,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Di quanto tempo dispone il gestore del sito per rispondere a una richiesta di rimozione?",
     "options": [
-      "Ventiquattro ore per dichiarare di aver preso in carico la richiesta e quarantotto ore per provvedere",
-      "Quarantotto ore per dichiarare di aver preso in carico la richiesta e ventiquattro per provvedere",
       "Ventiquattro ore in totale per entrambe le azioni",
-      "Settantadue ore per dichiarare di aver preso in carico la richiesta"
+      "Settantadue ore per dichiarare di aver preso in carico la richiesta",
+      "Ventiquattro ore per dichiarare di aver preso in carico la richiesta e quarantotto ore per provvedere",
+      "Quarantotto ore per dichiarare di aver preso in carico la richiesta e ventiquattro per provvedere"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "Se non lo fa, ci si può rivolgere al Garante per la protezione dei dati personali."
   },
   {
-    "id": 69,
+    "id": 55,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Che cosa può essere chiesto al Questore per un minore ultraquattordicenne autore dei fatti?",
     "options": [
+      "L'arresto immediato",
       "Un ammonimento, con la convocazione insieme a un genitore",
       "La rimozione immediata dell'account",
-      "Un'ammenda proporzionata al fatturato",
-      "L'arresto immediato"
+      "Un'ammenda proporzionata al fatturato"
     ],
-    "correctIndex": 0,
+    "correctIndex": 1,
     "explanation": "La legge non ha introdotto nuovi reati."
   },
   {
-    "id": 70,
+    "id": 56,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Che cosa indica la sigla RAEE?",
     "options": [
       "Reti di Accesso Elettroniche ed Energetiche",
-      "Rifiuti da Apparecchiature Elettriche ed Elettroniche",
       "Registri Aziendali di Energia Elettrica",
+      "Rifiuti da Apparecchiature Elettriche ed Elettroniche",
       "Recupero Automatico di Energia Elettronica"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "In inglese si parla di e-waste."
   },
   {
-    "id": 71,
+    "id": 57,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
@@ -1058,160 +848,970 @@
     "options": [
       "Nella progettazione, nel trasporto e nel marketing",
       "Nell'uso quotidiano, nella produzione e nel fine vita dei dispositivi",
-      "Nella connessione, nella sincronizzazione e nell'aggiornamento",
-      "Nell'acquisto, nella pubblicità e nella vendita"
+      "Nell'acquisto, nella pubblicità e nella vendita",
+      "Nella connessione, nella sincronizzazione e nell'aggiornamento"
     ],
     "correctIndex": 1,
     "explanation": "L'uso richiede energia anche per attività che sembrano immateriali."
   },
   {
-    "id": 72,
+    "id": 58,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Che cos'è l'obsolescenza programmata?",
     "options": [
-      "La riduzione dei consumi con filtri e limiti di tempo",
-      "Il fenomeno per cui alcuni apparecchi sono progettati per durare poco",
       "La riparazione dei dispositivi sostituendo singoli componenti",
-      "Il riciclo dei componenti rari a fine vita"
+      "Il riciclo dei componenti rari a fine vita",
+      "Il fenomeno per cui alcuni apparecchi sono progettati per durare poco",
+      "La riduzione dei consumi con filtri e limiti di tempo"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "Altri apparecchi possono essere riparati o aggiornati, prolungandone la vita."
   },
   {
-    "id": 73,
+    "id": 59,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Dove si portano i rifiuti elettronici?",
     "options": [
-      "Nell'indifferenziata",
-      "Ai centri di raccolta o, in molti casi, al rivenditore quando si acquista un apparecchio equivalente",
       "In una cartella cloud dedicata",
-      "Presso un tecnico che li riparerà gratuitamente"
+      "Presso un tecnico che li riparerà gratuitamente",
+      "Nell'indifferenziata",
+      "Ai centri di raccolta o, in molti casi, al rivenditore quando si acquista un apparecchio equivalente"
     ],
-    "correctIndex": 1,
+    "correctIndex": 3,
     "explanation": "Prima di consegnarli, si copiano i dati utili e si cancellano quelli personali."
   },
   {
-    "id": 74,
+    "id": 60,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Chi ha pubblicato nel marzo 2024 la quarta edizione del Global E-waste Monitor?",
     "options": [
-      "L'UNITAR e la Federal Trade Commission",
-      "L'ITU e il Comitato Europeo per la Protezione dei Dati",
       "Il World Economic Forum e l'UNITAR",
+      "L'ITU e il Comitato Europeo per la Protezione dei Dati",
+      "L'UNITAR e la Federal Trade Commission",
       "L'UNITAR e l'ITU (Unione internazionale delle telecomunicazioni)"
     ],
     "correctIndex": 3,
     "explanation": "Il rapporto misura i rifiuti elettronici nel mondo."
   },
   {
-    "id": 75,
+    "id": 61,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Quanti rifiuti elettronici sono stati prodotti nel mondo nel 2022?",
     "options": [
-      "6,2 milioni di tonnellate, l'82% in più rispetto al 2010",
+      "82 milioni di tonnellate, il 62% in più rispetto al 2010",
       "62 milioni di tonnellate, l'82% in più rispetto al 2010",
       "62 milioni di tonnellate, il 22% in più rispetto al 2010",
-      "82 milioni di tonnellate, il 62% in più rispetto al 2010"
+      "6,2 milioni di tonnellate, l'82% in più rispetto al 2010"
     ],
     "correctIndex": 1,
     "explanation": "Con una media di 7,8 chilogrammi per abitante."
   },
   {
-    "id": 76,
+    "id": 62,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Quale quota dei rifiuti elettronici del 2022 è stata documentata come raccolta e riciclata correttamente?",
     "options": [
-      "Il 22,3%",
       "Il 62%",
       "Il 42,8%",
+      "Il 22,3%",
       "L'82%"
     ],
-    "correctIndex": 0,
+    "correctIndex": 2,
     "explanation": "L'Europa ha il tasso più alto, il 42,8%."
   },
   {
-    "id": 77,
+    "id": 63,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Quale previsione fa il rapporto per il 2030?",
     "options": [
       "22 milioni di tonnellate, con una quota riciclata del 20%",
-      "82 milioni di tonnellate di rifiuti elettronici, con una quota riciclata destinata a scendere al 20%",
       "82 milioni di tonnellate, con una quota riciclata destinata a salire al 62%",
+      "82 milioni di tonnellate di rifiuti elettronici, con una quota riciclata destinata a scendere al 20%",
       "62 milioni di tonnellate, con una quota riciclata destinata a salire al 42,8%"
     ],
-    "correctIndex": 1,
+    "correctIndex": 2,
     "explanation": "La produzione cresce quasi cinque volte più in fretta del riciclo."
   },
   {
-    "id": 78,
+    "id": 64,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Che cos'è la sicurezza comportamentale?",
     "options": [
       "Un programma che segnala i comportamenti a rischio",
+      "L'insieme delle abitudini quotidiane che determinano quanto siano efficaci gli strumenti tecnici di protezione",
       "L'insieme degli strumenti tecnici di protezione dei dispositivi",
-      "Una norma che regola l'uso dei dati personali",
-      "L'insieme delle abitudini quotidiane che determinano quanto siano efficaci gli strumenti tecnici di protezione"
+      "Una norma che regola l'uso dei dati personali"
     ],
-    "correctIndex": 3,
+    "correctIndex": 1,
     "explanation": "Nessuno strumento funziona da solo."
   },
   {
-    "id": 79,
+    "id": 65,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "easy",
     "question": "Perché nessuno strumento di sicurezza è efficace da solo?",
     "options": [
-      "Perché gli aggressori trovano sempre una falla",
-      "Perché ogni strumento ha un difetto di progettazione",
+      "Perché gli strumenti si disattivano da soli dopo un anno",
       "Perché non lo è se chi lo usa non lo mantiene attivo, aggiornato e usato correttamente giorno dopo giorno",
-      "Perché gli strumenti si disattivano da soli dopo un anno"
+      "Perché gli aggressori trovano sempre una falla",
+      "Perché ogni strumento ha un difetto di progettazione"
     ],
-    "correctIndex": 2,
+    "correctIndex": 1,
     "explanation": "Una password robusta scritta su un foglietto sullo schermo vanifica lo sforzo."
   },
   {
-    "id": 80,
+    "id": 66,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Quale discrepanza contabile spinse Clifford Stoll a indagare nel 1986?",
     "options": [
       "Appena 75 centesimi di dollaro, pari a nove secondi di utilizzo non fatturato del sistema",
-      "Una discrepanza di nove minuti nei registri di accesso",
       "Una differenza di 75 centesimi in una fattura cliente",
-      "Un ammanco di 75 milioni di dollari"
+      "Un ammanco di 75 milioni di dollari",
+      "Una discrepanza di nove minuti nei registri di accesso"
     ],
     "correctIndex": 0,
     "explanation": "Invece di archiviarla come banale errore, volle indagare fino in fondo."
   },
   {
-    "id": 81,
+    "id": 67,
     "module": "sicurezza",
     "type": "quiz",
     "difficulty": "hard",
     "question": "Dove lavorava Clifford Stoll e come si intitola il libro in cui raccontò la sua caccia all'hacker?",
     "options": [
-      "Al Lawrence Berkeley National Laboratory; \"Mindset\"",
-      "Al Massachusetts Institute of Technology; \"Visible Learning\"",
       "Ai Bell Labs; \"L'uovo del cuculo\"",
-      "Al Lawrence Berkeley National Laboratory; \"L'uovo del cuculo\""
+      "Al Lawrence Berkeley National Laboratory; \"Mindset\"",
+      "Al Lawrence Berkeley National Laboratory; \"L'uovo del cuculo\"",
+      "Al Massachusetts Institute of Technology; \"Visible Learning\""
+    ],
+    "correctIndex": 2,
+    "explanation": "L'indagine durò quasi un anno e portò a scoprire una rete di spionaggio."
+  },
+  {
+    "id": 68,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la Master Password?",
+    "options": [
+      "Una password condivisa con le persone di cui ci si fida",
+      "Una password temporanea inviata dal password manager a ogni accesso",
+      "L'unica password da ricordare: protegge l'accesso al password manager e non va mai usata per altri account",
+      "La password più diffusa tra gli utenti di un servizio online"
+    ],
+    "correctIndex": 2,
+    "explanation": "Deve essere lunga, imprevedibile e mai riutilizzata."
+  },
+  {
+    "id": 69,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un Data Breach?",
+    "options": [
+      "Un tentativo di indovinare una password con molti tentativi",
+      "Una copia di sicurezza conservata in un luogo separato",
+      "Una fuga o esposizione di dati",
+      "Un programma che registra ciò che viene digitato"
+    ],
+    "correctIndex": 2,
+    "explanation": "Molti password manager avvisano l'utente quando una credenziale potrebbe essere stata coinvolta in un Data Breach."
+  },
+  {
+    "id": 70,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali rischi restano anche con un password manager?",
+    "options": [
+      "Solo il rischio che il servizio di posta venga violato",
+      "Solo il rischio di dimenticare la Master Password",
+      "Nessuno, perché le password sono sempre uniche e complesse",
+      "Una Master Password debole, la condivisione delle credenziali con un truffatore o l'approvazione distratta di un accesso fraudolento"
     ],
     "correctIndex": 3,
-    "explanation": "L'indagine durò quasi un anno e portò a scoprire una rete di spionaggio."
+    "explanation": "La tecnologia riduce il rischio, ma non sostituisce l'attenzione dell'utente."
+  },
+  {
+    "id": 71,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la 2FA?",
+    "options": [
+      "Un'autenticazione con due password diverse",
+      "Un'autenticazione con tre fattori diversi",
+      "Un'autenticazione che non richiede la password",
+      "L'autenticazione a due fattori: esattamente due fattori di categorie diverse, una forma di MFA"
+    ],
+    "correctIndex": 3,
+    "explanation": "2FA sta per Two-Factor Authentication."
+  },
+  {
+    "id": 72,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono le tre categorie di fattori di autenticazione?",
+    "options": [
+      "Qualcosa che sai, qualcosa che invii e qualcosa che salvi",
+      "Qualcosa che scrivi, qualcosa che ricordi e qualcosa che condividi",
+      "Qualcosa che conosci, qualcosa che possiedi e qualcosa che sei",
+      "Qualcosa che hai, qualcosa che cambi e qualcosa che nascondi"
+    ],
+    "correctIndex": 2,
+    "explanation": "Per esempio una password, uno smartphone, un'impronta digitale."
+  },
+  {
+    "id": 73,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché usare due password diverse non significa usare due fattori?",
+    "options": [
+      "Perché entrambe appartengono alla categoria \"qualcosa che conosci\"",
+      "Perché la seconda password è sempre più debole della prima",
+      "Perché l'MFA richiede sempre almeno quattro fattori",
+      "Perché le password non sono mai sufficienti come fattore"
+    ],
+    "correctIndex": 0,
+    "explanation": "I fattori devono essere di natura diversa."
+  },
+  {
+    "id": 74,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanti fattori usa chi inserisce la password, il codice dell'app di autenticazione e l'impronta digitale?",
+    "options": [
+      "Uno solo: la password, con due controlli aggiuntivi",
+      "Due: qualcosa che conosce e qualcosa che possiede",
+      "Quattro: tre fattori più il contesto dell'accesso",
+      "Tre: qualcosa che conosce, qualcosa che possiede e qualcosa che è"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si tratta di un'autenticazione MFA con tre fattori."
+  },
+  {
+    "id": 75,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il SIM swapping?",
+    "options": [
+      "La clonazione di un'impronta digitale",
+      "La sostituzione fraudolenta della SIM associata al numero della vittima, che rende vulnerabili i codici ricevuti via SMS",
+      "La sostituzione del telefono con un modello più recente",
+      "Il blocco della SIM dopo troppi tentativi di accesso"
+    ],
+    "correctIndex": 1,
+    "explanation": "Per questo le app di autenticazione e le chiavi fisiche possono offrire una protezione maggiore."
+  },
+  {
+    "id": 76,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale particolarità ha la biometria rispetto a una password?",
+    "options": [
+      "La biometria richiede di ricordare un codice a memoria",
+      "Un'impronta digitale si può cambiare più facilmente di una password",
+      "Una password si può cambiare se compromessa, mentre impronta digitale o volto non si possono semplicemente sostituire",
+      "La biometria non può essere usata come secondo fattore"
+    ],
+    "correctIndex": 2,
+    "explanation": "È però pratica perché non richiede di ricordare un codice."
+  },
+  {
+    "id": 77,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il controllo basato sul rischio (Risk-Based Authentication)?",
+    "options": [
+      "Un quarto fattore che sostituisce la password",
+      "Un sistema che richiede due password diverse",
+      "Un sistema che chiede sempre un codice temporaneo",
+      "Un giudizio dinamico sul contesto dell'accesso (dispositivo, Paese, orario) che può richiedere un'ulteriore verifica o bloccare l'accesso"
+    ],
+    "correctIndex": 3,
+    "explanation": "Non è un vero e proprio \"quarto fattore\"."
+  },
+  {
+    "id": 78,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il phishing?",
+    "options": [
+      "Un programma che si installa di nascosto su un dispositivo",
+      "Un attacco che forza sempre le protezioni tecniche di un sistema",
+      "Un tentativo di indovinare una password con molti tentativi",
+      "Una tecnica di inganno in cui ci si finge un mittente affidabile per convincere la vittima a fornire dati, pagare, scaricare un file o autorizzare un'operazione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Richiama l'inglese fishing: il criminale lancia un'esca e aspetta che qualcuno abbocchi."
+  },
+  {
+    "id": 79,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali emozioni e situazioni sfrutta il phishing?",
+    "options": [
+      "Solo il desiderio di ottenere un premio in denaro",
+      "Paura, urgenza, curiosità, fiducia o autorità, con pretesti come un account bloccato o un pagamento da confermare",
+      "Solo la fiducia verso i colleghi di lavoro",
+      "Solo la noia e la distrazione di chi legge il messaggio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il messaggio spinge ad agire rapidamente, prima di verificare."
+  },
+  {
+    "id": 80,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è lo smishing?",
+    "options": [
+      "Il phishing condotto con SMS o messaggi di testo, per esempio un falso corriere che invita a cliccare",
+      "Il phishing che usa un codice QR",
+      "Il phishing costruito su misura della vittima",
+      "Il phishing condotto tramite telefonata"
+    ],
+    "correctIndex": 0,
+    "explanation": "SMS phishing."
+  },
+  {
+    "id": 81,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il quishing?",
+    "options": [
+      "Il phishing costruito su misura della vittima",
+      "Il phishing condotto con SMS o messaggi di testo",
+      "Il phishing condotto tramite telefonata",
+      "Il phishing che usa un codice QR per indirizzare la vittima verso un sito fraudolento"
+    ],
+    "correctIndex": 3,
+    "explanation": "QR phishing."
+  },
+  {
+    "id": 82,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è lo spear phishing?",
+    "options": [
+      "Un phishing inviato in modo generico a moltissime persone",
+      "Un phishing costruito su misura della vittima usando informazioni reali, come nome, luogo di lavoro o rapporti professionali",
+      "Un phishing che non chiede mai dati personali",
+      "Un phishing condotto solo tramite telefonata"
+    ],
+    "correctIndex": 1,
+    "explanation": "Più il messaggio è personale e coerente, più è difficile riconoscerlo."
+  },
+  {
+    "id": 83,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa conviene fare davanti a un'email della banca che segnala un conto bloccato?",
+    "options": [
+      "Aprire il sito della banca digitandone l'indirizzo, oppure usare l'app ufficiale, per verificare",
+      "Inoltrare l'email ad amici per un parere",
+      "Rispondere all'email chiedendo una conferma",
+      "Cliccare subito sul link per sbloccare il conto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Quando un messaggio crea urgenza, fermarsi è già una forma di sicurezza."
+  },
+  {
+    "id": 84,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i tre obiettivi principali del malware?",
+    "options": [
+      "Controllo, pubblicità, aggiornamento dei programmi",
+      "Sorveglianza, backup, cifratura dei dati",
+      "Guadagno, velocità, compatibilità dei dispositivi",
+      "Guadagno, controllo del sistema, raccolta e sorveglianza delle informazioni"
+    ],
+    "correctIndex": 3,
+    "explanation": "Possono essere perseguiti singolarmente o combinati."
+  },
+  {
+    "id": 85,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si diffonde un virus?",
+    "options": [
+      "Si attacca ad altri file o programmi e può diffondersi quando l'utente apre o esegue un file infetto",
+      "Si presenta come qualcosa di utile ma nasconde una funzione dannosa",
+      "Registra ciò che viene digitato sulla tastiera",
+      "Si replica da solo attraverso le reti, senza che l'utente faccia nulla"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il suo comportamento ricorda, per analogia, quello di un virus biologico."
+  },
+  {
+    "id": 86,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un worm?",
+    "options": [
+      "Un malware che si replica e si diffonde automaticamente attraverso le reti, senza richiedere necessariamente che l'utente apra un file infetto",
+      "Un malware che si presenta come un programma legittimo",
+      "Un malware che cifra i file e chiede un pagamento",
+      "Un malware che si diffonde solo quando l'utente apre un file infetto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una volta entrato in un dispositivo può raggiungere altri computer della stessa rete."
+  },
+  {
+    "id": 87,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa lo spyware?",
+    "options": [
+      "Raccoglie informazioni sulle attività della persona, come siti visitati o ricerche effettuate",
+      "Registra tutto ciò che viene digitato sulla tastiera",
+      "Si replica automaticamente attraverso le reti",
+      "Cifra i file presenti sul dispositivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "È una delle minacce progettate soprattutto per spiare l'utente."
+  },
+  {
+    "id": 88,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa un keylogger?",
+    "options": [
+      "Registra ciò che viene digitato sulla tastiera, comprese potenzialmente password, messaggi e altri dati riservati",
+      "Si presenta come un programma gratuito e utile",
+      "Raccoglie informazioni su siti visitati e ricerche effettuate",
+      "Cifra i file e chiede un pagamento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Key significa tasto, logger registratore."
+  },
+  {
+    "id": 89,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il ransomware?",
+    "options": [
+      "Un malware che può bloccare o cifrare i file del dispositivo e chiedere poi un pagamento per tentare di ripristinare l'accesso",
+      "Un malware che raccoglie informazioni sulle ricerche effettuate",
+      "Un malware che registra ciò che viene digitato sulla tastiera",
+      "Un malware che si attacca ad altri file senza chiedere nulla"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ransom significa riscatto."
+  },
+  {
+    "id": 90,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché pagare il riscatto non è una soluzione sicura?",
+    "options": [
+      "Perché il riscatto è sempre superiore al valore dei file",
+      "Perché i file vengono sempre cancellati dopo il pagamento",
+      "Perché il pagamento non garantisce che i file vengano realmente restituiti",
+      "Perché il pagamento non può mai essere effettuato"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'unica vera protezione è aver già un backup."
+  },
+  {
+    "id": 91,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa conta, oltre agli strumenti tecnici, per difendersi dal malware?",
+    "options": [
+      "Aprire solo allegati ricevuti da persone che si conoscono",
+      "Installare più programmi possibile per avere più strumenti",
+      "Scaricare i programmi dal primo risultato di una ricerca",
+      "Prestare attenzione alla provenienza dei programmi e dei file che vengono aperti o installati"
+    ],
+    "correctIndex": 3,
+    "explanation": "Occorre chiedersi: \"Da dove proviene?\"."
+  },
+  {
+    "id": 92,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa significa che le minacce informatiche possono combinarsi?",
+    "options": [
+      "Che tecniche diverse possono susseguirsi nello stesso attacco, ciascuna creando le condizioni per la successiva",
+      "Che un solo strumento basta a fermare ogni attacco",
+      "Che ogni minaccia agisce sempre in modo separato dalle altre",
+      "Che le diverse minacce si annullano a vicenda"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono come anelli di una stessa catena."
+  },
+  {
+    "id": 93,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale domanda suggerisce il capitolo oltre a \"Qual è la minaccia?\"",
+    "options": [
+      "\"Come vengono utilizzate insieme le diverse minacce?\"",
+      "\"Quanto costa la minaccia?\"",
+      "\"Chi ha creato la minaccia?\"",
+      "\"Quando è comparsa la minaccia?\""
+    ],
+    "correctIndex": 0,
+    "explanation": "Il percorso può essere più importante della singola minaccia."
+  },
+  {
+    "id": 94,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In una catena di attacco, a che cosa può servire un phishing?",
+    "options": [
+      "A installare un malware, che a sua volta può rubare credenziali per entrare in altri sistemi",
+      "A cifrare direttamente tutti i file di un'azienda",
+      "A bloccare l'accesso agli account della vittima",
+      "A sostituire il malware, che diventa superfluo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una tecnica può creare l'accesso su cui sfrutta la successiva."
+  },
+  {
+    "id": 95,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale ente statunitense ha analizzato la minaccia Emotet?",
+    "options": [
+      "La National Security Agency (NSA)",
+      "Il Servizio Sanitario Nazionale britannico (NHS)",
+      "La Federal Trade Commission (FTC)",
+      "La Cybersecurity and Infrastructure Security Agency (CISA)"
+    ],
+    "correctIndex": 3,
+    "explanation": "Emotet è citato come esempio di minaccia che si combina con altre."
+  },
+  {
+    "id": 96,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cos'era Emotet?",
+    "options": [
+      "Una pagina contraffatta creata dal gruppo Fancy Bear",
+      "Un programma per la gestione delle password",
+      "Un Trojan frequentemente distribuito con email di phishing contenenti collegamenti o allegati dannosi",
+      "Un ransomware che si propagava da solo sfruttando EternalBlue"
+    ],
+    "correctIndex": 2,
+    "explanation": "Una volta eseguito poteva cercare di diffondersi nella rete."
+  },
+  {
+    "id": 97,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa documentò la CISA a proposito di Emotet?",
+    "options": [
+      "Che serviva soltanto a rubare password dagli account social",
+      "Che agiva sempre da solo, senza distribuire altri programmi",
+      "Che poteva distribuire altro malware, compresi Trojan per il furto di credenziali e malware usati poi per distribuire ransomware",
+      "Che veniva distribuito solo tramite supporti fisici"
+    ],
+    "correctIndex": 2,
+    "explanation": "La catena era: phishing, malware, raccolta di informazioni, propagazione, altro malware, possibile ransomware."
+  },
+  {
+    "id": 98,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che differenza c'è tra backup locale e backup remoto?",
+    "options": [
+      "Il locale è nel cloud; il remoto su un hard disk esterno",
+      "Il locale protegge dal furto; il remoto no",
+      "Il locale è sempre manuale; il remoto sempre automatico",
+      "Il locale è su un hard disk o SSD esterno; il remoto su server accessibili via Internet, con un servizio cloud"
+    ],
+    "correctIndex": 3,
+    "explanation": "In molti casi è possibile combinare le due soluzioni."
+  },
+  {
+    "id": 99,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A che cosa è paragonata la sincronizzazione rispetto al backup?",
+    "options": [
+      "A una cassetta di sicurezza in banca",
+      "A due fogli collegati da un filo invisibile: se si cancella una frase su uno, può sparire anche sull'altro",
+      "A un negativo da cui stampare una nuova copia",
+      "A una fotocopia conservata separatamente"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il backup è invece una fotocopia conservata separatamente."
+  },
+  {
+    "id": 100,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa serve a un buon sistema di backup, oltre alla regolarità?",
+    "options": [
+      "Essere affidabile e verificato: controllare periodicamente che i dati possano essere effettivamente ripristinati",
+      "Essere fatto una volta sola e poi dimenticato",
+      "Essere conservato solo sul dispositivo originale",
+      "Essere sincronizzato automaticamente con ogni altro dispositivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Non basta sapere che una copia esiste."
+  },
+  {
+    "id": 101,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la conservazione dei dati non riguarda solo dove si tiene una copia?",
+    "options": [
+      "Perché formati, dispositivi e software cambiano e possono rendere difficile aprire dati molto vecchi",
+      "Perché i dati si deteriorano sempre dopo pochi anni",
+      "Perché le copie occupano sempre troppo spazio",
+      "Perché i backup remoti non possono essere ripristinati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Bisogna chiedersi se saremo ancora in grado di utilizzare la copia in futuro."
+  },
+  {
+    "id": 102,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A che cosa è paragonato il backup nella metafora del capitolo?",
+    "options": [
+      "Al negativo delle vecchie fotografie, da cui si può sempre stampare una nuova copia",
+      "A una cintura di sicurezza",
+      "A un estintore da controllare periodicamente",
+      "A una casa senza copia delle chiavi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il valore del backup sta nel riportare in vita ciò che sembrava perduto."
+  },
+  {
+    "id": 103,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Uber rese pubblica la violazione dei dati?",
+    "options": [
+      "Nel maggio 2018, insieme all'entrata in vigore del GDPR",
+      "Nel novembre 2017, per decisione di un nuovo amministratore delegato",
+      "Nel novembre 2022, dopo la condanna del responsabile della sicurezza",
+      "Nell'ottobre 2016, subito dopo l'attacco"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'episodio era stato tenuto nascosto per oltre un anno."
+  },
+  {
+    "id": 104,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa avvenne nel 2022 al responsabile della sicurezza di Uber dell'epoca?",
+    "options": [
+      "Fu nominato nuovo amministratore delegato",
+      "Fu condannato penalmente per aver deliberatamente occultato l'accaduto",
+      "Fu assolto da ogni accusa",
+      "Fu sanzionato con 148 milioni di dollari"
+    ],
+    "correctIndex": 1,
+    "explanation": "La sanzione da 148 milioni riguardava invece l'azienda."
+  },
+  {
+    "id": 105,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quali conseguenze ebbe il caso AOL per l'azienda?",
+    "options": [
+      "La chiusura immediata del motore di ricerca",
+      "Le dimissioni della direttrice tecnica e una causa legale conclusa nel 2013",
+      "Una sanzione di 1,2 miliardi di euro",
+      "L'obbligo di cancellare tutti i dati degli utenti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Resta uno degli esempi più citati sulla difficoltà di rendere anonimi i dati."
+  },
+  {
+    "id": 106,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali principi del GDPR cita il capitolo?",
+    "options": [
+      "Trasparenza, velocità, cifratura e condivisione dei dati",
+      "Sicurezza, sincronizzazione, backup e autenticazione",
+      "Anonimato, gratuità, portabilità e pubblicità dei dati",
+      "Trasparenza, limitazione della finalità, minimizzazione dei dati e limitazione della conservazione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si aggiunge un principio di responsabilità."
+  },
+  {
+    "id": 107,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la minimizzazione dei dati?",
+    "options": [
+      "Conservare i dati per il minor tempo possibile in ogni caso",
+      "Raccogliere soltanto le informazioni realmente necessarie allo scopo, non dati aggiuntivi perché \"potrebbero servire\"",
+      "Ridurre la dimensione dei file che contengono i dati",
+      "Rendere anonimi tutti i dati raccolti"
+    ],
+    "correctIndex": 1,
+    "explanation": "È uno dei principi concreti del GDPR."
+  },
+  {
+    "id": 108,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che differenza c'è tra interessato e titolare del trattamento?",
+    "options": [
+      "L'interessato è l'autorità di controllo; il titolare è l'azienda",
+      "L'interessato è la persona a cui i dati si riferiscono; il titolare è chi determina finalità e mezzi del trattamento",
+      "L'interessato è chi tratta i dati; il titolare è la persona a cui si riferiscono",
+      "Sono due nomi diversi per lo stesso ruolo"
+    ],
+    "correctIndex": 1,
+    "explanation": "In una piccola attività, il titolare può essere il titolare del negozio."
+  },
+  {
+    "id": 109,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali diritti ha l'interessato, nei casi previsti?",
+    "options": [
+      "Solo sapere quali dati sono trattati",
+      "Decidere liberamente quali dati il titolare debba conservare",
+      "Solo chiedere la cancellazione dei dati",
+      "Sapere quali dati sono trattati, correggerli, ottenerne copia, cancellarli, limitare il trattamento, opporsi e revocare il consenso"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sono diritti riconosciuti dal GDPR."
+  },
+  {
+    "id": 110,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Il diritto all'oblio permette sempre di ottenere la cancellazione immediata di qualsiasi dato?",
+    "options": [
+      "Sì: ogni dato va cancellato subito dopo la richiesta",
+      "No: esistono casi, per esempio un obbligo di legge, in cui il titolare deve conservare certe informazioni",
+      "No: il diritto non esiste nel GDPR",
+      "Sì, ma solo per i dati dei minorenni"
+    ],
+    "correctIndex": 1,
+    "explanation": "È il diritto alla cancellazione dei dati."
+  },
+  {
+    "id": 111,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Fino a quanto possono arrivare le sanzioni per le violazioni più gravi del GDPR?",
+    "options": [
+      "Fino a 746 milioni di euro o al 2% del fatturato",
+      "Fino a 20 milioni di euro o al 4% del fatturato mondiale annuo dell'esercizio precedente",
+      "Fino a 148 milioni di euro o al 4% del fatturato europeo",
+      "Fino a 1,2 miliardi di euro o al 20% del fatturato"
+    ],
+    "correctIndex": 1,
+    "explanation": "Secondo i limiti previsti dal GDPR."
+  },
+  {
+    "id": 112,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Il GDPR riguarda soltanto le grandi aziende tecnologiche?",
+    "options": [
+      "Sì: riguarda solo chi tratta dati sanitari",
+      "Sì: riguarda solo le aziende con molti dipendenti",
+      "No: riguarda soltanto le pubbliche amministrazioni",
+      "No: anche un piccolo negozio, un'associazione o un professionista che tratta dati personali deve rispettarlo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Dietro ogni nome o numero di telefono c'è una persona che mantiene dei diritti."
+  },
+  {
+    "id": 113,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il cyberbullismo?",
+    "options": [
+      "Una discussione occasionale tra due persone in una chat",
+      "Un comportamento aggressivo e intenzionale realizzato con strumenti digitali, con l'obiettivo o l'effetto di danneggiare, umiliare, minacciare o isolare un'altra persona",
+      "Un attacco informatico a un sistema aziendale",
+      "Un singolo commento sgradevole scritto senza intenzione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Può diventare particolarmente grave quando le azioni offensive vengono ripetute, condivise o rese visibili a molti."
+  },
+  {
+    "id": 114,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che cosa cambia la dinamica del cyberbullismo rispetto al bullismo tradizionale?",
+    "options": [
+      "La vittima può essere raggiunta ovunque abbia un dispositivo, e un contenuto può essere condiviso, salvato e ripubblicato anche dopo la cancellazione",
+      "L'aggressione avviene solo in luoghi fisici e in momenti precisi",
+      "La vittima è sempre in grado di ignorare le aggressioni",
+      "I contenuti offensivi scompaiono sempre dopo pochi minuti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Per la vittima la separazione tra online e offline praticamente scompare."
+  },
+  {
+    "id": 115,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Tutto ciò che è offensivo online è automaticamente cyberbullismo?",
+    "options": [
+      "Sì: basta un solo commento offensivo",
+      "No: si considerano ciò che è stato fatto, l'intenzione, la persona coinvolta, la frequenza e le conseguenze",
+      "No: conta soltanto il numero di persone che lo vedono",
+      "Sì: se il contenuto è scritto su una piattaforma pubblica"
+    ],
+    "correctIndex": 1,
+    "explanation": "Per comprendere la situazione occorre valutare più elementi."
+  },
+  {
+    "id": 116,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un bystander attivo?",
+    "options": [
+      "Chi assiste a un episodio e resta passivo",
+      "Chi assiste a un episodio e sostiene l'aggressore",
+      "Chi crea il contenuto offensivo per primo",
+      "Chi assiste a un episodio e interviene in modo sicuro: sostiene la vittima, segnala il contenuto o chiede aiuto"
+    ],
+    "correctIndex": 3,
+    "explanation": "Anche una risata, un \"mi piace\" o una condivisione possono aumentare la visibilità dell'aggressione."
+  },
+  {
+    "id": 117,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali forme può assumere il cyberbullismo?",
+    "options": [
+      "Molestie, denigrazione, diffusione non consensuale di contenuti, esclusione intenzionale, impersonificazione, minacce e ricatti",
+      "Solo la diffusione di fotografie",
+      "Solo insulti scritti in una chat",
+      "Solo l'esclusione da un gruppo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Queste forme possono anche combinarsi tra loro."
+  },
+  {
+    "id": 118,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è la prima mossa raccomandata davanti a un episodio di cyberbullismo?",
+    "options": [
+      "Rispondere alle provocazioni per difendersi",
+      "Condividere i contenuti per mostrare l'accaduto a tutti",
+      "Non alimentare l'aggressione: evitare di rispondere alle provocazioni e di condividere o commentare i contenuti offensivi",
+      "Cancellare subito tutti i messaggi ricevuti"
+    ],
+    "correctIndex": 2,
+    "explanation": "Poi si conservano le prove e, quando necessario, si blocca il mittente."
+  },
+  {
+    "id": 119,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché è utile conservare le prove?",
+    "options": [
+      "Perché serve a rispondere con le stesse parole",
+      "Perché i messaggi online si cancellano sempre da soli",
+      "Perché messaggi, immagini e schermate, possibilmente con data e nome del mittente, servono a segnalare e a rivolgersi alle autorità",
+      "Perché permette di condividere l'accaduto con più persone"
+    ],
+    "correctIndex": 2,
+    "explanation": "Nei casi più gravi ci si rivolge alle autorità competenti portando le prove."
+  },
+  {
+    "id": 120,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale legge ha ampliato l'intervento al bullismo e al cyberbullismo?",
+    "options": [
+      "La Legge 17 maggio 2024, n. 70",
+      "La Legge 29 maggio 2017, n. 71",
+      "La Legge 3 giugno 2017, n. 70",
+      "La Legge 17 maggio 2017, n. 24"
+    ],
+    "correctIndex": 0,
+    "explanation": "La Legge n. 71 del 2017 resta il principale riferimento."
+  },
+  {
+    "id": 121,
+    "module": "sicurezza",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Esiste un unico \"reato di cyberbullismo\"?",
+    "options": [
+      "Sì: è previsto dal GDPR",
+      "No: il cyberbullismo non è mai punibile",
+      "Sì: è previsto dalla Legge n. 71 del 2017",
+      "No: a seconda dei comportamenti entrano in gioco norme su minacce, molestie, diffamazione o trattamento illecito di dati"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le azioni dietro uno schermo possono avere conseguenze concrete."
   }
 ]

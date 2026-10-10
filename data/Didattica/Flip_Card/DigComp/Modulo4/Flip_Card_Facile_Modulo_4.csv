@@ -1,46 +1,93 @@
 Che cos'è un password manager?;Uno strumento che genera / conserva e inserisce automaticamente password uniche e complesse per ciascun account
 Perché non bisogna riutilizzare la stessa password?;Se un servizio viene violato la password rubata può essere provata su ogni altro account
-Che cos'è il credential stuffing?;La tecnica di provare automaticamente credenziali rubate su altri account che usano la stessa combinazione
-Che cosa deve memorizzare l'utente con un password manager?;Una sola password forte: quella che protegge il password manager
-Che cos'è l'autenticazione a più fattori (MFA)?;Un sistema che richiede oltre alla password una seconda prova d'identità prima dell'accesso
-Che cosa significa MFA?;Multi-Factor Authentication (autenticazione a più fattori)
-Quali sono esempi di secondo fattore di autenticazione?;Un codice temporaneo / un'app e un'impronta digitale
-Che cos'è qualcosa che sai nell'autenticazione?;La password
-Che cos'è qualcosa che hai nell'autenticazione?;Ad esempio uno smartphone che riceve un codice
-Che cos'è qualcosa che sei nell'autenticazione?;Ad esempio un'impronta digitale
-Perché la MFA protegge anche se la password viene rubata?;L'aggressore resta bloccato senza il secondo elemento che è in mano al legittimo proprietario
-Che cos'è il phishing?;Una tecnica di inganno online in cui un malintenzionato si finge un mittente affidabile per far fornire spontaneamente dati riservati
-Che cos'è il vishing?;Il phishing condotto tramite telefonata
-Quale schema segue un messaggio di phishing?;Si finge un mittente affidabile / crea urgenza e spinge a cliccare un link o comunicare dati prima di riflettere
-Il phishing sfonda una protezione tecnica?;No: chiede con inganno che sia la vittima stessa a consegnare l'informazione
-Quali esempi di urgenza usa il phishing?;Account bloccato / consegna in sospeso e pagamento da confermare
-Che cos'è il malware?;Qualunque programma progettato per danneggiare / spiare o prendere il controllo di un dispositivo installato senza un consenso consapevole
+Che cos'è il credential stuffing?;Il riutilizzo automatico di credenziali rubate su altri account che usano la stessa combinazione
+Che cos'è la Master Password?;L'unica password da ricordare che protegge l'accesso al password manager
+Come deve essere una Master Password?;Lunga / imprevedibile e mai utilizzata per altri account
+Che cosa può segnalare un password manager oltre a conservare le password?;Password deboli o riutilizzate e credenziali che potrebbero essere coinvolte in una violazione dei dati
+Che cos'è un data breach?;Una fuga o esposizione di dati
+Il password manager elimina ogni rischio?;No: una Master Password debole o credenziali date a un truffatore possono comunque compromettere la sicurezza
+Come cambia la sicurezza con un password manager?;Da tante password deboli ma facili da ricordare a una password principale forte più uno strumento che gestisce il resto
+Che cos'è l'autenticazione a più fattori (MFA)?;Un sistema che richiede oltre alla password una seconda prova d'identità (o più prove) prima dell'accesso
+Che cosa significa MFA?;Multi-Factor Authentication
+Quali sono le tre categorie di fattori di autenticazione?;Qualcosa che conosci / qualcosa che possiedi e qualcosa che sei
+Quali sono esempi di qualcosa che conosci?;Una password o un PIN
+Quali sono esempi di qualcosa che possiedi?;Uno smartphone o una chiave di sicurezza
+Quali sono esempi di qualcosa che sei?;Un'impronta digitale o il riconoscimento del volto
+Che cos'è la 2FA?;L'autenticazione a due fattori (Two-Factor Authentication): esattamente due fattori diversi
+Che relazione c'è tra 2FA e MFA?;La 2FA è una forma di autenticazione a più fattori
+Perché due password diverse non sono due fattori?;Perché entrambe appartengono alla stessa categoria: qualcosa che conosci
+Perché la MFA protegge anche se la password viene rubata?;L'aggressore si trova davanti un secondo controllo senza possedere lo smartphone o la chiave di sicurezza o il dato biometrico
+Che cos'è un OTP?;One-Time Password: un codice temporaneo
+Che cos'è il SIM swapping?;La sostituzione fraudolenta della SIM associata al numero della vittima
+Quali secondi fattori offrono più protezione degli SMS?;Le app di autenticazione e soprattutto le chiavi di sicurezza fisiche
+Qual è la particolarità della biometria?;Una password si può cambiare se compromessa mentre impronta o volto non possono essere sostituiti
+Che cos'è la Risk-Based Authentication?;L'autenticazione basata sul rischio: il controllo tiene conto del contesto dell'accesso
+Che cos'è l'Adaptive Authentication?;L'autenticazione adattiva: richiede un'ulteriore verifica o blocca l'accesso se il contesto è rischioso
+Il contesto dell'accesso è un quarto fattore?;No: è un giudizio dinamico del rischio
+Che cos'è il phishing?;Una tecnica di inganno in cui un malintenzionato si finge un mittente affidabile per ottenere dati / pagamenti / download o autorizzazioni
+Da che cosa deriva il termine phishing?;Dall'inglese fishing (pescare): il criminale lancia un'esca e aspetta che qualcuno abbocchi
+Quali emozioni sfrutta il phishing?;Paura / urgenza / curiosità / fiducia e autorità
+Che cosa può chiedere un messaggio di phishing?;Credenziali / dati personali / dati della carta di pagamento e codici MFA
+Che cos'è il vishing?;Il phishing via telefonata (voice phishing)
+Che cos'è lo smishing?;Il phishing via SMS o messaggi di testo
+Che cos'è il quishing?;Il phishing che usa un codice QR per indirizzare a un sito fraudolento
+Che cos'è lo spear phishing?;Un phishing su misura costruito con informazioni reali sulla vittima
+Perché lo spear phishing è difficile da riconoscere?;Più il messaggio è personale e coerente con la situazione reale più sembra credibile
+Che cosa fare davanti a un messaggio che crea urgenza?;Fermarsi / verificare e ragionare prima di cliccare / comunicare dati o autorizzare operazioni
+Che cos'è il malware?;Qualunque programma progettato per danneggiare / spiare o prendere il controllo di un dispositivo installato senza consenso consapevole
 Da che cosa deriva il termine malware?;Dalla crasi di malicious software (software dannoso)
-Che cos'è un virus informatico?;Un malware che si attacca ad altri file o programmi e si diffonde copiandosi da un dispositivo all'altro
-Che cos'è un trojan?;Un malware che si presenta come qualcosa di utile ma nasconde una funzione dannosa
-Come arriva quasi sempre il malware?;Camuffato da qualcosa che l'utente stesso decide di aprire / installare o eseguire
-Che cos'è il ransomware?;Un malware che cifra i file del dispositivo rendendoli inaccessibili e chiede un pagamento (quasi sempre in criptovaluta)
-Perché pagare il riscatto non dà garanzie?;Gli aggressori potrebbero non inviare la chiave o aver già copiato i dati altrove
-Qual è l'unica vera protezione dal ransomware?;Avere già una copia separata e recente dei dati (backup)
-Quando si neutralizza il ransomware?;Prima dell'attacco facendo la cosa giusta e non quando arriva
-Che cos'è un backup?;Una copia dei dati conservata separatamente dall'originale per recuperarli in caso di perdita / danneggiamento o attacco
-Che cos'è la regola del 3-2-1?;Almeno tre copie dei dati su due tipi di supporto diversi con una copia in un luogo fisicamente separato
-Perché un backup deve essere un'abitudine regolare?;Più tempo passa tra un backup e l'altro più dati si rischia di perdere
-Perché un backup sullo stesso dispositivo dei dati non basta?;Non protegge da eventi come furto o incendio che colpiscono l'intero ambiente
-La sincronizzazione di un file equivale a un backup?;No: una cancellazione o cifratura si propaga alle copie sincronizzate mentre un backup deve restare una copia indipendente
+Quali sono i tre obiettivi principali del malware?;Guadagno / controllo del sistema e raccolta e sorveglianza delle informazioni
+Che cos'è un virus?;Un malware che si attacca ad altri file o programmi e si diffonde quando l'utente apre un file infetto
+Che cos'è un worm?;Un malware che si replica e si diffonde da solo attraverso le reti senza che l'utente apra un file infetto
+Che cos'è un trojan?;Un malware che si presenta come legittimo o desiderabile ma nasconde una funzione dannosa
+Che cos'è lo spyware?;Un malware che raccoglie informazioni sulle attività della persona come siti visitati o ricerche
+Che cos'è un keylogger?;Un malware che registra ciò che viene digitato sulla tastiera comprese password e messaggi
+Che cos'è il ransomware?;Un malware che blocca o cifra i file e chiede un pagamento per tentare di ripristinare l'accesso
+Pagare il riscatto garantisce la restituzione dei file?;No: il pagamento non garantisce che i file vengano restituiti
+Qual è l'unica vera protezione dal ransomware?;Un backup separato e recente per ripristinare tutto senza trattare con l'aggressore
+Come arriva quasi sempre il malware?;Camuffato da qualcosa di legittimo: programma / allegato / documento / aggiornamento o file scaricato
+Che cosa controllare prima di installare un programma?;La sua provenienza
+Che cosa significa che le minacce informatiche possono combinarsi?;Possono susseguirsi nello stesso attacco usando tecniche diverse per raggiungere uno o più obiettivi
+Come una minaccia può servire alla successiva?;Un phishing può installare un malware che ruba credenziali che permettono di entrare in altri sistemi
+Quale domanda porsi in cybersecurity oltre a qual è la minaccia?;Come vengono utilizzate insieme le diverse minacce
+Perché le singole tecniche non sono necessariamente l'obiettivo finale?;Una tecnica può creare le condizioni per quella successiva
+Che cosa può contare più della singola minaccia?;Il percorso: la catena di azioni
+Un singolo attacco può perseguire più obiettivi insieme?;Sì: ad esempio raccogliere credenziali poi controllare altri sistemi e infine guadagnare
+Che cos'è un backup?;Una copia dei propri dati conservata separatamente dall'originale per recuperarli in caso di perdita / danneggiamento o attacco
+Che cos'è la regola del 3-2-1?;Almeno tre copie dei dati su due tipi diversi di supporto con almeno una copia in un luogo fisicamente separato
+Qual è l'obiettivo della regola del 3-2-1?;Ridurre la possibilità che un singolo evento distrugga insieme gli originali e tutte le copie
+Perché i dati possono andare perduti?;Un disco può rompersi / un dispositivo essere rubato o danneggiato / un file cancellato per errore o reso inutilizzabile da un malware
+Perché il backup deve essere un'abitudine regolare?;Più tempo passa tra un backup e l'altro più dati si rischia di perdere
+Perché un backup sullo stesso dispositivo dei dati non basta?;Non protegge dalla rottura del dispositivo e una copia nello stesso ambiente può essere compromessa da furto o incendio
+Che cos'è un backup locale?;Una copia su un hard disk o un SSD esterno
+Che cos'è un backup remoto?;Una copia su un servizio cloud che conserva i dati su server accessibili tramite Internet
+Che cos'è la sincronizzazione?;Mantenere gli stessi file aggiornati su più dispositivi replicando modifiche e spesso anche cancellazioni
+Perché la sincronizzazione non è un backup?;Un file cifrato da un ransomware o cancellato si propaga alle copie sincronizzate mentre il backup è una copia indipendente
+Quando un sistema di backup è buono?;Quando è regolare / affidabile e verificato: si controlla periodicamente che i dati possano essere ripristinati
+Che cos'è l'affidabilità nel tempo di un backup?;La possibilità di usare ancora la copia in futuro anche se cambiano formati / dispositivi e software
 Che cos'è la sicurezza cloud?;La protezione dei dati conservati su server remoti gestiti da un fornitore esterno
 Che cos'è la responsabilità condivisa nel cloud?;La sicurezza dei dati dipende sia dal fornitore sia da come l'utente configura e protegge il proprio accesso
 Di che cosa è responsabile il fornitore cloud?;Dell'infrastruttura: server / data center e reti
 Di che cosa è responsabile l'utente di un servizio cloud?;Di come accede e configura il servizio: password / permessi e credenziali custodite
 Quale errore comune espone i dati nel cloud?;Lasciare credenziali di accesso scritte in chiaro dentro codice condiviso con altre persone
 Che cos'è un dato personale?;Qualsiasi informazione che da sola o combinata con altre permette di identificare una persona specifica
-Bastano dati sensibili per identificare qualcuno?;No: bastano più dati apparentemente banali messi insieme come città / età approssimativa e ricerche
+Servono dati sensibili per identificare qualcuno?;No: bastano più dati apparentemente banali messi insieme come città / età approssimativa e ricerche online
 Perché i dati anonimizzati possono non essere anonimi?;Anche privi del nome possono essere ricondotti a una persona incrociando altre informazioni
-Che cos'è il GDPR?;La normativa europea in vigore dal 25 maggio 2018 sulla raccolta / conservazione e uso dei dati personali dei cittadini
+Che cos'è il GDPR?;La normativa dell'Unione Europea in vigore dal 25 maggio 2018 sulle regole per raccogliere / conservare / utilizzare e proteggere i dati personali
 Che cosa significa GDPR?;General Data Protection Regulation (Regolamento Generale sulla Protezione dei Dati)
-Quali principi stabilisce il GDPR per i dati?;Raccolti per uno scopo dichiarato e specifico e conservati solo per il tempo realmente necessario
-Quali diritti ha una persona sui propri dati?;Sapere quali dati sono conservati e chiederne la cancellazione (diritto all'oblio)
-Come sono le sanzioni del GDPR?;Molto severe e proporzionate al fatturato dell'organizzazione
+Per quale scopo nasce il GDPR?;Garantire alle persone maggiore controllo e tutela sulle informazioni che le riguardano
+Che cos'è il principio di trasparenza del GDPR?;Chi raccoglie dati deve informare su quali dati raccoglie / perché li usa e con chi possono essere condivisi
+Che cos'è la limitazione della finalità?;I dati devono essere raccolti per uno scopo specifico e legittimo e non usati per qualsiasi altro scopo
+Che cos'è la minimizzazione dei dati?;Raccogliere solo le informazioni realmente necessarie e non dati aggiuntivi solo perché potrebbero servire
+Che cos'è la limitazione della conservazione?;I dati non vanno conservati a tempo indefinito ma per il tempo necessario tenendo conto degli obblighi di legge
+Chi è l'interessato secondo il GDPR?;La persona alla quale i dati personali si riferiscono
+Chi è il titolare del trattamento?;Il soggetto che determina le finalità e i mezzi del trattamento dei dati
+Quali diritti ha l'interessato?;Sapere quali dati sono trattati / correggere dati inesatti / ottenere una copia / chiedere cancellazione e limitazione / opporsi a trattamenti e revocare il consenso
+Il diritto all'oblio garantisce la cancellazione immediata di qualsiasi dato?;No: il titolare può dover conservare informazioni ad esempio per un obbligo di legge
+Che cos'è il principio di responsabilità del GDPR?;Chi tratta dati deve adottare misure adeguate per proteggerli e saper dimostrare di rispettare i principi
+Quali misure può richiedere la protezione dei dati?;Password sicure / MFA / controllo degli accessi / backup / protezione degli archivi e procedure per le violazioni
+Il GDPR riguarda solo le grandi aziende tecnologiche?;No: anche un piccolo negozio / un'associazione o un professionista che tratta dati personali
+Quali sanzioni massime prevede il GDPR?;Fino a 20 milioni di euro o al 4% del fatturato mondiale annuo dell'esercizio precedente nei casi più gravi
 Che cos'è il benessere digitale?;L'equilibrio tra l'uso delle tecnologie e la salute fisica / mentale e sociale di chi le usa
 Equilibrio digitale significa rinuncia alla tecnologia?;No: a volte può anche voler dire scegliere di non usarla
 Perché molte app cercano di prolungare l'uso?;Perché i servizi gratuiti vivono di pubblicità: più tempo si passa più la piattaforma vale
@@ -51,14 +98,24 @@ Quali sono segnali di una possibile dipendenza digitale?;Perdita di controllo su
 Che cosa fare davanti ai segnali di dipendenza digitale?;Parlarne con un professionista della salute e non cercare di risolvere tutto da soli
 Quali strumenti aiutano il benessere digitale?;Monitorare il tempo d'uso / impostare limiti e fasce senza schermo / ridurre le notifiche e usare filtri se il dispositivo è condiviso con minori
 Quali altri aspetti incidono sul benessere digitale?;Modelli di corpo idealizzati che generano ansia / app di salute non autorizzate / informazioni sanitarie false e la dimensione fisica (posizione / luce e pause)
-Che cos'è il cyberbullismo?;Il bullismo praticato attraverso le tecnologie digitali: un comportamento ripetuto per spaventare / irritare o mettere in ridicolo
-Perché il cyberbullismo non è meno grave del bullismo?;Perché lo schermo peggiora le regole: effetto disinibizione / pubblico invisibile e anonimato a ogni ora
-Chi è più esposto al cyberbullismo?;Bambini e ragazzi / chi ha meno abilità sociali e chi non ha un sostegno sociale in presenza
-Il cyberbullismo riguarda solo i minori?;No: anche un adulto o un professionista può essere bersaglio di persecuzioni online
-Quali mosse concrete fare davanti al cyberbullismo?;Non reagire / conservare le prove / bloccare il mittente / segnalare alla piattaforma / parlarne con un adulto e nei casi gravi rivolgersi alle forze dell'ordine
+Che cos'è il cyberbullismo?;Un comportamento aggressivo e intenzionale tramite strumenti digitali con l'obiettivo o l'effetto di danneggiare / umiliare / minacciare o isolare un'altra persona
+Quando il cyberbullismo può diventare particolarmente grave?;Quando le azioni offensive vengono ripetute / condivise / amplificate o rese visibili a molte persone
+Quali condotte comprende la Legge 71/2017?;Pressioni / aggressioni / molestie / ricatti / ingiurie / denigrazioni / diffamazione / furto d'identità e diffusione illecita di contenuti riguardanti minorenni
+Perché il cyberbullismo non è un bullismo meno grave?;La vittima può essere raggiunta ovunque abbia un dispositivo e i contenuti si diffondono in fretta e possono essere ripubblicati dopo la cancellazione
+Come la distanza dello schermo influisce sul comportamento?;Riduce la percezione delle conseguenze: non vedendo la reazione della vittima si fanno cose che faccia a faccia non si farebbero
+Tutto ciò che è offensivo online è cyberbullismo?;No: si considerano cosa è stato fatto / intenzione / persona coinvolta / frequenza e conseguenze
+Quali forme può assumere il cyberbullismo?;Molestie / denigrazione / diffusione non consensuale di contenuti / esclusione intenzionale / impersonificazione / minacce e ricatti
+Chi è un bystander attivo?;Uno spettatore che interviene in modo sicuro per sostenere la vittima / segnalare il contenuto o chiedere aiuto
+Quali ruoli possono avere gli spettatori di un episodio?;Sostenere l'aggressore / restare passivi o diventare bystander attivi
+Come gli spettatori possono aumentare la visibilità di un'aggressione?;Con una risata / un mi piace o una condivisione
+Quali conseguenze emotive può avere il cyberbullismo?;Vergogna / paura / rabbia / tristezza / impotenza e isolamento
+Quali mosse concrete fare davanti al cyberbullismo?;Non alimentare l'aggressione / conservare le prove / bloccare il mittente / segnalare alla piattaforma / parlarne con un adulto di fiducia e nei casi gravi rivolgersi alle autorità
 Perché conservare le prove prima di cancellare?;Salvare messaggi e schermate con data e nome del mittente serve a documentare l'aggressione
-Quale linea di ascolto esiste per i ragazzi?;Telefono Azzurro
-Quali segnali indicano che qualcuno subisce cyberbullismo?;Cambiamenti nell'uso del telefono / tentativo di evitarlo e un umore diverso dal solito
+In che cosa consiste la prevenzione del cyberbullismo?;Riconoscere i segnali / rispettare gli altri online / comprendere le conseguenze della condivisione e usare blocco / segnalazione e gestione della privacy
+Esiste un unico reato di cyberbullismo?;No: a seconda dei comportamenti entrano in gioco norme su minacce / molestie / diffamazione o trattamento illecito di dati
+Qual è il principale riferimento normativo italiano sul cyberbullismo?;La Legge 29 maggio 2017 n. 71
+Quale legge ha rafforzato il quadro normativo nel 2024?;La Legge 17 maggio 2024 n. 70 che ha ampliato l'intervento al bullismo e al cyberbullismo
+Qual è il principio fondamentale sul cyberbullismo?;Le azioni dietro uno schermo hanno conseguenze concrete: la tecnologia cambia lo strumento e non la realtà della persona dall'altra parte
 Che cos'è l'impatto ambientale del digitale?;Le conseguenze sull'ambiente di produrre / usare e smaltire dispositivi / reti e servizi digitali
 Che cosa sono i RAEE?;Rifiuti da Apparecchiature Elettriche ed Elettroniche (in inglese e-waste)
 In quali tre momenti si presenta l'impatto ambientale del digitale?;Uso quotidiano / produzione e fine vita

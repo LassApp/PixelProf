@@ -5,7 +5,16 @@ Che cos'era RockYou.com?;Un'azienda che produceva applicazioni per social networ
 Quale errore aggravò il danno del caso RockYou?;Le password erano conservate in chiaro senza alcuna cifratura
 Quale fu la password più diffusa nel caso RockYou?;123456 usata da oltre 290.000 persone seguita da 12345 e dalla parola password
 Che cos'è rockyou.txt?;L'elenco di password diventato uno strumento standard per i ricercatori di sicurezza per testare i sistemi
+Come si comporta la MFA quando si accede alla posta con password e app?;Si usano due fattori diversi: la password (qualcosa che si conosce) e lo smartphone (qualcosa che si possiede) quindi è una 2FA
+Che cosa accade se oltre a password e smartphone si chiede anche l'impronta digitale?;Si usano tre fattori (conosci / possiedi e sei) quindi è una MFA a tre fattori
 Come si manifesta la MFA nell'accesso a un conto bancario?;Da un computer nuovo oltre alla password si inserisce un codice che arriva sullo smartphone
+Come può un aggressore ottenere una password?;Con phishing / malware o una violazione dei dati ma poi trova un secondo controllo senza lo strumento richiesto
+Con quale frase si riassume il ruolo della password e del secondo fattore?;La password dimostra che conosci qualcosa mentre il secondo fattore dimostra che possiedi qualcosa o che sei qualcuno
+Quando un sistema avanzato può considerare rischioso un accesso?;Se avviene da un dispositivo mai usato prima da un Paese insolito e in un orario anomalo
+Che cosa può fare il sistema davanti a un accesso rischioso?;Richiedere un'ulteriore verifica o bloccarlo direttamente
+Con quale frase si riassume la differenza tra fattori e contesto?;I primi fattori verificano chi sei mentre il contesto verifica se tutto torna
+Perché un OTP via SMS è più sicuro della sola password ma vulnerabile?;Resta esposto a rischi come il SIM swapping cioè la sostituzione fraudolenta della SIM della vittima
+Perché la biometria è pratica?;Non richiede di ricordare un codice e rende più difficile a un'altra persona impersonare l'utente
 Con quale metafora si descrive la MFA?;Il controllo all'imbarco in aeroporto: il biglietto (password) non basta senza il documento d'identità (secondo fattore)
 Che cosa accadde ai clienti di Snowflake nel 2024?;Tra aprile e giugno aggressori sottrassero dati da circa 165 aziende clienti tra cui Ticketmaster / Santander e AT&T
 Come agirono gli aggressori contro i clienti di Snowflake?;Non violarono Snowflake ma usarono credenziali rubate con un malware provandole sugli account dei clienti
@@ -13,6 +22,10 @@ Perché l'attacco a Snowflake funzionò quasi ovunque?;Nessun account aveva la M
 Quanti clienti di Ticketmaster furono esposti?;Circa 560 milioni con dati messi in vendita online per 500.000 dollari
 Con quale paragone commentò il caso Snowflake un esperto?;Un'auto degli anni Ottanta con le cinture ma senza il segnale acustico che ricorda di allacciarle
 Come riconoscere un'email falsa della banca?;L'indirizzo del mittente non corrisponde esattamente a quello ufficiale ma ne è una copia molto simile
+Come verificare un presunto blocco del conto segnalato da un'email?;Aprendo il sito della banca digitandone l'indirizzo oppure usando l'app ufficiale
+Come può agire un vishing con finto operatore di banca?;Il criminale chiede alla vittima di comunicare un codice ricevuto sul telefono
+Come può agire uno smishing con un falso corriere?;Comunica che un pacco non è stato consegnato e invita a cliccare su un collegamento per modificare la consegna
+Che cosa prevede il phishing oltre ai link?;Può convincere a scaricare un file o un'applicazione dannosa oppure ad autorizzare direttamente un'operazione
 Con quale metafora si descrive il phishing?;Un finto tecnico alla porta con un tesserino apparentemente ufficiale che ti convince ad aprire tu stesso
 Che cosa accadde a John Podesta il 19 marzo 2016?;Ricevette un'email che sembrava un avviso di sicurezza di Google e inserì le credenziali in una pagina contraffatta
 Chi era John Podesta?;Il capo della campagna presidenziale di Hillary Clinton
@@ -20,21 +33,34 @@ Quale errore commise il supporto informatico nel caso Podesta?;Rispose per error
 Chi creò la pagina contraffatta del caso Podesta?;Un gruppo di hacker legato ai servizi di intelligence russi noto come Fancy Bear
 Che cosa ottennero gli aggressori nel caso Podesta?;L'accesso a decine di migliaia di email della sua casella personale
 Che cosa mostra il caso Podesta?;Che anche un'organizzazione con personale tecnico dedicato può cadere in un phishing ben costruito
-Come ridurre il rischio quando si scarica un programma?;Verificare che provenga dal sito ufficiale del produttore e non dal primo link trovato
+Come ridurre il rischio quando si scarica un programma?;Verificare che provenga dal sito ufficiale del produttore e non dal primo risultato di una ricerca
+Quale domanda porsi prima di installare un programma?;Da dove proviene?
+Che cosa conta nel mondo digitale oltre a ciò che si installa?;Chi ce lo sta facendo installare
+Come può un worm raggiungere altri computer?;Una volta entrato in un dispositivo raggiunge i computer collegati alla stessa rete
+Quale esempio mostra un trojan in azione?;Un programma apparentemente gratuito che installa in background altro malware o consente a un criminale di accedere al dispositivo
+Con quale metafora si descrive il virus informatico?;Un virus biologico: usa un ospite per raggiungere altri file o dispositivi
 Con quale metafora si descrive il malware?;Un ospite con un regalo incartato con cura che dentro non contiene ciò che prometteva
 Che cos'era WannaCry?;Un ransomware diffuso dal 12 maggio 2017 capace di propagarsi da solo sfruttando la falla EternalBlue di Windows
 Che cos'era EternalBlue?;Uno strumento sviluppato dall'agenzia NSA e reso pubblico senza autorizzazione dal gruppo Shadow Brokers
 Quanti computer infettò WannaCry?;Oltre 200.000 in più di 150 paesi con richiesta di riscatto in bitcoin
 Chi fu tra le vittime più colpite da WannaCry?;Il Servizio Sanitario Nazionale britannico (NHS) con decine di ospedali senza accesso alle cartelle cliniche
 Che cosa mostra il caso WannaCry?;Che un malware si diffonde in fretta e che tenere aggiornati i dispositivi protegge: Microsoft aveva pubblicato la correzione due mesi prima
-Che cosa consigliare a chi subisce un ransomware?;Non pagare e rivolgersi a un tecnico per verificare se esiste uno strumento gratuito di decifratura per quella variante
-Con quale metafora si descrive un ransomware senza backup?;Una casa senza copia delle chiavi: se cambiano la serratura si è costretti a trattare
-Che cosa accadde a Norsk Hydro nel marzo 2019?;Fu colpita dal ransomware LockerGoga: circa 500 server e 2.700 computer cifrati in poche ore
-Come reagì Norsk Hydro all'attacco?;Decise di non pagare e ripristinò i sistemi dai backup lavorando intanto a mano con carta / penna e fax
-Quanto costò il recupero di Norsk Hydro?;Circa 75 milioni di dollari e diverse settimane
-Come fu definita la risposta di Norsk Hydro?;Lo standard aureo secondo gli esperti citati dalla BBC
+Come può iniziare una catena di attacco a partire da una falsa fattura?;Il documento in un'email avvia un malware che raccoglie informazioni e usa le credenziali memorizzate per raggiungere altri sistemi
+Che cosa capisce chi subisce un attacco a catena?;Che l'email era soltanto l'inizio e il vero pericolo è la catena di azioni che può seguirla
+Con quale immagine si descrivono le minacce come anelli di una catena?;Phishing che installa un Trojan che raccoglie credenziali usate per accedere ad altri dispositivi e poi per espandere il controllo o rubare dati
+Come può un malware diventare punto di partenza di un ransomware?;Può essere usato per preparare l'accesso e poi distribuire il ransomware
+Che cos'era Emotet?;Un Trojan analizzato dalla CISA e distribuito spesso con email di phishing contenenti link o allegati dannosi
+Che cosa significa CISA?;Cybersecurity and Infrastructure Security Agency (agenzia statunitense)
+Che cosa poteva fare Emotet una volta eseguito?;Cercare di diffondersi nella rete e usare credenziali compromesse per raggiungere altri sistemi
+Che cos'altro documentò la CISA su Emotet?;Poteva distribuire altro malware compresi Trojan per rubare credenziali e dati e malware usati poi per distribuire ransomware
+Quale catena mostra il caso Emotet?;Phishing / malware / raccolta di informazioni / propagazione / altro malware e possibile ransomware
+Quali obiettivi finali può avere una catena come quella di Emotet?;Guadagno / controllo dei sistemi / raccolta di informazioni o una combinazione
+Con quale metafora si descrive un attacco che combina minacce?;Una rapina organizzata: uno osserva l'edificio / uno procura le chiavi / uno entra e uno porta via ma tutto fa parte dello stesso piano
 Come impostare un backup affidabile in un negozio?;Backup automatico ogni notte su disco esterno più una copia su un servizio cloud
-Con quale metafora si descrive un backup mai verificato?;Un estintore comprato anni fa e mai controllato: si scopre se è carico solo durante l'incendio
+Perché la copia sul cloud aiuta se il disco esterno viene rubato con il computer?;Resta al sicuro altrove: è la copia fisicamente separata
+Con quale metafora si distinguono sincronizzazione e backup?;La sincronizzazione è come due fogli collegati da un filo invisibile mentre il backup è una fotocopia conservata separatamente
+Con quale metafora si descrive il backup?;Il negativo delle vecchie fotografie: se la stampa si rovina se ne può fare un'altra
+Che cosa vale davvero nel backup secondo la metafora del negativo?;Non la copia in sé ma la possibilità di riportare in vita ciò che sembrava perduto
 Che cosa accadde a GitLab il 31 gennaio 2017?;Un amministratore cancellò per errore circa 300 gigabyte dal database di produzione
 Che cosa scoprì GitLab dopo la cancellazione?;Che nessuno dei cinque sistemi di backup funzionava in modo affidabile
 Quanto riuscì a recuperare GitLab?;Ripristinò i dati da uno snapshot di circa sei ore prima perdendo comunque sei ore di attività
@@ -54,8 +80,11 @@ Che cosa fece AOL nell'agosto 2006?;Pubblicò circa 20 milioni di ricerche di ol
 Come furono identificati gli utenti nel caso AOL?;I giornalisti del New York Times analizzarono le ricerche del numero 4417749 e risalirono a Thelma Arnold vedova di 62 anni di Lilburn
 Quali ricerche permisero di identificare Thelma Arnold?;Giardinieri a Lilburn in Georgia e ricerche su persone con il cognome Arnold
 Quali conseguenze ebbe il caso AOL?;Le dimissioni della direttrice tecnica e una causa legale conclusa nel 2013
-Come applicare il GDPR in un piccolo negozio?;Cancellare i dati di chi lo chiede e raccogliere solo le informazioni davvero necessarie al servizio
-Con quale metafora si descrive il GDPR?;Le istruzioni di sicurezza di un cantiere: non impediscono di lavorare ma stabiliscono cosa fare e con quali precauzioni
+Come si applica la minimizzazione dei dati in un negozio di riparazioni?;Si chiedono solo nome e numero di telefono e non data di nascita o indirizzo di casa
+Come si applica la limitazione della finalità a un numero di telefono raccolto per una riparazione?;Per usarlo in offerte promozionali serve un consenso distinto da quello dato per essere avvisati sulla riparazione
+Come si applica il GDPR quando un cliente chiede la cancellazione dei dati?;Si cancellano i dati dal gestionale salvo obblighi di legge che impongano di conservarli
+Che cosa significa per un negoziante che un cliente non è solo una voce nel gestionale?;Dietro ogni nome / numero o indirizzo c'è una persona che mantiene diritti sulle informazioni che la riguardano
+Con quale metafora si descrive il GDPR?;Le regole di una palestra seria: chiede solo le informazioni utili per l'allenamento e non può usarle per scopi diversi da quello dichiarato
 Quale sanzione inflisse a Meta l'Autorità irlandese il 22 maggio 2023?;1.2 miliardi di euro: la più alta multa mai comminata sulla base del GDPR
 Quale record superò la sanzione a Meta?;Quello di 746 milioni di euro inflitto ad Amazon nel 2021
 Perché fu inflitta la sanzione a Meta?;Per il trasferimento sistematico dei dati degli utenti europei di Facebook verso server negli Stati Uniti senza garanzie sufficienti

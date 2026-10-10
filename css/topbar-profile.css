@@ -344,7 +344,8 @@
   .tb-context{ flex:1; min-width:0; display:flex; align-items:center; justify-content:center; padding:0 8px; }
 
   #tb-context .act-back-row,
-  #tb-context .game-header{
+  #tb-context .game-header,
+  #tb-context .qz-controlbar{
     display:flex; align-items:center; justify-content:center; gap:4px;
     margin:0; padding:0; min-width:0; max-width:100%;
     background:none; border:none; border-radius:0; box-shadow:none;
@@ -392,4 +393,23 @@
      3.65:1), in scuro appena tinto di navy sul beige */
   html[data-theme="light"] #tb-context .game-counter-pill{ background:rgba(23,35,45,.22); }
   html:not([data-theme="light"]) #tb-context .game-counter-pill{ background:rgba(var(--navy-rgb),.08); }
+
+  /* ── Quiz / Speed Quiz (giro 10/10): Esci + Ricomincia + avanzamento + contatore ──────────────
+     Esci/Ricomincia/contatore prendono gli stili già definiti sopra. Qui la barra di avanzamento:
+     binario SCURITO (navy a bassa opacità: sul fango lo scurisce, sul beige lo ombreggia appena) e
+     riempimento col token --purple dell'isola (crema chiaro #FBF6EC sul fango in chiaro, oliva
+     #5C6644 sul beige in scuro). Niente gradiente né "pallino" luminoso della barra base. */
+  #tb-context .qz-controlbar{ width:min(100%, 480px); }
+  #tb-context .qz-controlbar .prog-bar{
+    flex:1 1 120px; min-width:40px; max-width:260px; height:6px; margin:0 8px;
+    border-radius:999px; overflow:hidden; position:relative;
+    background:rgba(var(--navy-rgb),.3);
+  }
+  #tb-context .qz-controlbar .prog-fill{
+    height:100%; border-radius:999px; background:var(--purple);
+  }
+  #tb-context .qz-controlbar .prog-fill::after{ display:none; }
+  html:not([data-theme="light"]) #tb-context .qz-controlbar .prog-bar{ background:rgba(var(--navy-rgb),.14); }
+  html:not([data-theme="light"]) #tb-context .qz-controlbar .prog-fill{ background:#55603F; }   /* oliva del "Prof" del logo in scuro: più denso di --purple sul binario beige */
+  #tb-context .qz-controlbar .game-counter-pill{ margin-left:0; flex:none; }
 }

@@ -70,7 +70,9 @@ test('flusso completo: login → entra in aula → ogni minigioco → pausa/ripr
 
     // A metà quiz: il dialog di uscita deve mettere in pausa, "No,
     // continua" deve riprendere lasciando il quiz esattamente dov'era.
-    await exitDialogCancelIsResume(page, '#qz-game .game-exit-btn');
+    // giro 10/10: con viewport >= 1000px la control bar del Quiz (.qz-controlbar) vive in #tb-context,
+    // non più dentro #qz-game: il selettore legato al contenitore non la troverebbe.
+    await exitDialogCancelIsResume(page, '.qz-controlbar .game-exit-btn');
     await expect(page.locator('#qz-game')).toBeVisible();
     await expect(page.locator('.opt').first()).toBeEnabled();
 
@@ -91,7 +93,7 @@ test('flusso completo: login → entra in aula → ogni minigioco → pausa/ripr
 
     await answerOneSpeedQuestion(page);
     await togglePauseAndResumeSpeedQuiz(page);
-    await exitGameConfirm(page, '#qz-game .game-exit-btn');
+    await exitGameConfirm(page, '.qz-controlbar .game-exit-btn');
   });
 
   await test.step('Abbina — gioca, pausa/riprendi via pulsante dedicato, esci', async () => {

@@ -19,13 +19,13 @@
   /* ── control bar: Esci / Ricomincia + avanzamento, un unico blocco ── */
   #qz-game .qz-controlbar{
     display:flex;align-items:center;gap:10px;flex-wrap:wrap;
-    background:rgba(4,6,15,.8);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    background:var(--surface-2);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
     border:1px solid var(--border-subtle);border-radius:var(--radius-lg);
     padding:9px 10px;margin-bottom:12px;
   }
   #qz-game .qz-controlbar .game-exit-btn{
     display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:9px;
-    border:1px solid var(--border-subtle);background:var(--surface-1);color:var(--text-muted);
+    border:1px solid var(--border-subtle);background:var(--surface-1);color:rgba(var(--accent-rgb),.85);
     font-size:12px;font-weight:600;cursor:pointer;transition:all var(--transition-fast);white-space:nowrap;
   }
   #qz-game .qz-controlbar .game-exit-btn:hover{
@@ -33,7 +33,7 @@
   }
   #qz-game .qz-controlbar .game-restart-btn{
     display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;padding:0;border-radius:9px;
-    border:1px solid var(--border-subtle);background:var(--surface-1);color:var(--text-muted);
+    border:1px solid var(--border-subtle);background:var(--surface-1);color:rgba(var(--accent-rgb),.85);
     cursor:pointer;transition:all var(--transition-fast);flex-shrink:0;
   }
   #qz-game .qz-controlbar .game-restart-btn:hover{
@@ -53,6 +53,10 @@
   #qz-game .qz-actrow{
     display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;margin-bottom:14px;
   }
+  /* con la control bar spostata nella topbar (js/app.js, TOPBAR CONTEXT) questa riga diventa il primo
+     elemento di #qz-game: senza stacco resterebbe incollata alla topbar. :first-child ignora il commento-
+     segnaposto, quindi col layout stretto (barra ancora in pagina) la regola non scatta. */
+  #qz-game .qz-actrow:first-child{ margin-top:14px; }
   #qz-game .qz-act-pill{
     display:inline-flex;align-items:center;gap:9px;padding:5px 14px 5px 6px;border-radius:24px;
     border:1px solid var(--purple-border);background:var(--purple-dim);
@@ -167,13 +171,13 @@
 @layer theme {
   /* ── override chiaro — stessa struttura, superfici/testo invertiti ── */
   html[data-theme="light"] #qz-game .qz-controlbar{
-    background:rgba(255,255,255,.75);border-color:rgba(var(--navy-rgb),.1);
+    background:rgba(251,246,236,.92);border-color:rgba(var(--navy-rgb),.1);
   }
   html[data-theme="light"] #qz-game .qz-controlbar .game-exit-btn,
   html[data-theme="light"] #qz-game .qz-controlbar .game-restart-btn{
     background:rgba(var(--navy-rgb),.04);border-color:rgba(var(--navy-rgb),.1);color:rgba(var(--navy-rgb),.6);
   }
-  html[data-theme="light"] #qz-game .qz-controlbar .game-counter-pill{ color:rgba(var(--navy-rgb),.55); }
+  html[data-theme="light"] #qz-game .qz-controlbar .game-counter-pill{ color:rgba(var(--navy-rgb),.75); }
   html[data-theme="light"] #qz-game .qz-act-pill{ background:rgba(var(--purple-rgb),.08); }
   html[data-theme="light"] #qz-game .opt{
     background:rgba(var(--navy-rgb),.03);border-color:rgba(var(--navy-rgb),.08);color:rgba(var(--navy-rgb),.78);

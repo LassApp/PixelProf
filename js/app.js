@@ -2067,6 +2067,8 @@ function closeHubMenu(){
    che prima stavano in cima alla pagina:
      · .act-back-row  — tasto indietro + etichetta (Modulo / Modalità / Didattica / livello Flip Card)
      · .game-header   — Esci (+ Ricomincia) + breadcrumb di Flip Card, Lo Sapevi? e Abbina
+     · .qz-controlbar — Esci + Ricomincia + barra di avanzamento + contatore di Quiz / Speed Quiz
+                        (giro 10/10; i suoi id #qz-prog / #qz-counter restano quelli veri)
    Il nodo viene SPOSTATO (non clonato: id, onclick inline e contenuto aggiornato dal JS restano
    quelli veri) e al suo posto resta un commento-segnaposto: quando lo step originale torna
    nascosto (.hidden) o il contenitore viene riscritto con innerHTML (Flip Card ricostruisce la
@@ -2076,7 +2078,7 @@ function closeHubMenu(){
    vedi onboarding.js (target del tour) e _setGamePauseLock() in game-quiz.js.
    ══════════════════════════════════════════════════════════════════════════════ */
 (function(){
-  const SRC = '.act-back-row, .game-header';
+  const SRC = '.act-back-row, .game-header, .qz-controlbar';
   const MQ  = window.matchMedia ? window.matchMedia('(min-width: 1000px)') : { matches:true };
   const moved = new Map();   // nodo spostato -> commento segnaposto
   let slot = null, running = false;

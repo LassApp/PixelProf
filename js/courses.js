@@ -137,7 +137,7 @@ function renderCoursesGrid(){
   const courses=loadCourses();
   if(!courses.length){
     grid.innerHTML=`<div class="cs-empty">
-      <div class="cs-empty-icon">🏫</div>
+      <div class="cs-empty-icon"><i class="ti ti-school"></i></div>
       <div class="cs-empty-text">Nessuna aula ancora.<br>Crea la prima per iniziare!</div>
     </div>`;
     _csRenderAreaFilterBar(); // nasconde la barra (0 aule) — v8.5.0
@@ -156,12 +156,12 @@ function renderCoursesGrid(){
     const list=byArea[area.key];
     if(!list||!list.length)return;
     delete byArea[area.key];
-    html+=_csBuildAreaSection(area.key,area.label,area.icon,list,()=>gi++);
+    html+=_csBuildAreaSection(area.key,area.label,window.AreasConfig.areaIconHtml(area),list,()=>gi++);
   });
   // areaKey orfane (non presenti in AREAS, es. dati corrotti o Area
   // rimossa dalla config) — mostrate comunque in coda, mai perse.
   Object.keys(byArea).forEach(key=>{
-    html+=_csBuildAreaSection(key,key,'🗂️',byArea[key],()=>gi++);
+    html+=_csBuildAreaSection(key,key,'<i class="ti ti-folders"></i>',byArea[key],()=>gi++);
   });
 
   grid.innerHTML=html;
@@ -217,14 +217,14 @@ function _csRenderAreaFilterBar(){
   if(!chips) return;
   let html=`<button type="button" class="cs-area-filter-chip${_cafArea==='all'?' active':''}"
       data-area-key="all" onclick="_csAreaFilterPick('all')">
-      <span>🗂️ Tutte</span><span class="cs-area-filter-chip-count">${courses.length}</span>
+      <span><i class="ti ti-folders"></i> Tutte</span><span class="cs-area-filter-chip-count">${courses.length}</span>
     </button>`;
   (window.AREAS||[]).forEach(area=>{
     const count=byArea[area.key]||0;
     if(!count) return; // niente chip per Aree senza aule — coerente con le sezioni (Fase 3)
     html+=`<button type="button" class="cs-area-filter-chip${_cafArea===area.key?' active':''}"
         data-area-key="${escAttr(area.key)}" onclick="_csAreaFilterPick('${escAttr(area.key)}')">
-        <span>${area.icon} ${escHtml(_csAreaShortLabel(area.label))}</span>
+        <span>${window.AreasConfig.areaIconHtml(area)} ${escHtml(_csAreaShortLabel(area.label))}</span>
         <span class="cs-area-filter-chip-count">${count}</span>
       </button>`;
   });

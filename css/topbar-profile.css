@@ -412,4 +412,56 @@
   html:not([data-theme="light"]) #tb-context .qz-controlbar .prog-bar{ background:rgba(var(--navy-rgb),.14); }
   html:not([data-theme="light"]) #tb-context .qz-controlbar .prog-fill{ background:#55603F; }   /* oliva del "Prof" del logo in scuro: più denso di --purple sul binario beige */
   #tb-context .qz-controlbar .game-counter-pill{ margin-left:0; flex:none; }
+
+  /* ── Giro 10/10 — distanza dalla topbar ───────────────────────────────────────────────────────
+     Con lo slot popolato (≥1000px) la riga di navigazione che stava in cima alla pagina non c'è più e il primo
+     contenuto resta incollato alla topbar: hero "Scegli un'attività", card livello Flip Card e Didattica, Flip
+     Card / Lo Sapevi? / Abbina in gioco. 48px = lo scarto che la schermata Moduli ha già (eyebrow a 48px dalla
+     topbar, misurato): passando da una schermata all'altra il contenuto non salta. :has() → Chrome/Edge ≥105,
+     Safari ≥15.4, Firefox ≥121; dove manca resta il comportamento di prima (nessun errore). Il Quiz ha la sua
+     regola (#qz-game .qz-actrow:first-child, quiz.css). */
+  .app:has(#tb-context.has-ctx) #step-act,
+  .app:has(#tb-context.has-ctx) #step-didattica,
+  .app:has(#tb-context.has-ctx) #g-area{ padding-top:48px; }
+
+  /* ── Giro 10/10 — pillole dei giochi (timer, punti, errori, combo, pausa) dentro la topbar ──────
+     Prima avevano i colori "di pagina" (blu/ambra/rosso su fango o su beige): in chiaro 1.2–1.7:1, in scuro il ×1
+     a 1.09:1 e gli errori a 2.0:1. Ora testo e glifi prendono il colore della topbar (crema su fango / navy su
+     beige: token dell'isola, --text-primary) e il significato resta nella tinta della pillola (--pp-rgb: tempo =
+     slate, punti = miele, errori = terracotta, mosse = oliva, combo per livello). In chiaro la pillola è una
+     tessera scurita (tinta + navy, stessa ricetta di .dm-icon / .dd-icon-line → crema ≥ 5:1), in scuro una
+     velatura della tinta sul beige con testo navy. Selettori con #tb-context: devono battere .mem-stat-pill,
+     .timer-*, .match-combo-pill.xN (a classi) e, per gli errori, lo style inline tolto da game-match.js. */
+  #tb-context .mem-stat-pill,
+  #tb-context .match-combo-pill{ --pp-rgb:84,112,140; color:var(--text-primary); }
+  #tb-context .mem-stat-pill i{ color:inherit; }
+  #tb-context .mem-stat-pill.timer-running{ --pp-rgb:84,112,140; }   /* slate */
+  #tb-context .mem-stat-pill.timer-warning{ --pp-rgb:171,86,73; animation:comboPulse .8s ease-in-out infinite alternate; }   /* terracotta; pulsa con l'anello (box-shadow) invece che con l'opacità: a opacity .7 il contrasto scendeva a 4.5:1 */
+  #tb-context .mem-stat-pill.score-pill{ --pp-rgb:184,147,90; }      /* miele */
+  #tb-context .mem-stat-pill.moves-pill{ --pp-rgb:110,122,80; }      /* oliva */
+  #tb-context .mem-stat-pill.err-pill{ --pp-rgb:171,86,73; }         /* terracotta */
+  #tb-context .match-combo-pill.x1{ --pp-rgb:23,35,45; }             /* neutro */
+  #tb-context .match-combo-pill.x2{ --pp-rgb:84,112,140; }
+  #tb-context .match-combo-pill.x3{ --pp-rgb:110,122,80; }
+  #tb-context .match-combo-pill.x4{ --pp-rgb:171,86,73; }
+  #tb-context .match-combo-pill.xmax{ --pp-rgb:184,147,90; }
+  html[data-theme="light"] #tb-context .mem-stat-pill,
+  html[data-theme="light"] #tb-context .match-combo-pill{
+    background:color-mix(in srgb, rgb(var(--pp-rgb)) 55%, #17232D);
+    border-color:rgba(242,232,213,.4);
+  }
+  html:not([data-theme="light"]) #tb-context .mem-stat-pill,
+  html:not([data-theme="light"]) #tb-context .match-combo-pill{
+    background:rgba(var(--pp-rgb),.16);
+    border-color:rgba(var(--pp-rgb),.65);
+  }
+  /* pulsante pausa/riprendi: stessa logica (tessera scura in chiaro, velatura navy in scuro) */
+  #tb-context .mem-pause-btn{ color:var(--text-primary); }
+  html[data-theme="light"] #tb-context .mem-pause-btn{ background:rgba(23,35,45,.3); border-color:rgba(242,232,213,.4); }
+  html[data-theme="light"] #tb-context .mem-pause-btn:hover{ background:rgba(23,35,45,.45); border-color:rgba(242,232,213,.7); color:var(--text-primary); }
+  html:not([data-theme="light"]) #tb-context .mem-pause-btn{ background:rgba(var(--navy-rgb),.08); border-color:rgba(var(--navy-rgb),.4); }
+  html:not([data-theme="light"]) #tb-context .mem-pause-btn:hover{ background:rgba(var(--navy-rgb),.16); border-color:rgba(var(--navy-rgb),.65); color:var(--text-primary); }
+  /* in pausa il pulsante è il "play" da premere: colori invertiti pieni (la pulsazione resta quella di base) */
+  html[data-theme="light"] #tb-context .mem-pause-btn.is-paused{ background:#F2E8D5; border-color:#F2E8D5; color:#17232D; }
+  html:not([data-theme="light"]) #tb-context .mem-pause-btn.is-paused{ background:#17232D; border-color:#17232D; color:#F2E8D5; }
 }

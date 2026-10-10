@@ -443,7 +443,7 @@ async function _tmRenderCards(){
 
   if(!filtered.length){
     grid.innerHTML = `<div class="cs-empty" style="grid-column:1/-1">
-      <div class="cs-empty-icon">👥</div>
+      <div class="cs-empty-icon"><i class="ti ti-users"></i></div>
       <div class="cs-empty-text">${_tmTab==='active' ? 'Nessun docente attivo.' : 'Nessun docente disattivato.'}</div>
     </div>`;
     return;
@@ -658,12 +658,12 @@ async function _tmdRenderAule(teacherId){
     const list = byArea[area.key];
     if(!list || !list.length) return;
     delete byArea[area.key];
-    html += _tmdBuildAreaBlock(area.key, area.label, area.icon, list);
+    html += _tmdBuildAreaBlock(area.key, area.label, window.AreasConfig.areaIconHtml(area), list);
   });
   // areaKey orfane (non presenti in AREAS, es. dati corrotti o Area
   // rimossa dalla config) — mostrate comunque in coda, mai perse.
   Object.keys(byArea).forEach(key=>{
-    html += _tmdBuildAreaBlock(key, key, '🗂️', byArea[key]);
+    html += _tmdBuildAreaBlock(key, key, '<i class="ti ti-folders"></i>', byArea[key]);
   });
 
   grid.innerHTML = html;
@@ -1077,7 +1077,7 @@ function _renderModAreaEmptyState(show, areaKey){
   if(!show){ box.classList.add('hidden'); return; }
   const areaInfo = window.AreasConfig?.getAreaByKey(areaKey);
   box.innerHTML = `
-    <div class="mae-icon">${areaInfo?.icon || '🗂️'}</div>
+    <div class="mae-icon">${window.AreasConfig ? window.AreasConfig.areaIconHtml(areaInfo) : '<i class="ti ti-folders"></i>'}</div>
     <div class="mae-title">${areaInfo ? escHtml(areaInfo.label) : 'Quest\u2019area'} — contenuti in preparazione</div>
     <div class="mae-sub">Nessun modulo è ancora giocabile per quest'area. Verranno pubblicati non appena pronti.</div>
   `;
@@ -1284,7 +1284,7 @@ function _cwInitAreaStep(){
       : `<span class="cw-area-chip soon">In preparazione</span>`;
     return `<button type="button" class="cw-area-btn${active?' active':''}" data-area="${escAttr(a.key)}" onclick="cwPickArea('${escAttr(a.key)}')">
       <div class="cm-check">✓</div>
-      <span class="cw-area-icon">${a.icon}</span>
+      <span class="cw-area-icon">${window.AreasConfig.areaIconHtml(a)}</span>
       <div class="cw-area-body">
         <div class="cw-area-name">${escHtml(a.label)}</div>
         <div class="cw-area-desc">${escHtml(a.description)}</div>

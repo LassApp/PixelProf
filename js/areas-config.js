@@ -97,6 +97,8 @@ const AREAS = [
     key: 'ecdl',
     label: 'ECDL',
     icon: '🖥️',
+    iconTi: 'ti-device-desktop',   // glifo Tabler (UI coerente); `icon` (emoji) resta per i consumatori legacy
+    badge: 'ECDL',   // sigla breve mostrata accanto a «Cosa vuoi fare?» (goStep('cat'))
     description: "Acquisire le competenze fondamentali per utilizzare computer, applicazioni e servizi digitali.",
     modules: [
       {
@@ -397,6 +399,8 @@ const AREAS = [
     key: 'cyberbullismo-sicurezza-online',
     label: 'Cyberbullismo e Sicurezza Online',
     icon: '🛡️',
+    iconTi: 'ti-shield-heart',   // glifo Tabler (UI coerente); `icon` (emoji) resta per i consumatori legacy
+    badge: 'CYBERBULLISMO',   // sigla breve mostrata accanto a «Cosa vuoi fare?» (goStep('cat'))
     description: 'Riconoscere i rischi nelle relazioni digitali e imparare a proteggersi e agire responsabilmente online.',
     /* v8.12.0 — desc/tags/cardArt aggiunti ai 6 moduli (stesso pattern
        Fase 7.7 già usato per Cybersecurity/Reti/Malware/AI). Tag da
@@ -601,6 +605,8 @@ const AREAS = [
     key: 'cybersecurity',
     label: 'Cybersecurity — Non solo antivirus e password',
     icon: '👤',
+    iconTi: 'ti-user-shield',   // glifo Tabler (UI coerente); `icon` (emoji) resta per i consumatori legacy
+    badge: 'CYBERSECURITY',   // sigla breve mostrata accanto a «Cosa vuoi fare?» (goStep('cat'))
     description: 'Sviluppare consapevolezza e competenze per proteggere identità, account, dati e attività digitali.',
     modules: [
       /* contentReady:true dal 15/08/2026 — JSON committati da Erasmo in
@@ -873,6 +879,8 @@ const AREAS = [
     key: 'reti-internet',
     label: 'Reti e Internet',
     icon: '🌐',
+    iconTi: 'ti-world',   // glifo Tabler (UI coerente); `icon` (emoji) resta per i consumatori legacy
+    badge: 'RETI',   // sigla breve mostrata accanto a «Cosa vuoi fare?» (goStep('cat'))
     description: 'Comprendere come funzionano Internet, le reti e le tecnologie che permettono ai dispositivi di comunicare.',
     modules: [
       {
@@ -1119,6 +1127,8 @@ const AREAS = [
     key: 'malware-minacce',
     label: 'Malware e Minacce Informatiche',
     icon: '🦠',
+    iconTi: 'ti-virus',   // glifo Tabler (UI coerente); `icon` (emoji) resta per i consumatori legacy
+    badge: 'MALWARE',   // sigla breve mostrata accanto a «Cosa vuoi fare?» (goStep('cat'))
     description: 'Conoscere le principali minacce informatiche, comprenderne il funzionamento e imparare a prevenirle.',
     modules: [
       {
@@ -1159,6 +1169,8 @@ const AREAS = [
     key: 'intelligenza-artificiale',
     label: 'Intelligenza Artificiale',
     icon: '🤖',
+    iconTi: 'ti-robot',   // glifo Tabler (UI coerente); `icon` (emoji) resta per i consumatori legacy
+    badge: 'AI',   // sigla breve mostrata accanto a «Cosa vuoi fare?» (goStep('cat'))
     description: 'Comprendere come funziona l\'intelligenza artificiale, i suoi rischi, le opportunità e come usarla in modo consapevole e responsabile.',
     modules: [
       {
@@ -1530,6 +1542,17 @@ function getAreaByKey(areaKey) {
   return AREAS.find(a => a.key === areaKey) || null;
 }
 
+/** HTML dell'icona di un'Area: glifo Tabler (iconTi) coerente col resto dell'UI; se manca, ricade sull'emoji `icon`. */
+function areaIconHtml(area) {
+  if (area && area.iconTi) return '<i class="ti ' + area.iconTi + '"></i>';
+  return (area && area.icon) || '<i class="ti ti-folder"></i>';
+}
+
+/** Sigla breve di un'Area per i badge ("ECDL", "AI"…). Ricade su "ICDL" (valore storico) se l'Area non ne ha una. */
+function areaBadge(area) {
+  return (area && area.badge) || 'ICDL';
+}
+
 /** Solo i moduli con contenuti di gioco già pronti (per Area, o su tutte se areaKey omesso). */
 function getReadyModules(areaKey) {
   const pool = areaKey ? getModulesForArea(areaKey) : AREAS.flatMap(a => a.modules);
@@ -1551,6 +1574,8 @@ if (typeof window !== 'undefined') {
     getModuleInfo,
     getAreaByKey,
     getReadyModules,
+    areaIconHtml,
+    areaBadge,
   };
 }
 
@@ -1567,5 +1592,7 @@ if (typeof module !== 'undefined' && module.exports) {
     getModuleInfo,
     getAreaByKey,
     getReadyModules,
+    areaIconHtml,
+    areaBadge,
   };
 }

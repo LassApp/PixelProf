@@ -621,6 +621,7 @@ body{
 .mem-stat-pill.timer-warning{border-color:rgba(122,90,56,.45);color:#7A5A38;background:rgba(122,90,56,.1);animation:timerPulse .8s ease-in-out infinite alternate;}
 .mem-stat-pill.moves-pill{border-color:rgba(var(--purple-rgb),.3);color:#8B9968;background:rgba(var(--purple-rgb),.07);}
 .mem-stat-pill.score-pill{border-color:rgba(var(--accent-rgb),.3);color:var(--accent);background:rgba(var(--accent-rgb),.07);}
+.mem-stat-pill.err-pill{border-color:rgba(171,86,73,.25);color:rgba(196,120,105,.9);background:rgba(171,86,73,.06);}   /* giro 10/10: era uno style inline in game-match.js (batteva ogni override per tema/topbar) */
 .mem-stat-pill.score-pill.score-bump{animation:scoreBump .35s cubic-bezier(.34,1.56,.64,1);}
 @keyframes scoreBump{0%{transform:scale(1);}40%{transform:scale(1.14);border-color:rgba(var(--accent-rgb),.7);box-shadow:0 0 12px rgba(var(--accent-rgb),.2);}100%{transform:scale(1);}}
 
@@ -1332,7 +1333,15 @@ body{
   border:1px dashed rgba(255,255,255,.08);
   border-radius:var(--radius-lg);
 }
-.cs-empty-icon{font-size:36px;margin-bottom:12px;opacity:.35;}
+/* giro 10/10: l'emoji (👥 🏫 🔍) è sostituita da un glifo Tabler in tessera — stessa ricetta di .dd-icon-line /
+   .dm-icon (tinta d'accento scurita + glifo crema), un po' attenuata perché è uno stato vuoto */
+.cs-empty-icon{
+  width:56px;height:56px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;
+  font-size:28px;border-radius:16px;opacity:.75;
+  background:color-mix(in srgb, #54708C 55%, #17232D);color:#F2E8D5;
+  border:1px solid rgba(242,232,213,.3);
+  box-shadow:inset 0 1px 0 rgba(242,232,213,.14), 0 4px 12px rgba(23,35,45,.28);
+}
 .cs-empty-text{font-size:13px;color:rgba(255,255,255,.25);line-height:1.5;}
 
 /* Dropdown menu */
@@ -2274,6 +2283,9 @@ body{
   color: var(--accent);
   flex-shrink: 0;
 }
+/* giro 10/10: la sigla segue l'Area (es. ECDL, AI, RETI…): la scrive goStep('cat') in data-area-badge.
+   Senza l'attributo (es. eyebrow della schermata Moduli) resta "ICDL" come sopra. */
+.home-hero-eyebrow[data-area-badge]::before { content: attr(data-area-badge); }
 
 .home-hero-title {
   font-size: 30px ;
@@ -3342,6 +3354,7 @@ html[data-theme="light"] .mem-stat-pill{ background: rgba(var(--navy-rgb),.04); 
 html[data-theme="light"] .mem-stat-pill.timer-running{ color:#54708C; }
 html[data-theme="light"] .mem-stat-pill.timer-warning{ color:#7A5A38; }
 html[data-theme="light"] .mem-stat-pill.moves-pill{ color:#6E7A50; }
+html[data-theme="light"] .mem-stat-pill.err-pill{ color:#8A4038; border-color:rgba(171,86,73,.35); background:rgba(171,86,73,.08); }   /* giro 10/10: terracotta scuro già in palette (come .match-combo-pill.x4) */
 html[data-theme="light"] .mem-pause-btn{ background: rgba(var(--navy-rgb),.04); border-color: rgba(var(--navy-rgb),.12); color: rgba(var(--navy-rgb),.55); }
 html[data-theme="light"] .audio-toggle-btn.muted{ color:#e8a89a; border-color: rgba(232,168,154,.4); background: rgba(232,168,154,.1); }
 html[data-theme="light"] .match-combo-pill{ color:#7A5A38; }

@@ -40,7 +40,16 @@
     display:none;align-items:center;justify-content:center;flex-shrink:0;
   }
   .cw-area-btn.active .cm-check{ display:flex; }
-  .cw-area-icon{ font-size:24px;line-height:1;flex-shrink:0;margin-top:1px; }
+  /* giro 10/10 — le icone d'Area (emoji) diventano glifi Tabler in tessera: tinta d'accento scurita + glifo
+     crema, stessa ricetta di .dd-icon-line / .dm-icon. Il colore viene da --area-rgb quando il contenitore
+     lo definisce (sezioni aule), altrimenti oliva. */
+  .cw-area-icon{
+    width:40px;height:40px;display:flex;align-items:center;justify-content:center;
+    font-size:22px;line-height:1;flex-shrink:0;margin-top:1px;border-radius:11px;color:#F2E8D5;
+    background:color-mix(in srgb, rgb(var(--area-rgb,110,122,80)) 55%, #17232D);
+    border:1px solid rgba(242,232,213,.3);
+    box-shadow:inset 0 1px 0 rgba(242,232,213,.14), 0 3px 10px rgba(23,35,45,.25);
+  }
   .cw-area-body{ flex:1;min-width:0; }
   .cw-area-name{ font-size:13px;font-weight:700;color:#fff;margin-bottom:3px;padding-right:20px;transition:color var(--transition-fast); }
   .cw-area-btn.active .cw-area-name{ color:var(--accent); }
@@ -85,7 +94,13 @@
     border-radius:var(--radius-lg);
     margin:.5rem 0 1rem;
   }
-  .mod-area-empty .mae-icon{ font-size:40px;margin-bottom:14px;opacity:.55; }
+  .mod-area-empty .mae-icon{
+    width:56px;height:56px;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;
+    font-size:28px;border-radius:16px;opacity:.75;color:#F2E8D5;
+    background:color-mix(in srgb, rgb(var(--area-rgb,110,122,80)) 55%, #17232D);
+    border:1px solid rgba(242,232,213,.3);
+    box-shadow:inset 0 1px 0 rgba(242,232,213,.14), 0 4px 12px rgba(23,35,45,.28);
+  }
   .mod-area-empty .mae-title{ font-size:15px;font-weight:700;color:rgba(255,255,255,.6);margin-bottom:6px; }
   .mod-area-empty .mae-sub{ font-size:12px;color:rgba(255,255,255,.32);line-height:1.6;max-width:320px;margin:0 auto; }
 
@@ -140,12 +155,26 @@
      vince senza toccare le regole "consumer" qui sotto). Palette
      allineata agli hex già usati in COLOR_PALETTE (courses.js, color
      picker aula) per coerenza visiva: Teal/Amber/Blue/Violet/Pink. */
-  .cs-area-section[data-area-key="ecdl"]{ --area-rgb:78,116,100; }
-  .cs-area-section[data-area-key="cyberbullismo-sicurezza-online"]{ --area-rgb:136,103,58; }
-  .cs-area-section[data-area-key="cybersecurity"]{ --area-rgb:84,112,140; }
-  .cs-area-section[data-area-key="reti-internet"]{ --area-rgb:116,105,150; }
-  .cs-area-section[data-area-key="malware-minacce"]{ --area-rgb:171,86,73; }
-  .cs-area-section[data-area-key="intelligenza-artificiale"]{ --area-rgb:157,88,117; }
+  /* giro 10/10: la stessa tripletta colora anche la tessera dell'Area nella scheda docente (.tdc-area-block)
+     e nel wizard Nuova aula (.cw-area-btn) */
+  .cs-area-section[data-area-key="ecdl"],
+  .tdc-area-block[data-area-key="ecdl"],
+  .cw-area-btn[data-area="ecdl"]{ --area-rgb:78,116,100; }
+  .cs-area-section[data-area-key="cyberbullismo-sicurezza-online"],
+  .tdc-area-block[data-area-key="cyberbullismo-sicurezza-online"],
+  .cw-area-btn[data-area="cyberbullismo-sicurezza-online"]{ --area-rgb:136,103,58; }
+  .cs-area-section[data-area-key="cybersecurity"],
+  .tdc-area-block[data-area-key="cybersecurity"],
+  .cw-area-btn[data-area="cybersecurity"]{ --area-rgb:84,112,140; }
+  .cs-area-section[data-area-key="reti-internet"],
+  .tdc-area-block[data-area-key="reti-internet"],
+  .cw-area-btn[data-area="reti-internet"]{ --area-rgb:116,105,150; }
+  .cs-area-section[data-area-key="malware-minacce"],
+  .tdc-area-block[data-area-key="malware-minacce"],
+  .cw-area-btn[data-area="malware-minacce"]{ --area-rgb:171,86,73; }
+  .cs-area-section[data-area-key="intelligenza-artificiale"],
+  .tdc-area-block[data-area-key="intelligenza-artificiale"],
+  .cw-area-btn[data-area="intelligenza-artificiale"]{ --area-rgb:157,88,117; }
 
   /* Fase 7.5 — stessa tripletta --area-rgb, applicata al contenitore delle
      card modulo dinamiche nella schermata "Scegli modulo" (#mod-area-catalog,
@@ -166,8 +195,11 @@
      necessaria qui. */
 
   .cs-area-section-icon{
-    font-size:20px;line-height:1;flex-shrink:0;
-    filter:drop-shadow(0 0 8px rgba(var(--area-rgb,110,122,80),.15));
+    width:30px;height:30px;display:flex;align-items:center;justify-content:center;
+    font-size:17px;line-height:1;flex-shrink:0;border-radius:9px;color:#F2E8D5;
+    background:color-mix(in srgb, rgb(var(--area-rgb,110,122,80)) 55%, #17232D);
+    border:1px solid rgba(242,232,213,.3);
+    box-shadow:inset 0 1px 0 rgba(242,232,213,.14), 0 3px 8px rgba(23,35,45,.25);
   }
   .cs-area-section-label{
     font-size:15px;font-weight:800;color:#fff;
@@ -262,7 +294,10 @@
     margin-bottom:8px;
   }
   .tdc-area-block-icon{
-    font-size:13px;line-height:1;flex-shrink:0;
+    width:22px;height:22px;display:flex;align-items:center;justify-content:center;
+    font-size:13px;line-height:1;flex-shrink:0;border-radius:7px;color:#F2E8D5;
+    background:color-mix(in srgb, rgb(var(--area-rgb,110,122,80)) 55%, #17232D);
+    border:1px solid rgba(242,232,213,.3);
   }
   .tdc-area-block-label{
     font-size:10px;font-weight:700;color:rgba(255,255,255,.45);
@@ -356,6 +391,9 @@
     border-color:rgba(var(--area-rgb,255,255,255),.5);
     color:rgba(var(--area-rgb,255,255,255),1);
   }
+  /* giro 10/10: glifo Tabler + etichetta sulla stessa riga (prima emoji + testo) */
+  .cs-area-filter-chip > span:first-child{ display:inline-flex;align-items:center;gap:6px; }
+  .cs-area-filter-chip > span:first-child i{ font-size:14px;line-height:1; }
   .cs-area-filter-chip-count{
     font-size:9px;font-weight:700;padding:0 5px;border-radius:20px;
     background:rgba(255,255,255,.1);font-family:'Share Tech Mono',monospace;

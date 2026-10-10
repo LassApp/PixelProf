@@ -2086,6 +2086,18 @@ function goStep(s){
   if(s==='cat'){
     const catLabel=shq('cat-mod-label');
     if(catLabel) catLabel.textContent=modLabel(sMod);
+    // giro 10/10: la sigla accanto a «Cosa vuoi fare?» segue l'Area (ECDL, AI, RETI…) invece di "ICDL" fisso.
+    // Area del modulo scelto; se il modulo non è in nessuna Area, quella dell'aula attiva; ultima riserva "ICDL".
+    const catEyebrow=shq('cat-eyebrow');
+    if(catEyebrow){
+      const AC=window.AreasConfig;
+      let area=AC?AC.getAreaForModule(sMod):null;
+      if(!area&&AC&&typeof loadCourses==='function'&&activeCourseId){
+        const crs=loadCourses().find(x=>x.id===activeCourseId);
+        area=AC.getAreaByKey((crs&&crs.areaKey)||'ecdl');
+      }
+      catEyebrow.dataset.areaBadge=AC?AC.areaBadge(area):'ICDL';
+    }
     // v9.0.0: passo "scegli modalità" del tour guidato Docente.
     if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showHomeCategoryStep(), 300);
   }

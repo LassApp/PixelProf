@@ -271,7 +271,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <div class="dd-card dd-aule" role="button" tabindex="0" aria-label="Gestisci Aule"
         onclick="ddGoGestisciAule()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();ddGoGestisciAule();}">
         <div class="dd-card-inner">
-          <span class="dd-icon">🏫</span>
+          <span class="dd-icon dd-icon-line"><i class="ti ti-school"></i></span>
           <div class="dd-title">Gestisci Aule</div>
           <div class="dd-sub">Crea, rinomina, assegna docenti e moduli, personalizza o elimina le aule.</div>
           <i class="ti ti-arrow-right dd-arrow"></i>
@@ -280,7 +280,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <div class="dd-card dd-docenti" role="button" tabindex="0" aria-label="Gestisci Docenti"
         onclick="ddGoGestisciDocenti()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();ddGoGestisciDocenti();}">
         <div class="dd-card-inner">
-          <span class="dd-icon">👩‍🏫</span>
+          <span class="dd-icon dd-icon-line"><i class="ti ti-chalkboard"></i></span>
           <div class="dd-title">Gestisci Docenti</div>
           <div class="dd-sub">Crea nuovi account, modifica i nomi o disattiva l'accesso.</div>
           <i class="ti ti-arrow-right dd-arrow"></i>
@@ -289,7 +289,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <div class="dd-card dd-direttore" role="button" tabindex="0" aria-label="Gestisci Direttore"
         onclick="ddGoGestisciDirettore()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();ddGoGestisciDirettore();}">
         <div class="dd-card-inner">
-          <span class="dd-icon">👑</span>
+          <span class="dd-icon dd-icon-line"><i class="ti ti-crown"></i></span>
           <div class="dd-title">Gestisci Direttore</div>
           <div class="dd-sub">Modifica nome, cognome, email e genere del tuo account.</div>
           <i class="ti ti-arrow-right dd-arrow"></i>
@@ -299,7 +299,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     <div class="dd-enter-banner" role="button" tabindex="0" aria-label="Entra in un'aula"
       onclick="ddGoSceltaAula()" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();ddGoSceltaAula();}">
       <div class="dd-enter-inner">
-        <span class="dd-enter-icon">🎮</span>
+        <span class="dd-enter-icon"><i class="ti ti-door-enter"></i></span>
         <div class="dd-enter-text">
           <span class="dd-enter-eyebrow">Accesso rapido · non è una gestione</span>
           <div class="dd-enter-title">Entra in un'aula</div>
@@ -733,7 +733,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </div>
     <div id="cs-grid" class="cs-catalog"></div>
     <div class="cs-empty hidden" id="cs-grid-empty-filtered">
-      <div class="cs-empty-icon">🔍</div>
+      <div class="cs-empty-icon"><i class="ti ti-search"></i></div>
       <div class="cs-empty-text">Nessuna aula trovata.<br>Prova a modificare ricerca o filtro Area.</div>
     </div>
   </div>
@@ -1385,7 +1385,9 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       <span class="act-context-label" id="cat-mod-label"></span>
     </div>
     <div class="home-hero" style="padding:1.25rem 0 1rem;text-align:left">
-      <span class="home-hero-eyebrow">Cosa vuoi fare?</span>
+      <!-- data-area-badge: la sigla accanto all'eyebrow segue l'Area del modulo/aula (goStep('cat') in
+           game-engine-state.js → AreasConfig.badge). "ICDL" resta il valore di partenza/di riserva. -->
+      <span class="home-hero-eyebrow" id="cat-eyebrow" data-area-badge="ICDL">Cosa vuoi fare?</span>
       <h1 class="home-hero-title" style="font-size:22px">Scegli la <span class="hl">modalità</span></h1>
     </div>
     <!-- v8.20.0: card in stile "modulo" (.dm-card, generalizzato da
@@ -1416,10 +1418,11 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <ellipse cx="558" cy="90" rx="90" ry="58" style="fill:rgba(var(--accent-rgb),.05)"/>
         </svg>
         <div class="dm-content">
-          <span class="dm-icon">🎮</span>
+          <span class="dm-icon"><i class="ti ti-device-gamepad-2"></i></span>
           <h3>Minigiochi</h3>
           <p>Quiz, Memory, Abbina e altro</p>
-          <div class="dm-preview" aria-hidden="true"><span>🧠</span><span>⚡</span><span>🔗</span><span>🃏</span><span>✏️</span><span>⚖️</span></div>
+          <!-- anteprima: le stesse 6 icone Tabler delle card attività (#ac-quiz … #ac-truefalse), stesso ordine -->
+          <div class="dm-preview" aria-hidden="true"><span><i class="ti ti-help-circle"></i></span><span><i class="ti ti-bolt"></i></span><span><i class="ti ti-link"></i></span><span><i class="ti ti-cards"></i></span><span><i class="ti ti-pencil"></i></span><span><i class="ti ti-scale"></i></span></div>
           <div class="tags"><span class="tag">6 attività</span><span class="tag">Individuale o squadre</span></div>
         </div>
       </div>
@@ -1443,10 +1446,10 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <ellipse cx="558" cy="88" rx="90" ry="58" style="fill:rgba(var(--purple-rgb),.05)"/>
         </svg>
         <div class="dm-content">
-          <span class="dm-icon">📖</span>
+          <span class="dm-icon"><i class="ti ti-book-2"></i></span>
           <h3>Didattica</h3>
           <p>Flip Card e altri metodi</p>
-          <div class="dm-preview dm-preview-flip" aria-hidden="true"><span class="dm-minicard">?</span><span class="dm-minicard-arrow">⇄</span><span class="dm-minicard dm-minicard-b">✓</span></div>
+          <div class="dm-preview dm-preview-flip" aria-hidden="true"><span class="dm-minicard"><i class="ti ti-question-mark"></i></span><span class="dm-minicard-arrow"><i class="ti ti-arrows-exchange"></i></span><span class="dm-minicard dm-minicard-b"><i class="ti ti-check"></i></span></div>
           <div class="tags"><span class="tag">Flip Card</span><span class="tag">Facile · Medio</span></div>
         </div>
       </div>
@@ -1495,7 +1498,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <ellipse cx="330" cy="88" rx="90" ry="58" style="fill:rgba(var(--purple-rgb),.05)"/>
         </svg>
         <div class="dm-content">
-          <span class="dm-icon">📇</span>
+          <span class="dm-icon"><i class="ti ti-rotate-clockwise-2"></i></span>
           <h3>Flip Card</h3>
           <p>Ripassa domanda → risposta</p>
           <div class="tags">
@@ -1539,7 +1542,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
           <ellipse cx="330" cy="88" rx="90" ry="58" fill="rgba(184,147,90,.05)"/>
         </svg>
         <div class="dm-content">
-          <span class="dm-icon">💡</span>
+          <span class="dm-icon"><i class="ti ti-bulb"></i></span>
           <h3>Lo Sapevi?</h3>
           <p>Una curiosità alla volta</p>
           <div class="tags">

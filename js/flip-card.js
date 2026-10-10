@@ -738,12 +738,12 @@ async function selDidattica(type){
    colori già presenti nel tema Flip Card (verde della faccia
    "Risposta", viola della faccia "Domanda"/dell'icona Flip
    Card in step-didattica): nessun colore nuovo introdotto.
-   emoji sostituisce icon/color (Tabler) da v8.19.3: le card
-   ora sono .dm-card come quella di step-didattica, che usa
-   icone emoji (.dm-icon) invece del box .ai. */
+   icon = classe Tabler del glifo nella tessera .dm-icon (giro 10/10:
+   tornano le icone Tabler, coerenti con le card attività; prima da
+   v8.19.3 erano emoji — emoji sostituiva icon/color). */
 const FC_LEVELS = [
-  { key: 'facile', label: 'Facile', desc: 'Concetti base, ripasso rapido', emoji: '🙂', rgb: '143,176,159' },
-  { key: 'medio', label: 'Medio', desc: 'Approfondimento, dettagli tecnici', emoji: '🧠', rgb: '160,150,190' },
+  { key: 'facile', label: 'Facile', desc: 'Concetti base, ripasso rapido', icon: 'ti-mood-smile', rgb: '143,176,159' },
+  { key: 'medio', label: 'Medio', desc: 'Approfondimento, dettagli tecnici', icon: 'ti-brain', rgb: '160,150,190' },
 ];
 
 /* Sfondo decorativo SVG per le due card livello — stessa
@@ -799,7 +799,7 @@ function _renderFlipCardLevelSelect(cont, mod){
     // crema, tessera icona); resta solo il bordo del badge nel colore del livello.
     const badge = `<span class="dm-badge" style="border-color:rgba(${l.rgb},.55)">Livello</span>`;
     const body = `<div class="dm-content">
-        <span class="dm-icon">${l.emoji}</span>
+        <span class="dm-icon"><i class="ti ${l.icon}"></i></span>
         <h3>${l.label}</h3>
         <p>${escHtml(ok ? l.desc : 'Non ancora disponibile')}</p>
       </div>`;

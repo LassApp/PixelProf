@@ -194,6 +194,11 @@ function isCached(mod) {
    file "quiz_cos-e-l-ai.json"). Dettaglio completo delle 8 coppie
    key→slug-file nel changelog v8.33.0 di areas-config.js. Nessun'altra
    modifica al motore, come già anticipato in NOTA 3 di areas-config.js.
+
+   v8.41.0 — Area DigComp: +10 moduli × 5 loader (Quiz, Speed Quiz, Abbina,
+   Completa la frase, Vero o Falso = 50 righe), chiavi = slug esatto dei file
+   (nessun disallineamento chiave↔file). Memory: nessuna riga, come per le altre
+   Aree non-ECDL (Memory resta in pausa app-wide). Nessun'altra modifica al motore.
    ──────────────────────────────────────────────────────────────── */
 
 /* -- Quiz -- */
@@ -282,6 +287,17 @@ const QuizLoader = _createLoader({
     'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/quiz_bias-algoritmici.json',
     'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/quiz_ai-act.json',
     'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/quiz_futuro-dell-ai.json',
+    // v8.41.0 — Area DigComp (10 Fasi)
+    'alfabetizzazione-digitale': 'data/Minigiochi/DigComp/modulo1/quiz_alfabetizzazione-digitale.json',
+    'comunicazione-e-collaborazione': 'data/Minigiochi/DigComp/modulo2/quiz_comunicazione-e-collaborazione.json',
+    'creazione-di-contenuti-digitali': 'data/Minigiochi/DigComp/modulo3/quiz_creazione-di-contenuti-digitali.json',
+    'sicurezza': 'data/Minigiochi/DigComp/modulo4/quiz_sicurezza.json',
+    'problem-solving-digitale': 'data/Minigiochi/DigComp/modulo5/quiz_problem-solving-digitale.json',
+    'coinvolgimento-professionale': 'data/Minigiochi/DigComp/modulo6/quiz_coinvolgimento-professionale.json',
+    'risorse-digitali': 'data/Minigiochi/DigComp/modulo7/quiz_risorse-digitali.json',
+    'pratiche-di-insegnamento-e-apprendimento': 'data/Minigiochi/DigComp/modulo8/quiz_pratiche-di-insegnamento-e-apprendimento.json',
+    'valutazione-dell-apprendimento': 'data/Minigiochi/DigComp/modulo9/quiz_valutazione-dell-apprendimento.json',
+    'valorizzare-le-potenzialita-degli-studenti': 'data/Minigiochi/DigComp/modulo10/quiz_valorizzare-le-potenzialita-degli-studenti.json',
   },
   tag: 'Quiz',
   validate: raw => Array.isArray(raw) && raw.length > 0,
@@ -377,6 +393,17 @@ const SpeedQuizLoader = _createLoader({
     'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/speedquiz_bias-algoritmici.json',
     'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/speedquiz_ai-act.json',
     'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/speedquiz_futuro-dell-ai.json',
+    // v8.41.0 — Area DigComp (10 Fasi)
+    'alfabetizzazione-digitale': 'data/Minigiochi/DigComp/modulo1/speedquiz_alfabetizzazione-digitale.json',
+    'comunicazione-e-collaborazione': 'data/Minigiochi/DigComp/modulo2/speedquiz_comunicazione-e-collaborazione.json',
+    'creazione-di-contenuti-digitali': 'data/Minigiochi/DigComp/modulo3/speedquiz_creazione-di-contenuti-digitali.json',
+    'sicurezza': 'data/Minigiochi/DigComp/modulo4/speedquiz_sicurezza.json',
+    'problem-solving-digitale': 'data/Minigiochi/DigComp/modulo5/speedquiz_problem-solving-digitale.json',
+    'coinvolgimento-professionale': 'data/Minigiochi/DigComp/modulo6/speedquiz_coinvolgimento-professionale.json',
+    'risorse-digitali': 'data/Minigiochi/DigComp/modulo7/speedquiz_risorse-digitali.json',
+    'pratiche-di-insegnamento-e-apprendimento': 'data/Minigiochi/DigComp/modulo8/speedquiz_pratiche-di-insegnamento-e-apprendimento.json',
+    'valutazione-dell-apprendimento': 'data/Minigiochi/DigComp/modulo9/speedquiz_valutazione-dell-apprendimento.json',
+    'valorizzare-le-potenzialita-degli-studenti': 'data/Minigiochi/DigComp/modulo10/speedquiz_valorizzare-le-potenzialita-degli-studenti.json',
   },
   tag: 'SpeedQuiz',
   validate: raw => Array.isArray(raw) && raw.length > 0,
@@ -476,6 +503,17 @@ const AbbinLoader = _createLoader({
     'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/abbina_bias-algoritmici.json',
     'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/abbina_ai-act.json',
     'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/abbina_futuro-dell-ai.json',
+    // v8.41.0 — Area DigComp (10 Fasi)
+    'alfabetizzazione-digitale': 'data/Minigiochi/DigComp/modulo1/abbina_alfabetizzazione-digitale.json',
+    'comunicazione-e-collaborazione': 'data/Minigiochi/DigComp/modulo2/abbina_comunicazione-e-collaborazione.json',
+    'creazione-di-contenuti-digitali': 'data/Minigiochi/DigComp/modulo3/abbina_creazione-di-contenuti-digitali.json',
+    'sicurezza': 'data/Minigiochi/DigComp/modulo4/abbina_sicurezza.json',
+    'problem-solving-digitale': 'data/Minigiochi/DigComp/modulo5/abbina_problem-solving-digitale.json',
+    'coinvolgimento-professionale': 'data/Minigiochi/DigComp/modulo6/abbina_coinvolgimento-professionale.json',
+    'risorse-digitali': 'data/Minigiochi/DigComp/modulo7/abbina_risorse-digitali.json',
+    'pratiche-di-insegnamento-e-apprendimento': 'data/Minigiochi/DigComp/modulo8/abbina_pratiche-di-insegnamento-e-apprendimento.json',
+    'valutazione-dell-apprendimento': 'data/Minigiochi/DigComp/modulo9/abbina_valutazione-dell-apprendimento.json',
+    'valorizzare-le-potenzialita-degli-studenti': 'data/Minigiochi/DigComp/modulo10/abbina_valorizzare-le-potenzialita-degli-studenti.json',
   },
   tag: 'Abbina',
   validate: raw => {
@@ -603,6 +641,17 @@ const CompletaFraseLoader = _createLoader({
     'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/completa_la_frase_bias-algoritmici.json',
     'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/completa_la_frase_ai-act.json',
     'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/completa_la_frase_futuro-dell-ai.json',
+    // v8.41.0 — Area DigComp (10 Fasi)
+    'alfabetizzazione-digitale': 'data/Minigiochi/DigComp/modulo1/completa_la_frase_alfabetizzazione-digitale.json',
+    'comunicazione-e-collaborazione': 'data/Minigiochi/DigComp/modulo2/completa_la_frase_comunicazione-e-collaborazione.json',
+    'creazione-di-contenuti-digitali': 'data/Minigiochi/DigComp/modulo3/completa_la_frase_creazione-di-contenuti-digitali.json',
+    'sicurezza': 'data/Minigiochi/DigComp/modulo4/completa_la_frase_sicurezza.json',
+    'problem-solving-digitale': 'data/Minigiochi/DigComp/modulo5/completa_la_frase_problem-solving-digitale.json',
+    'coinvolgimento-professionale': 'data/Minigiochi/DigComp/modulo6/completa_la_frase_coinvolgimento-professionale.json',
+    'risorse-digitali': 'data/Minigiochi/DigComp/modulo7/completa_la_frase_risorse-digitali.json',
+    'pratiche-di-insegnamento-e-apprendimento': 'data/Minigiochi/DigComp/modulo8/completa_la_frase_pratiche-di-insegnamento-e-apprendimento.json',
+    'valutazione-dell-apprendimento': 'data/Minigiochi/DigComp/modulo9/completa_la_frase_valutazione-dell-apprendimento.json',
+    'valorizzare-le-potenzialita-degli-studenti': 'data/Minigiochi/DigComp/modulo10/completa_la_frase_valorizzare-le-potenzialita-degli-studenti.json',
   },
   tag: 'CompletaFrase',
   validate: raw => Array.isArray(raw) && raw.length > 0,
@@ -698,6 +747,17 @@ const TrueFalseLoader = _createLoader({
     'bias-algoritmici': 'data/Minigiochi/Intelligenza_Artificiale/modulo11/vero_o_falso_bias-algoritmici.json',
     'ai-act': 'data/Minigiochi/Intelligenza_Artificiale/modulo12/vero_o_falso_ai-act.json',
     'futuro-ai': 'data/Minigiochi/Intelligenza_Artificiale/modulo13/vero_o_falso_futuro-dell-ai.json',
+    // v8.41.0 — Area DigComp (10 Fasi)
+    'alfabetizzazione-digitale': 'data/Minigiochi/DigComp/modulo1/vero_o_falso_alfabetizzazione-digitale.json',
+    'comunicazione-e-collaborazione': 'data/Minigiochi/DigComp/modulo2/vero_o_falso_comunicazione-e-collaborazione.json',
+    'creazione-di-contenuti-digitali': 'data/Minigiochi/DigComp/modulo3/vero_o_falso_creazione-di-contenuti-digitali.json',
+    'sicurezza': 'data/Minigiochi/DigComp/modulo4/vero_o_falso_sicurezza.json',
+    'problem-solving-digitale': 'data/Minigiochi/DigComp/modulo5/vero_o_falso_problem-solving-digitale.json',
+    'coinvolgimento-professionale': 'data/Minigiochi/DigComp/modulo6/vero_o_falso_coinvolgimento-professionale.json',
+    'risorse-digitali': 'data/Minigiochi/DigComp/modulo7/vero_o_falso_risorse-digitali.json',
+    'pratiche-di-insegnamento-e-apprendimento': 'data/Minigiochi/DigComp/modulo8/vero_o_falso_pratiche-di-insegnamento-e-apprendimento.json',
+    'valutazione-dell-apprendimento': 'data/Minigiochi/DigComp/modulo9/vero_o_falso_valutazione-dell-apprendimento.json',
+    'valorizzare-le-potenzialita-degli-studenti': 'data/Minigiochi/DigComp/modulo10/vero_o_falso_valorizzare-le-potenzialita-degli-studenti.json',
   },
   tag: 'VeroFalso',
   validate: raw => Array.isArray(raw) && raw.length > 0,

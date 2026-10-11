@@ -171,6 +171,17 @@ const LOSAPEVI_MODULE_MAP = {
   'bias-algoritmici': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo11/lo_sapevi_bias-algoritmici.json'],
   'ai-act': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo12/lo_sapevi_ai-act.json'],
   'futuro-ai': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo13/lo_sapevi_futuro-ai.json'],
+  // v8.41.0 — Area DigComp (10 Fasi): un JSON per Fase in data/Didattica/Lo_Sapevi/DigComp/ModuloN/
+  'alfabetizzazione-digitale': ['data/Didattica/Lo_Sapevi/DigComp/Modulo1/lo_sapevi_alfabetizzazione-digitale.json'],
+  'comunicazione-e-collaborazione': ['data/Didattica/Lo_Sapevi/DigComp/Modulo2/lo_sapevi_comunicazione-e-collaborazione.json'],
+  'creazione-di-contenuti-digitali': ['data/Didattica/Lo_Sapevi/DigComp/Modulo3/lo_sapevi_creazione-di-contenuti-digitali.json'],
+  'sicurezza': ['data/Didattica/Lo_Sapevi/DigComp/Modulo4/lo_sapevi_sicurezza.json'],
+  'problem-solving-digitale': ['data/Didattica/Lo_Sapevi/DigComp/Modulo5/lo_sapevi_problem-solving-digitale.json'],
+  'coinvolgimento-professionale': ['data/Didattica/Lo_Sapevi/DigComp/Modulo6/lo_sapevi_coinvolgimento-professionale.json'],
+  'risorse-digitali': ['data/Didattica/Lo_Sapevi/DigComp/Modulo7/lo_sapevi_risorse-digitali.json'],
+  'pratiche-di-insegnamento-e-apprendimento': ['data/Didattica/Lo_Sapevi/DigComp/Modulo8/lo_sapevi_pratiche-di-insegnamento-e-apprendimento.json'],
+  'valutazione-dell-apprendimento': ['data/Didattica/Lo_Sapevi/DigComp/Modulo9/lo_sapevi_valutazione-dell-apprendimento.json'],
+  'valorizzare-le-potenzialita-degli-studenti': ['data/Didattica/Lo_Sapevi/DigComp/Modulo10/lo_sapevi_valorizzare-le-potenzialita-degli-studenti.json'],
 };
 
 /* -- Loader dedicato ----------------------------------------------

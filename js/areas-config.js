@@ -90,6 +90,23 @@
      preesistente, non introdotto qui — slugFor() in quel tool assume
      dataPaths.quiz stringa, ma da v8.22.0 per CE/OE/WP/SS/PP è un
      array) — fix fuori scope, segnalato a parte.
+   v8.41.0 — NUOVA AREA DigComp (10 Fasi, 50 JSON minigiochi + 20 CSV
+   Flip Card + 10 JSON Lo Sapevi già committati da Erasmo):
+   - Nuova Area `digcomp` (7a Area), 10 moduli contentReady:true, chiave
+     = slug esatto di aree_e_moduli.md. Qui key == nome file su disco
+     per tutti e 10 (nessun disallineamento tipo v8.33.0 — verificato).
+   - Fasi 1–5 = formazione del cittadino, Fasi 6–10 = formazione del
+     docente (Edu): la distinzione è nel primo tag di ogni card
+     ("Cittadino" / "Docente (Edu)") e il numero di Fase è il prefisso
+     della desc ("Fase N · ..."); `label` resta il nome ufficiale senza
+     prefisso, perché modLabel() lo riusa in header Quiz, Classifica e
+     barre Progressi dove lo spazio è poco.
+   - dataPaths con la stessa forma di Cybersecurity/AI (quiz/speed/
+     abbina/completaFrase/veroFalso, memory omesso). I 5 moduleMap di
+     game-engine-state.js, FLIPCARD_MODULE_MAP e LOSAPEVI_MODULE_MAP
+     sono allineati in questa stessa release (v8.41.0).
+   - Colore d'area: oliva-lime (dark 126,132,58 / light 102,108,46) in
+     css/areas.css + AREA_COLOR_HEX (game-constants.js).
    ================================================== */
 
 const AREAS = [
@@ -1506,6 +1523,292 @@ const AREAS = [
 <circle cx="52" cy="42" r="4" fill="currentColor" opacity=".45"/>
 <circle cx="52" cy="98" r="4" fill="currentColor" opacity=".4"/>
 <text x="200" y="150" text-anchor="middle" font-family="monospace" font-size="9" fill="currentColor" opacity=".55" font-weight="bold">FUTURE</text>
+      `,
+      },
+    ],
+  },
+
+  {
+    key: 'digcomp',
+    label: 'DigComp',
+    icon: '🧭',
+    iconTi: 'ti-compass',   // glifo Tabler (UI coerente); `icon` (emoji) resta per i consumatori legacy
+    badge: 'DIGCOMP',   // sigla breve mostrata accanto a «Cosa vuoi fare?» (goStep('cat'))
+    description: 'Sviluppare le competenze digitali secondo il quadro DigComp, in 10 Fasi: formazione del cittadino (Fasi 1–5) e formazione del docente — Edu (Fasi 6–10).',
+    modules: [
+      {
+        key: "alfabetizzazione-digitale", label: "Alfabetizzazione digitale", icon: "💡", contentReady: true,
+        desc: "Fase 1 · Cosa significa essere digitali: bit, dispositivi, Cloud e Web",
+        tags: ["Cittadino", "Bit, hardware e software", "Cloud e Web", "Algoritmi e SEO"],
+        dataPaths: {
+          quiz: "data/Minigiochi/DigComp/modulo1/quiz_alfabetizzazione-digitale.json",
+          speed: "data/Minigiochi/DigComp/modulo1/speedquiz_alfabetizzazione-digitale.json",
+          abbina: "data/Minigiochi/DigComp/modulo1/abbina_alfabetizzazione-digitale.json",
+          completaFrase: "data/Minigiochi/DigComp/modulo1/completa_la_frase_alfabetizzazione-digitale.json",
+          veroFalso: "data/Minigiochi/DigComp/modulo1/vero_o_falso_alfabetizzazione-digitale.json",
+        },
+      cardArt: `
+<rect x="192" y="46" width="14" height="14" rx="2" fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width=".8" opacity=".5"/>
+<rect x="210" y="46" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<rect x="228" y="46" width="14" height="14" rx="2" fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width=".8" opacity=".5"/>
+<rect x="246" y="46" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<rect x="192" y="64" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<rect x="210" y="64" width="14" height="14" rx="2" fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width=".8" opacity=".5"/>
+<rect x="228" y="64" width="14" height="14" rx="2" fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width=".8" opacity=".5"/>
+<rect x="246" y="64" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<rect x="192" y="82" width="14" height="14" rx="2" fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width=".8" opacity=".5"/>
+<rect x="210" y="82" width="14" height="14" rx="2" fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width=".8" opacity=".5"/>
+<rect x="228" y="82" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<rect x="246" y="82" width="14" height="14" rx="2" fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width=".8" opacity=".5"/>
+<rect x="192" y="100" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<rect x="210" y="100" width="14" height="14" rx="2" fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width=".8" opacity=".5"/>
+<rect x="228" y="100" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width=".7" opacity=".3"/>
+<rect x="246" y="100" width="14" height="14" rx="2" fill="currentColor" fill-opacity=".2" stroke="currentColor" stroke-width=".8" opacity=".5"/>
+<text x="40" y="66" font-family="monospace" font-size="16" fill="currentColor" opacity=".3" font-weight="bold">0101</text>
+<text x="54" y="88" font-family="monospace" font-size="16" fill="currentColor" opacity=".25" font-weight="bold">1100</text>
+<text x="40" y="110" font-family="monospace" font-size="16" fill="currentColor" opacity=".2" font-weight="bold">0110</text>
+<line x1="112" y1="80" x2="186" y2="80" stroke="currentColor" stroke-width=".8" opacity=".25" stroke-dasharray="3,4"/>
+<text x="215" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">BIT</text>
+      `,
+      },
+
+      {
+        key: "comunicazione-e-collaborazione", label: "Comunicazione e collaborazione", icon: "💬", contentReady: true,
+        desc: "Fase 2 · Netiquette, identità online e collaborazione a distanza",
+        tags: ["Cittadino", "Netiquette", "Identità online e SPID", "Collaborazione online"],
+        dataPaths: {
+          quiz: "data/Minigiochi/DigComp/modulo2/quiz_comunicazione-e-collaborazione.json",
+          speed: "data/Minigiochi/DigComp/modulo2/speedquiz_comunicazione-e-collaborazione.json",
+          abbina: "data/Minigiochi/DigComp/modulo2/abbina_comunicazione-e-collaborazione.json",
+          completaFrase: "data/Minigiochi/DigComp/modulo2/completa_la_frase_comunicazione-e-collaborazione.json",
+          veroFalso: "data/Minigiochi/DigComp/modulo2/vero_o_falso_comunicazione-e-collaborazione.json",
+        },
+      cardArt: `
+<rect x="168" y="44" width="72" height="38" rx="8" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<path d="M184,82 l-6,10 l16,-10" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="180" y1="56" x2="224" y2="56" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<line x1="180" y1="66" x2="210" y2="66" stroke="currentColor" stroke-width=".8" opacity=".3"/>
+<rect x="212" y="76" width="62" height="34" rx="8" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<path d="M258,110 l6,10 l-16,-10" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="228" cy="93" r="2.2" fill="currentColor" opacity=".5"/>
+<circle cx="238" cy="93" r="2.2" fill="currentColor" opacity=".5"/>
+<circle cx="248" cy="93" r="2.2" fill="currentColor" opacity=".5"/>
+<circle cx="52" cy="58" r="6" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="86" cy="96" r="5" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="50" cy="124" r="5.5" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="57" y1="62" x2="82" y2="92" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<line x1="82" y1="100" x2="55" y2="120" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<line x1="92" y1="94" x2="164" y2="66" stroke="currentColor" stroke-width=".8" opacity=".22" stroke-dasharray="2,3"/>
+<text x="215" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">CHAT</text>
+      `,
+      },
+
+      {
+        key: "creazione-di-contenuti-digitali", label: "Creazione di contenuti digitali", icon: "📝", contentReady: true,
+        desc: "Fase 3 · Documenti, presentazioni, multimedia e diritto d'autore",
+        tags: ["Cittadino", "Documenti e fogli di calcolo", "Multimedia e AI", "Copyright e accessibilità"],
+        dataPaths: {
+          quiz: "data/Minigiochi/DigComp/modulo3/quiz_creazione-di-contenuti-digitali.json",
+          speed: "data/Minigiochi/DigComp/modulo3/speedquiz_creazione-di-contenuti-digitali.json",
+          abbina: "data/Minigiochi/DigComp/modulo3/abbina_creazione-di-contenuti-digitali.json",
+          completaFrase: "data/Minigiochi/DigComp/modulo3/completa_la_frase_creazione-di-contenuti-digitali.json",
+          veroFalso: "data/Minigiochi/DigComp/modulo3/vero_o_falso_creazione-di-contenuti-digitali.json",
+        },
+      cardArt: `
+<path d="M196,44 h40 l18,18 v62 h-58 z" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<path d="M236,44 v18 h18" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="206" y1="78" x2="246" y2="78" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<line x1="206" y1="90" x2="240" y2="90" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<line x1="206" y1="102" x2="246" y2="102" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<line x1="206" y1="114" x2="230" y2="114" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<path d="M150,122 l30,-30 l8,8 l-30,30 z" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<path d="M150,122 l-4,12 l12,-4 z" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<rect x="40" y="60" width="52" height="38" rx="4" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<polyline points="46,92 60,76 70,86 80,72 88,92" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<circle cx="78" cy="70" r="3" fill="currentColor" opacity=".4"/>
+<text x="215" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">CREA</text>
+      `,
+      },
+
+      {
+        key: "sicurezza", label: "Sicurezza", icon: "🔐", contentReady: true,
+        desc: "Fase 4 · Password, phishing, privacy e protezione dei dati",
+        tags: ["Cittadino", "Password e phishing", "Privacy e dati personali", "Minacce informatiche"],
+        dataPaths: {
+          quiz: "data/Minigiochi/DigComp/modulo4/quiz_sicurezza.json",
+          speed: "data/Minigiochi/DigComp/modulo4/speedquiz_sicurezza.json",
+          abbina: "data/Minigiochi/DigComp/modulo4/abbina_sicurezza.json",
+          completaFrase: "data/Minigiochi/DigComp/modulo4/completa_la_frase_sicurezza.json",
+          veroFalso: "data/Minigiochi/DigComp/modulo4/vero_o_falso_sicurezza.json",
+        },
+      cardArt: `
+<path d="M220,40 l36,12 v30 q0,26 -36,42 q-36,-16 -36,-42 v-30 z" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="220" cy="76" r="7" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="220" y1="83" x2="220" y2="100" stroke="currentColor" stroke-width="1.3" opacity=".5"/>
+<path d="M46,96 h30 a4,4 0 0 1 4,4 v20 a4,4 0 0 1 -4,4 h-30 a4,4 0 0 1 -4,-4 v-20 a4,4 0 0 1 4,-4 z" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<path d="M52,96 v-10 a9,9 0 0 1 18,0 v10" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="61" cy="108" r="2.4" fill="currentColor" opacity=".45"/>
+<line x1="86" y1="104" x2="170" y2="84" stroke="currentColor" stroke-width=".8" opacity=".22" stroke-dasharray="2,3"/>
+<text x="215" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">SAFE</text>
+      `,
+      },
+
+      {
+        key: "problem-solving-digitale", label: "Problem solving digitale", icon: "🛠️", contentReady: true,
+        desc: "Fase 5 · Troubleshooting, strumenti digitali e apprendimento continuo",
+        tags: ["Cittadino", "Troubleshooting", "Scelta degli strumenti", "Apprendimento continuo"],
+        dataPaths: {
+          quiz: "data/Minigiochi/DigComp/modulo5/quiz_problem-solving-digitale.json",
+          speed: "data/Minigiochi/DigComp/modulo5/speedquiz_problem-solving-digitale.json",
+          abbina: "data/Minigiochi/DigComp/modulo5/abbina_problem-solving-digitale.json",
+          completaFrase: "data/Minigiochi/DigComp/modulo5/completa_la_frase_problem-solving-digitale.json",
+          veroFalso: "data/Minigiochi/DigComp/modulo5/vero_o_falso_problem-solving-digitale.json",
+        },
+      cardArt: `
+<circle cx="215" cy="80" r="22" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="215" cy="80" r="8" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="237.0" y1="80.0" x2="245.0" y2="80.0" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".4"/>
+<line x1="230.6" y1="95.6" x2="236.2" y2="101.2" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".4"/>
+<line x1="215.0" y1="102.0" x2="215.0" y2="110.0" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".4"/>
+<line x1="199.4" y1="95.6" x2="193.8" y2="101.2" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".4"/>
+<line x1="193.0" y1="80.0" x2="185.0" y2="80.0" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".4"/>
+<line x1="199.4" y1="64.4" x2="193.8" y2="58.8" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".4"/>
+<line x1="215.0" y1="58.0" x2="215.0" y2="50.0" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".4"/>
+<line x1="230.6" y1="64.4" x2="236.2" y2="58.8" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity=".4"/>
+<rect x="44" y="54" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="66" y1="61" x2="108" y2="61" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<rect x="44" y="78" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="66" y1="85" x2="96" y2="85" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<rect x="44" y="102" width="14" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="66" y1="109" x2="84" y2="109" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<path d="M47,61 l4,4 l7,-8" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".55"/>
+<path d="M47,85 l4,4 l7,-8" fill="none" stroke="currentColor" stroke-width="1.4" opacity=".55"/>
+<text x="215" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">FIX</text>
+      `,
+      },
+
+      {
+        key: "coinvolgimento-professionale", label: "Coinvolgimento professionale", icon: "🎓", contentReady: true,
+        desc: "Fase 6 · Comunicazione professionale, comunità di docenti e autovalutazione",
+        tags: ["Docente (Edu)", "Canali di comunicazione", "Comunità di docenti", "Autovalutazione"],
+        dataPaths: {
+          quiz: "data/Minigiochi/DigComp/modulo6/quiz_coinvolgimento-professionale.json",
+          speed: "data/Minigiochi/DigComp/modulo6/speedquiz_coinvolgimento-professionale.json",
+          abbina: "data/Minigiochi/DigComp/modulo6/abbina_coinvolgimento-professionale.json",
+          completaFrase: "data/Minigiochi/DigComp/modulo6/completa_la_frase_coinvolgimento-professionale.json",
+          veroFalso: "data/Minigiochi/DigComp/modulo6/vero_o_falso_coinvolgimento-professionale.json",
+        },
+      cardArt: `
+<circle cx="220" cy="62" r="13" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<path d="M194,114 q0,-30 26,-30 q26,0 26,30 z" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="150" cy="52" r="6" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="150" cy="112" r="6" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="52" cy="82" r="6" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="156" y1="54" x2="204" y2="62" stroke="currentColor" stroke-width=".8" opacity=".3" stroke-dasharray="2,3"/>
+<line x1="156" y1="110" x2="198" y2="96" stroke="currentColor" stroke-width=".8" opacity=".3" stroke-dasharray="2,3"/>
+<line x1="58" y1="82" x2="144" y2="54" stroke="currentColor" stroke-width=".8" opacity=".22" stroke-dasharray="2,3"/>
+<line x1="58" y1="84" x2="144" y2="110" stroke="currentColor" stroke-width=".8" opacity=".22" stroke-dasharray="2,3"/>
+<path d="M206,50 l14,-8 l14,8 l-14,8 z" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<text x="215" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">EDU</text>
+      `,
+      },
+
+      {
+        key: "risorse-digitali", label: "Risorse digitali", icon: "📚", contentReady: true,
+        desc: "Fase 7 · Cercare, creare e condividere risorse didattiche digitali",
+        tags: ["Docente (Edu)", "Cercare risorse", "Creare risorse interattive", "Condividere in sicurezza"],
+        dataPaths: {
+          quiz: "data/Minigiochi/DigComp/modulo7/quiz_risorse-digitali.json",
+          speed: "data/Minigiochi/DigComp/modulo7/speedquiz_risorse-digitali.json",
+          abbina: "data/Minigiochi/DigComp/modulo7/abbina_risorse-digitali.json",
+          completaFrase: "data/Minigiochi/DigComp/modulo7/completa_la_frase_risorse-digitali.json",
+          veroFalso: "data/Minigiochi/DigComp/modulo7/vero_o_falso_risorse-digitali.json",
+        },
+      cardArt: `
+<rect x="182" y="52" width="64" height="16" rx="3" fill="currentColor" fill-opacity=".07" stroke="currentColor" stroke-width="1" opacity=".5"/>
+<line x1="190" y1="60" x2="222" y2="60" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<rect x="186" y="74" width="56" height="16" rx="3" fill="currentColor" fill-opacity=".07" stroke="currentColor" stroke-width="1" opacity=".45"/>
+<line x1="194" y1="82" x2="222" y2="82" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<rect x="184" y="96" width="60" height="16" rx="3" fill="currentColor" fill-opacity=".07" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<line x1="192" y1="104" x2="222" y2="104" stroke="currentColor" stroke-width=".8" opacity=".35"/>
+<circle cx="150" cy="86" r="17" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="162" y1="98" x2="178" y2="114" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" opacity=".45"/>
+<path d="M46,56 h22 v36 l-11,-8 l-11,8 z" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="86" y1="70" x2="128" y2="82" stroke="currentColor" stroke-width=".8" opacity=".22" stroke-dasharray="2,3"/>
+<text x="215" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">RISORSE</text>
+      `,
+      },
+
+      {
+        key: "pratiche-di-insegnamento-e-apprendimento", label: "Pratiche di insegnamento e apprendimento", icon: "🏫", contentReady: true,
+        desc: "Fase 8 · Integrare il digitale nella lezione: aula, gruppo e quiz interattivi",
+        tags: ["Docente (Edu)", "Tecnologie in aula", "Lavoro di gruppo", "Quiz interattivi"],
+        dataPaths: {
+          quiz: "data/Minigiochi/DigComp/modulo8/quiz_pratiche-di-insegnamento-e-apprendimento.json",
+          speed: "data/Minigiochi/DigComp/modulo8/speedquiz_pratiche-di-insegnamento-e-apprendimento.json",
+          abbina: "data/Minigiochi/DigComp/modulo8/abbina_pratiche-di-insegnamento-e-apprendimento.json",
+          completaFrase: "data/Minigiochi/DigComp/modulo8/completa_la_frase_pratiche-di-insegnamento-e-apprendimento.json",
+          veroFalso: "data/Minigiochi/DigComp/modulo8/vero_o_falso_pratiche-di-insegnamento-e-apprendimento.json",
+        },
+      cardArt: `
+<rect x="168" y="46" width="104" height="60" rx="4" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="190" y1="106" x2="182" y2="126" stroke="currentColor" stroke-width="1.1" opacity=".4"/>
+<line x1="250" y1="106" x2="258" y2="126" stroke="currentColor" stroke-width="1.1" opacity=".4"/>
+<polyline points="180,92 198,76 214,84 236,62 258,72" fill="none" stroke="currentColor" stroke-width="1" opacity=".4"/>
+<line x1="180" y1="58" x2="214" y2="58" stroke="currentColor" stroke-width=".8" opacity=".3"/>
+<path d="M62,70 a26,26 0 1 1 -2,24" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<path d="M54,64 l8,6 l-10,5 z" fill="currentColor" opacity=".5"/>
+<circle cx="76" cy="82" r="3.5" fill="currentColor" opacity=".4"/>
+<text x="215" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">DIDATTICA</text>
+      `,
+      },
+
+      {
+        key: "valutazione-dell-apprendimento", label: "Valutazione dell'apprendimento", icon: "📊", contentReady: true,
+        desc: "Fase 9 · Valutazione formativa, learning analytics e feedback tempestivo",
+        tags: ["Docente (Edu)", "Valutazione formativa", "Learning analytics", "Feedback tempestivo"],
+        dataPaths: {
+          quiz: "data/Minigiochi/DigComp/modulo9/quiz_valutazione-dell-apprendimento.json",
+          speed: "data/Minigiochi/DigComp/modulo9/speedquiz_valutazione-dell-apprendimento.json",
+          abbina: "data/Minigiochi/DigComp/modulo9/abbina_valutazione-dell-apprendimento.json",
+          completaFrase: "data/Minigiochi/DigComp/modulo9/completa_la_frase_valutazione-dell-apprendimento.json",
+          veroFalso: "data/Minigiochi/DigComp/modulo9/vero_o_falso_valutazione-dell-apprendimento.json",
+        },
+      cardArt: `
+<rect x="186" y="96" width="14" height="22" rx="2" fill="currentColor" fill-opacity="0.08" stroke="currentColor" stroke-width=".9" opacity="0.35"/>
+<rect x="206" y="82" width="14" height="36" rx="2" fill="currentColor" fill-opacity="0.11" stroke="currentColor" stroke-width=".9" opacity="0.41"/>
+<rect x="226" y="68" width="14" height="50" rx="2" fill="currentColor" fill-opacity="0.14" stroke="currentColor" stroke-width=".9" opacity="0.47"/>
+<rect x="246" y="54" width="14" height="64" rx="2" fill="currentColor" fill-opacity="0.17" stroke="currentColor" stroke-width=".9" opacity="0.53"/>
+<line x1="178" y1="118" x2="268" y2="118" stroke="currentColor" stroke-width=".8" opacity=".4"/>
+<circle cx="68" cy="82" r="26" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<path d="M55,82 l9,10 l17,-20" fill="none" stroke="currentColor" stroke-width="2" opacity=".6" stroke-linecap="round"/>
+<line x1="100" y1="82" x2="176" y2="82" stroke="currentColor" stroke-width=".8" opacity=".22" stroke-dasharray="2,3"/>
+<text x="215" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">VALUTA</text>
+      `,
+      },
+
+      {
+        key: "valorizzare-le-potenzialita-degli-studenti", label: "Valorizzare le potenzialità degli studenti", icon: "🌱", contentReady: true,
+        desc: "Fase 10 · Accessibilità, differenziazione e coinvolgimento attivo degli studenti",
+        tags: ["Docente (Edu)", "Accessibilità", "Didattica differenziata", "Coding e robotica"],
+        dataPaths: {
+          quiz: "data/Minigiochi/DigComp/modulo10/quiz_valorizzare-le-potenzialita-degli-studenti.json",
+          speed: "data/Minigiochi/DigComp/modulo10/speedquiz_valorizzare-le-potenzialita-degli-studenti.json",
+          abbina: "data/Minigiochi/DigComp/modulo10/abbina_valorizzare-le-potenzialita-degli-studenti.json",
+          completaFrase: "data/Minigiochi/DigComp/modulo10/completa_la_frase_valorizzare-le-potenzialita-degli-studenti.json",
+          veroFalso: "data/Minigiochi/DigComp/modulo10/vero_o_falso_valorizzare-le-potenzialita-degli-studenti.json",
+        },
+      cardArt: `
+<rect x="176" y="100" width="22" height="18" fill="currentColor" fill-opacity="0.050" stroke="currentColor" stroke-width="1" opacity="0.35"/>
+<rect x="198" y="84" width="22" height="34" fill="currentColor" fill-opacity="0.075" stroke="currentColor" stroke-width="1" opacity="0.42"/>
+<rect x="220" y="68" width="22" height="50" fill="currentColor" fill-opacity="0.100" stroke="currentColor" stroke-width="1" opacity="0.49"/>
+<rect x="242" y="52" width="22" height="66" fill="currentColor" fill-opacity="0.125" stroke="currentColor" stroke-width="1" opacity="0.56"/>
+<polygon points="253,28 257,38 268,38 259,45 262,56 253,49 244,56 247,45 238,38 249,38" fill="currentColor" fill-opacity=".05" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="50" cy="112" r="5" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="68" cy="96" r="6" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<circle cx="88" cy="78" r="7" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".5"/>
+<line x1="56" y1="108" x2="64" y2="100" stroke="currentColor" stroke-width=".8" opacity=".3"/>
+<text x="215" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">INCLUDI</text>
       `,
       },
     ],

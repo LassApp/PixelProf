@@ -414,6 +414,17 @@ const FLIPCARD_MODULE_MAP = {
   'bias-algoritmici': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo11/Flip_Card_Facile_Modulo_11.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo11/Flip_Card_Medio_Modulo_11.csv'] },
   'ai-act': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo12/Flip_Card_Facile_Modulo_12.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo12/Flip_Card_Medio_Modulo_12.csv'] },
   'futuro-ai': { facile: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo13/Flip_Card_Facile_Modulo_13.csv'], medio: ['data/Didattica/Flip_Card/Intelligenza_Artificiale/Modulo13/Flip_Card_Medio_Modulo_13.csv'] },
+  // v8.41.0 — Area DigComp (10 Fasi): CSV Facile + Medio per Fase in data/Didattica/Flip_Card/DigComp/ModuloN/
+  'alfabetizzazione-digitale': { facile: ['data/Didattica/Flip_Card/DigComp/Modulo1/Flip_Card_Facile_Modulo_1.csv'], medio: ['data/Didattica/Flip_Card/DigComp/Modulo1/Flip_Card_Medio_Modulo_1.csv'] },
+  'comunicazione-e-collaborazione': { facile: ['data/Didattica/Flip_Card/DigComp/Modulo2/Flip_Card_Facile_Modulo_2.csv'], medio: ['data/Didattica/Flip_Card/DigComp/Modulo2/Flip_Card_Medio_Modulo_2.csv'] },
+  'creazione-di-contenuti-digitali': { facile: ['data/Didattica/Flip_Card/DigComp/Modulo3/Flip_Card_Facile_Modulo_3.csv'], medio: ['data/Didattica/Flip_Card/DigComp/Modulo3/Flip_Card_Medio_Modulo_3.csv'] },
+  'sicurezza': { facile: ['data/Didattica/Flip_Card/DigComp/Modulo4/Flip_Card_Facile_Modulo_4.csv'], medio: ['data/Didattica/Flip_Card/DigComp/Modulo4/Flip_Card_Medio_Modulo_4.csv'] },
+  'problem-solving-digitale': { facile: ['data/Didattica/Flip_Card/DigComp/Modulo5/Flip_Card_Facile_Modulo_5.csv'], medio: ['data/Didattica/Flip_Card/DigComp/Modulo5/Flip_Card_Medio_Modulo_5.csv'] },
+  'coinvolgimento-professionale': { facile: ['data/Didattica/Flip_Card/DigComp/Modulo6/Flip_Card_Facile_Modulo_6.csv'], medio: ['data/Didattica/Flip_Card/DigComp/Modulo6/Flip_Card_Medio_Modulo_6.csv'] },
+  'risorse-digitali': { facile: ['data/Didattica/Flip_Card/DigComp/Modulo7/Flip_Card_Facile_Modulo_7.csv'], medio: ['data/Didattica/Flip_Card/DigComp/Modulo7/Flip_Card_Medio_Modulo_7.csv'] },
+  'pratiche-di-insegnamento-e-apprendimento': { facile: ['data/Didattica/Flip_Card/DigComp/Modulo8/Flip_Card_Facile_Modulo_8.csv'], medio: ['data/Didattica/Flip_Card/DigComp/Modulo8/Flip_Card_Medio_Modulo_8.csv'] },
+  'valutazione-dell-apprendimento': { facile: ['data/Didattica/Flip_Card/DigComp/Modulo9/Flip_Card_Facile_Modulo_9.csv'], medio: ['data/Didattica/Flip_Card/DigComp/Modulo9/Flip_Card_Medio_Modulo_9.csv'] },
+  'valorizzare-le-potenzialita-degli-studenti': { facile: ['data/Didattica/Flip_Card/DigComp/Modulo10/Flip_Card_Facile_Modulo_10.csv'], medio: ['data/Didattica/Flip_Card/DigComp/Modulo10/Flip_Card_Medio_Modulo_10.csv'] },
 };
 
 /* -- Rilevamento automatico del delimitatore --------------

@@ -66,20 +66,28 @@
     display:grid;place-items:center;color:#A3B07F;flex-shrink:0;font-size:13px;
   }
   #qz-game .qz-act-pill #qz-act-label{ font-size:13px;font-weight:700;color:#A3B07F; }  /* --purple = oliva #6E7A50: 2.8:1 su scuro */
-  #qz-game .qz-act-sub{ font-size:11px;color:var(--text-muted);font-weight:500;margin-left:2px; }
+  #qz-game .qz-act-sub{ font-size:11px;color:rgba(242,232,213,.76);font-weight:500;margin-left:2px; }
   #qz-game .qz-actrow .score-pill{
     display:inline-flex;align-items:center;gap:6px;padding:5px 13px;border-radius:20px;
-    border:1px solid rgba(184,147,90,.35);background:rgba(184,147,90,.08);color:#B8935A;
+    border:1px solid rgba(184,147,90,.45);background:rgba(184,147,90,.1);color:#E4C48C;
     font-weight:700;font-family:'Share Tech Mono',monospace;font-size:13px;
   }
-  #qz-game .qz-actrow .timer-pill.red{ color:#D49A8C; }
+  /* v8.43.0 — scuro: il timer era fango #7A5A38 su navy (2.3:1); ora miele chiaro su velo miele (≥ 8:1).
+     Rosso (ultimi secondi) già a #D49A8C. Il chiaro resta nel blocco @layer theme in fondo. */
+  #qz-game .qz-actrow .timer-pill{
+    padding:4px 11px; font-size:13px; color:#E4C48C;
+    background:rgba(184,147,90,.14); border:1px solid rgba(184,147,90,.4);
+  }
+  #qz-game .qz-actrow .timer-pill.red{ color:#D49A8C; background:rgba(171,86,73,.16); border-color:rgba(171,86,73,.45); }
 
   /* ── card domanda + gemma decorativa colorata per modulo ── */
   #qz-game .q-card{
     padding:22px 84px 20px 22px;
     --qz-mod:var(--purple);--qz-mod-glow:rgba(var(--purple-rgb),.45);
   }
-  #qz-game .q-cat{ color:var(--qz-mod); }
+  /* scuro: il colore del modulo (oliva/slate/terracotta…) su navy dava 3.5:1 → schiarito del 45% verso il crema
+     (≥ 6:1 per tutti i colori modulo). In chiaro vince la regola del layer theme (var(--accent)). */
+  #qz-game .q-cat{ color:color-mix(in srgb,var(--qz-mod) 55%,#F2E8D5); }
   #qz-game .qz-gem{
     position:absolute;top:16px;right:16px;width:56px;height:56px;
     color:var(--qz-mod);opacity:.9;filter:drop-shadow(0 0 8px var(--qz-mod-glow));pointer-events:none;
@@ -90,8 +98,8 @@
   #qz-game .opt{
     display:flex;align-items:center;gap:13px;width:100%;text-align:left;
     padding:13px 15px;border-radius:var(--radius-md);
-    border:1px solid var(--border-subtle);background:var(--surface-1);
-    cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:500;color:rgba(255,255,255,.82);
+    border:1px solid rgba(242,232,213,.16);background:rgba(242,232,213,.04);
+    cursor:pointer;font-family:inherit;font-size:13.5px;font-weight:500;color:rgba(255,255,255,.9);
     line-height:1.4;transition:all var(--transition-fast);
   }
   #qz-game .opt:hover:not(:disabled){
@@ -99,9 +107,9 @@
   }
   #qz-game .opt:hover:not(:disabled) .opt-badge{ border-color:var(--accent);color:var(--accent); }
   #qz-game .opt-badge{
-    width:28px;height:28px;border-radius:50%;border:1.5px solid var(--border-mid);
+    width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(242,232,213,.42);
     display:grid;place-items:center;flex-shrink:0;font-family:'Share Tech Mono',monospace;
-    font-weight:700;font-size:12px;color:var(--text-muted);transition:all var(--transition-fast);
+    font-weight:700;font-size:12px;color:rgba(242,232,213,.88);transition:all var(--transition-fast);
   }
   #qz-game .opt-text{ flex:1; }
   #qz-game .opt-mark{
@@ -211,4 +219,7 @@
   html[data-theme="light"] #qz-game .qz-actrow .timer-pill.red,
   html[data-theme="light"] #qz-game .qz-controlbar .game-exit-btn:hover{ color:#8A4038; }
   html[data-theme="light"] #qz-game .qz-actrow .score-pill{ color:#6B4E30; }
+  /* timer in chiaro: #7A5A38 sul velo miele era 4.2:1 → fango scuro (≥ 5.8:1) */
+  html[data-theme="light"] #qz-game .qz-actrow .timer-pill{ color:#6B4E30; background:rgba(122,90,56,.1); border-color:rgba(122,90,56,.35); }
+  html[data-theme="light"] #qz-game .qz-actrow .timer-pill.red{ color:#8A4038; background:rgba(171,86,73,.1); border-color:rgba(171,86,73,.35); }
 }

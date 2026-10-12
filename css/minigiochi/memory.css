@@ -1,15 +1,152 @@
 /* ═══════════════════════════════════════════════════════════════════════════════
-   MINIGIOCHI — Memory, testi di contorno   (v8.42.0 · @layer memory)
+   MINIGIOCHI — Memory   (v8.43.0 · @layer memory)
    Percorso: css/minigiochi/ (stessa cartella di quiz.css).
    Memory è in pausa app-wide (vedi REATTIVAZIONE_MEMORY.md): il codice resta, quindi lo stile va
    tenuto coerente per quando verrà riattivato.
 
-   Prima: il messaggio sotto il tavolo (#mem-msg, "Completato in N mosse…") era inline con il verde
-   rgba(78,116,100,.6) → ~2:1 su crema. Ora --text-muted (4.65:1 su crema, 5.33:1 su navy).
-   La pausa di Memory ha lo stile condiviso in css/minigiochi/pausa.css.
+   Contiene la plancia e le carte (retro / girata / abbinata / immagine) e le PILLOLE DI STATO
+   .mem-stat-pill (timer, punti, mosse, errori), usate anche da Abbina e dal punteggio dello Speed Quiz.
+   Prima stava in pixelprof.css ("MATCH / MEMORY / FILL") + un override in layer netflix, ora fusi qui.
+   Pulsante pausa e schermata di pausa: pausa.css. Il retro delle carte resta scuro/brandizzato apposta:
+   è un "poster" auto-contenuto, non una superficie di lettura.
+   Messaggio sotto il tavolo (#mem-msg): prima inline col verde rgba(78,116,100,.6) → ~2:1 su crema;
+   ora --text-muted (4.65:1 su crema, 5.33:1 su navy).
    ═══════════════════════════════════════════════════════════════════════════════ */
 @layer memory {
+  .mem-board{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+
+  /* Memory game header row */
+  .mem-hdr{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+  .mem-stat-pill{
+    display:flex;align-items:center;gap:5px;
+    padding:5px 11px;border-radius:20px;
+    border:1px solid var(--border-mid);background:var(--surface-1);
+    font-size:12px;font-weight:600;font-family:'Share Tech Mono',monospace;
+    color:rgba(255,255,255,.55);transition:all var(--transition-fast);
+  }
+  .mem-stat-pill i{font-size:14px}
+  .mem-stat-pill.timer-running{border-color:rgba(84,112,140,.35);color:#54708C;background:rgba(84,112,140,.08);}
+  .mem-stat-pill.timer-warning{border-color:rgba(122,90,56,.45);color:#7A5A38;background:rgba(122,90,56,.1);animation:timerPulse .8s ease-in-out infinite alternate;}
+  .mem-stat-pill.moves-pill{border-color:rgba(var(--purple-rgb),.3);color:#8B9968;background:rgba(var(--purple-rgb),.07);}
+  .mem-stat-pill.score-pill{border-color:rgba(var(--accent-rgb),.3);color:var(--accent);background:rgba(var(--accent-rgb),.07);}
+  .mem-stat-pill.err-pill{border-color:rgba(171,86,73,.25);color:rgba(196,120,105,.9);background:rgba(171,86,73,.06);}   /* giro 10/10: era uno style inline in game-match.js (batteva ogni override per tema/topbar) */
+  .mem-stat-pill.score-pill.score-bump{animation:scoreBump .35s cubic-bezier(.34,1.56,.64,1);}
+  @keyframes scoreBump{0%{transform:scale(1);}40%{transform:scale(1.14);border-color:rgba(var(--accent-rgb),.7);box-shadow:0 0 12px rgba(var(--accent-rgb),.2);}100%{transform:scale(1);}}
+  @keyframes timerPulse{from{opacity:.7;}to{opacity:1;}}
+
+  .mem-c{
+    aspect-ratio:1;border-radius:var(--radius-md);
+    /* ── v9: border ALWAYS visible ── */
+    border:1px solid rgba(255,255,255,.14);
+    cursor:pointer;display:flex;align-items:center;justify-content:center;
+    font-size:11px;text-align:center;line-height:1.3;font-weight:700;
+    transition:transform var(--transition-bounce),box-shadow var(--transition-fast),
+               background var(--transition-fast),border-color var(--transition-fast);
+    padding:4px;color:rgba(255,255,255,.7);
+    position:relative;overflow:hidden;
+    box-shadow:0 2px 8px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.04);
+  }
+
+  /* Card BACK — v10: branded PixelProf design */
+  .mem-c.hide{
+    background:
+      radial-gradient(circle at 30% 25%, rgba(var(--accent-rgb),.05) 0%, transparent 55%),
+      radial-gradient(circle at 70% 75%, rgba(var(--purple-rgb),.05) 0%, transparent 55%),
+      repeating-linear-gradient(
+        60deg,
+        rgba(var(--accent-rgb),.028) 0px,
+        rgba(var(--accent-rgb),.028) 1px,
+        transparent 1px,
+        transparent 16px
+      ),
+      repeating-linear-gradient(
+        -60deg,
+        rgba(var(--purple-rgb),.022) 0px,
+        rgba(var(--purple-rgb),.022) 1px,
+        transparent 1px,
+        transparent 16px
+      ),
+      linear-gradient(150deg,rgba(14,20,44,.98),rgba(8,12,28,1));
+    border-color:rgba(var(--accent-rgb),.22);
+    color:transparent;font-size:0;
+    box-shadow:0 3px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(var(--accent-rgb),.08),inset 0 -1px 0 rgba(var(--purple-rgb),.04);
+  }
+  /* PixelProf branded logo on card back — centered hex+P mark */
+  .mem-c.hide::before{
+    content:'';
+    position:absolute;inset:0;
+    background:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3C!-- outer hex --%3E%3Cpolygon points='22,3 38,12 38,32 22,41 6,32 6,12' fill='none' stroke='%2300ffc8' stroke-width='1.4' stroke-opacity='.22'/%3E%3C!-- inner hex --%3E%3Cpolygon points='22,9 33,15.5 33,28.5 22,35 11,28.5 11,15.5' fill='rgba(var(--accent-rgb),0.05)' stroke='%2300ffc8' stroke-width='.9' stroke-opacity='.14'/%3E%3C!-- P stem --%3E%3Crect x='17' y='15' width='2.5' height='14' rx='1.2' fill='%2300ffc8' opacity='.28'/%3E%3C!-- P bowl --%3E%3Cpath d='M19.5 15 Q27 15 27 19.5 Q27 24 19.5 24' stroke='%2300ffc8' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-opacity='.28'/%3E%3C!-- accent dots --%3E%3Ccircle cx='34' cy='11' r='1.8' fill='%237c6aff' opacity='.3'/%3E%3Ccircle cx='10' cy='33' r='1.4' fill='%2300ffc8' opacity='.2'/%3E%3C/svg%3E")
+      center / 62% no-repeat;
+    pointer-events:none;
+  }
+  /* hover on hidden card — v10: intensify border + soft glow */
+  .mem-c.hide:hover{
+    transform:translateY(-3px) scale(1.04);
+    border-color:rgba(var(--accent-rgb),.55);
+    box-shadow:0 8px 28px rgba(0,0,0,.45),0 0 0 1px rgba(var(--accent-rgb),.22),0 0 20px rgba(var(--accent-rgb),.08);
+  }
+  /* Card FLIPPED */
+  .mem-c.flip{
+    background:linear-gradient(135deg,rgba(var(--purple-rgb),.2),rgba(100,80,220,.12));
+    border-color:var(--purple);color:#c4baff;
+    box-shadow:0 0 18px rgba(var(--purple-rgb),.22),inset 0 1px 0 rgba(255,255,255,.08);
+  }
+  /* Card FLIPPED durante pausa — nascosta visivamente */
+  .mem-c.flip.paused-hidden{opacity:0;pointer-events:none;}
+
+  /* ── Carta immagine — override flip style per carte con PNG ── */
+  .mem-c.flip.mem-c-image{
+    background:#0a0e1e;
+    border-color:rgba(var(--accent-rgb),.5);
+    padding:0;
+    box-shadow:0 0 18px rgba(var(--accent-rgb),.18),inset 0 1px 0 rgba(var(--accent-rgb),.1);
+  }
+
+  /* Immagine dentro carta Memory */
+  .mem-c-img{
+    width:100%;height:100%;
+    object-fit:cover;
+    border-radius:calc(var(--radius-md) - 1px);
+    display:block;
+    user-select:none;
+    pointer-events:none;
+  }
+
+  /* Fallback quando l'immagine non carica */
+  .mem-c-img-fallback{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    color:rgba(255,255,255,.25);
+    font-size:22px;
+    background:rgba(255,255,255,.04);
+  }
+  /* Card MATCHED */
+  .mem-c.matched{
+    background:rgba(74,107,82,.1);border-color:#4A6B52;color:#4A6B52;cursor:default;
+    box-shadow:0 0 14px rgba(74,107,82,.2);
+    animation:matchPop .4s cubic-bezier(.34,1.56,.64,1);
+  }
+
+  @keyframes matchPop{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.12);}
+    100%{transform:scale(1);}
+  }
+
   .mem-msg{
     margin-top:8px; font-size:12px; text-align:center; color:var(--text-muted);
   }
+}
+
+@layer theme {
+  html[data-theme="light"] .mem-stat-pill{ background: rgba(var(--navy-rgb),.04); border-color: rgba(var(--navy-rgb),.12); color: rgba(var(--navy-rgb),.6); }
+  html[data-theme="light"] .mem-stat-pill.timer-running{ color:#54708C; }
+  html[data-theme="light"] .mem-stat-pill.timer-warning{ color:#7A5A38; }
+  html[data-theme="light"] .mem-stat-pill.moves-pill{ color:#6E7A50; }
+  html[data-theme="light"] .mem-stat-pill.err-pill{ color:#8A4038; border-color:rgba(171,86,73,.35); background:rgba(171,86,73,.08); }   /* giro 10/10: terracotta scuro già in palette (come .match-combo-pill.x4) */
+  html[data-theme="light"] .mem-c{ border-color: rgba(var(--navy-rgb),.14); color: rgba(var(--navy-rgb),.68); }
+  html[data-theme="light"] .mem-c.flip{ color: var(--text-primary); }
+  html[data-theme="light"] .mem-c.matched{ color:#12805a; }
+  html[data-theme="light"] .mem-c-img-fallback{ background: rgba(var(--navy-rgb),.04); color: rgba(var(--navy-rgb),.25); }
 }

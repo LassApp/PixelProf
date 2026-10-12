@@ -953,7 +953,7 @@ function _renderModuleFilter(){
   const modEyebrow = shq('mod-eyebrow');
   if(modEyebrow){
     const AC = window.AreasConfig;
-    modEyebrow.dataset.areaBadge = AC ? AC.areaBadge(AC.getAreaByKey(areaKey)) : 'ICDL';
+    modEyebrow.dataset.areaBadge = AC ? AC.areaBadge(AC.getAreaByKey(areaKey)) : 'ECDL';
   }
 
   ALL.forEach(k=>{

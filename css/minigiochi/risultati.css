@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════════════
-   MINIGIOCHI — Schermate di risultato   (v8.42.0 · @layer risultati)
+   MINIGIOCHI — Schermate di risultato   (v8.43.0 · @layer risultati)
    Percorso: css/minigiochi/ (stessa cartella di quiz.css).
 
    Prima: la card di fine partita era un "palco" nero fisso in chiaro e senza fondo in scuro, con
@@ -18,8 +18,9 @@
 
    I colori delle squadre NON sono più testo: sono un pallino con anello crema (.res-dot) — le
    tinte squadra (oliva, slate, terracotta, fango) non hanno contrasto sulla card.
-   Le vecchie regole del "palco" nero in @layer theme (pixelprof.css, sezione 11) sono state
-   rimosse: avrebbero vinto su questo layer.
+   v8.43.0: qui è stata fusa anche la struttura che stava in pixelprof.css (due blocchi identici
+   "RESULTS & PODIUM" nel layer base + la "end card" nel layer netflix + il palco nero nel layer theme):
+   tutti rimossi da pixelprof.css, nessun duplicato rimasto.
    ═══════════════════════════════════════════════════════════════════════════════ */
 @layer risultati {
 
@@ -41,45 +42,67 @@
   html[data-theme="light"] .result-wrap{
     --res-bg:linear-gradient(160deg,#7A5A38 0%,#6B4E30 55%,#7A5A38 100%);
   }
-  .result-wrap .result-hero::before{
-    background:radial-gradient(circle,rgba(242,232,213,.14) 0%,transparent 70%);
-  }
 
   /* ── Titolo / punteggio / etichette ────────────────────────────────────── */
-  .result-wrap .result-score{
-    background:none; -webkit-background-clip:border-box; background-clip:border-box;
-    -webkit-text-fill-color:currentColor; color:var(--res-fg);
-    text-shadow:none; filter:none;
+  .result-hero{ position:relative; padding:2rem 0 1.5rem; text-align:center; margin-bottom:1.75rem; }
+  .result-hero::before{
+    content:''; position:absolute; top:-20px; left:50%; transform:translateX(-50%);
+    width:160px; height:160px; border-radius:50%; pointer-events:none;
+    background:radial-gradient(circle,rgba(242,232,213,.14) 0%,transparent 70%);
   }
-  .result-wrap .result-label,
-  .result-wrap .result-time,
-  .result-wrap .result-msg{ color:var(--res-fg-2); }
+  .result-stars{ display:block; font-size:28px; letter-spacing:5px; margin-bottom:10px; }
+  .result-score{
+    display:block; font-size:56px; font-weight:700; line-height:1;
+    font-family:'Share Tech Mono',monospace; color:var(--res-fg);
+  }
+  .result-label{ display:block; font-size:13px; margin-top:6px; color:var(--res-fg-2); }
+  .result-time{ display:block; font-size:12px; margin-top:4px; font-family:'Share Tech Mono',monospace; color:var(--res-fg-2); }
+  .result-msg{ text-align:center; font-size:13px; margin-bottom:1.5rem; line-height:1.6; color:var(--res-fg-2); }
   .result-wrap code{
     color:var(--res-fg); background:var(--res-panel);
     padding:1px 6px; border-radius:5px; font-size:11px;
   }
 
   /* ── Podio ─────────────────────────────────────────────────────────────── */
-  .result-wrap .podium-title{ color:var(--res-fg-2); }
-  .result-wrap .podium-name{ color:var(--res-fg); }
-  .result-wrap .podium-pts{ color:var(--res-fg-2); }
-  .result-wrap .podium-avatar,
-  .result-wrap .p1 .podium-avatar,
-  .result-wrap .p2 .podium-avatar,
-  .result-wrap .p3 .podium-avatar{
-    background:var(--res-panel); border-color:rgba(242,232,213,.45); box-shadow:none;
+  .podium-wrap{ margin-bottom:1.75rem; }
+  .podium-title{
+    font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:1.2px;
+    text-align:center; margin-bottom:14px; color:var(--res-fg-2);
   }
-  .result-wrap .p1 .podium-avatar{ border-color:rgba(228,196,140,.9); }
-  .result-wrap .podium-base,
-  .result-wrap .p2 .podium-base,
-  .result-wrap .p3 .podium-base{
-    background:var(--res-panel); border:1px solid rgba(242,232,213,.28); border-bottom:none; box-shadow:none;
+  .podium-stage{ display:flex; align-items:flex-end; justify-content:center; gap:0; margin-bottom:8px; }
+  .podium-col{ display:flex; flex-direction:column; align-items:center; position:relative; }
+  .podium-col.p1{ order:2; z-index:2; }
+  .podium-col.p2{ order:1; }
+  .podium-col.p3{ order:3; }
+  .podium-avatar{
+    width:52px; height:52px; border-radius:50%; margin-bottom:6px;
+    display:flex; align-items:center; justify-content:center; font-size:22px;
+    border:2px solid rgba(242,232,213,.45); background:var(--res-panel);
   }
-  .result-wrap .p1 .podium-base{
+  .p1 .podium-avatar{ width:62px; height:62px; font-size:26px; border-color:rgba(228,196,140,.9); }
+  .podium-name{
+    max-width:90px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+    font-size:12px; font-weight:600; text-align:center; color:var(--res-fg);
+  }
+  .podium-pts{
+    margin-top:2px; font-size:11px; text-align:center;
+    font-family:'Share Tech Mono',monospace; color:var(--res-fg-2);
+  }
+  .podium-base{
+    width:80px; margin-top:8px; padding:8px 4px 6px; border-radius:8px 8px 0 0;
+    display:flex; flex-direction:column; align-items:center;
+    background:var(--res-panel); border:1px solid rgba(242,232,213,.28); border-bottom:none;
+  }
+  .p1 .podium-base{
+    height:70px; border-color:rgba(228,196,140,.6);
     background:linear-gradient(180deg,rgba(184,147,90,.42),rgba(23,35,45,.24));
-    border-color:rgba(228,196,140,.6);
   }
-  .result-wrap .podium-floor{
+  .p2 .podium-base{ height:50px; width:72px; }
+  .p3 .podium-base{ height:38px; width:72px; }
+  .podium-rank{ font-size:20px; }
+  .p1 .podium-rank{ font-size:24px; }
+  .podium-floor{
+    height:3px; width:240px; margin:0 auto; border-radius:2px;
     background:linear-gradient(90deg,transparent,rgba(242,232,213,.45),transparent);
   }
   /* podio con un solo giocatore (renderer.js → buildPodiumHTML) */
@@ -211,6 +234,8 @@
     background:rgba(var(--accent-rgb),.14); color:var(--text-primary); border:none;
   }
   #tb-context .res-act-btn i{ font-size:14px; color:inherit; }
-  /* con la barra in topbar la card resta staccata dalla topbar (stesso scarto di #g-area / #step-act) */
-  .app:has(#tb-context.has-ctx) #qz-result{ padding-top:48px; }
+  /* Stacco dalla topbar (stesso scarto di #g-area / #step-act: 48px da ≥1000px). Prima valeva solo con la
+     barra azioni in topbar: la card di turno / pareggio / spareggio, che non l'ha, restava incollata. Ora vale
+     per ogni schermata di #qz-result, così riepilogo e transizioni compaiono nello stesso punto. */
+  @media (min-width:1000px){ #qz-result{ padding-top:48px; } }
 }

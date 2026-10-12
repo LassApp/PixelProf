@@ -57,7 +57,7 @@
    invariati nel significato — solo le 6 tinte d'area sono state
    "intonate" alla nuova palette (valori diversi, stesso ruolo).
    ═══════════════════════════════════════════════════════════════════ */
-@layer tokens, stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport, audio, achievements, histcards, loaders, onboarding, areas, flipcard, losapevi, actselect, topbarprofile, dirprofilo, quiz, risultati, pausa, abbina, memory, completafrase, feedback, modcards, theme;
+@layer tokens, stato, base, streaming, netflix, topbar-fix, dashboard, docenti, dialogs, classhealth, csvimport, audio, achievements, histcards, loaders, onboarding, areas, flipcard, losapevi, actselect, topbarprofile, dirprofilo, pausa, abbina, memory, completafrase, verofalso, feedback, quiz, risultati, modcards, theme;
 
 @layer base {
 /* ===============================================
@@ -157,7 +157,6 @@ body{
 .logo-main{font-family:'Orbitron',monospace;font-size:15px;font-weight:900;color:var(--accent);letter-spacing:1px;text-shadow:0 0 16px rgba(var(--accent-rgb),.6)}
 .logo-main em{color:var(--purple);font-style:normal}
 .logo-sub{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text-dim);letter-spacing:2px;text-transform:uppercase;margin-top:1px}
-.logo-hint{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text-muted);letter-spacing:.4px;margin-top:2px}
 .tb-nav{display:flex;gap:4px;align-items:center}
 .tb-btn{
   display:flex;align-items:center;gap:5px;padding:6px 11px;border-radius:var(--radius-sm);
@@ -505,137 +504,6 @@ body{
 .game-restart-btn:hover::after{transform:scaleX(1);}
 .game-restart-btn i{font-size:13px}
 
-/* ===============================================
-   RESULTS & PODIUM
-=============================================== */
-.result-wrap{padding:1.5rem .25rem}
-.result-hero{text-align:center;margin-bottom:1.75rem}
-.result-stars{font-size:28px;letter-spacing:5px;margin-bottom:10px;display:block}
-.result-score{font-size:54px;font-weight:700;color:var(--accent);font-family:'Share Tech Mono',monospace;text-shadow:0 0 24px rgba(var(--accent-rgb),.35);display:block;line-height:1}
-.result-label{font-size:13px;color:rgba(255,255,255,.4);margin-top:6px;display:block}
-.result-time{font-size:12px;color:rgba(255,255,255,.25);margin-top:4px;display:block;font-family:'Share Tech Mono',monospace}
-.result-msg{text-align:center;font-size:13px;color:rgba(255,255,255,.45);margin-bottom:1.5rem;line-height:1.6}
-.podium-wrap{margin-bottom:1.75rem}
-.podium-title{font-size:10px;color:rgba(var(--accent-rgb),.6);text-transform:uppercase;letter-spacing:1.2px;text-align:center;margin-bottom:14px;font-weight:600}
-.podium-stage{display:flex;align-items:flex-end;justify-content:center;gap:0;margin-bottom:8px}
-.podium-col{display:flex;flex-direction:column;align-items:center;position:relative}
-.podium-col.p1{order:2;z-index:2}.podium-col.p2{order:1}.podium-col.p3{order:3}
-.podium-avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:6px;border:2px solid transparent}
-.p1 .podium-avatar{width:62px;height:62px;font-size:26px;background:linear-gradient(135deg,rgba(184,147,90,.18),rgba(122,90,56,.08));border-color:rgba(184,147,90,.5);box-shadow:0 0 20px rgba(184,147,90,.2)}
-.p2 .podium-avatar{background:rgba(192,192,192,.1);border-color:rgba(192,192,192,.35);box-shadow:0 0 12px rgba(192,192,192,.1)}
-.p3 .podium-avatar{background:rgba(140,90,58,.1);border-color:rgba(140,90,58,.3);box-shadow:0 0 12px rgba(140,90,58,.1)}
-.podium-name{font-size:12px;font-weight:600;color:#fff;text-align:center;max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.podium-pts{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;text-align:center;font-family:'Share Tech Mono',monospace}
-.podium-base{border-radius:8px 8px 0 0;width:80px;display:flex;flex-direction:column;align-items:center;padding:8px 4px 6px;margin-top:8px}
-.p1 .podium-base{height:70px;background:linear-gradient(180deg,rgba(184,147,90,.18),rgba(122,90,56,.08));border:1px solid rgba(184,147,90,.25);border-bottom:none}
-.p2 .podium-base{height:50px;background:rgba(192,192,192,.07);border:1px solid rgba(192,192,192,.18);border-bottom:none;width:72px}
-.p3 .podium-base{height:38px;background:rgba(140,90,58,.07);border:1px solid rgba(140,90,58,.18);border-bottom:none;width:72px}
-.podium-rank{font-size:20px}.p1 .podium-rank{font-size:24px}
-.podium-floor{height:3px;background:linear-gradient(90deg,transparent,rgba(var(--accent-rgb),.3),transparent);border-radius:2px;width:240px;margin:0 auto}
-
-/* ===============================================
-   MATCH / MEMORY / FILL — v7 + Abbina v2.1.6
-=============================================== */
-.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.col-lbl{font-size:10px;color:rgba(var(--accent-rgb),.6);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px;font-family:'Share Tech Mono',monospace}
-.match-item{
-  padding:8px 10px;border-radius:var(--radius-sm);border:1px solid var(--border-subtle);
-  background:var(--surface-1);cursor:pointer;font-size:12px;margin-bottom:5px;
-  transition:all var(--transition-fast);line-height:1.4;font-family:inherit;text-align:left;
-  width:100%;color:rgba(255,255,255,.7);position:relative;overflow:hidden;
-}
-.match-item::after{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
-  background:var(--pair-color,var(--accent));transform:scaleY(0);transition:transform var(--transition-fast);
-}
-.match-item:hover:not(.matched):not(.locked){border-color:var(--pair-color,var(--accent));color:#fff;background:var(--surface-2);}
-.match-item:hover:not(.matched):not(.locked)::after{transform:scaleY(1);}
-.match-item.sel{border-color:var(--pair-color,var(--accent));background:color-mix(in srgb,var(--pair-color,var(--accent)) 12%,transparent);color:var(--pair-color,var(--accent));}
-.match-item.sel::after{background:var(--pair-color,var(--accent));transform:scaleY(1);}
-/* v2.1.6: matched items use per-pair color via --pair-color CSS var */
-.match-item.matched{
-  cursor:default;
-  border-color:var(--pair-color,#4A6B52);
-  color:var(--pair-color,#4A6B52);
-  background:color-mix(in srgb,var(--pair-color,#4A6B52) 12%,transparent);
-  box-shadow:0 0 10px color-mix(in srgb,var(--pair-color,#4A6B52) 30%,transparent);
-}
-.match-item.matched::after{
-  background:var(--pair-color,#4A6B52);
-  transform:scaleY(1);
-}
-.match-item.flash{background:rgba(171,86,73,.1);border-color:#AB5649;animation:matchFlash .5s ease;}
-@keyframes matchFlash{0%,100%{opacity:1;}50%{opacity:.4;}}
-.match-item.locked{cursor:default;pointer-events:none;}
-
-/* ── Abbina v2.1.6 header pills ── */
-.match-hdr{display:flex;align-items:center;gap:6px;margin-bottom:12px;flex-wrap:wrap;}
-.match-combo-pill{
-  display:flex;align-items:center;gap:5px;
-  padding:5px 12px;border-radius:20px;
-  border:1px solid rgba(122,90,56,.3);
-  background:rgba(122,90,56,.08);
-  font-size:12px;font-weight:700;
-  font-family:'Share Tech Mono',monospace;
-  color:#7A5A38;
-  transition:all var(--transition-fast);
-}
-.match-combo-pill.x1{border-color:rgba(255,255,255,.15);background:rgba(255,255,255,.04);color:rgba(255,255,255,.4);}
-.match-combo-pill.x2{border-color:rgba(84,112,140,.4);background:rgba(84,112,140,.1);color:#54708C;}
-.match-combo-pill.x3{border-color:rgba(var(--purple-rgb),.5);background:rgba(var(--purple-rgb),.12);color:#8B9968;}
-.match-combo-pill.x4{border-color:rgba(171,86,73,.5);background:rgba(171,86,73,.12);color:#AB5649;}
-.match-combo-pill.xmax{
-  border-color:rgba(184,147,90,.6);background:rgba(184,147,90,.12);color:#B8935A;
-  animation:comboPulse 1s ease-in-out infinite alternate;
-}
-@keyframes comboPulse{
-  from{box-shadow:0 0 0 0 rgba(184,147,90,0);}
-  to{box-shadow:0 0 0 6px rgba(184,147,90,.15);}
-}
-.match-combo-pill.combo-bump{animation:comboBump .35s cubic-bezier(.34,1.56,.64,1);}
-@keyframes comboBump{0%{transform:scale(1);}40%{transform:scale(1.2);}100%{transform:scale(1);}}
-.match-paused-overlay{
-  position:absolute;inset:0;border-radius:var(--radius-md);
-  background:rgba(var(--navy-rgb),.92);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:8px;z-index:10;
-  backdrop-filter:blur(4px);
-}
-.match-paused-overlay .po-icon{font-size:28px}
-.match-paused-overlay .po-text{font-size:12px;color:rgba(255,255,255,.5);font-family:'Share Tech Mono',monospace;letter-spacing:1px;text-transform:uppercase}
-
-/* ── MEMORY BOARD & CARDS — v9 ── */
-.mem-board{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-
-/* Memory game header row */
-.mem-hdr{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
-.mem-stat-pill{
-  display:flex;align-items:center;gap:5px;
-  padding:5px 11px;border-radius:20px;
-  border:1px solid var(--border-mid);background:var(--surface-1);
-  font-size:12px;font-weight:600;font-family:'Share Tech Mono',monospace;
-  color:rgba(255,255,255,.55);transition:all var(--transition-fast);
-}
-.mem-stat-pill i{font-size:14px}
-.mem-stat-pill.timer-running{border-color:rgba(84,112,140,.35);color:#54708C;background:rgba(84,112,140,.08);}
-.mem-stat-pill.timer-warning{border-color:rgba(122,90,56,.45);color:#7A5A38;background:rgba(122,90,56,.1);animation:timerPulse .8s ease-in-out infinite alternate;}
-.mem-stat-pill.moves-pill{border-color:rgba(var(--purple-rgb),.3);color:#8B9968;background:rgba(var(--purple-rgb),.07);}
-.mem-stat-pill.score-pill{border-color:rgba(var(--accent-rgb),.3);color:var(--accent);background:rgba(var(--accent-rgb),.07);}
-.mem-stat-pill.err-pill{border-color:rgba(171,86,73,.25);color:rgba(196,120,105,.9);background:rgba(171,86,73,.06);}   /* giro 10/10: era uno style inline in game-match.js (batteva ogni override per tema/topbar) */
-.mem-stat-pill.score-pill.score-bump{animation:scoreBump .35s cubic-bezier(.34,1.56,.64,1);}
-@keyframes scoreBump{0%{transform:scale(1);}40%{transform:scale(1.14);border-color:rgba(var(--accent-rgb),.7);box-shadow:0 0 12px rgba(var(--accent-rgb),.2);}100%{transform:scale(1);}}
-
-/* Speed Quiz pause-btn play-pulse — draws eye to "press play" */
-.mem-pause-btn.is-paused{
-  border-color:rgba(var(--accent-rgb),.5);
-  color:var(--accent);
-  background:rgba(var(--accent-rgb),.1);
-  animation:playPulse 1.4s ease-in-out infinite;
-}
-@keyframes playPulse{
-  0%,100%{box-shadow:0 0 0 0 rgba(var(--accent-rgb),0);}
-  50%{box-shadow:0 0 0 5px rgba(var(--accent-rgb),.18);}
-}
 
 /* Global UI lock during Speed Quiz pause */
 }
@@ -649,124 +517,6 @@ body{
 }
 }
 @layer base {
-.mem-pause-btn{
-  display:flex;align-items:center;gap:5px;padding:5px 10px;border-radius:20px;
-  border:1px solid var(--border-mid);background:var(--surface-1);
-  color:var(--text-muted);font-size:11px;font-weight:600;cursor:pointer;font-family:inherit;
-  transition:all var(--transition-fast);
-}
-.mem-pause-btn:hover{border-color:rgba(var(--accent-rgb),.3);color:var(--accent);background:var(--accent-dim);}
-@keyframes timerPulse{from{opacity:.7;}to{opacity:1;}}
-
-.mem-c{
-  aspect-ratio:1;border-radius:var(--radius-md);
-  /* ── v9: border ALWAYS visible ── */
-  border:1px solid rgba(255,255,255,.14);
-  cursor:pointer;display:flex;align-items:center;justify-content:center;
-  font-size:11px;text-align:center;line-height:1.3;font-weight:700;
-  transition:transform var(--transition-bounce),box-shadow var(--transition-fast),
-             background var(--transition-fast),border-color var(--transition-fast);
-  padding:4px;color:rgba(255,255,255,.7);
-  position:relative;overflow:hidden;
-  box-shadow:0 2px 8px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.04);
-}
-
-/* Card BACK — v10: branded PixelProf design */
-.mem-c.hide{
-  background:
-    radial-gradient(circle at 30% 25%, rgba(var(--accent-rgb),.05) 0%, transparent 55%),
-    radial-gradient(circle at 70% 75%, rgba(var(--purple-rgb),.05) 0%, transparent 55%),
-    repeating-linear-gradient(
-      60deg,
-      rgba(var(--accent-rgb),.028) 0px,
-      rgba(var(--accent-rgb),.028) 1px,
-      transparent 1px,
-      transparent 16px
-    ),
-    repeating-linear-gradient(
-      -60deg,
-      rgba(var(--purple-rgb),.022) 0px,
-      rgba(var(--purple-rgb),.022) 1px,
-      transparent 1px,
-      transparent 16px
-    ),
-    linear-gradient(150deg,rgba(14,20,44,.98),rgba(8,12,28,1));
-  border-color:rgba(var(--accent-rgb),.22);
-  color:transparent;font-size:0;
-  box-shadow:0 3px 16px rgba(0,0,0,.4),inset 0 1px 0 rgba(var(--accent-rgb),.08),inset 0 -1px 0 rgba(var(--purple-rgb),.04);
-}
-/* PixelProf branded logo on card back — centered hex+P mark */
-.mem-c.hide::before{
-  content:'';
-  position:absolute;inset:0;
-  background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 44 44'%3E%3C!-- outer hex --%3E%3Cpolygon points='22,3 38,12 38,32 22,41 6,32 6,12' fill='none' stroke='%2300ffc8' stroke-width='1.4' stroke-opacity='.22'/%3E%3C!-- inner hex --%3E%3Cpolygon points='22,9 33,15.5 33,28.5 22,35 11,28.5 11,15.5' fill='rgba(var(--accent-rgb),0.05)' stroke='%2300ffc8' stroke-width='.9' stroke-opacity='.14'/%3E%3C!-- P stem --%3E%3Crect x='17' y='15' width='2.5' height='14' rx='1.2' fill='%2300ffc8' opacity='.28'/%3E%3C!-- P bowl --%3E%3Cpath d='M19.5 15 Q27 15 27 19.5 Q27 24 19.5 24' stroke='%2300ffc8' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-opacity='.28'/%3E%3C!-- accent dots --%3E%3Ccircle cx='34' cy='11' r='1.8' fill='%237c6aff' opacity='.3'/%3E%3Ccircle cx='10' cy='33' r='1.4' fill='%2300ffc8' opacity='.2'/%3E%3C/svg%3E")
-    center / 62% no-repeat;
-  pointer-events:none;
-}
-/* hover on hidden card — v10: intensify border + soft glow */
-.mem-c.hide:hover{
-  transform:translateY(-3px) scale(1.04);
-  border-color:rgba(var(--accent-rgb),.48);
-  box-shadow:0 8px 24px rgba(0,0,0,.45),0 0 0 1px rgba(var(--accent-rgb),.2),inset 0 1px 0 rgba(var(--accent-rgb),.12);
-}
-/* Card FLIPPED */
-.mem-c.flip{
-  background:linear-gradient(135deg,rgba(var(--purple-rgb),.2),rgba(100,80,220,.12));
-  border-color:var(--purple);color:#c4baff;
-  box-shadow:0 0 18px rgba(var(--purple-rgb),.22),inset 0 1px 0 rgba(255,255,255,.08);
-}
-/* Card FLIPPED durante pausa — nascosta visivamente */
-.mem-c.flip.paused-hidden{opacity:0;pointer-events:none;}
-
-/* ── Carta immagine — override flip style per carte con PNG ── */
-.mem-c.flip.mem-c-image{
-  background:#0a0e1e;
-  border-color:rgba(var(--accent-rgb),.5);
-  padding:0;
-  box-shadow:0 0 18px rgba(var(--accent-rgb),.18),inset 0 1px 0 rgba(var(--accent-rgb),.1);
-}
-
-/* Immagine dentro carta Memory */
-.mem-c-img{
-  width:100%;height:100%;
-  object-fit:cover;
-  border-radius:calc(var(--radius-md) - 1px);
-  display:block;
-  user-select:none;
-  pointer-events:none;
-}
-
-/* Fallback quando l'immagine non carica */
-.mem-c-img-fallback{
-  position:absolute;inset:0;
-  display:flex;align-items:center;justify-content:center;
-  color:rgba(255,255,255,.25);
-  font-size:22px;
-  background:rgba(255,255,255,.04);
-}
-/* Card MATCHED */
-.mem-c.matched{
-  background:rgba(74,107,82,.1);border-color:#4A6B52;color:#4A6B52;cursor:default;
-  box-shadow:0 0 14px rgba(74,107,82,.2);
-  animation:matchPop .4s cubic-bezier(.34,1.56,.64,1);
-}
-/* Paused overlay */
-.mem-paused-overlay{
-  position:absolute;inset:0;border-radius:var(--radius-md);
-  background:rgba(var(--navy-rgb),.92);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  gap:8px;z-index:10;
-  backdrop-filter:blur(4px);
-}
-.mem-paused-overlay .po-icon{font-size:28px}
-.mem-paused-overlay .po-text{font-size:12px;color:rgba(255,255,255,.5);font-family:'Share Tech Mono',monospace;letter-spacing:1px;text-transform:uppercase}
-@keyframes matchPop{
-  0%{transform:scale(1);}
-  50%{transform:scale(1.12);}
-  100%{transform:scale(1);}
-}
-
 /* ==================================================
    CUSTOM CONFIRM DIALOG — v9
 ================================================== */
@@ -811,44 +561,6 @@ body{
 .pp-dialog-btn.confirm::after{background:#AB5649;}
 .pp-dialog-btn.confirm:hover{background:rgba(171,86,73,.2);}
 
-.fill-sent{font-size:14px;line-height:2.4;margin-bottom:8px;color:#e2e8f0}
-.blank-in{display:inline-block;min-width:80px;border-bottom:2px solid rgba(var(--accent-rgb),.4);padding:0 4px;font-size:13px;outline:none;background:transparent;color:var(--accent);font-family:'Share Tech Mono',monospace;transition:border-color var(--transition-fast);}
-.blank-in:focus{border-bottom-color:var(--accent);}
-.word-bank{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-.chip{
-  padding:4px 12px;border-radius:20px;border:1px solid var(--border-mid);
-  background:var(--surface-1);font-size:12px;cursor:pointer;font-family:inherit;
-  color:rgba(255,255,255,.6);transition:all var(--transition-fast);font-weight:500;
-  position:relative;overflow:hidden;
-}
-.chip::after{
-  content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;
-  background:var(--accent);transform:scaleX(0);transition:transform var(--transition-fast);
-}
-.chip:hover{border-color:var(--accent-border);color:var(--accent);background:var(--accent-dim);}
-.chip:hover::after{transform:scaleX(1);}
-
-/* ===============================================
-   VERO O FALSO — v1.0.0
-=============================================== */
-.tf-card{ text-align:center; }
-.tf-btns{ display:flex; gap:10px; margin-top:4px; }
-.tf-btn{
-  flex:1; padding:16px; border-radius:var(--radius-md);
-  border:1.5px solid var(--border-mid); background:var(--surface-1);
-  font-size:15px; font-weight:700; cursor:pointer; font-family:inherit;
-  display:flex; align-items:center; justify-content:center; gap:8px;
-  transition:all var(--transition-fast); color:rgba(255,255,255,.75);
-}
-.tf-btn:disabled{ cursor:default; opacity:.85; }
-.tf-btn i{ font-size:18px; }
-.tf-true{ border-color:rgba(74,107,82,.25); }
-.tf-true:hover:not(:disabled){ background:rgba(74,107,82,.08); border-color:rgba(74,107,82,.5); color:#4A6B52; }
-.tf-false{ border-color:rgba(171,86,73,.25); }
-.tf-false:hover:not(:disabled){ background:rgba(171,86,73,.08); border-color:rgba(171,86,73,.5); color:#AB5649; }
-.tf-btn.tf-correct{ background:rgba(74,107,82,.15); border-color:#4A6B52; color:#4A6B52; }
-.tf-btn.tf-wrong{ background:rgba(171,86,73,.12); border-color:#AB5649; color:#AB5649; }
-
 /* ===============================================
    STATS SCREEN — v7
 =============================================== */
@@ -869,34 +581,6 @@ body{
 .stat-c .sl{font-size:11px;color:rgba(255,255,255,.35);margin-top:3px}
 .mod-stat{margin-bottom:12px}
 .mod-stat-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:5px;color:rgba(255,255,255,.6);font-weight:500}
-
-/* ===============================================
-   RESULTS & PODIUM — v7
-=============================================== */
-.result-wrap{padding:1.5rem .25rem}
-.result-hero{text-align:center;margin-bottom:1.75rem}
-.result-stars{font-size:28px;letter-spacing:5px;margin-bottom:10px;display:block}
-.result-score{font-size:54px;font-weight:700;color:var(--accent);font-family:'Share Tech Mono',monospace;text-shadow:0 0 24px rgba(var(--accent-rgb),.35);display:block;line-height:1}
-.result-label{font-size:13px;color:rgba(255,255,255,.4);margin-top:6px;display:block}
-.result-time{font-size:12px;color:rgba(255,255,255,.25);margin-top:4px;display:block;font-family:'Share Tech Mono',monospace}
-.result-msg{text-align:center;font-size:13px;color:rgba(255,255,255,.45);margin-bottom:1.5rem;line-height:1.6}
-.podium-wrap{margin-bottom:1.75rem}
-.podium-title{font-size:10px;color:rgba(var(--accent-rgb),.6);text-transform:uppercase;letter-spacing:1.2px;text-align:center;margin-bottom:14px;font-weight:600}
-.podium-stage{display:flex;align-items:flex-end;justify-content:center;gap:0;margin-bottom:8px}
-.podium-col{display:flex;flex-direction:column;align-items:center;position:relative}
-.podium-col.p1{order:2;z-index:2}.podium-col.p2{order:1}.podium-col.p3{order:3}
-.podium-avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:6px;border:2px solid transparent}
-.p1 .podium-avatar{width:62px;height:62px;font-size:26px;background:linear-gradient(135deg,rgba(184,147,90,.18),rgba(122,90,56,.08));border-color:rgba(184,147,90,.5);box-shadow:0 0 20px rgba(184,147,90,.2)}
-.p2 .podium-avatar{background:rgba(192,192,192,.1);border-color:rgba(192,192,192,.35);box-shadow:0 0 12px rgba(192,192,192,.1)}
-.p3 .podium-avatar{background:rgba(140,90,58,.1);border-color:rgba(140,90,58,.3);box-shadow:0 0 12px rgba(140,90,58,.1)}
-.podium-name{font-size:12px;font-weight:600;color:#fff;text-align:center;max-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.podium-pts{font-size:11px;color:rgba(255,255,255,.4);margin-top:2px;text-align:center;font-family:'Share Tech Mono',monospace}
-.podium-base{border-radius:8px 8px 0 0;width:80px;display:flex;flex-direction:column;align-items:center;padding:8px 4px 6px;margin-top:8px}
-.p1 .podium-base{height:70px;background:linear-gradient(180deg,rgba(184,147,90,.18),rgba(122,90,56,.08));border:1px solid rgba(184,147,90,.25);border-bottom:none}
-.p2 .podium-base{height:50px;background:rgba(192,192,192,.07);border:1px solid rgba(192,192,192,.18);border-bottom:none;width:72px}
-.p3 .podium-base{height:38px;background:rgba(140,90,58,.07);border:1px solid rgba(140,90,58,.18);border-bottom:none;width:72px}
-.podium-rank{font-size:20px}.p1 .podium-rank{font-size:24px}
-.podium-floor{height:3px;background:linear-gradient(90deg,transparent,rgba(var(--accent-rgb),.3),transparent);border-radius:2px;width:240px;margin:0 auto}
 
 /* ===============================================
    ACTIVITY HERO THEMES — v7
@@ -2269,7 +1953,7 @@ body{
 
 /* Pill "Live" accanto all'eyebrow */
 .home-hero-eyebrow::before {
-  content: 'ICDL';
+  content: 'ECDL';
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2284,7 +1968,7 @@ body{
   flex-shrink: 0;
 }
 /* giro 10/10: la sigla segue l'Area (es. ECDL, AI, RETI…): la scrive goStep('cat') in data-area-badge.
-   Senza l'attributo (es. eyebrow della schermata Moduli) resta "ICDL" come sopra. */
+   Senza l'attributo (es. eyebrow della schermata Moduli) resta "ECDL" come sopra. */
 .home-hero-eyebrow[data-area-badge]::before { content: attr(data-area-badge); }
 
 .home-hero-title {
@@ -2514,39 +2198,6 @@ body{
    quiz). */
 
 /* ─────────────────────────────────────────────────────────────────
-   RISULTATI — "Content completed" screen
-   ───────────────────────────────────────────────────────────────── */
-.result-wrap {
-  max-width: 480px;
-  margin: 0 auto;
-}
-
-/* Result hero — "End card" Netflix */
-.result-hero {
-  position: relative;
-  padding: 2rem 0 1.5rem ;
-}
-.result-hero::before {
-  content: '';
-  position: absolute;
-  top: -20px; left: 50%; transform: translateX(-50%);
-  width: 160px; height: 160px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(var(--accent-rgb),.08) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.result-score {
-  font-size: 56px ;
-  background: linear-gradient(135deg, var(--accent), #54708C);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: none ;
-  filter: drop-shadow(0 0 24px rgba(var(--accent-rgb),.25));
-}
-
-/* ─────────────────────────────────────────────────────────────────
    LEADERBOARD — "Top Charts" stile streaming
    ───────────────────────────────────────────────────────────────── */
 .lb-type-card {
@@ -2677,26 +2328,6 @@ body{
 }
 
 /* ─────────────────────────────────────────────────────────────────
-   MEMORY BOARD — "Card reveal" cinematico
-   ───────────────────────────────────────────────────────────────── */
-.mem-c.hide:hover {
-  border-color: rgba(var(--accent-rgb),.55) ;
-  box-shadow:
-    0 8px 28px rgba(0,0,0,.45),
-    0 0 0 1px rgba(var(--accent-rgb),.22),
-    0 0 20px rgba(var(--accent-rgb),.08) ;
-}
-
-/* ─────────────────────────────────────────────────────────────────
-   ABBINA MATCH — colori per coppia più vibranti
-   ───────────────────────────────────────────────────────────────── */
-.match-item {
-  border-radius: 10px ;
-  font-size: 12px ;
-  padding: 9px 11px ;
-}
-
-/* ─────────────────────────────────────────────────────────────────
    SCROLLBAR — stile streaming scuro
    ───────────────────────────────────────────────────────────────── */
 ::-webkit-scrollbar {
@@ -2760,12 +2391,6 @@ body{
     color: var(--accent) ;
     filter: none ;
   }
-  .result-score {
-    background: none ;
-    -webkit-text-fill-color: var(--accent) ;
-    color: var(--accent) ;
-    filter: none ;
-  }
   .logo-main {
     background: none ;
     -webkit-text-fill-color: var(--accent) ;
@@ -2787,7 +2412,6 @@ body{
    ───────────────────────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   .home-hero-title,
-  .result-score,
   .logo-main {
     background: none ;
     -webkit-text-fill-color: currentColor ;
@@ -3195,7 +2819,6 @@ html[data-theme="light"] .logo-main{ background:none; -webkit-background-clip:bo
 html[data-theme="light"] .logo-main em{ background:none; -webkit-background-clip:border-box; background-clip:border-box; -webkit-text-fill-color:currentColor; color:#FBF6EC; }
 html[data-theme="light"] .logo-sub,
 html[data-theme="light"] .cs-logo-sub{ color: #F2E8D5; } /* giro colori 04/10: era .7 = 3.2:1 su fango */
-html[data-theme="light"] .logo-hint{ color: #F2E8D5; } /* giro colori 04/10: era .55 = 2.6:1 su fango */
 html[data-theme="light"] .logo-wrap:hover{ background: rgba(var(--accent-rgb),.06); border-color: rgba(var(--accent-rgb),.18); }
 html[data-theme="light"] .tb-btn{ color: rgba(242,232,213,.75); }
 html[data-theme="light"] .tb-btn:hover{ background: rgba(242,232,213,.14); color: #F2E8D5; }
@@ -3264,7 +2887,7 @@ html[data-theme="light"] .act-back-btn:hover{ background: rgba(var(--navy-rgb),.
 html[data-theme="light"] .act-context-label{ color: rgba(var(--navy-rgb),.65); }
 html[data-theme="light"] .setup-card{ background:#ffffff; border-color: rgba(var(--navy-rgb),.09); }
 html[data-theme="light"] .num-btn,html[data-theme="light"] .mode-btn,
-html[data-theme="light"] .pchip,html[data-theme="light"] .chip{ color: rgba(var(--navy-rgb),.6); }
+html[data-theme="light"] .pchip{ color: rgba(var(--navy-rgb),.6); }   /* .chip (banca parole) → css/minigiochi/completa-frase.css */
 html[data-theme="light"] .inp-row input,html[data-theme="light"] .team-row input,
 html[data-theme="light"] .cs-add-inp,html[data-theme="light"] .login-inp,
 html[data-theme="light"] .cw-invite-inp,html[data-theme="light"] .dp-add-select,
@@ -3339,29 +2962,12 @@ html[data-theme="light"] .q-card{ background:#ffffff; border-color: rgba(var(--n
 html[data-theme="light"] .q-text{ color:var(--navy); }
 /* .opt/.fb light-mode — v8.34.0: rimossi, erano usati solo da #qz-game.
    Nuovo stile chiaro in css/minigiochi/quiz.css (@layer theme). */
-html[data-theme="light"] .tf-btn{ background: rgba(var(--navy-rgb),.03); border-color: rgba(var(--navy-rgb),.09); color: rgba(var(--navy-rgb),.72); }
-html[data-theme="light"] .tf-true:hover:not(:disabled){ color:#0a8f5a; }
-html[data-theme="light"] .tf-false:hover:not(:disabled){ color:#8A4038; }
-html[data-theme="light"] .tf-btn.tf-correct{ color:#0a8f5a; }
-html[data-theme="light"] .tf-btn.tf-wrong{ color:#8A4038; }
 html[data-theme="light"] .live-chip{ background: rgba(var(--navy-rgb),.04); border-color: rgba(var(--navy-rgb),.1); }
 html[data-theme="light"] .turn-lbl{ color: rgba(var(--navy-rgb),.5); }
 html[data-theme="light"] .prog-bar{ background: rgba(var(--navy-rgb),.08); }
 
 /* ── 8. PILLOLE STATO (timer/score/moves/combo) ──────────────── */
-html[data-theme="light"] .mem-stat-pill{ background: rgba(var(--navy-rgb),.04); border-color: rgba(var(--navy-rgb),.12); color: rgba(var(--navy-rgb),.6); }
-html[data-theme="light"] .mem-stat-pill.timer-running{ color:#54708C; }
-html[data-theme="light"] .mem-stat-pill.timer-warning{ color:#7A5A38; }
-html[data-theme="light"] .mem-stat-pill.moves-pill{ color:#6E7A50; }
-html[data-theme="light"] .mem-stat-pill.err-pill{ color:#8A4038; border-color:rgba(171,86,73,.35); background:rgba(171,86,73,.08); }   /* giro 10/10: terracotta scuro già in palette (come .match-combo-pill.x4) */
-html[data-theme="light"] .mem-pause-btn{ background: rgba(var(--navy-rgb),.04); border-color: rgba(var(--navy-rgb),.12); color: rgba(var(--navy-rgb),.55); }
 html[data-theme="light"] .audio-toggle-btn.muted{ color:#e8a89a; border-color: rgba(232,168,154,.4); background: rgba(232,168,154,.1); }
-html[data-theme="light"] .match-combo-pill{ color:#7A5A38; }
-html[data-theme="light"] .match-combo-pill.x1{ color: rgba(var(--navy-rgb),.4); }
-html[data-theme="light"] .match-combo-pill.x2{ color:#54708C; }
-html[data-theme="light"] .match-combo-pill.x3{ color:#6E7A50; }
-html[data-theme="light"] .match-combo-pill.x4{ color:#8A4038; }
-html[data-theme="light"] .match-combo-pill.xmax{ color:#7A5A38; }
 /* .timer-pill: countdown Speed Quiz (#qz-timer) — l'ambra piena
    #7A5A38 su sfondo (quasi) bianco scende a un contrasto ~1.8:1,
    ben sotto la soglia leggibile. Stessa "ink" ambra/rossa già usata
@@ -3369,20 +2975,10 @@ html[data-theme="light"] .match-combo-pill.xmax{ color:#7A5A38; }
 html[data-theme="light"] .timer-pill{ color:#7A5A38; }
 html[data-theme="light"] .timer-pill.red{ color:#8A4038; }
 
-/* ── 9. MATCH (Abbina) + MEMORY — testo neutro, bordo/sfondo hue-coded intatti ── */
-html[data-theme="light"] .match-item{ background: rgba(var(--navy-rgb),.03); border-color: rgba(var(--navy-rgb),.09); color: rgba(var(--navy-rgb),.72); }
-html[data-theme="light"] .match-item:hover:not(.matched):not(.locked){ color:var(--navy); background: rgba(var(--navy-rgb),.06); }
-html[data-theme="light"] .match-item.sel{ color: var(--text-primary); }
-html[data-theme="light"] .match-item.matched{ color: var(--text-primary); }
-html[data-theme="light"] .mem-c{ border-color: rgba(var(--navy-rgb),.14); color: rgba(var(--navy-rgb),.68); }
-html[data-theme="light"] .mem-c.flip{ color: var(--text-primary); }
-html[data-theme="light"] .mem-c.matched{ color:#12805a; }
-html[data-theme="light"] .mem-c-img-fallback{ background: rgba(var(--navy-rgb),.04); color: rgba(var(--navy-rgb),.25); }
-/* Il retro delle carte (.mem-c.hide) resta scuro/brandizzato apposta:
-   è un "poster" auto-contenuto, non una superficie di lettura. */
 
-/* ── 10. FILL (Completa la frase) ────────────────────────────── */
-html[data-theme="light"] .fill-sent{ color:var(--navy); }
+
+/* ── 9./10. MATCH, MEMORY, FILL, VERO O FALSO — blocchi chiari spostati in css/minigiochi/ (v8.43.0):
+   abbina.css, memory.css, pausa.css, completa-frase.css, vero-falso.css (@layer theme in coda a ogni file). ── */
 
 /* ── 11. RESULT / CELEBRAZIONE ───────────────────────────────────
    v8.42.0: le schermate di risultato non sono più un "palco" nero in light — stile in

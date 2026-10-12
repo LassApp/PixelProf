@@ -271,8 +271,7 @@
   html:not([data-theme="light"]) .cs-logo-text{ color:var(--navy); }
   html:not([data-theme="light"]) .cs-logo-text em{ color:#55603F; }
   html:not([data-theme="light"]) .logo-sub,
-  html:not([data-theme="light"]) .cs-logo-sub,
-  html:not([data-theme="light"]) .logo-hint{ color:rgba(var(--navy-rgb),.8); }
+  html:not([data-theme="light"]) .cs-logo-sub { color:rgba(var(--navy-rgb),.8); }
 
   /* pulsanti topbar (.tb-btn e la classe parallela .audio-toggle-btn,
      che copre anche .theme-toggle-btn) */

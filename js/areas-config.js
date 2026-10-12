@@ -1851,9 +1851,9 @@ function areaIconHtml(area) {
   return (area && area.icon) || '<i class="ti ti-folder"></i>';
 }
 
-/** Sigla breve di un'Area per i badge ("ECDL", "AI"…). Ricade su "ICDL" (valore storico) se l'Area non ne ha una. */
+/** Sigla breve di un'Area per i badge ("ECDL", "AI"…). Ricade su "ECDL" se l'Area non ne ha una. */
 function areaBadge(area) {
-  return (area && area.badge) || 'ICDL';
+  return (area && area.badge) || 'ECDL';
 }
 
 /** Solo i moduli con contenuti di gioco già pronti (per Area, o su tutte se areaKey omesso). */

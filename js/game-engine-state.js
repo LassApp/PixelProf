@@ -2161,7 +2161,7 @@ function goStep(s){
         const crs=loadCourses().find(x=>x.id===activeCourseId);
         area=AC.getAreaByKey((crs&&crs.areaKey)||'ecdl');
       }
-      catEyebrow.dataset.areaBadge=AC?AC.areaBadge(area):'ICDL';
+      catEyebrow.dataset.areaBadge=AC?AC.areaBadge(area):'ECDL';
     }
     // v9.0.0: passo "scegli modalità" del tour guidato Docente.
     if(typeof OnboardingTour!=='undefined') setTimeout(()=>OnboardingTour.showHomeCategoryStep(), 300);

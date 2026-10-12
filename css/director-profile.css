@@ -56,10 +56,6 @@
   background:rgba(var(--accent-rgb),.1); border:1px solid rgba(var(--accent-rgb),.28);
 }
 .dd-enter-text{ flex:1; min-width:0; }
-.dd-enter-eyebrow{
-  font-family:'Share Tech Mono',monospace; font-size:9px; letter-spacing:2px; text-transform:uppercase;
-  color:rgba(var(--accent-rgb),.6); display:block; margin-bottom:2px;
-}
 .dd-enter-title{ font-size:14px; font-weight:700; color:#fff; }
 .dd-enter-sub{ font-size:11px; color:rgba(255,255,255,.42); line-height:1.4; }
 .dd-enter-cta{
@@ -115,7 +111,6 @@
   }
   html[data-theme="light"] .dd-enter-title{ color:var(--navy); }
   html[data-theme="light"] .dd-enter-sub{ color:rgba(var(--navy-rgb),.5); }
-  html[data-theme="light"] .dd-enter-eyebrow{ color:rgba(0,140,110,.8); }
 
   html[data-theme="light"] .dp-feedback{ color:rgba(var(--navy-rgb),.45); }
   html[data-theme="light"] .dp-locked-note{

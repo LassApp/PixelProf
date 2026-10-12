@@ -1,0 +1,33 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   MINIGIOCHI — Vero o Falso   (v8.43.0 · @layer verofalso)
+   Percorso: css/minigiochi/ (stessa cartella di quiz.css).
+   Pulsanti Vero/Falso e relativi stati corretto/sbagliato. Prima in pixelprof.css ("VERO O FALSO").
+   Il feedback sotto i pulsanti è in feedback.css.
+   ═══════════════════════════════════════════════════════════════════════════════ */
+@layer verofalso {
+  .tf-card{ text-align:center; }
+  .tf-btns{ display:flex; gap:10px; margin-top:4px; }
+  .tf-btn{
+    flex:1; padding:16px; border-radius:var(--radius-md);
+    border:1.5px solid var(--border-mid); background:var(--surface-1);
+    font-size:15px; font-weight:700; cursor:pointer; font-family:inherit;
+    display:flex; align-items:center; justify-content:center; gap:8px;
+    transition:all var(--transition-fast); color:rgba(255,255,255,.75);
+  }
+  .tf-btn:disabled{ cursor:default; opacity:.85; }
+  .tf-btn i{ font-size:18px; }
+  .tf-true{ border-color:rgba(74,107,82,.25); }
+  .tf-true:hover:not(:disabled){ background:rgba(74,107,82,.08); border-color:rgba(74,107,82,.5); color:#4A6B52; }
+  .tf-false{ border-color:rgba(171,86,73,.25); }
+  .tf-false:hover:not(:disabled){ background:rgba(171,86,73,.08); border-color:rgba(171,86,73,.5); color:#AB5649; }
+  .tf-btn.tf-correct{ background:rgba(74,107,82,.15); border-color:#4A6B52; color:#4A6B52; }
+  .tf-btn.tf-wrong{ background:rgba(171,86,73,.12); border-color:#AB5649; color:#AB5649; }
+}
+
+@layer theme {
+  html[data-theme="light"] .tf-btn{ background: rgba(var(--navy-rgb),.03); border-color: rgba(var(--navy-rgb),.09); color: rgba(var(--navy-rgb),.72); }
+  html[data-theme="light"] .tf-true:hover:not(:disabled){ color:#0a8f5a; }
+  html[data-theme="light"] .tf-false:hover:not(:disabled){ color:#8A4038; }
+  html[data-theme="light"] .tf-btn.tf-correct{ color:#0a8f5a; }
+  html[data-theme="light"] .tf-btn.tf-wrong{ color:#8A4038; }
+}

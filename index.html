@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PixelProf — ICDL Lab interattivo v8.41.0</title>
+<title>PixelProf — ICDL Lab interattivo v8.42.0</title>
 <link rel="icon" href="public/icons/favicon.ico" sizes="any">
 <link rel="icon" type="image/svg+xml" href="public/icons/favicon.svg">
 <link rel="icon" type="image/png" sizes="48x48" href="public/icons/favicon-48.png">
@@ -61,6 +61,12 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 <link rel="stylesheet" href="css/tour-sections.css">
 <link rel="stylesheet" href="css/director-profile.css">
 <link rel="stylesheet" href="css/minigiochi/quiz.css">
+<link rel="stylesheet" href="css/minigiochi/risultati.css">
+<link rel="stylesheet" href="css/minigiochi/pausa.css">
+<link rel="stylesheet" href="css/minigiochi/abbina.css">
+<link rel="stylesheet" href="css/minigiochi/memory.css">
+<link rel="stylesheet" href="css/minigiochi/completa-frase.css">
+<link rel="stylesheet" href="css/minigiochi/feedback.css">
 <link rel="stylesheet" href="css/mod-cards.css">
 </head>
 <body>
@@ -112,7 +118,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
         <circle cx="8" cy="26" r="1.5" style="fill:var(--accent)" opacity=".6"/>
       </svg>
       <div class="login-title">Pixel<em>Prof</em></div>
-      <div class="login-subtitle">ICDL Interactive Lab · v8.41.0</div>
+      <div class="login-subtitle">ICDL Interactive Lab · v8.42.0</div>
     </div>
     <div class="login-field">
       <label class="login-label" for="login-email">Email</label>
@@ -686,7 +692,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </svg>
       <div>
         <span class="cs-logo-text">Pixel<em>Prof</em></span>
-        <span class="cs-logo-sub">ICDL Lab · v8.41.0</span>
+        <span class="cs-logo-sub">ICDL Lab · v8.42.0</span>
       </div>
     </div>
     <!-- Badge docente loggato + azioni — v8.26.3: sostituito da tasto Profilo unico -->
@@ -960,7 +966,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
     </svg>
     <div class="logo-text">
       <span class="logo-main">Pixel<em>Prof</em></span>
-      <span class="logo-sub">ICDL Lab · v8.41.0</span>
+      <span class="logo-sub">ICDL Lab · v8.42.0</span>
       <span class="logo-hint">cambia aula</span>
     </div>
   </div>
@@ -1052,7 +1058,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 
     <!-- Hero headline -->
     <div class="home-hero">
-      <span class="home-hero-eyebrow">ICDL Base · Moduli disponibili</span>
+      <span class="home-hero-eyebrow" id="mod-eyebrow" data-area-badge="ICDL">Moduli disponibili</span>
       <h1 class="home-hero-title">Scegli il tuo<br><span class="hl">modulo</span></h1>
       <p class="home-hero-sub">Seleziona un modulo per iniziare a esercitarti con quiz, memory, abbinamenti e molto altro.</p>
     </div>
@@ -1806,24 +1812,10 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
       </div>
       <div class="opts" id="qz-opts"></div>
       <div id="qz-fb"></div>
-      <!-- Speed Quiz pause overlay -->
-      <div id="qz-pause-overlay" class="hidden" style="
-        position:absolute;inset:0;border-radius:var(--radius-md);
-        background:rgba(8,12,24,.84);
-        display:flex;flex-direction:column;align-items:center;justify-content:center;
-        gap:10px;z-index:10;backdrop-filter:blur(6px);
-        cursor:pointer;
-      " onclick="speedTogglePause()">
-        <div style="
-          width:52px;height:52px;border-radius:50%;
-          border:2px solid rgba(78,116,100,.5);
-          background:rgba(var(--accent-rgb),.08);
-          display:flex;align-items:center;justify-content:center;
-          font-size:22px;
-          box-shadow:0 0 20px rgba(78,116,100,.15);
-          animation:playPulse 1.4s ease-in-out infinite;
-        ">▶</div>
-        <div style="font-size:11px;color:rgba(78,116,100,.7);font-family:'Share Tech Mono',monospace;letter-spacing:1.5px;text-transform:uppercase">Premi per continuare</div>
+      <!-- Speed Quiz pause overlay — v8.42.0: stile in css/minigiochi/pausa.css (card fango/oliva, testo crema) -->
+      <div id="qz-pause-overlay" class="pp-pause-overlay hidden" onclick="speedTogglePause()">
+        <div class="pp-pause-btn">▶</div>
+        <div class="pp-pause-text">Premi per continuare</div>
       </div>
     </div>
     <div style="text-align:right;margin-top:10px">
@@ -1981,7 +1973,7 @@ window.__appBootstrap = Promise.all([_authPromise, _dbPromise, _hooksPromise]);
 </div><!-- /app -->
 
 
-<script src="js/app.bundle.min.js?v=8.41.0"></script>
+<script src="js/app.bundle.min.js?v=8.42.0"></script>
 <!-- Pannello Profilo (v8.25.0) — nome, ruolo, ultimo accesso, ultima
      aula collegata, poi Esci e Rivedi il tour guidato. Markup e stili
      in css/topbar-profile.css, logica in js/profile-panel.js.

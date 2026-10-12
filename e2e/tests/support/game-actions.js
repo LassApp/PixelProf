@@ -13,10 +13,13 @@
 
 const { expect } = require('@playwright/test');
 
-/** Da #step-mod visibile → clicca il modulo, la categoria "Minigiochi",
- *  poi l'attività richiesta. Atterra su #setup-panel visibile. */
+/** Da #step-mod visibile (clicca il modulo) oppure da #step-cat (dove atterra «Esci» dai minigiochi
+ *  dal v8.42.0) → clicca la categoria "Minigiochi", poi l'attività richiesta.
+ *  Atterra su #setup-panel visibile. */
 async function goToActivity(page, { module = 'CE', activity }) {
-  await page.locator(`#mc-${module}`).click();
+  if (await page.locator('#step-mod').isVisible()) {
+    await page.locator(`#mc-${module}`).click();
+  }
   await page.locator('#step-cat').waitFor({ state: 'visible' });
   await page.locator('.cat-card.cat-games').click();
   await page.locator('#step-act').waitFor({ state: 'visible' });
@@ -183,13 +186,13 @@ async function exitDialogCancelIsResume(page, exitButtonSelector) {
   await expect(overlay).toBeHidden();
 }
 
-/** Clicca "Esci", conferma "Sì, esci" → torna a #step-mod. */
+/** Clicca "Esci", conferma "Sì, esci" → torna a #step-cat (scelta modalità; v8.42.0, prima #step-mod). */
 async function exitGameConfirm(page, exitButtonSelector) {
   await page.locator(`${exitButtonSelector}:visible`).click();
   const overlay = page.locator('#pp-dialog-overlay');
   await expect(overlay).toBeVisible();
   await page.locator('#pp-dialog-yes').click();
-  await page.locator('#step-mod').waitFor({ state: 'visible', timeout: 15000 });
+  await page.locator('#step-cat').waitFor({ state: 'visible', timeout: 15000 });
 }
 
 module.exports = {

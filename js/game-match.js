@@ -26,7 +26,7 @@ const PAIR_COLORS=[
 
 /* CODE-03: centralized game header builder */
 function buildGameHeader(rightContent){
-  return`<div class="game-header"><div class="game-header-left"><button class="game-exit-btn" onclick="ppConfirm(()=>goHome())"><i class="ti ti-x"></i> Esci</button><button class="game-restart-btn" onclick="restartActivity()"><i class="ti ti-refresh"></i> Ricomincia</button></div>${rightContent}</div>`;
+  return`<div class="game-header"><div class="game-header-left"><button class="game-exit-btn" onclick="ppConfirm(()=>goHome('cat'))"><i class="ti ti-x"></i> Esci</button><button class="game-restart-btn" onclick="restartActivity()"><i class="ti ti-refresh"></i> Ricomincia</button></div>${rightContent}</div>`;
 }
 
 async function getMatchSet(mod){
@@ -276,9 +276,7 @@ async function startMatch(cont,mod){
   );
 
   cont.innerHTML=`${hdr}
-    <div style="font-size:11px;color:rgba(255,255,255,.3);margin-bottom:10px;font-family:'Share Tech Mono',monospace">
-      Clicca un termine poi la sua definizione
-    </div>
+    <div class="match-hint">Clicca un termine poi la sua definizione</div>
     <div style="position:relative">
       <div class="match-cols" id="match-cols-wrap">
         <div>
@@ -291,20 +289,12 @@ async function startMatch(cont,mod){
         </div>
       </div>
       <!-- Pause overlay — mirrors Memory/Speed Quiz pattern -->
-      <div class="match-paused-overlay hidden" id="match-paused-overlay" onclick="matchTogglePause()" style="cursor:pointer">
-        <div style="
-          width:52px;height:52px;border-radius:50%;
-          border:2px solid rgba(78,116,100,.5);
-          background:rgba(78,116,100,.08);
-          display:flex;align-items:center;justify-content:center;
-          font-size:22px;
-          box-shadow:0 0 20px rgba(78,116,100,.15);
-          animation:playPulse 1.4s ease-in-out infinite;
-        ">▶</div>
-        <div style="font-size:11px;color:rgba(78,116,100,.7);font-family:'Share Tech Mono',monospace;letter-spacing:1.5px;text-transform:uppercase;margin-top:6px">Premi per continuare</div>
+      <div class="match-paused-overlay hidden" id="match-paused-overlay" onclick="matchTogglePause()">
+        <div class="pp-pause-btn">▶</div>
+        <div class="pp-pause-text">Premi per continuare</div>
       </div>
     </div>
-    <div style="margin-top:8px;font-size:12px;color:rgba(255,255,255,.4);min-height:20px" id="mfb"></div>`;
+    <div class="match-fb" id="mfb"></div>`;
 
   // Start countdown
   _startMatchInterval();
@@ -416,8 +406,8 @@ function mSel(type,val){
     // UI feedback
     const comboLabel=s.combo>1?` [×${s.combo} COMBO +${pts}]`:`[+${pts}]`;
     const allDone=s.matched.size===s.pairs.length;
-    if(fb)fb.innerHTML=`<span style="color:#4A6B52">✓ Corretto! ${comboLabel}</span>`
-      +(allDone?' <span style="color:#B8935A">🎉 Tutti abbinati!</span>':'');
+    if(fb)fb.innerHTML=`<span class="match-fb-ok">✓ Corretto! ${comboLabel}</span>`
+      +(allDone?' <span class="match-fb-win">🎉 Tutti abbinati!</span>':'');
 
     _updateMatchScoreUI();
     _updateMatchComboUI();
@@ -438,7 +428,7 @@ function mSel(type,val){
       el.classList.add('flash');
       setTimeout(()=>{ el.classList.remove('flash','sel'); _clearSelColor(el); },600);
     });
-    if(fb)fb.innerHTML=`<span style="color:#AB5649">✗ Non corrisponde — −${penalty} pt</span>`;
+    if(fb)fb.innerHTML=`<span class="match-fb-ko">✗ Non corrisponde — −${penalty} pt</span>`;
     _updateMatchScoreUI();
     _updateMatchComboUI();
 

@@ -1,0 +1,15 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   MINIGIOCHI — Memory, testi di contorno   (v8.42.0 · @layer memory)
+   Percorso: css/minigiochi/ (stessa cartella di quiz.css).
+   Memory è in pausa app-wide (vedi REATTIVAZIONE_MEMORY.md): il codice resta, quindi lo stile va
+   tenuto coerente per quando verrà riattivato.
+
+   Prima: il messaggio sotto il tavolo (#mem-msg, "Completato in N mosse…") era inline con il verde
+   rgba(78,116,100,.6) → ~2:1 su crema. Ora --text-muted (4.65:1 su crema, 5.33:1 su navy).
+   La pausa di Memory ha lo stile condiviso in css/minigiochi/pausa.css.
+   ═══════════════════════════════════════════════════════════════════════════════ */
+@layer memory {
+  .mem-msg{
+    margin-top:8px; font-size:12px; text-align:center; color:var(--text-muted);
+  }
+}

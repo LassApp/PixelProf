@@ -1,0 +1,31 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   MINIGIOCHI — Abbina, testi di contorno   (v8.42.0 · @layer abbina)
+   Percorso: css/minigiochi/ (stessa cartella di quiz.css).
+
+   Prima: la riga "Clicca un termine poi la sua definizione" e la riga di feedback (#mfb) erano
+   inline con bianco al 30–40% → quasi invisibili su crema (chiaro) e deboli su navy (scuro); le
+   etichette colonna "Termini/Definizioni" usavano l'accento al 60% (fango .6 su crema ≈ 2.8:1).
+   Ora usano --text-muted, il token di testo secondario della pagina (css/tokens.css):
+   4.65:1 su crema, 5.33:1 su navy.
+   Il resto dell'aspetto di Abbina (chip, timer, combo) resta in pixelprof.css.
+   ═══════════════════════════════════════════════════════════════════════════════ */
+@layer abbina {
+  .match-hint{
+    margin-bottom:10px;
+    font-family:'Share Tech Mono',monospace; font-size:11px; color:var(--text-muted);
+  }
+  .match-fb{
+    margin-top:8px; min-height:20px; font-size:12px; color:var(--text-muted);
+  }
+  .match-cols .col-lbl{ color:var(--text-muted); }
+
+  /* riga di feedback: prima #4A6B52 / #AB5649 / #B8935A inline (2–3:1 su crema).
+     Scuro: verde #8FB09F, terracotta #D49A8C, miele #E4C48C su navy (≥ 6:1).
+     Chiaro: verde #3E5A47, terracotta #8A4038, fango #7A5A38 su crema (≥ 5.2:1). */
+  .match-fb-ok { color:#8FB09F; font-weight:600; }
+  .match-fb-ko { color:#D49A8C; font-weight:600; }
+  .match-fb-win{ color:#E4C48C; font-weight:700; }
+  html[data-theme="light"] .match-fb-ok { color:#3E5A47; }
+  html[data-theme="light"] .match-fb-ko { color:#8A4038; }
+  html[data-theme="light"] .match-fb-win{ color:#7A5A38; }
+}

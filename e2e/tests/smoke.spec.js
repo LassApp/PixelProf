@@ -80,7 +80,7 @@ test('flusso completo: login → entra in aula → ogni minigioco → pausa/ripr
     await playQuizQuestions(page, 4);
     await expect(page.locator('#qz-result .result-wrap')).toBeVisible();
 
-    await page.locator('.result-wrap .btn-row button:has-text("Home")').click();
+    await page.locator('.res-actionbar button:has-text("Home")').click();   // v8.42.0: barra azioni (spostata in topbar da ≥1000px)
     await expect(page.locator('#step-mod')).toBeVisible();
   });
 
@@ -149,7 +149,8 @@ test('flusso completo: login → entra in aula → ogni minigioco → pausa/ripr
   });
 
   await test.step('Uscita dall\'app (logout)', async () => {
-    await expect(page.locator('#step-mod')).toBeVisible();
+    // v8.42.0: «Esci» dai minigiochi riporta alla scelta modalità (#step-cat), non più ai moduli.
+    await expect(page.locator('#step-cat')).toBeVisible();
     // v8.25.0 — il pulsante Esci non è più sempre visibile in topbar:
     // vive nel pannello Profilo, aperto dal nuovo tasto #tb-profile-btn.
     await page.locator('#tb-profile-btn').click();

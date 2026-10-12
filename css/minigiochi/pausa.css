@@ -1,0 +1,60 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   MINIGIOCHI — Schermata di pausa   (v8.42.0 · @layer pausa)
+   Percorso: css/minigiochi/ (stessa cartella di quiz.css).
+
+   Prima: overlay nero semi-trasparente (rgba(8,12,24,.84) nel Speed Quiz, navy .92 in Abbina e
+   Memory) con testo verde a bassa opacità (rgba(78,116,100,.7)) → card nera fuori tema e
+   "Premi per continuare" quasi invisibile in entrambi i temi.
+   Ora: stessa card di "Scegli modalità" e dei risultati — fango in chiaro, oliva in scuro — con
+   testo crema pieno (5.0–6.3:1). L'overlay è opaco di proposito: in pausa le domande e le carte
+   non devono restare leggibili.
+
+   Overlay coperti:
+     · #qz-pause-overlay     — Speed Quiz (index.html)                          → .pp-pause-overlay
+     · #match-paused-overlay — Abbina (js/game-match.js)                        → .match-paused-overlay
+     · #mem-paused-overlay   — Memory (js/game-memory.js, in pausa app-wide)    → .mem-paused-overlay
+   La logica JS non cambia: mostra/nasconde con .hidden (@layer stato, !important) come prima.
+   Completa la frase e Vero o Falso non hanno una pausa.
+   ═══════════════════════════════════════════════════════════════════════════════ */
+@layer pausa {
+  .pp-pause-overlay,
+  .match-paused-overlay,
+  .mem-paused-overlay{
+    --pz-bg:linear-gradient(160deg,#5C6644 0%,#55603F 55%,#5C6644 100%);
+    position:absolute; inset:0; z-index:10;
+    display:flex; flex-direction:column; align-items:center; justify-content:center; gap:10px;
+    border-radius:var(--radius-md);
+    border:1px solid rgba(242,232,213,.16);
+    background:var(--pz-bg);
+    box-shadow:0 6px 22px rgba(23,35,45,.35);
+    color:#F2E8D5;
+    cursor:pointer;
+    -webkit-backdrop-filter:none; backdrop-filter:none;
+  }
+  html[data-theme="light"] .pp-pause-overlay,
+  html[data-theme="light"] .match-paused-overlay,
+  html[data-theme="light"] .mem-paused-overlay{
+    --pz-bg:linear-gradient(160deg,#7A5A38 0%,#6B4E30 55%,#7A5A38 100%);
+  }
+
+  /* pulsante ▶ al centro (pulsa come prima: @keyframes playPulse in pixelprof.css) */
+  .pp-pause-btn{
+    width:52px; height:52px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-size:22px; color:#F2E8D5;
+    border:2px solid rgba(242,232,213,.6);
+    background:rgba(23,35,45,.22);
+    box-shadow:0 0 20px rgba(23,35,45,.25);
+    animation:playPulse 1.4s ease-in-out infinite;
+  }
+  @media (prefers-reduced-motion: reduce){ .pp-pause-btn{ animation:none; } }
+
+  .pp-pause-text,
+  .match-paused-overlay .po-text,
+  .mem-paused-overlay .po-text{
+    font-family:'Share Tech Mono',monospace; font-size:11px; letter-spacing:1.5px;
+    text-transform:uppercase; color:#F2E8D5;
+  }
+  .match-paused-overlay .po-icon,
+  .mem-paused-overlay .po-icon{ font-size:28px; color:#F2E8D5; }
+}

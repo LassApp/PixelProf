@@ -1,0 +1,15 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   MINIGIOCHI — Completa la frase, testi di contorno   (v8.42.0 · @layer completafrase)
+   Percorso: css/minigiochi/ (stessa cartella di quiz.css).
+
+   Prima: l'etichetta «Scegli dalla banca:» era inline con verde chiaro rgba(143,176,159,.9) —
+   pensato per il navy, quasi invisibile su crema nel tema chiaro. Ora --text-muted (css/tokens.css):
+   4.65:1 su crema, 5.33:1 su navy.
+   Il feedback Corretto/Sbagliato è in css/minigiochi/feedback.css (condiviso con Vero o Falso).
+   ═══════════════════════════════════════════════════════════════════════════════ */
+@layer completafrase {
+  .fill-bank-lbl{
+    margin-bottom:6px; font-size:10px; letter-spacing:.6px; text-transform:uppercase;
+    color:var(--text-muted);
+  }
+}

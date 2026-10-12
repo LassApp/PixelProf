@@ -856,12 +856,12 @@ function _showGameError(cont, icon, title, color, path, msg) {
     <div class="result-wrap">
       <div class="result-hero">
         <span class="result-stars" style="font-size:36px">${icon}</span>
-        <span class="result-score" style="font-size:20px;color:${color};line-height:1.3">${title}</span>
-        <span class="result-label" style="color:${color}99;margin-top:8px;line-height:1.5">${escHtml(msg)}</span>
+        <span class="result-score" style="font-size:20px;line-height:1.3">${title}</span>
+        <span class="result-label" style="margin-top:8px;line-height:1.5">${escHtml(msg)}</span>
       </div>
       <p class="result-msg" style="margin-top:0">
         Verifica che i file siano presenti in
-        <code style="color:${color};font-size:11px">${path}</code>
+        <code>${path}</code>
         e ricarica la pagina.
       </p>
       <div class="btn-row">
@@ -1973,9 +1973,14 @@ function _updateMemScoreUI(bump){
   }
 }
 
-function goHome(){
+function goHome(step){
+  // v8.42.0: parametro opzionale — goHome('cat') riporta alla scelta della modalità (Minigiochi / Didattica)
+  // invece che ai moduli. Lo usa il tasto «Esci» dei minigiochi (qzAbort in game-quiz.js, buildGameHeader in
+  // game-match.js). Senza argomento (badge aula, «Home», schermate di errore…) resta il comportamento di sempre:
+  // moduli. sMod non viene toccato da resetSessionState(), quindi la schermata modalità ricorda il modulo.
+  const _dest=(step==='cat')?'cat':'mod';
   if(isGameActive()){
-    ppConfirm(()=>{resetSessionState();setTb('tb-home');showScreen('tab-home');goStep('mod');});
+    ppConfirm(()=>{resetSessionState();setTb('tb-home');showScreen('tab-home');goStep(_dest);});
     return;
   }
   // v8.20.0 (flip-card.js) — richiesta esplicita utente, indipendente dal
@@ -1986,17 +1991,17 @@ function goHome(){
   // caricato. Vedi commento esteso in flip-card.js per il perché tocca
   // questo file "core".
   if(typeof isFlipCardActive === 'function' && isFlipCardActive()){
-    confirmExitFlipCard(()=>{resetSessionState();setTb('tb-home');showScreen('tab-home');goStep('mod');});
+    confirmExitFlipCard(()=>{resetSessionState();setTb('tb-home');showScreen('tab-home');goStep(_dest);});
     return;
   }
   // v8.30.0 (lo-sapevi.js) — stesso identico aggancio della coppia
   // isFlipCardActive/confirmExitFlipCard qui sopra, per la seconda
   // modalità didattica. Vedi commento esteso in lo-sapevi.js.
   if(typeof isLoSapeviActive === 'function' && isLoSapeviActive()){
-    confirmExitLoSapevi(()=>{resetSessionState();setTb('tb-home');showScreen('tab-home');goStep('mod');});
+    confirmExitLoSapevi(()=>{resetSessionState();setTb('tb-home');showScreen('tab-home');goStep(_dest);});
     return;
   }
-  resetSessionState();setTb('tb-home');showScreen('tab-home');goStep('mod');
+  resetSessionState();setTb('tb-home');showScreen('tab-home');goStep(_dest);
 }
 
 function goCoursesFromApp(){
@@ -2851,22 +2856,23 @@ function _showTeamTurnSplash(team,cb){
   const totalTeams=ms.isTiebreak?ms.tbTeams.length:ms.teams.length;
   const teamNum=ms.currentIdx+1;
   const isTb=ms.isTiebreak;
-  const tbLabel=isTb?`<div style="font-size:10px;font-weight:700;color:#7A5A38;text-transform:uppercase;letter-spacing:2px;margin-bottom:6px;font-family:'Share Tech Mono',monospace">⚡ Spareggio — Round ${ms.tbRound}</div>`:'';
+  const tbLabel=isTb?`<div class="res-kicker is-tb">⚡ Spareggio — Round ${ms.tbRound}</div>`:'';
   const progLabel=`Squadra ${teamNum} di ${totalTeams}`;
-  // Scoreboard delle squadre che hanno gi giocato
+  // Scoreboard delle squadre che hanno già giocato
+  // v8.42.0: markup a classi (css/minigiochi/risultati.css); il colore squadra è un pallino, non più il colore del testo
   const doneTeams=(ms.isTiebreak?ms.tbTeams:ms.teams).slice(0,ms.currentIdx);
-  const scoreboard=doneTeams.length?`<div style="margin-top:14px;padding:10px 14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:10px;font-size:12px;font-family:'Share Tech Mono',monospace">
-    ${doneTeams.map(t=>`<div style="display:flex;justify-content:space-between;color:rgba(255,255,255,.5);margin-bottom:4px"><span style="color:${escAttr(t.color)}">${escHtml(t.name)}</span><span>${ms.scores[t.name]} pt</span></div>`).join('')}
+  const scoreboard=doneTeams.length?`<div class="res-board">
+    ${doneTeams.map(t=>`<div class="res-board-row"><span class="res-tn"><span class="res-dot" style="background:${escAttr(t.color)}"></span>${escHtml(t.name)}</span><span>${ms.scores[t.name]} pt</span></div>`).join('')}
   </div>`:'';
-  sh('qz-result').innerHTML=`<div class="result-wrap" style="text-align:center;padding:2rem 1rem">
+  sh('qz-result').innerHTML=`<div class="result-wrap res-splash">
     ${tbLabel}
-    <div style="font-size:10px;color:rgba(255,255,255,.3);font-family:'Share Tech Mono',monospace;letter-spacing:2px;margin-bottom:16px;text-transform:uppercase">${progLabel}</div>
-    <div style="font-size:48px;margin-bottom:10px">${team.color?'🎮':'🎮'}</div>
-    <div style="font-size:11px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;font-family:'Share Tech Mono',monospace">Tocca a</div>
-    <div style="font-size:26px;font-weight:700;color:${escAttr(team.color)};text-shadow:0 0 20px ${escAttr(team.color)}40;margin-bottom:4px">${escHtml(team.name)}</div>
+    <div class="res-kicker">${progLabel}</div>
+    <div class="res-emoji">🎮</div>
+    <div class="res-who">Tocca a</div>
+    <div class="res-team"><span class="res-dot" style="background:${escAttr(team.color)}"></span>${escHtml(team.name)}</div>
     ${scoreboard}
-    <div style="margin-top:24px;font-size:36px;font-weight:700;font-family:'Orbitron',monospace;color:var(--accent)" id="tb-countdown">3</div>
-    <div style="font-size:11px;color:rgba(255,255,255,.3);margin-top:6px;font-family:'Share Tech Mono',monospace">Il gioco inizia tra poco…</div>
+    <div class="res-count" id="tb-countdown">3</div>
+    <div class="res-sub">Il gioco inizia tra poco…</div>
   </div>`;
   // FIX C1: se un countdown precedente è ancora vivo (es. splash multipli rapidi),
   // lo distrugge prima di crearne uno nuovo. Previene race condition e doppio avvio.
@@ -2968,14 +2974,14 @@ function _showTiebreakerIntro(tied,cb){
   setTb(null);showScreen('tab-quiz');
   sh('qz-game').classList.add('hidden');
   sh('qz-result').classList.remove('hidden');
-  const names=tied.map(t=>`<span style="color:${escAttr(t.color)};font-weight:700">${escHtml(t.name)}</span>`).join(' <span style="color:rgba(255,255,255,.3)">vs</span> ');
-  sh('qz-result').innerHTML=`<div class="result-wrap" style="text-align:center;padding:2rem 1rem">
-    <div style="font-size:40px;margin-bottom:14px">⚡</div>
-    <div style="font-family:'Orbitron',monospace;font-size:18px;font-weight:900;color:#7A5A38;text-shadow:0 0 20px #7A5A3860;margin-bottom:6px">PAREGGIO!</div>
-    <div style="font-size:13px;color:rgba(255,255,255,.4);margin-bottom:14px">Stessi punti — parte lo spareggio</div>
-    <div style="font-size:14px;line-height:2">${names}</div>
-    <div style="margin-top:20px;font-size:11px;color:rgba(255,255,255,.3);font-family:'Share Tech Mono',monospace">Round ${ms.tbRound} · 1 domanda per squadra</div>
-    <div style="margin-top:20px;font-size:28px;font-weight:700;font-family:'Orbitron',monospace;color:#7A5A38" id="tb-countdown">3</div>
+  const names=tied.map(t=>`<span class="res-tn"><span class="res-dot" style="background:${escAttr(t.color)}"></span>${escHtml(t.name)}</span>`).join(' <span class="res-vs">vs</span> ');
+  sh('qz-result').innerHTML=`<div class="result-wrap res-splash">
+    <div class="res-emoji is-sm">⚡</div>
+    <div class="res-tie-title">PAREGGIO!</div>
+    <div class="res-tie-msg">Stessi punti — parte lo spareggio</div>
+    <div class="res-tie-names">${names}</div>
+    <div class="res-sub is-gap">Round ${ms.tbRound} · 1 domanda per squadra</div>
+    <div class="res-count is-sm" id="tb-countdown">3</div>
   </div>`;
   let n=3;
   // FIX C1: usa lo stesso slot _splashInterval di _showTeamTurnSplash.
@@ -3010,17 +3016,18 @@ function _showMatchFinalResult(){
   const winner=sorted[0];
   const medals=['🥇','🥈','🥉'];
   // Build classifica corrente (non storica)
+  // v8.42.0: righe a classi (css/minigiochi/risultati.css); colore squadra = pallino con anello crema
   const rankRows=sorted.map((t,i)=>{
     const pts=ms.scores[t.name]||0;
     const medal=i<3?medals[i]:''+(i+1)+'.';
-    return`<div style="display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:10px;background:${i===0?'rgba(184,147,90,.07)':'rgba(255,255,255,.03)'};border:1px solid ${i===0?'rgba(184,147,90,.2)':'rgba(255,255,255,.07)'};margin-bottom:6px">
-      <span style="font-size:20px;width:28px;text-align:center">${medal}</span>
-      <span style="display:inline-block;width:10px;height:10px;border-radius:50%;background:${escAttr(t.color)};box-shadow:0 0 6px ${escAttr(t.color)};flex-shrink:0"></span>
-      <span style="flex:1;font-weight:600;color:#fff">${escHtml(t.name)}</span>
-      <span style="font-family:'Share Tech Mono',monospace;font-weight:700;font-size:15px;color:${i===0?'#B8935A':'var(--accent)'}">${pts} pt</span>
+    return`<div class="res-row${i===0?' is-first':''}">
+      <span class="res-row-medal">${medal}</span>
+      <span class="res-dot" style="background:${escAttr(t.color)}"></span>
+      <span class="res-row-name">${escHtml(t.name)}</span>
+      <span class="res-row-pts">${pts} pt</span>
     </div>`;
   }).join('');
-  const tbNote=ms.isTiebreak?`<div style="margin-bottom:12px;padding:6px 12px;border-radius:20px;background:rgba(122,90,56,.1);border:1px solid rgba(122,90,56,.2);font-size:11px;color:#7A5A38;text-align:center;font-family:'Share Tech Mono',monospace">⚡ Deciso ai supplementari — Round ${ms.tbRound}</div>`:'';
+  const tbNote=ms.isTiebreak?`<div class="res-note">⚡ Deciso ai supplementari — Round ${ms.tbRound}</div>`:'';
   setTb(null);showScreen('tab-quiz');
   sh('qz-game').classList.add('hidden');
   sh('qz-result').classList.remove('hidden');
@@ -3031,15 +3038,12 @@ function _showMatchFinalResult(){
       <span class="result-label">vince la partita con ${ms.scores[winner.name]} pt</span>
     </div>
     ${tbNote}
-    <div style="font-size:10px;font-weight:700;color:rgba(78,116,100,.6);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;display:flex;align-items:center;gap:8px">
-      Classifica partita corrente
-      <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(78,116,100,.2),transparent)"></span>
-    </div>
+    <div class="res-panel-title">Classifica partita corrente</div>
     ${rankRows}
-    <div class="btn-row" style="margin-top:20px">
-      <button class="btn" onclick="matchReset();goHome()"><i class="ti ti-home"></i> Home</button>
-      <button class="btn" onclick="_restartWholeMatch()"><i class="ti ti-refresh"></i> Rivincita</button>
-      <button class="btn btn-neon" onclick="goTab('lb')"><i class="ti ti-trophy"></i> Classifica</button>
+    <div class="res-actionbar">
+      <button class="res-act-btn" onclick="matchReset();goHome()"><i class="ti ti-home"></i> Home</button>
+      <button class="res-act-btn" onclick="_restartWholeMatch()"><i class="ti ti-refresh"></i> Rivincita</button>
+      <button class="res-act-btn is-primary" onclick="goTab('lb')"><i class="ti ti-trophy"></i> Classifica</button>
     </div>
   </div>`;
   launchConfetti();
@@ -3180,7 +3184,7 @@ function showGameResult(name,detail,scoreMap){
 
   // -- MODALIT INDIVIDUALE: comportamento originale --
   const rank=getRank();
-  sh('g-area').innerHTML=`<div class="result-wrap"><div class="result-hero"><span class="result-stars">⭐⭐⭐</span><span class="result-score" style="font-size:30px;margin-bottom:6px">${name}</span><span class="result-label">${detail}</span></div>${buildPodiumHTML(rank,scoreMap)}<div class="btn-row"><button class="btn" onclick="goHome()"><i class="ti ti-home"></i> Home</button><button class="btn" onclick="launch()"><i class="ti ti-refresh"></i> Ricomincia</button><button class="btn btn-neon" onclick="goTab('lb')"><i class="ti ti-trophy"></i> Classifica</button></div></div>`;
+  sh('g-area').innerHTML=`<div class="result-wrap"><div class="result-hero"><span class="result-stars">⭐⭐⭐</span><span class="result-score" style="font-size:30px;margin-bottom:6px">${name}</span><span class="result-label">${detail}</span></div>${buildPodiumHTML(rank,scoreMap)}<div class="res-actionbar"><button class="res-act-btn" onclick="goHome()"><i class="ti ti-home"></i> Home</button><button class="res-act-btn" onclick="launch()"><i class="ti ti-refresh"></i> Ricomincia</button><button class="res-act-btn is-primary" onclick="goTab('lb')"><i class="ti ti-trophy"></i> Classifica</button></div></div>`;
 }
 
 /* ==================================================

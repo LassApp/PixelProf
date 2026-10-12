@@ -948,6 +948,14 @@ function _renderModuleFilter(){
   const areaKey = course?.areaKey || 'ecdl';
   const isEcdl  = areaKey==='ecdl';
 
+  // v8.42.0: la sigla sopra «Scegli il tuo modulo» segue l'Area dell'aula (ECDL, DIGCOMP, AI…) invece di "ICDL" fisso.
+  // Stesso meccanismo dello step «Cosa vuoi fare?» (goStep('cat') in game-engine-state.js): data-area-badge → ::before.
+  const modEyebrow = shq('mod-eyebrow');
+  if(modEyebrow){
+    const AC = window.AreasConfig;
+    modEyebrow.dataset.areaBadge = AC ? AC.areaBadge(AC.getAreaByKey(areaKey)) : 'ICDL';
+  }
+
   ALL.forEach(k=>{
     const card = shq('mc-'+k); // shq: silenzioso se #mc-SS non esiste
     if(!card) return;
@@ -2069,6 +2077,7 @@ function closeHubMenu(){
      · .game-header   — Esci (+ Ricomincia) + breadcrumb di Flip Card, Lo Sapevi? e Abbina
      · .qz-controlbar — Esci + Ricomincia + barra di avanzamento + contatore di Quiz / Speed Quiz
                         (giro 10/10; i suoi id #qz-prog / #qz-counter restano quelli veri)
+      · .res-actionbar — Home + Ricomincia/Rivincita + Classifica delle schermate di risultato (v8.42.0)
    Il nodo viene SPOSTATO (non clonato: id, onclick inline e contenuto aggiornato dal JS restano
    quelli veri) e al suo posto resta un commento-segnaposto: quando lo step originale torna
    nascosto (.hidden) o il contenitore viene riscritto con innerHTML (Flip Card ricostruisce la
@@ -2078,7 +2087,7 @@ function closeHubMenu(){
    vedi onboarding.js (target del tour) e _setGamePauseLock() in game-quiz.js.
    ══════════════════════════════════════════════════════════════════════════════ */
 (function(){
-  const SRC = '.act-back-row, .game-header, .qz-controlbar';
+  const SRC = '.act-back-row, .game-header, .qz-controlbar, .res-actionbar';   // v8.42.0: + barra azioni delle schermate di risultato
   const MQ  = window.matchMedia ? window.matchMedia('(min-width: 1000px)') : { matches:true };
   const moved = new Map();   // nodo spostato -> commento segnaposto
   let slot = null, running = false;

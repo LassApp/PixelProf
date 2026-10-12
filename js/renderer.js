@@ -14,36 +14,22 @@ function buildResultHTML(winner,top,tot,pct,elapsed,msg,rank,isSpeed,metrics){
     :`${pct}% accuratezza · ${metrics?.correctCount??0}/${tot} corrette`;
 
   // -- Pannello metriche dettagliato (solo Quiz normale, non Speed Quiz) --
+  // v8.42.0: markup a classi (css/minigiochi/risultati.css). Prima: stili inline pensati per il fondo nero
+  // (bianco al 35%, verde al 60%) → illeggibili ora che la card ha i colori delle card modalità.
   const metricsPanel=(!isSpeed && metrics)
-    ?`<div style="
-        background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);
-        border-radius:12px;padding:14px 16px;margin-bottom:16px;
-      ">
-        <div style="font-size:10px;font-weight:700;color:rgba(78,116,100,.6);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;display:flex;align-items:center;gap:8px">
-          Analisi sessione
-          <span style="flex:1;height:1px;background:linear-gradient(90deg,rgba(78,116,100,.2),transparent)"></span>
-        </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-          <div style="background:rgba(78,116,100,.05);border:1px solid rgba(78,116,100,.12);border-radius:9px;padding:10px;text-align:center">
-            <div style="font-size:18px;font-weight:700;color:var(--accent);font-family:'Share Tech Mono',monospace">${(Math.round(metrics.avgMs/100)/10).toFixed(1)}s</div>
-            <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:2px">Tempo medio</div>
-          </div>
-          <div style="background:rgba(122,90,56,.05);border:1px solid rgba(122,90,56,.12);border-radius:9px;padding:10px;text-align:center">
-            <div style="font-size:18px;font-weight:700;color:#7A5A38;font-family:'Share Tech Mono',monospace">${metrics.bestStreak}</div>
-            <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:2px">Miglior streak</div>
-          </div>
-          <div style="background:rgba(84,112,140,.05);border:1px solid rgba(84,112,140,.12);border-radius:9px;padding:10px;text-align:center">
-            <div style="font-size:18px;font-weight:700;color:#54708C;font-family:'Share Tech Mono',monospace">+${metrics.totalSpeedBonus}</div>
-            <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:2px">Bonus velocità</div>
-          </div>
-          <div style="background:rgba(171,86,73,.05);border:1px solid rgba(171,86,73,.12);border-radius:9px;padding:10px;text-align:center">
-            <div style="font-size:18px;font-weight:700;color:#AB5649;font-family:'Share Tech Mono',monospace">+${metrics.totalStreakBonus}</div>
-            <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:2px">Bonus streak</div>
-          </div>
+    ?`<div class="res-panel">
+        <div class="res-panel-title">Analisi sessione</div>
+        <div class="res-stats">
+          <div class="res-stat"><div class="res-stat-val">${(Math.round(metrics.avgMs/100)/10).toFixed(1)}s</div><div class="res-stat-lbl">Tempo medio</div></div>
+          <div class="res-stat st-miele"><div class="res-stat-val">${metrics.bestStreak}</div><div class="res-stat-lbl">Miglior streak</div></div>
+          <div class="res-stat st-slate"><div class="res-stat-val">+${metrics.totalSpeedBonus}</div><div class="res-stat-lbl">Bonus velocità</div></div>
+          <div class="res-stat st-terra"><div class="res-stat-val">+${metrics.totalStreakBonus}</div><div class="res-stat-lbl">Bonus streak</div></div>
         </div>
       </div>`
     :'';
 
+  // v8.42.0: Home / Ricomincia / Classifica sono una barra azioni (.res-actionbar) che da 1000px viene
+  // spostata nella topbar da js/app.js (TOPBAR CONTEXT), come Esci/Ricomincia durante la partita.
   return`<div class="result-wrap">
     <div class="result-hero">
       <span class="result-stars">${stars}</span>
@@ -54,10 +40,10 @@ function buildResultHTML(winner,top,tot,pct,elapsed,msg,rank,isSpeed,metrics){
     ${buildPodiumHTML(rank)}
     ${metricsPanel}
     <p class="result-msg">${msg}</p>
-    <div class="btn-row">
-      <button class="btn" onclick="goHome()"><i class="ti ti-home"></i> Home</button>
-      <button class="btn" onclick="restartActivity()"><i class="ti ti-refresh"></i> Ricomincia</button>
-      <button class="btn btn-neon" onclick="goTab('lb')"><i class="ti ti-trophy"></i> Classifica</button>
+    <div class="res-actionbar">
+      <button class="res-act-btn" onclick="goHome()"><i class="ti ti-home"></i> Home</button>
+      <button class="res-act-btn" onclick="restartActivity()"><i class="ti ti-refresh"></i> Ricomincia</button>
+      <button class="res-act-btn is-primary" onclick="goTab('lb')"><i class="ti ti-trophy"></i> Classifica</button>
     </div>
   </div>`;
 }
@@ -70,7 +56,7 @@ function buildPodiumHTML(rank, scoreMap){
   const medals=['🥇','🥈','🥉'];
   if(top3.length===1){
     const n=top3[0];const pts=getScore(n);
-    return`<div class="podium-wrap"><div class="podium-title">Risultato finale</div><div style="text-align:center;padding:1rem"><div style="font-size:40px;margin-bottom:8px">🥇</div><div style="font-size:16px;font-weight:700;color:#fff;margin-bottom:4px">${escHtml(n)}</div><div style="font-size:13px;color:rgba(255,255,255,.4);font-family:'Share Tech Mono',monospace">${pts} pt</div></div><div class="podium-floor"></div></div>`;
+    return`<div class="podium-wrap"><div class="podium-title">Risultato finale</div><div class="podium-solo"><div class="podium-solo-medal">🥇</div><div class="podium-solo-name">${escHtml(n)}</div><div class="podium-solo-pts">${pts} pt</div></div><div class="podium-floor"></div></div>`;
   }
   const order=top3.length>=3?[top3[1],top3[0],top3[2]]:top3.length===2?[top3[1],top3[0],null]:[top3[0],null,null];
   const orderPos=top3.length>=3?['p2','p1','p3']:top3.length===2?['p2','p1',null]:['p1',null,null];

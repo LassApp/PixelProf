@@ -1,0 +1,216 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   MINIGIOCHI — Schermate di risultato   (v8.42.0 · @layer risultati)
+   Percorso: css/minigiochi/ (stessa cartella di quiz.css).
+
+   Prima: la card di fine partita era un "palco" nero fisso in chiaro e senza fondo in scuro, con
+   testi bianchi a bassa opacità e colori inline pensati per il nero (fango/terracotta su nero).
+   Ora: stessa identità delle card di "Scegli modalità" (.dm-card, css/flip-card.css):
+     · chiaro → fango  #7A5A38 → #6B4E30, testo crema #F2E8D5
+     · scuro  → oliva  #5C6644 → #55603F, testo crema #F2E8D5
+   Contrasti (calcolati): crema pieno 5.0–6.3:1 sulla card; crema .94 ≥ 4.7:1; sui pannelli interni
+   (navy .24 sopra la card) crema ≥ 6.4:1 pieno e ≥ 5.2:1 con alpha .86.
+
+   Usata da: Quiz e Speed Quiz (renderer.js → buildResultHTML), Abbina, Completa la frase, Vero o
+   Falso, Memory (showGameResult), finale e transizioni delle partite a squadre e schermate di
+   errore di caricamento (game-engine-state.js), card di stato di Flip Card e Lo Sapevi? (stesse
+   classi). La card DEVE restare .result-wrap: isGameActive() la usa per capire che la partita è
+   finita.
+
+   I colori delle squadre NON sono più testo: sono un pallino con anello crema (.res-dot) — le
+   tinte squadra (oliva, slate, terracotta, fango) non hanno contrasto sulla card.
+   Le vecchie regole del "palco" nero in @layer theme (pixelprof.css, sezione 11) sono state
+   rimosse: avrebbero vinto su questo layer.
+   ═══════════════════════════════════════════════════════════════════════════════ */
+@layer risultati {
+
+  /* ── Card ──────────────────────────────────────────────────────────────── */
+  .result-wrap{
+    --res-bg:       linear-gradient(160deg,#5C6644 0%,#55603F 55%,#5C6644 100%);
+    --res-fg:       #F2E8D5;
+    --res-fg-2:     rgba(242,232,213,.94);
+    --res-panel:    rgba(23,35,45,.24);
+    --res-panel-bd: rgba(242,232,213,.2);
+    max-width:480px; margin:0 auto;
+    padding:1.75rem 1.25rem;
+    border-radius:20px;
+    border:1px solid rgba(242,232,213,.16);
+    background:var(--res-bg);
+    color:var(--res-fg);
+    box-shadow:0 6px 22px rgba(23,35,45,.35);
+  }
+  html[data-theme="light"] .result-wrap{
+    --res-bg:linear-gradient(160deg,#7A5A38 0%,#6B4E30 55%,#7A5A38 100%);
+  }
+  .result-wrap .result-hero::before{
+    background:radial-gradient(circle,rgba(242,232,213,.14) 0%,transparent 70%);
+  }
+
+  /* ── Titolo / punteggio / etichette ────────────────────────────────────── */
+  .result-wrap .result-score{
+    background:none; -webkit-background-clip:border-box; background-clip:border-box;
+    -webkit-text-fill-color:currentColor; color:var(--res-fg);
+    text-shadow:none; filter:none;
+  }
+  .result-wrap .result-label,
+  .result-wrap .result-time,
+  .result-wrap .result-msg{ color:var(--res-fg-2); }
+  .result-wrap code{
+    color:var(--res-fg); background:var(--res-panel);
+    padding:1px 6px; border-radius:5px; font-size:11px;
+  }
+
+  /* ── Podio ─────────────────────────────────────────────────────────────── */
+  .result-wrap .podium-title{ color:var(--res-fg-2); }
+  .result-wrap .podium-name{ color:var(--res-fg); }
+  .result-wrap .podium-pts{ color:var(--res-fg-2); }
+  .result-wrap .podium-avatar,
+  .result-wrap .p1 .podium-avatar,
+  .result-wrap .p2 .podium-avatar,
+  .result-wrap .p3 .podium-avatar{
+    background:var(--res-panel); border-color:rgba(242,232,213,.45); box-shadow:none;
+  }
+  .result-wrap .p1 .podium-avatar{ border-color:rgba(228,196,140,.9); }
+  .result-wrap .podium-base,
+  .result-wrap .p2 .podium-base,
+  .result-wrap .p3 .podium-base{
+    background:var(--res-panel); border:1px solid rgba(242,232,213,.28); border-bottom:none; box-shadow:none;
+  }
+  .result-wrap .p1 .podium-base{
+    background:linear-gradient(180deg,rgba(184,147,90,.42),rgba(23,35,45,.24));
+    border-color:rgba(228,196,140,.6);
+  }
+  .result-wrap .podium-floor{
+    background:linear-gradient(90deg,transparent,rgba(242,232,213,.45),transparent);
+  }
+  /* podio con un solo giocatore (renderer.js → buildPodiumHTML) */
+  .podium-solo{ text-align:center; padding:1rem; }
+  .podium-solo-medal{ font-size:40px; margin-bottom:8px; }
+  .podium-solo-name{ font-size:16px; font-weight:700; color:var(--res-fg); margin-bottom:4px; }
+  .podium-solo-pts{ font-family:'Share Tech Mono',monospace; font-size:13px; color:var(--res-fg-2); }
+
+  /* ── Pannello "Analisi sessione" (Quiz) ────────────────────────────────── */
+  .res-panel{
+    background:var(--res-panel); border:1px solid var(--res-panel-bd);
+    border-radius:12px; padding:14px 16px; margin-bottom:16px;
+  }
+  .res-panel-title{
+    display:flex; align-items:center; gap:8px; margin-bottom:12px;
+    font-size:10px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--res-fg-2);
+  }
+  .res-panel-title::after{
+    content:''; flex:1; height:1px; background:linear-gradient(90deg,rgba(242,232,213,.4),transparent);
+  }
+  .res-stats{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  .res-stat{
+    --st:242,232,213;
+    background:rgba(23,35,45,.22); border:1px solid rgba(242,232,213,.16);
+    border-top:2px solid rgba(var(--st),.85); border-radius:9px; padding:10px; text-align:center;
+  }
+  .res-stat.st-slate{ --st:129,160,190; }
+  .res-stat.st-miele{ --st:214,176,112; }
+  .res-stat.st-terra{ --st:208,120,104; }
+  .res-stat-val{ font-family:'Share Tech Mono',monospace; font-size:18px; font-weight:700; color:var(--res-fg); }
+  .res-stat-lbl{ font-size:10px; margin-top:2px; color:var(--res-fg-2); }
+
+  /* ── Classifica della partita a squadre ────────────────────────────────── */
+  .res-row{
+    display:flex; align-items:center; gap:10px; padding:10px 14px; margin-bottom:6px;
+    border-radius:10px; background:var(--res-panel); border:1px solid var(--res-panel-bd);
+  }
+  .res-row.is-first{
+    background:linear-gradient(180deg,rgba(184,147,90,.38),rgba(23,35,45,.22));
+    border-color:rgba(228,196,140,.55);
+  }
+  .res-row-medal{ font-size:20px; width:28px; text-align:center; }
+  .res-dot{
+    display:inline-block; width:12px; height:12px; border-radius:50%; flex:none;
+    box-shadow:0 0 0 2px #F2E8D5;
+  }
+  .res-row-name{ flex:1; font-weight:600; color:var(--res-fg); }
+  .res-row-pts{ font-family:'Share Tech Mono',monospace; font-weight:700; font-size:15px; color:var(--res-fg); }
+  .res-note{
+    margin-bottom:12px; padding:6px 12px; border-radius:20px; text-align:center;
+    background:var(--res-panel); border:1px solid var(--res-panel-bd);
+    font-family:'Share Tech Mono',monospace; font-size:11px; color:var(--res-fg);
+  }
+
+  /* ── Transizione di turno / spareggio ──────────────────────────────────── */
+  .res-splash{ text-align:center; padding:2rem 1rem; }
+  .res-kicker{
+    font-family:'Share Tech Mono',monospace; font-size:10px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--res-fg-2); margin-bottom:16px;
+  }
+  .res-kicker.is-tb{ color:var(--res-fg); font-weight:700; margin-bottom:6px; }
+  .res-emoji{ font-size:48px; margin-bottom:10px; }
+  .res-emoji.is-sm{ font-size:40px; margin-bottom:14px; }
+  .res-who{
+    font-family:'Share Tech Mono',monospace; font-size:11px; letter-spacing:2px; text-transform:uppercase;
+    color:var(--res-fg-2); margin-bottom:8px;
+  }
+  .res-team{
+    display:inline-flex; align-items:center; gap:10px; margin-bottom:4px;
+    font-size:26px; font-weight:700; color:var(--res-fg);
+  }
+  .res-team .res-dot{ width:14px; height:14px; }
+  .res-board{
+    margin-top:14px; padding:10px 14px; border-radius:10px;
+    background:var(--res-panel); border:1px solid var(--res-panel-bd);
+    font-family:'Share Tech Mono',monospace; font-size:12px;
+  }
+  .res-board-row{ display:flex; justify-content:space-between; gap:12px; color:var(--res-fg); margin-bottom:4px; }
+  .res-board-row:last-child{ margin-bottom:0; }
+  .res-tn{ display:inline-flex; align-items:center; gap:8px; }
+  .res-count{ margin-top:24px; font-family:'Orbitron',monospace; font-size:36px; font-weight:700; color:var(--res-fg); }
+  .res-count.is-sm{ font-size:28px; margin-top:20px; }
+  .res-sub{ margin-top:6px; font-family:'Share Tech Mono',monospace; font-size:11px; color:var(--res-fg-2); }
+  .res-sub.is-gap{ margin-top:20px; }
+  .res-tie-title{ font-family:'Orbitron',monospace; font-size:18px; font-weight:900; color:var(--res-fg); margin-bottom:6px; }
+  .res-tie-msg{ font-size:13px; color:var(--res-fg-2); margin-bottom:14px; }
+  .res-tie-names{ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:10px; font-size:14px; font-weight:700; color:var(--res-fg); }
+  .res-tie-names .res-vs{ font-weight:400; color:var(--res-fg-2); }
+
+  /* ── Barra azioni: Home · Ricomincia/Rivincita · Classifica ────────────────
+     In pagina (sotto i 1000px) sta in fondo alla card.
+     Da 1000px js/app.js (TOPBAR CONTEXT) la sposta nello slot #tb-context della topbar. */
+  .res-actionbar{ display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:20px; }
+  .res-act-btn{
+    display:inline-flex; align-items:center; gap:6px; padding:9px 16px; border-radius:10px;
+    border:1px solid rgba(242,232,213,.5); background:rgba(23,35,45,.22); color:#F2E8D5;
+    font-family:inherit; font-size:13px; font-weight:600; cursor:pointer;
+    transition:background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast);
+  }
+  .res-act-btn:hover{ background:rgba(23,35,45,.4); }
+  .res-act-btn.is-primary{ background:#F2E8D5; border-color:#F2E8D5; color:#17232D; }
+  .res-act-btn.is-primary:hover{ background:#FBF6EC; border-color:#FBF6EC; }
+
+  /* ── Pulsanti .btn dentro la card (schermate di errore/stato) ───────────── */
+  html .result-wrap .btn{
+    background:rgba(23,35,45,.22); border:1px solid rgba(242,232,213,.5); color:#F2E8D5;
+  }
+  html .result-wrap .btn:hover{ background:rgba(23,35,45,.4); border-color:#F2E8D5; color:#F2E8D5; }
+  html .result-wrap .btn.btn-neon{ background:#F2E8D5; border-color:#F2E8D5; color:#17232D; }
+  html .result-wrap .btn.btn-neon:hover{ background:#FBF6EC; border-color:#FBF6EC; color:#17232D; }
+
+  /* ── Barra azioni NELLA TOPBAR (#tb-context) — modello "← Dashboard" ────────
+     Stessa grammatica di .game-exit-btn/.game-restart-btn (css/topbar-profile.css): niente bordo né
+     sfondo, testo+icona, hover tenue. Colori dai token dell'isola (--text-primary: crema su fango in
+     chiaro, navy su beige in scuro): il contrasto è già garantito dal tema. */
+  #tb-context .res-actionbar{
+    display:flex; align-items:center; justify-content:center; flex-wrap:nowrap; gap:4px;
+    margin:0; padding:0; min-width:0; max-width:100%;
+    background:none; border:none; border-radius:0; box-shadow:none;
+  }
+  #tb-context .res-act-btn,
+  #tb-context .res-act-btn.is-primary{
+    display:inline-flex; align-items:center; gap:5px; flex:none;
+    padding:4px 10px; border:none; border-radius:7px; background:none; box-shadow:none;
+    font-size:12px; font-weight:500; color:var(--text-primary);
+  }
+  #tb-context .res-act-btn:hover,
+  #tb-context .res-act-btn.is-primary:hover{
+    background:rgba(var(--accent-rgb),.14); color:var(--text-primary); border:none;
+  }
+  #tb-context .res-act-btn i{ font-size:14px; color:inherit; }
+  /* con la barra in topbar la card resta staccata dalla topbar (stesso scarto di #g-area / #step-act) */
+  .app:has(#tb-context.has-ctx) #qz-result{ padding-top:48px; }
+}

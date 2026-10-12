@@ -1,0 +1,30 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   MINIGIOCHI — Feedback Corretto/Sbagliato di Completa la frase e Vero o Falso
+   (v8.42.0 · @layer feedback)
+   Percorso: css/minigiochi/ (stessa cartella di quiz.css).
+
+   Perché esiste: in v8.34.0 le regole base di .fb/.opt/.opts sono state tolte da pixelprof.css
+   ritenendo che le usasse solo js/game-quiz.js (ora stilate sotto #qz-game, quiz.css). In realtà
+   js/game-fill.js (#ffb) e js/game-truefalse.js (#tffb) emettono lo stesso <div class="fb ok|ko">
+   dentro #g-area: da allora quel feedback è rimasto senza riquadro (verificato: nessuna regola .fb
+   fuori da quiz.css). Qui lo ripristiniamo con la stessa famiglia di colori del Quiz, scoped a
+   #g-area (nessuna interferenza con #qz-game).
+
+   Contrasti: scuro — verde #8FB09F e terracotta chiaro #D49A8C su navy; chiaro — verde #3E5A47 e
+   terracotta scuro #8A4038 su crema (le stesse tinte che quiz.css usa per lo stesso significato).
+   La riga dei punti (.fb-bonus) eredita il colore del riquadro: niente più verdini inline.
+   ═══════════════════════════════════════════════════════════════════════════════ */
+@layer feedback {
+  #g-area .fb{
+    margin-top:10px; padding:12px 15px; border-radius:var(--radius-md);
+    font-size:13px; line-height:1.5; font-weight:600;
+  }
+  #g-area .fb.ok{ background:rgba(74,107,82,.1); border:1px solid rgba(74,107,82,.32); color:#8FB09F; }
+  #g-area .fb.ko{ background:rgba(171,86,73,.1); border:1px solid rgba(171,86,73,.32); color:#D49A8C; }
+  html[data-theme="light"] #g-area .fb.ok{ color:#3E5A47; }
+  html[data-theme="light"] #g-area .fb.ko{ color:#8A4038; }
+
+  #g-area .fb .fb-bonus{
+    margin-top:4px; font-family:'Share Tech Mono',monospace; font-size:11px; font-weight:700; color:inherit;
+  }
+}

@@ -252,7 +252,10 @@ function endQuiz(){
   const isSpeed=(sAct==='speed');
   const pct=Math.round(correctCount/Math.max(tot,1)*100);
   const e=Math.floor((Date.now()-qStart)/1000);
-  const msg=pct>=80?'Eccellente! Sei pronto per l\'esame ICDL.':pct>=60?'Buon lavoro! Continua ad allenarti.':'Ripassa i concetti e riprova.';
+  // v8.42.0: «esame ICDL» solo per l'Area ECDL; le altre Aree (DigComp, AI, Cybersecurity…) hanno un testo neutro
+  const _msgArea=(window.AreasConfig&&typeof window.AreasConfig.getAreaForModule==='function')?window.AreasConfig.getAreaForModule(sMod):null;
+  const _msgReady=(!_msgArea||_msgArea.key==='ecdl')?'Sei pronto per l\'esame ICDL.':'Hai padroneggiato questo modulo.';
+  const msg=pct>=80?'Eccellente! '+_msgReady:pct>=60?'Buon lavoro! Continua ad allenarti.':'Ripassa i concetti e riprova.';
   // Tempo medio risposta
   const avgMs=qAnswerLog.length
     ?Math.round(qAnswerLog.reduce((s,l)=>s+l.responseTimeMs,0)/qAnswerLog.length)
@@ -273,7 +276,7 @@ function endQuiz(){
 function qzAbort(){
   ppConfirm(()=>{
     matchReset(); // v2.1.4: pulisce sempre il match state (no-op in individuale)
-    sh('qz-game').classList.add('hidden');sh('qz-result').classList.add('hidden');goHome();
+    sh('qz-game').classList.add('hidden');sh('qz-result').classList.add('hidden');goHome('cat'); // v8.42.0: Esci → scelta modalità (non più moduli)
   });
 }
 

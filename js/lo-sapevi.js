@@ -140,7 +140,7 @@ const LOSAPEVI_MODULE_MAP = {
   'hate-speech': ['data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo3/lo_sapevi_hate-speech.json'],
   'sexting-revenge-porn': ['data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo4/lo_sapevi_sexting-revenge-porn.json'],
   'grooming': ['data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo5/lo_sapevi_grooming.json'],
-  'difendersi-online': ['data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo6/lo_sapevi_difendersi-online.json'],
+  'difendersi-online': ['data/Didattica/Lo_Sapevi/Cyberbullismo_e_Sicurezza_Online/Modulo6/lo_sapevi_cittadinanza-digitale.json'],
   'fondamenti-cybersecurity': ['data/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo1/lo_sapevi_fondamenti-cybersecurity.json'],
   'sicurezza-account': ['data/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo2/lo_sapevi_sicurezza-account.json'],
   'protezione-dati': ['data/Didattica/Lo_Sapevi/Cybersecurity_Non_solo_antivirus_e_password/Modulo3/lo_sapevi_protezione-dati.json'],
@@ -158,19 +158,19 @@ const LOSAPEVI_MODULE_MAP = {
   'vpn': ['data/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo7/lo_sapevi_vpn.json'],
   'troubleshooting-reti': ['data/Didattica/Lo_Sapevi/Reti_e_Internet/Modulo8/lo_sapevi_troubleshooting-reti.json'],
   'malware-e-minacce-informatiche': ['data/Didattica/Lo_Sapevi/Malware_e_Minacce_Informatiche/Modulo1/lo_sapevi_malware-e-minacce-informatiche.json'],
-  'cos-e-ai': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo1/lo_sapevi_cos-e-ai.json'],
-  'come-funziona-ai': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo2/lo_sapevi_come-funziona-ai.json'],
-  'llm-fondamenti': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo3/lo_sapevi_llm-fondamenti.json'],
+  'cos-e-ai': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo1/lo_sapevi_cos-e-l-ai.json'],
+  'come-funziona-ai': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo2/lo_sapevi_come-funziona-l-ai.json'],
+  'llm-fondamenti': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo3/lo_sapevi_come-funzionano-gli-llm.json'],
   'ai-generativa': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo4/lo_sapevi_ai-generativa.json'],
   'prompt-engineering': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo5/lo_sapevi_prompt-engineering.json'],
   'agenti-automazione': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo6/lo_sapevi_agenti-automazione.json'],
   'deepfake-contenuti-sintetici': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo7/lo_sapevi_deepfake-contenuti-sintetici.json'],
-  'provenienza-contenuti': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo8/lo_sapevi_provenienza-contenuti.json'],
-  'verificare-ai': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo9/lo_sapevi_verificare-ai.json'],
-  'etica-ai': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo10/lo_sapevi_etica-ai.json'],
+  'provenienza-contenuti': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo8/lo_sapevi_provenienza-dei-contenuti.json'],
+  'verificare-ai': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo9/lo_sapevi_verificare-l-ai.json'],
+  'etica-ai': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo10/lo_sapevi_etica-dell-ai.json'],
   'bias-algoritmici': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo11/lo_sapevi_bias-algoritmici.json'],
   'ai-act': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo12/lo_sapevi_ai-act.json'],
-  'futuro-ai': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo13/lo_sapevi_futuro-ai.json'],
+  'futuro-ai': ['data/Didattica/Lo_Sapevi/Intelligenza_Artificiale/Modulo13/lo_sapevi_futuro-dell-ai.json'],
   // v8.41.0 — Area DigComp (10 Fasi): un JSON per Fase in data/Didattica/Lo_Sapevi/DigComp/ModuloN/
   'alfabetizzazione-digitale': ['data/Didattica/Lo_Sapevi/DigComp/Modulo1/lo_sapevi_alfabetizzazione-digitale.json'],
   'comunicazione-e-collaborazione': ['data/Didattica/Lo_Sapevi/DigComp/Modulo2/lo_sapevi_comunicazione-e-collaborazione.json'],
@@ -240,8 +240,8 @@ function _lsStateHTML({ icon, title, msg, color }){
   return `<div class="result-wrap">
     <div class="result-hero">
       <span class="result-stars" style="font-size:36px">${icon}</span>
-      <span class="result-score" style="font-size:20px;color:${color};line-height:1.3">${escHtml(title)}</span>
-      <span class="result-label" style="color:${color}99;margin-top:8px;line-height:1.5">${escHtml(msg)}</span>
+      <span class="result-score" style="font-size:20px;line-height:1.3">${escHtml(title)}</span>
+      <span class="result-label" style="margin-top:8px;line-height:1.5">${escHtml(msg)}</span>
     </div>
     <div class="btn-row">
       <button class="btn btn-neon" onclick="exitLoSapevi()"><i class="ti ti-arrow-left"></i> Torna a Didattica</button>

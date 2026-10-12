@@ -588,8 +588,8 @@ function _fcStateHTML({ icon, title, msg, color }){
   return `<div class="result-wrap">
     <div class="result-hero">
       <span class="result-stars" style="font-size:36px">${icon}</span>
-      <span class="result-score" style="font-size:20px;color:${color};line-height:1.3">${escHtml(title)}</span>
-      <span class="result-label" style="color:${color}99;margin-top:8px;line-height:1.5">${escHtml(msg)}</span>
+      <span class="result-score" style="font-size:20px;line-height:1.3">${escHtml(title)}</span>
+      <span class="result-label" style="margin-top:8px;line-height:1.5">${escHtml(msg)}</span>
     </div>
     <div class="btn-row">
       <button class="btn btn-neon" onclick="exitFlipCard()"><i class="ti ti-arrow-left"></i> Torna a Didattica</button>

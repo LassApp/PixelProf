@@ -1,5 +1,5 @@
 /* ═══════════════════════════════════════════════════════════════════════════════
-   MINIGIOCHI — Schermata di pausa   (v8.43.0 · @layer pausa)
+   MINIGIOCHI — Schermata di pausa   (v8.43.0 · @layer pausa · v8.44.0 alone ▶)
    Percorso: css/minigiochi/ (stessa cartella di quiz.css).
 
    Prima: overlay nero semi-trasparente (rgba(8,12,24,.84) nel Speed Quiz, navy .92 in Abbina e
@@ -17,7 +17,7 @@
    Completa la frase e Vero o Falso non hanno una pausa.
 
    Qui vive anche il PULSANTE di pausa/riprendi (.mem-pause-btn — il nome è storico, lo usano Speed Quiz,
-   Abbina e Memory) con la pulsazione playPulse: prima in pixelprof.css.
+   Abbina e Memory) con la pulsazione playPulse (e ppPausePulse per il ▶ nella card): prima in pixelprof.css.
    ═══════════════════════════════════════════════════════════════════════════════ */
 @layer pausa {
   .pp-pause-overlay,
@@ -40,15 +40,24 @@
     --pz-bg:linear-gradient(160deg,#7A5A38 0%,#6B4E30 55%,#7A5A38 100%);
   }
 
-  /* pulsante ▶ al centro (pulsa come prima: @keyframes playPulse in pixelprof.css) */
+  /* pulsante ▶ al centro, con alone pulsante (@keyframes ppPausePulse, qui sotto).
+     v8.44.0: prima usava playPulse, il cui alone è rgba(var(--accent-rgb),…) → in chiaro l'accento è fango
+     (#7A5A38) come lo sfondo della card, quindi l'alone era invisibile. Ora l'alone è CREMA in entrambi i temi:
+     colore e spessore vengono dalle due variabili (scuro: come prima, 5px/.18 su oliva; chiaro: 7px/.34 su fango). */
   .pp-pause-btn{
+    --pp-halo-c:rgba(242,232,213,.18);
+    --pp-halo-w:5px;
     width:52px; height:52px; border-radius:50%;
     display:flex; align-items:center; justify-content:center;
     font-size:22px; color:#F2E8D5;
     border:2px solid rgba(242,232,213,.6);
     background:rgba(23,35,45,.22);
     box-shadow:0 0 20px rgba(23,35,45,.25);
-    animation:playPulse 1.4s ease-in-out infinite;
+    animation:ppPausePulse 1.4s ease-in-out infinite;
+  }
+  html[data-theme="light"] .pp-pause-btn{
+    --pp-halo-c:rgba(242,232,213,.34);
+    --pp-halo-w:7px;
   }
   @media (prefers-reduced-motion: reduce){ .pp-pause-btn{ animation:none; } }
 
@@ -78,6 +87,11 @@
   @keyframes playPulse{
     0%,100%{box-shadow:0 0 0 0 rgba(var(--accent-rgb),0);}
     50%{box-shadow:0 0 0 5px rgba(var(--accent-rgb),.18);}
+  }
+  /* alone del ▶ nella card di pausa: crema fisso (non --accent) così si vede anche sul fango del tema chiaro */
+  @keyframes ppPausePulse{
+    0%,100%{box-shadow:0 0 20px rgba(23,35,45,.25), 0 0 0 0 rgba(242,232,213,0);}
+    50%{box-shadow:0 0 20px rgba(23,35,45,.25), 0 0 0 var(--pp-halo-w) var(--pp-halo-c);}
   }
 }
 

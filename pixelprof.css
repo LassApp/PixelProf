@@ -157,6 +157,7 @@ body{
 .logo-main{font-family:'Orbitron',monospace;font-size:15px;font-weight:900;color:var(--accent);letter-spacing:1px;text-shadow:0 0 16px rgba(var(--accent-rgb),.6)}
 .logo-main em{color:var(--purple);font-style:normal}
 .logo-sub{font-family:'Share Tech Mono',monospace;font-size:8px;color:var(--text-dim);letter-spacing:2px;text-transform:uppercase;margin-top:1px}
+.logo-hint{font-family:'Share Tech Mono',monospace;font-size:9px;color:var(--text-muted);letter-spacing:.4px;margin-top:2px}
 .tb-nav{display:flex;gap:4px;align-items:center}
 .tb-btn{
   display:flex;align-items:center;gap:5px;padding:6px 11px;border-radius:var(--radius-sm);
@@ -2819,6 +2820,7 @@ html[data-theme="light"] .logo-main{ background:none; -webkit-background-clip:bo
 html[data-theme="light"] .logo-main em{ background:none; -webkit-background-clip:border-box; background-clip:border-box; -webkit-text-fill-color:currentColor; color:#FBF6EC; }
 html[data-theme="light"] .logo-sub,
 html[data-theme="light"] .cs-logo-sub{ color: #F2E8D5; } /* giro colori 04/10: era .7 = 3.2:1 su fango */
+html[data-theme="light"] .logo-hint{ color: #F2E8D5; } /* giro colori 04/10: era .55 = 2.6:1 su fango */
 html[data-theme="light"] .logo-wrap:hover{ background: rgba(var(--accent-rgb),.06); border-color: rgba(var(--accent-rgb),.18); }
 html[data-theme="light"] .tb-btn{ color: rgba(242,232,213,.75); }
 html[data-theme="light"] .tb-btn:hover{ background: rgba(242,232,213,.14); color: #F2E8D5; }

@@ -1,6 +1,6 @@
-# Colori di PixelProf — riferimento reale (v8.44.0)
+# Colori di PixelProf — riferimento reale (v8.45.0)
 
-Documento ricavato **dal codice** del repository alla v8.44.0, non dalla documentazione: `css/tokens.css`, `pixelprof.css`,
+Documento ricavato **dal codice** del repository alla v8.44.0 (aggiornato a mano alla v8.45.0 solo dove cambia Abbina, vedi sez. 2.3), non dalla documentazione: `css/tokens.css`, `pixelprof.css`,
 `css/*.css`, `css/minigiochi/*.css`, `js/*.js` (bundle escluso) e `index.html`. Ogni valore e ogni "dove" sono stati
 verificati sui selettori reali; dove il codice è incoerente o contiene colori fuori palette l'ho scritto (sezione 3).
 
@@ -153,7 +153,8 @@ Usati per: badge in Classifica/Domande difficili, barre Progressi e Panoramica c
 
 - Giocatori/squadre (`COLORS`, coriandoli): `#4E7464`, `#6E7A50`, `#AB5649`, `#7A5A38`, `#54708C`. Default DB (`ensurePlayer`): `#4E7464`; (`ensureTeam`): `#6E7A50`.
 - `softColor()` riporta i vecchi colori neon salvati sulla famiglia più vicina: rosso/rosa → `#AB5649`, arancio → `#9C6B3E`, giallo → `#B8935A`, verde/teal → `#4E7464`, blu → `#54708C`, viola → `#746996`, magenta → `#9D5875`.
-- Abbina (`PAIR_COLORS`, `game-match.js`): `#4E7464`, `#7A5A38`, `#6E7A50`, `#AB5649`, `#54708C`, `#4A6B52`, `#9D5875`, `#B8935A` — la coppia selezionata usa `rgba(<colore>,.08/.12)` come fondo.
+- Abbina (`PAIR_COLORS`, `game-match.js`, **v8.45.0**): `#4E7464`, `#7A5A38`, `#54708C`, `#9D5875`, `#B8935A`, `#6E7A50`, `#4A6B52` (7 tinte; in un round ci sono al massimo 5 coppie e le prime 5 sono di famiglie diverse). Tolta la terracotta `#AB5649`: è il colore dell'errore e una coppia giusta non deve sembrare sbagliata. La tinta (`--pair-color`, scritta dal JS sulle voci) **non colora mai il testo**: tinge bordo, fondo (12% selezionata, 17% abbinata), badge, porta, filo ondulato e pallino di avanzamento, nella versione "inchiostro" `--pc-ink` = tinta mescolata al colore del testo del tema (24% in scuro → crema, 16% in chiaro → navy), che tiene ≥ 3,4:1 sulla scheda (`abbina.css`). Superfici e linee della scheda derivano da `--text-primary` a bassa opacità (3–17%); in chiaro la scheda è `#FBF6EC`, come le altre superfici crema chiaro.
+- **Conteggi non ricalcolati dopo la v8.45.0**: le tabelle della sez. 1.2 e dell'Appendice A sono quelle della v8.44.0. `abbina.css` è stato riscritto (meno `#4A6B52` e `#AB5649` letterali, più `#FBF6EC` nei 3 punti dove la scheda è crema chiaro): i numeri di quei tre colori sono quindi sfasati di qualche unità.
 - Schermate di errore dei giochi (`game-engine-state.js`): Quiz `#AB5649`, Speed Quiz `#7A5A38`, Abbina `#8B9968`, Memory `#AB5649`, Completa `#54708C`, Vero/Falso `#7A5A38`.
 
 ### 2.4 Stati

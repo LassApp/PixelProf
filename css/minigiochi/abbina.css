@@ -1,52 +1,260 @@
 /* ═══════════════════════════════════════════════════════════════════════════════
-   MINIGIOCHI — Abbina   (v8.43.0 · @layer abbina)
+   MINIGIOCHI — Abbina   (v8.45.0 · @layer abbina)
    Percorso: css/minigiochi/ (stessa cartella di quiz.css).
 
-   Contiene TUTTO lo stile di Abbina: colonne, voci (selezionata / abbinata col colore della coppia /
-   errore), pillola combo ×1…MAX, riga di aiuto e riga di feedback. Prima stava in pixelprof.css
-   (sezione "MATCH / MEMORY / FILL") e in due override nel layer netflix (.match-item), ora fusi qui.
-   Le pillole di stato (timer, punti, errori) sono .mem-stat-pill: condivise con Memory e Speed Quiz,
-   stanno in memory.css. Il pulsante pausa e la schermata di pausa sono in pausa.css.
+   Contiene TUTTO lo stile di Abbina: scacchiera (intestazione, colonne, etichette), voci (normale /
+   hover / selezionata / abbinata col colore della coppia / errore), fili ondulati, pillola combo
+   ×1…MAX e riga di feedback. Le pillole di stato (timer, punti, errori) sono .mem-stat-pill:
+   condivise con Memory e Speed Quiz, stanno in memory.css. Il pulsante pausa e la card di pausa sono
+   in pausa.css; la barra Esci/Ricomincia è .game-header (pixelprof.css), qui solo la variante .match-bar.
 
-   Aiuto/feedback: prima inline con bianco al 30–40% → quasi invisibili su crema; ora --text-muted
-   (4.65:1 su crema, 5.33:1 su navy). Feedback: scuro verde #8FB09F / terracotta #D49A8C / miele #E4C48C
-   su navy (≥ 6:1); chiaro verde #3E5A47 / terracotta #8A4038 / fango #7A5A38 su crema (≥ 5.2:1).
+   v8.45.0 — rifacimento grafico
+   · COLORI: tutto deriva dai token del tema. Testo = --text-primary, etichette = --text-muted, linee e
+     superfici = --text-primary a bassa opacità (crema in scuro, navy in chiaro). Il colore della coppia
+     (--pair-color, scritto dal JS) NON colora mai il testo: tinge solo bordo, fondo, badge, porta, filo e
+     pallino di avanzamento, con la sua versione "inchiostro" --pc-ink = tinta mescolata al colore del
+     testo (24% in scuro, 16% in chiaro) per tenere ≥ 3,4:1 su qualsiasi tinta della palette.
+   · FILI: ogni coppia giusta è unita da un filo ondulato nel colore della coppia (SVG #match-wires,
+     disegnato da game-match.js misurando le porte .mi-port). Il filo sta DIETRO alle voci.
+   · SPAZI: aiuto, "Termini" e "Definizioni" non sono più attaccati: l'aiuto sta nell'intestazione con
+     una riga di separazione, le etichette hanno il loro respiro sopra le voci.
+   · LAYOUT: le due colonne condividono le righe (subgrid): il termine i e la definizione i hanno
+     sempre la stessa altezza, anche con definizioni lunghe. Senza subgrid ripiega su due colonne libere.
+   · STRETTO (.nar, scacchiera < 540px, deciso dal JS): niente badge numero/lettera, gutter 40px, voci
+     più alte, filo più basso.
+   · Rimossi: stripe laterale ::after, bagliore dell'abbinata, colore del testo cambiato via JS.
+
+   Feedback: scuro verde #8FB09F / terracotta #D49A8C / miele #E4C48C su navy (≥ 6:1);
+   chiaro verde #3E5A47 / terracotta #8A4038 / fango #7A5A38 su crema (≥ 5.2:1).
    ═══════════════════════════════════════════════════════════════════════════════ */
 @layer abbina {
-  .match-cols{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-  .col-lbl{font-size:10px;color:var(--text-muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px;font-family:'Share Tech Mono',monospace}
+
+  /* ── variabili locali (scuro = base; chiaro sotto) ─────────────────────────── */
+  .match-bar,
+  .match-board{
+    --mi-mixc:var(--text-primary);      /* l'inchiostro vira verso crema (scuro) / navy (chiaro) */
+    --mi-mixp:24%;
+    --mi-glyph:var(--navy);             /* glifo/numero sul riempimento pieno del colore coppia */
+    --mi-fg2:color-mix(in srgb,var(--text-primary) 78%,transparent);
+    --mi-line:color-mix(in srgb,var(--text-primary) 12%,transparent);
+    --mi-ibg:color-mix(in srgb,var(--text-primary) 5%,transparent);
+    --mi-ibd:color-mix(in srgb,var(--text-primary) 17%,transparent);
+    --mi-ibd2:color-mix(in srgb,var(--text-primary) 42%,transparent);
+    --mi-bbg:color-mix(in srgb,var(--text-primary) 3.5%,transparent);
+    --mi-bbd:color-mix(in srgb,var(--text-primary) 14%,transparent);
+    --mi-solid:color-mix(in srgb,var(--text-primary) 3.5%,var(--navy));   /* fondo opaco delle porte */
+    --mi-shadow:0 10px 30px rgba(0,0,0,.35);
+    --mi-deco:color-mix(in srgb,var(--text-primary) 4.5%,transparent);
+    --mi-cbg:color-mix(in srgb,var(--text-primary) 5%,transparent);
+    --mi-cbd:color-mix(in srgb,var(--text-primary) 14%,transparent);
+    --mi-ok:#8FB09F; --mi-ko:#D49A8C; --mi-win:#E4C48C;
+  }
+  html[data-theme="light"] .match-bar,
+  html[data-theme="light"] .match-board{
+    --mi-mixp:16%;
+    --mi-glyph:#FBF6EC;
+    --mi-ibg:color-mix(in srgb,var(--text-primary) 3%,transparent);
+    --mi-ibd:color-mix(in srgb,var(--text-primary) 13%,transparent);
+    --mi-ibd2:color-mix(in srgb,var(--text-primary) 38%,transparent);
+    --mi-line:color-mix(in srgb,var(--text-primary) 10%,transparent);
+    --mi-bbg:#FBF6EC;
+    --mi-bbd:color-mix(in srgb,var(--text-primary) 10%,transparent);
+    --mi-solid:#FBF6EC;
+    --mi-shadow:0 10px 26px rgba(23,35,45,.10);
+    --mi-deco:color-mix(in srgb,var(--text-primary) 4%,transparent);
+    --mi-cbg:rgba(251,246,236,.92);
+    --mi-cbd:color-mix(in srgb,var(--text-primary) 10%,transparent);
+    --mi-ok:#3E5A47; --mi-ko:#8A4038; --mi-win:#7A5A38;
+  }
+
+  /* ── barra Esci / Ricomincia / pillole: scheda sotto i 1000px ──────────────────
+     Da 1000px in su la barra viene spostata nella topbar (#tb-context, css/topbar-profile.css), che
+     azzera sfondo, bordo e margini di .game-header: questa scheda vale solo quando resta in pagina. */
+  .match-bar{
+    flex-wrap:wrap; gap:8px; padding:10px 12px; margin-top:12px; margin-bottom:14px;   /* margin-top: l'area di gioco sotto i 1000px parte a filo della topbar */
+    border-radius:14px; background:var(--mi-cbg); border:1px solid var(--mi-cbd);
+    backdrop-filter:none; -webkit-backdrop-filter:none;
+  }
+
+  /* ── scacchiera ───────────────────────────────────────────────────────────── */
+  .match-board{
+    --mi-gutter:92px;
+    position:relative; overflow:hidden;
+    padding:18px 20px 14px; border-radius:18px;
+    background:var(--mi-bbg); border:1px solid var(--mi-bbd); box-shadow:var(--mi-shadow);
+  }
+  /* due cerchi di decorazione negli angoli (v8.45.0: tolto l'anello che tagliava i pallini di avanzamento) */
+  .match-board::before{
+    content:''; position:absolute; inset:0; pointer-events:none; background-repeat:no-repeat;
+    background-image:
+      radial-gradient(circle at 100% 0%,var(--mi-deco) 0 84px,transparent 85px),
+      radial-gradient(circle at 0% 100%,var(--mi-deco) 0 62px,transparent 63px);
+  }
+  .match-board .match-paused-overlay{ border-radius:17px; }   /* la card di pausa copre tutta la scacchiera */
+
+  /* intestazione: icona · aiuto · avanzamento */
+  .match-hd{
+    position:relative; display:flex; align-items:center; gap:12px;
+    padding-bottom:16px; border-bottom:1px solid var(--mi-line);
+  }
+  .match-hd-ic{
+    flex:none; width:30px; height:30px; border-radius:50%;
+    border:1.5px solid var(--mi-ibd2); color:var(--mi-fg2);
+    display:grid; place-items:center; font-size:15px;
+  }
+  .match-hint{
+    flex:1; min-width:0; margin:0;
+    font-family:inherit; font-size:13.5px; font-weight:500; line-height:1.35; color:var(--mi-fg2);
+  }
+  .match-prog{
+    flex:none; display:flex; align-items:center; gap:10px;
+    font:700 12px 'Share Tech Mono',monospace; color:var(--text-muted);
+  }
+  .match-pips{ display:flex; gap:4px; }
+  .match-pip,
+  .match-item,
+  .mw{
+    --pc-ink:color-mix(in srgb,var(--pair-color,var(--text-primary)) calc(100% - var(--mi-mixp)),var(--mi-mixc));
+  }
+  .match-pip{ width:18px; height:6px; border-radius:3px; background:var(--mi-line); transition:background var(--transition-fast); }
+  .match-pip.on{ background:var(--pc-ink); }
+
+  /* colonne + fili */
+  .match-stage{ position:relative; margin-top:18px; }
+  .match-wires{
+    position:absolute; left:0; top:0; width:100%; height:100%;
+    overflow:visible; pointer-events:none;
+  }
+  .match-cols{
+    position:relative; display:grid;
+    grid-template-columns:minmax(0,1fr) minmax(0,1fr);
+    column-gap:var(--mi-gutter); row-gap:10px; align-items:start;
+  }
+  .match-col{ display:flex; flex-direction:column; gap:10px; min-width:0; }
+  @supports (grid-template-rows:subgrid){
+    /* righe condivise: il termine i e la definizione i hanno la stessa altezza
+       (le righe sono dichiarate dal JS: grid-template-rows:auto repeat(N,auto) su #match-cols-wrap) */
+    .match-col{ display:grid; grid-row:1 / -1; grid-template-rows:subgrid; }
+  }
+
+  .col-lbl{
+    display:flex; align-items:center; gap:8px; margin:0 0 2px;
+    font:400 10.5px 'Share Tech Mono',monospace; letter-spacing:1.4px; text-transform:uppercase;
+    color:var(--text-muted);
+  }
+  .col-cnt{
+    min-width:18px; height:18px; padding:0 5px; border-radius:9px; border:1px solid var(--mi-line);
+    display:inline-grid; place-items:center; font-size:10px; letter-spacing:0;
+  }
+  .col-rule{ flex:1; height:1px; background:var(--mi-line); }
+
+  /* ── voce ─────────────────────────────────────────────────────────────────── */
   .match-item{
-    padding:9px 11px;border-radius:10px;border:1px solid var(--border-subtle);
-    background:var(--surface-1);cursor:pointer;font-size:12px;margin-bottom:5px;
-    transition:all var(--transition-fast);line-height:1.4;font-family:inherit;text-align:left;
-    width:100%;color:rgba(255,255,255,.7);position:relative;overflow:hidden;
+    position:relative; display:flex; align-items:center; gap:12px;
+    box-sizing:border-box; width:100%; min-height:54px; margin:0; padding:8px 16px;
+    border-radius:12px; border:1px solid var(--mi-ibd); background:var(--mi-ibg);
+    color:var(--text-primary); cursor:pointer;
+    font-family:inherit; font-size:13px; font-weight:500; line-height:1.3; text-align:left;
+    -webkit-tap-highlight-color:transparent;
+    transition:border-color var(--transition-fast),background var(--transition-fast),box-shadow var(--transition-fast),transform var(--transition-fast);
   }
-  .match-item::after{
-    content:'';position:absolute;left:0;top:0;bottom:0;width:2px;
-    background:var(--pair-color,var(--accent));transform:scaleY(0);transition:transform var(--transition-fast);
+  .match-item.mi-t{ padding-right:24px; }
+  .match-item.mi-d{ padding-left:24px; }
+  .mi-tx{ flex:1; min-width:0; overflow-wrap:break-word; }
+
+  /* badge: numero (termini) / lettera (definizioni) */
+  .mi-bd{
+    flex:none; width:26px; height:26px; border-radius:50%;
+    border:1.5px solid var(--mi-ibd2); color:var(--mi-fg2);
+    display:grid; place-items:center;
+    font:700 11.5px 'Share Tech Mono',monospace;
+    transition:border-color var(--transition-fast),background var(--transition-fast),color var(--transition-fast);
   }
-  .match-item:hover:not(.matched):not(.locked){border-color:var(--pair-color,var(--accent));color:#fff;background:var(--surface-2);}
-  .match-item:hover:not(.matched):not(.locked)::after{transform:scaleY(1);}
-  .match-item.sel{border-color:var(--pair-color,var(--accent));background:color-mix(in srgb,var(--pair-color,var(--accent)) 12%,transparent);color:var(--pair-color,var(--accent));}
-  .match-item.sel::after{background:var(--pair-color,var(--accent));transform:scaleY(1);}
-  /* v2.1.6: matched items use per-pair color via --pair-color CSS var */
+
+  /* porta: punto d'attacco del filo, a cavallo del bordo verso il centro */
+  .mi-port{
+    position:absolute; top:50%; z-index:3; box-sizing:border-box;
+    width:18px; height:18px; margin-top:-9px; border-radius:50%;
+    background:var(--mi-solid); border:2px solid var(--mi-ibd2); color:var(--mi-glyph);
+    display:grid; place-items:center;
+    transition:border-color var(--transition-fast),background var(--transition-fast),box-shadow var(--transition-fast),transform var(--transition-fast);
+  }
+  .mi-t .mi-port{ right:-10px; }
+  .mi-d .mi-port{ left:-10px; }
+  .mi-port svg{ width:10px; height:10px; fill:none; stroke:currentColor; stroke-width:3.2; stroke-linecap:round; stroke-linejoin:round; }
+
+  /* hover (solo dove c'è un mouse): la voce si sporge di 3px verso l'altra colonna; la porta compensa,
+     così il punto d'attacco del filo non si muove */
+  @media (hover:hover){
+    .match-item:hover:not(.matched):not(.locked):not(.sel):not(.flash){
+      border-color:var(--mi-ibd2);
+      background:color-mix(in srgb,var(--text-primary) 7%,transparent);
+    }
+    .match-item.mi-t:hover:not(.matched):not(.locked){ transform:translateX(3px); }
+    .match-item.mi-d:hover:not(.matched):not(.locked){ transform:translateX(-3px); }
+    .match-item.mi-t:hover:not(.matched):not(.locked) .mi-port{ transform:translateX(-3px); }
+    .match-item.mi-d:hover:not(.matched):not(.locked) .mi-port{ transform:translateX(3px); }
+  }
+  .match-item:focus-visible{ outline:2px solid var(--text-primary); outline-offset:2px; }
+
+  /* selezionata: bordo e anello della porta nel colore della prossima coppia */
+  .match-item.sel{
+    border-color:var(--pc-ink);
+    background:color-mix(in srgb,var(--pair-color,var(--text-primary)) 12%,transparent);
+  }
+  .match-item.sel .mi-bd{ border-color:var(--pc-ink); color:var(--pc-ink); }
+  .match-item.sel .mi-port{
+    border-color:var(--pc-ink);
+    box-shadow:0 0 0 4px color-mix(in srgb,var(--pair-color,var(--text-primary)) 28%,transparent);
+  }
+
+  /* abbinata: colore della coppia (--pair-color); il testo resta --text-primary */
   .match-item.matched{
     cursor:default;
-    border-color:var(--pair-color,#4A6B52);
-    color:var(--pair-color,#4A6B52);
-    background:color-mix(in srgb,var(--pair-color,#4A6B52) 12%,transparent);
-    box-shadow:0 0 10px color-mix(in srgb,var(--pair-color,#4A6B52) 30%,transparent);
+    border-color:var(--pc-ink);
+    background:color-mix(in srgb,var(--pair-color,var(--text-primary)) 17%,transparent);
   }
-  .match-item.matched::after{
-    background:var(--pair-color,#4A6B52);
-    transform:scaleY(1);
-  }
-  .match-item.flash{background:rgba(171,86,73,.1);border-color:#AB5649;animation:matchFlash .5s ease;}
-  @keyframes matchFlash{0%,100%{opacity:1;}50%{opacity:.4;}}
-  .match-item.locked{cursor:default;pointer-events:none;}
+  .match-item.matched .mi-bd{ background:var(--pc-ink); border-color:var(--pc-ink); color:var(--mi-glyph); }
+  .match-item.matched .mi-port{ background:var(--pc-ink); border-color:var(--pc-ink); }
 
-  /* ── Abbina v2.1.6 header pills ── */
-  .match-hdr{display:flex;align-items:center;gap:6px;margin-bottom:12px;flex-wrap:wrap;}
+  /* errore: terracotta tratteggiata, ✕ nella porta */
+  .match-item.flash{
+    border-color:var(--mi-ko); border-style:dashed; background:rgba(171,86,73,.12);
+    animation:matchFlash .5s ease;
+  }
+  .match-item.flash .mi-port{ border-color:var(--mi-ko); color:var(--mi-ko); }
+  @keyframes matchFlash{0%,100%{opacity:1;}50%{opacity:.4;}}
+  .match-item.locked{ cursor:default; pointer-events:none; }
+
+  @media (prefers-reduced-motion:reduce){
+    .match-item,.mi-port,.mi-bd,.match-pip{ transition:none; }
+    .match-item.flash{ animation:none; }
+  }
+
+  /* ── fili ondulati (SVG): halo largo e tenue + linea; l'anteprima è puntinata ── */
+  .mw-halo,.mw-line,.mw-prev{ fill:none; stroke:var(--pc-ink); stroke-linecap:round; stroke-linejoin:round; }
+  .mw-halo{ stroke-opacity:.2; stroke-width:8; }
+  .mw-line{ stroke-width:2.5; }
+  .mw-prev{ stroke-width:2.5; stroke-dasharray:1 6.5; }
+
+  /* ── layout stretto (classe .nar messa dal JS quando la scacchiera è < 540px) ── */
+  .match-board.nar{ --mi-gutter:40px; padding:14px 10px 12px; }
+  .match-board.nar .mi-bd{ display:none; }
+  .match-board.nar .match-item{ min-height:80px; font-size:12px; }
+  .match-board.nar .match-item.mi-t{ padding-left:12px; padding-right:17px; }   /* il lato interno lascia posto alla porta (8px dentro la voce) */
+  .match-board.nar .match-item.mi-d{ padding-left:17px; padding-right:12px; }
+
+  /* ── barra in pagina su schermi stretti: Esci · Ricomincia · pausa sopra, le 4 pillole sotto, a larghezza piena ── */
+  @media (max-width:520px){
+    .match-bar::after{ content:''; order:2; flex:0 0 100%; height:0; }
+    .match-bar .match-hdr{ display:contents; }
+    .match-bar .mem-pause-btn{ order:1; margin-left:auto; }
+    .match-bar .mem-stat-pill,
+    .match-bar .match-combo-pill{ order:3; flex:1 1 0; min-width:0; justify-content:center; padding:5px 6px; }
+  }
+
+  /* ── Abbina: pillole di stato in intestazione ── */
+  .match-hdr{display:flex;align-items:center;gap:6px;margin:0;flex-wrap:wrap;}
   .match-combo-pill{
     display:flex;align-items:center;gap:5px;
     padding:5px 12px;border-radius:20px;
@@ -72,35 +280,31 @@
   .match-combo-pill.combo-bump{animation:comboBump .35s cubic-bezier(.34,1.56,.64,1);}
   @keyframes comboBump{0%{transform:scale(1);}40%{transform:scale(1.2);}100%{transform:scale(1);}}
 
-  .match-hint{
-    margin-bottom:10px;
-    font-family:'Share Tech Mono',monospace; font-size:11px; color:var(--text-muted);
-  }
+  /* ── riga di feedback in fondo alla scacchiera (v8.45.0: separata da una linea, icone Tabler) ── */
   .match-fb{
-    margin-top:8px; min-height:20px; font-size:12px; color:var(--text-muted);
+    position:relative; display:flex; align-items:center; flex-wrap:wrap; gap:6px 16px;
+    min-height:34px; margin-top:16px; padding-top:12px; border-top:1px solid var(--mi-line);
+    font-size:12.5px; font-weight:600; color:var(--text-muted);
   }
-
+  .match-fb i{ font-size:15px; line-height:1; }
+  .match-fb-ok,.match-fb-ko{ display:inline-flex; align-items:center; gap:7px; }
   /* riga di feedback: prima #4A6B52 / #AB5649 / #B8935A inline (2–3:1 su crema).
      Scuro: verde #8FB09F, terracotta #D49A8C, miele #E4C48C su navy (≥ 6:1).
      Chiaro: verde #3E5A47, terracotta #8A4038, fango #7A5A38 su crema (≥ 5.2:1). */
-  .match-fb-ok { color:#8FB09F; font-weight:600; }
-  .match-fb-ko { color:#D49A8C; font-weight:600; }
-  .match-fb-win{ color:#E4C48C; font-weight:700; }
-  html[data-theme="light"] .match-fb-ok { color:#3E5A47; }
-  html[data-theme="light"] .match-fb-ko { color:#8A4038; }
-  html[data-theme="light"] .match-fb-win{ color:#7A5A38; }
+  .match-fb-ok { color:var(--mi-ok); font-weight:600; }
+  .match-fb-ko { color:var(--mi-ko); font-weight:600; }
+  .match-fb-win{ color:var(--mi-win); font-weight:700; }
 }
 
 @layer theme {
-  /* chiaro: testo neutro, bordo/sfondo hue-coded intatti */
+  /* barra in pagina in chiaro: batte html[data-theme="light"] .game-header (pixelprof.css, bianco al 70%) */
+  html[data-theme="light"] .game-header.match-bar{ background:var(--mi-cbg); border-color:var(--mi-cbd); }
+
+  /* pillola combo in chiaro: testo neutro, bordo/sfondo hue-coded intatti */
   html[data-theme="light"] .match-combo-pill{ color:#7A5A38; }
   html[data-theme="light"] .match-combo-pill.x1{ color: rgba(var(--navy-rgb),.4); }
   html[data-theme="light"] .match-combo-pill.x2{ color:#54708C; }
   html[data-theme="light"] .match-combo-pill.x3{ color:#6E7A50; }
   html[data-theme="light"] .match-combo-pill.x4{ color:#8A4038; }
   html[data-theme="light"] .match-combo-pill.xmax{ color:#7A5A38; }
-  html[data-theme="light"] .match-item{ background: rgba(var(--navy-rgb),.03); border-color: rgba(var(--navy-rgb),.09); color: rgba(var(--navy-rgb),.72); }
-  html[data-theme="light"] .match-item:hover:not(.matched):not(.locked){ color:var(--navy); background: rgba(var(--navy-rgb),.06); }
-  html[data-theme="light"] .match-item.sel{ color: var(--text-primary); }
-  html[data-theme="light"] .match-item.matched{ color: var(--text-primary); }
 }

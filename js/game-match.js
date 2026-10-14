@@ -15,16 +15,23 @@
 // v9: intonati alla palette (prima neon puri) — stesso ruolo (una
 // tinta per coppia nel minigioco Abbina), stessa famiglia già usata
 // altrove nel redesign.
+// v8.45.0: tolta la terracotta #AB5649 (è il colore dell'errore: una coppia giusta non deve
+// "sembrare" sbagliata) e riordinata la lista: le prime 5 tinte — quelle che servono in un round —
+// sono tutte di famiglie diverse (salvia, fango, slate, rosa, miele). Restano oliva e salvia scuro
+// come riserva. In chiaro/scuro la tinta non colora il testo: lo fa abbina.css (--pc-ink).
 const PAIR_COLORS=[
-  '#4E7464','#7A5A38','#6E7A50','#AB5649',
-  '#54708C','#4A6B52','#9D5875','#B8935A'
+  '#4E7464','#7A5A38','#54708C','#9D5875',
+  '#B8935A','#6E7A50','#4A6B52'
 ];
 
 /* ==================================================
    MATCH
 ================================================== */
 
-/* CODE-03: centralized game header builder */
+/* CODE-03: centralized game header builder
+   (Fill, Memory e Vero/Falso gli passano un secondo argomento storico — la stringa della chiamata di
+   riavvio — che qui NON viene usato: per questo il v8.45.0 non aggiunge un parametro "classe" ma lascia
+   la firma com'era; Abbina aggiunge .match-bar da sola, vedi startMatch.) */
 function buildGameHeader(rightContent){
   return`<div class="game-header"><div class="game-header-left"><button class="game-exit-btn" onclick="ppConfirm(()=>goHome('cat'))"><i class="ti ti-x"></i> Esci</button><button class="game-restart-btn" onclick="restartActivity()"><i class="ti ti-refresh"></i> Ricomincia</button></div>${rightContent}</div>`;
 }
@@ -57,10 +64,12 @@ async function getMatchSet(mod){
 let mTimerInt=null;
 let mTimeLeft=0;
 let mPaused=false;
+let _matchRO=null;   // v8.45.0: ResizeObserver che ridisegna i fili quando la scacchiera cambia misura
 
 function stopMatchTimer(){
   if(mTimerInt){clearInterval(mTimerInt);mTimerInt=null;}
   mTimeLeft=0;mPaused=false;
+  if(_matchRO){_matchRO.disconnect();_matchRO=null;}
 }
 function pauseMatchTimer(){
   // Guard: non tentare di fermare un timer già fermo
@@ -129,12 +138,12 @@ function _updateMatchComboUI(){
   }
 }
 
-/* -- _applyNextColor: calcola nextPairColor e lo propaga su tutti i chip
-   non-matched in 3 modi:
-   1. --pair-color  (per .matched che lo usa già)
-   2. outline/border inline su :hover via mouseenter/mouseleave listeners
-   3. border-color/background inline quando .sel viene aggiunto
-   Chiamata all'avvio e dopo ogni match corretto. -- */
+/* -- _applyNextColor: calcola nextPairColor e lo scrive come --pair-color su tutte le voci non
+   ancora abbinate. Chiamata all'avvio e dopo ogni match corretto.
+   v8.45.0: solo la variabile. Prima qui si aggiungevano anche listener mouseenter/mouseleave e
+   stili inline (bordo, colore del testo, sfondo) per hover e selezione: ora hover, selezione e
+   abbinamento sono tutti in abbina.css e leggono --pair-color — niente più colore del testo
+   cambiato via JS, quindi niente più testo colorato illeggibile su sfondo chiaro. -- */
 function _applyNextColor(){
   const s=mState;
   const usedColors=Object.values(s.pairColorMap);
@@ -143,36 +152,12 @@ function _applyNextColor(){
     ? availColors[0]
     : PAIR_COLORS[s.matched.size % PAIR_COLORS.length];
 
-  const color = s.nextPairColor;
-  const colorDim = color + '22'; // ~13% alpha hex approximation via rgba fallback
-
   document.querySelectorAll('.match-item:not(.matched)').forEach(el=>{
-    // Rimuove vecchi listener prima di aggiungerne di nuovi
-    if(el._matchHoverIn)  el.removeEventListener('mouseenter', el._matchHoverIn);
-    if(el._matchHoverOut) el.removeEventListener('mouseleave', el._matchHoverOut);
-
-    // Imposta --pair-color per .matched futuro
-    el.style.setProperty('--pair-color', color);
-
-    // Hover: applica colore dinamico inline (sovrascrive CSS .match-item:hover)
-    el._matchHoverIn = function(){
-      if(this.classList.contains('matched')||this.classList.contains('locked')) return;
-      this.style.borderColor = color;
-      this.style.color = color;
-      this.style.background = `rgba(${_hexToRgb(color)},0.08)`;
-    };
-    el._matchHoverOut = function(){
-      if(this.classList.contains('sel')) return; // mantieni se selezionato
-      this.style.borderColor = '';
-      this.style.color = '';
-      this.style.background = '';
-    };
-    el.addEventListener('mouseenter', el._matchHoverIn);
-    el.addEventListener('mouseleave', el._matchHoverOut);
+    el.style.setProperty('--pair-color', s.nextPairColor);
   });
 }
 
-/* Converte hex (#rrggbb) in "r,g,b" per rgba() */
+/* Converte hex (#rrggbb) in "r,g,b" per rgba() — usata anche da game-quiz.js */
 function _hexToRgb(hex){
   const r=parseInt(hex.slice(1,3),16);
   const g=parseInt(hex.slice(3,5),16);
@@ -180,21 +165,134 @@ function _hexToRgb(hex){
   return `${r},${g},${b}`;
 }
 
-/* Applica il colore nextPairColor inline su un chip appena selezionato (.sel) */
-function _applySelColor(el){
-  if(!el||!mState) return;
-  const color = mState.nextPairColor || PAIR_COLORS[0];
-  el.style.borderColor = color;
-  el.style.color = color;
-  el.style.background = `rgba(${_hexToRgb(color)},0.12)`;
+/* ══════════════════════════════════════════════════════════════════════════
+   v8.45.0 — FILI ONDULATI tra termine e definizione abbinati
+   Ogni coppia giusta è collegata da un filo nel colore della coppia (stesso colore di voce, porta e
+   pallino di avanzamento). Il filo è un SVG sopra lo sfondo e sotto le voci (#match-wires, dentro
+   #match-stage): i suoi estremi sono i CENTRI delle due porte (.mi-port), misurati sul DOM con
+   getBoundingClientRect — così seguono qualsiasi altezza di riga (definizioni lunghe che vanno a
+   capo) e si ridisegnano da soli a ogni resize / caricamento font (ResizeObserver su #match-board).
+   Forma: curva a S con tangenti orizzontali + sinusoide perpendicolare che si spegne agli estremi;
+   il numero di semionde è sempre intero, così l'onda chiude in fase sulla porta d'arrivo.
+   L'anteprima (tratteggio puntinato) parte dalla voce selezionata e segue il mouse fino alla
+   voce dell'altra colonna su cui si passa sopra.
+   ══════════════════════════════════════════════════════════════════════════ */
+const _MATCH_NAR_W=540;   // sotto questa larghezza della scacchiera: layout stretto (niente badge, filo più basso)
+const _MATCH_ICO={
+  ok:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12l5 5l10-10"/></svg>',
+  ko:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6l-12 12M6 6l12 12"/></svg>'
+};
+
+function _matchWavePath(x0,y0,x1,y1,A,per){
+  const N=72, c=(x1-x0)*0.5;
+  const bez=t=>{const u=1-t;return[
+    u*u*u*x0+3*u*u*t*(x0+c)+3*u*t*t*(x1-c)+t*t*t*x1,
+    u*u*u*y0+3*u*u*t*y0+3*u*t*t*y1+t*t*t*y1];};
+  let L=0,prev=bez(0);
+  for(let i=1;i<=24;i++){const p=bez(i/24);L+=Math.hypot(p[0]-prev[0],p[1]-prev[1]);prev=p;}
+  const k=Math.max(1.5,Math.round(L/per*2)/2);
+  const pts=[];
+  for(let i=0;i<=N;i++){
+    const t=i/N, p=bez(t), q=bez(Math.min(1,t+0.001)), r=bez(Math.max(0,t-0.001));
+    let tx=q[0]-r[0], ty=q[1]-r[1]; const m=Math.hypot(tx,ty)||1; tx/=m; ty/=m;
+    const off=A*Math.pow(Math.sin(Math.PI*t),0.7)*Math.sin(2*Math.PI*k*t);
+    pts.push([p[0]-ty*off, p[1]+tx*off]);
+  }
+  return 'M'+pts.map(p=>p[0].toFixed(1)+' '+p[1].toFixed(1)).join('L');
 }
 
-/* Rimuove stili inline da un chip che perde .sel */
-function _clearSelColor(el){
-  if(!el) return;
-  el.style.borderColor = '';
-  el.style.color = '';
-  el.style.background = '';
+/* argomento stringa per un onclick inline: prima l'escape JavaScript (\ e '), poi quello HTML.
+   v8.45.0 FIX: con solo escAttr() un apostrofo diventava &#39; → il browser lo ridecodifica in ' PRIMA di
+   compilare l'handler e il termine "Superficie d'attacco" produceva mSel('t','Superficie d'attacco') →
+   SyntaxError, quindi il click non faceva nulla e la coppia non si poteva abbinare (98 termini
+   con apostrofo nei dati di Abbina). */
+function _matchJsArg(s){
+  return escAttr(String(s).replace(/\\/g,'\\\\').replace(/'/g,"\\'"));
+}
+
+function _matchTermEl(t){ return document.getElementById('mt_'+String(t).replace(/\W/g,'_')); }
+
+/* icona nella porta della voce: 'ok' (✓ abbinata), 'ko' (✕ errore) o null (vuota) */
+function _matchPort(el,kind){
+  const p=el&&el.querySelector('.mi-port');
+  if(p)p.innerHTML=kind?_MATCH_ICO[kind]:'';
+}
+
+function _matchRedrawWires(){
+  const s=mState;
+  if(!s||gameType!=='match')return;
+  const board=document.getElementById('match-board');
+  const stage=document.getElementById('match-stage');
+  const svg=document.getElementById('match-wires');
+  const wrap=document.getElementById('match-cols-wrap');
+  if(!board||!stage||!svg||!wrap)return;
+  // layout stretto: la classe va impostata PRIMA di misurare (cambia altezze e gutter)
+  board.classList.toggle('nar',board.clientWidth<_MATCH_NAR_W);
+  const nar=board.classList.contains('nar');
+  const sr=stage.getBoundingClientRect();
+  if(!sr.width||!sr.height)return;
+  const A=nar?3.5:4.5, per=nar?36:42;
+  const xy=el=>{
+    const p=el.querySelector('.mi-port')||el, r=p.getBoundingClientRect();
+    return [r.left+r.width/2-sr.left, r.top+r.height/2-sr.top];
+  };
+  let g='';
+  s.links.forEach(l=>{
+    if(!l.te.isConnected||!l.de.isConnected)return;
+    const a=xy(l.te), b=xy(l.de), d=_matchWavePath(a[0],a[1],b[0],b[1],A,per);
+    g+=`<g class="mw" style="--pair-color:${l.color}"><path class="mw-halo" d="${d}"/><path class="mw-line" d="${d}"/></g>`;
+  });
+  // anteprima: dalla voce selezionata alla voce sotto il mouse (o, senza mouse, un breve tratto verso l'altra colonna)
+  const selEl=s.selT!=null?_matchTermEl(s.selT):(s.selD!=null?document.getElementById('md_'+s.selD):null);
+  if(selEl&&selEl.isConnected&&!selEl.classList.contains('matched')){
+    const fromT=selEl.classList.contains('mi-t');
+    const a=xy(selEl), h=s.hoverEl;
+    let b;
+    if(h&&h.isConnected&&h.classList.contains(fromT?'mi-d':'mi-t')&&!h.classList.contains('matched')&&!h.classList.contains('locked')){
+      b=xy(h);
+    }else{
+      const cols=wrap.children;
+      const gap=cols.length>1?cols[1].getBoundingClientRect().left-cols[0].getBoundingClientRect().right:60;
+      b=[a[0]+(fromT?1:-1)*gap*0.42, a[1]];
+    }
+    const d=_matchWavePath(a[0],a[1],b[0],b[1],A*0.9,34);
+    g+=`<g class="mw mw-pv" style="--pair-color:${s.nextPairColor}"><path class="mw-prev" d="${d}"/></g>`;
+  }
+  svg.setAttribute('width',sr.width.toFixed(1));
+  svg.setAttribute('height',sr.height.toFixed(1));
+  svg.setAttribute('viewBox','0 0 '+sr.width.toFixed(1)+' '+sr.height.toFixed(1));
+  svg.innerHTML=g;
+}
+
+/* voce sotto il mouse (solo per l'anteprima del filo) */
+function _matchSetHover(el){
+  const s=mState;
+  if(!s)return;
+  const h=(el&&!el.classList.contains('matched')&&!el.classList.contains('locked'))?el:null;
+  if(s.hoverEl===h)return;
+  s.hoverEl=h;
+  if(s.selT!=null||s.selD!=null)_matchRedrawWires();
+}
+
+/* pallini di avanzamento nell'intestazione + contatore n/5 */
+function _updateMatchProgressUI(){
+  const s=mState;
+  if(!s)return;
+  document.querySelectorAll('#match-pips .match-pip').forEach((p,i)=>{
+    const l=s.links[i];
+    p.classList.toggle('on',!!l);
+    if(l)p.style.setProperty('--pair-color',l.color);else p.style.removeProperty('--pair-color');
+  });
+  const el=document.getElementById('match-prog-n');
+  if(el)el.textContent=s.links.length+'/'+s.pairs.length;
+}
+
+let _matchRedrawRaf=0;
+if(typeof window!=='undefined'){
+  window.addEventListener('resize',()=>{
+    if(gameType!=='match'||_matchRedrawRaf)return;
+    _matchRedrawRaf=requestAnimationFrame(()=>{_matchRedrawRaf=0;_matchRedrawWires();});
+  });
 }
 
 function _matchTimeUp(){
@@ -259,6 +357,8 @@ async function startMatch(cont,mod){
     score:0,
     pairColorMap:{},     // term → color string
     nextPairColor: PAIR_COLORS[0], // pre-computed color ready for the next match
+    links:[],            // v8.45.0: coppie abbinate, in ordine → {t, di, color, te, de}: servono a disegnare i fili
+    hoverEl:null,        // v8.45.0: voce sotto il mouse (solo anteprima del filo)
   };
 
   // Init timer
@@ -273,28 +373,51 @@ async function startMatch(cont,mod){
       <div class="match-combo-pill x1" id="match-combo-pill">×1</div>
       <button class="mem-pause-btn" id="match-pause-btn" onclick="matchTogglePause()"><i class="ti ti-player-pause" id="match-pause-icon"></i></button>
     </div>`
-  );
+  ).replace('class="game-header"','class="game-header match-bar"');   // v8.45.0: barra a scheda sotto i 1000px (abbina.css)
 
+  /* v8.45.0 — scacchiera a scheda: intestazione (icona, aiuto, avanzamento), due colonne con le
+     porte ai bordi e i fili ondulati nel mezzo, riga di feedback. Gli id e la struttura che usano
+     i test e11y/e2e restano: #match-cols-wrap con ESATTAMENTE due <div> figli (termini, poi
+     definizioni), ognuno con le sue .match-item; #mfb; #match-paused-overlay; #match-pause-btn.
+     L'SVG dei fili (#match-wires) è fratello del wrap dentro #match-stage, PRIMA del wrap nel DOM:
+     così sta sotto le voci e i suoi estremi spariscono dietro le porte. */
+  /* v8.45.0 FIX: il termine finiva nell'onclick come mSel('t','<termine>') con escAttr(), che protegge solo
+     l'HTML: il browser decodifica &#39; PRIMA di eseguire il JS, quindi un apostrofo (o un backslash) nel
+     termine chiudeva la stringa → SyntaxError al click e termine non selezionabile. Succedeva con i termini
+     tipo "Diritto all'oblio" / "Superficie d'attacco" (119 su 2172 nei file data/). Ora il termine passa come
+     stringa JSON (escape corretto di apici, virgolette e backslash) dentro l'attributo HTML-escapato. */
+  const n=pairs.length;
+  const letter=i=>String.fromCharCode(65+i);
   cont.innerHTML=`${hdr}
-    <div class="match-hint">Clicca un termine poi la sua definizione</div>
-    <div style="position:relative">
-      <div class="match-cols" id="match-cols-wrap">
-        <div>
-          <div class="col-lbl">Termini</div>
-          ${terms.map(t=>`<button class="match-item" id="mt_${t.replace(/\W/g,'_')}" onclick="mSel('t','${escAttr(t)}')">${escHtml(t)}</button>`).join('')}
-        </div>
-        <div>
-          <div class="col-lbl">Definizioni</div>
-          ${defs.map((d,i)=>`<button class="match-item" id="md_${i}" onclick="mSel('d',${i})">${escHtml(d)}</button>`).join('')}
+    <div class="match-board" id="match-board">
+      <div class="match-hd">
+        <span class="match-hd-ic" aria-hidden="true"><i class="ti ti-link"></i></span>
+        <span class="match-hint">Clicca un termine poi la sua definizione</span>
+        <span class="match-prog">
+          <span class="match-pips" id="match-pips" aria-hidden="true">${pairs.map(()=>'<span class="match-pip"></span>').join('')}</span>
+          <span id="match-prog-n">0/${n}</span>
+        </span>
+      </div>
+      <div class="match-stage" id="match-stage">
+        <svg class="match-wires" id="match-wires" aria-hidden="true"></svg>
+        <div class="match-cols" id="match-cols-wrap" style="grid-template-rows:auto repeat(${n},auto)">
+          <div class="match-col">
+            <div class="col-lbl"><span>Termini</span><span class="col-cnt">${n}</span><span class="col-rule"></span></div>
+            ${terms.map((t,i)=>`<button class="match-item mi-t" id="mt_${t.replace(/\W/g,'_')}" onclick="mSel('t',${escAttr(JSON.stringify(t))})"><span class="mi-bd" aria-hidden="true">${i+1}</span><span class="mi-tx">${escHtml(t)}</span><span class="mi-port" aria-hidden="true"></span></button>`).join('')}
+          </div>
+          <div class="match-col">
+            <div class="col-lbl"><span>Definizioni</span><span class="col-cnt">${n}</span><span class="col-rule"></span></div>
+            ${defs.map((d,i)=>`<button class="match-item mi-d" id="md_${i}" onclick="mSel('d',${i})"><span class="mi-port" aria-hidden="true"></span><span class="mi-tx">${escHtml(d)}</span><span class="mi-bd" aria-hidden="true">${letter(i)}</span></button>`).join('')}
+          </div>
         </div>
       </div>
-      <!-- Pause overlay — mirrors Memory/Speed Quiz pattern -->
+      <div class="match-fb" id="mfb" aria-live="polite"></div>
+      <!-- Pause overlay — mirrors Memory/Speed Quiz pattern (v8.45.0: copre tutta la scheda) -->
       <div class="match-paused-overlay hidden" id="match-paused-overlay" onclick="matchTogglePause()">
         <div class="pp-pause-btn">▶</div>
         <div class="pp-pause-text">Premi per continuare</div>
       </div>
-    </div>
-    <div class="match-fb" id="mfb"></div>`;
+    </div>`;
 
   // Start countdown
   _startMatchInterval();
@@ -302,6 +425,19 @@ async function startMatch(cont,mod){
   // Apply initial color to all chips so :hover and .sel work immediately
   // Must run after innerHTML is set so the DOM elements exist
   _applyNextColor();
+
+  // v8.45.0: anteprima del filo (mouse) + ridisegno dei fili a ogni cambio di misura / font
+  const wrap=document.getElementById('match-cols-wrap');
+  wrap.addEventListener('pointerover',e=>{ _matchSetHover(e.target.closest?e.target.closest('.match-item'):null); });
+  wrap.addEventListener('pointerleave',()=>_matchSetHover(null));
+  const board=document.getElementById('match-board');
+  if(typeof ResizeObserver!=='undefined'){
+    _matchRO=new ResizeObserver(()=>_matchRedrawWires());
+    _matchRO.observe(board);
+  }
+  const _st=mState;
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{ if(mState===_st)_matchRedrawWires(); });
+  _matchRedrawWires();
 }
 
 /* -- Abbina pause/resume — v4.0.8 I1 fix
@@ -333,7 +469,10 @@ function matchTogglePause(){
   }
 }
 
-/* -- mSel  v2.1.6: combo  scoring  per-pair color -- */
+/* -- mSel  v2.1.6: combo  scoring  per-pair color
+   v8.45.0: niente più stili inline sulle voci (selezione/hover/abbinamento sono classi in abbina.css);
+   ogni coppia giusta entra in s.links (→ filo ondulato), aggiorna pallini e porte; la riga di
+   feedback usa icone Tabler invece dei caratteri ✓ ✗ e dell'emoji. -- */
 function mSel(type,val){
   const s=mState;
   // Block while paused or not playing
@@ -341,24 +480,27 @@ function mSel(type,val){
 
   if(type==='t'){
     document.querySelectorAll('[id^=mt_]').forEach(e=>{
-      if(!e.classList.contains('matched')){ e.classList.remove('sel'); _clearSelColor(e); }
+      if(!e.classList.contains('matched')) e.classList.remove('sel');
     });
     const el=document.getElementById('mt_'+val.replace(/\W/g,'_'));
     if(el&&!el.classList.contains('matched')&&!el.classList.contains('locked')){
-      el.classList.add('sel'); _applySelColor(el); s.selT=val;
+      el.classList.add('sel'); s.selT=val;
     }
   }else{
     document.querySelectorAll('[id^=md_]').forEach(e=>{
-      if(!e.classList.contains('matched')){ e.classList.remove('sel'); _clearSelColor(e); }
+      if(!e.classList.contains('matched')) e.classList.remove('sel');
     });
     const el=document.getElementById('md_'+val);
     if(el&&!el.classList.contains('matched')&&!el.classList.contains('locked')){
-      el.classList.add('sel'); _applySelColor(el); s.selD=val;
+      el.classList.add('sel'); s.selD=val;
     }
   }
 
-  if(s.selT===null||s.selT===undefined)return;
-  if(s.selD===null||s.selD===undefined)return;
+  // una sola voce scelta: mostra l'anteprima del filo e aspetta l'altra
+  if(s.selT===null||s.selT===undefined||s.selD===null||s.selD===undefined){
+    _matchRedrawWires();
+    return;
+  }
 
   const dv=s.defs[s.selD];
   const ok=s.pairs.find(p=>p.t===s.selT&&p.d===dv);
@@ -375,17 +517,19 @@ function mSel(type,val){
     // Apply color + matched class to both elements
     [te,de].forEach(el=>{
       if(!el)return;
-      el.classList.remove('sel');
-      _clearSelColor(el); // rimuove stili inline .sel prima di applicare .matched
+      el.classList.remove('sel','flash');
       el.classList.add('matched');
       el.style.setProperty('--pair-color',pairColor);
+      _matchPort(el,'ok');
     });
 
     s.matched.add(s.selT);
+    if(te&&de)s.links.push({t:s.selT,di:s.selD,color:pairColor,te,de});
 
     // Compute next color AND write --pair-color on all remaining unmatched chips
     // immediately — so :hover and .sel on the next interaction already show it.
     _applyNextColor();
+    _updateMatchProgressUI();
 
     // Combo
     const _prevCombo=s.combo||1;
@@ -404,10 +548,10 @@ function mSel(type,val){
     s.score=(s.score||0)+pts;
 
     // UI feedback
-    const comboLabel=s.combo>1?` [×${s.combo} COMBO +${pts}]`:`[+${pts}]`;
+    const comboLabel=s.combo>1?`[×${s.combo} COMBO +${pts}]`:`[+${pts}]`;
     const allDone=s.matched.size===s.pairs.length;
-    if(fb)fb.innerHTML=`<span class="match-fb-ok">✓ Corretto! ${comboLabel}</span>`
-      +(allDone?' <span class="match-fb-win">🎉 Tutti abbinati!</span>':'');
+    if(fb)fb.innerHTML=`<span class="match-fb-ok"><i class="ti ti-check"></i>Corretto! ${comboLabel}</span>`
+      +(allDone?'<span class="match-fb-win">Tutti abbinati!</span>':'');
 
     _updateMatchScoreUI();
     _updateMatchComboUI();
@@ -426,9 +570,13 @@ function mSel(type,val){
     [te,de].forEach(el=>{
       if(!el)return;
       el.classList.add('flash');
-      setTimeout(()=>{ el.classList.remove('flash','sel'); _clearSelColor(el); },600);
+      _matchPort(el,'ko');
+      setTimeout(()=>{
+        el.classList.remove('flash','sel');
+        if(!el.classList.contains('matched'))_matchPort(el,null);   // se nel frattempo è stata abbinata, la ✓ resta
+      },600);
     });
-    if(fb)fb.innerHTML=`<span class="match-fb-ko">✗ Non corrisponde — −${penalty} pt</span>`;
+    if(fb)fb.innerHTML=`<span class="match-fb-ko"><i class="ti ti-x"></i>Non corrisponde — −${penalty} pt</span>`;
     _updateMatchScoreUI();
     _updateMatchComboUI();
 
@@ -437,9 +585,9 @@ function mSel(type,val){
     if(errEl)errEl.textContent=s.errors;
   }
 
-  s.selT=null;s.selD=null;
+  s.selT=null;s.selD=null;s.hoverEl=null;
+  _matchRedrawWires();   // fili: nuovo filo se giusta, anteprima rimossa in ogni caso
 }
-
 
 /* ==================================================
    PAUSE UI REGISTRY — Match (Abbina) handler

@@ -1,6 +1,6 @@
-# Colori di PixelProf — riferimento reale (v8.45.0)
+# Colori di PixelProf — riferimento reale (v8.46.0)
 
-Documento ricavato **dal codice** del repository alla v8.44.0 (aggiornato a mano alla v8.45.0 solo dove cambia Abbina, vedi sez. 2.3), non dalla documentazione: `css/tokens.css`, `pixelprof.css`,
+Documento ricavato **dal codice** del repository alla v8.44.0 (aggiornato a mano alla v8.45.0 solo dove cambia Abbina, vedi sez. 2.3, e alla v8.46.0 solo dove cambia Vero o Falso, vedi sez. 2.5), non dalla documentazione: `css/tokens.css`, `pixelprof.css`,
 `css/*.css`, `css/minigiochi/*.css`, `js/*.js` (bundle escluso) e `index.html`. Ogni valore e ogni "dove" sono stati
 verificati sui selettori reali; dove il codice è incoerente o contiene colori fuori palette l'ho scritto (sezione 3).
 
@@ -36,12 +36,12 @@ quindi per navy/crema/oliva/fango il numero reale di punti d'uso è molto più a
 |  | `#E9DEC5` | fine gradiente del pannello profilo in scuro | 1 CSS |
 |  | `#E9DEC7` | fine gradiente della topbar in scuro (scritto `rgba(233,222,199,.96)`) | 1 CSS |
 | Sage | `#4E7464` | area ECDL, modulo SS (gradiente barra card), colore giocatore/squadra di default, "Ottima" nella forza password | 17 CSS · 29 JS/HTML |
-|  | `#4A6B52` | **successo**: risposta corretta, feedback ok, Vero (`tf-true`), Abbina "matched", Memory "matched", modulo SS, recupero in Panoramica classe | 60 CSS · 38 JS/HTML |
+|  | `#4A6B52` | **successo**: risposta corretta, feedback ok, pulsante giusto di Vero o Falso (`tf-correct`), Abbina "matched", Memory "matched", modulo SS, recupero in Panoramica classe | 60 CSS · 38 JS/HTML |
 |  | `#8FB09F` | testo di successo su fondo scuro (feedback, Abbina), pallino/pulsante "attivo" docenti; è anche la tinta del livello "Facile" (`143,176,159`) | 9 CSS |
 |  | `#3E5A47` | testo di successo su fondo chiaro (feedback, Abbina, opzione corretta del quiz) | 3 CSS |
 | Slate | `#54708C` | area Cybersecurity, modulo WP, `--blue`, combo ×2 di Abbina, timer in corsa (Memory), anello profilo "uomo"/predefinito | 66 CSS · 51 JS/HTML |
 |  | `#7D99B3` | testo slate su fondo scuro: badge WP, icona genere "uomo", titolo delle card Dashboard Direttore in hover | 7 CSS · 2 JS/HTML |
-| Terracotta | `#AB5649` | **errore/pericolo**: azioni distruttive (`.pchip-del-btn`, `.cd-item.danger`, conferma `danger` dei dialog, reset classifica), `.login-error`, dialog `.pp-dialog`, area Malware, modulo IT, `tf-false`, errori di form (JS), `err-pill` | 155 CSS · 78 JS/HTML |
+| Terracotta | `#AB5649` | **errore/pericolo**: azioni distruttive (`.pchip-del-btn`, `.cd-item.danger`, conferma `danger` dei dialog, reset classifica), `.login-error`, dialog `.pp-dialog`, area Malware, modulo IT, pulsante sbagliato di Vero o Falso (`tf-wrong`), errori di form (JS), `err-pill` | 155 CSS · 78 JS/HTML |
 |  | `#8A4038` | testo errore su fondo chiaro (timer rosso, `fb.ko`, `tf-wrong`), pulsante Esci dal profilo in scuro | 39 CSS |
 |  | `#C47869` | testo terracotta su fondo scuro (badge IT, "Esci", audio disattivato) | 16 CSS · 3 JS/HTML |
 |  | `#D49A8C` | testo errore su fondo scuro nei minigiochi (timer rosso, `fb.ko`, `match-fb-ko`), stato "disattivo" docenti | 11 CSS |
@@ -154,7 +154,7 @@ Usati per: badge in Classifica/Domande difficili, barre Progressi e Panoramica c
 - Giocatori/squadre (`COLORS`, coriandoli): `#4E7464`, `#6E7A50`, `#AB5649`, `#7A5A38`, `#54708C`. Default DB (`ensurePlayer`): `#4E7464`; (`ensureTeam`): `#6E7A50`.
 - `softColor()` riporta i vecchi colori neon salvati sulla famiglia più vicina: rosso/rosa → `#AB5649`, arancio → `#9C6B3E`, giallo → `#B8935A`, verde/teal → `#4E7464`, blu → `#54708C`, viola → `#746996`, magenta → `#9D5875`.
 - Abbina (`PAIR_COLORS`, `game-match.js`, **v8.45.0**): `#4E7464`, `#7A5A38`, `#54708C`, `#9D5875`, `#B8935A`, `#6E7A50`, `#4A6B52` (7 tinte; in un round ci sono al massimo 5 coppie e le prime 5 sono di famiglie diverse). Tolta la terracotta `#AB5649`: è il colore dell'errore e una coppia giusta non deve sembrare sbagliata. La tinta (`--pair-color`, scritta dal JS sulle voci) **non colora mai il testo**: tinge bordo, fondo (12% selezionata, 17% abbinata), badge, porta, filo ondulato e pallino di avanzamento, nella versione "inchiostro" `--pc-ink` = tinta mescolata al colore del testo del tema (24% in scuro → crema, 16% in chiaro → navy), che tiene ≥ 3,4:1 sulla scheda (`abbina.css`). Superfici e linee della scheda derivano da `--text-primary` a bassa opacità (3–17%); in chiaro la scheda è `#FBF6EC`, come le altre superfici crema chiaro.
-- **Conteggi non ricalcolati dopo la v8.45.0**: le tabelle della sez. 1.2 e dell'Appendice A sono quelle della v8.44.0. `abbina.css` è stato riscritto (meno `#4A6B52` e `#AB5649` letterali, più `#FBF6EC` nei 3 punti dove la scheda è crema chiaro): i numeri di quei tre colori sono quindi sfasati di qualche unità.
+- **Conteggi non ricalcolati dopo la v8.45.0 e la v8.46.0**: le tabelle della sez. 1.2 e dell'Appendice A sono quelle della v8.44.0. `abbina.css` è stato riscritto (meno `#4A6B52` e `#AB5649` letterali, più `#FBF6EC` nei 3 punti dove la scheda è crema chiaro) e così `vero-falso.css` (v8.46.0: tolto `#0A8F5A`; i colori di esito sono ora `color-mix()` di `#4A6B52`/`#AB5649` con il colore del testo, più i testi `#8FB09F`/`#D49A8C` e `#3E5A47`/`#8A4038`, più `#E4C48C`/`#7A5A38` per la fiamma della serie e `#FBF6EC` per scheda e glifi in chiaro): i numeri di quei colori sono quindi sfasati di qualche unità. Dell'Appendice A è stata aggiornata a mano solo la riga `#0A8F5A`.
 - Schermate di errore dei giochi (`game-engine-state.js`): Quiz `#AB5649`, Speed Quiz `#7A5A38`, Abbina `#8B9968`, Memory `#AB5649`, Completa `#54708C`, Vero/Falso `#7A5A38`.
 
 ### 2.4 Stati
@@ -173,7 +173,7 @@ Usati per: badge in Classifica/Domande difficili, barre Progressi e Panoramica c
 - **Pill in topbar (≥1000 px)** (`topbar-profile.css` 436–447, via `--pp-rgb`): timer in corsa slate `84,112,140`; timer in scadenza e errori terracotta `171,86,73` (con `comboPulse`); punteggio miele `184,147,90`; mosse oliva `110,122,80`; combo ×1 navy `23,35,45`, ×2 slate, ×3 oliva, ×4 terracotta, MAX miele.
 - **Risultati** (`risultati.css`): podio 1° miele `#B8935A` con bordo `#E4C48C`; riquadri statistiche `st-slate` `129,160,190`, `st-miele` `214,176,112`, `st-terra` `208,120,104`.
 - **Memory** (`memory.css`): carta abbinata `#4A6B52`; carta girata e retro in viola/neon: vedi sez. 3, punti 2 e 7.
-- **Vero o Falso** (`vero-falso.css`): Vero `#4A6B52` (testo chiaro `#0A8F5A`), Falso `#AB5649` (testo chiaro `#8A4038`).
+- **Vero o Falso** (`vero-falso.css`, **v8.46.0**): a riposo e al passaggio del mouse Vero e Falso sono **identici** (contorno neutro derivato da `--text-primary`): il colore compare solo con l'esito. Giusto = tinta `#4A6B52`, sbagliato = tinta `#AB5649`, nella versione "inchiostro" (tinta mescolata al colore del testo: 24% in scuro, 16% in chiaro): bordo, fondo (17% / 12% sui pulsanti, 10% sul pannello), cerchio con icona, pallino di avanzamento. Il colore **non colora mai il testo corrente**; i testi d'esito (titolo «Corretto»/«Sbagliato») usano le tinte di `feedback.css` (`#8FB09F`/`#D49A8C` scuro, `#3E5A47`/`#8A4038` chiaro). Mai solo colore: sbagliato = bordo **tratteggiato** + croce + etichetta «La tua risposta». Fiamma della serie `#E4C48C` (scuro) / `#7A5A38` (chiaro). Scheda in chiaro `#FBF6EC`. **Tolto `#0A8F5A`** (verde fuori palette del tema chiaro).
 
 ### 2.6 Ruoli profilo (`js/profile-panel.js`)
 
@@ -197,7 +197,7 @@ Elenco di ciò che ho trovato leggendo il codice. Nessuno è stato cambiato in q
 1. **Colore del modulo CE incoerente.** `MOD_COLOR_HEX.CE` è fango `#7A5A38` (`game-constants.js`), mentre `stats.js` (`_HIST_MOD_COLOR`) e `dashboard.js` (`_CHD_MOD_COLOR`) usano miele `#B8935A`: lo stesso modulo appare di due colori in schermate diverse.
 2. **Viola neon residui.** `rgba(106,79,214,.05)` (= `#6A4FD6`) nel gradiente di sfondo del tema chiaro (`pixelprof.css`, 3 occorrenze); `.mem-c.flip` di Memory usa `#6450DC` / testo `#C4BAFF` (`memory.css`); `#0A0E1E`/`#0E142C`/`#080C1C` come fondi carta Memory.
 3. **Verdi/rosa saturi nelle card poster** (`mod-cards.css`): tag/badge SS `#44c76a` e `#5AD47A`, tag OC `#FFB4D7` / `#FFC2E0`, più i fondi per-modulo `#0a0618→#140928` (OE), `#060e1c→#0a1a30` (WP), `#1E2B1F→#091610` (SS), `#1c0414→#300a26` (OC): non fanno parte della palette.
-4. **Verdi non di palette** in tema chiaro: `#0A8F5A` (Vero/corretta, `vero-falso.css`), `#12805A` (Memory matched), `#0A3D26` (opzione corretta quiz).
+4. **Verdi non di palette** in tema chiaro: `#12805A` (Memory matched), `#0A3D26` (opzione corretta quiz). (`#0A8F5A` di Vero o Falso è stato rimosso nella v8.46.0.)
 5. **Fondi "notturni" ereditati** (blu/viola quasi neri) in `pixelprof.css`: `#04060F`, `#0A0F1E`, `#0A1022`, `#10162A`, `#0C1224`, `#0D1224`, `#0C1020`, `#080A16`, `#060812` … usati per overlay, dialog, tooltip e skeleton; più le classi `.hero-quiz/-speed/-match/-memory/-fill/-truefalse` (gradienti nero-blu/viola, `pixelprof.css`): `game-constants.js` le assegna ancora (`heroClass`), ma lo sfondo reale dell'hero lo decide `act-select.css` (sez. 1.3), quindi quei gradienti non sono più visibili.
 6. **Variabili legacy inutilizzate** in `:root` di `pixelprof.css`: `--blue` (`#54708C`), `--glow-ce: rgba(84,112,140,.4)` e `--glow-wp: rgba(78,116,100,.38)` — nessun `var(--blue)`/`var(--glow-*)` nel codice; per di più i nomi non corrispondono ai colori attuali dei moduli (CE fango/miele, WP slate). Candidate alla rimozione.
 7. **Neon nascosti in un data-URI**: `%2300ffc8` (5 volte, ciano neon) e `%237c6aff` (1 volta, viola) dentro il background SVG di `.mem-c.hide::before` (`memory.css`). Nell'SVG il `#` è scritto `%23`, quindi non compaiono nelle scansioni per `#hex` e **non sono nell'Appendice A**.
@@ -265,7 +265,7 @@ Classificazione: **palette** = ancore; **derivato** = tinte nominate in sez. 1.2
 | `#1E2B1F` | da verificare | scuro verdastro | 2 CSS | `mod-cards.css` (2) |
 | `#1C0414` | da verificare | scuro caldo (marrone/bordeaux) | 2 CSS | `mod-cards.css` (2) |
 | `#12805A` | da verificare | verde saturo | 2 CSS | `flip-card.css` (1), `memory.css` (1) |
-| `#0A8F5A` | da verificare | verde saturo | 2 CSS | `vero-falso.css` (2) |
+| `#0A8F5A` | rimosso (v8.46.0) | verde saturo | 0 CSS | — (era `vero-falso.css`) |
 | `#0A101C` | da verificare | scuro freddo (blu/viola) | 2 CSS | `pixelprof.css` (1), `achievements.css` (1) |
 | `#0A0E1C` | da verificare | scuro freddo (blu/viola) | 2 CSS | `pixelprof.css` (1), `topbar-profile.css` (1) |
 | `#FFC2E0` | da verificare | rosa chiaro | 1 CSS | `mod-cards.css` (1) |

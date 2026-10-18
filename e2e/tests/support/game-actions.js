@@ -146,7 +146,9 @@ async function playFillQuestions(page, count) {
     await page.locator('.word-bank .chip').first().waitFor({ state: 'visible' });
     await page.locator('.word-bank .chip').first().click();
     await page.locator('#g-area button.btn-neon:has-text("Verifica")').click();
-    await page.waitForTimeout(1100); // checkFill() attende 1s prima di passare alla successiva
+    // v8.47.0: checkFill() attende 1 s dopo una risposta giusta e 2,4 s dopo una sbagliata (si deve poter leggere la
+    // parola giusta) prima di passare alla successiva; la tessera scelta è sempre la prima, quindi può essere l'una o l'altra.
+    await page.waitForTimeout(2600);
   }
 }
 

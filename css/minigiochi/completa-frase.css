@@ -1,37 +1,431 @@
 /* ═══════════════════════════════════════════════════════════════════════════════
-   MINIGIOCHI — Completa la frase   (v8.43.0 · @layer completafrase)
-   Percorso: css/minigiochi/ (stessa cartella di quiz.css).
+   MINIGIOCHI — Completa la frase   (v8.47.0 · @layer completafrase)
+   Percorso: css/minigiochi/ (stessa cartella di quiz.css, abbina.css e vero-falso.css).
 
-   Frase, spazio da completare, banca di parole (.chip) ed etichetta «Scegli dalla banca:».
-   Prima stava in pixelprof.css ("MATCH / MEMORY / FILL"). L'etichetta era inline con verde chiaro
-   rgba(143,176,159,.9), quasi invisibile su crema: ora --text-muted (4.65:1 su crema, 5.33:1 su navy).
-   Il feedback Corretto/Sbagliato è in feedback.css (condiviso con Vero o Falso).
+   Contiene TUTTO lo stile di Completa la frase: scheda unica (intestazione, frase con lo spazio, le
+   quattro parole, piede con Verifica, pannello d'esito) e la barra Esci/Ricomincia/contatore quando
+   resta in pagina. Il markup lo scrive js/game-fill.js (renderFill e checkFill). Il feedback .fb ha le
+   sue regole base in feedback.css (condivise con Vero o Falso): qui le sostituiamo solo dentro
+   .cf-board, in @layer theme. Prima il file conteneva solo .fill-sent, .blank-in, .word-bank, .chip
+   e l'etichetta «Scegli dalla banca:» (v8.43.0): quelle regole sono sostituite da quelle di oggi.
+
+   v8.47.0 — rifacimento grafico (stesso linguaggio di Abbina v8.45.0 e Vero o Falso v8.46.0)
+   · SCHEDA UNICA: intestazione, frase, parole, Verifica ed esito stanno in una sola scheda (raggio 18,
+     fondo e linee derivati da --text-primary a bassa opacità, due cerchi decorativi negli angoli).
+   · LA FRASE È L'EROE: 26px (21px nella scheda stretta), riga misurata (36em), interlinea larga perché lo
+     spazio è più alto del testo. Le frasi lunghe scendono a scalini (cf-s2 > 100 caratteri: 23px; cf-s3
+     > 140: 20px; cf-s4 > 180: 18px), scelti dal template dalla lunghezza della frase, senza misure a
+     runtime: così anche la frase più lunga dei dati resta nel budget di altezza della LIM (720px).
+   · LO SPAZIO è un incavo in linea nella frase. Vuoto = incavo; con una parola scelta = bordo pieno
+     NEUTRO (la scelta non è né verde né rossa); a esito dato = bordo pieno + cerchio con la spunta
+     (giusto) oppure bordo TRATTEGGIATO + croce + parola barrata (sbagliato). Dopo un errore la parola
+     giusta compare accanto, nella frase, in uno spazio pieno con la spunta (.cf-fix).
+   · LE QUATTRO PAROLE: tessere grandi e identiche (altezza ≥ 56px, due colonne; una in scheda stretta).
+     A riposo, al passaggio del mouse e dopo la scelta sono neutre: il colore compare solo con l'esito.
+   · COLORI: tutto deriva dai token del tema. Il colore d'esito (verde/terracotta) NON colora mai il
+     testo corrente: tinge bordo, fondo, cerchio-icona e pallino, nella versione "inchiostro" (tinta
+     mescolata al colore del testo: 24% in scuro → crema, 16% in chiaro → navy). Il testo d'esito usa
+     le stesse tinte di feedback.css (#8FB09F/#D49A8C in scuro, #3E5A47/#8A4038 in chiaro).
+   · MAI SOLO COLORE: giusto = bordo pieno + cerchio pieno con la spunta + etichetta «Corretto»;
+     sbagliato = bordo TRATTEGGIATO + croce + etichetta «La tua risposta»; la parola giusta, dopo un
+     errore, porta l'etichetta «Risposta giusta».
+   · VERIFICA: disabilitata (lucchetto, contorno sottile, non solo opacità) finché non si sceglie una
+     parola; il testo guida «Scegli una parola per verificare» è collegato con aria-describedby.
+   · SENZA TASTIERA NELLO SPAZIO: #fi resta nel DOM come fonte del valore per checkFill() (readonly,
+     tabindex -1, inputmode none) ma non si vede; lo spazio visibile è lo <span class="cf-slot"> che lo
+     rispecchia. Tab + Invio/Spazio sulle tessere resta possibile.
+   · AVANZAMENTO: un pallino per frase fino a 20 frasi (pieno = giusta, tratteggiato = sbagliata,
+     contorno = corrente); oltre una barra continua. Il contatore della barra in alto è solo «✓ k»
+     (corrette); n/N sta nell'intestazione della scheda. SERIE: da ×2 un chip con la fiamma, nascosto
+     all'esito (il pannello mostra quella aggiornata).
+   · STRETTO (.nar, scheda < 540px, deciso dal JS sulla larghezza REALE della scheda come in Abbina e
+     Vero o Falso): niente riga di guida in testata, testo e tessere più compatti, Verifica a tutta
+     larghezza.
+   · BARRA ESCI/RICOMINCIA: sotto i 1000px resta in pagina ed è una scheda (.cf-bar, solo qui sotto
+     #g-area); da 1000px in su js/app.js la sposta nella topbar (#tb-context), che azzera sfondo, bordo
+     e margini e ne definisce l'aspetto condiviso con gli altri giochi: lì non la tocchiamo.
+   · Animazioni: solo transizioni brevi di colore/posizione, disattivate con prefers-reduced-motion.
+     Anello di focus visibile (3px) su ogni azione. Nessun timer nuovo nel CSS.
+
+   Contrasti MISURATI sul DOM dell'app (colori calcolati, composizione alfa sRGB fino al fondo pagina),
+   scuro e chiaro, in tutti gli stati (frase vuota, parola scelta, giusta, sbagliata; 94 misure):
+   testi ≥ 4,89:1 (frase 12,05–14,83:1; parole delle tessere 9,68–14,01:1, tranne le tessere non scelte
+   dopo l'esito, attenuate a 4,89–5,07:1 come l'etichetta «Scegli dalla banca:» e il «n/N»; titoli
+   d'esito ≥ 5,65:1); componenti (bordi di tessere, spazio e pannello, cerchi-icona, pallini) ≥ 3,18:1;
+   Verifica attivo 13,14:1.
+
+   Compatibilità: usa color-mix() (già in abbina.css e vero-falso.css). Non usa :has().
    ═══════════════════════════════════════════════════════════════════════════════ */
 @layer completafrase {
-  .fill-sent{font-size:14px;line-height:2.4;margin-bottom:8px;color:#e2e8f0}
-  .blank-in{display:inline-block;min-width:80px;border-bottom:2px solid rgba(var(--accent-rgb),.4);padding:0 4px;font-size:13px;outline:none;background:transparent;color:var(--accent);font-family:'Share Tech Mono',monospace;transition:border-color var(--transition-fast);}
-  .blank-in:focus{border-bottom-color:var(--accent);}
-  .word-bank{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
-  .chip{
-    padding:4px 12px;border-radius:20px;border:1px solid var(--border-mid);
-    background:var(--surface-1);font-size:12px;cursor:pointer;font-family:inherit;
-    color:rgba(255,255,255,.6);transition:all var(--transition-fast);font-weight:500;
-    position:relative;overflow:hidden;
-  }
-  .chip::after{
-    content:'';position:absolute;bottom:0;left:0;right:0;height:1.5px;
-    background:var(--accent);transform:scaleX(0);transition:transform var(--transition-fast);
-  }
-  .chip:hover{border-color:var(--accent-border);color:var(--accent);background:var(--accent-dim);}
-  .chip:hover::after{transform:scaleX(1);}
 
-  .fill-bank-lbl{
-    margin-bottom:6px; font-size:10px; letter-spacing:.6px; text-transform:uppercase;
+  /* ── variabili locali (scuro = base; chiaro sotto) ─────────────────────────── */
+  .cf-bar,
+  .cf-board{
+    --cf-mixc:var(--text-primary);       /* l'inchiostro vira verso crema (scuro) / navy (chiaro) */
+    --cf-mixp:24%;
+    --cf-glyph:var(--navy);              /* glifo sul cerchio pieno del colore d'esito */
+    --cf-fg2:color-mix(in srgb,var(--text-primary) 78%,transparent);
+    --cf-line:color-mix(in srgb,var(--text-primary) 12%,transparent);
+    --cf-ibg:color-mix(in srgb,var(--text-primary) 5%,transparent);
+    --cf-ibd:color-mix(in srgb,var(--text-primary) 17%,transparent);
+    --cf-ibd2:color-mix(in srgb,var(--text-primary) 42%,transparent);   /* icone, cerchi */
+    --cf-bd:color-mix(in srgb,var(--text-primary) 42%,transparent);     /* bordo di tessere e spazio a riposo */
+    --cf-bbg:color-mix(in srgb,var(--text-primary) 3.5%,transparent);
+    --cf-bbd:color-mix(in srgb,var(--text-primary) 14%,transparent);
+    --cf-shadow:0 10px 30px rgba(0,0,0,.35);
+    --cf-deco:color-mix(in srgb,var(--text-primary) 3.5%,transparent);
+    --cf-cbg:color-mix(in srgb,var(--text-primary) 5%,transparent);
+    --cf-cbd:color-mix(in srgb,var(--text-primary) 14%,transparent);
+    --cf-bbg-solid:color-mix(in srgb,var(--text-primary) 3.5%,var(--surface-0));   /* la scheda è translucida: per le etichette sul bordo serve il colore pieno */
+    --cf-slot-bd:color-mix(in srgb,var(--text-primary) 54%,transparent);
+    --cf-slot-bg:rgba(0,0,0,.26);                                       /* spazio vuoto: un incavo, più scuro della scheda */
+    --cf-slot-sh:inset 0 2px 6px rgba(0,0,0,.38);
+    --cf-sel-bg:color-mix(in srgb,var(--text-primary) 12%,transparent); /* scelta: neutra */
+    --cf-ok:#8FB09F; --cf-ko:#D49A8C; --cf-win:#E4C48C;                 /* colori di TESTO per esito */
+    --cf-ok-ink:color-mix(in srgb,#4A6B52 calc(100% - var(--cf-mixp)),var(--cf-mixc));   /* "inchiostro": bordo, cerchio, pallino */
+    --cf-ko-ink:color-mix(in srgb,#AB5649 calc(100% - var(--cf-mixp)),var(--cf-mixc));
+    --cf-ok-fill:color-mix(in srgb,#4A6B52 17%,transparent);
+    --cf-ko-fill:color-mix(in srgb,#AB5649 12%,transparent);
+    --cf-ok-pan:color-mix(in srgb,#4A6B52 10%,transparent);
+    --cf-ko-pan:color-mix(in srgb,#AB5649 10%,transparent);
+  }
+  html[data-theme="light"] .cf-bar,
+  html[data-theme="light"] .cf-board{
+    --cf-mixp:16%;
+    --cf-glyph:#FBF6EC;
+    --cf-line:color-mix(in srgb,var(--text-primary) 10%,transparent);
+    --cf-ibg:color-mix(in srgb,var(--text-primary) 3%,transparent);
+    --cf-ibd:color-mix(in srgb,var(--text-primary) 13%,transparent);
+    --cf-ibd2:color-mix(in srgb,var(--text-primary) 38%,transparent);
+    --cf-bd:color-mix(in srgb,var(--text-primary) 54%,transparent);
+    --cf-bbg:#FBF6EC;
+    --cf-bbg-solid:#FBF6EC;
+    --cf-bbd:color-mix(in srgb,var(--text-primary) 10%,transparent);
+    --cf-shadow:0 10px 26px rgba(23,35,45,.10);
+    --cf-deco:color-mix(in srgb,var(--text-primary) 3%,transparent);
+    --cf-cbg:rgba(251,246,236,.92);
+    --cf-cbd:color-mix(in srgb,var(--text-primary) 10%,transparent);
+    --cf-slot-bg:color-mix(in srgb,var(--text-primary) 6%,transparent);
+    --cf-slot-sh:inset 0 2px 5px rgba(23,35,45,.14);
+    --cf-sel-bg:color-mix(in srgb,var(--text-primary) 9%,transparent);
+    --cf-ok:#3E5A47; --cf-ko:#8A4038; --cf-win:#7A5A38;
+  }
+
+  /* testo solo per gli screen reader */
+  .cf-sr{
+    position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden;
+    clip:rect(0 0 0 0); clip-path:inset(50%); white-space:nowrap; border:0;
+  }
+
+  /* contatore «✓ k»: icona + numero (in pagina e nella topbar) */
+  .cf-bar .game-counter-pill{ display:inline-flex; align-items:center; gap:6px; }
+  .cf-bar .game-counter-pill i{ font-size:1.2em; line-height:1; }
+
+  /* ── scheda unica ─────────────────────────────────────────────────────────── */
+  .cf-board{
+    position:relative; overflow:hidden; box-sizing:border-box;
+    padding:22px 28px 24px; border-radius:18px;
+    background:var(--cf-bbg); border:1px solid var(--cf-bbd); box-shadow:var(--cf-shadow);
+    color:var(--text-primary);
+  }
+  .cf-board::before{      /* due cerchi negli angoli: senza anelli che taglino il contenuto */
+    content:''; position:absolute; inset:0; pointer-events:none; background-repeat:no-repeat;
+    background-image:
+      radial-gradient(circle at 100% 0%,var(--cf-deco) 0 76px,transparent 77px),
+      radial-gradient(circle at 0% 100%,var(--cf-deco) 0 52px,transparent 53px);
+  }
+  .cf-board > *{ position:relative; }
+
+  /* ── intestazione: icona · guida · (serie) · avanzamento ───────────────────── */
+  .cf-hd{ display:flex; align-items:center; gap:12px; padding-bottom:16px; border-bottom:1px solid var(--cf-line); }
+  .cf-hd-ic{
+    flex:none; width:30px; height:30px; border-radius:50%;
+    border:1.5px solid var(--cf-bd); color:var(--cf-fg2);
+    display:grid; place-items:center; font-size:16px; line-height:1;
+  }
+  .cf-hint{
+    flex:1; min-width:0; margin:0; font-size:14px; font-weight:500; line-height:1.35; color:var(--cf-fg2);
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+  }
+  .cf-streak{
+    flex:none; display:inline-flex; align-items:center; gap:6px; padding:4px 11px 4px 8px; border-radius:999px;
+    border:1px solid color-mix(in srgb,var(--cf-win) 85%,transparent);
+    font:700 12.5px/1 'Share Tech Mono',monospace; color:var(--text-primary);
+  }
+  .cf-streak i{ font-size:15px; line-height:1; color:var(--cf-win); }
+  .cf-prog{ flex:0 1 auto; min-width:0; display:flex; align-items:center; gap:10px; font:700 12.5px/1 'Share Tech Mono',monospace; color:var(--text-muted); }
+  .cf-pips{ display:flex; gap:4px; min-width:0; }
+  .cf-pip{ width:18px; flex:0 1 18px; min-width:5px; height:6px; border-radius:3px; background:var(--cf-line); }
+  .cf-pip.ok{ background:var(--cf-ok-ink); }
+  .cf-pip.ko{
+    background:repeating-linear-gradient(90deg,var(--cf-ko-ink) 0 3px,transparent 3px 5px);
+    box-shadow:inset 0 0 0 1px var(--cf-ko-ink);
+  }
+  .cf-pip.cur{ background:transparent; box-shadow:inset 0 0 0 1.5px var(--text-primary); }
+  .cf-track{ flex:0 1 200px; width:200px; height:6px; border-radius:3px; background:var(--cf-line); overflow:hidden; }
+  .cf-track.cf-alt{ display:none; }
+  .cf-track > .cf-fill{ display:block; height:100%; width:var(--p,0%); border-radius:3px; background:var(--text-primary); opacity:.72; }
+  /* all'esito il pallino corrente prende l'esito e la serie in testata si nasconde */
+  .cf-board.cf-res-ok .cf-pip.cur{ background:var(--cf-ok-ink); box-shadow:none; }
+  .cf-board.cf-res-ko .cf-pip.cur{ background:repeating-linear-gradient(90deg,var(--cf-ko-ink) 0 3px,transparent 3px 5px); box-shadow:inset 0 0 0 1px var(--cf-ko-ink); }
+  .cf-board.cf-res-ok .cf-streak,
+  .cf-board.cf-res-ko .cf-streak{ visibility:hidden; }
+
+  .cf-board.cf-many .cf-hint{ display:none; }
+  .cf-board.cf-many .cf-hd-ic{ margin-right:auto; }
+
+  /* ── la frase: l'eroe. Corpo grande, interlinea larga (lo spazio è più alto del testo) ─────── */
+  .cf-q{ padding:26px 2px 22px; }
+  .cf-sent{
+    margin:0; max-width:36em; font-size:26px; line-height:1.85; font-weight:500; letter-spacing:-.005em;
+    color:var(--text-primary); text-wrap:pretty; overflow-wrap:break-word;
+  }
+
+  /* frasi lunghe su schermo largo: il corpo scende a scalini scelti dalla lunghezza della frase (classe messa dal template,
+     nessuna misura a runtime). Solo ≥ 540px di scheda: su telefono la scheda scorre già in verticale. */
+  .cf-board.cf-s2 .cf-sent{ font-size:23px; line-height:1.8; }
+  .cf-board.cf-s3 .cf-sent{ font-size:20px; line-height:1.75; }
+  .cf-board.cf-s4 .cf-sent{ font-size:18px; line-height:1.7; }
+  .cf-board.cf-s2 .cf-q{ padding:20px 2px 18px; }
+  .cf-board.cf-s3 .cf-q,
+  .cf-board.cf-s4 .cf-q{ padding:16px 2px 14px; }
+
+  /* ── lo spazio: una "presa" in linea. Vuoto = incavo; scelta = neutra; esito = pieno ✓ / tratteggiato ✕ ── */
+  .cf-slot{
+    display:inline-block; vertical-align:baseline; box-sizing:border-box; max-width:100%;
+    min-width:5.5em; max-width:calc(100% - .9em); margin:.18em .1em; padding:.02em .5em .05em;
+    border-radius:.5em; border:2px solid var(--cf-slot-bd);
+    background:var(--cf-slot-bg); box-shadow:var(--cf-slot-sh);
+    font-weight:700; line-height:1.3; letter-spacing:0; text-align:center; overflow-wrap:anywhere;
+    color:var(--text-primary);
+    transition:border-color .15s,background .15s;
+  }
+  .cf-sw:empty::before{ content:'\00a0\00a0\00a0'; }
+  .cf-sic{
+    display:none; vertical-align:-.08em; width:.78em; height:.78em; margin-right:.35em;
+    border-radius:50%; align-items:center; justify-content:center; font-size:1em; line-height:1;
+  }
+  .cf-sic i{ font-size:.62em; line-height:1; }
+  .cf-sic .ic-ko{ display:none; }
+  .cf-slot.on{ border-color:var(--text-primary); background:var(--cf-sel-bg); box-shadow:none; }
+  .cf-slot.cf-pop{ animation:cf-pop .16s ease-out; }
+  @keyframes cf-pop{ from{ transform:scale(.94); } to{ transform:none; } }
+  .cf-slot.cf-ok{ border-color:var(--cf-ok-ink); background:var(--cf-ok-fill); box-shadow:none; }
+  .cf-slot.cf-ok .cf-sic{ display:inline-flex; background:var(--cf-ok-ink); color:var(--cf-glyph); }
+  .cf-slot.cf-ko{ border-color:var(--cf-ko-ink); border-style:dashed; background:var(--cf-ko-fill); box-shadow:none; color:var(--cf-fg2); }
+  .cf-slot.cf-ko .cf-sw{ text-decoration:line-through; text-decoration-thickness:2px; text-decoration-color:var(--cf-ko-ink); }
+  .cf-slot.cf-ko .cf-sic{ display:inline-flex; border:1.5px dashed var(--cf-ko-ink); color:var(--cf-ko-ink); width:.8em; height:.8em; box-sizing:border-box; }
+  .cf-slot.cf-ko .cf-sic .ic-ok{ display:none; }
+  .cf-slot.cf-ko .cf-sic .ic-ko{ display:inline-block; }
+
+  /* ── le quattro parole: tessere grandi e identiche; il colore arriva solo con l'esito ── */
+  .cf-lbl{
+    margin:0 0 10px; font:400 11px/1 'Share Tech Mono',monospace; letter-spacing:1.4px; text-transform:uppercase;
     color:var(--text-muted);
+  }
+  .cf-bank{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:16px 14px; margin:0; }
+  .cf-bank .chip{
+    position:relative; box-sizing:border-box; min-width:0; min-height:64px; margin:0; padding:12px 16px;
+    display:grid; grid-template-columns:auto minmax(0,1fr); align-items:center; column-gap:14px;
+    border-radius:16px; border:1.5px solid var(--cf-bd); background:var(--cf-ibg);
+    color:var(--text-primary); cursor:pointer; -webkit-tap-highlight-color:transparent;
+    font-family:inherit; font-size:19px; font-weight:600; line-height:1.25; text-align:left; overflow:visible;
+    transition:border-color .15s,background .15s,transform .15s,box-shadow .15s;
+  }
+  .cf-bank .chip::after{ display:none; }
+  .cf-mark{
+    grid-column:1; width:24px; height:24px; box-sizing:border-box; border-radius:50%;
+    border:2px solid var(--cf-bd); display:grid; place-items:center; font-size:14px; line-height:1;
+    transition:border-color .15s,background .15s,box-shadow .15s;
+  }
+  .cf-mark i{ display:none; }
+  .cf-w{ grid-column:2; min-width:0; overflow-wrap:anywhere; }
+  .cf-tag{                                  /* etichetta d'esito a cavallo del bordo: compare solo con l'esito, non cambia l'altezza della tessera */
+    position:absolute; top:-10px; right:14px; z-index:1; display:none; align-items:center; gap:5px;
+    height:19px; box-sizing:border-box; padding:0 9px; border-radius:999px; border:1px solid var(--cf-ibd2);
+    background:var(--cf-bbg-solid);
+    font:400 10.5px/1 'Share Tech Mono',monospace; letter-spacing:.9px; text-transform:uppercase; white-space:nowrap; color:var(--text-primary);
+  }
+  .cf-tag i{ font-size:12px; line-height:1; }
+  .cf-tag > span{ display:none; }
+  .cf-tag .ic-ko{ display:none; }
+
+  @media (hover:hover){
+    .cf-board:not(.cf-res-ok):not(.cf-res-ko) .cf-bank .chip:hover{
+      border-color:color-mix(in srgb,var(--text-primary) 78%,transparent);
+      background:color-mix(in srgb,var(--text-primary) 8%,transparent);
+      transform:translateY(-2px);
+    }
+    .cf-board:not(.cf-res-ok):not(.cf-res-ko) .cf-bank .chip:hover .cf-mark{ border-color:var(--text-primary); }
+  }
+  .cf-board:not(.cf-res-ok):not(.cf-res-ko) .cf-bank .chip:active{ transform:translateY(0) scale(.985); background:color-mix(in srgb,var(--text-primary) 11%,transparent); }
+  .cf-bank .chip:focus-visible{ outline:3px solid var(--text-primary); outline-offset:3px; }
+
+  /* scelta: bordo pieno e un punto nel cerchio (forma, non colore). Né verde né rosso. */
+  .cf-bank .chip.sel{
+    border-color:var(--text-primary); background:var(--cf-sel-bg);
+    box-shadow:inset 0 0 0 1px var(--text-primary);
+  }
+  .cf-bank .chip.sel .cf-mark{ border-color:var(--text-primary); background:radial-gradient(circle,var(--text-primary) 0 5px,transparent 5.5px); }
+
+  /* esito */
+  .cf-board.cf-res-ok .cf-bank .chip,
+  .cf-board.cf-res-ko .cf-bank .chip{ cursor:default; }
+  .cf-board.cf-res-ok .cf-bank .chip:not(.cf-ok):not(.cf-ko),
+  .cf-board.cf-res-ko .cf-bank .chip:not(.cf-ok):not(.cf-ko){
+    border-color:var(--cf-line); background:transparent; box-shadow:none; color:var(--text-muted);
+  }
+  .cf-board.cf-res-ok .cf-bank .chip:not(.cf-ok):not(.cf-ko) .cf-mark,
+  .cf-board.cf-res-ko .cf-bank .chip:not(.cf-ok):not(.cf-ko) .cf-mark{ border-color:var(--cf-line); background:transparent; box-shadow:none; }
+  .cf-bank .chip.cf-ok{ border-color:var(--cf-ok-ink); background:var(--cf-ok-fill); box-shadow:none; color:var(--text-primary); }
+  .cf-bank .chip.cf-ok .cf-mark{ border-color:var(--cf-ok-ink); background:var(--cf-ok-ink); color:var(--cf-glyph); box-shadow:none; }
+  .cf-bank .chip.cf-ok .cf-mark .ic-ok{ display:inline-block; }
+  .cf-bank .chip.cf-ok .cf-tag{ display:inline-flex; border-color:var(--cf-ok-ink); }
+  .cf-bank .chip.cf-ok .cf-tag .ic-ok{ display:inline-block; }
+  .cf-bank .chip.cf-ok .t-ok{ display:inline; }
+  .cf-board.cf-res-ko .cf-bank .chip.cf-ok .t-ok{ display:none; }
+  .cf-board.cf-res-ko .cf-bank .chip.cf-ok .t-rev{ display:inline; }
+  .cf-bank .chip.cf-ko{ border-color:var(--cf-ko-ink); border-style:dashed; background:var(--cf-ko-fill); box-shadow:none; color:var(--text-primary); }
+  .cf-bank .chip.cf-ko .cf-mark{ border-color:var(--cf-ko-ink); border-style:dashed; background:transparent; color:var(--cf-ko-ink); box-shadow:none; }
+  .cf-bank .chip.cf-ko .cf-mark .ic-ko{ display:inline-block; }
+  .cf-bank .chip.cf-ko .cf-tag{ display:inline-flex; border-color:var(--cf-ko-ink); border-style:dashed; }
+  .cf-bank .chip.cf-ko .cf-tag .ic-ko{ display:inline-block; }
+  .cf-bank .chip.cf-ko .cf-tag .ic-ok{ display:none; }
+  .cf-bank .chip.cf-ko .t-ko{ display:inline; }
+
+  /* ── piede: testo guida + Verifica ─────────────────────────────────────────── */
+  .cf-foot{ display:flex; align-items:center; gap:16px; margin-top:20px; }
+  .cf-guide{
+    flex:1; min-width:0; margin:0; display:flex; align-items:center; gap:10px;
+    font-size:15px; font-weight:500; line-height:1.35; color:var(--cf-fg2);
+  }
+  .cf-guide i{ flex:none; font-size:20px; line-height:1; }
+  .cf-foot .cf-verify{
+    flex:none; margin:0; min-height:54px; padding:0 26px; box-sizing:border-box;
+    display:inline-flex; align-items:center; justify-content:center; gap:10px; overflow:visible;
+    border-radius:14px; border:1.5px solid var(--text-primary); background:var(--text-primary); color:var(--surface-0);
+    font-family:inherit; font-size:17px; font-weight:700; line-height:1; letter-spacing:0; cursor:pointer;
+    box-shadow:none; opacity:1;
+    transition:background .15s,transform .15s,border-color .15s,color .15s;
+  }
+  .cf-foot .cf-verify::after{ display:none; }
+  .cf-verify i{ font-size:20px; line-height:1; }
+  .cf-verify .ic-lock{ display:none; }
+  @media (hover:hover){ .cf-foot .cf-verify:hover:not(:disabled){ background:color-mix(in srgb,var(--text-primary) 86%,var(--surface-0)); box-shadow:none; } }
+  .cf-foot .cf-verify:active:not(:disabled){ transform:scale(.985); background:color-mix(in srgb,var(--text-primary) 78%,var(--surface-0)); }
+  .cf-foot .cf-verify:focus-visible{ outline:3px solid var(--text-primary); outline-offset:3px; }
+  /* disabilitato: contorno sottile, niente riempimento, lucchetto al posto della freccia (non solo opacità) */
+  .cf-foot .cf-verify:disabled,
+  .cf-foot .cf-verify:disabled:hover{
+    background:transparent; border-color:var(--cf-bd); color:var(--cf-fg2); cursor:not-allowed; opacity:1; box-shadow:none; transform:none;
+  }
+  .cf-verify:disabled .ic-go{ display:none; }
+  .cf-verify:disabled .ic-lock{ display:inline-block; }
+
+  /* ── pannello d'esito (#ffb): il momento didattico, separato dal resto ───────── */
+  .cf-fb:not(:empty){ margin-top:16px; }
+  .cf-vd{ display:flex; align-items:center; flex-wrap:wrap; gap:8px 12px; }
+  .cf-vi{
+    flex:none; width:32px; height:32px; border-radius:50%; display:grid; place-items:center;
+    background:var(--cf-ok-ink); color:var(--cf-glyph); font-size:18px; line-height:1;
+  }
+  .fb.ko .cf-vi{ background:var(--cf-ko-ink); }
+  .cf-vt{ font-size:20px; font-weight:700; line-height:1.1; color:var(--cf-ok); }
+  .fb.ko .cf-vt{ color:var(--cf-ko); }
+  .cf-vx{ margin-left:auto; display:inline-flex; align-items:baseline; flex-wrap:wrap; gap:4px 8px; font-size:16px; font-weight:500; color:var(--text-primary); overflow-wrap:anywhere; }
+  .cf-vx strong{ font-weight:700; }
+
+  /* ── layout stretto (.nar, messa dal JS quando la scheda è < 540px) ──────────── */
+  .cf-board.nar{ padding:16px 14px 16px; }
+  .cf-board.nar .cf-hint{ display:none; }
+  .cf-board.nar .cf-hd{ gap:10px; padding-bottom:14px; }
+  .cf-board.nar .cf-hd-ic{ margin-right:auto; }
+  .cf-board.nar .cf-pips{ gap:2px; }
+  .cf-board.nar .cf-pip{ min-width:3px; }
+  .cf-board.nar .cf-pips.cf-alt{ display:none; }
+  .cf-board.nar .cf-track.cf-alt{ display:block; }
+  .cf-board.nar .cf-q{ padding:22px 0 20px; }
+  .cf-board.nar .cf-sent{ font-size:21px; line-height:1.8; }
+  .cf-board.nar .cf-slot{ min-width:4.5em; }
+  .cf-board.nar .cf-bank{ grid-template-columns:minmax(0,1fr); gap:15px; }
+  .cf-board.nar .cf-bank .chip{ min-height:56px; padding:10px 14px; font-size:18px; column-gap:12px; }
+  .cf-board.nar .cf-tag{ right:10px; }
+  .cf-board.nar .cf-foot{ flex-direction:column; align-items:stretch; gap:12px; margin-top:18px; }
+  .cf-board.nar .cf-guide{ justify-content:center; text-align:center; font-size:14px; }
+  .cf-board.nar .cf-verify{ width:100%; }
+  .cf-board.nar .cf-fb:not(:empty){ margin-top:14px; }
+  .cf-board.nar .cf-vt{ font-size:18px; }
+  .cf-board.nar .cf-vx{ font-size:15px; }
+
+  /* #fi: la fonte del valore per checkFill(). Resta nel DOM (readonly, fuori dal tab, senza tastiera a
+     schermo) ma non si vede: lo spazio visibile è lo <span class="cf-slot"> che lo rispecchia */
+  .cf-fi{
+    position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; opacity:0;
+    clip:rect(0 0 0 0); clip-path:inset(50%); border:0; pointer-events:none;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .cf-bank .chip,.cf-mark,.cf-slot,.cf-verify{ transition:none; }
+    .cf-bank .chip:hover,.cf-bank .chip:active,.cf-verify:active{ transform:none !important; }
+    .cf-slot.cf-pop{ animation:none; }
   }
 }
 
+/* ═══════════════════════════════════════════════════════════════════════════════
+   @layer theme — dove le regole condivise vincono sulla layer completafrase.
+   ═══════════════════════════════════════════════════════════════════════════════ */
 @layer theme {
-  html[data-theme="light"] .chip{ color: rgba(var(--navy-rgb),.6); }
-  html[data-theme="light"] .fill-sent{ color:var(--navy); }
+
+  /* pannello d'esito */
+  #g-area .cf-board .fb{
+    margin:0; padding:14px 20px 16px; border-radius:16px; font-size:inherit; font-weight:inherit; line-height:inherit;
+    color:var(--text-primary); background:var(--cf-ok-pan); border:1.5px solid var(--cf-ok-ink);
+  }
+  #g-area .cf-board .fb.ko{ background:var(--cf-ko-pan); border:1.5px dashed var(--cf-ko-ink); }
+  #g-area .cf-board .fb .fb-bonus{
+    margin:0 0 0 auto; display:inline-flex; align-items:center; flex-wrap:wrap; gap:4px 7px;
+    font:700 13px/1.2 'Share Tech Mono',monospace; color:var(--text-primary);
+  }
+  #g-area .cf-board .fb .fb-bonus i{ font-size:16px; line-height:1; color:var(--cf-win); }
+  #g-area .cf-board.nar .fb{ padding:12px 14px 14px; }
+  #g-area .cf-board.nar .fb .fb-bonus,
+  #g-area .cf-board.nar .cf-vx{ margin-left:0; flex-basis:100%; }
+
+  /* barra Esci / Ricomincia / contatore: scheda in pagina (sotto i 1000px) */
+  #g-area .cf-bar{
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;
+    padding:10px 12px; margin:12px 0 14px; border-radius:14px;
+    background:var(--cf-cbg); border:1px solid var(--cf-cbd); box-shadow:none;
+    backdrop-filter:none; -webkit-backdrop-filter:none;
+  }
+  #g-area .cf-bar .game-header-left{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  #g-area .cf-bar .game-exit-btn,
+  #g-area .cf-bar .game-restart-btn{
+    display:inline-flex; align-items:center; gap:7px; min-height:44px; padding:0 14px; box-sizing:border-box;
+    border-radius:11px; border:1px solid var(--cf-ibd); background:var(--cf-ibg);
+    color:var(--text-primary); font-family:inherit; font-size:14px; font-weight:600; line-height:1; cursor:pointer;
+    transition:background .15s,border-color .15s;
+  }
+  #g-area .cf-bar .game-exit-btn::after,
+  #g-area .cf-bar .game-restart-btn::after{ display:none; }
+  #g-area .cf-bar .game-exit-btn i,
+  #g-area .cf-bar .game-restart-btn i{ font-size:16px; line-height:1; color:inherit; }
+  @media (hover:hover){
+    #g-area .cf-bar .game-exit-btn:hover,
+    #g-area .cf-bar .game-restart-btn:hover{
+      background:color-mix(in srgb,var(--text-primary) 9%,transparent);
+      border-color:var(--cf-ibd2); color:var(--text-primary);
+    }
+  }
+  #g-area .cf-bar .game-exit-btn:focus-visible,
+  #g-area .cf-bar .game-restart-btn:focus-visible{ outline:3px solid var(--text-primary); outline-offset:2px; }
+  #g-area .cf-bar .game-counter-pill{
+    padding:7px 13px; border-radius:999px; border:1px solid var(--cf-ibd);
+    color:var(--text-primary); font:700 13px/1 'Share Tech Mono',monospace;
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    #g-area .cf-bar .game-exit-btn,
+    #g-area .cf-bar .game-restart-btn{ transition:none; }
+  }
 }

@@ -128,7 +128,7 @@ test('flusso completo: login → entra in aula → ogni minigioco → pausa/ripr
     // #start-btn si abiliti, stesso comportamento di quiz/speed/truefalse.
     await selectQuestionCount(page, 5);
     await setupIndividualAndStart(page, 'Alunno Fill');
-    await expect(page.locator('.fill-sent')).toBeVisible();
+    await expect(page.locator('.cf-sent')).toBeVisible();   // v8.47.0: era .fill-sent (rifacimento grafico)
 
     await playFillQuestions(page, 2);
 

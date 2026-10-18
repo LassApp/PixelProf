@@ -739,6 +739,50 @@ data/
     - `Flip_Card_Facile_Modulo_10.csv` *(creato — 20 Flip Card)*
     - `Flip_Card_Medio_Modulo_10.csv` *(creato — 32 Flip Card)*
 
+### ⌨️ Area Dattilografia
+
+**Stato:** attivo
+
+- **Modulo 1 — La storia della tastiera**
+  - Chiave: `la-storia-della-tastiera`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/Dattilografia/Modulo1/`
+  - File:
+    - `Flip_Card_Facile_Modulo_1.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_1.csv` *(da creare)*
+
+- **Modulo 2 — La tastiera**
+  - Chiave: `la-tastiera`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/Dattilografia/Modulo2/`
+  - File:
+    - `Flip_Card_Facile_Modulo_2.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_2.csv` *(da creare)*
+
+- **Modulo 3 — Tipi di tastiera**
+  - Chiave: `tipi-di-tastiera`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/Dattilografia/Modulo3/`
+  - File:
+    - `Flip_Card_Facile_Modulo_3.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_3.csv` *(da creare)*
+
+- **Modulo 4 — Il corpo e la postazione**
+  - Chiave: `il-corpo-e-la-postazione`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/Dattilografia/Modulo4/`
+  - File:
+    - `Flip_Card_Facile_Modulo_4.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_4.csv` *(da creare)*
+
+- **Modulo 5 — Scrivere senza guardare**
+  - Chiave: `scrivere-senza-guardare`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/Dattilografia/Modulo5/`
+  - File:
+    - `Flip_Card_Facile_Modulo_5.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_5.csv` *(da creare)*
+
 ---
 
 ## 2. Moduli completi e da creare
@@ -852,12 +896,19 @@ data/
 - Fase 9 — Valutazione dell'apprendimento
 - Fase 10 — Valorizzare le potenzialità degli studenti
 
+### ⌨️ Dattilografia — DA CREARE (0/5)
+- Modulo 1 — La storia della tastiera
+- Modulo 2 — La tastiera
+- Modulo 3 — Tipi di tastiera
+- Modulo 4 — Il corpo e la postazione
+- Modulo 5 — Scrivere senza guardare
+
 ---
 
 **Riepilogo:**
 - **Moduli completi:** 80
-- **Moduli da creare:** 0
-- **Moduli totali:** 80
+- **Moduli da creare:** 5
+- **Moduli totali:** 85
 
 *Per i moduli indicati come "DA CREARE", entrambi i file — Facile e Medio — sono ancora da creare.*
 
@@ -878,11 +929,12 @@ data/
 | Malware e Minacce Informatiche | 1 | 2 | 2 | 0 | attivo |
 | Intelligenza Artificiale | 13 | 26 | 26 | 0 | attivo |
 | DigComp | 10 | 20 | 20 | 0 | attivo |
-| **Totale** | **80** | **160** | **160** | **0** | — |
+| Dattilografia | 5 | 10 | 0 | 10 | attivo |
+| **Totale** | **85** | **170** | **160** | **10** | — |
 
-- **Moduli totali mappati:** 80
+- **Moduli totali mappati:** 85
 - **Moduli completi:** 80
-- **Moduli da creare:** 0
+- **Moduli da creare:** 5
 - **File CSV creati:** 160
-- **File CSV da creare:** 0
-- **File CSV totali attesi:** 160
+- **File CSV da creare:** 10
+- **File CSV totali attesi:** 170

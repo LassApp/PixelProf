@@ -18,7 +18,7 @@ Sezione dedicata ai file JSON del metodo di apprendimento Lo Sapevi?, un solo fi
 
 **Stato Aree:**
 - Tutte le aree: `attivate`
-- Contenuto: 80 moduli su 80 realizzati (tutte le aree complete)
+- Contenuto: 70 moduli su 85 realizzati (Area DigComp: 10 moduli da creare; Area Dattilografia: 5 moduli da creare)
 
 **Esempio di struttura path:**
 
@@ -514,70 +514,104 @@ data/
   - Stato: `attivo`
   - Commento: Formazione del cittadino
   - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo1/`
-  - File: `lo_sapevi_alfabetizzazione-digitale.json` *(creato — 75 schede)*
+  - File: `lo_sapevi_alfabetizzazione-digitale.json` *(da creare)*
 
 - **Fase 2 — Comunicazione e collaborazione**
   - Chiave: `comunicazione-e-collaborazione`
   - Stato: `attivo`
   - Commento: Formazione del cittadino
   - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo2/`
-  - File: `lo_sapevi_comunicazione-e-collaborazione.json` *(creato — 48 schede)*
+  - File: `lo_sapevi_comunicazione-e-collaborazione.json` *(da creare)*
 
 - **Fase 3 — Creazione di contenuti digitali**
   - Chiave: `creazione-di-contenuti-digitali`
   - Stato: `attivo`
   - Commento: Formazione del cittadino
   - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo3/`
-  - File: `lo_sapevi_creazione-di-contenuti-digitali.json` *(creato — 56 schede)*
+  - File: `lo_sapevi_creazione-di-contenuti-digitali.json` *(da creare)*
 
 - **Fase 4 — Sicurezza**
   - Chiave: `sicurezza`
   - Stato: `attivo`
   - Commento: Formazione del cittadino
   - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo4/`
-  - File: `lo_sapevi_sicurezza.json` *(creato — 67 schede)*
+  - File: `lo_sapevi_sicurezza.json` *(da creare)*
 
 - **Fase 5 — Problem solving digitale**
   - Chiave: `problem-solving-digitale`
   - Stato: `attivo`
   - Commento: Formazione del cittadino
   - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo5/`
-  - File: `lo_sapevi_problem-solving-digitale.json` *(creato — 45 schede)*
+  - File: `lo_sapevi_problem-solving-digitale.json` *(da creare)*
 
 - **Fase 6 — Coinvolgimento Professionale**
   - Chiave: `coinvolgimento-professionale`
   - Stato: `attivo`
   - Commento: Formazione del docente (Edu)
   - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo6/`
-  - File: `lo_sapevi_coinvolgimento-professionale.json` *(creato — 47 schede)*
+  - File: `lo_sapevi_coinvolgimento-professionale.json` *(da creare)*
 
 - **Fase 7 — Risorse Digitali**
   - Chiave: `risorse-digitali`
   - Stato: `attivo`
   - Commento: Formazione del docente (Edu)
   - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo7/`
-  - File: `lo_sapevi_risorse-digitali.json` *(creato — 42 schede)*
+  - File: `lo_sapevi_risorse-digitali.json` *(da creare)*
 
 - **Fase 8 — Pratiche di insegnamento e apprendimento**
   - Chiave: `pratiche-di-insegnamento-e-apprendimento`
   - Stato: `attivo`
   - Commento: Formazione del docente (Edu)
   - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo8/`
-  - File: `lo_sapevi_pratiche-di-insegnamento-e-apprendimento.json` *(creato — 46 schede)*
+  - File: `lo_sapevi_pratiche-di-insegnamento-e-apprendimento.json` *(da creare)*
 
 - **Fase 9 — Valutazione dell'apprendimento**
   - Chiave: `valutazione-dell-apprendimento`
   - Stato: `attivo`
   - Commento: Formazione del docente (Edu)
   - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo9/`
-  - File: `lo_sapevi_valutazione-dell-apprendimento.json` *(creato — 45 schede)*
+  - File: `lo_sapevi_valutazione-dell-apprendimento.json` *(da creare)*
 
 - **Fase 10 — Valorizzare le potenzialità degli studenti**
   - Chiave: `valorizzare-le-potenzialita-degli-studenti`
   - Stato: `attivo`
   - Commento: Formazione del docente (Edu)
   - Path base: `data/Didattica/Lo_Sapevi/DigComp/Modulo10/`
-  - File: `lo_sapevi_valorizzare-le-potenzialita-degli-studenti.json` *(creato — 46 schede)*
+  - File: `lo_sapevi_valorizzare-le-potenzialita-degli-studenti.json` *(da creare)*
+
+### ⌨️ Area Dattilografia
+
+**Stato:** attivo
+
+- **Modulo 1 — La storia della tastiera**
+  - Chiave: `la-storia-della-tastiera`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Lo_Sapevi/Dattilografia/Modulo1/`
+  - File: `lo_sapevi_la-storia-della-tastiera.json` *(da creare)*
+
+- **Modulo 2 — La tastiera**
+  - Chiave: `la-tastiera`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Lo_Sapevi/Dattilografia/Modulo2/`
+  - File: `lo_sapevi_la-tastiera.json` *(da creare)*
+
+- **Modulo 3 — Tipi di tastiera**
+  - Chiave: `tipi-di-tastiera`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Lo_Sapevi/Dattilografia/Modulo3/`
+  - File: `lo_sapevi_tipi-di-tastiera.json` *(da creare)*
+
+- **Modulo 4 — Il corpo e la postazione**
+  - Chiave: `il-corpo-e-la-postazione`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Lo_Sapevi/Dattilografia/Modulo4/`
+  - File: `lo_sapevi_il-corpo-e-la-postazione.json` *(da creare)*
+
+- **Modulo 5 — Scrivere senza guardare**
+  - Chiave: `scrivere-senza-guardare`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Lo_Sapevi/Dattilografia/Modulo5/`
+  - File: `lo_sapevi_scrivere-senza-guardare.json` *(da creare)*
 
 ---
 
@@ -677,20 +711,27 @@ data/
 - Modulo 12 — AI Act ✅
 - Modulo 13 — Il Futuro dell'AI ✅
 
-### 🧭 DigComp — COMPLETO (10/10)
+### 🧭 DigComp — DA CREARE (0/10)
 *Formazione del cittadino (Fasi 1–5)*
-- Fase 1 — Alfabetizzazione digitale ✅
-- Fase 2 — Comunicazione e collaborazione ✅
-- Fase 3 — Creazione di contenuti digitali ✅
-- Fase 4 — Sicurezza ✅
-- Fase 5 — Problem solving digitale ✅
+- Fase 1 — Alfabetizzazione digitale
+- Fase 2 — Comunicazione e collaborazione
+- Fase 3 — Creazione di contenuti digitali
+- Fase 4 — Sicurezza
+- Fase 5 — Problem solving digitale
 
 *Formazione del docente — Edu (Fasi 6–10)*
-- Fase 6 — Coinvolgimento Professionale ✅
-- Fase 7 — Risorse Digitali ✅
-- Fase 8 — Pratiche di insegnamento e apprendimento ✅
-- Fase 9 — Valutazione dell'apprendimento ✅
-- Fase 10 — Valorizzare le potenzialità degli studenti ✅
+- Fase 6 — Coinvolgimento Professionale
+- Fase 7 — Risorse Digitali
+- Fase 8 — Pratiche di insegnamento e apprendimento
+- Fase 9 — Valutazione dell'apprendimento
+- Fase 10 — Valorizzare le potenzialità degli studenti
+
+### ⌨️ Dattilografia — DA CREARE (0/5)
+- Modulo 1 — La storia della tastiera
+- Modulo 2 — La tastiera
+- Modulo 3 — Tipi di tastiera
+- Modulo 4 — Il corpo e la postazione
+- Modulo 5 — Scrivere senza guardare
 
 ---
 
@@ -710,12 +751,13 @@ data/
 | Reti e Internet | 8 | 8 | 8 | 0 | completo |
 | Malware e Minacce Informatiche | 1 | 1 | 1 | 0 | completo |
 | Intelligenza Artificiale | 13 | 13 | 13 | 0 | completo |
-| DigComp | 10 | 10 | 10 | 0 | completo |
-| **Totale** | **80** | **80** | **80** | **0** | — |
+| DigComp | 10 | 10 | 0 | 10 | da creare |
+| Dattilografia | 5 | 5 | 0 | 5 | da creare |
+| **Totale** | **85** | **85** | **70** | **15** | — |
 
-- **Moduli totali mappati (scope Lo Sapevi):** 80
-- **Moduli completi:** 80
-- **Moduli da creare:** 0
-- **File JSON creati:** 80
-- **File JSON da creare:** 0
-- **File JSON totali attesi:** 80
+- **Moduli totali mappati (scope Lo Sapevi):** 85
+- **Moduli completi:** 70
+- **Moduli da creare:** 15
+- **File JSON creati:** 70
+- **File JSON da creare:** 15
+- **File JSON totali attesi:** 85

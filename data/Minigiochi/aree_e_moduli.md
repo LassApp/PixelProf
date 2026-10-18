@@ -17,6 +17,7 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 - **Area Malware e Minacce Informatiche** → `attiva` — JSON realizzati e caricati.
 - **Area Intelligenza Artificiale** → `attiva` — contenuti presenti, JSON realizzati e caricati.
 - **Area DigComp** → `attiva` — 10 Fasi (Fasi 1–5 formazione del cittadino, Fasi 6–10 formazione del docente — Edu): moduli definiti, JSON realizzati per tutte le 10 Fasi.
+- **Area Dattilografia** → `attiva` — 5 moduli (La storia della tastiera, La tastiera, Tipi di tastiera, Il corpo e la postazione, Scrivere senza guardare): JSON realizzati.
 
 ---
 
@@ -56,6 +57,11 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 **Descrizione:** Sviluppare le competenze digitali secondo il quadro DigComp, articolate in 10 Fasi: le Fasi 1–5 riguardano la formazione del cittadino, le Fasi 6–10 la formazione del docente (Edu).
 **Stato:** attiva
 **Nota:** moduli definiti, JSON realizzati per tutte le 10 Fasi (Fasi 1–5 formazione del cittadino, Fasi 6–10 formazione del docente — Edu).
+
+### ⌨️ Area Dattilografia
+**Descrizione:** Imparare la storia e la tecnica della scrittura con la tastiera: come è fatta, come si sceglie, come si usa il corpo davanti al computer e come si scrive senza guardare i tasti.
+**Stato:** attiva
+**Nota:** 5 moduli definiti, JSON realizzati per tutti i moduli.
 
 ---
 
@@ -1187,11 +1193,82 @@ data/
   - Path base: `data/Minigiochi/DigComp/modulo10/`
   - File: `abbina_valorizzare-le-potenzialita-degli-studenti.json`, `completa_la_frase_valorizzare-le-potenzialita-degli-studenti.json`, `quiz_valorizzare-le-potenzialita-degli-studenti.json`, `speedquiz_valorizzare-le-potenzialita-degli-studenti.json`, `vero_o_falso_valorizzare-le-potenzialita-degli-studenti.json`
 
+### ⌨️ Area Dattilografia
+
+**Stato:** attiva
+**Nota:** 5 moduli definiti, JSON realizzati per tutti i moduli.
+
+```text
+data/
+└── Minigiochi/
+    └── Dattilografia/
+        ├── modulo1/
+        │   ├── abbina_la-storia-della-tastiera.json
+        │   ├── completa_la_frase_la-storia-della-tastiera.json
+        │   ├── quiz_la-storia-della-tastiera.json
+        │   ├── speedquiz_la-storia-della-tastiera.json
+        │   └── vero_o_falso_la-storia-della-tastiera.json
+        ├── modulo2/
+        │   ├── abbina_la-tastiera.json
+        │   ├── completa_la_frase_la-tastiera.json
+        │   ├── quiz_la-tastiera.json
+        │   ├── speedquiz_la-tastiera.json
+        │   └── vero_o_falso_la-tastiera.json
+        ├── modulo3/
+        │   ├── abbina_tipi-di-tastiera.json
+        │   ├── completa_la_frase_tipi-di-tastiera.json
+        │   ├── quiz_tipi-di-tastiera.json
+        │   ├── speedquiz_tipi-di-tastiera.json
+        │   └── vero_o_falso_tipi-di-tastiera.json
+        ├── modulo4/
+        │   ├── abbina_il-corpo-e-la-postazione.json
+        │   ├── completa_la_frase_il-corpo-e-la-postazione.json
+        │   ├── quiz_il-corpo-e-la-postazione.json
+        │   ├── speedquiz_il-corpo-e-la-postazione.json
+        │   └── vero_o_falso_il-corpo-e-la-postazione.json
+        └── modulo5/
+            ├── abbina_scrivere-senza-guardare.json
+            ├── completa_la_frase_scrivere-senza-guardare.json
+            ├── quiz_scrivere-senza-guardare.json
+            ├── speedquiz_scrivere-senza-guardare.json
+            └── vero_o_falso_scrivere-senza-guardare.json
+```
+
+- **Modulo 1 — La storia della tastiera**
+  - Chiave: `la-storia-della-tastiera`
+  - Stato: `attivo`
+  - Path base: `data/Minigiochi/Dattilografia/modulo1/`
+  - File: `abbina_la-storia-della-tastiera.json`, `completa_la_frase_la-storia-della-tastiera.json`, `quiz_la-storia-della-tastiera.json`, `speedquiz_la-storia-della-tastiera.json`, `vero_o_falso_la-storia-della-tastiera.json`
+
+- **Modulo 2 — La tastiera**
+  - Chiave: `la-tastiera`
+  - Stato: `attivo`
+  - Path base: `data/Minigiochi/Dattilografia/modulo2/`
+  - File: `abbina_la-tastiera.json`, `completa_la_frase_la-tastiera.json`, `quiz_la-tastiera.json`, `speedquiz_la-tastiera.json`, `vero_o_falso_la-tastiera.json`
+
+- **Modulo 3 — Tipi di tastiera**
+  - Chiave: `tipi-di-tastiera`
+  - Stato: `attivo`
+  - Path base: `data/Minigiochi/Dattilografia/modulo3/`
+  - File: `abbina_tipi-di-tastiera.json`, `completa_la_frase_tipi-di-tastiera.json`, `quiz_tipi-di-tastiera.json`, `speedquiz_tipi-di-tastiera.json`, `vero_o_falso_tipi-di-tastiera.json`
+
+- **Modulo 4 — Il corpo e la postazione**
+  - Chiave: `il-corpo-e-la-postazione`
+  - Stato: `attivo`
+  - Path base: `data/Minigiochi/Dattilografia/modulo4/`
+  - File: `abbina_il-corpo-e-la-postazione.json`, `completa_la_frase_il-corpo-e-la-postazione.json`, `quiz_il-corpo-e-la-postazione.json`, `speedquiz_il-corpo-e-la-postazione.json`, `vero_o_falso_il-corpo-e-la-postazione.json`
+
+- **Modulo 5 — Scrivere senza guardare**
+  - Chiave: `scrivere-senza-guardare`
+  - Stato: `attivo`
+  - Path base: `data/Minigiochi/Dattilografia/modulo5/`
+  - File: `abbina_scrivere-senza-guardare.json`, `completa_la_frase_scrivere-senza-guardare.json`, `quiz_scrivere-senza-guardare.json`, `speedquiz_scrivere-senza-guardare.json`, `vero_o_falso_scrivere-senza-guardare.json`
+
 ---
 
 ## 4. Riepilogo
 
-> **Aggiornamento:** tutti i JSON di tutte le sotto-aree ECDL (incluse **IT Security** e **Online Collaboration**) e delle altre 5 Aree sono stati realizzati e caricati. È stata aggiunta l'Area **DigComp** (10 Fasi), i cui JSON sono stati realizzati per tutte le Fasi (1–5 formazione del cittadino, 6–10 formazione del docente — Edu). Tutte le **7 aree** sono attive e complete.
+> **Aggiornamento:** tutti i JSON di tutte le sotto-aree ECDL (incluse **IT Security** e **Online Collaboration**) e delle altre 5 Aree sono stati realizzati e caricati. È stata aggiunta l'Area **DigComp** (10 Fasi), i cui JSON sono stati realizzati per tutte le Fasi (1–5 formazione del cittadino, 6–10 formazione del docente — Edu). È stata aggiunta l'Area **Dattilografia** (5 moduli), con JSON realizzati per tutti i moduli. Tutte le **8 aree** sono attive e complete.
 
 | Area / Sotto-area | Moduli | File attesi | Realizzati | Da realizzare | Stato area |
 |---|---|---|---|---|---|
@@ -1208,11 +1285,12 @@ data/
 | Malware e Minacce Informatiche | 1 | 5 | 5 | 0 | attiva |
 | Intelligenza Artificiale | 13 | 65 | 65 | 0 | attiva |
 | DigComp | 10 | 50 | 50 | 0 | attiva |
-| **Totale** | **80** | **400** | **400** | **0** | — |
+| Dattilografia | 5 | 25 | 25 | 0 | attiva |
+| **Totale** | **85** | **425** | **425** | **0** | — |
 
-- **Aree:** 7
+- **Aree:** 8
 - **Sotto-aree ECDL:** 7 (Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation, IT Security, Online Collaboration)
-- **Moduli totali mappati:** 80
-- **File JSON realizzati:** 400
+- **Moduli totali mappati:** 85
+- **File JSON realizzati:** 425
 - **File JSON da realizzare:** 0
-- **File JSON totali attesi:** 400
+- **File JSON totali attesi:** 425

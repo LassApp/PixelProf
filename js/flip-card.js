@@ -425,6 +425,14 @@ const FLIPCARD_MODULE_MAP = {
   'pratiche-di-insegnamento-e-apprendimento': { facile: ['data/Didattica/Flip_Card/DigComp/Modulo8/Flip_Card_Facile_Modulo_8.csv'], medio: ['data/Didattica/Flip_Card/DigComp/Modulo8/Flip_Card_Medio_Modulo_8.csv'] },
   'valutazione-dell-apprendimento': { facile: ['data/Didattica/Flip_Card/DigComp/Modulo9/Flip_Card_Facile_Modulo_9.csv'], medio: ['data/Didattica/Flip_Card/DigComp/Modulo9/Flip_Card_Medio_Modulo_9.csv'] },
   'valorizzare-le-potenzialita-degli-studenti': { facile: ['data/Didattica/Flip_Card/DigComp/Modulo10/Flip_Card_Facile_Modulo_10.csv'], medio: ['data/Didattica/Flip_Card/DigComp/Modulo10/Flip_Card_Medio_Modulo_10.csv'] },
+  // v8.49.0 — Area Dattilografia (7 moduli): CSV Facile + Medio per modulo in data/Didattica/Flip_Card/Dattilografia/ModuloN/
+  'la-storia-della-tastiera': { facile: ['data/Didattica/Flip_Card/Dattilografia/Modulo1/Flip_Card_Facile_Modulo_1.csv'], medio: ['data/Didattica/Flip_Card/Dattilografia/Modulo1/Flip_Card_Medio_Modulo_1.csv'] },
+  'la-tastiera': { facile: ['data/Didattica/Flip_Card/Dattilografia/Modulo2/Flip_Card_Facile_Modulo_2.csv'], medio: ['data/Didattica/Flip_Card/Dattilografia/Modulo2/Flip_Card_Medio_Modulo_2.csv'] },
+  'tipi-di-tastiera': { facile: ['data/Didattica/Flip_Card/Dattilografia/Modulo3/Flip_Card_Facile_Modulo_3.csv'], medio: ['data/Didattica/Flip_Card/Dattilografia/Modulo3/Flip_Card_Medio_Modulo_3.csv'] },
+  'il-corpo-e-la-postazione': { facile: ['data/Didattica/Flip_Card/Dattilografia/Modulo4/Flip_Card_Facile_Modulo_4.csv'], medio: ['data/Didattica/Flip_Card/Dattilografia/Modulo4/Flip_Card_Medio_Modulo_4.csv'] },
+  'scrivere-senza-guardare': { facile: ['data/Didattica/Flip_Card/Dattilografia/Modulo5/Flip_Card_Facile_Modulo_5.csv'], medio: ['data/Didattica/Flip_Card/Dattilografia/Modulo5/Flip_Card_Medio_Modulo_5.csv'] },
+  'allenamento': { facile: ['data/Didattica/Flip_Card/Dattilografia/Modulo6/Flip_Card_Facile_Modulo_6.csv'], medio: ['data/Didattica/Flip_Card/Dattilografia/Modulo6/Flip_Card_Medio_Modulo_6.csv'] },
+  'estensioni': { facile: ['data/Didattica/Flip_Card/Dattilografia/Modulo7/Flip_Card_Facile_Modulo_7.csv'], medio: ['data/Didattica/Flip_Card/Dattilografia/Modulo7/Flip_Card_Medio_Modulo_7.csv'] },
 };
 
 /* -- Rilevamento automatico del delimitatore --------------

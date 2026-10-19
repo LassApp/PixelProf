@@ -182,6 +182,14 @@ const LOSAPEVI_MODULE_MAP = {
   'pratiche-di-insegnamento-e-apprendimento': ['data/Didattica/Lo_Sapevi/DigComp/Modulo8/lo_sapevi_pratiche-di-insegnamento-e-apprendimento.json'],
   'valutazione-dell-apprendimento': ['data/Didattica/Lo_Sapevi/DigComp/Modulo9/lo_sapevi_valutazione-dell-apprendimento.json'],
   'valorizzare-le-potenzialita-degli-studenti': ['data/Didattica/Lo_Sapevi/DigComp/Modulo10/lo_sapevi_valorizzare-le-potenzialita-degli-studenti.json'],
+  // v8.49.0 — Area Dattilografia (7 moduli): un JSON per modulo in data/Didattica/Lo_Sapevi/Dattilografia/ModuloN/
+  'la-storia-della-tastiera': ['data/Didattica/Lo_Sapevi/Dattilografia/Modulo1/lo_sapevi_la-storia-della-tastiera.json'],
+  'la-tastiera': ['data/Didattica/Lo_Sapevi/Dattilografia/Modulo2/lo_sapevi_la-tastiera.json'],
+  'tipi-di-tastiera': ['data/Didattica/Lo_Sapevi/Dattilografia/Modulo3/lo_sapevi_tipi-di-tastiera.json'],
+  'il-corpo-e-la-postazione': ['data/Didattica/Lo_Sapevi/Dattilografia/Modulo4/lo_sapevi_il-corpo-e-la-postazione.json'],
+  'scrivere-senza-guardare': ['data/Didattica/Lo_Sapevi/Dattilografia/Modulo5/lo_sapevi_scrivere-senza-guardare.json'],
+  'allenamento': ['data/Didattica/Lo_Sapevi/Dattilografia/Modulo6/lo_sapevi_allenamento.json'],
+  'estensioni': ['data/Didattica/Lo_Sapevi/Dattilografia/Modulo7/lo_sapevi_estensioni.json'],
 };
 
 /* -- Loader dedicato ----------------------------------------------

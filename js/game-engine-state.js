@@ -199,6 +199,11 @@ function isCached(mod) {
    Completa la frase, Vero o Falso = 50 righe), chiavi = slug esatto dei file
    (nessun disallineamento chiave↔file). Memory: nessuna riga, come per le altre
    Aree non-ECDL (Memory resta in pausa app-wide). Nessun'altra modifica al motore.
+
+   v8.49.0 — Area Dattilografia: +7 moduli × 5 loader (35 righe). I file di
+   gioco non sono ancora in data/: finché non arrivano, il loader solleva
+   "HTTP 404 — <percorso>" e la partita mostra l'errore di caricamento.
+   Chiavi 1-5 = nomi file di aree_e_moduli.md; 6-7 stesso schema (assunto).
    ──────────────────────────────────────────────────────────────── */
 
 /* -- Quiz -- */
@@ -298,6 +303,14 @@ const QuizLoader = _createLoader({
     'pratiche-di-insegnamento-e-apprendimento': 'data/Minigiochi/DigComp/modulo8/quiz_pratiche-di-insegnamento-e-apprendimento.json',
     'valutazione-dell-apprendimento': 'data/Minigiochi/DigComp/modulo9/quiz_valutazione-dell-apprendimento.json',
     'valorizzare-le-potenzialita-degli-studenti': 'data/Minigiochi/DigComp/modulo10/quiz_valorizzare-le-potenzialita-degli-studenti.json',
+    // v8.49.0 — Area Dattilografia (7 moduli)
+    'la-storia-della-tastiera': 'data/Minigiochi/Dattilografia/modulo1/quiz_la-storia-della-tastiera.json',
+    'la-tastiera': 'data/Minigiochi/Dattilografia/modulo2/quiz_la-tastiera.json',
+    'tipi-di-tastiera': 'data/Minigiochi/Dattilografia/modulo3/quiz_tipi-di-tastiera.json',
+    'il-corpo-e-la-postazione': 'data/Minigiochi/Dattilografia/modulo4/quiz_il-corpo-e-la-postazione.json',
+    'scrivere-senza-guardare': 'data/Minigiochi/Dattilografia/modulo5/quiz_scrivere-senza-guardare.json',
+    'allenamento': 'data/Minigiochi/Dattilografia/modulo6/quiz_allenamento.json',
+    'estensioni': 'data/Minigiochi/Dattilografia/modulo7/quiz_estensioni.json',
   },
   tag: 'Quiz',
   validate: raw => Array.isArray(raw) && raw.length > 0,
@@ -404,6 +417,14 @@ const SpeedQuizLoader = _createLoader({
     'pratiche-di-insegnamento-e-apprendimento': 'data/Minigiochi/DigComp/modulo8/speedquiz_pratiche-di-insegnamento-e-apprendimento.json',
     'valutazione-dell-apprendimento': 'data/Minigiochi/DigComp/modulo9/speedquiz_valutazione-dell-apprendimento.json',
     'valorizzare-le-potenzialita-degli-studenti': 'data/Minigiochi/DigComp/modulo10/speedquiz_valorizzare-le-potenzialita-degli-studenti.json',
+    // v8.49.0 — Area Dattilografia (7 moduli)
+    'la-storia-della-tastiera': 'data/Minigiochi/Dattilografia/modulo1/speedquiz_la-storia-della-tastiera.json',
+    'la-tastiera': 'data/Minigiochi/Dattilografia/modulo2/speedquiz_la-tastiera.json',
+    'tipi-di-tastiera': 'data/Minigiochi/Dattilografia/modulo3/speedquiz_tipi-di-tastiera.json',
+    'il-corpo-e-la-postazione': 'data/Minigiochi/Dattilografia/modulo4/speedquiz_il-corpo-e-la-postazione.json',
+    'scrivere-senza-guardare': 'data/Minigiochi/Dattilografia/modulo5/speedquiz_scrivere-senza-guardare.json',
+    'allenamento': 'data/Minigiochi/Dattilografia/modulo6/speedquiz_allenamento.json',
+    'estensioni': 'data/Minigiochi/Dattilografia/modulo7/speedquiz_estensioni.json',
   },
   tag: 'SpeedQuiz',
   validate: raw => Array.isArray(raw) && raw.length > 0,
@@ -514,6 +535,14 @@ const AbbinLoader = _createLoader({
     'pratiche-di-insegnamento-e-apprendimento': 'data/Minigiochi/DigComp/modulo8/abbina_pratiche-di-insegnamento-e-apprendimento.json',
     'valutazione-dell-apprendimento': 'data/Minigiochi/DigComp/modulo9/abbina_valutazione-dell-apprendimento.json',
     'valorizzare-le-potenzialita-degli-studenti': 'data/Minigiochi/DigComp/modulo10/abbina_valorizzare-le-potenzialita-degli-studenti.json',
+    // v8.49.0 — Area Dattilografia (7 moduli)
+    'la-storia-della-tastiera': 'data/Minigiochi/Dattilografia/modulo1/abbina_la-storia-della-tastiera.json',
+    'la-tastiera': 'data/Minigiochi/Dattilografia/modulo2/abbina_la-tastiera.json',
+    'tipi-di-tastiera': 'data/Minigiochi/Dattilografia/modulo3/abbina_tipi-di-tastiera.json',
+    'il-corpo-e-la-postazione': 'data/Minigiochi/Dattilografia/modulo4/abbina_il-corpo-e-la-postazione.json',
+    'scrivere-senza-guardare': 'data/Minigiochi/Dattilografia/modulo5/abbina_scrivere-senza-guardare.json',
+    'allenamento': 'data/Minigiochi/Dattilografia/modulo6/abbina_allenamento.json',
+    'estensioni': 'data/Minigiochi/Dattilografia/modulo7/abbina_estensioni.json',
   },
   tag: 'Abbina',
   validate: raw => {
@@ -652,6 +681,14 @@ const CompletaFraseLoader = _createLoader({
     'pratiche-di-insegnamento-e-apprendimento': 'data/Minigiochi/DigComp/modulo8/completa_la_frase_pratiche-di-insegnamento-e-apprendimento.json',
     'valutazione-dell-apprendimento': 'data/Minigiochi/DigComp/modulo9/completa_la_frase_valutazione-dell-apprendimento.json',
     'valorizzare-le-potenzialita-degli-studenti': 'data/Minigiochi/DigComp/modulo10/completa_la_frase_valorizzare-le-potenzialita-degli-studenti.json',
+    // v8.49.0 — Area Dattilografia (7 moduli)
+    'la-storia-della-tastiera': 'data/Minigiochi/Dattilografia/modulo1/completa_la_frase_la-storia-della-tastiera.json',
+    'la-tastiera': 'data/Minigiochi/Dattilografia/modulo2/completa_la_frase_la-tastiera.json',
+    'tipi-di-tastiera': 'data/Minigiochi/Dattilografia/modulo3/completa_la_frase_tipi-di-tastiera.json',
+    'il-corpo-e-la-postazione': 'data/Minigiochi/Dattilografia/modulo4/completa_la_frase_il-corpo-e-la-postazione.json',
+    'scrivere-senza-guardare': 'data/Minigiochi/Dattilografia/modulo5/completa_la_frase_scrivere-senza-guardare.json',
+    'allenamento': 'data/Minigiochi/Dattilografia/modulo6/completa_la_frase_allenamento.json',
+    'estensioni': 'data/Minigiochi/Dattilografia/modulo7/completa_la_frase_estensioni.json',
   },
   tag: 'CompletaFrase',
   validate: raw => Array.isArray(raw) && raw.length > 0,
@@ -758,6 +795,14 @@ const TrueFalseLoader = _createLoader({
     'pratiche-di-insegnamento-e-apprendimento': 'data/Minigiochi/DigComp/modulo8/vero_o_falso_pratiche-di-insegnamento-e-apprendimento.json',
     'valutazione-dell-apprendimento': 'data/Minigiochi/DigComp/modulo9/vero_o_falso_valutazione-dell-apprendimento.json',
     'valorizzare-le-potenzialita-degli-studenti': 'data/Minigiochi/DigComp/modulo10/vero_o_falso_valorizzare-le-potenzialita-degli-studenti.json',
+    // v8.49.0 — Area Dattilografia (7 moduli)
+    'la-storia-della-tastiera': 'data/Minigiochi/Dattilografia/modulo1/vero_o_falso_la-storia-della-tastiera.json',
+    'la-tastiera': 'data/Minigiochi/Dattilografia/modulo2/vero_o_falso_la-tastiera.json',
+    'tipi-di-tastiera': 'data/Minigiochi/Dattilografia/modulo3/vero_o_falso_tipi-di-tastiera.json',
+    'il-corpo-e-la-postazione': 'data/Minigiochi/Dattilografia/modulo4/vero_o_falso_il-corpo-e-la-postazione.json',
+    'scrivere-senza-guardare': 'data/Minigiochi/Dattilografia/modulo5/vero_o_falso_scrivere-senza-guardare.json',
+    'allenamento': 'data/Minigiochi/Dattilografia/modulo6/vero_o_falso_allenamento.json',
+    'estensioni': 'data/Minigiochi/Dattilografia/modulo7/vero_o_falso_estensioni.json',
   },
   tag: 'VeroFalso',
   validate: raw => Array.isArray(raw) && raw.length > 0,

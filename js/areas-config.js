@@ -111,7 +111,7 @@
    v8.48.0 — NUOVA AREA Dattilografia (8a Area), 7 moduli, TUTTI
    contentReady:false ("in arrivo"): in data/ non esiste ancora nessun
    file di gioco per questa Area (JSON minigiochi, Lo Sapevi e CSV Flip
-   Card arriveranno a parte).
+   Card arriveranno a parte). [SUPERATO in parte — vedi v8.49.0]
    - Moduli: 1 La storia della tastiera, 2 La Tastiera, 3 Tipi di
      tastiera, 4 Il corpo e la postazione, 5 Scrivere senza guardare,
      6 Allenamento, 7 Estensioni. Le chiavi dei moduli 1-5 sono quelle
@@ -125,6 +125,25 @@
      flip di contentReady quando i file arrivano.
    - Colore d'area: teal petrolio (dark 62,118,126 / light 57,110,118) in
      css/areas.css + AREA_COLOR_HEX (game-constants.js).
+
+   v8.49.0 — Dattilografia OPERATIVA (decisione di Erasmo, 19/10): i 7
+   moduli passano a contentReady:true anche se i file di gioco non sono
+   ancora in data/. Finché non arrivano, il loader solleva "HTTP 404 —
+   <percorso>" e ogni gioco lo gestisce con la propria schermata di errore
+   (il Quiz mostra il messaggio col percorso; Speed Quiz, Abbina, Completa
+   la frase e Vero o Falso un testo generico, con il percorso solo in
+   console; Flip Card "Flip Card non disponibile", Lo Sapevi "Errore
+   caricamento"): nessun errore JS non gestito. Quando i file arrivano non
+   serve altro che committarli ai percorsi qui sotto.
+   - desc + tags dei 7 moduli: sintesi del programma dato da Erasmo
+     (5+5+5+6+5+6+3 argomenti, accorpati in 3-4 chip per modulo).
+   - dataPaths: stessa forma di DigComp/AI (quiz/speed/abbina/
+     completaFrase/veroFalso, memory omesso). Moduli 1-5: nomi file di
+     data/Minigiochi/aree_e_moduli.md; moduli 6-7: stesso schema
+     (cartelle modulo6/modulo7, chiave = slug del titolo) - ASSUNZIONE.
+   - Voci aggiunte nei 5 moduleMap di game-engine-state.js, in
+     FLIPCARD_MODULE_MAP (flip-card.js) e LOSAPEVI_MODULE_MAP
+     (lo-sapevi.js). Nessun cardArt (da fare a parte).
    ================================================== */
 
 const AREAS = [
@@ -1840,25 +1859,88 @@ const AREAS = [
     description: 'Imparare la storia e la tecnica della scrittura con la tastiera: come è fatta, come si sceglie, come si usa il corpo davanti al computer, come si scrive senza guardare i tasti e come ci si allena.',
     modules: [
       {
-        key: 'la-storia-della-tastiera', label: 'La storia della tastiera', icon: '📜', contentReady: false,
+        key: 'la-storia-della-tastiera', label: 'La storia della tastiera', icon: '📜', contentReady: true,
+        desc: 'Dalla nascita della dattilografia alla tastiera del computer',
+        tags: ['Dattilografia e metodo', 'Gare e dattilografe', 'Una tastiera per tutti', 'Dalla macchina al computer'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Dattilografia/modulo1/quiz_la-storia-della-tastiera.json',
+          speed: 'data/Minigiochi/Dattilografia/modulo1/speedquiz_la-storia-della-tastiera.json',
+          abbina: 'data/Minigiochi/Dattilografia/modulo1/abbina_la-storia-della-tastiera.json',
+          completaFrase: 'data/Minigiochi/Dattilografia/modulo1/completa_la_frase_la-storia-della-tastiera.json',
+          veroFalso: 'data/Minigiochi/Dattilografia/modulo1/vero_o_falso_la-storia-della-tastiera.json',
+        },
       },
       {
-        key: 'la-tastiera', label: 'La Tastiera', icon: '⌨️', contentReady: false,
+        key: 'la-tastiera', label: 'La Tastiera', icon: '⌨️', contentReady: true,
+        desc: 'Layout, tasti principali e scorciatoie: come è fatta la tastiera',
+        tags: ['Layout e aree', 'Tasti principali', 'Gruppi, cursore e tasti rari', 'Scorciatoie'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Dattilografia/modulo2/quiz_la-tastiera.json',
+          speed: 'data/Minigiochi/Dattilografia/modulo2/speedquiz_la-tastiera.json',
+          abbina: 'data/Minigiochi/Dattilografia/modulo2/abbina_la-tastiera.json',
+          completaFrase: 'data/Minigiochi/Dattilografia/modulo2/completa_la_frase_la-tastiera.json',
+          veroFalso: 'data/Minigiochi/Dattilografia/modulo2/vero_o_falso_la-tastiera.json',
+        },
       },
       {
-        key: 'tipi-di-tastiera', label: 'Tipi di tastiera', icon: '🖥️', contentReady: false,
+        key: 'tipi-di-tastiera', label: 'Tipi di tastiera', icon: '🖥️', contentReady: true,
+        desc: 'Tastiere a membrana e meccaniche: pro, contro e come scegliere',
+        tags: ['Membrana', 'Meccanica e switch', 'Pro e contro', 'Scegliere e attrezzare'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Dattilografia/modulo3/quiz_tipi-di-tastiera.json',
+          speed: 'data/Minigiochi/Dattilografia/modulo3/speedquiz_tipi-di-tastiera.json',
+          abbina: 'data/Minigiochi/Dattilografia/modulo3/abbina_tipi-di-tastiera.json',
+          completaFrase: 'data/Minigiochi/Dattilografia/modulo3/completa_la_frase_tipi-di-tastiera.json',
+          veroFalso: 'data/Minigiochi/Dattilografia/modulo3/vero_o_falso_tipi-di-tastiera.json',
+        },
       },
       {
-        key: 'il-corpo-e-la-postazione', label: 'Il corpo e la postazione', icon: '🪑', contentReady: false,
+        key: 'il-corpo-e-la-postazione', label: 'Il corpo e la postazione', icon: '🪑', contentReady: true,
+        desc: 'Postura, postazione, pause e normativa sui videoterminali',
+        tags: ['Postura', 'Postazione, schermo e luce', 'Mani, polsi e mouse', 'Pause e videoterminali'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Dattilografia/modulo4/quiz_il-corpo-e-la-postazione.json',
+          speed: 'data/Minigiochi/Dattilografia/modulo4/speedquiz_il-corpo-e-la-postazione.json',
+          abbina: 'data/Minigiochi/Dattilografia/modulo4/abbina_il-corpo-e-la-postazione.json',
+          completaFrase: 'data/Minigiochi/Dattilografia/modulo4/completa_la_frase_il-corpo-e-la-postazione.json',
+          veroFalso: 'data/Minigiochi/Dattilografia/modulo4/vero_o_falso_il-corpo-e-la-postazione.json',
+        },
       },
       {
-        key: 'scrivere-senza-guardare', label: 'Scrivere senza guardare', icon: '🙈', contentReady: false,
+        key: 'scrivere-senza-guardare', label: 'Scrivere senza guardare', icon: '🙈', contentReady: true,
+        desc: 'Scrivere a tastiera cieca: dita, riga base, ritmo e livelli',
+        tags: ['Tastiera cieca', 'Dita e riga base', 'Pollici, mani e ritmo', 'Righe, maiuscole e simboli'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Dattilografia/modulo5/quiz_scrivere-senza-guardare.json',
+          speed: 'data/Minigiochi/Dattilografia/modulo5/speedquiz_scrivere-senza-guardare.json',
+          abbina: 'data/Minigiochi/Dattilografia/modulo5/abbina_scrivere-senza-guardare.json',
+          completaFrase: 'data/Minigiochi/Dattilografia/modulo5/completa_la_frase_scrivere-senza-guardare.json',
+          veroFalso: 'data/Minigiochi/Dattilografia/modulo5/vero_o_falso_scrivere-senza-guardare.json',
+        },
       },
       {
-        key: 'allenamento', label: 'Allenamento', icon: '🏋️', contentReady: false,
+        key: 'allenamento', label: 'Allenamento', icon: '🏋️', contentReady: true,
+        desc: 'Esercizi progressivi dalla riga base ai testi veri, misurando i progressi',
+        tags: ['Riga base, indici e mignolo', 'Maiuscole', 'Riga superiore e inferiore', 'Testi veri e progressi'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Dattilografia/modulo6/quiz_allenamento.json',
+          speed: 'data/Minigiochi/Dattilografia/modulo6/speedquiz_allenamento.json',
+          abbina: 'data/Minigiochi/Dattilografia/modulo6/abbina_allenamento.json',
+          completaFrase: 'data/Minigiochi/Dattilografia/modulo6/completa_la_frase_allenamento.json',
+          veroFalso: 'data/Minigiochi/Dattilografia/modulo6/vero_o_falso_allenamento.json',
+        },
       },
       {
-        key: 'estensioni', label: 'Estensioni', icon: '🧩', contentReady: false,
+        key: 'estensioni', label: 'Estensioni', icon: '🧩', contentReady: true,
+        desc: 'Oltre la tastiera standard: tastierino numerico, smartphone e dettatura',
+        tags: ['Numeri e tastierino', 'Smartphone e dettatura', 'Quando la tastiera non basta'],
+        dataPaths: {
+          quiz: 'data/Minigiochi/Dattilografia/modulo7/quiz_estensioni.json',
+          speed: 'data/Minigiochi/Dattilografia/modulo7/speedquiz_estensioni.json',
+          abbina: 'data/Minigiochi/Dattilografia/modulo7/abbina_estensioni.json',
+          completaFrase: 'data/Minigiochi/Dattilografia/modulo7/completa_la_frase_estensioni.json',
+          veroFalso: 'data/Minigiochi/Dattilografia/modulo7/vero_o_falso_estensioni.json',
+        },
       },
     ],
   },

@@ -179,6 +179,10 @@
   .cs-area-section[data-area-key="digcomp"],
   .tdc-area-block[data-area-key="digcomp"],
   .cw-area-btn[data-area="digcomp"]{ --area-rgb:126,132,58; }
+  /* v8.48.0 — Dattilografia (teal petrolio) */
+  .cs-area-section[data-area-key="dattilografia"],
+  .tdc-area-block[data-area-key="dattilografia"],
+  .cw-area-btn[data-area="dattilografia"]{ --area-rgb:62,118,126; }
 
   /* Fase 7.5 — stessa tripletta --area-rgb, applicata al contenitore delle
      card modulo dinamiche nella schermata "Scegli modulo" (#mod-area-catalog,
@@ -189,6 +193,7 @@
   #mod-area-catalog[data-area-key="malware-minacce"]{ --area-rgb:171,86,73; }
   #mod-area-catalog[data-area-key="intelligenza-artificiale"]{ --area-rgb:157,88,117; }
   #mod-area-catalog[data-area-key="digcomp"]{ --area-rgb:126,132,58; }
+  #mod-area-catalog[data-area-key="dattilografia"]{ --area-rgb:62,118,126; }
 
   /* Fase 7.7 (v8.9.0) → corretta in v8.9.3: Erasmo intendeva "al passaggio
      del mouse" quando ha detto "on focus" — cioè lo STESSO comportamento
@@ -252,6 +257,7 @@
   html[data-theme="light"] .cs-area-section[data-area-key="malware-minacce"]{ --area-rgb:157,79,67; }
   html[data-theme="light"] .cs-area-section[data-area-key="intelligenza-artificiale"]{ --area-rgb:150,84,112; }
   html[data-theme="light"] .cs-area-section[data-area-key="digcomp"]{ --area-rgb:102,108,46; }
+  html[data-theme="light"] .cs-area-section[data-area-key="dattilografia"]{ --area-rgb:57,110,118; }
 
   /* v8.33.2 — FIX contrasto badge/bordo/glow illeggibili in tema chiaro
      su Cyberbullismo, Intelligenza Artificiale e Malware (Erasmo,
@@ -272,7 +278,7 @@
   /* Aule legacy/orfane — fallback neutro (255,255,255) del badge è
      illeggibile su sfondo chiaro: qui ridefinito su un grigio scuro
      coerente con .cs-area-section-label chiaro (var(--navy)). */
-  html[data-theme="light"] .cs-area-section:not([data-area-key="ecdl"]):not([data-area-key="cyberbullismo-sicurezza-online"]):not([data-area-key="cybersecurity"]):not([data-area-key="reti-internet"]):not([data-area-key="malware-minacce"]):not([data-area-key="intelligenza-artificiale"]):not([data-area-key="digcomp"]){
+  html[data-theme="light"] .cs-area-section:not([data-area-key="ecdl"]):not([data-area-key="cyberbullismo-sicurezza-online"]):not([data-area-key="cybersecurity"]):not([data-area-key="reti-internet"]):not([data-area-key="malware-minacce"]):not([data-area-key="intelligenza-artificiale"]):not([data-area-key="digcomp"]):not([data-area-key="dattilografia"]){
     --area-rgb:16,24,42;
   }
 }
@@ -381,6 +387,7 @@
   .cs-area-filter-chip[data-area-key="malware-minacce"]{ --area-rgb:171,86,73; }
   .cs-area-filter-chip[data-area-key="intelligenza-artificiale"]{ --area-rgb:157,88,117; }
   .cs-area-filter-chip[data-area-key="digcomp"]{ --area-rgb:126,132,58; }
+  .cs-area-filter-chip[data-area-key="dattilografia"]{ --area-rgb:62,118,126; }
 
   .cs-area-filter-chip{
     display:inline-flex;align-items:center;gap:6px;
@@ -429,4 +436,5 @@
   html[data-theme="light"] .cs-area-filter-chip[data-area-key="malware-minacce"]{ --area-rgb:157,79,67; }
   html[data-theme="light"] .cs-area-filter-chip[data-area-key="intelligenza-artificiale"]{ --area-rgb:150,84,112; }
   html[data-theme="light"] .cs-area-filter-chip[data-area-key="digcomp"]{ --area-rgb:102,108,46; }
+  html[data-theme="light"] .cs-area-filter-chip[data-area-key="dattilografia"]{ --area-rgb:57,110,118; }
 }

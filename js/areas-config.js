@@ -107,6 +107,24 @@
      sono allineati in questa stessa release (v8.41.0).
    - Colore d'area: oliva-lime (dark 126,132,58 / light 102,108,46) in
      css/areas.css + AREA_COLOR_HEX (game-constants.js).
+
+   v8.48.0 — NUOVA AREA Dattilografia (8a Area), 7 moduli, TUTTI
+   contentReady:false ("in arrivo"): in data/ non esiste ancora nessun
+   file di gioco per questa Area (JSON minigiochi, Lo Sapevi e CSV Flip
+   Card arriveranno a parte).
+   - Moduli: 1 La storia della tastiera, 2 La Tastiera, 3 Tipi di
+     tastiera, 4 Il corpo e la postazione, 5 Scrivere senza guardare,
+     6 Allenamento, 7 Estensioni. Le chiavi dei moduli 1-5 sono quelle
+     già previste in data/Minigiochi/aree_e_moduli.md; per i moduli 6 e 7
+     (non presenti in quel documento) la chiave è lo slug del titolo.
+   - Nessun desc/tags/cardArt: vanno compilati con l'elenco ufficiale
+     degli argomenti (vedi nota in _buildGenericModCard, app.js). Senza
+     questi campi la card rende icona + titolo, come prima della Fase 7.7.
+   - Nessun dataPaths né voce nei moduleMap (game-engine-state.js,
+     FLIPCARD_MODULE_MAP, LOSAPEVI_MODULE_MAP): si aggiungono insieme al
+     flip di contentReady quando i file arrivano.
+   - Colore d'area: teal petrolio (dark 62,118,126 / light 57,110,118) in
+     css/areas.css + AREA_COLOR_HEX (game-constants.js).
    ================================================== */
 
 const AREAS = [
@@ -1788,8 +1806,7 @@ const AREAS = [
       },
 
       {
-        key: "valorizzare-le-potenzialita-degli-studenti", label: "Valorizzare le potenzialità degli studenti", icon: "🌱", contentReady: true,
-        desc: "Fase 10 · Accessibilità, differenziazione e coinvolgimento attivo degli studenti",
+        key: "valorizzare-le-potenzialita-degli-studenti", label: "Valorizzare le potenzialità degli studenti", icon: "🌱", contentReady: true,        desc: "Fase 10 · Accessibilità, differenziazione e coinvolgimento attivo degli studenti",
         tags: ["Docente (Edu)", "Accessibilità", "Didattica differenziata", "Coding e robotica"],
         dataPaths: {
           quiz: "data/Minigiochi/DigComp/modulo10/quiz_valorizzare-le-potenzialita-degli-studenti.json",
@@ -1810,6 +1827,38 @@ const AREAS = [
 <line x1="56" y1="108" x2="64" y2="100" stroke="currentColor" stroke-width=".8" opacity=".3"/>
 <text x="215" y="150" text-anchor="middle" font-family="monospace" font-size="10" fill="currentColor" opacity=".55" font-weight="bold">INCLUDI</text>
       `,
+      },
+    ],
+  },
+
+  {
+    key: 'dattilografia',
+    label: 'Dattilografia',
+    icon: '⌨️',
+    iconTi: 'ti-keyboard',   // glifo Tabler (UI coerente); `icon` (emoji) resta per i consumatori legacy
+    badge: 'DATTILOGRAFIA',   // sigla breve mostrata accanto a «Cosa vuoi fare?» (goStep('cat'))
+    description: 'Imparare la storia e la tecnica della scrittura con la tastiera: come è fatta, come si sceglie, come si usa il corpo davanti al computer, come si scrive senza guardare i tasti e come ci si allena.',
+    modules: [
+      {
+        key: 'la-storia-della-tastiera', label: 'La storia della tastiera', icon: '📜', contentReady: false,
+      },
+      {
+        key: 'la-tastiera', label: 'La Tastiera', icon: '⌨️', contentReady: false,
+      },
+      {
+        key: 'tipi-di-tastiera', label: 'Tipi di tastiera', icon: '🖥️', contentReady: false,
+      },
+      {
+        key: 'il-corpo-e-la-postazione', label: 'Il corpo e la postazione', icon: '🪑', contentReady: false,
+      },
+      {
+        key: 'scrivere-senza-guardare', label: 'Scrivere senza guardare', icon: '🙈', contentReady: false,
+      },
+      {
+        key: 'allenamento', label: 'Allenamento', icon: '🏋️', contentReady: false,
+      },
+      {
+        key: 'estensioni', label: 'Estensioni', icon: '🧩', contentReady: false,
       },
     ],
   },

@@ -60,6 +60,7 @@ const AREA_COLOR_HEX = {
   'malware-minacce': '#ab5649',
   'intelligenza-artificiale': '#9d5875',
   'digcomp': '#7e843a',   // v8.41.0 — oliva-lime (= 126,132,58 di --area-rgb dark)
+  'dattilografia': '#3e767e',   // v8.48.0 — teal petrolio (= 62,118,126 di --area-rgb dark)
 };
 function modColor(key){
   if(MOD_COLOR_HEX[key]) return MOD_COLOR_HEX[key];

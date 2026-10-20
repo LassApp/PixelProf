@@ -143,7 +143,21 @@
      (cartelle modulo6/modulo7, chiave = slug del titolo) - ASSUNZIONE.
    - Voci aggiunte nei 5 moduleMap di game-engine-state.js, in
      FLIPCARD_MODULE_MAP (flip-card.js) e LOSAPEVI_MODULE_MAP
-     (lo-sapevi.js). Nessun cardArt (da fare a parte).
+     (lo-sapevi.js). Nessun cardArt (da fare a parte). [SUPERATO in parte — vedi v8.50.0]
+
+   v8.50.0 — cardArt dei 7 moduli di Dattilografia (disegno di sfondo delle
+   card poster, stesso formato delle altre Aree: solo il motivo, currentColor,
+   viewBox 300x180, etichetta monospace a y=150). Composizione: motivo
+   secondario piccolo in alto a sinistra (x 46-124, y 42-90: sopra icona e
+   titolo), motivo principale a destra (x 150-290). Gli attributi comuni sono
+   sul <g> esterno. Soggetti: 1 monitor + macchina per scrivere (TYPEWRITER),
+   2 Ctrl+C + tastiera con zone evidenziate (LAYOUT), 3 membrana contro switch
+   meccanico in sezione (SWITCH), 4 orologio + mouse + figura seduta con
+   angoli a 90 gradi (90°), 5 occhio barrato + riga base ASDF JKL; con F e J in
+   rilievo, 6 cronometro + barre in crescita (WPM), 7 tastierino + smartphone +
+   microfono (NUM · MIC). Estensioni e' l'ultima card dispari: con 7 moduli la
+   griglia la rende a tutta larghezza e il CSS ne mostra solo la fascia
+   y 54-126, quindi tutto il disegno sta in y 58-122. Nessun altro file toccato.
    ================================================== */
 
 const AREAS = [
@@ -1869,6 +1883,43 @@ const AREAS = [
           completaFrase: 'data/Minigiochi/Dattilografia/modulo1/completa_la_frase_la-storia-della-tastiera.json',
           veroFalso: 'data/Minigiochi/Dattilografia/modulo1/vero_o_falso_la-storia-della-tastiera.json',
         },
+      cardArt: `
+<g fill="none" stroke="currentColor" font-family="monospace" text-anchor="middle">
+<!-- computer moderno -->
+<rect x="50" y="44" width="44" height="28" rx="3" fill="currentColor" fill-opacity="0.06" stroke-width="1.1" opacity="0.5"/>
+<rect x="57" y="52" width="5" height="11" fill="currentColor" stroke="none" opacity="0.5"/>
+<line x1="66" y1="58" x2="86" y2="58" stroke-width="1.2" opacity="0.35"/>
+<line x1="72" y1="72" x2="72" y2="80" stroke-width="1.2" opacity="0.45"/>
+<line x1="62" y1="80" x2="82" y2="80" stroke-width="1.2" opacity="0.45"/>
+<!-- dalla macchina al computer -->
+<line x1="98" y1="60" x2="172" y2="80" stroke-width="0.8" opacity="0.3" stroke-dasharray="3,4"/>
+<!-- macchina per scrivere -->
+<g transform="translate(10,0)">
+<rect x="198" y="42" width="40" height="26" rx="1.5" fill="currentColor" fill-opacity="0.07" opacity="0.5"/>
+<line x1="204" y1="50" x2="232" y2="50" stroke-width="0.9" opacity="0.35"/>
+<line x1="204" y1="56" x2="228" y2="56" stroke-width="0.9" opacity="0.35"/>
+<line x1="204" y1="62" x2="221" y2="62" stroke-width="0.9" opacity="0.35"/>
+<rect x="184" y="66" width="68" height="9" rx="4.5" fill="currentColor" fill-opacity="0.1" stroke-width="1.1" opacity="0.55"/>
+<circle cx="179" cy="70.5" r="4.5" opacity="0.5"/>
+<circle cx="257" cy="70.5" r="4.5" opacity="0.5"/>
+<line x1="171" y1="62" x2="180" y2="68" stroke-width="1.1" opacity="0.4" stroke-linecap="round"/>
+<path d="M176,78 H260 L274,130 H162 Z" fill="currentColor" fill-opacity="0.05" stroke-width="1.2" opacity="0.5"/>
+<circle cx="186" cy="94" r="4.2" stroke-width="0.9" opacity="0.5"/>
+<circle cx="199" cy="94" r="4.2" stroke-width="0.9" opacity="0.5"/>
+<circle cx="212" cy="94" r="4.2" stroke-width="0.9" opacity="0.5"/>
+<circle cx="225" cy="94" r="4.2" stroke-width="0.9" opacity="0.5"/>
+<circle cx="238" cy="94" r="4.2" stroke-width="0.9" opacity="0.5"/>
+<circle cx="251" cy="94" r="4.2" stroke-width="0.9" opacity="0.5"/>
+<circle cx="192.5" cy="107" r="4.2" stroke-width="0.9" opacity="0.45"/>
+<circle cx="205.5" cy="107" r="4.2" stroke-width="0.9" opacity="0.45"/>
+<circle cx="218.5" cy="107" r="4.2" stroke-width="0.9" opacity="0.45"/>
+<circle cx="231.5" cy="107" r="4.2" stroke-width="0.9" opacity="0.45"/>
+<circle cx="244.5" cy="107" r="4.2" stroke-width="0.9" opacity="0.45"/>
+<rect x="196" y="117" width="48" height="6" rx="3" fill="currentColor" fill-opacity="0.1" stroke-width="0.9" opacity="0.5"/>
+</g>
+<text x="220" y="150" font-size="9" fill="currentColor" stroke="none" opacity="0.55" font-weight="bold">TYPEWRITER</text>
+</g>
+      `,
       },
       {
         key: 'la-tastiera', label: 'La Tastiera', icon: '⌨️', contentReady: true,
@@ -1881,6 +1932,56 @@ const AREAS = [
           completaFrase: 'data/Minigiochi/Dattilografia/modulo2/completa_la_frase_la-tastiera.json',
           veroFalso: 'data/Minigiochi/Dattilografia/modulo2/vero_o_falso_la-tastiera.json',
         },
+      cardArt: `
+<g fill="none" stroke="currentColor" font-family="monospace" text-anchor="middle">
+<!-- scorciatoia -->
+<rect x="46" y="56" width="34" height="22" rx="4" opacity="0.5"/>
+<text x="63" y="70" font-size="8" fill="currentColor" stroke="none" opacity="0.75">Ctrl</text>
+<text x="89" y="71" font-size="12" fill="currentColor" stroke="none" opacity="0.5">+</text>
+<rect x="98" y="56" width="22" height="22" rx="4" opacity="0.5"/>
+<text x="109" y="71" font-size="9" fill="currentColor" stroke="none" opacity="0.75">C</text>
+<line x1="124" y1="68" x2="152" y2="82" stroke-width="0.8" opacity="0.3" stroke-dasharray="3,4"/>
+<!-- tastiera -->
+<g transform="translate(0,12)">
+<rect x="154" y="40" width="126" height="60" rx="6" fill="currentColor" fill-opacity="0.05" stroke-width="1.2" opacity="0.5"/>
+<rect x="160" y="46" width="76" height="50" rx="4" stroke-width="0.7" opacity="0.3" stroke-dasharray="2,3"/>
+<rect x="242" y="46" width="34" height="50" rx="4" stroke-width="0.7" opacity="0.3" stroke-dasharray="2,3"/>
+<rect x="164" y="50" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.45"/>
+<rect x="174" y="50" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.45"/>
+<rect x="184" y="50" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.45"/>
+<rect x="194" y="50" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.45"/>
+<rect x="204" y="50" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.45"/>
+<rect x="214" y="50" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.45"/>
+<rect x="224" y="50" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.45"/>
+<rect x="168" y="60" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.42"/>
+<rect x="178" y="60" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.42"/>
+<rect x="188" y="60" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.42"/>
+<rect x="198" y="60" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.42"/>
+<rect x="208" y="60" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.42"/>
+<rect x="218" y="60" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.42"/>
+<rect x="228" y="60" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.42"/>
+<rect x="164" y="70" width="13" height="7" rx="1.2" fill="currentColor" fill-opacity="0.25" stroke-width="0.8" opacity="0.65"/>
+<rect x="180" y="70" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.4"/>
+<rect x="190" y="70" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.4"/>
+<rect x="200" y="70" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.4"/>
+<rect x="210" y="70" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.4"/>
+<rect x="220" y="70" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.4"/>
+<rect x="178" y="82" width="44" height="7" rx="1.5" fill="currentColor" fill-opacity="0.14" stroke-width="0.8" opacity="0.5"/>
+<rect x="246" y="50" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.45"/>
+<rect x="256" y="50" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.45"/>
+<rect x="266" y="50" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.45"/>
+<rect x="246" y="60" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.42"/>
+<rect x="256" y="60" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.42"/>
+<rect x="266" y="60" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.42"/>
+<rect x="246" y="70" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.4"/>
+<rect x="256" y="70" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.4"/>
+<rect x="266" y="70" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.4"/>
+<rect x="246" y="80" width="18" height="7" rx="1.2" stroke-width="0.8" opacity="0.4"/>
+<rect x="266" y="80" width="8" height="7" rx="1.2" stroke-width="0.8" opacity="0.4"/>
+</g>
+<text x="220" y="150" font-size="10" fill="currentColor" stroke="none" opacity="0.55" font-weight="bold">LAYOUT</text>
+</g>
+      `,
       },
       {
         key: 'tipi-di-tastiera', label: 'Tipi di tastiera', icon: '🖥️', contentReady: true,
@@ -1893,6 +1994,29 @@ const AREAS = [
           completaFrase: 'data/Minigiochi/Dattilografia/modulo3/completa_la_frase_tipi-di-tastiera.json',
           veroFalso: 'data/Minigiochi/Dattilografia/modulo3/vero_o_falso_tipi-di-tastiera.json',
         },
+      cardArt: `
+<g fill="none" stroke="currentColor" font-family="monospace" text-anchor="middle">
+<!-- membrana -->
+<path d="M52,42 H108 L104,56 H56 Z" fill="currentColor" fill-opacity="0.07" stroke-width="1.1" opacity="0.5"/>
+<line x1="80" y1="56" x2="80" y2="66" stroke-width="0.8" opacity="0.3" stroke-dasharray="2,2"/>
+<path d="M58,80 Q80,58 102,80" stroke-width="1.1" opacity="0.5"/>
+<line x1="52" y1="80" x2="108" y2="80" opacity="0.45"/>
+<line x1="52" y1="84" x2="108" y2="84" stroke-width="0.9" opacity="0.35" stroke-dasharray="3,2"/>
+<line x1="52" y1="88" x2="108" y2="88" opacity="0.45"/>
+<text x="138" y="68" font-size="9" fill="currentColor" stroke="none" opacity="0.45">vs</text>
+<!-- meccanica -->
+<g transform="translate(16,0)">
+<path d="M196,40 H244 L240,62 H200 Z" fill="currentColor" fill-opacity="0.08" stroke-width="1.2" opacity="0.55"/>
+<rect x="214" y="62" width="12" height="24" rx="1" fill="currentColor" fill-opacity="0.08" opacity="0.5"/>
+<path d="M220,86 L212,91 L228,97 L212,103 L228,109 L212,115 L220,120" stroke-width="0.9" opacity="0.45" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M198,66 V128 H242 V66" stroke-width="1.2" opacity="0.5"/>
+<line x1="196" y1="132" x2="254" y2="132" opacity="0.4"/>
+<circle cx="212" cy="124" r="1.8" fill="currentColor" stroke="none" opacity="0.5"/>
+<circle cx="228" cy="124" r="1.8" fill="currentColor" stroke="none" opacity="0.5"/>
+</g>
+<text x="220" y="150" font-size="10" fill="currentColor" stroke="none" opacity="0.55" font-weight="bold">SWITCH</text>
+</g>
+      `,
       },
       {
         key: 'il-corpo-e-la-postazione', label: 'Il corpo e la postazione', icon: '🪑', contentReady: true,
@@ -1905,6 +2029,41 @@ const AREAS = [
           completaFrase: 'data/Minigiochi/Dattilografia/modulo4/completa_la_frase_il-corpo-e-la-postazione.json',
           veroFalso: 'data/Minigiochi/Dattilografia/modulo4/vero_o_falso_il-corpo-e-la-postazione.json',
         },
+      cardArt: `
+<g fill="none" stroke="currentColor" font-family="monospace" text-anchor="middle">
+<!-- pause e mouse -->
+<circle cx="72" cy="64" r="16" fill="currentColor" fill-opacity="0.05" stroke-width="1.1" opacity="0.5"/>
+<line x1="72" y1="64" x2="72" y2="53" stroke-width="1.3" opacity="0.4" stroke-linecap="round"/>
+<line x1="72" y1="64" x2="79" y2="69" stroke-width="1.3" opacity="0.4" stroke-linecap="round"/>
+<line x1="72" y1="49" x2="72" y2="51" stroke-width="1.2" opacity="0.45"/>
+<line x1="72" y1="77" x2="72" y2="79" stroke-width="1.2" opacity="0.45"/>
+<line x1="56" y1="64" x2="58" y2="64" stroke-width="1.2" opacity="0.45"/>
+<line x1="86" y1="64" x2="88" y2="64" stroke-width="1.2" opacity="0.45"/>
+<rect x="100" y="50" width="16" height="26" rx="8" fill="currentColor" fill-opacity="0.05" stroke-width="1.1" opacity="0.5"/>
+<line x1="108" y1="50" x2="108" y2="62" stroke-width="0.9" opacity="0.4"/>
+<line x1="100" y1="62" x2="116" y2="62" stroke-width="0.9" opacity="0.4"/>
+<!-- postazione -->
+<g transform="translate(8,0)">
+<line x1="172" y1="136" x2="276" y2="136" opacity="0.35"/>
+<path d="M200,100 L196,62" stroke-width="1.4" opacity="0.45" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="197" y="100" width="32" height="5" rx="2.5" fill="currentColor" fill-opacity="0.1" opacity="0.45"/>
+<line x1="212" y1="105" x2="212" y2="130" stroke-width="1.2" opacity="0.4"/>
+<line x1="198" y1="130" x2="226" y2="130" stroke-width="1.2" opacity="0.4"/>
+<circle cx="202" cy="133" r="2" stroke-width="0.9" opacity="0.4"/>
+<circle cx="222" cy="133" r="2" stroke-width="0.9" opacity="0.4"/>
+<circle cx="209" cy="52" r="7" fill="currentColor" fill-opacity="0.08" stroke-width="1.1" opacity="0.6"/>
+<path d="M209,60 L208,98 L236,98 L236,132 L244,132" stroke-width="1.4" opacity="0.6" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M208,72 L222,84 L246,84" stroke-width="1.3" opacity="0.55" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M208,86 A12,12 0 0 1 220,98" stroke-width="0.8" opacity="0.45" stroke-dasharray="2,2"/>
+<path d="M229,98 V105 H236" stroke-width="0.9" opacity="0.5"/>
+<line x1="236" y1="86" x2="276" y2="86" stroke-width="1.3" opacity="0.5"/>
+<line x1="272" y1="86" x2="272" y2="136" stroke-width="1.2" opacity="0.4"/>
+<rect x="246" y="54" width="26" height="20" rx="2" fill="currentColor" fill-opacity="0.07" stroke-width="1.1" opacity="0.5"/>
+<line x1="259" y1="74" x2="259" y2="86" stroke-width="1.2" opacity="0.45"/>
+</g>
+<text x="220" y="150" font-size="10" fill="currentColor" stroke="none" opacity="0.55" font-weight="bold">90°</text>
+</g>
+      `,
       },
       {
         key: 'scrivere-senza-guardare', label: 'Scrivere senza guardare', icon: '🙈', contentReady: true,
@@ -1917,6 +2076,56 @@ const AREAS = [
           completaFrase: 'data/Minigiochi/Dattilografia/modulo5/completa_la_frase_scrivere-senza-guardare.json',
           veroFalso: 'data/Minigiochi/Dattilografia/modulo5/vero_o_falso_scrivere-senza-guardare.json',
         },
+      cardArt: `
+<g fill="none" stroke="currentColor" font-family="monospace" text-anchor="middle">
+<!-- occhio barrato -->
+<path d="M62,66 Q84,48 106,66 Q84,84 62,66 Z" fill="currentColor" fill-opacity="0.05" stroke-width="1.1" opacity="0.5"/>
+<circle cx="84" cy="66" r="7" stroke-width="1.1" opacity="0.5"/>
+<circle cx="84" cy="66" r="2.6" fill="currentColor" stroke="none" opacity="0.5"/>
+<line x1="66" y1="82" x2="102" y2="50" stroke-width="1.8" opacity="0.55" stroke-linecap="round"/>
+<!-- dita e riga base -->
+<g transform="translate(10,0)">
+<path d="M160,58 Q188,42 216,56" stroke-width="0.9" opacity="0.3"/>
+<path d="M228,56 Q256,42 280,58" stroke-width="0.9" opacity="0.3"/>
+<circle cx="169.5" cy="68" r="4.4" fill="currentColor" fill-opacity="0.06" opacity="0.45"/>
+<line x1="169.5" y1="72.6" x2="169.5" y2="86" stroke-width="0.8" opacity="0.3" stroke-dasharray="2,2"/>
+<rect x="164" y="86" width="11" height="12" rx="2" fill="currentColor" fill-opacity="0.04" opacity="0.45"/>
+<text x="169.5" y="94.6" font-size="7" fill="currentColor" stroke="none" opacity="0.65">A</text>
+<circle cx="182.5" cy="68" r="4.4" fill="currentColor" fill-opacity="0.06" opacity="0.45"/>
+<line x1="182.5" y1="72.6" x2="182.5" y2="86" stroke-width="0.8" opacity="0.3" stroke-dasharray="2,2"/>
+<rect x="177" y="86" width="11" height="12" rx="2" fill="currentColor" fill-opacity="0.04" opacity="0.45"/>
+<text x="182.5" y="94.6" font-size="7" fill="currentColor" stroke="none" opacity="0.65">S</text>
+<circle cx="195.5" cy="68" r="4.4" fill="currentColor" fill-opacity="0.06" opacity="0.45"/>
+<line x1="195.5" y1="72.6" x2="195.5" y2="86" stroke-width="0.8" opacity="0.3" stroke-dasharray="2,2"/>
+<rect x="190" y="86" width="11" height="12" rx="2" fill="currentColor" fill-opacity="0.04" opacity="0.45"/>
+<text x="195.5" y="94.6" font-size="7" fill="currentColor" stroke="none" opacity="0.65">D</text>
+<circle cx="208.5" cy="68" r="4.4" fill="currentColor" fill-opacity="0.1" opacity="0.65"/>
+<line x1="208.5" y1="72.6" x2="208.5" y2="86" stroke-width="0.8" opacity="0.3" stroke-dasharray="2,2"/>
+<rect x="203" y="86" width="11" height="12" rx="2" fill="currentColor" fill-opacity="0.1" opacity="0.6"/>
+<text x="208.5" y="94.6" font-size="7" fill="currentColor" stroke="none" opacity="0.85">F</text>
+<circle cx="227.5" cy="68" r="4.4" fill="currentColor" fill-opacity="0.1" opacity="0.65"/>
+<line x1="227.5" y1="72.6" x2="227.5" y2="86" stroke-width="0.8" opacity="0.3" stroke-dasharray="2,2"/>
+<rect x="222" y="86" width="11" height="12" rx="2" fill="currentColor" fill-opacity="0.1" opacity="0.6"/>
+<text x="227.5" y="94.6" font-size="7" fill="currentColor" stroke="none" opacity="0.85">J</text>
+<circle cx="240.5" cy="68" r="4.4" fill="currentColor" fill-opacity="0.06" opacity="0.45"/>
+<line x1="240.5" y1="72.6" x2="240.5" y2="86" stroke-width="0.8" opacity="0.3" stroke-dasharray="2,2"/>
+<rect x="235" y="86" width="11" height="12" rx="2" fill="currentColor" fill-opacity="0.04" opacity="0.45"/>
+<text x="240.5" y="94.6" font-size="7" fill="currentColor" stroke="none" opacity="0.65">K</text>
+<circle cx="253.5" cy="68" r="4.4" fill="currentColor" fill-opacity="0.06" opacity="0.45"/>
+<line x1="253.5" y1="72.6" x2="253.5" y2="86" stroke-width="0.8" opacity="0.3" stroke-dasharray="2,2"/>
+<rect x="248" y="86" width="11" height="12" rx="2" fill="currentColor" fill-opacity="0.04" opacity="0.45"/>
+<text x="253.5" y="94.6" font-size="7" fill="currentColor" stroke="none" opacity="0.65">L</text>
+<circle cx="266.5" cy="68" r="4.4" fill="currentColor" fill-opacity="0.06" opacity="0.45"/>
+<line x1="266.5" y1="72.6" x2="266.5" y2="86" stroke-width="0.8" opacity="0.3" stroke-dasharray="2,2"/>
+<rect x="261" y="86" width="11" height="12" rx="2" fill="currentColor" fill-opacity="0.04" opacity="0.45"/>
+<text x="266.5" y="94.6" font-size="7" fill="currentColor" stroke="none" opacity="0.65">;</text>
+<line x1="206" y1="101.5" x2="211" y2="101.5" stroke-width="1.8" opacity="0.7" stroke-linecap="round"/>
+<line x1="225" y1="101.5" x2="230" y2="101.5" stroke-width="1.8" opacity="0.7" stroke-linecap="round"/>
+<rect x="190" y="108" width="62" height="10" rx="3" fill="currentColor" fill-opacity="0.07" opacity="0.45"/>
+</g>
+<text x="220" y="150" font-size="9" fill="currentColor" stroke="none" opacity="0.55" font-weight="bold">ASDF JKL;</text>
+</g>
+      `,
       },
       {
         key: 'allenamento', label: 'Allenamento', icon: '🏋️', contentReady: true,
@@ -1929,6 +2138,30 @@ const AREAS = [
           completaFrase: 'data/Minigiochi/Dattilografia/modulo6/completa_la_frase_allenamento.json',
           veroFalso: 'data/Minigiochi/Dattilografia/modulo6/vero_o_falso_allenamento.json',
         },
+      cardArt: `
+<g fill="none" stroke="currentColor" font-family="monospace" text-anchor="middle">
+<!-- cronometro -->
+<circle cx="84" cy="64" r="16" fill="currentColor" fill-opacity="0.05" stroke-width="1.1" opacity="0.5"/>
+<rect x="79" y="42" width="10" height="4" rx="1" opacity="0.5"/>
+<line x1="84" y1="46" x2="84" y2="48" stroke-width="1.2" opacity="0.5"/>
+<line x1="84" y1="64" x2="84" y2="53" stroke-width="1.4" opacity="0.4" stroke-linecap="round"/>
+<line x1="84" y1="64" x2="91" y2="69" stroke-width="1.3" opacity="0.45" stroke-linecap="round"/>
+<circle cx="84" cy="64" r="1.6" fill="currentColor" stroke="none" opacity="0.55"/>
+<line x1="68" y1="64" x2="70" y2="64" opacity="0.4"/>
+<line x1="98" y1="64" x2="100" y2="64" opacity="0.4"/>
+<line x1="84" y1="78" x2="84" y2="80" opacity="0.4"/>
+<!-- progressi -->
+<line x1="186" y1="126" x2="282" y2="126" opacity="0.4"/>
+<rect x="192" y="110" width="13" height="16" rx="1.5" fill="currentColor" fill-opacity="0.05" opacity="0.4"/>
+<rect x="210" y="98" width="13" height="28" rx="1.5" fill="currentColor" fill-opacity="0.07" opacity="0.45"/>
+<rect x="228" y="86" width="13" height="40" rx="1.5" fill="currentColor" fill-opacity="0.09" opacity="0.5"/>
+<rect x="246" y="72" width="13" height="54" rx="1.5" fill="currentColor" fill-opacity="0.11" opacity="0.55"/>
+<rect x="264" y="58" width="13" height="68" rx="1.5" fill="currentColor" fill-opacity="0.13" opacity="0.6"/>
+<path d="M198.5,102 L216.5,90 L234.5,78 L252.5,64 L270.5,50" stroke-width="1.1" opacity="0.5" stroke-dasharray="3,3"/>
+<circle cx="270.5" cy="50" r="3.5" fill="currentColor" fill-opacity="0.2" opacity="0.65"/>
+<text x="220" y="150" font-size="10" fill="currentColor" stroke="none" opacity="0.55" font-weight="bold">WPM</text>
+</g>
+      `,
       },
       {
         key: 'estensioni', label: 'Estensioni', icon: '🧩', contentReady: true,
@@ -1941,6 +2174,62 @@ const AREAS = [
           completaFrase: 'data/Minigiochi/Dattilografia/modulo7/completa_la_frase_estensioni.json',
           veroFalso: 'data/Minigiochi/Dattilografia/modulo7/vero_o_falso_estensioni.json',
         },
+      cardArt: `
+<g fill="none" stroke="currentColor" font-family="monospace" text-anchor="middle">
+<!-- tastierino numerico -->
+<rect x="50" y="58" width="48" height="38" rx="5" fill="currentColor" fill-opacity="0.05" stroke-width="1.1" opacity="0.5"/>
+<rect x="56" y="62" width="10" height="6.5" rx="1.5" stroke-width="0.9" opacity="0.45"/>
+<text x="61" y="67.2" font-size="5.4" fill="currentColor" stroke="none" opacity="0.7">7</text>
+<rect x="69" y="62" width="10" height="6.5" rx="1.5" stroke-width="0.9" opacity="0.45"/>
+<text x="74" y="67.2" font-size="5.4" fill="currentColor" stroke="none" opacity="0.7">8</text>
+<rect x="82" y="62" width="10" height="6.5" rx="1.5" stroke-width="0.9" opacity="0.45"/>
+<text x="87" y="67.2" font-size="5.4" fill="currentColor" stroke="none" opacity="0.7">9</text>
+<rect x="56" y="70" width="10" height="6.5" rx="1.5" stroke-width="0.9" opacity="0.45"/>
+<text x="61" y="75.2" font-size="5.4" fill="currentColor" stroke="none" opacity="0.7">4</text>
+<rect x="69" y="70" width="10" height="6.5" rx="1.5" stroke-width="0.9" opacity="0.45"/>
+<text x="74" y="75.2" font-size="5.4" fill="currentColor" stroke="none" opacity="0.7">5</text>
+<rect x="82" y="70" width="10" height="6.5" rx="1.5" stroke-width="0.9" opacity="0.45"/>
+<text x="87" y="75.2" font-size="5.4" fill="currentColor" stroke="none" opacity="0.7">6</text>
+<rect x="56" y="78" width="10" height="6.5" rx="1.5" stroke-width="0.9" opacity="0.45"/>
+<text x="61" y="83.2" font-size="5.4" fill="currentColor" stroke="none" opacity="0.7">1</text>
+<rect x="69" y="78" width="10" height="6.5" rx="1.5" stroke-width="0.9" opacity="0.45"/>
+<text x="74" y="83.2" font-size="5.4" fill="currentColor" stroke="none" opacity="0.7">2</text>
+<rect x="82" y="78" width="10" height="6.5" rx="1.5" stroke-width="0.9" opacity="0.45"/>
+<text x="87" y="83.2" font-size="5.4" fill="currentColor" stroke="none" opacity="0.7">3</text>
+<rect x="56" y="86" width="23" height="6.5" rx="1.5" stroke-width="0.9" opacity="0.45"/>
+<text x="67.5" y="91.2" font-size="5.4" fill="currentColor" stroke="none" opacity="0.7">0</text>
+<rect x="82" y="86" width="10" height="6.5" rx="1.5" stroke-width="0.9" opacity="0.4"/>
+<text x="87" y="91.2" font-size="5.4" fill="currentColor" stroke="none" opacity="0.6">.</text>
+<!-- smartphone -->
+<rect x="168" y="58" width="36" height="64" rx="7" fill="currentColor" fill-opacity="0.05" stroke-width="1.2" opacity="0.5"/>
+<rect x="173" y="65" width="26" height="34" rx="2.5" fill="currentColor" fill-opacity="0.06" stroke-width="0.9" opacity="0.4"/>
+<line x1="177" y1="70" x2="195" y2="70" stroke-width="1.1" opacity="0.4" stroke-linecap="round"/>
+<line x1="177" y1="75" x2="188" y2="75" stroke-width="1.1" opacity="0.35" stroke-linecap="round"/>
+<rect x="175" y="82" width="4.2" height="4.5" rx="1" stroke-width="0.7" opacity="0.4"/>
+<rect x="180.6" y="82" width="4.2" height="4.5" rx="1" stroke-width="0.7" opacity="0.4"/>
+<rect x="186.2" y="82" width="4.2" height="4.5" rx="1" stroke-width="0.7" opacity="0.4"/>
+<rect x="191.8" y="82" width="4.2" height="4.5" rx="1" stroke-width="0.7" opacity="0.4"/>
+<rect x="175" y="88" width="4.2" height="4.5" rx="1" stroke-width="0.7" opacity="0.4"/>
+<rect x="180.6" y="88" width="4.2" height="4.5" rx="1" stroke-width="0.7" opacity="0.4"/>
+<rect x="186.2" y="88" width="4.2" height="4.5" rx="1" stroke-width="0.7" opacity="0.4"/>
+<rect x="191.8" y="88" width="4.2" height="4.5" rx="1" stroke-width="0.7" opacity="0.4"/>
+<rect x="177.8" y="94" width="4.2" height="4.5" rx="1" stroke-width="0.7" opacity="0.4"/>
+<rect x="183.4" y="94" width="4.2" height="4.5" rx="1" stroke-width="0.7" opacity="0.4"/>
+<rect x="189" y="94" width="4.2" height="4.5" rx="1" stroke-width="0.7" opacity="0.4"/>
+<circle cx="186" cy="110.5" r="3" stroke-width="0.9" opacity="0.45"/>
+<!-- dettatura -->
+<path d="M224,70 Q219,78 224,86" opacity="0.35" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M230,66 Q223,78 230,90" opacity="0.28" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="241" y="62" width="14" height="26" rx="7" fill="currentColor" fill-opacity="0.07" stroke-width="1.1" opacity="0.55"/>
+<path d="M236,80 Q248,100 260,80" stroke-width="1.1" opacity="0.5" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="248" y1="90" x2="248" y2="108" stroke-width="1.2" opacity="0.4"/>
+<line x1="240" y1="108" x2="256" y2="108" stroke-width="1.2" opacity="0.4" stroke-linecap="round"/>
+<line x1="266" y1="72" x2="284" y2="72" stroke-width="1.3" opacity="0.4" stroke-linecap="round"/>
+<line x1="266" y1="80" x2="280" y2="80" stroke-width="1.3" opacity="0.35" stroke-linecap="round"/>
+<line x1="266" y1="88" x2="284" y2="88" stroke-width="1.3" opacity="0.4" stroke-linecap="round"/>
+<text x="220" y="150" font-size="9" fill="currentColor" stroke="none" opacity="0.55" font-weight="bold">NUM · MIC</text>
+</g>
+      `,
       },
     ],
   },

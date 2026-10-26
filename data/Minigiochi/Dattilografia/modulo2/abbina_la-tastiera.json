@@ -1,0 +1,233 @@
+{
+  "module": "la-tastiera",
+  "type": "matching",
+  "difficulty": "easy",
+  "sets": [
+    [
+      {
+        "term": "Periferica di input",
+        "definition": "Dispositivo che permette di inserire dati e comandi nel computer"
+      },
+      {
+        "term": "ASCII",
+        "definition": "Standard che traduce ogni carattere digitato in un codice numerico"
+      },
+      {
+        "term": "Bit",
+        "definition": "Singola scelta tra 0 e 1, dall'inglese binary digit"
+      },
+      {
+        "term": "Otto bit",
+        "definition": "Gruppo capace di rappresentare una lettera"
+      },
+      {
+        "term": "Sequenza di escape",
+        "definition": "Idea di Bob Bemer per superare il limite dei 128 caratteri e passare da un alfabeto a un altro"
+      },
+      {
+        "term": "Bob Bemer",
+        "definition": "Ingegnere IBM che nel maggio 1961 propose un codice unico, detto «padre dell'ASCII»"
+      }
+    ],
+    [
+      {
+        "term": "Tasti di digitazione",
+        "definition": "Lettere, numeri, punteggiatura e simboli, più i tasti principali"
+      },
+      {
+        "term": "Tasti di controllo",
+        "definition": "CTRL, ALT, il tasto WINDOWS ed ESC, usati da soli o insieme ad altri"
+      },
+      {
+        "term": "Tasti funzione",
+        "definition": "Da F1 a F12, con funzione che varia da un programma all'altro"
+      },
+      {
+        "term": "Tasti di spostamento",
+        "definition": "Servono a muoversi in un documento o in una pagina web e a modificare il testo"
+      },
+      {
+        "term": "Tastierino numerico",
+        "definition": "Blocco di tasti simile a una calcolatrice"
+      },
+      {
+        "term": "Cursore",
+        "definition": "Linea verticale intermittente che indica il punto da cui parte il testo digitato"
+      }
+    ],
+    [
+      {
+        "term": "INVIO",
+        "definition": "Sposta il cursore all'inizio della riga successiva e chiude la riga corrente"
+      },
+      {
+        "term": "BLOC MAIUSC",
+        "definition": "Blocca il maiuscolo senza dover tenere premuto MAIUSC"
+      },
+      {
+        "term": "MAIUSC",
+        "definition": "Con una lettera ne restituisce la versione maiuscola; con un altro tasto, il simbolo in alto"
+      },
+      {
+        "term": "CTRL",
+        "definition": "Non scrive nulla da solo ma cambia il significato del tasto premuto insieme"
+      },
+      {
+        "term": "CANC",
+        "definition": "Elimina il carattere alla destra del cursore o il testo selezionato"
+      },
+      {
+        "term": "BACKSPACE",
+        "definition": "Elimina il carattere alla sinistra del cursore o il testo selezionato"
+      }
+    ],
+    [
+      {
+        "term": "ALT GR",
+        "definition": "Permette di scrivere simboli non presenti direttamente sui tasti, come la chiocciola"
+      },
+      {
+        "term": "TAB",
+        "definition": "Sposta il cursore avanti di uno scatto preciso e passa alla casella successiva in un modulo online"
+      },
+      {
+        "term": "HOME",
+        "definition": "Porta il cursore all'inizio della riga"
+      },
+      {
+        "term": "FINE",
+        "definition": "Porta il cursore alla fine della riga"
+      },
+      {
+        "term": "PGSU e PGGIÙ",
+        "definition": "Spostano il cursore o la pagina di una schermata in alto o in basso"
+      },
+      {
+        "term": "INS",
+        "definition": "Attiva o disattiva la modalità inserimento"
+      }
+    ],
+    [
+      {
+        "term": "BLOC NUM",
+        "definition": "Attiva il tastierino numerico per digitare i numeri"
+      },
+      {
+        "term": "STAMP",
+        "definition": "Cattura uno screenshot dell'intera schermata e lo copia negli appunti"
+      },
+      {
+        "term": "BLOC SCORR",
+        "definition": "In alcuni programmi modifica il comportamento di frecce, PGSU e PGGIÙ"
+      },
+      {
+        "term": "PAUSA/INTERR",
+        "definition": "In alcuni programmi meno recenti mette in pausa l'esecuzione o, con CTRL, la interrompe"
+      },
+      {
+        "term": "Barra spaziatrice",
+        "definition": "Inserisce uno spazio vuoto tra le parole"
+      }
+    ],
+    [
+      {
+        "term": "Ritorno carrello",
+        "definition": "Leva delle macchine meccaniche da cui deriva il tasto INVIO"
+      },
+      {
+        "term": "Remington No. 2",
+        "definition": "Nel 1878 fu la prima macchina capace di stampare maiuscole e minuscole, origine di MAIUSC"
+      },
+      {
+        "term": "Telescrivente",
+        "definition": "Dispositivo da cui arriva il tasto CTRL, con i primi codici di controllo"
+      },
+      {
+        "term": "Edward Hess",
+        "definition": "Nel 1904 brevettò per la Royal Typewriter Company un tabulatore con arresti fissi"
+      },
+      {
+        "term": "James Koca",
+        "definition": "Nel 1940 brevettò un meccanismo per impostare i punti di tabulazione dalla tastiera"
+      },
+      {
+        "term": "Enhanced Keyboard",
+        "definition": "Tastiera IBM del 1985 con ESC e dodici tasti funzione su un'unica fila in alto"
+      }
+    ],
+    [
+      {
+        "term": "CTRL + C",
+        "definition": "Copia l'elemento selezionato"
+      },
+      {
+        "term": "CTRL + X",
+        "definition": "Taglia l'elemento selezionato"
+      },
+      {
+        "term": "CTRL + V",
+        "definition": "Incolla l'elemento copiato o tagliato"
+      },
+      {
+        "term": "CTRL + Z",
+        "definition": "Annulla l'ultima azione"
+      },
+      {
+        "term": "CTRL + S",
+        "definition": "Salva il file o il documento corrente"
+      },
+      {
+        "term": "CTRL + A",
+        "definition": "Seleziona tutto il testo"
+      }
+    ],
+    [
+      {
+        "term": "ALT + TAB",
+        "definition": "Passa da un programma o finestra aperta a un'altra"
+      },
+      {
+        "term": "ALT + F4",
+        "definition": "Chiude l'elemento attivo o esce dal programma attivo"
+      },
+      {
+        "term": "Tasto WINDOWS",
+        "definition": "Apre il menu Start"
+      },
+      {
+        "term": "Appunti",
+        "definition": "Piccola memoria temporanea che conserva l'ultimo elemento copiato o tagliato"
+      },
+      {
+        "term": "COMANDO (⌘)",
+        "definition": "Tasto dei computer Apple che svolge molti compiti di CTRL"
+      },
+      {
+        "term": "Natural Keyboard",
+        "definition": "Tastiera Microsoft del 1994 con le due metà ruotate e tre tasti in più"
+      }
+    ],
+    [
+      {
+        "term": "Interruttore della luce",
+        "definition": "Metafora del bit: può stare solo acceso o spento"
+      },
+      {
+        "term": "Cruscotto dell'auto",
+        "definition": "Metafora delle aree della tastiera: gruppi di comandi che si trovano subito"
+      },
+      {
+        "term": "Segnali stradali silenziosi",
+        "definition": "Metafora dei tasti di comando: non sono la destinazione ma indicano come muoversi"
+      },
+      {
+        "term": "Telecomando",
+        "definition": "Metafora della tastiera con i suoi gruppi di tasti"
+      },
+      {
+        "term": "Scorciatoia in bicicletta",
+        "definition": "Metafora della scorciatoia da tastiera: la destinazione non cambia, cambia il percorso"
+      }
+    ]
+  ]
+}

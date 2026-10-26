@@ -783,6 +783,22 @@ data/
     - `Flip_Card_Facile_Modulo_5.csv` *(da creare)*
     - `Flip_Card_Medio_Modulo_5.csv` *(da creare)*
 
+- **Modulo 6 — Allenamento**
+  - Chiave: `allenamento`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/Dattilografia/Modulo6/`
+  - File:
+    - `Flip_Card_Facile_Modulo_6.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_6.csv` *(da creare)*
+
+- **Modulo 7 — Estensioni**
+  - Chiave: `estensioni`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Flip_Card/Dattilografia/Modulo7/`
+  - File:
+    - `Flip_Card_Facile_Modulo_7.csv` *(da creare)*
+    - `Flip_Card_Medio_Modulo_7.csv` *(da creare)*
+
 ---
 
 ## 2. Moduli completi e da creare
@@ -896,19 +912,21 @@ data/
 - Fase 9 — Valutazione dell'apprendimento
 - Fase 10 — Valorizzare le potenzialità degli studenti
 
-### ⌨️ Dattilografia — DA CREARE (0/5)
+### ⌨️ Dattilografia — DA CREARE (0/7)
 - Modulo 1 — La storia della tastiera
 - Modulo 2 — La tastiera
 - Modulo 3 — Tipi di tastiera
 - Modulo 4 — Il corpo e la postazione
 - Modulo 5 — Scrivere senza guardare
+- Modulo 6 — Allenamento
+- Modulo 7 — Estensioni
 
 ---
 
 **Riepilogo:**
 - **Moduli completi:** 80
-- **Moduli da creare:** 5
-- **Moduli totali:** 85
+- **Moduli da creare:** 7
+- **Moduli totali:** 87
 
 *Per i moduli indicati come "DA CREARE", entrambi i file — Facile e Medio — sono ancora da creare.*
 
@@ -929,12 +947,12 @@ data/
 | Malware e Minacce Informatiche | 1 | 2 | 2 | 0 | attivo |
 | Intelligenza Artificiale | 13 | 26 | 26 | 0 | attivo |
 | DigComp | 10 | 20 | 20 | 0 | attivo |
-| Dattilografia | 5 | 10 | 0 | 10 | attivo |
-| **Totale** | **85** | **170** | **160** | **10** | — |
+| Dattilografia | 7 | 14 | 0 | 14 | attivo |
+| **Totale** | **87** | **174** | **160** | **14** | — |
 
-- **Moduli totali mappati:** 85
+- **Moduli totali mappati:** 87
 - **Moduli completi:** 80
-- **Moduli da creare:** 5
+- **Moduli da creare:** 7
 - **File CSV creati:** 160
-- **File CSV da creare:** 10
-- **File CSV totali attesi:** 170
+- **File CSV da creare:** 14
+- **File CSV totali attesi:** 174

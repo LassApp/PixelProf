@@ -1,0 +1,1247 @@
+[
+  {
+    "id": 1,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una sessione di allenamento?",
+    "options": [
+      "Una lunga prova di velocità da ripetere raramente",
+      "Un periodo breve e regolare di esercizi, ripetuti con attenzione, pensato per trasformare i movimenti delle dita in automatismi",
+      "Una gara con penalità per gli errori",
+      "Una lezione di sola teoria sulla tastiera"
+    ],
+    "correctIndex": 1,
+    "explanation": "È il formato con cui si allena la dattilografia."
+  },
+  {
+    "id": 2,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il punto di partenza di ogni sessione di allenamento?",
+    "options": [
+      "La riga dei numeri",
+      "La riga base: i tasti su cui le dita riposano e a cui tornano dopo ogni battuta",
+      "La riga superiore",
+      "La barra spaziatrice"
+    ],
+    "correctIndex": 1,
+    "explanation": "Ogni sessione comincia dai tasti pilota."
+  },
+  {
+    "id": 3,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si impara la dattilografia, secondo il modulo?",
+    "options": [
+      "Come uno strumento musicale o uno sport: con la ripetizione, non con la sola spiegazione",
+      "Leggendo molte regole teoriche",
+      "Scrivendo il più in fretta possibile",
+      "Guardando i tasti con attenzione"
+    ],
+    "correctIndex": 0,
+    "explanation": "La ripetizione trasforma i movimenti in automatismi."
+  },
+  {
+    "id": 4,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa è meglio, tra un allenamento breve ogni giorno e uno lungo ogni tanto?",
+    "options": [
+      "Uno lungo ogni tanto",
+      "Uno lunghissimo una volta al mese",
+      "Un allenamento breve ogni giorno",
+      "Nessuna differenza"
+    ],
+    "correctIndex": 2,
+    "explanation": "Sono le sessioni brevi e regolari."
+  },
+  {
+    "id": 5,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dopo quanto tempo conviene interrompersi durante un allenamento?",
+    "options": [
+      "Dopo un'ora",
+      "Dopo tre ore",
+      "Dopo cinque minuti",
+      "Dopo quindici-venti minuti, perché la stanchezza si traduce in errori e in tensione dei polsi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Interrompersi è parte del metodo."
+  },
+  {
+    "id": 6,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché si dà la precedenza alla precisione rispetto alla velocità?",
+    "options": [
+      "Perché la velocità non serve",
+      "Perché gli errori non si notano",
+      "Perché la precisione richiede meno attenzione",
+      "Perché un errore ripetuto in fretta fissa il movimento sbagliato"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si comincia lentamente, con un ritmo regolare."
+  },
+  {
+    "id": 7,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando si può accelerare durante l'allenamento?",
+    "options": [
+      "Appena si impara un tasto",
+      "Dopo ogni errore",
+      "Solo quando le battute escono senza errori",
+      "Mai"
+    ],
+    "correctIndex": 2,
+    "explanation": "Prima la precisione, poi la velocità."
+  },
+  {
+    "id": 8,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa si fa se durante un esercizio un tasto non si trova?",
+    "options": [
+      "Non si guarda: si torna ai tasti pilota, si ritrova la posizione con F e J e si riprova",
+      "Si guarda la tastiera per trovarlo",
+      "Si abbandona l'esercizio",
+      "Si preme un tasto a caso"
+    ],
+    "correctIndex": 0,
+    "explanation": "Occhi sul testo, mai sui tasti."
+  },
+  {
+    "id": 9,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa il dito dopo ogni battuta, secondo la regola del ritorno alla base?",
+    "options": [
+      "Torna al proprio tasto",
+      "Resta sul tasto appena premuto",
+      "Si solleva dalla tastiera",
+      "Passa al tasto successivo"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la regola del ritorno alla base."
+  },
+  {
+    "id": 10,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa suggerisce la regola «voce alta, polsi morbidi»?",
+    "options": [
+      "Parlare a bassa voce per non disturbare",
+      "Pronunciare la lettera a ogni tasto aiuta il ritmo; il tocco resta leggero e i polsi dritti",
+      "Premere i tasti con forza",
+      "Tenere i polsi piegati"
+    ],
+    "correctIndex": 1,
+    "explanation": "Aiuta il ritmo."
+  },
+  {
+    "id": 11,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali tasti comprende la riga base sulla tastiera italiana?",
+    "options": [
+      "Le lettere Q W E R T Y U I O P",
+      "Le lettere Z X C V B N M",
+      "Le lettere A S D F G H J K L e i tasti ò, à, ù",
+      "Le cifre da 1 a 0"
+    ],
+    "correctIndex": 2,
+    "explanation": "È la riga da cui si parte."
+  },
+  {
+    "id": 12,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché ci si allena prima sulla riga base?",
+    "options": [
+      "Perché è la riga più lunga",
+      "Perché ha le lettere più usate",
+      "Perché è la riga più comoda per i mignoli",
+      "Perché è la sola riga che si può allenare con tutte le dita ferme in posizione"
+    ],
+    "correctIndex": 3,
+    "explanation": "Per questo si comincia da qui."
+  },
+  {
+    "id": 13,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In quale ordine ci si allena sulla riga base?",
+    "options": [
+      "Prima insieme, poi la sinistra, poi la destra",
+      "Prima la destra, poi la sinistra",
+      "Prima la mano sinistra, poi la destra, poi insieme",
+      "Solo con una mano"
+    ],
+    "correctIndex": 2,
+    "explanation": "Si comincia da una mano alla volta."
+  },
+  {
+    "id": 14,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno la società californiana The Software Toolworks mise in commercio Mavis Beacon Teaches Typing?",
+    "options": [
+      "1946",
+      "1981",
+      "1987",
+      "1995"
+    ],
+    "correctIndex": 2,
+    "explanation": "Fu uno dei primi programmi per imparare a scrivere con la tastiera più noti al mondo."
+  },
+  {
+    "id": 15,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale società californiana mise in commercio Mavis Beacon Teaches Typing?",
+    "options": [
+      "The Software Toolworks",
+      "Tegic Communications",
+      "Herman Miller",
+      "Bell Labs"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il programma uscì nel 1987."
+  },
+  {
+    "id": 16,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi era Mavis Beacon?",
+    "options": [
+      "Un personaggio inventato dall'azienda: non è mai esistita",
+      "Un'insegnante di dattilografia californiana",
+      "Una campionessa di velocità",
+      "La fondatrice della società"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il nome sulla confezione sembrava quello di un'insegnante in carne e ossa."
+  },
+  {
+    "id": 17,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A chi apparteneva il volto che compariva sulle scatole di Mavis Beacon Teaches Typing?",
+    "options": [
+      "A una vera insegnante di nome Mavis Beacon",
+      "A una dattilografa campionessa",
+      "Alla fondatrice dell'azienda",
+      "Alla modella Renée L'Esperance"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il personaggio di Mavis Beacon era inventato."
+  },
+  {
+    "id": 18,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa mostra il successo di Mavis Beacon Teaches Typing?",
+    "options": [
+      "Che la dattilografia si impara solo a scuola",
+      "Che i programmi sono inutili",
+      "Che moltissime persone, anche adulte, avevano scoperto di scrivere male e volevano imparare con un metodo, a casa, a piccole dosi, senza una scuola",
+      "Che solo i bambini vogliono imparare"
+    ],
+    "correctIndex": 2,
+    "explanation": "Fu una lezione sul bisogno di imparare con un metodo."
+  },
+  {
+    "id": 19,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della bicicletta, che cosa conta di più nell'allenamento?",
+    "options": [
+      "La durata della singola uscita",
+      "La velocità massima",
+      "La regolarità, non la durata della singola uscita",
+      "La lunghezza del percorso"
+    ],
+    "correctIndex": 2,
+    "explanation": "Venti minuti ogni giorno costruiscono la gamba, una gita di sei ore al mese la stanca."
+  },
+  {
+    "id": 20,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è lo spostamento laterale?",
+    "options": [
+      "Lo spostamento di tutta la mano verso il centro",
+      "Il movimento del pollice sulla barra spaziatrice",
+      "Il movimento con cui un indice lascia il proprio tasto base (F o J) per raggiungere il tasto vicino verso il centro (G o H) e poi torna",
+      "Il passaggio da una riga all'altra"
+    ],
+    "correctIndex": 2,
+    "explanation": "Lo spostamento è breve e il ritorno immediato."
+  },
+  {
+    "id": 21,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali tasti copre il mignolo destro?",
+    "options": [
+      "Solo la barra spaziatrice",
+      "I tasti G e H",
+      "Solo le cifre",
+      "Quelli all'estremità destra della riga base (ò, à, ù) e il tasto INVIO"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ha il compito più esteso."
+  },
+  {
+    "id": 22,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché G e H, che sembrano lontani, sono a un solo spostamento dai tasti base?",
+    "options": [
+      "Perché sono vicini al mignolo",
+      "Perché gli indici sono i più agili e ciascuno copre due colonne: la propria e quella accanto verso il centro",
+      "Perché sono sulla riga superiore",
+      "Perché si usano con il pollice"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'indice si sposta, preme e torna."
+  },
+  {
+    "id": 23,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che regola vale per gli indici durante lo spostamento laterale?",
+    "options": [
+      "L'indice si sposta, preme e torna sul tasto base; le altre dita restano ferme",
+      "Si sposta tutta la mano",
+      "L'indice resta sul tasto G o H",
+      "Tutte le dita si spostano insieme"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la regola di sempre."
+  },
+  {
+    "id": 24,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Com'è il mignolo destro rispetto alle altre dita della mano?",
+    "options": [
+      "È il dito più forte",
+      "È il dito meno usato",
+      "È il dito più debole, ma ha il compito più esteso",
+      "È il dito più agile"
+    ],
+    "correctIndex": 2,
+    "explanation": "Si occupa di ò, à, ù, INVIO e altri tasti esterni."
+  },
+  {
+    "id": 25,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come va allenato il mignolo destro?",
+    "options": [
+      "Con lentezza, con un tocco leggero e senza muovere il polso: il dito si allunga, la mano no",
+      "Con forza e velocità",
+      "Spostando tutta la mano",
+      "Solo alla fine di ogni sessione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il dito si allunga, la mano no."
+  },
+  {
+    "id": 26,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché ripetere gli esercizi con il mignolo non è una perdita di tempo?",
+    "options": [
+      "Perché è il dito più veloce",
+      "Perché è il dito che più spesso ci si dimentica di allenare",
+      "Perché è il dito più forte",
+      "Perché è l'unico che preme INVIO"
+    ],
+    "correctIndex": 1,
+    "explanation": "Va portato a un passo adatto a lui."
+  },
+  {
+    "id": 27,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del ciclista, a che cosa è paragonato lo spostamento laterale dell'indice?",
+    "options": [
+      "A un ciclista che si ferma a metà percorso",
+      "A un ciclista che cambia strada",
+      "A un ciclista che esce un attimo dalla scia del gruppo per superare e poi rientra",
+      "A un ciclista che scende dalla bicicletta"
+    ],
+    "correctIndex": 2,
+    "explanation": "Lo spostamento è breve e il ritorno immediato."
+  },
+  {
+    "id": 28,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del ciclista, a chi è paragonato il mignolo?",
+    "options": [
+      "Al ciclista più veloce della squadra",
+      "Al capitano del gruppo",
+      "Al ciclista che apre la strada",
+      "Al ciclista meno allenato della squadra, da portare a un passo adatto a lui, senza forzarlo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il mignolo è il dito più debole."
+  },
+  {
+    "id": 29,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si ottiene la maiuscola?",
+    "options": [
+      "Premendo due volte la lettera",
+      "Premendo BLOC MAIUSC dopo la lettera",
+      "Premendo INVIO",
+      "Premendo il tasto MAIUSC insieme alla lettera"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il tasto BLOC MAIUSC, invece, blocca il maiuscolo fino a una seconda pressione."
+  },
+  {
+    "id": 30,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa BLOC MAIUSC?",
+    "options": [
+      "Scrive una sola lettera maiuscola",
+      "Cancella il testo",
+      "Blocca il maiuscolo fino a una seconda pressione",
+      "Scrive i segni di punteggiatura"
+    ],
+    "correctIndex": 2,
+    "explanation": "Si usa solo per molte lettere maiuscole di fila."
+  },
+  {
+    "id": 31,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale dito si preme MAIUSC, secondo la regola chiave?",
+    "options": [
+      "Con il mignolo della stessa mano della lettera",
+      "Con il pollice",
+      "Con l'indice",
+      "Con il mignolo della mano che non sta premendo la lettera"
+    ],
+    "correctIndex": 3,
+    "explanation": "La mano che scrive la lettera non deve contorcersi."
+  },
+  {
+    "id": 32,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale MAIUSC si preme per una lettera sul lato sinistro della tastiera, come A S D F G?",
+    "options": [
+      "Quello di destra, con il mignolo destro",
+      "Quello di sinistra, con il mignolo sinistro",
+      "Quello di sinistra, con il pollice",
+      "Nessuno dei due"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la regola della mano opposta."
+  },
+  {
+    "id": 33,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale MAIUSC si preme per una lettera sul lato destro, come H J K L?",
+    "options": [
+      "Quello di destra, con il mignolo destro",
+      "Quello di sinistra, con il mignolo sinistro",
+      "Quello di destra, con il pollice",
+      "Nessuno dei due"
+    ],
+    "correctIndex": 1,
+    "explanation": "La mano che scrive la lettera non si contorce."
+  },
+  {
+    "id": 34,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché si preme MAIUSC con la mano opposta?",
+    "options": [
+      "Perché è più veloce di una mano sola",
+      "Perché lo impone la tastiera",
+      "Perché la mano che scrive la lettera non deve contorcersi",
+      "Perché l'altro mignolo è più forte"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le maiuscole si scrivono come si apre una porta con la chiave."
+  },
+  {
+    "id": 35,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando si usa BLOC MAIUSC?",
+    "options": [
+      "Per ogni lettera iniziale di una parola",
+      "Solo per scrivere molte lettere maiuscole di fila",
+      "Per ogni nome proprio",
+      "Per tutte le frasi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Per una sola iniziale conviene MAIUSC."
+  },
+  {
+    "id": 36,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa conviene usare per una sola lettera iniziale, come in un nome proprio?",
+    "options": [
+      "MAIUSC: si preme, si scrive la lettera, si rilascia, senza dover ricordare di disattivare nulla",
+      "BLOC MAIUSC",
+      "CTRL",
+      "ALT"
+    ],
+    "correctIndex": 0,
+    "explanation": "È più semplice e sicuro."
+  },
+  {
+    "id": 37,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Oltre alle maiuscole, per quali caratteri serve MAIUSC?",
+    "options": [
+      "Per le lettere accentate minuscole",
+      "Per i simboli stampati nella parte alta dei tasti, come i segni di punteggiatura",
+      "Per le cifre del tastierino",
+      "Per i tasti funzione"
+    ],
+    "correctIndex": 1,
+    "explanation": "È lo stesso tasto."
+  },
+  {
+    "id": 38,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della porta con la chiave, che cosa succede se si prova a fare tutto con la stessa mano?",
+    "options": [
+      "La porta si apre più in fretta",
+      "La mano si contorce e la serratura si inceppa",
+      "La chiave si perde",
+      "La maniglia si rompe"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una mano tiene ferma la maniglia, l'altra gira la chiave."
+  },
+  {
+    "id": 39,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la riga superiore?",
+    "options": [
+      "La riga di lettere sotto la riga base",
+      "La riga dei numeri",
+      "La riga di lettere sopra la riga base (Q W E R T Y U I O P è)",
+      "La riga della barra spaziatrice"
+    ],
+    "correctIndex": 2,
+    "explanation": "La riga inferiore è quella sotto."
+  },
+  {
+    "id": 40,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali lettere comprende la riga inferiore?",
+    "options": [
+      "Q W E R T Y U I O P",
+      "A S D F G H J K L",
+      "1 2 3 4 5 6 7 8 9 0",
+      "Z X C V B N M"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sono le righe che le dita raggiungono con uno spostamento verso l'alto o il basso e il ritorno alla base."
+  },
+  {
+    "id": 41,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il principio per allenare le righe superiore e inferiore?",
+    "options": [
+      "Si sposta tutta la mano",
+      "Si usa solo l'indice",
+      "Si guarda la tastiera ad ogni tasto",
+      "Ogni dito parte dal proprio tasto base, raggiunge il tasto della propria colonna sopra o sotto, e torna"
+    ],
+    "correctIndex": 3,
+    "explanation": "È il principio dello spostamento e del ritorno alla base."
+  },
+  {
+    "id": 42,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale riga si comincia ad allenare le due righe?",
+    "options": [
+      "Dalla riga superiore, più comoda",
+      "Dalla riga inferiore",
+      "Dalla riga dei numeri",
+      "Da entrambe insieme"
+    ],
+    "correctIndex": 0,
+    "explanation": "Poi si passa alla inferiore."
+  },
+  {
+    "id": 43,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa devono fare le dita sulla riga inferiore?",
+    "options": [
+      "Allungarsi verso l'alto",
+      "Restare ferme",
+      "Ripiegarsi verso il palmo",
+      "Spostarsi di lato"
+    ],
+    "correctIndex": 2,
+    "explanation": "È la ragione per cui si parte dalla superiore."
+  },
+  {
+    "id": 44,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i tasti più difficili delle righe superiore e inferiore?",
+    "options": [
+      "G e H con gli indici",
+      "B e N con gli indici",
+      "Le cifre",
+      "Q e Z con il mignolo sinistro, P con il mignolo destro"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sono i tasti ai due estremi."
+  },
+  {
+    "id": 45,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come conviene allenare i tasti più difficili?",
+    "options": [
+      "Direttamente nelle parole",
+      "Solo ad alta velocità",
+      "Con la mano opposta",
+      "Da soli, lentamente, prima di inserirli nelle parole"
+    ],
+    "correctIndex": 3,
+    "explanation": "Poi si inseriscono nelle parole."
+  },
+  {
+    "id": 46,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quale indice si assegna un tasto centrale come la B?",
+    "options": [
+      "Sempre all'indice destro",
+      "Sempre all'indice sinistro",
+      "A uno dei due indici, secondo la convenzione indicata dalla mappa a colori della tastiera",
+      "Al pollice"
+    ],
+    "correctIndex": 2,
+    "explanation": "Lo si rispetta per non rompere la regolarità del movimento."
+  },
+  {
+    "id": 47,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dello scaffale, a che cosa corrispondono le tre righe della tastiera?",
+    "options": [
+      "A tre scaffali da svuotare",
+      "A tre colori della mappa",
+      "Ai tre ripiani: quello di mezzo è all'altezza del banco, gli altri due si raggiungono allungando il braccio e riportandolo subito indietro",
+      "A tre dita diverse"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chi sposta tutto il corpo per ogni ripiano perde tempo."
+  },
+  {
+    "id": 48,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la trascrizione?",
+    "options": [
+      "La copia di un testo già scritto da altri, mantenendone esattamente lettere, punteggiatura, maiuscole e accenti",
+      "La scrittura di un testo inventato",
+      "La dettatura di un testo a voce",
+      "La correzione di un testo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Serve per allenare la tecnica su un testo reale."
+  },
+  {
+    "id": 49,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A che cosa serve la trascrizione?",
+    "options": [
+      "A imparare a memoria i testi",
+      "A leggere più in fretta",
+      "A allenare la tecnica su un testo reale, senza doverlo anche inventare",
+      "A scrivere in modo creativo"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le parole sono già decise."
+  },
+  {
+    "id": 50,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché copiare un testo è diverso dallo scrivere sotto dettatura di sé stessi?",
+    "options": [
+      "Perché le parole sono già decise e l'attenzione può restare sulla tecnica",
+      "Perché è più veloce",
+      "Perché non servono le dita",
+      "Perché non ci sono errori"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'attenzione può restare sulla tecnica."
+  },
+  {
+    "id": 51,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come conviene leggere il testo da copiare?",
+    "options": [
+      "Tutto d'un fiato",
+      "Guardando i tasti",
+      "Con calma, una frase alla volta, tenendolo davanti agli occhi e non guardando mai i tasti",
+      "Leggendolo a memoria"
+    ],
+    "correctIndex": 2,
+    "explanation": "È un metodo di trascrizione."
+  },
+  {
+    "id": 52,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali segni compaiono nei testi veri e non nelle righe di esercizio?",
+    "options": [
+      "Solo le cifre",
+      "Virgole, punti, due punti, punto interrogativo e esclamativo, apostrofi, virgolette, lettere accentate",
+      "Solo le lettere maiuscole",
+      "Solo i simboli matematici"
+    ],
+    "correctIndex": 1,
+    "explanation": "Richiedono nuovi movimenti."
+  },
+  {
+    "id": 53,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si ottengono i segni che stanno sulla parte alta dei tasti?",
+    "options": [
+      "Con MAIUSC",
+      "Con CTRL",
+      "Con ALT",
+      "Con TAB"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le lettere accentate hanno invece un tasto proprio sulla tastiera italiana."
+  },
+  {
+    "id": 54,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si ottiene la é con l'accento acuto, come in «perché»?",
+    "options": [
+      "Con ALT GR e la e",
+      "Con MAIUSC insieme al tasto della è",
+      "Con CTRL e la e",
+      "Con un tasto proprio"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le altre lettere accentate hanno un tasto proprio."
+  },
+  {
+    "id": 55,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa si fa se un segno non si trova?",
+    "options": [
+      "Si guarda sempre la tastiera",
+      "Non si guarda: si controlla una volta sulla tastiera, poi lo si allena da solo, finché la mano lo ritrova",
+      "Si evita quel segno",
+      "Si usa il mouse"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il segno si allena da solo."
+  },
+  {
+    "id": 56,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quale tasto si correggono gli errori?",
+    "options": [
+      "BACKSPACE, che cancella a sinistra",
+      "CANC, che cancella a destra",
+      "TAB",
+      "INVIO"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una correzione veloce, senza guardare, è parte della tecnica."
+  },
+  {
+    "id": 57,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno Mark Twain acquistò una macchina per scrivere Remington?",
+    "options": [
+      "1882",
+      "1874",
+      "1887",
+      "1946"
+    ],
+    "correctIndex": 1,
+    "explanation": "La trovò scomoda e non la usò a lungo."
+  },
+  {
+    "id": 58,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa fece Mark Twain della macchina Remington che acquistò nel 1874?",
+    "options": [
+      "La usò per tutta la vita",
+      "La trovò scomoda e non la usò a lungo",
+      "La regalò subito",
+      "La brevettò"
+    ],
+    "correctIndex": 1,
+    "explanation": "Più tardi sostenne un primato dattilografico."
+  },
+  {
+    "id": 59,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che primato sostenne più tardi Mark Twain?",
+    "options": [
+      "Di aver inventato la macchina per scrivere",
+      "Di essere stato il primo scrittore a consegnare a un editore un manoscritto dattiloscritto, citando Le avventure di Tom Sawyer",
+      "Di aver scritto il testo più lungo mai dattiloscritto",
+      "Di aver brevettato il QWERTY"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il primato resta contestato."
+  },
+  {
+    "id": 60,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa sostiene, più cautamente, il Mark Twain Project dell'Università della California?",
+    "options": [
+      "Che la prima opera letteraria composta da una copia a macchina potrebbe essere stata Life on the Mississippi",
+      "Che Tom Sawyer fu dattiloscritto da Twain stesso",
+      "Che Twain non usò mai una macchina per scrivere",
+      "Che il primato è sicuramente di Twain"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il testo, scritto a mano, fu ricopiato a macchina."
+  },
+  {
+    "id": 61,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno fu ricopiato a macchina il testo di Life on the Mississippi?",
+    "options": [
+      "1874",
+      "1882",
+      "1887",
+      "1946"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fu ricopiato da una dattilografa di Elmira."
+  },
+  {
+    "id": 62,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi ricopiò a macchina il testo di Life on the Mississippi?",
+    "options": [
+      "Mark Twain stesso",
+      "Rose L. Fritz",
+      "Stella Pajunas",
+      "Harry M. Clarke, dattilografa di Elmira"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il primato di Twain resta contestato."
+  },
+  {
+    "id": 63,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa ricorda il caso di Mark Twain sulla trascrizione?",
+    "options": [
+      "Che gli scrittori non usano le macchine",
+      "Che copiare un testo a macchina è stato per molto tempo un mestiere a sé, distinto da quello di chi scrive",
+      "Che la trascrizione è un'invenzione recente",
+      "Che il primato di Twain è certo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il primato resta contestato."
+  },
+  {
+    "id": 64,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della strada nuova, che cosa accade dopo qualche volta che si trascrive un testo?",
+    "options": [
+      "La mappa diventa più importante",
+      "Si perde la strada",
+      "Bisogna ricominciare da capo",
+      "La strada si ricorda da sola e la mappa non serve più"
+    ],
+    "correctIndex": 3,
+    "explanation": "La prima volta si segue la mappa con attenzione."
+  },
+  {
+    "id": 65,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che modo si misura la velocità di scrittura?",
+    "options": [
+      "In battute al minuto e in parole al minuto (5 battute = 1 parola)",
+      "Solo in pagine all'ora",
+      "Solo in errori al minuto",
+      "In righe al minuto"
+    ],
+    "correctIndex": 0,
+    "explanation": "È la stessa convenzione delle gare."
+  },
+  {
+    "id": 66,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la precisione?",
+    "options": [
+      "Il numero di errori commessi",
+      "La velocità media in un minuto",
+      "La percentuale di battute scritte senza errori sul totale",
+      "Il numero di parole scritte"
+    ],
+    "correctIndex": 2,
+    "explanation": "Si calcola con una formula."
+  },
+  {
+    "id": 67,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché un numero è utile solo se si misura sempre allo stesso modo?",
+    "options": [
+      "Perché solo così si possono confrontare le sessioni tra loro",
+      "Perché i numeri cambiano da soli",
+      "Perché la tastiera è sempre diversa",
+      "Perché lo richiede il regolamento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Come per ogni allenamento."
+  },
+  {
+    "id": 68,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il primo passo del metodo per misurarsi?",
+    "options": [
+      "Contare gli errori",
+      "Scegliere un testo e copiarlo per un tempo fisso, per esempio cinque minuti, guardando il testo e mai la tastiera",
+      "Dividere per cinque",
+      "Calcolare la precisione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il metodo è adatto a chi si allena da solo."
+  },
+  {
+    "id": 69,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si ottengono le battute al minuto?",
+    "options": [
+      "Moltiplicando gli errori per cinque",
+      "Dividendo per cinque le parole",
+      "Contando le battute scritte, spazi compresi, e dividendo per i minuti",
+      "Contando solo le lettere"
+    ],
+    "correctIndex": 2,
+    "explanation": "Gli spazi si contano."
+  },
+  {
+    "id": 70,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si ottengono le parole al minuto dalle battute al minuto?",
+    "options": [
+      "Dividendo per cinque le battute al minuto",
+      "Moltiplicando per cinque",
+      "Dividendo per cento",
+      "Sottraendo gli errori"
+    ],
+    "correctIndex": 0,
+    "explanation": "5 battute = 1 parola."
+  },
+  {
+    "id": 71,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si calcola la precisione?",
+    "options": [
+      "(battute totali − errori) ÷ battute totali × 100",
+      "battute totali ÷ minuti",
+      "errori ÷ minuti × 100",
+      "battute totali × errori"
+    ],
+    "correctIndex": 0,
+    "explanation": "Gli errori sono le battute sbagliate."
+  },
+  {
+    "id": 72,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa si intende per errori nel metodo di misura?",
+    "options": [
+      "Le parole saltate",
+      "Le righe incomplete",
+      "Le battute sbagliate",
+      "Le pause"
+    ],
+    "correctIndex": 2,
+    "explanation": "Vanno contati."
+  },
+  {
+    "id": 73,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che rapporto ha il metodo con i regolamenti delle gare?",
+    "options": [
+      "Li sostituisce completamente",
+      "Li rende inutili",
+      "Non ha alcun rapporto",
+      "Non li sostituisce, ma permette di confrontare sé stessi con sé stessi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ogni gara ha il proprio regolamento."
+  },
+  {
+    "id": 74,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa conviene migliorare prima per capire se si sta migliorando?",
+    "options": [
+      "La velocità, poi la precisione",
+      "Entrambe insieme",
+      "Nessuna delle due",
+      "La precisione, poi la velocità"
+    ],
+    "correctIndex": 3,
+    "explanation": "È la regola dell'allenamento."
+  },
+  {
+    "id": 75,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché una velocità che sale mentre la precisione crolla non è un progresso?",
+    "options": [
+      "Perché la velocità non conta",
+      "Perché gli errori non si vedono",
+      "Perché la precisione non si misura",
+      "Perché gli errori vanno corretti e correggere costa tempo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il progresso non è solo velocità."
+  },
+  {
+    "id": 76,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quante battute al minuto sono 900 battute scritte in cinque minuti?",
+    "options": [
+      "180",
+      "90",
+      "450",
+      "900"
+    ],
+    "correctIndex": 0,
+    "explanation": "900 ÷ 5 = 180."
+  },
+  {
+    "id": 77,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quante parole al minuto corrispondono 180 battute al minuto?",
+    "options": [
+      "18",
+      "90",
+      "180",
+      "36"
+    ],
+    "correctIndex": 3,
+    "explanation": "180 ÷ 5 = 36."
+  },
+  {
+    "id": 78,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con 900 battute e 18 errori, qual è la precisione?",
+    "options": [
+      "98%",
+      "18%",
+      "82%",
+      "90%"
+    ],
+    "correctIndex": 0,
+    "explanation": "(900 − 18) ÷ 900 × 100 = 98%."
+  },
+  {
+    "id": 79,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno Stella Pajunas scrisse per un minuto a 216 parole al minuto?",
+    "options": [
+      "1906",
+      "1946",
+      "1954",
+      "1987"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fu una prova ufficiale a Chicago, con una macchina elettrica IBM."
+  },
+  {
+    "id": 80,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Con quale macchina Stella Pajunas raggiunse le 216 parole al minuto?",
+    "options": [
+      "Una Remington meccanica",
+      "Una macchina elettrica IBM",
+      "Una Olivetti Tekne 3",
+      "Un computer"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il risultato è ancora citato nei record di velocità."
+  },
+  {
+    "id": 81,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quante battute al minuto equivalgono 216 parole al minuto?",
+    "options": [
+      "216",
+      "432",
+      "540",
+      "1.080"
+    ],
+    "correctIndex": 3,
+    "explanation": "216 × 5 = 1.080."
+  },
+  {
+    "id": 82,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il record di Stella Pajunas non è confrontabile con una gara di un'ora su una macchina meccanica?",
+    "options": [
+      "Perché Pajunas barò",
+      "Perché le macchine elettriche non esistevano",
+      "Perché le gare di un'ora non erano ufficiali",
+      "Perché la misura dipende sempre da quanto dura la prova e dallo strumento usato"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un record di un minuto con macchina elettrica non è confrontabile."
+  },
+  {
+    "id": 83,
+    "module": "allenamento",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del ciclocomputer, che cosa fa la misura della velocità?",
+    "options": [
+      "Pedala al posto tuo",
+      "Sceglie la strada",
+      "Rallenta la pedalata",
+      "Non pedala al posto tuo, ma ti dice com'è andata l'uscita"
+    ],
+    "correctIndex": 3,
+    "explanation": "Come un ciclista non confronta un'uscita in pianura con una in salita."
+  }
+]

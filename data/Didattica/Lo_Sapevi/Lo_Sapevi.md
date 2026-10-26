@@ -18,7 +18,7 @@ Sezione dedicata ai file JSON del metodo di apprendimento Lo Sapevi?, un solo fi
 
 **Stato Aree:**
 - Tutte le aree: `attivate`
-- Contenuto: 70 moduli su 85 realizzati (Area DigComp: 10 moduli da creare; Area Dattilografia: 5 moduli da creare)
+- Contenuto: 70 moduli su 87 realizzati (Area DigComp: 10 moduli da creare; Area Dattilografia: 7 moduli da creare)
 
 **Esempio di struttura path:**
 
@@ -613,6 +613,18 @@ data/
   - Path base: `data/Didattica/Lo_Sapevi/Dattilografia/Modulo5/`
   - File: `lo_sapevi_scrivere-senza-guardare.json` *(da creare)*
 
+- **Modulo 6 — Allenamento**
+  - Chiave: `allenamento`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Lo_Sapevi/Dattilografia/Modulo6/`
+  - File: `lo_sapevi_allenamento.json` *(da creare)*
+
+- **Modulo 7 — Estensioni**
+  - Chiave: `estensioni`
+  - Stato: `attivo`
+  - Path base: `data/Didattica/Lo_Sapevi/Dattilografia/Modulo7/`
+  - File: `lo_sapevi_estensioni.json` *(da creare)*
+
 ---
 
 ## 2. Moduli completi e da creare
@@ -726,12 +738,14 @@ data/
 - Fase 9 — Valutazione dell'apprendimento
 - Fase 10 — Valorizzare le potenzialità degli studenti
 
-### ⌨️ Dattilografia — DA CREARE (0/5)
+### ⌨️ Dattilografia — DA CREARE (0/7)
 - Modulo 1 — La storia della tastiera
 - Modulo 2 — La tastiera
 - Modulo 3 — Tipi di tastiera
 - Modulo 4 — Il corpo e la postazione
 - Modulo 5 — Scrivere senza guardare
+- Modulo 6 — Allenamento
+- Modulo 7 — Estensioni
 
 ---
 
@@ -752,12 +766,12 @@ data/
 | Malware e Minacce Informatiche | 1 | 1 | 1 | 0 | completo |
 | Intelligenza Artificiale | 13 | 13 | 13 | 0 | completo |
 | DigComp | 10 | 10 | 0 | 10 | da creare |
-| Dattilografia | 5 | 5 | 0 | 5 | da creare |
-| **Totale** | **85** | **85** | **70** | **15** | — |
+| Dattilografia | 7 | 7 | 0 | 7 | da creare |
+| **Totale** | **87** | **87** | **70** | **17** | — |
 
-- **Moduli totali mappati (scope Lo Sapevi):** 85
+- **Moduli totali mappati (scope Lo Sapevi):** 87
 - **Moduli completi:** 70
-- **Moduli da creare:** 15
+- **Moduli da creare:** 17
 - **File JSON creati:** 70
-- **File JSON da creare:** 15
-- **File JSON totali attesi:** 85
+- **File JSON da creare:** 17
+- **File JSON totali attesi:** 87

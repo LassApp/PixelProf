@@ -1,0 +1,1457 @@
+[
+  {
+    "id": 1,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una periferica di input?",
+    "options": [
+      "Un dispositivo che mostra i risultati dell'elaborazione",
+      "Un dispositivo che permette di inserire dati e comandi nel computer",
+      "Un programma per scrivere testi",
+      "Una memoria in cui si conservano i file"
+    ],
+    "correctIndex": 1,
+    "explanation": "La tastiera è la principale periferica di input per la scrittura."
+  },
+  {
+    "id": 2,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa la tastiera quando si preme un tasto?",
+    "options": [
+      "Converte la pressione in un segnale che il computer interpreta come un carattere o come un comando",
+      "Invia direttamente la lettera sullo schermo senza alcuna traduzione",
+      "Salva la lettera nella memoria del computer",
+      "Trasforma la lettera in un'immagine"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il computer riceve così tanto i caratteri quanto i comandi."
+  },
+  {
+    "id": 3,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa significa ASCII?",
+    "options": [
+      "American Standard Computer for Input and Information",
+      "American Standard Code for Information Interchange",
+      "Automatic System Code for Information Input",
+      "Advanced Standard Character Index and Information"
+    ],
+    "correctIndex": 1,
+    "explanation": "È lo standard con cui ogni carattere digitato viene tradotto in un codice numerico."
+  },
+  {
+    "id": 4,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A che cosa serve lo standard ASCII?",
+    "options": [
+      "A tradurre ogni carattere digitato in un codice numerico",
+      "A collegare la tastiera al computer tramite cavo",
+      "A scegliere il layout della tastiera",
+      "A cancellare i caratteri errati"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il computer lavora con i numeri, non con le lettere come le vediamo noi."
+  },
+  {
+    "id": 5,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale numero corrisponde alla lettera C nello standard ASCII?",
+    "options": [
+      "65",
+      "73",
+      "79",
+      "67"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nello standard ASCII la C è 67, la I è 73, la A è 65 e la O è 79."
+  },
+  {
+    "id": 6,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale numero corrisponde alla lettera A nello standard ASCII?",
+    "options": [
+      "67",
+      "73",
+      "79",
+      "65"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nel testo: C = 67, I = 73, A = 65, O = 79."
+  },
+  {
+    "id": 7,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Con quali due simboli lavora il computer a livello elementare?",
+    "options": [
+      "A e B",
+      "Sì e no scritti a mano",
+      "0 e 1",
+      "+ e −"
+    ],
+    "correctIndex": 2,
+    "explanation": "È una specie di interruttore che può stare solo in due posizioni."
+  },
+  {
+    "id": 8,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è un bit?",
+    "options": [
+      "Un gruppo di otto lettere",
+      "Un carattere della tastiera",
+      "Un numero ASCII",
+      "La singola scelta tra 0 e 1, dall'inglese «binary digit», cifra binaria"
+    ],
+    "correctIndex": 3,
+    "explanation": "Otto bit messi insieme formano un gruppo capace di rappresentare una lettera."
+  },
+  {
+    "id": 9,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quanti bit formano un gruppo capace di rappresentare una lettera?",
+    "options": [
+      "Otto",
+      "Due",
+      "Quattro",
+      "Sedici"
+    ],
+    "correctIndex": 0,
+    "explanation": "Otto bit messi insieme rappresentano una lettera."
+  },
+  {
+    "id": 10,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale sequenza binaria corrisponde al tasto C, secondo il modulo?",
+    "options": [
+      "01000100",
+      "01100011",
+      "01000011",
+      "00100011"
+    ],
+    "correctIndex": 2,
+    "explanation": "La tastiera invia il segnale, il computer lo traduce in 67 e infine nella sequenza binaria 01000011."
+  },
+  {
+    "id": 11,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come distingue il computer i tasti che producono un carattere da quelli che danno un comando?",
+    "options": [
+      "Riceve entrambi i segnali allo stesso modo, attraverso la stessa tastiera, e li distingue in base a ciò che rappresentano",
+      "Li riceve da due tastiere diverse",
+      "Li riconosce dal colore dei tasti",
+      "Li distingue solo se premuti insieme"
+    ],
+    "correctIndex": 0,
+    "explanation": "Alcuni tasti dicono al computer cosa fare: andare a capo, cancellare, selezionare, confermare."
+  },
+  {
+    "id": 12,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa succede a tutto ciò che entra nel computer da un mouse, un microfono o uno scanner?",
+    "options": [
+      "Viene ridotto a sequenze di 0 e 1",
+      "Viene convertito solo in lettere",
+      "Viene salvato come immagine",
+      "Resta in forma analogica"
+    ],
+    "correctIndex": 0,
+    "explanation": "Anche le altre periferiche di input condividono lo stesso destino della tastiera."
+  },
+  {
+    "id": 13,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti modi diversi di rappresentare i caratteri avevano i costruttori di computer fino al 1963?",
+    "options": [
+      "Due o tre",
+      "Circa dieci",
+      "Più di sessanta",
+      "Più di mille"
+    ],
+    "correctIndex": 2,
+    "explanation": "Macchine di marche diverse non parlavano la stessa lingua."
+  },
+  {
+    "id": 14,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi inviò nel maggio 1961 all'American Standards Association la proposta di un unico codice per la comunicazione tra computer?",
+    "options": [
+      "Bob Bemer, ingegnere dell'IBM",
+      "Steve Jobs, fondatore di Apple",
+      "Edward Hess, della Royal Typewriter Company",
+      "Bernardino Ramazzini, medico modenese"
+    ],
+    "correctIndex": 0,
+    "explanation": "Per due anni un comitato discusse come dovesse essere fatto il codice."
+  },
+  {
+    "id": 15,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno uscì la prima edizione dello standard ASCII?",
+    "options": [
+      "1961",
+      "1978",
+      "1963",
+      "1985"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il maggio 1961 è invece l'anno della proposta di Bemer."
+  },
+  {
+    "id": 16,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti caratteri codificava, con sette bit, la prima edizione dello standard ASCII?",
+    "options": [
+      "64",
+      "128",
+      "256",
+      "60"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'ottavo bit dei circuiti veniva spesso usato per controllare gli errori di trasmissione."
+  },
+  {
+    "id": 17,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A che cosa serviva spesso l'ottavo bit dei circuiti ai tempi della prima edizione dell'ASCII?",
+    "options": [
+      "A distinguere maiuscole e minuscole",
+      "A memorizzare i numeri",
+      "A controllare gli errori di trasmissione",
+      "A rappresentare gli accenti"
+    ],
+    "correctIndex": 2,
+    "explanation": "I caratteri erano codificati con sette bit."
+  },
+  {
+    "id": 18,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Qual è il contributo più noto di Bob Bemer?",
+    "options": [
+      "La «sequenza di escape», per superare il limite dei 128 caratteri e passare da un alfabeto a un altro",
+      "La tastiera con 101 tasti",
+      "Il simbolo ⌘",
+      "Il layout QWERTY"
+    ],
+    "correctIndex": 0,
+    "explanation": "Bemer è considerato il «padre dell'ASCII»."
+  },
+  {
+    "id": 19,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa si può dire di Bemer rispetto all'ASCII?",
+    "options": [
+      "Fu l'unico ideatore dell'intero codice",
+      "Si limitò a pubblicare un codice già esistente",
+      "Lavorò da solo per due anni",
+      "È considerato il «padre dell'ASCII», ma non ne fu l'unico inventore: il codice nacque dal lavoro di un intero comitato"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il numero 67 che il computer riceve premendo C è quello deciso da quel comitato."
+  },
+  {
+    "id": 20,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dell'interruttore, che cosa rappresenta il bit?",
+    "options": [
+      "Un interruttore della luce di casa, che può stare solo acceso o spento",
+      "Un regolatore che ha molte posizioni intermedie",
+      "Un cavo che collega la tastiera al computer",
+      "Un codice Morse fatto di punti e linee"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ogni parola scritta è una lunghissima sequenza di interruttori accesi e spenti."
+  },
+  {
+    "id": 21,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è la tastiera estesa standard?",
+    "options": [
+      "Una tastiera con soli tasti per le lettere",
+      "La tastiera dei computer da scrivania, composta da 101 o più tasti suddivisi in aree",
+      "La tastiera dei telefoni cellulari",
+      "Una tastiera con un solo gruppo di tasti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le aree raggruppano funzioni specifiche."
+  },
+  {
+    "id": 22,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il layout di una tastiera?",
+    "options": [
+      "Il numero totale dei tasti",
+      "La disposizione dei tasti dei caratteri all'interno dell'area principale",
+      "L'insieme delle aree della tastiera",
+      "Il materiale con cui sono fatti i tasti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il layout dell'area di digitazione dipende dalla lingua."
+  },
+  {
+    "id": 23,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti tasti hanno le tastiere statunitensi?",
+    "options": [
+      "83",
+      "102",
+      "101",
+      "105"
+    ],
+    "correctIndex": 2,
+    "explanation": "Quelle europee ne hanno 102; le moderne con due tasti Windows e il tasto del menu contestuale arrivano a 104 o 105."
+  },
+  {
+    "id": 24,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti tasti hanno le tastiere europee?",
+    "options": [
+      "101",
+      "83",
+      "104",
+      "102"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le statunitensi ne hanno 101."
+  },
+  {
+    "id": 25,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono le aree di una tastiera estesa standard?",
+    "options": [
+      "Tasti alfabetici, numerici e simbolici",
+      "Tasti di lettura, scrittura e stampa",
+      "Tasti destri, sinistri e centrali",
+      "Tasti di digitazione, di controllo, funzione, di spostamento e tastierino numerico"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sui portatili alcune aree possono mancare o essere ridotte."
+  },
+  {
+    "id": 26,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da che cosa dipende il layout dell'area di digitazione?",
+    "options": [
+      "Dal numero di tasti",
+      "Dal produttore della tastiera",
+      "Dalla lingua",
+      "Dalla velocità di chi scrive"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le aree intorno cambiano, non il cuore della tastiera."
+  },
+  {
+    "id": 27,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si riconoscono QWERTY, QWERTZ e AZERTY?",
+    "options": [
+      "Contando i tasti della tastiera",
+      "Leggendo le prime sei lettere della riga alfabetica più alta",
+      "Guardando il colore dei tasti funzione",
+      "Controllando il cavo di collegamento"
+    ],
+    "correctIndex": 1,
+    "explanation": "La QWERTZ è in genere dei Paesi di lingua tedesca, la AZERTY di quelli di lingua francese."
+  },
+  {
+    "id": 28,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale layout è in genere usato in Italia e in Spagna?",
+    "options": [
+      "QWERTY",
+      "QWERTZ",
+      "AZERTY",
+      "QZERTY"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le tastiere italiane aggiungono i tasti con le lettere accentate."
+  },
+  {
+    "id": 29,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono le tastiere «evolute»?",
+    "options": [
+      "Tastiere con tasti dedicati che con una pressione aprono un programma, un file o un comando, oppure regolano il volume",
+      "Tastiere prive di tasti funzione",
+      "Tastiere con meno di 101 tasti",
+      "Tastiere senza tastierino numerico"
+    ],
+    "correctIndex": 0,
+    "explanation": "Per conoscerne le funzioni bisogna consultare il manuale o il sito del produttore."
+  },
+  {
+    "id": 30,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "In che modo viene idealmente suddivisa la tastiera, in vista della scrittura con tutte le dita?",
+    "options": [
+      "In due metà, una per la mano sinistra e una per la mano destra",
+      "In tre fasce di colore",
+      "In quattro aree uguali",
+      "In righe orizzontali separate"
+    ],
+    "correctIndex": 0,
+    "explanation": "Un'idea che torna utile per scrivere con tutte e dieci le dita."
+  },
+  {
+    "id": 31,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti tasti aveva la tastiera originale del personal computer IBM del 1981?",
+    "options": [
+      "101",
+      "102",
+      "104",
+      "83"
+    ],
+    "correctIndex": 3,
+    "explanation": "I tasti funzione erano dieci, in due colonne sul lato sinistro."
+  },
+  {
+    "id": 32,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale tastiera introdusse l'IBM nel 1985?",
+    "options": [
+      "L'Enhanced Keyboard",
+      "La Natural Keyboard",
+      "La Model 100",
+      "La tastiera Maltron"
+    ],
+    "correctIndex": 0,
+    "explanation": "Cambiava l'impostazione dell'intera tastiera."
+  },
+  {
+    "id": 33,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa prevedeva l'Enhanced Keyboard dell'IBM?",
+    "options": [
+      "Dieci tasti funzione in due colonne sul lato sinistro",
+      "ESC e dodici tasti funzione su una fila in alto, quattro frecce a T rovesciata, un gruppo separato per lo spostamento, due CTRL e due ALT",
+      "Due metà della tastiera ruotate e separate",
+      "Un unico blocco che univa tastierino numerico e frecce"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la disposizione che somiglia ancora alle tastiere di oggi."
+  },
+  {
+    "id": 34,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti tasti aveva la versione brasiliana dell'Enhanced Keyboard?",
+    "options": [
+      "101",
+      "104",
+      "102",
+      "83"
+    ],
+    "correctIndex": 1,
+    "explanation": "Quella americana ne aveva 101 e quella europea 102."
+  },
+  {
+    "id": 35,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del cruscotto di un'automobile, a che cosa corrispondono le aree di una tastiera?",
+    "options": [
+      "Ai sedili regolabili",
+      "Alla velocità del motore",
+      "Alle uscite di sicurezza",
+      "Ai gruppi di comandi: chi sa dove cercarli trova subito il comando anche su un'auto mai guidata"
+    ],
+    "correctIndex": 3,
+    "explanation": "Luci da una parte, clima da un'altra, comandi del volante sotto le dita."
+  },
+  {
+    "id": 36,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono i tasti principali di una tastiera?",
+    "options": [
+      "Tasti che producono solo lettere maiuscole",
+      "Tasti che non producono un carattere visibile ma svolgono funzioni di comando",
+      "Tasti riservati ai numeri",
+      "Tasti usati solo nei videogiochi"
+    ],
+    "correctIndex": 1,
+    "explanation": "Confermano, cancellano, modificano il comportamento di altri tasti o spostano il punto in cui si scrive."
+  },
+  {
+    "id": 37,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa il tasto INVIO (Enter)?",
+    "options": [
+      "Sposta il cursore all'inizio della riga successiva e chiude la riga corrente",
+      "Cancella il carattere a sinistra del cursore",
+      "Blocca il maiuscolo",
+      "Sposta il cursore avanti di uno scatto preciso"
+    ],
+    "correctIndex": 0,
+    "explanation": "In una finestra di dialogo seleziona il pulsante evidenziato."
+  },
+  {
+    "id": 38,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa il tasto BLOC MAIUSC (Caps Lock)?",
+    "options": [
+      "Cancella il testo selezionato",
+      "Scrive i simboli stampati nella parte superiore dei tasti",
+      "Passa da una finestra all'altra",
+      "Blocca il maiuscolo, senza dover tenere premuto MAIUSC a ogni lettera"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si attiva con una pressione e si disattiva con una seconda."
+  },
+  {
+    "id": 39,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa produce MAIUSC (Shift) premuto insieme a un altro tasto che ha un simbolo nella parte superiore?",
+    "options": [
+      "Una lettera minuscola",
+      "Un comando di cancellazione",
+      "Uno spazio vuoto",
+      "Il simbolo stampato nella parte superiore del tasto"
+    ],
+    "correctIndex": 3,
+    "explanation": "Con una lettera, restituisce la sua versione maiuscola."
+  },
+  {
+    "id": 40,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa CTRL (Control)?",
+    "options": [
+      "Elimina il carattere alla destra del cursore",
+      "Non scrive nulla da solo, ma cambia il significato del tasto premuto insieme a lui",
+      "Inserisce uno spazio vuoto",
+      "Sposta il cursore all'inizio della riga"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la base di gran parte delle scorciatoie da tastiera."
+  },
+  {
+    "id": 41,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale tasto elimina il carattere alla destra del cursore, oppure il testo selezionato?",
+    "options": [
+      "BACKSPACE",
+      "CANC",
+      "TAB",
+      "INVIO"
+    ],
+    "correctIndex": 1,
+    "explanation": "BACKSPACE elimina invece il carattere alla sinistra del cursore."
+  },
+  {
+    "id": 42,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale tasto elimina il carattere alla sinistra del cursore, oppure il testo selezionato?",
+    "options": [
+      "CANC",
+      "TAB",
+      "BACKSPACE",
+      "ALT GR"
+    ],
+    "correctIndex": 2,
+    "explanation": "CANC agisce a destra del cursore."
+  },
+  {
+    "id": 43,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A che cosa serve ALT GR?",
+    "options": [
+      "Blocca il maiuscolo",
+      "Sposta il cursore alla fine del documento",
+      "Permette di scrivere simboli non presenti direttamente sui tasti, come la chiocciola @",
+      "Passa alla casella successiva in un modulo online"
+    ],
+    "correctIndex": 2,
+    "explanation": "Come CTRL, modifica il significato di un altro tasto premuto insieme."
+  },
+  {
+    "id": 44,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa il tasto TAB?",
+    "options": [
+      "Inserisce un singolo spazio",
+      "Cancella la riga corrente",
+      "Sposta il cursore in avanti di uno scatto preciso e passa alla casella successiva in un modulo online",
+      "Chiude il programma attivo"
+    ],
+    "correctIndex": 2,
+    "explanation": "Non sposta di un semplice spazio, ma di uno scatto preciso."
+  },
+  {
+    "id": 45,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quale strumento deriva il tasto INVIO?",
+    "options": [
+      "Dal ritorno carrello delle macchine per scrivere meccaniche, la leva che riportava il foglio all'inizio della riga successiva",
+      "Dalla telescrivente",
+      "Dal tabulatore",
+      "Dal tasto Apple"
+    ],
+    "correctIndex": 0,
+    "explanation": "Con le macchine elettriche la leva diventò un tasto, spesso etichettato «carriage return» o «return»."
+  },
+  {
+    "id": 46,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come era spesso etichettato il tasto che sulle macchine elettriche, come la IBM Electric, sostituì la leva del ritorno carrello?",
+    "options": [
+      "«shift»",
+      "«tab»",
+      "«carriage return» o «return»",
+      "«enter lock»"
+    ],
+    "correctIndex": 2,
+    "explanation": "Sul computer INVIO ha ereditato lo stesso significato di fondo."
+  },
+  {
+    "id": 47,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno e con quale macchina nacque il tasto MAIUSC?",
+    "options": [
+      "Nel 1878, con la Remington No. 2",
+      "Nel 1873, con la Sholes and Glidden",
+      "Nel 1904, con la Royal",
+      "Nel 1940, con la IBM Electric"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu la prima macchina da scrivere capace di stampare sia maiuscole sia minuscole."
+  },
+  {
+    "id": 48,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che limite aveva la Remington No. 1 rispetto alla No. 2?",
+    "options": [
+      "Non aveva il carrello",
+      "Non permetteva di andare a capo",
+      "Era azionata da un motorino",
+      "Era limitata a un solo registro"
+    ],
+    "correctIndex": 3,
+    "explanation": "La Remington No. 2 stampava maiuscole e minuscole."
+  },
+  {
+    "id": 49,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il tasto si chiama MAIUSC, in inglese «shift»?",
+    "options": [
+      "Perché sposta il cursore da una riga all'altra",
+      "Perché serviva letteralmente a spostare il carrello dei martelletti per accedere al set di caratteri maiuscoli",
+      "Perché cambia il layout della tastiera",
+      "Perché sposta il foglio nel rullo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sulla tastiera di un computer non c'è più nulla da spostare, ma nome e funzione sono rimasti."
+  },
+  {
+    "id": 50,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da quale dispositivo arriva il tasto CTRL?",
+    "options": [
+      "Dalla macchina da scrivere meccanica",
+      "Dalla telescrivente, una tastiera pensata per comunicare a distanza",
+      "Dal cembalo scrivano",
+      "Dalla tastiera Maltron"
+    ],
+    "correctIndex": 1,
+    "explanation": "La telescrivente introdusse tasti capaci di generare codici di controllo invece di caratteri."
+  },
+  {
+    "id": 51,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa introdusse per prima la telescrivente?",
+    "options": [
+      "I tasti funzione da F1 a F12",
+      "Il tastierino numerico",
+      "I tasti Windows",
+      "Tasti capaci di generare codici di controllo invece di caratteri"
+    ],
+    "correctIndex": 3,
+    "explanation": "Un principio che sopravvive ancora oggi nel codice ASCII."
+  },
+  {
+    "id": 52,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché nacque il tasto TAB sulle macchine da scrivere meccaniche di fine Ottocento?",
+    "options": [
+      "Per passare da un alfabeto a un altro",
+      "Per cancellare un'intera riga",
+      "Per scrivere i simboli rari",
+      "Per scrivere colonne di numeri, tipicamente in contesti aziendali e contabili, senza premere la barra spaziatrice decine di volte"
+    ],
+    "correctIndex": 3,
+    "explanation": "Le prime versioni richiedevano di posizionare a mano piccole clip sul carrello."
+  },
+  {
+    "id": 53,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi brevettò nel 1904 un sistema più pratico per il tabulatore, con arresti fissi attivabili ruotandoli?",
+    "options": [
+      "James Koca",
+      "Bob Bemer",
+      "Edward Hess, che lavorava per la Royal Typewriter Company",
+      "Christopher Latham Sholes"
+    ],
+    "correctIndex": 2,
+    "explanation": "Le prime versioni usavano clip removibili posizionate a mano."
+  },
+  {
+    "id": 54,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa brevettò l'inventore James Koca nel 1940?",
+    "options": [
+      "Il tasto Windows",
+      "Il simbolo ⌘",
+      "Un meccanismo per impostare e cancellare i punti di tabulazione direttamente dalla tastiera",
+      "Il tasto MAIUSC"
+    ],
+    "correctIndex": 2,
+    "explanation": "Prima i punti di tabulazione si impostavano a mano."
+  },
+  {
+    "id": 55,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora dei segnali stradali, a che cosa sono paragonati CANC e BACKSPACE?",
+    "options": [
+      "Alla retromarcia",
+      "Al bivio che apre una nuova riga",
+      "Alle frecce che cambiano la direzione",
+      "Alla destinazione finale"
+    ],
+    "correctIndex": 0,
+    "explanation": "INVIO è il bivio che apre una nuova riga; MAIUSC, CTRL e ALT sono le frecce."
+  },
+  {
+    "id": 56,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa comprendono i tasti di digitazione (alfanumerici)?",
+    "options": [
+      "Lettere, numeri, punteggiatura e simboli, più i tasti principali",
+      "Solo le lettere dell'alfabeto",
+      "Solo i tasti da F1 a F12",
+      "Solo i tasti con le frecce"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono gli stessi di una macchina da scrivere tradizionale, con i tasti principali."
+  },
+  {
+    "id": 57,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i tasti di controllo più frequenti?",
+    "options": [
+      "INVIO, TAB e CANC",
+      "HOME, FINE e INS",
+      "STAMP, PAUSA e BLOC NUM",
+      "CTRL, ALT, il tasto WINDOWS ed ESC"
+    ],
+    "correctIndex": 3,
+    "explanation": "Vengono usati da soli o insieme ad altri tasti per eseguire operazioni."
+  },
+  {
+    "id": 58,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come variano le funzioni dei tasti F1–F12?",
+    "options": [
+      "Sono uguali in tutti i programmi",
+      "Eseguono operazioni specifiche, che cambiano da un programma all'altro",
+      "Servono solo a scrivere numeri",
+      "Servono solo a spostare il cursore"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sono i tasti funzione, da F1 a F12."
+  },
+  {
+    "id": 59,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è il cursore (o punto di inserimento)?",
+    "options": [
+      "La linea verticale intermittente che indica il punto da cui parte il testo digitato",
+      "La freccia del mouse",
+      "Il tasto che sposta il testo",
+      "Una finestra di dialogo"
+    ],
+    "correctIndex": 0,
+    "explanation": "Compare ogni volta che si deve digitare un testo."
+  },
+  {
+    "id": 60,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si può spostare il cursore senza staccare le mani dalla tastiera?",
+    "options": [
+      "Con i tasti di spostamento",
+      "Solo con il mouse",
+      "Con il tasto STAMP",
+      "Con il tasto TAB"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si può spostare anche con il mouse, facendo clic nel punto desiderato."
+  },
+  {
+    "id": 61,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa succede alle frecce se si tiene premuto CTRL?",
+    "options": [
+      "Il cursore va all'inizio del documento",
+      "Il cursore si sposta da una parola all'altra anziché da un carattere all'altro",
+      "Il testo viene selezionato per intero",
+      "Il cursore salta una schermata"
+    ],
+    "correctIndex": 1,
+    "explanation": "Le frecce da sole spostano il cursore di un carattere o di una riga."
+  },
+  {
+    "id": 62,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fanno HOME e FINE?",
+    "options": [
+      "Spostano il cursore di una schermata in alto o in basso",
+      "Portano il cursore all'inizio e alla fine della riga",
+      "Eliminano il carattere dopo il cursore",
+      "Passano alla casella successiva"
+    ],
+    "correctIndex": 1,
+    "explanation": "Con CTRL premuto portano all'inizio o alla fine dell'intero documento."
+  },
+  {
+    "id": 63,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fanno PGSU e PGGIÙ?",
+    "options": [
+      "Portano il cursore all'inizio e alla fine della riga",
+      "Passano da un programma all'altro",
+      "Catturano un'immagine dello schermo",
+      "Spostano il cursore, o la pagina, di una schermata in alto o in basso"
+    ],
+    "correctIndex": 3,
+    "explanation": "Servono a muoversi in un documento o in una pagina web."
+  },
+  {
+    "id": 64,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa il tasto INS?",
+    "options": [
+      "Inserisce una nuova riga",
+      "Attiva o disattiva la modalità inserimento: quando è disattivata, il testo digitato sostituisce i caratteri già presenti",
+      "Cancella la selezione",
+      "Blocca il tastierino numerico"
+    ],
+    "correctIndex": 1,
+    "explanation": "Quando è attiva, il testo si inserisce nel punto del cursore."
+  },
+  {
+    "id": 65,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa contiene il tastierino numerico?",
+    "options": [
+      "Solo le cifre da 1 a 5",
+      "I tasti funzione da F1 a F12",
+      "Le cifre da 0 a 9, i simboli delle operazioni e la virgola decimale, come una calcolatrice",
+      "Le lettere accentate"
+    ],
+    "correctIndex": 2,
+    "explanation": "Permette di digitare rapidamente i numeri con una sola mano."
+  },
+  {
+    "id": 66,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa succede ai tasti del tastierino numerico quando BLOC NUM è disattivato?",
+    "options": [
+      "Funzionano come una seconda serie di tasti di spostamento",
+      "Non funzionano affatto",
+      "Scrivono solo lettere",
+      "Diventano tasti funzione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le funzioni sono stampate accanto ai numeri."
+  },
+  {
+    "id": 67,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa oggi il tasto STAMP?",
+    "options": [
+      "Cattura un'immagine dell'intera schermata (screenshot) e la copia negli appunti",
+      "Invia il contenuto alla stampante",
+      "Stampa il documento attivo",
+      "Salva il file corrente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Con ALT premuto cattura solo la finestra attiva."
+  },
+  {
+    "id": 68,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa serviva a fare STAMP nelle prime tastiere?",
+    "options": [
+      "Catturare uno screenshot",
+      "Scorrere il documento",
+      "Inviare alla stampante il contenuto della schermata",
+      "Mettere in pausa il programma"
+    ],
+    "correctIndex": 2,
+    "explanation": "Oggi il tasto cattura uno screenshot."
+  },
+  {
+    "id": 69,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che effetto ha BLOC SCORR nella maggior parte dei programmi?",
+    "options": [
+      "Blocca il maiuscolo",
+      "Nessun effetto",
+      "Attiva il tastierino numerico",
+      "Chiude il programma"
+    ],
+    "correctIndex": 1,
+    "explanation": "In alcuni programmi modifica il comportamento delle frecce e di PGSU e PGGIÙ."
+  },
+  {
+    "id": 70,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa PAUSA/INTERR in alcuni programmi meno recenti?",
+    "options": [
+      "Cattura uno screenshot",
+      "Sposta il cursore all'inizio del documento",
+      "Attiva la modalità inserimento",
+      "Mette in pausa l'esecuzione o, con CTRL, la interrompe"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si usa raramente."
+  },
+  {
+    "id": 71,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu messa in vendita la prima tastiera con il marchio Microsoft, la Natural Keyboard?",
+    "options": [
+      "Nel 1981",
+      "Nel 1985",
+      "Nel 1998",
+      "Nell'autunno del 1994"
+    ],
+    "correctIndex": 3,
+    "explanation": "Fu progettata da Ziba Design e prodotta con Key Tronic."
+  },
+  {
+    "id": 72,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quali caratteristiche aveva la Natural Keyboard del 1994?",
+    "options": [
+      "Dieci tasti funzione in due colonne sul lato sinistro",
+      "Una sola mano di tasti",
+      "Le due metà dell'area di digitazione ruotate e separate e tre tasti in più rispetto alle 101 dello standard",
+      "Una tastiera senza tasti funzione"
+    ],
+    "correctIndex": 2,
+    "explanation": "Tenevano le braccia in una posizione più naturale."
+  },
+  {
+    "id": 73,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A che cosa serviva il tasto «applicazione» della Natural Keyboard?",
+    "options": [
+      "Apriva il menu Start",
+      "Catturava lo schermo",
+      "Funzionava come il pulsante destro del mouse",
+      "Bloccava il maiuscolo"
+    ],
+    "correctIndex": 2,
+    "explanation": "Insieme ai due tasti con il logo Windows erano i tre tasti in più."
+  },
+  {
+    "id": 74,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Per quale sistema operativo furono pensati i due tasti Windows della Natural Keyboard?",
+    "options": [
+      "Windows 95",
+      "Windows 98",
+      "Windows 2000",
+      "Windows XP"
+    ],
+    "correctIndex": 0,
+    "explanation": "Per ottenere il logo «Designed for Windows» serviva il tasto Windows, che apriva il menu Start."
+  },
+  {
+    "id": 75,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti esemplari aveva già venduto la Natural Keyboard quando nel 1998 uscì la versione successiva?",
+    "options": [
+      "Oltre diecimila",
+      "Oltre tre milioni",
+      "Circa centomila",
+      "Oltre un miliardo"
+    ],
+    "correctIndex": 1,
+    "explanation": "Da allora le tastiere con 104 o 105 tasti sono la norma."
+  },
+  {
+    "id": 76,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del telecomando, che cosa rappresentano i gruppi di tasti?",
+    "options": [
+      "I canali che cambiano da soli",
+      "Le pile del telecomando",
+      "I programmi preferiti",
+      "I gruppi di funzioni: chi sa a cosa serve ogni gruppo ci arriva senza guardare"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nessuno li prova a caso."
+  },
+  {
+    "id": 77,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una scorciatoia da tastiera?",
+    "options": [
+      "Un tasto che apre sempre un menu",
+      "Una combinazione di due o più tasti, premuti insieme, che esegue un comando senza passare dal mouse",
+      "Un tasto che permette di scrivere più in fretta",
+      "Un programma che sostituisce la tastiera"
+    ],
+    "correctIndex": 1,
+    "explanation": "È anche detta tasto di scelta rapida."
+  },
+  {
+    "id": 78,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa significa «CTRL + A» nelle istruzioni?",
+    "options": [
+      "Premere prima CTRL e poi A, separatamente",
+      "Premere CTRL due volte",
+      "Premere A tenendo premuto ALT",
+      "Tenere premuto CTRL mentre si preme A"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il segno più indica che i tasti si premono insieme."
+  },
+  {
+    "id": 79,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Dove si possono vedere le scorciatoie associate ai comandi di un programma?",
+    "options": [
+      "Solo nel manuale della tastiera",
+      "Sul retro della tastiera",
+      "Aprendo un menu: accanto alle voci compaiono i tasti di scelta rapida",
+      "Nella finestra di dialogo di avvio"
+    ],
+    "correctIndex": 2,
+    "explanation": "Molti programmi permettono anche di aprire un menu con ALT più una lettera sottolineata."
+  },
+  {
+    "id": 80,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa il tasto WINDOWS?",
+    "options": [
+      "Chiude il programma attivo",
+      "Apre il menu Start",
+      "Seleziona tutto il testo",
+      "Annulla l'ultima azione"
+    ],
+    "correctIndex": 1,
+    "explanation": "È una scorciatoia che vale praticamente ovunque."
+  },
+  {
+    "id": 81,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa ALT + TAB?",
+    "options": [
+      "Chiude il programma attivo",
+      "Salva il documento",
+      "Passa da un programma o finestra aperta a un'altra",
+      "Copia l'elemento selezionato"
+    ],
+    "correctIndex": 2,
+    "explanation": "Permette di alternare programmi senza toccare il mouse."
+  },
+  {
+    "id": 82,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa ALT + F4?",
+    "options": [
+      "Passa a un'altra finestra",
+      "Annulla l'ultima azione",
+      "Apre il menu Start",
+      "Chiude l'elemento attivo o esce dal programma attivo"
+    ],
+    "correctIndex": 3,
+    "explanation": "È tra le scorciatoie valide praticamente ovunque."
+  },
+  {
+    "id": 83,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa CTRL + S?",
+    "options": [
+      "Seleziona tutto il testo",
+      "Copia l'elemento selezionato",
+      "Salva il file o il documento corrente",
+      "Taglia l'elemento selezionato"
+    ],
+    "correctIndex": 2,
+    "explanation": "La S ricorda «salva»."
+  },
+  {
+    "id": 84,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa CTRL + A?",
+    "options": [
+      "Annulla l'ultima azione",
+      "Incolla l'elemento copiato",
+      "Seleziona tutto il testo",
+      "Salva il file"
+    ],
+    "correctIndex": 2,
+    "explanation": "È una delle scorciatoie più comuni."
+  },
+  {
+    "id": 85,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa CTRL + C?",
+    "options": [
+      "Copia l'elemento selezionato",
+      "Taglia l'elemento selezionato",
+      "Incolla l'elemento",
+      "Cancella l'elemento"
+    ],
+    "correctIndex": 0,
+    "explanation": "Copia, taglia e incolla funzionano grazie agli appunti."
+  },
+  {
+    "id": 86,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa CTRL + X?",
+    "options": [
+      "Taglia l'elemento selezionato",
+      "Copia l'elemento selezionato",
+      "Chiude il programma",
+      "Annulla l'ultima azione"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'elemento tagliato resta negli appunti finché non lo si incolla."
+  },
+  {
+    "id": 87,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa CTRL + V?",
+    "options": [
+      "Salva il file",
+      "Taglia l'elemento selezionato",
+      "Incolla l'elemento copiato o tagliato",
+      "Seleziona tutto"
+    ],
+    "correctIndex": 2,
+    "explanation": "Incolla l'ultimo elemento conservato negli appunti."
+  },
+  {
+    "id": 88,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa fa CTRL + Z?",
+    "options": [
+      "Seleziona tutto il testo",
+      "Chiude il programma attivo",
+      "Annulla l'ultima azione",
+      "Copia l'elemento selezionato"
+    ],
+    "correctIndex": 2,
+    "explanation": "Permette di ritrovare subito un paragrafo cancellato per errore."
+  },
+  {
+    "id": 89,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono gli appunti?",
+    "options": [
+      "Un programma di videoscrittura",
+      "Una piccola memoria temporanea del computer che conserva l'ultimo elemento copiato o tagliato fino a che non lo si incolla",
+      "Un menu della barra multifunzione",
+      "Un tasto speciale della tastiera"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fanno funzionare copia, taglia e incolla."
+  },
+  {
+    "id": 90,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come si chiama sui computer Apple il tasto che svolge molti dei compiti di CTRL?",
+    "options": [
+      "ALT GR",
+      "WINDOWS",
+      "COMANDO, con il simbolo ⌘",
+      "TAB"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il simbolo ⌘ ha una storia che risale al primo Macintosh."
+  },
+  {
+    "id": 91,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come lo chiamavano i programmatori Apple nel 1983, durante lo sviluppo del primo Macintosh?",
+    "options": [
+      "«Tasto Apple», con il logo della mela accanto a ogni voce di menu",
+      "«Tasto Comando» con il simbolo ⌘",
+      "«Tasto Windows»",
+      "«Tasto funzione»"
+    ],
+    "correctIndex": 0,
+    "explanation": "Premuto insieme a un altro tasto, selezionava il comando corrispondente di un menu."
+  },
+  {
+    "id": 92,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa osservò Steve Jobs sul logo dell'azienda nei menu?",
+    "options": [
+      "Che era troppo piccolo",
+      "Che era poco riconoscibile",
+      "Che era identico a quello di Windows",
+      "Che il simbolo dell'azienda era usato «in modo eccessivo»"
+    ],
+    "correctIndex": 3,
+    "explanation": "Per questo chiese un simbolo diverso."
+  },
+  {
+    "id": 93,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi scelse il simbolo ⌘ sfogliando un dizionario internazionale di simboli?",
+    "options": [
+      "Steve Jobs",
+      "Andy Hertzfeld",
+      "Bob Bemer",
+      "Susan Kare, grafica del gruppo"
+    ],
+    "correctIndex": 3,
+    "explanation": "Si fermò su un quadrato con gli angoli ad anello."
+  },
+  {
+    "id": 94,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa segnala in Svezia il quadrato con gli angoli ad anello da cui deriva il simbolo ⌘?",
+    "options": [
+      "Un divieto di accesso",
+      "Un luogo di interesse, per esempio in un campeggio",
+      "Un'uscita di emergenza",
+      "Un punto di ristoro"
+    ],
+    "correctIndex": 1,
+    "explanation": "Era facile da disegnare in pochi pixel e distinguibile."
+  },
+  {
+    "id": 95,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Perché fu scelto il simbolo ⌘?",
+    "options": [
+      "Perché era già usato sulle macchine per scrivere",
+      "Perché ricordava la mela dell'azienda",
+      "Perché lo aveva proposto Steve Jobs",
+      "Perché era facile da disegnare in pochi pixel e distinguibile"
+    ],
+    "correctIndex": 3,
+    "explanation": "Andy Hertzfeld raccontò più tardi l'episodio nelle sue memorie."
+  },
+  {
+    "id": 96,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che lezione generale si ricava dal caso del simbolo ⌘?",
+    "options": [
+      "Le scorciatoie sono nate con i computer Apple",
+      "Dietro ogni scorciatoia c'è stato qualcuno che ha dovuto decidere come farla riconoscere a chi la usa",
+      "I simboli grafici non servono nei menu",
+      "Le scorciatoie valgono solo su Windows"
+    ],
+    "correctIndex": 1,
+    "explanation": "È un caso utile per capire un aspetto di progettazione delle tastiere."
+  },
+  {
+    "id": 97,
+    "module": "la-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della bicicletta, che cosa rappresenta la scorciatoia?",
+    "options": [
+      "Una strada più lunga ma più sicura",
+      "Un mezzo di trasporto più veloce",
+      "Un percorso diverso verso la stessa destinazione, che funziona solo se se ne conosce la strada",
+      "Un incrocio con il semaforo rosso"
+    ],
+    "correctIndex": 2,
+    "explanation": "Chi non sa dove porta, non la prende."
+  }
+]

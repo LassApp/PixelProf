@@ -1,0 +1,776 @@
+[
+  {
+    "id": 1,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una sessione di allenamento è un periodo breve e regolare di esercizi, pensato per trasformare i movimenti delle dita in automatismi.",
+    "answer": true,
+    "explanation": "Gli esercizi sono ripetuti con attenzione."
+  },
+  {
+    "id": 2,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un allenamento lungo ogni tanto è meglio di uno breve ogni giorno.",
+    "answer": false,
+    "explanation": "È meglio un allenamento breve ogni giorno."
+  },
+  {
+    "id": 3,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La dattilografia si impara come uno strumento musicale o uno sport: con la ripetizione.",
+    "answer": true,
+    "explanation": "Non con la sola spiegazione."
+  },
+  {
+    "id": 4,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Dopo quindici-venti minuti conviene interrompersi, perché la stanchezza si traduce in errori e tensione dei polsi.",
+    "answer": true,
+    "explanation": "È una regola di metodo."
+  },
+  {
+    "id": 5,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un errore ripetuto in fretta fissa il movimento sbagliato.",
+    "answer": true,
+    "explanation": "Per questo prima si cerca la precisione."
+  },
+  {
+    "id": 6,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Durante l'allenamento si deve accelerare appena possibile, anche se ci sono errori.",
+    "answer": false,
+    "explanation": "Si accelera solo quando le battute escono senza errori."
+  },
+  {
+    "id": 7,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se un tasto non si trova, bisogna guardare la tastiera.",
+    "answer": false,
+    "explanation": "Non si guarda: si torna ai tasti pilota, si ritrova la posizione con F e J e si riprova."
+  },
+  {
+    "id": 8,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Dopo ogni battuta il dito torna al proprio tasto.",
+    "answer": true,
+    "explanation": "È la regola del ritorno alla base."
+  },
+  {
+    "id": 9,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Pronunciare la lettera a ogni tasto aiuta il ritmo.",
+    "answer": true,
+    "explanation": "Il tocco resta leggero e i polsi dritti."
+  },
+  {
+    "id": 10,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La riga base comprende le lettere A S D F G H J K L e i tasti ò, à, ù.",
+    "answer": true,
+    "explanation": "È la sola riga allenabile con tutte le dita ferme in posizione."
+  },
+  {
+    "id": 11,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La riga base è la riga della Q, della W e della E.",
+    "answer": false,
+    "explanation": "Quella è la riga superiore."
+  },
+  {
+    "id": 12,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sulla riga base ci si allena prima con la mano sinistra, poi con la destra, poi con entrambe.",
+    "answer": true,
+    "explanation": "Si comincia da una mano alla volta."
+  },
+  {
+    "id": 13,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Mavis Beacon Teaches Typing fu messo in commercio nel 1987 dalla società californiana The Software Toolworks.",
+    "answer": true,
+    "explanation": "Fu uno dei primi programmi per imparare a scrivere con la tastiera più noti."
+  },
+  {
+    "id": 14,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Mavis Beacon fu una vera insegnante di dattilografia californiana.",
+    "answer": false,
+    "explanation": "Era un personaggio inventato dall'azienda."
+  },
+  {
+    "id": 15,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il volto sulle scatole di Mavis Beacon Teaches Typing apparteneva alla modella Renée L'Esperance.",
+    "answer": true,
+    "explanation": "Mavis Beacon non è mai esistita."
+  },
+  {
+    "id": 16,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il successo di Mavis Beacon Teaches Typing mostra che moltissime persone volevano imparare con un metodo, a casa, a piccole dosi.",
+    "answer": true,
+    "explanation": "Anche gli adulti avevano scoperto di scrivere male."
+  },
+  {
+    "id": 17,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della bicicletta conta la durata della singola uscita, non la regolarità.",
+    "answer": false,
+    "explanation": "Conta la regolarità, non la durata della singola uscita."
+  },
+  {
+    "id": 18,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo spostamento laterale è il movimento con cui un indice raggiunge G o H e poi torna al tasto base.",
+    "answer": true,
+    "explanation": "L'indice lascia F o J."
+  },
+  {
+    "id": 19,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il mignolo destro copre ò, à, ù e il tasto INVIO.",
+    "answer": true,
+    "explanation": "Ha il compito più esteso."
+  },
+  {
+    "id": 20,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "G e H sono a un solo spostamento dai tasti base perché gli indici coprono due colonne ciascuno.",
+    "answer": true,
+    "explanation": "La propria e quella accanto verso il centro."
+  },
+  {
+    "id": 21,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per raggiungere G e H si sposta tutta la mano verso il centro.",
+    "answer": false,
+    "explanation": "Si sposta solo l'indice, che poi torna al tasto base."
+  },
+  {
+    "id": 22,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il mignolo destro è il dito più forte della mano.",
+    "answer": false,
+    "explanation": "È il dito più debole, ma ha il compito più esteso."
+  },
+  {
+    "id": 23,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il mignolo destro va allenato con lentezza, con un tocco leggero e senza muovere il polso.",
+    "answer": true,
+    "explanation": "Il dito si allunga, la mano no."
+  },
+  {
+    "id": 24,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Ripetere gli esercizi con il mignolo è una perdita di tempo.",
+    "answer": false,
+    "explanation": "È il dito che più spesso ci si dimentica di allenare."
+  },
+  {
+    "id": 25,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il mignolo è il ciclista meno allenato della squadra: va portato a un passo adatto a lui.",
+    "answer": true,
+    "explanation": "Senza forzarlo."
+  },
+  {
+    "id": 26,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La maiuscola si ottiene premendo MAIUSC insieme alla lettera.",
+    "answer": true,
+    "explanation": "BLOC MAIUSC blocca invece il maiuscolo fino a una seconda pressione."
+  },
+  {
+    "id": 27,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "BLOC MAIUSC blocca il maiuscolo fino a una seconda pressione.",
+    "answer": true,
+    "explanation": "Si usa solo per molte lettere maiuscole di fila."
+  },
+  {
+    "id": 28,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "MAIUSC si preme con il mignolo della mano che sta premendo la lettera.",
+    "answer": false,
+    "explanation": "Si preme con il mignolo della mano che non sta premendo la lettera."
+  },
+  {
+    "id": 29,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per le lettere A S D F G si preme il MAIUSC di destra con il mignolo destro.",
+    "answer": true,
+    "explanation": "La mano che scrive la lettera non deve contorcersi."
+  },
+  {
+    "id": 30,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per le lettere H J K L si preme il MAIUSC di destra.",
+    "answer": false,
+    "explanation": "Si preme il MAIUSC di sinistra con il mignolo sinistro."
+  },
+  {
+    "id": 31,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per una sola lettera iniziale, come in un nome proprio, conviene usare BLOC MAIUSC.",
+    "answer": false,
+    "explanation": "Conviene sempre usare MAIUSC."
+  },
+  {
+    "id": 32,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "MAIUSC serve anche per i simboli stampati nella parte alta dei tasti, come i segni di punteggiatura.",
+    "answer": true,
+    "explanation": "È lo stesso tasto."
+  },
+  {
+    "id": 33,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora della porta, una mano tiene ferma la maniglia e l'altra gira la chiave.",
+    "answer": true,
+    "explanation": "Fare tutto con la stessa mano inceppa la serratura."
+  },
+  {
+    "id": 34,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La riga superiore comprende Q W E R T Y U I O P è, la riga inferiore Z X C V B N M.",
+    "answer": true,
+    "explanation": "Sono le righe sopra e sotto la riga base."
+  },
+  {
+    "id": 35,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per allenare le righe superiore e inferiore ogni dito parte dal proprio tasto base e torna.",
+    "answer": true,
+    "explanation": "Raggiunge il tasto della propria colonna sopra o sotto."
+  },
+  {
+    "id": 36,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Si comincia dalla riga inferiore, più comoda, e poi si passa alla superiore.",
+    "answer": false,
+    "explanation": "Si comincia dalla superiore, più comoda."
+  },
+  {
+    "id": 37,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sulla riga inferiore le dita devono ripiegarsi verso il palmo.",
+    "answer": true,
+    "explanation": "È la ragione per cui si parte dalla superiore."
+  },
+  {
+    "id": 38,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I tasti più difficili sono Q e Z con il mignolo sinistro e P con il mignolo destro.",
+    "answer": true,
+    "explanation": "Sono ai due estremi."
+  },
+  {
+    "id": 39,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I tasti più difficili si allenano direttamente nelle parole.",
+    "answer": false,
+    "explanation": "Si allenano da soli, lentamente, prima di inserirli nelle parole."
+  },
+  {
+    "id": 40,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il tasto B si assegna a uno dei due indici secondo la convenzione della mappa a colori.",
+    "answer": true,
+    "explanation": "Così non si rompe la regolarità del movimento."
+  },
+  {
+    "id": 41,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le tre righe della tastiera sono come i tre ripiani di uno scaffale.",
+    "answer": true,
+    "explanation": "Chi allunga solo la mano lavora più velocemente."
+  },
+  {
+    "id": 42,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La trascrizione è la copia di un testo già scritto da altri, con lettere, punteggiatura, maiuscole e accenti esatti.",
+    "answer": true,
+    "explanation": "Serve ad allenare la tecnica su un testo reale."
+  },
+  {
+    "id": 43,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Copiare un testo è come scrivere sotto dettatura di sé stessi.",
+    "answer": false,
+    "explanation": "Copiando, le parole sono già decise e l'attenzione resta sulla tecnica."
+  },
+  {
+    "id": 44,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nei testi veri compaiono virgole, punti, due punti, punto interrogativo, punto esclamativo, apostrofi, virgolette e lettere accentate.",
+    "answer": true,
+    "explanation": "Segni che nelle righe di esercizio non c'erano."
+  },
+  {
+    "id": 45,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I segni che stanno sulla parte alta dei tasti si ottengono con MAIUSC.",
+    "answer": true,
+    "explanation": "Le lettere accentate hanno un tasto proprio."
+  },
+  {
+    "id": 46,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La é con l'accento acuto si ottiene con MAIUSC insieme al tasto della è.",
+    "answer": true,
+    "explanation": "Come in «perché»."
+  },
+  {
+    "id": 47,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se un segno non si trova, si guarda sempre la tastiera.",
+    "answer": false,
+    "explanation": "Si controlla una volta sulla tastiera, poi lo si allena da solo."
+  },
+  {
+    "id": 48,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli errori si correggono con BACKSPACE, che cancella a sinistra.",
+    "answer": true,
+    "explanation": "Una correzione veloce, senza guardare, è parte della tecnica."
+  },
+  {
+    "id": 49,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Mark Twain acquistò una macchina per scrivere Remington nel 1874, ma la trovò scomoda.",
+    "answer": true,
+    "explanation": "Non la usò a lungo."
+  },
+  {
+    "id": 50,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Mark Twain acquistò la Remington nel 1882.",
+    "answer": false,
+    "explanation": "La acquistò nel 1874; il 1882 è l'anno in cui fu ricopiato a macchina Life on the Mississippi."
+  },
+  {
+    "id": 51,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Mark Twain sostenne di essere stato il primo scrittore a consegnare a un editore un manoscritto dattiloscritto.",
+    "answer": true,
+    "explanation": "Citò Le avventure di Tom Sawyer."
+  },
+  {
+    "id": 52,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il Mark Twain Project ritiene certo il primato di Twain.",
+    "answer": false,
+    "explanation": "È più cauto: la prima opera potrebbe essere Life on the Mississippi."
+  },
+  {
+    "id": 53,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Life on the Mississippi fu ricopiato a macchina nel 1882 da Harry M. Clarke, dattilografa di Elmira.",
+    "answer": true,
+    "explanation": "Il testo era scritto a mano."
+  },
+  {
+    "id": 54,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il primato di Mark Twain resta contestato.",
+    "answer": true,
+    "explanation": "Copiare un testo a macchina era per molto tempo un mestiere a sé."
+  },
+  {
+    "id": 55,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Trascrivere un testo è come imparare una strada nuova: dopo qualche volta la mappa non serve più.",
+    "answer": true,
+    "explanation": "La strada si ricorda da sola."
+  },
+  {
+    "id": 56,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La velocità di scrittura si misura in battute al minuto e in parole al minuto.",
+    "answer": true,
+    "explanation": "5 battute = 1 parola."
+  },
+  {
+    "id": 57,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La precisione è il numero di errori commessi.",
+    "answer": false,
+    "explanation": "È la percentuale di battute scritte senza errori sul totale."
+  },
+  {
+    "id": 58,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un numero è utile solo se si misura sempre allo stesso modo.",
+    "answer": true,
+    "explanation": "Così si possono confrontare le sessioni."
+  },
+  {
+    "id": 59,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel metodo di misura gli spazi non si contano tra le battute.",
+    "answer": false,
+    "explanation": "Le battute si contano spazi compresi."
+  },
+  {
+    "id": 60,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le parole al minuto si ottengono dividendo per cinque le battute al minuto.",
+    "answer": true,
+    "explanation": "5 battute = 1 parola."
+  },
+  {
+    "id": 61,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La precisione è (battute totali − errori) ÷ battute totali × 100.",
+    "answer": true,
+    "explanation": "Gli errori sono le battute sbagliate."
+  },
+  {
+    "id": 62,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il metodo di misura sostituisce il regolamento delle gare.",
+    "answer": false,
+    "explanation": "Non lo sostituisce, ma permette di confrontare sé stessi con sé stessi."
+  },
+  {
+    "id": 63,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per capire se si sta migliorando conviene migliorare prima la precisione, poi la velocità.",
+    "answer": true,
+    "explanation": "È la regola dell'allenamento."
+  },
+  {
+    "id": 64,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una velocità che sale mentre la precisione crolla è un progresso.",
+    "answer": false,
+    "explanation": "Non è un progresso: gli errori vanno corretti e correggere costa tempo."
+  },
+  {
+    "id": 65,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "900 battute in cinque minuti sono 180 battute al minuto, cioè 36 parole al minuto.",
+    "answer": true,
+    "explanation": "900 ÷ 5 = 180; 180 ÷ 5 = 36."
+  },
+  {
+    "id": 66,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con 900 battute e 18 errori la precisione è del 98%.",
+    "answer": true,
+    "explanation": "(900 − 18) ÷ 900 × 100 = 98%."
+  },
+  {
+    "id": 67,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con 900 battute e 18 errori la precisione è dell'82%.",
+    "answer": false,
+    "explanation": "È del 98%."
+  },
+  {
+    "id": 68,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1946 Stella Pajunas scrisse per un minuto a 216 parole al minuto con una macchina elettrica IBM.",
+    "answer": true,
+    "explanation": "Fu una prova ufficiale a Chicago."
+  },
+  {
+    "id": 69,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Stella Pajunas raggiunse le 216 parole al minuto nel 1906.",
+    "answer": false,
+    "explanation": "Nel 1946; il 1906 è l'anno del primo campionato mondiale di Rose Fritz."
+  },
+  {
+    "id": 70,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "216 parole al minuto equivalgono a 1.080 battute al minuto.",
+    "answer": true,
+    "explanation": "216 × 5 = 1.080."
+  },
+  {
+    "id": 71,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il record di un minuto di Pajunas è confrontabile con la gara di un'ora di Rose Fritz.",
+    "answer": false,
+    "explanation": "La misura dipende sempre da quanto dura la prova e dallo strumento usato."
+  },
+  {
+    "id": 72,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Misurare la propria velocità è come usare il ciclocomputer: non pedala al posto tuo, ma ti dice com'è andata l'uscita.",
+    "answer": true,
+    "explanation": "Si confrontano solo sessioni misurate nello stesso modo."
+  },
+  {
+    "id": 73,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La riga base è l'unica riga che non si può allenare con tutte le dita ferme in posizione.",
+    "answer": false,
+    "explanation": "È la sola riga che si può allenare con tutte le dita ferme in posizione."
+  },
+  {
+    "id": 74,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sulla riga base ci si allena prima con entrambe le mani insieme.",
+    "answer": false,
+    "explanation": "Prima la mano sinistra, poi la destra, poi insieme."
+  },
+  {
+    "id": 75,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Mavis Beacon Teaches Typing fu messo in commercio nel 1946.",
+    "answer": false,
+    "explanation": "Fu messo in commercio nel 1987; il 1946 è l'anno del record di Stella Pajunas."
+  },
+  {
+    "id": 76,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo spostamento laterale riguarda i mignoli, che raggiungono G e H.",
+    "answer": false,
+    "explanation": "Riguarda gli indici, che raggiungono G e H."
+  },
+  {
+    "id": 77,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il mignolo destro copre solo il tasto INVIO.",
+    "answer": false,
+    "explanation": "Copre anche ò, à, ù e altri tasti esterni."
+  },
+  {
+    "id": 78,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "BLOC MAIUSC si preme per scrivere una sola lettera iniziale.",
+    "answer": false,
+    "explanation": "Per una sola iniziale conviene MAIUSC."
+  },
+  {
+    "id": 79,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il tasto B è sempre assegnato all'indice destro.",
+    "answer": false,
+    "explanation": "Si assegna a uno dei due indici secondo la convenzione della mappa a colori."
+  },
+  {
+    "id": 80,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Q e Z sono tasti facili, affidati all'indice.",
+    "answer": false,
+    "explanation": "Sono tra i tasti più difficili, affidati al mignolo sinistro."
+  },
+  {
+    "id": 81,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella trascrizione si può guardare la tastiera per cercare le virgole.",
+    "answer": false,
+    "explanation": "Non si guarda: si controlla una volta sulla tastiera, poi si allena da solo."
+  },
+  {
+    "id": 82,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli errori durante una trascrizione si correggono con CANC, che cancella a sinistra.",
+    "answer": false,
+    "explanation": "Si correggono con BACKSPACE, che cancella a sinistra; CANC cancella a destra."
+  },
+  {
+    "id": 83,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Life on the Mississippi fu ricopiato a macchina nel 1874.",
+    "answer": false,
+    "explanation": "Fu ricopiato nel 1882; il 1874 è l'anno in cui Twain acquistò la Remington."
+  },
+  {
+    "id": 84,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La precisione si calcola dividendo le battute per i minuti.",
+    "answer": false,
+    "explanation": "Si calcola con (battute totali − errori) ÷ battute totali × 100."
+  },
+  {
+    "id": 85,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per ottenere le parole al minuto si moltiplicano per cinque le battute al minuto.",
+    "answer": false,
+    "explanation": "Si dividono per cinque."
+  },
+  {
+    "id": 86,
+    "module": "allenamento",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il record di Stella Pajunas è di 216 battute al minuto.",
+    "answer": false,
+    "explanation": "È di 216 parole al minuto, cioè 1.080 battute al minuto."
+  }
+]

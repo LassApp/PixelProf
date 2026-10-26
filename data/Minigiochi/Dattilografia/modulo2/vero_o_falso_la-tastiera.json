@@ -1,0 +1,893 @@
+[
+  {
+    "id": 1,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una periferica di input è un dispositivo che permette di inserire dati e comandi nel computer.",
+    "answer": true,
+    "explanation": "La tastiera è la principale periferica di input per la scrittura."
+  },
+  {
+    "id": 2,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La tastiera converte la pressione di ogni tasto in un segnale che il computer interpreta come un carattere oppure come un comando.",
+    "answer": true,
+    "explanation": "Il segnale può rappresentare un carattere o un comando."
+  },
+  {
+    "id": 3,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il computer vede le lettere esattamente come le vediamo noi.",
+    "answer": false,
+    "explanation": "Lavora con i numeri: ogni carattere viene tradotto in un codice numerico."
+  },
+  {
+    "id": 4,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "ASCII è lo standard che traduce ogni carattere digitato in un codice numerico.",
+    "answer": true,
+    "explanation": "È l'American Standard Code for Information Interchange."
+  },
+  {
+    "id": 5,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nello standard ASCII la lettera C corrisponde al numero 67.",
+    "answer": true,
+    "explanation": "La I corrisponde a 73, la A a 65, la O a 79."
+  },
+  {
+    "id": 6,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nello standard ASCII la lettera A corrisponde al numero 79.",
+    "answer": false,
+    "explanation": "La A corrisponde al 65; il 79 è la O."
+  },
+  {
+    "id": 7,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "A livello elementare il computer lavora con una sequenza di soli due simboli: 0 e 1.",
+    "answer": true,
+    "explanation": "È una specie di interruttore che può stare solo in due posizioni."
+  },
+  {
+    "id": 8,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un bit è un gruppo di otto lettere.",
+    "answer": false,
+    "explanation": "Un bit è la singola scelta tra 0 e 1; sono otto bit insieme a poter rappresentare una lettera."
+  },
+  {
+    "id": 9,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Otto bit messi insieme formano un gruppo capace di rappresentare una lettera.",
+    "answer": true,
+    "explanation": "Dall'inglese binary digit, cifra binaria."
+  },
+  {
+    "id": 10,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il tasto C viene tradotto nel numero 67 e poi nella sequenza binaria 01000011.",
+    "answer": true,
+    "explanation": "Solo a quel punto il computer capisce cosa gli è stato chiesto."
+  },
+  {
+    "id": 11,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il computer distingue i tasti che scrivono da quelli che comandano perché li riceve da due tastiere diverse.",
+    "answer": false,
+    "explanation": "Li riceve allo stesso modo, dalla stessa tastiera, e li distingue in base a ciò che rappresentano."
+  },
+  {
+    "id": 12,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Mouse, microfono e scanner sono periferiche di input i cui dati vengono ridotti a sequenze di 0 e 1.",
+    "answer": true,
+    "explanation": "Qualunque cosa entri nel computer viene ridotta a sequenze di 0 e 1."
+  },
+  {
+    "id": 13,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Fino al 1963 i costruttori di computer avevano più di sessanta modi diversi di rappresentare i caratteri.",
+    "answer": true,
+    "explanation": "Macchine di marche diverse non parlavano la stessa lingua."
+  },
+  {
+    "id": 14,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel maggio 1961 Bob Bemer, ingegnere dell'IBM, inviò all'American Standards Association una proposta di codice unico.",
+    "answer": true,
+    "explanation": "Un comitato discusse per due anni."
+  },
+  {
+    "id": 15,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La prima edizione dello standard ASCII uscì nel 1978.",
+    "answer": false,
+    "explanation": "Uscì nel 1963."
+  },
+  {
+    "id": 16,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La prima edizione dell'ASCII codificava 128 caratteri con sette bit.",
+    "answer": true,
+    "explanation": "L'ottavo bit era spesso usato per controllare gli errori di trasmissione."
+  },
+  {
+    "id": 17,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Bob Bemer fu l'unico inventore dell'ASCII.",
+    "answer": false,
+    "explanation": "È considerato il «padre dell'ASCII», ma il codice nacque dal lavoro di un intero comitato."
+  },
+  {
+    "id": 18,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La «sequenza di escape» di Bemer permetteva di passare da un alfabeto a un altro, superando il limite dei 128 caratteri.",
+    "answer": true,
+    "explanation": "È il suo contributo più noto."
+  },
+  {
+    "id": 19,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora dell'interruttore, il bit può stare solo acceso o spento, senza posizioni intermedie.",
+    "answer": true,
+    "explanation": "Una parola scritta è una lunghissima sequenza di interruttori accesi e spenti."
+  },
+  {
+    "id": 20,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La tastiera estesa standard ha 101 o più tasti suddivisi in aree che raggruppano funzioni specifiche.",
+    "answer": true,
+    "explanation": "È la tastiera dei computer da scrivania."
+  },
+  {
+    "id": 21,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il layout è l'insieme di tutte le aree della tastiera.",
+    "answer": false,
+    "explanation": "Il layout è la disposizione dei tasti dei caratteri all'interno dell'area principale."
+  },
+  {
+    "id": 22,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Le tastiere statunitensi hanno 101 tasti e quelle europee 102.",
+    "answer": true,
+    "explanation": "Le moderne con i tasti Windows e menu contestuale arrivano a 104 o 105."
+  },
+  {
+    "id": 23,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le aree di una tastiera possono mancare o essere ridotte sui portatili.",
+    "answer": true,
+    "explanation": "La tastiera di un computer è quasi sempre un po' diversa da un'altra."
+  },
+  {
+    "id": 24,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il layout dell'area di digitazione dipende dalla lingua.",
+    "answer": true,
+    "explanation": "Cambiano le aree intorno, non il cuore della tastiera."
+  },
+  {
+    "id": 25,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "In Italia e in Spagna si usa in genere il layout AZERTY.",
+    "answer": false,
+    "explanation": "Si usa in genere il QWERTY; la AZERTY è dei Paesi di lingua francese."
+  },
+  {
+    "id": 26,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le tastiere italiane aggiungono i tasti con le lettere accentate, assenti nella versione pensata per l'inglese.",
+    "answer": true,
+    "explanation": "Il resto del layout è il QWERTY."
+  },
+  {
+    "id": 27,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le tastiere «evolute» hanno tasti dedicati che con una sola pressione aprono un programma, un file o un comando.",
+    "answer": true,
+    "explanation": "Per conoscerne le funzioni bisogna consultare il manuale o il sito del produttore."
+  },
+  {
+    "id": 28,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La tastiera viene idealmente suddivisa in due metà, una per la mano sinistra e una per la mano destra.",
+    "answer": true,
+    "explanation": "È un'idea utile per scrivere con tutte e dieci le dita."
+  },
+  {
+    "id": 29,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La tastiera originale del personal computer IBM del 1981 aveva 101 tasti.",
+    "answer": false,
+    "explanation": "Ne aveva 83."
+  },
+  {
+    "id": 30,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La tastiera del primo PC IBM aveva dieci tasti funzione in due colonne sul lato sinistro.",
+    "answer": true,
+    "explanation": "E un unico blocco che univa tastierino numerico e frecce."
+  },
+  {
+    "id": 31,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1985 l'IBM introdusse l'Enhanced Keyboard, con ESC e dodici tasti funzione su un'unica fila in alto.",
+    "answer": true,
+    "explanation": "Aveva anche quattro frecce a T rovesciata."
+  },
+  {
+    "id": 32,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La versione brasiliana dell'Enhanced Keyboard aveva 102 tasti.",
+    "answer": false,
+    "explanation": "Ne aveva 104; 102 erano quelli della versione europea."
+  },
+  {
+    "id": 33,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le aree di una tastiera sono come i gruppi di comandi del cruscotto di un'automobile.",
+    "answer": true,
+    "explanation": "Chi sa dove cercare ogni gruppo trova subito il comando."
+  },
+  {
+    "id": 34,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I tasti principali producono un carattere visibile.",
+    "answer": false,
+    "explanation": "Non producono un carattere visibile, ma svolgono funzioni di comando."
+  },
+  {
+    "id": 35,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "INVIO sposta il cursore all'inizio della riga successiva e chiude la riga corrente.",
+    "answer": true,
+    "explanation": "In una finestra di dialogo seleziona il pulsante evidenziato."
+  },
+  {
+    "id": 36,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "BLOC MAIUSC si attiva con una pressione e si disattiva con una seconda.",
+    "answer": true,
+    "explanation": "Molte tastiere hanno una spia luminosa che ne segnala l'attivazione."
+  },
+  {
+    "id": 37,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "CTRL scrive da solo un carattere speciale.",
+    "answer": false,
+    "explanation": "Non scrive nulla da solo: cambia il significato del tasto premuto insieme."
+  },
+  {
+    "id": 38,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "CANC elimina il carattere alla destra del cursore, BACKSPACE quello alla sinistra.",
+    "answer": true,
+    "explanation": "Entrambi possono eliminare anche il testo selezionato."
+  },
+  {
+    "id": 39,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "CANC elimina il carattere alla sinistra del cursore.",
+    "answer": false,
+    "explanation": "CANC elimina quello alla destra; a sinistra agisce BACKSPACE."
+  },
+  {
+    "id": 40,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "ALT GR permette di scrivere simboli non presenti direttamente sui tasti, come la chiocciola @.",
+    "answer": true,
+    "explanation": "Come CTRL modifica il significato di un altro tasto."
+  },
+  {
+    "id": 41,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "TAB sposta il cursore in avanti di un semplice spazio.",
+    "answer": false,
+    "explanation": "Lo sposta di uno scatto preciso, non di un semplice spazio."
+  },
+  {
+    "id": 42,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "TAB serve anche a passare alla casella successiva in un modulo online.",
+    "answer": true,
+    "explanation": "Oltre a spostare il cursore in avanti."
+  },
+  {
+    "id": 43,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "INVIO deriva dalla leva del ritorno carrello delle macchine per scrivere meccaniche.",
+    "answer": true,
+    "explanation": "La leva riportava il foglio all'inizio della riga successiva."
+  },
+  {
+    "id": 44,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il tasto MAIUSC nacque nel 1878 con la Remington No. 2.",
+    "answer": true,
+    "explanation": "Fu la prima macchina capace di stampare maiuscole e minuscole."
+  },
+  {
+    "id": 45,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La Remington No. 1 era capace di stampare sia maiuscole sia minuscole.",
+    "answer": false,
+    "explanation": "Era limitata a un solo registro."
+  },
+  {
+    "id": 46,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il nome inglese «shift» di MAIUSC deriva dallo spostamento del carrello dei martelletti verso il set di caratteri maiuscoli.",
+    "answer": true,
+    "explanation": "Sul computer non c'è più nulla da spostare fisicamente."
+  },
+  {
+    "id": 47,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il tasto CTRL arriva dalla macchina da scrivere meccanica.",
+    "answer": false,
+    "explanation": "Arriva dalla telescrivente."
+  },
+  {
+    "id": 48,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La telescrivente introdusse per prima tasti capaci di generare codici di controllo invece di caratteri.",
+    "answer": true,
+    "explanation": "Il principio sopravvive nel codice ASCII."
+  },
+  {
+    "id": 49,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il tasto TAB nacque per scrivere colonne di numeri, senza premere la barra spaziatrice decine di volte per ogni riga.",
+    "answer": true,
+    "explanation": "Tipicamente in contesti aziendali e contabili."
+  },
+  {
+    "id": 50,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1904 Edward Hess brevettò un sistema più pratico per il tabulatore, con arresti fissi attivabili o disattivabili ruotandoli.",
+    "answer": true,
+    "explanation": "Lavorava per la Royal Typewriter Company."
+  },
+  {
+    "id": 51,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1940 James Koca brevettò un meccanismo per impostare e cancellare i punti di tabulazione direttamente dalla tastiera.",
+    "answer": true,
+    "explanation": "Prima si usavano clip removibili o arresti fissi."
+  },
+  {
+    "id": 52,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1940 Edward Hess brevettò il meccanismo per impostare i punti di tabulazione dalla tastiera.",
+    "answer": false,
+    "explanation": "Fu James Koca; Hess brevettò nel 1904 gli arresti fissi."
+  },
+  {
+    "id": 53,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora dei segnali stradali, CANC e BACKSPACE sono la retromarcia.",
+    "answer": true,
+    "explanation": "INVIO è il bivio che apre una nuova riga."
+  },
+  {
+    "id": 54,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I tasti di digitazione comprendono lettere, numeri, punteggiatura e simboli.",
+    "answer": true,
+    "explanation": "E anche i tasti principali."
+  },
+  {
+    "id": 55,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I tasti di controllo più frequenti sono CTRL, ALT, il tasto WINDOWS ed ESC.",
+    "answer": true,
+    "explanation": "Vengono usati da soli o insieme ad altri."
+  },
+  {
+    "id": 56,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I tasti funzione, da F1 a F12, hanno la stessa funzione in tutti i programmi.",
+    "answer": false,
+    "explanation": "La loro funzione varia da un programma all'altro."
+  },
+  {
+    "id": 57,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il cursore è la linea verticale intermittente che indica il punto da cui parte il testo digitato.",
+    "answer": true,
+    "explanation": "È detto anche punto di inserimento."
+  },
+  {
+    "id": 58,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Tenendo premuto CTRL, le frecce spostano il cursore da una parola all'altra.",
+    "answer": true,
+    "explanation": "Senza CTRL lo spostano di un carattere."
+  },
+  {
+    "id": 59,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "HOME porta il cursore alla fine della riga e FINE all'inizio.",
+    "answer": false,
+    "explanation": "HOME porta all'inizio della riga, FINE alla fine."
+  },
+  {
+    "id": 60,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "PGSU e PGGIÙ spostano il cursore, o la pagina, di una schermata in alto o in basso.",
+    "answer": true,
+    "explanation": "Servono a muoversi in un documento o in una pagina web."
+  },
+  {
+    "id": 61,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Quando la modalità inserimento è attiva, il testo digitato si inserisce nel punto del cursore.",
+    "answer": true,
+    "explanation": "Quando è disattivata, sostituisce i caratteri già presenti."
+  },
+  {
+    "id": 62,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il tastierino numerico contiene le cifre da 0 a 9, i simboli delle operazioni e la virgola decimale.",
+    "answer": true,
+    "explanation": "Funziona come una calcolatrice."
+  },
+  {
+    "id": 63,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per usare il tastierino numerico per i numeri bisogna attivarlo con il tasto BLOC NUM.",
+    "answer": true,
+    "explanation": "Con BLOC NUM disattivato i tasti funzionano come tasti di spostamento."
+  },
+  {
+    "id": 64,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Oggi il tasto STAMP invia sempre il documento alla stampante.",
+    "answer": false,
+    "explanation": "Oggi cattura uno screenshot dell'intera schermata."
+  },
+  {
+    "id": 65,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con ALT premuto, STAMP cattura solo la finestra attiva.",
+    "answer": true,
+    "explanation": "Senza ALT cattura l'intera schermata."
+  },
+  {
+    "id": 66,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "BLOC SCORR, nella maggior parte dei programmi, non produce alcun effetto.",
+    "answer": true,
+    "explanation": "In alcuni modifica il comportamento delle frecce e di PGSU e PGGIÙ."
+  },
+  {
+    "id": 67,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La Natural Keyboard di Microsoft uscì nell'autunno del 1994, con le due metà dell'area di digitazione ruotate e separate.",
+    "answer": true,
+    "explanation": "Fu progettata da Ziba Design e prodotta con Key Tronic."
+  },
+  {
+    "id": 68,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il tasto «applicazione» della Natural Keyboard funzionava come il pulsante sinistro del mouse.",
+    "answer": false,
+    "explanation": "Funzionava come il pulsante destro del mouse."
+  },
+  {
+    "id": 69,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "I tasti con il logo Windows furono pensati per Windows 95.",
+    "answer": true,
+    "explanation": "Il tasto Windows apriva il menu Start."
+  },
+  {
+    "id": 70,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Quando nel 1998 uscì la versione successiva, la Natural Keyboard aveva già venduto oltre tre milioni di esemplari.",
+    "answer": true,
+    "explanation": "Da allora le tastiere con 104 o 105 tasti sono la norma."
+  },
+  {
+    "id": 71,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una scorciatoia da tastiera è una combinazione di due o più tasti premuti insieme che esegue un comando senza il mouse.",
+    "answer": true,
+    "explanation": "Nelle istruzioni si indica con il segno più."
+  },
+  {
+    "id": 72,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "CTRL + S significa premere CTRL, poi S, poi di nuovo CTRL.",
+    "answer": false,
+    "explanation": "Significa tenere premuto CTRL mentre si preme S."
+  },
+  {
+    "id": 73,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "ALT + TAB passa da un programma o finestra aperta a un'altra.",
+    "answer": true,
+    "explanation": "Evita di usare il mouse."
+  },
+  {
+    "id": 74,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "ALT + F4 salva il documento corrente.",
+    "answer": false,
+    "explanation": "Chiude l'elemento attivo o esce dal programma attivo; per salvare si usa CTRL + S."
+  },
+  {
+    "id": 75,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "CTRL + C copia, CTRL + X taglia e CTRL + V incolla l'elemento.",
+    "answer": true,
+    "explanation": "Funzionano grazie agli appunti."
+  },
+  {
+    "id": 76,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "CTRL + Z annulla l'ultima azione.",
+    "answer": true,
+    "explanation": "Permette di ritrovare un paragrafo cancellato per distrazione."
+  },
+  {
+    "id": 77,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli appunti sono una piccola memoria temporanea che conserva l'ultimo elemento copiato o tagliato fino a che non lo si incolla.",
+    "answer": true,
+    "explanation": "Rendono possibili copia, taglia e incolla."
+  },
+  {
+    "id": 78,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sui computer Apple il tasto che svolge molti dei compiti di CTRL si chiama COMANDO ed è contrassegnato dal simbolo ⌘.",
+    "answer": true,
+    "explanation": "Ha un simbolo suo."
+  },
+  {
+    "id": 79,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1983 i programmatori Apple chiamavano il tasto speciale del primo Macintosh «tasto Apple».",
+    "answer": true,
+    "explanation": "Accanto a ogni voce di menu compariva un piccolo logo della mela."
+  },
+  {
+    "id": 80,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Fu Steve Jobs a scegliere il simbolo ⌘ sfogliando un dizionario internazionale di simboli.",
+    "answer": false,
+    "explanation": "Fu la grafica Susan Kare; Jobs aveva solo chiesto un simbolo diverso."
+  },
+  {
+    "id": 81,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il simbolo ⌘ deriva da un quadrato con gli angoli ad anello che in Svezia segnala un luogo di interesse.",
+    "answer": true,
+    "explanation": "Fu scelto perché facile da disegnare in pochi pixel e distinguibile."
+  },
+  {
+    "id": 82,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il caso del simbolo ⌘ mostra che dietro ogni scorciatoia c'è stato qualcuno che ha dovuto decidere come farla riconoscere a chi la usa.",
+    "answer": true,
+    "explanation": "Andy Hertzfeld raccontò l'episodio nelle sue memorie."
+  },
+  {
+    "id": 83,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Una scorciatoia funziona solo se si conosce la strada: chi non sa dove porta non la prende.",
+    "answer": true,
+    "explanation": "Metafora della scorciatoia in bicicletta."
+  },
+  {
+    "id": 84,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il tasto C viene tradotto nel numero 65 e poi nella sequenza binaria 01000011.",
+    "answer": false,
+    "explanation": "La C corrisponde al 67; il 65 è la A."
+  },
+  {
+    "id": 85,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il bit può assumere molte posizioni intermedie, come un regolatore.",
+    "answer": false,
+    "explanation": "Può stare solo in due posizioni: acceso o spento, 0 o 1."
+  },
+  {
+    "id": 86,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Le tastiere europee hanno 101 tasti e quelle statunitensi 102.",
+    "answer": false,
+    "explanation": "È il contrario: 101 le statunitensi, 102 le europee."
+  },
+  {
+    "id": 87,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Sulla tastiera del primo PC IBM del 1981 le frecce formavano un gruppo separato a T rovesciata.",
+    "answer": false,
+    "explanation": "C'era un unico blocco che univa tastierino numerico e frecce; la T rovesciata è dell'Enhanced Keyboard."
+  },
+  {
+    "id": 88,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "BLOC MAIUSC blocca il maiuscolo solo finché lo si tiene premuto.",
+    "answer": false,
+    "explanation": "Si attiva con una pressione e si disattiva con una seconda."
+  },
+  {
+    "id": 89,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "ALT GR serve a cancellare il testo selezionato.",
+    "answer": false,
+    "explanation": "Permette di scrivere simboli non presenti direttamente sui tasti, come la @."
+  },
+  {
+    "id": 90,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il tasto INVIO deriva dalla telescrivente.",
+    "answer": false,
+    "explanation": "Deriva dal ritorno carrello delle macchine meccaniche; dalla telescrivente arriva CTRL."
+  },
+  {
+    "id": 91,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La Remington No. 2 del 1878 fu la prima macchina capace di scrivere solo in maiuscolo.",
+    "answer": false,
+    "explanation": "Fu la prima capace di stampare sia maiuscole sia minuscole."
+  },
+  {
+    "id": 92,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il tasto TAB nacque sulle telescriventi per generare codici di controllo.",
+    "answer": false,
+    "explanation": "Nacque sulle macchine da scrivere meccaniche di fine Ottocento per scrivere colonne di numeri."
+  },
+  {
+    "id": 93,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "HOME, premuto con CTRL, porta il cursore all'inizio della riga.",
+    "answer": false,
+    "explanation": "Con CTRL porta all'inizio dell'intero documento."
+  },
+  {
+    "id": 94,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La Natural Keyboard di Microsoft uscì nel 1981.",
+    "answer": false,
+    "explanation": "Uscì nell'autunno del 1994; il 1981 è l'anno del primo PC IBM."
+  },
+  {
+    "id": 95,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "ALT + TAB chiude il programma attivo.",
+    "answer": false,
+    "explanation": "Passa da un programma a un altro; chiude l'elemento attivo ALT + F4."
+  },
+  {
+    "id": 96,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "CTRL + V taglia l'elemento selezionato.",
+    "answer": false,
+    "explanation": "CTRL + V incolla; per tagliare si usa CTRL + X."
+  },
+  {
+    "id": 97,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "In Svezia il quadrato con gli angoli ad anello da cui deriva il simbolo ⌘ segnala un luogo pericoloso.",
+    "answer": false,
+    "explanation": "Segnala un luogo di interesse, per esempio un campeggio."
+  },
+  {
+    "id": 98,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La proposta di un codice unico per i computer fu presentata da Edward Hess.",
+    "answer": false,
+    "explanation": "Fu Bob Bemer, ingegnere dell'IBM; Hess brevettò un tabulatore nel 1904."
+  },
+  {
+    "id": 99,
+    "module": "la-tastiera",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sui computer Apple il tasto che svolge molti compiti di CTRL si chiama ALT GR.",
+    "answer": false,
+    "explanation": "Si chiama COMANDO ed è contrassegnato dal simbolo ⌘."
+  }
+]

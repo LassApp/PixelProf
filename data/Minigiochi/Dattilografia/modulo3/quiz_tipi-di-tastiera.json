@@ -1,0 +1,1232 @@
+[
+  {
+    "id": 1,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una tastiera a membrana?",
+    "options": [
+      "Una tastiera in cui il contatto elettrico avviene attraverso una membrana siliconica che, premendo un tasto, tocca la scheda di contatto",
+      "Una tastiera in cui ogni tasto ha un interruttore meccanico indipendente",
+      "Una tastiera con i tasti disposti in ordine alfabetico",
+      "Una tastiera priva di scheda di contatto"
+    ],
+    "correctIndex": 0,
+    "explanation": "La membrana siliconica è uno strato flessibile che invia il segnale al computer."
+  },
+  {
+    "id": 2,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Da quali elementi è fatta una tastiera a membrana?",
+    "options": [
+      "Un corpo in metallo, un interruttore per ogni tasto e una molla",
+      "Una scheda e un motorino per ogni tasto",
+      "Un corpo in plastica con la scheda di contatto, la membrana siliconica e i tasti agganciati a un secondo scheletro di plastica",
+      "Un unico foglio di carta e un cavo"
+    ],
+    "correctIndex": 2,
+    "explanation": "Sono pochi elementi, e il funzionamento è molto semplice."
+  },
+  {
+    "id": 3,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa succede quando si preme un tasto di una tastiera a membrana?",
+    "options": [
+      "Scatta una molla che produce un clic",
+      "Il tasto scorre sulla struttura di plastica e spinge la membrana contro la scheda, generando il segnale",
+      "Un interruttore indipendente chiude il circuito",
+      "La scheda si sposta verso il tasto"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il contatto genera il segnale che il computer riceve."
+  },
+  {
+    "id": 4,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Attraverso quali mezzi viaggia il segnale di una tastiera a membrana verso il computer?",
+    "options": [
+      "Solo un cavo parallelo",
+      "Solo un cavo telefonico",
+      "Un cavo USB oppure, nelle versioni wireless, un ricevitore collegato al computer",
+      "Esclusivamente via luce infrarossa"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il segnale viaggia dalla tastiera al computer."
+  },
+  {
+    "id": 5,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché le tastiere a membrana sono silenziose e offrono poca resistenza?",
+    "options": [
+      "Perché hanno un corpo in metallo",
+      "Perché ogni tasto ha una molla a scatto",
+      "Perché sono wireless",
+      "Perché la membrana siliconica attutisce l'urto del tasto"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sono caratteristiche utili in un ufficio o in un negozio."
+  },
+  {
+    "id": 6,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale vantaggio economico hanno le tastiere a membrana?",
+    "options": [
+      "La durata maggiore dei tasti",
+      "La possibilità di sostituire i tasti con altri modelli",
+      "L'impermeabilità",
+      "Il costo basso, che le rende adatte ad acquisti in grandi quantità"
+    ],
+    "correctIndex": 3,
+    "explanation": "Per esempio per un'azienda che deve equipaggiare molte postazioni."
+  },
+  {
+    "id": 7,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è il rovescio della medaglia della semplicità della tastiera a membrana?",
+    "options": [
+      "Il tasto dà una risposta poco decisa: si sente meno nettamente quando il comando è stato registrato",
+      "È molto rumorosa",
+      "Costa molto",
+      "Ha un corpo troppo pesante"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il feedback è meno netto."
+  },
+  {
+    "id": 8,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale data la società Science of Cambridge lanciò lo ZX80 in Gran Bretagna?",
+    "options": [
+      "15 giugno 1985",
+      "6 maggio 1923",
+      "29 gennaio 1980",
+      "25 luglio 1888"
+    ],
+    "correctIndex": 2,
+    "explanation": "La società era destinata a diventare Sinclair Research."
+  },
+  {
+    "id": 9,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale società lanciò lo ZX80?",
+    "options": [
+      "Cherry, azienda tedesca",
+      "Science of Cambridge, destinata a diventare Sinclair Research",
+      "Kinesis, azienda americana",
+      "Unicomp, azienda del Kentucky"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fu pubblicizzato come il primo computer da casa sotto le cento sterline."
+  },
+  {
+    "id": 10,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanto costava lo ZX80 già montato?",
+    "options": [
+      "99,95 sterline",
+      "79,95 sterline",
+      "199,95 sterline",
+      "50 sterline"
+    ],
+    "correctIndex": 0,
+    "explanation": "In kit da assemblare costava 79,95 sterline."
+  },
+  {
+    "id": 11,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale scelta del progetto ZX80 faceva risparmiare di più?",
+    "options": [
+      "Un corpo in metallo",
+      "La tastiera a membrana, piatta e sensibile al tocco",
+      "Switch meccanici lineari",
+      "La retroilluminazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il progetto rinunciava a quasi tutto ciò che non era indispensabile."
+  },
+  {
+    "id": 12,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale critica ricevette la tastiera dello ZX80?",
+    "options": [
+      "Fu criticata perché troppo rumorosa",
+      "Fu criticata per la scomodità: non si prestava alla scrittura veloce",
+      "Fu criticata perché troppo pesante",
+      "Fu criticata perché non aveva alcuna superficie liscia"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il computer ebbe comunque molto successo."
+  },
+  {
+    "id": 13,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa mostra il caso ZX80 sulla natura della membrana?",
+    "options": [
+      "È la soluzione migliore per scrivere a lungo",
+      "È una soluzione costosa ma durevole",
+      "È una soluzione semplice ed economica che rende possibile un prodotto accessibile, a patto di accettare un feedback poco deciso",
+      "È una soluzione adatta solo ai videogiochi"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il feedback poco deciso è il prezzo da pagare."
+  },
+  {
+    "id": 14,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del forno a microonde, a che cosa è paragonata la tastiera a membrana?",
+    "options": [
+      "Al motore: potente ma rumoroso",
+      "Alla porta: solida e pesante",
+      "Al pannello comandi: si preme su una superficie morbida che chiude un contatto sotto di essa",
+      "Al timer: preciso ma lento"
+    ],
+    "correctIndex": 2,
+    "explanation": "Funziona, è facile da pulire e non fa rumore, ma non dà la sensazione netta di un interruttore vero."
+  },
+  {
+    "id": 15,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è una tastiera meccanica?",
+    "options": [
+      "Una tastiera con una membrana unica per tutti i tasti",
+      "Una tastiera azionata da un motorino",
+      "Una tastiera in cui ogni tasto ha un proprio interruttore meccanico indipendente, detto switch",
+      "Una tastiera con i tasti incollati alla scheda"
+    ],
+    "correctIndex": 2,
+    "explanation": "Lo switch sostituisce la membrana unica."
+  },
+  {
+    "id": 16,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali due elementi distinguono una tastiera meccanica da una a membrana?",
+    "options": [
+      "Il colore e il prezzo",
+      "Il cavo e il ricevitore",
+      "La struttura e l'input",
+      "La lingua e il layout"
+    ],
+    "correctIndex": 2,
+    "explanation": "Entrambe hanno una struttura rigida, una scheda, un sistema di input e i tasti."
+  },
+  {
+    "id": 17,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Com'è la struttura della maggior parte delle tastiere meccaniche?",
+    "options": [
+      "Ha un corpo in metallo, più pesante, che si sposta meno sulla scrivania",
+      "Ha un corpo in plastica sottile",
+      "Ha un corpo in gomma",
+      "Non ha alcun corpo rigido"
+    ],
+    "correctIndex": 0,
+    "explanation": "I componenti elettrici sono più separati e schermati, e alcuni modelli offrono una certa protezione dall'acqua."
+  },
+  {
+    "id": 18,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale conseguenza ha il fatto che ogni tasto meccanico abbia un interruttore indipendente?",
+    "options": [
+      "Maggiore silenziosità",
+      "Costo minore",
+      "Corsa più breve",
+      "Maggiore stabilità: nessun tasto influisce sulla corsa di un altro e non ci sono membrane che si consumano"
+    ],
+    "correctIndex": 3,
+    "explanation": "È una delle due conseguenze."
+  },
+  {
+    "id": 19,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che tipo di feedback genera la maggiore resistenza del tasto meccanico?",
+    "options": [
+      "Solo visivo, tramite una spia luminosa",
+      "Solo fisico, senza alcun suono",
+      "Fisico, perché l'interruttore oppone una resistenza che si avverte con il dito, e sonoro, il caratteristico «click»",
+      "Nessuno: il tasto è silenzioso"
+    ],
+    "correctIndex": 2,
+    "explanation": "È la seconda conseguenza dell'interruttore indipendente."
+  },
+  {
+    "id": 20,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per chi sono la scelta preferita le tastiere meccaniche?",
+    "options": [
+      "Per chi lavora in biblioteca",
+      "Per chi cerca la tastiera più economica",
+      "Per chi gioca al computer e per chi ama un riscontro deciso quando preme un tasto",
+      "Per chi vuole un modello silenzioso per un ufficio condiviso"
+    ],
+    "correctIndex": 2,
+    "explanation": "I tasti si possono spesso sostituire con altri modelli."
+  },
+  {
+    "id": 21,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i limiti principali delle tastiere meccaniche?",
+    "options": [
+      "La scarsa stabilità e la poca resistenza",
+      "Il prezzo, di solito più alto, e il rumore, che in un ambiente condiviso può diventare un problema",
+      "L'impossibilità di sostituire i tasti",
+      "La mancanza di retroilluminazione"
+    ],
+    "correctIndex": 1,
+    "explanation": "Sono i due limiti indicati."
+  },
+  {
+    "id": 22,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale tastiera presentò l'IBM nel 1985 con il terminale IBM 3161, destinata a diventare leggendaria?",
+    "options": [
+      "La Model 100",
+      "La Model M",
+      "La Natural Keyboard",
+      "L'MX Black"
+    ],
+    "correctIndex": 1,
+    "explanation": "È la stessa Enhanced Keyboard del 1985, ma qui interessa il suo meccanismo."
+  },
+  {
+    "id": 23,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come si chiama la molla a scatto nascosta sotto ogni tasto della Model M?",
+    "options": [
+      "Buckling spring",
+      "Switch lineare",
+      "Membrana siliconica",
+      "Scheda di contatto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Premendo il tasto, la molla si piega di colpo, produce un clic udibile e fa scattare l'interruttore."
+  },
+  {
+    "id": 24,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando era stata brevettata l'idea della buckling spring?",
+    "options": [
+      "Negli anni Ottanta",
+      "Nel 1996",
+      "Negli anni Settanta",
+      "Nel 2015"
+    ],
+    "correctIndex": 2,
+    "explanation": "La Model M la usò dal 1985."
+  },
+  {
+    "id": 25,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Per quali pregi è ricordata la Model M?",
+    "options": [
+      "Per il prezzo basso e il silenzio",
+      "Per il feedback tattile e sonoro così netto e per la robustezza",
+      "Per la sottigliezza e la leggerezza",
+      "Per le due metà ruotate"
+    ],
+    "correctIndex": 1,
+    "explanation": "Era però anche molto rumorosa."
+  },
+  {
+    "id": 26,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché la Model M era poco adatta ad alcuni ambienti?",
+    "options": [
+      "Perché era troppo fragile",
+      "Perché non aveva il layout italiano",
+      "Perché era troppo costosa per le scuole",
+      "Perché era molto rumorosa, poco adatta a luoghi silenziosi come biblioteche o studi medici"
+    ],
+    "correctIndex": 3,
+    "explanation": "Una tastiera pensata nel 1985 mostra che il rumore non è un dettaglio."
+  },
+  {
+    "id": 27,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "A quale azienda l'IBM cedette la produzione della Model M nel 1991?",
+    "options": [
+      "Unicomp",
+      "Lexmark",
+      "Cherry",
+      "Kinesis"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nel 1996 la licenza passò a un'altra azienda."
+  },
+  {
+    "id": 28,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale azienda del Kentucky ottenne nel 1996 la licenza del progetto della Model M?",
+    "options": [
+      "Lexmark",
+      "Cherry",
+      "Kinesis",
+      "Unicomp"
+    ],
+    "correctIndex": 3,
+    "explanation": "Fu fondata da un ex dipendente IBM, Neil Muyskens."
+  },
+  {
+    "id": 29,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi fondò l'azienda che continua a produrre tastiere con il principio della buckling spring?",
+    "options": [
+      "Phil Schiller, dirigente Apple",
+      "Steve Jobs",
+      "Neil Muyskens, ex dipendente IBM",
+      "Franz Xaver Wagner"
+    ],
+    "correctIndex": 2,
+    "explanation": "L'azienda è la Unicomp, del Kentucky."
+  },
+  {
+    "id": 30,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del pianoforte, che cosa corrisponde ai tasti di una tastiera meccanica?",
+    "options": [
+      "Tutti poggiano su un unico foglio",
+      "Ognuno aziona il proprio martelletto, indipendente da quello accanto",
+      "Tutti dipendono da un unico motorino",
+      "Tutti sono senza suono"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il suono e la resistenza al dito fanno parte della sensazione di suonare."
+  },
+  {
+    "id": 31,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cos'è lo switch?",
+    "options": [
+      "Il meccanismo posto sotto ogni tasto di una tastiera meccanica, che registra la pressione",
+      "Il cavo che collega la tastiera al computer",
+      "La membrana siliconica",
+      "Il corpo in metallo della tastiera"
+    ],
+    "correctIndex": 0,
+    "explanation": "Si dividono in due categorie fondamentali: lineari e tattili."
+  },
+  {
+    "id": 32,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono le due categorie fondamentali di switch?",
+    "options": [
+      "Silenziosi e rumorosi",
+      "Lineari e tattili",
+      "Elettrici e meccanici",
+      "Rossi e blu"
+    ],
+    "correctIndex": 1,
+    "explanation": "Esistono poi le tastiere ibride."
+  },
+  {
+    "id": 33,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come sono gli switch lineari?",
+    "options": [
+      "Hanno uno scalino a metà corsa",
+      "Hanno sempre un clic sonoro",
+      "Hanno una corsa lunga e dura",
+      "Hanno una corsa breve e fluida, senza scalini né interruzioni: il tasto scende in modo continuo, rapido e silenzioso"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sono molto apprezzati dai videogiocatori."
+  },
+  {
+    "id": 34,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché gli switch lineari sono poco apprezzati per scrivere a lungo?",
+    "options": [
+      "Perché sono troppo rumorosi",
+      "Perché non danno alcun segnale che la digitazione sia stata registrata",
+      "Perché richiedono troppa pressione",
+      "Perché hanno un prezzo troppo alto"
+    ],
+    "correctIndex": 1,
+    "explanation": "Per i videogiocatori la rapidità è decisiva."
+  },
+  {
+    "id": 35,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come sono gli switch tattili?",
+    "options": [
+      "Hanno una corsa breve e fluida senza scalini",
+      "Hanno una membrana siliconica",
+      "Hanno uno «scalino», di norma a metà corsa, che oppone una resistenza maggiore",
+      "Non hanno alcuna resistenza"
+    ],
+    "correctIndex": 2,
+    "explanation": "Quando il dito lo supera, chi scrive capisce di aver premuto abbastanza."
+  },
+  {
+    "id": 36,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché gli switch tattili sono considerati ideali per le lunghe sessioni di scrittura?",
+    "options": [
+      "Perché chi scrive capisce di aver premuto abbastanza e che il carattere è stato registrato",
+      "Perché sono più rapidi dei lineari",
+      "Perché sono completamente silenziosi",
+      "Perché sono più economici"
+    ],
+    "correctIndex": 0,
+    "explanation": "In compenso richiedono più pressione o una corsa più lunga."
+  },
+  {
+    "id": 37,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché gli switch tattili sono meno efficaci nel gioco?",
+    "options": [
+      "Perché richiedono più pressione o una corsa più lunga",
+      "Perché sono troppo silenziosi",
+      "Perché non hanno alcun feedback",
+      "Perché sono troppo veloci"
+    ],
+    "correctIndex": 0,
+    "explanation": "Alcuni aggiungono allo scalino un clic sonoro deliberato."
+  },
+  {
+    "id": 38,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono le tastiere ibride, dette «mem-chanical» o «mecha-membrane»?",
+    "options": [
+      "Tastiere che combinano una membrana siliconica con interruttori meccanici",
+      "Tastiere con soli interruttori meccanici",
+      "Tastiere a una sola mano",
+      "Tastiere senza tasti"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il feedback è più attenuato e la corsa dell'interruttore più breve."
+  },
+  {
+    "id": 39,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come sono il feedback e la corsa di una tastiera ibrida?",
+    "options": [
+      "Il feedback è più attenuato e la corsa dell'interruttore più breve",
+      "Il feedback è più netto e la corsa più lunga",
+      "Il feedback è assente",
+      "La corsa è identica a quella di uno switch tattile"
+    ],
+    "correctIndex": 0,
+    "explanation": "Combina membrana e interruttori meccanici."
+  },
+  {
+    "id": 40,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come si chiama la famiglia di interruttori meccanici più diffusa al mondo, nata alla Cherry?",
+    "options": [
+      "Model M",
+      "MX",
+      "Buckling spring",
+      "Contoured"
+    ],
+    "correctIndex": 1,
+    "explanation": "L'azienda Cherry è tedesca."
+  },
+  {
+    "id": 41,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno la Cherry brevettò gli interruttori MX?",
+    "options": [
+      "1980",
+      "1991",
+      "1983",
+      "1994"
+    ],
+    "correctIndex": 2,
+    "explanation": "Li fece entrare nelle tastiere a metà degli anni Ottanta."
+  },
+  {
+    "id": 42,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale fu il primo interruttore della famiglia MX?",
+    "options": [
+      "L'MX Brown, tattile senza clic",
+      "L'MX Blue, tattile con clic",
+      "L'MX Red, silenzioso",
+      "L'MX Black, un interruttore lineare"
+    ],
+    "correctIndex": 3,
+    "explanation": "I colori distinguono ancora oggi il carattere di ciascun modello."
+  },
+  {
+    "id": 43,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quali interruttori MX sono lineari?",
+    "options": [
+      "Il blu e il marrone",
+      "Il blu e il nero",
+      "Il rosso e il marrone",
+      "Il rosso e il nero"
+    ],
+    "correctIndex": 3,
+    "explanation": "Il blu è tattile con clic, il marrone tattile senza clic."
+  },
+  {
+    "id": 44,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che carattere ha l'interruttore MX blu?",
+    "options": [
+      "Tattile con clic",
+      "Lineare",
+      "Tattile senza clic",
+      "Ibrido"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il marrone è tattile senza clic."
+  },
+  {
+    "id": 45,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che carattere ha l'interruttore MX marrone?",
+    "options": [
+      "Lineare",
+      "Tattile senza clic",
+      "Tattile con clic",
+      "Ibrido"
+    ],
+    "correctIndex": 1,
+    "explanation": "Nacque da una richiesta della Kinesis."
+  },
+  {
+    "id": 46,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Da quale richiesta nacque l'interruttore marrone?",
+    "options": [
+      "Da una richiesta dei videogiocatori per un interruttore più rapido",
+      "Da una richiesta dell'IBM per la Model M",
+      "Dalla richiesta di Kinesis, che voleva un interruttore tattile a bassa forza ma senza il clic sonoro del blu",
+      "Da una richiesta di Unicomp per una tastiera più rumorosa"
+    ],
+    "correctIndex": 2,
+    "explanation": "Cherry lo usò dal 1994 nella propria prima tastiera ergonomica."
+  },
+  {
+    "id": 47,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa accadde quando il brevetto MX scadde?",
+    "options": [
+      "Il formato MX fu abbandonato",
+      "Altre aziende produssero interruttori compatibili e il formato MX divenne un riferimento comune",
+      "Cherry smise di produrre tastiere",
+      "Tutti gli switch diventarono lineari"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il formato MX è oggi un riferimento per il settore."
+  },
+  {
+    "id": 48,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quale esigenza spiega la nascita dell'interruttore marrone e perché i tattili sono consigliati a chi scrive molto?",
+    "options": [
+      "Giocare più velocemente",
+      "Ridurre il prezzo",
+      "Ridurre le dimensioni",
+      "Scrivere a lungo con meno fatica"
+    ],
+    "correctIndex": 3,
+    "explanation": "È una storia nata da un'esigenza concreta."
+  },
+  {
+    "id": 49,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora delle leve del freno di una bicicletta, a che cosa è paragonato lo switch tattile?",
+    "options": [
+      "Alla leva morbida che scorre fino in fondo senza avvisare",
+      "Al freno che non funziona",
+      "Al campanello della bicicletta",
+      "Alla leva con un punto di mordente preciso, che fa sentire al dito il momento esatto in cui il freno interviene"
+    ],
+    "correctIndex": 3,
+    "explanation": "Lo switch tattile è la leva che avvisa."
+  },
+  {
+    "id": 50,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i vantaggi della tastiera a membrana?",
+    "options": [
+      "Feedback deciso, alta stabilità e tasti sostituibili",
+      "Resistenza all'acqua e prezzo alto",
+      "Switch lineari e tattili a scelta",
+      "Silenziosa, prezzo basso, disponibile con o senza retroilluminazione e in versione wireless, facile da aprire e da pulire"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sono i pro elencati per la membrana."
+  },
+  {
+    "id": 51,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i limiti della tastiera a membrana?",
+    "options": [
+      "Prezzo alto e rumore",
+      "Scarsa disponibilità di tasti con layout italiano",
+      "Feedback poco deciso, tempi di risposta maggiori, scarse possibilità di personalizzazione, minore stabilità, spesso non impermeabile",
+      "Alcuni switch molto rumorosi"
+    ],
+    "correctIndex": 2,
+    "explanation": "Sono i contro della membrana."
+  },
+  {
+    "id": 52,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i vantaggi della tastiera meccanica?",
+    "options": [
+      "Feedback deciso, tempi di risposta bassi, alcuni modelli resistenti all'acqua, tasti sostituibili, retroilluminazione, alta stabilità",
+      "Prezzo basso, silenzio e facile pulizia",
+      "Feedback poco deciso e tempi di risposta maggiori",
+      "Minore stabilità e scarsa personalizzazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Sono i pro della meccanica."
+  },
+  {
+    "id": 53,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali sono i limiti della tastiera meccanica?",
+    "options": [
+      "Feedback poco deciso e minore stabilità",
+      "Impossibilità di sostituire i tasti",
+      "Totale assenza di retroilluminazione",
+      "Prezzo alto, scarsa disponibilità di tasti con layout italiano, ogni switch ha un uso in cui eccelle e uno in cui è debole, alcuni switch sono molto rumorosi"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sono i contro della meccanica."
+  },
+  {
+    "id": 54,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come vanno trattati i «vantaggi» dichiarati dai produttori delle tastiere meccaniche, come maggiore velocità di scrittura o durata maggiore dei tasti?",
+    "options": [
+      "Come criteri da verificare provandole, non come fatti garantiti",
+      "Come fatti garantiti dalla tecnologia",
+      "Come difetti da evitare",
+      "Come regole obbligatorie per chi scrive molto"
+    ],
+    "correctIndex": 0,
+    "explanation": "Alcuni dipendono da gusti personali."
+  },
+  {
+    "id": 55,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale meccanismo introdusse Apple nel 2015 nel MacBook da 12 pollici al posto dello schema a forbice?",
+    "options": [
+      "Un meccanismo a buckling spring",
+      "Un meccanismo «a farfalla»",
+      "Un meccanismo a membrana siliconica",
+      "Un meccanismo MX"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il vantaggio dichiarato era lo spessore."
+  },
+  {
+    "id": 56,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi descrisse la tastiera del MacBook 2015 come più sottile del 40% e quattro volte più stabile?",
+    "options": [
+      "Neil Muyskens",
+      "Steve Jobs",
+      "Phil Schiller, dirigente di Apple",
+      "Bob Bemer"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il vantaggio dichiarato era lo spessore."
+  },
+  {
+    "id": 57,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quali problemi segnalarono col tempo molti utenti della tastiera «a farfalla»?",
+    "options": [
+      "Tasti troppo rumorosi",
+      "Tasti troppo duri da premere",
+      "Tasti che si bloccavano, si ripetevano o smettevano di rispondere, in particolare quando entrava polvere",
+      "Tasti privi di scritte"
+    ],
+    "correctIndex": 2,
+    "explanation": "I tasti avevano una corsa molto breve."
+  },
+  {
+    "id": 58,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale mese e anno Apple fu citata in una causa collettiva negli Stati Uniti per la tastiera a farfalla?",
+    "options": [
+      "Giugno 2018",
+      "Marzo 2019",
+      "Novembre 2019",
+      "Maggio 2018"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nel giugno 2018 lanciò un programma di assistenza gratuita."
+  },
+  {
+    "id": 59,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando Apple tornò al meccanismo a forbice con il MacBook Pro da 16 pollici?",
+    "options": [
+      "Marzo 2015",
+      "Maggio 2018",
+      "Nel 2022",
+      "Novembre 2019"
+    ],
+    "correctIndex": 3,
+    "explanation": "Nel marzo 2019 si era scusata pubblicamente."
+  },
+  {
+    "id": 60,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanto accettò di pagare Apple nel 2022 per chiudere la causa?",
+    "options": [
+      "5 milioni di dollari",
+      "500 milioni di dollari",
+      "50 milioni di dollari",
+      "1 milione di dollari"
+    ],
+    "correctIndex": 2,
+    "explanation": "La causa era stata avviata nel 2018."
+  },
+  {
+    "id": 61,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa mostra il caso della tastiera a farfalla?",
+    "options": [
+      "Che le tastiere a membrana sono sempre migliori",
+      "Che la sottigliezza è sempre un difetto",
+      "Che i produttori non dichiarano mai vantaggi",
+      "Che una caratteristica a vantaggio di un aspetto (la sottigliezza) può costare caro su un altro (l'affidabilità)"
+    ],
+    "correctIndex": 3,
+    "explanation": "È il genere di compromesso che occorre valutare."
+  },
+  {
+    "id": 62,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora delle biciclette, a quale è paragonata la tastiera a membrana?",
+    "options": [
+      "Alla bici da corsa: leggera e scattante, ma richiede più cura",
+      "Alla bici da città: pesante e robusta",
+      "Alla bici elettrica",
+      "Alla bici con la sella alta"
+    ],
+    "correctIndex": 0,
+    "explanation": "La meccanica è la bici da città, più robusta e perdona più errori."
+  },
+  {
+    "id": 63,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa si conclude dal confronto tra membrana e meccanica nell'esempio del confronto?",
+    "options": [
+      "La meccanica è sempre migliore",
+      "La membrana è sempre migliore",
+      "Conviene sempre la più economica",
+      "Non esiste una scelta valida per tutto: dipende da dove si usa"
+    ],
+    "correctIndex": 3,
+    "explanation": "Per il bancone vincono silenzio e prezzo basso della membrana; per il lavoro in magazzino una meccanica tattile."
+  },
+  {
+    "id": 64,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa significa scegliere la tastiera?",
+    "options": [
+      "Comprare la tastiera più costosa",
+      "Comprare la tastiera più silenziosa",
+      "Individuare lo strumento più adatto alle proprie caratteristiche fisiche e al proprio modo di lavorare",
+      "Scegliere il modello più recente"
+    ],
+    "correctIndex": 2,
+    "explanation": "La tastiera migliore è quella che si adatta alle proprie mani e abitudini."
+  },
+  {
+    "id": 65,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono gli accessori della tastiera?",
+    "options": [
+      "I tasti sostitutivi di una tastiera meccanica",
+      "Le parti interne della tastiera",
+      "Le scorciatoie da tastiera",
+      "Gli strumenti che si possono aggiungere per renderla più comoda"
+    ],
+    "correctIndex": 3,
+    "explanation": "Per esempio cuscini poggiapolsi e piani inclinati."
+  },
+  {
+    "id": 66,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali criteri aiutano a scegliere la tastiera?",
+    "options": [
+      "Solo il prezzo e il colore",
+      "Solo la marca",
+      "Solo il numero dei tasti",
+      "Come e dove si usa, la resistenza dei tasti, la retroilluminazione, il layout dei tasti e il collegamento via cavo o wireless"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sono i cinque criteri."
+  },
+  {
+    "id": 67,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che resistenza devono offrire i tasti per sessioni di scrittura lunghe e faticose?",
+    "options": [
+      "Poca resistenza",
+      "Molta resistenza",
+      "Resistenza variabile",
+      "Nessuna indicazione"
+    ],
+    "correctIndex": 0,
+    "explanation": "Indicazioni da provare di persona: la sensazione giusta cambia da una persona all'altra."
+  },
+  {
+    "id": 68,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali switch sono consigliati a chi sceglie una meccanica per scrivere molto?",
+    "options": [
+      "Gli switch lineari",
+      "Gli switch a membrana",
+      "Gli switch tattili",
+      "Gli switch rumorosi"
+    ],
+    "correctIndex": 2,
+    "explanation": "Vanno comunque provati di persona."
+  },
+  {
+    "id": 69,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quando è utile la retroilluminazione?",
+    "options": [
+      "Quando si scrive con una sola mano",
+      "Quando si lavora con poca luce",
+      "Quando si usa una tastiera meccanica",
+      "Quando si vuole un layout diverso"
+    ],
+    "correctIndex": 1,
+    "explanation": "È uno dei criteri di scelta."
+  },
+  {
+    "id": 70,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa conviene verificare se si pensa di sostituire i tasti di una tastiera meccanica?",
+    "options": [
+      "Che esistano con il layout italiano, perché non è scontato",
+      "Che siano di colore diverso",
+      "Che siano più silenziosi",
+      "Che siano più grandi"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il layout dei tasti è un criterio di scelta."
+  },
+  {
+    "id": 71,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A che cosa servono i cuscini per appoggiare i polsi?",
+    "options": [
+      "A rendere più comoda la posizione",
+      "A rendere i tasti più silenziosi",
+      "A collegare la tastiera senza cavo",
+      "A inclinare lo schermo"
+    ],
+    "correctIndex": 0,
+    "explanation": "I piani inclinati servono invece a posizionare meglio un portatile."
+  },
+  {
+    "id": 72,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A che cosa servono i piani inclinati?",
+    "options": [
+      "A rendere più comoda la posizione dei polsi",
+      "A far funzionare la tastiera senza cavo",
+      "A posizionare meglio un portatile",
+      "A ridurre il rumore dei tasti"
+    ],
+    "correctIndex": 2,
+    "explanation": "Sono accessori utili."
+  },
+  {
+    "id": 73,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono le tastiere ergonomiche?",
+    "options": [
+      "Tastiere costruite seguendo inclinazioni particolari per tenere mani e braccia in una posizione più naturale",
+      "Tastiere senza tasti funzione",
+      "Tastiere a membrana economiche",
+      "Tastiere solo wireless"
+    ],
+    "correctIndex": 0,
+    "explanation": "L'uso corretto degli accessori riguarda la postura."
+  },
+  {
+    "id": 74,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "In quale anno fu fondata la Kinesis?",
+    "options": [
+      "1983",
+      "1991",
+      "1992",
+      "1994"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fu fondata vicino a Seattle, negli Stati Uniti."
+  },
+  {
+    "id": 75,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come si chiamò il primo modello presentato dalla Kinesis nel 1992?",
+    "options": [
+      "Model 100",
+      "Model M",
+      "MX Brown",
+      "Natural Keyboard"
+    ],
+    "correctIndex": 0,
+    "explanation": "Fu la prima tastiera «contoured», cioè modellata."
+  },
+  {
+    "id": 76,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa aveva di particolare la prima tastiera «contoured» della Kinesis?",
+    "options": [
+      "Una superficie piatta e liscia",
+      "Un unico foglio di membrana",
+      "Un solo grande tasto",
+      "Due incavi a forma di conca, uno per mano, che separavano le mani all'altezza delle spalle"
+    ],
+    "correctIndex": 3,
+    "explanation": "Facevano raggiungere i tasti con meno sforzo."
+  },
+  {
+    "id": 77,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale lavoro spostava la tastiera Kinesis Model 100 dai mignoli, più deboli?",
+    "options": [
+      "Una parte del lavoro verso gli indici",
+      "Tutto il lavoro verso il mignolo",
+      "Nessun lavoro",
+      "Una parte del lavoro verso i pollici"
+    ],
+    "correctIndex": 3,
+    "explanation": "I mignoli sono più deboli."
+  },
+  {
+    "id": 78,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale layout manteneva la Kinesis Model 100?",
+    "options": [
+      "Il QWERTY: chi la usava non doveva reimparare a scrivere",
+      "Il QZERTY",
+      "Un layout nuovo in ordine alfabetico",
+      "Il Dvorak"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il layout restava quello abituale."
+  },
+  {
+    "id": 79,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Per chi era pensata la Kinesis alla sua nascita?",
+    "options": [
+      "Per videogiocatori e programmatori",
+      "Per avvocati, segretarie, trascrittori e scrittori",
+      "Per medici e infermieri",
+      "Per ingegneri e tecnici"
+    ],
+    "correctIndex": 1,
+    "explanation": "Col tempo è diventata popolare tra chi scrive codice per molte ore."
+  },
+  {
+    "id": 80,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come va letta l'affermazione del produttore Kinesis sulla riduzione dei fattori di rischio dei disturbi da movimenti ripetitivi?",
+    "options": [
+      "Come un fatto scientifico certo",
+      "Come una norma di legge",
+      "Come un'opinione dei medici",
+      "Come un'affermazione del produttore"
+    ],
+    "correctIndex": 3,
+    "explanation": "L'idea di fondo, adattare la tastiera al corpo, è quella da applicare."
+  },
+  {
+    "id": 81,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Qual è l'idea di fondo che emerge dal caso della Kinesis?",
+    "options": [
+      "Adattare il corpo alla tastiera",
+      "Adattare la tastiera al corpo e non il contrario",
+      "Scegliere sempre la tastiera più costosa",
+      "Preferire sempre il modello più silenzioso"
+    ],
+    "correctIndex": 1,
+    "explanation": "È anche l'idea con cui scegliere la propria tastiera."
+  },
+  {
+    "id": 82,
+    "module": "tipi-di-tastiera",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora della sella della bicicletta, che cosa significa scegliere una tastiera?",
+    "options": [
+      "Non esiste quella migliore in assoluto, ma quella adatta al proprio corpo e al modo in cui si pedala",
+      "Scegliere sempre la più costosa",
+      "Scegliere la più leggera",
+      "Scegliere la più recente"
+    ],
+    "correctIndex": 0,
+    "explanation": "Una sella costosa ma sbagliata fa male dopo pochi chilometri."
+  }
+]

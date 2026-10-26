@@ -1,0 +1,740 @@
+[
+  {
+    "id": 1,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I numeri si possono scrivere con la riga numerica o con il tastierino numerico.",
+    "answer": true,
+    "explanation": "Il tastierino è presente solo sulle tastiere che lo prevedono."
+  },
+  {
+    "id": 2,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il tastierino numerico è la fila di cifre sopra le lettere.",
+    "answer": false,
+    "explanation": "Quella è la riga numerica; il tastierino è il blocco a destra."
+  },
+  {
+    "id": 3,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Chi inserisce molti numeri parla di tastiera a dieci tasti, in inglese ten-key.",
+    "answer": true,
+    "explanation": "È la tastiera pensata per i numeri."
+  },
+  {
+    "id": 4,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sulla riga numerica ogni dito copre la propria colonna, partendo dalla riga base.",
+    "answer": true,
+    "explanation": "Si usano le stesse dita delle lettere sottostanti."
+  },
+  {
+    "id": 5,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Sulla riga numerica l'1 si scrive con il mignolo sinistro e lo 0 con il mignolo destro.",
+    "answer": true,
+    "explanation": "Il 2 e il 9 si scrivono con l'anulare."
+  },
+  {
+    "id": 6,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Sulla riga numerica il 4 e il 5 si scrivono con l'indice destro.",
+    "answer": false,
+    "explanation": "Si scrivono con l'indice sinistro; l'indice destro è per il 6 e il 7."
+  },
+  {
+    "id": 7,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La riga numerica è più lenta del tastierino, ma non richiede cambio di posizione della mano.",
+    "answer": true,
+    "explanation": "È un compromesso."
+  },
+  {
+    "id": 8,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il tastierino numerico si usa con entrambe le mani.",
+    "answer": false,
+    "explanation": "Si usa con una sola mano, quasi sempre la destra."
+  },
+  {
+    "id": 9,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sul tastierino numerico il 7, l'8 e il 9 sono in alto e l'1, il 2 e il 3 in basso.",
+    "answer": true,
+    "explanation": "Lo 0 occupa due posti in fondo."
+  },
+  {
+    "id": 10,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sul tastierino numerico l'1, il 2 e il 3 sono in alto.",
+    "answer": false,
+    "explanation": "Sono in basso; in alto ci sono 7, 8 e 9."
+  },
+  {
+    "id": 11,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per usare il tastierino per i numeri deve essere attivo BLOC NUM.",
+    "answer": true,
+    "explanation": "Se la spia è spenta funzionano come frecce e tasti di spostamento."
+  },
+  {
+    "id": 12,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con BLOC NUM spento il tastierino scrive comunque le cifre.",
+    "answer": false,
+    "explanation": "Funziona come frecce e tasti di spostamento."
+  },
+  {
+    "id": 13,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sul tastierino numerico l'indice sta sul 4, il medio sul 5 e l'anulare sul 6.",
+    "answer": true,
+    "explanation": "Formano la riga base del tastierino."
+  },
+  {
+    "id": 14,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il tasto 5 del tastierino ha un piccolo rilievo, come F e J.",
+    "answer": true,
+    "explanation": "Permette di ritrovare la posizione senza guardare."
+  },
+  {
+    "id": 15,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il tasto 7 del tastierino ha un piccolo rilievo.",
+    "answer": false,
+    "explanation": "Il rilievo è sul 5."
+  },
+  {
+    "id": 16,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Dalla riga base del tastierino l'indice raggiunge il 7 e l'1, il medio l'8 e il 2, l'anulare il 9, il 3 e la virgola.",
+    "answer": true,
+    "explanation": "Il pollice preme lo 0, il mignolo i tasti di operazione e INVIO."
+  },
+  {
+    "id": 17,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Sul tastierino lo 0 si preme con il mignolo.",
+    "answer": false,
+    "explanation": "Si preme con il pollice."
+  },
+  {
+    "id": 18,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Sul tastierino il mignolo preme i tasti di operazione e INVIO.",
+    "answer": true,
+    "explanation": "Lo 0 è del pollice."
+  },
+  {
+    "id": 19,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un errore in una lettera quasi sempre si legge e si corregge.",
+    "answer": true,
+    "explanation": "Un errore in una cifra spesso non si vede e cambia il significato."
+  },
+  {
+    "id": 20,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Un errore in una cifra si nota sempre e non cambia il significato.",
+    "answer": false,
+    "explanation": "Spesso non si vede e cambia il significato."
+  },
+  {
+    "id": 21,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con i numeri conviene insistere sulla precisione più che sulla velocità e rileggere i numeri importanti.",
+    "answer": true,
+    "explanation": "Specie importi e codici."
+  },
+  {
+    "id": 22,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sul tastierino del telefono l'1 sta in alto a sinistra, su quello della calcolatrice in basso.",
+    "answer": true,
+    "explanation": "Non è un caso."
+  },
+  {
+    "id": 23,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel luglio 1960 i risultati dello studio dei Bell Labs furono pubblicati nel Bell System Technical Journal.",
+    "answer": true,
+    "explanation": "Il gruppo era guidato dallo psicologo John Karlin."
+  },
+  {
+    "id": 24,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Lo studio sui telefoni a tasti fu guidato dal medico Bernardino Ramazzini.",
+    "answer": false,
+    "explanation": "Fu guidato dallo psicologo John Karlin dei Bell Labs."
+  },
+  {
+    "id": 25,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Lo studio dei Bell Labs portò alla disposizione a tre colonne con l'1 in alto.",
+    "answer": true,
+    "explanation": "È la disposizione dei telefoni e poi degli smartphone."
+  },
+  {
+    "id": 26,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le macchine addizionatrici e le calcolatrici avevano già l'ordine opposto, con il 7 in alto, e nessuno lo cambiò.",
+    "answer": true,
+    "explanation": "I produttori non vollero rinunciare a un'abitudine acquisita."
+  },
+  {
+    "id": 27,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'ordine dei tasti numerici è una legge della natura.",
+    "answer": false,
+    "explanation": "È una convenzione, e una volta fissata difficilmente si cambia."
+  },
+  {
+    "id": 28,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il tastierino numerico è come la cassa di un negozio: una mano sola, sempre gli stessi tasti, a memoria.",
+    "answer": true,
+    "explanation": "Chi ha servito alla cassa per anni non guarda i tasti."
+  },
+  {
+    "id": 29,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La tastiera touch è la tastiera disegnata sullo schermo di uno smartphone o di un tablet.",
+    "answer": true,
+    "explanation": "I tasti sono immagini, senza corsa e senza rilievi."
+  },
+  {
+    "id": 30,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sulla tastiera touch ci sono rilievi su F e J.",
+    "answer": false,
+    "explanation": "Non ci sono rilievi."
+  },
+  {
+    "id": 31,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sullo smartphone le lettere sono disposte in layout QWERTY, ma si usano soprattutto i pollici.",
+    "answer": true,
+    "explanation": "I tasti sono piccoli."
+  },
+  {
+    "id": 32,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sullo smartphone servono ancora la riga base e i dieci dita.",
+    "answer": false,
+    "explanation": "Non servono più; servono precisione, ritmo regolare e rilettura."
+  },
+  {
+    "id": 33,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La correzione automatica sostituisce le parole che sembrano sbagliate.",
+    "answer": true,
+    "explanation": "Può però sbagliare."
+  },
+  {
+    "id": 34,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La scrittura predittiva propone la parola successiva.",
+    "answer": true,
+    "explanation": "Comoda, ma può sbagliare."
+  },
+  {
+    "id": 35,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Correzione automatica e scrittura predittiva non sbagliano mai.",
+    "answer": false,
+    "explanation": "Possono sbagliare: un messaggio inviato in fretta può contenere una parola diversa da quella voluta."
+  },
+  {
+    "id": 36,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Molte tastiere permettono di scrivere trascinando il dito da una lettera all'altra senza sollevarlo.",
+    "answer": true,
+    "explanation": "È un'alternativa alla digitazione tradizionale."
+  },
+  {
+    "id": 37,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La dettatura vocale è l'alternativa più veloce quando si ha poco tempo o le mani occupate.",
+    "answer": true,
+    "explanation": "Di solito basta toccare il microfono."
+  },
+  {
+    "id": 38,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con la dettatura vocale non si pronuncia la punteggiatura.",
+    "answer": false,
+    "explanation": "Si pronuncia anche la punteggiatura: «virgola», «punto», «a capo»."
+  },
+  {
+    "id": 39,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il testo ottenuto con la dettatura vocale va sempre riletto.",
+    "answer": true,
+    "explanation": "Come per la correzione automatica."
+  },
+  {
+    "id": 40,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "In molti servizi l'audio della dettatura viene elaborato su server remoti.",
+    "answer": true,
+    "explanation": "Conviene controllare come vengono trattati i dati vocali."
+  },
+  {
+    "id": 41,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "I dati vocali della dettatura non richiedono mai alcuna attenzione.",
+    "answer": false,
+    "explanation": "Conviene controllare le impostazioni, soprattutto per messaggi riservati o di lavoro."
+  },
+  {
+    "id": 42,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Prima degli smartphone i telefoni cellulari avevano una tastiera con dodici tasti.",
+    "answer": true,
+    "explanation": "Come quella di un telefono fisso."
+  },
+  {
+    "id": 43,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sui primi cellulari per scrivere una lettera bisognava premere più volte lo stesso tasto.",
+    "answer": true,
+    "explanation": "Un messaggio di poche righe richiedeva centinaia di pressioni."
+  },
+  {
+    "id": 44,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1995 Martin King e Cliff Kushler fondarono la Tegic Communications e svilupparono il T9.",
+    "answer": true,
+    "explanation": "T9 significa Text on 9 keys."
+  },
+  {
+    "id": 45,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il T9 fu sviluppato nel 1971.",
+    "answer": false,
+    "explanation": "Fu sviluppato dopo la fondazione della Tegic, nel 1995; il 1971 è l'anno del Trace Center."
+  },
+  {
+    "id": 46,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con il T9 si premeva una sola volta per lettera e il telefono indovinava la parola più probabile con un dizionario.",
+    "answer": true,
+    "explanation": "Evitava di premere ogni tasto più volte."
+  },
+  {
+    "id": 47,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Secondo le ricostruzioni l'idea del T9 nacque da un lavoro di Kushler su dispositivi per persone con gravi difficoltà motorie.",
+    "answer": true,
+    "explanation": "Era un'idea nata dall'accessibilità."
+  },
+  {
+    "id": 48,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La Tegic fu acquistata nel 1999 da AOL e poi la tecnologia passò a Nuance.",
+    "answer": true,
+    "explanation": "Il T9 fu per anni uno dei sistemi di scrittura più diffusi."
+  },
+  {
+    "id": 49,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "La Tegic fu acquistata nel 1999 da Apple.",
+    "answer": false,
+    "explanation": "Fu acquistata da AOL."
+  },
+  {
+    "id": 50,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "L'idea del T9, indovinare la parola dalle prime lettere, è la stessa della scrittura predittiva.",
+    "answer": true,
+    "explanation": "Continua nella tastiera degli smartphone."
+  },
+  {
+    "id": 51,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La tastiera touch è come il taccuino che si tiene in tasca: si segna in fretta e si ricontrolla con calma.",
+    "answer": true,
+    "explanation": "La tastiera del computer è il banco da lavoro."
+  },
+  {
+    "id": 52,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Gli strumenti di accessibilità modificano il comportamento dei tasti per chi non può usare la tastiera nel modo standard.",
+    "answer": true,
+    "explanation": "Per esempio perché usa una sola mano o un solo dito."
+  },
+  {
+    "id": 53,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Tasti permanenti permette di premere MAIUSC, CTRL e ALT uno alla volta invece che insieme.",
+    "answer": true,
+    "explanation": "Il computer li tratta come premuti insieme."
+  },
+  {
+    "id": 54,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Con Tasti permanenti per una maiuscola si premono insieme MAIUSC e la lettera.",
+    "answer": false,
+    "explanation": "Si preme MAIUSC, lo si rilascia, poi si preme la lettera."
+  },
+  {
+    "id": 55,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Su Windows Tasti permanenti si attiva premendo cinque volte di seguito MAIUSC.",
+    "answer": true,
+    "explanation": "Oppure dalle impostazioni di accessibilità."
+  },
+  {
+    "id": 56,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Su Windows Tasti permanenti si attiva premendo due volte CTRL.",
+    "answer": false,
+    "explanation": "Si attiva premendo cinque volte di seguito MAIUSC."
+  },
+  {
+    "id": 57,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Filter Keys permette di ignorare le pressioni accidentali o ripetute.",
+    "answer": true,
+    "explanation": "Mouse Keys permette invece di controllare il cursore con i tasti numerici."
+  },
+  {
+    "id": 58,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Mouse Keys permette di ignorare le pressioni accidentali.",
+    "answer": false,
+    "explanation": "Permette di controllare il cursore con i tasti numerici; Filter Keys ignora le pressioni accidentali."
+  },
+  {
+    "id": 59,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Tra gli strumenti diversi dalle funzioni del computer ci sono le tastiere ergonomiche e quelle per un'unica mano.",
+    "answer": true,
+    "explanation": "Più la dettatura vocale."
+  },
+  {
+    "id": 60,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1978 l'IBM propose una tastiera progettata per un'unica mano.",
+    "answer": true,
+    "explanation": "È un esempio di strumento diverso dalle funzioni del computer."
+  },
+  {
+    "id": 61,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Per un dolore persistente o un formicolio è sufficiente comprare una tastiera speciale.",
+    "answer": false,
+    "explanation": "Conviene rivolgersi a un medico o a un esperto di ergonomia: una tastiera speciale non è una cura."
+  },
+  {
+    "id": 62,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il Trace Center fu fondato nel 1971 all'Università del Wisconsin da Gregg Vanderheiden e dai suoi colleghi.",
+    "answer": true,
+    "explanation": "Studiava tecnologie al servizio delle persone con disabilità."
+  },
+  {
+    "id": 63,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il Trace Center fu fondato nel 1987 all'Università del Wisconsin.",
+    "answer": false,
+    "explanation": "Fu fondato nel 1971; il 1987 è l'anno del trasferimento della tecnologia ad Apple."
+  },
+  {
+    "id": 64,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Negli anni Ottanta il Trace Center sviluppò una funzione per chi poteva usare un solo dito o un bastoncino fissato alla testa.",
+    "answer": true,
+    "explanation": "La chiamò prima «1-Finger» e poi Sticky Keys."
+  },
+  {
+    "id": 65,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1987 la tecnologia fu trasferita ad Apple, che la inserì nel sistema operativo dei propri computer.",
+    "answer": true,
+    "explanation": "Microsoft ottenne la licenza nel 1995."
+  },
+  {
+    "id": 66,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1995 Microsoft incluse la funzione in Windows 95 e in tutte le versioni successive.",
+    "answer": true,
+    "explanation": "Aveva ottenuto la licenza."
+  },
+  {
+    "id": 67,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il caso di Tasti permanenti mostra che progettare per chi ha più difficoltà finisce spesso per migliorare lo strumento per tutti.",
+    "answer": true,
+    "explanation": "Chiunque può usarla per ridurre lo sforzo di scorciatoie complesse."
+  },
+  {
+    "id": 68,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Tasti permanenti è come lo scivolo accanto a una scalinata: serve anche a chi trascina un carrello o spinge un passeggino.",
+    "answer": true,
+    "explanation": "Si progetta pensando a chi ha più bisogno."
+  },
+  {
+    "id": 69,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Sulla riga numerica lo 0 si scrive con il mignolo sinistro.",
+    "answer": false,
+    "explanation": "Si scrive con il mignolo destro; il mignolo sinistro scrive l'1."
+  },
+  {
+    "id": 70,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sul tastierino numerico l'indice sta sul 7, il medio sull'8 e l'anulare sul 9.",
+    "answer": false,
+    "explanation": "La riga base del tastierino è 4, 5 e 6."
+  },
+  {
+    "id": 71,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La riga numerica è più veloce del tastierino numerico.",
+    "answer": false,
+    "explanation": "È più lenta, ma non richiede cambio di posizione della mano."
+  },
+  {
+    "id": 72,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Lo studio sui telefoni a tasti fu condotto dalla Tegic Communications.",
+    "answer": false,
+    "explanation": "Fu condotto dai Bell Labs della compagnia Bell System."
+  },
+  {
+    "id": 73,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "I risultati dello studio dei Bell Labs furono pubblicati nel 1995.",
+    "answer": false,
+    "explanation": "Furono pubblicati nel luglio 1960."
+  },
+  {
+    "id": 74,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le calcolatrici hanno l'1 in alto, come i telefoni.",
+    "answer": false,
+    "explanation": "Hanno il 7 in alto; i telefoni hanno l'1 in alto."
+  },
+  {
+    "id": 75,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La dettatura vocale permette di scrivere trascinando il dito da una lettera all'altra.",
+    "answer": false,
+    "explanation": "La dettatura trasforma la voce in testo; trascinare il dito è un altro modo di scrivere sulla tastiera touch."
+  },
+  {
+    "id": 76,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sulla tastiera di uno smartphone le lettere sono in layout AZERTY.",
+    "answer": false,
+    "explanation": "Sono in layout QWERTY."
+  },
+  {
+    "id": 77,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il T9 faceva premere più volte lo stesso tasto per ogni lettera.",
+    "answer": false,
+    "explanation": "Si premeva una sola volta per lettera."
+  },
+  {
+    "id": 78,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il T9 nacque da un lavoro del Trace Center.",
+    "answer": false,
+    "explanation": "Secondo le ricostruzioni nacque da un lavoro di Kushler su dispositivi per persone con gravi difficoltà motorie."
+  },
+  {
+    "id": 79,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Filter Keys permette di controllare il cursore con i tasti numerici.",
+    "answer": false,
+    "explanation": "Filter Keys ignora le pressioni accidentali o ripetute; il cursore si controlla con Mouse Keys."
+  },
+  {
+    "id": 80,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "L'IBM propose una tastiera per una sola mano nel 1995.",
+    "answer": false,
+    "explanation": "La propose nel 1978."
+  },
+  {
+    "id": 81,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Nel 1995 Apple inserì la funzione Tasti permanenti nel proprio sistema operativo.",
+    "answer": false,
+    "explanation": "Apple la inserì dopo il 1987; nel 1995 fu Microsoft a ottenere la licenza."
+  },
+  {
+    "id": 82,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Tasti permanenti serve solo a chi ha una disabilità e nessun altro può usarlo.",
+    "answer": false,
+    "explanation": "Chiunque, anche senza disabilità, può usarlo per ridurre lo sforzo di scorciatoie complesse."
+  }
+]

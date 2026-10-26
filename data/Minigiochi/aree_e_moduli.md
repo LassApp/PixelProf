@@ -17,7 +17,7 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 - **Area Malware e Minacce Informatiche** → `attiva` — JSON realizzati e caricati.
 - **Area Intelligenza Artificiale** → `attiva` — contenuti presenti, JSON realizzati e caricati.
 - **Area DigComp** → `attiva` — 10 Fasi (Fasi 1–5 formazione del cittadino, Fasi 6–10 formazione del docente — Edu): moduli definiti, JSON realizzati per tutte le 10 Fasi.
-- **Area Dattilografia** → `attiva` — 5 moduli (La storia della tastiera, La tastiera, Tipi di tastiera, Il corpo e la postazione, Scrivere senza guardare): JSON realizzati.
+- **Area Dattilografia** → `attiva` — 7 moduli (La storia della tastiera, La tastiera, Tipi di tastiera, Il corpo e la postazione, Scrivere senza guardare, Allenamento, Estensioni): JSON realizzati.
 
 ---
 
@@ -59,9 +59,9 @@ Vista rapida dello stato di ciascuna Area, utile per un controllo immediato prim
 **Nota:** moduli definiti, JSON realizzati per tutte le 10 Fasi (Fasi 1–5 formazione del cittadino, Fasi 6–10 formazione del docente — Edu).
 
 ### ⌨️ Area Dattilografia
-**Descrizione:** Imparare la storia e la tecnica della scrittura con la tastiera: come è fatta, come si sceglie, come si usa il corpo davanti al computer e come si scrive senza guardare i tasti.
+**Descrizione:** Imparare la storia e la tecnica della scrittura con la tastiera: come è fatta, come si sceglie, come si usa il corpo davanti al computer, come si scrive senza guardare i tasti, come ci si allena e come si estende la tecnica a numeri, smartphone e strumenti di accessibilità.
 **Stato:** attiva
-**Nota:** 5 moduli definiti, JSON realizzati per tutti i moduli.
+**Nota:** 7 moduli definiti, JSON realizzati per tutti i moduli.
 
 ---
 
@@ -1196,7 +1196,7 @@ data/
 ### ⌨️ Area Dattilografia
 
 **Stato:** attiva
-**Nota:** 5 moduli definiti, JSON realizzati per tutti i moduli.
+**Nota:** 7 moduli definiti, JSON realizzati per tutti i moduli.
 
 ```text
 data/
@@ -1226,12 +1226,24 @@ data/
         │   ├── quiz_il-corpo-e-la-postazione.json
         │   ├── speedquiz_il-corpo-e-la-postazione.json
         │   └── vero_o_falso_il-corpo-e-la-postazione.json
-        └── modulo5/
-            ├── abbina_scrivere-senza-guardare.json
-            ├── completa_la_frase_scrivere-senza-guardare.json
-            ├── quiz_scrivere-senza-guardare.json
-            ├── speedquiz_scrivere-senza-guardare.json
-            └── vero_o_falso_scrivere-senza-guardare.json
+        ├── modulo5/
+        │   ├── abbina_scrivere-senza-guardare.json
+        │   ├── completa_la_frase_scrivere-senza-guardare.json
+        │   ├── quiz_scrivere-senza-guardare.json
+        │   ├── speedquiz_scrivere-senza-guardare.json
+        │   └── vero_o_falso_scrivere-senza-guardare.json
+        ├── modulo6/
+        │   ├── abbina_allenamento.json
+        │   ├── completa_la_frase_allenamento.json
+        │   ├── quiz_allenamento.json
+        │   ├── speedquiz_allenamento.json
+        │   └── vero_o_falso_allenamento.json
+        └── modulo7/
+            ├── abbina_estensioni.json
+            ├── completa_la_frase_estensioni.json
+            ├── quiz_estensioni.json
+            ├── speedquiz_estensioni.json
+            └── vero_o_falso_estensioni.json
 ```
 
 - **Modulo 1 — La storia della tastiera**
@@ -1264,11 +1276,23 @@ data/
   - Path base: `data/Minigiochi/Dattilografia/modulo5/`
   - File: `abbina_scrivere-senza-guardare.json`, `completa_la_frase_scrivere-senza-guardare.json`, `quiz_scrivere-senza-guardare.json`, `speedquiz_scrivere-senza-guardare.json`, `vero_o_falso_scrivere-senza-guardare.json`
 
+- **Modulo 6 — Allenamento**
+  - Chiave: `allenamento`
+  - Stato: `attivo`
+  - Path base: `data/Minigiochi/Dattilografia/modulo6/`
+  - File: `abbina_allenamento.json`, `completa_la_frase_allenamento.json`, `quiz_allenamento.json`, `speedquiz_allenamento.json`, `vero_o_falso_allenamento.json`
+
+- **Modulo 7 — Estensioni**
+  - Chiave: `estensioni`
+  - Stato: `attivo`
+  - Path base: `data/Minigiochi/Dattilografia/modulo7/`
+  - File: `abbina_estensioni.json`, `completa_la_frase_estensioni.json`, `quiz_estensioni.json`, `speedquiz_estensioni.json`, `vero_o_falso_estensioni.json`
+
 ---
 
 ## 4. Riepilogo
 
-> **Aggiornamento:** tutti i JSON di tutte le sotto-aree ECDL (incluse **IT Security** e **Online Collaboration**) e delle altre 5 Aree sono stati realizzati e caricati. È stata aggiunta l'Area **DigComp** (10 Fasi), i cui JSON sono stati realizzati per tutte le Fasi (1–5 formazione del cittadino, 6–10 formazione del docente — Edu). È stata aggiunta l'Area **Dattilografia** (5 moduli), con JSON realizzati per tutti i moduli. Tutte le **8 aree** sono attive e complete.
+> **Aggiornamento:** tutti i JSON di tutte le sotto-aree ECDL (incluse **IT Security** e **Online Collaboration**) e delle altre 5 Aree sono stati realizzati e caricati. È stata aggiunta l'Area **DigComp** (10 Fasi), i cui JSON sono stati realizzati per tutte le Fasi (1–5 formazione del cittadino, 6–10 formazione del docente — Edu). È stata aggiunta l'Area **Dattilografia** (7 moduli), con JSON realizzati per tutti i moduli. Tutte le **8 aree** sono attive e complete.
 
 | Area / Sotto-area | Moduli | File attesi | Realizzati | Da realizzare | Stato area |
 |---|---|---|---|---|---|
@@ -1285,12 +1309,12 @@ data/
 | Malware e Minacce Informatiche | 1 | 5 | 5 | 0 | attiva |
 | Intelligenza Artificiale | 13 | 65 | 65 | 0 | attiva |
 | DigComp | 10 | 50 | 50 | 0 | attiva |
-| Dattilografia | 5 | 25 | 25 | 0 | attiva |
-| **Totale** | **85** | **425** | **425** | **0** | — |
+| Dattilografia | 7 | 35 | 35 | 0 | attiva |
+| **Totale** | **87** | **435** | **435** | **0** | — |
 
 - **Aree:** 8
 - **Sotto-aree ECDL:** 7 (Computer Essentials, Online Essentials, Word Processing, Spreadsheet, Presentation, IT Security, Online Collaboration)
-- **Moduli totali mappati:** 85
-- **File JSON realizzati:** 425
+- **Moduli totali mappati:** 87
+- **File JSON realizzati:** 435
 - **File JSON da realizzare:** 0
-- **File JSON totali attesi:** 425
+- **File JSON totali attesi:** 435

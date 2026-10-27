@@ -463,12 +463,273 @@
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
+    "statement": "Le zone di tocco di uno smartphone sono invisibili e non fisse: cambiano mentre si scrive.",
+    "answer": true,
+    "explanation": "Non coincidono con i tasti che si vedono."
+  },
+  {
+    "id": 53,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le zone di tocco coincidono sempre con i tasti visibili e restano fisse.",
+    "answer": false,
+    "explanation": "Sono invisibili e cambiano mentre si scrive."
+  },
+  {
+    "id": 54,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Il telefono conosce la lingua, sa quali parole esistono e quali sequenze di lettere sono più frequenti.",
+    "answer": true,
+    "explanation": "Usa questa conoscenza per scegliere la lettera."
+  },
+  {
+    "id": 55,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Dopo «cia» la lettera più probabile è la O, perché «ciao» è una parola comunissima.",
+    "answer": true,
+    "explanation": "Una P porterebbe quasi sempre a niente."
+  },
+  {
+    "id": 56,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Dopo «cia» la lettera più probabile è la P.",
+    "answer": false,
+    "explanation": "È la O; una P porterebbe quasi sempre a niente."
+  },
+  {
+    "id": 57,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Sotto la O si trova la K, e anche «ciak» è una parola esistente.",
+    "answer": true,
+    "explanation": "Il sistema deve considerare posizione del tocco e probabilità delle parole."
+  },
+  {
+    "id": 58,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Prima che il dito scenda, la zona di tocco della O si allarga e quelle delle lettere vicine meno probabili si riducono.",
+    "answer": true,
+    "explanation": "Il sistema anticipa la lettera più probabile."
+  },
+  {
+    "id": 59,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Se il tocco cade a metà tra la O e la P, il telefono lo assegna alla P.",
+    "answer": false,
+    "explanation": "Lo assegna alla O."
+  },
+  {
+    "id": 60,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Appena arriva la lettera successiva, tutte le zone di tocco si ridisegnano da capo.",
+    "answer": true,
+    "explanation": "Il meccanismo funziona lettera per lettera."
+  },
+  {
+    "id": 61,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Quando le zone di tocco cambiano, i tasti sullo schermo si spostano visibilmente.",
+    "answer": false,
+    "explanation": "Sullo schermo non si muove niente, ed è per questo che il meccanismo passa inosservato."
+  },
+  {
+    "id": 62,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La tastiera combina dove è caduto il dito e che cosa ha senso scrivere dopo ciò che è già stato scritto.",
+    "answer": true,
+    "explanation": "Una parte della precisione è della tastiera."
+  },
+  {
+    "id": 63,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La precisione di chi scrive su smartphone dipende esclusivamente dal dito.",
+    "answer": false,
+    "explanation": "Una parte non è del dito ma della tastiera."
+  },
+  {
+    "id": 64,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le tastiere più recenti imparano anche il modo di toccare lo schermo di ciascuno, dalle sue abitudini.",
+    "answer": true,
+    "explanation": "Ognuno ha un proprio modo di toccare lo schermo."
+  },
+  {
+    "id": 65,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Su quasi tutte le tastiere touch la lettera compare ingrandita sopra il dito, come conferma visiva.",
+    "answer": true,
+    "explanation": "Il dito copre il tasto e non si vede se la lettera è giusta."
+  },
+  {
+    "id": 66,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Le zone di tocco intervengono mentre si tocca, mentre la correzione automatica interviene sulla parola intera.",
+    "answer": true,
+    "explanation": "Vanno in squadra, ma un errore può nascere dall'una o dall'altra."
+  },
+  {
+    "id": 67,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "La correzione automatica interviene mentre si tocca, per scegliere la lettera.",
+    "answer": false,
+    "explanation": "Interviene sulla parola intera, quando la si completa."
+  },
+  {
+    "id": 68,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il primo iPhone fu presentato nel gennaio 2007, con uno schermo da 3,5 pollici e 320x480 pixel.",
+    "answer": true,
+    "explanation": "Il problema era la dimensione dei tasti."
+  },
+  {
+    "id": 69,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il primo iPhone fu presentato nel 1995.",
+    "answer": false,
+    "explanation": "Fu presentato nel gennaio 2007; il 1995 è l'anno di fondazione della Tegic."
+  },
+  {
+    "id": 70,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Secondo i progettisti Apple un pulsante doveva misurare almeno 44 pixel di lato.",
+    "answer": true,
+    "explanation": "Per essere toccato comodamente da un dito."
+  },
+  {
+    "id": 71,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Una fila di dieci tasti da 44 pixel avrebbe richiesto 320 pixel.",
+    "answer": false,
+    "explanation": "Avrebbe richiesto 440 pixel, più dei 320 dello schermo."
+  },
+  {
+    "id": 72,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Alla fine del 2005 Scott Forstall sospese gli altri lavori e chiese a tutti gli ingegneri di inventare una soluzione per la tastiera.",
+    "answer": true,
+    "explanation": "Era il responsabile del software dell'iPhone."
+  },
+  {
+    "id": 73,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il progetto di Ken Kocienda, con più lettere per tasto e un dizionario, vinse la gara interna ma non convinse Phil Schiller e Tony Fadell.",
+    "answer": true,
+    "explanation": "Kocienda tornò al lavoro."
+  },
+  {
+    "id": 74,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il progetto con più lettere per tasto convinse subito tutti.",
+    "answer": false,
+    "explanation": "Non convinse Phil Schiller e Tony Fadell."
+  },
+  {
+    "id": 75,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Kocienda arrivò a una tastiera dall'aspetto ordinario, con un tasto per lettera, che regolava in modo invisibile le zone di tocco.",
+    "answer": true,
+    "explanation": "Il principio fu poi brevettato."
+  },
+  {
+    "id": 76,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Il brevetto ha tra i sei inventori Kocienda e descrive una zona di tocco nascosta, la «hidden hit region».",
+    "answer": true,
+    "explanation": "La sua dimensione si aggiorna a ogni lettera in base alle parole possibili."
+  },
+  {
+    "id": 77,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nel brevetto la zona di tocco di ogni tasto è fissa e visibile.",
+    "answer": false,
+    "explanation": "È nascosta e la sua dimensione si aggiorna a ogni lettera."
+  },
+  {
+    "id": 78,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "hard",
+    "statement": "Google Gboard combina un modello spaziale, che trasforma i tocchi in probabilità, e un modello del linguaggio, che valuta le parole plausibili.",
+    "answer": true,
+    "explanation": "Ha lo stesso scopo del metodo Apple ma un metodo diverso."
+  },
+  {
+    "id": 79,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Google Gboard usa solo un dizionario di parole, senza considerare la posizione dei tocchi.",
+    "answer": false,
+    "explanation": "Combina la posizione dei tocchi con un modello del linguaggio."
+  },
+  {
+    "id": 80,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
+    "statement": "Nella metafora del commesso esperto, il dito dice dove e il discorso dice cosa.",
+    "answer": true,
+    "explanation": "La tastiera, come il commesso, usa entrambe le informazioni."
+  },
+  {
+    "id": 81,
+    "module": "estensioni",
+    "type": "truefalse",
+    "difficulty": "easy",
     "statement": "Gli strumenti di accessibilità modificano il comportamento dei tasti per chi non può usare la tastiera nel modo standard.",
     "answer": true,
     "explanation": "Per esempio perché usa una sola mano o un solo dito."
   },
   {
-    "id": 53,
+    "id": 82,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -477,7 +738,7 @@
     "explanation": "Il computer li tratta come premuti insieme."
   },
   {
-    "id": 54,
+    "id": 83,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -486,7 +747,7 @@
     "explanation": "Si preme MAIUSC, lo si rilascia, poi si preme la lettera."
   },
   {
-    "id": 55,
+    "id": 84,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -495,7 +756,7 @@
     "explanation": "Oppure dalle impostazioni di accessibilità."
   },
   {
-    "id": 56,
+    "id": 85,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -504,7 +765,7 @@
     "explanation": "Si attiva premendo cinque volte di seguito MAIUSC."
   },
   {
-    "id": 57,
+    "id": 86,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -513,7 +774,7 @@
     "explanation": "Mouse Keys permette invece di controllare il cursore con i tasti numerici."
   },
   {
-    "id": 58,
+    "id": 87,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -522,7 +783,7 @@
     "explanation": "Permette di controllare il cursore con i tasti numerici; Filter Keys ignora le pressioni accidentali."
   },
   {
-    "id": 59,
+    "id": 88,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -531,7 +792,7 @@
     "explanation": "Più la dettatura vocale."
   },
   {
-    "id": 60,
+    "id": 89,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "hard",
@@ -540,7 +801,7 @@
     "explanation": "È un esempio di strumento diverso dalle funzioni del computer."
   },
   {
-    "id": 61,
+    "id": 90,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -549,7 +810,7 @@
     "explanation": "Conviene rivolgersi a un medico o a un esperto di ergonomia: una tastiera speciale non è una cura."
   },
   {
-    "id": 62,
+    "id": 91,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "hard",
@@ -558,7 +819,7 @@
     "explanation": "Studiava tecnologie al servizio delle persone con disabilità."
   },
   {
-    "id": 63,
+    "id": 92,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "hard",
@@ -567,7 +828,7 @@
     "explanation": "Fu fondato nel 1971; il 1987 è l'anno del trasferimento della tecnologia ad Apple."
   },
   {
-    "id": 64,
+    "id": 93,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "hard",
@@ -576,7 +837,7 @@
     "explanation": "La chiamò prima «1-Finger» e poi Sticky Keys."
   },
   {
-    "id": 65,
+    "id": 94,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "hard",
@@ -585,7 +846,7 @@
     "explanation": "Microsoft ottenne la licenza nel 1995."
   },
   {
-    "id": 66,
+    "id": 95,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "hard",
@@ -594,7 +855,7 @@
     "explanation": "Aveva ottenuto la licenza."
   },
   {
-    "id": 67,
+    "id": 96,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -603,7 +864,7 @@
     "explanation": "Chiunque può usarla per ridurre lo sforzo di scorciatoie complesse."
   },
   {
-    "id": 68,
+    "id": 97,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -612,7 +873,7 @@
     "explanation": "Si progetta pensando a chi ha più bisogno."
   },
   {
-    "id": 69,
+    "id": 98,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "hard",
@@ -621,7 +882,7 @@
     "explanation": "Si scrive con il mignolo destro; il mignolo sinistro scrive l'1."
   },
   {
-    "id": 70,
+    "id": 99,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -630,7 +891,7 @@
     "explanation": "La riga base del tastierino è 4, 5 e 6."
   },
   {
-    "id": 71,
+    "id": 100,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -639,7 +900,7 @@
     "explanation": "È più lenta, ma non richiede cambio di posizione della mano."
   },
   {
-    "id": 72,
+    "id": 101,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "hard",
@@ -648,7 +909,7 @@
     "explanation": "Fu condotto dai Bell Labs della compagnia Bell System."
   },
   {
-    "id": 73,
+    "id": 102,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "hard",
@@ -657,7 +918,7 @@
     "explanation": "Furono pubblicati nel luglio 1960."
   },
   {
-    "id": 74,
+    "id": 103,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -666,7 +927,7 @@
     "explanation": "Hanno il 7 in alto; i telefoni hanno l'1 in alto."
   },
   {
-    "id": 75,
+    "id": 104,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -675,7 +936,7 @@
     "explanation": "La dettatura trasforma la voce in testo; trascinare il dito è un altro modo di scrivere sulla tastiera touch."
   },
   {
-    "id": 76,
+    "id": 105,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -684,7 +945,7 @@
     "explanation": "Sono in layout QWERTY."
   },
   {
-    "id": 77,
+    "id": 106,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -693,7 +954,7 @@
     "explanation": "Si premeva una sola volta per lettera."
   },
   {
-    "id": 78,
+    "id": 107,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "hard",
@@ -702,7 +963,7 @@
     "explanation": "Secondo le ricostruzioni nacque da un lavoro di Kushler su dispositivi per persone con gravi difficoltà motorie."
   },
   {
-    "id": 79,
+    "id": 108,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",
@@ -711,7 +972,7 @@
     "explanation": "Filter Keys ignora le pressioni accidentali o ripetute; il cursore si controlla con Mouse Keys."
   },
   {
-    "id": 80,
+    "id": 109,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "hard",
@@ -720,7 +981,7 @@
     "explanation": "La propose nel 1978."
   },
   {
-    "id": 81,
+    "id": 110,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "hard",
@@ -729,7 +990,7 @@
     "explanation": "Apple la inserì dopo il 1987; nel 1995 fu Microsoft a ottenere la licenza."
   },
   {
-    "id": 82,
+    "id": 111,
     "module": "estensioni",
     "type": "truefalse",
     "difficulty": "easy",

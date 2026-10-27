@@ -844,6 +844,426 @@
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "easy",
+    "question": "Perché sullo smartphone si sbaglia relativamente poco, nonostante ogni tasto sia più stretto di un polpastrello?",
+    "options": [
+      "Perché i tasti sono ingranditi sullo schermo",
+      "Perché il telefono scrive al posto di chi digita",
+      "Perché i tasti che si vedono non coincidono con le zone di tocco che il telefono usa per decidere quale lettera è stata toccata",
+      "Perché i tasti hanno un rilievo invisibile"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il dito, quando scende, ne copre più di uno."
+  },
+  {
+    "id": 58,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa sono le zone di tocco?",
+    "options": [
+      "I tasti visibili sullo schermo",
+      "Le zone in cui compare la lettera ingrandita",
+      "Zone invisibili che il telefono usa per decidere quale lettera è stata toccata",
+      "I rilievi su F e J"
+    ],
+    "correctIndex": 2,
+    "explanation": "Non coincidono con i tasti che si vedono."
+  },
+  {
+    "id": 59,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Com'è la posizione delle zone di tocco mentre si scrive?",
+    "options": [
+      "È fissa e coincide con i tasti visibili",
+      "È fissa e più grande dei tasti",
+      "È decisa solo dall'utente",
+      "Non è fissa: le zone cambiano mentre si scrive"
+    ],
+    "correctIndex": 3,
+    "explanation": "Sono invisibili e non fisse."
+  },
+  {
+    "id": 60,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa conosce il telefono per decidere quale lettera è stata toccata?",
+    "options": [
+      "Solo la posizione del dito",
+      "Solo il nome di chi scrive",
+      "La lingua: sa quali parole esistono e quali sequenze di lettere sono più frequenti",
+      "Solo i colori dei tasti"
+    ],
+    "correctIndex": 2,
+    "explanation": "Combina questa conoscenza con la posizione del tocco."
+  },
+  {
+    "id": 61,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Se si è già scritto «cia», quale lettera è la più probabile per il sistema?",
+    "options": [
+      "La P, perché è vicina alla O",
+      "La O, perché «ciao» è una parola comunissima",
+      "La K, perché «ciak» è la parola più frequente",
+      "La A, perché è già stata scritta"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una P porterebbe quasi sempre a niente."
+  },
+  {
+    "id": 62,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché il sistema deve considerare sia la posizione del tocco sia la probabilità delle parole, nell'esempio di «cia»?",
+    "options": [
+      "Perché la O e la P non sono sulla tastiera",
+      "Perché la tastiera non conosce la lingua",
+      "Perché sotto la O si trova la K e anche «ciak» è una parola esistente",
+      "Perché ogni parola ha una sola lettera possibile"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il sistema deve scegliere tra O e K."
+  },
+  {
+    "id": 63,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Come interpreta il sistema un tocco leggermente impreciso nell'esempio di «ciao» e «ciak»?",
+    "options": [
+      "Come un tentativo di premere la K",
+      "Come un errore da cancellare",
+      "Come un tocco da ignorare",
+      "Come un tentativo di premere la O, perché «ciao» è molto più frequente di «ciak»"
+    ],
+    "correctIndex": 3,
+    "explanation": "Assegna alla O una probabilità maggiore rispetto alla K."
+  },
+  {
+    "id": 64,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa accade alla zona di tocco della O prima che il dito scenda?",
+    "options": [
+      "Si allarga, mentre quelle delle lettere vicine meno probabili si riducono",
+      "Si riduce a favore della K",
+      "Si sposta sopra il dito",
+      "Scompare"
+    ],
+    "correctIndex": 0,
+    "explanation": "Il sistema anticipa la lettera più probabile."
+  },
+  {
+    "id": 65,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quale lettera il telefono assegna un tocco che cade a metà tra la O e la P?",
+    "options": [
+      "Alla P",
+      "Alla K",
+      "A nessuna delle due",
+      "Alla O"
+    ],
+    "correctIndex": 3,
+    "explanation": "La zona della O si è allargata."
+  },
+  {
+    "id": 66,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa accade appena arriva la lettera successiva?",
+    "options": [
+      "Tutte le zone di tocco si ridisegnano da capo",
+      "Le zone restano uguali",
+      "Le zone si bloccano",
+      "Le zone diventano visibili"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le zone cambiano mentre si scrive."
+  },
+  {
+    "id": 67,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa si muove sullo schermo quando le zone di tocco cambiano?",
+    "options": [
+      "Niente: i tasti restano come sono, ed è per questo che il meccanismo passa inosservato",
+      "I tasti si ingrandiscono",
+      "I tasti cambiano colore",
+      "I tasti si spostano di lato"
+    ],
+    "correctIndex": 0,
+    "explanation": "Le zone sono invisibili."
+  },
+  {
+    "id": 68,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Quali due informazioni combina la tastiera di uno smartphone?",
+    "options": [
+      "Il peso del dito e la velocità",
+      "Dove è caduto il dito e che cosa ha senso scrivere dopo ciò che è già stato scritto",
+      "Il colore dei tasti e la lingua",
+      "La riga base e la riga superiore"
+    ],
+    "correctIndex": 1,
+    "explanation": "Una parte della precisione è della tastiera."
+  },
+  {
+    "id": 69,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa si può dire della precisione di chi scrive su uno smartphone?",
+    "options": [
+      "È tutta merito del dito",
+      "Una parte non è del dito ma della tastiera, che sposta il bersaglio dove il dito, statisticamente, sta per cadere",
+      "È tutta merito del dizionario",
+      "Non dipende da nulla"
+    ],
+    "correctIndex": 1,
+    "explanation": "Non è però una tastiera «che fa tutto da sola»."
+  },
+  {
+    "id": 70,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa imparano le tastiere più recenti?",
+    "options": [
+      "La lingua di ogni utente",
+      "I colori preferiti",
+      "Il numero di dita usate",
+      "Il modo di toccare lo schermo di ciascuno, dalle sue abitudini"
+    ],
+    "correctIndex": 3,
+    "explanation": "Ognuno ha un proprio modo di toccare lo schermo."
+  },
+  {
+    "id": 71,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Perché su quasi tutte le tastiere touch la lettera compare ingrandita sopra il dito al momento del tocco?",
+    "options": [
+      "Perché il dito copre il tasto e chi scrive non vede se ha toccato la lettera giusta: è una conferma visiva",
+      "Perché serve a cambiare layout",
+      "Perché serve a dettare la lettera",
+      "Perché indica la zona di tocco allargata"
+    ],
+    "correctIndex": 0,
+    "explanation": "Permette di accorgersi subito di un errore."
+  },
+  {
+    "id": 72,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che differenza c'è tra le zone di tocco e la correzione automatica?",
+    "options": [
+      "Le zone di tocco intervengono mentre si tocca, per scegliere la lettera; la correzione automatica interviene sulla parola intera, quando la si completa",
+      "Sono la stessa cosa",
+      "Le zone di tocco intervengono sulla parola intera, la correzione sulla lettera",
+      "La correzione automatica interviene prima del tocco"
+    ],
+    "correctIndex": 0,
+    "explanation": "Vanno in squadra, ma un errore può nascere dall'una o dall'altra."
+  },
+  {
+    "id": 73,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa hanno in comune le zone di tocco e la correzione automatica?",
+    "options": [
+      "Usano lo stesso microfono",
+      "Lavorano solo sulle parole intere",
+      "Servono solo per la dettatura",
+      "Si appoggiano alla stessa conoscenza della lingua"
+    ],
+    "correctIndex": 3,
+    "explanation": "Vanno in squadra."
+  },
+  {
+    "id": 74,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Che cosa cambiò con il touchscreen rispetto ai telefoni a dodici tasti?",
+    "options": [
+      "Il problema fu avere troppi tasti",
+      "Il problema non fu più il troppo pochi tasti, ma i tasti troppo piccoli",
+      "Il problema fu la mancanza di schermo",
+      "Il problema fu il costo dei tasti"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il primo iPhone ne è un esempio."
+  },
+  {
+    "id": 75,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quando fu presentato il primo iPhone?",
+    "options": [
+      "Nel gennaio 2007",
+      "Nel dicembre 2005",
+      "Nel marzo 2010",
+      "Nel 1995"
+    ],
+    "correctIndex": 0,
+    "explanation": "Aveva uno schermo da 3,5 pollici."
+  },
+  {
+    "id": 76,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quale schermo aveva il primo iPhone?",
+    "options": [
+      "Da 3,5 pollici, con una risoluzione logica di 320x480 pixel",
+      "Da 5 pollici, con 1080x1920 pixel",
+      "Da 2 pollici, con 128x128 pixel",
+      "Da 7 pollici, con 800x1280 pixel"
+    ],
+    "correctIndex": 0,
+    "explanation": "I progettisti partirono da queste dimensioni."
+  },
+  {
+    "id": 77,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Quanti pixel di lato, secondo i progettisti Apple, doveva misurare almeno un pulsante per essere toccato comodamente da un dito?",
+    "options": [
+      "22",
+      "64",
+      "320",
+      "44"
+    ],
+    "correctIndex": 3,
+    "explanation": "Dieci tasti avrebbero richiesto 440 pixel."
+  },
+  {
+    "id": 78,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Perché una fila di dieci tasti (Q W E R T Y U I O P) non entrava nello schermo del primo iPhone?",
+    "options": [
+      "Perché i tasti dovevano essere larghi 20 pixel",
+      "Perché avrebbe richiesto 440 pixel, più dell'intera larghezza dello schermo (320 pixel)",
+      "Perché lo schermo era troppo alto",
+      "Perché mancava la riga base"
+    ],
+    "correctIndex": 1,
+    "explanation": "Un pulsante doveva misurare almeno 44 pixel."
+  },
+  {
+    "id": 79,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Chi, alla fine del 2005, sospese gli altri lavori e chiese a tutti gli ingegneri di inventare una soluzione per la tastiera?",
+    "options": [
+      "Phil Schiller",
+      "Scott Forstall, responsabile del software dell'iPhone",
+      "Tony Fadell",
+      "Ken Kocienda"
+    ],
+    "correctIndex": 1,
+    "explanation": "Fu l'inizio di una gara interna."
+  },
+  {
+    "id": 80,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa prevedeva il progetto di Ken Kocienda che vinse la gara interna ma non convinse Phil Schiller e Tony Fadell?",
+    "options": [
+      "Un tasto per lettera con zone di tocco nascoste",
+      "Più lettere su ogni tasto e un dizionario che indovinava la parola",
+      "Una tastiera per una sola mano",
+      "Un sistema vocale"
+    ],
+    "correctIndex": 1,
+    "explanation": "Kocienda tornò al lavoro."
+  },
+  {
+    "id": 81,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "A quale tastiera arrivò infine Kocienda?",
+    "options": [
+      "A una tastiera con più lettere per tasto",
+      "A una tastiera dall'aspetto ordinario, con un tasto per lettera, che regolava in modo invisibile le zone di tocco",
+      "A una tastiera a dodici tasti",
+      "A una tastiera senza lettere"
+    ],
+    "correctIndex": 1,
+    "explanation": "Il principio fu poi brevettato."
+  },
+  {
+    "id": 82,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Che cosa descrive il brevetto che ha tra i sei inventori Kocienda?",
+    "options": [
+      "Una tastiera con rilievi su F e J",
+      "Una tastiera per una sola mano",
+      "Una tastiera in cui ogni tasto ha una zona di tocco nascosta («hidden hit region») la cui dimensione si aggiorna a ogni lettera in base alle parole possibili",
+      "Una tastiera a membrana siliconica"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il principio fu brevettato dopo la gara interna."
+  },
+  {
+    "id": 83,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "hard",
+    "question": "Come funziona la tastiera Gboard di Google?",
+    "options": [
+      "Un modello spaziale trasforma la posizione dei tocchi in probabilità per ciascun tasto, un modello del linguaggio valuta quali parole siano plausibili, e le due stime vengono combinate",
+      "Usa solo un dizionario di parole",
+      "Usa tasti più grandi e fissi",
+      "Usa solo la dettatura vocale"
+    ],
+    "correctIndex": 0,
+    "explanation": "Ha lo stesso scopo del metodo Apple, ma con un metodo diverso."
+  },
+  {
+    "id": 84,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
+    "question": "Nella metafora del commesso esperto, che cosa corrisponde alla zona di tocco allargata?",
+    "options": [
+      "Al cliente che indica lo scaffale",
+      "Al banco da lavoro",
+      "Al commesso che non guarda soltanto dove punta il dito del cliente, ma ragiona su ciò che ha già detto di cercare",
+      "Alla cassa del negozio"
+    ],
+    "correctIndex": 2,
+    "explanation": "Il dito dice dove, il discorso dice cosa."
+  },
+  {
+    "id": 85,
+    "module": "estensioni",
+    "type": "quiz",
+    "difficulty": "easy",
     "question": "Che cosa sono gli strumenti di accessibilità della tastiera?",
     "options": [
       "Funzioni del computer che modificano il comportamento dei tasti per adattarli a chi non può usare la tastiera nel modo standard",
@@ -855,7 +1275,7 @@
     "explanation": "Per esempio perché si usa una sola mano, un solo dito o si ha difficoltà a premere più tasti insieme."
   },
   {
-    "id": 58,
+    "id": 86,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "easy",
@@ -870,7 +1290,7 @@
     "explanation": "Il computer li tratta come premuti insieme."
   },
   {
-    "id": 59,
+    "id": 87,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "easy",
@@ -885,7 +1305,7 @@
     "explanation": "È utile a chi usa una sola mano."
   },
   {
-    "id": 60,
+    "id": 88,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "easy",
@@ -900,7 +1320,7 @@
     "explanation": "Esistono due modi."
   },
   {
-    "id": 61,
+    "id": 89,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "easy",
@@ -915,7 +1335,7 @@
     "explanation": "È un'altra funzione di accessibilità."
   },
   {
-    "id": 62,
+    "id": 90,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "easy",
@@ -930,7 +1350,7 @@
     "explanation": "È un'altra funzione di accessibilità."
   },
   {
-    "id": 63,
+    "id": 91,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "easy",
@@ -945,7 +1365,7 @@
     "explanation": "Quale scegliere dipende dalla persona e dal motivo."
   },
   {
-    "id": 64,
+    "id": 92,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "hard",
@@ -960,7 +1380,7 @@
     "explanation": "È un esempio di strumento diverso dalle funzioni del computer."
   },
   {
-    "id": 65,
+    "id": 93,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "easy",
@@ -975,7 +1395,7 @@
     "explanation": "Quale strumento scegliere dipende dalla persona e dal motivo."
   },
   {
-    "id": 66,
+    "id": 94,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "hard",
@@ -990,7 +1410,7 @@
     "explanation": "Fu fondato da Gregg Vanderheiden e dai suoi colleghi."
   },
   {
-    "id": 67,
+    "id": 95,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "hard",
@@ -1005,7 +1425,7 @@
     "explanation": "Lo studio riguardava le tecnologie al servizio delle persone con disabilità."
   },
   {
-    "id": 68,
+    "id": 96,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "hard",
@@ -1020,7 +1440,7 @@
     "explanation": "Da lì nacque Tasti permanenti."
   },
   {
-    "id": 69,
+    "id": 97,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "hard",
@@ -1035,7 +1455,7 @@
     "explanation": "La chiamò prima «1-Finger» e poi Sticky Keys."
   },
   {
-    "id": 70,
+    "id": 98,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "hard",
@@ -1050,7 +1470,7 @@
     "explanation": "Fu poi ribattezzata Sticky Keys."
   },
   {
-    "id": 71,
+    "id": 99,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "hard",
@@ -1065,7 +1485,7 @@
     "explanation": "Microsoft ottenne la licenza nel 1995."
   },
   {
-    "id": 72,
+    "id": 100,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "hard",
@@ -1080,7 +1500,7 @@
     "explanation": "Aveva ottenuto la licenza."
   },
   {
-    "id": 73,
+    "id": 101,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "easy",
@@ -1095,7 +1515,7 @@
     "explanation": "Chiunque, anche senza disabilità, può usarla."
   },
   {
-    "id": 74,
+    "id": 102,
     "module": "estensioni",
     "type": "quiz",
     "difficulty": "easy",

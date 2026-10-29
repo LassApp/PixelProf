@@ -1,7 +1,10 @@
 /* ==================================================
-   game-fill.js — PixelProf v4.1.0
+   game-fill.js — PixelProf v4.1.1
    Completa la frase game logic.
    Depends on: game-engine-state.js, scoring.js
+   v4.1.1 (app v8.50.1): FIX — startFill() applica _filterHard(src,'fill') prima di sN. Senza, il toggle
+   "includi domande difficili" non aveva effetto su Completa la frase e "Tutte" caricava facili + difficili
+   (es. DigComp modulo 1: 88 frasi invece di 49). Nessun altro comportamento modificato.
    v4.0.9: FIX — applicato sN (selettore "Quante domande?"
    5/10/15/20/Tutte) al pool prima di iniziare la partita,
    come già avviene per Quiz/Speed/Vero o Falso. Prima
@@ -73,6 +76,10 @@ async function startFill(cont,mod){
     showCompletaFraseError('Impossibile caricare il gioco Completa la frase. Riprova o cambia modulo.');
     return;
   }
+  // v4.1.1 (app v8.50.1): FIX — il filtro difficoltà va applicato PRIMA di sN. Prima startFill() non
+  // chiamava _filterHard(), quindi il toggle "includi domande difficili" era ignorato e "Tutte" usava
+  // l'intero pool (facili + difficili). Ora "Tutte" = tutte le frasi della difficoltà selezionata.
+  src=_filterHard(src,'fill');
   gsSet(GS.PLAYING);
   // sN: numero frasi scelto in setup-num (0 = "Tutte") — stesso comportamento di Quiz/Vero o Falso.
   let pool=_weightedShuffleFillPool([...src]);
